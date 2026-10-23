@@ -90,12 +90,18 @@ standard CI runs install, type-check, offline tests, and production build.
 
 ## Next concrete action
 
+The user requested continuation by Codex already running in VS Code on their
+machine. Start with the [Codex VS Code handoff](CODEX_VSCODE_HANDOFF.md), fetch
+the implementation branch, and inspect the local environment and authentication.
+The prior chat's browser session and filesystem are not established as shared
+with that local Codex session.
+
 The user has now requested a Cloudflare deployment directly from GitHub. Build
 configuration is prepared in [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md);
 authentication returned to [Cloudflare login](https://dash.cloudflare.com/login)
 with the visible error "Unable to sign in. Try again or use your email and
-password." Automated sign-in has stopped. Manual authentication is required next,
-and its completion has not been confirmed. No Cloudflare project, build,
+password." Automated sign-in stopped in that browser. Authentication in the
+local Codex environment must be checked. No Cloudflare project, build,
 deployment, or live URL was created or verified during this attempt.
 
 Finish Cloudflare authentication, configure Pages from the implementation branch,

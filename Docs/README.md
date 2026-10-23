@@ -17,6 +17,7 @@ For the current Details View increment, start with:
 | Pinned library provenance, build method, and deliberate updates | [DEPENDENCIES.md](DEPENDENCIES.md) |
 | Current implementation checkpoint and actual checks | [Current work](Plans/CURRENT_WORK.md) |
 | Cloudflare deployment settings and actual status | [Cloudflare deployment](Plans/CLOUDFLARE_DEPLOYMENT.md) |
+| Continue the deployment in local Codex / VS Code | [Codex VS Code handoff](Plans/CODEX_VSCODE_HANDOFF.md) |
 | Exact source versions, locators, and evidence limits | [Source index](Research/SOURCE_INDEX.md) |
 | Bounded bindings, experimental mappings, and unresolved profile gaps | [Details View mapping](Design/DETAILS_VIEW_MAPPING.md) |
 | Acceptance criteria | [Details View acceptance](Testing/DETAILS_VIEW_ACCEPTANCE.md) |

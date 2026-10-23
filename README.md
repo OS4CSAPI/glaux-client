@@ -132,11 +132,12 @@ new implementation based on the recovered source evidence.
 
 The user has authorized a Cloudflare Pages deployment from the implementation
 branch. [Deployment settings and current status](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
-are recorded separately. Configuration is prepared, but deployment is blocked at
-Cloudflare sign-in: "Unable to sign in. Try again or use your email and password."
-Automated sign-in has stopped; manual authentication is the next action and has
-not been confirmed complete. No Cloudflare project, build, deployment, or live URL
-was created or verified during this attempt.
+are recorded separately. The prior chat's deployment attempt was blocked at
+Cloudflare sign-in. Continue through the
+[Codex VS Code handoff](Docs/Plans/CODEX_VSCODE_HANDOFF.md), which records the
+verified source, local setup, deployment settings, and remaining work. No
+Cloudflare project, build, deployment, or live URL was created or verified
+during the prior attempt; local authentication is not yet verified.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.
