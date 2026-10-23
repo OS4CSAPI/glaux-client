@@ -23,4 +23,18 @@
 - Do not deploy, alter existing infrastructure, write to servers, or change the
   profile. No DGIWG or other organizational adoption/endorsement is established.
 - Install and validate using the [README](README.md); dependency changes must follow
-  the deliberate update procedure in [DEPENDENCIES](docs/DEPENDENCIES.md).
+  the deliberate update procedure in [DEPENDENCIES](Docs/DEPENDENCIES.md).
+
+## Documentation convention
+
+- Use [Docs/README.md](Docs/README.md) as the documentation index and `Docs/` as
+  the single project documentation root; do not create a parallel lowercase tree.
+- Organize material under Governance, Plans, Research, Design, or Testing as
+  described in the index. Keep the root README and this file in place.
+- Keep current authoritative material easy to identify. Label proposals and
+  superseded history explicitly, with links to their current replacements.
+  A folder or recorded proposal does not approve a design change.
+- Add only material suitable and authorized for public release. Do not bulk-import
+  research archives, manufacturer manuals, or private workspace material.
+- Keep executable tests and fixtures in code directories; link to them from
+  documentation rather than maintaining competing copies.

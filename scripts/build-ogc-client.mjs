@@ -11,7 +11,7 @@ const actual = execFileSync('git', ['-C', library, 'rev-parse', 'HEAD'], {
   encoding: 'utf8',
 }).trim();
 if (actual !== expected) {
-  throw new Error(`Unexpected ogc-client revision ${actual}; expected ${expected}. See docs/DEPENDENCIES.md.`);
+  throw new Error(`Unexpected ogc-client revision ${actual}; expected ${expected}. See Docs/DEPENDENCIES.md.`);
 }
 if (execFileSync('git', ['-C', library, 'status', '--porcelain', '--untracked-files=no'], {
   encoding: 'utf8',

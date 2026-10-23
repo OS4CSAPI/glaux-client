@@ -53,7 +53,7 @@ under its upstream package name, `@camptocamp/ogc-client`.
 
 Selected branch: **phase-10**; commit:
 `4ca1d7db9b1ccdf545adbef42ef941139fe11977` (inspected 2026-10-23).
-See [dependency provenance and build details](docs/DEPENDENCIES.md).
+See [dependency provenance and build details](Docs/DEPENDENCIES.md).
 
 ## Current status and boundaries
 
@@ -77,5 +77,5 @@ source materials must be consulted when that work starts; none are imported here
 The existing pygeoapi CSAPI test server is intended for later evaluation and is
 unchanged by this bootstrap. No infrastructure or live-server work is included.
 
-See [development boundaries](AGENTS.md) and
+See the [documentation index](Docs/README.md), [development boundaries](AGENTS.md), and
 [third-party notices](public/THIRD_PARTY_NOTICES.txt).
