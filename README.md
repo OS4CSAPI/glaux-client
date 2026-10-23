@@ -130,14 +130,11 @@ records what was reconstructed, what was verified, open limits, and the next ste
 The missing prior local implementation was **not recovered**; this branch is a
 new implementation based on the recovered source evidence.
 
-The user has authorized a Cloudflare Pages deployment from the implementation
-branch. [Deployment settings and current status](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
-are recorded separately. The prior chat's deployment attempt was blocked at
-Cloudflare sign-in. Continue through the
-[Codex VS Code handoff](Docs/Plans/CODEX_VSCODE_HANDOFF.md), which records the
-verified source, local setup, deployment settings, and remaining work. No
-Cloudflare project, build, deployment, or live URL was created or verified
-during the prior attempt; local authentication is not yet verified.
+The implementation is deployed at <https://glaux-client.pages.dev> from commit
+`53c3ce532abc484dc421696566a573179635d125`. The live application passed all 23
+browser checks with no script errors. [Deployment details](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
+record the Cloudflare Pages project, immutable deployment, build result, and the
+Direct Upload method used by the authenticated local Wrangler session.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.

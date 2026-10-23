@@ -1,23 +1,37 @@
 # Cloudflare deployment continuation
 
-## Request and current status
+## Deployment result
 
-The user requested a Cloudflare deployment of the latest implementation from
-GitHub so the application can be viewed. This record prepares that authorized
-deployment; it does not report a completed deployment.
+**Completed 23 October 2026.** The latest implementation was built from the exact
+pinned submodule and deployed to Cloudflare Pages. Local Wrangler OAuth was already
+authenticated to the user's Cloudflare account with Pages write access, so no new
+sign-in was required.
 
-**Status as of 23 October 2026:** configuration prepared; the prior chat's
-deployment attempt was blocked at Cloudflare sign-in. The authentication attempt returned to
-[Cloudflare login](https://dash.cloudflare.com/login) with the visible error:
-"Unable to sign in. Try again or use your email and password."
-Automated sign-in stopped in that browser. Local authentication must be checked
-before continuing. No Cloudflare project, build, deployment,
-or live application URL was created or verified during this attempt.
+Cloudflare's current Wrangler first attempted to delegate new Pages project creation
+to Workers and failed before creating a resource because no Worker entry point was
+present. Following Wrangler's explicit fallback, the project was created through
+the legacy Pages command with `--force`, then deployed with `wrangler pages deploy`.
+This is a **Direct Upload**, not Git integration; future pushes will not deploy
+automatically. Cloudflare requires a new project to switch this project type.
 
-The user has requested continuation in local Codex / VS Code. Follow the
-[Codex handoff](CODEX_VSCODE_HANDOFF.md); local Cloudflare authentication has not
-been verified from this chat. The existing browser failure does not establish
-that the user's local account or CLI authentication will fail.
+| Result | Actual value |
+| --- | --- |
+| Project | `glaux-client` |
+| Deployment method | Cloudflare Pages Direct Upload via Wrangler 4.152.0 |
+| Production branch metadata | `work/details-view-20261023` |
+| Deployed Git commit | `53c3ce532abc484dc421696566a573179635d125` |
+| Deployment ID | `602be95e-6fc1-418f-8119-4d63da5ddba5` |
+| Production URL | <https://glaux-client.pages.dev> |
+| Immutable deployment URL | <https://602be95e.glaux-client.pages.dev> |
+| Build result | Passed with Node 26.12.0; pinned library `4ca1d7d` built successfully |
+| Live browser verification | 23 checks passed; zero browser script errors |
+
+The live run exercised TRSS ETU-II, OmniSense Core2, OmniSense Core5ADS, and the
+synthetic MPSS technical-description example. Overview, Equipment, and Condition
+tabs worked across Operator and Standard modes. The run also verified fixture/raw
+body access, exact downloaded bytes, keyboard tab behavior, source switching, and
+the 390 px layout. These checks establish the bundled static examples, not an
+external CSAPI server integration.
 
 ## Checked GitHub source
 
@@ -25,7 +39,7 @@ that the user's local account or CLI authentication will fail.
 | --- | --- |
 | Repository | [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client) |
 | Source branch | [work/details-view-20261023](https://github.com/OS4CSAPI/glaux-client/tree/work/details-view-20261023) |
-| Implementation commit | [eb9a7f45aa7db31ef71196e807b69a300d473b40](https://github.com/OS4CSAPI/glaux-client/commit/eb9a7f45aa7db31ef71196e807b69a300d473b40) |
+| Implementation commit deployed | [53c3ce532abc484dc421696566a573179635d125](https://github.com/OS4CSAPI/glaux-client/commit/53c3ce532abc484dc421696566a573179635d125) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
 Use the checked branch containing the implementation when connecting GitHub.
@@ -68,12 +82,9 @@ Checked 23 October 2026:
 - [Pages build image](https://developers.cloudflare.com/pages/configuration/build-image/): `.nvmrc`/`NODE_VERSION` overrides and `SKIP_DEPENDENCY_INSTALL`; v3 does not detect Node from `package.json.engines`.
 - [Pages repository-clone troubleshooting](https://developers.cloudflare.com/pages/configuration/debugging-pages/): valid submodule entries require both path and URL. The repository supplies a public HTTPS URL; the explicit build command ensures recursive initialization.
 
-## Completion record to fill after deployment
+## Continuation
 
-Verify local Cloudflare authentication and complete secure sign-in if needed.
-Then connect the checked repository and branch, apply the settings,
-and inspect the actual build outcome. Record the Cloudflare project,
-deployment identifier, deployed Git SHA, build result, and live URL here. Verify
-the loaded application and its example fixtures at that URL before describing
-the deployment as complete. Until authentication succeeds, this remains a prepared
-configuration blocked at sign-in; no deployment has started.
+The current deployment is complete and verified. If automatic deployments are
+later required, create a separate Git-integrated Pages project connected to the
+same repository and branch using the prepared settings above; do not describe this
+Direct Upload project as Git connected.

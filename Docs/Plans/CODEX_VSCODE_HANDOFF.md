@@ -1,4 +1,15 @@
-# Codex in VS Code: finish the Cloudflare deployment
+# Codex in VS Code: Cloudflare deployment outcome
+
+## Completed outcome
+
+Deployment completed on 23 October 2026 using the authenticated local Wrangler
+session. Cloudflare Pages project `glaux-client` serves the application at
+<https://glaux-client.pages.dev>. Deployment
+`602be95e-6fc1-418f-8119-4d63da5ddba5` contains Git commit
+`53c3ce532abc484dc421696566a573179635d125`; 23 live browser checks passed with
+zero script errors. Wrangler Direct Upload was used because the CLI cannot create
+a Git-integrated Pages project. See [the deployment record](CLOUDFLARE_DEPLOYMENT.md)
+for the exact method, immutable URL, and verification scope.
 
 ## Authorized objective
 

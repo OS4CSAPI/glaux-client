@@ -1,7 +1,7 @@
 # Current Details View work
 
-Updated 23 October 2026. **Status: first increment reconstructed, locally verified,
-and saved for review; Cloudflare deployment is blocked at sign-in.**
+Updated 23 October 2026. **Status: first increment reconstructed, locally and live
+verified, saved for review, and deployed to Cloudflare Pages.**
 
 - Repository: `OS4CSAPI/glaux-client`.
 - Working branch: `work/details-view-20261023`.
@@ -12,6 +12,9 @@ and saved for review; Cloudflare deployment is blocked at sign-in.**
   followed by the final guard/verification commit on the same branch.
 - Pinned library: `OS4CSAPI/ogc-client-CSAPI_2`,
   `4ca1d7db9b1ccdf545adbef42ef941139fe11977` (phase-10 provenance).
+- Live application: <https://glaux-client.pages.dev>.
+- Deployed implementation: `53c3ce532abc484dc421696566a573179635d125`;
+  Pages deployment `602be95e-6fc1-418f-8119-4d63da5ddba5`.
 
 ## Recovery and authorization
 
@@ -63,6 +66,7 @@ health, readiness, physical equipment identity, or resource relationship is inve
 | `npm run test:browser` with available Playwright/Chromium | 23 checks passed; zero browser script errors |
 | Visual inspection | Six desktop/mobile views inspected; no clipping or overlap; 390 px has no horizontal overflow |
 | Exact-body download | Browser-downloaded bytes matched the original fixture byte for byte |
+| Live Cloudflare verification | 23 browser checks passed against `https://glaux-client.pages.dev`; zero browser script errors |
 | GitHub CI | [Implementation checkpoint passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/39995569307); PR checks identify the result for each subsequent head |
 
 The final review added regression coverage for foreign subjects when the viewed
@@ -84,29 +88,16 @@ standard CI runs install, type-check, offline tests, and production build.
 - No supplied existing-server System URL was available for validation. Browser CORS
   applies; authentication and collection discovery are outside this increment.
 - Comparative operator benefit has not been measured.
-- No upstream-library, infrastructure, deployment, live device command, or server
-  write was performed. Source manuals, private documents, credentials, and chat
-  transcripts were not committed.
+- No upstream-library change, live device command, or server write was performed.
+  Source manuals, private documents, credentials, and chat transcripts were not
+  committed. The Cloudflare deployment is a Wrangler Direct Upload and therefore
+  does not automatically rebuild from future Git pushes.
 
 ## Next concrete action
 
-The user requested continuation by Codex already running in VS Code on their
-machine. Start with the [Codex VS Code handoff](CODEX_VSCODE_HANDOFF.md), fetch
-the implementation branch, and inspect the local environment and authentication.
-The prior chat's browser session and filesystem are not established as shared
-with that local Codex session.
-
-The user has now requested a Cloudflare deployment directly from GitHub. Build
-configuration is prepared in [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md);
-authentication returned to [Cloudflare login](https://dash.cloudflare.com/login)
-with the visible error "Unable to sign in. Try again or use your email and
-password." Automated sign-in stopped in that browser. Authentication in the
-local Codex environment must be checked. No Cloudflare project, build,
-deployment, or live URL was created or verified during this attempt.
-
-Finish Cloudflare authentication, configure Pages from the implementation branch,
-deploy, and verify the application. Record the actual deployed commit and verified
-URL in the deployment note after those steps succeed.
+Review the live application at <https://glaux-client.pages.dev> and continue the
+existing draft PR. The completed deployment and its Direct Upload limitation are
+recorded in [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md).
 
 Review the runnable increment through PR #1. For the next server-validation step,
 use a supplied existing CSAPI System resource URL in **Use your existing CSAPI
