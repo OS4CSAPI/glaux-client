@@ -1,56 +1,100 @@
 # Current Details View work
 
-Updated 23 October 2026. Status: reconstructed implementation saved; integrated browser review in progress.
+Updated 23 October 2026. **Status: first increment reconstructed, locally verified,
+and saved for review.**
 
-## Objective
-
-Implement the first compact System Details View with Overview, Equipment, and
-Condition. Compare standard CSAPI/SensorML/SWE access and MPSS v0.3.5
-interpretation using the same retrieved records. Preserve the distinct meanings
-of TRSS configuration, OmniSense reported transducers, and condition observations.
-
-## Verified starting point
-
-- Application baseline: `d2386062871ff8caaa7021d38f39f1af7c74dd12`.
+- Repository: `OS4CSAPI/glaux-client`.
 - Working branch: `work/details-view-20261023`.
-- Library: `OS4CSAPI/ogc-client-CSAPI_2`, pinned to
+- Review: [draft PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1).
+- Original baseline: `d2386062871ff8caaa7021d38f39f1af7c74dd12`.
+- Reconstructed implementation checkpoint:
+  [`ddac23a3`](https://github.com/OS4CSAPI/glaux-client/commit/ddac23a3e74f5b4a5fe3bfddc344e004d6dc683f),
+  followed by the final guard/verification commit on the same branch.
+- Pinned library: `OS4CSAPI/ogc-client-CSAPI_2`,
   `4ca1d7db9b1ccdf545adbef42ef941139fe11977` (phase-10 provenance).
-- The earlier local implementation is unavailable. Recovered screen images are
-  design evidence, not recovered source code or evidence of passing tests.
-- This branch reconstructs that authorized increment from the actual source
-  documents. Bootstrap-only exclusions are superseded only for these views,
-  bounded interpretation, and explicitly synthetic local evaluation records.
 
-## Implementation scope
+## Recovery and authorization
 
-Keep standard data retrieval and original response capture, profile
-interpretation, and presentation separate. Display the source, subject, meaning,
-units, and time associated with each fact. Preserve unknown data and allow
-inspection in standard mode. Keep TRSS ETU-II, OmniSense Core 2 Equipment, and
-OmniSense Core 5 ADS Condition as distinct examples.
+The prior local implementation was unavailable. Recovered screen images and
+activity descriptions are design evidence, not recovered source code or proof
+of its checks. This branch is a **new reconstruction** of the already-authorized
+first increment, using the actual source documents and preserved UI evidence.
+Bootstrap-only exclusions were superseded only for these views, bounded profile
+interpretation, and explicitly synthetic evaluation records.
 
-No deployment, infrastructure change, live device commands, server writes,
-upstream-library modifications, or MPSS profile changes are included. Do not
-copy private source documents, manuals, operational data, or chat transcripts
-into this public repository.
+Do not restart research or choose another client library. Read this note, the
+[source index](../Research/SOURCE_INDEX.md), and the
+[exact source-to-view mapping](../Design/DETAILS_VIEW_MAPPING.md) before continuing.
+The full source documents remain outside this public repository. The index records
+versions, fingerprints, locators, and evidence limits; screenshots are not code.
 
-## Current verification
+## Implemented
 
-The reconstructed source, four synthetic fixtures, mapping/source documents, and
-focused tests are present. `npm ci` completed with the pinned library build.
-The current offline suite passes, and `npm run build` passes both TypeScript and
-Vite production compilation. Integrated Chromium review is in progress; no browser
-acceptance or live-server validation is claimed yet.
+The compact System card supplies **Operational → Overview, Equipment, Condition**.
+Operator and Standard modes consume the same captured model. Four local HTTP
+fixtures keep TRSS ETU-II configuration/estimation, Core2 reported equipment,
+Core5ADS condition, and a fully synthetic MPSS technical-description contract
+separate. Supported options, estimator inputs, and detailed provenance use
+accessible disclosures.
 
-Checks cover unknown content and exact response bytes, failures/cancellation,
-bounded advertised-link following, subject and time preservation, actual library
-parsing, explicit semantic bindings, conflicting terms, nil markers, code spaces,
-and separation of the three historical examples. The fourth fixture exercises
-only the bounded MPSS technical-description contract with invented values.
+Data retrieval, standard extraction, interpretation, and presentation are separate.
+The actual pinned CSAPI/SensorML/SWE library is used. Original Fetch-exposed bytes,
+text, JSON, exposed headers, URLs, status, and retrieval time are independently
+retained; Standard view exposes unknown fields, links, metadata, and exact-body
+downloads. Direct resource reads use GET with credentials omitted and follow at
+most one explicitly advertised SensorML alternate, without guessed routes.
 
-## Next action
+The interpreter recognizes only MPSS technical-description's four Text terms.
+Device-specific concepts use a separate explicit experiment namespace, with profile
+gaps recorded. It checks source carriers, definitions, value types, units, code
+spaces, declared nil tokens, per-group cardinality, supplied labels where required,
+and subject identity. Foreign-subject and failed-HTTP content remains inspectable
+without populating operator readings. Source clocks are not parsed into trusted
+timestamps; retrieval time is separate. No state of charge, runtime, aggregate
+health, readiness, physical equipment identity, or resource relationship is invented.
 
-Finish integrated browser verification, record actual results and remaining limits,
-and open the implementation for review. The next evaluation after this increment
-is a controlled read against a supplied existing-server resource URL; no server
-endpoint or live credentials have been assumed.
+## Verification
+
+| Check | Actual result |
+| --- | --- |
+| `npm ci --no-audit --no-fund` | Passed, including the exact pinned library build |
+| `npm test` | 45 tests passed across 4 files |
+| `npm run build` | TypeScript checking and Vite production compilation passed |
+| `npm run test:browser` with available Playwright/Chromium | 23 checks passed; zero browser script errors |
+| Visual inspection | Six desktop/mobile views inspected; no clipping or overlap; 390 px has no horizontal overflow |
+| Exact-body download | Browser-downloaded bytes matched the original fixture byte for byte |
+| GitHub CI | [Implementation checkpoint passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/39995569307); PR checks identify the result for each subsequent head |
+
+The final review added regression coverage for foreign subjects when the viewed
+process identity is unknown, and valid-looking JSON received with an HTTP error.
+The tests also cover unknown properties, zero/false/empty values, failed reads,
+cancellation, bounded link following, conflicting singleton terms, wrong carriers,
+code spaces/units/types, nil values, and the separation of source examples.
+
+[Browser instructions](../Testing/BROWSER_VERIFICATION.md), the
+[recorded check list](../Testing/BROWSER_RESULTS.json), and the executable script
+are saved in this repository. Browser checks are optional local verification;
+standard CI runs install, type-check, offline tests, and production build.
+
+## Open limits
+
+- The device-specific experimental bindings still need profile decisions; no profile
+  changes or whole-profile conformance are claimed.
+- Source-based synthetic fixtures are not native manufacturer API responses.
+- No supplied existing-server System URL was available for validation. Browser CORS
+  applies; authentication and collection discovery are outside this increment.
+- Comparative operator benefit has not been measured.
+- No upstream-library, infrastructure, deployment, live device command, or server
+  write was performed. Source manuals, private documents, credentials, and chat
+  transcripts were not committed.
+
+## Next concrete action
+
+Review the runnable increment through PR #1. For the next server-validation step,
+use a supplied existing CSAPI System resource URL in **Use your existing CSAPI
+server**, inspect its standard capture first, and record actual supported and
+unresolved bindings. Do not modify that server or manufacture missing values to
+make the operator view look complete.
+
+Keep this note current and save source changes on the working branch at meaningful
+increments. A chat progress statement is not a source-code checkpoint.

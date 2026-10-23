@@ -52,7 +52,8 @@ test('familiar labels with unknown identifiers stay available generically withou
 test('configured selections, supported options, and estimator inputs retain their distinct meanings', () => {
   const result = interpret(fixture('trss-etu-ii'));
   expect(result.views.equipment.filter(section => section.title === 'Configured detector selection')).toHaveLength(2);
-  expect(result.views.equipment.filter(section => section.title === 'Supported detector options')).toHaveLength(2);
+  expect(result.views.equipment.filter(section => section.title.startsWith('Supported detector options · ')).map(section => section.title))
+    .toEqual(['Supported detector options · Detector 1', 'Supported detector options · Detector 2']);
   const all = facts(result);
   expect(all.find(fact => fact.label === 'Orientation')?.value).toBe('0 deg');
   expect(all.find(fact => fact.label === 'Estimated capacity remaining')?.value).toBe('100.0 %');
@@ -196,4 +197,23 @@ test('a missing or blank MPSS group label remains incomplete instead of borrowin
   expect(facts(interpret(input))).toHaveLength(0);
   input.characteristics[0].label = '   ';
   expect(facts(interpret(input))).toHaveLength(0);
+});
+
+test('a failed HTTP response stays inspectable but cannot supply an operator reading', () => {
+  const response = capture(fixture('omnisense-core5ads'));
+  response.status = 500;
+  const result = interpretDetails(extractStandardModel([response]));
+  expect(facts(result)).toHaveLength(0);
+  expect(result.standard.captures[0].status).toBe(500);
+  expect(result.standard.groups.flatMap(group => group.facts).some(fact => fact.value === 15.43)).toBe(true);
+});
+
+test('an unknown viewed-process identity does not authorize an explicitly different subject', () => {
+  const input = fixture('omnisense-core5ads');
+  delete input.uniqueId;
+  input.characteristics[1].characteristics[0].subject = 'urn:example:some-other-system';
+  const result = interpret(input);
+  expect(facts(result).some(fact => fact.label === 'Reported battery voltage')).toBe(false);
+  expect(result.interpretationNotes.join(' ')).toContain('subject');
+  expect(result.standard.groups.flatMap(group => group.facts).some(fact => fact.value === 15.43 && fact.subject === 'urn:example:some-other-system')).toBe(true);
 });

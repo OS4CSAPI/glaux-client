@@ -44,6 +44,9 @@ The development server defaults to <http://127.0.0.1:5173>; production output is
 in `dist`. Tests are offline and use only explicitly synthetic inputs and
 `example.invalid` URLs; no device records or operational readings are included.
 CI runs install, type-check, tests, and build without deployment or server access.
+Optional [browser verification](Docs/Testing/BROWSER_VERIFICATION.md) is reproducible
+with a separately available Playwright/Chromium installation; it is not a new
+application dependency.
 
 ## Library dependency
 
@@ -84,7 +87,7 @@ a **Meaning and source** disclosure identifying its source and mapping.
 
 ### Read an existing resource
 
-Open **Existing CSAPI resource** and enter a direct System resource URL. The client
+Open **Use your existing CSAPI server** and enter a direct System resource URL. The client
 issues GET with credentials omitted. If the response advertises a typed SensorML
 `alternate` or `describedby` link, at most one is followed and both responses are
 retained. There is no guessed `/details` route or fixed server configuration.

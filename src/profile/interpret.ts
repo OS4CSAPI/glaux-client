@@ -118,7 +118,7 @@ function record(value: unknown): value is Record<string, unknown> {
 
 function supportedProcessCarrier(group: StandardGroup, standard: StandardModel): boolean {
   const capture = standard.captures.find(item => item.url === group.facts[0]?.sourceUrl);
-  if (!capture || !record(capture.json)) return false;
+  if (!capture || capture.status < 200 || capture.status >= 300 || !record(capture.json)) return false;
   const wrapped = group.path.startsWith('/properties/');
   const process = wrapped ? capture.json.properties : capture.json;
   return record(process)
@@ -174,7 +174,7 @@ export function interpretDetails(standard: StandardModel): DetailsModel {
         // A definition buried in unrelated metadata is not a group member.
         const immediateMember = fact.path.startsWith(`${group.path}/${expectedCarrier}/`)
           && /^\d+$/.test(fact.path.slice(`${group.path}/${expectedCarrier}/`.length));
-        const sameSubject = standard.uniqueId === undefined || fact.subject === undefined || fact.subject === standard.uniqueId;
+        const sameSubject = fact.subject === undefined || (standard.uniqueId !== undefined && fact.subject === standard.uniqueId);
         return immediateMember && sameSubject && validValue(fact, term) && !suppliedNilValue(fact, standard);
       });
       if (valid.length !== candidates.length) {
@@ -209,7 +209,10 @@ export function interpretDetails(standard: StandardModel): DetailsModel {
       const primaryFacts = facts.filter(fact => !referenceUris.has(fact.mapping.id));
       const referenceFacts = facts.filter(fact => referenceUris.has(fact.mapping.id));
       const section: ViewSection = {
-        id: `${kind}:${group.key}`, title: rule.title,
+        id: `${kind}:${group.key}`,
+        title: rule.group === 'detector-options'
+          ? `${rule.title} · ${facts.find(fact => fact.source.definition === experimentTerm('detector-position'))?.value ?? group.label}`
+          : rule.title,
         description: `${rule.description} Source group: ${group.label}.`, facts: primaryFacts,
         collapsible: rule.collapsible,
         heroFactKey: rule.hero ? facts.find(f => f.source.definition === termUri(rule.hero!))?.key : undefined,
