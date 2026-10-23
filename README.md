@@ -132,8 +132,11 @@ new implementation based on the recovered source evidence.
 
 The user has authorized a Cloudflare Pages deployment from the implementation
 branch. [Deployment settings and current status](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
-are recorded separately; configuration is prepared and authentication is in
-progress. No successful deployment or live URL is claimed yet.
+are recorded separately. Configuration is prepared, but deployment is blocked at
+Cloudflare sign-in: "Unable to sign in. Try again or use your email and password."
+Automated sign-in has stopped; manual authentication is the next action and has
+not been confirmed complete. No Cloudflare project, build, deployment, or live URL
+was created or verified during this attempt.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.

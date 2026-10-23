@@ -6,9 +6,13 @@ The user requested a Cloudflare deployment of the latest implementation from
 GitHub so the application can be viewed. This record prepares that authorized
 deployment; it does not report a completed deployment.
 
-**Status as of 23 October 2026:** configuration prepared. Cloudflare account
-authentication is in progress. No Cloudflare project, successful deployment,
-or live application URL is claimed here.
+**Status as of 23 October 2026:** configuration prepared; deployment is blocked
+at Cloudflare sign-in. The authentication attempt returned to
+[Cloudflare login](https://dash.cloudflare.com/login) with the visible error:
+"Unable to sign in. Try again or use your email and password."
+Automated sign-in has stopped. Manual authentication is the next action; its
+completion has not been confirmed. No Cloudflare project, build, deployment,
+or live application URL was created or verified during this attempt.
 
 ## Checked GitHub source
 
@@ -61,9 +65,10 @@ Checked 23 October 2026:
 
 ## Completion record to fill after deployment
 
-After authentication, connect the checked repository and branch, apply the
-settings, and inspect the actual build outcome. Record the Cloudflare project,
+Finish Cloudflare authentication manually first; takeover has not been confirmed
+as completed. Then connect the checked repository and branch, apply the settings,
+and inspect the actual build outcome. Record the Cloudflare project,
 deployment identifier, deployed Git SHA, build result, and live URL here. Verify
 the loaded application and its example fixtures at that URL before describing
-the deployment as complete. Until that evidence exists, this remains a prepared
-configuration with authentication in progress.
+the deployment as complete. Until authentication succeeds, this remains a prepared
+configuration blocked at sign-in; no deployment has started.
