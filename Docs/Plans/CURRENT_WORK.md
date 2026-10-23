@@ -1,6 +1,6 @@
 # Current Details View work
 
-Updated 23 October 2026. Status: implementation reconstruction in progress.
+Updated 23 October 2026. Status: reconstructed implementation saved; integrated browser review in progress.
 
 ## Objective
 
@@ -36,12 +36,21 @@ into this public repository.
 
 ## Current verification
 
-The baseline and pinned submodule have been retrieved. No new implementation
-checks are yet reported as passing. This note will be updated with actual
-results as the source code is completed.
+The reconstructed source, four synthetic fixtures, mapping/source documents, and
+focused tests are present. `npm ci` completed with the pinned library build.
+The current offline suite passes, and `npm run build` passes both TypeScript and
+Vite production compilation. Integrated Chromium review is in progress; no browser
+acceptance or live-server validation is claimed yet.
+
+Checks cover unknown content and exact response bytes, failures/cancellation,
+bounded advertised-link following, subject and time preservation, actual library
+parsing, explicit semantic bindings, conflicting terms, nil markers, code spaces,
+and separation of the three historical examples. The fourth fixture exercises
+only the bounded MPSS technical-description contract with invented values.
 
 ## Next action
 
-Finish the source-to-view mapping, reconstruct the read-only data path and three
-views, add focused preservation/interpretation tests, and verify the rendered
-client. Check in each coherent implementation increment and update this note.
+Finish integrated browser verification, record actual results and remaining limits,
+and open the implementation for review. The next evaluation after this increment
+is a controlled read against a supplied existing-server resource URL; no server
+endpoint or live credentials have been assumed.

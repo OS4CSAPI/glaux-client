@@ -1,0 +1,50 @@
+{
+  "type": "PhysicalSystem",
+  "id": "mpss-technical-description-synthetic",
+  "uniqueId": "urn:example:glaux-client:mpss-technical-description-synthetic",
+  "label": "MPSS technical-description contract example",
+  "description": "Fully synthetic contract example, independent of the historical TRSS and OmniSense cases. All technical values below are invented test data.",
+  "characteristics": [
+    {
+      "id": "technical-description",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/technical-description",
+      "label": "Synthetic technical description",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "manufacturer_1",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/manufacturer",
+          "label": "Manufacturer",
+          "value": "Example Test Manufacturer"
+        },
+        {
+          "type": "Text",
+          "name": "model_designation_2",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/model-designation",
+          "label": "Model designation",
+          "value": "Synthetic Bench Model A"
+        },
+        {
+          "type": "Text",
+          "name": "hardware_revision_3",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/hardware-revision",
+          "label": "Hardware revision",
+          "value": "test-hw-1"
+        },
+        {
+          "type": "Text",
+          "name": "firmware_revision_4",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/firmware-revision",
+          "label": "Firmware revision",
+          "value": "test-fw-1"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "profile",
+      "href": "https://schemas.example/merlin/mpss/0.3/profile/system-description"
+    }
+  ]
+}

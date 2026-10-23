@@ -1,0 +1,158 @@
+{
+  "type": "PhysicalSystem",
+  "id": "omnisense-core5ads-synthetic",
+  "uniqueId": "urn:example:glaux-client:omnisense-core5ads-synthetic",
+  "label": "OmniSense Core5ADS",
+  "description": "Synthetic historical condition example. This is a separate source case from Core2 equipment, with an unverified source clock.",
+  "characteristics": [
+    {
+      "id": "source-context",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/source-context",
+      "label": "Historical example provenance",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "source_document_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-document",
+          "label": "Source document",
+          "value": "MERLIN System Details Working Views, 10 October 2026"
+        },
+        {
+          "type": "Text",
+          "name": "source_locator_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-locator",
+          "label": "Source locator",
+          "value": "Historical condition facts: page 23. General view design and instance-separation context: pages 35–40. Source limitations and unresolved mappings: pages 54–55."
+        },
+        {
+          "type": "Text",
+          "name": "assertion_basis_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/assertion-basis",
+          "label": "Assertion basis",
+          "value": "Newly authored synthetic SensorML transcription of historical source examples; not a native manufacturer API response."
+        },
+        {
+          "type": "Text",
+          "name": "source_time_status_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-time-status",
+          "label": "Source time status",
+          "value": "No verified observation, equipment discovery, or configuration timestamp is supplied."
+        },
+        {
+          "type": "Text",
+          "name": "fixture_note_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/fixture-note",
+          "label": "Fixture note",
+          "value": "Synthetic local HTTP test fixture. No Core2 transducers are attributed to this Core5ADS source. Source values do not establish current condition."
+        }
+      ]
+    },
+    {
+      "id": "reported-condition",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/reported-condition",
+      "label": "Historical reported condition",
+      "characteristics": [
+        {
+          "type": "Quantity",
+          "name": "reported_battery_voltage_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/reported-battery-voltage",
+          "label": "Reported battery voltage",
+          "value": 15.43,
+          "uom": {
+            "code": "V"
+          }
+        },
+        {
+          "type": "Text",
+          "name": "voltage_kind_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/voltage-kind",
+          "label": "Voltage kind",
+          "value": "DC"
+        },
+        {
+          "type": "Text",
+          "name": "unverified_source_clock_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/unverified-source-clock",
+          "label": "Unverified source clock",
+          "value": "12/30/99 05:00:00"
+        },
+        {
+          "type": "Text",
+          "name": "source_mode_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-mode",
+          "label": "Source mode",
+          "value": "Normal"
+        },
+        {
+          "type": "Text",
+          "name": "source_report_interval_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-report-interval",
+          "label": "Source report interval",
+          "value": "00:30"
+        },
+        {
+          "type": "Text",
+          "name": "source_on_time_6",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-on-time",
+          "label": "Source on time",
+          "value": "0 01:00:28"
+        }
+      ]
+    },
+    {
+      "id": "reported-diagnostics",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/reported-diagnostics",
+      "label": "Individual reported diagnostics",
+      "characteristics": [
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "Analog board",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        },
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "CPB",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        },
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "Local comms",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        },
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "Analog voltage",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        },
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "Digital voltage",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        },
+        {
+          "type": "Category",
+          "name": "diagnostic_finding_6",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/diagnostic-finding",
+          "label": "Magnetic voltage",
+          "value": "Pass",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/diagnostic-finding"
+        }
+      ]
+    }
+  ]
+}
