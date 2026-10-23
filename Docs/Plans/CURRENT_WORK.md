@@ -90,6 +90,12 @@ standard CI runs install, type-check, offline tests, and production build.
 
 ## Next concrete action
 
+The user has now requested a Cloudflare deployment directly from GitHub. Build
+configuration is prepared in [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md);
+account authentication is in progress. No project, successful deployment, or
+live URL is claimed yet. Finish that deployment from the implementation branch
+and record the actual deployed commit and verified URL in the deployment note.
+
 Review the runnable increment through PR #1. For the next server-validation step,
 use a supplied existing CSAPI System resource URL in **Use your existing CSAPI
 server**, inspect its standard capture first, and record actual supported and

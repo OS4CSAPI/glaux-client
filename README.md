@@ -130,8 +130,13 @@ records what was reconstructed, what was verified, open limits, and the next ste
 The missing prior local implementation was **not recovered**; this branch is a
 new implementation based on the recovered source evidence.
 
-No deployment, device controls, server writes, infrastructure modifications,
-profile changes, or upstream-library changes are included.
+The user has authorized a Cloudflare Pages deployment from the implementation
+branch. [Deployment settings and current status](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
+are recorded separately; configuration is prepared and authentication is in
+progress. No successful deployment or live URL is claimed yet.
+
+Device controls, server writes, existing-server infrastructure modifications,
+profile changes, and upstream-library changes remain outside this increment.
 
 See the [documentation index](Docs/README.md), [development boundaries](AGENTS.md), and
 [third-party notices](public/THIRD_PARTY_NOTICES.txt).

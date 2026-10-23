@@ -23,8 +23,12 @@
   and an Operational Episode model remain outside this increment.
 - Do not commit research archives, manuals, internal documents, captured operational
   data, credentials, private endpoints, or unrelated workspace material.
-- Do not deploy, alter existing infrastructure, write to servers, or change the
-  profile. No DGIWG or other organizational adoption/endorsement is established.
+- The user has authorized a Cloudflare Pages deployment of this static client
+  directly from its latest GitHub implementation. Record the selected branch,
+  build settings, deployed commit, verified URL, and actual result in the
+  deployment note. This authorization does not extend to existing CSAPI server
+  infrastructure, server writes, device controls, or profile changes. No DGIWG or
+  other organizational adoption/endorsement is established.
 - Install and validate using the [README](README.md); dependency changes must follow
   the deliberate update procedure in [DEPENDENCIES](Docs/DEPENDENCIES.md).
 
