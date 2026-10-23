@@ -1,0 +1,26 @@
+{
+  "name": "glaux-client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Experimental CSAPI sensor-system client foundation.",
+  "type": "module",
+  "engines": {
+    "node": "^24.0.0 || >=26.0.0"
+  },
+  "scripts": {
+    "postinstall": "node scripts/build-ogc-client.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@camptocamp/ogc-client": "file:.dependencies/ogc-client"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
