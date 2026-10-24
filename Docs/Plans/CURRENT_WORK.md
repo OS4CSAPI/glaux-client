@@ -1,5 +1,28 @@
 # Current client work
 
+## Resource Details View template — 24 October 2026
+
+The owner requested a blank template using the framework recovered from the
+earlier Resource Details PBI work. The new `/?page=resource-details-template`
+route retains the **560 × 440 CSS-pixel working frame**, fixed identity and top/
+bottom marking placeholders, adjacent category/subcategory rows, and internally
+scrolling content. The later working-view labels remain provisional. Exact
+source sections, PDF pages, and current implementation choices are in the
+[template design record](../Design/RESOURCE_DETAILS_TEMPLATE.md).
+
+The page starts blank and makes no fixture or remote data requests. Optional
+layout-only samples demonstrate vertical, horizontal, and combined overflow.
+Native resizing and keyboard-accessible size controls include a reset to the
+recovered default. The homepage now lists six pages; the data-example selector
+retains its original five entries. Existing examples and source bytes are intact.
+
+Local verification passed: **74 offline tests**, TypeScript/production build,
+**27 template browser checks**, **44 index checks**, **23 baseline checks**, and
+**44 power checks**, with no script errors. Native scrollbar rendering was enabled
+for visual inspection, including blank, overflowing, resized, and narrow canvases.
+Implementation publication and deployment are the remaining steps; the previous
+production deployment below remains the last verified live runtime until then.
+
 ## Experiment index — 24 October 2026
 
 The user requested a deployed index listing the experiment pages, descriptions,

@@ -1,24 +1,36 @@
 # Deployed experiment page index
 
 The site root `/` lists the experiment pages, their descriptions, the latest
-recorded change to each example, and that change's date and time. Existing
-`/?example=...` links open the same examples as before. Each example has a
-**Page index** link back to the homepage. The example selector also updates the
-address, so copying or refreshing its URL opens the selected example.
+recorded change to each page, and that change's date and time. Existing
+`/?example=...` links open the same examples as before. The separate
+`/?page=resource-details-template` route opens the Resource Details View wireframe
+canvas. Every page has a **Page index** link back to the homepage. The example
+selector also updates the address, so copying or refreshing its URL opens the
+selected example.
 
 ## One catalogue for the index and selector
 
 [`src/experiments.ts`](../../src/experiments.ts) is the maintained page catalogue.
-The index and the existing example selector both consume it. The initial entries
-are TRSS ETU-II, OmniSense Core2, OmniSense Core5ADS, the MPSS technical-description
-contract, and the connected power-arrangement example. Overview, Equipment, and
-Condition remain shared tabs within each example; Standard view remains a mode.
+The index consumes all six entries. The example selector uses the same
+catalogue's five entries with `kind: 'example'`: TRSS ETU-II, OmniSense Core2,
+OmniSense Core5ADS, the MPSS technical-description contract, and the connected
+power-arrangement example. Overview, Equipment, and Condition remain shared tabs
+within each example; Standard view remains a mode.
 
-When adding or changing an example, update its catalogue entry in the same change:
+The sixth entry has `kind: 'template'`. It opens the recovered 560 × 440 Resource
+Details View frame as a blank layout canvas, separate from the source-loading
+flow. A template has no fixture URL and does not appear in the example selector.
+Its route invokes its presentation renderer directly and does not load a source
+record. The two page kinds preserve this distinction in TypeScript as well as in
+the index copy.
+
+When adding or changing a page, update its catalogue entry in the same change:
 
 - Keep the `id` stable so existing page links continue to work.
-- Supply its visible title, selector label, fixture URL, and plain-language
-  description of what the page actually does.
+- Supply its page kind, visible title, and plain-language description of what the
+  page actually does. A data example also needs its selector label and fixture
+  URL. A standalone template needs its supported page ID and renderer route;
+  never provide a dummy fixture URL to make it fit the example type.
 - Record `latestUpdate.summary` and an ISO 8601 `latestUpdate.at` with an explicit
   offset or `Z`. Use the actual relevant implementation-change time.
 - Link `latestUpdate.commit` when the supporting commit already exists. It is
@@ -44,15 +56,20 @@ index's publication time:
 | Power arrangement | [d74b33da](https://github.com/OS4CSAPI/glaux-client/commit/d74b33dabc5fdfcf22574b8efa7f436b4cf32857) excluded rejected relationship endpoints from equipment and clarified the supply direction on mobile. | 24 October 2026, 06:00:19 EDT |
 
 The shared index/navigation addition has its own Git history. It does not imply a
-new profile binding or a new source-data update in each example.
+new profile binding or a new source-data update in each example. The template's
+24 October 2026, 16:24:47 EDT catalogue timestamp records creation of that page;
+the original five example dates and descriptions remain unchanged.
 
 ## Verification and publication
 
 Run the existing offline tests and production build. With the documented browser
 environment, run `npm run test:browser:index`; this verifies the actual homepage,
 metadata, destinations, return links, address updates, unknown-link handling, and
-desktop/mobile layout. The baseline browser script now starts at the explicit
-TRSS URL; the power script retains its existing explicit URL.
+desktop/mobile layout. It checks all six entries, confirms the template opens and
+reloads without source reads, and verifies the example selector retains only its
+five data examples. The baseline browser script starts at the explicit TRSS URL;
+the power script retains its existing explicit URL. The template's own browser
+checks cover its recovered dimensions and scrolling behavior.
 
 Save the implementation to the existing working branch, deploy that exact GitHub
 revision to the existing Pages project, and record its deployment and live check

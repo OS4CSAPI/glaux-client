@@ -44,6 +44,12 @@
 
 ## Documentation convention
 
+- The owner authorized a standalone Resource Details View template using the
+  recovered 560 × 440 working frame. Keep its layout-only placeholders separate
+  from data examples. Follow [the template source record](Docs/Design/RESOURCE_DETAILS_TEMPLATE.md);
+  do not treat provisional tab labels, review resize limits, or current spacing
+  as finalized PBI or Dockview requirements.
+
 - Keep `src/experiments.ts` current when adding or changing an experiment page.
   It supplies the deployed homepage index and the example selector. Record the
   page's description, latest actual change, and timestamp with an explicit

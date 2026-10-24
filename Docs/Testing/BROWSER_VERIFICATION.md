@@ -1,13 +1,33 @@
 # Browser verification
 
+## Resource Details template
+
+Run `npm run test:browser:template` with the browser environment below.
+[`scripts/verify-template-browser.cjs`](../../scripts/verify-template-browser.cjs)
+exercises the recovered 560 × 440 frame and the layout-only review controls.
+The 24 October local run passed **27 checks with zero browser script errors**;
+[recorded results](TEMPLATE_BROWSER_RESULTS.json) retain the actual outcomes.
+
+Checks cover fixed identity/marking/tab geometry during keyboard scrolling,
+vertical-only and horizontal-only overflow, both axes, no blank-canvas gutter,
+tab keyboard interaction and selection memory, input and native drag resizing,
+reset, narrow-screen access, and absence of source requests. The script keeps
+native scrollbar rendering enabled in headless Chromium for visual review.
+Screenshots and results are written to `artifacts/template-browser-qa/`.
+`GLAUX_IGNORE_HTTPS_ERRORS=1` is an explicit optional verification-environment
+setting, off by default and recorded in the results; it is not an app setting.
+
+The existing 23 baseline and 44 power browser checks also passed after this
+increment. These checks do not establish Dockview integration or a completed PBI.
+
 ## Experiment index
 
 [`scripts/verify-index-browser.cjs`](../../scripts/verify-index-browser.cjs) checks
-the site's homepage index and its five current page destinations. With the browser
+the site's homepage index and its six current page destinations. With the browser
 environment below, run `npm run test:browser:index`. It uses the same `GLAUX_*`
 variables and writes results to `artifacts/index-browser-qa/` by default.
 
-The 24 October local run passed **36 checks with zero browser script errors**,
+The 24 October local run passed **44 checks with zero browser script errors**,
 covering descriptions, summaries and recorded dates, Eastern timezone display,
 all page destinations and return links, browser history, selector URL updates,
 unknown-page handling, keyboard operation, and 1280/390 px layouts. The index
@@ -18,7 +38,7 @@ The [current checkpoint](../Plans/CURRENT_WORK.md) and
 [deployment record](../Plans/CLOUDFLARE_DEPLOYMENT.md) distinguish local and live
 verification.
 
-The 36 index checks also passed on <https://glaux-client.pages.dev/> after
+The earlier five-page index's 36 checks passed on <https://glaux-client.pages.dev/> after
 deployment `44f92062-a39a-4f86-9267-a63bd0935f53` of commit `0d977e36`.
 [Recorded live results](INDEX_LIVE_BROWSER_RESULTS.json) include the actual origin,
 source/deployment identity, and the temporary browser TLS setting needed for the

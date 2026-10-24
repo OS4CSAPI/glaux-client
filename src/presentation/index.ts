@@ -1,4 +1,4 @@
-import { experimentHref, experimentPages } from '../experiments';
+import { examplePages, experimentHref, experimentPages } from '../experiments';
 
 const timeZone = 'America/New_York';
 const dateFormat = new Intl.DateTimeFormat('en-US', {
@@ -22,13 +22,13 @@ export function renderExperimentIndex(container: HTMLElement, unknownPage = fals
   header.append(
     element('p', 'eyebrow', 'Glaux Client / Experiment'),
     element('h1', undefined, 'Experiment index'),
-    element('p', 'index-intro', 'The pages we’re building to explore the MERLIN domain model and MPSS profile. Open a page to review its current behavior and source evidence.'),
+    element('p', 'index-intro', 'The pages we’re building for the Resource Details View and to explore the MERLIN domain model and MPSS profile. Open a page to review its current behavior and source evidence.'),
   );
   const context = element('div', 'index-context');
   context.append(
     element('span', 'page-count', `${experimentPages.length} pages`),
-    element('span', undefined, 'Overview · Equipment · Condition'),
-    element('span', undefined, 'Synthetic examples'),
+    element('span', undefined, 'Resource Details wireframe'),
+    element('span', undefined, `${examplePages.length} synthetic examples`),
   );
   header.append(context); body.append(header);
 
@@ -37,7 +37,7 @@ export function renderExperimentIndex(container: HTMLElement, unknownPage = fals
     notice.setAttribute('role', 'status'); body.append(notice);
   }
 
-  const guidance = element('p', 'index-date-note', 'Newest recorded updates first. Dates track changes to each example, not deployment or device data. All times are Eastern Time (America/New_York).');
+  const guidance = element('p', 'index-date-note', 'Newest recorded updates first. Dates track changes to each page, not deployment or device data. All times are Eastern Time (America/New_York).');
   body.append(guidance);
   const list = element('ol', 'experiment-list');
   list.setAttribute('aria-label', 'Experiment pages');
@@ -47,7 +47,7 @@ export function renderExperimentIndex(container: HTMLElement, unknownPage = fals
     const article = element('article', 'experiment-page'); article.dataset.pageId = page.id;
     const overview = element('div', 'experiment-description');
     const title = element('h2'); const link = element('a', 'experiment-link', page.title);
-    link.href = experimentHref(page.id); title.append(link);
+    link.href = experimentHref(page); title.append(link);
     overview.append(title, element('p', undefined, page.description));
     const open = element('a', 'open-experiment', 'Open page →'); open.href = link.href;
     open.setAttribute('aria-label', `Open ${page.title}`); overview.append(open);
@@ -72,7 +72,7 @@ export function renderExperimentIndex(container: HTMLElement, unknownPage = fals
   const docs = element('a', undefined, 'Project documents and source artifacts');
   docs.href = 'https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/ARTIFACT_REGISTER.md';
   const notices = element('a', undefined, 'Third-party notices'); notices.href = '/THIRD_PARTY_NOTICES.txt';
-  footer.append(element('p', undefined, 'Each page offers Operator and Standard views of the same source records.'), docs, notices);
+  footer.append(element('p', undefined, `The ${examplePages.length} synthetic examples offer Operator and Standard views of the same source records. The wireframe page provides a blank layout canvas.`), docs, notices);
   body.append(footer);
   container.classList.remove('details-app'); container.classList.add('experiment-index');
   container.replaceChildren(body);

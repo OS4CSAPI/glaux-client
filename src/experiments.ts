@@ -1,7 +1,9 @@
 import type { ExampleOption } from './domain';
 
-export interface ExperimentPage extends ExampleOption {
+interface ExperimentPageMetadata {
+  id: string;
   title: string;
+  description: string;
   latestUpdate: {
     at: string;
     summary: string;
@@ -9,14 +11,25 @@ export interface ExperimentPage extends ExampleOption {
   };
 }
 
+export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOption {
+  kind: 'example';
+}
+
+export interface TemplateExperimentPage extends ExperimentPageMetadata {
+  kind: 'template';
+  id: 'resource-details-template';
+}
+
+export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
+
 /** Keep page metadata here so the index and example selector stay in agreement.
  * Update the summary and explicit timestamp when a page changes; link a source
  * commit when one is already recorded rather than inventing a future commit ID.
- * a rebuild or deployment alone must not change an example's recorded date.
+ * A rebuild or deployment alone must not change a page's recorded date.
  */
 export const experimentPages: readonly ExperimentPage[] = [
   {
-    id: 'trss', title: 'TRSS ETU-II',
+    kind: 'example', id: 'trss', title: 'TRSS ETU-II',
     label: 'TRSS ETU-II · configuration and estimate',
     url: './fixtures/trss-etu-ii.json',
     description: 'Synthetic source replay: selected detector configuration, supported options, and battery estimator values.',
@@ -27,7 +40,7 @@ export const experimentPages: readonly ExperimentPage[] = [
     },
   },
   {
-    id: 'core2', title: 'OmniSense Core2',
+    kind: 'example', id: 'core2', title: 'OmniSense Core2',
     label: 'OmniSense Core2 · reported equipment',
     url: './fixtures/omnisense-core2.json',
     description: 'Synthetic source replay: five reported transducer labels. No individual physical identities or detection time.',
@@ -38,7 +51,7 @@ export const experimentPages: readonly ExperimentPage[] = [
     },
   },
   {
-    id: 'core5', title: 'OmniSense Core5ADS',
+    kind: 'example', id: 'core5', title: 'OmniSense Core5ADS',
     label: 'OmniSense Core5ADS · reported condition',
     url: './fixtures/omnisense-core5ads.json',
     description: 'A separate synthetic source case: 15.43 V DC, individual diagnostics, and an unverified source clock.',
@@ -49,7 +62,7 @@ export const experimentPages: readonly ExperimentPage[] = [
     },
   },
   {
-    id: 'mpss', title: 'MPSS technical description',
+    kind: 'example', id: 'mpss', title: 'MPSS technical description',
     label: 'MPSS technical description · contract example',
     url: './fixtures/mpss-technical-description.json',
     description: 'Fully synthetic manufacturer/model/revision values exercise the bounded MPSS technical-description binding.',
@@ -60,7 +73,7 @@ export const experimentPages: readonly ExperimentPage[] = [
     },
   },
   {
-    id: 'power', title: 'Power arrangement',
+    kind: 'example', id: 'power', title: 'Power arrangement',
     label: 'Power arrangement · source replacement',
     url: './fixtures/power-arrangement/manifest.json',
     description: 'Original synthetic profile records: inspect which source supplies the station, a recorded replacement, and the subject of a voltage observation.',
@@ -70,6 +83,20 @@ export const experimentPages: readonly ExperimentPage[] = [
       commit: 'd74b33dabc5fdfcf22574b8efa7f436b4cf32857',
     },
   },
+  {
+    kind: 'template', id: 'resource-details-template', title: 'Resource Details View template',
+    description: 'The recovered 560 × 440 Resource Details View frame: fixed identity and marking bands, two-level navigation, and a blank canvas with compact overflow scrolling.',
+    latestUpdate: {
+      at: '2026-10-24T16:24:47-04:00',
+      summary: 'Created the initial Resource Details View template from the recovered PBI working frame, with fixed bands and compact overflow scrolling.',
+    },
+  },
 ];
 
-export const experimentHref = (id: string): string => `/?example=${encodeURIComponent(id)}`;
+/** Only data examples appear in the fixture selector and source-read flow. */
+export const examplePages: readonly ExampleExperimentPage[] = experimentPages.filter(
+  (page): page is ExampleExperimentPage => page.kind === 'example',
+);
+
+export const experimentHref = (page: ExperimentPage): string =>
+  `/?${page.kind === 'example' ? 'example' : 'page'}=${encodeURIComponent(page.id)}`;

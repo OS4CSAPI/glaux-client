@@ -30,6 +30,7 @@ For the current Details View increment, start with:
 | Broader DIM/MPSS continuity and sequencing | [Current MERLIN continuity](Plans/CONTINUITY.md) |
 | How the document collection is maintained | [Artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) |
 | Deployed page index and ongoing page metadata | [Page-index maintenance](Design/PAGE_INDEX.md) |
+| Recovered Resource Details frame and blank review canvas | [Resource Details template](Design/RESOURCE_DETAILS_TEMPLATE.md) |
 | Purpose, setup, scope, and implementation status | [Root README](../README.md) |
 | Development boundaries and documentation convention | [AGENTS.md](../AGENTS.md) |
 | Pinned library provenance, build method, and deliberate updates | [DEPENDENCIES.md](DEPENDENCIES.md) |

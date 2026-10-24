@@ -68,12 +68,26 @@ See [dependency provenance and build details](Docs/DEPENDENCIES.md).
 
 ## Current implementation
 
-The homepage is an **Experiment index** linking all five example pages. Each entry
+The homepage is an **Experiment index** linking the Resource Details template and
+five example pages. Each entry
 shows a description, its latest recorded change, and a date/time in Eastern Time.
 The dates are recorded implementation changes, not rebuild or deployment times.
 Every example links back to the index, and selecting another example updates its
 shareable URL. Keep [the page catalogue](src/experiments.ts) current using the
 [index maintenance guide](Docs/Design/PAGE_INDEX.md).
+
+### Resource Details template
+
+Open `/?page=resource-details-template` for a blank review canvas using the earlier
+PBI work's **560 × 440 CSS-pixel working frame**. It retains identity and marking
+placeholders, adjacent category/subcategory rows, and an internally scrolling
+content area. Size controls and optional overflow samples support layout review.
+The page is a standalone template; its bodies contain no resource data or device
+operations. The [template design note](Docs/Design/RESOURCE_DETAILS_TEMPLATE.md)
+distinguishes the recovered source specifications from current implementation
+choices and the final PBI decisions still open.
+
+### Source examples
 
 The client provides a compact System card with **Operational → Overview,
 Equipment, Condition**, plus Operator and Standard views over the same captured records.
@@ -171,13 +185,11 @@ records what was reconstructed, what was verified, open limits, and the next ste
 The missing prior local implementation was **not recovered**; this branch is a
 new implementation based on the recovered source evidence.
 
-The power-arrangement implementation is deployed at
-<https://glaux-client.pages.dev/?example=power> from commit
-`d74b33dabc5fdfcf22574b8efa7f436b4cf32857`. The live power suite passed all 44
-browser checks with no script errors. [Deployment details](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
-record the Cloudflare Pages deployment, immutable URL, build result, and Direct
-Upload method. A GitHub push does not update this project; later revisions require
-another explicit upload.
+The public experiment is hosted at <https://glaux-client.pages.dev/>.
+[Deployment details](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md) record the runtime commit
+actually uploaded, Cloudflare deployment, immutable URL, and live checks for each
+increment. The project uses Direct Upload: a GitHub push does not update it;
+later runtime revisions require another explicit upload.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.

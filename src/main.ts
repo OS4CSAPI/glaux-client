@@ -3,11 +3,12 @@ import { loadStandardResource, ResourceReadError } from './data/client';
 import { extractStandardModel } from './data/standard';
 import { loadPowerExample, type PowerExampleBundle } from './data/power-example';
 import type { DetailsActions, DetailsState } from './domain';
-import { experimentPages } from './experiments';
+import { examplePages, experimentPages } from './experiments';
 import { interpretDetails } from './profile/interpret';
 import { derivePowerModel, type PowerModel } from './profile/power';
 import { renderDetails } from './presentation/details';
 import { renderExperimentIndex } from './presentation/index';
+import { renderResourceDetailsTemplate } from './presentation/resource-details-template';
 import './presentation/style.css';
 
 const app = document.querySelector<HTMLElement>('#app');
@@ -15,7 +16,7 @@ if (!app) {
   throw new Error('The application mount point #app is missing.');
 }
 
-const examples = experimentPages;
+const examples = examplePages;
 
 const state: DetailsState = {
   loading: false, error: null, model: null, examples, selectedExampleId: examples[0].id,
@@ -101,6 +102,7 @@ const actions: DetailsActions = {
     const example = examples.find(item => item.id === id);
     if (!example) return;
     const pageUrl = new URL(location.href);
+    pageUrl.searchParams.delete('page');
     pageUrl.searchParams.set('example', id);
     history.replaceState(null, '', pageUrl);
     document.title = `${example.title} | Glaux Client`;
@@ -145,10 +147,16 @@ const actions: DetailsActions = {
   },
 };
 
-const requestedExample = new URLSearchParams(location.search).get('example');
+const parameters = new URLSearchParams(location.search);
+const requestedPage = parameters.get('page');
+const requestedExample = parameters.get('example');
+const selectedTemplate = experimentPages.find(page => page.kind === 'template' && page.id === requestedPage);
 const selectedExample = examples.find(example => example.id === requestedExample);
-if (selectedExample) actions.selectExample(selectedExample.id);
+if (selectedTemplate) {
+  document.title = `${selectedTemplate.title} | Glaux Client`;
+  renderResourceDetailsTemplate(mount);
+} else if (requestedPage === null && selectedExample) actions.selectExample(selectedExample.id);
 else {
   document.title = 'Experiment index | Glaux Client';
-  renderExperimentIndex(mount, requestedExample !== null);
+  renderExperimentIndex(mount, requestedPage !== null || requestedExample !== null);
 }
