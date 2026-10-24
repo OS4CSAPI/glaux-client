@@ -3,7 +3,7 @@
 ## Experiment index — 24 October 2026
 
 The user requested a deployed index listing the experiment pages, descriptions,
-latest updates, and update dates/times. The implementation now includes a homepage
+latest updates, and update dates/times. The deployed implementation includes a homepage
 index for the five existing examples, links back from every example, and URL
 synchronization when selecting an example. One typed catalogue supplies both the
 index and selector; [the maintenance guide](../Design/PAGE_INDEX.md) records the
@@ -11,9 +11,19 @@ update procedure and the Git evidence for the initial dates.
 
 Local verification passed: 74 offline tests, TypeScript/production build, 36 index
 browser checks, 23 existing example checks, and 44 power checks. No browser script
-errors occurred. The implementation is ready for publication and deployment;
-the last verified production runtime is recorded below until the new upload and
-live checks complete.
+errors occurred. The 36 index checks passed again against the production origin.
+The current deployed runtime is
+[`0d977e36`](https://github.com/OS4CSAPI/glaux-client/commit/0d977e366e55363dd997c0f519c7cca2bc814530),
+with [passing GitHub checks](https://github.com/OS4CSAPI/glaux-client/actions/runs/40113200519).
+Cloudflare Pages deployment `44f92062-a39a-4f86-9267-a63bd0935f53` completed at
+**12:52:53 p.m. EDT on 24 October 2026**. The index is live at
+<https://glaux-client.pages.dev/>; the immutable deployment is
+<https://44f92062.glaux-client.pages.dev/>.
+
+The [deployment record](CLOUDFLARE_DEPLOYMENT.md) preserves the actual upload
+method, runtime identity, and live verification. Keep the catalogue current as
+pages are added or their behavior changes. The records below preserve the earlier
+power implementation and deployment checkpoint; they do not supersede this one.
 
 ## Previous implementation and deployment checkpoint
 

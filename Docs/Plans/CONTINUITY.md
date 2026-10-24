@@ -85,15 +85,25 @@ measured comparative operator benefit.
 
 | Deployment fact | Recorded value |
 | --- | --- |
-| Verified runtime commit | `d74b33dabc5fdfcf22574b8efa7f436b4cf32857` |
-| Cloudflare Pages deployment | `770d234a-3cb5-415a-aa96-b8fea45180c4` |
+| Verified runtime commit | `0d977e366e55363dd997c0f519c7cca2bc814530` |
+| Cloudflare Pages deployment | `44f92062-a39a-4f86-9267-a63bd0935f53` |
+| Experiment index | <https://glaux-client.pages.dev/> |
 | Verified example | <https://glaux-client.pages.dev/?example=power> |
 | Project deployment method | Direct Upload; a Git push does not upload the runtime. |
 
-Repository documentation can advance beyond the deployed runtime commit. This
-artifact publication leaves that runtime unchanged. Preserve the separate
-repository and deployment identities; a later implementation change uses the
-existing build, upload, and live-verification workflow.
+After artifact publication, the owner requested a deployed page index. That
+increment is now complete: the homepage lists the five existing examples, their
+descriptions, recorded updates and Eastern timestamps; each example links back
+to it. The example selector and index share one maintained catalogue. Its 36
+browser checks passed locally and on production; the existing 23 baseline and
+44 power checks passed locally. [Page-index maintenance](../Design/PAGE_INDEX.md)
+records how later iterations update the catalogue and preserves the Git evidence
+behind the initial dates. The latest runtime and deployment are in the table.
+
+Repository documentation can advance beyond the deployed runtime commit. The
+artifact import itself was documentation-only; the subsequent index was a
+separately built and verified runtime update. Preserve the separate repository
+and deployment identities for each continuation.
 
 ## Publication decision and immediate work
 

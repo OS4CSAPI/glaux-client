@@ -1,17 +1,18 @@
 # Codex in VS Code: deployment procedure
 
-**Status, 24 October 2026: the power-arrangement deployment below is complete.**
-The verified runtime is `d74b33dabc5fdfcf22574b8efa7f436b4cf32857`; see
+**Status, 24 October 2026: the power and subsequent page-index deployments are complete.**
+The latest verified runtime is `0d977e366e55363dd997c0f519c7cca2bc814530`; see
 [the deployment record](CLOUDFLARE_DEPLOYMENT.md). This document retains the
 repeatable procedure for a subsequent implementation revision. Read
 [CURRENT_WORK](CURRENT_WORK.md) and [MERLIN continuity](CONTINUITY.md) first;
 an artifact-only publication is not a request to rerun the completed upload.
 
-## Task
+## Procedure for a later implementation revision
 
-Deploy the completed power-arrangement increment from the current head of
+For a later authorized runtime update, build and deploy the checked current head of
 `OS4CSAPI/glaux-client`, branch `work/details-view-20261023`, to the existing
-Cloudflare Pages project **glaux-client**. The user has authorized the deployment.
+Cloudflare Pages project **glaux-client**. The index is already live; these
+instructions do not request another upload.
 Use the local Wrangler session that performed the earlier upload if still valid.
 No new research, UI redesign, profile changes, upstream-library changes, device
 commands or writes to CSAPI servers are required.

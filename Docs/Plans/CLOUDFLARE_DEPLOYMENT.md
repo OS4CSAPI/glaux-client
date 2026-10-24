@@ -1,5 +1,49 @@
 # Cloudflare deployment continuation
 
+## Experiment-index deployment result
+
+**Completed 24 October 2026 at 12:52:53 p.m. EDT.** The homepage now lists the five
+experiment pages with descriptions, latest recorded change summaries, and dates
+and times in America/New_York. Each example has a link back to the index. Existing
+direct example URLs remain valid, and the selector keeps its URL in sync.
+
+| Result | Actual value |
+| --- | --- |
+| Project | `glaux-client` |
+| Method | Pages Direct Upload through the authenticated Cloudflare connector and documented scoped-JWT asset API |
+| Production branch | `work/details-view-20261023` |
+| Deployed Git commit | `0d977e366e55363dd997c0f519c7cca2bc814530` |
+| Deployment ID | `44f92062-a39a-4f86-9267-a63bd0935f53` |
+| Production index | <https://glaux-client.pages.dev/> |
+| Immutable deployment | <https://44f92062.glaux-client.pages.dev/> |
+| Completed UTC | `2026-10-24T16:52:53.123781Z` |
+| Asset manifest | 16 files, 185,000 bytes; 3 changed assets uploaded, all hashes confirmed present |
+| Build and checks | 74 offline tests, TypeScript and Vite build, and [GitHub CI](https://github.com/OS4CSAPI/glaux-client/actions/runs/40113200519) passed |
+| Local browser checks | 36 index, 23 baseline, and 44 power checks passed |
+| Live index checks | 36 passed; zero browser script errors |
+
+The source was saved to GitHub, fetched, checked against the clean local source,
+and rebuilt before upload. The connector obtained the existing project's scoped
+upload JWT. The asset flow used `check-missing`, `upload`, and `upsert-hashes`, with
+the BLAKE3 file-key algorithm from Wrangler 4.152.0, then created the production
+deployment with its manifest and exact commit metadata. The canonical project
+deployment was confirmed to be the new deployment above. Credentials were not
+stored in the repository.
+
+The installed Wrangler 4.152.0 hidden asset-upload command still required general
+CLI authentication in this environment despite receiving `CF_PAGES_UPLOAD_JWT`.
+Do not assume that command works without local authentication. An authenticated
+Wrangler session or the documented scoped-JWT asset API remains the supported
+transfer path; the connector can finalize the multipart deployment.
+
+[Live browser results](../Testing/INDEX_LIVE_BROWSER_RESULTS.json) retain the
+actual checks. Chromium required a temporary `ignoreHTTPSErrors` context because
+the managed execution proxy's certificate was not trusted by that browser. This
+is a verification-environment setting, not an application/deployment setting; the
+run verifies UI behavior and does not establish the public TLS certificate chain.
+The 1280 px and 390 px screenshots were inspected. The original source fixtures,
+technical profile, and pinned library remain unchanged.
+
 ## Power-arrangement deployment result
 
 **Completed 24 October 2026.** The latest checked GitHub revision was rebuilt with
@@ -64,10 +108,10 @@ external CSAPI server integration.
 | --- | --- |
 | Repository | [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client) |
 | Source branch | [work/details-view-20261023](https://github.com/OS4CSAPI/glaux-client/tree/work/details-view-20261023) |
-| Implementation commit deployed | [d74b33dabc5fdfcf22574b8efa7f436b4cf32857](https://github.com/OS4CSAPI/glaux-client/commit/d74b33dabc5fdfcf22574b8efa7f436b4cf32857) |
+| Implementation commit deployed | [0d977e366e55363dd997c0f519c7cca2bc814530](https://github.com/OS4CSAPI/glaux-client/commit/0d977e366e55363dd997c0f519c7cca2bc814530) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
-The current Direct Upload contains the checked power-arrangement revision above.
+The current Direct Upload contains the index and all five existing examples.
 
 ## Historical Git-integration plan — not applied
 
@@ -112,7 +156,7 @@ Checked 23 October 2026:
 
 ## Continuation
 
-The power-arrangement deployment is complete and verified. If automatic deployments
+The experiment-index deployment is complete and verified. If automatic deployments
 are later required, create a separate Git-integrated Pages project connected to the
 same repository and branch using the prepared settings above; do not describe this
 Direct Upload project as Git connected.
