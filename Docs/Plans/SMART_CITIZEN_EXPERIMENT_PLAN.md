@@ -167,9 +167,24 @@ that the supplier API reported them.
 ## 4. Add read-only live access, then consider controlled changes
 
 Prefer the documented [Smart Citizen API](https://developer.smartcitizen.me/)
-for a first live read path, with the supported microSD/CSV route as an offline
-comparison. Choose polling, caching, rate-limit handling and browser access
-after checking the actual endpoint behavior. Introduce a backend only for an
+as the upstream acquisition interface, with the supported microSD/CSV route as
+an offline comparison. The intended end-to-end test is **Smart Citizen source →
+our documented adapter → an OGC CSAPI service carrying the selected SensorML/SWE
+and MPSS representations → Glaux's standards-aware reader → Resource Details**.
+Reuse an appropriate existing test service when its current capabilities and
+access have been verified; identify the exact service/version in the experiment
+record. A direct native-JSON viewer is useful evidence inspection but does not
+by itself test this OGC integration path.
+
+The earlier fixed-fixture increment tests the mapping and presentation portions
+of that chain. This live increment must also demonstrate that the standardized
+metadata, observations and provenance survive service publication and retrieval.
+Compare one identifiable source sample through every stage and record which
+profile bindings were actually exercised. This remains a bounded interoperability
+test, not certification of the full profile.
+
+Choose polling, caching, rate-limit handling and browser access after checking
+the actual endpoint behavior. Introduce additional infrastructure only for an
 identified need; keep account credentials and device tokens out of public files
 and client code.
 
