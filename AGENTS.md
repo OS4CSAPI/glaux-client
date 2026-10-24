@@ -13,15 +13,26 @@
 - Generic mode must retain competent standard-property and relationship handling;
   never deliberately weaken it to make profile-aware interpretation look better.
 - Record specific profile gaps rather than silently revising the MERLIN/MPSS profile.
-- The future starting UI scope is the existing Overview, Equipment, and Condition
-  wireframes. Do not infer wireframes or profile requirements from the bootstrap
-  brief when their actual source materials are unavailable.
-- Do not implement vendor adapters, profile resolution, controls, OSCAR workflows,
-  or an Operational Episode model during this bootstrap.
+- The current increment implements the existing Overview, Equipment, and Condition
+  wireframes using the MPSS v0.3.5 source materials. Read the actual sources and
+  the bounded view mapping; do not infer requirements from this brief.
+- The user subsequently authorized a bounded power-arrangement demonstration using
+  the existing MPSS v0.3.5 source A/B replacement example. Apply its accepted R16
+  relationships and supplied observation/history context; do not extend the
+  proposed battery/interface model. Read `Docs/Design/POWER_ARRANGEMENT.md`.
+- Bounded profile interpretation and explicitly synthetic, source-grounded local
+  fixtures are authorized for this increment. Keep standard access competent and
+  expose unsupported or ambiguous mappings without inventing profile rules.
+- Vendor adapters, device controls, generalized ontology engines, OSCAR workflows,
+  and an Operational Episode model remain outside this increment.
 - Do not commit research archives, manuals, internal documents, captured operational
   data, credentials, private endpoints, or unrelated workspace material.
-- Do not deploy, alter existing infrastructure, write to servers, or change the
-  profile. No DGIWG or other organizational adoption/endorsement is established.
+- The user has authorized a Cloudflare Pages deployment of this static client
+  directly from its latest GitHub implementation. Record the selected branch,
+  build settings, deployed commit, verified URL, and actual result in the
+  deployment note. This authorization does not extend to existing CSAPI server
+  infrastructure, server writes, device controls, or profile changes. No DGIWG or
+  other organizational adoption/endorsement is established.
 - Install and validate using the [README](README.md); dependency changes must follow
   the deliberate update procedure in [DEPENDENCIES](Docs/DEPENDENCIES.md).
 
@@ -38,3 +49,7 @@
   research archives, manufacturer manuals, or private workspace material.
 - Keep executable tests and fixtures in code directories; link to them from
   documentation rather than maintaining competing copies.
+- Keep `Docs/Plans/CURRENT_WORK.md` current with the last verified implementation
+  checkpoint, completed checks, limitations, and the next concrete action. Save
+  source changes on the working branch at meaningful increments; an in-chat
+  progress report is not a source-code checkpoint.

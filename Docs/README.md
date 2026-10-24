@@ -8,20 +8,29 @@ reference does not imply adoption or endorsement.
 
 ## Current authoritative material
 
-For the current bootstrap, start with:
+For the current Details View increment, start with:
 
 | Material | Current source |
 | --- | --- |
-| Purpose, setup, scope, and bootstrap status | [Root README](../README.md) |
+| Purpose, setup, scope, and implementation status | [Root README](../README.md) |
 | Development boundaries and documentation convention | [AGENTS.md](../AGENTS.md) |
 | Pinned library provenance, build method, and deliberate updates | [DEPENDENCIES.md](DEPENDENCIES.md) |
-| Executable offline smoke tests | [CSAPI smoke tests](../tests/csapi.smoke.test.ts) |
+| Current implementation checkpoint and actual checks | [Current work](Plans/CURRENT_WORK.md) |
+| Cloudflare deployment settings and actual status | [Cloudflare deployment](Plans/CLOUDFLARE_DEPLOYMENT.md) |
+| Continue the deployment in local Codex / VS Code | [Codex VS Code handoff](Plans/CODEX_VSCODE_HANDOFF.md) |
+| Exact source versions, locators, and evidence limits | [Source index](Research/SOURCE_INDEX.md) |
+| Bounded bindings, experimental mappings, and unresolved profile gaps | [Details View mapping](Design/DETAILS_VIEW_MAPPING.md) |
+| Existing power model, exact records and implemented behavior | [Power arrangement mapping](Design/POWER_ARRANGEMENT.md) |
+| Acceptance criteria | [Details View acceptance](Testing/DETAILS_VIEW_ACCEPTANCE.md) |
+| Reproducible browser checks and recorded results | [Browser verification](Testing/BROWSER_VERIFICATION.md), [check list](Testing/BROWSER_RESULTS.json) |
+| Executable checks | [CSAPI smoke tests](../tests/csapi.smoke.test.ts), [retrieval tests](../tests/data.client.test.ts), [generic extraction tests](../tests/data.standard.test.ts), [interpretation tests](../tests/profile.interpret.test.ts) |
 | Automated local-check definition | [CI workflow](../.github/workflows/ci.yml) |
 | Bootstrap verification evidence | [Successful bootstrap CI run](https://github.com/OS4CSAPI/glaux-client/actions/runs/39970543341) |
 
-Bootstrap only: no completed TRSS/OmniSense integration, demonstrated profile
-benefit, or implemented operator view is established. The folder introductions
-below identify destinations, not additional policies, approvals, or completed work.
+The current increment reconstructs the first three operator tabs with synthetic
+source examples and competent standard inspection. Live device integration, whole-profile
+conformance, and a measured profile benefit are not established. The folder
+introductions below identify destinations, not additional policies or approvals.
 
 ## Documentation destinations
 

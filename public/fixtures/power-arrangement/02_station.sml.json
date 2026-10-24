@@ -1,0 +1,345 @@
+{
+  "type": "PhysicalSystem",
+  "id": "station-01",
+  "uniqueId": "urn:uuid:7ce32c75-1d5c-5490-8224-1c1d7a0ece6e",
+  "definition": "http://www.w3.org/ns/sosa/Sensor",
+  "label": "Demonstration field station 01",
+  "description": "Entirely synthetic design example; not a TRSS, OmniSense, or live device record. An optional authored provenance group additionally illustrates an entirely hypothetical SAPIENT v2 message sender and synthetic adapter; neither is this physical System, nor does this assert implemented SAPIENT interoperability.",
+  "typeOf": {
+    "href": "https://demo.example/csapi/procedures/station-model-1",
+    "uid": "urn:uuid:320175df-0bf3-5db0-8cbe-071e72874af3",
+    "title": "Synthetic station model",
+    "type": "application/sml+json"
+  },
+  "attachedTo": {
+    "href": "https://demo.example/csapi/systems/mast-01",
+    "uid": "urn:uuid:9a1d763b-cfce-5c25-811b-aca407c5a9e9",
+    "title": "Supporting mast",
+    "type": "application/sml+json"
+  },
+  "capabilities": [
+    {
+      "id": "fn-environment",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/sensing-function",
+      "label": "Environmental measurement",
+      "capabilities": [
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/function-kind",
+          "label": "Function kind",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/function-kind",
+          "value": "environmental-measurement"
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "type": "Quantity",
+      "definition": "https://schemas.example/merlin/mpss/0.3/term/sample-interval",
+      "label": "Sampling interval",
+      "uom": {
+        "code": "s"
+      },
+      "name": "sampleInterval",
+      "constraint": {
+        "intervals": [
+          [
+            10,
+            3600
+          ]
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "Quantity",
+      "definition": "https://schemas.example/merlin/mpss/0.3/term/air-temperature",
+      "label": "Air temperature",
+      "uom": {
+        "code": "Cel"
+      },
+      "name": "airTemperature"
+    },
+    {
+      "type": "DataRecord",
+      "name": "uplinkStatus",
+      "label": "Uplink condition",
+      "fields": [
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/interface-oper-status",
+          "label": "Interface state",
+          "name": "state",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/interface-oper-status"
+        }
+      ]
+    },
+    {
+      "type": "Quantity",
+      "definition": "https://schemas.example/merlin/mpss/0.3/term/supply-terminal-voltage",
+      "label": "External supply terminal voltage",
+      "uom": {
+        "code": "V"
+      },
+      "name": "supplyVoltage"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "DataRecord",
+      "name": "setSampleInterval",
+      "definition": "https://schemas.example/merlin/mpss/0.3/action/set-sample-interval",
+      "label": "Set sampling interval",
+      "fields": [
+        {
+          "type": "Quantity",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/sample-interval",
+          "label": "Sample interval",
+          "uom": {
+            "code": "s"
+          },
+          "name": "seconds",
+          "constraint": {
+            "intervals": [
+              [
+                10,
+                3600
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "configuration": {
+    "setValues": [
+      {
+        "ref": "parameters/sampleInterval",
+        "value": 60
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "PhysicalComponent",
+      "name": "environmentProbe",
+      "id": "probe-01",
+      "uniqueId": "urn:uuid:6bd79bed-1d24-558e-a73f-18c4553dc52d",
+      "label": "Demonstration probe",
+      "definition": "http://www.w3.org/ns/sosa/Sensor",
+      "description": "Synthetic permanently integrated environmental sensing module."
+    }
+  ],
+  "characteristics": [
+    {
+      "id": "technical",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/technical-description",
+      "label": "Equipment technical information",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/hardware-revision",
+          "label": "Hardware revision",
+          "value": "A"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/firmware-revision",
+          "label": "Firmware revision",
+          "value": "1.0-demo"
+        }
+      ]
+    },
+    {
+      "id": "probe-role",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/equipment-role",
+      "label": "Probe function",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/component-ref",
+          "label": "Component ref",
+          "value": "https://demo.example/csapi/systems/station-01#probe-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/function-ref",
+          "label": "Function ref",
+          "value": "https://demo.example/csapi/systems/station-01#fn-environment"
+        }
+      ]
+    },
+    {
+      "id": "environment-binding",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/function-binding",
+      "label": "Environmental products and setup",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/function-ref",
+          "label": "Function ref",
+          "value": "https://demo.example/csapi/systems/station-01#fn-environment"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/output-path",
+          "label": "Output path",
+          "value": "outputs/airTemperature"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/parameter-path",
+          "label": "Parameter path",
+          "value": "parameters/sampleInterval"
+        }
+      ]
+    },
+    {
+      "id": "sample-action",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/action-binding",
+      "label": "Change sample interval",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/function-ref",
+          "label": "Function ref",
+          "value": "https://demo.example/csapi/systems/station-01#fn-environment"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/input-path",
+          "label": "Input path",
+          "value": "inputs/setSampleInterval"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/parameter-path",
+          "label": "Parameter path",
+          "value": "parameters/sampleInterval"
+        }
+      ]
+    },
+    {
+      "id": "if-uplink",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/communications-interface",
+      "label": "Uplink interface",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/interface-name",
+          "label": "Interface name",
+          "value": "uplink"
+        },
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/interface-type",
+          "label": "Interface type",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/interface-type",
+          "value": "ethernetCsmacd"
+        }
+      ]
+    },
+    {
+      "id": "native-sender-provenance",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/representation-source",
+      "label": "Hypothetical source-message mediation provenance",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/native-source-id",
+          "label": "Illustrative native message sender identifier",
+          "value": "synthetic-sapient-sender-01"
+        },
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/native-entity-role",
+          "label": "Source identifier role",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/native-entity-role",
+          "value": "message-sender"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/source-specification",
+          "label": "Source information specification",
+          "value": "BSI Flex 335 v2.0:2024-03"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/representing-adapter-ref",
+          "label": "Synthetic translation adapter identity",
+          "value": "urn:uuid:33272cc7-5a69-5e88-8efe-65ac433e220f"
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "role": "https://schemas.example/merlin/mpss/0.3/role/operator",
+      "organisationName": "Demonstration Operations Team"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://demo.example/csapi/systems/station-01",
+      "type": "application/sml+json"
+    },
+    {
+      "rel": "profile",
+      "href": "https://schemas.example/merlin/mpss/0.3/profile/system-description"
+    },
+    {
+      "rel": "ogc-rel:datastreams",
+      "href": "https://demo.example/csapi/systems/station-01/datastreams",
+      "type": "application/json"
+    },
+    {
+      "rel": "ogc-rel:controlstreams",
+      "href": "https://demo.example/csapi/systems/station-01/controlstreams",
+      "type": "application/json"
+    },
+    {
+      "rel": "ogc-rel:deployments",
+      "href": "https://demo.example/csapi/systems/station-01/deployments",
+      "type": "application/sml+json"
+    }
+  ],
+  "history": [
+    {
+      "id": "event-interval",
+      "definition": "https://schemas.example/merlin/mpss/0.3/event/reconfiguration",
+      "label": "Demonstration sampling change",
+      "time": "2026-09-01T09:00:00Z",
+      "contacts": [
+        {
+          "role": "https://schemas.example/merlin/mpss/0.3/role/maintainer",
+          "organisationName": "Demonstration Service Team"
+        }
+      ],
+      "properties": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/affected-subject-ref",
+          "label": "Affected subject ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-ref",
+          "label": "Deployment ref",
+          "value": "https://demo.example/csapi/deployments/site-01"
+        }
+      ],
+      "configuration": {
+        "setValues": [
+          {
+            "ref": "parameters/sampleInterval",
+            "value": 120
+          }
+        ]
+      }
+    }
+  ]
+}

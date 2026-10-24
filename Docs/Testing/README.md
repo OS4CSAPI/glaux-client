@@ -16,4 +16,9 @@ Keep executable tests and fixtures in their appropriate code directories.
 Link to those sources and dated, revision-specific evidence rather than copying
 them into documentation or presenting planned checks as completed results.
 
+The [browser verification record](BROWSER_VERIFICATION.md) contains the original
+23-check regression and the 44-check power-arrangement run, with actual results,
+selected screenshots, and reproducible commands. The current offline test/build
+status and live-deployment boundary are in [CURRENT_WORK](../Plans/CURRENT_WORK.md).
+
 Return to the [documentation index](../README.md).

@@ -1,0 +1,283 @@
+{
+  "type": "PhysicalSystem",
+  "id": "trss-etu-ii-synthetic",
+  "uniqueId": "urn:example:glaux-client:trss-etu-ii-synthetic",
+  "label": "TRSS ETU-II",
+  "description": "Synthetic historical source replay for configured detector selections and a battery estimator. No live device state.",
+  "characteristics": [
+    {
+      "id": "source-context",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/source-context",
+      "label": "Historical example provenance",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "source_document_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-document",
+          "label": "Source document",
+          "value": "MERLIN System Details Working Views, 10 October 2026"
+        },
+        {
+          "type": "Text",
+          "name": "source_locator_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-locator",
+          "label": "Source locator",
+          "value": "Condition: page 22. Overview: pages 35–40. Sensor-string distinction: pages 50–51. Equipment: page 52; unresolved mappings: pages 54–55."
+        },
+        {
+          "type": "Text",
+          "name": "assertion_basis_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/assertion-basis",
+          "label": "Assertion basis",
+          "value": "Newly authored synthetic SensorML transcription of historical source examples; not a native manufacturer API response."
+        },
+        {
+          "type": "Text",
+          "name": "source_time_status_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/source-time-status",
+          "label": "Source time status",
+          "value": "No verified observation, equipment discovery, or configuration timestamp is supplied."
+        },
+        {
+          "type": "Text",
+          "name": "fixture_note_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/fixture-note",
+          "label": "Fixture note",
+          "value": "Synthetic local HTTP test fixture. Selections are configuration values, not physical component identities. Battery data are estimator values."
+        }
+      ]
+    },
+    {
+      "id": "operational-context",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/operational-context",
+      "label": "Literal operational labels",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "sensor_string_label_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/sensor-string-label",
+          "label": "Sensor string",
+          "value": "MM101"
+        }
+      ]
+    },
+    {
+      "id": "configured-detector-1",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/configured-detectors",
+      "label": "Detector 1 configuration",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "detector_position_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/detector-position",
+          "label": "Detector position",
+          "value": "Detector 1"
+        },
+        {
+          "type": "Category",
+          "name": "selected_detector_type_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/selected-detector-type",
+          "label": "Selected detector type",
+          "value": "SEISMIC/ACOUSTIC",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/selected-detector-type"
+        }
+      ]
+    },
+    {
+      "id": "configured-detector-2",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/configured-detectors",
+      "label": "Detector 2 configuration",
+      "characteristics": [
+        {
+          "type": "Text",
+          "name": "detector_position_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/detector-position",
+          "label": "Detector position",
+          "value": "Detector 2"
+        },
+        {
+          "type": "Category",
+          "name": "selected_detector_type_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/selected-detector-type",
+          "label": "Selected detector type",
+          "value": "IRID-II",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/selected-detector-type"
+        },
+        {
+          "type": "Quantity",
+          "name": "detector_orientation_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/detector-orientation",
+          "label": "Detector orientation",
+          "value": 0,
+          "uom": {
+            "code": "deg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "battery-estimate",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/battery-estimate",
+      "label": "Battery estimator source values",
+      "characteristics": [
+        {
+          "type": "Quantity",
+          "name": "estimated_capacity_remaining_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimated-capacity-remaining",
+          "label": "Estimated capacity remaining",
+          "value": 100.0,
+          "uom": {
+            "code": "%"
+          }
+        },
+        {
+          "type": "Text",
+          "name": "estimate_status_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimate-status",
+          "label": "Estimate status",
+          "value": "Collecting data for battery lifespan calculation"
+        },
+        {
+          "type": "Count",
+          "name": "estimator_internal_battery_count_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimator-internal-battery-count",
+          "label": "Estimator internal battery count",
+          "value": 4
+        },
+        {
+          "type": "Quantity",
+          "name": "estimator_battery_nominal_voltage_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimator-battery-nominal-voltage",
+          "label": "Estimator battery nominal voltage",
+          "value": 9,
+          "uom": {
+            "code": "V"
+          }
+        },
+        {
+          "type": "Count",
+          "name": "estimator_external_battery_count_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimator-external-battery-count",
+          "label": "Estimator external battery count",
+          "value": 0
+        },
+        {
+          "type": "Quantity",
+          "name": "estimator_temperature_input_6",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/estimator-temperature-input",
+          "label": "Estimator temperature input",
+          "value": 25,
+          "uom": {
+            "code": "Cel"
+          }
+        },
+        {
+          "type": "Count",
+          "name": "reported_message_count_7",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/reported-message-count",
+          "label": "Reported message count",
+          "value": 0
+        },
+        {
+          "type": "Text",
+          "name": "reported_time_on_8",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/reported-time-on",
+          "label": "Reported time on",
+          "value": "0 days 0 hours"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "detector-1-options",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/detector-options",
+      "label": "Detector 1 supported options",
+      "capabilities": [
+        {
+          "type": "Text",
+          "name": "detector_position_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/detector-position",
+          "label": "Detector position",
+          "value": "Detector 1"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "MAGID",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "IRID-II",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "SEISMIC/ACOUSTIC",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Text",
+          "name": "orientation_constraint_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/orientation-constraint",
+          "label": "Orientation constraint",
+          "value": "Source editor range 0–360 degrees; orientation is unavailable for SEISMIC/ACOUSTIC."
+        }
+      ]
+    },
+    {
+      "id": "detector-2-options",
+      "definition": "https://example.invalid/glaux-client/experiment/v1/group/detector-options",
+      "label": "Detector 2 supported options",
+      "capabilities": [
+        {
+          "type": "Text",
+          "name": "detector_position_1",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/detector-position",
+          "label": "Detector position",
+          "value": "Detector 2"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_2",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "MAGID",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_3",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "IRID-II",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Category",
+          "name": "supported_detector_type_4",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/supported-detector-type",
+          "label": "Supported detector type",
+          "value": "NONE",
+          "codeSpace": "https://example.invalid/glaux-client/experiment/v1/codes/supported-detector-type"
+        },
+        {
+          "type": "Text",
+          "name": "orientation_constraint_5",
+          "definition": "https://example.invalid/glaux-client/experiment/v1/term/orientation-constraint",
+          "label": "Orientation constraint",
+          "value": "Source editor range 0–360 degrees. No complete joint compatibility rules are asserted."
+        }
+      ]
+    }
+  ]
+}
