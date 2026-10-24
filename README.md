@@ -1,5 +1,11 @@
 # Glaux Client
 
+**Project documents and current implementation:** open the
+[artifact register](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/ARTIFACT_REGISTER.md)
+or the [documentation index](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/README.md).
+The current collection is maintained on `work/details-view-20261023` while
+[PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
+
 An experimental **OS4CSAPI** application evaluating whether the MERLIN domain
 information model and Managed Physical Sensing Systems (MPSS) profile can support
 a consistent, useful sensor-surveillance operator interface.
