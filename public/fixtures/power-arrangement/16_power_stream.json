@@ -1,0 +1,38 @@
+{
+  "id": "power",
+  "name": "External supply voltage",
+  "outputName": "supplyVoltage",
+  "system@link": {
+    "href": "https://demo.example/csapi/systems/station-01",
+    "uid": "urn:uuid:7ce32c75-1d5c-5490-8224-1c1d7a0ece6e"
+  },
+  "featureOfInterest@link": {
+    "href": "https://demo.example/csapi/systems/power-b"
+  },
+  "observedProperties": [
+    {
+      "definition": "https://schemas.example/merlin/mpss/0.3/term/supply-terminal-voltage",
+      "label": "External supply voltage"
+    }
+  ],
+  "resultType": "measure",
+  "phenomenonTime": [
+    "2026-09-02T10:10:00Z",
+    "2026-09-02T10:10:00Z"
+  ],
+  "resultTime": [
+    "2026-09-02T10:10:00Z",
+    "2026-09-02T10:10:00Z"
+  ],
+  "formats": [
+    "application/json"
+  ],
+  "live": false,
+  "links": [
+    {
+      "rel": "observations",
+      "href": "https://demo.example/csapi/datastreams/power/observations",
+      "type": "application/json"
+    }
+  ]
+}

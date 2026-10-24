@@ -34,7 +34,7 @@ test('the real pinned CSAPI factory builds a systems URL without network access'
   const url = new URL(builder.getSystems({ limit: 2 }));
   expect(url.origin + url.pathname).toBe(systemsUrl);
   expect(url.searchParams.get('limit')).toBe('2');
-  expect(csapiLibraryStatus()).toContain('No server is connected');
+  expect(csapiLibraryStatus()).toContain('Pinned CSAPI library loaded');
   expect(fetch).not.toHaveBeenCalled();
 });
 

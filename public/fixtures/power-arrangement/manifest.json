@@ -1,0 +1,93 @@
+{
+  "kind": "glaux-power-arrangement-example/v1",
+  "status": "Entirely synthetic connected example. This authored local catalogue is a demonstration harness, not a CSAPI discovery response or an operational installation.",
+  "description": "Canonical reserved example resource URLs map explicitly to unchanged local response-body files. The loader fetches only these sibling files; it never requests demo.example or guesses linked routes.",
+  "sourcePackage": {
+    "filename": "MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip",
+    "sha256": "b45c7ce801adafb939e5f48231fd85a9dbae13ef6d3ce528a3fc1c7b0ce94b1f",
+    "directory": "MPSS_v0.3.5_example",
+    "manifestFilename": "00_manifest.json",
+    "manifestSha256": "ce3442f4b22acac3266499128a33104240d0e77ec58077be95d9af1a784c0dc0"
+  },
+  "records": [
+    {
+      "role": "station",
+      "canonicalUrl": "https://demo.example/csapi/systems/station-01",
+      "file": "02_station.sml.json",
+      "sha256": "51f8378cfa8fa52db0d09d3ed15be12f048589ffe8c874ab5763b4ce6d42b32c",
+      "mediaType": "application/sml+json"
+    },
+    {
+      "role": "source-a",
+      "canonicalUrl": "https://demo.example/csapi/systems/power-a",
+      "file": "05_power_a.sml.json",
+      "sha256": "01769d8b4d15aa8f34f9e25014cde106ebc36f566ef61ee64c497a59fc6e566e",
+      "mediaType": "application/sml+json"
+    },
+    {
+      "role": "source-b",
+      "canonicalUrl": "https://demo.example/csapi/systems/power-b",
+      "file": "06_power_b.sml.json",
+      "sha256": "fffdab778a5cdfc17011a7304d2830b8828de985456a0c0d29ebd6a226c3766b",
+      "mediaType": "application/sml+json"
+    },
+    {
+      "role": "deployment",
+      "canonicalUrl": "https://demo.example/csapi/deployments/site-01",
+      "file": "08_site_deployment.sml.json",
+      "sha256": "3f6afc0628e407454449a63861877c2fe08855887ae1dc41ae68fa3df064f46b",
+      "mediaType": "application/sml+json"
+    },
+    {
+      "role": "datastream",
+      "canonicalUrl": "https://demo.example/csapi/datastreams/power",
+      "file": "16_power_stream.json",
+      "sha256": "e72925267bc72d7d21f30787d25fc4fbecd44147236fb63c37e5afb88b86e22d",
+      "mediaType": "application/json"
+    },
+    {
+      "role": "schema",
+      "canonicalUrl": "https://demo.example/csapi/datastreams/power/schema?obsFormat=application/json",
+      "file": "17_power_schema.json",
+      "sha256": "b9f2c02529d0902f88a42358a93dd2b0a53d03558eed2479fca994fab6d6fa8f",
+      "mediaType": "application/json",
+      "datastreamRef": "https://demo.example/csapi/datastreams/power"
+    },
+    {
+      "role": "observation",
+      "canonicalUrl": "https://demo.example/csapi/observations/power-01",
+      "file": "18_power_observation.json",
+      "sha256": "bc468c6719c66a89a1299540ee9cfc1e38df04e6ab156026a7038a8c314fb904",
+      "mediaType": "application/json"
+    }
+  ],
+  "times": [
+    {
+      "id": "before",
+      "label": "Before replacement",
+      "time": "2026-09-01T08:00:00Z",
+      "sourceLocator": "08_site_deployment.sml.json#/characteristics/3/conditions/0/value"
+    },
+    {
+      "id": "swap",
+      "label": "At replacement",
+      "time": "2026-09-02T10:00:00Z",
+      "sourceLocator": "08_site_deployment.sml.json#/history/1/time"
+    },
+    {
+      "id": "after",
+      "label": "After replacement \u00b7 reported reading",
+      "time": "2026-09-02T10:10:00Z",
+      "sourceLocator": "18_power_observation.json#/phenomenonTime"
+    }
+  ],
+  "limits": [
+    "The seven original JSON bodies are copied byte-for-byte. Their unrelated fields and unbundled references remain visible; their presence does not authorize traversal.",
+    "The schema datastreamRef is explicit catalogue metadata connecting two selected example records; it is not added to either native response body.",
+    "Power-a and power-b are identified external sources, not established batteries. No topology, interface, meter, charge percentage, runtime, readiness or pre-replacement reading is invented.",
+    "Only one supplied voltage observation exists: power-b at 2026-09-02T10:10:00Z. Earlier view times must not display it as an earlier reading.",
+    "Original package manifest view time 2026-09-02T10:20:00Z is not used as an additional sample.",
+    "Source-record identity and observation/event/applicability times are distinct from local response URLs and retrieval times.",
+    "These source-artifact fragments and bounded client behavior do not establish complete base-schema validity, server discovery, native vendor integration or whole-profile/RFC conformance."
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "type": "Deployment",
+  "id": "site-01",
+  "uniqueId": "urn:uuid:1efaee2e-cf35-51c8-aecf-2d51355eff16",
+  "label": "Demonstration monitoring emplacement",
+  "description": "Synthetic employment showing how one station, gateway and power arrangement fit together.",
+  "validTime": [
+    "2026-09-01T08:00:00Z",
+    "2026-09-03T18:00:00Z"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      10.0,
+      59.0
+    ]
+  },
+  "classifiers": [
+    {
+      "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-purpose",
+      "label": "Purpose",
+      "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/deployment-purpose",
+      "value": "environmental-monitoring"
+    }
+  ],
+  "platform": {
+    "system": {
+      "href": "https://demo.example/csapi/systems/mast-01",
+      "uid": "urn:uuid:9a1d763b-cfce-5c25-811b-aca407c5a9e9",
+      "type": "application/sml+json"
+    }
+  },
+  "deployedSystems": [
+    {
+      "name": "station",
+      "system": {
+        "href": "https://demo.example/csapi/systems/station-01",
+        "uid": "urn:uuid:7ce32c75-1d5c-5490-8224-1c1d7a0ece6e",
+        "type": "application/sml+json"
+      },
+      "configuration": {
+        "setValues": [
+          {
+            "ref": "parameters/sampleInterval",
+            "value": 120
+          }
+        ]
+      }
+    },
+    {
+      "name": "gateway",
+      "system": {
+        "href": "https://demo.example/csapi/systems/gateway-01",
+        "uid": "urn:uuid:18b97583-87f6-542b-bfd1-9e1c83990245",
+        "type": "application/sml+json"
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "role": "https://schemas.example/merlin/mpss/0.3/role/operator",
+      "organisationName": "Demonstration Operations Team"
+    },
+    {
+      "role": "https://schemas.example/merlin/mpss/0.3/role/maintainer",
+      "organisationName": "Demonstration Service Team"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": "link-out",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/communication-link",
+      "label": "Station to gateway",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/source-interface-ref",
+          "label": "Source interface ref",
+          "value": "https://demo.example/csapi/systems/station-01#if-uplink"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/destination-interface-ref",
+          "label": "Destination interface ref",
+          "value": "https://demo.example/csapi/systems/gateway-01#if-sensor"
+        }
+      ],
+      "conditions": [
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-from",
+          "label": "Effective from",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-01T08:00:00Z"
+        },
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-until",
+          "label": "Effective until",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-03T18:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "link-in",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/communication-link",
+      "label": "Gateway to station",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/source-interface-ref",
+          "label": "Source interface ref",
+          "value": "https://demo.example/csapi/systems/gateway-01#if-sensor"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/destination-interface-ref",
+          "label": "Destination interface ref",
+          "value": "https://demo.example/csapi/systems/station-01#if-uplink"
+        }
+      ],
+      "conditions": [
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-from",
+          "label": "Effective from",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-01T08:00:00Z"
+        },
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-until",
+          "label": "Effective until",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-03T18:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "gateway-path",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/gateway-access",
+      "label": "Gateway access arrangement",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/served-system-ref",
+          "label": "Served system ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/via-system-ref",
+          "label": "Via system ref",
+          "value": "https://demo.example/csapi/systems/gateway-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/link-ref",
+          "label": "Link ref",
+          "value": "https://demo.example/csapi/deployments/site-01#link-out"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/link-ref",
+          "label": "Link ref",
+          "value": "https://demo.example/csapi/deployments/site-01#link-in"
+        }
+      ],
+      "conditions": [
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-from",
+          "label": "Effective from",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-01T08:00:00Z"
+        },
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-until",
+          "label": "Effective until",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-03T18:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "power-before",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/energy-relationship",
+      "label": "Supply relationship before service",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/relationship-subject-ref",
+          "label": "Relationship subject ref",
+          "value": "https://demo.example/csapi/systems/power-a"
+        },
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/energy-relationship-kind",
+          "label": "Energy relationship kind",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/energy-relationship",
+          "value": "powers"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/relationship-object-ref",
+          "label": "Relationship object ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        }
+      ],
+      "conditions": [
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-from",
+          "label": "Effective from",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-01T08:00:00Z"
+        },
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-until",
+          "label": "Effective until",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-02T10:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "power-after",
+      "definition": "https://schemas.example/merlin/mpss/0.3/group/energy-relationship",
+      "label": "Supply relationship after service",
+      "characteristics": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/relationship-subject-ref",
+          "label": "Relationship subject ref",
+          "value": "https://demo.example/csapi/systems/power-b"
+        },
+        {
+          "type": "Category",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/energy-relationship-kind",
+          "label": "Energy relationship kind",
+          "codeSpace": "https://schemas.example/merlin/mpss/0.3/codes/energy-relationship",
+          "value": "powers"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/relationship-object-ref",
+          "label": "Relationship object ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        }
+      ],
+      "conditions": [
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-from",
+          "label": "Effective from",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-02T10:00:00Z"
+        },
+        {
+          "type": "Time",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/effective-until",
+          "label": "Effective until",
+          "uom": {
+            "href": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+          },
+          "value": "2026-09-03T18:00:00Z"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://demo.example/csapi/deployments/site-01",
+      "type": "application/sml+json"
+    },
+    {
+      "rel": "profile",
+      "href": "https://schemas.example/merlin/mpss/0.3/profile/system-description"
+    },
+    {
+      "rel": "ogc-rel:parentDeployment",
+      "href": "https://demo.example/csapi/deployments/campaign-01",
+      "type": "application/sml+json"
+    },
+    {
+      "rel": "ogc-rel:datastreams",
+      "href": "https://demo.example/csapi/deployments/site-01/datastreams",
+      "type": "application/json"
+    },
+    {
+      "rel": "ogc-rel:controlstreams",
+      "href": "https://demo.example/csapi/deployments/site-01/controlstreams",
+      "type": "application/json"
+    }
+  ],
+  "history": [
+    {
+      "id": "event-emplace",
+      "definition": "https://schemas.example/merlin/mpss/0.3/event/emplacement",
+      "label": "Demonstration emplacement",
+      "time": "2026-09-01T08:00:00Z",
+      "contacts": [
+        {
+          "role": "https://schemas.example/merlin/mpss/0.3/role/emplacer",
+          "organisationName": "Demonstration Service Team"
+        }
+      ],
+      "properties": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/affected-subject-ref",
+          "label": "Affected subject ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-ref",
+          "label": "Deployment ref",
+          "value": "https://demo.example/csapi/deployments/site-01"
+        }
+      ]
+    },
+    {
+      "id": "event-swap",
+      "definition": "https://schemas.example/merlin/mpss/0.3/event/power-source-replacement",
+      "label": "Demonstration supply replacement",
+      "time": "2026-09-02T10:00:00Z",
+      "contacts": [
+        {
+          "role": "https://schemas.example/merlin/mpss/0.3/role/maintainer",
+          "organisationName": "Demonstration Service Team"
+        }
+      ],
+      "properties": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/affected-subject-ref",
+          "label": "Affected subject ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-ref",
+          "label": "Deployment ref",
+          "value": "https://demo.example/csapi/deployments/site-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/replaced-subject-ref",
+          "label": "Replaced subject ref",
+          "value": "https://demo.example/csapi/systems/power-a"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/replacement-subject-ref",
+          "label": "Replacement subject ref",
+          "value": "https://demo.example/csapi/systems/power-b"
+        }
+      ]
+    },
+    {
+      "id": "event-service-review",
+      "definition": "https://schemas.example/merlin/mpss/0.3/event/service",
+      "label": "Synthetic post-service review; not a readiness or condition determination",
+      "time": "2026-09-02T10:15:00Z",
+      "contacts": [
+        {
+          "role": "https://schemas.example/merlin/mpss/0.3/role/assessor",
+          "organisationName": "Demonstration Service Team"
+        }
+      ],
+      "properties": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/affected-subject-ref",
+          "label": "Affected subject ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-ref",
+          "label": "Deployment ref",
+          "value": "https://demo.example/csapi/deployments/site-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/evidence-ref",
+          "label": "Evidence ref",
+          "value": "https://demo.example/csapi/observations/power-01"
+        }
+      ]
+    },
+    {
+      "id": "event-recover",
+      "definition": "https://schemas.example/merlin/mpss/0.3/event/recovery",
+      "label": "Demonstration recovery",
+      "time": "2026-09-03T18:00:00Z",
+      "contacts": [
+        {
+          "role": "https://schemas.example/merlin/mpss/0.3/role/recoverer",
+          "organisationName": "Demonstration Service Team"
+        }
+      ],
+      "properties": [
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/affected-subject-ref",
+          "label": "Affected subject ref",
+          "value": "https://demo.example/csapi/systems/station-01"
+        },
+        {
+          "type": "Text",
+          "definition": "https://schemas.example/merlin/mpss/0.3/term/deployment-ref",
+          "label": "Deployment ref",
+          "value": "https://demo.example/csapi/deployments/site-01"
+        }
+      ]
+    }
+  ]
+}
