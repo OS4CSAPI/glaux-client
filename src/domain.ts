@@ -1,3 +1,6 @@
+import type { PowerExampleBundle, PowerExampleRole } from './data/power-example';
+import type { PowerModel } from './profile/power';
+
 /** Shared read-only contracts. Original responses stay independent of all interpretations. */
 export interface CapturedResource {
   requestedUrl: string;
@@ -113,6 +116,15 @@ export interface DetailsState {
   mode: DisplayMode;
   tab: DetailsTab;
   libraryStatus: string;
+  power: PowerViewState | null;
+}
+
+export interface PowerViewState {
+  bundle: PowerExampleBundle;
+  model: PowerModel;
+  at: string;
+  selectedRef: string;
+  standardRecordRole: PowerExampleRole | 'manifest';
 }
 
 export interface DetailsActions {
@@ -121,4 +133,7 @@ export interface DetailsActions {
   refresh(): void;
   selectMode(mode: DisplayMode): void;
   selectTab(tab: DetailsTab): void;
+  selectPowerTime(time: string): void;
+  selectPowerEntity(ref: string): void;
+  selectPowerRecord(role: PowerExampleRole | 'manifest'): void;
 }

@@ -16,6 +16,10 @@
 - The current increment implements the existing Overview, Equipment, and Condition
   wireframes using the MPSS v0.3.5 source materials. Read the actual sources and
   the bounded view mapping; do not infer requirements from this brief.
+- The user subsequently authorized a bounded power-arrangement demonstration using
+  the existing MPSS v0.3.5 source A/B replacement example. Apply its accepted R16
+  relationships and supplied observation/history context; do not extend the
+  proposed battery/interface model. Read `Docs/Design/POWER_ARRANGEMENT.md`.
 - Bounded profile interpretation and explicitly synthetic, source-grounded local
   fixtures are authorized for this increment. Keep standard access competent and
   expose unsupported or ambiguous mappings without inventing profile rules.

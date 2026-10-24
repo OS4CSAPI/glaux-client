@@ -1,5 +1,29 @@
 # Current Details View work
 
+## Power-arrangement implementation in progress — 23 October 2026
+
+The user authorized implementing the existing MPSS source A/B replacement example
+after reviewing the gap between the power-domain model and the deployed client.
+The application now has the bounded interpreter, seven unchanged synthetic source
+records, source-preserving bundle retrieval, and integrated power views. The
+focused loader and interpretation checks have passed; full regression, browser
+verification, final documentation and deployment are still pending at this checkpoint.
+See [the source-to-behavior mapping](../Design/POWER_ARRANGEMENT.md).
+
+The deployment described below remains the prior four-example version at
+`53c3ce532abc484dc421696566a573179635d125`. Do not claim the new power example is
+live until a later deployment is recorded and verified. The current chat workspace
+has no authenticated Wrangler configuration and its Cloudflare browser is at the
+sign-in screen. The user's earlier successful local VS Code session is distinct.
+Do not transfer credentials between those environments.
+
+Next: verify the new example at before/replacement/observation instants, preserve
+source B's observation subject, inspect original records on desktop/mobile,
+checkpoint the result to GitHub, then deploy with an authorized authenticated
+Cloudflare session. Do not restart donor research or broaden the profile.
+
+## Previous verified increment
+
 Updated 23 October 2026. **Status: first increment reconstructed, locally and live
 verified, saved for review, and deployed to Cloudflare Pages.**
 

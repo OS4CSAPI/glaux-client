@@ -1,4 +1,7 @@
 import type { CapturedResource, DetailsActions, DetailsModel, DetailsState, DetailsTab, PresentedFact, StandardFact, StandardGroup, StandardLink, ViewSection } from '../domain';
+import { extractStandardModel } from '../data/standard';
+import { interpretDetails } from '../profile/interpret';
+import { renderPowerBasis, renderPowerContext, renderPowerPanel, renderPowerRecordSelector } from './power';
 
 interface FocusMemory { key: string; start?: number | null; end?: number | null; }
 interface UiMemory { open: Set<string>; resourceDraft: string; stateResourceUrl: string; focusOverride?: string; }
@@ -148,14 +151,18 @@ function renderOperatorCard(state: DetailsState, model: DetailsModel, actions: D
     tabs.append(tabButton);
   }
   card.append(tabs);
+  if (state.power) card.append(renderPowerContext(state.power, actions, state.loading));
   for (const tab of tabOrder) {
     const panel = element('div', 'tab-panel');
     panel.id = `details-panel-${tab}`; panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('aria-labelledby', `details-tab-${tab}`); panel.tabIndex = 0;
     panel.dataset.focusKey = `panel:${tab}`; panel.hidden = tab !== state.tab;
-    const sections = model.views[tab];
-    if (!sections.length) panel.append(element('p', 'empty-note', `No ${tabLabels[tab].toLowerCase()} information is available in the selected records. Standard view retains all supplied content.`));
-    for (const section of sections) panel.append(renderViewSection(section, `${key}:${tab}:${section.id}`, memory));
+    if (state.power) panel.append(renderPowerPanel(tab, state.power, actions, memory));
+    else {
+      const sections = model.views[tab];
+      if (!sections.length) panel.append(element('p', 'empty-note', `No ${tabLabels[tab].toLowerCase()} information is available in the selected records. Standard view retains all supplied content.`));
+      for (const section of sections) panel.append(renderViewSection(section, `${key}:${tab}:${section.id}`, memory));
+    }
     card.append(panel);
   }
   const footer = element('footer', 'card-footer');
@@ -301,6 +308,8 @@ export function renderDetails(container: HTMLElement, state: DetailsState, actio
   for (const example of state.examples) { const option = element('option', undefined, example.label); option.value = example.id; select.append(option); }
   select.value = state.sourceKind === 'synthetic' ? state.selectedExampleId : '';
   select.addEventListener('change', () => { if (select.value) actions.selectExample(select.value); }); exampleRow.append(label, select); controls.append(exampleRow);
+  const selectedExample = state.sourceKind === 'synthetic' ? state.examples.find(example => example.id === state.selectedExampleId) : undefined;
+  if (selectedExample) controls.append(element('p', 'example-description', selectedExample.description));
   const remote = disclosure('Use your existing CSAPI server', 'remote-form', memory, 'remote-source');
   if (state.sourceKind === 'remote') remote.open = true;
   const form = element('form'); const urlLabel = element('label', undefined, 'System resource URL'); urlLabel.htmlFor = 'resource-url';
@@ -335,8 +344,22 @@ export function renderDetails(container: HTMLElement, state: DetailsState, actio
       const warning = disclosure('Source and interpretation notices', `${key}:warnings`, memory, 'source-warnings');
       const list = element('ul'); state.model.standard.warnings.forEach(message => list.append(element('li', undefined, message))); warning.append(list); body.append(warning);
     }
-    body.append(state.mode === 'operator' ? renderOperatorCard(state, state.model, actions, memory, key) : renderStandardView(state, state.model, actions, memory, key));
-    body.append(renderInterpretation(state.model, state, actions, key, memory));
+    if (state.power && state.mode === 'standard') {
+      body.append(renderPowerRecordSelector(state.power, actions));
+      const selected = state.power.standardRecordRole === 'manifest'
+        ? extractStandardModel([state.power.bundle.manifest])
+        : state.power.bundle.records.find(record => record.role === state.power!.standardRecordRole)?.standard;
+      if (selected) {
+        const recordModel = interpretDetails(selected);
+        const recordKey = `${key}:power-record:${state.power.standardRecordRole}`;
+        body.append(renderStandardView(state, recordModel, actions, memory, recordKey));
+        body.append(renderInterpretation(recordModel, state, actions, recordKey, memory));
+      } else body.append(element('p', 'empty-state', 'This record could not be retrieved. Other original records remain available in the selector.'));
+    } else {
+      body.append(state.mode === 'operator' ? renderOperatorCard(state, state.model, actions, memory, key) : renderStandardView(state, state.model, actions, memory, key));
+      if (!state.power) body.append(renderInterpretation(state.model, state, actions, key, memory));
+    }
+    if (state.power) body.append(renderPowerBasis(state.power, actions, memory));
   } else if (!state.loading && !state.error) body.append(element('p', 'empty-state', 'Select an illustrative example or load a System resource to inspect its details.'));
   const footer = element('footer', 'page-footer');
   footer.append(element('p', undefined, 'Read-only prototype · MPSS v0.3.5 unchanged · No device commands or server writes'));
