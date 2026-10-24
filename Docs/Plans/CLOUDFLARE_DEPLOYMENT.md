@@ -1,18 +1,29 @@
 # Cloudflare deployment continuation
 
-## Power-arrangement update pending
+## Power-arrangement deployment result
 
-The new source A/B power-arrangement demonstration is implemented on
-`work/details-view-20261023`, beginning at `64e2287b` with subsequent validation
-and UI corrections. It has **not been uploaded from this chat workspace**.
-The verified deployment below remains the earlier four-example version.
+**Completed 24 October 2026.** The latest checked GitHub revision was rebuilt with
+the exact pinned library, uploaded to the existing Cloudflare Pages project using
+the authenticated local Wrangler session, and verified on the production origin.
 
-This workspace has no authenticated Wrangler configuration or Cloudflare API
-credential; the available Cloudflare browser is at sign-in. The preceding upload
-used the user's authenticated local Codex/VS Code environment. Continue using the
-concrete [deployment handoff](CODEX_VSCODE_HANDOFF.md) and record the new actual
-commit, deployment ID and verification after it succeeds. A GitHub push is not
-an upload for this project.
+| Result | Actual value |
+| --- | --- |
+| Project | `glaux-client` |
+| Deployment method | Cloudflare Pages Direct Upload via Wrangler 4.152.0 |
+| Production branch metadata | `work/details-view-20261023` |
+| Deployed Git commit | `d74b33dabc5fdfcf22574b8efa7f436b4cf32857` |
+| Deployment ID | `770d234a-3cb5-415a-aa96-b8fea45180c4` |
+| Production URL | <https://glaux-client.pages.dev> |
+| Power deep link | <https://glaux-client.pages.dev/?example=power> |
+| Immutable deployment URL | <https://770d234a.glaux-client.pages.dev> |
+| Build result | 74 tests passed; TypeScript and Vite production build passed |
+| Live power verification | 44 checks passed; zero browser script errors |
+
+The live verification exercised the before, replacement-boundary, and after
+arrangements; the 12.6 V source-B observation; distinct source A, source B, and
+station equipment; exact source-record downloads; local-only fixture requests;
+keyboard behavior; and desktop/mobile layouts. It establishes this bounded
+synthetic example, not live-server interoperability or actual power flow.
 
 ## Earlier four-example deployment result
 
@@ -56,8 +67,7 @@ external CSAPI server integration.
 | Implementation commit deployed | [53c3ce532abc484dc421696566a573179635d125](https://github.com/OS4CSAPI/glaux-client/commit/53c3ce532abc484dc421696566a573179635d125) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
-For the next Direct Upload, build the selected GitHub revision locally and record
-the actual deployed commit after the upload completes.
+The current Direct Upload contains the checked power-arrangement revision above.
 
 ## Historical Git-integration plan — not applied
 
@@ -102,8 +112,7 @@ Checked 23 October 2026:
 
 ## Continuation
 
-The earlier four-example deployment is complete and verified. The new power
-increment requires another upload as described above. If automatic deployments are
-later required, create a separate Git-integrated Pages project connected to the
+The power-arrangement deployment is complete and verified. If automatic deployments
+are later required, create a separate Git-integrated Pages project connected to the
 same repository and branch using the prepared settings above; do not describe this
 Direct Upload project as Git connected.

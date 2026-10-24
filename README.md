@@ -156,13 +156,13 @@ records what was reconstructed, what was verified, open limits, and the next ste
 The missing prior local implementation was **not recovered**; this branch is a
 new implementation based on the recovered source evidence.
 
-The earlier four-example implementation is deployed at <https://glaux-client.pages.dev> from commit
-`53c3ce532abc484dc421696566a573179635d125`. The live application passed all 23
+The power-arrangement implementation is deployed at
+<https://glaux-client.pages.dev/?example=power> from commit
+`d74b33dabc5fdfcf22574b8efa7f436b4cf32857`. The live power suite passed all 44
 browser checks with no script errors. [Deployment details](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
-record the Cloudflare Pages project, immutable deployment, build result, and the
-Direct Upload method used by the authenticated local Wrangler session.
-The new power example requires a subsequent upload; a GitHub push does not deploy
-this Direct Upload project. Check the deployment record for the actual live revision.
+record the Cloudflare Pages deployment, immutable URL, build result, and Direct
+Upload method. A GitHub push does not update this project; later revisions require
+another explicit upload.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.

@@ -1,8 +1,7 @@
 # Current Details View work
 
-Updated 23 October 2026. **Power-arrangement implementation and local verification
-are complete. Deployment of this increment is still pending.** The public site
-remains the earlier four-example version.
+Updated 24 October 2026. **Power-arrangement implementation, local verification,
+Cloudflare deployment, and live verification are complete.**
 
 ## Repository and durable source
 
@@ -15,9 +14,9 @@ remains the earlier four-example version.
   and continuity notes. Fetch and inspect the current head before continuing.
 - Pinned library: `OS4CSAPI/ogc-client-CSAPI_2`, phase-10 commit
   `4ca1d7db9b1ccdf545adbef42ef941139fe11977`.
-- Last verified public deployment: `53c3ce532abc484dc421696566a573179635d125`,
-  Cloudflare Pages deployment `602be95e-6fc1-418f-8119-4d63da5ddba5`,
-  <https://glaux-client.pages.dev>.
+- Verified public deployment: `d74b33dabc5fdfcf22574b8efa7f436b4cf32857`,
+  Cloudflare Pages deployment `770d234a-3cb5-415a-aa96-b8fea45180c4`,
+  <https://glaux-client.pages.dev/?example=power>.
 
 ## Authorized objective and implementation
 
@@ -68,7 +67,7 @@ archives and internal documents remain outside this public repository.
 | Existing browser regression | 23 checks passed; zero script errors |
 | New power browser verification | 44 checks passed; zero script errors |
 | Visual inspection | All 10 power screenshots inspected at 1280 px or 390 px; no clipped facts or horizontal overflow |
-| New live deployment | Not performed from this workspace |
+| New live deployment | 44 power checks passed against `https://glaux-client.pages.dev`; zero browser script errors |
 
 The [browser verification record](../Testing/BROWSER_VERIFICATION.md) links the
 actual emitted results, reproducible scripts, and selected local screenshots.
@@ -79,20 +78,12 @@ readiness, or measured comparative operator benefit.
 
 ## Deployment boundary and next action
 
-The existing Pages project is **Direct Upload**. Pushing GitHub does not deploy it.
-The earlier upload succeeded through an authenticated Wrangler session in the
-user's local Codex/VS Code environment. That session is not available here: this
-workspace has no Wrangler OAuth configuration or Cloudflare API credential, and
-the available Cloudflare browser is at its ordinary sign-in screen.
+The existing Pages project remains **Direct Upload**. Pushing GitHub does not deploy
+it. The authenticated local Wrangler session uploaded the verified checkpoint and
+the production deep link now serves the power example. The exact outcome is in
+[the deployment record](CLOUDFLARE_DEPLOYMENT.md).
 
-Deploy the latest checked GitHub revision through the existing authenticated local
-environment. The concrete
-[Codex deployment handoff](CODEX_VSCODE_HANDOFF.md) records the existing project,
-branch, command and required live verification. Do not create another project,
-merge the PR just to deploy, transfer credentials between environments, or assume
-that an older green run or old public URL proves the new example is live.
-
-Update [the deployment record](CLOUDFLARE_DEPLOYMENT.md) only after a successful
-upload and live verification. Preserve any unrelated local changes. Save each
-meaningful continuation to the working branch; chat commentary is not a source
-checkpoint.
+Review the deployed power example and continue the existing draft PR. Any later
+implementation revision requires another explicit build, upload, and live check.
+Preserve unrelated local changes and save each meaningful continuation to the
+working branch; chat commentary is not a source checkpoint.
