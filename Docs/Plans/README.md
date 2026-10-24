@@ -12,6 +12,9 @@ through the current continuity note; do not restart completed research or reset
 project status from an older package's folder named "current".
 
 - [Artifact Register](../ARTIFACT_REGISTER.md): selected source versions and paths.
+- [Smart Citizen experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md): proposed
+  public-data specimen, source-to-profile mapping, frame review, exact-kit
+  commissioning and read-only live access; no implementation or purchase yet.
 - [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md): actual deployed commits and results.
 - [Codex deployment procedure](CODEX_VSCODE_HANDOFF.md): reusable upload steps;
   the documented power deployment is already complete.

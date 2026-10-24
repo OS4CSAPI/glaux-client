@@ -8,6 +8,18 @@ and registered SHA-256 fingerprints. Catalogue and repository-local documentatio
 link verification passed on 24 October 2026. Git history records the publication
 commit containing this checkpoint and the files it verifies.
 
+**Latest research and planning checkpoint:** the owner subsequently requested
+open, accessible sensing devices/data for DIM/profile experiments and authorized
+filing the findings and a Smart Citizen plan in this repository. The
+[candidate report](../Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
+[15-record access evidence](../Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json),
+and [proposed experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md) preserve that work.
+Review the small public-source mapping specimen proposed there as the next
+concrete increment. Research and planning are complete; implementation, acquisition
+and live-device work have not started. The original 14 files and technical
+versions retain their standing. The deployed runtime remains the template revision
+recorded below.
+
 ## Purpose and authority
 
 This Git-native checkpoint carries the broader Domain Information Models (DIM)
@@ -118,7 +130,7 @@ artifact import itself was documentation-only; the subsequent index was a
 separately built and verified runtime update. Preserve the separate repository
 and deployment identities for each continuation.
 
-## Publication decision and immediate work
+## Publication decisions and immediate work
 
 On 24 October 2026, the owner authorized publishing all identified project
 artifacts in `OS4CSAPI/glaux-client`. That decision supersedes earlier directions
@@ -138,11 +150,38 @@ Use the [maintenance procedure](../Governance/ARTIFACT_MAINTENANCE.md) and run
 updates. The source and implementation checkpoint before this import was
 `b0626044b04241ff35ba6fe1b085dcb97ed6fd0b`.
 
-This publication work requires no repeat approval and does not authorize a new
-client feature, profile revision, donor survey, server operation, or device
-integration. Continue the existing client review using the deployed example and
-its recorded evidence. Keep any referenced but unavailable artifact explicit as
-a recovery gap; do not reconstruct an original document from its citations.
+That artifact-publication instruction required no repeat approval and covered the
+identified originals and their documentation. Later owner instructions authorized
+the page index, recovered template, candidate research, and filing the research
+and proposed Smart Citizen plan. Their completed results are recorded above.
+The present instruction is to preserve the research and propose the experiment;
+it does not itself implement the proposed adapter, new page or live integration.
+Keep any referenced but unavailable artifact explicit as a recovery gap; do not
+reconstruct an original document from its citations.
+
+### Proposed next increment: Smart Citizen evidence to view
+
+The recommended first specimen is the already inspected Smart Citizen public
+registration 19639: temperature and battery percentage, followed by the older
+PM2.5 reading and grouped temperature history. The first task is a field-by-field
+mapping with source, subject, unit, time, standard carrier, profile binding,
+presentation decision and unresolved questions. The plan then proposes a separate
+recorded-data experiment in the recovered 560 × 440 frame, an exact owned kit,
+read-only live access and an AirGradient comparison. TRSS and OmniSense remain
+reference cases within the broader whole-system scope.
+
+The research documents actual public HTTP reads and source/schema/store checks.
+It does not demonstrate hardware operation, native OGC integration, whole-profile
+conformance or measured operator benefit. Excerpts and available original-response
+hashes are preserved; complete raw responses are not archived in the repository.
+Missing capture times and bodies are explicit rather than reconstructed.
+
+Current implementation gaps include a Smart Citizen adapter, a distinct recorded
+source with original capture metadata, and composition of mapped content with
+the blank frame. Public registration IDs and sensor catalogue/association IDs
+are not established physical serials. Battery percentage cannot reuse the
+existing voltage-only power demonstration. These are proposed integration
+questions, not amendments to MPSS v0.3.5.
 
 ## Broader open work retained
 

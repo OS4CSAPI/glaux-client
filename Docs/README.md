@@ -20,6 +20,13 @@ retain their source dates and contents; publication does not turn their proposal
 into adopted requirements or revise the technical profile. Follow
 [artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) when updating the set.
 
+For the subsequent real-device evaluation, start with the
+[24 October open-sensor candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md)
+and its [access evidence](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json),
+then the [proposed Smart Citizen experiment](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md).
+These are new Git-native research and planning records, separate from the 14
+preserved originals. The study is complete; the proposed integration is not implemented.
+
 ## Current authoritative material
 
 For the current Details View increment, start with:
@@ -28,6 +35,8 @@ For the current Details View increment, start with:
 | --- | --- |
 | Original project artifacts, versions, authority, and canonical paths | [Artifact Register](ARTIFACT_REGISTER.md), [manifest](ARTIFACTS.json) |
 | Broader DIM/MPSS continuity and sequencing | [Current MERLIN continuity](Plans/CONTINUITY.md) |
+| Open sensor candidates, recommendations and actual access findings | [Candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md), [evidence record](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) |
+| Proposed first real-source experiment and its PBI/profile outputs | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) |
 | How the document collection is maintained | [Artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) |
 | Deployed page index and ongoing page metadata | [Page-index maintenance](Design/PAGE_INDEX.md) |
 | Recovered Resource Details frame and blank review canvas | [Resource Details template](Design/RESOURCE_DETAILS_TEMPLATE.md) |

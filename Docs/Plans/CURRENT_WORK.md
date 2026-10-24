@@ -1,5 +1,36 @@
 # Current client work
 
+## Open sensor research and Smart Citizen proposal — 24 October 2026
+
+The owner requested filing the device-candidate findings and proposing a Smart
+Citizen experiment. The [research report](../Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md)
+preserves the shortlist, recommendations, source links, access results, prices
+and limits. The [evidence record](../Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json)
+preserves 15 study-local observations with selected excerpts and available
+response fingerprints. The [experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md)
+proposes one public specimen, explicit mapping, a deterministic 560 × 440 review,
+then owned hardware, read-only live data and an independent AirGradient comparison.
+
+This is a documentation increment. The study and proposal are complete; the
+Smart Citizen adapter, recorded-data page and live integration are not present.
+The 14 imported originals, their manifest, the technical profile and application
+code retain their existing versions. The runtime remains `71297c97` and the
+six-page production site recorded below. No Cloudflare upload is needed for
+this documentation publication. Git history records the actual publication commit.
+
+Documentation verification passed: all **14 original artifact hashes and
+27,555,946 bytes**, **247 local links across 24 documentation files**, valid
+evidence JSON with 15 unique record IDs, and a clean whitespace check. The
+evidence was compared with the retained captures: **10 body hashes/lengths and
+136 selected fields or source lines** matched, including all 24 historical
+temperature groups. An independent review checked the Smart Citizen facts and
+the boundary between proposed and implemented behavior. Runtime browser checks
+were not rerun for this documentation-only increment.
+
+Continue from the proposed evidence-to-mapping specimen, with implementation
+status distinguished from plan status. The [broader continuity note](CONTINUITY.md)
+reconciles this sequencing with the retained research backlog.
+
 ## Resource Details View template — 24 October 2026
 
 The owner requested a blank template using the framework recovered from the

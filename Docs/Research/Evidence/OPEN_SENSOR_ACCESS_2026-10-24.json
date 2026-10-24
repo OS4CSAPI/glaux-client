@@ -1,0 +1,952 @@
+{
+  "schemaVersion": 1,
+  "studyId": "open-sensor-candidates-2026-10-24",
+  "title": "Open sensor candidate access observations",
+  "recordedOnUTC": "2026-10-24",
+  "status": "Research evidence; no profile rule, implementation or conformance claim is adopted",
+  "evidenceConventions": {
+    "recordIds": "Local to this research study. These IDs do not extend or replace the project source or requirement registries.",
+    "excerpts": "Selected exact source fields or lines only. Excerpt objects are not complete response bodies; JSON Pointer keys identify locations in the original response.",
+    "observedFieldValues": "For records without retained original bytes, these are prior research observations, not independently hash-verified excerpts.",
+    "hashes": "SHA-256 and byteLength describe original captured response bytes checked in temporary research storage. Those complete response bodies are not archived in this repository.",
+    "timestamps": "retrievedAtUTC appears only where the original research captured a retrieval time. retrievedOnUTC is used when only the date is retained. Sensor times are separate source data.",
+    "privacy": "Published excerpts omit account/owner attributes, tokens, contributor personal text and exact measurement coordinates. The Safecast request URL retains its original public search-centre parameters for reproducibility.",
+    "licensing": "Dataset, firmware, hardware, documentation and media rights are separate. Policy pointers support future attribution review; availability does not imply unrestricted redistribution.",
+    "access": "Successful HTTP reads establish access at the recorded date/time, not continuous availability or permission to command or reconfigure a third-party device."
+  },
+  "implementationStatus": {
+    "actualHardwareOperated": false,
+    "purchasesMade": false,
+    "nativeCSAPIIntegrationImplemented": false,
+    "merlinProfileConformanceDemonstrated": false,
+    "uiChangedByThisEvidenceRecord": false
+  },
+  "records": [
+    {
+      "id": "smart-citizen-current-19639",
+      "evidenceType": "public-sensor-api-current",
+      "request": {
+        "method": "GET",
+        "url": "https://api.smartcitizen.me/v0/devices/19639",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "994c4bff0238cecd4b4cb8a8ec7fc0b112dc2d5137ccb7c9b56edd90172dd617",
+        "byteLength": 17125,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:57:35Z",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/id": 19639,
+          "/uuid": "02612831-3387-4cb2-8bed-cf87670ca1e5",
+          "/last_reading_at": "2026-10-24T21:55:12Z",
+          "/hardware/name": "SmartCitizen Kit 2.3",
+          "/hardware/type": "SCK",
+          "/hardware/version": "2.3",
+          "/hardware/slug": "sck:2,3",
+          "/data/sensors/3/id": 10,
+          "/data/sensors/3/name": "Battery SCK",
+          "/data/sensors/3/unit": "%",
+          "/data/sensors/3/value": 99.0,
+          "/data/sensors/3/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/3/unit_definition": null,
+          "/data/sensors/3/measurement/definition": null,
+          "/data/sensors/6/id": 221,
+          "/data/sensors/6/name": "SD Card",
+          "/data/sensors/6/unit": null,
+          "/data/sensors/6/value": 1.0,
+          "/data/sensors/6/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/6/unit_definition": null,
+          "/data/sensors/6/measurement/definition": null,
+          "/data/sensors/9/id": 194,
+          "/data/sensors/9/name": "Sensirion SEN5X - PM2.5",
+          "/data/sensors/9/unit": "ug/m3",
+          "/data/sensors/9/value": 10.6,
+          "/data/sensors/9/last_reading_at": "2026-10-24T21:46:09Z",
+          "/data/sensors/9/unit_definition": "http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3",
+          "/data/sensors/9/measurement/definition": "http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001",
+          "/data/sensors/17/id": 56,
+          "/data/sensors/17/name": "Sensirion SHT31 - Humidity",
+          "/data/sensors/17/unit": "%",
+          "/data/sensors/17/value": 64.85,
+          "/data/sensors/17/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/17/unit_definition": "https://qudt.org/vocab/unit/PERCENT",
+          "/data/sensors/17/measurement/definition": "https://qudt.org/vocab/quantitykind/RelativeHumidity",
+          "/data/sensors/18/id": 55,
+          "/data/sensors/18/name": "Sensirion SHT31 - Temperature",
+          "/data/sensors/18/unit": "ºC",
+          "/data/sensors/18/value": 19.82,
+          "/data/sensors/18/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/18/unit_definition": "https://qudt.org/vocab/unit/DEG_C",
+          "/data/sensors/18/measurement/definition": "http://www.eionet.europa.eu/gemet/concept/281",
+          "/data/sensors/19/id": 53,
+          "/data/sensors/19/name": "TDK ICS43432 - Noise Level A weighting",
+          "/data/sensors/19/unit": "dBA",
+          "/data/sensors/19/value": 36.51,
+          "/data/sensors/19/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/19/unit_definition": "https://qudt.org/vocab/unit/DeciB_A",
+          "/data/sensors/19/measurement/definition": "https://qudt.org/vocab/quantitykind/SoundPressureLevel",
+          "/data/sensors/20/id": 220,
+          "/data/sensors/20/name": "Wi-Fi Antenna - RSSI",
+          "/data/sensors/20/unit": "dBm",
+          "/data/sensors/20/value": -45.0,
+          "/data/sensors/20/last_reading_at": "2026-10-24T21:55:12Z",
+          "/data/sensors/20/unit_definition": null,
+          "/data/sensors/20/measurement/definition": null
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "returnedSensorCount": 21,
+        "pm25TimestampDifferenceSecondsFromTopLevel": 543
+      },
+      "limits": [
+        "This is one third-party public device, not a kit operated by this project.",
+        "The PM2.5 channel timestamp is 543 seconds earlier than the top-level timestamp. That difference alone does not establish a fault or a stale-data threshold.",
+        "Device ID, UUID, source sensor catalogue ID and physical component instance identity must not be treated as interchangeable without a documented mapping.",
+        "Battery percentage, RSSI and the SD indicator do not establish power-source topology, charging state, remaining runtime, complete storage health or command support.",
+        "The literal temperature unit in this response is ºC; unit normalization is a separate adapter decision.",
+        "Owner/account fields, device token field, descriptive contributor text and coordinates are omitted from the excerpt."
+      ],
+      "licensing": {
+        "reportedTerms": "Open Database License (ODbL)",
+        "policyURL": "https://smartcitizen.me/",
+        "scope": "Platform data policy; code, hardware and API documentation have separate terms. Preserve source attribution and evaluate ODbL obligations before publishing a derived database.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://docs.smartcitizen.me/about/open-source/",
+        "https://developer.smartcitizen.me/",
+        "https://docs.smartcitizen.me/hardware/kit/"
+      ]
+    },
+    {
+      "id": "smart-citizen-history-19639-temperature",
+      "evidenceType": "public-sensor-api-aggregated-history",
+      "request": {
+        "method": "GET",
+        "url": "https://api.smartcitizen.me/v0/devices/19639/readings?sensor_id=55&rollup=1h&from=2026-10-23&to=2026-10-24",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "25bbdd9544e78d4d4fff0725569c4776b27a422dc6a5702fbfd2817beb70d9e1",
+        "byteLength": 1238,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/device_id": 19639,
+          "/sensor_key": "t",
+          "/sensor_id": 55,
+          "/component_id": 4039417141,
+          "/rollup": "1h",
+          "/function": "avg",
+          "/from": "2026-10-23T00:00:00Z",
+          "/to": "2026-10-24T00:00:00Z",
+          "/sample_size": 1439,
+          "/readings": [
+            [
+              "2026-10-23T23:00:03Z",
+              19.577166666666663
+            ],
+            [
+              "2026-10-23T22:00:01Z",
+              19.473666666666666
+            ],
+            [
+              "2026-10-23T21:00:58Z",
+              19.42932203389831
+            ],
+            [
+              "2026-10-23T20:00:54Z",
+              19.65416666666666
+            ],
+            [
+              "2026-10-23T19:00:53Z",
+              19.545166666666653
+            ],
+            [
+              "2026-10-23T18:00:50Z",
+              19.669833333333322
+            ],
+            [
+              "2026-10-23T17:00:48Z",
+              19.708666666666673
+            ],
+            [
+              "2026-10-23T16:00:46Z",
+              20.249000000000006
+            ],
+            [
+              "2026-10-23T15:00:41Z",
+              20.966333333333342
+            ],
+            [
+              "2026-10-23T14:00:39Z",
+              21.236666666666675
+            ],
+            [
+              "2026-10-23T13:00:37Z",
+              21.211166666666674
+            ],
+            [
+              "2026-10-23T12:00:34Z",
+              20.964500000000005
+            ],
+            [
+              "2026-10-23T11:00:34Z",
+              20.384000000000007
+            ],
+            [
+              "2026-10-23T10:00:34Z",
+              19.818
+            ],
+            [
+              "2026-10-23T09:00:30Z",
+              19.394666666666673
+            ],
+            [
+              "2026-10-23T08:00:23Z",
+              18.897666666666673
+            ],
+            [
+              "2026-10-23T07:00:22Z",
+              18.587500000000002
+            ],
+            [
+              "2026-10-23T06:00:22Z",
+              19.217500000000005
+            ],
+            [
+              "2026-10-23T05:00:20Z",
+              19.279666666666675
+            ],
+            [
+              "2026-10-23T04:00:17Z",
+              19.477333333333352
+            ],
+            [
+              "2026-10-23T03:00:15Z",
+              19.82866666666666
+            ],
+            [
+              "2026-10-23T02:00:42Z",
+              19.853500000000007
+            ],
+            [
+              "2026-10-23T01:00:38Z",
+              20.03499999999998
+            ],
+            [
+              "2026-10-23T00:00:34Z",
+              20.154333333333323
+            ]
+          ]
+        },
+        "selectionCoverage": "All returned aggregation metadata and all 24 reading pairs are preserved for deterministic replay. The pointer-map representation is an excerpt record, not the original serialized HTTP response body.",
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "returnedReadingPairCount": 24
+      },
+      "limits": [
+        "Only the original retrieval date is available; no exact retrieval time is asserted.",
+        "These are requested one-hour averages, not instantaneous measurements. sample_size is the API field value 1439; the returned readings array contains 24 pairs.",
+        "Returned timestamps are preserved exactly. They are not replaced with inferred hour boundaries or asserted interval endpoints.",
+        "The source component_id is retained separately from sensor_id and device_id; no undocumented identifier equivalence is assumed."
+      ],
+      "licensing": {
+        "reportedTerms": "Open Database License (ODbL)",
+        "policyURL": "https://smartcitizen.me/",
+        "scope": "Same platform data policy as the current-device record.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      }
+    },
+    {
+      "id": "airgradient-public-indoor-current",
+      "evidenceType": "public-sensor-api-current",
+      "request": {
+        "method": "GET",
+        "url": "https://map-data.airgradient.com/map/api/v1/indoor/measurements/current",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "59ef5e2c17e5bd9ac17390f755de509abf589080b5477bc93da644d5119b2714",
+        "byteLength": 20670,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:20Z",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/total": 100,
+          "/page": 1,
+          "/pagesize": 100,
+          "/data/0/locationId": 102112442,
+          "/data/0/sensorType": "Small Sensor",
+          "/data/0/pm25": 4.1,
+          "/data/0/pm10": null,
+          "/data/0/atmp": 22.9,
+          "/data/0/rhum": 31,
+          "/data/0/rco2": 553,
+          "/data/0/measuredAt": "2026-10-24T21:57:33.000Z",
+          "/data/0/dataSource": "AirGradient"
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "returnedDataRecordCount": 100,
+        "selectedRowMissingKeys": [
+          "license",
+          "publicContributorName",
+          "publicPlaceUrl"
+        ]
+      },
+      "limits": [
+        "The returned page and response metadata do not establish the total size of the worldwide network.",
+        "The selected response row does not embed a license or contributor attribution. Policy references below are external documentation, not invented response fields.",
+        "locationId identifies a platform location; it is not established here as a physical hardware serial.",
+        "Coordinates are omitted. Public API access does not test the local device API or establish configuration, power, calibration or command support."
+      ],
+      "licensing": {
+        "reportedTerms": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)",
+        "policyURL": "https://www.airgradient.com/documentation/kb/kb-diy-data-ownership-and-sharing",
+        "scope": "Public API data policy; do not apply automatically to private device data or unrelated firmware/hardware.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://www.airgradient.com/documentation/kb/global-indoor-air-quality-dataset/"
+      ]
+    },
+    {
+      "id": "opensensemap-public-box",
+      "evidenceType": "public-sensor-api-current",
+      "request": {
+        "method": "GET",
+        "url": "https://api.opensensemap.org/boxes/5a0c347b9fd3c2001111b701",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "1dc2ea1a06bffcae14ca8fe73572a84536e05f9790c6d8acbf75f01e42d18a44",
+        "byteLength": 1955,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:59:45.988389Z",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/_id": "5a0c347b9fd3c2001111b701",
+          "/model": "homeEthernetFeinstaub",
+          "/updatedAt": "2026-10-24T21:59:20.921Z",
+          "/sensors/0/_id": "5a0c347b9fd3c2001111b708",
+          "/sensors/0/title": "Temperatur",
+          "/sensors/0/unit": "°C",
+          "/sensors/0/sensorType": "HDC1008",
+          "/sensors/0/lastMeasurement": {
+            "createdAt": "2026-10-24T21:59:20.913Z",
+            "value": "10.17"
+          },
+          "/sensors/2/_id": "5a0c347b9fd3c2001111b706",
+          "/sensors/2/title": "Luftdruck",
+          "/sensors/2/unit": "hPa",
+          "/sensors/2/sensorType": "BMP280",
+          "/sensors/2/lastMeasurement": {
+            "createdAt": "2026-10-24T21:59:20.913Z",
+            "value": "995.23"
+          },
+          "/sensors/6/_id": "5a0c347b9fd3c2001111b702",
+          "/sensors/6/title": "PM2.5",
+          "/sensors/6/unit": "µg/m³",
+          "/sensors/6/sensorType": "SDS 011",
+          "/sensors/6/lastMeasurement": {
+            "createdAt": "2026-10-24T21:59:20.913Z",
+            "value": "0.60"
+          }
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "returnedSensorCount": 7
+      },
+      "limits": [
+        "Sensor values are source strings, not JSON numbers; the excerpt preserves that type.",
+        "The response documents one public box. A generic product model does not guarantee that another purchased unit has this sensor configuration.",
+        "Contributor description, display name and coordinates are omitted.",
+        "No health, power, calibration or actuation contract was established by this request."
+      ],
+      "licensing": {
+        "reportedTerms": "Public Domain Dedication and License 1.0 (PDDL 1.0)",
+        "policyURL": "https://sensebox.de/en/",
+        "scope": "Public openSenseMap data policy stated by senseBox; hardware and software licensing is separate.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://docs.opensensemap.org/"
+      ]
+    },
+    {
+      "id": "safecast-legacy-measurement",
+      "evidenceType": "public-sensor-api-historical",
+      "request": {
+        "method": "GET",
+        "url": "https://api.safecast.org/measurements.json?per_page=1",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "application/json; charset=utf-8"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "3b6f8e3374e56de981d52f2502524667044d7f9d2059e037de8076af6a06bcb7",
+        "byteLength": 319,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.157037+00:00",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/0/id": 249507276,
+          "/0/device_id": 65001,
+          "/0/value": 40.0,
+          "/0/unit": "cpm",
+          "/0/captured_at": "2024-08-28T09:23:51.000Z",
+          "/0/devicetype_id": null,
+          "/0/sensor_id": null,
+          "/0/station_id": null,
+          "/0/channel_id": null
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "limits": [
+        "The captured_at value is in 2024. HTTP availability on the research date does not make this a live measurement.",
+        "The selected response does not identify a bGeigie Zen. Native family identity must not be inferred from the brand or numeric device ID.",
+        "Contributor user ID and coordinates are omitted.",
+        "Counts per minute are retained in their native unit; no dose conversion is adopted here."
+      ],
+      "licensing": {
+        "reportedTerms": "Creative Commons CC0",
+        "policyURL": "https://safecast.org/data/",
+        "scope": "Safecast public measurement data; source code and device design terms are separate.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      }
+    },
+    {
+      "id": "safecast-map-measurement",
+      "evidenceType": "public-sensor-api-historical",
+      "request": {
+        "method": "GET",
+        "url": "https://simplemap.safecast.org/api/latest?lat=35.6812&lon=139.7671&radius_m=1500&limit=1",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "application/json"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "c54cf5b3093d45e32f47f6f536407940b3bd53506c74b7107149b35f810b5de9",
+        "byteLength": 2733,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.658920+00:00",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/newestUTC": "2026-09-01T12:59:12Z",
+          "/returned": 1,
+          "/limit": 1,
+          "/markers/0/id": 139061733,
+          "/markers/0/timeUTC": "2026-09-01T12:59:12Z",
+          "/markers/0/countRateCPS": 3,
+          "/markers/0/doseRateMicroSvH": 0.0748502994011976,
+          "/markers/0/detectorType": "bGeigie-2001 (1.4.4nano)"
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "limits": [
+        "The URL retains the original public search centre. Actual returned measurement coordinates, contributor text and detector display name are omitted.",
+        "The selected measurement is dated 2026-09-01, not the retrieval date.",
+        "The detectorType explicitly identifies a nano variant; this is not evidence of a live bGeigie Zen feed.",
+        "The source provides countRateCPS and doseRateMicroSvH separately. Their coexistence does not validate a universal conversion factor."
+      ],
+      "licensing": {
+        "reportedTerms": "Creative Commons CC0",
+        "policyURL": "https://safecast.org/data/",
+        "scope": "Safecast public measurement data.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://simplemap.safecast.org/map-api/index.html",
+        "https://github.com/Safecast/bGeigieZen"
+      ]
+    },
+    {
+      "id": "rak-starter-selected-variants",
+      "evidenceType": "storefront-product-variant-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit.js",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "text/javascript; charset=utf-8"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "b2804fed47d3bda27adefcdb85fcd3264911be4099279b85d8da96d9ebb44fcf",
+        "byteLength": 96910,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.778656+00:00",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/id": 8154531954886,
+          "/price": 2499,
+          "/available": true,
+          "/variants/1/id": 43884034654406,
+          "/variants/1/price": 2999,
+          "/variants/1/available": true,
+          "/variants/0/id": 43884034621638,
+          "/variants/0/price": 2999,
+          "/variants/0/available": true,
+          "/variants/1/title": "RAK19007 Base Board - no additional modules - 2dBi rubber antenna / None / 900MHz for US915/AU915/KR920/AS923"
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "selectedVariantMeanings": [
+          {
+            "variantId": 43884034654406,
+            "radioBandLabel": "900MHz for US915/AU915/KR920/AS923",
+            "priceUSD": 29.99
+          },
+          {
+            "variantId": 43884034621638,
+            "radioBandLabel": "800MHz for EU868/IN865/RU864",
+            "priceUSD": 29.99
+          }
+        ],
+        "interpretation": "The storefront uses integer minor units; the public storefront currency was USD at research time. Root price 2499 belongs to the product-wide minimum and is not the price of the two selected variants."
+      },
+      "limits": [
+        "This is product metadata, not a sensor measurement or hardware test.",
+        "Availability and prices are research-time observations and must be checked before procurement.",
+        "Regional frequency choice, batteries, enclosure, freight, taxes and integration costs are not resolved by this response.",
+        "Public product documentation alone does not establish an open hardware license for the complete assembly."
+      ],
+      "licensing": {
+        "scope": "Supplier product metadata. A price/availability observation does not carry a sensor-data license.",
+        "policyURL": "https://store.rakwireless.com/",
+        "fullProductBodyRedistributed": false
+      }
+    },
+    {
+      "id": "rak-bme680-module",
+      "evidenceType": "storefront-product-variant-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://store.rakwireless.com/products/rak1906-bme680-environment-sensor.js",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "text/javascript; charset=utf-8"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "ce2cd46c26de5955f41c108e0e591daffae9c0eabf87a0f138f859252814e2a3",
+        "byteLength": 24358,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.887572+00:00",
+      "excerpt": {
+        "format": "JSON Pointer to exact selected source value",
+        "values": {
+          "/id": 5560543019166,
+          "/title": "Environment Sensor BOSCH BME680 | RAK1906",
+          "/price": 1520,
+          "/available": true,
+          "/variants/0/id": 35614169661598,
+          "/variants/0/price": 1520,
+          "/variants/0/available": true
+        },
+        "originalResponseBodyIncluded": false
+      },
+      "derivedObservations": {
+        "priceUSD": 15.2,
+        "illustrativeElectronicsSubtotalUSD": 75.18,
+        "subtotalFormula": "2 * 29.99 + 15.20",
+        "subtotalScope": "Two selected RAK starter variants and one RAK1906 module only."
+      },
+      "limits": [
+        "No purchase was made. A storefront listing does not verify the selected firmware exposes every sensor channel.",
+        "Subtotal excludes shipping, tax, batteries, enclosure, accessories and engineering time."
+      ],
+      "licensing": {
+        "scope": "Supplier product metadata, not sensor data.",
+        "policyURL": "https://store.rakwireless.com/",
+        "fullProductBodyRedistributed": false
+      }
+    },
+    {
+      "id": "meshtastic-device-metrics-schema",
+      "evidenceType": "published-protocol-schema-inspection",
+      "request": {
+        "method": "GET",
+        "url": "https://raw.githubusercontent.com/meshtastic/protobufs/master/meshtastic/telemetry.proto",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "text/plain; charset=utf-8"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "981123786f03879daebaabe372d748919539ff1c7bd2fc7f92d27b6b94f06663",
+        "byteLength": 22607,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.900230+00:00",
+      "excerpt": {
+        "format": "Exact selected lines; one-based line numbers in the hashed original source",
+        "lines": [
+          {
+            "lineNumber": 16,
+            "text": "   * 0-100 (>100 means powered)"
+          },
+          {
+            "lineNumber": 18,
+            "text": "  optional uint32 battery_level = 1;"
+          },
+          {
+            "lineNumber": 23,
+            "text": "  optional float voltage = 2;"
+          },
+          {
+            "lineNumber": 38,
+            "text": "  optional uint32 uptime_seconds = 5;"
+          }
+        ],
+        "originalResponseBodyIncluded": false
+      },
+      "limits": [
+        "This is source-schema evidence, not an observed telemetry packet or physical device test.",
+        "The battery_level comment uses values above 100 as a powered indicator. Such a value must not be rendered as an ordinary percentage.",
+        "The master URL is mutable. The recorded digest identifies the inspected bytes; no immutable repository commit was established in this capture.",
+        "Protocol fields alone do not establish which values a particular firmware/hardware configuration supplies."
+      ],
+      "licensing": {
+        "scope": "Published schema; only short selected declarations and one short field-semantics comment are recorded.",
+        "policyURL": "https://github.com/meshtastic/protobufs",
+        "licenseDetermination": "Exact license for this schema capture was not independently established; do not infer it from the firmware repository license."
+      },
+      "supportingDocumentation": [
+        "https://meshtastic.org/docs/configuration/module/telemetry/"
+      ]
+    },
+    {
+      "id": "meshtastic-mqtt-envelope-schema",
+      "evidenceType": "published-protocol-schema-inspection",
+      "request": {
+        "method": "GET",
+        "url": "https://raw.githubusercontent.com/meshtastic/protobufs/master/meshtastic/mqtt.proto",
+        "httpStatus": 200,
+        "credentialsSupplied": false,
+        "responseContentType": "text/plain; charset=utf-8"
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Project research HTTP read; selected values and hash subsequently checked against retained original response bytes.",
+        "evidenceLevel": "original-response-bytes-checked"
+      },
+      "originalBody": {
+        "sha256": "6adc981dab9c7c4c2f477be50584d09243b100563aefbc9926d668d1318993c2",
+        "byteLength": 2741,
+        "archivedInRepository": false,
+        "retention": "Original captured bytes were available in temporary research storage when this record was assembled. This file preserves selected excerpts and an integrity digest, not the complete original body."
+      },
+      "retrievedAtUTC": "2026-10-24T21:58:48.912353+00:00",
+      "excerpt": {
+        "format": "Exact selected lines; one-based line numbers in the hashed original source",
+        "lines": [
+          {
+            "lineNumber": 17,
+            "text": "message ServiceEnvelope {"
+          },
+          {
+            "lineNumber": 33,
+            "text": "  string gateway_id = 3;"
+          }
+        ],
+        "originalResponseBodyIncluded": false
+      },
+      "limits": [
+        "The envelope gateway identity is not automatically the measurement-origin device identity.",
+        "No live MQTT broker, radio network or packet was exercised.",
+        "This mutable master URL was read without pinning a repository commit; the digest records the inspected bytes."
+      ],
+      "licensing": {
+        "scope": "Published schema; only short declarations are recorded.",
+        "policyURL": "https://github.com/meshtastic/protobufs",
+        "licenseDetermination": "Exact schema license not independently established in this evidence record."
+      },
+      "supportingDocumentation": [
+        "https://meshtastic.org/docs/software/integrations/mqtt/"
+      ]
+    },
+    {
+      "id": "openeew-historical-accelerometer-read",
+      "evidenceType": "historical-jsonl-read-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://grillo-openeew.s3.amazonaws.com/records/country_code=mx/device_id=000/year=2017/month=11/day=30/hour=23/55.jsonl",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Direct HTTP observation documented during project research on 2026-10-24.",
+        "evidenceLevel": "recorded-observation-without-retained-original-body"
+      },
+      "originalBody": {
+        "archivedInRepository": false,
+        "availableForHashVerification": false,
+        "retention": "Original response bytes and an exact retrieval timestamp were not retained in the available research captures. No body digest or retrieval time is asserted."
+      },
+      "observedFieldValues": {
+        "country_code": "mx",
+        "device_id": "000",
+        "sr": 31.25,
+        "device_t": 1512086340.318,
+        "cloud_t": 1512086340.369
+      },
+      "derivedObservations": {
+        "firstObservedRecordArrayLengths": {
+          "x": 32,
+          "y": 32,
+          "z": 32
+        },
+        "deviceTimestampUTC": "2017-11-30T23:59:00.318Z"
+      },
+      "limits": [
+        "Field values are the research observation, not a freshly reproducible excerpt checked against a retained body.",
+        "The sample is historical 2017 data; current archive ingestion and a current Grillo hardware product were not verified.",
+        "Source schema describes acceleration in gals (cm/s²), and device_t as the time of the final sample. Sample count is not the sample rate.",
+        "Country plus device ID is needed for source identity; device ID alone is not assumed globally unique.",
+        "Location metadata is omitted."
+      ],
+      "licensing": {
+        "reportedTerms": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)",
+        "policyURL": "https://github.com/openeew/openeew#license",
+        "scope": "Published OpenEEW dataset; maintain attribution and assess share-alike obligations before redistributing datasets.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://registry.opendata.aws/grillo-openeew/",
+        "https://raw.githubusercontent.com/openeew/openeew/master/data/README.md"
+      ]
+    },
+    {
+      "id": "openeew-historical-device-metadata-read",
+      "evidenceType": "historical-jsonl-metadata-read-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://grillo-openeew.s3.amazonaws.com/devices/country_code=mx/devices.jsonl",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Direct HTTP observation documented during project research on 2026-10-24.",
+        "evidenceLevel": "recorded-observation-without-retained-original-body"
+      },
+      "originalBody": {
+        "archivedInRepository": false,
+        "availableForHashVerification": false,
+        "retention": "Original response bytes and an exact retrieval timestamp were not retained in the available research captures. No body digest or retrieval time is asserted."
+      },
+      "observedFieldValues": {
+        "country_code": "mx",
+        "device_id": "000",
+        "effective_from": 1483228800.0,
+        "effective_to": 1542758400.0,
+        "is_current_row": false,
+        "vertical_axis": "x",
+        "horizontal_axes": [
+          "y",
+          "z"
+        ]
+      },
+      "derivedObservations": {
+        "observedMetadataRowCount": 36
+      },
+      "limits": [
+        "The metadata includes historical configuration periods; a current-device configuration must not be applied blindly to older records.",
+        "For the selected metadata period the vertical axis is x, not an assumed z.",
+        "No exact location or contributor personal data is included.",
+        "The source schema describes its own interval-boundary semantics. This evidence does not adopt those semantics into the MERLIN profile.",
+        "Original bytes are unavailable for a digest-backed recheck of these recorded observations."
+      ],
+      "licensing": {
+        "reportedTerms": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)",
+        "policyURL": "https://github.com/openeew/openeew#license",
+        "scope": "OpenEEW historical device metadata.",
+        "limitations": "A source policy pointer is not a grant of additional rights. Attribution and other applicable conditions must be carried into any future redistributed dataset."
+      },
+      "supportingDocumentation": [
+        "https://raw.githubusercontent.com/openeew/openeew/master/data/README.md"
+      ]
+    },
+    {
+      "id": "audiomoth-demo-wav-header-read",
+      "evidenceType": "partial-audio-header-read-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://raw.githubusercontent.com/OpenAcousticDevices/AudioMoth-Play/main/assets/BAT.WAV",
+        "httpStatus": 200,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Direct HTTP observation documented during project research on 2026-10-24.",
+        "evidenceLevel": "recorded-observation-without-retained-original-body"
+      },
+      "originalBody": {
+        "archivedInRepository": false,
+        "availableForHashVerification": false,
+        "retention": "Original response bytes and an exact retrieval timestamp were not retained in the available research captures. No body digest or retrieval time is asserted."
+      },
+      "observedHeaderProperties": {
+        "container": "RIFF/WAVE",
+        "encoding": "PCM",
+        "channels": 1,
+        "bitsPerSample": 16,
+        "sampleRateHz": 192000,
+        "bytesInspected": 512,
+        "artistTextPresent": false,
+        "commentTextPresent": false
+      },
+      "limits": [
+        "Only the initial 512 bytes were inspected; the complete audio file was not downloaded, listened to or hash-verified.",
+        "A valid WAV header establishes a usable file format, not a field-deployment provenance chain.",
+        "Absent artist/comment text does not establish when, where or by whom the recording was made.",
+        "A repository software license must not automatically be treated as an audio-recording redistribution license. No recording is copied into this repository.",
+        "No AudioMoth hardware was operated."
+      ],
+      "licensing": {
+        "policyURL": "https://github.com/OpenAcousticDevices/AudioMoth-Play",
+        "recordingLicenseVerified": false,
+        "scope": "Demo header observation only; no full audio redistribution."
+      },
+      "supportingDocumentation": [
+        "https://www.openacousticdevices.info/play",
+        "https://www.openacousticdevices.info/open-source"
+      ]
+    },
+    {
+      "id": "anyshake-tainan-demo-access",
+      "evidenceType": "failed-public-demo-access-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://tainan.anyshake.org/",
+        "httpStatus": 403,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Direct HTTP observation documented during project research on 2026-10-24.",
+        "evidenceLevel": "recorded-observation-without-retained-original-body"
+      },
+      "originalBody": {
+        "archivedInRepository": false,
+        "availableForHashVerification": false,
+        "retention": "Original response bytes and an exact retrieval timestamp were not retained in the available research captures. No body digest or retrieval time is asserted."
+      },
+      "limits": [
+        "The unauthenticated request returned HTTP 403 from the research environment.",
+        "This does not establish that the service is globally unavailable or that the underlying hardware cannot produce data.",
+        "No waveform, measurement timestamp, stream format or live-data freshness was verified through this request."
+      ],
+      "supportingDocumentation": [
+        "https://anyshake.org/docs/live-demo/"
+      ]
+    },
+    {
+      "id": "anyshake-mandalay-demo-access",
+      "evidenceType": "failed-public-demo-access-observation",
+      "request": {
+        "method": "GET",
+        "url": "https://mandalay.anyshake.org/",
+        "httpStatus": 403,
+        "credentialsSupplied": false
+      },
+      "retrievedOnUTC": "2026-10-24",
+      "verification": {
+        "verifiedBy": "Direct HTTP observation documented during project research on 2026-10-24.",
+        "evidenceLevel": "recorded-observation-without-retained-original-body"
+      },
+      "originalBody": {
+        "archivedInRepository": false,
+        "availableForHashVerification": false,
+        "retention": "Original response bytes and an exact retrieval timestamp were not retained in the available research captures. No body digest or retrieval time is asserted."
+      },
+      "limits": [
+        "The unauthenticated request returned HTTP 403 from the research environment.",
+        "This does not establish that the service is globally unavailable or that the underlying hardware cannot produce data.",
+        "No waveform, measurement timestamp, stream format or live-data freshness was verified through this request."
+      ],
+      "supportingDocumentation": [
+        "https://anyshake.org/docs/live-demo/"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 This register identifies the **14 original project artifacts imported on 24 October 2026**
 for the Glaux Client project. Each linked file preserves the source basename and complete
 original bytes. The machine-readable companion is [ARTIFACTS.json](ARTIFACTS.json).
+Later Git-native research and plans are catalogued separately below.
 
 Start ongoing work with the [current continuity checkpoint](Plans/CONTINUITY.md),
 [current implementation and checks](Plans/CURRENT_WORK.md), and
@@ -48,6 +49,22 @@ amendment on 9 October to its 8 October release. The Working Views PDF is dated
 | [What Fits, What Remains: OSCAR Through the Existing Domain Model](Research/Reports/START_HERE_OSCAR_Mapping_Result_v1.0_22OCT2026.docx) | v1.0 | 2026-10-22 | Decision brief for the 22 October research package; subsequent client work is recorded in current continuity. |
 | [MERLIN Power Source Domain Model and Main-Profile Binding Recommendation](Research/Reports/MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026.docx) | v0.1 | 2026-10-14 | Power-model recommendation and design rationale; subsequent accepted bindings are recorded in profile v0.3.5. |
 | [MERLIN Resource Details View Module: Evidence, Semantic Boundaries, and Proposed Design Decisions](Research/Reports/MERLIN_Resource_Details_Research_Paper_v0.15_09OCT2026.docx) | v0.15 | 2026-10-09 | Current imported Details research v0.15; candidate category and layout choices retain their stated proposal standing. |
+
+## Subsequent Git-native research and plans
+
+These records were authored after the original import. Git history carries their
+revisions; they are not additional recovered originals in the 14-file manifest.
+
+| Record | Date | Role and standing |
+| --- | --- | --- |
+| [Open sensor candidates for MERLIN](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md) | 2026-10-24 | Completed candidate research and recommendations, including actual access checks, acquisition observations, UI references and limits. No donor-binding or conformance adoption. |
+| [Open sensor access evidence](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) | 2026-10-24 | 15 study-local records. Reviewed excerpts and available original-response fingerprints; not a full-response archive or executable fixture. |
+| [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) | 2026-10-24 | Proposed next work linking one public specimen to the PBI, wireframe, profile and DIM. Adapter, new page, purchase and live integration are not implemented. |
+
+The research preserves primary-source links in its own report and evidence record.
+The master bibliography/source register remains v0.10 and MPSS remains v0.3.5.
+Future accepted source-selection or technical changes must be reconciled into the
+appropriate maintained artifacts; publication of this proposal does not make that decision.
 
 ## Provenance and byte integrity
 

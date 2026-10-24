@@ -6,6 +6,11 @@ or the [documentation index](https://github.com/OS4CSAPI/glaux-client/blob/work/
 The current collection is maintained on `work/details-view-20261023` while
 [PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
 
+**Latest research:** [open sensor candidates](Docs/Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
+[access evidence](Docs/Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json), and the
+[proposed Smart Citizen experiment](Docs/Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md).
+The study is documented; the proposed real-source integration is not implemented.
+
 An experimental **OS4CSAPI** application evaluating whether the MERLIN domain
 information model and Managed Physical Sensing Systems (MPSS) profile can support
 a consistent, useful sensor-surveillance operator interface.
