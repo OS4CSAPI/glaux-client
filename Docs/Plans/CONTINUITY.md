@@ -85,9 +85,10 @@ measured comparative operator benefit.
 
 | Deployment fact | Recorded value |
 | --- | --- |
-| Verified runtime commit | `0d977e366e55363dd997c0f519c7cca2bc814530` |
-| Cloudflare Pages deployment | `44f92062-a39a-4f86-9267-a63bd0935f53` |
+| Verified runtime commit | `71297c971e2e7532f7c7139600f41e9b58bdcc22` |
+| Cloudflare Pages deployment | `97c801c4-c44f-4484-a175-e6651639fe07` |
 | Experiment index | <https://glaux-client.pages.dev/> |
+| Resource Details template | <https://glaux-client.pages.dev/?page=resource-details-template> |
 | Verified example | <https://glaux-client.pages.dev/?example=power> |
 | Project deployment method | Direct Upload; a Git push does not upload the runtime. |
 
@@ -99,6 +100,18 @@ browser checks passed locally and on production; the existing 23 baseline and
 44 power checks passed locally. [Page-index maintenance](../Design/PAGE_INDEX.md)
 records how later iterations update the catalogue and preserves the Git evidence
 behind the initial dates. The latest runtime and deployment are in the table.
+
+The owner then requested recovery of the earlier Resource Details PBI frame as
+an initially blank canvas. The **560 × 440 working frame** was recovered from
+Requirements v0.8 and the earlier accepted-for-review direction. The later PDF's
+640-pixel content-height preview was a temporary review baseline. The deployed
+sixth page preserves fixed identity, marking placeholders, adjacent tab rows,
+and body-only scrolling, with layout-only overflow samples and resize/reset
+controls. The [template source record](../Design/RESOURCE_DETAILS_TEMPLATE.md)
+separates recovered requirements from current review choices. The 27 template
+and 44 expanded index checks passed locally and on production; existing baseline
+and power checks passed locally. This increment is complete and does not reopen
+DIM/profile design, invent resource content, or establish Dockview integration.
 
 Repository documentation can advance beyond the deployed runtime commit. The
 artifact import itself was documentation-only; the subsequent index was a

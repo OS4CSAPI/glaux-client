@@ -38,12 +38,14 @@ The [current checkpoint](../Plans/CURRENT_WORK.md) and
 [deployment record](../Plans/CLOUDFLARE_DEPLOYMENT.md) distinguish local and live
 verification.
 
-The earlier five-page index's 36 checks passed on <https://glaux-client.pages.dev/> after
-deployment `44f92062-a39a-4f86-9267-a63bd0935f53` of commit `0d977e36`.
-[Recorded live results](INDEX_LIVE_BROWSER_RESULTS.json) include the actual origin,
-source/deployment identity, and the temporary browser TLS setting needed for the
-managed verification proxy. This run verifies page behavior, not certificate-chain
-validation.
+The 44 checks passed again on <https://glaux-client.pages.dev/> after template
+deployment `97c801c4-c44f-4484-a175-e6651639fe07` of commit `71297c97`.
+[Recorded live index results](INDEX_LIVE_BROWSER_RESULTS.json) include the actual
+origin, source/deployment identity, and the temporary browser TLS setting needed
+for the managed verification proxy. The template's own **27 live checks also
+passed**, including real native drag resizing and fixed-band scrolling;
+[recorded template results](TEMPLATE_LIVE_BROWSER_RESULTS.json) preserve them.
+These runs verify page behavior, not certificate-chain validation.
 
 ## Details and power browser checks
 

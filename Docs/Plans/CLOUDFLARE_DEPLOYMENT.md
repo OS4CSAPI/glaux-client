@@ -1,5 +1,49 @@
 # Cloudflare deployment continuation
 
+## Resource Details template deployment result
+
+**Completed 24 October 2026 at 4:34:47 p.m. EDT.** The recovered 560 × 440
+working frame is live as a standalone, initially blank wireframe canvas and is
+listed on the six-page homepage index. The fixed identity, two navigation rows,
+and top/bottom marking placeholders surround an internally scrolling body.
+Native resize, explicit size/reset controls, and optional layout-only overflow
+samples support review without loading source data.
+
+| Result | Actual value |
+| --- | --- |
+| Project / environment | `glaux-client` / production |
+| Method | Existing Pages Direct Upload through the Cloudflare connector and scoped-JWT asset API |
+| Source branch | `work/details-view-20261023` |
+| Deployed Git commit | `71297c971e2e7532f7c7139600f41e9b58bdcc22` |
+| Deployment ID | `97c801c4-c44f-4484-a175-e6651639fe07` |
+| Live template | <https://glaux-client.pages.dev/?page=resource-details-template> |
+| Production index | <https://glaux-client.pages.dev/> |
+| Immutable deployment | <https://97c801c4.glaux-client.pages.dev/> |
+| Completed UTC | `2026-10-24T20:34:47.096747Z` |
+| Assets | 16 files, 199,951 bytes; 3 changed assets uploaded, all hashes confirmed present |
+| Build and CI | 74 offline tests, TypeScript/Vite build, and [GitHub CI](https://github.com/OS4CSAPI/glaux-client/actions/runs/40130331258) passed |
+| Local browser checks | 27 template, 44 index, 23 baseline, and 44 power checks passed |
+| Production browser checks | 27 template and 44 index checks passed; zero browser script errors |
+
+The source was published to GitHub, fetched, compared with the local files, and
+rebuilt from the clean matching revision before upload. The project canonical
+deployment was confirmed to match this ID and commit. The previous five examples,
+original source artifacts, profile, and pinned library remain unchanged.
+
+[Template live results](../Testing/TEMPLATE_LIVE_BROWSER_RESULTS.json) and
+[index live results](../Testing/INDEX_LIVE_BROWSER_RESULTS.json) retain the checks,
+origin, and runtime/deployment identity. The managed verification proxy required
+`ignoreHTTPSErrors` for Chromium, as in the earlier deployment; it changes only
+the verification browser and does not establish the public certificate chain.
+Native scrollbar rendering was retained for template visual review. Local blank,
+overflow, resized, and narrow screenshots were inspected; the live template and
+index passed the same behavior checks.
+
+[The design record](../Design/RESOURCE_DETAILS_TEMPLATE.md) distinguishes the
+recovered working frame from provisional navigation labels and the spacing,
+scrollbar, and resize choices made for this review canvas. This is not an actual
+Dockview-hosted integration or a finalized PBI.
+
 ## Experiment-index deployment result
 
 **Completed 24 October 2026 at 12:52:53 p.m. EDT.** The homepage now lists the five
@@ -108,10 +152,10 @@ external CSAPI server integration.
 | --- | --- |
 | Repository | [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client) |
 | Source branch | [work/details-view-20261023](https://github.com/OS4CSAPI/glaux-client/tree/work/details-view-20261023) |
-| Implementation commit deployed | [0d977e366e55363dd997c0f519c7cca2bc814530](https://github.com/OS4CSAPI/glaux-client/commit/0d977e366e55363dd997c0f519c7cca2bc814530) |
+| Implementation commit deployed | [71297c971e2e7532f7c7139600f41e9b58bdcc22](https://github.com/OS4CSAPI/glaux-client/commit/71297c971e2e7532f7c7139600f41e9b58bdcc22) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
-The current Direct Upload contains the index and all five existing examples.
+The current Direct Upload contains the template, six-page index, and all five existing data examples.
 
 ## Historical Git-integration plan — not applied
 
@@ -156,7 +200,7 @@ Checked 23 October 2026:
 
 ## Continuation
 
-The experiment-index deployment is complete and verified. If automatic deployments
+The Resource Details template deployment is complete and verified. If automatic deployments
 are later required, create a separate Git-integrated Pages project connected to the
 same repository and branch using the prepared settings above; do not describe this
 Direct Upload project as Git connected.

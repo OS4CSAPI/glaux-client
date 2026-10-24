@@ -20,8 +20,17 @@ Local verification passed: **74 offline tests**, TypeScript/production build,
 **27 template browser checks**, **44 index checks**, **23 baseline checks**, and
 **44 power checks**, with no script errors. Native scrollbar rendering was enabled
 for visual inspection, including blank, overflowing, resized, and narrow canvases.
-Implementation publication and deployment are the remaining steps; the previous
-production deployment below remains the last verified live runtime until then.
+The implementation is saved on GitHub and deployed. **All 27 template checks and
+44 index checks passed again on production**, with no browser script errors.
+The current runtime is
+[`71297c97`](https://github.com/OS4CSAPI/glaux-client/commit/71297c971e2e7532f7c7139600f41e9b58bdcc22),
+with [passing GitHub CI](https://github.com/OS4CSAPI/glaux-client/actions/runs/40130331258).
+Pages deployment `97c801c4-c44f-4484-a175-e6651639fe07` completed at
+**4:34:47 p.m. EDT on 24 October 2026**. Open the
+[live template](https://glaux-client.pages.dev/?page=resource-details-template)
+or [six-page index](https://glaux-client.pages.dev/).
+The [deployment record](CLOUDFLARE_DEPLOYMENT.md) retains the runtime identity and
+live checks. This increment is complete; the preceding checkpoints below are history.
 
 ## Experiment index — 24 October 2026
 

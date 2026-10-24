@@ -136,8 +136,9 @@ use the existing checks for the affected code and behavior.
 ## Deployment and work scope
 
 The recorded runtime remains commit
-`0d977e366e55363dd997c0f519c7cca2bc814530`, Pages deployment
-`44f92062-a39a-4f86-9267-a63bd0935f53`, including the later page-index increment.
+`71297c971e2e7532f7c7139600f41e9b58bdcc22`, Pages deployment
+`97c801c4-c44f-4484-a175-e6651639fe07`, including the page index and later
+Resource Details template increment.
 An artifact-only change advances the
 repository documentation without changing that runtime. Record any later runtime
 deployment separately through the existing build, Direct Upload, and live-check
