@@ -147,6 +147,32 @@ details > summary::marker { font-size: 0.8em; }
 .power-record-selector .section-description { margin: 0.75rem 0 0; }
 .power-issue { font-size: 0.8rem; color: #7b302a; margin-top: 0.75rem; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.experiment-navigation { margin-bottom: 1.2rem; font-size: 0.85rem; }
+.experiment-navigation a { display: inline-block; padding-block: 0.3rem; }
+.experiment-index { max-width: 70rem; margin-block: 3rem; }
+.index-header { max-width: 49rem; margin-bottom: 1.7rem; }
+.index-header h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
+.index-intro { font-size: 1rem; color: #486780; margin: 0.9rem 0 1.2rem; }
+.index-context { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; color: #536f86; font-size: 0.78rem; }
+.page-count { background: #dfeaf2; color: #285d82; padding: 0.25rem 0.65rem; border-radius: 1rem; font-weight: 650; }
+.index-date-note { color: #536f86; font-size: 0.8rem; max-width: 48rem; margin-bottom: 1rem; }
+.index-notice { padding: 0.8rem 1rem; border-left: 3px solid #c57417; background: #fff7e9; }
+.experiment-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+.experiment-page { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.5rem 2.25rem; background: #fff; border: 1px solid #c9d9e6; border-radius: 0.5rem; padding: 1.4rem 1.5rem; }
+.experiment-description h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+.experiment-link { color: #244e6d; text-decoration: none; }
+.experiment-link:hover { text-decoration: underline; }
+.experiment-description p { color: #4d6980; font-size: 0.88rem; margin-bottom: 0.8rem; }
+.open-experiment { font-size: 0.8rem; font-weight: 650; display: inline-block; padding-block: 0.3rem; }
+.experiment-update { border-left: 1px solid #dce6ee; padding-left: 1.5rem; }
+.experiment-update h3 { color: #526e85; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 0.45rem; }
+.update-summary { font-size: 0.85rem; margin-bottom: 0.7rem; }
+.update-time { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; color: #405f78; font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+.update-date { font-weight: 650; }
+.update-evidence { display: inline-block; margin-top: 0.45rem; padding-block: 0.15rem; font-size: 0.72rem; }
+.index-footer { margin-top: 1.8rem; color: #536f86; font-size: 0.78rem; }
+.index-footer p { margin-bottom: 0.55rem; }
+.index-footer a { display: inline-block; margin: 0 1.25rem 0.5rem 0; }
 @media (max-width: 44rem) {
   main { margin: 1.4rem auto; padding: 0 1rem; }
   .system-card { margin-inline: 0; }
@@ -155,6 +181,8 @@ details > summary::marker { font-size: 0.8em; }
   .url-input-row button { justify-self: start; }
   .source-notice { padding: 0.6rem 0.7rem; }
   .card-header, .tab-panel, .card-footer { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .experiment-page { grid-template-columns: minmax(0, 1fr); padding: 1.2rem; gap: 1rem; }
+  .experiment-update { border-left: 0; border-top: 1px solid #dce6ee; padding: 1rem 0 0; }
 }
 @media (max-width: 28rem) {
   main { padding: 0 0.7rem; }

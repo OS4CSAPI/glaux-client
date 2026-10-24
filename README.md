@@ -68,6 +68,13 @@ See [dependency provenance and build details](Docs/DEPENDENCIES.md).
 
 ## Current implementation
 
+The homepage is an **Experiment index** linking all five example pages. Each entry
+shows a description, its latest recorded change, and a date/time in Eastern Time.
+The dates are recorded implementation changes, not rebuild or deployment times.
+Every example links back to the index, and selecting another example updates its
+shareable URL. Keep [the page catalogue](src/experiments.ts) current using the
+[index maintenance guide](Docs/Design/PAGE_INDEX.md).
+
 The client provides a compact System card with **Operational → Overview,
 Equipment, Condition**, plus Operator and Standard views over the same captured records.
 Switching view or tab does not retrieve different information.

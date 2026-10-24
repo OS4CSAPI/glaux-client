@@ -1,5 +1,25 @@
 # Browser verification
 
+## Experiment index
+
+[`scripts/verify-index-browser.cjs`](../../scripts/verify-index-browser.cjs) checks
+the site's homepage index and its five current page destinations. With the browser
+environment below, run `npm run test:browser:index`. It uses the same `GLAUX_*`
+variables and writes results to `artifacts/index-browser-qa/` by default.
+
+The 24 October local run passed **36 checks with zero browser script errors**,
+covering descriptions, summaries and recorded dates, Eastern timezone display,
+all page destinations and return links, browser history, selector URL updates,
+unknown-page handling, keyboard operation, and 1280/390 px layouts. The index
+makes no fixture or remote-source requests. [Recorded local results](INDEX_BROWSER_RESULTS.json)
+retain the actual checks. The original 23-check regression now
+starts at `/?example=trss`; the existing 44-check power script retains its URL.
+The [current checkpoint](../Plans/CURRENT_WORK.md) and
+[deployment record](../Plans/CLOUDFLARE_DEPLOYMENT.md) distinguish local and live
+verification.
+
+## Details and power browser checks
+
 The original Details View increment includes a portable browser check at
 [`scripts/verify-browser.cjs`](../../scripts/verify-browser.cjs). It tests the actual
 running client with synthetic fixtures and intercepts its additional test URLs;

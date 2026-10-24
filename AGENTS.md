@@ -44,6 +44,12 @@
 
 ## Documentation convention
 
+- Keep `src/experiments.ts` current when adding or changing an experiment page.
+  It supplies the deployed homepage index and the example selector. Record the
+  page's description, latest actual change, and timestamp with an explicit
+  timezone. Do not replace page-change times with build/deployment times. Follow
+  [page-index maintenance](Docs/Design/PAGE_INDEX.md).
+
 - Use [Docs/README.md](Docs/README.md) as the documentation index and `Docs/` as
   the single project documentation root; do not create a parallel lowercase tree.
 - Organize material under Governance, Plans, Research, Design, or Testing as

@@ -12,6 +12,8 @@ own authority and proposal boundaries.
   device mappings, source paths, and unresolved implementation gaps.
 - [Power arrangement mapping](POWER_ARRANGEMENT.md): the existing source A/B
   replacement example and its relationship/observation attribution rules.
+- [Experiment page index](PAGE_INDEX.md): homepage navigation, descriptions,
+  recorded update dates, and the shared catalogue to maintain as pages change.
 
 The implementation uses the existing Overview, Equipment, and Condition views.
 Its current scope does not define the whole profile's subject coverage. Consult

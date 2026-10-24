@@ -2,10 +2,12 @@ import { csapiLibraryStatus } from './data/library';
 import { loadStandardResource, ResourceReadError } from './data/client';
 import { extractStandardModel } from './data/standard';
 import { loadPowerExample, type PowerExampleBundle } from './data/power-example';
-import type { DetailsActions, DetailsState, ExampleOption } from './domain';
+import type { DetailsActions, DetailsState } from './domain';
+import { experimentPages } from './experiments';
 import { interpretDetails } from './profile/interpret';
 import { derivePowerModel, type PowerModel } from './profile/power';
 import { renderDetails } from './presentation/details';
+import { renderExperimentIndex } from './presentation/index';
 import './presentation/style.css';
 
 const app = document.querySelector<HTMLElement>('#app');
@@ -13,18 +15,7 @@ if (!app) {
   throw new Error('The application mount point #app is missing.');
 }
 
-const examples: readonly ExampleOption[] = [
-  { id: 'trss', label: 'TRSS ETU-II · configuration and estimate', url: './fixtures/trss-etu-ii.json',
-    description: 'Synthetic source replay: selected detector configuration, supported options, and battery estimator values.' },
-  { id: 'core2', label: 'OmniSense Core2 · reported equipment', url: './fixtures/omnisense-core2.json',
-    description: 'Synthetic source replay: five reported transducer labels. No individual physical identities or detection time.' },
-  { id: 'core5', label: 'OmniSense Core5ADS · reported condition', url: './fixtures/omnisense-core5ads.json',
-    description: 'A separate synthetic source case: 15.43 V DC, individual diagnostics, and an unverified source clock.' },
-  { id: 'mpss', label: 'MPSS technical description · contract example', url: './fixtures/mpss-technical-description.json',
-    description: 'Fully synthetic manufacturer/model/revision values exercise the bounded MPSS technical-description binding.' },
-  { id: 'power', label: 'Power arrangement · source replacement', url: './fixtures/power-arrangement/manifest.json',
-    description: 'Original synthetic profile records: inspect which source supplies the station, a recorded replacement, and the subject of a voltage observation.' },
-];
+const examples = experimentPages;
 
 const state: DetailsState = {
   loading: false, error: null, model: null, examples, selectedExampleId: examples[0].id,
@@ -109,6 +100,10 @@ const actions: DetailsActions = {
   selectExample(id) {
     const example = examples.find(item => item.id === id);
     if (!example) return;
+    const pageUrl = new URL(location.href);
+    pageUrl.searchParams.set('example', id);
+    history.replaceState(null, '', pageUrl);
+    document.title = `${example.title} | Glaux Client`;
     state.selectedExampleId = id;
     state.sourceKind = 'synthetic';
     if (id === 'power') { state.tab = 'overview'; state.mode = 'operator'; }
@@ -151,4 +146,9 @@ const actions: DetailsActions = {
 };
 
 const requestedExample = new URLSearchParams(location.search).get('example');
-actions.selectExample(examples.find(example => example.id === requestedExample)?.id ?? examples[0].id);
+const selectedExample = examples.find(example => example.id === requestedExample);
+if (selectedExample) actions.selectExample(selectedExample.id);
+else {
+  document.title = 'Experiment index | Glaux Client';
+  renderExperimentIndex(mount, requestedExample !== null);
+}

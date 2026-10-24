@@ -300,6 +300,9 @@ export function renderDetails(container: HTMLElement, state: DetailsState, actio
   }
   const focus = memory.focusOverride ? { key: memory.focusOverride } : captureFocus(container); memory.focusOverride = undefined;
   const body = document.createDocumentFragment(); const header = element('header', 'page-header');
+  const navigation = element('nav', 'experiment-navigation'); navigation.setAttribute('aria-label', 'Experiment');
+  const indexLink = element('a', undefined, 'Page index'); indexLink.href = '/';
+  navigation.append(indexLink); body.append(navigation);
   header.append(element('p', 'eyebrow', 'Glaux Client / Details View'), element('h1', undefined, 'Glaux Client'), element('p', 'intro', 'Explore the same sensor-system records in an operator view and a standard view.')); body.append(header);
   const controls = element('section', 'source-controls'); controls.setAttribute('aria-label', 'Select source records');
   const exampleRow = element('div', 'example-control'); const label = element('label', undefined, 'Evaluation example'); label.htmlFor = 'example-select';
@@ -364,5 +367,5 @@ export function renderDetails(container: HTMLElement, state: DetailsState, actio
   const footer = element('footer', 'page-footer');
   footer.append(element('p', undefined, 'Read-only prototype · MPSS v0.3.5 unchanged · No device commands or server writes'));
   const notices = element('a', undefined, 'Third-party notices'); notices.href = '/THIRD_PARTY_NOTICES.txt'; footer.append(notices); body.append(footer);
-  container.classList.add('details-app'); container.replaceChildren(body); restoreFocus(container, focus);
+  container.classList.remove('experiment-index'); container.classList.add('details-app'); container.replaceChildren(body); restoreFocus(container, focus);
 }

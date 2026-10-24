@@ -21,4 +21,8 @@ The [browser verification record](BROWSER_VERIFICATION.md) contains the original
 selected screenshots, and reproducible commands. The current offline test/build
 status and live-deployment boundary are in [CURRENT_WORK](../Plans/CURRENT_WORK.md).
 
+The index adds a separate 36-check browser script for page metadata, navigation,
+and desktop/mobile layout. Run `npm run test:browser:index` using the same browser
+environment described in the verification record.
+
 Return to the [documentation index](../README.md).

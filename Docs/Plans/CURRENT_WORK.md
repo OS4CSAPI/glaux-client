@@ -1,4 +1,21 @@
-# Current Details View work
+# Current client work
+
+## Experiment index — 24 October 2026
+
+The user requested a deployed index listing the experiment pages, descriptions,
+latest updates, and update dates/times. The implementation now includes a homepage
+index for the five existing examples, links back from every example, and URL
+synchronization when selecting an example. One typed catalogue supplies both the
+index and selector; [the maintenance guide](../Design/PAGE_INDEX.md) records the
+update procedure and the Git evidence for the initial dates.
+
+Local verification passed: 74 offline tests, TypeScript/production build, 36 index
+browser checks, 23 existing example checks, and 44 power checks. No browser script
+errors occurred. The implementation is ready for publication and deployment;
+the last verified production runtime is recorded below until the new upload and
+live checks complete.
+
+## Previous implementation and deployment checkpoint
 
 Updated 24 October 2026. **Power-arrangement implementation, local verification,
 Cloudflare deployment, and live verification are complete.**

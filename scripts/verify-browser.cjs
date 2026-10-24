@@ -17,7 +17,7 @@ const baseURL = (process.env.GLAUX_BASE_URL || 'http://127.0.0.1:5173').replace(
     await page.locator('#example-select').selectOption(id);
     await page.getByRole('heading',{name,exact:true}).waitFor();
   };
-  await page.goto(`${baseURL}/`);
+  await page.goto(`${baseURL}/?example=trss`);
   await page.getByRole('heading',{name:'TRSS ETU-II',exact:true}).waitFor();
   await page.getByRole('tab',{name:'Equipment',exact:true}).click();
   let content = await page.locator('#details-panel-equipment').innerText();
