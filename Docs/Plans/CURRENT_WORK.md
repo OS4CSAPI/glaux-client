@@ -1,133 +1,98 @@
 # Current Details View work
 
-## Power-arrangement implementation in progress — 23 October 2026
+Updated 23 October 2026. **Power-arrangement implementation and local verification
+are complete. Deployment of this increment is still pending.** The public site
+remains the earlier four-example version.
 
-The user authorized implementing the existing MPSS source A/B replacement example
-after reviewing the gap between the power-domain model and the deployed client.
-The application now has the bounded interpreter, seven unchanged synthetic source
-records, source-preserving bundle retrieval, and integrated power views. The
-focused loader and interpretation checks have passed; full regression, browser
-verification, final documentation and deployment are still pending at this checkpoint.
-See [the source-to-behavior mapping](../Design/POWER_ARRANGEMENT.md).
-
-The deployment described below remains the prior four-example version at
-`53c3ce532abc484dc421696566a573179635d125`. Do not claim the new power example is
-live until a later deployment is recorded and verified. The current chat workspace
-has no authenticated Wrangler configuration and its Cloudflare browser is at the
-sign-in screen. The user's earlier successful local VS Code session is distinct.
-Do not transfer credentials between those environments.
-
-Next: verify the new example at before/replacement/observation instants, preserve
-source B's observation subject, inspect original records on desktop/mobile,
-checkpoint the result to GitHub, then deploy with an authorized authenticated
-Cloudflare session. Do not restart donor research or broaden the profile.
-
-## Previous verified increment
-
-Updated 23 October 2026. **Status: first increment reconstructed, locally and live
-verified, saved for review, and deployed to Cloudflare Pages.**
+## Repository and durable source
 
 - Repository: `OS4CSAPI/glaux-client`.
 - Working branch: `work/details-view-20261023`.
-- Review: [draft PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1).
-- Original baseline: `d2386062871ff8caaa7021d38f39f1af7c74dd12`.
-- Reconstructed implementation checkpoint:
-  [`ddac23a3`](https://github.com/OS4CSAPI/glaux-client/commit/ddac23a3e74f5b4a5fe3bfddc344e004d6dc683f),
-  followed by the final guard/verification commit on the same branch.
-- Pinned library: `OS4CSAPI/ogc-client-CSAPI_2`,
-  `4ca1d7db9b1ccdf545adbef42ef941139fe11977` (phase-10 provenance).
-- Live application: <https://glaux-client.pages.dev>.
-- Deployed implementation: `53c3ce532abc484dc421696566a573179635d125`;
-  Pages deployment `602be95e-6fc1-418f-8119-4d63da5ddba5`.
+- Existing review: [draft PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1).
+- First saved power implementation:
+  [`64e2287b`](https://github.com/OS4CSAPI/glaux-client/commit/64e2287b8b6366eed7fdf0bd83ca502997caeb9d).
+  Follow-up commits on this same branch contain final UI corrections, verification
+  and continuity notes. Fetch and inspect the current head before continuing.
+- Pinned library: `OS4CSAPI/ogc-client-CSAPI_2`, phase-10 commit
+  `4ca1d7db9b1ccdf545adbef42ef941139fe11977`.
+- Last verified public deployment: `53c3ce532abc484dc421696566a573179635d125`,
+  Cloudflare Pages deployment `602be95e-6fc1-418f-8119-4d63da5ddba5`,
+  <https://glaux-client.pages.dev>.
 
-## Recovery and authorization
+## Authorized objective and implementation
 
-The prior local implementation was unavailable. Recovered screen images and
-activity descriptions are design evidence, not recovered source code or proof
-of its checks. This branch is a **new reconstruction** of the already-authorized
-first increment, using the actual source documents and preserved UI evidence.
-Bootstrap-only exclusions were superseded only for these views, bounded profile
-interpretation, and explicitly synthetic evaluation records.
+The user asked why the deployed client did not demonstrate the organized power
+model, then authorized implementing the existing synthetic source A/B replacement
+example. This adds a bounded demonstration; it does not reopen donor selection,
+revise MPSS, approve the proposed battery/interface module, or integrate live
+manufacturer data. The four earlier examples remain separate.
 
-Do not restart research or choose another client library. Read this note, the
-[source index](../Research/SOURCE_INDEX.md), and the
-[exact source-to-view mapping](../Design/DETAILS_VIEW_MAPPING.md) before continuing.
-The full source documents remain outside this public repository. The index records
-versions, fingerprints, locators, and evidence limits; screenshots are not code.
+Select **Power arrangement · source replacement** or use `/?example=power`.
+The compact Operational > Overview / Equipment / Condition card now provides:
 
-## Implemented
+- The supplied source-to-station relationship at three source-grounded instants.
+- Distinct source identities and selectable equipment details.
+- A replacement history identifying removed A and installed B on the same station.
+- One 12.6 V observation describing B, reported by the station at 10:10 UTC.
+- No future reading in the before/replacement views; no invented A observation.
+- Per-fact evidence, a model/binding/presentation explanation, and an independent
+  Standard view and exact original-body download for each source record.
 
-The compact System card supplies **Operational → Overview, Equipment, Condition**.
-Operator and Standard modes consume the same captured model. Four local HTTP
-fixtures keep TRSS ETU-II configuration/estimation, Core2 reported equipment,
-Core5ADS condition, and a fully synthetic MPSS technical-description contract
-separate. Supported options, estimator inputs, and detailed provenance use
-accessible disclosures.
+The seven original JSON bodies remain byte-identical to the supplied synthetic
+profile example. A separate local catalogue maps their original canonical IDs to
+fixed local files and explicitly associates the result schema with its stream.
+It never requests `demo.example` or guesses server routes. Each record retains its
+own source capture and standard projection; bundle data is not merged into one
+station identity. Partial failed responses remain inspectable.
 
-Data retrieval, standard extraction, interpretation, and presentation are separate.
-The actual pinned CSAPI/SensorML/SWE library is used. Original Fetch-exposed bytes,
-text, JSON, exposed headers, URLs, status, and retrieval time are independently
-retained; Standard view exposes unknown fields, links, metadata, and exact-body
-downloads. Direct resource reads use GET with credentials omitted and follow at
-most one explicitly advertised SensorML alternate, without guessed routes.
+The profile interpreter resolves supported native equipment references, checks the
+exact R16 group/term/code-space contract and half-open applicability intervals,
+and preserves producer/observed-subject/schema/output correspondence. Unsupported
+or ambiguous evidence cannot become a reading. A review corrected arbitrary
+fragment endpoints, non-process reporters, and unsupported observation subject
+overrides; regression tests retain those cases.
 
-The interpreter recognizes only MPSS technical-description's four Text terms.
-Device-specific concepts use a separate explicit experiment namespace, with profile
-gaps recorded. It checks source carriers, definitions, value types, units, code
-spaces, declared nil tokens, per-group cardinality, supplied labels where required,
-and subject identity. Foreign-subject and failed-HTTP content remains inspectable
-without populating operator readings. Source clocks are not parsed into trusted
-timestamps; retrieval time is separate. No state of charge, runtime, aggregate
-health, readiness, physical equipment identity, or resource relationship is invented.
+Read [the exact source-to-behavior mapping](../Design/POWER_ARRANGEMENT.md),
+[the source index](../Research/SOURCE_INDEX.md), and the original
+[Details View mapping](../Design/DETAILS_VIEW_MAPPING.md). Original research
+archives and internal documents remain outside this public repository.
 
-## Verification
+## Verification of this increment
 
 | Check | Actual result |
 | --- | --- |
-| `npm ci --no-audit --no-fund` | Passed, including the exact pinned library build |
-| `npm test` | 45 tests passed across 4 files |
-| `npm run build` | TypeScript checking and Vite production compilation passed |
-| `npm run test:browser` with available Playwright/Chromium | 23 checks passed; zero browser script errors |
-| Visual inspection | Six desktop/mobile views inspected; no clipping or overlap; 390 px has no horizontal overflow |
-| Exact-body download | Browser-downloaded bytes matched the original fixture byte for byte |
-| Live Cloudflare verification | 23 browser checks passed against `https://glaux-client.pages.dev`; zero browser script errors |
-| GitHub CI | [Implementation checkpoint passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/39995569307); PR checks identify the result for each subsequent head |
+| `npm test` | 74 tests passed across 6 files |
+| `npm run build` | TypeScript checking and Vite production build passed |
+| Original fixture preservation | Seven bodies byte-compared and SHA-256 checked |
+| GitHub checkpoint CI | [64e2287b passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/40083557766) |
+| Existing browser regression | 23 checks passed; zero script errors |
+| New power browser verification | 44 checks passed; zero script errors |
+| Visual inspection | All 10 power screenshots inspected at 1280 px or 390 px; no clipped facts or horizontal overflow |
+| New live deployment | Not performed from this workspace |
 
-The final review added regression coverage for foreign subjects when the viewed
-process identity is unknown, and valid-looking JSON received with an HTTP error.
-The tests also cover unknown properties, zero/false/empty values, failed reads,
-cancellation, bounded link following, conflicting singleton terms, wrong carriers,
-code spaces/units/types, nil values, and the separation of source examples.
+The [browser verification record](../Testing/BROWSER_VERIFICATION.md) links the
+actual emitted results, reproducible scripts, and selected local screenshots.
 
-[Browser instructions](../Testing/BROWSER_VERIFICATION.md), the
-[recorded check list](../Testing/BROWSER_RESULTS.json), and the executable script
-are saved in this repository. Browser checks are optional local verification;
-standard CI runs install, type-check, offline tests, and production build.
+Checks use explicitly synthetic local data. They establish this bounded behavior,
+not complete OGC/MPSS/RFC conformance, live-server interoperability, production
+readiness, or measured comparative operator benefit.
 
-## Open limits
+## Deployment boundary and next action
 
-- The device-specific experimental bindings still need profile decisions; no profile
-  changes or whole-profile conformance are claimed.
-- Source-based synthetic fixtures are not native manufacturer API responses.
-- No supplied existing-server System URL was available for validation. Browser CORS
-  applies; authentication and collection discovery are outside this increment.
-- Comparative operator benefit has not been measured.
-- No upstream-library change, live device command, or server write was performed.
-  Source manuals, private documents, credentials, and chat transcripts were not
-  committed. The Cloudflare deployment is a Wrangler Direct Upload and therefore
-  does not automatically rebuild from future Git pushes.
+The existing Pages project is **Direct Upload**. Pushing GitHub does not deploy it.
+The earlier upload succeeded through an authenticated Wrangler session in the
+user's local Codex/VS Code environment. That session is not available here: this
+workspace has no Wrangler OAuth configuration or Cloudflare API credential, and
+the available Cloudflare browser is at its ordinary sign-in screen.
 
-## Next concrete action
+Deploy the latest checked GitHub revision through the existing authenticated local
+environment. The concrete
+[Codex deployment handoff](CODEX_VSCODE_HANDOFF.md) records the existing project,
+branch, command and required live verification. Do not create another project,
+merge the PR just to deploy, transfer credentials between environments, or assume
+that an older green run or old public URL proves the new example is live.
 
-Review the live application at <https://glaux-client.pages.dev> and continue the
-existing draft PR. The completed deployment and its Direct Upload limitation are
-recorded in [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md).
-
-Review the runnable increment through PR #1. For the next server-validation step,
-use a supplied existing CSAPI System resource URL in **Use your existing CSAPI
-server**, inspect its standard capture first, and record actual supported and
-unresolved bindings. Do not modify that server or manufacture missing values to
-make the operator view look complete.
-
-Keep this note current and save source changes on the working branch at meaningful
-increments. A chat progress statement is not a source-code checkpoint.
+Update [the deployment record](CLOUDFLARE_DEPLOYMENT.md) only after a successful
+upload and live verification. Preserve any unrelated local changes. Save each
+meaningful continuation to the working branch; chat commentary is not a source
+checkpoint.

@@ -19,3 +19,11 @@ literal source times remain separate from transport retrieval time.
 HTTP and invalid-JSON errors retain any received body in `ResourceReadError.capture`.
 The UI exposes it in Standard view. Browser CORS applies; authentication,
 collection discovery, pagination, and writes are outside this increment.
+
+`power-example.ts` reads a local demonstration catalogue and seven fixed sibling
+JSON files using that same capture boundary. Each resource keeps an independent
+StandardModel. The catalogue maps original canonical identities to local fixture
+files and associates the schema with its stream; these are explicit test-harness
+associations, not new CSAPI fields or guessed server routes. Canonical
+`demo.example` references are never contacted. Partial failures retain available
+response bodies while other successfully retrieved records remain inspectable.

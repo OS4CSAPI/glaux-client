@@ -184,7 +184,7 @@ export function renderPowerPanel(tab: DetailsTab, power: PowerViewState, actions
       if (!source || !station) continue;
       const flow = node('div', 'power-arrangement-row'); flow.dataset.relationshipId = relationship.id ?? relationship.key;
       flow.append(entityButton(source, power, actions, `${key}:source:${source.ref}`, 'Supply source'),
-        node('span', 'power-relation-label', 'supplies →'), entityButton(station, power, actions, `${key}:station:${station.ref}`, 'Supplied equipment'));
+        node('span', 'power-relation-label', 'supplies'), entityButton(station, power, actions, `${key}:station:${station.ref}`, 'Supplied equipment'));
       arrangement.append(flow, evidencePanel('Relationship meaning and source', [relationship.evidence,
         relationship.subject?.evidence, relationship.object?.evidence, relationship.interval.fromEvidence, relationship.interval.untilEvidence],
       power, actions, memory, `${key}:relationship:${relationship.key}`,
@@ -195,7 +195,8 @@ export function renderPowerPanel(tab: DetailsTab, power: PowerViewState, actions
     result.append(node('h3', undefined, 'Equipment in the recorded arrangement'));
     const refs = new Set<string>();
     for (const relationship of power.model.relationships) {
-      if (relationship.kind !== 'powers' || relationship.object?.resolvedRef !== stationRef(power)) continue;
+      if (relationship.status !== 'valid' || relationship.kind !== 'powers'
+        || relationship.object?.resolvedRef !== stationRef(power)) continue;
       if (relationship.subject?.resolvedRef) refs.add(relationship.subject.resolvedRef);
       if (relationship.object?.resolvedRef) refs.add(relationship.object.resolvedRef);
     }

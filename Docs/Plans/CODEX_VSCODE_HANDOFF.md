@@ -1,146 +1,88 @@
-# Codex in VS Code: Cloudflare deployment outcome
+# Codex in VS Code: deploy the power-arrangement increment
 
-## Completed outcome
+## Task
 
-Deployment completed on 23 October 2026 using the authenticated local Wrangler
-session. Cloudflare Pages project `glaux-client` serves the application at
-<https://glaux-client.pages.dev>. Deployment
-`602be95e-6fc1-418f-8119-4d63da5ddba5` contains Git commit
-`53c3ce532abc484dc421696566a573179635d125`; 23 live browser checks passed with
-zero script errors. Wrangler Direct Upload was used because the CLI cannot create
-a Git-integrated Pages project. See [the deployment record](CLOUDFLARE_DEPLOYMENT.md)
-for the exact method, immutable URL, and verification scope.
+Deploy the completed power-arrangement increment from the current head of
+`OS4CSAPI/glaux-client`, branch `work/details-view-20261023`, to the existing
+Cloudflare Pages project **glaux-client**. The user has authorized the deployment.
+Use the local Wrangler session that performed the earlier upload if still valid.
+No new research, UI redesign, profile changes, upstream-library changes, device
+commands or writes to CSAPI servers are required.
 
-## Authorized objective
+Read `AGENTS.md`, `Docs/Plans/CURRENT_WORK.md`, and
+`Docs/Plans/CLOUDFLARE_DEPLOYMENT.md` first. The initial power checkpoint is
+`64e2287b8b6366eed7fdf0bd83ca502997caeb9d`; use the latest branch head, including
+subsequent verification/UI fixes, rather than resetting to that initial commit.
 
-The user has authorized deploying the latest Glaux Client implementation from
-GitHub to Cloudflare so they can view it. Continue that deployment in the user's
-existing VS Code environment. The application is already implemented; this task
-does not require redesign, renewed research, a replacement library, profile
-changes, upstream-library changes, device commands, or writes to existing CSAPI
-servers. Building the existing application for deployment is part of the task.
+## Preserve and build the actual GitHub revision
 
-## Read first
-
-1. [AGENTS.md](../../AGENTS.md).
-2. [CURRENT_WORK.md](CURRENT_WORK.md).
-3. [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md).
-
-## Known repository state at handoff
-
-| Item | Last checked value |
-| --- | --- |
-| Repository | [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client) |
-| Implementation branch | `work/details-view-20261023` |
-| Implementation commit | `eb9a7f45aa7db31ef71196e807b69a300d473b40` |
-| Continuity checkpoint before this handoff | `44b94809b526c94fc37d374d276e6192d94c08de` |
-| Review | [Draft PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) |
-| `main` | Bootstrap at the last check; the implementation remains on the branch above |
-| Library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
-
-The previous workspace was clean at the continuity checkpoint. This handoff will
-have a subsequent commit; verify the actual remote head instead of resetting to
-one of these historical SHAs. Deploy the implementation branch directly. Do not
-merge the draft PR merely to make deployment possible.
-
-## First actions in the actual local workspace
-
-1. Locate the user's real checkout and inspect its status, branch, remotes and
-   HEAD before changing anything. Confirm the origin is the repository above.
-2. Preserve all existing user changes. Do not reset, clean, discard, or silently
-   stash them. Use a separate worktree/checkout if deployment preparation would
-   interfere with ongoing work.
-3. Fetch the remote branch and inspect its current head and intervening commits.
-   Confirm the selected deployment revision contains the implementation commit.
-   Keep the actual selected SHA in the continuation record.
-4. Read the local build settings and initialize the pinned submodule before
-   dependency installation. Its branch name is provenance; the gitlink is the pin.
-
-The chat workspace path, browser tabs, cookies, installed tools and authenticated
-sessions are not assumed to exist on the user's machine. No secret or filesystem
-sharing between those environments has been established.
-
-## Cloudflare status and authentication
-
-The latest retry in the prior browser still returned the generic error:
-"Unable to sign in. Try again or use your email and password."
-No Cloudflare project, build, deployment or live URL was created or verified.
-The user's local Cloudflare authentication has not been checked by this handoff.
-
-First check available local authentication, including an existing browser or CLI
-session. Use official CLI/API operations that support the selected deployment method.
-Only if a valid authorized session is unavailable, have the user
-complete the official secure login in their local browser. Do not copy cookies,
-tokens, passwords or authentication codes out of the prior environment, request
-them in chat, or commit them.
-
-Use the user-selected Cloudflare account. Prefer **Pages Git integration** so
-future pushes to the selected GitHub branch can build automatically. If a local
-Wrangler deployment is the practical way to deliver the authorized Cloudflare
-preview, build only the verified GitHub revision and record that deployment
-method explicitly. A Direct Upload is not a Git-connected automatic deployment.
-Cloudflare requires a new project to change Direct Upload to Git integration;
-see its [Direct Upload guide](https://developers.cloudflare.com/pages/get-started/direct-upload/).
-Keep the deployment on Cloudflare; no custom domain or DNS change is needed.
-
-If hosting authentication blocks again, preserve the exact observed blocker and
-provide a working local preview so the user can inspect the existing client.
-Start `npm run dev`, or `npm run preview` after a successful build, and verify the
-actual local URL reported by that process before returning it. A local preview
-is not a completed Cloudflare deployment.
-
-## Exact prepared build settings
-
-| Setting | Value |
-| --- | --- |
-| Project type | Pages with Git integration |
-| Repository | `OS4CSAPI/glaux-client` |
-| Production/source branch | `work/details-view-20261023` |
-| Root directory | Repository root; leave blank |
-| Framework preset | None; enter the explicit build command |
-| Build output directory | `dist` |
-| Build variables, production and preview | `NODE_VERSION=24`, `SKIP_DEPENDENCY_INSTALL=1` |
+1. Inspect the existing checkout, branch, remote, status and local authentication.
+   Preserve all user changes. Use a separate checkout/worktree if necessary.
+2. Fetch `origin work/details-view-20261023` and inspect intervening commits.
+   Use the exact current GitHub revision; record its SHA. Do not merge draft PR #1
+   solely to make deployment possible.
+3. Initialize the pinned submodule. Its gitlink remains
+   `4ca1d7db9b1ccdf545adbef42ef941139fe11977`; do not use `--remote`.
+4. Build using the existing lockfiles and Node 24 or the already working Node 26:
 
 ```sh
-git submodule update --init --recursive && npm ci && npm run build
+git submodule update --init --recursive
+npm ci --no-audit --no-fund
+npm test
+npm run build
 ```
 
-Keep install scripts and development dependencies enabled. `npm ci` invokes
-`scripts/build-ogc-client.mjs`, which verifies the exact library SHA, installs its
-own locked dependencies and builds its exports. Root `npm run build` runs
-TypeScript checking and Vite. The existing `.nvmrc` selects Node 24. Do not use
-`--ignore-scripts`, `--omit=dev`, or `git submodule update --remote`.
+The application has no new runtime dependency. The completed verification scope
+and counts are in CURRENT_WORK. Do not attribute earlier results to untested changes.
 
-This is a static Vite application. Pages serves the existing `dist` output;
-no runtime migration, Worker entry point or Cloudflare Vite plugin is needed.
-The deployment note links the checked official Cloudflare build documentation.
+## Deploy to the existing project
 
-## Previous validation and present limits
+The project is **Pages Direct Upload**, with production branch metadata
+`work/details-view-20261023`. Git pushes do not trigger uploads. Do not recreate
+it, switch hosting, or assume it became Git-integrated.
 
-The prior workspace recorded 45 passing tests across four files, a successful
-production build, and 23 passing browser checks with no browser script errors.
-These results do not establish the state of this local machine or a deployment.
-See the [recorded browser results](../Testing/BROWSER_RESULTS.json),
-[earlier implementation CI run](https://github.com/OS4CSAPI/glaux-client/actions/runs/39995569307),
-[PR checks](https://github.com/OS4CSAPI/glaux-client/pull/1/checks), and
-[GitHub Actions](https://github.com/OS4CSAPI/glaux-client/actions) for actual evidence.
-Check the result for the selected head; do not attribute an older green run to it.
-Repeat checks only for an actual change, failed build or concrete deployment risk.
+Check the local CLI authentication using the existing Wrangler installation.
+The preceding deployment used Wrangler 4.152.0. Run its corresponding Pages command:
 
-## Completion and writeback
+```sh
+wrangler pages deploy dist --project-name glaux-client --branch work/details-view-20261023
+```
 
-1. Complete the Pages deployment from the selected GitHub revision using the
-   settings above, recording whether it uses Git integration or a local upload.
-   Confirm the deployed build corresponds to the revision actually selected.
-2. Open the resulting live URL. Verify the Details View loads and its Overview,
-   Equipment and Condition tabs work in Operator and Standard modes.
-3. Check all four bundled examples: TRSS ETU-II, Core 2 equipment, separate Core 5
-   ADS condition, and the synthetic MPSS technical-description record. Confirm
-   fixture requests and built assets succeed; do not infer server integration.
-4. Record the actual project, deployment identifier, deployed SHA, build outcome,
-   live URL and verification in `CLOUDFLARE_DEPLOYMENT.md`. Update `CURRENT_WORK.md`
-   and the README's deployment status. Preserve any unresolved limitations.
-5. Commit and push the relevant continuation/configuration changes to the working
-   branch, excluding secrets and unrelated user work. Report the live URL and
-   actual deployed SHA. If blocked, record the observed blocker and next concrete
-   action instead of claiming completion.
+If the existing setup invokes Wrangler through npm, use the equivalent
+`npx wrangler pages deploy ...` command. It is not an application dependency.
+Run from the clean checkout of the selected GitHub revision so commit metadata
+matches the built source. Record the deployment ID, immutable deployment URL,
+production URL, deployed SHA and result. Use normal secure login if this local
+session has expired; never paste credentials in chat or commit them.
+
+## Verify the uploaded example
+
+Open the returned deployment and <https://glaux-client.pages.dev/?example=power>.
+Use `scripts/verify-power-browser.cjs` against that URL when Playwright/Chromium is
+available; its `GLAUX_BASE_URL` should be the origin without a query string.
+Also run the original browser script if the deployment itself needs regression
+verification. Inspect the actual UI and requests, not just the HTML title.
+
+The new example must show:
+
+- After replacement: source B supplies the same station, with a 12.6 V observation
+  describing B, reported by the station at 2026-09-02T10:10:00Z.
+- Before replacement: source A supplies the station; no voltage observation is
+  shown because no earlier sample was supplied.
+- At 10:00 UTC replacement: B's interval is applicable and A's has ended; the
+  10:10 reading remains future evidence, not a displayed reading.
+- Equipment inspection keeps A and B distinct. The sources are not declared
+  batteries, and the relationship does not establish actual power flow.
+- Standard view can select each original record and download unchanged bytes.
+
+## Write back
+
+Update CURRENT_WORK, CLOUDFLARE_DEPLOYMENT and README with the actual outcome,
+exact deployed GitHub SHA and verified link. Commit and push the documentation
+on the same working branch. Report the new power deep-link to the user only after
+verifying that it loads this increment. If authentication or deployment blocks,
+record the exact observed blocker; the prior live site remains the old version.
+
+The chat workspace's filesystem, cookies and authentication are not assumed to be
+shared with this VS Code environment. All implementation and continuation material
+needed for this task belongs in GitHub; no chat-only source artifact is required.

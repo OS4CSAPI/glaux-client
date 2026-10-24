@@ -124,6 +124,7 @@ details > summary::marker { font-size: 0.8em; }
 .power-entity-name { font-size: 0.8rem; font-weight: 650; overflow-wrap: anywhere; }
 .power-entity-id { color: #587691; font-size: 0.7rem; margin-top: 0.3rem; overflow-wrap: anywhere; }
 .power-relation-label { align-self: center; font-size: 0.7rem; color: #496e8a; white-space: nowrap; }
+.power-relation-label::after { content: ' →'; }
 .power-equipment-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0.5rem; margin-bottom: 1rem; }
 .power-inspection, .power-history { border-top: 1px solid #d2dfeb; padding-top: 1rem; margin-top: 1.1rem; }
 .power-inspection h3, .power-history h3 { margin-bottom: 0.5rem; }
@@ -167,6 +168,7 @@ details > summary::marker { font-size: 0.8em; }
   .power-context { padding-inline: 0.9rem; }
   .power-arrangement-row { grid-template-columns: minmax(0,1fr); gap: 0.35rem; }
   .power-relation-label { justify-self: start; padding-left: 0.7rem; }
+  .power-relation-label::after { content: ' ↓'; }
   .power-equipment-list { grid-template-columns: minmax(0,1fr); }
   .power-reading { padding: 0.75rem; }
 }

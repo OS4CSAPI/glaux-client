@@ -1,8 +1,22 @@
 # Cloudflare deployment continuation
 
-## Deployment result
+## Power-arrangement update pending
 
-**Completed 23 October 2026.** The latest implementation was built from the exact
+The new source A/B power-arrangement demonstration is implemented on
+`work/details-view-20261023`, beginning at `64e2287b` with subsequent validation
+and UI corrections. It has **not been uploaded from this chat workspace**.
+The verified deployment below remains the earlier four-example version.
+
+This workspace has no authenticated Wrangler configuration or Cloudflare API
+credential; the available Cloudflare browser is at sign-in. The preceding upload
+used the user's authenticated local Codex/VS Code environment. Continue using the
+concrete [deployment handoff](CODEX_VSCODE_HANDOFF.md) and record the new actual
+commit, deployment ID and verification after it succeeds. A GitHub push is not
+an upload for this project.
+
+## Earlier four-example deployment result
+
+**Completed 23 October 2026.** The four-example revision was built from the exact
 pinned submodule and deployed to Cloudflare Pages. Local Wrangler OAuth was already
 authenticated to the user's Cloudflare account with Pages write access, so no new
 sign-in was required.
@@ -42,10 +56,14 @@ external CSAPI server integration.
 | Implementation commit deployed | [53c3ce532abc484dc421696566a573179635d125](https://github.com/OS4CSAPI/glaux-client/commit/53c3ce532abc484dc421696566a573179635d125) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
-Use the checked branch containing the implementation when connecting GitHub.
-Record the actual deployed commit after Cloudflare finishes its build.
+For the next Direct Upload, build the selected GitHub revision locally and record
+the actual deployed commit after the upload completes.
 
-## Prepared Pages configuration
+## Historical Git-integration plan — not applied
+
+These settings were prepared before the Direct Upload deployment. They are not
+the current project's configuration or the next deployment procedure. Retain them
+only as a reference if a separate Git-integrated project is explicitly requested.
 
 | Setting | Value |
 | --- | --- |
@@ -84,7 +102,8 @@ Checked 23 October 2026:
 
 ## Continuation
 
-The current deployment is complete and verified. If automatic deployments are
+The earlier four-example deployment is complete and verified. The new power
+increment requires another upload as described above. If automatic deployments are
 later required, create a separate Git-integrated Pages project connected to the
 same repository and branch using the prepared settings above; do not describe this
 Direct Upload project as Git connected.

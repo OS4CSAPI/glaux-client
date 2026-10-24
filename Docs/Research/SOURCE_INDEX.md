@@ -23,11 +23,18 @@ their presence is not a report that the implementation passed them.
 | `SRC-REQUIREMENTS` | `MERLIN_Resource_Details_Requirements_v0.8_08OCT2026.docx`, v0.8, amended 9 October 2026 | RD-C01-11: identity, tabs, disclosure, accessibility, partial retrieval, time and source inspection. RD-S01-03: marking context. RD-V02 and RD-V08: typed values and qualified estimates. RD-SYS-2/3/4/9: grouped descriptions, location, relationships and inheritance. The older Details > Summary proposal is reconciled in the mapping companion. |
 | `SRC-GUIDE` | `MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx` | Sections 2-3: separate source meaning, presentation meaning and rendering. Sections 10.1.1-10.1.7: System identity, location, condition, relationships, typed fallback and inherited-value provenance. |
 | `SRC-VIEWS` | `MERLIN_System_Details_Working_Views_10OCT2026.pdf`, inspected 55-page version | Page 22: TRSS estimate. Page 23: separate Core 5 ADS voltage/test report. Pages 35-40: Operational > Overview and source-qualified facts. Pages 50-51: distinct Mission and Sensor string labels supersede the umbrella Assignment proposal. Page 52: TRSS configured detector types. Page 53: Core 2 reported transducers. Pages 54-55: equipment bindings and remaining gaps. Page numbers are PDF page numbers. The filename's date does not describe every appended review page. |
+| `SRC-POWER` | `MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026 (1).docx` | Sections 2.2, 5-9, 11 and 14: RFC 7326 organizing model, coordinated battery donor, intended operating arrangement and recommendation/approval boundary. The bounded implemented subset is traced in the [power mapping](../Design/POWER_ARRANGEMENT.md). |
 
 The source package holding the current profile and examples was
 `MERLIN_OSCAR_Mapping_and_Gap_Research_COMPLETE_v1.0_22OCT2026.zip`. Its OSCAR case
 and broader research were not substituted for the Details View sources. Only the
 needed profile, catalogue and connected examples were used from that package.
+
+For the subsequent power demonstration, `SRC-PROFILE` section 5.10 R16 and sections
+5.11, 5.14.3 and 6.6 supply the adopted relationship and history context.
+`SRC-EXAMPLES` files 02, 05, 06, 08, 16, 17 and 18 are copied unchanged as explicitly
+synthetic records. The [power mapping](../Design/POWER_ARRANGEMENT.md) lists every
+body fingerprint, exact JSON path, authored catalogue association and source limit.
 
 ## Selected example locators
 
@@ -59,6 +66,7 @@ findings.
 | `SRC-REQUIREMENTS` | `56ec9b209f901e09d1221a5b4710a69f69ce3953033cd64f8883e3c495e59935` |
 | `SRC-GUIDE` | `90bf51ce42c0c0b658aecef84a25d331425e8b923825310ef456779db06f1b95` |
 | `SRC-VIEWS` | `38641d4fd1c436cda93c56e52f1c007c8b44793a687bc2e38b9800538699eaad` |
+| `SRC-POWER` | `cf2004793fe67c6b923b6d807ec3950a161891dccdd5d96746288f6c450ae2c4` |
 
 ## Embedded evidence used
 
@@ -95,7 +103,9 @@ or make a locally authored mapping an originating-standard requirement.
 - [SWE Common 3.0 JSON schemas](https://schemas.opengis.net/sweCommon/3.0/json/): component types, quantities, categories, records and nil values.
 - [RFC 6906](https://www.rfc-editor.org/rfc/rfc6906.html): the profile link relation.
 - [RFC 8348, section 7.1](https://www.rfc-editor.org/rfc/rfc8348.html#section-7.1): source meanings informing MPSS technical-description terms; the MPSS JSON binding is authored work.
-- [RFC 7577, section 5](https://www.rfc-editor.org/rfc/rfc7577.html#section-5): the separately qualified batteryActualVoltage illustration. It supplies no OmniSense binding.
+- [RFC 7326, sections 6-7](https://www.rfc-editor.org/rfc/rfc7326.html#section-6): organizing power model and relationship concepts; the OGC binding is authored by MERLIN.
+- [RFC 7460](https://www.rfc-editor.org/rfc/rfc7460.html) and [RFC 7461](https://www.rfc-editor.org/rfc/rfc7461.html): companion power/energy and context MIBs. This client does not implement native MIB agents.
+- [RFC 7577, section 4](https://www.rfc-editor.org/rfc/rfc7577.html#section-4): the separately qualified batteryActualVoltage definition/illustration. The earlier section-5 citation was incorrect. It supplies no OmniSense binding and is not used for the external-source A/B voltage example.
 - [Pinned CSAPI library and build provenance](../DEPENDENCIES.md): exact selected revision and reproducible build arrangement.
 
 Return to the [documentation index](../README.md).

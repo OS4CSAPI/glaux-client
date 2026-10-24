@@ -63,10 +63,10 @@ See [dependency provenance and build details](Docs/DEPENDENCIES.md).
 ## Current implementation
 
 The client provides a compact System card with **Operational → Overview,
-Equipment, Condition**, plus Operator and Standard views over one captured model.
+Equipment, Condition**, plus Operator and Standard views over the same captured records.
 Switching view or tab does not retrieve different information.
 
-Four explicitly synthetic local HTTP examples are included:
+Five explicitly synthetic local HTTP examples are included:
 
 | Example | What it exercises |
 | --- | --- |
@@ -74,9 +74,12 @@ Four explicitly synthetic local HTTP examples are included:
 | OmniSense Core2 | Five source-reported transducer labels, without invented physical identities or discovery times |
 | OmniSense Core5ADS | A distinct historical condition case: 15.43 V DC, a literal unverified source clock, and six individual diagnostic findings |
 | MPSS technical-description contract | Fully invented manufacturer/model/revision values exercising the exact bounded MPSS binding |
+| Power arrangement and replacement | Seven unchanged original MPSS example records: source A/B supply intervals, replacement history, and a 12.6 V observation with separate reporter and observed subject |
 
-These newly authored records are source-informed test fixtures, not recovered
-native device responses or current device state. The companion
+The first four cases use newly authored source-informed fixtures. The power case
+copies seven original, explicitly synthetic example bodies byte for byte; its
+new local catalogue only maps their canonical identities to the bundled files.
+None is a native manufacturer response or current device state. The companion
 [source index](Docs/Research/SOURCE_INDEX.md) records the reviewed source versions
 and locators without redistributing the original documents.
 
@@ -84,6 +87,21 @@ Standard view exposes supplied properties and groups, SWE types, units,
 definitions, subjects, source paths, relationships, warnings, full JSON/text,
 and response-body downloads. Unknown content is retained. Each Operator fact has
 a **Meaning and source** disclosure identifying its source and mapping.
+
+### Inspect the power arrangement
+
+Select **Power arrangement · source replacement**, or open `/?example=power`.
+Overview connects the source and station for the selected historical time;
+Equipment lets you inspect the two distinct sources and the station; Condition
+keeps a reading's subject separate from its reporting system. The three supplied
+time choices show A before replacement, B at replacement, and B's one 12.6 V
+observation at 10:10 UTC. No observation is displayed before its supplied time.
+All times belong to the synthetic September 2026 example, not the current clock.
+
+**Meaning and source**, **Model, mapping, and evidence**, and the Standard-view
+record selector expose exact source paths, original bodies, and the distinction
+between RFC donor concepts, MPSS binding rules, and application presentation.
+See [the power source-to-behavior mapping](Docs/Design/POWER_ARRANGEMENT.md).
 
 ### Read an existing resource
 
@@ -98,13 +116,21 @@ validated by the local fixture checks.
 
 ### Interpretation limits
 
-MPSS v0.3.5 does not yet define all device-specific bindings required by these
-screens. The only recognized MPSS subset here is the technical-description group
-with its four Text terms. Device examples instead carry explicit definitions in
+MPSS v0.3.5 does not yet define all device-specific bindings required by the
+historical device screens. Those cases recognize the technical-description group
+with its four Text terms; their other device facts carry explicit definitions in
 `https://example.invalid/glaux-client/experiment/v1/`. These provisional mappings
 are visibly identified and documented in the
 [source-to-view mapping](Docs/Design/DETAILS_VIEW_MAPPING.md); they do not revise
 MPSS or demonstrate whole-profile conformance or a measured profile benefit.
+
+The separate power example recognizes selected existing R16 relationships,
+replacement history, and R11/R17 observation context. It resolves the fixed bundle
+through an explicit local catalogue; it does not discover a server's equipment,
+deployments, streams or schemas. The supplied external sources are not established
+as batteries. The full proposed power/battery module and native RFC MIBs remain
+outside this implementation. Other quantities or unresolved subject contexts
+remain source evidence without an invented reading.
 
 The interpreter checks supplied group/term definitions, carrier, subject, type,
 unit, code space, nil markers, and applicable cardinality. It never selects
@@ -121,8 +147,8 @@ inferred.
 - `src/profile`: bounded interpretation using the published-in-this-repo mapping;
   no vendor adapter or generalized ontology engine.
 - `src/presentation`: accessible views, tabs, source disclosures, and raw inspection.
-- `public/fixtures`: the four synthetic records, served through the same HTTP path
-  as remote data.
+- `public/fixtures`: synthetic records, including the seven-body power example,
+  served through the source-preserving HTTP boundary.
 - `tests`: offline retrieval/preservation, interpretation, and pinned-library checks.
 
 [Current work](Docs/Plans/CURRENT_WORK.md) is the durable continuation point. It
@@ -130,11 +156,13 @@ records what was reconstructed, what was verified, open limits, and the next ste
 The missing prior local implementation was **not recovered**; this branch is a
 new implementation based on the recovered source evidence.
 
-The implementation is deployed at <https://glaux-client.pages.dev> from commit
+The earlier four-example implementation is deployed at <https://glaux-client.pages.dev> from commit
 `53c3ce532abc484dc421696566a573179635d125`. The live application passed all 23
 browser checks with no script errors. [Deployment details](Docs/Plans/CLOUDFLARE_DEPLOYMENT.md)
 record the Cloudflare Pages project, immutable deployment, build result, and the
 Direct Upload method used by the authenticated local Wrangler session.
+The new power example requires a subsequent upload; a GitHub push does not deploy
+this Direct Upload project. Check the deployment record for the actual live revision.
 
 Device controls, server writes, existing-server infrastructure modifications,
 profile changes, and upstream-library changes remain outside this increment.

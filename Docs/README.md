@@ -20,6 +20,7 @@ For the current Details View increment, start with:
 | Continue the deployment in local Codex / VS Code | [Codex VS Code handoff](Plans/CODEX_VSCODE_HANDOFF.md) |
 | Exact source versions, locators, and evidence limits | [Source index](Research/SOURCE_INDEX.md) |
 | Bounded bindings, experimental mappings, and unresolved profile gaps | [Details View mapping](Design/DETAILS_VIEW_MAPPING.md) |
+| Existing power model, exact records and implemented behavior | [Power arrangement mapping](Design/POWER_ARRANGEMENT.md) |
 | Acceptance criteria | [Details View acceptance](Testing/DETAILS_VIEW_ACCEPTANCE.md) |
 | Reproducible browser checks and recorded results | [Browser verification](Testing/BROWSER_VERIFICATION.md), [check list](Testing/BROWSER_RESULTS.json) |
 | Executable checks | [CSAPI smoke tests](../tests/csapi.smoke.test.ts), [retrieval tests](../tests/data.client.test.ts), [generic extraction tests](../tests/data.standard.test.ts), [interpretation tests](../tests/profile.interpret.test.ts) |

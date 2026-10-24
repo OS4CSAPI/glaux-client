@@ -1,6 +1,9 @@
 # Details View source and implementation mapping
 
 This companion defines the first Overview, Equipment, and Condition increment.
+The subsequently authorized connected power example is specified separately in
+[POWER_ARRANGEMENT.md](POWER_ARRANGEMENT.md); the limits below describe the initial
+historical-device cases and technical-description contract.
 It applies the existing working views to the MPSS v0.3.5 source materials and
 records the additional experimental meanings needed for the selected examples.
 It is not a new normative profile, a manufacturer adapter, or a claim of overall
