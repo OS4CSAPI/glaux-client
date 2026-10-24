@@ -3,6 +3,12 @@
 Updated 24 October 2026. **Power-arrangement implementation, local verification,
 Cloudflare deployment, and live verification are complete.**
 
+The owner subsequently authorized publication of the maintained project artifacts.
+The [Artifact Register](../ARTIFACT_REGISTER.md) and [manifest](../ARTIFACTS.json)
+now identify the original source files. [MERLIN continuity](CONTINUITY.md)
+reconciles their 22 October checkpoint with the completed client work. This
+documentation increment does not change the deployed runtime revision below.
+
 ## Repository and durable source
 
 - Repository: `OS4CSAPI/glaux-client`.
@@ -53,8 +59,9 @@ overrides; regression tests retain those cases.
 
 Read [the exact source-to-behavior mapping](../Design/POWER_ARRANGEMENT.md),
 [the source index](../Research/SOURCE_INDEX.md), and the original
-[Details View mapping](../Design/DETAILS_VIEW_MAPPING.md). Original research
-archives and internal documents remain outside this public repository.
+[Details View mapping](../Design/DETAILS_VIEW_MAPPING.md). The identified original
+project artifacts are published at their registered paths; their original
+versions, bytes, and proposal boundaries remain explicit.
 
 ## Verification of this increment
 
@@ -87,3 +94,9 @@ Review the deployed power example and continue the existing draft PR. Any later
 implementation revision requires another explicit build, upload, and live check.
 Preserve unrelated local changes and save each meaningful continuation to the
 working branch; chat commentary is not a source checkpoint.
+
+For artifact changes, run `python3 scripts/verify-artifacts.py` and update the
+register, manifest, and continuity notes together. The earlier PITON/plan files
+preserve their source checkpoint; use CONTINUITY.md for current locations and
+sequencing. A repository documentation commit can be newer than the runtime
+commit without requiring another Cloudflare upload.

@@ -1,10 +1,11 @@
 # Details View source index
 
-This index pins the sources used for the first Overview, Equipment, and Condition
-increment. It records references and source locations so the implementation can be
-reviewed without relying on a conversation. Original documents, manufacturer
-manuals, research archives, and private transcripts are retained outside this
-public repository.
+This index records the exact sources and source locations used by the implemented
+client mappings. Project artifacts published under the owner's 24 October 2026
+authorization are linked below and in the [Artifact Register](../ARTIFACT_REGISTER.md).
+Their original versions and fingerprints remain explicit. Surrounding archival
+bundles, standalone manufacturer manuals, and private transcripts are outside this
+selected project collection.
 
 The local citation keys below identify this implementation's sources. They do not
 allocate identifiers in the MERLIN master bibliography or change its records.
@@ -17,18 +18,21 @@ their presence is not a report that the implementation passed them.
 
 | Local key | Exact source and version | Relevant locations and role |
 | --- | --- | --- |
-| `SRC-PROFILE` | `MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx` | Sections 5.2-5.6: declaration, namespace, references, group contracts, identity and equipment. R11 in section 5.8: producer, subject and temporal context. R17 in section 5.10: quantity and estimate meaning. R20 in section 5.11: qualifying condition findings. Section 6.10: limited battery-voltage illustration. Section 7: presentation is not a mandatory domain-tab layout. |
+| `SRC-PROFILE` | [MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx](../Design/MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx) | Sections 5.2-5.6: declaration, namespace, references, group contracts, identity and equipment. R11 in section 5.8: producer, subject and temporal context. R17 in section 5.10: quantity and estimate meaning. R20 in section 5.11: qualifying condition findings. Section 6.10: limited battery-voltage illustration. Section 7: presentation is not a mandatory domain-tab layout. |
 | `SRC-CATALOGUE` | `domain_catalogue.json` within `MPSS_v0.3.5_example/` | Exact group and term identifiers, value kinds, profile scopes, authored versus translated meanings, and R11/R17 interpretation rules. It is a working example catalogue, not a published vocabulary. |
-| `SRC-EXAMPLES` | `MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip` | `01_model.sml.json` and `02_station.sml.json`: actual JSON group shapes and qualified references. `16_power_stream.json`, `17_power_schema.json`, `18_power_observation.json`: separate producer, observed subject, schema and observation. `31`-`33` plus `R17_BATTERY_VOLTAGE_MAPPING_CASE.md`: the qualified RFC 7577 illustration. The fictional station supplies no facts about TRSS or OmniSense. |
-| `SRC-REQUIREMENTS` | `MERLIN_Resource_Details_Requirements_v0.8_08OCT2026.docx`, v0.8, amended 9 October 2026 | RD-C01-11: identity, tabs, disclosure, accessibility, partial retrieval, time and source inspection. RD-S01-03: marking context. RD-V02 and RD-V08: typed values and qualified estimates. RD-SYS-2/3/4/9: grouped descriptions, location, relationships and inheritance. The older Details > Summary proposal is reconciled in the mapping companion. |
-| `SRC-GUIDE` | `MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx` | Sections 2-3: separate source meaning, presentation meaning and rendering. Sections 10.1.1-10.1.7: System identity, location, condition, relationships, typed fallback and inherited-value provenance. |
-| `SRC-VIEWS` | `MERLIN_System_Details_Working_Views_10OCT2026.pdf`, inspected 55-page version | Page 22: TRSS estimate. Page 23: separate Core 5 ADS voltage/test report. Pages 35-40: Operational > Overview and source-qualified facts. Pages 50-51: distinct Mission and Sensor string labels supersede the umbrella Assignment proposal. Page 52: TRSS configured detector types. Page 53: Core 2 reported transducers. Pages 54-55: equipment bindings and remaining gaps. Page numbers are PDF page numbers. The filename's date does not describe every appended review page. |
-| `SRC-POWER` | `MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026 (1).docx` | Sections 2.2, 5-9, 11 and 14: RFC 7326 organizing model, coordinated battery donor, intended operating arrangement and recommendation/approval boundary. The bounded implemented subset is traced in the [power mapping](../Design/POWER_ARRANGEMENT.md). |
+| `SRC-EXAMPLES` | [MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip](../Design/MPSS/MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip) | `01_model.sml.json` and `02_station.sml.json`: actual JSON group shapes and qualified references. `16_power_stream.json`, `17_power_schema.json`, `18_power_observation.json`: separate producer, observed subject, schema and observation. `31`-`33` plus `R17_BATTERY_VOLTAGE_MAPPING_CASE.md`: the qualified RFC 7577 illustration. The fictional station supplies no facts about TRSS or OmniSense. |
+| `SRC-REQUIREMENTS` | [MERLIN_Resource_Details_Requirements_v0.8_08OCT2026.docx](../Design/Details_View/MERLIN_Resource_Details_Requirements_v0.8_08OCT2026.docx), v0.8, amended 9 October 2026 | RD-C01-11: identity, tabs, disclosure, accessibility, partial retrieval, time and source inspection. RD-S01-03: marking context. RD-V02 and RD-V08: typed values and qualified estimates. RD-SYS-2/3/4/9: grouped descriptions, location, relationships and inheritance. The older Details > Summary proposal is reconciled in the mapping companion. |
+| `SRC-GUIDE` | [MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx](../Design/Details_View/MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx) | Sections 2-3: separate source meaning, presentation meaning and rendering. Sections 10.1.1-10.1.7: System identity, location, condition, relationships, typed fallback and inherited-value provenance. |
+| `SRC-VIEWS` | [MERLIN_System_Details_Working_Views_10OCT2026.pdf](../Design/Details_View/MERLIN_System_Details_Working_Views_10OCT2026.pdf), inspected 55-page version | Page 22: TRSS estimate. Page 23: separate Core 5 ADS voltage/test report. Pages 35-40: Operational > Overview and source-qualified facts. Pages 50-51: distinct Mission and Sensor string labels supersede the umbrella Assignment proposal. Page 52: TRSS configured detector types. Page 53: Core 2 reported transducers. Pages 54-55: equipment bindings and remaining gaps. Page numbers are PDF page numbers. The filename's date does not describe every appended review page. |
+| `SRC-POWER` | [MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026 (1).docx](Reports/MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026.docx) | Sections 2.2, 5-9, 11 and 14: RFC 7326 organizing model, coordinated battery donor, intended operating arrangement and recommendation/approval boundary. The bounded implemented subset is traced in the [power mapping](../Design/POWER_ARRANGEMENT.md). |
 
 The source package holding the current profile and examples was
 `MERLIN_OSCAR_Mapping_and_Gap_Research_COMPLETE_v1.0_22OCT2026.zip`. Its OSCAR case
 and broader research were not substituted for the Details View sources. Only the
 needed profile, catalogue and connected examples were used from that package.
+Its selected project-authored research and continuity documents are also now
+published through the Artifact Register. Their publication does not expand the
+client's implemented mappings or adopt outstanding proposals.
 
 For the subsequent power demonstration, `SRC-PROFILE` section 5.10 R16 and sections
 5.11, 5.14.3 and 6.6 supply the adopted relationship and history context.
@@ -72,8 +76,8 @@ findings.
 
 The working-view PDF contains its own review transcriptions. These are useful
 evidence for the prior presentation decisions, not recovered manufacturer API
-responses. They were read outside the repository; their original files are not
-published here.
+responses. These authored facts/check files remain embedded in the published
+working-view PDF, whose original bytes are preserved.
 
 | Embedded filename | Use | SHA-256 |
 | --- | --- | --- |

@@ -36,18 +36,20 @@ imported from that separate illustration.
 
 ## Original artifacts and fingerprints
 
-The original source documents and archives remain outside this public repository.
-Only seven explicitly synthetic JSON response bodies are copied here. They are
-unchanged, including unrelated content and links outside this selected bundle.
-The repository's new `manifest.json` is an authored demonstration catalogue.
+The original profile, complete connected-example ZIP, and Power Source
+recommendation are now published through the [Artifact Register](../ARTIFACT_REGISTER.md).
+The application's runnable fixture still selects seven explicitly synthetic JSON
+response bodies. They are unchanged, including unrelated content and links outside
+that selected bundle. Its `manifest.json` is an authored demonstration catalogue;
+publishing the full source package does not change the runtime's bounded inputs.
 
 | Original artifact | SHA-256 |
 | --- | --- |
-| `MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx` | `8096648ea481822ae7f98fd5bdd1443851b4bcf47556392de5a713a3b6ffa4f8` |
-| `MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip` | `b45c7ce801adafb939e5f48231fd85a9dbae13ef6d3ce528a3fc1c7b0ce94b1f` |
+| [MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx](MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx) | `8096648ea481822ae7f98fd5bdd1443851b4bcf47556392de5a713a3b6ffa4f8` |
+| [MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip](MPSS/MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip) | `b45c7ce801adafb939e5f48231fd85a9dbae13ef6d3ce528a3fc1c7b0ce94b1f` |
 | Original `MPSS_v0.3.5_example/domain_catalogue.json` | `1f974ed2428e696efc0cb7cfe7193062c6493278ea7fcdf4df0fdad121823837` |
 | Original `MPSS_v0.3.5_example/00_manifest.json` | `ce3442f4b22acac3266499128a33104240d0e77ec58077be95d9af1a784c0dc0` |
-| `MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026 (1).docx` | `cf2004793fe67c6b923b6d807ec3950a161891dccdd5d96746288f6c450ae2c4` |
+| [MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026 (1).docx](../Research/Reports/MERLIN_Power_Source_Domain_Model_and_Main_Profile_Binding_Recommendation_v0.1_14OCT2026.docx) | `cf2004793fe67c6b923b6d807ec3950a161891dccdd5d96746288f6c450ae2c4` |
 
 The recommendation's sections 2.2, 5–9, 11 and 14 explain the intended connected
 operating view and proposal boundary. The v0.3.5 profile and actual example

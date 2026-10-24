@@ -25,8 +25,14 @@
   expose unsupported or ambiguous mappings without inventing profile rules.
 - Vendor adapters, device controls, generalized ontology engines, OSCAR workflows,
   and an Operational Episode model remain outside this increment.
-- Do not commit research archives, manuals, internal documents, captured operational
-  data, credentials, private endpoints, or unrelated workspace material.
+- On 24 October 2026, the user explicitly authorized publishing the identified
+  MERLIN DIM, MPSS, Details View, and continuity project artifacts in this
+  repository. The selected originals are recorded in `Docs/ARTIFACT_REGISTER.md`
+  and `Docs/ARTIFACTS.json`; preserve their bytes, versions, and authority labels.
+  This supersedes the earlier blanket instruction keeping these identified
+  project documents outside the repository. Do not bulk-import the surrounding
+  archival bundles, third-party manuals, captured operational data, credentials,
+  private endpoints, or unrelated workspace material.
 - The user has authorized a Cloudflare Pages deployment of this static client
   directly from its latest GitHub implementation. Record the selected branch,
   build settings, deployed commit, verified URL, and actual result in the
@@ -45,11 +51,19 @@
 - Keep current authoritative material easy to identify. Label proposals and
   superseded history explicitly, with links to their current replacements.
   A folder or recorded proposal does not approve a design change.
-- Add only material suitable and authorized for public release. Do not bulk-import
-  research archives, manufacturer manuals, or private workspace material.
+- Maintain the published artifact set under `Docs/` using
+  `Docs/Governance/ARTIFACT_MAINTENANCE.md`. Update the register, manifest, source
+  references, and continuity notes in the same change as an artifact revision.
+  The existing authorization covers the identified project artifacts; do not
+  invent an additional approval gate for their import or routine maintenance.
 - Keep executable tests and fixtures in code directories; link to them from
   documentation rather than maintaining competing copies.
 - Keep `Docs/Plans/CURRENT_WORK.md` current with the last verified implementation
   checkpoint, completed checks, limitations, and the next concrete action. Save
   source changes on the working branch at meaningful increments; an in-chat
   progress report is not a source-code checkpoint.
+- Read `Docs/Plans/CONTINUITY.md` before continuing the broader DIM/MPSS effort.
+  It carries current status and work sequencing beyond the preserved 22 October
+  PITON and plan; importing those older documents does not restart completed work
+  or authorize a new profile revision. Run `python3 scripts/verify-artifacts.py`
+  after changing registered files or documentation links.

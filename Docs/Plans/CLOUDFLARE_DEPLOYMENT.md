@@ -64,7 +64,7 @@ external CSAPI server integration.
 | --- | --- |
 | Repository | [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client) |
 | Source branch | [work/details-view-20261023](https://github.com/OS4CSAPI/glaux-client/tree/work/details-view-20261023) |
-| Implementation commit deployed | [53c3ce532abc484dc421696566a573179635d125](https://github.com/OS4CSAPI/glaux-client/commit/53c3ce532abc484dc421696566a573179635d125) |
+| Implementation commit deployed | [d74b33dabc5fdfcf22574b8efa7f436b4cf32857](https://github.com/OS4CSAPI/glaux-client/commit/d74b33dabc5fdfcf22574b8efa7f436b4cf32857) |
 | Pinned library gitlink | `4ca1d7db9b1ccdf545adbef42ef941139fe11977` at `.dependencies/ogc-client` |
 
 The current Direct Upload contains the checked power-arrangement revision above.

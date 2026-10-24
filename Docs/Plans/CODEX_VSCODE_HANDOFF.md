@@ -1,4 +1,11 @@
-# Codex in VS Code: deploy the power-arrangement increment
+# Codex in VS Code: deployment procedure
+
+**Status, 24 October 2026: the power-arrangement deployment below is complete.**
+The verified runtime is `d74b33dabc5fdfcf22574b8efa7f436b4cf32857`; see
+[the deployment record](CLOUDFLARE_DEPLOYMENT.md). This document retains the
+repeatable procedure for a subsequent implementation revision. Read
+[CURRENT_WORK](CURRENT_WORK.md) and [MERLIN continuity](CONTINUITY.md) first;
+an artifact-only publication is not a request to rerun the completed upload.
 
 ## Task
 

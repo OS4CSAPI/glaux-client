@@ -1,11 +1,14 @@
 # Governance
 
-Destination for project scope, operating rules, and recorded decisions.
-The current bootstrap scope and boundaries remain in the
-[root README](../../README.md) and [AGENTS.md](../../AGENTS.md).
+The owner authorized publishing the identified project artifacts on 24 October
+2026. The [Artifact Register](../ARTIFACT_REGISTER.md) identifies the selected
+originals, their versions, authority, and canonical locations. The publication
+preserves original content and does not adopt outstanding design proposals.
 
-No additional policies, approvals, or decisions are created by this folder.
-Future records should identify their actual status and distinguish proposals
-from decisions; superseded records should point to their replacements.
+- [Artifact maintenance](ARTIFACT_MAINTENANCE.md): update responsibilities, version
+  and source boundaries, and checks required to keep the collection consistent.
+- [MERLIN continuity](../Plans/CONTINUITY.md): governing project scope, recorded
+  progress, current sequencing, and the relationship to older PITON/plan files.
+- [AGENTS.md](../../AGENTS.md): implementation and repository boundaries.
 
 Return to the [documentation index](../README.md).

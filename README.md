@@ -1,5 +1,11 @@
 # Glaux Client
 
+**Project documents and current implementation:** open the
+[artifact register](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/ARTIFACT_REGISTER.md)
+or the [documentation index](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/README.md).
+The current collection is maintained on `work/details-view-20261023` while
+[PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
+
 An experimental **OS4CSAPI** application evaluating whether the MERLIN domain
 information model and Managed Physical Sensing Systems (MPSS) profile can support
 a consistent, useful sensor-surveillance operator interface.
@@ -81,7 +87,9 @@ copies seven original, explicitly synthetic example bodies byte for byte; its
 new local catalogue only maps their canonical identities to the bundled files.
 None is a native manufacturer response or current device state. The companion
 [source index](Docs/Research/SOURCE_INDEX.md) records the reviewed source versions
-and locators without redistributing the original documents.
+and locators. The original project documents are now published through the
+[artifact register](Docs/ARTIFACT_REGISTER.md), with their original versions and
+bytes preserved.
 
 Standard view exposes supplied properties and groups, SWE types, units,
 definitions, subjects, source paths, relationships, warnings, full JSON/text,
