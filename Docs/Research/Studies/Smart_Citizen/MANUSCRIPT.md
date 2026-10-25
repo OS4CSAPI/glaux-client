@@ -635,6 +635,7 @@ This appendix provides one place to recover recurring shorthand after the paper 
 | **ISA** | Integrated Sensor Architecture; Army sensor-architecture source family studied by the project |
 | **MIMOSA** | Machinery Information Management Open Systems Alliance |
 | **OMS** | Observations, Measurements and Samples |
+| **OSCAR** | Project/application name used by the referenced radiation-screening implementation; this paper does not assert an expansion |
 | **OPC** | Open Platform Communications; used here principally in the OPC UA device-model family |
 | **OPC UA** | Open Platform Communications Unified Architecture |
 | **OSUS** | Open Standard for Unattended Sensors |
@@ -651,6 +652,7 @@ This appendix provides one place to recover recurring shorthand after the paper 
 | **DIM** | Domain Information Model |
 | **GEMET** | General Multilingual Environmental Thesaurus |
 | **HTTP** | Hypertext Transfer Protocol |
+| **IEEE** | Institute of Electrical and Electronics Engineers |
 | **ID** | Identifier |
 | **JCGM** | Joint Committee for Guides in Metrology |
 | **JSON** | JavaScript Object Notation |
@@ -675,6 +677,7 @@ This appendix provides one place to recover recurring shorthand after the paper 
 | **SWE** | Sensor Web Enablement |
 | **TRSS** | Source-system name used by the project; the paper does not assert an expansion |
 | **UI** | User Interface |
+| **UML** | Unified Modeling Language |
 | **UID** | Unique Identifier |
 | **URI** | Uniform Resource Identifier |
 | **URL** | Uniform Resource Locator |
