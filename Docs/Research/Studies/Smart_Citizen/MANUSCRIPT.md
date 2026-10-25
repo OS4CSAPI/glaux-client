@@ -4,7 +4,7 @@
 
 MERLIN Project
 
-Working paper version 0.5 | 24 October 2026 | Study protocol and preliminary source assessment
+Working paper version 0.6 | 24 October 2026 | Study protocol and preliminary source assessment
 
 ## Abstract
 
@@ -353,30 +353,59 @@ Discrepancies will be classified as source omission, mapping defect, profile gap
 
 ## 8 Interface comparison and figure protocol
 
-The planned comparison has three conditions: the actual Smart Citizen interface, a competent generic OGC presentation, and a profile-aware Glaux presentation. The source platform documents front-end access to its data, but no matched screenshot comparison is reported in this draft (Smart Citizen n.d.-a). Generic handling will retain useful labels, types, units, timestamps, relationships, and inspection access. It will not be reduced to a deliberately inconvenient JSON dump.
+### Vendor presentation baseline
+
+Before implementing the CSAPI and Glaux comparison, the study fixes a source-provider presentation baseline using first-party Smart Citizen documentation. This reduces post hoc selection risk: the vendor-side examples are chosen before the experiment produces a preferred client result. Smart Citizen describes its website as a near-real-time exploration interface that combines device data with contextual information, and its onboarding guide instructs users to visit the Kit on the platform after it begins publishing and then scroll down to make basic explorations (Smart Citizen n.d.-a; n.d.-e). These documented screens are therefore evidence of intended presentation patterns, not merely decorative examples selected by this study.
+
+![Official Smart Citizen documentation screenshot of the core platform measurement-exploration screen](figures/smart_citizen_platform_basic_exploration.png)
+
+**Figure 6. Official Smart Citizen platform example of device measurement exploration.** The first-party onboarding documentation presents this screen immediately after instructing a user to visit a newly publishing Kit and scroll down for basic exploration (Smart Citizen n.d.-e). The historical example shows kit page 14410, a device-level header with a 44 percent battery indication and last-data-received time, a horizontal strip of current light, noise, air-temperature, humidity, pressure, and particulate measurements, and a selected PM2.5 detail with property explanation, date controls, and a time-series graph. The visible data are dated 14 July 2021 and are not observations from registration 19639 or evidence that the current production interface is pixel-identical. The source pixels are reproduced unchanged from Smart Citizen's documentation and their provenance and published rights notices are retained with the study figures (MERLIN Project 2026j).
+
+The screen reveals a vendor presentation strategy that is useful to the experiment independently of its visual styling. Device-level context remains visible while multiple current quantities are summarized with values and units, after which one measurement can be expanded into a semantic explanation and temporal view. The presentation therefore connects resource identity/status, measurement inventory, selected-property meaning, and history instead of treating each API field as an isolated row. MERLIN does not need to copy this layout, but a standards-based reconstruction should preserve enough meaning to support the same kinds of operator questions when the source evidence permits them.
+
+![Official Smart Citizen documentation screenshot of the Smart Citizen custom dashboard](figures/smart_citizen_custom_dashboard.png)
+
+**Figure 7. Official Smart Citizen custom-dashboard example.** Smart Citizen's Data Tools documentation distinguishes the classic Smart Citizen Map from a separate JavaScript dashboard and describes the latter as a simpler but more advanced visualization with device status, filtering, customizable time-series plots, WebSocket notifications, and CSV download (Smart Citizen n.d.-f). The historical screenshot identifies device ERLIO as a Smart Citizen Kit 2.1 with Urban Sensor Board and presents current temperature and humidity values beside sensor designations and multi-day trend plots, with particulate sections continuing below the visible frame. It is an official example of an alternate Smart Citizen presentation, not the core platform screen shown in Figure 6 and not the SCK2.3 specimen selected for this experiment. The source image is reproduced unchanged from the first-party documentation and is retained as design evidence rather than a matched experimental condition (MERLIN Project 2026j).
+
+The two vendor examples show that Smart Citizen itself supports more than one valid presentation of the same broader information ecosystem. The core platform emphasizes a compact set of current metrics plus selected-measurement explanation and history, while the custom dashboard makes model/sensor labels and parallel trends more prominent. That variation is useful to the DIM/Profile study because it reinforces that the domain model should preserve reusable concepts without prescribing one universal screen arrangement. It also gives the Resource Details PBI concrete source-provider questions to preserve: what resource is being viewed, what can it report, what are the current values and units, what does a selected property mean, how recent is the information, and what history is available.
+
+**Table 8. Vendor presentation elements and reconstruction questions.** The table records information made visible in the two first-party examples and converts it into questions for the standards-based reconstruction. It does not assert that every element belongs in the default 560 × 440 Resource Details frame or that the MPSS profile already supplies every required binding. The eventual Glaux result will be evaluated against the underlying questions and preserved meanings rather than against pixel-level imitation of Smart Citizen's interface.
+
+| Vendor presentation element | Visible source-provider role | Question for the DIM/Profile and Glaux reconstruction |
+| --- | --- | --- |
+| Device/resource header | Keeps the selected Kit and recent reporting context visible | Can the client identify the represented resource and distinguish resource status/context from observations? |
+| Current-measurement strip | Summarizes several quantities with values and units at once | Can heterogeneous outputs remain individually meaningful while sharing a compact overview? |
+| Battery and last-data context | Shows equipment-related status alongside sensing outputs | Can battery reporting and data freshness remain qualified without becoming readiness or power-topology claims? |
+| Selected PM2.5 detail | Adds a human explanation to the selected property | Can the standardized representation preserve a semantic property definition that the client can explain? |
+| Date controls and time-series graph | Gives temporal context and history for a selected quantity | Can source time, requested interval, aggregation, and retrieved history remain distinguishable? |
+| Sensor/model labels in dashboard | Exposes technical description near current values and trends | Can model, sensing component/function, observed property, and result remain separate but navigable? |
+
+The eventual matched comparison has three conditions: the Smart Citizen source presentation for the selected specimen where a contemporaneous view can be obtained, a competent generic OGC presentation, and a profile-aware Glaux presentation. Figures 6 and 7 establish first-party historical presentation evidence before implementation, but neither is a matched screenshot of public registration 19639. Generic handling will retain useful labels, types, units, timestamps, relationships, and inspection access. It will not be reduced to a deliberately inconvenient JSON dump.
 
 The generic and profile-aware conditions will use the same captured standardized resources. Differences will be attributed to documented presentation rules. Proposed operator tasks will ask a reader to identify the represented resource, distinguish newer readings from older channels, explain an aggregate, locate source evidence, and recognize what remains unknown. Initial evaluation will be investigator inspection, without claims about representative users. A later participant study would require its own recruitment, procedure, and analysis plan.
 
 Each screenshot will record the registration, channel, observation or interval, aggregation, units, capture time, application revision where available, browser, zoom, viewport, and relevant controls. Glaux will be evaluated at the recovered 560 × 440 module size; other sizes will be reported explicitly. The source interface will retain its actual viewport and layout. Where it cannot replay the same sample or interval, images will be described as illustrative interface evidence rather than a matched comparison (MERLIN Project 2026d).
 
-**Table 8. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figure 2 is an authored server-lineage diagram, Figure 3 is an authored client-architecture diagram, and Figures 4 and 5 are authored diagrams of the proposed experiment. Figures 6–8 are reserved evidence slots, and no substitute or simulated screenshots are presented.
+**Table 9. Planned figures and evidence status.** Figures 1–5 identify the system, server, client, experiment architecture, and conceptual model. Figures 6 and 7 now provide first-party historical Smart Citizen UI evidence selected before the CSAPI/Glaux result exists. Figures 8–10 remain reserved for contemporaneous or executed evidence and will not be filled with simulated substitutes.
 
-| Figure | Intended content | Status in version 0.5 |
+| Figure | Intended content | Status in version 0.6 |
 | --- | --- | --- |
 | 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
 | 2 | Experimental CSAPI server lineage and study role | Included as an authored server-lineage diagram |
 | 3 | Glaux experimental client architecture and interpretation boundary | Included as an authored client-architecture diagram; Smart Citizen graph traversal remains planned |
 | 4 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
 | 5 | Proposed model and subject distinctions | Included as an authored diagram |
-| 6 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
-| 7 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
-| 8 | Actual implemented resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
+| 6 | Smart Citizen core-platform measurement exploration | Included first-party documentation screenshot; historical kit 14410 example, not registration 19639 |
+| 7 | Smart Citizen custom-dashboard presentation | Included first-party documentation screenshot; historical SCK2.1 dashboard example |
+| 8 | Contemporaneous Smart Citizen view for the selected registration/interval, if reproducible | Awaiting documented capture; absence will be reported rather than substituted |
+| 9 | Matched generic and profile-aware Glaux views of integrated evidence | Awaiting implementation and capture |
+| 10 | Actual CSAPI resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
 
 Screenshots document visible states. They cannot alone demonstrate semantic correctness or a profile benefit. A screenshot finding must be linked to the source records, mapping decisions, and task outcome. Cropping, annotation, or masking will be disclosed, and the original capture will be retained with its evidence record. Figure captions will identify the source, time basis, comparison limits, and any author-added marks.
 
 ## 9 Results to be reported
 
-**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.5. The public access observations in section 5 establish limited feasibility and remain separate from experimental results.
+**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.6. The public access observations in section 5 and the historical vendor UI evidence in section 8 establish feasibility and presentation context; neither is a matched experimental result.
 
 The results section will be completed in three parts. First, acquisition and integration results will identify the actual versions, selected records, publication/retrieval outcomes, and failures. Second, semantic and coverage results will account for every selected assertion and relevant relationship, with source limitations distinguished from implementation defects. Third, presentation results will connect the matched figures to the predefined operator questions and document where profile-aware organization helped, made no difference, or introduced a problem.
 
@@ -436,6 +465,8 @@ MERLIN Project. 2026h. “Dependency Provenance and Reproducibility.” October 
 
 MERLIN Project. 2026i. “Cloudflare Deployment Continuation.” October 24. Deployment record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Plans/CLOUDFLARE_DEPLOYMENT.md.
 
+MERLIN Project. 2026j. “Smart Citizen Vendor Presentation Baseline.” October 24. Research evidence record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Research/Evidence/SMART_CITIZEN_VENDOR_UI_BASELINE_2026-10-24.md.
+
 Open Geospatial Consortium. 2025a. *OGC API—Connected Systems—Part 1: Feature Resources*. Version 1.0. OGC 23-001. Edited by Alexandre Robin. July 16. https://docs.ogc.org/is/23-001/23-001.html.
 
 Open Geospatial Consortium. 2025b. *OGC API—Connected Systems—Part 2: Dynamic Data*. Version 1.0. OGC 23-002. Edited by Alexandre Robin. July 16. https://docs.ogc.org/is/23-002/23-002.html.
@@ -467,6 +498,10 @@ Smart Citizen. n.d.-b. “Open Source.” *Smart Citizen Docs*. Accessed October
 Smart Citizen. n.d.-c. “Smart Citizen Kit.” *Smart Citizen Docs*. Accessed October 24, 2026. https://docs.smartcitizen.me/hardware/kit/.
 
 Smart Citizen. n.d.-d. “SmartCitizen API Reference.” Accessed October 24, 2026. https://developer.smartcitizen.me/.
+
+Smart Citizen. n.d.-e. “Onboarding Your Kit.” *Smart Citizen Docs*. Accessed October 24, 2026. https://docs.smartcitizen.me/guides/getting-started/onboarding-your-kit/.
+
+Smart Citizen. n.d.-f. “Data Tools.” *Smart Citizen Docs*. Accessed October 24, 2026. https://docs.smartcitizen.me/data/data-tools/.
 
 University of Chicago Press. n.d. “Author-Date: Sample Citations.” *The Chicago Manual of Style Online*. Accessed October 24, 2026. https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html.
 

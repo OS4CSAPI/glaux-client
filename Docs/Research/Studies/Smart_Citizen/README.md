@@ -1,7 +1,7 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.5**, dated **24 October 2026** in
+Through OGC Integration**, version **0.6**, dated **24 October 2026** in
 America/New_York. This edition is a study protocol and preliminary source
 assessment. The adapter, CSAPI publication, live experiment, and interface
 comparison have not been executed.
@@ -31,7 +31,7 @@ comparison have not been executed.
 
 ## Current contents and pending evidence
 
-Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
+Version 0.6 establishes the vendor-presentation baseline before Glaux implementation, adding two unchanged first-party Smart Citizen UI screenshots, documented source-provider intent, a reconstruction-question table, exact source/rights records, and reserved contemporaneous/CSAPI/Glaux comparison positions. Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
 
 The current edition includes an abstract, eleven numbered sections, twenty-two
 references, four figures, seven tables, and two code listings. It covers the
@@ -55,7 +55,7 @@ identified and cited, with its edition, exact locator, contribution, and reuse
 or adaptation limits. Source vocabularies, established model donors, standard
 carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
-Figures 5–7 reserve places for the actual vendor interface, matched generic and
+Figures 8–10 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
 with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
@@ -125,7 +125,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.4 --date 2026-10-24
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.6 --date 2026-10-24
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply

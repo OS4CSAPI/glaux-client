@@ -1,5 +1,13 @@
 # Current client work
 
+## Paper version 0.6 vendor presentation baseline — 24 October 2026
+
+The owner requested populating the source-provider side of the interface comparison before the CSAPI/Glaux results exist. Paper v0.6 now includes two unchanged first-party Smart Citizen UI screenshots selected from the official documentation: the core platform's basic measurement-exploration view and the separately documented custom dashboard. Their source pages describe their roles, while a new evidence record preserves exact repository revision, asset path/blob, historical device/time context, and rights notices.
+
+The new section explains what Smart Citizen makes visible—resource/reporting context, multiple current quantities, values and units, a selected property's explanation and history, sensor/model labels, and alternate dashboard organization—without treating those pixels as normative MERLIN requirements. A reconstruction-question table converts those presentation observations into testable questions for the DIM/Profile and Resource Details PBI. Figures 8–10 remain reserved for a contemporaneous selected-registration source view if available, the matched generic/profile-aware Glaux comparison, and the implemented CSAPI relationship/source-to-display trace.
+
+The screenshots are historical examples rather than registration 19639 evidence, and the paper says so explicitly. The adapter, CSAPI loading, live integration, and matched interface evaluation remain unexecuted. The repository paper workflow will regenerate the v0.6 Word edition and refresh publication fingerprints before this increment is considered complete.
+
 ## Paper version 0.5 experimental Glaux client — 24 October 2026
 
 The owner required the paper to describe the client side of the experiment as rigorously as the CSAPI server. Paper v0.5 now records the standalone `OS4CSAPI/glaux-client` lineage, why Explorer and `cs-client-ts` were not selected as the experimental foundation, the exact pinned `OS4CSAPI/ogc-client-CSAPI_2` phase-10 dependency, and the separate `src/data`, `src/profile`, and `src/presentation` responsibilities. A new evidence record and architecture figure make the Standard View / Operator View comparison boundary explicit.

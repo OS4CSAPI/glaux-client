@@ -53,7 +53,11 @@ that change in this record.
 
 The [server lineage](figure_02_server_lineage.svg) diagram was authored for paper version 0.4. Solid arrows identify the implemented software/deployment lineage established by the cited upstream and project evidence, while dashed arrows identify the proposed Smart Citizen adapter and Glaux path. It is not a recovered infrastructure diagram and does not fill the backend, storage, or persistence gaps recorded in the paper.
 
-## Figures 3 and 4: authored proposed diagrams
+## Figure 3: authored client-architecture diagram
+
+The [client architecture](figure_03_client_architecture.svg) diagram was authored for paper version 0.5. It explains the retained Standard View / bounded profile interpretation / Operator View boundary and explicitly marks Smart Citizen connected-resource traversal as future work.
+
+## Figures 4 and 5: authored proposed diagrams
 
 The [architecture](figure_01_architecture.svg) and
 [model](figure_02_model.svg) diagrams were authored for this paper. Their original
@@ -61,10 +65,41 @@ filenames remain stable as the manuscript's figure numbers change. The captions
 identify their conceptual sources and proposed standing; neither image represents
 an executed integration or verified server resource graph.
 
-## Planned figures 5–7
 
-The planned source-interface, Glaux-comparison, and implemented-resource figures
-require actual capture or execution evidence. They have no substitute images in
-the present edition. Follow the capture fields and comparison limits in the
-[manuscript](../MANUSCRIPT.md) and [publication manifest](../MANUSCRIPT_MANIFEST.json)
-when adding them.
+## Figures 6 and 7: first-party Smart Citizen presentation examples
+
+These screenshots were selected and preserved before implementation of the Smart Citizen CSAPI/Glaux result. They document historical first-party presentation patterns and are not matched captures of registration 19639. The detailed evidence record is [Smart Citizen Vendor Presentation Baseline](../../../Evidence/SMART_CITIZEN_VENDOR_UI_BASELINE_2026-10-24.md).
+
+### Figure 6: core platform measurement exploration
+
+| Field | Record |
+| --- | --- |
+| Local file | [smart_citizen_platform_basic_exploration.png](smart_citizen_platform_basic_exploration.png) |
+| Source credit | Smart Citizen / Fab Lab Barcelona |
+| Source page | [Onboarding your kit](https://docs.smartcitizen.me/guides/getting-started/onboarding-your-kit/), “Visit your Kit” |
+| Immutable source revision/path | `fablabbcn/smartcitizen-docs@cf918c306474112f99ccf21bcbe869b9865b0823`, `docs/assets/images/onboarding_10.png` |
+| Source blob | `f600ff9726fc127c325f5abadb5b75e00074493b` |
+| File properties | PNG, 2784 × 1778 pixels, 767,030 bytes |
+| Changes | None to source pixels or bytes; proportionate display scaling only |
+| Evidence limit | Historical kit 14410 example dated July 2021; not registration 19639 or proof of the current production layout |
+
+### Figure 7: documented custom dashboard
+
+| Field | Record |
+| --- | --- |
+| Local file | [smart_citizen_custom_dashboard.png](smart_citizen_custom_dashboard.png) |
+| Source credit | Smart Citizen / Fab Lab Barcelona |
+| Source page | [Data Tools](https://docs.smartcitizen.me/data/data-tools/), “Web tools” |
+| Immutable source revision/path | `fablabbcn/smartcitizen-docs@cf918c306474112f99ccf21bcbe869b9865b0823`, `docs/assets/images/dashboard.png` |
+| Source blob | `8057e992f064fb3d0edfd7a94cd1b4e3c1dbd2d0` |
+| File properties | PNG, 2560 × 1468 pixels, 309,762 bytes |
+| Changes | None to source pixels or bytes; proportionate display scaling only |
+| Evidence limit | Historical SCK2.1 dashboard example dated June 2022; separate dashboard application and not the selected SCK2.3 specimen |
+
+### Published rights notices
+
+The same general documentation notices recorded for Figure 1 apply to the inspected source repository/site context for these screenshots. The repository LICENSE at revision `cf918c306474112f99ccf21bcbe869b9865b0823` states Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International; the official documentation site also carries the GNU Free Documentation License notice recorded above. No image-specific override was found in the inspected screenshot contexts. The study therefore preserves attribution, source location, unchanged source pixels, both general notices, and the uncertainty about their relationship.
+
+## Planned figures 8–10
+
+Figure 8 is reserved for a contemporaneous Smart Citizen view of the selected registration/interval if one can be documented reproducibly. Figure 9 is reserved for matched generic and profile-aware Glaux views, and Figure 10 for the implemented CSAPI resource relationships plus a source-to-display trace. No simulated substitute should be used when the corresponding experimental evidence is unavailable.
