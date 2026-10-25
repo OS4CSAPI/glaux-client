@@ -71,7 +71,7 @@
     },
     {
       "number": 10,
-      "standing": "Planned implemented CSAPI resource model and traced sample; no image supplied"
+      "standing": "Phase 4 reviewed resource design exists; executed CSAPI server relationships and traced source-to-display evidence remain planned"
     }
   ],
   "screenshotRecordFields": [
@@ -108,18 +108,28 @@
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
     "technicalReview": "Completed for source revision: v0.8 incorporates the reviewed Phase 4 CSAPI resource graph, deterministic study identity policy, explicit non-resources, time projections, and bounded target-server findings; it also adds and audits a maintained acronyms-and-abbreviations section.",
-    "wordRender": "Pending v0.8 GitHub Actions rebuild and complete rendered-page visual inspection.",
+    "wordRender": "Completed: the final v0.8 Word edition renders to 38 pages. Every page was visually inspected at full-page resolution: 17 pages were byte-identical to the already inspected successful v0.8 render, and all 20 changed/reflowed pages plus new page 38 were re-inspected. The review found and corrected stale Phase 1–3 wording, unresolved Phase 4 time language, duplicate table numbering, a v0.7 figure-table header, and the ARM64 shorthand in the server-lineage figure. The final render has no observed clipping, overlap, broken tables, missing figures, or unresolved editorial QA findings.",
     "reviewDate": "2026-10-25",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": null,
+    "renderedPageCount": 38,
     "paragraphAudit": {
-      "result": "Pending v0.8 build verification.",
-      "detail": "The repository verifier remains authoritative for the three-to-five-sentence narrative/explanatory-caption policy and the maintained acronym policy."
+      "result": "Passed in GitHub Actions run 40202562737.",
+      "detail": "The verifier accepted all 117 narrative/explanatory-caption paragraphs under the maintained three-to-five-sentence policy."
     },
     "paperBuildWorkflow": {
-      "status": "pending v0.8 build",
+      "status": "success",
       "sourceBranch": "work/details-view-20261023",
-      "artifactName": "smart-citizen-paper-v0.8"
+      "sourceCommit": "58f4811f5044ba077bd6f8366e2cecea135f6598",
+      "generatedCommit": "377eca298ae8c8f2c8e6619c42c8ee1b5f5a3f71",
+      "runId": 40202562737,
+      "artifactName": "smart-citizen-paper-v0.8",
+      "artifactId": 12602576838,
+      "artifactDigest": "sha256:e7e8ddb1220603e4185e2dcbbca09e0892438ce359c935ac1d358dde7191cc19",
+      "wordSha256": "a5e70eb9099424b14e67261fa1faa632184d69c4438341a2e9a3d635f43687c0"
+    },
+    "acronymAudit": {
+      "result": "Passed in GitHub Actions run 40202562737.",
+      "detail": "The maintained Acronyms and Abbreviations section contains the required core inventory and the verifier found no recurring narrative shorthand outside the documented exclusions. Smart Citizen's source wording 'received signal strength indication (RSSI)' is retained."
     }
   },
   "revisionHistory": [
@@ -309,11 +319,11 @@
   "lineageExamples": [
     {
       "id": "SC-TEMP-01",
-      "standing": "Reviewed formal temperature lineage from frozen specimen; sampling subject and separate resultTime remain unresolved for Phase 4"
+      "standing": "Reviewed formal temperature lineage from frozen specimen; no SamplingFeature is invented and Phase 4 uses the channel source time for both phenomenonTime and resultTime as a disclosed coincident-time projection"
     },
     {
       "id": "SC-BATT-01",
-      "standing": "Reviewed battery-percentage lineage and donor limits; parent-System status mapping accepted, with no RFC object equivalence or power topology established"
+      "standing": "Reviewed battery-percentage lineage and donor limits; parent-System status mapping accepted, with no RFC object equivalence or power topology, and Phase 4 applies the same disclosed coincident-time projection"
     }
   ],
   "systemIdentificationPolicy": {

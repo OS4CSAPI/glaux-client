@@ -21,13 +21,13 @@ The experiment must preserve the distinction among native source facts, document
 | Research paper | Paper v0.8 records sourced terminology/acronyms plus reviewed Phase 1–4 source, mapping, and resource-graph evidence; adapter/server/client results remain pending |
 | Completed before Phase 4 | Frozen specimen, complete representative source characterization, corrected vocabulary evidence, reviewed current/aggregate mapping ledger |
 | Completed through Phase 4 | Owner Phase 1–3 review gate; reviewed CSAPI resource graph and request/cleanup design (no server writes) |
-| Not yet complete | Paper v0.8 closeout verification, adapter, server load, connected Glaux retrieval, matched UI comparison |
+| Not yet complete | Phase 5 adapter, server load, connected Glaux retrieval, matched UI comparison |
 
 ## Governing sequence
 
 Do not begin adapter implementation by guessing target structures from source labels. Complete and review the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
 
-**25 October current checkpoint:** Phases 1–4 are closed for the representative first mapping set and resource design. The owner directed a paper v0.8/acronym closeout before Phase 5; deterministic adapter work remains paused until that documentation checkpoint is complete.
+**25 October current checkpoint:** Phases 1–4 and the paper v0.8/acronym closeout are complete and verified. Deterministic Phase 5 adapter work has not started; it is the next work item when the owner resumes the experiment.
 
 ### Phase 1 — Freeze the experiment specimen
 
@@ -99,10 +99,10 @@ Repeat a bounded subset with an independent producer such as AirGradient, then l
 
 ## Immediate next steps
 
-1. **Pause at the Phase 4 owner review gate.** Review the proposed resource graph, study UID scope, temporal projections, aggregate-processing System/Procedure, explicit non-resources, and target-server constraints.
-2. If the owner authorizes continuation, begin **Phase 5 only**: implement deterministic replay of the frozen specimen against the reviewed graph, with no live polling until deterministic transformation tests pass.
+1. The Phase 4 design and paper v0.8 closeout are complete; retain them as the semantic and documentation baseline.
+2. When the owner resumes the experiment, begin **Phase 5 only**: implement deterministic replay of the frozen specimen against the reviewed graph. Do not perform CSAPI server writes or live polling during the deterministic adapter phase.
 3. Keep the Phase 4 creation/retrieval/cleanup order authoritative for implementation; code may not silently add resources, subjects, relationships or fallback time semantics.
-4. After Phase 5, pause again before any server load/verification phase proceeds.
+4. After Phase 5 tests and homework records are complete, pause again for discussion before Phase 6 server loading.
 
 ## Milestones
 

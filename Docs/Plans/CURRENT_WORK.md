@@ -7,7 +7,9 @@ The owner stopped Phase 5 before any adapter code was changed and directed that 
 
 The owner also identified excessive acronym use as a usability problem. Version 0.8 adds a dedicated Acronyms and Abbreviations section, expands uncommon shorthand on first substantive use where practical, and uses Smart Citizen's source wording **received signal strength indication (RSSI)**. Repository maintenance instructions and the paper verifier now require the core acronym inventory and flag recurring narrative shorthand that is missing from the maintained table.
 
-**Current gate:** complete and visually verify paper v0.8, then stop. Phase 5 adapter implementation is not part of this closeout and must resume only after this documentation checkpoint is complete.
+**Final publication verification:** GitHub Actions run `40202562737` rebuilt paper v0.8 successfully from source commit `58f4811f` and committed the generated Word edition at `377eca29`. The verifier passed 45 cited references, 7 figures, 2 listings, the three-to-five-sentence paragraph policy, the maintained acronym policy, current Word inputs, and 18 publication files. The final DOCX SHA-256 is `a5e70eb9099424b14e67261fa1faa632184d69c4438341a2e9a3d635f43687c0`; the edition renders to 38 pages and every final page has been visually accounted for, with all changed/reflowed pages re-inspected after the QA corrections.
+
+**Current gate:** the Phase 4 paper/acronym closeout is complete. No Phase 5 adapter code or CSAPI server write was performed during this correction. Phase 5 deterministic adapter implementation is the next work item when the owner resumes the experiment.
 
 
 
