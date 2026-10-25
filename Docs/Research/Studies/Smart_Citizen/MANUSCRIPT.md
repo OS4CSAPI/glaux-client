@@ -4,7 +4,7 @@
 
 MERLIN Project
 
-Working paper version 0.3 | 24 October 2026 | Study protocol and preliminary source assessment
+Working paper version 0.4 | 24 October 2026 | Study protocol and preliminary source assessment
 
 ## Abstract
 
@@ -68,7 +68,56 @@ Power illustrates why mapping requires more than matching labels. RFC 7326 disti
 
 The public Smart Citizen specimen reports remaining battery level as a percentage. That is useful measurement evidence, but it does not identify the installed battery, establish which source powers which equipment, or supply replacement history. The experiment will therefore distinguish successful preservation of the percentage from coverage of the wider power-arrangement model (MERLIN Project 2026b, record “smart-citizen-current-19639”).
 
-## 3 Research questions and study design
+## 3 Experimental CSAPI server
+
+### Origin and implementation lineage
+
+pygeoapi is an open-source Python server implementation of the OGC API family, designed around an HTTP API, configuration, core API behavior, and pluggable data, process, and formatter components (pygeoapi Development Team 2026, “How pygeoapi works”). 52°North developed its Connected Systems implementation on that foundation and describes the repository as a proof of concept of OGC API – Connected Systems based on pygeoapi (52°North Spatial Information Research GmbH n.d.-a). 52°North reports that an initial Connected Systems API design and prototype were developed in KI:STE in synergy with MINKE and EMODnet Ingestion III, followed by continued pygeoapi-community work around the prototype (52°North Spatial Information Research GmbH 2023; n.d.-b). This lineage explains where the server implementation came from without implying that pygeoapi itself natively supplies every Connected Systems behavior used by the prototype.
+
+The implementation tested by MERLIN was upstream commit `6ad75aa7fbfc76517c8a24c21446471845007855`, whose project metadata identifies connected-systems-pygeoapi version 0.6.0 and pins the 52°North pygeoapi fork at commit `ec1eb38d9a64d93ec9a2e1b9db6fea6dc05f194a` (52°North Spatial Information Research GmbH n.d.-a). At that revision, the container starts Hypercorn over `connected-systems-api/app:APP` and includes native geospatial dependencies such as GDAL, PROJ, GEOS, NumPy, and Shapely. The upstream repository provides examples for multiple backends and a simulator for inserting example data, so its source tree represents several deployment possibilities rather than one fixed storage architecture. The exact backend used by the OS4CSAPI instance therefore has to come from our deployment evidence, not from inference based on the upstream dependency list.
+
+### OS4CSAPI Oracle deployment
+
+The server selected for this experiment is the existing Oracle-hosted OS4CSAPI deployment at `https://129-80-248-53.sslip.io/csapi-pygeoapi` (MERLIN Project 2026f). The tested running build corresponded to upstream commit `6ad75aa7...` plus documented deployment adaptations, with container image ID `sha256:15e6991a3697e5f7130ed50bbb958720f2ffa7954f114a70be66cc93c0c489da`. Those adaptations consisted of a public-URL correction, an asynchronous full-scan/bootstrap-ID patch, and retained ARM64/native-dependency adaptations. Project inventory recorded the endpoint as unauthenticated for the test environment, but that access posture will be reverified before the Smart Citizen run.
+
+The retained evidence does not establish the running instance's exact storage/backend choice, persistent-volume layout, reverse-proxy configuration, restart policy, or complete Docker Compose topology (MERLIN Project 2026f). Upstream examples support multiple backends, and the tested source includes dependencies for more than one potential storage technology, so assigning one of them to the Oracle instance without runtime evidence would be speculation. These configuration details matter because the experiment will eventually evaluate publication, retrieval, relationships, history, and durability rather than only a single request. They are therefore explicit pre-run evidence requirements rather than assumed infrastructure facts.
+
+A separate 52°North demonstration is publicly available at `https://csa.demo.52north.org/`, where the landing page identifies 52°North Spatial Information Research GmbH as the provider and advertises Connected Systems assets (52°North Spatial Information Research GmbH n.d.-c). That service is not the Oracle-hosted deployment used in the MERLIN preservation experiment. Earlier verification work explicitly corrected a test package that targeted the 52°North demo when the intended primary comparison was the OS4CSAPI Oracle instance (MERLIN Project 2026f). The Smart Citizen study will preserve that deployment distinction so a result from one environment cannot be attributed to the other.
+
+![Lineage from pygeoapi through the 52°North Connected Systems proof of concept to the OS4CSAPI Oracle deployment, with the proposed Smart Citizen adapter and Glaux use shown separately](figures/figure_02_server_lineage.svg)
+
+**Figure 2. Experimental CSAPI server lineage and study role.** The solid path identifies the implemented lineage from pygeoapi through 52°North's Connected Systems proof of concept to the OS4CSAPI Oracle deployment. The separate 52°North public demo is shown as another deployment rather than as part of the study server. Dashed arrows identify the proposed Smart Citizen adapter and Glaux use, which have not yet been executed. The figure is an authored synthesis of the upstream repositories and the retained deployment baseline (52°North Spatial Information Research GmbH n.d.-a; MERLIN Project 2026f; pygeoapi Development Team 2026).
+
+**Table 3. Server identity and deployment baseline.** The table records facts established for the tested server and distinguishes them from deployment details that still need to be recovered. The exact image and upstream revisions provide a reproducible software checkpoint, while the unknown backend and persistence settings remain genuine evidence gaps. These gaps do not prevent beginning the mapping work, but they must be closed before claims about durability or exact deployment reproduction (MERLIN Project 2026f).
+
+| Item | Recorded baseline | Standing for this study |
+| --- | --- | --- |
+| Upstream implementation | 52North/connected-systems-pygeoapi | 52°North Connected Systems proof of concept based on pygeoapi |
+| Tested upstream revision | `6ad75aa7fbfc76517c8a24c21446471845007855` | Exact source checkpoint used to identify the running build |
+| Project version at tested revision | 0.6.0 | Upstream package metadata, not a conformance level |
+| Pinned pygeoapi fork revision | `ec1eb38d9a64d93ec9a2e1b9db6fea6dc05f194a` | Upstream dependency of that source revision |
+| OS4CSAPI endpoint | `https://129-80-248-53.sslip.io/csapi-pygeoapi` | Intended Smart Citizen CSAPI target, subject to fresh pre-run health check |
+| Hosting | Oracle Cloud test environment | Existing project infrastructure; no new server is required for the first run |
+| Tested container image | `sha256:15e6991a3697e5f7130ed50bbb958720f2ffa7954f114a70be66cc93c0c489da` | Exact image identity recorded during October verification |
+| Deployment adaptations | Public-URL fix; async full-scan/bootstrap-ID patch; ARM64/native-dependency adaptations | Local deployment differences from the upstream source checkpoint |
+| Authentication | Recorded as none for the test endpoint | Must be reverified before live publication |
+| Backend, persistent storage, restart policy | Not established by the recovered evidence | Capture from the running deployment before durability or reproducibility claims |
+| 52°North public demo | `https://csa.demo.52north.org/` | Separate external deployment; not the primary study server |
+
+### Why this implementation is the initial study server
+
+The server was not selected by a claim that 52°North/pygeoapi is universally the best Connected Systems implementation. The glaux-client bootstrap already identified the existing pygeoapi CSAPI test server as the intended server for the later prototype, and a subsequent 19 October 2026 comparison supplied a more specific experimental reason to keep it (MERLIN Project 2026f). In that bounded comparison, the same profile-style SensorML System was submitted to three running Oracle deployments: CS-GO rejected `characteristics`, OpenSensorHub accepted the resource but omitted tested group IDs and conditions on retrieval, and pygeoapi accepted the resource and returned all submitted fields. This result aligns directly with the present study's question about whether profile-relevant meaning survives an integration boundary.
+
+The pygeoapi creation returned HTTP 201 with an explicit UUID in the response body but no `Location` header, so the harness used that UUID only after verifying the fixture's `uniqueId` before cleanup (MERLIN Project 2026f). The retrieved representation preserved every submitted field under the stated comparison rules, the tested response passed the supplemental schema validation used for that sample, and cleanup returned HTTP 200 followed by GET 404. Those findings establish one successful System-level preservation sample rather than complete CSAPI conformance. Restart durability, time-bearing representations, datastream and observation writes, commands, access control, and the complete set of operations needed by the Smart Citizen experiment remain to be exercised separately.
+
+### Role in the Smart Citizen experiment
+
+The proposed adapter will obtain documented Smart Citizen source data, construct the selected CSAPI/SensorML/SWE representations, and publish them to the Oracle deployment. Glaux will then retrieve the server-hosted resources rather than reading the Smart Citizen API directly for the profile-aware comparison. This makes the server an explicit experimental boundary at which meaning can be preserved, changed, rejected, or lost. A successful server write will therefore be reported separately from the correctness of the mapping and from the usefulness of the resulting client presentation.
+
+Before the first live run, the study will capture the active server revision, image, local patch state, backend/provider, storage configuration, proxy/public-base-URL settings, persistence/restart behavior, authentication posture, and the specific publication interfaces used. Any change from the October 2026 verified build will become part of the execution record rather than being silently treated as the same environment. The experiment will also perform the smallest read/write checks necessary for the actual System, DataStream, schema, and Observation operations it intends to use. This turns deployment configuration into reproducibility evidence instead of background infrastructure that the paper assumes.
+
+
+## 4 Research questions and study design
 
 The study proposes a traceable integration case. A controlled comparison of information presentation will follow that integration. Together, these stages address three research questions.
 
@@ -82,9 +131,9 @@ The immediate proposed path is public Smart Citizen acquisition through a docume
 
 ![Proposed architecture connecting source evidence, explicit mapping, a CSAPI service, and separate generic and profile-aware client inspection](figures/figure_01_architecture.svg)
 
-**Figure 2. Proposed experiment architecture.** Source definitions and captured responses jointly inform the mapping. The two client conditions use the same standardized evidence, while the provider interface supplies a separate presentation reference. All adapter and service connections shown here are proposed. The architecture is authored for this study using the resource distinctions in the selected OGC standards and MPSS baseline (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026a).
+**Figure 3. Proposed experiment architecture.** Source definitions and captured responses jointly inform the mapping. The two client conditions use the same standardized evidence, while the provider interface supplies a separate presentation reference. All adapter and service connections shown here are proposed. The architecture is authored for this study using the resource distinctions in the selected OGC standards and MPSS baseline (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026a).
 
-## 4 Source selection and preliminary observations
+## 5 Source selection and preliminary observations
 
 ### Published definitions and observed responses
 
@@ -96,7 +145,7 @@ Model documentation must remain distinct from unit-specific evidence. For exampl
 
 ### Existing feasibility evidence
 
-**Table 2. Selected observations from the preliminary public capture.** The preliminary study retrieved public registration 19639 on 24 October 2026 at 5:57:35 p.m. EDT, equivalent to 21:57:35 UTC. Selected measurements and their individual source timestamps are preserved in the evidence record. The table summarizes a subset; it is not a new live measurement or an executed adapter result (MERLIN Project 2026b). Source timestamps are on 24 October 2026 and are shown in UTC to preserve their original time basis.
+**Table 3. Selected observations from the preliminary public capture.** The preliminary study retrieved public registration 19639 on 24 October 2026 at 5:57:35 p.m. EDT, equivalent to 21:57:35 UTC. Selected measurements and their individual source timestamps are preserved in the evidence record. The table summarizes a subset; it is not a new live measurement or an executed adapter result (MERLIN Project 2026b). Source timestamps are on 24 October 2026 and are shown in UTC to preserve their original time basis.
 
 | Reported channel | Source value and unit | Source time UTC | Question exposed |
 | --- | --- | --- | --- |
@@ -123,7 +172,7 @@ The historical temperature request returned 24 groups with one-hour average aggr
 
 The source meaning of a field will not be inferred from this example alone. The value, unit definition, channel description, timestamp documentation, and observation context must be considered together. Definitions and actual samples can reveal different problems: documentation may describe a field that a public response filters, while a sample may expose a value whose broader meaning is underspecified.
 
-## 5 Proposed dataset and mapping method
+## 6 Proposed dataset and mapping method
 
 ### Evidence collection and scope
 
@@ -141,7 +190,7 @@ Environmental measurements must retain their observed environmental subject rath
 
 ![Proposed conceptual relationships separating model description, represented system, source registration, observations, observed subjects, and integration provenance](figures/figure_02_model.svg)
 
-**Figure 3. Proposed conceptual distinctions for the mapped specimen.** This is a model explanation, not a diagram of resources already created on a server. The physical producer, observed subject, model, source registration, and representing software remain distinct. Missing power endpoints or deployment intervals are unresolved evidence requirements, not implicit relationships. Native carrier choices will be fixed in the mapping record (MERLIN Project 2026a, R01, R11, R15–R17; Open Geospatial Consortium 2025a; 2025b).
+**Figure 4. Proposed conceptual distinctions for the mapped specimen.** This is a model explanation, not a diagram of resources already created on a server. The physical producer, observed subject, model, source registration, and representing software remain distinct. Missing power endpoints or deployment intervals are unresolved evidence requirements, not implicit relationships. Native carrier choices will be fixed in the mapping record (MERLIN Project 2026a, R01, R11, R15–R17; Open Geospatial Consortium 2025a; 2025b).
 
 ### Mapping records and concept lineage
 
@@ -153,7 +202,7 @@ Each individual donor concept invoked by that explanation will have its own attr
 
 The donor explanation will distinguish an established contribution to the retained model from a source vocabulary encountered in this experiment. It will also identify MERLIN-authored bindings and experiment-authored transformations rather than crediting them to an external standard. Where the donor relationship is unverified, the mapping will say that it is not established and identify the missing evidence. The following requirements apply to every mapping added to this paper, including metadata and relationships as well as numerical readings.
 
-**Table 3. Required explanation for each mapping.** Each mapping receives a stable study-local identifier and a narrative covering these layers. Every invoked donor receives a separately attributable concept entry, even when several donors support the same mapping. Unresolved relationships remain visible until source evidence and review support a disposition.
+**Table 4. Required explanation for each mapping.** Each mapping receives a stable study-local identifier and a narrative covering these layers. Every invoked donor receives a separately attributable concept entry, even when several donors support the same mapping. Unresolved relationships remain visible until source evidence and review support a disposition.
 
 | Layer | Required explanation | Evidence to identify |
 | --- | --- | --- |
@@ -207,7 +256,7 @@ RFC 7577 supplies separate battery-monitoring concepts, including `batteryActual
 
 ### Expected domain coverage
 
-**Table 4. Expected coverage and remaining evidence needs.** The starting material comes from inspected public evidence and proposed documentary enrichment. These are assessment expectations, not completed implementation results. The profile's inclusion of a subject does not require an unsupported source assertion (MERLIN Project 2026a, secs. 4, 5.1; 2026b; 2026c).
+**Table 5. Expected coverage and remaining evidence needs.** The starting material comes from inspected public evidence and proposed documentary enrichment. These are assessment expectations, not completed implementation results. The profile's inclusion of a subject does not require an unsupported source assertion (MERLIN Project 2026a, secs. 4, 5.1; 2026b; 2026c).
 
 | Information subject | Supported starting material | Principal remaining need |
 | --- | --- | --- |
@@ -222,7 +271,7 @@ RFC 7577 supplies separate battery-monitoring concepts, including `batteryActual
 
 An owned or cooperating operator's kit can later supply a verified installation, actual configuration, power connections, and documented physical change. AirGradient will instead test transfer across producers. A second observation feed should not be assumed to solve the same missing physical-context questions automatically.
 
-## 6 Integration and evaluation protocol
+## 7 Integration and evaluation protocol
 
 ### Acquisition and publication
 
@@ -232,7 +281,7 @@ The selected CSAPI service will be checked for the required resource creation an
 
 ### Validation and reportable outcomes
 
-**Table 5. Proposed evaluation criteria.** Structural checks will use the applicable target schemas, parsers, reference-resolution rules, and actual service responses. Semantic checks will compare the source meaning with the meaning represented and displayed. Each executed check will record the input revision, tool/version, scope, outcome, and evidence location. Illustrative code in this draft remains separate from executed evidence.
+**Table 6. Proposed evaluation criteria.** Structural checks will use the applicable target schemas, parsers, reference-resolution rules, and actual service responses. Semantic checks will compare the source meaning with the meaning represented and displayed. Each executed check will record the input revision, tool/version, scope, outcome, and evidence location. Illustrative code in this draft remains separate from executed evidence.
 
 | Criterion | Evidence to collect |
 | --- | --- |
@@ -248,7 +297,7 @@ Coverage will be reported independently for the eight information subjects and r
 
 Discrepancies will be classified as source omission, mapping defect, profile gap, or presentation issue. Uncertain classifications will remain open. A missing battery serial is initially a source limitation; overwriting a channel timestamp is a mapping defect; difficulty finding a preserved timestamp can be a presentation issue. Changes to the profile will require a separately supported disposition rather than being hidden inside the adapter.
 
-## 7 Interface comparison and figure protocol
+## 8 Interface comparison and figure protocol
 
 The planned comparison has three conditions: the actual Smart Citizen interface, a competent generic OGC presentation, and a profile-aware Glaux presentation. The source platform documents front-end access to its data, but no matched screenshot comparison is reported in this draft (Smart Citizen n.d.-a). Generic handling will retain useful labels, types, units, timestamps, relationships, and inspection access. It will not be reduced to a deliberately inconvenient JSON dump.
 
@@ -256,28 +305,28 @@ The generic and profile-aware conditions will use the same captured standardized
 
 Each screenshot will record the registration, channel, observation or interval, aggregation, units, capture time, application revision where available, browser, zoom, viewport, and relevant controls. Glaux will be evaluated at the recovered 560 × 440 module size; other sizes will be reported explicitly. The source interface will retain its actual viewport and layout. Where it cannot replay the same sample or interval, images will be described as illustrative interface evidence rather than a matched comparison (MERLIN Project 2026d).
 
-**Table 6. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figures 2 and 3 are authored diagrams of the proposed experiment. Figures 4–6 are reserved evidence slots, and no substitute or simulated screenshots are presented.
+**Table 7. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figure 2 is an authored server-lineage diagram, Figures 3 and 4 are authored diagrams of the proposed experiment, and Figures 5–7 are reserved evidence slots, and no substitute or simulated screenshots are presented.
 
 | Figure | Intended content | Status in version 0.3 |
 | --- | --- | --- |
 | 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
-| 2 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
-| 3 | Proposed model and subject distinctions | Included as an authored diagram |
-| 4 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
-| 5 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
-| 6 | Actual implemented resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
+| 2 | Experimental CSAPI server lineage and study role | Included as an authored diagram |\n| 3 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
+| 4 | Proposed model and subject distinctions | Included as an authored diagram |
+| 5 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
+| 6 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
+| 7 | Actual implemented resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
 
 Screenshots document visible states. They cannot alone demonstrate semantic correctness or a profile benefit. A screenshot finding must be linked to the source records, mapping decisions, and task outcome. Cropping, annotation, or masking will be disclosed, and the original capture will be retained with its evidence record. Figure captions will identify the source, time basis, comparison limits, and any author-added marks.
 
-## 8 Results to be reported
+## 9 Results to be reported
 
-**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.3. The public access observations in section 4 establish limited feasibility and remain separate from experimental results.
+**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.3. The public access observations in section 5 establish limited feasibility and remain separate from experimental results.
 
 The results section will be completed in three parts. First, acquisition and integration results will identify the actual versions, selected records, publication/retrieval outcomes, and failures. Second, semantic and coverage results will account for every selected assertion and relevant relationship, with source limitations distinguished from implementation defects. Third, presentation results will connect the matched figures to the predefined operator questions and document where profile-aware organization helped, made no difference, or introduced a problem.
 
 The expected reporting structure does not presume a favorable outcome. An accurate generic presentation may answer a task as well as the profile-aware condition. A proposed binding may prove unnecessary or insufficient. Those findings would inform the model and PBI rather than invalidate the experiment's purpose.
 
-## 9 Discussion and limitations
+## 10 Discussion and limitations
 
 The immediate public-data case is strongest for measurements, descriptions, source context, and integration provenance. It is weaker for unit-specific physical composition, operating configuration, deployment history, power topology, and maintenance. More readings can enrich temporal evidence without filling those missing relationships. Documentary model enrichment must not be presented as observation of a particular installation (MERLIN Project 2026a; 2026b; Smart Citizen n.d.-c).
 
@@ -285,7 +334,7 @@ The selected source may change its fields, permissions, or availability. The res
 
 No full OGC conformance, whole-profile implementation, or native Smart Citizen support for MPSS is claimed. Structural correctness, service interoperability, and operator benefit require different evidence. The study will also retain the distinction between native source meanings, selected standard mechanisms, MERLIN-authored bindings, and client choices throughout its reporting.
 
-## 10 Reproducibility and document maintenance
+## 11 Reproducibility and document maintenance
 
 The manuscript, figures, code listings, reference metadata, and publication manifest will be maintained together in the repository. Each paper revision will state its version, date, changed evidence, and execution status. The Word edition will be generated from the maintained manuscript and inspected after rendering. Source and output fingerprints will make a stale derived edition detectable.
 
@@ -295,11 +344,19 @@ References use the Chicago Manual of Style eighteenth-edition author-date system
 
 The existing fourteen imported project artifacts retain their versions and bytes. This paper is a new research artifact. Its mapping choices and findings will be reconciled into the appropriate PBI, wireframe, profile, and DIM records when supported; publication of a research draft does not silently amend those baselines. The next paper revision should add the initial mapping record and actual execution evidence, including the first trace through the selected CSAPI service.
 
-## 11 Conclusion
+## 12 Conclusion
 
 This protocol establishes a way to test whether a standards-grounded description of a sensing system remains useful after integration. The first case will combine public Smart Citizen readings with source definitions, documented model information, and explicit integration provenance. Its value will be assessed through traceable meaning, stated domain coverage, and observable operator tasks. The paper is prepared to accumulate both successful mappings and counterexamples as the experiment proceeds.
 
 ## References
+
+52°North Spatial Information Research GmbH. 2023. *52°North Annual Report 2023*. Münster, Germany. https://52north.org/delivery/annual_report/52%C2%B0North_Annual_Report_2023.pdf.
+
+52°North Spatial Information Research GmbH. n.d.-a. “connected-systems-pygeoapi.” GitHub repository, tested revision 6ad75aa7fbfc76517c8a24c21446471845007855. Accessed October 24, 2026. https://github.com/52North/connected-systems-pygeoapi/tree/6ad75aa7fbfc76517c8a24c21446471845007855.
+
+52°North Spatial Information Research GmbH. n.d.-b. “Open Source Projects Contributions.” Accessed October 24, 2026. https://52north.org/software/software-components/open-source-projects-contributions/.
+
+52°North Spatial Information Research GmbH. n.d.-c. “connected-systems-pygeoapi.” Public demonstration service. Accessed October 24, 2026. https://csa.demo.52north.org/.
 
 European Environment Agency. 2021. “Air Temperature.” *GEMET*, version 4.2.3, December 6. Concept 281. Accessed October 24, 2026. https://www.eionet.europa.eu/gemet/en/concept/281.
 
@@ -312,6 +369,8 @@ MERLIN Project. 2026c. “Open Sensor Candidates for MERLIN DIM and MPSS Experim
 MERLIN Project. 2026d. “Resource Details Wireframe Template.” October 24. Design and implementation record. https://github.com/OS4CSAPI/glaux-client/blob/1a24fdff71ef801d9b326d2b42a63743db737a8e/Docs/Design/RESOURCE_DETAILS_TEMPLATE.md.
 
 MERLIN Project. 2026e. “Smart Citizen Experiment Plan.” October 24. Proposed experiment plan. https://github.com/OS4CSAPI/glaux-client/blob/1a24fdff71ef801d9b326d2b42a63743db737a8e/Docs/Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md.
+
+MERLIN Project. 2026f. “52°North connected-systems-pygeoapi Experimental Server Baseline.” October 24. Research evidence record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Research/Evidence/PYGEOAPI_SERVER_BASELINE_2026-10-24.md.
 
 Open Geospatial Consortium. 2025a. *OGC API—Connected Systems—Part 1: Feature Resources*. Version 1.0. OGC 23-001. Edited by Alexandre Robin. July 16. https://docs.ogc.org/is/23-001/23-001.html.
 
@@ -326,6 +385,8 @@ Open Geospatial Consortium. n.d.-a. “Index of /sensorML/3.0/json.” Official 
 Open Geospatial Consortium. n.d.-b. “Index of /sweCommon/3.0/json.” Official SWE Common 3.0 JSON schema repository. Accessed October 24, 2026. https://schemas.opengis.net/sweCommon/3.0/json/.
 
 Parello, John, Benoit Claise, Brad Schoening, and Juergen Quittek. 2014. *Energy Management Framework*. RFC 7326. Informational. September. https://doi.org/10.17487/RFC7326.
+
+pygeoapi Development Team. 2026. *pygeoapi 0.25.dev0 Documentation*. October 22. https://docs.pygeoapi.io/en/latest/.
 
 QUDT.org. n.d. “Degree Celsius.” *QUDT Units Vocabulary*, version 3.5.3. Unit DEG_C. Accessed October 24, 2026. https://qudt.org/vocab/unit/DEG_C.
 

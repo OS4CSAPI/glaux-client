@@ -1,0 +1,63 @@
+name: Rebuild Smart Citizen paper
+
+on:
+  push:
+    branches:
+      - work/details-view-20261023
+    paths:
+      - 'Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md'
+      - 'Docs/Research/Studies/Smart_Citizen/REFERENCES.json'
+      - 'Docs/Research/Studies/Smart_Citizen/README.md'
+      - 'Docs/Research/Studies/Smart_Citizen/figures/**'
+      - 'Docs/Research/Studies/Smart_Citizen/listings/**'
+      - 'scripts/build-smart-citizen-paper.py'
+      - 'scripts/verify-smart-citizen-paper.py'
+
+permissions:
+  contents: write
+
+jobs:
+  build-paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/details-view-20261023
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install document build dependencies
+        run: |
+          python -m pip install --disable-pip-version-check python-docx
+          mkdir -p .paper-node
+          npm install --prefix .paper-node sharp@0.34.4
+      - name: Build Word edition
+        env:
+          CODEX_PRIMARY_RUNTIME_PYTHON: python
+          CODEX_PRIMARY_RUNTIME_NODE: node
+          CODEX_PRIMARY_RUNTIME_NODE_MODULES: ${{ github.workspace }}/.paper-node/node_modules
+        run: |
+          python scripts/build-smart-citizen-paper.py --version 0.4 --date 2026-10-24
+          python scripts/verify-smart-citizen-paper.py --refresh
+      - name: Upload built paper for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-citizen-paper-v0.4
+          path: |
+            Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx
+            Docs/Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json
+      - name: Commit generated edition
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx Docs/Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json
+          if git diff --cached --quiet; then
+            echo "Generated files already current."
+          else
+            git commit -m "docs: rebuild Smart Citizen paper v0.4"
+            git push origin HEAD:work/details-view-20261023
+          fi

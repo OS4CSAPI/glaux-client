@@ -49,7 +49,11 @@ software's license or assert an endorsement of the study by Smart Citizen. A
 later change to attribution or reuse standing must preserve the evidence for
 that change in this record.
 
-## Figures 2 and 3: authored proposed diagrams
+## Figure 2: authored server-lineage diagram
+
+The [server lineage](figure_02_server_lineage.svg) diagram was authored for paper version 0.4. Solid arrows identify the implemented software/deployment lineage established by the cited upstream and project evidence, while dashed arrows identify the proposed Smart Citizen adapter and Glaux path. It is not a recovered infrastructure diagram and does not fill the backend, storage, or persistence gaps recorded in the paper.
+
+## Figures 3 and 4: authored proposed diagrams
 
 The [architecture](figure_01_architecture.svg) and
 [model](figure_02_model.svg) diagrams were authored for this paper. Their original
@@ -57,7 +61,7 @@ filenames remain stable as the manuscript's figure numbers change. The captions
 identify their conceptual sources and proposed standing; neither image represents
 an executed integration or verified server resource graph.
 
-## Planned figures 4–6
+## Planned figures 5–7
 
 The planned source-interface, Glaux-comparison, and implemented-resource figures
 require actual capture or execution evidence. They have no substitute images in

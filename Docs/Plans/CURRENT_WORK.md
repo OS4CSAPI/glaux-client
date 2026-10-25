@@ -1,5 +1,13 @@
 # Current client work
 
+## Paper version 0.4 experimental CSAPI server — 24 October 2026
+
+The owner required the research paper to explain the 52°North/pygeoapi CSAPI server as part of the experiment rather than treating it as an unnamed transport. Paper v0.4 now documents pygeoapi's role, 52°North's Connected Systems proof of concept, the exact tested upstream revision, the Oracle-hosted OS4CSAPI deployment, image identity, deployment adaptations, and the bounded cross-server evidence that supports using it as the first Smart Citizen target. The paper also records the deployment details that are still unknown instead of inferring them from upstream examples.
+
+A new repository evidence record preserves the server baseline and an authored figure distinguishes implemented server lineage from the proposed Smart Citizen adapter and Glaux path. The server selection is explicitly bounded: on the October 19 preservation sample, CS-GO rejected the tested characteristics, OpenSensorHub accepted but failed to return selected group IDs and conditions, while 52°North/pygeoapi accepted and returned all submitted fields. This does not establish complete CSAPI conformance, restart durability, observation publication, command support, or universal superiority.
+
+The actual paper publication is rebuilt by the dedicated paper workflow after source changes. The generated Word edition and publication manifest are committed separately by that workflow, after which the rendered edition is visually reviewed and the verification record is finalized. The deployed Glaux runtime remains unchanged because this is documentation and research-method work.
+
 ## Paper version 0.3 illustrated system overview — 24 October 2026
 
 The owner requested an early explanation of the system type and selected case,

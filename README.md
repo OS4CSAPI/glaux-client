@@ -7,7 +7,7 @@ The current collection is maintained on `work/details-view-20261023` while
 [PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
 
 **Latest research:** the maintained Smart Citizen paper, **Evaluating Sensor
-Information Preservation Through OGC Integration**, v0.3, 24 October 2026, is
+Information Preservation Through OGC Integration**, v0.4, 24 October 2026, is
 available as a [manuscript](Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md) and
 [Word edition](Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Docs/Research/Studies/Smart_Citizen/README.md) links the
@@ -15,7 +15,7 @@ publication manifest, figures and listings. The paper develops a study protocol
 and preliminary source assessment; the proposed public source → adapter → CSAPI
 → Glaux experiment and matched interface comparison have not been executed.
 
-Version 0.3 introduces the environmental-monitoring system early, with an authentic
+Version 0.4 documents the experimental CSAPI server, including the pygeoapi/52°North lineage, tested Oracle deployment, exact revision/image, bounded preservation rationale, deployment adaptations, and remaining configuration gaps. Version 0.3 introduced the environmental-monitoring system early, with an authentic
 Smart Citizen Kit 2.3 model reference photograph. The photograph illustrates the
 model; the physical installation associated with selected public registration
 19639 remains unverified. Public readings remain the immediate experiment source; an owned kit and

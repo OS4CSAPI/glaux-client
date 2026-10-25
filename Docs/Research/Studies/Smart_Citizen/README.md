@@ -1,7 +1,7 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.3**, dated **24 October 2026** in
+Through OGC Integration**, version **0.4**, dated **24 October 2026** in
 America/New_York. This edition is a study protocol and preliminary source
 assessment. The adapter, CSAPI publication, live experiment, and interface
 comparison have not been executed.
@@ -32,12 +32,12 @@ comparison have not been executed.
 ## Current contents and pending evidence
 
 The current edition includes an abstract, eleven numbered sections, twenty-two
-references, three figures, six tables, and two code listings. It covers the
+references, four figures, seven tables, and two code listings. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
 
-Version 0.3 adds an illustrated introduction to the selected environmental
+Version 0.4 adds a dedicated experimental-CSAPI-server section covering the upstream pygeoapi/52°North lineage, the tested Oracle deployment, selection evidence, deployment adaptations and known configuration gaps. It adds an authored server-lineage figure and records the exact tested upstream commit and container image. Version 0.3 added an illustrated introduction to the selected environmental
 monitoring system, its component roles, and public registration 19639. Table 1
 distinguishes the system type, reported product model, registration, source
 platform, and unverified physical installation. The first case uses public data;
@@ -53,7 +53,7 @@ identified and cited, with its edition, exact locator, contribution, and reuse
 or adaptation limits. Source vocabularies, established model donors, standard
 carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
-Figures 4–6 reserve places for the actual vendor interface, matched generic and
+Figures 5–7 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
 with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
@@ -70,7 +70,7 @@ with this sequencing.
 
 ### Mapping explanations
 
-Apply manuscript Table 3 to every new or revised mapping, including metadata and
+Apply manuscript Table 4 to every new or revised mapping, including metadata and
 relationships. Identify each donor concept individually; a generic citation to
 an entire RFC or a list of standards is insufficient. Record direct reuse,
 adaptation through a binding, an interpretive constraint, or an unestablished
@@ -123,7 +123,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.3 --date 2026-10-24
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.4 --date 2026-10-24
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply

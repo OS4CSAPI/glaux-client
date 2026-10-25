@@ -10,14 +10,14 @@ commit containing this checkpoint and the files it verifies.
 
 **Latest research and planning checkpoint:** the owner requested a maintained
 academic-style paper documenting the experiment. The
-[Smart Citizen paper v0.3](../Research/Studies/Smart_Citizen/README.md) adds an early
+[Smart Citizen paper v0.4](../Research/Studies/Smart_Citizen/README.md) adds a dedicated experimental-server section and an early
 illustrated overview of the environmental-monitoring system and selected public
 case, alongside the protocol and preliminary source assessment. Its canonical manuscript,
 generated Word edition, reference records, and publication manifest are maintained
 together. Planned source-interface and Glaux comparisons remain evidence slots.
 The paper is a new authored artifact, separate from the fourteen imported originals.
 
-The authentic SCK 2.3 photograph illustrates the model, while public registration
+The server section records the pygeoapi/52°North lineage, Oracle endpoint, tested commit/image, deployment adaptations, bounded preservation rationale, and backend/persistence details still requiring capture. The authentic SCK 2.3 photograph illustrates the model, while public registration
 19639 identifies the selected source record. The registration's actual physical
 installation remains unverified; the image does not establish its appearance,
 placement, or installed components. The immediate experiment uses public readings,

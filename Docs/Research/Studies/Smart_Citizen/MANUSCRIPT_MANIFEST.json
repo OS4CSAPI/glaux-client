@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.3",
+  "version": "0.4",
   "documentDate": "2026-10-24",
   "editorialTimezone": "America/New_York",
   "standing": "New study protocol and preliminary source assessment; proposed integration and comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 22,
+  "referenceCount": 28,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
@@ -25,24 +25,29 @@
     },
     {
       "number": 2,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_server_lineage.svg",
+      "standing": "Authored server lineage and study-role diagram; factual lineage plus proposed experiment path"
+    },
+    {
+      "number": 3,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
       "standing": "Authored proposed architecture; not deployed topology"
     },
     {
-      "number": 3,
+      "number": 4,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_model.svg",
       "standing": "Authored conceptual model; not executed resource mapping"
     },
     {
-      "number": 4,
+      "number": 5,
       "standing": "Planned actual source-provider UI capture; no image supplied"
     },
     {
-      "number": 5,
+      "number": 6,
       "standing": "Planned matched generic and profile-aware Glaux capture; no image supplied"
     },
     {
-      "number": 6,
+      "number": 7,
       "standing": "Planned implemented resource model and traced sample; no image supplied"
     }
   ],
@@ -80,11 +85,11 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed: new system overview, registration/model identity, component roles, photograph provenance and published rights notices checked against official source documentation and retained specimen; prior mapping-lineage scope and unresolved mappings retained",
-    "wordRender": "Passed: all eighteen rendered pages visually inspected; source photograph and caption, system table, diagrams, listings, citations, references, headers and footers reviewed",
+    "technicalReview": "Pending v0.4 publication rebuild and visual review; server section source facts checked against retained October 2026 test evidence and primary pygeoapi/52°North sources.",
+    "wordRender": "Pending v0.4 publication rebuild and visual review.",
     "reviewDate": "2026-10-24",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 18,
+    "renderedPageCount": null,
     "paragraphAudit": {
       "paragraphs": 72,
       "sentenceCounts": {
@@ -112,6 +117,12 @@
       "date": "2026-10-24",
       "predecessorCommit": "387363d5f83d6193fa11ef3342a5db707fe6a7f9",
       "change": "Add an early illustrated system overview, official SCK2.3 model photograph with source and rights records, component roles, and explicit identification of public registration 19639; distinguish model, source service, and unverified physical installation; renumber figures/tables and preserve public-first sequencing."
+    },
+    {
+      "version": "0.4",
+      "date": "2026-10-24",
+      "predecessorCommit": "f2d3b917497cd61303eb484e72a807f3615b1c76",
+      "change": "Add a dedicated experimental-CSAPI-server section covering pygeoapi and 52°North lineage, the tested Oracle deployment, exact revision/image/adaptations, bounded cross-server preservation rationale, observed write/read behavior, known deployment-configuration gaps, and the server's proposed role in the Smart Citizen experiment."
     }
   ],
   "files": [
@@ -198,6 +209,12 @@
       "role": "retained-source-site-license",
       "sha256": "110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4",
       "sizeBytes": 22955
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_server_lineage.svg",
+      "role": "authored-server-lineage-figure",
+      "sha256": "PENDING_REFRESH",
+      "sizeBytes": 0
     }
   ],
   "paragraphPolicy": {
@@ -244,5 +261,6 @@
       "physical installation evidence limits"
     ],
     "imageBoundary": "A product/model image must not be presented as a verified photograph or inventory of an individual installation."
-  }
+  },
+  "paragraphAudit": {}
 }
