@@ -78,7 +78,7 @@ with this sequencing.
 
 ### Mapping explanations
 
-Apply manuscript Table 4 to every new or revised mapping, including metadata and
+Apply manuscript Table 5 to every new or revised mapping, including metadata and
 relationships. Identify each donor concept individually; a generic citation to
 an entire RFC or a list of standards is insufficient. Record direct reuse,
 adaptation through a binding, an interpretive constraint, or an unestablished

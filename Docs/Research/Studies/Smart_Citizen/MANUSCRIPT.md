@@ -35,7 +35,7 @@ The selected specimen is public Smart Citizen registration 19639. A formal captu
 | --- | --- | --- |
 | System type | Modular environmental monitoring kit | Plain-language description of the equipment; not a newly adopted MPSS classification code |
 | Reported product model | SmartCitizen Kit 2.3; type SCK; version 2.3; slug sck:2,3 | Native metadata to preserve and compare with official product documentation |
-| Selected public record | Registration 19639; formal frozen capture 20261025T024348Z | Evidence basis for the Phase 1–3 mappings; not a verified physical serial number |
+| Selected public record | Registration 19639; formal frozen capture 20261025T024348Z | Evidence basis for the Phase 1–4 source, mapping, and resource-design work; not a verified physical serial number |
 | Source software platform | Smart Citizen Platform and its public API | Existing source service for acquiring data; the proposed CSAPI service and Glaux client have different roles |
 | Physical installation | Photograph, serial identity, installed inventory, enclosure, and supply connections unverified | Evidence to obtain before claiming a complete unit-specific equipment or deployment model |
 
@@ -378,7 +378,7 @@ Listing 2 illustrates a proposed SensorML output containing a SWE Quantity. The 
 }
 ```
 
-The fragment describes an output; it does not contain the observed value. The eventual CSAPI datastream, observation schema, and observation must preserve their own roles and associations. Selection of phenomenon time, result time, and any aggregation interval remains an explicit decision, not an inference from the spelling of a timestamp field. Complete request and response examples will be added after actual service publication and retrieval (Open Geospatial Consortium 2025b, secs. 9.2, 9.6–9.7).
+The fragment describes an output; it does not contain the observed value. The eventual CSAPI DataStream, observation schema, and Observation must preserve their own roles and associations. Phase 4 now supplies explicit phenomenon-time and result-time policies for the first load, and those authored projections are documented rather than inferred from the spelling of source timestamp fields (MERLIN Project 2026m). Complete request and response examples will be added only after actual service publication and retrieval (Open Geospatial Consortium 2025b, secs. 9.2, 9.6–9.7).
 
 ### Temperature mapping SC TEMP 01
 
@@ -386,7 +386,7 @@ Mapping `SC-TEMP-01` now uses the formal frozen temperature channel rather than 
 
 The observation-concept lineage runs through CSAPI to SOSA/SSN. `sosa:Sensor`, `sosa:Observation`, `sosa:ObservableProperty`, `sosa:FeatureOfInterest` and `sosa:Result` distinguish the producer, observation, property, subject and outcome, while CSAPI supplies the DataStream and Observation resource mechanisms (World Wide Web Consortium 2017; Open Geospatial Consortium 2025a; 2025b). GEMET concept 281 and QUDT `DEG_C` are source-carried property/unit vocabularies rather than evidence that those vocabularies historically donated every relevant DIM concept (European Environment Agency 2021; QUDT.org n.d.). The local output name remains an experiment-authored choice.
 
-The proposed SensorML output uses a SWE Quantity named `airTemperature` with the source property and unit URIs. Its CSAPI DataStream is type `observation`; linked scalar Observations are expected to yield server-derived `resultType=measure`, rather than the adapter authoring that summary field directly (Open Geospatial Consortium 2025b, sec. 9.2). The channel timestamp is retained as the source-recorded observation time and a candidate phenomenonTime, but the source supplies no separate resultTime. No SamplingFeature is created merely to satisfy the target graph.
+The proposed SensorML output uses a SWE Quantity named `airTemperature` with the source property and unit URIs. Its CSAPI DataStream is type `observation`; linked scalar Observations are expected to yield server-derived `resultType=measure`, rather than the adapter authoring that summary field directly (Open Geospatial Consortium 2025b, sec. 9.2). Phase 4 sets both `phenomenonTime` and `resultTime` to the channel's source reading time as a disclosed coincident-time projection because Smart Citizen supplies no separate result-generation timestamp; experiment acquisition time remains separate provenance (MERLIN Project 2026m). No SamplingFeature is created merely to satisfy the target graph.
 
 Presentation may show the source-reported temperature, unit, property meaning, producer and channel time while stating that the environmental sampling subject is not independently identified. It must not call 19.59 ºC “device temperature,” replace the channel time with the Device's latest time, or use acquisition time as an observation time. These are semantic-preservation requirements, not layout preferences.
 
@@ -394,7 +394,7 @@ Presentation may show the source-reported temperature, unit, property meaning, p
 
 Mapping `SC-BATT-01` uses the formal 99 percent result at `2026-10-25T02:40:21Z` and Smart Citizen Measurement 7, whose definition is the SCK remaining battery level in percentage (MERLIN Project 2026k; 2026l). Under the paper's telemetry definition, this is remotely transmitted parent-System power/status telemetry, not evidence of a separately identified battery. MPSS R17 preserves the changing value and observed subject, while R16 is not instantiated because no battery identity, Power Interface or source-to-consumer relationship is supplied. A status DataStream is therefore defensible because the property is explicitly about the parent SCK itself (Open Geospatial Consortium 2025b, sec. 9.2; Scholl and Suloway 2023).
 
-RFC 7326 contributes power-source and metering concepts that constrain against inventing supply topology, and RFC 7577 defines battery objects such as actual charge and actual voltage whose units and meanings are not equivalent to a percentage (Parello et al. 2014; Quittek et al. 2015). The proposed SWE Quantity uses local name `batteryLevel`, source unit code `%`, and the resolvable source concept `https://api.smartcitizen.me/v0/measurements/7` as an experiment-authored semantic definition. Linked scalar Observations are expected to yield server-derived `resultType=measure`. The source still supplies no separate resultTime.
+RFC 7326 contributes power-source and metering concepts that constrain against inventing supply topology, and RFC 7577 defines battery objects such as actual charge and actual voltage whose units and meanings are not equivalent to a percentage (Parello et al. 2014; Quittek et al. 2015). The proposed SWE Quantity uses local name `batteryLevel`, source unit code `%`, and the resolvable source concept `https://api.smartcitizen.me/v0/measurements/7` as an experiment-authored semantic definition. Linked scalar Observations are expected to yield server-derived `resultType=measure`. The source supplies no separate resultTime, so Phase 4 uses the same channel reading instant for `phenomenonTime` and `resultTime` as the same disclosed coincident-time projection used for the other frozen current readings (MERLIN Project 2026m).
 
 The display may say “source-reported SCK remaining battery level: 99%” and show its source time. It must not add charge in mAh, voltage, remaining runtime, charging state, a separate battery identity, a supply edge or readiness judgment. This preserved absence is part of the result rather than a missing-value defect.
 
@@ -414,7 +414,7 @@ The temperature response reports 1,439 readings examined and the PM2.5 response 
 
 Phase 4 converts the reviewed meanings into a concrete, reviewable Connected Systems resource graph without making any server writes (MERLIN Project 2026m). The deterministic first-load design contains two Systems, two Procedures, ten DataStreams with ten observation schemas, and fifty-six Observations: eight frozen current results plus twenty-four temperature and twenty-four PM2.5 aggregate results. The physical Smart Citizen case and the source-platform aggregation process are separate producing Systems, so a one-hour average is not silently attributed to the physical kit. Every created resource is traceable to a Phase 3 mapping, while unsupported topology is represented by deliberate absence rather than by placeholder resources.
 
-**Table 7. Phase 4 resource graph and negative design decisions.** The table summarizes the design that would be implemented by the adapter after this review gate. Study-owned System and Procedure identities use deterministic Universally Unique IDentifier version 5 (UUIDv5) URNs derived from documented project name strings; those identifiers identify MERLIN study representations rather than manufacturer-issued physical assets (Davis et al. 2024; MERLIN Project 2026m). The target graph deliberately omits resource types for which the source does not supply defensible identity or relationship evidence. These choices are design results, not executed server results.
+**Table 6. Phase 4 resource graph and negative design decisions.** The table summarizes the design that would be implemented by the adapter after this review gate. Study-owned System and Procedure identities use deterministic Universally Unique IDentifier version 5 (UUIDv5) URNs derived from documented project name strings; those identifiers identify MERLIN study representations rather than manufacturer-issued physical assets (Davis et al. 2024; MERLIN Project 2026m). The target graph deliberately omits resource types for which the source does not supply defensible identity or relationship evidence. These choices are design results, not executed server results.
 
 | Design element | Phase 4 decision |
 | --- | --- |
@@ -513,7 +513,7 @@ Each screenshot will record the registration, channel, observation or interval, 
 
 **Table 10. Planned figures and evidence status.** Figures 1–5 identify the system, server, client, experiment architecture, and conceptual model. Figures 6 and 7 provide first-party historical Smart Citizen user-interface evidence, while the Phase 4 resource graph is maintained as a reviewed design artifact rather than being misrepresented as executed server evidence. Figures 8–10 remain reserved for contemporaneous or executed evidence and will not be filled with simulated substitutes.
 
-| Figure | Intended content | Status in version 0.7 |
+| Figure | Intended content | Status in version 0.8 |
 | --- | --- | --- |
 | 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
 | 2 | Experimental CSAPI server lineage and study role | Included as an authored server-lineage diagram |
