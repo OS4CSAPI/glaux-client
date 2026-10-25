@@ -1,0 +1,18 @@
+@startuml
+' Title: <figure title>
+' View: context
+' Question: <which layers/scope relationships this explains>
+' Layer: mixed-explicit
+' Status: working
+' Source artifact: <version>
+left to right direction
+
+title <Context/layer title>
+
+rectangle "Layer A" as a
+rectangle "Layer B" as b
+rectangle "Layer C" as c
+
+a --> b : selects/constrains
+b --> c : binds to
+@enduml
