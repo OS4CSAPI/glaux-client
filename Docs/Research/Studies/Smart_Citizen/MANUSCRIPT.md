@@ -76,6 +76,7 @@ The paper expands uncommon acronyms on first substantive use where practical, bu
 | **PM2.5** | Particulate matter in the source category below 2.5 micrometres in size; common environmental shorthand rather than an acronym |
 | **PROV** | W3C provenance family/model shorthand |
 | **QUDT** | Quantities, Units, Dimensions and Types |
+| **R01–R20** | Local MPSS relationship/binding identifiers used to trace domain meaning into selected OGC representations; they are not OGC-native relationship names |
 | **RFC** | Request for Comments |
 | **RSSI** | Received signal strength indication; Smart Citizen defines it as a measurement of power present in a received radio signal (Smart Citizen n.d.-d) |
 | **SCK** | Smart Citizen Kit |
