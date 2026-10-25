@@ -6,7 +6,7 @@ The owner required the research paper to explain the 52°North/pygeoapi CSAPI se
 
 A new repository evidence record preserves the server baseline and an authored figure distinguishes implemented server lineage from the proposed Smart Citizen adapter and Glaux path. The server selection is explicitly bounded: on the October 19 preservation sample, CS-GO rejected the tested characteristics, OpenSensorHub accepted but failed to return selected group IDs and conditions, while 52°North/pygeoapi accepted and returned all submitted fields. This does not establish complete CSAPI conformance, restart durability, observation publication, command support, or universal superiority.
 
-The actual paper publication is rebuilt by the dedicated paper workflow after source changes. The generated Word edition and publication manifest are committed separately by that workflow, after which the rendered edition is visually reviewed and the verification record is finalized. The deployed Glaux runtime remains unchanged because this is documentation and research-method work.
+The dedicated paper workflow completed successfully for v0.4 and committed the generated Word edition. The final 21-page edition was rendered and visually reviewed; the server-lineage figure, deployment table, citations, references, code/listing content, headers, footers, and page flow are clean. The final one-word version correction affected only page 18 in the rendered comparison, while the other 20 pages were pixel-identical to the already inspected v0.4 render. The deployed Glaux runtime remains unchanged because this is documentation and research-method work.
 
 ## Paper version 0.3 illustrated system overview — 24 October 2026
 
