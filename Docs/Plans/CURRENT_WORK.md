@@ -28,7 +28,7 @@ Paper v0.7 updates the formal specimen from the earlier feasibility values, adds
 
 The owner approved preserving the current end-to-end plan and detailed experiment homework outside the research paper. The new execution roadmap defines eleven phases with explicit gates and milestones; the new workbook supplies living templates for source capture/inventory, mapping lineage, CSAPI resource design, execution evidence, UI/PBI findings, transferability, and material decisions. The existing experiment plan remains as rationale/history, while the roadmap is now the current sequencing authority.
 
-Immediate work remains Phase 1: reacquire and freeze the Smart Citizen specimen, then complete the native inventory before formal target mapping. No adapter code, CSAPI writes, profile changes, or application changes are authorized by creating these planning records.
+**Historical planning checkpoint:** at the time this section was written, immediate work was Phase 1 specimen capture and inventory. Phases 1–4 have since been completed through the reviewed resource-graph design recorded above; this historical paragraph does not override the current Phase 4 owner-review gate.
 
 ## Paper version 0.6 vendor presentation baseline — 24 October 2026
 
