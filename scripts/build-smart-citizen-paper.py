@@ -47,6 +47,7 @@ STUDY = ROOT / "Docs/Research/Studies/Smart_Citizen"
 DEFAULT_SOURCE = STUDY / "MANUSCRIPT.md"
 DEFAULT_OUTPUT = STUDY / "SMART_CITIZEN_EXPERIMENT_PAPER.docx"
 BODY_WIDTH = 6.8
+PHOTO_MAX_HEIGHT = 3.5
 BLACK = RGBColor(0, 0, 0)
 
 
@@ -305,6 +306,7 @@ def add_table(doc, lines: list[str], source_dir: Path):
     widths = {2: [2.0, 4.8], 3: [1.55, 2.3, 2.95], 4: [1.2, 1.3, 1.15, 3.15], 5: [0.6, 1.25, 1.5, 1.7, 1.75]}.get(cols, [BODY_WIDTH / cols] * cols)
     if cols == 3 and headers[0].strip("*").lower() == "figure":
         widths = [0.6, 3.15, 3.05]
+    keep_table_together = headers == ["Item", "Identification", "Meaning for this experiment"]
     table = doc.add_table(rows=1, cols=cols)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.autofit = False
@@ -340,6 +342,8 @@ def add_table(doc, lines: list[str], source_dir: Path):
             p = cell.paragraphs[0]
             p.paragraph_format.space_after = Pt(2)
             p.paragraph_format.line_spacing = 1.03
+            if keep_table_together:
+                p.paragraph_format.keep_with_next = row_index < len(body)
             add_inline(p, content, source_dir)
             for run in p.runs:
                 run.font.size = Pt(10)
@@ -373,6 +377,13 @@ def add_image(doc, alt: str, image_path: str, source_dir: Path, temporary: Path)
     p.paragraph_format.keep_with_next = True
     p.paragraph_format.space_after = Pt(2)
     shape = p.add_run().add_picture(str(embed), width=Inches(BODY_WIDTH))
+    # Keep source photographs legible beside an explanatory caption without
+    # filling a page. Only Word's display dimensions change; source bytes remain
+    # untouched and continue to participate in the build-input fingerprint.
+    if path.suffix.lower() in {".jpg", ".jpeg"} and shape.height > Inches(PHOTO_MAX_HEIGHT):
+        scale = Inches(PHOTO_MAX_HEIGHT) / shape.height
+        shape.width = round(shape.width * scale)
+        shape.height = Inches(PHOTO_MAX_HEIGHT)
     shape._inline.docPr.set("descr", alt)
     shape._inline.docPr.set("title", alt)
 
@@ -397,6 +408,7 @@ def build(source: Path, output: Path, version: str, revision_date: date):
     configure_document(doc, version, revision_date)
     references = False
     title_seen = False
+    keep_first_paragraph = False
     i = 0
     with tempfile.TemporaryDirectory(prefix="glaux-paper-") as tmp:
         temporary = Path(tmp)
@@ -422,6 +434,7 @@ def build(source: Path, output: Path, version: str, revision_date: date):
                     p = doc.add_paragraph(style=f"Heading {max(1,min(level-1,4))}")
                 add_inline(p, content, source.parent)
                 references = bool(re.search(r"\bReferences$", content))
+                keep_first_paragraph = content.casefold() == "system selected for the experiment"
                 i += 1
                 continue
             if line.startswith("```"):
@@ -488,6 +501,9 @@ def build(source: Path, output: Path, version: str, revision_date: date):
             p = doc.add_paragraph(style=style)
             if caption:
                 p.paragraph_format.keep_with_next = caption[1] in ["Table", "Listing"]
+            if keep_first_paragraph:
+                p.paragraph_format.keep_together = True
+                keep_first_paragraph = False
             add_inline(p, content, source.parent)
         input_paths = {source, Path(__file__).resolve()}
         for image_path in re.findall(r"^!\[[^\]]*\]\(([^)]+)\)\s*$", text, flags=re.M):
@@ -509,7 +525,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--version", default="0.2")
+    parser.add_argument("--version", default="0.3")
     parser.add_argument("--date", default="2026-10-24", help="Editorial revision date in America/New_York, YYYY-MM-DD")
     parser.add_argument("--figures-only", action="store_true", help="Regenerate the two authored SVG diagrams without building a DOCX")
     parser.add_argument("--refresh-figures", action="store_true", help="Regenerate SVG diagrams before building the document")

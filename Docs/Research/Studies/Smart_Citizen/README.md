@@ -1,7 +1,7 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.2**, dated **24 October 2026** in
+Through OGC Integration**, version **0.3**, dated **24 October 2026** in
 America/New_York. This edition is a study protocol and preliminary source
 assessment. The adapter, CSAPI publication, live experiment, and interface
 comparison have not been executed.
@@ -20,6 +20,10 @@ comparison have not been executed.
 - [Architecture figure](figures/figure_01_architecture.svg) and
   [model figure](figures/figure_02_model.svg): authored explanations of the
   proposed experiment. They are not screenshots or deployed-resource diagrams.
+- [Smart Citizen Kit 2.3 photograph](figures/smart_citizen_kit_23.jpg) and
+  [figure source record](figures/SOURCES.md): authentic official model reference,
+  immutable source location, attribution, rights notices, and evidence limits.
+  The photograph is not a verified image of public registration 19639.
 - [Native JSON excerpt](listings/01_native_temperature.json) and
   [proposed SensorML output](listings/02_proposed_temperature_output.sml.json):
   exact companion files for the two listings, with their different standing
@@ -28,12 +32,20 @@ comparison have not been executed.
 ## Current contents and pending evidence
 
 The current edition includes an abstract, eleven numbered sections, twenty-two
-references, two figures, five tables, and two code listings. It covers the
+references, three figures, six tables, and two code listings. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
 
-Version 0.2 adds a required explanation for every mapping and illustrative
+Version 0.3 adds an illustrated introduction to the selected environmental
+monitoring system, its component roles, and public registration 19639. Table 1
+distinguishes the system type, reported product model, registration, source
+platform, and unverified physical installation. The first case uses public data;
+an owned kit and independent AirGradient comparison remain later extensions.
+The source photograph is preserved unchanged, credited, and distinguished from
+actual-unit evidence in both the caption and figure source record.
+
+Version 0.2 added a required explanation for every mapping and illustrative
 temperature and battery lineage cases. Each explanation connects the native
 assertion to the underlying DIM concept, exact MPSS rule, and CSAPI concepts and
 SensorML/SWE representation. Every individual donor concept invoked must be
@@ -41,7 +53,7 @@ identified and cited, with its edition, exact locator, contribution, and reuse
 or adaptation limits. Source vocabularies, established model donors, standard
 carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
-Figures 3–5 reserve places for the actual vendor interface, matched generic and
+Figures 4–6 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
 with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
@@ -58,7 +70,7 @@ with this sequencing.
 
 ### Mapping explanations
 
-Apply manuscript Table 2 to every new or revised mapping, including metadata and
+Apply manuscript Table 3 to every new or revised mapping, including metadata and
 relationships. Identify each donor concept individually; a generic citation to
 an entire RFC or a list of standards is insufficient. Record direct reuse,
 adaptation through a binding, an interpretive constraint, or an unestablished
@@ -88,6 +100,16 @@ It handles the current citation, abbreviation, decimal, link, and code patterns;
 editorial review still checks language and ambiguous cases. Inspect counts before
 building with `python3 scripts/verify-smart-citizen-paper.py --paragraph-report`.
 
+### System and figure identification
+
+Introduce each added experimental system by type, reported product model, and
+selected specimen before discussing its mappings. Distinguish model imagery
+from verified photographs of the particular installation, and separate a public
+registration from enduring physical identity. Preserve source credit, immutable
+asset location where available, access date, any changes, rights notices, and
+evidence limits in the figure source record. Do not infer a unit's installed
+components, enclosure, power arrangement, or shipping variant from a model photo.
+
 ### Publication workflow
 
 Edit the manuscript and any affected listing, figure, and reference records in
@@ -101,7 +123,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.2 --date 2026-10-24
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.3 --date 2026-10-24
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply

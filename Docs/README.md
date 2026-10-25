@@ -21,7 +21,7 @@ into adopted requirements or revise the technical profile. Follow
 [artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) when updating the set.
 
 For the subsequent real-source evaluation, start with the maintained paper
-**Evaluating Sensor Information Preservation Through OGC Integration**, v0.2,
+**Evaluating Sensor Information Preservation Through OGC Integration**, v0.3,
 24 October 2026: [canonical manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md)
 and [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Research/Studies/Smart_Citizen/README.md) explains the
@@ -29,7 +29,13 @@ citation, figure, listing and evidence workflow. Its
 [publication manifest](Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json)
 is separate from the manifest of the 14 preserved originals.
 
-Version 0.2 adds the seven-layer mapping explanation matrix and illustrative
+Version 0.3 adds an early illustrated overview of Smart Citizen as an
+environmental-monitoring system. An authentic SCK 2.3 model reference photograph
+is explicitly distinguished from public registration 19639, whose physical
+installation remains unverified. The immediate case uses that public feed;
+owned hardware and an independent AirGradient comparison remain later extensions.
+
+The paper retains the seven-layer mapping explanation matrix and illustrative
 temperature (`SC-TEMP-01`) and battery (`SC-BATT-01`) lineage cases. Every mapping
 must connect its CSAPI and SensorML/SWE representation to the underlying DIM
 concept, exact MPSS rule, individually attributed donor concepts and their reuse
@@ -54,7 +60,7 @@ For the current Details View increment, start with:
 | --- | --- |
 | Original project artifacts, versions, authority, and canonical paths | [Artifact Register](ARTIFACT_REGISTER.md), [manifest](ARTIFACTS.json) |
 | Broader DIM/MPSS continuity and sequencing | [Current MERLIN continuity](Plans/CONTINUITY.md) |
-| Maintained Smart Citizen research paper v0.2 and publication record | [Manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md), [Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx), [maintenance guide and manifest](Research/Studies/Smart_Citizen/README.md) |
+| Maintained Smart Citizen research paper v0.3 and publication record | [Manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md), [Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx), [maintenance guide and manifest](Research/Studies/Smart_Citizen/README.md) |
 | Open sensor candidates, recommendations and actual access findings | [Candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md), [evidence record](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) |
 | Proposed first real-source experiment and its PBI/profile outputs | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) |
 | How the document collection is maintained | [Artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) |

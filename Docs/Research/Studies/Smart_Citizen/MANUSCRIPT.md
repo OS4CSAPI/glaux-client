@@ -4,7 +4,7 @@
 
 MERLIN Project
 
-Working paper version 0.2 | 24 October 2026 | Study protocol and preliminary source assessment
+Working paper version 0.3 | 24 October 2026 | Study protocol and preliminary source assessment
 
 ## Abstract
 
@@ -17,6 +17,32 @@ Preliminary access checks establish that selected public measurements and aggreg
 ## 1 Introduction
 
 The MERLIN Resource Details effort began with the problem of presenting information from heterogeneous sensing systems in a consistent, useful view. TRSS and McQ OmniSense II remain motivating cases. The subsequent domain-model work expanded the inquiry from individual manufacturer screens to the physical sensing system in employment: its identity, equipment, functions, deployment, configuration, communications, power, and lifecycle. The retained MPSS draft organizes these concerns through eight information subjects and twenty relationship identifiers, R01–R20 (MERLIN Project 2026a, secs. 4–5).
+
+### System selected for the experiment
+
+The Smart Citizen Kit (SCK) is a modular environmental monitoring system. Its documented measurements include air temperature, humidity, particulate matter, noise level, light, and pressure. Figure 1 introduces the SCK2.3 model reported by the first public data specimen selected for this study (Smart Citizen n.d.-c, “What is the Smart Citizen Kit?” and “Measurements”; MERLIN Project 2026b, record “smart-citizen-current-19639”).
+
+![Official Smart Citizen Kit 2.3 model reference photograph showing the Data Board, Urban Board, and separate particulate-matter module from left to right](figures/smart_citizen_kit_23.jpg)
+
+**Figure 1. Smart Citizen Kit 2.3 model reference.** The photograph shows the Data Board at left, Urban Board in the center, and particulate-matter module at right. It is reproduced unchanged from the official Smart Citizen / Fab Lab Barcelona documentation (Smart Citizen n.d.-c, “Versions”). It illustrates the product model; it has not been verified as a photograph of the unit associated with registration 19639. The boards and module are shown separately, so the image does not establish that unit's assembled configuration, enclosure, or power connections.
+
+The Data Board provides logging, Wi-Fi, memory-card access, USB, and a battery connector. The Urban Board carries sensing components and connects a separate particulate-matter module (Smart Citizen n.d.-c, “What is the Smart Citizen Kit?”). For this study, those component roles make physical equipment, sensing functions, communications, and power concrete subjects to examine through the DIM and MPSS. Their presence in model documentation does not establish a verified component inventory for an individual installation.
+
+The specific starting specimen is public Smart Citizen registration 19639, captured on 24 October 2026 at 21:57:35 UTC. The returned record identifies its hardware as “SmartCitizen Kit 2.3,” with type “SCK,” version “2.3,” and slug “sck:2,3” (MERLIN Project 2026b, record “smart-citizen-current-19639”). Its channel catalogue includes environmental observations together with equipment-related readings such as battery percentage and Wi-Fi RSSI. A source registration and its reported model identify the selected data specimen, while the enduring physical identity and installed configuration still require separate evidence.
+
+**Table 1. System identification and study boundary.** The table separates the physical product family, selected source record, and service through which the study will obtain data. Model-level descriptions and registration metadata have different evidentiary roles. These entries identify the first case without implying that its integration has already been executed (Smart Citizen n.d.-a; n.d.-c; MERLIN Project 2026b).
+
+| Item | Identification | Meaning for this experiment |
+| --- | --- | --- |
+| System type | Modular environmental monitoring kit | Plain-language description of the equipment; not a newly adopted MPSS classification code |
+| Reported product model | SmartCitizen Kit 2.3; type SCK; version 2.3; slug sck:2,3 | Native metadata to preserve and compare with official product documentation |
+| Selected public record | Registration 19639; GET https://api.smartcitizen.me/v0/devices/19639 | Starting specimen for the proposed public-data integration; not a verified physical serial number |
+| Source software platform | Smart Citizen Platform and its public API | Existing source service for acquiring data; the proposed CSAPI service and Glaux client have different roles |
+| Physical installation | Photograph, serial identity, installed inventory, enclosure, and supply connections unverified | Evidence to obtain before claiming a complete unit-specific equipment or deployment model |
+
+The first case therefore concerns one public Smart Citizen registration, with documentary descriptions of its reported product model. It does not begin with a kit acquired or operated by this project. An owned kit is a later extension for physical and lifecycle evidence, and AirGradient is a later independent comparison. TRSS and McQ OmniSense II remain motivating systems whose accommodation matters to the wider model, but their native datasets are not the input to this first integration case (MERLIN Project 2026c; 2026e).
+
+### Integration question and case selection
 
 The present question is whether this organization helps a client reconstruct useful meaning after integration. Receiving a temperature value demonstrates access to a measurement. It does not establish that the client can identify its producer, distinguish the sampled environment from the equipment, interpret its time, or explain how the information reached the application. Likewise, a populated battery field does not establish an identified power source or its relationship to the operating system. A useful experiment must make such distinctions inspectable rather than treating successful transport as sufficient evidence of semantic preservation.
 
@@ -56,7 +82,7 @@ The immediate proposed path is public Smart Citizen acquisition through a docume
 
 ![Proposed architecture connecting source evidence, explicit mapping, a CSAPI service, and separate generic and profile-aware client inspection](figures/figure_01_architecture.svg)
 
-**Figure 1. Proposed experiment architecture.** Source definitions and captured responses jointly inform the mapping. The two client conditions use the same standardized evidence, while the provider interface supplies a separate presentation reference. All adapter and service connections shown here are proposed. The architecture is authored for this study using the resource distinctions in the selected OGC standards and MPSS baseline (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026a).
+**Figure 2. Proposed experiment architecture.** Source definitions and captured responses jointly inform the mapping. The two client conditions use the same standardized evidence, while the provider interface supplies a separate presentation reference. All adapter and service connections shown here are proposed. The architecture is authored for this study using the resource distinctions in the selected OGC standards and MPSS baseline (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026a).
 
 ## 4 Source selection and preliminary observations
 
@@ -70,7 +96,7 @@ Model documentation must remain distinct from unit-specific evidence. For exampl
 
 ### Existing feasibility evidence
 
-**Table 1. Selected observations from the preliminary public capture.** The preliminary study retrieved public registration 19639 on 24 October 2026 at 5:57:35 p.m. EDT, equivalent to 21:57:35 UTC. Selected measurements and their individual source timestamps are preserved in the evidence record. The table summarizes a subset; it is not a new live measurement or an executed adapter result (MERLIN Project 2026b). Source timestamps are on 24 October 2026 and are shown in UTC to preserve their original time basis.
+**Table 2. Selected observations from the preliminary public capture.** The preliminary study retrieved public registration 19639 on 24 October 2026 at 5:57:35 p.m. EDT, equivalent to 21:57:35 UTC. Selected measurements and their individual source timestamps are preserved in the evidence record. The table summarizes a subset; it is not a new live measurement or an executed adapter result (MERLIN Project 2026b). Source timestamps are on 24 October 2026 and are shown in UTC to preserve their original time basis.
 
 | Reported channel | Source value and unit | Source time UTC | Question exposed |
 | --- | --- | --- | --- |
@@ -115,7 +141,7 @@ Environmental measurements must retain their observed environmental subject rath
 
 ![Proposed conceptual relationships separating model description, represented system, source registration, observations, observed subjects, and integration provenance](figures/figure_02_model.svg)
 
-**Figure 2. Proposed conceptual distinctions for the mapped specimen.** This is a model explanation, not a diagram of resources already created on a server. The physical producer, observed subject, model, source registration, and representing software remain distinct. Missing power endpoints or deployment intervals are unresolved evidence requirements, not implicit relationships. Native carrier choices will be fixed in the mapping record (MERLIN Project 2026a, R01, R11, R15–R17; Open Geospatial Consortium 2025a; 2025b).
+**Figure 3. Proposed conceptual distinctions for the mapped specimen.** This is a model explanation, not a diagram of resources already created on a server. The physical producer, observed subject, model, source registration, and representing software remain distinct. Missing power endpoints or deployment intervals are unresolved evidence requirements, not implicit relationships. Native carrier choices will be fixed in the mapping record (MERLIN Project 2026a, R01, R11, R15–R17; Open Geospatial Consortium 2025a; 2025b).
 
 ### Mapping records and concept lineage
 
@@ -127,7 +153,7 @@ Each individual donor concept invoked by that explanation will have its own attr
 
 The donor explanation will distinguish an established contribution to the retained model from a source vocabulary encountered in this experiment. It will also identify MERLIN-authored bindings and experiment-authored transformations rather than crediting them to an external standard. Where the donor relationship is unverified, the mapping will say that it is not established and identify the missing evidence. The following requirements apply to every mapping added to this paper, including metadata and relationships as well as numerical readings.
 
-**Table 2. Required explanation for each mapping.** Each mapping receives a stable study-local identifier and a narrative covering these layers. Every invoked donor receives a separately attributable concept entry, even when several donors support the same mapping. Unresolved relationships remain visible until source evidence and review support a disposition.
+**Table 3. Required explanation for each mapping.** Each mapping receives a stable study-local identifier and a narrative covering these layers. Every invoked donor receives a separately attributable concept entry, even when several donors support the same mapping. Unresolved relationships remain visible until source evidence and review support a disposition.
 
 | Layer | Required explanation | Evidence to identify |
 | --- | --- | --- |
@@ -181,7 +207,7 @@ RFC 7577 supplies separate battery-monitoring concepts, including `batteryActual
 
 ### Expected domain coverage
 
-**Table 3. Expected coverage and remaining evidence needs.** The starting material comes from inspected public evidence and proposed documentary enrichment. These are assessment expectations, not completed implementation results. The profile's inclusion of a subject does not require an unsupported source assertion (MERLIN Project 2026a, secs. 4, 5.1; 2026b; 2026c).
+**Table 4. Expected coverage and remaining evidence needs.** The starting material comes from inspected public evidence and proposed documentary enrichment. These are assessment expectations, not completed implementation results. The profile's inclusion of a subject does not require an unsupported source assertion (MERLIN Project 2026a, secs. 4, 5.1; 2026b; 2026c).
 
 | Information subject | Supported starting material | Principal remaining need |
 | --- | --- | --- |
@@ -200,13 +226,13 @@ An owned or cooperating operator's kit can later supply a verified installation,
 
 ### Acquisition and publication
 
-Before execution, the team will identify a public registration with sufficiently recent data and record the evidence used to assess freshness. Polling, caching, and retry behavior will follow the source's documented and observed behavior. Repeated retrieval of the same old observation will not make it new. The adapter will preserve acquisition time separately from source time and will document its duplicate-handling policy.
+Before execution, the team will reassess registration 19639 for sufficiently recent data and document any reason for choosing a different public registration. Polling, caching, and retry behavior will follow the source's documented and observed behavior. Repeated retrieval of the same old observation will not make it new. The adapter will preserve acquisition time separately from source time and will document its duplicate-handling policy.
 
 The selected CSAPI service will be checked for the required resource creation and retrieval capabilities. Only the chosen supported interfaces will be used, and the actual endpoint and version will be recorded in the execution record. A source sample will then be followed through capture, normalized representation, service response, and client display. Server acceptance establishes one part of that chain; it does not establish full semantic correctness (Open Geospatial Consortium 2025a; 2025b).
 
 ### Validation and reportable outcomes
 
-**Table 4. Proposed evaluation criteria.** Structural checks will use the applicable target schemas, parsers, reference-resolution rules, and actual service responses. Semantic checks will compare the source meaning with the meaning represented and displayed. Each executed check will record the input revision, tool/version, scope, outcome, and evidence location. Illustrative code in this draft remains separate from executed evidence.
+**Table 5. Proposed evaluation criteria.** Structural checks will use the applicable target schemas, parsers, reference-resolution rules, and actual service responses. Semantic checks will compare the source meaning with the meaning represented and displayed. Each executed check will record the input revision, tool/version, scope, outcome, and evidence location. Illustrative code in this draft remains separate from executed evidence.
 
 | Criterion | Evidence to collect |
 | --- | --- |
@@ -230,21 +256,22 @@ The generic and profile-aware conditions will use the same captured standardized
 
 Each screenshot will record the registration, channel, observation or interval, aggregation, units, capture time, application revision where available, browser, zoom, viewport, and relevant controls. Glaux will be evaluated at the recovered 560 × 440 module size; other sizes will be reported explicitly. The source interface will retain its actual viewport and layout. Where it cannot replay the same sample or interval, images will be described as illustrative interface evidence rather than a matched comparison (MERLIN Project 2026d).
 
-**Table 5. Planned figures and evidence status.** Figures 1 and 2 are authored diagrams of the proposed experiment. Figures 3–5 are reserved evidence slots. No substitute or simulated screenshots are presented.
+**Table 6. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figures 2 and 3 are authored diagrams of the proposed experiment. Figures 4–6 are reserved evidence slots, and no substitute or simulated screenshots are presented.
 
-| Figure | Intended content | Status in version 0.2 |
+| Figure | Intended content | Status in version 0.3 |
 | --- | --- | --- |
-| 1 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
-| 2 | Proposed model and subject distinctions | Included as an authored diagram |
-| 3 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
-| 4 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
-| 5 | Actual implemented resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
+| 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
+| 2 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
+| 3 | Proposed model and subject distinctions | Included as an authored diagram |
+| 4 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
+| 5 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
+| 6 | Actual implemented resource relationships and a traced source-to-display example | Awaiting server records and mapping results |
 
 Screenshots document visible states. They cannot alone demonstrate semantic correctness or a profile benefit. A screenshot finding must be linked to the source records, mapping decisions, and task outcome. Cropping, annotation, or masking will be disclosed, and the original capture will be retained with its evidence record. Figure captions will identify the source, time basis, comparison limits, and any author-added marks.
 
 ## 8 Results to be reported
 
-**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.2. The public access observations in section 4 establish limited feasibility and remain separate from experimental results.
+**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.3. The public access observations in section 4 establish limited feasibility and remain separate from experimental results.
 
 The results section will be completed in three parts. First, acquisition and integration results will identify the actual versions, selected records, publication/retrieval outcomes, and failures. Second, semantic and coverage results will account for every selected assertion and relevant relationship, with source limitations distinguished from implementation defects. Third, presentation results will connect the matched figures to the predefined operator questions and document where profile-aware organization helped, made no difference, or introduced a problem.
 

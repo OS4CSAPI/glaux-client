@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.2",
+  "version": "0.3",
   "documentDate": "2026-10-24",
   "editorialTimezone": "America/New_York",
   "standing": "New study protocol and preliminary source assessment; proposed integration and comparison not executed",
@@ -16,24 +16,33 @@
   "figures": [
     {
       "number": 1,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_kit_23.jpg",
+      "standing": "Official Smart Citizen Kit 2.3 model reference photograph; not a verified image of public registration 19639",
+      "sourcePage": "https://docs.smartcitizen.me/hardware/kit/",
+      "sourceAsset": "https://github.com/fablabbcn/smartcitizen-docs/blob/d6c819c6082b45f886df1d75a20012681c5816a1/docs/assets/images/sck2-3.jpg",
+      "sourceRecord": "Docs/Research/Studies/Smart_Citizen/figures/SOURCES.md",
+      "changes": "None to original image bytes; proportionate display scaling only"
+    },
+    {
+      "number": 2,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
       "standing": "Authored proposed architecture; not deployed topology"
     },
     {
-      "number": 2,
+      "number": 3,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_model.svg",
       "standing": "Authored conceptual model; not executed resource mapping"
     },
     {
-      "number": 3,
+      "number": 4,
       "standing": "Planned actual source-provider UI capture; no image supplied"
     },
     {
-      "number": 4,
+      "number": 5,
       "standing": "Planned matched generic and profile-aware Glaux capture; no image supplied"
     },
     {
-      "number": 5,
+      "number": 6,
       "standing": "Planned implemented resource model and traced sample; no image supplied"
     }
   ],
@@ -71,16 +80,16 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed: illustrative lineage checked against retained MPSS, native evidence, primary OGC/W3C, vocabulary and RFC sources; scope and unresolved mappings retained",
-    "wordRender": "Passed: all sixteen rendered pages visually inspected; figures, tables, listings, citations, references, headers and footers reviewed",
+    "technicalReview": "Completed: new system overview, registration/model identity, component roles, photograph provenance and published rights notices checked against official source documentation and retained specimen; prior mapping-lineage scope and unresolved mappings retained",
+    "wordRender": "Passed: all eighteen rendered pages visually inspected; source photograph and caption, system table, diagrams, listings, citations, references, headers and footers reviewed",
     "reviewDate": "2026-10-24",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 16,
+    "renderedPageCount": 18,
     "paragraphAudit": {
-      "paragraphs": 66,
+      "paragraphs": 72,
       "sentenceCounts": {
-        "3": 23,
-        "4": 33,
+        "3": 25,
+        "4": 37,
         "5": 10
       },
       "result": "Passed three-to-five-sentence narrative/explanatory-caption policy"
@@ -97,20 +106,26 @@
       "date": "2026-10-24",
       "predecessorCommit": "57a2d1b68ad5c30a0a005c6095306e050fa9e4a9",
       "change": "Require per-mapping DIM/MPSS/CSAPI explanations and individual donor-concept attribution; add temperature and battery lineage examples, three primary references, and enforcement of three-to-five-sentence narrative paragraphs."
+    },
+    {
+      "version": "0.3",
+      "date": "2026-10-24",
+      "predecessorCommit": "387363d5f83d6193fa11ef3342a5db707fe6a7f9",
+      "change": "Add an early illustrated system overview, official SCK2.3 model photograph with source and rights records, component roles, and explicit identification of public registration 19639; distinguish model, source service, and unverified physical installation; renumber figures/tables and preserve public-first sequencing."
     }
   ],
   "files": [
     {
       "path": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
       "role": "canonical-manuscript",
-      "sha256": "08786f36fef91d4b776c637eba16e54ea4cfd075bb83a84a88d860db92827362",
-      "sizeBytes": 44899
+      "sha256": "11a7421ad8701abdc46cded7059b270e4d800a6709374b623238a7807c628d88",
+      "sizeBytes": 49562
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
       "role": "generated-word-edition",
-      "sha256": "b81d3dc39ce18d76a61af091d466e61af9ed2ef3d4a9cf66f4b34a3a554886e8",
-      "sizeBytes": 538711
+      "sha256": "a82ad1c73475da8072b4fe4230c0792b0d7b03d90fe91eecd65db14c610c9cfe",
+      "sizeBytes": 730678
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/REFERENCES.json",
@@ -121,8 +136,8 @@
     {
       "path": "Docs/Research/Studies/Smart_Citizen/README.md",
       "role": "maintenance-guide",
-      "sha256": "1aacd0410e28816769f855c74df547ccf2e3f3729bfe5998972f09e24877e2fa",
-      "sizeBytes": 7312
+      "sha256": "d78c98a2059d76df2b4cecb0acc5a457532a0497787558bceb6b5b3b4e0226f8",
+      "sizeBytes": 8746
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
@@ -151,14 +166,38 @@
     {
       "path": "scripts/build-smart-citizen-paper.py",
       "role": "document-builder",
-      "sha256": "8256efa9807ba09f71a4c2f2d94cb8176e481a29a0f2d9625dc52a168603f6eb",
-      "sizeBytes": 25706
+      "sha256": "fd8c5deb7b9f617c29d2192b42c42498cf438c92847c03c56f4e242ecf1da79a",
+      "sizeBytes": 26682
     },
     {
       "path": "scripts/verify-smart-citizen-paper.py",
       "role": "publication-verifier",
       "sha256": "628055f93b9f65b2c68dcced86b279f82473060dc2ab6d65b737965d16c898ae",
       "sizeBytes": 15631
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_kit_23.jpg",
+      "role": "reproduced-source-model-photograph",
+      "sha256": "32158256f3a89d1acff58db43a802dc8a6c1d8cbe8c0275c35ceaf80893b925b",
+      "sizeBytes": 207084
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/SOURCES.md",
+      "role": "figure-source-and-rights-record",
+      "sha256": "52c83ba2db953d5017d44294cd0599c568c7b0f2dc8feaa7c0605fe5dd12652f",
+      "sizeBytes": 4682
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/licenses/SMART_CITIZEN_DOCS_CC_BY_NC_SA_4_0.txt",
+      "role": "retained-source-repository-license",
+      "sha256": "483cd60d887d6a7e87717d646e9e77be59f84854982961b1668f715161537797",
+      "sizeBytes": 19092
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/licenses/GNU_FDL_1_3.txt",
+      "role": "retained-source-site-license",
+      "sha256": "110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4",
+      "sizeBytes": 22955
     }
   ],
   "paragraphPolicy": {
@@ -195,5 +234,15 @@
       "id": "SC-BATT-01",
       "standing": "Illustrative proposed battery-percentage lineage and donor limits; no RFC object equivalence or power topology established"
     }
-  ]
+  ],
+  "systemIdentificationPolicy": {
+    "required": [
+      "plain-language system type",
+      "reported product model",
+      "selected public registration or verified physical specimen",
+      "source service role",
+      "physical installation evidence limits"
+    ],
+    "imageBoundary": "A product/model image must not be presented as a verified photograph or inventory of an individual installation."
+  }
 }

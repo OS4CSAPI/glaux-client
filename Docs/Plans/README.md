@@ -17,10 +17,13 @@ project status from an older package's folder named "current".
   and Glaux evaluation, with captured replay and comparisons; owned hardware later.
   No implementation or purchase yet.
 - [Maintained experiment paper](../Research/Studies/Smart_Citizen/MANUSCRIPT.md),
-  v0.2, 24 October 2026, and its
+  v0.3, 24 October 2026, and its
   [Word edition](../Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx):
-  protocol, preliminary source assessment, seven-layer mapping explanations,
-  and illustrative `SC-TEMP-01`/`SC-BATT-01` lineage cases.
+  early illustrated environmental-monitoring overview, protocol, preliminary
+  assessment, seven-layer mapping explanations, and illustrative
+  `SC-TEMP-01`/`SC-BATT-01` cases. The authentic SCK 2.3 model photograph does not
+  verify the installation represented by public registration 19639. Public-data
+  integration comes before owned hardware and the later AirGradient comparison.
   The [paper guide](../Research/Studies/Smart_Citizen/README.md) preserves the
   requirements to explain carriers, DIM/MPSS meanings, individual donor concepts
   with citations/locators/reuse status, and authored choices, and to keep narrative

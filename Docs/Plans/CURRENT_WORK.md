@@ -1,10 +1,41 @@
 # Current client work
 
+## Paper version 0.3 illustrated system overview — 24 October 2026
+
+The owner requested an early explanation of the system type and selected case,
+supported by an authentic image. [Paper v0.3](../Research/Studies/Smart_Citizen/README.md)
+adds an illustrated overview of Smart Citizen as an environmental-monitoring
+system and identifies SCK 2.3 as the model reported by public registration 19639.
+The model reference photograph does not verify that registration's physical
+installation, component inventory, or placement.
+
+The immediate proposal remains public Smart Citizen readings → documented adapter
+→ CSAPI → Glaux, accompanied by deterministic captures. An owned kit is a later
+route to physical-context evidence, and AirGradient is a later independent
+comparison. The existing mapping-lineage requirements, three-to-five-sentence
+narrative policy, MPSS v0.3.5 baseline, and original imported artifacts remain in
+force.
+
+Verification passed: all eighteen rendered Word pages were visually reviewed,
+including the photograph and caption on page 2 and complete system-identification
+table on page 3. All 72 narrative/explanatory-caption paragraphs meet the required
+length: 25 have three sentences, 37 have four, and 10 have five. The paper checks
+passed for 22 cited references, three figures, two listings, current Word inputs,
+and fourteen publication-file fingerprints; the six tables were also reviewed.
+
+Repository verification passed for all fourteen original artifacts and 302 local
+links across 27 documentation files. The photograph matches its official source
+blob byte-for-byte, with source credit and both published rights notices retained.
+The counts and verification results in the v0.2 and v0.1 sections below describe
+those earlier editions. This document revision does not execute the adapter,
+CSAPI publication, live experiment, or interface comparison, and the deployed
+runtime remains `71297c97`.
+
 ## Paper version 0.2 donor explanations and paragraph structure — 24 October 2026
 
 The owner clarified that every mapping must explain its CSAPI concepts and
 SensorML/SWE representation, underlying DIM concept, exact MPSS rule, and each
-individual donor-source concept invoked. [Paper v0.2](../Research/Studies/Smart_Citizen/README.md)
+individual donor-source concept invoked. [Paper v0.2](https://github.com/OS4CSAPI/glaux-client/blob/387363d5f83d6193fa11ef3342a5db707fe6a7f9/Docs/Research/Studies/Smart_Citizen/README.md)
 now sets that requirement in a seven-layer mapping matrix and illustrates it with
 `SC-TEMP-01` and `SC-BATT-01`. The examples identify observation-concept lineage,
 source property and unit vocabularies, representation mechanisms, authored choices,

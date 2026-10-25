@@ -10,16 +10,22 @@ commit containing this checkpoint and the files it verifies.
 
 **Latest research and planning checkpoint:** the owner requested a maintained
 academic-style paper documenting the experiment. The
-[Smart Citizen paper v0.2](../Research/Studies/Smart_Citizen/README.md) now contains
-the protocol, preliminary source assessment, two explanatory figures, two JSON
-listings, and twenty-two CMOS 18 author-date references. Its canonical manuscript,
+[Smart Citizen paper v0.3](../Research/Studies/Smart_Citizen/README.md) adds an early
+illustrated overview of the environmental-monitoring system and selected public
+case, alongside the protocol and preliminary source assessment. Its canonical manuscript,
 generated Word edition, reference records, and publication manifest are maintained
 together. Planned source-interface and Glaux comparisons remain evidence slots.
 The paper is a new authored artifact, separate from the fourteen imported originals.
 
+The authentic SCK 2.3 photograph illustrates the model, while public registration
+19639 identifies the selected source record. The registration's actual physical
+installation remains unverified; the image does not establish its appearance,
+placement, or installed components. The immediate experiment uses public readings,
+with an owned kit and independent AirGradient comparison remaining later extensions.
+
 The owner clarified that every mapping must explain both its standard
 representation and its underlying DIM concept, exact MPSS binding, and each
-individual donor concept supporting the interpretation. Version 0.2 records
+individual donor concept supporting the interpretation. Version 0.2 established
 those requirements, a seven-layer explanation matrix, and illustrative
 temperature and battery lineage cases with explicit reuse and equivalence limits.
 The owner also requires three to five sentences in each narrative paragraph,
