@@ -18,16 +18,16 @@ The experiment must preserve the distinction among native source facts, document
 | CSAPI server | Existing Oracle-hosted 52°North connected-systems-pygeoapi deployment is the intended target |
 | Client | Glaux Client exists and is deployed; full Smart Citizen connected-resource traversal is not yet implemented |
 | Resource Details frame | Recovered 560 × 440 CSS-pixel working canvas is deployed |
-| Research paper | Paper v0.7 records sourced terminology plus reviewed Phase 1–3 evidence and mappings; adapter/server/client results remain pending |
+| Research paper | Paper v0.8 records sourced terminology/acronyms plus reviewed Phase 1–4 source, mapping, and resource-graph evidence; adapter/server/client results remain pending |
 | Completed before Phase 4 | Frozen specimen, complete representative source characterization, corrected vocabulary evidence, reviewed current/aggregate mapping ledger |
 | Completed through Phase 4 | Owner Phase 1–3 review gate; reviewed CSAPI resource graph and request/cleanup design (no server writes) |
-| Not yet complete | Owner Phase 4 review gate, adapter, server load, connected Glaux retrieval, matched UI comparison |
+| Not yet complete | Paper v0.8 closeout verification, adapter, server load, connected Glaux retrieval, matched UI comparison |
 
 ## Governing sequence
 
 Do not begin adapter implementation by guessing target structures from source labels. Complete and review the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
 
-**25 October current checkpoint:** Phases 1–3 are closed for the representative first mapping set, the owner authorized Phase 4, and the reviewed resource graph is now complete. The work intentionally pauses again for owner discussion; Phase 5 is not authorized merely because the Phase 4 design gate is satisfied.
+**25 October current checkpoint:** Phases 1–4 are closed for the representative first mapping set and resource design. The owner directed a paper v0.8/acronym closeout before Phase 5; deterministic adapter work remains paused until that documentation checkpoint is complete.
 
 ### Phase 1 — Freeze the experiment specimen
 

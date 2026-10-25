@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.7",
+  "version": "0.8",
   "documentDate": "2026-10-25",
   "editorialTimezone": "America/New_York",
-  "standing": "Study protocol with reviewed Phase 1–3 source and mapping evidence; adapter publication, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
+  "standing": "Study protocol with reviewed Phase 1–4 source, mapping, and resource-graph evidence; deterministic adapter, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 43,
+  "referenceCount": 45,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
@@ -107,25 +107,19 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed: v0.7 incorporates the formal frozen specimen and reviewed Phase 1–3 corrections, adds sourced terms and definitions, corrects source-processing provenance, notification-setting semantics, timing-cohort arithmetic and RSSI classification, and records aggregate processing provenance before Phase 4.",
-    "wordRender": "Completed: the final v0.7 Word edition rendered to 33 pages and all pages were visually inspected at full-page resolution. The first render exposed two stale v0.6-era figure-status labels; after correction, the rebuilt pages 14, 28 and 29 were re-inspected and the other 30 pages were byte-identical to the already inspected render. No clipping, overlap, broken tables, missing figures or other layout defects were found.",
+    "technicalReview": "Completed for source revision: v0.8 incorporates the reviewed Phase 4 CSAPI resource graph, deterministic study identity policy, explicit non-resources, time projections, and bounded target-server findings; it also adds and audits a maintained acronyms-and-abbreviations section.",
+    "wordRender": "Pending v0.8 GitHub Actions rebuild and complete rendered-page visual inspection.",
     "reviewDate": "2026-10-25",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 33,
+    "renderedPageCount": null,
     "paragraphAudit": {
-      "result": "Passed as part of GitHub Actions paper verification.",
-      "detail": "Run 40195631894 verified 43 cited references, 7 figures, 2 listings, current Word inputs and 18 publication files; the verifier enforces the maintained three-to-five-sentence narrative/explanatory-caption policy."
+      "result": "Pending v0.8 build verification.",
+      "detail": "The repository verifier remains authoritative for the three-to-five-sentence narrative/explanatory-caption policy and the maintained acronym policy."
     },
     "paperBuildWorkflow": {
-      "status": "success",
+      "status": "pending v0.8 build",
       "sourceBranch": "work/details-view-20261023",
-      "sourceCommit": "d0905f1c5d26196c48fd9fb7ad99d39ded1d50ce",
-      "generatedCommit": "de034ba449e035c46bd8a3283d2ccb3014640b6c",
-      "runId": 40195631894,
-      "artifactName": "smart-citizen-paper-v0.7",
-      "artifactId": 12599139992,
-      "artifactDigest": "sha256:89cf9147ccf90ff92c7bebb24d96efcfff1ff65824528a0ccdbbe7f1ebf6a199",
-      "wordSha256": "1ff723be43386c20a33847c92203eaceaaf5f7d4a0acc68bc140e53d2889b108"
+      "artifactName": "smart-citizen-paper-v0.8"
     }
   },
   "revisionHistory": [
@@ -169,6 +163,12 @@
       "date": "2026-10-25",
       "predecessorCommit": "b1d81af427ae2ecfa962157668368a537fa8142b",
       "change": "Add the formal frozen Smart Citizen specimen and reviewed Phase 1–3 findings; introduce a sourced Terms and Definitions section and terminology audit; correct processing-provenance wording, notification-setting semantics, timing-cohort arithmetic and RSSI classification; formalize source-platform aggregate-history mappings; update the formal temperature listing and keep Phase 4 paused for owner review."
+    },
+    {
+      "version": "0.8",
+      "date": "2026-10-25",
+      "predecessorCommit": "991e52c07845da422085d412b49adea8334f9b6b",
+      "change": "Add the reviewed Phase 4 CSAPI resource graph and negative design decisions, deterministic UUIDv5 study identity policy, current/aggregate time projections, bounded 52°North target constraints, and a maintained Acronyms and Abbreviations section with first-use readability and verifier enforcement; keep Phase 5 adapter execution explicitly unexecuted."
     }
   ],
   "files": [
@@ -326,5 +326,65 @@
     ],
     "imageBoundary": "A product/model image must not be presented as a verified photograph or inventory of an individual installation."
   },
-  "paragraphAudit": {}
+  "paragraphAudit": {},
+  "acronymPolicy": {
+    "sectionHeading": "## 2 Acronyms and abbreviations",
+    "minOccurrences": 2,
+    "required": [
+      "API",
+      "CSAPI",
+      "DIM",
+      "HTTP",
+      "ID",
+      "JSON",
+      "MERLIN",
+      "MPSS",
+      "NIST",
+      "OGC",
+      "OS4CSAPI",
+      "PBI",
+      "PM2.5",
+      "PROV",
+      "QUDT",
+      "RFC",
+      "RSSI",
+      "SCK",
+      "SHA-256",
+      "SOSA",
+      "SSN",
+      "SWE",
+      "TRSS",
+      "UI",
+      "UID",
+      "URI",
+      "URL",
+      "USB",
+      "UTC",
+      "UUID",
+      "UV",
+      "VIM",
+      "W3C"
+    ],
+    "ignoreExact": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "II",
+      "III",
+      "CS-GO"
+    ],
+    "ignorePatterns": [
+      "^R\\d{2}$",
+      "^SC$",
+      "^SC(?:-[A-Z0-9.]+)+$",
+      "^SCK\\d(?:\\.\\d+)?$",
+      "^SEN\\d+X$",
+      "^SHT\\d+$",
+      "^MPL\\d+[A-Z0-9]*$",
+      "^SD$",
+      "^A$"
+    ],
+    "editorialRule": "Expand uncommon acronyms on first substantive use where practical and keep the maintained table current as new recurring shorthand is introduced."
+  }
 }

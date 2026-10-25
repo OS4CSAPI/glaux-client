@@ -198,6 +198,51 @@ def check_paragraph_policy(paragraphs, policy):
                          f"{len(violations)} of {len(paragraphs)} prose paragraphs fail:\n{detail}")
 
 
+
+def check_acronym_policy(text, policy):
+    """Require maintained acronym coverage for recurring manuscript shorthand."""
+    require(isinstance(policy, dict), "acronymPolicy must be an object")
+    heading = policy.get("sectionHeading")
+    require(isinstance(heading, str) and heading.startswith("## "), "acronymPolicy.sectionHeading must be a level-two heading")
+    start = text.find(heading)
+    require(start >= 0, f"Missing acronym section: {heading}")
+    next_heading = text.find("\n## ", start + len(heading))
+    section = text[start: next_heading if next_heading >= 0 else len(text)]
+    listed = set(re.findall(r"^\| \*\*([^*]+)\*\* \|", section, re.M))
+
+    required = set(policy.get("required", []))
+    missing = sorted(required - listed)
+    require(not missing, f"Required acronym entries missing from maintained table: {missing}")
+
+    # Scan narrative prose only: code, references, tables, and mapping identifiers
+    # are handled by their own conventions and would otherwise create false positives.
+    prose = analyze_paragraphs(text, ())
+    counts = {}
+    for paragraph in prose:
+        if paragraph["section"].startswith(heading[3:]):
+            continue
+        visible = visible_prose(paragraph["text"]).replace("CODE", " ").replace("URL", " ")
+        for token in re.findall(r"\b[A-Z][A-Z0-9.-]{1,11}\b", visible):
+            token = token.rstrip(".-")
+            if token:
+                counts[token] = counts.get(token, 0) + 1
+
+    minimum = policy.get("minOccurrences", 2)
+    require(type(minimum) is int and minimum >= 1, "acronymPolicy.minOccurrences must be a positive integer")
+    ignored_exact = set(policy.get("ignoreExact", []))
+    ignored_patterns = [re.compile(pattern) for pattern in policy.get("ignorePatterns", [])]
+
+    unexplained = []
+    for token, count in sorted(counts.items()):
+        if count < minimum or token in listed or token in ignored_exact:
+            continue
+        if any(pattern.fullmatch(token) for pattern in ignored_patterns):
+            continue
+        unexplained.append(f"{token} ({count})")
+    require(not unexplained,
+            "Recurring manuscript shorthand is missing from the acronym table: " + ", ".join(unexplained))
+
+
 def paragraph_report():
     """Report source counts before DOCX rebuilding; never refresh fingerprints."""
     manifest = json.loads(MANIFEST.read_text())
@@ -216,6 +261,9 @@ def paragraph_report():
         print("Paragraph policy passed.")
     else:
         print("Counts only: paragraphPolicy is absent, so no sentence limits are enforced.")
+    if "acronymPolicy" in manifest:
+        check_acronym_policy(text, manifest["acronymPolicy"])
+        print("Acronym policy passed.")
 
 
 def verify(refresh=False):
@@ -239,6 +287,8 @@ def verify(refresh=False):
         by_author.setdefault(author, {})[record["yearLabel"]] = record["citation"]
     if "paragraphPolicy" in manifest:
         check_paragraph_policy(analyze_paragraphs(body, by_author), manifest["paragraphPolicy"])
+    if "acronymPolicy" in manifest:
+        check_acronym_policy(body, manifest["acronymPolicy"])
     used = set()
     year_pattern = r"(?:\d{4}[a-z]?|n\.d\.(?:-[a-z])?)"
     for parenthesis in re.findall(r"\(([^()]*)\)", body):

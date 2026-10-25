@@ -1,6 +1,16 @@
 # Current client work
 
 
+## Smart Citizen paper v0.8 Phase 4 closeout and acronym control — 25 October 2026
+
+The owner stopped Phase 5 before any adapter code was changed and directed that the completed Phase 4 findings be incorporated into the research paper first. Paper v0.8 now records the reviewed Phase 4 resource graph, negative-resource decisions, deterministic study identity policy, current/aggregate time projections, and bounded 52°North target constraints while continuing to state that deterministic adapter execution and all CSAPI server writes are unexecuted.
+
+The owner also identified excessive acronym use as a usability problem. Version 0.8 adds a dedicated Acronyms and Abbreviations section, expands uncommon shorthand on first substantive use where practical, and uses Smart Citizen's source wording **received signal strength indication (RSSI)**. Repository maintenance instructions and the paper verifier now require the core acronym inventory and flag recurring narrative shorthand that is missing from the maintained table.
+
+**Current gate:** complete and visually verify paper v0.8, then stop. Phase 5 adapter implementation is not part of this closeout and must resume only after this documentation checkpoint is complete.
+
+
+
 ## Smart Citizen Phase 4 resource-graph checkpoint — 25 October 2026
 
 The owner authorized **Phase 4 only** after accepting the reviewed Phase 1–3 baseline and the principle that Smart Citizen/Kairos hourly averages are source-platform processing products rather than direct physical-kit output. Phase 4 is now complete in [the CSAPI resource-graph workbook](../Research/Studies/Smart_Citizen/Workbook/03_CSAPI_RESOURCE_GRAPH.md). **No adapter code, CSAPI write, Glaux change, deployment, or MPSS v0.3.5 revision was performed.**
