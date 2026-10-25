@@ -28,7 +28,7 @@ jobs:
           mkdir -p "$DEST/measurements" "$DEST/sensors"
           printf '%s\n' "$CAPTURED_AT" > "$DEST/captured_at_utc.txt"
 
-          for id in 3 4 7 13 21 23 78 79; do
+          for id in 1 2 4 7 14 25 78 79; do
             curl -fsSL -D "$DEST/measurements/$id.headers.txt" -o "$DEST/measurements/$id.json" "https://api.smartcitizen.me/v0/measurements/$id"
             python -m json.tool "$DEST/measurements/$id.json" >/dev/null
           done
@@ -44,7 +44,7 @@ jobs:
 
           Captured: $CAPTURED_AT
 
-          Measurement records: 3 (Air Temperature), 4 (Noise Level), 7 (battery), 13 (PM2.5), 21 (Barometric Pressure), 23 (Relative Humidity), 78 (RSSI), 79 (SD-Card Presence).
+          Measurement records: 1 (Air Temperature), 2 (Relative Humidity), 4 (Noise Level), 7 (battery), 14 (PM2.5), 25 (Barometric Pressure), 78 (RSSI), 79 (SD-Card Presence).
 
           Parent Sensor catalogue records: 52 (noise parent), 54 (SHT31 parent), 57 (barometric-pressure parent), 192 (SEN5X parent).
 
