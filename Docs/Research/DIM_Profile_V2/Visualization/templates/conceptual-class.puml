@@ -1,0 +1,20 @@
+@startuml
+' Title: <figure title>
+' View: class
+' Question: <what this figure answers>
+' Layer: DIM
+' Status: working
+' Source artifact: <version>
+hide methods
+skinparam classAttributeIconSize 0
+left to right direction
+
+title <Conceptual structure title>
+
+class GeneralConcept
+class SpecializedConcept
+class RelatedConcept
+
+GeneralConcept <|-- SpecializedConcept
+SpecializedConcept "1" -- "0..*" RelatedConcept : relationship
+@enduml
