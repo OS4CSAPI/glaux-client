@@ -1,0 +1,46 @@
+name: Freeze Smart Citizen specimen
+
+on:
+  push:
+    branches:
+      - work/details-view-20261023
+    paths:
+      - '.github/workflows/smart-citizen-freeze.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture public Smart Citizen evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capture
+          date -u +'%Y-%m-%dT%H:%M:%SZ' > capture/captured_at_utc.txt
+          FROM_DATE=$(date -u -d '1 day ago' +'%Y-%m-%d')
+          TO_DATE=$(date -u +'%Y-%m-%d')
+          printf '%s\n' "$FROM_DATE" > capture/from_date.txt
+          printf '%s\n' "$TO_DATE" > capture/to_date.txt
+          curl -fsSL -D capture/device.headers.txt -o capture/device.json 'https://api.smartcitizen.me/v0/devices/19639'
+          curl -fsSL -D capture/temperature_history.headers.txt -o capture/temperature_history.json "https://api.smartcitizen.me/v0/devices/19639/readings?sensor_id=55&rollup=1h&from=$FROM_DATE&to=$TO_DATE&function=avg&all_intervals=true"
+          curl -fsSL -D capture/pm25_history.headers.txt -o capture/pm25_history.json "https://api.smartcitizen.me/v0/devices/19639/readings?sensor_id=194&rollup=1h&from=$FROM_DATE&to=$TO_DATE&function=avg&all_intervals=true"
+          python -m json.tool capture/device.json > /dev/null
+          python -m json.tool capture/temperature_history.json > /dev/null
+          python -m json.tool capture/pm25_history.json > /dev/null
+          sha256sum capture/device.json capture/temperature_history.json capture/pm25_history.json > capture/SHA256SUMS.txt
+          wc -c capture/device.json capture/temperature_history.json capture/pm25_history.json > capture/SIZES.txt
+          printf '%s\n' 'https://api.smartcitizen.me/v0/devices/19639' > capture/REQUESTS.txt
+          printf '%s\n' "https://api.smartcitizen.me/v0/devices/19639/readings?sensor_id=55&rollup=1h&from=$FROM_DATE&to=$TO_DATE&function=avg&all_intervals=true" >> capture/REQUESTS.txt
+          printf '%s\n' "https://api.smartcitizen.me/v0/devices/19639/readings?sensor_id=194&rollup=1h&from=$FROM_DATE&to=$TO_DATE&function=avg&all_intervals=true" >> capture/REQUESTS.txt
+      - name: Upload frozen specimen
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-citizen-19639-freeze
+          path: capture/
+          retention-days: 1
+          if-no-files-found: error
