@@ -8,17 +8,24 @@ and registered SHA-256 fingerprints. Catalogue and repository-local documentatio
 link verification passed on 24 October 2026. Git history records the publication
 commit containing this checkpoint and the files it verifies.
 
-**Latest research and planning checkpoint:** the owner subsequently requested
-open, accessible sensing devices/data for DIM/profile experiments and authorized
-filing the findings and a Smart Citizen plan in this repository. The
+**Latest research and planning checkpoint:** the owner requested a maintained
+academic-style paper documenting the experiment. The
+[Smart Citizen paper v0.1](../Research/Studies/Smart_Citizen/README.md) now contains
+the protocol, preliminary source assessment, two explanatory figures, two JSON
+listings, and nineteen CMOS 18 author-date references. Its canonical manuscript,
+generated Word edition, reference records, and publication manifest are maintained
+together. Planned source-interface and Glaux comparisons remain evidence slots.
+The paper is a new authored artifact, separate from the fourteen imported originals.
+
+The preceding
 [candidate report](../Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
 [15-record access evidence](../Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json),
 and [proposed experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md) preserve that work.
-Review the small public-source mapping specimen proposed there as the next
-concrete increment. Research and planning are complete; implementation, acquisition
-and live-device work have not started. The original 14 files and technical
-versions retain their standing. The deployed runtime remains the template revision
-recorded below.
+The current intended sequence is public-data capture and mapping, adapter/CSAPI
+publication and retrieval, then a reproducible presentation comparison; an owned
+kit is a later extension. Mapping and implementation have not been executed.
+The original 14 files and technical versions retain their standing. The deployed
+runtime remains the template revision recorded below.
 
 ## Purpose and authority
 
@@ -44,6 +51,7 @@ Use the following records for their stated responsibilities:
 | [Artifact Register](../ARTIFACT_REGISTER.md) and [artifact manifest](../ARTIFACTS.json) | Canonical repository locations, stable artifact keys, source editions, and file fingerprints for the 14 current artifacts. |
 | This continuity checkpoint | Broader research lineage, current decisions, and immediate work sequencing after the recovered PITON and plan. |
 | [Current client work](CURRENT_WORK.md) | Implemented client behavior, actual checks, and the current implementation checkpoint. |
+| [Maintained Smart Citizen paper](../Research/Studies/Smart_Citizen/README.md) | Study protocol, cited source assessment, evolving methods and results, figure evidence, and edition maintenance. |
 | [Deployment record](CLOUDFLARE_DEPLOYMENT.md) | The runtime revision actually uploaded and its live verification. |
 | Original profile, catalogue, research, and Details View artifacts | The source content and decision standing of their identified editions. A summary or import does not change their meaning. |
 
@@ -152,23 +160,31 @@ updates. The source and implementation checkpoint before this import was
 
 That artifact-publication instruction required no repeat approval and covered the
 identified originals and their documentation. Later owner instructions authorized
-the page index, recovered template, candidate research, and filing the research
-and proposed Smart Citizen plan. Their completed results are recorded above.
-The present instruction is to preserve the research and propose the experiment;
-it does not itself implement the proposed adapter, new page or live integration.
+the page index, recovered template, candidate research, filing the research and
+proposed Smart Citizen plan, and drafting a maintained academic-style experiment
+paper. Their completed results are recorded above. The current documentation
+increment does not itself implement the proposed adapter, new page or live integration.
 Keep any referenced but unavailable artifact explicit as a recovery gap; do not
 reconstruct an original document from its citations.
 
-### Proposed next increment: Smart Citizen evidence to view
+### Proposed next increment: Smart Citizen evidence through integration to view
 
 The recommended first specimen is the already inspected Smart Citizen public
-registration 19639: temperature and battery percentage, followed by the older
-PM2.5 reading and grouped temperature history. The first task is a field-by-field
-mapping with source, subject, unit, time, standard carrier, profile binding,
-presentation decision and unresolved questions. The plan then proposes a separate
-recorded-data experiment in the recovered 560 × 440 frame, an exact owned kit,
-read-only live access and an AirGradient comparison. TRSS and OmniSense remain
-reference cases within the broader whole-system scope.
+registration 19639, subject to a fresh availability check. The first task is a
+field-by-field mapping with source, subject, unit, time, standard carrier, profile
+binding, presentation decision and unresolved questions. Temperature and battery
+percentage provide initial traces; the intended dataset also includes model and
+registration metadata, channel definitions, varied quantities and indicators,
+bounded history, and integration provenance. A two-field demonstration is not the
+whole proposed dataset.
+
+The immediate path uses publicly accessible live data through an authored adapter
+and an identified CSAPI service into Glaux. Captures support replay and comparison
+in the recovered 560 × 440 frame throughout this work. The reconciled plan places
+owned hardware later, followed by an independent AirGradient comparison. Published
+API documentation, source metadata and actual responses jointly inform the mapping;
+a complete native machine-readable API contract has not yet been verified. TRSS
+and OmniSense remain reference cases within the broader whole-system scope.
 
 The research documents actual public HTTP reads and source/schema/store checks.
 It does not demonstrate hardware operation, native OGC integration, whole-profile
@@ -176,9 +192,10 @@ conformance or measured operator benefit. Excerpts and available original-respon
 hashes are preserved; complete raw responses are not archived in the repository.
 Missing capture times and bodies are explicit rather than reconstructed.
 
-Current implementation gaps include a Smart Citizen adapter, a distinct recorded
-source with original capture metadata, and composition of mapped content with
-the blank frame. Public registration IDs and sensor catalogue/association IDs
+Current implementation gaps include a Smart Citizen adapter, selected CSAPI service
+and publication/retrieval record, a distinct recorded source with original capture
+metadata, and composition of mapped content with the blank frame. Public registration
+IDs and sensor catalogue/association IDs
 are not established physical serials. Battery percentage cannot reuse the
 existing voltage-only power demonstration. These are proposed integration
 questions, not amendments to MPSS v0.3.5.

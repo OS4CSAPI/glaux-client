@@ -20,12 +20,23 @@ retain their source dates and contents; publication does not turn their proposal
 into adopted requirements or revise the technical profile. Follow
 [artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) when updating the set.
 
-For the subsequent real-device evaluation, start with the
-[24 October open-sensor candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md)
-and its [access evidence](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json),
-then the [proposed Smart Citizen experiment](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md).
-These are new Git-native research and planning records, separate from the 14
-preserved originals. The study is complete; the proposed integration is not implemented.
+For the subsequent real-source evaluation, start with the maintained paper
+**Evaluating Sensor Information Preservation Through OGC Integration**, v0.1,
+24 October 2026: [canonical manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md)
+and [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
+Its [maintenance guide](Research/Studies/Smart_Citizen/README.md) explains the
+citation, figure, listing and evidence workflow. Its
+[publication manifest](Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json)
+is separate from the manifest of the 14 preserved originals.
+
+The paper is a study protocol and preliminary source assessment, supported by the
+[candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
+[access evidence](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json), and
+[experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md). The proposed sequence
+starts with public-source acquisition, an adapter, CSAPI publication and Glaux
+evaluation, supported by captured replay and matched comparisons; owned hardware
+comes later. No adapter, experiment run, CSAPI publication, screenshot comparison,
+or conformance result is established by the paper's publication.
 
 ## Current authoritative material
 
@@ -35,6 +46,7 @@ For the current Details View increment, start with:
 | --- | --- |
 | Original project artifacts, versions, authority, and canonical paths | [Artifact Register](ARTIFACT_REGISTER.md), [manifest](ARTIFACTS.json) |
 | Broader DIM/MPSS continuity and sequencing | [Current MERLIN continuity](Plans/CONTINUITY.md) |
+| Maintained Smart Citizen research paper v0.1 and publication record | [Manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md), [Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx), [maintenance guide and manifest](Research/Studies/Smart_Citizen/README.md) |
 | Open sensor candidates, recommendations and actual access findings | [Candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md), [evidence record](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) |
 | Proposed first real-source experiment and its PBI/profile outputs | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) |
 | How the document collection is maintained | [Artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) |

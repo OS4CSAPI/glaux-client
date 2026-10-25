@@ -4,6 +4,7 @@
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -83,6 +84,13 @@ def main():
             resolved = (document.parent / target).resolve()
             check(resolved.is_relative_to(ROOT) and resolved.exists(),
                   f"Broken local link in {document.relative_to(ROOT)}: {target}")
+
+    paper_check = ROOT / "scripts/verify-smart-citizen-paper.py"
+    if paper_check.is_file():
+        result = subprocess.run([sys.executable, str(paper_check)], capture_output=True, text=True)
+        check(result.returncode == 0, result.stderr.strip() or "Smart Citizen paper verification failed")
+        if result.returncode == 0:
+            print(result.stdout.strip())
 
     if errors:
         for message in errors:

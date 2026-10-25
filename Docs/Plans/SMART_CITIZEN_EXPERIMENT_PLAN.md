@@ -26,10 +26,19 @@ records the bounded public-source checks. This plan proposes work beyond filing
 that research: no purchase, account creation, adapter, deployment, device command,
 or live backend change is performed by publishing it.
 
-## Recommended first increment: one evidence-backed specimen
+The [maintained experiment paper](../Research/Studies/Smart_Citizen/README.md)
+and its [study protocol](../Research/Studies/Smart_Citizen/MANUSCRIPT.md)
+record the research questions, mapping method, coverage assessment, comparative
+evaluation, and evidence requirements. This plan applies that method to the work
+sequence. **Public live integration comes first, accompanied by deterministic
+captures; owned hardware is a later extension.** Neither document records an
+executed Smart Citizen adapter, CSAPI dataset, or interface comparison.
 
-Start with the already inspected public API record **19639**, without buying
-hardware. Its response identifies Smart Citizen Kit 2.3. A successful read on
+## Recommended immediate experiment: public live data and reproducible captures
+
+Use the already inspected public API record **19639** as the first candidate,
+checking its current suitability before the live run. Its response identifies
+Smart Citizen Kit 2.3. A successful read on
 **24 October 2026 at 21:57:35 UTC** established accessible data at that time;
 it does not establish current availability whenever this document is read.
 
@@ -51,13 +60,36 @@ only reviewed fields needed for the experiment, with omissions and derivation
 recorded. Record source URL, capture time, response hash, selected fields and
 transform revision so later work is reproducible.
 
-The immediate deliverable should be a small mapping sheet and review sketch
-around **temperature, battery percentage, and their source/subject/time context**.
-Add the older PM2.5 reading and averaged temperature history as two discriminating
-cases. RSSI and SD-card semantics supply the next small extension. This keeps
-the first review concrete without trying to fill every subject or tab.
+The proposed dataset includes registration and model metadata, reported channel
+inventory, definitions, units, subject/time context, integration provenance,
+current readings, and bounded history. Select varied supported meanings:
+temperature and humidity, particulate mass and particle-number concentration,
+light or pressure, noise level, battery percentage, radio signal strength, and
+the SD-card indicator. Preserve the distinction between source-reported facts,
+documentary model information, integration-created facts, and unresolved content.
 
-## 1. Map the specimen before designing additional UI
+Temperature and battery percentage can form the **first trace through the
+integration chain**, but they do not define the whole proposed dataset. The older
+PM2.5 reading and averaged history are discriminating temporal cases. Additional
+channels and metadata test different meanings rather than merely increasing the
+record count. Public data can support a substantial observation-rich specimen;
+they do not establish complete physical deployment, power, control, or lifecycle
+coverage. A purchase is not required for this first experiment.
+
+## 1. Establish the source-to-standard mapping
+
+Use the [published Smart Citizen API reference](https://developer.smartcitizen.me/),
+its human-readable schema and endpoint descriptions, sensor/measurement metadata,
+and actual captured responses together. A complete machine-readable OpenAPI or
+JSON Schema contract for the exact deployed native API **has not yet been
+verified**; this does not establish that none exists. Compare the documented
+meaning with observed payloads. If implementation code resolves an ambiguity,
+record its revision without assuming it is the version deployed publicly.
+
+Use the selected target-standard schemas and MPSS rules to construct the
+representation. A target-schema check establishes only its tested structural
+constraints; preserving identity, subject, quantity, units, and time requires
+separate semantic review.
 
 For each selected field, record the exact JSON location, original value and
 definition, subject, unit, time meaning, OGC carrier, applicable MPSS binding,
@@ -78,19 +110,62 @@ Use existing SensorML, CSAPI and SWE Common mechanisms first, following the
 profile's selected bindings. Smart Citizen's native REST API is not thereby an
 OGC endpoint. Any transcription or adapter is our authored integration work;
 record its exact mapping and limits. A declared profile link is not a conformance
-certificate. Classify each difficulty as **source omission**, **integration
-decision**, **profile gap**, or **presentation issue** before proposing a change.
+certificate. Record integration decisions explicitly. Classify discrepancies as
+**source omission**, **mapping defect**, **profile gap**, or **presentation issue**
+before proposing a change; retain uncertain classifications for review.
 
 **Completion:** a reviewer can trace every proposed displayed fact to a source
 field and every semantic enhancement to a documented rule. Unresolved mappings
 remain explicit; they need not block supported fields.
 
-## 2. Build a deterministic Resource Details experiment
+## 2. Integrate public live readings through CSAPI
 
-When implementation is taken up, add a separate experiment page using a reviewed
-fixed fixture and the existing 560 × 440 frame. Preserve the blank canvas for
-comparison. Begin with a compact Overview and a source-detail inspection route;
-add an Activity history view only for the captured aggregate series. Do not
+The immediate end-to-end experiment is **public Smart Citizen source → our
+documented adapter → an OGC CSAPI service carrying the selected SensorML/SWE and
+MPSS representations → Glaux's standards-aware reader → Resource Details**.
+Use the documented [Smart Citizen API](https://developer.smartcitizen.me/)
+as the upstream acquisition interface. Reuse an appropriate existing test service
+when its current capabilities and access have been verified; identify the exact
+service/version, supported publication interfaces, adapter revision, and execution
+environment before the run. A direct native-JSON viewer is useful evidence
+inspection but does not by itself test this OGC integration path.
+
+Retain deterministic source captures and corresponding standardized resources
+throughout the live work. These support reproducibility and focused checks;
+completing a standalone fixture UI or buying hardware is not a prerequisite for
+starting acquisition and integration. Preserve original acquisition metadata
+separately from later replay and client-fetch metadata.
+
+Trace identifiable source samples and their model/context metadata through
+capture, mapping, publication, service retrieval, and client inspection. Verify
+that references, schemas, observations, and provenance survive that chain, and
+record which profile bindings were actually exercised. Validate applicable
+target structures and inspect semantic correspondence separately: server acceptance
+alone does not establish correct meaning or full-profile conformance.
+
+Choose polling, caching, duplicate handling, rate-limit handling, and browser
+access after checking documented and actual endpoint behavior. Introduce
+additional infrastructure only for an identified need; keep account credentials
+and device tokens out of public files and client code. Record actual responses,
+failures, and handling decisions rather than describing an untested path as
+available.
+
+Distinguish observed/source time, API retrieval time, and our receipt time.
+Refreshing an old observation must not make it appear new. Review temporary
+unavailability and empty responses without inventing measurements or declaring
+device failure. This bounded experiment covers read access and authored standard
+representation; device controls and profile revisions remain outside its scope.
+
+**Completion:** a reviewer can follow the selected real evidence through actual
+CSAPI publication and retrieval into Glaux, with execution records, preserved
+captures, and explicit limitations. No such execution is claimed by this plan.
+
+## 3. Build deterministic and comparative Resource Details views
+
+Use the integrated evidence and corresponding reviewed fixed captures in a
+separate experiment page within the existing 560 × 440 frame. Preserve the blank
+canvas for comparison. Begin with a compact Overview and a source-detail
+inspection route; add Activity history for series actually captured. Do not
 populate Commands with cloud record-edit operations or create empty content
 merely to use every navigation label.
 
@@ -109,6 +184,16 @@ synthetic, or route battery percentage through the existing demonstration's
 supply-voltage-only interpretation. These are bounded integration changes to
 design, not capabilities already present in the client.
 
+Follow the [paper's comparison protocol](../Research/Studies/Smart_Citizen/MANUSCRIPT.md#7-interface-comparison-and-figure-protocol)
+for the actual Smart Citizen interface, competent generic OGC presentation, and
+profile-aware Glaux. The two Glaux conditions use the same standardized evidence.
+Record source registration, channel, observation or interval, aggregation, units,
+capture time, application revision where available, browser, zoom, viewport, and
+relevant controls for each screenshot. If the provider cannot show the same
+sample or interval, identify the capture as descriptive rather than a matched
+comparison. Images alone cannot demonstrate semantic correctness or profile
+benefit; link findings to source records, mappings, and predefined operator tasks.
+
 Proposed PBI acceptance examples:
 
 - Selecting PM2.5 keeps `21:46:09Z`; the device's `21:55:12Z` does not overwrite it.
@@ -124,17 +209,19 @@ Proposed PBI acceptance examples:
 - At 560 × 440, identity and navigation remain usable while only body content
   scrolls. Thin native scrollbars appear for overflow without a permanent empty
   gutter; keyboard access and focus remain usable.
-- The page identifies a recorded example and appears in the shared index with
-  its actual change description and timezone-qualified update timestamp.
+- The page distinguishes live retrieval from recorded replay and appears in the
+  shared index with its actual change description and timezone-qualified update
+  timestamp. A live request does not imply a fresh underlying observation.
 
 Verify these risks with focused mapping tests, an overflow/keyboard review,
 the existing build checks, and a small source-to-display review. Record actual
 results separately from this proposal. This is a bounded client experiment,
 not certification of the entire profile or proof of operational interoperability.
 
-## 3. Acquire and commission an exact physical kit
+## 4. Acquire an owned kit later to fill physical-evidence gaps
 
-After the specimen review, choose an exact purchasable configuration. The
+After the public integration and specimen review, choose an exact purchasable
+configuration when physical installation evidence becomes the next useful test. The
 [manufacturer documentation](https://docs.smartcitizen.me/hardware/kit/) says
 SCK 2.3 requires a battery even when continuously powered by USB. The
 [supplier listing](https://www.seeedstudio.com/Smart-Citizen2-3-p-6327.html)
@@ -143,7 +230,8 @@ channel inventory is therefore not a promised inventory for a new purchase.
 On 24 October the listing showed SKU 114993536 at **US$149, in stock**. This is
 the kit's listed price, not a confirmed total including the battery, accessories,
 tax and shipping. Recheck the selected SKU and package before making a budget
-or order; no purchase is needed for the first mapping and view experiment.
+or order; no purchase is needed for the first public live integration and view
+experiment.
 
 Recheck the delivered sensor variant, firmware support, battery specification
 and inclusion, cable/power supply, Wi-Fi needs, microSD option and enclosure
@@ -164,42 +252,13 @@ facts are useful evidence when their author and time are explicit. This supplies
 relationships missing from someone else's public record without pretending
 that the supplier API reported them.
 
-## 4. Add read-only live access, then consider controlled changes
-
-Prefer the documented [Smart Citizen API](https://developer.smartcitizen.me/)
-as the upstream acquisition interface, with the supported microSD/CSV route as
-an offline comparison. The intended end-to-end test is **Smart Citizen source →
-our documented adapter → an OGC CSAPI service carrying the selected SensorML/SWE
-and MPSS representations → Glaux's standards-aware reader → Resource Details**.
-Reuse an appropriate existing test service when its current capabilities and
-access have been verified; identify the exact service/version in the experiment
-record. A direct native-JSON viewer is useful evidence inspection but does not
-by itself test this OGC integration path.
-
-The earlier fixed-fixture increment tests the mapping and presentation portions
-of that chain. This live increment must also demonstrate that the standardized
-metadata, observations and provenance survive service publication and retrieval.
-Compare one identifiable source sample through every stage and record which
-profile bindings were actually exercised. This remains a bounded interoperability
-test, not certification of the full profile.
-
-Choose polling, caching, rate-limit handling and browser access after checking
-the actual endpoint behavior. Introduce additional infrastructure only for an
-identified need; keep account credentials and device tokens out of public files
-and client code.
-
-Distinguish observed/source time, API retrieval time and our receipt time.
-Refreshing an old observation must not make it appear new. Review temporary
-unavailability and empty responses without inventing measurements or declaring
-device failure. Compare native records, normalized records and displayed facts
-for the same samples, retaining the deterministic fixture as a reproducible
-reference.
-
-Changes to placement, power, local settings or supported physical operations
-belong in a later explicitly requested experiment. Source views and API edits
-to names, descriptions or locations may manage records; they do not demonstrate
-physical device control. Any eventual command experiment must preserve R12's
-distinction between request/service outcome and observed physical effect.
+The supported microSD/CSV route can supply an offline comparison at this stage.
+Changes to placement, power, local settings, or supported physical operations
+belong in that later experiment. Source views and API edits to names,
+descriptions, or locations may manage records; they do not demonstrate physical
+device control. Any eventual command experiment requires its own scope and must
+preserve R12's distinction between request/service outcome and observed physical
+effect. It is not included in the immediate public-data work.
 
 ## 5. Test transfer to AirGradient
 
@@ -226,5 +285,8 @@ where only the source adapter changes and where a real model question remains.
 
 Success is a reviewable chain from **source evidence → meaning → binding →
 display → operator question**, with missing links visible. The next concrete
-step is the small evidence-and-mapping specimen above; a purchase and a full
-live integration are not prerequisites for learning from it.
+work is the source/target mapping and public live integration, with deterministic
+captures and the paper's evaluation record maintained alongside it. Report
+semantic preservation, partial domain coverage, and presentation utility
+separately. Hardware acquisition, physical controls, and changes to the retained
+profile are not prerequisites or implicit additions to that work.

@@ -6,10 +6,20 @@ or the [documentation index](https://github.com/OS4CSAPI/glaux-client/blob/work/
 The current collection is maintained on `work/details-view-20261023` while
 [PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
 
-**Latest research:** [open sensor candidates](Docs/Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
-[access evidence](Docs/Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json), and the
-[proposed Smart Citizen experiment](Docs/Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md).
-The study is documented; the proposed real-source integration is not implemented.
+**Latest research:** the maintained Smart Citizen paper, **Evaluating Sensor
+Information Preservation Through OGC Integration**, v0.1, 24 October 2026, is
+available as a [manuscript](Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md) and
+[Word edition](Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
+Its [maintenance guide](Docs/Research/Studies/Smart_Citizen/README.md) links the
+publication manifest, figures and listings. The paper develops a study protocol
+and preliminary source assessment; the proposed public source → adapter → CSAPI
+→ Glaux experiment and matched interface comparison have not been executed.
+
+The [candidate study](Docs/Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
+[access evidence](Docs/Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json), and
+[experiment plan](Docs/Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) preserve the supporting
+research and proposed sequence. Captured replay supports the public-data experiment;
+owned hardware is a later extension.
 
 An experimental **OS4CSAPI** application evaluating whether the MERLIN domain
 information model and Managed Physical Sensing Systems (MPSS) profile can support

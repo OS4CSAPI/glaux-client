@@ -4,6 +4,29 @@ The [Artifact Register](../ARTIFACT_REGISTER.md) is the authoritative index of t
 published project research artifacts. Their source versions and dates are preserved;
 the 24 October import is not a new research increment.
 
+## Maintained Smart Citizen experiment paper
+
+**Evaluating Sensor Information Preservation Through OGC Integration**, version
+**0.1**, dated **24 October 2026**, is the working paper for the proposed experiment.
+Read the [canonical manuscript](Studies/Smart_Citizen/MANUSCRIPT.md) or
+[generated Word edition](Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
+The [paper guide](Studies/Smart_Citizen/README.md) describes maintenance, and its
+[own publication manifest](Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json) records
+the edition, evidence standing and fingerprints separately from the 14 imported
+originals.
+
+This edition develops the rationale, research questions, source assessment,
+mapping and evaluation methods, conceptual figures, explained JSON/SensorML/SWE
+listings, and CMOS 18 author-date citations and references. The proposed sequence
+is public source → adapter → CSAPI → Glaux, with captured replay and matched
+interface comparisons supporting evaluation. Owned hardware is a later means of
+filling physical-context gaps.
+
+It is a protocol and preliminary assessment: the adapter, run, CSAPI publication,
+and screenshot comparison have not been executed, and no conformance result is
+claimed. Maintain the paper as evidence is produced; its pending results and
+screenshot sections must not be filled with invented outcomes.
+
 ## Subsequent research: open sensor candidates, 24 October 2026
 
 - [Candidate study and recommendations](Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md):
@@ -14,8 +37,9 @@ the 24 October import is not a new research increment.
   15 access/schema/store observations, selected source excerpts, capture metadata
   and original-body fingerprints where available. This is not a complete raw-data archive.
 - [Proposed Smart Citizen experiment](../Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md):
-  a public specimen, traceable mapping and 560 × 440 review, followed by an exact
-  owned kit and read-only live access. Implementation has not started.
+  public-source acquisition, traceable mapping, an adapter and CSAPI publication,
+  followed through Glaux with replay and 560 × 440 comparisons. Owned hardware
+  comes later; implementation has not started.
 
 This is a new research increment, separate from the original artifact import.
 Its local evidence identifiers do not extend the master source register, and its

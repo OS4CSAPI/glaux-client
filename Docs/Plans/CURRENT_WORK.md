@@ -1,5 +1,43 @@
 # Current client work
 
+## Maintained Smart Citizen experiment paper — 24 October 2026
+
+The owner requested an academic-style document that develops with the experiment.
+[Paper v0.1](../Research/Studies/Smart_Citizen/README.md) is now a drafted protocol
+and preliminary source assessment, with a canonical Markdown manuscript and a
+generated Word edition. It contains an abstract, eleven numbered sections, nineteen
+CMOS 18 author-date references, two authored diagrams, four tables, and two explained
+JSON listings. Source-interface and matched Glaux screenshots have a defined
+capture/comparison protocol and reserved figure slots; none is reported as captured.
+
+The methods describe public Smart Citizen data flowing through a documented adapter
+and CSAPI service into Glaux, with reproducible captures and competent generic/profile
+comparison. Owned hardware is a later extension. The earlier
+[experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md) is reconciled with this sequence
+and the broader specimen scope discussed with the owner. The first two fields can
+start a trace, but metadata, multiple quantity types, indicators, history and
+provenance are part of the intended dataset.
+
+The paper has its own publication manifest and reference records. The repository
+verification command checks citation/reference agreement, source-excerpt fidelity,
+listing consistency, figure presence, Word input freshness, and publication-file
+fingerprints in addition to the fourteen original artifact hashes and local links.
+The original artifact manifest and MPSS v0.3.5 baseline are unchanged.
+
+Verification passed: all thirteen rendered Word pages were visually reviewed;
+the paper verifier confirmed nineteen cited references, two figures, two listings
+and ten publication-file fingerprints. The repository verifier confirmed all
+fourteen original artifacts (27,555,946 bytes) and 292 local documentation links.
+Technical/source review and the whitespace check passed. These documentation
+checks do not establish OGC conformance or experiment results.
+
+This increment creates research documentation and its maintenance tooling. No
+adapter, CSAPI dataset, live integration, screenshot comparison, new application
+page, or measured UI benefit is implemented by it. The deployed runtime remains
+`71297c97`; no Cloudflare upload is needed. Continue by recording the initial
+field mapping and selected service capabilities, then use the paper's execution
+protocol to record actual integration evidence.
+
 ## Open sensor research and Smart Citizen proposal — 24 October 2026
 
 The owner requested filing the device-candidate findings and proposing a Smart
@@ -8,8 +46,10 @@ preserves the shortlist, recommendations, source links, access results, prices
 and limits. The [evidence record](../Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json)
 preserves 15 study-local observations with selected excerpts and available
 response fingerprints. The [experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md)
-proposes one public specimen, explicit mapping, a deterministic 560 × 440 review,
-then owned hardware, read-only live data and an independent AirGradient comparison.
+initially proposed one public specimen, explicit mapping, a deterministic 560 × 440
+review, then owned hardware and live access. The current paper and reconciled plan
+supersede that ordering by placing public live integration before acquisition;
+AirGradient remains an independent later comparison.
 
 This is a documentation increment. The study and proposal are complete; the
 Smart Citizen adapter, recorded-data page and live integration are not present.

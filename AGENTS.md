@@ -68,6 +68,12 @@
   references, and continuity notes in the same change as an artifact revision.
   The existing authorization covers the identified project artifacts; do not
   invent an additional approval gate for their import or routine maintenance.
+- Maintain the [Smart Citizen experiment paper](Docs/Research/Studies/Smart_Citizen/README.md)
+  as the experiment advances. Keep its canonical manuscript, generated Word
+  edition, CMOS 18 author-date references, figures, listings and separate
+  publication manifest consistent. Preserve proposed-versus-executed standing;
+  add screenshots and results only with actual source/run evidence. Do not
+  fabricate outcomes or silently revise the retained MPSS v0.3.5 baseline.
 - Keep executable tests and fixtures in code directories; link to them from
   documentation rather than maintaining competing copies.
 - Keep `Docs/Plans/CURRENT_WORK.md` current with the last verified implementation
