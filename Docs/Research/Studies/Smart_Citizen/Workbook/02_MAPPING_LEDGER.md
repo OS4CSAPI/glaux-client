@@ -15,9 +15,14 @@ A source vocabulary carried by Smart Citizen is recorded separately from a histo
 | SC-ID-01 | device top-level metadata | **proposed for resource-graph review** | Registered sensing-system identity and reusable SCK2.3 model description | exact CSAPI System UID policy and physical continuity beyond the source registration |
 | SC-TEMP-01 | SC-SRC-019 | **proposed with temporal/subject qualification** | Current source-reported air-temperature observation | source supplies no separately identified feature of interest or result-time timestamp |
 | SC-PM25-01 | SC-SRC-010 | **proposed with temporal/subject qualification** | Current source-reported PM2.5 observation | same subject/result-time issue; channel cadence differs from device-level latest time |
+| SC-HUM-01 | SC-SRC-018 | **proposed with temporal/subject qualification** | Current relative-humidity observation | environmental feature of interest and resultTime remain unresolved |
+| SC-PRESS-01 | SC-SRC-005 | **proposed with temporal/subject qualification** | Current barometric-pressure observation | environmental feature of interest and resultTime remain unresolved |
+| SC-NOISE-01 | SC-SRC-020 | **proposed with processing qualification** | Current A-weighted sound-pressure-level observation | source documents custom audio processing but not a complete processing procedure |
+| SC-BATT-01 | SC-SRC-004 | **proposed as System status measurement** | SCK remaining battery level percentage | no identified battery, supply topology, charging state, voltage or runtime |
+| SC-RSSI-01 | SC-SRC-021 | **proposed as System/subsystem status measurement** | Wi-Fi received signal-strength indication | no separately modeled communications interface; RSSI is not interface oper-status |
+| SC-SD-01 | SC-SRC-007 | **proposed as categorical System status** | SD-card presence/source status code | source code 0 conflates absent and corrupted; must not become Boolean health |
 | SC-TEMP-AGG-01 | temperature history | **deferred** | Smart Citizen 1-hour average temperature history | source-platform aggregation provenance must not be misattributed to the physical kit |
 | SC-PM25-AGG-01 | PM2.5 history | **deferred** | Smart Citizen 1-hour average PM2.5 history | source-platform aggregation provenance must not be misattributed to the physical kit |
-| SC-BATT-01 | SC-SRC-004 | illustrative only | Battery-percentage example | formal mapping not yet reviewed against frozen specimen |
 
 ---
 
@@ -280,6 +285,161 @@ Open before executable request:
 
 ---
 
+# SC-HUM-01 — Current relative-humidity result
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/17. The source reports sensor catalogue ID 56, label Sensirion SHT31 - Humidity, value 65.54, unit %, unit definition https://qudt.org/vocab/unit/PERCENT, property definition https://qudt.org/vocab/quantitykind/RelativeHumidity, and channel time 2026-10-25T02:40:21Z. Its ancestry points to catalogue parent 54, whose separately frozen record describes Sensirion SHT31 as a digital relative-humidity and air-temperature sensor.
+
+## DIM / donor / MPSS interpretation
+
+This is an environmental Observation result produced by the sensing System, not a humidity property of the kit itself. It reuses the same SOSA/SSN Sensor, Observation, ObservableProperty, FeatureOfInterest, Result and temporal distinctions as SC-TEMP-01. QUDT RelativeHumidity and PERCENT are source-carried vocabulary references, not newly claimed historical DIM donors. MPSS R10/R11 apply; R02 component modeling remains a separate question because the source catalogue parent does not identify a unique physical SHT31 instance in registration 19639.
+
+## Proposed OGC representation
+
+- SensorML output local name relativeHumidity.
+- SWE Quantity definition = https://qudt.org/vocab/quantitykind/RelativeHumidity.
+- SWE unit href = https://qudt.org/vocab/unit/PERCENT.
+- CSAPI DataStream type observation, resultType measure, produced by the System.
+- Observation result = 65.54 and channel source time = 2026-10-25T02:40:21Z.
+- Feature of interest and separate resultTime remain unresolved under the same policy as SC-TEMP-01.
+
+**Status:** proposed with temporal/subject qualification.
+
+---
+
+# SC-PRESS-01 — Current barometric-pressure result
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/4. The source reports sensor catalogue ID 58, label NXP MPL3115A2 - Barometric Pressure, value 101.69 kPa, QUDT unit KiloPA, QUDT AtmosphericPressure property definition, and source time 2026-10-25T02:40:21Z. Its ancestry points to catalogue parent 57, MPL3115A2, described by Smart Citizen as a digital barometric-pressure sensor.
+
+## DIM / donor / MPSS interpretation
+
+This is an environmental atmospheric-pressure Observation, with the System as producer and an environmental feature of interest distinct from the producer. SOSA/SSN supplies the observation-role distinctions; QUDT property/unit URIs are source-carried vocabulary. MPSS R10/R11 apply. The catalogue parent is useful model/equipment evidence but does not establish an independently identified installed component.
+
+## Proposed OGC representation
+
+- SensorML output local name barometricPressure.
+- SWE Quantity definition = https://qudt.org/vocab/quantitykind/AtmosphericPressure.
+- SWE unit href = https://qudt.org/vocab/unit/KiloPA.
+- CSAPI DataStream type observation, resultType measure.
+- Observation result = 101.69 at source channel time 2026-10-25T02:40:21Z.
+- Environmental feature of interest and separate resultTime remain unresolved.
+
+**Status:** proposed with temporal/subject qualification.
+
+---
+
+# SC-NOISE-01 — Current A-weighted sound-pressure-level result
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/19. The source reports sensor catalogue ID 53, label TDK ICS43432 - Noise Level A weighting, value 31.28 dBA, unit URI https://qudt.org/vocab/unit/DeciB_A, property URI https://qudt.org/vocab/quantitykind/SoundPressureLevel, and source time 2026-10-25T02:40:21Z. The frozen parent Sensor catalogue record 52 describes ICS43432 as an I2S digital MEMS microphone with a custom audio-processing algorithm.
+
+## DIM / donor / MPSS interpretation
+
+The mapped product is a scalar sound-pressure-level result, **not an audio waveform, recording, detection, classification, or media product**. SOSA/SSN supplies producer/property/subject/result distinctions; QUDT supplies source-carried property and unit references. MPSS R10/R11 apply. The source documents that processing occurs, but it does not provide enough information here to model a complete processing Procedure or claim that the value is raw microphone output.
+
+## Proposed OGC representation
+
+- SensorML output local name noiseLevelA.
+- SWE Quantity definition = https://qudt.org/vocab/quantitykind/SoundPressureLevel.
+- SWE unit href = https://qudt.org/vocab/unit/DeciB_A.
+- CSAPI DataStream type observation, resultType measure.
+- Observation result = 31.28 at source channel time 2026-10-25T02:40:21Z.
+- Environmental acoustic feature of interest and separate resultTime remain unresolved.
+
+**Status:** proposed with processing, temporal and subject qualification.
+
+---
+
+# SC-BATT-01 — SCK remaining battery-level status
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/3, plus Smart Citizen Sensor catalogue record 10 and Measurement record 7. The source reports 99% at 2026-10-25T02:40:21Z. Sensor 10 is Battery SCK, has no parent catalogue sensor, and Measurement 7 defines the property as “The SCK remaining battery level in percentage.” Neither source record supplies an external semantic-definition URI.
+
+## Underlying DIM concept and donor constraints
+
+This is changing **System power/status information**, not evidence of a separately identified battery object. MPSS R17 says changing power information belongs in DataStream/Observation representations with producer and observed subject kept correct; R16 supply topology is not invoked because the source supplies no battery identity, interface, supply edge, or replacement event. RFC 7326 power-source/metering concepts therefore constrain against inventing topology. RFC 7577 batteryActualCharge and batteryActualVoltage are not equivalent to this percentage and are not mapped.
+
+## Proposed OGC / SWE representation
+
+- CSAPI DataStream type status, because the source property is explicitly the SCK's remaining battery level.
+- resultType measure.
+- SensorML/SWE output local name batteryLevel, represented as Quantity.
+- Quantity definition = https://api.smartcitizen.me/v0/measurements/7, an experiment-selected resolvable URI for the source Measurement concept because Smart Citizen supplies no external definition URI.
+- uom code = %; no external unit URI is invented.
+- Observation result = 99 and phenomenon/source time = 2026-10-25T02:40:21Z.
+- The parent System is the intended status subject; no battery SamplingFeature/System is created.
+
+Using the Smart Citizen Measurement resource URL as the SWE/CSAPI property definition is an **experiment-authored preservation choice**, not a claim that Smart Citizen publishes an ontology. It keeps the source concept dereferenceable without inventing a MERLIN battery ontology term.
+
+## Presentation constraints
+
+Display may say source-reported battery level 99%. It must not add charge in mAh, voltage, charging state, runtime, battery identity, full-charge assessment, or supply topology. A later owned-kit experiment can add physical battery/supply evidence separately.
+
+**Status:** proposed as System status measurement; separate CSAPI resultTime policy remains open.
+
+---
+
+# SC-RSSI-01 — Wi-Fi received-signal-strength status
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/20, plus Sensor catalogue record 220 and Measurement record 78. The source reports -45 dBm at 2026-10-25T02:40:21Z. Sensor 220 is named Wi-Fi Antenna - RSSI, carries source tags system and raw, has no parent catalogue sensor, and Measurement 78 defines RSSI as a measurement of power present in a received radio signal.
+
+## Underlying DIM concept and donor constraints
+
+This is equipment/communications-related telemetry, not an environmental observation. CSAPI status streams are intended for observations of the parent System or its subsystems, so a status DataStream is the best base carrier while the Wi-Fi antenna/interface is not independently modeled. MPSS R13 and its RFC 8343/RFC 2863 donors constrain interpretation: RSSI is **not** interface-enabled, interface type, interface operational status, link availability, or network reachability. The source does not supply enough interface identity/type information to instantiate the full R13 communications-interface group.
+
+## Proposed OGC / SWE representation
+
+- CSAPI DataStream type status, resultType measure.
+- SensorML/SWE output local name wifiRssi represented as Quantity.
+- Quantity definition = https://api.smartcitizen.me/v0/measurements/78.
+- uom code = dBm; the source does not provide a unit-definition URI.
+- Observation result = -45 at source time 2026-10-25T02:40:21Z.
+- The source's Wi-Fi-antenna qualification is retained in description/provenance; no interface System/component or communication link is invented.
+
+## Presentation constraints
+
+Display as source-reported Wi-Fi RSSI, not “Wi-Fi health,” “connected,” “link up,” or “signal quality” unless a separately supported interpretation threshold is adopted. The source's system tag online is a separate 60-minute platform heuristic and is not derived from this -45 dBm result.
+
+**Status:** proposed as System/subsystem status measurement; full MPSS R13 interface mapping remains incomplete by source limitation.
+
+---
+
+# SC-SD-01 — SD-card presence/status code
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/6, plus Sensor catalogue record 221 and Measurement record 79. The source reports numeric code 1 at 2026-10-25T02:40:21Z. Measurement 79 defines 1 as a microSD card inserted in the kit and 0 as either no card **or a corrupted card**. Sensor 221 carries source tags system and raw and has no parent catalogue sensor.
+
+## Underlying DIM concept and negative constraints
+
+This is a categorical System/subsystem status assertion. It is not a Boolean health property because code 0 deliberately conflates at least two source states. It is also not an MPSS R20 assessment result: the source supplies a device indicator, not an assessment procedure, assessor, evidence chain, or readiness judgment.
+
+## Proposed OGC / SWE representation
+
+- CSAPI DataStream type status.
+- resultType record, using a one-field SWE DataRecord so the categorical field is not mislabeled as a unit-bearing measure.
+- DataRecord field local name sdCardPresence, type Category.
+- Category definition = https://api.smartcitizen.me/v0/measurements/79.
+- Category constraint enumerates string tokens 0 and 1; no separate code-space vocabulary is claimed.
+- The adapter converts native numeric 1/0 to categorical tokens "1"/"0" while preserving the original numeric source value in provenance.
+- Observation current value = "1" at source time 2026-10-25T02:40:21Z.
+
+SWE Common requires Category to define a code space or enumerated allowed tokens; using the two source-supported tokens preserves the native coding without inventing a third “corrupt” state that the source cannot distinguish.
+
+## Presentation constraints
+
+Code 1 may be explained as card inserted. Code 0 must be displayed as the source's combined “absent or corrupted” meaning, not as simply absent, false, failed, or unhealthy. No overall storage health/readiness value is inferred.
+
+**Status:** proposed as categorical System status; separate CSAPI resultTime policy remains open.
+
+---
 ## Deferred mappings and negative constraints
 
 ### SC-TEMP-AGG-01 / SC-PM25-AGG-01
