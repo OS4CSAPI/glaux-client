@@ -1,59 +1,139 @@
 # 01 — Source specimen and native inventory
 
-**Status:** Not started for the formal experiment run.
+**Status:** Phase 1 complete for the frozen specimen; Phase 2 source characterization is substantially populated. Formal target mapping has not started.
 
-## Specimen control record
+## 1. Frozen specimen control record
 
 | Field | Value |
 | --- | --- |
-| Candidate registration | 19639 |
-| Final selected registration | |
-| Capture start UTC | |
-| Capture end UTC | |
-| Device endpoint | |
-| History endpoint(s) | |
-| HTTP status | |
-| Complete body retained at | |
-| SHA-256 | |
-| Source documentation revision/access date | |
-| Reviewer | |
+| Candidate / selected registration | `19639` |
+| Capture time UTC | `2026-10-25T02:43:48Z` |
+| Device endpoint | `https://api.smartcitizen.me/v0/devices/19639` |
+| History range | `2026-10-24T00:00:00Z` through `2026-10-25T00:00:00Z` |
+| Temperature history | Sensor `55`; `rollup=1h`; `function=avg`; `all_intervals=true` |
+| PM2.5 history | Sensor `194`; `rollup=1h`; `function=avg`; `all_intervals=true` |
+| HTTP result | All three GET requests returned HTTP 200 |
+| Complete raw evidence | [`Docs/Research/Evidence/Smart_Citizen/Captures/20261025T024348Z`](../../../Evidence/Smart_Citizen/Captures/20261025T024348Z/) |
+| Device body SHA-256 | `9fc7abbb34c596f4185054cfc416335062601d158a2666ca8a106389e40cfb8d` |
+| Temperature-history SHA-256 | `8024d8116799bdf75d58e30b4f097e644492e235907cec4d2b0e7b46b0e53b73` |
+| PM2.5-history SHA-256 | `972c8e564f7265aa5cde6f006298771714056acd0852096d4e6b9431b9a62361` |
+| Capture workflow | `.github/workflows/smart-citizen-freeze.yml`; GitHub Actions run `40155554453` |
+| Frozen-evidence commit | `9c184d9270bf3a2baba73ea6e9410fd9bfd53fda` |
 
-## Source-documentation set
+The frozen response identifies registration 19639 as `has_published`, tagged `online` and `outdoor`, and reported the latest device-level reading at `2026-10-25T02:40:21Z`. The formal capture began at `02:43:48Z`, so the source's most recent reported reading was approximately 3 minutes 27 seconds older than the capture time. This difference is source evidence, not a staleness determination; the expected cadence and acceptable age still require interpretation.
 
-| ID | Source | Revision/date | Exact locator | What it establishes | Limits |
+## 2. Source documentation set
+
+| ID | Source | Access/revision | Exact locator | What it establishes | Limits |
 | --- | --- | --- | --- | --- | --- |
-| SC-DOC-001 | Smart Citizen API reference | | | | |
-| SC-DOC-002 | Smart Citizen Kit documentation | | | | |
-| SC-DOC-003 | Smart Citizen Data Platform documentation | | | | |
+| SC-DOC-001 | SmartCitizen API Reference | Accessed 25 Oct 2026 UTC | `Devices`, `Sensors`, `Readings`, `Measurements`, `Components` | Device IDs/state/last-reading meaning; sensors and parent concept; reading/history response; measurement vocabulary links; components join Devices to Sensors | Human-readable API reference; does not fully explain every field returned by the current deployment |
+| SC-DOC-002 | Smart Citizen Kit documentation | Current public docs checked 24–25 Oct 2026 | `Smart Citizen Kit`; component/measurement descriptions | Product-family modularity, Data Board/Urban Board, sensing capabilities and hardware context | Model-level documentation does not prove this unit's exact installed inventory |
+| SC-DOC-003 | Smart Citizen Data Platform documentation | Current public docs checked 24–25 Oct 2026 | `Data Platform`, API/front-end sections | Platform roles for ingestion, storage, API access and front-end applications | Platform architecture is distinct from physical-device facts |
+| SC-DOC-004 | Smart Citizen vendor-presentation baseline | Repository record dated 24 Oct 2026 | Figures 6–7 source evidence | Historical first-party presentation patterns for device context, values/units, definitions and history | Not a matched view of registration 19639 |
 
-## Native identifier inventory
+Relevant API semantics already established by the source documentation include: device `id` is an incremental unique platform device ID; `state` is an automatic device state; `last_reading_at` is the last reading from any sensor; sensor `id`/`uuid` identify Smart Citizen sensor-catalogue records; a sensor with a parent is a sub-sensor; and a `Component` joins a Device to a Sensor. Historical readings return `[recorded_at, value]` tuples, while `sample_size` is the count of readings examined to build the response.
 
-| Native identifier | Example | Scope | What it identifies | What it does not establish | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| registration ID | 19639 | Smart Citizen Platform | | | |
-| registration UUID | | Smart Citizen Platform | | | |
-| sensor catalogue ID | | shared catalogue | | | |
-| component/association ID | | device-to-sensor association | | | |
-| physical serial | | physical equipment | | | |
+## 3. Native resource and identity inventory
 
-## Field/channel inventory
+| Native item | Frozen value | Source scope | Supported meaning | Does not establish |
+| --- | --- | --- | --- | --- |
+| Device registration ID | `19639` | Smart Citizen Platform | Incremental unique platform Device ID | Manufacturer serial or enduring physical asset ID |
+| Device registration UUID | `02612831-3387-4cb2-8bed-cf87670ca1e5` | Smart Citizen Platform | UUID for the platform Device record | Manufacturer serial or proof that no other registration represents the same physical unit |
+| Device name | `Web2learn - nautical club of Thessaloniki` | Platform Device record | User/platform name of this registration | Standardized equipment type or official product designation |
+| Device state | `has_published` | Platform Device record | Automatic source-platform state | MERLIN readiness/health state |
+| System tags | `online, outdoor` | Platform Device record | Source tags; includes online/outdoor | Independently verified connectivity or physical deployment condition |
+| Reported hardware | `SmartCitizen Kit 2.3` / `SCK` / `2.3` / `sck:2,3` | Platform hardware metadata | Source-reported product model information | Verified serial, firmware, exact shipping variant, or installed component inventory |
+| Source location | `Panorama`, `Greece`; exposure `outdoor` | Platform Device location record | Source-platform location/exposure metadata | Surveyed emplacement accuracy, deployment interval, or GPS-derived position |
+| Owner record | Present in raw public response | Smart Citizen Platform account | Source account/ownership metadata | Responsible party for MERLIN operations or equipment custody |
+| Component IDs in history | `4039417141` (temperature), `4039430900` (PM2.5) | Smart Citizen Device↔Sensor association | Platform component/association joining this Device to a Sensor | Physical component serial or connector identity |
 
-| Inventory ID | Native JSON path | Source label | Native type | Value/example | Unit | Definition URI | Native subject | Source time meaning | Aggregation | Documentation evidence | Missing/uncertain information |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SC-SRC-001 | | | | | | | | | | | |
+The source response includes 21 channel records but this is not evidence of 21 separately identified physical sensor devices. Smart Citizen's own API model allows a sensor to be a sub-sensor of another catalogue sensor, and the history endpoint exposes component IDs that represent the Device-to-Sensor association. Those identifiers must remain distinct during mapping.
 
-## Candidate first mapping set
+## 4. Frozen channel inventory
 
-- identity and reported model metadata
-- air temperature
-- PM2.5
-- humidity or pressure
-- sound level
-- battery percentage
-- Wi-Fi RSSI
-- SD-card/status indicator
-- one bounded historical aggregate series
+The table below records all 21 channels returned in the frozen device body. `—` means the source response supplied no URI for that column; it does not mean the concept itself is absent from all Smart Citizen documentation.
 
-## Completion gate
+| Inv. ID | JSON path | Source channel | Sensor ID | Unit | Unit definition | Measurement | Measurement definition | Frozen value | Channel time UTC | Source description |
+| --- | --- | --- | ---: | --- | --- | --- | --- | ---: | --- | --- |
+| SC-SRC-001 | `/data/sensors/0` | AMS AS7731 - UVA | 214 | uW/cm2 | — | UVA | — | 0.08 | 2026-10-25T02:40:21Z | AMS AS7731 UVA Channel |
+| SC-SRC-002 | `/data/sensors/1` | AMS AS7731 - UVB | 215 | uW/cm2 | — | UVB | — | 0.1 | 2026-10-25T02:40:21Z | AMS AS7731 UVB Channel |
+| SC-SRC-003 | `/data/sensors/2` | AMS AS7731 - UVC | 216 | uW/cm2 | — | UVC | — | 0.0 | 2026-10-25T02:40:21Z | AMS AS7731 UVC Channel |
+| SC-SRC-004 | `/data/sensors/3` | Battery SCK | 10 | % | — | battery | — | 99.0 | 2026-10-25T02:40:21Z | Custom Circuit |
+| SC-SRC-005 | `/data/sensors/4` | NXP MPL3115A2 - Barometric Pressure | 58 | kPa | https://qudt.org/vocab/unit/KiloPA | Barometric Pressure | https://qudt.org/vocab/quantitykind/AtmosphericPressure | 101.69 | 2026-10-25T02:40:21Z | Digital Barometric Pressure Sensor |
+| SC-SRC-006 | `/data/sensors/5` | ROHM - BH1730FVC | 14 | lux | https://qudt.org/vocab/unit/LUX | Light | — | 0.0 | 2026-10-25T02:40:21Z | Digital Ambient Light Sensor |
+| SC-SRC-007 | `/data/sensors/6` | SD Card | 221 | — | — | SD-Card Presence | — | 1.0 | 2026-10-25T02:40:21Z | SD Card Presence |
+| SC-SRC-008 | `/data/sensors/7` | Sensirion SEN5X - PM1 | 193 | ug/m3 | http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3 | PM1 | http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6002 | 8.8 | 2026-10-25T02:36:21Z | Particulate Matter PM1 |
+| SC-SRC-009 | `/data/sensors/8` | Sensirion SEN5X - PM10 | 196 | ug/m3 | http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3 | PM10 | http://dd.eionet.europa.eu/vocabulary/aq/pollutant/5 | 9.3 | 2026-10-25T02:36:21Z | Particulate Matter PM10 |
+| SC-SRC-010 | `/data/sensors/9` | Sensirion SEN5X - PM2.5 | 194 | ug/m3 | http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3 | PM2.5 | http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001 | 9.3 | 2026-10-25T02:36:21Z | Particulate Matter PM2.5 |
+| SC-SRC-011 | `/data/sensors/10` | Sensirion SEN5X - PM4.0 | 195 | ug/m3 | http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3 | PM4.0 | — | 9.3 | 2026-10-25T02:36:21Z | Particulate Matter PM4.0 |
+| SC-SRC-012 | `/data/sensors/11` | Sensirion SEN5X - PN0.5 | 197 | #/0.1l | — | PN0.5 | — | 5960.0 | 2026-10-25T02:36:21Z | Particle Matter PN0.5 |
+| SC-SRC-013 | `/data/sensors/12` | Sensirion SEN5X - PN1.0 | 198 | #/0.1l | — | PN1.0 | — | 6910.0 | 2026-10-25T02:36:21Z | Particle Matter PN1.0 |
+| SC-SRC-014 | `/data/sensors/13` | Sensirion SEN5X - PN10.0 | 201 | #/0.1l | — | PN10.0 | — | 6950.0 | 2026-10-25T02:36:21Z | Particle Matter PN10.0 |
+| SC-SRC-015 | `/data/sensors/14` | Sensirion SEN5X - PN2.5 | 199 | #/0.1l | — | PN2.5 | — | 6950.0 | 2026-10-25T02:36:21Z | Particle Matter PN2.5 |
+| SC-SRC-016 | `/data/sensors/15` | Sensirion SEN5X - PN4.0 | 200 | #/0.1l | — | PN4.0 | — | 6950.0 | 2026-10-25T02:36:21Z | Particle Matter PN4.0 |
+| SC-SRC-017 | `/data/sensors/16` | Sensirion SEN5X - TPS | 202 | um | — | Typical Particle Size | — | 43.1 | 2026-10-25T02:36:21Z | Particle Matter Typical Particle Size |
+| SC-SRC-018 | `/data/sensors/17` | Sensirion SHT31 - Humidity | 56 | % | https://qudt.org/vocab/unit/PERCENT | Relative Humidity | https://qudt.org/vocab/quantitykind/RelativeHumidity | 65.54 | 2026-10-25T02:40:21Z | Humidity |
+| SC-SRC-019 | `/data/sensors/18` | Sensirion SHT31 - Temperature | 55 | ºC | https://qudt.org/vocab/unit/DEG_C | Air Temperature | http://www.eionet.europa.eu/gemet/concept/281 | 19.59 | 2026-10-25T02:40:21Z | Temperature |
+| SC-SRC-020 | `/data/sensors/19` | TDK ICS43432 - Noise Level A weighting | 53 | dBA | https://qudt.org/vocab/unit/DeciB_A | Noise Level | https://qudt.org/vocab/quantitykind/SoundPressureLevel | 31.28 | 2026-10-25T02:40:21Z | I2S Digital Mems Microphone with custom Audio Processing Algorithm |
+| SC-SRC-021 | `/data/sensors/20` | Wi-Fi Antenna - RSSI | 220 | dBm | — | RSSI | — | -45.0 | 2026-10-25T02:40:21Z | RSSI from Wi-Fi antenna |
 
-Every field selected for mapping has a native evidence location, documented meaning, identifier/subject scope, unit/time interpretation, and explicit unresolved questions.
+### Timing pattern in the frozen current response
+
+Seventeen non-particulate channels in the frozen current response report `2026-10-25T02:40:21Z`. The ten SEN5X particulate mass/number/size channels report `2026-10-25T02:36:21Z`, four minutes earlier. Device-level `last_reading_at` is `02:40:21Z`, which confirms that the device-level latest time cannot be substituted for every channel's own time.
+
+### Hardware-variant observation
+
+The frozen registration reports three AMS AS7731 ultraviolet channels (UVA, UVB and UVC). Current Smart Citizen/retailer material previously reviewed for the project states that some SCK2.3 units shipped from July 2026 omit the UV sensor, while this registration was created in May 2026. The frozen source therefore provides a useful real case where reported model designation alone is insufficient to infer the exact channel inventory of every SCK2.3 unit.
+
+## 5. Bounded historical series
+
+### Temperature history
+
+- Sensor ID: `55`; component ID: `4039417141`; sensor key: `t`.
+- Range: `2026-10-24T00:00:00Z` through `2026-10-25T00:00:00Z`.
+- Rollup/function: `1h` / `avg`.
+- `sample_size`: `1439` readings examined to build the response.
+- Returned aggregate tuples: `24`.
+- Earliest returned tuple: `2026-10-24T00:00:05Z` → `19.627999999999993`.
+- Latest returned tuple: `2026-10-24T23:00:12Z` → `19.75166666666667`.
+
+### PM2.5 history
+
+- Sensor ID: `194`; component ID: `4039430900`; sensor key: `pm_avg_2.5`.
+- Range: `2026-10-24T00:00:00Z` through `2026-10-25T00:00:00Z`.
+- Rollup/function: `1h` / `avg`.
+- `sample_size`: `288` readings examined to build the response.
+- Returned aggregate tuples: `24`.
+- Earliest returned tuple: `2026-10-24T00:01:06Z` → `6.158333333333332`.
+- Latest returned tuple: `2026-10-24T23:01:12Z` → `9.491666666666667`.
+
+Both series return 24 hourly aggregate tuples, but the reported tuple timestamps are not exact clock-hour boundaries and the two channels differ by roughly one minute in many bins. The source documentation defines the tuple timestamp as `recorded_at` and the function as an average over the rollup period; it does not, by itself, justify inventing exact interval boundaries around each returned timestamp. Temperature and PM2.5 also have different `sample_size` values—1439 and 288—which reinforces that response-wide sample counts belong to each queried source series rather than to a universal per-bin count.
+
+## 6. Representative first mapping set
+
+| Proposed case | Inventory/evidence | Why it is useful |
+| --- | --- | --- |
+| Registration + reported model | Device top-level metadata | Exercises identity scope, model versus instance, and source-platform provenance |
+| Air temperature | SC-SRC-019 + temperature history | Strong property/unit vocabulary support; current and aggregate temporal cases |
+| PM2.5 | SC-SRC-010 + PM2.5 history | Different reporting cadence, Eionet property/unit vocabularies, particulate subject semantics |
+| Relative humidity | SC-SRC-018 | QUDT unit/property definitions; same SHT31 physical package lineage as temperature |
+| Barometric pressure | SC-SRC-005 | Different quantity and QUDT vocabulary; useful independent scalar case |
+| Noise level | SC-SRC-020 | Processed acoustic metric with A-weighted unit; tests that a sound-level result is not an audio product |
+| Battery percentage | SC-SRC-004 | Tests power-related measurement without inventing battery identity, charge, runtime or supply topology |
+| Wi-Fi RSSI | SC-SRC-021 | Equipment/communications-related telemetry distinct from environmental observations |
+| SD-card presence | SC-SRC-007 | Coded device-status indicator; source explicitly says `0` can mean absent **or corrupted** |
+
+## 7. Open source-characterization questions before formal mapping
+
+1. Confirm the exact semantics of the current response's `created_at` and `updated_at` fields for this Device record, and keep them separate from physical installation/service dates.
+2. Resolve how Smart Citizen's sensor `ancestry` field in the current response corresponds to the API documentation's `parent_id` terminology and whether the referenced parent catalogue records need to be captured for mapping.
+3. Decide whether the source location should be mapped as a platform-provided location of the registered Device, a deployment location, or remain source context until its applicability interval and acquisition method are known.
+4. Confirm whether `state=has_published` and system tag `online` should remain source-platform status only; no current evidence justifies translating either into MERLIN health/readiness.
+5. Confirm the intended semantic meaning of particle-number unit `#/0.1l`, TPS unit `um`, and the ultraviolet `uW/cm2` channels before any SWE unit normalization.
+6. Confirm whether the selected historical tuple timestamp represents the start, end, or another representative time of each rollup group; the API reference calls it `recorded_at` but does not define group-boundary semantics.
+
+## 8. Phase gates
+
+**Phase 1 — Freeze specimen: complete.** The exact current device body, response headers, two bounded history responses, request URLs, sizes and SHA-256 values are retained under the frozen-evidence commit.
+
+**Phase 2 — Characterize native source: substantially complete for the selected first mapping set.** The channel inventory, identity scopes, temporal differences, historical aggregation and initial open questions are recorded. Formal source→DIM/MPSS/OGC mapping should not begin until the open characterization questions relevant to each selected case are resolved or explicitly carried forward as uncertainty.
