@@ -1,6 +1,16 @@
 # Current client work
 
 
+## Smart Citizen paper v0.9 DIM/Profile architecture closeout — 25 October 2026
+
+Before Phase 5 begins, the owner identified that the paper evaluated the MERLIN domain information model and Managed Physical Sensing Systems profile without adequately explaining that work near the front of the paper. Version 0.9 corrects that structural deficiency by adding a dedicated section before the experimental infrastructure covering the problem/purpose, domain-model versus application-profile versus OGC-binding versus implementation layers, the eight whole-system information subjects, bounded donor/reuse lineage, the R01–R20 relationship/binding method, reusable group contracts, and generic versus profile-aware consumption.
+
+The revision also adds a generic DIM/Profile architecture figure and three explanatory tables. It deliberately does not turn the Smart Citizen paper into a duplicate profile specification: detailed normative obligations remain in MPSS v0.3.5, while the paper gives readers enough architecture and provenance to understand what the experiment is testing. Existing later sections are renumbered, and the Smart Citizen-specific conceptual figure remains separate from the new generic profile figure.
+
+**Current gate:** rebuild and visually verify paper v0.9, then stop. No Phase 5 adapter code, CSAPI server write, Glaux behavior change, deployment, or MPSS v0.3.5 revision is authorized by this documentation increment.
+
+
+
 ## Smart Citizen paper v0.8 Phase 4 closeout and acronym control — 25 October 2026
 
 The owner stopped Phase 5 before any adapter code was changed and directed that the completed Phase 4 findings be incorporated into the research paper first. Paper v0.8 now records the reviewed Phase 4 resource graph, negative-resource decisions, deterministic study identity policy, current/aggregate time projections, and bounded 52°North target constraints while continuing to state that deterministic adapter execution and all CSAPI server writes are unexecuted.

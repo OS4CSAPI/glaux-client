@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.8",
+  "version": "0.9",
   "documentDate": "2026-10-25",
   "editorialTimezone": "America/New_York",
-  "standing": "Study protocol with reviewed Phase 1–4 source, mapping, and resource-graph evidence; deterministic adapter, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
+  "standing": "Study protocol with reviewed Phase 1–4 source, mapping, and resource-graph evidence plus an explicit DIM/Profile architecture; deterministic adapter, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
@@ -25,26 +25,31 @@
     },
     {
       "number": 2,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_architecture.svg",
+      "standing": "Authored conceptual architecture showing research/donor evidence, the domain information model, MPSS application-profile/binding layer, OGC representation stack, and generic/profile-aware consumption"
+    },
+    {
+      "number": 3,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_server_lineage.svg",
       "standing": "Authored server lineage and study-role diagram; factual lineage plus proposed experiment path"
     },
     {
-      "number": 3,
+      "number": 4,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_client_architecture.svg",
       "standing": "Authored client architecture and interpretation boundary; Smart Citizen connected-resource traversal remains planned"
     },
     {
-      "number": 4,
+      "number": 5,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
       "standing": "Authored proposed architecture; not deployed topology"
     },
     {
-      "number": 5,
+      "number": 6,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_model.svg",
       "standing": "Authored conceptual model; not executed resource mapping"
     },
     {
-      "number": 6,
+      "number": 7,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_platform_basic_exploration.png",
       "standing": "Unchanged first-party Smart Citizen core-platform documentation screenshot; historical kit 14410 example, not registration 19639",
       "sourcePage": "https://docs.smartcitizen.me/guides/getting-started/onboarding-your-kit/",
@@ -53,7 +58,7 @@
       "changes": "None to original image bytes; proportionate display scaling only"
     },
     {
-      "number": 7,
+      "number": 8,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_custom_dashboard.png",
       "standing": "Unchanged first-party Smart Citizen custom-dashboard documentation screenshot; historical SCK2.1 example",
       "sourcePage": "https://docs.smartcitizen.me/data/data-tools/",
@@ -62,15 +67,15 @@
       "changes": "None to original image bytes; proportionate display scaling only"
     },
     {
-      "number": 8,
+      "number": 9,
       "standing": "Planned contemporaneous selected-registration/source-interface capture; no image supplied"
     },
     {
-      "number": 9,
+      "number": 10,
       "standing": "Planned matched generic and profile-aware Glaux capture; no image supplied"
     },
     {
-      "number": 10,
+      "number": 11,
       "standing": "Phase 4 reviewed resource design exists; executed CSAPI server relationships and traced source-to-display evidence remain planned"
     }
   ],
@@ -107,29 +112,23 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed for source revision: v0.8 incorporates the reviewed Phase 4 CSAPI resource graph, deterministic study identity policy, explicit non-resources, time projections, and bounded target-server findings; it also adds and audits a maintained acronyms-and-abbreviations section.",
-    "wordRender": "Completed: the final v0.8 Word edition renders to 38 pages. Every page was visually inspected at full-page resolution: 17 pages were byte-identical to the already inspected successful v0.8 render, and all 20 changed/reflowed pages plus new page 38 were re-inspected. The review found and corrected stale Phase 1–3 wording, unresolved Phase 4 time language, duplicate table numbering, a v0.7 figure-table header, and the ARM64 shorthand in the server-lineage figure. The final render has no observed clipping, overlap, broken tables, missing figures, or unresolved editorial QA findings.",
+    "technicalReview": "Source revision prepared for v0.9: adds a dedicated DIM/Profile architecture section before the experimental infrastructure, including model/profile/binding/implementation separation, eight information subjects, donor-responsibility summary, R01–R20 binding method, generic/profile-aware consumption, and a new conceptual architecture figure.",
+    "wordRender": "Pending v0.9 GitHub Actions rebuild and complete rendered-page visual inspection.",
     "reviewDate": "2026-10-25",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 38,
+    "renderedPageCount": null,
     "paragraphAudit": {
-      "result": "Passed in GitHub Actions run 40202562737.",
-      "detail": "The verifier accepted all 117 narrative/explanatory-caption paragraphs under the maintained three-to-five-sentence policy."
+      "result": "Pending v0.9 build verification.",
+      "detail": "The repository verifier remains authoritative for the three-to-five-sentence narrative/explanatory-caption policy."
     },
     "paperBuildWorkflow": {
-      "status": "success",
+      "status": "pending v0.9 build",
       "sourceBranch": "work/details-view-20261023",
-      "sourceCommit": "58f4811f5044ba077bd6f8366e2cecea135f6598",
-      "generatedCommit": "377eca298ae8c8f2c8e6619c42c8ee1b5f5a3f71",
-      "runId": 40202562737,
-      "artifactName": "smart-citizen-paper-v0.8",
-      "artifactId": 12602576838,
-      "artifactDigest": "sha256:e7e8ddb1220603e4185e2dcbbca09e0892438ce359c935ac1d358dde7191cc19",
-      "wordSha256": "a5e70eb9099424b14e67261fa1faa632184d69c4438341a2e9a3d635f43687c0"
+      "artifactName": "smart-citizen-paper-v0.9"
     },
     "acronymAudit": {
-      "result": "Passed in GitHub Actions run 40202562737.",
-      "detail": "The maintained Acronyms and Abbreviations section contains the required core inventory and the verifier found no recurring narrative shorthand outside the documented exclusions. Smart Citizen's source wording 'received signal strength indication (RSSI)' is retained."
+      "result": "Pending v0.9 build verification.",
+      "detail": "The maintained acronym policy remains in force; the new architecture section intentionally minimizes new shorthand."
     }
   },
   "revisionHistory": [
@@ -179,6 +178,12 @@
       "date": "2026-10-25",
       "predecessorCommit": "991e52c07845da422085d412b49adea8334f9b6b",
       "change": "Add the reviewed Phase 4 CSAPI resource graph and negative design decisions, deterministic UUIDv5 study identity policy, current/aggregate time projections, bounded 52°North target constraints, and a maintained Acronyms and Abbreviations section with first-use readability and verifier enforcement; keep Phase 5 adapter execution explicitly unexecuted."
+    },
+    {
+      "version": "0.9",
+      "date": "2026-10-25",
+      "predecessorCommit": "b661e3646b5499e62465e84b195c293b4ac86d62",
+      "change": "Add a dedicated early-paper explanation of the MERLIN domain information model and MPSS profile: why the work exists, domain-model/application-profile/OGC-binding/implementation separation, eight whole-system information subjects, bounded donor/reuse lineage, R01–R20 binding method, generic versus profile-aware consumption, and a new conceptual architecture figure; split the technical OGC baseline into its own section and keep Phase 5 unexecuted."
     }
   ],
   "files": [
@@ -289,6 +294,12 @@
       "role": "reproduced-source-vendor-ui-screenshot",
       "sha256": "1ae985eb36d329bad08f177ae99da94779fd03741572a75ba3d7c6df1f76772a",
       "sizeBytes": 309762
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_architecture.svg",
+      "role": "authored-dim-profile-architecture-figure",
+      "sha256": "",
+      "sizeBytes": 0
     }
   ],
   "paragraphPolicy": {

@@ -69,12 +69,13 @@
   The existing authorization covers the identified project artifacts; do not
   invent an additional approval gate for their import or routine maintenance.
 - Maintain the [Smart Citizen experiment paper](Docs/Research/Studies/Smart_Citizen/README.md)
-  as the experiment advances; v0.8 is dated 25 October 2026. Keep its canonical
+  as the experiment advances; v0.9 is dated 25 October 2026. Keep its canonical
   manuscript, generated Word edition, CMOS 18 author-date references, figures,
   listings and separate
   publication manifest consistent. Preserve proposed-versus-executed standing;
   add screenshots and results only with actual source/run evidence. Do not
   fabricate outcomes or silently revise the retained MPSS v0.3.5 baseline.
+- Preserve the paper's early DIM/Profile architecture section as the explanation of what the experiment evaluates. Keep domain information model, application profile, OGC binding, and implementation distinct; retain the eight information subjects as one whole-system organization rather than eight services/tabs; explain bounded donor reuse without implying wholesale donor-standard implementation; and keep R01–R20 identified as profile relationship/binding identifiers rather than OGC-native names.
 - Preserve the paper's experimental-server section as well as its early system overview. Keep the upstream pygeoapi framework, 52°North Connected Systems implementation, OS4CSAPI Oracle deployment, and 52°North public demo distinct. Record exact tested revision/image and deployment adaptations; do not infer backend, persistence, proxy, or restart configuration from upstream examples.
 - Maintain the paper's Acronyms and Abbreviations section. Expand uncommon acronyms on first substantive use where practical, preserve source-specific expansions such as Smart Citizen's **received signal strength indication (RSSI)** wording, and add recurring domain shorthand to the table instead of expecting the reader to infer it. Do not invent expansions for project/product names or equipment model identifiers whose expansion is not established.
 - Maintain the paper's sourced Terms and Definitions section. Reserve **telemetry** for remotely transmitted measurement/status information under the cited NIST definition; use **provenance** for information about entities, activities and agents involved in producing data or artifacts under W3C PROV; and distinguish source, processing and integration provenance as study applications of that concept.

@@ -1,8 +1,8 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.8**, dated **25 October 2026** in
-America/New_York. This edition adds the reviewed Phase 4 Connected Systems resource design and a maintained Acronyms and Abbreviations section to the Phase 1–3 source/mapping baseline. The deterministic adapter, CSAPI publication, connected Glaux retrieval, and matched interface comparison have not been executed.
+Through OGC Integration**, version **0.9**, dated **25 October 2026** in
+America/New_York. This edition adds an explicit early-paper explanation of the MERLIN domain information model and Managed Physical Sensing Systems profile to the reviewed Phase 1–4 evidence baseline. The deterministic adapter, CSAPI publication, connected Glaux retrieval, and matched interface comparison have not been executed.
 
 ## Read and maintain the paper
 
@@ -32,6 +32,8 @@ Detailed engineering/research homework is intentionally maintained outside the p
 
 ## Current contents and pending evidence
 
+Version 0.9 makes the object being evaluated understandable before the experimental server and client are introduced. It separates the domain information model, application profile, OGC binding, and implementation layers; explains the eight connected whole-system information subjects; summarizes the bounded donor/reuse method; explains how R01–R20, reusable group contracts, semantic definitions, and profile signaling connect domain meaning to OGC representations; and distinguishes competent generic access from profile-aware reconstruction. A new conceptual architecture figure and three new explanatory tables make those relationships visible without turning the paper into a duplicate of the full MPSS technical draft.
+
 Version 0.8 records the reviewed Phase 4 Connected Systems resource graph in addition to the frozen source specimen and reviewed Phase 1–3 mappings. It documents the two-System/two-Procedure design, ten DataStreams and schemas, fifty-six frozen Observations, explicit non-resources, deterministic UUIDv5 study identities, current/aggregate time projections, and bounded 52°North target constraints without claiming that any of those resources have been written to the server. The paper now reports source, mapping, and design results separately from the still-unexecuted adapter, server round trip, connected-client traversal, and matched interface evaluation.
 
 Version 0.8 also adds a maintained **Acronyms and Abbreviations** section. Uncommon acronyms should be expanded on first substantive use where practical, and recurring domain shorthand must remain in the table; the paper verifier now checks a required acronym inventory and recurring uppercase shorthand against documented exclusions. This is in addition to the sourced **Terms and Definitions** section, which continues to govern the substantive meanings of telemetry, provenance, measurement, calibration, Observation, DataStream, source/result times, and semantic preservation.
@@ -40,7 +42,7 @@ The formal mappings continue to use frozen specimen `20261025T024348Z`; the earl
 
 Version 0.6 establishes the vendor-presentation baseline before Glaux implementation, adding two unchanged first-party Smart Citizen UI screenshots, documented source-provider intent, a reconstruction-question table, exact source/rights records, and reserved contemporaneous/CSAPI/Glaux comparison positions. Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
 
-The current edition includes an abstract, fourteen numbered sections, a maintained acronym table, cited source definitions, seven retained figures, and two code listings; detailed counts are verified from the maintained source rather than copied manually. It covers the
+The current edition includes an abstract, fifteen numbered sections, a maintained acronym table, cited source definitions, eight retained figures, thirteen tables, and two code listings; detailed counts are verified from the maintained source rather than copied manually. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
@@ -61,7 +63,7 @@ identified and cited, with its edition, exact locator, contribution, and reuse
 or adaptation limits. Source vocabularies, established model donors, standard
 carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
-Figures 8–10 reserve places for the actual vendor interface, matched generic and
+Figures 9–11 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
 with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
@@ -78,7 +80,7 @@ with this sequencing.
 
 ### Mapping explanations
 
-Apply manuscript Table 5 to every new or revised mapping, including metadata and
+Apply manuscript Table 8 to every new or revised mapping, including metadata and
 relationships. Identify each donor concept individually; a generic citation to
 an entire RFC or a list of standards is insufficient. Record direct reuse,
 adaptation through a binding, an interpretive constraint, or an unestablished
@@ -137,7 +139,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.8 --date 2026-10-25
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.9 --date 2026-10-25
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply
