@@ -493,3 +493,19 @@ The returned tuple timestamp is preserved exactly and no exact one-hour phenomen
 - SWE Common 3.0: <https://docs.ogc.org/is/24-014/24-014.html>.
 - SOSA/SSN 2017, especially §4.3.2: <https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/>.
 - RFC 8348 §7.1: <https://www.rfc-editor.org/rfc/rfc8348.html>.
+
+## Phase 4 resolution cross-reference
+
+Phase 4 does not rewrite the reviewed native meanings above; it records the executable graph decisions needed to carry them into CSAPI. The authoritative design is [03_CSAPI_RESOURCE_GRAPH.md](03_CSAPI_RESOURCE_GRAPH.md).
+
+- **Identity:** SC-ID-01 is represented by study System UID `urn:uuid:a8e68038-11f9-57a0-92ae-641e70fbbbd8`; the Smart Citizen registration ID/UUID remain source identifiers rather than manufacturer identity.
+- **Current environmental subject:** no SamplingFeature is created. The absence is intentional and standard-valid.
+- **Current times:** for SC-TEMP-01, SC-PM25-01, SC-HUM-01, SC-PRESS-01, SC-NOISE-01, SC-BATT-01, SC-RSSI-01 and SC-SD-01, `phenomenonTime` and `resultTime` are both populated from the channel source reading time as a documented coincident-time projection. Acquisition time is not used.
+- **RSSI:** SC-RSSI-01 remains intentionally without a DataStream `type`; Phase 4 did not invent the observed subject.
+- **Aggregate producer:** SC-TEMP-AGG-01 and SC-PM25-AGG-01 are produced by a separate process System (`sosa:Sensor`, asset type Process) using a reusable aggregation Procedure.
+- **Aggregate times:** returned tuple `recorded_at` becomes phenomenonTime; the frozen history response `Date` header becomes an explicitly qualified source-response resultTime proxy. No one-hour interval bounds are invented.
+- **Derived properties:** stable authored UUID URIs carry the hourly-average property definitions in SWE result schemas; local CSAPI Property resources are not required by the first load because the exact target does not expose safe Property creation.
+- **Current source processing:** normalization/calibration-like platform handling remains processing provenance; no separate current-value processing System is created without stronger production evidence.
+
+Any later source or target evidence that changes one of these assumptions must update both this cross-reference and the resource graph before adapter behavior is considered authoritative.
+

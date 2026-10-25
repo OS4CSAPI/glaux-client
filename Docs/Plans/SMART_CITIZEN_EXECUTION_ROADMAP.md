@@ -20,7 +20,8 @@ The experiment must preserve the distinction among native source facts, document
 | Resource Details frame | Recovered 560 × 440 CSS-pixel working canvas is deployed |
 | Research paper | Paper v0.7 records sourced terminology plus reviewed Phase 1–3 evidence and mappings; adapter/server/client results remain pending |
 | Completed before Phase 4 | Frozen specimen, complete representative source characterization, corrected vocabulary evidence, reviewed current/aggregate mapping ledger |
-| Not yet complete | Owner Phase 1–3 review gate, CSAPI resource graph, adapter, server load, connected Glaux retrieval, matched UI comparison |
+| Completed through Phase 4 | Owner Phase 1–3 review gate; reviewed CSAPI resource graph and request/cleanup design (no server writes) |
+| Not yet complete | Owner Phase 4 review gate, adapter, server load, connected Glaux retrieval, matched UI comparison |
 
 ## Governing sequence
 
@@ -51,6 +52,8 @@ For each consequential assertion, document: native source assertion → underlyi
 Define the resources, relationships, stream/schema structure, observations, provenance, and creation order needed to represent the approved mapping set. Produce a reviewable resource graph before any write to the CSAPI server.
 
 **Gate:** every proposed resource and relationship is evidence-backed and dependencies have a deterministic creation order.
+
+**25 October status:** design gate satisfied for owner review in `Workbook/03_CSAPI_RESOURCE_GRAPH.md`; no server write or adapter implementation performed.
 
 ### Phase 5 — Implement the adapter
 
@@ -96,10 +99,10 @@ Repeat a bounded subset with an independent producer such as AirGradient, then l
 
 ## Immediate next steps
 
-1. **Pause at the Phase 1–3 owner review gate.** Review the frozen specimen, source characterization, mapping decisions, corrections, remaining open questions and paper v0.7 before any Phase 4 work.
-2. If the owner authorizes continuation, draw and review the proposed CSAPI resource graph, including System/Procedure identities, observed-subject handling, result-time policy, and source-platform aggregate processing.
-3. Only after that Phase 4 gate begin deterministic adapter implementation.
-4. Continue to keep unresolved mappings explicit rather than allowing code or server behavior to choose semantics implicitly.
+1. **Pause at the Phase 4 owner review gate.** Review the proposed resource graph, study UID scope, temporal projections, aggregate-processing System/Procedure, explicit non-resources, and target-server constraints.
+2. If the owner authorizes continuation, begin **Phase 5 only**: implement deterministic replay of the frozen specimen against the reviewed graph, with no live polling until deterministic transformation tests pass.
+3. Keep the Phase 4 creation/retrieval/cleanup order authoritative for implementation; code may not silently add resources, subjects, relationships or fallback time semantics.
+4. After Phase 5, pause again before any server load/verification phase proceeds.
 
 ## Milestones
 
