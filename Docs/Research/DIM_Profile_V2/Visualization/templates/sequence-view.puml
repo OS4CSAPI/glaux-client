@@ -1,0 +1,19 @@
+@startuml
+' Title: <figure title>
+' View: sequence
+' Question: <which ordered interaction this shows>
+' Layer: <DIM/profile/binding/implementation>
+' Status: working
+' Source artifact: <version>
+
+title <Interaction sequence title>
+
+participant A
+participant B
+participant C
+
+A -> B : request
+B -> C : action
+C --> B : outcome
+B --> A : result
+@enduml
