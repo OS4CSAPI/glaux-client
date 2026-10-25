@@ -27,7 +27,7 @@ The experiment must preserve the distinction among native source facts, document
 
 Do not begin adapter implementation by guessing target structures from source labels. Complete and review the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
 
-**25 October review checkpoint:** Phases 1 and 2 are closed for the representative first mapping set and Phase 3 has completed its corrective review. The work intentionally pauses here for owner discussion; Phase 4 is not authorized merely because its prerequisites have been documented.
+**25 October current checkpoint:** Phases 1–3 are closed for the representative first mapping set, the owner authorized Phase 4, and the reviewed resource graph is now complete. The work intentionally pauses again for owner discussion; Phase 5 is not authorized merely because the Phase 4 design gate is satisfied.
 
 ### Phase 1 — Freeze the experiment specimen
 
