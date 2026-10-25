@@ -6,7 +6,7 @@ The owner requested populating the source-provider side of the interface compari
 
 The new section explains what Smart Citizen makes visible—resource/reporting context, multiple current quantities, values and units, a selected property's explanation and history, sensor/model labels, and alternate dashboard organization—without treating those pixels as normative MERLIN requirements. A reconstruction-question table converts those presentation observations into testable questions for the DIM/Profile and Resource Details PBI. Figures 8–10 remain reserved for a contemporaneous selected-registration source view if available, the matched generic/profile-aware Glaux comparison, and the implemented CSAPI relationship/source-to-display trace.
 
-The screenshots are historical examples rather than registration 19639 evidence, and the paper says so explicitly. The adapter, CSAPI loading, live integration, and matched interface evaluation remain unexecuted. The repository paper workflow will regenerate the v0.6 Word edition and refresh publication fingerprints before this increment is considered complete.
+The screenshots are historical examples rather than registration 19639 evidence, and the paper says so explicitly. The adapter, CSAPI loading, live integration, and matched interface evaluation remain unexecuted. The repository paper workflow regenerated the v0.6 Word edition and refreshed publication fingerprints successfully. The exact GitHub Actions-generated 29-page edition was downloaded, rendered, and every page was visually inspected; both source screenshots, captions, continuation tables, references, headers, footers, and page flow are clean.
 
 ## Paper version 0.5 experimental Glaux client — 24 October 2026
 

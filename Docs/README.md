@@ -21,7 +21,7 @@ into adopted requirements or revise the technical profile. Follow
 [artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) when updating the set.
 
 For the subsequent real-source evaluation, start with the maintained paper
-**Evaluating Sensor Information Preservation Through OGC Integration**, v0.5,
+**Evaluating Sensor Information Preservation Through OGC Integration**, v0.6,
 24 October 2026: [canonical manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md)
 and [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Research/Studies/Smart_Citizen/README.md) explains the
@@ -113,3 +113,6 @@ their respective claims; do not infer requirements from folder names.
 Executable fixtures and tests remain in their appropriate code directories.
 Documentation links to them and supporting evidence rather than creating
 competing copies.
+
+
+Paper v0.6 adds the Smart Citizen vendor-presentation baseline using two first-party documentation screenshots selected before the CSAPI/Glaux result exists. Their exact source provenance and historical limits are recorded with the study; Figures 8–10 remain reserved for contemporaneous source, matched Glaux, and implemented CSAPI evidence.

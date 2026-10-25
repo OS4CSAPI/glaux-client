@@ -7,7 +7,7 @@ the 24 October import is not a new research increment.
 ## Maintained Smart Citizen experiment paper
 
 **Evaluating Sensor Information Preservation Through OGC Integration**, version
-**0.5**, dated **24 October 2026**, is the working paper for the proposed experiment.
+**0.6**, dated **24 October 2026**, is the working paper for the proposed experiment.
 Read the [canonical manuscript](Studies/Smart_Citizen/MANUSCRIPT.md) or
 [generated Word edition](Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 The [paper guide](Studies/Smart_Citizen/README.md) describes maintenance, and its
@@ -84,3 +84,6 @@ bundles, standalone manufacturer manuals, and unrelated workspace material are n
 part of this selected publication.
 
 Return to the [documentation index](../README.md).
+
+
+The current Smart Citizen paper v0.6 establishes a pre-implementation vendor-presentation baseline using two unchanged first-party Smart Citizen UI screenshots. The supporting evidence record fixes their source revision, exact asset identity, intended UI role, and historical limits before the experiment produces its own client result.

@@ -10,7 +10,7 @@ commit containing this checkpoint and the files it verifies.
 
 **Latest research and planning checkpoint:** the owner requested a maintained
 academic-style paper documenting the experiment. The
-[Smart Citizen paper v0.5](../Research/Studies/Smart_Citizen/README.md) adds a dedicated experimental-server section and an early
+[Smart Citizen paper v0.6](../Research/Studies/Smart_Citizen/README.md) adds a dedicated experimental-server section and an early
 illustrated overview of the environmental-monitoring system and selected public
 case, alongside the protocol and preliminary source assessment. Its canonical manuscript,
 generated Word edition, reference records, and publication manifest are maintained
@@ -255,3 +255,8 @@ Begin a continuation with the [documentation index](../README.md),
 [current client work](CURRENT_WORK.md). Then open the exact source artifact for
 the relation or design decision being examined. Preserve earlier source IDs,
 decisions, and completed-work evidence instead of rebuilding them from chat.
+
+
+## Smart Citizen paper v0.6 vendor-presentation checkpoint — 24 October 2026
+
+The paper now fixes two first-party Smart Citizen presentation examples before the CSAPI/Glaux result is produced. The core-platform measurement exploration and custom-dashboard screenshots are preserved unchanged with exact provenance and historical limits; they are design/presentation evidence rather than matched registration 19639 results. Figures 8–10 remain reserved for a contemporaneous source view if reproducible, the matched generic/profile-aware Glaux result, and the implemented CSAPI relationship/source-to-display trace.

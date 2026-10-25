@@ -13,7 +13,7 @@ behind that work; it does not replace the source documents or their stated autho
 ## Current standing and dates
 
 The technical profile, connected example and definitions remain **MPSS v0.3.5**.
-The standards primer remains **v0.5**, and the research bibliography and source
+The standards primer remains **v0.6**, and the research bibliography and source
 register remain **v0.10**. These version numbers belong to different artifacts.
 Publishing them here leaves their technical content unchanged and does not adopt
 additional proposals or claim complete implementation of the profile.
@@ -36,10 +36,10 @@ amendment on 9 October to its 8 October release. The Working Views PDF is dated
 | Original artifact | Version | Document date | Role and current standing |
 | --- | --- | --- | --- |
 | [MERLIN Resource Details Requirements](Design/Details_View/MERLIN_Resource_Details_Requirements_v0.8_08OCT2026.docx) | v0.8 | 2026-10-08 | Requirements draft; dated 8 October and amended 9 October. Current repository scope governs the implemented subset. |
-| [MERLIN Semantic Presentation and Interaction Guide](Design/Details_View/MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx) | v0.5 | 2026-10-08 | Draft application guidance; preserves source semantics and cross-module presentation decisions. |
+| [MERLIN Semantic Presentation and Interaction Guide](Design/Details_View/MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.6.docx) | v0.6 | 2026-10-08 | Draft application guidance; preserves source semantics and cross-module presentation decisions. |
 | [MERLIN System Details Working Views](Design/Details_View/MERLIN_System_Details_Working_Views_10OCT2026.pdf) | Unnumbered working packet | 2026-10-10 | Dated working views and evidence packet; proposed mappings and synthetic presentation examples. |
 | [Managed Physical Sensing Systems and Deployments: Integrated Binding Draft](Design/MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx) | v0.3.5 | 2026-10-17 | Preserved technical working baseline with four owner-approved bounded increments; unchanged by import. |
-| [Standards Pedigree and Design Rationale](Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.5_17OCT2026.docx) | v0.5 | 2026-10-17 | Informative companion to profile v0.3.5; its v0.5 is a separate document number. |
+| [Standards Pedigree and Design Rationale](Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.6_17OCT2026.docx) | v0.6 | 2026-10-17 | Informative companion to profile v0.3.5; its v0.6 is a separate document number. |
 | [MPSS v0.3.5 Connected Example and Definitions](Design/MPSS/MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip) | v0.3.5 | 2026-10-17 | Preserved synthetic connected example and definitions, including original package structure and provisional identifiers. |
 | [Domain Information Models and CSAPI Integration: Annotated Bibliography](Research/Bibliography/MERLIN_Domain_Information_Models_Annotated_Bibliography_v0.10_22OCT2026.docx) | v0.10 | 2026-10-22 | Current imported research consolidation; technical profile remains v0.3.5. |
 | [Domain Information Models Source Register](Research/Bibliography/MERLIN_Domain_Information_Models_Source_Register_v0.10_22OCT2026.xlsx) | v0.10 | 2026-10-22 | Current imported research evidence register; original source IDs and assessments retained. |
@@ -117,3 +117,6 @@ implemented by this client. Current testing and deployment facts belong in the
 [deployment record](Plans/CLOUDFLARE_DEPLOYMENT.md).
 
 Return to the [documentation index](README.md).
+
+
+The Smart Citizen working paper is maintained at v0.6. This revision adds a first-party vendor-presentation baseline with preserved Smart Citizen documentation screenshots and reserved later figures for contemporaneous source, Glaux, and CSAPI execution evidence.
