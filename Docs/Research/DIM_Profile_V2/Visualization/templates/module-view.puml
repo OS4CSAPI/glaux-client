@@ -1,0 +1,18 @@
+@startuml
+' Title: <figure title>
+' View: package
+' Question: <what model organization this shows>
+' Layer: DIM
+' Status: working
+' Source artifact: <version>
+left to right direction
+
+title <Model organization title>
+
+package "Common/Core" as core
+package "Module A" as moduleA
+package "Specialization B" as specB
+
+moduleA ..> core : depends on
+specB ..> core : uses
+@enduml
