@@ -7,7 +7,9 @@ Before Phase 5 begins, the owner identified that the paper evaluated the MERLIN 
 
 The revision also adds a generic DIM/Profile architecture figure and three explanatory tables. It deliberately does not turn the Smart Citizen paper into a duplicate profile specification: detailed normative obligations remain in MPSS v0.3.5, while the paper gives readers enough architecture and provenance to understand what the experiment is testing. Existing later sections are renumbered, and the Smart Citizen-specific conceptual figure remains separate from the new generic profile figure.
 
-**Current gate:** rebuild and visually verify paper v0.9, then stop. No Phase 5 adapter code, CSAPI server write, Glaux behavior change, deployment, or MPSS v0.3.5 revision is authorized by this documentation increment.
+**Final publication verification:** GitHub Actions run `40206986860` rebuilt paper v0.9 successfully from source commit `22a05d08` and committed the generated Word edition at `a73285ae`. The verifier passed 45 cited references, 8 figures, 2 listings, the paragraph and acronym policies, current Word inputs, and 19 publication files. The final DOCX SHA-256 is `39307527446579faab6de7c3a11479fe576fd6d8fad1501386582ff85a52f97d`; the edition renders to 44 pages. The full first v0.9 render was visually inspected, and after correcting the DIM/Profile figure spacing plus one vendor-figure cross-reference, page-hash comparison showed only pages 11 and 38 changed; both final pages were re-inspected and are clean.
+
+**Current gate:** the v0.9 DIM/Profile architecture closeout is complete. No Phase 5 adapter code, CSAPI server write, Glaux behavior change, deployment, or MPSS v0.3.5 revision was performed. Phase 5 deterministic adapter implementation is the next experiment phase when the owner resumes it.
 
 
 
