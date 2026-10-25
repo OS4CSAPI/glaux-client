@@ -88,7 +88,7 @@ A separate 52°North demonstration is publicly available at `https://csa.demo.52
 
 **Figure 2. Experimental CSAPI server lineage and study role.** The solid path identifies the implemented lineage from pygeoapi through 52°North's Connected Systems proof of concept to the OS4CSAPI Oracle deployment. The separate 52°North public demo is shown as another deployment rather than as part of the study server. Dashed arrows identify the proposed Smart Citizen adapter and Glaux use, which have not yet been executed. The figure is an authored synthesis of the upstream repositories and the retained deployment baseline (52°North Spatial Information Research GmbH n.d.-a; MERLIN Project 2026f; pygeoapi Development Team 2026).
 
-**Table 3. Server identity and deployment baseline.** The table records facts established for the tested server and distinguishes them from deployment details that still need to be recovered. The exact image and upstream revisions provide a reproducible software checkpoint, while the unknown backend and persistence settings remain genuine evidence gaps. These gaps do not prevent beginning the mapping work, but they must be closed before claims about durability or exact deployment reproduction (MERLIN Project 2026f).
+**Table 2. Server identity and deployment baseline.** The table records facts established for the tested server and distinguishes them from deployment details that still need to be recovered. The exact image and upstream revisions provide a reproducible software checkpoint, while the unknown backend and persistence settings remain genuine evidence gaps. These gaps do not prevent beginning the mapping work, but they must be closed before claims about durability or exact deployment reproduction (MERLIN Project 2026f).
 
 | Item | Recorded baseline | Standing for this study |
 | --- | --- | --- |
@@ -305,12 +305,13 @@ The generic and profile-aware conditions will use the same captured standardized
 
 Each screenshot will record the registration, channel, observation or interval, aggregation, units, capture time, application revision where available, browser, zoom, viewport, and relevant controls. Glaux will be evaluated at the recovered 560 × 440 module size; other sizes will be reported explicitly. The source interface will retain its actual viewport and layout. Where it cannot replay the same sample or interval, images will be described as illustrative interface evidence rather than a matched comparison (MERLIN Project 2026d).
 
-**Table 7. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figure 2 is an authored server-lineage diagram, Figures 3 and 4 are authored diagrams of the proposed experiment, and Figures 5–7 are reserved evidence slots, and no substitute or simulated screenshots are presented.
+**Table 7. Planned figures and evidence status.** Figure 1 is an official product-model photograph with an identified source and explicit limits. Figure 2 is an authored server-lineage diagram, while Figures 3 and 4 are authored diagrams of the proposed experiment. Figures 5–7 are reserved evidence slots, and no substitute or simulated screenshots are presented.
 
-| Figure | Intended content | Status in version 0.3 |
+| Figure | Intended content | Status in version 0.4 |
 | --- | --- | --- |
 | 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
-| 2 | Experimental CSAPI server lineage and study role | Included as an authored diagram |\n| 3 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
+| 2 | Experimental CSAPI server lineage and study role | Included as an authored diagram |
+| 3 | Proposed acquisition, mapping, service, and comparison architecture | Included as an authored diagram |
 | 4 | Proposed model and subject distinctions | Included as an authored diagram |
 | 5 | Actual Smart Citizen interface showing the selected channels and interval | Awaiting documented capture |
 | 6 | Matched generic and profile-aware Glaux views of the integrated evidence | Awaiting implementation and capture |
