@@ -1,5 +1,11 @@
 # Current client work
 
+## Smart Citizen execution roadmap and workbook — 24 October 2026
+
+The owner approved preserving the current end-to-end plan and detailed experiment homework outside the research paper. The new execution roadmap defines eleven phases with explicit gates and milestones; the new workbook supplies living templates for source capture/inventory, mapping lineage, CSAPI resource design, execution evidence, UI/PBI findings, transferability, and material decisions. The existing experiment plan remains as rationale/history, while the roadmap is now the current sequencing authority.
+
+Immediate work remains Phase 1: reacquire and freeze the Smart Citizen specimen, then complete the native inventory before formal target mapping. No adapter code, CSAPI writes, profile changes, or application changes are authorized by creating these planning records.
+
 ## Paper version 0.6 vendor presentation baseline — 24 October 2026
 
 The owner requested populating the source-provider side of the interface comparison before the CSAPI/Glaux results exist. Paper v0.6 now includes two unchanged first-party Smart Citizen UI screenshots selected from the official documentation: the core platform's basic measurement-exploration view and the separately documented custom dashboard. Their source pages describe their roles, while a new evidence record preserves exact repository revision, asset path/blob, historical device/time context, and rights notices.

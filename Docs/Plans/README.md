@@ -12,7 +12,8 @@ through the current continuity note; do not restart completed research or reset
 project status from an older package's folder named "current".
 
 - [Artifact Register](../ARTIFACT_REGISTER.md): selected source versions and paths.
-- [Smart Citizen experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md): proposed
+- [Smart Citizen execution roadmap](SMART_CITIZEN_EXECUTION_ROADMAP.md): current phase sequence, gates, milestones and immediate next steps. Detailed homework lives in the [experiment workbook](../Research/Studies/Smart_Citizen/Workbook/README.md).
+- [Smart Citizen experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md): preserves the detailed rationale and proposed
   public-source acquisition, source-to-profile mapping, adapter, CSAPI publication
   and Glaux evaluation, with captured replay and comparisons; owned hardware later.
   No implementation or purchase yet.

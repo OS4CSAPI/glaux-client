@@ -1,5 +1,7 @@
 # Smart Citizen experiment plan
 
+> **Execution note, 24 October 2026:** this document preserves detailed experiment rationale and earlier planning. Current sequencing, gates, immediate next steps, and milestones are maintained in the [Smart Citizen execution roadmap](SMART_CITIZEN_EXECUTION_ROADMAP.md). Detailed homework and evidence records are maintained in the [experiment workbook](../Research/Studies/Smart_Citizen/Workbook/README.md).
+
 Prepared 24 October 2026. **Proposed next work; implementation has not started.**
 
 ## Purpose and baseline

@@ -8,6 +8,9 @@ comparison have not been executed.
 
 ## Read and maintain the paper
 
+Detailed engineering/research homework is intentionally maintained outside the paper in the [experiment workbook](Workbook/README.md), following the [execution roadmap](../../../Plans/SMART_CITIZEN_EXECUTION_ROADMAP.md). The paper should summarize and cite workbook evidence as needed rather than absorb exhaustive inventories, rejected mappings, run logs, and discrepancy records.
+
+
 - [Manuscript](MANUSCRIPT.md): canonical editable text, CMOS 18 author-date
   citations, references, figure captions, and explained listings.
 - [Word edition](SMART_CITIZEN_EXPERIMENT_PAPER.docx): generated reading and review

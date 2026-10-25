@@ -55,6 +55,8 @@ screenshot sections must not be filled with invented outcomes.
 - [Machine-readable access evidence](Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json):
   15 access/schema/store observations, selected source excerpts, capture metadata
   and original-body fingerprints where available. This is not a complete raw-data archive.
+- [Smart Citizen experiment workbook](Studies/Smart_Citizen/Workbook/README.md): living source inventory, mapping ledger, CSAPI resource design, execution log, evaluation findings, decision log and transferability homework.
+- [Current execution roadmap](../Plans/SMART_CITIZEN_EXECUTION_ROADMAP.md): phase gates, milestones and immediate sequencing.
 - [Proposed Smart Citizen experiment](../Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md):
   public-source acquisition, traceable mapping, an adapter and CSAPI publication,
   followed through Glaux with replay and 560 × 440 comparisons. Owned hardware

@@ -62,7 +62,9 @@ For the current Details View increment, start with:
 | Broader DIM/MPSS continuity and sequencing | [Current MERLIN continuity](Plans/CONTINUITY.md) |
 | Maintained Smart Citizen research paper v0.4 and publication record | [Manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md), [Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx), [maintenance guide and manifest](Research/Studies/Smart_Citizen/README.md) |
 | Open sensor candidates, recommendations and actual access findings | [Candidate study](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md), [evidence record](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) |
-| Proposed first real-source experiment and its PBI/profile outputs | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) |
+| Current Smart Citizen execution sequence, gates and milestones | [Smart Citizen execution roadmap](Plans/SMART_CITIZEN_EXECUTION_ROADMAP.md) |
+| Detailed Smart Citizen experiment homework/evidence | [Experiment workbook](Research/Studies/Smart_Citizen/Workbook/README.md) |
+| Detailed first real-source experiment rationale | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) |
 | How the document collection is maintained | [Artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) |
 | Deployed page index and ongoing page metadata | [Page-index maintenance](Design/PAGE_INDEX.md) |
 | Recovered Resource Details frame and blank review canvas | [Resource Details template](Design/RESOURCE_DETAILS_TEMPLATE.md) |
