@@ -190,7 +190,7 @@ The deployed client can currently read an explicitly supplied System resource UR
 
 For the live experiment, Glaux will consume the connected resources published through the selected 52°North CSAPI server rather than reading Smart Citizen's native API directly for the operator comparison. The data layer must retrieve and retain the relevant standardized resources and responses, the profile layer must recognize only supported MPSS/DIM meanings, and the presentation layer must reconstruct the Resource Details experience from those meanings. The generic condition will remain competent enough to expose the same standard properties, relationships, units, times, and raw evidence without profile-specific organization. A profile-aware benefit will therefore require an observable difference in supported interpretation or task performance, not merely a more polished layout.
 
-Each executed run will record the Smart Citizen capture revision, adapter revision, CSAPI server revision and image, Glaux source revision, Glaux deployed-runtime revision, pinned client-library revision, and MPSS profile revision. This version chain is necessary because a change at any one layer could alter the final display without changing the others. The first client increment will add the connected-resource retrieval and Smart Citizen presentation needed for the study while retaining the existing original-response and Standard View boundaries. Until that increment is built and verified, Figures 6–8 and any claim that Glaux reconstructed the live Smart Citizen dataset remain pending experimental evidence.
+Each executed run will record the Smart Citizen capture revision, adapter revision, CSAPI server revision and image, Glaux source revision, Glaux deployed-runtime revision, pinned client-library revision, and MPSS profile revision. This version chain is necessary because a change at any one layer could alter the final display without changing the others. The first client increment will add the connected-resource retrieval and Smart Citizen presentation needed for the study while retaining the existing original-response and Standard View boundaries. Until that increment is built and verified, Figure 9 and any claim that Glaux reconstructed the Smart Citizen dataset from connected CSAPI resources remain pending experimental evidence.
 
 
 ## 5 Research questions and study design
@@ -443,7 +443,7 @@ Each screenshot will record the registration, channel, observation or interval, 
 
 **Table 9. Planned figures and evidence status.** Figures 1–5 identify the system, server, client, experiment architecture, and conceptual model. Figures 6 and 7 now provide first-party historical Smart Citizen UI evidence selected before the CSAPI/Glaux result exists. Figures 8–10 remain reserved for contemporaneous or executed evidence and will not be filled with simulated substitutes.
 
-| Figure | Intended content | Status in version 0.6 |
+| Figure | Intended content | Status in version 0.7 |
 | --- | --- | --- |
 | 1 | Smart Citizen Kit 2.3 equipment and component roles | Official model reference photograph; not a verified image of registration 19639 |
 | 2 | Experimental CSAPI server lineage and study role | Included as an authored server-lineage diagram |
