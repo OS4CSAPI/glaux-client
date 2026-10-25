@@ -1,74 +1,315 @@
 # 02 — Mapping ledger
 
-**Status:** Initial illustrative cases exist in paper v0.6; formal experiment mappings are not yet approved.
+**Status:** Phase 3 started. Three mappings have been formalized from the frozen 25 October specimen for resource-graph review. They are not yet executable adapter mappings and do not amend MPSS v0.3.5.
 
 ## Required chain
 
-native source assertion → DIM concept → individual donor concept(s) → MPSS rule/binding → CSAPI resource/relationship → SensorML/SWE carrier → transformation → presentation implication → review outcome.
+**native source assertion → underlying DIM concept → individual donor concept(s) → MPSS rule/binding → CSAPI resource/relationship → SensorML/SWE carrier → transformation → presentation implication → review outcome.**
+
+A source vocabulary carried by Smart Citizen is recorded separately from a historical/model donor. An OGC encoding mechanism is recorded as a standard carrier even when its conceptual lineage also traces to SOSA/SSN. MERLIN-authored bindings and experiment-authored identity or naming choices remain explicitly ours.
 
 ## Mapping register
 
-| Mapping ID | Source inventory ID | Status | Short description | Evidence |
+| Mapping ID | Source inventory | Status | Short description | Main unresolved issue |
 | --- | --- | --- | --- | --- |
-| SC-TEMP-01 | | illustrative | Air-temperature example | Paper v0.6 |
-| SC-BATT-01 | | illustrative | Battery-percentage example | Paper v0.6 |
+| SC-ID-01 | device top-level metadata | **proposed for resource-graph review** | Registered sensing-system identity and reusable SCK2.3 model description | exact CSAPI System UID policy and physical continuity beyond the source registration |
+| SC-TEMP-01 | SC-SRC-019 | **proposed with temporal/subject qualification** | Current source-reported air-temperature observation | source supplies no separately identified feature of interest or result-time timestamp |
+| SC-PM25-01 | SC-SRC-010 | **proposed with temporal/subject qualification** | Current source-reported PM2.5 observation | same subject/result-time issue; channel cadence differs from device-level latest time |
+| SC-TEMP-AGG-01 | temperature history | **deferred** | Smart Citizen 1-hour average temperature history | source-platform aggregation provenance must not be misattributed to the physical kit |
+| SC-PM25-AGG-01 | PM2.5 history | **deferred** | Smart Citizen 1-hour average PM2.5 history | source-platform aggregation provenance must not be misattributed to the physical kit |
+| SC-BATT-01 | SC-SRC-004 | illustrative only | Battery-percentage example | formal mapping not yet reviewed against frozen specimen |
 
-## Worksheet template
+---
 
-### Mapping ID: SC-____
+# SC-ID-01 — Registered sensing system and reusable model
 
-**Native source assertion**
-- Source inventory ID:
-- Exact source path:
-- Native label/value/type/unit:
-- Source definition/reference:
-- Native subject:
-- Source time meaning:
-- Source limitations:
+## Native source assertion
 
-**Underlying DIM concept**
-- Entity/property/relationship:
-- Subject/object distinction:
-- Why this concept applies:
-- Competing/rejected concepts:
+Frozen evidence: [device.json](../../../Evidence/Smart_Citizen/Captures/20261025T024348Z/device.json).
 
-**Individual donor concepts**
+The source asserts a Smart Citizen Platform Device record with platform Device ID 19639, platform UUID 02612831-3387-4cb2-8bed-cf87670ca1e5, a user-facing name, and reported hardware SmartCitizen Kit 2.3 / SCK / version 2.3. The Smart Citizen Device ID and UUID identify the **platform registration**. They are not established manufacturer serial numbers and do not prove that a future re-registration could be reconciled automatically to the same enduring physical item.
 
-| Donor | Exact concept/identifier | Edition | Locator | Contribution | Reuse status |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | direct reuse / adaptation / constraint / unestablished equivalence |
+The public response does not expose a physical serial or unfiltered hardware status message.
 
-**MPSS**
-- Requirement/binding:
-- Exact profile section:
-- Existing binding or experiment proposal:
-- Constraints:
-- Known profile gap:
+## Underlying DIM concept
 
-**OGC representation**
-- CSAPI resource:
-- Relationship/link:
-- SensorML member:
-- SWE component/type:
-- semantic definition:
-- unit representation:
-- nil/absence handling:
-- time representation:
+The mapping invokes the DIM distinction between:
+1. a **particular sensing-system instance**;
+2. the **reusable description of its product/model kind**; and
+3. the **source registration and representation provenance** through which information about the instance was obtained.
 
-**Transformation and presentation**
-- Identity/unit/time/aggregation/vocabulary transformations:
-- Derived values:
-- Data intentionally not mapped:
-- Operator question supported:
-- Candidate Resource Details location:
-- Required qualification:
+The experiment will represent the sensing-system instance known through registration 19639 as a CSAPI System while preserving the source registration identifiers as source identifiers/provenance. A reusable SCK2.3 model/datasheet description is a separate Procedure/model resource. This prevents the source registration ID, human-readable device name and product-model name from collapsing into one identifier.
 
-**Review outcome**
-- Status: proposed / accepted for experiment / rejected / blocked
-- Evidence:
-- Open questions:
-- Follow-on artifact if a gap is confirmed:
+## Individual donor concepts
 
-## Rule
+| Donor / standard lineage | Exact concept | Edition / locator | Contribution invoked here | Reuse status |
+| --- | --- | --- | --- | --- |
+| SOSA/SSN | sosa:Sensor / ssn:System | W3C Recommendation 2017, §4.3.2.5 and System semantics | A sensing device is a System whose role is sensing/observing | conceptual lineage through CSAPI |
+| RFC 8348 | model-name | RFC 8348 (2018), §7.1 ietf-hardware module | Separates vendor/model designation from serial/instance identity | donor concept adapted by MPSS technical description |
+| RFC 8348 | hardware-rev | RFC 8348 (2018), §7.1 | Supports treating hardware/model revision separately from model name | donor concept adapted by MPSS technical description |
+| RFC 8348 | mfg-name | RFC 8348 (2018), §7.1 | Constrains interpretation: manufacturer is a separate field and should be absent when not established | interpretive constraint; **not populated from the frozen source** |
 
-A generic citation to an entire standard is insufficient when a specific donor concept is invoked. Rejected mappings remain useful evidence when they show why a tempting interpretation is wrong.
+Smart Citizen hardware.name, hardware.version and registration identifiers are **source vocabulary/data**, not historical DIM donors. The OGC System/Procedure and SensorML typeOf mechanisms below are target-standard carriers.
+
+## MPSS binding
+
+- **R01 — A System uses a reusable model description.**
+- System.typeOf / CSAPI systemKind links the particular System to a reusable model description.
+- P/group/technical-description carries selected model/technical Text properties using existing profile definitions.
+- The mapping uses source-reported model designation SmartCitizen Kit 2.3 and revision/version 2.3.
+- It does **not** populate manufacturer, firmware revision, physical serial, or asset ID from inference.
+- R02/component modeling is not invoked merely because 21 channels are present; equipment composition is a separate mapping problem.
+
+## OGC / SensorML representation
+
+Proposed target structure:
+- one CSAPI **System** with systemType = sosa:Sensor;
+- one reusable CSAPI **Procedure** describing the SCK2.3 equipment kind/datasheet;
+- System systemKind association → Procedure;
+- SensorML System typeOf → Procedure;
+- SensorML technical-description CharacteristicList using existing MPSS terms for model designation/revision;
+- source Device ID and UUID retained as source identifiers/provenance, not silently promoted to manufacturer serial.
+
+OGC API — Connected Systems Part 1 distinguishes System instances from Procedure/model descriptions and requires a URI-valued unique identifier for feature resources. The exact System and Procedure UIDs will be selected in the resource-graph phase. **The source registration UUID will not automatically become the CSAPI System UID**, because that would imply an enduring physical-identity assertion the source evidence does not establish.
+
+## Transformation and presentation
+
+No unit or value conversion occurs. Presentation may use the source name as a human-readable label while separately showing the reported product model and the Smart Citizen source registration. Operator presentation must not label the platform UUID as “serial number.”
+
+Likely Resource Details use:
+- persistent header: resource name / experiment-assigned System identity / source;
+- Overview or Equipment: reported model SCK2.3 and source-registration identifiers;
+- source disclosure: Smart Citizen Platform registration 19639.
+
+## Review outcome
+
+**Status: proposed for resource-graph review.**
+
+Accepted semantic decisions:
+- System instance and reusable model are distinct;
+- source registration identifiers are not physical serials;
+- product model/version can support technical-description content;
+- manufacturer remains unpopulated unless independently evidenced.
+
+Open decision:
+- choose a stable CSAPI System UID representing the study's system identity while preserving the Smart Citizen registration UUID as a source identifier. The UID choice belongs in Phase 4 and must survive replay without claiming a manufacturer-issued identity.
+
+---
+
+# SC-TEMP-01 — Current air-temperature result
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/18. Historical source series is retained separately and is **not** part of this current-reading mapping.
+
+Source values:
+- sensor catalogue ID 55;
+- source label Sensirion SHT31 - Temperature;
+- measurement Air Temperature;
+- value 19.59;
+- source unit ºC;
+- unit definition https://qudt.org/vocab/unit/DEG_C;
+- observable-property definition http://www.eionet.europa.eu/gemet/concept/281;
+- channel last_reading_at = 2026-10-25T02:40:21Z;
+- ancestry 54, indicating source catalogue hierarchy.
+
+The inspected Smart Citizen API implementation indicates that the public Device value is a source-platform normalized/calibrated sensor result rather than proof of an untouched electrical/raw sample. That implementation evidence is not assumed to be the exact production revision, so the mapping describes the value as a **source-platform reported air-temperature result**.
+
+## Underlying DIM concept
+
+This is an **Observation result of an environmental property**, produced/reported by the sensing system. The observed property is air temperature; the kit is the producer, not automatically the thing whose temperature is being measured. The observed subject/feature of interest is therefore distinct from the System and remains only generically supported as the surrounding/ambient air environment by the source meaning.
+
+The current mapping deliberately does not manufacture a physical SamplingFeature identifier or reinterpret the System itself as the FeatureOfInterest.
+
+## Individual donor concepts
+
+| Donor / source vocabulary | Exact concept | Edition / locator | Contribution invoked here | Standing |
+| --- | --- | --- | --- | --- |
+| SOSA/SSN | sosa:Sensor | W3C 2017, §4.3.2.5 | Producer role: a Sensor generates observation results | conceptual donor through CSAPI |
+| SOSA/SSN | sosa:Observation | W3C 2017, §4.3.2.2 | Distinguishes observation from System and result | conceptual donor through CSAPI |
+| SOSA/SSN | sosa:ObservableProperty / sosa:observedProperty | W3C 2017, §4.3.2.1 and §4.3.2.3 | Property remains distinct from value and subject | conceptual donor through CSAPI |
+| SOSA/SSN | sosa:FeatureOfInterest | W3C 2017 observation model | The property belongs to a subject distinct from the producer | conceptual constraint; actual target feature not yet identified |
+| SOSA/SSN | sosa:Result / sosa:hasResult | W3C 2017 observation model | Separates result from property and observation | conceptual donor through CSAPI |
+| SOSA/SSN | sosa:phenomenonTime / sosa:resultTime | W3C 2017, §4.3.2.4 and observation constraints | Applicability time remains distinct from result availability time | conceptual constraint; source supplies only one reading timestamp |
+| GEMET | concept 281 Air Temperature | source-provided URI | Identifies native observable property | **source vocabulary**, not established DIM donor |
+| QUDT | unit:DEG_C | source-provided URI | Identifies degree Celsius | **source vocabulary**, not established DIM donor |
+
+## MPSS binding
+
+- **R10**: declared output ↔ DataStream product correspondence.
+- **R11**: producer, observed subject and temporal context remain distinguishable.
+- MPSS v0.3.5 §5.8 is the current paper's locator for R10/R11.
+- Full R09/R10 profile-aware function binding is **not yet complete**, because the experiment has not selected a sensing-function vocabulary/identifier for this source. Base OGC output/DataStream representation can proceed without inventing that profile term.
+
+## OGC / SensorML / SWE representation
+
+Proposed current-result carrier:
+- System SensorML outputs[] contains a SWE **Quantity** for local output name airTemperature;
+- Quantity definition = http://www.eionet.europa.eu/gemet/concept/281;
+- Quantity uom.href = https://qudt.org/vocab/unit/DEG_C;
+- one CSAPI **DataStream** associated with the System, type=observation, resultType=measure, outputName=airTemperature;
+- one CSAPI **Observation** result carries numeric 19.59.
+
+Target subject handling:
+- do **not** set the System as the observation's feature of interest;
+- do **not** invent a SamplingFeature merely to populate the association;
+- CSAPI permits the sampling-feature association to be absent, so an initial target representation may preserve the subject as unresolved while retaining property/result correctly.
+
+Target time handling:
+- channel last_reading_at is the best available **source-recorded observation time** and is a strong candidate for phenomenonTime;
+- CSAPI also requires resultTime, but Smart Citizen provides no separate result-availability timestamp in the frozen response;
+- capture/retrieval time 02:43:48Z is **not** a substitute for source result time because it describes our acquisition;
+- Phase 4 must choose/document a result-time fallback or obtain an additional source timestamp before executable Observation requests are finalized.
+
+## Transformation and presentation
+
+No numerical/unit conversion is required. Local output name airTemperature and display label are experiment-authored. Source channel ID, catalogue UUID, source label, property URI, unit URI and timestamp remain traceable.
+
+Operator presentation should be able to answer:
+- current reported air temperature;
+- unit and semantic property;
+- source observation time;
+- reporting System;
+- observed subject is not independently identified.
+
+The client must not show the value as “device temperature.”
+
+## Aggregate-history boundary
+
+The 24 one-hour averages in temperature_history.json are **not folded into SC-TEMP-01**. They are source-platform aggregate products created by the Smart Citizen/Kairos processing path and require their own provenance/procedure decision (SC-TEMP-AGG-01) before CSAPI ingestion. This avoids misrepresenting a platform-derived hourly average as a direct physical-sensor observation.
+
+## Review outcome
+
+**Status: proposed with temporal/subject qualification.**
+
+Semantically accepted:
+- property URI;
+- unit URI;
+- scalar result;
+- producer System;
+- source observation timestamp must be preserved;
+- System must not silently become the observed subject.
+
+Open before executable request:
+1. CSAPI resultTime policy for a source that supplies only one reading timestamp;
+2. whether to omit samplingFeature or create an explicitly integration-authored ambient-air SamplingFeature in Phase 4;
+3. sensing-function/function-binding vocabulary if full MPSS R09/R10 interpretation is desired.
+
+---
+
+# SC-PM25-01 — Current PM2.5 mass-concentration result
+
+## Native source assertion
+
+Frozen evidence: device.json → /data/sensors/9.
+
+Source values:
+- sensor catalogue ID 194;
+- source label Sensirion SEN5X - PM2.5;
+- measurement PM2.5;
+- description identifies particulate matter below 2.5 µm;
+- value 9.3;
+- unit ug/m3;
+- unit definition http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3;
+- property definition http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001;
+- channel last_reading_at = 2026-10-25T02:36:21Z;
+- ancestry 192, indicating SEN5X catalogue hierarchy.
+
+The device-level last_reading_at is 02:40:21Z, four minutes later. The PM2.5 mapping therefore uses the **channel timestamp**, not the Device record's latest-reading time.
+
+## Underlying DIM concept
+
+This is an Observation result of an environmental particulate-matter property, produced/reported by the sensing System. As with temperature, the ambient/environmental subject is not the kit itself. The mapping preserves the distinction among producer, particulate property, source-platform reported result, and unresolved feature of interest.
+
+## Individual donor concepts
+
+| Donor / source vocabulary | Exact concept | Contribution invoked here | Standing |
+| --- | --- | --- | --- |
+| SOSA/SSN | Sensor, Observation, ObservableProperty, FeatureOfInterest, Result, phenomenonTime, resultTime | Same producer/property/subject/result/time distinctions as SC-TEMP-01 | conceptual donor through CSAPI |
+| Eionet AQ vocabulary | pollutant 6001 | Source-provided definition of PM2.5 property | **source vocabulary**, not established DIM donor |
+| Eionet UOM vocabulary | concentration ug.m-3 | Source-provided unit definition | **source vocabulary**, not established DIM donor |
+
+The source's SEN5X sensor name and ancestry are source catalogue/equipment metadata. They are not, by themselves, an MPSS equipment-role mapping.
+
+## MPSS binding
+
+- **R10**: output/DataStream correspondence.
+- **R11**: producer, subject and time remain distinct.
+- Full R09/R10 sensing-function binding is deferred until a reviewed function vocabulary is selected.
+- No R20 health/assessment interpretation arises from a PM concentration value.
+
+## OGC / SensorML / SWE representation
+
+Proposed current-result carrier:
+- SensorML output name pm25 (experiment-authored local name);
+- SWE Quantity definition = http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001;
+- uom.href = http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3;
+- CSAPI DataStream associated with the System, type=observation, resultType=measure, outputName=pm25;
+- Observation result 9.3.
+
+Subject handling follows SC-TEMP-01: the System is not substituted for ambient air, and a SamplingFeature is not invented simply to complete the graph.
+
+Time handling follows the **channel-specific** 2026-10-25T02:36:21Z. Device-level 02:40:21Z and adapter capture time are different facts and remain separate. The same unresolved CSAPI resultTime policy applies.
+
+## Transformation and presentation
+
+No numerical conversion is proposed. The source property/unit URIs are retained even though the lexical unit label (ug/m3) may later be rendered typographically as µg/m³ for humans. Such display normalization must not change the underlying source URI/value relationship.
+
+Operator presentation should expose PM2.5 value, unit, channel timestamp and property meaning. The four-minute difference from newer source channels is information; it is **not** automatically a stale-data alarm because an expected cadence/freshness rule has not been established.
+
+## Aggregate-history boundary
+
+The 24 one-hour PM2.5 averages in pm25_history.json are a separate source-platform aggregate product with sample_size=288. They require their own mapping (SC-PM25-AGG-01) so that source-side aggregation/provenance is not misattributed to the physical Sensor.
+
+## Review outcome
+
+**Status: proposed with temporal/subject qualification.**
+
+Semantically accepted:
+- property and unit definition URIs;
+- scalar current result;
+- producer System;
+- channel-specific timestamp;
+- explicit separation from device-level latest time.
+
+Open before executable request:
+1. result-time fallback;
+2. feature-of-interest/SamplingFeature policy;
+3. full function-binding vocabulary;
+4. whether the source catalogue parent SEN5X should later be represented as an embedded component/model after its parent record is frozen and reviewed.
+
+---
+
+## Deferred mappings and negative constraints
+
+### SC-TEMP-AGG-01 / SC-PM25-AGG-01
+
+These are intentionally deferred because the public history endpoint is a **platform aggregation service**. Treating aggregate values as if the physical kit itself produced hourly averages would erase processing provenance. Phase 4 must decide whether aggregation is modeled as a separate Procedure/processing System, Observation parameters, a distinct DataStream product, or remains outside the first CSAPI load.
+
+### SC-BATT-01
+
+The paper's battery example remains illustrative until reworked against the frozen specimen. The frozen source confirms 99% with the source definition “remaining battery level in percentage,” but supplies no identified battery, charge in mAh, voltage, charging state, runtime, supply relationship or replacement history. RFC 7326/RFC 7577 concepts continue to constrain unsupported substitutions.
+
+## Phase 3 working rules
+
+1. No adapter code is authoritative for a mapping absent from this ledger.
+2. Source registration identifiers are not physical serials.
+3. A producer is not automatically the feature of interest.
+4. Device-level latest time cannot overwrite channel time.
+5. Acquisition time is integration provenance, not source result time.
+6. Source-platform aggregates require explicit processing provenance.
+7. Source vocabulary references are preserved without retroactively claiming they were historical DIM donors.
+8. A profile-aware mapping may remain incomplete while a base OGC representation is still valid; the gap remains visible.
+
+## Principal evidence and standards consulted
+
+- Frozen source evidence: [20261025T024348Z](../../../Evidence/Smart_Citizen/Captures/20261025T024348Z/).
+- MPSS baseline: [v0.3.5 Integrated Binding Draft](../../../../Design/MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx).
+- Smart Citizen API reference: <https://developer.smartcitizen.me/>.
+- Smart Citizen API implementation evidence: <https://github.com/fablabbcn/smartcitizen-api/tree/25a524cbfb036f8950c247b847d8884a4e776297>.
+- OGC API — Connected Systems Part 1, §§8.5, 9.2, 13.2, 19.2: <https://docs.ogc.org/is/23-001/23-001.html>.
+- OGC API — Connected Systems Part 2, §§9.2, 9.6, 9.7: <https://docs.ogc.org/is/23-002/23-002.html>.
+- SensorML 3.0: <https://docs.ogc.org/is/23-000/23-000.html>.
+- SWE Common 3.0: <https://docs.ogc.org/is/24-014/24-014.html>.
+- SOSA/SSN 2017, especially §4.3.2: <https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/>.
+- RFC 8348 §7.1: <https://www.rfc-editor.org/rfc/rfc8348.html>.
