@@ -509,7 +509,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--version", default="0.1")
+    parser.add_argument("--version", default="0.2")
     parser.add_argument("--date", default="2026-10-24", help="Editorial revision date in America/New_York, YYYY-MM-DD")
     parser.add_argument("--figures-only", action="store_true", help="Regenerate the two authored SVG diagrams without building a DOCX")
     parser.add_argument("--refresh-figures", action="store_true", help="Regenerate SVG diagrams before building the document")

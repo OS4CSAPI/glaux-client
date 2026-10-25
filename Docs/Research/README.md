@@ -7,7 +7,7 @@ the 24 October import is not a new research increment.
 ## Maintained Smart Citizen experiment paper
 
 **Evaluating Sensor Information Preservation Through OGC Integration**, version
-**0.1**, dated **24 October 2026**, is the working paper for the proposed experiment.
+**0.2**, dated **24 October 2026**, is the working paper for the proposed experiment.
 Read the [canonical manuscript](Studies/Smart_Citizen/MANUSCRIPT.md) or
 [generated Word edition](Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 The [paper guide](Studies/Smart_Citizen/README.md) describes maintenance, and its
@@ -21,6 +21,19 @@ listings, and CMOS 18 author-date citations and references. The proposed sequenc
 is public source → adapter → CSAPI → Glaux, with captured replay and matched
 interface comparisons supporting evaluation. Owned hardware is a later means of
 filling physical-context gaps.
+
+Version 0.2 contains 22 references, five tables, two figures, and two listings.
+Its seven-layer mapping explanation matrix is illustrated by the temperature
+`SC-TEMP-01` and battery `SC-BATT-01` cases. These explain proposed interpretations
+and their limits; they are not executed mappings or conformance results.
+
+Every mapping must explain its CSAPI resource and SensorML/SWE carrier, underlying
+DIM concept, exact MPSS rule, and project-authored choices. Each individual donor
+concept must have a citation, edition and exact locator, with its role stated as
+direct reuse, adaptation, interpretive constraint, or unestablished equivalence.
+Paper narrative paragraphs, including the abstract and explanatory captions,
+must contain three to five sentences. Headings, tables, code, and bibliographic
+entries remain structural, as detailed in the paper guide.
 
 It is a protocol and preliminary assessment: the adapter, run, CSAPI publication,
 and screenshot comparison have not been executed, and no conformance result is

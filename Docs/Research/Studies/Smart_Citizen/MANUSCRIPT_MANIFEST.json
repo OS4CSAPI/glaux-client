@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.1",
+  "version": "0.2",
   "documentDate": "2026-10-24",
   "editorialTimezone": "America/New_York",
   "standing": "New study protocol and preliminary source assessment; proposed integration and comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 19,
+  "referenceCount": 22,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
@@ -71,43 +71,58 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed with no necessary corrections",
-    "wordRender": "Passed: all thirteen rendered pages visually inspected; figures, tables, listings, references, headers and footers reviewed",
-    "renderedPageCount": 13,
+    "technicalReview": "Completed: illustrative lineage checked against retained MPSS, native evidence, primary OGC/W3C, vocabulary and RFC sources; scope and unresolved mappings retained",
+    "wordRender": "Passed: all sixteen rendered pages visually inspected; figures, tables, listings, citations, references, headers and footers reviewed",
     "reviewDate": "2026-10-24",
-    "reviewTimezone": "America/New_York"
+    "reviewTimezone": "America/New_York",
+    "renderedPageCount": 16,
+    "paragraphAudit": {
+      "paragraphs": 66,
+      "sentenceCounts": {
+        "3": 23,
+        "4": 33,
+        "5": 10
+      },
+      "result": "Passed three-to-five-sentence narrative/explanatory-caption policy"
+    }
   },
   "revisionHistory": [
     {
       "version": "0.1",
       "date": "2026-10-24",
       "change": "Initial protocol with source assessment, research questions, proposed live integration, mapping and evaluation methods, diagrams, listings, screenshot protocol, reserved results, and cited references."
+    },
+    {
+      "version": "0.2",
+      "date": "2026-10-24",
+      "predecessorCommit": "57a2d1b68ad5c30a0a005c6095306e050fa9e4a9",
+      "change": "Require per-mapping DIM/MPSS/CSAPI explanations and individual donor-concept attribution; add temperature and battery lineage examples, three primary references, and enforcement of three-to-five-sentence narrative paragraphs."
     }
   ],
   "files": [
     {
       "path": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
       "role": "canonical-manuscript",
-      "sha256": "93f62078e630d0f238c0f15c92e9caa33c0bd1d151f39cdb848761d29dba990c",
-      "sizeBytes": 34981
+      "sha256": "08786f36fef91d4b776c637eba16e54ea4cfd075bb83a84a88d860db92827362",
+      "sizeBytes": 44899
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
       "role": "generated-word-edition",
-      "sha256": "0275b0cfaaae70cb457beb8e9d26f92e312b548f8f2c320717f284c0092d56a8",
-      "sizeBytes": 534812
+      "sha256": "b81d3dc39ce18d76a61af091d466e61af9ed2ef3d4a9cf66f4b34a3a554886e8",
+      "sizeBytes": 538711
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/REFERENCES.json",
       "role": "citation-records",
-      "sha256": "37be30deae212bd8c2f46cf1555372120ed749ce5dd176ff7ca7b828b6f3dd62",
-      "sizeBytes": 9381
+      "sha256": "f140b1a5f3f5d2ee5dd9ef6e29a91c09f32e15670ca24521eec858c73c575948",
+      "sizeBytes": 10611
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/README.md",
       "role": "maintenance-guide",
-      "sha256": "4291067c004f2cb676066db6f2aa8087f56dae7dbeaea6142bfb50f28600e4e1",
-      "sizeBytes": 4815
+      "sha256": "1aacd0410e28816769f855c74df547ccf2e3f3729bfe5998972f09e24877e2fa",
+      "sizeBytes": 7312
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
@@ -136,14 +151,49 @@
     {
       "path": "scripts/build-smart-citizen-paper.py",
       "role": "document-builder",
-      "sha256": "a1747ef00e3847f18a170b3ec80f8eed6c70a155d93df3cefa41651b0f79d723",
+      "sha256": "8256efa9807ba09f71a4c2f2d94cb8176e481a29a0f2d9625dc52a168603f6eb",
       "sizeBytes": 25706
     },
     {
       "path": "scripts/verify-smart-citizen-paper.py",
       "role": "publication-verifier",
-      "sha256": "1da50e6fef72539aa9ef073eaad1b497b295d77f5706d997be0fd8b29aa5e3b2",
-      "sizeBytes": 6273
+      "sha256": "628055f93b9f65b2c68dcced86b279f82473060dc2ab6d65b737965d16c898ae",
+      "sizeBytes": 15631
+    }
+  ],
+  "paragraphPolicy": {
+    "minSentences": 3,
+    "maxSentences": 5,
+    "scope": "Narrative body including abstract and explanatory captions; excludes structural titles, front matter, keywords, research-question items, table cells, code and bibliography entries."
+  },
+  "mappingExplanationPolicy": {
+    "requiredLayers": [
+      "native assertion",
+      "underlying DIM concept",
+      "individual donor concepts",
+      "exact MPSS binding",
+      "CSAPI concepts and SensorML/SWE representation",
+      "transformation and presentation",
+      "review outcome"
+    ],
+    "donorAttribution": [
+      "concept name or identifier",
+      "source edition",
+      "exact section or object",
+      "inline author-date citation",
+      "meaning contributed",
+      "reuse/adaptation/constraint or unestablished-equivalence status"
+    ],
+    "authorshipBoundary": "Distinguish established model lineage, source vocabulary, standard carriers, MERLIN-authored bindings and experiment choices."
+  },
+  "lineageExamples": [
+    {
+      "id": "SC-TEMP-01",
+      "standing": "Illustrative proposed temperature lineage; identity, subject, time and service execution remain incomplete"
+    },
+    {
+      "id": "SC-BATT-01",
+      "standing": "Illustrative proposed battery-percentage lineage and donor limits; no RFC object equivalence or power topology established"
     }
   ]
 }

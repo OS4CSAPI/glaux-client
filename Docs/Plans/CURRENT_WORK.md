@@ -1,9 +1,39 @@
 # Current client work
 
-## Maintained Smart Citizen experiment paper — 24 October 2026
+## Paper version 0.2 donor explanations and paragraph structure — 24 October 2026
+
+The owner clarified that every mapping must explain its CSAPI concepts and
+SensorML/SWE representation, underlying DIM concept, exact MPSS rule, and each
+individual donor-source concept invoked. [Paper v0.2](../Research/Studies/Smart_Citizen/README.md)
+now sets that requirement in a seven-layer mapping matrix and illustrates it with
+`SC-TEMP-01` and `SC-BATT-01`. The examples identify observation-concept lineage,
+source property and unit vocabularies, representation mechanisms, authored choices,
+and RFC battery/topology limits without claiming completed mappings or execution.
+
+The paper now contains twenty-two references and five tables alongside its two
+figures and two JSON listings. All narrative paragraphs, including the abstract
+and explanatory captions, have three to five sentences. The publication verifier
+enforces the requested range and reports paragraph locations and counts; the
+maintenance guide, experiment plan, indexes and AGENTS instructions preserve both
+requirements for later work.
+
+Verification passed for all 66 narrative/explanatory-caption paragraphs: 23 have
+three sentences, 33 have four, and 10 have five. All sixteen rendered Word pages
+were visually reviewed, and the illustrative lineage was checked against retained
+project evidence and primary sources. The publication checks confirmed twenty-two
+cited references, consistent listings and current Word inputs; repository checks
+confirmed all fourteen original artifacts and 292 local documentation links, with
+a clean whitespace check.
+
+This remains a protocol and preliminary assessment. The adapter, CSAPI publication,
+live run and screenshot comparison remain unexecuted, and the fourteen imported
+originals retain their existing bytes and versions. The deployed runtime remains
+`71297c97`, so this documentation increment requires no application upload.
+
+## Initial Smart Citizen experiment paper version 0.1 — 24 October 2026
 
 The owner requested an academic-style document that develops with the experiment.
-[Paper v0.1](../Research/Studies/Smart_Citizen/README.md) is now a drafted protocol
+[Paper v0.1](https://github.com/OS4CSAPI/glaux-client/blob/57a2d1b68ad5c30a0a005c6095306e050fa9e4a9/Docs/Research/Studies/Smart_Citizen/README.md) established a drafted protocol
 and preliminary source assessment, with a canonical Markdown manuscript and a
 generated Word edition. It contains an abstract, eleven numbered sections, nineteen
 CMOS 18 author-date references, two authored diagrams, four tables, and two explained

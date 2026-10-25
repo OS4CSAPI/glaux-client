@@ -7,13 +7,20 @@ The current collection is maintained on `work/details-view-20261023` while
 [PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
 
 **Latest research:** the maintained Smart Citizen paper, **Evaluating Sensor
-Information Preservation Through OGC Integration**, v0.1, 24 October 2026, is
+Information Preservation Through OGC Integration**, v0.2, 24 October 2026, is
 available as a [manuscript](Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md) and
 [Word edition](Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Docs/Research/Studies/Smart_Citizen/README.md) links the
 publication manifest, figures and listings. The paper develops a study protocol
 and preliminary source assessment; the proposed public source → adapter → CSAPI
 → Glaux experiment and matched interface comparison have not been executed.
+
+Version 0.2 adds a seven-layer mapping explanation matrix and the illustrative
+`SC-TEMP-01` and `SC-BATT-01` cases. Each mapping must explain its standard
+carriers, underlying DIM concept, exact MPSS rule, individually cited donor
+concepts and their reuse status, and project-authored choices. The maintenance
+guide also preserves the ongoing requirement for three to five sentences in
+each paper narrative paragraph, including abstract and caption explanations.
 
 The [candidate study](Docs/Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
 [access evidence](Docs/Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json), and

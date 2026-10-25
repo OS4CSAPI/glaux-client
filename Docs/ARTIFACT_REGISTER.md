@@ -60,7 +60,7 @@ revisions; they are not additional recovered originals in the 14-file manifest.
 | [Open sensor candidates for MERLIN](Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md) | 2026-10-24 | Completed candidate research and recommendations, including actual access checks, acquisition observations, UI references and limits. No donor-binding or conformance adoption. |
 | [Open sensor access evidence](Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json) | 2026-10-24 | 15 study-local records. Reviewed excerpts and available original-response fingerprints; not a full-response archive or executable fixture. |
 | [Smart Citizen experiment plan](Plans/SMART_CITIZEN_EXPERIMENT_PLAN.md) | 2026-10-24 | Proposed next work linking one public specimen to the PBI, wireframe, profile and DIM. Adapter, new page, purchase and live integration are not implemented. |
-| [Evaluating Sensor Information Preservation Through OGC Integration](Research/Studies/Smart_Citizen/MANUSCRIPT.md), v0.1; [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx) | 2026-10-24 | Maintained study protocol and preliminary source assessment with CMOS 18 author-date citations, figures and explained listings. Public source → adapter → CSAPI → Glaux is proposed, with replay/comparison before owned hardware. No executed adapter, run, publication, screenshot comparison or conformance result. |
+| [Evaluating Sensor Information Preservation Through OGC Integration](Research/Studies/Smart_Citizen/MANUSCRIPT.md), v0.2; [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx) | 2026-10-24 | Maintained study protocol and preliminary source assessment with CMOS 18 author-date citations, a seven-layer mapping explanation matrix, and illustrative `SC-TEMP-01`/`SC-BATT-01` lineage cases. Public source → adapter → CSAPI → Glaux is proposed, with replay/comparison before owned hardware. No executed adapter, run, publication, screenshot comparison or conformance result. |
 
 The new paper has stable artifact identity
 `glaux-artifact-smart-citizen-experiment-paper` in its own
@@ -69,6 +69,13 @@ The [paper maintenance guide](Research/Studies/Smart_Citizen/README.md) identifi
 the canonical Markdown source and generated Word edition and explains how they
 are updated together. This authored artifact is separate from the original
 14-file [import manifest](ARTIFACTS.json); it does not alter any imported bytes.
+
+Paper v0.2 contains 22 references, five tables, two figures, and two listings.
+Its ongoing mapping requirements cover standard carriers, DIM concepts, exact
+MPSS rules, individually cited donor concepts with locators and reuse status,
+and project-authored choices. Its narrative paragraphs, including abstract and
+caption explanations, contain three to five sentences; structural content is
+handled separately in the maintenance guide.
 
 The research preserves primary-source links in its own report and evidence record.
 The master bibliography/source register remains v0.10 and MPSS remains v0.3.5.

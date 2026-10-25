@@ -69,11 +69,23 @@
   The existing authorization covers the identified project artifacts; do not
   invent an additional approval gate for their import or routine maintenance.
 - Maintain the [Smart Citizen experiment paper](Docs/Research/Studies/Smart_Citizen/README.md)
-  as the experiment advances. Keep its canonical manuscript, generated Word
-  edition, CMOS 18 author-date references, figures, listings and separate
+  as the experiment advances; v0.2 is dated 24 October 2026. Keep its canonical
+  manuscript, generated Word edition, CMOS 18 author-date references, figures,
+  listings and separate
   publication manifest consistent. Preserve proposed-versus-executed standing;
   add screenshots and results only with actual source/run evidence. Do not
   fabricate outcomes or silently revise the retained MPSS v0.3.5 baseline.
+- Every mapping in the paper must explain its CSAPI resource/association and
+  SensorML/SWE carrier, underlying DIM concept and exact MPSS rule, and
+  project-authored choices. Attribute each individual donor concept with its
+  citation, edition and exact locator; state direct reuse, adaptation,
+  interpretive constraint, or unestablished equivalence. Follow the paper guide's
+  mapping explanation and concept-lineage requirements in subsequent editions.
+- Keep paper narrative paragraphs, including the abstract and explanatory
+  figure/table/listing captions, at three to five sentences. Headings, tables,
+  code and bibliographic entries remain structural. Preserve evidence standing
+  and meaningful prose rather than adding unsupported claims to meet the count;
+  apply the paragraph-counting conventions in the paper maintenance guide.
 - Keep executable tests and fixtures in code directories; link to them from
   documentation rather than maintaining competing copies.
 - Keep `Docs/Plans/CURRENT_WORK.md` current with the last verified implementation

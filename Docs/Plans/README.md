@@ -17,11 +17,15 @@ project status from an older package's folder named "current".
   and Glaux evaluation, with captured replay and comparisons; owned hardware later.
   No implementation or purchase yet.
 - [Maintained experiment paper](../Research/Studies/Smart_Citizen/MANUSCRIPT.md),
-  v0.1, 24 October 2026, and its
+  v0.2, 24 October 2026, and its
   [Word edition](../Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx):
-  protocol, preliminary source assessment and evidence-driven reporting framework.
-  The [paper guide](../Research/Studies/Smart_Citizen/README.md) covers maintenance;
-  experiment results and paired screenshots remain pending.
+  protocol, preliminary source assessment, seven-layer mapping explanations,
+  and illustrative `SC-TEMP-01`/`SC-BATT-01` lineage cases.
+  The [paper guide](../Research/Studies/Smart_Citizen/README.md) preserves the
+  requirements to explain carriers, DIM/MPSS meanings, individual donor concepts
+  with citations/locators/reuse status, and authored choices, and to keep narrative
+  paragraphs at three to five sentences. Experiment results and paired screenshots
+  remain pending.
 - [Cloudflare deployment](CLOUDFLARE_DEPLOYMENT.md): actual deployed commits and results.
 - [Codex deployment procedure](CODEX_VSCODE_HANDOFF.md): reusable upload steps;
   the documented power deployment is already complete.

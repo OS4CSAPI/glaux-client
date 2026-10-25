@@ -1,8 +1,8 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.1**, dated **24 October 2026** in
-America/New_York. This first edition is a study protocol and preliminary source
+Through OGC Integration**, version **0.2**, dated **24 October 2026** in
+America/New_York. This edition is a study protocol and preliminary source
 assessment. The adapter, CSAPI publication, live experiment, and interface
 comparison have not been executed.
 
@@ -27,11 +27,19 @@ comparison have not been executed.
 
 ## Current contents and pending evidence
 
-The first edition includes an abstract, eleven numbered sections, nineteen
-references, two figures, four tables, and two code listings. It covers the
+The current edition includes an abstract, eleven numbered sections, twenty-two
+references, two figures, five tables, and two code listings. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
+
+Version 0.2 adds a required explanation for every mapping and illustrative
+temperature and battery lineage cases. Each explanation connects the native
+assertion to the underlying DIM concept, exact MPSS rule, and CSAPI concepts and
+SensorML/SWE representation. Every individual donor concept invoked must be
+identified and cited, with its edition, exact locator, contribution, and reuse
+or adaptation limits. Source vocabularies, established model donors, standard
+carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
 Figures 3–5 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
@@ -48,6 +56,40 @@ with this sequencing.
 
 ## Updating an edition
 
+### Mapping explanations
+
+Apply manuscript Table 2 to every new or revised mapping, including metadata and
+relationships. Identify each donor concept individually; a generic citation to
+an entire RFC or a list of standards is insufficient. Record direct reuse,
+adaptation through a binding, an interpretive constraint, or an unestablished
+equivalence as appropriate. A source can have more than one role, but the paper
+must explain each contribution and any scope or meaning changed by the mapping.
+
+Use a stable study-local mapping identifier and preserve source, model, binding,
+standard-carrier, transformation, presentation, and review evidence together.
+When an attribution has not been verified, say so and identify the missing
+evidence. Do not infer historical donor lineage from similar labels or convert
+a proposed interpretation into an adopted profile rule. The illustrative
+`SC-TEMP-01` and `SC-BATT-01` discussions are incomplete execution cases, not
+claims that the full dataset is mapped or the service path has been run.
+
+### Paragraph structure
+
+Every narrative paragraph must contain at least three and at most five sentences.
+This includes the abstract and explanatory text after figure, table, and listing
+caption titles. Headings, front matter, keywords, research-question list items,
+table cells, code blocks, caption labels/titles, and bibliographic entries keep
+their structural formats. Revise for coherent reasoning rather than padding a
+paragraph to satisfy the count.
+
+The verifier applies a deterministic sentence check for the manuscript's Markdown
+style and reports the section, line, and opening words of any failing paragraph.
+It handles the current citation, abbreviation, decimal, link, and code patterns;
+editorial review still checks language and ambiguous cases. Inspect counts before
+building with `python3 scripts/verify-smart-citizen-paper.py --paragraph-report`.
+
+### Publication workflow
+
 Edit the manuscript and any affected listing, figure, and reference records in
 one change. Preserve the status of each assertion: source-reported, model-level
 documentation, integration-created fact, proposed interpretation, or unresolved.
@@ -59,7 +101,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.1 --date 2026-10-24
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.2 --date 2026-10-24
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply
@@ -72,7 +114,7 @@ python3 scripts/verify-smart-citizen-paper.py --refresh
 python3 scripts/verify-artifacts.py
 ```
 
-The paper verifier checks citations, reference agreement, listing consistency,
+The paper verifier checks paragraph lengths, citations, reference agreement, listing consistency,
 figure presence, document input fingerprints, and publication hashes. A manifest
 refresh cannot legitimize a Word file generated from older text, figures, or
 builder code. The Word file carries a combined fingerprint of those build inputs. The

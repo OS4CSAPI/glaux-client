@@ -10,12 +10,22 @@ commit containing this checkpoint and the files it verifies.
 
 **Latest research and planning checkpoint:** the owner requested a maintained
 academic-style paper documenting the experiment. The
-[Smart Citizen paper v0.1](../Research/Studies/Smart_Citizen/README.md) now contains
+[Smart Citizen paper v0.2](../Research/Studies/Smart_Citizen/README.md) now contains
 the protocol, preliminary source assessment, two explanatory figures, two JSON
-listings, and nineteen CMOS 18 author-date references. Its canonical manuscript,
+listings, and twenty-two CMOS 18 author-date references. Its canonical manuscript,
 generated Word edition, reference records, and publication manifest are maintained
 together. Planned source-interface and Glaux comparisons remain evidence slots.
 The paper is a new authored artifact, separate from the fourteen imported originals.
+
+The owner clarified that every mapping must explain both its standard
+representation and its underlying DIM concept, exact MPSS binding, and each
+individual donor concept supporting the interpretation. Version 0.2 records
+those requirements, a seven-layer explanation matrix, and illustrative
+temperature and battery lineage cases with explicit reuse and equivalence limits.
+The owner also requires three to five sentences in each narrative paragraph,
+including the abstract and explanatory captions, with structural entries retaining
+their respective formats. The paper verifier now enforces that paragraph policy;
+conceptual attribution continues to require review against actual sources.
 
 The preceding
 [candidate report](../Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),

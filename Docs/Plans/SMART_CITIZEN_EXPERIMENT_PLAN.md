@@ -96,6 +96,14 @@ definition, subject, unit, time meaning, OGC carrier, applicable MPSS binding,
 presentation decision, and unresolved question. Distinguish supplier facts,
 standard mechanisms, existing MERLIN rules, and new experiment choices.
 
+For every mapping, also explain its underlying DIM concept and each individual
+donor-source concept invoked, using the paper's mapping-explanation requirements.
+Give the donor term or identifier, edition, exact section or object, inline
+citation, and the meaning reused or adapted. Distinguish that contribution from
+the CSAPI resource and SensorML/SWE carrier, and identify project-authored choices
+or any equivalence that remains unestablished. A general list of standards or a
+JSON destination does not complete the semantic explanation.
+
 | Source concern | Proposed mapping work and boundary |
 | --- | --- |
 | Identity and model | Apply R01/R02 distinctions. The API documents that a physical device may be registered more than once. Neither the registration ID nor its UUID is automatically a manufacturer serial. Local integration resource URIs may identify our representations if their limited meaning is explicit. |
