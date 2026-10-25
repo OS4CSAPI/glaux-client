@@ -1,6 +1,6 @@
 # 03 — Proposed CSAPI resource graph and request design
 
-**Status:** Phase 4 complete for owner review. This design turns the reviewed Phase 1–3 mappings into a deterministic first-load graph. No adapter code, CSAPI write, Glaux change, application deployment, or MPSS v0.3.5 revision was performed while producing it.
+**Status:** Phase 4 design re-audited before Phase 5 against the actual MPSS v0.3.5 technical baseline and later research. Resource counts remain unchanged, but the current design now adds accepted R15 representation-source provenance and explicitly distinguishes the persistent aggregate Process System, reusable Procedure, and frozen query/response provenance. See [06_MODEL_CURRENCY_AUDIT.md](06_MODEL_CURRENCY_AUDIT.md). No adapter or server write has occurred.
 
 ## 1. Design objective and governing constraints
 
@@ -10,7 +10,7 @@ The design is grounded in:
 
 - frozen source evidence `20261025T024348Z` and the reviewed [source inventory](01_SOURCE_SPECIMEN_AND_INVENTORY.md);
 - the reviewed [Phase 3 mapping ledger](02_MAPPING_LEDGER.md);
-- MPSS v0.3.5, especially R01, R10, R11, R13, R16 and R17;
+- MPSS v0.3.5, especially R01–R02, R10–R11, R13, R15–R17 and the accepted identity/composition/provenance guidance informed by SAPIENT, ISA, The Open Group SOSA, Power and OMS research;
 - [OGC API — Connected Systems Part 1](https://docs.ogc.org/is/23-001/23-001.html) for Systems, Procedures, Sampling Features and Property definitions;
 - [OGC API — Connected Systems Part 2](https://docs.ogc.org/is/23-002/23-002.html) for DataStreams, observation schemas and Observations;
 - SensorML 3.0 / SWE Common 3.0 carriers selected by those standards; and
@@ -22,6 +22,7 @@ The graph follows four rules:
 2. **Use standard resources before project conventions.** Project-authored identifiers and derived-property definitions are explicit and do not replace standard resource semantics.
 3. **Make temporal projection visible.** Where the source supplies fewer temporal distinctions than CSAPI requires, the authored projection is documented rather than disguised as a source fact.
 4. **Design for the approved standard first, then record target-server constraints.** A permissive or incomplete implementation does not redefine the standard for this experiment.
+5. **Separate accepted profile rules from later research candidates.** A later donor or stress-test finding can trigger a review but is not a technical obligation until it is dispositioned into the accepted baseline.
 
 ## 2. Study identity policy
 
@@ -38,7 +39,7 @@ Study-owned feature UIDs use deterministic UUIDv5 URNs. The UUIDv5 namespace is 
 | SC-PROP-TEMP-AVG-001 | Study definition of one-hour-average air temperature | `https://github.com/OS4CSAPI/glaux-client/experiments/smart-citizen/property/air-temperature/hourly-average/v1` | `urn:uuid:e1e3a0a5-3e91-580c-9a9e-d12cde93cef8` |
 | SC-PROP-PM25-AVG-001 | Study definition of one-hour-average PM2.5 | `https://github.com/OS4CSAPI/glaux-client/experiments/smart-citizen/property/pm25/hourly-average/v1` | `urn:uuid:164f756c-a568-5983-b311-91f65c35fc15` |
 
-Local server IDs remain server-scoped implementation identifiers. Phase 5/6 shall record every assigned ID and shall not use it as a substitute for the semantic UID. Smart Citizen registration ID and UUID remain separately labeled source identifiers/provenance on SC-SYS-001.
+Local server IDs remain server-scoped implementation identifiers. Phase 5/6 shall record every assigned ID and shall not use it as a substitute for the semantic UID. Smart Citizen registration ID and UUID remain separately labeled source identifiers/provenance on SC-SYS-001, and SC-SYS-001 also carries the applicable MPSS v0.3.5 R15 **representation-source** group so source/adapter provenance is represented using the current accepted profile rather than prose alone.
 
 ## 3. Resource inventory
 
@@ -47,9 +48,9 @@ Local server IDs remain server-scoped implementation identifiers. Phase 5/6 shal
 | Local ID | CSAPI resource type | Intended identity / role | Source/mapping basis | Depends on | Create? | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | SC-PROC-MODEL-001 | Procedure | Reusable SCK2.3 hardware datasheet/model description | SC-ID-01; MPSS R01 | none | **Yes** | SensorML hardware-datasheet class; model designation/revision only where evidenced; no manufacturer/firmware inference |
-| SC-SYS-001 | System | Sensing-system instance represented by registration 19639 | SC-ID-01 | SC-PROC-MODEL-001 | **Yes** | `systemType=sosa:Sensor`; `assetType=Equipment`; System `typeOf/systemKind` → model Procedure; selected outputs declared |
+| SC-SYS-001 | System | Sensing-system instance represented by registration 19639 | SC-ID-01 | SC-PROC-MODEL-001 | **Yes** | `systemType=sosa:Sensor`; `assetType=Equipment`; System `typeOf/systemKind` → model Procedure; selected outputs declared; R15 representation-source provenance retained |
 | SC-PROC-AGG-001 | Procedure | Source-platform one-hour-average methodology | SC-TEMP-AGG-01; SC-PM25-AGG-01 | none | **Yes** | `procedureType=sosa:ObservingProcedure`; records `rollup=1h`, `function=avg`, `all_intervals=true` and inspected-code limits |
-| SC-SYS-PROC-001 | System | Source-platform processing System producing the two derived aggregate products | SC-TEMP-AGG-01; SC-PM25-AGG-01 | SC-PROC-AGG-001 | **Yes** | SensorML `SimpleProcess`; `systemType=sosa:Sensor`, `assetType=Process`; no location; `typeOf` → aggregation Procedure |
+| SC-SYS-PROC-001 | System | Persistent study representation of the source-platform data-transforming aggregation process/service | SC-TEMP-AGG-01; SC-PM25-AGG-01 | SC-PROC-AGG-001 | **Yes** | SensorML `SimpleProcess`; `systemType=sosa:Sensor`, `assetType=Process`; no location; `typeOf` → reusable aggregation Procedure; **not one query execution** |
 | SC-DS-001 | DataStream | Current air-temperature output | SC-TEMP-01 | SC-SYS-001 | **Yes** | `type=observation`; `outputName=airTemperature`; `live=false` for frozen replay |
 | SC-DS-002 | DataStream | Current PM2.5 output | SC-PM25-01 | SC-SYS-001 | **Yes** | `type=observation`; `outputName=pm25`; `live=false` |
 | SC-DS-003 | DataStream | Current relative-humidity output | SC-HUM-01 | SC-SYS-001 | **Yes** | `type=observation`; `outputName=relativeHumidity`; `live=false` |
@@ -74,7 +75,7 @@ The first deterministic load therefore contains **2 Procedures, 2 Systems, 10 Da
 | SC-PROP-TEMP-AVG-001 | Derived Property | `http://www.eionet.europa.eu/gemet/concept/281` | One-hour average air temperature produced by the source-platform aggregation procedure | **No** |
 | SC-PROP-PM25-AVG-001 | Derived Property | `http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001` | One-hour average PM2.5 mass concentration produced by the source-platform aggregation procedure | **No** |
 
-The logical UIDs above are used as the SWE `definition` values of the aggregate result schemas. They are documented here with their base properties and processing procedure so the derived meaning is not reduced back to the unqualified base property.
+The logical UIDs above are used as the SWE `definition` values of the aggregate result schemas. Each definition is an **experiment-authored qualified variable meaning**: one-hour mean of the named base property under SC-PROC-AGG-001, with the stream's retained unit. This is compatible with the foundational-semantics/I-ADOPT finding that a curated variable definition may carry missing qualification through native SWE semantics, but it is not an I-ADOPT or QUDT ontology-runtime claim.
 
 A local Property resource is **not a prerequisite** for a SWE semantic-definition URI. If a later target supports Property creation cleanly, these definitions can be materialized as CSAPI DerivedProperty resources without changing the identity of the aggregate DataStreams or observations.
 
@@ -89,11 +90,12 @@ A local Property resource is **not a prerequisite** for a SWE semantic-definitio
 | Battery System | **Do not create** | Battery percentage supplies no independent battery identity or R16 supply relationship. |
 | Wi-Fi interface/antenna System | **Do not create** | RSSI label/measurement does not establish interface identity, interface type, operational state or directed link topology. |
 | SD-card System | **Do not create** | Source supplies a categorical parent-System indicator, not independently identified equipment. |
-| Separate source-registration resource | **Do not create** | Device ID/UUID are retained as source identifiers/provenance on the represented System; a second resource would falsely suggest a separate domain entity is required by CSAPI. |
+| Separate source-registration resource | **Do not create** | Device ID/UUID are retained through the represented System's source/provenance content, including the accepted R15 representation-source mechanism; a second resource would falsely suggest a separate domain entity is required by CSAPI. |
 | Current-value source-platform processing System | **Do not create in this phase** | Current public values have implementation evidence of normalization/calibration-like source processing, but the exact production procedure/revision is not established. The physical SCK study System remains the reported-output producer and processing remains explicit provenance. |
 | ControlStream/Command | **Do not create** | The first experiment is read/integration focused and no physical command evidence is selected. |
 | Local Property resources | **Do not create on the first 52°North load** | The exact target revision exposes no POST route for `/properties`; see target constraints below. |
-| Process-input edge from SC-SYS-001 to SC-SYS-PROC-001 | **Do not invent** | The aggregate service consumes Smart Citizen native history, not a reviewed CSAPI-to-CSAPI input link. Source query/capture provenance belongs in the Procedure/execution record. |
+| Process-input edge from SC-SYS-001 to SC-SYS-PROC-001 | **Do not invent** | The aggregate service consumes Smart Citizen native history, not a reviewed CSAPI-to-CSAPI input link. Source query/capture provenance belongs in the Procedure and frozen acquisition/execution record. |
+| ProcessingExecution common resource | **Do not create** | Later OSCAR research correctly distinguishes a reusable Procedure, persistent process/software implementation and one execution/derivation activity, but MPSS v0.3.5 has no accepted universal ProcessingExecution resource/binding and the Smart Citizen source exposes no stable execution identity. The frozen request/response remains provenance. |
 
 ## 5. System and Procedure content
 
@@ -108,6 +110,7 @@ A local Property resource is **not a prerequisite** for a SWE semantic-definitio
 - Source identifiers retained:
   - Smart Citizen Device ID `19639`;
   - Smart Citizen Device UUID `02612831-3387-4cb2-8bed-cf87670ca1e5`.
+- MPSS R15 representation-source group: populate only with v0.3.5 catalogue terms/code-space values supported by the source evidence, identifying the Smart Citizen native source/specification and the MERLIN adapter that authors the standardized representation. This is representation provenance, not a physical component, gateway or source-standard conformance claim.
 - Selected outputs declared on the System: `airTemperature`, `pm25`, `relativeHumidity`, `barometricPressure`, `noiseLevelA`, `batteryLevel`, `wifiRssi`, `sdCardPresence`.
 - No manufacturer, firmware revision, physical serial, position, component inventory, Deployment, interface topology or power topology is inferred.
 
@@ -124,17 +127,17 @@ The selected outputs belong on the System instance rather than being asserted as
 
 ### 5.3 SC-SYS-PROC-001 — source-platform aggregate producer
 
-The aggregate values are not attributed to the physical kit. They are represented as observations produced by a separate software/process System:
+The aggregate values are not attributed to the physical kit. They are represented as observations produced by a separate **persistent software/process System**:
 
 - SensorML class: **SimpleProcess**.
-- CSAPI system type: **sosa:Sensor** because this software process produces derived observations/results.
-- CSAPI asset type: **Process** because it transforms prior observation data.
+- CSAPI system type: **sosa:Sensor**. CSAPI's Sensor definition includes software that can respond to input data composed from prior Observation results and generate a Result, which fits an aggregation process at this scope.
+- CSAPI asset type: **Process** because it transforms data coming from other systems.
 - UID: `urn:uuid:df8a8c07-c3fb-573f-9f42-68ca78f17eae`.
 - System kind/typeOf: SC-PROC-AGG-001.
 - Outputs: `airTemperatureHourlyMean` and `pm25HourlyMean`.
 - No position is supplied.
 
-This combination follows CSAPI's distinction between a System's main semantic role and its asset type: system-type tagging does not limit a System's API behavior, while `assetType=Process` identifies a data-transforming process.
+This System is **not a particular history-query execution**. SC-PROC-AGG-001 is the reusable method, SC-SYS-PROC-001 is the persistent study representation of the data-transforming implementation, and the frozen request/response headers/body constitute execution/integration provenance. This distinction reconciles the Phase 4 design with later processing-execution research without inventing a universal execution resource that MPSS v0.3.5 does not define.
 
 ### 5.4 SC-PROC-AGG-001 — reusable aggregation method
 
@@ -236,6 +239,7 @@ Response-wide `sample_size=1439` and `sample_size=288` remain query/processing p
 | Relationship ID | Subject | Predicate / role | Object | Time scope | Supporting mapping | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | SC-REL-001 | SC-SYS-001 | systemKind / SensorML `typeOf` | SC-PROC-MODEL-001 | description scope | SC-ID-01 / R01 | **create** |
+| SC-REL-001A | SC-SYS-001 | MPSS `representation-source` provenance | Smart Citizen native source + MERLIN adapter reference | representation scope | SC-ID-01 / R15 | **create as descriptive profile content** |
 | SC-REL-002…009 | SC-SYS-001 | produces DataStream / `outputName` correspondence | SC-DS-001…008 | frozen specimen / later same output identities | current mappings / R10-R11 | **create** |
 | SC-REL-010 | SC-SYS-PROC-001 | systemKind / `typeOf` | SC-PROC-AGG-001 | processing representation | aggregate mappings | **create** |
 | SC-REL-011…012 | SC-SYS-PROC-001 | produces DataStream | SC-DS-009…010 | frozen history query | aggregate mappings / R10-R11 | **create** |
@@ -285,8 +289,8 @@ flowchart LR
     AGG --> AGGOBS
     AGG -. "result definition" .-> PROP
 
-    SRC -. "source identifiers / current-value provenance" .-> SCK
-    SRC -. "history query / processing provenance" .-> AGGP
+    SRC -. "R15 representation-source / source identifiers" .-> SCK
+    SRC -. "history query / execution provenance" .-> AGGP
 
     SF["SamplingFeature<br/>NOT CREATED"]
     DEP["Deployment<br/>NOT CREATED"]
@@ -403,19 +407,19 @@ The target provider explicitly rejects/does not implement cascade deletion for D
 
 | Carried question | Phase 4 resolution |
 | --- | --- |
-| What should identify the CSAPI System? | A deterministic study-owned UUIDv5 URN identifies the **representation of the sensing system known through registration 19639**. Smart Citizen ID/UUID remain source identifiers, not physical serials. |
+| What should identify the CSAPI System? | A deterministic study-owned UUIDv5 URN identifies the **representation of the sensing system known through registration 19639**. Smart Citizen ID/UUID remain source identifiers, not physical serials, and R15 representation-source records the native-source/adapter provenance. |
 | Must environmental observations have a SamplingFeature? | **No.** The association remains absent because the source does not identify a defensible sampling feature. |
 | What becomes current-reading `resultTime`? | Use the same source reading instant as phenomenonTime as an explicitly documented coincident-time projection. Do not use acquisition time. |
 | What is RSSI's DataStream type? | **Leave optional `type` absent** until the observed subject is established; do not force status/observation from the label. |
-| Who produces the hourly averages? | SC-SYS-PROC-001, a software/process System, using SC-PROC-AGG-001. The physical kit is not credited with source-platform aggregation. |
+| Who produces the hourly averages? | SC-SYS-PROC-001, a persistent software/process System, using reusable SC-PROC-AGG-001. The physical kit is not credited with source-platform aggregation, and one HTTP query execution is not conflated with either the persistent System or reusable Procedure. |
 | What becomes aggregate `resultTime`? | Use the frozen history HTTP response `Date` as an explicit source-response proxy for the on-demand derived result; retain the tuple timestamp as phenomenonTime and do not invent interval bounds. |
 | Are aggregate Property resources required? | No. Stable authored derived-property URIs carry the meaning for the first load; target Property creation is currently unreliable. |
 | Should the current source-platform processing path get its own System? | Not in the first graph. Evidence is insufficient to identify an exact production transformation Procedure; preserve it as processing provenance while the SCK study System remains the reported current-output producer. |
 
 ## 14. Completion gate
 
-**Phase 4 design gate: satisfied for owner review.**
+**Phase 4 design gate: re-satisfied after current-model currency audit.**
 
 A reviewer can trace every proposed created resource to a reviewed Phase 3 mapping, explain every relationship, identify every authored identity/time projection, and see which tempting resources/relationships are deliberately absent. Creation dependencies and child-first cleanup order are deterministic. Known target-server constraints are recorded without changing the standard model or writing to the server.
 
-The next phase is **not automatically authorized by this document**. After owner discussion, Phase 5 may implement an adapter that emits this reviewed graph first from the frozen specimen. If the review changes any identity, subject, temporal or aggregate-processing decision, update this record and its decision log before code is authoritative.
+Phase 5 remains blocked until the paper/current-work closeout for the currency audit is complete. When Phase 5 resumes, the adapter must emit this **audited** graph from the frozen specimen; it may not revert to the pre-audit graph or silently omit the current R15 provenance content.

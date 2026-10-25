@@ -14,6 +14,7 @@ The workbook does not replace the paper, MPSS profile, DIM research, or implemen
 | 5–7 | 04_EXECUTION_LOG.md | Record adapter, server, and Glaux executions with exact revisions and evidence |
 | 8–10 | 05_EVALUATION_AND_FINDINGS.md | Record UI/PBI evaluation, discrepancies, and dispositions |
 | 11 | 06_TRANSFERABILITY.md | Compare a second producer against the same concepts and behavior |
+| Corrective audit | 06_MODEL_CURRENCY_AUDIT.md | Prove Phase 1–4 currency against MPSS v0.3.5 and the later research corpus; record retained decisions and required corrections before Phase 5 |
 | All phases | DECISIONS.md | Preserve material scope, mapping, implementation, and interpretation decisions |
 
 ## Evidence rules
@@ -33,4 +34,4 @@ A workbook item becomes paper evidence only when its standing is clear enough to
 
 ## Status
 
-Phases 1–3 are complete and reviewed for the representative first Smart Citizen mapping set. **Phase 4 is now complete for owner review:** the resource graph defines study UIDs, 2 Systems, 2 Procedures, 10 DataStreams/schemas, 56 frozen Observations, temporal projections, explicit non-resources/relationships, target-server constraints, creation/retrieval order and child-first cleanup. No CSAPI write, adapter implementation, Glaux change, application deployment or profile revision occurred in Phase 4. Phase 5 remains paused until the owner reviews the design and authorizes implementation.
+Phases 1–4 have now undergone a **corrective model-currency audit** against the actual MPSS v0.3.5 baseline and the wider donor/research corpus. The frozen source evidence and most semantic decisions are retained; the Phase 4 graph is corrected to use R15 representation-source provenance and to distinguish the persistent aggregate Process System, reusable Procedure and query/execution provenance. No CSAPI write, adapter implementation, Glaux change, application deployment or profile revision has occurred. Phase 5 remains blocked until the paper and current-work records are rebuilt from this audited baseline.

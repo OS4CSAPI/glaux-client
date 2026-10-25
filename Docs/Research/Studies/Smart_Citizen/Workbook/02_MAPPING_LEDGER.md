@@ -1,12 +1,14 @@
 # 02 — Mapping ledger
 
-**Status:** Phase 3 has been reviewed for the representative first mapping set. Nine current-state mappings and two aggregate-history mappings are documented for resource-graph design; unresolved identity, observed-subject and result-time questions remain explicit. These are not yet executable adapter mappings and do not amend MPSS v0.3.5; the owner review gate precedes Phase 4.
+**Status:** Phase 3 semantic mappings have been re-audited before Phase 5 against the actual MPSS v0.3.5 technical baseline and the later research corpus. The core meanings remain, but current-donor traceability and selected carrier details are corrected by [06_MODEL_CURRENCY_AUDIT.md](06_MODEL_CURRENCY_AUDIT.md). These mappings are not adapter authority unless the mapping ledger, Phase 4 graph and model-currency audit agree.
 
 ## Required chain
 
 **native source assertion → underlying DIM concept → individual donor concept(s) → MPSS rule/binding → CSAPI resource/relationship → SensorML/SWE carrier → transformation → presentation implication → review outcome.**
 
 A source vocabulary carried by Smart Citizen is recorded separately from a historical/model donor. An OGC encoding mechanism is recorded as a standard carrier even when its conceptual lineage also traces to SOSA/SSN. MERLIN-authored bindings and experiment-authored identity or naming choices remain explicitly ours.
+
+**Current-model currency rule:** MPSS v0.3.5 is the accepted technical baseline, but the wider research corpus is checked separately for findings that reinforce, challenge or remain outside that baseline. Investigation does not equal adoption: a later donor finding becomes a technical obligation only through an explicit disposition. The phase-by-phase proof is in [06_MODEL_CURRENCY_AUDIT.md](06_MODEL_CURRENCY_AUDIT.md).
 
 ## Mapping register
 
@@ -57,6 +59,8 @@ The experiment will represent the sensing-system instance known through registra
 | RFC 8348 | model-name | RFC 8348 (2018), §7.1 ietf-hardware module | Separates vendor/model designation from serial/instance identity | donor concept adapted by MPSS technical description |
 | RFC 8348 | hardware-rev | RFC 8348 (2018), §7.1 | Supports treating hardware/model revision separately from model name | donor concept adapted by MPSS technical description |
 | RFC 8348 | mfg-name | RFC 8348 (2018), §7.1 | Constrains interpretation: manufacturer is a separate field and should be absent when not established | interpretive constraint; **not populated from the frozen source** |
+| SAPIENT v2 / ISA Phase 2 | native sender/source identity versus enduring physical identity | BSI Flex 335 v2.0:2024-03 §§4.10–4.11, 6.2.4; accepted MPSS v0.3.5 R01/R15 rationale | A platform registration or message sender must not silently replace the persistent physical System identity | accepted interpretive refinement in MPSS v0.3.5; **no native SAPIENT/ISA runtime implied** |
+| The Open Group SOSA | physical versus logical composition/host responsibility | C239 Edition 1.1; accepted MPSS v0.3.5 R02 rationale | Logical/source dependency does not establish physical component containment | accepted interpretive constraint; no wholesale SOSA implementation |
 
 Smart Citizen hardware.name, hardware.version and registration identifiers are **source vocabulary/data**, not historical DIM donors. The OGC System/Procedure and SensorML typeOf mechanisms below are target-standard carriers.
 
@@ -68,6 +72,7 @@ Smart Citizen hardware.name, hardware.version and registration identifiers are *
 - The mapping uses source-reported model designation SmartCitizen Kit 2.3 and revision/version 2.3.
 - It does **not** populate manufacturer, firmware revision, physical serial, or asset ID from inference.
 - R02/component modeling is not invoked merely because 21 channels are present; equipment composition is a separate mapping problem.
+- **R15 representation-source provenance** is applicable because this OGC System is a MERLIN representation derived from a Smart Citizen source entity through an adapter. That group records source/adapter provenance and must not be confused with physical identity, gateway mediation or source-standard conformance.
 
 ## OGC / SensorML representation
 
@@ -77,7 +82,8 @@ Proposed target structure:
 - System systemKind association → Procedure;
 - SensorML System typeOf → Procedure;
 - SensorML technical-description CharacteristicList using existing MPSS terms for model designation/revision;
-- source Device ID and UUID retained as source identifiers/provenance, not silently promoted to manufacturer serial.
+- source Device ID and UUID retained as source identifiers/provenance, not silently promoted to manufacturer serial;
+- an MPSS v0.3.5 **representation-source** group records the applicable Smart Citizen source entity/specification and the MERLIN adapter responsible for the standardized representation, using only terms/code spaces actually defined by the accepted profile.
 
 OGC API — Connected Systems Part 1 distinguishes System instances from Procedure/model descriptions and requires a URI-valued unique identifier for feature resources. The exact System and Procedure UIDs will be selected in the resource-graph phase. **The source registration UUID will not automatically become the CSAPI System UID**, because that would imply an enduring physical-identity assertion the source evidence does not establish.
 
@@ -92,7 +98,7 @@ Likely Resource Details use:
 
 ## Review outcome
 
-**Status: proposed for resource-graph review.**
+**Status: current-model audit retained the semantic decision; Phase 4 carrier corrected.**
 
 Accepted semantic decisions:
 - System instance and reusable model are distinct;
@@ -100,8 +106,10 @@ Accepted semantic decisions:
 - product model/version can support technical-description content;
 - manufacturer remains unpopulated unless independently evidenced.
 
-Open decision:
-- choose a stable CSAPI System UID representing the study's system identity while preserving the Smart Citizen registration UUID as a source identifier. The UID choice belongs in Phase 4 and must survive replay without claiming a manufacturer-issued identity.
+Phase 4 resolution:
+- use the deterministic study UID defined in the resource graph for the MERLIN representation;
+- preserve Smart Citizen registration identifiers as source identifiers/provenance; and
+- carry source/adapter provenance through the accepted R15 representation-source rule rather than inventing a separate source-registration resource.
 
 ---
 
@@ -436,13 +444,13 @@ This is a **derived source-platform observation product**, not a direct claim th
 
 ## Proposed OGC representation
 
-The preferred Phase 3 design represents the Smart Citizen/Kairos aggregation path as a separate CSAPI System with `assetType=Process`, linked to a Procedure describing the retained `rollup=1h` / `function=avg` transformation. A derived Property resource can identify an hourly-average air-temperature product using the native air-temperature definition as `baseProperty`; `statistic` remains unset unless a stable reviewed URI for the hourly-mean statistic is deliberately adopted. The aggregate DataStream is produced by the processing System, while the source registration/sensor/component/query remain provenance for the data that processing consumed.
+The audited design represents the Smart Citizen/Kairos aggregation path as a separate CSAPI System with `assetType=Process`, linked to a reusable Procedure describing the retained `rollup=1h` / `function=avg` transformation. The System represents the **persistent data-transforming process/service implementation**, not one history-query execution; the Procedure is the reusable computational/observing method. This remains standards-defensible because CSAPI explicitly permits Process assets and its Sensor concept includes software that responds to input data composed from prior Observation results and generates a Result. A particular frozen request/response remains integration/execution provenance rather than being invented as a common ProcessingExecution resource.
 
 Each aggregate value is retained exactly with its returned tuple timestamp. The source documentation establishes the requested grouping interval and average function, but the experiment does not manufacture exact phenomenon-time interval boundaries around the returned timestamp; separate resultTime also remains unresolved. The response-wide `sample_size=1439` is preserved as processing/query provenance and is not copied into every aggregate as a per-bin sample count.
 
 ## Review outcome
 
-**Status: reviewed with processing and temporal qualification.** The principal decision is that the aggregate producer cannot be silently attributed to the physical kit. Phase 4 must decide the exact processing-System/Procedure UIDs, property identity, and executable phenomenonTime/resultTime representation supported by the target server.
+**Status: retained after current-model audit with processing/execution clarification.** The aggregate producer remains separate from the physical kit. Phase 4 supplies the process-System/Procedure identities and time policy; one query execution is retained as provenance rather than promoted to an unapproved common resource.
 
 ---
 
@@ -458,13 +466,13 @@ This is the PM2.5 counterpart to SC-TEMP-AGG-01: a derived source-platform produ
 
 ## Proposed OGC representation
 
-Use the same source-platform processing System/Procedure concept as the temperature aggregate, but a distinct derived PM2.5 Property/DataStream because the base property, unit, sensor association, sample count and returned tuple times differ. Preserve `sample_size=288`, query parameters and component ID as provenance rather than per-observation result fields unless an explicitly reviewed parameter schema is selected. Do not infer that identical rollup requests imply identical physical sampling cadence.
+Use the same **persistent source-platform Process System + reusable Procedure** concept as the temperature aggregate, but a distinct derived PM2.5 property/DataStream because the base property, unit, sensor association, sample count and returned tuple times differ. Do not confuse that persistent process representation with one HTTP history-query execution; request/response details remain provenance. Preserve `sample_size=288`, query parameters and component ID as provenance rather than per-observation result fields unless an explicitly reviewed parameter schema is selected. Do not infer that identical rollup requests imply identical physical sampling cadence.
 
 The returned tuple timestamp is preserved exactly and no exact one-hour phenomenon interval is invented until the target time model is reviewed. Separate resultTime remains unresolved. If the target server cannot represent the required processing provenance without distortion, omission of these aggregate products from the first load is preferable to attributing them to the physical kit.
 
 ## Review outcome
 
-**Status: reviewed with processing and temporal qualification.** The aggregate-history semantics are sufficiently characterized for Phase 4 resource-graph design, while exact time and processing-resource identities remain open.
+**Status: retained after current-model audit with processing/execution clarification.** Exact Phase 4 identities and time projections are recorded in the resource graph; later OSCAR processing-execution research does not justify inventing a new execution resource for a source that supplies no stable execution identity.
 
 ---
 
@@ -493,16 +501,19 @@ The returned tuple timestamp is preserved exactly and no exact one-hour phenomen
 - SWE Common 3.0: <https://docs.ogc.org/is/24-014/24-014.html>.
 - SOSA/SSN 2017, especially §4.3.2: <https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/>.
 - RFC 8348 §7.1: <https://www.rfc-editor.org/rfc/rfc8348.html>.
+- Current accepted MPSS baseline: v0.3.5, including its owner-approved Power/ISA/SAPIENT/OMS-informed increments and current R01–R20 text.
+- Current-model audit: [06_MODEL_CURRENCY_AUDIT.md](06_MODEL_CURRENCY_AUDIT.md).
+- Later research/stress-test evidence is treated as research evidence unless explicitly incorporated into the accepted profile.
 
 ## Phase 4 resolution cross-reference
 
 Phase 4 does not rewrite the reviewed native meanings above; it records the executable graph decisions needed to carry them into CSAPI. The authoritative design is [03_CSAPI_RESOURCE_GRAPH.md](03_CSAPI_RESOURCE_GRAPH.md).
 
-- **Identity:** SC-ID-01 is represented by study System UID `urn:uuid:a8e68038-11f9-57a0-92ae-641e70fbbbd8`; the Smart Citizen registration ID/UUID remain source identifiers rather than manufacturer identity.
+- **Identity:** SC-ID-01 is represented by study System UID `urn:uuid:a8e68038-11f9-57a0-92ae-641e70fbbbd8`; the Smart Citizen registration ID/UUID remain source identifiers rather than manufacturer identity, and the standardized System carries the applicable v0.3.5 R15 representation-source provenance.
 - **Current environmental subject:** no SamplingFeature is created. The absence is intentional and standard-valid.
 - **Current times:** for SC-TEMP-01, SC-PM25-01, SC-HUM-01, SC-PRESS-01, SC-NOISE-01, SC-BATT-01, SC-RSSI-01 and SC-SD-01, `phenomenonTime` and `resultTime` are both populated from the channel source reading time as a documented coincident-time projection. Acquisition time is not used.
 - **RSSI:** SC-RSSI-01 remains intentionally without a DataStream `type`; Phase 4 did not invent the observed subject.
-- **Aggregate producer:** SC-TEMP-AGG-01 and SC-PM25-AGG-01 are produced by a separate process System (`sosa:Sensor`, asset type Process) using a reusable aggregation Procedure.
+- **Aggregate producer:** SC-TEMP-AGG-01 and SC-PM25-AGG-01 are produced by a separate persistent process System (`sosa:Sensor`, asset type Process) using a reusable aggregation Procedure. The process System is not one query execution; the frozen request/response remains execution/integration provenance.
 - **Aggregate times:** returned tuple `recorded_at` becomes phenomenonTime; the frozen history response `Date` header becomes an explicitly qualified source-response resultTime proxy. No one-hour interval bounds are invented.
 - **Derived properties:** stable authored UUID URIs carry the hourly-average property definitions in SWE result schemas; local CSAPI Property resources are not required by the first load because the exact target does not expose safe Property creation.
 - **Current source processing:** normalization/calibration-like platform handling remains processing provenance; no separate current-value processing System is created without stronger production evidence.
