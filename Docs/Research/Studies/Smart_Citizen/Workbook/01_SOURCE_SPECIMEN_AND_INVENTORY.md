@@ -123,17 +123,43 @@ Both series return 24 hourly aggregate tuples, but the reported tuple timestamps
 | Wi-Fi RSSI | SC-SRC-021 | Equipment/communications-related telemetry distinct from environmental observations |
 | SD-card presence | SC-SRC-007 | Coded device-status indicator; source explicitly says `0` can mean absent **or corrupted** |
 
-## 7. Open source-characterization questions before formal mapping
+## 7. Resolved source-characterization questions and carried uncertainties
 
-1. Confirm the exact semantics of the current response's `created_at` and `updated_at` fields for this Device record, and keep them separate from physical installation/service dates.
-2. Resolve how Smart Citizen's sensor `ancestry` field in the current response corresponds to the API documentation's `parent_id` terminology and whether the referenced parent catalogue records need to be captured for mapping.
-3. Decide whether the source location should be mapped as a platform-provided location of the registered Device, a deployment location, or remain source context until its applicability interval and acquisition method are known.
-4. Confirm whether `state=has_published` and system tag `online` should remain source-platform status only; no current evidence justifies translating either into MERLIN health/readiness.
-5. Confirm the intended semantic meaning of particle-number unit `#/0.1l`, TPS unit `um`, and the ultraviolet `uW/cm2` channels before any SWE unit normalization.
-6. Confirm whether the selected historical tuple timestamp represents the start, end, or another representative time of each rollup group; the API reference calls it `recorded_at` but does not define group-boundary semantics.
+### Platform record times
+
+The Smart Citizen API documentation defines `created_at` as the date/time the Device record was created and `updated_at` as the date/time the Device information was last updated. The current API source at commit [`25a524cbfb036f8950c247b847d8884a4e776297`](https://github.com/fablabbcn/smartcitizen-api/tree/25a524cbfb036f8950c247b847d8884a4e776297) updates `last_reading_at`, current data and `state` with `update_columns` when readings arrive; `raw_storer.rb` explicitly notes that this occurs “without touching updated_at.” These fields are therefore platform-record metadata and must not be mapped as physical installation, commissioning, service, or latest-observation times.
+
+### Sensor ancestry and Device-to-Sensor association
+
+The API documentation describes parent/sub-sensor relationships, while the v0 Device response exposes the underlying `ancestry` field. The current [Sensor model](https://github.com/fablabbcn/smartcitizen-api/blob/25a524cbfb036f8950c247b847d8884a4e776297/app/models/sensor.rb) uses Rails `has_ancestry`; therefore values such as temperature/humidity ancestry `54` and SEN5X particulate ancestry `192` are source catalogue hierarchy, not physical component serials. Historical `component_id` values remain a separate Device-to-Sensor association identity. Parent catalogue records should be retained as supplementary source evidence when their descriptions are used in equipment/model mapping, but the child channel hierarchy is already sufficient to prevent treating every returned channel as a separate physical device.
+
+### Location standing
+
+Smart Citizen documentation identifies Device location as platform location metadata and allows user-selected precision; the current [Device model](https://github.com/fablabbcn/smartcitizen-api/blob/25a524cbfb036f8950c247b847d8884a4e776297/app/models/device.rb) can fuzz latitude/longitude when precise location is not enabled. The public response filters the `precise_location` policy value, so the study cannot establish whether the returned coordinates are exact or fuzzed. The frozen location is therefore retained as **source-platform location/exposure context**. It is not yet promoted to an MPSS Deployment/emplacement assertion because source method, accuracy and applicability interval are not established.
+
+### Source platform state and online tag
+
+Smart Citizen `state=has_published` means the Device has stored/published data; it is not a MERLIN equipment-health assessment. The current Device model computes the `online` system tag from `last_reading_at` being within the preceding 60 minutes, and otherwise emits `offline`. Both values are therefore source-platform status semantics. The experiment may preserve them as source facts but must not translate them into mission readiness, communications-link state, or physical-operating condition without a separately supported mapping.
+
+### Historical aggregation and tuple time
+
+The Smart Citizen implementation sends the requested aggregation function and rollup to KairosDB with `align_sampling: true`, then returns Kairos result timestamps as UTC `recorded_at` values. When `all_intervals=true` and the rollup is at least ten minutes, its code also generates expected interval times and merges close real/empty entries using a tolerance of ten percent of the rollup period. This implementation evidence explains why the frozen 1-hour histories can contain timestamps slightly offset from exact hour boundaries. For the experiment, preserve the returned tuple time exactly and the explicit `rollup=1h` / `function=avg`; do **not** manufacture exact phenomenon-time interval boundaries until the target time model and source aggregation semantics are reviewed together.
+
+### Deferred nonselected-channel unit normalization
+
+The current representative mapping set does not require normalization of `#/0.1l` particle-number units, `um` typical-particle-size units, or `uW/cm2` ultraviolet units. Those source strings and their missing unit-definition URIs are preserved in the native inventory. Unit normalization for those channels is explicitly deferred rather than silently guessed.
+
+### Remaining mapping-level uncertainties
+
+The source characterization is sufficient to begin formal mapping, but several questions properly move into the mapping ledger rather than blocking Phase 2:
+
+1. whether the OGC System identity should use the Smart Citizen registration UUID directly, preserve it only as a source identifier, or use an integration-local identity while keeping the source UUID as an external identifier;
+2. how to represent the environmental feature of interest for air temperature, humidity, pressure and particulate observations without inventing a physical SamplingFeature from a display label;
+3. whether and how parent Smart Citizen Sensor catalogue records should become SensorML components or reusable Procedure/model descriptions;
+4. whether source-platform location should remain metadata only or can support a bounded Deployment/SamplingFeature after its spatial meaning and applicability are established.
 
 ## 8. Phase gates
 
 **Phase 1 — Freeze specimen: complete.** The exact current device body, response headers, two bounded history responses, request URLs, sizes and SHA-256 values are retained under the frozen-evidence commit.
 
-**Phase 2 — Characterize native source: substantially complete for the selected first mapping set.** The channel inventory, identity scopes, temporal differences, historical aggregation and initial open questions are recorded. Formal source→DIM/MPSS/OGC mapping should not begin until the open characterization questions relevant to each selected case are resolved or explicitly carried forward as uncertainty.
+**Phase 2 — Characterize native source: complete for the representative first mapping set.** The channel inventory, identity scopes, platform-state semantics, location standing, temporal differences, source aggregation implementation and deferred nonselected-channel questions are recorded. Remaining identity/feature-of-interest/component questions are now formal mapping questions and are carried into Phase 3 rather than being resolved implicitly in code.
