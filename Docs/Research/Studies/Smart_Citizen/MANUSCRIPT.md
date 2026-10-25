@@ -635,6 +635,7 @@ This appendix provides one place to recover recurring shorthand after the paper 
 | **ISA** | Integrated Sensor Architecture; Army sensor-architecture source family studied by the project |
 | **MIMOSA** | Machinery Information Management Open Systems Alliance |
 | **OMS** | Observations, Measurements and Samples |
+| **OPC** | Open Platform Communications; used here principally in the OPC UA device-model family |
 | **OPC UA** | Open Platform Communications Unified Architecture |
 | **OSUS** | Open Standard for Unattended Sensors |
 | **PA-DIM** | Process Automation Device Information Model |
