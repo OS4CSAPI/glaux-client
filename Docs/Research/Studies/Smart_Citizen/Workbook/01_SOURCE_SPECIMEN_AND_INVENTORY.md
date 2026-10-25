@@ -162,7 +162,16 @@ The source characterization is sufficient to begin formal mapping, but several q
 3. whether and how parent Smart Citizen Sensor catalogue records should become SensorML components or reusable Procedure/model descriptions;
 4. whether source-platform location should remain metadata only or can support a bounded Deployment/SamplingFeature after its spatial meaning and applicability are established.
 
-## 8. Phase gates
+## 8. Supplemental source-vocabulary evidence
+
+A corrected supplemental capture was completed at `2026-10-25T03:00:10Z` and is retained at [`Docs/Research/Evidence/Smart_Citizen/Vocabulary/20261025T030010Z`](../../../Evidence/Smart_Citizen/Vocabulary/20261025T030010Z/). It freezes the Smart Citizen Measurement records actually referenced by the representative mapping set—Air Temperature `1`, Relative Humidity `2`, Noise Level `4`, battery `7`, PM2.5 `14`, Barometric Pressure `25`, RSSI `78`, and SD-Card Presence `79`—plus parent Sensor catalogue records `52`, `54`, `57`, and `192`.
+
+The corrected source vocabulary establishes several useful native meanings. Battery is defined by Smart Citizen as the SCK remaining battery level in percentage; RSSI is the received signal-strength indication measuring power present in a received radio signal; and SD-card presence uses `1` for inserted while `0` means either absent **or corrupted**. The SHT31 parent record describes a digital relative-humidity and air-temperature sensor, the SEN5X parent describes a light-scattering particulate sensor with additional NOx/VOC indexes, and the ICS43432 parent describes a digital MEMS microphone with custom audio processing.
+
+The first supplemental capture at `2026-10-25T02:57:59Z` requested incorrect Measurement IDs for four intended concepts because the workflow lookup list was authored incorrectly. The frozen device specimen was unaffected; the error was limited to the supplemental vocabulary lookup. The incorrect capture is retained as audit history, the workflow was corrected, and the corrected vocabulary set above is the authoritative supplemental source for mapping.
+
+## 9. Phase gates
+
 
 **Phase 1 — Freeze specimen: complete.** The exact current device body, response headers, two bounded history responses, request URLs, sizes and SHA-256 values are retained under the frozen-evidence commit.
 
