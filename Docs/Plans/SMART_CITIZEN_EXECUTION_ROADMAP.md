@@ -18,16 +18,16 @@ The experiment must preserve the distinction among native source facts, document
 | CSAPI server | Existing Oracle-hosted 52°North connected-systems-pygeoapi deployment is the intended target |
 | Client | Glaux Client exists and is deployed; full Smart Citizen connected-resource traversal is not yet implemented |
 | Resource Details frame | Recovered 560 × 440 CSS-pixel working canvas is deployed |
-| Research paper | Paper v0.9 adds an explicit DIM/Profile architecture and lineage explanation to the reviewed Phase 1–4 source, mapping, and resource-graph evidence; adapter/server/client results remain pending |
+| Research paper | Paper v0.10 is the corrective model-currency edition: accepted MPSS v0.3.5 is separated from the wider v0.10 research corpus, Phases 1–4 are audited, and the paper architecture is rebuilt before Phase 5 |
 | Completed before Phase 4 | Frozen specimen, complete representative source characterization, corrected vocabulary evidence, reviewed current/aggregate mapping ledger |
-| Completed through Phase 4 | Owner Phase 1–3 review gate; reviewed CSAPI resource graph and request/cleanup design (no server writes) |
-| Not yet complete | Phase 5 adapter, server load, connected Glaux retrieval, matched UI comparison |
+| Completed through Phase 4 | Frozen source/characterization retained; mapping ledger and resource graph re-audited against MPSS v0.3.5 plus later research; corrected R15 provenance/process-execution design; no server writes |
+| Not yet complete | Paper v0.10 corrective closeout verification; Phase 5 adapter; server load; connected Glaux retrieval; matched UI comparison |
 
 ## Governing sequence
 
 Do not begin adapter implementation by guessing target structures from source labels. Complete and review the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
 
-**25 October current checkpoint:** Phases 1–4 and the paper v0.9 DIM/Profile architecture closeout are complete and verified. Deterministic Phase 5 adapter work has not started; it is the next experiment phase when the owner resumes implementation.
+**25 October current checkpoint:** a proof-level model-currency audit has revalidated/corrected Phases 1–4 against MPSS v0.3.5 and the wider research corpus. Paper v0.10 corrective reconstruction is in progress and Phase 5 deterministic adapter work remains blocked until that closeout is verified.
 
 ### Phase 1 — Freeze the experiment specimen
 
@@ -99,8 +99,8 @@ Repeat a bounded subset with an independent producer such as AirGradient, then l
 
 ## Immediate next steps
 
-1. Retain paper v0.9 as the explanatory/research baseline and the Phase 4 resource graph as the semantic implementation baseline.
-2. When the owner resumes the experiment, begin **Phase 5 only**: implement deterministic replay of the frozen specimen against the reviewed graph. Do not perform CSAPI server writes or live polling during the deterministic adapter phase.
+1. Complete and verify paper v0.10 from the model-currency audit; the audited mapping ledger and Phase 4 resource graph are the semantic implementation baseline.
+2. After the v0.10 closeout and owner review, begin **Phase 5 only**: implement deterministic replay of the frozen specimen against the audited graph. Do not perform CSAPI server writes or live polling during the deterministic adapter phase.
 3. Keep the Phase 4 creation/retrieval/cleanup order authoritative for implementation; code may not silently add resources, subjects, relationships or fallback time semantics.
 4. After Phase 5 tests and homework records are complete, pause again for discussion before Phase 6 server loading.
 

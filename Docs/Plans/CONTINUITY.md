@@ -8,40 +8,10 @@ and registered SHA-256 fingerprints. Catalogue and repository-local documentatio
 link verification passed on 24 October 2026. Git history records the publication
 commit containing this checkpoint and the files it verifies.
 
-**Latest research and planning checkpoint:** the owner requested a maintained
-academic-style paper documenting the experiment. The
-[Smart Citizen paper v0.6](../Research/Studies/Smart_Citizen/README.md) adds a dedicated experimental-server section and an early
-illustrated overview of the environmental-monitoring system and selected public
-case, alongside the protocol and preliminary source assessment. Its canonical manuscript,
-generated Word edition, reference records, and publication manifest are maintained
-together. Planned source-interface and Glaux comparisons remain evidence slots.
-The paper is a new authored artifact, separate from the fourteen imported originals.
+**Latest research and planning checkpoint:** the Smart Citizen experiment has undergone a corrective model-currency audit before Phase 5. The audit is preserved in [06_MODEL_CURRENCY_AUDIT.md](../Research/Studies/Smart_Citizen/Workbook/06_MODEL_CURRENCY_AUDIT.md) and proves which Phase 1–4 decisions remain valid against the accepted MPSS v0.3.5 technical baseline and the wider v0.10 donor/research corpus. Phase 1 frozen evidence and Phase 2 source characterization are retained; Phase 3 core mappings are retained with current donor traceability; Phase 4 retains its resource count with accepted R15 representation-source provenance plus explicit process/Procedure/execution distinctions.
 
-The server section records the pygeoapi/52°North lineage, Oracle endpoint, tested commit/image, deployment adaptations, bounded preservation rationale, and backend/persistence details still requiring capture. The authentic SCK 2.3 photograph illustrates the model, while public registration
-19639 identifies the selected source record. The registration's actual physical
-installation remains unverified; the image does not establish its appearance,
-placement, or installed components. The immediate experiment uses public readings,
-with an owned kit and independent AirGradient comparison remaining later extensions.
+The maintained [Smart Citizen paper v0.10](../Research/Studies/Smart_Citizen/README.md) is the corrective research narrative. It no longer treats the older profile-era source-selection table as the complete donor history: accepted MPSS rules are separated from later accepted, rejected, deferred, conditional, source-gated and residual findings across ISA, SAPIENT, The Open Group SOSA, OSUS, OMS, IEEE 1451/TEDS, SOSA/SSN, I-ADOPT, QUDT/UCUM/SWEET, OSCAR and the broader research corpus. The paper now explains the evidence-to-design reconciliation and R01–R20 relationship model before introducing Smart Citizen; detailed acronyms and terms are in appendices. Phase 5 adapter implementation, CSAPI writes and new Glaux behavior remain unexecuted.
 
-The owner clarified that every mapping must explain both its standard
-representation and its underlying DIM concept, exact MPSS binding, and each
-individual donor concept supporting the interpretation. Version 0.2 established
-those requirements, a seven-layer explanation matrix, and illustrative
-temperature and battery lineage cases with explicit reuse and equivalence limits.
-The owner also requires three to five sentences in each narrative paragraph,
-including the abstract and explanatory captions, with structural entries retaining
-their respective formats. The paper verifier now enforces that paragraph policy;
-conceptual attribution continues to require review against actual sources.
-
-The preceding
-[candidate report](../Research/Reports/OPEN_SENSOR_CANDIDATES_2026-10-24.md),
-[15-record access evidence](../Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json),
-and [proposed experiment plan](SMART_CITIZEN_EXPERIMENT_PLAN.md) preserve that work.
-The current intended sequence is public-data capture and mapping, adapter/CSAPI
-publication and retrieval, then a reproducible presentation comparison; an owned
-kit is a later extension. Mapping and implementation have not been executed.
-The original 14 files and technical versions retain their standing. The deployed
-runtime remains the template revision recorded below.
 
 ## Purpose and authority
 
@@ -77,7 +47,7 @@ Use the following records for their stated responsibilities:
 | --- | --- |
 | Main technical profile | [MPSS v0.3.5, 17 October 2026](../Design/MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx), including the four recorded approved bounded increments. This remains a working technical draft with remaining design choices; repository publication does not make it an adopted external standard. |
 | Connected example and definition catalogue | [v0.3.5, 17 October 2026](../Design/MPSS/MERLIN_Profile_v0.3.5_Connected_Example_and_Definitions_17OCT2026.zip). The records are synthetic examples; the provisional `/0.3/` identifiers remain unchanged. |
-| Standards-pedigree primer | [v0.5, 17 October 2026](../Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.5_17OCT2026.docx), an informative companion. Its version is not a technical profile v0.5. |
+| Standards-pedigree primer | [v0.6, 17 October 2026](../Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.6_17OCT2026.docx), an informative companion. Its version is not a technical profile v0.6. |
 | Master research bibliography and source register | v0.10, 22 October 2026: 140 persistent source identities and 29 workbook worksheets. Exact files are linked in the Artifact Register. |
 | Recovered continuity documents | PITON v4.6 and update plan v1.6, 22 October 2026. They retain the research checkpoint; this note carries later status and sequencing. |
 | Details View sources | Requirements v0.8, dated 8 October and amended 9 October; Semantic Presentation and Interaction Guide v0.5, dated 8 October; and the 55-page Working Views packet named for 10 October, with equipment-review pages dated 11 October. Their recorded proposal and application-guidance boundaries remain visible. |

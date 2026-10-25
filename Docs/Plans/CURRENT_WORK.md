@@ -1,6 +1,18 @@
 # Current client work
 
 
+## Smart Citizen corrective model-currency / paper v0.10 closeout — 25 October 2026
+
+The owner identified a material research-continuity failure in paper v0.9: the paper had summarized an earlier, narrower profile-era donor table as though it represented the current DIM/MPSS research program. A proof-level corrective audit is now complete in [06_MODEL_CURRENCY_AUDIT.md](../Research/Studies/Smart_Citizen/Workbook/06_MODEL_CURRENCY_AUDIT.md). The audit distinguishes the frozen Smart Citizen source evidence, accepted MPSS v0.3.5 technical rules, the larger v0.10 research corpus, and experiment-specific authored transformations instead of treating any one summary as authority for all four.
+
+The audit **did not invalidate the experiment wholesale**. Phase 1 frozen evidence and Phase 2 source characterization are retained; Phase 3 retains its core semantic mappings with repaired current-donor traceability; Phase 4 retains the 2-System / 2-Procedure / 10-DataStream / 56-Observation resource count. Required corrections are now in the mapping ledger and resource graph: accepted R15 representation-source provenance is carried on SC-SYS-001; the aggregate process System, reusable aggregation Procedure and one frozen query/execution are explicitly distinct; authored aggregate-property definitions state their base property/statistical/procedure/authorship scope.
+
+Paper v0.10 is being rebuilt from that audited baseline. It explicitly distinguishes accepted MPSS v0.3.5 rules from the wider v0.10 research corpus; restores later ISA, SAPIENT v2, The Open Group SOSA, IEEE 1451/TEDS, OMS, SOSA/SSN, I-ADOPT, QUDT/UCUM/SWEET and OSCAR work with their actual standing; places the DIM/research synthesis before the Smart Citizen case; moves acronyms and definitions to appendices; removes the standalone power-special-case narrative; and replaces the v0.9 conceptual figure with one evidence-to-design diagram plus three UML-style R01–R20 relationship diagrams.
+
+**Current gate:** Phase 5 remains blocked. Complete the v0.10 build, repository verification, and full-page visual inspection first; then stop for owner review. No adapter code, CSAPI server write, Glaux behavior change, deployment, or MPSS v0.3.5 revision is part of this corrective closeout.
+
+
+
 ## Smart Citizen paper v0.9 DIM/Profile architecture closeout — 25 October 2026
 
 Before Phase 5 begins, the owner identified that the paper evaluated the MERLIN domain information model and Managed Physical Sensing Systems profile without adequately explaining that work near the front of the paper. Version 0.9 corrects that structural deficiency by adding a dedicated section before the experimental infrastructure covering the problem/purpose, domain-model versus application-profile versus OGC-binding versus implementation layers, the eight whole-system information subjects, bounded donor/reuse lineage, the R01–R20 relationship/binding method, reusable group contracts, and generic versus profile-aware consumption.

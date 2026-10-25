@@ -2,20 +2,45 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.9",
+  "version": "0.10",
   "documentDate": "2026-10-25",
   "editorialTimezone": "America/New_York",
-  "standing": "Study protocol with reviewed Phase 1–4 source, mapping, and resource-graph evidence plus an explicit DIM/Profile architecture; deterministic adapter, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
+  "standing": "Corrective model-currency revision: current DIM/MPSS research architecture plus reviewed Phase 1–4 Smart Citizen evidence and audited target design; deterministic adapter, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 45,
+  "referenceCount": 51,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
   "figures": [
     {
       "number": 1,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_research_reconciliation.svg",
+      "standing": "Authored evidence-to-design reconciliation diagram distinguishing donor research, explicit disposition, accepted MPSS v0.3.5 rules, residual research, and implementation feedback"
+    },
+    {
+      "number": 2,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_core_relationships.svg",
+      "standing": "Authored UML-style explanatory relationship diagram for MPSS R01-R12; not a normative UML metamodel or complete schema"
+    },
+    {
+      "number": 3,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_mpss_comms_power.svg",
+      "standing": "Authored UML-style explanatory relationship diagram for MPSS R13-R17, including representation-source provenance, communications, mediation, and power"
+    },
+    {
+      "number": 4,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_04_mpss_lifecycle.svg",
+      "standing": "Authored UML-style explanatory relationship diagram for MPSS R18-R20 condition, service, responsibility, and lifecycle"
+    },
+    {
+      "number": 5,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
+      "standing": "Authored proposed Smart Citizen experiment architecture; not deployed topology"
+    },
+    {
+      "number": 6,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_kit_23.jpg",
       "standing": "Official Smart Citizen Kit 2.3 model reference photograph; not a verified image of public registration 19639",
       "sourcePage": "https://docs.smartcitizen.me/hardware/kit/",
@@ -24,32 +49,22 @@
       "changes": "None to original image bytes; proportionate display scaling only"
     },
     {
-      "number": 2,
-      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_architecture.svg",
-      "standing": "Authored conceptual architecture showing research/donor evidence, the domain information model, MPSS application-profile/binding layer, OGC representation stack, and generic/profile-aware consumption"
-    },
-    {
-      "number": 3,
+      "number": 7,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_server_lineage.svg",
       "standing": "Authored server lineage and study-role diagram; factual lineage plus proposed experiment path"
     },
     {
-      "number": 4,
+      "number": 8,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_client_architecture.svg",
       "standing": "Authored client architecture and interpretation boundary; Smart Citizen connected-resource traversal remains planned"
     },
     {
-      "number": 5,
-      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
-      "standing": "Authored proposed architecture; not deployed topology"
-    },
-    {
-      "number": 6,
+      "number": 9,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_model.svg",
-      "standing": "Authored conceptual model; not executed resource mapping"
+      "standing": "Authored Smart Citizen-specific conceptual distinctions; not executed resource mapping"
     },
     {
-      "number": 7,
+      "number": 10,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_platform_basic_exploration.png",
       "standing": "Unchanged first-party Smart Citizen core-platform documentation screenshot; historical kit 14410 example, not registration 19639",
       "sourcePage": "https://docs.smartcitizen.me/guides/getting-started/onboarding-your-kit/",
@@ -58,7 +73,7 @@
       "changes": "None to original image bytes; proportionate display scaling only"
     },
     {
-      "number": 8,
+      "number": 11,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/smart_citizen_custom_dashboard.png",
       "standing": "Unchanged first-party Smart Citizen custom-dashboard documentation screenshot; historical SCK2.1 example",
       "sourcePage": "https://docs.smartcitizen.me/data/data-tools/",
@@ -67,16 +82,16 @@
       "changes": "None to original image bytes; proportionate display scaling only"
     },
     {
-      "number": 9,
+      "number": 12,
       "standing": "Planned contemporaneous selected-registration/source-interface capture; no image supplied"
     },
     {
-      "number": 10,
+      "number": 13,
       "standing": "Planned matched generic and profile-aware Glaux capture; no image supplied"
     },
     {
-      "number": 11,
-      "standing": "Phase 4 reviewed resource design exists; executed CSAPI server relationships and traced source-to-display evidence remain planned"
+      "number": 14,
+      "standing": "Audited Phase 4 resource design exists; executed CSAPI server relationships and traced source-to-display evidence remain planned"
     }
   ],
   "screenshotRecordFields": [
@@ -112,29 +127,23 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed for v0.9: the paper now explains the MERLIN domain information model and MPSS profile before the experimental infrastructure, including the model/profile/binding/implementation distinction, eight whole-system information subjects, bounded donor/reuse lineage, R01-R20 binding method, reusable group contracts, profile signaling, generic versus profile-aware consumption, and a separate technical standards baseline.",
-    "wordRender": "Completed: the final v0.9 Word edition renders to 44 pages. Every page was visually accounted for at full-page resolution. The first v0.9 render was inspected page by page; review found a label-spacing defect in the new DIM/Profile figure and one stale vendor-figure cross-reference. After correction and rebuild, rendered-page SHA-256 comparison showed only pages 11 and 38 changed; both final pages were re-inspected and are clean. No clipping, overlap, broken tables, missing figures, or unresolved editorial QA defects were observed in the final edition.",
+    "technicalReview": "Source revision prepared for v0.10 after proof-level model-currency audit. The paper now distinguishes accepted MPSS v0.3.5 technical rules from the wider v0.10 research corpus, explicitly includes later donor/stress-test work, moves Smart Citizen after the model/research explanation, removes the privileged standalone power subsection, moves acronyms/terms to appendices, and replaces the v0.9 architecture figure with one evidence-to-design diagram plus three R01-R20 UML-style relationship diagrams.",
+    "wordRender": "Pending v0.10 GitHub Actions rebuild and complete rendered-page visual inspection.",
     "reviewDate": "2026-10-25",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 44,
+    "renderedPageCount": null,
     "paragraphAudit": {
-      "result": "Passed in GitHub Actions run 40206986860.",
-      "detail": "The repository verifier accepted the maintained three-to-five-sentence narrative/explanatory-caption policy after the v0.9 architecture revision."
-    },
-    "paperBuildWorkflow": {
-      "status": "success",
-      "sourceBranch": "work/details-view-20261023",
-      "sourceCommit": "22a05d08d66df5f8a50c7f911db5839beb184aff",
-      "generatedCommit": "a73285ae82a159b79e5b1d1711f4afedbdd12e10",
-      "runId": 40206986860,
-      "artifactName": "smart-citizen-paper-v0.9",
-      "artifactId": 12604011395,
-      "artifactDigest": "sha256:d1105e4daabdf99f821f1e99bcd3d162a4505f3c35641f0681546edcf13268a7",
-      "wordSha256": "39307527446579faab6de7c3a11479fe576fd6d8fad1501386582ff85a52f97d"
+      "result": "Pending v0.10 build verification.",
+      "detail": "The repository verifier remains authoritative for the three-to-five-sentence narrative/explanatory-caption policy."
     },
     "acronymAudit": {
-      "result": "Passed in GitHub Actions run 40206986860.",
-      "detail": "The maintained acronym policy passed. R01-R20 is explicitly defined as local MPSS relationship/binding shorthand rather than being exempted or mistaken for an OGC-native relationship name."
+      "result": "Pending v0.10 build verification.",
+      "detail": "Acronyms now live in Appendix A; uncommon shorthand remains expanded near first substantive use and the verifier must use the appendix as the maintained inventory."
+    },
+    "paperBuildWorkflow": {
+      "status": "pending v0.10 build",
+      "sourceBranch": "work/details-view-20261023",
+      "artifactName": "smart-citizen-paper-v0.10"
     }
   },
   "revisionHistory": [
@@ -190,6 +199,12 @@
       "date": "2026-10-25",
       "predecessorCommit": "b661e3646b5499e62465e84b195c293b4ac86d62",
       "change": "Add a dedicated early-paper explanation of the MERLIN domain information model and MPSS profile: why the work exists, domain-model/application-profile/OGC-binding/implementation separation, eight whole-system information subjects, bounded donor/reuse lineage, R01–R20 binding method, generic versus profile-aware consumption, and a new conceptual architecture figure; split the technical OGC baseline into its own section and keep Phase 5 unexecuted."
+    },
+    {
+      "version": "0.10",
+      "date": "2026-10-25",
+      "predecessorCommit": "f2af5465ebfbe63dd2b06887cf1d72a7291ef121",
+      "change": "Correct the paper after a proof-level model-currency audit: distinguish accepted MPSS v0.3.5 rules from the larger v0.10 research corpus; incorporate later ISA, SAPIENT, The Open Group SOSA, OMS, IEEE 1451/TEDS, SOSA/SSN, I-ADOPT, QUDT/UCUM/SWEET and OSCAR research with explicit standing; reorder the paper so research/model architecture precedes the Smart Citizen case; move acronyms/definitions to appendices; remove the privileged standalone power example; add the currency-audit result and R15 representation-source correction; replace the v0.9 model figure with one research-disposition diagram and three UML-style R01-R20 relationship views; keep Phase 5 unexecuted."
     }
   ],
   "files": [
@@ -302,10 +317,28 @@
       "sizeBytes": 309762
     },
     {
-      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_architecture.svg",
-      "role": "authored-dim-profile-architecture-figure",
-      "sha256": "8a57e7961f88e4ccc8e74d1cc5c84d7a562d1ada08635715629079f3ec1ad1cc",
-      "sizeBytes": 6131
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_research_reconciliation.svg",
+      "role": "authored-research-reconciliation-figure",
+      "sha256": "",
+      "sizeBytes": 0
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_mpss_core_relationships.svg",
+      "role": "authored-mpss-core-relationship-figure",
+      "sha256": "",
+      "sizeBytes": 0
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_mpss_comms_power.svg",
+      "role": "authored-mpss-comms-power-relationship-figure",
+      "sha256": "",
+      "sizeBytes": 0
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_04_mpss_lifecycle.svg",
+      "role": "authored-mpss-lifecycle-relationship-figure",
+      "sha256": "",
+      "sizeBytes": 0
     }
   ],
   "paragraphPolicy": {
@@ -335,12 +368,20 @@
   },
   "lineageExamples": [
     {
+      "id": "SC-ID-01",
+      "standing": "Re-audited against MPSS v0.3.5 and later ISA/SAPIENT/The Open Group SOSA research; study UID identifies the MERLIN representation, source identifiers remain source-scoped, and R15 representation-source provenance is required"
+    },
+    {
       "id": "SC-TEMP-01",
-      "standing": "Reviewed formal temperature lineage from frozen specimen; no SamplingFeature is invented and Phase 4 uses the channel source time for both phenomenonTime and resultTime as a disclosed coincident-time projection"
+      "standing": "Reviewed formal temperature lineage from frozen specimen; no SamplingFeature is invented and the current-time policy is an explicit coincident-time projection"
     },
     {
       "id": "SC-BATT-01",
-      "standing": "Reviewed battery-percentage lineage and donor limits; parent-System status mapping accepted, with no RFC object equivalence or power topology, and Phase 4 applies the same disclosed coincident-time projection"
+      "standing": "Reviewed battery-percentage lineage; R17 parent-System/status observation retained, with no R16 power topology or independent battery identity inferred"
+    },
+    {
+      "id": "SC-TEMP-AGG-01 / SC-PM25-AGG-01",
+      "standing": "Persistent process System and reusable aggregation Procedure retained after later processing-execution research; the frozen query/response remains execution/integration provenance rather than a new common resource"
     }
   ],
   "systemIdentificationPolicy": {
@@ -355,7 +396,7 @@
   },
   "paragraphAudit": {},
   "acronymPolicy": {
-    "sectionHeading": "## 2 Acronyms and abbreviations",
+    "sectionHeading": "## Appendix A Acronyms and abbreviations",
     "minOccurrences": 2,
     "required": [
       "API",
@@ -391,7 +432,20 @@
       "UV",
       "VIM",
       "W3C",
-      "R01-R20"
+      "R01-R20",
+      "AAS",
+      "I-ADOPT",
+      "ISA",
+      "MIMOSA",
+      "OMS",
+      "OPC",
+      "OSUS",
+      "PA-DIM",
+      "SAPIENT",
+      "SNRA",
+      "TEDS",
+      "UCUM",
+      "SWEET"
     ],
     "ignoreExact": [
       "GET",
@@ -413,6 +467,6 @@
       "^SD$",
       "^A$"
     ],
-    "editorialRule": "Expand uncommon acronyms on first substantive use where practical and keep the maintained table current as new recurring shorthand is introduced."
+    "editorialRule": "Keep the appendix synchronized with recurring manuscript shorthand, expand uncommon acronyms near first substantive use, and do not let the appendix interrupt the opening narrative."
   }
 }

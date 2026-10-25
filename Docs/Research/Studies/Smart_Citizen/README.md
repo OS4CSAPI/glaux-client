@@ -1,8 +1,8 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.9**, dated **25 October 2026** in
-America/New_York. This edition adds an explicit early-paper explanation of the MERLIN domain information model and Managed Physical Sensing Systems profile to the reviewed Phase 1–4 evidence baseline. The deterministic adapter, CSAPI publication, connected Glaux retrieval, and matched interface comparison have not been executed.
+Through OGC Integration**, version **0.10**, dated **25 October 2026** in
+America/New_York. This corrective edition rebuilds the paper from the current model-currency audit: MPSS v0.3.5 is the accepted technical baseline, the larger v0.10 research corpus is separately represented with its accepted/rejected/deferred/gated findings, and the reviewed Phase 1–4 Smart Citizen design has been corrected where current research required it. The deterministic adapter, CSAPI publication, connected Glaux retrieval, and matched interface comparison have not been executed.
 
 ## Read and maintain the paper
 
@@ -32,6 +32,10 @@ Detailed engineering/research homework is intentionally maintained outside the p
 
 ## Current contents and pending evidence
 
+Version 0.10 supersedes the v0.9 DIM/Profile explanation after a proof-level model-currency audit showed that v0.9 had summarized an earlier, narrower donor table as though it represented the current research program. The corrected paper now starts with the research-to-design reconciliation method and explicitly includes later bounded studies such as Army ISA, SAPIENT v2, The Open Group SOSA, IEEE 1451/TEDS, OMS, SOSA/SSN, I-ADOPT, QUDT/UCUM/SWEET, and OSCAR with their actual accepted, rejected, deferred, conditional, source-gated, or residual standing. It then explains the accepted MPSS v0.3.5 relationship model before introducing Smart Citizen as the real-source test case.
+
+The v0.10 paper adds one evidence-to-design diagram and three UML-style R01–R20 relationship diagrams. It moves the detailed Smart Citizen Kit description to the case-study section after the model/research explanation, moves Acronyms and Terms/Definitions to appendices, removes the standalone “power as a discriminating example” framing, and records the model-currency audit result that retained Phases 1–2, retained the core Phase 3 semantics with repaired traceability, and retained the Phase 4 resource count with R15 representation-source and processing/execution corrections. Phase 5 remains blocked until this edition is rebuilt and visually verified.
+
 Version 0.9 makes the object being evaluated understandable before the experimental server and client are introduced. It separates the domain information model, application profile, OGC binding, and implementation layers; explains the eight connected whole-system information subjects; summarizes the bounded donor/reuse method; explains how R01–R20, reusable group contracts, semantic definitions, and profile signaling connect domain meaning to OGC representations; and distinguishes competent generic access from profile-aware reconstruction. A new conceptual architecture figure and three new explanatory tables make those relationships visible without turning the paper into a duplicate of the full MPSS technical draft.
 
 Version 0.8 records the reviewed Phase 4 Connected Systems resource graph in addition to the frozen source specimen and reviewed Phase 1–3 mappings. It documents the two-System/two-Procedure design, ten DataStreams and schemas, fifty-six frozen Observations, explicit non-resources, deterministic UUIDv5 study identities, current/aggregate time projections, and bounded 52°North target constraints without claiming that any of those resources have been written to the server. The paper now reports source, mapping, and design results separately from the still-unexecuted adapter, server round trip, connected-client traversal, and matched interface evaluation.
@@ -42,7 +46,7 @@ The formal mappings continue to use frozen specimen `20261025T024348Z`; the earl
 
 Version 0.6 establishes the vendor-presentation baseline before Glaux implementation, adding two unchanged first-party Smart Citizen UI screenshots, documented source-provider intent, a reconstruction-question table, exact source/rights records, and reserved contemporaneous/CSAPI/Glaux comparison positions. Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
 
-The current edition includes an abstract, fifteen numbered sections, a maintained acronym table, cited source definitions, eight retained figures, thirteen tables, and two code listings; detailed counts are verified from the maintained source rather than copied manually. It covers the
+The current edition includes an abstract, fourteen numbered sections, two appendices, eleven retained figures, seventeen tables, and two code listings; detailed counts are verified from the maintained source rather than copied manually. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
@@ -63,7 +67,7 @@ identified and cited, with its edition, exact locator, contribution, and reuse
 or adaptation limits. Source vocabularies, established model donors, standard
 carriers, MERLIN-authored bindings, and experiment choices retain distinct roles.
 
-Figures 9–11 reserve places for the actual vendor interface, matched generic and
+Figures 12–14 reserve places for the actual vendor interface, matched generic and
 profile-aware Glaux views, and implemented resource relationships. Add them only
 with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
@@ -80,7 +84,7 @@ with this sequencing.
 
 ### Mapping explanations
 
-Apply manuscript Table 8 to every new or revised mapping, including metadata and
+Apply manuscript Table 11 to every new or revised mapping, including metadata and
 relationships. Identify each donor concept individually; a generic citation to
 an entire RFC or a list of standards is insufficient. Record direct reuse,
 adaptation through a binding, an interpretive constraint, or an unestablished
@@ -97,7 +101,7 @@ claims that the full dataset is mapped or the service path has been run.
 
 ### Acronyms and abbreviations
 
-Keep the maintained acronym table synchronized with the manuscript. Expand uncommon acronyms on first substantive use where practical; when a source provides a specific expansion, preserve that source wording instead of substituting a familiar alternative. Product/model identifiers are not automatically acronyms, and project/product names whose expansion is not established should say so rather than inventing one.
+Keep Appendix A synchronized with the manuscript. Expand uncommon acronyms on first substantive use where practical; when a source provides a specific expansion, preserve that source wording instead of substituting a familiar alternative. Product/model identifiers are not automatically acronyms, and project/product names whose expansion is not established should say so rather than inventing one.
 
 The verifier requires the core acronym inventory declared in the publication manifest and scans recurring uppercase shorthand in narrative prose. When a legitimate new acronym appears repeatedly, add it to the table rather than adding a verifier exception. Use exclusions only for structural identifiers such as mapping IDs, relationship IDs, HTTP methods, and equipment model numbers.
 
@@ -139,7 +143,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.9 --date 2026-10-25
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.10 --date 2026-10-25
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply
