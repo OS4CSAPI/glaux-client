@@ -17,7 +17,7 @@ project status from an older package's folder named "current".
   and Glaux evaluation, with captured replay and comparisons; owned hardware later.
   No implementation or purchase yet.
 - [Maintained experiment paper](../Research/Studies/Smart_Citizen/MANUSCRIPT.md),
-  v0.4, 24 October 2026, and its
+  v0.5, 24 October 2026, and its
   [Word edition](../Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx):
   experimental CSAPI server lineage/deployment section, early illustrated environmental-monitoring overview, protocol, preliminary
   assessment, seven-layer mapping explanations, and illustrative

@@ -7,7 +7,7 @@ the 24 October import is not a new research increment.
 ## Maintained Smart Citizen experiment paper
 
 **Evaluating Sensor Information Preservation Through OGC Integration**, version
-**0.4**, dated **24 October 2026**, is the working paper for the proposed experiment.
+**0.5**, dated **24 October 2026**, is the working paper for the proposed experiment.
 Read the [canonical manuscript](Studies/Smart_Citizen/MANUSCRIPT.md) or
 [generated Word edition](Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 The [paper guide](Studies/Smart_Citizen/README.md) describes maintenance, and its
@@ -22,7 +22,7 @@ is public source → adapter → CSAPI → Glaux, with captured replay and match
 interface comparisons supporting evaluation. Owned hardware is a later means of
 filling physical-context gaps.
 
-Version 0.4 adds a dedicated experimental-server section and server-lineage figure. It identifies the tested 52°North/pygeoapi revision, Oracle endpoint, image digest, deployment adaptations, bounded comparison rationale, and unresolved backend/persistence configuration. Version 0.3 added an early illustrated environmental-monitoring system overview.
+Version 0.5 adds the experimental Glaux client as a documented study subsystem, with its pinned standards-access dependency, explicit data/profile/presentation boundary, current public deployment, and unimplemented Smart Citizen traversal. Version 0.4 adds a dedicated experimental-server section and server-lineage figure. It identifies the tested 52°North/pygeoapi revision, Oracle endpoint, image digest, deployment adaptations, bounded comparison rationale, and unresolved backend/persistence configuration. Version 0.3 added an early illustrated environmental-monitoring system overview.
 The authentic Smart Citizen Kit 2.3 photograph is a model reference, not verified
 imagery of the installation represented by public registration 19639. The paper
 distinguishes that immediate public-data case from later owned hardware and the

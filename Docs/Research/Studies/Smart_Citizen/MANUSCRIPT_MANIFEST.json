@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.4",
+  "version": "0.5",
   "documentDate": "2026-10-24",
   "editorialTimezone": "America/New_York",
   "standing": "New study protocol and preliminary source assessment; proposed integration and comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 28,
+  "referenceCount": 33,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
@@ -30,24 +30,29 @@
     },
     {
       "number": 3,
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_client_architecture.svg",
+      "standing": "Authored client architecture and interpretation boundary; Smart Citizen connected-resource traversal remains planned"
+    },
+    {
+      "number": 4,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
       "standing": "Authored proposed architecture; not deployed topology"
     },
     {
-      "number": 4,
+      "number": 5,
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_02_model.svg",
       "standing": "Authored conceptual model; not executed resource mapping"
     },
     {
-      "number": 5,
+      "number": 6,
       "standing": "Planned actual source-provider UI capture; no image supplied"
     },
     {
-      "number": 6,
+      "number": 7,
       "standing": "Planned matched generic and profile-aware Glaux capture; no image supplied"
     },
     {
-      "number": 7,
+      "number": 8,
       "standing": "Planned implemented resource model and traced sample; no image supplied"
     }
   ],
@@ -85,11 +90,11 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed: experimental-server lineage, tested deployment identity, bounded selection rationale, known configuration gaps, source citations, and prior mapping-lineage boundaries reviewed against retained evidence and primary upstream sources.",
-    "wordRender": "Passed: all 21 rendered pages visually inspected for v0.4. The final one-word version correction changed only page 18; pages 1–17 and 19–21 were pixel-identical to the preceding inspected v0.4 render, and final page 18 was reinspected.",
+    "technicalReview": "Completed: experimental client origin, selection rationale, pinned library, three-layer application boundary, current Cloudflare deployment and remote-read limits checked against retained project records and repository documentation; Smart Citizen traversal remains explicitly unexecuted.",
+    "wordRender": "Local review copy passed: all twenty-six rendered pages visually inspected after the v0.5 client section, diagram, deployment table and reference additions; final correction changed only page 22 relative to the inspected render.",
     "reviewDate": "2026-10-24",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 21,
+    "renderedPageCount": 26,
     "paragraphAudit": {
       "result": "Passed the repository verifier's three-to-five-sentence narrative/explanatory-caption policy for v0.4.",
       "detail": "Detailed sentence-count distribution is intentionally not copied forward from v0.3 because v0.4 added server narrative; the executable verifier is the authoritative count check."
@@ -124,32 +129,38 @@
       "date": "2026-10-24",
       "predecessorCommit": "f2d3b917497cd61303eb484e72a807f3615b1c76",
       "change": "Add a dedicated experimental-CSAPI-server section covering pygeoapi and 52°North lineage, the tested Oracle deployment, exact revision/image/adaptations, bounded cross-server preservation rationale, observed write/read behavior, known deployment-configuration gaps, and the server's proposed role in the Smart Citizen experiment."
+    },
+    {
+      "version": "0.5",
+      "date": "2026-10-24",
+      "predecessorCommit": "83f8e36ca7c3066496a0dc07f9933e089c16e1e2",
+      "change": "Add a first-class experimental Glaux client section parallel to the server description: application lineage, selection rationale, exact pinned ogc-client CSAPI dependency, data/profile/presentation architecture, Standard-versus-Operator comparison boundary, Cloudflare deployment baseline, current remote-read limits, client architecture figure, and the connected-resource increment still required for Smart Citizen."
     }
   ],
   "files": [
     {
       "path": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
       "role": "canonical-manuscript",
-      "sha256": "17c522fd614852ac1c65a47cd674c866ea11b36ee996b436d75b944bb1fce3d5",
-      "sizeBytes": 61003
+      "sha256": "",
+      "sizeBytes": 0
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
       "role": "generated-word-edition",
-      "sha256": "d51643e111fdf03ff1075d038c0dbe2cfab3e690e11d373ac64c3f485f79bc3f",
-      "sizeBytes": 949067
+      "sha256": "",
+      "sizeBytes": 0
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/REFERENCES.json",
       "role": "citation-records",
-      "sha256": "522b0ca111adc511d702a75ac0b2051f1ab3d2bfb240b2e6b9691f73a5a9a295",
-      "sizeBytes": 13731
+      "sha256": "",
+      "sizeBytes": 0
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/README.md",
       "role": "maintenance-guide",
-      "sha256": "0fa1f6d3c0196b20673115113b1f7ff6ce80378f31d85b8df66870169af5ac48",
-      "sizeBytes": 9072
+      "sha256": "",
+      "sizeBytes": 0
     },
     {
       "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_01_architecture.svg",
@@ -216,6 +227,12 @@
       "role": "authored-server-lineage-figure",
       "sha256": "4b7d8aaea7160172f6301a3fa03125538d96ffc68ef782d0218bbd56848a3de5",
       "sizeBytes": 3484
+    },
+    {
+      "path": "Docs/Research/Studies/Smart_Citizen/figures/figure_03_client_architecture.svg",
+      "role": "authored-client-architecture-figure",
+      "sha256": "",
+      "sizeBytes": 0
     }
   ],
   "paragraphPolicy": {

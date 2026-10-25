@@ -21,7 +21,7 @@ into adopted requirements or revise the technical profile. Follow
 [artifact maintenance](Governance/ARTIFACT_MAINTENANCE.md) when updating the set.
 
 For the subsequent real-source evaluation, start with the maintained paper
-**Evaluating Sensor Information Preservation Through OGC Integration**, v0.4,
+**Evaluating Sensor Information Preservation Through OGC Integration**, v0.5,
 24 October 2026: [canonical manuscript](Research/Studies/Smart_Citizen/MANUSCRIPT.md)
 and [generated Word edition](Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Research/Studies/Smart_Citizen/README.md) explains the
@@ -29,7 +29,7 @@ citation, figure, listing and evidence workflow. Its
 [publication manifest](Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json)
 is separate from the manifest of the 14 preserved originals.
 
-Version 0.4 adds the experimental CSAPI server as a first-class study component, documenting the pygeoapi/52°North lineage, tested Oracle deployment, bounded selection evidence, exact revision/image, deployment adaptations, and the configuration details that remain to be captured. Version 0.3 added an early illustrated overview of Smart Citizen as an
+Version 0.5 adds the experimental Glaux client baseline and architecture, including the exact pinned library, deployed runtime, Standard/Operator comparison boundary, and the connected-resource increment still required. Version 0.4 adds the experimental CSAPI server as a first-class study component, documenting the pygeoapi/52°North lineage, tested Oracle deployment, bounded selection evidence, exact revision/image, deployment adaptations, and the configuration details that remain to be captured. Version 0.3 added an early illustrated overview of Smart Citizen as an
 environmental-monitoring system. An authentic SCK 2.3 model reference photograph
 is explicitly distinguished from public registration 19639, whose physical
 installation remains unverified. The immediate case uses that public feed;

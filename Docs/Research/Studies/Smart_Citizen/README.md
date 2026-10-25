@@ -1,7 +1,7 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.4**, dated **24 October 2026** in
+Through OGC Integration**, version **0.5**, dated **24 October 2026** in
 America/New_York. This edition is a study protocol and preliminary source
 assessment. The adapter, CSAPI publication, live experiment, and interface
 comparison have not been executed.
@@ -30,6 +30,8 @@ comparison have not been executed.
   recorded in the manifest.
 
 ## Current contents and pending evidence
+
+Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
 
 The current edition includes an abstract, eleven numbered sections, twenty-two
 references, four figures, seven tables, and two code listings. It covers the

@@ -1,5 +1,13 @@
 # Current client work
 
+## Paper version 0.5 experimental Glaux client — 24 October 2026
+
+The owner required the paper to describe the client side of the experiment as rigorously as the CSAPI server. Paper v0.5 now records the standalone `OS4CSAPI/glaux-client` lineage, why Explorer and `cs-client-ts` were not selected as the experimental foundation, the exact pinned `OS4CSAPI/ogc-client-CSAPI_2` phase-10 dependency, and the separate `src/data`, `src/profile`, and `src/presentation` responsibilities. A new evidence record and architecture figure make the Standard View / Operator View comparison boundary explicit.
+
+The paper also records the public Cloudflare Pages runtime, deployed Git commit and deployment ID, the recovered 560 × 440 review frame, and the current direct-System remote-read limitations. It explicitly states that authenticated service access, collection discovery, and full System-to-DataStream/schema/Observation traversal are not yet deployed and are part of the Smart Citizen client increment. Documentation changes do not alter the current public runtime.
+
+The local v0.5 review copy renders to 26 pages. All pages were visually inspected after the client-section and figure revisions; a final wording correction changed only page 22 relative to that inspected render, and page 22 was re-inspected. The repository paper workflow regenerates the Word edition from the maintained manuscript and refreshes its publication fingerprints so the committed reading copy remains source-consistent.
+
 ## Paper version 0.4 experimental CSAPI server — 24 October 2026
 
 The owner required the research paper to explain the 52°North/pygeoapi CSAPI server as part of the experiment rather than treating it as an unnamed transport. Paper v0.4 now documents pygeoapi's role, 52°North's Connected Systems proof of concept, the exact tested upstream revision, the Oracle-hosted OS4CSAPI deployment, image identity, deployment adaptations, and the bounded cross-server evidence that supports using it as the first Smart Citizen target. The paper also records the deployment details that are still unknown instead of inferring them from upstream examples.

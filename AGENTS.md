@@ -69,7 +69,7 @@
   The existing authorization covers the identified project artifacts; do not
   invent an additional approval gate for their import or routine maintenance.
 - Maintain the [Smart Citizen experiment paper](Docs/Research/Studies/Smart_Citizen/README.md)
-  as the experiment advances; v0.4 is dated 24 October 2026. Keep its canonical
+  as the experiment advances; v0.5 is dated 24 October 2026. Keep its canonical
   manuscript, generated Word edition, CMOS 18 author-date references, figures,
   listings and separate
   publication manifest consistent. Preserve proposed-versus-executed standing;
