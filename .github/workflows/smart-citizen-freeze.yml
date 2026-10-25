@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   capture:
@@ -44,3 +44,29 @@ jobs:
           path: capture/
           retention-days: 1
           if-no-files-found: error
+      - name: Persist frozen specimen in research evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          CAPTURE_ID="$(tr -d ':-' < capture/captured_at_utc.txt)"
+          DEST="Docs/Research/Evidence/Smart_Citizen/Captures/$CAPTURE_ID"
+          mkdir -p "$DEST"
+          cp capture/* "$DEST/"
+          cat > "$DEST/README.md" <<EOF
+          # Smart Citizen registration 19639 frozen source capture
+
+          This directory preserves an exact public-API capture made for the MERLIN Smart Citizen experiment.
+
+          - Capture time: $(cat capture/captured_at_utc.txt)
+          - Device endpoint: https://api.smartcitizen.me/v0/devices/19639
+          - History range: $(cat capture/from_date.txt) through $(cat capture/to_date.txt) UTC
+          - Temperature history: sensor 55, 1-hour rollup, average
+          - PM2.5 history: sensor 194, 1-hour rollup, average
+
+          The JSON bodies are source evidence, not runtime fixtures or approved MPSS mappings. The public device response can include source-platform owner and location metadata; preserve it as captured and use reviewed excerpts for presentation or application fixtures.
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DEST"
+          git commit -m "research: freeze Smart Citizen specimen $CAPTURE_ID"
+          git push origin HEAD:work/details-view-20261023
