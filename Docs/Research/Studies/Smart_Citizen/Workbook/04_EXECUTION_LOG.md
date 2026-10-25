@@ -18,7 +18,6 @@
 | Experiment date/time UTC | |
 
 ## Acquisition
-
 - Source requests/outcomes:
 - Captures/hashes:
 - Polling/retry decisions:
@@ -26,7 +25,6 @@
 - Source-time versus retrieval-time treatment:
 
 ## Adapter
-
 - Inputs/outputs:
 - Mapping IDs exercised:
 - Transformations:
@@ -44,7 +42,6 @@
 | | | | | | |
 
 ## Glaux retrieval
-
 - Discovery/traversal performed:
 - Original responses retained:
 - Generic extraction:

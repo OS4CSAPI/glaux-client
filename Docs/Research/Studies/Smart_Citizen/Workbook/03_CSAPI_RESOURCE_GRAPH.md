@@ -29,9 +29,9 @@ Add a Mermaid/UML-style diagram after the first reviewed design pass. Distinguis
 
 ## Creation and retrieval order
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## Completion gate
 

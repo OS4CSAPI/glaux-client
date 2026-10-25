@@ -112,4 +112,4 @@ Repeat a bounded subset with an independent producer such as AirGradient, then l
 
 ## Supporting records
 
-Detailed phase work is maintained in the [experiment workbook](../Research/Studies/Smart_Citizen/Workbook/README.md). The [research paper](../Research/Studies/Smart_Citizen/MANUSCRIPT.md) should cite or summarize workbook evidence only when it becomes relevant to the research narrative.
+Detailed phase work is maintained in the experiment workbook under Docs/Research/Studies/Smart_Citizen/Workbook. The research paper should cite or summarize workbook evidence only when it becomes relevant to the research narrative.

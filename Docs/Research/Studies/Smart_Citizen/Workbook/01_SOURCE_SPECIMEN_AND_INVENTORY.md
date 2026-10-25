@@ -44,15 +44,15 @@
 
 ## Candidate first mapping set
 
-- identity and reported model metadata;
-- air temperature;
-- PM2.5;
-- humidity or pressure;
-- sound level;
-- battery percentage;
-- Wi-Fi RSSI;
-- SD-card/status indicator;
-- one bounded historical aggregate series.
+- identity and reported model metadata
+- air temperature
+- PM2.5
+- humidity or pressure
+- sound level
+- battery percentage
+- Wi-Fi RSSI
+- SD-card/status indicator
+- one bounded historical aggregate series
 
 ## Completion gate
 

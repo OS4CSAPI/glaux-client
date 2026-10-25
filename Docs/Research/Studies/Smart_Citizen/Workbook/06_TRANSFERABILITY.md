@@ -14,11 +14,11 @@ Record meaningful differences instead of forcing normalization, such as correcte
 
 ## Result classifications
 
-- reusable without profile change;
-- reusable with source-specific adapter work;
-- requires profile clarification;
-- exposes a DIM gap;
-- genuinely producer-specific.
+- reusable without profile change
+- reusable with source-specific adapter work
+- requires profile clarification
+- exposes a DIM gap
+- genuinely producer-specific
 
 ## Completion gate
 

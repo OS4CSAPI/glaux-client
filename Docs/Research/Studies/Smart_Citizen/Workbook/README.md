@@ -8,13 +8,13 @@ The workbook does not replace the paper, MPSS profile, DIM research, or implemen
 
 | Phase | Record | Purpose |
 | --- | --- | --- |
-| 1–2 | [01 Source specimen and inventory](01_SOURCE_SPECIMEN_AND_INVENTORY.md) | Freeze the native dataset and characterize what the producer actually supplies |
-| 3 | [02 Mapping ledger](02_MAPPING_LEDGER.md) | Explain each source→DIM→donor→MPSS→OGC mapping and its limits |
-| 4 | [03 CSAPI resource graph](03_CSAPI_RESOURCE_GRAPH.md) | Design connected target resources and creation dependencies before coding |
-| 5–7 | [04 Execution log](04_EXECUTION_LOG.md) | Record adapter, server, and Glaux executions with exact revisions and evidence |
-| 8–10 | [05 Evaluation and findings](05_EVALUATION_AND_FINDINGS.md) | Record UI/PBI evaluation, discrepancies, and dispositions |
-| 11 | [06 Transferability](06_TRANSFERABILITY.md) | Compare a second producer against the same concepts and behavior |
-| All phases | [Decision log](DECISIONS.md) | Preserve material scope, mapping, implementation, and interpretation decisions |
+| 1–2 | 01_SOURCE_SPECIMEN_AND_INVENTORY.md | Freeze the native dataset and characterize what the producer actually supplies |
+| 3 | 02_MAPPING_LEDGER.md | Explain each source→DIM→donor→MPSS→OGC mapping and its limits |
+| 4 | 03_CSAPI_RESOURCE_GRAPH.md | Design connected target resources and creation dependencies before coding |
+| 5–7 | 04_EXECUTION_LOG.md | Record adapter, server, and Glaux executions with exact revisions and evidence |
+| 8–10 | 05_EVALUATION_AND_FINDINGS.md | Record UI/PBI evaluation, discrepancies, and dispositions |
+| 11 | 06_TRANSFERABILITY.md | Compare a second producer against the same concepts and behavior |
+| All phases | DECISIONS.md | Preserve material scope, mapping, implementation, and interpretation decisions |
 
 ## Evidence rules
 
