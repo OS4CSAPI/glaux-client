@@ -24,6 +24,7 @@
 | Finding ID | Description | Classification | Evidence | Impact | Proposed disposition | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | | | source limitation / documentation conflict / mapping defect / DIM gap / donor question / profile gap / server / client / presentation | | | | |
+| SC-FIND-001 | Initial supplemental vocabulary workflow requested wrong Smart Citizen Measurement IDs for temperature, humidity, PM2.5 and pressure | experiment evidence-collection defect | workflow run `40156434639`; corrected run `40156565257`; corrected vocabulary capture `20261025T030010Z` | Could have contaminated semantic mapping if undetected; frozen device specimen itself unaffected | Preserve first capture as audit history; use corrected measurement IDs 1, 2, 14 and 25; require source-channel measurement IDs to drive future vocabulary capture | resolved |
 
 ## Artifact feedback
 
