@@ -1,0 +1,58 @@
+name: Capture Smart Citizen source vocabulary
+
+on:
+  push:
+    branches:
+      - work/details-view-20261023
+    paths:
+      - '.github/workflows/smart-citizen-vocabulary.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Capture source vocabulary and parent sensor records
+        shell: bash
+        run: |
+          set -euo pipefail
+          CAPTURED_AT="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          CAPTURE_ID="$(date -u +'%Y%m%dT%H%M%SZ')"
+          DEST="Docs/Research/Evidence/Smart_Citizen/Vocabulary/$CAPTURE_ID"
+          mkdir -p "$DEST/measurements" "$DEST/sensors"
+          printf '%s\n' "$CAPTURED_AT" > "$DEST/captured_at_utc.txt"
+
+          for id in 3 4 7 13 21 23 78 79; do
+            curl -fsSL -D "$DEST/measurements/$id.headers.txt" -o "$DEST/measurements/$id.json" "https://api.smartcitizen.me/v0/measurements/$id"
+            python -m json.tool "$DEST/measurements/$id.json" >/dev/null
+          done
+
+          for id in 52 54 57 192; do
+            curl -fsSL -D "$DEST/sensors/$id.headers.txt" -o "$DEST/sensors/$id.json" "https://api.smartcitizen.me/v0/sensors/$id"
+            python -m json.tool "$DEST/sensors/$id.json" >/dev/null
+          done
+
+          find "$DEST" -name '*.json' -print0 | sort -z | xargs -0 sha256sum > "$DEST/SHA256SUMS.txt"
+          cat > "$DEST/README.md" <<EOF
+          # Smart Citizen source vocabulary supplemental capture
+
+          Captured: $CAPTURED_AT
+
+          Measurement records: 3 (Air Temperature), 4 (Noise Level), 7 (battery), 13 (PM2.5), 21 (Barometric Pressure), 23 (Relative Humidity), 78 (RSSI), 79 (SD-Card Presence).
+
+          Parent Sensor catalogue records: 52 (noise parent), 54 (SHT31 parent), 57 (barometric-pressure parent), 192 (SEN5X parent).
+
+          These files are source-vocabulary/catalogue evidence. They are not OGC mappings or evidence that each catalogue record is a separately identified physical component in registration 19639.
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DEST"
+          git commit -m "research: capture Smart Citizen source vocabulary $CAPTURE_ID"
+          git push origin HEAD:work/details-view-20261023
