@@ -1,10 +1,8 @@
 # Smart Citizen experiment paper
 
 The maintained working paper is **Evaluating Sensor Information Preservation
-Through OGC Integration**, version **0.6**, dated **24 October 2026** in
-America/New_York. This edition is a study protocol and preliminary source
-assessment. The adapter, CSAPI publication, live experiment, and interface
-comparison have not been executed.
+Through OGC Integration**, version **0.7**, dated **25 October 2026** in
+America/New_York. This edition adds the reviewed Phase 1–3 source and mapping evidence plus a sourced terminology baseline. The adapter, CSAPI publication, connected Glaux retrieval, and matched interface comparison have not been executed.
 
 ## Read and maintain the paper
 
@@ -34,10 +32,12 @@ Detailed engineering/research homework is intentionally maintained outside the p
 
 ## Current contents and pending evidence
 
+Version 0.7 records the formal frozen Smart Citizen specimen, reviewed native-source characterization, and reviewed Phase 3 mapping set before CSAPI resource-graph design begins. It corrects source-processing provenance, the channel-cohort arithmetic, notification-setting semantics and RSSI classification; it also brings the two source-platform hourly aggregate products into the reviewed mapping ledger while leaving their exact executable time representation open. A new Terms and Definitions section grounds telemetry, provenance, measurement, calibration, OGC observation/resource terms and study-specific time/semantic-preservation terms in cited sources, and substantive occurrences were audited against those meanings.
+
+The paper now distinguishes completed source acquisition/characterization/mapping work from the still-unexecuted adapter, server round trip, connected-client traversal and matched interface evaluation. The formal mappings use frozen specimen `20261025T024348Z`; the earlier 24 October access record remains feasibility history rather than the evidence basis for the formal current-value mappings. The owner review gate follows this Phase 1–3 checkpoint, and Phase 4 is intentionally paused until that discussion.
 Version 0.6 establishes the vendor-presentation baseline before Glaux implementation, adding two unchanged first-party Smart Citizen UI screenshots, documented source-provider intent, a reconstruction-question table, exact source/rights records, and reserved contemporaneous/CSAPI/Glaux comparison positions. Version 0.5 adds a first-class description of the experimental Glaux client, including its standalone application lineage, the rationale for choosing an explicit-control library boundary, the exact pinned ogc-client CSAPI dependency, the data/profile/presentation architecture, current Cloudflare runtime, and the connected-resource behavior still required for the Smart Citizen run. Figure 3 now documents the client interpretation boundary, and the new client-baseline evidence record preserves the underlying selection and deployment facts.
 
-The current edition includes an abstract, eleven numbered sections, twenty-two
-references, four figures, seven tables, and two code listings. It covers the
+The current edition includes an abstract, thirteen numbered sections, cited source definitions, seven retained figures, and two code listings; detailed counts are verified from the maintained source rather than copied manually. It covers the
 problem and rationale, technical baseline, research questions, source evidence,
 mapping method, expected coverage, execution/evaluation protocol, screenshot
 comparison method, results structure, limitations, and reproducibility.
@@ -64,7 +64,7 @@ with their capture metadata and associated source/mapping evidence. An unmatched
 screen capture may illustrate an interface but cannot be presented as a matched
 comparison. Results remain pending until the relevant run is performed.
 
-The current protocol places public-data integration before hardware acquisition.
+The current protocol places public-data integration before hardware acquisition, with Phase 1–3 now reviewed before the resource-graph stage.
 Captured examples support reproducibility throughout that work. Model and resource
 metadata, varied observations, and integration provenance are part of the proposed
 dataset. An owned kit is a later route to physical evidence gaps. The
@@ -128,7 +128,7 @@ from the repository root with Python containing `python-docx`. SVG embedding use
 the primary runtime Node and `sharp`; the command makes no network requests.
 
 ```sh
-"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.6 --date 2026-10-24
+"$CODEX_PRIMARY_RUNTIME_PYTHON" scripts/build-smart-citizen-paper.py --version 0.7 --date 2026-10-25
 ```
 
 For a new edition, change the manuscript and manifest version/date and supply

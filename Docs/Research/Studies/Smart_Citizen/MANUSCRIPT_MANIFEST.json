@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "artifactId": "glaux-artifact-smart-citizen-experiment-paper",
   "title": "Evaluating Sensor Information Preservation Through OGC Integration",
-  "version": "0.6",
-  "documentDate": "2026-10-24",
+  "version": "0.7",
+  "documentDate": "2026-10-25",
   "editorialTimezone": "America/New_York",
-  "standing": "New study protocol and preliminary source assessment; proposed integration and comparison not executed",
+  "standing": "Study protocol with reviewed Phase 1–3 source and mapping evidence; adapter publication, CSAPI round trip, connected Glaux retrieval and matched interface comparison not executed",
   "canonicalSource": "Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md",
   "renderedEdition": "Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx",
   "citationStyle": "Chicago Manual of Style 18 author-date",
-  "referenceCount": 36,
+  "referenceCount": 43,
   "sourceBaselineCommit": "1a24fdff71ef801d9b326d2b42a63743db737a8e",
   "originalImportManifest": "Docs/ARTIFACTS.json",
   "relationshipToOriginals": "New Git-native authored research artifact; the fourteen imported originals and technical MPSS v0.3.5 are unchanged.",
@@ -94,9 +94,8 @@
     {
       "number": 1,
       "path": "Docs/Research/Studies/Smart_Citizen/listings/01_native_temperature.json",
-      "standing": "Selected exact source fields, not complete response or source schema",
-      "evidenceFile": "Docs/Research/Evidence/OPEN_SENSOR_ACCESS_2026-10-24.json",
-      "evidenceRecord": "smart-citizen-current-19639",
+      "standing": "Selected exact fields from the formal frozen 25 October specimen; not complete response or source schema",
+      "evidenceFile": "Docs/Research/Evidence/Smart_Citizen/Captures/20261025T024348Z/device.json",
       "sourcePointer": "/data/sensors/18"
     },
     {
@@ -108,23 +107,19 @@
   "verification": {
     "jsonListingsParsed": true,
     "nativeExcerptComparedWithEvidence": true,
-    "technicalReview": "Completed: v0.6 adds a pre-implementation vendor presentation baseline using two unchanged first-party Smart Citizen documentation screenshots; source-provider UI purpose, exact asset revisions, historical device/time limits, and rights notices are recorded separately from future matched experiment evidence.",
-    "wordRender": "Passed: all twenty-nine GitHub Actions-generated pages visually inspected at 100% after the v0.6 vendor-presentation additions; both first-party screenshots, captions, continuation tables, references, headers, footers and page flow are clean.",
-    "reviewDate": "2026-10-24",
+    "technicalReview": "Completed: v0.7 incorporates the formal frozen specimen and reviewed Phase 1–3 corrections, adds sourced terms and definitions, corrects source-processing provenance, notification-setting semantics, timing-cohort arithmetic and RSSI classification, and records aggregate processing provenance before Phase 4.",
+    "wordRender": "Pending v0.7 GitHub Actions rebuild and complete rendered-page visual inspection.",
+    "reviewDate": "2026-10-25",
     "reviewTimezone": "America/New_York",
-    "renderedPageCount": 29,
+    "renderedPageCount": null,
     "paragraphAudit": {
-      "result": "Passed the repository verifier's three-to-five-sentence narrative/explanatory-caption policy for v0.4.",
-      "detail": "Detailed sentence-count distribution is intentionally not copied forward from v0.3 because v0.4 added server narrative; the executable verifier is the authoritative count check."
+      "result": "Pending v0.7 build verification.",
+      "detail": "The repository verifier remains authoritative for the three-to-five-sentence narrative/explanatory-caption policy."
     },
     "paperBuildWorkflow": {
-      "workflowRun": 40153002914,
-      "sourceCommit": "939381a6aeb5118e30d916627d115139b06e09ff",
-      "generatedCommit": "74303d0c59375e772ad210680198f41a49ef84ea",
-      "artifactName": "smart-citizen-paper-v0.6",
-      "artifactId": 12583511222,
-      "conclusion": "success",
-      "verifier": "Verified Smart Citizen paper 0.6: 36 cited references, 7 figures, 2 listings, current Word inputs, and 18 publication files."
+      "status": "pending v0.7 build",
+      "sourceBranch": "work/details-view-20261023",
+      "artifactName": "smart-citizen-paper-v0.7"
     }
   },
   "revisionHistory": [
@@ -162,6 +157,12 @@
       "date": "2026-10-24",
       "predecessorCommit": "a653fd85053ae99d118e564c9e4c351451d5bc21",
       "change": "Establish a pre-implementation Smart Citizen vendor-presentation baseline with official core-platform and custom-dashboard screenshots, describe their documented UI roles, derive reconstruction questions for DIM/Profile/Glaux review, retain exact immutable image provenance and rights notices, and reserve Figures 8–10 for contemporaneous source, matched Glaux, and CSAPI relationship evidence."
+    },
+    {
+      "version": "0.7",
+      "date": "2026-10-25",
+      "predecessorCommit": "b1d81af427ae2ecfa962157668368a537fa8142b",
+      "change": "Add the formal frozen Smart Citizen specimen and reviewed Phase 1–3 findings; introduce a sourced Terms and Definitions section and terminology audit; correct processing-provenance wording, notification-setting semantics, timing-cohort arithmetic and RSSI classification; formalize source-platform aggregate-history mappings; update the formal temperature listing and keep Phase 4 paused for owner review."
     }
   ],
   "files": [
@@ -302,11 +303,11 @@
   "lineageExamples": [
     {
       "id": "SC-TEMP-01",
-      "standing": "Illustrative proposed temperature lineage; identity, subject, time and service execution remain incomplete"
+      "standing": "Reviewed formal temperature lineage from frozen specimen; sampling subject and separate resultTime remain unresolved for Phase 4"
     },
     {
       "id": "SC-BATT-01",
-      "standing": "Illustrative proposed battery-percentage lineage and donor limits; no RFC object equivalence or power topology established"
+      "standing": "Reviewed battery-percentage lineage and donor limits; parent-System status mapping accepted, with no RFC object equivalence or power topology established"
     }
   ],
   "systemIdentificationPolicy": {

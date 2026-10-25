@@ -12,18 +12,21 @@ The experiment must preserve the distinction among native source facts, document
 
 | Area | Current standing |
 | --- | --- |
-| Source system | Smart Citizen Kit selected as the first real-source case; public registration 19639 is the current candidate specimen |
-| Vendor UI baseline | First-party Smart Citizen core-platform and dashboard examples are preserved in paper v0.6 |
+| Source system | Smart Citizen Kit is the first real-source case; public registration 19639 is frozen as formal specimen `20261025T024348Z` |
+| Vendor UI baseline | First-party Smart Citizen core-platform and dashboard examples are preserved; they remain historical presentation evidence rather than the formal specimen |
 | DIM/Profile | MPSS v0.3.5 remains the technical baseline |
 | CSAPI server | Existing Oracle-hosted 52°North connected-systems-pygeoapi deployment is the intended target |
 | Client | Glaux Client exists and is deployed; full Smart Citizen connected-resource traversal is not yet implemented |
 | Resource Details frame | Recovered 560 × 440 CSS-pixel working canvas is deployed |
-| Research paper | Smart Citizen experiment paper v0.6 documents the system, server, client, vendor UI, method, and preliminary mappings |
-| Not yet complete | Fresh experiment specimen, complete source inventory, reviewed mapping ledger, CSAPI resource graph, adapter, server load, connected Glaux retrieval, matched UI comparison |
+| Research paper | Paper v0.7 records sourced terminology plus reviewed Phase 1–3 evidence and mappings; adapter/server/client results remain pending |
+| Completed before Phase 4 | Frozen specimen, complete representative source characterization, corrected vocabulary evidence, reviewed current/aggregate mapping ledger |
+| Not yet complete | Owner Phase 1–3 review gate, CSAPI resource graph, adapter, server load, connected Glaux retrieval, matched UI comparison |
 
 ## Governing sequence
 
-Do not begin adapter implementation by guessing target structures from source labels. Complete the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
+Do not begin adapter implementation by guessing target structures from source labels. Complete and review the source specimen, source inventory, mapping ledger, and proposed CSAPI resource graph first. The adapter should implement reviewed mappings rather than become the place where mappings are invented implicitly.
+
+**25 October review checkpoint:** Phases 1 and 2 are closed for the representative first mapping set and Phase 3 has completed its corrective review. The work intentionally pauses here for owner discussion; Phase 4 is not authorized merely because its prerequisites have been documented.
 
 ### Phase 1 — Freeze the experiment specimen
 
@@ -93,12 +96,10 @@ Repeat a bounded subset with an independent producer such as AirGradient, then l
 
 ## Immediate next steps
 
-1. Reacquire and freeze the Smart Citizen specimen.
-2. Build the complete native-source inventory.
-3. Select a representative first mapping set spanning identity/model, multiple observation types, equipment-related telemetry, and history.
-4. Complete the first mapping-ledger entries.
-5. Draw and review the proposed CSAPI resource graph.
-6. Only then begin adapter implementation.
+1. **Pause at the Phase 1–3 owner review gate.** Review the frozen specimen, source characterization, mapping decisions, corrections, remaining open questions and paper v0.7 before any Phase 4 work.
+2. If the owner authorizes continuation, draw and review the proposed CSAPI resource graph, including System/Procedure identities, observed-subject handling, result-time policy, and source-platform aggregate processing.
+3. Only after that Phase 4 gate begin deterministic adapter implementation.
+4. Continue to keep unresolved mappings explicit rather than allowing code or server behavior to choose semantics implicitly.
 
 ## Milestones
 

@@ -1,5 +1,14 @@
 # Current client work
 
+
+## Smart Citizen Phase 1–3 review gate and paper v0.7 — 25 October 2026
+
+The owner requested the review checkpoint that should have occurred before the prior execution advanced automatically. Phase 1 is now confirmed complete for frozen registration 19639; Phase 2 is reviewed and corrected; Phase 3 contains nine current-state and two aggregate-history mappings at the documented review standing. **Phase 4 has not begun and remains paused for owner discussion.**
+
+The corrective review found several issues worth preserving rather than silently fixing. The native timing cohort is 11 non-SEN5X channels at 02:40:21Z plus 10 SEN5X particulate channels at 02:36:21Z, not the previously written 17+10; Smart Citizen's `_raw` path contains a normalized/pre-calibration value rather than proof of untouched raw output; notification booleans are settings, not live condition assertions; and the earlier RSSI `status` classification overreached the evidence. The mapping ledger now leaves RSSI subject/DataStream type unresolved, models hourly averages as source-platform processing rather than physical-kit output, and distinguishes server-derived DataStream summary fields from adapter-authored content.
+
+Paper v0.7 updates the formal specimen from the earlier feasibility values, adds a sourced Terms and Definitions section, and audits key usages such as telemetry, provenance, measurement, calibration, Observation, DataStream, source time and acquisition time against those definitions. It reports Phase 1–3 acquisition/characterization/mapping results while continuing to state that the adapter, CSAPI publication/round trip, connected Glaux retrieval and matched interface comparison are unexecuted. The next action is owner review of this checkpoint; do not start the CSAPI resource graph until that review authorizes Phase 4.
+
 ## Smart Citizen execution roadmap and workbook — 24 October 2026
 
 The owner approved preserving the current end-to-end plan and detailed experiment homework outside the research paper. The new execution roadmap defines eleven phases with explicit gates and milestones; the new workbook supplies living templates for source capture/inventory, mapping lineage, CSAPI resource design, execution evidence, UI/PBI findings, transferability, and material decisions. The existing experiment plan remains as rationale/history, while the roadmap is now the current sequencing authority.

@@ -33,4 +33,4 @@ A workbook item becomes paper evidence only when its standing is clear enough to
 
 ## Status
 
-The workbook structure is established. Detailed experiment execution has not yet begun. The first active records should be the source specimen/inventory and mapping ledger.
+Phases 1 and 2 are complete and reviewed for the representative first Smart Citizen mapping set. Phase 3 now contains nine current-state mappings and two aggregate-history mappings with unresolved identity, subject and time questions kept explicit; the source-processing, notification-setting, RSSI and aggregate-provenance corrections from the 25 October review are recorded in the inventory, mapping ledger, findings register and decision log. Phase 4 has **not** begun: the owner review gate comes before CSAPI resource-graph design, adapter implementation or server writes.

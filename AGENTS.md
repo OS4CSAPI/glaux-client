@@ -69,13 +69,16 @@
   The existing authorization covers the identified project artifacts; do not
   invent an additional approval gate for their import or routine maintenance.
 - Maintain the [Smart Citizen experiment paper](Docs/Research/Studies/Smart_Citizen/README.md)
-  as the experiment advances; v0.5 is dated 24 October 2026. Keep its canonical
+  as the experiment advances; v0.7 is dated 25 October 2026. Keep its canonical
   manuscript, generated Word edition, CMOS 18 author-date references, figures,
   listings and separate
   publication manifest consistent. Preserve proposed-versus-executed standing;
   add screenshots and results only with actual source/run evidence. Do not
   fabricate outcomes or silently revise the retained MPSS v0.3.5 baseline.
 - Preserve the paper's experimental-server section as well as its early system overview. Keep the upstream pygeoapi framework, 52°North Connected Systems implementation, OS4CSAPI Oracle deployment, and 52°North public demo distinct. Record exact tested revision/image and deployment adaptations; do not infer backend, persistence, proxy, or restart configuration from upstream examples.
+- Maintain the paper's sourced Terms and Definitions section. Reserve **telemetry** for remotely transmitted measurement/status information under the cited NIST definition; use **provenance** for information about entities, activities and agents involved in producing data or artifacts under W3C PROV; and distinguish source, processing and integration provenance as study applications of that concept.
+- Use JCGM VIM meanings when the paper uses **measurement** or **calibration** in a formal metrological sense. A source-code method name such as `calibrated_value` does not by itself establish calibration, measurement uncertainty or metrological traceability.
+- Keep OGC terms such as System, Procedure, DataStream, Observation, Feature of Interest, Sampling Feature, phenomenonTime and resultTime consistent with the cited Connected Systems definitions. Keep study terms such as source time, acquisition time and semantic preservation explicitly labeled as study operational definitions.
 - Preserve the paper's early system overview and authentic, attributed imagery.
   Distinguish the SCK 2.3 model reference photograph from selected public
   registration 19639; its actual physical installation is unverified. Do not

@@ -1,6 +1,6 @@
 # 01 — Source specimen and native inventory
 
-**Status:** Phase 1 complete for the frozen specimen; Phase 2 source characterization is substantially populated. Formal target mapping has not started.
+**Status:** Phase 1 is complete and Phase 2 has been reviewed and closed for the representative first mapping set. Phase 3 mappings and their remaining qualifications are maintained in the separate mapping ledger.
 
 ## 1. Frozen specimen control record
 
@@ -21,6 +21,10 @@
 | Frozen-evidence commit | `9c184d9270bf3a2baba73ea6e9410fd9bfd53fda` |
 
 The frozen response identifies registration 19639 as `has_published`, tagged `online` and `outdoor`, and reported the latest device-level reading at `2026-10-25T02:40:21Z`. The formal capture began at `02:43:48Z`, so the source's most recent reported reading was approximately 3 minutes 27 seconds older than the capture time. This difference is source evidence, not a staleness determination; the expected cadence and acceptable age still require interpretation.
+
+The formal capture freezes the three response bodies and HTTP metadata needed to reproduce this specimen, but it did not also freeze the API root response or its available platform-version field. A future acquisition should capture that source-version information when available; its absence does not change the identity or hashes of the retained specimen. The workflow itself selects the preceding UTC day at execution time, so it is a repeatable acquisition mechanism rather than a deterministic replay; deterministic replay begins from the retained `20261025T024348Z` bodies.
+
+The complete public response is retained as source evidence even though it contains public source-account and location metadata. Downstream listings, application fixtures and paper excerpts use only reviewed fields needed for the experiment. This separates evidentiary preservation from data minimization in presentation and implementation.
 
 ## 2. Source documentation set
 
@@ -79,7 +83,7 @@ The table below records all 21 channels returned in the frozen device body. `—
 
 ### Timing pattern in the frozen current response
 
-Seventeen non-particulate channels in the frozen current response report `2026-10-25T02:40:21Z`. The ten SEN5X particulate mass/number/size channels report `2026-10-25T02:36:21Z`, four minutes earlier. Device-level `last_reading_at` is `02:40:21Z`, which confirms that the device-level latest time cannot be substituted for every channel's own time.
+Eleven non-SEN5X channels in the frozen current response report `2026-10-25T02:40:21Z`. The ten SEN5X particulate mass/number/size channels report `2026-10-25T02:36:21Z`, four minutes earlier. Together these cohorts account for all 21 returned channels. Device-level `last_reading_at` is `02:40:21Z`, which confirms that the device-level latest time cannot be substituted for every channel's own time.
 
 ### Hardware-variant observation
 
@@ -143,7 +147,34 @@ Smart Citizen `state=has_published` means the Device has stored/published data; 
 
 ### Public current-value processing provenance
 
-The inspected Smart Citizen API source indicates that ingestion can preserve a raw reading separately while storing a normalized/calibrated value under the sensor ID used by the public Device response. The Device model's public `formatted_data` uses the stored sensor-ID value for `value`, while `raw_storer.rb` places the original reading in a distinct `<sensor_id>_raw` entry and the calibrated result in the sensor-ID entry. Therefore, the frozen `value` fields are treated as **Smart Citizen source-platform reported results**, not asserted to be untouched electrical/raw sensor output. The inspected source commit is implementation evidence only; its exact equivalence to the production deployment has not been independently established.
+The inspected Smart Citizen API source at commit [`25a524cbfb036f8950c247b847d8884a4e776297`](https://github.com/fablabbcn/smartcitizen-api/tree/25a524cbfb036f8950c247b847d8884a4e776297) shows a two-step source-platform transformation before the public Device response is assembled. `RawStorer` first applies the Component method `normalized_value` to the submitted reading, stores that normalized/pre-calibration value under `<sensor_id>_raw`, and stores the output of the method named `calibrated_value` under the sensor-ID key that `Device#formatted_data` later exposes as `value`. The experiment therefore treats the frozen public `value` fields as **Smart Citizen source-platform reported/processed results**, not as untouched electrical or transducer output.
+
+The implementation name `calibrated_value` is source-code terminology, not evidence that the public result has undergone calibration in the formal metrological sense of JCGM VIM 3 §2.39. No calibration standard, uncertainty relationship or metrological-traceability chain is established by the frozen response or the inspected code. The exact equivalence between the inspected repository commit and the production deployment also remains unverified, so this source-code evidence explains a plausible/current processing path without being promoted to production-version proof.
+
+### Notification settings are not condition assertions
+
+The frozen Device object contains `notify.stopped_publishing=false` and `notify.low_battery=false`. Smart Citizen's API documentation defines these as **notification settings**, not current equipment-condition values; `notify.low_battery=false` therefore does not assert that the battery is not low, and `notify.stopped_publishing=false` does not assert that publication is healthy. These fields are retained as source configuration/account metadata and are excluded from the first condition/status mapping set.
+
+### Previous-value standing
+
+Each current sensor record can contain `prev_value`, but the public Device representation does not provide a separate timestamp for that prior value. The experiment may preserve the previous source value as inspectable evidence, but it will not derive a timed trend, rate of change or freshness comparison from `prev_value` alone. Time-bearing history uses the dedicated readings endpoint instead.
+
+### Deferred and unmapped native fields
+
+The complete source response contains more information than the representative first mapping set needs. The following dispositions make those exclusions explicit rather than treating omitted fields as unnoticed.
+
+| Native field/family | Phase 2 disposition |
+| --- | --- |
+| `notify.*` | Notification preferences; not equipment condition. Retain as source metadata, do not map to readiness/status. |
+| `prev_value` | Prior source value without an independent time in this representation; retain, but do not derive a timed trend. |
+| `default_key` | Source-platform sensor key useful for provenance/history queries; not a physical identifier. |
+| `datasheet` | Source catalogue documentation link; may support model/procedure evidence, but does not prove installed component identity. |
+| `user_tags` | Source/user categorization; no first-set semantic mapping selected. |
+| `device_token`, filtered policy fields, forwarding fields | Access/policy material; excluded from publication fixtures and not part of the first mapping set. |
+| `postprocessing` | Null in the frozen Device record; absence does not prove that no upstream processing occurred. |
+| owner/account fields | Source-platform account provenance; retained in raw evidence, excluded from operator/resource identity unless separately justified. |
+| `experiment_ids` | Empty in the frozen response; no experiment relationship is asserted. |
+| nonselected UV/light/particle-number/TPS channels | Fully inventoried as native evidence; target mapping deferred rather than guessed. |
 
 ### Historical aggregation and tuple time
 
@@ -175,4 +206,4 @@ The first supplemental capture at `2026-10-25T02:57:59Z` requested incorrect Mea
 
 **Phase 1 — Freeze specimen: complete.** The exact current device body, response headers, two bounded history responses, request URLs, sizes and SHA-256 values are retained under the frozen-evidence commit.
 
-**Phase 2 — Characterize native source: complete for the representative first mapping set.** The channel inventory, identity scopes, platform-state semantics, location standing, temporal differences, source aggregation implementation and deferred nonselected-channel questions are recorded. Remaining identity/feature-of-interest/component questions are now formal mapping questions and are carried into Phase 3 rather than being resolved implicitly in code.
+**Phase 2 — Characterize native source: reviewed and complete for the representative first mapping set.** The channel inventory, identity scopes, platform-state semantics, notification-setting semantics, location standing, temporal differences, source processing path, aggregation implementation and explicit deferred-field dispositions are recorded. Remaining identity/feature-of-interest/component questions are formal mapping questions carried into Phase 3 rather than being resolved implicitly in code.

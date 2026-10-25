@@ -4,13 +4,13 @@
 
 MERLIN Project
 
-Working paper version 0.6 | 24 October 2026 | Study protocol and preliminary source assessment
+Working paper version 0.7 | 25 October 2026 | Study protocol with reviewed Phase 1–3 evidence
 
 ## Abstract
 
-Integrating a sensing system requires preserving the meaning of its information as well as transporting its measurements. An operator may need to distinguish a product model from an installed unit, a producing sensor from the subject it observes, and a reported condition from an interpretation of that condition. This paper defines a proposed experiment using public Smart Citizen data, an authored adapter, an OGC API Connected Systems service, and the Glaux client to evaluate the MERLIN domain information model and Managed Physical Sensing Systems profile. The study will combine published source definitions with captured responses, document each consequential transformation, and compare competent generic and profile-aware presentations of the same standardized resources. Each mapping will explain both its standard representation and its relationship to the underlying domain model and individually identified donor concepts.
+Integrating a sensing system requires preserving the meaning of its information as well as transporting its measurements. An operator may need to distinguish a product model from an installed unit, a producing system from the subject it observes, a source-reported status from an interpretation of that status, and a direct reading from a platform-derived product. This paper defines and begins a Smart Citizen experiment using public source data, an authored adapter, an OGC API — Connected Systems service, and the Glaux client to evaluate the MERLIN domain information model and Managed Physical Sensing Systems profile. Each consequential mapping is required to identify its native assertion, underlying domain concept, donor concepts, MPSS binding, standard carrier, authored transformation, presentation implication, and review outcome.
 
-Preliminary access checks establish that selected public measurements and aggregate history were retrievable; they do not establish a running adapter, a loaded CSAPI dataset, or a presentation benefit. The evaluation will report semantic preservation, domain coverage, and operator-facing utility separately. Initial diagrams and code fragments explain the proposed method. Paired source-interface and Glaux screenshots, executed mappings, and measured results will be added as evidence becomes available. The expected contribution is a reproducible account of which meanings survive integration, which require explicit enrichment, and which remain unsupported by the source.
+Phases 1–3 have now frozen a reproducible public specimen, characterized its native identities, channels, times and source semantics, and reviewed nine current-state plus two aggregate-history mappings. This revision also establishes sourced definitions for terms whose casual use could otherwise obscure the experiment, including telemetry, provenance, measurement, calibration, Observation, DataStream, phenomenon time and result time. The adapter, CSAPI publication and round trip, connected Glaux traversal, and matched generic/profile-aware interface comparison remain unexecuted, so no interoperability or operator-benefit result is claimed. The expected contribution remains a reproducible account of which meanings survive integration, which require explicit enrichment, which are transformed by source-platform processing, and which remain unsupported.
 
 **Keywords:** sensor integration; domain information model; SensorML; SWE Common; OGC API Connected Systems; semantic preservation; resource details.
 
@@ -28,7 +28,7 @@ The Smart Citizen Kit (SCK) is a modular environmental monitoring system. Its do
 
 The Data Board provides logging, Wi-Fi, memory-card access, USB, and a battery connector. The Urban Board carries sensing components and connects a separate particulate-matter module (Smart Citizen n.d.-c, “What is the Smart Citizen Kit?”). For this study, those component roles make physical equipment, sensing functions, communications, and power concrete subjects to examine through the DIM and MPSS. Their presence in model documentation does not establish a verified component inventory for an individual installation.
 
-The specific starting specimen is public Smart Citizen registration 19639, captured on 24 October 2026 at 21:57:35 UTC. The returned record identifies its hardware as “SmartCitizen Kit 2.3,” with type “SCK,” version “2.3,” and slug “sck:2,3” (MERLIN Project 2026b, record “smart-citizen-current-19639”). Its channel catalogue includes environmental observations together with equipment-related readings such as battery percentage and Wi-Fi RSSI. A source registration and its reported model identify the selected data specimen, while the enduring physical identity and installed configuration still require separate evidence.
+The selected specimen is public Smart Citizen registration 19639. A formal capture made on 25 October 2026 at 02:43:48 UTC retained the complete Device response, response headers, and bounded temperature and PM2.5 histories with request URLs and SHA-256 hashes; it supersedes the earlier 24 October feasibility values as the evidence basis for formal mappings (MERLIN Project 2026k). The source reports hardware “SmartCitizen Kit 2.3,” type “SCK,” version “2.3,” and slug “sck:2,3,” while its channel catalogue includes environmental observations and system-related telemetry such as battery level, RSSI and SD-card indication. The registration and reported model identify the selected data specimen, but enduring physical identity and installed configuration remain separate evidence questions.
 
 **Table 1. System identification and study boundary.** The table separates the physical product family, selected source record, and service through which the study will obtain data. Model-level descriptions and registration metadata have different evidentiary roles. These entries identify the first case without implying that its integration has already been executed (Smart Citizen n.d.-a; n.d.-c; MERLIN Project 2026b).
 
@@ -36,7 +36,7 @@ The specific starting specimen is public Smart Citizen registration 19639, captu
 | --- | --- | --- |
 | System type | Modular environmental monitoring kit | Plain-language description of the equipment; not a newly adopted MPSS classification code |
 | Reported product model | SmartCitizen Kit 2.3; type SCK; version 2.3; slug sck:2,3 | Native metadata to preserve and compare with official product documentation |
-| Selected public record | Registration 19639; GET https://api.smartcitizen.me/v0/devices/19639 | Starting specimen for the proposed public-data integration; not a verified physical serial number |
+| Selected public record | Registration 19639; formal frozen capture 20261025T024348Z | Evidence basis for the Phase 1–3 mappings; not a verified physical serial number |
 | Source software platform | Smart Citizen Platform and its public API | Existing source service for acquiring data; the proposed CSAPI service and Glaux client have different roles |
 | Physical installation | Photograph, serial identity, installed inventory, enclosure, and supply connections unverified | Evidence to obtain before claiming a complete unit-specific equipment or deployment model |
 
@@ -48,9 +48,31 @@ The present question is whether this organization helps a client reconstruct use
 
 Smart Citizen was selected as the first candidate because the preliminary study found accessible current and historical responses, informative channel metadata, official model documentation, and a plausible route to an owned physical kit. This is a purposive selection for an integration case study, not the outcome of an exhaustive device survey or a measured ranking of product quality. AirGradient was identified as a later independent comparison, while networking, acoustic, seismic, and radiation sources remain complementary candidates for other questions (MERLIN Project 2026c).
 
-This paper is being written before execution of the proposed integration. Its purpose is to state what will be built, why the experiment is needed, how evidence will be collected and interpreted, and what would justify a conclusion. The initial staged plan is refined here by placing public-data integration before hardware acquisition (MERLIN Project 2026e). An owned kit is a later means of obtaining physical installation and lifecycle evidence. Deterministic captures will accompany live access so that the same observations can be examined throughout the integration chain.
+This paper is maintained while the experiment proceeds rather than being written only before execution. Source acquisition, native characterization and the first mapping review are now executed and documented, while adapter publication, CSAPI round-trip testing and client comparison remain future phases (MERLIN Project 2026k; 2026l). Public-data integration still precedes hardware acquisition, and an owned kit remains a later route to physical installation and lifecycle evidence (MERLIN Project 2026e). The frozen specimen provides deterministic replay evidence while any later live acquisition is recorded separately.
 
-## 2 Background and technical baseline
+## 2 Terms and definitions
+
+The study uses several technical terms that carry narrower meanings than their everyday equivalents. The definitions below are taken from the cited standards or source documentation where an authoritative definition exists, while study-specific terms are explicitly identified as operational definitions rather than external standards. Later uses in the paper are intended to remain consistent with these meanings, and ambiguous source labels are not allowed to override them.
+
+The distinction between a sourced definition and the study's application is important. For example, W3C PROV defines provenance generally, while this study applies that concept to source, processing and integration provenance; NIST defines telemetry around remote measurement transmission, while the paper does not call static model metadata telemetry. Likewise, a source-code method named `calibrated_value` is not treated as proof of calibration in the metrological sense.
+
+| Term | Sourced definition or basis | Meaning used in this study |
+| --- | --- | --- |
+| **Telemetry** | NIST defines telemetry as measuring one or more quantities, transmitting the results to a distant station, and interpreting, indicating or recording what was measured (Scholl and Suloway 2023). | Remotely transmitted environmental readings and system-related measurement/status reports can be called telemetry. Static catalogue/model metadata, identifiers and documentation are not telemetry merely because they arrive through an API. |
+| **Provenance** | W3C PROV describes provenance as information about entities, activities and people/agents involved in producing data or another thing, supporting assessments of quality, reliability or trustworthiness (World Wide Web Consortium 2013). | **Source provenance** records where source assertions came from; **processing provenance** records transformations such as Smart Citizen/Kairos aggregation; **integration provenance** records adapter/server/client acquisition and transformation steps. Rights/licensing metadata can accompany provenance but is not itself the same concept. |
+| **Measurement** | VIM 3 defines measurement as the process of experimentally obtaining one or more quantity values reasonably attributable to a quantity (Joint Committee for Guides in Metrology 2012, sec. 2.1). | When quoting Smart Citizen, “measurement” may also denote the source platform's Measurement vocabulary resource. The study does not infer uncertainty, accuracy or formal calibration merely because the source uses the word measurement. |
+| **Calibration** | VIM 3 defines calibration as an operation that first relates standards and indications with their uncertainties and then uses that relationship to obtain a measurement result (Joint Committee for Guides in Metrology 2012, sec. 2.39). | The paper reserves formal calibration claims for evidence satisfying that meaning. The Smart Citizen source-code method name `calibrated_value` is quoted as implementation terminology only. |
+| **System / Procedure** | CSAPI uses **System** for an instance of infrastructure implementing Procedures and **Procedure** for a datasheet or methodology that can be implemented by multiple System instances (Open Geospatial Consortium 2025a, secs. 9, 13). | The represented SCK instance is distinct from the reusable SCK2.3 model description. Source-platform processing may also be represented as a process System with an associated Procedure when evidence supports that role. |
+| **Observation** | CSAPI Observation implements the SOSA Observation concept and carries a result plus required phenomenonTime/resultTime, within a DataStream (Open Geospatial Consortium 2025b, sec. 9.7). | A reading or derived result is not interchangeable with the System, observed property or observed subject. |
+| **Feature of Interest / Sampling Feature** | CSAPI calls the real-world domain feature whose properties are ultimately observed the Feature of Interest; a Sampling Feature represents the subset/sample on which observations are actually made (Open Geospatial Consortium 2025a, sec. 14). | The kit is not automatically the observed environmental subject. If the source does not identify a defensible Sampling Feature, the study leaves that association absent rather than inventing one. |
+| **DataStream** | CSAPI defines a DataStream as observations acquired by the same System and sharing observed properties; `status` is for status observations of the parent System/subsystems, while `observation` is for other features of interest (Open Geospatial Consortium 2025b, secs. 4.7, 9.2). | DataStream type is selected only after the observed subject is supported. RSSI therefore remains untyped at the Phase 3 design stage rather than being forced into `status`. |
+| **phenomenonTime / resultTime** | CSAPI defines phenomenonTime as the time the observed property value applies to the feature of interest and resultTime as the time the result value was obtained (Open Geospatial Consortium 2025b, sec. 9.7). | Smart Citizen's channel timestamp is preserved as source time and is a candidate phenomenonTime. Experiment acquisition time is not substituted for an unavailable source resultTime. |
+| **Registration / Component** | Smart Citizen says a real device can be registered multiple times; its Component is the platform join between a Device and a Sensor (Smart Citizen n.d.-d, “Schema” and “Components”). | Registration IDs/UUIDs and Component IDs remain source-platform identities, not manufacturer serials or independently identified physical components. |
+| **Aggregation** | Smart Citizen `rollup` defines the grouping timespan, `function` defines the grouping method, and `sample_size` is the count of readings examined to build the response (Smart Citizen n.d.-d, “Get Historical Readings”). | “One-hour average” means the source-platform `rollup=1h` and `function=avg` product. The paper does not reinterpret `sample_size` as a per-bin count or invent exact interval boundaries around returned tuple timestamps. |
+| **Source time / acquisition time** | These are study operational terms grounded in the source timestamps and provenance requirements rather than external standard terms (MERLIN Project 2026k). | **Source time** is the timestamp the source associates with a reading or aggregate. **Acquisition time** is when this experiment obtained the response and is integration provenance, not an observation time. |
+| **Semantic preservation** | This is the study's operational criterion, informed by the role/time distinctions of CSAPI and the mapping method (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026l). | Source-supported meaning about identity, producer, observed subject, property, unit, value, time, aggregation, provenance and qualified absence is preserved when the integration does not silently change or invent it. |
+
+## 3 Background and technical baseline
 
 ### Domain concepts and standards bindings
 
@@ -68,7 +90,7 @@ Power illustrates why mapping requires more than matching labels. RFC 7326 disti
 
 The public Smart Citizen specimen reports remaining battery level as a percentage. That is useful measurement evidence, but it does not identify the installed battery, establish which source powers which equipment, or supply replacement history. The experiment will therefore distinguish successful preservation of the percentage from coverage of the wider power-arrangement model (MERLIN Project 2026b, record “smart-citizen-current-19639”).
 
-## 3 Experimental integration infrastructure
+## 4 Experimental integration infrastructure
 
 ### 3.1 Experimental CSAPI server
 
@@ -129,7 +151,7 @@ Standards access is supplied by `OS4CSAPI/ogc-client-CSAPI_2`, an OS4CSAPI fork 
 
 #### Why a standalone client and selected library
 
-An earlier architecture review compared forking CSAPI Explorer with building a smaller application on a client library. Explorer offered useful navigation and inspection features, but it also added application behavior such as discovery fallbacks, proxy-relative URL substitutions, and other state that would complicate attribution when a relationship appeared to work or fail (MERLIN Project 2026g). The same review considered `cs-client-ts` a strong alternative because it provides authentication, pagination, validation, and transport hooks. Its convenient common model, however, would add another normalization layer between the wire representation and MERLIN's own interpretation, which is undesirable when the interpretation itself is the object of study. The control-first choice was therefore a standalone application using the ogc-client CSAPI fork, while retaining Explorer and other clients as external inspection or comparison tools rather than experimental foundations.
+An earlier architecture review compared forking CSAPI Explorer with building a smaller application on a client library. Explorer offered useful navigation and inspection features, but it also added application behavior such as discovery fallbacks, proxy-relative URL substitutions, and other state that would complicate attribution when a relationship appeared to work or fail (MERLIN Project 2026g). The same review considered `cs-client-ts` a strong alternative because it provides authentication, pagination, validation, and transport hooks. Its convenient common model, however, would add another common-model transformation layer between the wire representation and MERLIN's own interpretation, which is undesirable when the interpretation itself is the object of study. The control-first choice was therefore a standalone application using the ogc-client CSAPI fork, while retaining Explorer and other clients as external inspection or comparison tools rather than experimental foundations.
 
 This choice is task-specific rather than a claim that the selected library is the best general CSAPI SDK. The key experimental advantage is that request behavior and original responses remain under application control, allowing the study to distinguish what the server returned from what the parser extracted and what the profile interpreter concluded (MERLIN Project 2026g). The client also preserves unknown or unsupported content for Standard View rather than requiring the profile to explain every supplied field. A future library replacement should therefore be judged by whether it preserves this observable boundary, not by API similarity alone.
 
@@ -171,7 +193,7 @@ For the live experiment, Glaux will consume the connected resources published th
 Each executed run will record the Smart Citizen capture revision, adapter revision, CSAPI server revision and image, Glaux source revision, Glaux deployed-runtime revision, pinned client-library revision, and MPSS profile revision. This version chain is necessary because a change at any one layer could alter the final display without changing the others. The first client increment will add the connected-resource retrieval and Smart Citizen presentation needed for the study while retaining the existing original-response and Standard View boundaries. Until that increment is built and verified, Figures 6–8 and any claim that Glaux reconstructed the live Smart Citizen dataset remain pending experimental evidence.
 
 
-## 4 Research questions and study design
+## 5 Research questions and study design
 
 The study proposes a traceable integration case. A controlled comparison of information presentation will follow that integration. Together, these stages address three research questions.
 
@@ -187,7 +209,7 @@ The immediate proposed path is public Smart Citizen acquisition through a docume
 
 **Figure 4. Proposed experiment architecture.** Source definitions and captured responses jointly inform the mapping. The two client conditions use the same standardized evidence, while the provider interface supplies a separate presentation reference. All adapter and service connections shown here are proposed. The architecture is authored for this study using the resource distinctions in the selected OGC standards and MPSS baseline (Open Geospatial Consortium 2025a; 2025b; MERLIN Project 2026a).
 
-## 5 Source selection and preliminary observations
+## 6 Source selection and preliminary observations
 
 ### Published definitions and observed responses
 
@@ -197,21 +219,24 @@ Official kit documentation describes modular equipment and sensing functions, an
 
 Model documentation must remain distinct from unit-specific evidence. For example, the supplier states that kits shipped from July 2026 omit the UV sensor, while older public records may expose UV channels. A model designation alone therefore does not establish an exact installed inventory (Seeed Studio n.d.; MERLIN Project 2026c).
 
-### Existing feasibility evidence
+### Formal Phase 1 source evidence
 
-**Table 4. Selected observations from the preliminary public capture.** The preliminary study retrieved public registration 19639 on 24 October 2026 at 5:57:35 p.m. EDT, equivalent to 21:57:35 UTC. Selected measurements and their individual source timestamps are preserved in the evidence record. The table summarizes a subset; it is not a new live measurement or an executed adapter result (MERLIN Project 2026b). Source timestamps are on 24 October 2026 and are shown in UTC to preserve their original time basis.
+The 24 October feasibility check established that registration 19639 could provide useful current and historical data, but it is no longer the evidence basis for formal mappings. Phase 1 froze a new complete specimen at `2026-10-25T02:43:48Z`, including the Device response, response headers, request URLs and one-day temperature and PM2.5 histories with SHA-256 hashes (MERLIN Project 2026k). The source reports 21 current channels, with eleven non-SEN5X channels at `02:40:21Z` and ten SEN5X particulate channels at `02:36:21Z`. This two-cohort timing pattern is itself evidence that device-level `last_reading_at` cannot replace channel-specific time.
+
+**Table 4. Selected observations from the formal frozen specimen.** The table uses the retained 25 October source body rather than the earlier feasibility values. Values and times are source-reported and have not yet passed through the proposed adapter or CSAPI server. System-related telemetry is shown alongside environmental observations to exercise different subject and interpretation questions. None of the rows is a readiness or health assessment (MERLIN Project 2026k).
 
 | Reported channel | Source value and unit | Source time UTC | Question exposed |
 | --- | --- | --- | --- |
-| Temperature | 19.82 ºC | 21:55:12 | Are quantity, unit, subject, and time preserved? |
-| Battery level | 99.0 % | 21:55:12 | Is percentage kept separate from runtime or supply topology? |
-| PM2.5 | 10.6 ug/m3 | 21:46:09 | Does the older channel time remain visible? |
-| Wi-Fi RSSI | −45 dBm | 21:55:12 | Is a radio measurement distinguished from end-to-end availability? |
-| SD-card indicator | 1 | 21:55:12 | Is the source's coded meaning retained? |
+| Air temperature | 19.59 ºC | 02:40:21 | Are property, unit, environmental subject and time preserved? |
+| Relative humidity | 65.54 % | 02:40:21 | Can a second SHT31 output remain distinct from component identity? |
+| PM2.5 | 9.3 ug/m3 | 02:36:21 | Does the older particulate-channel time remain visible? |
+| Battery level | 99.0 % | 02:40:21 | Is parent-System status kept separate from battery identity and supply topology? |
+| Wi-Fi RSSI | −45 dBm | 02:40:21 | Can received-signal power remain telemetry without becoming interface/link status? |
+| SD-card indication | 1 | 02:40:21 | Is the source categorical meaning retained without becoming Boolean health? |
 
-The historical temperature request returned 24 groups with one-hour average aggregation and a response-wide sample size of 1,439. The returned timestamps are not all exact hour boundaries. The original exact retrieval time for this request was not retained. These limits remain part of the evidence; this paper does not reconstruct an acquisition time or invent averaging intervals (MERLIN Project 2026b, record “smart-citizen-history-19639-temperature”).
+The formal one-day temperature history contains 24 one-hour average tuples and reports `sample_size=1439`; the corresponding PM2.5 history also contains 24 tuples but reports `sample_size=288` (MERLIN Project 2026k). Smart Citizen documents `sample_size` as the readings examined to build the response, while `rollup=1h` and `function=avg` define the grouping request (Smart Citizen n.d.-d). Returned timestamps are not exact hour boundaries and differ between the two series, so the study preserves each tuple time exactly rather than constructing nominal intervals. These histories are source-platform derived products and are mapped separately from current source-reported results.
 
-**Listing 1. Selected native temperature fields.** These members are reproduced from one channel in the captured response. Other members are omitted. The excerpt is not a complete API response or a formal source schema (MERLIN Project 2026b, record “smart-citizen-current-19639”).
+**Listing 1. Selected formal temperature fields.** These members are reproduced from `/data/sensors/18` in the frozen Device response. Other members are omitted, and the excerpt is not a source schema or complete response. The listing is retained as a companion JSON file and verified against the frozen body. It replaces the earlier feasibility excerpt as the formal mapping specimen (MERLIN Project 2026k).
 
 ```json
 {
@@ -219,20 +244,22 @@ The historical temperature request returned 24 groups with one-hour average aggr
   "name": "Sensirion SHT31 - Temperature",
   "unit": "ºC",
   "unit_definition": "https://qudt.org/vocab/unit/DEG_C",
-  "value": 19.82,
-  "last_reading_at": "2026-10-24T21:55:12Z"
+  "value": 19.59,
+  "last_reading_at": "2026-10-25T02:40:21Z"
 }
 ```
 
-The source meaning of a field will not be inferred from this example alone. The value, unit definition, channel description, timestamp documentation, and observation context must be considered together. Definitions and actual samples can reveal different problems: documentation may describe a field that a public response filters, while a sample may expose a value whose broader meaning is underspecified.
+The native source also exposed semantic traps that matter to the experiment. Smart Citizen documents `notify.low_battery` and `notify.stopped_publishing` as notification settings, so a false value is not evidence of a healthy battery or healthy publishing state (Smart Citizen n.d.-d; MERLIN Project 2026k). Likewise, `prev_value` has no independent timestamp in the current Device representation and is not used to manufacture a timed trend. These examples show why a familiar label cannot substitute for source semantics.
 
-## 6 Proposed dataset and mapping method
+The inspected Smart Citizen API source adds a further processing qualification. At revision `25a524cb...`, `RawStorer` calls `normalized_value` before storing the `<sensor_id>_raw` entry and then stores the output of a method named `calibrated_value` under the sensor ID that the public Device response exposes as `value` (Smart Citizen 2026). The study therefore calls the public values source-platform reported/processed results rather than untouched raw sensor output, and the method name does not establish calibration in the VIM sense without calibration standards, uncertainty relationships or traceability evidence (Joint Committee for Guides in Metrology 2012). The exact production revision remains unverified, so repository source explains the inspected implementation path without proving byte-for-byte production behavior.
+
+## 7 Proposed dataset and mapping method
 
 ### Evidence collection and scope
 
-The first dataset will include source registration and model metadata, channel inventory, definitions, units, individual timestamps, current readings, and bounded history. It will cover varied supported meanings: environmental temperature and humidity, particulate mass and particle-number concentration, light or pressure, noise level, battery percentage, radio signal strength, and storage indication. Selecting these different cases is intended to exercise semantic distinctions rather than maximize record count.
+The formal first dataset now includes source registration and model metadata, a complete 21-channel inventory, definitions, units, individual timestamps, current readings and bounded temperature/PM2.5 history (MERLIN Project 2026k). The representative Phase 3 mapping set covers registration/model identity, temperature, PM2.5, humidity, pressure, A-weighted sound level, battery percentage, RSSI, SD-card indication and the two one-hour aggregate products (MERLIN Project 2026l). Other inventoried channels remain deliberate deferred cases rather than silently unmapped omissions. The selection exercises semantic distinctions rather than maximizing record count.
 
-Each formal acquisition will retain the endpoint and query, acquisition time in UTC, HTTP outcome, available source-version information, original-response fingerprint, and review/transformation revision. Published excerpts will identify their omissions and relationship to the captured body. A fingerprint alone is not an archive. The earlier evidence record preserves excerpts and available fingerprints rather than every complete response, and formal experiment captures will not be retroactively attributed to those feasibility checks (MERLIN Project 2026b).
+The formal acquisition retains the endpoint/query, UTC acquisition time, HTTP outcome, response headers, complete response bodies and SHA-256 fingerprints; a later acquisition should additionally freeze the API root/version information when available (MERLIN Project 2026k). Published excerpts identify their relationship to those retained bodies, and the raw capture remains separate from application fixtures. The earlier 24 October evidence record remains a feasibility record and is not retroactively relabeled as the formal specimen (MERLIN Project 2026b). This preserves the difference between feasibility evidence, source evidence and later mapped representations.
 
 Source-reported facts, documentary model information, integration-created facts, and unresolved assertions will remain distinguishable. A model guide can support a description of available interfaces without proving the current peer or configuration of a selected unit. Similarly, an adapter's version and acquisition history are real integration facts, but an adapter restart is not a physical sensor service event.
 
@@ -268,6 +295,20 @@ The donor explanation will distinguish an established contribution to the retain
 | Transformation and presentation | Authored conversion, enrichment, label, or grouping and its reason | Mapping revision, code/listing, and source-to-display trace |
 | Review outcome | What was preserved, unsupported, changed, or left unresolved | Executed check, evidence, and explicit limits |
 
+### Phase 1–3 review checkpoint
+
+The mapping review was deliberately reopened before Phase 4 so that source-characterization and semantic defects could be corrected before code or server behavior made them implicit. The review retained the core identity, environmental-observation, battery and SD-card conclusions, corrected RSSI's earlier overconfident status classification, and brought the two aggregate-history products into the mapping ledger with explicit processing provenance (MERLIN Project 2026l). It also corrected the source-processing description and the 11+10 timing cohort count, while preserving unresolved result-time and sampling-subject questions rather than inventing answers. The work pauses at this checkpoint for owner review before any CSAPI resource graph is authored.
+
+| Phase 1–3 item | Reviewed standing |
+| --- | --- |
+| Formal specimen | Frozen registration 19639 Device response plus temperature and PM2.5 histories with requests, headers and hashes |
+| Native characterization | 21 channels; 11 at 02:40:21Z and 10 SEN5X channels at 02:36:21Z; notification, previous-value, location and processing limitations explicit |
+| Identity/model | System instance remains distinct from platform registration and reusable SCK2.3 model description |
+| Environmental current results | Temperature, PM2.5, humidity, pressure and A-weighted sound level mapped as environmental observations with unresolved sampling feature/resultTime |
+| Parent-System status | Battery percentage and SD-card code mapped without inventing battery topology, readiness or Boolean health |
+| RSSI | Quantity preserved; observed subject and optional DataStream type remain unresolved instead of forcing System status |
+| Aggregate history | One-hour averages treated as source-platform processing products; processing System/Procedure and exact times remain Phase 4 design questions |
+
 ### Illustrative encoding
 
 Listing 2 illustrates a proposed SensorML output containing a SWE Quantity. The source measurement-definition URI and unit-definition URI are retained, while the local output name is an authored mapping choice. SensorML's output mechanism and SWE's Quantity and UnitReference structures provide the carriers (Open Geospatial Consortium 2025c; 2025d; n.d.-a, “AbstractProcess.json”; n.d.-b, “Quantity.json” and “basicTypes.json”).
@@ -294,19 +335,33 @@ The fragment describes an output; it does not contain the observed value. The ev
 
 ### Temperature mapping SC TEMP 01
 
-Mapping `SC-TEMP-01` links the captured temperature channel to the proposed output declaration in Listing 2. The source supplies channel identifier 55, the value 19.82, a Celsius unit reference, an air-temperature definition reference, and the channel's source timestamp (MERLIN Project 2026b, record “smart-citizen-current-19639”). In the underlying model, this is an observation of an environmental property produced by a sensing system, with a result that remains distinct from the system description. MPSS R11 requires the producer, observed subject, and temporal context to remain distinguishable, so the observation cannot become a measurement of the kit merely because the kit reported it (MERLIN Project 2026a, sec. 5.8, R11). R10 also keeps a declared output distinct from the availability of recorded data (MERLIN Project 2026a, sec. 5.8, R10).
+Mapping `SC-TEMP-01` now uses the formal frozen temperature channel rather than the preliminary feasibility value. The source supplies sensor catalogue ID 55, value 19.59 ºC, unit definition `https://qudt.org/vocab/unit/DEG_C`, air-temperature definition `http://www.eionet.europa.eu/gemet/concept/281`, and channel source time `2026-10-25T02:40:21Z` (MERLIN Project 2026k; 2026l). In the underlying model this is an environmental Observation result produced by the sensing System, with the observed subject distinct from that producer. MPSS R10 and R11 therefore keep output/DataStream correspondence, producer, observed subject and temporal context distinguishable.
 
-The observation-concept lineage runs through CSAPI to W3C SOSA/SSN: CSAPI explicitly identifies that semantic foundation, while documenting its own adaptations and allowing representations other than RDF (Open Geospatial Consortium 2025a, annex C.1). The individual contributing concepts are `sosa:Sensor`, `sosa:Observation`, `sosa:ObservableProperty`, `sosa:FeatureOfInterest`, and `sosa:Result`, which distinguish producer, observation activity, observed property, subject, and outcome (World Wide Web Consortium 2017, secs. 4.3.2, 4.6.2, 4.7.2). CSAPI supplies the DataStream and Observation resources and their associations; its observation `result` corresponds to `sosa:hasResult`, and `samplingFeature` corresponds to `sosa:hasFeatureOfInterest` (Open Geospatial Consortium 2025b, secs. 9.2, 9.7). This is an identified conceptual contribution through the standard, rather than an assertion that every SOSA/SSN term or constraint is adopted by the experiment.
+The observation-concept lineage runs through CSAPI to SOSA/SSN. `sosa:Sensor`, `sosa:Observation`, `sosa:ObservableProperty`, `sosa:FeatureOfInterest` and `sosa:Result` distinguish the producer, observation, property, subject and outcome, while CSAPI supplies the DataStream and Observation resource mechanisms (World Wide Web Consortium 2017; Open Geospatial Consortium 2025a; 2025b). GEMET concept 281 and QUDT `DEG_C` are source-carried property/unit vocabularies rather than evidence that those vocabularies historically donated every relevant DIM concept (European Environment Agency 2021; QUDT.org n.d.). The local output name remains an experiment-authored choice.
 
-Two further source contributions explain the property and unit: GEMET concept 281 identifies air temperature, and QUDT `unit:DEG_C` identifies degree Celsius (European Environment Agency 2021; QUDT.org n.d.). These are the vocabulary references carried by the native specimen; retaining them does not establish that they were historical donors to every part of the DIM. SWE's Quantity, semantic `definition`, and unit-reference mechanisms provide the typed representation, while SensorML's `outputs` member declares the output (Open Geospatial Consortium 2025c, secs. 8.2, 9.1; 2025d, secs. 7.3, 8.2, 9.1). The local name `airTemperature` and display label remain authored choices, while the final producer identity, sampling subject, observation-time interpretation, and executed CSAPI publication remain to be resolved and tested.
+The proposed SensorML output uses a SWE Quantity named `airTemperature` with the source property and unit URIs. Its CSAPI DataStream is type `observation`; linked scalar Observations are expected to yield server-derived `resultType=measure`, rather than the adapter authoring that summary field directly (Open Geospatial Consortium 2025b, sec. 9.2). The channel timestamp is retained as the source-recorded observation time and a candidate phenomenonTime, but the source supplies no separate resultTime. No SamplingFeature is created merely to satisfy the target graph.
+
+Presentation may show the source-reported temperature, unit, property meaning, producer and channel time while stating that the environmental sampling subject is not independently identified. It must not call 19.59 ºC “device temperature,” replace the channel time with the Device's latest time, or use acquisition time as an observation time. These are semantic-preservation requirements, not layout preferences.
 
 ### Battery mapping SC BATT 01
 
-Mapping `SC-BATT-01` concerns the source-reported remaining battery level of 99 percent, not a demonstrated physical power arrangement (MERLIN Project 2026b, record “smart-citizen-current-19639”). The underlying model distinguishes a reported property from an identified power-source entity and from a relationship describing which equipment it supplies. MPSS R17 preserves the quantity, subject, measurement point, time, and reading-versus-estimate meaning, while R11 preserves producer-versus-subject context (MERLIN Project 2026a, secs. 5.8, 5.10). Its Sensor, Observation, ObservableProperty, FeatureOfInterest, and Result distinctions follow the same SOSA/SSN lineage explained for `SC-TEMP-01` (World Wide Web Consortium 2017, secs. 4.3.2, 4.6.2, 4.7.2; Open Geospatial Consortium 2025a, annex C.1). A percent-scaled SWE Quantity within a CSAPI stream/observation representation is a proposed carrier, but the exact property definition and observation contract still require a completed mapping record (Open Geospatial Consortium 2025b, secs. 9.2, 9.6–9.7; 2025d, secs. 8.2.8, 9.1.9).
+Mapping `SC-BATT-01` uses the formal 99 percent result at `2026-10-25T02:40:21Z` and Smart Citizen Measurement 7, whose definition is the SCK remaining battery level in percentage (MERLIN Project 2026k; 2026l). Under the paper's telemetry definition, this is remotely transmitted parent-System power/status telemetry, not evidence of a separately identified battery. MPSS R17 preserves the changing value and observed subject, while R16 is not instantiated because no battery identity, Power Interface or source-to-consumer relationship is supplied. A status DataStream is therefore defensible because the property is explicitly about the parent SCK itself (Open Geospatial Consortium 2025b, sec. 9.2; Scholl and Suloway 2023).
 
-RFC 7326 contributes distinct power-source, metering, and aggregation relationship concepts; its Power Source Relationship concerns the energy-supply interconnection (Parello et al. 2014, secs. 6.6, 8.1–8.3). In this mapping, those concepts constrain interpretation by explaining why a battery percentage does not itself establish a supply edge. R16's OGC relationship binding is authored by MERLIN, so any later topology mapping must identify the reused RFC meaning and assess the binding's adaptations separately (MERLIN Project 2026a, sec. 5.10, R16). The present percentage mapping does not instantiate any of these three relationship concepts, and the paper will report that absence explicitly.
+RFC 7326 contributes power-source and metering concepts that constrain against inventing supply topology, and RFC 7577 defines battery objects such as actual charge and actual voltage whose units and meanings are not equivalent to a percentage (Parello et al. 2014; Quittek et al. 2015). The proposed SWE Quantity uses local name `batteryLevel`, source unit code `%`, and the resolvable source concept `https://api.smartcitizen.me/v0/measurements/7` as an experiment-authored semantic definition. Linked scalar Observations are expected to yield server-derived `resultType=measure`. The source still supplies no separate resultTime.
 
-RFC 7577 supplies separate battery-monitoring concepts, including `batteryActualCharge` in milliampere hours and `batteryActualVoltage` in millivolts (Quittek et al. 2015, sec. 4). Neither quantity is established by a percentage alone, so this mapping has no demonstrated equivalence to either individual MIB object. The RFC is used here to test and reject unsupported substitutions, rather than to claim a directly reused battery-field definition. The proposed display therefore retains the supplier's percentage and its evidence limits without adding charge in milliampere hours, voltage, runtime, battery identity, or charging state.
+The display may say “source-reported SCK remaining battery level: 99%” and show its source time. It must not add charge in mAh, voltage, remaining runtime, charging state, a separate battery identity, a supply edge or readiness judgment. This preserved absence is part of the result rather than a missing-value defect.
+
+### RSSI classification correction
+
+The Phase 3 review changed the earlier proposed classification of `SC-RSSI-01`. Smart Citizen defines RSSI as power present in a received radio signal, but the frozen source does not independently identify whether the observed subject is the parent System, an embedded Wi-Fi subsystem/interface, or the received signal/link context (Smart Citizen n.d.-d; MERLIN Project 2026l). OGC reserves DataStream type `status` for observations of the parent System or its subsystems and `observation` for other features of interest, so equipment context alone does not settle the type (Open Geospatial Consortium 2025b, sec. 9.2). The Phase 3 design therefore leaves the optional DataStream `type` unset until Phase 4 resolves the subject.
+
+The value remains a SWE Quantity with source-concept definition `https://api.smartcitizen.me/v0/measurements/78`. The native unit lexeme `dBm` is preserved; QUDT `DeciB-MilliW` is a possible experiment-authored unit normalization because it represents a decibel level referenced to one milliwatt, but Smart Citizen did not supply that URI (QUDT.org 2026). MPSS R13 continues to constrain the interpretation: RSSI is not interface operational status, enabled state, reachability or a directed network link. Presentation therefore reports source RSSI without inventing “Wi-Fi health,” “link up” or signal-quality thresholds.
+
+### Aggregate-history mappings
+
+The one-hour average temperature and PM2.5 series are now explicit Phase 3 mappings rather than deferred examples. Smart Citizen documents the rollup and grouping function, and the inspected implementation shows source-platform aggregation through Kairos; the derived averages therefore have processing provenance that must not be attributed to the physical SCK (Smart Citizen n.d.-d; 2026; MERLIN Project 2026l). OGC permits a process System with `assetType=Process`, an associated Procedure, and a derived Property that references a `baseProperty` and optionally a statistic (Open Geospatial Consortium 2025a, secs. 9, 15). The Phase 3 design uses those mechanisms conceptually while leaving exact UIDs and server-supported request structures for Phase 4.
+
+The temperature response reports 1,439 readings examined and the PM2.5 response 288, even though both return 24 one-hour aggregate tuples. Those response-wide counts remain query/processing provenance and are not copied into each aggregate as per-bin sample counts. Returned tuple timestamps are preserved exactly, and no nominal one-hour phenomenon interval or separate resultTime is invented from the request spelling. If the target server cannot preserve the processing distinction without distortion, omitting the aggregate products from the first load is preferable to presenting them as direct physical-kit output.
 
 ### Expected domain coverage
 
@@ -325,13 +380,13 @@ RFC 7577 supplies separate battery-monitoring concepts, including `batteryActual
 
 An owned or cooperating operator's kit can later supply a verified installation, actual configuration, power connections, and documented physical change. AirGradient will instead test transfer across producers. A second observation feed should not be assumed to solve the same missing physical-context questions automatically.
 
-## 7 Integration and evaluation protocol
+## 8 Integration and evaluation protocol
 
 ### Acquisition and publication
 
-Before execution, the team will reassess registration 19639 for sufficiently recent data and document any reason for choosing a different public registration. Polling, caching, and retry behavior will follow the source's documented and observed behavior. Repeated retrieval of the same old observation will not make it new. The adapter will preserve acquisition time separately from source time and will document its duplicate-handling policy.
+The formal Phase 1 specimen is already frozen and remains the deterministic mapping/replay baseline. Before a later live adapter run, the team will reassess registration 19639 for sufficiently recent data and document any reason for choosing a different live source while retaining the frozen specimen for comparison. Polling, caching and retry behavior will follow documented and observed source behavior, and repeated retrieval of an old observation will not make it new. The adapter will preserve acquisition time separately from source time and document duplicate handling.
 
-The selected CSAPI service will be checked for the required resource creation and retrieval capabilities. Only the chosen supported interfaces will be used, and the actual endpoint and version will be recorded in the execution record. A source sample will then be followed through capture, normalized representation, service response, and client display. Server acceptance establishes one part of that chain; it does not establish full semantic correctness (Open Geospatial Consortium 2025a; 2025b).
+The selected CSAPI service will be checked for the required resource creation and retrieval capabilities. Only the chosen supported interfaces will be used, and the actual endpoint and version will be recorded in the execution record. A source sample will then be followed through capture, mapped representation, service response, and client display. Server acceptance establishes one part of that chain; it does not establish full semantic correctness (Open Geospatial Consortium 2025a; 2025b).
 
 ### Validation and reportable outcomes
 
@@ -351,7 +406,7 @@ Coverage will be reported independently for the eight information subjects and r
 
 Discrepancies will be classified as source omission, mapping defect, profile gap, or presentation issue. Uncertain classifications will remain open. A missing battery serial is initially a source limitation; overwriting a channel timestamp is a mapping defect; difficulty finding a preserved timestamp can be a presentation issue. Changes to the profile will require a separately supported disposition rather than being hidden inside the adapter.
 
-## 8 Interface comparison and figure protocol
+## 9 Interface comparison and figure protocol
 
 ### Vendor presentation baseline
 
@@ -359,7 +414,7 @@ Before implementing the CSAPI and Glaux comparison, the study fixes a source-pro
 
 ![Official Smart Citizen documentation screenshot of the core platform measurement-exploration screen](figures/smart_citizen_platform_basic_exploration.png)
 
-**Figure 6. Official Smart Citizen platform example of device measurement exploration.** The first-party onboarding documentation presents this screen immediately after instructing a user to visit a newly publishing Kit and scroll down for basic exploration (Smart Citizen n.d.-e). The historical example shows kit page 14410, a device-level header with a 44 percent battery indication and last-data-received time, a horizontal strip of current light, noise, air-temperature, humidity, pressure, and particulate measurements, and a selected PM2.5 detail with property explanation, date controls, and a time-series graph. The visible data are dated 14 July 2021 and are not observations from registration 19639 or evidence that the current production interface is pixel-identical. The source pixels are reproduced unchanged from Smart Citizen's documentation and their provenance and published rights notices are retained with the study figures (MERLIN Project 2026j).
+**Figure 6. Official Smart Citizen platform example of device measurement exploration.** The first-party onboarding documentation presents this screen immediately after instructing a user to visit a newly publishing Kit and scroll down for basic exploration (Smart Citizen n.d.-e). The historical example shows kit page 14410, a device-level header with a 44 percent battery indication and last-data-received time, a horizontal strip of current light, noise, air-temperature, humidity, pressure, and particulate measurements, and a selected PM2.5 detail with property explanation, date controls, and a time-series graph. The visible data are dated 14 July 2021 and are not observations from registration 19639 or evidence that the current production interface is pixel-identical. The source pixels are reproduced unchanged from Smart Citizen's documentation and their source provenance and separate published rights notices are retained with the study figures (MERLIN Project 2026j).
 
 The screen reveals a vendor presentation strategy that is useful to the experiment independently of its visual styling. Device-level context remains visible while multiple current quantities are summarized with values and units, after which one measurement can be expanded into a semantic explanation and temporal view. The presentation therefore connects resource identity/status, measurement inventory, selected-property meaning, and history instead of treating each API field as an isolated row. MERLIN does not need to copy this layout, but a standards-based reconstruction should preserve enough meaning to support the same kinds of operator questions when the source evidence permits them.
 
@@ -403,23 +458,23 @@ Each screenshot will record the registration, channel, observation or interval, 
 
 Screenshots document visible states. They cannot alone demonstrate semantic correctness or a profile benefit. A screenshot finding must be linked to the source records, mapping decisions, and task outcome. Cropping, annotation, or masking will be disclosed, and the original capture will be retained with its evidence record. Figure captions will identify the source, time basis, comparison limits, and any author-added marks.
 
-## 9 Results to be reported
+## 10 Results to be reported
 
-**The proposed adapter, CSAPI loading, live integration, and comparative evaluation have not been executed as part of this study.** No experimental success rate, task-time improvement, or user outcome is reported in version 0.6. The public access observations in section 5 and the historical vendor UI evidence in section 8 establish feasibility and presentation context; neither is a matched experimental result.
+Phases 1–3 now provide reportable source and mapping results, but the end-to-end integration remains incomplete. The experiment has frozen a complete formal Device specimen and two bounded histories, characterized all 21 current channels and their identity/time semantics, and reviewed nine current-state plus two aggregate-history mappings (MERLIN Project 2026k; 2026l). It has also recorded corrections discovered by review, including the source-processing provenance wording, notification-setting false friend, 11+10 timing cohorts and RSSI DataStream-type overreach. No adapter success rate, CSAPI interoperability claim, connected Glaux result, task-time improvement or user outcome is reported.
 
-The results section will be completed in three parts. First, acquisition and integration results will identify the actual versions, selected records, publication/retrieval outcomes, and failures. Second, semantic and coverage results will account for every selected assertion and relevant relationship, with source limitations distinguished from implementation defects. Third, presentation results will connect the matched figures to the predefined operator questions and document where profile-aware organization helped, made no difference, or introduced a problem.
+The reviewed mappings demonstrate several negative results that are themselves meaningful. A Smart Citizen registration UUID is not established as a manufacturer serial; a shared Sensor catalogue parent is not an installed-component serial; battery percentage does not establish battery identity or supply topology; RSSI does not establish interface/link status; and SD-card code 0 cannot be simplified to a Boolean health state. The aggregate histories also show that semantic preservation includes processing provenance, because the source platform produced the one-hour averages and their response-wide sample counts. These findings narrow what a correct Phase 4 resource graph may claim.
 
-The expected reporting structure does not presume a favorable outcome. An accurate generic presentation may answer a task as well as the profile-aware condition. A proposed binding may prove unnecessary or insufficient. Those findings would inform the model and PBI rather than invalidate the experiment's purpose.
+The remaining results will be produced in later phases. First, Phase 4 must turn the reviewed mappings into a resource graph and executable identity/subject/time decisions; later phases will record adapter outputs, server create/retrieve behavior, Glaux traversal and the matched generic/profile-aware presentation. Each later result will remain tied to the frozen specimen or a separately identified live acquisition rather than silently replacing the evidence baseline. The reporting structure continues to permit an accurate generic presentation or an unfavorable profile result.
 
-## 10 Discussion and limitations
+## 11 Discussion and limitations
 
-The immediate public-data case is strongest for measurements, descriptions, source context, and integration provenance. It is weaker for unit-specific physical composition, operating configuration, deployment history, power topology, and maintenance. More readings can enrich temporal evidence without filling those missing relationships. Documentary model enrichment must not be presented as observation of a particular installation (MERLIN Project 2026a; 2026b; Smart Citizen n.d.-c).
+The immediate public-data case is strongest for reported quantities, source-platform descriptions, source context, telemetry and integration provenance. It remains weaker for unit-specific physical composition, operating configuration, deployment history, power topology and maintenance, and more readings cannot fill those missing relationships by themselves. Documentary model enrichment must not be presented as observation of the particular installation, while source-platform processing must not be presented as direct physical-sensor output (MERLIN Project 2026a; 2026k; 2026l). The terminology baseline helps keep those boundaries explicit.
 
-The selected source may change its fields, permissions, or availability. The research captures are limited in scope, and not every original response body was archived. Timestamp semantics and historical location applicability require verification. The example cannot establish general performance across all sensor families, operational conditions, or users. A later independent producer can test transfer, while an owned kit can address physical evidence gaps; these are different extensions.
+The formal Phase 1 capture archives the complete Device body plus the two selected history bodies, but it is still only one bounded specimen and did not freeze every possible endpoint or production-version indicator. The selected source may change its fields, permissions, processing code or availability, and the inspected Smart Citizen source revision is not independently proven to be the exact production revision (Smart Citizen 2026). Timestamp semantics, aggregate interval boundaries and historical location applicability retain explicit uncertainties. A later independent producer can test transfer, while an owned kit can address physical evidence gaps; these are different extensions.
 
 No full OGC conformance, whole-profile implementation, or native Smart Citizen support for MPSS is claimed. Structural correctness, service interoperability, and operator benefit require different evidence. The study will also retain the distinction between native source meanings, selected standard mechanisms, MERLIN-authored bindings, and client choices throughout its reporting.
 
-## 11 Reproducibility and document maintenance
+## 12 Reproducibility and document maintenance
 
 The manuscript, figures, code listings, reference metadata, and publication manifest will be maintained together in the repository. Each paper revision will state its version, date, changed evidence, and execution status. The Word edition will be generated from the maintained manuscript and inspected after rendering. Source and output fingerprints will make a stale derived edition detectable.
 
@@ -427,11 +482,13 @@ Narrative paragraphs, including the abstract and explanatory figure, table, and 
 
 References use the Chicago Manual of Style eighteenth-edition author-date system. Undated pages retain access dates; same-author/same-year suffixes are applied consistently; citations identify specific sections or evidence records when useful. “MERLIN Project” is an editorial corporate-author label for the cited project working documents, not a claim of individual authorship or outside institutional endorsement (University of Chicago Press n.d.).
 
-The existing fourteen imported project artifacts retain their versions and bytes. This paper is a new research artifact. Its mapping choices and findings will be reconciled into the appropriate PBI, wireframe, profile, and DIM records when supported; publication of a research draft does not silently amend those baselines. The next paper revision should add the initial mapping record and actual execution evidence, including the first trace through the selected CSAPI service.
+The existing fourteen imported project artifacts retain their versions and bytes. This paper is a new research artifact. Its mapping choices and findings will be reconciled into the appropriate PBI, wireframe, profile, and DIM records when supported; publication of a research draft does not silently amend those baselines. The next paper revision should add the Phase 4 resource graph and, only after its review gate, actual execution evidence from the first adapter/CSAPI trace.
 
-## 12 Conclusion
+## 13 Conclusion
 
-This protocol establishes a way to test whether a standards-grounded description of a sensing system remains useful after integration. The first case will combine public Smart Citizen readings with source definitions, documented model information, and explicit integration provenance. Its value will be assessed through traceable meaning, stated domain coverage, and observable operator tasks. The paper is prepared to accumulate both successful mappings and counterexamples as the experiment proceeds.
+This study has moved from a proposed source assessment to a reviewed Phase 1–3 evidence baseline. A formal Smart Citizen specimen is frozen, its native identities, channel times, status/configuration distinctions and processing limitations are characterized, and the representative mapping set now includes both current results and source-platform aggregate products. The review also demonstrated why shared terminology matters: telemetry is not static metadata, provenance includes processing and integration history, and a code label containing “calibrated” does not establish formal calibration. These corrections occurred before target resource design, where they can constrain implementation rather than be discovered after it.
+
+The next question is no longer whether a real source can be acquired or whether a plausible mapping can be sketched. It is whether the reviewed meanings can be represented as a defensible CSAPI resource graph without inventing identity, subject, time or provenance. That is the Phase 4 question, and this paper intentionally pauses before it for owner review. Later integration and presentation results will be evaluated against this reviewed baseline rather than against assumptions reconstructed after the fact.
 
 ## References
 
@@ -446,6 +503,8 @@ This protocol establishes a way to test whether a standards-grounded description
 Camptocamp. n.d. “ogc-client.” GitHub repository. Accessed October 24, 2026. https://github.com/camptocamp/ogc-client.
 
 European Environment Agency. 2021. “Air Temperature.” *GEMET*, version 4.2.3, December 6. Concept 281. Accessed October 24, 2026. https://www.eionet.europa.eu/gemet/en/concept/281.
+
+Joint Committee for Guides in Metrology. 2012. *International Vocabulary of Metrology—Basic and General Concepts and Associated Terms (VIM)*. 3rd ed., 2008 version with minor corrections. JCGM 200:2012. https://doi.org/10.59161/JCGM200-2012.
 
 MERLIN Project. 2026a. *Managed Physical Sensing Systems and Deployments: Profile Scope, Content Outline and Integrated Binding Draft*. Version 0.3.5. October 17. Project working draft. https://github.com/OS4CSAPI/glaux-client/blob/1a24fdff71ef801d9b326d2b42a63743db737a8e/Docs/Design/MPSS/MERLIN_Managed_Physical_Sensing_Systems_Profile_Integrated_Binding_Draft_v0.3.5_17OCT2026.docx.
 
@@ -467,6 +526,10 @@ MERLIN Project. 2026i. “Cloudflare Deployment Continuation.” October 24. Dep
 
 MERLIN Project. 2026j. “Smart Citizen Vendor Presentation Baseline.” October 24. Research evidence record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Research/Evidence/SMART_CITIZEN_VENDOR_UI_BASELINE_2026-10-24.md.
 
+MERLIN Project. 2026k. “Smart Citizen Source Specimen and Native Inventory.” October 25. Experiment workbook record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Research/Studies/Smart_Citizen/Workbook/01_SOURCE_SPECIMEN_AND_INVENTORY.md.
+
+MERLIN Project. 2026l. “Smart Citizen Mapping Ledger.” October 25. Experiment workbook record. https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Research/Studies/Smart_Citizen/Workbook/02_MAPPING_LEDGER.md.
+
 Open Geospatial Consortium. 2025a. *OGC API—Connected Systems—Part 1: Feature Resources*. Version 1.0. OGC 23-001. Edited by Alexandre Robin. July 16. https://docs.ogc.org/is/23-001/23-001.html.
 
 Open Geospatial Consortium. 2025b. *OGC API—Connected Systems—Part 2: Dynamic Data*. Version 1.0. OGC 23-002. Edited by Alexandre Robin. July 16. https://docs.ogc.org/is/23-002/23-002.html.
@@ -487,9 +550,15 @@ pygeoapi Development Team. 2026. *pygeoapi 0.25.dev0 Documentation*. October 22.
 
 QUDT.org. n.d. “Degree Celsius.” *QUDT Units Vocabulary*, version 3.5.3. Unit DEG_C. Accessed October 24, 2026. https://qudt.org/vocab/unit/DEG_C.
 
+QUDT.org. 2026. *QUDT Units Vocabulary*. Version 3.5.3. Accessed October 25, 2026. https://www.qudt.org/doc/DOC_VOCAB-UNITS.html.
+
 Quittek, Juergen, Rolf Winter, and Thomas Dietz. 2015. *Definition of Managed Objects for Battery Monitoring*. RFC 7577. Standards Track. July. https://doi.org/10.17487/RFC7577.
 
+Scholl, Matthew, and Theresa Suloway. 2023. *Introduction to Cybersecurity for Commercial Satellite Operations*. NIST Interagency/Internal Report 8270. July. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.IR.8270.
+
 Seeed Studio. n.d. “Smart Citizen Kit 2.3—Open Source Environmental Monitoring Kit.” SKU 114993536. Accessed October 24, 2026. https://www.seeedstudio.com/Smart-Citizen2-3-p-6327.html.
+
+Smart Citizen. 2026. “smartcitizen-api.” GitHub repository, revision 25a524cbfb036f8950c247b847d8884a4e776297. Accessed October 25, 2026. https://github.com/fablabbcn/smartcitizen-api/tree/25a524cbfb036f8950c247b847d8884a4e776297.
 
 Smart Citizen. n.d.-a. “Data Platform.” *Smart Citizen Docs*. Accessed October 24, 2026. https://docs.smartcitizen.me/data/data-platform/.
 
@@ -504,5 +573,7 @@ Smart Citizen. n.d.-e. “Onboarding Your Kit.” *Smart Citizen Docs*. Accessed
 Smart Citizen. n.d.-f. “Data Tools.” *Smart Citizen Docs*. Accessed October 24, 2026. https://docs.smartcitizen.me/data/data-tools/.
 
 University of Chicago Press. n.d. “Author-Date: Sample Citations.” *The Chicago Manual of Style Online*. Accessed October 24, 2026. https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html.
+
+World Wide Web Consortium. 2013. *PROV-DM: The PROV Data Model*. W3C Recommendation, April 30. https://www.w3.org/TR/prov-dm/.
 
 World Wide Web Consortium. 2017. *Semantic Sensor Network Ontology*. W3C Recommendation, October 19. https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/.

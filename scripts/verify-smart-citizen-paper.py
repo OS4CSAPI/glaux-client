@@ -263,12 +263,20 @@ def verify(refresh=False):
     for body_json, listing in zip(listings, manifest["listings"]):
         companion = resolve(listing["path"])
         require(json.loads(body_json) == json.loads(companion.read_text()), f"Listing differs from {companion.name}")
-    evidence = json.loads(resolve(manifest["listings"][0]["evidenceFile"]).read_text())
-    record = next(r for r in evidence["records"] if r["id"] == manifest["listings"][0]["evidenceRecord"])
-    prefix = manifest["listings"][0]["sourcePointer"]
+    listing_evidence = manifest["listings"][0]
+    evidence = json.loads(resolve(listing_evidence["evidenceFile"]).read_text())
+    prefix = listing_evidence["sourcePointer"]
     native = json.loads(listings[0])
-    for key, value in native.items():
-        require(record["excerpt"]["values"][prefix + "/" + key] == value, f"Native listing drift: {key}")
+    if listing_evidence.get("evidenceRecord"):
+        record = next(r for r in evidence["records"] if r["id"] == listing_evidence["evidenceRecord"])
+        for key, value in native.items():
+            require(record["excerpt"]["values"][prefix + "/" + key] == value, f"Native listing drift: {key}")
+    else:
+        node = evidence
+        for part in [p for p in prefix.split("/") if p]:
+            node = node[int(part)] if isinstance(node, list) else node[part]
+        for key, value in native.items():
+            require(node[key] == value, f"Native listing drift: {key}")
 
     images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", body)
     required_inputs = {str(source.relative_to(ROOT)), "scripts/build-smart-citizen-paper.py"}

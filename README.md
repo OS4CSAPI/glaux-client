@@ -7,15 +7,15 @@ The current collection is maintained on `work/details-view-20261023` while
 [PR #1](https://github.com/OS4CSAPI/glaux-client/pull/1) is under review.
 
 **Latest research:** the maintained Smart Citizen paper, **Evaluating Sensor
-Information Preservation Through OGC Integration**, v0.6, 24 October 2026, is
+Information Preservation Through OGC Integration**, v0.7, 25 October 2026, is
 available as a [manuscript](Docs/Research/Studies/Smart_Citizen/MANUSCRIPT.md) and
 [Word edition](Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx).
 Its [maintenance guide](Docs/Research/Studies/Smart_Citizen/README.md) links the
-publication manifest, figures and listings. The paper develops a study protocol
-and preliminary source assessment; the proposed public source → adapter → CSAPI
-→ Glaux experiment and matched interface comparison have not been executed.
+publication manifest, figures and listings. Phase 1–3 source acquisition,
+characterization and mapping have now been reviewed; adapter publication, CSAPI
+round trip, connected Glaux retrieval and the matched interface comparison remain unexecuted.
 
-Version 0.6 fixes the Smart Citizen vendor-presentation baseline before the experiment produces its own UI results, using two unchanged first-party Smart Citizen screenshots and documenting their intended roles, historical limits, exact provenance, and reconstruction questions. Version 0.5 gives the experimental Glaux client the same explicit treatment as the server: standalone origin, selection rationale, pinned CSAPI library, three-layer architecture, Cloudflare runtime, current remote-read limits, and the Smart Citizen traversal still to be implemented. Version 0.4 documents the experimental CSAPI server, including the pygeoapi/52°North lineage, tested Oracle deployment, exact revision/image, bounded preservation rationale, deployment adaptations, and remaining configuration gaps. Version 0.3 introduced the environmental-monitoring system early, with an authentic
+Version 0.7 adds the formal frozen specimen and reviewed Phase 1–3 findings, a sourced Terms and Definitions section, corrections to processing provenance and channel counts, a revised RSSI mapping, and explicit source-platform aggregation provenance. It pauses at the owner review gate before Phase 4. Version 0.6 fixes the Smart Citizen vendor-presentation baseline before the experiment produces its own UI results, using two unchanged first-party Smart Citizen screenshots and documenting their intended roles, historical limits, exact provenance, and reconstruction questions. Version 0.5 gives the experimental Glaux client the same explicit treatment as the server: standalone origin, selection rationale, pinned CSAPI library, three-layer architecture, Cloudflare runtime, current remote-read limits, and the Smart Citizen traversal still to be implemented. Version 0.4 documents the experimental CSAPI server, including the pygeoapi/52°North lineage, tested Oracle deployment, exact revision/image, bounded preservation rationale, deployment adaptations, and remaining configuration gaps. Version 0.3 introduced the environmental-monitoring system early, with an authentic
 Smart Citizen Kit 2.3 model reference photograph. The photograph illustrates the
 model; the physical installation associated with selected public registration
 19639 remains unverified. Public readings remain the immediate experiment source; an owned kit and

@@ -42,12 +42,12 @@ jobs:
           CODEX_PRIMARY_RUNTIME_NODE: node
           CODEX_PRIMARY_RUNTIME_NODE_MODULES: ${{ github.workspace }}/.paper-node/node_modules
         run: |
-          python scripts/build-smart-citizen-paper.py --version 0.6 --date 2026-10-24
+          python scripts/build-smart-citizen-paper.py --version 0.7 --date 2026-10-25
           python scripts/verify-smart-citizen-paper.py --refresh
       - name: Upload built paper for review
         uses: actions/upload-artifact@v4
         with:
-          name: smart-citizen-paper-v0.6
+          name: smart-citizen-paper-v0.7
           path: |
             Docs/Research/Studies/Smart_Citizen/SMART_CITIZEN_EXPERIMENT_PAPER.docx
             Docs/Research/Studies/Smart_Citizen/MANUSCRIPT_MANIFEST.json
@@ -59,6 +59,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Generated files already current."
           else
-            git commit -m "docs: rebuild Smart Citizen paper v0.6"
+            git commit -m "docs: rebuild Smart Citizen paper v0.7"
             git push origin HEAD:work/details-view-20261023
           fi
