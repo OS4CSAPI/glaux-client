@@ -60,7 +60,7 @@ No source states this paragraph as a whole. The statement is a **V2 synthesis** 
 
 | Brick | Strongest direct donor(s) | Independent corroboration / challenge | Pedigree strength | V2 synthesis |
 | --- | --- | --- | --- | --- |
-| individually identifiable | CSAPI | AAS, SAREF, Redfish, OSUS | **Strong** | subject identity survives representation changes |
+| individually identifiable | CSAPI | AAS, SAREF, Redfish, Open Standard for Unattended Sensors (OSUS) | **Strong** | subject identity survives representation changes |
 | persistently describable | CSAPI | AAS, WoT | **Strong synthesis** | stable referent with changing information |
 | equipment-realized System | CSAPI | W3C/OGC SOSA/SSN, OPC UA, SAREF | **Strong** | present realization boundary is equipment |
 | defining sensing/observing orientation | CSAPI | W3C/OGC SOSA/SSN, SensorML, Open Group SOSA | **Strong** | sensing defines the whole subject, not every internal function |
@@ -79,8 +79,8 @@ No source states this paragraph as a whole. The statement is a **V2 synthesis** 
 | state | Redfish | ISA, UGS, BME280, Open Group SOSA | **Strong** | current state is not capability/configuration/history |
 | interactions | WoT | SAREF, LwM2M, CSAPI | **Strong** | ways of interacting are related to, not identical with, the subject |
 | outputs/actions | CSAPI | SensorML, OSUS, SAPIENT, UGS | **Very strong** | output and tasking/execution are distinct runtime semantics |
-| history | CSAPI | Redfish, MIMOSA, UGS | **Strong** | current description/state is not history |
-| provenance | W3C PROV | UGS, OMS, CSAPI/AAS references | **Strong cross-cutting** | source/derivation/responsibility should survive integration |
+| history | CSAPI | Redfish, Machinery Information Management Open Systems Alliance (MIMOSA), UGS | **Strong** | current description/state is not history |
+| provenance | W3C Provenance (PROV) | UGS, OMS, CSAPI/AAS references | **Strong cross-cutting** | source/derivation/responsibility should survive integration |
 | non-conflation rule | induced across donors | all above | **V2 synthesis** | preserve explicit relationships among distinct concerns |
 
 ---
@@ -225,7 +225,7 @@ Open Group SOSA places heterogeneous support and mission functions inside a boun
 
 ## 8.4 IEEE 1451 and SAPIENT — boundary challengers
 
-IEEE 1451 deliberately standardizes smart transducers that can be sensors and/or actuators (IEEE 2024; National Institute of Standards and Technology 2024).
+IEEE 1451 deliberately standardizes smart transducers that can be sensors and/or actuators (IEEE 2024; National Institute of Standards and Technology [NIST] 2024).
 
 SAPIENT supports sensors **and effectors**, and its fusion node coordinates both (Defence Science and Technology Laboratory 2026).
 
@@ -828,7 +828,7 @@ The next appropriate research step is canonical concept consolidation, not furth
 
 Bosch Sensortec. 2024. *BME280 Combined Humidity and Pressure Sensor: Data Sheet*. Revision 1.24. February.
 
-British Standards Institution. 2024. *BSI Flex 335 v2.0:2024-03: SAPIENT Network of Autonomous Sensors and Effectors—Interface Control Document—Specification*. March.
+British Standards Institution (BSI). 2024. *BSI Flex 335 v2.0:2024-03: SAPIENT Network of Autonomous Sensors and Effectors—Interface Control Document—Specification*. March.
 
 Defence Science and Technology Laboratory. 2026. “SAPIENT: How It Works.” GOV.UK. October 14. https://www.gov.uk/government/publications/sapient-how-it-works/sapient-how-it-works.
 
