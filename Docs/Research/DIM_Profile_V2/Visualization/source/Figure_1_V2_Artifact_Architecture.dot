@@ -1,0 +1,20 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.55", splines=ortho, labelloc=t, label="Figure 1. V2 Artifact Architecture", fontsize=26, fontname="DejaVu Sans Bold", fontcolor="#10213a"];
+  node [shape=box, style="rounded,filled", fillcolor="#edf5ff", color="#10213a", penwidth=1.8, fontname="DejaVu Sans", fontcolor="#10213a", margin="0.20,0.14"];
+  edge [color="#10213a", penwidth=2.0, arrowsize=0.85, fontname="DejaVu Sans Bold", fontsize=13, fontcolor="#10213a"];
+
+  dim [width=7.8, label=<<B><FONT POINT-SIZE="22">Domain Information Model (DIM)</FONT></B><BR/><FONT POINT-SIZE="14">Defines domain concepts, relationships, and meaning</FONT>>];
+  profile [width=7.8, label=<<B><FONT POINT-SIZE="22">Application Profile</FONT></B><BR/><FONT POINT-SIZE="14">Selects and constrains DIM content for a specific interoperability purpose</FONT>>];
+  binding [width=7.8, label=<<B><FONT POINT-SIZE="22">OGC Binding</FONT></B><BR/><FONT POINT-SIZE="14">Specifies representation using CSAPI, SensorML, SWE Common, and related mechanisms</FONT>>];
+  impl [width=7.8, label=<<B><FONT POINT-SIZE="22">Implementation</FONT></B><BR/><FONT POINT-SIZE="14">Realizes the binding in servers, adapters, clients, validators, storage, and UIs</FONT>>];
+
+  dim -> profile [label="supplies semantics to"];
+  profile -> binding [label="selects / constrains
+binds to"];
+  binding -> impl [label="implemented by"];
+  profile -> dim [style=dashed, constraint=false, label="profile requirements identify
+needed domain questions"];
+
+  note [shape=plaintext, fontname="DejaVu Serif Italic", fontsize=13, label="Purpose-driven but binding-independent: model for the profile, not to the profile."];
+  impl -> note [style=invis];
+}
