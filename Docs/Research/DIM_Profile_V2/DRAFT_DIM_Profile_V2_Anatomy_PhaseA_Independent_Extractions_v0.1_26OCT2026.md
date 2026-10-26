@@ -3275,3 +3275,695 @@ These identities serve different purposes and should not be collapsed.
 
 **Next frozen lineage:** C07 — MIMOSA.
 
+---
+
+# C07 — MIMOSA
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 99, 100, 101.  
+**Frozen companion ID:** 102.
+
+**Primary inspected sources:**
+
+- MIMOSA, *CCOM UML Class Model*, Version 4.1.0 / 4.1.0-RC1 package:
+  - official release page identifies 4.1.0-RC1, release date 20 March 2020, Release Candidate;
+  - class-model PDF generated 27 June 2018 and marked Version 4.1.0 Proposed.
+- MIMOSA, *OSA-CBM*:
+  - official MIMOSA architecture description;
+  - official MIMOSA presentation material used to inspect the six CBM functional blocks and relationship to OSA-EAI.
+- MIMOSA, *OSA-EAI*:
+  - official MIMOSA description of the enterprise asset-information exchange/storage architecture.
+- MIMOSA OIIE Scenario 11, *Publish Asset Removal/Installation Events from MMS to O&M*.
+
+**Evidence note:** CCOM 4.1.0-RC1 is a Release Candidate, not a final adopted 4.1.0 release. The frozen bibliography inherited an earlier 2018 date from the generated UML artifact; the official MIMOSA release page identifies 20 March 2020 as the RC1 release date. This extraction preserves both provenance facts. OSA-EAI 3.2.3a and OSA-CBM 3.3.1 are separate MIMOSA specifications; their concepts are not silently treated as if they were classes in CCOM 4.1.0.
+
+---
+
+## 1. Source-native structural organization
+
+The MIMOSA lineage contains three complementary organizations.
+
+### A. CCOM — Common Conceptual Object Model
+
+The CCOM 4.1.0 diagram set is explicitly divided into source-native subject diagrams:
+
+1. Core Types
+2. Core
+3. Attribute Sets
+4. Registry
+5. Registry Configuration
+6. Logistic Resources
+7. Agents
+8. Measurement Locations
+9. Networks
+10. Network Connections
+11. Functions
+12. Engineering Studies
+13. Ordered Lists
+14. Signal Processing Setups
+15. Algorithms
+16. State Regions
+17. Measurements
+18. Tests
+19. Triggered State Regions
+20. Events
+21. Event Relationships
+22. Geospatial Tracking
+23. Ambiguity Sets
+24. Health and Prognostic Assessments
+25. Recommendations
+26. Solution Packages
+27. Requests
+28. Work Management
+29. Completed Work
+30. Documents
+
+This is already a strong source-native anatomy rather than one flat Asset record.
+
+### B. OSA-CBM — condition-based-maintenance functional architecture
+
+OSA-CBM standardizes six functional blocks:
+
+1. **Data Acquisition**
+2. **Data Manipulation**
+3. **State Detection**
+4. **Health Assessment**
+5. **Prognostic Assessment**
+6. **Advisory Generation**
+
+The architecture specifies information exchanged and interfaces among the blocks while leaving internal algorithms proprietary.
+
+### C. OSA-EAI — enterprise asset information integration
+
+OSA-EAI organizes exchange/storage around broad physical-asset information areas including:
+
+- asset registry;
+- condition;
+- reliability;
+- maintenance/work;
+- configuration;
+- operational measurements/alarms;
+- diagnostics/prognostics/health assessment;
+- physical-asset tracking;
+- model/reliability information;
+- work/resources;
+- calibration/configuration management.
+
+OSA-EAI uses a layered architecture so components can be used independently and provides exchange plus relational storage models.
+
+### D. OIIE lifecycle scenario
+
+Scenario 11 explicitly organizes a configuration-change event around:
+
+- serialized Asset;
+- functional location;
+- installation/removal event;
+- timestamp;
+- optional responsible agent;
+- optional work order.
+
+The overall lineage therefore combines:
+
+> **persistent asset registry + configuration/location relationships + measurements/events + condition/assessment + recommendations/work + functional CBM processing + enterprise exchange/storage**
+
+---
+
+## 2. Purpose of each partition
+
+### Core / Core Types / Attribute Sets
+
+Purpose: provide common identity, typing, values, units, source, naming and reusable attribute/property structures.
+
+### Registry
+
+Purpose: represent durable equipment/asset identity and reference structures:
+
+- Asset;
+- AssetType;
+- Model;
+- ModelRevision;
+- ModelVariant;
+- Manufacturer;
+- Site;
+- Segment;
+- SegmentType;
+- Organization;
+- component relationships.
+
+### Registry Configuration
+
+Purpose: represent changes to the registered asset configuration and lifecycle status through events such as:
+
+- AssetSegmentEvent;
+- AssetModelEvent;
+- AssetOwnerEvent;
+- lifecycle-status structures.
+
+### Logistic Resources / Agents
+
+Purpose: describe human/organizational/material resources that participate in asset operations and work.
+
+### Measurement Locations / Measurements / Tests
+
+Purpose: distinguish:
+
+- where/what is measured;
+- the source/transducer;
+- measurement setup;
+- measurement result;
+- tests/samples;
+- association of measurements to Asset or Segment at measurement time.
+
+### Networks / Network Connections
+
+Purpose: model connectivity/network structures separately from physical asset registry.
+
+### Functions / Algorithms / Signal Processing Setups
+
+Purpose: represent functional/processing structures independently of equipment identity.
+
+### State Regions / Triggered State Regions
+
+Purpose: model state/threshold/condition regions and transitions associated with measurements/events.
+
+### Events / Event Relationships
+
+Purpose: represent actual, hypothetical and proposed events, time and relationships among events.
+
+### Geospatial Tracking
+
+Purpose: track asset/location relationships over time.
+
+### Health and Prognostic Assessments
+
+Purpose: represent evaluated health and remaining-life assessments independently from the measurements/events that substantiate them.
+
+### Recommendations / Solution Packages / Requests
+
+Purpose: move from assessment to recommended/desired action and structured requests/solutions.
+
+### Work Management / Completed Work
+
+Purpose: represent planned and executed work, resources, causes/effects and work results.
+
+### OSA-CBM functional blocks
+
+Purpose: partition the information-processing chain from raw acquisition through advisory/decision support.
+
+### OSA-EAI
+
+Purpose: integrate the otherwise separated registry, condition, reliability, maintenance and operational information across enterprise applications.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Registry | Asset, AssetType, Model, ModelRevision, ModelVariant, Manufacturer, Segment, SegmentType, Site, Organization, AssetComponent, SegmentComponent |
+| Registry configuration | AssetSegmentEvent, AssetModelEvent, AssetOwnerEvent, LifecycleStatus, LifecycleStatusHistory |
+| Common identity/properties | Entity, Nameable, InfoSource, Attribute/Property, AttributeSet, UnitOfMeasure |
+| Agents/resources | Agent, Organization, Material/LogisticResource, roles |
+| Measurement | MeasurementLocation, MeasurementSource, MeasurementAssociation, Measurement, transducer, setup |
+| Tests | Test, TestGroup, TestComponent, Sample |
+| Functions/processing | Function, Algorithm, SignalProcessSetup, Vector/FFT/waveform setup |
+| State/condition | StateRegion, TriggeredStateRegion, threshold/condition structures |
+| Events | Event, ActualEvent, HypotheticalEvent, ProposedEvent, TimestampedEvent, EventLink |
+| Health | Assessment, HealthAssessment, RemainingLifeAssessment, HealthLevelType, ChangePatternType |
+| Recommendations/work | Recommendation, SolutionPackage, Request, Work, CalendaredWork, CompletedWork |
+| Location/topology | Segment, Site, geospatial tracking, networks/connections |
+| OSA-CBM | Data Acquisition, Data Manipulation, State Detection, Health Assessment, Prognostic Assessment, Advisory Generation |
+| OSA-EAI | Registry, condition, reliability, maintenance/work, tracking, operational data, diagnostic/prognostic information |
+
+---
+
+## 4. Primary relationships
+
+MIMOSA uses explicit relationships to preserve continuity across different information concerns.
+
+### Asset ↔ Model / AssetType
+
+A serialized Asset is distinguished from the reusable Model/ModelRevision/ModelVariant and AssetType that characterize it.
+
+### Asset ↔ components
+
+AssetComponent provides parent/child asset relationships.
+
+### Segment ↔ components / Site
+
+Segment represents a functional/location-oriented structure and can have SegmentComponents and Site relationships.
+
+### Asset ↔ Segment over time
+
+AssetSegmentEvent records changing association between a serialized Asset and a Segment.
+
+Scenario 11 uses the same pattern concretely as Asset installation/removal at a functional location.
+
+### Asset ↔ Model over time
+
+AssetModelEvent records model association/change separately from Asset identity.
+
+### Asset ↔ Owner over time
+
+AssetOwnerEvent records ownership-related configuration/change.
+
+### Measurement ↔ Asset or Segment
+
+MeasurementAssociation is explicitly designed so a measurement can record:
+
+- the currently installed serialized Asset for a Segment-based measurement location; or
+- the Segment in which an Asset-based measurement location was located
+
+at the time of measurement.
+
+### Assessment ↔ subject/evidence
+
+HealthAssessment / RemainingLifeAssessment relate to Asset/Segment and can be substantiated by Events/measurements.
+
+### Recommendation ↔ assessment/event
+
+Recommendations can derive from HealthAssessment or Event.
+
+### Work ↔ resources/events/results
+
+Work/CompletedWork relate resources used/consumed, causes/effects and resulting Events.
+
+---
+
+## 5. Dependency boundaries
+
+The MIMOSA lineage makes several layer boundaries explicit.
+
+### CCOM vs OSA-EAI
+
+CCOM is the conceptual information model. OSA-EAI database/XML/service artifacts derive from common conceptual structures but add exchange/storage technology.
+
+### CCOM vs OSA-CBM
+
+OSA-CBM is a functional condition-monitoring architecture. It uses many OSA-EAI data elements and is intended to map into OSA-EAI, but its six processing blocks are not the same thing as CCOM subject classes.
+
+### Asset registry vs current configuration
+
+Persistent Asset identity/model information is distinct from configuration-change Events such as installation/removal/model/owner events.
+
+### Measurement vs assessment
+
+Measurements provide evidence; Health/RemainingLife Assessment is an interpretation/evaluation over evidence.
+
+### Assessment vs recommendation vs work
+
+Assessment, advice, requested/planned work and completed work are separate semantic stages.
+
+### Segment/location vs Asset
+
+A functional location/Segment can persist while different serialized Assets are installed/removed over time.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Strongly intrinsic to persistent Asset identity
+
+- serialized Asset;
+- AssetType;
+- manufacturer/model/revision/variant;
+- component relationships;
+- selected persistent properties.
+
+### Contextual/configurational
+
+- installation on a Segment/functional location;
+- ownership;
+- site;
+- current readiness/lifecycle status;
+- geospatial location;
+- network relationship;
+- responsible agent/organization.
+
+### Evidence/operational
+
+- measurements;
+- tests;
+- events;
+- state regions;
+- alarms.
+
+### Interpretive/derived
+
+- HealthAssessment;
+- RemainingLifeAssessment;
+- recommendations;
+- prognostic outputs.
+
+### Process/work context
+
+- requests;
+- work orders;
+- calendared work;
+- completed work;
+- logistic resources.
+
+MIMOSA therefore strongly separates **the persistent equipment subject** from **its changing context, evidence, evaluations and actions**.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting structures include:
+
+- Entity identity/UUID;
+- Nameable;
+- InfoSource;
+- units/value types;
+- Attribute/Property/AttributeSet;
+- EffectiveStatus and effective dates;
+- Event/time;
+- Agent/role;
+- Documents;
+- data quality;
+- ordered lists;
+- source/evidence relationships.
+
+These are reused across registry, measurement, assessment and work structures.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+MIMOSA has one of the richest explicit time/lifecycle organizations in the frozen anatomy population.
+
+### Persistent identity with changing configuration
+
+Asset identity persists while:
+
+- Segment/location association changes;
+- Model association changes;
+- ownership changes;
+- lifecycle/readiness status changes.
+
+### Lifecycle status
+
+CCOM includes:
+
+- LifecycleStatus;
+- LifecycleStatusType;
+- LifecycleStatusHistory;
+- effective/start dates.
+
+### Event model
+
+Events can be:
+
+- Actual;
+- Hypothetical;
+- Proposed;
+- Timestamped;
+- linked to one another.
+
+### Installation/removal
+
+OIIE Scenario 11 explicitly binds:
+
+- serialized Asset;
+- functional location;
+- install/remove Event;
+- event time;
+- agent/work context.
+
+### Condition/prognostic time
+
+RemainingLifeAssessment projects future condition; HealthAssessment evaluates current condition. OSA-CBM explicitly progresses from current data/state into future prognosis and advisory.
+
+### Work time
+
+CalendaredWork and CompletedWork distinguish planned from performed work.
+
+This lineage therefore separates:
+
+> **persistent equipment identity → configuration/status history → observed events/evidence → current assessment → future prognosis → recommendation/work**
+
+without treating those as the same record.
+
+---
+
+## 9. Composition / topology organization
+
+MIMOSA supports multiple structural topologies.
+
+### Asset composition
+
+AssetComponent defines parent/child structure among Assets.
+
+### Functional/location structure
+
+Segment and SegmentComponent define a separate functional/location hierarchy.
+
+### Site organization
+
+Sites contain/register relevant structures and locations.
+
+### Model hierarchy
+
+Models have:
+
+- ModelRevision;
+- ModelVariant;
+- parent/child relationships.
+
+### Network topology
+
+Networks and NetworkConnections are modeled separately from Asset/Segment hierarchy.
+
+### Measurement topology
+
+MeasurementLocation and MeasurementAssociation connect sensing/measurement points to Asset or Segment context.
+
+### Key source-native distinction
+
+**Asset composition is not the same as functional-location/Segment hierarchy.**
+
+Scenario 11 depends on this separation: the same functional location can receive/remove different serialized assets while retaining its own identity.
+
+---
+
+## 10. Capability / function / behavior organization
+
+MIMOSA organizes function/capability across several structures rather than one generic Capability class.
+
+### Functions
+
+The CCOM Functions diagram provides explicit functional entities separate from Asset identity.
+
+### Algorithms / signal processing
+
+Algorithm and SignalProcessSetup structures represent data-processing methods/configurations.
+
+### OSA-CBM
+
+Function is strongly organized into six processing stages:
+
+1. Data Acquisition
+2. Data Manipulation
+3. State Detection
+4. Health Assessment
+5. Prognostic Assessment
+6. Advisory Generation
+
+OSA-CBM specifies:
+
+- data;
+- configuration;
+- explanation;
+- interfaces
+
+for these levels while leaving proprietary algorithms internal.
+
+### Capability forecasting
+
+OSA-EAI's broader information scope includes forecasting/projection information.
+
+The source-native pattern separates:
+
+- **equipment identity**;
+- **functional/processing role**;
+- **implementation algorithm**;
+- **derived assessment/advice**.
+
+---
+
+## 11. Information / output organization
+
+MIMOSA separates information classes according to meaning and processing stage.
+
+### Registry information
+
+Persistent asset/model/site/segment identity and configuration.
+
+### Measurement data
+
+- scalar/single data;
+- time waveform;
+- FFT;
+- CPB;
+- samples/tests;
+- signal-processing setup;
+- measurement source/location/association.
+
+### Event data
+
+Actual/proposed/hypothetical events and relationships.
+
+### State/condition information
+
+State regions and threshold/triggered-state structures.
+
+### Assessments
+
+Health and remaining-life evaluations.
+
+### Recommendations
+
+Recommended actions with priority/evidence relationships.
+
+### Work information
+
+Requests, planned work, completed work and resources.
+
+### OSA-CBM information flow
+
+Data is progressively transformed from acquisition to manipulation/state detection/assessment/prognosis/advisory, with interfaces carrying data/configuration/explanation.
+
+This is a strong source-native distinction between **raw/processed evidence, interpreted condition, forecast, advice and action**.
+
+---
+
+## 12. Management / condition organization
+
+Management and condition are central to the lineage.
+
+### Registry/configuration management
+
+- Asset registry;
+- Model/AssetType;
+- component configuration;
+- install/remove events;
+- model/owner changes;
+- lifecycle/readiness status.
+
+### Condition monitoring
+
+OSA-CBM and CCOM structures support:
+
+- acquisition;
+- state detection;
+- alarms;
+- tests;
+- condition evidence.
+
+### Diagnostics/health
+
+HealthAssessment represents current evaluated condition with health level/confidence and supporting evidence.
+
+### Prognostics
+
+RemainingLifeAssessment represents future-state/remaining-life evaluation with estimate/error/confidence.
+
+### Recommendations
+
+Recommendation structures link assessments/events to advised actions.
+
+### Maintenance/work
+
+Requests, Work, CalendaredWork and CompletedWork model the planning/execution side rather than collapsing it into health status.
+
+OSA-EAI explicitly integrates registry, condition, reliability and maintenance information across applications.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+MIMOSA uses persistent identity and source/evidence relationships throughout.
+
+### Entity identity
+
+CCOM Entity provides UUID and information-source identity fields.
+
+### Asset identity
+
+Serialized Asset is separate from:
+
+- AssetType;
+- Model;
+- ModelRevision;
+- ModelVariant.
+
+### InfoSource
+
+Information source is explicitly represented and can register entities.
+
+### Temporal provenance
+
+Created/LastEdited/effective-time/event-time structures support temporal traceability.
+
+### Assessment provenance
+
+Health/remaining-life assessments can be substantiated by Event/evidence and associated with responsible AgentRole and data quality.
+
+### Work/event provenance
+
+Completed work has causes/effects/resources and resulting events.
+
+### OIIE exchange
+
+Scenario 11 preserves Asset, location, time, agent/work order context and a typed event.
+
+The lineage therefore treats identity continuity and evidentiary traceability as cross-cutting architecture.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Asset vs Model** — serialized equipment instance and reusable product/model description are different subjects.
+2. **Model vs ModelRevision vs ModelVariant** — revision and variant are distinct model-evolution structures.
+3. **Asset vs Segment** — persistent serialized equipment and functional/location position are different identities.
+4. **AssetComponent vs SegmentComponent** — physical/equipment composition and functional-location hierarchy are distinct.
+5. **Asset-Segment relationship vs Asset identity** — installation/removal changes context without changing the Asset's identity.
+6. **Registry vs configuration Event** — persistent registered identity and a change to configuration are different.
+7. **MeasurementLocation vs Asset/Segment** — measurement point/context is not automatically identical to the equipment being measured.
+8. **Measurement vs Test vs Event** — evidence types have different semantics.
+9. **Measurement vs Assessment** — observed data and interpreted health/prognosis are different.
+10. **HealthAssessment vs RemainingLifeAssessment** — current condition and future-life projection are distinct.
+11. **Assessment vs Recommendation** — evaluation and advice are separate.
+12. **Recommendation vs Request/Work** — advice is not the same as authorized/planned/executed action.
+13. **CalendaredWork vs CompletedWork** — planned and performed work are distinct.
+14. **OSA-CBM functional block vs equipment object** — processing stage is not a physical asset.
+15. **OSA-CBM algorithm internals vs open interface/data** — standardized information flow does not standardize proprietary processing implementation.
+16. **CCOM conceptual model vs OSA-EAI exchange/storage realization** — domain meaning and integration technology are different.
+17. **Asset lifecycle status vs condition/health assessment** — administrative/lifecycle status and diagnostic health evaluation should not be collapsed.
+18. **Event cause/effect/evidence relationships vs simple chronological history** — time order alone does not preserve event meaning.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** persistent equipment identity; model/type/instance separation; component hierarchy;
+- **likely contextual relationship pattern:** functional location/Segment, Site, ownership, geospatial tracking and changing installation relationships;
+- **likely reusable lifecycle pattern:** persistent subject identity plus typed configuration/status Events rather than rewriting current state only;
+- **likely evidence/assessment pattern:** Measurement/Test/Event → Health Assessment → Prognosis → Recommendation → Work;
+- **likely cross-cutting:** InfoSource, Agent/role, time, data quality, documents and provenance;
+- **likely functional pattern:** OSA-CBM six-stage condition-processing chain with open interfaces and proprietary algorithm internals;
+- **likely management pattern:** registry, configuration, reliability, maintenance and completed-work structures remain semantically distinct;
+- **specialization caution:** MIMOSA is physical-asset-management oriented and should not automatically define every V2 equipment concern;
+- **binding/representation caution:** CCOM classes, OSA-EAI XML/database structures and OSA-CBM service interfaces are MIMOSA-native realizations, not automatically V2 classes or API resources.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C07 status: COMPLETE.**
+
+**Next frozen lineage:** C08 — OGC API – Connected Systems.
+
