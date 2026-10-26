@@ -25,6 +25,12 @@ Version 2 separates four related but distinct artifacts: the Domain Information 
 | OGC binding | How are selected DIM/profile meanings represented in CSAPI, SensorML, SWE Common, and related standards? | Intended; concrete binding rules not yet defined. |
 | Implementation | How do servers, adapters, clients, validators, and UIs produce, consume, validate, and present the representations? | Outside the DIM; not specified here. |
 
+Figure 1 summarizes the relationship among these artifacts, including the intentional feedback from profile requirements into the domain questions that the DIM must answer.
+
+![Figure 1. V2 Artifact Architecture](Figures/Figure_1_V2_Artifact_Architecture.svg)
+
+**Figure 1. V2 Artifact Architecture.** The DIM establishes domain meaning and supplies semantics to the application profile. Profile requirements identify the domain questions the DIM must be able to answer, while the profile selects and constrains DIM content for a specific interoperability purpose. The OGC binding expresses those selected meanings using CSAPI, SensorML, SWE Common, and related mechanisms, and implementations realize the binding in concrete software.
+
 ## 3. Domain Information Model
 
 For Version 2, a Domain Information Model is an implementation- and protocol-independent model of the common concepts, entities, relationships, and intrinsic semantic constraints needed to describe and understand a defined problem domain. This use of DIM is not project-invented terminology. ISO/IEEE 11073-10201 defines a Domain Information Model for a bounded medical-device interoperability domain, while RFC 3444 distinguishes an implementation-independent information model from the lower-level data models and protocol details that realize it (ISO and IEEE 2020; Pras and Schoenwaelder 2003). OGC similarly treats a conceptual model as an implementation-independent representation of the important concepts of a domain and recommends platform-independent conceptual modeling (Open Geospatial Consortium 2021).
