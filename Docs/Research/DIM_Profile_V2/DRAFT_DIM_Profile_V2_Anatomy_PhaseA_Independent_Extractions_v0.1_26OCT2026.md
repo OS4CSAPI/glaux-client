@@ -10057,3 +10057,364 @@ Identity of the managed position/index can differ from replaceable Battery ident
 
 **Next frozen lineage:** X03 — IETF hardware management.
 
+---
+
+# X03 — IETF Hardware Management (RFC 8348)
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 133.
+
+**Primary inspected source:**
+
+- RFC 8348, *A YANG Data Model for Hardware Management*, March 2018, Standards Track.
+
+**Evidence note:** RFC 8348 is explicitly a YANG management data model for hardware on a single server. It is admitted as a cross-cutting physical-composition donor, not as a whole sensing-system model.
+
+---
+
+## 1. Source-native structural organization
+
+RFC 8348 organizes hardware around one flat list of **Components**, with explicit parent/child references reconstructing physical hierarchy.
+
+Each Component carries:
+
+- name;
+- hardware class;
+- description;
+- parent;
+- parent-relative position;
+- contained children;
+- hardware/firmware/software revision;
+- serial number;
+- manufacturer;
+- model;
+- alias;
+- asset ID;
+- field-replaceable-unit flag;
+- manufacture date;
+- URI(s);
+- UUID.
+
+Optional substructures add:
+
+- **state**
+  - admin state;
+  - operational state;
+  - usage state;
+  - alarm state;
+  - standby state;
+  - last state change.
+
+- **sensor-data**
+  - measured value;
+  - value type;
+  - scale;
+  - precision;
+  - sensor operational status;
+  - units display;
+  - timestamp;
+  - update rate.
+
+The model aligns Component classes to the IANA/ENTITY-MIB physical-class taxonomy.
+
+---
+
+## 2. Purpose of each partition
+
+### Component
+
+Purpose: provide a common identity/configuration/state record for any managed physical hardware component.
+
+### Class
+
+Purpose: identify what physical hardware class the Component represents.
+
+### Parent / parent-rel-pos / contains-child
+
+Purpose: reconstruct physical containment and sibling position while retaining a flat addressable component list.
+
+### Identity/product fields
+
+Purpose: preserve product/asset identity separately from topology.
+
+### State
+
+Purpose: distinguish several independent management-state dimensions.
+
+### Sensor data
+
+Purpose: allow a hardware component that acts as a sensor to publish its current measurement and measurement metadata without creating a second physical entity record.
+
+### Notifications
+
+Purpose: report hardware state transitions independently from polling current state.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Hardware inventory | hardware, component list, component name |
+| Physical class | chassis, container, module, port, stack, fan, sensor, power supply, battery, CPU, storage drive, etc. |
+| Physical hierarchy | parent, parent-rel-pos, contains-child |
+| Product identity | serial-num, mfg-name, model-name, asset-id, UUID, revisions |
+| Replaceability | is-fru |
+| State | admin-state, oper-state, usage-state, alarm-state, standby-state |
+| Measurement | sensor-data, value, type, scale, precision, status, units, timestamp, update rate |
+| Change | last-change, hardware-state-change notifications |
+
+---
+
+## 4. Primary relationships
+
+### Component → parent Component
+
+Parent identifies the containing physical component.
+
+### Parent → child Components
+
+`contains-child` is the inverse operational-state view.
+
+### Component → class
+
+Hardware class identifies physical type.
+
+### Component → sensor data
+
+A component can carry sensor-data when it performs a sensor role.
+
+### Component → state
+
+State substructure belongs to the physical component.
+
+### Component → external identity
+
+physical-index maps to ENTITY-MIB when present; UUID/asset-id/URI provide additional identity keys.
+
+---
+
+## 5. Dependency boundaries
+
+### Flat inventory vs hierarchy
+
+The source stores Components in one flat list; parent references create containment. List membership itself does not imply hierarchy.
+
+### Physical hierarchy vs class
+
+Class says what a component is; parent says where it sits.
+
+### Component vs sensor reading
+
+Physical component identity and current sensor-data are separate structures.
+
+### Configuration vs operational state
+
+RFC 8348 follows NMDA and separates writable/intended configuration from operational/system state.
+
+### YANG binding vs conceptual hardware distinctions
+
+YANG tree paths and feature statements are the management representation, not physical-domain truth by themselves.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic
+
+- hardware class;
+- manufacturer/model/serial;
+- hardware/firmware/software revision;
+- UUID/asset identity;
+- field replaceability;
+- current component state;
+- sensor capability/current reading where applicable.
+
+### Contextual
+
+- parent containment;
+- parent-relative position;
+- URI/external management references;
+- system/server context.
+
+The model is intentionally local to one managed hardware system/server.
+
+---
+
+## 7. Cross-cutting concepts
+
+- component identity;
+- physical class;
+- containment;
+- revisions;
+- state;
+- alarm;
+- sensor reading;
+- timestamp;
+- UUID/asset ID;
+- replaceability.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+### Hardware state
+
+Independent dimensions:
+- administrative;
+- operational;
+- usage;
+- alarm;
+- standby.
+
+### Temporal change
+
+- state-last-changed;
+- hardware collection last-change;
+- state-change notifications.
+
+### Product/lifecycle metadata
+
+- manufacture date;
+- revisions;
+- FRU status.
+
+### Limit
+
+No full maintenance/service/work lifecycle is defined.
+
+---
+
+## 9. Composition / topology organization
+
+Physical topology is explicit:
+
+- flat Component inventory;
+- parent link;
+- relative position among siblings of same class;
+- child inverse.
+
+This is a **physical-containment topology**.
+
+It does not model:
+- functional grouping;
+- deployment;
+- network topology;
+- power topology
+
+as equivalent relationships.
+
+---
+
+## 10. Capability / function / behavior organization
+
+RFC 8348 has limited function/capability semantics.
+
+Hardware class and optional feature containers identify what kind of hardware/management data exists.
+
+Sensor components can expose sensor-data.
+
+It does not define general:
+- device functions;
+- commands;
+- capabilities;
+- mission behavior.
+
+---
+
+## 11. Information / output organization
+
+The source distinguishes:
+
+- inventory/product information;
+- configuration;
+- current state;
+- sensor measurement;
+- state-change notifications.
+
+Sensor-data includes measurement value plus:
+- type;
+- scale;
+- precision;
+- units;
+- operational status;
+- timestamp;
+- update rate.
+
+---
+
+## 12. Management / condition organization
+
+Management/condition is central.
+
+- state dimensions;
+- alarm state;
+- sensor operational status;
+- revisions;
+- replaceability;
+- configuration;
+- state-change notification.
+
+The model is hardware-management oriented rather than application/mission oriented.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity layers include:
+
+- component name within model;
+- physical-index into ENTITY-MIB;
+- UUID;
+- asset-id;
+- manufacturer/model/serial;
+- alias;
+- URI(s).
+
+Parent references use component names.
+
+The source explicitly maps to ENTITY-MIB/ENTITY-SENSOR-MIB/ENTITY-STATE-MIB, preserving cross-management-model correspondence.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Component list membership vs physical parentage** — flat inventory does not imply containment.
+2. **hardware class vs component identity** — type and instance differ.
+3. **Component vs sensor-data** — physical hardware and its current reading differ.
+4. **sensor hardware class vs whole-system sensing role** — one component class does not classify the entire equipment.
+5. **parent vs parent-relative-position** — containing parent and sibling position are different.
+6. **configuration vs operational state** — desired/writable settings and observed state differ.
+7. **admin vs oper vs usage vs alarm vs standby state** — independent state dimensions must not collapse.
+8. **asset-id vs UUID vs serial vs component name** — identity schemes serve different scopes.
+9. **hardware revision vs firmware/software revision** — realization-version dimensions differ.
+10. **physical-index vs durable component identity** — management-table index and real-world identity differ.
+11. **current sensor value vs sensor operational status** — measurement and measurement-source condition differ.
+12. **measurement timestamp vs state-last-changed** — data time and component-state-change time differ.
+13. **FRU status vs component class** — replaceability is not equipment type.
+14. **physical containment vs functional/network/power topology** — RFC 8348 only defines the physical hierarchy.
+15. **YANG path vs physical relationship** — representation location should not be mistaken for domain containment.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting physical-composition pattern:** flat inventory plus explicit parent/relative-position hierarchy;
+- **likely core equipment identity:** manufacturer/model/serial/revisions/UUID/asset ID kept distinct;
+- **likely state pattern:** multiple independent administrative/operational/usage/alarm/standby dimensions;
+- **likely measurement pattern:** component sensor reading separated from component identity and condition;
+- **likely lifecycle detail:** manufacture date and FRU status without implying full service history;
+- **scope caution:** hardware management does not supply sensing-function, deployment, observation or mission semantics;
+- **binding caution:** YANG nodes/features/paths and ENTITY-MIB indexes are management-protocol/data-model carriers, not automatically V2 classes/relations.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X03 status: COMPLETE.**
+
+**Next frozen lineage:** X04 — IETF interfaces / topology.
+
