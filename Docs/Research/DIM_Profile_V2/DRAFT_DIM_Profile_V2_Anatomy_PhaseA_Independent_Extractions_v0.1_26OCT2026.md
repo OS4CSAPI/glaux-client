@@ -5190,3 +5190,637 @@ The lineage therefore supports both **equipment/process identity** and **derivat
 
 **Next frozen lineage:** C10 — OPC UA Devices / PA-DIM.
 
+---
+
+# C10 — OPC UA Devices / PA-DIM
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 103, 104.  
+**Frozen companion ID:** 105.
+
+**Primary inspected sources:**
+
+- OPC Foundation, *OPC Unified Architecture Part 100: Devices*, version 1.05.0.
+- OPC Foundation / FieldComm Group, *OPC UA for Process Automation Devices — PA-DIM*, version 1.02.0, OPC 30081.
+
+**Companion evidence:**
+- OPC UA Part 7 Profiles is retained as conformance/profile context only and is not treated as an independent anatomy model.
+
+**Evidence note:** The OPC Foundation online reference is the current official structured publication. Part 100 defines a generic device information model; PA-DIM is a companion specification specializing it for Process Automation Devices. PA-DIM is therefore treated as a specialization within the same lineage, not as an independent structural vote.
+
+---
+
+## 1. Source-native structural organization
+
+Part 100 explicitly defines **three models that build on one another**:
+
+1. **Base Device Model**
+   - unified view of Devices and their hardware/software parts independent of underlying protocol.
+
+2. **Device Communication Model**
+   - adds Networks, ConnectionPoints, Protocols and topological relationships.
+
+3. **Device Integration Host Model**
+   - adds host/integration structures for managing multiple Devices and reflecting configured/online automation-system topology.
+
+It also defines reusable AddIns for:
+
+- locking/concurrent access;
+- software update.
+
+### Base Device Model hierarchy
+
+The primary source-native type hierarchy is:
+
+- **TopologyElementType**
+  - common base for elements in device topology;
+  - has functional grouping concept.
+
+- **ComponentType**
+  - generic representation of Device or parts of Device;
+  - parts can be mechanical or software;
+  - applies vendor/tag nameplate interfaces.
+
+- **DeviceType**
+  - subtype of ComponentType;
+  - commonly represents field Devices;
+  - adds device health/support semantics and ConnectionPoints.
+
+- **SoftwareType**
+  - sibling subtype of ComponentType;
+  - represents software as a component.
+
+Additional structural types include:
+
+- Modular Devices;
+- Blocks;
+- ConfigurableObjectType;
+- FunctionalGroupType;
+- ConnectionPointType;
+- NetworkType;
+- ProtocolType;
+- DeviceSet;
+- NetworkSet;
+- DeviceTopology.
+
+### PA-DIM specialization
+
+PA-DIM defines:
+
+- **PADIMType**
+  - subtype of ComponentType;
+  - real-world Process Automation Device representation.
+
+It composes reusable interfaces/objects:
+
+- vendor nameplate;
+- tag nameplate/AssetId;
+- **IDeviceHealthType**;
+- **IAdministrationType**;
+- **ISignalSetType**;
+- DeviceConditionSet;
+- SubDevices;
+- dictionary/class reference.
+
+PA-DIM then specializes PADIMType into domain Device Types such as ProcessAnalyserType and concrete analyzer/sensor classes.
+
+The source-native pattern is therefore:
+
+> **generic topology element → component → device/software → modular components/functional groups → communication topology → integration host**, with PA-DIM adding **device identity + health + process signals + administration + condition + subdevice specialization**.
+
+---
+
+## 2. Purpose of each partition
+
+### TopologyElementType
+
+Purpose: provide common topology/parameter/functional-group structure for objects participating in device topology.
+
+### ComponentType
+
+Purpose: represent a generic Device or a part of a Device without requiring the mandatory Device properties. It can represent mechanical or software parts.
+
+### DeviceType
+
+Purpose: represent a physical Device with common identity, support, health and connection information.
+
+### SoftwareType
+
+Purpose: represent software as a component independently from physical Device identity.
+
+### FunctionalGroupType
+
+Purpose: organize Properties, Parameters and Methods **by application/use**, e.g.:
+
+- maintenance;
+- diagnostics;
+- condition monitoring;
+- identification.
+
+The same underlying element can appear in more than one FunctionalGroup, and FunctionalGroups can nest.
+
+### Modular Device / SubDevices / ConfigurableObject
+
+Purpose: represent device internals that can vary by installed module/subdevice/block configuration.
+
+### Device Communication Model
+
+Purpose: model communication independently from device composition:
+- Network;
+- ConnectionPoint;
+- Protocol/Communication Profile;
+- topological connection.
+
+### Device Integration Host
+
+Purpose: represent a server/host that integrates/manages multiple Devices and reflects configured and online topology.
+
+### PA-DIM identity/nameplate
+
+Purpose: provide vendor/product/asset identity for Process Automation Devices across lifecycle use cases.
+
+### SignalSet
+
+Purpose: contain process variables/signals.
+
+### DeviceHealth / DeviceConditionSet
+
+Purpose: represent general device health plus condition variables/alarms and component-specific condition sets.
+
+### IAdministration
+
+Purpose: expose administrative/configuration functions such as display language, date of last change and reset behavior.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Generic topology | TopologyElementType, ParameterSet, MethodSet, FunctionalGroup |
+| Generic component | ComponentType, VendorNameplate, TagNameplate, AssetId |
+| Device | DeviceType, Manufacturer, Model, SerialNumber, RevisionCounter, support info, DeviceHealth |
+| Software | SoftwareType |
+| Device internals | ModularDevice, ConfigurableObject, Blocks, SubDevices |
+| Functional organization | FunctionalGroupType, Identification, Configuration, Diagnostics, Maintenance, ConditionMonitoring |
+| Communication | NetworkType, ConnectionPointType, ProtocolType, Communication Profile, ConnectsTo |
+| Device integration | DeviceIntegrationHost, DeviceTopology, DeviceSet, NetworkSet, online/offline representation |
+| PA-DIM device | PADIMType, process-automation device class/dictionary entry |
+| PA-DIM process values | ISignalSetType, SignalSet |
+| PA-DIM condition | DeviceHealth, DeviceHealthAlarms, DeviceConditionSet, GeneralDeviceConditions, component conditions |
+| PA-DIM lifecycle/admin | IAdministrationType, DateOfLastChange, FactoryReset, commissioning/replacement/calibration use cases |
+
+---
+
+## 4. Primary relationships
+
+### ComponentType → DeviceType / SoftwareType
+
+Device and software are sibling specializations of a more general Component.
+
+### Device → components/subdevices
+
+A complex Device can contain:
+
+- other Devices;
+- mechanical components;
+- software components;
+- modules;
+- Blocks.
+
+Only the root of a complex Device needs to appear in DeviceSet; components can be reached through hierarchical references.
+
+### FunctionalGroup → underlying elements
+
+FunctionalGroup **organizes** Parameters/Properties/Methods that may physically/model-wise be components elsewhere. An element can appear in more than one functional group.
+
+### Device → ConnectionPoint → Network
+
+ConnectionPoint is the logical interface between Device and Network.
+
+`ConnectsTo` relates Network and ConnectionPoint/Device topologically.
+
+### Network → Protocol/Communication Profile
+
+Network and ConnectionPoint can carry ProtocolType / communication-profile information.
+
+### DeviceIntegrationHost → Device topology
+
+Host exposes configured/online information about Devices, Networks and ConnectionPoints, even when native device protocols differ.
+
+### Offline ↔ Online representation
+
+DeviceTopology can maintain two schematically equivalent representations:
+- offline/configured/engineering data;
+- online/current physical-device data.
+
+They are related but have different Node IDs and access semantics.
+
+### PA-DIM → SubDevices
+
+PADIMType can contain SubDevices, and those subdevices must themselves be PADIMType or subtype instances.
+
+### PA-DIM → SignalSet / DeviceConditionSet
+
+Process values/signals and condition information are distinct substructures of the same Device.
+
+---
+
+## 5. Dependency boundaries
+
+Part 100 has explicit model layering.
+
+### Device Model vs Communication Model
+
+Device identity/composition is independent from how it connects to a Network.
+
+### Communication Model vs Integration Host
+
+Network/device topology can exist independently; Device Integration Host adds engineering/management and online/offline integration semantics.
+
+### Component vs FunctionalGroup
+
+FunctionalGroup is an **application-oriented organizational view**, not the physical ownership location of the underlying element.
+
+### Device vs Software
+
+Software is separately modeled as ComponentType subtype instead of being collapsed into Device.
+
+### Type vs concrete companion specialization
+
+Part 100 supplies generic abstract Device/Component types; domain Companion Specifications define concrete Device subtypes.
+
+### PA-DIM vs Part 100
+
+PA-DIM reuses Part 100 Component/Device interfaces and adds process-automation domain information; it does not replace the generic topology/communication framework.
+
+### Online vs Offline
+
+Configured engineering representation and current physical-device representation are explicitly separated but structurally correlated.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Strongly intrinsic to Device/component
+
+- manufacturer/model/serial/revisions;
+- AssetId/ComponentName;
+- hardware/software parts;
+- subdevices/modules;
+- parameters/properties;
+- process signals;
+- DeviceHealth;
+- condition variables;
+- supported methods/functions.
+
+### Contextual/relational
+
+- Network membership;
+- ConnectionPoint/network address;
+- communication profile;
+- integration host;
+- containing automation topology;
+- online/offline engineering state;
+- facility/system context;
+- functional grouping by application use.
+
+### Viewpoint-dependent
+
+FunctionalGroups such as Maintenance or Diagnostics are **views/groupings of elements**, not necessarily independent intrinsic subobjects. The same Parameter/Method can participate in several FunctionalGroups.
+
+---
+
+## 7. Cross-cutting concepts
+
+The following recur across Part 100 and PA-DIM:
+
+- vendor/product identity;
+- AssetId/tag identity;
+- support information;
+- DeviceHealth;
+- Parameters/Properties/Methods;
+- FunctionalGroups;
+- status/alarms;
+- dictionary/semantic identifiers;
+- software revision/update;
+- locking/concurrent access;
+- modularity;
+- connection/network semantics;
+- online/offline correspondence.
+
+Part 100 Annex C also recognizes that the same real-world Device may be represented through multiple Companion Specifications; combination/merging of aspects is therefore a cross-cutting modeling concern.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+The lineage distinguishes several state/time structures.
+
+### Device health
+
+IDeviceHealthType provides general health state and diagnostic alarms.
+
+Multiple abnormal Conditions can be active simultaneously.
+
+### Condition
+
+PA-DIM DeviceConditionSet provides device-wide and component-specific condition variables.
+
+### Configuration/administrative change
+
+PA-DIM can expose DateOfLastChange and reset/configuration functions.
+
+### Online/offline state
+
+Device Integration Host separates:
+- configured/offline values;
+- current online physical-device values.
+
+Transfer methods can synchronize the two.
+
+### Software lifecycle
+
+Part 100 software-update AddIn distinguishes:
+- current version;
+- pending version;
+- fallback version;
+- transfer/install behaviors.
+
+### PA-DIM lifecycle use cases
+
+PA-DIM explicitly states support for lifecycle activities including:
+- procurement/engineering;
+- commissioning;
+- operation;
+- monitoring/diagnosis;
+- backup;
+- replacement;
+- repair;
+- calibration;
+- proof testing;
+- batch configuration;
+- regulatory audit.
+
+However, these use cases do not imply that all lifecycle events are represented as one generic event-history model. The actual information is distributed across identity, configuration, health, conditions, signals, revisions and domain extensions.
+
+---
+
+## 9. Composition / topology organization
+
+OPC UA Devices has several overlapping topologies.
+
+### Component topology
+
+A root Device can contain:
+- subdevices;
+- components;
+- software;
+- blocks.
+
+DeviceSet exposes only root instances for complex systems; hierarchical references reveal internal components.
+
+### Functional topology
+
+FunctionalGroups organize elements by application concern independently from physical/component hierarchy.
+
+### Communication topology
+
+Network, ConnectionPoint and `ConnectsTo` form a separate communication topology.
+
+### Integration topology
+
+DeviceTopology represents:
+- Devices;
+- Networks;
+- communication elements;
+- gateway/nested networks;
+- online/offline counterparts.
+
+### PA-DIM modularity
+
+SubDevices gives an explicit modular device structure restricted to PA-DIM Device types.
+
+### Important distinction
+
+**Physical/device composition, functional grouping and communication topology are separate structures.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+The lineage distributes capability through:
+
+- Device/Component ObjectType;
+- Parameters;
+- Methods;
+- FunctionalGroups;
+- Interfaces/AddIns;
+- process signals;
+- domain-specific Device subtypes.
+
+### FunctionalGroup
+
+Groups behavior/data according to use such as:
+- Identification;
+- Configuration;
+- Diagnostics;
+- Maintenance;
+- condition monitoring.
+
+### Methods
+
+Represent callable behavior/actions.
+
+### Parameters
+
+Represent Device variables used for:
+- configuration;
+- monitoring;
+- control.
+
+### PA-DIM process function
+
+ISignalSetType groups process values/signals.
+
+Device class dictionary references identify the process-automation class, e.g. transmitter/analyzer types.
+
+### Capability vs implementation
+
+Part 100 permits multiple Companion Specifications to represent different aspects of the same real-world Device. Thus one Device's functional semantics can be composed from multiple standardized aspect models rather than one monolithic type.
+
+---
+
+## 11. Information / output organization
+
+Part 100 / PA-DIM distinguish multiple information classes.
+
+### Product/nameplate information
+
+- manufacturer;
+- model;
+- serial;
+- product code;
+- hardware/software/device revision;
+- AssetId;
+- ProductInstanceUri.
+
+### Parameters
+
+Configuration/monitoring/control variables.
+
+### Process values
+
+PA-DIM SignalSet collects process variables.
+
+### Health/condition
+
+DeviceHealth plus alarms and condition sets.
+
+### Methods
+
+Callable device behavior.
+
+### Network information
+
+ConnectionPoint, address and communication profile.
+
+### Online/offline values
+
+Same conceptual Parameter can have separate offline engineering and online current representations.
+
+The source therefore distinguishes **identity, configuration/control parameter, process signal, condition/health, communication and behavior**, even when all are reachable under the same Device node.
+
+---
+
+## 12. Management / condition organization
+
+Management/condition is a major source-native concern.
+
+### Support/administration
+
+- support information;
+- tag/nameplate;
+- date of last change;
+- factory reset;
+- display/locale information.
+
+### Health
+
+DeviceHealth gives general health state.
+
+### Diagnostics
+
+Health alarms indicate abnormal states and can carry possible causes/suggested actions.
+
+### Condition
+
+DeviceConditionSet supports device-specific and component-specific condition variables.
+
+### Configuration
+
+Parameters and offline/online model support engineering/configuration workflows.
+
+### Lifecycle use cases
+
+PA-DIM's use cases explicitly include:
+- monitoring;
+- commissioning;
+- replacement;
+- repair;
+- calibration;
+- proof testing;
+- configuration backup/download.
+
+### Management authority
+
+Device Integration Host manages integration across many Devices while remaining a separate system entity.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+The lineage distinguishes multiple identity layers.
+
+### OPC UA Node identity
+
+NodeId uniquely identifies AddressSpace Nodes; BrowseName is not globally unique.
+
+### Product/device identity
+
+- Manufacturer;
+- Model;
+- SerialNumber;
+- ProductCode;
+- ProductInstanceUri;
+- AssetId;
+- ComponentName;
+- revision fields.
+
+### Semantic dictionary identity
+
+PA-DIM uses IRDI/dictionary references to identify:
+- device classes;
+- parameters;
+- units;
+- properties.
+
+### Online/offline reference identity
+
+Online and offline counterparts are separate Nodes linked by an explicit reference.
+
+### Device/Component relationship identity
+
+Hierarchical references identify component ownership; `ConnectsTo` identifies communication topology.
+
+The model therefore separates **address-space identity, durable product identity, semantic-term identity and topology-reference identity**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **TopologyElement vs Component vs Device** — generic topology element, component/part and complete Device have different abstraction levels.
+2. **Device vs Software** — software is a sibling Component specialization, not merely an attribute of Device.
+3. **root Device vs subdevice/component** — complex Device identity and internal part identities are distinct.
+4. **component hierarchy vs FunctionalGroup** — ownership/structure and application-oriented grouping are not interchangeable.
+5. **FunctionalGroup membership vs physical containment** — the same element can appear in multiple groups.
+6. **Device Model vs Communication Model** — equipment structure and communication topology are separate.
+7. **Device vs ConnectionPoint vs Network** — equipment, logical interface and communication medium are different.
+8. **ConnectsTo vs hierarchical reference** — communication adjacency and component ownership are different relationship kinds.
+9. **Device vs Device Integration Host** — managed equipment and integrating/management server are different subjects.
+10. **offline/configured representation vs online/current representation** — engineered expectation and actual connected Device state are distinct.
+11. **NodeId vs AssetId/product identity** — AddressSpace identity and real-world equipment identity serve different roles.
+12. **DeviceHealth vs diagnostic Condition** — overall health state and specific abnormal conditions are distinct.
+13. **identity/nameplate vs process signals** — product description and dynamic process values are separate information classes.
+14. **process signal vs condition variable** — operational measurement and device-condition/diagnostic information are different.
+15. **generic DeviceType vs PA-DIM specialization** — base device semantics and domain Device classes should not be flattened.
+16. **same real-world Device vs multiple Companion-Spec representations** — multiple standardized aspects can describe one Device without creating multiple physical Devices.
+17. **software update version states** — current, pending and fallback versions are semantically distinct.
+18. **modular Device structure vs communication gateway topology** — internal device composition and access through nested networks are different.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** durable device/product identity; hardware/software component distinction; modular/subdevice composition;
+- **likely reusable structural pattern:** one real-world equipment subject described through multiple standardized aspect models;
+- **likely viewpoint pattern:** FunctionalGroups for maintenance/diagnostics/configuration/condition without duplicating underlying properties/methods;
+- **likely cross-cutting:** health, condition, support info, semantic dictionary references, software revision/update;
+- **likely communications pattern:** Device → ConnectionPoint → Network separated from device composition;
+- **likely management pattern:** online/current vs offline/engineered representation and separate Device Integration Host;
+- **likely dynamic-information pattern:** process signals separated from configuration parameters and health/condition;
+- **specialization evidence:** PA-DIM shows how generic Device semantics can be specialized into a bounded operational family while reusing base identity/health/topology;
+- **binding/representation caution:** OPC UA ObjectTypes, Nodes, FunctionalGroups, interfaces and References are OPC-native information-model mechanisms and are not automatically V2 classes/resources;
+- **viewpoint caution:** FunctionalGroup is an organizational view, not proof that each group should become a V2 module.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C10 status: COMPLETE.**
+
+**Next frozen lineage:** C11 — OSUS / OSUS-R.
+
