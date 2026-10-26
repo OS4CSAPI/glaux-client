@@ -1034,3 +1034,564 @@ The following source-native distinctions are materially important:
 
 **Next frozen lineage:** C03 — IEEE 1451 / ISO 2145x.
 
+---
+
+# C03 — IEEE 1451 / ISO 2145x smart-transducer lineage
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 110, 114, 124.  
+**Frozen companion IDs:** 109, 111–113, 115, 123, 125–131.
+
+**Primary/current source standing:**
+
+- IEEE 1451.0-2024, *IEEE Standard for a Smart Transducer Interface for Sensors and Actuators—Common Functions, Communication Protocols, and Transducer Electronic Data Sheet (TEDS) Formats*:
+  - active IEEE standard;
+  - published 26 June 2024;
+  - supersedes IEEE 1451.0-2007;
+  - official scope: `https://standards.ieee.org/ieee/1451.0/11001/`.
+- IEEE 1451.1-1999, *Network Capable Application Processor Information Model*:
+  - historical/inactive-reserved IEEE standard;
+  - official scope: `https://standards.ieee.org/ieee/1451.1/2164/`.
+- ISO/IEC/IEEE 21451-1:2010, *NCAP information model*:
+  - published international standard;
+  - confirmed in 2025;
+  - explicitly an adoption of IEEE 1451.1-1999;
+  - official scope: `https://www.iso.org/standard/54357.html`.
+
+**Current public first-party evidence also inspected:**
+
+- NIST, “IEEE 1451.0-2024 Standard Published Under Leadership of NIST Researchers,” 1 July 2024.
+- NIST, “The IEEE 1451 Playground: A Web-Based Tool for Standard Education,” published 6 November 2025.
+- NIST, *IEEE 1451.0-based Web of Thing (WoT) Ontology*, published 10 March 2025.
+- NIST historical engineering literature on IEEE 1451 smart-transducer architecture and TEDS.
+
+**Project evidence control:** The supplied `MERLIN_IEEE1451_TEDS_Public_Source_Technical_Reconstruction_v0.1_14OCT2026.docx` remains explicitly **INTERIM — PUBLIC-SOURCE RECONSTRUCTION — NORMATIVE VERIFICATION PENDING**. It is used here as a locator and synthesis of first-party public evidence, not as a substitute for the licensed standard.
+
+### Evidence ceiling
+
+The full IEEE 1451.0-2024 and ISO/IEC/IEEE 21450/21451 normative texts are not available in this environment. Therefore:
+
+- exact current mandatory/optional TEDS status;
+- exact field definitions;
+- datatypes;
+- cardinalities;
+- conditional rules;
+- conformance obligations; and
+- exact current relationships among all specialized TEDS
+
+are **not** asserted unless supported by an openly available first-party source.
+
+The current structural architecture—APP, NCAP, TIM, network services, transducer services, TEDS, smart transducers—is directly supported by the official IEEE/NIST public record. Historical TEDS partition details are used as lineage evidence and are clearly identified as such.
+
+---
+
+## 1. Source-native structural organization
+
+The IEEE 1451 lineage has two related but distinct structural eras represented in the frozen corpus.
+
+### A. IEEE 1451.1-1999 / ISO/IEC/IEEE 21451-1:2010 NCAP information model
+
+The 1999/2010 information-model lineage defines a **network-neutral object model** connecting processors to communication networks, sensors and actuators.
+
+Its publicly described organization contains:
+
+- **blocks**;
+- **services**;
+- **components**;
+- sensor/actuator interactions;
+- application code executing in the processor.
+
+Historical IEEE/ANSI descriptions identify four principal object-model blocks:
+
+1. **Transducer Block**
+2. **Function Block**
+3. **Physical Block**
+4. **Network Block**
+
+with underlying structures and services.
+
+This is an NCAP-side information/object model rather than a generic equipment lifecycle model.
+
+### B. IEEE 1451.0-2024 current common architecture
+
+The official 2024 scope organizes interoperability around four principal participant classes and two service boundaries:
+
+1. **Application (APP)**
+   - 1451 client;
+   - consumes network services.
+
+2. **Network Capable Application Processor (NCAP)**
+   - 1451 server;
+   - provides network services to APPs;
+   - accesses/controls transducer-side functions.
+
+3. **Transducer Interface Module (TIM)**
+   - module containing/serving smart transducers;
+   - provides transducer-side services and TEDS/data to NCAP.
+
+4. **Smart transducer**
+   - sensor and/or actuator;
+   - represented/accessed through TIM/channel structures.
+
+### Service partitions
+
+5. **Network services**
+   - commands/replies between APP and NCAP;
+   - access transducer data and TEDS through the NCAP.
+
+6. **Transducer services**
+   - commands/replies between NCAP and TIM;
+   - support TIM setup/control and reading/writing transducer data.
+
+### Self-description partition
+
+7. **Transducer Electronic Data Sheets (TEDS)**
+   - standardized electronic self-description;
+   - support identification, characteristics, configuration and specialized metadata.
+
+### Channel partition
+
+8. **TransducerChannel**
+   - the addressed logical sensing/actuation endpoint/path within the TIM architecture;
+   - carries channel-specific type, data, performance, timing and related descriptive semantics.
+
+### Current public semantic projection
+
+The NIST-led 1451.0-based WoT work models APPs, NCAPs, TIMs and smart transducers as 1451 WoT Things and organizes their web description into:
+
+- identification/context;
+- behaviors;
+- properties/data schema;
+- security;
+- time synchronization;
+- protocol bindings.
+
+This projection is not the IEEE normative architecture itself, but it is first-party evidence that the current IEEE concepts are separable into reusable semantic partitions rather than being inseparable from one wire encoding.
+
+---
+
+## 2. Purpose of each partition
+
+### APP
+
+Purpose: application-side consumer/client of standardized IEEE 1451 network services.
+
+### NCAP
+
+Purpose: network-capable processor/server that mediates between applications/network services and smart-transducer/TIM services.
+
+### TIM
+
+Purpose: transducer-side module that groups smart transducer functionality and supports standardized access/control/data/TEDS interactions through the NCAP.
+
+### TransducerChannel
+
+Purpose: identify and describe an individually addressable sensing or actuation channel/path within a TIM, including channel-specific data and performance characteristics.
+
+### Network services
+
+Purpose: standardize APP-to-NCAP access to transducer data and TEDS.
+
+### Transducer services
+
+Purpose: standardize NCAP-to-TIM setup, control, and data read/write interactions.
+
+### TEDS
+
+Purpose: supply machine-readable self-description and metadata so a smart transducer/module/channel can identify and describe itself and support plug-and-play integration.
+
+### NCAP object-model blocks (1999/2010)
+
+Purpose: separate network, physical, transducer and application/function concerns within the network-capable processor information model.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Application/network side | APP, client, NCAP/server, network services, commands/replies, APIs |
+| Transducer side | TIM, smart transducer, sensor, actuator, TransducerChannel |
+| Transducer interaction | transducer services, setup/control, read/write data, service messages |
+| Self-description | TEDS, identity, metadata, channel description, calibration/performance descriptions |
+| Historical NCAP object model | Transducer Block, Function Block, Physical Block, Network Block, services/components |
+| Channel characterization | channel type, physical units, operating limits/range, uncertainty, sampling/timing, self-test, data representation, calibration linkage |
+| Grouping/context | TIM identity, channel count, control/vector grouping, proxy/group relationships where supported |
+| Specialized TEDS lineage | calibration, frequency response, names/identification, application-specific/extensions; current 2024 exact partition/optionality remains access-gated |
+
+---
+
+## 4. Primary relationships
+
+The principal architecture is relational rather than a flat device record.
+
+### APP ↔ NCAP
+
+- APP is a 1451 client.
+- NCAP is a 1451 server.
+- APP accesses transducer data/TEDS through **network services** exposed by NCAP.
+
+### NCAP ↔ TIM
+
+- NCAP communicates with TIM through **transducer services**.
+- services support TIM setup/control and reading/writing transducer data.
+
+### TIM ↔ TransducerChannels
+
+- a TIM may contain/support multiple TransducerChannels;
+- Meta-TEDS lineage includes the number/grouping of channels;
+- channels can participate in control/vector/group structures.
+
+### TransducerChannel ↔ physical transducer
+
+- a channel represents the addressable sensing/actuation endpoint/path;
+- it is related to a physical sensor/actuator but is **not automatically identical to the physical transducer**.
+
+### TEDS ↔ described subject
+
+TEDS structures describe different scopes in the lineage:
+
+- TIM/shared/module context;
+- individual transducer channel;
+- calibration/performance;
+- human-readable/identification/application-specific information;
+- specialized communication/security/timing information where applicable.
+
+### NCAP information-model blocks
+
+The older NCAP model relates physical/network/transducer/function blocks through services/components rather than reducing all responsibilities to one block.
+
+---
+
+## 5. Dependency boundaries
+
+The IEEE 1451 family deliberately separates several dependency layers.
+
+### Application/network dependency
+
+APPs depend on NCAP network services, not directly on transducer-interface details.
+
+### NCAP/transducer dependency
+
+NCAP mediates access to TIMs and their channels; TIM implementation is not the APP-facing application interface.
+
+### Common family layer vs physical-interface family members
+
+IEEE 1451.0 supplies common functions, services and TEDS semantics for the family, while other family standards specialize physical/wireless/mixed-mode interfaces.
+
+The public 2008 NIST architecture explicitly describes IEEE 1451.x physical-interface modules beneath the common 1451.0 services.
+
+### TEDS vs runtime data
+
+TEDS describes the transducer/module/channel; runtime transducer data is accessed through services. Self-description and measurement/control exchange are therefore separate responsibilities.
+
+### Current vs historical lineage
+
+ISO/IEC/IEEE 21451-1:2010 is explicitly an adoption of IEEE 1451.1-1999, so the two are one conceptual NCAP lineage rather than independent architecture votes.
+
+IEEE 1451.0-2024 is a materially revised/current common-family architecture and must not silently inherit every 2007/2010 field or mandatory/optional rule.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+The IEEE 1451 architecture centers on information intrinsic to a smart-transducer network interface, but several contextual layers are distinguishable.
+
+### Strongly intrinsic to TIM/channel/transducer description
+
+- identity/self-description;
+- channel type;
+- physical units;
+- design/operating range;
+- uncertainty;
+- data representation;
+- sampling/timing characteristics;
+- self-test support;
+- calibration linkage;
+- frequency-response/performance metadata where supported.
+
+### Interface/contextual
+
+- APP/NCAP client-server role;
+- network binding/protocol;
+- physical-interface family;
+- security framework;
+- time-synchronization framework;
+- geographic location metadata;
+- grouping/proxy relationships.
+
+### External to the IEEE 1451 core equipment description
+
+The public evidence does not establish a whole deployment, maintenance organization, host-platform, mission, or enterprise asset model comparable to broader whole-system frameworks. Those may be represented by consuming systems but are not the central architecture of IEEE 1451.
+
+---
+
+## 7. Cross-cutting concepts
+
+The following span multiple IEEE 1451 partitions:
+
+- universally unique identification / self-identification;
+- TEDS access;
+- command/reply service pattern;
+- client/server roles;
+- timing;
+- security;
+- grouping;
+- calibration;
+- self-test/diagnostics;
+- transducer type/direction;
+- protocol binding.
+
+The current IEEE public scope also treats APIs as cross-boundary mechanisms for both network and transducer services.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+IEEE 1451 has rich **operational and timing semantics**, but the frozen/public evidence does not expose one unified equipment-lifecycle model.
+
+### Operational state/interaction
+
+Public lineage evidence supports:
+
+- initialization/discovery;
+- TIM announcements;
+- setup/control;
+- data read/write;
+- alerts;
+- self-test;
+- service commands/replies.
+
+### Timing
+
+The public 2024 Playground reconstruction exposes distinct channel timing concepts such as:
+
+- sampling period;
+- update time;
+- setup/read/write timing;
+- warm-up/read delay;
+- self-test timing;
+- sample-time source;
+- propagation/trigger timing and uncertainty.
+
+Exact 2024 field definitions remain access-gated.
+
+### Calibration
+
+Calibration TEDS lineage distinguishes calibration coefficients/model information from the live transducer result. Historical/public evidence supports self-calibration and calibration metadata, but not a complete maintenance-event history.
+
+### Lifecycle
+
+TEDS self-description can support installation, diagnostics, maintenance and replacement by providing machine-readable identity/calibration information, but **service history and asset lifecycle are not organized as a first-class lifecycle partition in the frozen IEEE 1451 lineage**.
+
+---
+
+## 9. Composition / topology organization
+
+IEEE 1451 supplies a strong **interface topology**, but it is not a general physical bill of materials.
+
+### Primary topology
+
+`APP → NCAP → TIM → TransducerChannel → transducer interaction/data`
+
+### TIM/channel composition
+
+A TIM can support multiple channels/sensors/actuators.
+
+Historical/public descriptions also associate a TIM with:
+
+- transducers;
+- signal conversion/processing electronics;
+- TEDS;
+- a 1451.x communication module.
+
+### Group topology
+
+Current public reconstruction indicates channel-level grouping concepts such as:
+
+- ControlGroup;
+- VectorGroup;
+- geographic-location vector grouping;
+- proxy-channel relationships.
+
+These are functional/logical groupings, not automatically physical containment.
+
+### Network topology
+
+NCAP provides network access to one or more TIMs through family-specific communication/physical interfaces.
+
+The IEEE 1451 topology therefore distinguishes **network hierarchy, module grouping, channel addressing and physical transducer realization**.
+
+---
+
+## 10. Capability / function / behavior organization
+
+IEEE 1451 distributes capability semantics across channel metadata and services rather than using one generic Capability class.
+
+### Channel capability/performance
+
+Public current evidence exposes candidate concepts for:
+
+- sensor vs actuator/channel direction/type;
+- design operating range;
+- multi-range behavior;
+- data model/representation;
+- sampling;
+- uncertainty;
+- self-test;
+- event behavior;
+- frequency response;
+- timing.
+
+### Behavior
+
+Network and transducer services define:
+
+- data access;
+- TEDS access;
+- setup;
+- control;
+- read/write behavior.
+
+### Function vs implementation
+
+The same channel/service semantics can operate over different physical-interface family members, which is a source-native separation between **common transducer function** and **physical communication realization**.
+
+---
+
+## 11. Information / output organization
+
+The IEEE 1451 lineage distinguishes at least three information classes.
+
+### 1. TEDS/self-description
+
+Persistent/descriptive metadata about:
+
+- TIM;
+- channel;
+- identity;
+- calibration;
+- performance;
+- interface/specialized metadata.
+
+### 2. Runtime transducer data
+
+Sensor readings or actuator data exchanged through standardized services.
+
+### 3. Service messages
+
+Commands/replies for:
+
+- network services;
+- transducer services;
+- setup/control;
+- metadata access.
+
+Public lineage material also distinguishes data representation/dataset organization from the physical quantity/channel description itself.
+
+TEDS is therefore **not the measurement output**; it describes the transducer/channel and how its data should be understood/accessed.
+
+---
+
+## 12. Management / condition organization
+
+IEEE 1451 provides **device/interface management functions**, but not a whole enterprise equipment-management domain.
+
+Source-supported management concerns include:
+
+- discovery/announcement;
+- self-identification;
+- setup/control;
+- TEDS management/access;
+- self-test;
+- self-diagnosis;
+- self-calibration;
+- alert notification;
+- security;
+- time synchronization;
+- interface configuration.
+
+The NCAP is also a management/mediation point between application clients and transducer modules.
+
+However, the frozen/public lineage does not organize:
+
+- work orders;
+- repair history;
+- maintenance organization;
+- inventory lifecycle;
+- persistent operational deployment history
+
+as a comparable first-class domain.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity and self-description are central IEEE 1451 concerns.
+
+### Identity
+
+Current first-party public evidence supports:
+
+- UUID/global identity in the 2024 architecture;
+- self-identification through TEDS;
+- TIM/channel identification;
+- manufacturer/device/serial information in the TEDS lineage.
+
+### Description/reference
+
+TEDS binds descriptive information to the relevant module/channel/transducer scope.
+
+Historical TEDS organization distinguishes shared/module information from channel-specific information and application/extension/calibration information.
+
+### Source traceability
+
+Runtime data can be associated with a particular TIM/channel because the architecture addresses channels through the NCAP/TIM hierarchy.
+
+The model therefore provides strong **native source identity at the transducer/channel boundary**, though it does not supply a general enterprise provenance graph.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+The following distinctions are fundamental to the lineage:
+
+1. **APP vs NCAP** — application client and network-capable server are different roles.
+2. **NCAP vs TIM** — network/application mediation and transducer-interface module are distinct architectural subjects.
+3. **TIM vs TransducerChannel** — module/grouping boundary and individually addressable channel are different levels.
+4. **TransducerChannel vs physical transducer** — a logical/addressable channel is not automatically identical to a physical sensor/actuator.
+5. **Sensor vs actuator direction/role** — sensing and actuation are distinct transducer behaviors even when shared infrastructure is used.
+6. **TEDS vs runtime transducer data** — self-description is not the measured/commanded data stream.
+7. **Meta/shared TIM description vs channel-specific description** — module-level and channel-level metadata scopes must remain distinct.
+8. **Calibration/performance metadata vs live output** — descriptive transformation/performance information is not an observation result.
+9. **Network services vs transducer services** — APP↔NCAP and NCAP↔TIM service boundaries are different.
+10. **Common 1451.0 semantics vs family-specific physical interfaces** — common domain/service semantics are not the same as the transport/PHY realization.
+11. **Object-model block roles in 1451.1/21451-1** — transducer, function, physical and network blocks should not be flattened into one processor/device record.
+12. **Current 1451.0-2024 semantics vs legacy 2007/2010 exact structures** — lineage continuity does not permit silent normative inheritance.
+13. **Identification/grouping vs physical containment** — channel/vector/control groupings are not necessarily equipment-parent relationships.
+14. **Security/time synchronization metadata vs application-domain security/time governance** — interface-specific concerns should not be silently generalized.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** explicit transducer/channel identity; separation of module and channel; quantitative channel characteristics; timing/sampling; calibration/performance metadata;
+- **likely reusable structural pattern:** layered application/network processor/transducer-module/channel organization;
+- **likely cross-cutting:** self-description, UUID/source identity, self-test, calibration, timing, security and service semantics;
+- **likely composition/topology pattern:** TIM contains/supports multiple channels, while logical channel groupings remain distinct from physical containment;
+- **likely dynamic-information pattern:** runtime transducer data separated from TEDS/self-description and service-command messages;
+- **likely specialization:** IEEE 1451-native network/transducer services and family-specific physical interfaces;
+- **evidence ceiling:** exact 1451.0-2024 TEDS definitions, optionality, cardinalities and conformance obligations remain pending normative access;
+- **binding/representation caution:** TEDS byte/TLV formats and IEEE service protocols are native IEEE realizations and are not automatically V2/OGC carriers.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C03 status: COMPLETE.**
+
+**Next frozen lineage:** C04 — Integrated Sensor Architecture (ISA).
+
