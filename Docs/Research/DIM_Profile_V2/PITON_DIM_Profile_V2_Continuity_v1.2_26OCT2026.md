@@ -1,0 +1,298 @@
+# PITON — DIM/Profile V2 Research Continuity
+
+**Version:** 1.2  
+**Date:** 26 October 2026  
+**Standing:** Chassis and high-level DIM anatomy validated and promoted  
+**Repository:** OS4CSAPI/glaux-client  
+**Branch:** research/dim-profile-v2  
+**Workspace:** Docs/Research/DIM_Profile_V2/
+
+> **RESTART INSTRUCTION:** The chassis and high-level DIM anatomy are now working V2 decisions and have been promoted into the maintained clean draft. Do **not** rerun chassis discovery, anatomy Phase 0–D, or treat the Version 1 eight subjects as open candidate modules. The next substantive work is **canonical concept and relationship consolidation** inside the validated anatomy: settle exact concepts, donor ownership, semantic mappings, relationship meanings, and conceptual optionality before designing the CSAPI/SensorML profile binding.
+
+## 1. Working chassis decision
+
+The V2 DIM describes:
+
+> **physically realized equipment Systems whose defining operational role is sensing/observing, modeled as complete operational subjects**
+
+Intended CSAPI characterization:
+
+- `systemType = Sensor`
+- `assetType = Equipment`
+
+No new umbrella/root class.
+
+Important caution:
+
+- CSAPI `systemType = Sensor` is not automatically equivalent to RDF/OWL type `sosa:Sensor`.
+
+## 2. Working high-level anatomy decision
+
+The validated anatomy has **four core structural strata**.
+
+### A. Persistent Subject Spine
+
+- persistent System identity;
+- product/model/kind relationship;
+- Procedure/Method relationship kept distinct from product/model;
+- optional enduring decomposition;
+- Function and Capability description;
+- configuration space/modes/effective settings.
+
+### B. Context and Typed Relationships
+
+- Deployment/emplacement;
+- Host/Platform;
+- qualified location/pose;
+- communications/connectivity;
+- power-source relationship;
+- manager/controller/responsibility;
+- represented/exposed/mediated relationship;
+- target/FeatureOfInterest relationship.
+
+### C. Dynamic Activity and Evidence
+
+- Observation/measurement/detection;
+- typed reported-state facts;
+- Command/action/task request;
+- execution status/progress;
+- result;
+- Event/history;
+- optional derived information/products with provenance.
+
+### D. Cross-Cutting Qualification
+
+- scoped identity/reference;
+- Property/Variable semantics;
+- units/constraints/quality;
+- time/validity;
+- provenance/source/responsibility;
+- version/revision;
+- bounded security/access metadata.
+
+## 3. Optional aspect overlays
+
+The following are **aspect overlays across the four strata**, not mandatory peer modules:
+
+- condition / health / diagnostics;
+- communications / network;
+- power / energy;
+- software / firmware / computational participation;
+- maintenance / service / asset lifecycle.
+
+An aspect may contain persistent description, contextual relationships, dynamic state/events and cross-cutting qualification.
+
+## 4. Specialization rule
+
+Domain specializations extend the common anatomy without forking common chassis, identity, composition or Deployment semantics.
+
+Examples:
+
+- radiation detection/instrument structures;
+- UGS-specific semantics;
+- scientific instrument classes;
+- IEEE 1451 smart-transducer structures;
+- process-automation device classes;
+- Matter/LwM2M/Redfish ecosystem structures.
+
+Specialization vocabulary remains optional outside its domain.
+
+## 5. Validated semantic invariants
+
+Preserve these distinctions unless later evidence explicitly establishes a valid mapping:
+
+1. physical System vs digital/API/runtime representation;
+2. reusable product/model/kind vs individual System;
+3. product/model/kind vs Procedure/Method;
+4. whole equipment vs internal sensing element/channel;
+5. enduring composition vs hosting/deployment/network/function/virtual mediation;
+6. Function vs Capability vs Procedure/Method vs Command;
+7. supported capability vs selected configuration;
+8. configuration vs current reported state;
+9. requested/staged configuration vs applied/reported configuration;
+10. current state vs Event/history;
+11. action/command definition vs execution/request;
+12. request vs execution status vs result;
+13. Property/Variable meaning vs value/result;
+14. Observation/Execution vs result;
+15. evidence/measurement vs derived analysis/assessment;
+16. Deployment/Host/location context vs intrinsic composition;
+17. identifier scopes;
+18. atomic equipment without fabricated component trees;
+19. composite equipment with optional rich decomposition;
+20. specialization vs common semantics;
+21. CSAPI classification vs OWL class assertion.
+
+## 6. Relationship roles to preserve
+
+Final names/cardinalities remain open, but common semantics must distinguish:
+
+- reusable product/model/kind;
+- Procedure/Method;
+- enduring part/subsystem;
+- hosted/carried by;
+- deployed/assigned in;
+- connected via / connected to;
+- supplied by / power relation;
+- managed by;
+- represented/exposed by;
+- mediated by;
+- observes / controls / targets;
+- produced/generated by;
+- derived from / supported by evidence;
+- responsible/attributed to;
+- Function/Capability realized or implemented by.
+
+Triggered/cued-by remains specialization-level for now.
+
+## 7. Configuration decision
+
+Where applicable distinguish:
+
+- allowed/configurable space;
+- stored/engineering configuration;
+- requested/queued configuration;
+- effective/current configuration;
+- reported/applied configuration;
+- configuration-change history;
+- source/time/version.
+
+## 8. State decision
+
+Do not create one universal Status/Health/Readiness enum.
+
+Use a typed reported-state fact pattern with:
+
+- affected subject;
+- semantic state/condition definition;
+- value/status;
+- time/validity;
+- source/provenance;
+- quality/confidence where applicable.
+
+Rich state dimensions remain aspect/source-specific.
+
+## 9. Event/history and derived information
+
+### Event/history
+
+Common event backbone should support:
+
+- type;
+- affected subjects;
+- time;
+- responsible/source actor;
+- evidence/artifacts;
+- relevant Deployment/configuration;
+- changed values where available.
+
+### Derived information
+
+Common DIM supports provenance of derived products without a mandatory universal Assessment hierarchy.
+
+## 10. Atomic/composite representation rule
+
+Represent an internal element independently when its own identity, configuration, state, calibration, output/action, serviceability or relationships materially matter.
+
+Otherwise embedded/source-defined structure is acceptable.
+
+## 11. Standing of Version 1 subjects
+
+The eight Version 1 subjects are **not the V2 architecture**.
+
+They remain coverage challenges only. Their concerns have been redistributed across:
+
+- four core strata;
+- cross-cutting qualification;
+- aspect overlays;
+- specializations.
+
+Do not sort future research into V1 bins by default.
+
+## 12. Anatomy research chain — complete
+
+Phase 0:
+- `DIM_Profile_V2_Anatomy_Phase0_182_Source_Ledger_v0.1_26OCT2026.csv`
+- `DIM_Profile_V2_Anatomy_Phase0_Population_Decision_v0.1_26OCT2026.md`
+
+Phase A:
+- `DRAFT_DIM_Profile_V2_Anatomy_PhaseA_Independent_Extractions_v0.1_26OCT2026.md`
+- 30/30 lineages complete.
+
+Phase B:
+- `DIM_Profile_V2_Anatomy_PhaseB_Cross_Source_Comparison_v0.1_26OCT2026.md`
+
+Phase C:
+- `DIM_Profile_V2_Anatomy_PhaseC_Candidate_Structure_v0.1_26OCT2026.md`
+
+Phase D:
+- `DIM_Profile_V2_Anatomy_PhaseD_Validation_v0.1_26OCT2026.md`
+
+Decision:
+- `DIM_Profile_V2_Anatomy_Validation_and_Decision_v0.1_26OCT2026.md`
+
+Maintained clean draft:
+- `Sensor_Systems_DIM_and_Profile_V2_Working_Draft_v0.1_25OCT2026.md`
+
+## 13. Immediate next work — canonical concept and relationship consolidation
+
+The next research phase must move from high-level anatomy to **exact conceptual content**.
+
+For each validated stratum and aspect:
+
+1. identify the exact domain concept;
+2. identify the strongest donor owner/definition;
+3. distinguish:
+   - native source concept implementation;
+   - semantic mapping;
+   - profile specialization;
+   - design-pattern reuse;
+4. reconcile overloaded donor terms;
+5. define conceptual relationships;
+6. determine conceptual optionality/cardinality where evidence supports it;
+7. identify specialization boundaries;
+8. preserve provenance/source ownership;
+9. identify what must survive into the later OGC binding.
+
+## 14. Suggested consolidation order
+
+A neutral, dependency-aware order is:
+
+1. **Identity / Model / Kind / Representation**
+2. **Composition / Components / Relationship taxonomy**
+3. **Function / Capability / Procedure / Property semantics**
+4. **Configuration / Modes / Settings**
+5. **Deployment / Host / Location / operational context**
+6. **Observation / Measurement / Result**
+7. **Command / Action / Execution / Result**
+8. **Reported State / Condition**
+9. **Event / History**
+10. **Provenance / Responsibility / Derived information**
+11. **Communications aspect**
+12. **Power aspect**
+13. **Software/Firmware/Cyber aspect**
+14. **Maintenance/Service aspect**
+15. **Specialization hooks**
+
+This order is for research dependency management, not a final module order.
+
+## 15. Stop rules
+
+Do not:
+
+- reopen chassis/anatomy without material contradictory evidence;
+- invent V2-owned concepts when a donor concept already fits;
+- call design-pattern reuse implementation of the originating standard;
+- conflate product model/kind with Procedure/Method;
+- use one generic parent/child for all relationships;
+- use one status enum for all state dimensions;
+- treat API/resource hierarchy as the conceptual DIM;
+- begin JSON/Schema/SHACL or conformance rules before concept semantics are stable;
+- use the Version 1 subjects as bins;
+- promote specialization-only vocabulary into common core without cross-domain evidence.
+
+## 16. Exact restart point
+
+> **Begin canonical concept consolidation with Identity / Model / Kind / Representation.**
+
+The first task is to determine the exact common concepts and donor ownership for persistent System identity, product/model/kind identity, reusable Procedure/Method descriptions, and digital/API/runtime representations while preserving their validated distinctions.
