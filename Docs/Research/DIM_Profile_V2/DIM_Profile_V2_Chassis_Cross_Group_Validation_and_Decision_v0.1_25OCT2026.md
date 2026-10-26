@@ -1,7 +1,7 @@
 # DIM/Profile V2 Chassis — Cross-Group Validation and Working Decision
 
 **Decision record v0.1 — 25 October 2026**  
-**Status:** Chassis study complete; working decision eligible for promotion into the maintained clean V2 artifact.  
+**Status:** Chassis study complete; working decision promoted into the maintained clean V2 artifact.  
 **Controlling continuity:** `PITON_DIM_Profile_V2_Continuity_v0.4_25OCT2026`.
 
 ## 1. Decision purpose
@@ -290,7 +290,7 @@ The chassis candidate has survived all validation gates required by the active P
 
 **Disposition: PROMOTE AS WORKING V2 DECISION.**
 
-The maintained clean V2 artifact should now be updated to:
+The maintained clean V2 artifact has been updated to:
 
 1. replace the “Sensor + Equipment” candidate standing with the earned boundary decision;
 2. record that no additional umbrella class is required;
@@ -299,7 +299,7 @@ The maintained clean V2 artifact should now be updated to:
 5. update the decision table and development sequence; and
 6. leave detailed DIM architecture/modules and binding obligations open for subsequent donor synthesis.
 
-The clean artifact should not absorb the full research narrative above. That evidence remains in the dedicated chassis-study and validation records.
+The clean artifact deliberately does not absorb the full research narrative above. That evidence remains in the dedicated chassis-study and validation records.
 
 ---
 
