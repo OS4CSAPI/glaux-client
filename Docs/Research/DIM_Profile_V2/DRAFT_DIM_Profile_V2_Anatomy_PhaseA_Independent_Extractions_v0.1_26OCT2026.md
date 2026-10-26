@@ -15000,3 +15000,582 @@ The product itself does not define a general provenance graph, observer/deployme
 
 **Next frozen lineage:** S02 — Radiation detection / instrument family.
 
+---
+
+# S02 — Radiation detection / instrument family
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 163–168.
+
+**Primary source family:**
+
+- IEEE/ANSI N42.42-2020, *American National Standard Data Format for Radiation Detectors Used for Homeland Security*.
+- IEC 62755:2012+A1:2020, *Radiation protection instrumentation — Data format for radiation instruments used in the detection of illicit trafficking of radioactive materials*.
+- IEEE N42.38-2022, *IEEE Standard for Spectroscopy-Based Radiation Portal Monitors Used for Homeland Security*.
+- IEEE N42.61-2025, *IEEE Standard Data Format for Real-Time Streaming from Radiation Detection Instruments*.
+- IAEA Nuclear Security Series No. 44-T, *Detection at State Borders of Nuclear and Other Radioactive Material out of Regulatory Control*.
+- ISO 22188:2023, *Monitoring for inadvertent movement and illicit trafficking of radioactive material*.
+
+**Supporting first-party public evidence:**
+
+- NIST N42.42 project pages, including the 2020 schema/example set.
+- NIST N42.42 lineage examples used only where they expose stable structural concepts such as instrument, detector, calibration, measurement and analysis.
+
+**Evidence ceiling:** Full normative text is not available for all IEEE/IEC/ISO artifacts. The exact N42.42-2020 XML schema is available from NIST but was not machine-readable in the current tool path; therefore this extraction does not invent exact 2020 element cardinalities. The NIST 2020 example catalog confirms the instrument classes supported by that edition, while public NIST lineage examples expose the instrument/detector/calibration/measurement/analysis structure. IEEE N42.61, N42.38, IEC 62755, ISO 22188 and IAEA 44-T are used according to their official/public scopes and openly available guidance.
+
+---
+
+## 1. Source-native structural organization
+
+The lineage contains two complementary structural views.
+
+### A. Radiation-instrument data structure
+
+N42.42 / IEC 62755 organize manufacturer-independent data around the **radiation measurement instrument** and the information it produces.
+
+Public NIST structure/examples expose recurring concepts including:
+
+1. **Radiation Instrument Information**
+   - manufacturer;
+   - model;
+   - instrument identifier;
+   - instrument class/type;
+   - hardware/software components/versions;
+   - quality-control/status information.
+
+2. **Radiation Detector Information**
+   - one or more detectors;
+   - detector identity/type;
+   - physical/detection characteristics.
+
+3. **Calibration Information**
+   - energy calibration;
+   - efficiency/FWHM and other calibration structures where applicable.
+
+4. **Radiation Measurement**
+   - acquisition time;
+   - live/real time;
+   - counts/rates;
+   - spectrum;
+   - dose/dose-rate or other measurement products;
+   - detector references.
+
+5. **Measurement grouping/context**
+   - foreground/background relationships;
+   - grouped measurements;
+   - instrument/sample/context information.
+
+6. **Analysis Results**
+   - radionuclide identification;
+   - spectrum/peak analysis;
+   - other instrument-produced analysis.
+
+7. **Instrument Status / non-radiation telemetry**
+   - current instrument/detector state;
+   - temperature;
+   - battery charge/voltage and similar status data.
+
+N42.61 adds a **real-time streaming view** for raw/unprocessed radiation and supporting non-radiation instrument/detector status, while explicitly leaving transmission protocol and downstream display/analysis outside its scope.
+
+### B. Operational equipment structure
+
+IAEA 44-T / ISO 22188 / N42.38 describe a family of operational radiation-detection equipment including:
+
+- personal radiation detectors;
+- handheld survey/identification instruments;
+- backpack-based systems;
+- vehicle-mounted/mobile systems;
+- fixed radiation portal monitors;
+- spectroscopic portal monitors;
+- conveyor-based monitors.
+
+A fixed portal monitor may comprise:
+
+- one or two physical pillars;
+- gamma detector(s);
+- optional neutron detector(s);
+- occupancy sensor;
+- alarm function;
+- optional linked video recording;
+- supporting processing/electronics.
+
+The source-native specialization therefore combines:
+
+> **whole instrument/system + detector components + calibration + measurements/streams + status + alarms/analysis + operational deployment/screening context**.
+
+---
+
+## 2. Purpose of each partition
+
+### Instrument Information
+
+Purpose: identify the complete radiation instrument/system independently from any one measurement.
+
+### Detector Information
+
+Purpose: identify the radiation-sensitive detector/channel/component that produced or supports a measurement.
+
+### Calibration
+
+Purpose: define how raw channel/count/spectral information maps to physical/radiological quantities and performance characteristics.
+
+### Measurement
+
+Purpose: represent one acquisition or measurement interval and its raw/processed radiation values.
+
+### Spectrum / gross counts / dosimetry
+
+Purpose: represent different radiation-result structures rather than forcing every instrument into one scalar measurement.
+
+### Analysis
+
+Purpose: represent instrument-generated interpretation such as radionuclide identification separately from the underlying measurement evidence.
+
+### Status
+
+Purpose: represent current condition/operational telemetry of the instrument and its detector/sensor components.
+
+### Alarm
+
+Purpose: indicate threshold/decision state derived from radiation measurement according to instrument/application logic.
+
+### Portal-system structure
+
+Purpose: model a complete screening installation whose whole operational identity includes multiple detector and ancillary components.
+
+### Operational guidance
+
+Purpose: connect equipment type to screening/search/secondary-inspection workflows and deployment environment.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Whole equipment | radiation measurement instrument, portal monitor, handheld instrument, backpack/mobile system |
+| Product identity | instrument identifier, manufacturer, model, class, hardware/software version |
+| Sensing component | radiation detector, gamma detector, neutron detector, detector reference |
+| Calibration | energy calibration, efficiency/FWHM, channel-energy relationship |
+| Measurement | acquisition, spectrum, gross counts/rates, dose/dose rate, live time, real time |
+| Context | foreground/background, measurement group, location/screening context |
+| Analysis | radionuclide identification, peak/spectrum analysis |
+| Status | instrument status, detector/sensor status, temperature, power/battery |
+| Alarm | threshold exceedance, alarm condition/state |
+| Ancillary sensing | occupancy sensor, GPS, video linkage |
+| Operational role | primary screening, secondary inspection, search/localization |
+| Streaming | real-time instrument data, raw/unprocessed data, receiving device |
+
+---
+
+## 4. Primary relationships
+
+### Instrument → Detector
+
+One whole instrument can contain/reference multiple detectors.
+
+### Detector → Calibration
+
+Measurements from a detector can refer to detector-specific calibration information.
+
+### Measurement → Instrument / Detector
+
+Measurement is source-attributed to the instrument and, where relevant, the specific detector.
+
+### Measurement → calibration
+
+Spectral/channel values depend on calibration for interpretation.
+
+### Foreground ↔ background measurement
+
+Measurements can be grouped/related to distinguish background and foreground acquisitions.
+
+### Measurement → Analysis Result
+
+Radionuclide/peak analysis is derived from measurement evidence rather than being the same thing as the spectrum/counts.
+
+### Instrument → Status
+
+Non-radiation telemetry describes the producing instrument/detectors while remaining distinct from radiation measurement values.
+
+### Portal monitor → ancillary sensors/components
+
+Whole portal systems can relate:
+- gamma/neutron detectors;
+- occupancy sensor;
+- video;
+- processor/alarm logic.
+
+### Equipment → operational context
+
+Fixed/mobile/handheld equipment is associated with different screening/search/inspection contexts.
+
+---
+
+## 5. Dependency boundaries
+
+### Instrument identity vs detector identity
+
+Whole equipment and sensing component/channel must remain separately identifiable.
+
+### Detector/calibration vs measurement
+
+Detector characteristics/calibration describe how measurements should be interpreted; they are not the measurement event/value itself.
+
+### Measurement vs analysis
+
+Raw/processed measurement data and instrument-generated interpretation are separate information classes.
+
+### Status vs radiation data
+
+N42.61 explicitly includes non-radiation status alongside radiation data while preserving their distinct meaning.
+
+### Data format vs transmission protocol
+
+N42.42 / IEC 62755 define data format. N42.61 explicitly says transport/transmission protocol is outside scope.
+
+### Data standard vs performance standard
+
+N42.42/IEC 62755 specify data structures; N42.38 and related instrument standards specify performance requirements for specific equipment classes.
+
+### Equipment model vs operational procedure
+
+IAEA/ISO guidance connects equipment to operational workflows, but workflow roles do not redefine detector/instrument identity.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to instrument/equipment
+
+- manufacturer/model/identifier;
+- detectors;
+- calibration;
+- supported measurement types;
+- internal status;
+- battery/power telemetry;
+- hardware/software versions;
+- alarms/analysis capabilities.
+
+### Contextual/operational
+
+- border/checkpoint/site;
+- lane/traffic flow;
+- searched person/vehicle/cargo;
+- primary vs secondary inspection;
+- current geographic location for mobile equipment;
+- occupancy/passage;
+- linked video evidence;
+- operator/adjudication.
+
+### Measurement-specific
+
+- foreground/background;
+- acquisition time;
+- spectrum/counts;
+- detector reference;
+- live/real time;
+- analysis result.
+
+The family therefore separates persistent equipment anatomy from screening episode/context.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting radiation-domain concepts include:
+
+- instrument/detector identifiers;
+- calibration;
+- units;
+- time;
+- detector references;
+- quality/status;
+- alarm state;
+- background;
+- geographic location;
+- battery/power;
+- instrument class;
+- software/hardware version.
+
+These may appear across measurements, analysis and operational equipment descriptions.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+The radiation family has multiple temporal structures.
+
+### Measurement time
+
+- acquisition start/time;
+- real time;
+- live time;
+- integration interval.
+
+### Background/foreground sequence
+
+Background and foreground measurements may be explicitly grouped/related.
+
+### Alarm state
+
+Alarm arises when measured conditions exceed/apply to instrument thresholds/rules.
+
+### Instrument status
+
+Current status can be streamed/reported alongside radiation data.
+
+### Operational episode
+
+IAEA/ISO procedures distinguish:
+- search/screen;
+- alarm;
+- secondary inspection;
+- identification/localization;
+- follow-up response.
+
+### Equipment lifecycle
+
+The public evidence recognizes installation/maintenance/calibration needs, especially for fixed/spectroscopic portal monitors, but the lineage does not provide one universal maintenance-work model across all instrument types.
+
+---
+
+## 9. Composition / topology organization
+
+### Atomic instrument
+
+A handheld instrument can be one bounded equipment unit containing one or more detector elements/electronics.
+
+### Composite portal system
+
+A fixed radiation portal monitor can be a larger composed system with:
+- one/two pillars;
+- multiple gamma detectors;
+- optional neutron detectors;
+- occupancy sensor;
+- optional video;
+- processor/alarm functions.
+
+### Mobile system
+
+A vehicle-mounted system combines detector equipment with vehicle/platform context; the vehicle is not automatically the detector itself.
+
+### Measurement topology
+
+Instrument → Detector → Measurement/Calibration is distinct from physical installation topology.
+
+### Operational topology
+
+Site/lane/checkpoint relationships are different from internal instrument composition.
+
+This specialization demonstrates that one domain spans **atomic handheld equipment through distributed/composite installed systems** without changing the fundamental distinction between whole instrument and detector component.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capabilities vary by instrument class.
+
+### Detection
+
+Detect gamma and/or neutron radiation.
+
+### Identification
+
+Spectroscopic instruments can identify radionuclides.
+
+### Localization/search
+
+Mobile/handheld systems may support search and source localization.
+
+### Measurement
+
+May support:
+- gross counts;
+- count rates;
+- spectra;
+- dose/dose rate;
+- dosimetric/other values.
+
+### Alarm
+
+Threshold/algorithm produces alarm state.
+
+### Analysis
+
+Instrument may perform:
+- radionuclide identification;
+- spectral peak analysis.
+
+### Ancillary capability
+
+- GPS;
+- occupancy sensing;
+- video recording/integration;
+- data transmission/streaming.
+
+The source-native pattern separates **detector capability, instrument-level analysis/alarm capability and operational system capability**.
+
+---
+
+## 11. Information / output organization
+
+The family is particularly rich in output types.
+
+### Instrument data file/document
+
+N42.42/IEC 62755 package:
+- instrument information;
+- detector information;
+- calibration;
+- measurement;
+- analysis;
+- status/context.
+
+### Spectrum
+
+Structured energy/channel array with calibration and acquisition timing.
+
+### Gross count/rate
+
+Scalar/time-integrated detector output.
+
+### Dose/dose-rate
+
+Radiological quantity separate from simple count data.
+
+### Status telemetry
+
+Non-radiation state such as:
+- detector/instrument status;
+- temperature;
+- battery charge;
+- voltage.
+
+### Analysis result
+
+Derived identification/peak information.
+
+### Alarm
+
+Operational decision/state distinct from raw measurement.
+
+### Real-time stream
+
+N42.61 carries radiation and selected status data in real time without defining downstream display/analysis.
+
+---
+
+## 12. Management / condition organization
+
+### Instrument status
+
+Instrument/detector status is explicit enough to accompany measurements/streams.
+
+### Power
+
+Battery charge and voltage can be instrument status.
+
+### Calibration
+
+Calibration is a first-class interpretive/maintenance concern.
+
+### Quality control
+
+N42 examples include instrument QC/status information.
+
+### Alarm/operational readiness
+
+Equipment operation includes alarm behavior and performance requirements.
+
+### Maintenance context
+
+IAEA notes higher procurement/install/maintenance burden for advanced portal systems, but detailed maintenance work/order semantics are outside the core exchange formats.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Instrument identity
+
+Radiation Instrument Information identifies:
+- manufacturer;
+- model;
+- identifier;
+- class;
+- software/hardware components.
+
+### Detector identity/reference
+
+Measurements/analysis can refer to the particular detector that produced relevant data.
+
+### Calibration reference
+
+Measurements/spectra rely on explicit calibration structures.
+
+### Measurement identity/context
+
+Acquisition context and grouping support relationships among:
+- background;
+- foreground;
+- analysis.
+
+### Original data artifact
+
+N42 document itself is a portable source artifact preserving instrument-originated information.
+
+### Streaming source
+
+N42.61 preserves instrument/detector source context while carrying streaming measurements/status.
+
+This is a domain-specific provenance chain:
+**instrument → detector → calibration → measurement → analysis/alarm**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **whole radiation instrument vs detector** — equipment and sensing element/channel are different scopes.
+2. **instrument identity vs detector identity** — source equipment and internal sensing component must remain distinguishable.
+3. **detector characteristics vs calibration** — hardware characteristics and transform/interpretation model differ.
+4. **calibration vs measurement result** — correction/energy mapping is not the measured data itself.
+5. **spectrum vs gross counts/rate** — structured spectral data and aggregate count measurements differ.
+6. **radiation measurement vs non-radiation status telemetry** — both can be streamed but have different semantics.
+7. **measurement vs analysis result** — evidence and interpretation are different.
+8. **measurement vs alarm** — sensor output and decision/threshold state differ.
+9. **background vs foreground** — reference/context measurement and target/event measurement differ.
+10. **real time vs live time** — acquisition timing concepts must not be conflated.
+11. **portal monitor vs one pillar/detector** — a composite installation remains one whole operational system.
+12. **radiation detector vs occupancy sensor** — different sensing functions inside one portal-system workflow.
+13. **equipment vs host vehicle/platform** — mobile detector and vehicle context differ.
+14. **instrument data format vs transport protocol** — standardized information structure and network delivery are distinct.
+15. **data format vs performance standard** — how information is encoded and what an instrument must achieve are distinct.
+16. **primary screening vs secondary inspection** — operational phases/roles differ.
+17. **raw measurement vs original N42 artifact** — domain value and evidentiary document/container differ.
+18. **domain-specific radiation terms vs common sensing anatomy** — gamma/neutron/spectrum/alarm semantics must not be generalized as mandatory for all sensing systems.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **specialization validation:** one sensor-system anatomy must scale from handheld atomic instruments to multi-detector fixed portals;
+- **likely component pattern:** whole instrument vs detector/channel vs ancillary sensors;
+- **likely information pattern:** calibration, measurement, status, analysis and alarm remain separate;
+- **likely provenance pattern:** instrument → detector → calibration → measurement → analysis;
+- **likely dynamic-output pattern:** structured spectra, counts/rates, dose and live streaming are different result forms;
+- **likely operational-context pattern:** equipment/deployment/site/lane/subject/inspection relationships belong outside intrinsic detector identity;
+- **likely specialization boundary:** radiation quantity, spectrum, alarm, isotope identification and screening workflow remain modality/domain-specific;
+- **evidence caution:** exact N42.42-2020/IEC 62755 field cardinalities and N42.61 schemas require licensed/direct schema inspection before any conformance claim;
+- **authority caution:** operational guidance can validate system structure and workflow needs without becoming the common V2 vocabulary.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**S02 status: COMPLETE.**
+
+**Next frozen lineage:** S03 — SWEET instrument ontology.
+
