@@ -13898,3 +13898,596 @@ This supports traceability without forcing all provenance detail into the source
 
 **Next frozen lineage:** X11 — W3C Web of Things.
 
+---
+
+# X11 — W3C Web of Things Architecture 1.1
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 132.
+
+**Primary inspected source:**
+
+- W3C, *Web of Things (WoT) Architecture 1.1*, Recommendation, 5 December 2023.
+
+**Evidence note:** This source is an abstract architecture. It defines core concepts and relations among WoT building blocks but does not prescribe one concrete deployment, protocol, or implementation. The anatomy extraction therefore distinguishes abstract WoT semantics from protocol bindings, Thing Description serialization, Scripting API/runtime implementation, and example deployments.
+
+---
+
+## 1. Source-native structural organization
+
+WoT organizes its architecture around several interacting layers.
+
+### A. Thing abstraction
+
+- **Thing / Web Thing**
+  - abstraction of a physical or virtual entity;
+  - must have at least one Thing Description representation available.
+
+- **Device**
+  - physical entity with a network interface;
+  - a kind of Thing.
+
+- **Service**
+  - software entity with a network interface;
+  - a kind of Thing.
+
+- **Virtual Thing**
+  - Service that represents, augments, provides an improved interface to, or stands in place of one or more other Things;
+  - includes Shadows and Digital Twins.
+
+### B. Metadata/model layer
+
+1. **Thing Description (TD)**
+   - instance-specific metadata for one Thing.
+
+2. **Thing Model (TM)**
+   - class/template-level common metadata and capabilities for groups of Things;
+   - omits instance-specific details such as concrete protocol address, serial number or location.
+
+3. **Links**
+   - relate Things, Thing Models and other Web resources.
+
+### C. Interaction model
+
+Interaction Affordances are separated into:
+
+- **Property**
+  - exposes Thing state;
+- **Action**
+  - invokes function/process;
+- **Event**
+  - asynchronously communicates state transitions/event data.
+
+### D. Web/interface layer
+
+- WoT Interface
+- Hypermedia Controls
+- Forms
+- Protocol Bindings
+- Media Types
+
+### E. Security layer
+
+- public security metadata;
+- private security data;
+- security configuration.
+
+### F. Runtime/role layer
+
+- **Servient**
+- **Exposed Thing**
+- **Consumed Thing**
+- **Consumer**
+- **Intermediary**
+
+### G. Discovery layer
+
+- Thing Description Directory;
+- discovery/introduction/exploration.
+
+### H. Lifecycle layer
+
+- system lifecycle;
+- Thing lifecycle;
+- bootstrapping;
+- onboarding/registration;
+- activation;
+- operation;
+- offboarding;
+- decommissioning.
+
+The source-native anatomy is therefore:
+
+> **Thing abstraction + class/instance metadata + Properties/Actions/Events + Web/protocol exposure + security + runtime roles/intermediaries + discovery + lifecycle**.
+
+---
+
+## 2. Purpose of each partition
+
+### Thing
+
+Purpose: provide a protocol-neutral abstraction of a physical or virtual entity that can be described and interacted with through WoT metadata.
+
+### Thing Description
+
+Purpose: describe one Thing instance, including:
+- general metadata;
+- domain-specific annotations;
+- Interaction Affordances;
+- public security metadata;
+- communication/protocol metadata;
+- related links.
+
+### Thing Model
+
+Purpose: describe common capabilities/interface structure for a class of Things without requiring instance-specific deployment/identity/communication details.
+
+### Property
+
+Purpose: expose readable, optionally writable/observable Thing state.
+
+### Action
+
+Purpose: expose an invocable Thing function/process, potentially affecting one or multiple states over time.
+
+### Event
+
+Purpose: expose an asynchronous event source/state-transition notification.
+
+### Protocol Binding
+
+Purpose: map abstract affordances to concrete messages/protocols/data formats.
+
+### Servient
+
+Purpose: provide runtime stack capable of exposing and/or consuming Things.
+
+### Exposed Thing
+
+Purpose: software representation of a Thing's exposed network interface.
+
+### Consumed Thing
+
+Purpose: local software abstraction representing a remote Thing to a Consumer.
+
+### Intermediary
+
+Purpose: proxy/bridge/augment/compose Things and possibly transform protocols/security/metadata.
+
+### Discovery/Directory
+
+Purpose: distribute, register and retrieve Thing Descriptions.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Entity abstraction | Thing, Device, Service, Virtual Thing, Digital Twin, Shadow |
+| Instance metadata | Thing Description, general metadata, domain metadata, links |
+| Class/template metadata | Thing Model |
+| Interaction | Interaction Affordance, Property, Action, Event |
+| Data description | Data Schema |
+| Hypermedia | Links, Forms |
+| Protocol realization | Protocol Binding, media type, URI |
+| Security | Public Security Metadata, Private Security Data, Security Configuration |
+| Runtime | Servient, WoT Runtime, Exposed Thing, Consumed Thing |
+| Roles | Consumer, Intermediary |
+| Discovery | Thing Description Directory, Discoverer, introduction/exploration |
+| Lifecycle | bootstrap, onboard/register, activate, operate, offboard, decommission |
+
+---
+
+## 4. Primary relationships
+
+### Thing → Thing Description
+
+A Thing instance is described by at least one TD.
+
+### Thing class → Thing Model
+
+TM describes common capabilities of a set/class of Things and acts as a template for TD instances.
+
+### Thing → Affordances
+
+Thing exposes:
+- Properties;
+- Actions;
+- Events.
+
+### Affordance → Protocol Binding
+
+Abstract interaction is mapped through Forms/Bindings to concrete protocol messages.
+
+### Thing → links
+
+TD/TM can link to:
+- other Things;
+- sub-Things;
+- Thing Models;
+- documentation;
+- external Web resources.
+
+### Servient → Exposed Thing / Consumed Thing
+
+A Servient can:
+- expose a local Thing;
+- consume a remote Thing;
+- do both as an Intermediary.
+
+### Intermediary → original Thing / Consumer
+
+Intermediary consumes one Thing and exposes another interface outward, potentially:
+- proxying;
+- augmenting;
+- translating;
+- composing.
+
+### Virtual Thing → one or more Things
+
+Virtual Thing can represent/aggregate/augment multiple Things.
+
+### Consumer → TD → Consumed Thing
+
+Consumer gets a TD through discovery and creates a local consumed abstraction.
+
+---
+
+## 5. Dependency boundaries
+
+### Thing vs TD
+
+The Thing/entity and its metadata representation are different.
+
+### Thing vs Exposed Thing
+
+Domain abstraction and runtime software representation are different.
+
+### Thing vs Device
+
+Thing can be physical or virtual; Device is specifically physical/networked.
+
+### Thing vs Service
+
+Physical Device and software Service are sibling Thing realizations.
+
+### TD vs TM
+
+Instance description and reusable class/template model are different.
+
+### Affordance vs Protocol Binding
+
+Abstract behavior/state/event semantics are independent of concrete protocol mechanics.
+
+### Thing behavior vs affordance
+
+Autonomous internal behavior and consumer-accessible Interaction Affordances are separate architectural aspects.
+
+### Consumer vs Thing
+
+Client/consumer role and server/exposed-thing role are distinct.
+
+### Intermediary vs original Thing
+
+Proxy/digital-twin/bridge identity can differ from the underlying Thing.
+
+### Domain vocabulary vs WoT core vocabulary
+
+WoT deliberately allows domain-specific vocabularies (e.g. external ontologies) instead of defining all domain semantics itself.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to Thing description
+
+Potentially:
+- Thing ID/name;
+- affordances;
+- data schemas;
+- semantic types;
+- security schemes;
+- links;
+- common metadata.
+
+### Class/model level
+
+Thing Model captures common/shared capabilities without instance data.
+
+### Deployment/contextual
+
+- concrete protocol addresses;
+- network location;
+- concrete bindings;
+- discovery directory;
+- intermediary/proxy;
+- current security credentials/private security data.
+
+### Virtualization context
+
+A Virtual Thing may add:
+- history;
+- predictive behavior;
+- higher-level operations;
+- merged capabilities.
+
+Those additions are not automatically intrinsic to the underlying physical Device.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting WoT concepts include:
+
+- semantic annotations/Linked Data;
+- links;
+- data schemas;
+- security;
+- protocol bindings;
+- discovery;
+- profiles;
+- metadata;
+- lifecycle;
+- identity;
+- internationalization.
+
+Security is explicitly cross-cutting and split between public metadata and private data.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+WoT distinguishes **Thing/system lifecycle** from Property/Event state.
+
+### System lifecycle
+
+Typical sequence includes:
+- bootstrap;
+- onboarding/registration;
+- activation/provision/configure;
+- regular operation;
+- offboarding;
+- decommissioning/destruction.
+
+### Thing lifecycle
+
+Thing-specific provisioning/discovery/metadata availability can evolve over deployment.
+
+### Runtime state
+
+Property exposes current Thing state.
+
+### State transition
+
+Event communicates state transitions asynchronously.
+
+### Action
+
+Action can trigger a process whose effect unfolds over time.
+
+### Digital Twin history/prediction
+
+Virtual Thing/Digital Twin may maintain historical or predictive state beyond the physical Thing's direct interface.
+
+---
+
+## 9. Composition / topology organization
+
+WoT supports several kinds of composition but does not define a physical BOM.
+
+### Virtual composition
+
+A Virtual Thing can compose one or more Things and expose:
+- merged capabilities;
+- higher-level functions;
+- consolidated TD.
+
+### Hierarchical sub-Things
+
+Complex Thing TD can link to sub-Things.
+
+### Link topology
+
+Things and TMs form a navigable Web through typed links.
+
+### Deployment topology
+
+Things, Consumers, Intermediaries and directories can interact directly or through proxy/cloud/gateway topologies.
+
+### Runtime topology
+
+Exposed/Consumed Thing abstractions exist inside Servients.
+
+### Important limit
+
+Thing composition/hierarchy can be logical/virtual/service-based and must not be assumed to equal physical equipment composition.
+
+---
+
+## 10. Capability / function / behavior organization
+
+WoT's capability model is interaction-oriented.
+
+### Thing Model
+
+Defines common interface/capabilities of a class of Things.
+
+### Property
+
+Capability to expose/update/observe state.
+
+### Action
+
+Capability to invoke functionality.
+
+### Event
+
+Capability to emit asynchronous event information.
+
+### Behavior
+
+Thing can also have autonomous internal behavior not directly represented as an Affordance.
+
+### Intermediary augmentation
+
+An Intermediary/Virtual Thing can add capabilities that did not exist in the underlying Thing.
+
+Thus **exposed capability and intrinsic device capability are not necessarily identical**.
+
+---
+
+## 11. Information / output organization
+
+### Thing Description
+
+Persistent/self-descriptive metadata.
+
+### Property
+
+Current/readable/writable/observable state.
+
+### Event
+
+Asynchronous event/state-transition data.
+
+### Action input/output
+
+Action may have input/output schemas and invocation semantics.
+
+### Data Schema
+
+Defines payload information structure used across interactions.
+
+### TD links
+
+Point to supporting/related resources and other Things.
+
+### Digital Twin/Shadow
+
+May maintain cached, historical or predicted state distinct from direct physical-device output.
+
+The architecture therefore distinguishes **description, state, event, action interaction and protocol payload structure**.
+
+---
+
+## 12. Management / condition organization
+
+WoT is not a device-management standard in the same sense as LwM2M, but provides relevant architecture.
+
+### Lifecycle
+
+Bootstrap/onboard/activate/offboard/decommission.
+
+### Discovery
+
+Register/discover TDs.
+
+### Security
+
+Public security metadata + private credentials/configuration.
+
+### Protocol/interface management
+
+Bindings/forms describe how to interact.
+
+### Digital Twin/Shadow
+
+Can cache/mediate state and support synchronization.
+
+### Limit
+
+Fault/health, maintenance work, firmware/update, asset lifecycle and detailed condition semantics are not universal WoT Core concepts and must come from domain vocabularies or other protocols.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Thing identity
+
+TD can have Thing identifier.
+
+### Model identity
+
+TM identifies shared class/template semantics separately from instance.
+
+### Link relationships
+
+Links explicitly connect:
+- Things;
+- Thing Models;
+- documents;
+- other resources.
+
+### Proxy identity
+
+An Intermediary-generated TD may use:
+- same identifier as original Thing; or
+- new identifier.
+
+This is a deliberate source-native ambiguity/choice that must be managed.
+
+### Runtime representation identity
+
+Exposed Thing and Consumed Thing are software representations, not necessarily separate domain entities.
+
+### Discovery provenance
+
+TD may be supplied by:
+- Thing itself;
+- directory;
+- external service;
+- intermediary.
+
+The model supports metadata distribution but does not define a generic provenance graph like PROV.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Thing vs Device** — Thing can be physical or virtual; Device is physical.
+2. **Thing vs Service** — physical and software realizations differ.
+3. **Thing vs Thing Description** — entity and metadata representation are different.
+4. **Thing Description vs Thing Model** — instance description and class/template are different.
+5. **Thing Model vs deployed instance** — common capability model omits instance-specific data.
+6. **Property vs Action vs Event** — state, invocation and asynchronous occurrence have different semantics.
+7. **Affordance vs behavior implementation** — exposed interaction and internal/autonomous behavior are different.
+8. **Affordance vs Protocol Binding** — abstract interaction semantics and concrete network realization are different.
+9. **Thing vs Exposed Thing** — domain abstraction and runtime representation are different.
+10. **remote Thing vs Consumed Thing** — remote subject and local proxy abstraction are different.
+11. **original Thing vs Intermediary/Virtual Thing** — proxy/augmentation/composition can create a distinct exposed identity.
+12. **Virtual composition vs physical composition** — aggregating Things in software does not prove hardware containment.
+13. **TD links vs composition** — generic Web links need typed semantics and are not automatically part-of.
+14. **public security metadata vs private security data** — discoverable security description and secrets/credentials differ.
+15. **Thing identity vs TD location/URI** — domain identity and metadata/network location differ.
+16. **current Property state vs Event** — state and state transition are different.
+17. **Action invocation vs Event output** — commanded behavior and asynchronous event are different.
+18. **Discovery directory vs Thing** — catalog/metadata broker and managed/exposed Thing are distinct.
+19. **WoT core vocabulary vs domain-specific vocabulary** — WoT does not own sensor/equipment semantics simply because TD can carry them.
+20. **Thing lifecycle vs physical asset service lifecycle** — WoT provisioning/offboarding semantics are not full maintenance history.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely reusable model/instance pattern:** Thing Model vs Thing Description;
+- **likely binding-separation pattern:** abstract Properties/Actions/Events vs Protocol Bindings;
+- **likely information pattern:** metadata description vs state vs action vs event;
+- **likely mediation pattern:** Exposed Thing, Consumed Thing, Intermediary and Virtual Thing preserve separation between physical subject and Web-facing representation;
+- **likely contextual relationship pattern:** typed links and discovery directories rather than inferred containment;
+- **likely lifecycle pattern:** bootstrap/onboard/activate/offboard/decommission as network/system lifecycle, not maintenance lifecycle;
+- **likely cross-cutting:** security metadata, semantic annotations, links, discovery and profiles;
+- **profile-gap signal:** WoT intentionally leaves sensor/equipment, health, lifecycle-work and modality semantics to external domain vocabularies;
+- **binding caution:** Thing/TD/TM/Affordance/Servient are Web architecture constructs; they may inform V2 representation but do not replace the DIM's equipment System concepts.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X11 status: COMPLETE.**
+
+**Next frozen lineage:** S01 — Atomic sensor product evidence.
+
