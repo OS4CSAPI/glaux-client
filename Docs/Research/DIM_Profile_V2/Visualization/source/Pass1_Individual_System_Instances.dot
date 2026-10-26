@@ -1,0 +1,27 @@
+// Pass 1 individual System identity — controlled UML instance-view pilot
+// View: UML-style object/instance view (informative, not normative)
+// Question: Can two particular Systems be illustrated as separate instances without defining a new V2 class?
+// Layer: DIM concept interpretation; no CSAPI-binding properties shown
+// Status: EXAMPLE / CANDIDATE; source anchor: Pass 1 concept note (26 October 2026)
+// Graphviz source used as a fallback because PlantUML is unavailable locally.
+// Graphviz HTML labels use <U> to implement the UML underlined "name : Classifier" convention.
+digraph G {
+  graph [
+    fontname="DejaVu Sans", bgcolor="white", rankdir=LR,
+    pad="0.25", margin=0.12, nodesep=0.6, ranksep=0.5,
+    labelloc=t, labeljust=c,
+    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+      <TR><TD><FONT POINT-SIZE="20" COLOR="#172d42"><B>Pass 1 — Individual System Identity</B></FONT></TD></TR>
+      <TR><TD><FONT POINT-SIZE="11" COLOR="#64748b">UML instance-view pilot  |  example only  |  not a DIM class definition</FONT></TD></TR>
+    </TABLE>>
+  ];
+  node [fontname="DejaVu Sans", shape=plain];
+  edge [style=invis];
+  instance_a [label=<<TABLE BORDER="1" COLOR="#46617d" BGCOLOR="#f5f8fc" CELLBORDER="0" CELLSPACING="0" CELLPADDING="13">
+      <TR><TD WIDTH="265" HEIGHT="68" ALIGN="CENTER"><FONT POINT-SIZE="17" COLOR="#182d40"><U>exampleA : System</U></FONT></TD></TR>
+    </TABLE>>];
+  instance_b [label=<<TABLE BORDER="1" COLOR="#46617d" BGCOLOR="#f5f8fc" CELLBORDER="0" CELLSPACING="0" CELLPADDING="13">
+      <TR><TD WIDTH="265" HEIGHT="68" ALIGN="CENTER"><FONT POINT-SIZE="17" COLOR="#182d40"><U>exampleB : System</U></FONT></TD></TR>
+    </TABLE>>];
+  instance_a -> instance_b [minlen=1];
+}
