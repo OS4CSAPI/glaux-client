@@ -10,7 +10,7 @@
 
 This document is the clean Version 2 working artifact for the Domain Information Model (DIM) and the application profile that will ultimately use it. It is intended to become the self-describing statement of what Version 2 is, what problem it addresses, what concepts it adopts, how those concepts are organized, and how the resulting model is later selected and realized through the application profile and OGC binding. This first draft contains only conclusions that have been sufficiently established by the Version 2 research to date. It deliberately does not fill unresolved sections with provisional design simply to make the document appear complete.
 
-The working title uses the plain-language phrase “Sensor Systems” only to identify the subject matter under investigation. Version 2 has not yet adopted a final boundary-defining family term beyond the sourced concepts already established, and this document must not silently invent one. The strongest current characterization of the motivating hardware systems remains a System whose primary activity is sensing or observing and whose realization is Equipment, expressed in CSAPI as `systemType = Sensor` together with `assetType = Equipment` (Open Geospatial Consortium 2025a, sec. 9.2.2). That characterization remains a candidate boundary to test rather than a final named class.
+The working title uses the plain-language phrase “Sensor Systems” to identify the subject matter; it does not introduce a new compound class. The completed Version 2 chassis study has now established the working domain boundary without finding a superior single umbrella term: Version 2 concerns **physically realized equipment Systems whose defining operational role is sensing/observing, modeled as complete operational subjects**. In the intended CSAPI environment, the most direct present characterization is `systemType = Sensor` together with `assetType = Equipment` (Open Geospatial Consortium 2025a, sec. 9.2.2). This two-facet characterization is now a working boundary decision rather than merely a pre-study candidate. The eventual formal ontology mapping remains a separate question; a CSAPI Sensor classification must not be treated automatically as an OWL class assertion.
 
 Version 2 is not coupled to MERLIN as a formal model or profile identity. MERLIN-era artifacts remain predecessor evidence because they record the original problem, donor research, implementation experience, and Version 1 design choices. They do not automatically determine Version 2 terminology, scope, relationships, modular structure, namespace, or profile obligations.
 
@@ -88,7 +88,7 @@ For Version 2, a Domain Information Model is an implementation- and protocol-ind
 
 The Version 2 DIM therefore exists to establish domain meaning before implementation representation. It may contain concepts, definitions, generalization and specialization, relationships and relationship roles, identity distinctions, states, lifecycle concepts, activities, temporal or spatial relationships, and intrinsic semantic constraints where the evidence supports them. It does not contain CSAPI endpoint paths, JSON member placement, SensorML or SWE encoding choices, HTTP behavior, software architecture, or user-interface behavior merely because those mechanisms may later carry or present the model.
 
-The DIM is domain-scoped rather than universal. Its present purpose is to organize the information needed to understand a deployed sensor system as a complete operational subject. The exact final domain boundary and any established term that may better name the overall family remain open research questions.
+The DIM is domain-scoped rather than universal. Its present purpose is to organize the information needed to understand a deployed sensing System as a complete operational subject. The chassis study described in Section 6 has now established the working domain boundary; detailed model structure, modules, donor ownership, formal ontology mappings, and application-profile obligations remain open research questions.
 
 ## 5. Relationship to the intended application profile
 
@@ -100,40 +100,61 @@ The relationship is therefore reciprocal but responsibility-preserving: profile 
 
 ## 6. Domain boundary and anchor concepts
 
-The boundary of the domain and the root or anchor concept of the model are separate questions. A domain is a bounded universe of discourse or problem space; it does not require the project to invent a single umbrella class merely to give the model a visually tidy root (Open Geospatial Consortium 2021). Version 2 may ultimately discover an established concept that describes the family of systems under study more naturally than the current combination of System, Sensor, and Equipment, or it may determine that no such additional class is necessary.
+The boundary of the domain and the root or anchor concept of the model are separate questions. A domain is a bounded universe of discourse or problem space; it does not require the project to invent a single umbrella class merely to give the model a visually tidy root (Open Geospatial Consortium 2021).
 
-This distinction allows the research to continue searching for a legitimate boundary-defining term without creating one in advance. The DIM can remain coherent even if several sourced concepts participate in defining its boundary. The current Sensor + Equipment characterization is therefore evidence about the motivating hardware sensing cases, not a mandate to create a new compound class or to make that combination the universal root of the model.
+The Version 2 chassis study independently characterized all fourteen Conceptual / Information / Domain Model artifacts in the frozen corpus, compared them only after independent extraction, and then tested the resulting candidate against the Ontology / Formal Semantic Model, Reference Architecture / Architectural Framework, and Requirements / Capability / Operational Specification groups. The candidate survived all required validation gates.
+
+The resulting working boundary is:
+
+> **Version 2 concerns physically realized equipment Systems whose defining operational role is sensing/observing, modeled as complete operational subjects.**
+
+This is a boundary statement composed from established source concepts, not a new Version 2-owned class. The evidence did not identify a single donor noun that more faithfully captures both the functional role and the physical realization. **Asset** is too semantically variable across communities; **Device** is a strong physical-equipment concept but functionally neutral and can be too narrow for composite installations; **Thing** is deliberately physical-or-virtual and domain-neutral; **Sensor Network** names a larger aggregate; and observation-process concepts describe what sensing does rather than the enduring equipment subject.
+
+The strongest recurring pattern is instead a separation between **what the System principally does** and **what kind of thing realizes that role**. The intended CSAPI representation expresses those dimensions directly as `systemType = Sensor` and `assetType = Equipment`. This combination is therefore the working V2 chassis characterization. No new compound/root class is adopted.
+
+The realization facet is deliberately **Equipment**, not a requirement that one System equal one physical Device. The Open Group SOSA architecture provides direct precedent for one Sensor consisting of one or more hardware elements, including elements distributed at different locations on or in the same host platform (The Open Group 2023). Operational radiation-detection sources likewise include fixed and installed systems composed of multiple detector and supporting elements. A V2 sensing System may therefore be composite equipment while remaining one enduring operational subject.
+
+The chassis is a bounding condition for later modeling, not a predetermined module taxonomy. It determines the kind of thing whose information Version 2 is organizing; it does not decide in advance how identity, capability, deployment, communications, power, condition, lifecycle, provenance, or other evidence-derived concerns will be partitioned.
 
 ## 7. Current sourced conceptual foundation
 
-The current sourced foundation comes principally from SOSA/SSN, OGC API – Connected Systems Part 1, and SensorML 3.0. In the current SOSA/SSN 2023 Edition Working Draft, Asset generalizes System and Platform; Sensor, Actuator, and Sampler are specializations of System, while Platform is separately an Asset that hosts other Assets (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5, 5.4–5.6). Sensor denotes a System that implements an ObservingProcedure and does not by itself imply hardware, because a Sensor may be realized by a device, infrastructure, human agent, software system, or simulation.
+The sourced foundation comes principally from SOSA/SSN, OGC API – Connected Systems Part 1, SensorML 3.0, and the donor evidence examined through the chassis study. In the current SOSA/SSN 2023 Edition Working Draft, Asset generalizes System and Platform; Sensor, Actuator, and Sampler are specializations of System, while Platform is separately an Asset that hosts other Assets (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5, 5.4–5.6). Sensor denotes a System that implements an ObservingProcedure and does not by itself imply hardware, because a Sensor may be realized by a device, infrastructure, human agent, software system, or simulation.
 
 CSAPI Part 1 provides two independent System-classification facets. `systemType` identifies the System’s principal role or activity using Sensor, Actuator, Sampler, Platform, or System, while optional `assetType` identifies the kind of realization using Equipment, Human, LivingThing, Simulation, Process, Group, or Other (Open Geospatial Consortium 2025a, sec. 9.2.2). CSAPI demonstrates that these facets are independent by combining them in examples such as Sensor + Equipment, Sensor + Human, Sensor + Simulation, and Platform + Equipment.
 
-The strongest current characterization of the hardware sensor systems that motivated Version 1 is Sensor + Equipment. Equipment establishes the specific CSAPI meaning of hardware devices or pieces of equipment that interact directly with the real world, but it is not synonymous with every thing that can be described as physical. Version 2 therefore retains Sensor and Equipment as sourced building blocks and does not use “physical” as an unsourced taxonomic shortcut.
+The completed chassis study independently corroborates the need to keep these dimensions distinguishable. The Open Group SOSA treats Sensor as a whole operational subject composed of heterogeneous components; OPC UA Devices, MIMOSA CCOM, OSUS-R, RFC 7326, NIST IoT guidance, and radiation-detection sources independently reinforce the physical device/equipment side; SAREF narrows Sensor to a tangible Device; and SWEET provides an explicit intersection pattern in which Sensor is both a SOSA Sensor and an Instrument under Equipment. No single donor encoding is therefore treated as the universal class structure.
+
+A formal semantic caution follows from that result. In current SOSA/SSN, a complex package can be modeled as an overall `sosa:System` containing `sosa:Sensor` subsystems, whereas CSAPI `systemType = Sensor` classifies a represented System by its principal activity. **Version 2 must not automatically equate the CSAPI classification token with an RDF/OWL assertion that the resource is an instance of `sosa:Sensor`.** The eventual semantic alignment must state that mapping explicitly.
 
 | Concept | Current V2 standing |
 | --- | --- |
-| System | Sourced conceptual foundation. |
-| Sensor | Sourced System specialization associated with observing. |
-| Equipment | Sourced CSAPI asset realization for hardware interacting directly with the real world. |
-| Sensor + Equipment | Strongest current candidate characterization for motivating hardware sensing systems; not a newly named class. |
-| Platform | Separate sourced concept that hosts Assets/Systems; not automatically a Sensor or parent class of all target systems. |
-| Deployment | Sourced context for employment and for time-scoped aggregation/attachment. |
-
+| System | Sourced conceptual foundation and top-level system abstraction. |
+| Sensor | Sourced sensing/observing role; establishes the defining domain role but does not alone guarantee physical realization across donor communities. |
+| Equipment | **Working V2 physical-realization boundary** for the present domain. May represent composite equipment rather than a single Device. |
+| Sensor + Equipment | **Working V2 chassis characterization** in the intended CSAPI environment; not a newly named class. |
+| Device | Important donor mapping/comparison concept for physical equipment; not adopted as the universal V2 root. |
+| Asset | Useful sourced superconcept/mapping concept whose breadth varies by donor; not sufficient alone to define V2 membership. |
+| Platform | Separate sourced host/context concept; physical hosting does not automatically make the Platform intrinsic to the Sensor/System. |
+| Deployment | Sourced operational context for employment and for time-scoped aggregation/attachment. |
+| Sensor Network / aggregation | Larger multi-system context; not automatically one V2 sensing System. |
 
 ## 8. Whole-system scope
 
-Whole system is an informational scope statement, not a taxonomic enlargement. It means that a user should be able to access, understand, and manage the deployed sensor system as a complete operational subject rather than only retrieve the observations that it produces. Identity, technical description, configuration, components, capabilities, telemetry, deployment context, communications, power, condition, management interactions, service and lifecycle history, provenance, and related supported information may therefore belong to the model without changing the top-level System into a system-of-systems or enterprise construct.
+Whole system is an informational scope statement, not a taxonomic enlargement. It means that a user should be able to access, understand, and manage the sensing System as a complete operational subject rather than only retrieve the observations that it produces. Identity, technical description, configuration, components, capabilities, telemetry, deployment context, communications, power, condition, management interactions, service and lifecycle history, provenance, observations, products, and related supported information may therefore belong to the model without changing the top-level subject into a system-of-systems or enterprise construct.
 
-SensorML 3.0 supports this interpretation by describing physical sensor systems whose overall application is sensing even though their internal composition may contain sensing, actuation, computation, and other subprocesses (Open Geospatial Consortium 2025b, secs. 8.5–8.6). A complete description of a sensor system may therefore include heterogeneous internal roles while the overall system remains a Sensor. The model should follow the sourced classification of the System itself rather than infer a broader category simply because the information needed to describe it is diverse.
+SensorML 3.0 supports this interpretation by describing physical sensor systems whose overall application is sensing even though their internal composition may contain sensing, actuation, computation, and other subprocesses (Open Geospatial Consortium 2025b, secs. 8.5–8.6). The Open Group SOSA architecture independently treats the Sensor as a whole subject containing hardware, firmware, software, processing, run-time, communications, power, management, and other supporting components (The Open Group 2023).
 
-## 9. Composition and deployment-scoped attachment
+A whole sensing System does not have to be one box, one detector, or one Device. It may contain multiple sensing elements and heterogeneous non-sensing components, and its physical hardware may be distributed within an enduring System boundary. Nor must every capability be observational: commands, actuation/effecting, processing, configuration, communications, health monitoring, BIT, diagnostics, and management behavior can coexist with a sensing identity when sensing/observing remains the defining operational role of the whole System.
+
+The model should therefore classify the System by the sourced semantics of the whole operational subject rather than infer a broader category merely because its internal functions are heterogeneous. Conversely, a set of cooperating sensing resources, a sensor network, or a deployment aggregation is not automatically one System; evidence of an enduring common System identity and composition boundary is required before those resources are collapsed into one subject.
+
+## 9. Composition, hosting, and deployment-scoped attachment
 
 Version 2 must preserve the distinction exposed by CSAPI between Composition and Aggregation. Composition applies when a subsystem is an integral or ordinarily enduring part of its parent, even if maintenance can physically remove it. Aggregation applies when a subsystem is not permanently attached and can be associated with different parent Systems at different times; CSAPI represents that relationship through Deployment (Open Geospatial Consortium 2025a, sec. 10.2). A cable, connector, mounting rail, or other physical attachment mechanism is not by itself the deciding criterion.
 
+The chassis study adds a second boundary distinction: **host Platform is not the same as intrinsic composition**. The Open Group SOSA architecture explicitly separates the Sensor from the physical Host Platform to which it is mounted and provides a Host Platform Interface across that boundary (The Open Group 2023). A vehicle, structure, building, mast, pod, or other host therefore does not become part of the sensing System merely because it carries, powers, connects to, or deploys it. A particular implementation may establish a tighter enduring composition relationship, but that must be supported by source evidence rather than inferred from physical proximity.
 
-This finding illustrates how a binding standard can legitimately contribute semantics to an implementation-independent DIM. The enduring-versus-deployment-scoped distinction may prove to be a domain relationship worth preserving, while `/subsystems`, Deployment resources, and concrete link structures remain CSAPI binding mechanisms. Version 2 should preserve useful domain distinctions revealed by CSAPI without making their API carrier identical to the concept itself.
+These findings illustrate how binding and architecture standards can legitimately contribute semantics to an implementation-independent DIM. The enduring-versus-deployment-scoped distinction and the intrinsic-component-versus-host-context distinction may prove to be domain relationships worth preserving, while `/subsystems`, Deployment resources, concrete interface links, and other carriers remain binding mechanisms. Version 2 should preserve useful domain distinctions revealed by implementation standards without making their API or architecture carrier identical to the concept itself.
 
 ## 10. Model organization and modularity
 
@@ -167,23 +188,34 @@ The following table records the present standing of the Version 2 work. A workin
 | DIM terminology | Working decision | Retain Domain Information Model as the methodological anchor. |
 | DIM abstraction level | Working decision | Domain-scoped, conceptual, implementation- and protocol-independent. |
 | Relationship to CSAPI profile | Working decision | Purpose-driven but binding-independent; model for the profile, not to the profile. |
-| Whole-system meaning | Working decision | Informational completeness about the sensor system; not automatically a system-of-systems. |
+| Whole-system meaning | Working decision | Informational completeness about the sensing System; heterogeneous components/functions do not make it automatically a system-of-systems. |
 | Domain boundary vs root concept | Working decision | Treat as separate questions. |
-| Top-level hardware characterization | Candidate | Sensor + Equipment. |
-| New compound/root class | Not adopted | Do not coin one without source evidence and demonstrated need. |
+| Chassis / domain boundary | **Working decision** | Physically realized equipment Systems whose defining operational role is sensing/observing, modeled as complete operational subjects. |
+| CSAPI chassis characterization | **Working decision** | `systemType = Sensor` + `assetType = Equipment` for the intended hardware sensing domain. |
+| New compound/root class | **Working decision — not required** | Do not coin one; the two sourced dimensions are sufficient at the chassis level. |
+| Equipment vs Device | **Working decision** | Retain Equipment as the realization facet; one System may be composite equipment spanning multiple hardware elements. |
+| Host Platform boundary | **Working decision** | Hosting/mounting does not automatically make the Platform part of the Sensor/System. |
+| Network/aggregation boundary | **Working decision** | Cooperating Systems or a sensor network are not automatically one sensing System. |
+| CSAPI Sensor vs `sosa:Sensor` assertion | Open mapping question | Do not equate classification and OWL class assertion without an explicit semantic mapping. |
 | Composition vs Aggregation | Working decision | Preserve enduring vs deployment-scoped relationship distinction. |
 | Modularity | Working decision | Use where semantic cohesion and bounded reuse justify it. |
 | V1 eight subjects | Candidate evidence | Treat as subject areas to test, not inherited modules/subdomains. |
-| Final domain-family name | Open | Continue research for an established boundary-defining concept. |
-| Final modules/subdomains | Open | Derive through donor review and synthesis. |
-| Formal visualization/modeling notation | Open / next workstream | Establish before substantive donor/model construction. |
-| Donor organization and disposition method | Open / queued | Establish after visualization convention. |
+| Boundary-defining family term | Working decision | No additional umbrella term/class is required; “Sensor Systems” remains descriptive wording rather than a new model class. |
+| Final modules/subdomains | Open | Derive through broader donor review and synthesis under the earned chassis boundary. |
+| Visualization work | Paused / non-gating | Figure work does not gate substantive research unless explicitly resumed. |
+| Chassis study | Complete | CIDM extraction/synthesis plus ontology, architecture, and requirements validation completed. |
 
 ## 13. Development sequence
 
-This working artifact should grow only as decisions are earned. The next workstream is not additional DIM content: Version 2 must first establish a controlled visualization and modeling convention so that conceptual structure, instances, behavior, scope, and evidence are represented consistently and reproducibly. The following workstream will then organize the neutral donor population and define the common donor-review protocol before substantive donor extraction and synthesis begin.
+The chassis question is now closed as a working Version 2 decision. The dedicated evidence chain consists of the fourteen-source independent extraction, cross-source comparison and synthesis, ontology validation, architecture validation, requirements/operational validation, and the cross-group chassis decision record. Those research artifacts preserve the full evidence and cautions; this clean artifact retains only the earned result.
 
-Individual donor reviews will not directly modify the DIM. Donor concepts, relationships, constraints, and distinctions will be extracted independently using a common method and accumulated as evidence. Model synthesis will occur only at an explicit synthesis gate after the agreed comparison population has been examined under common rules. This sequencing is intended to prevent the early-source bias experienced in Version 1.
+The next substantive workstream returns from the narrow chassis study to the broader frozen donor corpus. The earned chassis is a **bounding condition**, not a module taxonomy: donor analysis must now determine what recurring concepts, relationships, constraints, and semantically cohesive subject areas are actually needed to describe that bounded class of sensing Systems. Sources should continue to be understood first according to what they themselves standardize—ontology, information model, architecture, vocabulary, schema, API, requirements, conformance method, or operational evidence—rather than being forced into Version 1 headings.
+
+Individual donor reviews still do not edit the DIM directly. Evidence is extracted independently, compared under common criteria, and promoted only at explicit synthesis gates. The Version 1 eight information subjects remain predecessor evidence and useful challenge material, not bins into which new evidence is sorted by default.
+
+Visualization work remains paused and non-gating. It should resume only when a substantive modeling decision requires a maintained diagram and a canonical rendering source can be used consistently across GitHub and publication formats.
+
+As later modeling proceeds, every proposed concept should be tested against the chassis boundary: **Is this information intrinsic to understanding the complete physically realized sensing System, a relationship to its context, an interaction/output, or a concern that belongs outside the DIM or only in a specialization/profile?** This keeps the newly established boundary from becoming an excuse for indiscriminate whole-world modeling.
 
 ## 14. References
 
@@ -202,5 +234,7 @@ Open Geospatial Consortium. 2025b. *OGC SensorML Encoding Standard*. OGC 23-000,
 Pras, Aiko, and Jürgen Schönwälder. 2003. “On the Difference between Information Models and Data Models.” RFC 3444. January. https://www.rfc-editor.org/rfc/rfc3444.html.
 
 TM Forum. 2026. “Information Framework (SID).” Accessed October 25, 2026. https://www.tmforum.org/oda/information-systems/information-framework-%28sid%29/.
+
+The Open Group. 2023. *Technical Standard for SOSA™ Reference Architecture, Edition 1.1*. C239. June 28. https://publications.opengroup.org/c239.
 
 World Wide Web Consortium and Open Geospatial Consortium. 2026. *Semantic Sensor Network Ontology – 2023 Edition*. W3C Working Draft, October 21. OGC 25-022. https://www.w3.org/TR/vocab-ssn-2023/.
