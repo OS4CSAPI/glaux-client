@@ -15,13 +15,12 @@ const examples = [
   { id: 'core5', heading: 'OmniSense Core5ADS', updatedAt: '2026-10-24T05:50:09-04:00' },
   { id: 'mpss', heading: 'MPSS technical-description contract example', updatedAt: '2026-10-24T05:50:09-04:00' },
 ];
-const template = {
-  id: 'resource-details-template',
-  heading: 'Resource Details View template',
-  updatedAt: '2026-10-24T16:24:47-04:00',
-};
-const pages = [template, ...examples];
-const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${entry.id}`;
+const templates = [
+  { id: 'resource-details-template', heading: 'Resource Details View template', updatedAt: '2026-10-24T16:24:47-04:00' },
+  { id: 'resource-details-activity', heading: 'Resource Details View · Activity table', updatedAt: '2026-10-26T12:43:36-04:00' },
+];
+const pages = [...templates, ...examples];
+const pageHref = entry => `/?${templates.some(template => template.id === entry.id) ? 'page' : 'example'}=${entry.id}`;
 
 (async () => {
   await fs.mkdir(output, { recursive: true });
@@ -41,7 +40,7 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
   const check = (name, passed) => { assert(passed, name); checks.push(name); };
   const waitForIndex = () => page.getByRole('heading', { name: 'Experiment index', level: 1, exact: true }).waitFor();
   const waitForExample = example => page.getByRole('heading', { name: example.heading, exact: true }).waitFor();
-  const waitForTemplate = () => page.getByRole('heading', { name: template.heading, level: 1, exact: true }).waitFor();
+  const waitForTemplate = template => page.getByRole('heading', { name: template.heading, level: 1, exact: true }).waitFor();
   const titleLink = id => page.locator(`article.experiment-page[data-page-id="${id}"] h2 a`);
   const noOverflow = () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
   const screenshot = async filename => {
@@ -58,8 +57,8 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
     await waitForIndex();
     await page.waitForLoadState('networkidle');
     check('Root opens the experiment index without a fixture or remote source read', noSourceReads(requests));
-    check('Index contains the template and five existing example pages', await page.locator('article.experiment-page').count() === pages.length);
-    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(template));
+    check('Index contains two wireframe pages and five existing example pages', await page.locator('article.experiment-page').count() === pages.length);
+    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(templates[1]));
     for (const entry of pages) {
       const link = titleLink(entry.id);
       const article = page.locator(`article.experiment-page[data-page-id="${entry.id}"]`);
@@ -85,24 +84,26 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
     check('Reload preserves recorded page dates', JSON.stringify(initialTimes)
       === JSON.stringify(await page.locator('article.experiment-page time').evaluateAll(elements => elements.map(element => element.dateTime))));
 
-    const templateStart = requests.length;
-    await titleLink(template.id).click();
-    await waitForTemplate();
-    await page.waitForLoadState('networkidle');
-    check('Template index link opens the standalone layout page',
-      new URL(page.url()).searchParams.get('page') === template.id
-      && new URL(page.url()).searchParams.get('example') === null
-      && await page.locator('#example-select').count() === 0);
-    check('Template opens without a fixture or remote source read', noSourceReads(requests.slice(templateStart)));
-    await page.reload();
-    await waitForTemplate();
-    await page.waitForLoadState('networkidle');
-    check('Reload preserves the template route without a source read',
-      new URL(page.url()).searchParams.get('page') === template.id
-      && noSourceReads(requests.slice(templateStart)));
-    await page.getByRole('link', { name: 'Page index', exact: true }).click();
-    await waitForIndex();
-    check('Template returns to the index', new URL(page.url()).search === '');
+    for (const template of templates) {
+      const templateStart = requests.length;
+      await titleLink(template.id).click();
+      await waitForTemplate(template);
+      await page.waitForLoadState('networkidle');
+      check(`Template index link opens the standalone page: ${template.id}`,
+        new URL(page.url()).searchParams.get('page') === template.id
+        && new URL(page.url()).searchParams.get('example') === null
+        && await page.locator('#example-select').count() === 0);
+      check(`Template opens without a fixture or remote source read: ${template.id}`, noSourceReads(requests.slice(templateStart)));
+      await page.reload();
+      await waitForTemplate(template);
+      await page.waitForLoadState('networkidle');
+      check(`Reload preserves the template route without a source read: ${template.id}`,
+        new URL(page.url()).searchParams.get('page') === template.id
+        && noSourceReads(requests.slice(templateStart)));
+      await page.getByRole('link', { name: 'Page index', exact: true }).click();
+      await waitForIndex();
+      check(`Template returns to the index: ${template.id}`, new URL(page.url()).search === '');
+    }
 
     for (const example of examples) {
       await titleLink(example.id).click();
@@ -118,7 +119,7 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
 
     await titleLink('power').click();
     await waitForExample(examples[0]);
-    check('Data example selector retains five examples and excludes the template',
+    check('Data example selector retains five examples and excludes both templates',
       JSON.stringify(await page.locator('#example-select option:not([disabled])').evaluateAll(options => options.map(option => option.value).sort()))
       === JSON.stringify(examples.map(example => example.id).sort()));
     await page.goBack();
@@ -157,7 +158,8 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
 
     await page.goto(`${baseURL}/`);
     await waitForIndex();
-    const firstLink = titleLink(template.id);
+    const firstTemplate = templates[1];
+    const firstLink = titleLink(firstTemplate.id);
     let focused = false;
     for (let attempt = 0; attempt < 20 && !focused; attempt++) {
       await page.keyboard.press('Tab');
@@ -167,8 +169,8 @@ const pageHref = entry => `/?${entry.id === template.id ? 'page' : 'example'}=${
       focused && await firstLink.evaluate(element => getComputedStyle(element).outlineStyle !== 'none'
         || getComputedStyle(element).boxShadow !== 'none'));
     await page.keyboard.press('Enter');
-    await waitForTemplate();
-    check('Enter opens the focused page link', new URL(page.url()).searchParams.get('page') === template.id);
+    await waitForTemplate(firstTemplate);
+    check('Enter opens the focused page link', new URL(page.url()).searchParams.get('page') === firstTemplate.id);
     await page.getByRole('link', { name: 'Page index', exact: true }).click();
     await waitForIndex();
     await page.setViewportSize({ width: 390, height: 844 });

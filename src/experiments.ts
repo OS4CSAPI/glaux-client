@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template';
+  id: 'resource-details-template' | 'resource-details-activity';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -89,6 +89,14 @@ export const experimentPages: readonly ExperimentPage[] = [
     latestUpdate: {
       at: '2026-10-24T16:24:47-04:00',
       summary: 'Created the initial Resource Details View template from the recovered PBI working frame, with fixed bands and compact overflow scrolling.',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-activity', title: 'Resource Details View · Activity table',
+    description: 'The unchanged Resource Details wireframe with a System-scoped Activity table for Observations, Commands, and System Events, including resource-type filters.',
+    latestUpdate: {
+      at: '2026-10-26T12:43:36-04:00',
+      summary: 'Added the researched Activity table wireframe as a separate page while preserving the blank template.',
     },
   },
 ];

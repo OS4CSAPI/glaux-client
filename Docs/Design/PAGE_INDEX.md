@@ -4,22 +4,24 @@ The site root `/` lists the experiment pages, their descriptions, the latest
 recorded change to each page, and that change's date and time. Existing
 `/?example=...` links open the same examples as before. The separate
 `/?page=resource-details-template` route opens the Resource Details View wireframe
-canvas. Every page has a **Page index** link back to the homepage. The example
+canvas. `/?page=resource-details-activity` reuses that frame and adds the researched
+Activity table wireframe. Every page has a **Page index** link back to the homepage. The example
 selector also updates the address, so copying or refreshing its URL opens the
 selected example.
 
 ## One catalogue for the index and selector
 
 [`src/experiments.ts`](../../src/experiments.ts) is the maintained page catalogue.
-The index consumes all six entries. The example selector uses the same
+The index consumes all seven entries. The example selector uses the same
 catalogue's five entries with `kind: 'example'`: TRSS ETU-II, OmniSense Core2,
 OmniSense Core5ADS, the MPSS technical-description contract, and the connected
 power-arrangement example. Overview, Equipment, and Condition remain shared tabs
 within each example; Standard view remains a mode.
 
-The sixth entry has `kind: 'template'`. It opens the recovered 560 × 440 Resource
+Two entries have `kind: 'template'`. The original opens the recovered 560 × 440 Resource
 Details View frame as a blank layout canvas, separate from the source-loading
-flow. A template has no fixture URL and does not appear in the example selector.
+flow. The derived page changes only Activity / Table, adding the three-resource
+wireframe and its filters. A template has no fixture URL and does not appear in the example selector.
 Its route invokes its presentation renderer directly and does not load a source
 record. The two page kinds preserve this distinction in TypeScript as well as in
 the index copy.
@@ -65,11 +67,12 @@ the original five example dates and descriptions remain unchanged.
 Run the existing offline tests and production build. With the documented browser
 environment, run `npm run test:browser:index`; this verifies the actual homepage,
 metadata, destinations, return links, address updates, unknown-link handling, and
-desktop/mobile layout. It checks all six entries, confirms the template opens and
-reloads without source reads, and verifies the example selector retains only its
+desktop/mobile layout. It checks all seven entries, confirms both template pages
+open and reload without source reads, and verifies the example selector retains only its
 five data examples. The baseline browser script starts at the explicit TRSS URL;
 the power script retains its existing explicit URL. The template's own browser
-checks cover its recovered dimensions and scrolling behavior.
+checks cover its recovered dimensions and scrolling behavior; the Activity check
+covers its resource types, filters, columns, and unchanged sibling views.
 
 Save the implementation to the existing working branch, deploy that exact GitHub
 revision to the existing Pages project, and record its deployment and live check

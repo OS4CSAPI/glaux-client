@@ -13,7 +13,7 @@ const defaultSize = { width: 560, height: 440 };
 const reviewBounds = { minWidth: 320, maxWidth: 1200, minHeight: 280, maxHeight: 1000 };
 const docsRoot = 'https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/';
 
-function node<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
+export function node<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
   const element = document.createElement(tag);
   if (className) element.className = className;
   if (text !== undefined) element.textContent = text;
@@ -39,7 +39,22 @@ function tabKeyboard(list: HTMLElement): void {
   });
 }
 
-export function renderResourceDetailsTemplate(container: HTMLElement): void {
+export interface ResourceDetailsCanvasContext {
+  categoryId: string;
+  view: string;
+  content: HTMLElement;
+}
+
+export interface ResourceDetailsCanvasOptions {
+  pageTitle?: string;
+  pageIntro?: string;
+  renderBlankContent?: (context: ResourceDetailsCanvasContext) => boolean;
+  sourceSummary?: string;
+  sourceDescription?: string;
+  designRecord?: string;
+}
+
+export function renderResourceDetailsTemplate(container: HTMLElement, options: ResourceDetailsCanvasOptions = {}): void {
   container.classList.remove('experiment-index', 'details-app');
   container.classList.add('resource-template-page');
   const fragment = document.createDocumentFragment();
@@ -49,8 +64,8 @@ export function renderResourceDetailsTemplate(container: HTMLElement): void {
 
   const header = node('header', 'rd-page-header');
   header.append(node('p', 'eyebrow', 'Glaux Client / Interface canvas'),
-    node('h1', undefined, 'Resource Details View template'),
-    node('p', 'rd-page-intro', 'Our shared starting canvas for the Resource Details View Module, using the recovered 560 × 440 working frame.'));
+    node('h1', undefined, options.pageTitle ?? 'Resource Details View template'),
+    node('p', 'rd-page-intro', options.pageIntro ?? 'Our shared starting canvas for the Resource Details View Module, using the recovered 560 × 440 working frame.'));
   fragment.append(navigation, header);
 
   const toolbar = node('div', 'rd-preview-toolbar');
@@ -110,6 +125,7 @@ export function renderResourceDetailsTemplate(container: HTMLElement): void {
     content.scrollTop = 0; content.scrollLeft = 0;
     content.dataset.preview = preview.value;
     if (preview.value === 'blank') {
+      if (options.renderBlankContent?.({ categoryId: activeCategory.id, view: selectedView, content })) return;
       const empty = node('div', 'rd-empty-canvas');
       empty.append(node('p', 'rd-canvas-title', 'Content canvas'), node('p', undefined, `${activeCategory.label} / ${selectedView}`));
       content.append(empty);
@@ -211,10 +227,10 @@ export function renderResourceDetailsTemplate(container: HTMLElement): void {
     if (dimensionsForm.reportValidity()) setSize(widthInput.valueAsNumber, heightInput.valueAsNumber);
   });
 
-  const sourceNote = node('details', 'rd-source-note'); sourceNote.append(node('summary', undefined, 'Recovered specifications and open choices'));
+  const sourceNote = node('details', 'rd-source-note'); sourceNote.append(node('summary', undefined, options.sourceSummary ?? 'Recovered specifications and open choices'));
   sourceNote.append(node('p', undefined, '560 × 440 is the earlier working frame retained in Requirements v0.8, §6.1.1. The later Working Views packet supplies the visible tab arrangement. Its temporary 640-pixel preview did not establish a new fixed-height default.'));
-  sourceNote.append(node('p', undefined, 'The identity area, marking bands and tab rows remain in place while content scrolls. Blank labels and optional layout samples reserve space for our future design. Tab labels remain provisional; compact spacing, scrollbar styling and resize limits are choices for this canvas.'));
-  const designLink = node('a', undefined, 'Design record and source references'); designLink.href = `${docsRoot}Design/RESOURCE_DETAILS_TEMPLATE.md`;
+  sourceNote.append(node('p', undefined, options.sourceDescription ?? 'The identity area, marking bands and tab rows remain in place while content scrolls. Blank labels and optional layout samples reserve space for our future design. Tab labels remain provisional; compact spacing, scrollbar styling and resize limits are choices for this canvas.'));
+  const designLink = node('a', undefined, 'Design record and source references'); designLink.href = `${docsRoot}${options.designRecord ?? 'Design/RESOURCE_DETAILS_TEMPLATE.md'}`;
   sourceNote.append(designLink);
   fragment.append(toolbar, stage, sizeControls, adjust, sourceNote);
   container.replaceChildren(fragment);

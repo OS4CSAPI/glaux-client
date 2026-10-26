@@ -8,6 +8,7 @@ import { interpretDetails } from './profile/interpret';
 import { derivePowerModel, type PowerModel } from './profile/power';
 import { renderDetails } from './presentation/details';
 import { renderExperimentIndex } from './presentation/index';
+import { renderResourceDetailsActivity } from './presentation/resource-details-activity';
 import { renderResourceDetailsTemplate } from './presentation/resource-details-template';
 import './presentation/style.css';
 
@@ -154,7 +155,8 @@ const selectedTemplate = experimentPages.find(page => page.kind === 'template' &
 const selectedExample = examples.find(example => example.id === requestedExample);
 if (selectedTemplate) {
   document.title = `${selectedTemplate.title} | Glaux Client`;
-  renderResourceDetailsTemplate(mount);
+  if (selectedTemplate.id === 'resource-details-activity') renderResourceDetailsActivity(mount);
+  else renderResourceDetailsTemplate(mount);
 } else if (requestedPage === null && selectedExample) actions.selectExample(selectedExample.id);
 else {
   document.title = 'Experiment index | Glaux Client';

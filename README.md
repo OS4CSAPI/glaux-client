@@ -94,8 +94,8 @@ See [dependency provenance and build details](Docs/DEPENDENCIES.md).
 
 ## Current implementation
 
-The homepage is an **Experiment index** linking the Resource Details template and
-five example pages. Each entry
+The homepage is an **Experiment index** linking two Resource Details wireframe pages
+and five example pages. Each entry
 shows a description, its latest recorded change, and a date/time in Eastern Time.
 The dates are recorded implementation changes, not rebuild or deployment times.
 Every example links back to the index, and selecting another example updates its
@@ -112,6 +112,12 @@ The page is a standalone template; its bodies contain no resource data or device
 operations. The [template design note](Docs/Design/RESOURCE_DETAILS_TEMPLATE.md)
 distinguishes the recovered source specifications from current implementation
 choices and the final PBI decisions still open.
+
+Open `/?page=resource-details-activity` for a separate page that preserves the
+entire template and adds only the researched **Activity → Table** wireframe. Its
+type filters switch among Observations, Commands, and System Events. The rows are
+explicit placeholders; the page makes no fixture or remote-resource request. See
+the [Activity-table design note](Docs/Design/RESOURCE_DETAILS_ACTIVITY_TABLE.md).
 
 ### Source examples
 
