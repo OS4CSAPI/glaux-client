@@ -1,7 +1,7 @@
 # DIM/Profile V2 Chassis — Cross-Group Validation and Working Decision
 
 **Decision record v0.1 — 25 October 2026**  
-**Status:** Chassis study complete; working decision promoted into the maintained clean V2 artifact.  
+**Status:** Chassis study complete; working decision promoted and subsequently corpus-wide reconciled across all 182 frozen donor artifacts.  
 **Controlling continuity:** `PITON_DIM_Profile_V2_Continuity_v0.4_25OCT2026`.
 
 ## 1. Decision purpose
@@ -311,3 +311,34 @@ The clean artifact deliberately does not absorb the full research narrative abov
 4. `DRAFT_DIM_Profile_V2_Chassis_Validation_Architectures_v0.1_25OCT2026.md` — architecture validation.
 5. `DRAFT_DIM_Profile_V2_Chassis_Validation_Requirements_v0.1_25OCT2026.md` — requirements/operational validation.
 6. **This record** — cross-group working decision and promotion gate.
+
+# 11. Corpus-wide reconciliation addendum
+
+A later methodological review identified that the original discovery population had treated primary source type too strongly as an eligibility gate. SAPIENT demonstrated that an artifact primarily standardized as an interface specification can nevertheless contain a substantive domain abstraction capable of challenging the chassis.
+
+A bounded audit was therefore performed across the complete frozen 182-source corpus. Every source received exactly one chassis-capability disposition. The accounting is:
+
+- 38 already explicitly chassis-tested;
+- 13 previously under-contested artifacts explicitly challenged in the reconciliation;
+- 101 lineage/companion/specialized artifacts retained without independent evidentiary weight;
+- 24 artifacts with no credible chassis potential; and
+- 6 reference-system/operational falsifiers.
+
+The thirteen under-contested artifacts represent approximately ten semantic lineages: SensorML 3.0, SAPIENT, ISA DMS/SDD, Redfish, MIMOSA OSA-EAI, Matter, current IEEE 1451.0, LwM2M, RFC 8348, and the radiation-instrument exchange family.
+
+None supplied a superior universal boundary. The working chassis is therefore **reaffirmed after corpus-wide reconciliation**, not merely after the original source-type-group validation.
+
+The audit adds four material cautions:
+
+1. source type must never again be used as an eligibility gate for a domain-boundary challenge;
+2. `Equipment` must remain broader than any single donor abstraction such as Device, Node, Chassis, or SensorML PhysicalSystem;
+3. network-visible/registered/component identities may be virtual, mediated, aggregated, or role-based and cannot automatically be treated as the physical System; and
+4. SensorML `PhysicalComponent` versus `PhysicalSystem` is a later concrete binding/model-selection question rather than the V2 chassis itself.
+
+The full reconciliation record is:
+
+- `DIM_Profile_V2_Chassis_Capability_Audit_182_Source_Ledger_v0.1_25OCT2026.csv`
+- `DIM_Profile_V2_Chassis_Corpus_Wide_Reconciliation_v0.1_25OCT2026.md`
+
+This addendum supersedes any implication elsewhere in this record that the original fourteen-source discovery population plus three validation groups alone constituted exhaustive corpus-wide chassis coverage.
+
