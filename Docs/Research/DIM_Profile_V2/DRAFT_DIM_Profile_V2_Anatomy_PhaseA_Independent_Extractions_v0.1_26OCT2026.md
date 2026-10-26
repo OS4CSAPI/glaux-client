@@ -12190,3 +12190,623 @@ Cybersecurity-event information can preserve evidence about state changes, but a
 
 **Next frozen lineage:** X08 — OGC Observations, Measurements and Samples (OMS).
 
+---
+
+# X08 — OGC Observations, Measurements and Samples (OMS) 3.0
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 8.  
+**Frozen companion ID:** 15.
+
+**Primary inspected source:**
+
+- Open Geospatial Consortium, *Abstract Specification Topic 20 — Observations, Measurements and Samples*, OGC 20-082r4, version 3.0.0.
+- Jointly aligned with ISO 19156:2023.
+
+**Companion evidence:**
+
+- ISO 19156:2023 publication metadata/lineage as represented in the frozen corpus.
+
+**Evidence note:** The complete OGC 20-082r4 PDF is available in the project and was used directly. This extraction uses the 2023/3.0 structure, not the older ISO 19156:2011 OM model except where the current standard itself explains migration/lineage differences.
+
+---
+
+## 1. Source-native structural organization
+
+OMS 3.0 is deliberately organized into separate **Observation** and **Sample** conceptual schemas, each with multiple abstraction levels.
+
+### A. Three abstraction levels
+
+For both Observations and Samples, the standard distinguishes:
+
+1. **Conceptual schema**
+   - interface-level semantics;
+   - technology/application-schema neutral.
+
+2. **Abstract Core application schema**
+   - abstract classes realizing the conceptual interfaces.
+
+3. **Basic application schema**
+   - ready-to-use concrete classes that can be adopted or specialized.
+
+This is itself an important structural pattern: meaning is defined first, then abstract realization, then concrete reusable application-schema classes.
+
+### B. Observation conceptual structure
+
+Primary concepts include:
+
+- **Observation**
+- **ObservationCharacteristics**
+- **ObservationCollection**
+- **ObservingCapability**
+- **ObservableProperty**
+- **ObservingProcedure**
+- **Observer**
+- **Host**
+- **Deployment**
+- **GenericDomainFeature**
+
+The Observation act relates:
+
+- feature(s)-of-interest;
+- observed property;
+- observing procedure;
+- observer(s);
+- host(s);
+- phenomenon time;
+- result time;
+- result;
+- valid time;
+- related observations.
+
+### C. Observer / Host / Deployment structure
+
+The 2023 model explicitly separates:
+
+- **Observer**
+  - identifiable entity that generates Observations by implementing an ObservingProcedure;
+  - may be sensor, instrument, algorithm implementation, person, etc.
+
+- **Host**
+  - grouping/hosting context such as:
+    - physical platform;
+    - monitoring station;
+    - observing campaign.
+
+- **Deployment**
+  - describes the hosting/attachment/assignment of Observer(s) to Host(s).
+
+This replaces the older tendency to use SamplingFeature/Station as the host/instrument structure.
+
+### D. ObservingCapability
+
+ObservationCharacteristics can describe the common structure of related/similar Observations and the observing capability of facilities/observers before a specific Observation occurs.
+
+### E. Sample conceptual structure
+
+Primary concepts include:
+
+- **Sample**
+- **Sampling**
+- **SamplingProcedure**
+- **Sampler**
+- **PreparationStep**
+- **PreparationProcedure**
+- **SampleCollection**
+
+Sample has subtypes such as:
+
+- SpatialSample;
+- StatisticalSample;
+- MaterialSample.
+
+### F. Feature-of-interest structure
+
+OMS explicitly distinguishes:
+
+- **proximate feature-of-interest**
+- **ultimate feature-of-interest**
+
+and supports intermediate Samples/features within processing chains.
+
+The source-native pattern is therefore:
+
+> **observation act + procedure + observer/host/deployment + observable property + target feature + result + capability**, alongside a separate **sampling/sample/preparation chain**.
+
+---
+
+## 2. Purpose of each partition
+
+### Observation
+
+Purpose: represent an **act** carried out to determine the value of an ObservableProperty of a feature-of-interest by using an ObservingProcedure, with the value provided as the Result.
+
+### ObservationCharacteristics
+
+Purpose: factor common characteristics out of individual Observations so the same structure can describe:
+
+- sets of similar Observations;
+- observing capabilities;
+- recurring observation patterns.
+
+### ObservationCollection
+
+Purpose: group similar/related Observations without making collection membership identical to the Observation itself.
+
+### ObservingCapability
+
+Purpose: describe potential/expected observing characteristics **before or independently of a particular Observation event**.
+
+### ObservableProperty
+
+Purpose: represent the property/phenomenon whose value is determined through Observation.
+
+### ObservingProcedure
+
+Purpose: represent the specified way/process used to determine the ObservableProperty.
+
+### Observer
+
+Purpose: identify the entity actually implementing the procedure and participating in creation of the Observation.
+
+### Host
+
+Purpose: identify the platform/station/campaign or other host grouping/context around observers and observations.
+
+### Deployment
+
+Purpose: describe the relationship/attachment of an Observer to a Host.
+
+### Sample
+
+Purpose: represent an object that stands in for a broader concept, real-world object or phenomenon.
+
+### Sampling
+
+Purpose: represent the act/event that creates/transforms a Sample.
+
+### Sampler
+
+Purpose: identify the device/entity/person implementing the SamplingProcedure.
+
+### PreparationStep / Procedure
+
+Purpose: describe processing/transformation of a Sample after sampling and before/among Observations.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Observation act | Observation, phenomenonTime, resultTime, validTime, relatedObservation |
+| Common observation description | ObservationCharacteristics, ObservationCollection |
+| Capability | ObservingCapability |
+| Property | ObservableProperty |
+| Method | Procedure, ObservingProcedure |
+| Actor/source | Observer |
+| Host/context | Host, Deployment |
+| Target | proximateFeatureOfInterest, ultimateFeatureOfInterest, GenericDomainFeature |
+| Result | result, resultQuality, metadata, parameter |
+| Sample | Sample, SpatialSample, StatisticalSample, MaterialSample |
+| Sampling act | Sampling, SamplingProcedure |
+| Sampling actor | Sampler |
+| Preparation | PreparationStep, PreparationProcedure |
+| Sample grouping | SampleCollection, relatedSample |
+| Processing chain | Sample → preparation → Observation → result / ultimate feature |
+
+---
+
+## 4. Primary relationships
+
+### Observation → feature-of-interest
+
+Observation is about one or more target entities/features.
+
+The current model can distinguish:
+- proximate feature directly participating in the act;
+- ultimate feature ultimately of interest.
+
+### Observation → ObservableProperty
+
+Exactly one observed property is determined for an individual Observation in the basic/abstract model constraints.
+
+### Observation → ObservingProcedure
+
+Exactly one procedure is used for the Observation.
+
+### Observation → Observer / Host
+
+At least one Observer or Host should be provided.
+
+Observer and Host are separate roles.
+
+### Observer ↔ Host through Deployment
+
+Deployment describes Observer-to-Host assignment/hosting/attachment.
+
+### Observer → ObservingProcedure
+
+Observer can advertise/support available ObservingProcedures.
+
+### ObservingCapability → ObservationCharacteristics
+
+Capability reuses/relaxes the same observation-characteristic structure to describe what can be observed/generated.
+
+### Observation → result
+
+Observation has exactly one Result, whose type must be suitable for the ObservableProperty.
+
+### Sample → sampledFeature
+
+Sample stands for one or more sampled features.
+
+### Sampling → Sample / SamplingProcedure / Sampler
+
+Sampling act creates/transforms Sample through a Procedure implemented by Sampler.
+
+### Sample → PreparationStep
+
+Sample can undergo one or more preparation/processing steps.
+
+### Sample → related Observation
+
+Observations can be organized/accessed through a Sample.
+
+---
+
+## 5. Dependency boundaries
+
+OMS has unusually explicit semantic layering.
+
+### Conceptual interface vs application-schema class
+
+The conceptual interfaces define meaning independent of implementation inheritance/class design.
+
+### Observation semantics vs Sample semantics
+
+Observation and Sample are separate conceptual schemas with explicit associations between them.
+
+### Observer vs Procedure
+
+Who performs/implements the observing and how observation is performed are distinct.
+
+### Observer vs Host
+
+Observing entity and hosting/platform/campaign context are distinct.
+
+### Deployment vs Observation
+
+Hosting context is a relationship between Observer and Host, not the Observation event itself.
+
+### ObservableProperty vs Result
+
+Property meaning and observed value/result are separate.
+
+### Feature-of-interest vs Result
+
+Target entity/property carrier and value produced are separate.
+
+### Sample vs ultimate sampled feature
+
+Sample is an intermediate/proxy object, not automatically the ultimate real-world target.
+
+### Capability vs event
+
+ObservingCapability describes potential/characteristics; Observation describes an actual act.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+OMS is event/process-centric rather than equipment-centric.
+
+### Intrinsic to one Observation act
+
+- observed property;
+- procedure;
+- result;
+- phenomenon time;
+- result time;
+- feature-of-interest;
+- observer/host participation;
+- result quality/parameters/metadata where supplied.
+
+### Intrinsic to Observer capability
+
+- supported ObservingProcedure;
+- potentially reusable ObservationCharacteristics/ObservingCapability.
+
+### Contextual
+
+- Host;
+- Deployment;
+- observation collection;
+- campaign/station;
+- ultimate feature beyond the proximate feature;
+- metadata and related observations.
+
+### Sampling context
+
+Samples and Sampling acts may become contextual/intermediate objects in a processing chain rather than being part of the observing equipment itself.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting OMS structures include:
+
+- Procedure;
+- time;
+- metadata;
+- parameters;
+- quality;
+- collections;
+- related observations/samples;
+- feature-of-interest;
+- capability;
+- deployment/hosting;
+- processing chain.
+
+The same conceptual interfaces can be realized by domain-specific application-schema classes.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+OMS has rich **event time** semantics but does not define a generic equipment lifecycle.
+
+### Observation time
+
+Observation distinguishes:
+
+- phenomenon time — when the property applies/is observed;
+- result time — when the result becomes available;
+- valid time — period over which the result/observation is valid.
+
+### Sampling time
+
+Sampling is itself an event/act with temporal context.
+
+### Preparation chain
+
+PreparationStep can introduce further processing stages between sampling and later observation.
+
+### Deployment time
+
+Deployment can describe time-bounded hosting/attachment context.
+
+### Collections/related observations
+
+Related observations can form temporal or processing sequences.
+
+### Limit
+
+Calibration/service/replacement/decommissioning are not organized as a universal equipment lifecycle in OMS itself.
+
+---
+
+## 9. Composition / topology organization
+
+OMS's main topology is **process/participation topology**, not physical composition.
+
+### Observer–Host topology
+
+Observer can be deployed on/with Host through Deployment.
+
+### Observation participation
+
+Observation links:
+- Observer;
+- Host;
+- Procedure;
+- FeatureOfInterest;
+- Result.
+
+### Sample chain topology
+
+Sample can link:
+- sampled feature;
+- Sampling;
+- Sampler;
+- preparation steps;
+- related Samples;
+- related Observations.
+
+### Processing chain
+
+OMS explicitly supports intermediate feature/sample chains where:
+- ultimate target;
+- sample;
+- measured property;
+- processing step;
+- final interpreted property/result
+
+are not collapsed.
+
+### Important limit
+
+Observer–Host deployment is not a physical BOM/component hierarchy for the instrument.
+
+---
+
+## 10. Capability / function / behavior organization
+
+OMS has a dedicated **ObservingCapability** concept.
+
+### ObservingCapability
+
+Represents potential to create Observations with specified common characteristics.
+
+It can capture combinations of:
+
+- observable properties;
+- observing procedures;
+- observers;
+- hosts;
+- features/context;
+- time/result characteristics.
+
+### Procedure
+
+ObservingProcedure represents how the observation is carried out.
+
+### Observer
+
+Observer implements/supports procedure(s).
+
+### Sampling behavior
+
+Sampler + SamplingProcedure define sample-creation/transformation behavior.
+
+The source-native capability pattern is therefore:
+
+> **Observer + supported Procedure + possible Observation characteristics**, separate from actual Observation events.
+
+---
+
+## 11. Information / output organization
+
+OMS strongly separates information semantics.
+
+### Observation
+
+The act/event.
+
+### Result
+
+The value produced by that act.
+
+### Result quality
+
+Quality information about the result.
+
+### ObservationCharacteristics
+
+Reusable/common description of observation shape/context.
+
+### ObservationCollection
+
+Grouping of observations.
+
+### Sample
+
+Intermediate/proxy object that can organize related observations.
+
+### Metadata/parameters
+
+Ancillary context, not the observed value itself.
+
+The source explicitly warns that some communities use “observation” to mean the result, but the model keeps **act and result distinct**.
+
+---
+
+## 12. Management / condition organization
+
+OMS does not define a generic equipment-management domain.
+
+Relevant management-adjacent structures include:
+
+- ObservingCapability;
+- Observer;
+- Host;
+- Deployment;
+- procedures;
+- result quality;
+- metadata.
+
+These can describe whether an Observer is capable of certain observations and how it is deployed, but OMS itself does not define:
+- current equipment health;
+- BIT;
+- work orders;
+- software update;
+- maintenance state.
+
+Those concerns require other models.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+OMS provides strong **observation provenance-by-participation**.
+
+An Observation can identify:
+
+- Observer(s);
+- Host(s);
+- Procedure;
+- feature-of-interest;
+- property;
+- phenomenon time;
+- result time;
+- related Observation(s);
+- metadata/parameters.
+
+Samples can identify:
+
+- sampled feature;
+- Sampler;
+- SamplingProcedure;
+- Sampling event;
+- preparation steps;
+- related observations/samples.
+
+This supports traceability of a result through:
+- actor;
+- procedure;
+- target;
+- time;
+- sampling/preparation chain.
+
+It is not a general provenance graph, but it is a rigorous domain-specific provenance structure.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Observation act vs Result** — the act/event and produced value are different.
+2. **Observer vs ObservingProcedure** — who performs and how it is performed are different.
+3. **Observer vs Host** — observing entity and hosting/platform/campaign context are different.
+4. **Observer–Host relationship vs Deployment** — deployment describes the association; it is not either endpoint.
+5. **ObservableProperty vs Result value** — property meaning and observed value are different.
+6. **proximate vs ultimate FeatureOfInterest** — immediate observation target and ultimate scientific/operational target may differ.
+7. **Observation vs ObservationCharacteristics** — actual act and reusable/common characteristics are different.
+8. **Observation vs ObservingCapability** — actual occurrence and potential to produce such occurrences are different.
+9. **Observation vs ObservationCollection** — item and grouping are different.
+10. **Sample vs sampledFeature** — proxy/representative object and represented target are different.
+11. **Sampling vs Sample** — creation/transformation act and resulting representative object are different.
+12. **Sampler vs SamplingProcedure** — actor/device and method are different.
+13. **Sampling vs PreparationStep** — initial sample creation and later processing are different.
+14. **Sample vs Observer/Host** — samples should not be used to represent monitoring stations/instruments in the 2023 model.
+15. **Host/station vs Sample** — monitoring facility belongs in Host, not Sample.
+16. **result quality vs result** — value and quality/evaluation metadata differ.
+17. **phenomenon time vs result time vs valid time** — three temporal meanings must remain distinct.
+18. **conceptual interface vs concrete application-schema class** — semantic interface and one concrete realization are different.
+19. **observation provenance vs general equipment lifecycle** — OMS traceability should not be mistaken for maintenance history.
+20. **processing chain intermediate feature vs ultimate target** — intermediate sample/result semantics should not be flattened.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting observation structure:** Observer, Procedure, ObservableProperty, FeatureOfInterest, Result and time roles kept distinct;
+- **likely capability pattern:** ObservingCapability separate from actual Observation;
+- **likely contextual relationship pattern:** Host and Deployment separate from Observer;
+- **likely provenance pattern:** observation source/procedure/target/time and sampling/preparation chains;
+- **likely target-model pattern:** proximate vs ultimate FeatureOfInterest;
+- **likely information/output pattern:** act vs result vs quality vs collection;
+- **likely sampling specialization:** Sample/Sampling/Sampler/Preparation should remain separate from equipment identity;
+- **profile-gap signal:** equipment condition, maintenance and whole-device management are intentionally outside OMS;
+- **binding/ontology caution:** OMS conceptual interfaces and application-schema classes are domain-model constructs; V2 should reuse distinctions without assuming the entire OMS class package becomes a V2 module.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X08 status: COMPLETE.**
+
+**Next frozen lineage:** X09 — OMA Lightweight M2M.
+
