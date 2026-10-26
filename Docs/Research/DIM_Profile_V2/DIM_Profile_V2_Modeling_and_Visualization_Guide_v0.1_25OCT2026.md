@@ -179,30 +179,41 @@ The rendered figure need not display all of this metadata, but the title and suf
 
 ### 8.4 Repository figure workflow
 
-For maintained V2 documents, prefer a **text-based or vector figure artifact in the repository** rather than treating a generated raster image as the only source. The default workflow is:
+Every maintained V2 figure has **one canonical editable source**. GitHub, Word, PDF, slides, and other delivery formats must be mechanical renders of that same source; they must never be independently redrawn versions that merely share a title or figure number.
 
-1. Author the diagram from version-controlled source, preferably PlantUML for UML views or SVG for controlled explanatory/context figures.
-2. Commit the editable source and the rendered/vector figure under the V2 workspace.
-3. Embed the repository SVG directly in Markdown when GitHub rendering is required.
-4. Render the same figure to PNG only when a raster image is needed for Word, PDF, slides, or another toolchain that does not reliably consume SVG.
-5. Keep the SVG/source and raster derivative synchronized under stable descriptive names.
-6. Never reconstruct the repository figure manually from the raster derivative if the editable/vector source exists.
+The default workflow is:
 
-This workflow is preferred because SVG is text-based, remains sharp at any display size, renders directly in GitHub Markdown, and can be committed through normal UTF-8 repository tooling. It also avoids unnecessary binary-upload friction while preserving a reproducible figure artifact. A generated PNG or JPEG may still be useful as a delivery derivative, but it is not the authoritative repository source when an SVG or PlantUML source exists.
+1. Author the figure from version-controlled text/model source.
+   - Prefer PlantUML for UML semantic views when it represents the required UML correctly.
+   - Graphviz DOT is approved for controlled explanatory/context figures and other diagrams where constrained automatic layout materially improves legibility.
+   - Directly authored SVG may be used only when it remains the single maintained source and its text/layout can be controlled reliably.
+2. Generate the repository SVG from that canonical source. Do not hand-edit the generated SVG and then allow it to diverge from the source.
+3. Embed that SVG directly in Markdown/GitHub.
+4. Generate PNG/JPEG from the **same source/render chain** for Word, PDF, slides, or another toolchain that needs raster output.
+5. Use the resulting derivative in the delivery document; do not substitute a separately image-generated or manually recreated version.
+6. Preserve the canonical source and SVG under stable descriptive names. Raster delivery derivatives may also be kept when useful.
+7. Render and visually inspect **both** the GitHub SVG and the Word/PDF derivative before considering the figure maintained. Check specifically for text overflow, clipping, crossed connectors, unreadable labels, aspect-ratio distortion, and semantic differences between formats.
+8. If the GitHub and Word versions differ semantically or visually beyond normal raster/vector rendering differences, stop and correct the source/render pipeline before proceeding.
+
+The core rule is:
+
+> **One figure = one source = multiple mechanical renders.**
+
+This prevents a failure mode in which a clean Word figure and a different GitHub figure silently drift apart. It also prevents text-overflow problems caused by manually positioning long SVG text without a layout engine. Generated SVG is preferred for repository display because it remains sharp at any size and is Git-friendly; raster output is a delivery derivative, not an independent design artifact.
 
 For example:
 
 ```text
-Figures/
-  Figure_1_V2_Artifact_Architecture.svg
-  Figure_1_V2_Artifact_Architecture.png   # optional delivery derivative
-
 Visualization/
   source/
-    Figure_1_V2_Artifact_Architecture.puml   # when PlantUML is the authoring source
+    Figure_1_V2_Artifact_Architecture.dot
+
+Figures/
+  Figure_1_V2_Artifact_Architecture.svg   # GitHub / vector delivery
+  Figure_1_V2_Artifact_Architecture.png   # mechanically rendered Word/PDF derivative
 ```
 
-When the figure is authored directly as SVG rather than generated from PlantUML, the SVG itself is the maintained repository source. The same semantic and visual-quality rules in this guide still apply.
+For a UML model view, the source may instead be `.puml`. The choice of authoring engine does not change the semantic rules in this guide: UML notation remains governed by UML when a UML view is intended, and Graphviz or SVG layout must not invent semantic meaning.
 
 ### 8.5 File naming
 
