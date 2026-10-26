@@ -1,59 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
-<title id="title">Figure 1. V2 Artifact Architecture</title>
-<desc id="desc">Domain Information Model supplies semantics to the Application Profile. Profile requirements identify needed domain questions. The Application Profile selects and constrains content for the OGC Binding, which is implemented by software systems.</desc>
-<defs>
-  <linearGradient id="box" x1="0" x2="1">
-    <stop offset="0%" stop-color="#f7fbff"/>
-    <stop offset="100%" stop-color="#e8f2ff"/>
-  </linearGradient>
-  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
-    <path d="M0,0 L12,6 L0,12 z" fill="#0f2747"/>
-  </marker>
-  <style>
-    .title{font:700 44px Georgia,serif;fill:#10213a}
-    .head{font:700 39px Georgia,serif;fill:#10213a}
-    .body{font:28px Georgia,serif;fill:#26364d}
-    .label{font:700 25px Georgia,serif;fill:#10213a}
-    .small{font:25px Georgia,serif;fill:#26364d}
-    .tagline{font:italic 24px Georgia,serif;fill:#26364d}
-    .box{fill:url(#box);stroke:#10213a;stroke-width:3}
-    .arrow{stroke:#10213a;stroke-width:5;fill:none;marker-end:url(#arrow)}
-    .feedback{stroke:#10213a;stroke-width:4;stroke-dasharray:12 10;fill:none;marker-end:url(#arrow)}
-  </style>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Figure 1. V2 Artifact Architecture</title>
+  <desc id="desc">Relationship among the Domain Information Model, Application Profile, OGC Binding, and Implementation. The DIM supplies semantics to the profile; profile requirements identify needed domain questions; the profile selects and constrains content and binds it to the OGC representation; the binding is implemented in software.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#14213d"/>
+    </marker>
+    <style>
+      .title{font:700 42px Arial,sans-serif;fill:#14213d}
+      .boxTitle{font:700 34px Arial,sans-serif;fill:#14213d}
+      .body{font:26px Arial,sans-serif;fill:#14213d}
+      .label{font:700 24px Arial,sans-serif;fill:#14213d}
+      .small{font:24px Arial,sans-serif;fill:#14213d}
+      .footer{font:italic 25px Arial,sans-serif;fill:#14213d}
+      .box{fill:#eef5fc;stroke:#14213d;stroke-width:3}
+      .arrow{stroke:#14213d;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .feedback{stroke:#14213d;stroke-width:4;stroke-dasharray:12 10;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
 
-<rect width="1400" height="1000" fill="#ffffff"/>
-<text x="700" y="68" text-anchor="middle" class="title">Figure 1. V2 Artifact Architecture</text>
+  <rect width="1500" height="1120" fill="#ffffff"/>
+  <text x="750" y="65" text-anchor="middle" class="title">Figure 1. V2 Artifact Architecture</text>
 
-<rect x="190" y="115" width="1020" height="130" rx="3" class="box"/>
-<text x="700" y="168" text-anchor="middle" class="head">Domain Information Model (DIM)</text>
-<text x="700" y="212" text-anchor="middle" class="body">Defines domain concepts, relationships, and meaning</text>
+  <rect x="220" y="120" width="1060" height="150" class="box"/>
+  <text x="750" y="180" text-anchor="middle" class="boxTitle">Domain Information Model (DIM)</text>
+  <text x="750" y="225" text-anchor="middle" class="body">Defines domain concepts, relationships, and meaning</text>
 
-<rect x="190" y="355" width="1020" height="140" rx="3" class="box"/>
-<text x="700" y="414" text-anchor="middle" class="head">Application Profile</text>
-<text x="700" y="458" text-anchor="middle" class="body">Selects and constrains DIM content for a specific interoperability purpose</text>
+  <rect x="220" y="390" width="1060" height="150" class="box"/>
+  <text x="750" y="450" text-anchor="middle" class="boxTitle">Application Profile</text>
+  <text x="750" y="495" text-anchor="middle" class="body">Selects and constrains DIM content for a specific interoperability purpose</text>
 
-<rect x="190" y="615" width="1020" height="135" rx="3" class="box"/>
-<text x="700" y="670" text-anchor="middle" class="head">OGC Binding</text>
-<text x="700" y="715" text-anchor="middle" class="body">Specifies representation using CSAPI, SensorML, SWE Common, and related mechanisms</text>
+  <rect x="220" y="660" width="1060" height="150" class="box"/>
+  <text x="750" y="720" text-anchor="middle" class="boxTitle">OGC Binding</text>
+  <text x="750" y="765" text-anchor="middle" class="body">Specifies representation using CSAPI, SensorML, SWE Common, and related mechanisms</text>
 
-<rect x="190" y="845" width="1020" height="105" rx="3" class="box"/>
-<text x="700" y="890" text-anchor="middle" class="head">Implementation</text>
-<text x="700" y="928" text-anchor="middle" class="small">Realizes the binding in servers, adapters, clients, validators, storage, and UIs</text>
+  <rect x="220" y="900" width="1060" height="130" class="box"/>
+  <text x="750" y="955" text-anchor="middle" class="boxTitle">Implementation</text>
+  <text x="750" y="997" text-anchor="middle" class="body">Realizes the binding in servers, adapters, clients, validators, storage, and UIs</text>
 
-<path d="M700 245 L700 345" class="arrow"/>
-<text x="392" y="306" class="label">supplies semantics to</text>
+  <path d="M650 270 L650 390" class="arrow"/>
+  <text x="625" y="335" text-anchor="end" class="label">supplies semantics to</text>
 
-<path d="M910 355 L910 260" class="feedback"/>
-<text x="945" y="292" class="small">profile requirements identify</text>
-<text x="945" y="325" class="small">needed domain questions</text>
+  <path d="M870 390 L870 270" class="feedback"/>
+  <text x="910" y="325" class="small">profile requirements identify</text>
+  <text x="910" y="356" class="small">needed domain questions</text>
 
-<path d="M700 495 L700 605" class="arrow"/>
-<text x="448" y="552" class="label">selects / constrains</text>
-<text x="534" y="584" class="label">binds to</text>
+  <path d="M750 540 L750 660" class="arrow"/>
+  <text x="720" y="592" text-anchor="end" class="label">selects / constrains</text>
+  <text x="720" y="624" text-anchor="end" class="label">binds to</text>
 
-<path d="M700 750 L700 835" class="arrow"/>
-<text x="474" y="808" class="label">implemented by</text>
+  <path d="M750 810 L750 900" class="arrow"/>
+  <text x="720" y="865" text-anchor="end" class="label">implemented by</text>
 
-<text x="700" y="985" text-anchor="middle" class="tagline">Purpose-driven but binding-independent: model for the profile, not to the profile.</text>
+  <text x="750" y="1085" text-anchor="middle" class="footer">Purpose-driven but binding-independent: model for the profile, not to the profile.</text>
 </svg>
