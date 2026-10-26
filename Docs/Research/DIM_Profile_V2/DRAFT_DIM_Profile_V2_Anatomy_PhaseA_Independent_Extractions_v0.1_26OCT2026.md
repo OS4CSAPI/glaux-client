@@ -2279,3 +2279,509 @@ The following ISA distinctions are structurally important:
 
 **Next frozen lineage:** C05 — ISO/IEC 29182 Sensor Network Reference Architecture (SNRA).
 
+---
+
+# C05 — ISO/IEC 29182 Sensor Network Reference Architecture (SNRA)
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 116, 118, 120.  
+**Frozen companion IDs:** 117, 119, 121, 122.
+
+**Primary source basis:**
+
+- ISO/IEC 29182-1:2013, *Sensor Network Reference Architecture (SNRA) — Part 1: General overview and requirements*.
+- ISO/IEC 29182-3:2014, *SNRA — Part 3: Reference architecture views*.
+- ISO/IEC 29182-4:2013, *SNRA — Part 4: Entity models*.
+
+**Companion lineage:**
+
+- Part 2 Vocabulary and terminology;
+- Part 5 Interface definitions;
+- Part 6 Applications;
+- Part 7 Interoperability guidelines.
+
+**Evidence ceiling:** Official ISO scopes for Parts 1, 3 and 4 are available. A publisher preview of Part 4 was inspected through its overview and beginning of the physical-entity section, including the table of contents, physical/functional entity overview, functional-layer diagram, and physical-to-functional association table. The full normative texts of Parts 1, 3 and 4 were not available locally. Therefore this extraction records the explicit high-level structure and previewed entity organization without inventing lower-level definitions from unavailable clauses.
+
+---
+
+## 1. Source-native structural organization
+
+SNRA organizes the sensor-network domain through **multiple architectural viewpoints** and an explicit split between **physical entities** and **functional entities**.
+
+### A. Architecture viewpoints
+
+Part 3 defines architecture views spanning:
+
+- business;
+- operational;
+- systems;
+- technical perspectives;
+
+expressed through functional, logical and/or physical views where applicable.
+
+### B. Physical entities
+
+Part 4's source-native physical entity classes include:
+
+- **sensor nodes**;
+- **gateways**;
+- **other networks**;
+- **service providers**;
+- **users**.
+
+The sensor-node physical structure includes hardware/device/component entities such as:
+
+- sensors;
+- actuators;
+- communications module;
+- processor;
+- memory;
+- power supply.
+
+The preview explicitly treats a sensor node and the sensors within it as physical entities. Actuators can be associated with a sensor node without necessarily residing physically inside it.
+
+### C. Functional entities
+
+Part 4 organizes functions into five major areas:
+
+1. **Sensor node hardware layer**
+   - data acquisition;
+   - actuation;
+   - power generation / energy harvesting.
+
+2. **Basic functions layer**
+   - data processing;
+   - data communications;
+   - data storage;
+   - hardware drivers;
+   - sensor/actuator identification.
+
+3. **Service layer**
+   - common services such as:
+     - communications support;
+     - self-localization;
+     - service/resource discovery;
+     - data management;
+     - code management;
+     - time synchronization;
+     - group management/clustering;
+   - domain-specific services.
+
+4. **Application layer**
+   - applications;
+   - software agents;
+   - rules engines;
+   - collaborative information processing.
+
+5. **Cross-layer management**
+   - device management;
+   - resource management;
+   - service management;
+   - network management;
+   - security management;
+   - privacy management;
+   - safety management;
+   - business management;
+   - quality-of-service management;
+   - system monitoring.
+
+### D. Physical-functional association
+
+SNRA does not require each function to belong to exactly one physical component. The entity model explicitly associates functional entities with one or more physical entity types.
+
+The overall source-native pattern is therefore:
+
+> **network architecture viewpoints + physical entities + layered functional entities + many-to-many physical/function realization relationships + interfaces**
+
+---
+
+## 2. Purpose of each partition
+
+### Architecture viewpoints
+
+Purpose: allow the same sensor network to be understood from stakeholder/business, operational, system and technical perspectives instead of forcing all concerns into one representation.
+
+### Physical entities
+
+Purpose: identify the tangible hardware/devices/components and larger participating actors that form the deployed sensor-network environment.
+
+### Sensor node
+
+Purpose: supply a bounded physical network element containing at least the sensing/hardware functionality required for the node, with optional processing, communications, power and actuation capabilities.
+
+### Functional entities
+
+Purpose: represent **tasks/roles**, not hardware. A functional entity can be implemented on one or more kinds of physical entity.
+
+### Functional layers
+
+Purpose: partition functional responsibility by level:
+
+- interaction with sensing/actuation hardware;
+- foundational processing/communications/storage;
+- reusable/common/domain services;
+- applications and collaborative processing;
+- management spanning layers.
+
+### Interfaces
+
+Part 5's source role is to define interfaces:
+
+- between functional layers;
+- between entities enabling sensor-network services/applications.
+
+Thus entity structure and interface structure remain distinct responsibilities.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Network whole | Sensor network, sensor node, gateway, other network, service provider, user |
+| Sensor-node physical structure | Sensor, actuator, communications module, processor, memory, power supply |
+| Hardware functions | Data acquisition, actuation, power generation/energy harvesting |
+| Basic functions | Data processing, communications, storage, hardware drivers, sensor/actuator identification |
+| Common services | Communications support, self-localization, discovery, data/code management, time synchronization, group management |
+| Domain services | Domain-specific services |
+| Application functions | Application, software agent, rules engine, collaborative information processing |
+| Management | Device, resource, service, network, security, privacy, safety, business, QoS management, system monitoring |
+| Architecture viewpoints | Business, operational, systems, technical; functional/logical/physical views |
+| Interface structure | Inter-layer service access and entity-to-entity interfaces |
+
+---
+
+## 4. Primary relationships
+
+SNRA's strongest relationship pattern is **realization/association between function and physical entity**.
+
+### Physical containment/association
+
+- sensor node contains/uses physical sub-entities;
+- sensors are physical entities within a sensor node;
+- actuators can be associated with the node without necessarily being physically contained in it;
+- gateways connect sensor-network and broader network/service contexts.
+
+### Functional realization
+
+A functional entity may be carried out by one or more physical entity types.
+
+Examples in the source include:
+
+- data acquisition realized by sensors;
+- collaborative processing distributed across nodes/service providers/users;
+- communications, processing, storage and management functions realized across multiple physical entities.
+
+### Network connectivity
+
+Physical entities are connected into the sensor-network architecture.
+
+### Layer/service relationship
+
+Part 5 distinguishes interfaces between functional layers from interfaces between physical/architectural entities.
+
+The source therefore separates:
+
+- **is physically part of / connected to**;
+- **performs or realizes a function**;
+- **uses/provides a service/interface**.
+
+---
+
+## 5. Dependency boundaries
+
+SNRA distributes responsibilities across the series.
+
+### Part 1
+
+Defines general characteristics/requirements and overall organization.
+
+### Part 2
+
+Provides terminology/vocabulary.
+
+### Part 3
+
+Provides architecture viewpoints.
+
+### Part 4
+
+Provides physical and functional entity models.
+
+### Part 5
+
+Defines interfaces among entities and functional layers.
+
+### Part 6
+
+Describes application structures/use cases.
+
+### Part 7
+
+Provides interoperability principles/guidelines.
+
+This series structure is itself semantically significant: **entity identity, functional responsibility, interface, application and interoperability guidance are separate artifacts**.
+
+Within Part 4:
+
+- physical entities do not imply one fixed functional allocation;
+- functional entities depend on physical entities for realization but remain conceptually distinct;
+- cross-layer management spans rather than sits inside one functional layer.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+SNRA is primarily a **network architecture**, so its intrinsic/context boundary differs from an individual-equipment model.
+
+### Intrinsic to the sensor-node physical entity
+
+Potentially intrinsic:
+
+- sensors;
+- communications module;
+- processor;
+- memory;
+- power supply;
+- associated actuation where implemented as part of the node.
+
+### Contextual to an individual sensor node but intrinsic to the sensor network
+
+- gateway;
+- access/backbone network;
+- service provider;
+- user;
+- peer nodes;
+- network-wide services.
+
+### Functional/contextual
+
+A function such as collaborative processing, group management or network management may span multiple physical entities and therefore cannot be assumed intrinsic to one device.
+
+This is an important source-native distinction between:
+
+> **what belongs to the physical node** and **what the node participates in functionally as part of a network**.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-layer management is explicitly cross-cutting.
+
+SNRA's management functions include:
+
+- device management;
+- resource management;
+- service management;
+- network management;
+- security management;
+- privacy management;
+- safety management;
+- business management;
+- QoS management;
+- system monitoring.
+
+Other cross-cutting concepts include:
+
+- time synchronization;
+- discovery;
+- group management/clustering;
+- identification;
+- communication support.
+
+The architecture viewpoints are also cross-cutting because a single entity/function can appear differently in business, operational, system and technical views.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+The inspected SNRA material does **not** expose a single source-native lifecycle-state model for a sensor node.
+
+Temporal/state-related concerns appear through functions such as:
+
+- system monitoring;
+- device/resource/network management;
+- time synchronization;
+- service discovery;
+- code management;
+- group management.
+
+Part 1 supplies general requirements, and Part 6 addresses applications, but the available evidence does not justify inventing a deployment/maintenance lifecycle structure.
+
+**Evidence result:** state/lifecycle is present as distributed management/monitoring/time functions rather than one explicit equipment-lifecycle partition in the inspected SNRA material.
+
+---
+
+## 9. Composition / topology organization
+
+SNRA has two simultaneous topology models.
+
+### Physical topology
+
+A sensor network contains connected physical entities such as:
+
+- sensor nodes;
+- gateways;
+- other/access/backbone networks;
+- service-provider/user-side physical resources.
+
+A sensor node itself contains multiple physical sub-entities.
+
+### Functional topology
+
+The same network is decomposed into layered functional entities, including cross-layer management.
+
+### Physical-functional mapping
+
+Table 1 explicitly maps which physical entity types can realize which functional entities.
+
+This means **function topology and hardware topology are not isomorphic**.
+
+One function can span several physical entities, and one physical entity can implement several functions.
+
+---
+
+## 10. Capability / function / behavior organization
+
+SNRA's functional entity model is directly capability/function oriented.
+
+The Part 4 overview states that a detailed entity model can include:
+
+- input-output relationship for what the entity does;
+- features characterizing capability;
+- implementation taxonomy.
+
+This gives a source-native structural pattern:
+
+> **function/role → inputs/outputs → capability characteristics → implementation alternatives**
+
+The architecture further distinguishes:
+
+- sensing/data acquisition;
+- actuation;
+- processing;
+- communications;
+- storage;
+- service functions;
+- applications;
+- management.
+
+Capability is therefore organized primarily through **functional entities and their realizations**, not a single capability list attached to every physical object.
+
+---
+
+## 11. Information / output organization
+
+SNRA's inspected material organizes information flow functionally rather than as a detailed observation schema.
+
+Relevant partitions include:
+
+- data acquisition;
+- data processing;
+- data communications;
+- data storage;
+- data management;
+- collaborative information processing;
+- applications.
+
+The source therefore distinguishes:
+
+- obtaining data;
+- processing data;
+- moving data;
+- storing/managing data;
+- using/fusing data in applications.
+
+The available evidence does not define a detailed observation/result object model comparable to OMS; it defines the **architectural functions that create and move information**.
+
+---
+
+## 12. Management / condition organization
+
+Management is one of SNRA's most explicit structural areas.
+
+**Cross-layer management** contains separate management functions for:
+
+- device;
+- resource;
+- service;
+- network;
+- security;
+- privacy;
+- safety;
+- business;
+- QoS;
+- system monitoring.
+
+This is notable because management is not placed inside the sensor-node hardware layer or application layer. It is intentionally modeled as **cross-layer responsibility**.
+
+The available preview does not establish detailed condition/health data structures, but it clearly establishes management/system-monitoring as a distinct source-native semantic area.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+The inspected SNRA material contains less explicit identity/provenance structure than several other lineages.
+
+Source-native identity-related functions include:
+
+- sensor/actuator identification;
+- service/resource discovery;
+- self-localization;
+- group management/clustering.
+
+Physical entities are distinguished by their architectural role/type.
+
+However, the available evidence does not establish:
+
+- durable asset identity;
+- manufacturer/product identity;
+- provenance graphs;
+- detailed source-history records.
+
+**Evidence result:** identity/discovery/localization are present functionally; full equipment/provenance identity is not a dominant structural partition in the inspected material.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+The following SNRA distinctions are source-native and important:
+
+1. **Sensor network vs sensor node** — the network aggregate and individual node are different architecture levels.
+2. **Physical entity vs functional entity** — hardware/device/component and task/role must not be conflated.
+3. **Sensor node vs sensor** — a node can contain multiple physical sub-entities; sensor is not synonymous with the whole node.
+4. **Associated actuator vs physically contained actuator** — functional association does not prove physical containment.
+5. **Physical topology vs functional topology** — hardware structure and functional allocation are independent.
+6. **Function vs implementation** — a functional entity can be implemented on multiple physical entity types.
+7. **Hardware/basic/service/application layers** — acquisition, foundational processing, reusable service and application responsibilities are distinct.
+8. **Cross-layer management vs ordinary service/application function** — management intentionally spans layers.
+9. **Common service vs domain-specific service** — reusable platform-level functions and application-domain functions are distinct.
+10. **Architecture viewpoint vs modeled entity** — business/operational/system/technical views are viewpoints, not separate real-world objects.
+11. **Entity model vs interface definition** — what entities/functions are and how they interact are distinct standardization responsibilities.
+12. **Network identity vs individual-equipment identity** — architecture membership does not collapse all nodes/gateways into one System.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** explicit physical sub-entity structure for sensors/communications/processing/memory/power within a node;
+- **likely reusable structural pattern:** physical-entity vs functional-entity separation;
+- **likely functional pattern:** layered acquisition/processing/communications/storage/services/application structure;
+- **likely cross-cutting:** management, monitoring, synchronization, discovery and grouping;
+- **likely contextual relationship pattern:** gateway/network/service-provider/user context outside an individual node;
+- **likely topology pattern:** physical and functional topologies mapped many-to-many rather than collapsed;
+- **likely specialization:** network-wide clustering/collaborative processing structures for distributed sensing;
+- **evidence ceiling:** detailed Part 3/4 entity models beyond the public preview and exact normative interface requirements remain unavailable;
+- **binding/representation caution:** SNRA functional layers and entity diagrams are architecture abstractions, not automatically V2 modules, classes or API resources.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C05 status: COMPLETE.**
+
+**Next frozen lineage:** C06 — Matter.
+
