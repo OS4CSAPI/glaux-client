@@ -14491,3 +14491,512 @@ The model supports metadata distribution but does not define a generic provenanc
 
 **Next frozen lineage:** S01 — Atomic sensor product evidence.
 
+---
+
+# S01 — Atomic sensor product evidence: Bosch BME280
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 170.
+
+**Primary inspected source:**
+
+- Bosch Sensortec, *BME280 Combined Humidity and Pressure Sensor: Data Sheet*, Revision 1.24, February 2024, document BST-BME280-DS001-24.
+
+**Evidence note:** This is a single commercial product datasheet used as a **scale-down falsifier**, not a standards authority. It tests whether the emerging anatomy can describe a small atomic sensing product without requiring every System to expose a rich recursive subsystem model. Only structures explicitly supported by the datasheet are recorded.
+
+---
+
+## 1. Source-native structural organization
+
+The BME280 is described as one compact integrated digital sensor product whose internal functional structure includes:
+
+1. **three sensing elements**
+   - pressure sensing element;
+   - humidity sensing element;
+   - temperature sensing element;
+
+2. **three corresponding analog front ends**;
+
+3. **shared conversion/control electronics**
+   - ADC;
+   - logic;
+   - oscillator;
+   - power-on reset;
+   - nonvolatile memory;
+   - voltage regulator/reference;
+
+4. **digital interface**
+   - I²C;
+   - SPI;
+   - interface pins/signals;
+
+5. **power partition**
+   - VDD for internal analog/digital functional blocks;
+   - VDDIO for digital interface supply;
+
+6. **operational modes**
+   - Sleep;
+   - Forced;
+   - Normal;
+
+7. **measurement/configuration pipeline**
+   - selectable temperature, pressure and humidity measurements;
+   - independently skippable/oversampled channels;
+   - optional IIR filtering for pressure/temperature;
+   - result/output registers;
+
+8. **configuration/state registers**
+   - humidity oversampling;
+   - pressure/temperature oversampling;
+   - mode;
+   - filter;
+   - standby time;
+   - status bits;
+
+9. **calibration/compensation data**
+   - NVM trimming/compensation coefficients;
+   - formulas converting raw values to compensated engineering values;
+
+10. **product/performance specifications**
+    - measurement ranges;
+    - accuracy;
+    - noise;
+    - response time;
+    - current consumption;
+    - package and electrical limits.
+
+The source-native product anatomy is therefore **one equipment item with multiple internal sensing channels sharing conversion, logic, calibration, power and interface infrastructure**.
+
+---
+
+## 2. Purpose of each partition
+
+### Sensing elements/front ends
+
+Purpose: physically respond to pressure, humidity and temperature phenomena and condition the signals for conversion.
+
+### ADC / logic
+
+Purpose: convert and sequence the sensor channels, manage settings and place measurement results into registers.
+
+### Temperature channel
+
+Purpose: provide temperature measurement and, importantly, supply temperature information used to compensate pressure and humidity outputs.
+
+### Power partition
+
+Purpose: separately power:
+- internal sensing/analog/digital logic;
+- digital interface.
+
+### Modes
+
+Purpose:
+- Sleep — minimum-power idle, register access retained;
+- Forced — perform one measurement cycle and return to Sleep;
+- Normal — repeat measurement cycles with inactive standby intervals.
+
+### Oversampling/filter/data-rate configuration
+
+Purpose: trade:
+- noise;
+- response time;
+- data rate;
+- current consumption.
+
+### Compensation coefficients
+
+Purpose: transform raw ADC outputs into usable compensated engineering measurements.
+
+### Digital interface/register map
+
+Purpose: expose configuration, status, calibration and output data to the host.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Product identity | BME280, document/product number, chip ID |
+| Sensing | pressure, humidity, temperature sensing elements |
+| Signal conditioning | pressure/humidity/temperature front ends |
+| Conversion | ADC, measurement sequencing |
+| Control | logic, control/configuration registers |
+| Power | VDD, VDDIO, voltage regulator/reference, sleep current |
+| Mode | Sleep, Forced, Normal |
+| Configuration | oversampling, IIR filter, standby time, mode bits |
+| Status | measuring, NVM image-update state |
+| Output | pressure, temperature and humidity data registers |
+| Calibration | NVM trimming coefficients, compensation formulas |
+| Interface | I²C, SPI, SDI/SDO/SCK/CSB |
+| Performance | range, accuracy, noise, response time, current consumption |
+
+---
+
+## 4. Primary relationships
+
+### Whole product → sensing elements
+
+The BME280 remains one product even though it contains separate pressure, humidity and temperature sensing elements.
+
+### Sensing element → front end → ADC
+
+Each phenomenon-specific sensing element is conditioned before shared digital conversion/control.
+
+### Temperature measurement → pressure/humidity compensation
+
+Temperature output is used internally to compensate the pressure and humidity measurements, showing a functional dependency among measurement channels.
+
+### Configuration → measurement pipeline
+
+Oversampling and mode settings determine:
+- whether a channel is measured or skipped;
+- conversion behavior;
+- resolution/noise/current trade-offs.
+
+### Measurement → filter → output register
+
+Temperature/pressure data can pass through the optional IIR filter before being copied to output registers; humidity bypasses that filter.
+
+### NVM coefficients → compensation
+
+Calibration/trimming coefficients stored in device NVM are applied to raw readings during compensation.
+
+### Host → digital interface → registers
+
+External host configures/reads the device through I²C/SPI rather than interacting directly with internal sensing elements.
+
+---
+
+## 5. Dependency boundaries
+
+The product has clear internal boundaries despite being physically atomic from an external equipment perspective.
+
+### Phenomenon-specific sensing vs shared electronics
+
+Pressure/humidity/temperature sensing channels are distinct, while ADC, logic, power and interface are shared.
+
+### Raw measurement vs compensated output
+
+Raw ADC data and calibrated/compensated engineering output are separate stages.
+
+### Sensor configuration vs measurement result
+
+Registers controlling mode/oversampling/filter are different from output registers.
+
+### Internal sensing function vs host interface
+
+I²C/SPI access is an integration mechanism; it is not the sensing function itself.
+
+### Product-level description vs host/application behavior
+
+The datasheet describes what the sensor can do and how to interface to it, not the larger host device/system in which it is installed.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to BME280
+
+- sensing elements;
+- shared ADC/logic;
+- NVM/calibration coefficients;
+- power rails;
+- supported modes;
+- measurement ranges/performance;
+- configuration registers;
+- output register structure;
+- digital interfaces.
+
+### Contextual/application-specific
+
+- host processor;
+- larger device using the BME280;
+- final application;
+- external mounting/location;
+- host sampling policy;
+- meaning assigned to measurements by the application.
+
+The datasheet does not model deployment, platform, owner or mission context.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting product concepts include:
+
+- power/current consumption;
+- temperature compensation;
+- oversampling;
+- timing;
+- mode;
+- interface;
+- calibration coefficients;
+- register access;
+- electrical operating limits.
+
+Temperature is particularly cross-cutting because it is both:
+- an output measurement; and
+- an internal compensation input for other channels.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+The product has a compact operational state machine.
+
+### Power-off
+
+No valid operation without required supplies.
+
+### Sleep
+
+- default after power-on reset;
+- no measurements;
+- lowest power;
+- registers/calibration data remain accessible.
+
+### Forced
+
+- one measurement cycle;
+- results stored;
+- automatic return to Sleep.
+
+### Normal
+
+- recurring measurement cycles;
+- programmable standby/inactive intervals.
+
+### Measurement state
+
+Status register distinguishes whether:
+- a conversion is currently running;
+- NVM calibration data are being copied to image registers.
+
+### Temporal configuration
+
+Timing depends on:
+- oversampling;
+- measurement cycle;
+- standby;
+- filtering.
+
+### Limit
+
+There is no long-term equipment lifecycle, deployment history or maintenance history in the datasheet.
+
+---
+
+## 9. Composition / topology organization
+
+The BME280 is a useful counterexample to assuming that every whole sensing System needs externally meaningful subresources.
+
+### Internal physical/functional composition
+
+Internally it contains:
+- three sensing elements/front ends;
+- shared ADC;
+- shared logic;
+- NVM;
+- regulator/reference;
+- interface.
+
+### Shared-resource topology
+
+Multiple sensing channels share:
+- ADC/conversion infrastructure;
+- logic;
+- power;
+- interface;
+- calibration/compensation processing.
+
+### External topology
+
+Externally the product presents:
+- one package;
+- one digital interface endpoint/register space;
+- separate supply pins.
+
+### Important lesson from source
+
+Internal functions are real and semantically distinct, but the datasheet does not give each sensing element an independent product identity, management endpoint or externally addressable subsystem resource.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is expressed through product specifications and configuration choices rather than a generic Capability class.
+
+### Measurement capabilities
+
+- humidity;
+- pressure;
+- temperature.
+
+### Configurable behavior
+
+- independently enable/skip channels;
+- oversampling;
+- IIR filter;
+- standby interval;
+- operating mode.
+
+### Performance capability
+
+- range;
+- accuracy;
+- resolution/noise;
+- response time;
+- current consumption.
+
+### Behavior
+
+- host-triggered single measurement;
+- cyclic autonomous measurement;
+- sleep;
+- register read/write.
+
+The source therefore shows that **capability, configuration and current mode are distinct even for an atomic sensor**.
+
+---
+
+## 11. Information / output organization
+
+### Raw data
+
+ADC/raw sensor values are represented in output registers.
+
+### Compensated measurement
+
+Raw values require stored trimming coefficients and compensation formulas to produce engineering values.
+
+### Three measurement outputs
+
+- pressure;
+- humidity;
+- temperature.
+
+### Configuration information
+
+Separate registers hold:
+- oversampling;
+- mode;
+- filter;
+- standby settings.
+
+### Status information
+
+Status bits indicate:
+- conversion activity;
+- calibration/NVM update activity.
+
+### Calibration information
+
+Dedicated calibration/trimming registers store coefficients.
+
+The product therefore distinguishes **measurement output, configuration, status and calibration information**.
+
+---
+
+## 12. Management / condition organization
+
+Management is minimal but explicit.
+
+### Configuration
+
+Host can set modes, oversampling, filtering and standby.
+
+### Reset
+
+Device supports power-on reset and software reset behavior.
+
+### Status
+
+Status register exposes conversion/NVM-update activity.
+
+### Self-check / plausibility
+
+The datasheet includes product-level self-test/verification guidance, but this specialization extraction does not promote that into a universal condition model.
+
+### Limit
+
+There is no generic:
+- health state;
+- fault history;
+- service record;
+- work order;
+- replaceable component inventory.
+
+This is exactly the scale-down constraint: a useful DIM cannot require rich management structures to exist for every atomic sensing product.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Product/model identity
+
+The datasheet identifies:
+- BME280 product/model;
+- sales/document numbers.
+
+### Device identity
+
+A chip-ID register identifies device type, but the datasheet does not expose a globally unique per-unit identity comparable to an asset UUID/serial-number model.
+
+### Calibration provenance
+
+NVM trimming coefficients are device-specific calibration data needed to interpret raw output.
+
+### Measurement provenance
+
+Pressure/humidity/temperature values originate from one integrated device and shared measurement pipeline.
+
+### Limit
+
+The product itself does not define a general provenance graph, observer/deployment model or external source-record lineage.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **whole BME280 vs individual sensing element** — one product contains several sensing elements without making each a separately managed product.
+2. **pressure vs humidity vs temperature channel** — different phenomena and performance/configuration semantics.
+3. **temperature output vs temperature-compensation role** — one channel can serve both external output and internal correction.
+4. **sensing element vs front end vs ADC/logic** — transduction, conditioning and conversion/control are different functions.
+5. **raw value vs compensated engineering value** — calibration processing materially changes interpretation.
+6. **calibration coefficient vs measurement result** — descriptive correction data and runtime output differ.
+7. **configuration vs status vs output** — what the device is set to do, what it is currently doing and what it measured are different.
+8. **Sleep vs Forced vs Normal** — distinct operating states/behaviors.
+9. **mode vs oversampling/filter setting** — operating-state selection and performance/configuration parameters are different.
+10. **measurement channel skipped vs product absent/unavailable** — disabling one channel does not remove the whole sensor.
+11. **VDD vs VDDIO** — internal sensor supply and digital-interface supply are different electrical concerns.
+12. **I²C/SPI interface vs sensing function** — communication mechanism does not define the measurement domain.
+13. **status register activity vs equipment health** — measuring/NVM-update bits are not generic health/readiness.
+14. **internal block diagram vs externally addressable subsystem model** — real internal structure does not imply each block should be a top-level information resource.
+15. **product model identity vs per-instance asset identity** — datasheet identifies a product type, not necessarily a unique deployed instance.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **atomic-equipment stress test:** V2 anatomy must remain useful when the whole System is one small integrated sensor with no meaningful externally managed subsystem tree;
+- **likely intrinsic pattern:** measurement channels, configuration, operating mode, performance, calibration, power and interface remain separable concerns even in a tiny device;
+- **likely information pattern:** measurement output vs status vs configuration vs calibration data;
+- **likely capability pattern:** supported measurement/performance capability separated from selected settings/current mode;
+- **likely composition caution:** internal functional blocks need not become independently addressable V2 components;
+- **likely model/instance caution:** product datasheet semantics are mostly model/type-level; deployed-instance identity/context must come from other sources;
+- **profile-gap signal:** an atomic sensor may lack rich health/lifecycle/work/communications structures, so optionality/specialization is essential;
+- **authority caution:** Bosch product semantics can validate scale and practical organization but do not supply universal V2 vocabulary.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**S01 status: COMPLETE.**
+
+**Next frozen lineage:** S02 — Radiation detection / instrument family.
+
