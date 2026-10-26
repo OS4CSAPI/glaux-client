@@ -3,7 +3,7 @@
 **Date:** 26 October 2026  
 **Version:** 0.1  
 **Method refinement (26 October 2026):** Donor-language-first terminology rule added; cited-synthesis and source-pedigree expectations clarified.  
-**Status:** Active sequential plan. Pass 1 drafted for review; Passes 2–5 have not begun.  
+**Status:** Active sequential plan. Pass 1 candidate meaning and illustrative modeling pilot documented for review; Passes 2–5 have not begun.  
 **Location:** Research workspace, `Docs/Research/DIM_Profile_V2/`
 
 ## Purpose
@@ -69,6 +69,6 @@ A **small conceptual diagram** may help here; no large model, modules, schemas, 
 
 ## Recovery and starting point
 
-Before resuming in a new chat, read the controlling [PITON v1.3](PITON_DIM_Profile_V2_Continuity_v1.3_26OCT2026.md) and its two mandatory baseline refreshers: [Concept Baseline](DRAFT_Concept_Baseline_v0.1_25OCT2026.md) and [DIM Concept and Method Basis](DRAFT_DIM_Concept_and_Method_Basis_v0.1_25OCT2026.md). Then consult the [refined subject-and-boundary pedigree](DIM_Profile_V2_Refined_Subject_Boundary_Pedigree_v0.1_26OCT2026.md), the [Pass 2 stress test](DIM_Profile_V2_Subject_and_Boundary_Pass2_Stress_Test_v0.1_26OCT2026.md), and [C08 validation audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md) where relevant.
+Before resuming in a new chat, **read the current [PITON v1.4](PITON_DIM_Profile_V2_Continuity_v1.4_26OCT2026.md) and follow its explicit source-reading order**. It supersedes PITON v1.3's outdated pre-audit restart gate, while retaining its core recovery safeguards. Read the required underlying documents at their linked GitHub paths; do not rely on a compressed summary, skip the original concept baselines, or treat the quarantined earlier Phase B/C/D files as accepted model conclusions.
 
 **Current checkpoint:** Review the [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md) candidate. **Next new research pass when authorized: Pass 2 — Product / Model / Kind only.**
