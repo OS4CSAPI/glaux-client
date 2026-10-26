@@ -1,0 +1,38 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.50", splines=polyline, labelloc=t, label="Figure 3. Composition and Deployment-Scoped Attachment", fontsize=24, fontname="DejaVu Sans Bold", fontcolor="#10213a"];
+  node [shape=box, style="rounded,filled", fillcolor="#edf5ff", color="#10213a", penwidth=1.7, fontname="DejaVu Sans", fontcolor="#10213a", margin="0.17,0.11"];
+  edge [color="#10213a", penwidth=1.8, arrowsize=0.75, fontname="DejaVu Sans Bold", fontsize=10.5, fontcolor="#10213a"];
+
+  titleA [shape=plaintext, label=<<B><FONT POINT-SIZE="17">A. Enduring / integral subsystem relationship</FONT></B>>];
+  titleB [shape=plaintext, label=<<B><FONT POINT-SIZE="17">B. Deployment-scoped / interchangeable attachment</FONT></B>>];
+  {rank=same; titleA; titleB}
+
+  parent [label=<<B><FONT POINT-SIZE="17">Parent Sensor System</FONT></B><BR/><FONT POINT-SIZE="10">complete system being described and managed</FONT>>];
+  host [label=<<B><FONT POINT-SIZE="16">Sensor Unit</FONT></B><BR/><FONT POINT-SIZE="10">host device / recorder / node</FONT>>];
+  detachable [label=<<B><FONT POINT-SIZE="16">Detachable Sensor</FONT></B><BR/><FONT POINT-SIZE="10">connected for a period of use</FONT>>];
+  {rank=same; parent; host; detachable}
+
+  integral [label=<<B><FONT POINT-SIZE="16">Integral Subsystem</FONT></B><BR/><FONT POINT-SIZE="10">ordinarily enduring part of the parent</FONT>>];
+  deployment [label=<<B><FONT POINT-SIZE="16">Deployment</FONT></B><BR/><FONT POINT-SIZE="10">time-scoped association context</FONT>>];
+  {rank=same; integral; deployment}
+
+  interpA [shape=note, style="filled", fillcolor="#ffffff", label=<<B><FONT POINT-SIZE="13">Interpretation</FONT></B><BR/><FONT POINT-SIZE="10">Part of the parent as normally configured.</FONT><BR/><FONT POINT-SIZE="10">Maintenance removal may be possible while the ordinary</FONT><BR/><FONT POINT-SIZE="10">parent/subsystem identity relationship remains enduring.</FONT>>];
+  interpB [shape=note, style="filled", fillcolor="#ffffff", label=<<B><FONT POINT-SIZE="13">Interpretation</FONT></B><BR/><FONT POINT-SIZE="10">Not permanently bound to one parent.</FONT><BR/><FONT POINT-SIZE="10">May be cabled or mounted and later associated with a</FONT><BR/><FONT POINT-SIZE="10">different parent during another deployment.</FONT>>];
+  {rank=same; interpA; interpB}
+
+  titleA -> parent [style=invis, weight=8];
+  titleB -> host [style=invis, weight=8];
+  titleB -> detachable [style=invis, weight=8];
+  parent -> integral [label="composition"];
+  host -> deployment [style=dashed, label="associated through"];
+  detachable -> deployment [style=dashed, label="associated through"];
+  integral -> interpA [style=invis, weight=5];
+  deployment -> interpB [style=invis, weight=5];
+  parent -> host [style=invis, weight=10];
+  integral -> deployment [style=invis, weight=10];
+  interpA -> interpB [style=invis, weight=10];
+
+  note [shape=box, style="rounded,filled", fillcolor="#f7fbff", color="#c7d7ea", penwidth=1.0, label=<<FONT POINT-SIZE="11"><I>Physical attachment alone is not the deciding criterion.</I></FONT><BR/><FONT POINT-SIZE="11"><I>The key distinction is enduring identity within the parent versus a time-scoped, re-assignable association.</I></FONT><BR/><FONT POINT-SIZE="10">Use labeled relationships in the DIM unless UML aggregation/composition semantics are independently proven.</FONT>>];
+  interpA -> note [style=invis, weight=4];
+  interpB -> note [style=invis, weight=4];
+}
