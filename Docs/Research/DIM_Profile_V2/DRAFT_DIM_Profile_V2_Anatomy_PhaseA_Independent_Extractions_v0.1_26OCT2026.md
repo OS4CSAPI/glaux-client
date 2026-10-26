@@ -11865,3 +11865,328 @@ The architecture therefore separates:
 
 **Next frozen lineage:** X07 — NIST IoT Device Cybersecurity Capability Core Baseline.
 
+---
+
+# X07 — NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 108.
+
+**Primary inspected source:**
+
+- NISTIR 8259A, *IoT Device Cybersecurity Capability Core Baseline*, May 2020.
+
+**Evidence note:** The frozen source defines **six** baseline technical capabilities. NIST's later online Technical Device Cybersecurity Capabilities Catalog has subsequently expanded/refined the catalog and currently includes an additional Device Security capability. That later addition is outside the frozen 2020 NISTIR 8259A source and is not imported into this extraction.
+
+NISTIR 8259A is a cybersecurity capability baseline for IoT devices, not a whole device/domain information model.
+
+---
+
+## 1. Source-native structural organization
+
+NISTIR 8259A organizes IoT device cybersecurity into six technical capability partitions:
+
+1. **Device Identification**
+2. **Device Configuration**
+3. **Data Protection**
+4. **Logical Access to Interfaces**
+5. **Software Update**
+6. **Cybersecurity State Awareness**
+
+Each capability is described through:
+
+- a capability statement;
+- common elements;
+- rationale;
+- reference examples.
+
+The baseline treats these as capabilities implemented through the IoT device's **hardware and software**.
+
+---
+
+## 2. Purpose of each partition
+
+### Device Identification
+
+Purpose: ensure the device can be uniquely identified both:
+- logically; and
+- physically.
+
+### Device Configuration
+
+Purpose: permit authorized change of device software configuration and restoration of a secure configuration.
+
+### Data Protection
+
+Purpose: protect device-stored/transmitted data against unauthorized access/modification.
+
+### Logical Access to Interfaces
+
+Purpose: restrict logical access to local/network interfaces, protocols and services to authorized entities.
+
+### Software Update
+
+Purpose: allow authorized secure/configurable device software update.
+
+### Cybersecurity State Awareness
+
+Purpose: make cybersecurity-relevant device state/events available to authorized entities for monitoring, incident detection, investigation and maintenance of secure operation.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Identification | logical identifier, physical identifier, authorized access to identifier |
+| Configuration | configuration settings, authorized entity, secure configuration, restore |
+| Data protection | stored data, transmitted data, confidentiality/integrity, authorized access |
+| Interface access | local interface, network interface, protocol, service, authorization/authentication |
+| Software update | update mechanism, authorization, integrity/authenticity, rollback/configurability where applicable |
+| State awareness | cybersecurity state, event information, logging/monitoring, authorized access |
+
+---
+
+## 4. Primary relationships
+
+### Device → identifiers
+
+One IoT device can have:
+- logical identity;
+- physical identity.
+
+The values may be the same but need not be.
+
+### Device → configuration
+
+Authorized entities can change/restore device software configuration.
+
+### Device → data
+
+The device stores/transmits data requiring protection.
+
+### Device → interfaces/protocols/services
+
+Logical access controls apply to the device's interaction surfaces.
+
+### Device → software update
+
+Authorized update changes the device software state.
+
+### Device → cybersecurity state
+
+The device reports/retains information needed to understand security condition/events.
+
+The source is capability-centric; it does not define a generic topology among internal components.
+
+---
+
+## 5. Dependency boundaries
+
+### Device capability vs manufacturer support process
+
+8259A covers **technical device capabilities**. NISTIR 8259B separately covers non-technical supporting capabilities by manufacturers/third parties.
+
+### Identification vs authentication
+
+Unique identification supports management/authentication but is not automatically authentication itself.
+
+### Configuration vs access control
+
+Configuration is one capability; restriction of interface access is another, though they interact.
+
+### Data protection vs interface access
+
+Protecting data and controlling who can reach interfaces are separate control objectives.
+
+### Software update vs configuration
+
+Updating executable software and changing configuration settings are different operations.
+
+### State awareness vs device state itself
+
+Reporting cybersecurity-relevant state and the state/condition being reported are distinct.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic device capabilities
+
+All six baseline areas are intended as capabilities of the IoT device itself, implemented through its hardware/software.
+
+### Contextual/organizational
+
+- which entities are authorized;
+- what cybersecurity events/states must be reported;
+- which data require protection;
+- policy for configuration/update/access;
+- organizational cybersecurity controls.
+
+The baseline deliberately leaves specific organizational requirements/profile tailoring outside the universal core baseline.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting themes include:
+
+- authorization;
+- identity;
+- interfaces;
+- configuration;
+- data;
+- software;
+- cybersecurity state/event awareness;
+- device lifecycle operations such as deployment/decommissioning/recovery;
+- physical vs logical access/identity.
+
+Many capabilities depend partly on configuration and authorization.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+NISTIR 8259A does not define a universal device lifecycle model, but several capabilities imply temporal/lifecycle behavior.
+
+### Identification across lifecycle
+
+Physical identity remains useful when logical identity is unavailable, including deployment/decommissioning/failure contexts.
+
+### Configuration state
+
+Device can change configuration and restore a secure configuration.
+
+### Software version/update state
+
+Device software can transition through authorized updates.
+
+### Cybersecurity state
+
+Device can report current security state/events and preserve information useful for investigation.
+
+### Limit
+
+Procurement, installation, maintenance work and operational mission history are outside the capability baseline.
+
+---
+
+## 9. Composition / topology organization
+
+No generic device composition/BOM/topology model is defined.
+
+The baseline treats the IoT device as the capability-bearing subject.
+
+Interfaces are exposed attack/interaction surfaces but are not modeled as a physical topology.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is the central organizing concept.
+
+Each baseline capability is:
+
+- an ability the device provides through its hardware/software;
+- decomposed into common functional elements;
+- justified by cybersecurity controls/outcomes.
+
+The source therefore provides a reusable pattern for **cross-cutting device capability areas** rather than a device-function taxonomy.
+
+---
+
+## 11. Information / output organization
+
+The baseline distinguishes several information concerns:
+
+- identifiers;
+- configuration information;
+- protected stored/transmitted data;
+- interface/protocol/service access;
+- software/update data;
+- cybersecurity state/event/log information.
+
+Cybersecurity State Awareness may require:
+- persistent event records;
+- external monitoring signals;
+- local alerts.
+
+The mechanism is implementation/context dependent.
+
+---
+
+## 12. Management / condition organization
+
+The entire baseline is management/security oriented.
+
+It establishes device-manageable concerns around:
+
+- inventory/identity;
+- authorized configuration;
+- access control;
+- data protection;
+- software update;
+- cybersecurity state monitoring.
+
+Cybersecurity state is not equivalent to generic operational health; it is the state needed to support security controls, vulnerability management and incident detection.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity is explicit.
+
+### Logical identifier
+
+Used for automated management/monitoring and potentially authentication.
+
+### Physical identifier
+
+Accessible physically to authorized entities and useful when logical access is unavailable.
+
+The source explicitly says physical and logical identifiers may share a value but need not.
+
+Cybersecurity-event information can preserve evidence about state changes, but a general provenance graph is not defined.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **logical identifier vs physical identifier** — different access/use contexts even when values happen to match.
+2. **identification vs authentication/authorization** — knowing which device and proving/allowing access are distinct.
+3. **configuration vs software update** — settings and executable software transitions differ.
+4. **configuration capability vs current configuration** — ability to change and actual values differ.
+5. **data protection vs interface access** — safeguarding information and restricting interaction surfaces are different.
+6. **local interface vs network interface** — physical/local and remote/network exposure may require different controls.
+7. **interface vs protocol vs service** — access surface, communication rules and provided functionality are distinct.
+8. **authorized entity vs device capability** — policy/actor context is not an intrinsic device component.
+9. **cybersecurity state vs ordinary operational state** — security-relevant awareness has a specific purpose.
+10. **state event/log vs state itself** — evidence about changes and current condition differ.
+11. **technical device capability vs non-technical manufacturer support** — 8259A and 8259B deliberately separate them.
+12. **core baseline vs tailored profile** — broadly applicable capability baseline and sector/application requirements are different.
+13. **2020 six-capability baseline vs later NIST catalog expansion** — later catalog content must not be silently back-ported into the frozen source.
+14. **IoT device security capability vs sensing-domain function** — cybersecurity cross-cutting structure should not become the V2 system chassis or mission-function taxonomy.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting capability partition:** identification, configuration, data protection, interface access, software update and security-state awareness;
+- **likely identity pattern:** logical vs physical identity deliberately separate;
+- **likely management pattern:** configuration/update/access/state are independent management concerns;
+- **likely state/provenance pattern:** security-state awareness may require persistent events/logs separate from current state;
+- **likely profile-tailoring pattern:** common baseline can be specialized by application/sector requirements;
+- **scope caution:** NISTIR 8259A is cybersecurity-specific and does not define sensing/equipment anatomy beyond the cross-cutting device capabilities;
+- **edition caution:** later NIST catalog additions are outside the frozen 2020 baseline.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X07 status: COMPLETE.**
+
+**Next frozen lineage:** X08 — OGC Observations, Measurements and Samples (OMS).
+
