@@ -1,0 +1,335 @@
+# DIM/Profile V2 Anatomy — Validation and Working Decision
+
+**Decision record v0.1 — 26 October 2026**  
+**Status:** Anatomy research complete; validated working decision eligible for promotion into the maintained clean V2 DIM/Profile artifact.  
+**Evidence chain:** Phase 0 population → Phase A independent extraction → Phase B comparison → Phase C candidate synthesis → Phase D validation/falsification.
+
+## 1. Decision
+
+The V2 DIM should **not** be organized as a flat list of peer information modules and should **not** inherit the Version 1 eight subjects as its architecture.
+
+The validated high-level anatomy is:
+
+### A. Persistent Subject Spine
+
+Describes the enduring sensing System itself:
+
+- persistent identity;
+- product/model/kind relationships;
+- Procedure/Method relationships kept semantically distinct from product/model;
+- optional enduring decomposition into subordinate Systems or meaningful internal components;
+- Function and Capability description;
+- configuration space, modes and effective settings.
+
+### B. Context and Typed Relationships
+
+Describes how the persistent System is situated and related:
+
+- Deployment/emplacement;
+- Host/Platform;
+- location/pose qualified by role/time/source;
+- communications/connectivity;
+- power-source relationships;
+- manager/controller/responsibility relationships;
+- representation/mediation relationships;
+- target/FeatureOfInterest relationships.
+
+### C. Dynamic Activity and Evidence
+
+Describes what happens over time:
+
+- Observation/measurement/detection;
+- typed reported-state facts;
+- Command/action/task request;
+- execution status/progress;
+- result;
+- Event/history;
+- optional derived information/products with evidence/provenance.
+
+### D. Cross-Cutting Qualification
+
+Qualifies facts and relationships throughout the DIM:
+
+- scoped identity/reference;
+- semantic Property/Variable definitions;
+- units/constraints/quality;
+- time/validity;
+- provenance/source/responsibility;
+- version/revision;
+- bounded security/access metadata.
+
+## 2. Aspect overlays
+
+Rich recurring concerns are modeled as **optional aspect overlays across the four strata**, not as a fifth peer layer and not as mandatory empty modules.
+
+Validated aspect families:
+
+- condition / health / diagnostics;
+- communications / network;
+- power / energy;
+- software / firmware / computational participation;
+- maintenance / service / asset lifecycle.
+
+An aspect may contain:
+
+- persistent description;
+- contextual relationships;
+- dynamic state/events;
+- provenance/qualification.
+
+This is why these concerns do not fit cleanly as one-dimensional peer modules.
+
+## 3. Specialization model
+
+Specializations extend the common anatomy without changing the chassis or forking common identity/composition/deployment semantics.
+
+Examples include:
+
+- radiation detection/instrument structures;
+- UGS-specific detector/cue/tamper/sleep semantics;
+- scientific instrument classes;
+- IEEE smart-transducer TIM/channel/TEDS semantics;
+- process-automation device classes;
+- Matter/LwM2M/Redfish ecosystem-specific structures.
+
+Specialization vocabulary remains optional outside its domain.
+
+## 4. Validated semantic invariants
+
+The V2 anatomy shall preserve these distinctions unless later source evidence explicitly establishes a valid mapping:
+
+1. physical System vs digital/API/runtime representation;
+2. reusable model/kind vs individual System;
+3. product/model/kind vs Procedure/Method;
+4. whole equipment vs internal sensing element/channel;
+5. enduring composition vs hosting/deployment/network/function/virtual mediation;
+6. Function vs Capability vs Procedure/Method vs Command;
+7. supported capability vs selected configuration;
+8. configuration vs current reported state;
+9. requested/staged configuration vs applied/reported configuration;
+10. current state vs Event/history;
+11. action/command definition vs execution/request;
+12. request vs execution status vs result;
+13. Property/Variable meaning vs value/result;
+14. Observation/Execution vs result;
+15. evidence/measurement vs derived analysis/assessment;
+16. Deployment/Host/location context vs intrinsic composition;
+17. equipment/model/component/resource/data-item/semantic identifiers by scope;
+18. atomic equipment without fabricated component trees;
+19. composite equipment with optional rich decomposition;
+20. source/profile specialization vs common DIM semantics;
+21. CSAPI classification vs formal OWL class assertion.
+
+## 5. Validated relationship roles
+
+Final property names remain a later modeling/binding task, but the common DIM must be capable of preserving these relationship meanings:
+
+- reusable product/model/kind;
+- Procedure/Method;
+- enduring part/subsystem;
+- hosted/carried by;
+- deployed/assigned in;
+- connected via / connected to;
+- supplied by / power relation;
+- managed by;
+- represented/exposed by;
+- mediated by;
+- observes / controls / targets;
+- produced/generated by;
+- derived from / supported by evidence;
+- responsible/attributed to;
+- Function/Capability realized or implemented by.
+
+Triggered/cued-by remains a specialization-level relationship unless broader validation later requires common-core standing.
+
+## 6. Configuration decision
+
+Configuration shall not be treated as one undifferentiated field set.
+
+The common anatomy must be able to distinguish where applicable:
+
+- allowed/configurable space;
+- stored/engineering configuration;
+- requested/queued configuration;
+- effective/current configuration;
+- reported/applied configuration;
+- configuration-change Event/history;
+- source/authority/time/version.
+
+## 7. State/condition decision
+
+A common universal Status or Readiness enum is **not** adopted.
+
+The common DIM instead requires a typed reported-state fact pattern capable of identifying:
+
+- affected subject;
+- semantic state/condition definition;
+- value/status;
+- time/validity;
+- source/provenance;
+- quality/confidence where applicable.
+
+Specialized aspect models may standardize:
+
+- operating state;
+- health;
+- fault;
+- availability;
+- diagnostic/BIT;
+- power state;
+- communications state;
+- security state;
+- other source-defined dimensions.
+
+## 8. Event/history decision
+
+A common Event/history backbone is validated.
+
+Minimum semantics:
+
+- event identity/type;
+- affected subject(s);
+- time/interval;
+- source/responsible actor where known;
+- related evidence/artifact;
+- relevant Deployment/configuration;
+- before/after or changed values where available.
+
+Specialized lifecycles such as registration, firmware update, task execution or maintenance workflow remain typed specializations rather than one generic lifecycle state machine.
+
+## 9. Derived information decision
+
+The common DIM needs support for **derived information provenance**, but not a mandatory universal Assessment hierarchy.
+
+A derived product may identify:
+
+- result/product identity;
+- producing System/Activity/Procedure;
+- source evidence;
+- derivation;
+- time;
+- responsible actor;
+- domain-specific type.
+
+Specializations can then define:
+- health assessment;
+- prognosis;
+- fused track;
+- classification;
+- alarm;
+- recommendation;
+- report.
+
+## 10. Atomic/composite representation rule
+
+An internal element should become an independently represented component/System only when independent semantics materially matter, such as:
+
+- identity;
+- configuration;
+- state/health;
+- calibration;
+- output/action;
+- replaceability/serviceability;
+- meaningful relationships.
+
+Otherwise the internal structure may remain source-defined/embedded under the whole System.
+
+This preserves both:
+
+- atomic integrated sensors such as BME280; and
+- complex composite systems such as radiation portals and SOSA sensors.
+
+## 11. Communications and power decision
+
+### Communications
+
+Common:
+- typed connectivity/interface relationships.
+
+Optional rich aspect:
+- interface/connection point;
+- network/link;
+- address/configuration;
+- gateway/controller;
+- communication state/metrics.
+
+### Power
+
+Common:
+- typed source/consumer/power relationship.
+
+Optional rich aspect:
+- source identity;
+- power interface;
+- design/static characteristics;
+- voltage/current/power/energy;
+- charge/capacity;
+- battery state/history;
+- measurement provenance.
+
+Neither communications topology nor power topology becomes the physical composition tree by default.
+
+## 12. Security/access boundary
+
+The common DIM may carry or reference:
+
+- classification/marking;
+- handling/access constraints;
+- interface security characteristics;
+- security-state facts;
+- policy/profile reference.
+
+Outside common DIM:
+- credentials;
+- keys;
+- authentication sessions;
+- enterprise IAM/enforcement implementation.
+
+## 13. OGC binding consequence
+
+The anatomy is implementation-independent but maps naturally to CSAPI/SensorML/OMS/SOSA.
+
+Important binding cautions:
+
+- System remains the persistent application subject.
+- enduring Composition remains distinct from Deployment/Aggregation;
+- System kind/model semantics and Procedure/Method semantics must not be silently conflated;
+- SensorML PhysicalComponent vs PhysicalSystem remains an instance/decomposition binding choice, not the chassis;
+- dynamic evidence maps to observation/control/event structures without making those API resources the DIM architecture;
+- CSAPI systemType = Sensor remains a classification token, not automatically an RDF type assertion.
+
+## 14. Standing of the Version 1 eight subjects
+
+The eight Version 1 subjects were useful evidence but are **not retained as the V2 architecture**.
+
+Their concerns redistribute as follows:
+
+| V1 subject | Validated V2 standing |
+| --- | --- |
+| identity / model / technical description | Persistent Subject Spine + Cross-Cutting identity/version/semantic qualification |
+| equipment / composition / physical arrangement | Persistent Subject Spine + typed relationship taxonomy |
+| sensing capabilities / performance / outputs | Function/Capability in Subject Spine + Dynamic Observation/Evidence + semantic Property/Variable qualification |
+| deployment / emplacement / location / responsibility | Context and Typed Relationships + provenance/responsibility qualification |
+| operating configuration / modes / actions | Subject Spine configuration + Dynamic actions/executions/history |
+| communications / connectivity / access | common connectivity relationships + optional communications aspect + bounded security/access qualification |
+| power sources / operating arrangement | common power relationship + optional power/energy aspect |
+| condition / service / recovery / lifecycle | typed reported-state facts + Event/history + condition/health and maintenance/service aspect overlays |
+
+This is not a renaming exercise: several Version 1 subjects split across different strata, and several V2 cross-cutting structures were not represented cleanly by the old peer-subject organization.
+
+## 15. Promotion decision
+
+**Disposition: PROMOTE AS WORKING V2 ANATOMY DECISION.**
+
+The maintained clean V2 artifact should now record:
+
+- four core structural strata;
+- optional aspect overlays;
+- specialization hooks;
+- validated semantic invariants;
+- typed relationship principles;
+- non-decisions/open binding questions.
+
+The clean artifact should not absorb the 30-source matrix or donor-by-donor analysis.
+
+Detailed concept names, cardinalities, donor ownership, normative profile requirements and machine-readable realization remain later work.
