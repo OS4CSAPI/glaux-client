@@ -4,7 +4,7 @@
 **Date:** 26 October 2026  
 **Standing:** Sourced **candidate concept meaning for human review**. Not a new V2 class, adopted relationship, final model architecture, or application-profile requirement.  
 **Controlling method:** [Incremental concept plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md); [Pass 1—Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md); [C08 validation audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md).  
-**Evidence discipline:** Donor-native meaning is distinguished from our synthesis, actual OGC binding semantics, and future conformance. The World Wide Web Consortium (W3C)/Open Geospatial Consortium (OGC) Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) “2023 Edition” source is a **21 October 2026 Working Draft**, not the edition normatively cited by published OGC API – Connected Systems 1.0.
+**Evidence discipline:** Donor-native meaning is distinguished from our synthesis, eventual API binding and conformance. The World Wide Web Consortium (W3C)/Open Geospatial Consortium (OGC) Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) “2023 Edition” source is a **21 October 2026 Working Draft**, not the edition normatively cited by published Connected Systems 1.0.
 
 ## 1. Question
 
@@ -36,27 +36,27 @@ This is an identity-versus-kind investigation. **Procedure/Method** is deliberat
 
 **Donor-native meaning.** Section 8.16 of the W3C/OGC SOSA/SSN Working Draft says that individual Systems often share a primary description by type or model number; such type-level specifications traditionally occur in datasheets. Its recommended ontology pattern represents a **system type as a Web Ontology Language (OWL) class** (a subclass of `sosa:System` or a specialization), and an **individual System as an instance** of that class (World Wide Web Consortium and Open Geospatial Consortium 2026, § 8.16).
 
-**Contribution to V2.** This strengthens the type/instance distinction *in the intended semantic environment*, but it is **not independent corroboration of CSAPI's lineage** and does **not require** V2 to mint one OWL class for every commercial product, nor turn CSAPI's `systemKind` association into an RDF `rdf:type` assertion. Ontological classification, product identification, and the CSAPI relation are not automatically identical.
+**Contribution to V2.** This strengthens the type/instance distinction *in the intended semantic environment*, but it is **not independent corroboration of CSAPI's lineage** and does **not require** V2 to mint one OWL class for every commercial product, nor turn CSAPI's `systemKind` association into a Resource Description Framework (RDF) `rdf:type` assertion. Ontological classification, product identification, and the CSAPI relation are not automatically identical.
 
-### 3.4 “DeviceKind” — SAREF supplies a particularly direct semantic donor
+### 3.4 “DeviceKind” — an explicit device-kind semantic donor
 
 **Donor-native meaning.** European Telecommunications Standards Institute (ETSI) Smart Applications REFerence (SAREF) Core 4.1.1 defines `saref:Device` for a specific tangible entity and `saref:DeviceKind` for prototypical descriptions that can populate device taxonomies and catalogues. `saref:hasDeviceKind` connects a particular Device to a kind. Device kinds can specify **shared functions, services, properties and states**, and may describe commercial models. SAREF **also has** `saref:hasModel` and `saref:hasManufacturer` data properties: a model-name string is not automatically the same thing as a modeled `DeviceKind` resource (European Telecommunications Standards Institute 2024, “Device kinds and devices”; “Functions”).
 
 **Contribution to V2.** SAREF offers a source-owned, explicit **individual-to-reusable-kind** concept that aligns closely with the purpose of CSAPI's `systemKind`. It is a strong **semantic mapping candidate**, not proof that the exact SAREF `DeviceKind` class is equivalent to a CSAPI `Procedure` resource or that the DIM needs to create a new `DeviceKind` surrogate.
 
-### 3.5 “Type asset versus instance asset” — AAS contributes an industrial-product/lifecycle perspective
+### 3.5 “Type asset versus instance asset” — the industrial-product/lifecycle perspective
 
 **Donor-native meaning.** Industrial Digital Twin Association (IDTA) Asset Administration Shell (AAS) version 3.2 distinguishes **type assets** and **instance assets** using `AssetInformation.assetKind`; Batch, Role and NotApplicable are other native values. The standard's example creates **one type asset for a temperature-sensor model and two individually identified physical sensors of that type**, with shared type information and different operational instance information. An instance's `AssetInformation.assetType` can identify the **type asset** it is of; links among Shells and assets require their own proper interpretation (Industrial Digital Twin Association 2026, “Types and Instances,” especially “Asset Administration Shells Representing Type Assets and Instance Assets”; “Asset Information Attributes”).
 
 **Contribution to V2.** This is especially useful corroboration of **a genuinely reusable manufactured-product type, with multiple independently identified fielded units**. But **AAS `assetType` and CSAPI `assetType` are *different concepts despite sharing a property name***: the AAS property identifies a type asset, whereas the CSAPI property classifies a realization such as Equipment, Human or Simulation (Industrial Digital Twin Association 2026, “Asset Information Attributes”; Open Geospatial Consortium 2025a, § 9.2.2). AAS type assets also must not be confused with AAS *Submodel templates* or with software programming class definitions.
 
-### 3.6 “Manufacturer Model” versus “DeviceType” — OPC UA explicitly separates nameplate and information-model typing
+### 3.6 “Manufacturer Model” versus “DeviceType” — nameplate versus information-model typing
 
 **Donor-native meaning.** Open Platform Communications Unified Architecture (OPC UA) Part 100: Devices defines manufacturer/product **nameplate properties** such as `Manufacturer`, `Model`, `ProductCode`, `DeviceManual` and product-instance properties such as `SerialNumber` and `ProductInstanceUri` (§ 4.5.2). Its `DeviceType` (§ 4.7) is instead an **abstract OPC UA ObjectType** for the *structure of a Device representation*; only concrete subtypes can have instances. It is **not, by definition, a manufacturer's model designation** (OPC Foundation n.d., §§ 4.5.2, 4.7).
 
 **Contribution to V2.** The practical distinction is between a **manufacturer product identification**, a **particular manufactured item**, and a **standardized information-model type**. A `Model` value by itself may be useful information but does not necessarily supply a resolvable, reusable technical specification. Conversely, `DeviceType` tells a client something about OPC UA structure but does not prove which product model the represented System is.
 
-### 3.7 “Thing Model” — WoT contributes reusable interface typing, not automatically a product datasheet
+### 3.7 “Thing Model” — reusable interface typing, not automatically a product datasheet
 
 **Donor-native meaning.** W3C Web of Things (WoT) Thing Description 1.1 defines a `Thing Model` as a reusable description/template primarily for common **Properties, Actions and Events**; it need not supply instance-specific communication endpoints, serial numbers or locations. It can help produce an individual `Thing Description`, including a link indicating its associated model (World Wide Web Consortium 2023, §§ 1.2, 9.1, 9.4).
 
