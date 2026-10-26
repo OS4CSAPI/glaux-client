@@ -9633,3 +9633,427 @@ Actual data-source/instrument provenance is outside core I-ADOPT and should be s
 
 **Next frozen lineage:** X02 — IETF EMAN.
 
+---
+
+# X02 — IETF Energy Management (EMAN)
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 135, 139, 140, 141.
+
+**Primary inspected sources:**
+
+- RFC 7326, *Energy Management Framework* (2014).
+- RFC 7460, *Monitoring and Control MIB for Power and Energy* (2015).
+- RFC 7461, *Energy Object Context MIB* (2015).
+- RFC 7577, *Definition of Managed Objects for Battery Monitoring* (2015).
+
+**Evidence note:** RFC 7326 is Informational and defines the conceptual/reference model; RFCs 7460, 7461 and 7577 are Standards Track MIB realizations of portions of that model. The conceptual framework and its MIB bindings are kept distinct.
+
+---
+
+## 1. Source-native structural organization
+
+EMAN organizes energy-management information around the abstract **Energy Object**.
+
+### Energy Object classes
+
+- **Energy Object**
+  - abstract equipment-management subject.
+
+- **Device**
+  - physical piece of equipment;
+  - can consume, produce, meter, distribute or store energy;
+  - may contain Components.
+
+- **Component**
+  - part of a physical Device.
+
+- **Power Interface**
+  - physical inlet/outlet through which energy is received/provided.
+
+### Energy Object information partitions
+
+RFC 7326 separates:
+
+- identity;
+- classification/category;
+- business/site/organizational context;
+- role;
+- importance;
+- power state;
+- power measurements;
+- power attributes;
+- energy;
+- demand;
+- battery;
+- control;
+- relationships.
+
+### Relationship model
+
+Key Energy Object relationships include:
+
+- **Power Source** — energy flows from source to target;
+- **Metering** — one object meters another;
+- **Aggregation** — one object aggregates information about others.
+
+### MIB realization
+
+RFC 7460 separates:
+- Energy Object identity;
+- power state;
+- usage;
+- power attributes;
+- energy measurements;
+- faults.
+
+RFC 7461 separates:
+- identity;
+- context;
+- relationships.
+
+RFC 7577 organizes one conceptual row per Battery into:
+1. static properties;
+2. current operational/charge state;
+3. alarm/notification thresholds.
+
+---
+
+## 2. Purpose of each partition
+
+### Energy Object
+
+Purpose: provide one management abstraction for equipment participating in energy management.
+
+### Device / Component
+
+Purpose: preserve whole-equipment versus constituent-part scope.
+
+### Power Interface
+
+Purpose: represent energy-transfer boundaries independently from Device/Component identity.
+
+### Identity/context
+
+Purpose: connect Energy Objects to persistent identifiers and deployment/business/site/organizational context.
+
+### Power state/control
+
+Purpose: represent administrative/operational energy states and control transitions.
+
+### Measurements
+
+Purpose: distinguish:
+- power;
+- electrical attributes;
+- energy accumulation;
+- demand over interval;
+- measurement quality/caliber/source.
+
+### Relationships
+
+Purpose: explicitly represent energy-source, metering and aggregation relationships rather than infer them from physical proximity.
+
+### Battery model
+
+Purpose: distinguish battery design/static characteristics, live operating state, and alarm thresholds.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Whole equipment | EnergyObject, Device, Component |
+| Energy boundary | PowerInterface, inlet, outlet |
+| Identity/context | UUID, name, alternate key, category, role, importance, domain/site/org context |
+| State/control | PowerStateSet, PowerState, admin/oper state |
+| Power measurement | nameplate power, actual/estimated/static caliber, accuracy, direction |
+| Energy/demand | accumulated energy, demand interval, energy used/produced/stored |
+| Relationships | PowerSource, Metering, Aggregation |
+| Battery | identifier, technology, design voltage/capacity, actual capacity/charge/voltage/current/temp, cycle count |
+| Alarm | low/high charge/voltage/capacity/cycles/temperature thresholds |
+
+---
+
+## 4. Primary relationships
+
+### Device → Component
+
+Component is explicitly a part of Device.
+
+### Device/Component → Power Interface
+
+Power Interface represents physical energy-transfer point for a Device/Component.
+
+### Energy Object → context
+
+Energy Object can be assigned:
+- domain;
+- role;
+- category;
+- importance;
+- organizational/site/business context.
+
+### Energy Object → Energy Object
+
+Relationship type explicitly states:
+- supplies power;
+- meters;
+- aggregates.
+
+### Battery → physical entity
+
+Battery MIB indexes each Battery through ENTITY-MIB physical identity.
+
+### Measurement → source/caliber
+
+Power measurement records whether it is:
+- actual;
+- estimated;
+- static;
+and whether measured locally/remotely, plus accuracy/method.
+
+---
+
+## 5. Dependency boundaries
+
+### Framework vs MIB implementation
+
+RFC 7326 defines conceptual classes/relationships; MIB RFCs bind subsets into SNMP management objects.
+
+### Equipment vs energy interface
+
+Device/Component identity and PowerInterface are separate.
+
+### Physical containment vs energy relationship
+
+Part-of does not imply PowerSource/Metering/Aggregation.
+
+### Static/nameplate vs live measurement
+
+Nominal/manufacturer values are distinct from current measured/estimated values.
+
+### Energy vs power vs demand
+
+Instantaneous/rate, accumulated quantity and interval average are different information semantics.
+
+### Battery identity vs replacement position
+
+Battery MIB can reuse physical index when a Battery is replaced at the same connector, exposing a distinction between managed position/index and physical Battery instance.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic
+
+- Device/component identity;
+- power interfaces;
+- battery design characteristics;
+- capability/state sets;
+- nameplate values.
+
+### Contextual
+
+- business/site/organizational domain;
+- energy-source relationship;
+- metering relationship;
+- aggregation relationship;
+- role/importance;
+- remote measurement source.
+
+### Dynamic
+
+- current power state;
+- current power/energy/demand;
+- battery charge/current/temperature;
+- alarms.
+
+---
+
+## 7. Cross-cutting concepts
+
+- UUID/alternate keys;
+- role/category;
+- context;
+- state;
+- measurement quality/caliber;
+- time interval;
+- direction of flow;
+- alarm/fault;
+- relationships;
+- ENTITY-MIB physical identity.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+EMAN has rich operational state but limited whole-asset lifecycle.
+
+### Power state
+
+Power State Set defines available/current energy-control state.
+
+### Demand
+
+Demand explicitly averages power over time interval.
+
+### Energy
+
+Energy accumulates over time.
+
+### Battery state
+
+Battery model separates:
+- charging operational state;
+- charging administrative state;
+- current charge/capacity;
+- cycle count;
+- last charging-cycle time;
+- temperature/voltage/current.
+
+### Replacement
+
+Battery MIB's physical index rule exposes replacement continuity at the connector/location level.
+
+### Limit
+
+No general maintenance/work/service history is defined.
+
+---
+
+## 9. Composition / topology organization
+
+### Physical hierarchy
+
+Device contains Components.
+
+### Energy topology
+
+PowerSource relationship models directed energy flow independently from physical containment.
+
+### Metering topology
+
+Metering relationship says one Energy Object measures another.
+
+### Aggregation topology
+
+Aggregation relationship says one Energy Object aggregates energy information about others.
+
+### Interface topology
+
+PowerInterface explicitly models inlet/outlet.
+
+These topologies are distinct and cannot be collapsed into one parent-child tree.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Energy behavior is modeled through:
+
+- role as consumer/producer/meter/distributor/store;
+- supported Power State Sets;
+- control of Power State;
+- measurement capability;
+- battery characteristics;
+- PowerInterface direction.
+
+Function is purpose-specific to energy management, not a general device-function framework.
+
+---
+
+## 11. Information / output organization
+
+EMAN distinguishes:
+
+- static/nameplate information;
+- current power;
+- Power Attributes;
+- accumulated energy;
+- demand;
+- current state;
+- battery current state;
+- fault/alarm/notification information.
+
+Measurement metadata preserves method/caliber/accuracy and flow direction.
+
+---
+
+## 12. Management / condition organization
+
+Energy management is the lineage's central purpose.
+
+It includes:
+
+- monitoring;
+- Power State control;
+- power/energy/demand reporting;
+- fault management;
+- context;
+- relationship discovery;
+- battery status;
+- alarm thresholds.
+
+Condition is purpose-specific to energy/battery rather than whole-device health.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+- persistent UUID for Energy Object;
+- human-readable name;
+- alternate key linking other management models;
+- ENTITY-MIB physical index;
+- context MIB links to other identifiers;
+- measurement caliber records source/method/accuracy;
+- relationship IDs/types identify connected Energy Objects.
+
+Identity of the managed position/index can differ from replaceable Battery identity.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Energy Object vs Device/Component/PowerInterface** — abstract management subject and concrete subtypes differ.
+2. **Device vs Component** — whole equipment and part differ.
+3. **Component vs PowerInterface** — part and energy-transfer boundary differ.
+4. **physical containment vs PowerSource relationship** — part-of and supplies-energy are distinct.
+5. **PowerSource vs Metering vs Aggregation** — three relationship semantics are distinct.
+6. **nameplate power vs current power** — nominal and live values differ.
+7. **actual vs estimated vs static measurement** — measurement provenance/caliber matters.
+8. **power vs energy vs demand** — rate, accumulated quantity and interval average differ.
+9. **Power State vs power measurement** — control/operating state and measured consumption differ.
+10. **context role/category vs physical class** — deployment/business role is not equipment type.
+11. **battery design capacity vs actual capacity vs charge** — design, degraded maximum and current stored amount differ.
+12. **charging administrative vs operational state** — desired/control and actual state differ.
+13. **battery physical index vs physical Battery instance** — connector/managed position continuity can survive replacement.
+14. **battery state vs alarm threshold** — current value and notification rule differ.
+15. **conceptual framework vs SNMP MIB carrier** — domain semantics and management-protocol realization differ.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting power structure:** Device/Component/PowerInterface separation;
+- **likely relationship pattern:** power source, metering and aggregation modeled explicitly and independently from physical containment;
+- **likely information pattern:** nameplate/static vs live measurement vs accumulated energy vs interval demand;
+- **likely provenance pattern:** actual/estimated/static measurement caliber, method and accuracy;
+- **likely state pattern:** Power State distinct from measured power/energy;
+- **likely battery specialization:** design characteristics, current state, cycle history and alarm thresholds;
+- **likely identity caution:** managed position/index and replaceable battery instance can differ;
+- **scope caution:** EMAN defines energy-management anatomy, not the whole sensing equipment DIM;
+- **binding caution:** MIB tables/OIDs/SNMP compliance are implementation bindings, not V2 classes/resources.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X02 status: COMPLETE.**
+
+**Next frozen lineage:** X03 — IETF hardware management.
+
