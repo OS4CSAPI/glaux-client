@@ -2785,3 +2785,493 @@ The following SNRA distinctions are source-native and important:
 
 **Next frozen lineage:** C06 — Matter.
 
+---
+
+# C06 — Matter 1.3
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 107.
+
+**Primary source:**
+- Connectivity Standards Alliance, *Matter Core Specification*, Release 1.3, April 17, 2024.
+- Connectivity Standards Alliance, *Matter Device Library Specification*, Release 1.3 / 1.3.0.1, April 17 / May 29, 2024, used to inspect the source-native Device Type and endpoint-composition rules referenced by the Core specification.
+
+**Evidence note:** The exact Matter Core 1.3 PDF in the frozen corpus is large enough that direct page retrieval was limited in the available web environment. The exact Device Library 1.3 PDF was directly inspected, including the Root Node, sensor Device Types, endpoint composition, and Room Air Conditioner composition example. Core-model structural statements are limited to the published Matter R1.3 material and source-linked specification extracts; no later Matter release is silently substituted.
+
+---
+
+## 1. Source-native structural organization
+
+Matter organizes a node's application data model hierarchically:
+
+1. **Node**
+   - the addressable Matter participant;
+   - contains one or more Endpoints;
+   - Endpoint 0 is the Root Node endpoint.
+
+2. **Endpoint**
+   - an individually addressable functional partition on a Node;
+   - carries one or more Device Types and Cluster instances;
+   - can be a leaf endpoint or participate in composed-device structures.
+
+3. **Device Type**
+   - identifies the functional classification and conformance requirements of an Endpoint;
+   - Device Types define required/optional Clusters, elements, conditions, and in some cases required child Device Types.
+
+4. **Cluster**
+   - modular functional/data-model building block instantiated on an Endpoint;
+   - exposes a coherent feature/interface such as sensing, control, configuration, identification, power, or diagnostics.
+
+5. **Cluster elements**
+   - **Attributes** — readable/writable state/data;
+   - **Commands** — requestable actions;
+   - **Events** — reported occurrences/history-like event information.
+
+6. **Descriptor Cluster**
+   - describes an Endpoint's Device Types and composition;
+   - `DeviceTypeList` identifies the Device Types implemented on the Endpoint;
+   - `PartsList` identifies child Endpoints that form a composed Device Type;
+   - `TagList` supplies semantic tags used to disambiguate otherwise similar child Endpoints.
+
+7. **Root Node**
+   - a utility Device Type on Endpoint 0;
+   - its PartsList covers the other Endpoints on the Node.
+
+8. **Composed Device Types**
+   - a Device Type can be represented by a parent Endpoint plus child Endpoints supplying additional capabilities/parts;
+   - child Endpoints can themselves carry different Device Types and Clusters.
+
+9. **Fabric**
+   - the secure logical/administrative network context in which Nodes participate;
+   - Node identity and interaction occur within Fabric scope.
+
+The source-native anatomy is therefore:
+
+> **Node → Endpoint → Device Type + Cluster → Attribute / Command / Event**, with **Descriptor/PartsList/TagList** providing composition and semantic disambiguation.
+
+---
+
+## 2. Purpose of each partition
+
+### Node
+
+Purpose: provide the network-addressable Matter participant boundary that hosts the complete Matter data model exposed by one commissioned node.
+
+### Root Node / Endpoint 0
+
+Purpose: expose Node-level utility/servicing information and identify the complete Endpoint family on the Node.
+
+### Endpoint
+
+Purpose: partition a Node into separately addressable units of functionality. An Endpoint can represent one Device Type instance or a parent/child position in a composed Device.
+
+### Device Type
+
+Purpose: state **what functional kind of device/role an Endpoint represents** and define conformance requirements over Clusters, elements and composition.
+
+### Cluster
+
+Purpose: package one coherent functional interface/data-model concern into a reusable building block.
+
+### Attribute
+
+Purpose: represent persistent/current data or state exposed by a Cluster.
+
+### Command
+
+Purpose: represent requestable behavior/actions of a Cluster.
+
+### Event
+
+Purpose: report occurrences that consumers may subscribe to or retrieve through the interaction model.
+
+### Descriptor Cluster
+
+Purpose: make endpoint structure self-describing:
+- what Device Types an Endpoint implements;
+- what child Endpoints compose it;
+- semantic tags distinguishing repeated similar children.
+
+### Fabric
+
+Purpose: provide secure logical membership/administrative context for Nodes and scoped interactions; Fabric is not the physical composition boundary of the device.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Node level | Node, Node ID, Root Node, Fabric membership |
+| Functional partition | Endpoint, Endpoint ID, leaf/composed endpoint |
+| Functional classification | Device Type, DeviceTypeList, Device Type class/scope/superset |
+| Composition | PartsList, parent Endpoint, child Endpoint, composed Device Type |
+| Functional interface | Cluster, client/server role, Cluster requirements, Features |
+| State/data | Attribute |
+| Behavior | Command |
+| Occurrence | Event |
+| Semantic disambiguation | Descriptor Cluster, TagList, semantic tags |
+| Utility/maintenance | Root Node utility Clusters, Basic Information, diagnostics/update/power source Device Types |
+| Device specialization | sensor Device Types, controllers, actuators, appliances, energy devices and others |
+
+---
+
+## 4. Primary relationships
+
+### Node → Endpoint
+
+A Node contains/addressably exposes multiple Endpoints.
+
+### Endpoint → Device Type
+
+An Endpoint's Descriptor `DeviceTypeList` identifies one or more Device Types implemented on that Endpoint.
+
+### Endpoint → Cluster
+
+The Device Type's conformance requirements determine the Clusters an Endpoint shall/may implement.
+
+### Cluster → Attribute / Command / Event
+
+Clusters contain the data, actions and occurrences that make up the functional interface.
+
+### Parent Endpoint → child Endpoints
+
+A composed Device Type uses Descriptor `PartsList` to identify child Endpoints forming part of the composed device representation.
+
+### Child Endpoint → semantic tag
+
+`TagList` can distinguish repeated child Device Types according to semantic role/location.
+
+### Client Cluster ↔ Server Cluster
+
+Matter interactions are generally between Cluster roles on Endpoints/Nodes. Client/server role is an interaction relationship, not physical containment.
+
+### Node ↔ Fabric
+
+A Node participates in one or more Fabric contexts for secure identity/access/interaction.
+
+---
+
+## 5. Dependency boundaries
+
+Matter makes several important structural dependencies explicit.
+
+### Device Type depends on Cluster definitions
+
+Device Types do not redefine all behavior/data. They compose/restrict reusable Cluster definitions and specify conformance.
+
+### Endpoint composition depends on Descriptor
+
+Composition is made explicit through Descriptor `PartsList`, rather than inferred from Endpoint numbering or Cluster co-location.
+
+### Semantic disambiguation depends on TagList
+
+If multiple child Endpoints share the same Device Type, semantic tags can identify their distinct roles.
+
+### Node-level utility vs application functionality
+
+Endpoint 0 / Root Node carries Node-wide utility/servicing responsibilities, while application Device Types occupy other Endpoints.
+
+### Fabric/network vs device data model
+
+Fabric controls secure network membership and scope; it does not define physical product composition.
+
+### Device Library vs Core/System Model
+
+The Device Library defines concrete Device Type conformance while relying on the Core/System Model for Node, Endpoint, Cluster and composition semantics.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to the Matter-exposed Node
+
+- Endpoints;
+- Device Types;
+- Clusters;
+- supported features;
+- Attributes;
+- Commands;
+- Events;
+- Descriptor composition metadata;
+- Node-level utility information.
+
+### Contextual
+
+- Fabric membership;
+- group/binding relationships to other Nodes/Endpoints;
+- commissioning/access-control context;
+- remote target relationships;
+- ecosystem-specific controller relationships.
+
+### Representation caution
+
+An Endpoint is a Matter functional/addressable partition. It is **not automatically one physical component**. A physical product may expose several Endpoints, and a composed Device Type may use several child Endpoints to represent one product/function.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting Matter structures include:
+
+- Descriptor/DeviceTypeList/PartsList/TagList;
+- Features/FeatureMap;
+- conformance conditions;
+- client/server Cluster roles;
+- access control;
+- fabric scoping;
+- identification;
+- diagnostics;
+- software update;
+- power source;
+- groups/scenes;
+- binding;
+- semantic tags.
+
+These structures can apply across many Device Types without defining the primary device function themselves.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+Matter's principal lifecycle concepts are **network/commissioning and operational state**, not a full physical-asset lifecycle.
+
+### Network/administrative lifecycle
+
+The Core architecture includes concepts such as:
+
+- commissioning;
+- Fabric membership;
+- operational credentials;
+- software update;
+- Node/fabric administration.
+
+### Operational state
+
+Clusters and Device Types expose:
+- state Attributes;
+- operational-state Clusters for applicable device classes;
+- modes;
+- errors;
+- configuration;
+- diagnostic information.
+
+### Events
+
+Cluster Events capture/report occurrences and can be subscribed to through Matter interactions.
+
+### Lifecycle limit
+
+The frozen Matter source does not provide a universal maintenance/service/history model for all equipment comparable to an asset-lifecycle standard. Product/service history is not a single core anatomy partition.
+
+---
+
+## 9. Composition / topology organization
+
+Matter has a strong **functional composition topology**.
+
+### Node family
+
+Endpoint 0 Root Node's PartsList identifies all other Endpoints on the Node.
+
+### Composed Device Type
+
+A parent Endpoint can represent a composed device and list child Endpoints as parts.
+
+The R1.3 Device Library Room Air Conditioner example demonstrates:
+
+- Endpoint 0 = Root Node;
+- Endpoint 1 = Room Air Conditioner parent Endpoint;
+- Endpoints 2 and 3 = Temperature Sensor child Endpoints;
+- parent PartsList = child sensor Endpoints;
+- semantic tags distinguish indoor and outdoor temperature-sensor roles.
+
+This is explicitly a source-native **composed device** representation.
+
+### Important limit
+
+Endpoint composition is **not equivalent to a physical bill of materials**. Endpoints represent functional/addressable units and Device Types. A child Endpoint may correspond to a physical component, logical function, application component, or some combination depending on the Device Type architecture.
+
+### Network topology
+
+Fabric and binding/group relationships connect Nodes/Endpoints for interaction and control. These relationships are distinct from Endpoint composition.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Matter distributes capability across Device Types and Clusters.
+
+### Device Type
+
+Device Type identifies the overall functional role of an Endpoint and specifies which Clusters/features are required or optional.
+
+### Cluster
+
+Cluster is the reusable unit of functional behavior/data.
+
+### Features
+
+A Cluster's FeatureMap declares optional functional features.
+
+### Attributes
+
+Expose state/configuration/data.
+
+### Commands
+
+Expose callable behavior.
+
+### Events
+
+Expose reportable occurrences.
+
+### Composition
+
+Additional child Device Types can add capabilities to a composed product.
+
+The source-native capability model is therefore:
+
+> **Device Type role + required/optional Cluster set + Cluster Features + Attributes/Commands/Events + optional composed child Device Types.**
+
+---
+
+## 11. Information / output organization
+
+Matter clearly distinguishes three cluster-level information/interaction forms.
+
+### Attributes
+
+Current/persistent data and state values accessed through read/write interactions and subscriptions.
+
+### Events
+
+Occurrence records emitted by Cluster instances and available through event/subscription interactions.
+
+### Commands
+
+Request/response interaction for actions.
+
+### Device/endpoint description
+
+Descriptor Cluster carries static/self-descriptive structural information.
+
+### Measurement
+
+Sensor Device Types use measurement Clusters to publish measured values as Attributes and related Events where defined.
+
+The model therefore does not collapse **description, state/measurement, event, and action** into one generic property list.
+
+---
+
+## 12. Management / condition organization
+
+Matter has substantial device/Node management, but it is distributed among utility Clusters/Device Types.
+
+Management-oriented structures include:
+
+- Root Node;
+- Basic Information;
+- Descriptor;
+- commissioning;
+- access control;
+- Operational Credentials;
+- Network Commissioning;
+- General Commissioning;
+- diagnostics;
+- OTA software update;
+- Power Source;
+- time synchronization;
+- localization/user labels;
+- Device Energy Management.
+
+Condition/error information appears through:
+
+- operational state Clusters;
+- diagnostic Clusters;
+- device-specific status Attributes;
+- Events;
+- mode/error semantics.
+
+There is no single generic management/condition partition containing all of these; management is modularized through utility Clusters and Device Types.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Matter distinguishes several identities.
+
+### Network identity
+
+A Node receives/uses Node identity within Fabric context.
+
+### Endpoint identity
+
+Endpoints are numbered/addressable within the Node.
+
+### Device Type identity
+
+Device Type IDs classify an Endpoint's functional role.
+
+### Cluster/element identity
+
+Clusters, Attributes, Commands and Events each have standardized IDs.
+
+### Semantic reference
+
+TagList/semantic tags can qualify the role/location of otherwise identical Device Types.
+
+### Product identity
+
+Basic Information and related utility Clusters provide product/vendor/software/hardware identification at Node level.
+
+### Cross-node reference
+
+Bindings/groups reference remote Node/Endpoint/Cluster targets for interaction.
+
+These identities serve different purposes and should not be collapsed.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Node vs Endpoint** — network participant and addressable functional partition are different levels.
+2. **Endpoint vs physical component** — Endpoint is a data-model/functional boundary, not automatically a hardware part.
+3. **Device Type vs Cluster** — functional classification and reusable functional interface are distinct.
+4. **Cluster vs Attribute/Command/Event** — interface grouping and individual data/behavior/occurrence elements are different.
+5. **Attribute vs Event vs Command** — state/data, occurrence, and action are distinct interaction semantics.
+6. **Root Node vs application Endpoint** — Node-wide utility identity and application functionality are separate.
+7. **Composed Device Type vs Node** — one product/function can be represented as a parent Endpoint with child Endpoints inside a larger Node.
+8. **PartsList composition vs network Binding** — internal endpoint composition and remote interaction relationship are different.
+9. **PartsList vs physical BOM** — functional composition does not prove physical containment.
+10. **DeviceTypeList vs TagList** — class/type and semantic role/location are different.
+11. **Repeated same Device Type vs distinct semantic role** — identical child types may require disambiguation.
+12. **Fabric membership vs physical/device composition** — secure network context is not the equipment hierarchy.
+13. **Client vs server Cluster role** — interaction direction/role is independent of physical ownership.
+14. **Feature support vs Device Type identity** — optional functional features do not create a new Device Type automatically.
+15. **Conformance condition vs live state** — what an implementation is required/allowed to support is not the current runtime value.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely reusable structural pattern:** hierarchy of whole participant → addressable functional unit → functional type → reusable behavior/data interface;
+- **likely composition pattern:** explicit parent/child composition with semantic disambiguation of repeated child roles;
+- **likely core/intrinsic:** separate description, state/measurement, action and event semantics;
+- **likely cross-cutting:** semantic tags, identity layers, conformance/features, diagnostics, software/update and power-management utilities;
+- **likely contextual relationship pattern:** Fabric, Binding, Groups and remote interaction separate from intrinsic composition;
+- **likely specialization pattern:** sensor Device Types and measurement Clusters as reusable modality-specific/phenomenon-specific functional units;
+- **binding/representation caution:** Matter Node/Endpoint/Cluster are Matter protocol/data-model constructs and are not automatically V2 Systems/components/modules;
+- **composition caution:** Matter `PartsList` is endpoint composition, not proof of physical equipment containment.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C06 status: COMPLETE.**
+
+**Next frozen lineage:** C07 — MIMOSA.
+
