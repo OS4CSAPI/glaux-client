@@ -10418,3 +10418,388 @@ The source explicitly maps to ENTITY-MIB/ENTITY-SENSOR-MIB/ENTITY-STATE-MIB, pre
 
 **Next frozen lineage:** X04 — IETF interfaces / topology.
 
+---
+
+# X04 — IETF Interfaces / Network Topology
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 134, 136, 137.
+
+**Primary inspected sources:**
+
+- RFC 8343, *A YANG Data Model for Interface Management* (2018).
+- RFC 8345, *A YANG Data Model for Network Topologies* (2018).
+- RFC 2863, *The Interfaces Group MIB* (2000).
+
+**Evidence note:** These RFCs define generic communications/interface/topology management, not sensor-equipment composition. They are admitted because they provide mature distinctions among interface identity, layering, network nodes, termination points, links and topology stacks.
+
+---
+
+## 1. Source-native structural organization
+
+### Interface model
+
+RFC 8343 organizes:
+
+- Interface;
+- interface type;
+- enabled/configured state;
+- admin/oper status;
+- physical address;
+- higher-layer interface(s);
+- lower-layer interface(s);
+- speed;
+- statistics.
+
+RFC 2863 provides the historical/architectural basis for:
+- interface sublayers;
+- interface stacks;
+- multiplexing;
+- physical/logical/virtual interface identity;
+- separate administrative and operational state.
+
+### Network topology model
+
+RFC 8345 organizes:
+
+- Network;
+- Network Node;
+- Termination Point;
+- Link;
+- Supporting Network;
+- Supporting Node;
+- Supporting Termination Point;
+- network hierarchy/topology stack.
+
+The abstract base network/topology model is designed to be augmented by:
+- L1;
+- L2;
+- L3;
+- service;
+- technology-specific topology models.
+
+---
+
+## 2. Purpose of each partition
+
+### Interface
+
+Purpose: provide a generic, media-independent managed identity for a network interface.
+
+### Interface layering
+
+Purpose: represent protocol/media sublayers, aggregation and multiplexing without creating one opaque compound interface.
+
+### Interface state/statistics
+
+Purpose: separate configuration, operational status and traffic/error counters.
+
+### Network
+
+Purpose: represent one topology/inventory context.
+
+### Node
+
+Purpose: represent a topology vertex/network element abstraction.
+
+### Termination Point
+
+Purpose: anchor Links at a Node and represent connectivity endpoints.
+
+### Link
+
+Purpose: represent directed/undirected connectivity edge between Termination Points.
+
+### Supporting network/topology
+
+Purpose: map overlay/service/topology structures onto underlying topology structures.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Interface identity | interface name, type, ifIndex, physical address |
+| Interface state | enabled, admin-status, oper-status, last-change |
+| Interface layering | higher-layer-if, lower-layer-if, stack |
+| Interface statistics | in/out octets/packets/errors/discards, discontinuity time |
+| Network | network ID/type, supporting network |
+| Node | node ID, supporting node |
+| Termination point | termination-point ID, supporting termination point |
+| Connectivity | Link, source/destination node/TP |
+| Topology hierarchy | overlay/underlay, supporting networks, mappings |
+| Model extension | technology-specific augmentation |
+
+---
+
+## 4. Primary relationships
+
+### Interface ↔ higher/lower interface
+
+Interfaces form layers/stacks:
+- one-on-one;
+- one-over-many aggregation;
+- many-over-one multiplexing.
+
+### Node → Termination Point
+
+Node contains/owns termination points in topology model.
+
+### Link → source/destination TP
+
+Link connects termination points.
+
+### Network → supporting network
+
+A topology/network can be supported by one or more lower/underlying networks.
+
+### Node/TP → supporting nodes/TPs
+
+Specific topology elements can map to elements in supporting networks.
+
+### Same device → multiple network nodes
+
+RFC 8345 permits the same real device to have representations in multiple networks/topologies.
+
+---
+
+## 5. Dependency boundaries
+
+### Physical interface vs logical interface
+
+RFC 8343 supports both; interface identity is not automatically physical connector identity.
+
+### Interface vs hardware component
+
+Network interface model is separate from RFC 8348 physical hardware model.
+
+### Interface layering vs physical containment
+
+higher/lower protocol relation is not part-of hardware.
+
+### Network node vs physical device
+
+Topology Node is an abstract topology vertex and may represent:
+- physical device;
+- virtual function;
+- service function;
+- another topology-specific entity.
+
+### Overlay vs underlay
+
+A service/upper topology maps to but is not identical with supporting lower topology.
+
+### Generic base vs technology-specific augmentation
+
+Base structure remains stable while domain/network-specific data is added through augmentation.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to interface
+
+- type;
+- configured state;
+- operational state;
+- interface counters;
+- speed;
+- address.
+
+### Relational/contextual
+
+- higher/lower layering;
+- network membership;
+- topology node;
+- termination point;
+- links;
+- supporting topology mappings.
+
+### Network-contextual
+
+The same physical/virtual entity can have multiple topology representations depending on network layer/view.
+
+---
+
+## 7. Cross-cutting concepts
+
+- identity;
+- type;
+- operational/admin state;
+- statistics;
+- layering;
+- topology mapping;
+- augmentation;
+- client-configured vs system-controlled resources;
+- overlay/underlay.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+### Interface state
+
+RFC 8343/RFC 2863 distinguish:
+- enabled/configuration;
+- administrative state;
+- operational state;
+- last change;
+- statistics discontinuity.
+
+### Interface creation
+
+Interfaces can be:
+- system-controlled/dynamically appearing;
+- user-controlled/configured;
+- pre-provisioned even when hardware absent.
+
+### Network topology state
+
+RFC 8345 supports:
+- system-controlled/dynamically learned topology;
+- client-configured topology;
+- changes in underlay networks.
+
+No equipment lifecycle beyond network/interface management is defined.
+
+---
+
+## 9. Composition / topology organization
+
+This lineage defines **communications topology**, not physical equipment composition.
+
+### Interface stack
+
+higher/lower-layer relationships.
+
+### Network graph
+
+Network contains:
+- Nodes;
+- Termination Points;
+- Links.
+
+### Topology stack
+
+Upper networks/topologies rely on lower supporting topologies.
+
+### Mapping
+
+Many-to-one and one-to-many mapping is explicitly allowed across layers.
+
+### Important distinction
+
+**interface stack, graph topology, topology hierarchy and physical assembly are separate concepts.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is limited to communications behavior:
+
+- interface type;
+- configured/operational state;
+- bandwidth/speed;
+- packet/counter behavior;
+- topology-layer role.
+
+Technology-specific capabilities are expected through augmentation.
+
+No generic equipment-function model exists.
+
+---
+
+## 11. Information / output organization
+
+Interface outputs include:
+- counters;
+- errors/discards;
+- state;
+- speed;
+- addresses.
+
+Topology output is graph/inventory structure.
+
+These are management/state descriptions, not sensor observations.
+
+---
+
+## 12. Management / condition organization
+
+Strong interface/network-management semantics include:
+
+- enable/disable;
+- admin/oper state;
+- counters/errors;
+- last change;
+- topology changes;
+- system-controlled vs configured resources.
+
+Condition is limited to communication/interface health/status.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity layers include:
+
+- interface name;
+- ifIndex;
+- physical address;
+- Node ID;
+- Termination Point ID;
+- Link ID;
+- Network ID;
+- URI/string identifiers.
+
+Supporting/mapping relationships preserve lineage between topology representations.
+
+The same device can be represented in multiple networks, so topology identity is explicitly view/context dependent.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Interface vs hardware component** — logical/managed interface and physical device are different.
+2. **physical vs logical interface** — both are valid interface types.
+3. **interface identity vs physical address** — managed identity and link-layer address differ.
+4. **admin vs oper state** — intended/control and actual runtime state differ.
+5. **interface vs interface layer** — one interface can be layered over/under others.
+6. **layering vs physical containment** — protocol stack relation is not hardware part-of.
+7. **aggregation vs multiplexing** — many-lower-to-one-upper and many-upper-to-one-lower are different structures.
+8. **Node vs physical device** — topology vertex is an abstract network representation.
+9. **Node vs Termination Point** — network element and connectivity endpoint differ.
+10. **Termination Point vs Link** — endpoint and connectivity relation differ.
+11. **network topology vs equipment composition** — communications graph is not a BOM.
+12. **overlay vs underlay** — service/upper topology and supporting lower network differ.
+13. **supporting mapping vs identity** — mapped objects across topology layers are related but not identical.
+14. **same real device vs topology representation** — one device may have multiple Node representations.
+15. **system-controlled vs client-configured topology/interface** — discovered/runtime and intended/configured structures differ.
+16. **base model vs technology-specific augmentation** — generic graph semantics and domain-specific attributes differ.
+17. **current counters vs historical continuity** — statistics discontinuity affects interpretation.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely communications structure:** Interface identity/layering separated from physical equipment identity;
+- **likely topology pattern:** Node → TerminationPoint → Link graph;
+- **likely cross-cutting:** admin/oper state, statistics, last change and configuration;
+- **likely mapping pattern:** overlay/underlay/supporting topology correspondence without identity collapse;
+- **likely identity caution:** same physical equipment can have multiple topology/network representations;
+- **likely binding pattern:** generic base model plus technology-specific augmentation;
+- **scope caution:** communications topology is contextual/cross-cutting and must not become the physical System composition tree;
+- **binding caution:** YANG leafrefs/paths/ifIndex/network IDs are management-model representations rather than universal DIM identifiers.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X04 status: COMPLETE.**
+
+**Next frozen lineage:** X05 — MIP / JC3IEDM.
+
