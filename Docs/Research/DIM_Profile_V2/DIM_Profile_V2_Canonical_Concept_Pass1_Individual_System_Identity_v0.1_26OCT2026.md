@@ -2,63 +2,118 @@
 ## Canonical Concept Consolidation — Pass 1: Individual System Identity
 
 **Date:** 26 October 2026  
-**Status:** Candidate research finding for human review; **not** a frozen DIM class, root, or profile requirement.  
-**Method:** One-concept comparison under the [incremental plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md). The [refined subject-and-boundary hypothesis](DIM_Profile_V2_Refined_Subject_Boundary_Pedigree_v0.1_26OCT2026.md) remains provisional.
+**Standing:** Sourced candidate for human review; **not** an adopted DIM class, root concept, domain name, or profile requirement.  
+**Revision:** First-use cited synthesis and donor-to-synthesis narrative pedigree added following review.  
+**Method:** One concept only, under the [incremental consolidation plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md). The [refined subject-and-boundary hypothesis](DIM_Profile_V2_Refined_Subject_Boundary_Pedigree_v0.1_26OCT2026.md) remains provisional.
 
-### 1. The question, in ordinary terms
+## 1. The question
 
-**What is the particular thing we are describing, independently of what it is called, what model it belongs to, where it is deployed, what it produces, or which service currently represents it?**
+**What is the particular thing being described, independently of its identifier, product type, implemented method, observations, deployments, or the services through which it is represented?**
 
-A temperature sensor may be relocated, reconfigured, or represented by two servers without becoming a different sensor simply because those descriptions change. Conversely, two sensors of the same product model are not the same individual. This is an explanatory test case, **not** a claim that every source defines the same identity or replacement rules.
+Consider two thermometers of the same product model. They are not the same individual. One thermometer might later be relocated, reconfigured, or described by another server, yet a new description or server address alone does not demonstrate that a different thermometer exists. This is an explanatory example, **not** a universal identity-continuity or component-replacement rule.
 
-### 2. What the donors actually contribute
+## 2. Synthesized candidate meaning, with inline source pedigree
 
-**Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI) — primary implementation anchor.** Its `System` resource represents an instance of a system. Part 1 requires `uniqueIdentifier` (a uniform resource identifier) and a separate canonical API resource URL. The standard says the unique identifier **should** be persistent and independent of the URL; it does not make lifetime persistence an unconditional `SHALL`. A resource also carries `systemType` (required) and may carry `assetType` (optional). For the sensing-equipment cases motivating V2, `Sensor + Equipment` is the sourced **role/realization characterization**, not a newly named class (Open Geospatial Consortium 2025, secs. 9.1–9.3). **Contribution:** distinguish the individual System referent from its API address and descriptive classifications.
+> **For the present V2 investigation, an individual System is a particular, distinguishable sensing-oriented equipment subject** (Open Geospatial Consortium 2025a, secs. 9.1–9.2.2; World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5.2.4 and 8.16; European Telecommunications Standards Institute 2024, “Device kinds and devices”). **It remains the referent of information about it across changes in descriptions, configuration, state, deployments, outputs, interactions, and representations** (Open Geospatial Consortium 2025a, secs. 9.2.2 and 11.2; Open Geospatial Consortium 2025b, secs. 9.7 and 12.2; World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.4.2.11 and 5.3.5.2; Industrial Digital Twin Association 2026, “Asset Administration Shell Attributes” and “Asset Information Attributes”). **Its identity is not identical to a product kind or an implemented method** (Open Geospatial Consortium 2025a, secs. 9.2.2 and 13.1–13.2; World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5.2.4 and 8.16; European Telecommunications Standards Institute 2024, “Device kinds and devices”). **Neither is it identical to an identifier string, an API resource, a digital representation, or an observation** (Open Geospatial Consortium 2025a, secs. 9.2.2–9.3; Open Geospatial Consortium 2025b, sec. 9.7; Industrial Digital Twin Association 2026, “Asset Administration Shell Attributes” and “Asset Information Attributes”; OPC Foundation n.d., secs. 3.3.2, 4.5.2, and 4.9; World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.4.2.11 and 5.5.2).
 
-**Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) — conceptual anchor, with edition caution.** The World Wide Web Consortium (W3C)/OGC *Semantic Sensor Network Ontology—2023 Edition* Working Draft defines `sosa:System` as an Asset implementing a Procedure in the context of an Execution. Its § 8.16 explicitly distinguishes a **system type represented by an ontology class** from an **individual system represented by an individual of that class**. It also covers non-equipment Systems, including software and human agents, and distinguishes `Platform` from `System` in its class structure (W3C and Open Geospatial Consortium 2026, secs. 5.3.5.2, 8.16). **Contribution:** instance-versus-type and system-versus-execution distinctions. **Limit:** this is a 2026 Working Draft, not the 2017 Recommendation cited by published CSAPI 1.0. CSAPI's `systemType = Sensor` must not be treated automatically as a new Resource Description Framework/Web Ontology Language class assertion.
+**Standing of this wording:** No cited donor states these four sentences as one definition. The citations identify the source-native concepts contributing to individual propositions. In particular, **“remains the referent” is our conceptual synthesis**, not a donor warranty of identity persistence through every possible alteration or replacement.
 
-**European Telecommunications Standards Institute (ETSI) Smart Applications REFerence (SAREF) — independent ontology corroboration.** In SAREF Core 4.1.1, `saref:Device` is a *tangible* entity performing functions, and each Device instance denotes one specific real-world entity. `saref:DeviceKind` separately describes a reusable archetype/model; the Device can be associated with its kind through `saref:hasDeviceKind`. A Device is also classified as a SAREF4SYST System (ETSI 2024, “Device kinds and devices”). **Contribution:** a concrete individual is distinct from its reusable kind. **Limit:** `saref:Device` and a CSAPI `System` are not automatically equivalent across their full definitions.
+## 3. Where each building block comes from—and what it means in its donor
 
-**Open Platform Communications Unified Architecture (OPC UA) Part 100: Devices — independent engineering corroboration.** Part 100 defines Device as an independent physical entity, delimited by its interfaces, capable of sensing, actuation, communication, or control. Its information model distinguishes **manufacturer/product identifiers** (for example, `SerialNumber` and `ProductInstanceUri`) from OPC UA AddressSpace Nodes and their identifiers. A Device may itself comprise other Devices or parts, and a DeviceSet can expose one root Device or multiple independently represented Devices (OPC Foundation n.d., secs. 3.1.5, 4.5, 4.9). **Contribution:** identifying an equipment instance and describing its digital node are different matters. **Limit:** Part 100's Device is physically scoped and broader in function than our sensing-oriented V2 target.
+### 3.1 “For the present V2 investigation” — a bounded selection, not a donor definition
 
-**Industrial Digital Twin Association (IDTA) Asset Administration Shell (AAS) — independent representation/identity corroboration.** The AAS is itself identifiable but **represents an Asset** recorded in its `AssetInformation`. The metamodel distinguishes type, instance, batch, role, and non-applicable asset kinds. A `globalAssetId` is not always available at the beginning of an asset's lifecycle; the specification permits asset identification with at least one `specificAssetId` under its constraints (IDTA 2026, Part 1, “Asset Administration Shell Attributes” and “Asset Information Attributes”). **Contribution:** the represented asset is not the digital shell, and identifying information can have multiple scopes. **Limit:** an AAS may represent kinds of assets beyond our present sensing-equipment boundary.
+**What the donor means.** Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI) covers multiple kinds of Systems and asset realizations, including hardware Sensors, simulated Sensors, humans, Actuators, and Platforms. The `systemType` and `assetType` facets are independent; `Sensor + Equipment` is an expressly illustrated combination rather than a distinct CSAPI class (Open Geospatial Consortium 2025a, secs. 9.1–9.2.2). The wider Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) ontology likewise permits System realizations other than equipment (World Wide Web Consortium and Open Geospatial Consortium 2026, sec. 5.3.5.2.4).
 
-**The Open Group Sensor Open Systems Architecture (Open Group SOSA) — bounded sensing-subject corroboration.** The Edition 1.1 Sensor architecture treats a Sensor as a whole subject containing sensor components and supporting hardware/software while distinguishing an external Host Platform. Its Domain-Specific Data Model separately identifies Sensor, components, Product, and ProductInstance (The Open Group 2023; 2022). **Contribution:** the individual can be a bounded, heterogeneous sensing System rather than one detector or one hardware box. **Limit:** these are architecture/data-model constructs, **not** a direct identity-class equivalence or identifier mandate for V2. This paragraph relies on the frozen C15 source extraction; it has not been independently clause-rechecked in this pass.
+**How it contributes to the synthesis.** The words *for the present V2 investigation* are deliberate scope restraint: V2 currently investigates equipment-realized Systems whose primary role is sensing. Neither the whole CSAPI universe nor every instance of SOSA/SSN System becomes automatically in scope. This is **our selection of a research boundary**, not a new requirement imposed by either donor.
 
-### 3. What aligns—and what does not
+### 3.2 “An individual System” — the enduring referent, not a type of thing in general
 
-The strongest common proposition is **the individual referent is distinguishable from its description and from a reusable kind/type**. CSAPI, SAREF, OPC UA, and AAS substantiate this through different mechanisms; the SOSA/SSN draft states the instance/type distinction explicitly. Open Group SOSA adds evidence for a bounded *whole sensing subject*, rather than supplying the same identity formalism.
+**What the donors mean.** CSAPI defines a `System` resource describing an instance of a System, with its own attributes, associations, and canonical resource representation (Open Geospatial Consortium 2025a, sec. 9.2). The World Wide Web Consortium (W3C)/OGC 2023-edition Working Draft defines `sosa:System` as an Asset implementing a Procedure in the context of an Execution. Crucially, its section 8.16 distinguishes an **individual System**—modeled as an instance—from a **system type**, which can be modeled as a Web Ontology Language (OWL) class (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5.2.4 and 8.16).
 
-This is **agreement in modeling purpose, not equivalence of classes**. `System`, `Device`, `Asset`, `Sensor`, digital shell, and API node have different donor-native scope and meaning. The OGC and W3C/OGC sources also share a semantic lineage and must not be counted as two independent conceptual inventions. A named or identified **individual** can be composed of significant components; “individual” does not mean physically indivisible.
+The European Telecommunications Standards Institute (ETSI) Smart Applications REFerence (SAREF) ontology independently says that a `saref:Device` instance represents one specific tangible real-world entity, distinct from an archetypal `DeviceKind` (European Telecommunications Standards Institute 2024, “Device kinds and devices”). The Open Group **Sensor Open Systems Architecture** (Open Group SOSA)—not the W3C/OGC SOSA vocabulary—supplies complementary evidence for describing a complete bounded Sensor, not only one detector, with hardware and software supporting its functions (The Open Group 2023).
 
-For V2, distinguish four things without prematurely defining the next passes: **(a)** the represented individual, **(b)** the identifier(s) used to refer to it, **(c)** the reusable model/kind or method associated with it, and **(d)** its digital descriptions/resources. The boundaries of **(c)** and **(d)** will be investigated in Passes 2, 3, and 5, not settled here.
+**How it contributes to the synthesis.** We are describing **one particular equipment System** at whatever coherent whole-system scale is justified, not a generic product family, measurement stream, or ontology class. This is **alignment in the intended individual-versus-type distinction**, not a claim that CSAPI `System`, `sosa:System`, `saref:Device`, and the Open Group SOSA Sensor are interchangeable classes. CSAPI's published standard and the 2026 SOSA/SSN Working Draft must also retain their edition/dependency distinction; the draft does not silently revise CSAPI 1.0's original normative references.
 
-### 4. Proposed V2 meaning — candidate, not new vocabulary
+### 3.3 “Particular, distinguishable” — referent identity versus ways of identifying it
 
-> **For the present V2 investigation, an individual System is a particular, distinguishable sensing-oriented equipment subject that remains the referent of information about it across changes in descriptions, configuration, state, deployments, outputs, interactions, and representations. Its identity is not identical to a product kind, method, identifier string, API resource, or observation.**
+**What the donors mean.** CSAPI requires a System `uniqueIdentifier` in Uniform Resource Identifier (URI) form and separately requires a canonical Uniform Resource Locator (URL). The standard says the unique identifier **should** be persistent and independent of the URL; its being a required field does **not** turn the persistence recommendation into an unconditional lifetime `SHALL` (Open Geospatial Consortium 2025a, secs. 9.2.2–9.3).
 
-“Individual System” is **plain research wording**, not a proposed new class or universal root. It retains the working CSAPI-derived `System` / `Sensor` / `Equipment` frame without claiming that every donor defines this exact composite concept.
+Open Platform Communications Unified Architecture (OPC UA) Devices independently distinguishes identifiers associated with a manufactured Device, including `SerialNumber` and `ProductInstanceUri`, from OPC UA AddressSpace Node identifiers. Its Device definition concerns an independent physical entity delimited by interfaces, including composite Devices (OPC Foundation n.d., secs. 3.1.5, 3.3.2, 4.5.2, and 4.9). The Industrial Digital Twin Association (IDTA) Asset Administration Shell (AAS) likewise separates identification of the **represented Asset** in `AssetInformation` from identification of the **Shell** itself. In AAS 3.2, `globalAssetId` can initially be absent, but `globalAssetId` or at least one `specificAssetId` must be supplied under constraint AASd-131; `specificAssetId` need not itself be globally unique (Industrial Digital Twin Association 2026, “Asset Administration Shell Attributes,” “Asset Information Attributes,” and “Specific Asset ID Attributes”).
 
-### 5. Open points that actually matter
+**How it contributes to the synthesis.** “Distinguishable” means that two physical units, even if they share a product kind, must be capable of being understood as different individuals. An identifier **refers to** an individual; it is not the individual. These standards provide useful but different identity mechanisms. V2 has **not** selected a universal identifier syntax, reconciliation policy, or identity-continuity rule by recognizing that distinction.
 
-- **Identity through replacement:** when a unit or major component is replaced, does the “same System” continue? The reviewed donors do not establish one universal answer. Do not invent one.
-- **Identity reconciliation:** different source identifiers may refer to the same equipment, but equivalence requires evidence or an explicit mapping—not matching names, model numbers, or URLs.
-- **Granularity:** which detector, channel, subdevice, or assembled whole deserves individual standing is the question for **Pass 4**, not this note.
+### 3.4 “Sensing-oriented equipment subject” — separate role and realization
 
-**Pass 1 outcome:** a **candidate definition with strong donor pedigree**, but **not** an adopted DIM class or frozen final boundary. **Next under the plan:** Pass 2, Product / Model / Kind, only after this result has been made intelligible for human review.
+**What the donors mean.** CSAPI's `systemType = Sensor` identifies Systems whose **primary activity** is sensing or observing. Its independent `assetType = Equipment` denotes a System made of one or more hardware devices or pieces of equipment interacting directly with the real world. The standard explicitly uses digital probes, Global Positioning System receivers, and video cameras as Sensor + Equipment examples, while also supplying other role/realization combinations (Open Geospatial Consortium 2025a, secs. 9.1–9.2.2).
 
-### References
+W3C/OGC SOSA/SSN supplies the broader conceptual `Sensor` specialization of `System`; SAREF separately recognizes tangible `Device` instances including Sensors. Open Group SOSA supplies a bounded whole-Sensor architectural example whose support functions need not themselves be sensing functions (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5.2.4 and 5.5.2.4; European Telecommunications Standards Institute 2024, “Device kinds and devices”; The Open Group 2023).
 
-ETSI. 2024. *SAREF: Smart Applications REFerence Ontology—Core*. Version 4.1.1. https://saref.etsi.org/core/v4.1.1/.
+**How it contributes to the synthesis.** **System** identifies what is being represented, **Sensor** its defining role, and **Equipment** its realization, using CSAPI's native facets. We **do not** coin a `SensorEquipmentSystem` class, infer that every supporting part is a Sensor, or treat “physical” as equivalent to CSAPI's narrower Equipment category. This same role/realization distinction was established before the donor comparison and remains the V2 baseline.
 
-IDTA. 2026. *Specification of the Asset Administration Shell, Part 1: Metamodel*. Version 3.2. https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/spec-metamodel/core.html.
+### 3.5 “Remains the referent … across changes” — persistence of subject versus changing information
 
-OGC. 2025. *OGC API—Connected Systems—Part 1: Feature Resources*. OGC 23-001, version 1.0. https://docs.ogc.org/is/23-001/23-001.html.
+**What the donors mean.** CSAPI associates a System with its description, validity interval, location and deployment context; the same System is separately linked to observations, commands and `SystemEvent` records. Part 2 explicitly links `SystemEvent` to the System it concerns and models Observation as a resource distinct from System (Open Geospatial Consortium 2025a, secs. 9.2.2, 11.2; Open Geospatial Consortium 2025b, secs. 9.7 and 12.2). SOSA/SSN separately relates a System to Executions through `madeBySystem`/`madeExecution` and to Deployment through distinct relationships (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.4.2.11 and 5.3.5.2).
+
+AAS separately organizes digital descriptions of an Asset through a Shell and aspect-specific Submodels. A Shell or Submodel can be identified and changed without those information structures becoming the Asset itself (Industrial Digital Twin Association 2026, “Asset Administration Shell Attributes” and “Submodel Attributes”).
+
+**How it contributes to the synthesis.** This source structure supports **describing a stable referent while information about it changes**: its location, reported condition, settings, deployment, descriptions and generated records may have different values or times. The word *remains* is a **V2 modeling inference about continuity of reference**, not a promise that any hardware replacement, reconstruction or administrative relabeling preserves identity. That unresolved threshold is recorded below.
+
+### 3.6 “Not identical to a product kind” — an instance is not its reusable archetype
+
+**What the donors mean.** The 2026 SOSA/SSN Working Draft expressly represents system **types** as ontology classes and **individuals** as their instances; system-type capabilities and datasheets can describe numerous physical units (World Wide Web Consortium and Open Geospatial Consortium 2026, sec. 8.16). SAREF's `DeviceKind` describes a reusable archetype and can be linked through `hasDeviceKind` to an individual `Device` (European Telecommunications Standards Institute 2024, “Device kinds and devices”). AAS distinguishes Type and Instance in `AssetKind` and allows a type asset to be referenced by an instance asset; OPC UA Devices distinguishes `Model` from production-level `SerialNumber` or `ProductInstanceUri` (Industrial Digital Twin Association 2026, “Asset Information Attributes”; OPC Foundation n.d., sec. 4.5.2).
+
+**How it contributes to the synthesis.** Two instances can share a product specification without becoming one individual. This recurring distinction justifies excluding **kind/model identity from individual identity**. It does **not** decide whether V2 should adopt an OWL class pattern, `DeviceKind`, an AAS Type Asset, or CSAPI's `systemKind` carrier. **Pass 2** investigates that further.
+
+### 3.7 “Not identical to an implemented method” — performer versus Procedure
+
+**What the donors mean.** SOSA/SSN's `System` implements a reusable `Procedure`; the System that performs an Execution is not the Procedure it uses (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.5.2.4 and 5.3.4.2). CSAPI uses `Procedure` resources in more than one role. Its `systemKind` relation points to **one Procedure resource describing the kind of System**, such as a datasheet; its separately defined `procedures` relation points to **Procedures the System implements** (Open Geospatial Consortium 2025a, secs. 9.2.2 and 13.1–13.2).
+
+**How it contributes to the synthesis.** **An individual instrument is not the repeatable method it can execute**, even where a native standard happens to reuse the same resource type to carry kind descriptions and procedures. The distinct meanings of `systemKind` and `procedures` were specifically corrected in the project's C08 calibration audit; they must not be collapsed. **Pass 3** handles detailed Procedure/Method consolidation.
+
+### 3.8 “Not identical to an identifier string, API resource, or digital representation”
+
+**What the donors mean.** CSAPI's System has a URI-valued `uniqueIdentifier` and an independently specified canonical API URL. AAS distinguishes the represented Asset from its separately identifiable Shell and Submodels. OPC UA distinguishes manufactured Device identification from AddressSpace Node identity and permits one Server to expose multiple Devices or a gateway for multiple Devices (Open Geospatial Consortium 2025a, secs. 9.2.2–9.3; Industrial Digital Twin Association 2026, “Asset Administration Shell Attributes”; OPC Foundation n.d., secs. 3.3.2, 4.5.2, and 4.9).
+
+**How it contributes to the synthesis.** Names, IDs, resource paths, Nodes, Shells, and digital representations are **ways to refer to, expose, or describe the underlying subject**; they are not interchangeable with it. This is the strongest *cross-community* corroboration of our non-conflation rule. It does **not** prove that any two separate representations refer to the same individual without evidence linking them, nor does it settle digital-twin/proxy relationships. **Pass 5** addresses representation semantics.
+
+### 3.9 “Not identical to an observation” — an enduring source is not an execution/result
+
+**What the donors mean.** The SOSA/SSN pattern separates System/Sensor from Observation, an Execution that can refer to its executing System through `madeBySystem`/`madeBySensor` (World Wide Web Consortium and Open Geospatial Consortium 2026, secs. 5.3.4.2.11 and 5.5.2). CSAPI likewise distinguishes the System resource from its DataStreams and individual Observations; the same System may be associated with multiple records over time (Open Geospatial Consortium 2025a, sec. 9.2; Open Geospatial Consortium 2025b, secs. 9.2 and 9.7).
+
+**How it contributes to the synthesis.** The equipment System is **the subject/source being described**. Observation is information about an occurrence or result associated with it, not its individual identity. This preserves the original whole-system objective: understanding the System is broader than retrieving the measurements it produces.
+
+## 4. What this pass establishes—and what it does not
+
+The strongest convergence is the **distinction between a particular referent and other information or representations associated with it**. CSAPI and the current SOSA/SSN draft share an explicit semantic lineage and must not be counted as independent discoveries; SAREF, OPC UA, AAS, and Open Group SOSA contribute independent but **not fully equivalent** perspectives. Open Group SOSA's role here is evidence for a bounded heterogeneous Sensor as the whole subject, **not** a claim that its architecture offers the same instance identity rules as the other donors.
+
+The term **individual System** remains plain research wording, not a newly adopted canonical ontology class. This paper recommends retaining the distinction in subsequent concept consolidation, without choosing identifier syntax, kind/model realization, procedure encoding, component cardinalities, digital-twin constructs, or conformance tests.
+
+The Open Group SOSA claims rely on the project's frozen C15 extraction from the Edition 1.1 architecture and Edition 1.0 Domain-Specific Data Model. They have **not** been newly clause-verified in this pass. The W3C/OGC SOSA/SSN source is the **21 October 2026 Working Draft**, distinct from the earlier edition cited normatively by published CSAPI 1.0.
+
+## 5. Material open questions
+
+**Identity through replacement.** Does the System remain the same individual after repair, exchange of a major component, or wholesale replacement? There is no universal answer established by this pass; defer the threshold question rather than invent it.
+
+**Cross-source reconciliation.** When different services or donor implementations use different identifiers, evidence or an explicit mapping is required to assert that they refer to one individual. Matching product names, model numbers, or labels is insufficient.
+
+**Granularity of individuals.** Whether a transducer channel, detachable detector, component, or assembled whole should be represented as its own individual System belongs to **Pass 4**.
+
+**Disposition:** Pass 1 yields a cited, traceable **candidate meaning**, not a final adopted DIM concept. The next authorized increment under the plan is **Pass 2 — Product / Model / Kind**, after review of this meaning.
+
+## References — Chicago Manual of Style, 18th ed., author-date
+
+European Telecommunications Standards Institute. 2024. *SAREF: Smart Applications REFerence Ontology—Core*. Version 4.1.1. https://saref.etsi.org/core/v4.1.1/.
+
+Industrial Digital Twin Association. 2026. *Specification of the Asset Administration Shell, Part 1: Metamodel*. Version 3.2, July. https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/index.html.
+
+Open Geospatial Consortium. 2025a. *OGC API—Connected Systems—Part 1: Feature Resources*. OGC 23-001, version 1.0, July 16. https://docs.ogc.org/is/23-001/23-001.html.
+
+Open Geospatial Consortium. 2025b. *OGC API—Connected Systems—Part 2: Dynamic Data*. OGC 23-002, version 1.0, July 16. https://docs.ogc.org/is/23-002/23-002.html.
 
 OPC Foundation. n.d. *OPC Unified Architecture Part 100: Devices*. Version 1.05.0. https://reference.opcfoundation.org/specs/OPC-10000-100/full.
 
-The Open Group. 2022. *SOSA Domain-Specific Data Model*, Edition 1.0, accompanying technical standard (frozen project source).
+The Open Group. 2022. *SOSA Domain-Specific Data Model*, Edition 1.0. Frozen project reference artifact.
 
-The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*, Edition 1.1. C239, June (September erratum; frozen project source).
+The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*, Edition 1.1. C239, June, with September erratum. Frozen project reference artifact.
 
-W3C and OGC. 2026. *Semantic Sensor Network Ontology—2023 Edition*. Working Draft, October 21. https://www.w3.org/TR/vocab-ssn-2023/.
+World Wide Web Consortium and Open Geospatial Consortium. 2026. *Semantic Sensor Network Ontology—2023 Edition*. Working Draft, October 21. https://www.w3.org/TR/vocab-ssn-2023/.
