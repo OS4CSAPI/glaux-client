@@ -1,7 +1,7 @@
 # DIM/Profile V2 Anatomy — Phase A Independent Extractions
 
 **Working draft v0.1 — 26 October 2026**  
-**Status:** Phase A in progress; independent lineage extraction only. No cross-source synthesis or clean-DIM edits.  
+**Status:** Phase A COMPLETE — 30/30 frozen semantic lineages independently extracted. No Phase B synthesis or clean-DIM edits are contained in this artifact.  
 **Controlling continuity:** `PITON_DIM_Profile_V2_Continuity_v0.7_26OCT2026.md`  
 **Frozen population:** `DIM_Profile_V2_Anatomy_Phase0_Population_Decision_v0.1_26OCT2026.md`
 
