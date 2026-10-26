@@ -10803,3 +10803,556 @@ The same device can be represented in multiple networks, so topology identity is
 
 **Next frozen lineage:** X05 — MIP / JC3IEDM.
 
+---
+
+# X05 — MIP / JC3IEDM
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 29.  
+**Frozen companion IDs:** 26, 30, 46.
+
+**Primary identity/status evidence:**
+
+- NATO/NISP record for *Joint C3 Information Exchange Data Model Baseline 3.1.4*, dated 14 February 2012.
+- STANAG 5525 Edition 1 adopts JC3IEDM.
+
+**Structural evidence inspected:**
+
+- exact-version public transcription of *JC3IEDM — Overview — IPT3 — V3.1.4*;
+- earlier public JC3IEDM overview material used only where the exact-version structure is unchanged/consistent.
+
+**Evidence ceiling:** The complete JC3IEDM 3.1.4 specification package is not locally available. The public exact-version overview is sufficient to recover the high-level entity organization, item/type distinction, Action structure, Location, Capability, Context, Reporting-Data, status/affiliation and major relationships. This extraction does **not** assert lower-level schema details that are absent from that overview.
+
+---
+
+## 1. Source-native structural organization
+
+JC3IEDM organizes multinational C2 information into two broad structural regions linked by reporting and associative entities.
+
+### A. Object/situational structure
+
+The lower/model-inventory side centers on:
+
+1. **OBJECT-TYPE**
+   - class/type-level description;
+   - relatively persistent/static characteristics.
+
+2. **OBJECT-ITEM**
+   - individually identified instance;
+   - more dynamic/current characteristics.
+
+Major first-level Object categories include:
+
+- Facility;
+- Feature;
+- Materiel;
+- Organisation;
+- Person.
+
+Materiel-Type contains Equipment-type specializations.
+
+The object side further includes:
+
+- type classification of Items;
+- Object-Item Status;
+- Object-Item Location;
+- Object-Item Association;
+- Organisation Structure;
+- Holding;
+- Affiliation;
+- Group Characteristic;
+- Address;
+- Object-Type Establishment.
+
+### B. Location structure
+
+- LOCATION;
+- OBJECT-ITEM-LOCATION;
+- vertical distance;
+- coordinate systems;
+- geometry/position semantics.
+
+### C. Action/operational structure
+
+The upper part centers on:
+
+- **ACTION**
+  - divided into Action-Task and Action-Event;
+- ACTION-RESOURCE;
+- ACTION-OBJECTIVE;
+- ACTION-EFFECT;
+- functional Action associations;
+- temporal Action associations;
+- Action Location;
+- plans/orders;
+- rules of engagement;
+- candidate target lists.
+
+### D. Capability structure
+
+- CAPABILITY;
+- Object-Type Capability;
+- Object-Item Capability;
+- Action-oriented capability/use relationships.
+
+### E. Context structure
+
+- CONTEXT;
+- ACTION-CONTEXT;
+- CONTEXT-OBJECT-ITEM relationships;
+- Operational Information Groups;
+- reporting-agent/organisation relationships;
+- context status.
+
+### F. Reporting / information pedigree structure
+
+- **REPORTING-DATA**
+  - records reporting information about much of the lower/object model;
+  - allows information to be reused in planning, allocation, orders and execution;
+- REFERENCE;
+- SECURITY-CLASSIFICATION.
+
+### G. Planning/order structure
+
+- PLAN-ORDER;
+- candidate targets;
+- actions/resources/objectives/effects;
+- Context/ROE.
+
+The source-native high-level pattern is therefore:
+
+> **persistent Type + dynamic Item + Location/Status/Associations + Action/Capability/Context + Reporting-Data/Reference/Security + Plans/Orders**
+
+---
+
+## 2. Purpose of each partition
+
+### OBJECT-TYPE
+
+Purpose: store relatively stable characteristics that apply to a class of objects and can be inherited/applied to classified Items.
+
+### OBJECT-ITEM
+
+Purpose: represent an individually identified object whose location, status, holdings, relationships and other operational information change over time.
+
+### Item-Type classification
+
+Purpose: avoid duplicating type-level characteristics on each instance while permitting an Item to be classified by one or more Types.
+
+### LOCATION
+
+Purpose: represent geometric/geospatial position separately from the Object or Action it locates.
+
+### STATUS
+
+Purpose: describe changing operational state without replacing persistent Object identity.
+
+### HOLDING
+
+Purpose: represent resources/types possessed/held by an Object-Item.
+
+### AFFILIATION
+
+Purpose: assign national, ethnic, functional, exercise, religious or other allegiance/group affiliation.
+
+### ACTION
+
+Purpose: describe military/civil operational activity, including both planned Tasks and unplanned Events.
+
+### ACTION-RESOURCE / OBJECTIVE / EFFECT
+
+Purpose: distinguish what participates in an Action, what the Action focuses on, and what effect is assessed/expected.
+
+### CAPABILITY
+
+Purpose: express potential ability to perform a function/mission, achieve an objective or provide a service.
+
+### CONTEXT
+
+Purpose: package background/circumstances/constraints/operational-overlay information relevant to Objects and Actions.
+
+### REPORTING-DATA
+
+Purpose: preserve reporting/source information and make reported object/status/location/capability information reusable across situational awareness, planning and execution.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Type/model | OBJECT-TYPE, Facility-Type, Feature-Type, Materiel-Type, Organisation-Type, Person-Type |
+| Instance | OBJECT-ITEM, Facility, Feature, Materiel, Organisation, Person |
+| Classification | OBJECT-ITEM-TYPE |
+| State | OBJECT-ITEM-STATUS |
+| Location | LOCATION, OBJECT-ITEM-LOCATION, ACTION-LOCATION, coordinate systems |
+| Composition/organisation | OBJECT-ITEM-ASSOCIATION, ORGANISATION-STRUCTURE, HOLDING |
+| Affiliation | AFFILIATION, Object-Item Affiliation |
+| Capability | CAPABILITY, Object-Type/Item capability |
+| Activity | ACTION, ACTION-TASK, ACTION-EVENT |
+| Action roles | ACTION-RESOURCE, ACTION-OBJECTIVE, ACTION-EFFECT |
+| Action structure | functional association, temporal association, action hierarchy |
+| Context | CONTEXT, ACTION-CONTEXT, Operational Information Group |
+| Reporting/provenance | REPORTING-DATA, REFERENCE, SECURITY-CLASSIFICATION |
+| Planning | PLAN-ORDER, Candidate Target List, Rule of Engagement |
+
+---
+
+## 4. Primary relationships
+
+### OBJECT-ITEM → OBJECT-TYPE
+
+Every specific Item must be associated with at least one Type.
+
+Type characteristics then apply to the Item.
+
+### OBJECT-ITEM → LOCATION
+
+Associative structure relates an Item to one or more Locations.
+
+### OBJECT-ITEM → STATUS
+
+Status is attached to the Item without becoming its identity.
+
+### OBJECT-ITEM ↔ OBJECT-ITEM
+
+Object associations and Organisation Structure express relationships among individual objects.
+
+### OBJECT-ITEM → HOLDING / Type
+
+Holding relates an Item to types/resources it possesses.
+
+### Object → CAPABILITY
+
+Capabilities can apply at Type or Item level.
+
+### ACTION → Object roles
+
+Objects/Types participate in Action as:
+- Resource;
+- Objective;
+- subject of Effect.
+
+### ACTION ↔ ACTION
+
+Functional and temporal associations build hierarchies and ordering.
+
+### ACTION → LOCATION
+
+Action can be directly located independent of resource/objective location.
+
+### ACTION → CONTEXT
+
+Context supplies background, constraints, preconditions/resulting conditions and historical snapshots.
+
+### CONTEXT → Objects / Reporting / Organisations
+
+Context can relate to Object-Items, Operational Information Groups, reporting data and reporting organisations.
+
+### Reported data → domain information
+
+REPORTING-DATA supplies report/source information to many lower-level situational facts.
+
+---
+
+## 5. Dependency boundaries
+
+### Type vs Item
+
+Stable class characteristics and dynamic instance information are explicitly separated.
+
+### Object vs Location
+
+Geometry/position is a related entity, not embedded identity.
+
+### Object vs Status
+
+Current state is separate from persistent object identity/type.
+
+### Object vs Action
+
+What exists and what happens/gets planned are separate model nuclei.
+
+### Action vs Plan/Order
+
+Actions are operational activities; plans/orders organize/authorize them.
+
+### Action vs Context
+
+Context constrains/backgrounds Action but is not the Action.
+
+### Domain fact vs Reporting-Data
+
+Reported information and its pedigree/report metadata are separate from the fact it supports.
+
+### Lower vs upper model
+
+The exact-version overview explicitly describes:
+- lower part focused on situational objects and their current information;
+- upper part focused on plans/orders/actions/capability/context;
+- associative/reporting structures connecting them.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Type-level intrinsic
+
+- relatively persistent equipment/type characteristics;
+- establishment/authorized structure;
+- general capabilities.
+
+### Item-level current/intrinsic
+
+- individual identity;
+- current status;
+- holdings;
+- item-specific capability.
+
+### Contextual/relational
+
+- location;
+- affiliation;
+- organisational association;
+- holdings relative to another object/type;
+- operational Context;
+- reporting organisation;
+- Action role.
+
+### Event/activity-specific
+
+- Action;
+- task/event;
+- resource/objective/effect;
+- time/location of Action.
+
+The model explicitly expects instance-level information to change independently from type identity.
+
+---
+
+## 7. Cross-cutting concepts
+
+- reporting/pedigree;
+- security classification;
+- reference;
+- status;
+- time;
+- location;
+- affiliation;
+- capability;
+- context;
+- organisation;
+- Action relationships.
+
+REPORTING-DATA is especially cross-cutting because it records pedigree/report information for facts across the lower object model.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+JC3IEDM models operational time/state strongly.
+
+### Object state
+
+OBJECT-ITEM-STATUS records changing operational state.
+
+### Item location/time
+
+Location associations can be time-sensitive/report-driven.
+
+### Action time
+
+Action has:
+- Tasks;
+- Events;
+- temporal associations;
+- direct Location;
+- planning/execution relationships.
+
+### Context history
+
+Context can preserve historical snapshots/traces of actual plan execution.
+
+### Reporting time
+
+Reporting data provides temporal/report context to facts.
+
+### Limit
+
+The model is operational C2 lifecycle, not detailed maintenance/service asset lifecycle.
+
+---
+
+## 9. Composition / topology organization
+
+Several different structural relations coexist.
+
+### Object association
+
+General relationships between Object-Items.
+
+### Organisation structure
+
+Explicit organisational hierarchy/structure.
+
+### Holding
+
+Possession/resource relationship.
+
+### Type establishment
+
+Authorized/establishment composition at Type level.
+
+### Location topology
+
+Object-to-location relation is independent.
+
+### Action hierarchy
+
+Functional Action associations create higher/lower activity structures.
+
+### Context grouping
+
+Operational Information Groups/Context organize related facts.
+
+These are not one universal part-of tree.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is explicit and can be associated with Object-Type or Object-Item.
+
+Action describes actual/planned behavior.
+
+The model therefore distinguishes:
+
+- **potential ability** — Capability;
+- **object/type possessing ability**;
+- **actual/planned activity** — Action;
+- **role in activity** — Resource/Objective;
+- **effect** — Action Effect.
+
+This is a strong source-native capability/behavior separation.
+
+---
+
+## 11. Information / output organization
+
+JC3IEDM is an information-exchange model rather than sensor-output model.
+
+It organizes:
+
+- object facts;
+- status;
+- location;
+- capability;
+- holdings;
+- Action;
+- plans/orders;
+- context;
+- reporting pedigree;
+- reference/security information.
+
+Reports can describe events/activity even where no suitable physical Object-Item exists, using direct Action-Location and Object-Type as needed.
+
+---
+
+## 12. Management / condition organization
+
+Management/condition is operational rather than equipment-maintenance oriented.
+
+Relevant structures include:
+
+- status;
+- readiness/capability;
+- holdings;
+- organisation;
+- affiliation;
+- plan/order/action;
+- context;
+- reporting.
+
+No detailed generic health/fault/BIT/service/work model is exposed by the reviewed overview.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Object identity
+
+OBJECT-ITEM identifies individual entities.
+
+### Type identity
+
+OBJECT-TYPE identifies class/type.
+
+### Reporting provenance
+
+REPORTING-DATA records report/pedigree information associated with operational facts.
+
+### Reference
+
+REFERENCE allows external/document references.
+
+### Security
+
+SECURITY-CLASSIFICATION is separately modeled.
+
+### Context/reporting agent
+
+CONTEXT and organisation associations can identify reporting/establishing organisations.
+
+The model therefore distinguishes domain object identity from reporting/provenance/security metadata.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **OBJECT-TYPE vs OBJECT-ITEM** — class/type and individual instance are foundationally distinct.
+2. **type characteristics vs item state** — persistent classification semantics and dynamic current information differ.
+3. **classification vs identity** — an Item can have multiple Type classifications without becoming those Types.
+4. **OBJECT-ITEM vs LOCATION** — object and geometry are different entities.
+5. **OBJECT-ITEM vs STATUS** — persistent subject and changing operational state differ.
+6. **OBJECT-ITEM vs ACTION** — object and activity are separate.
+7. **ACTION-TASK vs ACTION-EVENT** — planned task and occurrence/event differ.
+8. **ACTION-RESOURCE vs ACTION-OBJECTIVE vs ACTION-EFFECT** — participant, focus and result/effect are distinct roles.
+9. **Action functional vs temporal association** — hierarchy/function and timing relationships differ.
+10. **Capability vs Action** — potential ability and actual/planned behavior differ.
+11. **Context vs Action** — background/constraint/snapshot and activity differ.
+12. **reporting data vs reported fact** — provenance/report metadata and domain information differ.
+13. **holding vs component/organisation structure** — possession/resource allocation is not automatically physical part-of.
+14. **Organisation Structure vs general Object association** — formal structure and arbitrary relationship differ.
+15. **Affiliation vs organisation membership/structure** — allegiance/classification and structural relationship differ.
+16. **Location of Action vs location of resource/objective** — activity can have independent geometry.
+17. **lower situational model vs upper planning/action model** — current world state and planning/execution structures differ.
+18. **security classification vs object/type classification** — information security and domain type semantics differ.
+19. **candidate target vs ordinary Object** — planning designation is contextual, not intrinsic object identity.
+20. **broad C2 object model vs sensing-equipment anatomy** — JC3IEDM context structures should not be promoted as whole equipment modules merely because they are mature.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely operational-context pattern:** persistent object/type identity separated from changing status, location and affiliation;
+- **likely model/instance pattern:** OBJECT-TYPE vs OBJECT-ITEM;
+- **likely capability pattern:** Capability distinct from Action and Action roles;
+- **likely mission/activity pattern:** Action with Resource, Objective, Effect, hierarchy and temporal relations;
+- **likely contextual grouping:** Context as background/constraint/snapshot separate from Action;
+- **likely provenance pattern:** REPORTING-DATA/REFERENCE/SECURITY separate from reported domain facts;
+- **likely organizational pattern:** organisation structure, affiliation and holdings remain distinct relationship kinds;
+- **scope caution:** JC3IEDM is much broader than the V2 equipment domain and is useful mainly for operational/mission relationships around the System;
+- **evidence ceiling:** detailed exact 3.1.4 entity/cardinality semantics beyond the public overview remain unavailable;
+- **binding caution:** JC3IEDM relational entities and MIP exchange realization are not automatically V2 classes/resources or NATO/MIP conformance obligations.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X05 status: COMPLETE.**
+
+**Next frozen lineage:** X06 — NIEM.
+
