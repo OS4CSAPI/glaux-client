@@ -9215,3 +9215,421 @@ This supports a strong distinction between **functional identity, manufactured p
 
 **Next frozen lineage:** X01 — I-ADOPT.
 
+---
+
+# X01 — I-ADOPT Framework Ontology
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 145, 146.  
+**Frozen companion IDs:** 147, 150.
+
+**Primary inspected source:**
+
+- I-ADOPT Framework Ontology, version **1.1.0**, release 28 May 2025:
+  - `https://i-adopt.github.io/ontology/`
+  - version IRI `https://w3id.org/iadopt/ont/1.1.0`.
+
+**Companion evidence:**
+
+- I-ADOPT Overview / OMS extension roadmap.
+- RDA I-ADOPT WG outputs and recommendations.
+
+**Evidence note:** I-ADOPT is intentionally a **variable-description semantic framework**, not an instrument/system ontology. Its structural value is therefore cross-cutting. Version 1.1.0 adds StatisticalModifier and multi-entity System structures beyond earlier versions; those current additions are preserved rather than silently using the older four-class simplified diagram as the whole ontology.
+
+---
+
+## 1. Source-native structural organization
+
+I-ADOPT 1.1.0 organizes a variable description around a small set of atomic semantic roles.
+
+### Core variable structure
+
+1. **Variable**
+   - description of something observed or derived;
+   - minimally requires:
+     - exactly one Property;
+     - exactly one ObjectOfInterest.
+
+2. **Property**
+   - type of characteristic of the ObjectOfInterest.
+
+3. **Entity**
+   - any object/process participating in the variable description.
+
+Entities can play roles through relationships:
+
+4. **ObjectOfInterest**
+   - Entity whose Property is observed.
+
+5. **Matrix**
+   - Entity in which the ObjectOfInterest is contained;
+   - specialized ContextObject relation.
+
+6. **ContextObject**
+   - Entity supplying additional background/context around the ObjectOfInterest.
+
+7. **Constraint**
+   - confines/qualifies one or more variable-description components.
+
+8. **StatisticalModifier**
+   - statistical measure/modifier applied to the variable.
+
+### Variable grouping
+
+9. **VariableSet**
+   - aggregation/grouping of Variables for a purpose;
+   - can define applicable Property, ObjectOfInterest, Matrix, ContextObject and StatisticalModifier without requiring every member to share one fully specified Variable structure.
+
+### Multi-entity systems added in 1.1.0
+
+10. **System**
+    - combination of two or more Entities.
+
+11. **AsymmetricSystem**
+    - System whose constituent Entities have differentiated roles;
+    - relations include:
+      - numerator/denominator;
+      - source/target.
+
+12. **SymmetricSystem**
+    - System whose constituent Entity roles are mutually interchangeable;
+    - uses `hasPart` at least twice.
+
+The source-native anatomy is therefore:
+
+> **Variable = Property + ObjectOfInterest + optional contextual/qualifying components**, with optional **VariableSet** grouping and specialized **multi-Entity Systems** for compound variable semantics.
+
+---
+
+## 2. Purpose of each partition
+
+### Variable
+
+Purpose: create a machine-interpretable semantic description of the quantity/quality being observed or derived.
+
+### Property
+
+Purpose: provide the reusable/general characteristic whose meaning survives across more-specific Variables.
+
+### ObjectOfInterest
+
+Purpose: identify **what Entity's Property** is being described.
+
+### Matrix
+
+Purpose: identify the Entity/material/context **in which the ObjectOfInterest is contained** when that distinction matters.
+
+### ContextObject
+
+Purpose: add additional background Entity context without making it the observed object itself.
+
+### Constraint
+
+Purpose: narrow/confine the meaning of a variable-description component by describing a relevant condition/state/qualification.
+
+### StatisticalModifier
+
+Purpose: state which statistical transformation/measure has been applied.
+
+### VariableSet
+
+Purpose: group Variables under broader machine-interpretable criteria for discovery/aggregation without requiring one fully specified shared Variable.
+
+### Symmetric/Asymmetric System
+
+Purpose: describe a compound Entity made from multiple Entities where constituent role symmetry matters, e.g.:
+- ratios;
+- flows/fluxes;
+- interchangeable-part systems.
+
+---
+
+## 3. Central concepts per partition
+
+| Partition | Central concepts |
+| --- | --- |
+| Variable | Variable, hasProperty, hasObjectOfInterest |
+| Variable context | Entity, hasContextObject, hasMatrix |
+| Qualification | Constraint, constrains |
+| Statistical semantics | StatisticalModifier, hasStatisticalModifier |
+| Grouping | VariableSet, applicable Property/Object/Matrix/Context/Modifier, membership |
+| Compound Entity | System, SymmetricSystem, AsymmetricSystem |
+| Asymmetric roles | hasNumerator, hasDenominator, hasSource, hasTarget |
+| Symmetric composition | hasPart |
+
+---
+
+## 4. Primary relationships
+
+### Variable → Property
+
+Exactly one Property.
+
+### Variable → ObjectOfInterest
+
+Exactly one Entity in ObjectOfInterest role.
+
+### Variable → Matrix
+
+Optional Matrix Entity.
+
+### Variable → ContextObject
+
+Zero or more additional ContextObject Entities.
+
+### Variable → Constraint
+
+Zero or more Constraints.
+
+### Constraint → constrained component
+
+In 1.1.0, Constraint may constrain:
+- Entity;
+- Property;
+- StatisticalModifier.
+
+### Variable → StatisticalModifier
+
+Optional statistical modifier(s).
+
+### VariableSet → applicable components
+
+VariableSet can identify applicable:
+- Property;
+- ObjectOfInterest;
+- Matrix;
+- ContextObject;
+- StatisticalModifier.
+
+### System → Entities
+
+Symmetric/Asymmetric Systems are composed from Entities through role-specific relations.
+
+---
+
+## 5. Dependency boundaries
+
+I-ADOPT intentionally keeps its scope narrow.
+
+### Variable semantics vs observation event
+
+I-ADOPT describes **what a variable means**, not the Observation/Measurement event that produced one value.
+
+### Variable semantics vs units
+
+Units are explicitly outside the core Variable description and should be modeled independently through complementary ontologies.
+
+### Variable semantics vs instrument
+
+Instrument/device is explicitly outside I-ADOPT scope.
+
+### Variable semantics vs method
+
+Procedure/method is outside the core framework and should be linked through observational ontologies when needed.
+
+### Variable semantics vs location
+
+Geographical location is outside the core Variable semantics.
+
+### Core Entity role vs term vocabulary
+
+I-ADOPT expects terms for Property/Entity/Constraint etc. to be reused from external FAIR vocabularies rather than defining every domain term itself.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+I-ADOPT makes this distinction explicit inside the **variable semantic description**.
+
+### Essential/intrinsic to Variable meaning
+
+- Property;
+- ObjectOfInterest.
+
+Both are mandatory.
+
+### Contextual/optional
+
+- Matrix;
+- ContextObject(s);
+- Constraints;
+- StatisticalModifier(s).
+
+These are included when needed to distinguish the Variable's meaning.
+
+### External contextual information
+
+Outside core Variable semantics:
+- unit;
+- instrument;
+- method;
+- geographic location;
+- actual observation event/result.
+
+This is a source-native boundary, not merely an implementation simplification.
+
+---
+
+## 7. Cross-cutting concepts
+
+I-ADOPT itself is cross-cutting.
+
+Important reusable patterns include:
+
+- reusable external vocabulary concepts;
+- role assignment to Entities;
+- composition by semantic relations rather than compound labels;
+- constraints applied explicitly to the components they qualify;
+- statistical modification separated from base Property;
+- grouping via VariableSet.
+
+The framework's primary value is enabling semantically equivalent Variables from different communities to be decomposed and compared.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+I-ADOPT does **not** define a lifecycle/state model for instruments, systems or Variables.
+
+A Constraint may describe a state/condition relevant to variable meaning, but that is a semantic qualifier, not temporal state history.
+
+Time can appear as a domain Entity/Property/Constraint term where relevant, but no generic temporal lifecycle structure is part of the framework.
+
+**Evidence result:** lifecycle/state is non-applicable except where a state becomes part of Variable semantics.
+
+---
+
+## 9. Composition / topology organization
+
+Composition appears in two semantic forms.
+
+### Variable semantic composition
+
+Variable meaning is composed from:
+- Property;
+- ObjectOfInterest;
+- optional Matrix;
+- ContextObject;
+- Constraints;
+- StatisticalModifier.
+
+### Entity System composition
+
+Version 1.1.0 adds:
+
+- System;
+- SymmetricSystem;
+- AsymmetricSystem.
+
+These allow compound Entities to be described structurally rather than encoded in one term.
+
+The topology is **semantic/role composition**, not equipment assembly or physical topology.
+
+---
+
+## 10. Capability / function / behavior organization
+
+I-ADOPT does **not** model equipment capability/function/behavior.
+
+It only describes variable semantics.
+
+A Property or Entity vocabulary term could refer to a functional concept, but the ontology provides no general:
+- capability;
+- command;
+- service;
+- operation;
+- device function model.
+
+**Evidence result:** non-applicable to capability anatomy except as the semantic structure of what a capability/observation might concern.
+
+---
+
+## 11. Information / output organization
+
+I-ADOPT distinguishes:
+
+- **Variable description** — semantic specification of what is observed/derived;
+- **actual result/value** — outside the framework;
+- **unit** — outside core framework;
+- **observation/measurement/simulation/calculation event** — complementary observational ontology concern.
+
+VariableSet provides grouping/discovery semantics but does not replace individual Variable descriptions.
+
+This separation is fundamental to its interoperability purpose.
+
+---
+
+## 12. Management / condition organization
+
+No equipment-management/condition model is defined.
+
+Constraint can qualify a Variable by state/condition, but:
+- health;
+- faults;
+- configuration;
+- maintenance;
+- management actions
+
+are outside the I-ADOPT core scope.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+I-ADOPT assumes globally referenceable vocabulary concepts.
+
+Its provenance/identity pattern is therefore primarily semantic:
+
+- reuse identifiers for Property/Entity/Constraint/Modifier concepts;
+- attach I-ADOPT relationships to existing Variable concepts where possible;
+- avoid relying on opaque compound labels.
+
+VariableSet can group variables under community/product-specific criteria.
+
+Actual data-source/instrument provenance is outside core I-ADOPT and should be supplied by complementary ontologies.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Variable vs Property** — a fully qualified variable is more specific than its generic property.
+2. **Property vs ObjectOfInterest** — characteristic and entity bearing that characteristic are different.
+3. **ObjectOfInterest vs Matrix** — observed entity and containing medium/material are different roles.
+4. **ObjectOfInterest vs ContextObject** — primary observed subject and supporting contextual entity are distinct.
+5. **Matrix vs general ContextObject** — Matrix is a specialized containing-context relationship.
+6. **Constraint vs constrained concept** — qualifier and the Entity/Property/Modifier it qualifies are distinct.
+7. **StatisticalModifier vs Property** — statistical transformation and base characteristic must not be conflated.
+8. **Variable vs VariableSet** — precise variable meaning and discovery/grouping category are different.
+9. **Entity vs role** — ObjectOfInterest/Matrix/ContextObject are roles played by Entities, not necessarily disjoint real-world classes.
+10. **System vs individual Entity** — compound semantic entity and atomic constituent differ.
+11. **SymmetricSystem vs AsymmetricSystem** — interchangeable-role and role-specific compositions are different.
+12. **numerator/denominator vs source/target** — different asymmetric role semantics.
+13. **variable semantics vs unit** — meaning of what is measured and unit of a particular representation are different.
+14. **variable semantics vs instrument** — measured-variable meaning does not identify the equipment making the observation.
+15. **variable semantics vs procedure/method** — what is observed and how it is obtained are distinct.
+16. **Variable description vs Observation/result** — semantic description and data-producing occurrence/value are different.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting semantic pattern:** decomposed observed/derived Variable meaning rather than compound uncontrolled labels;
+- **likely core observation semantics:** Property + ObjectOfInterest as mandatory semantic minimum;
+- **likely contextual semantics:** Matrix, ContextObject and explicit Constraint role;
+- **likely quantitative semantics:** StatisticalModifier separated from base Property;
+- **likely grouping pattern:** VariableSet for discovery/aggregation without weakening individual Variable meaning;
+- **likely compound-property pattern:** Symmetric/Asymmetric multi-Entity structures for ratios/flows and similar variables;
+- **scope guardrail:** unit, instrument, procedure, location and observation/result must remain separate linked concerns;
+- **ontology caution:** I-ADOPT is not a device/System anatomy and should not be inflated into an equipment module merely because Variables are important to sensing.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X01 status: COMPLETE.**
+
+**Next frozen lineage:** X02 — IETF EMAN.
+
