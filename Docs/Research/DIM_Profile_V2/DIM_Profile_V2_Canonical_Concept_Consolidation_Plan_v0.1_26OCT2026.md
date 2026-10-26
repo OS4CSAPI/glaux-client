@@ -1,4 +1,4 @@
-# DIM/Profile V2 — Incremental Canonical Concept Consolidation Plan
+# Domain Information Model (DIM) / Application Profile Version 2 (V2) — Incremental Canonical Concept Consolidation Plan
 
 **Date:** 26 October 2026  
 **Version:** 0.1  
@@ -13,15 +13,17 @@ The next task is to identify the **exact common concepts and relationships** nee
 
 ## Sequence
 
+For reference, the main donor abbreviations used below are Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI); Sensor, Observation, Sample, and Actuator (SOSA) / Semantic Sensor Network (SSN); Smart Applications REFerence (SAREF); Open Platform Communications Unified Architecture (OPC UA); and Sensor Model Language (SensorML). **The Open Group Sensor Open Systems Architecture is a different SOSA.**
+
 Work through these five passes **in order**, completing and explaining each before taking up the next.
 
 | Pass | Concept to investigate | Question to settle | Principal evidence to compare |
 | --- | --- | --- | --- |
-| **1** | **Individual System identity** | What is the enduring individual subject, as distinct from its identifiers, kinds, observations, and representations? | Connected Systems; SOSA/SSN; SAREF; OPC UA Devices; Asset Administration Shell (AAS); Open Group SOSA |
-| **2** | **Product / model / kind** | What reusable description identifies what kind of equipment this individual is? How does it differ from the individual itself? | Connected Systems `systemKind`; SAREF `DeviceKind`; AAS type/instance; Web of Things (WoT) Thing Model; Matter (within its evidence limits) |
-| **3** | **Procedure / method** | What describes how the System performs a function, rather than what product/model it is? | Connected Systems `procedures` **versus** `systemKind`; SOSA/SSN Procedure; SensorML ProcessMethod; Observations, Measurements and Samples (OMS) |
-| **4** | **Composition and component standing** | What is an enduring part of the System? When is an element independently meaningful? What is merely hosted, attached, networked, or deployed with it? | Connected Systems Composition/Aggregation; SOSA/SSN; SensorML; OPC UA Devices; BME280; unattended ground sensor (UGS) examples |
-| **5** | **Digital representation / proxy identity** | How does a digital description, API resource, adapter, proxy, or twin represent the subject without becoming the subject? | AAS; WoT; Connected Systems; OPC UA Devices; Open Standard for Unattended Sensors (OSUS) |
+| **1** | **Individual System identity** | What is the enduring individual subject, as distinct from its identifiers, kinds, observations, and representations? | CSAPI; SOSA/SSN; SAREF; OPC UA Devices; Asset Administration Shell (AAS); Open Group SOSA |
+| **2** | **Product / model / kind** | What reusable description identifies what kind of equipment this individual is? How does it differ from the individual itself? | CSAPI `systemKind`; SAREF `DeviceKind`; AAS type/instance; Web of Things (WoT) Thing Model; Matter (within its evidence limits) |
+| **3** | **Procedure / method** | What describes how the System performs a function, rather than what product/model it is? | CSAPI `procedures` **versus** `systemKind`; SOSA/SSN Procedure; SensorML ProcessMethod; Observations, Measurements and Samples (OMS) |
+| **4** | **Composition and component standing** | What is an enduring part of the System? When is an element independently meaningful? What is merely hosted, attached, networked, or deployed with it? | CSAPI Composition/Aggregation; SOSA/SSN; SensorML; OPC UA Devices; BME280; unattended ground sensor (UGS) examples |
+| **5** | **Digital representation / proxy identity** | How does a digital description, API resource, adapter, proxy, or twin represent the subject without becoming the subject? | AAS; WoT; CSAPI; OPC UA Devices; Open Standard for Unattended Sensors (OSUS) |
 
 **Pass 3 must explicitly preserve the C08 audit correction:** a `systemKind` link to a kind/model/datasheet description is not the same relationship as links to procedures that the System implements.
 
@@ -46,7 +48,7 @@ Bring the five findings together in **one brief synthesis**, showing:
 - what meanings are supported, partial, or unresolved;
 - whether these findings still fit the working subject-and-boundary hypothesis.
 
-A **small conceptual diagram** may help here; no large model, modules, schemas, JSON, or conformance rules are authorized by this plan. Only after this checkpoint should we decide how to investigate capability, configuration, state, interactions, outputs/actions, history, and provenance.
+A **small conceptual diagram** may help here; no large model, modules, schemas, encoding designs, or conformance rules are authorized by this plan. Only after this checkpoint should we decide how to investigate capability, configuration, state, interactions, outputs/actions, history, and provenance.
 
 ## Standing guardrails
 
