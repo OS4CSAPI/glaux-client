@@ -12,6 +12,8 @@ The subject-and-boundary research now supports a **working hypothesis**: the DIM
 
 The next task is to identify the **exact common concepts and relationships** needed to describe that subject, one at a time. We are not yet choosing modules or designing an application-profile binding.
 
+**Modeling form:** Follow the [V2 Modeling Convention](DIM_Profile_V2_Modeling_Convention_v0.1_26OCT2026.md) for the eventual DIM's content and professional representation; use the existing [Modeling and Visualization Guide](DIM_Profile_V2_Modeling_and_Visualization_Guide_v0.1_25OCT2026.md) for diagram mechanics. Neither guide authorizes premature class, module, schema, or binding decisions.
+
 ## Sequence
 
 For reference, the main donor abbreviations used below are Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI); Sensor, Observation, Sample, and Actuator (SOSA) / Semantic Sensor Network (SSN); Smart Applications REFerence (SAREF); Open Platform Communications Unified Architecture (OPC UA); and Sensor Model Language (SensorML). **The Open Group Sensor Open Systems Architecture is a different SOSA.**
