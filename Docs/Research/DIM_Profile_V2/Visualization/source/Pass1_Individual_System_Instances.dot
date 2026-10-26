@@ -7,7 +7,7 @@
 // Graphviz HTML labels use <U> to implement the UML underlined "name : Classifier" convention.
 digraph G {
   graph [
-    fontname="DejaVu Sans", bgcolor="white", rankdir=LR,
+    fontname="DejaVu Sans", bgcolor="white", rankdir=TB,
     pad="0.25", margin=0.12, nodesep=0.6, ranksep=0.5,
     labelloc=t, labeljust=c,
     label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
@@ -16,12 +16,11 @@ digraph G {
     </TABLE>>
   ];
   node [fontname="DejaVu Sans", shape=plain];
-  edge [style=invis];
   instance_a [label=<<TABLE BORDER="1" COLOR="#46617d" BGCOLOR="#f5f8fc" CELLBORDER="0" CELLSPACING="0" CELLPADDING="13">
       <TR><TD WIDTH="265" HEIGHT="68" ALIGN="CENTER"><FONT POINT-SIZE="17" COLOR="#182d40"><U>exampleA : System</U></FONT></TD></TR>
     </TABLE>>];
   instance_b [label=<<TABLE BORDER="1" COLOR="#46617d" BGCOLOR="#f5f8fc" CELLBORDER="0" CELLSPACING="0" CELLPADDING="13">
       <TR><TD WIDTH="265" HEIGHT="68" ALIGN="CENTER"><FONT POINT-SIZE="17" COLOR="#182d40"><U>exampleB : System</U></FONT></TD></TR>
     </TABLE>>];
-  instance_a -> instance_b [minlen=1];
+  { rank=same; instance_a; instance_b; }
 }
