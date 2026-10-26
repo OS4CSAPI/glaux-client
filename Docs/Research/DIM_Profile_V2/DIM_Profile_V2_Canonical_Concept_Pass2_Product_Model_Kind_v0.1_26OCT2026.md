@@ -4,7 +4,7 @@
 **Date:** 26 October 2026  
 **Standing:** Sourced **candidate concept meaning for human review**. Not a new V2 class, adopted relationship, final model architecture, or application-profile requirement.  
 **Controlling method:** [Incremental concept plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md); [Pass 1—Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md); [C08 validation audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md).  
-**Evidence discipline:** Donor-native meaning is distinguished from our synthesis, eventual API binding and conformance. The World Wide Web Consortium (W3C)/Open Geospatial Consortium (OGC) Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) “2023 Edition” source is a **21 October 2026 Working Draft**, not the edition normatively cited by published Connected Systems 1.0.
+**Evidence discipline:** Donor-native meaning is distinguished from our synthesis, eventual implementation binding, and conformance. The World Wide Web Consortium (W3C)/Open Geospatial Consortium (OGC) Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) “2023 Edition” source is a **21 October 2026 Working Draft**, not the edition normatively cited by published Connected Systems 1.0.
 
 ## 1. Question
 
@@ -20,13 +20,13 @@ This is an identity-versus-kind investigation. **Procedure/Method** is deliberat
 
 ## 3. The building blocks—what they mean to each donor, and what V2 takes from them
 
-### 3.1 “Individual System” versus “kind of System” — CSAPI supplies the immediate native relationship
+### 3.1 “Individual System” versus “kind of System” — the Connected Systems anchor
 
 **Donor-native meaning.** In Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI) Part 1, `System` resources describe **individual system instances**. The optional `systemKind` association points to **one `Procedure` resource** describing the *kind* of that System—for example a product datasheet. Separately, the optional `procedures` association points to **the Procedures the System can implement**. Section 13.1 explicitly distinguishes using a Procedure resource to describe a sensor model from using one to describe an observing or sampling methodology (Open Geospatial Consortium 2025a, §§ 9.2.2, 13.1).
 
 **Contribution to V2.** This is the clearest intended **CSAPI binding anchor** for the reusable-kind relationship. It establishes that the same reusable description can apply to several individual Systems, but that a *kind/model association* and *implements-a-method association* are two different relationships. **The single-target cardinality and use of a Procedure resource are CSAPI-native mechanics; we have not promoted either into a DIM-wide class or mandatory cardinality.** This is exactly the distinction recovered in the C08 audit.
 
-### 3.2 “Manufacturer's sensor model versus a configured instance” — SensorML supplies a rich native description pattern
+### 3.2 “Manufacturer's sensor model versus a configured instance” — the process-description pattern
 
 **Donor-native meaning.** OGC Sensor Model Language (SensorML) 3.0 explicitly distinguishes a **general process description** from a **specific process instance**. A manufacturer may publish common model-level inputs, outputs, characteristics, capabilities and allowed configuration options; the owner of a particular unit adds its serial number, location, calibration and selected settings. A specific process can reference a more general process via `typeOf`; its configuration can further restrict choices made available by that model. SensorML calls this process inheritance/configuration, not a universal physical-product ontology (Open Geospatial Consortium 2025b, §§ 7.2, 8.2.9.3.1–8.2.9.3.2).
 
