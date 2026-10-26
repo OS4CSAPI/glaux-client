@@ -13395,3 +13395,506 @@ Thus **protocol endpoint, product device, Object, Object Instance and Resource e
 
 **Next frozen lineage:** X10 — W3C PROV.
 
+---
+
+# X10 — W3C PROV
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 159, 160.
+
+**Primary inspected sources:**
+
+- W3C, *PROV-DM: The PROV Data Model*, Recommendation, 30 April 2013.
+- W3C, *PROV-O: The PROV Ontology*, Recommendation, 30 April 2013.
+
+**Evidence note:** PROV-DM is the conceptual provenance model; PROV-O is its OWL2 encoding. They form one semantic lineage and are not counted independently. Other PROV-family documents are acknowledged by the standards but are not part of the frozen primary lineage unless needed to explain a concept already present in PROV-DM/O.
+
+---
+
+## 1. Source-native structural organization
+
+PROV-DM is explicitly organized into six components.
+
+### Component 1 — Entities and Activities
+
+Core concepts:
+
+- **Entity**
+- **Activity**
+- Generation
+- Usage
+- Communication
+- Start
+- End
+- Invalidation
+
+### Component 2 — Derivations
+
+- Derivation
+- Revision
+- Quotation
+- Primary Source
+
+### Component 3 — Agents, Responsibility and Influence
+
+- **Agent**
+- Attribution
+- Association
+- Delegation
+- Influence
+
+### Component 4 — Bundles
+
+- **Bundle**
+- provenance of provenance.
+
+### Component 5 — Alternate Entities
+
+- Specialization
+- Alternate
+
+### Component 6 — Collections
+
+- **Collection**
+- Membership
+
+PROV-O encodes the same structure as OWL classes/properties and distinguishes:
+
+- starting-point terms;
+- expanded terms;
+- qualified terms.
+
+The source-native pattern is therefore:
+
+> **Entity / Activity / Agent as the core provenance triad, connected through generation/use/derivation/responsibility/influence, with bundles, specialization/alternate relations and collections as extended structures**.
+
+---
+
+## 2. Purpose of each partition
+
+### Entity
+
+Purpose: represent a physical, digital, conceptual or other thing with some fixed aspects relevant to a provenance account.
+
+### Activity
+
+Purpose: represent something that occurs over a period of time and acts upon/with Entities, including generation, transformation, use or invalidation.
+
+### Agent
+
+Purpose: represent something bearing responsibility for Activity occurrence or Entity existence.
+
+### Generation
+
+Purpose: identify when/how an Entity becomes available/existent as a result of an Activity.
+
+### Usage
+
+Purpose: identify an Activity's use of an Entity.
+
+### Derivation
+
+Purpose: state that one Entity is derived from another through some process/activity.
+
+### Attribution
+
+Purpose: assign responsibility for an Entity to an Agent.
+
+### Association
+
+Purpose: associate an Agent with an Activity, optionally according to a plan/role.
+
+### Delegation
+
+Purpose: represent one Agent acting on behalf of another.
+
+### Bundle
+
+Purpose: package a named set of provenance descriptions so provenance statements themselves can have provenance.
+
+### Specialization / Alternate
+
+Purpose: relate different provenance views/descriptions of the same underlying thing without claiming identity.
+
+### Collection
+
+Purpose: represent an Entity with members and preserve membership semantics.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Core things | Entity, Activity, Agent |
+| Entity lifecycle | Generation, Invalidation |
+| Activity interaction | Usage, Start, End, Communication |
+| Lineage | Derivation, Revision, Quotation, PrimarySource |
+| Responsibility | Attribution, Association, Delegation, Influence |
+| Provenance packaging | Bundle |
+| Multiple descriptions | Specialization, Alternate |
+| Grouping | Collection, Membership |
+| Qualifiers | role, location, time, plan, value, type, label |
+| Qualified relations | qualifiedGeneration, qualifiedUsage, qualifiedAssociation, qualifiedDerivation, etc. |
+
+---
+
+## 4. Primary relationships
+
+### Activity → Entity
+
+- Activity **uses** Entity.
+- Activity **generates** Entity.
+- Activity can invalidate Entity.
+
+### Entity → Entity
+
+- Entity may be **derived from** another Entity.
+- Entity can be a **revision of**, **quotation of**, or use a **primary source**.
+
+### Agent → Entity
+
+- Entity can be **attributed to** Agent.
+
+### Agent → Activity
+
+- Activity can be **associated with** Agent.
+
+### Agent → Agent
+
+- one Agent can **act on behalf of** another.
+
+### Activity → Activity
+
+- Communication links one Activity's generated Entity/use context to another Activity.
+
+### Entity ↔ specialization/alternate
+
+- multiple Entities can describe specialized states/views of the same underlying thing.
+- Alternate relates Entities that are aspects/versions of the same underlying thing.
+
+### Collection → Entity
+
+- Collection has members, while Collection remains an Entity itself.
+
+### Bundle → provenance statements
+
+- Bundle packages provenance descriptions and is itself an Entity capable of participating in further provenance.
+
+---
+
+## 5. Dependency boundaries
+
+PROV intentionally separates **domain semantics from provenance semantics**.
+
+### Domain object vs provenance Entity
+
+A sensor, document, observation, configuration or software artifact can be represented as a PROV Entity, but PROV does not define its domain-internal structure.
+
+### Action vs Activity
+
+Domain events/actions may be represented as Activities, but PROV Activity semantics are provenance-oriented and do not define the complete domain event taxonomy.
+
+### Responsibility vs identity
+
+Agent/association/attribution describe responsibility and influence; they do not redefine the domain identity of the Entity.
+
+### Derivation vs ordinary relationship
+
+Derivation is specifically about one Entity depending on another through transformation/use; it is not a generic association.
+
+### Bundle vs Collection
+
+Bundle packages provenance assertions; Collection groups Entity members. These are different structures.
+
+### PROV-DM vs PROV-O
+
+Conceptual model and OWL encoding are distinct specification layers.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+PROV is inherently **cross-cutting/contextual**.
+
+It does not determine which equipment information is intrinsic. Instead, it describes provenance relationships around:
+
+- equipment descriptions;
+- observations;
+- files/products;
+- configurations;
+- software;
+- assessments;
+- commands/results;
+- events.
+
+### Potentially intrinsic provenance facts
+
+For a particular information item:
+- who/what generated it;
+- what it used;
+- when it was generated;
+- what it derived from.
+
+### Contextual responsibility
+
+- responsible Agent;
+- role;
+- plan;
+- delegation;
+- organization/person/software Agent.
+
+PROV therefore attaches historical/source context to domain information without replacing that domain model.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting PROV concepts include:
+
+- identifier;
+- type;
+- label;
+- value;
+- role;
+- location;
+- time;
+- plan;
+- influence;
+- responsibility;
+- qualification of relations;
+- specialization/alternate views.
+
+The qualification pattern allows a simple relation to be expanded when additional provenance attributes are needed.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+PROV has strong event/time semantics but models **provenance state transitions**, not equipment lifecycle as such.
+
+### Entity lifecycle markers
+
+- Generation
+- Invalidation
+
+### Activity temporal boundaries
+
+- Start
+- End
+
+### Usage/generation times
+
+Qualified relations can carry time.
+
+### Entity versions/views
+
+- Revision;
+- Specialization;
+- Alternate.
+
+### Provenance history
+
+Chains of generation/use/derivation can represent how information evolves through successive Activities.
+
+### Limit
+
+PROV does not prescribe procurement/commissioning/maintenance phases; those must be supplied by the domain model and can then be linked with provenance.
+
+---
+
+## 9. Composition / topology organization
+
+PROV does not define physical equipment composition.
+
+### Provenance graph topology
+
+Its topology is instead a directed semantic graph among:
+
+- Entities;
+- Activities;
+- Agents.
+
+### Collections
+
+Collection/Membership organizes Entity membership.
+
+### Bundles
+
+Bundles group provenance assertions.
+
+### Specialization
+
+Specialization can model more specific states/views of one underlying thing.
+
+### Important limit
+
+Collection membership and Bundle containment are **not physical-part relationships**.
+
+---
+
+## 10. Capability / function / behavior organization
+
+PROV does not define capability/function taxonomy.
+
+Behavior appears through **Activity**:
+
+- an Activity happens;
+- uses Entities;
+- generates/invalidates Entities;
+- associates with Agents;
+- may follow a Plan.
+
+A device capability should therefore come from another donor; PROV can describe provenance of:
+- its declaration;
+- its configuration;
+- an execution;
+- a result.
+
+---
+
+## 11. Information / output organization
+
+PROV is especially relevant to information lineage.
+
+### Entity as information/product
+
+An Entity can represent:
+- observation result;
+- document;
+- file;
+- configuration;
+- model;
+- data product;
+- software version.
+
+### Activity as production/processing
+
+Activity can represent:
+- sensing/collection;
+- processing;
+- transformation;
+- fusion;
+- calibration;
+- assessment;
+- publication.
+
+### Derivation
+
+Explicitly relates output Entity to source/input Entity.
+
+### Qualified relations
+
+Can record:
+- role;
+- time;
+- plan;
+- responsible Agent;
+- generation/use details.
+
+Thus PROV provides a generic **information lineage/output-production graph**, not a specific observation schema.
+
+---
+
+## 12. Management / condition organization
+
+PROV has no generic equipment-management or health model.
+
+It can record provenance of management/condition information such as:
+
+- configuration changed by an Activity;
+- software update generated a new software Entity;
+- maintenance Activity used parts and generated a revised equipment-state description;
+- health assessment Activity used observations and generated an assessment.
+
+But terms such as fault, readiness, repair, calibration state or work order must come from domain sources.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+This is the lineage's core strength.
+
+### Identity
+
+Each Entity/Activity/Agent may have a qualified name/identifier.
+
+### Responsibility
+
+- Attribution;
+- Association;
+- Delegation.
+
+### Lineage
+
+- Generation;
+- Usage;
+- Derivation;
+- Revision;
+- Quotation;
+- PrimarySource.
+
+### Multiple views
+
+- specializationOf;
+- alternateOf.
+
+### Provenance of provenance
+
+Bundles can themselves be described as Entities.
+
+### Qualified relations
+
+Simple binary relations can be expanded into qualification nodes carrying:
+- role;
+- time;
+- plan;
+- additional attributes.
+
+This supports traceability without forcing all provenance detail into the source Entity itself.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Entity vs Activity** — thing/state and process/event are different.
+2. **Entity vs Agent** — thing and responsible actor are different, even though an Agent can also be an Entity.
+3. **Activity vs Agent** — what happened and who/what was responsible differ.
+4. **Generation vs Usage** — producing an Entity and consuming an Entity are distinct.
+5. **Generation vs Derivation** — event of creation and lineage dependency are different.
+6. **Derivation vs Revision** — general dependency and revision-specific relation differ.
+7. **Attribution vs Association** — responsibility for Entity and participation in Activity differ.
+8. **Association vs Delegation** — Agent participation and acting-on-behalf-of relationships differ.
+9. **Bundle vs Collection** — provenance package and member grouping are different.
+10. **Collection membership vs physical composition** — provenance grouping is not BOM structure.
+11. **Specialization vs identity** — specialized provenance views should not be treated as identical records.
+12. **Alternate vs derivation** — alternate descriptions and produced-from relationships differ.
+13. **domain Entity vs domain class semantics** — calling something a PROV Entity does not define whether it is a Sensor, Observation or Component.
+14. **provenance Activity vs domain lifecycle stage** — provenance process semantics do not define the domain's maintenance lifecycle.
+15. **simple relation vs qualified relation** — additional role/time/context cannot always be collapsed into a binary link.
+16. **provenance graph vs current state model** — lineage/history does not replace present equipment state.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely cross-cutting provenance pattern:** Entity/Activity/Agent with generation, use and derivation;
+- **likely responsibility pattern:** attribution, association, delegation and roles;
+- **likely information-lineage pattern:** derived/revised data products and assessments retain source/process relationships;
+- **likely version/view pattern:** specialization/alternate distinctions for different descriptions of the same underlying thing;
+- **likely packaging pattern:** Bundle for provenance-of-provenance, Collection for member grouping;
+- **likely event/history support:** generation/invalidation/start/end/time relationships can enrich lifecycle events without defining them;
+- **profile-gap signal:** PROV intentionally lacks equipment identity, capability, health, composition and observation-domain semantics;
+- **ontology/binding caution:** PROV-O is one RDF/OWL realization of PROV-DM; V2 should preserve provenance semantics without assuming every domain resource must be natively expressed as a PROV graph.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X10 status: COMPLETE.**
+
+**Next frozen lineage:** X11 — W3C Web of Things.
+
