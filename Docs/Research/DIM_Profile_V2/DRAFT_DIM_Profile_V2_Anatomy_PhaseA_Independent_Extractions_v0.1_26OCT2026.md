@@ -6467,3 +6467,717 @@ The source therefore distinguishes **Asset instance identity, product/type ident
 
 **Next frozen lineage:** C12 — SAPIENT.
 
+---
+
+# C12 — SAPIENT / BSI Flex 335 v2.0
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 21.  
+**Frozen companion IDs:** 22–25.
+
+**Primary inspected source:**
+
+- British Standards Institution, *BSI Flex 335 v2.0:2024-03: SAPIENT Network of Autonomous Sensors and Effectors — Interface Control Document — Specification*, March 2024.
+
+**Companion evidence:**
+
+- official Dstl guidance;
+- pinned SAPIENT Protocol Buffer schemas;
+- Apex SAPIENT Middleware;
+- BSI Flex 335 v2 Test Harness.
+
+**Evidence note:** BSI Flex 335 is primarily an interface-control specification, but it defines substantive source-native domain structure and therefore participates in anatomy Phase A. Companion schemas/test/middleware are implementation evidence only; they do not receive independent semantic weight.
+
+---
+
+## 1. Source-native structural organization
+
+SAPIENT organizes its domain around a **system-of-systems network of Nodes** communicating at the information level.
+
+### A. System architecture
+
+The typical architecture contains:
+
+1. **Edge Nodes**
+   - sensor edge nodes;
+   - effector nodes;
+   - nodes that can act as both sensor and effector.
+
+2. **Fusion Node**
+   - receives node declarations/detections/status;
+   - performs fusion/correlation/de-confliction/task optimization;
+   - generates tracks/entities/alerts/tasking.
+
+3. **Message Handling Application**
+   - optional transparent middleware layer between edge/fusion nodes;
+   - does not own/change message semantics when used in the transparent configuration.
+
+4. **GUI / external systems**
+   - outside the core standardized node-to-fusion interface in v2.0.
+
+### B. Node classification
+
+Registration uses one or more **NodeDefinition / NodeType** values such as:
+
+- Radar;
+- Lidar;
+- Camera;
+- Seismic;
+- Acoustic;
+- Proximity Sensor;
+- Passive RF;
+- Human;
+- Chemical;
+- Biological;
+- Radiation;
+- Kinetic;
+- Jammer;
+- Cyber;
+- Laser/RF directed-energy;
+- Mobile Node;
+- Pointable Node;
+- Fusion Node.
+
+### C. Node self-description / registration
+
+Registration includes:
+
+- node definition/type;
+- ICD version;
+- name/short name;
+- capabilities;
+- status-message definition;
+- supported modes;
+- dependent-node IDs;
+- ConfigurationData.
+
+### D. Capability and mode
+
+A Node declares:
+
+- capability category/type/value/units;
+- supported Modes;
+- mode behavior;
+- mode timing;
+- detection definitions;
+- tracking type;
+- scan type;
+- tasking interactions;
+- performance implications.
+
+### E. Configuration / subcomponents
+
+ConfigurationData includes:
+
+- manufacturer;
+- model;
+- serial number;
+- hardware version;
+- software version;
+- recursive `sub_components`.
+
+### F. Runtime message partitions
+
+The core message families include:
+
+- Registration;
+- Status;
+- Detection;
+- Task;
+- Task Acknowledgement;
+- Alert;
+- Error;
+- corresponding acknowledgements/responses.
+
+All are wrapped in a common SapientMessage with source node ID/timestamp and optional destination.
+
+### G. Platform architecture
+
+SAPIENT explicitly models:
+
+- Mobile Node;
+- Pointable Node;
+- dependent edge/platform nodes;
+- stacked platform dependencies.
+
+### H. Hierarchical fusion architecture
+
+Fusion Nodes can be recursively arranged:
+- lower-level fusion node behaves upward as an edge node;
+- declares aggregated detection/tasking capability;
+- higher-level fusion nodes can aggregate regions/platforms.
+
+The source-native pattern is therefore:
+
+> **Node type + registration/self-description + capability/mode + recursive configuration + status/detection/task/alert runtime exchange + platform dependency + recursive fusion hierarchy**
+
+---
+
+## 2. Purpose of each partition
+
+### Edge Node
+
+Purpose: provide a modular autonomous sensing/effecting participant whose modality-specific implementation is hidden behind one common interface.
+
+### Fusion Node
+
+Purpose: combine information from multiple Nodes and coordinate tasking/decision support.
+
+### Registration
+
+Purpose: declare **what the Node is and what it can do** before regular operations:
+- type;
+- capability;
+- modes;
+- status fields;
+- configuration;
+- dependencies.
+
+### Capability
+
+Purpose: communicate modality/function/performance information that helps the Fusion Node interpret and task the Node.
+
+### Mode
+
+Purpose: describe a distinct way of operating, including:
+- behavior;
+- timing;
+- detections;
+- tracking/scan behavior;
+- tasking options;
+- performance implications.
+
+### Status
+
+Purpose: heartbeat/current Node state:
+- overall system status;
+- current task;
+- current mode;
+- power;
+- location;
+- field of view;
+- coverage;
+- obscuration;
+- status values.
+
+### Detection
+
+Purpose: report detection/classification/track information about real-world objects.
+
+### Task
+
+Purpose: direct taskable Nodes to start/stop/pause/default a region-based or command-based task.
+
+### Task Acknowledgement
+
+Purpose: represent acceptance/rejection/completion/failure of a task separately from the task request.
+
+### Alert
+
+Purpose: represent non-detection notable information/conditions requiring GUI or Fusion Node attention and possible permission/response.
+
+### Platform Node
+
+Purpose: represent movement/pointing dependencies that affect subordinate edge Nodes.
+
+### Hierarchical Fusion
+
+Purpose: allow recursively nested fusion/coordination while preserving a level-agnostic Node interface.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Whole architecture | Edge Node, Fusion Node, Message Handling Application, GUI |
+| Node identity/type | node_id UUID, NodeDefinition, NodeType, name/short name |
+| Self-description | Registration, Capability, ModeDefinition, StatusDefinition, ConfigurationData |
+| Product/configuration | manufacturer, model, serial, hardware/software version, sub_components |
+| Capability | category, type, value, units, modality/function |
+| Mode | mode name/behavior/timing, detection definition, scan type, tracking type, mode parameters |
+| State | StatusReport, System status, Info/newness, active task, mode, power, location, FOV, coverage, obscuration |
+| Observation-like output | DetectionReport, object_id, location/range-bearing, confidence, track/object info, classification |
+| Tasking | Task, Region, Command, task start/end time, control, TaskAck |
+| Alerting | Alert, AlertType, AlertStatus, priority, ranking, location/region |
+| Platform dependency | MobileNode, PointableNode, dependent_nodes, FollowObject |
+| Hierarchy | parent/child Fusion Nodes, aggregated capabilities, coverage areas |
+| Message identity | report/task/alert ULIDs, source/destination Node IDs, timestamps |
+
+---
+
+## 4. Primary relationships
+
+### Edge Node ↔ Fusion Node
+
+Edge Nodes register to a Fusion Node, report status/detections/alerts and receive Tasks.
+
+### Node ↔ capabilities/modes/status definition
+
+Registration binds a Node's identity to the capabilities, status fields and operating modes it supports.
+
+### Node ↔ subcomponents
+
+ConfigurationData can recursively describe subcomponents.
+
+### Platform Node ↔ dependent Nodes
+
+A Mobile/Pointable platform Node declares UUIDs of dependent Nodes affected by platform commands/motion.
+
+### Fusion hierarchy
+
+A child Fusion Node can:
+- register with a parent Fusion Node;
+- appear as an edge Node upward;
+- present aggregated detection/tasking capabilities of lower Nodes.
+
+### Task ↔ Detection
+
+Detection reports may reference the task ID active when the detection occurred.
+
+### Detection ↔ object/track
+
+Detection report has:
+- report ID;
+- object ID;
+- classification;
+- location;
+- confidence;
+- track/object metadata;
+- predicted location.
+
+### Task ↔ acknowledgement
+
+TaskAck references task ID and reports:
+- accepted;
+- rejected;
+- completed;
+- failed.
+
+### Alert ↔ response/status
+
+Alert can be:
+- active;
+- acknowledged;
+- rejected;
+- ignored;
+- cleared.
+
+### Node ↔ platform/location/FOV
+
+Status reports provide current spatial/operational context separately from registration identity.
+
+---
+
+## 5. Dependency boundaries
+
+SAPIENT intentionally separates several layers.
+
+### Registration/self-description vs runtime messages
+
+Registration declares what Node data/actions/status/modes are possible; Status/Detection/Task/Alert carry current runtime interactions.
+
+### Node domain model vs middleware
+
+Message Handling Application may transport/store messages but is transparent to Node/Fusion semantics.
+
+### Node vs modality-specific implementation
+
+Different sensor/effector modalities use the same interface and expose only supported/available fields.
+
+### Capability vs Mode
+
+Capability identifies general functionality; Mode describes a distinct operational configuration/behavior and its performance/tasking implications.
+
+### Edge/fusion identity vs hierarchy role
+
+A child Fusion Node remains a Fusion Node internally but behaves toward its parent as an edge Node, demonstrating that interface role and internal architecture can differ.
+
+### Platform dependency vs sensor/effector function
+
+Platform Node handles movement/pointing dependencies; dependent sensor/effector Nodes retain their own intrinsic tasking/capabilities.
+
+### Summary information vs raw data
+
+SAPIENT is deliberately information-level; raw sensor data is outside the core concept, even though implementations may add access mechanisms.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to Node self-description
+
+- Node type(s);
+- capabilities;
+- supported modes;
+- product/configuration metadata;
+- recursive subcomponents;
+- accepted task types;
+- status field definitions.
+
+### Current operational state
+
+- active task;
+- current mode;
+- power;
+- system status;
+- location;
+- FOV;
+- coverage;
+- obscuration;
+- performance/status values.
+
+### Contextual/relational
+
+- parent Fusion Node;
+- dependent Nodes;
+- platform relationship;
+- hierarchy level;
+- regions/tasks assigned by Fusion Node;
+- network/server/client role.
+
+### Derived/aggregated
+
+Child Fusion Node can advertise aggregated capability and coverage of subordinate Nodes. These are **network/fusion-level representations**, not necessarily intrinsic physical capability of one device.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting SAPIENT structures include:
+
+- Node UUID;
+- ULID message/object/task/alert identifiers;
+- timestamp;
+- location/range-bearing;
+- region;
+- mode;
+- task ID;
+- capability;
+- classification;
+- confidence/probability;
+- units;
+- performance/error;
+- hierarchy/dependency;
+- acknowledgements;
+- connection/heartbeat status.
+
+These recur across registration, status, detections and tasking.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+SAPIENT has a clear **network participation and operational lifecycle**.
+
+### Initialization
+
+1. Node connects.
+2. Node sends Registration.
+3. Registration acknowledgement.
+4. Node sends initial Status.
+5. Sensor edge Node begins default detection or effector awaits tasking.
+
+### Normal operation
+
+- regular Status heartbeats;
+- Detection reports;
+- Alerts;
+- Tasks;
+- task acknowledgements;
+- fusion processing.
+
+### Task lifecycle
+
+Task:
+- start;
+- pause;
+- stop;
+- default.
+
+Task status:
+- accepted;
+- rejected;
+- completed;
+- failed.
+
+### Node shutdown
+
+Node sends Status with system field GOODBYE.
+
+### Connection recovery
+
+Nodes/fusion monitor connection and reconnect. Re-registration depends on outage duration.
+
+### Hierarchy dynamics
+
+Edge/fusion Nodes may go on/off-line; child Fusion Nodes update coverage/status accordingly.
+
+### Limit
+
+This is an operational/network lifecycle, not a durable equipment maintenance/service lifecycle.
+
+---
+
+## 9. Composition / topology organization
+
+SAPIENT has three separate topology structures.
+
+### A. Configuration/subcomponent hierarchy
+
+ConfigurationData recursively describes product subcomponents.
+
+### B. Platform dependency topology
+
+Platform Nodes declare dependent Node IDs.
+
+Dependencies can be stacked:
+- mobile platform;
+- pointable platform;
+- sensor/effector edge Nodes.
+
+This relationship means tasking/movement of platform affects dependent Nodes.
+
+### C. Fusion/network hierarchy
+
+Fusion Nodes can be recursively nested across:
+- local regions;
+- vehicles/structures;
+- higher-level multi-structure coordination.
+
+### Important distinction
+
+**subcomponent hierarchy, platform dependency and fusion hierarchy are not the same relationship.**
+
+A Fusion Node may physically reside on a platform but still has distinct Fusion and Platform Node definitions/roles.
+
+---
+
+## 10. Capability / function / behavior organization
+
+SAPIENT capability is explicitly declared and mode-dependent.
+
+### General capability
+
+Registration Capability fields state:
+- category;
+- type;
+- value;
+- units.
+
+### Sensor/effector Node type
+
+NodeDefinition establishes broad modality/role.
+
+### Mode-specific capability
+
+Mode defines:
+- detection content;
+- task acceptance;
+- scan behavior;
+- tracking behavior;
+- performance implications.
+
+### Status-field capability
+
+Registration declares what status categories/fields will be reported and whether values are periodic or on-change.
+
+### Aggregated capability
+
+Child Fusion Node can present combined capability of subordinate Nodes.
+
+### Behavior/tasking
+
+Tasks can specify:
+- region;
+- command;
+- start/end;
+- start/stop/pause/default.
+
+This yields a source-native distinction among:
+
+> **general capability → mode-specific behavior/performance → current mode/status → task request → task acknowledgement/resulting detections**
+
+---
+
+## 11. Information / output organization
+
+SAPIENT deliberately separates several runtime information kinds.
+
+### Registration
+
+Static/self-descriptive declaration.
+
+### Status
+
+Current operational/health/context heartbeat.
+
+### Detection
+
+Object detection/classification/track information.
+
+### Alert
+
+Non-detection event/attention/permission information.
+
+### Task
+
+Requested action/objective.
+
+### TaskAck
+
+Task response/progress status.
+
+### Error
+
+Interface/validation error.
+
+### Fused output
+
+Fusion Nodes can produce:
+- fused detections/tracks;
+- alerts;
+- subsequent tasking.
+
+### Raw data
+
+Raw sensor data is explicitly not the core information-level SAPIENT exchange, though an implementation may provide it separately.
+
+---
+
+## 12. Management / condition organization
+
+Management is central to SAPIENT's operational concept.
+
+### Registration/configuration management
+
+Fusion Node knows:
+- what Nodes are present;
+- what they can do;
+- modes;
+- configuration;
+- dependencies.
+
+### Status/heartbeat
+
+All Nodes send regular status.
+
+Status covers:
+- internal/external faults;
+- power;
+- mode;
+- sensor performance;
+- weather/clutter/exposure;
+- location/FOV/coverage;
+- platform state.
+
+### Task management
+
+Fusion Node allocates Tasks and receives acknowledgement/status/detections.
+
+### Alert/permission management
+
+Nodes can request/report conditions requiring accept/reject/acknowledge/clear behavior.
+
+### Connectivity management
+
+Nodes/Fusion monitor and restore message-channel connectivity.
+
+### Limit
+
+The standard does not define a universal maintenance/work-order/service-history domain; management is focused on real-time autonomous network operation.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+SAPIENT uses explicit source and message identifiers.
+
+### Node identity
+
+Every Node has UUID.
+
+### Message identity
+
+Reports/tasks/alerts use ULIDs and timestamps.
+
+### Object identity
+
+Detection has `object_id`, distinct from report ID.
+
+### Task relationship
+
+Detection can cite task ID; TaskAck cites task ID.
+
+### Configuration identity
+
+Manufacturer/model/serial/hardware/software version identify the product/subcomponent.
+
+### Dependency reference
+
+Platform dependencies and hierarchy use Node UUIDs.
+
+### Version identity
+
+Registration declares ICD version.
+
+The source therefore distinguishes:
+
+- Node identity;
+- product/component identity;
+- message/report identity;
+- detected-object identity;
+- task identity;
+- protocol/version identity.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Node vs physical device** — Node is an interoperability/domain participant and can represent sensor, effector, platform, fusion, human or other roles.
+2. **Edge Node vs Fusion Node** — local sensing/effecting and higher-level fusion/coordination are distinct functions.
+3. **Node type vs capability** — broad role/modality and detailed supported function/performance are separate.
+4. **Capability vs Mode** — general functionality and one distinct operational behavior/configuration are different.
+5. **Mode definition vs current mode** — supported modes and runtime selected mode are different.
+6. **Registration status definition vs Status message** — what will be reported and current reported values are distinct.
+7. **Registration vs runtime Status/Detection/Task/Alert** — self-description and live interaction are separate.
+8. **Status vs Detection vs Alert** — Node state, observed object information and exceptional/attention information have different semantics.
+9. **Task vs TaskAck** — requested action and acceptance/completion/failure are separate.
+10. **Detection report ID vs detected object ID** — message identity and target/object identity differ.
+11. **Node location vs detection location** — sensor/platform position and observed-object position are different.
+12. **FOV vs coverage vs obscuration** — current viewed area, total reachable area and blocked area are distinct.
+13. **subcomponent hierarchy vs dependent-node/platform relationship** — product structure and operational dependency are different.
+14. **platform dependency vs Fusion hierarchy** — movement/pointing dependency and information-fusion hierarchy are different.
+15. **child Fusion Node internal role vs edge-node interface role to parent** — internal architecture and external role can differ.
+16. **individual capability vs aggregated fusion capability** — aggregate representation is not intrinsic to a single subordinate device.
+17. **information-level summary vs raw sensor data** — core SAPIENT exchange and raw payload are intentionally different.
+18. **message handling middleware vs Fusion Node semantics** — transparent transport/storage layer does not own domain meaning.
+19. **connection lifecycle vs equipment lifecycle** — initialization/reconnect/shutdown should not become maintenance history.
+20. **sensor task vs platform task** — sensing behavior and movement/pointing control have different responsibility.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely reusable structural pattern:** self-description/registration separated from runtime state, observations, alerts and tasking;
+- **likely capability pattern:** general capability + mode-specific behavior/performance + current mode;
+- **likely composition pattern:** recursive subcomponent metadata distinct from operational dependency;
+- **likely contextual relationship pattern:** platform/dependent-Node structure and hierarchical fusion;
+- **likely dynamic-information pattern:** Status, Detection, Alert, Task, TaskAck as distinct information kinds;
+- **likely management pattern:** heartbeat/status, connectivity, autonomous task allocation and permission/alert handling;
+- **likely provenance pattern:** distinct Node/message/object/task/product identities;
+- **likely specialization evidence:** distributed autonomous multi-sensor/effector systems and fused track/tasking structures;
+- **binding/architecture caution:** Node, Fusion Node, messages, client/server roles and SAPIENT hierarchy are SAPIENT-native interoperability constructs, not automatically V2 classes/resources;
+- **aggregation caution:** fusion-level aggregated capability/coverage must not be mistaken for intrinsic capability of one physical equipment System.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C12 status: COMPLETE.**
+
+**Next frozen lineage:** C13 — SAREF.
+
