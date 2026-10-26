@@ -1,7 +1,7 @@
 # DIM/Profile V2 Anatomy — Validation and Working Decision
 
 **Decision record v0.1 — 26 October 2026**  
-**Status:** Anatomy research complete; validated working decision eligible for promotion into the maintained clean V2 DIM/Profile artifact.  
+**Status:** Anatomy research complete; validated working decision promoted into the maintained clean V2 DIM/Profile artifact.  
 **Evidence chain:** Phase 0 population → Phase A independent extraction → Phase B comparison → Phase C candidate synthesis → Phase D validation/falsification.
 
 ## 1. Decision
@@ -321,7 +321,7 @@ This is not a renaming exercise: several Version 1 subjects split across differe
 
 **Disposition: PROMOTE AS WORKING V2 ANATOMY DECISION.**
 
-The maintained clean V2 artifact should now record:
+The maintained clean V2 artifact now records:
 
 - four core structural strata;
 - optional aspect overlays;
