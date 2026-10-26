@@ -7181,3 +7181,597 @@ The source therefore distinguishes:
 
 **Next frozen lineage:** C13 — SAREF.
 
+---
+
+# C13 — SAREF Core 4.1.1
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 144.
+
+**Primary inspected source:**
+
+- ETSI, *SAREF: Smart Applications REFerence Ontology — Core*, version 4.1.1:
+  - `https://saref.etsi.org/core/v4.1.1/`
+
+**Evidence note:** SAREF Core is an ontology, not an API or device-management protocol. It intentionally separates generic kinds/archetypes from specific real-world entities and network-exposed services/operations. The extraction stays within SAREF Core 4.1.1 plus the SAREF4SYST relationships explicitly referenced by SAREF Core; it does not import unrelated SAREF extensions merely because they exist.
+
+---
+
+## 1. Source-native structural organization
+
+SAREF Core organizes its domain into a set of interrelated semantic layers.
+
+### A. Real-world feature layer
+
+- **FeatureOfInterest**
+  - any specific real-world entity whose properties/states can be observed or controlled.
+
+- **FeatureKind**
+  - archetype/kind of features.
+
+- **Device**
+  - tangible FeatureOfInterest designed to accomplish a task by performing functions;
+  - also a `s4syst:System`.
+
+- **DeviceKind**
+  - archetype/model of devices;
+  - can specify common properties, states, functions, services and targets.
+
+### B. Device-role specializations
+
+Examples include:
+
+- Sensor;
+- Actuator;
+- Meter;
+- Appliance.
+
+Sensor is a Device designed to observe/measure properties or states of features of interest.
+
+### C. Composition/system layer
+
+- `saref:consistsOf` for composite features/devices/kinds;
+- SAREF4SYST System, Connection and ConnectionPoint when system engineering detail is needed.
+
+### D. Property/state semantics
+
+SAREF distinguishes:
+
+- **Property**
+  - generic quality that can apply to different feature kinds/entities.
+
+- **PropertyOfInterest**
+  - property specific to exactly one FeatureOfInterest.
+
+- **PropertyValue**
+  - value for a property/property of interest.
+
+- **State**
+  - generic state.
+
+- **StateOfInterest**
+  - state specific to one feature.
+
+- **StateValue**
+  - value of a State/StateOfInterest.
+
+### E. Function/capability semantics
+
+- **Task**
+- **Function**
+  - reusable logical group of commands a device can support.
+- **FunctionOfInterest**
+  - actual function supported by exactly one Device.
+- **Command**
+  - reusable command kind.
+- **CommandOfInterest**
+  - command specific to a FunctionOfInterest/device.
+
+### F. Network-service semantics
+
+- **Service**
+  - digital representation of a FunctionOfInterest in a network.
+
+- **Operation**
+  - network-exposed operation belonging to exactly one Service;
+  - represents one or more CommandOfInterest instances.
+
+### G. Execution/result semantics
+
+- **ProcedureExecution**
+- **Observation**
+- **Actuation**
+- **CommandExecution**
+- **OperationExecution**
+
+Executions can have:
+- inputs;
+- outputs;
+- result;
+- phenomenon time;
+- executor/device;
+- targeted feature/property/state.
+
+### H. Profile/commodity semantics
+
+- **Profile**
+  - device/profile information relevant to consumption/production/storage over conditions/time.
+- **Commodity**
+  - what a device consumes, produces or stores.
+
+The source-native pattern is therefore:
+
+> **feature/device identity + kind/archetype + composition/system + property/state semantics + task/function/command + network service/operation + execution/result**
+
+---
+
+## 2. Purpose of each partition
+
+### FeatureOfInterest / FeatureKind
+
+Purpose: distinguish a particular real-world entity from its reusable archetype/kind.
+
+### Device / DeviceKind
+
+Purpose: specialize FeatureOfInterest/FeatureKind for tangible task-performing systems and product/model-like descriptions.
+
+### Sensor/Actuator/Meter/Appliance
+
+Purpose: classify Devices by functional role without changing their tangible Device nature.
+
+### Property vs PropertyOfInterest
+
+Purpose: distinguish a generic property kind (e.g. temperature) from the particular temperature property **of one specific feature**.
+
+### State vs StateOfInterest
+
+Purpose: make the same distinction for states.
+
+### Function vs FunctionOfInterest
+
+Purpose: distinguish reusable logical function kinds from the actual function supported by one particular Device.
+
+### Command vs CommandOfInterest
+
+Purpose: distinguish reusable command semantics from the concrete command supported by one particular Function/Device.
+
+### Service
+
+Purpose: represent a Device's FunctionOfInterest digitally in a network.
+
+### Operation
+
+Purpose: provide a network-operation realization of one or more CommandsOfInterest.
+
+### ProcedureExecution
+
+Purpose: represent an actual execution/occurrence of a command/operation/observation/actuation with inputs, outputs, result and time.
+
+### Profile
+
+Purpose: describe device behavior/performance related to commodity consumption/production/storage under relevant conditions.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Real-world subject | FeatureOfInterest, Device |
+| Kind/model | FeatureKind, DeviceKind |
+| Composition/system | consistsOf, s4syst:System, Connection, ConnectionPoint |
+| Functional role | Sensor, Actuator, Meter, Appliance |
+| Property | Property, PropertyOfInterest, PropertyValue, UnitOfMeasure |
+| State | State, StateOfInterest, StateValue |
+| Task/function | Task, Function, FunctionOfInterest |
+| Command | Command, CommandOfInterest |
+| Network representation | Service, Operation |
+| Execution | ProcedureExecution, Observation, Actuation, CommandExecution, OperationExecution |
+| Target relationship | targets, observes, controls |
+| Profile/energy | Profile, Commodity, consumes, produces, stores |
+
+---
+
+## 4. Primary relationships
+
+### Feature/Device → kind
+
+- `hasFeatureKind`
+- `hasDeviceKind`
+
+Specific entities inherit broader kind semantics.
+
+### Composite entity → parts
+
+- `consistsOf`
+
+Can apply to:
+- FeatureKind;
+- FeatureOfInterest;
+- Device structures;
+- composite property/state values.
+
+### Device → functions
+
+- `hasFunction` for reusable/general function semantics.
+- `hasFunctionOfInterest` for the concrete function of one Device.
+
+### Function → commands
+
+Functions can have:
+- mandatory commands;
+- optional commands.
+
+FunctionOfInterest can have concrete CommandOfInterest.
+
+### Device → Service → Operation
+
+- Device `offers` Service.
+- Service represents FunctionOfInterest.
+- Service `hasOperation`.
+- Operation represents Command/CommandOfInterest.
+
+### Device/function/command/execution → target
+
+- `targets`;
+- `observes`;
+- `controls`
+
+can point to:
+- FeatureOfInterest;
+- Property/PropertyOfInterest;
+- State/StateOfInterest.
+
+### Feature → PropertyOfInterest / StateOfInterest
+
+A PropertyOfInterest/StateOfInterest belongs to exactly one FeatureOfInterest.
+
+### Execution → executor/result/time
+
+ProcedureExecution can be:
+- madeBy a Device/Feature;
+- linked to executed command/operation;
+- given input/output/result;
+- assigned phenomenon time.
+
+---
+
+## 5. Dependency boundaries
+
+SAREF makes several semantic layers independent.
+
+### Kind vs individual
+
+FeatureKind/DeviceKind describe reusable archetypes; FeatureOfInterest/Device describe specific real-world entities.
+
+### Generic property/function vs instance-specific property/function
+
+Property, State, Function and Command can apply broadly; the corresponding *OfInterest* classes bind the concept to a specific entity.
+
+### Device domain vs network service
+
+Service/Operation are digital/network representations of Device functions/commands, not the Device itself.
+
+### Function vs command
+
+Function is a logical grouping of commands; Command is one action.
+
+### Command vs execution
+
+Command semantics and one actual CommandExecution are different.
+
+### Property vs value
+
+Property meaning and PropertyValue are different.
+
+### Device vs system engineering detail
+
+Device is also a SAREF4SYST System, but SAREF Core refers to SAREF4SYST when Connection/ConnectionPoint/system-topology detail is needed.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to Device
+
+- Device identity;
+- DeviceKind/model;
+- functions;
+- FunctionsOfInterest;
+- offered services;
+- composition;
+- manufacturer/model;
+- intrinsic properties/states;
+- commodity consumption/production/storage patterns.
+
+### Contextual/target-related
+
+- FeatureOfInterest being observed/controlled;
+- PropertyOfInterest/StateOfInterest of that feature;
+- network Service/Operation;
+- spatial geometry/topological relationship;
+- actual execution time/results.
+
+### Execution/event-specific
+
+- Observation;
+- Actuation;
+- CommandExecution;
+- inputs;
+- outputs;
+- phenomenon time;
+- result.
+
+The model therefore distinguishes **what a Device is/can do** from **what it targets** and **what happened in one execution**.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting structures include:
+
+- `consistsOf`;
+- kind/archetype inheritance;
+- targets/observes/controls;
+- manufacturer/model;
+- tasks;
+- units;
+- time;
+- inputs/outputs/results;
+- profiles;
+- geometry/spatial relations;
+- commodity relations.
+
+The *OfInterest* pattern is itself cross-cutting, appearing for:
+- property;
+- state;
+- function;
+- command.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+SAREF Core has strong **state and execution-time semantics**, but not a general equipment-service lifecycle.
+
+### State semantics
+
+- State;
+- StateOfInterest;
+- StateValue.
+
+A Device/Feature can have current/state-related values distinct from Property values.
+
+### Execution time
+
+ProcedureExecution can have:
+- phenomenon time;
+- result time/applicable time where modeled through supporting time semantics.
+
+### Profile time/conditions
+
+Profiles can describe behavior under time/conditions.
+
+### Limit
+
+SAREF Core does not define:
+- installation history;
+- maintenance work;
+- replacement events;
+- service lifecycle
+
+as one core model. Those are extension/application concerns.
+
+---
+
+## 9. Composition / topology organization
+
+### Composition
+
+`consistsOf` supports composite FeatureKinds/Features/Devices and composite values.
+
+### System structure
+
+Device is also a `s4syst:System`.
+
+When detailed system topology matters, SAREF recommends SAREF4SYST:
+- System;
+- Connection;
+- ConnectionPoint.
+
+### Spatial topology
+
+FeatureOfInterest/Device can use GeoSPARQL geometry and topological relations.
+
+### Important distinction
+
+**composition, system connection and spatial relation are separate relationships.**
+
+`consistsOf` should not be used as a substitute for Connection or spatial containment merely because two things are related.
+
+---
+
+## 10. Capability / function / behavior organization
+
+SAREF has a highly explicit function/command hierarchy.
+
+### Task
+
+Represents what an entity accomplishes.
+
+### Function
+
+Reusable logical grouping of Commands.
+
+### FunctionOfInterest
+
+Concrete Function supported by one Device.
+
+### Commands
+
+Functions can declare:
+- mandatory Commands;
+- optional Commands.
+
+### CommandOfInterest
+
+Actual command supported by one FunctionOfInterest.
+
+### Service/Operation
+
+Network Service exposes FunctionOfInterest.
+
+Operation exposes CommandOfInterest.
+
+This creates a source-native chain:
+
+> **Device → FunctionOfInterest → CommandOfInterest → Service → Operation → Execution**
+
+with reusable **Function/Command kinds** separate from instance-specific functions/commands.
+
+---
+
+## 11. Information / output organization
+
+SAREF distinguishes several information forms.
+
+### Property/State value
+
+Represents descriptive/current values about a Feature/Device.
+
+### Observation
+
+Represents a procedure execution that observes a Feature/Property/State and yields a result.
+
+### Actuation
+
+Represents a procedure execution controlling a target.
+
+### Command/Operation execution
+
+Represents execution of action semantics.
+
+### Composite values
+
+PropertyValue/StateValue can themselves be composed to represent richer result structures.
+
+### Network Service output
+
+Operations can have explicit inputs/outputs.
+
+The source therefore distinguishes **property/state semantics, value, observation/actuation execution and service/operation output**.
+
+---
+
+## 12. Management / condition organization
+
+SAREF Core has no monolithic management module, but several management-relevant structures.
+
+### Device state/properties
+
+Device-specific PropertiesOfInterest/StatesOfInterest and their values can express operating/condition state.
+
+### Functions/commands
+
+Management actions can be modeled through Functions/Commands.
+
+### Service/operation
+
+Remote management exposure is modeled as Service/Operation rather than fused into Device identity.
+
+### Profiles
+
+Profiles can express expected behavior/consumption patterns.
+
+### Limit
+
+Health/fault/maintenance/work concepts are not a comprehensive source-native partition in Core 4.1.1.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+SAREF distinguishes multiple semantic identity levels.
+
+### Real-world entity identity
+
+FeatureOfInterest / Device identify specific entities.
+
+### Kind/model identity
+
+FeatureKind / DeviceKind identify archetypes/models.
+
+### Instance-specific semantic identity
+
+- PropertyOfInterest;
+- StateOfInterest;
+- FunctionOfInterest;
+- CommandOfInterest
+
+tie reusable semantics to one entity.
+
+### Execution identity
+
+Observation/Actuation/CommandExecution/OperationExecution identify particular occurrences.
+
+### Network representation identity
+
+Service and Operation identify discoverable network representations separate from real-world Device identity.
+
+### Result provenance
+
+`madeExecution` / `madeBy` links execution to Device/Feature, while observation/actuation links execution to the target and result.
+
+This provides explicit **source/executor provenance** without equating network service and physical source.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **FeatureOfInterest vs Device** — all Devices are Features of Interest, but not every Feature of Interest is a Device.
+2. **Device vs DeviceKind** — specific real-world equipment and reusable model/archetype are different.
+3. **Device vs Sensor/Actuator/Meter role** — Device is the tangible subject; subclasses characterize intended function.
+4. **FeatureKind vs FeatureOfInterest** — type/archetype and individual entity are different.
+5. **Property vs PropertyOfInterest** — generic property and the property of one specific feature are different.
+6. **State vs StateOfInterest** — generic state and specific entity state are different.
+7. **Property/State vs PropertyValue/StateValue** — meaning and value are separate.
+8. **Function vs FunctionOfInterest** — reusable function kind and the actual function of one Device are different.
+9. **Command vs CommandOfInterest** — generic command semantics and specific device-supported command are different.
+10. **Function vs Command** — function groups actions; command is an action.
+11. **Device vs Service** — tangible real-world equipment and digital network representation are different.
+12. **Service vs Operation** — service groups/exposes function; operation is one network-accessible command interface.
+13. **Command/Operation vs Execution** — action definition and one occurrence are different.
+14. **Device/Function/Command vs target Feature/Property/State** — actor and target are different.
+15. **consistsOf vs system Connection** — composition and connection are distinct.
+16. **composition vs spatial relation** — being composed of and being spatially within/adjacent are different.
+17. **Observation vs PropertyValue** — execution/result event and value object are different.
+18. **kind inheritance vs current instance state** — inherited model semantics and live values are different.
+19. **network representation vs physical composition** — Services/Operations do not become physical subcomponents.
+20. **Core semantics vs extension-specific domain semantics** — Core provides reusable primitives rather than every domain vocabulary.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** Device vs DeviceKind; composition; function/action semantics; intrinsic property/state distinctions;
+- **likely reusable semantic pattern:** generic kind → entity-specific *OfInterest* → value/execution;
+- **likely capability pattern:** Task → Function → Command, with instance-specific Function/CommandOfInterest;
+- **likely network/binding separation:** Device → Service → Operation distinct from physical/domain identity;
+- **likely output pattern:** Observation/Actuation/Execution separated from Property/State values;
+- **likely target/context pattern:** Device/function/action can target Feature, Property or State without absorbing that target into the Device;
+- **likely topology pattern:** composition, connection and spatial relation remain distinct;
+- **likely provenance pattern:** madeBy/madeExecution plus target/result relationships;
+- **profile-gap signal:** detailed equipment health, maintenance and lifecycle structures require other donors/extensions;
+- **binding/ontology caution:** OWL class/property structure and SAREF4SYST references are ontology mechanisms; V2 must not mechanically mirror the class hierarchy without testing its information needs.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C13 status: COMPLETE.**
+
+**Next frozen lineage:** C14 — SOSA/SSN.
+
