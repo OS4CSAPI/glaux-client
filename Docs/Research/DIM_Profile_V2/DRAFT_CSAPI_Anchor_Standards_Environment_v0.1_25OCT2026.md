@@ -56,13 +56,42 @@ World Wide Web Consortium. 2017. *Semantic Sensor Network Ontology*. W3C Recomme
 
 **Anchor role:** Normative semantic reference cited by published CSAPI Parts 1 and 2. CSAPI Part 1 states that its resource model is derived from SOSA/SSN.
 
+### OGC/ISO Observations, Measurements and Samples (OMS) 3.0
+
+Open Geospatial Consortium and International Organization for Standardization. 2023. *Observations, Measurements and Samples*. OGC Abstract Specification Topic 20, OGC 20-082r4 / ISO 19156:2023.
+
+**Anchor role:** Foundational conceptual standard for observations, observable properties, procedures, observers, hosts, deployments, samples, sampling procedures, and samplers. CSAPI Part 1 Annex C.3 explicitly identifies OMS as “one of the foundational building blocks” of CSAPI through SOSA/SSN and provides direct mappings from OMS classes to CSAPI resources. OMS therefore belongs in the native semantic core rather than in the external donor corpus.
+
 ### W3C/OGC Semantic Sensor Network Ontology — current 2023 Edition work
 
 World Wide Web Consortium and Open Geospatial Consortium. 2026. *Semantic Sensor Network Ontology – 2023 Edition*. W3C Working Draft / OGC 25-022.
 
 **Anchor role:** Current evolution of the conceptual vocabulary already underlying CSAPI and the source used in the V2 concept-baseline research. It is **not** the normative SOSA/SSN edition referenced by published CSAPI 1.0.
 
-## 3. Supporting normative infrastructure
+## 3. Related OGC interoperability ecosystem
+
+CSAPI Part 1 explicitly documents relationships with a broader set of OGC/ISO standards. These sources are **CSAPI-related**, but they are not all foundational semantic dependencies and should not be flattened into the native core. They form a separate interoperability-ecosystem subgroup.
+
+### Explicitly treated in CSAPI Part 1 Annex C
+
+- IETF GeoJSON.
+- OGC Features and Geometries JSON (JSON-FG).
+- OGC API – Features.
+- OGC API – Moving Features.
+- OGC API – Environmental Data Retrieval (EDR).
+- OGC SensorThings API.
+- OGC coverage standards and APIs, including OGC API – Coverages, OGC API – Maps, Web Coverage Service, and Web Map Service where linked results are used.
+- OGC 3D feature/scene standards identified by CSAPI, including CityGML, CityJSON, 3D Tiles, I3S, and OGC API – 3D GeoVolumes.
+- OGC Sensor Observation Service (SOS).
+- OGC Sensor Planning Service (SPS).
+
+### Other explicitly linked OGC API ecosystem standards
+
+CSAPI Part 1 also states that resources may link to implementations of other OGC APIs, including OGC API – Processes. Such standards belong in this related-ecosystem subgroup when they are part of a CSAPI interoperability path, but they should not be called native DIM donors merely because CSAPI can link to them.
+
+This subgroup is important for eventual profile interoperability and mapping analysis. It remains organizational: inclusion does not imply that the standard contributes DIM concepts or that V2 must implement it.
+
+## 4. Supporting normative infrastructure
 
 These sources support implementation, serialization, Web behavior, geometry, time, or protocol mechanics. They are part of the CSAPI standards environment where applicable but should **not** be treated as external domain donors merely because they appear in normative references.
 
@@ -91,33 +120,34 @@ These sources support implementation, serialization, Web behavior, geometry, tim
 
 These dependencies affect conformance and representation but should not receive the same donor-review treatment as sources that may contribute domain concepts, relationships, or modeling structure.
 
-## 4. Machine-readable companion artifacts
+## 5. Machine-readable companion artifacts
 
 Machine-readable schemas and examples belonging to the native stack should remain associated with their parent standards rather than becoming separate conceptual donor families. Current examples already present in the V2 source population include the SensorML 3.0 JSON Schema Collection and CSAPI Part 2 `systemEvent.json`.
 
-## 5. Important distinction from the external donor corpus
+## 6. Important distinction from the external donor corpus
 
 The external candidate donor corpus begins **outside** this native anchor environment. Sources such as ISA, SAPIENT, OSUS, The Open Group SOSA, NIEM, IEEE 1451/TEDS, MIMOSA, I-ADOPT, QUDT, SWEET, Redfish, OPC UA/PA-DIM, AAS, and similar models may contribute concepts, distinctions, governance methods, mappings, stress-test evidence, or nothing at all. They will be grouped neutrally by their own native subject/community in the next stage.
 
-Several sources are close to the OGC/semantic ecosystem without being native CSAPI dependencies. OGC OMS 3.0, OGC API – Processes, I-ADOPT, QUDT, SWEET, PROV, RFC 6906, and W3C Profiles Vocabulary are examples that must be classified according to their actual role rather than placed into the native anchor group merely because they are familiar or potentially useful.
+Several sources are close to the OGC/semantic ecosystem without being native CSAPI semantic-core dependencies. OGC API – Processes belongs to the related OGC interoperability ecosystem because CSAPI explicitly supports linking to it. I-ADOPT, QUDT, SWEET, PROV, RFC 6906, and W3C Profiles Vocabulary remain outside the native core and must be classified according to their actual role rather than placed there merely because they are familiar or potentially useful.
 
-## 6. Consequence for the 182-source neutral bibliography
+## 7. Consequence for the 182-source neutral bibliography
 
 The existing 182-entry bibliography was built as a **candidate donor population**, not as a complete inventory of every normative dependency of the CSAPI stack. The present anchor review reveals that several generic normative dependencies of CSAPI are not represented there. That is not necessarily a defect in the donor bibliography.
 
 V2 should therefore maintain two related inventories:
 
-1. **Anchor standards environment** — native CSAPI/SensorML/SWE/SOSA-SSN standards and supporting normative dependencies.
+1. **Anchor standards environment** — native semantic/functional core, related OGC interoperability ecosystem, and supporting normative infrastructure.
 2. **External candidate donor corpus** — the neutral population to be grouped and reviewed for possible contributions.
 
 This separation avoids bloating the donor corpus with generic implementation dependencies while preserving the standards pedigree needed for the eventual profile and conformance work.
 
-## 7. Standing decision
+## 8. Standing decision
 
 For Workstream 3, the first source group is established as the **CSAPI anchor standards environment**, divided into:
 
-- **Native semantic and functional core**, and
-- **Supporting normative infrastructure**.
+- **Native semantic and functional core** — including OMS 3.0 as a foundational CSAPI conceptual source;
+- **Related OGC interoperability ecosystem** — standards that CSAPI explicitly maps to, compares with, or links to; and
+- **Supporting normative infrastructure** — generic Web, serialization, temporal, spatial, units, and transport dependencies.
 
 This classification is organizational only. It does not imply that every concept in the native stack must appear in the V2 DIM, nor that external donors have subordinate evidentiary value.
 
