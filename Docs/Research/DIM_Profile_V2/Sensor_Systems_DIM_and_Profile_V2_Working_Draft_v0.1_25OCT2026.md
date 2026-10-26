@@ -156,32 +156,116 @@ The chassis study adds a second boundary distinction: **host Platform is not the
 
 These findings illustrate how binding and architecture standards can legitimately contribute semantics to an implementation-independent DIM. The enduring-versus-deployment-scoped distinction and the intrinsic-component-versus-host-context distinction may prove to be domain relationships worth preserving, while `/subsystems`, Deployment resources, concrete interface links, and other carriers remain binding mechanisms. Version 2 should preserve useful domain distinctions revealed by implementation standards without making their API or architecture carrier identical to the concept itself.
 
-## 10. Model organization and modularity
+## 10. Validated model organization and modularity
 
-Version 2 may be modular, and established information-modeling practice supports modular organization where semantic cohesion justifies it. DMTF’s Common Information Model separates core, common, and extension content; TM Forum partitions its information model into domains and Aggregate Business Entities; NIEM promotes reuse of existing components and creation of new content only where demonstrated requirements expose gaps (DMTF 2010; NIEM 2016; TM Forum 2026). These precedents support modularity as a design principle without prescribing a particular module taxonomy for this domain.
+The Version 2 anatomy study is complete through its controlled research gates: a corpus-wide structural population was frozen from the 182-source donor body; thirty semantic lineages were independently extracted under one common template; their structures were compared only after extraction; a candidate anatomy was synthesized; and that candidate was stress-tested against atomic, composite, distributed, industrial, virtualized, lifecycle-heavy, formal-semantic, and OGC-binding cases. The resulting organization is now a **working V2 decision**. The full evidence remains in the dedicated Phase 0–D research artifacts; this maintained draft records only the promoted result.
 
-A candidate subject area should be promoted to a reusable module or subdomain only when the evidence shows strong internal semantic cohesion, meaningful concepts and relationships of its own, bounded dependencies, plausible applicability across more than one specialization, and a substantial source or standards lineage. A document heading does not create a module, and the word subdomain should not be applied merely because a topic is important. The architecture should be derived from semantic evidence rather than from the presentation structure of Version 1.
+The evidence does **not** support organizing the DIM as one monolithic equipment record or as a flat set of peer information modules. Instead, Version 2 uses four core structural strata around the persistent sensing System, with optional aspect overlays and specialization hooks.
 
-The governing reuse policy is **reuse invariants; specialize variation**. Concepts should be shared only when their meaning genuinely survives across the relevant system families. Realization-specific concepts should remain specific even when that reduces superficial reuse. Version 2 should optimize first for semantic correctness of the demonstrated sensor-system domain and preserve future reuse where the semantics themselves justify it.
+### 10.1 Persistent Subject Spine
+
+The Persistent Subject Spine describes the enduring System itself. It includes, as applicable:
+
+- persistent System identity and human-readable description;
+- product/model/kind relationships;
+- Procedure/Method relationships, kept semantically distinct from product/model identity;
+- optional enduring decomposition into subordinate Systems or meaningful internal components;
+- Function and Capability descriptions;
+- configurable space, modes, settings, and effective instance configuration.
+
+Internal elements are represented independently only when their own identity, configuration, state, calibration, output/action, replaceability/serviceability, or relationships materially matter. An atomic sensor therefore does not need a fabricated component tree, while complex equipment can be decomposed richly where the evidence supports it.
+
+### 10.2 Context and Typed Relationships
+
+Context and relationship structures describe how the persistent System is situated without turning temporary or external context into intrinsic composition. The common DIM must be able to distinguish, when applicable:
+
+- Deployment/emplacement;
+- Host/Platform;
+- location or pose with its role, time, source, and reference frame;
+- communications/connectivity;
+- power-source relationships;
+- manager/controller/responsibility relationships;
+- represented/exposed/mediated relationships;
+- target or Feature-of-Interest relationships.
+
+The governing rule is that enduring part-of, hosting, deployment, communications connectivity, power relationship, functional realization, and virtual/interface mediation are different semantic relationships even when an implementation presents them together.
+
+### 10.3 Dynamic Activity and Evidence
+
+Dynamic structures describe what the System observes, reports, does, experiences, or produces over time. The common anatomy supports:
+
+- Observation/measurement/detection and associated results;
+- typed reported-state facts;
+- Command/action/task requests;
+- execution status or progress;
+- results;
+- Event/history;
+- optional derived information or products whose evidence and provenance remain traceable.
+
+The anatomy preserves the distinctions among Property/Variable meaning, an Observation or other execution, its Result, and any later analysis or assessment. Likewise, an available Command or action is not the same thing as one request, its execution status, or its result.
+
+### 10.4 Cross-Cutting Qualification
+
+Several semantics qualify facts and relationships throughout the DIM rather than belonging in one peer module:
+
+- scoped identity and references;
+- semantic Property/Variable definitions;
+- units, constraints, uncertainty, and quality;
+- time and validity;
+- provenance, source, and responsibility;
+- version and revision;
+- bounded security/access metadata.
+
+Identifiers retain scope: equipment identity, product/model identity, component/channel identity, API/resource identity, message/data-item identity, target identity, and semantic-term identity are not interchangeable merely because all are identifiers.
+
+### 10.5 Optional aspect overlays
+
+Rich recurring concerns are modeled as **optional aspect overlays across the four strata**, not as a fifth peer layer and not as mandatory empty modules:
+
+- condition / health / diagnostics;
+- communications / network;
+- power / energy;
+- software / firmware / computational participation;
+- maintenance / service / asset lifecycle.
+
+An aspect may contain persistent description, contextual relationships, dynamic state/events, and cross-cutting provenance/qualification. For example, a power aspect can describe a source and its design characteristics, a supplied-by relationship, live electrical readings, battery condition, and replacement history without forcing all of those meanings into one resource or one stratum.
+
+### 10.6 Specialization and reuse
+
+Domain specializations extend this common anatomy without changing the chassis or forking the common identity/composition/deployment semantics. Radiation-instrument structures, UGS-specific detector/cue semantics, scientific instrument classes, IEEE smart-transducer structures, industrial-automation device classes, and ecosystem-native device models remain specialization evidence unless a broader common requirement is separately established.
+
+The governing reuse policy remains **reuse invariants; specialize variation**. Native donor carriers such as Submodels, FunctionalGroups, Clusters, Objects, Resources, TEDS, messages, or API endpoints do not become V2 modules merely because they carry useful semantics.
+
+### 10.7 Validated relationship and state rules
+
+The common model must be capable of preserving these relationship roles, with final names and cardinalities still to be selected: reusable product/model/kind; Procedure/Method; enduring part/subsystem; hosted/carried by; deployed/assigned in; connected via/to; supplied by; managed by; represented/exposed by; mediated by; observes/controls/targets; produced/generated by; derived from/supported by evidence; responsible/attributed to; and Function/Capability realized or implemented by.
+
+Configuration is not one undifferentiated field set. Where applicable, distinguish the allowed configuration space, stored or engineered configuration, requested or queued change, effective/current configuration, device-reported/applied configuration, and configuration-change history with appropriate source, time, and version.
+
+Likewise, Version 2 does not adopt one universal Status, Health, or Readiness enum. Reported state is treated as a typed, source-qualified fact about an affected subject, with time/validity and quality where applicable. Rich state dimensions such as health, fault, availability, BIT, power, communications, or security belong to applicable aspect semantics rather than a single overloaded status field.
 
 ## 11. Standing of the Version 1 information subjects
 
-Version 1 organized its whole-system problem into eight recurring information subjects. They remain useful predecessor evidence because they record the clusters of information that emerged when Version 1 attempted to describe an employed sensing system comprehensively. Version 2 has not adopted them as eight subdomains, modules, or “sub-DIMs,” and their architectural status must be re-evaluated through the controlled donor-review process.
+Version 1's eight recurring information subjects remain useful predecessor evidence, but the completed anatomy study has now tested their architectural standing. **They are not retained as the Version 2 module or subdomain taxonomy.** Their concerns redistribute across the validated strata, cross-cutting semantics, aspect overlays, and specializations.
 
-1. identity / model / technical description
-2. equipment / composition / physical arrangement
-3. sensing capabilities / performance / outputs
-4. deployment / emplacement / location / responsibility
-5. operating configuration / modes / actions
-6. communications / connectivity / access
-7. power sources / operating arrangement
-8. condition / service / recovery / lifecycle
+| Version 1 subject | Validated Version 2 standing |
+| --- | --- |
+| identity / model / technical description | Persistent Subject Spine plus cross-cutting identity, version, semantic-definition, and provenance qualification. |
+| equipment / composition / physical arrangement | Persistent Subject Spine plus typed enduring-composition and other relationship semantics; physical part-of is not the same as hosting, network, or deployment. |
+| sensing capabilities / performance / outputs | Function/Capability in the Subject Spine; Property/Variable semantics in cross-cutting qualification; observations/results in Dynamic Activity and Evidence. |
+| deployment / emplacement / location / responsibility | Context and Typed Relationships plus cross-cutting time, source, responsibility, and location qualification. |
+| operating configuration / modes / actions | Subject Spine configuration/modes plus Dynamic action/execution/status/result and Event/history. |
+| communications / connectivity / access | Common connectivity relationships plus an optional communications/network aspect and bounded security/access qualification. |
+| power sources / operating arrangement | Common power-source/consumer relationships plus an optional power/energy aspect. |
+| condition / service / recovery / lifecycle | Typed reported-state facts and Event/history plus optional condition/health/diagnostic and maintenance/service/lifecycle aspects. |
 
-These are **candidate subject areas to test**, not inherited V2 modules. Different subjects may ultimately resolve to core semantics, reusable modules, cross-cutting relationships, specializations, or a different partition altogether.
+This redistribution is not a relabeling exercise. Several Version 1 subjects split across different semantic strata because the donor evidence shows that their contents have different ownership and temporal meaning. Conversely, Version 2 elevates cross-cutting concerns such as provenance, semantic definitions, scoped identity, and relationship qualification that do not fit cleanly inside the old peer-subject organization.
+
+The Version 1 subjects should therefore continue to be used as a **coverage challenge**—a way to ask whether useful predecessor concerns were lost—not as containers into which new evidence is sorted.
 
 ## 12. Current decisions and open questions
 
-The following table records the present standing of the Version 2 work. A working decision controls the methodology unless later evidence overturns it; a candidate is supported enough to test but is not final; and an open item must not be resolved silently by implementation convenience or by carrying forward a Version 1 term.
+The following table records the present standing of the Version 2 work. A working decision controls the methodology unless later evidence overturns it; an open item must not be resolved silently by implementation convenience or by carrying forward a Version 1 term.
 
 | Topic | Standing | Current result |
 | --- | --- | --- |
@@ -189,33 +273,60 @@ The following table records the present standing of the Version 2 work. A workin
 | DIM abstraction level | Working decision | Domain-scoped, conceptual, implementation- and protocol-independent. |
 | Relationship to CSAPI profile | Working decision | Purpose-driven but binding-independent; model for the profile, not to the profile. |
 | Whole-system meaning | Working decision | Informational completeness about the sensing System; heterogeneous components/functions do not make it automatically a system-of-systems. |
-| Domain boundary vs root concept | Working decision | Treat as separate questions. |
 | Chassis / domain boundary | **Working decision** | Physically realized equipment Systems whose defining operational role is sensing/observing, modeled as complete operational subjects. |
 | CSAPI chassis characterization | **Working decision** | `systemType = Sensor` + `assetType = Equipment` for the intended hardware sensing domain. |
 | New compound/root class | **Working decision — not required** | Do not coin one; the two sourced dimensions are sufficient at the chassis level. |
-| Equipment vs Device | **Working decision** | Retain Equipment as the realization facet; one System may be composite equipment spanning multiple hardware elements. |
-| Host Platform boundary | **Working decision** | Hosting/mounting does not automatically make the Platform part of the Sensor/System. |
-| Network/aggregation boundary | **Working decision** | Cooperating Systems or a sensor network are not automatically one sensing System. |
+| Equipment vs Device | Working decision | Retain Equipment as the realization facet; one System may be atomic or composite equipment. |
+| Host Platform boundary | Working decision | Hosting/mounting does not automatically make the Platform part of the Sensor/System. |
+| Network/aggregation boundary | Working decision | Cooperating Systems or a sensor network are not automatically one sensing System. |
 | CSAPI Sensor vs `sosa:Sensor` assertion | Open mapping question | Do not equate classification and OWL class assertion without an explicit semantic mapping. |
-| Composition vs Aggregation | Working decision | Preserve enduring vs deployment-scoped relationship distinction. |
-| Modularity | Working decision | Use where semantic cohesion and bounded reuse justify it. |
-| V1 eight subjects | Candidate evidence | Treat as subject areas to test, not inherited modules/subdomains. |
-| Boundary-defining family term | Working decision | No additional umbrella term/class is required; “Sensor Systems” remains descriptive wording rather than a new model class. |
-| Final modules/subdomains | Open | Derive through broader donor review and synthesis under the earned chassis boundary. |
-| Visualization work | Paused / non-gating | Figure work does not gate substantive research unless explicitly resumed. |
-| Chassis study | **Complete / corpus-wide reconciled** | Initial CIDM + ontology + architecture + requirements validation was followed by a full 182-source chassis-capability audit; under-contested cross-type challengers did not overturn the boundary. |
+| High-level DIM anatomy | **Working decision** | Four core strata: Persistent Subject Spine; Context and Typed Relationships; Dynamic Activity and Evidence; Cross-Cutting Qualification. |
+| Aspect organization | **Working decision** | Condition/health, communications, power, software/firmware, and maintenance/lifecycle are optional aspect overlays across the four strata, not mandatory peer modules. |
+| Version 1 eight subjects | **Tested predecessor evidence** | Not retained as the V2 architecture; use as coverage challenge only. |
+| Atomic vs composite representation | Working decision | Do not require independent component resources unless the component's own semantics materially matter. |
+| Product/model vs Procedure/Method | Working decision | Preserve as distinct reusable-description roles even when a binding relates them. |
+| Function / Capability / Procedure / Command | Working decision | Preserve distinct meanings; do not collapse into one universal capability object. |
+| Configuration semantics | Working decision | Distinguish allowed/stored/requested/effective/reported configuration and configuration history when applicable. |
+| Reported state | Working decision | Use typed/source-qualified state facts; no universal Status/Health/Readiness enum. |
+| Event/history | Working decision | Common event/history backbone with specialized event/process semantics layered above it. |
+| Derived information | Working decision | Preserve evidence/provenance for derived products; no mandatory universal Assessment hierarchy. |
+| Communications and power | Working decision | Common typed relationship hooks plus optional rich aspect structures. |
+| Relationship taxonomy | Working decision at semantic-role level | Preserve enduring composition, host/deployment, connectivity, power, management, representation/mediation, target, production/derivation, responsibility, and function-realization meanings; final property names/cardinalities remain open. |
+| Security/access | Working decision at boundary level | Bounded markings/constraints/security-state metadata may be represented; credentials and enterprise IAM remain outside common DIM. |
+| Detailed canonical concept names / cardinalities | **Open / next work** | Consolidate donor ownership and exact semantics under the validated anatomy. |
+| CSAPI / SensorML application-profile binding | Open | Begin only after canonical concept and relationship semantics are settled. |
+| Machine-readable schemas / SHACL / conformance | Open | Derive after the conceptual DIM and profile obligations are stable. |
+| Visualization work | Paused / non-gating | Resume when a substantive model decision requires a maintained diagram. |
+| Chassis study | **Complete / corpus-wide reconciled** | 182-source chassis capability audit completed. |
+| Anatomy study | **Complete / validated** | 30-lineage Phase A extraction, Phase B comparison, Phase C synthesis, and Phase D falsification completed; validated anatomy promoted here. |
 
 ## 13. Development sequence
 
-The chassis question is now closed as a working Version 2 decision **after corpus-wide reconciliation**. The evidence chain consists of the fourteen-source independent extraction, cross-source comparison and synthesis, ontology validation, architecture validation, requirements/operational validation, the cross-group chassis decision record, and the subsequent 182-source chassis-capability audit/reconciliation. Those research artifacts preserve the full evidence and cautions; this clean artifact retains only the earned result.
+The chassis and high-level anatomy questions are now closed as **working Version 2 decisions**. The project has established both the bounded class of thing the DIM describes and the high-level semantic organization for information about that thing. The detailed research evidence remains in the dedicated chassis and anatomy artifacts; this maintained draft records the promoted decisions.
 
-The next substantive workstream returns from the chassis study to the broader frozen donor corpus. The earned chassis is a **bounding condition**, not a module taxonomy: donor analysis must now determine what recurring concepts, relationships, constraints, and semantically cohesive subject areas are actually needed to describe that bounded class of sensing Systems. Sources should continue to be understood first according to what they themselves standardize—ontology, information model, architecture, vocabulary, schema, API, requirements, conformance method, or operational evidence—rather than being forced into Version 1 headings. **Primary source type may organize the review but may not exclude a source from contributing structural domain semantics when the source actually defines them.**
+The next substantive workstream is **canonical concept and relationship consolidation** inside the validated anatomy. For each structural stratum and aspect, the work should now determine:
 
-Individual donor reviews still do not edit the DIM directly. Evidence is extracted independently, compared under common criteria, and promoted only at explicit synthesis gates. The Version 1 eight information subjects remain predecessor evidence and useful challenge material, not bins into which new evidence is sorted by default.
+1. the exact domain concept being represented;
+2. which donor standard or established vocabulary owns the strongest meaning;
+3. whether V2 is implementing that source concept, mapping to it, specializing it, or only reusing a design pattern;
+4. the required relationships and their semantics;
+5. applicable cardinality/optionality at the conceptual level;
+6. which concepts are common and which remain aspect- or specialization-specific;
+7. unresolved conflicts among donor meanings;
+8. what semantic information must survive into the later CSAPI/SensorML binding.
 
-Visualization work remains paused and non-gating. It should resume only when a substantive modeling decision requires a maintained diagram and a canonical rendering source can be used consistently across GitHub and publication formats.
+This consolidation should proceed from **concept meaning to binding**, not from desired JSON/API layout backward into the DIM. It should also retain the scale rule established by the anatomy work: a simple atomic sensor can satisfy the common DIM without empty complex-system structures, while a composite sensing System can expose meaningful components, capabilities, configuration, condition, communications, power, lifecycle, and derived information where supported.
 
-As later modeling proceeds, every proposed concept should be tested against the chassis boundary: **Is this information intrinsic to understanding the complete physically realized sensing System, a relationship to its context, an interaction/output, or a concern that belongs outside the DIM or only in a specialization/profile?** This keeps the newly established boundary from becoming an excuse for indiscriminate whole-world modeling.
+After the canonical concept layer is stable, the next sequence is:
+
+1. define the implementation-independent conceptual model and relationship vocabulary;
+2. map that model deliberately to SOSA/SSN, OMS, I-ADOPT, PROV and other formal semantic sources as applicable;
+3. define the OGC application-profile binding using CSAPI, SensorML, SWE Common and related OGC mechanisms;
+4. state profile requirements, source-standard dependencies, specializations, and authored conventions explicitly;
+5. define machine-readable constraints and conformance tests only after those obligations are clear;
+6. resume maintained diagrams/publication material from the validated model rather than from an earlier visual taxonomy.
+
+Individual implementation standards, schemas, APIs, UI groupings, or vendor manuals may continue to provide evidence, but none should silently redefine the validated chassis or anatomy. Any later change to those working decisions requires a documented contradiction or material new requirement, not merely a different source term or implementation convenience.
 
 ## 14. References
 
