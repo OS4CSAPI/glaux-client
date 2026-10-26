@@ -7775,3 +7775,656 @@ This provides explicit **source/executor provenance** without equating network s
 
 **Next frozen lineage:** C14 — SOSA/SSN.
 
+---
+
+# C14 — SOSA/SSN
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 19.  
+**Frozen companion IDs:** 18, 20.
+
+**Controlling source:**
+
+- W3C/OGC, *Semantic Sensor Network Ontology — 2023 Edition*, Working Draft, **21 October 2026**, OGC 25-022:
+  - `https://www.w3.org/TR/vocab-ssn-2023/`
+
+**Companion lineage:**
+
+- 12 October 2026 Working Draft.
+- 2017 W3C Recommendation.
+
+**Evidence note:** The 21 October 2026 document is a Working Draft, not yet a W3C Recommendation. It controls current structural interpretation because it is the later frozen source. The 2017 Recommendation is retained as historical lineage evidence where the 2023 Edition explicitly changes/deprecates structures.
+
+---
+
+## 1. Source-native structural organization
+
+The 2023 Edition is explicitly **modular**.
+
+### A. SOSA core modules
+
+The minimal/core vocabulary is split into:
+
+- **SOSA Common**
+- **SOSA Actuation**
+- **SOSA Observation**
+- **SOSA Sampling**
+- combined SOSA
+
+### B. SSN modules
+
+Fuller axiomatization mirrors the same partition:
+
+- **SSN Common**
+- **SSN Actuation**
+- **SSN Observation**
+- **SSN Sampling**
+- combined SSN
+
+### C. Common domain structure
+
+SOSA Common organizes:
+
+1. **FeatureOfInterest and Property**
+2. **Procedure**
+3. **Execution / ExecutionCollection**
+4. **Asset / System / Platform / Deployment**
+5. **Collections / membership**
+
+### D. Specialized execution structures
+
+#### Observation module
+- Sensor
+- ObservingProcedure
+- Observation
+- ObservationCollection
+- Stimulus
+- observed Property
+- FeatureOfInterest
+- result / result quality
+
+#### Actuation module
+- Actuator
+- ActuatingProcedure
+- Actuation
+- ActuationCollection
+- Property acted on
+- FeatureOfInterest
+- result
+
+#### Sampling module
+- Sampler
+- SamplingProcedure
+- Sampling
+- SamplingCollection
+- Sample
+- MaterialSample
+- SpatialSample
+- StatisticalSample
+- SampleCollection
+- original/ultimate sample relationships
+
+### E. Deployment/system structure
+
+- Asset
+- System
+- Platform
+- Deployment
+- hasSubSystem
+- hosts / isHostedBy
+- deployedAsset / deployedSystem / deployedOnPlatform
+- implements Procedure
+- madeExecution
+
+### F. Extension modules
+
+The document separately provides:
+
+- OMS extension;
+- Sample Relations;
+- **System Capabilities** extension.
+
+### G. System Capabilities extension
+
+The non-normative System Capabilities Module separates:
+
+- System capabilities;
+- Operating Conditions;
+- Normal Operating Conditions;
+- Suboptimal Operating Conditions;
+- Survivable Conditions;
+- validity context.
+
+Capabilities and operating conditions are represented using Observation/ObservationCollection patterns rather than the 2017 edition's explicit SystemProperty/OperatingProperty/SurvivalProperty hierarchies.
+
+The source-native anatomy is therefore:
+
+> **Feature/Property + reusable Procedure + Execution + System/Deployment + specialized Observation/Actuation/Sampling modules + optional Capability/Operating-Condition extensions**
+
+---
+
+## 2. Purpose of each partition
+
+### FeatureOfInterest / Property
+
+Purpose: identify the real-world target and quality/state/property relevant to an execution.
+
+### Procedure
+
+Purpose: define a reusable workflow, protocol, plan, algorithm, program or computational method that can be applied in many Executions.
+
+### Execution
+
+Purpose: represent one actual carrying-out of a Procedure, with:
+- system/executor;
+- target FeatureOfInterest;
+- inputs;
+- result;
+- time;
+- used Procedure.
+
+### System
+
+Purpose: represent an Asset capable of implementing Procedures in Executions.
+
+### Platform
+
+Purpose: represent an Asset that hosts other Assets, especially Systems and other Platforms.
+
+### Deployment
+
+Purpose: represent a time/context-specific arrangement of Assets intended to execute Procedures with respect to FeaturesOfInterest.
+
+### Observation / Sensor / ObservingProcedure
+
+Purpose: specialize the generic Execution/System/Procedure pattern for observation.
+
+### Actuation / Actuator / ActuatingProcedure
+
+Purpose: specialize the same pattern for changing the value of a Property of a FeatureOfInterest.
+
+### Sampling / Sampler / SamplingProcedure / Sample
+
+Purpose: specialize the same pattern for creating/obtaining a Sample that acts as a proxy for an ultimate FeatureOfInterest.
+
+### Collections
+
+Purpose: group Executions/results/entities while constraining shared properties or preserving membership semantics.
+
+### System Capabilities
+
+Purpose: describe system performance and the conditions/context in which that performance is valid, separately from the system's Executions.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Target/property | FeatureOfInterest, Property, hasProperty, forProperty |
+| Reusable behavior | Procedure, hasInput, hasOutput, implementedBy |
+| Execution | Execution, ExecutionCollection, usedProcedure, madeBySystem, hasResult, input value, start/end/result/phenomenon time |
+| System/deployment | Asset, System, Platform, Deployment, hasSubSystem, hosts, deployedSystem |
+| Observation | Sensor, ObservingProcedure, Observation, ObservationCollection, Stimulus, observedProperty, resultQuality |
+| Actuation | Actuator, ActuatingProcedure, Actuation, ActuationCollection, actsOn |
+| Sampling | Sampler, SamplingProcedure, Sampling, Sample, SampleCollection, original/ultimate sample relationships |
+| Collection | hasMember, isMemberOf, specialized Execution collections |
+| Capability/conditions | hasSystemCapability, OperatingConditions, Normal/Suboptimal/SurvivableConditions, hasValidityContext |
+| Capability representation | Observation, ObservationCollection, vocabulary of capability/environment properties |
+| Extension/alignment | OMS, Sample Relations, PROV/SAREF/other alignments |
+
+---
+
+## 4. Primary relationships
+
+### System → Procedure
+
+`implements` relates a System to a Procedure it is capable of executing.
+
+### Procedure → Execution
+
+`usedForExecution` / `usedProcedure` relates reusable method to one or more actual Executions.
+
+### System → Execution
+
+`madeExecution` / `madeBySystem` records the executor.
+
+### Execution → FeatureOfInterest
+
+Execution targets a FeatureOfInterest; ultimate FeatureOfInterest can be separately represented.
+
+### Execution → Result
+
+Execution has result / simple result and result time.
+
+### System → subsystem
+
+`hasSubSystem` relates a System to component Systems.
+
+### Platform → hosted Asset
+
+`hosts` / `isHostedBy` represents hosting/mounting independently from subsystem composition.
+
+### Deployment → Assets / Platform / System
+
+Deployment arranges Assets, can identify:
+- deployed System;
+- deployed Platform;
+- FeatureOfInterest.
+
+### Sensor → Observation
+
+Sensor makes Observation; Observation is made by Sensor.
+
+### Sensor → observed Property
+
+Sensor `observes` Property.
+
+### Observation → observed Property / Feature / result
+
+Observation specializes Execution and binds:
+- Sensor;
+- ObservingProcedure;
+- observed Property;
+- FeatureOfInterest;
+- result.
+
+### Actuator → Actuation → Property
+
+Actuator can act on Property; an Actuation represents the actual change attempt.
+
+### Sampler → Sampling → Sample
+
+Sampling uses a Sampler/Procedure and produces a Sample, which relates to its original/ultimate FeatureOfInterest.
+
+### System → capability → validity context
+
+System Capability is represented by Observation/ObservationCollection and may point to an OperatingConditions Observation/Collection as the context where the capability holds.
+
+---
+
+## 5. Dependency boundaries
+
+The ontology deliberately separates semantic layers.
+
+### SOSA vs SSN
+
+SOSA supplies a lightweight/minimal set of core terms; SSN adds fuller axiomatization/restrictions.
+
+### Common vs Observation/Actuation/Sampling
+
+Generic patterns are defined once in Common and specialized into three concrete execution domains.
+
+### Procedure vs Execution
+
+Reusable specification/method and actual occurrence are distinct.
+
+### System vs Procedure
+
+System implements Procedure but is not the Procedure.
+
+### System vs Platform
+
+System executes Procedures; Platform hosts Assets. An object may play more than one role in an application, but the ontology does not collapse the roles.
+
+### System vs Deployment
+
+System persists as an Asset; Deployment is the contextual arrangement/time-bound use of Assets.
+
+### Core vs System Capabilities extension
+
+Capability/operating-condition descriptions are not required to model the basic system/execution pattern.
+
+### 2017 vs 2023 capability model
+
+The 2023 extension removes the 2017 explicit SystemProperty/OperatingProperty/SurvivalProperty hierarchy and reuses Observation/ObservationCollection plus property vocabularies.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic/system-defining
+
+- System identity/class;
+- subsystem relationships;
+- implemented Procedures;
+- Properties the System is capable of observing/acting on;
+- class/type-level capability statements where applicable.
+
+### Contextual
+
+- Deployment;
+- hosting Platform;
+- FeatureOfInterest for a specific Execution;
+- operating-condition validity context;
+- spatial location;
+- execution inputs.
+
+### Execution-specific
+
+- Observation/Actuation/Sampling occurrence;
+- phenomenon/start/end/result times;
+- result;
+- result quality;
+- specific FeatureOfInterest.
+
+### Proxy/context structure
+
+Sample can serve as proxy for an ultimate FeatureOfInterest and must not be treated as identical to it.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting ontology patterns include:
+
+- FeatureOfInterest;
+- Property;
+- Procedure;
+- Execution;
+- System;
+- Collection;
+- result;
+- time;
+- deployment;
+- location/geometry patterns;
+- proximate vs ultimate FeatureOfInterest;
+- class/type vs individual System;
+- alignments to other ontologies.
+
+The generic Execution pattern is especially cross-cutting: Observation, Actuation and Sampling inherit the same executor/procedure/target/result/time architecture.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+SOSA/SSN has strong **execution and deployment temporality**, but it is not a full asset-service lifecycle ontology.
+
+### Execution time
+
+Execution supports:
+
+- startTime;
+- endTime;
+- phenomenonTime;
+- resultTime.
+
+These times are intentionally distinct.
+
+For example:
+- phenomenonTime can be before or after resultTime;
+- resultTime is when result became available;
+- start/end describe execution interval.
+
+### Deployment time
+
+Deployment can be for a specified time interval and can have start/end semantics.
+
+### Historical/forecast use
+
+The time model explicitly supports:
+- plans;
+- forecasts;
+- predictions;
+- historical scenarios.
+
+### Capability validity
+
+System capabilities can have validity contexts expressed as observations/collections of operating/environmental conditions.
+
+### Limit
+
+Maintenance, repair, calibration history, ownership history and work orders are not core lifecycle structures in SOSA/SSN.
+
+---
+
+## 9. Composition / topology organization
+
+SOSA/SSN separates several topologies.
+
+### System composition
+
+`hasSubSystem` / `isSubSystemOf`:
+- System → component System.
+
+### Hosting topology
+
+`hosts` / `isHostedBy`:
+- Platform → hosted Asset/System/Platform.
+
+### Deployment topology
+
+Deployment relates:
+- deployed Systems;
+- deployed Platforms;
+- FeaturesOfInterest.
+
+### Sample/proxy topology
+
+Sampling creates Samples related through:
+- original sample;
+- sample of;
+- ultimate FeatureOfInterest;
+- sample chains.
+
+### Collection topology
+
+Observation/Actuation/Sampling/Execution collections group members without implying subsystem composition.
+
+### Important distinction
+
+**subsystem composition, hosting, deployment, collection membership and sample/proxy relationships are separate source-native relationship types.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+### System function
+
+A System `implements` one or more Procedures.
+
+### Role specialization
+
+System specializes into:
+- Sensor;
+- Actuator;
+- Sampler.
+
+The role is tied to the kind of Procedure/Execution:
+- Sensor → ObservingProcedure/Observation;
+- Actuator → ActuatingProcedure/Actuation;
+- Sampler → SamplingProcedure/Sampling.
+
+### System Capability extension
+
+Capability is described with Observation/ObservationCollection whose FeatureOfInterest is the System itself.
+
+Capability properties can include:
+- accuracy;
+- resolution;
+- frequency;
+- measurable range;
+- latency;
+- drift;
+- battery lifetime
+through controlled vocabularies.
+
+### Operating conditions
+
+Separate Observations/Collections describe:
+- normal;
+- suboptimal;
+- survivable
+conditions.
+
+### Validity context
+
+Capability can depend on environmental/operating conditions.
+
+The source-native model therefore separates:
+
+> **Procedure implemented → execution performed → performance capability → operating/survival context**
+
+---
+
+## 11. Information / output organization
+
+SOSA/SSN distinguishes several result/information structures.
+
+### Observation result
+
+Observation has:
+- observed Property;
+- FeatureOfInterest;
+- result;
+- simple result;
+- result quality.
+
+### Actuation result
+
+Actuation can have result describing the property value after actuation, while related Observation can verify actual effect.
+
+### Sampling result
+
+Sampling produces a Sample rather than a conventional measured value.
+
+### Collections
+
+ObservationCollection/ActuationCollection/SamplingCollection group related executions/results and may provide common property constraints.
+
+### Capability information
+
+System capability and operating-condition information reuse Observation/ObservationCollection structures but are semantically about the System and its environment rather than ordinary external observation targets.
+
+The ontology therefore distinguishes **execution type and result semantics**, even when it reuses common Observation structures for system description.
+
+---
+
+## 12. Management / condition organization
+
+Core SOSA/SSN has limited management semantics.
+
+### System capabilities/operating conditions
+
+The extension models:
+- performance;
+- acceptable operating environment;
+- survival limits;
+- validity context.
+
+### Deployment
+
+Provides operational arrangement context.
+
+### System composition/hosting
+
+Provides structural context needed for equipment management.
+
+### Limit
+
+The ontology does not provide a comprehensive generic model for:
+- health/fault;
+- diagnostics;
+- maintenance;
+- service history;
+- work;
+- configuration management.
+
+Those require additional ontologies/profiles/domain models.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+SOSA/SSN's provenance architecture is relational rather than product-identity focused.
+
+### System → Execution
+
+`madeBySystem` / `madeExecution` identifies the executor/source.
+
+### Execution → Procedure
+
+`usedProcedure` identifies the reusable method.
+
+### Execution → target/property/result
+
+Preserves what was acted on/observed/sampled and what result was produced.
+
+### Observation origin/quality
+
+Observation can identify:
+- originating Stimulus;
+- related Observations;
+- result quality.
+
+### Deployment provenance/context
+
+System/Platform can be related to Deployment.
+
+### Sample lineage
+
+Sample relationships support chains from derived sample to original/ultimate feature.
+
+### Alignment to PROV
+
+A dedicated PROV alignment module maps SOSA/SSN execution semantics to provenance concepts.
+
+### Limit
+
+Manufacturer/model/serial/product-asset identity is not a central source-native partition of the core ontology.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Asset vs System vs Platform** — deployment resource, procedure-executing system and hosting platform are different semantic roles.
+2. **System vs Procedure** — executor/capable agent and reusable method are different.
+3. **Procedure vs Execution** — specification and occurrence are different.
+4. **System vs Deployment** — persistent System and time/context-specific arrangement are different.
+5. **System composition vs Platform hosting** — subsystem relationship and hosting/mounting are distinct.
+6. **hosting vs deployment** — persistent/structural hosting and deployment participation are not identical.
+7. **FeatureOfInterest vs Property** — target entity and quality/state being observed/acted on are different.
+8. **proximate vs ultimate FeatureOfInterest** — immediate target/proxy and ultimate subject are distinct.
+9. **Sensor vs Observation** — System role and execution/result occurrence are different.
+10. **Sensor vs ObservingProcedure** — implementing System and reusable method are different.
+11. **Observation vs result** — execution and its output are different.
+12. **Observation vs Actuation vs Sampling** — concrete execution types have different semantics despite shared base structure.
+13. **Sampler/Sampling vs Sample** — execution/executor and the material/spatial/statistical result entity are distinct.
+14. **Sample vs FeatureOfInterest** — proxy/sample is not the ultimate feature.
+15. **Execution vs ExecutionCollection** — occurrence and collection/grouping are different.
+16. **collection membership vs subsystem composition** — group membership does not imply part-of.
+17. **phenomenonTime vs resultTime vs execution start/end** — temporal semantics are deliberately distinct.
+18. **system capability vs ordinary external observation** — same Observation carrier can represent different semantic roles.
+19. **capability vs operating conditions** — performance and environment/context must remain distinct.
+20. **normal/suboptimal/survivable conditions** — desirability/operability levels are not interchangeable.
+21. **core ontology vs optional capability extension** — capability modeling is not required for base execution/system semantics.
+22. **2017 capability hierarchy vs 2023 Observation-based capability pattern** — edition change must not be silently erased.
+23. **class/system type vs individual System** — datasheet-like type description and particular instance are different.
+24. **ontology role classification vs CSAPI classification token** — formal RDF class assertion and application-profile classification must not be assumed equivalent without explicit mapping.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** System/Procedure/Execution separation; subsystem composition; role specialization; target Property/Feature semantics;
+- **likely reusable structural pattern:** generic Execution architecture specialized consistently into Observation, Actuation and Sampling;
+- **likely contextual relationship pattern:** Platform hosting and Deployment separated from System composition;
+- **likely capability pattern:** capability/performance represented separately from operating/survival context with explicit validity context;
+- **likely temporal pattern:** phenomenon time, result time and execution interval remain distinct;
+- **likely information/output pattern:** result, quality, collection and sample/proxy semantics separated from execution;
+- **likely provenance pattern:** executor + procedure + target + result + time + sample lineage;
+- **likely cross-cutting:** FeatureOfInterest, Property, Collection, Procedure and Deployment;
+- **profile-gap signal:** equipment identity/nameplate, detailed configuration, health/fault, communications, power and maintenance require additional donors;
+- **ontology caution:** SOSA/SSN classes/properties are semantic primitives; V2 must not mirror every OWL class as a DIM module or equate application-profile classification with RDF type automatically.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C14 status: COMPLETE.**
+
+**Next frozen lineage:** C15 — The Open Group SOSA.
+
