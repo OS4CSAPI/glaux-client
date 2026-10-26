@@ -1595,3 +1595,687 @@ The following distinctions are fundamental to the lineage:
 
 **Next frozen lineage:** C04 — Integrated Sensor Architecture (ISA).
 
+---
+
+# C04 — Integrated Sensor Architecture (ISA)
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 37, 42.  
+**Frozen companion IDs:** 28, 35, 36, 38–41, 43–45.
+
+**Controlling source-native artifacts inspected:**
+
+- PEO IEW&S, *Integrated Sensor Architecture (ISA): Data Model Specification*, Release 6.0, document revision 12, 31 October 2023.
+- PEO IEW&S, *Integrated Sensor Architecture (ISA): Software Design Document*, Document 6.0, revision 5, 31 October 2023.
+
+**Companion evidence used only to clarify the controlling structure:**
+
+- *ISA Component Requirements*, 6.0r4.
+- *ISA Controller Requirements*, 6.0r4.
+- *ISA Interface Control Document*, 6.0r5.
+- *ISA Introductory Guide*, 6.0r2.
+- other frozen ISA guidance/artifacts in the lineage.
+
+**Evidence note:** The project contains the complete Distribution A ISA 6.0 documents. This extraction stays centered on what ISA itself structures and standardizes. It does not treat the earlier MERLIN ISA assessment as independent authority and does not turn ISA interface behaviors into V2 truths.
+
+---
+
+## 1. Source-native structural organization
+
+ISA separates its model into several interacting structural layers.
+
+### A. System architecture
+
+The Software Design Document defines:
+
+1. **ISA Component**
+   - a component that complies with the ISA interface and supports required ISA capabilities/behaviors.
+
+2. **ISA Controller**
+   - an ISA Component that supplies the core ISA services.
+
+3. **ISA Composition**
+   - a collection of components that interoperates with a broader ISA network through a single ISA Component.
+
+4. **Composition Interface Component (CIC)**
+   - the ISA Component representing/accessing the composition to the broader ISA network.
+
+5. **Composition Member**
+   - a component contained in the composition other than the CIC;
+   - may or may not itself be an ISA Component.
+
+6. **ISA Network**
+   - a virtual network of interconnected ISA Components;
+   - relies on physical wired/wireless networks but is conceptually distinct from them.
+
+### B. Service architecture
+
+ISA 6.0 defines three core services:
+
+- **Communication Service**
+- **Authorization Service**
+- **Live Data Service**
+
+and allows optional services.
+
+The Communication Service is the keystone entry point for ISA communications and manages registration/configuration/status/request behaviors.
+
+### C. Capability architecture
+
+The DMS/SDD defines **ISA capability** as one of:
+
+- **Property**
+- **Observable**
+- **Command**
+
+The complete set of declarations supported by a component is the:
+
+- **Component Capability Description (CCD)**
+
+The DMS further defines:
+
+- Capability Declaration;
+- Property Declaration;
+- Observable Declaration;
+- Command Declaration;
+- Parameter Declaration;
+- Result Declaration;
+- Threshold/Range/Structure declarations;
+- Custom Type declarations.
+
+### D. Message architecture
+
+The DMS defines distinct ISA messages:
+
+- Administrative;
+- Config;
+- Event;
+- Registration;
+- Request;
+- Response;
+- Status.
+
+These are carried inside an Envelope/Header structure.
+
+### E. Reporting/data architecture
+
+The DMS separately defines a large set of:
+
+- Properties;
+- Observables;
+- Commands;
+- reporting data types;
+- common primitive/composite data types;
+- modality-specific data types.
+
+Examples span identity, position, relationship, power, status, sensor settings, detections, chemical/radiological information, imagery-related data and more.
+
+### F. Deployment architecture
+
+The SDD defines distributed deployment of Controllers and Components across tactical platforms and interconnected ISA networks.
+
+### G. Lifecycle architecture
+
+ISA defines explicit **communication lifecycle phases**:
+
+1. Connection
+2. Registration
+3. Configuration
+4. Operational
+5. Deregistration
+
+This is a lifecycle of ISA network participation, not an asset-service lifecycle.
+
+---
+
+## 2. Purpose of each partition
+
+### ISA Component
+
+Purpose: provide a common interoperable participant abstraction for networked devices, algorithms, adapters, user-facing systems and other integrating systems.
+
+### ISA Composition
+
+Purpose: expose a complex system or a collection of subcomponents through a single ISA-facing component while allowing different levels of visibility and mediation for internal members.
+
+### CIC
+
+Purpose: provide the composition's external ISA access point and mediate capabilities, data and tasking between the wider network and internal members.
+
+### ISA Network
+
+Purpose: define the virtual interoperability fabric through which components discover, report, publish, subscribe and task one another.
+
+### Core Services
+
+Purpose:
+- Communication Service: connectivity, registration, configuration management, status, availability, discovery/request handling;
+- Authorization Service: determine whether requested actions are permitted;
+- Live Data Service: support subscriptions/live data dissemination.
+
+### Capability declarations
+
+Purpose: advertise **what a component can report or do** before/independently of a particular live value or execution.
+
+### Properties
+
+Purpose: represent state information **about the component itself**.
+
+### Observables
+
+Purpose: declare information about **observations made by the component**.
+
+### Commands
+
+Purpose: declare tasks/actions that the component can execute upon request.
+
+### Messages
+
+Purpose: distinguish operational interactions:
+- component/network administration;
+- configuration/capability declaration;
+- observation publication;
+- registration;
+- task/property requests;
+- execution responses;
+- periodic/current status.
+
+### Lifecycle phases
+
+Purpose: control the component's progression from connection through participation/configuration to operational use and eventual deregistration.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Participation identity | ISA Component, UCI/identifier, ISA Controller |
+| Composition | ISA Composition, CIC, composition member, virtual ISA component |
+| Network | ISA Network, ISA interface, connections, client/server roles |
+| Services | Communication Service, Authorization Service, Live Data Service, optional services |
+| Capability | Capability Declaration, CCD, Property Declaration, Observable Declaration, Command Declaration, Custom Type Declaration |
+| Capability state | ready state, reporting state, property/observable/command state |
+| Messages | Administrative, Config, Event, Registration, Request, Response, Status |
+| Reporting/data | Properties, Observables, Commands, Reporting data types, modality-specific values |
+| Deployment | Controllers/components distributed on tactical platforms and interconnected across networks |
+| Lifecycle | Connection, Registration, Configuration, Operational, Deregistration |
+| History/query | Discover, History, subscriptions, message retrieval/query |
+| Relationship/context | Relationship property, position, owner/program/support contacts, resource descriptors |
+
+---
+
+## 4. Primary relationships
+
+ISA makes several relationship types explicit.
+
+### Component ↔ Controller
+
+- a non-Controller ISA Component connects to an ISA Controller;
+- the Controller accepts connections and supplies core services;
+- Controllers may interconnect with other Controllers.
+
+### Composition ↔ CIC ↔ members
+
+- an ISA Composition exposes itself to the broader ISA network through a CIC;
+- members may communicate with the CIC through ISA or native interfaces;
+- member capabilities may be represented individually or aggregated at the CIC.
+
+### Visibility relationship
+
+A composition member may be:
+
+- **visible** — announced and independently represented;
+- **opaque** — not announced; exposed capability appears to belong to the CIC;
+- **virtual ISA component** — a non-ISA member presented externally as though it were an ISA Component;
+- **transparent** — visible and externally taskable through the CIC;
+- **translucent** — visible but not directly taskable from outside.
+
+This is a source-native distinction between **physical/internal membership** and **external representation/visibility**.
+
+### Component ↔ capability
+
+A Component's CCD declares its:
+
+- Properties;
+- Observables;
+- Commands;
+- custom types.
+
+### Declaration ↔ current state/value
+
+Declarations define capability support. Config carries declarations and ready/reporting states. Status carries property values. Event carries observable values. Request/Response realizes commands and property queries.
+
+### Component ↔ relationship/context
+
+The DMS includes a `Relationship` property described as the physical relationship between a device and other devices, useful for deriving absolute position/orientation when mounted to another platform.
+
+### Component ↔ resources
+
+A component may expose Resource Descriptors for accessible media/streams generated by it.
+
+---
+
+## 5. Dependency boundaries
+
+ISA has unusually explicit dependency layering.
+
+### Domain content vs interface
+
+The **ISA interface** is defined by:
+
+- protocols/security technologies/encodings in the ICD;
+- message content in the DMS.
+
+Thus the semantic/message model and wire/presentation model are separate documents.
+
+### Component vs service
+
+Components provide/use services; services are not identical to Components.
+
+### Capability declaration vs execution/reporting
+
+A capability can be declared before it is ready, currently reporting, or actually executed/published.
+
+### Composition vs member visibility
+
+Internal composition does not force external resource visibility. The CIC decides whether member identity/capability is exposed, mediated or hidden.
+
+### ISA network vs physical network
+
+The ISA network is a **virtual network** relying on existing physical networks. Network membership must not be equated with physical network topology.
+
+### Deployment vs component identity
+
+Controllers/components are deployed on tactical platforms for availability/fault-tolerance reasons; platform placement is contextual to the component's ISA identity.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+ISA mixes device/component state and network context, but source-native partitions make the distinction visible.
+
+### Intrinsic to a component's ISA-facing description
+
+- UCI/identifier;
+- declared capabilities;
+- current property state;
+- current readiness/reporting state;
+- supported commands;
+- supported observables;
+- component-specific configuration;
+- manufacturer/model/serial/hardware/software information where reported;
+- operational properties such as position/power/mode.
+
+### Contextual/relational
+
+- network membership;
+- connected Controller;
+- deployment/platform placement;
+- ownership/support/program contacts;
+- physical relationship to another device/platform;
+- composition visibility and mediation through CIC;
+- subscription/query relationships;
+- authorization context.
+
+### Representation-dependent
+
+- whether an internal member is visible, opaque, virtual, transparent or translucent;
+- whether a capability is presented as belonging to the member or to the CIC.
+
+This is not intrinsic physical truth; it is an interoperability-presentation choice.
+
+---
+
+## 7. Cross-cutting concepts
+
+The following span multiple ISA partitions:
+
+- UCI/source identity;
+- time and stale time;
+- priority;
+- capability declaration;
+- ready state;
+- reporting state;
+- component availability;
+- authorization;
+- configuration;
+- queries/subscriptions;
+- ownership/support metadata;
+- physical relationship and position;
+- custom data types.
+
+Every message carries common metadata such as source, identifier, timing and priority.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+ISA has two distinct state structures.
+
+### A. ISA participation lifecycle
+
+The SDD explicitly defines:
+
+1. **Connection**
+   - establish secure connection/presentation format with Controller.
+
+2. **Registration**
+   - become a participant in the ISA network.
+
+3. **Configuration**
+   - declare capabilities to the network.
+
+4. **Operational**
+   - publish/subscribe/discover/task/execute/report while periodically sending status.
+
+5. **Deregistration**
+   - end network participation.
+
+This lifecycle is message/connection oriented.
+
+### B. Component state
+
+Capabilities have:
+
+- ready state;
+- reporting state where applicable.
+
+Properties carry current component state values.
+
+Status messages periodically communicate those values.
+
+Availability monitoring uses expected status reporting to determine component availability and can trigger re-registration/deregistration behavior.
+
+### Temporal message semantics
+
+ISA messages can carry:
+
+- time;
+- stale time;
+- history query before/after windows;
+- periodic reporting intervals.
+
+### Distinction
+
+**Participation lifecycle is not the same as equipment lifecycle.** ISA does not make service/repair/installation history the same thing as registration/configuration state.
+
+---
+
+## 9. Composition / topology organization
+
+ISA provides one of the strongest source-native distinctions between **composition topology** and **network topology**.
+
+### Composition topology
+
+An ISA Composition contains:
+
+- one CIC;
+- zero or more composition members.
+
+Members can be:
+
+- native ISA Components;
+- non-ISA components reached through native interfaces;
+- visible/opaque;
+- transparent/translucent;
+- virtualized as ISA Components.
+
+Composition-level capabilities can be synthesized from multiple member capabilities.
+
+### Network topology
+
+An ISA Network is a set of interconnected ISA Components using Controllers/services.
+
+Multiple Controllers can be interconnected to expand access across platforms.
+
+### Deployment topology
+
+Controllers may be distributed across tactical platforms for resilience and local access.
+
+### Physical relationship
+
+The DMS separately permits a physical `Relationship` property among devices/platforms.
+
+These structures must not be collapsed:
+
+- physical containment;
+- ISA composition;
+- ISA network membership;
+- tactical deployment;
+- external visibility
+
+are different source-native relationships.
+
+---
+
+## 10. Capability / function / behavior organization
+
+ISA defines capability unusually explicitly.
+
+### Capability categories
+
+A CCD contains declarations for:
+
+1. **Properties**
+   - state information the component can report about itself.
+
+2. **Observables**
+   - information the component can publish about observations it makes.
+
+3. **Commands**
+   - tasks the component can execute upon request.
+
+4. **Custom data types**
+   - component-defined structures built from ISA types.
+
+### Declarations
+
+The DMS separately defines:
+
+- ranges;
+- structures;
+- thresholds;
+- fields;
+- parameters;
+- command results;
+- mutability;
+- reporting constraints.
+
+### Capability state
+
+A declared capability can be:
+
+- ready/not ready;
+- reporting/not reporting where relevant.
+
+### Behavior realization
+
+Commands are invoked through Request and reported through Response.
+
+Observables are published through Event messages.
+
+Properties are reported through Status or queried through requests.
+
+Thus ISA preserves a four-way distinction:
+
+> **declared capability → current capability state → live value/output → invoked behavior/result**
+
+---
+
+## 11. Information / output organization
+
+ISA explicitly separates several information flows.
+
+### Configuration/self-description
+
+**Config** messages carry:
+
+- CCD;
+- property/observable/command states;
+- additional configuration data.
+
+### Component state
+
+**Status** messages carry current values of declared properties.
+
+### Observation output
+
+**Event** messages publish declared observables.
+
+### Command interaction
+
+**Request** invokes commands or queries properties.
+
+**Response** reports command execution state/result.
+
+### Administrative/network information
+
+**Administrative** messages report network/device connection changes and noteworthy network events.
+
+**Registration** messages control network participation.
+
+### Historical/query information
+
+The DMS includes:
+- `Discover` for current components/capabilities/state/property values;
+- `History` for querying previously published ISA messages;
+- live-data subscription mechanisms.
+
+This is a strong source-native separation among **description, state, observation, command, administration and history**.
+
+---
+
+## 12. Management / condition organization
+
+ISA management is first-class but primarily focused on interoperability/operation.
+
+### Configuration management
+
+Communication Service exchanges:
+
+- capability declarations;
+- readiness/reporting state;
+- configuration changes.
+
+### Status management
+
+Periodic Status reporting communicates component properties.
+
+### Availability management
+
+Controller monitors ongoing availability and responds to missed status/registration behavior.
+
+### Authorization
+
+Authorization Service evaluates permission for commands/actions.
+
+### Discovery
+
+Components/capabilities can be queried and discovered.
+
+### Condition data
+
+The DMS contains numerous properties representing:
+
+- Built-In Test result;
+- power state;
+- temperature;
+- reserve capacity;
+- receive/transmit power/data rate;
+- quality;
+- readiness/health-like operational status.
+
+ISA therefore carries condition/operational state strongly, but it does **not** define a full maintenance/service/work-order lifecycle comparable to an asset-management model.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity is foundational to ISA messaging.
+
+### UCI
+
+A Unique Component Identifier (UCI) identifies ISA Components.
+
+Messages cite:
+
+- source;
+- subject/about component(s);
+- target/destination as applicable.
+
+### Virtual-component identity
+
+A virtual ISA Component's identifier incorporates/associates it with its CIC.
+
+This preserves the distinction between:
+
+- externally represented component identity;
+- mediating CIC identity.
+
+### Product identity
+
+The DMS includes manufacturer/model/serial/version properties and describes manufacturer+model+serial as an expected globally unique equipment triplet where applicable.
+
+### Message identity/history
+
+Messages have conversation/message identifiers and timestamps.
+
+History/query mechanisms preserve references to past messages/results.
+
+ISA therefore combines:
+
+- component identity;
+- product/equipment identity;
+- message/source identity;
+- virtual/mediated identity
+
+without treating them as interchangeable.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+The following ISA distinctions are structurally important:
+
+1. **ISA Component vs physical device/system** — a Component is an ISA interface participant and can be software, adapter, controller or virtualized representation.
+2. **ISA Composition vs ISA Network** — internal integration boundary and interoperability network are different structures.
+3. **CIC vs composition member** — access/mediation responsibility is not the same as member identity.
+4. **Physical member vs virtual ISA Component** — external representation can differ from physical/native implementation.
+5. **Visible vs opaque member** — existence/identity exposure is independent of internal composition.
+6. **Transparent vs translucent member** — visibility and taskability are different.
+7. **Member capability vs composition-level capability** — the CIC can expose synthesized/aggregate capability.
+8. **Property vs Observable vs Command** — component state, observation output and executable task are distinct capability kinds.
+9. **Capability declaration vs capability state** — support and current readiness/reporting are different.
+10. **Capability state vs live value** — readiness does not equal current property/observation content.
+11. **Config vs Status vs Event vs Request/Response** — description, state, observation and task interaction are different message responsibilities.
+12. **ISA participation lifecycle vs equipment lifecycle** — connect/register/configure/operate/deregister is not maintenance/deployment/service history.
+13. **ISA Network vs physical network** — virtual interoperability topology and physical communications topology are distinct.
+14. **Deployment/platform placement vs component identity** — co-location on a platform does not make the platform the Component.
+15. **Message/source identity vs manufacturer/product identity** — protocol identity and durable equipment identity serve different functions.
+16. **Physical relationship vs interface composition** — being mounted to a platform is not the same as being represented behind a CIC.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** explicit separation of system/component identity, capability declarations, current state, observable output and executable commands;
+- **likely reusable structural pattern:** composition with mediated/virtual member visibility;
+- **likely cross-cutting:** capability readiness/reporting state, authorization, discovery, availability, message provenance/time;
+- **likely contextual relationship pattern:** network participation, platform deployment, ownership/support, physical relationship;
+- **likely dynamic-information pattern:** Config/Status/Event/Request/Response separation plus History/Discover;
+- **likely management pattern:** explicit interoperability lifecycle and availability/configuration management;
+- **likely topology pattern:** composition topology, network topology and deployment topology remain distinct;
+- **binding/representation caution:** UCI, ISA messages, CIC visibility states and ISA services are ISA-native architecture/interface constructs and are not automatically V2 resources or conformance requirements.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C04 status: COMPLETE.**
+
+**Next frozen lineage:** C05 — ISO/IEC 29182 Sensor Network Reference Architecture (SNRA).
+
