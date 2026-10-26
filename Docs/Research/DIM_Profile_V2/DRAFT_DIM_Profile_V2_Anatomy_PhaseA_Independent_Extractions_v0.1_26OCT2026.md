@@ -5824,3 +5824,646 @@ The model therefore separates **address-space identity, durable product identity
 
 **Next frozen lineage:** C11 — OSUS / OSUS-R.
 
+---
+
+# C11 — OSUS / OSUS-R
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 34.  
+**Frozen companion IDs:** 27, 59.
+
+**Primary inspected source:** OSUS-R repository pinned at revision:
+
+`d09088fbe56d4b64f0544d72e98c3cb70fa941f6`
+
+Key source-native artifacts inspected include:
+
+- `mil.dod.th.core.asset.Asset`
+- `mil.dod.th.core.asset.AssetProxy`
+- `AssetFactory`
+- `AssetCapabilities.xsd`
+- `BaseCapabilities.xsd`
+- `Observation.xsd`
+- representative command/status/capability structures in the pinned code/schema tree.
+
+**Evidence note:** OSUS-R is a reference implementation and executable information/interface model, not a normative external SDO standard in the same sense as OGC/ISO/IEEE. Its strength here is direct implementation evidence from the unattended-sensor community. The frozen bibliography labels the pinned artifact “OSUS-R Contributors. 2026,” while the pinned revision itself resolves to a 22 February 2023 commit; this provenance discrepancy remains recorded and is not silently corrected in the frozen bibliography.
+
+---
+
+## 1. Source-native structural organization
+
+OSUS-R organizes the unattended-sensor domain around the **Asset** as the consumer-facing whole device.
+
+### A. Asset
+
+`Asset` is defined as a physical device that typically:
+
+- produces data; or
+- responds to commands.
+
+Examples include:
+- motion detector;
+- camera;
+- UAV;
+- security gate;
+- valve actuator;
+- engine;
+- radio.
+
+One Asset may have multiple sensors.
+
+The Asset interface exposes the consumer-facing operational contract.
+
+### B. AssetProxy
+
+`AssetProxy` is the plug-in/implementation-side adapter for interacting with the physical hardware.
+
+The core intentionally hides this plug-in implementation from consumers; all functionality needed by consumers should be reachable through `Asset`.
+
+### C. AssetFactory / product type
+
+Asset factories describe an Asset product/type and provide its `AssetCapabilities`.
+
+This separates:
+- product/factory capability definition; from
+- individual Asset instance identity/state.
+
+### D. AssetCapabilities
+
+`AssetCapabilities` extends BaseCapabilities and organizes advertised support for:
+
+- product name/description/manufacturer;
+- sensing modalities;
+- min/max/nominal range;
+- min/max/nominal field of view;
+- supported cameras;
+- status capabilities;
+- detection capabilities;
+- digital-media capabilities;
+- audio capabilities;
+- image capabilities;
+- video capabilities;
+- command capabilities;
+- observation capabilities;
+- zeroize capabilities.
+
+### E. Observation
+
+`Observation` is a persistent data/result object with:
+
+- its own UUID/version;
+- source Asset UUID/name/type;
+- optional sensor ID;
+- observed and created timestamps;
+- Asset position/orientation;
+- platform orientation;
+- pointing location;
+- sensing modalities;
+- test-mode state;
+- related observations;
+- one major observation payload type.
+
+Observation payload types include:
+
+- Detection;
+- Status;
+- Weather;
+- WaterQuality;
+- CBRNE trigger;
+- Biological;
+- Chemical;
+- Power;
+- digital media plus audio/image/video/channel metadata.
+
+### F. Commands / Responses
+
+Assets expose:
+
+- generic command execution;
+- command-specific schemas/types;
+- Response types;
+- event notifications for command responses/updates.
+
+### G. Status / BIT
+
+Asset status is represented through **Status Observations** and summary status values.
+
+Built-In Test (BIT) returns Status and can update/persist status observations.
+
+### H. Activation lifecycle
+
+Asset has explicit operational lifecycle transitions:
+
+- will activate;
+- activation complete/failed;
+- will deactivate;
+- deactivation complete/failed.
+
+The source-native pattern is therefore:
+
+> **physical Asset instance → product/factory capabilities → hidden hardware plug-in → observations/status → commands/responses → operational activation/BIT/events**
+
+---
+
+## 2. Purpose of each partition
+
+### Asset
+
+Purpose: define the stable consumer-facing operational identity/contract for the whole physical device.
+
+### AssetProxy
+
+Purpose: isolate device-specific protocol/hardware implementation from the common Asset interface.
+
+### AssetFactory / capabilities
+
+Purpose: define what a product type supports and make capability information available before/independently from one runtime observation.
+
+### AssetCapabilities
+
+Purpose: advertise supported sensing modalities, outputs, performance envelope, status fields and commands.
+
+### Observation
+
+Purpose: persist source-attributed data produced by the Asset, including both sensing outputs and status/condition outputs.
+
+### Command / Response
+
+Purpose: represent control/tasking interaction separately from observation publication.
+
+### Status
+
+Purpose: represent current Asset/component operating state/health information.
+
+### BIT
+
+Purpose: explicitly test the Asset itself and return status after the test.
+
+### Activation/deactivation
+
+Purpose: govern when the OSUS runtime should initiate or cease communication/data/control behavior with the physical Asset.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Whole equipment | Asset, physical device, UUID/name/product type |
+| Implementation adapter | AssetProxy, AssetContext, plug-in |
+| Product/type | AssetFactory, FactoryDescriptor, product type |
+| Capability | AssetCapabilities, modality, range/FOV, command/status/detection/media capability |
+| Sensing internals | sensorId, supported cameras/sensors |
+| Observation | Observation UUID, timestamps, source Asset, modality, payload type, related observations |
+| Status | Status, SummaryStatusEnum, component status, status observation |
+| Detection | Detection type, classification, location/range/orientation/speed, signatures, probability |
+| Media | DigitalMedia, audio/image/video/channel metadata |
+| Control | Command, Response, command capability, pan/tilt, mode, position, capture, zeroize, recording |
+| Lifecycle | activation/deactivation events/state |
+| Self-test | BIT / performBit |
+| Communications | Asset-owned communication behavior/protocol handling |
+
+---
+
+## 4. Primary relationships
+
+### Asset ↔ AssetProxy
+
+One Asset consumer-facing object delegates custom/device-specific behavior to its plug-in AssetProxy.
+
+The two are intentionally not the same interface role.
+
+### Asset ↔ AssetFactory/product type
+
+Asset instance is created/managed from an AssetFactory/product type whose capabilities describe the supported product behavior.
+
+### Asset ↔ sensors
+
+One Asset may have multiple sensors.
+
+`captureData(sensorId)` and Observation `sensorId` preserve internal sensor/source identity without making every sensor the whole Asset.
+
+### Asset ↔ Observation
+
+Observation carries:
+- Asset UUID;
+- Asset name;
+- Asset type;
+- Asset position/orientation;
+- optional internal sensor ID.
+
+The core automatically fills many of these provenance fields.
+
+### Observation ↔ related Observation
+
+Observation can reference other observations with an explicit relationship type and description.
+
+### Asset ↔ Status
+
+The current/latest status is persisted as a Status Observation.
+
+### Asset ↔ Command/Response
+
+Command targets the Asset operational interface; Response returns command result/data.
+
+### Asset ↔ communications
+
+The Asset plug-in owns/handles the native communications/protocol to physical hardware.
+
+The communications mechanism is implementation support, not the Asset identity itself.
+
+---
+
+## 5. Dependency boundaries
+
+OSUS-R has several explicit implementation/domain boundaries.
+
+### Consumer contract vs implementation
+
+Consumers interact with `Asset`; they should not directly call `AssetProxy`.
+
+This is a strong source-native separation between:
+- domain/operational interface; and
+- device-specific implementation adapter.
+
+### Product/type vs instance
+
+Capabilities are supplied by the AssetFactory/product definition, while runtime state/identity belongs to the individual Asset.
+
+### Capability vs runtime output
+
+AssetCapabilities says what the Asset can support; Observations/Status/Responses contain runtime information.
+
+### Observation vs status
+
+Status is modeled as an Observation subtype/content rather than as a separate unrelated storage system, but its semantic role remains distinct.
+
+### Asset vs internal sensor
+
+One Asset can expose multiple sensor IDs. Internal sensing element identity is subordinate to the whole Asset identity.
+
+### Core-filled provenance vs plug-in payload
+
+AssetProxy creates/returns Observation content; the core automatically sets:
+- system ID;
+- observation version;
+- test mode;
+- Asset UUID/name/type;
+- timestamps;
+- UUID;
+- Asset location/orientation where applicable.
+
+This separates domain-source provenance responsibility from device-specific content production.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic to Asset
+
+- Asset UUID/name/product type;
+- supported modalities/capabilities;
+- native command support;
+- internal sensors/cameras;
+- Asset communication implementation;
+- activation state;
+- BIT support;
+- status capability;
+- intrinsic range/FOV/performance characteristics.
+
+### Contextual/operational
+
+- current Asset location/orientation;
+- platform orientation;
+- pointing location;
+- test mode;
+- current status;
+- current captured observation;
+- current command interaction.
+
+### External/platform context
+
+Platform orientation is carried distinctly from Asset orientation, showing that the platform is contextual rather than automatically identical to the Asset.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting structures include:
+
+- UUID identity;
+- factory/product type;
+- sensing modality;
+- sensor ID;
+- timestamps;
+- location/orientation;
+- test mode;
+- status summary;
+- observation provenance;
+- event topics;
+- command/response typing;
+- media types;
+- classifications.
+
+These span multiple Observation and Asset interaction types.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+OSUS-R has a clear **operational runtime lifecycle**.
+
+### Activation lifecycle
+
+- WILL_BE_ACTIVATED
+- ACTIVATION_COMPLETE
+- ACTIVATION_FAILED
+- WILL_BE_DEACTIVATED
+- DEACTIVATION_COMPLETE
+- DEACTIVATION_FAILED
+
+Activation generally begins communications with hardware and data/status behavior; deactivation generally ceases communication.
+
+### Capture/activity state
+
+Asset exposes whether it is:
+- capturing data;
+- performing BIT.
+
+### Status state
+
+Status uses summary status values and description.
+
+Status change is published as an event and persisted as a Status Observation.
+
+### Observation time
+
+Observation distinguishes:
+- observed timestamp;
+- created timestamp.
+
+### Test mode
+
+Observation records whether the producing system was in test mode.
+
+### Limit
+
+The pinned OSUS-R model does not expose a comprehensive long-term equipment lifecycle equivalent to procurement/installation/service/work history; its strongest lifecycle structure is operational/runtime state plus persisted observations/events.
+
+---
+
+## 9. Composition / topology organization
+
+OSUS-R is less explicit about general physical composition than AAS/MIMOSA/OPC, but it has several useful structures.
+
+### Whole Asset vs internal sensors
+
+An Asset can contain/support multiple sensor IDs.
+
+### Cameras
+
+AssetCapabilities can enumerate supported cameras and media capabilities.
+
+### Component status
+
+StatusCapabilities can enumerate component types for which the plug-in provides status.
+
+### Communications
+
+Every Asset is expected to have some communications mechanism handled by the plug-in.
+
+### Platform context
+
+Observation carries both:
+- Asset orientation;
+- platform orientation.
+
+This implies distinction between the Asset and a platform it may be mounted on.
+
+### Important limit
+
+The pinned core does **not** define a generic recursive physical BOM/component hierarchy for arbitrary Asset internals. Its composition model is operationally oriented around sensors/cameras/status components rather than a universal assembly model.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is a first-class source-native structure.
+
+### Base product capability
+
+BaseCapabilities supplies:
+- product name;
+- description;
+- manufacturer;
+- representative media/images.
+
+### Asset capability
+
+AssetCapabilities adds:
+- sensing modalities;
+- performance ranges/FOV;
+- supported cameras;
+- detection capability;
+- status capability;
+- media capability;
+- command capability;
+- observation capability;
+- security/zeroize capability.
+
+### Command capability
+
+Command capability says whether the Asset supports operations such as:
+- capture data;
+- capture by sensor ID;
+- BIT;
+- mode/control operations;
+- other command-specific functions.
+
+### Observation capability
+
+ObservationCapabilities says what optional fields/data the Asset can populate.
+
+### Detection capability
+
+DetectionCapabilities says what target/detection features can be provided.
+
+The source therefore distinguishes:
+
+> **supported capability → actual command/observation execution → produced result/status**
+
+---
+
+## 11. Information / output organization
+
+OSUS-R has a rich observation taxonomy.
+
+### Observation base
+
+Every Observation carries common:
+- source Asset identity;
+- timing;
+- test mode;
+- location/orientation;
+- modality;
+- optional sensor ID.
+
+### Observation payload specialization
+
+A single Observation can carry one major payload family such as:
+- Detection;
+- Status;
+- Weather;
+- Water Quality;
+- CBRNE trigger;
+- Biological;
+- Chemical;
+- Power;
+- Digital Media + audio/image/video/channel metadata.
+
+### Related Observations
+
+Observations can reference other observations by UUID with explicit relationship type.
+
+### Status Observation
+
+Status is represented/persisted as observation information while retaining its distinct semantic subtype.
+
+### Command result
+
+Command Response is separate from Observation.
+
+The source-native information architecture therefore distinguishes **observation/result data, status observation, media payload, command response and event notification**.
+
+---
+
+## 12. Management / condition organization
+
+OSUS-R has strong runtime management semantics.
+
+### Activation/deactivation
+
+Controls whether the Asset is actively communicating/operating.
+
+### Status
+
+The Asset maintains/persists current status and publishes changes.
+
+### BIT
+
+Built-In Test evaluates the Asset itself and yields Status.
+
+### Command/control
+
+Command interface supports:
+- mode;
+- position;
+- pan/tilt;
+- profiles;
+- tune settings;
+- recording;
+- capture;
+- zeroize;
+- other device-specific behaviors.
+
+### Configuration
+
+AssetProxy receives Asset configuration properties through AssetContext.
+
+### Security/zeroize
+
+Capabilities can explicitly indicate support for zeroizing:
+- keys;
+- configuration;
+- stored sensor data;
+- code/firmware.
+
+### Limit
+
+The pinned model is strong on operational management and condition/status, but comparatively weak on maintenance work history, durable parts inventory and organizational asset lifecycle.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+OSUS-R makes source identity explicit in observations and events.
+
+### Asset identity
+
+Assets have:
+- UUID;
+- name;
+- product/factory type.
+
+### Observation identity
+
+Observation has its own:
+- UUID;
+- version;
+- created time;
+- observed time;
+- source Asset UUID/name/type;
+- optional sensor ID;
+- originating Terra Harvest system ID.
+
+### Related observations
+
+ObservationRef preserves related Observation UUID plus relationship type.
+
+### Automatic provenance
+
+Core populates source/provenance fields so plug-ins do not have to reproduce them independently.
+
+### Product identity
+
+AssetFactory/capabilities supply product name/description/manufacturer/type-level semantics.
+
+The source therefore distinguishes **Asset instance identity, product/type identity, internal sensor identity and observation identity**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Asset vs AssetProxy** — consumer-facing whole-device abstraction and device-specific implementation adapter are different.
+2. **Asset instance vs AssetFactory/product type** — runtime instance and reusable product/capability definition are different.
+3. **Asset vs internal sensor ID** — whole equipment and individual sensing element/channel are different scopes.
+4. **Capability vs runtime observation/command** — supported functionality and actual output/execution are different.
+5. **Observation vs Command Response** — sensed/status data and control result are different information types.
+6. **Status Observation vs ordinary sensing Observation** — shared persistence envelope does not erase semantic difference.
+7. **Asset orientation vs Platform orientation** — equipment pose and host-platform pose are distinct.
+8. **observed timestamp vs created timestamp** — phenomenon/source time and object-creation time are different.
+9. **Asset UUID vs Observation UUID** — persistent source identity and data-item identity are different.
+10. **Asset type/product type vs Asset name/UUID** — product classification and instance identity differ.
+11. **internal sensor identity vs modality** — which internal sensor produced data and what phenomenology/modalities are involved are different.
+12. **activation state vs health/status** — being activated and being healthy are not the same.
+13. **BIT result vs continuous/current status** — explicit self-test output and ongoing status should not be collapsed.
+14. **native communications implementation vs Asset domain identity** — protocol handling is deliberately hidden behind the Asset interface.
+15. **event topic vs persisted domain data** — runtime event notification and persistent Observation/Response are different mechanisms.
+16. **component status availability vs recursive physical composition** — knowing status for a component type does not establish a complete BOM.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** whole-device identity; product/type vs instance separation; internal sensor identity; advertised capability;
+- **likely reusable structural pattern:** consumer-facing equipment abstraction separated from source-specific hardware/protocol adapter;
+- **likely dynamic-information pattern:** observation/status/command-response separation with common source provenance;
+- **likely management pattern:** activation, status, BIT, configuration and command behavior;
+- **likely capability pattern:** modality/performance/output/command/status/media capability declared before runtime use;
+- **likely provenance pattern:** automatic persistent source identity on every Observation plus internal sensor ID;
+- **likely contextual relationship pattern:** Asset vs host-platform orientation/pose;
+- **specialization evidence:** UGS/device operations such as capture, pan/tilt, recording, zeroize, detection features;
+- **composition limit:** OSUS-R does not itself supply a universal recursive equipment BOM, so its internal-sensor/component structures should not be over-generalized;
+- **binding/implementation caution:** Asset, AssetProxy, event topics, JAXB/protobuf structures and Java interfaces are OSUS-R implementation constructs and are not automatically V2 resources/classes.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C11 status: COMPLETE.**
+
+**Next frozen lineage:** C12 — SAPIENT.
+
