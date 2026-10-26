@@ -3,7 +3,7 @@
 ## Version 2 Working Draft
 
 **Working draft v0.1 — 25 October 2026**  
-**Working title:** The final domain-family name remains open.  
+**Working title:** “Sensor Systems” is descriptive working wording; no additional boundary-defining model class/name is currently required.  
 **Standing:** Clean V2 artifact; contains only established working decisions and explicitly identified candidates/open items.
 
 ## 1. Purpose and standing
