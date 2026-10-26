@@ -15579,3 +15579,352 @@ This is a domain-specific provenance chain:
 
 **Next frozen lineage:** S03 — SWEET instrument ontology.
 
+---
+
+# S03 — SWEET instrument ontology
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 142, 143.  
+**Frozen companion ID:** 155.
+
+**Primary inspected source:**
+
+- ESIP Federation, SWEET ontology suite.
+- `matrInstrument.ttl`, owl:versionInfo **3.6.0**.
+- `matrEquipment.ttl`, owl:versionInfo **3.6.0**.
+
+**Companion evidence:**
+
+- Raskin and Pan (2005), historical SWEET design paper, used only as explanatory lineage context.
+
+**Evidence note:** SWEET is a broad Earth/environment semantic ontology suite. This specialization extraction is deliberately limited to the frozen equipment/instrument material and directly imported measurement-property semantics. It does not treat the entire SWEET suite as an equipment information model.
+
+---
+
+## 1. Source-native structural organization
+
+The frozen SWEET instrument lineage uses a compact ontology hierarchy.
+
+### Equipment hierarchy
+
+`matrEquipment` includes:
+
+- **MaterialThing**
+  - **Infrastructure**
+    - **Equipment**
+      - CommunicationsEquipment;
+      - ComputerHardware;
+      - NavigationEquipment;
+      - TransportationEquipment;
+      - Wells and other equipment classes.
+
+### Instrument hierarchy
+
+`matrInstrument` defines:
+
+- **Instrument**
+  - subclass of SWEET Equipment.
+
+- **Device**
+  - equivalent to Instrument.
+
+- **Sensor**
+  - subclass of:
+    - SWEET Instrument;
+    - `sosa:Sensor`.
+
+- instrument specializations such as:
+  - Anemometer;
+  - Buoy;
+  - GPS / GlobalPositioningSystem;
+  - LIDAR;
+  - Magnetogram;
+  - Manometer;
+  - OpticalInstrument;
+  - Microscope;
+  - Piezometer;
+  - Radar / DopplerRadar;
+  - Telescope;
+  - Thermometer / Telethermometer;
+  - Tensiometer;
+  - TideGauge.
+
+### Measurement restrictions
+
+Several instrument classes carry restrictions using SWEET's `measures` relation, for example:
+
+- Anemometer → WindSpeed;
+- Manometer/Piezometer → Pressure;
+- Thermometer → Temperature;
+- TideGauge → OceanTide.
+
+The source-native anatomy is therefore a **classification/specialization ontology connecting physical Equipment → Instrument/Device → Sensor/instrument type → measured property/domain concept**.
+
+---
+
+## 2. Purpose of each partition
+
+### Equipment
+
+Purpose: provide a broad material/infrastructure class for tangible equipment beyond sensing.
+
+### Instrument / Device
+
+Purpose: narrow Equipment to scientific/measurement/instrument entities.
+
+### Sensor
+
+Purpose: intersect SWEET's physical Instrument concept with the external SOSA sensing-role concept.
+
+### Instrument subclasses
+
+Purpose: provide recognized discipline/product classes such as radar, lidar and thermometer.
+
+### Measurement restriction
+
+Purpose: semantically constrain the type of property/phenomenon associated with a given instrument class.
+
+### Imported domain property modules
+
+Purpose: reuse established SWEET property/phenomenon concepts rather than defining local strings inside the instrument ontology.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Material hierarchy | MaterialThing, Infrastructure, Equipment |
+| Measurement equipment | Instrument, Device |
+| Sensing role | Sensor, sosa:Sensor |
+| Instrument categories | Radar, LIDAR, Thermometer, Anemometer, Manometer, TideGauge, OpticalInstrument |
+| Measured phenomena | Temperature, Pressure, WindSpeed, OceanTide |
+| Semantic relation | measures |
+| Broader equipment roles | CommunicationsEquipment, NavigationEquipment, TransportationEquipment |
+
+---
+
+## 4. Primary relationships
+
+### Equipment → Instrument
+
+Instrument is a subclass of Equipment.
+
+### Device ↔ Instrument
+
+SWEET Device is explicitly equivalent to Instrument in this module.
+
+### Sensor → Instrument and sosa:Sensor
+
+SWEET Sensor uses multiple inheritance:
+- physical/instrument classification from SWEET;
+- sensing-role classification from SOSA.
+
+### Specialized instrument → Instrument
+
+Concrete scientific instrument classes specialize Instrument.
+
+### Instrument class → measured property
+
+`measures` restrictions bind certain instrument classes to a property/phenomenon class.
+
+### Equipment subclasses → activity/role/realm
+
+The broader Equipment module uses relations such as:
+- hasHumanActivity;
+- hasRole;
+- hasRealm
+
+to qualify equipment categories independently from the Instrument hierarchy.
+
+---
+
+## 5. Dependency boundaries
+
+### Instrument semantics vs equipment semantics
+
+`matrInstrument` imports `matrEquipment`; physical/equipment classification is therefore a dependency rather than redefined locally.
+
+### SWEET Sensor vs SOSA Sensor
+
+SWEET reuses `sosa:Sensor` through subclassing instead of redefining the sensing-role ontology.
+
+### Instrument class vs measured property
+
+Instrument class and phenomenon/property are modeled in separate ontology modules connected by `measures`.
+
+### Classification vs instance information
+
+The frozen SWEET material is primarily a class/vocabulary hierarchy. It does not supply a rich instance-level asset record, lifecycle or telemetry model.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic/classifying
+
+- equipment/instrument/sensor class;
+- scientific instrument subtype;
+- measured-property restriction.
+
+### Contextual/domain
+
+- broader environmental realm;
+- human activity/role for some Equipment subclasses;
+- specific deployment/location;
+- instance configuration.
+
+The frozen instrument module does not attempt to encode operational context around a particular deployed device.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting SWEET semantics relevant here include:
+
+- Equipment;
+- role;
+- realm;
+- activity;
+- measured property;
+- imported SOSA Sensor semantics.
+
+Because the suite is modular, instrument meaning depends on concepts distributed across property/phenomenon/relationship ontologies.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+The frozen SWEET Instrument/Equipment modules do **not** define:
+
+- operational modes;
+- current state;
+- lifecycle events;
+- maintenance history;
+- configuration history.
+
+**Evidence result:** not applicable as a substantive anatomy partition in this lineage.
+
+---
+
+## 9. Composition / topology organization
+
+The frozen SWEET Instrument/Equipment modules provide **class hierarchy**, not equipment composition.
+
+They do not define:
+- part/subcomponent;
+- hosting;
+- physical connection;
+- network topology;
+- bill of materials.
+
+The relevant topology is ontological subclass/equivalence/restriction structure only.
+
+---
+
+## 10. Capability / function / behavior organization
+
+Capability is expressed minimally through **class semantics and measured-property restrictions**.
+
+Examples:
+- Thermometer measures Temperature.
+- Anemometer measures WindSpeed.
+- Sensor is also a SOSA Sensor.
+
+The frozen source does not define:
+- callable actions;
+- modes;
+- capability state;
+- configurable performance.
+
+Thus its strength is **semantic typing of what kind of instrument something is and what it measures**, not operational behavior.
+
+---
+
+## 11. Information / output organization
+
+The frozen module does not define measurement records, streams, observations or result schemas.
+
+It links instrument classes to **what they measure**, while observation/result structures remain external (e.g. SOSA/other models).
+
+This distinction is important:
+- instrument classification;
+- measured-property classification;
+- actual observation/result
+
+are separate responsibilities.
+
+---
+
+## 12. Management / condition organization
+
+No generic management/condition structure is present in the frozen instrument/equipment modules.
+
+The ontology does not define:
+- health;
+- status;
+- diagnostics;
+- service;
+- software update;
+- calibration record.
+
+**Evidence result:** not applicable as a source-native management anatomy donor.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+The frozen SWEET material provides **semantic URI identity for classes**, not rich real-world asset identity.
+
+It establishes:
+- ontology URIs;
+- version information;
+- imported ontology dependencies;
+- class equivalence/subclass relationships.
+
+It does not define:
+- equipment serial number;
+- instance UUID;
+- producer/source provenance;
+- observation lineage.
+
+Thus class/vocabulary identity must remain distinct from instance/product identity.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Equipment vs Instrument** — broad material equipment and measurement/scientific instrument are different classes.
+2. **Instrument vs Sensor** — sensing is a specialization/role beyond generic instrument.
+3. **Device ≡ Instrument in this module** — SWEET's local Device meaning is deliberately narrower than generic cross-community Device semantics.
+4. **SWEET Sensor vs only SWEET Instrument** — multiple inheritance adds SOSA sensing semantics that Instrument alone lacks.
+5. **instrument class vs measured property** — equipment type and phenomenon/property type are different.
+6. **Radar/LIDAR/Thermometer classes vs Sensor supertype** — domain instrument specialization and generic sensing role differ.
+7. **class URI vs deployed instance identity** — ontology term and real-world equipment instance are different.
+8. **subclass relation vs physical composition** — taxonomic hierarchy is not a part-of hierarchy.
+9. **measures restriction vs actual Observation** — capability/semantic association and measurement occurrence differ.
+10. **SWEET ontology scope vs full device information model** — classification semantics should not be mistaken for configuration/lifecycle/telemetry support.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **specialization validation:** externally established instrument classes can sit beneath a generic equipment/sensing boundary without changing the common anatomy;
+- **likely semantic-typing pattern:** Equipment → Instrument/Device → Sensor/specialized instrument;
+- **likely role/realization pattern:** SWEET Sensor's simultaneous Instrument + SOSA Sensor inheritance directly validates combining physical equipment and sensing semantics;
+- **likely property-link pattern:** instrument class and measured property can be semantically linked without embedding observation records;
+- **likely vocabulary reuse:** radar, lidar, thermometer and other recognized instrument classes may support domain specialization where applicable;
+- **scope caution:** the frozen SWEET modules do not contribute lifecycle, composition, state, management, capability-state or result structures;
+- **ontology caution:** subclass/equivalence/restriction hierarchy should not be converted mechanically into V2 module/resource hierarchy.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**S03 status: COMPLETE.**
+
+**Next frozen lineage:** S04 — UGS operational / reference systems.
+
