@@ -177,7 +177,34 @@ Source artifact: <document/model version>
 
 The rendered figure need not display all of this metadata, but the title and sufficient status/context must be visible when omission could cause confusion.
 
-### 8.4 File naming
+### 8.4 Repository figure workflow
+
+For maintained V2 documents, prefer a **text-based or vector figure artifact in the repository** rather than treating a generated raster image as the only source. The default workflow is:
+
+1. Author the diagram from version-controlled source, preferably PlantUML for UML views or SVG for controlled explanatory/context figures.
+2. Commit the editable source and the rendered/vector figure under the V2 workspace.
+3. Embed the repository SVG directly in Markdown when GitHub rendering is required.
+4. Render the same figure to PNG only when a raster image is needed for Word, PDF, slides, or another toolchain that does not reliably consume SVG.
+5. Keep the SVG/source and raster derivative synchronized under stable descriptive names.
+6. Never reconstruct the repository figure manually from the raster derivative if the editable/vector source exists.
+
+This workflow is preferred because SVG is text-based, remains sharp at any display size, renders directly in GitHub Markdown, and can be committed through normal UTF-8 repository tooling. It also avoids unnecessary binary-upload friction while preserving a reproducible figure artifact. A generated PNG or JPEG may still be useful as a delivery derivative, but it is not the authoritative repository source when an SVG or PlantUML source exists.
+
+For example:
+
+```text
+Figures/
+  Figure_1_V2_Artifact_Architecture.svg
+  Figure_1_V2_Artifact_Architecture.png   # optional delivery derivative
+
+Visualization/
+  source/
+    Figure_1_V2_Artifact_Architecture.puml   # when PlantUML is the authoring source
+```
+
+When the figure is authored directly as SVG rather than generated from PlantUML, the SVG itself is the maintained repository source. The same semantic and visual-quality rules in this guide still apply.
+
+### 8.5 File naming
 
 Use a stable descriptive basename, for example:
 
