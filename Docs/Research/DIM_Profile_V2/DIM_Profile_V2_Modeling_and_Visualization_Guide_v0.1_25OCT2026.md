@@ -196,6 +196,8 @@ The core rule is:
 
 > **One figure = one source = multiple mechanical renders.**
 
+**Acceptance gate:** A figure is not considered maintained, approved, or ready for reuse until the GitHub rendering and the Word/PDF rendering have both been inspected and confirmed to show the **same figure from the same canonical source**. If one format is visually or semantically different, the figure fails review and must not be propagated elsewhere.
+
 This prevents a failure mode in which a clean Word figure and a different GitHub figure silently drift apart. It also prevents text-overflow problems caused by manually positioning long SVG text without a layout engine. Generated SVG is preferred for repository display because it remains sharp at any size and is Git-friendly; raster output is a delivery derivative, not an independent design artifact.
 
 For example:
@@ -391,6 +393,8 @@ Before presenting or committing a substantive V2 diagram, verify all items below
 
 - [ ] Editable/text diagram source is preserved.
 - [ ] Rendered output matches the source.
+- [ ] GitHub and Word/PDF show the same canonical figure rather than independently recreated versions.
+- [ ] I inspected both delivery formats for overflow, clipping, connector drift, and semantic differences.
 - [ ] The source can be regenerated without manually reconstructing the layout or semantics.
 - [ ] The source file and rendered figure have stable descriptive names.
 
