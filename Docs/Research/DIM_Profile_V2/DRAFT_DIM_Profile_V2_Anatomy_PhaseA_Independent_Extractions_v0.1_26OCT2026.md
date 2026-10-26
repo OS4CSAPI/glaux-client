@@ -4528,3 +4528,665 @@ The standard therefore distinguishes **persistent domain identity, API resource 
 
 **Next frozen lineage:** C09 — OGC SensorML.
 
+---
+
+# C09 — OGC SensorML 3.0
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 13.  
+**Frozen companion IDs:** 1, 2, 4, 6, 16.
+
+**Primary inspected source:**
+
+- Open Geospatial Consortium, *OGC SensorML Encoding Standard*, OGC 23-000, version 3.0, published 16 July 2025:
+  - `https://docs.ogc.org/is/23-000/23-000.html`
+  - normative conceptual UML plus normative JSON encodings.
+
+**Companion evidence:**
+
+- SensorML 3.0 JSON schema collection;
+- historical marine/discovery profiling material in the frozen corpus.
+
+**Evidence note:** SensorML 3.0 itself defines both the conceptual models and JSON encodings. This extraction treats the UML/process semantics as the source-native structural evidence and keeps JSON members/schema mechanics as implementation details unless they directly implement a conceptual distinction. Historical profile material is used only as lineage/context and not as authority over SensorML 3.0.
+
+---
+
+## 1. Source-native structural organization
+
+SensorML is organized around a **general process model** in which physical hardware, software/computational processes, sensors, actuators and whole systems are all modeled as processes with explicit inputs, outputs, parameters and methods.
+
+The principal source-native conceptual partitions are:
+
+1. **DescribedObject**
+   - common identification/discovery/qualification metadata;
+   - unique identifier;
+   - identifiers/classifiers/keywords;
+   - security/legal constraints;
+   - valid time;
+   - capabilities;
+   - characteristics;
+   - contacts;
+   - documentation;
+   - history;
+   - extensions.
+
+2. **AbstractProcess**
+   - common process semantics:
+     - inputs;
+     - outputs;
+     - parameters;
+     - `typeOf`;
+     - feature of interest;
+     - configuration;
+     - modes.
+
+3. **SimpleProcess**
+   - atomic/non-decomposed process;
+   - method represented by a ProcessMethod.
+
+4. **AggregateProcess**
+   - collection of autonomous component processes;
+   - explicit data-flow connections among components;
+   - components may be physical or non-physical and may themselves be aggregate.
+
+5. **AbstractPhysicalProcess**
+   - adds physical/spatiotemporal semantics to AbstractProcess:
+     - attachment;
+     - local reference frames;
+     - position;
+     - dynamic state;
+     - spatial/temporal frames.
+
+6. **PhysicalComponent**
+   - atomic/non-decomposed physical processing device whose location matters.
+
+7. **PhysicalSystem**
+   - physical hardware device/system modeled as an aggregate process with one or more component subprocesses and explicit connections.
+
+8. **Configurable Process**
+   - general process description with selectable modes/options and allowable parameter ranges.
+
+9. **Configured Process**
+   - specific process inheriting from a configurable process and supplying concrete settings/restrictions.
+
+10. **Mode**
+    - named operational configuration that can set groups of parameter/settings values.
+
+11. **Settings / configuration**
+    - set values, arrays, constraints and enable/disable choices for configurable process elements.
+
+12. **Deployment / DeployedSystem**
+    - represents when, where, why and how physical or non-physical systems are deployed;
+    - captures deployment-specific configuration and description.
+
+13. **DerivedProperty**
+    - defines a domain-specific property by specialization/derivation from a more general property/quantity concept.
+
+14. **SWE Common data dependencies**
+    - ObservableProperty and SWE Common Data Components define typed inputs/outputs/parameters and data aggregates.
+
+The source-native pattern is therefore:
+
+> **common described object → process interface/behavior → atomic vs aggregate decomposition → physical specialization where location matters → configuration/modes → deployment context → typed data/property semantics**
+
+---
+
+## 2. Purpose of each partition
+
+### DescribedObject
+
+Purpose: supply reusable identity, discovery, qualification, provenance/history and descriptive metadata common to processes, systems, modes and deployments.
+
+### AbstractProcess
+
+Purpose: establish the universal process interface/semantic contract: inputs, method/parameters, outputs, reusable kind, feature of interest and configuration.
+
+### SimpleProcess
+
+Purpose: describe an atomic/black-box process whose internal subprocess decomposition is not modeled.
+
+### AggregateProcess
+
+Purpose: model a process whose internal components and data flows matter. The aggregate itself still has its own external inputs, outputs, parameters and metadata.
+
+### PhysicalComponent
+
+Purpose: model an atomic physical processing device when its real-world position is important and there is no intent to decompose it into subprocess components.
+
+### PhysicalSystem
+
+Purpose: model a physical hardware device/system whose internal component subprocesses and data flows are explicitly represented and whose real-world position is important.
+
+### Configurable/Configured Process
+
+Purpose: separate:
+- what options/modes/parameter ranges are allowed for a general process/model; from
+- the actual settings/configuration of a particular process instance.
+
+### Mode
+
+Purpose: package a named operational state/configuration as a group of coordinated settings.
+
+### Deployment
+
+Purpose: represent deployment context separately from the persistent process/system description:
+- where;
+- when;
+- why;
+- platform;
+- deployed system;
+- deployment-specific configuration;
+- responsible contacts/mission classifiers/characteristics.
+
+### DerivedProperty
+
+Purpose: specialize a general property/quantity into a domain-specific property while retaining semantic derivation.
+
+### SWE Common dependency
+
+Purpose: give inputs, outputs and parameters explicit typed structure, units, ranges, quality and aggregate semantics without re-inventing a separate SensorML data-model language.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Common description | DescribedObject, uniqueId, identifier, classifier, keyword, validTime, capabilities, characteristics, contacts, documentation, history |
+| Process core | AbstractProcess, input, output, parameter, ProcessMethod, featureOfInterest |
+| Reusable model/instance | typeOf, general process, specific process |
+| Atomic process | SimpleProcess, ProcessMethod |
+| Aggregate process | AggregateProcess, component, connection, data flow |
+| Physical semantics | AbstractPhysicalProcess, attachedTo, spatial frame, temporal frame, position, pose, trajectory/dynamic state |
+| Atomic physical device | PhysicalComponent |
+| Composite physical device/system | PhysicalSystem, components, connections |
+| Configuration | ConfigurableProcess, configured process, Mode, Settings, allowed values/constraints |
+| Deployment | Deployment, DeployedSystem, platform, location, system, deployment-specific configuration |
+| Property semantics | ObservableProperty, DerivedProperty |
+| Data typing | SWE Common scalar, range, record, vector, array, stream, choice components |
+| History | Event, EventList |
+
+---
+
+## 4. Primary relationships
+
+### Process → inputs / outputs / parameters
+
+Every SensorML process can expose explicit interface elements. Inputs can include physical observable properties; outputs/parameters use typed SWE Common data components or interfaces.
+
+### Process → method
+
+Atomic processes use ProcessMethod to describe the algorithm/methodology.
+
+### AggregateProcess → components
+
+Aggregate process contains/references one or more component processes.
+
+### AggregateProcess → connections
+
+Connections explicitly map data flow from component outputs to component inputs/parameters and to the aggregate's external interface.
+
+### PhysicalSystem → components/connections
+
+PhysicalSystem uses aggregate-process decomposition while also carrying physical/spatial semantics.
+
+### Physical process → attachedTo parent
+
+`attachedTo` represents a positional dependency: movement of the parent affects the child's position.
+
+### Physical process → reference frames / position
+
+The physical object's local/intrinsic reference frame is related to an external frame through location/orientation/trajectory/dynamic state.
+
+### Specific process → general process
+
+`typeOf` links a specific process/instance to a reusable general/base process.
+
+### Configured process → configurable process
+
+A configured process:
+- inherits through `typeOf`;
+- applies settings/restrictions in `configuration`.
+
+### Process → Mode
+
+A process can define/select Modes, each carrying a coordinated set of settings.
+
+### Deployment → platform / deployedSystem
+
+Deployment relates:
+- geographic location;
+- platform;
+- one or more DeployedSystem entries;
+- each DeployedSystem references a persistent system/process and may provide deployment-specific configuration.
+
+### DescribedObject → history Events
+
+History records time-scoped events such as calibration, maintenance, algorithm/parameter changes and deployment.
+
+---
+
+## 5. Dependency boundaries
+
+SensorML has strong conceptual layering.
+
+### DescribedObject vs process semantics
+
+Identity/metadata is reusable across process types; process interface/behavior is added by AbstractProcess.
+
+### Process semantics vs data semantics
+
+SensorML delegates typed values/records/arrays/ranges/encodings to SWE Common rather than defining an independent data type system.
+
+### Process vs ProcessMethod
+
+The process instance/interface and the method/algorithm describing how it works are separate.
+
+### Atomic vs aggregate
+
+Simple/PhysicalComponent do not expose internal subprocess decomposition; AggregateProcess/PhysicalSystem do.
+
+### Physical vs non-physical
+
+Location/reference-frame semantics apply when physical position matters. Non-physical aggregate/simple processes can use the same core process model without physical frames.
+
+### General vs specific process
+
+Reusable model/type descriptions and particular instances are separated through `typeOf`.
+
+### Configurable vs configured
+
+Allowed configuration space and selected concrete settings are distinct.
+
+### Persistent process/system vs Deployment
+
+Deployment-specific context/configuration is not merged into the durable process/system description.
+
+### Conceptual model vs JSON encoding
+
+The JSON schemas are direct implementations of UML models, but object members/links are encoding choices; the conceptual distinctions control the semantics.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Strongly intrinsic/process-defining
+
+- unique identity;
+- inputs/outputs/parameters;
+- process method;
+- component decomposition where modeled;
+- data-flow connections;
+- physical characteristics;
+- capabilities;
+- characteristics;
+- allowed configuration/modes;
+- intrinsic/local reference frame.
+
+### Instance/model-specific but durable
+
+- identifiers;
+- classifiers;
+- manufacturer/contacts/documentation;
+- reusable `typeOf`;
+- configured parameter values;
+- component arrangement where persistent.
+
+### Contextual
+
+- deployment location;
+- deployment platform;
+- mission/deployment identifiers/classifiers;
+- deployment-specific description/configuration;
+- feature of interest when describing intended/actual operational target context;
+- external reference frame.
+
+### Historical/evidentiary
+
+- calibration;
+- maintenance;
+- algorithm/parameter changes;
+- deployment events.
+
+SensorML explicitly allows multiple process descriptions with different `validTime` periods, separating configuration history from a single timeless description.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting SensorML structures include:
+
+- unique identifiers;
+- identifiers/classifiers/keywords;
+- security/legal constraints;
+- validTime;
+- capabilities;
+- characteristics;
+- contacts;
+- documentation;
+- history;
+- extensions;
+- semantic definitions/URIs;
+- `typeOf`;
+- feature of interest;
+- modes/configuration;
+- SWE Common typed values and constraints.
+
+Because DescribedObject is inherited by many classes, these semantics span physical systems, computational processes, modes and deployments.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+SensorML has several distinct temporal structures.
+
+### Validity of description
+
+`validTime` states the time over which a process description/configuration is valid.
+
+The standard explicitly allows several SensorML descriptions for the same sensor/system with different validity periods.
+
+### Dynamic physical state
+
+Physical processes can carry:
+
+- position;
+- orientation;
+- trajectory;
+- velocity;
+- angular velocity;
+- higher derivatives;
+- temporal reference frames.
+
+### Operational modes/configuration
+
+Modes and Settings represent selectable/selected operational configurations.
+
+### History
+
+EventList supports:
+- calibration;
+- maintenance;
+- algorithm changes;
+- parameter changes;
+- deployment/maintenance events.
+
+### Deployment
+
+Deployment captures a separate operational/employment time/context with deployment-specific system configuration.
+
+### Distinction
+
+SensorML therefore distinguishes:
+
+> **description validity, current/selected configuration, physical dynamic state, deployment context and historical Event record**
+
+rather than treating all temporal change as one lifecycle field.
+
+---
+
+## 9. Composition / topology organization
+
+SensorML supports both **process/data-flow topology** and **physical attachment topology**.
+
+### Process composition
+
+AggregateProcess/PhysicalSystem contain component processes.
+
+Components can be:
+
+- atomic or aggregate;
+- physical or non-physical;
+- inline or referenced.
+
+### Data-flow topology
+
+Connections explicitly define how component outputs feed:
+- other component inputs;
+- parameters;
+- aggregate outputs/interfaces.
+
+### Physical attachment topology
+
+`attachedTo` describes a positional dependency between physical processes such that parent movement affects child position.
+
+### Reference-frame topology
+
+Physical position is modeled as the relationship between:
+- intrinsic/local reference frame;
+- external/geographic/parent reference frame.
+
+### Deployment topology
+
+Deployment separately associates:
+- platform;
+- deployed systems;
+- deployment-specific configuration/location.
+
+### Important source-native distinction
+
+**Component decomposition, data-flow connection, physical attachment and deployment association are four different relationships.**
+
+They must not be inferred from one another.
+
+---
+
+## 10. Capability / function / behavior organization
+
+SensorML splits behavior/function across several structures.
+
+### Process role
+
+Inputs, outputs and parameters define the process interface.
+
+### ProcessMethod
+
+Defines the method/algorithm for atomic process behavior.
+
+### Capabilities
+
+DescribedObject `capabilities` further qualify input/output performance for discovery and use, e.g. measurement range/performance.
+
+### Characteristics
+
+Describe properties of the process/device that do not directly qualify its output, e.g. dimensions, material, power demand, anticipated lifetime.
+
+### Configurable behavior
+
+ConfigurableProcess defines:
+- allowed parameter ranges;
+- options;
+- modes;
+- enabled/disabled inputs/outputs/components.
+
+Configured process selects/restricts these.
+
+### Aggregate behavior
+
+Whole system behavior can emerge from coordinated physical/nonphysical components and explicit data flows.
+
+This gives a source-native separation among:
+
+> **interface → method → performance capability → non-output physical characteristic → configuration/mode → composed behavior**
+
+---
+
+## 11. Information / output organization
+
+SensorML is primarily descriptive rather than the runtime observation store, but it explicitly models data interfaces.
+
+### Inputs
+
+Can represent physical stimulus using ObservableProperty or typed data.
+
+### Outputs
+
+Can represent typed digital outputs with SWE Common DataComponents or DataInterfaces.
+
+### Parameters
+
+Represent process configuration/control variables rather than external observed inputs/outputs.
+
+### Data aggregates
+
+Related values should be represented as coherent SWE Common aggregates such as:
+- DataRecord;
+- Vector;
+- DataArray;
+- Matrix;
+- DataStream;
+- Choice.
+
+### DataInterface
+
+Can describe an accessible/encoded output interface and data flow.
+
+### Process lineage
+
+AggregateProcess connections and ProcessMethod can explicitly describe how an output was generated.
+
+### Sensor-related data
+
+The standard recognizes ancillary sensor-related data such as:
+- status;
+- quality;
+- QoS;
+- battery life
+
+as distinct from the measured observable values even when transported in the same stream.
+
+The source therefore distinguishes **process description, output schema/interface, actual observation value, ancillary status/quality data and processing lineage**.
+
+---
+
+## 12. Management / condition organization
+
+SensorML supplies rich descriptive carriers but not a single universal management object model.
+
+Management/condition-relevant structures include:
+
+- configuration/settings;
+- modes;
+- capability/characteristic descriptions;
+- status-related outputs/interfaces;
+- history Events;
+- contacts/responsible parties;
+- documentation;
+- deployment;
+- security/legal constraints;
+- component structure;
+- location/dynamic state.
+
+History can record:
+- calibration;
+- maintenance;
+- parameter changes;
+- deployment.
+
+Characteristics can represent:
+- physical dimensions;
+- weight;
+- material;
+- power demand;
+- anticipated lifetime.
+
+Capabilities can represent performance/limits relevant to condition/use.
+
+**Evidence result:** SensorML provides a strong whole-description framework for management information, but detailed condition/fault/work/service taxonomies must come from domain profiles or other sources.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+SensorML has extensive identity/reference/provenance structure.
+
+### Unique identity
+
+Every process description has a required `uniqueId`.
+
+### Additional identifiers/classifiers
+
+Terms can represent:
+- serial number;
+- model/manufacturer identifiers;
+- mission IDs;
+- short/long names;
+- process/sensor/application classifiers.
+
+### Reusable-kind reference
+
+`typeOf` links specific process to general/model process.
+
+### Component/reference identity
+
+Components may be inline or referenced by link/UID.
+
+### Process lineage
+
+ProcessMethod + AggregateProcess component/data-flow structure can document how observation output was derived.
+
+### History provenance
+
+Event history can record changes affecting configuration/algorithm/maintenance/deployment.
+
+### Contacts/documents
+
+Responsible parties and external documentation are explicit.
+
+### Semantic references
+
+Definitions/semantic URIs attach meanings to parameters, capabilities, classifiers and data components.
+
+The lineage therefore supports both **equipment/process identity** and **derivation/process provenance**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **DescribedObject vs AbstractProcess** — descriptive metadata and process semantics are separate abstraction layers.
+2. **Process vs ProcessMethod** — a process subject and the method/algorithm describing how it operates are different.
+3. **Input vs output vs parameter** — observed stimulus/result/configuration variables have distinct roles.
+4. **ObservableProperty vs output data value/schema** — phenomenon/property semantics are not the same as encoded measurement values.
+5. **SimpleProcess vs AggregateProcess** — atomic black-box and decomposed process are different modeling choices.
+6. **PhysicalComponent vs PhysicalSystem** — atomic physical device and decomposed aggregate hardware system are different classes.
+7. **Physical vs non-physical process** — location/reference-frame importance is a real semantic distinction.
+8. **Component relation vs connection/data flow** — what is part of a process and how data flows among parts are different.
+9. **Component relation vs attachedTo** — process decomposition and physical positional attachment are different.
+10. **attachedTo vs Deployment/platform** — persistent physical positional relationship and operational deployment context are different.
+11. **typeOf vs configuration** — reusable model inheritance and selected instance settings are different.
+12. **Configurable process vs configured process** — allowed configuration space and chosen configuration are different.
+13. **Mode vs individual setting** — named coordinated operational mode and single parameter value are different.
+14. **Capability vs characteristic** — output-qualifying performance and other descriptive properties are distinct.
+15. **validTime vs history Event** — description validity and explicit historical event are different temporal semantics.
+16. **persistent process/system vs DeployedSystem entry** — equipment/process identity and deployment-specific description/configuration are different.
+17. **local reference frame vs external reference frame** — intrinsic pose frame and contextual frame are distinct.
+18. **sensor-related ancillary data vs measured observable values** — status/quality/battery/QoS should not be silently treated as the observed phenomenon.
+19. **conceptual UML vs JSON schema representation** — implementation encoding must not define domain truth.
+20. **aggregate process execution model vs process description** — SensorML defines process/data-flow semantics but remains agnostic to execution engine/protocol.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** persistent process/system identity; process interface; atomic vs aggregate distinction; component decomposition; physical spatial semantics;
+- **likely reusable structural pattern:** model/type → configured instance → deployment-specific configuration;
+- **likely functional pattern:** input/output/parameter + ProcessMethod + explicit component/data-flow topology;
+- **likely capability pattern:** capabilities distinct from characteristics and settings;
+- **likely configuration pattern:** ConfigurableProcess, Mode and Settings with allowed values/constraints;
+- **likely contextual relationship pattern:** Deployment, platform, FeatureOfInterest and external reference frames separated from persistent system identity;
+- **likely lifecycle/provenance pattern:** validTime plus explicit history Events and process lineage;
+- **likely dynamic-information pattern:** typed DataInterface/output descriptions separated from actual observations and ancillary sensor-related status/quality data;
+- **binding caution:** SensorML classes and JSON members are implementation/model constructs; V2 must not assume every whole sensing System is necessarily encoded as `PhysicalSystem` rather than `PhysicalComponent`;
+- **profile-gap signal:** detailed management/condition/lifecycle vocabularies require additional donor semantics even though SensorML can carry them.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C09 status: COMPLETE.**
+
+**Next frozen lineage:** C10 — OPC UA Devices / PA-DIM.
+
