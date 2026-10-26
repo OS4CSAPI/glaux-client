@@ -1,0 +1,33 @@
+@startuml
+' Title: Figure 1. V2 Artifact Architecture
+' View: context
+' Question: How do the DIM, application profile, OGC binding, and implementation relate?
+' Layer: mixed-explicit
+' Status: approved-for-current-draft
+' Source artifact: Sensor_Systems_DIM_and_Profile_V2_Working_Draft_v0.1_25OCT2026
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName Arial
+skinparam rectangle {
+  BackgroundColor #EEF5FC
+  BorderColor #15233D
+  FontColor #15233D
+}
+title Figure 1. V2 Artifact Architecture
+
+rectangle "Domain Information Model (DIM)\nDefines domain concepts, relationships, and meaning" as DIM
+rectangle "Application Profile\nSelects and constrains DIM content for a specific interoperability purpose" as PROFILE
+rectangle "OGC Binding\nSpecifies representation using CSAPI, SensorML, SWE Common, and related mechanisms" as BINDING
+rectangle "Implementation\nRealizes the binding in servers, adapters, clients, validators, storage, and UIs" as IMPL
+
+DIM --> PROFILE : supplies semantics to
+PROFILE ..> DIM : profile requirements identify\nneeded domain questions
+PROFILE --> BINDING : selects / constrains; binds to
+BINDING --> IMPL : implemented by
+
+note bottom of IMPL
+Purpose-driven but binding-independent:
+model for the profile, not to the profile.
+end note
+@enduml
