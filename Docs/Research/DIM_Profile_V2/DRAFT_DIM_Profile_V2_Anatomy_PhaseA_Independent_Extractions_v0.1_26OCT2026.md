@@ -12810,3 +12810,588 @@ It is not a general provenance graph, but it is a rigorous domain-specific prove
 
 **Next frozen lineage:** X09 — OMA Lightweight M2M.
 
+---
+
+# X09 — OMA Lightweight M2M (LwM2M) 1.2.2
+
+## Source basis and evidence ceiling
+
+**Frozen primary source ID:** 129.
+
+**Primary inspected source:**
+
+- Open Mobile Alliance, *Lightweight Machine to Machine Technical Specification: Core*, Approved Version 1.2.2, 13 June 2024, OMA-TS-LightweightM2M_Core-V1_2_2-20240613-A.
+
+**Evidence note:** The exact frozen 1.2.2 specification was inspected from the official OMA publication. The mutable OMNA Object Registry contains later Object versions; those later registry revisions are not silently substituted for the exact Object versions embedded in Core 1.2.2. Where the Core itself uses an Object version newer than the Device Object, that version is recorded source-natively.
+
+---
+
+## 1. Source-native structural organization
+
+LwM2M organizes device management around a **Client resource model plus four principal interfaces**.
+
+### A. Principal actors
+
+1. **LwM2M Client**
+   - runs on/for the managed device side;
+   - exposes Objects/Object Instances/Resources.
+
+2. **LwM2M Server**
+   - manages/monitors Clients through standardized interfaces.
+
+3. **LwM2M Bootstrap-Server**
+   - provisions initial/security/server/bootstrap information.
+
+4. **LwM2M Gateway**
+   - optional structure for exposing devices connected behind a gateway.
+
+### B. Resource model
+
+The native model is:
+
+- **LwM2M Client**
+  - **Object**
+    - **Object Instance**
+      - **Resource**
+        - optionally **Resource Instance**
+
+Each Resource:
+
+- has an identifier unique within its Object;
+- has a datatype;
+- may be readable, writable and/or executable;
+- may be mandatory or optional.
+
+Objects define groups of Resources; Object Instances instantiate a subset of those Resources.
+
+### C. Interface partitions
+
+1. **Bootstrap Interface**
+2. **Client Registration Interface**
+3. **Device Management and Service Enablement Interface**
+4. **Information Reporting Interface**
+
+### D. Standard Object partitions
+
+The Core defines standard Objects including:
+
+- LwM2M Security;
+- LwM2M Server;
+- Access Control;
+- Device;
+- Connectivity Monitoring;
+- Firmware Update;
+- Location;
+- Connectivity Statistics;
+- security/OSCORE/COSE;
+- MQTT Server;
+- LwM2M Gateway;
+- Gateway Routing;
+- 5G NR Connectivity.
+
+### E. Operation partitions
+
+Device-management operations include:
+
+- Read;
+- Discover;
+- Write;
+- Write-Attributes;
+- Execute;
+- Create;
+- Delete;
+- Read-Composite;
+- Write-Composite.
+
+Information-reporting operations include:
+
+- Observe;
+- Notify;
+- Cancel Observation;
+- Observe-Composite;
+- Send.
+
+The source-native anatomy is therefore:
+
+> **Client-managed object space + Object/Instance/Resource hierarchy + management interfaces + reporting operations + dedicated management/configuration Objects**.
+
+---
+
+## 2. Purpose of each partition
+
+### LwM2M Client
+
+Purpose: provide the managed endpoint/client boundary exposing standardized and extensible Objects to Servers.
+
+### Object
+
+Purpose: define a reusable **grouping/schema of Resources** for one management/service concern.
+
+### Object Instance
+
+Purpose: instantiate an Object for one concrete managed occurrence/context.
+
+### Resource
+
+Purpose: represent one typed piece of information or executable action.
+
+### Resource Instance
+
+Purpose: represent one member/value of a multi-instance Resource.
+
+### Bootstrap Interface
+
+Purpose: provision initial security/server configuration and establish a usable Client configuration.
+
+### Registration Interface
+
+Purpose: announce Client presence, endpoint identity, registration lifetime, binding mode and supported Objects/Object Instances.
+
+### Device Management / Service Enablement
+
+Purpose: allow authorized Server management of Object Instances/Resources and invocation of executable functions.
+
+### Information Reporting
+
+Purpose: allow Server-controlled or Client-initiated reporting of Resource values via Observe/Notify/Send.
+
+### Access Control
+
+Purpose: associate Server-specific permissions with Objects/Object Instances and their operations.
+
+### Device Object
+
+Purpose: expose generic whole-device identity, firmware, reboot/reset, power-source/battery/memory/error/time information.
+
+### Connectivity / Location / Firmware Update Objects
+
+Purpose: keep network state, spatial telemetry and software-update lifecycle separate from generic Device identity.
+
+### Gateway / Routing Objects
+
+Purpose: expose downstream devices and route/mapping their Objects through a gateway without pretending they are native Client Objects of the gateway itself.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Managed endpoint | LwM2M Client, Endpoint Client Name |
+| Management authority | LwM2M Server, Short Server ID |
+| Provisioning | Bootstrap-Server, bootstrap information |
+| Information model | Object, Object Instance, Resource, Resource Instance |
+| Operations | Read, Write, Execute, Create, Delete, Discover, Composite operations |
+| Reporting | Observe, Notify, Send, observation attributes |
+| Access | Access Control Object, ACL, Access Control Owner |
+| Device identity/state | Manufacturer, Model Number, Serial Number, Firmware Version, errors, time, memory |
+| Power | Available Power Sources, Voltage, Current, Battery Level, Battery Status |
+| Connectivity | bearer, signal strength, cell/network data |
+| Software lifecycle | Firmware Update Object, State, Update Result, package/URI |
+| Location | latitude, longitude, altitude, radius, timestamp/velocity where defined |
+| Gateway | connected Device ID, Prefix, routing mapping |
+| Registration | Objects/Object Instances, lifetime, binding mode, Profile ID |
+
+---
+
+## 4. Primary relationships
+
+### Client → Object → Object Instance → Resource
+
+The resource model is a logical management hierarchy.
+
+### Registration → supported Objects/Object Instances
+
+Client registration announces the Object/Object Instance set currently available to a Server.
+
+### Object Instance → Access Control Object Instance
+
+Access Control can point to a target Object/Object Instance and assign Server-specific rights.
+
+### Server → operations → Resources/Object Instances
+
+Server invokes management operations according to access rights and each Resource's defined operations.
+
+### Server → Observe → Client Notify
+
+Observation/reporting creates a subscription-like relationship over Resources/Object Instances.
+
+### Client → Send → Server
+
+Client may proactively report selected Resource values.
+
+### Device Object → external device info
+
+`ExtDevInfo` can reference an external Device Object instance, e.g. a Host Device into which the LwM2M Client's device is embedded.
+
+### Gateway → connected device
+
+Gateway Object identifies downstream Device ID and a Prefix used to access that device's Objects.
+
+### Firmware Update → state/result
+
+Firmware Update State Machine separates update state from update-result/error and transport/package location.
+
+---
+
+## 5. Dependency boundaries
+
+### Client identity vs Device Object
+
+LwM2M Client is the protocol/management endpoint; Device Object contains generic device information. These are related but not identical concepts.
+
+### Object definition vs Object Instance
+
+Object is schema/grouping; Object Instance is one realization.
+
+### Resource definition vs Resource value
+
+Resource semantics/operations/datatype and current instantiated value are separate.
+
+### Resource model vs physical topology
+
+Object/Instance/Resource nesting is a management-information hierarchy, not a physical BOM.
+
+### Registration vs management state
+
+Registration says what is exposed/available to a Server; it does not constitute the complete device configuration or physical identity.
+
+### Observe/Notify vs Resource state
+
+Information-reporting mechanics are separate from the value/state being reported.
+
+### Device Object vs specialized Objects
+
+Connectivity, Location, Firmware Update and Access Control remain separate concerns rather than being flattened into one generic Device property bag.
+
+### Gateway vs downstream device
+
+Gateway mediates access to connected devices while preserving separate downstream Device IDs/prefixes.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic/device-oriented
+
+- manufacturer/model/serial;
+- firmware version;
+- power-source information;
+- memory;
+- supported Objects;
+- reboot/reset capability;
+- internal battery state where applicable.
+
+### Management/runtime
+
+- registration lifetime;
+- Server relationships;
+- access-control rights;
+- observed Resources;
+- firmware-update state;
+- current connectivity;
+- current location;
+- error codes.
+
+### Contextual/network
+
+- bearer/network identity;
+- Server/bootstrap relationships;
+- registration binding;
+- gateway/routing context.
+
+### External-host relationship
+
+Device Object may point to external/Host Device information, showing that the LwM2M endpoint's device and a containing/host device can remain distinct.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting LwM2M structures include:
+
+- identifiers/URIs;
+- Object version;
+- mandatory/optional;
+- access operations;
+- attributes;
+- access control;
+- Server authorization;
+- serialization formats;
+- observation/reporting;
+- bootstrap/configuration;
+- version compatibility.
+
+Every Object/Resource participates in common operation, identity and access semantics.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+LwM2M defines several distinct management lifecycles.
+
+### Registration lifecycle
+
+- Register;
+- Update;
+- De-register;
+- lifetime/expiry;
+- re-registration after reset/state loss.
+
+### Bootstrap lifecycle
+
+- factory/bootstrap configuration;
+- client/server-initiated bootstrap;
+- bootstrap finish.
+
+### Firmware lifecycle
+
+Firmware Update has an explicit state machine with:
+- package acquisition;
+- downloading;
+- downloaded;
+- updating;
+- idle;
+- Update Result/error reporting.
+
+### Observation lifecycle
+
+Observe establishes reporting; Notify reports changes; Cancel Observation terminates it.
+
+### Device reset lifecycle
+
+Factory Reset causes re-entry into deployment/bootstrap sequence.
+
+### Limit
+
+This is management/protocol/software lifecycle, not full physical asset service/maintenance history.
+
+---
+
+## 9. Composition / topology organization
+
+LwM2M's principal topology is **management namespace topology**.
+
+### Object hierarchy
+
+Client/Object/Object Instance/Resource hierarchy organizes management information.
+
+### Gateway topology
+
+Gateway Object and Gateway Routing map connected downstream devices/Objects through:
+- Device ID;
+- prefix;
+- Object routing entries.
+
+### Host relationship
+
+Device Object can link to an external Host Device Object instance.
+
+### Important limit
+
+Neither Object nesting nor URI path means physical containment.
+
+An Object can represent:
+- firmware update;
+- connectivity;
+- location;
+- access control;
+- device identity
+
+without being a physical component.
+
+---
+
+## 10. Capability / function / behavior organization
+
+LwM2M expresses capability through **Resource operation definitions** and instantiated Objects.
+
+### Resource operations
+
+Resources can support:
+- Read;
+- Write;
+- Execute.
+
+### Object support
+
+Registration advertises which Objects/Object Instances are implemented.
+
+### Executable Resources
+
+Actions such as:
+- Reboot;
+- Factory Reset;
+- Firmware Update
+
+are modeled as executable Resources rather than ordinary values.
+
+### Management capability
+
+Read/Write/Create/Delete/Observe availability is constrained by:
+- Object definition;
+- Resource definition;
+- access control;
+- current instantiation.
+
+The source-native capability pattern is therefore **implemented Object/Resource + supported operations + authorization**, not a generic domain Capability class.
+
+---
+
+## 11. Information / output organization
+
+### Resource values
+
+Current/persistent information is exposed through Resource values.
+
+### Executable actions
+
+Executable Resources represent behavior, not data values.
+
+### Reporting
+
+Observe/Notify and Send report Resource values over time.
+
+### Composite reporting
+
+Composite operations can read/write/observe heterogeneous Resources across Objects.
+
+### Specialized Objects
+
+Information is separated into coherent management domains:
+- Device;
+- connectivity;
+- location;
+- software update;
+- statistics;
+- security.
+
+### Data serialization
+
+SenML JSON/CBOR, TLV and LwM2M CBOR are transport/encoding choices for Resource values, not separate domain information types.
+
+---
+
+## 12. Management / condition organization
+
+Management is the central purpose of LwM2M.
+
+### Device management
+
+- read/write settings;
+- execute actions;
+- create/delete instances;
+- discover resource model.
+
+### Monitoring
+
+- observe/notify;
+- connectivity monitoring/statistics;
+- error state;
+- power/battery state;
+- location.
+
+### Software management
+
+- firmware update state machine;
+- update result/error;
+- update package/pull/push behavior.
+
+### Security/access
+
+- Security Object;
+- Access Control;
+- OSCORE/COSE;
+- Server authorization.
+
+### Provisioning
+
+Bootstrap and Registration establish manageable operational state.
+
+The model therefore supplies a strong management anatomy, but it is intentionally generic and not sensing-specific.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Endpoint identity
+
+Endpoint Client Name identifies a Client for registration.
+
+### Server identity
+
+Short Server ID identifies management authorities and ACL entries.
+
+### Object identity
+
+Object ID + version identify information model definitions.
+
+### Object-instance identity
+
+Object Instance ID identifies one instance.
+
+### Resource identity
+
+Resource ID identifies one property/action within Object scope.
+
+### Object Link
+
+Objlnk references other Object Instances.
+
+### Gateway identity
+
+Gateway Device ID/prefix preserve identity of downstream devices.
+
+### Product identity
+
+Device Object supplies manufacturer/model/serial separately from Client endpoint/protocol identity.
+
+Thus **protocol endpoint, product device, Object, Object Instance and Resource each have different identity scopes**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **LwM2M Client vs physical Device** — protocol endpoint and real-world product are related but not necessarily identical.
+2. **Object vs Object Instance** — schema/grouping and concrete instance are different.
+3. **Resource vs Resource Instance** — property/action type and one multi-instance member are different.
+4. **Object hierarchy vs physical composition** — management namespace is not a BOM.
+5. **Resource value vs Execute Resource** — data/state and action are different.
+6. **Registration vs persistent device identity** — protocol participation and product identity differ.
+7. **Bootstrap vs Registration** — provisioning and ongoing server participation are distinct.
+8. **Device Object vs Connectivity/Location/Firmware Objects** — generic identity/device info and specialist management concerns are intentionally partitioned.
+9. **Observe vs Notify** — subscription/request and reporting event are different.
+10. **Observe/Notify vs Resource state** — reporting mechanism and underlying value differ.
+11. **Access Control Object vs target Object Instance** — authorization metadata and protected subject are separate.
+12. **Firmware update State vs Update Result** — process phase and outcome/error are different.
+13. **current firmware version vs firmware-update process** — installed identity and transition process differ.
+14. **Gateway vs connected device** — mediator and downstream device remain distinct.
+15. **Gateway routing mapping vs device composition** — namespace routing does not imply physical containment.
+16. **Host Device link vs Client's Device** — embedded device and containing host can be separate.
+17. **Object version vs LwM2M protocol version** — information-model edition and protocol edition are different.
+18. **Read/Write/Execute permission vs domain capability** — management access operation is not the same as equipment mission function.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely reusable management pattern:** description/state/action represented as typed Objects/Resources with explicit operations;
+- **likely cross-cutting:** bootstrap, registration, access control, observation/reporting and software update;
+- **likely identity pattern:** protocol endpoint vs durable product identity vs Object/Resource identifiers;
+- **likely dynamic-information pattern:** Observe/Notify/Send separated from underlying Resource semantics;
+- **likely management lifecycle pattern:** bootstrap, registration and firmware-update state machines;
+- **likely contextual pattern:** connectivity and location as separate Objects rather than intrinsic physical composition;
+- **likely mediation pattern:** Gateway preserves downstream device identity while routing management namespace;
+- **profile-gap signal:** LwM2M provides generic device management but not a sensing-system domain model, observation semantics or physical BOM;
+- **binding caution:** Object/Instance/Resource URI hierarchy and CRUD/Execute operations are LwM2M management mechanisms and are not automatically V2 modules/classes.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X09 status: COMPLETE.**
+
+**Next frozen lineage:** X10 — W3C PROV.
+
