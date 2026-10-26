@@ -2,7 +2,8 @@
 
 **Date:** 26 October 2026  
 **Version:** 0.1  
-**Status:** Plan only. **No consolidation pass has begun.**  
+**Method refinement (26 October 2026):** Donor-language-first terminology rule added; cited-synthesis and source-pedigree expectations clarified.  
+**Status:** Active sequential plan. Pass 1 drafted for review; Passes 2–5 have not begun.  
 **Location:** Research workspace, `Docs/Research/DIM_Profile_V2/`
 
 ## Purpose
@@ -29,12 +30,14 @@ Work through these five passes **in order**, completing and explaining each befo
 
 ## Method for each pass
 
-Each pass produces **one short human-readable concept note**, organized around:
+Each pass produces **one human-readable concept note**, organized around:
 
-1. **Donor-native meaning:** what the main donors actually define, with Chicago Manual of Style author-date citations and precise source locations where possible.
-2. **Alignment and differences:** what truly maps, what only resembles something else, and what is dependent on a shared source rather than independent corroboration.
-3. **Proposed V2 meaning:** one carefully worded candidate concept statement, its key relationships and exclusions, and whether existing donor semantics suffice.
-4. **Open or disputed points:** only uncertainties that could materially alter the concept or its later use.
+1. **Cited candidate meaning first:** state the synthesized meaning clearly, using Chicago Manual of Style, 18th edition, author-date citations where the contributing source evidence enters the statement.
+2. **Immediate narrative pedigree:** explain each substantive building block, what it means *in each relevant donor's own model*, why it contributes to our candidate meaning, and where a mapping is partial or only a resemblance. Cite sources reasonably throughout, with source locations where possible.
+3. **Differences and limits:** distinguish donor-native facts, dependent sources, independent corroboration, and V2 interpretation; do not claim that similar donor classes are equivalent.
+4. **Material unresolved points:** record only questions that could actually change the meaning or its use.
+
+**Donor-language-first rule:** Use established donor terminology where it adequately expresses the meaning. For cross-donor conclusions, describe the relationships in ordinary language rather than coin new technical labels. Introduce any V2-owned term only when a material semantic need cannot be expressed accurately using existing terms; identify the gap, explain why the donor terms are insufficient, cite that evidence, and explicitly label the proposed term as V2-authored. **A synthesized meaning is permitted; invented terminology is not its default expression.**
 
 Target **roughly one to two readable pages per pass**, not a new research volume or exhaustive standards-conformance audit. Do source checking only where a consequential claim needs it. Preserve donor-owned semantics; label our interpretations as our own. If evidence cannot settle a point, record it as open rather than inventing closure.
 
@@ -64,4 +67,4 @@ A **small conceptual diagram** may help here; no large model, modules, schemas, 
 
 Before resuming in a new chat, read the controlling [PITON v1.3](PITON_DIM_Profile_V2_Continuity_v1.3_26OCT2026.md) and its two mandatory baseline refreshers: [Concept Baseline](DRAFT_Concept_Baseline_v0.1_25OCT2026.md) and [DIM Concept and Method Basis](DRAFT_DIM_Concept_and_Method_Basis_v0.1_25OCT2026.md). Then consult the [refined subject-and-boundary pedigree](DIM_Profile_V2_Refined_Subject_Boundary_Pedigree_v0.1_26OCT2026.md), the [Pass 2 stress test](DIM_Profile_V2_Subject_and_Boundary_Pass2_Stress_Test_v0.1_26OCT2026.md), and [C08 validation audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md) where relevant.
 
-**Next action when authorized: Pass 1 — Individual System identity only.**
+**Current checkpoint:** Review the [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md) candidate. **Next new research pass when authorized: Pass 2 — Product / Model / Kind only.**
