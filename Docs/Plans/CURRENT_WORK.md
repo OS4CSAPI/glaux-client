@@ -1,5 +1,22 @@
 # Current client work
 
+## Resource Details Activity-table wireframe and deployment - 26 October 2026
+
+The separate `resource-details-activity` page now reuses the complete recovered
+Resource Details template while populating only Activity > Table. Its cross-type
+wireframe contains Observation, Command, and System Event rows and exposes All,
+Observations, Commands, and System Events filters. The design follows the explicit
+Activity requirements recovered from the Resource Details research paper; it does
+not imply a universal Activity API endpoint. The original
+`resource-details-template` page remains available as the blank reusable template.
+
+Production deployment `ee6812b6-d964-4407-9fac-6652d0db965f` publishes commit
+`db96c584fdf52715e4a005be2c4159b1bc131b24` at
+<https://glaux-client.pages.dev/?page=resource-details-activity>. The production
+Activity suite passed 15 checks and the original-template regression suite passed
+27 checks, both with zero browser script errors. The implementation, research
+basis, build, deployment, and live verification are complete.
+
 
 ## Smart Citizen corrective model-currency / paper v0.10 closeout — 25 October 2026
 

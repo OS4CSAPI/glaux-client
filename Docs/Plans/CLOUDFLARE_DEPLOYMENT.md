@@ -1,5 +1,32 @@
 # Cloudflare deployment continuation
 
+## Resource Details Activity-table deployment result
+
+**Completed 26 October 2026.** A new page reuses the recovered Resource Details
+template and populates only Activity > Table. The table presents Observation,
+Command, and System Event wireframe rows with All, Observations, Commands, and
+System Events toggles. The original template URL remains available and unchanged.
+
+| Result | Actual value |
+| --- | --- |
+| Project / environment | `glaux-client` / production |
+| Method | Cloudflare Pages Direct Upload via authenticated local Wrangler 4.152.0 |
+| Source branch | `work/details-view-20261023` |
+| Deployed Git commit | `db96c584fdf52715e4a005be2c4159b1bc131b24` |
+| Deployment ID | `ee6812b6-d964-4407-9fac-6652d0db965f` |
+| Live Activity page | <https://glaux-client.pages.dev/?page=resource-details-activity> |
+| Preserved template | <https://glaux-client.pages.dev/?page=resource-details-template> |
+| Immutable deployment | <https://ee6812b6.glaux-client.pages.dev/?page=resource-details-activity> |
+| Build result | 74 tests passed; TypeScript and Vite production build passed |
+| Live Activity verification | 15 checks passed; zero browser script errors |
+| Live template regression | 27 checks passed; zero browser script errors |
+
+The live verification confirmed the 560 x 440 frame, all three required resource
+types, each filter and the All reset, reviewed semantic columns, blank Charts
+canvas, and no fixture, XHR, or remote-source requests. The template regression
+confirmed that its blank default canvas, tabs, overflow, resize behavior, keyboard
+navigation, and data-free operation remain intact.
+
 ## Resource Details template deployment result
 
 **Completed 24 October 2026 at 4:34:47 p.m. EDT.** The recovered 560 × 440
