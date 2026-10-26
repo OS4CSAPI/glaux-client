@@ -3967,3 +3967,564 @@ The lineage therefore treats identity continuity and evidentiary traceability as
 
 **Next frozen lineage:** C08 — OGC API – Connected Systems.
 
+---
+
+# C08 — OGC API – Connected Systems Parts 1–2
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 10, 11.  
+**Frozen companion IDs:** 3, 9, 12, 17.
+
+**Primary inspected sources:**
+
+- OGC API – Connected Systems – Part 1: Feature Resources, OGC 23-001, v1.0, published 16 July 2025.
+- OGC API – Connected Systems – Part 2: Dynamic Data, OGC 23-002, v1.0, published 16 July 2025.
+
+**Evidence note:** These are approved OGC implementation standards and the intended future binding environment for V2. This anatomy extraction therefore makes a strict distinction between:
+
+1. **semantic distinctions the standards explicitly define**, which may inform the DIM; and
+2. **resource/endpoint/encoding mechanics**, which remain binding-level implementation structures unless independent domain evidence supports promotion.
+
+The NATO STANAG/AEP artifact is treated as a profile/adoption companion, not an independent model.
+
+---
+
+## 1. Source-native structural organization
+
+Connected Systems divides the connected-system domain into **feature resources describing persistent/contextual subjects** and **dynamic resources representing flows, observations, commands and events**.
+
+### Part 1 — feature/static-context resources
+
+Primary resource types include:
+
+1. **System**
+   - the represented system/agent/process;
+   - classified by `systemType`;
+   - optionally classified by `assetType`;
+   - has persistent unique identifier, validity, location and associations.
+
+2. **Subsystem**
+   - a regular System related hierarchically to a parent System.
+
+3. **Deployment**
+   - describes deployment/employment context for Systems;
+   - can identify a Platform and deployed Systems;
+   - can contain Subdeployments.
+
+4. **Procedure**
+   - reusable description of a process/procedure/system kind;
+   - System can reference a Procedure via `systemKind`.
+
+5. **Sampling Feature / Feature of Interest**
+   - represent the sampled/observed/control context and ultimate target features.
+
+6. **Property**
+   - defines an observable/controllable property concept independently from one System or stream.
+
+### Part 2 — dynamic resources
+
+7. **DataStream**
+   - a collection/channel of observations produced by one System output;
+   - all Observations share the same observed properties and result schema.
+
+8. **Observation**
+   - individual observation in a DataStream.
+
+9. **ControlStream**
+   - a control/actuation channel receiving commands for one System;
+   - all Commands share controlled properties and parameter schema.
+
+10. **Command**
+    - individual actuation/tasking request.
+
+11. **CommandStatus**
+    - status report about a Command.
+
+12. **CommandResult**
+    - result produced by command execution.
+
+13. **Feasibility**
+    - a command-like request used to determine feasibility before command execution;
+    - has status/result structures parallel to Command.
+
+14. **SystemEvent**
+    - captures system events/maintenance operations over time.
+
+The source-native pattern is therefore:
+
+> **persistent System + reusable Procedure + deployment/context + explicit properties/targets + observation flows + command flows + event/history**
+
+---
+
+## 2. Purpose of each partition
+
+### System
+
+Purpose: provide the persistent addressable description of a System while keeping role (`systemType`) and realization (`assetType`) distinguishable.
+
+### Subsystem
+
+Purpose: represent System components recursively while preserving each component as a full System resource.
+
+### Deployment
+
+Purpose: represent a time/context-scoped grouping and use of Systems, Platform, configuration and related observed/controlled features.
+
+### Procedure / systemKind
+
+Purpose: separate a particular System instance from the reusable description of its kind/procedure/datasheet.
+
+### Sampling Feature / Feature of Interest
+
+Purpose: distinguish the proxy/sampling geometry/context from the ultimate real-world feature that observations/control concern.
+
+### Property
+
+Purpose: define observable/controllable property meaning independently of individual stream values.
+
+### DataStream
+
+Purpose: factor common observation metadata/schema out of individual observations and organize real-time and/or historical output data.
+
+### Observation
+
+Purpose: represent individual results/acts within a DataStream.
+
+### ControlStream
+
+Purpose: factor common control/command metadata/schema out of individual commands and represent real-time/historical command channels.
+
+### Command
+
+Purpose: represent an individual requested actuation/task.
+
+### CommandStatus / CommandResult
+
+Purpose: separate progress/state of command execution from the command request and from its result.
+
+### Feasibility
+
+Purpose: request/check whether a command-like action can be performed, using the same parameter semantics without executing the regular command.
+
+### SystemEvent
+
+Purpose: represent time-stamped system lifecycle/maintenance/configuration events such as calibration, configuration change, software update, part replacement, relocation/deployment and handoff.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| System identity | System, uniqueIdentifier, name, description, validTime, location |
+| Role/realization | systemType, assetType |
+| Reusable kind | systemKind, Procedure |
+| Composition | parentSystem, subsystems, Composition |
+| Temporary association | Aggregation, Deployment, platform, deployedSystems |
+| Deployment hierarchy | parentDeployment, subdeployments |
+| Observation context | SamplingFeature, FeatureOfInterest, Property |
+| Output channel | DataStream, observed properties, result schema |
+| Observation | Observation, phenomenon/result time, result |
+| Control channel | ControlStream, controlled properties, parameter schema |
+| Tasking | Command, CommandStatus, CommandResult |
+| Pre-tasking analysis | Feasibility, feasibility status/result |
+| History/lifecycle | SystemEvent, event type, eventTime |
+| Identifiers | resource local ID, canonical URL, persistent uniqueIdentifier/UID |
+
+---
+
+## 4. Primary relationships
+
+### System ↔ Procedure
+
+`systemKind` links a System to one reusable Procedure description.
+
+### System ↔ Subsystems
+
+Systems can contain/nest other Systems recursively.
+
+CSAPI distinguishes two source-native association meanings:
+
+- **Composition** — subsystem is integral/ordinarily enduring and not usually separated except for maintenance.
+- **Aggregation** — subsystem is not permanently attached and can be associated with different parent Systems at different times.
+
+### Aggregation ↔ Deployment
+
+Aggregation is represented through Deployment: Deployment describes what Systems are mounted/associated with a parent/Platform at a given time.
+
+### Deployment ↔ Systems/context
+
+Deployment can link:
+
+- Platform;
+- deployed Systems;
+- features of interest;
+- sampling features;
+- DataStreams;
+- ControlStreams;
+- subdeployments.
+
+### System ↔ DataStreams / ControlStreams / Events
+
+Dynamic resources are associated back to the System that produces/receives them.
+
+### DataStream ↔ Observations
+
+Observation belongs to a parent DataStream whose common schema/properties apply.
+
+### ControlStream ↔ Commands
+
+Command belongs to a parent ControlStream whose controlled properties/schema apply.
+
+### Command ↔ status/result
+
+Command can create multiple CommandStatus records and CommandResult.
+
+### Stream ↔ Property / target features
+
+DataStream references observed properties; ControlStream references controlled properties. Both can reference sampling/feature-of-interest context.
+
+---
+
+## 5. Dependency boundaries
+
+Connected Systems has explicit layering.
+
+### Domain/resource semantics vs encoding
+
+Part 1/2 define resource attributes/associations independently of whether a resource is encoded as GeoJSON, SensorML, JSON, SWE Common, etc.
+
+### Persistent feature vs dynamic data
+
+Part 1 persistent/context resources are separate from Part 2 time-varying resources.
+
+### System instance vs reusable kind
+
+System and Procedure/systemKind are separate.
+
+### Composition vs deployment context
+
+Enduring subsystem relationship and time-scoped aggregation are separate.
+
+### Stream metadata vs individual values
+
+DataStream/ControlStream provide common schema/context; Observation/Command supply individual instances.
+
+### Command request vs execution status vs result
+
+Task, execution state and output are separate.
+
+### Property definition vs value
+
+Property resource identifies semantic property; Observation/result or current dynamic data supplies values.
+
+### Base feature model vs OGC API mechanics
+
+Canonical URLs, collections, nested endpoints, pagination and filters are API structures, not automatically DIM concepts.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Strongly intrinsic to System description
+
+- persistent unique identifier;
+- systemType;
+- assetType;
+- reusable kind link;
+- enduring Composition/subsystem structure;
+- applicable name/description;
+- intrinsic capabilities represented by related outputs/control definitions where semantically tied.
+
+### Contextual/time-scoped
+
+- Deployment;
+- Aggregation;
+- Platform carrying a System;
+- deployment-specific configuration;
+- Feature of Interest/Sampling Feature for a particular observing/control context;
+- current location where not inherently fixed.
+
+### Dynamic/evidentiary
+
+- Observations;
+- Commands;
+- CommandStatus/Result;
+- SystemEvents.
+
+The source explicitly prevents temporary aggregation from being mistaken for enduring composition.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting structures include:
+
+- persistent UID vs local API ID;
+- canonical URL;
+- validTime;
+- geometry/location;
+- feature links;
+- property definitions;
+- schemas;
+- encodings;
+- temporal filtering;
+- collections/search/filtering;
+- links between static and dynamic resources.
+
+The System/Deployment/Procedure/SamplingFeature resources also map to SOSA/SSN concepts, making semantic alignment cross-cutting.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+CSAPI has multiple temporal structures.
+
+### Description validity
+
+System descriptions can have `validTime`.
+
+### Deployment time
+
+Deployments are time-scoped contexts and can form nested deployment histories.
+
+### Observation time
+
+Observations carry their own temporal semantics within DataStreams.
+
+### Command lifecycle
+
+Command is separate from CommandStatus and CommandResult, allowing multiple status updates over time.
+
+### Feasibility lifecycle
+
+Feasibility uses command-like status/result structure before actual command execution.
+
+### System lifecycle/history
+
+SystemEvent explicitly records events such as:
+
+- Calibration;
+- ConfigurationChange;
+- SoftwareUpdate;
+- PartReplacement;
+- Relocation;
+- Deployment;
+- operator handoff;
+- decommissioning.
+
+This is a **history/event structure**, not the same as current System description.
+
+---
+
+## 9. Composition / topology organization
+
+CSAPI defines both persistent and time-scoped structure.
+
+### Persistent system composition
+
+Subsystems are full System resources and can be nested indefinitely.
+
+Composition means the component is an integral/ordinarily enduring part of the parent.
+
+### Time-scoped aggregation
+
+Interchangeable/non-permanent relationships are modeled by Deployment, not by changing the persistent composition tree.
+
+### Mixed systems
+
+A parent can simultaneously have:
+
+- composed built-in subsystems;
+- aggregated/interchangeable subsystems active for a deployment.
+
+### Deployment hierarchy
+
+Deployments can have subdeployments; associated Systems, features, DataStreams and ControlStreams can be retrieved recursively across the deployment tree.
+
+### Important distinction
+
+**System topology and deployment topology are different source-native structures.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+Connected Systems does not have one generic Capability resource in Parts 1–2. Capability/behavior is expressed through several structures.
+
+### System role
+
+`systemType` classifies the principal role/activity:
+- Sensor;
+- Actuator;
+- Sampler;
+- Platform;
+- System.
+
+### Realization
+
+`assetType` separately identifies realization such as:
+- Equipment;
+- Human;
+- LivingThing;
+- Simulation;
+- Process;
+- Group;
+- Other.
+
+### Procedure/systemKind
+
+Reusable Procedure describes how/kind of System behavior.
+
+### DataStream
+
+Outputs expose what the System observes/produces.
+
+### ControlStream
+
+Controlled properties and parameter schemas expose what can be affected/commanded.
+
+### Feasibility
+
+Allows capability/task feasibility to be evaluated before execution.
+
+The source-native capability picture is therefore distributed across **role + reusable procedure + outputs + controlled properties + schemas/feasibility**, not one Capability object.
+
+---
+
+## 11. Information / output organization
+
+CSAPI deliberately separates static/contextual description from several dynamic information types.
+
+### Output description
+
+DataStream describes one System output, observed properties and result schema.
+
+### Observation values
+
+Observation is the actual observation/result.
+
+### Command-channel description
+
+ControlStream describes controlled properties and command/parameter/result schemas.
+
+### Command
+
+Command is the request instance.
+
+### Command status/result
+
+Execution progress and final/produced result are separate resources.
+
+### System events
+
+Lifecycle/maintenance/configuration events are a separate dynamic resource family.
+
+### Real-time vs historical access
+
+DataStream and ControlStream can expose:
+
+- real-time only;
+- historical only;
+- both.
+
+This is explicit metadata, not inferred from endpoint location.
+
+---
+
+## 12. Management / condition organization
+
+Parts 1–2 do not define a generic equipment-management domain comparable to Redfish/MIMOSA, but they provide carriers for management interactions and history.
+
+Relevant structures include:
+
+- Command/ControlStream for management actions;
+- DataStream/Observation for state/telemetry;
+- SystemEvent for maintenance/configuration history;
+- Deployment for employment/configuration context;
+- Procedure for reusable system kind/procedure;
+- Property resources for observed/controlled properties.
+
+The standard intentionally leaves detailed family-specific condition/management vocabularies to profiles/extensions/domain descriptions.
+
+**Evidence result:** CSAPI supplies interoperable structural carriers but does not itself define a complete generic condition/service taxonomy.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+Identity is deliberately layered.
+
+### Persistent System UID
+
+`uniqueIdentifier` is intended to be persistent and independent of the resource URL.
+
+### API-local resource identity
+
+Each resource also has a local identifier and canonical URL.
+
+### Reusable-kind reference
+
+System references Procedure through `systemKind`.
+
+### Source/subject relationships
+
+Dynamic resources reference their producing/receiving System and target features/properties.
+
+### Parent/context references
+
+Subsystem and Deployment associations are explicit links rather than inferred from names/URLs alone.
+
+### Event/source continuity
+
+SystemEvent remains related to the persistent System while recording changes occurring to it over time.
+
+The standard therefore distinguishes **persistent domain identity, API resource identity, reusable type/kind identity and contextual relationship identity**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **System vs Procedure/systemKind** — particular System and reusable kind/procedure are different subjects.
+2. **systemType vs assetType** — operational role and realization are independent dimensions.
+3. **System vs Subsystem** — a subsystem is still a full System, not merely an untyped embedded record.
+4. **Composition vs Aggregation** — enduring/integral and time-varying/interchangeable relationships are semantically different.
+5. **System topology vs Deployment topology** — component structure and employment grouping are different.
+6. **Deployment Platform vs deployed System** — host/context and carried/associated systems remain distinct.
+7. **Property definition vs property value** — semantic property concept and observed/controlled value are different.
+8. **DataStream vs Observation** — output/channel description and individual observation are different.
+9. **ControlStream vs Command** — command channel/capability description and individual command are different.
+10. **Command vs CommandStatus vs CommandResult** — requested action, execution state and produced result are separate.
+11. **Command vs Feasibility** — checking whether an action can be performed is not the same as executing it.
+12. **Observation vs SystemEvent** — observation result and lifecycle/maintenance event are different information kinds.
+13. **SamplingFeature vs ultimate FeatureOfInterest** — proxy/sampling context and real target are distinct.
+14. **Persistent UID vs local ID/canonical URL** — domain identity and API address/resource identity are different.
+15. **Real-time vs historical stream access** — access mode is explicit and should not be inferred.
+16. **Resource semantics vs endpoint/encoding mechanics** — API nesting and serialization are not automatically domain relationships.
+17. **Current System description vs history/event record** — updates to current description do not replace the need for explicit historical events.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** persistent System identity; role/realization separation; reusable kind/procedure; enduring subsystem composition;
+- **likely contextual relationship pattern:** Deployment, Aggregation, Platform, SamplingFeature and FeatureOfInterest;
+- **likely dynamic-information pattern:** DataStream/Observation and ControlStream/Command separation;
+- **likely behavior pattern:** Command vs Status vs Result vs Feasibility;
+- **likely lifecycle/history pattern:** explicit SystemEvent separate from current System description;
+- **likely cross-cutting:** Property definitions, persistent UID/local ID distinction, validTime, schemas and semantic links;
+- **likely reusable topology pattern:** persistent composition and deployment aggregation maintained as separate structures;
+- **binding caution:** resource types, canonical URLs, nested endpoints, HTTP methods, collections and encodings are OGC API realization mechanisms and are not automatically DIM classes/relationships;
+- **profile-gap signal:** detailed condition, lifecycle, communications, power and family-specific capability semantics are not fully standardized by CSAPI Parts 1–2 and must come from applicable domain evidence rather than local API invention.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C08 status: COMPLETE.**
+
+**Next frozen lineage:** C09 — OGC SensorML.
+
