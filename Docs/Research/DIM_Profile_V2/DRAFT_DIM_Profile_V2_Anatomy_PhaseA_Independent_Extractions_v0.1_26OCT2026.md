@@ -11356,3 +11356,512 @@ The model therefore distinguishes domain object identity from reporting/provenan
 
 **Next frozen lineage:** X06 — NIEM.
 
+---
+
+# X06 — NIEM 6.0
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 64, 75, 76, 78–86.  
+**Frozen companion IDs:** 60–63, 65–74, 77, 87, 88.
+
+**Primary inspected sources:**
+
+- OASIS NIEMOpen, *NIEM Model Version 6.0*, OASIS Standard.
+- NIEM Core Schema 6.0.
+- frozen NIEM 6.0 domain schemas:
+  - CBRN;
+  - Cyber;
+  - Intelligence;
+  - Military Operations;
+  - Military Operations–USMTF;
+  - Screening.
+- frozen Auxiliary, GML Adapter, JSON-LD context and Domain Schema Collection artifacts.
+
+**Architecture companion inspected:**
+
+- NIEM Naming and Design Rules (NDR) 6.0 for the architecture mechanisms explicitly referenced by the NIEM Model:
+  - associations;
+  - augmentations;
+  - roles;
+  - representations;
+  - references;
+  - adapters.
+
+**Evidence note:** NIEM is a multi-domain exchange model, not a sensing-equipment ontology. This extraction therefore focuses on the source-native way NIEM partitions and composes information, not on enumerating the thousands of domain properties/types. Machine-readable reference schemas are normative for the Work Product; the prose architecture governs how those components are understood and reused.
+
+---
+
+## 1. Source-native structural organization
+
+NIEM 6.0 is explicitly a **collection of reusable properties and types defined in namespaces organized by governance/authoritative source**.
+
+### A. Model content partitions
+
+The NIEM Model defines seven major namespace/content categories:
+
+1. **NIEM Core**
+   - general-purpose, cross-domain content;
+   - collaboratively governed;
+   - intended for reuse across communities.
+
+2. **Domains**
+   - community-of-interest namespaces with formal governance bodies;
+   - frozen corpus includes CBRN, Cyber, Intelligence, Military Operations, Military Operations–USMTF and Screening.
+
+3. **Codes**
+   - code-set namespaces.
+
+4. **Adapters**
+   - mechanisms wrapping non-NIEM-conformant external standards for use inside NIEM exchanges.
+
+5. **Auxiliary**
+   - community/standard content without the formal governance requirements of a NIEM Domain.
+
+6. **External**
+   - schemas/standards defined outside NIEM and intentionally kept non-conformant where external reuse yields greater interoperability.
+
+7. **Utility**
+   - architecture/support namespaces for:
+     - identifiers/references;
+     - linked data;
+     - security markup;
+     - code lists;
+     - schema/serialization infrastructure.
+
+### B. Model components
+
+The basic reusable building blocks are:
+
+- **Types**
+  - classes/data structures.
+
+- **Properties**
+  - elements/attributes defining facts/relationships/values.
+
+- **Objects**
+  - instances of structured types.
+
+- **Simple values / codes**
+  - literal/controlled values.
+
+### C. Relationship architecture
+
+The NDR provides reusable mechanisms for:
+
+- **Associations**
+  - explicit relationship objects among properties/entities.
+
+- **Augmentations**
+  - add properties from one namespace/community to a class owned by another namespace without modifying/redefining the original class.
+
+- **Roles**
+  - represent related but distinct roles of the same entity in one message/exchange.
+
+- **Representations**
+  - alternate representations of the same conceptual property/type, supporting multiple representation choices.
+
+- **References**
+  - refer to an object elsewhere in a message rather than duplicate it.
+
+- **Adapters**
+  - incorporate external-standard structures.
+
+### D. Exchange specialization
+
+Implementations select needed NIEM components and can add local extension content when the reference model does not satisfy the business requirement.
+
+The source-native pattern is therefore:
+
+> **governed reusable component library → Core/domain ownership → explicit relationships/roles/augmentations → exchange-specific selection/extension → serialization**
+
+rather than one universal object hierarchy.
+
+---
+
+## 2. Purpose of each partition
+
+### NIEM Core
+
+Purpose: own semantics that are sufficiently general and reusable across multiple domains.
+
+### Domain
+
+Purpose: let an authoritative community govern specialized concepts without forcing them into Core.
+
+### Code namespace
+
+Purpose: maintain controlled value sets separately from object/property semantics.
+
+### Adapter
+
+Purpose: preserve and reuse an external standard's structure rather than re-authoring it merely to satisfy NIEM syntax.
+
+### Auxiliary
+
+Purpose: support useful community/standard content that does not have a formally governed NIEM Domain.
+
+### External
+
+Purpose: retain genuinely external standards as external, when that provides greater interoperability.
+
+### Utility
+
+Purpose: provide structural/technical mechanisms supporting reference, security, linked data, code lists and exchange architecture.
+
+### Association
+
+Purpose: model relationships explicitly as first-class content when a simple property reference is insufficient.
+
+### Augmentation
+
+Purpose: allow one domain/namespace to add content to another namespace's type without taking ownership of or modifying that type.
+
+### Role
+
+Purpose: allow the same underlying entity to appear in distinct semantic roles in an exchange.
+
+### Representation
+
+Purpose: allow alternate ways to represent the same conceptual information while preserving common semantics.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Reusable model component | Property, Type, Object, simple value |
+| Governance | Namespace, Core, Domain, authoritative source |
+| Controlled vocabulary | Code namespace, code type/list |
+| Relationship | Association, AssociationType |
+| Cross-domain extension | Augmentation, AugmentationType/Point |
+| Entity role | Role/object extension, shared URI/reference identity |
+| Alternate form | Representation |
+| Object reuse | reference, URI/ID, referenceable object |
+| External-standard integration | Adapter, External namespace |
+| Exchange specialization | reference schema subset, extension schema, message model |
+| Security/context infrastructure | utility/auxiliary namespaces, security markup |
+| Serialization | XML reference schemas, JSON/JSON-LD representation support |
+
+---
+
+## 4. Primary relationships
+
+### Type → Properties
+
+A NIEM Type defines which properties can describe an object/value of that type.
+
+### Property → Type/value
+
+Properties are typed and can represent:
+- objects;
+- simple values;
+- relationships;
+- references.
+
+### Core ↔ Domain
+
+Domains reuse Core components and can specialize/add domain-owned semantics without duplicating Core meaning.
+
+### Namespace A → augmentation of Namespace B type
+
+An augmenting namespace can add a property to a type owned by another namespace without changing the augmented namespace.
+
+This is specifically designed for multi-domain composition.
+
+### Association → participating objects/properties
+
+Associations create explicit relationship objects among domain entities.
+
+### Role → same underlying entity
+
+Different Role objects can be linked to one entity identity in the message, preserving role-specific information without asserting multiple real-world entities.
+
+### Adapter → external content
+
+Adapter wraps external-standard content so it can participate in a NIEM-conformant exchange without claiming that the external standard itself is NIEM-conformant.
+
+### Exchange → selected model components
+
+A conforming exchange uses the subset of NIEM components required for the business need and extends only when necessary.
+
+---
+
+## 5. Dependency boundaries
+
+### Core vs Domain
+
+General reusable semantics and community-specific semantics have different governance ownership.
+
+### Domain vs local extension
+
+A NIEM Domain is a governed reference-model namespace; an exchange-specific extension does not become Domain/Core simply because one implementation needs it.
+
+### NIEM component vs external standard
+
+Adapters/external namespaces explicitly protect this boundary.
+
+### Model vs serialization
+
+NIEM architecture has an underlying model with language-specific representations. XML is normative in the frozen 6.0 Work Product, while JSON-LD/other serializations are separate representations.
+
+### Class/type vs augmentation
+
+Augmented content is not part of the original owning namespace merely because it is usable on that type.
+
+### Entity vs role
+
+Role-specific message objects can refer back to the same entity.
+
+### Reference model vs message model
+
+The reference model supplies reusable semantics; a message/exchange model selects and constrains what is actually exchanged.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+NIEM does not define one universal intrinsic/context split because it spans many domains.
+
+Instead, source-native ownership and relationship mechanisms distinguish concerns:
+
+### Potentially intrinsic
+
+Properties owned by the object's reference type/core/domain definition.
+
+### Contextual/relationship-specific
+
+- Association objects;
+- role objects;
+- augmentations from another domain;
+- exchange-specific extension content;
+- metadata/security/reference objects.
+
+### Governance contextual
+
+The namespace that defines a property signals the authority/community responsible for its semantics, but namespace ownership is not itself a real-world part-of relation.
+
+---
+
+## 7. Cross-cutting concepts
+
+NIEM is built for cross-cutting reuse.
+
+Major cross-cutting mechanisms include:
+
+- NIEM Core;
+- identifiers;
+- names;
+- locations;
+- dates/times;
+- organisations/persons;
+- associations;
+- augmentation;
+- metadata;
+- references;
+- roles;
+- code lists;
+- security markup;
+- external-standard adapters.
+
+A single domain object can therefore be described by:
+- Core content;
+- its owning Domain;
+- augmentations from other Domains;
+- exchange-local extensions
+without duplicating the base object.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+NIEM has no universal lifecycle model.
+
+Time/state semantics are defined by reusable/domain components relevant to the business exchange:
+
+- dates;
+- status objects/codes;
+- events/activities;
+- effective periods;
+- domain-specific history structures.
+
+Metadata in NIEM 6.0 is treated like ordinary objects and can be included/augmented where applicable.
+
+**Evidence result:** lifecycle/state is domain/exchange-specific rather than a central architecture partition.
+
+---
+
+## 9. Composition / topology organization
+
+NIEM provides **relationship composition mechanisms**, not one fixed equipment topology.
+
+### Object composition
+
+Types contain properties that may be nested object properties.
+
+### Association
+
+Explicit relationship object can join multiple entities.
+
+### Augmentation
+
+Adds cross-domain content to an existing object without changing its source type.
+
+### Role
+
+Represents one entity playing multiple semantic roles.
+
+### Reference
+
+Allows graph-like object reuse instead of duplication.
+
+### Domain/core structure
+
+Namespace organization is governance/model ownership, not equipment topology.
+
+The architecture supports many topology models but does not prescribe one generic part-of tree.
+
+---
+
+## 10. Capability / function / behavior organization
+
+NIEM itself does not define one generic equipment-capability architecture.
+
+Capabilities/functions are represented where Core or Domains define applicable:
+- capability;
+- activity;
+- function;
+- resource;
+- action;
+- status
+components.
+
+Military/CBRN/Screening/etc. Domains can supply specialized operational semantics.
+
+The architecture contribution is instead:
+- reuse existing component if semantics match;
+- derive/augment rather than needlessly duplicate;
+- keep specialized ownership visible.
+
+---
+
+## 11. Information / output organization
+
+NIEM structures information as reusable components assembled into **business information exchanges**.
+
+Different information kinds can be modeled through:
+- object types;
+- associations;
+- activities/events;
+- status;
+- measures;
+- documents;
+- reports;
+- domain-specific structures.
+
+The model does not impose a universal split analogous to Observation vs Command; those distinctions depend on the selected domain content.
+
+The exchange model selects only information required for the business exchange from the larger reference model.
+
+---
+
+## 12. Management / condition organization
+
+No universal equipment-management/condition partition exists.
+
+Condition/management semantics appear in relevant Domain/Core structures and can be:
+
+- reused;
+- augmented;
+- extended;
+- related through associations.
+
+The architecture's main contribution is preventing a domain from redefining another domain's established semantics when reuse/augmentation can preserve them.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+NIEM has substantial identity/reference architecture.
+
+### IDs/references
+
+Utility structures support:
+- identifiers;
+- object references;
+- URI-based linkage;
+- linked-data interpretation.
+
+### Roles
+
+NIEM 6.0 uses standard type extension plus shared URI/reference identity to relate different roles of the same entity.
+
+### Metadata
+
+Metadata is treated as normal object content in 6.0 and can be included/augmented.
+
+### Namespace provenance
+
+Namespace indicates governance/source of component semantics.
+
+### External/adapters
+
+Adapter/external namespaces preserve the pedigree of external standards.
+
+The architecture therefore separates:
+- entity identity;
+- role representation;
+- reference identity;
+- semantic ownership/governance;
+- exchange-local representation.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Core vs Domain** — general cross-domain semantics and community-owned specialization have different ownership.
+2. **Domain vs exchange extension** — governed reference content and local message need are different.
+3. **NIEM component vs external standard content** — adapter use does not make the external standard NIEM-native.
+4. **Adapter vs re-authored NIEM concept** — wrapping external semantics and recreating them are different.
+5. **Type vs Property** — class/structure and one fact/relationship are distinct model components.
+6. **object vs reference to object** — repeated occurrence/reference must not create false duplicate entities.
+7. **entity vs role** — one entity can play multiple roles without becoming multiple real-world entities.
+8. **role-specific data vs base entity data** — contextual role content should not pollute the entity's universal intrinsic definition.
+9. **augmentation vs ownership** — property from another namespace does not become part of the original namespace's definition.
+10. **augmentation vs type extension** — multi-domain augmentation has different governance/combination semantics than single-inheritance extension.
+11. **Association vs simple containment/property** — explicit relationship object can carry meaning beyond nested structure.
+12. **Representation vs concept** — alternate representation forms do not create different domain concepts.
+13. **reference model vs message/exchange model** — broad reusable vocabulary and one business exchange are different abstraction levels.
+14. **namespace structure vs real-world topology** — governance packaging must not be interpreted as equipment/module composition.
+15. **code list vs domain property** — controlled values and the property they qualify are different.
+16. **security/metadata vs substantive object semantics** — cross-cutting markup/content should not redefine the subject.
+17. **serialization vs semantic model** — XML/JSON-LD syntax does not own business meaning.
+18. **reuse vs duplication** — NIEM conformance explicitly discourages needless duplicate semantics.
+19. **multi-domain overlap vs one universal class** — harmonization does not erase domain-specific authority or distinctions.
+20. **model conformance vs application-profile conformance** — using NIEM components correctly is not the same as conforming to the future V2 profile.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely architecture/governance pattern:** common Core semantics separated from domain/specialization ownership;
+- **likely extension pattern:** augment established concepts rather than fork/redefine them for every specialization;
+- **likely relationship pattern:** Associations and Roles for contextual semantics that should not become intrinsic properties;
+- **likely external-source pattern:** Adapters preserve externally owned structures without falsely claiming native implementation;
+- **likely identity/reference pattern:** one entity can be referenced/reused across roles and message contexts;
+- **likely profile pattern:** broad reference model vs selected exchange/profile model;
+- **likely cross-cutting:** metadata/security/reference mechanisms independent from substantive domain classes;
+- **scope caution:** NIEM's namespace/domain architecture is governance/information-model structure, not a candidate physical sensing-system module taxonomy;
+- **binding caution:** XSD namespaces/substitution/augmentation points are NIEM representation mechanisms and must not be copied mechanically into the V2 DIM.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**X06 status: COMPLETE.**
+
+**Next frozen lineage:** X07 — NIST IoT Device Cybersecurity Capability Core Baseline.
+
