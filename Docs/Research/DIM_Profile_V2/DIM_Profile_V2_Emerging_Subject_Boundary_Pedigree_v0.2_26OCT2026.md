@@ -28,7 +28,7 @@ The synthesized sentence is therefore treated as a proposition whose parts must 
 
 ## 2. Synthesized result with inline source pedigree
 
-> **The DIM appears to be converging on an individually identifiable, persistently describable sensing-oriented technical subject** (Open Geospatial Consortium 2025a; World Wide Web Consortium and Open Geospatial Consortium 2026; Industrial Digital Twin Association 2026; European Telecommunications Standards Institute 2024) **that may be atomic or composite** (Open Geospatial Consortium 2025b; OPC Foundation n.d.; Bosch Sensortec 2024), **whose enduring equipment boundary can be distinguished from its host, deployment, network, management, and target context** (Open Geospatial Consortium 2025a; World Wide Web Consortium and Open Geospatial Consortium 2026; The Open Group 2023; PEO IEW&S 2023; OPC Foundation n.d.), **and whose kind/model, capabilities, configuration, state, interactions, outputs/actions, history, and provenance can be understood without conflating those with the subject itself** (Open Geospatial Consortium 2025a, 2025b; Industrial Digital Twin Association 2026; European Telecommunications Standards Institute 2024; World Wide Web Consortium 2023a, 2023b; World Wide Web Consortium 2013).
+> **The DIM appears to be converging on an individually identifiable, persistently describable sensing-oriented technical subject** (Open Geospatial Consortium 2025a; World Wide Web Consortium and Open Geospatial Consortium 2026; Industrial Digital Twin Association 2026; European Telecommunications Standards Institute 2024) **that may be atomic or composite** (Open Geospatial Consortium 2025b; OPC Foundation n.d.; Bosch Sensortec 2024), **whose enduring equipment boundary can be distinguished from its host, deployment, network, management, and target context** (Open Geospatial Consortium 2025a; World Wide Web Consortium and Open Geospatial Consortium 2026; The Open Group 2023; Program Executive Office Intelligence, Electronic Warfare and Sensors 2023; OPC Foundation n.d.), **and whose kind/model, capabilities, configuration, state, interactions, outputs/actions, history, and provenance can be understood without conflating those with the subject itself** (Open Geospatial Consortium 2025a, 2025b; Industrial Digital Twin Association 2026; European Telecommunications Standards Institute 2024; World Wide Web Consortium 2023a, 2023b; World Wide Web Consortium 2013).
 
 No single donor states this sentence. The sentence is a **project synthesis**. Its pedigree is a combination of direct donor concepts, independently recurring distinctions, and operational falsification evidence.
 
@@ -64,7 +64,7 @@ The sections below identify these roles explicitly.
 
 ### OGC API – Connected Systems — direct native anchor
 
-CSAPI requires a `System` resource to carry a `uniqueIdentifier` that is intended to be persistent and independent of the API resource URL. The standard explains why: different services may hold different representations or descriptions of the same real-world object, and the persistent unique identifier (UID) permits those representations to refer to the same underlying identity (Open Geospatial Consortium 2025a, secs. 8.5, 9.2.2).
+CSAPI requires a `System` resource to carry a `uniqueIdentifier` that is intended to be persistent and independent of the API resource Uniform Resource Locator (URL). The standard explains why: different services may hold different representations or descriptions of the same real-world object, and the persistent unique identifier (UID) permits those representations to refer to the same underlying identity (Open Geospatial Consortium 2025a, secs. 8.5, 9.2.2).
 
 This is the most direct donor for the words **individually identifiable**.
 
@@ -72,7 +72,7 @@ The important CSAPI distinction is:
 
 > **identity of the real-world System ≠ identity/address of one API resource representation**
 
-The local resource identifier (ID) and canonical Uniform Resource Locator (URL) are implementation/API identifiers. The UID is intended to carry the identity of the represented thing across services.
+The local resource identifier (ID) and canonical URL are implementation/API identifiers. The UID is intended to carry the identity of the represented thing across services.
 
 ### AAS — independent corroboration
 
@@ -288,7 +288,7 @@ The Open Group SOSA architecture independently treats the Sensor as having a bou
 
 ### ISA — composition topology versus network topology
 
-ISA separately structures Compositions/components and their broader ISA network relationships (PEO IEW&S 2023). This independently warns against interpreting communications participation as physical composition.
+ISA separately structures Compositions/components and their broader ISA network relationships (Program Executive Office Intelligence, Electronic Warfare and Sensors 2023). This independently warns against interpreting communications participation as physical composition.
 
 ### OPC UA Devices — device topology versus communications/integration topology
 
@@ -328,7 +328,7 @@ Deployment carries time-scoped employment/association information and is also th
 
 ### SOSA/SSN and OMS
 
-Both provide explicit Deployment concepts connecting Systems/Observers to hosting or operational context (World Wide Web Consortium and Open Geospatial Consortium 2026; Open Geospatial Consortium and ISO 2023).
+Both provide explicit Deployment concepts connecting Systems/Observers to hosting or operational context (World Wide Web Consortium and Open Geospatial Consortium 2026; Open Geospatial Consortium and International Organization for Standardization 2023).
 
 **DIM implication:** where/how/when a subject is employed is not automatically intrinsic composition.
 
@@ -336,7 +336,7 @@ Both provide explicit Deployment concepts connecting Systems/Observers to hostin
 
 ### ISA
 
-ISA's Composition structure and network participation are different architectural structures (PEO IEW&S 2023).
+ISA's Composition structure and network participation are different architectural structures (Program Executive Office Intelligence, Electronic Warfare and Sensors 2023).
 
 ### OPC UA Devices
 
@@ -364,7 +364,7 @@ LwM2M separates the managed Client/device-side resource model from the LwM2M Ser
 
 ### SOSA/SSN and OMS
 
-Observation semantics explicitly distinguish the observing System/Observer from the FeatureOfInterest whose property is being observed (World Wide Web Consortium and Open Geospatial Consortium 2026; Open Geospatial Consortium and ISO 2023).
+Observation semantics explicitly distinguish the observing System/Observer from the FeatureOfInterest whose property is being observed (World Wide Web Consortium and Open Geospatial Consortium 2026; Open Geospatial Consortium and International Organization for Standardization 2023).
 
 ### CSAPI
 
@@ -539,7 +539,7 @@ SensorML describes processes through inputs, outputs, parameters, methods, and c
 
 SAREF connects Device functions, Commands, Properties/States, observations/actuations, and target entities (European Telecommunications Standards Institute 2024).
 
-### OSUS / SAPIENT / UGS
+### Open Standard for Unattended Sensors (OSUS) / SAPIENT / UGS
 
 Operational donor evidence repeatedly demonstrates subjects that both produce information and accept tasking/commands.
 
@@ -616,7 +616,7 @@ No donor contributes it as one explicit rule.
 
 It is induced from repeated source-native separations:
 
-- Asset ≠ AAS representation (Industrial Digital Twin Association (IDTA));
+- Asset ≠ AAS representation (Industrial Digital Twin Association);
 - Thing ≠ Thing Description ≠ Thing Model (W3C WoT);
 - System instance ≠ system kind ≠ implemented Procedure (CSAPI);
 - Device ≠ DeviceKind (SAREF);
