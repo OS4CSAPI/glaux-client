@@ -8428,3 +8428,790 @@ Manufacturer/model/serial/product-asset identity is not a central source-native 
 
 **Next frozen lineage:** C15 — The Open Group SOSA.
 
+---
+
+# C15 — The Open Group SOSA
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 48, 49.  
+**Frozen companion IDs:** 47, 50–58.
+
+**Primary inspected sources:**
+
+- The Open Group, *Technical Standard for SOSA Reference Architecture, Edition 1.1*, C239, June 2023 with September 2023 erratum.
+- The Open Group, *Technical Standard for SOSA Reference Architecture, Edition 1.0: SOSA Domain-Specific Data Model*, 2022.
+
+**Companion lineage:**
+
+- Edition 1.0 Technical Standard.
+- SOSA DSDM IDL.
+- Edition 1.1 System Management OpenAPI companion artifacts.
+- Edition 2.0 Snapshot 3 / bundle as later draft-development lineage.
+
+**Evidence note:** Edition 1.1 is the adopted Technical Standard in the frozen corpus and controls the architecture extraction. The complete Edition 1.0 DSDM is the frozen source-native data-model artifact and controls detailed entity-model extraction. The later Edition 2.0 Snapshot 3 is a draft snapshot; its raw bundle was not re-inspected here, so no new clause-level claims are imported from it. The W3C/OGC SOSA ontology is a different lineage and is handled separately as C14.
+
+---
+
+## 1. Source-native structural organization
+
+The Open Group SOSA lineage organizes the Sensor simultaneously through **architecture modules/infrastructure**, **physical context**, **system management**, and a **domain-specific data model**.
+
+### A. Whole Sensor boundary
+
+Edition 1.1 identifies the **SOSA Sensor** as the main subject.
+
+A SOSA Sensor:
+
+- consists of one or more hardware elements;
+- may include software/firmware;
+- can implement one or more of the SOSA sensing domains;
+- has an external boundary; interfaces crossing it are external Sensor interfaces.
+
+### B. Sensor Component taxonomy
+
+SOSA divides Sensor Components into two major categories:
+
+1. **SOSA Modules**
+   - logical building blocks implementing specified functions/behaviors/interfaces.
+
+2. **SOSA Infrastructure**
+   - building blocks enabling Modules to execute/interoperate.
+
+Infrastructure is further separated into:
+
+- **Hardware Elements**
+  - PIC;
+  - aperture;
+  - chassis;
+  - power supply;
+  - connectors/mount/backplane;
+  - chassis manager.
+
+- **Run-Time Environment**
+  - operating system;
+  - container engine;
+  - hypervisor;
+  - related runtime execution environment.
+
+- **Interaction Infrastructure**
+  - transport/API;
+  - interaction binding;
+  - inter-module communication infrastructure.
+
+### C. Functional module decomposition
+
+Edition 1.1 organizes SOSA functions into top-level module families such as:
+
+1. **SOSA Sensor Management**
+   - System Manager;
+   - Task Manager.
+
+2. **Transmission / Reception**
+   - Emitter/Collector;
+   - Conditioner-Receiver-Exciter.
+
+3. **Process Signals / Targets**
+   - Signal/Object Detector and Extractor;
+   - Signal/Object Characterizer;
+   - Image Pre-processor;
+   - Tracker.
+
+4. **Analyze / Exploit**
+   - External Data Ingestor;
+   - Encoded Data Extractor;
+   - Situation Assessor;
+   - Impact Assessor and Responder;
+   - Storage/Retrieval Manager.
+
+5. **Convey**
+   - Reporting Services.
+
+6. **Support System Operation**
+   - Security Services;
+   - Encryptor/Decryptor;
+   - Guard/Cross-Domain Service;
+   - Network Subsystem;
+   - Calibration Service;
+   - Navigation Data Service;
+   - Time & Frequency Service;
+   - Compressor/Decompressor;
+   - Host Platform Interface;
+   - Power.
+
+### D. Physical context
+
+Edition 1.1 separately defines:
+
+- SOSA Sensor;
+- Sensor hardware element;
+- SOSA Host Platform.
+
+Hardware elements can be grouped or physically distributed on/in the Host Platform while remaining parts of one Sensor.
+
+### E. System management structure
+
+SOSA explicitly separates:
+
+- **mission/task execution**; from
+- **system management / housekeeping**.
+
+System management covers:
+
+- discovery;
+- capacity information;
+- configuration;
+- control/state/mode;
+- health monitoring;
+- faults;
+- BIT;
+- diagnostics;
+- logs/events;
+- software/firmware management;
+- security management.
+
+Sensor components can be:
+- managed;
+- unmanaged;
+- directly managed;
+- indirectly managed by another component representing/managing them.
+
+### F. DSDM Entity Model
+
+The Edition 1.0 DSDM adds conceptual entities/associations including:
+
+- Sensor;
+- Component_;
+- Platform;
+- Controller;
+- Chassis;
+- Slot;
+- Product;
+- ProductInstance;
+- Function_;
+- Network;
+- NetworkInterface;
+- File;
+- SoftwareElement;
+- Fault;
+- Action;
+- Test;
+- LogEntry;
+- SecurityClassification;
+- many measurements/states.
+
+Important associations include:
+
+- SensorComponent;
+- HostPlatform;
+- ChassisSlot;
+- PICPluggedIntoSlot;
+- ProductInstance;
+- ModuleImplementation;
+- ComponentActiveFaults;
+- ComponentFaultOrigination;
+- SensorFaultOrigination;
+- SensorBuiltInTest / BITResult;
+- DynamicDiscovery;
+- StaticConfiguration;
+- FirmwareUpdate / SoftwareUpdate;
+- controller-issued commands.
+
+The source-native anatomy is therefore:
+
+> **whole Sensor boundary + functional module decomposition + infrastructure decomposition + physical Host Platform context + separate system-management concern + DSDM entity/relationship model for components, state, faults, configuration, products and commands**
+
+---
+
+## 2. Purpose of each partition
+
+### SOSA Sensor
+
+Purpose: define the complete operational Sensor boundary within which components, infrastructure and functions are integrated.
+
+### SOSA Module
+
+Purpose: encapsulate a coherent function/behavior/interface so implementations can be modular and interchangeable.
+
+### Infrastructure
+
+Purpose: provide the hardware/runtime/interaction substrate needed to realize and connect Modules.
+
+### Hardware Element
+
+Purpose: represent physical realization elements:
+- cards;
+- chassis;
+- apertures;
+- power;
+- connectors/mounts.
+
+### RTE
+
+Purpose: decouple software module functionality from particular execution environment.
+
+### Interaction Infrastructure
+
+Purpose: standardize how modules communicate without making transport implementation identical to module function.
+
+### System Management
+
+Purpose: keep the Sensor and its components operational, configured, healthy and secure, independently from mission-task semantics.
+
+### Task Management
+
+Purpose: coordinate mission/operational tasking, distinct from housekeeping/system management.
+
+### Host Platform
+
+Purpose: represent the physical host on which the Sensor is mounted, separately from the Sensor boundary.
+
+### DSDM
+
+Purpose: provide conceptual/logical/physical data structures and message content for interoperable module/component interactions and management.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Whole subject | Sensor, sensor types, external boundary |
+| Component | Component_, SensorComponent, Module, HardwareElement, SoftwareElement |
+| Functional architecture | System Manager, Task Manager, transmission/reception, signal processing, analysis/exploitation, convey, support services |
+| Infrastructure | PIC, aperture, chassis, power supply, RTE, OS, VM/container, transport/API/binding |
+| Host context | Platform, HostPlatform, Host Platform Interface |
+| Physical assembly | Chassis, Slot, ChassisSlot, PIC, SlotProfile, connectors, mounts |
+| Product realization | Product, ProductInstance, ModuleImplementation |
+| State | operationalState, healthStatus, configurationState, mode |
+| Management | DynamicDiscovery, StaticConfiguration, logs, reset/restart/sanitize/zeroize, firmware/software update |
+| Condition | Fault, active fault, fault origination, severity, category, suggested Action |
+| Test | Test, SensorBuiltInTest, BITResult |
+| Control | Controller, command associations, mode/state/configuration actions |
+| Communications | Network, NetworkInterface, NetworkConnection, NetworkGateway |
+| Security | classification, compartments, crypto channels, keys/certificates |
+| Information/data model | DIV-1 Entity model, DIV-2 logical model, DIV-3 physical message model |
+
+---
+
+## 4. Primary relationships
+
+### Sensor → Sensor Components
+
+`SensorComponent` explicitly states that a Component_ is part of a Sensor.
+
+### Sensor ↔ Host Platform
+
+`HostPlatform` associates a Sensor with the physical Platform on which it is mounted.
+
+This is not the SensorComponent relation.
+
+### Component → Modules
+
+Component_ can be made of hardware/software Modules and participates in ModuleImplementation relationships.
+
+### Product → Component
+
+`ProductInstance` associates a manufactured Product with a functional Component_.
+
+### Chassis → Slot → PIC
+
+Separate associations represent:
+- ChassisSlot;
+- slot profile;
+- PIC plugged into Slot;
+- Chassis Management.
+
+### Component → faults/logs/configuration
+
+Components have:
+- active faults;
+- fault origination;
+- logs;
+- state;
+- mode;
+- discovery/configuration behavior.
+
+### Sensor → health/BIT/fault
+
+Sensor has:
+- health/configuration/operational state;
+- built-in tests;
+- sensor-level fault origination;
+- component statuses rolled into Sensor health information.
+
+### Controller → Sensor/Component command
+
+Controller is a functional item exerting control over another entity.
+
+Command associations bind:
+- issuing Controller;
+- target Sensor/Component;
+- requested state/mode/action.
+
+### Module ↔ interactions
+
+Modules interact through standard interactions implemented over the interaction infrastructure/interconnects.
+
+---
+
+## 5. Dependency boundaries
+
+The lineage deliberately separates multiple architectural levels.
+
+### Architecture function vs implementation realization
+
+SOSA Modules define function/behavior/interface; hardware/firmware/software realization can vary.
+
+### Module vs infrastructure
+
+Module function is distinct from:
+- hardware substrate;
+- RTE;
+- communication/interaction infrastructure.
+
+### Sensor vs Host Platform
+
+Sensor boundary and physical hosting platform are separate.
+
+### Mission/task vs management
+
+Mission processing/tasking is distinct from system-management housekeeping.
+
+### Functional Component vs manufactured Product
+
+ProductInstance links product identity to functional Component, showing they are not the same concept.
+
+### Component vs module implementation
+
+Component can implement/be realized by different hardware/software module patterns.
+
+### DIV-1 vs DIV-2 vs DIV-3
+
+Conceptual entity semantics, logical data organization and physical message representation are different data-model levels.
+
+### Managed entity vs management representative
+
+A managed component can be managed directly or indirectly through a second component; management representation does not necessarily equal physical component identity.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Strongly intrinsic to Sensor
+
+- SensorComponents;
+- functional modules;
+- hardware/software/runtime infrastructure;
+- Sensor state/health/configuration;
+- internal networks/interconnects;
+- power infrastructure;
+- calibration/time/navigation/security support where part of the Sensor;
+- internal faults/tests/logging;
+- internal command/control structures.
+
+### Contextual/external
+
+- Host Platform;
+- Platform C2;
+- external network/system interfaces;
+- external tasking/products;
+- broader mission environment.
+
+### Representation/management-specific
+
+- a component indirectly managed through another component;
+- dynamic discovery vs static configuration;
+- product-vs-functional-component mapping;
+- module implementation choice.
+
+These are not automatically physical containment distinctions.
+
+---
+
+## 7. Cross-cutting concepts
+
+Cross-cutting SOSA structures include:
+
+- component identity;
+- health;
+- operational state;
+- mode;
+- configuration state;
+- faults;
+- logs;
+- BIT;
+- security classification;
+- power;
+- time/frequency;
+- navigation;
+- calibration;
+- network/interactions;
+- Controller/action semantics;
+- software/firmware update;
+- product/version.
+
+System Manager services span both the whole Sensor and individual components.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+SOSA provides strong operational/configuration state but not a full acquisition-to-disposal asset lifecycle.
+
+### Component state
+
+Component_ carries:
+- operationalState;
+- healthStatus;
+- mode;
+- version.
+
+### Sensor state
+
+Sensor carries:
+- health;
+- operational state;
+- configuration state.
+
+### Operational state examples
+
+General operational states include:
+- starting;
+- operational;
+- degraded;
+- reconfiguring;
+- testing;
+- shutting down;
+- restarting;
+- zeroizing;
+- sanitizing.
+
+### Configuration state
+
+Examples include:
+- configured;
+- not configured;
+- sanitized;
+- zeroized.
+
+### Fault time
+
+Fault origination and BIT results can carry timestamps.
+
+### Update/configuration lifecycle
+
+- static configuration;
+- dynamic discovery;
+- firmware updates;
+- software updates;
+- reset/restart/sanitize/zeroize;
+- log deletion/management.
+
+### Task lifecycle
+
+Functional module/task decomposition includes:
+- accept/start/pause/resume/cancel;
+- task status monitoring.
+
+### Limit
+
+The Technical Standard focuses on operational system/component lifecycle and modular upgrade/maintenance, not a generic enterprise work-order/procurement/service history model.
+
+---
+
+## 9. Composition / topology organization
+
+SOSA defines several different topologies.
+
+### Sensor composition
+
+SensorComponent defines which Components are part of a Sensor.
+
+### Hardware assembly
+
+Chassis/Slot/PIC/profile/mount/backplane relationships define physical hardware assembly.
+
+### Functional/module topology
+
+SOSA Modules and functional groups define logical decomposition of mission/system functions.
+
+### Network/interconnect topology
+
+Network, interface, gateway, interaction infrastructure and interconnects define communication topology.
+
+### Host topology
+
+HostPlatform links Sensor to external Platform.
+
+### Product/implementation topology
+
+ProductInstance and ModuleImplementation relate manufactured products and hardware/software modules to functional components.
+
+### Management topology
+
+Managed/unmanaged and direct/indirect management relationships define management responsibility.
+
+### Important distinction
+
+**functional decomposition, physical assembly, communication topology, product realization, management responsibility and host-platform relation are separate source-native structures.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+SOSA's main architecture is strongly function-oriented.
+
+### Module encapsulation
+
+Each Module encapsulates specified:
+- functions;
+- behaviors;
+- interfaces.
+
+### Functional decomposition
+
+Modules can have multi-level functional groups, e.g.:
+- manage task;
+- execute task;
+- process data;
+- characterize target;
+- assess situation;
+- support operation.
+
+### Mission behavior
+
+Top-level responsibilities include:
+- transmission/reception;
+- signal/object detection;
+- characterization;
+- tracking;
+- external-data ingestion;
+- exploitation/assessment;
+- reporting/conveyance.
+
+### Support behavior
+
+Separate modules provide:
+- security;
+- network;
+- calibration;
+- navigation;
+- time/frequency;
+- compression;
+- power;
+- platform interface.
+
+### Management behavior
+
+System Manager functions include:
+- Discovery;
+- Configuration;
+- Control;
+- Health Management;
+- Security Management.
+
+### Task behavior
+
+Task Manager and module-specific task interactions handle operational task execution separately from System Manager.
+
+The source-native pattern separates **mission function, support function, management function and infrastructure realization**.
+
+---
+
+## 11. Information / output organization
+
+SOSA defines information flow at multiple levels.
+
+### Module interactions
+
+Interactions represent data/resource flow between Modules.
+
+### DIV-2 / DSDM message content
+
+Logical data entities define content used by system-management/mission interactions.
+
+### DIV-3 physical data model
+
+Maps logical/entity semantics into physical message structures/templates.
+
+### Management information
+
+Examples include:
+- Sensor health;
+- Component status;
+- faults;
+- configuration;
+- mode;
+- state;
+- firmware info;
+- logs;
+- security information.
+
+### Mission information
+
+Examples include:
+- signal data;
+- detections;
+- tracks;
+- imagery;
+- characterizations;
+- reports/products;
+- tasking parameters/status.
+
+The architecture therefore keeps **mission data products** and **system-management/condition data** distinct even though both use common inter-module infrastructure.
+
+---
+
+## 12. Management / condition organization
+
+Management/condition is a major first-class partition.
+
+### System management
+
+Covers:
+- discovery;
+- capacity;
+- configuration;
+- control;
+- health;
+- faults;
+- BIT;
+- diagnostics;
+- logging;
+- security;
+- software/firmware update.
+
+### Managed vs unmanaged component
+
+Not every component must expose direct management.
+
+### Indirect management
+
+One component can implement the management interfaces/capabilities on behalf of another.
+
+### Health
+
+Sensor Health can roll up:
+- whole Sensor status;
+- per-component status.
+
+### Fault
+
+Fault structures preserve:
+- originator component/Sensor;
+- active state;
+- severity;
+- category;
+- message/description;
+- timestamp;
+- suggested action.
+
+### BIT
+
+SensorBuiltInTest and BITResult separate:
+- test definition;
+- test execution/result;
+- Sensor association.
+
+### Configuration
+
+StaticConfiguration and DynamicDiscovery are distinct management concepts.
+
+This is a highly explicit source-native separation between **operational mission function** and **keeping the Sensor/components capable of mission function**.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+The DSDM distinguishes several identity/provenance layers.
+
+### Entity identifiers
+
+Most DSDM entities/associations carry `elementID`.
+
+### Sensor/component identity
+
+Sensor and Component_ have IDs/names/address/kind/state.
+
+### Product identity
+
+Product is separate from Component_ and can be associated through ProductInstance.
+
+### Version identity
+
+Component and software/firmware structures carry version information.
+
+### Source/origin identity
+
+Fault origination, log entry and command associations identify:
+- originating component/Sensor;
+- issuing Controller;
+- target.
+
+### Platform identity
+
+Platform is independently identified/positioned and related through HostPlatform.
+
+### Data model provenance
+
+DIV-1 conceptual entities are explicitly authoritative over diagrams when discrepancies exist; logical/physical models derive from the entity semantics.
+
+This supports a strong distinction between **functional identity, manufactured product identity, host identity and message/data identity**.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **Sensor vs Sensor Component** — whole Sensor and constituent component are different levels.
+2. **Sensor Component vs SOSA Module** — component and logical functional module are not identical.
+3. **SOSA Module vs infrastructure** — mission/support function and execution substrate are separate.
+4. **Hardware Element vs software/RTE** — physical and software/runtime realization differ.
+5. **Sensor vs Host Platform** — sensing system and physical host are explicitly separate.
+6. **SensorComponent vs HostPlatform relationship** — part-of and hosted-on are different.
+7. **functional module topology vs physical assembly** — function and hardware structure are not isomorphic.
+8. **functional Component vs Product/ProductInstance** — functional role and manufactured product are distinct.
+9. **component composition vs module implementation** — component identity and implementation mapping differ.
+10. **component topology vs communication topology** — part-of and network/interconnect relationships are different.
+11. **management topology vs physical topology** — a component can be managed indirectly by another component.
+12. **mission/tasking vs system management** — performing the mission and maintaining system readiness are separate concerns.
+13. **System Manager vs Task Manager** — housekeeping/control and mission task coordination are separate responsibilities.
+14. **health vs operational state vs configuration state vs mode** — these are distinct state dimensions.
+15. **fault vs health status** — detailed fault event/origin/severity and summarized health are different.
+16. **fault vs BIT result** — fault information and explicit self-test result are different.
+17. **static configuration vs dynamic discovery** — configuration source and presence/discovery behavior differ.
+18. **software update vs firmware update** — distinct realization/update targets.
+19. **Chassis vs Slot vs PIC** — physical container, receptacle and inserted component are distinct.
+20. **PowerPort/PowerBus vs component identity** — power topology and equipment identity differ.
+21. **Network vs NetworkInterface vs Component** — communication substrate/interface/device are distinct.
+22. **mission product/data vs management/condition information** — same infrastructure does not erase different semantic roles.
+23. **DIV-1 vs DIV-2 vs DIV-3** — conceptual meaning, logical data structure and physical message representation are different abstraction levels.
+24. **Edition 1.0 DSDM vs Edition 1.1 architecture** — later architecture and earlier DSDM should be related deliberately rather than silently merged as one normative edition.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **likely core/intrinsic:** whole Sensor vs component distinction; heterogeneous hardware/software component realization; host Platform separation;
+- **likely reusable structural pattern:** simultaneous functional, physical, communication, product-realization and management topologies kept distinct;
+- **likely functional pattern:** mission functions, support functions, task management and system management partitioned explicitly;
+- **likely management/condition pattern:** discovery/configuration/control/health/fault/BIT/log/update structures;
+- **likely state pattern:** health, operational state, configuration state and mode represented as independent dimensions;
+- **likely provenance/identity pattern:** functional Component vs Product instance vs Host Platform vs Controller/source identities;
+- **likely information pattern:** mission data/products and management/condition information separated despite shared infrastructure;
+- **likely modularity pattern:** Modules encapsulate function/interface while infrastructure is independently replaceable/standardized;
+- **specialization caution:** The Open Group SOSA is defense C5ISR sensor architecture and its module taxonomy is not automatically universal across all V2 sensing equipment;
+- **binding/conformance caution:** SOSA Module IDs, hardware profiles, interaction bindings, OpenAPI interfaces and DSDM physical messages are native SOSA implementation/conformance structures and are not automatically V2 DIM modules or CSAPI profile requirements.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**C15 status: COMPLETE.**
+
+**Core structural donor group C01–C15: COMPLETE.**
+
+**Next frozen lineage:** X01 — I-ADOPT.
+
