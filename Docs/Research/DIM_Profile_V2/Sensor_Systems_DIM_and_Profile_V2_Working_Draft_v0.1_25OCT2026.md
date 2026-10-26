@@ -70,6 +70,12 @@ The strongest current characterization of the hardware sensor systems that motiv
 | Platform | Separate sourced concept that hosts Assets/Systems; not automatically a Sensor or parent class of all target systems. |
 | Deployment | Sourced context for employment and for time-scoped aggregation/attachment. |
 
+Figure 2 summarizes the sourced conceptual foundation currently carried forward into Version 2. It combines the settled SOSA/SSN generalization structure with the independent CSAPI classification facets that are used to characterize the motivating hardware sensing case.
+
+![Figure 2. Current Sourced Conceptual Foundation](Figures/Figure_2_Current_Sourced_Conceptual_Foundation.svg)
+
+**Figure 2. Current Sourced Conceptual Foundation.** SOSA/SSN provides the current conceptual hierarchy in which Asset generalizes System and Platform, and Sensor, Actuator, and Sampler specialize System. CSAPI adds two independent classification facets for System resources: `systemType` and `assetType`. The motivating hardware sensing case for V2 is currently characterized as `systemType = Sensor` together with `assetType = Equipment`; this remains a candidate characterization rather than a newly named class.
+
 ## 7. Whole-system scope
 
 Whole system is an informational scope statement, not a taxonomic enlargement. It means that a user should be able to access, understand, and manage the deployed sensor system as a complete operational subject rather than only retrieve the observations that it produces. Identity, technical description, configuration, components, capabilities, telemetry, deployment context, communications, power, condition, management interactions, service and lifecycle history, provenance, and related supported information may therefore belong to the model without changing the top-level System into a system-of-systems or enterprise construct.
@@ -79,6 +85,12 @@ SensorML 3.0 supports this interpretation by describing physical sensor systems 
 ## 8. Composition and deployment-scoped attachment
 
 Version 2 must preserve the distinction exposed by CSAPI between Composition and Aggregation. Composition applies when a subsystem is an integral or ordinarily enduring part of its parent, even if maintenance can physically remove it. Aggregation applies when a subsystem is not permanently attached and can be associated with different parent Systems at different times; CSAPI represents that relationship through Deployment (Open Geospatial Consortium 2025a, sec. 10.2). A cable, connector, mounting rail, or other physical attachment mechanism is not by itself the deciding criterion.
+
+Figure 3 contrasts the two relationship patterns that Version 2 currently needs to preserve. It is explanatory rather than normative UML: the purpose is to distinguish an ordinarily enduring subsystem relationship from a time-scoped association established through Deployment.
+
+![Figure 3. Composition and Deployment-Scoped Attachment](Figures/Figure_3_Composition_and_Deployment_Scoped_Attachment.svg)
+
+**Figure 3. Composition and Deployment-Scoped Attachment.** The left-hand case shows a subsystem that is ordinarily treated as an enduring part of the parent Sensor System. The right-hand case shows a detachable or interchangeable sensor associated to a host through Deployment for a period of use. Physical attachment alone is not the deciding criterion; the relevant distinction is whether the relationship is treated as part of the parent’s ordinary identity and description or as a time-scoped, re-assignable association. The figure is intentionally explanatory and does not by itself assert UML composition or aggregation semantics.
 
 This finding illustrates how a binding standard can legitimately contribute semantics to an implementation-independent DIM. The enduring-versus-deployment-scoped distinction may prove to be a domain relationship worth preserving, while `/subsystems`, Deployment resources, and concrete link structures remain CSAPI binding mechanisms. Version 2 should preserve useful domain distinctions revealed by CSAPI without making their API carrier identical to the concept itself.
 
