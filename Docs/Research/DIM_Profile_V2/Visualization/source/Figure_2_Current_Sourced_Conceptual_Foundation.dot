@@ -1,0 +1,32 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.42", ranksep="0.48", splines=polyline, labelloc=t, label="Figure 2. Current Sourced Conceptual Foundation", fontsize=25, fontname="DejaVu Sans Bold", fontcolor="#10213a"];
+  node [shape=box, style="rounded,filled", fillcolor="#edf5ff", color="#10213a", penwidth=1.7, fontname="DejaVu Sans", fontcolor="#10213a", margin="0.16,0.11"];
+  edge [color="#10213a", penwidth=1.7, arrowsize=0.75, fontname="DejaVu Sans", fontsize=10.5, fontcolor="#10213a"];
+
+  sosaTitle [shape=plaintext, label=<<B><FONT POINT-SIZE="18">SOSA/SSN conceptual structure</FONT></B>>];
+  facets [shape=box, style="rounded,filled", fillcolor="#f7fbff", width=4.8, label=<<B><FONT POINT-SIZE="18">CSAPI classification facets</FONT></B><BR/><FONT POINT-SIZE="10">[source: CSAPI]</FONT><BR/><BR/><B><FONT POINT-SIZE="15">systemType</FONT></B><BR/><FONT POINT-SIZE="11">principal role or activity</FONT><BR/><FONT POINT-SIZE="11">Sensor | Actuator | Sampler | Platform | System</FONT><BR/><BR/><B><FONT POINT-SIZE="15">assetType</FONT></B><BR/><FONT POINT-SIZE="11">kind of realization</FONT><BR/><FONT POINT-SIZE="11">Equipment | Human | LivingThing</FONT><BR/><FONT POINT-SIZE="11">Simulation | Process | Group | Other</FONT><BR/><BR/><B><FONT POINT-SIZE="13">Motivating hardware sensing case for V2</FONT></B><BR/><FONT POINT-SIZE="11">systemType = Sensor</FONT><BR/><FONT POINT-SIZE="11">assetType = Equipment</FONT><BR/><FONT POINT-SIZE="9">Candidate characterization; not a new class name.</FONT>>];
+  {rank=same; sosaTitle; facets}
+
+  Asset [label=<<B><FONT POINT-SIZE="18">Asset</FONT></B><BR/><FONT POINT-SIZE="10">[source: SOSA/SSN]</FONT>>];
+  System [label=<<B><FONT POINT-SIZE="17">System</FONT></B><BR/><FONT POINT-SIZE="10">[source: SOSA/SSN]</FONT>>];
+  Platform [label=<<B><FONT POINT-SIZE="17">Platform</FONT></B><BR/><FONT POINT-SIZE="10">[source: SOSA/SSN]</FONT><BR/><FONT POINT-SIZE="9">hosts Assets, especially Systems / Platforms</FONT>>];
+  Sensor [label=<<B><FONT POINT-SIZE="16">Sensor</FONT></B><BR/><FONT POINT-SIZE="9">[source: SOSA/SSN]</FONT>>];
+  Actuator [label=<<B><FONT POINT-SIZE="16">Actuator</FONT></B><BR/><FONT POINT-SIZE="9">[source: SOSA/SSN]</FONT>>];
+  Sampler [label=<<B><FONT POINT-SIZE="16">Sampler</FONT></B><BR/><FONT POINT-SIZE="9">[source: SOSA/SSN]</FONT>>];
+
+  sosaTitle -> Asset [style=invis, weight=10];
+  {rank=same; System; Platform}
+  {rank=same; Sensor; Actuator; Sampler}
+
+  Asset -> System [dir=back, arrowtail=empty, arrowhead=none];
+  Asset -> Platform [dir=back, arrowtail=empty, arrowhead=none];
+  System -> Sensor [dir=back, arrowtail=empty, arrowhead=none];
+  System -> Actuator [dir=back, arrowtail=empty, arrowhead=none];
+  System -> Sampler [dir=back, arrowtail=empty, arrowhead=none];
+
+  footer [shape=box, style="rounded,filled", fillcolor="#f7fbff", color="#c7d7ea", penwidth=1.0, fontname="DejaVu Serif Italic", fontsize=11.5, label="Current V2 position: use sourced concepts and combinations without coining a new class prematurely."];
+  Sensor -> footer [style=invis];
+  Actuator -> footer [style=invis];
+  Sampler -> footer [style=invis];
+  facets -> footer [style=invis];
+}
