@@ -4,7 +4,7 @@
 **Date:** 26 October 2026  
 **Standing:** **Cited candidate research finding**, not an adopted DIM component taxonomy, class model, application-profile requirement, or conformance claim.  
 **Controlling continuity:** [Incremental concept plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md), [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md), [Pass 2 — Product / Model / Kind](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md), [Pass 3 — Procedure / Method](DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md), and the [C08 audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md).  
-**Source standing:** The World Wide Web Consortium/Open Geospatial Consortium Sensor, Observation, Sample, and Actuator / Semantic Sensor Network (SOSA/SSN) **21 October 2026 Working Draft** is used for current ontology evidence; published Connected Systems 1.0 has a different normative ontology-edition dependency. Operational unattended-ground-sensor examples retain the frozen S04 **YELLOW evidence limit**.
+**Source standing:** The **21 October 2026 Working Draft** of the Semantic Sensor Network Ontology is used for current ontology evidence; published Connected Systems 1.0 has a different normative ontology-edition dependency. Operational unattended-ground-sensor examples retain the frozen S04 **YELLOW evidence limit**.
 
 ## 1. The question
 
@@ -38,19 +38,19 @@ These are **two questions, not one**. An element's **relationship to the whole**
 
 **Why it matters to V2.** The ontology confirms that **subsystem, host, and deployment are distinct predicates**, not three names for physical containment. Its complex-device example shows that two sensing channels/functions in one package **can** be separately modeled as component Sensors; it does **not** compel identical decomposition for every integrated multisensor device. SOSA/SSN's generic `hasSubSystem` relation does **not itself specify** CSAPI's permanence-based Composition/Aggregation choice. Likewise, a CSAPI `System` tagged `systemType = Sensor` does not thereby acquire a new OWL `sosa:Sensor` type assertion. This draft is research evidence, not a change to published CSAPI's normative ontology reference.
 
-### 3.4 Physical Component versus Physical System is a description choice — SensorML
+### 3.4 Physical Component versus Physical System is a description choice
 
 **What the donor defines.** OGC **Sensor Model Language (SensorML)** 3.0 distinguishes a `PhysicalComponent` when a physical process has defined inputs/outputs and **there is no intention to divide its description into component subprocesses** (§ 8.5.2). A `PhysicalSystem` describes hardware **as an aggregate of component processes**, with components and their connections; its constituents may have sensing, actuation or computation roles (§ 8.6.2). SensorML's `AggregateProcess` also permits **physical and non-physical component processes** and explicit **data-flow connections** (§ 8.4.1) (Open Geospatial Consortium 2025b, §§ 8.4–8.6).
 
 **Why it matters to V2.** SensorML establishes a powerful **granularity** distinction: the same general kind of whole sensing equipment can be described without a component process tree or, when useful, decomposed into subprocesses. This is not an assertion that a `PhysicalComponent` has no real physical parts, or that every `PhysicalSystem` subprocess deserves **individual CSAPI System identity**. Process/data-flow relationships also do not prove physical attachment or equipment ownership. V2 should borrow the source-owned distinctions while keeping the later choice of SensorML representation separate from the domain question.
 
-### 3.5 Device parts, modularity and communications are separate models — OPC UA Devices
+### 3.5 Device parts, modularity and communications are separate models
 
 **What the donor defines.** **Open Platform Communications Unified Architecture (OPC UA)** Part 100 provides a Device Model for equipment **and hardware/software parts**, a separate **Device Communication Model** for network and connection topology, and a **Device Integration Host Model** for host-managed integration. `ComponentType` can represent a Device or its parts, including mechanical or software parts. In a complex Device, a `DeviceSet` can lead to one root Device while nested components are found through hierarchical references. **Modular Devices** support top-Devices and `SubDevices`, including preconfigured or interchangeable module types, and subdevices can themselves be modular (OPC Foundation n.d., §§ 1, 4.1, 4.6, 4.9, 5.1, 9.4).
 
 **Why it matters to V2.** This is strong independent evidence that meaningful device substructure need not be collapsed into one opaque node. Yet **OPC UA component, Device, ObjectType and hierarchical AddressSpace references are OPC-native representation concepts**. Its configurable `SubDevices` organization—even where OPC calls modules “aggregated”—must **not** be equated automatically with CSAPI § 10.2 **Aggregation**. Neither a network connection nor an OPC FunctionalGroup is proof of physical part-of. The donor helps V2 distinguish **device description**, **component structure**, **communication topology**, and **integration host**.
 
-### 3.6 Not every “consists of” means equipment composition — SAREF
+### 3.6 Not every “consists of” means equipment composition
 
 **What the donor defines.** The **European Telecommunications Standards Institute (ETSI)** Smart Applications REFerence (**SAREF**) 4.1.1 ontology provides `saref:consistsOf` for composite entities, including the example of a temperature/humidity sensor consisting of temperature and humidity Sensors. But the same predicate is also used for **composite features, properties, states and values** (European Telecommunications Standards Institute 2024, “Composite Features of Interest,” “Composite Properties and Property Values,” and `saref:consistsOf`).
 
@@ -83,7 +83,7 @@ A **weather station with permanently integrated sensors** matches CSAPI's exampl
 
 A **vehicle hosting an interchangeable sensor payload** should not have its host, communications network or temporary payload assigned to the Sensor's enduring composition by default. By contrast, a purpose-built integral sensing subsystem within a whole camera/weather station might be part of that whole: **“Platform,” “mount,” and “host” are not magic words determining composition** (Open Geospatial Consortium 2025a, § 10.2; World Wide Web Consortium and Open Geospatial Consortium 2026, §§ 5.3.5.2.2–5.3.5.2.14).
 
-A **physical transducer channel** is not automatically an individually deployed sensing System, just as a **functional process component** is not automatically a separately maintained piece of hardware. The IEEE 1451 transducer-module/channel lineage illustrates this further, but the frozen C03 extraction is **YELLOW** on exact current transducer-data-sheet definitions and conformance. We therefore do not use it to establish new detailed constraints.
+A **physical transducer channel** is not automatically an individually deployed sensing System, just as a **functional process component** is not automatically a separately maintained piece of hardware. The Institute of Electrical and Electronics Engineers (IEEE) 1451 transducer-module/channel lineage illustrates this further, but the frozen C03 extraction is **YELLOW** on exact current transducer-data-sheet definitions and conformance. We therefore do not use it to establish new detailed constraints.
 
 ## 6. Material questions left open
 
@@ -91,7 +91,7 @@ A **physical transducer channel** is not automatically an individually deployed 
 2. **Temporal change in part-of and host relations.** When a part is replaced or temporarily moved, which individual System identities and relationship histories continue? This depends on actual source and deployment semantics and intersects the Pass 1 replacement question.
 3. **Model-to-binding mapping.** How should an in-scope source's physical parts, process components, channels, and hosted/interchangeable equipment map to CSAPI `subsystems`, `Deployment`, SensorML component descriptions, or other selected representations? Exact profile constraints belong later and must follow these meanings, not define them.
 
-**Disposition:** **Composition/context distinction strongly supported; variable description granularity supported; independent component standing is conditional and source/use-case dependent.** No universal `Component` class, new part-of relation, mandatory decomposition, UML composition diamond, JSON layout, or profile conformance requirement has been established.
+**Disposition:** **Composition/context distinction strongly supported; variable description granularity supported; independent component standing is conditional and source/use-case dependent.** No universal `Component` class, new part-of relation, mandatory decomposition, UML composition diamond, encoding layout, or profile conformance requirement has been established.
 
 **Next planned increment, when directed:** **Pass 5 — Digital Representation / Proxy Identity.** Stop after Pass 4.
 
