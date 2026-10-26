@@ -100,6 +100,8 @@ The Open Group SOSA claims rely on the project's frozen C15 extraction from the 
 
 **Disposition:** Pass 1 yields a cited, traceable **candidate meaning**, not a final adopted DIM concept. The next authorized increment under the plan is **Pass 2 — Product / Model / Kind**, after review of this meaning.
 
+**Modeling-pilot follow-up:** [Pass 1 UML instance-view pilot](DIM_Profile_V2_Pass1_Modeling_Pilot_v0.1_26OCT2026.md) tested the candidate meaning against established notation. It illustrates two distinct instances without establishing a new `IndividualSystem` class, source-identifier reconciliation rule, or premature relationships to later concepts.
+
 ## References — Chicago Manual of Style, 18th ed., author-date
 
 European Telecommunications Standards Institute. 2024. *SAREF: Smart Applications REFerence Ontology—Core*. Version 4.1.1. https://saref.etsi.org/core/v4.1.1/.
