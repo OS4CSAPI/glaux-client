@@ -4,7 +4,7 @@
 **Date:** 26 October 2026  
 **Standing:** Evidence-backed **candidate meaning for human review**; not an adopted DIM class, new relationship, schema, or profile requirement.  
 **Continuity:** [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md); [Pass 2 — Product / Model / Kind](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md); [C08 validation correction](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md); [incremental consolidation plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md).  
-**Evidence standing:** This pass compares the published 2025 Connected Systems and Sensor Model Language standards, *Observations, Measurements, and Samples* (2023), and the World Wide Web Consortium/Open Geospatial Consortium SOSA/SSN **21 October 2026 Working Draft**. The draft is research evidence, **not** the older ontology edition referenced normatively by published Connected Systems 1.0.
+**Evidence standing:** This pass compares the published 2025 Connected Systems and Sensor Model Language standards, *Observations, Measurements, and Samples* (2023), and the **21 October 2026 Working Draft** of the Semantic Sensor Network Ontology issued by the World Wide Web Consortium and Open Geospatial Consortium. The draft is research evidence, **not** the older ontology edition referenced normatively by published Connected Systems 1.0.
 
 ## 1. The question
 
@@ -42,7 +42,7 @@ OMS makes the same distinction especially explicit for observations: the *Observ
 
 **What V2 takes from these donors.** **“System can implement Procedure” ≠ “this particular Observation used Procedure.”** Both relationships matter for interpreting sensor information and its provenance, but they are not interchangeable. The OMS observation-level cardinality is **OMS's normative constraint for its model**, not a newly established DIM-wide or CSAPI-profile rule. Describing a method is also distinct from initiating a command or recording the result of an execution; the latter details remain for later passes.
 
-### 3.4 “Methodology can be detailed” — SensorML's process perspective
+### 3.4 “Methodology can be detailed” — the process-description perspective
 
 **Meaning in the donor.** **Sensor Model Language (SensorML) 3.0** describes processes using inputs, outputs, parameters, and methodology. Its `ProcessMethod` describes how a **SimpleProcess** converts input/parameter values into outputs, optionally with a machine-readable algorithm and references to executable implementations (Open Geospatial Consortium 2025b, §§ 7.1–7.2, 8.3.1–8.3.2). For **AggregateProcess** or a physical system, **connected component processes and their data-flow structure** may themselves provide the methodology; a single separate `ProcessMethod` object is **not required for every kind of SensorML process** (Open Geospatial Consortium 2025b, §§ 7.1–7.2, 8.4.1).
 
