@@ -183,10 +183,7 @@ Every maintained V2 figure has **one canonical editable source**. GitHub, Word, 
 
 The default workflow is:
 
-1. Author the figure from version-controlled text/model source.
-   - Prefer PlantUML for UML semantic views when it represents the required UML correctly.
-   - Graphviz DOT is approved for controlled explanatory/context figures and other diagrams where constrained automatic layout materially improves legibility.
-   - Directly authored SVG may be used only when it remains the single maintained source and its text/layout can be controlled reliably.
+1. Author the figure from version-controlled text/model source. Prefer PlantUML for UML semantic views when it represents the required UML correctly; Graphviz DOT is approved for controlled explanatory/context figures where constrained automatic layout materially improves legibility; directly authored SVG may be used only when it remains the single maintained source and its text/layout can be controlled reliably.
 2. Generate the repository SVG from that canonical source. Do not hand-edit the generated SVG and then allow it to diverge from the source.
 3. Embed that SVG directly in Markdown/GitHub.
 4. Generate PNG/JPEG from the **same source/render chain** for Word, PDF, slides, or another toolchain that needs raster output.
