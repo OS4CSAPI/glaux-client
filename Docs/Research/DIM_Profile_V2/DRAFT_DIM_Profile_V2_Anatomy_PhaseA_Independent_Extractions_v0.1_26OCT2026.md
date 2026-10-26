@@ -15928,3 +15928,626 @@ Thus class/vocabulary identity must remain distinct from instance/product identi
 
 **Next frozen lineage:** S04 — UGS operational / reference systems.
 
+---
+
+# S04 — UGS operational / reference systems
+
+## Source basis and evidence ceiling
+
+**Frozen primary source IDs:** 169, 174–177.
+
+**Frozen source family:**
+
+- Armistead, Scott. 2018. *Unattended Ground Sensor Survey*. DSIAC-2018-0890.
+- McQ Inc., *OmniSense System User’s Manual: Central Computer/Server and User Interface*; supplied historical screenshot excerpts carry © McQ Inc 2008.
+- McQuiddy, John. 2008. “OmniSense Unattended Ground Sensor System.” *Proceedings of SPIE* 6963.
+- Sentinel Program. 2014. *Sentinel 1.0.7.2 Software Users Manual*. N65236-TRSS-SUM-0005-2.00, visible footer date 31 July 2014.
+- Stolovy, Gary H. 2009. “Common Command-and-Control User Interface for Current Force Unattended Ground Sensors.” *Proceedings of SPIE* 7333.
+
+**Directly reviewed supporting project evidence:**
+
+- supplied OmniSense manual screenshot compilation;
+- supplied Sentinel/TRSS manual screenshot compilation;
+- *Place the OmniSense System into Operation 11 MAY 10* training material previously inspected in full;
+- prior project evidence index preserving exact manual slide/page locators.
+
+**Evidence ceiling:** The complete native OmniSense manual and complete native Sentinel manual are not present as full searchable documents in the current session. The project does contain extensive screenshot excerpts that were previously inspected directly and indexed, plus the complete OmniSense training presentation. This extraction preserves only findings supported by those reviewed source excerpts and the public McQuiddy paper abstract. It does not infer unpublished hardware inventories, current fielded configurations or universal UGS semantics from historical UI examples. Armistead/Stolovy are used as family/context evidence where exact internal details are not available here.
+
+---
+
+## 1. Source-native structural organization
+
+The UGS evidence does not present one formal information model, but the operational systems consistently organize information around a **whole remotely deployed sensor/device instance** plus several recurring operational structures.
+
+### A. Persistent sensor/device identity
+
+TRSS and OmniSense source views distinguish:
+
+- device/sensor identifier/number;
+- name/description;
+- product/variant/model-like identity;
+- firmware/software/version information;
+- source family/type.
+
+### B. Equipment/configuration structure
+
+TRSS examples include:
+
+- ETU-II / Imager-II and other device variants;
+- detector slots;
+- variant-dependent detector options;
+- attached/triggering device relationships;
+- communication/control configuration.
+
+OmniSense CORE examples include:
+
+- connected transducers;
+- detector algorithms;
+- sensing profiles;
+- mode-dependent configuration;
+- switches/control relationships;
+- camera/imager relationships.
+
+### C. Emplacement/location context
+
+Both families expose operational placement information such as:
+
+- geographic coordinates;
+- altitude;
+- emplacement/local-access data;
+- planned implant/removal or temporal context in some TRSS views;
+- GPS-derived vs entered/overridden location distinctions.
+
+### D. Operational status/condition
+
+Recurring source-native concerns include:
+
+- current operating mode/state;
+- status cadence/reporting;
+- faults/condition-like values;
+- battery/power;
+- communications/connectivity;
+- detector/algorithm state;
+- tamper-related behavior;
+- device-specific diagnostics.
+
+### E. Configuration/action workflow
+
+Historical interfaces distinguish:
+
+- database/stored configuration;
+- queued/requested configuration;
+- command/action request;
+- eventual sensor-reported/returned state.
+
+Examples include:
+- queue/send configuration;
+- request GPS/status/configuration;
+- set operational mode;
+- sleep schedules;
+- image/camera configuration;
+- detector/algorithm settings.
+
+### F. Detection/observation/output
+
+UGS outputs include:
+
+- detections;
+- classifications;
+- target identifiers;
+- acoustic/seismic/magnetic/PIR or related sensing indications;
+- images from integrated/cued imagers;
+- detection logs;
+- status reports.
+
+### G. Network/system context
+
+The public OmniSense paper describes:
+
+- remotely deployed intelligent sensors;
+- distributed users and sensors;
+- network connectivity;
+- remote reconfiguration;
+- target detection/classification;
+- image capture;
+- shared/common data structure;
+- field/FOB/TOC/command-center access.
+
+The operational anatomy is therefore:
+
+> **persistent sensor/equipment identity + variant/configuration + attached/connected sensing elements + emplacement + status/power/comms + command/configuration workflow + detections/media + distributed network/user context**.
+
+---
+
+## 2. Purpose of each partition
+
+### Device identity/details
+
+Purpose: let operators distinguish and select the particular deployed UGS resource.
+
+### Variant/equipment configuration
+
+Purpose: represent what hardware/transducers/detectors and processing options are applicable to that device variant.
+
+### Emplacement
+
+Purpose: connect the persistent device to where/how it is fielded, including coordinates, local context and deployment notes/timing.
+
+### Status
+
+Purpose: tell operators whether and how the remote equipment is operating and what condition/status values it has reported.
+
+### Battery/power
+
+Purpose: expose operational endurance/power information needed for unattended deployment.
+
+### Communications
+
+Purpose: describe/operate the path through which remote equipment is reached and data/configuration are exchanged.
+
+### Sensing configuration
+
+Purpose: control detector/algorithm sensitivity, modes, schedules, triggers and related settings.
+
+### Detection/activity
+
+Purpose: report what the sensor detected/classified, when and with what related target/output information.
+
+### Imagery
+
+Purpose: provide visual evidence either from an integrated imager or from a separately cued producing device.
+
+### Commands/configuration workflow
+
+Purpose: request changes/actions while distinguishing requested/stored information from confirmed device-reported state.
+
+---
+
+## 3. Central concepts per partition
+
+| Source-native partition | Central concepts |
+| --- | --- |
+| Whole equipment | sensor/device, CORE, ETU-II, Imager-II, CAST/Monitor variants |
+| Identity | number/ID, name, description, serial/product/version |
+| Sensing internals | detector slots, acoustic/seismic/magnetic/PIR/transducers, cameras, detector algorithms |
+| Configuration | mode, detector selection, sensitivity, schedules, switch/control settings, communication parameters |
+| Location/emplacement | GPS/coordinates, altitude, emplacement data, planned dates/notes |
+| Condition | state/status, status cadence, faults/warnings, tamper, component status |
+| Power | battery life/remaining estimates, pack/source information, power state |
+| Communications | radio/network configuration, local network compatibility, inbound/outbound identifiers/channels |
+| Detection | detection log, target ID, classification/activity, sensor source |
+| Media | target images, pre/target/post images, camera capture settings |
+| Actions | queue/save/send configuration, request status/GPS/configuration, set operational, camera/switch/control commands |
+| Network context | central computer/server, remote sensor network, users/operators, relays/gateways |
+
+---
+
+## 4. Primary relationships
+
+### Whole sensor/device → detector/transducer configuration
+
+A device can have:
+- detector slots;
+- connected transducers;
+- configured detector algorithms.
+
+These are related but not necessarily identical.
+
+### Sensor → imager / triggering device
+
+TRSS evidence includes explicit trigger relationships naming another device such as an Imager-II.
+
+OmniSense can cue image-producing equipment separately from the detecting function.
+
+### Sensor → emplacement
+
+Persistent device identity is associated with deployment/emplacement location and related notes/times.
+
+### Stored/requested configuration → device application
+
+Configuration editors can queue or send changes, but database acceptance/request transmission does not prove the physical sensor has applied them.
+
+### Sensor → status report
+
+Current state/condition values come back through device reporting.
+
+### Detection → target
+
+Detection log can contain a target identifier/classification relating a particular detection to a detected subject/event.
+
+### Detection → image
+
+A detection may relate to pre/target/post imagery; producing sensor/imager may differ.
+
+### Sensor → communications path
+
+Remote UGS operation depends on radio/network/relay paths while device identity remains separate from that communications infrastructure.
+
+---
+
+## 5. Dependency boundaries
+
+The operational evidence makes several boundaries especially important.
+
+### Device variant vs universal UGS structure
+
+Different device variants expose different:
+- detectors;
+- tabs/fields;
+- commands;
+- schedules;
+- status information.
+
+Absence from one variant is not absence from the UGS domain.
+
+### Hardware inventory vs processing configuration
+
+A connected transducer/detector and an enabled algorithm/profile are different facts.
+
+### Stored configuration vs reported configuration
+
+Database/configuration-editor values and sensor-returned state are different authorities.
+
+### Command request vs execution
+
+Sending/queueing a command or configuration does not by itself prove successful application.
+
+### Detecting device vs imaging device
+
+Image producer may be separate from the sensor that triggered/cued it.
+
+### Emplacement text vs generic system description
+
+Deployment/emplacement comments describe use/context, not automatically the product/system's enduring description.
+
+### Status cadence vs sensing sample rate
+
+How often status is reported is not the same as measurement/detection sampling frequency.
+
+---
+
+## 6. Intrinsic vs contextual standing
+
+### Intrinsic/equipment-specific
+
+- device identity;
+- product/variant;
+- supported/installed detector slots where known;
+- firmware;
+- supported commands;
+- physical sensor/transducer relationships;
+- hardware capability.
+
+### Configuration-dependent
+
+- enabled algorithms;
+- sensitivity;
+- mode;
+- camera settings;
+- sleep schedule;
+- switch settings;
+- communication settings.
+
+### Contextual/deployment
+
+- coordinates/altitude;
+- emplacement comments;
+- implant/removal period;
+- unit/AOR/mission-like operational context where present;
+- relay/network environment.
+
+### Dynamic/reported
+
+- status;
+- battery;
+- fault;
+- detection;
+- image;
+- returned configuration/location.
+
+The source evidence repeatedly distinguishes these scopes rather than treating every displayed field as an intrinsic device property.
+
+---
+
+## 7. Cross-cutting concepts
+
+Recurring cross-cutting operational concepts include:
+
+- device ID/name;
+- source/provenance;
+- time;
+- location;
+- operating mode;
+- status;
+- power;
+- communication;
+- configuration;
+- sensor/detector identity;
+- target identity;
+- image/media;
+- command state.
+
+These appear across configuration, status, detection and operational views.
+
+---
+
+## 8. State / temporal / lifecycle organization
+
+UGS evidence has multiple temporal/state meanings.
+
+### Operating state
+
+Historical UI/device values include source-specific operational states and modes.
+
+These should not automatically be translated into generic health/readiness.
+
+### Configuration time/state
+
+OmniSense evidence distinguishes:
+- stored/last configuration;
+- queued/requested change;
+- later returned sensor information.
+
+### Status reporting time
+
+Status has its own cadence and freshness.
+
+### Emplacement period
+
+TRSS includes implant/planned removal or similar emplacement planning context in some views.
+
+### Detection time
+
+Detection and associated media are event/data records, distinct from device current state.
+
+### Battery time
+
+Battery information is time-dependent; source evidence includes historical battery-life/status displays.
+
+### Limit
+
+The sources do not establish one uniform lifecycle vocabulary across all UGS families. Deployment, service, recovery and replacement must therefore remain source/domain relationships rather than be inferred from UI chronology alone.
+
+---
+
+## 9. Composition / topology organization
+
+UGS sources expose several distinct topologies.
+
+### Device/component topology
+
+Examples include:
+- detector slots on ETU-II;
+- connected transducers on OmniSense;
+- cameras/imagers;
+- physical switch/control relationships.
+
+### Trigger/cue topology
+
+One sensor can trigger/cue another device, especially an imager.
+
+This is an operational relationship, not automatically physical containment.
+
+### Communications topology
+
+Sensors connect through:
+- radios;
+- relays;
+- network links;
+- server/central-computer infrastructure.
+
+### Deployment topology
+
+Multiple geographically distributed sensors form an operational sensor network.
+
+### User/access topology
+
+Distributed users at field/FOB/TOC/command-center locations can share sensor information.
+
+### Important distinction
+
+**physical component structure, trigger/cue relationships, communications network and operational grouping are different topologies.**
+
+---
+
+## 10. Capability / function / behavior organization
+
+UGS capability is practical and variant-specific.
+
+### Sensing capability
+
+- detect activity;
+- classify personnel/vehicles/targets;
+- modality-specific detection;
+- image capture/cueing.
+
+### Configurable sensing behavior
+
+- sensitivity/algorithm;
+- modes;
+- detector selections;
+- schedules;
+- target/capture settings.
+
+### Communications behavior
+
+- remote reporting;
+- remote configuration;
+- networking among distributed users/sensors.
+
+### Command behavior
+
+- request status/GPS/configuration;
+- set operational mode;
+- switch/control operations;
+- camera/imager commands.
+
+### Capability vs current state
+
+The manuals distinguish what a configuration/device supports from whether it is currently enabled/reported/available.
+
+---
+
+## 11. Information / output organization
+
+### Status reports
+
+Current sensor/device condition and operational values.
+
+### Detection log
+
+Detection event records with source/target/classification context.
+
+### Images/media
+
+Images may be:
+- pre-target;
+- target;
+- post-target;
+- produced by integrated or cued imager.
+
+### Configuration records
+
+Stored/requested/current settings are operationally important but have different authority.
+
+### Location data
+
+Entered GPS, device GPS and other emplacement sources may differ.
+
+### Commands/responses
+
+Operational actions and resulting state/evidence are separate from passive observation.
+
+The sources therefore require preservation of **source, time and authority** for information displayed about a remote device.
+
+---
+
+## 12. Management / condition organization
+
+Management/condition is central to actual UGS operation.
+
+### Configuration management
+
+- variant-specific editors;
+- queued changes;
+- scheduling;
+- modes;
+- detector/algorithm settings;
+- communications parameters.
+
+### Status/diagnostics
+
+- source-specific operating status;
+- battery;
+- communications;
+- faults/warnings;
+- tamper-related behavior;
+- component status.
+
+### Remote actions
+
+- request status/configuration/location;
+- change operational settings;
+- camera/imager control;
+- switch/control commands.
+
+### Power/endurance
+
+Battery information is operationally prominent because the equipment is unattended.
+
+### Caution
+
+Historical vendor status labels are source-owned. An unexplained vendor state must not be silently generalized into:
+- generic health;
+- readiness;
+- online/offline;
+- mission capability.
+
+---
+
+## 13. Provenance / identity / reference organization
+
+### Device identity
+
+Historical systems expose:
+- sensor/device number/ID;
+- names/descriptions;
+- serial/product/version information.
+
+### Component/source identity
+
+Detector slot, connected transducer, algorithm and imaging device identities can differ.
+
+### Detection identity
+
+Detection Target ID correlates a particular reported detection; the evidence does not establish it as a durable universal Feature identity.
+
+### Configuration provenance
+
+The sources distinguish:
+- database/editor state;
+- submitted/queued settings;
+- device-returned values.
+
+### Location provenance
+
+Entered location, device GPS and other authorities can differ.
+
+### Media provenance
+
+Image may originate from a device other than the detector that triggered the capture.
+
+Thus UGS practice strongly requires **field-level source/authority provenance**, not merely one overall “source system” label.
+
+---
+
+## 14. Semantic invariants that would be damaged by collapsing distinctions
+
+1. **whole UGS device vs detector slot/transducer** — equipment subject and sensing element are different.
+2. **installed/connected hardware vs enabled algorithm** — physical inventory and processing configuration differ.
+3. **detecting sensor vs image producer** — cue/trigger relation does not imply identical equipment.
+4. **device identity vs network/server identity** — remote sensor and infrastructure are different subjects.
+5. **device composition vs communications topology** — connected by radio/network does not mean part-of.
+6. **device composition vs trigger/cue relationship** — operational dependency is not physical containment.
+7. **stored configuration vs requested/queued configuration** — intended values and submitted action differ.
+8. **requested configuration vs reported/applied configuration** — command acceptance does not prove execution.
+9. **reported state vs generic health/readiness** — vendor state semantics must remain source-specific until mapped.
+10. **status-report cadence vs sensing rate** — management freshness and measurement timing differ.
+11. **battery estimate vs validated state of charge** — displayed endurance/remaining value needs source-defined meaning.
+12. **pack count vs cell count** — packaging/configuration terms cannot be normalized without evidence.
+13. **entered position vs device GPS** — different location authorities.
+14. **emplacement comment vs system description** — deployment note and enduring product/system description differ.
+15. **implant/removal plan vs current deployment truth** — planned dates and observed/current state differ.
+16. **target/detection ID vs persistent real-world subject identity** — event correlation and durable entity identity differ.
+17. **image result vs equipment photograph/documentation** — identical media type can serve different semantic roles.
+18. **unsupported vs unknown vs not-yet-reported vs inaccessible** — absence states must not be collapsed.
+19. **variant-specific UI group vs universal information module** — source presentation is evidence of operational needs, not proof of universal taxonomy.
+20. **historical system behavior vs current integration** — manual evidence must not be treated as proof of current live system state or CSAPI implementation.
+
+---
+
+## 15. Potential V2 structural contribution — evidence label only
+
+**Potential contribution labels:**
+
+- **operational falsification:** candidate anatomy must support real remote sensing equipment without forcing every vendor-specific field into common semantics;
+- **likely core/intrinsic:** persistent device identity plus optional subordinate detector/transducer relationships;
+- **likely configuration pattern:** supported/installed → configured/enabled → requested/queued → reported/applied states must remain distinguishable;
+- **likely contextual pattern:** emplacement/deployment, host/network and operator context separated from equipment identity;
+- **likely management pattern:** status, battery, communications, commands and configuration are operationally first-class;
+- **likely information pattern:** detections, status and imagery have different roles and potentially different producing Systems;
+- **likely provenance requirement:** field-level source/time/authority is essential where database, operator-entered and device-reported values coexist;
+- **likely relationship pattern:** physical part, trigger/cue, communications link and deployment grouping must remain distinct;
+- **specialization caution:** TRSS/OmniSense terms, states, detector labels and UI groups are historical product semantics, not universal V2 vocabulary;
+- **evidence caution:** screenshot/manual excerpts establish described behavior and examples, not live-current equipment state or complete product coverage.
+
+**No V2 module disposition is made in Phase A.**
+
+---
+
+**S04 status: COMPLETE.**
+
+**ANATOMY PHASE A STATUS: ALL 30 FROZEN SEMANTIC LINEAGES COMPLETE.**
+
+**Next permitted gate:** Phase B — cross-source structural comparison. No Phase B synthesis has been performed in this document at this point.
+
