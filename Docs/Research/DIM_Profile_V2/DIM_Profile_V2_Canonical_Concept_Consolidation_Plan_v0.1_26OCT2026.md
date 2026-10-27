@@ -3,7 +3,7 @@
 **Date:** 26 October 2026  
 **Version:** 0.1  
 **Method refinement (26 October 2026):** Donor-language-first terminology rule added; cited-synthesis and source-pedigree expectations clarified.  
-**Status:** All five sequential passes have **documented candidate meanings**; no final DIM concepts, classes, or profile requirements have been adopted. The Pass 1 instance-view pilot remains illustrative. **The five-pass human synthesis checkpoint has not started.**  
+**Status:** Five sequential candidate concept passes and their [human synthesis checkpoint](DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) are complete as research. **No DIM class model, module architecture, or profile requirement has been adopted.** The Pass 1 instance-view pilot remains illustrative.  
 **Location:** Research workspace, `Docs/Research/DIM_Profile_V2/`
 
 ## Purpose
@@ -47,15 +47,11 @@ Target **roughly one to two readable pages per pass**, not a new research volume
 
 A candidate concept does **not** become a V2 standard, requirement, adopted class, or conformance claim by appearing in a note. Keep conceptual reuse, semantic mapping, profile specialization, actual donor-standard implementation, and OGC binding distinct.
 
-## Human checkpoint after Pass 5
+## Five-pass synthesis checkpoint — completed
 
-Bring the five findings together in **one brief synthesis**, showing:
+The [five-pass synthesis checkpoint](DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) compared all five research candidates. It found mutually compatible **semantic distinctions and relationship roles**, not five new classes; the bounded subject-and-equipment hypothesis remains viable. Product-kind carriers, independent component standing, and representation/proxy relations **remain partial or open**. The checkpoint deliberately did **not** produce an authoritative combined UML class view because that would require class and association decisions the donors have not justified.
 
-- the individual subject and its relationships to kind/model, implemented procedure, enduring components, and digital representation;
-- what meanings are supported, partial, or unresolved;
-- whether these findings still fit the working subject-and-boundary hypothesis.
-
-A **small conceptual diagram** may help here; no large model, modules, schemas, encoding designs, or conformance rules are authorized by this plan. Only after this checkpoint should we decide how to investigate capability, configuration, state, interactions, outputs/actions, history, and provenance.
+**Recommended next bounded investigation (not yet authorized or begun):** Capabilities and performance—carefully separate a System's supported functions from model-level specifications, selected configuration, actual state, and one execution or result. This does not authorize automatic follow-on research, a model hierarchy, profile obligations, or donor corpus re-auditing.
 
 ## Standing guardrails
 
@@ -69,6 +65,6 @@ A **small conceptual diagram** may help here; no large model, modules, schemas, 
 
 ## Recovery and starting point
 
-Before resuming in a new chat, **read [PITON v1.4](PITON_DIM_Profile_V2_Continuity_v1.4_26OCT2026.md) and follow its explicit source-reading order**. It supersedes PITON v1.3's outdated pre-audit restart gate, while retaining its core safeguards. **PITON v1.4 is a historical pre-Pass-2 checkpoint; this plan and linked Passes 2–5 supersede its dated progress and next-pass status only.** Read the underlying documents at their linked GitHub paths; do not rely on a compressed summary, skip the original concept baselines, or treat the quarantined earlier Phase B/C/D files as accepted model conclusions.
+Before resuming in a new chat, **read [PITON v1.4](PITON_DIM_Profile_V2_Continuity_v1.4_26OCT2026.md) and follow its explicit source-reading order**. It supersedes PITON v1.3's outdated pre-audit restart gate, while retaining its core safeguards. **PITON v1.4 is a historical pre-Pass-2 checkpoint; this plan, linked Passes 2–5, and the five-pass synthesis checkpoint supersede its dated progress and next-pass status only.** Read the underlying documents at their linked GitHub paths; do not rely on a compressed summary, skip the original concept baselines, or treat the quarantined earlier Phase B/C/D files as accepted model conclusions.
 
-**Current checkpoint:** [Pass 5 — Digital Representation / Proxy Identity](DIM_Profile_V2_Canonical_Concept_Pass5_Digital_Representation_and_Proxy_Identity_v0.1_26OCT2026.md) is documented alongside [Pass 4 — Composition](DIM_Profile_V2_Canonical_Concept_Pass4_Composition_and_Component_Standing_v0.1_26OCT2026.md), [Pass 3 — Procedure/Method](DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md), [Pass 2 — Product/Model/Kind](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md), and [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md). **Next when directed: the short five-pass human synthesis checkpoint. Do not begin model architecture or profile requirements automatically.**
+**Current state:** [Five-pass synthesis checkpoint](DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) completed, after the five individually documented candidate passes. **Next only when directed:** a bounded Capabilities and Performance concept investigation, or another owner-prioritized task. No DIM class model, application-profile requirements, or conformance tests have been adopted or started.
