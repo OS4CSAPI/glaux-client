@@ -20,13 +20,13 @@ The question is **not** how to implement a proxy, choose universal identifiers, 
 
 ## 3. Where each building block came from, and how it contributes
 
-### 3.1 CSAPI: one real-world System can have several service representations
+### 3.1 Connected Systems: one real-world System can have several service representations
 
 **What the donor means.** The **Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI)** Part 1 separates a resource's server-local identity and URL from a `uniqueIdentifier` intended to identify the **real-world object represented across services**. Section 8.5 explains why multiple services may host different descriptions of one object. A System has a required `uniqueIdentifier`; the standard says that identifier **should** be persistent and independent of the resource URL—not an unconditional guarantee that every identifier persists for its entire physical lifetime (Open Geospatial Consortium 2025, §§ 8.4–8.5, 9.2.2).
 
 **What V2 takes.** CSAPI offers the closest **binding-side anchor** for relating information about one individual equipment System across servers. A second resource URL does **not** inherently create a second System. But a matching label, vendor model, or URL pattern cannot prove that two resources describe the *same* equipment. V2 has not chosen identity reconciliation rules; its DIM-level requirement is to **avoid confusing equipment identity with a server resource address**.
 
-### 3.2 AAS: the represented Asset and its digital shell are separately identifiable
+### 3.2 Asset Administration Shell: the represented Asset and its digital shell are separately identifiable
 
 **What the donor means.** The **Industrial Digital Twin Association (IDTA) Asset Administration Shell (AAS)** metamodel states that an `AssetAdministrationShell` **represents exactly one Asset**. The Shell is itself `Identifiable`, contains `AssetInformation` for the represented Asset, and references zero or more `Submodels` describing particular aspects of that Asset. Its own Shell identifier and the Asset identifiers held by `AssetInformation` have different roles; `globalAssetId` can be optional early in the lifecycle, subject to the metamodel's asset-identification constraint (Industrial Digital Twin Association 2026, “Overview,” “Asset Administration Shell Attributes,” “Asset Information Attributes”).
 
