@@ -4,11 +4,11 @@
 **Date:** 26 October 2026  
 **Standing:** Evidence-backed **candidate meaning**, not an adopted DIM class, universal digital-twin architecture, identifier policy, or application-profile requirement.  
 **Continuity:** [Incremental plan](DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md); [Pass 1 — Individual System](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md); [Pass 2 — Kind/Model](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md); [Pass 3 — Procedure/Method](DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md); [Pass 4 — Composition](DIM_Profile_V2_Canonical_Concept_Pass4_Composition_and_Component_Standing_v0.1_26OCT2026.md).  
-**Evidence scope:** Official published Connected Systems, Asset Administration Shell, Web of Things, OPC UA Devices, and SAREF sources; plus **pinned executable source evidence**, rather than normative claims, from Open Standard for Unattended Sensors reference implementation (OSUS-R), revision `d09088fbe56d4b64f0544d72e98c3cb70fa941f6`.
+**Evidence scope:** Official published Connected Systems, Asset Administration Shell, Web of Things, OPC Foundation Devices, and Smart Applications REFerence ontology sources; plus **pinned executable source evidence**, rather than normative claims, from Open Standard for Unattended Sensors reference implementation (OSUS-R), revision `d09088fbe56d4b64f0544d72e98c3cb70fa941f6`.
 
 ## 1. The question
 
-**How should an individually identifiable sensing-equipment System relate to its API resource, digital description, server/device representation, proxy, adapter, virtual Thing, or digital twin—without confusing those with the actual subject or falsely equating the donor models?**
+**How should an individually identifiable sensing-equipment System relate to its application programming interface (API) resource, digital description, server/device representation, proxy, adapter, virtual Thing, or digital twin—without confusing those with the actual subject or falsely equating the donor models?**
 
 The question is **not** how to implement a proxy, choose universal identifiers, or construct a digital twin. It is whether existing donors make meaningful distinctions that the DIM should preserve when one real sensing System is integrated and exposed through different information systems.
 
@@ -22,7 +22,7 @@ The question is **not** how to implement a proxy, choose universal identifiers, 
 
 ### 3.1 Connected Systems: one real-world System can have several service representations
 
-**What the donor means.** The **Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI)** Part 1 separates a resource's server-local identity and URL from a `uniqueIdentifier` intended to identify the **real-world object represented across services**. Section 8.5 explains why multiple services may host different descriptions of one object. A System has a required `uniqueIdentifier`; the standard says that identifier **should** be persistent and independent of the resource URL—not an unconditional guarantee that every identifier persists for its entire physical lifetime (Open Geospatial Consortium 2025, §§ 8.4–8.5, 9.2.2).
+**What the donor means.** The **Open Geospatial Consortium (OGC) Application Programming Interface (API) – Connected Systems (CSAPI)** Part 1 separates a resource's server-local identity and Uniform Resource Locator (URL) from a `uniqueIdentifier` intended to identify the **real-world object represented across services**. Section 8.5 explains why multiple services may host different descriptions of one object. A System has a required `uniqueIdentifier`; the standard says that identifier **should** be persistent and independent of the resource URL—not an unconditional guarantee that every identifier persists for its entire physical lifetime (Open Geospatial Consortium 2025, §§ 8.4–8.5, 9.2.2).
 
 **What V2 takes.** CSAPI offers the closest **binding-side anchor** for relating information about one individual equipment System across servers. A second resource URL does **not** inherently create a second System. But a matching label, vendor model, or URL pattern cannot prove that two resources describe the *same* equipment. V2 has not chosen identity reconciliation rules; its DIM-level requirement is to **avoid confusing equipment identity with a server resource address**.
 
