@@ -3,7 +3,7 @@
 **Date:** 26 October 2026  
 **Version:** 0.1  
 **Method refinement (26 October 2026):** Donor-language-first terminology rule added; cited-synthesis and source-pedigree expectations clarified.  
-**Status:** Active sequential plan. Passes 1–4 have **documented candidate meanings** (not adopted model content). The Pass 1 instance-view pilot remains illustrative; Pass 5 has not begun.  
+**Status:** All five sequential passes have **documented candidate meanings**; no final DIM concepts, classes, or profile requirements have been adopted. The Pass 1 instance-view pilot remains illustrative. **The five-pass human synthesis checkpoint has not started.**  
 **Location:** Research workspace, `Docs/Research/DIM_Profile_V2/`
 
 ## Purpose
@@ -69,6 +69,6 @@ A **small conceptual diagram** may help here; no large model, modules, schemas, 
 
 ## Recovery and starting point
 
-Before resuming in a new chat, **read [PITON v1.4](PITON_DIM_Profile_V2_Continuity_v1.4_26OCT2026.md) and follow its explicit source-reading order**. It supersedes PITON v1.3's outdated pre-audit restart gate, while retaining its core safeguards. **PITON v1.4 is a historical pre-Pass-2 checkpoint; this plan and linked Passes 2–4 now supersede its dated progress and next-pass status only.** Read the underlying documents at their linked GitHub paths; do not rely on a compressed summary, skip the original concept baselines, or treat the quarantined earlier Phase B/C/D files as accepted model conclusions.
+Before resuming in a new chat, **read [PITON v1.4](PITON_DIM_Profile_V2_Continuity_v1.4_26OCT2026.md) and follow its explicit source-reading order**. It supersedes PITON v1.3's outdated pre-audit restart gate, while retaining its core safeguards. **PITON v1.4 is a historical pre-Pass-2 checkpoint; this plan and linked Passes 2–5 supersede its dated progress and next-pass status only.** Read the underlying documents at their linked GitHub paths; do not rely on a compressed summary, skip the original concept baselines, or treat the quarantined earlier Phase B/C/D files as accepted model conclusions.
 
-**Current checkpoint:** Review the [Pass 4 — Composition and Component Standing](DIM_Profile_V2_Canonical_Concept_Pass4_Composition_and_Component_Standing_v0.1_26OCT2026.md) candidate, in continuity with [Pass 3 — Procedure / Method](DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md), [Pass 2 — Product / Model / Kind](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md), and [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md). **Next new research pass when directed: Pass 5 — Digital Representation / Proxy Identity only.**
+**Current checkpoint:** [Pass 5 — Digital Representation / Proxy Identity](DIM_Profile_V2_Canonical_Concept_Pass5_Digital_Representation_and_Proxy_Identity_v0.1_26OCT2026.md) is documented alongside [Pass 4 — Composition](DIM_Profile_V2_Canonical_Concept_Pass4_Composition_and_Component_Standing_v0.1_26OCT2026.md), [Pass 3 — Procedure/Method](DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md), [Pass 2 — Product/Model/Kind](DIM_Profile_V2_Canonical_Concept_Pass2_Product_Model_Kind_v0.1_26OCT2026.md), and [Pass 1 — Individual System Identity](DIM_Profile_V2_Canonical_Concept_Pass1_Individual_System_Identity_v0.1_26OCT2026.md). **Next when directed: the short five-pass human synthesis checkpoint. Do not begin model architecture or profile requirements automatically.**
