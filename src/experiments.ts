@@ -95,8 +95,9 @@ export const experimentPages: readonly ExperimentPage[] = [
     kind: 'template', id: 'resource-details-smart-citizen', title: 'Smart Citizen Kit 2.3 · DIM research test drive',
     description: 'Explore our 13-step findings in a Resource Details wireframe: documented equipment and procedures versus unverified identities and observations.',
     latestUpdate: {
-      at: '2026-10-28T12:18:00-04:00',
+      at: '2026-10-28T13:13:22-04:00',
       summary: 'Added a source-grounded Smart Citizen case-study walkthrough using the Resource Details template.',
+      commit: '6c8010b403c24183d0cfe2e1af5479d0f000284a',
     },
   },
   {
