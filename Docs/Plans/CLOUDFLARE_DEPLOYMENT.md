@@ -1,3 +1,26 @@
+## Cross-vendor candidate profile-aware Resource Details — verified production deployment
+
+**Deployed 28 October 2026, 19:25 UTC.** Separate page testing the original chassis→Profile→profile-aware client idea using one 560 × 440 Resource Details view. **This does not modify the existing Smart Citizen research walkthrough, blank template or Activity page.** No accepted V2 DIM or normative application profile is implied.
+
+| Verified item | Value |
+| --- | --- |
+| New page | https://glaux-client.pages.dev/?page=resource-details-profile-test |
+| Immutable deployment | https://b764e400.glaux-client.pages.dev/?page=resource-details-profile-test |
+| Source branch | work/details-view-20261023 |
+| Deployed commit | [61bff8ecc4aa40dec39975878e098826d50580a4](https://github.com/OS4CSAPI/glaux-client/commit/61bff8ecc4aa40dec39975878e098826d50580a4) |
+| GitHub Actions | [Run 40754008531](https://github.com/OS4CSAPI/glaux-client/actions/runs/40754008531) — **success** |
+| Build/test results | TypeScript checks succeeded; **7 test files, 80 tests passed**; production build succeeded |
+| Cloudflare Pages deployment | **b764e400-3735-4fbe-b733-834142fa50cc**, production deploy stage **success**, exact commit verified |
+| Assets | 16 in Cloudflare deployment manifest, with JS, CSS and original four source fixture paths retained |
+| Interpretation record | [Resource Details Profile Test](../Design/RESOURCE_DETAILS_PROFILE_TEST.md) |
+| Research basis | [I13 Smart Citizen Case Study](../Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/I13_Integrated_Smart_Citizen_Case_Study_and_Gate_D_v0.1_28OCT2026.md) |
+
+**What it demonstrates:** A local meaning-aware interpreter renders manufacturer-design Smart Citizen facts and unchanged synthetic TRSS and OmniSense source fixtures through the **same** Resource Details UI, preserving the distinction between physical component models, observed-property channels, configured detectors, reported transducers, battery estimates and reported voltages. Unknown source terms are not silently assigned meanings.
+
+**Evidence ceiling:** No live CSAPI System was fetched, no physical Kit identified, no real Observation or device command executed, and no normative Profile/conformance proved. Build/test and Cloudflare production deployment are verified. An independent browser-driven click-through was not executed in this task, so the actual interaction remains for the owner to inspect.
+
+---
+
 ## Smart Citizen DIM research-test-drive wireframe — verified production deployment
 
 **Deployed 28 October 2026 (18:30 UTC), after the owner updated the GitHub Actions Cloudflare secret.** The source-grounded Smart Citizen Kit 2.3 walkthrough uses the existing Resource Details 560 × 440 wireframe. The blank template and Activity table continue to have separate routes. This is a **product/design research demonstration**, not a live device, formal adopted DIM, physical-asset identification, observation feed, or profile conformance demonstration.
