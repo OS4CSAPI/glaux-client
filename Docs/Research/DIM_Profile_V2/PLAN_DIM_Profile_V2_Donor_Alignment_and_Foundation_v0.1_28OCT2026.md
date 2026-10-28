@@ -51,7 +51,7 @@ These are required *information needs* for Step 2's smallest workable format, **
 
 | Step | One-turn task | Main deliverable and exit check | Status |
 | --- | --- | --- | --- |
-| **01** | **Confirm donor-corpus baseline.** Cross-check existing 182-source IDs, source-type inventory, Phase 0 lineage roles and chassis screening at the **identity/provenance level**, rather than re-researching each standard. Flag edition, citation or identifier inconsistencies instead of silently "correcting" them. | `Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md`: established source row count, stable ID rule, lineage/edition conventions, explicit source-of-truth precedence, exceptional rows. **Original ledgers unchanged.** | NOT STARTED |
+| **01** | **Confirm donor-corpus baseline.** Cross-check existing 182-source IDs, source-type inventory, Phase 0 lineage roles and chassis screening at the **identity/provenance level**, rather than re-researching each standard. Flag edition, citation or identifier inconsistencies instead of silently "correcting" them. | `Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md`: established source row count, stable ID rule, lineage/edition conventions, explicit source-of-truth precedence, exceptional rows. **Original ledgers unchanged.** | **COMPLETE** — [Step 01 corpus baseline and exceptions](Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md); commit [`bbf5271`](https://github.com/OS4CSAPI/glaux-client/commit/bbf527118041d7526db8b44145b56d5df64bd715) |
 | **02** | **Define a minimal alignment-register format and decision language.** Distinguish artifact/lineage/source concept/candidate DIM meaning/alignment/source-stated dependency, confidence and evidence. Use a **tiny example from one existing Pass**, not a full new alignment. | `Donor_Alignment/02_Register_Method_and_Schema.md` plus only the smallest practical machine-readable templates if necessary. Verify each status has an exact meaning and **no automatic full-donor conformance**. | NOT STARTED |
 | **03** | **Seed accountability for all 182 artifacts mechanically.** Copy/relate frozen source metadata and legacy lineage/disposition fields using Step 1 IDs; mark concept mapping **NOT YET ASSESSED** unless an individually inspected source/mapping already supports more. No one-off donor essays. | `Donor_Alignment/03_Source_Accountability_Register.csv` (or chosen format), verified **182 distinct source IDs**, no duplicate/missing rows, no invented semantic mappings or "all GREEN" claim. | NOT STARTED |
 | **04** | **Populate candidate alignment: individual System identity.** Reuse Pass 1, C08 corrections and only relevant donor clauses. Preserve physical System vs identifier/resource and donor equivalence limits. | One versioned alignment entry/table for **Concept 1**, exact citations, provenance/status, source-native dependencies, conflicts, open questions and client relevance. | NOT STARTED |
@@ -85,7 +85,7 @@ For any concept alignment Step 04–09, do not claim completion until these chec
 
 ## 7. Progress, stopping, and next-turn protocol
 
-This plan is **CREATED, NOT STARTED**. The sole authorized action in this turn is writing it and making it discoverable from the research start page/PITON. Subsequent user utterances **"proceed"**, **"go ahead"**, etc. mean: perform **one next NOT STARTED step** in numeric order, commit real outputs on `research/dim-profile-v2`, update its tracker, and say exactly what follows. If BLOCKED/PARTIAL, describe the limited evidence, indicate whether the next step can safely proceed, and wait for user direction if the dependency is material.
+**Current state (28 October 2026): STEP 01 COMPLETE; STEPS 02–12 NOT STARTED.** The plan was created in a previous turn. Following the owner's next explicit “proceed,” Step 01 reconciled the three full 182-ID CSV ledgers and bibliography metadata, preserving [seven unresolved grouped-placement exceptions](Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md). No frozen sources were edited. Subsequent user utterances **"proceed"**, **"go ahead"**, etc. mean: perform **one next NOT STARTED step** in numeric order, commit real outputs on `research/dim-profile-v2`, update its tracker, and say exactly what follows. If BLOCKED/PARTIAL, describe the limited evidence, indicate whether the next step can safely proceed, and wait for user direction if the dependency is material.
 
 At the end of each iteration, use this compact report:
 - **Completed:** Step N, named output, direct GitHub link and evidence/check result.
@@ -93,6 +93,12 @@ At the end of each iteration, use this compact report:
 - **Limit:** Explicitly identify material open or unverified claims; don't call candidates adopted.
 - **Next:** "**Step N+1 — [task]. Say 'proceed' to begin.**"
 
-**First action on the next "proceed":** **Step 01 — Confirm the frozen 182-artifact identity/lineage baseline, record exact file/edition discrepancies without changing source data, and establish the source-of-truth rules for the new register.**
+**First action on the next "proceed":** **Step 02 — Define the smallest auditable donor-alignment register format, status/compatibility decision language, and evidence rules.** Use one tiny example from an existing concept pass; **do not** seed all 182 rows or perform Step 03 in the same turn.
 
 **A successful Step 12 ends this plan.** It does not authorize a new donor survey, a 13-step hardware study, another architecture, normative Profile text or UI deployment.
+
+## 8. Verified step execution log
+
+| Step | Result | Evidence and limits | Next |
+| --- | --- | --- | --- |
+| **01 — Frozen identity / source-lineage baseline** | **COMPLETE**, 28 October 2026. [Primary report](Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md), [commit `bbf527118041d7526db8b44145b56d5df64bd715`](https://github.com/OS4CSAPI/glaux-client/commit/bbf527118041d7526db8b44145b56d5df64bd715). | Three CSVs each have **182 unique IDs 1–182**, identical citation and primary/secondary type per ID; both grouped bibliographies contain all 182 exact citations. **Seven** bibliography-section vs frozen primary-type differences remain flagged, not repaired. Identity/provenance metadata only, **no independent normative text or edition audit**. | **02** after separate user “proceed” |
