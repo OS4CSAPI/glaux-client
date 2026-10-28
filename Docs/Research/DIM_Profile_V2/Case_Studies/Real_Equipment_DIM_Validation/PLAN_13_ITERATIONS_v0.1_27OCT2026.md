@@ -4,7 +4,7 @@
 **Date:** 27 October 2026  
 **Repository/branch:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), `research/dim-profile-v2` (**not `main`**)  
 **Location:** `Docs/Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/`  
-**Status:** **I01–I02 completed (27 October 2026); I03 next.** 2/13 substantive iterations completed. [I01 selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md); [I02 source corpus register](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md).  
+**Status:** **I01–I03 completed (27 October 2026); I04 next.** 3/13 substantive iterations completed. [I01 selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md); [I02 frozen corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md); [I03 source-native facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md).  
 **Parent research:** [Five-Pass Synthesis Checkpoint](../../DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) and [Canonical Concept Consolidation Plan](../../DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md)
 
 ## 1. Why we are doing this
@@ -97,13 +97,13 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 ## 5. Progress tracker and the `proceed` contract
 
-**Current state: 2 / 13 substantive iterations completed.**
+**Current state: 3 / 13 substantive iterations completed.**
 
-**Completed:** [I01 Equipment Selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md) and [I02 Versioned Source Corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md) (27 October 2026). **I02 verdict:** reproducible source/design corpus frozen; physical unit and measurement record **NOT VERIFIED**. **I03 next.**
+**Completed:** [I01 Equipment Selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md), [I02 Frozen Source Corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md), and [I03 Source-Native Fact Register](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md) (27 October 2026). **I03 output:** 60 traceable **candidate** source statements from 17 directly pertinent pinned files, six flags for I04 audit, and six evidence gaps. **No verified individual physical unit or actual observation obtained. I04 next.**
 
 | Phase | Iterations | Current state | Checkpoint |
 | --- | --- | --- | --- |
-| A — evidence | I01–I04 | **I01–I02 COMPLETE; I03 NEXT; I04 not started** | PITON A at I04 |
+| A — evidence | I01–I04 | **I01–I03 COMPLETE; I04 NEXT** | PITON A at I04 |
 | B — five-finding application | I05–I08 | Not started | PITON B at I08 |
 | C — working DIM slice | I09–I10 | Not started | Model/evidence review at I10 |
 | D — CSAPI evaluation | I11–I13 | Not started | PITON C at I13 |
@@ -117,4 +117,4 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 A simple **“proceed”** authorizes that single next iteration; the assistant must re-read the current plan/tracker, necessary upstream artifacts and exact source evidence, complete the named work, commit and verify, then stop and name the following step. Do not require the user to repeat context or grant routine approvals. If evidence fails the current gate, document the precise correction/recheck needed as the next actionable iteration rather than quietly continuing with unsupported claims.
 
-**Next action: Iteration I03 — extract source-native equipment facts from the [frozen I02 corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md), with traceable fact IDs, exact file/section evidence, and separate product-level versus unit-level status. **I04–I13 have not started.**
+**Next action: Iteration I04 — audit [the I03 fact register](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md) against the pinned sources, examine the six flagged discrepancies and identity/provenance limits, record an explicit **Gate A PASS/CONDITIONAL/FAIL** verdict, and create **PITON A** with exact GitHub recovery links. **I05–I13 have not started.**
