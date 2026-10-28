@@ -18,6 +18,7 @@ const examples = [
 const templates = [
   { id: 'resource-details-template', heading: 'Resource Details View template', updatedAt: '2026-10-24T16:24:47-04:00' },
   { id: 'resource-details-activity', heading: 'Resource Details View · Activity table', updatedAt: '2026-10-26T12:43:36-04:00' },
+  { id: 'resource-details-smart-citizen', heading: 'Smart Citizen Kit 2.3 · DIM research test drive', updatedAt: '2026-10-28T13:13:22-04:00' },
 ];
 const pages = [...templates, ...examples];
 const pageHref = entry => `/?${templates.some(template => template.id === entry.id) ? 'page' : 'example'}=${entry.id}`;
@@ -57,8 +58,8 @@ const pageHref = entry => `/?${templates.some(template => template.id === entry.
     await waitForIndex();
     await page.waitForLoadState('networkidle');
     check('Root opens the experiment index without a fixture or remote source read', noSourceReads(requests));
-    check('Index contains two wireframe pages and five existing example pages', await page.locator('article.experiment-page').count() === pages.length);
-    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(templates[1]));
+    check('Index contains three wireframe pages and five existing example pages', await page.locator('article.experiment-page').count() === pages.length);
+    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(templates[2]));
     for (const entry of pages) {
       const link = titleLink(entry.id);
       const article = page.locator(`article.experiment-page[data-page-id="${entry.id}"]`);
