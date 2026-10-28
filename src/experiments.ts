@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen';
+  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -89,6 +89,15 @@ export const experimentPages: readonly ExperimentPage[] = [
     latestUpdate: {
       at: '2026-10-24T16:24:47-04:00',
       summary: 'Created the initial Resource Details View template from the recovered PBI working frame, with fixed bands and compact overflow scrolling.',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-profile-test', title: 'Profile-aware Resource Details · semantic test',
+    description: 'Compare generic field listing versus a provisional profile-aware view for SCK2.3, TRSS and OmniSense in one Resource Details frame. No real physical-unit or CSAPI conformance claims.',
+    latestUpdate: {
+      at: '2026-10-28T15:21:55-04:00',
+      summary: 'Added a cross-vendor, term-driven semantic projection and generic-vs-profile-aware Resource Details comparison with source-fidelity tests.',
+      commit: 'f203bef6fe08797e57151674fb4f2a04a81562f9',
     },
   },
   {
