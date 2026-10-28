@@ -1,0 +1,98 @@
+# DIM/Profile V2 — Donor Alignment and Foundational DIM Construction: Controlled Iteration Plan
+
+**Version:** 0.1 · **28 October 2026**
+**Standing:** Execution plan for owner-directed, source-grounded research consolidation; **not** a DIM architecture, accepted donor mapping, application Profile, conformance claim, or authorization to start Step 1 without the owner's next "proceed".
+**Repository/branch:** OS4CSAPI/glaux-client / **research/dim-profile-v2**. **Do not default to main or touch work/details-view-20261023, GitHub Actions or the live Glaux site** in this plan.
+**Authority:** [Original Problem and Outcome Baseline](DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md), [PITON v1.5](PITON_DIM_Profile_V2_Continuity_v1.5_28OCT2026.md), [Provisional DIM Architecture Blueprint](DIM_Profile_V2_Provisional_Architecture_Blueprint_v0.1_28OCT2026.md).
+**Purpose:** Move from the already investigated source corpus and first five semantic distinctions to a **small, defensible, publication-oriented candidate DIM foundation with inspectable donor alignment**, without reopening the entire corpus or allowing more unbounded research-only iterations.
+
+## 1. What we are trying to solve
+
+TRSS and OmniSense originally showed the problem: a generic CSAPI/SensorML description can be accessible but yield a weaker common System Details UI than the vendor's source interface because some **meaning was lost by an integration, not understood by a client, or both**. The long-term deliverables remain (1) a publishable, implementation-independent **DIM**, (2) a CSAPI application **Profile**, and (3) a profile-aware client that can faithfully display **common structure and genuine vendor-specific details**. Every substantive alignment decision should ultimately explain what source-to-client information failure it prevents or how it supports these deliverables.
+
+**The 182 entries are source artifacts, not automatically 182 distinct donors or independent votes.** Our existing source classification, chassis screen, 30-lineage extraction and audits are prior work—not tasks to re-run. The sources have different roles (model, ontology, vocabulary, API, schema, conformance method, operational evidence, etc.). We should keep **every artifact accountable**, but perform detailed semantic comparison **only on relevant lineages/concepts as each DIM meaning is developed**. We will NOT compare all pairs of 182 artifacts; we will NOT declare every contributor foundational.
+
+## 2. Required evidence and how it is used
+
+Use the exact **research/dim-profile-v2** files, not model memory or a broad new online search:
+
+| Source | Use | Guard |
+| --- | --- | --- |
+| [Source-type assessment/IDs — 182 rows](DIM_Profile_V2_Source_Type_Assessment_v0.1_25OCT2026.csv) and [grouped source bibliography](DIM_Profile_V2_Candidate_Donor_Bibliography_Source_Type_Grouped_v0.5_25OCT2026.md) | Existing frozen artifact identities, citations and classification | Alphabetical/grouping order does not rank conceptual importance |
+| [Phase 0 source/lineage ledger — 182 rows](DIM_Profile_V2_Anatomy_Phase0_182_Source_Ledger_v0.1_26OCT2026.csv) | Existing lineages, roles and reported dispositions | Prior "anatomy" labels are **historical triage**, not adopted V2 module/model authority |
+| [Chassis capability audit — 182 rows](DIM_Profile_V2_Chassis_Capability_Audit_182_Source_Ledger_v0.1_25OCT2026.csv) and [cross-corpus reconciliation](DIM_Profile_V2_Chassis_Corpus_Wide_Reconciliation_v0.1_25OCT2026.md) | Prior full-corpus screening and independent-challenger correction | Chassis screening is not concept-by-concept donor equivalence |
+| [Phase A trust triage](DIM_Profile_V2_Anatomy_PhaseA_Bulk_Trust_Triage_v0.1_26OCT2026.md) and [C08 validation audit](DIM_Profile_V2_Anatomy_PhaseA_Validation_Audit_v0.1_26OCT2026.md) | 22 GREEN, 8 YELLOW, 0 RED lineage triage; specific corrected semantics | GREEN is **not** full clause-by-clause certification; YELLOW requires source-specific ceilings |
+| [Five-pass synthesis](DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) and its individual Pass 1–5 records | Candidate *meanings*, cited native source concepts and important non-equivalences | Not five adopted classes, modules or a complete core |
+| [Smart Citizen I09–I13](Case_Studies/Real_Equipment_DIM_Validation/README.md) | Bounded source-based test, false-mapping challenges and earned evidence | Gate D conditionally accepted the **report**, not live individual CSAPI interoperability |
+| [Provisional DIM/Profile publication outlines](DIM_Profile_V2_Provisional_Document_Outlines_v0.1_26OCT2026.md) and [DIM method](DRAFT_DIM_Concept_and_Method_Basis_v0.1_25OCT2026.md) | Output structure and "reuse invariants; specialize variation" policy | Do not import the quarantined anatomy Phase B/C/D model, V1's eight bins as DIM modules, or unearned SHALLs |
+
+## 3. What the register must ultimately represent
+
+**Artifact accountability and semantic mapping are separate data sets.** We are not building a single flat table in which each artifact is forced to correspond to a DIM class.
+
+- **Source artifact:** stable pre-existing source ID, exact title/edition/citation and source type. May be a companion, historical edition, schema or implementation—not a separate conceptual vote. Preserve the exact frozen source row.
+- **Donor lineage / standardized source concept:** identifies a source-defined concept or relation in an actual source edition, with a **direct section/definition** and any source-stated dependency on another standard. A relation asserted by one source is distinguished from one inferred by our research.
+- **Candidate DIM meaning / relation:** concise V2 interpretation, status (candidate, rejected, open; only owner-approved accepted items), scope, important incompatibilities and unresolved questions. **Not** necessarily a new class or property.
+- **Alignment record:** evidence-backed link between a source-native meaning and our candidate meaning; mapping kind (direct adoption, close alignment, broader/narrower, overlap/partial, incompatible, borrowed idea, unresolved, or not applicable **with evidence**). No claims of exact equivalence merely because labels match.
+- **Compatibility consequence:** what the alignment would preserve; what information it might lose; whether a source conversion, Profile constraint or client interpretation is necessary; what source or test would confirm it. **Semantic alignment is not implementation of/conformance to the whole donor.**
+- **Evidence/status:** exact source URI/edition/section, source-access ceiling, date, decision provenance and whether the relationship is donor-declared, analyst interpretation or validated by a particular test.
+
+These are required *information needs* for Step 2's smallest workable format, **not preapproved database classes, tables or a mandated new model**. Use simple auditable CSV/Markdown/JSON only as needed; do not invent an enterprise registry service.
+
+## 4. One "proceed" = exactly one bounded iteration
+
+**Authorization:** The user's plain **"proceed"** after the current plan authorizes **only the next unchecked numbered step**. Do not combine steps, launch another plan, silently start an I14, or edit the client. Each step must (a) read the sources required for **that step** on the correct branch; (b) create/update only its named primary artifact(s) and this status tracker; (c) cite exact original records; (d) self-check counts, links and evidence ceilings; and (e) report **what changed, what it means for our DIM/Profile/client goal, what remains open, and exactly which step is next**. If a source cannot be verified or a correction changes the premise, preserve the discrepancy, stop the affected claim, and finish the bounded work as far as defensibly possible—**do not invent a fix or expand scope without instruction**.
+
+**No repetitive approval gate:** The owner already authorizes the named step by saying "proceed". Do not ask for another sign-off after each small mechanical action. Do not require manual review of 182 rows simply to keep progress moving. Ask the owner only for an architectural judgment that cannot responsibly be inferred, or when the user changes the plan.
+
+**Completion states:** NOT STARTED → IN PROGRESS → COMPLETE (with verified GitHub artifact/commit), or BLOCKED / PARTIAL (specific evidence issue). Update the plan tracker at the end of **each** step. Preserve original sources byte-for-byte. Update PITON only at a major handoff or when material assumptions change; the plan itself is the authoritative progress log within this sequence.
+
+## 5. Execution sequence — twelve small iterations, no more than one per prompt
+
+| Step | One-turn task | Main deliverable and exit check | Status |
+| --- | --- | --- | --- |
+| **01** | **Confirm donor-corpus baseline.** Cross-check existing 182-source IDs, source-type inventory, Phase 0 lineage roles and chassis screening at the **identity/provenance level**, rather than re-researching each standard. Flag edition, citation or identifier inconsistencies instead of silently "correcting" them. | `Donor_Alignment/01_Corpus_Baseline_and_Exceptions.md`: established source row count, stable ID rule, lineage/edition conventions, explicit source-of-truth precedence, exceptional rows. **Original ledgers unchanged.** | NOT STARTED |
+| **02** | **Define a minimal alignment-register format and decision language.** Distinguish artifact/lineage/source concept/candidate DIM meaning/alignment/source-stated dependency, confidence and evidence. Use a **tiny example from one existing Pass**, not a full new alignment. | `Donor_Alignment/02_Register_Method_and_Schema.md` plus only the smallest practical machine-readable templates if necessary. Verify each status has an exact meaning and **no automatic full-donor conformance**. | NOT STARTED |
+| **03** | **Seed accountability for all 182 artifacts mechanically.** Copy/relate frozen source metadata and legacy lineage/disposition fields using Step 1 IDs; mark concept mapping **NOT YET ASSESSED** unless an individually inspected source/mapping already supports more. No one-off donor essays. | `Donor_Alignment/03_Source_Accountability_Register.csv` (or chosen format), verified **182 distinct source IDs**, no duplicate/missing rows, no invented semantic mappings or "all GREEN" claim. | NOT STARTED |
+| **04** | **Populate candidate alignment: individual System identity.** Reuse Pass 1, C08 corrections and only relevant donor clauses. Preserve physical System vs identifier/resource and donor equivalence limits. | One versioned alignment entry/table for **Concept 1**, exact citations, provenance/status, source-native dependencies, conflicts, open questions and client relevance. | NOT STARTED |
+| **05** | **Populate candidate alignment: product/model/kind.** Use Pass 2; distinguish CSAPI `systemKind`, SensorML `typeOf`, SAREF `DeviceKind`, AAS type-instance, OPC UA model vs ObjectType, WoT Thing Model. | One **Concept 2** alignment entry/table; explicitly record close vs partial rather than blanket equivalence and distinguish model from actual individual. | NOT STARTED |
+| **06** | **Populate candidate alignment: Procedure/Method.** Use Pass 3 and C08: kind/datasheet and implemented method may share the CSAPI Procedure carrier but **not the relationship meaning**. Keep execution and result separate. | One **Concept 3** alignment entry/table, exact donor references and limits; no fictional execution or mandatory Procedure object per firmware function. | NOT STARTED |
+| **07** | **Populate candidate alignment: composition/component standing.** Use Pass 4 and audited Smart Citizen I07/I10/I12 examples. Distinguish whole/part, separately managed subsystem, physical component, channel, temporary association, platform/deployment and source software record. | One **Concept 4** alignment entry/table; test against **cabled in-enclosure PM module, multi-channel chips and source-defined components**; no universal component superclass. | NOT STARTED |
+| **08** | **Populate candidate alignment: digital representation/proxy.** Use Pass 5 and I08/I10 case evidence; distinguish equipment from resource, proxy, twin, service, identity and database Device–Sensor-definition association. | One **Concept 5** alignment entry/table; no unverified one-to-one physical-to-digital identity join. | NOT STARTED |
+| **09** | **Reconcile the five concept mappings and verified donor-to-donor dependencies.** Read existing records for overlap/conflicts and inspect only cited original donor statements that explicitly relate standards. Distinguish donor-stated normative/informative links from our interpretations. **No 182×182 pairwise mapping.** | `Donor_Alignment/09_Cross_Concept_Reconciliation.md`: deduplicated crosswalk, source-declared dependencies where verified, mapping disagreements and unresolved issues; no invented equivalence or adoption. | NOT STARTED |
+| **10** | **Construct the first *candidate DIM manuscript foundation* from these five studied meanings.** Reuse publication outline; write source-grounded prose on subject/scope, concept meanings, relation roles and pedigree. Use UML **only if** actually supported and useful, not because a diagram is expected. | `Donor_Alignment/10_Candidate_DIM_Foundation.md` or appropriate candidate-manuscript location; clear CANDIDATE/OPEN standing; **five findings do not become five new classes**; each claim links its register evidence. | NOT STARTED |
+| **11** | **Test the draft foundation against original UI/integration needs, without changing the deployed client.** Check selected TRSS/OmniSense and SCK2.3 source examples and existing Glaux prototype interpretation; distinguish synthetic fixtures and documented product kind from actual CSAPI System records. | `Donor_Alignment/11_Source_to_DIM_to_Profile_to_UI_Check.md`: small matrix of preserved, qualified, unavailable and ambiguous meanings plus concrete future Profile/binding questions; **not** new Profile SHALLs. | NOT STARTED |
+| **12** | **Independent integrity/completion audit and bounded decision.** Verify the 182-row accountability invariant, evidence/citation fidelity and confidence labels across the five concepts, status of the actual candidate manuscript, and gaps relevant to the blueprint. Do not fill gaps by inventing new research. | `Donor_Alignment/12_Completion_Audit_and_Recommendations.md`, final tracker update, and short PITON addendum if needed. Recommend **one** defensible next concept/subject for the owner's later decision; **do not initiate** the next plan automatically. | NOT STARTED |
+
+**Pacing rationale:** Steps 01–03 establish accountability without mass semantic interpretation. Steps 04–08 each investigate **one previously researched meaning** rather than thousands of donor pairs. Step 09 reconciles; Step 10 turns research into the first candidate publication content; Step 11 explicitly tests source-to-UI value; Step 12 verifies and stops. The work therefore has a **finite exit**, a meaningful publication milestone and continuous traceability. None of the steps independently promises the *finished DIM, Profile or conformant client*.
+
+## 6. Non-drift and compatibility quality checks for each concept
+
+For any concept alignment Step 04–09, do not claim completion until these checks are explicitly considered:
+
+1. **Original source:** exact source artifact ID, standard edition, location, official native label/definition, and accessible primary text; otherwise mark UNVERIFIED.
+2. **Lineage independence:** related schemas, profiles, revisions and implementation companions are **not independent votes** simply because they are separate bibliography rows.
+3. **Donor's own declared relationships:** record exact standard citations/dependencies **when the source truly states them**. Do not assume two donors aligned just because they both use "System", "Device", "Procedure", "Component" or "Model".
+4. **Mapping direction and limits:** distinguish direct reuse/adoption (rare, needs explicit decision), close alignment, broader/narrower, overlap/partial, incompatible or unresolved; identify information that cannot map without qualification.
+5. **Source-native versus V2 interpretation:** mark whether words are a donor quotation/meaning, our synthesis or a hypothetical application Profile rule; retain counterexamples and source-extraction corrections.
+6. **Actual benefit:** explain one concrete fidelity issue the meaning prevents for a CSAPI integration and rich client (TRSS/OmniSense/SCK if evidence supports it), or explicitly say the UI value is not established.
+7. **No missing data invention:** type/design options ≠ actual installed hardware, capability ≠ Observation, kind ≠ Method, source database record ≠ physical part, estimated capacity ≠ measured voltage.
+8. **No architectural over-promotion:** neither the old quarantined anatomy nor the V1 eight subjects are adopted modules. A single donor family, classification group or client tab does not define a final module.
+9. **No forced donor conformance:** conceptual compatibility and translation fidelity **do not automatically establish complete source-standard conformance**. Do not use `SHALL` as a Profile obligation until actual conformance targets/requirements are investigated and authorized.
+10. **State uncertainty:** unresolved source access, conflicting edition and equivalence disputes stay explicitly open, not buried in a long narrative.
+
+**Evidence threshold:** A source concept can enter the **candidate DIM manuscript** if its meaning is supported and non-equivalent aspects are visible. A source mapping cannot be called *verified compatible* until the claimed direction and preserved constraints have supporting source evidence. Functional interoperability and profile conformance remain further levels, not outcomes assumed from this plan.
+
+## 7. Progress, stopping, and next-turn protocol
+
+This plan is **CREATED, NOT STARTED**. The sole authorized action in this turn is writing it and making it discoverable from the research start page/PITON. Subsequent user utterances **"proceed"**, **"go ahead"**, etc. mean: perform **one next NOT STARTED step** in numeric order, commit real outputs on `research/dim-profile-v2`, update its tracker, and say exactly what follows. If BLOCKED/PARTIAL, describe the limited evidence, indicate whether the next step can safely proceed, and wait for user direction if the dependency is material.
+
+At the end of each iteration, use this compact report:
+- **Completed:** Step N, named output, direct GitHub link and evidence/check result.
+- **Value:** One or two sentences on what we learned for the DIM/Profile/meaningful client.
+- **Limit:** Explicitly identify material open or unverified claims; don't call candidates adopted.
+- **Next:** "**Step N+1 — [task]. Say 'proceed' to begin.**"
+
+**First action on the next "proceed":** **Step 01 — Confirm the frozen 182-artifact identity/lineage baseline, record exact file/edition discrepancies without changing source data, and establish the source-of-truth rules for the new register.**
+
+**A successful Step 12 ends this plan.** It does not authorize a new donor survey, a 13-step hardware study, another architecture, normative Profile text or UI deployment.
