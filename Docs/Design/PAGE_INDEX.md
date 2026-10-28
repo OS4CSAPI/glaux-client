@@ -12,19 +12,21 @@ selected example.
 ## One catalogue for the index and selector
 
 [`src/experiments.ts`](../../src/experiments.ts) is the maintained page catalogue.
-The index consumes all seven entries. The example selector uses the same
+The index consumes all eight entries. The example selector uses the same
 catalogue's five entries with `kind: 'example'`: TRSS ETU-II, OmniSense Core2,
 OmniSense Core5ADS, the MPSS technical-description contract, and the connected
 power-arrangement example. Overview, Equipment, and Condition remain shared tabs
 within each example; Standard view remains a mode.
 
-Two entries have `kind: 'template'`. The original opens the recovered 560 × 440 Resource
+Three entries have `kind: 'template'`. The original opens the recovered 560 × 440 Resource
 Details View frame as a blank layout canvas, separate from the source-loading
 flow. The derived page changes only Activity / Table, adding the three-resource
 wireframe and its filters. A template has no fixture URL and does not appear in the example selector.
 Its route invokes its presentation renderer directly and does not load a source
 record. The two page kinds preserve this distinction in TypeScript as well as in
 the index copy.
+
+A third standalone template-derived page, `/?page=resource-details-smart-citizen`, uses the same 560 × 440 Resource Details view with source-linked manufacturer design facts from the I01–I13 Smart Citizen DIM case study on `research/dim-profile-v2`. It explicitly marks individual identifiers, live Observations, configuration and operational state as unverified. It does not claim any actual System resource or request live data; the original blank template and Activity table remain unchanged.
 
 When adding or changing a page, update its catalogue entry in the same change:
 
@@ -67,7 +69,7 @@ the original five example dates and descriptions remain unchanged.
 Run the existing offline tests and production build. With the documented browser
 environment, run `npm run test:browser:index`; this verifies the actual homepage,
 metadata, destinations, return links, address updates, unknown-link handling, and
-desktop/mobile layout. It checks all seven entries, confirms both template pages
+desktop/mobile layout. It checks all eight entries, confirms both template pages
 open and reload without source reads, and verifies the example selector retains only its
 five data examples. The baseline browser script starts at the explicit TRSS URL;
 the power script retains its existing explicit URL. The template's own browser
