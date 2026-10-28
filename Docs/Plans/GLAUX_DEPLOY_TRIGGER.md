@@ -11,3 +11,5 @@
 **Research source:** The Smart Citizen case study is maintained separately under `Docs/Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/` on `research/dim-profile-v2`. The wireframe is source-grounded, not a verified physical-Kit data feed.
 
 **Initial trigger:** 2026-10-28 — validate the build and detect whether the credential is in place.
+
+**Build-only validation trigger (2026-10-28):** Rerun after workflow YAML correction; deploy remains conditional on the GitHub Actions secret.
