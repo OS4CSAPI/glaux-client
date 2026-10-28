@@ -4,7 +4,7 @@
 **Date:** 27 October 2026  
 **Repository/branch:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), `research/dim-profile-v2` (**not `main`**)  
 **Location:** `Docs/Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/`  
-**Status:** **I01 complete (27 October 2026); I02 next.** 1/13 substantive iterations completed. [I01 equipment selection decision](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md).  
+**Status:** **I01–I02 completed (27 October 2026); I03 next.** 2/13 substantive iterations completed. [I01 selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md); [I02 source corpus register](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md).  
 **Parent research:** [Five-Pass Synthesis Checkpoint](../../DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) and [Canonical Concept Consolidation Plan](../../DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md)
 
 ## 1. Why we are doing this
@@ -17,7 +17,7 @@ We have completed five donor-grounded *candidate* concept studies—Individual S
 
 **What this is not:** Not a new server/client development project, not a finished DIM, not a conformance-certified CSAPI profile, not a full survey of the 182-source corpus, and not an excuse to revisit quarantined earlier anatomy Phase B/C/D conclusions.
 
-**I01 selection:** Smart Citizen Kit **2.3** (SCK2.3) was selected as the **source-supported equipment-product baseline** in [I01's qualification record](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md). Official hardware/firmware and technical documentation are available. **A particular physical unit and its readings remain unverified.** The pinned project's SCK2.3 enclosure-test notebook references four *platform device IDs* (18486–18489), not proven physical identifiers; I02 will test them or seek defensible archival evidence. If evidence fails, preserve that limit and reconsider the physical-unit candidate before proceeding past Gate A. A product datasheet **does not prove** deployment, firmware or actual unit behavior.
+**I01 selection:** Smart Citizen Kit **2.3** (SCK2.3) was selected as the **source-supported equipment-product baseline** in [I01's qualification record](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md). Official hardware/firmware and technical documentation are available. **A particular physical unit and its readings remain unverified.** The pinned project's SCK2.3 enclosure-test notebook references four *platform device IDs* (18486–18489), not proven physical identifiers; I02 verified that **the notebook has no executed output** and was **unable to obtain readable live records or recordings** in this environment. The [I02 register](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md) pins 25 exact file sources across four Git repositories. Preserve the **physical-unit evidence gap** and reconsider a stronger unit evidence source before Gate A if needed. A product datasheet **does not prove** deployment, firmware or actual unit behavior.
 
 ## 2. Execution policy
 
@@ -97,13 +97,13 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 ## 5. Progress tracker and the `proceed` contract
 
-**Current state: 1 / 13 substantive iterations completed.**
+**Current state: 2 / 13 substantive iterations completed.**
 
-**I01 completed artifact:** [Equipment Selection and Qualification (27 October 2026)](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md). **Result:** SCK2.3 qualifies as the manufacturer-documented product baseline; physical-unit linkage and actual data remain **OPEN**. **I02 is next.**
+**Completed:** [I01 Equipment Selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md) and [I02 Versioned Source Corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md) (27 October 2026). **I02 verdict:** reproducible source/design corpus frozen; physical unit and measurement record **NOT VERIFIED**. **I03 next.**
 
 | Phase | Iterations | Current state | Checkpoint |
 | --- | --- | --- | --- |
-| A — evidence | I01–I04 | **I01 COMPLETE; I02 NEXT; I03–I04 not started** | PITON A at I04 |
+| A — evidence | I01–I04 | **I01–I02 COMPLETE; I03 NEXT; I04 not started** | PITON A at I04 |
 | B — five-finding application | I05–I08 | Not started | PITON B at I08 |
 | C — working DIM slice | I09–I10 | Not started | Model/evidence review at I10 |
 | D — CSAPI evaluation | I11–I13 | Not started | PITON C at I13 |
@@ -117,4 +117,4 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 A simple **“proceed”** authorizes that single next iteration; the assistant must re-read the current plan/tracker, necessary upstream artifacts and exact source evidence, complete the named work, commit and verify, then stop and name the following step. Do not require the user to repeat context or grant routine approvals. If evidence fails the current gate, document the precise correction/recheck needed as the next actionable iteration rather than quietly continuing with unsupported claims.
 
-**Next action: Iteration I02 — freeze the bounded, versioned official source corpus and investigate a verifiable physical-unit/device-record evidence chain. I03–I13 are not started.**
+**Next action: Iteration I03 — extract source-native equipment facts from the [frozen I02 corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md), with traceable fact IDs, exact file/section evidence, and separate product-level versus unit-level status. **I04–I13 have not started.**
