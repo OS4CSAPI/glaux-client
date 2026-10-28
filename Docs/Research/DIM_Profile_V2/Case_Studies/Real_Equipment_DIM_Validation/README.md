@@ -2,9 +2,9 @@
 
 **Date opened:** 27 October 2026  
 **Branch:** `research/dim-profile-v2` in [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client)  
-**Status:** **SETUP COMPLETE — 0/13 substantive iterations complete.**  
-**Current next action:** **I01 — select and qualify one real sensing system.**  
-**Equipment selection:** **OPEN**. Smart Citizen Kit is a leading candidate, **not yet selected or validated**.
+**Status:** **I01 COMPLETE — 1/13 substantive iterations complete.**  
+**Current next action:** **I02 — freeze the versioned source corpus and investigate actual unit-level evidence.**  
+**Equipment selection:** **Smart Citizen Kit 2.3 selected as the documented product baseline.** Physical-unit identity, installed configuration, and actual recordings are **not yet verified**; see [I01 decision](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md).
 
 ## Why this folder exists
 
@@ -17,6 +17,8 @@ This case study tests whether those findings let us describe a **real sensing sy
 **[13-Iteration Execution Plan — Version 0.1](PLAN_13_ITERATIONS_v0.1_27OCT2026.md)**
 
 The plan is the authoritative **work sequence, status tracker, evidence policy, gate definitions, deliverable list, PITON schedule, and instruction for ending each iteration**. This README is the stable landing page. Its status should be updated alongside the plan after each completed iteration.
+
+**Completed iterations:** [I01 — Equipment Selection and Qualification](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md) (27 October 2026): SCK2.3 selected, official source material qualified, four platform-record candidates found in a pinned project notebook, and physical-unit linkage left explicitly unverified. **I02–I13 have not started.**
 
 The planned checkpoints are **I04 (evidence verification + PITON A)**, **I08 (five-finding reconciliation + PITON B)**, and **I13 (final case study + PITON C)**. Any additional files created during I01–I13 should be linked from this page as they become real; do **not** create empty “completed” artifacts or assert future evidence now.
 
@@ -32,4 +34,4 @@ When the user says **“proceed,”** carry out the **one next iteration** ident
 
 Every iteration must finish with **what was accomplished**, **why it matters**, **the exact working GitHub document link(s)**, and **one clear next action** that the user can start with a plain **“proceed.”** Avoid requesting repeated approvals for routine execution. If material evidence is unavailable, explain the precise blocker and document the bounded recovery step rather than fabricate an answer.
 
-**Next: Iteration I01 — qualify and select our real equipment example. Say “proceed” to begin.**
+**Next: Iteration I02 — freeze the source corpus and investigate evidence of an individual SCK2.3 unit. Say “proceed” to begin.**
