@@ -1,5 +1,11 @@
 # Resource Details View — cross-vendor candidate profile-aware test
 
+**Project-wide objective and approved recovery:** [DIM/Profile V2 Original Problem and Outcome Baseline](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md) and [PITON v1.5](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.5_28OCT2026.md), on the **separate research branch**. These must be read before using this experiment to propose new model/profile/UI work. They preserve the original TRSS/OmniSense vendor-to-CSAPI normalization and presentation-fidelity problem, which earlier PITONs omitted.
+
+**Owner assessment, 28 October 2026:** This profile-aware version is **“quite janky” but “on the right path,” at an appropriate preliminary stage and nowhere near finished**. The meaningful achievement is starting to render actual source-fixture JSON into the shared Resource Details canvases; the observed behavior should guide **iterative refinement of the DIM, Profile and profile-aware client together**. This is neither acceptance of the prototype's final navigation, nor proof of completed client/server interoperability. The prior research-commentary Smart Citizen page was **not** what the owner asked to test and is retained only for its optional research context.
+
+**Documentation-only note:** No UI/fixture code or deployed site behavior was changed by this owner-feedback record.
+
 **Date:** 28 October 2026. **Standing:** separate, non-normative client-side experiment. This is NOT a published DIM, a CSAPI application profile, a live CSAPI response, device control, or conformance verification. The existing Resource Details template, Activity page and previous Smart Citizen research walk-through remain unchanged.
 
 **Route:** /?page=resource-details-profile-test
