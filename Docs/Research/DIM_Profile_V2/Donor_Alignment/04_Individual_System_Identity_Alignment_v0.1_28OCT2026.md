@@ -31,6 +31,8 @@ This is **project synthesis**, based on [Pass 1 §2](../DIM_Profile_V2_Canonical
 
 **Status key:** `PRIMARY_TEXT_CHECKED` means a narrow section in the exact edition was inspected for this task, not a full standard audit. `PRIOR_CITED_RESEARCH` does not claim this iteration independently verified the primary source. `SUPPORTED_FOR_CANDIDATE_DIM` permits use as *qualified candidate manuscript material*, not adoption. All **`adoption_status=NOT_ADOPTED`**. All **`validation_evidence=NO_TRANSFORMATION_TEST`**.
 
+**Review-status precedence:** The [Step 03 182-row source register](03_Source_Accountability_Register.csv) is the initial, fully frozen **accountability snapshot** with 182 `NOT_ASSESSED` *as of Step 03*, not a live claim that no source has since been reviewed. **This Step 04 note is authoritative for TOPIC-01's scoped mapping-review status.** On that basis, IDs **10, 19, 20, 97, 104 and 144** now have topic-specific alignment records, and **49** is **deferred/unresolved**. No conclusion about their *other topics* follows. **A later controlled consolidation should reflect this scoped coverage in any evolving register**, without editing the Step 03 baseline or inferring that these donor sources are globally mapped.
+
 ## 3. Donor concept-to-candidate alignments — scoped and directional
 
 ### ALN-T01-A010-01 — OGC API – Connected Systems Part 1: individual `System` resource and UID
