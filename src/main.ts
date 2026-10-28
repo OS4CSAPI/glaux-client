@@ -10,6 +10,7 @@ import { renderDetails } from './presentation/details';
 import { renderExperimentIndex } from './presentation/index';
 import { renderResourceDetailsActivity } from './presentation/resource-details-activity';
 import { renderResourceDetailsTemplate } from './presentation/resource-details-template';
+import { renderResourceDetailsSmartCitizen } from './presentation/resource-details-smart-citizen';
 import './presentation/style.css';
 
 const app = document.querySelector<HTMLElement>('#app');
@@ -155,7 +156,8 @@ const selectedTemplate = experimentPages.find(page => page.kind === 'template' &
 const selectedExample = examples.find(example => example.id === requestedExample);
 if (selectedTemplate) {
   document.title = `${selectedTemplate.title} | Glaux Client`;
-  if (selectedTemplate.id === 'resource-details-activity') renderResourceDetailsActivity(mount);
+  if (selectedTemplate.id === 'resource-details-smart-citizen') renderResourceDetailsSmartCitizen(mount);
+  else if (selectedTemplate.id === 'resource-details-activity') renderResourceDetailsActivity(mount);
   else renderResourceDetailsTemplate(mount);
 } else if (requestedPage === null && selectedExample) actions.selectExample(selectedExample.id);
 else {
