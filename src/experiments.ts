@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template' | 'resource-details-activity';
+  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -89,6 +89,14 @@ export const experimentPages: readonly ExperimentPage[] = [
     latestUpdate: {
       at: '2026-10-24T16:24:47-04:00',
       summary: 'Created the initial Resource Details View template from the recovered PBI working frame, with fixed bands and compact overflow scrolling.',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-smart-citizen', title: 'Smart Citizen Kit 2.3 · DIM research test drive',
+    description: 'Explore our 13-step findings in a Resource Details wireframe: documented equipment and procedures versus unverified identities and observations.',
+    latestUpdate: {
+      at: '2026-10-28T12:18:00-04:00',
+      summary: 'Added a source-grounded Smart Citizen case-study walkthrough using the Resource Details template.',
     },
   },
   {
