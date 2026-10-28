@@ -62,7 +62,7 @@ export function renderResourceDetailsSmartCitizen(container: HTMLElement): void 
     renderBlankContent({categoryId, view, content}) { renderCaseContent(content, categoryId, view); return true; },
     sourceSummary: 'Study standing, source records and limitations',
     sourceDescription: 'This is a standalone, source-linked product-design demonstration. It reuses the 560 × 440 wireframe, and does not fetch a real device, mint an identifier, provide operational readings or assert application-profile conformance.',
-    designRecord: 'Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/I13_Integrated_Smart_Citizen_Case_Study_and_Gate_D_v0.1_28OCT2026.md',
+    designRecord: 'Design/RESOURCE_DETAILS_TEMPLATE.md',
   });
   const frame = container.querySelector<HTMLElement>('.rd-module');
   const title = frame?.querySelector<HTMLElement>('.rd-resource-name');
