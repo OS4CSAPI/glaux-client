@@ -18,6 +18,8 @@ concurrency:
 jobs:
   validate-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      CF_DEPLOY_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - name: Check out exact application revision with pinned library
         uses: actions/checkout@v4
@@ -49,16 +51,14 @@ jobs:
       - name: Build production assets
         run: npm run build
 
-      - name: Record missing credential without exposing one
-        if: ${{ env.CLOUDFLARE_API_TOKEN == '' }}
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: echo "::warning::Cloudflare Pages deploy skipped: set the CLOUDFLARE_API_TOKEN repository Actions secret. Build and tests have still completed."
+      - name: Report deployment credential status
+        if: ${{ env.CF_DEPLOY_TOKEN == '' }}
+        run: |
+          echo "::warning::Cloudflare Pages deployment skipped because the CLOUDFLARE_API_TOKEN repository Actions secret is not configured."
+          echo "Build and offline tests completed, but the production site was not changed."
 
       - name: Deploy verified build to existing Cloudflare Pages project
-        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        if: ${{ env.CF_DEPLOY_TOKEN != '' }}
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
