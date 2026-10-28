@@ -66,7 +66,7 @@ Our frozen notebook references platform IDs **18486, 18487, 18488 and 18489** wh
 
 ## 4. Donor-native interpretation and binding ceiling
 
-**OGC API – Connected Systems Part 1, version 1.0 (published).** Its `System` describes an individual subject and has a required `uniqueIdentifier` independent of the server-local resource URL (a persistent URI is **recommended**, not automatically proven). That standard separates `systemKind`—a description of what kind of System it is—from `procedures` describing methods the System can implement, and §§ 10.1–10.3 distinguish integral System subsystems from non-permanent deployment/aggregation. **None of those standard fields may be populated as real-unit facts merely from SCK2.3 product literature or the unexecuted notebook.** There is **no verified CSAPI System/resource mapping for this Kit** (Open Geospatial Consortium 2025, §§ 8.5, 9.2.2, 10–13).
+**OGC API – Connected Systems Part 1, version 1.0 (published).** Its `System` resource describes an individual subject and **requires** a `uniqueIdentifier`; the standard **recommends** that this identifier be persistent and independent of the server-local resource URL. The availability of a suitable URI has not been established for our Kit. That standard separates `systemKind`—a description of what kind of System it is—from `procedures` describing methods the System can implement, and §§ 10.1–10.3 distinguish integral System subsystems from non-permanent deployment/aggregation. **None of those standard fields may be populated as real-unit facts merely from SCK2.3 product literature or the unexecuted notebook.** There is **no verified CSAPI System/resource mapping for this Kit** (Open Geospatial Consortium 2025a, §§ 8.5, 9.2.2, 10–13).
 
 **OGC SensorML 3.0 and OGC/ISO OMS 3.0.** SensorML supports physical-process descriptions that can include component processes and detailed methods; OMS separates an observing procedure from the Observer and the actual Observation. I05/I06/I07's findings provide *possible native description subjects* but do **not justify authoring a method execution, observed result or complete SensorML system instance without data** (Open Geospatial Consortium 2025b, §§ 8.3–8.6; Open Geospatial Consortium and International Organization for Standardization 2023, §§ 8.2, 8.5–8.6).
 
@@ -121,7 +121,7 @@ Fab Lab Barcelona. 2026c. *SmartCitizen API Backend*, pinned commit `25a524cbfb0
 
 Industrial Digital Twin Association. 2026. *Specification of the Asset Administration Shell, Part 1: Metamodel*, version 3.2. https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/spec-metamodel/core.html.
 
-Open Geospatial Consortium. 2025. *OGC API – Connected Systems – Part 1: Feature Resources*, OGC 23-001, version 1.0. https://docs.ogc.org/is/23-001/23-001.html.
+Open Geospatial Consortium. 2025a. *OGC API – Connected Systems – Part 1: Feature Resources*, OGC 23-001, version 1.0. https://docs.ogc.org/is/23-001/23-001.html.
 
 Open Geospatial Consortium. 2025b. *SensorML Encoding Standard*, OGC 23-000, version 3.0. https://docs.ogc.org/is/23-000/23-000.html.
 
