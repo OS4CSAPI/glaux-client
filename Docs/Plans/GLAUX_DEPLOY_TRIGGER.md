@@ -13,3 +13,5 @@
 **Initial trigger:** 2026-10-28 — validate the build and detect whether the credential is in place.
 
 **Build-only validation trigger (2026-10-28):** Rerun after workflow YAML correction; deploy remains conditional on the GitHub Actions secret.
+
+**Wireframe build validation rerun:** Restrict this deployment workflow to executable TypeScript/test/build checks. The repository-wide historical artifact-register audit is known to fail on unrelated missing v0.5/v0.6 document links; these are left untouched by the wireframe change.
