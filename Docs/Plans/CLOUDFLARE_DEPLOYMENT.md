@@ -1,3 +1,28 @@
+## Smart Citizen DIM research-test-drive wireframe — verified production deployment
+
+**Deployed 28 October 2026 (18:30 UTC), after the owner updated the GitHub Actions Cloudflare secret.** The source-grounded Smart Citizen Kit 2.3 walkthrough uses the existing Resource Details 560 × 440 wireframe. The blank template and Activity table continue to have separate routes. This is a **product/design research demonstration**, not a live device, formal adopted DIM, physical-asset identification, observation feed, or profile conformance demonstration.
+
+| Item | Verified result |
+| --- | --- |
+| Existing Cloudflare Pages project | `glaux-client` (production, unchanged project) |
+| Source repository/branch | `OS4CSAPI/glaux-client` / `work/details-view-20261023` |
+| Deployed source revision | [`00b1c441b23c6ea18a9be14c487b4bcf8a338df7`](https://github.com/OS4CSAPI/glaux-client/commit/00b1c441b23c6ea18a9be14c487b4bcf8a338df7) |
+| GitHub Actions workflow | [Successful build/test/deploy run 40745593667](https://github.com/OS4CSAPI/glaux-client/actions/runs/40745593667) |
+| TypeScript validation / offline tests / production build | **All succeeded; 74/74 tests passed** |
+| Cloudflare deployment ID | `ac10f1b0-c12f-4e8a-87fd-545dac4f2760` |
+| Cloudflare deployment status | **Production; deploy stage success** via authenticated Cloudflare connector read-back |
+| Immutable deployment | https://ac10f1b0.glaux-client.pages.dev/?page=resource-details-smart-citizen |
+| Production case-study route | https://glaux-client.pages.dev/?page=resource-details-smart-citizen |
+| Original template preserved | https://glaux-client.pages.dev/?page=resource-details-template |
+| Activity page preserved | https://glaux-client.pages.dev/?page=resource-details-activity |
+| File manifest check | **16 deployed assets**, including the new JavaScript and CSS bundles; Wrangler reported **3 files uploaded, 13 reused** |
+
+**Verification ceiling:** GitHub confirms the production build/test/deployment and Cloudflare confirms the successful production deployment, exact source commit, stage and manifest. An independent interactive browser render of the public pages was **not** completed in this turn because the external browsing environment could not retrieve the site; therefore the above results do **not** claim an executed browser UI regression suite or live resource reads. The request is an SPA query route rendered by the committed client and was source-reviewed before deployment. The new page explicitly labels missing physical unit/observation evidence and links the completed case-study research on `research/dim-profile-v2`.
+
+**Deployment method:** GitHub Actions `.github/workflows/deploy-glaux-pages.yml` with `cloudflare/wrangler-action@v4.1.3`, Wrangler `4.154.0`, and repository Actions secret `CLOUDFLARE_API_TOKEN`. No token was written into GitHub source or the deployment record. Deployments remain intentionally trigger-controlled, **not** automatic on all pushes.
+
+---
+
 # Cloudflare deployment continuation
 
 ## Resource Details Activity-table deployment result
