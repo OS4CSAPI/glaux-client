@@ -15,3 +15,5 @@
 **Build-only validation trigger (2026-10-28):** Rerun after workflow YAML correction; deploy remains conditional on the GitHub Actions secret.
 
 **Wireframe build validation rerun:** Restrict this deployment workflow to executable TypeScript/test/build checks. The repository-wide historical artifact-register audit is known to fail on unrelated missing v0.5/v0.6 document links; these are left untouched by the wireframe change.
+
+**Deployment request after GitHub Actions secret configured:** 2026-10-28. Owner confirmed the deployment secret was added to repository Actions settings. Trigger a fresh checked, tested production deployment of the existing Smart Citizen Resource Details page using the workflow's secured GitHub secret; do not log secret values. Verify the resulting Pages deployment ID and deployed source commit before declaring the page live.
