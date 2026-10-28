@@ -150,7 +150,7 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
     },
     sourceSummary:'What this tests — and what it does not',
     sourceDescription:'A small client-side demonstration of the thesis: declared community/profile meanings could let one generic resource view organize different manufacturers without reproducing their proprietary UI pixel-for-pixel. SCK2.3 is a documented product kind; other examples are synthetic fixture replays. Neither live CSAPI retrieval nor conformance to a completed DIM/Profile has been demonstrated.',
-    designRecord:'Design/RESOURCE_DETAILS_TEMPLATE.md',
+    designRecord:'Design/RESOURCE_DETAILS_PROFILE_TEST.md',
   });
   container.classList.add('resource-profile-prototype');
   const toolbar=container.querySelector<HTMLElement>('.rd-preview-toolbar');
