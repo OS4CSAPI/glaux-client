@@ -4,7 +4,7 @@
 **Date:** 27 October 2026  
 **Repository/branch:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), `research/dim-profile-v2` (**not `main`**)  
 **Location:** `Docs/Research/DIM_Profile_V2/Case_Studies/Real_Equipment_DIM_Validation/`  
-**Status:** **I01–I04 completed (27 October 2026); I05 next.** 4/13 substantive iterations completed. [I01 selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md), [I02 corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md), [I03 fact register](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md), [I04 audit and Gate A](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md), [PITON A](PITON_A_Real_Equipment_DIM_Validation_v0.1_27OCT2026.md). **Gate A CONDITIONAL PASS for product/design only; no verified fielded unit or readings.**  
+**Status:** **I01–I05 completed (27 October 2026); I06 next.** 5/13 substantive iterations completed. [I01 selection](I01_Equipment_Selection_and_Qualification_v0.1_27OCT2026.md), [I02 corpus](I02_Versioned_Source_Corpus_Register_v0.1_27OCT2026.md), [I03 source facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md), [I04 audit and Gate A](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md), [PITON A](PITON_A_Real_Equipment_DIM_Validation_v0.1_27OCT2026.md), [I05 individual/kind mapping](I05_Individual_System_and_Product_Kind_Mapping_v0.1_27OCT2026.md). **Gate A still CONDITIONAL: no verified individual unit or readings.**  
 **Parent research:** [Five-Pass Synthesis Checkpoint](../../DIM_Profile_V2_Five_Pass_Synthesis_Checkpoint_v0.1_26OCT2026.md) and [Canonical Concept Consolidation Plan](../../DIM_Profile_V2_Canonical_Concept_Consolidation_Plan_v0.1_26OCT2026.md)
 
 ## 1. Why we are doing this
@@ -97,14 +97,14 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 ## 5. Progress tracker and the `proceed` contract
 
-**Current state: 4 / 13 substantive iterations completed.**
+**Current state: 5 / 13 substantive iterations completed.**
 
-**Completed:** I01 selection, I02 pinned source corpus, [I03 source-native facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md), and [I04 independent audit](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md) (27 October 2026). **I04 outcome:** **34/60 I03 claims sampled**; source part-number conflict allegation retracted after official-publication and schematic checks; SCK2.3 8 MB dedicated flash better supported by the manufacturing file; identity and unit observations remain missing. **Gate A CONDITIONAL PASS for product/design facts, NOT PASSED for physical-unit/observation claims**. See [PITON A](PITON_A_Real_Equipment_DIM_Validation_v0.1_27OCT2026.md) for exact recovery. **I05 next.**
+**Completed:** I01 equipment selection; I02 pinned source corpus; [I03 source-native facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md); [I04 independent audit](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md) and [PITON A](PITON_A_Real_Equipment_DIM_Validation_v0.1_27OCT2026.md); [I05 Individual System and Product/Model/Kind](I05_Individual_System_and_Product_Kind_Mapping_v0.1_27OCT2026.md) (27 October 2026). **I05 result:** SCK2.3 kind/generation is source-supported; CSAPI `System` instance vs optional `systemKind` link fits the intended roles, but **no particular hardware unit, valid System uniqueIdentifier, or actual kind link is verified**. Other donor patterns remain semantic analogies, not implemented resources. **I06 next.**
 
 | Phase | Iterations | Current state | Checkpoint |
 | --- | --- | --- | --- |
 | A — evidence | I01–I04 | **I01–I04 COMPLETE; Gate A CONDITIONAL** | **PITON A COMPLETE** |
-| B — five-finding application | I05–I08 | **I05 NEXT; I06–I08 not started** | PITON B at I08 |
+| B — five-finding application | I05–I08 | **I05 COMPLETE; I06 NEXT; I07–I08 not started** | PITON B at I08 |
 | C — working DIM slice | I09–I10 | Not started | Model/evidence review at I10 |
 | D — CSAPI evaluation | I11–I13 | Not started | PITON C at I13 |
 
@@ -117,4 +117,4 @@ At **I04**, **I08**, and **I13**, create **PITON A, B, C**, respectively. Every 
 
 A simple **“proceed”** authorizes that single next iteration; the assistant must re-read the current plan/tracker, necessary upstream artifacts and exact source evidence, complete the named work, commit and verify, then stop and name the following step. Do not require the user to repeat context or grant routine approvals. If evidence fails the current gate, document the precise correction/recheck needed as the next actionable iteration rather than quietly continuing with unsupported claims.
 
-**Next action: Iteration I05 — apply the existing **Individual System Identity** and **Product / Model / Kind** findings to [audited F### facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md), respecting the [Gate A conditions](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md) and [PITON A](PITON_A_Real_Equipment_DIM_Validation_v0.1_27OCT2026.md). **Do not assert a real physical-unit identifier, installed configuration, measurement or DIM class without evidence. I06–I13 have not started.**
+**Next action: Iteration I06 — apply [Procedure / Method Pass 3](../../DIM_Profile_V2_Canonical_Concept_Pass3_Procedure_Method_v0.1_26OCT2026.md) to the pinned [Smart Citizen source facts](I03_Source_Native_Fact_Register_v0.1_27OCT2026.md), distinguishing reusable method, the System's capability to perform it, and a recorded execution/result. Honor [I04 Gate A](I04_Independent_Evidence_Audit_and_Gate_A_v0.1_27OCT2026.md), do not turn `systemKind` into implemented `procedures`, and do not fabricate observations. **I07–I13 have not started.**
