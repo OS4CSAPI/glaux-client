@@ -316,7 +316,7 @@ World Wide Web Consortium and Open Geospatial Consortium. 2026. *Semantic Sensor
 
 British Standards Institution. 2024. *BSI Flex 335 v2.0:2024-03: SAPIENT Network of Autonomous Sensors and Effectors—Interface Control Document—Specification*. March. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf.
 
-Department for Science, Innovation and Technology / Defence Science and Technology Laboratory (Dstl). 2024. *SAPIENT-Proto-Files: bsi_flex_335_v2_0*. Pinned schema revision `244a741c13bcee628f84944aef91e4a66854bd7d`. https://github.com/dstl/SAPIENT-Proto-Files/tree/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0.
+Defence Science and Technology Laboratory (Dstl). 2024. *SAPIENT-Proto-Files: bsi_flex_335_v2_0*. Pinned schema revision `244a741c13bcee628f84944aef91e4a66854bd7d`. https://github.com/dstl/SAPIENT-Proto-Files/tree/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0.
 
 Institute of Electrical and Electronics Engineers (IEEE). 2024. *IEEE Standard for a Smart Transducer Interface for Sensors and Actuators—Common Functions, Communication Protocols, and Transducer Electronic Data Sheet (TEDS) Formats*. IEEE 1451.0-2024. Published June 26. https://standards.ieee.org/ieee/1451.0/11001/.
 
