@@ -23,7 +23,7 @@ The committed [**Step 01 eligibility gates and reusable assessment template**](C
 
 ## Latest UI feedback and verified prototype
 
-The **first Smart Citizen case page** showeded research commentary and **was not what the owner asked for**. It is retained at [the earlier page](https://glaux-client.pages.dev/?page=resource-details-smart-citizen).
+The **first Smart Citizen case page** showed research commentary and **was not what the owner asked for**. It is retained at [the earlier page](https://glaux-client.pages.dev/?page=resource-details-smart-citizen).
 
 The **new separate test** is [Profile-aware Resource Details](https://glaux-client.pages.dev/?page=resource-details-profile-test). It compares generic field listing with a **candidate term-interpreting UI** inside the same Resource Details frame for SCK2.3 design and synthetic TRSS/OmniSense cases. Owner judgment: **janky but on the right path, appropriately early**, not final. The [app-side design record](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Design/RESOURCE_DETAILS_PROFILE_TEST.md) and [deployed build record](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Plans/CLOUDFLARE_DEPLOYMENT.md) give exact status: 80 offline tests passed, production deployment verified; **no real CSAPI System/data retrieval, browser automation, normative Profile or completed DIM**.
 
