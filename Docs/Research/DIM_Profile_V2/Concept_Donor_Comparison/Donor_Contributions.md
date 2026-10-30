@@ -1,10 +1,12 @@
 # Donor Contributions — Native Meanings, Coverage and Unrepresented Material
 
-**Version 0.2 · 30 October 2026 · America/New_York**  
-**Iteration 2: donor-facing comparison populated from existing V2 records.** No fresh all-donor audit or equipment mapping.  
+**Version 0.3 · 30 October 2026 · America/New_York**  
+**Donor findings: Iteration 2 consolidation, unchanged. Navigation updated after Iteration 3.** No fresh all-donor audit or new donor alignment.  
 **Input snapshot:** `258c620dfd5af7bf80fef32cb7b12dbcc7e56bf3`, branch `research/dim-profile-v2`.
 
-[Main conceptual comparison](README.md) · [Equipment view — not started](Equipment_Evidence.md) · [Plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) · [Drift correction](../DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md)
+[Main conceptual comparison](README.md) · [Equipment evidence and gaps](Equipment_Evidence.md) · [Plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) · [Drift correction](../DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md)
+
+**Iteration 3 navigation update:** the [equipment comparison](Equipment_Evidence.md) is now populated. It links exact source-sheet entries to the existing candidate distinctions and open questions, while separating model, donor-review and equipment/source gaps. Donor coverage, source standings and the comparison content below remain the Iteration 2 findings; the final review is still Iteration 4.
 
 ## 1. Start with the donor, not a slot to fill
 
@@ -141,7 +143,7 @@ The SSN edition/namespace discrepancy, SAPIENT Registration field numbering and 
 
 **Complete for Iteration 2:** native contributions are connected to the broader conceptual comparison; all 30 prior family keys remain visible once in §§2–3; the 48 original IDs and later-source trails are accounted for; distinct source-declared relationships and analyst correspondences are separated; and unrepresented questions retain their source flags and open placement. These are consolidation findings, not increased donor-review depth.
 
-**Still to do:** equipment-to-meaning comparisons in Iteration 3 and the final claim/readability/alternative-next-step review in Iteration 4. No dataset acquisition, conversion, new domain subject, adopted DIM class, Profile rule or application change occurred here. The plan is now ready for its next separately authorized iteration, not for an automatic power-first campaign.
+**Current continuation:** [Iteration 3 equipment comparisons](Equipment_Evidence.md) are complete as bounded documentary connections, not executed mappings. The final claim/readability/alternative-next-step review remains Iteration 4. No dataset acquisition, conversion, new domain subject, adopted DIM class, Profile rule or application change occurred here. The next separate “proceed” authorizes Iteration 4 only, not an automatic power-first campaign.
 
 [screen]: ../Donor_Challenge/01_Coverage_and_Challenge_Selection.md
 [original]: ../Donor_Alignment/09_Cross_Concept_Reconciliation.md
