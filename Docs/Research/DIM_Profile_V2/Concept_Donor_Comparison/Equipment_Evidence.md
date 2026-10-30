@@ -1,14 +1,14 @@
 # Equipment Evidence — Connections to the Candidate DIM
 
-**Version 0.1 · 30 October 2026 · America/New_York**  
-**Iteration 3 complete: documentary comparisons, not implemented transformations.** Final verification and the next-task recommendation remain Iteration 4.  
+**Version 0.2 · 30 October 2026 · America/New_York**  
+**Documentary comparisons reviewed in Iteration 4; plan CLOSED (4/4).** These are not implemented transformations. See the [final review](README.md#verification) and [separate next-task recommendation](README.md#next-task).  
 **Input snapshot:** `8e4a126fbf2877c38737b685a0cdb90fee32595f`, branch `research/dim-profile-v2`.
 
 [Concepts and donor comparisons](README.md) · [Donor contributions](Donor_Contributions.md) · [Four-iteration plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) · [Drift correction](../DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md)
 
 ## 1. What this comparison establishes
 
-**The three equipment sheets can exercise specific meaning distinctions, but they do not supply three complete operating Systems.** Here, each source fact is connected to the current candidate Domain Information Model (DIM) discussion, or explicitly left unresolved. Identity, construction, capabilities, configuration, messages, processing, time, and diagnostics are included; power is one information area, not the organizing priority.
+**The three equipment sheets can exercise specific meaning distinctions, but they do not supply three complete operating Systems.** Each selected comparison below connects specified source-sheet entries to the current candidate Domain Information Model (DIM) discussion or leaves their treatment explicitly unresolved. The section-coverage table does not imply every-field mapping. Identity, construction, capabilities, configuration, messages, processing, time, and diagnostics are included; power is one information area, not the organizing priority.
 
 The direction is **equipment information → candidate meaning or unresolved question**. These correspondences are this iteration's analyst application of the existing research. They are not manufacturer-declared mappings, proof that the equipment implements a donor standard, new DIM definitions, or an OGC API – Connected Systems (CSAPI) Profile binding. The [selection decision](../Controlled_Corpus/07_Corpus_Qualification_Decision.md) and [preservation handoff](../Controlled_Corpus/08_Frozen_Corpus_Manifest_and_Handoff.md) retain their documentary/reference-example scope.
 
@@ -95,7 +95,7 @@ This table links to the existing comparison and its exact source trail. It does 
 <a id="coverage"></a>
 ## 6. Coverage — what was compared and what remains locatable
 
-This is **section-level accounting, not a claim of every-field transformation**. Selected rows above demonstrate the links and gaps; unselected rows remain in the unchanged sheets. Source IDs such as A02, C02 and D07 resolve through their sheet source keys. Row links target the sheet's source lines; the exact input revision and blob identities are retained in §8.
+This is **section-level accounting, not a claim of every-field transformation**. Selected rows above demonstrate the links and gaps; unselected rows remain in the unchanged sheets. Source IDs such as A02, C02 and D07 resolve through their sheet source keys. Row links target immutable source-line locations at the equipment-comparison input revision; the sheet blob identities are retained in §8.
 
 | Sheet sections and named inventory | Treatment in this iteration | Material not fully mapped or resolved |
 | --- | --- | --- |
@@ -130,7 +130,7 @@ The [three sheet indexes and source keys][sheet-index] remain the detailed inven
 
 **A connected example of the reasoning:** Campbell supplies one attached sensing assembly, fourteen response positions, an absolute-pressure definition and a separate description of pressure adjustment. The current foundation helps distinguish physical equipment, output and processing. It does not provide an actual sensor response, applicable site elevation or executed program, and it does not yet finish the common quantity/processing model. Both the source-data gap and the model gap survive; neither cancels the other. [D-I02][d-identity], [D-R01–R14][d-response], [D-C01–C05][d-processing].
 
-These comparisons make several future questions concrete. They do **not** select a winning next subject, conclude that power comes first, or reopen dataset acquisition. Comparison of next-step alternatives belongs to Iteration 4.
+These comparisons make several future questions concrete. They do **not** select a winning next subject, conclude that power comes first, or reopen dataset acquisition. The completed review compares next-step alternatives on the [main page](README.md#next-task).
 
 <a id="verification"></a>
 ## 8. Inputs, checks and stopping point
@@ -145,51 +145,51 @@ The complete local sheets were read and their Git blob hashes checked against th
 
 No source sheet, audit, frozen evidence record, candidate DIM manuscript, Profile or application was modified. No numerical example was promoted into actual telemetry, no donor-conformance result was produced, and no source-to-CSAPI conversion was implemented. REL-05/07/08 can inform cautions, but no real deployment lifetime, hosting history or recursive API discovery record was acquired or mapped here.
 
-**Next separate “proceed”: Iteration 4 only — verify the three connected comparison pages against their existing evidence, assess readability and omissions, and recommend the next substantive task from the exposed gaps.** Final verification is still pending. The [plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) records 3/4 complete after this iteration; no next domain study or dataset campaign is automatically authorized.
+**Final review — 30 October 2026:** all 27 grouped comparisons were checked against the existing sheet facts and qualifications. The 45 source-line locators were checked for valid ranges and pinned to the input revision; all thirteen Campbell interpretation holds remain. These checks establish documentary consistency, not original-source correctness, authenticated installation, or tested conversion. Review scope and the evidence-based recommendation are in the [main page](README.md#verification). The [plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) is **4/4 COMPLETE and CLOSED**; no new data or modeling work is automatically authorized.
 
-[a-identity]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L3-L34
-[a-cloud-identity]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L151-L162
-[a-components]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L22-L31
-[a-co2-design]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L24-L24
-[a-co2-example]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L99-L99
-[a-settings]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L49-L55
-[a-timing-readme]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L56-L56
-[a-modes]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L63-L72
-[a-device-signals]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L105-L115
-[a-cloud-signals]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L143-L169
-[a-paths]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L57-L59
-[a-device-context]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L93-L119
-[a-cloud-time]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L142-L150
-[a-voltage-device]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L109-L110
-[a-voltage-cloud]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L163-L164
-[a-leds]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L74-L91
-[a-location-service]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L127-L132
-[a-sources]: ../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L195-L211
-[c-identity]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L3-L35
-[c-sampling]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L61-L75
-[c-status]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L103-L110
-[c-probe]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L19-L20
-[c-history-fields]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L86-L100
-[c-performance]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L24-L28
-[c-history-example]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L112-L127
-[c-command-settings]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L135-L140
-[c-thresholds]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L76-L85
-[c-input-output]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L141-L142
-[c-battery-design]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L21-L23
-[c-power]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L40-L44
-[c-runtime-rules]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L52-L55
-[c-synthetic]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L154-L156
-[c-calibration]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L146-L152
-[c-servicing]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L56-L56
-[c-sources]: ../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L175-L185
-[d-identity]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L3-L36
-[d-verification]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L59-L74
-[d-envelope]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L89-L102
-[d-extra-identity]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L172-L172
-[d-response]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L37-L57
-[d-status]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L103-L140
-[d-processing]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L76-L87
-[d-program]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L26-L31
-[d-additional]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L143-L178
-[d-sources]: ../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L197-L210
+[a-identity]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L3-L34
+[a-cloud-identity]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L151-L162
+[a-components]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L22-L31
+[a-co2-design]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L24-L24
+[a-co2-example]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L99-L99
+[a-settings]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L49-L55
+[a-timing-readme]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L56-L56
+[a-modes]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L63-L72
+[a-device-signals]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L105-L115
+[a-cloud-signals]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L143-L169
+[a-paths]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L57-L59
+[a-device-context]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L93-L119
+[a-cloud-time]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L142-L150
+[a-voltage-device]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L109-L110
+[a-voltage-cloud]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L163-L164
+[a-leds]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L74-L91
+[a-location-service]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L127-L132
+[a-sources]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md#L195-L211
+[c-identity]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L3-L35
+[c-sampling]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L61-L75
+[c-status]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L103-L110
+[c-probe]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L19-L20
+[c-history-fields]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L86-L100
+[c-performance]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L24-L28
+[c-history-example]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L112-L127
+[c-command-settings]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L135-L140
+[c-thresholds]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L76-L85
+[c-input-output]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L141-L142
+[c-battery-design]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L21-L23
+[c-power]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L40-L44
+[c-runtime-rules]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L52-L55
+[c-synthetic]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L154-L156
+[c-calibration]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L146-L152
+[c-servicing]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L56-L56
+[c-sources]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#L175-L185
+[d-identity]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L3-L36
+[d-verification]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L59-L74
+[d-envelope]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L89-L102
+[d-extra-identity]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L172-L172
+[d-response]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L37-L57
+[d-status]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L103-L140
+[d-processing]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L76-L87
+[d-program]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L26-L31
+[d-additional]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L143-L178
+[d-sources]: https://github.com/OS4CSAPI/glaux-client/blob/8e4a126fbf2877c38737b685a0cdb90fee32595f/Docs/Research/DIM_Profile_V2/Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md#L197-L210
 [sheet-index]: ../Controlled_Corpus/System_Data_Sheets/README.md
