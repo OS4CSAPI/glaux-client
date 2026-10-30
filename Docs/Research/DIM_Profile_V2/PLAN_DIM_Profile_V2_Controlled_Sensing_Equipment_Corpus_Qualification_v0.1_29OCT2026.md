@@ -1,0 +1,102 @@
+# DIM / CSAPI Profile V2 — Controlled Sensing-Equipment Evidence Corpus Qualification
+
+**Plan version:** 0.1 · 29 October 2026  
+**Standing:** **DRAFT PLAN COMMITTED — 0/8 RESEARCH STEPS STARTED.** The owner's request to *draft this plan* authorizes its creation, not automatic execution of Step 01, selection of systems, any data acquisition, a new Condition/Status model, Profile requirements, or Glaux client changes. A subsequent **“proceed” authorizes Step 01 ONLY**; each later “proceed” authorizes only the next named unfinished step.  
+**Repository:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), branch `research/dim-profile-v2`; artifacts under `Docs/Research/DIM_Profile_V2/Controlled_Corpus/`.  
+**Authoritative purpose:** [Original Problem and Intended Outcome](DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md); [plain-language research story](DIM_Profile_V2_Research_Story_and_Current_Position_v0.1_29OCT2026.md).  
+**Current conceptual baseline:** [Candidate DIM v0.2](Donor_Challenge/10_Candidate_DIM_Foundation_v0.2_Donor_Challenge.md), **CANDIDATE ONLY / NOT_ADOPTED / NO_TRANSFORMATION_TEST**. Original [12-step donor work](PLAN_DIM_Profile_V2_Donor_Alignment_and_Foundation_v0.1_28OCT2026.md) and [six-step challenger work](PLAN_DIM_Profile_V2_Donor_Challenge_v0.1_28OCT2026.md) are **CLOSED**; this plan does not restart them.
+
+## 1. Why this bounded exercise comes before another DIM subject
+
+TRSS and OmniSense originated the genuine interoperability challenge, but the historical manual snippets, source screenshots and synthetic SensorML-shaped fixtures **do not provide comprehensive, independently verifiable, real individual-System information**. They illustrate meaning differences; they cannot serve as authoritative data for a full System model, a power/condition assessment, a true cross-standard source-to-CSAPI mapping, or an end-to-end compatibility test. The Smart Citizen Kit research adds useful public manufacturer design information but likewise does not establish a particular authenticated installed unit and its live configuration/health measurements.
+
+Before researching *Operational Condition and Status* or developing any other additional DIM information subject, **choose a small, reproducible public evidence corpus of well-documented, genuinely comparable unattended sensing systems**. We should know which statements are engineering design facts, actual original device or station records, published samples, schema declarations and analyst reconstructions. The objective is to establish evidence trustworthy enough to support **future whole-System DIM and Profile-to-client experiments**, not to claim that these future experiments have been completed.
+
+**Success means an evidence-qualified controlled set**, ideally **2–3 different equipment/system families** with **different manufacturers**, strong *whole equipment* documentation, and complementary publicly available actual/sample configuration, diagnostic, machine-readable messages and observations. Preserve a path back to the original UGS use case: at least one serious seismic/acoustic or other field-surveillance comparator should be considered, but **similar military branding does not trump source quality**. If only one, or zero, candidates satisfy the evidentiary gate, **record that result rather than pretending we have a qualified set**.
+
+## 2. What we should qualify — not just what we can find online
+
+### Candidate comparability
+
+A qualifying candidate should be an **unattended or remotely deployed sensing System**, or a well-defined complete field-monitoring configuration with one primary device and specified sensor peripherals—not merely a bare sensor chip, shopping product page, generic IoT tutorial or undocumented software library. It need not be a military UGS, but its **boundaries and limits relative to TRSS/OmniSense must be explicit**. Different modalities can be useful if they test common whole-System meanings.
+
+For a modular logger such as METER ZL6 or Campbell CR1000X, **a logger alone is not automatically a complete sensing station**. Only a *specific documented logger-plus-sensor configuration* should be treated as the whole-system candidate; otherwise label the case as device/controller-level evidence and **do not claim an installed station or sampled sensor list**.
+
+### Evidence categories and necessary questions
+
+| Evidence area | What we need to locate, precisely | If missing, what we must say |
+| --- | --- | --- |
+| **Whole-System / installed-component context** | Product variant, system boundary, actual assembly or documented standard/reference build; sensing elements, optional modules, boards, enclosures, power, computing, communications | A vendor's option list is **not** an actual installed inventory; absence may rule out the candidate as a *whole-System* primary case |
+| **Kind, version, capability** | Model numbers; supported modes and measurements; firmware/hardware version; documented technical limits and channel/quantity definitions | Datasheet capability is **not** active mode, historical measurement or device configuration |
+| **Configuration and commands** | Supported options, state-setting controls, config format, actual or example configuration records, acknowledgment/status behavior where published | Commands described by a manual are **not** evidence they were executed or succeeded |
+| **Operating condition and power** | Measured/reported/estimated power quantities, health, diagnostics, errors, operating state, time, self-test, duty cycle, reporting age | “Battery status” without units/source/method is not a normalized comparable battery measurement; record coverage gap |
+| **Communications and machine data** | Public documented API/schema/protocol, raw or sample payload, field definitions, identifiers and timestamps, communication method | A marketing screenshot or vague “cloud support” does **not** establish a reproducible data interface |
+| **Records and reproducibility** | Actual published observations/status logs or original manufacturer examples; exact URLs/file names, commit/release/date/version, permissions and small reproducible examples | Never manufacture “real device telemetry” from a manual. A published example, live measurement, archived station record and synthetic fixture are **different evidence levels** |
+
+### Evidence source labels — use these consistently
+
+- **REAL_RECORDED:** Retrievable, attributable observations/telemetry from a real device or station, with available time/subject/source context; do not assume manufacturer ownership or calibration proof beyond the record.
+- **PRIMARY_PUBLISHED_EXAMPLE:** Original manufacturer/developer's explicit sample payload or example configuration; *demonstrates format*, not a measured/current fielded unit unless independently established.
+- **PRIMARY_DESIGN_OR_SPEC:** Datasheet, hardware/manual/firmware reference, published interface/schema or versioned original source; *describes design/capabilities*, not installed operation.
+- **SECONDARY_TECHNICAL:** Credible external research/implementation/field notes; useful context but not silently upgraded to first-party fact.
+- **SYNTHETIC_OR_DERIVED:** Authored or reconstructed values, test fixtures or normalized transformations; track how created and **never label as actual device evidence**.
+- **UNAVAILABLE_OR_UNVERIFIED:** Login/paywall, missing endpoint, private content, unconfirmed URLs or missing version/identity. Do not compensate with invented fields.
+
+**Traceability minimum for every material claim:** system/variant, source owner, title/file, original stable URL, release/edition or capture date, exact section/key/line if obtainable, source label above, and clear statement of *what it proves and cannot prove*. Record any access or copyright restrictions; **link rather than redistribute copyrighted PDFs or private service data**, and do not bypass credentials.
+
+## 3. Candidate pool — starting hypotheses, not chosen cases
+
+The prior exploratory search identified **four promising research targets**, but did **not** qualify them as accepted corpus systems:
+
+| Initial candidate | Why it may help our DIM | Specific qualification risk |
+| --- | --- | --- |
+| **AirGradient Open Air Max** | Standalone outdoor multi-sensor system with energy management, communications, open firmware and published machine payload examples | Verify exact model/firmware/power configuration and whether *actual station* status and configuration records, not just examples, are publicly obtainable |
+| **Raspberry Shake & Boom** | Seismic + infrasound sensing, close to original TRSS detector modalities; public station/waveform and response-data ecosystem | Verify exact instrument/station variants, waveform and metadata linkage, and whether configuration, power/health and whole-System status are available at comparable depth |
+| **METER Group ZL6** | Modular remote field logger with ports/external sensors, battery, reporting and diagnostics; well-documented hardware and cloud API | A logger without specified sensor configuration is not a complete monitoring System; API access may be authenticated and actual public history inaccessible |
+| **Campbell Scientific CR1000X** | Programmable field measurement/control logger with unusually detailed published Status table, diagnostic semantics and example programs | Specific logger+sensor configuration, versioned programs and actual public monitoring station records may be difficult to identify together |
+
+**None is preselected.** Step 02 must also check a **bounded number of credible alternatives**, especially closer military UGS sources (e.g. Exensor Surveyor/Flexnet and McQ RANGER), and other open, comparable full systems. If a stronger evidence-backed alternative emerges, use it to **replace a named audit slot** in Steps 03–06 and document why. Do not add a fifth full deep audit automatically. This prevents discovery bias without restarting 182-donor research.
+
+## 4. Eight bounded prompt iterations — execute one per “proceed”
+
+| Step | One research iteration (in human terms) | Evidence-based completion condition and file | State |
+| --- | --- | --- | --- |
+| **01 — Decide what counts as good evidence** | Examine the known use case and formalize *how we will judge a complete sensing System*. Set eligibility/hard-fail gates, evidence labels above, report template, and the comparative questions we want all cases to answer. **No candidate review or selection yet.** | `Controlled_Corpus/01_Eligibility_and_Evidence_Gates.md`: explicit gate, transparent scoring and a one-case source-check template. End by explaining why the gate will prevent missing vendor data from being invented. | **NOT STARTED** |
+| **02 — Look broadly enough to choose fair contenders** | Bounded, current web/source discovery: verify official and public references for preliminary four cases; compare **roughly 6–8 candidates total**, including closer UGS/surveillance systems and credible alternatives. Record which source categories seem obtainable, not assumed. Select **exactly four** candidate *audit slots*, with replacements justified. **Do not declare any selected for the final corpus.** | `Controlled_Corpus/02_Discovery_and_Four_Audit_Slots.md`: candidates, official URLs, provisional strengths/gaps, precise model variants when known, four audit slots and a brief why. No source packet acceptance yet. | **NOT STARTED** |
+| **03 — Audit candidate A** | Deep source audit of **one** Step 02-selected candidate (default **AirGradient Open Air Max**). Verify hardware/System boundary, configuration, firmware/model edition, communications, status/power/diagnostics and availability of machine-readable records. Try one small public sample or real record and label it honestly. | `Controlled_Corpus/03_Candidate_A_Evidence_Audit.md`: sources with direct locators, field-level examples, missing categories, version and permission limits, provisional **PASS / CONDITIONAL / FAIL**. No other deep candidate audit. | **NOT STARTED** |
+| **04 — Audit candidate B** | Independent, source-qualified audit of **one** candidate (default **Raspberry Shake & Boom**), emphasizing true seismic/acoustic system comparability, public observations/station metadata and any actual configuration/power/condition information. Don't infer what an FDSN waveform record cannot prove. | `Controlled_Corpus/04_Candidate_B_Evidence_Audit.md`, same rubric and verdict. No selection yet. | **NOT STARTED** |
+| **05 — Audit candidate C** | Independent audit of **one** candidate (default **METER Group ZL6**), focusing on the distinction between a *logger and its supported ports* versus a documented complete sensor-station configuration. Check status/diagnostics and access to original messages/API data. | `Controlled_Corpus/05_Candidate_C_Evidence_Audit.md`, same rubric and verdict; login-only material explicitly marked rather than assumed retrievable. | **NOT STARTED** |
+| **06 — Audit candidate D** | Independent audit of **one** candidate (default **Campbell Scientific CR1000X**) using the same gates, emphasizing technical status/diagnostics, programming/configuration, measured quantity definitions and complete-station/actual-record availability. If Step 02 replaced this slot, audit the named replacement only. | `Controlled_Corpus/06_Candidate_D_Evidence_Audit.md`, same rubric and verdict; **no source category deemed present on the strength of another vendor's data**. | **NOT STARTED** |
+| **07 — Decide whether a defensible controlled set exists** | Compare all four independently audited candidates **on identical evidence questions**, not marketing specifications or a meaningless total score. Select **2–3 qualified primary systems**, optional benchmark/reserve, documenting diversity, coverage gaps and case variants. If insufficient candidates meet the gates, **report NO QUALIFIED SET** and what prevents selection; do not quietly relax gates or invent a result. | `Controlled_Corpus/07_Corpus_Qualification_Decision.md`: comparison matrix, exact selected/rejected systems, why these constitute comparable complete systems (or don't), and explicit user-facing conclusion. | **NOT STARTED** |
+| **08 — Freeze the exact evidence and handoff, then STOP** | For a qualified set, make a **reproducible source manifest**: exact original filenames/URLs, release/version/edition, permission/availability, captured small record/example and checksum **where legitimately obtained**, source-claim types and a matched matrix of shared test questions plus intentional source-specific differences. No huge archive downloads or republishing restricted files. If Step 07 found no qualified set, document exact blockers, preserving negative result instead of pretending to have a frozen corpus. | `Controlled_Corpus/08_Frozen_Corpus_Manifest_and_Handoff.md`: versioned manifest and realistic coverage gaps; maybe small lawful checked-in evidence files where necessary, safe and authorized. **Close this eight-step plan**. This handoff is an *input* to a later owner-authorized model study, **not** that study itself. | **NOT STARTED** |
+
+**Iteration size rule:** One candidate deep audit per prompt, even if it yields **FAIL**. A step is complete when its **bounded evidence finding, access-status labels and exit question** are documented, not when a candidate is forced to pass. Do not combine Steps 03–06 into a mega-prompt or reopen an examined candidate indefinitely. Fix material errors by documented, separately scoped corrections, not silently modifying historical results.
+
+## 5. Scoring and the actual selection gate
+
+A candidate should first meet **minimum eligibility**:
+
+1. A **precisely identifiable product/version or publicly documented reference configuration** of a deployable unattended sensing System. A controller-only source cannot be presented as an entire station without sensor/installation evidence.
+2. Credible **first-party physical/System documentation** distinguishing manufacturer-supported possibilities from an actual installed unit, and sufficient description of **power, communications, sensing composition and normal operation**.
+3. A **publicly accessible and reproducible interface/data record**, original example or sample with **field-level meaning**; evidence of machine-readable configuration/status/measurement must be **affirmatively checked**, not inferred from a marketing claim or a paywalled API.
+4. Accurate **edition/firmware/hardware provenance**, licensing/access conditions and an explicit ledger of gaps. **No fabricated or unlabeled synthetic operating records.**
+
+Among candidates meeting those gates, compare six dimensions qualitatively **0 (absent), 1 (thin), 2 (useful), 3 (strong)**: **whole-System component/architecture depth; capability/configuration depth; operational condition/power/diagnostic depth; machine-readable source/communication depth; actual attributed observations/history; reproducibility/version/rights**. Cite the *evidence* for each score; do not use a numerical rank to conceal a missing gate. Distinguish **coverage for common whole-System questions** from legitimate source-specific information—an industrial logger and an acoustic instrument need not share every data field.
+
+A strong *set* should ideally cover **more than one manufacturer**, **different sensing modalities**, meaningful **whole-System structural variation** (self-contained node versus logger with sensors versus seismic/acoustic instrument), and some actual/reproducible temporal records. It must not combine unrelated variants or one device's documented features with another device's unverified history to fabricate a “complete system.”
+
+## 6. Work product, access policy and where this effort stops
+
+**Output organization:** Eight lightweight Markdown artifacts (the files named above) and, only where clearly permitted and small, actual source/payload snapshot files with provenance; the plan/README may be updated for status. Avoid a huge data-warehouse task, new Github branches, autonomous website scraping, user credentials, privacy-sensitive station records and redistributing copyrighted manuals.
+
+**What we are *not* doing in these eight steps:** rewriting or adopting the DIM v0.2; selecting a final chassis; launching **Operational Condition and Status** or another donor semantics survey; writing a CSAPI Application Profile, OGC normative text or new SHALLs; transforming vendor records into production CSAPI; editing or deploying Glaux; running real hardware; claiming full donor conformance. The original 182-source corpus and the two prior closed plans remain unchanged. The [human-readable research story](DIM_Profile_V2_Research_Story_and_Current_Position_v0.1_29OCT2026.md) remains the explanation of the established purpose.
+
+**Required owner-facing output after *each* prompt:** In plain language, state **what real evidence became available, why it is or isn't good enough for our whole-System DIM goal, and what exactly remains missing**. State the smallest next named step so the owner can say “proceed.” Explain failures and decisions rather than reporting only commit counts and source IDs. Preserve source links and edition context in the technical record.
+
+**Hard stop:** Step 08 closes this **controlled-corpus qualification** plan and presents the evidence-backed set (or an honest no-set verdict). Only **after owner review** could a new, separately authorized task use it to develop Operational Condition/Status or another DIM portion. **A “qualified corpus” is not a validated DIM or interoperability claim.**
+
+## 7. Current state and next one-prompt contract
+
+**29 October 2026: PLAN COMMITTED; STEPS 01–08 ALL NOT STARTED.** No candidate selected, no product source audited as part of this plan, no source packet frozen, and no new DIM research begun. The previous assistant's preliminary suggestions are **unverified candidates** for this formal exercise until their actual public evidence is read and assessed.
+
+**Next separate user “proceed” authorizes exactly Step 01 — Establish the Controlled-Corpus Eligibility and Evidence Gate.** Write `Controlled_Corpus/01_Eligibility_and_Evidence_Gates.md`, commit/read back, update *this* plan's state and explain what the gate lets us distinguish. **Do not conduct Step 02 discovery, audit candidates, select devices, change the DIM or edit Glaux in Step 01.**
