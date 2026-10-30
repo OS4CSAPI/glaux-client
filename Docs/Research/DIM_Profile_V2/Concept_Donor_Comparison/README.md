@@ -1,11 +1,13 @@
 # Candidate DIM — Concepts and Donor Comparisons
 
-**Version 0.2 · 30 October 2026 · America/New_York**  
-**Iteration 2: existing meanings, relationships and donor contributions consolidated.** Equipment mapping remains Iteration 3; the final verification and next-task decision remain Iteration 4.  
+**Version 0.3 · 30 October 2026 · America/New_York**  
+**Iterations 1–3 complete.** The conceptual comparison remains the Iteration 2 consolidation; the linked equipment view now provides Iteration 3 documentary correspondences. Final verification and the next-task decision remain Iteration 4.  
 **Workspace:** `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`.  
 **Input snapshot:** `258c620dfd5af7bf80fef32cb7b12dbcc7e56bf3`. This is a readable view of existing V2 research, not a replacement or adoption of the candidate Domain Information Model (DIM) manuscript.
 
-[Donor contributions and coverage](Donor_Contributions.md) · [Equipment evidence — not started](Equipment_Evidence.md) · [Plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) · [Drift correction](../DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md)
+[Donor contributions and coverage](Donor_Contributions.md) · [Equipment evidence and gaps](Equipment_Evidence.md) · [Plan](../PLAN_DIM_Profile_V2_Concept_Donor_and_Equipment_Comparison_v0.1_30OCT2026.md) · [Drift correction](../DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md)
+
+**Equipment connection added in Iteration 3:** [AirGradient](Equipment_Evidence.md#airgradient), [Dragino](Equipment_Evidence.md#dragino) and [Campbell](Equipment_Evidence.md#campbell) now link exact data-sheet entries to applicable distinctions and unresolved questions. The [coverage](Equipment_Evidence.md#coverage) and [gap comparison](Equipment_Evidence.md#gaps) distinguish missing model meaning, insufficient donor review and missing equipment/source evidence. These are analyst documentary correspondences, not manufacturer-declared mappings or tested conversions; no conceptual table below has been substantively changed.
 
 ## 1. What the candidate model currently says
 
@@ -231,13 +233,13 @@ These are **recorded source locators**, not claims of fresh primary-source verif
 <a id="source-wot"></a>
 **WoT:** [Architecture 1.1](https://www.w3.org/TR/wot-architecture11/), §§3, 5, 6.1.1.2, 6.10.2, 7.1, 9.2.2; [Thing Description 1.1](https://www.w3.org/TR/wot-thing-description/), §9.1 and identifier provisions as recorded in [kind][kind] and [representation][representation-report]. The reports identify both as 5 December 2023 Recommendations. TD 1.1 is an official companion outside the frozen 182-artifact inventory, not an invented artifact 183.
 
-## 11. What this iteration completed
+## 11. Consolidation history and current continuation
 
 The comparison now presents the five existing candidate meanings, ten relationship passages, five additional question groups and donor-native contributions together. It preserves the original kind/model example's distinctions, expands the source trail, and links to a donor-first account with explicit unrepresented and deferred material. The source-to-candidate statements are consolidated research, not newly executed mappings or a neutral re-synthesis of every possible donor.
 
-**Content checks in this iteration:** correspondence summaries were checked against the cited manuscript/report passages; the editorial record index was checked for 48 unique original IDs, including deferred/rejected entries; relation and question references, local anchors and table structure were checked. This is not the final Iteration 4 review, primary-source revalidation, or equal-depth donor assessment. Actual equipment mapping, data acquisition, Profile obligations and application changes were not performed.
+**Content checks in Iteration 2:** correspondence summaries were checked against the cited manuscript/report passages; the editorial record index was checked for 48 unique original IDs, including deferred/rejected entries; relation and question references, local anchors and table structure were checked. This is not the final Iteration 4 review, primary-source revalidation, or equal-depth donor assessment. Equipment comparison was not part of Iteration 2; its separately completed documentary work is linked above. No data acquisition, Profile obligations or application changes occurred in Iteration 3.
 
-**Next separate “proceed”: Iteration 3 only — connect applicable meanings to the exact existing system-data-sheet entries, distinguishing supported links, proposed mappings and model/donor/data gaps.** Final verification and an evidence-based next-task recommendation remain Iteration 4. No power/condition subject is selected by this continuation.
+**Next separate “proceed”: Iteration 4 only — verify the three connected views against their evidence, examine readability and omissions, and recommend the next substantive task from the exposed gaps.** The equipment view now supplies the bounded documentary comparisons, not tested transformations or complete operating datasets. No power/condition subject or new research campaign is selected by this continuation.
 
 [identity]: ../Donor_Alignment/04_Individual_System_Identity_Alignment_v0.1_28OCT2026.md
 [kind]: ../Donor_Alignment/05_Product_Model_Kind_Alignment_v0.1_28OCT2026.md
