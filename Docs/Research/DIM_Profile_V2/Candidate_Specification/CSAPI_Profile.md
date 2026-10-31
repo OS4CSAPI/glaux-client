@@ -1,8 +1,8 @@
 # Candidate application Profile for OGC API – Connected Systems
 
-**Working specification · 30 October 2026.** The binding below is proposed by this project. It selects existing structures in OGC API – Connected Systems (CSAPI), Sensor Model Language (SensorML) and SWE Common. It is not an adopted OGC requirement or a claim that the complete application Profile has been specified.
+**Working specification · 31 October 2026.** The binding below is proposed by this project. It selects existing structures in OGC API – Connected Systems (CSAPI), Sensor Model Language (SensorML) and SWE Common. It is not an adopted OGC requirement or a claim that the complete application Profile has been specified.
 
-[Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what)
+[Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what) · [Configuration](#configuration)
 
 ## Components and channels
 
@@ -51,3 +51,29 @@ Campbell supplies the [CR1000X field definition](https://help.campbellsci.com/cr
 See the [side-by-side donor terms and model decision](DIM.md#temperature-of-what); [CSAPI Part 1, §15.2.2, Table 19 and §19.2.8, Table 55](https://docs.ogc.org/is/23-001/23-001.html); [SWE Common 3.0, §§8.2.2–3](https://docs.ogc.org/is/24-014/24-014.html). The [worked JSON](examples/campbell-temperature-roles.json) includes two illustrative property definitions and two separate selected field lists. Its outer wrapper, source keys and evidence labels are project test material, not CSAPI members. The `urn:example:` definitions resolve in the included local dictionary; production identifiers and deployment are not established. A real result would be bound through its own stream's schema, per [CSAPI Part 2 §§9.6–7 and 16.1.4–5](https://docs.ogc.org/is/23-002/23-002.html). No Observation is published here.
 
 **What was checked:** `python3 Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/temperature_preview.py` runs the [same display routine](examples/temperature_preview.py) against the earlier Dragino description and the new Campbell inputs. Source-specific mappings supply the meanings; the routine does not branch on manufacturer. It matches values to fields within their own source and output. Moving the logger example to the weather-instrument context is rejected. This tests how declared information is consumed offline; it does not independently prove the source mappings, validate complete OGC resources, or test Glaux, hardware or a live server.
+
+## Configuration
+
+**Worked result for Dragino S31-LB: “Transmit interval — documented default: 20 minutes; current setting: unknown.”** The [manufacturer manual, §§2.1 and 3.3.1](https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/#331-set-transmit-interval-time) gives a default of 20 minutes, a set-command example of `AT+TDC=60000` (60 seconds), and a read-command example of `AT+TDC=?` returning `30000` (30 seconds). They are not a chronological sequence for one unit. AT values use milliseconds; the illustrated `01 00 00 3C` downlink uses seconds. This is the configured periodic uplink interval, not an observed packet cadence. [System sheet: C-O03 and C-C01](../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md).
+
+**Candidate exchange rules.** Adopt the following conventions for the [four DIM relationships](DIM.md#which-setting-applies). They are project choices, not new OGC requirements. The [donor table](../Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md#configuration) records where their meanings come from.
+
+| What the producer knows | Where the information goes | What the client may conclude |
+|---|---|---|
+| **Model supports a setting; manufacturer declares a default** | On the CSAPI datasheet `Procedure`, declare a named SensorML `parameters` entry with meaning and unit. Keep its value unset. Put the published default in a separate `characteristics` group whose `definition` means *documented equipment defaults*; use the same parameter definition URI for its value. Cite the applicable source. Only add constraints explicitly supported by it. | The model supports the setting and has that documented default. An individual that inherits the group inherits a statement about the default, not a report. |
+| **An actual write request or acknowledgement exists** | Where Commands are implemented, put the requested value in `Command.parameters` per the `ControlStream` schema. Keep any linked `CommandStatus`, its status code, times and any result separate. Do not generate these resources for a manual example. | “Requested” or “accepted” does not mean “applied.” `COMPLETED` describes a successful operation; use it as as-applied evidence only when the documented operation guarantees the effective value for this target and time, not as perpetual readback. |
+| **An actual readback or authoritative effective configuration exists** | For a read implemented as a command, associate the returned `CommandResult.data` with the read request via `CommandStatus.result`; check the stream's `resultSchema` and correct unit. An attributable status output can instead use a `DataStream` and `Observation` when the source actually supports an observation of that property. For a documented, time-scoped instance snapshot, bind the unit's `typeOf` and use `configuration.setValues` for an inherited parameter, or `setModes` for an evidenced mode; retain the applicable source record and validity, not just the bare number. | “Unit U reported value V at T.” Call it current only for a time its evidence covers; receiving a cached reply now does not make it effective now. A snapshot whose provenance is unknown is not readback evidence. |
+| **No applicable instance evidence** | Omit the effective value for that parameter. Keep model metadata, illustrative values and any actual request history in their own roles. Do not manufacture a System, status report, Observation, zero, or open-ended validity interval. | “Current setting: unknown.” Show an attributable older value only as last reported, with its time when known. |
+
+**Example: the design description, not an installed System.** This fragment illustrates the proposed role of the group; `urn:example:` identifiers are illustrative vocabulary, not OGC terms or published production identifiers.
+
+```json
+{
+  "parameters": [{"name":"uplinkInterval","type":"Quantity","definition":"urn:example:setting:periodic-uplink-interval","label":"Periodic uplink interval","uom":{"code":"s"}}],
+  "characteristics": [{"definition":"urn:example:role:documented-equipment-defaults","label":"Manufacturer defaults","characteristics":[{"type":"Quantity","definition":"urn:example:setting:periodic-uplink-interval","label":"Default periodic uplink interval","uom":{"code":"s"},"value":1200}]}]
+}
+```
+
+**Acceptance cases for review (not a runtime test):** The manual alone yields `1200 s` as default and no instance value. Adding an actual request for `60 s` and an acceptance alone still leaves the effective value unknown. A **hypothetical** attributable `30000 ms` response from the identified unit at T supports `30 s` **as of T**, not a change to the model default. A response from a different unit, an undated example, or a superseded report must not populate the current slot. No device was queried in this increment.
+
+**Original binding sources:** [OGC 23-001, Part 1 §13 and §19.2, requirement 100](https://docs.ogc.org/is/23-001/23-001.html); [SensorML 3.0 §§8.2.2.6, 8.2.5, 8.2.9.3, 8.8, 9.1.5.2](https://docs.ogc.org/is/23-000/23-000.html); [SensorML characteristics group schema](https://schemas.opengis.net/sensorML/3.0/json/DescribedObject.json#/$defs/CharacteristicList) and [SWE Common Quantity](https://schemas.opengis.net/sweCommon/3.0/json/Quantity.json); [CSAPI Part 2 §§9.6–9.7, 10.6–10.7, 10.11–10.13 (state-retrieval example), 16.1.8–16.1.10](https://docs.ogc.org/is/23-002/23-002.html). The state report, the request to read, and the mechanism used to carry its result remain distinct.
