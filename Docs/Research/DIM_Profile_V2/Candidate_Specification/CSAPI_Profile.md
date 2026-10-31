@@ -2,7 +2,7 @@
 
 **Working specification · 31 October 2026.** The binding below is proposed by this project. It selects existing structures in OGC API – Connected Systems (CSAPI), Sensor Model Language (SensorML) and SWE Common. It is not an adopted OGC requirement or a claim that the complete application Profile has been specified.
 
-[Product model or individual unit?](#product-model-or-individual-unit) · [Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what) · [Configuration](#configuration) · [Did the node switch modes?](#did-the-node-switch-modes) · [A published camera exchange](#a-published-camera-exchange)
+[Product model or individual unit?](#product-model-or-individual-unit) · [A real probe swap](#a-real-probe-swap) · [Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what) · [Configuration](#configuration) · [Did the node switch modes?](#did-the-node-switch-modes) · [A published camera exchange](#a-published-camera-exchange)
 
 ## Product model or individual unit?
 
@@ -10,7 +10,7 @@
 
 | What the source establishes | What to publish under this candidate Profile | What a client can show |
 |---|---|---|
-| **A product model only.** A manufacturer identifies the model and describes its design. | Publish a datasheet `Procedure` with its own UID. Put shared specifications there. For a sensor datasheet, Part 1 §13.2.2 Table 15 lists `sosa:Sensor` as a procedure type. A `Procedure` is non-spatial (§13.2.3). Do not create a `System` merely to show the datasheet. | **Product model.** Show capabilities and documented defaults; no identified unit, installed firmware, location or current reading follows. |
+| **A product model only.** A manufacturer identifies the model and describes its design. | Publish a datasheet `Procedure` with its own UID. Put shared specifications there. For a sensor datasheet, Part 1 §13.2.2 Table 16 lists `sosa:Sensor` as a procedure type. A `Procedure` is non-spatial (§13.2.3). Do not create a `System` merely to show the datasheet. | **Product model.** Show capabilities and documented defaults; no identified unit, installed firmware, location or current reading follows. |
 | **A particular physical unit.** An attributable asset register, nameplate inspection or device response identifies one item in a known identifier scheme. | Publish a `System` with its own UID. Use an existing suitable unit URI when it identifies that same item; otherwise assign one and retain the source identifier, its kind and its issuing authority/scope. A manufacturer serial is useful but not required. Link `System → systemKind → Procedure` when the applicable datasheet is identified. | **Individual unit.** Show what identifies it. It can be known even when its model, installation or current state is unknown. Two distinct units of the same model can refer to the same datasheet. |
 | **An installation of that unit.** A dated installation, removal or assignment record identifies the unit and its site or host. | Represent the evidenced association using `Deployment` and `deployedSystems`, with the host/platform and time extent as supported (Part 1 §11). Keep historical, planned and actual placement distinct; do not infer present installation from an old record. | **Unit installed at site/on host for the evidenced time.** A spare in inventory is not a deployed unit; a site name alone does not identify its current instrument. |
 
@@ -35,6 +35,22 @@ Sources: [Industrial Digital Twin Association, AAS Part 1 v3.2, AssetInformation
 | [OGC's published GeoJSON System example, §19.1.5](https://docs.ogc.org/is/23-001/23-001.html#:~:text=Outdoor%20Thermometer%20001): “Outdoor Thermometer 001” has local `id` `123`, a System UID, and a `systemKind@link` to the TP60S datasheet. | **Within OGC's example:** one named instrument, one linked model description, not two instruments. This is a positive example of the binding, not a verified deployment in our equipment corpus. |
 
 **Acceptance decision:** Never create or merge individual Systems solely because manufacturer and model match. Two inventory entries with different, verified unit identifiers in the same scheme can share one datasheet without sharing a unit UID. Conversely, different record IDs do not by themselves prove different units. Preserve an unresolved identity link when the evidence cannot distinguish the cases. These are worked documentation checks, not a live device or conformance test.
+
+### A real probe swap
+
+**At Bennett’s Point in South Carolina, the station and the probe model stayed the same, but the physical probe changed.** The [ACE Basin reserve’s January–December 2024 meteorological record](https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf) identifies the station (`acebpmmet`, §§5 and 10). In §9, the temperature/humidity equipment history identifies the [EE181 model](https://www.campbellsci.co.uk/ee181) and gives these dates of use for two serial-numbered probes. These are operator records, not examples from the product manual.
+
+| Dates of use at Bennett’s Point, as reported | Physical probe | What the date establishes |
+|---|---|---|
+| 4 May 2022 to 8 June 2023 | EE181 serial `21281600077814` (sensor 3) | First listed period for this unit. |
+| 8 June 2023 to 16 April 2024 | EE181 serial `222016000109CE` (sensor 4) | Same station and model; a different unit occupied the role. |
+| From 16 April 2024; still in use as of 31 December 2024 | EE181 serial `21281600077814` (sensor 3) | The original unit returned. The December date is the last date covered by this statement, not a removal date. |
+
+The reserve’s missing-data note for **16 April 2024** says the logger was down from 09:45 to 13:30 for work that included the temperature/humidity probe installation (the report uses Eastern Standard Time year-round). The note confirms work took place; the equipment history identifies the replacement. Neither gives the exact minute the probe was exchanged. The CR1000X logger (serial `13916`) recorded station data; it is not either probe. Do not attach Campbell’s separate demonstration reading or the ClimaVue 50 design to this installation.
+
+**Applied Profile decision:** For these three rows, use one model datasheet `Procedure`, two probe `System` identities linked to it by `systemKind`, and three dated `Deployment` records referring to the appropriate unit through `deployedSystems`. Keep station identity separate. Reuse sensor 3’s System identity when it returns; do not merge its two periods or invent a removal at the reporting cutoff. On a changeover day, preserve the source’s day precision and leave finer attribution unresolved unless the source supports it. These are our mapping choices, not fields claimed to exist in the reserve’s record. The source can be access-controlled or open; what matters for this rule is attributable evidence we are authorized to use.
+
+[Selected source facts, locators and time limits (JSON)](examples/bennetts-point-ee181.json) · [Reserve monitoring program](https://www.dnr.sc.gov/marine/nerr/long_term_monitoring.html). This is an installation-history check, not yet a set of measured values or a validated API payload.
 
 ## Components and channels
 
