@@ -1,7 +1,7 @@
 # DIM / CSAPI Profile V2 — Whole-System Recovery-to-Delivery Plan
 
 **Version:** 0.1 · 31 October 2026 (America/New_York)  
-**Standing:** **OWNER-AUTHORIZED PLAN; EXECUTION NOT STARTED (0/43).** Approval was to create this plan and update the PITON. Individual work starts only when the owner replies **“proceed.”**  
+**Standing:** **OWNER-AUTHORIZED PLAN; STEP 01 COMPLETE (1/43); STEP 02 NEXT.** Step 01 was separately authorized and completed on 31 October 2026. Each remaining step requires its own **“proceed.”**  
 **Repository:** `OS4CSAPI/glaux-client` · **research branch:** `research/dim-profile-v2` · **app branch (only when justified):** `work/details-view-20261023`  
 **Primary control:** [Problem and Outcome Baseline](DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md), [current PITON v2.0](PITON_DIM_Profile_V2_Continuity_v2.0_31OCT2026.md), [PITON v1.9 / pre-reset evidence](PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md), and [owner-requested drift correction](DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md).
 
@@ -43,8 +43,8 @@ TRSS/OmniSense remain historical reasons for the problem, and Smart Citizen rema
 
 | Step | Work for ONE prompt | Deliverable and completion test | Status |
 | --- | --- | --- | --- |
-| **01** | Recheck latest research/app branch heads, source baselines, completed work and what our next test is meant to prove. Establish the cumulative workbook and a one-page plain-language starting point. | Workbook entry states current goal, known successes, constraints and exactly what remains *unproved*; no re-run of old closed plans. | **NEXT · PENDING** |
-| **02** | Define the five-question source→DIM→Profile→client→fidelity acceptance chain, evidence labels, how to handle missing fields, and what counts as a cross-vendor success or failure. | Small test rubric that distinguishes source loss, producer mapping loss and client interpretation error; uses at least one concrete example. | PENDING |
+| **01** | Recheck latest research/app branch heads, source baselines, completed work and what our next test is meant to prove. Establish the cumulative workbook and a one-page plain-language starting point. | [Verified baseline / cumulative workbook](Whole_System_Recovery/README.md): original goal, documented reference cases vs actual history, known achievements and unproved claims. No old plans restarted and no app/server change. | **COMPLETE · 31 OCT 2026** |
+| **02** | Define the five-question source→DIM→Profile→client→fidelity acceptance chain, evidence labels, how to handle missing fields, and what counts as a cross-vendor success or failure. | Small test rubric that distinguishes source loss, producer mapping loss and client interpretation error; uses at least one concrete example. | **NEXT · PENDING** |
 | **03** | Reconcile the four intended cases with the actual existing sources, source editions, permissible uses and their available whole-System information areas. | Case/evidence coverage table: design versus published example versus actual historical record versus unsupported; no invented installed configuration. | PENDING |
 | **04** | Make one **bounded** evidence-adequacy and acquisition check using the existing known leads; seek only the highest-value missing linked operating information if genuinely accessible. | Exact evidence packet gained **or** exact retrieval/association blocker; decide what the subsequent validation can honestly claim. No endless acquisition survey. | PENDING |
 
@@ -157,6 +157,6 @@ The result must include a source-backed comparison showing preserved, qualified,
 
 ## Current instruction
 
-**Step 01 is NEXT and has not been executed.** When the owner says **“proceed,” perform Step 01 only**: re-establish the project baseline and create the first small, human-readable working comparison/home. End by stating that Step 02 defines the shared success test.
+**Step 01 is COMPLETE; 1/43 executed.** The [Whole-System Recovery workbook](Whole_System_Recovery/README.md) was committed after checking research HEAD `25f0c4747285e46d9b6975ff7fd078f4a1ec09a8`, application HEAD `61601169619282220525b9fd41a5d0ae203b0625`, source-document standing, earlier closed plans and last recorded successful Glaux/server workflows. These are before-Step-01 snapshots, not permanent branch IDs. **Step 02 is NEXT:** on the user's next **“proceed,”** define the shared **source → DIM → Profile → client → fidelity** acceptance rubric in that workbook, including evidence labels, unknown/missing handling and a concrete positive/negative example. Do **not** begin Steps 03 or later in the same iteration.
 
 If the user changes the goal, update the plan and PITON *before* doing unrelated research or coding; do not treat a plan's mere existence as authorization to perform the entire sequence in a single turn.
