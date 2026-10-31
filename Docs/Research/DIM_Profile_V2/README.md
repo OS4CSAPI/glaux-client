@@ -1,6 +1,16 @@
 # DIM / CSAPI Profile V2 — start here
 
-## Latest PITON — 31 October 2026, after the live Bennett’s Point experiments
+
+## Current restart authority — whole-System plan and PITON v2.0, 31 October 2026
+
+**[Read current PITON v2.0](PITON_DIM_Profile_V2_Continuity_v2.0_31OCT2026.md)**, then the **[43-step Whole-System Recovery-to-Delivery Plan](PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md)**. The owner requested these after a comprehensive assessment found that recent Bennett’s Point/52°North encoding work, although technically successful within its limits, had drawn attention away from the original whole-System DIM, separate CSAPI Profile and reusable cross-vendor Glaux client objective.
+
+**Execution status: 0/43; Step 01 is NEXT.** The plan is divided into seven phases and each step is intended for one carefully bounded “proceed.” It begins by checking the real sources and common interpretation problem, then compares four different cases, challenges the model against source-native donors, develops the integrated DIM and Profile, tests a single shared client interpreter, and finishes with an evidence-based publication readiness check. These are **candidate deliverables and a scoped proof**, not promised OGC adoption, exhaustive coverage of 182 sources or complete operational telemetry.
+
+The prior [PITON v1.9](PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md), the [AI-drift correction](DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md), and the closed plans remain authoritative for **history and source evidence**, but their old “no next step” and SWE JSON recommendations are superseded for **current execution direction** by v2.0 and the 43-step plan. No implementation step, production deployment or CSAPI server modification was executed by creating the plan and PITON.
+
+
+## Previous PITON — live Bennett’s Point handoff, 31 October 2026
 
 **[Read PITON v1.9 first](PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md)** when recovering this work in a new chat. It includes the earlier donor/equipment work, the 31 October candidate DIM/Profile additions, the real NOAA Bennett’s Point probe-swap evidence, both Glaux client branches, the actual 52°North live-server resources, Codex’s shared Map renderer, the successful workflow and browser checks, and the unresolved *phenomenonTime*, *resultTime*, QA and duplicate-stream interpretation problems.
 
