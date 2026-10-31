@@ -6,7 +6,7 @@
 
 **[READ CONTROLLING 43-STEP RECOVERY-TO-DELIVERY PLAN](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md)**
 
-**Status:** Plan and PITON created and linked, **0/43 execution steps completed**. Step 01 is NEXT on the owner's “proceed.” The owner requested a strategy assessment, then explicitly authorized this step-by-step plan and PITON update. The new work order begins with whole-System/source-native comparison, fair donor synthesis, then a connected DIM, testable CSAPI Profile and **one reusable cross-vendor** Glaux interpreter. The old SWE JSON contract recommendation is not the next work item. **Neither the plan nor this documentation commits a live app deployment or changes the Oracle server.**
+**Research-plan status checked 31 October 2026:** **Step 01 COMPLETE (1/43); Step 02 NEXT** on the owner's “proceed.” The [cumulative baseline workbook](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Whole_System_Recovery/README.md) documents the original goal, evidence, verified branches and limitations. **Always use the current research-branch tracker** for later progress; this app-branch pointer is not the execution ledger. The owner requested a strategy assessment, then explicitly authorized this step-by-step plan and PITON update. The new work order begins with whole-System/source-native comparison, fair donor synthesis, then a connected DIM, testable CSAPI Profile and **one reusable cross-vendor** Glaux interpreter. The old SWE JSON contract recommendation is not the next work item. **Neither the plan nor this documentation commits a live app deployment or changes the Oracle server.**
 
 [Older full PITON v1.9 — October 31 live Bennett work](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md) remains the detailed record of the historic server and client experiments.
 
@@ -24,6 +24,6 @@ The **current v2.0 PITON and plan** live on the separate `research/dim-profile-v
 
 ## Current control
 
-The owner explicitly directed the new whole-System recovery-to-delivery plan and PITON update after the comprehensive strategic assessment. **The first execution task, Step 01, is not yet performed.** On the next “proceed,” do only Step 01 in the research branch and report its grounded findings and Step 02. No old SWE JSON test, new server write, app deployment, donor-class adoption or additional full-plan step follows from this documentation change alone.
+The owner explicitly directed the new whole-System recovery-to-delivery plan and PITON update after the comprehensive strategic assessment. **Step 01 has been completed and documented on the research branch.** On the next “proceed,” do only Step 02 in the research branch: define the shared evidence/fidelity acceptance rubric in the existing workbook, then report Step 03. No old SWE JSON test, new server write, app deployment, donor-class adoption or additional full-plan step follows from this documentation change alone.
 
 The earlier [MERLIN/MPSS continuity document](CONTINUITY.md) retains its 24-October historical context and is **not the controlling V2 restart source**.
