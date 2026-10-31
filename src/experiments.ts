@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test';
+  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test' | 'resource-details-live-csapi';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -98,6 +98,14 @@ export const experimentPages: readonly ExperimentPage[] = [
       at: '2026-10-28T15:21:55-04:00',
       summary: 'Added a cross-vendor, term-driven semantic projection and generic-vs-profile-aware Resource Details comparison with source-fidelity tests.',
       commit: 'f203bef6fe08797e57151674fb4f2a04a81562f9',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-live-csapi', title: 'Resource Details · live 52°North CSAPI',
+    description: 'Read-only live retrieval from the Oracle-hosted 52°North/pygeoapi Connected Systems API. Select a current System and inspect its live-retrieved System, DataStream, Deployment, Subsystem and Observation responses in the Resource Details tabs.',
+    latestUpdate: {
+      at: '2026-10-31T15:00:00-04:00',
+      summary: 'Added a separate live-server Resource Details page without changing the existing semantic-test page.',
     },
   },
   {
