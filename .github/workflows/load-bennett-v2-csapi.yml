@@ -1,0 +1,26 @@
+name: Bennett's Point V2 live CSAPI load
+
+on:
+  push:
+    branches:
+      - work/details-view-20261023
+    paths:
+      - 'Docs/Plans/BENNETT_LIVE_LOAD_TRIGGER.md'
+
+permissions:
+  contents: read
+
+jobs:
+  load-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact loader revision
+        uses: actions/checkout@v4
+
+      - name: Use Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Load controlled Bennett's Point V2 case and verify round trip
+        run: python scripts/load-bennett-v2-csapi.py
