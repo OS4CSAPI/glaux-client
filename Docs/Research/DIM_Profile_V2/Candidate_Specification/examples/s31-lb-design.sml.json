@@ -1,0 +1,29 @@
+{
+  "type": "PhysicalSystem",
+  "uniqueId": "urn:example:dim-profile:s31-lb-design",
+  "definition": "http://www.w3.org/ns/sosa/Sensor",
+  "label": "S31-LB reference design: external probe and its environmental output",
+  "description": "Project-authored, partial product datasheet; not an installed unit. Only the probe and its two environmental quantities are shown.",
+  "components": [{
+    "name": "probe",
+    "type": "PhysicalComponent",
+    "uniqueId": "urn:example:dim-profile:s31-lb-design:probe",
+    "definition": "http://www.w3.org/ns/sosa/Sensor",
+    "label": "SHT31 external probe, 3 m cable (design)",
+    "outputs": [{
+      "name": "environment", "type": "DataRecord", "label": "Probe measurements",
+      "fields": [
+        {"name":"temperature","type":"Quantity","definition":"http://vocab.nerc.ac.uk/standard_name/air_temperature/","label":"Ambient air temperature","uom":{"code":"Cel"}},
+        {"name":"relativeHumidity","type":"Quantity","definition":"http://vocab.nerc.ac.uk/standard_name/relative_humidity/","label":"Relative air humidity","uom":{"code":"%"}}
+      ]
+    }]
+  }],
+  "outputs": [{
+    "name": "environment", "type": "DataRecord", "label": "Environmental output of the node",
+    "fields": [
+      {"name":"temperature","type":"Quantity","definition":"http://vocab.nerc.ac.uk/standard_name/air_temperature/","label":"Ambient air temperature","uom":{"code":"Cel"}},
+      {"name":"relativeHumidity","type":"Quantity","definition":"http://vocab.nerc.ac.uk/standard_name/relative_humidity/","label":"Relative air humidity","uom":{"code":"%"}}
+    ]
+  }],
+  "connections": [{"source":"components/probe/outputs/environment","destination":"outputs/environment"}]
+}
