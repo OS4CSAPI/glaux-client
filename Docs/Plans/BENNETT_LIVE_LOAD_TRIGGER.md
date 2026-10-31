@@ -14,3 +14,5 @@ This is a controlled research load. It does not claim live physical-sensor
 telemetry, a Deployment-resource write, or complete CSAPI conformance.
 
 Retry note: loader now discovers resources by stable `uniqueId` and captures the local IDs assigned by this pygeoapi deployment.
+
+Retry note 2: verifier now normalizes equivalent UTC lexical forms (`Z` and `+00:00`) returned by the server.
