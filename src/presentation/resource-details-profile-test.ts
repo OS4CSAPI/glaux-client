@@ -6,12 +6,15 @@ import {
 } from '../profile/resource-details-proof';
 import { caseKey, measures } from '../profile/published-measurements';
 import { renderPublished } from './published-measurements';
+import { attributionCaseKey, attributionCase } from '../profile/bennetts-point';
+import { renderBennettsPoint } from './bennetts-point';
 import './resource-details-profile-test.css';
 
 type PresentationMode = 'profile' | 'generic';
 const options:ReadonlyArray<{key:string;label:string}> = [
   { key:'sck23',label:'Smart Citizen Kit 2.3 — product design' },
   { key:caseKey,label:'Dragino + Campbell — published measurement examples' },
+  { key:attributionCaseKey,label:"Bennett's Point — real probe swap and measurements" },
   { key:'trss',label:'TRSS ETU-II — synthetic configuration' },
   { key:'core2',label:'OmniSense Core2 — synthetic equipment' },
   { key:'core5',label:'OmniSense Core5ADS — synthetic condition' },
@@ -140,7 +143,9 @@ function insightText(example:SourceCase):string{
 }
 export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   let selected:SourceCase=smartCitizenDesign;
-  let published=new URLSearchParams(window.location.search).get('case')===caseKey;
+  const requestedCase=new URLSearchParams(window.location.search).get('case');
+  let published=requestedCase===caseKey;
+  let attribution=requestedCase===attributionCaseKey;
   let mode:PresentationMode='profile';
   let pending=0;
   renderResourceDetailsTemplate(container,{
@@ -148,7 +153,8 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
     pageIntro:'Compare published measurement examples, a product design or historical synthetic fixtures in the same Resource Details frame.',
     renderBlankContent({categoryId,view,content}){
       const key=(categoryId+'/'+view) as ViewKey;
-      if(published)renderPublished(content,key,mode==='generic');
+      if(attribution)renderBennettsPoint(content,key,mode==='generic');
+      else if(published)renderPublished(content,key,mode==='generic');
       else if(mode==='profile')renderCandidate(content,selected,key);
       else renderGeneric(content,selected,key);
       return true;
@@ -166,7 +172,7 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   const pickerLabel=node('label',undefined,'Source case');
   const picker=node('select');picker.id='rdp-case-select';pickerLabel.htmlFor=picker.id;
   for(const opt of options){const o=node('option',undefined,opt.label);o.value=opt.key;picker.append(o);}
-  picker.value=published?caseKey:'sck23';
+  picker.value=attribution?attributionCaseKey:(published?caseKey:'sck23');
   const pickerWrap=node('div','rdp-picker');pickerWrap.append(pickerLabel,picker);
   const modeGroup=node('div','rdp-mode-group');
   modeGroup.setAttribute('role','group');modeGroup.setAttribute('aria-label','Rendering mode');
@@ -188,18 +194,18 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   for(const m of marker)m.textContent='Demonstration data · marking not assigned';
   const refresh=frame.querySelector<HTMLButtonElement>('.rd-refresh');if(refresh)refresh.title='No live CSAPI connection in this study';
   const repaint=():void=>{
-    if(title)title.textContent=published?'Dragino + Campbell':selected.title;
+    if(title)title.textContent=attribution?"Bennett's Point":(published?'Dragino + Campbell':selected.title);
     if(dd.length>=3){
-      dd[0].textContent=published?'Published examples':selected.resourceStanding;
-      dd[1].textContent=published?'No installed unit':selected.identifier;
-      dd[2].textContent=published?'Manufacturer documentation':selected.source;
+      dd[0].textContent=attribution?'Historical station observations':(published?'Published examples':selected.resourceStanding);
+      dd[1].textContent=attribution?attributionCase.station.code:(published?'No installed unit':selected.identifier);
+      dd[2].textContent=attribution?'Operator measurement + equipment records':(published?'Manufacturer documentation':selected.source);
     }
-    if(footer)footer.textContent=published?'Published examples · not live readings':'Candidate semantics · no actual device control';
+    if(footer)footer.textContent=attribution?'Historical observations · operator records':(published?'Published examples · not live readings':'Candidate semantics · no actual device control');
     genericBtn.setAttribute('aria-pressed',String(mode==='generic'));
     profileBtn.setAttribute('aria-pressed',String(mode==='profile'));
-    count.textContent=published?`${measures.length} fields · ${measures.filter(r=>r.value!==undefined).length} published example values`:String(selected.fields.length)+' source fields · '+String(mappedFieldCount(selected))+' recognized by candidate rules · '+String(unmappedFields(selected).length)+' unknown meanings retained';
-    note.textContent=published?'Campbell’s logger example is separate from the ClimaVue manual. It is not a weather report from that instrument.':selected.warning;
-    insight.textContent=published?'Try “Show air temperature only.” The wiring-panel temperature disappears; the ClimaVue air-temperature field stays, without borrowing a reading.':'What this preserves: '+insightText(selected);
+    count.textContent=attribution?String(attributionCase.records.length)+' historical observations · '+String(new Set(attributionCase.records.map(r=>r.probe.serial)).size)+' physical probes':(published?`${measures.length} fields · ${measures.filter(r=>r.value!==undefined).length} published example values`:String(selected.fields.length)+' source fields · '+String(mappedFieldCount(selected))+' recognized by candidate rules · '+String(unmappedFields(selected).length)+' unknown meanings retained');
+    note.textContent=attribution?attributionCase.note:(published?'Campbell’s logger example is separate from the ClimaVue manual. It is not a weather report from that instrument.':selected.warning);
+    insight.textContent=attribution?'Read the two observation cards: same station, same EE181 model, same property — different serial number on opposite sides of the documented swap.':(published?'Try “Show air temperature only.” The wiring-panel temperature disappears; the ClimaVue air-temperature field stays, without borrowing a reading.':'What this preserves: '+insightText(selected));
     const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]');
     active?.click();
   };
@@ -207,13 +213,19 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   profileBtn.addEventListener('click',()=>{mode='profile';repaint();});
   picker.addEventListener('change',()=>{
     const key=picker.value;const current=++pending;
-    if(key===caseKey){
-      published=true; mode='profile';
+    if(key===attributionCaseKey){
+      attribution=true; published=false; mode='profile';
       frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
       frame.querySelector<HTMLButtonElement>('#rd-view-overview')?.click();
       repaint(); return;
     }
-    if(key==='sck23'){published=false;selected=smartCitizenDesign;repaint();return;}
+    if(key===caseKey){
+      attribution=false; published=true; mode='profile';
+      frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
+      frame.querySelector<HTMLButtonElement>('#rd-view-overview')?.click();
+      repaint(); return;
+    }
+    if(key==='sck23'){attribution=false;published=false;selected=smartCitizenDesign;repaint();return;}
     const fixture=inputFixtures.find(f=>f.key===key);
     if(!fixture)return;
     count.textContent='Loading local source fixture…';
@@ -222,11 +234,11 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       return response.json() as Promise<Parameters<typeof projectSourceFixture>[0]>;
     }).then(doc=>{
       if(current!==pending)return;
-      selected=projectSourceFixture(doc,fixture.key);published=false;
+      selected=projectSourceFixture(doc,fixture.key);attribution=false;published=false;
       repaint();
     }).catch(err=>{
       if(current!==pending)return;
-      picker.value=published?caseKey:selected.key;
+      picker.value=attribution?attributionCaseKey:(published?caseKey:selected.key);
       count.textContent='Could not load this source fixture: '+(err instanceof Error?err.message:String(err));
     });
   });
