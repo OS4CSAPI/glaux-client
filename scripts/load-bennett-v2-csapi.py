@@ -165,8 +165,15 @@ def ensure_datastream(p, system_id):
     print("datastream created", current["id"], p["stream_key"])
     return current["id"]
 
+def normalize_time(value):
+    if not isinstance(value, str):
+        return value
+    return value.replace("+00:00", "Z")
+
 def same_time(value, expected):
-    return value == expected or (isinstance(value, list) and expected in value)
+    if isinstance(value, list):
+        return any(normalize_time(v) == normalize_time(expected) for v in value)
+    return normalize_time(value) == normalize_time(expected)
 
 def ensure_observation(p, datastream_id):
     status, doc = request("GET", f"/datastreams/{datastream_id}/observations?f=application/json&limit=100")
