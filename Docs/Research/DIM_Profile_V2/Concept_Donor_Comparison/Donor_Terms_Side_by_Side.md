@@ -2,7 +2,7 @@
 
 **What do different standards call the same thing?** Read across a row. The bold first column gives a working meaning for our Domain Information Model (DIM); the other columns use the donors’ own names. The short notes tell you when a translation needs more than the name. These are working mappings, not a requirement that every system supply every value.
 
-[Equipment identity](#equipment-identity) · [Components and channels](#components-and-channels) · [Observations and samples](#observations-and-samples) · [Task responses](#task-responses) · [Donors and original diagrams](#donors-and-original-diagrams)
+[Equipment identity](#equipment-identity) · [Components and channels](#components-and-channels) · [Observations and samples](#observations-and-samples) · [Task responses](#task-responses) · [Configuration](#configuration) · [Donors and original diagrams](#donors-and-original-diagrams)
 
 **Working specification:** [Read the proposed DIM relationships](../Candidate_Specification/DIM.md#components-and-channels) or [see how the Profile carries them](../Candidate_Specification/CSAPI_Profile.md#components-and-channels).
 
@@ -75,6 +75,23 @@ This is a *project-proposed* mapping between two independently published code li
 
 *Definitions:* [BSI Flex 335 v2.0, §6.5.9, Tables 86–87, printed p. 72][bsi-task]; [CSAPI Part 2 v1.0, §10.11, Tables 13–15][cs2]. **Proposed Profile check:** a SAPIENT `ACCEPTED` report alone must never generate a CSAPI `COMPLETED` report. Link status to the same requested operation; check report time, execution time and required information separately before emitting a resource. The table maps status meanings, not whole messages; no live transform is claimed.
 
+## Configuration
+
+**What can it do, and what is it actually set to?** Read across a row for comparable roles, not interchangeable messages. A named mode may select several settings; a duration is a single parameter. These are project mappings, not equivalences asserted by the donors.
+
+| Meaning in the DIM | SAPIENT v2 · modes | Integrated Sensor Architecture (ISA) 6.0 | W3C Web of Things 1.1 | SensorML 3.0 / Connected Systems 1.0 |
+|---|---|---|---|---|
+| **Supported choice or setting** | Registration: `mode_definition`, `ModeDefinition.mode_name` | `Config.ccd`: property and command declarations | `PropertyAffordance`; `enum` or numeric constraints where supplied | `parameters` and declared constraints; `modes` for named configurations |
+| **Declared default** | `ModeDefinition.mode_type = DEFAULT` for a registered mode | No general default field established by the cited passages | `DataSchema.default` is a schema default, not necessarily a device factory setting | Our proposed datasheet *documented defaults* group; not an instance `setValues` assertion |
+| **Requested change** | `Task` using `MODE_CHANGE` | A request invoking a change command, e.g. `Change Maximum Status Interval` | A `writeproperty` interaction, **if actually invoked** | `Command.parameters` in the target `ControlStream`; distinct from `CommandStatus` |
+| **Reported setting for a unit** | `StatusReport.mode`, when applicable; value drawn from registered modes | `Status.properties` or an actual `Get Property` response carrying the value | Returned value from a `readproperty` interaction, not the form advertising it | A state-query `CommandResult` or status output; an evidenced instance description may use `configuration.setValues` / `setModes` |
+
+**What not to equate:** an ISA message named `Config` declares capabilities and their readiness/reporting states; that is not a dump of every active parameter value. ISA's *maximum status interval* is also not Dragino's *periodic uplink interval*. The correspondence is between the roles of a declaration, write and read, not between those two parameters. SAPIENT's default is a **mode**; a Web of Things schema default need not describe equipment behavior at all.
+
+**Original texts checked:** BSI Flex 335 v2.0:2024-03, [§§6.2.5.10–11, Tables 27–28](https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf#page=45), [Table 58, `MODE_CHANGE`](https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf#page=62) and [§6.3.2.4, reported mode](https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf#page=65); ISA *Software Design Document* 6.0r5, §5.1.1 and §6.3.1 Table 4, printed pp. 16, 22, and *Interface Control Document* 6.0r5, Table 26 and §7.3, printed p. 28 (supplied original PDFs); [W3C Thing Description 1.1](https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/), §§5.3.1.3, 5.3.2.1, 5.3.4.2 and 8.3.1; [SensorML](https://docs.ogc.org/is/23-000/23-000.html), §§8.2.9.3, 8.8, 9.1.5.2; [CSAPI Part 2](https://docs.ogc.org/is/23-002/23-002.html), §§10.6–10.7, 10.11–10.13, 16.1.8–10. [OMS §8.2.2][oms] defines an observation as an act yielding a result; it is not the source of the default or request categories.
+
+[**Candidate DIM: which setting applies?**](../Candidate_Specification/DIM.md#which-setting-applies) · [**Profile and worked Dragino example**](../Candidate_Specification/CSAPI_Profile.md#configuration)
+
 ## Donors and original diagrams
 
 | Donor and edition | Find these concepts | Open the publisher’s diagram |
@@ -85,7 +102,7 @@ This is a *project-proposed* mapping between two independently published code li
 | **SAREF Core 4.1.1** — Smart Applications REFerence ontology | Device, device kind, property, state, function, command | [Figure 6: devices][sarefimg] · [text and caption][saref] (ontology diagram) |
 | **OMS 3.0.0** — Observations, measurements and samples | Observer, observing procedure, observation, property, host, deployment, sample | [Figure 9: conceptual Observation schema, §8.1.1][omsfig] (UML, printed p. 46); [preserved original PDF and retrieval details](../Primary_Sources/OGC_20-082r4_OMS_3.0.0.md). For a concrete instance, see Figure 5, p. 42. |
 | **O&M 2.0** — Observations and Measurements, ISO 19156:2011 | Earlier observation, process and sampling feature | [OMS Annex C.5.1 and C.5.2][migration] compare the old and revised observation models. This is the successor standard’s account. |
-| **SOSA/SSN (2017)** — Sensor, Observation, Sample and Actuator / Semantic Sensor Network | Sensor, observation, observable property, procedure, platform, sampler, sample | [Figure 3: observations][ssnimg] · [figures and text in §4][ssn] (ontology diagrams, not UML) |
+| **SOSA/SSN (2017)** — Sensor, observation, sample and actuator / Semantic Sensor Network | Sensor, observation, observable property, procedure, platform, sampler, sample | [Figure 3: observations][ssnimg] · [figures and text in §4][ssn] (ontology diagrams, not UML) |
 | **OGC API – Connected Systems 1.0** — Parts 1–2 | System, Procedure, Deployment, SamplingFeature, Observation, Command and CommandStatus | [Part 1, Figure 1: API resource UML, PDF p. 40][csfig] · [Part 2, §10.11, Figure 6: command status][cs2] |
 | **SensorML 3.0** | Components and connections of a physical system | [§8.6, Fig. 18: physical processing system; §9.5.2: worked datasheet](https://docs.ogc.org/is/23-000/23-000.html) |
 | **Integrated Sensor Architecture 6.0** | Visible and opaque composition members | Software Design Document 6.0r5, §4.2.2, Fig. 2, printed p. 12 ([source locator](../Donor_Challenge/04_Other_Structural_Challenges.md)); original supplied PDF, not rehosted here |
