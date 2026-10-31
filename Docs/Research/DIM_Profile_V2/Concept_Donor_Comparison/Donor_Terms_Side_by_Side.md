@@ -50,7 +50,8 @@
 | **Property being observed** | `ObservableProperty` | `GFI_PropertyType` | `sosa:ObservableProperty` | `Property` (observable use) |
 | **Entity doing the observing** | `Observer` | `OM_Process`¹ | `sosa:Sensor` | `System` typed `sosa:Sensor` |
 | **Method used to observe** | `ObservingProcedure` | `OM_Process`¹ | `sosa:Procedure` used for observation; `sosa-om:ObservationProcedure` in the O&M alignment | `Procedure` typed `sosa-oms:ObservingProcedure` |
-| **Hosting platform** | `Host`² | No entry in C.3 | `sosa:Platform` | `System` typed `sosa:Platform` | **Sample** | `Sample` | `SF_SamplingFeature` | `sosa:Sample` | `SamplingFeature` |
+| **Hosting platform** | `Host`² | No entry in C.3 | `sosa:Platform` | `System` typed `sosa:Platform` |
+| **Sample** | `Sample` | `SF_SamplingFeature` | `sosa:Sample` | `SamplingFeature` |
 
 **Who says these match?** The OMS, O&M and API columns follow the [published Connected Systems Part 1, informative Annex C.3][c3] shown in the owner’s screenshot. [W3C/OGC’s 2017 O&M alignment, §§6.3.4–6.3.5][ssn], explicitly calls `OM_Observation` and `sosa:Observation` equivalent classes, and likewise `SF_SamplingFeature` and `sosa:Sample`. Those are **published equivalents for the named pair and editions**. They do not declare every cell across the row equivalent. The extension prefixes `sosa-om:` (2017 alignment) and `sosa-oms:` (as printed in CSAPI) intentionally differ.
 
