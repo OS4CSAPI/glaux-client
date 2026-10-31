@@ -24,3 +24,6 @@ jobs:
 
       - name: Load controlled Bennett's Point V2 case and verify round trip
         run: python scripts/load-bennett-v2-csapi.py
+
+      - name: Publish the parallel archival-report preservation records and verify all fields
+        run: python scripts/load-bennett-archival-report-csapi.py
