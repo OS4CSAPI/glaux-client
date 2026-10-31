@@ -43,3 +43,18 @@ The [loader](../../scripts/load-bennett-archival-report-csapi.py) uses the exist
 The loader's live round-trip must demonstrate both correctly attributed rows; no duplication on rerun; unchanged original scalar streams; one additional report stream per probe; exact recovery of `air`, `qc`, `window`, `stamp`, `probe`; and retrieved SWE field definitions/types. Separate UI checks must demonstrate that the live Activity table presents the report context without labeling the outer server `phenomenonTime` as the full interval.
 
 **Not established by this test:** native time-period observations on this JSON path; native `parameters` round trip; true result-generation times; source calibration; installation geometry; Deployment writes; or universal interoperability. These gaps stay open.
+
+## Executed result — 31 October 2026
+
+[Live server load/read-back verification, GitHub Actions run 41248245591](https://github.com/OS4CSAPI/glaux-client/actions/runs/41248245591) completed successfully. The earlier scalar streams and observations were found and left unchanged. The loader created one additional archival-report DataStream per identified EE181 probe, read back each stream's typed DataRecord schema, and verified the **exact** returned report values, including the trailing space in `"<0> "`.
+
+| Attributed unit | Parallel archival-report DataStream ID | Returned Observation ID | Returned nominal window (UTC) | Temperature | Original flag |
+|---|---|---|---|---:|---|
+| Probe 4, `222016000109CE` | `c1870c01-4c61-43a2-ace5-14e86d317c36` | `a742b704-c2cd-4c1d-970a-b97b5f628130` | 2024-04-15 16:45–17:00 | 29.1 Cel | `"<0> "` |
+| Probe 3, `21281600077814` | `8b8f9361-e2fa-4179-b1bb-947d3cd3d86d` | `50bf940e-55a0-45b6-9331-e6391704f6c7` | 2024-04-18 16:45–17:00 | 27.3 Cel | `"<0> "` |
+
+[Verified production build and deployment, run 41248473107](https://github.com/OS4CSAPI/glaux-client/actions/runs/41248473107) passed TypeScript, unit tests, Vite build, and Cloudflare Pages deployment. Independent browser rendering of [the dedicated live Bennett’s Point page](https://glaux-client.pages.dev/?page=resource-details-live-bennett) under **Activity → Table** returned the two report cards, two temperatures, both exact quality tokens, both interval endpoints, matching physical probe IDs and serials, and no interpretation warnings. The existing historical Profile and separate live-map pages still return HTTP 200.
+
+The [schema-driven Profile reader](../../src/profile/archival-report-context.ts) identifies fields through their SWE component types and semantic definitions. Its [offline tests](../../tests/archival-report-context.test.ts) verify source-token preservation, non-promotion of rejected/missing flags, a mismatched probe UID, and incorrect window duration.
+
+**Result and scope:** The exact data and qualified context now survive a live 52°North CSAPI `application/json` **DataRecord result** round trip, with a client that exposes the distinction to the operator. The outer `Observation.phenomenonTime` is still instant-valued; `resultTime` is still a source-stamp surrogate, not independently evidenced; and `Observation.parameters` is not preserved by this deployed server. Do **not** describe this as full normative phenomenon-time/quality interoperability, a true result-generation timestamp, or a corrected 52°North implementation.
