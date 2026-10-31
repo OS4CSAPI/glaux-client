@@ -1,0 +1,17 @@
+{
+  "note": "Project example wrapper, not an OGC payload or an installed station. The two output descriptions below are separate projections of different manufacturer sources. Only the logger status source supplies a numerical example. The object-type identifiers denote kinds, not individual equipment.",
+  "propertyDictionary": [
+    {"uniqueId":"urn:example:dim:property:wiring-panel-temperature","label":"Wiring panel temperature","description":"Temperature of the datalogger wiring panel itself, not of the surrounding air.","baseProperty":"http://qudt.org/vocab/quantitykind/Temperature","objectType":"urn:example:dim:type:datalogger-wiring-panel"},
+    {"uniqueId":"urn:example:dim:property:humidity-sensor-temperature","label":"Humidity sensor temperature","description":"Temperature of the humidity sensor itself, not relative humidity or air temperature.","baseProperty":"http://qudt.org/vocab/quantitykind/Temperature","objectType":"urn:example:dim:type:humidity-sensor"}
+  ],
+  "descriptions": [
+    {"context":"CR1000X status example","source":"https://help.campbellsci.com/datalogger-api/mqtt/status.html","output":{"name":"selectedStatus","type":"DataRecord","fields":[
+      {"name":"PanelTemp","type":"Quantity","definition":"urn:example:dim:property:wiring-panel-temperature","label":"Wiring panel temperature","uom":{"code":"Cel"}}
+    ]}},
+    {"context":"ClimaVue 50 aR7! interface definition","source":"https://s.campbellsci.com/documents/us/manuals/climavue50.pdf#page=25","output":{"name":"selectedWeatherFields","type":"DataRecord","fields":[
+      {"name":"airTemperature","type":"Quantity","definition":"http://vocab.nerc.ac.uk/standard_name/air_temperature/","label":"Air temperature","uom":{"code":"Cel"}},
+      {"name":"humiditySensorTemperature","type":"Quantity","definition":"urn:example:dim:property:humidity-sensor-temperature","label":"Humidity sensor temperature","uom":{"code":"Cel"}}
+    ]}}
+  ],
+  "examples":[{"context":"CR1000X status example","output":"selectedStatus","values":{"PanelTemp":25.91098},"sourceRow":"D-S02","standing":"manufacturer-published example"}]
+}
