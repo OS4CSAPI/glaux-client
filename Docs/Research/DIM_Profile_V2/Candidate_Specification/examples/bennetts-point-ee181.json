@@ -1,5 +1,6 @@
 {
   "description": "Worked evidence for Bennett's Point. Keep the selected fields of two operator-published observations, the operator's separate installation history, and our attribution distinct. This is project evidence, not a live feed or CSAPI wire payload.",
+  "worked_profile_binding": "https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/bennetts-point-wire/README.md",
   "operator_record": {
     "credit": "ACE Basin National Estuarine Research Reserve, South Carolina Department of Natural Resources, research coordinator Dr. Denise Sanger; NOAA National Estuarine Research Reserve System (NERRS) System-wide Monitoring Program, Centralized Data Management Office (CDMO).",
     "title": "ACE Basin (ACE) NERR Meteorological Metadata, January–December 2024",
@@ -32,5 +33,5 @@
   ],
   "attribution_method": "For each ATemp field, match the station (trim CSV padding), the air-temperature equipment role, and the full 15-minute measurement period to the reserve's dated equipment history. Each selected interval is strictly inside one probe's documented period of use. Neither CSV row contains a probe serial number. Do not apply this inference to other parameters in the row.",
   "excluded_example": {"csv_line": 10322, "DatetimeStamp": "04/17/2024 12:00", "F_ATemp": "<-3> [GPR] (CSM)", "reason": "Not selected: temperature rejected during a logger operating-system update (§13). The presence of a numeric value does not override the flag."},
-  "limits": ["Same-day equipment-history endpoints have day precision. Neither midnight nor an exact changeover instant is asserted.", "The December 2024 as-of date is not a removal date; document revision and observation timestamps serve different purposes.", "These two historical station records demonstrate attribution across a swap, not calibration agreement, causation of a temperature difference, a complete station configuration, live interoperability or full Profile conformance."]
+  "limits": ["Same-day equipment-history endpoints have day precision. Neither midnight nor an exact changeover instant is asserted.", "The December 2024 as-of date is not a removal date, and the document revision and observation timestamps serve different purposes.", "These two historical station records demonstrate attribution across a swap, not calibration agreement, causation of a temperature difference, a complete station configuration, live interoperability or full Profile conformance."]
 }
