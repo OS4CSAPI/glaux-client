@@ -1,0 +1,162 @@
+# DIM / CSAPI Profile V2 — Whole-System Recovery-to-Delivery Plan
+
+**Version:** 0.1 · 31 October 2026 (America/New_York)  
+**Standing:** **OWNER-AUTHORIZED PLAN; EXECUTION NOT STARTED (0/43).** Approval was to create this plan and update the PITON. Individual work starts only when the owner replies **“proceed.”**  
+**Repository:** `OS4CSAPI/glaux-client` · **research branch:** `research/dim-profile-v2` · **app branch (only when justified):** `work/details-view-20261023`  
+**Primary control:** [Problem and Outcome Baseline](DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md), [current PITON v2.0](PITON_DIM_Profile_V2_Continuity_v2.0_31OCT2026.md), [PITON v1.9 / pre-reset evidence](PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md), and [owner-requested drift correction](DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md).
+
+## Read this in plain language
+
+**The problem:** A common OGC API – Connected Systems (CSAPI) client should show useful details about different sensing systems, their physical equipment, capabilities, settings, states, histories and actions **without erasing what is different about each system**. We must discover the right shared meanings from actual vendor material and standards, communicate them through a justified CSAPI application Profile, and test whether one Glaux interpretation can understand more than a single handcrafted example.
+
+**The destination:** two **publication-ready candidate** artifacts—an implementation-independent **Domain Information Model (DIM)** and a separate CSAPI **application Profile**—plus a working, evidence-qualified cross-system client demonstration, a source-to-display fidelity comparison and reproducible tests. “Publication-ready candidate” is not “adopted OGC standard,” “complete coverage of 182 sources,” or “unrestricted interoperability.” A final gate may legitimately say *limited, not ready* if essential evidence or implementation capabilities are absent.
+
+**The change from our recent direction:** Do not spend the next iterations improving SWE JSON handling on the 52°North server just because that is the last discovered technical problem. Preserve the existing Bennett’s Point round trip and its exact limitations. Use it as a **real historical counterexample** alongside three substantially different **manufacturer-documented reference cases**. Begin by comparing what the whole systems mean, then derive and test the DIM and Profile. Return to a server encoding limitation only when a specific justified Profile rule and a cross-case acceptance test require it.
+
+**The working evidence set** (not four equivalent deployed systems):
+
+- [Dragino S31-LB](Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md): documented external-probe, battery-powered LoRaWAN device and manufacturer example messages; **not** an authenticated installed unit.
+- [AirGradient Open Air Max](Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md): documented multi-sensor outdoor assembly and product/cloud examples; **not** an authenticated installed unit.
+- [Campbell CR1000X + first-generation ClimaVue 50](Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md): documented logger and separate sensing assembly; unrelated published status example must **not** be joined into a claimed actual installation.
+- [Bennett’s Point (ACE Basin)](Candidate_Specification/examples/bennetts-point-ee181.json): **two real historical** NOAA temperature records, separately dated operator equipment history and a project-authored CSAPI representation; not full station operating history or live hardware telemetry.
+
+TRSS/OmniSense remain historical reasons for the problem, and Smart Citizen remains a documented product-design example. Neither controls the next model subject. A qualified additional actual operational evidence packet may be pursued **within Step 04**, but unavailable fields must not be manufactured.
+
+## Contract for every “proceed”
+
+1. **Do just the next numbered step marked PENDING** (or one specifically chosen bounded repair step after a recorded blocker). Do not run the next one in the same reply.
+2. **Start from existing documentation and actual primary sources.** Reuse the [candidate foundation v0.2](Donor_Challenge/10_Candidate_DIM_Foundation_v0.2_Donor_Challenge.md), [donor-first comparison](Concept_Donor_Comparison/Donor_Contributions.md), [source-to-equipment comparison](Concept_Donor_Comparison/Equipment_Evidence.md), [candidate DIM](Candidate_Specification/DIM.md), [candidate Profile](Candidate_Specification/CSAPI_Profile.md), and the closed plans. Do **not** repeat earlier 12-, 6-, 8- or 4-step campaigns.
+3. **Do one substantial, reviewable output:** a bounded case analysis, a comparison section, one model topic, one Profile binding section, one narrow fixture, one tested decoder increment, or one acceptance check. Avoid generating additional independent reports merely to count artifacts.
+4. **Show the owner the human answer:** what was learned, what it means for the whole-System DIM, what it changes or does not change in the Profile/client, and what remains unknown. Use paragraphs and one useful example before internal record IDs and files.
+5. **Require provenance:** exact manufacturer/standard source, edition and clause where material; distinguish `SOURCE_FACT`, `SOURCE_EXAMPLE`, `DERIVED`, `CANDIDATE_MAPPING`, `VERIFIED_RUNTIME`, `UNKNOWN`, and `REJECTED_EQUIVALENCE`. The last two do not count as zero values. Preserve original source language and units; do not conflate a model default with a deployed setting, a physical component with a channel, a command acceptance with state change, or historical measurements with live telemetry.
+6. **Commit and read back only the relevant files** on the appropriate branch. Prefer cumulative working pages over one file per micro-iteration; no indiscriminate merges. Do not touch the production CSAPI database or trigger Cloudflare deploy unless the individual, authorized step requires it and its evidence/safety checks are satisfied.
+7. **Close the step with verifiable evidence and the next step:** update this status table/step marker, note source paths and tests, and say precisely what the next “proceed” will do. At phase gates, if criteria fail, record the blocker and scope-revision decision; do not move forward by relabeling the failure as success.
+8. **Avoid forced architecture or invented universal rules.** “System and sensor and equipment” remains provisional. The five original DIM distinctions are **candidates**, not the required structure. Donors may add, split, combine, or replace ideas. The UI taxonomy and the server's limitations do not determine the DIM.
+
+**How to maintain continuity without new document sprawl:** During Step 01 create one cumulative, human-readable `Whole_System_Recovery/` work area in this **research branch**: a source-first case comparison/workbook, a donor/architecture decision register, and a source→DIM→Profile→UI fidelity scorecard (create them only when their first content exists). Later steps update those rather than each producing a new giant report. Existing candidate DIM/Profile files are maintained with versioned, source-qualified revisions; do not erase previous drafts. Add a short PITON/plan checkpoint after each completed phase or before a chat reset. A step may be split into smaller, numbered increments if its actual scope proves too large, but update this plan transparently.
+
+## Seven phases — 43 deliberately bounded prompt iterations
+
+### Phase A · Re-anchor the goal and evidence (01–04)
+
+**Why:** Make the work measure progress toward *one cross-vendor interpretation*, not completed paperwork or a functioning isolated API.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **01** | Recheck latest research/app branch heads, source baselines, completed work and what our next test is meant to prove. Establish the cumulative workbook and a one-page plain-language starting point. | Workbook entry states current goal, known successes, constraints and exactly what remains *unproved*; no re-run of old closed plans. | **NEXT · PENDING** |
+| **02** | Define the five-question source→DIM→Profile→client→fidelity acceptance chain, evidence labels, how to handle missing fields, and what counts as a cross-vendor success or failure. | Small test rubric that distinguishes source loss, producer mapping loss and client interpretation error; uses at least one concrete example. | PENDING |
+| **03** | Reconcile the four intended cases with the actual existing sources, source editions, permissible uses and their available whole-System information areas. | Case/evidence coverage table: design versus published example versus actual historical record versus unsupported; no invented installed configuration. | PENDING |
+| **04** | Make one **bounded** evidence-adequacy and acquisition check using the existing known leads; seek only the highest-value missing linked operating information if genuinely accessible. | Exact evidence packet gained **or** exact retrieval/association blocker; decide what the subsequent validation can honestly claim. No endless acquisition survey. | PENDING |
+
+**Gate A:** We know what success means and what source evidence each case can *actually* support. If no complete fielded datasets exist, proceed with explicit documentary/reference limits rather than claiming whole-System operational conformance.
+
+### Phase B · Understand actual arrangements BEFORE model invention (05–09)
+
+**Why:** Get the source-native subjects and relationships right before deciding whether an OGC concept can represent them.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **05** | Reconstruct the **Dragino S31-LB** reference arrangement from existing primary manuals and examined messages: node, external SHT31 probe, addressing, outputs, settings, power and source standing. | One source-linked case section that distinguishes physical unit, product kind, supported feature, message and unknown operating state. | PENDING |
+| **06** | Reconstruct the **AirGradient Open Air Max** reference arrangement: enclosure/boards, multiple sensors, output channels, data handling, communications, power and model-versus-unit scope. | Same case questions and evidence labels as Step 05; multi-sensor distinctions visible without inventing installed serials. | PENDING |
+| **07** | Reconstruct **Campbell CR1000X + ClimaVue 50**: sensing assembly, separate logger, SDI-12 interface, sensor outputs, programs and reporting roles. | Same case questions; explicitly keep unrelated manufacturer logger-status example separate from an actual joined station. | PENDING |
+| **08** | Reconstruct the **Bennett’s Point** real station/logger/probe/measurement relationships and dated replacement from the published NOAA/CDMO documents. | Facts, calculated times and inferred probe attribution separately identified. Explicitly record the question: *who senses, who averages, who reports, and who owns a DataStream?* | PENDING |
+| **09** | Compare the four cases **side by side**, without imposing the five old foundation headings or a favorite chassis. | One accessible comparison of common roles, genuine differences, contradiction cases, missing information and questions for the donor standards. | PENDING |
+
+**Gate B:** A human can tell the difference between the four arrangements and what each source does *not* establish. No supplier's interface or one CSAPI Resource type silently defines the whole System.
+
+### Phase C · Give the donors a fair role in the chassis decision (10–15)
+
+**Why:** The right whole-System frame must be derived, not copied from V1, the earliest donor, the five headings or UI tabs.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **10** | From the four case questions, enumerate **bounded alternative whole-System subjects/frames** and the relationships each must represent; identify where a candidate would fail. | Two or more source-reasoned scope/chassis alternatives, **not** an adopted new root/class name. | PENDING |
+| **11** | Review targeted original **Asset Administration Shell (AAS), OPC UA Devices / PA-DIM** passages for product instances, identity, parts, asset/type, representations, hosting and life-cycle roles. | Native terms, supported comparisons, rejected equivalences and exact source scope; do not treat PA-DIM as already covered by Devices. | PENDING |
+| **12** | Review targeted original **Integrated Sensor Architecture (ISA)** and **The Open Group Sensor Open Systems Architecture (SOSA)** passages on equipment/functional structure, physical versus visible members, hosting and management roles. | Updated donor-native alternatives that are permitted to split or replace earlier model structure. | PENDING |
+| **13** | Review **IEEE 1451**, SensorML and relevant sensor/observing sources for hardware, addressed channels, capabilities, processes, outputs and performer roles; use exact original clauses/public technical evidence as available. | Explicit channel/component/output distinctions and authority limits; do not claim every 1451 edition requirement was checked. | PENDING |
+| **14** | Review **SAPIENT v2, OMS / SOSA-SSN and Web of Things** *only for the still-relevant control, observing, reporting and representation distinctions*; inspect their original passages and unresolved edition issues. | Donor-first comparison that allows additional meanings and identifies unexamined/deferred material, not a new 182-source survey. | PENDING |
+| **15** | Compare the competing whole-System frames against all four cases and the donor-review coverage. State a bounded **working subject and structural approach** or retain a documented unresolved choice. | Human explanation of why the working boundary is justified, what it excludes and which donors or evidence could overturn it. **Gate for the first integrated DIM.** | PENDING |
+
+**Gate C:** No donor is privileged just because it was reviewed earlier, and no unreviewed donor is declared irrelevant. Only claim source coverage actually checked; the 182 artifacts are not 182 independent votes. If critical candidate scope alternatives remain open, scope the DIM draft explicitly rather than silently choosing one.
+
+### Phase D · Build a *connected* whole-System DIM (16–24)
+
+**Why:** Move from many “don't confuse X with Y” notes to coherent subjects, relationships and constraints. Build a model before binding everything to a server representation.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **16** | Resolve candidate **individual System, product model/kind, source record and digital representation/proxy** roles, with identifier scope and unknowns. | Bounded DIM definitions and relationships grounded in at least two different cases; serial ≠ URI ≠ model. | PENDING |
+| **17** | Resolve candidate **physical constituent, whole assembly, functional implementation, host/associated equipment** distinctions. | One relationship section with positive/negative examples; no single forced part-of tree for functional and physical roles. | PENDING |
+| **18** | Resolve **interface, addressed channel, reported output, data field, measured property and reporting producer** roles. | Model text handles one probe/many readings, many modules/outputs and a logger-plus-sensor without equating a DataStream with a transducer. | PENDING |
+| **19** | Resolve **supported observing method, actual observation/activity, observer, observed subject, result and time/quality** at conceptual level. | Separates sensing element from logger/record publisher, with Bennett’s Point as a counterexample; no invented resultTime. | PENDING |
+| **20** | Resolve **supported choices/defaults, selected/effective configuration, reported state, diagnostics and mode** without conflation. | One source-grounded candidate treatment across at least two cases; uncertain Condition versus Configuration boundary retained where necessary. | PENDING |
+| **21** | Resolve **available command, requested action, acknowledgement, completion, outcome and reported equipment response**. | One candidate relation sequence; a request or ack never automatically proves applied state or an observation. | PENDING |
+| **22** | Resolve **physical replacement, hosting, Deployment intervals, maintenance and life-cycle standing**. | Model can say one System was replaced by another in a role without changing the station's identity or inventing a current location. | PENDING |
+| **23** | Inventory cross-cutting **power, communications, software/firmware, security, provenance, data quality and maintenance** requirements against original sources. Define only the warranted core qualifiers and mark remaining work open. | Whole-System coverage/gap record. A broad heading cannot substitute for complete technical semantics; missing domains may constrain the release scope. | PENDING |
+| **24** | Consolidate Steps 16–23 into an **integrated candidate DIM section and readable relationship diagram**, with source pedigree and outstanding alternatives. | One connected draft, not eight disconnected taxonomy lists. Diagram and text agree; no invented universal class/cardinality. | PENDING |
+
+**Gate D:** Try to **falsify** the integrated DIM against all four source arrangements. If a shared concept misstates a source, revise it or mark it excluded/open rather than changing the source or claiming a successful fit. Record that check as a small appendix to Step 24 before advancing to Profile commitments; if more than a prompt is needed, create a separately numbered repair step.
+
+### Phase E · Define an implementable, evidence-qualified CSAPI Profile (25–31)
+
+**Why:** The Profile must tell a producer and an unknown compatible client how to exchange the *accepted candidate meanings* in existing standards, and what cannot be encoded correctly.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **25** | Inventory the *actual applicable clauses, constraints and media types* in CSAPI Parts 1–2, SensorML 3.0, SWE Common 3.0, OGC API – Features and relevant donor vocabularies for the model slice. | Binding register: inherited normative behavior versus profile choice versus unsupported or implementation-dependent feature. | PENDING |
+| **26** | Propose bindings for **System instance, kind/Procedure, identity, physical/functional component and host/Deployment**. | Concrete source→DIM→existing CSAPI/SensorML field/relationship mapping with examples and counterexamples. | PENDING |
+| **27** | Propose bindings for **interfaces, channels, functional capabilities, outputs, DataStreams and observing roles**. | Distinguish the *actual sensing System* from the *reporting System* and validate stream ownership expectations against the standard. | PENDING |
+| **28** | Propose bindings for **configuration, state, supported actions, Commands, Requests, results and lifecycle**. | Requested/accepted/completed state semantics and configuration provenance are not silently conflated; unsupported options held open. | PENDING |
+| **29** | Address **time, observation quality and provenance** as an explicit binding decision with scoped alternatives and the 52°North limitations. Do not automatically implement the previous SWE JSON test. | Clear normative/data/implementation gap table; either justified encoding with a qualifying test or an openly **conditional** Profile clause. | PENDING |
+| **30** | Write a cohesive **candidate Profile** in the existing Profile manuscript, with named meaning, applicability, required/optional behavior, original standard reference and example for each proposed rule. | Human-readable draft and small rule index; no ungrounded universal SHALL or claimed OGC adoption. | PENDING |
+| **31** | Produce bounded positive and **negative contract scenarios** for the Profile and review against the candidate DIM and source evidence. | Testable conditions for source preservation, missing information, wrong component/channel, false deployment and wrong action/state; list release-blocking ambiguities. | PENDING |
+
+**Gate E:** The candidate Profile must specify what the same client can recognize without vendor-specific knowledge. Unsupported `phenomenonTime` / `resultTime` capabilities, donor disagreement, or server deficiencies remain visible. Do not turn the current parallel Bennett archival-report workaround into a normative rule by convenience.
+
+### Phase F · Implement and *challenge* one shared interpretation (32–39)
+
+**Why:** A collection of handcrafted product pages isn't a universal interpreter. Show that **the same semantic reader and UI rules** work for different source arrangements, even when the available evidence varies.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **32** | Define a small **source packet / example input contract** with evidence standing and expected DIM meanings for the four cases; avoid inventing fielded units for model-only examples. | One documented test input format, example and test harness plan; reuse existing source records and fixtures. | PENDING |
+| **33** | Implement the first **source-independent, Profile-driven interpreter increment** in Glaux, backed by typed definitions and tests; preserve raw unknown fields. | One shared reading path with a positive and negative case; **no** manufacturer name or hard-coded Bennett ID as an interpretation rule. | PENDING |
+| **34** | Exercise that exact path on **Dragino** documented design/message data, without representing a published example as present live telemetry. | Source→binding→interpreter test and appropriately qualified Resource Details view; failures retained. | PENDING |
+| **35** | Exercise the **same path** on **AirGradient** multi-module/product evidence. | No new manufacturer-specific interpretation code; record what the common reader preserves or cannot express. | PENDING |
+| **36** | Exercise the **same path** on **Campbell logger + ClimaVue** design/example material. | Correct sensing-versus-reporting separation and explicit missing installed configuration. | PENDING |
+| **37** | Exercise the **same path** on **Bennett’s Point** historical probe swap, retaining source-to-unit attribution and distinguishing the two measurements from four parallel server Observation resources. | Candidate encoding/interpretation test says what was observed, derived and missing; no duplicate measurement count or fabricated Deployment. | PENDING |
+| **38** | Integrate the common interpretation into the **existing Resource Details working views**, retaining source-specific detail and Codex’s shared Map renderer. | One rule set, same tabs and raw evidence; Overview remains a summary; UI isn't a substitute for the DIM. | PENDING |
+| **39** | Run the **bounded end-to-end CSAPI validation** using an isolated test path or already-safe read-only live resources as capabilities permit. Distinguish deployment/transport bugs from model/Profile errors. | Exact versioned results, server constraints and direct/indirect evidence. Production writes/deploys only with the specific step's justification; never claim a blocked endpoint passed. | PENDING |
+
+**Gate F:** A change of manufacturer should not require changing the meaning of common Profile fields. Required source facts must survive the same interpretation path, or appear explicitly as unsupported/unknown. If some selected systems supply only model/design data, those do **not** count as demonstrated physical-unit or current-state interoperability.
+
+### Phase G · Judge the results and finish the publication candidates (40–43)
+
+**Why:** The finishing test is **fidelity to the original problem**, not merely a clean build, passing workflow or a large document.
+
+| Step | Work for ONE prompt | Deliverable and completion test | Status |
+| --- | --- | --- | --- |
+| **40** | Compare **original source → DIM → Profile/CSAPI → Glaux UI** for all four cases, separating original/source, derived, preserved, qualified, lost and untested information. | Plain-language cross-vendor fidelity scorecard; demonstrable successes, falsifications and capability gaps. | PENDING |
+| **41** | Audit release blockers and decide **targeted small repairs** versus explicit exclusions/limitations. | Source-linked blocker register and, where needed, newly inserted *one-prompt* repair steps. No blanket “fix everything” or silent lowering of acceptance criteria. | PENDING |
+| **42** | Assemble publication-oriented **DIM and Profile candidate editions**, diagrams, original-standard pedigree, defined scope, informative examples and test/limitation annexes from the already accumulated work. | Editorial consistency, clear model/Profile boundary, correct edition/URI and evidence references, sensible release standing; no claim of external adoption. | PENDING |
+| **43** | Perform final **reproducibility, cross-branch and source-fidelity review**; publish a results/limits conclusion, close or conditionally stop the plan, and update the PITON/recovery links. | A new chat can reproduce what exists, see precisely what passed and did not, and use the finished candidate artifacts without reading every historical chat. | PENDING |
+
+**Gate G / finish condition:** If the work supports the scoped claim, declare the **candidate DIM, candidate CSAPI Profile and shared client demonstration ready for external technical review**, not already adopted or universally conformant. If essential source evidence, correct semantics, standard bindings or shared-client behavior are still inadequate, **do not declare success**. Release a clearly scoped *partial result with blockers*, retain the plan as conditionally incomplete, and name the evidence required to revisit it.
+
+## What will be considered “done” — an evidence-based result, not a percentage
+
+At least **two meaningfully different source arrangements** must have been interpreted through the **same** semantic path, without hidden manufacturer or case-ID rules, at the level their source evidence supports. An additional verified historical individual-unit scenario should test temporal/identity/provenance relationships (Bennett’s Point is a candidate). The DIM must accurately describe these arrangements without conflating physical parts and functions, models and units, capabilities and selected states, observers and reporters, or requests and outcomes. The Profile must specify testable ways of expressing the supported meanings while retaining explicit exclusions for unavailable or unsupported ones.
+
+The result must include a source-backed comparison showing preserved, qualified, omitted and misrepresented information, and a short explanation of how a generic client using the proposed Profile could recover it. A live server path is desirable for the claims it can actually prove, but **cannot erase source truth or the limits of the chosen backend**. Neither an OGC formal ratification, a complete 182-artifact review, nor a proprietary full TRSS/OmniSense operating dataset is asserted as delivered by this project plan.
+
+### Files and preservation boundaries
+
+**Reuse instead of rewriting:** [previous PITON v1.9](PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md), [research purpose](DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md), [old candidate foundation v0.2](Donor_Challenge/10_Candidate_DIM_Foundation_v0.2_Donor_Challenge.md), [current candidate DIM](Candidate_Specification/DIM.md), [current candidate Profile](Candidate_Specification/CSAPI_Profile.md), [existing placement matrix](Candidate_Specification/Resource_Details_Placement_Matrix.md), [Bennett evidence](Candidate_Specification/examples/bennetts-point-ee181.json), [last observation-encoding decision](Candidate_Specification/Observation_Encoding_Decision_31OCT2026.md) and [app-branch continuity pointer](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Plans/DIM_PROFILE_V2_CURRENT_PITON.md).
+
+**Do not merge research/app branches blindly.** The research branch also has an earlier separate Bennett renderer; the production app is on `work/details-view-20261023`. Preserve original source references, historical/frozen evidence and the current Glaux/52°North deployment. The present plan/piton documentation turn does **not** modify code, production Pages assets or the Oracle server.
+
+## Current instruction
+
+**Step 01 is NEXT and has not been executed.** When the owner says **“proceed,” perform Step 01 only**: re-establish the project baseline and create the first small, human-readable working comparison/home. End by stating that Step 02 defines the shared success test.
+
+If the user changes the goal, update the plan and PITON *before* doing unrelated research or coding; do not treat a plan's mere existence as authorization to perform the entire sequence in a single turn.
