@@ -1,5 +1,9 @@
 # Research
 
+## DIM / Connected Systems Profile V2
+
+[**Donor terms, side by side**](DIM_Profile_V2/Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md) — compare equipment identity, observation and sample terms, and task responses by reading across a row. Includes a donor concept index and links to the publishers’ original diagrams. [V2 project and continuity documentation](DIM_Profile_V2/README.md).
+
 The [Artifact Register](../ARTIFACT_REGISTER.md) is the authoritative index of the
 published project research artifacts. Their source versions and dates are preserved;
 the 24 October import is not a new research increment.
