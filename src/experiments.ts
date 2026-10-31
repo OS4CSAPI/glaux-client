@@ -118,10 +118,10 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-live-bennett', title: "Bennett's Point · live CSAPI V2 case",
-    description: 'Controlled two-probe Bennett’s Point V2 case retrieved directly from the live Oracle-hosted 52°North/pygeoapi server.',
+    description: 'Controlled two-probe Bennett’s Point V2 case retrieved directly from the live Oracle-hosted 52°North/pygeoapi server, with the shared Resource Details Map renderer.',
     latestUpdate: {
-      at: '2026-10-31T15:05:00-04:00',
-      summary: 'Added a dedicated live round-trip page for the controlled Bennett’s Point probe-swap case.',
+      at: '2026-10-31T18:09:00-04:00',
+      summary: 'Reused Codex’s shared Map renderer in the live Bennett’s Point Map subtab; each probe remains separate and missing positions stay unresolved.',
     },
   },
   {
