@@ -16,3 +16,7 @@ telemetry, a Deployment-resource write, or complete CSAPI conformance.
 Retry note: loader now discovers resources by stable `uniqueId` and captures the local IDs assigned by this pygeoapi deployment.
 
 Retry note 2: verifier now normalizes equivalent UTC lexical forms (`Z` and `+00:00`) returned by the server.
+
+## 31 October 2026 — archival-report context bridge
+
+Trigger the independently verified parallel DataRecord archival-report load. Preserve the nominal 15-minute window and exact operator F_ATemp token in typed SWE Common report fields returned by the live CSAPI server. Keep the original scalar DataStreams and their observations unchanged. Document the unresolved native CSAPI JSON phenomenonTime interval and dropped observation parameters separately in [the design record](../Design/BENNETT_OBSERVATION_CONTEXT_BRIDGE.md).
