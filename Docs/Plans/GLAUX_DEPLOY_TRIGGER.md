@@ -39,3 +39,7 @@ Trigger verified production deployment after redistributing the Bennett's Point 
 ## 31 October 2026 — separate live 52°North CSAPI page
 
 Trigger verified production deployment for a new Resource Details page that performs read-only browser GETs against the Oracle-hosted 52°North/pygeoapi CSAPI service. The existing profile-test page is preserved unchanged. The new page retrieves Systems and, for the selected System, DataStreams, Deployments, Subsystems, and available Observations.
+
+## 31 October 2026 — dedicated live Bennett V2 page
+
+Trigger verified production deployment for a dedicated Bennett's Point live-CSAPI page that reads the two controlled EE181 Systems, their DataStreams, and historical Observations directly from the Oracle-hosted 52°North/pygeoapi service. Existing historical and generic live pages remain separate.
