@@ -1,5 +1,17 @@
 # Plans and continuity
 
+
+**Current DIM / CSAPI Profile V2 recovery — 31 October 2026:** start with the
+[application-side PITON pointer](DIM_PROFILE_V2_CURRENT_PITON.md), which links the
+[canonical, robust PITON v1.9](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md)
+in the **separate research branch**. That handoff accounts for the latest real
+Bennett's Point data, live 52°North CSAPI experiments, Codex Map integration,
+successful verification runs, candidate DIM/Profile, unresolved standards gaps
+and owner feedback. The last suggested SWE JSON contract test is **not yet an
+authorized next step**. Earlier notes below describe historical MPSS/Smart
+Citizen work and should not override this V2 recovery.
+
+
 Start with [MERLIN continuity](CONTINUITY.md) for the broader DIM/MPSS effort and
 [Current work](CURRENT_WORK.md) for the actual client implementation, checks, and
 runtime revision. These Git notes carry status beyond the preserved source
