@@ -12,6 +12,7 @@ import { renderResourceDetailsActivity } from './presentation/resource-details-a
 import { renderResourceDetailsTemplate } from './presentation/resource-details-template';
 import { renderResourceDetailsSmartCitizen } from './presentation/resource-details-smart-citizen';
 import { renderResourceDetailsProfileTest } from './presentation/resource-details-profile-test';
+import { renderResourceDetailsLiveCsapi } from './presentation/resource-details-live-csapi';
 import './presentation/style.css';
 
 const app = document.querySelector<HTMLElement>('#app');
@@ -158,6 +159,7 @@ const selectedExample = examples.find(example => example.id === requestedExample
 if (selectedTemplate) {
   document.title = `${selectedTemplate.title} | Glaux Client`;
   if (selectedTemplate.id === 'resource-details-profile-test') renderResourceDetailsProfileTest(mount);
+  else if (selectedTemplate.id === 'resource-details-live-csapi') renderResourceDetailsLiveCsapi(mount);
   else if (selectedTemplate.id === 'resource-details-smart-citizen') renderResourceDetailsSmartCitizen(mount);
   else if (selectedTemplate.id === 'resource-details-activity') renderResourceDetailsActivity(mount);
   else renderResourceDetailsTemplate(mount);
