@@ -2,7 +2,7 @@
 
 **Working specification · 31 October 2026.** The binding below is proposed by this project. It selects existing structures in OGC API – Connected Systems (CSAPI), Sensor Model Language (SensorML) and SWE Common. It is not an adopted OGC requirement or a claim that the complete application Profile has been specified.
 
-[Product model or individual unit?](#product-model-or-individual-unit) · [A real probe swap](#a-real-probe-swap) · [Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what) · [Configuration](#configuration) · [Did the node switch modes?](#did-the-node-switch-modes) · [A published camera exchange](#a-published-camera-exchange)
+[Product model or individual unit?](#product-model-or-individual-unit) · [A real probe swap](#a-real-probe-swap) · [Which probe measured the air temperature?](#which-probe-measured-the-air-temperature) · [Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what) · [Configuration](#configuration) · [Did the node switch modes?](#did-the-node-switch-modes) · [A published camera exchange](#a-published-camera-exchange)
 
 ## Product model or individual unit?
 
@@ -38,7 +38,7 @@ Sources: [Industrial Digital Twin Association, AAS Part 1 v3.2, AssetInformation
 
 ### A real probe swap
 
-**At Bennett’s Point in South Carolina, the station and the probe model stayed the same, but the physical probe changed.** The [ACE Basin reserve’s January–December 2024 meteorological record](https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf) identifies the station (`acebpmmet`, §§5 and 10). In §9, the temperature/humidity equipment history identifies the [EE181 model](https://www.campbellsci.co.uk/ee181) and gives these dates of use for two serial-numbered probes. These are operator records, not examples from the product manual.
+**At Bennett’s Point in South Carolina, the station and the probe model stayed the same, but the physical probe changed.** The [ACE Basin reserve’s January–December 2024 meteorological record](https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf) identifies the station (`acebpmet`, station table, p. 3, and §10). In §9, the temperature/humidity equipment history identifies the [EE181 model](https://www.campbellsci.co.uk/ee181) and gives these dates of use for two serial-numbered probes. These are operator records, not examples from the product manual.
 
 | Dates of use at Bennett’s Point, as reported | Physical probe | What the date establishes |
 |---|---|---|
@@ -50,7 +50,20 @@ The reserve’s missing-data note for **16 April 2024** says the logger was down
 
 **Applied Profile decision:** For these three rows, use one model datasheet `Procedure`, two probe `System` identities linked to it by `systemKind`, and three dated `Deployment` records referring to the appropriate unit through `deployedSystems`. Keep station identity separate. Reuse sensor 3’s System identity when it returns; do not merge its two periods or invent a removal at the reporting cutoff. On a changeover day, preserve the source’s day precision and leave finer attribution unresolved unless the source supports it. These are our mapping choices, not fields claimed to exist in the reserve’s record. The source can be access-controlled or open; what matters for this rule is attributable evidence we are authorized to use.
 
-[Selected source facts, locators and time limits (JSON)](examples/bennetts-point-ee181.json) · [Reserve monitoring program](https://www.dnr.sc.gov/marine/nerr/long_term_monitoring.html). This is an installation-history check, not yet a set of measured values or a validated API payload.
+### Which probe measured the air temperature?
+
+| Timestamp on the station record (EST, UTC−05:00) | Air temperature: 15-minute mean | Temperature quality flag | EE181 probe identified by the equipment history |
+|---|---:|---|---|
+| 15 April 2024, 12:00 (17:00 UTC) | **29.1 °C** | `<0>` | Sensor 4, serial `222016000109CE` |
+| 18 April 2024, 12:00 (17:00 UTC) | **27.3 °C** | `<0>` | Sensor 3, serial `21281600077814` |
+
+**What came from where?** The [original 2024 station CSV](https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv) supplies the station, timestamp, value (`ATemp`), and its flag (`F_ATemp`), **not** the probe serial. The [operator's 2024 metadata](https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf) supplies the sampling method (§4), two serial numbers and dates of use (§9), and flag meanings (§11). We matched each measurement to a probe by station, measured property and period of use. Each entire averaging period falls outside the changeover day and within one probe's documented deployment.
+
+**Why the flag matters:** `<0>` means the temperature passed the initial quality checks; it does not certify calibration or identify the probe. A tempting alternative, noon on April 17, has a number but also a rejection flag: `<-3> [GPR] (CSM)`. The operator explains that the logger was powered down for an operating-system update (§13). Keep such a value marked rejected rather than presenting it as an ordinary reading. Conversely, a flag on a different field, such as solar radiation, is not a temperature flag.
+
+**Candidate Profile rule:** Preserve the reported time and the fact that `ATemp` is an average of five-second samples. Use the period the result describes when assigning the sensing equipment, not the time the file was retrieved. Preserve the operator's flag with the result and identify deployment-based attribution as such. If a measurement interval overlaps an unresolved changeover, keep the station result with its flag but leave the specific probe unresolved. This applies [Observations, measurements and samples §§8.2.3 and 8.6.2](../Primary_Sources/OGC_20-082r4_OMS_3.0.0.md); the archive-specific matching rule is the project's proposal, not an OGC requirement. Two readings on different days do not establish a calibration difference.
+
+[Retained fields, archive checksum, exact row locators and equipment history (JSON)](examples/bennetts-point-ee181.json). **Credit:** ACE Basin National Estuarine Research Reserve, South Carolina Department of Natural Resources (research coordinator Dr. Denise Sanger); NOAA National Estuarine Research Reserve System, System-wide Monitoring Program, Centralized Data Management Office. [Dataset DOI](https://doi.org/10.25921/vw8a-8031); Bennett’s Point, 2024 meteorological subset, accessed 31 October 2026. These are historical measurements, not a live API or conformance test.
 
 ## Components and channels
 
