@@ -2,7 +2,9 @@
 
 **What do different standards call the same thing?** Read across a row. The bold first column gives a working meaning for our Domain Information Model (DIM); the other columns use the donors’ own names. The short notes tell you when a translation needs more than the name. These are working mappings, not a requirement that every system supply every value.
 
-[Equipment identity](#equipment-identity) · [Observations and samples](#observations-and-samples) · [Task responses](#task-responses) · [Donors and original diagrams](#donors-and-original-diagrams)
+[Equipment identity](#equipment-identity) · [Components and channels](#components-and-channels) · [Observations and samples](#observations-and-samples) · [Task responses](#task-responses) · [Donors and original diagrams](#donors-and-original-diagrams)
+
+**Working specification:** [Read the proposed DIM relationships](../Candidate_Specification/DIM.md#components-and-channels) or [see how the Profile carries them](../Candidate_Specification/CSAPI_Profile.md#components-and-channels).
 
 ## Equipment identity
 
@@ -22,6 +24,24 @@
 
 *Definitions behind the cells:* [BSI Flex 335 v2.0:2024-03, §6.2.5.15, Table 32, printed p. 36][bsi-name] (fields on `ConfigurationData`); [OPC UA Devices v1.05.0, §4.5.2, VendorNameplate][di] and [§4.7, Table 35][device]; [OPC 30081 PA-DIM v1.02.0, §7.2, Tables 109–110][pa]; [ETSI SAREF Core v4.1.1, Device kinds and devices and Data Properties][saref]. `2:` is the namespace prefix as printed in PA-DIM’s table, not a fixed runtime namespace index. `has…` names in the SAREF column use the `saref:` prefix.
 
+## Components and channels
+
+**Question:** Is the source telling us what is physically there, what function it performs, how to address it, or what data it reports? Start with the [one-probe, two-quantity example](../Candidate_Specification/CSAPI_Profile.md#worked-result-s31-lb). The cells are our working correspondences, not donor-declared equivalences. **—** means no direct counterpart established in the material checked for that cell, not a finding that the donor lacks the idea.
+
+| What we want to represent | IEEE 1451 public technical evidence | Integrated Sensor Architecture (ISA) 6.0 | The Open Group Sensor Open Systems Architecture (SOSA) | Connected Systems / SensorML / SWE Common |
+|---|---|---|---|---|
+| **A physical constituent** | `Transducer Interface Module` (TIM) when identified as hardware; membership needs evidence | A composition member *may* represent hardware; membership alone does not establish that | `Sensor Hardware Element`, e.g. a plug-in card | A physical `components` entry in SensorML; a CSAPI subsystem only when separately represented as a System |
+| **A function implemented by hardware or software** | — | Component Capability Description declares capabilities; it does not identify their hardware implementation | `SOSA module` (functional building block); `ProductInstance` relates a manufactured product to `Component_` in the separate data model | SensorML `SimpleProcess` / `AggregateProcess` for nonphysical processes, not names for a circuit board |
+| **An addressed transducer channel** | `TransducerChannel`; its Transducer Channel TEDS describes that channel | —; a visible member's identity addresses a participant, not necessarily a channel | — | A named output can carry the data; a `DataStream` is **not** the native channel address |
+| **An interface exposes a member's capability** | Network Capable Application Processor (NCAP) mediates access to TIM services; related role, not ISA visibility semantics | Composition member can be visible or opaque; the composition can expose an opaque member's capabilities as its own | — | SensorML `connections` can trace a known member output to an aggregate output; this does not encode ISA taskability |
+| **A quantity represented in an output** | Channel TEDS physical units qualify a channel's data; unit alone does not identify the property | `Observables` in capability definitions; declaration, not a reading | — | SWE `Quantity` within a `DataRecord`; CSAPI `DataStream` groups observations for an output. OMS `ObservableProperty` is what is observed, not the field or device |
+
+**How these donors changed the design.** SOSA makes it possible to say *what implements a function*. ISA explains why *who exposes it* can be different. IEEE makes it worthwhile to retain the address of a channel even when there is no separately identified hardware part. SensorML and SWE supply concrete encodings for the part, its output and the output's fields. These are complementary contributions, not votes to make every column mean “subsystem.”
+
+**Read the definitions:** ISA *Software Design Document* 6.0r5 §§4.2.2, 5.1.1 and *Data Model Specification* 6.0r12 §2. Open Group *SOSA Reference Architecture* ed. 1.1 §5.1, Fig. 5.1-1 and *Domain-Specific Data Model* ed. 1.0 §§1.1.3.15, .82–83 ([original-document locators](../Donor_Challenge/04_Other_Structural_Challenges.md)). IEEE: [2024-linked Playground tutorial](https://iml.ubi.pt/playground/docs/ieee1451/intro/), [NIST Channel TEDS example](https://www.nist.gov/el/intelligent-systems-division-73500/channel-teds), [authors’ historical P1451 service example, Tables 1 and 3](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=927142), and [edition/access notes](../Donor_Challenge/03_IEEE1451_Challenge.md). Actual OGC texts: [SensorML §§8.4–8.6, 9.5.2](https://docs.ogc.org/is/23-000/23-000.html), [CSAPI Part 1 §§10, 13](https://docs.ogc.org/is/23-001/23-001.html), [Part 2 §§9.1–9.2, 16.1.4](https://docs.ogc.org/is/23-002/23-002.html) and [OMS §§8.3, 8.6][oms]. The IEEE material is technical evidence, not a new inspection of licensed 2024 normative clauses.
+
+[**Resulting DIM definitions**](../Candidate_Specification/DIM.md#components-and-channels) · [**Candidate Profile rules, example and check**](../Candidate_Specification/CSAPI_Profile.md#components-and-channels)
+
 ## Observations and samples
 
 | Working DIM meaning | OMS 3.0 | Earlier O&M (2011) | SOSA/SSN (2017) | Connected Systems API 1.0 |
@@ -30,8 +50,7 @@
 | **Property being observed** | `ObservableProperty` | `GFI_PropertyType` | `sosa:ObservableProperty` | `Property` (observable use) |
 | **Entity doing the observing** | `Observer` | `OM_Process`¹ | `sosa:Sensor` | `System` typed `sosa:Sensor` |
 | **Method used to observe** | `ObservingProcedure` | `OM_Process`¹ | `sosa:Procedure` used for observation; `sosa-om:ObservationProcedure` in the O&M alignment | `Procedure` typed `sosa-oms:ObservingProcedure` |
-| **Hosting platform** | `Host`² | No entry in C.3 | `sosa:Platform` | `System` typed `sosa:Platform` |
-| **Sample** | `Sample` | `SF_SamplingFeature` | `sosa:Sample` | `SamplingFeature` |
+| **Hosting platform** | `Host`² | No entry in C.3 | `sosa:Platform` | `System` typed `sosa:Platform` | **Sample** | `Sample` | `SF_SamplingFeature` | `sosa:Sample` | `SamplingFeature` |
 
 **Who says these match?** The OMS, O&M and API columns follow the [published Connected Systems Part 1, informative Annex C.3][c3] shown in the owner’s screenshot. [W3C/OGC’s 2017 O&M alignment, §§6.3.4–6.3.5][ssn], explicitly calls `OM_Observation` and `sosa:Observation` equivalent classes, and likewise `SF_SamplingFeature` and `sosa:Sample`. Those are **published equivalents for the named pair and editions**. They do not declare every cell across the row equivalent. The extension prefixes `sosa-om:` (2017 alignment) and `sosa-oms:` (as printed in CSAPI) intentionally differ.
 
@@ -67,6 +86,10 @@ This is a *project-proposed* mapping between two independently published code li
 | **O&M 2.0** — Observations and Measurements, ISO 19156:2011 | Earlier observation, process and sampling feature | [OMS Annex C.5.1 and C.5.2][migration] compare the old and revised observation models. This is the successor standard’s account. |
 | **SOSA/SSN (2017)** — Sensor, Observation, Sample and Actuator / Semantic Sensor Network | Sensor, observation, observable property, procedure, platform, sampler, sample | [Figure 3: observations][ssnimg] · [figures and text in §4][ssn] (ontology diagrams, not UML) |
 | **OGC API – Connected Systems 1.0** — Parts 1–2 | System, Procedure, Deployment, SamplingFeature, Observation, Command and CommandStatus | [Part 1, Figure 1: API resource UML, PDF p. 40][csfig] · [Part 2, §10.11, Figure 6: command status][cs2] |
+| **SensorML 3.0** | Components and connections of a physical system | [§8.6, Fig. 18: physical processing system; §9.5.2: worked datasheet](https://docs.ogc.org/is/23-000/23-000.html) |
+| **Integrated Sensor Architecture 6.0** | Visible and opaque composition members | Software Design Document 6.0r5, §4.2.2, Fig. 2, printed p. 12 ([source locator](../Donor_Challenge/04_Other_Structural_Challenges.md)); original supplied PDF, not rehosted here |
+| **The Open Group SOSA ed. 1.1** | Logical modules versus supporting infrastructure | Reference Architecture §5.1, Fig. 5.1-1, printed p. 29 ([source locator](../Donor_Challenge/04_Other_Structural_Challenges.md)); distinct from W3C/OGC SOSA above |
+| **IEEE 1451 public sources** | Module, access services, and transducer channel | [NIST-hosted authors’ Fig. 3 and Table 1, PDF p. 2](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=927142#page=2); historical implementation illustration, not 2024 normative UML |
 
 <details>
 <summary>Show original ontology diagrams: SAREF devices and SOSA observations</summary>
@@ -81,7 +104,7 @@ This is a *project-proposed* mapping between two independently published code li
 
 </details>
 
-**Maintaining this page:** add a row for a new meaning or a column for another donor where the original definition supports it. Keep published equivalences distinct from our proposed translations. A missing cell means “not established here,” not “the donor cannot express it.” These tables cover selected concepts from the listed editions, not the entire donor corpus. [Other donor families and earlier research](Donor_Contributions.md) · [Current candidate DIM](../Donor_Challenge/10_Candidate_DIM_Foundation_v0.2_Donor_Challenge.md).
+**Maintaining this page:** add a row for a new meaning or a column for another donor where the original definition supports it. Keep published equivalences distinct from our proposed translations. A missing cell means “not established here,” not “the donor cannot express it.” These tables cover selected concepts from the listed editions, not the entire donor corpus. [Other donor families and earlier research](Donor_Contributions.md) · [Candidate DIM foundation v0.2](../Donor_Challenge/10_Candidate_DIM_Foundation_v0.2_Donor_Challenge.md) · [Working DIM text](../Candidate_Specification/DIM.md) · [Working Profile text](../Candidate_Specification/CSAPI_Profile.md).
 
 [bsi-name]: https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf#page=48
 [bsi-task]: https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf#page=84
