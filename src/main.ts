@@ -9,6 +9,7 @@ import { derivePowerModel, type PowerModel } from './profile/power';
 import { renderDetails } from './presentation/details';
 import { renderExperimentIndex } from './presentation/index';
 import { renderResourceDetailsTemplate } from './presentation/resource-details-template';
+import { renderObservationAttributionDemo } from './presentation/observation-attribution';
 import './presentation/style.css';
 
 const app = document.querySelector<HTMLElement>('#app');
@@ -150,9 +151,13 @@ const actions: DetailsActions = {
 const parameters = new URLSearchParams(location.search);
 const requestedPage = parameters.get('page');
 const requestedExample = parameters.get('example');
+const requestedCase = parameters.get('case');
 const selectedTemplate = experimentPages.find(page => page.kind === 'template' && page.id === requestedPage);
 const selectedExample = examples.find(example => example.id === requestedExample);
-if (selectedTemplate) {
+if (requestedPage === 'resource-details-profile-test' && requestedCase === 'bennetts-point') {
+  document.title = "Bennett's Point probe attribution | Glaux Client";
+  void renderObservationAttributionDemo(mount);
+} else if (selectedTemplate) {
   document.title = `${selectedTemplate.title} | Glaux Client`;
   renderResourceDetailsTemplate(mount);
 } else if (requestedPage === null && selectedExample) actions.selectExample(selectedExample.id);
