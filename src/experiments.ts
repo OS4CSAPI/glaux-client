@@ -118,10 +118,11 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-live-bennett', title: "Bennett's Point · live CSAPI V2 case",
-    description: 'Controlled two-probe Bennett’s Point V2 case retrieved directly from the live Oracle-hosted 52°North/pygeoapi server, with the shared Resource Details Map renderer.',
+    description: 'Two identified EE181 probes and historical air temperatures retrieved directly from 52°North/pygeoapi; Activity preserves original QA tokens and nominal averaging windows in separate, explicitly qualified SWE DataRecord report streams.',
     latestUpdate: {
-      at: '2026-10-31T18:09:00-04:00',
-      summary: 'Reused Codex’s shared Map renderer in the live Bennett’s Point Map subtab; each probe remains separate and missing positions stay unresolved.',
+      at: '2026-10-31T18:29:30-04:00',
+      summary: 'Added live retrieval and source-qualified display of the original F_ATemp flags and nominal 15-minute windows, without altering scalar observations or the shared Map renderer.',
+      commit: '86b51a869f6c6cecb0d6a242eee68632cce8e8ba',
     },
   },
   {
