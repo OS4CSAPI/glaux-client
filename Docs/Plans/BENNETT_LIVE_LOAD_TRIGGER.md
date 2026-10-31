@@ -12,3 +12,5 @@ from the Oracle-hosted 52°North/pygeoapi Connected Systems API.
 
 This is a controlled research load. It does not claim live physical-sensor
 telemetry, a Deployment-resource write, or complete CSAPI conformance.
+
+Retry note: loader now discovers resources by stable `uniqueId` and captures the local IDs assigned by this pygeoapi deployment.
