@@ -31,3 +31,7 @@
 ## 31 October 2026 — Bennett's Point observation attribution
 
 Trigger verified production deployment after adding the real Bennett's Point EE181 probe-swap observation case to the existing profile-aware Resource Details test. The workflow must type-check, run offline tests, and build before publishing.
+
+## 31 October 2026 — Bennett's Point placement matrix application
+
+Trigger verified production deployment after redistributing the Bennett's Point case across Overview, Equipment, Activity, Management Record, and Sources according to the candidate placement matrix. No new evidence was invented; unsupported tabs remain empty with explicit messages.
