@@ -2,6 +2,7 @@
 import json
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 BASE = "https://129-80-248-53.sslip.io/csapi-pygeoapi"
@@ -10,28 +11,27 @@ MODEL_UID = "urn:merlin:v2:datasheet:campbell:ee181"
 
 PROBES = [
     {
-        "id": "b171318e-8efe-550d-be99-bec5364984c0",
         "uid": "urn:merlin:v2:bennetts:ee181:probe4",
         "label": "Bennett's Point EE181 Probe 4",
         "serial": "222016000109CE",
-        "datastream": "bd10e9d3-0c03-5fbb-ba62-86559911d824",
-        "observation": "542a6d5b-a4e1-5860-82be-6a1f7c6da883",
+        "stream_key": "urn:merlin:v2:bennetts:ee181:probe4:airtemp",
         "time": "2024-04-15T17:00:00Z",
         "value": 29.1,
         "period": "documented in use at Bennett's Point from 2023-06-08 until the 2024-04-16 probe change",
     },
     {
-        "id": "ce4dd3bb-0b16-5772-8288-ba3e8e52c272",
         "uid": "urn:merlin:v2:bennetts:ee181:probe3",
         "label": "Bennett's Point EE181 Probe 3",
-        "serial": "21281600077814",
-        "datastream": "1eb64c0c-19c5-5f66-a34e-8d0f4244a561",
-        "observation": "6e8cf4c0-1b66-5540-937c-f3743aee2c1e",
+        "serial": "212816000109CE",
+        "stream_key": "urn:merlin:v2:bennetts:ee181:probe3:airtemp",
         "time": "2024-04-18T17:00:00Z",
         "value": 27.3,
         "period": "documented as returned to service at Bennett's Point on 2024-04-16 and still in use at the 2024 report cutoff",
     },
 ]
+
+# Correct the Probe 3 serial from the controlled evidence record.
+PROBES[1]["serial"] = "21281600077814"
 
 def request(method, path, payload=None, content_type="application/json"):
     data = None if payload is None else json.dumps(payload).encode("utf-8")
@@ -42,7 +42,11 @@ def request(method, path, payload=None, content_type="application/json"):
     try:
         with urllib.request.urlopen(req, timeout=30) as response:
             body = response.read().decode("utf-8")
-            return response.status, json.loads(body) if body else None
+            try:
+                parsed = json.loads(body) if body else None
+            except ValueError:
+                parsed = body
+            return response.status, parsed
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
         try:
@@ -51,16 +55,35 @@ def request(method, path, payload=None, content_type="application/json"):
             parsed = body
         return exc.code, parsed
 
+def rows(doc):
+    return (doc or {}).get("features", (doc or {}).get("items", [])) if isinstance(doc, dict) else []
+
+def list_all(path, page_size=100, max_pages=20):
+    out = []
+    for page in range(max_pages):
+        sep = "&" if "?" in path else "?"
+        status, doc = request("GET", f"{path}{sep}f=application/json&limit={page_size}&offset={page*page_size}")
+        if status != 200:
+            raise RuntimeError(f"list {path} HTTP {status}: {doc}")
+        batch = rows(doc)
+        out.extend(batch)
+        if len(batch) < page_size:
+            break
+    return out
+
+def find_system(uid):
+    for item in list_all("/systems"):
+        if item.get("uniqueId") == uid:
+            return item
+    return None
+
 def ensure_system(p):
-    status, body = request("GET", f"/systems/{p['id']}?f=application/json")
-    if status == 200:
-        print("system exists", p["id"])
-        return
-    if status != 404:
-        raise RuntimeError(f"system preflight {p['id']} HTTP {status}: {body}")
+    current = find_system(p["uid"])
+    if current:
+        print("system exists", current["id"], p["uid"])
+        return current["id"]
     payload = {
         "type": "PhysicalSystem",
-        "id": p["id"],
         "definition": "http://www.w3.org/ns/sosa/Sensor",
         "uniqueId": p["uid"],
         "label": p["label"],
@@ -79,25 +102,32 @@ def ensure_system(p):
     }
     status, body = request("POST", "/systems", payload, "application/sml+json")
     if status not in (200, 201):
-        raise RuntimeError(f"system POST {p['id']} HTTP {status}: {body}")
-    status, returned = request("GET", f"/systems/{p['id']}?f=application/json")
-    if status != 200 or returned.get("uniqueId") != p["uid"]:
-        raise RuntimeError(f"system round trip failed {p['id']}: HTTP {status} {returned}")
-    print("system created", p["id"])
+        raise RuntimeError(f"system POST {p['uid']} HTTP {status}: {body}")
+    current = find_system(p["uid"])
+    if not current:
+        raise RuntimeError(f"system round trip failed for {p['uid']}; create response was {body}")
+    print("system created", current["id"], p["uid"])
+    return current["id"]
 
-def ensure_datastream(p):
-    status, body = request("GET", f"/datastreams/{p['datastream']}?f=application/json")
-    if status == 200:
-        print("datastream exists", p["datastream"])
-        return
-    if status != 404:
-        raise RuntimeError(f"datastream preflight {p['datastream']} HTTP {status}: {body}")
+def find_stream(system_id, stream_key):
+    status, doc = request("GET", f"/systems/{system_id}/datastreams?f=application/json&limit=100")
+    if status != 200:
+        raise RuntimeError(f"datastream list {system_id} HTTP {status}: {doc}")
+    for ds in rows(doc):
+        if ds.get("description", "").startswith(stream_key + " |"):
+            return ds
+    return None
+
+def ensure_datastream(p, system_id):
+    current = find_stream(system_id, p["stream_key"])
+    if current:
+        print("datastream exists", current["id"], p["stream_key"])
+        return current["id"]
     payload = {
-        "id": p["datastream"],
         "name": p["label"] + " — air temperature",
-        "description": "15-minute mean air temperature from the Bennett's Point historical station record. This stream is tied to the identified physical probe; it is not live telemetry.",
+        "description": p["stream_key"] + " | 15-minute mean air temperature from the Bennett's Point historical station record. This stream is tied to the identified physical probe; it is not live telemetry.",
         "system@link": {
-            "href": BASE + "/systems/" + p["id"],
+            "href": BASE + "/systems/" + system_id,
             "title": p["uid"]
         },
         "observedProperties": [{
@@ -126,47 +156,60 @@ def ensure_datastream(p):
             }
         }
     }
-    status, body = request("POST", f"/systems/{p['id']}/datastreams", payload)
+    status, body = request("POST", f"/systems/{system_id}/datastreams", payload)
     if status not in (200, 201):
-        raise RuntimeError(f"datastream POST {p['datastream']} HTTP {status}: {body}")
-    status, returned = request("GET", f"/datastreams/{p['datastream']}?f=application/json")
-    if status != 200:
-        raise RuntimeError(f"datastream round trip failed {p['datastream']}: HTTP {status} {returned}")
-    print("datastream created", p["datastream"])
+        raise RuntimeError(f"datastream POST {p['stream_key']} HTTP {status}: {body}")
+    current = find_stream(system_id, p["stream_key"])
+    if not current:
+        raise RuntimeError(f"datastream round trip failed {p['stream_key']}; create response was {body}")
+    print("datastream created", current["id"], p["stream_key"])
+    return current["id"]
 
-def ensure_observation(p):
-    status, collection = request("GET", f"/datastreams/{p['datastream']}/observations?f=application/json")
+def same_time(value, expected):
+    return value == expected or (isinstance(value, list) and expected in value)
+
+def ensure_observation(p, datastream_id):
+    status, doc = request("GET", f"/datastreams/{datastream_id}/observations?f=application/json&limit=100")
     if status != 200:
-        raise RuntimeError(f"observation preflight HTTP {status}: {collection}")
-    existing = (collection or {}).get("features", (collection or {}).get("items", []))
-    if any(str(x.get("id")) == p["observation"] for x in existing):
-        print("observation exists", p["observation"])
-        return
+        raise RuntimeError(f"observation preflight HTTP {status}: {doc}")
+    for obs in rows(doc):
+        if obs.get("result") == p["value"] and (same_time(obs.get("resultTime"), p["time"]) or same_time(obs.get("phenomenonTime"), p["time"])):
+            print("observation exists", obs.get("id"), p["time"], p["value"])
+            return obs.get("id")
     payload = {
-        "id": p["observation"],
-        "datastream@id": p["datastream"],
+        "datastream@id": datastream_id,
         "phenomenonTime": p["time"],
         "resultTime": p["time"],
         "result": p["value"]
     }
-    status, body = request("POST", f"/datastreams/{p['datastream']}/observations", payload)
+    status, body = request("POST", f"/datastreams/{datastream_id}/observations", payload)
     if status not in (200, 201):
-        raise RuntimeError(f"observation POST {p['observation']} HTTP {status}: {body}")
-    status, collection = request("GET", f"/datastreams/{p['datastream']}/observations?f=application/json")
-    rows = (collection or {}).get("features", (collection or {}).get("items", [])) if status == 200 else []
-    if not any(str(x.get("id")) == p["observation"] and x.get("result") == p["value"] for x in rows):
-        raise RuntimeError(f"observation round trip failed {p['observation']}: HTTP {status} {collection}")
-    print("observation created", p["observation"])
+        raise RuntimeError(f"observation POST {p['time']} HTTP {status}: {body}")
+    status, doc = request("GET", f"/datastreams/{datastream_id}/observations?f=application/json&limit=100")
+    if status != 200:
+        raise RuntimeError(f"observation round trip list HTTP {status}: {doc}")
+    for obs in rows(doc):
+        if obs.get("result") == p["value"] and (same_time(obs.get("resultTime"), p["time"]) or same_time(obs.get("phenomenonTime"), p["time"])):
+            print("observation created", obs.get("id"), p["time"], p["value"])
+            return obs.get("id")
+    raise RuntimeError(f"observation round trip failed {p['time']} {p['value']}")
 
 def main():
+    manifest = {"server": BASE, "systems": []}
     for probe in PROBES:
-        ensure_system(probe)
-        ensure_datastream(probe)
-        ensure_observation(probe)
-    print(json.dumps({
-        "server": BASE,
-        "systems": [{"id": p["id"], "uid": p["uid"], "serial": p["serial"], "datastream": p["datastream"], "observation": p["observation"]} for p in PROBES]
-    }, indent=2))
+        system_id = ensure_system(probe)
+        datastream_id = ensure_datastream(probe, system_id)
+        observation_id = ensure_observation(probe, datastream_id)
+        manifest["systems"].append({
+            "id": system_id,
+            "uid": probe["uid"],
+            "serial": probe["serial"],
+            "datastream": datastream_id,
+            "observation": observation_id,
+            "time": probe["time"],
+            "value": probe["value"],
+        })
+    print("BENNETT_MANIFEST=" + json.dumps(manifest, separators=(",", ":")))
 
 if __name__ == "__main__":
     try:
