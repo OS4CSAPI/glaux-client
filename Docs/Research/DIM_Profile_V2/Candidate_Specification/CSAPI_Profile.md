@@ -2,6 +2,8 @@
 
 **Working specification · 30 October 2026.** The binding below is proposed by this project. It selects existing structures in OGC API – Connected Systems (CSAPI), Sensor Model Language (SensorML) and SWE Common. It is not an adopted OGC requirement or a claim that the complete application Profile has been specified.
 
+[Components and channels](#components-and-channels) · [Campbell: temperature of what?](#campbell-temperature-of-what)
+
 ## Components and channels
 
 [Donor terms side by side](../Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md#components-and-channels) · [What the DIM means](DIM.md#components-and-channels) · [Worked SensorML JSON](examples/s31-lb-design.sml.json)
@@ -31,3 +33,21 @@ A Details view could therefore say **“External SHT31 probe — measures air te
 From a checkout of this branch run `python3 Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/check_s31.py` (Python 3.10+, no dependencies). The [checker](examples/check_s31.py) reads all eight published history entries from the retained [sheet, §4](../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md#4-every-record-in-the-original-published-history-example), compares their decoded values with the recorded expansion, and checks the example design's component, field meanings, units and connection. Negative cases add a fictitious second probe, change humidity to °C, break the connection, supply a no-data reply and truncate an entry. These offline checks passed. They are specific to this example, not a generic Profile validator, a full OGC JSON Schema validation, live interoperability or a test of installed hardware.
 
 **Primary binding references:** OGC 23-001, [CSAPI Part 1 v1.0](https://docs.ogc.org/is/23-001/23-001.html), §§9.2.2, 10.2–10.5, 13.1–13.2, 19.2 (requirements 95–96, 99–101); OGC 23-000, [SensorML 3.0](https://docs.ogc.org/is/23-000/23-000.html), §§8.4–8.6 and 9.3.3–4, 9.5.2; [SWE Common DataRecord](https://schemas.opengis.net/sweCommon/3.0/json/DataRecord.json) and [Quantity](https://schemas.opengis.net/sweCommon/3.0/json/Quantity.json); OGC 23-002, [CSAPI Part 2 v1.0](https://docs.ogc.org/is/23-002/23-002.html), §§9.1–9.2 and 16.1.4–5, including its [JSON observation-schema definition](https://schemas.opengis.net/ogcapi/connected-systems/part2/1.0/openapi/schemas/json/observationSchemaJson.json).
+
+## Campbell: temperature of what?
+
+**Could a reader accidentally display 25.91098 °C as outdoor weather?** Yes, if it matches on the word “temperature” or on the unit alone. Here is what the sources support instead. This is a comparison of documents, **not a dashboard from a single station**.
+
+| Equipment / source field | Temperature of what? | What a reader can show |
+|---|---|---|
+| CR1000X logger · `PanelTemp` · D-S02 | The logger's wiring panel | **25.91098 °C — manufacturer example** |
+| ClimaVue 50 · `aR7!` position 8 · D-R08 | The air | **Air temperature — no reading supplied** |
+| Same ClimaVue 50 · `aR7!` position 12 · D-R12 | The humidity sensor itself | **Humidity sensor temperature — no reading supplied** |
+
+Campbell supplies the [CR1000X field definition](https://help.campbellsci.com/crbasic/cr1000x/Content/Instructions/StatusTable.htm) and [separate logger message](https://help.campbellsci.com/datalogger-api/mqtt/status.html). The two ClimaVue positions are defined in [the first-generation manual, rev. 08/2024, Table 8-1, printed p. 21](https://s.campbellsci.com/documents/us/manuals/climavue50.pdf#page=25). They are *capabilities*, not null observations, a failed sensor, or zeroes. Nothing ties the example logger to a deployed ClimaVue. The [Campbell system sheet](../Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md) keeps the sources separate.
+
+**Proposed Profile rule.** Give each measurement field a semantic `definition` that preserves what the quantity concerns, beside its `label` and `uom`. Reuse a suitable existing definition; a new property per device or manufacturer is not needed. Here both manufacturers' air-temperature fields use the same definition as the Dragino example. The two equipment temperatures need different definitions. For a locally defined property where the distinction depends on the kind of object, use `baseProperty` for the characteristic and `objectType` for the kind of thing it applies to. CSAPI makes `objectType` optional; this narrower obligation is our proposal, **not** an OGC-wide rule. A type such as “wiring panel” is not an identifier for an installed panel. Never substitute a recording or reporting device for the observation's subject merely because it sent the value.
+
+See the [side-by-side donor terms and model decision](DIM.md#temperature-of-what); [CSAPI Part 1, §15.2.2, Table 19 and §19.2.8, Table 55](https://docs.ogc.org/is/23-001/23-001.html); [SWE Common 3.0, §§8.2.2–3](https://docs.ogc.org/is/24-014/24-014.html). The [worked JSON](examples/campbell-temperature-roles.json) includes two illustrative property definitions and two separate selected field lists. Its outer wrapper, source keys and evidence labels are project test material, not CSAPI members. The `urn:example:` definitions resolve in the included local dictionary; production identifiers and deployment are not established. A real result would be bound through its own stream's schema, per [CSAPI Part 2 §§9.6–7 and 16.1.4–5](https://docs.ogc.org/is/23-002/23-002.html). No Observation is published here.
+
+**What was checked:** `python3 Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/temperature_preview.py` runs the [same display routine](examples/temperature_preview.py) against the earlier Dragino description and the new Campbell inputs. Source-specific mappings supply the meanings; the routine does not branch on manufacturer. It matches values to fields within their own source and output. Moving the logger example to the weather-instrument context is rejected. This tests how declared information is consumed offline; it does not independently prove the source mappings, validate complete OGC resources, or test Glaux, hardware or a live server.
