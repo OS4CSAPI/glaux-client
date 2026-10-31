@@ -35,3 +35,7 @@ Trigger verified production deployment after adding the real Bennett's Point EE1
 ## 31 October 2026 — Bennett's Point placement matrix application
 
 Trigger verified production deployment after redistributing the Bennett's Point case across Overview, Equipment, Activity, Management Record, and Sources according to the candidate placement matrix. No new evidence was invented; unsupported tabs remain empty with explicit messages.
+
+## 31 October 2026 — separate live 52°North CSAPI page
+
+Trigger verified production deployment for a new Resource Details page that performs read-only browser GETs against the Oracle-hosted 52°North/pygeoapi CSAPI service. The existing profile-test page is preserved unchanged. The new page retrieves Systems and, for the selected System, DataStreams, Deployments, Subsystems, and available Observations.
