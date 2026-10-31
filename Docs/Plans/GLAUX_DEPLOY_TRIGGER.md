@@ -43,3 +43,7 @@ Trigger verified production deployment for a new Resource Details page that perf
 ## 31 October 2026 — dedicated live Bennett V2 page
 
 Trigger verified production deployment for a dedicated Bennett's Point live-CSAPI page that reads the two controlled EE181 Systems, their DataStreams, and historical Observations directly from the Oracle-hosted 52°North/pygeoapi service. Existing historical and generic live pages remain separate.
+
+## 31 October 2026 — reuse Codex Map renderer in dedicated live Bennett's Point page
+
+Run the verified build/test/deploy workflow for the bounded Map subtab integration on the live Bennett's Point page. This change reuses `renderResourceMap()` from the separate live-map experiment without modifying the renderer, preserves both identified probe Systems, and renders the shared missing-position fallback when a selected System has no reported geometry. No server write or invented site/probe coordinates are involved. See [the integration design note](../Design/BENNETT_LIVE_MAP_INTEGRATION.md).
