@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test' | 'resource-details-live-csapi';
+  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test' | 'resource-details-live-csapi' | 'resource-details-live-bennett';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -106,6 +106,14 @@ export const experimentPages: readonly ExperimentPage[] = [
     latestUpdate: {
       at: '2026-10-31T15:00:00-04:00',
       summary: 'Added a separate live-server Resource Details page without changing the existing semantic-test page.',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-live-bennett', title: "Bennett's Point · live CSAPI V2 case",
+    description: 'Controlled two-probe Bennett’s Point V2 case retrieved directly from the live Oracle-hosted 52°North/pygeoapi server.',
+    latestUpdate: {
+      at: '2026-10-31T15:05:00-04:00',
+      summary: 'Added a dedicated live round-trip page for the controlled Bennett’s Point probe-swap case.',
     },
   },
   {
