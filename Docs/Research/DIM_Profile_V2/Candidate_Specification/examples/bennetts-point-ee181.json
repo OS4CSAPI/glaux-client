@@ -1,0 +1,20 @@
+{
+  "description": "Selected facts transcribed and date-normalized from the ACE Basin reserve's annual station documentation. Project evidence extract, not a CSAPI resource, original data file, or set of readings.",
+  "operator_record": {
+    "credit": "ACE Basin National Estuarine Research Reserve, South Carolina Department of Natural Resources; NOAA National Estuarine Research Reserve System System-wide Monitoring Program, Centralized Data Management Office",
+    "title": "ACE Basin (ACE) NERR Meteorological Metadata, January–December 2024",
+    "document_updated": "2025-08-18",
+    "url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+    "locators": {"site": "Sections 5 and 10: Bennett's Point/acebpmmet", "probe_history": "Section 9: Temperature and Relative Humidity, model EE181, Temp/RH sensor 3 and 4", "logger_history": "Section 9: CR1000X logger 1 and 2", "work_window": "Missing Data, 04/16/2024 (search the PDF for 13:30); section 4 states the time basis"}
+  },
+  "station": {"name": "Bennett's Point", "station_code": "acebpmmet", "reserve": "ACE Basin", "state": "South Carolina"},
+  "probe_model": {"designation": "EE181", "description": "Air temperature and relative humidity probe", "model_source": "https://www.campbellsci.co.uk/ee181"},
+  "unit_use_history": [
+    {"record_label": "Temp/RH sensor 3", "serial": "21281600077814", "model": "EE181", "station_code": "acebpmmet", "first_date_of_use": "2022-05-04", "last_date_of_use_listed": "2023-06-08"},
+    {"record_label": "Temp/RH sensor 4", "serial": "222016000109CE", "model": "EE181", "station_code": "acebpmmet", "first_date_of_use": "2023-06-08", "last_date_of_use_listed": "2024-04-16"},
+    {"record_label": "Temp/RH sensor 3", "serial": "21281600077814", "model": "EE181", "station_code": "acebpmmet", "first_date_of_use": "2024-04-16", "still_in_use_as_of": "2024-12-31", "removal_date": null}
+  ],
+  "installation_note": {"date": "2024-04-16", "logger_powered_down": "09:45", "installation_work_finished": "13:30", "time_basis_in_report": "Eastern Standard Time (EST), year round", "scope": "This was a station maintenance window covering multiple sensors. The note confirms a temperature/humidity sensor installation; the serials come from the equipment history, not from this note. It does not timestamp the individual probe change."},
+  "logger_context": {"model": "CR1000X", "documented_logger_serial": "13916", "first_date_of_use": "2022-05-04", "still_in_use_as_of": "2024-12-31", "other_serial_listed_inactive": "13915", "source_scope": "The active unit is the recorder, not the identity of the EE181 probe. The annual record does not identify this station with any ClimaVue 50 or with a manufacturer's PanelTemp example."},
+  "limits": ["Same-day endpoints have day precision; no midnight or exact changeover instant is asserted.", "The as-of date is not a removal date, and the document revision date is not a deployment date.", "This extract contains no station measurement rows and does not assert current installation or full system qualification."]
+}
