@@ -70,6 +70,8 @@ The reserve’s missing-data note for **16 April 2024** says the logger was down
 
 The experiment does **not** resolve the normative gap: the [CSAPI Part 2 JSON Observation schema](https://schemas.opengis.net/ogcapi/connected-systems/part2/1.0/openapi/schemas/json/observation.json) expresses `phenomenonTime` as an instant, and the deployed 52°North scalar observation backend also cannot preserve a time interval there or the optional `parameters` member. Its mandatory `resultTime` is still populated from the published source stamp as an acknowledged compatibility surrogate, **not** independently evidenced result-generation time. The additional archived-report result is a project-authored preservation carrier, **not an accepted V2 Profile rule or proof of fully lossless OMS/CSAPI temporal-quality interoperability**. The older scalar observations remain unchanged and the exact gaps remain open for a future backend/binding decision.
 
+**Encoding decision checkpoint, 31 October 2026:** [Read the grounded CSAPI/SWE alternatives, live 52°North format probes and selected next test](Observation_Encoding_Decision_31OCT2026.md). This investigation does **not** adopt a new binding. It recommends testing genuine `application/swe+json` first, while keeping the unresolved *interval-valued phenomenonTime* mapping and unavailable historical *resultTime* explicit.
+
 ## Components and channels
 
 [Donor terms side by side](../Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md#components-and-channels) · [What the DIM means](DIM.md#components-and-channels) · [Worked SensorML JSON](examples/s31-lb-design.sml.json)
