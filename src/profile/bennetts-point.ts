@@ -14,6 +14,11 @@ export interface AttributionRecord {
 export const attributionCase = {
   station: { name: "Bennett's Point", code: 'acebpmet' },
   model: { manufacturer: 'Campbell Scientific', designation: 'EE181', label: 'Air temperature and relative humidity probe' },
+  deployments: [
+    { label: 'Temp/RH sensor 3', serial: '21281600077814', start: '2022-05-04', end: '2023-06-08', note: 'First documented period at Bennett\'s Point.' },
+    { label: 'Temp/RH sensor 4', serial: '222016000109CE', start: '2023-06-08', end: '2024-04-16', note: 'Different physical EE181 unit in the same station role.' },
+    { label: 'Temp/RH sensor 3', serial: '21281600077814', start: '2024-04-16', end: null, note: 'Original unit returned; documented as still in use through the 2024 report cutoff.' },
+  ],
   records: [
     {
       timestamp: '2024-04-15T17:00:00Z',
