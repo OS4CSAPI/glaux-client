@@ -1,3 +1,30 @@
+## Live resource map — verified production deployment
+
+**Deployed 31 October 2026.** The separate Resource Details map page displays
+supported positions from the selected live CSAPI System, with a compact map,
+satellite and street basemaps, zoom, recentering, and explicit coordinate-order
+interpretation. The existing live Resource Details route remains available.
+
+| Item | Verified result |
+| --- | --- |
+| Live page | <https://glaux-client.pages.dev/?page=resource-details-live-map> |
+| Immutable deployment | <https://bf7b7ea1.glaux-client.pages.dev/?page=resource-details-live-map> |
+| Source branch / commit | `work/details-view-20261023` / `db6961d270eb568e0a3a36f140570b23b296d0aa` |
+| Cloudflare deployment | `bf7b7ea1-a6f1-4542-9424-dbdce0e54ed9`, production; direct upload via authenticated local Wrangler 4.154.0 |
+| Clean install, tests, build | `npm ci`; 83 offline tests; TypeScript and production Vite build passed |
+| Browser verification | 15 map checks with controlled synthetic responses on production; 77 local index and 27 template checks passed |
+| Live read | Edge loaded the selected System from the actual CSAPI service and loaded satellite and street tiles, with zero browser script errors |
+
+The default sample's source position is `[51.935814, 7.651898]`. The page plots
+the standard GeoJSON longitude/latitude interpretation and offers a visibly
+labelled alternative; the producing server's intended order is not established.
+The 2016 satellite imagery is historical, and location time and accuracy are not
+established. See the [map design record](../Design/RESOURCE_DETAILS_LIVE_MAP.md).
+The repository-wide artifact verifier remains blocked by pre-existing missing
+registered documents, older cross-branch links, and a Windows character-decoding
+failure in the Smart Citizen paper verifier; with UTF-8 forced, that verifier
+reports a stale Word edition. These are unrelated to this change.
+
 ## Cross-vendor candidate profile-aware Resource Details — verified production deployment
 
 **Deployed 28 October 2026, 19:25 UTC.** Separate page testing the original chassis→Profile→profile-aware client idea using one 560 × 440 Resource Details view. **This does not modify the existing Smart Citizen research walkthrough, blank template or Activity page.** No accepted V2 DIM or normative application profile is implied.

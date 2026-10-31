@@ -1,5 +1,24 @@
 # Current client work
 
+## Live Resource Details map — 31 October 2026
+
+The separate `resource-details-live-map` page reuses the live CSAPI Resource
+Details view and adds a map for the selected System's reported point. It shows
+historical satellite or street imagery, a resource marker, zoom and recentering,
+the original position, and an explicit coordinate interpretation. Unsupported,
+missing, or unresolved positions receive a readable fallback; the map does not
+assert live tracking, position time, or accuracy. Related-resource failures do not
+block an available System position. The prior live page and other routes remain.
+
+Cloudflare Pages production deployment `bf7b7ea1-a6f1-4542-9424-dbdce0e54ed9`
+publishes commit `db6961d270eb568e0a3a36f140570b23b296d0aa` at
+<https://glaux-client.pages.dev/?page=resource-details-live-map>. Clean install,
+83 offline tests, TypeScript and production build passed. The production map
+passed 15 controlled browser checks, and Edge loaded real System data and both
+basemaps; the local index and template checks passed 77 and 27 checks respectively.
+The [design record](../Design/RESOURCE_DETAILS_LIVE_MAP.md) records research,
+coordinate assumptions, attribution, and service limitations.
+
 ## Resource Details Activity-table wireframe and deployment - 26 October 2026
 
 The separate `resource-details-activity` page now reuses the complete recovered
