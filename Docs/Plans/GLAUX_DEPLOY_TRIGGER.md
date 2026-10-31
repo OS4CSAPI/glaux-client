@@ -47,3 +47,7 @@ Trigger verified production deployment for a dedicated Bennett's Point live-CSAP
 ## 31 October 2026 — reuse Codex Map renderer in dedicated live Bennett's Point page
 
 Run the verified build/test/deploy workflow for the bounded Map subtab integration on the live Bennett's Point page. This change reuses `renderResourceMap()` from the separate live-map experiment without modifying the renderer, preserves both identified probe Systems, and renders the shared missing-position fallback when a selected System has no reported geometry. No server write or invented site/probe coordinates are involved. See [the integration design note](../Design/BENNETT_LIVE_MAP_INTEGRATION.md).
+
+## 31 October 2026 — display source-qualified averaging interval and QA in live Bennett's Point Activity
+
+Run verified TypeScript, offline tests, production build, and Cloudflare Pages deployment for the bounded Activity presentation of two additional archival-report DataStreams. The server already completed the exact-field read-back verification in [workflow run 41248245591](https://github.com/OS4CSAPI/glaux-client/actions/runs/41248245591). Preserve older scalar streams and the historical Profile demo; retain the server's native interval/parameters limitation in [the research-design record](../Design/BENNETT_OBSERVATION_CONTEXT_BRIDGE.md).
