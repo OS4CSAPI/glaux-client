@@ -1,5 +1,11 @@
 # DIM / CSAPI Profile V2 — start here
 
+## Original OMS standard preserved — 30 October 2026
+
+**The complete original OMS 3.0.0 standard is now preserved and accessible.** Open the [**OMS original-document record and recovery instructions**](Primary_Sources/OGC_20-082r4_OMS_3.0.0.md) for the exact owner-uploaded **198-page OGC 20-082r4 PDF**, its full-document searchable text, stable Google Drive file IDs and verified checksum. The PDF was downloaded back and confirmed byte-for-byte identical to the upload. The actual PDF bytes are in the owner's connected Drive; this GitHub source record is the durable discovery and recovery pointer, not a claim that the binary is committed here.
+
+**Future chats and PITONs: use that preserved original; do not repeat the historical HTML-reader failure as a current lack of access, rely on metadata instead of the standard, or ask for another upload before trying it.** Earlier limited-access findings remain historical; making the original available does not silently revalidate their interpretations. This is source preservation only, not a new donor study or model change.
+
 ## Read first — owner correction and AI-drift case study, 30 October 2026
 
 The [**AI Hallucination and Research Drift Case Study**](DIM_Profile_V2_AI_Hallucination_and_Drift_Case_Study_v0.1_30OCT2026.md) is a standalone reference for future PITONs and chat recovery. It documents the unsupported promotion of “operational condition/status,” the return to power and TRSS/OmniSense without a demonstrated V2-wide priority comparison, and the owner's account of why V1 was restarted. **Power/condition is not an established sixth concept or the predetermined next subject.** The later-donor “challenge” framing did not satisfy the owner's intended neutral reconsideration; the five candidate meanings are not immutable slots for all later donors.
