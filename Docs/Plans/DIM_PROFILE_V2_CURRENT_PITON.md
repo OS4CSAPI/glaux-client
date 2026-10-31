@@ -2,9 +2,15 @@
 
 **31 October 2026 · Application branch only.** This short pointer exists because the live Glaux code and the full V2 research documents are **not on the same Git branch**.
 
-**[READ CANONICAL PITON v1.9 — 31 OCTOBER 2026](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md)**
+**[READ CURRENT PITON v2.0 — WHOLE-SYSTEM COURSE CORRECTION](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v2.0_31OCT2026.md)**
 
-The full PITON lives on branch `research/dim-profile-v2` in `Docs/Research/DIM_Profile_V2/`. It supersedes v1.8 for current state and explains the original 182-artifact donor corpus, the owner-requested research-drift correction, the candidate DIM/Profile, the real Bennett's Point data, the 52°North server round trips, source-quality/time preservation, actual Glaux pages, exact GitHub Actions, all unresolved semantic limitations, and safe restart instructions. **Do not merge this application branch with the research branch blindly.**
+**[READ CONTROLLING 43-STEP RECOVERY-TO-DELIVERY PLAN](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md)**
+
+**Status:** Plan and PITON created and linked, **0/43 execution steps completed**. Step 01 is NEXT on the owner's “proceed.” The owner requested a strategy assessment, then explicitly authorized this step-by-step plan and PITON update. The new work order begins with whole-System/source-native comparison, fair donor synthesis, then a connected DIM, testable CSAPI Profile and **one reusable cross-vendor** Glaux interpreter. The old SWE JSON contract recommendation is not the next work item. **Neither the plan nor this documentation commits a live app deployment or changes the Oracle server.**
+
+[Older full PITON v1.9 — October 31 live Bennett work](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md) remains the detailed record of the historic server and client experiments.
+
+The **current v2.0 PITON and plan** live on the separate `research/dim-profile-v2` branch under `Docs/Research/DIM_Profile_V2/`. The older v1.9 remains source evidence for the 182-artifact donor corpus, research-drift correction, candidate DIM/Profile, real Bennett’s Point data, live 52°North readbacks, Codex map and unresolved observation issues. **Do not merge this application branch with the research branch blindly.**
 
 ## Live application context
 
@@ -18,6 +24,6 @@ The full PITON lives on branch `research/dim-profile-v2` in `Docs/Research/DIM_P
 
 ## Current control
 
-The owner said **“idk man, this stinks”** after the 31-October standards-encoding discussion, then requested a robust PITON. The previously suggested SWE JSON test is **not an authorized next task**, even though the decision document lists it. Recover first and explain in ordinary language. **No production deploy, server change, automatic standards experiment, donor priority or Profile adoption is authorized by this pointer.**
+The owner explicitly directed the new whole-System recovery-to-delivery plan and PITON update after the comprehensive strategic assessment. **The first execution task, Step 01, is not yet performed.** On the next “proceed,” do only Step 01 in the research branch and report its grounded findings and Step 02. No old SWE JSON test, new server write, app deployment, donor-class adoption or additional full-plan step follows from this documentation change alone.
 
 The earlier [MERLIN/MPSS continuity document](CONTINUITY.md) retains its 24-October historical context and is **not the controlling V2 restart source**.
