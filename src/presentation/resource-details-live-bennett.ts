@@ -1,4 +1,5 @@
 import { node, renderResourceDetailsTemplate } from './resource-details-template';
+import { renderResourceMap } from './resource-details-map';
 import './resource-details-profile-test.css';
 
 const base='https://129-80-248-53.sslip.io/csapi-pygeoapi';
@@ -7,7 +8,7 @@ const cases=[
   {system:'378df868-d52f-4847-b783-865ec0c1df5e',uid:'urn:merlin:v2:bennetts:ee181:probe3',serial:'21281600077814',stream:'d97c6dcc-d09d-4c70-aae9-a1b63c29e4b9',expectedTime:'2024-04-18T17:00:00Z',expectedValue:27.3},
 ] as const;
 
-interface SystemRec{ id:string;label?:string;description?:string;uniqueId?:string;definition?:string;typeOf?:{href?:string;uid?:string;title?:string};identifiers?:Array<{label?:string;value?:string;definition?:string}>;[k:string]:unknown }
+interface SystemRec{ id:string;label?:string;description?:string;uniqueId?:string;definition?:string;typeOf?:{href?:string;uid?:string;title?:string};identifiers?:Array<{label?:string;value?:string;definition?:string}>;position?:unknown;[k:string]:unknown }
 interface Stream{ id?:string;name?:string;description?:string;observedProperties?:Array<{label?:string;definition?:string}>;live?:boolean;schema?:unknown;[k:string]:unknown }
 interface Obs{ id?:string;phenomenonTime?:unknown;resultTime?:unknown;result?:unknown;[k:string]:unknown }
 interface Loaded{caseDef:typeof cases[number];system:SystemRec;stream:Stream;observations:Obs[]}
@@ -53,18 +54,50 @@ function sources(content:HTMLElement):void{const s=node('section','rdp-section')
  ['Candidate Profile — Bennett’s Point attribution','https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/CSAPI_Profile.md#which-probe-measured-the-air-temperature'],
  ['ACE Basin operator metadata','https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf'],
  ]){const li=node('li');const a=node('a',undefined,label);a.href=href;a.target='_blank';a.rel='noopener noreferrer';li.append(a);ul.append(li);}s.append(ul);content.append(s);}
+
+/** Reuse Codex's existing map renderer for one identified physical System at a time.
+ * A station label or past observation is never used to manufacture coordinates.
+ */
+function renderBennettMap(content:HTMLElement,state:State,chosenId:string|undefined,onSelect:(id:string)=>void):()=>void{
+ const section=node('section','rdp-section');
+ section.append(node('h3',undefined,'Reported location of an identified probe'));
+ section.append(node('p','rdp-footnote','Choose a physical EE181 System. This map uses only that System’s returned position; a station name, deployment history, or observation timestamp does not establish probe coordinates.'));
+ const selectorLabel=node('label',undefined,'Physical System');
+ const selector=node('select');selector.id='rd-bennett-map-system';selectorLabel.htmlFor=selector.id;
+ for(const item of state.loaded){const option=node('option',undefined,item.system.label??item.system.id);option.value=item.system.id;selector.append(option);}
+ selector.value=state.loaded.some(item=>item.system.id===chosenId)?chosenId!:state.loaded[0]?.system.id??'';
+ const host=node('div','rd-bennett-map-host');
+ const selection=node('div','rdp-picker');selection.append(selectorLabel,selector);
+ section.append(selection,host);content.append(section);
+ let cleanup:()=>void=()=>{};
+ const draw=()=>{
+   cleanup();
+   host.replaceChildren();
+   const selected=state.loaded.find(item=>item.system.id===selector.value);
+   if(!selected){empty(host,'No physical System is selected.');cleanup=()=>{};return;}
+   onSelect(selected.system.id);
+   cleanup=renderResourceMap(host,selected.system.position);
+ };
+ selector.addEventListener('change',draw);
+ draw();
+ return ()=>{selector.removeEventListener('change',draw);cleanup();};
+}
+
 export function renderResourceDetailsLiveBennett(container:HTMLElement):void{
  const state:State={loading:true,loaded:[],raw:{}};
+ let disposeMap: (()=>void)|undefined;
+ let selectedMapSystemId: string|undefined;
  renderResourceDetailsTemplate(container,{pageTitle:'Bennett’s Point · live CSAPI V2 case',pageIntro:'The controlled two-probe Bennett’s Point case read back from the live Oracle-hosted 52°North/pygeoapi server.',renderBlankContent({categoryId,view,content}){
+   disposeMap?.(); disposeMap=undefined;
    if(state.loading){empty(content,'Loading controlled case from live CSAPI server…');return true;} if(state.error){empty(content,'Live retrieval failed: '+state.error);return true;}
    const k=categoryId+'/'+view;
    if(k==='operational/Overview')overview(content,state); else if(k==='operational/Equipment')equipment(content,state); else if(k==='operational/Communications')communications(content,state);
-   else if(k==='operational/Map')empty(content,'No coordinates were published for this bounded controlled case.'); else if(k==='operational/Condition')empty(content,'No current equipment-condition assertion is published in this case.');
+   else if(k==='operational/Map')disposeMap=renderBennettMap(content,state,selectedMapSystemId,(id)=>{selectedMapSystemId=id;}); else if(k==='operational/Condition')empty(content,'No current equipment-condition assertion is published in this case.');
    else if(k==='activity/Table')activity(content,state); else if(k==='activity/Charts')empty(content,'Only two bounded historical observations are loaded; this page does not infer a trend.');
    else if(k.startsWith('commands/'))empty(content,'No command/control resources are part of this controlled case.'); else if(k==='management/Record')record(content,state);
    else if(k==='management/Configuration')empty(content,'No current configuration/readback is published in this case.'); else if(k==='management/Sources')sources(content); else empty(content,'No content for this view.');
    return true;
- },sourceSummary:'What is live here?',sourceDescription:'Glaux performs browser GETs against the deployed 52°North/pygeoapi CSAPI service on each load. The two temperature measurements are historical April 2024 observations that were deliberately loaded as a controlled V2 experiment; they are not current sensor telemetry.',designRecord:'Research/DIM_Profile_V2/Candidate_Specification/Resource_Details_Placement_Matrix.md'});
+ },sourceSummary:'What is live here?',sourceDescription:'Glaux performs browser GETs against the deployed 52°North/pygeoapi CSAPI service on each load. The two temperature measurements are historical April 2024 observations that were deliberately loaded as a controlled V2 experiment; they are not current sensor telemetry.',designRecord:'Design/BENNETT_LIVE_MAP_INTEGRATION.md'});
  container.classList.add('resource-profile-prototype');
  const stage=container.querySelector<HTMLElement>('.rd-canvas-stage');const frame=stage?.querySelector<HTMLElement>('.rd-module');if(!frame)throw new Error('Resource Details template missing');
  const title=frame.querySelector<HTMLElement>('.rd-resource-name');if(title)title.textContent="Bennett's Point · live V2";
