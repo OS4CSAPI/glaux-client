@@ -4,11 +4,14 @@ import {
   mappedFieldCount, mappingsForView, unmappedFields, projectSourceFixture,
   type SourceCase, type SourceField, type MappedField, type ViewKey,
 } from '../profile/resource-details-proof';
+import { caseKey, measures } from '../profile/published-measurements';
+import { renderPublished } from './published-measurements';
 import './resource-details-profile-test.css';
 
 type PresentationMode = 'profile' | 'generic';
 const options:ReadonlyArray<{key:string;label:string}> = [
   { key:'sck23',label:'Smart Citizen Kit 2.3 — product design' },
+  { key:caseKey,label:'Dragino + Campbell — published measurement examples' },
   { key:'trss',label:'TRSS ETU-II — synthetic configuration' },
   { key:'core2',label:'OmniSense Core2 — synthetic equipment' },
   { key:'core5',label:'OmniSense Core5ADS — synthetic condition' },
@@ -137,19 +140,21 @@ function insightText(example:SourceCase):string{
 }
 export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   let selected:SourceCase=smartCitizenDesign;
+  let published=new URLSearchParams(window.location.search).get('case')===caseKey;
   let mode:PresentationMode='profile';
   let pending=0;
   renderResourceDetailsTemplate(container,{
     pageTitle:'Profile-aware Resource Details · source-to-UI test',
-    pageIntro:'Compare a generic source-field listing with one provisional, meaning-aware client view. Four source cases share the same Resource Details frame; their real differences and evidence limits remain visible.',
+    pageIntro:'Compare published measurement examples, a product design or historical synthetic fixtures in the same Resource Details frame.',
     renderBlankContent({categoryId,view,content}){
       const key=(categoryId+'/'+view) as ViewKey;
-      if(mode==='profile')renderCandidate(content,selected,key);
+      if(published)renderPublished(content,key,mode==='generic');
+      else if(mode==='profile')renderCandidate(content,selected,key);
       else renderGeneric(content,selected,key);
       return true;
     },
     sourceSummary:'What this tests — and what it does not',
-    sourceDescription:'A small client-side demonstration of the thesis: declared community/profile meanings could let one generic resource view organize different manufacturers without reproducing their proprietary UI pixel-for-pixel. SCK2.3 is a documented product kind; other examples are synthetic fixture replays. Neither live CSAPI retrieval nor conformance to a completed DIM/Profile has been demonstrated.',
+    sourceDescription:'This client reads documented source meanings. Dragino and Campbell use manufacturer examples and interface definitions; Smart Citizen is a product design; TRSS and OmniSense are synthetic. No live device or observation service is connected in this test.',
     designRecord:'Design/RESOURCE_DETAILS_PROFILE_TEST.md',
   });
   container.classList.add('resource-profile-prototype');
@@ -161,6 +166,7 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   const pickerLabel=node('label',undefined,'Source case');
   const picker=node('select');picker.id='rdp-case-select';pickerLabel.htmlFor=picker.id;
   for(const opt of options){const o=node('option',undefined,opt.label);o.value=opt.key;picker.append(o);}
+  picker.value=published?caseKey:'sck23';
   const pickerWrap=node('div','rdp-picker');pickerWrap.append(pickerLabel,picker);
   const modeGroup=node('div','rdp-mode-group');
   modeGroup.setAttribute('role','group');modeGroup.setAttribute('aria-label','Rendering mode');
@@ -182,18 +188,18 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   for(const m of marker)m.textContent='Demonstration data · marking not assigned';
   const refresh=frame.querySelector<HTMLButtonElement>('.rd-refresh');if(refresh)refresh.title='No live CSAPI connection in this study';
   const repaint=():void=>{
-    if(title)title.textContent=selected.title;
+    if(title)title.textContent=published?'Dragino + Campbell':selected.title;
     if(dd.length>=3){
-      dd[0].textContent=selected.resourceStanding;
-      dd[1].textContent=selected.identifier;
-      dd[2].textContent=selected.source;
+      dd[0].textContent=published?'Published examples':selected.resourceStanding;
+      dd[1].textContent=published?'No installed unit':selected.identifier;
+      dd[2].textContent=published?'Manufacturer documentation':selected.source;
     }
-    if(footer)footer.textContent='Candidate semantics · no actual device control';
+    if(footer)footer.textContent=published?'Published examples · not live readings':'Candidate semantics · no actual device control';
     genericBtn.setAttribute('aria-pressed',String(mode==='generic'));
     profileBtn.setAttribute('aria-pressed',String(mode==='profile'));
-    count.textContent=String(selected.fields.length)+' source fields · '+String(mappedFieldCount(selected))+' recognized by candidate rules · '+String(unmappedFields(selected).length)+' unknown meanings retained';
-    note.textContent=selected.warning;
-    insight.textContent='What this preserves: '+insightText(selected);
+    count.textContent=published?`${measures.length} fields · ${measures.filter(r=>r.value!==undefined).length} published example values`:String(selected.fields.length)+' source fields · '+String(mappedFieldCount(selected))+' recognized by candidate rules · '+String(unmappedFields(selected).length)+' unknown meanings retained';
+    note.textContent=published?'Campbell’s logger example is separate from the ClimaVue manual. It is not a weather report from that instrument.':selected.warning;
+    insight.textContent=published?'Try “Show air temperature only.” The wiring-panel temperature disappears; the ClimaVue air-temperature field stays, without borrowing a reading.':'What this preserves: '+insightText(selected);
     const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]');
     active?.click();
   };
@@ -201,7 +207,13 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   profileBtn.addEventListener('click',()=>{mode='profile';repaint();});
   picker.addEventListener('change',()=>{
     const key=picker.value;const current=++pending;
-    if(key==='sck23'){selected=smartCitizenDesign;repaint();return;}
+    if(key===caseKey){
+      published=true; mode='profile';
+      frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
+      frame.querySelector<HTMLButtonElement>('#rd-view-overview')?.click();
+      repaint(); return;
+    }
+    if(key==='sck23'){published=false;selected=smartCitizenDesign;repaint();return;}
     const fixture=inputFixtures.find(f=>f.key===key);
     if(!fixture)return;
     count.textContent='Loading local source fixture…';
@@ -210,10 +222,11 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       return response.json() as Promise<Parameters<typeof projectSourceFixture>[0]>;
     }).then(doc=>{
       if(current!==pending)return;
-      selected=projectSourceFixture(doc,fixture.key);
+      selected=projectSourceFixture(doc,fixture.key);published=false;
       repaint();
     }).catch(err=>{
       if(current!==pending)return;
+      picker.value=published?caseKey:selected.key;
       count.textContent='Could not load this source fixture: '+(err instanceof Error?err.message:String(err));
     });
   });
