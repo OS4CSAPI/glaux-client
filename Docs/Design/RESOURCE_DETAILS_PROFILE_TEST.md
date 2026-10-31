@@ -1,5 +1,21 @@
 # Resource Details View — cross-vendor candidate profile-aware test
 
+## Temperature of what? — Dragino and Campbell, 30 October 2026
+
+[**Open the comparison in Glaux**](https://glaux-client.pages.dev/?page=resource-details-profile-test&case=temperature). Check **Show air temperature only**. Two rows remain: the Dragino S31-LB probe's **27.2 °C** and the ClimaVue 50's **No reading supplied**. Campbell's **25.91098 °C** disappears because it describes the CR1000X logger's wiring panel, not the air. Uncheck the box to see it again alongside the other quantities.
+
+| What the screen labels | Published example or documented capability |
+|---|---|
+| Dragino S31-LB · external SHT31 probe | **27.2 °C** ambient air temperature and **56.6%** relative humidity, decoded from published history entry C-E01. Two quantities from one probe. |
+| Campbell CR1000X · logger | **25.91098 °C** wiring-panel temperature, from the manufacturer's separate `PanelTemp` status example. |
+| Campbell ClimaVue 50 · weather instrument | Air temperature and humidity-sensor temperature are defined at `aR7!` positions 8 and 12; no readings supplied for either field. |
+
+Select **Generic CSAPI-style fields** to see the corresponding source field names or positions without changing the values. **Management → Sources** links to the evidence. This is the existing screen, not another application: the source picker still provides the previous examples. The common reader associates values with fields by source context, output and field name; the air-only filter uses the field's property definition, not its label, manufacturer or unit. Inputs are local, pinned copies of the [worked Profile examples](https://github.com/OS4CSAPI/glaux-client/tree/aa655461ac949648f32398291f7e00e77532e9c1/Docs/Research/DIM_Profile_V2/Candidate_Specification/examples), with Dragino's published C-E01 entry decoded in the input adapter.
+
+**What was verified:** The [build, tests and deployment](https://github.com/OS4CSAPI/glaux-client/actions/runs/41165469841) published commit `27688aa6f7599dcffb1117ec1b0e634ec2633539` to [this immutable Pages deployment](https://6a1d2300.glaux-client.pages.dev/?page=resource-details-profile-test&case=temperature). A browser on the public production URL returned the five rows above, two after filtering, and five after clearing the filter. It also showed the source-field view, source links and a successful switch to Smart Citizen and back. This verifies client presentation of the supplied examples, not live hardware, a joined Campbell station, CSAPI service ingestion or full Profile conformance.
+
+## Earlier experiment — 28 October 2026
+
 **Project-wide objective and approved recovery:** [DIM/Profile V2 Original Problem and Outcome Baseline](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md) and [PITON v1.5](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.5_28OCT2026.md), on the **separate research branch**. These must be read before using this experiment to propose new model/profile/UI work. They preserve the original TRSS/OmniSense vendor-to-CSAPI normalization and presentation-fidelity problem, which earlier PITONs omitted.
 
 **Owner assessment, 28 October 2026:** This profile-aware version is **“quite janky” but “on the right path,” at an appropriate preliminary stage and nowhere near finished**. The meaningful achievement is starting to render actual source-fixture JSON into the shared Resource Details canvases; the observed behavior should guide **iterative refinement of the DIM, Profile and profile-aware client together**. This is neither acceptance of the prototype's final navigation, nor proof of completed client/server interoperability. The prior research-commentary Smart Citizen page was **not** what the owner asked to test and is retained only for its optional research context.
