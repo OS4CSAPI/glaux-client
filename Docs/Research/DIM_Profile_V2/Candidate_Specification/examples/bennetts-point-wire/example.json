@@ -1,0 +1,23 @@
+{
+  "note": "Offline resource cache, not an API response. Each body is one application/swe+json observation; context supplies its parent stream. System URIs and local field definitions are project identifiers. The two temperatures and flags are historical station values.",
+  "stream": "datastreams/bp-air-mean",
+  "station": "acebpmet",
+  "schema": {
+    "obsFormat": "application/swe+json", "encoding": {"type": "JSONEncoding"},
+    "recordSchema": {"type":"DataRecord","label":"Station air temperature: 15-minute mean of five-second samples","fields":[
+      {"name":"stamp","type":"Time","definition":"http://www.opengis.net/def/property/OGC/0/SamplingTime","label":"Station time marking the averaging period, not result availability","referenceFrame":"http://www.opengis.net/def/trs/BIPM/0/UTC","uom":{"href":"http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"}},
+      {"name":"window","type":"TimeRange","definition":"urn:example:bp:nominal-averaging-window","label":"Nominal averaging interval (station stamp treated as closing time)","referenceFrame":"http://www.opengis.net/def/trs/BIPM/0/UTC","uom":{"href":"http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"}},
+      {"name":"air","type":"Quantity","definition":"https://vocab.nerc.ac.uk/standard_name/air_temperature/","label":"Mean air temperature","uom":{"code":"Cel"}},
+      {"name":"qc","type":"Text","definition":"urn:example:bp:air-temperature-source-flag","label":"Operator quality flag for mean air temperature","description":"F_ATemp verbatim, including any codes and spacing; never the row flag or another quantity's flag."},
+      {"name":"probe","type":"Text","optional":true,"definition":"urn:example:bp:attributed-sensing-unit","label":"Sensing System UID inferred from the station's installation history","description":"Not the station, logger or product datasheet. Omit when a single physical probe cannot be attributed."}
+    ]}
+  },
+  "systems": [
+    {"type":"PhysicalComponent","uniqueId":"urn:example:bp:system:unit-a","label":"Bennett's Point EE181, sensor 4","identifiers":[{"definition":"http://sensorml.com/ont/swe/property/SerialNumber","label":"Probe serial number","value":"222016000109CE"}]},
+    {"type":"PhysicalComponent","uniqueId":"urn:example:bp:system:unit-b","label":"Bennett's Point EE181, sensor 3","identifiers":[{"definition":"http://sensorml.com/ont/swe/property/SerialNumber","label":"Probe serial number","value":"21281600077814"}]}
+  ],
+  "responses": [
+    {"resource":"observations/bp-air-001","parent":"datastreams/bp-air-mean","body":{"stamp":"2024-04-15T17:00:00Z","window":["2024-04-15T16:45:00Z","2024-04-15T17:00:00Z"],"air":29.1,"qc":"<0> ","probe":"urn:example:bp:system:unit-a"}},
+    {"resource":"observations/bp-air-002","parent":"datastreams/bp-air-mean","body":{"stamp":"2024-04-18T17:00:00Z","window":["2024-04-18T16:45:00Z","2024-04-18T17:00:00Z"],"air":27.3,"qc":"<0> ","probe":"urn:example:bp:system:unit-b"}}
+  ]
+}
