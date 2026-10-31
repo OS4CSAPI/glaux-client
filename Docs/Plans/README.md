@@ -1,14 +1,20 @@
 # Plans and continuity
 
+## Current DIM/Profile V2 recovery and delivery plan — 31 October 2026
 
-**Current DIM / CSAPI Profile V2 recovery — 31 October 2026:** start with the
+Start with the [application continuity pointer](DIM_PROFILE_V2_CURRENT_PITON.md), then the canonical [PITON v2.0](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v2.0_31OCT2026.md) and [43-step Whole-System Recovery-to-Delivery Plan](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md) on the separate `research/dim-profile-v2` branch.
+
+**Status: Step 01 is NEXT; 0/43 execution steps complete.** The plan responds to the owner's human-readable strategic assessment: put whole sensing Systems, fair source-donor synthesis and **one reusable** CSAPI Profile-aware interpreter ahead of further isolated 52°North/SWE JSON troubleshooting. It preserves the existing app and server work. The prior notes below are historical and do not authorize old execution paths. Do **not** deploy or merge branches merely because documentation was updated.
+
+
+
+**Historical v1.9 recovery note (superseded by v2.0 above):** start with the
 [application-side PITON pointer](DIM_PROFILE_V2_CURRENT_PITON.md), which links the
 [canonical, robust PITON v1.9](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md)
 in the **separate research branch**. That handoff accounts for the latest real
 Bennett's Point data, live 52°North CSAPI experiments, Codex Map integration,
 successful verification runs, candidate DIM/Profile, unresolved standards gaps
-and owner feedback. The last suggested SWE JSON contract test is **not yet an
-authorized next step**. Earlier notes below describe historical MPSS/Smart
+and owner feedback. The subsequent v2.0 plan authorizes a broader course of work; the SWE JSON contract test is **not the next step**. Earlier notes below describe historical MPSS/Smart
 Citizen work and should not override this V2 recovery.
 
 
