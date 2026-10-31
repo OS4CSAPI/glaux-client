@@ -17,7 +17,7 @@ export interface ExampleExperimentPage extends ExperimentPageMetadata, ExampleOp
 
 export interface TemplateExperimentPage extends ExperimentPageMetadata {
   kind: 'template';
-  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test' | 'resource-details-live-csapi' | 'resource-details-live-bennett';
+  id: 'resource-details-template' | 'resource-details-activity' | 'resource-details-smart-citizen' | 'resource-details-profile-test' | 'resource-details-live-csapi' | 'resource-details-live-bennett' | 'resource-details-live-map';
 }
 
 export type ExperimentPage = ExampleExperimentPage | TemplateExperimentPage;
@@ -98,6 +98,14 @@ export const experimentPages: readonly ExperimentPage[] = [
       at: '2026-10-28T15:21:55-04:00',
       summary: 'Added a cross-vendor, term-driven semantic projection and generic-vs-profile-aware Resource Details comparison with source-fidelity tests.',
       commit: 'f203bef6fe08797e57151674fb4f2a04a81562f9',
+    },
+  },
+  {
+    kind: 'template', id: 'resource-details-live-map', title: 'Resource Details · live resource map',
+    description: 'Explore the selected live System’s reported location with satellite imagery or a street basemap, an explicit coordinate interpretation and a readable fallback.',
+    latestUpdate: {
+      at: '2026-10-31T15:12:25-04:00',
+      summary: 'Added a separate live resource map view with source position and coordinate-order transparency.',
     },
   },
   {

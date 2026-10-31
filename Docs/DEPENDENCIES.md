@@ -61,6 +61,19 @@ CSAPI imitations. The landing page also loads an actual CSAPI resource constant.
 
 ## Notices
 
+The separate live resource-map page uses Leaflet `1.9.4` (BSD 2-Clause),
+pinned exactly in the application lockfile, with `@types/leaflet` `1.9.21`
+as a development-only TypeScript declaration dependency. Leaflet's full license
+is included in `public/THIRD_PARTY_NOTICES.txt`. The map loads EOX's Sentinel-2
+cloudless 2016 imagery by default and can switch to OpenStreetMap tiles; those
+services are external runtime dependencies, not bundled data. Provider attribution
+is displayed on the map. The EOX imagery is historical, provided under CC BY 4.0,
+and has no service-level guarantee; the OSM tile usage policy applies.
+Sources: [Leaflet](https://leafletjs.com/),
+[EOX usage](https://cloudless.eox.at/documentation/usage),
+[EOX terms](https://cloudless.eox.at/documentation/faq),
+[OSM tile policy](https://operations.osmfoundation.org/policies/tiles/).
+
 Preserve the upstream `LICENSE` in the submodule. The BSD-3-Clause license and
 Camptocamp attribution are reproduced in `public/THIRD_PARTY_NOTICES.txt`, which
 Vite copies unchanged to production output and the landing page links to.

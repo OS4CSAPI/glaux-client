@@ -1,4 +1,5 @@
 import { node, renderResourceDetailsTemplate } from './resource-details-template';
+import { renderResourceMap } from './resource-details-map';
 import './resource-details-profile-test.css';
 
 const base = 'https://129-80-248-53.sslip.io/csapi-pygeoapi';
@@ -35,6 +36,8 @@ interface LiveState {
   observations: Array<{ stream: DataStream; rows: Observation[] }>;
   loading: boolean;
   error?: string;
+  partial?: string;
+  relatedLoading?: boolean;
   fetchedAt?: string;
   raw: Record<string, unknown>;
 }
@@ -70,6 +73,8 @@ function renderOverview(content:HTMLElement,state:LiveState):void{
   field(dl,'Observations currently returned',String(state.observations.reduce((n,x)=>n+x.rows.length,0)));
   field(dl,'Retrieved at',state.fetchedAt ?? 'Not yet retrieved','This is the client retrieval time, not sensor phenomenon time.');
   s.append(dl,node('p','rdp-footnote','Every value on this page is reconstructed from HTTP GET responses to the live Oracle-hosted 52°North/pygeoapi CSAPI service. The server may contain test or historical resources; live retrieval does not by itself mean live sensor telemetry.'));
+  if(state.relatedLoading) s.append(node('p','rdp-footnote','Related resources are still loading.'));
+  if(state.partial) s.append(node('p','rdp-footnote','Some related resources could not be loaded: '+state.partial));
   content.append(s);
 }
 function renderMap(content:HTMLElement,state:LiveState):void{
@@ -165,18 +170,24 @@ function renderSources(content:HTMLElement,state:LiveState):void{
   s.append(ul,node('p','rdp-footnote','Requests are browser-side, read-only GETs. Refreshing this page requests the service again.')); content.append(s);
 }
 
-export function renderResourceDetailsLiveCsapi(container:HTMLElement):void{
+export function renderResourceDetailsLiveCsapi(container:HTMLElement, mapPage = false):void{
   const state:LiveState={systems:[],datastreams:[],deployments:[],subsystems:[],observations:[],loading:true,raw:{}};
   let selectedId='';
+  let loadVersion=0;
+  let disposeMap: (() => void) | undefined;
   renderResourceDetailsTemplate(container,{
-    pageTitle:'Resource Details · live 52°North CSAPI retrieval',
-    pageIntro:'A separate read-only page that queries the deployed Oracle-hosted 52°North/pygeoapi Connected Systems API instead of local fixtures.',
+    pageTitle:mapPage ? 'Resource Details · live resource map' : 'Resource Details · live 52°North CSAPI retrieval',
+    pageIntro:mapPage ? 'Explore a selected live-server System’s reported location in the Resource Details Map view.' : 'A separate read-only page that queries the deployed Oracle-hosted 52°North/pygeoapi Connected Systems API instead of local fixtures.',
     renderBlankContent({categoryId,view,content}){
+      disposeMap?.(); disposeMap = undefined;
       if(state.loading){empty(content,'Loading live CSAPI responses…');return true;}
       if(state.error){empty(content,'Live retrieval failed: '+state.error);return true;}
       const key=categoryId+'/'+view;
       if(key==='operational/Overview')renderOverview(content,state);
-      else if(key==='operational/Map')renderMap(content,state);
+      else if(key==='operational/Map') {
+        if(mapPage) disposeMap=renderResourceMap(content,state.selected?.position);
+        else renderMap(content,state);
+      }
       else if(key==='operational/Equipment')renderEquipment(content,state);
       else if(key==='operational/Communications')renderCommunications(content,state);
       else if(key==='operational/Condition')renderCondition(content);
@@ -212,7 +223,7 @@ export function renderResourceDetailsLiveCsapi(container:HTMLElement):void{
   const refreshTemplate=frame.querySelector<HTMLButtonElement>('.rd-refresh');
   if(refreshTemplate) refreshTemplate.hidden=true;
 
-  const rerender=():void=>{
+  const rerender=(refreshContent=true):void=>{
     if(title)title.textContent=state.selected?.label ?? state.selected?.name ?? 'Live CSAPI';
     if(identity.length>=3){
       identity[0].textContent=state.selected?.type ?? 'System';
@@ -220,39 +231,60 @@ export function renderResourceDetailsLiveCsapi(container:HTMLElement):void{
       identity[2].textContent='52°North / pygeoapi live GET';
     }
     if(footer)footer.textContent=state.loading?'Live retrieval in progress':'Live read-only CSAPI retrieval';
-    status.textContent=state.loading?'Loading…':state.error?state.error:(state.fetchedAt?'Retrieved '+state.fetchedAt:'Not loaded');
-    const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]'); active?.click();
+    status.textContent=state.loading?'Loading…':state.error?state.error:(state.fetchedAt?'Retrieved '+state.fetchedAt+(state.relatedLoading?' · Loading related resources':state.partial?' · Some related resources failed to load':''):'Not loaded');
+    if(refreshContent){const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]'); active?.click();}
   };
 
   const load=async(id?:string):Promise<void>=>{
-    state.loading=true; state.error=undefined; rerender();
+    const version=++loadVersion;
+    state.loading=true; state.error=undefined; state.partial=undefined;state.relatedLoading=false;
+    if(mapPage){state.selected=undefined;state.datastreams=[];state.deployments=[];state.subsystems=[];state.observations=[];state.raw={};state.fetchedAt=undefined;}
+    rerender();
     try{
       const systemsDoc=await getJson<Collection<SystemRecord>>('/systems');
+      if(version!==loadVersion)return;
       state.raw.systems=systemsDoc; state.systems=features(systemsDoc);
       const chosen=id && state.systems.some(s=>s.id===id) ? id : (selectedId && state.systems.some(s=>s.id===selectedId)?selectedId:state.systems[0]?.id);
       if(!chosen)throw new Error('The live Systems collection is empty.');
       selectedId=chosen;
-      state.selected=await getJson<SystemRecord>('/systems/'+encodeURIComponent(chosen));
+      const selected=await getJson<SystemRecord>('/systems/'+encodeURIComponent(chosen));
+      if(version!==loadVersion)return;
+      state.selected=selected;
       state.raw.selectedSystem=state.selected;
+      if(mapPage){
+        select.replaceChildren();
+        for(const sys of state.systems){const option=node('option',undefined,sys.label ?? sys.name ?? sys.id);option.value=sys.id;select.append(option);}
+        select.value=selectedId;
+        state.fetchedAt=new Date().toISOString();state.loading=false;state.relatedLoading=true;rerender();
+      }
+      const failures:string[]=[];
+      const related = async <T>(path:string):Promise<Collection<T>> => {
+        try{return await getJson<Collection<T>>(path);}
+        catch(error){if(!mapPage)throw error;failures.push(path+': '+(error instanceof Error?error.message:String(error)));return {items:[]};}
+      };
       const [dsDoc,depDoc,subDoc]=await Promise.all([
-        getJson<Collection<DataStream>>('/systems/'+encodeURIComponent(chosen)+'/datastreams'),
-        getJson<Collection<unknown>>('/systems/'+encodeURIComponent(chosen)+'/deployments'),
-        getJson<Collection<SystemRecord>>('/systems/'+encodeURIComponent(chosen)+'/subsystems'),
+        related<DataStream>('/systems/'+encodeURIComponent(chosen)+'/datastreams'),
+        related<unknown>('/systems/'+encodeURIComponent(chosen)+'/deployments'),
+        related<SystemRecord>('/systems/'+encodeURIComponent(chosen)+'/subsystems'),
       ]);
+      if(version!==loadVersion)return;
       state.raw.datastreams=dsDoc; state.raw.deployments=depDoc; state.raw.subsystems=subDoc;
       state.datastreams=features(dsDoc); state.deployments=features(depDoc); state.subsystems=features(subDoc);
-      state.observations=await Promise.all(state.datastreams.slice(0,10).filter(ds=>ds.id).map(async ds=>{
-        const doc=await getJson<Collection<Observation>>('/datastreams/'+encodeURIComponent(ds.id!)+'/observations');
-        state.raw['observations:'+ds.id]=doc; return {stream:ds,rows:features(doc)};
+      const observations=await Promise.all(state.datastreams.slice(0,10).filter(ds=>ds.id).map(async ds=>{
+        const doc=await related<Observation>('/datastreams/'+encodeURIComponent(ds.id!)+'/observations');
+        if(version===loadVersion)state.raw['observations:'+ds.id]=doc; return {stream:ds,rows:features(doc)};
       }));
+      if(version!==loadVersion)return;
+      state.observations=observations;
+      state.partial=failures.length?failures.join('; '):undefined;
       state.fetchedAt=new Date().toISOString();
       select.replaceChildren();
       for(const sys of state.systems){
         const option=node('option',undefined,sys.label ?? sys.name ?? sys.id); option.value=sys.id; select.append(option);
       }
       select.value=selectedId;
-    }catch(error){state.error=error instanceof Error?error.message:String(error);}
-    finally{state.loading=false;rerender();}
+    }catch(error){if(version===loadVersion)state.error=error instanceof Error?error.message:String(error);}
+    finally{if(version===loadVersion){state.loading=false;state.relatedLoading=false;rerender(!(mapPage && !state.error && frame.querySelector('.rd-map-widget')));}}
   };
   select.addEventListener('change',()=>void load(select.value));
   refresh.addEventListener('click',()=>void load(selectedId));

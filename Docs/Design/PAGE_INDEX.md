@@ -28,6 +28,11 @@ the index copy.
 
 A third standalone template-derived page, `/?page=resource-details-smart-citizen`, uses the same 560 × 440 Resource Details view with source-linked manufacturer design facts from the I01–I13 Smart Citizen DIM case study on `research/dim-profile-v2`. It explicitly marks individual identifiers, live Observations, configuration and operational state as unverified. It does not claim any actual System resource or request live data; the original blank template and Activity table remain unchanged.
 
+The separate `/?page=resource-details-live-map` page reuses the live CSAPI
+Resource Details view and adds an interactive map for supported reported System
+positions. See [the map design record](RESOURCE_DETAILS_LIVE_MAP.md) for its
+coordinate interpretation, source and basemap limitations.
+
 When adding or changing a page, update its catalogue entry in the same change:
 
 - Keep the `id` stable so existing page links continue to work.

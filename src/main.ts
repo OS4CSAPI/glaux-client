@@ -161,6 +161,7 @@ if (selectedTemplate) {
   document.title = `${selectedTemplate.title} | Glaux Client`;
   if (selectedTemplate.id === 'resource-details-profile-test') renderResourceDetailsProfileTest(mount);
   else if (selectedTemplate.id === 'resource-details-live-csapi') renderResourceDetailsLiveCsapi(mount);
+  else if (selectedTemplate.id === 'resource-details-live-map') renderResourceDetailsLiveCsapi(mount, true);
   else if (selectedTemplate.id === 'resource-details-live-bennett') renderResourceDetailsLiveBennett(mount);
   else if (selectedTemplate.id === 'resource-details-smart-citizen') renderResourceDetailsSmartCitizen(mount);
   else if (selectedTemplate.id === 'resource-details-activity') renderResourceDetailsActivity(mount);

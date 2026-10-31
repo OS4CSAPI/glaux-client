@@ -15,12 +15,18 @@ const examples = [
   { id: 'core5', heading: 'OmniSense Core5ADS', updatedAt: '2026-10-24T05:50:09-04:00' },
   { id: 'mpss', heading: 'MPSS technical-description contract example', updatedAt: '2026-10-24T05:50:09-04:00' },
 ];
-const templates = [
+const staticPages = [
   { id: 'resource-details-template', heading: 'Resource Details View template', updatedAt: '2026-10-24T16:24:47-04:00' },
   { id: 'resource-details-activity', heading: 'Resource Details View · Activity table', updatedAt: '2026-10-26T12:43:36-04:00' },
   { id: 'resource-details-smart-citizen', heading: 'Smart Citizen Kit 2.3 · DIM research test drive', updatedAt: '2026-10-28T13:13:22-04:00' },
-  { id: 'resource-details-profile-test', heading: 'Profile-aware Resource Details · semantic test', updatedAt: '2026-10-28T15:21:55-04:00' },
+  { id: 'resource-details-profile-test', heading: 'Profile-aware Resource Details · source-to-UI test', updatedAt: '2026-10-28T15:21:55-04:00' },
 ];
+const livePages = [
+  { id: 'resource-details-live-csapi', heading: 'Resource Details · live 52°North CSAPI retrieval', updatedAt: '2026-10-31T15:00:00-04:00' },
+  { id: 'resource-details-live-bennett', heading: 'Bennett’s Point · live CSAPI V2 case', updatedAt: '2026-10-31T15:05:00-04:00' },
+  { id: 'resource-details-live-map', heading: 'Resource Details · live resource map', updatedAt: '2026-10-31T15:12:25-04:00' },
+];
+const templates = [...staticPages, ...livePages];
 const pages = [...templates, ...examples];
 const pageHref = entry => `/?${templates.some(template => template.id === entry.id) ? 'page' : 'example'}=${entry.id}`;
 
@@ -59,8 +65,9 @@ const pageHref = entry => `/?${templates.some(template => template.id === entry.
     await waitForIndex();
     await page.waitForLoadState('networkidle');
     check('Root opens the experiment index without a fixture or remote source read', noSourceReads(requests));
-    check('Index contains four wireframe pages and five existing example pages', await page.locator('article.experiment-page').count() === pages.length);
-    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(templates[3]));
+    check('Index contains all standalone pages and existing example pages', await page.locator('article.experiment-page').count() === pages.length);
+    const newestPage = [...pages].sort((a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt))[0];
+    check('Newest page is listed first', await page.locator('article.experiment-page h2 a').first().getAttribute('href') === pageHref(newestPage));
     for (const entry of pages) {
       const link = titleLink(entry.id);
       const article = page.locator(`article.experiment-page[data-page-id="${entry.id}"]`);
@@ -90,18 +97,19 @@ const pageHref = entry => `/?${templates.some(template => template.id === entry.
       const templateStart = requests.length;
       await titleLink(template.id).click();
       await waitForTemplate(template);
-      await page.waitForLoadState('networkidle');
+      const staticPage = staticPages.some(entry => entry.id === template.id);
+      if (staticPage) await page.waitForLoadState('networkidle');
       check(`Template index link opens the standalone page: ${template.id}`,
         new URL(page.url()).searchParams.get('page') === template.id
         && new URL(page.url()).searchParams.get('example') === null
         && await page.locator('#example-select').count() === 0);
-      check(`Template opens without a fixture or remote source read: ${template.id}`, noSourceReads(requests.slice(templateStart)));
+      if (staticPage) check(`Template opens without a fixture or remote source read: ${template.id}`, noSourceReads(requests.slice(templateStart)));
       await page.reload();
       await waitForTemplate(template);
-      await page.waitForLoadState('networkidle');
-      check(`Reload preserves the template route without a source read: ${template.id}`,
+      if (staticPage) await page.waitForLoadState('networkidle');
+      check(`Reload preserves the standalone page route: ${template.id}`,
         new URL(page.url()).searchParams.get('page') === template.id
-        && noSourceReads(requests.slice(templateStart)));
+        && (!staticPage || noSourceReads(requests.slice(templateStart))));
       await page.getByRole('link', { name: 'Page index', exact: true }).click();
       await waitForIndex();
       check(`Template returns to the index: ${template.id}`, new URL(page.url()).search === '');
@@ -121,7 +129,7 @@ const pageHref = entry => `/?${templates.some(template => template.id === entry.
 
     await titleLink('power').click();
     await waitForExample(examples[0]);
-    check('Data example selector retains five examples and excludes both templates',
+    check('Data example selector retains five examples and excludes standalone pages',
       JSON.stringify(await page.locator('#example-select option:not([disabled])').evaluateAll(options => options.map(option => option.value).sort()))
       === JSON.stringify(examples.map(example => example.id).sort()));
     await page.goBack();
