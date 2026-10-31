@@ -1,17 +1,18 @@
 import { node, renderResourceDetailsTemplate } from './resource-details-template';
 import { renderResourceMap } from './resource-details-map';
+import { decodeArchivedObservation, describeReserveTemperatureFlag } from '../profile/archival-report-context';
 import './resource-details-profile-test.css';
 
 const base='https://129-80-248-53.sslip.io/csapi-pygeoapi';
 const cases=[
-  {system:'b171318e-8efe-550d-be99-bec5364984c0',uid:'urn:merlin:v2:bennetts:ee181:probe4',serial:'222016000109CE',stream:'351545ac-6ad6-418e-9688-7bba0329bb38',expectedTime:'2024-04-15T17:00:00Z',expectedValue:29.1},
-  {system:'378df868-d52f-4847-b783-865ec0c1df5e',uid:'urn:merlin:v2:bennetts:ee181:probe3',serial:'21281600077814',stream:'d97c6dcc-d09d-4c70-aae9-a1b63c29e4b9',expectedTime:'2024-04-18T17:00:00Z',expectedValue:27.3},
+  {system:'b171318e-8efe-550d-be99-bec5364984c0',uid:'urn:merlin:v2:bennetts:ee181:probe4',serial:'222016000109CE',stream:'351545ac-6ad6-418e-9688-7bba0329bb38',reportStream:'c1870c01-4c61-43a2-ace5-14e86d317c36',expectedTime:'2024-04-15T17:00:00Z',expectedValue:29.1},
+  {system:'378df868-d52f-4847-b783-865ec0c1df5e',uid:'urn:merlin:v2:bennetts:ee181:probe3',serial:'21281600077814',stream:'d97c6dcc-d09d-4c70-aae9-a1b63c29e4b9',reportStream:'8b8f9361-e2fa-4179-b1bb-947d3cd3d86d',expectedTime:'2024-04-18T17:00:00Z',expectedValue:27.3},
 ] as const;
 
 interface SystemRec{ id:string;label?:string;description?:string;uniqueId?:string;definition?:string;typeOf?:{href?:string;uid?:string;title?:string};identifiers?:Array<{label?:string;value?:string;definition?:string}>;position?:unknown;[k:string]:unknown }
 interface Stream{ id?:string;name?:string;description?:string;observedProperties?:Array<{label?:string;definition?:string}>;live?:boolean;schema?:unknown;[k:string]:unknown }
 interface Obs{ id?:string;phenomenonTime?:unknown;resultTime?:unknown;result?:unknown;[k:string]:unknown }
-interface Loaded{caseDef:typeof cases[number];system:SystemRec;stream:Stream;observations:Obs[]}
+interface Loaded{caseDef:typeof cases[number];system:SystemRec;stream:Stream;observations:Obs[];reportStream:Stream;reportObservations:Obs[]}
 interface State{loading:boolean;error?:string;loaded:Loaded[];fetchedAt?:string;raw:Record<string,unknown>}
 
 const url=(path:string)=>base+path+(path.includes('?')?'&':'?')+'f=application/json';
@@ -23,9 +24,10 @@ function overview(content:HTMLElement,state:State):void{
  const s=node('section','rdp-section');s.append(node('h3',undefined,'Live Bennett’s Point V2 round trip'));const dl=node('dl','rdp-field-grid');
  field(dl,'Physical probes',String(state.loaded.length));
  field(dl,'Shared model','Campbell Scientific EE181');
- field(dl,'Historical observations',String(state.loaded.reduce((n,x)=>n+x.observations.length,0)));
+ field(dl,'Historical temperature observations',String(state.loaded.reduce((n,x)=>n+x.observations.length,0)));
+ field(dl,'Preserved context reports',String(state.loaded.reduce((n,x)=>n+x.reportObservations.length,0)),'These are parallel reports of the same two measurements, not additional physical observations.');
  field(dl,'Retrieved at',state.fetchedAt??'Not loaded','Glaux retrieval time, not observation time.');
- s.append(dl,node('p','rdp-footnote','This page is reconstructed from live GET responses to the Oracle-hosted 52°North/pygeoapi server. The measurements are historical; the retrieval is live.'));content.append(s);
+ s.append(dl,node('p','rdp-footnote','This page is reconstructed from live GET responses to the Oracle-hosted 52°North/pygeoapi server. The measurements are historical; the retrieval is live. The original scalar observations remain unchanged, and the extra report records carry qualified time-window and operator QA context.'));content.append(s);
 }
 function equipment(content:HTMLElement,state:State):void{
  const model=node('section','rdp-section');model.append(node('h3',undefined,'Shared product model'));const mdl=node('dl','rdp-field-grid');
@@ -37,14 +39,53 @@ function equipment(content:HTMLElement,state:State):void{
 }
 function communications(content:HTMLElement,state:State):void{
  const s=node('section','rdp-section');s.append(node('h3',undefined,'Live-retrieved DataStreams'),node('p','rdp-footnote','These are reporting resources, not automatically physical communication channels.'));const dl=node('dl','rdp-field-grid');
- for(const x of state.loaded){field(dl,x.stream.name??x.stream.id??'DataStream',(x.stream.observedProperties??[]).map(p=>p.label??p.definition??'property').join(', '),'live flag: '+String(x.stream.live??'not supplied'));}
+ for(const x of state.loaded){
+   for(const [stream,role] of [[x.stream,'Original scalar stream'],[x.reportStream,'Parallel archival-report preservation stream']] as const){
+     field(dl,stream.name??stream.id??'DataStream',(stream.observedProperties??[]).map(p=>p.label??p.definition??'property').join(', '),role+' · live flag: '+String(stream.live??'not supplied'));
+   }
+ }
  s.append(dl);content.append(s);
 }
 function activity(content:HTMLElement,state:State):void{
- const s=node('section','pub-measures');s.append(node('h3',undefined,'Historical observations retrieved live from CSAPI'));const list=node('div','pub-list');
- for(const x of state.loaded){for(const o of x.observations){const g=node('section','pub-group');g.append(node('h4',undefined,String(o.resultTime??o.phenomenonTime??'Time not supplied')));const dl=node('dl');
- for(const [l,v] of [['Air temperature',String(o.result)+' °C'],['Sensing System',x.system.label??x.system.id],['Serial number',x.caseDef.serial],['Observation ID',o.id??'Not supplied']]){const r=node('div','pub-row');r.append(node('dt',undefined,l),node('dd',undefined,v));dl.append(r);}g.append(dl);list.append(g);}}
- s.append(list);content.append(s);
+ const section=node('section','pub-measures');
+ section.append(node('h3',undefined,'Historical temperature observations · live CSAPI'));
+ section.append(node('p','rdp-footnote','Each preserved report below is retrieved from a parallel DataStream on the running 52°North server. It contains the operator’s actual temperature and QA token plus the source-derived nominal 15-minute window. It is not a native interval-valued phenomenonTime.'));
+ const list=node('div','pub-list');
+ let found=0;
+ for(const x of state.loaded){
+   for(const observation of x.reportObservations){
+     found++;
+     const context=decodeArchivedObservation(x.reportStream,observation,x.system.uniqueId??'');
+     const group=node('section','pub-group');
+     group.append(node('h4',undefined,context.sourceStamp??'Source stamp unavailable'));
+     const fields=node('dl');
+     const period=context.averagingWindow
+       ? context.averagingWindow[0]+' → '+context.averagingWindow[1]
+       : 'Not recovered';
+     const temp=context.air===null?'Not recovered':String(context.air)+' '+(context.unit??'unit not supplied');
+     const quality=context.sourceQualityFlag===null?'Not recovered':JSON.stringify(context.sourceQualityFlag);
+     const serial=x.system.identifiers?.find(i=>i.definition==='http://sensorml.com/ont/swe/property/SerialNumber')?.value??'Not supplied by System';
+     const pairs=[
+       ['Mean air temperature',temp],
+       ['Nominal averaging period (UTC)',period],
+       ['Original F_ATemp token',quality],
+       ['Operator flag meaning',describeReserveTemperatureFlag(context.sourceQualityFlag)],
+       ['Attributed sensing System',context.attributedSystemUid??'Not recovered'],
+       ['Physical probe serial',serial],
+       ['Observation ID',observation.id??'Not supplied']
+     ];
+     for(const [label,value] of pairs){
+       const row=node('div','pub-row');row.append(node('dt',undefined,label),node('dd',undefined,value));fields.append(row);
+     }
+     group.append(fields);
+     if(context.issues.length) group.append(node('p','rdp-footnote','Unresolved report interpretation: '+context.issues.join('; ')));
+     list.append(group);
+   }
+ }
+ if(!found){empty(section,'The live server did not return preserved report records. No quality or interval values were inferred from local fixtures.');}
+ section.append(list);
+ section.append(node('p','rdp-footnote','The server still returns source-stamp surrogates in the native instant-valued phenomenonTime and resultTime fields. No independent historical result-generation time is established. The nominal interval and original source flag above are separate, explicitly typed record fields; this is a bounded preservation bridge, not full OMS/CSAPI interval semantics.'));
+ content.append(section);
 }
 function record(content:HTMLElement,state:State):void{const s=node('section','rdp-section');s.append(node('h3',undefined,'Live server responses'));for(const [k,v] of Object.entries(state.raw)){const d=node('details','capture');d.append(node('summary',undefined,k),node('pre','raw-content',JSON.stringify(v,null,2)));s.append(d);}content.append(s);}
 function sources(content:HTMLElement):void{const s=node('section','rdp-section');s.append(node('h3',undefined,'Evidence and live endpoints'));const ul=node('ul','rdp-sources-list');for(const [label,href] of [
@@ -53,6 +94,7 @@ function sources(content:HTMLElement):void{const s=node('section','rdp-section')
  ['Probe 3 live System',url('/systems/'+cases[1].system)],
  ['Candidate Profile — Bennett’s Point attribution','https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/CSAPI_Profile.md#which-probe-measured-the-air-temperature'],
  ['ACE Basin operator metadata','https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf'],
+ ['Archived report carrier: scope and unresolved standards limits','https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/Docs/Design/BENNETT_OBSERVATION_CONTEXT_BRIDGE.md'],
  ]){const li=node('li');const a=node('a',undefined,label);a.href=href;a.target='_blank';a.rel='noopener noreferrer';li.append(a);ul.append(li);}s.append(ul);content.append(s);}
 
 /** Reuse Codex's existing map renderer for one identified physical System at a time.
@@ -104,5 +146,19 @@ export function renderResourceDetailsLiveBennett(container:HTMLElement):void{
  const ids=frame.querySelectorAll<HTMLElement>('.rd-identity-fields dd');if(ids.length>=3){ids[0].textContent='Controlled live CSAPI case';ids[1].textContent='2 EE181 Systems';ids[2].textContent='52°North / pygeoapi live GET';}
  const footer=frame.querySelector<HTMLElement>('.rd-module-footer span');if(footer)footer.textContent='Live CSAPI retrieval · historical observations';
  const rerender=()=>{const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]');active?.click();};
- void (async()=>{try{for(const c of cases){const system=await get<SystemRec>('/systems/'+c.system);const stream=await get<Stream>('/datastreams/'+c.stream);const obsDoc=await get<any>('/datastreams/'+c.stream+'/observations');const observations=rows(obsDoc) as Obs[];state.loaded.push({caseDef:c,system,stream,observations});state.raw['system:'+c.system]=system;state.raw['datastream:'+c.stream]=stream;state.raw['observations:'+c.stream]=obsDoc;}state.fetchedAt=new Date().toISOString();}catch(e){state.error=e instanceof Error?e.message:String(e);}finally{state.loading=false;rerender();}})();
+ void (async()=>{try{for(const c of cases){const system=await get<SystemRec>('/systems/'+c.system);
+    const [stream,obsDoc,reportStream,reportDoc]=await Promise.all([
+      get<Stream>('/datastreams/'+c.stream),
+      get<any>('/datastreams/'+c.stream+'/observations'),
+      get<Stream>('/datastreams/'+c.reportStream),
+      get<any>('/datastreams/'+c.reportStream+'/observations')
+    ]);
+    const observations=rows(obsDoc) as Obs[];
+    const reportObservations=rows(reportDoc) as Obs[];
+    state.loaded.push({caseDef:c,system,stream,observations,reportStream,reportObservations});
+    state.raw['system:'+c.system]=system;
+    state.raw['datastream:'+c.stream]=stream;
+    state.raw['observations:'+c.stream]=obsDoc;
+    state.raw['report-datastream:'+c.reportStream]=reportStream;
+    state.raw['report-observations:'+c.reportStream]=reportDoc;}state.fetchedAt=new Date().toISOString();}catch(e){state.error=e instanceof Error?e.message:String(e);}finally{state.loading=false;rerender();}})();
 }
