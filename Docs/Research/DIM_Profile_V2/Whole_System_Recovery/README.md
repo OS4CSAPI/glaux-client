@@ -248,7 +248,9 @@ Provider’s FDSN guide: [FDSN Web Services](https://manual.raspberryshake.org/f
 
 **Step 04 stopped here.** No other manufacturer candidate was audited; no full station integration, software/firmware reverse engineering, CSAPI writes, profile requirements or public data redistribution occurred.
 
-## 8. Current step and handoff
+## 8. Step 04 closing handoff — historical checkpoint
+
+**Updated 1 November 2026:** This §8 records the **end-of-Step-04** handoff, including the direction that Step 05 was then next. **Step 05 has since been completed in [§9](#9-step-05--dragino-s31-lb-source-native-reference-system); Step 06 is now next.** The [plan](../PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md) controls the live execution status.
 
 **Steps 01–03 — COMPLETE:** The starting project/evidence baseline, common source→DIM→Profile→client→fidelity rubric, and four-case original-source/edition coverage matrix are documented in §§1–6.
 
