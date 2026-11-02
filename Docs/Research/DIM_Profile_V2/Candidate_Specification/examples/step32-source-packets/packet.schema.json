@@ -1,0 +1,547 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/step32-source-packets/packet.schema.json",
+  "title": "Step 32 source-evidence packet (project test input; NOT an OGC/CSAPI wire schema)",
+  "description": "Research-only candidate input contract for Step 33+ generic consumer falsification. Shape constraints do not establish source authenticity, OGC requirements-class conformance or API discoverability.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "id",
+    "focus",
+    "sources",
+    "subjects",
+    "assertions",
+    "originalEvents",
+    "representations",
+    "holds"
+  ],
+  "properties": {
+    "format": {
+      "const": "dim-csapi-source-packet.s32.v0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "focus": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/subject"
+      }
+    },
+    "assertions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/assertion"
+      }
+    },
+    "originalEvents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "representations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/representation"
+      }
+    },
+    "holds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hold"
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "issuer",
+        "title",
+        "url",
+        "authority",
+        "edition",
+        "researchTrace"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "authority": {
+          "enum": [
+            "MANUFACTURER_ORIGINAL",
+            "OPERATOR_ORIGINAL",
+            "MEASUREMENT_ARCHIVE"
+          ]
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "researchTrace": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer",
+        "scheme",
+        "raw"
+      ],
+      "properties": {
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scheme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "standing"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "standing": {
+          "enum": [
+            "REFERENCE_ARRANGEMENT",
+            "REFERENCE_COMPONENT",
+            "SOURCE_IDENTIFIED_STATION",
+            "SOURCE_IDENTIFIED_EQUIPMENT"
+          ]
+        },
+        "sourceIdentity": {
+          "$ref": "#/$defs/identity"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "locator"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nativeToken": {
+          "type": "string"
+        }
+      }
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "nativeField": {
+          "type": "string"
+        },
+        "interpretation": {
+          "type": "string"
+        }
+      }
+    },
+    "time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "precision"
+      ],
+      "properties": {
+        "precision": {
+          "enum": [
+            "CALENDAR_DAY",
+            "SOURCE_LOCAL_MINUTE",
+            "DERIVED_UTC_INTERVAL",
+            "AS_OF_CALENDAR_DAY"
+          ]
+        },
+        "startDate": {
+          "type": "string",
+          "pattern": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+        },
+        "endDateListed": {
+          "type": "string",
+          "pattern": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+        },
+        "asOfDate": {
+          "type": "string",
+          "pattern": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+        },
+        "sourceStamp": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "string"
+        },
+        "derivedStartUtc": {
+          "type": "string"
+        },
+        "derivedEndUtc": {
+          "type": "string"
+        }
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "inputs"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "about",
+        "concept",
+        "standing",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "about": {
+          "type": "string",
+          "minLength": 1
+        },
+        "concept": {
+          "enum": [
+            "equipment.external_probe",
+            "equipment.reference_component",
+            "equipment.design_connection",
+            "equipment.role_service",
+            "output.native_field",
+            "output.field_count",
+            "output.example_value",
+            "power.rated_capacity",
+            "observation.aggregation_method",
+            "observation.source_value",
+            "observation.source_stamp",
+            "observation.raw_quality_token",
+            "observation.nominal_period",
+            "observation.contributing_equipment",
+            "observation.result_time",
+            "observation.producing_system",
+            "configuration.effective_setting",
+            "identity.installed_unit",
+            "location.probe_position",
+            "source.native"
+          ]
+        },
+        "standing": {
+          "enum": [
+            "SOURCE_FACT",
+            "SOURCE_EXAMPLE",
+            "DERIVED",
+            "UNKNOWN"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time": {
+          "$ref": "#/$defs/time"
+        },
+        "derivation": {
+          "$ref": "#/$defs/derivation"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "standing": {
+                "const": "UNKNOWN"
+              }
+            },
+            "required": [
+              "standing"
+            ]
+          },
+          "then": {
+            "required": [
+              "reason"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "value"
+                  ]
+                },
+                {
+                  "required": [
+                    "target"
+                  ]
+                },
+                {
+                  "required": [
+                    "derivation"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "standing": {
+                "enum": [
+                  "SOURCE_FACT",
+                  "SOURCE_EXAMPLE",
+                  "DERIVED"
+                ]
+              }
+            },
+            "required": [
+              "standing"
+            ]
+          },
+          "then": {
+            "oneOf": [
+              {
+                "required": [
+                  "value"
+                ],
+                "not": {
+                  "required": [
+                    "target"
+                  ]
+                }
+              },
+              {
+                "required": [
+                  "target"
+                ],
+                "not": {
+                  "required": [
+                    "value"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "standing": {
+                "const": "DERIVED"
+              }
+            },
+            "required": [
+              "standing"
+            ]
+          },
+          "then": {
+            "required": [
+              "derivation"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "derivation"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject",
+        "sourceId",
+        "recordLocator",
+        "nativeField"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordLocator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nativeField": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "originalEventId",
+        "resourceRef",
+        "carrier",
+        "standing"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originalEventId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resourceRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "carrier": {
+          "enum": [
+            "CSAPI_JSON_SCALAR_EXPERIMENT",
+            "CSAPI_JSON_ARCHIVAL_REPORT_EXPERIMENT"
+          ]
+        },
+        "standing": {
+          "const": "HISTORICAL_PROJECT_EXPERIMENT"
+        }
+      }
+    },
+    "hold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap",
+        "topic",
+        "reason"
+      ],
+      "properties": {
+        "gap": {
+          "type": "string",
+          "pattern": "^G30-0[1-9]$"
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
