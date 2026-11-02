@@ -128,3 +128,28 @@ test('copy without its original source event is rejected', () => {
     experimentTrace: 'fictional test fixture' });
   expect(interpretSourcePacket(input).accepted).toBe(false);
 });
+
+test('a project-derived claim keeps its declared method, source inputs and exact time qualifier', () => {
+  const input = referencePacket();
+  input.assertions.push({ id: 'derived', about: 'module', concept: 'observation.nominal_period', standing: 'DERIVED',
+    value: { raw: 'synthetic 15-minute window' }, time: { precision: 'DERIVED_UTC_INTERVAL', derivedStartUtc: '2000-01-01T00:00:00Z' },
+    derivation: { method: 'Synthetic test calculation only', inputs: ['example'] },
+    evidence: [{ sourceId: 'document', locator: 'synthetic calculation note' }] });
+  const result = interpretSourcePacket(input);
+  expect(result.accepted).toBe(true);
+  const claim = result.claims.find(c => c.id === 'derived')!;
+  expect(claim.standing).toBe('DERIVED');
+  expect(claim.derivation).toEqual({ method: 'Synthetic test calculation only', inputs: ['example'] });
+  expect(claim.time).toEqual({ precision: 'DERIVED_UTC_INTERVAL', derivedStartUtc: '2000-01-01T00:00:00Z' });
+  expect(result.claims.find(c => c.id === 'example')?.standing).toBe('SOURCE_EXAMPLE');
+});
+
+test('a DERIVED claim with a nonexistent input assertion is rejected without fabricating provenance', () => {
+  const input = referencePacket();
+  input.assertions.push({ id: 'derived', about: 'module', concept: 'observation.nominal_period', standing: 'DERIVED',
+    value: { raw: 'synthetic duration' }, derivation: { method: 'Unverified join', inputs: ['does-not-exist'] },
+    evidence: [{ sourceId: 'document', locator: 'synthetic calculation note' }] });
+  const result = interpretSourcePacket(input);
+  expect(result.accepted).toBe(false);
+  expect(result.issues.some(i => i.message.includes('Input assertion ID does not resolve'))).toBe(true);
+});
