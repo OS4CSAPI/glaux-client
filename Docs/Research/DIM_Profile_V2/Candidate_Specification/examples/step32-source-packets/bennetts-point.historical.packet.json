@@ -1,0 +1,605 @@
+{
+  "format": "dim-csapi-source-packet.s32.v0.1",
+  "id": "s32-bennetts-point-history",
+  "focus": "b-station",
+  "sources": [
+    {
+      "id": "b-operator",
+      "issuer": "ACE Basin National Estuarine Research Reserve / South Carolina Department of Natural Resources",
+      "title": "ACE Basin Meteorological Metadata, January–December 2024",
+      "url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+      "authority": "OPERATOR_ORIGINAL",
+      "edition": "Operator document updated 18 August 2025; 2024 equipment/history as-of 31 December 2024",
+      "researchTrace": "Candidate_Specification/examples/bennetts-point-ee181.json operator_record; original PDF printed pp. 2,6,10–13"
+    },
+    {
+      "id": "b-cdmo",
+      "issuer": "NOAA NERRS Centralized Data Management Office",
+      "title": "Bennett's Point meteorological 2024 archival CSV",
+      "url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+      "authority": "MEASUREMENT_ARCHIVE",
+      "edition": "2024 selected rows; archive inspected 31 October 2026, CSV SHA-256 3f3ee3e5458c00adee770dc9b18a6246e590937a3f0c6c5f48cfc73cd8ae4950",
+      "researchTrace": "Candidate_Specification/examples/bennetts-point-ee181.json measurement_file/readings"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "b-station",
+      "label": "Bennett's Point continuing station",
+      "standing": "SOURCE_IDENTIFIED_STATION",
+      "sourceIdentity": {
+        "issuer": "NOAA/CDMO",
+        "scheme": "station code",
+        "raw": "acebpmet"
+      }
+    },
+    {
+      "id": "b-probe3",
+      "label": "Actual EE181 serial 21281600077814 (operator sensor 3, returning)",
+      "standing": "SOURCE_IDENTIFIED_EQUIPMENT",
+      "sourceIdentity": {
+        "issuer": "ACE Basin operator metadata",
+        "scheme": "EE181 serial number",
+        "raw": "21281600077814"
+      }
+    },
+    {
+      "id": "b-probe4",
+      "label": "Actual EE181 serial 222016000109CE (operator sensor 4, interim)",
+      "standing": "SOURCE_IDENTIFIED_EQUIPMENT",
+      "sourceIdentity": {
+        "issuer": "ACE Basin operator metadata",
+        "scheme": "EE181 serial number",
+        "raw": "222016000109CE"
+      }
+    },
+    {
+      "id": "b-logger",
+      "label": "Actual CR1000X logger serial 13916",
+      "standing": "SOURCE_IDENTIFIED_EQUIPMENT",
+      "sourceIdentity": {
+        "issuer": "ACE Basin operator metadata",
+        "scheme": "CR1000X serial number",
+        "raw": "13916"
+      }
+    },
+    {
+      "id": "b-transmitter",
+      "label": "Actual TX321 GOES transmitter serial 2335",
+      "standing": "SOURCE_IDENTIFIED_EQUIPMENT",
+      "sourceIdentity": {
+        "issuer": "ACE Basin operator metadata",
+        "scheme": "TX321 serial number",
+        "raw": "2335"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "b-method",
+      "about": "b-station",
+      "concept": "observation.aggregation_method",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "15-minute mean of 5-second samples",
+        "nativeField": "ATemp",
+        "interpretation": "operator sampling/aggregation description, not a resultTime"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 printed p.2, 15-minute average of 5-second samples"
+        }
+      ]
+    },
+    {
+      "id": "b-service3-early",
+      "about": "b-probe3",
+      "concept": "equipment.role_service",
+      "standing": "SOURCE_FACT",
+      "target": "b-station",
+      "time": {
+        "precision": "CALENDAR_DAY",
+        "startDate": "2022-05-04",
+        "endDateListed": "2023-06-08"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 Temp/RH sensor 3 use history, printed p.6",
+          "nativeToken": "21281600077814"
+        }
+      ]
+    },
+    {
+      "id": "b-service4",
+      "about": "b-probe4",
+      "concept": "equipment.role_service",
+      "standing": "SOURCE_FACT",
+      "target": "b-station",
+      "time": {
+        "precision": "CALENDAR_DAY",
+        "startDate": "2023-06-08",
+        "endDateListed": "2024-04-16"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 Temp/RH sensor 4 use history, printed p.6",
+          "nativeToken": "222016000109CE"
+        }
+      ]
+    },
+    {
+      "id": "b-service3-return",
+      "about": "b-probe3",
+      "concept": "equipment.role_service",
+      "standing": "SOURCE_FACT",
+      "target": "b-station",
+      "time": {
+        "precision": "CALENDAR_DAY",
+        "startDate": "2024-04-16",
+        "asOfDate": "2024-12-31"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 Temp/RH sensor 3 return and still in use as of Dec 31, printed p.6",
+          "nativeToken": "21281600077814"
+        }
+      ]
+    },
+    {
+      "id": "b-mean15",
+      "about": "b-event15",
+      "concept": "observation.source_value",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "29.1",
+        "unit": "°C",
+        "nativeField": "ATemp",
+        "interpretation": "archived original station air temperature mean, not real-time sensor observation"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, ATemp",
+          "nativeToken": "29.1"
+        }
+      ]
+    },
+    {
+      "id": "b-stamp15",
+      "about": "b-event15",
+      "concept": "observation.source_stamp",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "04/15/2024 12:00",
+        "nativeField": "DatetimeStamp",
+        "interpretation": "original fixed-EST station timestamp, not original result availability"
+      },
+      "time": {
+        "precision": "SOURCE_LOCAL_MINUTE",
+        "sourceStamp": "04/15/2024 12:00",
+        "basis": "Eastern Standard Time year-round (UTC−05:00) per operator metadata"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, DatetimeStamp",
+          "nativeToken": "04/15/2024 12:00"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 printed p.2: time zone EST year-round"
+        }
+      ]
+    },
+    {
+      "id": "b-qc15",
+      "about": "b-event15",
+      "concept": "observation.raw_quality_token",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "<0> ",
+        "nativeField": "F_ATemp",
+        "interpretation": "original ATemp parameter-level initial QA flag; the final space is data"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, F_ATemp",
+          "nativeToken": "<0> "
+        }
+      ]
+    },
+    {
+      "id": "b-station-token15",
+      "about": "b-event15",
+      "concept": "source.native",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "acebpmet  ",
+        "nativeField": "StationCode",
+        "interpretation": "preserved original padded station-code field"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, StationCode",
+          "nativeToken": "acebpmet  "
+        }
+      ]
+    },
+    {
+      "id": "b-period15",
+      "about": "b-event15",
+      "concept": "observation.nominal_period",
+      "standing": "DERIVED",
+      "value": {
+        "raw": "2024-04-15T16:45:00Z/2024-04-15T17:00:00Z",
+        "interpretation": "project nominal mean period, not validated native CSAPI phenomenonTime"
+      },
+      "time": {
+        "precision": "DERIVED_UTC_INTERVAL",
+        "derivedStartUtc": "2024-04-15T16:45:00Z",
+        "derivedEndUtc": "2024-04-15T17:00:00Z",
+        "basis": "source fixed EST timestamp marks period end; fifteen-minute mean"
+      },
+      "derivation": {
+        "method": "Convert the original fixed-EST station stamp to UTC, then subtract documented 15-minute aggregation period; not an independently timestamped sample series.",
+        "inputs": [
+          "b-stamp15",
+          "b-method"
+        ]
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, DatetimeStamp/Frequency"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 printed p.2, EST and averaging method"
+        }
+      ]
+    },
+    {
+      "id": "b-attribution15",
+      "about": "b-event15",
+      "concept": "observation.contributing_equipment",
+      "standing": "DERIVED",
+      "target": "b-probe4",
+      "derivation": {
+        "method": "Join observed station, full nominal interval and air-temperature equipment role to the separate date-only EE181 service history; source CSV itself does not identify the serial.",
+        "inputs": [
+          "b-mean15",
+          "b-stamp15",
+          "b-period15",
+          "b-service4"
+        ]
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130, ATemp/DatetimeStamp/StationCode"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 Temp/RH sensor 4 use history"
+        }
+      ]
+    },
+    {
+      "id": "b-result-time15",
+      "about": "b-event15",
+      "concept": "observation.result_time",
+      "standing": "UNKNOWN",
+      "reason": "Original annual CSV and operator metadata do not independently report when this completed mean became available; station stamp cannot be substituted.",
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10130 original fields"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 time convention does not define result availability"
+        }
+      ]
+    },
+    {
+      "id": "b-producing-system15",
+      "about": "b-event15",
+      "concept": "observation.producing_system",
+      "standing": "UNKNOWN",
+      "reason": "The station and CR1000X logger remain alternative producers of the completed mean; previous probe-owned experimental streams are not source authority.",
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 logger and station records; workbook §31 H27-A/B"
+        }
+      ]
+    },
+    {
+      "id": "b-mean18",
+      "about": "b-event18",
+      "concept": "observation.source_value",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "27.3",
+        "unit": "°C",
+        "nativeField": "ATemp",
+        "interpretation": "archived original station air temperature mean"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, ATemp",
+          "nativeToken": "27.3"
+        }
+      ]
+    },
+    {
+      "id": "b-stamp18",
+      "about": "b-event18",
+      "concept": "observation.source_stamp",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "04/18/2024 12:00",
+        "nativeField": "DatetimeStamp",
+        "interpretation": "original fixed-EST station timestamp, not original result availability"
+      },
+      "time": {
+        "precision": "SOURCE_LOCAL_MINUTE",
+        "sourceStamp": "04/18/2024 12:00",
+        "basis": "Eastern Standard Time year-round (UTC−05:00) per operator metadata"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, DatetimeStamp",
+          "nativeToken": "04/18/2024 12:00"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 printed p.2: time zone EST year-round"
+        }
+      ]
+    },
+    {
+      "id": "b-qc18",
+      "about": "b-event18",
+      "concept": "observation.raw_quality_token",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "<0> ",
+        "nativeField": "F_ATemp",
+        "interpretation": "original ATemp parameter-level initial QA flag; the final space is data"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, F_ATemp",
+          "nativeToken": "<0> "
+        }
+      ]
+    },
+    {
+      "id": "b-station-token18",
+      "about": "b-event18",
+      "concept": "source.native",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "acebpmet  ",
+        "nativeField": "StationCode",
+        "interpretation": "preserved original padded station-code field"
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, StationCode",
+          "nativeToken": "acebpmet  "
+        }
+      ]
+    },
+    {
+      "id": "b-period18",
+      "about": "b-event18",
+      "concept": "observation.nominal_period",
+      "standing": "DERIVED",
+      "value": {
+        "raw": "2024-04-18T16:45:00Z/2024-04-18T17:00:00Z",
+        "interpretation": "project nominal mean period, not validated native CSAPI phenomenonTime"
+      },
+      "time": {
+        "precision": "DERIVED_UTC_INTERVAL",
+        "derivedStartUtc": "2024-04-18T16:45:00Z",
+        "derivedEndUtc": "2024-04-18T17:00:00Z",
+        "basis": "source fixed EST timestamp marks period end; fifteen-minute mean"
+      },
+      "derivation": {
+        "method": "Convert original fixed-EST station stamp to UTC, subtract documented mean interval; not originally serialized as a TimeRange.",
+        "inputs": [
+          "b-stamp18",
+          "b-method"
+        ]
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, DatetimeStamp/Frequency"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 printed p.2, EST and averaging method"
+        }
+      ]
+    },
+    {
+      "id": "b-attribution18",
+      "about": "b-event18",
+      "concept": "observation.contributing_equipment",
+      "standing": "DERIVED",
+      "target": "b-probe3",
+      "derivation": {
+        "method": "Join the station mean's interval and source equipment use statements; probe serial is absent from original CSV row.",
+        "inputs": [
+          "b-mean18",
+          "b-stamp18",
+          "b-period18",
+          "b-service3-return"
+        ]
+      },
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418, ATemp/DatetimeStamp/StationCode"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 Temp/RH sensor 3 return"
+        }
+      ]
+    },
+    {
+      "id": "b-result-time18",
+      "about": "b-event18",
+      "concept": "observation.result_time",
+      "standing": "UNKNOWN",
+      "reason": "No independent original result-availability instant; 17:00 UTC is the source period stamp, not proved resultTime.",
+      "evidence": [
+        {
+          "sourceId": "b-cdmo",
+          "locator": "CSV line 10418 original fields"
+        },
+        {
+          "sourceId": "b-operator",
+          "locator": "§4 time convention"
+        }
+      ]
+    },
+    {
+      "id": "b-producing-system18",
+      "about": "b-event18",
+      "concept": "observation.producing_system",
+      "standing": "UNKNOWN",
+      "reason": "No adopted source-defensible single CSAPI DataStream producer for station mean; station and logger hypotheses remain open.",
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "§9 logger/station context; workbook §31 H27-A/B"
+        }
+      ]
+    },
+    {
+      "id": "b-probe-position",
+      "about": "b-probe3",
+      "concept": "location.probe_position",
+      "standing": "UNKNOWN",
+      "reason": "The original station coordinates are not independent surveyed coordinates of the serial-numbered probe.",
+      "evidence": [
+        {
+          "sourceId": "b-operator",
+          "locator": "Station table and §10 site location; individual probe location not provided"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [
+    {
+      "id": "b-event15",
+      "subject": "b-station",
+      "sourceId": "b-cdmo",
+      "recordLocator": "CSV line 10130 (DatetimeStamp 04/15/2024 12:00, StationCode acebpmet)",
+      "nativeField": "ATemp"
+    },
+    {
+      "id": "b-event18",
+      "subject": "b-station",
+      "sourceId": "b-cdmo",
+      "recordLocator": "CSV line 10418 (DatetimeStamp 04/18/2024 12:00, StationCode acebpmet)",
+      "nativeField": "ATemp"
+    }
+  ],
+  "representations": [
+    {
+      "id": "b-r15-scalar",
+      "originalEventId": "b-event15",
+      "resourceRef": "observations/4f3d3010-9e46-4227-9ba0-7d7014405efa",
+      "carrier": "CSAPI_JSON_SCALAR_EXPERIMENT",
+      "standing": "HISTORICAL_PROJECT_EXPERIMENT",
+      "experimentTrace": "PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md §3.3; workflow 41232435599; prior test, not current live verification"
+    },
+    {
+      "id": "b-r15-report",
+      "originalEventId": "b-event15",
+      "resourceRef": "observations/a742b704-c2cd-4c1d-970a-b97b5f628130",
+      "carrier": "CSAPI_JSON_ARCHIVAL_REPORT_EXPERIMENT",
+      "standing": "HISTORICAL_PROJECT_EXPERIMENT",
+      "experimentTrace": "PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md §3.5; workflow 41248245591; prior test only"
+    },
+    {
+      "id": "b-r18-scalar",
+      "originalEventId": "b-event18",
+      "resourceRef": "observations/33599d37-7992-4e14-a4c1-b0df85d62fc2",
+      "carrier": "CSAPI_JSON_SCALAR_EXPERIMENT",
+      "standing": "HISTORICAL_PROJECT_EXPERIMENT",
+      "experimentTrace": "PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md §3.3; workflow 41232435599; prior test only"
+    },
+    {
+      "id": "b-r18-report",
+      "originalEventId": "b-event18",
+      "resourceRef": "observations/50bf940e-55a0-45b6-9331-e6391704f6c7",
+      "carrier": "CSAPI_JSON_ARCHIVAL_REPORT_EXPERIMENT",
+      "standing": "HISTORICAL_PROJECT_EXPERIMENT",
+      "experimentTrace": "PITON_DIM_Profile_V2_Continuity_v1.9_31OCT2026.md §3.5; workflow 41248245591; prior test only"
+    }
+  ],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Portable source standing and original-event/copy association",
+      "reason": "This repo-local research packet is not discoverable from a CSAPI service nor validated as a portable OGC carrier."
+    },
+    {
+      "gap": "G30-02",
+      "topic": "Completed station mean producer",
+      "reason": "Station versus CR1000X logger DataStream.system still source/normatively unresolved."
+    },
+    {
+      "gap": "G30-03",
+      "topic": "Native historical Deployment",
+      "reason": "Operator use dates have calendar-day precision; no exact swap timestamps or probe-specific surveyed coordinates."
+    },
+    {
+      "gap": "G30-04",
+      "topic": "Historical original resultTime",
+      "reason": "Original result-availability instant absent, cannot use result-period stamp as a true resultTime."
+    },
+    {
+      "gap": "G30-05",
+      "topic": "Native interval phenomenonTime",
+      "reason": "Nominal project-derived interval not demonstrated as normative Part 2 SWE observation period mapping."
+    },
+    {
+      "gap": "G30-06",
+      "topic": "Native resultQuality",
+      "reason": "Raw F_ATemp preserved, mapping to standard OMS/SWE quality untested."
+    },
+    {
+      "gap": "G30-07",
+      "topic": "52°North SWE format/schema",
+      "reason": "Historical media type/ordinary JSON body discrepancy; no fresh runtime test."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Same unchanged generic reader",
+      "reason": "No common client interpreter implemented or run across reference and actual historic source packets."
+    },
+    {
+      "gap": "G30-09",
+      "topic": "Device management",
+      "reason": "No authenticated command and independent physical-effect chain; executable control excluded."
+    }
+  ]
+}
