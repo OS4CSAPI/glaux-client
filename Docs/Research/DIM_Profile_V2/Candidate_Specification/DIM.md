@@ -110,7 +110,7 @@ These are **candidate relationship questions/propositions**, not seven compulsor
 
 ### Scope, falsification and remaining work
 
-A compliant **source-grounded candidate interpretation** would preserve all three concrete physical arrangements **without a universal nesting tree**, not create a new System per output/channel, and keep Bennett's actual historical station/physical-unit distinctions at **source precision**. **No executed source→DIM mapping or client conformance check took place**; these are conceptual counterexamples and evidence tests.
+A **source-faithful candidate interpretation** would preserve all three concrete physical arrangements **without a universal nesting tree**, not create a new System per output/channel, and keep Bennett's actual historical station/physical-unit distinctions at **source precision**. **No executed source→DIM mapping or client conformance check took place**; these are conceptual counterexamples and evidence tests.
 
 **Still OPEN:** strict identity/part-versus-connection cardinalities, independently managed component resolution and possible spatial/mounting/containment subtypes; actual installed Dragino/AirGradient/Campbell units; operational physical-to-functional realization; station hosting role intervals and genuine per-probe deployment; exact observer/processor/producer DataStream ownership; output/channel details; complete runtime state, commands and a finished integrated relationship diagram. The original source cannot prove missing facts through model elegance.
 
