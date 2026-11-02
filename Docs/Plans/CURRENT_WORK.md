@@ -1,5 +1,18 @@
 # Current client work
 
+## DIM / CSAPI Profile V2 — Step 33 source-independent packet reader (3 November 2026)
+
+**Scope: a pure, first interpreter increment only; not a deployed or fully Profile-aware Resource Details route.** Research authority: [controlling 43-step plan](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md) and [Step 32 contract](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/Step32_Source_Packet_Contract.md). This increment adds [`src/profile/source-packet.ts`](../../src/profile/source-packet.ts) with type-safe, read-only interpretation of the local `dim-csapi-source-packet.s32.v0.1` research input, plus [`tests/source-packet.test.ts`](../../tests/source-packet.test.ts) with **11 synthetic source-neutral positive and negative tests**. The real four case packets remain in the separate research branch for Steps 34–37.
+
+**Observed local check:** the exact committed TypeScript module passed `tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler` using available TypeScript **5.8.3**, and the exact committed test logic passed **11/11** isolated Node **22.16.0** built-in test runs using a temporary compatibility harness/transpilation. This is **not the full app's Vitest execution**: `npm ci`, `npm run typecheck` against all project files, `npm test`, `npm run build`, browsers, live CSAPI and GitHub Actions were **not run for this increment** because local project dependencies were unavailable and no production deployment was authorized. The GitHub blob content was read back and matched the locally tested files.
+
+**Positive meaning preserved:** subject standing (reference versus actual *as declared*), source issuer/evidence locator and exact raw value including whitespace, printed example versus performed event, DERIVED method and cited assertion inputs, and explicit UNKNOWN without inventing zero or availability. The reader groups multiple project representation links under **one** original source event, and holds the input object/raw foreign concepts unchanged. **Rejected:** UNKNOWN carrying fabricated values, missing source references, an identified unit lacking source-scoped identity, a reference-only subject promoted to an actual event, invalid derivation inputs and a copy without its source-event anchor. Changing IDs and labels did not change the semantic interpretation.
+
+**Limitations and gate:** this code implements no CSAPI Profile discovery/carrier, independent source authenticity assessment, original-standard JSON Schema conformance, final DataStream producer/Observation time or quality binding, historical Deployment, enabled commands or client rendering. **Gate E remains NOT CLOSED; G30-01 remains the chief portable evidence/unknown-client blocker.** No existing Glaux page, `src/data`, upstream client, Oracle/52°North resource, GitHub Pages deployment trigger or Cloudflare site was modified. The deployment workflow is explicit/manual or trigger-file-scoped, and neither was activated.
+
+**Next owner “proceed”: STEP 34 ONLY** — exercise the same reader against the original documented Dragino S31-LB packet and a false-source mutation, with an honest reference-design result. Do not run subsequent manufacturer cases or deploy by implication.
+
+
 ## Live Resource Details map — 31 October 2026
 
 The separate `resource-details-live-map` page reuses the live CSAPI Resource
