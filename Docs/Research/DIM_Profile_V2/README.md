@@ -1,6 +1,23 @@
 # DIM / CSAPI Profile V2 — start here
 
-## Current execution checkpoint — 3 November 2026 (STEP 41R-06 REAL GENERIC NATIVE GLAUX CLIENT COMPLETE; ORIGINAL STEP 42 NEXT AS RESEARCH CANDIDATE)
+## CURRENT execution checkpoint — 3 November 2026 (original STEP 42 COMPLETED as two qualified research candidates; STEP 43 NEXT)
+
+**[LATEST PITON v3.2 — full Profile Rewrite 11 recovery and Step 43 single-prompt handoff](PITON_DIM_Profile_V2_Continuity_v3.2_03NOV2026.md)** · **[controlling 43-step plan, Step42/43 status](PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md)** · **[cumulative workbook §52: Step42 real editorial deliverables and verification](Whole_System_Recovery/README.md#52-step-42--two-separately-proposed-publication-oriented-dim-and-csapi-profile-research-candidates-3-november-2026)**.
+
+**Original steps 01–42 COMPLETE (42/43). All six inserted bounded repairs 41R-01–06 EXECUTED (6/6). ORIGINAL STEP 43 NEXT, NOT STARTED. Gate E NOT CLOSED; Gate F NOT CLOSED for full external independent interoperability; Gate G NOT REACHED.** Step 42 has delivered two distinct, committed, publication-oriented, **PROPOSED / PARTIALLY VALIDATED RESEARCH CANDIDATES**:
+
+- [**Standalone Whole-System DIM candidate v0.1**](Candidate_Specification/DIM_Profile_V2_Proposed_Research_Candidate_DIM_v0.1_03NOV2026.md) — implementation-independent, linked donor/standards pedigree, **R24-01–15**, two Mermaid diagrams, four source cases, Chicago Manual of Style (18th ed.) bibliography, actual evidence and limitations.
+- [**Separate CSAPI application Profile candidate v0.1**](Candidate_Specification/DIM_Profile_V2_Proposed_Research_Candidate_CSAPI_Profile_v0.1_03NOV2026.md) — published original standards versus openly **project-authored source evidence** via RFC `profile`/`describedby` links, **PR30-01–21**, two Mermaid diagrams, original four-case sources, actual native producer/browser test evidence, and explicit requirements-class/issuer/stable URI/independent client/Observation/Deployment/Command release blockers.
+
+**Document QA:** Both GitHub manuscripts were **read back**, and every relative repository-file link in each resolved against the actual tree. Each has **two Mermaid figures**, the DIM contains all 15 R24 identifiers, and the Profile contains all 21 PR30 identifiers. Primary standard edition/date checks were made where relevant; that is **editorial verification, not a new standards ATS or deployed test**. The original DIM [R24 baseline](Candidate_Specification/DIM.md) and Profile [PR30 baseline](Candidate_Specification/CSAPI_Profile.md) are preserved unchanged.
+
+**Prior exact runtime evidence, not rerun in Step42:** [GitHub Actions **41674774256**](https://github.com/OS4CSAPI/glaux-client/actions/runs/41674774256) passed **248/248 installed Vitest**, Node 24 TypeScript/Vite, **12/12 producer original OGC GeoJSON body/schema HTTP**, **13/13 actual native Chromium**, **14/14 local Chromium regression**, source oracles 4/4 selected originals, 23/23 source-FALSE mutations and 4/4 issuer challenges. **Actual native served:** Dragino manufacturer-reference Procedure and Bennett actual historical station System through one in-house Glaux Resource Details path. AirGradient and Campbell retained local reader results, not new native producer success. **OGC `/conformance` still reports `conformsTo: []`**; no class/ATS PASS, globally persistent public Profile URI, cryptographically/independently verified original publisher, third-party independent client or Cloudflare/Oracle deployment. Bennett full Part 2 mean/quality/time/Deployment and Commands remain HELD/EXCLUDED. See [Step41R06 full report](Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md).
+
+**NEXT OWNER “PROCEED”: ORIGINAL STEP 43 ONLY.** Audit the two finished candidate editions, exact original source and standards claims, pinned runtime CI/reproducibility and source fidelity; issue the final **honestly qualified partial-result/remaining-blockers** judgment; update final continuity and plan. **Do not start new repairs, call these adopted or OGC certified, merge branches, deploy Cloudflare, write Oracle/52°North or operate Commands in that iteration**.
+
+---
+
+## Previous execution checkpoint — 3 November 2026 (41R-06 complete, original Step 42 still NEXT at that historical point)
 
 **[LATEST PITON v3.1 — full recovery through native producer→generic Glaux actual CI and qualified Step 42 handoff](PITON_DIM_Profile_V2_Continuity_v3.1_03NOV2026.md)**. Read current plan/README first; PITON v3.0 stops at Step 41R-05.
 
