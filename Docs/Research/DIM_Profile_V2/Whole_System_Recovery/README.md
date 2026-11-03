@@ -2830,4 +2830,6 @@ On the separate **application branch**, the existing [Resource Details profile-t
 
 ### 48.4 Next exact authorized boundary
 
+**Recovery continuity:** [PITON v2.8](../PITON_DIM_Profile_V2_Continuity_v2.8_03NOV2026.md) is the current complete Step41R-03 handoff, superseding the historical Step41-only v2.7 for NEXT status.  
+
 **NEXT ON OWNER'S ONE “PROCEED”: STEP 41R-04 ONLY.** Use original **Campbell CR1000X + first-gen ClimaVue 50** source fields (14 sensor response positions, 31 **separate** logger Status fields and documented design connection) and **Bennett's Point** original real historical station/site/maintenance equipment sources to make the next bounded source→packet→same generic Resource Details coverage repair. Manufacturer Campbell remains **reference-only**, not a joined installation; Bennett retains **two physical EE181 identities, three date-granular role statements, two original NOAA mean temperature reports versus four earlier experimental API copies, original raw QA whitespace, DERIVED nominal intervals and UNKNOWN original resultTime/producer**. No 41R-05 native Profile producer, 41R-06 generic CSAPI live adapter, original Steps 42–43, Oracle writes, actual Command or Cloudflare deployment in the same turn.
