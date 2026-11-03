@@ -93,11 +93,11 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-profile-test', title: 'Profile-aware Resource Details · semantic test',
-    description: 'One read-only Resource Details interpreter for four frozen research packets and four separately expanded source-coverage cases: Dragino, AirGradient, Campbell first-gen ClimaVue and Bennett actual history. Not native CSAPI Profile discovery, field telemetry or authenticated source.',
+    description: 'One Resource Details frame for frozen/expanded source packets and real read-only native CSAPI Procedure/System URLs with discovered versioned Profile/evidence links. Source assertions remain producer-unverified; not a deployed or full OGC class-conformant service.',
     latestUpdate: {
-      at: '2026-11-03T13:48:01Z',
-      summary: 'Added Campbell source-defined 14 ClimaVue response fields and 31 logger Status examples and Bennett source-qualified station/site/maintenance history to the existing local project packet reader and Resource Details selector, with no deployment.',
-      commit: '3edabbf9e52610368435e4761b9a8e2f5e57b0cf',
+      at: '2026-11-03T16:27:00Z',
+      summary: 'Added one manufacturer-independent native CSAPI GeoJSON resource to profile/describedby to existing shared Resource Details path, source-identity checking, raw-only fallback, and local Python-producer/Chromium acceptance tests. No deployment.',
+      commit: '6538577a3ffc684e91adaf1fa6e4edaf1f2990ca',
     },
   },
   {
