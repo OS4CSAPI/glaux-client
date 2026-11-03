@@ -68,7 +68,8 @@ export function packetClaimsForView(presentation: PacketPresentation, view: View
   switch (view) {
     case 'operational/Equipment':
       return items.filter(x => x.concept.startsWith('equipment.') || x.concept === 'identity.installed_unit' ||
-        x.concept === 'location.probe_position');
+        x.concept === 'location.probe_position' || x.concept === 'location.station_position' ||
+        x.concept === 'location.station_elevation');
     case 'operational/Communications':
       return items.filter(x => x.concept.startsWith('output.') || x.concept.startsWith('communications.') ||
         x.concept === 'equipment.design_connection');
@@ -77,7 +78,8 @@ export function packetClaimsForView(presentation: PacketPresentation, view: View
         x.concept === 'configuration.effective_setting');
     case 'activity/Table':
       // A source example is inspectable but must never be promoted to an original event.
-      return items.filter(x => x.standing === 'SOURCE_EXAMPLE' || presentation.model.events.some(e => e.id === x.about));
+      return items.filter(x => x.standing === 'SOURCE_EXAMPLE' || x.concept.startsWith('lifecycle.') ||
+        presentation.model.events.some(e => e.id === x.about));
     case 'management/Configuration':
       return items.filter(x => x.concept.startsWith('configuration.') || x.concept.startsWith('software.') ||
         x.concept === 'identity.installed_unit');
