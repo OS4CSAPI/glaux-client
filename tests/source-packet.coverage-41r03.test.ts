@@ -210,6 +210,25 @@ test('Both enlarged packets stay inspectable raw in Management/Sources, with unv
   }
 });
 
+test('New generic concepts require the 41R-03 project packet edition to be recognized', () => {
+  for(const name of ['dragino','airgradient'] as const){
+    const p=read(name);
+    expect(p.format).toBe('dim-csapi-source-packet.s41r03.v0.1');
+    expect(model(p).claims.every(x=>x.recognized)).toBe(true);
+    p.format='dim-csapi-source-packet.s32.v0.1';
+    const historicalFormat=model(p);
+    expect(historicalFormat.accepted).toBe(true); // original reader preserves unknown future source fields
+    expect(historicalFormat.claims.some(x=>x.recognized===false)).toBe(true);
+    expect(historicalFormat.raw).toBe(p);
+  }
+});
+
+test('Unsupported source-packet format is rejected rather than automatically treated as an OGC Profile', () => {
+  const p=read('dragino'); p.format='application/sml+json';
+  expect(model(p).accepted).toBe(false);
+  expect(model(p).issues.some(x=>x.path==='/format')).toBe(true);
+});
+
 test('A reference-only originalEvent cannot be manufactured by either expanded packet', () => {
   for(const name of ['dragino','airgradient'] as const){
     const p=read(name);p.originalEvents.push({id:'fictional',subject:p.focus,
