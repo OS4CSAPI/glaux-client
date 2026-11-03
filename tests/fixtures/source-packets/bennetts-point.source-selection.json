@@ -1,0 +1,37 @@
+{
+  "description": "Worked evidence for Bennett's Point. Keep the selected fields of two operator-published observations, the operator's separate installation history, and our attribution distinct. This is project evidence, not a live feed or CSAPI wire payload.",
+  "worked_profile_binding": "https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Candidate_Specification/examples/bennetts-point-wire/README.md",
+  "operator_record": {
+    "credit": "ACE Basin National Estuarine Research Reserve, South Carolina Department of Natural Resources, research coordinator Dr. Denise Sanger; NOAA National Estuarine Research Reserve System (NERRS) System-wide Monitoring Program, Centralized Data Management Office (CDMO).",
+    "title": "ACE Basin (ACE) NERR Meteorological Metadata, January–December 2024",
+    "document_updated": "2025-08-18",
+    "url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+    "locators": {"site": "Station table, printed p. 3, and section 10, printed p. 11: Bennett's Point / acebpmet.", "method": "Section 4, printed p. 2: EST year-round; air temperature in degrees Celsius as a 15-minute average of 5-second samples.", "probe_history": "Section 9: Temperature and Relative Humidity; Temp/RH sensors 3 and 4, printed p. 6.", "logger_history": "Section 9: CR1000X loggers 1 and 2, printed pp. 10–11.", "flags": "Sections 11–12, printed pp. 11–12: parameter-specific flags and additional codes.", "work_window": "Section 13, printed p. 13: maintenance April 16 and operating-system update April 17."}
+  },
+  "station": {"name": "Bennett's Point", "station_code": "acebpmet", "reserve": "ACE Basin", "state": "South Carolina"},
+  "probe_model": {"designation": "EE181", "description": "Air temperature and relative humidity probe", "model_source": "https://www.campbellsci.co.uk/ee181"},
+  "unit_use_history": [
+    {"record_label": "Temp/RH sensor 3", "serial": "21281600077814", "model": "EE181", "station_code": "acebpmet", "first_date_of_use": "2022-05-04", "last_date_of_use_listed": "2023-06-08"},
+    {"record_label": "Temp/RH sensor 4", "serial": "222016000109CE", "model": "EE181", "station_code": "acebpmet", "first_date_of_use": "2023-06-08", "last_date_of_use_listed": "2024-04-16"},
+    {"record_label": "Temp/RH sensor 3", "serial": "21281600077814", "model": "EE181", "station_code": "acebpmet", "first_date_of_use": "2024-04-16", "still_in_use_as_of": "2024-12-31", "removal_date": null}
+  ],
+  "installation_note": {"date": "2024-04-16", "logger_powered_down": "09:45", "installation_work_finished": "13:30", "time_basis_in_report": "Eastern Standard Time (EST), year round", "scope": "This was a station maintenance window covering multiple sensors. The note confirms a temperature/humidity sensor installation; the serials come from the equipment history, not from this note. It does not timestamp the individual probe change."},
+  "logger_context": {"model": "CR1000X", "documented_logger_serial": "13916", "first_date_of_use": "2022-05-04", "still_in_use_as_of": "2024-12-31", "other_serial_listed_inactive": "13915", "source_scope": "The active unit recorded the station summaries. It is not either EE181 probe; this is not a ClimaVue installation or a manufacturer PanelTemp example."},
+  "measurement_file": {
+    "citation": "NOAA NERRS, System-wide Monitoring Program; ACE Basin, Bennett's Point meteorology, 2024; accessed 2026-10-31. Dataset DOI: 10.25921/vw8a-8031.",
+    "csv": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+    "archive_index": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/",
+    "bytes": 5260824,
+    "sha256": "3f3ee3e5458c00adee770dc9b18a6246e590937a3f0c6c5f48cfc73cd8ae4950",
+    "selection": "Find the two DatetimeStamp strings below and their StationCode; header is line 1. Each station/date selector returned exactly one row in the inspected copy. CDMO may revise the archive. Only the temperature evidence is excerpted here, not the annual dataset.",
+    "field_key": {"ATemp": "Air temperature, degrees Celsius; 15-minute mean of 5-second samples.", "F_ATemp": "Parameter-level quality flag: <0> means passed initial QAQC checks, not a calibration certificate or proof of instrument identity.", "F_Record": "Record-wide flag, retained separately. Flags on other parameters do not qualify ATemp."},
+    "time_basis": "DatetimeStamp is the station's published stamp in EST (UTC−05:00) year-round. The UTC values below are our conversions; the CSV does not supply an independent publication/result time."
+  },
+  "readings": [
+    {"csv_line": 10130, "source_fields": {"StationCode": "acebpmet  ", "DatetimeStamp": "04/15/2024 12:00", "Frequency": "15", "ATemp": "29.1", "F_ATemp": "<0> ", "F_Record": ""}, "normalized_timestamp_utc": "2024-04-15T17:00:00Z", "attribution_from_equipment_history": {"label": "Temp/RH sensor 4", "serial": "222016000109CE"}},
+    {"csv_line": 10418, "source_fields": {"StationCode": "acebpmet  ", "DatetimeStamp": "04/18/2024 12:00", "Frequency": "15", "ATemp": "27.3", "F_ATemp": "<0> ", "F_Record": ""}, "normalized_timestamp_utc": "2024-04-18T17:00:00Z", "attribution_from_equipment_history": {"label": "Temp/RH sensor 3", "serial": "21281600077814"}}
+  ],
+  "attribution_method": "For each ATemp field, match the station (trim CSV padding), the air-temperature equipment role, and the full 15-minute measurement period to the reserve's dated equipment history. Each selected interval is strictly inside one probe's documented period of use. Neither CSV row contains a probe serial number. Do not apply this inference to other parameters in the row.",
+  "excluded_example": {"csv_line": 10322, "DatetimeStamp": "04/17/2024 12:00", "F_ATemp": "<-3> [GPR] (CSM)", "reason": "Not selected: temperature rejected during a logger operating-system update (§13). The presence of a numeric value does not override the flag."},
+  "limits": ["Same-day equipment-history endpoints have day precision. Neither midnight nor an exact changeover instant is asserted.", "The December 2024 as-of date is not a removal date, and the document revision and observation timestamps serve different purposes.", "These two historical station records demonstrate attribution across a swap, not calibration agreement, causation of a temperature difference, a complete station configuration, live interoperability or full Profile conformance."]
+}
