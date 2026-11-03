@@ -78,4 +78,6 @@ The two other original experimental manufacturer-reference designs—**AirGradie
 
 **Reproduction:** Checkout `work/details-view-20261023` and run the [Step 41R06 isolated GitHub Actions workflow](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/.github/workflows/dim-step41r06-native-client.yml), or reproduce its pinned research-only producer and local Vite/Chromium instructions; [browser test implementation](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/scripts/verify-step41r06-native-browser.cjs). Actual completed [run 41674774256](https://github.com/OS4CSAPI/glaux-client/actions/runs/41674774256) and its [artifact](https://github.com/OS4CSAPI/glaux-client/actions/runs/41674774256/artifacts/13249194398) provide durable CI evidence. Do not run a live Oracle/Cloudflare write or physical Command for reproduction.
 
+**Recovery continuity:** [PITON v3.1](../PITON_DIM_Profile_V2_Continuity_v3.1_03NOV2026.md) documents current research/app source, real browser and CI evidence, unresolved Gate E/F acceptance criteria, and qualified Step 42 next instructions.  
+
 **NEXT OWNER “PROCEED”: ORIGINAL STEP 42 ONLY, as a qualified candidate with explicit Gate E/F HOLD.** Do **not** start Step 43 final release, new native server remediation, actual deployment, or another donor research campaign in the same iteration.
