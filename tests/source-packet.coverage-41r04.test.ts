@@ -45,7 +45,8 @@ function campbellSourceOracle(p: any): string[] {
     const a=dfield(p,r.index);
     if(a?.about!=='d-climavue' || a?.standing!=='SOURCE_FACT' ||
        a?.value?.nativeField!=='aR7! position '+r.index ||
-       a?.value?.raw!==String(r.index) || a?.value?.unit!==r.unit ||
+       a?.value?.raw!==String(r.index) ||
+       a?.value?.unit!==(r.index===8?'position (°C)':r.unit) ||
        (r.index!==8 && !a?.value?.interpretation?.includes(r.label)))
       errs.push('D-R'+String(r.index).padStart(2,'0'));
   }
