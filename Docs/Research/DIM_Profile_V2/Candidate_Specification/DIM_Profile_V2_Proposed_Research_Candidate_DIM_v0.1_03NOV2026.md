@@ -189,9 +189,9 @@ A future revision must document (1) the exact new original source and edition; (
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
-British Standards Institution (BSI). 2024. *BSI Flex 335, SAPIENT, version 2.0 (March 2024)*. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf. Consult the original v2 text and the project source-edition caveats; not the unavailable v3.
-
 ACE Basin National Estuarine Research Reserve. 2025. *Meteorological Metadata: ACE Basin, Updated August 18, 2025*. NOAA/CDMO operator metadata. https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf.
+
+British Standards Institution (BSI). 2024. *BSI Flex 335, SAPIENT, version 2.0 (March 2024)*. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf. Consult the original v2 text and the project source-edition caveats; not the unavailable v3.
 
 Campbell Scientific. 2024. *ClimaVue 50 Manual*. Revision 08/2024, especially table 8-1. https://s.campbellsci.com/documents/us/manuals/climavue50.pdf.
 
@@ -213,6 +213,10 @@ National Institute of Standards and Technology (NIST). 2024. “NIST and Univers
 
 NOAA Centralized Data Management Office (CDMO). 2024. *ACE Basin Station acebpmet, Meteorological Data 2024*, archive CSV, original selected rows 10130 and 10418. https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv. The current work reuses the frozen source selection, not a newly issuer-signed CSV.
 
+OPC Foundation. 2025a. *OPC UA Part 100: Devices*, version 1.05.0. https://reference.opcfoundation.org/specs/OPC-10000-100/.
+
+OPC Foundation. 2025b. *OPC 30081: Process Automation Device Information Model (PA-DIM)*, version 1.02.0. https://reference.opcfoundation.org/specs/OPC-30081/.
+
 Open Air Foundation. 2026a. “Open Air Max Main PCB.” Pinned GitHub revision 89aacf5013fc0ffe4b988a2e3c5a227bce3c4983. https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md.
 
 Open Air Foundation. 2026b. “Open Air Max Firmware.” Pinned GitHub revision 84e479a415d81151e7a81aea9a2f7449a15e98cc. https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md.
@@ -224,6 +228,8 @@ Open Geospatial Consortium. 2025b. *OGC API – Connected Systems – Part 2: Dy
 Open Geospatial Consortium. 2025c. *OGC SensorML Encoding Standard*, version 3.0, OGC 23-000. Edited by Alexandre Robin. https://docs.ogc.org/is/23-000/23-000.html.
 
 Open Geospatial Consortium. 2025d. *OGC SWE Common Data Model Encoding Standard*, version 3.0.0, OGC 24-014. Edited by Alexandre Robin. https://docs.ogc.org/is/24-014/24-014.html.
+
+The Open Group. 2023. *Sensor Open Systems Architecture (SOSA) Technical Standard*, edition 1.1, C239. Public primary edition reviewed and qualified in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships). Not the W3C/OGC SOSA ontology.
 
 OS4CSAPI. 2026a. “DIM / CSAPI Profile V2 — Original Problem, Intended Solution, and Evidence-to-UI Path.” October 28. [Project source](../DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md).
 
@@ -249,17 +255,11 @@ OS4CSAPI. 2026k. “Candidate Domain Information Model, Integrated R24.” Novem
 
 OS4CSAPI. 2026l. “Step 41R-06: Native CSAPI Profile-aware Glaux Resource Details and Actual Browser Verification.” November 3. [Project source](../Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md).
 
-The Open Group. 2023. *Sensor Open Systems Architecture (SOSA) Technical Standard*, edition 1.1, C239. Public primary edition reviewed and qualified in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships). Not the W3C/OGC SOSA ontology.
-
-OPC Foundation. 2025a. *OPC UA Part 100: Devices*, version 1.05.0. https://reference.opcfoundation.org/specs/OPC-10000-100/.
-
-OPC Foundation. 2025b. *OPC 30081: Process Automation Device Information Model (PA-DIM)*, version 1.02.0. https://reference.opcfoundation.org/specs/OPC-30081/.
+Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*, version 3.0.0, OGC 20-082r4. Open Geospatial Consortium. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
 U.S. Army. 2023a. *Integrated Sensor Architecture (ISA) Software Design Document*, release 6.0, revision 5, October 31. Original source passages analyzed in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships).
 
 U.S. Army. 2023b. *Integrated Sensor Architecture (ISA) Data Model Specification*, release 6.0, revision 12, October 31. Original source passages analyzed in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships).
-
-Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*, version 3.0.0, OGC 20-082r4. Open Geospatial Consortium. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
 World Wide Web Consortium (W3C). 2017. *Semantic Sensor Network Ontology (SOSA/SSN)*. Recommendation, October 19. https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/.
 
