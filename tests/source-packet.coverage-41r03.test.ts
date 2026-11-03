@@ -72,13 +72,14 @@ const airgradientSourceOracle = (p: any) => {
       claim(p, 'a41-solar')?.value?.unit !== 'W' ||
       !claim(p, 'a41-battery')?.value?.raw?.includes('three 3,500 mAh'))
     issues.push('A-P01/P02 design panel/cell topology, not measured pack capacity');
-  if (claim(p, 'a41-network-default')?.value?.raw !== 'Cellular' ||
+  if (claim(p, 'a41-network-default')?.concept !== 'configuration.documented_default' ||
+      claim(p, 'a41-network-default')?.value?.raw !== 'Cellular' ||
       claim(p, 'a41-network-default')?.standing !== 'SOURCE_FACT' ||
       claim(p, 'a41-firmware-revision')?.standing !== 'SOURCE_FACT' ||
       claim(p, 'a41-installed-firmware')?.standing !== 'UNKNOWN')
     issues.push('A-I04/A-C02 reference default/firmware versus actual');
-  if (!claim(p, 'a41-cell-report')?.value?.raw?.includes('9 minutes') ||
-      !claim(p, 'a41-wifi-report')?.value?.raw?.includes('3 minutes'))
+  if (claim(p, 'a41-cell-report')?.value?.raw !== 'Cellular: nominal 3-minute samples; payload every 9 minutes (HTTP/MQTT), failed batches cached temporarily' ||
+      claim(p, 'a41-wifi-report')?.value?.raw !== 'Wi-Fi: HTTP JSON one sample every 3 minutes; no retransmission cache')
     issues.push('A-C10/12 separate network reporting');
   if (claim(p, 'a-example')?.standing !== 'SOURCE_EXAMPLE' ||
       claim(p, 'a-installed')?.standing !== 'UNKNOWN' ||
