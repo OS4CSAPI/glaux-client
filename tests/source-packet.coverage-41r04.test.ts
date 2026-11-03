@@ -238,13 +238,15 @@ test('A changed as-of date on another sensor is rejected by the historical sourc
   expect(model(p).accepted).toBe(true);
   expect(bennettSourceOracle(p)).toContain('B-DATE-QUALIFIED-ROLES');
 });
-test('Both new packets have a distinct source research edition and preserve raw unknown concepts under old editions',()=>{
+test('41R-04 packet version keeps known older concepts and guards only newly introduced meanings',()=>{
   for(const name of ['campbell','bennett'] as const){
     const p=packet(name);clean(p);
     expect(p.format).toBe('dim-csapi-source-packet.s41r04.v0.1');
     p.format='dim-csapi-source-packet.s41r03.v0.1';
     expect(model(p).accepted).toBe(true);
-    expect(model(p).claims.some(x=>x.recognized===false)).toBe(true);
+    // Campbell's new field/example claims reuse supported 41R-03 concept meanings.
+    // Bennett adds station-position, mounting, historical-maintenance, dated OS terms.
+    expect(model(p).claims.some(x=>x.recognized===false)).toBe(name==='bennett');
     expect(model(p).raw).toBe(p);
   }
 });
