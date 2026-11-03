@@ -3,7 +3,7 @@
 **Edition:** 0.1, 3 November 2026  
 **Standing:** PROPOSED, PARTIALLY VALIDATED RESEARCH CANDIDATE — **not an adopted standard, accepted OGC information model, complete ontology, certified interoperability specification, or production release**  
 **Project:** DIM / OGC API – Connected Systems (CSAPI) Profile V2; repository OS4CSAPI/glaux-client, research/dim-profile-v2  
-**Purpose:** Publication-oriented consolidation prepared during **original Step 42** of the owner-authorized 43-step plan. Original Step 43 reproducibility and final decision **remain pending**.  
+**Purpose:** Publication-oriented consolidation prepared in original Step 42; **original Step 43 final independent review completed 3 November 2026**. [Final Step43 reproducibility/source-fidelity and conditional-stop decision](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md): **Gate E/F NOT CLOSED, Gate G REVIEWED / FULL RELEASE NOT APPROVED**. Research candidate may be shared for clearly qualified expert technical discussion, not normative/adopted release.  
 **Companion:** [Separate proposed CSAPI application Profile](DIM_Profile_V2_Proposed_Research_Candidate_CSAPI_Profile_v0.1_03NOV2026.md)  
 **Evidence:** [Original problem](../DIM_Profile_V2_Problem_and_Outcome_Baseline_v0.1_28OCT2026.md); [source-first cumulative workbook](../Whole_System_Recovery/README.md); [underlying candidate DIM and R24 register](DIM.md); [four-case fidelity assessment](../Whole_System_Recovery/Step40_Four_Case_Source_to_Client_Fidelity_Scorecard_03NOV2026.md); [Step 41R-06 actual integration report](../Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md).
 
@@ -179,13 +179,13 @@ The editorial decision is **source reuse without forced term adoption**. The mod
 | **F40-07; G30-08: external interoperability** | One in-house same-client read-only path for two native kinds; rest local. | Independently implemented producer/client and production source Profile behavior. |
 | **F40-08; G30-09: executable controls** | Supported/descriptive capability only, real Commands excluded. | Authenticated source-authorized command/reply/status/effect evidence under a separate approved effort. |
 
-**Gate E NOT CLOSED; Gate F NOT CLOSED for the original external-interoperability criterion; Gate G NOT REACHED.** This editorial candidate preserves the broader goal and does not transform a partial achievement into a final release.
+**Gate E NOT CLOSED; Gate F NOT CLOSED for the original external-interoperability criterion; Gate G REVIEWED, FULL RELEASE NOT APPROVED under the [Step43 final audit](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md).** This editorial candidate preserves the broader goal and does not transform a partial achievement into a final release.
 
 ## 9. Revision, falsification and governance
 
 A future revision must document (1) the exact new original source and edition; (2) which focal referent and evidence level it supports; (3) whether R24 predicates are retained, revised, split, replaced or discarded; (4) explicit negative-case and source-fidelity outcomes; (5) Profile mapping implications without confusing standard obligations and project proposals; and (6) independently checked software/test standing where applicable. Retain the old R24 register as the provenance-bearing predecessor. Update both publication editions **separately**; neither document's publication converts the other into an adopted standard.
 
-**Review standing:** This is a coherent publication-oriented **research candidate for critical technical reading**, **not** a publication approval or gate closure. Original Step **43 final reproducibility/cross-branch/source-fidelity review is pending**.
+**Review standing after Step43:** This remains a coherent publication-oriented **proposed, partially validated research candidate suitable for explicitly qualified expert technical reading**, **not** OGC adoption, external Profile/production implementation approval or conformance. Original Step **43 reproducibility/cross-branch/source-fidelity review was completed with a CONDITIONAL STOP and open Gate E/F obligations**, as recorded in the [final audit](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md).
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
