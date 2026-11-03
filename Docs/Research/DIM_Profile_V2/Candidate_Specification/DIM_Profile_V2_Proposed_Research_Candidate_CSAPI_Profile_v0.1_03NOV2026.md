@@ -256,9 +256,9 @@ Changes to the Profile must specify exact new original normative base class/cons
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
-British Standards Institution (BSI). 2024. *BSI Flex 335: SAPIENT, version 2.0 (March 2024)*. Original published examples are used as negative control, not an adopted CSAPI command mapping. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf.
-
 ACE Basin National Estuarine Research Reserve. 2025. *Meteorological Metadata: ACE Basin, Updated August 18, 2025*. https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf.
+
+British Standards Institution (BSI). 2024. *BSI Flex 335: SAPIENT, version 2.0 (March 2024)*. Original published examples are used as negative control, not an adopted CSAPI command mapping. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf.
 
 Campbell Scientific. 2024. *ClimaVue 50 Manual*. Revision 08/2024, table 8-1. https://s.campbellsci.com/documents/us/manuals/climavue50.pdf.
 
@@ -266,29 +266,17 @@ Campbell Scientific. n.d. “MQTT Status Example.” *Datalogger API*. https://h
 
 Dragino. n.d. “S31-LB Temperature and Humidity Sensor: Product Manual.” https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/.
 
-Nottingham, Mark. 2017. *Web Linking*. RFC 8288, Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc8288.
-
 Heazel, Charles, ed. 2023. *OGC API – Common – Part 1: Core*. Version 1.0.0, OGC 19-072. Open Geospatial Consortium. https://docs.ogc.org/is/19-072/19-072.html.
 
 Internet Assigned Numbers Authority (IANA). n.d. “Link Relation Types.” Registry of registered relation types, including profile/describedby. https://www.iana.org/assignments/link-relations/link-relations.xhtml.
 
 NOAA Centralized Data Management Office (CDMO). 2024. *ACE Basin Station acebpmet, Meteorological Data 2024*. Original archive CSV, selected lines 10130 and 10418. https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv.
 
+Nottingham, Mark. 2017. *Web Linking*. RFC 8288, Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc8288.
+
 Open Air Foundation. 2026a. “Open Air Max Main PCB.” Pinned hardware Git revision 89aacf5013fc0ffe4b988a2e3c5a227bce3c4983. https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md.
 
 Open Air Foundation. 2026b. “Open Air Max Firmware.” Pinned firmware Git revision 84e479a415d81151e7a81aea9a2f7449a15e98cc. https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md.
-
-Robin, Alexandre, ed. 2025a. *OGC API – Connected Systems – Part 1: Feature Resources*. Version 1.0, OGC 23-001. Open Geospatial Consortium. https://docs.ogc.org/is/23-001/23-001.html.
-
-Robin, Alexandre, ed. 2025b. *OGC API – Connected Systems – Part 2: Dynamic Data*. Version 1.0, OGC 23-002. Open Geospatial Consortium. https://docs.ogc.org/is/23-002/23-002.html.
-
-Robin, Alexandre, ed. 2025c. *OGC SensorML Encoding Standard*. Version 3.0, OGC 23-000. Open Geospatial Consortium. https://docs.ogc.org/is/23-000/23-000.html.
-
-Robin, Alexandre, ed. 2025d. *OGC SWE Common Data Model Encoding Standard*. Version 3.0.0, OGC 24-014. Open Geospatial Consortium. https://docs.ogc.org/is/24-014/24-014.html.
-
-Portele, Clemens, Panagiotis (Peter) A. Vretanos, and Charles Heazel, eds. 2022. *OGC API – Features – Part 1: Core Corrigendum*. Version 1.0.1, OGC 17-069r4. Open Geospatial Consortium. https://docs.ogc.org/is/17-069r4/17-069r4.html.
-
-Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*. Version 3.0.0, OGC 20-082r4. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
 OS4CSAPI. 2026a. “Step 41R-01: Standards-grounded Profile Discovery and Source-Evidence Carrier Decision.” November 3. [Research report](../Whole_System_Recovery/Step41R01_Standards_Profile_Carrier_Decision_03NOV2026.md).
 
@@ -305,6 +293,18 @@ OS4CSAPI. 2026f. “System Data Sheet C: Dragino S31-LB and Source-limited Contr
 OS4CSAPI. 2026g. “Step 41R-03: Dragino and AirGradient Whole-System Source Coverage.” November 3. [Research report](../Whole_System_Recovery/Step41R03_Dragino_AirGradient_Whole_System_Coverage_and_Client_Evidence_03NOV2026.md).
 
 OS4CSAPI. 2026h. “Step 41R-04: Campbell and Bennett Source-to-Client Coverage.” November 3. [Research report](../Whole_System_Recovery/Step41R04_Campbell_Bennett_Source_to_Client_Coverage_03NOV2026.md).
+
+Portele, Clemens, Panagiotis (Peter) A. Vretanos, and Charles Heazel, eds. 2022. *OGC API – Features – Part 1: Core Corrigendum*. Version 1.0.1, OGC 17-069r4. Open Geospatial Consortium. https://docs.ogc.org/is/17-069r4/17-069r4.html.
+
+Robin, Alexandre, ed. 2025a. *OGC API – Connected Systems – Part 1: Feature Resources*. Version 1.0, OGC 23-001. Open Geospatial Consortium. https://docs.ogc.org/is/23-001/23-001.html.
+
+Robin, Alexandre, ed. 2025b. *OGC API – Connected Systems – Part 2: Dynamic Data*. Version 1.0, OGC 23-002. Open Geospatial Consortium. https://docs.ogc.org/is/23-002/23-002.html.
+
+Robin, Alexandre, ed. 2025c. *OGC SensorML Encoding Standard*. Version 3.0, OGC 23-000. Open Geospatial Consortium. https://docs.ogc.org/is/23-000/23-000.html.
+
+Robin, Alexandre, ed. 2025d. *OGC SWE Common Data Model Encoding Standard*. Version 3.0.0, OGC 24-014. Open Geospatial Consortium. https://docs.ogc.org/is/24-014/24-014.html.
+
+Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*. Version 3.0.0, OGC 20-082r4. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
 Wilde, Erik. 2013. *The “profile” Link Relation Type*. RFC 6906, Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc6906.
 
