@@ -56,7 +56,16 @@ const concepts = new Set([
   'software.reference_revision', 'software.installed_version',
 ]);
 // Two distinct PROJECT packet versions; 41R-03 adds source coverage without altering frozen Step 32 syntax.
-const supportedResearchFormats = new Set([STEP32_FORMAT, 'dim-csapi-source-packet.s41r03.v0.1']);
+const COVERAGE_FORMAT = 'dim-csapi-source-packet.s41r03.v0.1';
+const supportedResearchFormats = new Set([STEP32_FORMAT, COVERAGE_FORMAT]);
+// Version-gated recognition does not prohibit inspection of unknown future concepts.
+// A Step 32 packet with a new concept remains RAW/unrecognized, not silently interpreted as 41R-03.
+const coverageOnlyConcepts = new Set([
+  'configuration.documented_default', 'configuration.documented_example', 'configuration.supported_action',
+  'output.message_type', 'output.status_field', 'communications.supported_interface',
+  'communications.documented_reporting', 'power.design_specification',
+  'software.reference_revision', 'software.installed_version',
+]);
 
 /** Only declared standing and cross-reference consistency are checked: NOT actual source authority. */
 export function interpretSourcePacket(input: unknown): SourcePacketView {
@@ -171,7 +180,8 @@ export function interpretSourcePacket(input: unknown): SourcePacketView {
         issue(path, 'UNKNOWN must have a reason and no invented value, target or derivation.');
     } else if (hasLiteral === hasTarget) issue(path, 'Known claim needs exactly one literal value or relationship target.');
     const claim: ClaimView = { id: v.id, about: v.about, concept: v.concept,
-      standing, kind, recognized: concepts.has(v.concept), evidence: ev, raw: v };
+      standing, kind, recognized: concepts.has(v.concept) &&
+        (!coverageOnlyConcepts.has(v.concept) || input.format === COVERAGE_FORMAT), evidence: ev, raw: v };
     if (hasLiteral) {
       if (!record(v.value) || typeof v.value.raw !== 'string' ||
           (v.value.unit !== undefined && typeof v.value.unit !== 'string') ||
