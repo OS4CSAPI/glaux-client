@@ -1,0 +1,190 @@
+{
+  "format": "dim-csapi-source-packet.s32.v0.1",
+  "id": "s32-airgradient-reference",
+  "focus": "a-max",
+  "sources": [
+    {
+      "id": "a01",
+      "issuer": "AirGradient / Open Air Foundation",
+      "title": "Open Air Max hardware README",
+      "url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Pinned 89aacf5013fc0ffe4b988a2e3c5a227bce3c4983",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md §1"
+    },
+    {
+      "id": "a02",
+      "issuer": "AirGradient / Open Air Foundation",
+      "title": "Open Air Max firmware README",
+      "url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Pinned 84e479a415d81151e7a81aea9a2f7449a15e98cc",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md §3"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "a-max",
+      "label": "Open Air Max O-M-1PPSTON-CE gas-equipped reference arrangement",
+      "standing": "REFERENCE_ARRANGEMENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "model designation",
+        "raw": "O-M-1PPSTON-CE"
+      }
+    },
+    {
+      "id": "a-pm1",
+      "label": "PMS5003 design component at hardware socket PM1",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "hardware socket in reference design",
+        "raw": "PM1"
+      }
+    },
+    {
+      "id": "a-pm2",
+      "label": "PMS5003 design component at hardware socket PM2",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "hardware socket in reference design",
+        "raw": "PM2"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "a-socket1",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-pm1",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Plug-in modules; research A-I06",
+          "nativeToken": "PM1"
+        }
+      ]
+    },
+    {
+      "id": "a-socket2",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-pm2",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Plug-in modules; research A-I06",
+          "nativeToken": "PM2"
+        }
+      ]
+    },
+    {
+      "id": "a-pm01",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm01",
+        "unit": "µg/m³",
+        "nativeField": "pm01",
+        "interpretation": "PM1.0 particulate matter measurement field name, not a hardware socket"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F04",
+          "nativeToken": "pm01"
+        }
+      ]
+    },
+    {
+      "id": "a-pm25",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm25",
+        "unit": "µg/m³",
+        "nativeField": "pm25",
+        "interpretation": "PM2.5 particulate matter field; not PM2 connector"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F05",
+          "nativeToken": "pm25"
+        }
+      ]
+    },
+    {
+      "id": "a-pm10",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm10",
+        "unit": "µg/m³",
+        "nativeField": "pm10",
+        "interpretation": "PM10 particulate matter field; not an additional physical sensor"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F06",
+          "nativeToken": "pm10"
+        }
+      ]
+    },
+    {
+      "id": "a-example",
+      "about": "a-max",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "27.7",
+        "unit": "µg/m³",
+        "nativeField": "pm25",
+        "interpretation": "published annotated Wi-Fi example, not live telemetry"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F05",
+          "nativeToken": "27.7"
+        }
+      ]
+    },
+    {
+      "id": "a-installed",
+      "about": "a-max",
+      "concept": "identity.installed_unit",
+      "standing": "UNKNOWN",
+      "reason": "Product, firmware and cloud examples are not a confirmed installed physical individual or synchronized operating source.",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Reference assembly only; research A-I16"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [],
+  "representations": [],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Portable provenance",
+      "reason": "Source examples and reference hardware slots have no validated CSAPI discovery carrier."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Source-independent consumer",
+      "reason": "No common semantic interpreter or authenticated unit execution verified."
+    }
+  ]
+}
