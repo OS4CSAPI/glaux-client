@@ -1,0 +1,101 @@
+name: DIM Profile V2 41R-06 — genuine native source to one Glaux client
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [work/details-view-20261023]
+    paths:
+      - '.github/workflows/dim-step41r06-native-client.yml'
+      - 'src/profile/native-source-profile.ts'
+      - 'src/profile/source-packet-presentation.ts'
+      - 'src/presentation/source-packet-details.ts'
+      - 'src/presentation/resource-details-profile-test.ts'
+      - 'src/presentation/resource-details-profile-test.css'
+      - 'scripts/verify-step41r06-native-browser.cjs'
+      - 'tests/native-source-profile.test.ts'
+
+permissions:
+  contents: read
+
+jobs:
+  native-profile-client:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Check out application branch
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - name: Check out immutable Step 41R-05 tested producer revision
+        uses: actions/checkout@v4
+        with:
+          repository: OS4CSAPI/glaux-client
+          ref: 0672082f3ebe35936aa8dcd92d1a78072b16d013
+          path: .step41r05-research
+          persist-credentials: false
+      - name: Install Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            .dependencies/ogc-client/package-lock.json
+      - name: Install Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact application and test-only schema dependencies
+        run: |
+          npm ci
+          python -m pip install -r .step41r05-research/Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/requirements-test.txt
+      - name: Full TypeScript compilation
+        run: npm run typecheck
+      - name: Full Vitest suite including native Profile negative tests
+        run: npm test
+      - name: Build application without deployment
+        run: npm run build
+      - name: Reverify pinned producer actual native HTTP and OGC original schemas
+        run: |
+          python .step41r05-research/Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/test_http.py
+          node .step41r05-research/Docs/Research/DIM_Profile_V2/Whole_System_Recovery/step41r02-source-oracles.cjs
+      - name: Install browser test harness
+        run: |
+          npm install --no-save --ignore-scripts --no-package-lock playwright-core@1.56.1
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "GLAUX_CHROMIUM_EXECUTABLE=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          elif command -v chromium >/dev/null 2>&1; then
+            echo "GLAUX_CHROMIUM_EXECUTABLE=$(command -v chromium)" >> "$GITHUB_ENV"
+          else
+            echo "No real Chrome/Chromium executable: browser validation cannot pass" >&2
+            exit 1
+          fi
+      - name: Run actual isolated producer and Vite client on separate ports
+        run: |
+          python .step41r05-research/Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/server.py --port 8015 >/tmp/step41r06-producer.log 2>&1 &
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/step41r06-vite.log 2>&1 &
+          for n in $(seq 1 50); do
+            if curl -fsS -H 'Accept: application/geo+json' http://127.0.0.1:8015/api/procedures/dragino-s31-lb >/dev/null &&
+              curl -fsS http://127.0.0.1:5173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/step41r06-producer.log /tmp/step41r06-vite.log
+          exit 1
+      - name: Actual Chromium native producer to one generic Resource Details path
+        run: node scripts/verify-step41r06-native-browser.cjs
+        env:
+          GLAUX_BASE_URL: http://127.0.0.1:5173
+          GLAUX_NATIVE_PRODUCER_BASE: http://127.0.0.1:8015/api
+      - name: Preserve historical local packet browser regression
+        run: npm run test:browser:source-packet
+      - name: Archive exact real browser evidence (no deployment)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: step41r06-native-producer-browser
+          path: artifacts/step41r06-native-browser.json
+          if-no-files-found: warn
+          retention-days: 30
