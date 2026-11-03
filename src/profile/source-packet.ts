@@ -49,6 +49,9 @@ const concepts = new Set([
   'observation.raw_quality_token', 'observation.nominal_period', 'observation.contributing_equipment',
   'observation.result_time', 'observation.producing_system', 'configuration.effective_setting',
   'identity.installed_unit', 'location.probe_position', 'source.native',
+  // 41R-04 source-level station geometry, mounting, maintenance and dated logger OS context.
+  'location.station_position', 'location.station_elevation', 'equipment.mounting_context',
+  'lifecycle.maintenance_note', 'software.reported_version',
   // 41R-03 generic, reference-only whole-System coverage vocabulary (project, not OGC wire).
   'configuration.documented_default', 'configuration.documented_example', 'configuration.supported_action',
   'output.message_type', 'output.status_field', 'communications.supported_interface',
@@ -57,9 +60,14 @@ const concepts = new Set([
 ]);
 // Two distinct PROJECT packet versions; 41R-03 adds source coverage without altering frozen Step 32 syntax.
 const COVERAGE_FORMAT = 'dim-csapi-source-packet.s41r03.v0.1';
-const supportedResearchFormats = new Set([STEP32_FORMAT, COVERAGE_FORMAT]);
+const HISTORICAL_COVERAGE_FORMAT = 'dim-csapi-source-packet.s41r04.v0.1';
+const supportedResearchFormats = new Set([STEP32_FORMAT, COVERAGE_FORMAT, HISTORICAL_COVERAGE_FORMAT]);
 // Version-gated recognition does not prohibit inspection of unknown future concepts.
 // A Step 32 packet with a new concept remains RAW/unrecognized, not silently interpreted as 41R-03.
+const historicalCoverageOnlyConcepts = new Set([
+  'location.station_position', 'location.station_elevation', 'equipment.mounting_context',
+  'lifecycle.maintenance_note', 'software.reported_version',
+]);
 const coverageOnlyConcepts = new Set([
   'configuration.documented_default', 'configuration.documented_example', 'configuration.supported_action',
   'output.message_type', 'output.status_field', 'communications.supported_interface',
@@ -181,7 +189,8 @@ export function interpretSourcePacket(input: unknown): SourcePacketView {
     } else if (hasLiteral === hasTarget) issue(path, 'Known claim needs exactly one literal value or relationship target.');
     const claim: ClaimView = { id: v.id, about: v.about, concept: v.concept,
       standing, kind, recognized: concepts.has(v.concept) &&
-        (!coverageOnlyConcepts.has(v.concept) || input.format === COVERAGE_FORMAT), evidence: ev, raw: v };
+        (!coverageOnlyConcepts.has(v.concept) || input.format === COVERAGE_FORMAT || input.format === HISTORICAL_COVERAGE_FORMAT) &&
+        (!historicalCoverageOnlyConcepts.has(v.concept) || input.format === HISTORICAL_COVERAGE_FORMAT), evidence: ev, raw: v };
     if (hasLiteral) {
       if (!record(v.value) || typeof v.value.raw !== 'string' ||
           (v.value.unit !== undefined && typeof v.value.unit !== 'string') ||
