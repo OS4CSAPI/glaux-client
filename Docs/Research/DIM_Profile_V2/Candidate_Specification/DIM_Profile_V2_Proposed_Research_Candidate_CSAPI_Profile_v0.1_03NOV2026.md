@@ -4,6 +4,7 @@
 **Standing:** PROPOSED, PARTIALLY VALIDATED RESEARCH CANDIDATE — **not an adopted Open Geospatial Consortium (OGC) Profile, approved requirements class, certification claim, independently interoperable release, or deployed production specification**  
 **Project:** DIM / OGC API – Connected Systems (CSAPI) Profile V2, research branch research/dim-profile-v2  
 **Preparation:** Original **Step 42** of the 43-step plan; Step 43 final reproducibility/release judgment **PENDING**  
+**Acceptance status:** **Gate E NOT CLOSED; Gate F NOT CLOSED for externally independent interoperability; Gate G NOT REACHED.** The bounded producer-to-client test passed; the original release acceptance conditions were not lowered.  
 **Companion:** [Implementation-independent DIM proposed research candidate](DIM_Profile_V2_Proposed_Research_Candidate_DIM_v0.1_03NOV2026.md)  
 **Antecedents:** [Integrated PR30-01–21 and G30-01–09 manuscript](CSAPI_Profile.md); [Step41R-01 registered-link carrier decision](../Whole_System_Recovery/Step41R01_Standards_Profile_Carrier_Decision_03NOV2026.md); [Step41R-06 actual producer/client report](../Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md); [owner-authorized plan](../PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md).
 
