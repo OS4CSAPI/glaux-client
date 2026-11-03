@@ -1,0 +1,199 @@
+{
+  "format": "dim-csapi-source-packet.s32.v0.1",
+  "id": "s32-campbell-reference",
+  "focus": "d-pair",
+  "sources": [
+    {
+      "id": "d02",
+      "issuer": "Campbell Scientific",
+      "title": "ClimaVue 50 Product Manual",
+      "url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "First-generation ClimaVue 50, 08/2024; Tables 7-1,8-1",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md §§1–2"
+    },
+    {
+      "id": "d07",
+      "issuer": "Campbell Scientific",
+      "title": "Status — MQTT API (CR1000X example)",
+      "url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Published example; displayed footer 2026-09-21 as recorded in source sheet",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md §5"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "d-pair",
+      "label": "Documented potential CR1000X and ClimaVue 50 reference pairing",
+      "standing": "REFERENCE_ARRANGEMENT"
+    },
+    {
+      "id": "d-logger",
+      "label": "CR1000X logger reference product",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "Campbell Scientific",
+        "scheme": "model",
+        "raw": "CR1000X"
+      }
+    },
+    {
+      "id": "d-climavue",
+      "label": "First-generation ClimaVue 50 sensing assembly reference product",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "Campbell Scientific",
+        "scheme": "model",
+        "raw": "ClimaVue 50"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "d-sensor",
+      "about": "d-pair",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "d-climavue",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1; research D-I02",
+          "nativeToken": "ClimaVue 50"
+        }
+      ]
+    },
+    {
+      "id": "d-logger-part",
+      "about": "d-pair",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "d-logger",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1; source sheet D-I01/D-I06",
+          "nativeToken": "CR1000X"
+        }
+      ]
+    },
+    {
+      "id": "d-connection",
+      "about": "d-logger",
+      "concept": "equipment.design_connection",
+      "standing": "SOURCE_FACT",
+      "target": "d-climavue",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 7-1; research D-I06",
+          "nativeToken": "SDI-12"
+        }
+      ]
+    },
+    {
+      "id": "d-field-count",
+      "about": "d-climavue",
+      "concept": "output.field_count",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "14",
+        "unit": "response positions",
+        "nativeField": "aR7!",
+        "interpretation": "one source-defined response, not fourteen sensors"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21; D-R01–14",
+          "nativeToken": "aR7!"
+        }
+      ]
+    },
+    {
+      "id": "d-ambient-field",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "8",
+        "unit": "position (°C)",
+        "nativeField": "aR7! position 8",
+        "interpretation": "environmental air temperature; no real result value acquired"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, D-R08",
+          "nativeToken": "Air temperature"
+        }
+      ]
+    },
+    {
+      "id": "d-panel-field",
+      "about": "d-logger",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "PanelTemp",
+        "unit": "°C",
+        "nativeField": "PanelTemp",
+        "interpretation": "logger panel temperature, not environmental air temperature"
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X Status example / D-S02",
+          "nativeToken": "PanelTemp"
+        }
+      ]
+    },
+    {
+      "id": "d-panel-example",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "25.91098",
+        "unit": "°C",
+        "nativeField": "PanelTemp",
+        "interpretation": "publisher example; unrelated to ClimaVue observations"
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X Status example, D-S02",
+          "nativeToken": "25.91098"
+        }
+      ]
+    },
+    {
+      "id": "d-installed",
+      "about": "d-pair",
+      "concept": "identity.installed_unit",
+      "standing": "UNKNOWN",
+      "reason": "No authenticated assembled operating station, actual SDI-12 address or installed program; 2019/2024/2026 documents are not a joined release.",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Manufacturer design/example only; sheet §8"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [],
+  "representations": [],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Reference/example evidence carrier",
+      "reason": "Separate source editions and their standing are not yet transportable via a validated CSAPI Profile."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Common reader",
+      "reason": "No shared interpreter has consumed this potential equipment pairing."
+    }
+  ]
+}
