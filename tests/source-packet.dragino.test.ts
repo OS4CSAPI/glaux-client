@@ -20,13 +20,14 @@ function sourceOracle(input: any): string[] {
   // These source checks are deliberately LOCAL TO THE TEST, not Glaux interpretation code.
   const issues: string[] = [];
   const probe = input.subjects.filter((x: any) => x.standing === 'REFERENCE_COMPONENT');
-  if (input.focus !== 'c-s31' || input.subjects.length !== 2 ||
+  if (input.focus !== 'c-s31' ||
       input.subjects[0]?.standing !== 'REFERENCE_ARRANGEMENT' ||
       input.subjects[0]?.sourceIdentity?.scheme !== 'model' ||
       input.subjects[0]?.sourceIdentity?.raw !== 'S31-LB')
     issues.push('C-I01: manufacturer product model is not a source-identified installed unit');
-  if (probe.length !== 1 || probe[0]?.id !== 'c-sht31' ||
-      row(input, 'c-external')?.target !== 'c-sht31')
+  const externalLinks = input.assertions.filter((a: any) => a.concept === 'equipment.external_probe');
+  if (input.subjects.length !== 2 || probe.length !== 1 || probe[0]?.id !== 'c-sht31' ||
+      externalLinks.length !== 1 || row(input, 'c-external')?.target !== 'c-sht31')
     issues.push('C-I02: one externally cabled SHT31; no second probe');
   const fields = input.assertions.filter((a: any) => a.concept === 'output.native_field');
   if (fields.length !== 2 || fields.some((x: any) => x.about !== 'c-sht31') ||
@@ -160,7 +161,7 @@ test('critical counterexample: an invented second SHT31 passes local pointers bu
     standing: 'SOURCE_FACT', target: 'invented-probe',
     evidence: [{ sourceId: 'c02', locator: 'C-I02' }] });
   expect(read(p).accepted).toBe(true);
-  expect(sourceOracle(p)).toContain('C-I01: manufacturer product model is not a source-identified installed unit');
+  expect(sourceOracle(p)).toContain('C-I02: one externally cabled SHT31; no second probe');
 });
 
 test('coverage gap: documented 20-minute default in C-O03 is absent from the Step 32 packet, not lost by reader', () => {
