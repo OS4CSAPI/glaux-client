@@ -93,11 +93,11 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-profile-test', title: 'Profile-aware Resource Details · semantic test',
-    description: 'Compare generic field listing versus a provisional profile-aware view for SCK2.3, TRSS and OmniSense in one Resource Details frame. No real physical-unit or CSAPI conformance claims.',
+    description: 'Read-only comparison within the existing Resource Details frame: four source-qualified local research packets (Dragino, AirGradient, Campbell, Bennett), legacy published examples and synthetic cases, with clear generic/raw and Profile interpretation boundaries. Not native CSAPI evidence discovery or live telemetry.',
     latestUpdate: {
-      at: '2026-10-28T15:21:55-04:00',
-      summary: 'Added a cross-vendor, term-driven semantic projection and generic-vs-profile-aware Resource Details comparison with source-fidelity tests.',
-      commit: 'f203bef6fe08797e57151674fb4f2a04a81562f9',
+      at: '2026-11-03T07:14:17Z',
+      summary: 'Integrated one unchanged source-packet interpreter into existing Resource Details tabs and raw evidence views for four bounded research cases; Map retains shared no-position fallback.',
+      commit: 'cf0f8f77612d068e3299b0c763e10724bb4e392a',
     },
   },
   {
