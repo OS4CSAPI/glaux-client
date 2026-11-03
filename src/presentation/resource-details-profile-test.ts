@@ -159,18 +159,19 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   const requestedCase=new URLSearchParams(window.location.search).get('case');
   let packetCase: PacketCase | null = packetCases.find(p => p.key === requestedCase) ?? null;
   let packet: PacketPresentation | null = null;
+  let packetLoadError: string | null = null;
   let published=requestedCase===caseKey;
   let attribution=requestedCase===attributionCaseKey;
   let mode:PresentationMode='profile';
   let pending=0;
   renderResourceDetailsTemplate(container,{
     pageTitle:'Profile-aware Resource Details · source-to-UI test',
-    pageIntro:'Compare published measurement examples, a product design or historical synthetic fixtures in the same Resource Details frame.',
+    pageIntro:'Compare four evidence-qualified local source packets with existing Resource Details examples in one unchanged tab frame. Local packets are NOT native CSAPI or live sensor telemetry.',
     renderBlankContent({categoryId,view,content}){
       const key=(categoryId+'/'+view) as ViewKey;
       if(packetCase) {
         if(packet)renderSourcePacketDetails(content,packet,key,mode);
-        else empty(content,'Loading the selected local research source packet. No live CSAPI request is being made.');
+        else empty(content,packetLoadError ?? 'Loading the selected local research source packet. No live CSAPI request is being made.');
       }
       else if(attribution)renderBennettsPoint(content,key,mode==='generic');
       else if(published)renderPublished(content,key,mode==='generic');
@@ -179,7 +180,7 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       return true;
     },
     sourceSummary:'What this tests — and what it does not',
-    sourceDescription:'This client reads documented source meanings. Dragino and Campbell use manufacturer examples and interface definitions; Smart Citizen is a product design; TRSS and OmniSense are synthetic. No live device or observation service is connected in this test.',
+    sourceDescription:'Four local project research packets are kept separate from native CSAPI retrieval and previous published/synthetic examples. The shared interpreter preserves declared source claims but does not authenticate them. The existing live CSAPI pages remain separate; no commands are sent.',
     designRecord:'Design/RESOURCE_DETAILS_PROFILE_TEST.md',
   });
   container.classList.add('resource-profile-prototype');
@@ -225,10 +226,11 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
     }
     if(footer)footer.textContent=packetCase ? 'Source packet experiment · no CSAPI discovery or verified device control'
       : attribution?'Historical observations · operator records':(published?'Published examples · not live readings':'Candidate semantics · no actual device control');
+    genericBtn.textContent=packetCase ? 'Raw packet · not native CSAPI' : 'Generic CSAPI-style fields';
     genericBtn.setAttribute('aria-pressed',String(mode==='generic'));
     profileBtn.setAttribute('aria-pressed',String(mode==='profile'));
     count.textContent=packetCase
-      ? (packet ? packet.model.subjects.length+' declared subjects · '+packet.model.claims.length+
+      ? (packetLoadError ? 'Local packet load failed: '+packetLoadError : packet ? packet.model.subjects.length+' declared subjects · '+packet.model.claims.length+
         ' source claims · '+packet.originalEventCount+' original source-event anchors · '+
         packet.experimentalRepresentationCount+' historical experiment copies' : 'Loading source packet…')
       : attribution?String(attributionCase.records.length)+' historical observations · '+String(new Set(attributionCase.records.map(r=>r.probe.serial)).size)+' physical probes'
@@ -251,13 +253,14 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       return response.json() as Promise<unknown>;
     }).then(raw=>{
       if(version!==pending)return;
+      packetLoadError=null;
       packet=buildPacketPresentation(raw);
       repaint();
     }).catch(error=>{
       if(version!==pending)return;
       packet=null;
-      const message=error instanceof Error?error.message:String(error);
-      count.textContent='Could not load source packet: '+message;
+      packetLoadError=error instanceof Error?error.message:String(error);
+      count.textContent='Could not load local source packet: '+packetLoadError;
       note.textContent='Local research packet load failed; no remote CSAPI request was attempted.';
       const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]');
       active?.click();
@@ -269,12 +272,12 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
     const key=picker.value;const current=++pending;
     const chosen=packetCases.find(p=>p.key===key);
     if(chosen){
-      packetCase=chosen;packet=null;attribution=false;published=false;mode='profile';
+      packetCase=chosen;packet=null;packetLoadError=null;attribution=false;published=false;mode='profile';
       frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
       frame.querySelector<HTMLButtonElement>('#rd-view-overview')?.click();
       repaint();loadPacketCase(chosen,current);return;
     }
-    packetCase=null;packet=null;
+    packetCase=null;packet=null;packetLoadError=null;
     if(key===attributionCaseKey){
       attribution=true; published=false; mode='profile';
       frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
