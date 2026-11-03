@@ -365,3 +365,40 @@ test('no simulated current operation or rejected 17 April NOAA value is installe
   expect(p.assertions.some((x:any)=>x.concept==='configuration.effective_setting')).toBe(false);
   // The selected source lacks original result availability and per-probe surveyed coordinates.
 });
+
+test('the original operator metadata also identifies a distinct TX321 GOES transmitter, not the completed-mean producer', () => {
+  // Operator PDF printed p. 11 (PDF page 11, one-based): TX321 serial 2335,
+  // installed 05/04/2022. This source fact is directly visible in the original PDF;
+  // the smaller frozen source-selection JSON does NOT re-extract the TX321 row.
+  const p=fixture(),m=read(p);
+  expect(m.accepted).toBe(true);
+  const tx=subject(p,'b-transmitter');
+  expect(tx.standing).toBe('SOURCE_IDENTIFIED_EQUIPMENT');
+  expect([tx.sourceIdentity.scheme,tx.sourceIdentity.raw])
+    .toEqual(['TX321 serial number','2335']);
+  expect(m.claims.filter(x=>x.concept==='observation.producing_system').every(x=>x.standing==='UNKNOWN')).toBe(true);
+});
+
+test('the separately documented station position is not a per-probe surveyed position', () => {
+  // Original operator PDF printed p. 2 locates the STATION at 32.55934N, -80.45456W.
+  // It does not independently survey either EE181 serial-numbered unit.
+  const p=fixture(),m=read(p);
+  expect(m.accepted).toBe(true);
+  const probeLocation=m.claims.find(x=>x.id==='b-probe-position')!;
+  expect([probeLocation.about,probeLocation.standing,probeLocation.kind])
+    .toEqual(['b-probe3','UNKNOWN','unknown']);
+  expect(probeLocation.value).toBeUndefined();
+});
+
+test('16 April maintenance window is source-stated for the station, NOT an exact probe exchange instant', () => {
+  const p=fixture(),s=frozen();
+  expect(s.installation_note.date).toBe('2024-04-16');
+  expect([s.installation_note.logger_powered_down,s.installation_note.installation_work_finished])
+    .toEqual(['09:45','13:30']);
+  const end=claim(p,'b-service4'), start=claim(p,'b-service3-return');
+  expect((end.time as any).precision).toBe('CALENDAR_DAY');
+  expect((start.time as any).precision).toBe('CALENDAR_DAY');
+  expect((end.time as any).sourceStamp).toBeUndefined();
+  expect((start.time as any).sourceStamp).toBeUndefined();
+  expect(sourceOracle(p,s)).toEqual([]);
+});
