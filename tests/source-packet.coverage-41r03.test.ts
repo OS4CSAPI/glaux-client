@@ -59,13 +59,25 @@ const draginoSourceOracle = (p: any) => {
 const airgradientSourceOracle = (p: any) => {
   const issues: string[] = [];
   const byId = (id: string) => p.subjects.find((s: any) => s.id === id);
-  const ids = ['a-main', 'a-co2', 'a-sgp41', 'a-sht40', 'a-gas', 'a-ce'];
+  const components = [
+    ['a-main', 'ESP32-C6 main PCB'],
+    ['a-co2', 'SUNX CO₂ module'],
+    ['a-sgp41', 'SGP41 module'],
+    ['a-sht40', 'SHT40 module'],
+    ['a-gas', 'AlphaSense ADC module'],
+    ['a-ce', 'CE cellular card'],
+  ];
   if (p.subjects.length !== 9 || byId('a-max')?.standing !== 'REFERENCE_ARRANGEMENT' ||
-      ids.some(id => byId(id)?.standing !== 'REFERENCE_COMPONENT') ||
+      components.some(([id, raw]) => byId(id)?.standing !== 'REFERENCE_COMPONENT' ||
+        byId(id)?.sourceIdentity?.raw !== raw ||
+        claim(p, 'a41-'+id.slice(2))?.target !== id ||
+        claim(p, 'a41-'+id.slice(2))?.evidence?.[0]?.sourceId !== 'a01') ||
       byId('a-pm1')?.sourceIdentity?.raw !== 'PM1' ||
       byId('a-pm2')?.sourceIdentity?.raw !== 'PM2') issues.push('A-I01/06–12 reference physical modules');
-  if (p.assertions.filter((x: any) => x.concept === 'equipment.reference_component').length !== 8)
-    issues.push('A-I06 reference component count');
+  if (p.assertions.filter((x: any) => x.concept === 'equipment.reference_component').length !== 8 ||
+      p.sources.find((s: any)=>s.id==='a01')?.url?.includes('89aacf5013fc0ffe4b988a2e3c5a227bce3c4983')!==true ||
+      p.sources.find((s: any)=>s.id==='a02')?.url?.includes('84e479a415d81151e7a81aea9a2f7449a15e98cc')!==true)
+    issues.push('A-I06 reference component and original pinned source editions');
   if (p.assertions.filter((x: any) => x.concept === 'output.native_field').length !== 3)
     issues.push('A-F04/05/06 PM fields are not hardware sockets');
   if (claim(p, 'a41-solar')?.value?.raw !== '10' ||
