@@ -8,6 +8,7 @@ on:
       - '.github/workflows/dim-step39-readonly-validation.yml'
       - 'scripts/verify-step39-csapi-readonly.mjs'
       - 'scripts/verify-source-packet-browser.cjs'
+      - 'scripts/verify-step39-live-browser.cjs'
       - 'src/profile/source-packet*'
       - 'src/presentation/source-packet-details.ts'
       - 'src/presentation/resource-details-profile-test.ts'
@@ -72,6 +73,15 @@ jobs:
           done
           curl -fsS http://127.0.0.1:5173/ -o /dev/null
           npm run test:browser:source-packet
+          npm run test:browser:live-csapi
+      - name: Archive local/live browser outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: step39-live-browser-evidence
+          path: artifacts/step39-native-browser.json
+          if-no-files-found: warn
+          retention-days: 30
 
   csapi-readonly:
     name: Native CSAPI — GET-only endpoint/format evidence
