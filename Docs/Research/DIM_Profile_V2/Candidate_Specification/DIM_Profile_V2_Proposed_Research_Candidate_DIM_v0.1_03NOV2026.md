@@ -189,6 +189,8 @@ A future revision must document (1) the exact new original source and edition; (
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
+British Standards Institution (BSI). 2024. *BSI Flex 335, SAPIENT, version 2.0 (March 2024)*. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf. Consult the original v2 text and the project source-edition caveats; not the unavailable v3.
+
 ACE Basin National Estuarine Research Reserve. 2025. *Meteorological Metadata: ACE Basin, Updated August 18, 2025*. NOAA/CDMO operator metadata. https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf.
 
 Campbell Scientific. 2024. *ClimaVue 50 Manual*. Revision 08/2024, especially table 8-1. https://s.campbellsci.com/documents/us/manuals/climavue50.pdf.
@@ -197,6 +199,8 @@ Campbell Scientific. n.d. “MQTT Status Example.” *Datalogger API*. https://h
 
 Dragino. n.d. “S31-LB Temperature and Humidity Sensor: Product Manual.” https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/. Consult exact S31-LB sections; source page is mutable.
 
+IEEE 1451 Playground. n.d. “Transducer Channel TEDS.” University of Beira Interior online technical resource explicitly keyed to IEEE 1451.0-2024 §6.5 and table 19. https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/. Technical evidence, not a substitute for full normative 1451 text.
+
 IEEE Standards Association. 2024. *IEEE 1451.0-2024: Standard for a Smart Transducer Interface for Sensors and Actuators—Common Functions, Communication Protocols, and Transducer Electronic Data Sheet (TEDS) Formats*. Public publisher scope, not full normative-text conformance examination. https://standards.ieee.org/ieee/1451.0/11001/.
 
 Industrial Digital Twin Association. 2026. *Asset Administration Shell: Part 1, Metamodel*, version 3.2. https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/spec-metamodel/core.html.
@@ -204,6 +208,8 @@ Industrial Digital Twin Association. 2026. *Asset Administration Shell: Part 1, 
 Internet Engineering Task Force. 2013. *The 'profile' Link Relation Type*. RFC 6906. https://www.rfc-editor.org/rfc/rfc6906.
 
 Internet Engineering Task Force. 2017. *Web Linking*. RFC 8288. https://www.rfc-editor.org/rfc/rfc8288.
+
+National Institute of Standards and Technology (NIST). 2024. “NIST and University Researchers Present Online Tool to Support IEEE Standards.” December 1. https://www.nist.gov/news-events/news/2024/12/nist-and-university-researchers-present-online-tool-support-ieee-standards.
 
 NOAA Centralized Data Management Office (CDMO). 2024. *ACE Basin Station acebpmet, Meteorological Data 2024*, archive CSV, original selected rows 10130 and 10418. https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv. The current work reuses the frozen source selection, not a newly issuer-signed CSV.
 
@@ -243,9 +249,15 @@ OS4CSAPI. 2026k. “Candidate Domain Information Model, Integrated R24.” Novem
 
 OS4CSAPI. 2026l. “Step 41R-06: Native CSAPI Profile-aware Glaux Resource Details and Actual Browser Verification.” November 3. [Project source](../Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md).
 
-OPC Foundation. 2026a. *OPC UA Part 100: Devices*, version 1.05.0. https://reference.opcfoundation.org/specs/OPC-10000-100/.
+The Open Group. 2023. *Sensor Open Systems Architecture (SOSA) Technical Standard*, edition 1.1, C239. Public primary edition reviewed and qualified in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships). Not the W3C/OGC SOSA ontology.
 
-OPC Foundation. 2026b. *OPC 30081: Process Automation Device Information Model (PA-DIM)*, version 1.02.0. https://reference.opcfoundation.org/specs/OPC-30081/.
+OPC Foundation. 2025a. *OPC UA Part 100: Devices*, version 1.05.0. https://reference.opcfoundation.org/specs/OPC-10000-100/.
+
+OPC Foundation. 2025b. *OPC 30081: Process Automation Device Information Model (PA-DIM)*, version 1.02.0. https://reference.opcfoundation.org/specs/OPC-30081/.
+
+U.S. Army. 2023a. *Integrated Sensor Architecture (ISA) Software Design Document*, release 6.0, revision 5, October 31. Original source passages analyzed in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships).
+
+U.S. Army. 2023b. *Integrated Sensor Architecture (ISA) Data Model Specification*, release 6.0, revision 12, October 31. Original source passages analyzed in [project source review §16](../Whole_System_Recovery/README.md#16-step-12--isa-60-and-the-open-group-sosa-physical-functional-visible-and-managed-relationships).
 
 Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*, version 3.0.0, OGC 20-082r4. Open Geospatial Consortium. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
