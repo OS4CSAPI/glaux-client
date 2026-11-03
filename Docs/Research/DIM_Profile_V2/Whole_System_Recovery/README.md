@@ -2998,6 +2998,6 @@ The full independently sourced, executable-evidence and production-readback deta
 
 ### 53.3 Research plan closure and handoff
 
-The [final Step43 review report](Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md) and current plan/README/PITON (latest **v3.3** after index update) must be read instead of v3.2's historical "Step43 NEXT". The two original Step42 candidates remain traceable to source, standards and actually executed code/CI, and now carry the final report's gate decision.
+The [final Step43 review report](Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md) and current plan/README/[latest PITON v3.3](../PITON_DIM_Profile_V2_Continuity_v3.3_03NOV2026.md) must be read instead of v3.2's historical "Step43 NEXT". The two original Step42 candidates remain traceable to source, standards and actually executed code/CI, and now carry the final report's gate decision.
 
 **NO AUTOMATIC NEXT STEP.** The original 43-step plan is **complete as a research/review workflow, CONDITIONALLY STOPPED** without full external interoperable standards/production release. Any stronger work requires explicit new owner authorization of a separate bounded issue, especially original OGC class/ATS, stable project Profile/issuer governance, independent client trials, native historical Observation/Deployment evidence or actual management. Nothing in this conclusion authorizes Cloudflare deployment, Oracle/52°North writes, device Commands, uncontrolled branch merge or new donor campaigns.
