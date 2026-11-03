@@ -93,11 +93,11 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-profile-test', title: 'Profile-aware Resource Details · semantic test',
-    description: 'Read-only shared Resource Details interpretation: four original source-qualified local packets plus separate Dragino/AirGradient expanded coverage cases, with legacy published and synthetic inputs. Not native CSAPI Profile discovery or live telemetry.',
+    description: 'One read-only Resource Details interpreter for four frozen research packets and four separately expanded source-coverage cases: Dragino, AirGradient, Campbell first-gen ClimaVue and Bennett actual history. Not native CSAPI Profile discovery, field telemetry or authenticated source.',
     latestUpdate: {
-      at: '2026-11-03T12:06:04Z',
-      summary: 'Expanded the shared generic reader and existing Resource Details selector for two new source-qualified manufacturer-reference coverage packets; no native Profile or deployment claim.',
-      commit: 'd6c9844674521d447b84ab22a41036e8b51353d2',
+      at: '2026-11-03T13:48:01Z',
+      summary: 'Added Campbell source-defined 14 ClimaVue response fields and 31 logger Status examples and Bennett source-qualified station/site/maintenance history to the existing local project packet reader and Resource Details selector, with no deployment.',
+      commit: '3edabbf9e52610368435e4761b9a8e2f5e57b0cf',
     },
   },
   {
