@@ -46,7 +46,7 @@ test('existing Resource Details Overview shows declared referent and 2 originals
   expect(text).toContain('Prior experimental API representations');
   expect(text.includes('2')).toBe(true);
   expect(text.includes('4')).toBe(true);
-  expect(text).toContain('not independently authenticated');
+  expect(text).toContain('does not authenticate source issuer');
 });
 
 test('existing Activity/Table keeps original values, exact QA whitespace and experiment copies separate',()=>{
