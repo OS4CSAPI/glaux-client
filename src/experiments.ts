@@ -93,11 +93,11 @@ export const experimentPages: readonly ExperimentPage[] = [
   },
   {
     kind: 'template', id: 'resource-details-profile-test', title: 'Profile-aware Resource Details · semantic test',
-    description: 'Read-only comparison within the existing Resource Details frame: four source-qualified local research packets (Dragino, AirGradient, Campbell, Bennett), legacy published examples and synthetic cases, with clear generic/raw and Profile interpretation boundaries. Not native CSAPI evidence discovery or live telemetry.',
+    description: 'Read-only shared Resource Details interpretation: four original source-qualified local packets plus separate Dragino/AirGradient expanded coverage cases, with legacy published and synthetic inputs. Not native CSAPI Profile discovery or live telemetry.',
     latestUpdate: {
-      at: '2026-11-03T07:14:17Z',
-      summary: 'Integrated one unchanged source-packet interpreter into existing Resource Details tabs and raw evidence views for four bounded research cases; Map retains shared no-position fallback.',
-      commit: 'cf0f8f77612d068e3299b0c763e10724bb4e392a',
+      at: '2026-11-03T12:06:04Z',
+      summary: 'Expanded the shared generic reader and existing Resource Details selector for two new source-qualified manufacturer-reference coverage packets; no native Profile or deployment claim.',
+      commit: 'd6c9844674521d447b84ab22a41036e8b51353d2',
     },
   },
   {
