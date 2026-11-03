@@ -2301,3 +2301,59 @@ The 11 local checks include **positive interpretation** of one fictional externa
 **STEP 34 ONLY:** exercise the *same* unchanged Step 33 reader against the [original Dragino S31-LB reference packet](../Candidate_Specification/examples/step32-source-packets/dragino.reference.packet.json), its [original manufacturer/source sheet](../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md) and bounded deliberately false mutations. Verify one design reference node + one externally cabled SHT31 probe producing two source quantity fields; distinguish source message example from acquired actual telemetry; preserve original capacity/default/unknown effective setting and raw tokens; reject invented installed device/extra sensor or false current Observation. The right evidence level is manufacturer documentation, not authenticated field operation.
 
 **Do not execute Step 35 AirGradient, Step 36 Campbell, Step 37 Bennett, Step 38 Resource Details integration, Step 39 live CSAPI validation, or later publication steps in the same “proceed.”** Any necessary app test fixture copying should be selective, source-checked and explicitly labeled as research input; avoid indiscriminate research→app merges and any Oracle/Cloudflare action. Update the appropriate app files, this workbook, current 43-step plan and README, then explain the human result and exact Step 35 handoff separately when Step 34 is genuinely complete.
+
+## 38. Step 34 — Dragino S31-LB source-packet challenge and fidelity limits
+
+**3 November 2026 · STEP 34 COMPLETE as a bounded manufacturer-reference case test; STEP 35 NEXT, NOT STARTED; Gate E remains NOT CLOSED.** This used the exact unchanged [Step 33 generic interpreter](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/src/profile/source-packet.ts), the existing [Step 32 Dragino packet](../Candidate_Specification/examples/step32-source-packets/dragino.reference.packet.json), the itemized [original-source C sheet](../Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md), original C02 manufacturer manual and pinned C03 decoder. A byte-identical copy of the research packet was committed under the application's [test fixtures](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/tests/fixtures/source-packets/dragino.reference.packet.json), confirmed as Git blob **5d7931846ff88b0752dab81402a4df1703fa8077**. The shared interpreter itself stayed at blob **346d682cbff6a2e97770feba088452df6a067c4e**; there is **no manufacturer-specific branch** in it.
+
+### 38.1 Human result — what the first real manufacturer case tells us
+
+Dragino **S31-LB** is a **reference product/model**, not an authenticated deployed individual (do not borrow S31B or LS construction). Original **C-I02** describes **one external SHT31 with a three-metre cable**; C-F05 and C-F06 give two environmental output properties, temperature and relative humidity, **not two physical probes**. Original **C-F05** supplies a printed scalar 0x0105 → **26.1 °C** as a *manufacturer example*, not independently observed field telemetry. C-I04 states a rated nonrechargeable **8,500 mAh** battery capacity, not remaining charge. C-I15 provides no installed individual identity or actual setting; C-O03 documents a design **20-minute default** while actual effective interval remains unknown.
+
+The unchanged reader returned **one REFERENCE_ARRANGEMENT**, **one REFERENCE_COMPONENT**, the single external-link relation, the two native field names and units, the **SOURCE_EXAMPLE** raw 26.1, rated capacity as design SOURCE_FACT, and two explicit **UNKNOWN** claims (installed identity and actual effective interval). It returned **zero original performed events** and zero experimental copies. It did not invent a serial, Device EUI, physical installation, Observation, current battery percentage, actual mode or Command.
+
+| Source → candidate DIM | Input packet → unchanged reader | Candidate CSAPI/Profile limit |
+| --- | --- | --- |
+| C-I01/C-I15; R24-01/02: product kind distinct from actual individual | Model designation S31-LB is reference standing, installed identity UNKNOWN | Kind/Procedure/SensorML description is a conditional future carrier, **not** an actually published and validated CSAPI Procedure or actual System |
+| C-I02; R24-03/04/06: one external physical probe | Single link from reference node to reference SHT31; no second part | SensorML design/connection proposal only; no exact deployed Subsystem or Deployment |
+| C-F05/06; R24-07/08: two source fields | TempC_SHT31 (°C) and Hum_SHT31 (% RH) are two values of one SHT31 reference | Potential output/SWE fields, **not** actual DataStream/Observation or a second device |
+| C-F05; R24-09: printed example not performed act | 26.1 °C stays SOURCE_EXAMPLE, original event count zero | No native Part 2 Observation, actual result time, location or live data |
+| C-I04; R24-10/14: rated battery versus health | SOURCE_FACT design rating 8,500 mAh, not current level | No charge percentage, remaining battery life or measured condition |
+| C-O03/C-C01; R24-10/11: default versus effective and available versus issued command | Effective setting is correctly UNKNOWN, **but 20-minute documented default is absent from packet** | **Source→packet coverage gap**, not reader loss; no current interval or authorized ControlStream |
+
+### 38.2 Informative Resource Details presentation — not deployed (Step 38 retains integration)
+
+| Display area | Honest result from this source packet | Necessary qualifier |
+| --- | --- | --- |
+| **Identity and Equipment** | “S31-LB — manufacturer reference”; one externally cabled three-metre SHT31 | No known individual installed unit, physical serial, EUI, deployed coordinates, status |
+| **Outputs / capabilities** | Temperature TempC_SHT31 (°C) and relative humidity Hum_SHT31 (% RH) | Both properties from one reference probe; **no actual observation stream** |
+| **Power / condition** | Rated nonrechargeable 8,500 mAh battery | Not present battery charge, voltage measurement, health or remaining autonomy |
+| **Activity** | Optional “manufacturer decoding example: 26.1 °C” | **Not live or historical field telemetry**; cannot be plotted as actual Observation |
+| **Configuration** | “Actual reporting interval unknown” | Source itself says **20-minute default**, but the packet does not contain it; cannot truthfully render it from this input |
+| **Commands / source** | Links to documented C02/C03 source, with reference/evidence qualifications | Printed AT commands do not establish actual request, authorization or effect |
+
+This is a **source-grounded preview** of a correctly qualified common Resource Details view, not a new UI route, code renderer, normative tab arrangement or live browser test. Actual UI integration remains Step 38.
+
+### 38.3 What actually ran: structural PASS versus real source-truth failures
+
+The actual committed reader was fetched from the app branch and its **JavaScript logic executed in a transient V8 harness after stripping TypeScript-only syntax**, with the exact project Dragino source packet as input. The [13 committed source-case tests](https://github.com/OS4CSAPI/glaux-client/blob/work/details-view-20261023/tests/source-packet.dragino.test.ts) passed **13/13 through that compatibility harness**, not through Vitest. A second transient screen checked **18/18 expected source-positive, malformed-input, source-false and omission outcomes**. The latter count **does not** mean 18/18 fidelity success.
+
+**Direct positive behavior:** the reader accepted the original reference packet and preserved model versus reference component, one cabled probe/two fields, exact printed example label, rated capacity, UNKNOWN installed/effective state and no actual source-event records. **Five mutated malformed packets** (broken component target, missing source reference, fabricated UNKNOWN literal, event fabricated from reference design, duplicate assertion identifier) were correctly **rejected**.
+
+**Three source-false mutations were structurally accepted by the reader** but **rejected by the separate source-specific test oracle**:
+
+| Mutation tested | Reader result | Original source fidelity result |
+| --- | --- | --- |
+| Promote S31-LB **model** designation to SOURCE_IDENTIFIED_EQUIPMENT, still using the model scheme | **ACCEPTED** as a well-formed packet | **FAIL:** C-I01/C-I15 have no authenticated installed individual serial |
+| Change printed 26.1 °C **SOURCE_EXAMPLE** into SOURCE_FACT | **ACCEPTED** | **FAIL:** C-F05 is a printed scalar, not an actual reported measurement |
+| Add a second fictional SHT31 with a valid internal reference | **ACCEPTED** | **FAIL:** C-I02 documents **one** external SHT31 probe |
+
+**One source-to-input coverage failure:** C-O03's **20-minute documented default uplink interval** is absent from the actual Step 32 packet. The generic reader cannot recover a fact never supplied to it. This is a source→packet/qualification gap, not a reason to fabricate the device's present configured interval. The correction belongs in a deliberate profile/packet repair decision after the bounded case challenges, not in a vendor-specific rendering branch.
+
+**Test ceiling:** no full repository Vitest or Node 24 run, app-wide TypeScript/build, browser rendering, actual CSAPI media/schema conformance, production service, Cloudflare or physical equipment was exercised. “Accepted by source-packet reader” means **structurally consistent input**, not authenticated original manufacturer meaning. Three false claims currently pass that limited acceptance layer; these are **retained negative findings, not passing interoperability**.
+
+### 38.4 Gate result and exact Step 35 handoff
+
+**Step 34 is COMPLETE as a source-falsifiable Dragino exercise**, even though some fidelity results are **FAIL**. It demonstrates that one unchanged common interpreter can represent this manufacturer-reference packet *when the source qualifications are accurately declared*, and identifies where source falsity still slips through. Gate E **remains NOT CLOSED** because **G30-01**—portable producer→independent-client source identity, assertion standing and discoverable provenance—remains unresolved. G30-08 also stays open until **more than one unlike real source case** passes the same path, and other Bennett/management/time/quality gaps remain unchanged. Do not insert a Dragino-specific rule into the shared interpreter or claim the packet alone supplies an adopted OGC carrier.
+
+**NEXT on one future “proceed”: STEP 35 ONLY.** Apply the **same unchanged reader** to [AirGradient Open Air Max manufacturer-reference packet](../Candidate_Specification/examples/step32-source-packets/airgradient.reference.packet.json) and [source sheet A](../Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md). In particular, test two physical PMS5003 reference modules at **PM1/PM2 sockets** versus PM1.0/PM2.5/PM10 *data properties*, source examples versus actual measurements, and unsupported calibration/installed firmware/current unit evidence. Preserve the Dragino default omission and the three source-authenticity failures for a later targeted repair/gate audit. **Do not** proceed into Campbell, Bennett, UI integration, Oracle/Cloudflare changes or publication steps in the same turn.
