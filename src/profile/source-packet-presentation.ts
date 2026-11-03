@@ -1,4 +1,5 @@
 import { interpretSourcePacket, type ClaimView, type SourcePacketView } from './source-packet';
+import type { NativeSourceRecord } from './native-source-profile';
 import type { ViewKey } from './resource-details-proof';
 
 /**
@@ -25,7 +26,9 @@ export interface PacketPresentation {
   experimentalRepresentationCount: number;
   /** Neither an issued physical identity nor source authority is independently verified. */
   sourceAuthenticated: false;
-  nativeCsapiCarrier: false;
+  nativeCsapiCarrier: boolean;
+  /** Only set for a true native-feature GET with bound project evidence sidecar. */
+  nativeResource?: NativeSourceRecord;
   /** The selected four packets have no validated subject-specific GeoJSON Point. */
   mappablePosition: null;
   warnings: string[];
