@@ -22,6 +22,10 @@ const packetCases = [
   // 41R-03 expanded source-coverage selections; still local research JSON, not native CSAPI/Profile.
   { key: 'step41r03-dragino', label: 'Dragino S31-LB — expanded documented design coverage', path: '/fixtures/source-packets/dragino.coverage.packet.json' },
   { key: 'step41r03-airgradient', label: 'AirGradient Open Air Max — expanded documented design coverage', path: '/fixtures/source-packets/airgradient.coverage.packet.json' },
+  // 41R-04 source-selected field-level Campbell reference and 2024 Bennett station context;
+  // both remain separate LOCAL project packets, not a native CSAPI Profile response.
+  { key: 'step41r04-campbell', label: 'Campbell CR1000X + first-gen ClimaVue 50 — full selected response and Status fields', path: '/fixtures/source-packets/campbell.coverage.packet.json' },
+  { key: 'step41r04-bennett', label: "Bennett's Point — original station/site/maintenance coverage", path: '/fixtures/source-packets/bennetts-point.coverage.packet.json' },
   { key: 'step38-campbell', label: 'Campbell CR1000X + ClimaVue 50 — reference packet', path: '/fixtures/source-packets/campbell.reference.packet.json' },
   { key: 'step38-bennett', label: "Bennett's Point — historical source packet", path: '/fixtures/source-packets/bennetts-point.historical.packet.json' },
 ] as const;
