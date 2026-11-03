@@ -55,13 +55,15 @@ const concepts = new Set([
   'communications.documented_reporting', 'power.design_specification',
   'software.reference_revision', 'software.installed_version',
 ]);
+// Two distinct PROJECT packet versions; 41R-03 adds source coverage without altering frozen Step 32 syntax.
+const supportedResearchFormats = new Set([STEP32_FORMAT, 'dim-csapi-source-packet.s41r03.v0.1']);
 
 /** Only declared standing and cross-reference consistency are checked: NOT actual source authority. */
 export function interpretSourcePacket(input: unknown): SourcePacketView {
   const issues: InterpretationIssue[] = [];
   const issue = (path: string, message: string): void => { issues.push({ path, message }); };
   const result: SourcePacketView = { accepted: false, focus: null, subjects: [], claims: [], events: [], issues, raw: input };
-  if (!record(input) || input.format !== STEP32_FORMAT) {
+  if (!record(input) || !supportedResearchFormats.has(input.format as string)) {
     issue('/format', 'Missing or unsupported project input format; not a CSAPI resource.');
     return result;
   }
