@@ -140,14 +140,22 @@ export async function loadNativeSourceProfile(
   const { body, response } = await readJSON(fetcher, nativeUrl, 'application/geo+json');
   if (!isNativeFeature(body)) return sourceHold(nativeUrl, body, 'Native JSON does not identify a supported Procedure or System Feature');
   const feature = body;
-  const sourceUrl = bodyLink(feature, 'self', nativeUrl);
+  let sourceUrl: string | null;
+  let profile: string | null;
+  let evidence: string | null;
+  try {
+    sourceUrl = bodyLink(feature, 'self', nativeUrl);
+    profile = bodyLink(feature, 'profile', nativeUrl);
+    evidence = bodyLink(feature, 'describedby', nativeUrl);
+  } catch (error) {
+    return sourceHold(nativeUrl, body, 'Unsafe or cross-origin linked evidence: ' +
+      (error instanceof Error ? error.message : String(error)));
+  }
   if (sourceUrl !== nativeUrl) return sourceHold(nativeUrl, body, 'Canonical native resource self link does not match requested URL');
   const featureType = text((feature.properties as Record<string, unknown>).featureType);
   const nativeKind: 'Procedure' | 'System' = featureType.endsWith('Procedure') ? 'Procedure' : 'System';
   if (nativeKind === 'Procedure' && feature.geometry !== null)
     return sourceHold(nativeUrl, body, 'Manufacturer reference Procedure must not assert deployed geometry');
-  const profile = bodyLink(feature, 'profile', nativeUrl);
-  const evidence = bodyLink(feature, 'describedby', nativeUrl);
   const header = response.headers.get('link') ?? '';
   if (!profile || !evidence || !headerHasLink(header, profile, 'profile') ||
       !headerHasLink(header, evidence, 'describedby'))
