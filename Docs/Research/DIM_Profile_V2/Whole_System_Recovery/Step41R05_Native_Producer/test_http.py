@@ -15,6 +15,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from urllib.parse import urljoin
 
 from jsonschema import Draft202012Validator, FormatChecker, RefResolver
 
@@ -26,15 +27,36 @@ GEOJSON = "application/geo+json"
 def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
+def _local_absolute_refs(schema, source_uri):
+    """Copy a *schema into memory* and pin its relative refs to local file URIs.
+
+    The upstream OGC/GeoJSON schema files on disk are NOT edited. Python's
+    deprecated RefResolver can otherwise shift its scope to geojson.org after
+    resolving its first external $id and wrongly resolve OGC ../common refs.
+    This is a resolver test harness fix, NOT a relaxed schema.
+    """
+    if isinstance(schema, dict):
+        return {
+            k: urljoin(source_uri, v) if k == "$ref" and isinstance(v, str)
+               and not v.startswith(("#", "http:", "https:", "file:"))
+               else _local_absolute_refs(v, source_uri)
+            for k, v in schema.items()
+        }
+    if isinstance(schema, list):
+        return [_local_absolute_refs(v, source_uri) for v in schema]
+    return schema
+
 def validate_original_schema(body, name):
     """Validate against pinned *unmodified published* OGC 23-001 v1.0.0 schemas."""
     source = OGC / name
-    doc = load(source)
     store = {
         "https://geojson.org/schema/Feature.json": load(VENDOR / "geojson/Feature.json"),
         "https://geojson.org/schema/FeatureCollection.json": load(
             VENDOR / "geojson/FeatureCollection.json"),
     }
+    for path in (VENDOR / "ogc").rglob("*.json"):
+        store[path.as_uri()] = _local_absolute_refs(load(path), path.as_uri())
+    doc = store[source.as_uri()]
     resolver = RefResolver(base_uri=source.as_uri(), referrer=doc, store=store)
     Draft202012Validator(doc, resolver=resolver, format_checker=FormatChecker()).validate(body)
 
