@@ -50,6 +50,21 @@ const base=process.env.GLAUX_NATIVE_PRODUCER_BASE||'http://127.0.0.1:8015/api';
     equipment.includes('location.probe_position'));
   await view('operational','map');
   check('no invented per-probe map pin',await page.locator('.rd-map-empty').count()===1);
+  // The producer's original data is unchanged. Corrupt one linked response in
+  // transit to prove a real browser refuses mismatched Profile evidence.
+  await page.route('**/api/evidence/bennetts-point-acebpmet',async route=>{
+    const response=await route.fetch();
+    const doc=await response.json();
+    doc.describes.uid='urn:invalid:other-native-resource';
+    await route.fulfill({response,json:doc});
+  });
+  await page.locator('#rdp-load-native').click();
+  await wait('Native raw-only');
+  check('browser rejects mismatched UID and does not render qualified source claims',
+    (await page.locator('.rdp-count').innerText()).includes('identity') &&
+    (await panel().innerText()).includes('Native CSAPI feature — raw-only fallback') &&
+    !(await panel().innerText()).includes('Source-original reports — count each original ONCE'));
+  await page.unroute('**/api/evidence/bennetts-point-acebpmet');
   check('read-only local producer requests',requests.length>=6&&requests.every(r=>r.method==='GET'));
   check('no browser script errors',errors.length===0);
   fs.mkdirSync('artifacts',{recursive:true});
