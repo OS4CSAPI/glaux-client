@@ -35,6 +35,9 @@ function originalSourceOracle(p: any): string[] {
       assertion(p,'d-connection')?.concept !== 'equipment.design_connection' ||
       assertion(p,'d-connection')?.evidence[0]?.nativeToken !== 'SDI-12')
     problems.push('D-I02/06: potential logger-to-sensor SDI-12 design is not a verified installed relation');
+  // A response containing fourteen numerical positions is NOT fourteen independent instruments.
+  if (p.subjects.length > 3 || composition.length > 2)
+    problems.push('D-R01–14: fourteen aR7! positions cannot establish fourteen additional physical sensors');
   const fields = p.assertions.filter((a: any) => a.concept === 'output.native_field');
   if (assertion(p,'d-field-count')?.about !== 'd-climavue' ||
       assertion(p,'d-field-count')?.value?.raw !== '14' ||
@@ -211,7 +214,7 @@ test('source-FALSE fourteen response positions turned into fourteen physical com
   }
   expect(read(p).accepted).toBe(true);
   expect(originalSourceOracle(p))
-    .toContain('D-I01/02/17: two separate kinds are not serial-numbered installed station components');
+    .toContain('D-R01–14: fourteen aR7! positions cannot establish fourteen additional physical sensors');
 });
 
 test('source-FALSE SDI-12 reference design asserted as historical role service passes shape, fails source', () => {
