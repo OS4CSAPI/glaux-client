@@ -42,3 +42,20 @@
   .resource-profile-prototype .rdp-picker,.resource-profile-prototype .rdp-mode-group {flex-basis:100%;}
   .resource-profile-prototype .rdp-controls {padding:8px;}
 }
+
+/* Step 41R-06: arbitrary read-only native Feature URL, not a vendor-only selector. */
+.resource-profile-prototype .rdp-native {
+  display:flex;flex:1 0 100%;flex-wrap:wrap;gap:5px 8px;align-items:center;
+}
+.resource-profile-prototype .rdp-native label {
+  width:100%;font-size:12px;font-weight:650;color:#304d64;
+}
+.resource-profile-prototype .rdp-native input {
+  flex:1 1 330px;min-width:180px;max-width:100%;padding:7px 9px;
+  border:1px solid #adc3d3;border-radius:4px;font-size:12px;background:#fff;color:#1f4157;
+}
+.resource-profile-prototype .rdp-native button {
+  border-radius:4px;max-width:100%;padding:8px 12px;
+}
+.resource-profile-prototype .rdp-native input:focus-visible,
+.resource-profile-prototype .rdp-native button:focus-visible {outline:2px solid #bb721d;outline-offset:2px;}
