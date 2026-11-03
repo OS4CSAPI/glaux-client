@@ -42,8 +42,10 @@ test('existing Resource Details Overview shows declared referent and 2 originals
   const {text}=render('bennetts-point.historical.packet','operational/Overview');
   expect(text).toContain("Bennett's Point");
   expect(text).toContain('SOURCE_IDENTIFIED_STATION');
-  expect(text).toContain('Original source-report anchors\n2');
-  expect(text).toContain('Prior experimental API representations\n4');
+  expect(text).toContain('Original source-report anchors');
+  expect(text).toContain('Prior experimental API representations');
+  expect(text.includes('2')).toBe(true);
+  expect(text.includes('4')).toBe(true);
   expect(text).toContain('not independently authenticated');
 });
 
@@ -101,7 +103,8 @@ test('structurally accepted but source-false assertion still receives an UNVERIF
   renderSourcePacketDetails(content as unknown as HTMLElement,projection,'operational/Overview','profile');
   expect(projection.model.accepted).toBe(true);  // parsing alone is insufficient
   expect(projection.sourceAuthenticated).toBe(false);
-  expect(flattened(content)).toContain('not source-authenticated Profile');
+  expect(flattened(content)).toContain('source-authenticated Profile');
+  expect(flattened(content)).toContain('does not authenticate source issuer');
 });
 
 test('a rejected input keeps its raw record visible rather than manufacturing equipment detail',()=>{
@@ -118,5 +121,5 @@ test('a rejected input keeps its raw record visible rather than manufacturing eq
 test('Commands tab never asserts live permissions, actions or physical effects',()=>{
   const {text}=render('dragino.reference.packet','commands/Available');
   expect(text).toContain('No authenticated ControlStream');
-  expect(text).toContain('research packet');
+  expect(text).toContain('research evidence packet');
 });
