@@ -1,0 +1,183 @@
+{
+  "format": "dim-csapi-source-packet.s32.v0.1",
+  "id": "s32-dragino-reference",
+  "focus": "c-s31",
+  "sources": [
+    {
+      "id": "c02",
+      "issuer": "Dragino",
+      "title": "S31/S31B-LB/LS manual (S31-LB portions only)",
+      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Mutable web manual; S31-LB model-specific passages inspected 30 October 2026",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md §§1,3"
+    },
+    {
+      "id": "c03",
+      "issuer": "Dragino",
+      "title": "S31-LB_v1.3_TTN_decoder.txt",
+      "url": "https://github.com/dragino/dragino-end-node-decoder/blob/635417693adb215b32ac367c8e8909d9d609a120/S31-LB%26S31B-LB/S31-LB_v1.3_TTN_decoder.txt",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Pinned source commit 635417693adb215b32ac367c8e8909d9d609a120",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Dragino_S31_LB.md §3"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "c-s31",
+      "label": "S31-LB node/product reference",
+      "standing": "REFERENCE_ARRANGEMENT",
+      "sourceIdentity": {
+        "issuer": "Dragino",
+        "scheme": "model",
+        "raw": "S31-LB"
+      }
+    },
+    {
+      "id": "c-sht31",
+      "label": "One externally cabled SHT31 sensor in S31-LB design",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "Dragino",
+        "scheme": "reference component designation",
+        "raw": "SHT31"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "c-external",
+      "about": "c-s31",
+      "concept": "equipment.external_probe",
+      "standing": "SOURCE_FACT",
+      "target": "c-sht31",
+      "evidence": [
+        {
+          "sourceId": "c02",
+          "locator": "§§1.2,1.8; research C-I02",
+          "nativeToken": "SHT31"
+        }
+      ]
+    },
+    {
+      "id": "c-temperature-field",
+      "about": "c-sht31",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "TempC_SHT31",
+        "unit": "°C",
+        "nativeField": "TempC_SHT31",
+        "interpretation": "ambient temperature output field; not separate physical probe"
+      },
+      "evidence": [
+        {
+          "sourceId": "c03",
+          "locator": "Decoder; research C-F05",
+          "nativeToken": "TempC_SHT31"
+        }
+      ]
+    },
+    {
+      "id": "c-humidity-field",
+      "about": "c-sht31",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "Hum_SHT31",
+        "unit": "% RH",
+        "nativeField": "Hum_SHT31",
+        "interpretation": "relative humidity output field; same SHT31 probe"
+      },
+      "evidence": [
+        {
+          "sourceId": "c03",
+          "locator": "Decoder; research C-F06",
+          "nativeToken": "Hum_SHT31"
+        }
+      ]
+    },
+    {
+      "id": "c-example",
+      "about": "c-sht31",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "26.1",
+        "unit": "°C",
+        "nativeField": "TempC_SHT31",
+        "interpretation": "published decoded scalar example 0x0105; not acquired telemetry"
+      },
+      "evidence": [
+        {
+          "sourceId": "c02",
+          "locator": "§2.3 and C-F05; scalar 0x0105 → 26.1",
+          "nativeToken": "0x0105"
+        }
+      ]
+    },
+    {
+      "id": "c-battery",
+      "about": "c-s31",
+      "concept": "power.rated_capacity",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "8500",
+        "unit": "mAh",
+        "interpretation": "manufacturer-rated nonrechargeable nominal design capacity; not remaining charge"
+      },
+      "evidence": [
+        {
+          "sourceId": "c02",
+          "locator": "§§1.2–1.3; research C-I04",
+          "nativeToken": "8500mAh"
+        }
+      ]
+    },
+    {
+      "id": "c-installed",
+      "about": "c-s31",
+      "concept": "identity.installed_unit",
+      "standing": "UNKNOWN",
+      "reason": "No independently identified installed physical unit, serial or physical deployment in original case corpus.",
+      "evidence": [
+        {
+          "sourceId": "c02",
+          "locator": "Manufacturer model/reference source only; C-I15"
+        }
+      ]
+    },
+    {
+      "id": "c-effective",
+      "about": "c-s31",
+      "concept": "configuration.effective_setting",
+      "standing": "UNKNOWN",
+      "reason": "Documented default/command examples cannot establish a real unit's selected current sampling interval.",
+      "evidence": [
+        {
+          "sourceId": "c02",
+          "locator": "§3.1 and research power/configuration inventory"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [],
+  "representations": [],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Portable evidence standing",
+      "reason": "Local JSON fixture is not a discoverable CSAPI evidence carrier."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Generic interpreter",
+      "reason": "No source-independent client has consumed this packet; no live unit readings."
+    },
+    {
+      "gap": "G30-09",
+      "topic": "Executable control",
+      "reason": "Published AT command syntax does not establish authorized actual control."
+    }
+  ]
+}
