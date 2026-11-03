@@ -6,8 +6,9 @@ import type { ViewKey } from '../profile/resource-details-proof';
 
 /**
  * One presentation rule set, in the EXISTING Resource Details frame.
- * A packet is local project evidence; it is never presented as a live CSAPI
- * System or a conformance-proven producer. Source names/labels are data only.
+ * The SAME interpretation covers local packets and source evidence linked from
+ * a real native CSAPI Feature. Native resource body and sidecar remain distinct;
+ * source authenticity, full OGC conformance and live telemetry are NOT inferred.
  */
 function section(content: HTMLElement, title: string): HTMLElement {
   const s = node('section', 'rdp-section');
@@ -119,8 +120,20 @@ function originalEvents(content: HTMLElement, packet: PacketPresentation): void 
   }
 }
 function overview(content: HTMLElement, packet: PacketPresentation): void {
-  const s=section(content,'Evidence-qualified resource overview (project input)');
+  const s=section(content,packet.nativeResource
+    ? 'Native CSAPI Resource + separately linked project evidence'
+    : 'Evidence-qualified resource overview (project input)');
   const dl=list(s), focus=packet.model.focus;
+  if(packet.nativeResource) {
+    field(dl,'Native CSAPI resource',packet.nativeResource.url);
+    field(dl,'Native class',packet.nativeResource.kind,
+      'Actual source-backed Procedure/System GeoJSON; producer full OGC requirements-class conformance is not established.');
+    field(dl,'Native UID (integrator)',packet.nativeResource.uid);
+    field(dl,'Registered Profile link',packet.nativeResource.profileUrl);
+    field(dl,'Linked project evidence',packet.nativeResource.evidenceUrl);
+    field(dl,'Producer assertion standing',packet.nativeResource.verification,
+      'Not a digitally verified original manufacturer or NOAA issuer.');
+  }
   field(dl,'Focal referent',focus?.label ?? 'Unresolved');
   field(dl,'Declared referent standing',focus?.standing ?? 'UNKNOWN',
     'REFERENCE design does not constitute a registered physical System. Source standing requires independent corroboration.');
@@ -138,8 +151,18 @@ function overview(content: HTMLElement, packet: PacketPresentation): void {
   note(s,'Overview summarizes provenance and source-defined meaning. Equipment, Activity and Management retain individual assertions and raw source text.');
 }
 function rawRecord(content: HTMLElement, packet: PacketPresentation): void {
-  const s=section(content,'Original project packet — complete raw JSON');
-  note(s,'Unmodified raw project input, including unknown fields, literal source QA whitespace, original time precision, derivations and copy IDs. This is not a native CSAPI response.');
+  const s=section(content,packet.nativeResource
+    ? 'Linked project evidence — complete raw source packet'
+    : 'Original project packet — complete raw JSON');
+  note(s,packet.nativeResource
+    ? 'Evidence was retrieved through a genuine native GeoJSON resource’s versioned Profile links. This local project description is not itself an OGC-native object or publisher-authenticated record.'
+    : 'Unmodified raw project input, including unknown fields, literal source QA whitespace, original time precision, derivations and copy IDs. This is not a native CSAPI response.');
+  if(packet.nativeResource) {
+    const feature=section(content,'Original native CSAPI GeoJSON Feature — unmodified');
+    feature.append(node('pre','raw-content',JSON.stringify(packet.nativeResource.nativeRaw,null,2)));
+    const rawSidecar=section(content,'Linked producer evidence document — unmodified');
+    rawSidecar.append(node('pre','raw-content',JSON.stringify(packet.nativeResource.evidenceRaw,null,2)));
+  }
   const pre=node('pre','raw-content',JSON.stringify(packet.model.raw,null,2));
   s.append(pre);
   const link=node('p','rdp-footnote');sourceUrl(link,'Open existing live native CSAPI inspector (separate workflow)','https://glaux-client.pages.dev/?page=resource-details-live-csapi');s.append(link);
@@ -147,10 +170,14 @@ function rawRecord(content: HTMLElement, packet: PacketPresentation): void {
 function generic(content: HTMLElement, packet: PacketPresentation, view:ViewKey):void {
   if(view==='management/Record'){rawRecord(content,packet);return;}
   if(view==='management/Sources'){sources(content,packet);rawRecord(content,packet);return;}
-  const s=section(content,'Uninterpreted project evidence — not native CSAPI');
+  const s=section(content,packet.nativeResource
+    ? 'Uninterpreted project source claims (underlying native Feature preserved)'
+    : 'Uninterpreted project evidence — not native CSAPI');
   const dl=list(s);
   field(dl,'Packet discriminator',packet.packetId || 'Not supplied');
-  field(dl,'Original payload kind','Locally supplied project source packet, not an OGC System/DataStream/Observation');
+  field(dl,'Original payload kind',packet.nativeResource
+    ? 'Actual retrieved native CSAPI GeoJSON ' + packet.nativeResource.kind + ', plus separately linked project source evidence'
+    : 'Locally supplied project source packet, not an OGC System/DataStream/Observation');
   field(dl,'Selected assertions',String(packet.model.claims.length));
   field(dl,'Original source-event anchors',String(packet.originalEventCount));
   field(dl,'Original raw payload','Available under Management → Record and Sources');
@@ -165,8 +192,9 @@ function generic(content: HTMLElement, packet: PacketPresentation, view:ViewKey)
  */
 export function renderSourcePacketDetails(content: HTMLElement, packet: PacketPresentation,
   view: ViewKey, mode: 'profile' | 'generic'): void {
-  content.append(node('p','rdp-standing',
-    'RESEARCH PACKET · locally declared source standing only · not native CSAPI, live data, or source-authenticated Profile'));
+  content.append(node('p','rdp-standing',packet.nativeResource
+    ? 'NATIVE CSAPI GEOJSON FEATURE + LINKED PROJECT PROFILE EVIDENCE · issuer UNVERIFIED · no live commands or full class conformance'
+    : 'RESEARCH PACKET · locally declared source standing only · not native CSAPI, live data, or source-authenticated Profile'));
   if(!packet.model.accepted){
     const s=section(content,'Packet structure or references rejected');
     const dl=list(s);
