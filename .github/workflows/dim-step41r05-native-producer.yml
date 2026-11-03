@@ -1,0 +1,36 @@
+name: DIM Profile V2 41R-05 — isolated read-only producer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/dim-profile-v2]
+    paths:
+      - 'Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/**'
+      - '.github/workflows/dim-step41r05-native-producer.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  native-producer:
+    name: Pinned CSAPI Part 1 GeoJSON + source evidence via actual loopback HTTP
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out research branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test-only JSON Schema dependency
+        run: |
+          python -m pip install --disable-pip-version-check -r Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/requirements-test.txt
+      - name: Run actual local HTTP + pinned original OGC/GeoJSON schema and negative checks
+        run: |
+          python -u Docs/Research/DIM_Profile_V2/Whole_System_Recovery/Step41R05_Native_Producer/test_http.py
+      - name: Preserve earlier original source-oracle positive/negative baseline
+        run: |
+          node Docs/Research/DIM_Profile_V2/Whole_System_Recovery/step41r02-source-oracles.cjs
