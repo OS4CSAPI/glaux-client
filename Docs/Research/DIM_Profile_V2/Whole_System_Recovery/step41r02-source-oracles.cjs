@@ -53,7 +53,9 @@ function verifyCase(name, packet, preservedBennett) {
       claim('c-effective')?.value !== undefined);
     bad('D-SOURCE-EDITION', source('c02')?.url !==
       'https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/' ||
-      !source('c03')?.url?.includes('635417693adb215b32ac367c8e8909d9d609a120'));
+      !source('c03')?.url?.includes('635417693adb215b32ac367c8e8909d9d609a120') ||
+      source('c02')?.issuer !== 'Dragino' || source('c03')?.issuer !== 'Dragino' ||
+      source('c02')?.authority !== 'MANUFACTURER_ORIGINAL');
   } else if (name === 'airgradient') {
     bad('A-IDENTITY', packet.focus !== 'a-max' || packet.subjects.length !== 3 ||
       sub('a-max')?.standing !== 'REFERENCE_ARRANGEMENT' ||
@@ -76,7 +78,10 @@ function verifyCase(name, packet, preservedBennett) {
       claim('a-example')?.value?.nativeField !== 'pm25');
     bad('A-UNKNOWN', claim('a-installed')?.standing !== 'UNKNOWN');
     bad('A-SOURCE-EDITION', !source('a01')?.url?.includes('89aacf5013fc0ffe4b988a2e3c5a227bce3c4983') ||
-      !source('a02')?.url?.includes('84e479a415d81151e7a81aea9a2f7449a15e98cc'));
+      !source('a02')?.url?.includes('84e479a415d81151e7a81aea9a2f7449a15e98cc') ||
+      source('a01')?.issuer !== 'AirGradient / Open Air Foundation' ||
+      source('a01')?.authority !== 'MANUFACTURER_ORIGINAL' ||
+      source('a02')?.authority !== 'MANUFACTURER_ORIGINAL');
   } else if (name === 'campbell') {
     bad('C-IDENTITY', packet.focus !== 'd-pair' || packet.subjects.length !== 3 ||
       sub('d-pair')?.standing !== 'REFERENCE_ARRANGEMENT' ||
@@ -105,7 +110,9 @@ function verifyCase(name, packet, preservedBennett) {
     bad('C-UNKNOWN', claim('d-installed')?.standing !== 'UNKNOWN');
     bad('C-SOURCE-EDITION', !source('d02')?.url?.endsWith('/climavue50.pdf') ||
       !source('d02')?.edition?.includes('08/2024') ||
-      !source('d07')?.url?.includes('/mqtt/status.html'));
+      !source('d07')?.url?.includes('/mqtt/status.html') ||
+      source('d02')?.issuer !== 'Campbell Scientific' ||
+      source('d07')?.issuer !== 'Campbell Scientific');
   } else if (name === 'bennett') {
     const expectedProbes = [...new Set(original.unit_use_history.map(u => u.serial))].sort();
     const actualProbes = packet.subjects.filter(s => s.sourceIdentity?.scheme ===
@@ -130,7 +137,11 @@ function verifyCase(name, packet, preservedBennett) {
     });
     bad('B-SERVICE', badService);
     bad('B-ARCHIVE-ID', source('b-cdmo')?.url !== original.measurement_file.csv ||
-      !source('b-cdmo')?.edition?.includes(original.measurement_file.sha256));
+      !source('b-cdmo')?.edition?.includes(original.measurement_file.sha256) ||
+      source('b-cdmo')?.issuer !== 'NOAA NERRS Centralized Data Management Office' ||
+      source('b-cdmo')?.authority !== 'MEASUREMENT_ARCHIVE' ||
+      source('b-operator')?.authority !== 'OPERATOR_ORIGINAL' ||
+      sub('b-station')?.sourceIdentity?.issuer !== 'NOAA/CDMO');
     bad('B-EVENTS', packet.originalEvents.length !== 2 ||
       original.readings.some((row,i) => {
         const event = packet.originalEvents.find(e => e.id === ['b-event15','b-event18'][i]);
@@ -250,6 +261,14 @@ function mutations() {
       a.standing='SOURCE_FACT';a.target='b-probe3';}],
   ];
 }
+function sourceAuthorityMutations() {
+  return [
+    ['X-D01','dragino','D-SOURCE-EDITION',p=>{p.sources.find(s=>s.id==='c02').issuer='Invented manufacturer';}],
+    ['X-A01','airgradient','A-SOURCE-EDITION',p=>{p.sources.find(s=>s.id==='a01').authority='MEASUREMENT_ARCHIVE';}],
+    ['X-C01','campbell','C-SOURCE-EDITION',p=>{p.sources.find(s=>s.id==='d02').issuer='Unrelated publisher';}],
+    ['X-B01','bennett','B-ARCHIVE-ID',p=>{p.sources.find(s=>s.id==='b-cdmo').issuer='Unverified producer';}],
+  ];
+}
 function run(packets, frozen) {
   const clone=x=>JSON.parse(JSON.stringify(x));
   const cases=['dragino','airgradient','campbell','bennett'];
@@ -259,15 +278,23 @@ function run(packets, frozen) {
     const problems=verifyCase(name,p,frozen);
     return {id,case:name,expected,detected:problems.includes(expected),problems};
   });
+  const authorityNegatives=sourceAuthorityMutations().map(([id,name,expected,mutate])=>{
+    const p=clone(packets[name]);mutate(p);
+    const problems=verifyCase(name,p,frozen);
+    return {id,case:name,expected,detected:problems.includes(expected),problems};
+  });
   const failures=[...positives.filter(x=>x.problems.length).map(x=>x.case+': positive failed: '+x.problems),
-    ...negatives.filter(x=>!x.detected).map(x=>x.id+': missed '+x.expected)];
+    ...negatives.filter(x=>!x.detected).map(x=>x.id+': missed '+x.expected),
+    ...authorityNegatives.filter(x=>!x.detected).map(x=>x.id+': missed '+x.expected)];
   return {standing:'controlled-source-ledger consistency; NOT issuer authentication',
     originalPacketPositive:positives.length,
     originalPacketPass:positives.filter(x=>x.problems.length===0).length,
     negativeOracleCases:negatives.length,
     negativeDetected:negatives.filter(x=>x.detected).length,
+    additionalIssuerCases:authorityNegatives.length,
+    additionalIssuerDetected:authorityNegatives.filter(x=>x.detected).length,
     byCase:Object.fromEntries(cases.map(name=>[name,negatives.filter(x=>x.case===name).length])),
-    positives,negatives,failures};
+    positives,negatives,authorityNegatives,failures};
 }
 module.exports={verifyCase,mutations,run};
 if (typeof require==='function' && require.main===module) {
@@ -286,6 +313,7 @@ if (typeof require==='function' && require.main===module) {
   console.log(JSON.stringify({standing:result.standing,
     originalPacketPass:result.originalPacketPass,originalPacketPositive:result.originalPacketPositive,
     negativeDetected:result.negativeDetected,negativeOracleCases:result.negativeOracleCases,
-    byCase:result.byCase,failures:result.failures},null,2));
+    byCase:result.byCase,additionalIssuerCases:result.additionalIssuerCases,
+    additionalIssuerDetected:result.additionalIssuerDetected,failures:result.failures},null,2));
   if (result.failures.length) process.exitCode=1;
 }
