@@ -3,8 +3,8 @@
 **Edition:** 0.1, 3 November 2026  
 **Standing:** PROPOSED, PARTIALLY VALIDATED RESEARCH CANDIDATE — **not an adopted Open Geospatial Consortium (OGC) Profile, approved requirements class, certification claim, independently interoperable release, or deployed production specification**  
 **Project:** DIM / OGC API – Connected Systems (CSAPI) Profile V2, research branch research/dim-profile-v2  
-**Preparation:** Original **Step 42** of the 43-step plan; Step 43 final reproducibility/release judgment **PENDING**  
-**Acceptance status:** **Gate E NOT CLOSED; Gate F NOT CLOSED for externally independent interoperability; Gate G NOT REACHED.** The bounded producer-to-client test passed; the original release acceptance conditions were not lowered.  
+**Preparation:** Original **Step 42** of the 43-step plan; **Step 43 independent final review completed 3 November 2026**, with [source/reproducibility/Cloudflare gate assessment](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md) and **conditional research-only stop**  
+**Acceptance status:** **Gate E NOT CLOSED; Gate F NOT CLOSED for externally independent interoperability; Gate G REVIEWED / FULL RELEASE NOT APPROVED.** The bounded producer-to-client test passed; the original release acceptance conditions were not lowered.  
 **Companion:** [Implementation-independent DIM proposed research candidate](DIM_Profile_V2_Proposed_Research_Candidate_DIM_v0.1_03NOV2026.md)  
 **Antecedents:** [Integrated PR30-01–21 and G30-01–09 manuscript](CSAPI_Profile.md); [Step41R-01 registered-link carrier decision](../Whole_System_Recovery/Step41R01_Standards_Profile_Carrier_Decision_03NOV2026.md); [Step41R-06 actual producer/client report](../Whole_System_Recovery/Step41R06_Generic_Native_CSAPI_Profile_Client_03NOV2026.md); [owner-authorized plan](../PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md).
 
@@ -229,7 +229,7 @@ flowchart TB
   P -.->|"NOT YET"| PUB["Public stable Profile identity + production deployment"]
 ```
 
-**Figure 2.** The positive path is demonstrated at a fixed local/source scope; the dotted branches are explicit **unmet obligations**, not inferred passes. The original project acceptance **Gates E and F remain NOT CLOSED**, **Gate G NOT REACHED**.
+**Figure 2.** The positive path is demonstrated at a fixed local/source scope; the dotted branches are explicit **unmet obligations**, not inferred passes. Following the [Step43 gate review](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md), **Gates E and F remain NOT CLOSED**, and **Gate G has been REVIEWED but full external release NOT APPROVED**.
 
 ## 7. Release blocker and source-fidelity disposition register
 
@@ -252,7 +252,7 @@ The relevant research evidence is pinned in [41R-05 producer](../Whole_System_Re
 
 Changes to the Profile must specify exact new original normative base class/constraint, source evidence, project additional rule and interpretation target, independent positive/negative tests, backward/versioning decisions, and resulting G30/F40 status. Any change to R24 semantics belongs in the **separate DIM** manuscript and source pedigree, not a silent change in a Profile JSON Schema. Keep prior Step 30/31 candidate analysis as historical trace; do not replace it with newly invented OGC SHALL clauses.
 
-**Final status:** **Step 42 publication-oriented proposed research candidate only**. Step 43 will separately review reproducibility and source fidelity, decide whether to publish a qualified results conclusion, and preserve all unclosed external release criteria. It has **not** been performed here.
+**Final status after original Step43:** **Step 42 produced this proposed, partially validated research candidate; Step43 independently audited source fidelity, cross-branch evidence, pinned CI and Cloudflare production state and conditionally closed the 43-step research sequence without approving full external Profile release.** This document is suitable for **explicitly labeled research discussion**, not an adopted/normative CSAPI Profile, certified client implementation or production deployment. The [Step43 final decision](../Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md) governs unresolved F40/G30/Gate E/F obligations.
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
