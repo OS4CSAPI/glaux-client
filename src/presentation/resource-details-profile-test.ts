@@ -9,6 +9,7 @@ import { renderPublished } from './published-measurements';
 import { attributionCaseKey, attributionCase } from '../profile/bennetts-point';
 import { renderBennettsPoint } from './bennetts-point';
 import { buildPacketPresentation, type PacketPresentation } from '../profile/source-packet-presentation';
+import { loadNativeSourceProfile, type NativeSourceLoad } from '../profile/native-source-profile';
 import { renderSourcePacketDetails } from './source-packet-details';
 import './resource-details-profile-test.css';
 
@@ -32,6 +33,7 @@ const packetCases = [
 type PacketCase = typeof packetCases[number];
 const options:ReadonlyArray<{key:string;label:string}> = [
   ...packetCases,
+  { key:'native-csapi',label:'Native CSAPI resource URL — discover linked evidence' },
   { key:'sck23',label:'Smart Citizen Kit 2.3 — product design' },
   { key:caseKey,label:'Dragino + Campbell — published measurement examples' },
   { key:attributionCaseKey,label:"Bennett's Point — real probe swap and measurements" },
@@ -163,7 +165,11 @@ function insightText(example:SourceCase):string{
 }
 export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   let selected:SourceCase=smartCitizenDesign;
-  const requestedCase=new URLSearchParams(window.location.search).get('case');
+  const params=new URLSearchParams(window.location.search);
+  const requestedCase=params.get('case');
+  const initialNativeUrl=params.get('native') ?? '';
+  let nativeSelected=initialNativeUrl.length>0;
+  let nativeResult:NativeSourceLoad | null=null;
   let packetCase: PacketCase | null = packetCases.find(p => p.key === requestedCase) ?? null;
   let packet: PacketPresentation | null = null;
   let packetLoadError: string | null = null;
@@ -173,10 +179,19 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   let pending=0;
   renderResourceDetailsTemplate(container,{
     pageTitle:'Profile-aware Resource Details · source-to-UI test',
-    pageIntro:'Compare four evidence-qualified local source packets with existing Resource Details examples in one unchanged tab frame. Local packets are NOT native CSAPI or live sensor telemetry.',
+    pageIntro:'Use one Resource Details frame for source-qualified local packets or a read-only native CSAPI Procedure/System URL with registered Profile/evidence links. No live telemetry or issued commands.',
     renderBlankContent({categoryId,view,content}){
       const key=(categoryId+'/'+view) as ViewKey;
-      if(packetCase) {
+      if(nativeSelected) {
+        if(packet) renderSourcePacketDetails(content,packet,key,mode);
+        else if(nativeResult?.kind==='raw') {
+          const section=node('section','rdp-section');
+          section.append(node('h3',undefined,'Native CSAPI feature — raw-only fallback'));
+          section.append(node('p','rdp-footnote',nativeResult.reason ?? 'No supported source-evidence Profile discovered'));
+          section.append(node('pre','raw-content',JSON.stringify(nativeResult.nativeRaw,null,2)));
+          content.append(section);
+        } else empty(content,packetLoadError ?? 'Loading native CSAPI GeoJSON and its discoverable project Profile evidence.');
+      } else if(packetCase) {
         if(packet)renderSourcePacketDetails(content,packet,key,mode);
         else empty(content,packetLoadError ?? 'Loading the selected local research source packet. No live CSAPI request is being made.');
       }
@@ -187,7 +202,7 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       return true;
     },
     sourceSummary:'What this tests — and what it does not',
-    sourceDescription:'Four local project research packets are kept separate from native CSAPI retrieval and previous published/synthetic examples. The shared interpreter preserves declared source claims but does not authenticate them. The existing live CSAPI pages remain separate; no commands are sent.',
+    sourceDescription:'Local research packets stay available. For a user-supplied native CSAPI resource URL, the same shared interpreter reads only after registered Profile/evidence discovery and native-identity checks; producer issuer/authenticity and complete OGC requirements-class conformance remain unverified. No commands are sent.',
     designRecord:'Design/RESOURCE_DETAILS_PROFILE_TEST.md',
   });
   container.classList.add('resource-profile-prototype');
@@ -199,7 +214,8 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   const pickerLabel=node('label',undefined,'Source case');
   const picker=node('select');picker.id='rdp-case-select';pickerLabel.htmlFor=picker.id;
   for(const opt of options){const o=node('option',undefined,opt.label);o.value=opt.key;picker.append(o);}
-  picker.value=packetCase?.key ?? (attribution?attributionCaseKey:(published?caseKey:'sck23'));
+  picker.value=nativeSelected ? 'native-csapi' : packetCase?.key ?? (attribution?attributionCaseKey:(published?caseKey:'sck23'));
+  if(nativeSelected) packetCase=null;
   const pickerWrap=node('div','rdp-picker');pickerWrap.append(pickerLabel,picker);
   const modeGroup=node('div','rdp-mode-group');
   modeGroup.setAttribute('role','group');modeGroup.setAttribute('aria-label','Rendering mode');
@@ -207,7 +223,18 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   const profileBtn=node('button','rdp-mode','Candidate profile-aware');profileBtn.type='button';
   modeGroup.append(genericBtn,profileBtn);
   const count=node('p','rdp-count');count.setAttribute('aria-live','polite');
-  controls.append(pickerWrap,modeGroup,count);
+  const nativeWrap=node('div','rdp-native');
+  const nativeLabel=node('label',undefined,'Read-only native CSAPI Procedure/System URL');
+  nativeLabel.htmlFor='rdp-native-url';
+  const nativeInput=node('input');
+  nativeInput.id='rdp-native-url';nativeInput.type='url';
+  nativeInput.placeholder='https://producer.example/api/procedures/… (or http://127.0.0.1:<port>/api/…)';
+  nativeInput.value=initialNativeUrl;
+  nativeInput.autocomplete='off';
+  const nativeLoad=node('button','rdp-mode','Load native resource + discover Profile');
+  nativeLoad.id='rdp-load-native';nativeLoad.type='button';
+  nativeWrap.append(nativeLabel,nativeInput,nativeLoad);
+  controls.append(pickerWrap,modeGroup,nativeWrap,count);
   toolbar.before(controls);
   const note=node('div','rdp-case-note');
   const insight=node('p','rdp-insight');
@@ -221,38 +248,81 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   for(const m of marker)m.textContent='Demonstration data · marking not assigned';
   const refresh=frame.querySelector<HTMLButtonElement>('.rd-refresh');if(refresh)refresh.title='No live CSAPI connection in this study';
   const repaint=():void=>{
-    if(title)title.textContent=packetCase ? (packet?.model.focus?.label ?? packetCase.label)
+    if(title)title.textContent=nativeSelected
+      ? (nativeResult?.source?.name ?? 'Native CSAPI resource · awaiting Profile evidence')
+      : packetCase ? (packet?.model.focus?.label ?? packetCase.label)
       : attribution?"Bennett's Point":(published?'Dragino + Campbell':selected.title);
     if(dd.length>=3){
-      dd[0].textContent=packetCase ? (packet?.model.focus?.standing ?? 'Loading source standing')
+      dd[0].textContent=nativeSelected ? (nativeResult?.source?.kind ?? 'Native source standing pending')
+        : packetCase ? (packet?.model.focus?.standing ?? 'Loading source standing')
         : attribution?'Historical station observations':(published?'Published examples':selected.resourceStanding);
-      dd[1].textContent=packetCase ? (packet?.model.focus?.sourceIdentity?.raw ?? 'No source-authenticated ID')
+      dd[1].textContent=nativeSelected ? (nativeResult?.source?.uid ?? 'No verified bound native UID')
+        : packetCase ? (packet?.model.focus?.sourceIdentity?.raw ?? 'No source-authenticated ID')
         : attribution?attributionCase.station.code:(published?'No installed unit':selected.identifier);
-      dd[2].textContent=packetCase ? 'Project research packet · NOT native CSAPI'
+      dd[2].textContent=nativeSelected
+        ? (nativeResult?.kind==='profile' ? 'Native CSAPI GeoJSON + linked project source evidence' : 'Native source / no accepted project Profile')
+        : packetCase ? 'Project research packet · NOT native CSAPI'
         : attribution?'Operator measurement + equipment records':(published?'Manufacturer documentation':selected.source);
     }
-    if(footer)footer.textContent=packetCase ? 'Source packet experiment · no CSAPI discovery or verified device control'
+    if(footer)footer.textContent=nativeSelected ? 'Native read-only CSAPI + project evidence · issuer/OGC class conformance NOT verified · no commands'
+      : packetCase ? 'Source packet experiment · no CSAPI discovery or verified device control'
       : attribution?'Historical observations · operator records':(published?'Published examples · not live readings':'Candidate semantics · no actual device control');
-    genericBtn.textContent=packetCase ? 'Raw packet · not native CSAPI' : 'Generic CSAPI-style fields';
+    genericBtn.textContent=nativeSelected ? 'Raw native + project evidence' : packetCase ? 'Raw packet · not native CSAPI' : 'Generic CSAPI-style fields';
     genericBtn.setAttribute('aria-pressed',String(mode==='generic'));
     profileBtn.setAttribute('aria-pressed',String(mode==='profile'));
-    count.textContent=packetCase
+    count.textContent=nativeSelected ? (packetLoadError ? 'Native loading failed: '+packetLoadError
+      : nativeResult?.kind==='raw' ? 'Native raw-only · Profile rejected: '+nativeResult.reason
+      : packet ? 'Native CSAPI '+nativeResult?.source?.kind+' · '+packet.model.subjects.length+' source-described subjects · '+packet.model.claims.length+' source claims · '+packet.originalEventCount+' original source-event anchors · '+packet.experimentalRepresentationCount+' historical experiment copies'
+      : 'Loading native CSAPI resource and Profile evidence…')
+      : packetCase
       ? (packetLoadError ? 'Local packet load failed: '+packetLoadError : packet ? packet.model.subjects.length+' declared subjects · '+packet.model.claims.length+
         ' source claims · '+packet.originalEventCount+' original source-event anchors · '+
         packet.experimentalRepresentationCount+' historical experiment copies' : 'Loading source packet…')
       : attribution?String(attributionCase.records.length)+' historical observations · '+String(new Set(attributionCase.records.map(r=>r.probe.serial)).size)+' physical probes'
         :(published?`${measures.length} fields · ${measures.filter(r=>r.value!==undefined).length} published example values`
           :String(selected.fields.length)+' source fields · '+String(mappedFieldCount(selected))+' recognized by candidate rules · '+String(unmappedFields(selected).length)+' unknown meanings retained');
-    note.textContent=packetCase
+    note.textContent=nativeSelected
+      ? (nativeResult?.kind==='profile'
+        ? 'Actually retrieved native GeoJSON; source standing is a separate PROJECT Profile sidecar, PRODUCER_ASSERTED_UNVERIFIED. No full OGC ATS or live equipment control.'
+        : 'No usable linked project Profile evidence: native resource is raw-only. Never infer source authenticity or original events.')
+      : packetCase
       ? 'Local research evidence · project declarations are not independently source-authenticated, native CSAPI or live telemetry. Inspect Management → Record/Sources.'
       : attribution?attributionCase.note:(published?'Campbell’s logger example is separate from the ClimaVue manual. It is not a weather report from that instrument.':selected.warning);
-    insight.textContent=packetCase
-      ? 'The same evidence reader and UI rules apply to all four packets. Equipment, source examples, original events/copies, DERIVED facts and UNKNOWNs are kept distinct; the Map never infers a probe location.'
+    insight.textContent=nativeSelected
+      ? 'Profile links are discovered from the actual resource response, never from a product-name switch. Original examples, DERIVED/UNKNOWN, and Bennett original-event/copy counts remain source-qualified; no per-probe geometry is synthesized.'
+      : packetCase
+      ? 'The same evidence reader and UI rules apply to all project packets. Equipment, source examples, original events/copies, DERIVED facts and UNKNOWNs are kept distinct; the Map never infers a probe location.'
       : attribution?'Read the two observation cards: same station, same EE181 model, same property — different serial number on opposite sides of the documented swap.'
         :(published?'Try “Show air temperature only.” The wiring-panel temperature disappears; the ClimaVue air-temperature field stays, without borrowing a reading.':'What this preserves: '+insightText(selected));
     const active=frame.querySelector<HTMLButtonElement>('.rd-view-tabs .rd-tab[aria-selected="true"]');
     active?.click();
   };
+  const loadNative=(url:string,version:number):void=>{
+    packet=null;nativeResult=null;packetLoadError=null;nativeSelected=true;packetCase=null;
+    attribution=false;published=false;mode='profile';picker.value='native-csapi';
+    frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
+    repaint();
+    void loadNativeSourceProfile(url).then(result=>{
+      if(version!==pending)return;
+      nativeResult=result;
+      packet=result.kind==='profile' ? (result.presentation ?? null) : null;
+      repaint();
+    }).catch(error=>{
+      if(version!==pending)return;
+      nativeResult=null;packet=null;
+      packetLoadError=error instanceof Error?error.message:String(error);
+      repaint();
+    });
+  };
+  nativeLoad.addEventListener('click',()=>{
+    const inputUrl=nativeInput.value.trim();
+    const version=++pending;
+    if(!inputUrl){
+      nativeSelected=true;packet=null;nativeResult=null;packetLoadError='Provide a native Procedure/System URL';
+      picker.value='native-csapi';repaint();return;
+    }
+    loadNative(inputUrl,version);
+  });
   const loadPacketCase=(chosen:PacketCase, version:number):void=>{
     // No vendor-dependent interpretation. The selector chooses only exact local input bytes.
     void fetch(chosen.path,{cache:'no-store'}).then(async response=>{
@@ -278,6 +348,13 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
   picker.addEventListener('change',()=>{
     const key=picker.value;const current=++pending;
     const chosen=packetCases.find(p=>p.key===key);
+    if(key==='native-csapi'){
+      nativeSelected=true;packetCase=null;packet=null;nativeResult=null;
+      packetLoadError=null;attribution=false;published=false;mode='profile';
+      frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
+      repaint();return;
+    }
+    nativeSelected=false;nativeResult=null;
     if(chosen){
       packetCase=chosen;packet=null;packetLoadError=null;attribution=false;published=false;mode='profile';
       frame.querySelector<HTMLButtonElement>('#rd-category-operational')?.click();
@@ -314,7 +391,10 @@ export function renderResourceDetailsProfileTest(container:HTMLElement):void {
       count.textContent='Could not load this source fixture: '+(err instanceof Error?err.message:String(err));
     });
   });
-  if(packetCase) {
+  if(nativeSelected){
+    const current=++pending;
+    loadNative(initialNativeUrl,current);
+  } else if(packetCase) {
     const current=++pending;
     repaint();loadPacketCase(packetCase,current);
   } else repaint();
