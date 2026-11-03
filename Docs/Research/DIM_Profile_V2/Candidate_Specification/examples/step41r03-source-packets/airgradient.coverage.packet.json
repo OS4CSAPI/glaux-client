@@ -1,0 +1,487 @@
+{
+  "format": "dim-csapi-source-packet.s32.v0.1",
+  "id": "s41r03-airgradient-coverage",
+  "focus": "a-max",
+  "sources": [
+    {
+      "id": "a01",
+      "issuer": "AirGradient / Open Air Foundation",
+      "title": "Open Air Max hardware README",
+      "url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Pinned 89aacf5013fc0ffe4b988a2e3c5a227bce3c4983",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md §1"
+    },
+    {
+      "id": "a02",
+      "issuer": "AirGradient / Open Air Foundation",
+      "title": "Open Air Max firmware README",
+      "url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Pinned 84e479a415d81151e7a81aea9a2f7449a15e98cc",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/AirGradient_Open_Air_Max.md §3"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "a-max",
+      "label": "Open Air Max O-M-1PPSTON-CE gas-equipped reference arrangement",
+      "standing": "REFERENCE_ARRANGEMENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "model designation",
+        "raw": "O-M-1PPSTON-CE"
+      }
+    },
+    {
+      "id": "a-pm1",
+      "label": "PMS5003 design component at hardware socket PM1",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "hardware socket in reference design",
+        "raw": "PM1"
+      }
+    },
+    {
+      "id": "a-pm2",
+      "label": "PMS5003 design component at hardware socket PM2",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient",
+        "scheme": "hardware socket in reference design",
+        "raw": "PM2"
+      }
+    },
+    {
+      "id": "a-main",
+      "label": "Reference main PCB with ESP32-C6",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "ESP32-C6 main PCB"
+      }
+    },
+    {
+      "id": "a-co2",
+      "label": "SUNX CO2 module (SenseAir Sunlight)",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "SUNX CO₂ module"
+      }
+    },
+    {
+      "id": "a-sgp41",
+      "label": "SGP41 TVOC/NOx reference module",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "SGP41 module"
+      }
+    },
+    {
+      "id": "a-sht40",
+      "label": "SHT40 temperature/humidity reference module",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "SHT40 module"
+      }
+    },
+    {
+      "id": "a-gas",
+      "label": "AlphaSense ADC reference gas assembly (NO₂ A43F; O₃ A431)",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "AlphaSense ADC module"
+      }
+    },
+    {
+      "id": "a-ce",
+      "label": "Reference CE LTE Cat 1 cellular card",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "AirGradient / Open Air Foundation",
+        "scheme": "reference module type (not individual serial)",
+        "raw": "CE cellular card"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "a-socket1",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-pm1",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Plug-in modules; research A-I06",
+          "nativeToken": "PM1"
+        }
+      ]
+    },
+    {
+      "id": "a-socket2",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-pm2",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Plug-in modules; research A-I06",
+          "nativeToken": "PM2"
+        }
+      ]
+    },
+    {
+      "id": "a-pm01",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm01",
+        "unit": "µg/m³",
+        "nativeField": "pm01",
+        "interpretation": "PM1.0 particulate matter measurement field name, not a hardware socket"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F04",
+          "nativeToken": "pm01"
+        }
+      ]
+    },
+    {
+      "id": "a-pm25",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm25",
+        "unit": "µg/m³",
+        "nativeField": "pm25",
+        "interpretation": "PM2.5 particulate matter field; not PM2 connector"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F05",
+          "nativeToken": "pm25"
+        }
+      ]
+    },
+    {
+      "id": "a-pm10",
+      "about": "a-max",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "pm10",
+        "unit": "µg/m³",
+        "nativeField": "pm10",
+        "interpretation": "PM10 particulate matter field; not an additional physical sensor"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F06",
+          "nativeToken": "pm10"
+        }
+      ]
+    },
+    {
+      "id": "a-example",
+      "about": "a-max",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "27.7",
+        "unit": "µg/m³",
+        "nativeField": "pm25",
+        "interpretation": "published annotated Wi-Fi example, not live telemetry"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Example Payload Breakdown; research A-F05",
+          "nativeToken": "27.7"
+        }
+      ]
+    },
+    {
+      "id": "a-installed",
+      "about": "a-max",
+      "concept": "identity.installed_unit",
+      "standing": "UNKNOWN",
+      "reason": "Product, firmware and cloud examples are not a confirmed installed physical individual or synchronized operating source.",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Reference assembly only; research A-I16"
+        }
+      ]
+    },
+    {
+      "id": "a41-main",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-main",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I05",
+          "nativeToken": "ESP32-C6 main PCB"
+        }
+      ]
+    },
+    {
+      "id": "a41-co2",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-co2",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I07",
+          "nativeToken": "SUNX CO₂ module"
+        }
+      ]
+    },
+    {
+      "id": "a41-sgp41",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-sgp41",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I08",
+          "nativeToken": "SGP41 module"
+        }
+      ]
+    },
+    {
+      "id": "a41-sht40",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-sht40",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I09",
+          "nativeToken": "SHT40 module"
+        }
+      ]
+    },
+    {
+      "id": "a41-gas",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-gas",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I10",
+          "nativeToken": "AlphaSense ADC module"
+        }
+      ]
+    },
+    {
+      "id": "a41-ce",
+      "about": "a-max",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "a-ce",
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Hardware README: Overview / Plug-in modules; A-I11",
+          "nativeToken": "CE cellular card"
+        }
+      ]
+    },
+    {
+      "id": "a41-solar",
+      "about": "a-max",
+      "concept": "power.design_specification",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "10",
+        "unit": "W",
+        "nativeField": "included solar panel rated power",
+        "interpretation": "design rating, not measured output"
+      },
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Overview; A-P01",
+          "nativeToken": "10 W"
+        }
+      ]
+    },
+    {
+      "id": "a41-battery",
+      "about": "a-max",
+      "concept": "power.design_specification",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "three 3,500 mAh Li-ion 18650 cells in series (3S)",
+        "nativeField": "battery arrangement",
+        "interpretation": "per-cell rating and series topology; not a 10,500 mAh pack rating or measured charge"
+      },
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Overview; A-P02",
+          "nativeToken": "three 3,500 mAh Li-ion 18650 cells in series (3S)"
+        }
+      ]
+    },
+    {
+      "id": "a41-wifi",
+      "about": "a-max",
+      "concept": "communications.supported_interface",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "2.4 GHz IEEE 802.11 b/g/n Wi-Fi",
+        "nativeField": "radio network option",
+        "interpretation": "supported design interface, not live Wi-Fi connection"
+      },
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Overview; A-I12"
+        }
+      ]
+    },
+    {
+      "id": "a41-cellular",
+      "about": "a-max",
+      "concept": "communications.supported_interface",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "4G cellular (LTE Cat 1)",
+        "nativeField": "radio network option",
+        "interpretation": "reference CE card/network option, not current cellular session"
+      },
+      "evidence": [
+        {
+          "sourceId": "a01",
+          "locator": "Overview; A-I11"
+        }
+      ]
+    },
+    {
+      "id": "a41-network-default",
+      "about": "a-max",
+      "concept": "configuration.documented_default",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "Cellular",
+        "nativeField": "transmission mode",
+        "interpretation": "documented firmware source default, not effective setting of any installed unit"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Transmission, network options; A-C02",
+          "nativeToken": "Cellular"
+        }
+      ]
+    },
+    {
+      "id": "a41-cell-report",
+      "about": "a-max",
+      "concept": "communications.documented_reporting",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "Cellular: nominal 3-minute samples; payload every 9 minutes (HTTP/MQTT), failed batches cached temporarily",
+        "nativeField": "Cellular transmission",
+        "interpretation": "source-defined data transport/timing; volatile cache lost at power loss, not measured operation"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Cellular / Handling Data Loss; A-C10/11"
+        }
+      ]
+    },
+    {
+      "id": "a41-wifi-report",
+      "about": "a-max",
+      "concept": "communications.documented_reporting",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "Wi-Fi: HTTP JSON one sample every 3 minutes; no retransmission cache",
+        "nativeField": "Wi-Fi transmission",
+        "interpretation": "firmware README design behavior, not one synchronized real installation"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "WiFi; A-C12"
+        }
+      ]
+    },
+    {
+      "id": "a41-firmware-revision",
+      "about": "a-max",
+      "concept": "software.reference_revision",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "84e479a415d81151e7a81aea9a2f7449a15e98cc",
+        "nativeField": "source code snapshot",
+        "interpretation": "pinned source revision; no proof this firmware ran on any installed hardware"
+      },
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Pinned firmware repository commit; A-I04"
+        }
+      ]
+    },
+    {
+      "id": "a41-installed-firmware",
+      "about": "a-max",
+      "concept": "software.installed_version",
+      "standing": "UNKNOWN",
+      "reason": "No independently identified running device or installed firmware/hardware version pair established",
+      "evidence": [
+        {
+          "sourceId": "a02",
+          "locator": "Pinned firmware source edition versus installed release; A-I04/A-G01"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [],
+  "representations": [],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Portable provenance",
+      "reason": "Source examples and reference hardware slots have no validated CSAPI discovery carrier."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Source-independent consumer",
+      "reason": "Common local packet interpreter exists; actual native CSAPI/Profile carrying, independent issuer verification and a fielded device remain unproved."
+    }
+  ]
+}
