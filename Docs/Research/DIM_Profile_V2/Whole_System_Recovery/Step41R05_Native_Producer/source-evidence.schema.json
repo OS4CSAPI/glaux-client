@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DIM V2 linked source evidence, v0.1 — PROJECT-defined, not a CSAPI native schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format","profile","describes","integratingProducer","sourceEvidence"],
+  "properties": {
+    "format": {"const": "dim-csapi-evidence-sidecar.v0.1"},
+    "profile": {"type": "string", "format": "uri"},
+    "describes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["href","uid","kind","sourceStanding"],
+      "properties": {
+        "href": {"type":"string","format":"uri"},
+        "uid": {"type":"string","format":"uri"},
+        "kind": {"enum":["Procedure","System"]},
+        "sourceStanding": {"enum":["REFERENCE_ARRANGEMENT","SOURCE_IDENTIFIED_STATION"]}
+      }
+    },
+    "integratingProducer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name","role","verification","reason"],
+      "properties": {
+        "name":{"type":"string","minLength":1},
+        "role":{"const":"INTEGRATING_PRODUCER_NOT_ORIGINAL_ISSUER"},
+        "verification":{"const":"PRODUCER_ASSERTED_UNVERIFIED"},
+        "reason":{"type":"string","minLength":1}
+      }
+    },
+    "sourceEvidence": {
+      "type":"object", "additionalProperties":false,
+      "required":["projectPacketFormat","packetId","focus","sources","subjects","assertions","originalEvents","representations","holds"],
+      "properties":{
+        "projectPacketFormat":{"enum":["dim-csapi-source-packet.s41r03.v0.1","dim-csapi-source-packet.s41r04.v0.1"]},
+        "packetId":{"type":"string","minLength":1},
+        "focus":{"type":"string","minLength":1},
+        "sources":{"type":"array","minItems":1,"items":{"type":"object","required":["id","issuer","url","authority","edition","researchTrace"],"properties":{
+          "id":{"type":"string","minLength":1},"issuer":{"type":"string","minLength":1},"url":{"type":"string","format":"uri"},
+          "authority":{"enum":["MANUFACTURER_ORIGINAL","OPERATOR_ORIGINAL","MEASUREMENT_ARCHIVE"]},
+          "edition":{"type":"string","minLength":1},"researchTrace":{"type":"string","minLength":1}
+        }}},
+        "subjects":{"type":"array","minItems":1},
+        "assertions":{"type":"array","minItems":1,"items":{"type":"object","required":["id","about","concept","standing","evidence"],"properties":{
+          "id":{"type":"string"},"about":{"type":"string"},"concept":{"type":"string"},
+          "standing":{"enum":["SOURCE_FACT","SOURCE_EXAMPLE","DERIVED","UNKNOWN"]},
+          "evidence":{"type":"array","minItems":1},"value":{"type":"object"},"target":{"type":"string"},"reason":{"type":"string"}
+        }}},
+        "originalEvents":{"type":"array"},"representations":{"type":"array"},"holds":{"type":"array"}
+      }
+    }
+  }
+}
