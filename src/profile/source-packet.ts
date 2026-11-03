@@ -49,6 +49,11 @@ const concepts = new Set([
   'observation.raw_quality_token', 'observation.nominal_period', 'observation.contributing_equipment',
   'observation.result_time', 'observation.producing_system', 'configuration.effective_setting',
   'identity.installed_unit', 'location.probe_position', 'source.native',
+  // 41R-03 generic, reference-only whole-System coverage vocabulary (project, not OGC wire).
+  'configuration.documented_default', 'configuration.documented_example', 'configuration.supported_action',
+  'output.message_type', 'output.status_field', 'communications.supported_interface',
+  'communications.documented_reporting', 'power.design_specification',
+  'software.reference_revision', 'software.installed_version',
 ]);
 
 /** Only declared standing and cross-reference consistency are checked: NOT actual source authority. */
