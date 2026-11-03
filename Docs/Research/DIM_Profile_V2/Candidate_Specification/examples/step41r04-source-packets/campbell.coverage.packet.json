@@ -1,0 +1,1052 @@
+{
+  "format": "dim-csapi-source-packet.s41r04.v0.1",
+  "id": "s41r04-campbell-reference",
+  "focus": "d-pair",
+  "sources": [
+    {
+      "id": "d02",
+      "issuer": "Campbell Scientific",
+      "title": "ClimaVue 50 Product Manual",
+      "url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "First-generation ClimaVue 50, 08/2024; Tables 7-1,8-1",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md §§1–2"
+    },
+    {
+      "id": "d07",
+      "issuer": "Campbell Scientific",
+      "title": "Status — MQTT API (CR1000X example)",
+      "url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+      "authority": "MANUFACTURER_ORIGINAL",
+      "edition": "Published example; displayed footer 2026-09-21 as recorded in source sheet",
+      "researchTrace": "Controlled_Corpus/System_Data_Sheets/Campbell_CR1000X_ClimaVue50.md §5"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "d-pair",
+      "label": "Documented potential CR1000X and ClimaVue 50 reference pairing",
+      "standing": "REFERENCE_ARRANGEMENT"
+    },
+    {
+      "id": "d-logger",
+      "label": "CR1000X logger reference product",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "Campbell Scientific",
+        "scheme": "model",
+        "raw": "CR1000X"
+      }
+    },
+    {
+      "id": "d-climavue",
+      "label": "First-generation ClimaVue 50 sensing assembly reference product",
+      "standing": "REFERENCE_COMPONENT",
+      "sourceIdentity": {
+        "issuer": "Campbell Scientific",
+        "scheme": "model",
+        "raw": "ClimaVue 50"
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "id": "d-sensor",
+      "about": "d-pair",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "d-climavue",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1; research D-I02",
+          "nativeToken": "ClimaVue 50"
+        }
+      ]
+    },
+    {
+      "id": "d-logger-part",
+      "about": "d-pair",
+      "concept": "equipment.reference_component",
+      "standing": "SOURCE_FACT",
+      "target": "d-logger",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1; source sheet D-I01/D-I06",
+          "nativeToken": "CR1000X"
+        }
+      ]
+    },
+    {
+      "id": "d-connection",
+      "about": "d-logger",
+      "concept": "equipment.design_connection",
+      "standing": "SOURCE_FACT",
+      "target": "d-climavue",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 7-1; research D-I06",
+          "nativeToken": "SDI-12"
+        }
+      ]
+    },
+    {
+      "id": "d-field-count",
+      "about": "d-climavue",
+      "concept": "output.field_count",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "14",
+        "unit": "response positions",
+        "nativeField": "aR7!",
+        "interpretation": "one source-defined response, not fourteen sensors"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21; D-R01–14",
+          "nativeToken": "aR7!"
+        }
+      ]
+    },
+    {
+      "id": "d-ambient-field",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "8",
+        "unit": "position (°C)",
+        "nativeField": "aR7! position 8",
+        "interpretation": "environmental air temperature; no real result value acquired"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, D-R08",
+          "nativeToken": "Air temperature"
+        }
+      ]
+    },
+    {
+      "id": "d-panel-field",
+      "about": "d-logger",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "PanelTemp",
+        "unit": "°C",
+        "nativeField": "PanelTemp",
+        "interpretation": "logger panel temperature, not environmental air temperature"
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X Status example / D-S02",
+          "nativeToken": "PanelTemp"
+        }
+      ]
+    },
+    {
+      "id": "d-panel-example",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "25.91098",
+        "unit": "°C",
+        "nativeField": "PanelTemp",
+        "interpretation": "publisher example; unrelated to ClimaVue observations"
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X Status example, D-S02",
+          "nativeToken": "25.91098"
+        }
+      ]
+    },
+    {
+      "id": "d-installed",
+      "about": "d-pair",
+      "concept": "identity.installed_unit",
+      "standing": "UNKNOWN",
+      "reason": "No authenticated assembled operating station, actual SDI-12 address or installed program; 2019/2024/2026 documents are not a joined release.",
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Manufacturer design/example only; sheet §8"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-1",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "1",
+        "unit": "W/m²",
+        "nativeField": "aR7! position 1",
+        "interpretation": "First-generation ClimaVue source-defined position 1: Solar flux density. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R01",
+          "nativeToken": "Solar flux density"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-2",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "2",
+        "unit": "mm",
+        "nativeField": "aR7! position 2",
+        "interpretation": "First-generation ClimaVue source-defined position 2: Precipitation. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R02",
+          "nativeToken": "Precipitation"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-3",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "3",
+        "unit": "count",
+        "nativeField": "aR7! position 3",
+        "interpretation": "First-generation ClimaVue source-defined position 3: Lightning strike count. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R03",
+          "nativeToken": "Lightning strike count"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-4",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "4",
+        "unit": "km",
+        "nativeField": "aR7! position 4",
+        "interpretation": "First-generation ClimaVue source-defined position 4: Strike distance. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R04",
+          "nativeToken": "Strike distance"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-5",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "5",
+        "unit": "m/s",
+        "nativeField": "aR7! position 5",
+        "interpretation": "First-generation ClimaVue source-defined position 5: Wind speed. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R05",
+          "nativeToken": "Wind speed"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-6",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "6",
+        "unit": "°",
+        "nativeField": "aR7! position 6",
+        "interpretation": "First-generation ClimaVue source-defined position 6: Wind direction. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R06",
+          "nativeToken": "Wind direction"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-7",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "7",
+        "unit": "m/s",
+        "nativeField": "aR7! position 7",
+        "interpretation": "First-generation ClimaVue source-defined position 7: Wind speed max. — 10 s gust. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R07",
+          "nativeToken": "Wind speed max. — 10 s gust"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-9",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "9",
+        "unit": "kPa",
+        "nativeField": "aR7! position 9",
+        "interpretation": "First-generation ClimaVue source-defined position 9: Vapor pressure. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R09",
+          "nativeToken": "Vapor pressure"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-10",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "10",
+        "unit": "kPa",
+        "nativeField": "aR7! position 10",
+        "interpretation": "First-generation ClimaVue source-defined position 10: Barometric pressure, absolute. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R10",
+          "nativeToken": "Barometric pressure, absolute"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-11",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "11",
+        "unit": "fraction 0–1",
+        "nativeField": "aR7! position 11",
+        "interpretation": "First-generation ClimaVue source-defined position 11: Relative humidity. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R11",
+          "nativeToken": "Relative humidity"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-12",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "12",
+        "unit": "°C",
+        "nativeField": "aR7! position 12",
+        "interpretation": "First-generation ClimaVue source-defined position 12: Humidity sensor temperature. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R12",
+          "nativeToken": "Humidity sensor temperature"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-13",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "13",
+        "unit": "°",
+        "nativeField": "aR7! position 13",
+        "interpretation": "First-generation ClimaVue source-defined position 13: Tilt North(+)/South(−) orientation. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R13",
+          "nativeToken": "Tilt North(+)/South(−) orientation"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-response-14",
+      "about": "d-climavue",
+      "concept": "output.native_field",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "14",
+        "unit": "°",
+        "nativeField": "aR7! position 14",
+        "interpretation": "First-generation ClimaVue source-defined position 14: Tilt West(+)/East(−) orientation. No measured weather result; NOT a separate physical sensor."
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 8-1, printed p.21 / D-R14",
+          "nativeToken": "Tilt West(+)/East(−) orientation"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-1",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "unit": "count",
+        "nativeField": "WatchdogErrors",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Program-associated watchdog count; reset on compile or explicit reset. Zero is not lifetime fault-free. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S01; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-3",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "13.2368",
+        "unit": "Vdc",
+        "nativeField": "Battery",
+        "interpretation": "Publisher logger-only Status example of JSON number field. System-supply voltage at logger; not capacity or sensor-local voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S03; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-4",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "3.70477",
+        "unit": "V",
+        "nativeField": "LithiumBattery",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Internal lithium-battery voltage; separate supply subject. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S04; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-5",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "Low12VCount",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S05; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-6",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "cpu:main.crb -- Compiled in PipelineMode.\r\n",
+        "nativeField": "CompileResults",
+        "interpretation": "Publisher logger-only Status example of JSON string field. Compilation/runtime diagnostic string; not hardware readiness. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S06; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-7",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "unit": "count",
+        "nativeField": "SkippedScan",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Skipped program scans; excludes intentionally skipped scans. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S07; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-8",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "SkippedSystemScan",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S08; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-9",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "SkippedSlowScan(1)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S09; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-10",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "SkippedSlowScan(2)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S10; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-11",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "SkippedSlowScan(3)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S11; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-12",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "SkippedSlowScan(4)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S12; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-13",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "614\r\n147(146),328(283),445(434),226(106),114(107),91(86),78(76),53(51),2(2),0(0)",
+        "nativeField": "CommsMemFree",
+        "interpretation": "Publisher logger-only Status example of JSON string field. Communication-memory allocations; parentheses indicate low-water sizes. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S13; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-14",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "Card OK.",
+        "nativeField": "CardStatus",
+        "interpretation": "Publisher logger-only Status example of JSON string field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S14; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-15",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "81240",
+        "unit": "µs",
+        "nativeField": "MaxProcTime",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Maximum processing time for current scan; reset/update semantics matter. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S15; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-16",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "MaxBuffDepth",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S16; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-17",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "788",
+        "nativeField": "MaxSystemProcTime",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S17; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-18",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "10350364",
+        "nativeField": "MaxSlowProcTime(1)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S18; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-19",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "8703216",
+        "nativeField": "MaxSlowProcTime(2)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S19; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-20",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "2531229",
+        "nativeField": "MaxSlowProcTime(3)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S20; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-21",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "0",
+        "nativeField": "MaxSlowProcTime(4)",
+        "interpretation": "Publisher logger-only Status example of JSON number field. Detailed meaning/unit held as UNRESOLVED in the D06 audit Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S21; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-22",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "false",
+        "unit": "on",
+        "nativeField": "PortStatus(1)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S22; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-23",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "false",
+        "unit": "on",
+        "nativeField": "PortStatus(2)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S23; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-24",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "false",
+        "unit": "on",
+        "nativeField": "PortStatus(3)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S24; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-25",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "PortStatus(4)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S25; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-26",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "PortStatus(5)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S26; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-27",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "PortStatus(6)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S27; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-28",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "PortStatus(7)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S28; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-29",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "PortStatus(8)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. C-terminal control state; True on/high, False off/low; not measured voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S29; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-30",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "SW12Volts(1)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. Switched 12-V terminal state; True on; not numeric voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S30; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-status-31",
+      "about": "d-logger",
+      "concept": "output.example_value",
+      "standing": "SOURCE_EXAMPLE",
+      "value": {
+        "raw": "true",
+        "unit": "on",
+        "nativeField": "SW12Volts(2)",
+        "interpretation": "Publisher logger-only Status example of JSON Boolean field. Switched 12-V terminal state; True on; not numeric voltage. Not a ClimaVue measurement or authenticated operating status."
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "CR1000X MQTT Status published example, D-S31; D sheet §5"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-sdicom",
+      "about": "d-climavue",
+      "concept": "communications.supported_interface",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "SDI-12",
+        "interpretation": "documented potential sensor-to-logger interface, NOT actual connection"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1 / D-I06"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-address",
+      "about": "d-climavue",
+      "concept": "configuration.documented_default",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "0",
+        "interpretation": "factory SDI-12 address; not actual readback"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "§7.1 / D-I08"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-action",
+      "about": "d-climavue",
+      "concept": "configuration.supported_action",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "aAb!",
+        "interpretation": "documented address-change command; NOT executed"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Appendix C / D-V06"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-volts",
+      "about": "d-climavue",
+      "concept": "power.design_specification",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "12",
+        "unit": "V",
+        "interpretation": "nominal continuous sensor supply, NOT measured voltage"
+      },
+      "evidence": [
+        {
+          "sourceId": "d02",
+          "locator": "Table 7-1 / D-I05"
+        }
+      ]
+    },
+    {
+      "id": "d41r04-mqtt",
+      "about": "d-logger",
+      "concept": "output.message_type",
+      "standing": "SOURCE_FACT",
+      "value": {
+        "raw": "CR1000X MQTT Status GeoJSON published example",
+        "interpretation": "separate logger-only example, not joined operating station"
+      },
+      "evidence": [
+        {
+          "sourceId": "d07",
+          "locator": "D07 CR1000X Example / D-E01–06"
+        }
+      ]
+    }
+  ],
+  "originalEvents": [],
+  "representations": [],
+  "holds": [
+    {
+      "gap": "G30-01",
+      "topic": "Reference/example evidence carrier",
+      "reason": "Separate source editions and their standing are not yet transportable via a validated CSAPI Profile."
+    },
+    {
+      "gap": "G30-08",
+      "topic": "Common reader",
+      "reason": "No shared interpreter has consumed this potential equipment pairing."
+    }
+  ]
+}
