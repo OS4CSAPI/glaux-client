@@ -255,6 +255,8 @@ Changes to the Profile must specify exact new original normative base class/cons
 
 ## References — Chicago Manual of Style, 18th ed., author–date
 
+British Standards Institution (BSI). 2024. *BSI Flex 335: SAPIENT, version 2.0 (March 2024)*. Original published examples are used as negative control, not an adopted CSAPI command mapping. https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf.
+
 ACE Basin National Estuarine Research Reserve. 2025. *Meteorological Metadata: ACE Basin, Updated August 18, 2025*. https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf.
 
 Campbell Scientific. 2024. *ClimaVue 50 Manual*. Revision 08/2024, table 8-1. https://s.campbellsci.com/documents/us/manuals/climavue50.pdf.
@@ -264,6 +266,10 @@ Campbell Scientific. n.d. “MQTT Status Example.” *Datalogger API*. https://h
 Dragino. n.d. “S31-LB Temperature and Humidity Sensor: Product Manual.” https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/.
 
 Nottingham, Mark. 2017. *Web Linking*. RFC 8288, Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc8288.
+
+Heazel, Charles, ed. 2023. *OGC API – Common – Part 1: Core*. Version 1.0.0, OGC 19-072. Open Geospatial Consortium. https://docs.ogc.org/is/19-072/19-072.html.
+
+Internet Assigned Numbers Authority (IANA). n.d. “Link Relation Types.” Registry of registered relation types, including profile/describedby. https://www.iana.org/assignments/link-relations/link-relations.xhtml.
 
 NOAA Centralized Data Management Office (CDMO). 2024. *ACE Basin Station acebpmet, Meteorological Data 2024*. Original archive CSV, selected lines 10130 and 10418. https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv.
 
@@ -278,6 +284,8 @@ Robin, Alexandre, ed. 2025b. *OGC API – Connected Systems – Part 2: Dynamic 
 Robin, Alexandre, ed. 2025c. *OGC SensorML Encoding Standard*. Version 3.0, OGC 23-000. Open Geospatial Consortium. https://docs.ogc.org/is/23-000/23-000.html.
 
 Robin, Alexandre, ed. 2025d. *OGC SWE Common Data Model Encoding Standard*. Version 3.0.0, OGC 24-014. Open Geospatial Consortium. https://docs.ogc.org/is/24-014/24-014.html.
+
+Portele, Clemens, Panagiotis (Peter) A. Vretanos, and Charles Heazel, eds. 2022. *OGC API – Features – Part 1: Core Corrigendum*. Version 1.0.1, OGC 17-069r4. Open Geospatial Consortium. https://docs.ogc.org/is/17-069r4/17-069r4.html.
 
 Schleidt, Katharina, and Ilkka Rinne, eds. 2023. *OGC Abstract Specification Topic 20: Observations, Measurements and Samples*. Version 3.0.0, OGC 20-082r4. https://docs.ogc.org/as/20-082r4/20-082r4.html.
 
