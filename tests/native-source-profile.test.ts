@@ -122,6 +122,14 @@ test('source reference cannot be mislabeled as an actual recorded event',async()
   const result=await loadNativeSourceProfile(p.url,p.fetcher);
   expect(result.kind).toBe('raw');
 });
+test('off-origin evidence link is refused to raw-only, not fetched',async()=>{
+  const p=sample('System');
+  p.native.links.find(x=>x.rel==='describedby')!.href='https://other.example/evidence';
+  const result=await loadNativeSourceProfile(p.url,p.fetcher);
+  expect(result.kind).toBe('raw');
+  expect(result.reason).toMatch(/cross-origin/i);
+  expect(p.requests.map(x=>x.url)).toEqual([p.url]);
+});
 test('nonloopback insecure HTTP source is refused before a request',async()=>{
   const p=sample('Procedure');
   await expect(loadNativeSourceProfile('http://example.org/api/procedures/unknown',p.fetcher))
