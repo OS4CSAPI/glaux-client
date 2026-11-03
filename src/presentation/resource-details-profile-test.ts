@@ -19,6 +19,9 @@ type PresentationMode = 'profile' | 'generic';
 const packetCases = [
   { key: 'step38-dragino', label: 'Dragino S31-LB — manufacturer reference packet', path: '/fixtures/source-packets/dragino.reference.packet.json' },
   { key: 'step38-airgradient', label: 'AirGradient Open Air Max — reference packet', path: '/fixtures/source-packets/airgradient.reference.packet.json' },
+  // 41R-03 expanded source-coverage selections; still local research JSON, not native CSAPI/Profile.
+  { key: 'step41r03-dragino', label: 'Dragino S31-LB — expanded documented design coverage', path: '/fixtures/source-packets/dragino.coverage.packet.json' },
+  { key: 'step41r03-airgradient', label: 'AirGradient Open Air Max — expanded documented design coverage', path: '/fixtures/source-packets/airgradient.coverage.packet.json' },
   { key: 'step38-campbell', label: 'Campbell CR1000X + ClimaVue 50 — reference packet', path: '/fixtures/source-packets/campbell.reference.packet.json' },
   { key: 'step38-bennett', label: "Bennett's Point — historical source packet", path: '/fixtures/source-packets/bennetts-point.historical.packet.json' },
 ] as const;
