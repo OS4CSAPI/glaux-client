@@ -1,0 +1,98 @@
+name: DIM Profile V2 Step 39 — read-only validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [work/details-view-20261023]
+    paths:
+      - '.github/workflows/dim-step39-readonly-validation.yml'
+      - 'scripts/verify-step39-csapi-readonly.mjs'
+      - 'scripts/verify-source-packet-browser.cjs'
+      - 'src/profile/source-packet*'
+      - 'src/presentation/source-packet-details.ts'
+      - 'src/presentation/resource-details-profile-test.ts'
+      - 'tests/source-packet.*'
+
+permissions:
+  contents: read
+
+jobs:
+  local-client:
+    name: Pinned client — TypeScript / Vitest / build / local browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            .dependencies/ogc-client/package-lock.json
+      - name: Confirm exact checkout revision
+        run: |
+          echo "CHECKED_OUT_COMMIT=$(git rev-parse HEAD)"
+          node --version
+          npm --version
+      - name: Install exact pinned project dependencies
+        run: npm ci
+      - name: Check full project TypeScript compilation
+        run: npm run typecheck
+      - name: Run full offline Vitest suite
+        run: npm test
+      - name: Build static application assets (NO deployment)
+        run: npm run build
+      - name: Prepare local browser smoke (NO deployment)
+        run: |
+          npm install --no-save --ignore-scripts --no-package-lock playwright-core@1.56.1
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "GLAUX_CHROMIUM_EXECUTABLE=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          elif command -v chromium >/dev/null 2>&1; then
+            echo "GLAUX_CHROMIUM_EXECUTABLE=$(command -v chromium)" >> "$GITHUB_ENV"
+          else
+            echo "BROWSER_BLOCKED: No Chrome/Chromium executable on runner"
+            echo "GLAUX_NO_BROWSER=1" >> "$GITHUB_ENV"
+          fi
+      - name: Verify Step 38/39 local Resource Details in browser if available
+        run: |
+          if test "$GLAUX_NO_BROWSER" = 1; then
+            echo "BROWSER_BLOCKED: No local Chrome/Chromium; do not claim browser pass."
+            exit 0
+          fi
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/glaux-step39-vite.log 2>&1 &
+          for attempt in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:5173/ -o /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:5173/ -o /dev/null
+          npm run test:browser:source-packet
+
+  csapi-readonly:
+    name: Native CSAPI — GET-only endpoint/format evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run bounded GET-only CSAPI reachability and format probes
+        run: |
+          echo "CHECKED_OUT_COMMIT=$(git rev-parse HEAD)"
+          node scripts/verify-step39-csapi-readonly.mjs
+      - name: Archive read-only transport metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: step39-csapi-readonly-evidence
+          path: artifacts/step39-csapi-readonly.json
+          if-no-files-found: warn
+          retention-days: 30
