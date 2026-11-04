@@ -1,3 +1,30 @@
+# Latest DIM/Profile V2 Glaux client — verified Cloudflare production deployment (4 November 2026)
+
+**OWNER REQUEST: DEPLOY LATEST. VERIFIED COMPLETE.** The latest client revision was built/tested and deployed to the **existing Cloudflare Pages project** `glaux-client` on 4 November 2026 by the existing secure workflow, without modifying Oracle/52°North data or operating physical controls. The deployed UI contains the expanded local research source packets and the native CSAPI Profile test input; the **separate Python Step41R05 producer remains loopback-only and was not made publicly accessible by this deployment**. This is a published **research prototype**, not an independently certified OGC Profile or externally verified source issuer.
+
+| Verification item | Exact result |
+| --- | --- |
+| Production site | https://glaux-client.pages.dev/ |
+| Latest Profile-aware Resource Details | https://glaux-client.pages.dev/?page=resource-details-profile-test |
+| Direct expanded Dragino example | https://glaux-client.pages.dev/?page=resource-details-profile-test&case=step41r03-dragino |
+| Direct expanded AirGradient example | https://glaux-client.pages.dev/?page=resource-details-profile-test&case=step41r03-airgradient |
+| Direct expanded Campbell example | https://glaux-client.pages.dev/?page=resource-details-profile-test&case=step41r04-campbell |
+| Direct expanded Bennett example | https://glaux-client.pages.dev/?page=resource-details-profile-test&case=step41r04-bennett |
+| Immutable Cloudflare deployment | https://434584a8.glaux-client.pages.dev/ |
+| Deployed Git branch / commit | `work/details-view-20261023` / `8d5b3aa4a3ea71d949cfcc2fed9925655b7cb197` (trigger documentation-only change; prior client code unchanged) |
+| Cloudflare Pages deployment | `434584a8-b6d6-483d-bf58-2c458a9ecc40`, **production**, deployed 2026-11-04T12:57:13Z, stage **success** |
+| GitHub Actions release | https://github.com/OS4CSAPI/glaux-client/actions/runs/41833491022 — **completed SUCCESS**; job `126586346081` |
+| Source checkout / build | Node 24, pinned submodule/deps, full TypeScript check **PASS**, `npm test` **248/248 PASS** across 19 files, production Vite build **PASS** |
+| Actual asset upload | Wrangler 4.154.0 via GitHub Actions `cloudflare/wrangler-action@v4.1.3`: **11 files uploaded, 14 reused**; deployment-complete URL returned |
+| Independent release confirmation | Cloudflare API project/deployments listing returned the same deployed source SHA, ID and successful production stage |
+| Server safety | No changes to `52°North/pygeoapi` or Oracle; existing earlier live CSAPI pages remain available but may depend on external service reachability. |
+
+**What owner can actually view:** The deployed common Resource Details frame supports four separately expanded selected source situations, one generic source-qualified project packet reader, raw source/UNKNOWN/DERIVED/example/copy distinctions and a user-supplied native resource URL entry. The four direct links load **local project evidence packets**; they are **not** the native HTTP producer-to-Profile round trip demonstrated previously in isolated CI. The native mode accepts a **publicly reachable compatible HTTPS native CSAPI Procedure or System URI** with same-origin project Profile/evidence links; the specifically tested Step41R05 Python producer used only `http://127.0.0.1` and cannot be accessed from a public browser. Do not provide localhost URLs as a working public demonstration or label the deployed project a full CSAPI-conformant producer. The full isolated native producer/browser CI remains reproducible under [Step41R06 Actions](https://github.com/OS4CSAPI/glaux-client/actions/runs/41674774256) with exact research/app pinned revisions. OGC class/ATS, stable public project Profile and external independently implemented interoperability remain unverified.
+
+**Browser verification ceiling:** The source pages and direct link selectors are present in the committed application code, and production deployment+assets were verified via GitHub Actions/Cloudflare. The actual external-host browser click-through was **not** independently executed in this session (the local container lacks public DNS access). Therefore do not represent deep-link interactions as a newly passed live Chromium suite, even though the previous local Chromium tests passed.
+
+---
+
 ## Live resource map — verified production deployment
 
 **Deployed 31 October 2026.** The separate Resource Details map page displays
