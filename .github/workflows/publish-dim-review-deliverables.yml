@@ -1,0 +1,81 @@
+name: Publish DIM V2 donor crosswalk and UML review assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - .github/workflows/publish-dim-review-deliverables.yml
+      - scripts/build_dim_review_deliverables.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dim-v2-artifact-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build and commit reviewed DIM artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/dim-profile-v2
+          persist-credentials: true
+
+      - name: Verify Graphviz renderer
+        run: |
+          if ! command -v dot >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y graphviz
+          fi
+          dot -V
+
+      - name: Build self-contained workbook, diagrams and ZIP
+        run: python3 scripts/build_dim_review_deliverables.py
+
+      - name: Verify generated workbook, images and source-accountability counts
+        run: |
+          python3 - <<'PY'
+          import csv, zipfile
+          from pathlib import Path
+          from xml.etree import ElementTree as ET
+          d=Path('Docs/Research/DIM_Profile_V2/Deliverables')
+          names=['DIM_V2_Donor_to_Model_Traceability.xlsx',
+            'DIM_V2_Core_UML.svg','DIM_V2_Core_UML.png',
+            'DIM_V2_Activity_UML.svg','DIM_V2_Activity_UML.png',
+            'DIM_V2_Bennett_Instance.svg','DIM_V2_Bennett_Instance.png',
+            'DIM_V2_Donor_Mapping_and_UML_Review_Pack.zip']
+          assert all((d/n).is_file() and (d/n).stat().st_size>300 for n in names)
+          with zipfile.ZipFile(d/names[0]) as z:
+            assert z.testzip() is None
+            w=ET.fromstring(z.read('xl/workbook.xml'))
+            ns={'x':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+            sheets=w.findall('x:sheets/x:sheet',ns)
+            assert len(sheets)==7,[x.attrib for x in sheets]
+          with zipfile.ZipFile(d/names[-1]) as z:
+            assert z.testzip() is None
+            assert set(names[:-1]).issubset(z.namelist())
+          source=list(csv.DictReader(open('Docs/Research/DIM_Profile_V2/Donor_Alignment/03_Source_Accountability_Register.csv',encoding='utf-8-sig')))
+          assert len(source)==182
+          for n in ['DIM_V2_Core_UML.svg','DIM_V2_Activity_UML.svg','DIM_V2_Bennett_Instance.svg']:
+            ET.parse(d/n)
+          print('Verified 7 workbook sheets, 182 source rows, three SVGs, PNGs and full ZIP.')
+          PY
+
+      - name: Commit downloadable deliverables to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Docs/Research/DIM_Profile_V2/Deliverables/
+          if git diff --cached --quiet; then
+            echo "Artifact files already match repository"
+          else
+            git commit -m "docs(dim-v2): publish downloadable XLSX, PNG/SVG and complete review ZIP"
+            git push origin HEAD:research/dim-profile-v2
+          fi
