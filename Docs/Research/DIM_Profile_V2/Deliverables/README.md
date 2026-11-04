@@ -1,0 +1,160 @@
+# DIM V2 — reviewable donor mapping and UML-style model
+
+**4 November 2026 · Research working documents, NOT an adopted model or OGC application Profile.** This folder is the reader-facing home of the owner-requested donor→Domain Information Model (DIM) crosswalk and readable conceptual diagrams. Every proposed relationship is conditional on original source evidence; a manufacturer reference is not an installed unit, an interface field is not necessarily a physical component, and a published example is not a performed observation.
+
+**Open in GitHub; no ChatGPT sandbox download required.**
+
+**Existing authoritative working sources:**
+- [Original candidate DIM and 15 source-qualified R24 relationships](../Candidate_Specification/DIM.md#r24-relationship-register--one-connected-model-individually-testable-meanings)
+- [Editable PlantUML view of R24](../Candidate_Specification/DIM_V2_Candidate_R24_UML_04NOV2026.puml)
+- [182-artifact donor accountability crosswalk CSV](../Donor_Alignment/05_Donor_to_R24_Artifact_Traceability_04NOV2026.csv)
+- [Original 182-artifact full-citation register](../Donor_Alignment/03_Source_Accountability_Register.csv)
+- [Native meanings and established contributions by 13 donor lineages, with 17 preliminary/deferred families](../Concept_Donor_Comparison/Donor_Contributions.md)
+- [Native donor terms side by side](../Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md)
+- [Proposed publication-style DIM](../Candidate_Specification/DIM_Profile_V2_Proposed_Research_Candidate_DIM_v0.1_03NOV2026.md)
+
+## Readable model view A — identities, participants, functions and outputs
+
+The nodes below are **analytical roles**, NOT a mandated ontology/class inheritance model. Conditional edges preserve attachment versus membership, process versus equipment, and output fields versus physical components. Relationship identifiers link to the original R24 sources.
+
+```mermaid
+classDiagram
+direction LR
+class SourceAssertion {
+  +issuer
+  +edition
+  +originalLocator
+  +standing
+  +datePrecision
+}
+class FocalSubject {
+  +referenceOrIndividualOrStation
+  +identityScope
+}
+class ProductKind {
+  +modelOrReference
+}
+class DigitalRepresentation {
+  +digitalRecordOrProxy
+}
+class EquipmentOrSoftware {
+  +physicalOrSoftwareParticipant
+}
+class HostOrStation {
+  +sourceAttestedContext
+}
+class FunctionalRole {
+  +senseProcessReportManage
+}
+class NativeInterface {
+  +protocolBusAddressPort
+}
+class OutputField {
+  +propertyMediumUnitRole
+}
+SourceAssertion --> FocalSubject : R24-01 asserts about
+ProductKind ..> EquipmentOrSoftware : R24-02 describes kind
+DigitalRepresentation ..> FocalSubject : R24-02 represents
+EquipmentOrSoftware ..> FocalSubject : R24-03 physical constituent only if attested
+EquipmentOrSoftware ..> FocalSubject : R24-04 external connection alternative
+EquipmentOrSoftware ..> HostOrStation : R24-05 hosted or managed by
+EquipmentOrSoftware ..> FunctionalRole : R24-06 realizes
+EquipmentOrSoftware ..> NativeInterface : R24-07 uses
+FunctionalRole ..> OutputField : R24-08 emits
+NativeInterface ..> OutputField : R24-08 carries
+```
+
+**Important:** A dotted/association line above does **not** require every focal subject to have that association. A true manufacturer **reference** cannot be promoted to a physical fielded **individual** merely because a native description can be parsed. No source-unsupported cardinality is introduced.
+
+## Readable model view B — qualified state, activity and history
+
+```mermaid
+classDiagram
+direction LR
+class EquipmentOrSoftware {
+  +subject
+}
+class DeclaredCapability {
+  +offeredOperation
+}
+class SettingOrStatus {
+  +supportedDefaultDesiredEffectiveReported
+  +asOf
+  +source
+}
+class OutputField {
+  +unit
+  +sourceField
+}
+class PerformedObservation {
+  +observedSubject
+  +originalResult
+  +phenomenonTime
+  +resultTimeOrUNKNOWN
+  +qualityToken
+}
+class CommandEvidence {
+  +request
+  +matchedAcknowledgement
+  +reportedOutcome
+  +verifiedEffectOrUNKNOWN
+}
+class ServiceAtHost {
+  +individualSerial
+  +role
+  +datePrecision
+}
+class HostOrStation {
+  +sourceHost
+}
+class MaintenanceOrUpdate {
+  +affectedSubject
+  +sourceTime
+}
+class SupportQualifier {
+  +powerCommsSecuritySoftware
+}
+class DerivedOrCopiedRecord {
+  +sourceInputs
+  +transformation
+  +originalEventId
+}
+class SourceAssertion {
+  +originalIssuerAndLocator
+}
+EquipmentOrSoftware --> SettingOrStatus : R24-10 qualified values
+OutputField --> PerformedObservation : R24-09 only when performed
+DeclaredCapability --> CommandEvidence : R24-11 only with actual stages
+EquipmentOrSoftware --> ServiceAtHost : R24-12 served during
+ServiceAtHost --> HostOrStation : R24-12 at
+MaintenanceOrUpdate --> EquipmentOrSoftware : R24-13 concerns
+SupportQualifier --> EquipmentOrSoftware : R24-14 qualifies
+DerivedOrCopiedRecord --> SourceAssertion : R24-15 derived from
+```
+
+### Donor-native mapping: developed lineages (family-level summary, NOT a completed 182-artifact equivalence table)
+
+| Donor family | Original donor-native meanings actually inspected | Candidate DIM R24 roles | Key non-equivalence / HOLD |
+| --- | --- | --- | --- |
+| OGC API – Connected Systems Parts 1–2 | System versus Procedure, Subsystem, Deployment, DataStream, Observation, Command | R24-01/02/03/05/09/11/12 | Reference Procedure ≠ installed System; a DataStream has one producing System but Bennett's mean producer remains disputed |
+| SensorML 3.0 | PhysicalComponent/PhysicalSystem, ProcessMethod, typeOf, inputs/outputs, components/connections, settings | R24-02/03/04/06/07/08/10 | Source-defined process and output form ≠ independently identified real component or performed observation |
+| SWE Common 3.0 | DataRecord, Quantity, Text, TimeRange, encoding semantics | R24-08/09/14 | Source TimeRange side-field ≠ fully valid OMS phenomenonTime/resultTime without native evidence |
+| OMS 3.0 | Observer, Observation, Procedure, Host, Deployment, phenomenonTime, resultTime | R24-05/09/12 | Do not invent independent resultTime or exact probe swap from source date |
+| Asset Administration Shell v3.2 | Asset vs Shell, Type vs Instance, Submodel and relationship elements | R24-01/02/03/15 | Shell ID ≠ physical serial; AAS assetType ≠ CSAPI assetType |
+| OPC UA Devices / PA-DIM | Model vs DeviceType, Device/ComponentType, ConnectsTo, offline/online state; signals and condition | R24-02/03/04/07/10/14 | ConnectsTo ≠ mechanical containment; PA-DIM source coverage is not complete |
+| IEEE 1451 / TEDS | APP, NCAP, TIM, transducer channel, Meta/Channel TEDS, sampling and self-description | R24-06/07/08/10 | Public technical source depth exists but full 2024 licensed normative SHALLs not independently audited |
+| Integrated Sensor Architecture | Component/Controller, CIC, visible/opaque/virtual membership, properties, observables and commands | R24-03/05/06/10/11 | Network-visible interface ≠ one physical sensing unit |
+| The Open Group SOSA | Sensor, Sensor Hardware Element, Host Platform, functional management roles | R24-03/05/06/10/14 | Functional/management participants ≠ mandatory physical subparts |
+| SAPIENT v2 | Registration, ModeDefinition, StatusReport, Task/TaskAck/Detection | R24-06/08/10/11 | Task acknowledgement ≠ independently verified execution/effect |
+| W3C SOSA/SSN | System/Sensor, Observation, Procedure, Platform, Deployment, hasSubSystem | R24-03/05/06/09/12 | 2017 Recommendation and 2026 draft not interchangeable; not Open Group SOSA |
+| W3C WoT | Thing Model/Thing Description, Property/Action/Event, Intermediary/Digital Twin | R24-02/06/10/11/15 | Description/proxy identity ≠ physical serial or fresh performed act |
+| SAREF | Device/DeviceKind, consistsOf, Function/Service | R24-02/03/06 | Composition isn't necessarily a universal physical hardware hierarchy |
+| OSUS-R | Asset/AssetProxy and middleware adaptation | R24-02/06/15 | Java implementation classes are not adopted DIM/OGC classes |
+
+**Evidence boundary:** The developed source-level comparison covers 13 families (listed above except SWE Common, which is within core OGC foundations) and another 17 preliminary/deferred leads. The 182-artifact register records all individual concept reviews as **NOT_ASSESSED**; a family mapping does not upgrade every artifact in that family. Use the CSV for the full accountability trail. This document is not an adopted OGC DIM or a completed all-donor conformance assessment.
+
+## What to test before adopting any R24 mapping
+
+For each original native donor source: verify original edition and exact clause, native subject and relationship direction, whether the proposed mapping is direct or only analogous, a plausible counterexample, the actual source equipment evidence, and any unavailable operational fact. Record **accepted/rejected/partial/held** independently for each precise source claim. Do not use number of source artifacts as a vote for class inheritance or universal root selection.
+
+**User-facing goal:** Give one generic Glaux Resource Details interface enough source-grounded meaning to distinguish physical equipment, equipment functions, technical interfaces, observed facts, software representation, configuration, operational state, and dated history without fabricating observations or installing nonexistent devices.
