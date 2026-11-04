@@ -1,0 +1,69 @@
+@startuml
+' Analytical UML class view of the existing candidate R24-01..15, 4 November 2026.
+' NOT an adopted class hierarchy, complete ontology, or standards normative profile.
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam backgroundColor #FFFFFF
+hide empty methods
+package "Evidence and referents" {
+  class SourceAssertion <<source evidence>> {
+    issuer
+    edition
+    originalLocator
+    evidenceStanding
+    timePrecision
+  }
+  class DescribedSubject <<source focal referent>> {
+    standing : REFERENCE | INDIVIDUAL | CONTINUING_STATION
+    sourceIdentity
+  }
+  class ProductKind <<design / model>>
+  class DigitalRepresentation <<digital resource / proxy>>
+  class DerivedOrCopiedRecord <<derived / copy>>
+}
+package "Equipment, context and function" {
+  class EquipmentParticipant <<physical or software>>
+  class HostOrStation <<host / manager>>
+  class FunctionalRole <<sensing / processing / reporting>>
+  class NativeInterface <<port / bus / address>>
+  class OutputField <<field / quantity>>
+}
+package "State and actual activity" {
+  class SettingOrStatus <<default / applied / reported>>
+  class DeclaredCapability <<possible method / action>>
+  class PerformedObservation <<original performed act>>
+  class CommandEvidence <<actual correlated chain>>
+  class ServiceAtHost <<dated equipment role>>
+  class MaintenanceOrUpdate <<historical event>>
+  class SupportQualifier <<power / comm / security / QA>>
+}
+SourceAssertion --> DescribedSubject : R24-01 asserts-about
+ProductKind ..> EquipmentParticipant : R24-02 qualified design / kind
+DigitalRepresentation ..> DescribedSubject : R24-02 represents
+EquipmentParticipant ..> DescribedSubject : R24-03 physical constituent-of (if evidenced)
+EquipmentParticipant .. DescribedSubject : R24-04 externally connected (not same as part-of)
+EquipmentParticipant ..> HostOrStation : R24-05 hosted / assigned / managed-by
+EquipmentParticipant ..> FunctionalRole : R24-06 realizes function
+FunctionalRole ..> DeclaredCapability : R24-06 declares capability
+EquipmentParticipant ..> NativeInterface : R24-07 uses native interface
+FunctionalRole ..> OutputField : R24-08 emits output
+NativeInterface ..> OutputField : R24-08 carries output
+OutputField ..> PerformedObservation : R24-09 only with real observing act
+EquipmentParticipant ..> SettingOrStatus : R24-10 default != effective != reported
+DeclaredCapability ..> CommandEvidence : R24-11 only for recorded request/ACK/effect
+EquipmentParticipant ..> ServiceAtHost : R24-12 subject to original date precision
+ServiceAtHost ..> HostOrStation : R24-12 role at Host
+MaintenanceOrUpdate ..> EquipmentParticipant : R24-13 event concerns
+SupportQualifier ..> EquipmentParticipant : R24-14 source-qualified support
+DerivedOrCopiedRecord ..> SourceAssertion : R24-15 derived from ORIGINAL evidence
+note right of DescribedSubject
+  No universal manufactured chassis,
+  compulsory UML cardinalities, or
+  single adopted superclass established.
+end note
+note bottom of PerformedObservation
+  Manufacturer examples are not actual events.
+  Do not fabricate original resultTime or
+  the mean-producing System for Bennett.
+end note
+@enduml

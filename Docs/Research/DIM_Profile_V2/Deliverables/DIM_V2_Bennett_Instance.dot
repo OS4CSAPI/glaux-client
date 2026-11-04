@@ -1,0 +1,18 @@
+digraph G {
+graph[rankdir=TB,bgcolor="white",fontname="DejaVu Sans",label="BENNETT'S POINT — SOURCE-QUALIFIED HISTORICAL INSTANCE\n2 original NOAA means; 4 experimental API copies",labelloc=t,fontsize=18,pad="0.3"];
+node[shape=box,style="rounded,filled",fontname="DejaVu Sans",fontsize=11,color="#89A4B5",fillcolor="#EAF4F8"];
+edge[fontname="DejaVu Sans",fontsize=10,arrowsize=0.6,color="#698899"];
+station[label="acebpmet continuing station\nsite location ≠ individual probe location",fillcolor="#D4EBF6"];
+probe1[label="EE181 serial 21281600077814\ninitial service; returned 16 Apr 2024"];
+probe2[label="EE181 serial 222016000109CE\ninterim service"];
+a[label="15 Apr 2024 · 29.1°C\nORIGINAL NOAA MEAN",fillcolor="#F3E4F8"];
+b[label="18 Apr 2024 · 27.3°C\nORIGINAL NOAA MEAN",fillcolor="#F3E4F8"];
+copyA[label="2 experimental API representations\nfor 15 Apr event",fillcolor="#F8F0E3"];
+copyB[label="2 experimental API representations\nfor 18 Apr event",fillcolor="#F8F0E3"];
+station->probe1[label="day-granular role"];
+station->probe2[label="day-granular role"];
+probe2->a[label="likely contributor only\nDERIVED",color="#9362A4",style=dashed];
+probe1->b[label="likely contributor only\nDERIVED",color="#9362A4",style=dashed];
+a->copyA[label="represents same ORIGINAL",style=dashed];
+b->copyB[label="represents same ORIGINAL",style=dashed];
+}

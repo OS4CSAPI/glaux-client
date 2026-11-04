@@ -1,0 +1,25 @@
+digraph G {
+graph[rankdir=LR,bgcolor="white",fontname="DejaVu Sans",label="DIM V2 — QUALIFIED STATE, OBSERVATIONS AND HISTORY\nCANDIDATE / UNKNOWN IS NOT A CURRENT STATUS",labelloc=t,fontsize=18,pad="0.25",nodesep="0.45",ranksep="0.88"];
+node[shape=box,style="rounded,filled",fillcolor="#F4EDF9",color="#C9B1D7",fontname="DejaVu Sans",fontsize=11];
+edge[color="#77588A",fontname="DejaVu Sans",fontsize=10,arrowsize=0.65,style=dashed];
+E[label="Equipment / software"];
+C[label="Declared capability\nnot an act"];
+X[label="Actual request / ACK / effect\nif evidenced"];
+S[label="Qualified setting/status\ndefault, applied, reported",fillcolor="#FFF1D5"];
+O[label="Original output field"];
+A[label="Performed observation\nnot a manual example"];
+T[label="Individual service period\noriginal date precision"];
+H[label="Host / station"];
+M[label="Maintenance/update\ncorrect target"];
+Q[label="Power / communications / security"];
+D[label="Derived assertion or API copy"];
+F[label="Original source record"];
+E->S[label="R24-10"];
+C->X[label="R24-11"];
+O->A[label="R24-09"];
+E->T[label="R24-12"];
+T->H[label="R24-12"];
+M->E[label="R24-13"];
+Q->E[label="R24-14"];
+D->F[label="R24-15"];
+}

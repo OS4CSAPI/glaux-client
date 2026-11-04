@@ -1,0 +1,24 @@
+digraph G {
+graph[rankdir=LR,bgcolor="white",fontname="DejaVu Sans",label="DIM V2 — REFERENTS, EQUIPMENT AND OUTPUTS\nCANDIDATE / NOT ADOPTED / ALL RELATIONS SOURCE-QUALIFIED",labelloc=t,fontsize=18,pad="0.25",nodesep="0.48",ranksep="0.85"];
+node[shape=box,style="rounded,filled",fillcolor="#ECF5FA",color="#87A4B8",fontname="DejaVu Sans",fontsize=12];
+edge[color="#52768D",fontname="DejaVu Sans",fontsize=10,arrowsize=0.6];
+S[label="Original evidence assertion\nissuer / edition / locator",fillcolor="#DCEAF7"];
+F[label="FOCAL SUBJECT\nreference, individual or station",fillcolor="#D1E8FA",penwidth=2];
+K[label="Product kind / model"];
+D[label="Digital description / proxy"];
+E[label="Physical or software participant",fillcolor="#E5F4EC"];
+H[label="Host / station context",fillcolor="#E5F4EC"];
+R[label="Sensing / processing / reporting role",fillcolor="#E5F4EC"];
+I[label="Protocol / interface / socket / address"];
+O[label="Output fields\nquantity, unit, subject"];
+S->F[label="R24-01"];
+K->E[label="R24-02",style=dashed];
+D->F[label="R24-02",style=dashed];
+E->F[label="R24-03 part-of ONLY IF",style=dashed];
+E->F[label="R24-04 external connection NOT part-of",style=dotted,color="#33967A",constraint=false];
+E->H[label="R24-05",style=dashed];
+E->R[label="R24-06",style=dashed];
+E->I[label="R24-07",style=dashed];
+R->O[label="R24-08",style=dashed];
+I->O[label="R24-08",style=dashed,constraint=false];
+}
