@@ -4,6 +4,22 @@
 
 **Open in GitHub; no ChatGPT sandbox download required.**
 
+**GitHub-downloadable deliverables — build verified on 4 November 2026:**
+
+| Deliverable | Open or download on GitHub | Role |
+| --- | --- | --- |
+| **Excel traceability workbook (.xlsx)** | [DIM_V2_Donor_to_Model_Traceability.xlsx](DIM_V2_Donor_to_Model_Traceability.xlsx) | Seven sheets: source-native terminology, 30 donor family topics, R24 register, donor-by-R24 matrix, 182-artifact accountability and unresolved questions |
+| **Model view A (SVG/PNG)** | [Scalable SVG](DIM_V2_Core_UML.svg) / [PNG](DIM_V2_Core_UML.png) | Focal identity, physical equipment, functions, interfaces and outputs |
+| **Model view B (SVG/PNG)** | [Scalable SVG](DIM_V2_Activity_UML.svg) / [PNG](DIM_V2_Activity_UML.png) | Configuration, observations, control, history and derived provenance |
+| **Bennett historical instance (SVG/PNG)** | [Scalable SVG](DIM_V2_Bennett_Instance.svg) / [PNG](DIM_V2_Bennett_Instance.png) | Station, two real probes, two original NOAA mean reports, four historical digital copies |
+| **Editable model source** | [PlantUML](DIM_V2_Candidate_UML.puml) / [Graphviz core](DIM_V2_Core_UML.dot) / [Graphviz activity](DIM_V2_Activity_UML.dot) | Source models for modification and regeneration |
+| **Entire packaged set (.zip)** | [DIM_V2_Donor_Mapping_and_UML_Review_Pack.zip](DIM_V2_Donor_Mapping_and_UML_Review_Pack.zip) | Single downloadable package in the GitHub repository |
+| **Raw 182-artifact lineage accounting** | [CSV](DIM_V2_182_Artifact_Accountability.csv) | The original registered source IDs and clear review limitations |
+
+**Provenance and limitation:** These downloadable binary assets were **reconstructed reproducibly from the research branch’s committed source register, original donor terminology comparison, and R24 model** by [the artifact builder](../../../../scripts/build_dim_review_deliverables.py) in [GitHub Actions run 41928134710](https://github.com/OS4CSAPI/glaux-client/actions/runs/41928134710). **They are not byte-for-byte copies of the earlier ChatGPT sandbox Excel/image/ZIP attachments.** The workbook deliberately labels source-family topic mappings as candidates and shows each individually unassessed artifact. The earlier standalone conversation workbook claimed 54 separate source-native mapping rows; the reproducible repository workbook instead contains the original committed side-by-side source terminology and family R24 review tables. It must **not** be represented as the exact 54-row file without checking that earlier file separately.
+
+
+
 **Existing authoritative working sources:**
 - [Original candidate DIM and 15 source-qualified R24 relationships](../Candidate_Specification/DIM.md#r24-relationship-register--one-connected-model-individually-testable-meanings)
 - [Editable PlantUML view of R24](../Candidate_Specification/DIM_V2_Candidate_R24_UML_04NOV2026.puml)
