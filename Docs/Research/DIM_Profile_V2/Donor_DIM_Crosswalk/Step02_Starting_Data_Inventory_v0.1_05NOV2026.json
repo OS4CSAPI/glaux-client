@@ -1,0 +1,184 @@
+{
+  "kind": "donor-concept-to-dim-starting-data-baseline",
+  "edition": "v0.1",
+  "baseline_date": "2026-11-05",
+  "scope": "Step02 inventory/coverage only; no new donor mappings or model changes",
+  "branch": "research/dim-profile-v2",
+  "head_at_start": "92f85060703b2953c63ae3df163678ab5028489a",
+  "owner_approval": "layout and organizational template only, not mappings, row definitions, donor counts or model",
+  "sample": {
+    "donor_columns": 7,
+    "dim_columns": 1,
+    "dim_is_last": true,
+    "dim_rows": 22,
+    "group_divider_rows": 5,
+    "source_claims": 51,
+    "mapping_fit_counts": {
+      "DIRECT": 16,
+      "PARTIAL": 27,
+      "RELATED": 7,
+      "CONDITIONAL": 1
+    },
+    "dim_rows_with_no_sample_donor_correspondence": 2,
+    "dim_only_labels": [
+      "Source-qualified assertion (proposed DIM)",
+      "Original event and derived digital representation (proposed DIM)"
+    ],
+    "donors_ordered_provisionally": [
+      {
+        "key": "IEEE",
+        "label": "IEEE 1451 (public 2024 evidence)",
+        "populated_rows": 5
+      },
+      {
+        "key": "OMS",
+        "label": "OGC OMS 3.0",
+        "populated_rows": 5
+      },
+      {
+        "key": "OPC",
+        "label": "OPC UA Devices",
+        "populated_rows": 6
+      },
+      {
+        "key": "SOSA",
+        "label": "W3C SOSA/SSN",
+        "populated_rows": 6
+      },
+      {
+        "key": "SensorML",
+        "label": "SensorML 3.0",
+        "populated_rows": 8
+      },
+      {
+        "key": "SAPIENT",
+        "label": "SAPIENT v2",
+        "populated_rows": 9
+      },
+      {
+        "key": "CSAPI",
+        "label": "CSAPI Parts 1–2",
+        "populated_rows": 12
+      }
+    ],
+    "sample_to_json_ledger_checks": {
+      "sample_csv_vs_json": "PASS 22 rows + 5 dividers; all seven cells per row match",
+      "51_json_cells_have_ledger_row": true,
+      "ledger_rows_missing_json_cell": 0,
+      "ledger_alignment_and_locator_inconsistent": 0,
+      "ledger_locator_nonempty_count": 51,
+      "ledger_https_url_nonempty_count": 51,
+      "ledger_unique_locator_strings": 44,
+      "original_publisher_clause_reverification_in_step02": "NOT PERFORMED"
+    },
+    "source_url_hosts": {
+      "reference.opcfoundation.org": 6,
+      "www.bsigroup.com": 9,
+      "docs.ogc.org": 25,
+      "www.w3.org": 6,
+      "standards.ieee.org": 1,
+      "iml.ubi.pt": 4
+    }
+  },
+  "corpus": {
+    "artifact_records": 182,
+    "individual_artifact_review_status": {
+      "NOT_ASSESSED": 182
+    },
+    "lineage_labels_with_assigned_records": 30,
+    "unassigned_to_lineage_artifacts": 27,
+    "developed_family_comparisons_in_prior_report": 13,
+    "preliminary_or_deferred_families_in_prior_report": 17,
+    "source_roles": {
+      "core structural donor": 88,
+      "cross-cutting structural donor": 52,
+      "specialization donor": 15,
+      "non-structural": 27
+    },
+    "derived_lineage_rows": 182,
+    "derived_joins_by_id_and_status": "PASS 182/182",
+    "review_qualification": "Individual status is within the original 182-row register; does NOT imply no other source review ever occurred."
+  },
+  "source_snapshots": {
+    "approved_sample_markdown": {
+      "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.md",
+      "git_blob_sha": "5d90391f47cfbcb587a63b30ae0370878a9b4651"
+    },
+    "approved_sample_json": {
+      "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.json",
+      "git_blob_sha": "44b9298e91f6ea454c786534c6447c8833cccc99"
+    },
+    "sample_csv": {
+      "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.csv",
+      "git_blob_sha": "82ab142114e42831c6b9575fbb57d73a325ee89e"
+    },
+    "sample_evidence_ledger": {
+      "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026_Evidence.csv",
+      "git_blob_sha": "976fef4958f2a8a7f4bff26bbf1ac4ca79bc9904"
+    },
+    "182_artifact_primary_register": {
+      "path": "Docs/Research/DIM_Profile_V2/Donor_Alignment/03_Source_Accountability_Register.csv",
+      "git_blob_sha": "f4e31cd964fca91658bd13cafca1cbea49adf103"
+    },
+    "182_artifact_derived_lineage_register": {
+      "path": "Docs/Research/DIM_Profile_V2/Donor_Alignment/05_Donor_to_R24_Artifact_Traceability_04NOV2026.csv",
+      "git_blob_sha": "581979093f852ddd245be2464658eaef64792ad3"
+    },
+    "donor_lineage_contributions": {
+      "path": "Docs/Research/DIM_Profile_V2/Concept_Donor_Comparison/Donor_Contributions.md",
+      "git_blob_sha": "f52855f0e962da572410974a9734b5ca07bc7189"
+    },
+    "donor_native_term_review": {
+      "path": "Docs/Research/DIM_Profile_V2/Concept_Donor_Comparison/Donor_Terms_Side_by_Side.md",
+      "git_blob_sha": "571b32cdbb9a97d373133a36a4981a627561ab22"
+    }
+  },
+  "discrepancies_for_future_step03_rubric": [
+    {
+      "key": "D02-01",
+      "issue": "Sample JSON status SOURCE-VERIFIED SAMPLE",
+      "interpretation": "The sample has prior source-locator claims; no new independent recheck of all 51 clauses was conducted in Step02."
+    },
+    {
+      "key": "D02-02",
+      "issue": "51 source-claim rows versus no per-cell ORIGINAL_CHECKED flag",
+      "interpretation": "Need explicit original-primary checked / prior extraction / unavailable / needs review status and edition certainty."
+    },
+    {
+      "key": "D02-03",
+      "issue": "DIRECT labels and 7-partial donor rank",
+      "interpretation": "Direct is a project mapping claim and ordering counts PARTIAL/RELATED/CONDITIONAL equally as populated; does not prove normative equivalence or final donor importance."
+    },
+    {
+      "key": "D02-04",
+      "issue": "182 individual records NOT_ASSESSED vs 13 developed family reviews",
+      "interpretation": "Different granularity; distinguish from 17 preliminary; none of 182 receives automatic source-audit credit from a family table."
+    },
+    {
+      "key": "D02-05",
+      "issue": "30 assigned family lineage categories, 27 unassigned artifacts",
+      "interpretation": "Unassigned can include real crosscutting sources (SWE Common, QUDT, UCUM, RFCs), not a finding of irrelevance."
+    },
+    {
+      "key": "D02-06",
+      "issue": "Approved sample lacks stable concept row IDs/edition-per-cell type",
+      "interpretation": "Step03 must add non-display IDs and source-specific concept kinds without changing layout."
+    },
+    {
+      "key": "D02-07",
+      "issue": "Two DIM-only rows show no donor matches in 7 columns",
+      "interpretation": "Does not establish no concept in remaining standards; e.g. W3C PROV not in sample."
+    },
+    {
+      "key": "D02-08",
+      "issue": "Sample IEEE links include four third-party Playground pointers",
+      "interpretation": "A technical example cannot be promoted to a verified official full IEEE normative clause."
+    },
+    {
+      "key": "D02-09",
+      "issue": "One sample column combines CSAPI Parts 1 and 2",
+      "interpretation": "Actual donor column roster/edition boundaries must be decided in Step04; don't automatically merge other donor families."
+    }
+  ],
+  "next_step": "03 — define a single stable row/cell evidence record schema and mapping decision rubric; do not start donor intake yet."
+}
