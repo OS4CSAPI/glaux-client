@@ -4,6 +4,9 @@
 
 **Open in GitHub; no ChatGPT sandbox download required.**
 
+**NEW formally bounded follow-up (5 November 2026):** After accepting the seven-donor/22-row *layout*, the owner requested a dedicated step-by-step plan and recovery PITON before any wider mapping. [**Crosswalk workstream home**](../Donor_DIM_Crosswalk/README.md) · [**40-step proposed source-first plan**](../Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [**new PITON v0.1**](../Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). **Step 01 complete (planning only); Step 02 next (source-baseline audit); no new donor concepts mapped or model changed.** The older 182-artifact/R24-oriented XLSX is not the approved owner-facing master. This independent workstream does **not** reopen the previous external interoperability Gate E/F conclusions.
+
+
 ## NEW — What the owner actually requested: donors across columns, DIM at far right
 
 **[Open the directly viewable 22-element SAMPLE comparison table](DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.md)** — **THIS** is the new side-by-side layout to review before expanding the donor population. The **seven donor columns are fixed left-to-right from fewer to more sample matches**; the far-right column alone is the **proposed DIM information element**. Five full-width section divider rows group the concepts in a progressive order, and unique/unmatched needs get their own rows rather than being forced into false equivalences.
