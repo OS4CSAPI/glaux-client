@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "donor-dim-crosswalk.v0.1",
+  "bundleStanding": "EXAMPLE_ONLY_NOT_SOURCE_RECHECKED",
+  "presentation": {
+    "donorColumns": "HORIZONTAL_FIXED_COLUMNS",
+    "dimColumn": "FAR_RIGHT",
+    "sectionDividers": "FULL_WIDTH_NAVIGATION_ONLY",
+    "blankMeaning": "NO_ESTABLISHED_MAPPING_IN_REVIEWED_SCOPE",
+    "columnRanking": "PROVISIONAL_SAMPLE_POPULATED_ROWS"
+  },
+  "donorColumns": [
+    {
+      "donorKey": "DEMO-OPC",
+      "displayName": "OPC UA Devices 1.05",
+      "issuer": "OPC Foundation",
+      "scope": "Devices nameplate identity; not all OPC UA or PA-DIM",
+      "editionOrVersion": "OPC 10000-100, version 1.05.0 (2025)",
+      "publicationUrl": "https://reference.opcfoundation.org/specs/OPC-10000-100/",
+      "groupingStanding": "SINGLE_ORIGINAL_STANDARD",
+      "orderProvisional": 1,
+      "sourceCoverageStanding": "PRIOR_FAMILY_REVIEW_ONLY"
+    },
+    {
+      "donorKey": "DEMO-CSAPI",
+      "displayName": "OGC CSAPI Part 2",
+      "issuer": "Open Geospatial Consortium",
+      "scope": "Read-only illustration of DataStream versus actual transducer channel",
+      "editionOrVersion": "OGC 23-002, version 1.0.0 (2025)",
+      "publicationUrl": "https://docs.ogc.org/is/23-002/23-002.html",
+      "groupingStanding": "SINGLE_ORIGINAL_STANDARD",
+      "orderProvisional": 2,
+      "sourceCoverageStanding": "PRIOR_FAMILY_REVIEW_ONLY"
+    }
+  ],
+  "sections": [
+    {
+      "sectionKey": "DEMO-IDENTITY",
+      "title": "01 — IDENTITY & DESCRIPTION",
+      "order": 1,
+      "purpose": "Distinguish manufacturer name from other organizations and instance-specific claims",
+      "modelStanding": "SPREADSHEET_NAVIGATION_ONLY_NOT_DIM_PACKAGE"
+    },
+    {
+      "sectionKey": "DEMO-CHANNELS",
+      "title": "03 — CHANNELS, OUTPUTS & OBSERVATIONS",
+      "order": 2,
+      "purpose": "Avoid equating physical/addressed channels with OGC reporting resources",
+      "modelStanding": "SPREADSHEET_NAVIGATION_ONLY_NOT_DIM_PACKAGE"
+    }
+  ],
+  "dimRows": [
+    {
+      "rowKey": "DEMO-ROW-MANUFACTURER",
+      "sectionKey": "DEMO-IDENTITY",
+      "dimLabel": "Manufacturer name",
+      "workingDefinition": "Name of the manufacturer of the appropriately identified equipment or product referent; not automatically its operator or deploying organization.",
+      "elementKind": "ATTRIBUTE_CANDIDATE",
+      "modelStanding": "WORKING_PROPOSAL_NOT_ADOPTED",
+      "referentScope": "ANY_WITH_SOURCE_QUALIFICATION",
+      "notes": "Existing 5 Nov sample proposed element. DEMO rowKey has no authority over the live workbook."
+    },
+    {
+      "rowKey": "DEMO-ROW-CHANNEL",
+      "sectionKey": "DEMO-CHANNELS",
+      "dimLabel": "Addressed transducer channel",
+      "workingDefinition": "A source-identified, addressable sensing/transducer channel, not automatically a distinct physical device or a network/API reporting stream.",
+      "elementKind": "CONCEPT",
+      "modelStanding": "WORKING_PROPOSAL_NOT_ADOPTED",
+      "referentScope": "ANY_WITH_SOURCE_QUALIFICATION",
+      "notes": "Existing sample contains IEEE TransducerChannel; the CSAPI DataStream equivalence is a deliberately rejected idea."
+    }
+  ],
+  "cellDecisions": [
+    {
+      "decisionKey": "DEMO-MAP-OPC-MANUFACTURER",
+      "rowKey": "DEMO-ROW-MANUFACTURER",
+      "donorKey": "DEMO-OPC",
+      "nativeElementName": "Manufacturer",
+      "nativeElementKind": "ATTRIBUTE",
+      "sourcePointer": {
+        "publisherOrIssuer": "OPC Foundation",
+        "documentTitle": "OPC Unified Architecture Part 100: Devices",
+        "standardIdentifier": "OPC 10000-100",
+        "edition": "1.05.0 (2025)",
+        "exactLocator": "§4.5.2 VendorNameplate; §4.7 Table 35 (as recorded in existing comparison)",
+        "sourceUrl": "https://reference.opcfoundation.org/specs/OPC-10000-100/",
+        "sourceKind": "PUBLISHER_ORIGINAL",
+        "registeredArtifactId": 104,
+        "locatorStanding": "COARSE_SECTION_OR_TABLE"
+      },
+      "sourceVerification": "PRIOR_SOURCE_EXTRACT_ONLY",
+      "originalCheckedAt": null,
+      "originalCheckedBy": null,
+      "relation": "DIRECT",
+      "disposition": "PROPOSED",
+      "semanticBasis": "Existing 22-row sample records OPC UA Devices Manufacturer as a candidate direct correspondence for the manufacturer-name field. Same field role is plausible ONLY when both refer to the same equipment/product.",
+      "nonEquivalence": "Does not mean the manufacturer equals operator, data publisher, station owner or physical unit identifier; DIRECT is a project comparison, not a formal published equivalence assertion.",
+      "recordedAt": "2026-11-05",
+      "recordedBy": "Step03 schema illustration derived from pre-existing sample; no newly rechecked original standard"
+    },
+    {
+      "decisionKey": "DEMO-REJECT-CSAPI-STREAM-CHANNEL",
+      "rowKey": "DEMO-ROW-CHANNEL",
+      "donorKey": "DEMO-CSAPI",
+      "nativeElementName": "DataStream",
+      "nativeElementKind": "SERVICE_OR_API_RESOURCE",
+      "sourcePointer": {
+        "publisherOrIssuer": "Open Geospatial Consortium",
+        "documentTitle": "OGC API — Connected Systems — Part 2: Dynamic Data",
+        "standardIdentifier": "OGC 23-002",
+        "edition": "1.0.0 (2025)",
+        "exactLocator": "Part 2 §9.2 (as recorded in existing sample for DataStream/result schema)",
+        "sourceUrl": "https://docs.ogc.org/is/23-002/23-002.html",
+        "sourceKind": "PUBLISHER_ORIGINAL",
+        "registeredArtifactId": 11,
+        "locatorStanding": "COARSE_SECTION_OR_TABLE"
+      },
+      "sourceVerification": "PRIOR_SOURCE_EXTRACT_ONLY",
+      "originalCheckedAt": null,
+      "originalCheckedBy": null,
+      "relation": "RELATED_BUT_DIFFERENT",
+      "disposition": "REJECTED",
+      "semanticBasis": "The existing donor comparison explicitly distinguishes an addressable IEEE TransducerChannel from a CSAPI DataStream, which groups/report-delivers dynamic data. The tempting one-to-one equivalence is rejected.",
+      "nonEquivalence": "A DataStream is not a physical transducer, its address, or a standalone channel. Do not populate the CSAPI cell in the 'Addressed transducer channel' row based only on the DataStream existence; retain its appropriate reporting meaning in a different row.",
+      "recordedAt": "2026-11-05",
+      "recordedBy": "Step03 negative mapping example based on previous donor comparison, not a newly verified original clause"
+    }
+  ]
+}
