@@ -1,5 +1,13 @@
 # DIM / CSAPI Profile V2 — start here
 
+## NEW WORKSTREAM — donor concepts → DIM master crosswalk (5 November 2026)
+
+The owner accepted the **donor-standards-across-columns, proposed DIM-as-final-rightmost-column** spreadsheet *format* and authorized a **new, separately bounded plan/PITON**, not blanket approval of the sample mappings or earlier model. **[Start the new crosswalk effort here](Donor_DIM_Crosswalk/README.md)** · [**proposed 40-step, one-prompt-at-a-time plan**](Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [**robust recovery PITON v0.1**](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [**owner-accepted 22-row table layout**](Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.md). **Planning Step 01 complete; Step 02 next (baseline audit), no donor mapping or DIM changes this iteration.**
+
+This is an **independent new research artifact workflow**, **not** Step44 of the original 43-step plan and **not** evidence that earlier Gate E/F external interoperability failures were resolved. The “FINAL CURRENT CHECKPOINT” below describes the older 43-step program's legitimate historical closeout, which remains preserved.
+
+---
+
 ## FINAL CURRENT CHECKPOINT — 3 November 2026 (original Step43 completed; plan CONDITIONALLY STOPPED)
 
 **[LATEST PITON v3.3 — complete Profile Rewrite 11 recovery and closed 43-step plan](PITON_DIM_Profile_V2_Continuity_v3.3_03NOV2026.md)** · [**Original Step43 independently checked final CI, source fidelity, Cloudflare production and acceptance decision**](Whole_System_Recovery/Step43_Final_Reproducibility_Source_Fidelity_and_Release_Decision_03NOV2026.md) · [**FINAL controlling plan and Gate G disposition**](PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md#final-current-instruction--after-original-step-43-4343-research-iterations-executed-conditional-stop) · [**cumulative workbook §53 final audit**](Whole_System_Recovery/README.md#53-original-step-43--final-independent-review-and-conditional-research-closeout-3-november-2026).
