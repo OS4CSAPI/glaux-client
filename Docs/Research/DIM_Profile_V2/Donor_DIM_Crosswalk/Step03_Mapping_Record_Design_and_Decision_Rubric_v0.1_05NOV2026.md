@@ -93,6 +93,12 @@ A reporting DataStream may publish data that ultimately originated from an addre
 
 **Why this is sized as one iteration:** one actual source-neutral schema, two already sourced illustration records and one human-readable decision rubric. **No new donor column roster, no new DIM concept, no new original-clause audit, no xlsx generation and no UML update**. The **primary observable product** is a trustworthy way to populate the owner-approved sheet, not another stand-alone information model or a premature conformance check.
 
+### 6.1 Executed structural checks of the actual committed examples
+
+The actual GitHub JSON Schema and two-record example JSON were read back after commit and parsed as JSON. A source-neutral local recursive structure/conditional checker found **zero violations** in the example and resolved **all donor/section/row foreign keys**. Deliberately false modifications were then tested: (1) assigning `ORIGINAL_CHECKED` without an actual original-source reviewer/date, (2) treating a prior-extract-only source claim as `ACCEPTED_FOR_RESEARCH_REVIEW`, and (3) marking a rejected DataStream-as-transducer-channel comparison `DIRECT`. All three **failed the relevant contract checks** as expected.
+
+The source check in the revised schema also requires an `ORIGINAL_CHECKED` record to reference a `PUBLISHER_ORIGINAL` source, and an accepted-for-review relation to be `DIRECT`, `BROADER`, `NARROWER` or `PARTIAL_OVERLAP`. This is **a local structural/negative contract self-check**, not a fully executed third-party JSON Schema conformance suite, external source retrieval, semantic equivalence validation, or modification of the existing donor map.
+
 ## 7. Next single iteration — Step04 only
 
 **NEXT owner “proceed”:** [Plan Step04](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md#phase-a--establish-controls-before-touching-the-mapping-0104) — identify an **eligible original donor-standard column roster** from the 13 developed/17 preliminary lineages plus actual 182-source context, distinguishing multiple editions, companion material, separate OPC UA Devices/PA-DIM and CSAPI/SensorML/SWE, and W3C SOSA/SSN vs Open Group SOSA. Record **eligible/companion/conditional/excluded/HOLD** and **provisional** display order only. Do **not** settle final least→most ranking, invent donor→DIM cells or rewrite the owner-approved 22-row sample.
