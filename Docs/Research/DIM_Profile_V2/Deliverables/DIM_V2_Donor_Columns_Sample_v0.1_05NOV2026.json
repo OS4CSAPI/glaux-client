@@ -1,0 +1,594 @@
+{
+  "version": "0.1",
+  "status": "SOURCE-VERIFIED SAMPLE / NOT ADOPTED",
+  "purpose": "Owner-requested layout trial, not a complete donor consensus or final DIM",
+  "sourceBranch": "research/dim-profile-v2",
+  "asOf": "2026-11-05",
+  "donors": {
+    "IEEE": {
+      "name": "IEEE 1451 (public 2024 evidence)",
+      "url": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "edition": "1451.0-2024 public Playground/NIST evidence; full normative text not audited"
+    },
+    "OMS": {
+      "name": "OGC OMS 3.0",
+      "url": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "edition": "OGC 20-082r4, 3.0.0, 2023"
+    },
+    "OPC": {
+      "name": "OPC UA Devices",
+      "url": "https://reference.opcfoundation.org/specs/OPC-10000-100/",
+      "edition": "OPC 10000-100, 1.05.0, 2025"
+    },
+    "SOSA": {
+      "name": "W3C SOSA/SSN",
+      "url": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "edition": "W3C Recommendation, 19 Oct 2017; not 2026 draft or Open Group SOSA"
+    },
+    "SensorML": {
+      "name": "SensorML 3.0",
+      "url": "https://docs.ogc.org/is/23-000/23-000.html",
+      "edition": "OGC 23-000, 3.0, 2025"
+    },
+    "SAPIENT": {
+      "name": "SAPIENT v2",
+      "url": "https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/insights/brochures/bsi-flex-335.pdf",
+      "edition": "BSI Flex 335 v2.0:2024-03"
+    },
+    "CSAPI": {
+      "name": "CSAPI Parts 1–2",
+      "url": "https://docs.ogc.org/is/23-001/23-001.html",
+      "url2": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-001/23-002, v1.0, 2025"
+    }
+  },
+  "order": [
+    "IEEE",
+    "OMS",
+    "OPC",
+    "SOSA",
+    "SensorML",
+    "SAPIENT",
+    "CSAPI"
+  ],
+  "counts": {
+    "IEEE": 5,
+    "OMS": 5,
+    "OPC": 6,
+    "SOSA": 6,
+    "SensorML": 8,
+    "SAPIENT": 9,
+    "CSAPI": 12
+  },
+  "rows": [
+    {
+      "g": "01 — IDENTITY & DESCRIPTION",
+      "desc": "Identify a manufacturer, reusable model, particular unit and API identity without collapsing them."
+    },
+    {
+      "k": "Manufacturer",
+      "dim": "Manufacturer name",
+      "d": {
+        "OPC": {
+          "term": "Manufacturer",
+          "fit": "DIRECT",
+          "clause": "§4.5.2 VendorNameplate; §4.7 Table 35",
+          "note": "",
+          "url": null
+        },
+        "SAPIENT": {
+          "term": "ConfigurationData.manufacturer",
+          "fit": "DIRECT",
+          "clause": "§6.2.5.15 Table 32",
+          "note": "",
+          "url": null
+        }
+      },
+      "why": "The producer's manufacturer name; not who operates the current station."
+    },
+    {
+      "k": "Product model",
+      "dim": "Product model designation",
+      "d": {
+        "OPC": {
+          "term": "Model",
+          "fit": "DIRECT",
+          "clause": "§4.5.2; Table 35",
+          "note": "",
+          "url": null
+        },
+        "SAPIENT": {
+          "term": "ConfigurationData.model",
+          "fit": "DIRECT",
+          "clause": "§6.2.5.15 Table 32",
+          "note": "",
+          "url": null
+        },
+        "SensorML": {
+          "term": "typeOf → model process",
+          "fit": "PARTIAL",
+          "clause": "§8.2.9.3",
+          "note": "Reference to more general process, not a literal model-name field.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "systemKind → Procedure",
+          "fit": "PARTIAL",
+          "clause": "Part 1 §8/§9, Table 5",
+          "note": "Link to reusable kind description, not a product-model string.",
+          "url": null
+        }
+      },
+      "why": "A reusable model is not an individual physical device."
+    },
+    {
+      "k": "Hardware serial",
+      "dim": "Individual hardware serial number",
+      "d": {
+        "OPC": {
+          "term": "SerialNumber",
+          "fit": "DIRECT",
+          "clause": "§4.5.2; Table 35",
+          "note": "",
+          "url": null
+        },
+        "SAPIENT": {
+          "term": "ConfigurationData.serial_number",
+          "fit": "CONDITIONAL",
+          "clause": "§6.2.5.15 Table 32",
+          "note": "Software-only nodes may use this for license/product numbers; not always hardware.",
+          "url": null
+        }
+      },
+      "why": "No API UID should be silently interpreted as a physical serial."
+    },
+    {
+      "k": "System persistent identifier",
+      "dim": "Persistent System identifier",
+      "d": {
+        "SensorML": {
+          "term": "uniqueIdentifier",
+          "fit": "PARTIAL",
+          "clause": "§8.2.2",
+          "note": "Process identifier, scope must be distinguished.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "uniqueIdentifier / uid",
+          "fit": "DIRECT",
+          "clause": "Part 1 §8, §19.1",
+          "note": "URI distinct from the HTTP resource address and original serial.",
+          "url": null
+        }
+      },
+      "why": "Persistent identity of the described System—not a guaranteed equipment serial."
+    },
+    {
+      "g": "02 — SYSTEM, EQUIPMENT & RELATIONSHIPS",
+      "desc": "Describe the whole, physical constituents, separate connections, reporting participant and hosting context."
+    },
+    {
+      "k": "Described system",
+      "dim": "Described sensing System / arrangement",
+      "d": {
+        "OPC": {
+          "term": "Device",
+          "fit": "PARTIAL",
+          "clause": "§3.1.5; §4.1",
+          "note": "Devices may differ from the focal whole/station.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "ssn:System",
+          "fit": "PARTIAL",
+          "clause": "§4.2 / SSN System",
+          "note": "SSN Systems need not be one physical enclosure.",
+          "url": null
+        },
+        "SensorML": {
+          "term": "PhysicalSystem",
+          "fit": "PARTIAL",
+          "clause": "§8.6",
+          "note": "PhysicalSystem is a process-system construct; not universal root.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "System resource",
+          "fit": "PARTIAL",
+          "clause": "Part 1 §§8–9",
+          "note": "Can describe unlike System roles; not always one manufactured item.",
+          "url": null
+        }
+      },
+      "why": "No single donor superclass has been adopted as the DIM root."
+    },
+    {
+      "k": "Exposed participant",
+      "dim": "Network-visible participant",
+      "d": {
+        "IEEE": {
+          "term": "Network Capable Application Processor (NCAP)",
+          "fit": "RELATED",
+          "clause": "Publisher 1451.0-2024 scope; public Playground intro",
+          "note": "A network-side processor role, not universally the whole sensor.",
+          "url": "https://standards.ieee.org/ieee/1451.0/11001/"
+        },
+        "SAPIENT": {
+          "term": "Node (registered network role)",
+          "fit": "RELATED",
+          "clause": "§0.4, §6.2 registration",
+          "note": "May be software-only or compound, not automatically a physical sensing element.",
+          "url": null
+        }
+      },
+      "why": "One visible network node cannot be assumed identical to one physical device."
+    },
+    {
+      "k": "Physical part",
+      "dim": "Physical constituent",
+      "d": {
+        "IEEE": {
+          "term": "Transducer Interface Module (TIM)",
+          "fit": "PARTIAL",
+          "clause": "Public IEEE 1451 intro/Meta TEDS",
+          "note": "Only a physical part when source identifies hardware; not universal containment.",
+          "url": "https://iml.ubi.pt/playground/docs/ieee1451/intro/"
+        },
+        "OPC": {
+          "term": "ComponentType (can include software)",
+          "fit": "RELATED",
+          "clause": "§4.1; §4.6",
+          "note": "ComponentType is broader than a physical hardware part.",
+          "url": null
+        },
+        "SensorML": {
+          "term": "PhysicalComponent / components",
+          "fit": "PARTIAL",
+          "clause": "§§8.5–8.6",
+          "note": "Physical process-component association must be source-attested.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "subsystems → System",
+          "fit": "RELATED",
+          "clause": "Part 1 Table 5",
+          "note": "A subsystem resource is not automatically a separately manufactured chip.",
+          "url": null
+        }
+      },
+      "why": "Differentiate part-of from merely connected, hosted or digitally exposed."
+    },
+    {
+      "k": "Separate connection",
+      "dim": "Connected external equipment",
+      "d": {
+        "OPC": {
+          "term": "ConnectsTo",
+          "fit": "RELATED",
+          "clause": "§5.5",
+          "note": "Topological connectivity, not mechanical attachment.",
+          "url": null
+        },
+        "SensorML": {
+          "term": "connections",
+          "fit": "RELATED",
+          "clause": "§8.4; §9.5.2",
+          "note": "Process/output connections, not necessarily electrical cable.",
+          "url": null
+        }
+      },
+      "why": "A separately cabled ClimaVue is not necessarily a physical constituent of a CR1000X."
+    },
+    {
+      "k": "Host",
+      "dim": "Hosting platform / station context",
+      "d": {
+        "OMS": {
+          "term": "Host",
+          "fit": "PARTIAL",
+          "clause": "§8.7",
+          "note": "Can include organizational grouping rather than physical platform.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "sosa:Platform",
+          "fit": "PARTIAL",
+          "clause": "§4.3",
+          "note": "Hosting/attachment role differs from physical composition.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "System typed sosa:Platform",
+          "fit": "PARTIAL",
+          "clause": "Part 1 Table 5; §§8–9",
+          "note": "A System role typed as Platform; no universal mandatory Host.",
+          "url": null
+        }
+      },
+      "why": "Station coordinates are not necessarily the individual probe coordinates."
+    },
+    {
+      "k": "Observing method",
+      "dim": "Observing procedure / method",
+      "d": {
+        "OMS": {
+          "term": "ObservingProcedure",
+          "fit": "DIRECT",
+          "clause": "§8.5",
+          "note": "Method of observation, separate from performer.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "sosa:Procedure",
+          "fit": "PARTIAL",
+          "clause": "§4.4",
+          "note": "Broader procedure semantics; use when observing role is evidenced.",
+          "url": null
+        },
+        "SensorML": {
+          "term": "ProcessMethod",
+          "fit": "PARTIAL",
+          "clause": "§8.2.2; §8.3",
+          "note": "SensorML ProcessMethod and OMS procedure need qualified translation.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "Procedure (observing type)",
+          "fit": "PARTIAL",
+          "clause": "Part 1 §§9,13",
+          "note": "Procedure resource is not evidence that an observation occurred.",
+          "url": null
+        }
+      },
+      "why": "Keep reusable procedure distinct from System, actual observation and result."
+    },
+    {
+      "g": "03 — CHANNELS, OUTPUTS & OBSERVATIONS",
+      "desc": "Separate physical/transducer channels, output fields, observable properties, performer and performed event."
+    },
+    {
+      "k": "Addressed transducer channel",
+      "dim": "Addressed transducer channel",
+      "d": {
+        "IEEE": {
+          "term": "TransducerChannel",
+          "fit": "DIRECT",
+          "clause": "IEEE 1451.0-2024 §6.5, Table 19 via Playground",
+          "note": "An addressable transducer channel, not a physical separate sensor.",
+          "url": null
+        }
+      },
+      "why": "No automatically equivalent CSAPI DataStream or SensorML output address."
+    },
+    {
+      "k": "Reported field",
+      "dim": "Reported output field",
+      "d": {
+        "SensorML": {
+          "term": "outputs / named fields",
+          "fit": "PARTIAL",
+          "clause": "§8.2; §9.1",
+          "note": "Process output definition; need SWE Common data types for fields.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "DataStream resultSchema",
+          "fit": "RELATED",
+          "clause": "Part 2 §9.2 and JSON encoding",
+          "note": "DataStream schema is a carrier, not the physical channel.",
+          "url": null
+        }
+      },
+      "why": "A logger diagnostic field is not automatically a measurement."
+    },
+    {
+      "k": "Property being observed",
+      "dim": "Observed / observable property",
+      "d": {
+        "OMS": {
+          "term": "ObservableProperty",
+          "fit": "DIRECT",
+          "clause": "§8.2",
+          "note": "Property of the observed feature.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "sosa:ObservableProperty",
+          "fit": "DIRECT",
+          "clause": "§4.2 / §§5.1–5.2",
+          "note": "Observed property associated with an Observation.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "DataStream observedProperties",
+          "fit": "PARTIAL",
+          "clause": "Part 2 §9.2",
+          "note": "Collection property declaration, not necessarily the original channel.",
+          "url": null
+        }
+      },
+      "why": "Temperature of the outdoor air is different from temperature of a logger panel."
+    },
+    {
+      "k": "Entity performing observation",
+      "dim": "Observer / observing System",
+      "d": {
+        "OMS": {
+          "term": "Observer",
+          "fit": "DIRECT",
+          "clause": "§8.6",
+          "note": "Who performs observing operation.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "sosa:Sensor",
+          "fit": "PARTIAL",
+          "clause": "§4.2 / §5.2",
+          "note": "Can be software/human; not always one physical probe.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "System typed sosa:Sensor",
+          "fit": "PARTIAL",
+          "clause": "Part 1 Table 5",
+          "note": "Native System may be typed Sensor; averaged-result producer must be source-supported.",
+          "url": null
+        }
+      },
+      "why": "Physical probe, logger and publishing server must not be silently conflated."
+    },
+    {
+      "k": "Actual observation",
+      "dim": "Performed Observation",
+      "d": {
+        "OMS": {
+          "term": "Observation",
+          "fit": "DIRECT",
+          "clause": "§8.2",
+          "note": "Act resulting in an original report; source time/quality matter.",
+          "url": null
+        },
+        "SOSA": {
+          "term": "sosa:Observation",
+          "fit": "DIRECT",
+          "clause": "§4.2",
+          "note": "An observing act, not a type description.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "Observation resource",
+          "fit": "PARTIAL",
+          "clause": "Part 2 §9",
+          "note": "Native structure must be valid and originally evidenced.",
+          "url": null
+        }
+      },
+      "why": "Manufacturer example data does not establish a performed event."
+    },
+    {
+      "g": "04 — CONFIGURATION & CONTROL",
+      "desc": "Differentiate supported/default capabilities, applied/reported configuration and actual command execution."
+    },
+    {
+      "k": "Supported mode",
+      "dim": "Supported operating mode",
+      "d": {
+        "IEEE": {
+          "term": "SampMode (sampling capability)",
+          "fit": "PARTIAL",
+          "clause": "Channel TEDS §6.5 Table 19 via Playground",
+          "note": "Only sampling mode, not all equipment modes.",
+          "url": null
+        },
+        "SensorML": {
+          "term": "modes (declared)",
+          "fit": "PARTIAL",
+          "clause": "§8.8",
+          "note": "Can be a configurable process mode.",
+          "url": null
+        },
+        "SAPIENT": {
+          "term": "ModeDefinition.mode_name",
+          "fit": "DIRECT",
+          "clause": "§6.2.5.10 Table 27",
+          "note": "A declared mode, not proof it is active.",
+          "url": null
+        }
+      },
+      "why": "An option a device supports isn't necessarily the one in use."
+    },
+    {
+      "k": "Default mode",
+      "dim": "Declared default mode",
+      "d": {
+        "IEEE": {
+          "term": "SDefault (sampling mode default)",
+          "fit": "PARTIAL",
+          "clause": "Channel TEDS §6.5 Table 19 via Playground",
+          "note": "Default of transducer channel sampling, not a universal device default.",
+          "url": null
+        },
+        "SAPIENT": {
+          "term": "ModeDefinition.mode_type=DEFAULT",
+          "fit": "DIRECT",
+          "clause": "§6.2.5.11 Table 28",
+          "note": "Declared default mode, not a verified current operating mode.",
+          "url": null
+        }
+      },
+      "why": "Don't promote a printed default to current effective state."
+    },
+    {
+      "k": "Reported operating mode",
+      "dim": "Source-reported operating mode",
+      "d": {
+        "SAPIENT": {
+          "term": "StatusReport.mode",
+          "fit": "DIRECT",
+          "clause": "§6.3.2.4",
+          "note": "A reported mode, not necessarily continuously current.",
+          "url": null
+        }
+      },
+      "why": "Keep source report time and subject; don't infer live state."
+    },
+    {
+      "k": "Issued action request",
+      "dim": "Issued control request",
+      "d": {
+        "SAPIENT": {
+          "term": "Task",
+          "fit": "PARTIAL",
+          "clause": "§6.5, Task messages",
+          "note": "SAPIENT task request has source-specific targeting and behavior.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "Command",
+          "fit": "PARTIAL",
+          "clause": "Part 2 §10",
+          "note": "A Command is not itself proof of success or physical effect.",
+          "url": "https://docs.ogc.org/is/23-002/23-002.html"
+        }
+      },
+      "why": "Supported command syntax ≠ an issued request."
+    },
+    {
+      "k": "Acknowledgement / execution status",
+      "dim": "Command acknowledgement / reported outcome",
+      "d": {
+        "SAPIENT": {
+          "term": "TaskAck.task_status",
+          "fit": "PARTIAL",
+          "clause": "§6.5.9 Tables 86–87",
+          "note": "Task status code differences and identity must be preserved.",
+          "url": null
+        },
+        "CSAPI": {
+          "term": "CommandStatus.statusCode",
+          "fit": "PARTIAL",
+          "clause": "Part 2 §10.11 Tables 13–15",
+          "note": "Reported status is not independently verified physical effect.",
+          "url": "https://docs.ogc.org/is/23-002/23-002.html"
+        }
+      },
+      "why": "ACCEPTED is not COMPLETED, and COMPLETED is not measured physical effect."
+    },
+    {
+      "g": "05 — SOURCE, EVIDENCE & REPRESENTATION",
+      "desc": "Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell."
+    },
+    {
+      "k": "Original source assertion",
+      "dim": "Source-qualified assertion (proposed DIM)",
+      "d": {},
+      "why": "Our proposed source/issuer/edition/locator/evidence standing is NOT a native obligatory field in these seven donors."
+    },
+    {
+      "k": "Original event vs copies",
+      "dim": "Original event and derived digital representation (proposed DIM)",
+      "d": {},
+      "why": "Bennett two original events/four digital experimental copies need explicit provenance; no false equivalence asserted here."
+    }
+  ]
+}
