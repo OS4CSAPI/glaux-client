@@ -1,0 +1,497 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step03_Row_Cell_Evidence_Contract_v0.1_05NOV2026.schema.json",
+  "title": "DIM V2 donor-to-proposed-DIM row/cell evidence bundle — working schema v0.1",
+  "description": "Working research records, NOT adopted DIM structure, an OGC Profile or proof of normative source equivalence. JSON Schema cannot enforce cross-record foreign keys or semantic source validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleStanding",
+    "presentation",
+    "donorColumns",
+    "sections",
+    "dimRows",
+    "cellDecisions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "donor-dim-crosswalk.v0.1"
+    },
+    "bundleStanding": {
+      "enum": [
+        "EXAMPLE_ONLY_NOT_SOURCE_RECHECKED",
+        "WORKING_RESEARCH_CANDIDATE"
+      ]
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "donorColumns",
+        "dimColumn",
+        "sectionDividers",
+        "blankMeaning",
+        "columnRanking"
+      ],
+      "properties": {
+        "donorColumns": {
+          "const": "HORIZONTAL_FIXED_COLUMNS"
+        },
+        "dimColumn": {
+          "const": "FAR_RIGHT"
+        },
+        "sectionDividers": {
+          "const": "FULL_WIDTH_NAVIGATION_ONLY"
+        },
+        "blankMeaning": {
+          "const": "NO_ESTABLISHED_MAPPING_IN_REVIEWED_SCOPE"
+        },
+        "columnRanking": {
+          "enum": [
+            "PROVISIONAL_SAMPLE_POPULATED_ROWS",
+            "PROVISIONAL_ROSTER",
+            "EVIDENCED_UNIQUE_ROW_CONTRIBUTIONS"
+          ]
+        }
+      }
+    },
+    "donorColumns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/donor"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/section"
+      }
+    },
+    "dimRows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/dimRow"
+      }
+    },
+    "cellDecisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cellDecision"
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]{2,63}$"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "donor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "donorKey",
+        "displayName",
+        "issuer",
+        "scope",
+        "editionOrVersion",
+        "publicationUrl",
+        "groupingStanding",
+        "orderProvisional",
+        "sourceCoverageStanding"
+      ],
+      "properties": {
+        "donorKey": {
+          "$ref": "#/$defs/id"
+        },
+        "displayName": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "issuer": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "editionOrVersion": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "publicationUrl": {
+          "$ref": "#/$defs/uri"
+        },
+        "groupingStanding": {
+          "enum": [
+            "SINGLE_ORIGINAL_STANDARD",
+            "MULTI_STANDARD_TEMPORARY_COLUMN",
+            "PUBLIC_TECHNICAL_LINEAGE",
+            "OTHER_TO_BE_RESOLVED"
+          ]
+        },
+        "orderProvisional": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceCoverageStanding": {
+          "enum": [
+            "PRIOR_FAMILY_REVIEW_ONLY",
+            "PRELIMINARY_LEAD",
+            "SOURCE_UNAVAILABLE",
+            "ORIGINAL_CLAUSES_CHECKED_IN_NEW_WORKFLOW"
+          ]
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sectionKey",
+        "title",
+        "order",
+        "purpose",
+        "modelStanding"
+      ],
+      "properties": {
+        "sectionKey": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "purpose": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "modelStanding": {
+          "const": "SPREADSHEET_NAVIGATION_ONLY_NOT_DIM_PACKAGE"
+        }
+      }
+    },
+    "dimRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rowKey",
+        "sectionKey",
+        "dimLabel",
+        "workingDefinition",
+        "elementKind",
+        "modelStanding",
+        "referentScope",
+        "notes"
+      ],
+      "properties": {
+        "rowKey": {
+          "$ref": "#/$defs/id"
+        },
+        "sectionKey": {
+          "$ref": "#/$defs/id"
+        },
+        "dimLabel": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "workingDefinition": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "elementKind": {
+          "enum": [
+            "CONCEPT",
+            "CLASS_CANDIDATE",
+            "ATTRIBUTE_CANDIDATE",
+            "ASSOCIATION_CANDIDATE",
+            "ROLE",
+            "EVENT",
+            "OPERATION",
+            "RESULT",
+            "INFORMATION_OBJECT",
+            "UNDECIDED"
+          ]
+        },
+        "modelStanding": {
+          "enum": [
+            "WORKING_PROPOSAL_NOT_ADOPTED",
+            "HELD",
+            "REJECTED",
+            "PROPOSED_FOR_OWNER_REVIEW"
+          ]
+        },
+        "referentScope": {
+          "enum": [
+            "REFERENCE_KIND",
+            "PHYSICAL_INDIVIDUAL",
+            "SENSING_ARRANGEMENT",
+            "HISTORICAL_STATION",
+            "ANY_WITH_SOURCE_QUALIFICATION",
+            "UNDECIDED"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "sourcePointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisherOrIssuer",
+        "documentTitle",
+        "standardIdentifier",
+        "edition",
+        "exactLocator",
+        "sourceUrl",
+        "sourceKind",
+        "registeredArtifactId",
+        "locatorStanding"
+      ],
+      "properties": {
+        "publisherOrIssuer": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "documentTitle": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "standardIdentifier": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "edition": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exactLocator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sourceUrl": {
+          "$ref": "#/$defs/uri"
+        },
+        "sourceKind": {
+          "enum": [
+            "PUBLISHER_ORIGINAL",
+            "PUBLIC_TECHNICAL_COMPANION",
+            "PROJECT_PREVIOUS_EXTRACTION",
+            "PUBLIC_ABSTRACT_OR_SUMMARY",
+            "OTHER_UNVERIFIED"
+          ]
+        },
+        "registeredArtifactId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 182
+        },
+        "locatorStanding": {
+          "enum": [
+            "EXACT_SPECIFIC_CLAUSE",
+            "COARSE_SECTION_OR_TABLE",
+            "THIRD_PARTY_DESCRIPTION",
+            "NOT_YET_VERIFIED"
+          ]
+        }
+      }
+    },
+    "cellDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decisionKey",
+        "rowKey",
+        "donorKey",
+        "nativeElementName",
+        "nativeElementKind",
+        "sourcePointer",
+        "sourceVerification",
+        "originalCheckedAt",
+        "originalCheckedBy",
+        "relation",
+        "disposition",
+        "semanticBasis",
+        "nonEquivalence",
+        "recordedAt",
+        "recordedBy"
+      ],
+      "properties": {
+        "decisionKey": {
+          "$ref": "#/$defs/id"
+        },
+        "rowKey": {
+          "$ref": "#/$defs/id"
+        },
+        "donorKey": {
+          "$ref": "#/$defs/id"
+        },
+        "nativeElementName": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "nativeElementKind": {
+          "enum": [
+            "CLASS",
+            "ATTRIBUTE",
+            "PROPERTY",
+            "ASSOCIATION",
+            "ROLE",
+            "CHANNEL",
+            "PROCESS",
+            "EVENT",
+            "MESSAGE",
+            "DATA_FIELD",
+            "CODE_VALUE",
+            "SERVICE_OR_API_RESOURCE",
+            "OPERATION",
+            "OTHER"
+          ]
+        },
+        "sourcePointer": {
+          "$ref": "#/$defs/sourcePointer"
+        },
+        "sourceVerification": {
+          "enum": [
+            "ORIGINAL_CHECKED",
+            "PRIOR_SOURCE_EXTRACT_ONLY",
+            "SOURCE_UNAVAILABLE",
+            "NEEDS_REVIEW"
+          ]
+        },
+        "originalCheckedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "originalCheckedBy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "relation": {
+          "enum": [
+            "DIRECT",
+            "BROADER",
+            "NARROWER",
+            "PARTIAL_OVERLAP",
+            "RELATED_BUT_DIFFERENT",
+            "CONFLICT",
+            "NO_ESTABLISHED_MAPPING",
+            "UNRESOLVED"
+          ]
+        },
+        "disposition": {
+          "enum": [
+            "PROPOSED",
+            "ACCEPTED_FOR_RESEARCH_REVIEW",
+            "REJECTED",
+            "HELD"
+          ]
+        },
+        "semanticBasis": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "nonEquivalence": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "recordedBy": {
+          "$ref": "#/$defs/nonempty"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "sourceVerification": {
+                "const": "ORIGINAL_CHECKED"
+              }
+            },
+            "required": [
+              "sourceVerification"
+            ]
+          },
+          "then": {
+            "properties": {
+              "originalCheckedAt": {
+                "type": "string",
+                "format": "date"
+              },
+              "originalCheckedBy": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "originalCheckedAt": {
+                "type": "null"
+              },
+              "originalCheckedBy": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "const": "ACCEPTED_FOR_RESEARCH_REVIEW"
+              }
+            },
+            "required": [
+              "disposition"
+            ]
+          },
+          "then": {
+            "properties": {
+              "sourceVerification": {
+                "const": "ORIGINAL_CHECKED"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "const": "REJECTED"
+              }
+            },
+            "required": [
+              "disposition"
+            ]
+          },
+          "then": {
+            "properties": {
+              "relation": {
+                "enum": [
+                  "RELATED_BUT_DIFFERENT",
+                  "CONFLICT",
+                  "NO_ESTABLISHED_MAPPING"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
