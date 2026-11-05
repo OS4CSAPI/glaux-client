@@ -4,6 +4,20 @@
 
 **Open in GitHub; no ChatGPT sandbox download required.**
 
+## NEW — What the owner actually requested: donors across columns, DIM at far right
+
+**[Open the directly viewable 22-element SAMPLE comparison table](DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.md)** — **THIS** is the new side-by-side layout to review before expanding the donor population. The **seven donor columns are fixed left-to-right from fewer to more sample matches**; the far-right column alone is the **proposed DIM information element**. Five full-width section divider rows group the concepts in a progressive order, and unique/unmatched needs get their own rows rather than being forced into false equivalences.
+
+- [Open the same sample in Excel-compatible CSV](DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.csv).
+- [Check the 51 cell-by-cell original source locators, relationship qualifications and URLs](DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026_Evidence.csv).
+- [Inspect the full structured sample (exact column order and source facts)](DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.json).
+
+**This is a design/format sample, not the complete donor corpus, adopted model or a score of which standard is “best.”** Only 7 source families and 22 proposed information elements are represented. The previously produced **Family to R24** workbook is **NOT** this concept-to-DIM table; R24 are historical internal research IDs not needed to read the owner’s new master crosswalk.
+
+---
+
+
+
 **GitHub-downloadable deliverables — build verified on 4 November 2026:**
 
 | Deliverable | Open or download on GitHub | Role |
