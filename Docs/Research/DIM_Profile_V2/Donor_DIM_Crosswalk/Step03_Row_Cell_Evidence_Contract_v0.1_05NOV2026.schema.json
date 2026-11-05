@@ -435,6 +435,13 @@
               },
               "originalCheckedBy": {
                 "$ref": "#/$defs/nonempty"
+              },
+              "sourcePointer": {
+                "properties": {
+                  "sourceKind": {
+                    "const": "PUBLISHER_ORIGINAL"
+                  }
+                }
               }
             }
           },
@@ -464,6 +471,14 @@
             "properties": {
               "sourceVerification": {
                 "const": "ORIGINAL_CHECKED"
+              },
+              "relation": {
+                "enum": [
+                  "DIRECT",
+                  "BROADER",
+                  "NARROWER",
+                  "PARTIAL_OVERLAP"
+                ]
               }
             }
           }
