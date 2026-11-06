@@ -16,6 +16,7 @@ import hashlib
 import io
 import json
 from collections import Counter
+from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -159,7 +160,7 @@ def validate() -> dict[str, object]:
     require(html_table.find("PROPOSED DIM ELEMENT") > html_table.find(sample["donors"][order[-1]]["name"]),
             "GitHub sample no longer displays DIM after the last donor")
     for group in groups:
-        require(group in html_table, "GitHub sample is missing section " + group)
+        require(escape(group) in html_table, "GitHub sample is missing section " + group)
 
     roster = json.loads(data_by_kind["donorRoster"])
     require(len(roster["columns"]) == 46, "Step04 potential roster changed")
