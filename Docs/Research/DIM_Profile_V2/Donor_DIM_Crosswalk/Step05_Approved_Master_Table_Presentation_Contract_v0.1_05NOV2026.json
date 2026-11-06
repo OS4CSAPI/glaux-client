@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "donor-dim-master-presentation.v0.1",
+  "date": "2026-11-05",
+  "status": "STEP05_PRESENTATION_CONTRACT_ONLY_NOT_MASTER_WORKBOOK",
+  "authority": "Owner-approved horizontal 7-donor 22-row 5-divider sample — FORMAT only; no mapping acceptance.",
+  "branch": "research/dim-profile-v2",
+  "inputs": {
+    "canonicalSampleJson": "../Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.json",
+    "sampleJsonGitBlob": "44b9298e91f6ea454c786534c6447c8833cccc99",
+    "baselineCsv": "../Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.csv",
+    "baselineCsvGitBlob": "82ab142114e42831c6b9575fbb57d73a325ee89e",
+    "evidenceLedger": "../Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026_Evidence.csv",
+    "evidenceLedgerBlob": "976fef4958f2a8a7f4bff26bbf1ac4ca79bc9904",
+    "donorRoster": "Step04_Provisional_Donor_Column_Roster_v0.1_05NOV2026.json",
+    "donorRosterBlob": "0330626a549337077f38311aa83d2af02396ebac",
+    "evidenceSchema": "Step03_Row_Cell_Evidence_Contract_v0.1_05NOV2026.schema.json"
+  },
+  "dataContract": {
+    "sourceOfTruth": "single versioned structured set of donorColumns, sectionDividers, proposedDimRows, evidenceCells and disposition; output mirrors generated from that one set",
+    "sampleMode": "READ_EXISTING_SEVEN_DONOR_LAYOUT_ONLY",
+    "defaultSourceVerification": "PRIOR_SOURCE_EXTRACT_ONLY",
+    "noAutoOriginalChecked": true,
+    "distinguishFitFromSourceVerification": true,
+    "preserveOriginalSampleFiles": true,
+    "forbidR24InVisibleMaster": true,
+    "finalRosterRank": "UNDECIDED",
+    "includeAllStep04PotentialCandidates": false,
+    "candidateColumnCountsForContext": {
+      "provisional": 17,
+      "conditional": 29,
+      "automaticallyIncluded": 0
+    }
+  },
+  "master": {
+    "sheetName": "Master Crosswalk",
+    "isFirstSheet": true,
+    "firstRowIsDonorHeader": true,
+    "headerRow": 1,
+    "headerCellContent": "source donor original display labels, in canonical sample order, then PROPOSED DIM ELEMENT",
+    "explicitLeftmostIdColumn": false,
+    "rowKeyIsHiddenInCompanionData": true,
+    "donorColumnOrientation": "HORIZONTAL_LEFT_TO_RIGHT_FIXED",
+    "dimensionLastColumn": "PROPOSED DIM ELEMENT",
+    "dimAlwaysFarRight": true,
+    "sampleOrderKeys": [
+      "IEEE",
+      "OMS",
+      "OPC",
+      "SOSA",
+      "SensorML",
+      "SAPIENT",
+      "CSAPI"
+    ],
+    "sampleColumnCount": {
+      "donors": 7,
+      "totalWithDim": 8
+    },
+    "expectedData": {
+      "sections": 5,
+      "proposedDimRows": 22,
+      "donorCellClaims": 51
+    },
+    "sections": {
+      "fullWidthAcrossDonorsAndDim": true,
+      "excelRow": "MERGE_A_THROUGH_LAST_DIM_COLUMN",
+      "markdownRow": "<tr><th colspan='8'>section title</th></tr> in sample-mode; colspan derives from actual donor count+1",
+      "csvRow": "section title in first donor column, all remaining columns empty; not a concept row",
+      "order": "source JSON rows order; do not alphabetize before owner review",
+      "areDimClasses": false
+    },
+    "donorCells": {
+      "nativeTermsOnly": true,
+      "blankMeans": "NO_ESTABLISHED_CORRESPONDENCE_IN_REVIEWED_SCOPE",
+      "useBlankCellNotNAOrDash": true,
+      "originalLiteralValuesPreserved": true,
+      "fitSymbol": {
+        "DIRECT": "",
+        "PARTIAL": "≈ ",
+        "RELATED": "≈ ",
+        "CONDITIONAL": "≈ "
+      },
+      "futureFitSymbol": {
+        "BROADER": "≈ ",
+        "NARROWER": "≈ ",
+        "PARTIAL_OVERLAP": "≈ ",
+        "RELATED_BUT_DIFFERENT": "≈ (only explicitly displayable contextual candidates)"
+      },
+      "rejectedAndHeld": "RENDER_BLANK_IN_MASTER; retain source and decision in evidence sheet",
+      "avoidColorOnlySemantics": true
+    },
+    "dimCells": {
+      "labelSource": "row.dim",
+      "bold": true,
+      "neverEmitR24Code": true,
+      "format": "PLAIN_LANGUAGE_PROPOSED_MEANING"
+    }
+  },
+  "workbook": {
+    "iterationOfFirstCreation": "STEP06_ONLY",
+    "tabs": [
+      {
+        "name": "Master Crosswalk",
+        "purpose": "approved horizontal owner-facing comparison; not an Excel structured Table because merged section rows",
+        "filters": false
+      },
+      {
+        "name": "Evidence",
+        "purpose": "one source-cited evidence record for each populated donor cell and rejected/held comparisons",
+        "filters": true
+      },
+      {
+        "name": "DIM Definitions",
+        "purpose": "row keys, proposed terms, definitions, concept kinds and review disposition",
+        "filters": true
+      },
+      {
+        "name": "Donor Sources",
+        "purpose": "source edition, column roster, source availability, original publisher and rank calculation inputs",
+        "filters": true
+      },
+      {
+        "name": "Holds & Decisions",
+        "purpose": "missing/false-equivalence and review conflicts",
+        "filters": true
+      },
+      {
+        "name": "Read Me",
+        "purpose": "plain-language meanings, blank/≈ legend, version, evidence and source limitations",
+        "filters": false
+      }
+    ],
+    "type": "xlsx",
+    "style": {
+      "font": "Aptos 10–11 pt or equivalent",
+      "headerFill": "#17324D",
+      "headerText": "#FFFFFF",
+      "sectionFill": "#DCE8F0",
+      "sectionText": "#17324D",
+      "dimFill": "#F1F6FA",
+      "bodyFill": "#FFFFFF",
+      "alternateRowFill": "#F8FAFC",
+      "border": "#D9E2E9",
+      "headerRowHeightPoints": 36,
+      "sectionRowHeightPoints": 28,
+      "minDataHeightPoints": 22,
+      "maxDataHeightPoints": 76,
+      "donorColumnWidthCharacters": {
+        "min": 22,
+        "target": 30,
+        "max": 40
+      },
+      "dimColumnWidthCharacters": {
+        "min": 32,
+        "target": 38,
+        "max": 44
+      },
+      "wrapText": true,
+      "horizontalHeaderAlignment": "center",
+      "verticalCellAlignment": "center"
+    },
+    "freeze": {
+      "topRows": 1,
+      "donorColumns": 0,
+      "dimRightEdgePinned": false,
+      "note": "Excel cannot freeze only the rightmost column while leaving left-side columns scrollable; preserve DIM-last geometry and horizontal scroll."
+    },
+    "filtering": {
+      "master": false,
+      "evidence": true,
+      "definitions": true,
+      "donorSources": true,
+      "holds": true,
+      "note": "Do not apply a structured Excel table/AutoFilter over full-width merged section headings; filtering is available in supporting sheets."
+    },
+    "citationPolicy": "No self-certification. Original source URLs/edition/locator and source verification recorded in Evidence, accessible by row/donor key and optional internal hyperlink/comment in master.",
+    "outputNames": {
+      "xlsx": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
+      "markdown": "Master_Donor_Concept_to_DIM_Crosswalk.md",
+      "csv": "Master_Donor_Concept_to_DIM_Crosswalk.csv",
+      "structured": "Master_Donor_Concept_to_DIM_Crosswalk.json"
+    }
+  },
+  "webView": {
+    "isGitHubReadable": true,
+    "noHorizontalReorientation": true,
+    "donorHeaders": "same order as XLSX",
+    "sectionDividers": "true full-width HTML table rows using colspan",
+    "dimLast": true,
+    "notes": "GitHub table may be wide; preserve scroll/semantic structure rather than convert donors to vertical list"
+  },
+  "validation": {
+    "baselineExactColumnOrder": true,
+    "baselineHeaderExactly": "PROPOSED DIM ELEMENT",
+    "exactSampleRowOrder": true,
+    "exactSampleDonorTerms": true,
+    "evidenceLedgerEveryPopulatedCell": true,
+    "noAcceptedSourceStatusFromLegacy": true,
+    "sectionDividerCount": 5,
+    "sampleRowCount": 22,
+    "sampleEvidenceCellCount": 51,
+    "noForcedDonorColumnsFromRoster": true,
+    "plannedOwnerCheckpoint": 8
+  },
+  "restrictions": [
+    "Do not edit approved 22-row sample or prior donor corpus",
+    "Do not add donor→DIM concepts/cells",
+    "Do not merge all 46 potential donor columns into actual master",
+    "Do not finalize least-to-most donor ranking",
+    "Do not generate XLSX in Step05",
+    "Do not change DIM, UML, CSAPI Profile, application, server or Cloudflare"
+  ]
+}
