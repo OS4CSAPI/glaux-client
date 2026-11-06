@@ -27,3 +27,7 @@ The new source-case columns contain **73 recorded nonempty case cells**, each wi
 - The revised workbook contains no automated network connections/macros; source URLs are stored as citation pointers. The final owner judgment remains **PENDING**.
 
 **What comes next:** Stay at **Step08 owner review**. Look at the revised table and its nine visibly held example rows, then choose what to accept/change. **Do not start Step09** until the user explicitly accepts the layout and proposed review outcomes.
+
+## Independently verified GitHub revision — NOT owner approval
+
+The committed [**actual revised Excel workbook**](Master_Donor_Concept_to_DIM_Crosswalk_v0.2_06NOV2026.xlsx) has final Git blob SHA `c4862d9358f688b809e9b5c0b329fdef2e69706c`. [GitHub Actions run **42314409072**](https://github.com/OS4CSAPI/glaux-client/actions/runs/42314409072) completed **SUCCESS** after the CSV section text and workbook ZIP/XML package were repaired. This executes the read-only validation against the actual committed file and checks seven sheet names, 13 columns, 22 original proposed rows, nine case review holds, six full-width section dividers, 73 case references and 51 unchanged old donor mappings with all old mapping evidence standing still `PRIOR_SOURCE_EXTRACT_ONLY`. **Original publisher-semantic verification, complete case coverage, owner acceptance and external CSAPI interoperability are not established.**
