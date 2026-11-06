@@ -1,0 +1,27 @@
+name: DIM V2 crosswalk — verify actual Step06 master files
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.*"
+      - "scripts/check_dim_crosswalk_step06.py"
+      - ".github/workflows/dim-crosswalk-step06.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out committed research artifacts
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          submodules: false
+      - name: Use Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check actual six-sheet XLSX bytes and source mirrors
+        run: python scripts/check_dim_crosswalk_step06.py
