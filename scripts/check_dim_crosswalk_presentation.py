@@ -143,6 +143,24 @@ def validate() -> dict[str, object]:
                 "Missing locator/URL/limitation " + str(key))
     require(observed_ledger == set(all_matches), "Missing evidence records for displayed cells")
 
+    # The owner actually approved a GitHub-visible TABLE, not just the hidden
+    # JSON/CSV. Verify its full-width group rows and DIM-last header too.
+    markdown_path = sources["canonicalSampleJson"].removesuffix(".json") + ".md"
+    _, markdown_bytes = read_source(markdown_path)
+    markdown = markdown_bytes.decode("utf-8")
+    table_start = markdown.find("<table>")
+    table_end = markdown.find("</table>", table_start)
+    require(table_start >= 0 and table_end > table_start, "Approved Markdown table missing")
+    html_table = markdown[table_start:table_end]
+    require(html_table.count("<th colspan=\"8\">") == len(groups),
+            "GitHub sample divider rows no longer span all eight columns")
+    require(html_table.count("<tr>") == len(expected_rows),
+            "GitHub sample table gained or lost a row")
+    require(html_table.find("PROPOSED DIM ELEMENT") > html_table.find(sample["donors"][order[-1]]["name"]),
+            "GitHub sample no longer displays DIM after the last donor")
+    for group in groups:
+        require(group in html_table, "GitHub sample is missing section " + group)
+
     roster = json.loads(data_by_kind["donorRoster"])
     require(len(roster["columns"]) == 46, "Step04 potential roster changed")
     require(all(c["rank"] is None for c in roster["columns"]), "Cannot claim final rank before mappings")
@@ -167,6 +185,7 @@ def validate() -> dict[str, object]:
         "priorClaimCounts": dict(observed_fits),
         "step04PotentialColumnsNotInserted": 46,
         "frozenSourceInputsMatched": 4,
+        "githubMarkdownDividersChecked": len(groups),
     }
 
 
