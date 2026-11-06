@@ -1,0 +1,33 @@
+name: DIM V2 crosswalk — verify approved presentation contract
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - .github/workflows/verify-dim-crosswalk-presentation.yml
+      - scripts/check_dim_crosswalk_presentation.py
+      - Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step05_Approved_Master_Table_Presentation_Contract_v0.1_05NOV2026.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-format:
+    name: Read-only baseline geometry / evidence check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out research source without submodule or secret access
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax-check read-only layout validator
+        run: python -m py_compile scripts/check_dim_crosswalk_presentation.py
+      - name: Verify owner-approved seven-donor table and source evidence
+        run: python scripts/check_dim_crosswalk_presentation.py
