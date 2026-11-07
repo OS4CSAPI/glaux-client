@@ -1,0 +1,46 @@
+name: DIM V2 Step14 — publish IEEE 1451 public technical crosswalk
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.json"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step14_IEEE1451_2024_Public_Technical_Evidence_Audit_06NOV2026.json"
+      - "scripts/build_dim_crosswalk_step14.py"
+      - "scripts/check_dim_crosswalk_step14.py"
+      - ".github/workflows/dim-crosswalk-step14-publish.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dim-v2-step14-source-publisher
+  cancel-in-progress: false
+jobs:
+  build-verify-commit:
+    name: Build, verify and commit IEEE v0.8 workbook
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/dim-profile-v2
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Source-build the 13th IEEE audit tab from frozen prior workbook
+        run: python scripts/build_dim_crosswalk_step14.py
+      - name: Independently test JSON/CSV/ZIP/XML, source grades and all earlier evidence
+        run: python scripts/check_dim_crosswalk_step14.py
+      - name: Publish reproducible Excel binary to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.xlsx
+          if git diff --cached --quiet; then
+            echo "IEEE Step14 workbook already matches repository"
+          else
+            git commit -m "research(dim-v2): publish source-graded IEEE 1451/TEDS v0.8 13-sheet master"
+            git push origin HEAD:research/dim-profile-v2
+          fi
