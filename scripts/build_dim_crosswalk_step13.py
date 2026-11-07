@@ -225,7 +225,7 @@ def main():
     require(model["schemaVersion"].startswith("donor-dim-master-layout.v0.7"),"Wrong source JSON")
     require([x["key"] for x in model["columns"]]==[x["key"] for x in old["columns"]],"Owner layout drift")
     require(model["rows"]!=old["rows"] and len(model["rows"])==37,"Expected W3C-specific source-claim revision in fixed main grid")
-    require(all(a["display"]==b["display"] for a,b in zip(model["rows"],old["rows"])), "Main presentation changed")
+    require(all(a.get("display")==b.get("display") for a,b in zip(model["rows"],old["rows"])), "Main presentation changed")
     require(model["caseEvidence"]==old["caseEvidence"], "Frozen case evidence changed")
     require(model["originalSourceInputHashes"]==old["originalSourceInputHashes"],"Original source pins changed")
     require(len(model["originalDonorEvidence"])==57,"Donor evidence count drift")
