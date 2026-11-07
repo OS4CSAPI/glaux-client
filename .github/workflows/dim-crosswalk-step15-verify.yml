@@ -1,0 +1,25 @@
+name: DIM V2 Step15 — independently verify original ISA 6.0 staged workbook
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-published:
+    name: Check published ISA 2023 source and 14-col overlay
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify source-grade, frozen 13-sheet work and owner preview
+        run: python scripts/check_dim_crosswalk_step15.py
