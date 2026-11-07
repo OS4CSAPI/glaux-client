@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-ONLY COVERAGE CORRECTION · 7 November 2026.** **Planning checkpoint complete; technical correction 0/12; next owner “proceed” executes ISA-01 ONLY.** The delivered Step15 source selection is being corrected for known omitted ISA properties and untracked source coverage. The existing workbook and supported findings remain available. Step16 owner review follows the correction; other donor work is unchanged.
+**CURRENT — ISA-01 COMPLETE; correction 1/12. GitHub publication and initial lessons checkpoint complete. Next owner “proceed”: ISA-02 ONLY.**
 
-[**Active twelve-iteration correction plan**](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [**Current robust recovery PITON**](PITON_ISA_Coverage_Correction_07NOV2026.md) · [**Progress and exact next task**](ISA_Correction_Status_07NOV2026.json).
+[Current workbook](ISA_Correction_Review_ISA01_07NOV2026.xlsx) · [readable comparison](ISA_Correction_Review_ISA01_07NOV2026.md) · [census](ISA01_Source_Census_07NOV2026.md) · [lessons](LESSONS_Donor_Review_Process.md) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [progress](ISA_Correction_Status_07NOV2026.json) · [publication verification](ISA01_Publication_Recovery_07NOV2026.json).
 
-**Execution precedence:** this correction plan and its progress record supersede every older “Step16 next” instruction below. Earlier completion records describe the work delivered at those checkpoints; they neither establish exhaustive ISA coverage nor invalidate the existing project. Keep narrow source or design questions attached to their specific records. No technical mapping changed in this planning update.
+The recovered census accounts for 480 named source entries, 279 source blocks, 31 row/topic targets and 25 prior ISA findings. No ISA-02 mapping was executed in this publication/lessons checkpoint. Current plan/PITON supersede older planning 0/12 and Step16-next language below; do not repeat ISA-01.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 
@@ -61,6 +61,6 @@ The historical 22-row sample is **a template**, not approval of its conceptual m
 
 **Current: 15/40 iterations complete; 58 primary donor records remain (37 original-standard-checked OGC/W3C, 6 IEEE public-technical-only, 15 OPC/SAPIENT prior-only) plus 11 ISA 2023 original-source-checked proposed mappings STAGED SEPARATELY. All DIM meanings remain proposed, and an ISA column requires Step16 owner acceptance.** The owner separately authorized these **15 steps**, not all 40. The 40 steps must be started **separately** with an owner “proceed,” and a useful visible master-table review is required at checkpoint **08** before expansion. The final result may legitimately retain source/standards gaps instead of fabricating a complete 182-source mapping.
 
-**NEXT owner “proceed”: ISA-01 ONLY — source census and coverage register, under the current ISA correction plan linked above.**
+**NEXT owner “proceed”: ISA-02 ONLY — identity and first property block, under the current correction plan.**
 
 **Prior program distinction:** The original DIM/Profile research's [43-step plan](../PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md) and [PITON v3.3](../PITON_DIM_Profile_V2_Continuity_v3.3_03NOV2026.md) remain historical/complete with full external interop Gate E/F HOLD. This is a new source-comparison deliverable, not retroactive old Step 44.

@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-ONLY COVERAGE CORRECTION · 7 November 2026.** **Planning checkpoint complete; technical correction 0/12; next owner “proceed” executes ISA-01 ONLY.** The delivered Step15 source selection is being corrected for known omitted ISA properties and untracked source coverage. The existing workbook and supported findings remain available. Step16 owner review follows the correction; other donor work is unchanged.
+**CURRENT — ISA-01 COMPLETE; correction 1/12. GitHub publication and initial lessons checkpoint complete. Next owner “proceed”: ISA-02 ONLY.**
 
-[**Active twelve-iteration correction plan**](../Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) · [**Current robust recovery PITON**](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [**Progress and exact next task**](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json).
+[Current workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA01_07NOV2026.xlsx) · [readable comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA01_07NOV2026.md) · [census](../Donor_DIM_Crosswalk/ISA01_Source_Census_07NOV2026.md) · [lessons](../Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md) · [PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [progress](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [publication verification](../Donor_DIM_Crosswalk/ISA01_Publication_Recovery_07NOV2026.json).
 
-**Execution precedence:** this correction plan and its progress record supersede every older “Step16 next” instruction below. Earlier completion records describe the work delivered at those checkpoints; they neither establish exhaustive ISA coverage nor invalidate the existing project. Keep narrow source or design questions attached to their specific records. No technical mapping changed in this planning update.
+The recovered census accounts for 480 named source entries, 279 source blocks, 31 row/topic targets and 25 prior ISA findings. No ISA-02 mapping was executed in this publication/lessons checkpoint. Current plan/PITON supersede older planning 0/12 and Step16-next language below; do not repeat ISA-01.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 

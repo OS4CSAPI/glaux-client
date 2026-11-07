@@ -35,3 +35,7 @@ Do not call the twelve-iteration schedule a universal best practice. Do not conf
 **Now:** preserve the initial evidence and corrective practices in this document. **ISA-02–11:** add a short entry only for a new substantive finding, preferably during the normal pass closeout. **ISA-12:** consolidate the demonstrated practices into the reusable procedure and starter template. **Next donor:** apply the procedure to that donor's source structure and record any needed adaptation.
 
 This documentation checkpoint does not execute ISA-02 or begin another donor family.
+
+## Verified publication recovery — 7 November 2026
+
+The interrupted transfer was resumed from ten exact matching segments, not restarted. The completed checkpoint was recovered from its saved archive, every original file hash was verified, and publication labels and recovery routing were updated without changing census results. See [publication record](ISA01_Publication_Recovery_07NOV2026.json) and the [verification run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114). This closes the GitHub-delivery action described in L07; ISA-01 remains complete and ISA-02 remains next.

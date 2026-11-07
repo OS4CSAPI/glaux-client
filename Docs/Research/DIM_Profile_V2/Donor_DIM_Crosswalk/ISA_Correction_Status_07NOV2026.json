@@ -1,73 +1,103 @@
 {
   "schema": "isa-coverage-correction-status.v1",
   "date": "2026-11-07",
+  "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
-  "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
   "planningCheckpoint": "COMPLETE",
-  "technicalIterationsCompleted": 0,
+  "technicalIterationsCompleted": 1,
   "plannedTechnicalIterations": 12,
-  "iterationCountMeaning": "Workload estimate, not a source-entry or mapping quota; split only a specifically identified source batch when necessary.",
-  "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
-  "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
-  "nextOnOwnerProceed": "ISA-01",
-  "nextAction": "Source census, exact edition/access check, source-entry and DIM-row coverage register; no automatic ISA-02.",
-  "parentSequence": {
-    "parentPlan": "PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md",
-    "insertedAfter": "Step15 delivered source-selection and workbook artifacts",
-    "returnAfterCorrection": "Step16 owner checkpoint",
-    "step16State": "FOLLOWS_ISA_CORRECTION",
-    "step17State": "UNCHANGED_NOT_STARTED",
-    "otherDonorReviews": "UNCHANGED_NOT_AUTHORIZED_BY_THIS_CORRECTION"
+  "currentIteration": "ISA-01",
+  "currentIterationStatus": "COMPLETE",
+  "nextOnOwnerProceed": "ISA-02",
+  "nextAction": "Identity and first property block; Manufacturer, Model and Serial Number original-source mapping correction.",
+  "repositoryPublication": {
+    "state": "PUBLISHED_TO_GITHUB",
+    "repository": "OS4CSAPI/glaux-client",
+    "branch": "research/dim-profile-v2",
+    "technical_state": "ISA-01 COMPLETE",
+    "next_pass": "ISA-02",
+    "publication_record": "ISA01_Publication_Recovery_07NOV2026.json",
+    "workflow_run_url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114"
   },
   "baseline": {
-    "commit": "2f298e00f12025d4be45d210546a71fc8eb12827",
-    "workbook": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
-    "workbookBlob": "bf87c64981bcab1bf0834b032a824fadf3b33783",
-    "workbookBytes": 465506,
-    "structuredMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.json",
-    "structuredMasterBlob": "7f358d6a49ab1f9737e5ef60b731689d439b469b",
-    "isaStagingFile": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
-    "isaStagingBlob": "1f857915c2227e6dc0b071f7db1ded4d3fc09fb4",
-    "primaryDonorRecords": 58,
-    "existingDimRows": 22,
-    "caseReviewTopics": 9,
-    "caseEvidenceStatements": 73,
-    "existingISAMappingsToReconcile": 11,
-    "existingISAHoldsToReconcile": 14,
-    "acceptedPrimaryColumns": 13,
-    "isaReviewColumns": 14,
-    "workbookSheets": 15
+    "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
+    "csv_blob_verified": "fc271b757bcd094866f428bf7c3dc67bee7cc8eb",
+    "legacy_stage_blob": "1f857915c2227e6dc0b071f7db1ded4d3fc09fb4",
+    "unchanged_primary_donor_records": 58,
+    "unchanged_case_statements": 73,
+    "new_or_revised_semantic_mappings": 0
   },
   "coverage": {
-    "sourceEntryDenominator": null,
-    "sourceEntriesReviewedInCorrection": 0,
-    "sourceInventoryOwner": "ISA-01",
+    "sourceNamedEntryDenominator": 480,
+    "definition": "Named DMS entries only, not nested fields or established mappings.",
+    "inventoryLocated": 480,
+    "semanticEntriesReviewedInCorrection": 0,
+    "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
-    "rowTargetsDispositionedInCorrection": 0,
-    "note": "Do not infer zero available concepts from an uninitialized inventory. ISA-01 establishes the source-native denominator and assigns every source block."
+    "priorMappingAndHoldTargets": 25,
+    "unassignedTargets": 0
   },
-  "completionRules": {
-    "sourceCoverageSeparateFromModelAcceptance": true,
-    "narrowQuestionsDoNotInvalidateOtherCompletedWork": true,
-    "unreviewedItemsMustNotBeDisguisedAsNoCorrespondence": true,
-    "semanticAuditMustStartFromOriginalSourceInventory": true,
-    "wordingOnPassingFinalChecks": "ISA correction COMPLETE",
-    "ownerDecisionAfterCompletion": "Step16 review of corrected ISA view and any candidate additional or split rows"
-  },
-  "iterations": [
-    {"id":"ISA-01","title":"Source census and coverage baseline","state":"NEXT"},
-    {"id":"ISA-02","title":"Identity and first property block","state":"NOT_STARTED"},
-    {"id":"ISA-03","title":"Remaining properties","state":"NOT_STARTED"},
-    {"id":"ISA-04","title":"Observables","state":"NOT_STARTED"},
-    {"id":"ISA-05","title":"Commands, first block","state":"NOT_STARTED"},
-    {"id":"ISA-06","title":"Commands, remaining block","state":"NOT_STARTED"},
-    {"id":"ISA-07","title":"Identifiers, envelopes and messages","state":"NOT_STARTED"},
-    {"id":"ISA-08","title":"Capability declarations and constraints","state":"NOT_STARTED"},
-    {"id":"ISA-09","title":"Reporting types, first block","state":"NOT_STARTED"},
-    {"id":"ISA-10","title":"Remaining reporting and filtering types","state":"NOT_STARTED"},
-    {"id":"ISA-11","title":"Architecture, requirements and full reconciliation","state":"NOT_STARTED"},
-    {"id":"ISA-12","title":"Fresh source-first audit and correction closeout","state":"NOT_STARTED"}
+  "iterationRecords": [
+    {
+      "id": "ISA-01",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "ISA-02",
+      "state": "NEXT"
+    },
+    {
+      "id": "ISA-03",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-04",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-05",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-06",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-07",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-08",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-09",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-10",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-11",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "ISA-12",
+      "state": "NOT_STARTED"
+    }
   ],
-  "planningTurnChanges": "Plan, recovery and navigation only; no technical workbook, mapping, Profile, UML, runtime or deployment change."
+  "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
+  "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
+  "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
+  "currentReview": "ISA_Correction_Review_ISA01_07NOV2026.md",
+  "publicationRule": "GitHub is the authoritative checkpoint. Verify the committed workbook, evidence and current PITON after every authorized delivery; sandbox copies do not replace publication.",
+  "completedTaskRule": "Source census complete; source-mapping acceptance remains a separate per-record task. No generic unfinished-project caveat.",
+  "lessonsDocument": "LESSONS_Donor_Review_Process.md",
+  "documentationCheckpoint": {
+    "state": "COMPLETE",
+    "task": "Initial lessons record and ISA-01 GitHub publication recovery",
+    "counts_as_new_technical_iteration": false
+  }
 }

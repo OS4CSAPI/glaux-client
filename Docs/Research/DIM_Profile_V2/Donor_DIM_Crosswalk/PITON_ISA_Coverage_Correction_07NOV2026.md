@@ -1,89 +1,45 @@
-# Current PITON — ISA-only coverage correction
+# Current PITON — ISA correction after ISA-01
 
-**7 November 2026 · CURRENT RECOVERY AUTHORITY FOR THE ISA CORRECTION.** Planning and continuity checkpoint complete. Twelve correction iterations are planned; none has yet been executed. **The next owner “proceed” executes ISA-01 only: source census and coverage register.**
+**7 November 2026 · ISA-01 COMPLETE · correction progress 1/12 · next owner proceed: ISA-02 ONLY.**
 
-[Controlling correction plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Current machine-readable progress](ISA_Correction_Status_07NOV2026.json) · [Crosswalk landing](README.md) · [Parent forty-step plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md).
+## Recovery authority and publication
 
-## 1. Read this before older “next step” instructions
+**GitHub publication recovered and initial lessons checkpoint COMPLETE.** The repository on `research/dim-profile-v2` is the authoritative current checkpoint: ISA-01 complete, correction progress 1/12, next ISA-02 only. Do not redo ISA-01 because a historical prepublication copy said 0/12 or not committed.
 
-The owner stopped the transition from Step15 to Step16 after discovering blank ISA manufacturer/model/serial-number cells. Those concepts exist in the original ISA Data Model Specification. The assistant acknowledged that it had selected eleven concepts rather than systematically accounting for ISA's source contents and all current DIM rows. Spreadsheet parity tests had passed, but could not discover missing entries that were never put into the mapping ledger.
+Read [progress](ISA_Correction_Status_07NOV2026.json), [census](ISA01_Source_Census_07NOV2026.md), [coverage register](ISA_Coverage_Register_07NOV2026.json), [current review](ISA_Correction_Review_ISA01_07NOV2026.md), [editable workbook](ISA_Correction_Review_ISA01_07NOV2026.xlsx), [lessons](LESSONS_Donor_Review_Process.md), and [publication record](ISA01_Publication_Recovery_07NOV2026.json). The [twelve-pass plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) remains controlling.
 
-The owner now authorizes planning a **correction limited to ISA**, using bounded one-prompt iterations and an updated robust PITON. This plan is inserted between the delivered Step15 artifacts and Step16 owner review. Older “Step16 next” statements describe the pre-correction checkpoint. **They are superseded for execution by this PITON and the correction plan.** Other donor reviews, final ranking and Step17 remain unchanged and unstarted here.
+**Publication contract:** use GitHub for every authorized delivery and read back the actual committed files. Sandbox files are additional recovery copies, not the handoff. Separate technical completion from publication, and finish both where the tools support it. Discover the available supported write actions before declaring an access limitation; do not attribute access to a model switch without evidence.
 
-Do not repeat the root-cause discussion as though the next action were still undecided. Do not ask the owner again whether to make a plan. The plan is now recorded. Do not execute all twelve passes from one “proceed.”
+**Lessons maintenance:** add a short lesson only when new evidence appears during the normal ISA closeout. Do not produce a separate report or restart other donors. At ISA-12 consolidate demonstrated practices into a reusable donor-review procedure; adapt it to the next donor rather than copying ISA’s twelve passes mechanically.
 
-## 2. Owner intent and communication rules
+## Work actually completed
 
-The user wants a readable donor-to-DIM comparison that does not miss straightforward source content or invent analogies. The whole-system purpose remains: a defensible implementation-independent Domain Information Model (DIM), a separate Connected Systems API (CSAPI) Profile and eventually a generic, useful client interpretation of unlike equipment. This correction repairs ISA's contribution to that work; it does not reopen the entire research effort.
+Original DMS 6.0r12: **480 named source entries** found in contents, body and index, across all 148 indexed pages. Eleven original ISA 6.0 documents from 31 October 2023 have verified titles/revisions/contents: DMS r12; SDD r5; ICD r5; Component and Controller Requirements r4; Topics r2; Query Language Guide r4; Introductory Guide r2; White Paper r2; Certificate Guide r2; IPL3 Guide r4. A twelfth, historical 2015 paper has a verified existing register citation but no full text located. It is assigned historical-context access item SRC-ACCESS-01 / ISA-11; no source gap is inferred for the eleven readable originals.
 
-The current user specifically rejects blanket caveats that later chats treat as permanent reasons to call the effort unfinished. **Completion of a defined source-review task is a real completion.** A specific unresolved interpretation belongs to its exact row/question, not to an overarching declaration that the model or project is unusable. Source review, proposed model acceptance and deployed implementation are separate statuses. Lack of owner adoption of a proposed row does not reverse completed source work.
+There are **279 source blocks**, **31 row/topic targets** (22 DIM + nine case topics), and **25 earlier ISA findings** (eleven mappings + fourteen holds). All have assigned review passes. The source denominator is named DMS catalogue entries, NOT all fields, unique real-world concepts or adopted mappings. Each parent entry's future review includes all native fields, parameters, results, enumeration members, constraints and referenced types; source-row coverage may expand when nested entries need their own records.
 
-Examples: “ISA-03 complete: all entries in the assigned property block are dispositioned. Next ISA-04.” At final closeout: “ISA correction complete; the corrected table is ready for Step16 owner review.” Name any genuinely open design decisions separately. Never use this wording rule to conceal unread source sections or invented mappings.
+Existing legacy ISA mappings remain, with review-due labels; otherwise empty ISA cells say Not reviewed and name the pass. The old relations are neither erased nor promoted by this census. No semantic mapping or DIM row was added or revised. All non-ISA/case display values equal the exact frozen v0.9 CSV (Git blob fc271b757bcd094866f428bf7c3dc67bee7cc8eb). The fifteen-sheet v0.9 workbook and its historical primary evidence remain untouched on GitHub.
 
-Explain the human meaning and show the table delta after each pass. Preserve paragraphs of reasonable length and conclude with one clearly named next task so the owner only needs to say “proceed.”
+## Source access and exact locations
 
-## 3. Repository, starting assets and preservation
+The JSON register stores each original file identifier, revision, date, source pages and extracted-text hash. Original PDF bytes were not generally exportable. **Indexed text WAS exportable in slices**: the DMS was joined through verified overlaps to 7,450 lines and 148 unique ordered page markers. Do not interpret a failed raw-byte export as missing original source text. Use Files search/find/read/materialize-text by the registered original identifiers. Materialized text is capped at about 1,000 lines; request overlapping slices rather than mistaking the first slice for the entire source. Original PDF p.37 was visually inspected to check the observable/command boundary; p.33 image retrieval failed but indexed text/contents/body/index agree on its headings. Do not claim unviewed page images were inspected.
 
-Repository: `OS4CSAPI/glaux-client`. Research branch: `research/dim-profile-v2`. Work area: `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. Do not write to `main` or the separate application branch.
+Manufacturer: printed p.13/PDF p.28; Model: printed p.14/PDF p.29; Serial Number: printed p.16/PDF p.31. They are known omissions to repair in ISA-02, using actual definitions and subject scope—not name matching alone. **Properties end on printed p.18**, including Zones and Zoom for ISA-03. **Observables end on printed p.22**, including Solar Radiation, Velocity and Verified By for ISA-04. Read across shared-page section boundaries.
 
-Pre-correction branch checkpoint: `2f298e00f12025d4be45d210546a71fc8eb12827`.
+## Next exact task: ISA-02
 
-- [v0.9 editable workbook](Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx), blob `bf87c64981bcab1bf0834b032a824fadf3b33783`, 465,506 bytes, fifteen worksheets.
-- [v0.9 structured master](Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.json), pre-correction blob `7f358d6a49ab1f9737e5ef60b731689d439b469b`.
-- [Thirteen-column primary comparison](Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.md) and [fourteen-column ISA proposal](Step15_ISA_6_Proposed_14_Column_Overlay_07NOV2026.md).
-- [Original eleven-record ISA stage and fourteen holds](Step15_ISA6_Primary_Source_Staging_07NOV2026.json), blob `1f857915c2227e6dc0b071f7db1ded4d3fc09fb4`.
-- [Prior ISA source report](Step15_ISA_6_Original_Source_Clause_Audit_07NOV2026.md) and [successful structural/parity check](https://github.com/OS4CSAPI/glaux-client/actions/runs/42342501927). That check did not establish complete source coverage; the known omissions are why this correction exists.
+Read the assigned 49 DMS entries (the first property block through printed p.13 plus Model and Serial Number), relevant original UCI/identity and linked-type definitions, and current row coverage. Correct the three identity omissions and disposition each entry in that block; trace relevant unmatched contributions to candidate rows or specific questions. Do not preselect direct equivalence. Confirm body extension markers (core, Custom, Nominated, Accepted) rather than treating every contents bullet as a status.
 
-The primary baseline has 22 proposed DIM rows, nine case-only review topics, 73 equipment source statements and 58 non-ISA primary donor correspondences. The latter are 37 original-standard-reviewed OGC/W3C, six IEEE public-technical and fifteen OPC/SAPIENT historical records. ISA's eleven staged correspondences are separate from those 58. Preserve these distinctions, but do not treat eleven or fourteen as final limits on ISA's useful content.
+Preserve all other donors, case evidence, source precision, the four leftmost source examples, foundational sensing standards as an adjacent group and DIM at far right. Do not alter the CSAPI Profile, UML, application/server, production service or final donor rank. No ISA-03 or old Step16 is authorized by the next proceed. A specific oversized batch may be openly split with its remaining named entries; do not silently drop material or turn quotas into completion.
 
-Keep the v0.9 files as history. Build a versioned corrected ISA review view and its synchronized evidence from the existing sources. The owner-approved case-first format, adjacent foundational standards block and DIM rightmost remain. New ISA-supported information can become candidate additional/split rows in the review view. Do not fill other donor cells for new rows without their own review; mark them not assessed here. Step16 retains owner control of layout promotion and substantive adoption.
+## Progress and language discipline
 
-## 4. Source recovery — actual originals, not earlier AI summaries
+A completed census is completed. Zero semantic correction decisions today is expected: ISA-01 was the inventory pass. Later pass coverage, mapping relationship, owner/model adoption, and repository publication are separate states. A narrow question belongs to the affected record, not a general declaration that nothing is finished. The final ISA correction can close when its defined coverage and review tests pass; Step16 remains the owner's subsequent substantive checkpoint.
 
-The principal original documents are dated **31 October 2023**, with different revisions within ISA release 6.0. These previously working Files identifiers are recovery hints, not proof that access cannot change:
+Keep the broader goal of an evidence-based whole-system DIM, a separate CSAPI Profile, and useful generic client interpretation; this ISA-only repair is not a restart. Preserve reference design versus installed unit, hardware versus output quantity, declared capability versus current setting, and reported outcome versus physical effect. Bennett retains two original NOAA means/four copies, date-limited service history and unknown original result availability—no invented ISA values.
 
-| Original title and revision | Known file identifier |
-| --- | --- |
-| ISA Data Model Specification 6.0r12 | `file_00000000ca1c81f48a3ccd49273425f8` |
-| ISA Software Design Document 6.0r5 | `file_000000004c10824683c0a84b37f24a3b` |
-| ISA Interface Control Document 6.0r5 | `file_000000008de0820e8e33af2cb096bb12` |
-| ISA Component Requirements 6.0r4 | `file_00000000ed048210a141e046f2e93a17` |
-| ISA Controller Requirements 6.0r4 | `file_00000000e00082109d88d0119f744880` |
+## Files and validation
 
-Use Files search/find/read. If a handle fails, search exact filename and revision across Project/conversation and Library. Indexed original text was readable even when raw-byte materialization was unavailable. **Do not turn that export limitation into “ISA sources unavailable.”** Inspect page images when layout, tables, extension marks or diagrams determine meaning; do not claim an image was inspected from parsed text alone.
+The repository contains the workbook, Markdown/CSV review, complete source/row/prior-finding registers, progress, plan amendment and this recovery anchor. The [publication record](ISA01_Publication_Recovery_07NOV2026.json) includes saved and published hashes and the [GitHub verification run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114). Verification checks the restored source-accounting data, unchanged non-ISA display values and all saved artifact identities; it is not a repeat of the semantic source review.
 
-ISA-01 also accounts for the ISA companions in the existing donor register: Data Model Topics, Data Query Language User's Guide, Introductory Guide, White Paper, Certificate Usage Guide, IPL3 Usage Guide and the historical architecture paper. The correction plan tells how to allocate their substantive sections. Duplicate uploads are one source edition, not extra evidence votes.
-
-Known omission locators in DMS 6.0r12: `Manufacturer` printed p.13/PDF p.28; `Model` printed p.14/PDF p.29; `Serial Number` printed p.16/PDF p.31. `Manufacturer POC` is a distinct extension entry; do not merge its standing into Manufacturer. Native `Operating State`, `Relationship` and `Reserve Capacity` are further known items requiring exact comparison, not automatic equivalents or final classifications.
-
-Source entries must be found from the source's own contents/body/index, including named nested fields and meaningful constraints, not only by searching for existing DIM labels. Preserve the original distinction among core, Custom, Nominated and Accepted entries. Cite actual definitions and referenced types. No factory default becomes an installed setting, and no declared command becomes a physical action.
-
-## 5. The twelve-pass sequence and next precise task
-
-The controlling plan sets: **1** census/coverage; **2** identity plus first property block; **3** remaining properties; **4** observables; **5–6** commands in two blocks; **7** identifiers/envelopes/messages; **8** capability declarations/constraints; **9–10** reporting types in two blocks and filtering; **11** architectural/requirements/companion closure and full reconciliation; **12** fresh source-first audit, publication and completion.
-
-Do not improvise this into another thirteen- or forty-step campaign. The source inventory, not an arbitrary number of populated cells, controls the work. If a real block needs subdivision, record its exact remaining entries and an explicit subpass before advancing. No silent scope shrink, unassigned backlog or end-of-plan dump of unexamined ideas into “holds.”
-
-**ISA-01 only on the next prompt:** establish the ISA source inventory and entry/section owners for subsequent passes; reconcile the 22 existing DIM rows plus nine case topics; register the eleven old ISA mappings and fourteen old findings; initialize visible review-status distinctions and coverage tracking. Report what is now accounted for and which exact source block is next. It is a census task, not permission to invent mappings from titles.
-
-## 6. Completion, evidence and local questions
-
-Keep review state, mapping relation and owner/model decision separate. Use understandable labels for otherwise empty ISA cells: Not reviewed; Question [specific ID]; or No correspondence found in [named scope]. A blank or a failed keyword search is not “ISA has no representation.” Native terms remain in positive cells, with fit qualifications in the evidence.
-
-All existing 22 plus nine review targets, every entry in the agreed ISA inventory, every former eleven mapping and fourteen hold, and every newly raised relevant concept must have a traceable disposition before final closure. Relevant unique concepts become candidate rows, supporting relationships or precisely identified design decisions. Unsupported matches are rejected with reasons. Source unreadness cannot be relabeled as a completed interpretation question.
-
-Final review compares the original source inventory against the table, not merely one generated file against another. Mechanical checks verify coverage records, stable IDs, evidence parity and preserved non-ISA/case content; semantic checking uses original definitions; visual checking inspects the actual workbook/view. Describe each type of evidence accurately.
-
-No source-review completion requires a live ISA controller, external CSAPI test suite, authenticated hardware operation, production client deployment, or resolution of unrelated historical programme gates. Those are different tasks, and none is authorized here.
-
-## 7. Four case boundaries retained without expanding this correction
-
-Dragino and AirGradient are documentary reference designs, and Campbell's logger/sensor pairing and printed logger status values are not a verified installed system. Bennett is historical: two EE181 serial identities across three dated service statements and two original NOAA mean events with four experimental digital representations. Keep the original quality token and time precision; unknown historical result availability, probe coordinates and exact replacement minute do not become invented ISA values.
-
-These cases challenge an interpretation; their limited feature coverage is not a reason to ignore other relevant ISA concepts.
-
-## 8. Recovery routing and earned progress
-
-Current authority order: owner instructions in this chat → correction plan/progress → this recovery anchor → parent forty-step roadmap and historical source artifacts. Preserve valid earlier source work; reopen only a specific row or claim when new evidence warrants it. Historical source-selection delivery and successful workbook checks remain real accomplishments. The correction fixes source coverage and the meaning of blanks; it does not erase the existing project.
-
-Today is the planning checkpoint. No workbook mappings changed and ISA-01 has not run. After the twelve correction passes satisfy their source-coverage tests, record **ISA correction COMPLETE** and return to Step16 owner review. A design choice awaiting that review does not turn the finished correction into an indefinite failure state.
+**Next substantive task remains ISA-02.** This publication/lessons checkpoint does not consume another technical correction iteration or authorize ISA-03.
