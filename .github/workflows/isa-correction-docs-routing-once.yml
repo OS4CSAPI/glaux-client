@@ -1,0 +1,128 @@
+name: Publish ISA correction planning and recovery pointers
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths: [.github/workflows/isa-correction-docs-routing-once.yml]
+permissions:
+  contents: write
+concurrency:
+  group: isa-correction-docs-routing-once
+  cancel-in-progress: false
+jobs:
+  publish-docs-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/dim-profile-v2
+          persist-credentials: true
+      - name: Link current plan and PITON while preserving old documents and technical bytes
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, re
+          from pathlib import Path
+          root=Path('Docs/Research/DIM_Profile_V2')
+          d=root/'Donor_DIM_Crosswalk'
+          plan='PLAN_ISA_Coverage_Correction_07NOV2026.md'
+          piton='PITON_ISA_Coverage_Correction_07NOV2026.md'
+          progress='ISA_Correction_Status_07NOV2026.json'
+          status=json.loads((d/progress).read_text(encoding='utf-8'))
+          assert status['plannedTechnicalIterations']==12
+          assert status['technicalIterationsCompleted']==0
+          assert status['nextOnOwnerProceed']=='ISA-01'
+          assert len(status['iterations'])==12
+          assert len(set(s['id'] for s in status['iterations']))==12
+          for n in (plan,piton,progress): assert (d/n).is_file(),n
+          frozen={
+            'Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx':'bf87c64981bcab1bf0834b032a824fadf3b33783',
+            'Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.json':'7f358d6a49ab1f9737e5ef60b731689d439b469b',
+            'Step15_ISA6_Primary_Source_Staging_07NOV2026.json':'1f857915c2227e6dc0b071f7db1ded4d3fc09fb4'
+          }
+          def check_frozen():
+              for name,sha in frozen.items():
+                  b=(d/name).read_bytes()
+                  got=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+                  assert got==sha,(name,got)
+          check_frozen()
+          marker='<!-- CURRENT_ISA_CORRECTION_07NOV2026 -->'
+          targets=[
+            (d/'README.md',''),
+            (d/'PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md',''),
+            (d/'PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md',''),
+            (root/'README.md','Donor_DIM_Crosswalk/'),
+            (root/'Deliverables/README.md','../Donor_DIM_Crosswalk/')
+          ]
+          for path,prefix in targets:
+              text=path.read_text(encoding='utf-8')
+              assert text.startswith('# '),path
+              assert marker not in text,'Already routed; inspect before repeating'
+              banner=(marker+'\n\n'
+                '**CURRENT — ISA-ONLY COVERAGE CORRECTION · 7 November 2026.** '
+                '**Planning checkpoint complete; technical correction 0/12; next owner “proceed” executes ISA-01 ONLY.** '
+                'The delivered Step15 source selection is being corrected for known omitted ISA properties and untracked source coverage. '
+                'The existing workbook and supported findings remain available. Step16 owner review follows the correction; other donor work is unchanged.\n\n'
+                f'[**Active twelve-iteration correction plan**]({prefix}{plan}) · '
+                f'[**Current robust recovery PITON**]({prefix}{piton}) · '
+                f'[**Progress and exact next task**]({prefix}{progress}).\n\n'
+                '**Execution precedence:** this correction plan and its progress record supersede every older “Step16 next” instruction below. '
+                'Earlier completion records describe the work delivered at those checkpoints; they neither establish exhaustive ISA coverage nor invalidate the existing project. '
+                'Keep narrow source or design questions attached to their specific records. No technical mapping changed in this planning update.\n\n'
+                '<!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->')
+              title,body=text.split('\n',1)
+              # Make the formerly current Step15 front matter explicitly historical.
+              body=body.replace('**CURRENT STEP15 COMPLETE','**HISTORICAL STEP15 CHECKPOINT',1)
+              if path.name=='PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md':
+                  body=body.replace('**7 November 2026 · CURRENT crosswalk execution:',
+                                    '**Historical pre-correction checkpoint · 7 November 2026:',1)
+                  lines=body.splitlines()
+                  found=0
+                  for i,line in enumerate(lines):
+                      if line.startswith('| **16** |'):
+                          cut=line.rfind('|',0,len(line.rstrip())-1)
+                          assert cut>0,line
+                          lines[i]=line[:cut]+'| **AFTER ISA CORRECTION.** Resume owner review after the correction completion checks; the next current prompt is ISA-01, not Step16. |'
+                          found+=1
+                  assert found==1,'Expected one parent Step16 row'
+                  body='\n'.join(lines)+'\n'
+              if path.name=='PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md':
+                  body=body.replace('**CURRENT execution: STEPS 01–15/40 COMPLETE;',
+                                    '**Historical delivered checkpoint: STEPS 01–15/40;',1)
+              if path==d/'README.md':
+                  lines=body.splitlines()
+                  for i,line in enumerate(lines):
+                      if line.startswith('**NEXT owner “proceed”: STEP16'):
+                          lines[i]='**NEXT owner “proceed”: ISA-01 ONLY — source census and coverage register, under the current ISA correction plan linked above.**'
+                  body='\n'.join(lines)+'\n'
+              revised=title+'\n\n'+banner+'\n'+body
+              assert len(revised)>len(text)-1000,'Unexpected large content loss'
+              path.write_text(revised,encoding='utf-8')
+              assert marker in path.read_text(encoding='utf-8')
+              for link in (plan,piton,progress):
+                  assert (path.parent/prefix/link).resolve().is_file(),(path,link)
+          # Verify local links in the new plan and PITON, not just their existence.
+          for source in (d/plan,d/piton):
+              text=source.read_text(encoding='utf-8')
+              for href in re.findall(r'\]\(([^)]+)\)',text):
+                  if '://' in href or href.startswith('#'):continue
+                  target=href.split('#',1)[0]
+                  assert (source.parent/target).is_file(),(source.name,target)
+          check_frozen()
+          print('PASS: 12 planned ISA-only passes, next ISA-01, zero technical passes executed.')
+          print('PASS: five recovery/navigation entrypoints route to current plan and PITON; existing document bodies retained.')
+          print('PASS: source-native omission correction and record-local question/completion rules documented.')
+          print('PASS: all new plan/PITON local links resolve; v0.9 workbook, JSON and ISA stage retain exact original Git blobs.')
+          print('SCOPE: documentation publication only, not a technical source review or workbook repair.')
+          PY
+      - name: Publish routing and remove this one-time documentation helper
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md
+          git add Docs/Research/DIM_Profile_V2/README.md Docs/Research/DIM_Profile_V2/Deliverables/README.md
+          git rm .github/workflows/isa-correction-docs-routing-once.yml
+          git diff --cached --check
+          git commit -m "docs(dim-v2): activate ISA-only coverage correction and durable recovery routing"
+          git push origin HEAD:research/dim-profile-v2
