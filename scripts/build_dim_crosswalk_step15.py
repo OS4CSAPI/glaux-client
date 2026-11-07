@@ -258,11 +258,11 @@ def build_workbook(old,stage,cols,rows,bands):
                 file.writestr(
                     member,changes.get(member.filename,oldfile.read(member.filename))
                 )
-            for path,payload in [
+            for entry_name,payload in [
                 ("xl/worksheets/sheet14.xml",audit_xml),
                 ("xl/worksheets/sheet15.xml",overlay_xml)
             ]:
-                info=zipfile.ZipInfo(path,date_time=(1980,1,1,0,0,0))
+                info=zipfile.ZipInfo(entry_name,date_time=(1980,1,1,0,0,0))
                 info.compress_type=zipfile.ZIP_DEFLATED
                 file.writestr(info,payload)
     with zipfile.ZipFile(out) as generated,zipfile.ZipFile(path) as oldfile:
