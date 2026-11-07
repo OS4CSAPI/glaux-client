@@ -1,8 +1,22 @@
-# Current PITON — ISA correction after ISA-03A integration
+# Current PITON — ISA correction after ISA-03B
 
-**7 November 2026 · ISA-01 and ISA-02 COMPLETE; child batch ISA-03A COMPLETE and integrated. Next owner “proceed”: ISA-03B ONLY.**
+**7 November 2026 · ISA-01, ISA-02 and child batches ISA-03A/B COMPLETE. Next owner “proceed”: ISA-03C ONLY.**
 
-## Current authority and durable handoff
+## Current authority and exact next task
+
+Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is authoritative. [Current workbook](ISA_Correction_Review_ISA03B_07NOV2026.xlsx) · [Current horizontal view](ISA_Correction_Review_ISA03B_07NOV2026.md) · [ISA-03B report](ISA03B_Ownership_Versions_Support_07NOV2026.md) · [Exact source evidence](ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Publication](ISA03B_Publication_Record_07NOV2026.json) · [Plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Lessons](LESSONS_Donor_Review_Process.md).
+
+ISA-03B reviewed Owner, Parameter Version, Program of Record, Software Version, Specification Version and Support. **Six of six supported**, with five Accepted extensions and one core entry (Specification Version). All six are separate candidate rows in Identity and contacts. Source support uses original DMS §3.1 pp.14–17/PDF29–32; POC text and original page121 image checked; String and Resource Descriptor/Resource Type dependencies reused from ISA-02. Unique supporting definitions remain47. No new source questions.
+
+Current grid: **86 information/review rows**, original31 plus **53 supported candidates and two existing question rows**. **59 primary entries reviewed / 57 supported / two existing questions**. Earlier source rows and all non-ISA/equipment values are preserved. Parent ISA-03: ten of42 properties reviewed,32 remain; original ISA-02 Model/Serial Number are not counted twice. Later catalogue passes are not falsely marked complete by supporting-type reuse.
+
+**Next ISA-03C only:** Orientation (ISA-DMS-083), Perceived Position (086), Position (088), Position Override (089). Read their original definitions and relevant existing spatial support. Preserve reference-frame and override distinctions; do not infer a physical probe coordinate from a station position. Do not execute ISA-03D or any other donor. Normal ceilings remain4–6 simple definitions,1–3 dense items, at most4 new support definitions and6 changed information rows, including verification/publication workload.
+
+**Distinct ISA-03B meanings:** Owner is component-specific ownership contact information, not permission. Program of Record is represented through a POC list, not an acquisition ID or procurement status. Support excludes maintenance, which stays separate. Parameter Version reports the version of hardware/software parameters unavailable through ISA; not the parameter values and not an absolute immutability rule. Software Version identifies running software. Specification Version reports ISA compatibility, not an independent conformance certificate.
+
+ISA-03A's transfer issue is resolved. The existing exact-input Actions artifact export and exact-file publication route work; reuse them instead of creating a new exporter. Current source decisions/workbook/progress are the ISA-03B checkpoint. Do not repeat completed ISA-01/02/03A reviews or use historical “pending integration” language below to reopen finished work.
+
+## Historical ISA-03A checkpoint and continuing source rules
 
 Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is the authoritative project home.
 
@@ -29,7 +43,7 @@ Four supporting definitions were inspected/reused: **Secs** (DMS §4.2 p.55/PDF7
 
 A source-page image request failed because raw-byte backing was unavailable. Original indexed text was readable and inspected; do not claim a visual PDF inspection or source absence.
 
-## Next exact task: ISA-03B — six named properties
+## Completed ISA-03B assignment — retained scope
 
 Review only these six ISA-03B entries: Owner (ISA-DMS-084), Parameter Version (085), Program of Record (092), Software Version (108), Specification Version (109), and Support (110). Follow the bounded batch policy: preflight relevant types and existing evidence, preserve source core/extension standing, integrate supported outcomes and verify the GitHub publication, then stop before ISA-03C.
 
@@ -43,7 +57,7 @@ Normal source batches start with four to six simple primary definitions or one t
 
 Preflight exact source IDs, likely dependencies, affected rows, source access and the existing publication route. Reuse verified same-edition supporting evidence. Do not combine semantic research with designing a new exporter/transport system. If scope grows, publish the supported named subset and assign its exact remainder; never invent a meaning to finish a batch.
 
-The plan permits one bounded publication repair attempt, then preserving evidence through a working GitHub action and naming the specific repair as next. That is the state now: four source decisions saved, current workbook untouched, one integration action next. No unbounded debug loop, no sandbox-only handoff and no false binary-publication claim.
+The plan permits one bounded publication repair attempt, then preserving evidence through a working GitHub action and naming the specific repair as next. That was a historical intermediate checkpoint; ISA-03A and ISA-03B are now integrated. No unbounded debug loop, no sandbox-only handoff and no false binary-publication claim.
 
 The original 42-property ISA-03 package is partitioned into ISA-03A–J with zero duplicated or unassigned IDs. Four are reviewed in this saved batch; 38 remain for later child batches. Model and Serial Number were already completed and remain excluded. Zones and Zoom on printed p.18/PDF33 remain assigned despite sharing the page with Observables. Later architecture and final-audit work also require bounded child batches.
 
@@ -55,7 +69,7 @@ ISA-02 completed **49 property reviews**: **47 supported outcomes and two precis
 
 Camera Mode supplies a camera-specific current-mode correspondence. Forty-three supported candidate rows and two question rows expanded the original 31 review rows to 76. New non-ISA cells read Not assessed here and new equipment cells read Not linked here. The original 58 primary donor records, 73 case-evidence statements and earlier non-ISA values remain unchanged. Historical v0.9 and ISA-01 artifacts remain history.
 
-Forty-six supporting definitions were inspected in ISA-02; their future full catalogue passes were not marked complete. The last integrated technical checkpoint is [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60), with [publication record](ISA02_Publication_Record_07NOV2026.json) and [read-only verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/42392228728). The four-entry supplement is now integrated in the current ISA-03A workbook; [publication record](ISA03A_Publication_Record_07NOV2026.json) identifies the verified checkpoint.
+Forty-six supporting definitions were inspected in ISA-02; their future full catalogue passes were not marked complete. The earlier ISA-02 technical checkpoint is [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60), with [publication record](ISA02_Publication_Record_07NOV2026.json) and [read-only verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/42392228728). The four-entry supplement is now integrated in the current ISA-03A workbook; [publication record](ISA03A_Publication_Record_07NOV2026.json) identifies the verified checkpoint.
 
 ## Source distinctions and specific questions retained
 
@@ -77,4 +91,4 @@ Each delivery must be verified at its actual GitHub commit. Coverage and semanti
 
 Maintain the living lessons record only when a new substantive observation warrants an entry. The current interruption is already covered by the publication and bounded-work rules; no additional research campaign is authorized. Preserve case precision: reference designs versus deployed units, two original NOAA means versus four API representations, and unknown historical result availability remain distinct.
 
-**Next “proceed” = ISA-03B only. ISA-03A source review, workbook integration and GitHub delivery are complete; no restart.**
+**The historical instructions above do not override the current ISA-03C handoff at the top of this PITON.**

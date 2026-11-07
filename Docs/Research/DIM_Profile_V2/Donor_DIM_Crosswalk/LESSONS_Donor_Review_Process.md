@@ -1,8 +1,8 @@
 # Donor review — lessons and reusable practices
 
-**7 November 2026 · Living record, updated after ISA-02 and workload resizing.** ISA-01 and ISA-02 remain complete. **Next technical task: ISA-03B, six named properties only.** The former twelve-prompt estimate is withdrawn; the twelve existing work-package labels now execute through bounded child batches. This is an ISA-only correction, not another donor review.
+**7 November 2026 · Living record, updated after ISA-02 and workload resizing.** ISA-01 and ISA-02 remain complete. **Next technical task: ISA-03C, four position/orientation properties only.** The former twelve-prompt estimate is withdrawn; the twelve existing work-package labels now execute through bounded child batches. This is an ISA-only correction, not another donor review.
 
-[Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Revised execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress and exact child batches](ISA_Correction_Status_07NOV2026.json) · [ISA-01 census](ISA01_Source_Census_07NOV2026.md) · [Current ISA-02 review](ISA_Correction_Review_ISA02_07NOV2026.md).
+[Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Revised execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress and exact child batches](ISA_Correction_Status_07NOV2026.json) · [ISA-01 census](ISA01_Source_Census_07NOV2026.md) · [Current ISA review](ISA_Correction_Review_ISA03B_07NOV2026.md).
 
 ## How to use and maintain this record
 
@@ -58,3 +58,8 @@ Calibrate small-batch sizes from actual source and publication workload. Test pr
 ## ISA-03A integration closeout
 
 The four saved decisions were integrated without repeating their source review. The existing GitHub Actions artifact-download route supplied the exact current workbook after public raw-download attempts failed. Input/output hashes, original-row preservation and the actual published commit are checked in [the publication record](ISA03A_Publication_Record_07NOV2026.json). This is an application of L06/L07, not a new donor-review method. ISA-03A is complete; next ISA-03B only.
+
+
+## ISA-03B application of existing practices
+
+The six-entry batch reused existing POC/String support and preserved distinct owner, program-of-record and non-maintenance-support roles, plus three different version meanings. Five source entries retained Accepted-extension status. This applies lessons L08/L09; no new universal rule or additional research campaign is introduced. [Evidence](ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json).

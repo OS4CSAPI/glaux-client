@@ -1,0 +1,376 @@
+{
+  "schema": "isa-bounded-batch-evidence.v2",
+  "date": "2026-11-07",
+  "batch": "ISA-03B",
+  "sourceReviewStatus": "COMPLETE",
+  "primaryOutcomes": {
+    "assigned": 6,
+    "reviewed": 6,
+    "supported": 6,
+    "newSourceQuestions": 0
+  },
+  "primary_records": [
+    {
+      "id": "ISA03B-084",
+      "entry_id": "ISA-DMS-084",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Owner",
+      "element_kind": "property",
+      "native_type": "POC",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 14,
+      "pdf_pages": [
+        29,
+        29
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Owner; printed p.14, PDF p.29",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "5e9bddbf72a3f8c8ae1dc3b5c25f839d72a6ebb4cdaaa52d3daf32d3638c912b",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-084",
+      "proposed_label": "Component owner contact information",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Identifies the owner of the specific component using a list of point-of-contact structures.",
+      "mapping_boundary": "Not the manufacturer, operator, custodian, access-control role or an independently verified legal title. A list of contacts does not establish ownership shares or intervals.",
+      "dependency_terms": [
+        "POC",
+        "String",
+        "Resource Descriptor",
+        "Resource Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03B-085",
+      "entry_id": "ISA-DMS-085",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Parameter Version",
+      "element_kind": "property",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 14,
+      "pdf_pages": [
+        29,
+        29
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Parameter Version; printed p.14, PDF p.29",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "cbf1b573fb311a3199292d8905a7eb486b8f323aeb5495df1384cd84d74ab2c7",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-085",
+      "proposed_label": "Version of component configuration parameters not exposed through ISA",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Identifies the version of hardware/software configuration parameters that are not accessible via ISA; the source characterizes these as hard-coded values that traditionally do not change at runtime.",
+      "mapping_boundary": "The property reports a version; it does not expose the underlying parameter values or prove immutability. Do not equate it with Capability Version, Hardware Version, Software Version or the ISA specification version.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03B-092",
+      "entry_id": "ISA-DMS-092",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Program of Record",
+      "element_kind": "property",
+      "native_type": "POC",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Program of Record; printed p.15, PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "3bc3e371f72f968335472798f35d6ae694b87926357df7fca7b54933ba1e1aeb",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-092",
+      "proposed_label": "Component program-of-record contact information",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Represents the component program of record through a list of point-of-contact structures.",
+      "mapping_boundary": "The native representation is a POC list, not an acquisition-program identifier, funding record, procurement status or a second owner field. No programme membership or contact is inferred for an equipment example.",
+      "dependency_terms": [
+        "POC",
+        "String",
+        "Resource Descriptor",
+        "Resource Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03B-108",
+      "entry_id": "ISA-DMS-108",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Software Version",
+      "element_kind": "property",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Software Version; printed p.16, PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "b9a530491f3ca2ae3cb6337bcb73017329273f618e2ecaba17e2d67cb99b97de",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-108",
+      "proposed_label": "Version of software running on the component",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Reports the version of the software running on the component.",
+      "mapping_boundary": "Not a hardware revision, the version of inaccessible configuration parameters, an ISA specification version, an update command or a complete inventory of installed software packages.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03B-109",
+      "entry_id": "ISA-DMS-109",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Specification Version",
+      "element_kind": "property",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Specification Version; printed p.17, PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "8ea0de600bfca8805327c19ac439648e1d02ffe3e68d5b0fd9358826e3b1a7a6",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-109",
+      "proposed_label": "Reported ISA specification version of the component",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Reports the ISA specification version with which the component complies.",
+      "mapping_boundary": "A declared version string is not independent evidence of conformance testing or certification. It is not the version of the component software, hardware or an OGC/CSAPI specification.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03B-110",
+      "entry_id": "ISA-DMS-110",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Support",
+      "element_kind": "property",
+      "native_type": "POC",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Support; printed p.17, PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "67834ae4656997ba76c8b4154b2ac91e8ff580af7de72a9b0d67efd7adaf6ab9",
+      "review_pass": "ISA-03B",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-110",
+      "proposed_label": "Non-maintenance support contact information",
+      "navigation_group": "Identity and contacts",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Identifies the individual or group to contact when non-maintenance support is needed, using a POC list.",
+      "mapping_boundary": "Distinct from Maintenance, Manufacturer POC, Owner and Program of Record. It does not state service entitlement, support availability, contractual terms or an actual support request.",
+      "dependency_terms": [
+        "POC",
+        "String",
+        "Resource Descriptor",
+        "Resource Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    }
+  ],
+  "supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65,
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03B",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "DMS 6.0r12 §4.1 String; printed p.50; PDF pp.65–65",
+      "inspected_content_summary": "Source atomic textual value. Identifier-specific grammar comes from UCI requirements, not a generic String assumption.",
+      "source_span_sha256": "e3ec03d7cee1df1754f3914e3fd9c3b3097d198af189d4d6aa647b1ccdd464b7",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+    },
+    {
+      "entry_id": "ISA-DMS-429",
+      "native_term": "POC",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 106,
+      "pdf_pages": [
+        121,
+        121
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03B",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 POC; printed p.106; PDF pp.121–121",
+      "inspected_content_summary": "Accepted extension requiring organization and optional name, phone, email and details. Additional details use Resource Descriptor with text/vcard media identification; source requires custom-type construction.",
+      "source_span_sha256": "be7f28fdf926219011e553aa7e0666f2a9bdae53de87681e922415c2410117ee",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+    },
+    {
+      "entry_id": "ISA-DMS-439",
+      "native_term": "Resource Descriptor",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 110,
+      "pdf_pages": [
+        125,
+        126
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03B",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Resource Descriptor; printed p.110; PDF pp.125–126",
+      "inspected_content_summary": "Required resource type and URL, optional title/created/lastmod, and metadata name-value pairs. Inspected here for POC details and the transfer-versus-resource distinction.",
+      "source_span_sha256": "5dccce69e7e8371219d1c687b9bef57f06fd0d27f428fdb0e69279907987a853",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+    },
+    {
+      "entry_id": "ISA-DMS-440",
+      "native_term": "Resource Type",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 111,
+      "pdf_pages": [
+        126,
+        126
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03B",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Resource Type; printed p.111; PDF pp.126–126",
+      "inspected_content_summary": "Required primary/secondary media labels and a list of parameter name-value pairs; used as text/vcard in POC details.",
+      "source_span_sha256": "8125f392efdf1d61c3a112859c56b2aaf2a2e44012f2cef245fe2318af0848f0",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+    }
+  ],
+  "sourceInspection": {
+    "originalPropertyPages": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "printedPages": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "method": "Original indexed DMS text, body extension marks and complete six definitions; original POC page 121 image and text inspected. Same-edition String and Resource Descriptor/Resource Type evidence reused from ISA-02.",
+    "sourceStanding": "Five accepted extensions and one core property; accepted extension does not mean already part of the core standard.",
+    "POC": {
+      "standing": "ACCEPTED_EXTENSION",
+      "sourceLocator": "DMS §8.3 printed p.106 / PDF p.121",
+      "construction": "Source says non-standard composite, constructed using Custom Types.",
+      "fields": [
+        {
+          "name": "organization",
+          "type": "String",
+          "cardinality": "1",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "0–1",
+          "required": false
+        },
+        {
+          "name": "phone",
+          "type": "String",
+          "cardinality": "0–1",
+          "required": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "cardinality": "0–1",
+          "required": false
+        },
+        {
+          "name": "details",
+          "type": "Resource Descriptor",
+          "cardinality": "0–1",
+          "required": false
+        }
+      ],
+      "details": "Optional accessible details follow the source vCard 3.0 / text-vcard description; not contact data embedded by inference.",
+      "scope": "No extrapolation to identity assurance, legal ownership, role authorization or procurement semantics."
+    }
+  },
+  "preservation": {
+    "newCandidateRows": 6,
+    "olderInformationRowsPreserved": 80,
+    "nonISACellsChanged": 0,
+    "caseValuesChanged": 0,
+    "existingQuestionsUnchanged": [
+      "ISA-Q001",
+      "ISA-Q002"
+    ],
+    "newSupportingTypeCount": 0,
+    "uniqueSupportingTypesRemain": 47,
+    "ISA03CStarted": false
+  },
+  "next": "ISA-03C"
+}

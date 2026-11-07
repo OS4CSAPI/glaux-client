@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-03A COMPLETE and integrated. Next owner “proceed”: ISA-03B ONLY.** ISA-01/02 remain complete; the parent ISA-03 work package continues through small named batches, not one large prompt.
+**CURRENT — ISA-03B COMPLETE. Next owner “proceed”: ISA-03C ONLY.** Six supported ownership/version/support properties are integrated;59 primary entries reviewed and86 information/review rows. All prior non-ISA/equipment values remain.
 
-[Current workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03A_07NOV2026.xlsx) · [Full comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03A_07NOV2026.md) · [Exact four decisions](../Donor_DIM_Crosswalk/ISA03A_Status_Name_State_Evidence_07NOV2026.json) · [PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [Publication verification](../Donor_DIM_Crosswalk/ISA03A_Publication_Record_07NOV2026.json).
+[Current workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03B_07NOV2026.xlsx) · [Full comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03B_07NOV2026.md) · [Six source decisions](../Donor_DIM_Crosswalk/ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json) · [PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [Publication](../Donor_DIM_Crosswalk/ISA03B_Publication_Record_07NOV2026.json).
 
-Four saved decisions are integrated; 53 primary entries reviewed and 80 information/review rows. All older donor/case values are preserved. This banner and the active progress/PITON supersede older next-task instructions below.
+ISA-01, ISA-02 and child batches ISA-03A/B are complete. Parent ISA-03 continues with32 properties remaining. This handoff supersedes older next-task wording below; no source review or publication restart.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 
