@@ -66,3 +66,7 @@ The native concepts/clauses above have been reviewed directly in **OGC 20-082r4*
 **Preserved:** 13 owner-approved columns, six section bands, 22 proposed DIM rows, nine case-only holds, 73 case source records, 4 SWE Common, 10 SensorML and 12 CSAPI source-checked donor cells, and 26 prior-only other donor cells. The source workbook from Step11 remains an untouched historical baseline. No CSAPI Profile, DIM UML, Glaux runtime, server, Cloudflare deployment or real Observation execution was changed.
 
 **NEXT separate owner's ‘proceed’ executes Step13 only**, per controlling plan. Step13 is not performed or preauthorized by Step12.
+
+## Step12 independent final workbook test
+
+The actual v0.6 workbook has Git object SHA `15dbdde7bde030cb110e37ff34665d8ecc570dbc`. [GitHub Actions run 42334124885](https://github.com/OS4CSAPI/glaux-client/actions/runs/42334124885) finished **SUCCESS** on the exact Step12 workbook commit and checked the 11 worksheets, 13 grouped columns, six full-width divider rows, source/evidence/CSV/JSON parity, all 57 unchanged donor row identities, 73 case statements and the five revised OMS clauses. This verifies spreadsheet and source-record consistency, **not** original-source implementation/encoding conformance or adoption of any DIM/Profile concepts. The historical source does not provide original Bennett `resultTime`.
