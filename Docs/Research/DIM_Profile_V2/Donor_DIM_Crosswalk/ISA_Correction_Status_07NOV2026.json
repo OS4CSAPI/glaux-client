@@ -9,20 +9,29 @@
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 2,
-  "progressMeaning": "ISA-01 and ISA-02 are complete. The former twelve-prompt estimate is withdrawn; the twelve labels are work packages executed through smaller child batches. No fixed total prompt count is asserted.",
+  "progressMeaning": "ISA-01 and ISA-02 remain complete. ISA-03A has four completed source reviews committed separately; workbook/register integration is the next specific action. The twelve labels are work packages, not a fixed prompt count.",
   "currentIteration": "ISA-02",
   "currentIterationStatus": "COMPLETE",
-  "nextOnOwnerProceed": "ISA-03A",
-  "nextAction": "Review Maximum Status Interval, Minimum Status Interval, Name and Operating State only; publish the supported four-entry result, verify GitHub, then stop.",
+  "currentBatch": "ISA-03A",
+  "currentBatchSourceReviewStatus": "COMPLETE",
+  "currentBatchDeliveryStatus": "SOURCE_EVIDENCE_COMMITTED_WORKBOOK_INTEGRATION_PENDING",
+  "nextOnOwnerProceed": "ISA-03A-PUBLISH",
+  "nextAction": "Integrate the four saved ISA-03A source decisions into the current review workbook, readable view and coverage register, verify the actual GitHub publication, then stop. Do not repeat source review or start ISA-03B.",
   "nextSourceIDs": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"],
+  "nextSourceIDsMeaning": "These are completed source decisions to integrate, not new research assignments.",
   "repositoryPublication": {
-    "state": "PUBLISHED_TO_GITHUB",
+    "state": "CURRENT_WORKBOOK_ISA02_PUBLISHED_ISA03A_EVIDENCE_PUBLISHED_INTEGRATION_PENDING",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-02 COMPLETE",
-    "next_pass": "ISA-03A",
+    "technical_state": "ISA-02 integrated checkpoint COMPLETE; ISA-03A four-entry source review COMPLETE",
+    "next_pass": "ISA-03A-PUBLISH",
     "publication_record": "ISA02_Publication_Record_07NOV2026.json",
-    "technical_checkpoint_commit": "34963db95c38c49c19683a80d97c146c7638fd60"
+    "technical_checkpoint_commit": "34963db95c38c49c19683a80d97c146c7638fd60",
+    "currentBatchEvidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+    "currentBatchReport": "ISA03A_Status_Name_State_07NOV2026.md",
+    "sourceEvidenceCommit": "e1e0272ff6416484a095a1c6ea855e361e13afd4",
+    "readableDeltaCommit": "a5519ad371ad1d60e20e84c7c761dc9db9a4a0a7",
+    "specificAccessIssue": "Current workbook known in GitHub, but the attempted runtime/public raw-file download routes did not supply its binary to this workspace. Text read/write actions work. This is not source loss or a universal GitHub-access limitation."
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -34,7 +43,7 @@
   },
   "coverage": {
     "sourceNamedEntryDenominator": 480,
-    "definition": "Named DMS entries only, not nested fields or established mappings.",
+    "definition": "Named DMS catalogue entries, not nested fields or established mappings. This coverage block describes the last integrated register; pendingIntegration describes the separately committed four-entry delta.",
     "inventoryLocated": 480,
     "semanticEntriesReviewedInCorrection": 49,
     "sourceBlocksAssigned": 279,
@@ -50,11 +59,26 @@
     "priorRecordsTotal": 25,
     "newCandidateRows": 45
   },
+  "pendingIntegration": {
+    "batch": "ISA-03A",
+    "evidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+    "assignedPrimaryEntries": 4,
+    "completedSourceReviews": 4,
+    "supportedOutcomes": 4,
+    "newQuestions": 0,
+    "candidateRowIDs": ["ISA-C-078", "ISA-C-079", "ISA-C-081", "ISA-C-082"],
+    "sourceReviewsIncludingThisSavedBatch": 53,
+    "candidateRowsWrittenIntoCurrentWorkbook": 0,
+    "supportingTypeDefinitionsInspectedOrReused": ["Secs", "String", "General State", "General Code"],
+    "supportingDefinitionsCountingRule": "Do not add four to the prior unique-type count without checking prior dependency IDs; do not complete their later catalogue passes.",
+    "existingNonISACaseOrIdentityCellsChanged": 0,
+    "sourceReviewMustNotBeRepeatedForPublication": true
+  },
   "iterationRecordsMeaning": "Existing ISA labels retained as work-package records, not one-prompt workload promises.",
   "iterationRecords": [
     {"id": "ISA-01", "state": "COMPLETE"},
     {"id": "ISA-02", "state": "COMPLETE"},
-    {"id": "ISA-03", "state": "SPLIT_INTO_CHILD_BATCHES_NOT_STARTED", "nextChild": "ISA-03A"},
+    {"id": "ISA-03", "state": "IN_PROGRESS_CHILD_BATCHES", "nextChildAction": "ISA-03A-PUBLISH"},
     {"id": "ISA-04", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
     {"id": "ISA-05", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
     {"id": "ISA-06", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
@@ -79,7 +103,7 @@
     "nextBatchNaming": "Name the next exact subset in ordinary closeout; avoid a separate planning turn when the inventory already supports the split."
   },
   "propertyBatches": [
-    {"id": "ISA-03A", "state": "NEXT", "count": 4, "sourceIds": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"]},
+    {"id": "ISA-03A", "state": "SOURCE_REVIEW_COMPLETE_EVIDENCE_COMMITTED_WORKBOOK_INTEGRATION_PENDING", "count": 4, "sourceIds": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"]},
     {"id": "ISA-03B", "state": "NOT_STARTED", "count": 6, "sourceIds": ["ISA-DMS-084", "ISA-DMS-085", "ISA-DMS-092", "ISA-DMS-108", "ISA-DMS-109", "ISA-DMS-110"]},
     {"id": "ISA-03C", "state": "NOT_STARTED", "count": 4, "sourceIds": ["ISA-DMS-083", "ISA-DMS-086", "ISA-DMS-088", "ISA-DMS-089"]},
     {"id": "ISA-03D", "state": "NOT_STARTED", "count": 2, "sourceIds": ["ISA-DMS-099", "ISA-DMS-118"]},
@@ -91,28 +115,30 @@
     {"id": "ISA-03J", "state": "NOT_STARTED", "count": 5, "sourceIds": ["ISA-DMS-102", "ISA-DMS-103", "ISA-DMS-106", "ISA-DMS-111", "ISA-DMS-112"]}
   ],
   "batchPartitionCheck": {
-    "remainingProperties": 42,
+    "remainingPropertiesAtSizingCheckpoint": 42,
     "assignedExactlyOnce": 42,
     "duplicates": 0,
     "unassigned": 0,
     "previouslyCompletedExcluded": ["ISA-DMS-080", "ISA-DMS-105"],
-    "method": "Compare child ID union with all original ISA-03 inventory members; no source semantics changed by scheduling."
+    "method": "Child IDs partition the parent ISA-03 inventory; ISA-03A source review is now saved separately and must not be counted twice at integration."
   },
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
-  "registerOwnerPassMeaning": "Inventory owner_pass retains the parent package. propertyBatches in this progress file supplies the smaller prompt-sized assignments without altering source evidence.",
+  "registerOwnerPassMeaning": "Inventory owner_pass retains the parent package. propertyBatches supplies prompt-sized assignments; pendingIntegration identifies reviewed evidence not yet merged into the current register.",
   "currentReview": "ISA_Correction_Review_ISA02_07NOV2026.md",
   "currentWorkbook": "ISA_Correction_Review_ISA02_07NOV2026.xlsx",
   "currentEvidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
-  "publicationRule": "GitHub is authoritative. Verify actual committed evidence, workbook and current PITON; sandbox copies are supplementary. Publish saved evidence early when a separate binary-publication repair is needed.",
-  "completedTaskRule": "ISA-01 census and ISA-02 source block remain complete. Exact child batches have their own completion status; a completed child does not automatically complete its parent. Level and Link Loss remain record-local questions.",
+  "currentBatchEvidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+  "currentBatchReport": "ISA03A_Status_Name_State_07NOV2026.md",
+  "publicationRule": "GitHub is authoritative. Verify actual committed evidence, workbook and current PITON; sandbox copies are supplementary. Saved source evidence does not constitute an updated workbook.",
+  "completedTaskRule": "ISA-01 and ISA-02 stay complete. ISA-03A's four source reviews stay complete while their workbook/register integration is pending. Do not repeat semantic research to repair publication, or begin ISA-03B before closing this action.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
-    "state": "SIZING_AMENDMENT_RECORDED",
-    "task": "Replace oversized one-prompt packages with bounded child batches and include verification/publication in workload sizing",
-    "counts_as_new_technical_iteration": false,
-    "newSemanticReviews": 0,
+    "state": "ISA03A_SOURCE_EVIDENCE_AND_HANDOFF_PUBLISHED",
+    "task": "Record four supported source outcomes and isolate workbook/register integration as the next sole action",
+    "counts_as_completed_integrated_batch": false,
+    "newSemanticReviews": 4,
     "workbookChanged": false
   }
 }
