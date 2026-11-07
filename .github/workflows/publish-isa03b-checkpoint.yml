@@ -1,0 +1,74 @@
+name: Publish and independently verify ISA-03B checkpoint
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths:
+      - scripts/publish_isa03b_checkpoint.py
+      - .github/workflows/publish-isa03b-checkpoint.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: isa03b-checkpoint-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    name: Publish six reviewed ISA-03B properties and exact workbook
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    outputs:
+      checkpoint: ${{ steps.commit.outputs.checkpoint }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Fetch exact prior checkpoint for preservation checks
+        run: git fetch --no-tags --depth=1 origin d83ae4877d4857122ed849341da2620a58f781bb
+      - name: Restore exact reviewed exports and check original payload hashes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/.isa03b_transfer/part02.txt')
+          b=p.read_bytes()
+          bad=b'guLdTOQ6FSgSgS0FqFw'
+          good=b'guLdTOQ6FSgS0FqFw'
+          if bad in b:
+              assert b.count(bad)==1, 'Unexpected transfer correction count'
+              p.write_bytes(b.replace(bad,good))
+          # The publisher still requires the original complete payload hash.
+          PY
+          python3 scripts/publish_isa03b_checkpoint.py
+      - name: Commit only authorized ISA research documents
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk
+          git add Docs/Research/DIM_Profile_V2/README.md Docs/Research/DIM_Profile_V2/Deliverables/README.md
+          git diff --cached --check
+          git commit -m 'research(dim-v2): complete ISA-03B six-property review and verified ISA-03C handoff'
+          git push origin HEAD:research/dim-profile-v2
+          echo "checkpoint=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  verify-published:
+    name: Read-only verification of exact published ISA-03B commit
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.checkpoint }}
+          persist-credentials: false
+      - name: Fetch exact original input checkpoint
+        run: git fetch --no-tags --depth=1 origin d83ae4877d4857122ed849341da2620a58f781bb
+      - name: Verify committed source outcomes, workbook, coverage and preserved values
+        run: python3 scripts/publish_isa03b_checkpoint.py --verify
+      - name: Record verified handoff
+        run: |
+          echo "Verified ISA-03B checkpoint: ${{ needs.publish.outputs.checkpoint }}"
+          echo 'ISA-03B COMPLETE. Next owner proceed: ISA-03C only. No ISA-03C source review executed.'
