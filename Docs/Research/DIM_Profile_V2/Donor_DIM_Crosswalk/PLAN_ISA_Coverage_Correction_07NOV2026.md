@@ -1,10 +1,12 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE: all91 source outcomes integrated and published. Next source group: ISA-04-ATMOSPHERIC only.**
+**CURRENT — Property catalogue COMPLETE. Atmospheric observables COMPLETE (8/39). Next: ISA-04-SPATIAL — seven named spatial observables only.**
 
 [Current workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Readable comparison](ISA_Correction_Review_07NOV2026.md) · [Publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-The property source passes and planned workbook checkpoint are finished. Existing source decisions, including four local questions, remain unchanged. The next group is **Atmospheric Cloud Coverage, Atmospheric Dew Point, Atmospheric Humidity, Atmospheric Precipitation, Atmospheric Pressure, Atmospheric Temperature, Atmospheric Visibility, Atmospheric Wind** (ISA-DMS-123–130), assigned from the existing observable inventory and not yet reviewed. Review that group and its necessary dependencies, publish cumulative text/evidence directly, then stop. No property rereview, other donor work or new per-pass workbook release.
+The91-property review and workbook checkpoint remain complete. **ISA-04-ATMOSPHERIC is now complete:** eight original observable definitions, four core and four Accepted extensions;99 source entries reviewed in total,95 supported and four unchanged questions. [Observable evidence](ISA_Observable_Catalogue_Evidence_07NOV2026.json) and the current readable table have the new findings. The Excel workbook remains the accurately labeled property checkpoint (91 entries/118 rows); the newer text has126 information rows.
+
+**Next group: Area, Bearing, Distance, Point of Impact, Point of Origin, Position and Velocity** (ISA-DMS-122,133,141,149,150,151,159). Review those seven with required dependencies, persist the same cumulative evidence/table directly in GitHub, and stop. No property rereview, unrelated donor work or per-source-group workbook release. All remaining observable entries stay assigned in the inventory; this header is not a claim they have been reviewed.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.

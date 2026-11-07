@@ -5,43 +5,42 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 9,
+  "technicalIterationsCompleted": 10,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 3,
   "completedChildBatches": 4,
-  "progressMeaning": "Property catalogue COMPLETE: all91 properties reviewed and integrated into the workbook and readable table.87 supported outcomes,four record-local questions. ISA-01,ISA-02 and ISA-03 complete. Next source group: eight atmospheric observables.",
-  "currentIteration": "ISA-PROPERTIES-PUBLISH",
+  "progressMeaning": "Property catalogue remains COMPLETE:91 source reviews and integrated workbook. Atmospheric observable pass COMPLETE:8/39 observables reviewed. Current text totals99 reviewed/95 supported/four unchanged questions/126 information rows; workbook is the91-property checkpoint.",
+  "currentIteration": "ISA-04-ATMOSPHERIC",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-PROPERTIES-PUBLISH",
-  "currentBatchSourceReviewStatus": "SAVED_91_OUTCOMES_RECONCILED_NO_NEW_SOURCE_REVIEW",
-  "currentBatchDeliveryStatus": "COMPLETE_WORKBOOK_AND_GITHUB_VIEW_SYNCHRONIZED",
-  "nextOnOwnerProceed": "ISA-04-ATMOSPHERIC",
-  "nextAction": "Review only the eight atmospheric observables in nextSourceIDs. Use original definitions and dependencies; commit cumulative evidence and readable comparison. No full workbook release per source group.",
+  "currentBatch": "ISA-04-ATMOSPHERIC",
+  "currentBatchSourceReviewStatus": "COMPLETE",
+  "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
+  "nextOnOwnerProceed": "ISA-04-SPATIAL",
+  "nextAction": "Review Area, Bearing, Distance, Point of Impact, Point of Origin, Position and Velocity observables only; distinguish observation geography/motion from component properties. Commit cumulative evidence, coverage and readable view using the existing publication route; no Excel refresh in that source pass.",
   "nextSourceIDs": [
-    "ISA-DMS-123",
-    "ISA-DMS-124",
-    "ISA-DMS-125",
-    "ISA-DMS-126",
-    "ISA-DMS-127",
-    "ISA-DMS-128",
-    "ISA-DMS-129",
-    "ISA-DMS-130"
+    "ISA-DMS-122",
+    "ISA-DMS-133",
+    "ISA-DMS-141",
+    "ISA-DMS-149",
+    "ISA-DMS-150",
+    "ISA-DMS-151",
+    "ISA-DMS-159"
   ],
-  "nextSourceIDsMeaning": "Eight unreviewed atmospheric observables, assigned from the existing inventory. None was semantically reviewed at the property-publication checkpoint.",
+  "nextSourceIDsMeaning": "Seven already-inventoried spatial-observable assignments; names only, no semantic review performed here.",
   "repositoryPublication": {
-    "state": "WORKBOOK_EVIDENCE_AND_READABLE_VIEW_SYNCHRONIZED",
+    "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA PROPERTY CATALOGUE COMPLETE",
-    "next_pass": "ISA-04-ATMOSPHERIC",
+    "technical_state": "ISA-04-ATMOSPHERIC COMPLETE",
+    "next_pass": "ISA-04-SPATIAL",
     "publication_record": "ISA_Properties_Publication_Record_07NOV2026.json",
-    "currentBatchEvidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+    "currentBatchEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
     "currentBatchReport": null,
-    "base_input_commit": "a339601901ef7c53b3c140585c6410e6b6c078e8",
-    "lastIntegratedCheckpoint": "See ISA_Properties_Publication_Record_07NOV2026.json and its exact publication workflow commit.",
+    "base_input_commit": "b3170cf439b80205ba0896c1e725d31742f77b6e",
+    "lastIntegratedCheckpoint": "6d59a671a2cd0944be4853a67c074cd52283f9a0",
     "current_view": "ISA_Correction_Review_07NOV2026.md",
-    "publication_record_scope": "Consolidated91-property workbook and current readable view; historical ISA-03D remains preserved."
+    "publication_record_scope": "Property publication record verifies the preserved91-property Excel checkpoint; current atmospheric text is verified separately."
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -55,20 +54,20 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 91,
+    "semanticEntriesReviewedInCorrection": 99,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 87,
+    "sourceSupportedPrimaryEntries": 95,
     "specificSourceDefinitionQuestions": 4,
-    "supportingDefinitionsRead": 62,
+    "supportingDefinitionsRead": 70,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 87,
-    "informationReviewRows": 118
+    "newCandidateRows": 95,
+    "informationReviewRows": 126
   },
   "propertyCatalogue": {
     "total": 91,
@@ -310,8 +309,10 @@
     },
     {
       "id": "ISA-04",
-      "state": "NOT_STARTED_NEXT_ATMOSPHERIC_SOURCE_GROUP",
-      "nextSourceGroup": "ISA-04-ATMOSPHERIC"
+      "state": "IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION",
+      "nextSourceGroup": "ISA-04-SPATIAL",
+      "reviewedObservables": 8,
+      "totalObservables": 39
     },
     {
       "id": "ISA-05",
@@ -374,8 +375,8 @@
   "registerOwnerPassMeaning": "Parent owner labels remain. remainingPropertyPasses is the active queue; propertyBatches preserves historical assignments only.",
   "currentReview": "ISA_Correction_Review_07NOV2026.md",
   "currentWorkbook": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
-  "currentEvidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
-  "currentBatchEvidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+  "currentEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+  "currentBatchEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
   "currentBatchReport": null,
   "workbookSnapshot": {
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -383,44 +384,85 @@
     "sha256": "c54fd1c900e8ecbbc3c65a1a526ca2fd65b81313e9f5dd3a17c6fe1f3b2dac3f",
     "informationRows": 118,
     "primaryReviewed": 91,
-    "currentlyMatchesReadableView": true,
-    "nextRefresh": "Next observable-catalogue/substantial-section checkpoint",
-    "label": "Current integrated91-property workbook:118 information/review rows; same research state as the readable GitHub comparison."
+    "currentlyMatchesReadableView": false,
+    "nextRefresh": "Observable-catalogue/substantial-section workbook checkpoint",
+    "label": "Completed91-property workbook snapshot:118 information rows. Current GitHub text additionally contains eight reviewed atmospheric observables:99 reviewed source entries/126 rows."
   },
   "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
-  "completedTaskRule": "All91 property source reviews and consolidated workbook integration complete. Four interpretation questions remain record-local. No property review is reopened.",
+  "completedTaskRule": "ISA property catalogue source review, workbook integration and GitHub delivery remain COMPLETE. Atmospheric observable pass source review and GitHub text publication are COMPLETE. Four existing interpretation questions stay local. Excel snapshot cadence is planned; no completed work is repeated.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
     "state": "COMPLETE",
-    "task": "Consolidated91-property workbook integration and publication",
-    "counts_as_new_source_review": false
+    "task": "Eight atmospheric observables with cumulative GitHub evidence/table and next-group routing",
+    "counts_as_new_technical_iteration": true
   },
-  "completedCatalogueSourcePasses": 3,
+  "completedCatalogueSourcePasses": 4,
   "remainingPropertyCount": 0,
   "nextObservableSourceGroup": {
-    "id": "ISA-04-ATMOSPHERIC",
+    "id": "ISA-04-SPATIAL",
     "state": "NEXT_NOT_STARTED",
     "sourceIds": [
-      "ISA-DMS-123",
-      "ISA-DMS-124",
-      "ISA-DMS-125",
-      "ISA-DMS-126",
-      "ISA-DMS-127",
-      "ISA-DMS-128",
-      "ISA-DMS-129",
-      "ISA-DMS-130"
+      "ISA-DMS-122",
+      "ISA-DMS-133",
+      "ISA-DMS-141",
+      "ISA-DMS-149",
+      "ISA-DMS-150",
+      "ISA-DMS-151",
+      "ISA-DMS-159"
     ],
     "nativeNames": [
-      "Atmospheric Cloud Coverage",
-      "Atmospheric Dew Point",
-      "Atmospheric Humidity",
-      "Atmospheric Precipitation",
-      "Atmospheric Pressure",
-      "Atmospheric Temperature",
-      "Atmospheric Visibility",
-      "Atmospheric Wind"
+      "Area",
+      "Bearing",
+      "Distance",
+      "Point of Impact",
+      "Point of Origin",
+      "Position",
+      "Velocity"
     ],
     "sourceReviewPerformedDuringThisCheckpoint": false
   },
-  "publicationCheckpointsCompletedAfterRegrouping": 1
+  "publicationCheckpointsCompletedAfterRegrouping": 1,
+  "observableCatalogue": {
+    "total": 39,
+    "reviewed": 8,
+    "sourceSupportedOutcomes": 8,
+    "preciseInterpretationQuestions": 0,
+    "remaining": 31,
+    "completed_source_groups": [
+      "ISA-04-ATMOSPHERIC"
+    ],
+    "state": "SOURCE_REVIEW_IN_PROGRESS",
+    "workbookPublicationState": "SCHEDULED_AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT"
+  },
+  "observableSourceGroups": [
+    {
+      "id": "ISA-04-ATMOSPHERIC",
+      "state": "COMPLETE",
+      "count": 8,
+      "sourceIds": [
+        "ISA-DMS-123",
+        "ISA-DMS-124",
+        "ISA-DMS-125",
+        "ISA-DMS-126",
+        "ISA-DMS-127",
+        "ISA-DMS-128",
+        "ISA-DMS-129",
+        "ISA-DMS-130"
+      ]
+    },
+    {
+      "id": "ISA-04-SPATIAL",
+      "state": "NEXT_NOT_STARTED",
+      "count": 7,
+      "sourceIds": [
+        "ISA-DMS-122",
+        "ISA-DMS-133",
+        "ISA-DMS-141",
+        "ISA-DMS-149",
+        "ISA-DMS-150",
+        "ISA-DMS-151",
+        "ISA-DMS-159"
+      ]
+    }
+  ]
 }
