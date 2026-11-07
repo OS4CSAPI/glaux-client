@@ -1,0 +1,327 @@
+{
+  "date": "2026-11-07",
+  "workstream": "Step15 ISA 6.0 original-source donor review",
+  "sourceGrade": "ISA_6_0_2023_DISTRIBUTION_A_ORIGINAL_PROJECT_PDF_TEXT_CHECKED",
+  "documents": [
+    {
+      "id": "SDD",
+      "filename": "ISA_Software_Design_Document-6.0r5.pdf",
+      "title": "ISA Software Design Document",
+      "edition": "Document 6.0 revision 5",
+      "date": "2023-10-31"
+    },
+    {
+      "id": "DMS",
+      "filename": "ISA_Data_Model_Specification-6.0r12.pdf",
+      "title": "ISA Data Model Specification",
+      "edition": "Release 6.0 document revision 12",
+      "date": "2023-10-31"
+    },
+    {
+      "id": "CMPT",
+      "filename": "ISA_Component_Requirements-6.0r4.pdf",
+      "title": "ISA Component Requirements",
+      "edition": "Document 6.0 revision 4",
+      "date": "2023-10-31"
+    },
+    {
+      "id": "CNTR",
+      "filename": "ISA_Controller_Requirements-6.0r4.pdf",
+      "title": "ISA Controller Requirements",
+      "edition": "Document 6.0 revision 4",
+      "date": "2023-10-31"
+    },
+    {
+      "id": "ICD",
+      "filename": "ISA_Interface_Control_Document-6.0r5(1).pdf",
+      "title": "ISA Interface Control Document",
+      "edition": "Document 6.0 revision 5",
+      "date": "2023-10-31"
+    }
+  ],
+  "distribution": "Distribution Statement A, approved for public release and unlimited distribution",
+  "sourceAccess": "Original PDFs found and reviewed in Project files. Raw PDF materialization unavailable; do not claim public GitHub contains the originals.",
+  "sideContext": [
+    "https://www.army.mil/article/263782/armys_interoperable_sensors_solution_keeps_military_modernization_efforts_on_track",
+    "https://www.dvidshub.net/news/printable/569918"
+  ],
+  "mappings": [
+    {
+      "id": "ISA-M01",
+      "rowKey": "S06-R004",
+      "nativeTerm": "UCI (Universal Component Identifier)",
+      "relation": "PARTIAL",
+      "sourceLocator": "DMS §4.0 UCI printed p.55, PDF p.70; ICD §6.1 printed p.19, PDF p.27; Component Requirements [CMPT-M-0001], PDF p.14",
+      "originalMeaning": "Network-scoped component identifier; virtual identifiers may refer back to a CIC",
+      "nonEquivalenceWarning": "Does not automatically identify a CSAPI System URI, physical station, individual probe serial or full sensing arrangement",
+      "documentIds": [
+        "DMS",
+        "ICD",
+        "CMPT"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M02",
+      "rowKey": "S06-R005",
+      "nativeTerm": "ISA composition (via CIC)",
+      "relation": "PARTIAL",
+      "sourceLocator": "Software Design Document §4.2.2, printed pp.10–12, PDF pp.18–20",
+      "originalMeaning": "Composition of members exposed through one Composition Interface Component",
+      "nonEquivalenceWarning": "Capability aggregation is not one physical housing or complete physical bill of materials",
+      "documentIds": [
+        "SDD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M03",
+      "rowKey": "S06-R006",
+      "nativeTerm": "ISA component / ISA Controller",
+      "relation": "PARTIAL",
+      "sourceLocator": "Software Design Document §4.2.1, printed pp.9–10, PDF pp.17–18",
+      "originalMeaning": "ISA components communicate through network-side controller services",
+      "nonEquivalenceWarning": "Network participant is not necessarily the physical sensing device or actual Observation performer",
+      "documentIds": [
+        "SDD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M04",
+      "rowKey": "S06-R007",
+      "nativeTerm": "composition member (visible / opaque)",
+      "relation": "RELATED",
+      "sourceLocator": "Software Design Document §4.2.2, printed pp.10–11, PDF pp.18–19",
+      "originalMeaning": "CIC-mediated members may be visible or opaque to an ISA network",
+      "nonEquivalenceWarning": "Composition member may be software or non-ISA; visibility does not establish physical containment",
+      "documentIds": [
+        "SDD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M05",
+      "rowKey": "S06-R008",
+      "nativeTerm": "CIC-to-member ISA/native interface",
+      "relation": "RELATED",
+      "sourceLocator": "Software Design Document §4.2.2, printed pp.10–11, PDF pp.18–19",
+      "originalMeaning": "CIC communicates with ISA and non-ISA members across ISA or their native interfaces",
+      "nonEquivalenceWarning": "Does not prove a physical cable, externality, installed topology or exact connection scheme",
+      "documentIds": [
+        "SDD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M06",
+      "rowKey": "S06-R012",
+      "nativeTerm": "Observable Declaration (CCD.observables)",
+      "relation": "PARTIAL",
+      "sourceLocator": "Data Model Specification §7.3 Observable Declaration, printed p.72, PDF p.87; §6.2 Config.ccd, printed p.58, PDF p.73",
+      "originalMeaning": "Declares typed observables that a component can publish in Event messages",
+      "nonEquivalenceWarning": "Declared field is not a performed reading, physical channel or CSAPI DataStream result schema",
+      "documentIds": [
+        "DMS"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M07",
+      "rowKey": "S06-R015",
+      "nativeTerm": "Event message (reported observables)",
+      "relation": "RELATED",
+      "sourceLocator": "Data Model Specification §6.2 Event, printed pp.58–59, PDF pp.73–74; ICD §6.6, printed pp.22–23, PDF pp.30–31",
+      "originalMeaning": "Reports observed information with event identifier, occurrence timestamp and observables",
+      "nonEquivalenceWarning": "The published Event message is not automatically identical to an underlying OMS/CSAPI observing act or its original resultTime",
+      "documentIds": [
+        "DMS",
+        "ICD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M08",
+      "rowKey": "S06-R016",
+      "nativeTerm": "Capability Declaration (Config.ccd)",
+      "relation": "RELATED",
+      "sourceLocator": "Data Model Specification §7.3 Capability Declaration, printed p.70, PDF p.85; §6.2 Config.ccd, printed p.58, PDF p.73; ICD §6.4, printed p.20, PDF p.28",
+      "originalMeaning": "Declares supported properties, observables, commands and custom types",
+      "nonEquivalenceWarning": "Not a complete operating-mode register, the currently selected setting or proof of execution",
+      "documentIds": [
+        "DMS",
+        "ICD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M09",
+      "rowKey": "S06-R018",
+      "nativeTerm": "Status.properties (current component values)",
+      "relation": "RELATED",
+      "sourceLocator": "Data Model Specification §6.2 Status, printed p.61, PDF p.76; ICD §6.5, printed pp.21–22, PDF pp.29–30",
+      "originalMeaning": "Reports component property values and heartbeat-related status",
+      "nonEquivalenceWarning": "Only a specifically declared mode property could convey a mode; Status does not itself establish a mode or independent health truth",
+      "documentIds": [
+        "DMS",
+        "ICD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M10",
+      "rowKey": "S06-R019",
+      "nativeTerm": "Request message (command invocation)",
+      "relation": "PARTIAL",
+      "sourceLocator": "Data Model Specification §6.2 Request, printed pp.59–60, PDF pp.74–75; ICD §6.7, printed pp.23–25, PDF pp.31–33",
+      "originalMeaning": "Specifies a command request, name, parameters and optional timing",
+      "nonEquivalenceWarning": "A message type or declared command does not establish a particular issued/authorized/executed real-world action",
+      "documentIds": [
+        "DMS",
+        "ICD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    },
+    {
+      "id": "ISA-M11",
+      "rowKey": "S06-R020",
+      "nativeTerm": "Response message (command disposition)",
+      "relation": "PARTIAL",
+      "sourceLocator": "Data Model Specification §6.2 Response, printed p.60, PDF p.75; ICD §6.7.1 Table 23, printed pp.24–25, PDF pp.32–33",
+      "originalMeaning": "Reports queued, in-progress or final command execution status correlated to a request",
+      "nonEquivalenceWarning": "Response Success is a reported disposition, not independently observed physical effect",
+      "documentIds": [
+        "DMS",
+        "ICD"
+      ],
+      "disposition": "PROVISIONAL_ORIGINAL_SOURCE_CHECKED_FOR_STEP16_OWNER_REVIEW"
+    }
+  ],
+  "holds": [
+    {
+      "id": "ISA-H01",
+      "rowOrHold": "S06-R007",
+      "nativeTerm": "Visible versus opaque composition member",
+      "sourceLocator": "SDD §4.2.2 printed p.11, PDF p.19",
+      "reason": "Network-facing exposure does not prove the presence/absence of hidden physical hardware",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H02",
+      "rowOrHold": "S06-R004",
+      "nativeTerm": "Virtual component / CIC-scoped UCI",
+      "sourceLocator": "SDD §4.2.2 printed p.11, PDF p.19; Component Requirements [CMPT-L-0008], PDF p.16",
+      "reason": "Virtual proxy identification is not an additional independent physical device",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H03",
+      "rowOrHold": "S06-R019",
+      "nativeTerm": "Transparent versus translucent member",
+      "sourceLocator": "SDD §4.2.2 printed p.11, PDF p.19",
+      "reason": "Visible membership does not guarantee that the member can be tasked",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H04",
+      "rowOrHold": "S06-R019",
+      "nativeTerm": "CIC performer / broker / relay",
+      "sourceLocator": "SDD §4.2.2 printed p.11, PDF p.19",
+      "reason": "Network endpoint receiving a request need not be the actual performer",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H05",
+      "rowOrHold": "S06-R016",
+      "nativeTerm": "CCD: properties / observables / commands / custom types",
+      "sourceLocator": "DMS §7.3 printed p.70, PDF p.85; ICD §6.4 printed pp.20–21",
+      "reason": "Declarations of unlike capability kinds must not collapse into one operating mode",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H06",
+      "rowOrHold": "S06-R018",
+      "nativeTerm": "Capability readiness versus reporting",
+      "sourceLocator": "ICD §6.4 printed p.21, PDF p.29; Component Requirements [CMPT-M-0026/27]",
+      "reason": "Capability ready, reporting and actually executed are different states",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H07",
+      "rowOrHold": "S06-R017",
+      "nativeTerm": "PropertyDeclaration.mutability / range",
+      "sourceLocator": "DMS §7.3 printed p.73, PDF p.88",
+      "reason": "Read-write support is not an installed default or current effective setting",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H08",
+      "rowOrHold": "CASE-H05",
+      "nativeTerm": "Minimum and Maximum Status Interval",
+      "sourceLocator": "ICD §6.5 printed pp.21–22, PDF pp.29–30",
+      "reason": "Heartbeat cadence does not establish measurement period or diagnostic state",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H09",
+      "rowOrHold": "CASE-H08",
+      "nativeTerm": "Event.source + event time + eventID",
+      "sourceLocator": "ICD §6.6 printed p.22, PDF p.30; DMS §4.0 Event ID printed p.52",
+      "reason": "An event-identity tuple does not determine the original NOAA averaged-result process",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H10",
+      "rowOrHold": "S06-R022",
+      "nativeTerm": "Event Reference corrections/updates",
+      "sourceLocator": "ICD §6.6 printed p.23, PDF p.31",
+      "reason": "Correction/update reference is not a general original-to-API-copy provenance model",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H11",
+      "rowOrHold": "S06-R020",
+      "nativeTerm": "Response queued/in progress/final codes",
+      "sourceLocator": "ICD §6.7.1 Table 23 printed p.25, PDF p.33",
+      "reason": "Reported success and measured physical effect differ; queued/in progress are nonfinal",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H12",
+      "rowOrHold": "CASE-H09",
+      "nativeTerm": "Authorization before forwarding requests",
+      "sourceLocator": "ICD §6.7.1 printed p.24, PDF p.32; Controller Requirements [AZSV-M-0001], PDF p.44",
+      "reason": "A successful authorization check is not itself a command execution",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H13",
+      "rowOrHold": "S06-R009",
+      "nativeTerm": "Controller deployment/communications topology",
+      "sourceLocator": "SDD §§4.2.1–4.3 printed pp.9–13, PDF pp.17–21",
+      "reason": "A network/controller location is not a surveyed sensor point or dated physical deployment",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    },
+    {
+      "id": "ISA-H14",
+      "rowOrHold": "S06-R021",
+      "nativeTerm": "Custom / Nominated / Accepted extensions",
+      "sourceLocator": "DMS preliminary Document Notes printed p.ii, PDF p.2",
+      "reason": "Extension category does not mean a term is in the adopted ISA core model",
+      "disposition": "SOURCE_NATIVE_LEAD_HELD_NO_DIM_ADOPTION"
+    }
+  ],
+  "stagingPolicy": "Owner-accepted primary 13-column layout unchanged. Add full 14-column ISA overlay in separate workbook sheet and Markdown for Step16 owner checkpoint, not a permanent primary column.",
+  "preserved": {
+    "oldMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026",
+    "oldDonorMappings": 58,
+    "oldColumnCount": 13,
+    "dimRows": 22,
+    "caseHolds": 9,
+    "caseStatements": 73,
+    "oldSourceChecked": 37,
+    "oldPublicTechnicalIEEE": 6,
+    "oldPriorOnly": 15
+  },
+  "nextStep": "STEP16_OWNER_REVIEW_NOT_STARTED"
+}
