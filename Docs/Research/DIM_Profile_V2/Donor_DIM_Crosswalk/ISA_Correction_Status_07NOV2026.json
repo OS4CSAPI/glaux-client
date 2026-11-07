@@ -1,0 +1,73 @@
+{
+  "schema": "isa-coverage-correction-status.v1",
+  "date": "2026-11-07",
+  "repository": "OS4CSAPI/glaux-client",
+  "branch": "research/dim-profile-v2",
+  "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
+  "planningCheckpoint": "COMPLETE",
+  "technicalIterationsCompleted": 0,
+  "plannedTechnicalIterations": 12,
+  "iterationCountMeaning": "Workload estimate, not a source-entry or mapping quota; split only a specifically identified source batch when necessary.",
+  "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
+  "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
+  "nextOnOwnerProceed": "ISA-01",
+  "nextAction": "Source census, exact edition/access check, source-entry and DIM-row coverage register; no automatic ISA-02.",
+  "parentSequence": {
+    "parentPlan": "PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md",
+    "insertedAfter": "Step15 delivered source-selection and workbook artifacts",
+    "returnAfterCorrection": "Step16 owner checkpoint",
+    "step16State": "FOLLOWS_ISA_CORRECTION",
+    "step17State": "UNCHANGED_NOT_STARTED",
+    "otherDonorReviews": "UNCHANGED_NOT_AUTHORIZED_BY_THIS_CORRECTION"
+  },
+  "baseline": {
+    "commit": "2f298e00f12025d4be45d210546a71fc8eb12827",
+    "workbook": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
+    "workbookBlob": "bf87c64981bcab1bf0834b032a824fadf3b33783",
+    "workbookBytes": 465506,
+    "structuredMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.json",
+    "structuredMasterBlob": "7f358d6a49ab1f9737e5ef60b731689d439b469b",
+    "isaStagingFile": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+    "isaStagingBlob": "1f857915c2227e6dc0b071f7db1ded4d3fc09fb4",
+    "primaryDonorRecords": 58,
+    "existingDimRows": 22,
+    "caseReviewTopics": 9,
+    "caseEvidenceStatements": 73,
+    "existingISAMappingsToReconcile": 11,
+    "existingISAHoldsToReconcile": 14,
+    "acceptedPrimaryColumns": 13,
+    "isaReviewColumns": 14,
+    "workbookSheets": 15
+  },
+  "coverage": {
+    "sourceEntryDenominator": null,
+    "sourceEntriesReviewedInCorrection": 0,
+    "sourceInventoryOwner": "ISA-01",
+    "existingRowAndCaseTargets": 31,
+    "rowTargetsDispositionedInCorrection": 0,
+    "note": "Do not infer zero available concepts from an uninitialized inventory. ISA-01 establishes the source-native denominator and assigns every source block."
+  },
+  "completionRules": {
+    "sourceCoverageSeparateFromModelAcceptance": true,
+    "narrowQuestionsDoNotInvalidateOtherCompletedWork": true,
+    "unreviewedItemsMustNotBeDisguisedAsNoCorrespondence": true,
+    "semanticAuditMustStartFromOriginalSourceInventory": true,
+    "wordingOnPassingFinalChecks": "ISA correction COMPLETE",
+    "ownerDecisionAfterCompletion": "Step16 review of corrected ISA view and any candidate additional or split rows"
+  },
+  "iterations": [
+    {"id":"ISA-01","title":"Source census and coverage baseline","state":"NEXT"},
+    {"id":"ISA-02","title":"Identity and first property block","state":"NOT_STARTED"},
+    {"id":"ISA-03","title":"Remaining properties","state":"NOT_STARTED"},
+    {"id":"ISA-04","title":"Observables","state":"NOT_STARTED"},
+    {"id":"ISA-05","title":"Commands, first block","state":"NOT_STARTED"},
+    {"id":"ISA-06","title":"Commands, remaining block","state":"NOT_STARTED"},
+    {"id":"ISA-07","title":"Identifiers, envelopes and messages","state":"NOT_STARTED"},
+    {"id":"ISA-08","title":"Capability declarations and constraints","state":"NOT_STARTED"},
+    {"id":"ISA-09","title":"Reporting types, first block","state":"NOT_STARTED"},
+    {"id":"ISA-10","title":"Remaining reporting and filtering types","state":"NOT_STARTED"},
+    {"id":"ISA-11","title":"Architecture, requirements and full reconciliation","state":"NOT_STARTED"},
+    {"id":"ISA-12","title":"Fresh source-first audit and correction closeout","state":"NOT_STARTED"}
+  ],
+  "planningTurnChanges": "Plan, recovery and navigation only; no technical workbook, mapping, Profile, UML, runtime or deployment change."
+}
