@@ -1,6 +1,6 @@
 # ISA coverage correction — current execution plan
 
-**7 November 2026 · Power and component condition COMPLETE; 73/91 properties reviewed. Next: Sensing settings and measurement characteristics — nine properties.**
+**7 November 2026 · Power/condition and Sensing-settings source passes COMPLETE;82/91 properties reviewed. Next: Motion, viewed area, resources and data links — nine properties, then one consolidated workbook checkpoint.**
 
 [Progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Published workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
@@ -8,19 +8,19 @@
 
 The owner rejected both the original oversized twelve-prompt estimate and the subsequent proliferation of tiny prompts with repeated release work. The correction must retain coverage while removing redundant delivery overhead. **Do not restart completed work, launch another planning campaign, or recreate a publisher/workflow for each group of definitions.**
 
-At the regrouping checkpoint there were **26 remaining properties**. The first eight are now reviewed; **18 remain** in the next two source passes. The working schedule for this bounded remainder is **three source-and-readable-table passes, then one consolidated workbook/verification checkpoint**. This is not a new estimate for all remaining ISA catalogues. Every source pass is committed to GitHub; it is not a sandbox-only draft or work held back until final publication.
+At the regrouping checkpoint there were **26 remaining properties**. Seventeen of those26 are now reviewed; **nine remain** in the final source pass. The working schedule for this bounded remainder is **three source-and-readable-table passes, then one consolidated workbook/verification checkpoint**. This is not a new estimate for all remaining ISA catalogues. Every source pass is committed to GitHub; it is not a sandbox-only draft or work held back until final publication.
 
 The old requirement to export/render/transfer the complete Excel workbook, create a batch-specific script/workflow, write a standalone report and update every index after every two to six definitions is withdrawn. GitHub persistence, original-source checking and coverage tracking remain mandatory. The earlier numeric limits addressed the wrong bottleneck and are not universal scientific rules.
 
 ## 2. Exact remaining-property queue
 
-The 26 scheduled IDs below (eight now complete, eighteen remaining) are the union of the formerly unstarted ISA-03E–J assignments. They are assigned exactly once. All source decisions through ISA-03D remain complete; Model and Serial Number remain credited to ISA-02.
+The 26 scheduled IDs below (seventeen now complete, nine remaining) are the union of the formerly unstarted ISA-03E–J assignments. They are assigned exactly once. All source decisions through ISA-03D remain complete; Model and Serial Number remain credited to ISA-02.
 
 | Review pass | Source-native entries | ISA-DMS ID suffixes | Count |
 | --- | --- | --- | ---: |
 | **Power and component condition — COMPLETE** | Power; Power State; Reserve Capacity; Satellites; Shots; Tamper State; Temperature; Time to Empty | 090, 091, 100, 103, 106, 111, 112, 113 | **8** |
-| **Sensing settings and measurement characteristics — NEXT** | Polarity; Pulse Interval; Quality; Radar Mode; Range; Resolution; Scan Time; Wavelengths; Zoom | 087, 093, 094, 095, 096, 101, 104, 119, 121 | **9** |
-| **Motion, viewed area, resources and data links** | Receive Data Rate; Receive Power; Resources; Signal Strength Ratio; Transmit Data Rate; Transmit Power; Velocity; View Area; Zones | 097, 098, 102, 107, 114, 115, 116, 117, 120 | **9** |
+| **Sensing settings and measurement characteristics — COMPLETE** | Polarity; Pulse Interval; Quality; Radar Mode; Range; Resolution; Scan Time; Wavelengths; Zoom | 087, 093, 094, 095, 096, 101, 104, 119, 121 | **9** |
+| **Motion, viewed area, resources and data links — NEXT** | Receive Data Rate; Receive Power; Resources; Signal Strength Ratio; Transmit Data Rate; Transmit Power; Velocity; View Area; Zones | 097, 098, 102, 107, 114, 115, 116, 117, 120 | **9** |
 | **Property-catalogue publication and verification** | Reconcile all 91 properties and integrate the saved changes into the workbook once; verify source, table and workbook agreement and preservation | No new primary entries assigned | **0** |
 
 These are assignments, not semantic conclusions. The inventory confirms the names, locations and partition; it does not establish their mappings. Use the source definitions and full necessary dependencies before recording an outcome. Never make an unread definition a completed question to protect this schedule.
@@ -61,4 +61,4 @@ A source pass is complete when its named assignments have supported dispositions
 
 This is the single active execution description. The superseded per-mini-batch rules and contradictory CURRENT/NEXT banners remain available in [the pre-revision plan](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md), not as competing live instructions.
 
-The execution-cadence amendment remains in force. The eight Power and component condition outcomes are now complete in the cumulative evidence/register/readable view. **Next: nine Sensing settings and measurement characteristics properties.** Workbook publication stays at the catalogue checkpoint; the ISA-03D Excel snapshot is unchanged.
+The execution-cadence amendment remains in force. The Power/condition and Sensing-settings passes are complete in the cumulative evidence/register/readable view. **Next: nine Motion, viewed area, resources and data links properties.** Workbook publication stays at the catalogue checkpoint; the ISA-03D Excel snapshot is unchanged.

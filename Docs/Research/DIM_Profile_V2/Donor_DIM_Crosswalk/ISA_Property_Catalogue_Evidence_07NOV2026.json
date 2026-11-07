@@ -27,6 +27,25 @@
         "ISA-DMS-112",
         "ISA-DMS-113"
       ]
+    },
+    {
+      "id": "ISA-PROPERTIES-SENSING",
+      "status": "COMPLETE",
+      "assigned": 9,
+      "reviewed": 9,
+      "supported": 9,
+      "new_questions": 0,
+      "primary_ids": [
+        "ISA-DMS-087",
+        "ISA-DMS-093",
+        "ISA-DMS-094",
+        "ISA-DMS-095",
+        "ISA-DMS-096",
+        "ISA-DMS-101",
+        "ISA-DMS-104",
+        "ISA-DMS-119",
+        "ISA-DMS-121"
+      ]
     }
   ],
   "primary_records": [
@@ -322,6 +341,331 @@
       "question_id": null,
       "model_decision": "FOR_OWNER_REVIEW",
       "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-087",
+      "entry_id": "ISA-DMS-087",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Polarity",
+      "element_kind": "property",
+      "native_type": "Polarity",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Polarity, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "5210e76666015ae30d3be05a2b76f9ed5fbc0fd42d70bc5a78f3a5fa1ec45e0d",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-087",
+      "proposed_label": "Thermal-image display polarity",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Color palette used to visualize thermal energy. The native Polarity enumeration describes BLACK HOT and WHITE HOT presentations.",
+      "mapping_boundary": "This concerns thermal-image display, not electrical polarity, laser polarization or the scene temperature itself. Preserve the original named values; the source does not mark this enumeration sealed. No additional palette is inferred.",
+      "dependency_terms": [
+        "Polarity"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-093",
+      "entry_id": "ISA-DMS-093",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Pulse Interval",
+      "element_kind": "property",
+      "native_type": "Measured Secs",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Pulse Interval, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ca1d1386938f3f1425141d44088110b40f43ded00f1869719e75d509b9a31701",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-093",
+      "proposed_label": "Laser inter-pulse time interval",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Time interval between a laser's pulses, represented by Measured Secs with required value and optional error.",
+      "mapping_boundary": "Not pulse duration, scan-cycle duration, generic sampling cadence or an absolute timestamp. The property does not establish actual emission or a source value for any case. Do not infer repetition frequency or uncertainty by inversion.",
+      "dependency_terms": [
+        "Measured Secs",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-094",
+      "entry_id": "ISA-DMS-094",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Quality",
+      "element_kind": "property",
+      "native_type": "Himelo",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Quality, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "6ad914cda283b3fc64529061e73fdc3eff4a9a8d2ec6f83faec48a20d6652189",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-094",
+      "proposed_label": "Qualitative component-output quality",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Quality of the output produced by the component, expressed through the context-dependent Himelo levels VERY HIGH, HIGH, MEDIUM, LOW and VERY LOW.",
+      "mapping_boundary": "Not a quantitative accuracy or confidence measure, not per-observation QA flags, and not independently validated output quality. No numerical thresholds or ranking scores are specified. Distinct from output Resolution despite sharing the same type.",
+      "dependency_terms": [
+        "Himelo"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-095",
+      "entry_id": "ISA-DMS-095",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Radar Mode",
+      "element_kind": "property",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Radar Mode, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ef64c544d4b0e73e22d3a9988a9c5916fe62890994336d4cd97c4f5d520fa85e",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-095",
+      "proposed_label": "Reported current radar mode",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Current radar mode of the component, represented as a single native String.",
+      "mapping_boundary": "Current radar-specific configuration, not a supported/default mode list, general operating condition or command. No mode vocabulary or applied case value is inferred. Related to the existing Source-reported operating mode row, while preserving the separately qualified Camera Mode representation.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_row": "S06-R018",
+      "related_existing_row_note": "Radar-specific counterpart to the established Camera Mode correspondence. Preserve both native encodings; the broader row reconciliation is not declared complete here."
+    },
+    {
+      "id": "ISA-PROP-096",
+      "entry_id": "ISA-DMS-096",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Range",
+      "element_kind": "property",
+      "native_type": "Measured Meters",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Range, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "40cd97eabc2f9f8db5369e7a3c698bdee9ba4c14845b2b1c8b29802bf1bb4e51",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-096",
+      "proposed_label": "Expected usable component range",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Expected usable range of the component, carried as Measured Meters with required distance value and optional error.",
+      "mapping_boundary": "Not observed distance to a detected target, a coordinate, assured detection performance or an environmental rating. The generic measured-distance type does not change the property meaning into a measured target range. Missing error is not zero uncertainty.",
+      "dependency_terms": [
+        "Measured Meters",
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-101",
+      "entry_id": "ISA-DMS-101",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Resolution",
+      "element_kind": "property",
+      "native_type": "Himelo",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Resolution, printed p.16 / PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "abfa9cf07b4d1fbe0481074e12c767b925a79e744cf62d56034ee41d17b24298",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-101",
+      "proposed_label": "Qualitative component-output resolution",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Resolution of the output produced by the component, expressed using the contextual Himelo qualitative levels.",
+      "mapping_boundary": "Not a pixel count, angular resolution, ground sample distance, numeric precision or quality score. The source gives no conversion from the named levels to metric resolution. Keep separate from the Quality property.",
+      "dependency_terms": [
+        "Himelo"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-104",
+      "entry_id": "ISA-DMS-104",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Scan Time",
+      "element_kind": "property",
+      "native_type": "Measured Secs",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Scan Time, printed p.16 / PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "27ecd7f3880537aadd5960f1466921a0b9ecf8f8499a898b6886a324f3e0f7cf",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-104",
+      "proposed_label": "Duration of one complete scan-area coverage",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Time needed for a scanning device to cover its scan area once, carried as Measured Secs with required value and optional error.",
+      "mapping_boundary": "Not exposure time, pulse spacing, dwell time at one point, frame rate or a Status reporting interval. No scan start/finish timestamps, scan geometry, or performed scan are inferred.",
+      "dependency_terms": [
+        "Measured Secs",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-119",
+      "entry_id": "ISA-DMS-119",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Wavelengths",
+      "element_kind": "property",
+      "native_type": "Meters",
+      "native_structure": "List",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        33
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Wavelengths, printed p.17 / PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a72b70cfabfdad5f8d4ede5714280451cf6e7e2f71cffc91202b846f912580f6",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-119",
+      "proposed_label": "Laser wavelengths in use",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "List of wavelengths used by the laser; each value uses the native Meters simple type.",
+      "mapping_boundary": "Laser-specific wavelengths, not generic sensor band limits, available wavelength capabilities or emission frequencies. No list cardinality beyond the native List indication, wavelength values, or frequency conversion is invented.",
+      "dependency_terms": [
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-121",
+      "entry_id": "ISA-DMS-121",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Zoom",
+      "element_kind": "property",
+      "native_type": "Percent",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 18,
+      "pdf_pages": [
+        33,
+        33
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Zoom, printed p.18 / PDF p.33",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "355716ff4603cdb4d6ac380ec8ae9da32042eba264da359713d6480dda7eb484",
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-121",
+      "proposed_label": "Current camera zoom relative to maximum zoom",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Current zoom level of the camera as a percentage of its maximum zoom.",
+      "mapping_boundary": "Not a lens focal length, absolute magnification factor, field of view or supported zoom range. The source does not distinguish optical from digital zoom here. The Percent base type does not impose an automatic 0–100 numeric constraint.",
+      "dependency_terms": [
+        "Percent",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
     }
   ],
   "supporting_definitions": [
@@ -529,6 +873,81 @@
       "inspected_content_summary": "Floating-point seconds between instants; native representation has millisecond resolution. Not an absolute timestamp.",
       "source_span_sha256": "d548dfedb736d4a70197d82cee4c37039146f68d8d41eb094bfccfee3bd43275",
       "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-345",
+      "native_term": "Himelo",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 79,
+      "pdf_pages": [
+        94,
+        95
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Himelo, printed p.79, PDF 94–95",
+      "inspected_content_summary": "Himelo is a contextual qualitative enumeration: HIGH, LOW, MEDIUM, VERY HIGH, VERY LOW. Its description derives meaning from usage; no numeric thresholds or universal metrics. Definition continues from printed p.79 to p.80. Not marked sealed.",
+      "source_span_sha256": "0eb73afabdbb03bd4ebaff80db96002a52548f51883051b4f77b7cbb5acd5cf5",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-PROPERTIES-SENSING"
+    },
+    {
+      "entry_id": "ISA-DMS-348",
+      "native_term": "Polarity",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 80,
+      "pdf_pages": [
+        95
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Polarity, printed p.80, PDF 95–95",
+      "inspected_content_summary": "Polarity describes thermal-energy display palettes BLACK HOT and WHITE HOT, with the source hot/cold color ordering. Not marked sealed. These are palette values, not electrical or polarization states.",
+      "source_span_sha256": "584baedf5f7e57eaeb4ae09bbb2eca83ea64e3c3b795fa859867a69fa578f66a",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-PROPERTIES-SENSING"
+    },
+    {
+      "entry_id": "ISA-DMS-411",
+      "native_term": "Measured Meters",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 101,
+      "pdf_pages": [
+        116,
+        117
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed p.101, PDF 116–117",
+      "inspected_content_summary": "Measured Meters has required value: Meters (1), optional error: Meters (0–1). A supplied error is plus/minus one standard deviation; omission is not perfect accuracy. Type does not override the Range property’s expected-usable-distance role.",
+      "source_span_sha256": "887f0ddfe7d49cf67c80c54da78317cf791f21c58fc1ac6f369dbcd0ce2d6298",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-PROPERTIES-SENSING"
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 53,
+      "pdf_pages": [
+        68,
+        69
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53, PDF 68–69",
+      "inspected_content_summary": "Meters is a floating-point linear distance in meters. Its use by Wavelengths retains the original laser property scope and list structure; no numerical wavelengths or conversions are inferred.",
+      "source_span_sha256": "b9e523eea3e5a2adc8b2c713a54d0271b330f2a6acd51ed3175dca1a08021620",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-PROPERTIES-SENSING"
     }
   ],
   "source_inspection": {
@@ -556,9 +975,12 @@
     "Campbell Battery/LithiumBattery source voltages are not Reserve Capacity percentages.",
     "Internal Temperature is not Bennett ambient ATemp; no internal temperature value is manufactured.",
     "No satellites-in-use count, laser use count, tamper state or power condition is attributed to any example.",
-    "Original non-ISA donor cells and all source-case values are preserved."
+    "Original non-ISA donor cells and all source-case values are preserved.",
+    "Polarity, laser pulse interval, scan duration, laser wavelength list and zoom do not establish any corresponding installed capability or current value for the four documentary/historical cases.",
+    "Bennett original NOAA quality flags are not an ISA Himelo quality rating. A component-output rating does not alter historical observation quality or result availability.",
+    "No particulate sensor resolution or range, radar mode, scan timing or pixel dimensions are invented from the equipment examples; previous case cells remain identical."
   ],
-  "mapping_note": "Eight definitions convey eight distinct information roles; candidate rows record those roles rather than inferring values or adopting a DIM. These source terms do not close the broader original case-topic reconciliation automatically.",
+  "mapping_note": "Each native entry is individually traced. New sensing rows preserve distinct property roles and representations: two qualitative judgments, two distinct intervals, radar mode, usable range, thermal palette, laser wavelengths and relative camera zoom. Radar Mode is related to S06-R018 without overwriting its Camera Mode evidence. Candidate source roles are not automatic final-DIM field requirements.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
     "checkpoint": "ISA-03D",
@@ -567,27 +989,246 @@
     "sha256": "c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404",
     "next_refresh": "ISA-PROPERTIES-PUBLISH"
   },
-  "next_source_pass": "ISA-PROPERTIES-SENSING",
+  "next_source_pass": "ISA-PROPERTIES-MOTION-DATA",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-090",
-      "ISA-DMS-091",
-      "ISA-DMS-100",
-      "ISA-DMS-103",
-      "ISA-DMS-106",
-      "ISA-DMS-111",
-      "ISA-DMS-112",
-      "ISA-DMS-113"
+      "ISA-DMS-087",
+      "ISA-DMS-093",
+      "ISA-DMS-094",
+      "ISA-DMS-095",
+      "ISA-DMS-096",
+      "ISA-DMS-101",
+      "ISA-DMS-104",
+      "ISA-DMS-119",
+      "ISA-DMS-121"
     ],
-    "reviewed_total": 73,
-    "supported_total": 70,
+    "reviewed_total": 82,
+    "supported_total": 79,
     "specific_questions_unchanged": 3,
-    "information_review_rows": 100,
-    "core_properties_reviewed": 61,
+    "information_review_rows": 109,
+    "core_properties_reviewed": 70,
     "accepted_extension_properties_reviewed": 12,
-    "new_candidate_rows": 8,
+    "new_candidate_rows": 9,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
     "coverage_and_prior_preservation": "PASS"
-  }
+  },
+  "supporting_definition_passes": [
+    {
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "new_unique_types": [
+        "Himelo",
+        "Polarity"
+      ],
+      "checked_or_reused_records": [
+        {
+          "entry_id": "ISA-DMS-345",
+          "native_term": "Himelo",
+          "element_kind": "data element",
+          "section": "8.1",
+          "printed_page": 79,
+          "pdf_pages": [
+            94,
+            95
+          ],
+          "source_standing": "CORE",
+          "review_use": "SUPPORTING_DEFINITION_READ",
+          "assigned_full_review_pass": "ISA-09",
+          "source_locator": "ISA DMS 6.0r12 §8.1 Himelo, printed p.79, PDF 94–95",
+          "inspected_content_summary": "Himelo is a contextual qualitative enumeration: HIGH, LOW, MEDIUM, VERY HIGH, VERY LOW. Its description derives meaning from usage; no numeric thresholds or universal metrics. Definition continues from printed p.79 to p.80. Not marked sealed.",
+          "source_span_sha256": "0eb73afabdbb03bd4ebaff80db96002a52548f51883051b4f77b7cbb5acd5cf5",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-348",
+          "native_term": "Polarity",
+          "element_kind": "data element",
+          "section": "8.1",
+          "printed_page": 80,
+          "pdf_pages": [
+            95
+          ],
+          "source_standing": "CORE",
+          "review_use": "SUPPORTING_DEFINITION_READ",
+          "assigned_full_review_pass": "ISA-09",
+          "source_locator": "ISA DMS 6.0r12 §8.1 Polarity, printed p.80, PDF 95–95",
+          "inspected_content_summary": "Polarity describes thermal-energy display palettes BLACK HOT and WHITE HOT, with the source hot/cold color ordering. Not marked sealed. These are palette values, not electrical or polarization states.",
+          "source_span_sha256": "584baedf5f7e57eaeb4ae09bbb2eca83ea64e3c3b795fa859867a69fa578f66a",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-411",
+          "native_term": "Measured Meters",
+          "element_kind": "data element",
+          "section": "8.3",
+          "printed_page": 101,
+          "pdf_pages": [
+            116,
+            117
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-10",
+          "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed p.101, PDF 116–117",
+          "inspected_content_summary": "Measured Meters has required value: Meters (1), optional error: Meters (0–1). A supplied error is plus/minus one standard deviation; omission is not perfect accuracy. Type does not override the Range property’s expected-usable-distance role.",
+          "source_span_sha256": "887f0ddfe7d49cf67c80c54da78317cf791f21c58fc1ac6f369dbcd0ce2d6298",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-421",
+          "native_term": "Measured Secs",
+          "element_kind": "data element",
+          "section": "8.3",
+          "printed_page": 104,
+          "pdf_pages": [
+            119
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-10",
+          "source_locator": "ISA DMS 6.0r12 §8.3 Measured Secs, printed p.104, PDF 119–119",
+          "inspected_content_summary": "Measured Secs has required value: Secs (1), optional error: Secs (0–1), with plus/minus one standard deviation when error is supplied. Used for distinct laser-pulse and whole-scan intervals; not timestamps.",
+          "source_span_sha256": "6bc963b36ade611ac5adcc20f1d9a552c1a2ed67f69aebaa07f8b4f3e3c66730",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-295",
+          "native_term": "Secs",
+          "element_kind": "data element",
+          "section": "4.2",
+          "printed_page": 55,
+          "pdf_pages": [
+            70
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-07",
+          "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55, PDF 70–70",
+          "inspected_content_summary": "Secs is a floating-point interval in seconds; representations must have millisecond resolution. Resolution of representation is not verified measurement accuracy.",
+          "source_span_sha256": "d548dfedb736d4a70197d82cee4c37039146f68d8d41eb094bfccfee3bd43275",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-285",
+          "native_term": "Meters",
+          "element_kind": "data element",
+          "section": "4.2",
+          "printed_page": 53,
+          "pdf_pages": [
+            68,
+            69
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-07",
+          "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53, PDF 68–69",
+          "inspected_content_summary": "Meters is a floating-point linear distance in meters. Its use by Wavelengths retains the original laser property scope and list structure; no numerical wavelengths or conversions are inferred.",
+          "source_span_sha256": "b9e523eea3e5a2adc8b2c713a54d0271b330f2a6acd51ed3175dca1a08021620",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-289",
+          "native_term": "Percent",
+          "element_kind": "data element",
+          "section": "4.2",
+          "printed_page": 54,
+          "pdf_pages": [
+            69
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-07",
+          "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54, PDF 69–69",
+          "inspected_content_summary": "Percent represents a value relative to a maximum; the source permits values beyond 100. Do not invent a universal clamp, or convert camera zoom percentage into magnification without a defined relation.",
+          "source_span_sha256": "96c78781b94aca9e3da934baa21e9c3d1051635894d6b446a64ed88685be71fd",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-261",
+          "native_term": "String",
+          "element_kind": "data element",
+          "section": "4.1",
+          "printed_page": 50,
+          "pdf_pages": [
+            65
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-07",
+          "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50, PDF 65–65",
+          "inspected_content_summary": "Same-edition String definition reused for Radar Mode as a whole textual value; no invented enum, semantic version, mode vocabulary or encoding transformation.",
+          "source_span_sha256": "d4f649a7a04148565d9d6d2ed5735bdfdb6e1f2e17a9b862a597dceca36c2251",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        },
+        {
+          "entry_id": "ISA-DMS-259",
+          "native_term": "Float",
+          "element_kind": "data element",
+          "section": "4.1",
+          "printed_page": 50,
+          "pdf_pages": [
+            65
+          ],
+          "source_standing": "CORE",
+          "review_use": "PREVIOUS_SUPPORT_REUSED",
+          "assigned_full_review_pass": "ISA-07",
+          "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65–65",
+          "inspected_content_summary": "Same-edition Float definition reused under Meters, Percent and Secs. Numeric representation alone does not establish physical quantity, accuracy or a particular case reading.",
+          "source_span_sha256": "d3be1cbbbc380e461d8645c5af15503e40ed4c29eadfe46ff981a05b930a7255",
+          "later_catalogue_pass_completed": false,
+          "review_pass": "ISA-PROPERTIES-SENSING"
+        }
+      ],
+      "unique_supporting_total": 54
+    }
+  ],
+  "source_inspections_by_pass": [
+    {
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "primary_text": "DMS §3.1 printed pp.15–17 / PDF pp.30–32; original indexed source definitions and extension markings read.",
+      "type_pages_visually_inspected": [
+        106,
+        113,
+        118,
+        119
+      ],
+      "atomic_type_text": "Celsius p.51/PDF66 and Percent p.54/PDF69 original definitions checked; same-edition Float, Integer, String, Secs, General State and General Code evidence reused.",
+      "new_supporting_definitions": [
+        "Count",
+        "Celsius",
+        "Measured Celsius",
+        "Measured Percent",
+        "Measured Secs"
+      ],
+      "new_supporting_count": 5,
+      "unique_supporting_total": 52,
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8"
+    },
+    {
+      "review_pass": "ISA-PROPERTIES-SENSING",
+      "primary_text": "DMS §3.1 printed pp.15–18/PDF30–33; all nine full definitions and core markings checked. Zoom on the shared p.18 is included.",
+      "support_text": "Himelo printed pp.79–80/PDF94–95 and Polarity p.80/PDF95 read in full. Measured Meters p.101/PDF116 text/image inspected. Same-edition String, Float, Percent, Meters, Secs and Measured Secs evidence reused.",
+      "type_pages_visually_inspected": [
+        116
+      ],
+      "unavailable_requested_images": [
+        94,
+        95
+      ],
+      "image_access_note": "The requested 94–95 page images were unavailable; full indexed text was read instead. No claim of image inspection for those pages.",
+      "new_supporting_definitions": [
+        "Himelo",
+        "Polarity"
+      ],
+      "unique_supporting_total": 54
+    }
+  ]
 }

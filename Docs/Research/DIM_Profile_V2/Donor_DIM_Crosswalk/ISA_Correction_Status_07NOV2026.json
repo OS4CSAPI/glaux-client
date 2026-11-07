@@ -5,41 +5,41 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 7,
+  "technicalIterationsCompleted": 8,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 2,
   "completedChildBatches": 4,
-  "progressMeaning": "ISA-01/02 and ISA-03A–D remain complete. Power and component condition is complete: 73/91 properties reviewed. Eighteen remain in two source passes, then one workbook checkpoint.",
-  "currentIteration": "ISA-PROPERTIES-POWER-CONDITION",
+  "progressMeaning": "ISA-01/02 and ISA-03A–D remain complete. Two catalogue source passes complete: 82 of91 properties reviewed; nine remain, followed by one consolidated workbook checkpoint.",
+  "currentIteration": "ISA-PROPERTIES-SENSING",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-PROPERTIES-POWER-CONDITION",
+  "currentBatch": "ISA-PROPERTIES-SENSING",
   "currentBatchSourceReviewStatus": "COMPLETE",
   "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
-  "nextOnOwnerProceed": "ISA-PROPERTIES-SENSING",
-  "nextAction": "Review only Polarity, Pulse Interval, Quality, Radar Mode, Range, Resolution, Scan Time, Wavelengths and Zoom; update the same cumulative evidence/register and readable view. Do not export Excel or begin the motion/data pass.",
+  "nextOnOwnerProceed": "ISA-PROPERTIES-MOTION-DATA",
+  "nextAction": "Review only the nine Motion, viewed area, resources and data links properties; update the same GitHub evidence, coverage and readable comparison. Then the property-catalogue workbook checkpoint follows.",
   "nextSourceIDs": [
-    "ISA-DMS-087",
-    "ISA-DMS-093",
-    "ISA-DMS-094",
-    "ISA-DMS-095",
-    "ISA-DMS-096",
-    "ISA-DMS-101",
-    "ISA-DMS-104",
-    "ISA-DMS-119",
-    "ISA-DMS-121"
+    "ISA-DMS-097",
+    "ISA-DMS-098",
+    "ISA-DMS-102",
+    "ISA-DMS-107",
+    "ISA-DMS-114",
+    "ISA-DMS-115",
+    "ISA-DMS-116",
+    "ISA-DMS-117",
+    "ISA-DMS-120"
   ],
-  "nextSourceIDsMeaning": "Nine sensing-settings and measurement-characteristics assignments; the eight power/condition properties are complete.",
+  "nextSourceIDsMeaning": "Nine remaining property assignments; the power/condition and sensing-setting source passes are complete.",
   "repositoryPublication": {
     "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-PROPERTIES-POWER-CONDITION COMPLETE",
-    "next_pass": "ISA-PROPERTIES-SENSING",
+    "technical_state": "ISA-PROPERTIES-SENSING COMPLETE",
+    "next_pass": "ISA-PROPERTIES-MOTION-DATA",
     "publication_record": "ISA03D_Publication_Record_07NOV2026.json",
     "currentBatchEvidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
     "currentBatchReport": null,
-    "base_input_commit": "c18fa830c62c19fd72d805260fce63b1f5a58275",
+    "base_input_commit": "7f48e74531a2dc77d854f9ac923b5d2f18af7351",
     "lastIntegratedCheckpoint": "c34f7b1560a920a85c9061deec63c6dd6ab49e4b",
     "current_view": "ISA_Correction_Review_07NOV2026.md",
     "publication_record_scope": "ISA03D_Publication_Record_07NOV2026.json verifies the unchanged Excel snapshot; it is not a verification of this new source pass."
@@ -56,32 +56,33 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 73,
+    "semanticEntriesReviewedInCorrection": 82,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 70,
+    "sourceSupportedPrimaryEntries": 79,
     "specificSourceDefinitionQuestions": 3,
-    "supportingDefinitionsRead": 52,
+    "supportingDefinitionsRead": 54,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 69,
-    "informationReviewRows": 100
+    "newCandidateRows": 78,
+    "informationReviewRows": 109
   },
   "propertyCatalogue": {
     "total": 91,
-    "reviewed": 65,
-    "remaining": 26,
-    "sourcePassesRemainingInWorkingSchedule": 3,
+    "reviewed": 82,
+    "remaining": 9,
+    "sourcePassesRemainingInWorkingSchedule": 1,
     "workbookCheckpointsRemainingInWorkingSchedule": 1,
-    "assignmentBasis": "Named source entries from the existing census, compared with completed A-D and the former E-J ID partition. Definitions and mappings are not newly reviewed by this scheduling action.",
+    "assignmentBasis": "Current 91-entry property catalogue reconciled to the actual reviewed entries; original 26-item regrouping partition retained separately.",
     "partitionCheck": {
-      "remainingAssignedExactlyOnce": 26,
+      "remainingAssignedExactlyOnce": 9,
       "duplicates": 0,
-      "omissions": 0
+      "omissions": 0,
+      "originalRegroupingAssignedExactlyOnce": 26
     }
   },
   "remainingPropertyPasses": [
@@ -114,7 +115,7 @@
     {
       "id": "ISA-PROPERTIES-SENSING",
       "title": "Sensing settings and measurement characteristics",
-      "state": "NEXT",
+      "state": "COMPLETE",
       "count": 9,
       "sourceIds": [
         "ISA-DMS-087",
@@ -142,7 +143,7 @@
     {
       "id": "ISA-PROPERTIES-MOTION-DATA",
       "title": "Motion, viewed area, resources and data links",
-      "state": "NOT_STARTED",
+      "state": "NEXT",
       "count": 9,
       "sourceIds": [
         "ISA-DMS-097",
@@ -300,7 +301,7 @@
     {
       "id": "ISA-03",
       "state": "IN_PROGRESS_CATALOGUE_PASSES",
-      "nextChild": "ISA-PROPERTIES-SENSING"
+      "nextChild": "ISA-PROPERTIES-MOTION-DATA"
     },
     {
       "id": "ISA-04",
@@ -351,15 +352,15 @@
   "batchPartitionCheck": {
     "originalRemainingAtSizingCheckpoint": 42,
     "reviewedThroughISA03D": 16,
-    "nowRemaining": 18,
-    "assignedExactlyOnce": 18,
+    "nowRemaining": 9,
+    "assignedExactlyOnce": 9,
     "duplicates": 0,
     "unassigned": 0,
     "previouslyCompletedExcluded": [
       "ISA-DMS-080",
       "ISA-DMS-105"
     ],
-    "reviewedAfterISA03D": 8
+    "reviewedAfterISA03D": 17
   },
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
@@ -377,16 +378,16 @@
     "primaryReviewed": 65,
     "nextRefresh": "ISA-PROPERTIES-PUBLISH",
     "currentlyMatchesReadableView": false,
-    "label": "ISA-03D snapshot: 65 reviewed / 92 information rows. Current readable comparison: 73 reviewed / 100 rows."
+    "label": "ISA-03D snapshot:65 reviewed/92 information rows. Current readable comparison:82 reviewed/109 rows."
   },
   "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
   "completedTaskRule": "Completed ISA-01/02/03A-D work stays complete. Specific questions remain local. Catalogue-level workbook cadence is planned, not a failed delivery or reason to repeat research.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
     "state": "COMPLETE",
-    "task": "Eight power/condition source decisions, cumulative readable view and coverage published; no new workbook release",
+    "task": "Nine sensing properties completed in cumulative evidence, coverage and GitHub-readable comparison; Excel snapshot preserved.",
     "counts_as_new_technical_iteration": true
   },
-  "completedCatalogueSourcePasses": 1,
-  "remainingPropertyCount": 18
+  "completedCatalogueSourcePasses": 2,
+  "remainingPropertyCount": 9
 }
