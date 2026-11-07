@@ -1,0 +1,35 @@
+name: Export exact ISA-03A integration inputs
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths: [.github/workflows/isa03a-integration-inputs.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Record input identities
+        run: |
+          git rev-parse HEAD > ISA03A_INPUT_COMMIT.txt
+          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_ISA02_07NOV2026.xlsx
+      - uses: actions/upload-artifact@v4
+        with:
+          name: isa03a-exact-integration-inputs
+          retention-days: 3
+          path: |
+            ISA03A_INPUT_COMMIT.txt
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
+            Docs/Research/DIM_Profile_V2/README.md
+            Docs/Research/DIM_Profile_V2/Deliverables/README.md
+            scripts/publish_isa02_checkpoint.py
+            scripts/recover_isa01_publication.py
+          if-no-files-found: error
