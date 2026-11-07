@@ -1,14 +1,14 @@
 # ISA correction — current cumulative comparison
 
-**7 November 2026 · Motion, viewed area, resources and data links COMPLETE. All 91 property entries reviewed: 87 supported outcomes and four precise source-definition questions.** This final source pass covers nine core properties: eight supported roles and Signal Strength Ratio recorded as ISA-Q004. The full comparison contains **118 information/review rows**: original31 plus83 supported candidates and four question rows.
+**7 November 2026 · PROPERTY CATALOGUE COMPLETE.** All **91 property entries** have recorded outcomes: **87 supported interpretations and four precise source-definition questions**. The current workbook and this comparison now match: **118 information/review rows**, original 31 plus 83 supported candidates and four question rows.
 
-**Excel snapshot:** [ISA-03D workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) remains unchanged at65 reviewed entries and92 information/review rows. **This GitHub comparison and its evidence are newer.** The next sole task is the planned consolidated property-catalogue workbook checkpoint; the property source reviews are complete.
+**[Current editable workbook — consolidated property catalogue](ISA_Correction_Review_Properties_07NOV2026.xlsx)** contains all saved outcomes and supporting evidence in twelve worksheets. The old [ISA-03D snapshot](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) is retained as history, not the current workbook. No source definition or mapping was changed during consolidation.
 
-[Current source evidence](ISA_Property_Catalogue_Evidence_07NOV2026.json) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Current table CSV](ISA_Correction_Review_07NOV2026.csv) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+[Source evidence](ISA_Property_Catalogue_Evidence_07NOV2026.json) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Table CSV](ISA_Correction_Review_07NOV2026.csv) · [Publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-Receive/Transmit Data Rate preserve decimal megabits-per-second measurements; Receive/Transmit Power preserve dBm relative to one milliwatt. Resources lists media access descriptions, not physical inventory. Velocity retains heading, optional pitch and speed; View Area is the presently viewed polygon, while Zones contains ordered inclusion/exclusion areas. Signal Strength Ratio declares Db but provides no defining ratio; ISA-Q004 records the missing referent without assuming signal-to-noise ratio.
+All 58 original non-ISA donor records, 73 equipment-case statements, identity corrections and prior table values are preserved. Four exact questions remain attached to Level, Link Loss, Orientation and Signal Strength Ratio; completed property reviews are not reopened. The wider 480-entry ISA inventory retains its separate review assignments.
 
-**Next:** reconcile the91 saved property outcomes, update and visually inspect the workbook once, publish and verify it. No new property review, observables, or other donor is authorized by that checkpoint.
+**Next source group — not started:** Atmospheric Cloud Coverage, Atmospheric Dew Point, Atmospheric Humidity, Atmospheric Precipitation, Atmospheric Pressure, Atmospheric Temperature, Atmospheric Visibility, Atmospheric Wind. These are ISA-DMS-123 through ISA-DMS-130. No observable was reviewed at this workbook checkpoint.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="4">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>

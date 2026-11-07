@@ -15451,23 +15451,25 @@
     "all_blocks_assigned": true
   },
   "publication": {
-    "state": "READABLE_EVIDENCE_CURRENT_WORKBOOK_LABELLED_SNAPSHOT",
+    "state": "WORKBOOK_EVIDENCE_AND_READABLE_VIEW_SYNCHRONIZED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "research_state": "ISA-PROPERTIES-MOTION-DATA COMPLETE",
-    "next_pass": "ISA-PROPERTIES-PUBLISH",
-    "publication_record": "ISA03D_Publication_Record_07NOV2026.json",
+    "research_state": "ISA PROPERTY CATALOGUE COMPLETE",
+    "next_pass": "ISA-04-ATMOSPHERIC",
+    "publication_record": "ISA_Properties_Publication_Record_07NOV2026.json",
     "current_readable_view": "ISA_Correction_Review_07NOV2026.md",
     "current_evidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
     "workbook_snapshot": {
-      "file": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
-      "checkpoint": "ISA-03D",
-      "primary_reviewed": 65,
-      "information_rows": 92,
-      "sha256": "c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404",
-      "next_refresh": "ISA-PROPERTIES-PUBLISH"
+      "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
+      "checkpoint": "ISA-PROPERTIES-PUBLISH",
+      "sha256": "c54fd1c900e8ecbbc3c65a1a526ca2fd65b81313e9f5dd3a17c6fe1f3b2dac3f",
+      "information_rows": 118,
+      "primary_reviewed": 91,
+      "source_supported": 87,
+      "questions": 4,
+      "currently_matches_readable_view": true
     },
-    "publication_record_meaning": "Existing record verifies the ISA-03D workbook snapshot only; current source pass uses committed text/evidence and exact readback."
+    "publication_record_meaning": "Current consolidated91-property workbook, current table and original-source evidence agreement."
   },
   "row_targets": [
     {
@@ -18533,8 +18535,8 @@
     "isa_blank_cells_after_status_display": 0,
     "non_isa_display_values_changed": 0,
     "new_semantic_matches": 88,
-    "local_validation": "PASS_SOURCE_PASS_PRESERVATION",
-    "github_ci": "NO_NEW_SEMANTIC_CI_CLAIM_TEXT_COMMIT_READBACK",
+    "local_validation": "PASS_91_PROPERTY_WORKBOOK_EVIDENCE_TABLE_PARITY",
+    "github_ci": "Verify actual published checkpoint via ISA_Properties_Publication_Record_07NOV2026.json",
     "semantic_entries_reviewed": 91,
     "new_candidate_rows": 87,
     "specific_definition_questions": 4,
@@ -18550,7 +18552,9 @@
     "sensing_reviewed": 9,
     "motion_data_reviewed": 9,
     "property_catalogue_entries": 91,
-    "property_catalogue_unreviewed": 0
+    "property_catalogue_unreviewed": 0,
+    "property_workbook_integrated_entries": 91,
+    "new_semantic_reviews_at_publication": 0
   },
   "legend": [
     [
@@ -19599,7 +19603,7 @@
   "progress": {
     "completed_correction_iterations": 9,
     "planned": null,
-    "next": "ISA-PROPERTIES-PUBLISH",
+    "next": "ISA-04-ATMOSPHERIC",
     "primary_entries_reviewed": 91,
     "primary_entries_total": 480,
     "supporting_definitions_read": 62,
@@ -19611,9 +19615,10 @@
     "source_supported_candidate_rows": 83,
     "question_rows": 4,
     "planned_work_packages": 12,
-    "completed_work_packages": 2,
+    "completed_work_packages": 3,
     "completed_child_batches": 4,
-    "completed_catalogue_source_passes": 3
+    "completed_catalogue_source_passes": 3,
+    "completed_catalogue_workbook_checkpoints": 1
   },
   "evidence_files": [
     "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
@@ -19689,6 +19694,16 @@
       "source_questions_added": 1,
       "evidence": "ISA_Property_Catalogue_Evidence_07NOV2026.json",
       "workbook_checkpoint": "ISA-03D_SNAPSHOT_UNCHANGED"
+    },
+    {
+      "batch": "ISA-PROPERTIES-PUBLISH",
+      "state": "COMPLETE",
+      "new_semantic_reviews": 0,
+      "saved_outcomes_newly_integrated": 26,
+      "property_outcomes_integrated": 91,
+      "workbook": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
+      "source_supported": 87,
+      "source_questions_retained": 4
     }
   ]
 }

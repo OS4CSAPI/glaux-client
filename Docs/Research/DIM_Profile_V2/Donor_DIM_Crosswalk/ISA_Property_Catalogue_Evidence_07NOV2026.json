@@ -1824,14 +1824,16 @@
   ],
   "mapping_note": "Each native entry is individually traced. New sensing rows preserve distinct property roles and representations: two qualitative judgments, two distinct intervals, radar mode, usable range, thermal palette, laser wavelengths and relative camera zoom. Radar Mode is related to S06-R018 without overwriting its Camera Mode evidence. Candidate source roles are not automatic final-DIM field requirements.",
   "workbook_snapshot": {
-    "file": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
-    "checkpoint": "ISA-03D",
-    "primary_reviewed": 65,
-    "information_rows": 92,
-    "sha256": "c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404",
-    "next_refresh": "ISA-PROPERTIES-PUBLISH"
+    "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
+    "checkpoint": "ISA-PROPERTIES-PUBLISH",
+    "sha256": "c54fd1c900e8ecbbc3c65a1a526ca2fd65b81313e9f5dd3a17c6fe1f3b2dac3f",
+    "information_rows": 118,
+    "primary_reviewed": 91,
+    "source_supported": 87,
+    "questions": 4,
+    "currently_matches_readable_view": true
   },
-  "next_source_pass": null,
+  "next_source_pass": "ISA-04-ATMOSPHERIC",
   "validation": {
     "changed_primary_ids": [
       "ISA-DMS-097",
@@ -2607,5 +2609,13 @@
       "state": "SOURCE_REVIEW_COMPLETE_SPECIFIC_INTERPRETATION_OPEN"
     }
   ],
-  "next_action": "ISA-PROPERTIES-PUBLISH"
+  "next_action": "ISA-04-ATMOSPHERIC",
+  "workbook_integration": {
+    "state": "COMPLETE",
+    "checkpoint": "ISA-PROPERTIES-PUBLISH",
+    "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
+    "saved_property_outcomes": 91,
+    "new_semantic_reviews": 0,
+    "questions_preserved": 4
+  }
 }

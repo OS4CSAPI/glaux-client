@@ -1,11 +1,21 @@
 # ISA coverage correction — current execution plan
 
-**Current source-review closeout:** three grouped source passes are COMPLETE. The last nine motion/data properties added eight supported roles and ISA-Q004. No property assignments remain. [Current comparison](ISA_Correction_Review_07NOV2026.md) contains118 information/review rows; [Excel](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) remains the65-entry/92-row snapshot. Next prompt integrates and verifies all saved outcomes in the workbook; no further property-source pass or Observables review.
+**CURRENT — Property catalogue COMPLETE: all91 source outcomes integrated and published. Next source group: ISA-04-ATMOSPHERIC only.**
+
+[Current workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Readable comparison](ISA_Correction_Review_07NOV2026.md) · [Publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+
+The property source passes and planned workbook checkpoint are finished. Existing source decisions, including four local questions, remain unchanged. The next group is **Atmospheric Cloud Coverage, Atmospheric Dew Point, Atmospheric Humidity, Atmospheric Precipitation, Atmospheric Pressure, Atmospheric Temperature, Atmospheric Visibility, Atmospheric Wind** (ISA-DMS-123–130), assigned from the existing observable inventory and not yet reviewed. Review that group and its necessary dependencies, publish cumulative text/evidence directly, then stop. No property rereview, other donor work or new per-pass workbook release.
+
+## Retained policy and completed property schedule
+The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
 
 
-**7 November 2026 · All91 property source entries reviewed:87 supported outcomes and four record-local questions. NEXT: consolidated property-catalogue workbook publication and verification only.**
+**Current integrated checkpoint:** Property catalogue COMPLETE. Both the workbook and readable comparison contain118 information/review rows and all91 reviewed property outcomes. No further property-source pass is due.
 
-[Progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Published workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
+
+**7 November 2026 · Property catalogue COMPLETE. Current workbook and table both contain all91 reviewed outcomes. Next: eight atmospheric observables.**
+
+[Progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Published workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
 ## 1. What changes now
 
@@ -24,7 +34,7 @@ The 26 scheduled IDs below (seventeen now complete, nine remaining) are the unio
 | **Power and component condition — COMPLETE** | Power; Power State; Reserve Capacity; Satellites; Shots; Tamper State; Temperature; Time to Empty | 090, 091, 100, 103, 106, 111, 112, 113 | **8** |
 | **Sensing settings and measurement characteristics — COMPLETE** | Polarity; Pulse Interval; Quality; Radar Mode; Range; Resolution; Scan Time; Wavelengths; Zoom | 087, 093, 094, 095, 096, 101, 104, 119, 121 | **9** |
 | **Motion, viewed area, resources and data links — COMPLETE** | Receive Data Rate; Receive Power; Resources; Signal Strength Ratio; Transmit Data Rate; Transmit Power; Velocity; View Area; Zones | 097, 098, 102, 107, 114, 115, 116, 117, 120 | **9** |
-| **Property-catalogue publication and verification — NEXT** | Reconcile all 91 properties and integrate the saved changes into the workbook once; verify source, table and workbook agreement and preservation | No new primary entries assigned | **0** |
+| **Property-catalogue publication and verification — COMPLETE** | Reconcile all 91 properties and integrate the saved changes into the workbook once; verify source, table and workbook agreement and preservation | No new primary entries assigned | **0** |
 
 These are assignments, not semantic conclusions. The inventory confirms the names, locations and partition; it does not establish their mappings. Use the source definitions and full necessary dependencies before recording an outcome. Never make an unread definition a completed question to protect this schedule.
 
@@ -36,7 +46,7 @@ Update the **existing coverage/evidence data and cumulative GitHub-readable comp
 
 Do not create another standalone narrative report, another detailed lessons entry or another batch-specific workflow merely because a prompt ended. Reuse existing source/evidence conventions, the exact-file assembler and established verification functions. The current assembler already exists; this plan does not commission new export infrastructure.
 
-**The workbook is a dated snapshot.** Until the property-catalogue checkpoint, keep the existing ISA-03D XLSX intact and label its coverage accurately. As the readable comparison advances, its header and the progress/PITON must say which source pass is current and which checkpoint the workbook contains. A reader must never be told an older Excel file contains newer decisions. At the consolidated checkpoint, regenerate/export, visually inspect, publish and verify the workbook from the saved evidence. This planned publication cadence is not a failure or a reason to repeat source review.
+**Workbook cadence:** the current consolidated property workbook contains all91 reviewed outcomes and matches the readable table. Later coherent source groups may advance the text before the next catalogue/substantial-section workbook refresh. Label that difference accurately. Preserve historical snapshots and reuse saved evidence; a scheduled refresh is not a failure or a reason to repeat completed source review.
 
 GitHub remains the durable home throughout. A local attachment does not replace a commit. A failed publication is a specific repair action; no silent claim of published files, no repeated full-source review and no unbounded debugging loop.
 
@@ -50,7 +60,7 @@ Review both directions: ISA against all existing DIM rows, and relevant ISA cont
 
 ## 5. Preservation, sources and completion
 
-Use `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, this crosswalk directory. Latest fully integrated technical checkpoint: [c34f7b1](https://github.com/OS4CSAPI/glaux-client/commit/c34f7b1560a920a85c9061deec63c6dd6ab49e4b). The published ISA-03D review has **65 reviewed primary entries, 62 supported outcomes, three local questions and 92 information/review rows**. Historical workbooks and evidence remain unchanged.
+Use `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, this crosswalk directory. Current integrated property checkpoint: [publication record](ISA_Properties_Publication_Record_07NOV2026.json). The current workbook has **91 reviewed primary entries,87 supported outcomes,four local questions and118 information/review rows**. Historical workbooks, including ISA-03D, remain unchanged.
 
 Preserve the four equipment columns left, the adjacent foundational standards block and DIM rightmost. Do not alter the 58 primary non-ISA donor records, 73 case-evidence statements or other donor values. The existing ISA-only scope and separate owner adoption checkpoint remain. No application, server, UML, Profile, deployment or physical-command work is included.
 
@@ -64,4 +74,4 @@ A source pass is complete when its named assignments have supported dispositions
 
 This is the single active execution description. The superseded per-mini-batch rules and contradictory CURRENT/NEXT banners remain available in [the pre-revision plan](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md), not as competing live instructions.
 
-The execution-cadence amendment remains in force. All three grouped source passes are complete in the cumulative evidence/register/readable view. **Next: consolidate and verify the property-catalogue workbook.** Workbook publication stays at the catalogue checkpoint; the ISA-03D Excel snapshot is unchanged.
+The execution-cadence amendment remains in force. All three grouped source passes are complete in the cumulative evidence/register/readable view. **The consolidated property workbook checkpoint is COMPLETE. Next: Atmospheric Cloud Coverage, Atmospheric Dew Point, Atmospheric Humidity, Atmospheric Precipitation, Atmospheric Pressure, Atmospheric Temperature, Atmospheric Visibility, Atmospheric Wind only.** The source passes keep direct GitHub persistence; subsequent workbook refreshes remain at catalogue/substantial-section checkpoints.
