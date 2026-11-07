@@ -1,12 +1,12 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Atmospheric observables COMPLETE (8/39). Next: ISA-04-SPATIAL — seven named spatial observables only.**
+**CURRENT — Property catalogue COMPLETE. Atmospheric and spatial observable groups COMPLETE (15/39). Next: ISA-04-CONTEXT — seven event identity/context observables only.**
 
-[Current workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Readable comparison](ISA_Correction_Review_07NOV2026.md) · [Publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+[Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Property publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-The91-property review and workbook checkpoint remain complete. **ISA-04-ATMOSPHERIC is now complete:** eight original observable definitions, four core and four Accepted extensions;99 source entries reviewed in total,95 supported and four unchanged questions. [Observable evidence](ISA_Observable_Catalogue_Evidence_07NOV2026.json) and the current readable table have the new findings. The Excel workbook remains the accurately labeled property checkpoint (91 entries/118 rows); the newer text has126 information rows.
+All 91 property outcomes remain complete. The eight atmospheric and seven spatial observables add 15 supported source outcomes: **106 primary entries reviewed / 102 supported / four unchanged questions**. The current text has **133 information/review rows**; the preserved Excel snapshot contains 91 properties and 118 rows. The spatial group comprised five core entries and two Accepted extensions; its four newly inspected supporting definitions remain separate from later full type-catalogue review.
 
-**Next group: Area, Bearing, Distance, Point of Impact, Point of Origin, Position and Velocity** (ISA-DMS-122,133,141,149,150,151,159). Review those seven with required dependencies, persist the same cumulative evidence/table directly in GitHub, and stop. No property rereview, unrelated donor work or per-source-group workbook release. All remaining observable entries stay assigned in the inventory; this header is not a claim they have been reviewed.
+**Next group: BSO, Comment, Event Type Other Reason, Identity, Media, Method and Verified By** (ISA-DMS-131,140,142,145,146,147,160). Review exact definitions and necessary dependencies, preserve subject/extension standing, update the same GitHub evidence/table/coverage and stop. No property rereview, next-group semantic assumption, unrelated donor work, new publication infrastructure or per-group Excel release. The remaining 24 observable entries remain assigned in the inventory.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.

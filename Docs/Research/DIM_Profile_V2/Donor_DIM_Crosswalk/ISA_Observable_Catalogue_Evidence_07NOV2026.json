@@ -30,6 +30,25 @@
         "ISA-DMS-129",
         "ISA-DMS-130"
       ]
+    },
+    {
+      "id": "ISA-04-SPATIAL",
+      "status": "COMPLETE",
+      "assigned": 7,
+      "reviewed": 7,
+      "supported": 7,
+      "new_questions": 0,
+      "core": 5,
+      "accepted_extensions": 2,
+      "primary_ids": [
+        "ISA-DMS-122",
+        "ISA-DMS-133",
+        "ISA-DMS-141",
+        "ISA-DMS-149",
+        "ISA-DMS-150",
+        "ISA-DMS-151",
+        "ISA-DMS-159"
+      ]
     }
   ],
   "primary_records": [
@@ -357,6 +376,295 @@
       "reviewed_on": "2026-11-07",
       "related_existing_dim_row": "S06-R013",
       "related_existing_row_fit": "PARTIAL: a typed environmental observable supports a specific reported information role, not a complete reusable observable-property ontology."
+    },
+    {
+      "id": "ISA-OBS-122",
+      "entry_id": "ISA-DMS-122",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Area",
+      "element_kind": "observable",
+      "native_type": "Geographic Shape",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 18,
+      "pdf_pages": [
+        33,
+        33
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Area, printed p.18 / PDF p.33",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "da8b48b76d0e74f3ca291a2bc272fbf75091b0b348221c548dd2335c518e0df4",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-122",
+      "proposed_label": "Observation-associated geographic shape",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Absolute position or geographic area associated with the observation, represented by the Geographic Shape union.",
+      "mapping_boundary": "Not the component's installation position, current View Area, or configured Zones. The union lists Geographic Arc, Geographic Ellipse, Geographic Polygon and Geographic Polyline; despite its introductory point-to-shape wording it does not list a standalone Geographic Position alternative. Do not invent a point-only encoding, polygon-only restriction, CRS conversion or GeoJSON equivalence.",
+      "dependency_terms": [
+        "Geographic Shape",
+        "Geographic Arc",
+        "Geographic Ellipse",
+        "Geographic Polygon",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Ellipsoid",
+        "Measured Meters",
+        "Measured Degrees",
+        "Meters",
+        "Degrees",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-133",
+      "entry_id": "ISA-DMS-133",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Bearing",
+      "element_kind": "observable",
+      "native_type": "Rotation",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Bearing, printed p.19 / PDF p.34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "f185ad03023502d16f219bed9205f50f44e2c47d41035ee1d9ff482de03c3e66",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-133",
+      "proposed_label": "Observed-entity bearing relative to observer orientation",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Rotation from the observing component's current orientation to the observed entity. Rotation requires pitch, roll and yaw as Measured Degrees and applies yaw about z, pitch about the new y-prime axis, then roll about the new x-double-prime axis.",
+      "mapping_boundary": "Not automatically compass azimuth, absolute world orientation, a mounting offset or a new component orientation. Preserve the relative observer-to-entity role and source rotation order; no numeric absolute-frame transform is inferred and existing Orientation question ISA-Q003 is not silently resolved.",
+      "dependency_terms": [
+        "Rotation",
+        "Measured Degrees",
+        "Degrees",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-141",
+      "entry_id": "ISA-DMS-141",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Distance",
+      "element_kind": "observable",
+      "native_type": "Measured Meters",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Distance, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "12e17088506af7970ec4e2386805f9163a79c5e506c517f2b7213ffd6967da03",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-141",
+      "proposed_label": "Reported observer-to-entity distance",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Distance from the observing component to the observed entity, represented by required value in meters and optional measurement error.",
+      "mapping_boundary": "Not expected usable Range, maximum Detection Range, a location coordinate, or proof of detection reliability. No horizontal/slant/geodesic distance convention or source-case value is invented. The type's optional error retains its stated plus-or-minus one-standard-deviation convention; missing error is not zero error.",
+      "dependency_terms": [
+        "Measured Meters",
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-149",
+      "entry_id": "ISA-DMS-149",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Point of Impact",
+      "element_kind": "observable",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Point of Impact, printed p.21 / PDF p.36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8091c5c7d53179045f33fd37dcebbc7cbc54f6bd252c4c70e312f94003c34022",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-149",
+      "proposed_label": "Reported entity impact position",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Absolute position where an entity impacted an object or surface, represented using Geographic Position.",
+      "mapping_boundary": "A source-reported impact location, not the observed entity's current Position, an observer location, a predicted impact point, or a commanded destination. Geographic Position defaults do not prove surveyed altitude or perfect accuracy; no trajectory, causation or timestamp absent from this field is inferred.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-150",
+      "entry_id": "ISA-DMS-150",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Point of Origin",
+      "element_kind": "observable",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Point of Origin, printed p.21 / PDF p.36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "72303df271c31f368fd7251862fedb14c1bfd621e95c7916ad6c51fc28414604",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-150",
+      "proposed_label": "Reported entity launch position",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Absolute position at which an entity was launched, represented using Geographic Position.",
+      "mapping_boundary": "Not the coordinate-system origin, network source address, observer installation position, or every possible entity origin. No weapon trajectory or forecast is derived. Preserve the field's launch-location scope and optional geographic metadata without inventing provenance or launch time.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-151",
+      "entry_id": "ISA-DMS-151",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Position",
+      "element_kind": "observable",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Position, printed p.21 / PDF p.36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "c19b4c392c5a10aa2456845c316f5c13e4fe9875376d9a90d27dac109246cf8a",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-151",
+      "proposed_label": "Observed-entity position at observation",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Absolute position of the entity at the point at which it was observed, whether by detection or measurement. The source permits visible entities and invisible entities such as a signal or atmosphere.",
+      "mapping_boundary": "Distinct from the component Position property, its Perceived Position/Position Override, and a station site coordinate. Geographic Position requires latitude/longitude and permits altitude and error-ellipsoid fields; preserve the source geoid/EGM96 wording and defaults without asserting Cartesian ECEF values, ellipsoidal-height conversion, a verified probe point or zero uncertainty.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-159",
+      "entry_id": "ISA-DMS-159",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Velocity",
+      "element_kind": "observable",
+      "native_type": "Velocity",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 22,
+      "pdf_pages": [
+        37,
+        37
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Velocity, printed p.22 / PDF p.37",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "3fe64a3749329f129a6c204a901c16cbc95b0f3393282bf8551bf6ad3ed2a2ac",
+      "review_pass": "ISA-04-SPATIAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-159",
+      "proposed_label": "Observed-entity velocity at observation",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Absolute velocity of the entity at the point at which it was observed. Its composite requires heading (Measured Degrees) in the absolute XY plane and speed (Measured Mpsec); pitch is optional with the source default of zero.",
+      "mapping_boundary": "Distinct from component Velocity, atmospheric Wind, angular Rotation Rate or a forecast. Do not substitute speed alone for velocity, treat an omitted pitch default as a measured zero, or invent a reference-frame transformation or sampling interval.",
+      "dependency_terms": [
+        "Velocity",
+        "Measured Degrees",
+        "Measured Mpsec",
+        "Degrees",
+        "Mpsec",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
     }
   ],
   "supporting_definitions": [
@@ -511,6 +819,82 @@
       "source_span_sha256": "6c108dc988216cc3b3a2c87362fc31d4df27a5423faead87c8516c67e2329f6f",
       "later_catalogue_pass_completed": false,
       "review_pass": "ISA-04-ATMOSPHERIC"
+    },
+    {
+      "entry_id": "ISA-DMS-385",
+      "native_term": "Geographic Arc",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 94,
+      "pdf_pages": [
+        109,
+        109
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Arc, printed p.94, PDF 109–109",
+      "inspected_content_summary": "Required position:Geographic Position1, radius:Measured Meters1, centerline:Measured Degrees1 and arc angle:Measured Degrees1. Centerline is north-oriented, zero north; arc angle spans either side of that centerline. Preserve arc/circumference semantics, not a silently filled polygon sector.",
+      "source_span_sha256": "a9f4a7394df8fa4462005963d50b9dfa06350f17254d6ecdf1da80031418b7a1",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-SPATIAL"
+    },
+    {
+      "entry_id": "ISA-DMS-386",
+      "native_term": "Geographic Ellipse",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 94,
+      "pdf_pages": [
+        109,
+        109
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Ellipse, printed p.94, PDF 109–109",
+      "inspected_content_summary": "Required center:Geographic Position1 and ellipsoid:Ellipsoid1. Source combines a geographic center with a three-dimensional ellipsoid definition; do not flatten it automatically to a planar ellipse.",
+      "source_span_sha256": "409ea587c8d74a10cc9cedb53a9f1b238db442f9a96bc2d894a828c19be40d0d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-SPATIAL"
+    },
+    {
+      "entry_id": "ISA-DMS-388",
+      "native_term": "Geographic Polyline",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 95,
+      "pdf_pages": [
+        110,
+        110
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polyline, printed p.95, PDF 110–110",
+      "inspected_content_summary": "Required points:Geographic Position list2+, traversed in order. The definition does not state polygon closure or require the last point to repeat the first.",
+      "source_span_sha256": "c1eb8ac7b97f8c1ec1ad7ba34c707d763c0e4b83ae2d03d12f691094319ee440",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-SPATIAL"
+    },
+    {
+      "entry_id": "ISA-DMS-381",
+      "native_term": "Ellipsoid",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 92,
+      "pdf_pages": [
+        107,
+        108
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Ellipsoid, printed p.92, PDF 107–108",
+      "inspected_content_summary": "Required a:Measured Meters1; optional b and c:Measured Meters0–1 default to a; optional phi and theta:Measured Degrees0–1 default0.0, with source northing/vertical-relative orientation descriptions. Read continuation on PDF108. Distinct from Geographic Position's optional raw-Meters uncertainty fields; do not assume the shape represents measurement uncertainty.",
+      "source_span_sha256": "09b4d9759346847a0efd8fe9f1a3328b7f38408b31b25fb2c625319dee1b5fae",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-SPATIAL"
     }
   ],
   "reused_supporting_definitions": [
@@ -669,53 +1053,245 @@
         "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
         "ISA_Property_Catalogue_Evidence_07NOV2026.json"
       ]
+    },
+    {
+      "entry_id": "ISA-DMS-358",
+      "native_term": "Geographic Shape",
+      "source_locator": "ISA DMS 6.0r12 §8.2 Geographic Shape, printed p.84, PDF 99–99",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-387",
+      "native_term": "Geographic Polygon",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polygon, printed p.94, PDF 109–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Position, printed p.95, PDF 110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-411",
+      "native_term": "Measured Meters",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed p.101, PDF 116–117",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-401",
+      "native_term": "Measured Degrees",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Degrees, printed p.98, PDF 113–114",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53, PDF 68–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52, PDF 67–67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-441",
+      "native_term": "Rotation",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Rotation, printed p.111, PDF 126–127",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-449",
+      "native_term": "Velocity",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Velocity, printed p.114, PDF 129–129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-412",
+      "native_term": "Measured Mpsec",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Mpsec, printed p.102, PDF 117–117",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-286",
+      "native_term": "Mpsec",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Mpsec, printed p.54, PDF 69–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-SPATIAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
     }
   ],
   "source_inspection": {
-    "primary_text": "Original DMS6.0r12 §3.2 printed pp.18–19 / PDF33–34, all eight definitions and source standing read. Attempted primary-page images unavailable; text was accessible.",
+    "primary_text": "Original DMS6.0r12 §3.2 printed pp.18–22 / PDF33–37: all seven complete source definitions and source standing inspected; other entries sharing these pages not advanced.",
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+    "primary_text_pages": [
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
     "type_pages_visually_inspected": [
-      105,
-      106,
-      111,
-      122,
-      130,
-      131
+      107,
+      108,
+      109,
+      110,
+      126,
+      127,
+      129
     ],
     "additional_type_text_pages": [
-      69,
-      98,
-      99,
-      117,
-      118
+      99
     ],
     "new_supporting_definitions": [
-      "Cloud Layer",
-      "Humidity",
-      "Precipitation",
-      "Visibility",
-      "Wind",
-      "Wind Category",
-      "Pascals",
-      "Measured Pascals"
+      "Geographic Arc",
+      "Geographic Ellipse",
+      "Geographic Polyline",
+      "Ellipsoid"
     ],
-    "new_supporting_count": 8,
-    "unique_supporting_total": 70,
+    "new_supporting_count": 4,
+    "unique_supporting_total": 74,
     "reused_types": [
-      "Measured Celsius",
-      "Celsius",
-      "Percent",
+      "Geographic Shape",
+      "Geographic Polygon",
+      "Geographic Position",
       "Measured Meters",
-      "Meters",
       "Measured Degrees",
+      "Meters",
       "Degrees",
-      "Measured Mpsec",
-      "Mpsec",
-      "String",
       "Float",
-      "Custom Type"
+      "Rotation",
+      "Velocity",
+      "Measured Mpsec",
+      "Mpsec"
     ],
-    "source_limits": "No inaccessible definition treated as checked. Observed-image verification pertains only to the listed type pages; unrelated entries sharing a page not advanced."
+    "source_limits": "No numeric reference-frame conversion, pure-point alternative for Geographic Shape, installed case position, forecast, or physical action inferred. Original optional/defaulted fields retain their distinction from supplied measurements."
   },
   "source_inspections_by_pass": [
     {
@@ -764,6 +1340,53 @@
         "Custom Type"
       ],
       "source_limits": "No inaccessible definition treated as checked. Observed-image verification pertains only to the listed type pages; unrelated entries sharing a page not advanced."
+    },
+    {
+      "review_pass": "ISA-04-SPATIAL",
+      "primary_text": "Original DMS6.0r12 §3.2 printed pp.18–22 / PDF33–37: all seven complete source definitions and source standing inspected; other entries sharing these pages not advanced.",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text_pages": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "type_pages_visually_inspected": [
+        107,
+        108,
+        109,
+        110,
+        126,
+        127,
+        129
+      ],
+      "additional_type_text_pages": [
+        99
+      ],
+      "new_supporting_definitions": [
+        "Geographic Arc",
+        "Geographic Ellipse",
+        "Geographic Polyline",
+        "Ellipsoid"
+      ],
+      "new_supporting_count": 4,
+      "unique_supporting_total": 74,
+      "reused_types": [
+        "Geographic Shape",
+        "Geographic Polygon",
+        "Geographic Position",
+        "Measured Meters",
+        "Measured Degrees",
+        "Meters",
+        "Degrees",
+        "Float",
+        "Rotation",
+        "Velocity",
+        "Measured Mpsec",
+        "Mpsec"
+      ],
+      "source_limits": "No numeric reference-frame conversion, pure-point alternative for Geographic Shape, installed case position, forecast, or physical action inferred. Original optional/defaulted fields retain their distinction from supplied measurements."
     }
   ],
   "specific_questions": [],
@@ -773,7 +1396,7 @@
     "Campbell ClimaVue environmental fields remain separate from logger Status.PanelTemp; no native ISA encoding or fielded installation inferred.",
     "Bennett original ATemp mean events concern ambient air, not ISA internal Temperature; exact original resultTime, producer attribution and probe position remain unchanged. No new equipment values were added."
   ],
-  "mapping_note": "Eight original environmental observable definitions support distinct reported information roles under the existing Channels, Outputs & Observations group. They are source-derived candidate information, not mandatory DIM fields, executed observation acts or a proof of ISA encoding for any case. Existing aggregate DIM-row reconciliation remains scheduled for ISA-04; a source subentry does not automatically complete the whole row target. No new standalone report or Excel export in this source pass.",
+  "mapping_note": "Fifteen reviewed observable definitions now support explicit environmental and spatial reported-information roles. Newly reviewed spatial concepts retain observed-entity/event versus observing-component scope. Native terms shared with properties are qualified by their source kind; candidate rows are not automatically adopted requirements. Existing aggregate-row reconciliation remains assigned.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -784,34 +1407,43 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-04-SPATIAL",
-  "next_action": "ISA-04-SPATIAL",
+  "next_source_pass": "ISA-04-CONTEXT",
+  "next_action": "ISA-04-CONTEXT",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-123",
-      "ISA-DMS-124",
-      "ISA-DMS-125",
-      "ISA-DMS-126",
-      "ISA-DMS-127",
-      "ISA-DMS-128",
-      "ISA-DMS-129",
-      "ISA-DMS-130"
+      "ISA-DMS-122",
+      "ISA-DMS-133",
+      "ISA-DMS-141",
+      "ISA-DMS-149",
+      "ISA-DMS-150",
+      "ISA-DMS-151",
+      "ISA-DMS-159"
     ],
-    "reviewed_total": 99,
-    "supported_total": 95,
+    "reviewed_total": 106,
+    "supported_total": 102,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "observable_entries_reviewed": 8,
+    "observable_entries_reviewed": 15,
     "observable_entries_total": 39,
     "property_outcomes_unchanged": 91,
-    "information_review_rows": 126,
-    "new_candidate_rows": 8,
+    "information_review_rows": 133,
+    "new_candidate_rows": 7,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 8,
-    "unique_supporting_definitions": 70,
+    "new_supporting_types": 4,
+    "unique_supporting_definitions": 74,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
-  }
+  },
+  "case_checks_by_pass": [
+    {
+      "review_pass": "ISA-04-SPATIAL",
+      "checks": [
+        "No original equipment or donor display value changed; geographic observables do not turn reference-design specifications into installed ISA outputs.",
+        "Bennett station coordinates and probe serial identities do not establish observed-entity position, impact/origin location or exact sensor placement. Existing two source means/four representations and unknown original resultTime remain unchanged.",
+        "Component Position/Velocity and Orientation properties stay distinct from observed-entity Position/Velocity and relative Bearing. View Area and Zones remain component-facing spatial roles, not replacements for Area."
+      ]
+    }
+  ]
 }
