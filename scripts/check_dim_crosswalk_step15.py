@@ -67,6 +67,10 @@ def expected(old,stage):
             expanded.append(row["display"][:7]+[
                 ("≈ "+loc[row["rowKey"]]) if row["rowKey"] in loc else ""
             ]+row["display"][7:])
+    # Compare the primary sheet against the actual frozen v0.8 CSV instead
+    # of reconstructing presentation headings from an approximation.
+    with (D/(OLD+".csv")).open(encoding="utf8",newline="") as f:
+        main=list(csv.reader(f))
     return main,expanded,bands
 
 def main():
