@@ -1,0 +1,47 @@
+name: DIM V2 Step15 — publish original ISA source review and overlay
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step15_ISA6_Primary_Source_Staging_07NOV2026.json"
+      - "scripts/build_dim_crosswalk_step15.py"
+      - "scripts/check_dim_crosswalk_step15.py"
+      - ".github/workflows/dim-crosswalk-step15-publish.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dim-v2-step15-source-publisher
+  cancel-in-progress: false
+jobs:
+  build-verify-commit:
+    name: Generate, check and commit source-backed ISA overlay
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/dim-profile-v2
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build current source/evidence JSON, CSV, Markdown and v0.9 XLSX
+        run: python scripts/build_dim_crosswalk_step15.py
+      - name: Run independent primary/overlay source and XLSX parity checks
+        run: python scripts/check_dim_crosswalk_step15.py
+      - name: Commit source-generated workbook, audit and full owner preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.*
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step15_ISA_6_Proposed_14_Column_Overlay_07NOV2026.*
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step15_ISA_6_Original_Source_Clause_Audit_07NOV2026.*
+          if git diff --cached --quiet; then
+            echo "ISA Step15 workbook and evidence already match repository"
+          else
+            git commit -m "research(dim-v2): publish ISA 6.0 original-source staging and proposed owner overlay"
+            git push origin HEAD:research/dim-profile-v2
+          fi
