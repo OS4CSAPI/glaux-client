@@ -1,0 +1,223 @@
+{
+  "format": "step12-oms3-original-conceptual-clauses-v0.1",
+  "date": "2026-11-06",
+  "source": {
+    "standard": "OGC 20-082r4",
+    "title": "Observations, measurements and samples (OMS)",
+    "version": "3.0.0",
+    "published": "2023-05-26",
+    "originalURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+    "type": "OGC Abstract Specification conceptual/logical model (identical content ISO 19156:2023 apart from branding/legal)"
+  },
+  "standing": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATIONS_NOT_ADOPTED",
+  "reviewedExistingOMScells": 5,
+  "sourceNativeLeadsHeld": 12,
+  "addedDonorRows": 0,
+  "reviewedRows": [
+    {
+      "rowKey": "S06-R009",
+      "proposedDim": "Hosting platform / station context",
+      "nativeTerm": "Host (grouping of Observers)",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.7.2 /req/obs-cpt/Host/Host-sem; §8.8.2 Deployment-sem",
+      "originalDocumentURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "originalStandardMeaning": "Host groups Observers, often a monitoring facility or platform; the conceptual model also permits organizational groupings.",
+      "nonEquivalenceBoundary": "A Host is not necessarily a physical station, surveyed sensor location, parent hardware, or proof of an installed Observer.",
+      "sourceVerification": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R010",
+      "proposedDim": "Observing procedure / method",
+      "nativeTerm": "ObservingProcedure (reusable observing method)",
+      "relation": "DIRECT",
+      "sourceClause": "§8.5.2 /req/obs-cpt/ObservingProcedure/ObservingProcedure-sem; §8.2.9",
+      "originalDocumentURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "originalStandardMeaning": "An ObservingProcedure describes the steps/method an Observer uses to obtain an ObservableProperty's value; it is reusable across distinct Observers.",
+      "nonEquivalenceBoundary": "A reusable method is not an installed hardware identity or proof the method was executed for a historical event.",
+      "sourceVerification": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R013",
+      "proposedDim": "Observed / observable property",
+      "nativeTerm": "ObservableProperty (quality of feature-of-interest)",
+      "relation": "DIRECT",
+      "sourceClause": "§8.3.2 /req/obs-cpt/ObservableProperty/ObservableProperty-sem; §8.2.7",
+      "originalDocumentURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "originalStandardMeaning": "ObservableProperty is an observable quality or characteristic of the feature-of-interest; observations associate exactly one observedProperty.",
+      "nonEquivalenceBoundary": "Outdoor air temperature and logger-panel temperature are not the same observed property merely because both use °C; property != measured value.",
+      "sourceVerification": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R014",
+      "proposedDim": "Observer / observing System",
+      "nativeTerm": "Observer (identifiable individual performing observing)",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.6.2 /req/obs-cpt/Observer/Observer-sem; §8.2.10",
+      "originalDocumentURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "originalStandardMeaning": "Observer is a particular identifiable entity capable of producing Observations with an ObservingProcedure; may be physical instrument, algorithm, person or other implementation.",
+      "nonEquivalenceBoundary": "The broad DIM label 'Observer / observing System' exceeds OMS: an Observer is not necessarily physical equipment or the CSAPI DataStream publisher.",
+      "sourceVerification": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R015",
+      "proposedDim": "Performed Observation",
+      "nativeTerm": "Observation (act determining property value)",
+      "relation": "DIRECT",
+      "sourceClause": "§8.2.2 /req/obs-cpt/Observation/Observation-sem; §§8.2.3–8.2.4; §9.3",
+      "originalDocumentURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "originalStandardMeaning": "Observation is the act that determines a feature's property value using a method, with exactly one phenomenonTime, resultTime, observedProperty, procedure, and result; the logical core imposes source-context constraints.",
+      "nonEquivalenceBoundary": "A published manufacturer example is not a performed act; a copied API representation is not a new original act. Original Bennett resultTime is UNKNOWN, so fully conformant source-native OMS serialization is not demonstrated.",
+      "sourceVerification": "OGC_20_082R4_ORIGINAL_CONCEPTUAL_REQUIREMENTS_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "nativeLeads": [
+    {
+      "id": "OMS-H01",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "Observation.phenomenonTime",
+      "clause": "§8.2.3 /req/obs-cpt/Observation/phenomenonTime-sem and -card",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "The period to which the result applies; the standard explicitly uses a time interval for averages of multiple samples. Preserve source coverage and timezone; no unsupported precise interval inferred."
+    },
+    {
+      "id": "OMS-H02",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "Observation.resultTime",
+      "clause": "§8.2.4 /req/obs-cpt/Observation/resultTime-sem and -card; §9.3.3",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "An instant when the result became available; exactly one in a fully modeled Observation. Original Bennett NOAA resultTime remains UNKNOWN and must not be filled with the API publication date or phenomenonTime."
+    },
+    {
+      "id": "OMS-H03",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "Observation.resultQuality",
+      "clause": "§9.2.5 /req/obs-core/AbstractObservationCharacteristics/resultQuality-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Observation result quality is distinct from equipment health and from the procedure's generic trustworthiness; Bennett's literal F_ATemp='<0> ' and separate blank F_Record must not be normalized away."
+    },
+    {
+      "id": "OMS-H04",
+      "relatedRowOrHold": "S06-R012",
+      "nativeTerm": "Observation.result and quantitative UoM",
+      "clause": "§8.2.8 /req/obs-cpt/Observation/result-sem; §8.2.16 /req/obs-cpt/Observation/uom",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Observation result is an instance value, not a reusable native output field/schema position; a measurable result needs appropriate units without inventing native 14-field result bodies."
+    },
+    {
+      "id": "OMS-H05",
+      "relatedRowOrHold": "CASE-H02",
+      "nativeTerm": "Observation.featureOfInterest (what was measured)",
+      "clause": "§8.2.6 /req/obs-cpt/Observation/featureOfInterest-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "For an air temperature measurement the observed feature may be a volume of air; station site location, mounted probe and feature-of-interest are distinct subjects."
+    },
+    {
+      "id": "OMS-H06",
+      "relatedRowOrHold": "CASE-H07",
+      "nativeTerm": "proximateFeatureOfInterest / ultimateFeatureOfInterest",
+      "clause": "§9.2.6–§9.2.7 /req/obs-core/AbstractObservationCharacteristics/pFoI-sem / uFoI-sem; §9.3.5",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Allows proxy samples versus ultimate target, not evidence that a particular proxy/sample chain exists in one of our cases."
+    },
+    {
+      "id": "OMS-H07",
+      "relatedRowOrHold": "CASE-H01",
+      "nativeTerm": "Observer ↔ Deployment ↔ Host association",
+      "clause": "§8.6.5; §8.8.2–8.8.4",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "A deployment assigns an Observer to a Host. The model alone does not create dated EE181 serial role periods, exact change instant, or 2026 installed state."
+    },
+    {
+      "id": "OMS-H08",
+      "relatedRowOrHold": "CASE-H06",
+      "nativeTerm": "AbstractObservationCharacteristics.parameter: NamedValue",
+      "clause": "§9.2.4 /req/obs-core/AbstractObservationCharacteristics/parameter-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Event-specific settings/inputs may be recorded as parameters, but a device's factory default is not necessarily the actual setting during an observation."
+    },
+    {
+      "id": "OMS-H09",
+      "relatedRowOrHold": "S06-R022",
+      "nativeTerm": "relatedObservation association",
+      "clause": "§8.1.3 /req/obs-cpt/gen/relatedObservation-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Relates Observation ACTS; it is not automatically an original-record to derivative API-copy provenance relation and does not turn Bennett two NOAA events into four."
+    },
+    {
+      "id": "OMS-H10",
+      "relatedRowOrHold": "S06-R021",
+      "nativeTerm": "Abstract Observation Core.metadata association",
+      "clause": "§9.1.2 /req/obs-core/gen/metadata-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Generic descriptive metadata link does not enforce project-specific original issuer, edition, locator, attestation, source truth grade or signed provenance."
+    },
+    {
+      "id": "OMS-H11",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "Observation.validTime",
+      "clause": "§8.2.5 /req/obs-cpt/Observation/validTime-sem",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Period during which result is useful is separate from phenomenonTime and resultTime; NOAA station summary does not establish a validity period."
+    },
+    {
+      "id": "OMS-H12",
+      "relatedRowOrHold": "CASE-H07",
+      "nativeTerm": "ObservingProcedure versus processing-chain/Observer implementation",
+      "clause": "§8.5.2; §8.6.2; §7.1.6",
+      "sourceURL": "https://docs.ogc.org/as/20-082r4/20-082r4.html",
+      "disposition": "ORIGINAL_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "An algorithm or simulation may generate an Observation; source does not reveal the full producing algorithm, aggregation chain or original issuer behind Bennett's summary."
+    }
+  ],
+  "preserved": {
+    "ownerColumns": [
+      "Dragino",
+      "AirGradient",
+      "Campbell",
+      "Bennett",
+      "IEEE",
+      "OPC",
+      "SAPIENT",
+      "SOSA",
+      "OMS",
+      "SWE",
+      "SensorML",
+      "CSAPI",
+      "DIM"
+    ],
+    "totalDonorCells": 57,
+    "priorCheckedSourceCells": 26,
+    "otherPriorExtractOnly": 26,
+    "caseStatements": 73,
+    "dimProposals": 22,
+    "caseReviewHolds": 9
+  },
+  "keyBennettFacts": [
+    "Historical station has two original NOAA ATemp mean events, not four original observations.",
+    "Original NOAA resultTime is UNKNOWN; no source-backed full OMS Observation data record possible without handling missingness and conformance honestly.",
+    "Original F_ATemp lexical token '<0> ' includes trailing space; F_Record is separate blank field.",
+    "Two EE181 serials occupy three dated service statements, not three different probes; OMS Deployment concept alone does not supply exact swap time."
+  ],
+  "excluded": [
+    "No data encoding/JSON schema conformance inferred from an abstract conceptual standard",
+    "No DIM/CSAPI Profile adopted requirement",
+    "No device manufacturer conformance asserted",
+    "No Step13 separate donor assessed"
+  ]
+}
