@@ -1,0 +1,63 @@
+name: Recover ISA-01 publication and verify committed checkpoint
+
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths:
+      - .github/workflows/recover-isa01-publication.yml
+      - scripts/recover_isa01_publication.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isa01-publication-recovery
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Restore exact saved census and publish recovery documents
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    outputs:
+      checkpoint: ${{ steps.commit.outputs.checkpoint }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Validate saved file identities and apply publication-only changes
+        run: python3 scripts/recover_isa01_publication.py
+      - name: Commit only authorized research documents and remove consumed transfer staging
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk
+          git add Docs/Research/DIM_Profile_V2/README.md Docs/Research/DIM_Profile_V2/Deliverables/README.md
+          git diff --cached --check
+          git commit -m 'docs(dim-v2): recover published ISA-01 workbook and census; record lessons and ISA-02 handoff'
+          git push origin HEAD:research/dim-profile-v2
+          echo "checkpoint=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify-published:
+    name: Read-only verification of the exact published checkpoint
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.checkpoint }}
+          persist-credentials: false
+      - name: Verify committed workbook hashes, inventories, preserved baselines and lessons links
+        run: python3 scripts/recover_isa01_publication.py --verify
+      - name: Record verified commit
+        run: |
+          echo "Verified published checkpoint: ${{ needs.publish.outputs.checkpoint }}"
+          echo 'ISA-01 COMPLETE. Publication and initial lessons checkpoint COMPLETE. Next: ISA-02 ONLY.'
