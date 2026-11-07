@@ -1,0 +1,29 @@
+name: ISA-01 baseline source export
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths: [.github/workflows/isa01-source-export-once.yml]
+permissions:
+  contents: read
+jobs:
+  source-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: isa01-exact-baseline
+          path: |
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.*
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step15_ISA6_Primary_Source_Staging_07NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step15_ISA_6_Proposed_14_Column_Overlay_07NOV2026.*
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_Alignment/03_Source_Accountability_Register.csv
+          retention-days: 1
+          if-no-files-found: error
