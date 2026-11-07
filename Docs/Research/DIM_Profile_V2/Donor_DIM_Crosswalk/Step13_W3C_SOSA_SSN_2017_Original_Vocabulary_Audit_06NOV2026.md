@@ -72,6 +72,10 @@ World Wide Web Consortium (W3C). 2017. *Semantic Sensor Network Ontology.* W3C R
 
 World Wide Web Consortium (W3C). 2026. *Semantic Sensor Network Ontology – 2023 Edition.* W3C Working Draft, November 4. https://www.w3.org/TR/2026/WD-vocab-ssn-2023-20261104/
 
-## 8. Next controlled iteration
+## 8. Published master and independent validation
+
+The editable [12-sheet source-backed v0.7 workbook](Master_Donor_Concept_to_DIM_Crosswalk_v0.7_Step13_W3C_SOSA_SSN_06NOV2026.xlsx), [full horizontal GitHub table](Master_Donor_Concept_to_DIM_Crosswalk_v0.7_Step13_W3C_SOSA_SSN_06NOV2026.md), [JSON](Master_Donor_Concept_to_DIM_Crosswalk_v0.7_Step13_W3C_SOSA_SSN_06NOV2026.json) and [CSV mirror](Master_Donor_Concept_to_DIM_Crosswalk_v0.7_Step13_W3C_SOSA_SSN_06NOV2026.csv) are published on the research branch. The first [publication/validation workflow](https://github.com/OS4CSAPI/glaux-client/actions/runs/42339234533) **PASSED** and committed actual XLSX blob `f4a8c144fcc6a5d4740806512f19b81ae86ed0b9` (444,364 bytes). A separate [post-publication GitHub Actions audit](https://github.com/OS4CSAPI/glaux-client/actions/runs/42339280317) **PASSED** against those committed bytes: 13 columns, six dividers, 22 proposed rows, nine held case rows, 73 source case records, 57 source-to-DIM evidence records, 6 W3C reviewed terms, 12 source-only holds and all 31 prior OGC source-reviewed cells preserved. These consistency checks are **not** external ontology reasoner interoperability or verified source issuer signatures.
+
+## 9. Next controlled iteration
 
 **Step13 source decisions complete; next distinct owner “proceed” is Step14 IEEE 1451/TEDS only.** Consult public technical/NIST Playground evidence at the actual inspected edition and keep uninspected proprietary 2024 normative clauses on explicit hold. Do not begin ISA Step15 or alter the final donor ranking by default.
