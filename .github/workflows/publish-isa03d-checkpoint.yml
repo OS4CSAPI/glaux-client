@@ -4,7 +4,6 @@ on:
     branches: [research/dim-profile-v2]
     paths:
       - Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/.isa_review_text_update.txt
-      - .github/workflows/publish-isa03d-checkpoint.yml
   workflow_dispatch:
 permissions:
   contents: read
@@ -45,8 +44,18 @@ env:
     changed={x['id'] for x in r['dms_entries'] if x['semantic_review_status']!=oldentries[x['id']]['semantic_review_status']}
     assert changed==target,'Unexpected primary review scope'
     assert len(r['dms_entries'])==len(prior['dms_entries'])==expected['source_inventory_entries']
-    for key in ['sources','source_blocks','row_targets','legacy_records','baseline','census_method','reconciliation','specific_questions','legend']:
+    for key in ['sources','source_blocks','row_targets','legacy_records','baseline','census_method','reconciliation','legend']:
         assert r[key]==prior[key],'Unrelated source records changed: '+key
+    # Preserve earlier questions exactly; accept only new questions tied to this reviewed source pass.
+    priorq=prior['specific_questions'];currentq=r['specific_questions']
+    assert currentq[:len(priorq)]==priorq,'Earlier source questions changed'
+    addedq=currentq[len(priorq):]
+    assert {q['id'] for q in addedq}==set(expected.get('new_question_ids',[])),'Unassigned new question'
+    assert len({q['id'] for q in currentq})==len(currentq),'Duplicate source question ID'
+    assert all(q['entry_id'] in target for q in addedq),'Question outside current source assignments'
+    assert {x['question_id'] for x in records if x.get('question_id')}=={q['id'] for q in addedq},'Question/evidence mismatch'
+    for q in addedq:
+        assert q in e.get('specific_questions',[]),'Source question missing from evidence'
     labels={x['proposed_label'] for x in records}
     assert len(labels)==len(records)
     assert [row for row in r['review_grid'] if row[-1] not in labels]==prior['review_grid'],'Prior display values changed'
@@ -55,16 +64,23 @@ env:
     assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==expected['reviewed_total']
     assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==expected['supported_total']
     assert sum(bool(x.get('supporting_definition_checked_in')) for x in r['dms_entries'])==expected['unique_supporting_definitions']
+    assert sum(x['semantic_review_status']=='REVIEWED_QUESTION_RECORDED' for x in r['dms_entries'])==len(currentq)
+    assert len(currentq)==expected.get('questions_total',len(priorq))
     assert s['nextOnOwnerProceed']==p['next_task'] and s['workbookSnapshot']['currentlyMatchesReadableView'] is False
     view=(D/s['currentReview']).read_text()
     assert '<table>' in view and all(x['native_term'] in view for x in records)
     assert 'snapshot' in view.lower() and 'newer' in view.lower()
     with (D/s['currentReview'].replace('.md','.csv')).open(newline='') as handle:
         assert list(csv.reader(handle))==r['review_grid']
+    if s['propertyCatalogue']['remaining']==0:
+        props=[x for x in r['dms_entries'] if x['source_kind']=='property']
+        assert len(props)==s['propertyCatalogue']['total']==91
+        assert all(x['semantic_review_status'].startswith('REVIEWED_') for x in props),'Unreviewed property hidden at closeout'
+        assert s['nextOnOwnerProceed']=='ISA-PROPERTIES-PUBLISH','Catalogue workbook checkpoint bypassed'
     if os.environ.get('APPLY_ISA_TEXT')=='1':
         subprocess.run(['git','add','--',*p['files'].keys()],check=True)
-    print('PASS: exact reviewed text outputs, assigned source outcomes, unchanged historical rows and workbook snapshot.')
-    print('PASS: cumulative coverage/readable table/CSV/progress agree; no additional source research or workbook export.')
+    print('PASS: exact reviewed text outputs, assigned source outcomes, prior questions and historical rows/workbook preserved.')
+    print('PASS: cumulative coverage/readable table/CSV/progress agree; new questions traced to original source records.')
     print('CHECKPOINT:',p['checkpoint'],'NEXT:',p['next_task'])
 jobs:
   publish:
