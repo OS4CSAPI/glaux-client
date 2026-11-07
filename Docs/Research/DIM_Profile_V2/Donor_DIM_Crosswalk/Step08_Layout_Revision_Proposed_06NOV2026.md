@@ -1,5 +1,7 @@
 # Step 8 — proposed layout revision: actual case columns and foundational block
 
+**POST-REVIEW DISPOSITION (6 Nov 2026):** Owner accepted the revised **column format only**; Step08 is closed. [Read the authoritative owner closeout](Step08_Owner_Review_Closeout_06NOV2026.md) and [structured decision](Step08_Owner_Review_Disposition_06NOV2026.json). The **PENDING** statements below describe the earlier as-published pre-decision review snapshot; 22 proposed DIM rows/51 mappings and nine case holds **remain unapproved in meaning**. The workbook/underlying original evidence were not edited for closeout.
+
 **6 November 2026 · REVISED FILES PUBLISHED FOR OWNER REVIEW · OWNER HAS NOT ACCEPTED THIS FORMAT OR THE NEW REVIEW-HOLD ROWS.** The original Step06 workbook and its 51 proposed donor mappings are preserved unchanged. This revision changes presentation, adds four equipment-source columns and an empty SWE Common column, and displays source-native **case evidence** that had previously been out of sight.
 
 ## Why the geometry changed
