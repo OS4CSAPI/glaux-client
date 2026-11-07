@@ -1,6 +1,9 @@
 # ISA coverage correction — current execution plan
 
-**7 November 2026 · Power/condition and Sensing-settings source passes COMPLETE;82/91 properties reviewed. Next: Motion, viewed area, resources and data links — nine properties, then one consolidated workbook checkpoint.**
+**Current source-review closeout:** three grouped source passes are COMPLETE. The last nine motion/data properties added eight supported roles and ISA-Q004. No property assignments remain. [Current comparison](ISA_Correction_Review_07NOV2026.md) contains118 information/review rows; [Excel](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) remains the65-entry/92-row snapshot. Next prompt integrates and verifies all saved outcomes in the workbook; no further property-source pass or Observables review.
+
+
+**7 November 2026 · All91 property source entries reviewed:87 supported outcomes and four record-local questions. NEXT: consolidated property-catalogue workbook publication and verification only.**
 
 [Progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Published workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
@@ -20,8 +23,8 @@ The 26 scheduled IDs below (seventeen now complete, nine remaining) are the unio
 | --- | --- | --- | ---: |
 | **Power and component condition — COMPLETE** | Power; Power State; Reserve Capacity; Satellites; Shots; Tamper State; Temperature; Time to Empty | 090, 091, 100, 103, 106, 111, 112, 113 | **8** |
 | **Sensing settings and measurement characteristics — COMPLETE** | Polarity; Pulse Interval; Quality; Radar Mode; Range; Resolution; Scan Time; Wavelengths; Zoom | 087, 093, 094, 095, 096, 101, 104, 119, 121 | **9** |
-| **Motion, viewed area, resources and data links — NEXT** | Receive Data Rate; Receive Power; Resources; Signal Strength Ratio; Transmit Data Rate; Transmit Power; Velocity; View Area; Zones | 097, 098, 102, 107, 114, 115, 116, 117, 120 | **9** |
-| **Property-catalogue publication and verification** | Reconcile all 91 properties and integrate the saved changes into the workbook once; verify source, table and workbook agreement and preservation | No new primary entries assigned | **0** |
+| **Motion, viewed area, resources and data links — COMPLETE** | Receive Data Rate; Receive Power; Resources; Signal Strength Ratio; Transmit Data Rate; Transmit Power; Velocity; View Area; Zones | 097, 098, 102, 107, 114, 115, 116, 117, 120 | **9** |
+| **Property-catalogue publication and verification — NEXT** | Reconcile all 91 properties and integrate the saved changes into the workbook once; verify source, table and workbook agreement and preservation | No new primary entries assigned | **0** |
 
 These are assignments, not semantic conclusions. The inventory confirms the names, locations and partition; it does not establish their mappings. Use the source definitions and full necessary dependencies before recording an outcome. Never make an unread definition a completed question to protect this schedule.
 
@@ -61,4 +64,4 @@ A source pass is complete when its named assignments have supported dispositions
 
 This is the single active execution description. The superseded per-mini-batch rules and contradictory CURRENT/NEXT banners remain available in [the pre-revision plan](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md), not as competing live instructions.
 
-The execution-cadence amendment remains in force. The Power/condition and Sensing-settings passes are complete in the cumulative evidence/register/readable view. **Next: nine Motion, viewed area, resources and data links properties.** Workbook publication stays at the catalogue checkpoint; the ISA-03D Excel snapshot is unchanged.
+The execution-cadence amendment remains in force. All three grouped source passes are complete in the cumulative evidence/register/readable view. **Next: consolidate and verify the property-catalogue workbook.** Workbook publication stays at the catalogue checkpoint; the ISA-03D Excel snapshot is unchanged.
