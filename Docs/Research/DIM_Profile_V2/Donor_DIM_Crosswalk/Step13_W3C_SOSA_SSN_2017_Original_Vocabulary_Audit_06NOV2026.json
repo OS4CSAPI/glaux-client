@@ -1,0 +1,272 @@
+{
+  "format": "step13-w3c-2017-recommendation-native-vocabulary-v0.1",
+  "date": "2026-11-06",
+  "source": {
+    "issuer": "World Wide Web Consortium / joint OGC-W3C SDWWG",
+    "title": "Semantic Sensor Network Ontology",
+    "edition": "W3C Recommendation 19 October 2017",
+    "originalURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+    "namespaceSOSA": "http://www.w3.org/ns/sosa/",
+    "namespaceSSN": "http://www.w3.org/ns/ssn/"
+  },
+  "explicitlySeparateLaterDraft": {
+    "title": "Semantic Sensor Network Ontology - 2023 Edition",
+    "status": "W3C Working Draft, 4 November 2026",
+    "url": "https://www.w3.org/TR/2026/WD-vocab-ssn-2023-20261104/",
+    "checkedChangeLogOnly": true,
+    "not2017Recommendation": true,
+    "examplesOfDraftOnlyProposals": [
+      "Execution/Asset superclasses and collections",
+      "reworked System Capabilities module",
+      "ObservingProcedure, ActuatingProcedure, SamplingProcedure subtypes",
+      "OMS/CSAPI mappings"
+    ],
+    "neverApplyAs2017Definitions": true
+  },
+  "standing": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATIONS_PROPOSED",
+  "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+  "reviewedExistingW3CCells": 6,
+  "sourceNativeLeadsHeld": 12,
+  "reviewedRows": [
+    {
+      "rowKey": "S06-R005",
+      "proposedDim": "Described sensing System / arrangement",
+      "nativeTerm": "ssn:System",
+      "kind": "OWL_CLASS",
+      "relation": "PARTIAL",
+      "sourceClause": "§4.9.2.4 ssn:System; §4.9.2.5 ssn:hasSubSystem",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "An OWL-class abstraction for pieces of infrastructure implementing Procedures; component Systems can be other Systems.",
+      "nonEquivalenceBoundary": "Does not itself define a single physical enclosure, installed station, deployed serial asset, CSAPI System resource or complete hardware bill of materials.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R009",
+      "proposedDim": "Hosting platform / station context",
+      "nativeTerm": "sosa:Platform",
+      "kind": "OWL_CLASS",
+      "relation": "PARTIAL",
+      "sourceClause": "§4.9.2.1 sosa:Platform; §§4.9.2.2–4.9.2.3 hosts/isHostedBy",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "An entity that hosts Sensors, Actuators, Samplers or other Platforms; examples include posts, buoys, vehicles, phones and people.",
+      "nonEquivalenceBoundary": "Hosting or mounting is not physical-part containment; a station coordinate cannot establish an individual probe point or original installation history.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R010",
+      "proposedDim": "Observing procedure / method",
+      "nativeTerm": "sosa:Procedure",
+      "kind": "OWL_CLASS",
+      "relation": "PARTIAL",
+      "sourceClause": "§4.8.2.1 sosa:Procedure; §4.8.2.2 usedProcedure; §4.8.2.3 ssn:implements",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "Reusable workflow, protocol, plan, algorithm or method for observation, sampling, or actuation.",
+      "nonEquivalenceBoundary": "It covers more than observing, and its declaration does not prove a historic procedure execution or effective on-device configuration.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R013",
+      "proposedDim": "Observed / observable property",
+      "nativeTerm": "sosa:ObservableProperty",
+      "kind": "OWL_CLASS",
+      "relation": "DIRECT",
+      "sourceClause": "§4.3.2.1 sosa:ObservableProperty; §4.3.2.3 sosa:observedProperty",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "An observable quality/characteristic of a feature-of-interest, connected to observations via observedProperty.",
+      "nonEquivalenceBoundary": "A property is neither its numeric result nor a physical PM sensor module; temperature of an enclosure panel is not necessarily ambient air temperature.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R014",
+      "proposedDim": "Observer / observing System",
+      "nativeTerm": "sosa:Sensor",
+      "kind": "OWL_CLASS",
+      "relation": "PARTIAL",
+      "sourceClause": "§4.3.2.5 sosa:Sensor; §4.3.2.9 madeBySensor; §4.3.2.6 observes",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "A device, agent including a human, or software/simulation implementing sensing procedures and generating results.",
+      "nonEquivalenceBoundary": "Not necessarily one physical probe, logger, reported stream, or identifiably authenticated performer of Bennett's historical 15-minute mean.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R015",
+      "proposedDim": "Performed Observation",
+      "nativeTerm": "sosa:Observation",
+      "kind": "OWL_CLASS",
+      "relation": "DIRECT",
+      "sourceClause": "§4.3.2.2 sosa:Observation; §§4.3.2.3–4.3.2.4; §4.3.2.9",
+      "originalDocumentURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "originalStandardMeaning": "The actual activity of applying a procedure to estimate/calculate a property of a feature-of-interest, linked to sensor, property, result and time.",
+      "nonEquivalenceBoundary": "A manufacturer example is not an executed Observation; copying two NOAA source events into four API records does not create four original acts; original resultTime remains UNKNOWN.",
+      "sourceVerification": "W3C_2017_RECOMMENDATION_ORIGINAL_VOCABULARY_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "nativeLeads": [
+    {
+      "id": "W3C-H01",
+      "relatedRowOrHold": "S06-R007",
+      "nativeTerm": "ssn:hasSubSystem",
+      "clause": "§4.9.2.5",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Relates System to component System, but physical-part completeness and assembly hierarchy do not automatically follow."
+    },
+    {
+      "id": "W3C-H02",
+      "relatedRowOrHold": "S06-R009",
+      "nativeTerm": "sosa:hosts / sosa:isHostedBy",
+      "clause": "§§4.9.2.2–4.9.2.3",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Hosting and mounted-on roles must not be silently converted to material containment, point coordinates or time-dated service."
+    },
+    {
+      "id": "W3C-H03",
+      "relatedRowOrHold": "CASE-H01 / CASE-H02",
+      "nativeTerm": "ssn:Deployment / deployedSystem / deployedOnPlatform",
+      "clause": "§§4.9.2.6–4.9.2.10",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "A deployment description does not establish the exact Bennett EE181 exchange minute, verified sensor site point or current state."
+    },
+    {
+      "id": "W3C-H04",
+      "relatedRowOrHold": "S06-R010",
+      "nativeTerm": "sosa:usedProcedure / ssn:implements",
+      "clause": "§§4.8.2.2–4.8.2.4",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "A reusable method, implementation capability, and actual historical procedure execution are different claims."
+    },
+    {
+      "id": "W3C-H05",
+      "relatedRowOrHold": "S06-R012",
+      "nativeTerm": "ssn:hasInput / ssn:hasOutput / ssn:Input / ssn:Output",
+      "clause": "§§4.8.2.5–4.8.2.8",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Procedure input/output information is not necessarily a logger telemetry field, network endpoint or addressed transducer channel."
+    },
+    {
+      "id": "W3C-H06",
+      "relatedRowOrHold": "CASE-H02",
+      "nativeTerm": "sosa:FeatureOfInterest / sosa:hasFeatureOfInterest",
+      "clause": "§§4.6.2.1–4.6.2.2",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Observed ambient air, sensor hardware, physical station and station coordinate are not the same feature."
+    },
+    {
+      "id": "W3C-H07",
+      "relatedRowOrHold": "S06-R012 / S06-R015",
+      "nativeTerm": "sosa:Result / hasResult / hasSimpleResult",
+      "clause": "§§4.7.2.1–4.7.2.4",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Observation result instance/value differs from an output-field definition, observation act, and copied project representation."
+    },
+    {
+      "id": "W3C-H08",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "sosa:phenomenonTime",
+      "clause": "§4.3.2.4",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Time of applicability may be an interval for a mean, and differs from resultTime; do not invent exact Bennett interval boundaries."
+    },
+    {
+      "id": "W3C-H09",
+      "relatedRowOrHold": "CASE-H08",
+      "nativeTerm": "sosa:resultTime",
+      "clause": "§4.7.2.5",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Result-completion instant for original NOAA record is UNKNOWN; must not substitute retrieval time or project API publication time."
+    },
+    {
+      "id": "W3C-H10",
+      "relatedRowOrHold": "S06-R014 / S06-R015",
+      "nativeTerm": "sosa:madeBySensor",
+      "clause": "§4.3.2.9",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Original mean-producing Sensor attribution cannot be asserted from station listing or associated probe inventory alone."
+    },
+    {
+      "id": "W3C-H11",
+      "relatedRowOrHold": "CASE-H04 / CASE-H05",
+      "nativeTerm": "ssn-system:SystemCapability / inCondition / OperatingRange",
+      "clause": "§§5.1.2.2–5.1.2.21",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Capability and operating-range declarations are not measured present battery state, diagnostics, or verified operating conditions."
+    },
+    {
+      "id": "W3C-H12",
+      "relatedRowOrHold": "CASE-H09",
+      "nativeTerm": "sosa:Actuation / sosa:Actuator / sosa:madeActuation",
+      "clause": "§§4.4.2.2, 4.4.2.5–4.4.2.7",
+      "originalSourceURL": "https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/",
+      "disposition": "ORIGINAL_2017_SOURCE_NATIVE_LEAD_REVIEW_HOLD",
+      "nonEquivalenceBoundary": "Actuation as world-changing activity must not be equated to a Command request, acknowledgement, success code, or measured effect."
+    }
+  ],
+  "preserved": {
+    "columns": [
+      "Dragino",
+      "AirGradient",
+      "Campbell",
+      "Bennett",
+      "IEEE",
+      "OPC",
+      "SAPIENT",
+      "SOSA",
+      "OMS",
+      "SWE",
+      "SensorML",
+      "CSAPI",
+      "DIM"
+    ],
+    "rows": 37,
+    "proposedDimRows": 22,
+    "caseReviewHolds": 9,
+    "caseStatements": 73,
+    "totalDonorRecords": 57,
+    "otherNonW3CRecords": 51,
+    "previousSourceCheckedRecords": 31,
+    "priorOnlyAfterStep13": 20,
+    "originalSourceInputHashes": {
+      "sampleJson": {
+        "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.json",
+        "gitBlob": "44b9298e91f6ea454c786534c6447c8833cccc99"
+      },
+      "sampleCsv": {
+        "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026.csv",
+        "gitBlob": "82ab142114e42831c6b9575fbb57d73a325ee89e"
+      },
+      "evidenceCsv": {
+        "path": "Docs/Research/DIM_Profile_V2/Deliverables/DIM_V2_Donor_Columns_Sample_v0.1_05NOV2026_Evidence.csv",
+        "gitBlob": "976fef4958f2a8a7f4bff26bbf1ac4ca79bc9904"
+      },
+      "step05Contract": "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step05_Approved_Master_Table_Presentation_Contract_v0.1_05NOV2026.json"
+    }
+  },
+  "exactCaseLimits": [
+    "Dragino, AirGradient and Campbell are manufacturer reference/design/source examples, not authenticated fielded Observation evidence.",
+    "Bennett has two original NOAA 2024 air-temperature mean events with four project API representations; no new source events inferred.",
+    "Bennett original resultTime UNKNOWN; station site point not verified EE181 individual probe coordinate.",
+    "SOSA/SSN 2017 vocabulary axioms do not authenticate a 2024 issuer, original event producing Sensor, or full CSAPI conformance."
+  ],
+  "excluded": [
+    "No new DIM row, changed proposed DIM label or formally adopted model commitment.",
+    "No 2026 W3C draft changes promoted into 2017 Recommendation.",
+    "No The Open Group SOSA architecture conflated with W3C SOSA acronym.",
+    "No deployed native CSAPI/Glaux/server/cloud change or equipment Commands."
+  ]
+}
