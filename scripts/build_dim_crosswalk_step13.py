@@ -234,7 +234,16 @@ def main():
         require(original.testzip() is None,"Original workbook failed ZIP integrity")
         names=original.namelist()
         require("xl/worksheets/sheet12.xml" not in names,"Input unexpectedly already has sheet12")
+        # Workbook relationships also reserve rIds for styles/theme, not only sheets.
+        relationship_root=ET.fromstring(original.read("xl/_rels/workbook.xml.rels"))
+        used={r.get("Id") for r in relationship_root}
         binaryworkbook, relation=patch_workbook(original.read("xl/workbook.xml"))
+        if relation in used:
+            counter=12
+            while "rId"+str(counter) in used: counter+=1
+            replacement="rId"+str(counter)
+            binaryworkbook=binaryworkbook.replace(relation.encode('ascii'),replacement.encode('ascii'))
+            relation=replacement
         audit_xml,audit_rels=create_audit_sheet(audit)
         modified={
          "xl/workbook.xml":binaryworkbook,
