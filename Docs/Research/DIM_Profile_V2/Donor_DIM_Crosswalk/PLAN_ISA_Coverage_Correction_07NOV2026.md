@@ -1,4 +1,9 @@
 # ISA coverage correction — execution plan
+**CURRENT — ISA-03D COMPLETE. Next ISA-03E only: Power, Power State, Reserve Capacity and Time to Empty.** Two work packages and four child batches complete; no fixed total prompt count. Parent ISA-03:16/42 properties reviewed. [Workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Review](ISA_Correction_Review_ISA03D_07NOV2026.md) · [Evidence](ISA03D_Relationship_Visible_Evidence_07NOV2026.json) · [Publication](ISA03D_Publication_Record_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+
+The current progress/PITON supersede older checkpoint routing below; completed source and delivery work remains complete. The same bounded sizing and full source-coverage tests remain in force.
+
+## Previous planning record and unchanged execution rules
 
 **CURRENT — ISA-03C COMPLETE and integrated. Next ISA-03D ONLY: Relationship and Visible.**
 [Current workbook](ISA_Correction_Review_ISA03C_07NOV2026.xlsx) · [Source report](ISA03C_Position_Orientation_07NOV2026.md) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Publication](ISA03C_Publication_Record_07NOV2026.json).

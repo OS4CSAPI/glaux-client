@@ -1,0 +1,199 @@
+{
+  "schema": "isa-bounded-batch-evidence.v2",
+  "date": "2026-11-07",
+  "batch": "ISA-03D",
+  "sourceReviewStatus": "COMPLETE",
+  "primaryOutcomes": {
+    "assigned": 2,
+    "reviewed": 2,
+    "supported": 2,
+    "newSourceQuestions": 0
+  },
+  "primary_records": [
+    {
+      "id": "ISA03D-099",
+      "entry_id": "ISA-DMS-099",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Relationship",
+      "element_kind": "property",
+      "native_type": "Relationship",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Relationship; printed p.16, PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "6c2925105e820cfe5aa348c58246e165789f0a1e23f9b558a115720a0c39f4eb",
+      "review_pass": "ISA-03D",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-099",
+      "proposed_label": "Reported physical parent/child attachment relationships",
+      "navigation_group": "Position and orientation",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Describes physical relationships to a parent and/or child components. Relationship has an optional parent Relation Link and a required child list permitting zero or more entries. Each Relation Link requires a UCI and a Link value; the sealed Link enumeration is ATTACHED or DETACHED.",
+      "mapping_boundary": "This is physical attachment information, not merely logical CIC membership, network connectivity or permission. The required child list may be empty; do not infer an actual parent or child, complete parts inventory, installed attachment, coordinate, offset or transform from the type definition.",
+      "dependency_terms": [
+        "Relationship",
+        "Relation Link",
+        "Link",
+        "UCI"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03D-118",
+      "entry_id": "ISA-DMS-118",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Visible",
+      "element_kind": "property",
+      "native_type": "Boolean",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Visible; printed p.17, PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "7238c4d834302164330d8bec10f87c602cd1bed067d1160356b1e9625546c3ca",
+      "review_pass": "ISA-03D",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-118",
+      "proposed_label": "Laser visible-spectrum indication",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "The Boolean property is set to true when the laser is in the visible spectrum.",
+      "mapping_boundary": "Not architectural visible/opaque membership, discovery visibility, line of sight, display visibility, active laser emission or a measured detection. The definition supplies no numeric wavelength boundary or actual value for any case.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    }
+  ],
+  "supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-438",
+      "native_term": "Relationship",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 110,
+      "pdf_pages": [
+        125,
+        125
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03D",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Relationship; printed p.110; PDF pp.125–125",
+      "inspected_content_summary": "Relationship: optional parent Relation Link, 0–1; required child Relation Link list, 0+. The list can be empty. Original PDF125 text and page image inspected.",
+      "source_span_sha256": "58841f3008c0200cca339a7a6092e762c2aecbfb8c8286778555d031bd80df5d",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-437",
+      "native_term": "Relation Link",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 110,
+      "pdf_pages": [
+        125,
+        125
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03D",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Relation Link; printed p.110; PDF pp.125–125",
+      "inspected_content_summary": "Relation Link: required uci:UCI and required link:Link, each exactly one. Original PDF125 text and page image inspected.",
+      "source_span_sha256": "b231be3d2e3cc61ce6105a1ca02fad15b05a703978b39df3b24ed9df04af6ad9",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-347",
+      "native_term": "Link",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 80,
+      "pdf_pages": [
+        95,
+        95
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03D",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "DMS 6.0r12 §8.1 Link; printed p.80; PDF pp.95–95",
+      "inspected_content_summary": "Sealed Link enum, standard since0.7.1: ATTACHED and DETACHED refer to physical attachment, not communication connectivity. Original text at printed p.80/PDF95 checked.",
+      "source_span_sha256": "ba29312cf13bfedf625abc2bc74902f445e1793bb11bee358a121cf093d9283e",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 55,
+      "pdf_pages": [
+        70,
+        70
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03D",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "DMS 6.0r12 §4.2 UCI; printed p.55; PDF pp.70–70",
+      "inspected_content_summary": "Previously verified UCI identifies a specific component; virtual identifier/syntax context remains as recorded at ISA-02. Reused without imposing physical identity or a URI.",
+      "source_span_sha256": "2f5bf0c15a918a87f226b602c7635d6eb5803bb6ac04c69557adcfc9c2943c39",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65,
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03D",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "DMS 6.0r12 §4.1 Boolean; printed p.50; PDF pp.65–65",
+      "inspected_content_summary": "Boolean has true/false values; the Visible property supplies the laser-spectrum meaning. Original §4.1 text at printed p.50/PDF65 checked.",
+      "source_span_sha256": "e86769dc0eb8ad2b19f432223d95607ff44bfb7bee9f65efdd26839a1be14b2c",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    }
+  ],
+  "sourceInspection": {
+    "original_text": "DMS6.0r12 §3.1 pp.16–17/PDF31–32; Relationship and Relation Link p.110/PDF125; Link p.80/PDF95; Boolean p.50/PDF65.",
+    "image_inspected": [
+      "DMS PDF125 Relationship / Relation Link table"
+    ],
+    "new_unique_supporting_definitions": 0,
+    "existing_definitions_reused": 5,
+    "semantic_scope": "Two assigned properties only; full later type-catalogue reviews remain assigned."
+  },
+  "preservation": {
+    "existing_non_ISA_and_equipment_value_changes": 0,
+    "prior_primary_evidence_changed": 0,
+    "ISA03E_started": false
+  },
+  "next": "ISA-03E: Power, Power State, Reserve Capacity and Time to Empty only."
+}

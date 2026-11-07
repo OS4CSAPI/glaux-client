@@ -1,5 +1,8 @@
 # DIM V2 — reviewable donor mapping and UML-style model
 
+**CURRENT — ISA-03D COMPLETE. Next owner “proceed”: ISA-03E only.** [Workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Full comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.md) · [Two-property source report](../Donor_DIM_Crosswalk/ISA03D_Relationship_Visible_07NOV2026.md) · [Publication](../Donor_DIM_Crosswalk/ISA03D_Publication_Record_07NOV2026.json) · [Current PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md).65 reviewed/62 supported/three existing questions;92 information/review rows. Physical attachment is distinct from logical component visibility; native Visible concerns a laser's visible spectrum. Earlier non-ISA/case values preserved. Older checkpoint instructions below are historical.
+
+
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
 **CURRENT — ISA-03C COMPLETE. Next owner “proceed”: ISA-03D ONLY.**

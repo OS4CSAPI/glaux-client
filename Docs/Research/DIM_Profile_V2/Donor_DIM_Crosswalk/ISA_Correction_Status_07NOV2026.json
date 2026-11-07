@@ -5,33 +5,35 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_WITH_POST_ISA02_SIZING_AMENDMENT",
-  "technicalIterationsCompleted": 5,
+  "technicalIterationsCompleted": 6,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 2,
-  "progressMeaning": "ISA-01, ISA-02 and ISA-03A/B/C complete. Parent ISA-03 has 14 of 42 properties reviewed; 28 remain. Work packages are not a fixed prompt count.",
-  "currentIteration": "ISA-03C",
+  "progressMeaning": "ISA-01, ISA-02 and child batches ISA-03A/B/C/D complete. Parent ISA-03:16 of42 properties reviewed;26 remain. Twelve labels are work packages, not prompts.",
+  "currentIteration": "ISA-03D",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-03C",
+  "currentBatch": "ISA-03D",
   "currentBatchSourceReviewStatus": "COMPLETE",
   "currentBatchDeliveryStatus": "COMPLETE",
-  "nextOnOwnerProceed": "ISA-03D",
-  "nextAction": "Review Relationship (ISA-DMS-099) and Visible (ISA-DMS-118) only; check actual native meanings, reuse dependencies, publish and verify, then stop.",
+  "nextOnOwnerProceed": "ISA-03E",
+  "nextAction": "Review Power, Power State, Reserve Capacity and Time to Empty only; preserve the meanings of units and types, then publish and verify.",
   "nextSourceIDs": [
-    "ISA-DMS-099",
-    "ISA-DMS-118"
+    "ISA-DMS-090",
+    "ISA-DMS-091",
+    "ISA-DMS-100",
+    "ISA-DMS-113"
   ],
-  "nextSourceIDsMeaning": "Two new source assignments in ISA-03D. ISA-03A/B/C source review and workbook delivery are complete.",
+  "nextSourceIDsMeaning": "The four ISA-03E assignments. No further ISA-03D review or publication action remains.",
   "repositoryPublication": {
     "state": "PUBLISHED_TO_GITHUB",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-03C COMPLETE",
-    "next_pass": "ISA-03D",
-    "publication_record": "ISA03C_Publication_Record_07NOV2026.json",
-    "currentBatchEvidence": "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
-    "currentBatchReport": "ISA03C_Position_Orientation_07NOV2026.md",
-    "base_input_commit": "d1d3ab5c607d9f4849df4be38d1eea29c8f65527"
+    "technical_state": "ISA-03D COMPLETE",
+    "next_pass": "ISA-03E",
+    "publication_record": "ISA03D_Publication_Record_07NOV2026.json",
+    "currentBatchEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+    "currentBatchReport": "ISA03D_Relationship_Visible_07NOV2026.md",
+    "base_input_commit": "e1f2ea2209165e7eae64c14eda6cc66af94a34aa"
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -45,19 +47,19 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or established model adoption.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 63,
+    "semanticEntriesReviewedInCorrection": 65,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 60,
+    "sourceSupportedPrimaryEntries": 62,
     "specificSourceDefinitionQuestions": 3,
     "supportingDefinitionsRead": 47,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 59
+    "newCandidateRows": 61
   },
   "iterationRecordsMeaning": "Existing ISA labels retained as work-package records, not one-prompt workload promises.",
   "iterationRecords": [
@@ -72,7 +74,7 @@
     {
       "id": "ISA-03",
       "state": "IN_PROGRESS_CHILD_BATCHES",
-      "nextChild": "ISA-03D"
+      "nextChild": "ISA-03E"
     },
     {
       "id": "ISA-04",
@@ -178,16 +180,17 @@
     },
     {
       "id": "ISA-03D",
-      "state": "NEXT",
+      "state": "COMPLETE",
       "count": 2,
       "sourceIds": [
         "ISA-DMS-099",
         "ISA-DMS-118"
-      ]
+      ],
+      "integration": "PUBLISHED_AND_VERIFIED"
     },
     {
       "id": "ISA-03E",
-      "state": "NOT_STARTED",
+      "state": "NEXT",
       "count": 4,
       "sourceIds": [
         "ISA-DMS-090",
@@ -263,24 +266,24 @@
       "ISA-DMS-080",
       "ISA-DMS-105"
     ],
-    "method": "Named child IDs partition all 42 parent ISA-03 properties exactly once; A/B/C are integrated. Model and Serial Number retain their ISA-02 assignments."
+    "method": "Child IDs partition42 original remaining properties exactly once. Sixteen reviewed through ISA-03D;26 remain in E–J."
   },
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
   "registerOwnerPassMeaning": "Inventory owner_pass retains the parent package. Named propertyBatches supply the exact next prompt-sized subset; current register includes ISA-03C.",
-  "currentReview": "ISA_Correction_Review_ISA03C_07NOV2026.md",
-  "currentWorkbook": "ISA_Correction_Review_ISA03C_07NOV2026.xlsx",
-  "currentEvidence": "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
-  "currentBatchEvidence": "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
-  "currentBatchReport": "ISA03C_Position_Orientation_07NOV2026.md",
+  "currentReview": "ISA_Correction_Review_ISA03D_07NOV2026.md",
+  "currentWorkbook": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
+  "currentEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+  "currentBatchEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+  "currentBatchReport": "ISA03D_Relationship_Visible_07NOV2026.md",
   "publicationRule": "GitHub is authoritative. Verify actual committed evidence, workbook and current PITON; sandbox copies are supplementary. Saved source evidence does not constitute an updated workbook.",
-  "completedTaskRule": "Completed source review and GitHub delivery for ISA-01/02/03A/03B/03C remain complete. Level, Link Loss and the Orientation reference-frame question are record-local. No pending ISA-03A integration remains.",
+  "completedTaskRule": "ISA-01, ISA-02 and ISA-03A/B/C/D source review, integration and GitHub delivery are complete. Three interpretation questions remain record-local; no completed batch is reopened.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
     "state": "COMPLETE",
-    "task": "ISA-03C spatial distinctions, current handoff and removal of stale pending-publication instructions",
+    "task": "ISA-03D two-property review and verified GitHub handoff",
     "counts_as_new_technical_iteration": false
   },
-  "completedChildBatches": 3
+  "completedChildBatches": 4
 }

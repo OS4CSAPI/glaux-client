@@ -1,20 +1,21 @@
-# Current PITON — ISA correction after ISA-03C
+# Current PITON — ISA correction after ISA-03D
 
-**7 November 2026 · ISA-01, ISA-02 and child batches ISA-03A/B/C COMPLETE and integrated. Next owner “proceed”: ISA-03D ONLY.**
+**7 November 2026 · ISA-01, ISA-02 and child batches ISA-03A/B/C/D COMPLETE. Next owner “proceed”: ISA-03E ONLY.**
 
 ## Authority and read-first artifacts
+Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub remains authoritative.
+[Workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Horizontal view](ISA_Correction_Review_ISA03D_07NOV2026.md) · [ISA-03D report](ISA03D_Relationship_Visible_07NOV2026.md) · [Exact source evidence](ISA03D_Relationship_Visible_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Publication](ISA03D_Publication_Record_07NOV2026.json) · [Plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Lessons](LESSONS_Donor_Review_Process.md).
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is the authoritative handoff.
+ISA-03D reviewed only **Relationship (099) and Visible (118)**, both core properties, with two supported candidates and no new source questions. **65 primary entries reviewed/62 supported/three specific questions**; **92 information/review rows**, original31 plus58 supported candidates and three questions. The47 unique supporting definitions are unchanged; Relationship, Relation Link, Link, UCI and Boolean were already verified supporting entries, not new catalogue completions.
 
-[Current workbook](ISA_Correction_Review_ISA03C_07NOV2026.xlsx) · [Horizontal comparison](ISA_Correction_Review_ISA03C_07NOV2026.md) · [ISA-03C source report](ISA03C_Position_Orientation_07NOV2026.md) · [Exact evidence](ISA03C_Position_Orientation_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Publication](ISA03C_Publication_Record_07NOV2026.json) · [Plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Lessons](LESSONS_Donor_Review_Process.md).
+**Relationship** is physical parent/child attachment, not CIC visibility or network connectivity. Optional parent0–1 and required child list0+ use Relation Links with required UCI and Link fields. Link's sealed values ATTACHED/DETACHED concern physical attachment. Do not infer an installed child, complete parts list or spatial transform. **Visible** means the laser is in the visible spectrum; it does not mean a component is exposed to the ISA network, a GUI item is visible, or a laser is firing. Read original definitions, not similar words in architecture prose.
 
-ISA-03C completed **Orientation, Perceived Position, Position and Position Override**, not another property block. Four rows are integrated: three supported position meanings and one precise Orientation reference-frame question. Source body markings: two core and two Accepted extensions. The current table has90 information/review rows, including56 supported candidates and three question rows. Primary coverage is63 reviewed /60 supported /three specific questions. Unique supporting definitions remain47, with no false completion of later catalogue passes.
+Original property text at DMS6.0r12 §3.1 printed pp.16–17/PDF31–32; Relation Link/Relationship printed p.110/PDF125 text and page image inspected; Link printed p.80/PDF95 and Boolean printed p.50/PDF65 checked. Existing UCI evidence reused. Two candidate rows are added within existing Position and orientation and Imaging and sensing settings groups. All prior rows, three local questions, non-ISA/equipment values and old source evidence are retained.
 
-## Next exact task — ISA-03D
+## Next exact task — ISA-03E
+Only **Power (ISA-DMS-090), Power State (091), Reserve Capacity (100) and Time to Empty (113)**. Use original definitions and the already recorded types. Keep variable-power percentage, power condition, reserve energy percentage and estimated time remaining separate. No source review for these entries occurred in ISA-03D.
 
-Review only **Relationship (ISA-DMS-099)** and **Visible (ISA-DMS-118)** under the current small-batch limits. Read full original definitions and their actual types; a similar word in architectural prose is not an automatic semantic match. Reuse same-edition evidence where sound. Publish the bounded result in the current table and verify actual GitHub files. Then stop before ISA-03E.
-
-Parent ISA-03 has14 of42 properties completed across A/B/C;28 remain assigned to D–J. Model and Serial Number were already handled in ISA-02 and are not recounted. ISA-01–12 are work-package labels, not a twelve-prompt estimate.
+ISA-03 parent progress:16 of42 properties reviewed,26 remain in E–J. Model/Serial Number stay credited to ISA-02. Normal batch ceilings remain4–6 simple definitions or1–3 dense items, at most4 new supporting definitions and6 materially changed rows, including verification/publication. Reuse the exact-input artifact download, current workbook and checksummed publication assembler. No new transport/export infrastructure.
 
 ## Spatial meanings retained
 
@@ -44,6 +45,6 @@ One “proceed” authorizes only the named child batch. Start with4–6 straigh
 
 The Actions exact-input artifact export works when current repository files are not mounted. Verify the current workbook hash before editing. Publication uses the established exact-file assembler and a read-only postcommit check. Preserve prior snapshots; do not overwrite an old source-review workbook to erase its history.
 
-Historical checkpoints: [ISA-02](ISA02_Publication_Record_07NOV2026.json), [ISA-03A](ISA03A_Publication_Record_07NOV2026.json), [ISA-03B](ISA03B_Publication_Record_07NOV2026.json). Their completed records are history; the current routing is this document and progress. Obsolete “ISA-03A integration pending” instructions were removed from active status during ISA-03C closeout.
+Historical checkpoints: [ISA-02](ISA02_Publication_Record_07NOV2026.json), [ISA-03A](ISA03A_Publication_Record_07NOV2026.json), [ISA-03B](ISA03B_Publication_Record_07NOV2026.json). Their completed records are history; the current routing is this ISA-03D document and progress. Obsolete “ISA-03A integration pending” instructions were removed from active status during ISA-03C closeout.
 
-**Next “proceed” = ISA-03D only. ISA-03C source review, workbook integration and GitHub delivery COMPLETE.**
+**Next “proceed” = ISA-03E only. ISA-03D source review, workbook integration and GitHub delivery COMPLETE.**
