@@ -16,10 +16,10 @@ jobs:
       - name: Record input identities
         run: |
           git rev-parse HEAD > ISA_INPUT_COMMIT.txt
-          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03A_07NOV2026.xlsx
+          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03B_07NOV2026.xlsx
       - uses: actions/upload-artifact@v4
         with:
-          name: isa03b-exact-inputs
+          name: isa03c-exact-inputs
           retention-days: 3
           path: |
             ISA_INPUT_COMMIT.txt
@@ -30,6 +30,7 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
             Docs/Research/DIM_Profile_V2/README.md
             Docs/Research/DIM_Profile_V2/Deliverables/README.md
+            scripts/publish_isa03b_checkpoint.py
             scripts/publish_isa03a_checkpoint.py
             scripts/publish_isa02_checkpoint.py
             scripts/recover_isa01_publication.py
