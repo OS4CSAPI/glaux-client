@@ -383,7 +383,10 @@ def main():
     (D/(AUD+".json")).write_text(
         json.dumps(stage,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"
     )
-    accepted,_=matrix(old["columns"],old["rows"],False)
+    # Main source CSV must be IDENTICAL to the owner-accepted v0.8 grid;
+    # even changing a group label would constitute an unauthorized main edit.
+    with (D/(OLD+".csv")).open(encoding="utf-8",newline="") as f:
+        accepted=list(csv.reader(f))
     expanded,sections=matrix(cols,rows,True)
     store_csv(D/(NEW+".csv"),accepted)
     store_csv(D/(OVER+".csv"),expanded)
