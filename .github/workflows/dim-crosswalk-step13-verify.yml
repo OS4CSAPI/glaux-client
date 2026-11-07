@@ -1,0 +1,25 @@
+name: DIM V2 Step13 — independently verify published W3C 2017 crosswalk
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.7_Step13_W3C_SOSA_SSN_06NOV2026.xlsx"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-published:
+    name: Independently verify committed v0.7 file and source fidelity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test uploaded XLSX ZIP/XML/row/case/W3C source evidence
+        run: python scripts/check_dim_crosswalk_step13.py
