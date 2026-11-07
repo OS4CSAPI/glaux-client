@@ -1,0 +1,289 @@
+{
+  "schema": "isa-bounded-batch-evidence.v2",
+  "date": "2026-11-07",
+  "batch": "ISA-03C",
+  "sourceReviewStatus": "COMPLETE",
+  "primaryOutcomes": {
+    "assigned": 4,
+    "reviewed": 4,
+    "supported": 3,
+    "newSourceQuestions": 1
+  },
+  "primary_records": [
+    {
+      "id": "ISA03C-083",
+      "entry_id": "ISA-DMS-083",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Orientation",
+      "element_kind": "property",
+      "native_type": "Rotation",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 14,
+      "pdf_pages": [
+        29,
+        29
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Orientation; printed p.14, PDF pp.29–29",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "c3e49dbcf6ae727081414c77ea3ddaf693e1d3faf52bc5744bd4d7cdcc40ebc8",
+      "review_pass": "ISA-03C",
+      "review_status": "REVIEWED_QUESTION_RECORDED",
+      "disposition": "SPECIFIC_SOURCE_QUESTION",
+      "target_row": "ISA-C-083",
+      "proposed_label": "Reported world orientation — reference-frame question",
+      "navigation_group": "Position and orientation",
+      "mapping_relation": "SOURCE_ROLE_ESTABLISHED_FRAME_MAPPING_QUESTION",
+      "original_meaning": "Describes orientation in world space, distinct from Attached Orientation (physical parent) and Local Orientation (own home frame). The entry labels the frame Earth-Centered Earth-Fixed and also describes x toward true north, y to the component's right and z down along gravity.",
+      "mapping_boundary": "Preserve both source statements. Do not silently choose a frame identifier, axis transform, quaternion conversion, or reinterpret this as Attached/Local Orientation. Required yaw/pitch/roll and the Rotation sequence are recorded; an interoperable numeric frame mapping needs resolution of ISA-Q003.",
+      "dependency_terms": [
+        "Rotation",
+        "Measured Degrees",
+        "Degrees"
+      ],
+      "question_id": "ISA-Q003",
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03C-086",
+      "entry_id": "ISA-DMS-086",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Perceived Position",
+      "element_kind": "property",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 14,
+      "pdf_pages": [
+        29,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Perceived Position; printed p.14, PDF pp.29–30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "3125e3036160ae7228b5afd53d4f10d8d3db869cc18ca8cb9e36f79658feb00b",
+      "review_pass": "ISA-03C",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-086",
+      "proposed_label": "Hardware-reported position while position is overridden",
+      "navigation_group": "Position and orientation",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Reports position from hardware when Position is being overridden by Position Override. The property is optional and is not required when providing the override capability.",
+      "mapping_boundary": "Do not require this field solely because an override is supported. Hardware-reported does not mean independently surveyed, unmodified raw GNSS data or true probe location. No actual override or case coordinate is inferred.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03C-088",
+      "entry_id": "ISA-DMS-088",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Position",
+      "element_kind": "property",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Position; printed p.15, PDF pp.30–30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "15135d247fdfae0c4e585a0952602a91ec84909c88e5ff373c784d0667ef3e80",
+      "review_pass": "ISA-03C",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-088",
+      "proposed_label": "Reported current geographic position of the component",
+      "navigation_group": "Position and orientation",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Reports the current position of the component using Geographic Position: required latitude/longitude and optional altitude and error-ellipsoid attributes under the source's stated conventions.",
+      "mapping_boundary": "Not automatically the position of an attached probe, a platform, a feature of interest, or a measurement event. Preserve component identity, the stated vertical convention and missing-value semantics; do not invent precision, surveyed accuracy, Cartesian coordinates or observation time.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA03C-089",
+      "entry_id": "ISA-DMS-089",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Position Override",
+      "element_kind": "property",
+      "native_type": "Geographic Position",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Position Override; printed p.15, PDF pp.30–30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "census_source_span_sha256": "4ad97997b5eae65a75f04c9c4ed0a6ef633a2661081cc3e4af553438b3673fa3",
+      "review_pass": "ISA-03C",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-089",
+      "proposed_label": "Position value used to override hardware-perceived position",
+      "navigation_group": "Position and orientation",
+      "mapping_relation": "DIRECT_TO_SPECIFIC_CANDIDATE",
+      "original_meaning": "Provides the property used to override a perceived position from hardware, using the Geographic Position structure.",
+      "mapping_boundary": "A declared override property does not prove that override is currently active, who set it, authorization, physical movement or a more accurate position. Do not conflate it with hardware Perceived Position, ordinary Position, or a boolean override-state indicator.",
+      "dependency_terms": [
+        "Geographic Position",
+        "Degrees",
+        "Meters"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    }
+  ],
+  "supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 53,
+      "pdf_pages": [
+        68,
+        69
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03C",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "DMS 6.0r12 §4.2 Meters; printed p.53; PDF pp.68–69",
+      "inspected_content_summary": "Linear-distance Float type; native range is not assumed from the property label.",
+      "source_span_sha256": "0de0ffca379e05a446054272428b048d28e955293b5146fb602984dcc7b5a1e6",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 52,
+      "pdf_pages": [
+        67,
+        67
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03C",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "DMS 6.0r12 §4.2 Degrees; printed p.52; PDF pp.67–67",
+      "inspected_content_summary": "Angular-distance Float type.",
+      "source_span_sha256": "dbd5bca4ede31aa54bcfe9afc0cb2f16a507cf9e5964b18856c7df65d678400b",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-401",
+      "native_term": "Measured Degrees",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 98,
+      "pdf_pages": [
+        113,
+        114
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03C",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Measured Degrees; printed p.98; PDF pp.113–114",
+      "inspected_content_summary": "Required value:Degrees; optional error:Degrees with plus/minus one-standard-deviation meaning; definition continues across pages.",
+      "source_span_sha256": "affc3295837abd03af956354dae6be31e3ab73269fc72995a0bba2954f42c611",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-441",
+      "native_term": "Rotation",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 111,
+      "pdf_pages": [
+        126,
+        127
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03C",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "DMS 6.0r12 §8.3 Rotation; printed p.111; PDF pp.126–127",
+      "inspected_content_summary": "Original pp.111–112/PDF126–127 text checked: required pitch, roll and yaw as Measured Degrees; yaw about z, then pitch about new y', then roll about new x''. Source states positive clockwise viewed from origin. This sequence does not resolve Orientation's named-frame versus axis-description question.",
+      "source_span_sha256": "2b8fc747be12f1add6afc57815753e34f3a727e2644bb07c0476507341ee1e02",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 95,
+      "pdf_pages": [
+        110,
+        110
+      ],
+      "source_standing": "CORE",
+      "review_use": "SAME_EDITION_SUPPORT_REUSED_ISA03C",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "DMS 6.0r12 §8.3 Geographic Position; printed p.95; PDF pp.110–110",
+      "inspected_content_summary": "Original PDF p.110 image and text checked: required latitude/longitude in Degrees; optional altitude in Meters with source geoid/EGM96 statement and At Ground Level default; optional a/b/c axes and phi/theta angles with source zero defaults. These defaults are not measured accuracy, a supplied height, or ellipsoidal-height conversion. Keep the source ECEF label separate from its latitude/longitude field structure.",
+      "source_span_sha256": "7cb13e6881d41604295e970fd77e25489559e49857096d8a7d29370325dc1409",
+      "prior_evidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+      "later_catalogue_pass_completed": false
+    }
+  ],
+  "new_question": {
+    "id": "ISA-Q003",
+    "entry_id": "ISA-DMS-083",
+    "native_term": "Orientation",
+    "candidate_row": "ISA-C-083",
+    "known": "World-space orientation is distinct from parent/home-frame orientation. DMS names Earth-Centered Earth-Fixed while describing true-north/right/gravity-down axes; Rotation specifies yaw/pitch/roll and order.",
+    "question": "Which precise reference frame and axis interpretation governs numeric Orientation values when reconciling the source's named frame with its stated axes?",
+    "decision": "Keep Orientation and its Rotation type visible as a spatial candidate; preserve both original statements. Do not invent a frame identifier or coordinate transformation.",
+    "evidence": "DMS §3.1 p.14/PDF29; Rotation §8.3 pp.111–112/PDF126–127. Geographic Position §8.3 p.95/PDF110 read for position-field/altitude conventions.",
+    "next_resolution": "ISA-10 Rotation full-type pass and an ISA-11 spatial-guidance reconciliation sub-batch: check original companion guidance or an authoritative clarification before specifying a numeric transformation. No rereview of the three completed position-property meanings.",
+    "state": "SOURCE_REVIEW_COMPLETE_SPECIFIC_INTERPRETATION_OPEN"
+  },
+  "sourceInspection": {
+    "original_text": "DMS 6.0r12 §3.1 pp.14–15 / PDF29–30; Geographic Position p.95/PDF110; Rotation pp.111–112/PDF126–127",
+    "image_inspected": [
+      "DMS PDF110 Geographic Position table"
+    ],
+    "image_unavailable": [
+      "DMS PDF29–30 image request failed; original indexed text read"
+    ],
+    "new_unique_supporting_definitions": 0,
+    "existing_definitions_reused": 5,
+    "semantic_scope": "Four assigned properties only; dependency reuse does not finish later type-catalogue passes."
+  },
+  "preservation": {
+    "existing_non_ISA_and_equipment_value_changes": 0,
+    "prior_primary_evidence_changed": 0,
+    "ISA03D_started": false
+  },
+  "next": "ISA-03D: Relationship and Visible only"
+}

@@ -1,5 +1,10 @@
 # ISA coverage correction — execution plan
 
+**CURRENT — ISA-03C COMPLETE and integrated. Next ISA-03D ONLY: Relationship and Visible.**
+[Current workbook](ISA_Correction_Review_ISA03C_07NOV2026.xlsx) · [Source report](ISA03C_Position_Orientation_07NOV2026.md) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Publication](ISA03C_Publication_Record_07NOV2026.json).
+63 primary entries reviewed (60 supported, three record-local questions); parent ISA-03 has14/42 properties complete. This current banner supersedes older checkpoint-next labels below; completed earlier work is not reopened.
+
+
 **Current integrated checkpoint: ISA-03B COMPLETE.** Six ownership/version/support properties integrated;59 primary entries reviewed,86 information/review rows. [Publication](ISA03B_Publication_Record_07NOV2026.json). Parent ISA-03 has child batches A/B complete; next ISA-03C.
 
 **7 November 2026 · ISA-01, ISA-02 and child batches ISA-03A/B COMPLETE. Next owner “proceed”: ISA-03C ONLY — four position/orientation properties.**

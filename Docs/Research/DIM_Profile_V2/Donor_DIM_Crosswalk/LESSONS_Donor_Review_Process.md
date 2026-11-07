@@ -63,3 +63,9 @@ The four saved decisions were integrated without repeating their source review. 
 ## ISA-03B application of existing practices
 
 The six-entry batch reused existing POC/String support and preserved distinct owner, program-of-record and non-maintenance-support roles, plus three different version meanings. Five source entries retained Accepted-extension status. This applies lessons L08/L09; no new universal rule or additional research campaign is introduced. [Evidence](ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json).
+
+## ISA-03C — preserve a source's role without inventing its numerical convention
+
+The original Orientation entry names one reference frame and also describes specific axes; its world-orientation role is clear, but an exact numeric frame mapping needs clarification. The correction keeps the native property visible with ISA-Q003 rather than deleting the concept or silently choosing a transform. See [source decisions](ISA03C_Position_Orientation_Evidence_07NOV2026.json). Likewise, an optional hardware-perceived position does not become mandatory whenever override is supported, and source defaults are not measured accuracy.
+
+**Demonstrated practice:** record the supported information role and the specific unresolved representation constraint separately; reuse reviewed dependencies and do not turn a local question into a project-wide failure state. Active progress fields were also checked for stale “pending integration” instructions and corrected; historical reports stay unchanged. **Next technical task: ISA-03D only.**
