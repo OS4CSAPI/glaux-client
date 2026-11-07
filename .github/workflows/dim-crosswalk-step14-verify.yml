@@ -1,0 +1,27 @@
+name: DIM V2 Step14 — independent verification of IEEE 1451 workbook
+
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.xlsx"
+      - "scripts/check_dim_crosswalk_step14.py"
+      - ".github/workflows/dim-crosswalk-step14-verify.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-published:
+    name: Independently test published Step14 binary against evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate IEEE public-only scope, 13-sheet XLSX, prior source parity and no false normative claims
+        run: python scripts/check_dim_crosswalk_step14.py
