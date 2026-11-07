@@ -1,0 +1,232 @@
+{
+  "format": "step11-swecommon-v3-original-clause-json-schema-review.v0.1",
+  "date": "2026-11-06",
+  "source": {
+    "document": "OGC 24-014",
+    "title": "SWE Common Data Model Encoding Standard",
+    "version": "3.0.0",
+    "publicationDate": "2025-07-16",
+    "originalUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+    "schemas": "https://schemas.opengis.net/sweCommon/3.0/json/"
+  },
+  "standing": "ORIGINAL_NATIVE_TERM_AND_JSON_SCHEMA_INSPECTED_DIM_ALIGNMENT_ANALYTICAL_NOT_ADOPTED",
+  "addedPreviouslyBlankSWERows": 4,
+  "reviewedRows": [
+    {
+      "rowKey": "S06-R012",
+      "proposedDim": "Reported output field",
+      "nativeTerm": "DataRecord.fields[]: name + typed DataComponent",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.3.1 / Requirements 37; §9.2.1; DataRecord.json",
+      "originalDocumentUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/DataRecord.json",
+      "originalStandardMeaning": "Describes an ordered logical record of uniquely named and typed fields, including scalars, aggregate components, and a referenced semantic definition.",
+      "nonEquivalenceBoundary": "A DataRecord field descriptor may represent a reported output field; it is NOT an addressed physical channel, proof of an emitted value, or identical to a CSAPI DataStream.",
+      "sourceVerification": "OGC_24_014_ORIGINAL_CLAUSE_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R013",
+      "proposedDim": "Observed / observable property",
+      "nativeTerm": "AbstractDataComponent.definition → controlled property URI",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.2.2 / §8.2.3 Requirement 17; AbstractSimpleComponent.json",
+      "originalDocumentUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/AbstractSimpleComponent.json",
+      "originalStandardMeaning": "A data component's definition denotes the property its value represents using a controlled vocabulary/registry/ontology, often an observed property.",
+      "nonEquivalenceBoundary": "A definition URI relates a value to property semantics; it is NOT itself an ontology class instance, a physical sensing unit, or an actual performed Observation.",
+      "sourceVerification": "OGC_24_014_ORIGINAL_CLAUSE_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R016",
+      "proposedDim": "Supported operating mode",
+      "nativeTerm": "Category.codeSpace / constraint (allowed tokens)",
+      "relation": "RELATED",
+      "sourceClause": "§7.2.2 Requirement 3; §8.2.6 Requirements 24–25; Category.json",
+      "originalDocumentUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/Category.json",
+      "originalStandardMeaning": "A categorical field's code space or enumerated tokens can define value choices; a camera operating mode is an explicit example in §7.2.2.",
+      "nonEquivalenceBoundary": "A permitted token vocabulary is not necessarily a source-attested operating-mode capability list for an individual device, and does not establish which mode is active.",
+      "sourceVerification": "OGC_24_014_ORIGINAL_CLAUSE_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R018",
+      "proposedDim": "Source-reported operating mode",
+      "nativeTerm": "Category.value (categorical status/mode value)",
+      "relation": "RELATED",
+      "sourceClause": "§8.2.6 Category value; §10.2.1 Requirement 83; Category.json",
+      "originalDocumentUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/Category.json",
+      "originalStandardMeaning": "A Category component can carry a single value from a constrained code space (e.g., a mode/status code) in an encoded data block.",
+      "nonEquivalenceBoundary": "Encoding a mode string does not prove that an individual System reported that value, nor furnish report time, issuer, or actual effective mode.",
+      "sourceVerification": "OGC_24_014_ORIGINAL_CLAUSE_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "sourceNativeHolds": [
+    {
+      "id": "SWE-H01",
+      "relatedRowOrHold": "S06-R012",
+      "term": "Quantity.definition + uom + value",
+      "clause": "§8.2.8; §9.1.9 Requirement 59",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/Quantity.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Numeric value and semantic unit/scale are representable; °C, humidity ratios and ppm must keep explicit native units. This does not itself add a DIM field/value schema or a real observation."
+    },
+    {
+      "id": "SWE-H02",
+      "relatedRowOrHold": "CASE-H08",
+      "term": "Time and TimeRange; temporal reference frame",
+      "clause": "§8.2.9; §8.2.14 Requirement 32; §10.2.2 Requirement 84",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/TimeRange.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can encode instants or two inclusive bounds, not automatically the original NOAA phenomenonTime/resultTime semantics or an actually known observation-generation timestamp."
+    },
+    {
+      "id": "SWE-H03",
+      "relatedRowOrHold": "CASE-H08",
+      "term": "Quality union on scalar components",
+      "clause": "§7.4.1; §8.2.15",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/AbstractSimpleComponent.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can model measured-value quality using numeric, categorical, textual or interval components, but not silently normalize Bennett literal F_ATemp='<0> ' or combine separate F_Record field."
+    },
+    {
+      "id": "SWE-H04",
+      "relatedRowOrHold": "CASE-H08",
+      "term": "NilValues / NilValue.reason",
+      "clause": "§7.4.2; §8.2.16 Requirements 33–34",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/basicTypes.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can declare a missing-value token with reason; does not authorize converting blank source flags to valid zero measurements or reversing original type/lexical form."
+    },
+    {
+      "id": "SWE-H05",
+      "relatedRowOrHold": "CASE-H04",
+      "term": "Quantity / QuantityRange / AllowedValues",
+      "clause": "§8.2.8; §8.2.13; §8.2.18 Requirement 35",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/QuantityRange.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can define rated or allowed electrical ranges, but manufacturer voltage or battery design range is not measured remaining charge or condition."
+    },
+    {
+      "id": "SWE-H06",
+      "relatedRowOrHold": "CASE-H03",
+      "term": "DataStream.elementType + encoding",
+      "clause": "§8.5.3 Requirement 48; §9.4.3",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/DataStream.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Defines a data-stream payload descriptor; NOT the CSAPI resource identity, transport path, LoRaWAN FPort, MQTT topic, collection schedule or real measured stream."
+    },
+    {
+      "id": "SWE-H07",
+      "relatedRowOrHold": "CASE-H07",
+      "term": "DataArray.elementType / values",
+      "clause": "§8.5.1 Requirement 45; §9.4.1",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/DataArray.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Array records/values are repeated typed data, not one distinct physical transducer per array element; a calibration table can be encoded but a calibration curve must still be interpreted."
+    },
+    {
+      "id": "SWE-H08",
+      "relatedRowOrHold": "CASE-H09",
+      "term": "AbstractDataComponent.updatable flag",
+      "clause": "§8.2.2",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/AbstractDataComponent.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Describes a changeable input/parameter in some process contexts; does not by itself describe issued, authenticated, acknowledged or completed Command."
+    },
+    {
+      "id": "SWE-H09",
+      "relatedRowOrHold": "S06-R004",
+      "term": "AbstractSWEIdentifiable.id",
+      "clause": "§8.2.2",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/AbstractSweIdentifiable.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Optional identifier for a DATA COMPONENT, not a persistent CSAPI System uniqueIdentifier or manufactured hardware serial."
+    },
+    {
+      "id": "SWE-H10",
+      "relatedRowOrHold": "CASE-H05",
+      "term": "Text / Category / Boolean scalar diagnostics",
+      "clause": "§8.2.4–8.2.6; §10.2.1 Requirement 83",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/Category.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can represent logger or station status values with explicit semantics, not prove actual system health or transform PanelTemp into outdoor air temperature."
+    },
+    {
+      "id": "SWE-H11",
+      "relatedRowOrHold": "CASE-H08",
+      "term": "DataRecord.fields optional / value null",
+      "clause": "§8.2.2; §10.2.3 Requirement 85(B–C)",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/DataRecord.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Optional JSON members and null need descriptor context; missing field/value, missing original event, and numerical zero are different things."
+    },
+    {
+      "id": "SWE-H12",
+      "relatedRowOrHold": "CASE-H03",
+      "term": "JSONEncoding.recordsAsArrays editorial inconsistency",
+      "clause": "§8.7.1; §9.6.1; §10.2.3 Requirement 85(A)",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/encodings.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Normative Req85(A) says recordsAsArrays=true encodes objects, conflicting with §8.7.1 and §10.2.3 narrative (true switches to arrays). Preserve as suspected document inconsistency; do not silently choose contradictory rule for implementation."
+    },
+    {
+      "id": "SWE-H13",
+      "relatedRowOrHold": "CASE-H02",
+      "term": "Vector / Geometry with reference frame",
+      "clause": "§8.3.2; §8.6.1 Requirement 50",
+      "sourceUrl": "https://docs.ogc.org/is/24-014/24-014.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sweCommon/3.0/json/Vector.json",
+      "standing": "SOURCE_NATIVE_TERM_IDENTIFIED_NO_APPROVED_DIM_ROW",
+      "nonEquivalenceBoundary": "Can carry spatial coordinates with a CRS, but station/site coordinates cannot be assigned to each unsurveyed probe."
+    }
+  ],
+  "sourceEditorialAmbiguity": "OGC 24-014 Requirement 85(A) recordsAsArrays polarity apparently contradicts §8.7.1 and §10.2.3 prose; record as editorial ambiguity pending authoritative clarification",
+  "preserved": {
+    "columns": [
+      "Dragino",
+      "AirGradient",
+      "Campbell",
+      "Bennett",
+      "IEEE",
+      "OPC",
+      "SAPIENT",
+      "SOSA",
+      "OMS",
+      "SWE",
+      "SensorML",
+      "CSAPI",
+      "DIM"
+    ],
+    "previousCSAPIEvidence": 12,
+    "previousSensorMLEvidence": 10,
+    "otherDonorsNotReverified": 31,
+    "sourceCaseClaims": 73,
+    "dimRowsProposed": 22,
+    "caseReviewHolds": 9
+  },
+  "excluded": [
+    "No new adopted DIM elements/classes",
+    "No rewriting case source values",
+    "No merging source methods with Observations, nor SML/CSAPI System identity with data components",
+    "No SWE Common original event/issuer/history guarantee",
+    "No JSON producer conformance/Glaux running code test",
+    "No Step12 OMS review"
+  ]
+}

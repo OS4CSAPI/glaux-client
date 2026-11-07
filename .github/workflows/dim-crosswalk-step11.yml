@@ -1,0 +1,26 @@
+name: DIM V2 Step11 — validate SWE Common 3.0 crosswalk
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.5_Step11_SWECommon_06NOV2026.*"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step11_SWE_Common_3_Original_Clause_Audit_06NOV2026.json"
+      - "scripts/check_dim_crosswalk_step11.py"
+      - ".github/workflows/dim-crosswalk-step11.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-evidence-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Read-only verify ZIP/XML, donor rows and JSON/CSV parity
+        run: python scripts/check_dim_crosswalk_step11.py
