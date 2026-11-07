@@ -1,21 +1,76 @@
-name: Publish and independently verify ISA-03D checkpoint
+name: Publish and verify reviewed ISA text changes
 on:
   push:
     branches: [research/dim-profile-v2]
     paths:
-      - scripts/publish_isa03d_checkpoint.py
+      - Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/.isa_review_text_update.txt
       - .github/workflows/publish-isa03d-checkpoint.yml
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: isa03d-checkpoint-publication
+  group: isa-reviewed-text-publication
   cancel-in-progress: false
+env:
+  VERIFY_ISA_TEXT: |
+    import os,sys,json,hashlib,base64,lzma,subprocess,csv
+    from pathlib import Path
+    sys.path.insert(0,'scripts')
+    from publish_isa03a_checkpoint import assemble
+    D=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk')
+    checksum,encoded=(D/'.isa_review_text_update.txt').read_text().strip().split('\n',1)
+    encoded=''.join(encoded.split()).encode()
+    sha=lambda b:hashlib.sha256(b).hexdigest()
+    assert sha(encoded)==checksum,'Saved reviewed update checksum differs'
+    p=json.loads(lzma.decompress(base64.b64decode(encoded,validate=True)))
+    assert all(x['kind']=='text_delta' for x in p['files'].values()),'Text-only pass'
+    assert all(Path(n).suffix in {'.md','.json','.csv'} for n in p['files']),'No binary or code output'
+    subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
+    old=lambda name:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/name)])
+    if os.environ.get('APPLY_ISA_TEXT')=='1':
+        assemble(p)
+    for n,v in p['files'].items():
+        b=Path(n).read_bytes()
+        assert sha(b)==v['sha256'] and len(b)==v['size'],n
+    for n,digest in p['preserved_files'].items():
+        assert sha(Path(n).read_bytes())==digest,'Snapshot changed: '+n
+    r=json.loads((D/'ISA_Coverage_Register_07NOV2026.json').read_text())
+    prior=json.loads(old('ISA_Coverage_Register_07NOV2026.json'))
+    s=json.loads((D/'ISA_Correction_Status_07NOV2026.json').read_text())
+    e=json.loads((D/s['currentEvidence']).read_text())
+    records=[x for x in e['primary_records'] if x['review_pass']==p['checkpoint']]
+    target={x['entry_id'] for x in records};expected=p['validation_summary']
+    assert len(records)==len(target)==expected['assigned']==expected['reviewed']
+    oldentries={x['id']:x for x in prior['dms_entries']}
+    changed={x['id'] for x in r['dms_entries'] if x['semantic_review_status']!=oldentries[x['id']]['semantic_review_status']}
+    assert changed==target,'Unexpected primary review scope'
+    assert len(r['dms_entries'])==len(prior['dms_entries'])==expected['source_inventory_entries']
+    for key in ['sources','source_blocks','row_targets','legacy_records','baseline','census_method','reconciliation','specific_questions','legend']:
+        assert r[key]==prior[key],'Unrelated source records changed: '+key
+    labels={x['proposed_label'] for x in records}
+    assert len(labels)==len(records)
+    assert [row for row in r['review_grid'] if row[-1] not in labels]==prior['review_grid'],'Prior display values changed'
+    assert r['candidate_rows'][:len(prior['candidate_rows'])]==prior['candidate_rows']
+    assert len(r['review_grid'])-len(r['review_sections'])-2==expected['information_rows']
+    assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==expected['reviewed_total']
+    assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==expected['supported_total']
+    assert sum(bool(x.get('supporting_definition_checked_in')) for x in r['dms_entries'])==expected['unique_supporting_definitions']
+    assert s['nextOnOwnerProceed']==p['next_task'] and s['workbookSnapshot']['currentlyMatchesReadableView'] is False
+    view=(D/s['currentReview']).read_text()
+    assert '<table>' in view and all(x['native_term'] in view for x in records)
+    assert 'snapshot' in view.lower() and 'newer' in view.lower()
+    with (D/s['currentReview'].replace('.md','.csv')).open(newline='') as handle:
+        assert list(csv.reader(handle))==r['review_grid']
+    if os.environ.get('APPLY_ISA_TEXT')=='1':
+        subprocess.run(['git','add','--',*p['files'].keys()],check=True)
+    print('PASS: exact reviewed text outputs, assigned source outcomes, unchanged historical rows and workbook snapshot.')
+    print('PASS: cumulative coverage/readable table/CSV/progress agree; no additional source research or workbook export.')
+    print('CHECKPOINT:',p['checkpoint'],'NEXT:',p['next_task'])
 jobs:
   publish:
-    name: Publish two reviewed ISA-03D properties and exact workbook
+    name: Commit reviewed evidence and cumulative comparison
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     permissions:
       contents: write
     outputs:
@@ -23,40 +78,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
           persist-credentials: true
-      - name: Fetch exact prior checkpoint for preservation checks
-        run: git fetch --no-tags --depth=1 origin e1f2ea2209165e7eae64c14eda6cc66af94a34aa
-      - name: Restore exact reviewed workbook and verify source outcomes
-        run: python3 scripts/publish_isa03d_checkpoint.py
-      - name: Commit only authorized ISA research artifacts
+      - name: Apply reviewed text with the existing exact-file assembler
+        env:
+          APPLY_ISA_TEXT: '1'
+        run: python3 -c "$VERIFY_ISA_TEXT"
+      - name: Commit authorized research text only
         id: commit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk
-          git add Docs/Research/DIM_Profile_V2/README.md Docs/Research/DIM_Profile_V2/Deliverables/README.md
           git diff --cached --check
-          git commit -m 'research(dim-v2): complete ISA-03D Relationship and Visible; verified ISA-03E handoff'
-          git push origin HEAD:research/dim-profile-v2
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(dim-v2): update reviewed property evidence and cumulative comparison; preserve Excel snapshot'
+            git push origin HEAD:research/dim-profile-v2
+          fi
           echo "checkpoint=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
   verify-published:
-    name: Read-only verification of exact published ISA-03D commit
+    name: Read-only check of actual published research text
     needs: publish
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.publish.outputs.checkpoint }}
           persist-credentials: false
-      - name: Fetch unchanged original input checkpoint
-        run: git fetch --no-tags --depth=1 origin e1f2ea2209165e7eae64c14eda6cc66af94a34aa
-      - name: Verify committed source outcomes, workbook and preservation
-        run: python3 scripts/publish_isa03d_checkpoint.py --verify
-      - name: Record verified handoff
-        run: |
-          echo "Verified ISA-03D checkpoint: ${{ needs.publish.outputs.checkpoint }}"
-          echo 'ISA-03D COMPLETE. Next owner proceed: ISA-03E only. No ISA-03E review executed.'
+      - name: Verify committed output hashes, source scope and snapshot preservation
+        run: python3 -c "$VERIFY_ISA_TEXT"
+      - name: Record checked commit
+        run: echo 'Verified research text checkpoint ${{ needs.publish.outputs.checkpoint }}'
