@@ -65,6 +65,12 @@ The new v0.9 workbook includes both an ISA Original Clause Audit worksheet and t
 
 **NEXT:** Step16 owner checkpoint only. Decide whether the ISA donor column and any previously held unique concepts should be promoted, adjusted or rejected. Step17 The Open Group SOSA is not started.
 
+## GitHub publication and independent post-publication readback
+
+The actual [15-sheet editable v0.9 master](Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx) is published on `research/dim-profile-v2`, GitHub blob `bf87c64981bcab1bf0834b032a824fadf3b33783` (465,506 bytes). The independently triggered [GitHub Actions validation run 42342501927](https://github.com/OS4CSAPI/glaux-client/actions/runs/42342501927) completed **SUCCESS** against the committed workbook: thirteen original worksheet XML parts were preserved **byte-for-byte**, the primary 13-column master matches its historical JSON/CSV exactly, the complete proposed 14-column ISA overlay has six merged full-width group separators, and the original five ISA document edition identities, eleven provisional mappings and fourteen holds reconcile with their audit and source-ledger records. All 58 earlier donor correspondence records, 22 candidate DIM rows, nine case-only holds, 73 original source-case facts and frozen source fingerprints were unchanged.
+
+The successful [build/publication workflow](https://github.com/OS4CSAPI/glaux-client/actions/runs/42342337359) also ran the generator and validator. Earlier corrective attempts failed due to a file-variable collision and a reconstructed primary CSV heading; both were fixed before final publication. These tests establish **structural/source-accounting consistency**, not ISA conformance, live source issuer verification, or an approved 14-column production crosswalk. ISA original PDFs were read as previously provided project sources; they were not rehosted in GitHub.
+
 ## Public contextual evidence (not the primary source PDFs)
 
 U.S. Army, February 6, 2023: https://www.army.mil/article/263782/armys_interoperable_sensors_solution_keeps_military_modernization_efforts_on_track
