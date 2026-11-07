@@ -259,8 +259,13 @@ def main():
         with zipfile.ZipFile(output,"w") as new:
             for member in original.infolist():
                 new.writestr(member, modified.get(member.filename,original.read(member.filename)))
-            new.writestr("xl/worksheets/sheet12.xml",audit_xml,compress_type=zipfile.ZIP_DEFLATED)
-            new.writestr("xl/worksheets/_rels/sheet12.xml.rels",audit_rels,compress_type=zipfile.ZIP_DEFLATED)
+            for name,payload in [("xl/worksheets/sheet12.xml",audit_xml),
+                                  ("xl/worksheets/_rels/sheet12.xml.rels",audit_rels)]:
+                # Stable ZIP timestamps prevent a byte-different master from
+                # being published when only a source status note changes.
+                info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0))
+                info.compress_type=zipfile.ZIP_DEFLATED
+                new.writestr(info,payload)
     require(output.stat().st_size>100000,"Generated XLSX unexpectedly small")
     with zipfile.ZipFile(output) as pkg:
         require(pkg.testzip() is None,"Generated XLSX ZIP failed integrity")
