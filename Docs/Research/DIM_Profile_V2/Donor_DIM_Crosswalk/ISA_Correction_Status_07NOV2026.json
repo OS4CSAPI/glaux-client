@@ -1,39 +1,36 @@
 {
-  "schema": "isa-coverage-correction-status.v2-batched",
+  "schema": "isa-coverage-correction-status.v3-catalogue-publication",
   "date": "2026-11-07",
   "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
-  "planningCheckpoint": "COMPLETE_WITH_POST_ISA02_SIZING_AMENDMENT",
+  "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
   "technicalIterationsCompleted": 6,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 2,
-  "progressMeaning": "ISA-01, ISA-02 and child batches ISA-03A/B/C/D complete. Parent ISA-03:16 of42 properties reviewed;26 remain. Twelve labels are work packages, not prompts.",
+  "completedChildBatches": 4,
+  "progressMeaning": "ISA-01, ISA-02 and ISA-03A-D remain complete. Sixty-five of the 91 properties are reviewed. The remaining26 are assigned once across three source-and-readable-table passes, followed by one consolidated workbook checkpoint. This is not an estimate of all remaining ISA work.",
   "currentIteration": "ISA-03D",
   "currentIterationStatus": "COMPLETE",
   "currentBatch": "ISA-03D",
   "currentBatchSourceReviewStatus": "COMPLETE",
   "currentBatchDeliveryStatus": "COMPLETE",
-  "nextOnOwnerProceed": "ISA-03E",
-  "nextAction": "Review Power, Power State, Reserve Capacity and Time to Empty only; preserve the meanings of units and types, then publish and verify.",
-  "nextSourceIDs": [
-    "ISA-DMS-090",
-    "ISA-DMS-091",
-    "ISA-DMS-100",
-    "ISA-DMS-113"
-  ],
-  "nextSourceIDsMeaning": "The four ISA-03E assignments. No further ISA-03D review or publication action remains.",
+  "nextOnOwnerProceed": "ISA-PROPERTIES-POWER-CONDITION",
+  "nextAction": "Review Power, Power State, Reserve Capacity, Satellites, Shots, Tamper State, Temperature and Time to Empty. Commit evidence, coverage and cumulative readable comparison directly to GitHub; keep Excel as the accurately labeled ISA-03D snapshot until the property-catalogue publication checkpoint. No new batch-specific workflow or separate planning prompt.",
+  "nextSourceIDs": ["ISA-DMS-090", "ISA-DMS-091", "ISA-DMS-100", "ISA-DMS-103", "ISA-DMS-106", "ISA-DMS-111", "ISA-DMS-112", "ISA-DMS-113"],
+  "nextSourceIDsMeaning": "Eight unreviewed property assignments, regrouped from old ISA-03E/J. Current completed source outcomes are unchanged.",
   "repositoryPublication": {
     "state": "PUBLISHED_TO_GITHUB",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
     "technical_state": "ISA-03D COMPLETE",
-    "next_pass": "ISA-03E",
+    "next_pass": "ISA-PROPERTIES-POWER-CONDITION",
     "publication_record": "ISA03D_Publication_Record_07NOV2026.json",
     "currentBatchEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
     "currentBatchReport": "ISA03D_Relationship_Visible_07NOV2026.md",
-    "base_input_commit": "e1f2ea2209165e7eae64c14eda6cc66af94a34aa"
+    "base_input_commit": "e1f2ea2209165e7eae64c14eda6cc66af94a34aa",
+    "lastIntegratedCheckpoint": "c34f7b1560a920a85c9061deec63c6dd6ab49e4b"
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -45,7 +42,7 @@
   },
   "coverage": {
     "sourceNamedEntryDenominator": 480,
-    "definition": "Named DMS catalogue entries, not nested fields or established model adoption.",
+    "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
     "semanticEntriesReviewedInCorrection": 65,
     "sourceBlocksAssigned": 279,
@@ -61,229 +58,97 @@
     "priorRecordsTotal": 25,
     "newCandidateRows": 61
   },
-  "iterationRecordsMeaning": "Existing ISA labels retained as work-package records, not one-prompt workload promises.",
-  "iterationRecords": [
-    {
-      "id": "ISA-01",
-      "state": "COMPLETE"
-    },
-    {
-      "id": "ISA-02",
-      "state": "COMPLETE"
-    },
-    {
-      "id": "ISA-03",
-      "state": "IN_PROGRESS_CHILD_BATCHES",
-      "nextChild": "ISA-03E"
-    },
-    {
-      "id": "ISA-04",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-05",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-06",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-07",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-08",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-09",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-10",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-11",
-      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
-    },
-    {
-      "id": "ISA-12",
-      "state": "NOT_STARTED_AUDIT_SLICES_BEFORE_FINAL_CLOSEOUT"
-    }
-  ],
-  "batchPolicy": {
-    "primarySimpleDefinitionsRange": [
-      4,
-      6
-    ],
-    "primaryDenseDefinitionsRange": [
-      1,
-      3
-    ],
-    "newSupportingDefinitionsCeiling": 4,
-    "newOrMateriallyChangedInformationRowsCeiling": 6,
-    "purpose": "Conservative starting ceilings, not guarantees, completion quotas, or permission to omit content.",
-    "preflightIncludes": [
-      "exact source IDs",
-      "semantic dependency workload",
-      "affected rows",
-      "source access",
-      "verification",
-      "existing GitHub publication route"
-    ],
-    "denseNestedDefinitions": "Split into named field or enum groups when necessary; a large composite is not one trivial item.",
-    "overflowAction": "Reduce before starting or preserve a supported named subset and explicitly assign its remainder; do not broaden a prompt to finish a whole parent package.",
-    "publicationRepair": "One bounded repair attempt within a batch. If unresolved, stop further semantic work, save exact evidence through a working GitHub write path, and name the specific repair as the next sole task. No unbounded debug loop or false publication claim.",
-    "infrastructureRule": "Reuse current workbook and publisher; do not combine source review with designing a new export/transport system.",
-    "nextBatchNaming": "Name the next exact subset in ordinary closeout; avoid a separate planning turn when the inventory already supports the split."
+  "propertyCatalogue": {
+    "total": 91,
+    "reviewed": 65,
+    "remaining": 26,
+    "sourcePassesRemainingInWorkingSchedule": 3,
+    "workbookCheckpointsRemainingInWorkingSchedule": 1,
+    "assignmentBasis": "Named source entries from the existing census, compared with completed A-D and the former E-J ID partition. Definitions and mappings are not newly reviewed by this scheduling action.",
+    "partitionCheck": {"remainingAssignedExactlyOnce": 26, "duplicates": 0, "omissions": 0}
   },
-  "propertyBatches": [
+  "remainingPropertyPasses": [
     {
-      "id": "ISA-03A",
-      "state": "COMPLETE",
-      "count": 4,
-      "sourceIds": [
-        "ISA-DMS-078",
-        "ISA-DMS-079",
-        "ISA-DMS-081",
-        "ISA-DMS-082"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03B",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-084",
-        "ISA-DMS-085",
-        "ISA-DMS-092",
-        "ISA-DMS-108",
-        "ISA-DMS-109",
-        "ISA-DMS-110"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03C",
-      "state": "COMPLETE",
-      "count": 4,
-      "sourceIds": [
-        "ISA-DMS-083",
-        "ISA-DMS-086",
-        "ISA-DMS-088",
-        "ISA-DMS-089"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03D",
-      "state": "COMPLETE",
-      "count": 2,
-      "sourceIds": [
-        "ISA-DMS-099",
-        "ISA-DMS-118"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03E",
+      "id": "ISA-PROPERTIES-POWER-CONDITION",
+      "title": "Power and component condition",
       "state": "NEXT",
-      "count": 4,
-      "sourceIds": [
-        "ISA-DMS-090",
-        "ISA-DMS-091",
-        "ISA-DMS-100",
-        "ISA-DMS-113"
-      ]
+      "count": 8,
+      "sourceIds": ["ISA-DMS-090", "ISA-DMS-091", "ISA-DMS-100", "ISA-DMS-103", "ISA-DMS-106", "ISA-DMS-111", "ISA-DMS-112", "ISA-DMS-113"],
+      "nativeNames": ["Power", "Power State", "Reserve Capacity", "Satellites", "Shots", "Tamper State", "Temperature", "Time to Empty"]
     },
     {
-      "id": "ISA-03F",
+      "id": "ISA-PROPERTIES-SENSING",
+      "title": "Sensing settings and measurement characteristics",
       "state": "NOT_STARTED",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-087",
-        "ISA-DMS-093",
-        "ISA-DMS-094",
-        "ISA-DMS-095",
-        "ISA-DMS-101",
-        "ISA-DMS-121"
-      ]
+      "count": 9,
+      "sourceIds": ["ISA-DMS-087", "ISA-DMS-093", "ISA-DMS-094", "ISA-DMS-095", "ISA-DMS-096", "ISA-DMS-101", "ISA-DMS-104", "ISA-DMS-119", "ISA-DMS-121"],
+      "nativeNames": ["Polarity", "Pulse Interval", "Quality", "Radar Mode", "Range", "Resolution", "Scan Time", "Wavelengths", "Zoom"]
     },
     {
-      "id": "ISA-03G",
+      "id": "ISA-PROPERTIES-MOTION-DATA",
+      "title": "Motion, viewed area, resources and data links",
       "state": "NOT_STARTED",
-      "count": 3,
-      "sourceIds": [
-        "ISA-DMS-096",
-        "ISA-DMS-104",
-        "ISA-DMS-119"
-      ]
+      "count": 9,
+      "sourceIds": ["ISA-DMS-097", "ISA-DMS-098", "ISA-DMS-102", "ISA-DMS-107", "ISA-DMS-114", "ISA-DMS-115", "ISA-DMS-116", "ISA-DMS-117", "ISA-DMS-120"],
+      "nativeNames": ["Receive Data Rate", "Receive Power", "Resources", "Signal Strength Ratio", "Transmit Data Rate", "Transmit Power", "Velocity", "View Area", "Zones"]
     },
     {
-      "id": "ISA-03H",
-      "state": "NOT_STARTED",
-      "count": 3,
-      "sourceIds": [
-        "ISA-DMS-116",
-        "ISA-DMS-117",
-        "ISA-DMS-120"
-      ]
-    },
-    {
-      "id": "ISA-03I",
-      "state": "NOT_STARTED",
-      "count": 5,
-      "sourceIds": [
-        "ISA-DMS-097",
-        "ISA-DMS-098",
-        "ISA-DMS-107",
-        "ISA-DMS-114",
-        "ISA-DMS-115"
-      ]
-    },
-    {
-      "id": "ISA-03J",
-      "state": "NOT_STARTED",
-      "count": 5,
-      "sourceIds": [
-        "ISA-DMS-102",
-        "ISA-DMS-103",
-        "ISA-DMS-106",
-        "ISA-DMS-111",
-        "ISA-DMS-112"
-      ]
+      "id": "ISA-PROPERTIES-PUBLISH",
+      "title": "Property-catalogue workbook publication and verification",
+      "state": "AFTER_THREE_SOURCE_PASSES",
+      "count": 0,
+      "sourceIds": [],
+      "task": "Reconcile all91 property outcomes and dependencies, export/inspect/publish the cumulative workbook once using existing machinery, and verify committed source/view/workbook parity. Do not repeat source reviews."
     }
   ],
-  "batchPartitionCheck": {
-    "remainingPropertiesAtSizingCheckpoint": 42,
-    "assignedExactlyOnce": 42,
-    "duplicates": 0,
-    "unassigned": 0,
-    "previouslyCompletedExcluded": [
-      "ISA-DMS-080",
-      "ISA-DMS-105"
-    ],
-    "method": "Child IDs partition42 original remaining properties exactly once. Sixteen reviewed through ISA-03D;26 remain in E–J."
+  "propertyBatches": [
+    {"id":"ISA-03A","state":"COMPLETE","count":4,"sourceIds":["ISA-DMS-078","ISA-DMS-079","ISA-DMS-081","ISA-DMS-082"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03B","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-084","ISA-DMS-085","ISA-DMS-092","ISA-DMS-108","ISA-DMS-109","ISA-DMS-110"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03C","state":"COMPLETE","count":4,"sourceIds":["ISA-DMS-083","ISA-DMS-086","ISA-DMS-088","ISA-DMS-089"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03D","state":"COMPLETE","count":2,"sourceIds":["ISA-DMS-099","ISA-DMS-118"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03E","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-090","ISA-DMS-091","ISA-DMS-100","ISA-DMS-113"]},
+    {"id":"ISA-03F","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-087","ISA-DMS-093","ISA-DMS-094","ISA-DMS-095","ISA-DMS-101","ISA-DMS-121"]},
+    {"id":"ISA-03G","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-096","ISA-DMS-104","ISA-DMS-119"]},
+    {"id":"ISA-03H","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-116","ISA-DMS-117","ISA-DMS-120"]},
+    {"id":"ISA-03I","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-097","ISA-DMS-098","ISA-DMS-107","ISA-DMS-114","ISA-DMS-115"]},
+    {"id":"ISA-03J","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-102","ISA-DMS-103","ISA-DMS-106","ISA-DMS-111","ISA-DMS-112"]}
+  ],
+  "iterationRecords": [
+    {"id":"ISA-01","state":"COMPLETE"},
+    {"id":"ISA-02","state":"COMPLETE"},
+    {"id":"ISA-03","state":"IN_PROGRESS_CATALOGUE_PASSES","nextChild":"ISA-PROPERTIES-POWER-CONDITION"},
+    {"id":"ISA-04","state":"NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"},
+    {"id":"ISA-05","state":"NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"},
+    {"id":"ISA-06","state":"NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"},
+    {"id":"ISA-07","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-08","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-09","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-10","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-11","state":"NOT_STARTED_RECONCILIATION"},
+    {"id":"ISA-12","state":"NOT_STARTED_FINAL_SOURCE_FIRST_AUDIT"}
+  ],
+  "deliveryPolicy": {
+    "sourcePass": "Commit evidence/coverage, cumulative readable GitHub comparison, progress and concise PITON change; reuse existing formats and prior verified type evidence.",
+    "workbook": "Publish at catalogue/substantial-section checkpoints; prominently identify the workbook snapshot and current source/readable-view checkpoint separately.",
+    "noPerPassInfrastructure": "No new batch-specific exporter, transfer mechanism, publication script or workflow merely because a source pass ended.",
+    "reportsAndLessons": "Do not duplicate a separate narrative report, every project index or the entire lessons history after each small change. Add a lesson only for a new substantive finding.",
+    "coverageRule": "One catalogue entry does not require one candidate DIM row. Preserve individual source traceability for grouped, supporting, excluded or specifically questioned outcomes.",
+    "unexpectedDependency": "Identify the exact new work before changing the queue. Do not invent completeness, hide unread entries, or launch a new process redesign.",
+    "sourcePublicationFailure": "Use the existing supported GitHub path, preserve earned work, identify any particular failure honestly; no unbounded repairs or sandbox-only authoritative handoff."
   },
+  "batchPartitionCheck": {"originalRemainingAtSizingCheckpoint":42,"reviewedThroughISA03D":16,"nowRemaining":26,"assignedExactlyOnce":26,"duplicates":0,"unassigned":0,"previouslyCompletedExcluded":["ISA-DMS-080","ISA-DMS-105"]},
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
-  "registerOwnerPassMeaning": "Inventory owner_pass retains the parent package. Named propertyBatches supply the exact next prompt-sized subset; current register includes ISA-03C.",
+  "registerOwnerPassMeaning": "Parent owner labels remain. remainingPropertyPasses is the active queue; propertyBatches preserves historical assignments only.",
   "currentReview": "ISA_Correction_Review_ISA03D_07NOV2026.md",
   "currentWorkbook": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
   "currentEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
   "currentBatchEvidence": "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
   "currentBatchReport": "ISA03D_Relationship_Visible_07NOV2026.md",
-  "publicationRule": "GitHub is authoritative. Verify actual committed evidence, workbook and current PITON; sandbox copies are supplementary. Saved source evidence does not constitute an updated workbook.",
-  "completedTaskRule": "ISA-01, ISA-02 and ISA-03A/B/C/D source review, integration and GitHub delivery are complete. Three interpretation questions remain record-local; no completed batch is reopened.",
+  "workbookSnapshot": {"checkpoint":"ISA-03D","sha256":"c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404","informationRows":92,"primaryReviewed":65,"nextRefresh":"ISA-PROPERTIES-PUBLISH","currentlyMatchesReadableView":true},
+  "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
+  "completedTaskRule": "Completed ISA-01/02/03A-D work stays complete. Specific questions remain local. Catalogue-level workbook cadence is planned, not a failed delivery or reason to repeat research.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
-  "documentationCheckpoint": {
-    "state": "COMPLETE",
-    "task": "ISA-03D two-property review and verified GitHub handoff",
-    "counts_as_new_technical_iteration": false
-  },
-  "completedChildBatches": 4
+  "documentationCheckpoint": {"state":"COMPLETE","task":"Remove repeated mini-batch release overhead and consolidate the remaining26 property assignments; no new source review, workbook or mapping change","counts_as_new_technical_iteration":false}
 }
