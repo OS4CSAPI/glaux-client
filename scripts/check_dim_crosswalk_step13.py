@@ -88,7 +88,7 @@ def main():
     rowindex={x["rowKey"]:x for x in src["rows"] if x["type"]!="section"}
     for row,prev in zip(src["rows"],old["rows"]):
         require(row["type"]==prev["type"] and row.get("rowKey")==prev.get("rowKey") and
-            row["dim"]==prev["dim"],"Model row or holder was edited")
+            row.get("dim")==prev.get("dim"),"Model row or holder was edited")
         if row["type"]=="section":
             require(row==prev,"Navigation divider changed")
         else:
