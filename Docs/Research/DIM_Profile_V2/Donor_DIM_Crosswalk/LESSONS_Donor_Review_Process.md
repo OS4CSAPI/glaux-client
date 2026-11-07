@@ -39,3 +39,10 @@ This documentation checkpoint does not execute ISA-02 or begin another donor fam
 ## Verified publication recovery — 7 November 2026
 
 The interrupted transfer was resumed from ten exact matching segments, not restarted. The completed checkpoint was recovered from its saved archive, every original file hash was verified, and publication labels and recovery routing were updated without changing census results. See [publication record](ISA01_Publication_Recovery_07NOV2026.json) and the [verification run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114). This closes the GitHub-delivery action described in L07; ISA-01 remains complete and ISA-02 remains next.
+
+## Evidence added at ISA-02
+
+| ID | Observation and evidence | Reusable practice | Standing |
+|---|---|---|---|
+| **L08 — Read the native definition, not just the label** | DMS §3.1 makes Maintenance a contact list, Identity a tactical classification, and Data Outputs an ongoing-transfer description. They are not maintenance history, persistent identity or a field schema. See [ISA-02 evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json). | Follow the original field's type and meaning before matching an existing row. Add specific source-derived rows instead of forcing superficially similar labels together. | **Demonstrated in ISA-02.** Applied to all 49 assigned properties and the UCI reconciliation. |
+| **L09 — Preserve source standing and isolate sparse definitions** | Body text identifies three accepted extensions among 49 properties. Level and Link Loss lack defining prose even though their types are declared. Cross-page Camera Mode and measured-type definitions contain additional qualifications. | Determine core/extension standing from original body markers; read definitions across pages and through their types. Keep a sparse definition visible with an exact question rather than inventing meaning or marking unrelated work unfinished. | **Demonstrated in ISA-02.** 46 core properties, three accepted extensions, two record-local questions. The original 49-entry block is complete. |

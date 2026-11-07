@@ -1,45 +1,58 @@
-# Current PITON — ISA correction after ISA-01
+# Current PITON — ISA correction after ISA-02
 
-**7 November 2026 · ISA-01 COMPLETE · correction progress 1/12 · next owner proceed: ISA-02 ONLY.**
+**7 November 2026 · ISA-02 COMPLETE · correction progress 2/12 · next owner “proceed”: ISA-03 ONLY.**
 
-## Recovery authority and publication
+## Current authority and durable handoff
 
-**GitHub publication recovered and initial lessons checkpoint COMPLETE.** The repository on `research/dim-profile-v2` is the authoritative current checkpoint: ISA-01 complete, correction progress 1/12, next ISA-02 only. Do not redo ISA-01 because a historical prepublication copy said 0/12 or not committed.
+Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; working directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is the authoritative project home. The former ISA-01 publication failure was repaired; do not redo its completed census or use an old “0/12,” “1/12” or sandbox-only label to reverse current progress.
 
-Read [progress](ISA_Correction_Status_07NOV2026.json), [census](ISA01_Source_Census_07NOV2026.md), [coverage register](ISA_Coverage_Register_07NOV2026.json), [current review](ISA_Correction_Review_ISA01_07NOV2026.md), [editable workbook](ISA_Correction_Review_ISA01_07NOV2026.xlsx), [lessons](LESSONS_Donor_Review_Process.md), and [publication record](ISA01_Publication_Recovery_07NOV2026.json). The [twelve-pass plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) remains controlling.
+Read [progress](ISA_Correction_Status_07NOV2026.json), [current workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx), [horizontal view](ISA_Correction_Review_ISA02_07NOV2026.md), [ISA-02 closeout](ISA02_Identity_and_Properties_07NOV2026.md), [exact evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json), [coverage](ISA_Coverage_Register_07NOV2026.json), [validation](ISA02_Validation_07NOV2026.json), and [lessons](LESSONS_Donor_Review_Process.md). The [twelve-pass plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) and [ISA-01 boundary amendment](ISA01_Plan_Amendment_07NOV2026.md) still govern. The publication record stores the actual committed checkpoint and workflow verification.
 
-**Publication contract:** use GitHub for every authorized delivery and read back the actual committed files. Sandbox files are additional recovery copies, not the handoff. Separate technical completion from publication, and finish both where the tools support it. Discover the available supported write actions before declaring an access limitation; do not attribute access to a model switch without evidence.
+## Earned progress
 
-**Lessons maintenance:** add a short lesson only when new evidence appears during the normal ISA closeout. Do not produce a separate report or restart other donors. At ISA-12 consolidate demonstrated practices into a reusable donor-review procedure; adapt it to the next donor rather than copying ISA’s twelve passes mechanically.
+ISA-01 inventoried **480 named DMS entries**, **279 source blocks**, **31 original row/topic targets** and **25 earlier ISA findings**. Eleven 2023 originals were identified; the 2015 historical paper remains a specific context-access item, not a blocker for the available primary corpus. The inventory count is not a mapping count.
 
-## Work actually completed
+ISA-02 reviewed **all 49 assigned properties**: **47 source-supported correspondences** and **two exact source-definition questions**. The core/extension split is **46 core + three accepted extensions** (Hardware Version, Maintenance, Manufacturer POC). Manufacturer, Model and Serial Number now appear in the identity rows. UCI's earlier “network-scoped” gloss was removed because the original source defines component uniqueness, with lexical and virtual-identifier rules. Four identity row targets and the old ISA-M01 are reconciled.
 
-Original DMS 6.0r12: **480 named source entries** found in contents, body and index, across all 148 indexed pages. Eleven original ISA 6.0 documents from 31 October 2023 have verified titles/revisions/contents: DMS r12; SDD r5; ICD r5; Component and Controller Requirements r4; Topics r2; Query Language Guide r4; Introductory Guide r2; White Paper r2; Certificate Guide r2; IPL3 Guide r4. A twelfth, historical 2015 paper has a verified existing register citation but no full text located. It is assigned historical-context access item SRC-ACCESS-01 / ISA-11; no source gap is inferred for the eleven readable originals.
+Camera Mode adds a camera-specific current-mode correspondence; the broader operating-mode row still has its assigned ISA-03 reconciliation. The remaining property contributions are visible as **43 source-supported candidate rows plus two question rows**. The corrected review has 76 information/review rows: original 31 + new 45, in grouped fourteen-column form. Other donor cells in newly added rows say “Not assessed here”; equipment cells say “Not linked here.” Existing non-ISA/equipment cells, original 58 primary donor records and 73 case evidence statements are unchanged. Historic v0.9 and ISA-01 files remain history, not overwritten technical baselines.
 
-There are **279 source blocks**, **31 row/topic targets** (22 DIM + nine case topics), and **25 earlier ISA findings** (eleven mappings + fourteen holds). All have assigned review passes. The source denominator is named DMS catalogue entries, NOT all fields, unique real-world concepts or adopted mappings. Each parent entry's future review includes all native fields, parameters, results, enumeration members, constraints and referenced types; source-row coverage may expand when nested entries need their own records.
+Forty-six referenced type definitions were inspected to support the 49 property decisions. Their later full catalogue passes are not falsely marked complete or counted twice. Source entry review, mapping fit, candidate-row acceptance and publication are separate fields.
 
-Existing legacy ISA mappings remain, with review-due labels; otherwise empty ISA cells say Not reviewed and name the pass. The old relations are neither erased nor promoted by this census. No semantic mapping or DIM row was added or revised. All non-ISA/case display values equal the exact frozen v0.9 CSV (Git blob fc271b757bcd094866f428bf7c3dc67bee7cc8eb). The fifteen-sheet v0.9 workbook and its historical primary evidence remain untouched on GitHub.
+## Actual source distinctions to retain
 
-## Source access and exact locations
+Manufacturer is a component manufacturer/producer/vendor String: do not turn every vendor label into the actual fabricator. Model describes the manufacturer's product line. Serial Number is component-scoped, with uniqueness expected from manufacturer/model/serial together; physical hardware interpretation requires the component context. UCI need not be a URI and can identify a virtual component; syntax and certificate-binding requirements do not authenticate our examples.
 
-The JSON register stores each original file identifier, revision, date, source pages and extracted-text hash. Original PDF bytes were not generally exportable. **Indexed text WAS exportable in slices**: the DMS was joined through verified overlaps to 7,450 lines and 148 unique ordered page markers. Do not interpret a failed raw-byte export as missing original source text. Use Files search/find/read/materialize-text by the registered original identifiers. Materialized text is capped at about 1,000 lines; request overlapping slices rather than mistaking the first slice for the entire source. Original PDF p.37 was visually inspected to check the observable/command boundary; p.33 image retrieval failed but indexed text/contents/body/index agree on its headings. Do not claim unviewed page images were inspected.
+Maintenance is a POC list, not maintenance history. Identity is tactical classification via Standard Identity, not UCI or a serial. Enabled is permission to become active; Active reports operation. Data Inputs/Outputs describe current transfers, distinct from available Resources and output-field schemas. Attached transforms and own-frame Local transforms have different reference frames and order. Field of Regard is scan-wide while Field of View is instantaneous. AC/DC and source/load quantities remain separate. Do not promote a source-specific Camera Mode component-representation rule to a universal physical-component rule.
 
-Manufacturer: printed p.13/PDF p.28; Model: printed p.14/PDF p.29; Serial Number: printed p.16/PDF p.31. They are known omissions to repair in ISA-02, using actual definitions and subject scope—not name matching alone. **Properties end on printed p.18**, including Zones and Zoom for ISA-03. **Observables end on printed p.22**, including Solar Radiation, Velocity and Verified By for ISA-04. Read across shared-page section boundaries.
+**ISA-Q001 Level:** Percent declared but no property-description prose. Related level-control commands and Auto Level context were checked; exact referent is not forced. Revisit in ISA-05/06 command context and ISA-11 guidance.
+**ISA-Q002 Link Loss:** Db declared but no reference quantity/sign convention. Do not infer packet-loss percentage or a specific propagation attenuation definition; revisit applicable ISA-09/11 source guidance.
+Both entries have complete source-review outcomes with precise questions. They do not cancel ISA-02 completion or hold unrelated rows hostage.
 
-## Next exact task: ISA-02
+## Source recovery and method
 
-Read the assigned 49 DMS entries (the first property block through printed p.13 plus Model and Serial Number), relevant original UCI/identity and linked-type definitions, and current row coverage. Correct the three identity omissions and disposition each entry in that block; trace relevant unmatched contributions to candidate rows or specific questions. Do not preselect direct equivalence. Confirm body extension markers (core, Custom, Nominated, Accepted) rather than treating every contents bullet as a status.
+Original 31 October 2023 files: DMS 6.0r12 `file_00000000ca1c81f48a3ccd49273425f8`; SDD 6.0r5 `file_000000004c10824683c0a84b37f24a3b`; ICD 6.0r5 `file_000000008de0820e8e33af2cb096bb12`; Component Requirements 6.0r4 `file_00000000ed048210a141e046f2e93a17`; Controller Requirements 6.0r4 `file_00000000e00082109d88d0119f744880`. The source register carries all eleven original titles and companions. Use Files search/find/read by exact edition when a prior identifier fails.
 
-Preserve all other donors, case evidence, source precision, the four leftmost source examples, foundational sensing standards as an adjacent group and DIM at far right. Do not alter the CSAPI Profile, UML, application/server, production service or final donor rank. No ISA-03 or old Step16 is authorized by the next proceed. A specific oversized batch may be openly split with its remaining named entries; do not silently drop material or turn quotas into completion.
+Raw PDF/image export can fail while original indexed text remains readable. Do not declare those sources unavailable. In ISA-02, requested DMS images failed; full original text, body extension markings, cross-page continuations and referenced definitions were inspected. Do not claim unavailable source pictures were seen. Source text slices have leading/trailing whitespace quirks: join using verified page/overlap evidence rather than assuming every materialized slice has precisely the requested line count.
 
-## Progress and language discipline
+Manufacturer is p.13/PDF28, Model p.14/PDF29, Serial Number p.16/PDF31. The completed ISA-02 block is 47 first-block properties plus Model and Serial Number, exactly 49 primary entries. UCI reconciliation used DMS §4.2 p.55/PDF70, ICD §6.1 p.19/PDF27, Component Requirements §4.1.1 pp.7–9/PDF14–16. Universal/Unique is a source-document spelling distinction, not two invented identifiers.
 
-A completed census is completed. Zero semantic correction decisions today is expected: ISA-01 was the inventory pass. Later pass coverage, mapping relationship, owner/model adoption, and repository publication are separate states. A narrow question belongs to the affected record, not a general declaration that nothing is finished. The final ISA correction can close when its defined coverage and review tests pass; Step16 remains the owner's subsequent substantive checkpoint.
+## Next exact task: ISA-03
 
-Keep the broader goal of an evidence-based whole-system DIM, a separate CSAPI Profile, and useful generic client interpretation; this ISA-only repair is not a restart. Preserve reference design versus installed unit, hardware versus output quantity, declared capability versus current setting, and reported outcome versus physical effect. Bennett retains two original NOAA means/four copies, date-limited service history and unknown original result availability—no invented ISA values.
+Review the **42 remaining DMS §3.1 properties** assigned ISA-03, from printed p.14 through p.18, excluding already-assigned Model and Serial Number. Include **Zones and Zoom on p.18/PDF33** even though that page also begins Observables. Follow each definition to completion, inspect its referenced types, verify core/extension standing from the body, and assign a supported existing/new candidate row or exact source question.
 
-## Files and validation
+Use the current row and evidence ledger, not only the initial 22-row proposal. Reconcile state/mode and applicable case topics without inventing deployed values. Do not conflate Operating State with the ISA connection lifecycle. Preserve existing non-ISA cells, original case precision, the four leftmost examples, adjacent foundational standards, and DIM at far right. ISA-04 observables, Step16 owner adoption, Profile/UML, runtime and deployment remain separate.
 
-The repository contains the workbook, Markdown/CSV review, complete source/row/prior-finding registers, progress, plan amendment and this recovery anchor. The [publication record](ISA01_Publication_Recovery_07NOV2026.json) includes saved and published hashes and the [GitHub verification run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114). Verification checks the restored source-accounting data, unchanged non-ISA display values and all saved artifact identities; it is not a repeat of the semantic source review.
+## Publication, checking and lessons
 
-**Next substantive task remains ISA-02.** This publication/lessons checkpoint does not consume another technical correction iteration or authorize ISA-03.
+Every delivery goes to GitHub on the research branch and is read back from the actual commit. The workbook, source registers, readable view, status and this PITON must agree. Verify the current source record set and original-cell preservation separately from file hashes and formulas. One generated ledger matching another does not establish source coverage.
+
+The current workbook has twelve tabs, including ISA Evidence, Dependencies and Questions. Summary, identity rows and added rows were visually inspected; exported values and formula caches were checked. A summary merge-layout issue found in rendering was corrected before export. The final workbook has no formula-error values. No original case/non-ISA fact changed.
+
+Maintain one [living lessons record](LESSONS_Donor_Review_Process.md); add a lesson only when actual review supplies new evidence. At ISA-12 consolidate demonstrated practices, not the arbitrary number of passes, for reuse with other donors. Completed work remains complete. Reopen a particular claim only for specific new evidence, not a generic “unfinished model” caveat.
+
+**Next “proceed” = ISA-03 only.** ISA-02 source review and GitHub delivery are the checkpoint; there is no census restart.
+
+
+## Repository verification
+
+[Publication record](ISA02_Publication_Record_07NOV2026.json) · [Read-only verification of the published commit](https://github.com/OS4CSAPI/glaux-client/actions/runs/42392228728). The correction remains 2/12; next ISA-03 only.

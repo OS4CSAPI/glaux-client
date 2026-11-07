@@ -5,20 +5,19 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE",
-  "technicalIterationsCompleted": 1,
+  "technicalIterationsCompleted": 2,
   "plannedTechnicalIterations": 12,
-  "currentIteration": "ISA-01",
+  "currentIteration": "ISA-02",
   "currentIterationStatus": "COMPLETE",
-  "nextOnOwnerProceed": "ISA-02",
-  "nextAction": "Identity and first property block; Manufacturer, Model and Serial Number original-source mapping correction.",
+  "nextOnOwnerProceed": "ISA-03",
+  "nextAction": "Remaining 42 property entries, including Zones and Zoom; ISA-03 only.",
   "repositoryPublication": {
     "state": "PUBLISHED_TO_GITHUB",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-01 COMPLETE",
-    "next_pass": "ISA-02",
-    "publication_record": "ISA01_Publication_Recovery_07NOV2026.json",
-    "workflow_run_url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42388276114"
+    "technical_state": "ISA-02 COMPLETE",
+    "next_pass": "ISA-03",
+    "publication_record": "ISA02_Publication_Record_07NOV2026.json"
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -32,11 +31,19 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS entries only, not nested fields or established mappings.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 0,
+    "semanticEntriesReviewedInCorrection": 49,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
-    "unassignedTargets": 0
+    "unassignedTargets": 0,
+    "sourceSupportedPrimaryEntries": 47,
+    "specificSourceDefinitionQuestions": 2,
+    "supportingDefinitionsRead": 46,
+    "originalRowTargetsReviewed": 4,
+    "originalRowTargetsTotal": 31,
+    "priorRecordsReconciled": 1,
+    "priorRecordsTotal": 25,
+    "newCandidateRows": 45
   },
   "iterationRecords": [
     {
@@ -45,11 +52,11 @@
     },
     {
       "id": "ISA-02",
-      "state": "NEXT"
+      "state": "COMPLETE"
     },
     {
       "id": "ISA-03",
-      "state": "NOT_STARTED"
+      "state": "NEXT"
     },
     {
       "id": "ISA-04",
@@ -91,13 +98,15 @@
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
-  "currentReview": "ISA_Correction_Review_ISA01_07NOV2026.md",
-  "publicationRule": "GitHub is the authoritative checkpoint. Verify the committed workbook, evidence and current PITON after every authorized delivery; sandbox copies do not replace publication.",
-  "completedTaskRule": "Source census complete; source-mapping acceptance remains a separate per-record task. No generic unfinished-project caveat.",
+  "currentReview": "ISA_Correction_Review_ISA02_07NOV2026.md",
+  "publicationRule": "GitHub is authoritative. Handoff only after the actual committed workbook, evidence and PITON pass readback; sandbox copies are supplementary.",
+  "completedTaskRule": "ISA-01 census and ISA-02 assigned block are complete. The Level and Link Loss questions are record-local; owner model adoption is separate.",
+  "currentWorkbook": "ISA_Correction_Review_ISA02_07NOV2026.xlsx",
+  "currentEvidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
     "state": "COMPLETE",
-    "task": "Initial lessons record and ISA-01 GitHub publication recovery",
+    "task": "Lessons maintained with ISA-02 evidence",
     "counts_as_new_technical_iteration": false
   }
 }

@@ -1,10 +1,12 @@
 # ISA coverage correction — execution plan
 
-**CURRENT: ISA-01 COMPLETE; correction progress 1/12. Publication and initial lessons checkpoint complete; next ISA-02 only.** [Census](ISA01_Source_Census_07NOV2026.md) · [coverage register](ISA_Coverage_Register_07NOV2026.json) · [entry-boundary amendment](ISA01_Plan_Amendment_07NOV2026.md) · [lessons](LESSONS_Donor_Review_Process.md) · [publication](ISA01_Publication_Recovery_07NOV2026.json). The later semantic review includes full definitions and child fields, not only the 480 named headings.
+**CURRENT — ISA-02 COMPLETE; correction progress 2/12; next ISA-03 ONLY.** All 49 assigned properties have recorded outcomes: 47 supported and two precise definition questions. The new view includes 43 supported candidate rows plus two question rows; UCI reconciliation is separate. [Workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx) · [Review](ISA_Correction_Review_ISA02_07NOV2026.md) · [Evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json) · [Publication](ISA02_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
-**7 November 2026 · CURRENT ISA EXECUTION AUTHORITY · 12 planned correction iterations · planning checkpoint complete; technical correction iterations 1/12.**
+**Historical ISA-01 checkpoint: correction progress 1/12. Publication and initial lessons checkpoint complete; next ISA-02 only.** [Census](ISA01_Source_Census_07NOV2026.md) · [coverage register](ISA_Coverage_Register_07NOV2026.json) · [entry-boundary amendment](ISA01_Plan_Amendment_07NOV2026.md) · [lessons](LESSONS_Donor_Review_Process.md) · [publication](ISA01_Publication_Recovery_07NOV2026.json). The later semantic review includes full definitions and child fields, not only the 480 named headings.
 
-**Next owner “proceed”: ISA-02 only — identity and the first property block.** The former Step16 owner checkpoint follows this correction; Step17 and every other donor review remain unchanged. This amendment is inserted after the delivered Step15 work, not a restart or replacement of the forty-step crosswalk programme.
+**7 November 2026 · CURRENT ISA EXECUTION AUTHORITY · 12 planned correction iterations · planning checkpoint complete; technical correction iterations 2/12.**
+
+**Next owner “proceed”: ISA-03 only — remaining 42 properties, including Zones and Zoom.** The former Step16 owner checkpoint follows this correction; Step17 and every other donor review remain unchanged. This amendment is inserted after the delivered Step15 work, not a restart or replacement of the forty-step crosswalk programme.
 
 [Current recovery PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Machine-readable progress](ISA_Correction_Status_07NOV2026.json) · [Forty-step parent plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md).
 
@@ -95,4 +97,4 @@ A narrow unknown attaches only to its named record and action. A later source di
 
 Maintain one current ISA review workbook/view, one coverage/evidence data set and one current progress record. New scientific material belongs in those; the PITON points to them. Each pass ends with **work completed; concrete table/source changes; exact coverage progress; next single task**. Final owner-facing explanations use ordinary language, not just record IDs.
 
-Historical planning scope: the initial planning checkpoint created the plan. ISA-01 has now completed and been published. The next owner “proceed” begins ISA-02 only; Step16 follows the correction.
+Historical planning scope: the initial planning checkpoint created the plan. ISA-01 has now completed and been published. ISA-02 is now complete. The next owner “proceed” begins ISA-03 only; Step16 follows the correction.

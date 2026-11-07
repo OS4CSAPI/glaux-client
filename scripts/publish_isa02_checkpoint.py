@@ -106,6 +106,7 @@ def restore(p,saved):
     for key in ['sources','source_blocks','dms_entries','row_targets','legacy_records','review_grid','review_sections','census_method','reconciliation','baseline','legend']:
         need(old[key]==baseline[key],'ISA-01 changed since reviewed baseline: '+key)
     current=apply_patch(baseline,p['coverage_patch'])
+    current['publication']={k:current['publication'][k] for k in ['state','repository','branch','research_state','next_pass','publication_record']}
     dump(D/REGISTER,current)
     with zipfile.ZipFile(io.BytesIO(saved[OLD_BOOK])) as oldzip:
         for name,r in p['files'].items():

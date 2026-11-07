@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-01 COMPLETE; correction 1/12. GitHub publication and initial lessons checkpoint complete. Next owner “proceed”: ISA-02 ONLY.**
+**CURRENT — ISA-02 COMPLETE · correction progress 2/12 · next owner “proceed”: ISA-03 ONLY.** Identity omissions corrected; 49 assigned properties reviewed, 47 supported and two record-local questions. 43 additional source-supported candidate rows and two question rows are visible; other donors and original equipment facts are preserved.
 
-[Current workbook](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA01_07NOV2026.xlsx) · [readable comparison](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA01_07NOV2026.md) · [census](Donor_DIM_Crosswalk/ISA01_Source_Census_07NOV2026.md) · [lessons](Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md) · [PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [progress](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [publication verification](Donor_DIM_Crosswalk/ISA01_Publication_Recovery_07NOV2026.json).
+[Current workbook](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA02_07NOV2026.xlsx) · [Readable review](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA02_07NOV2026.md) · [Source evidence](Donor_DIM_Crosswalk/ISA02_Identity_and_Properties_Evidence_07NOV2026.json) · [PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [Lessons](Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md) · [Publication](Donor_DIM_Crosswalk/ISA02_Publication_Record_07NOV2026.json).
 
-The recovered census accounts for 480 named source entries, 279 source blocks, 31 row/topic targets and 25 prior ISA findings. No ISA-02 mapping was executed in this publication/lessons checkpoint. Current plan/PITON supersede older planning 0/12 and Step16-next language below; do not repeat ISA-01.
+ISA-01 census and ISA-02 review remain completed. The next source block is the 42 remaining properties, including Zones and Zoom. Older 0/12, 1/12, ISA-02-next and Step16-next text below is historical; current plan and PITON control.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 
