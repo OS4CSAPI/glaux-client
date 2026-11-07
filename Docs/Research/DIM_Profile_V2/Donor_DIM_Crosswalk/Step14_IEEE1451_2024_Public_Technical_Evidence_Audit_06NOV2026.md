@@ -76,6 +76,12 @@ University of Beira Interior, Instrumentation and Metrology Laboratory (IML). 20
 
 National Institute of Standards and Technology (NIST). 2009. “Transducer Electronic Data Sheet.” Historical educational overview. https://www.nist.gov/el/intelligent-systems-division-73500/transducer-electronic-data-sheet
 
-## 8. Next authorized iteration
+## 8. Publication and independent GitHub readback
+
+The [editable 13-sheet current v0.8 Excel master](Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.xlsx), [full horizontal GitHub-readable master](Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.md), [JSON source/evidence](Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.json), and [CSV mirror](Master_Donor_Concept_to_DIM_Crosswalk_v0.8_Step14_IEEE1451_06NOV2026.csv) have been committed to `research/dim-profile-v2`. GitHub workbook blob `9eba78d247e2e7364cbfb98f73ca09b85e36afa1` is **453,463 bytes**. [Publication/build validation](https://github.com/OS4CSAPI/glaux-client/actions/runs/42340875575) and a separate [independent check on the actual published workbook](https://github.com/OS4CSAPI/glaux-client/actions/runs/42340946419) both finished **SUCCESS**. These checks cover 13-sheet ZIP/XML validity, donor/evidence/CSV/JSON parity, the one new IEEE cell and original 37 OGC/W3C reviewed records, 15 still prior-only records, 14 held IEEE technical concepts, and complete source-case preservation.
+
+The independently checked record is **37 original-standard-source-reviewed + 6 IEEE PUBLIC TECHNICAL + 15 prior-only = 58**. It must not be summarized as **43 clauses of 2024 and prior original standards verified**; no licensed IEEE 1451.0-2024 normative clause text was independently inspected. Neither workbook structure nor the Playground proves an operating device, native IEEE 1451 implementation, full OGC/IEEE interoperability or physical control effect.
+
+## 9. Next authorized iteration
 
 **Step14 public technical review is complete as an evidence-bounded mapping proposal.** The next distinct owner “proceed” is **Step15 ISA 6.0 only**, not Step16 owner checkpoint, further IEEE clause research, final ranking, or a new app implementation. The full 2024 normative text remains held until actually accessible and reviewed.
