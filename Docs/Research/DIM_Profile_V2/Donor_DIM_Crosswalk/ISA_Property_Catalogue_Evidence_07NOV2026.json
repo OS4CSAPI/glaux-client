@@ -1,0 +1,593 @@
+{
+  "schema": "isa-property-catalogue-evidence.v1",
+  "date": "2026-11-07",
+  "source_edition": "ISA Data Model Specification release 6.0 document revision 12, 31 October 2023",
+  "prior_evidence_files": [
+    "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+    "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+    "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+    "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+    "ISA03D_Relationship_Visible_Evidence_07NOV2026.json"
+  ],
+  "completed_passes": [
+    {
+      "id": "ISA-PROPERTIES-POWER-CONDITION",
+      "status": "COMPLETE",
+      "assigned": 8,
+      "reviewed": 8,
+      "supported": 8,
+      "new_questions": 0,
+      "primary_ids": [
+        "ISA-DMS-090",
+        "ISA-DMS-091",
+        "ISA-DMS-100",
+        "ISA-DMS-103",
+        "ISA-DMS-106",
+        "ISA-DMS-111",
+        "ISA-DMS-112",
+        "ISA-DMS-113"
+      ]
+    }
+  ],
+  "primary_records": [
+    {
+      "id": "ISA-PROP-090",
+      "entry_id": "ISA-DMS-090",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Power",
+      "element_kind": "property",
+      "native_type": "Percent",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Power, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "3eb0d5a1863644db8ef86cac9b9dfef90c89eb5b2bccfd890b74d07ccbd450d7",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-090",
+      "proposed_label": "Variable-power level as a percentage of the available maximum",
+      "navigation_group": "Electrical power",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "For a device supporting variable power, the given power level is expressed as a percentage of its maximum available power.",
+      "mapping_boundary": "This is not stored-energy percentage, consumed watts or a transmit-power measurement. The definition does not specify an input/output role or assert that a setting was commanded or applied. The Percent base type does not impose a universal 0–100 cap.",
+      "dependency_terms": [
+        "Percent",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-091",
+      "entry_id": "ISA-DMS-091",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Power State",
+      "element_kind": "property",
+      "native_type": "General State",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 15,
+      "pdf_pages": [
+        30,
+        30
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Power State, printed p.15 / PDF p.30",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "f62fafbe478c8a6371aa2699eac40f38587f484d2676f076aa82554c945ee077",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-091",
+      "proposed_label": "Reported condition of power to the component",
+      "navigation_group": "Electrical power",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "The current condition of power to the component, expressed through General State: required code, optional component-specific machine subcode and optional human-readable details.",
+      "mapping_boundary": "Not a fabricated ON/OFF enumeration, the whole component operating condition, battery percentage, authorization state or independently verified supply condition. No live value is inferred.",
+      "dependency_terms": [
+        "General State",
+        "General Code",
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-100",
+      "entry_id": "ISA-DMS-100",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Reserve Capacity",
+      "element_kind": "property",
+      "native_type": "Measured Percent",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Reserve Capacity, printed p.16 / PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "e2daca61658112cb6aae320ca4ee75f1b3472698b1b9fc38567086f452c2bdba",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-100",
+      "proposed_label": "Reported energy reserve relative to maximum capacity",
+      "navigation_group": "Electrical power",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Current energy reserve as a percentage of maximum capacity, with fuel-tank and battery-level uses identified by the source. Measured Percent carries required value and optional error.",
+      "mapping_boundary": "Not rated mAh/Wh, available instantaneous power, remaining time or a measured value for a reference design. Optional error is not automatically zero; its native convention is plus/minus one standard deviation.",
+      "dependency_terms": [
+        "Measured Percent",
+        "Percent",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-103",
+      "entry_id": "ISA-DMS-103",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Satellites",
+      "element_kind": "property",
+      "native_type": "Count",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Satellites, printed p.16 / PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fcfc411b87cfd6d83dc6cba50acfa930280058f36354acec60ade706b48428d7",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-103",
+      "proposed_label": "Number of satellites in use",
+      "navigation_group": "Diagnostics",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Number of satellites in use, encoded as Count with required integer value and optional integer error.",
+      "mapping_boundary": "Not satellites merely visible/available, a specified constellation, a count of installed receivers or evidence of position accuracy. No count, reset rule or fixed acquisition interval is invented.",
+      "dependency_terms": [
+        "Count",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-106",
+      "entry_id": "ISA-DMS-106",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Shots",
+      "element_kind": "property",
+      "native_type": "Count",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 16,
+      "pdf_pages": [
+        31,
+        31
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Shots, printed p.16 / PDF p.31",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ed206535d568de872d64bec7feb30a7b8a1f77c189baf5025e82cb1f5e5a08a6",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-106",
+      "proposed_label": "Reported laser-use count",
+      "navigation_group": "Imaging and sensing settings",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Number of times the laser has been used, encoded as Count with required value and optional error.",
+      "mapping_boundary": "Not firearm shots, a general observation count, or a guaranteed pulse-by-pulse count. The source does not define reset policy or a lifetime/time-window scope. A counter definition is not evidence that a particular laser fired.",
+      "dependency_terms": [
+        "Count",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-111",
+      "entry_id": "ISA-DMS-111",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Tamper State",
+      "element_kind": "property",
+      "native_type": "General State",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Tamper State, printed p.17 / PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "5397d3b1dc92b69073591207951bb4424ab11f34f6d9db25cc1f3260a7aee2c0",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-111",
+      "proposed_label": "Reported device tamper condition",
+      "navigation_group": "Security state",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "The tamper state of the device, using the shared General State structure and General Code enumeration.",
+      "mapping_boundary": "Accepted extension, not core. No particular tamper detector, alarm, binary TAMPERED/UNTAMPERED enum, operator action or incident history is defined here; preserve the supplied code/subcode/details roles.",
+      "dependency_terms": [
+        "General State",
+        "General Code",
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-112",
+      "entry_id": "ISA-DMS-112",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Temperature",
+      "element_kind": "property",
+      "native_type": "Measured Celsius",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Temperature, printed p.17 / PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8f1b02bfb72c9caeb0bc0f5ea853bef6fdddbf77d818aee1fc0620dcf0b97354",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-112",
+      "proposed_label": "Reported internal device temperature",
+      "navigation_group": "Diagnostics",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Internal temperature of the device, represented by Measured Celsius with required temperature value and optional error.",
+      "mapping_boundary": "Accepted extension, not ambient-air temperature, a rated operating-temperature range or a specific case measurement. The Celsius type has source range [-273.15, infinity); optional error uses plus/minus one standard deviation and is not fabricated when absent.",
+      "dependency_terms": [
+        "Measured Celsius",
+        "Celsius",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "id": "ISA-PROP-113",
+      "entry_id": "ISA-DMS-113",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Time to Empty",
+      "element_kind": "property",
+      "native_type": "Measured Secs",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.1",
+      "printed_page": 17,
+      "pdf_pages": [
+        32,
+        32
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.1 Time to Empty, printed p.17 / PDF p.32",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1725b848bb22fcaf3a830cfc52437bc83147fb8614112b1ffa7239feb5fd09f4",
+      "review_pass": "ISA-PROPERTIES-POWER-CONDITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-113",
+      "proposed_label": "Estimated time to empty under expected usage",
+      "navigation_group": "Electrical power",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Time to empty based on expected usage, represented by Measured Secs with required value in seconds and optional error.",
+      "mapping_boundary": "Not an absolute exhaustion timestamp, unconditional runtime guarantee, observation resultTime, sample period or a source-specified prediction algorithm. Preserve its dependency on expected usage and the optional-error convention.",
+      "dependency_terms": [
+        "Measured Secs",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07"
+    }
+  ],
+  "supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-377",
+      "native_term": "Count",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 91,
+      "pdf_pages": [
+        106
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Count, printed p.91, PDF 106",
+      "inspected_content_summary": "Core composite; source describes a positive integer count of occurrences or group members. Required value: Integer (1); optional error: Integer (0–1). Do not impose measured-float error conventions or invent reset/zero handling.",
+      "source_span_sha256": "2941fd4b8273a59a6b5a4a3c0e38a72a9b8c6b171be5811112132fc8d5f28f3d",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-270",
+      "native_term": "Celsius",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Celsius, printed p.51, PDF 66",
+      "inspected_content_summary": "Float temperature in degrees Celsius; range [-273.15, infinity). A type range is not the component operational temperature rating.",
+      "source_span_sha256": "2b3a88d98b19b743f8a8cad6e6c941f31b805ac6b0df2b289d6dd7b5bb5004a6",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-398",
+      "native_term": "Measured Celsius",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 98,
+      "pdf_pages": [
+        113
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Celsius, printed p.98, PDF 113",
+      "inspected_content_summary": "Required value: Celsius (1); optional error: Celsius (0–1). Supplied error is expressed as plus/minus one standard deviation. Absence does not supply perfect accuracy.",
+      "source_span_sha256": "9f240363a1f5a5cd37337df72ce422650cea19efd53929ec8d500d13042ef2f0",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-416",
+      "native_term": "Measured Percent",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 103,
+      "pdf_pages": [
+        118
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Percent, printed p.103, PDF 118",
+      "inspected_content_summary": "Required value: Percent (1); optional error: Percent (0–1), expressed as plus/minus one standard deviation when provided.",
+      "source_span_sha256": "4bbf52bcf0197b4215f46b30011dd7b40626fee36bca77e2a6c49fbf6aa52d06",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-421",
+      "native_term": "Measured Secs",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 104,
+      "pdf_pages": [
+        119
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Secs, printed p.104, PDF 119",
+      "inspected_content_summary": "Required value: Secs (1); optional error: Secs (0–1), expressed as plus/minus one standard deviation when provided. Property context, not type alone, establishes expected time to empty.",
+      "source_span_sha256": "6bc963b36ade611ac5adcc20f1d9a552c1a2ed67f69aebaa07f8b4f3e3c66730",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 54,
+      "pdf_pages": [
+        69
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54, PDF 69",
+      "inspected_content_summary": "Float relative to a maximum; 100 percent is considered the maximum but the base type allows exceeding it. No universal 0–100 clamp is imported.",
+      "source_span_sha256": "96c78781b94aca9e3da934baa21e9c3d1051635894d6b446a64ed88685be71fd",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-384",
+      "native_term": "General State",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 93,
+      "pdf_pages": [
+        108,
+        109
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 General State, printed p.93, PDF 108,109",
+      "inspected_content_summary": "Required General Code code; optional machine-readable component-specific subcode and human-readable details. Shared type does not merge power, operating or tamper conditions.",
+      "source_span_sha256": "c82ba01a51feb8d84488811b4e477b0354e8dcbbba69ec42225c99f1cfb76833",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-344",
+      "native_term": "General Code",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 79,
+      "pdf_pages": [
+        94
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 General Code, printed p.79, PDF 94",
+      "inspected_content_summary": "Sealed FAILURE, FAULT, OK, UNINITIALIZED and WARNING. Native distinctions remain; no invented power-specific or tamper-specific enum.",
+      "source_span_sha256": "569342bad72e802ae82941389fbf7bdd58c3f524c7431f23b0706e4bd237e509",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50, PDF 65",
+      "inspected_content_summary": "Previously checked native String definition; reused for General State optional subcode/details without adding encoding rules.",
+      "source_span_sha256": "d4f649a7a04148565d9d6d2ed5735bdfdb6e1f2e17a9b862a597dceca36c2251",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50, PDF 65",
+      "inspected_content_summary": "Previously checked native integer definition, reused for Count fields without redefining the property scope.",
+      "source_span_sha256": "584fd9e743a6e4c0bdcc530ff7c5aed7b5d0ae9426bfd50e5ee78a2610d32ae7",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65",
+      "inspected_content_summary": "Previously checked native floating-point type, reused by Celsius, Percent and Secs.",
+      "source_span_sha256": "d3be1cbbbc380e461d8645c5af15503e40ed4c29eadfe46ff981a05b930a7255",
+      "later_catalogue_pass_completed": false
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 55,
+      "pdf_pages": [
+        70
+      ],
+      "source_standing": "CORE",
+      "review_use": "PREVIOUS_SUPPORT_REUSED",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55, PDF 70",
+      "inspected_content_summary": "Floating-point seconds between instants; native representation has millisecond resolution. Not an absolute timestamp.",
+      "source_span_sha256": "d548dfedb736d4a70197d82cee4c37039146f68d8d41eb094bfccfee3bd43275",
+      "later_catalogue_pass_completed": false
+    }
+  ],
+  "source_inspection": {
+    "primary_text": "DMS §3.1 printed pp.15–17 / PDF pp.30–32; original indexed source definitions and extension markings read.",
+    "type_pages_visually_inspected": [
+      106,
+      113,
+      118,
+      119
+    ],
+    "atomic_type_text": "Celsius p.51/PDF66 and Percent p.54/PDF69 original definitions checked; same-edition Float, Integer, String, Secs, General State and General Code evidence reused.",
+    "new_supporting_definitions": [
+      "Count",
+      "Celsius",
+      "Measured Celsius",
+      "Measured Percent",
+      "Measured Secs"
+    ],
+    "new_supporting_count": 5,
+    "unique_supporting_total": 52,
+    "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8"
+  },
+  "case_checks": [
+    "No battery state inferred from Dragino or AirGradient design battery capacities.",
+    "Campbell Battery/LithiumBattery source voltages are not Reserve Capacity percentages.",
+    "Internal Temperature is not Bennett ambient ATemp; no internal temperature value is manufactured.",
+    "No satellites-in-use count, laser use count, tamper state or power condition is attributed to any example.",
+    "Original non-ISA donor cells and all source-case values are preserved."
+  ],
+  "mapping_note": "Eight definitions convey eight distinct information roles; candidate rows record those roles rather than inferring values or adopting a DIM. These source terms do not close the broader original case-topic reconciliation automatically.",
+  "workbook_snapshot": {
+    "file": "ISA_Correction_Review_ISA03D_07NOV2026.xlsx",
+    "checkpoint": "ISA-03D",
+    "primary_reviewed": 65,
+    "information_rows": 92,
+    "sha256": "c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404",
+    "next_refresh": "ISA-PROPERTIES-PUBLISH"
+  },
+  "next_source_pass": "ISA-PROPERTIES-SENSING",
+  "validation": {
+    "changed_primary_ids": [
+      "ISA-DMS-090",
+      "ISA-DMS-091",
+      "ISA-DMS-100",
+      "ISA-DMS-103",
+      "ISA-DMS-106",
+      "ISA-DMS-111",
+      "ISA-DMS-112",
+      "ISA-DMS-113"
+    ],
+    "reviewed_total": 73,
+    "supported_total": 70,
+    "specific_questions_unchanged": 3,
+    "information_review_rows": 100,
+    "core_properties_reviewed": 61,
+    "accepted_extension_properties_reviewed": 12,
+    "new_candidate_rows": 8,
+    "non_ISA_and_equipment_value_changes": 0,
+    "new_workbook_exports": 0,
+    "coverage_and_prior_preservation": "PASS"
+  }
+}

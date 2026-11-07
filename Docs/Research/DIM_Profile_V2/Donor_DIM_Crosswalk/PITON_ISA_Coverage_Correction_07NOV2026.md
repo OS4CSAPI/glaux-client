@@ -1,26 +1,26 @@
 # Current PITON — ISA correction with catalogue-level workbook publication
 
-**7 November 2026 · ISA-01, ISA-02 and ISA-03A–D COMPLETE. Next: Power and component condition — eight named properties, source/evidence/readable-table review.**
+**7 November 2026 · Power and component condition source pass COMPLETE. Next: the nine named Sensing settings and measurement characteristics properties. Excel remains the ISA-03D snapshot.**
 
 ## Read first and execution precedence
 
 Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is authoritative for every substantive pass.
 
-[Current execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress and exact remaining queue](ISA_Correction_Status_07NOV2026.json) · [Current published comparison](ISA_Correction_Review_ISA03D_07NOV2026.md) · [Last fully integrated workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Coverage/evidence register](ISA_Coverage_Register_07NOV2026.json) · [Publication record](ISA03D_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
+[Current execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress and exact remaining queue](ISA_Correction_Status_07NOV2026.json) · [Current published comparison](ISA_Correction_Review_07NOV2026.md) · [Last fully integrated workbook](ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Coverage/evidence register](ISA_Coverage_Register_07NOV2026.json) · [Publication record](ISA03D_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
 The owner rejected the proliferation of small prompts following an unreliable original estimate. The current plan removes full workbook release work from every tiny source group. **Three source-and-readable-table passes cover the remaining26 properties, then one cumulative workbook publication/verification checkpoint.** This is the schedule for the remaining property catalogue, not a total for the whole ISA correction. No source entries were removed. Do not restart the completed65 property reviews or manufacture more planning steps.
 
 Current plan/progress and this PITON supersede the old ISA-03E–J per-mini-batch publication queue and old two-to-six-record ceilings. Prior assignments remain traceable in progress as history, not competing NEXT instructions. Older plans also contain contradictory historic banners; their instructions do not override this handoff.
 
-## Exactly what happens next
+## Current source pass complete; exact next action
 
-Review only these eight source entries: **Power (090), Power State (091), Reserve Capacity (100), Satellites (103), Shots (106), Tamper State (111), Temperature (112), Time to Empty (113)**, all with prefix `ISA-DMS-`.
+**Power and component condition COMPLETE:** Power (090), Power State (091), Reserve Capacity (100), Satellites (103), Shots (106), Tamper State (111), Temperature (112), Time to Empty (113). The original eight property definitions and relevant types are recorded in [cumulative property evidence](ISA_Property_Catalogue_Evidence_07NOV2026.json). Six are core; Tamper State and Temperature are Accepted extensions. No new question was introduced. Five new supporting types were checked: Count, Celsius, Measured Celsius, Measured Percent and Measured Secs. Their full later catalogue reviews are not falsely marked complete.
 
-Use original DMS6.0r12 printed pp.15–17/PDF30–32 and complete relevant definitions. Existing Percent and General State/General Code support can be reused. Check the short Count, Celsius, Measured Celsius, Measured Percent and Measured Secs definitions as necessary, retaining original units, constraints, source standing and distinct meanings. Inventory locations are not semantic proof. Do not mark these as reviewed merely because earlier search snippets include their names.
+**Current research:** 73 reviewed properties / 70 supported / three unchanged questions; 100 information/review rows; 69 candidate/question rows; 52 unique supporting definitions. Original source inventory, 58 non-ISA primary donor records, 73 case statements and all earlier grid values are preserved. Original ISA-03 parent now has 24/42 property assignments complete; together with 49 ISA-02 properties, 73/91 are complete. Eighteen remain in the two named source passes.
 
-Commit the source outcomes, coverage changes and cumulative GitHub-readable comparison; update progress and this current recovery section. **Do not build another per-batch exporter, create a new workflow, write another standalone report, or perform a full Excel transfer/verification cycle for this source pass.** Reuse the established evidence structures and publication path. Existing source definitions remain individually traceable even when grouped into a model concept.
+**Next owner “proceed”: Sensing settings and measurement characteristics ONLY.** Polarity (087), Pulse Interval (093), Quality (094), Radar Mode (095), Range (096), Resolution (101), Scan Time (104), Wavelengths (119), Zoom (121). Reuse same-edition support; preserve laser-specific, measured and qualitative meanings. Commit into the same cumulative evidence, coverage and readable view. No other donor, motion/data pass, new standalone report, new script or new workflow is authorized by that prompt.
 
-After that pass: nine Sensing settings/measurement properties, then nine Motion/viewed-area/resource/data-link properties, then the property-catalogue workbook checkpoint. Their exact IDs and names are in the plan/progress and partition the26 unreviewed properties with zero omissions/duplicates. This is a regrouping of unstarted assignments; it does not alter completed decisions.
+The current readable view is [ISA_Correction_Review_07NOV2026.md](ISA_Correction_Review_07NOV2026.md), with [CSV](ISA_Correction_Review_07NOV2026.csv). The workbook is still the unchanged **ISA-03D snapshot (65 reviewed, 92 rows)**. This scheduled snapshot cadence does not reopen completed source work. The next two source passes are followed by the single property-catalogue workbook checkpoint.
 
 ## Delivery cadence — prevent both overhead and misleading files
 
@@ -30,7 +30,7 @@ At the catalogue checkpoint, regenerate/export the workbook from the saved outco
 
 Each source pass remains durable in GitHub; sandbox copies are supplementary. Save work through supported writes rather than claiming a failed transfer succeeded. An actual unavailable publication action is a specific repair issue, not a reason to reread completed sources or expand a prompt indefinitely.
 
-## Verified starting point and preservation
+## Historical integrated-workbook starting point and preservation
 
 Last fully integrated checkpoint: [c34f7b1](https://github.com/OS4CSAPI/glaux-client/commit/c34f7b1560a920a85c9061deec63c6dd6ab49e4b). Workbook `ISA_Correction_Review_ISA03D_07NOV2026.xlsx`, SHA256 `c569018ee166940d205a007da53486492e47e96e3a5bc042ee0e62d463627404`, 94,332 bytes, twelve worksheets. [Separate post-publication verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/42410293370) succeeded.
 
@@ -52,4 +52,4 @@ Source coverage remains480 named entries,279 blocks,31 original row/topic target
 
 The current change is execution-only: no new source review, model decision or workbook edit. Source passes finish when their named assignments have justified outcomes and verified GitHub evidence/table publication. Catalogue publication has its own workbook checks. Final ISA completion retains all source-first, row-coverage and preservation tests from the plan. A pending owner adoption decision is not a reason to call completed source work unfinished.
 
-Do not start another donor, Step16 owner acceptance, final donor ranking, CSAPI Profile/UML changes, application/server/deployment work or physical commands. No second approval of this scheduling change is needed. **Next substantive work is the eight named Power and component condition properties, not another plan revision or a four-property Excel-release cycle.**
+Do not start another donor, Step16 owner acceptance, final donor ranking, CSAPI Profile/UML changes, application/server/deployment work or physical commands. No second approval of this scheduling change is needed. **Next substantive work is the nine Sensing settings and measurement characteristics properties, followed by the nine Motion/viewed-area/resource/data-link properties and then the property-catalogue workbook checkpoint.**
