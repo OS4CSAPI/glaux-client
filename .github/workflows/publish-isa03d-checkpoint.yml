@@ -1,0 +1,62 @@
+name: Publish and independently verify ISA-03D checkpoint
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths:
+      - scripts/publish_isa03d_checkpoint.py
+      - .github/workflows/publish-isa03d-checkpoint.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: isa03d-checkpoint-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    name: Publish two reviewed ISA-03D properties and exact workbook
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    outputs:
+      checkpoint: ${{ steps.commit.outputs.checkpoint }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Fetch exact prior checkpoint for preservation checks
+        run: git fetch --no-tags --depth=1 origin e1f2ea2209165e7eae64c14eda6cc66af94a34aa
+      - name: Restore exact reviewed workbook and verify source outcomes
+        run: python3 scripts/publish_isa03d_checkpoint.py
+      - name: Commit only authorized ISA research artifacts
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk
+          git add Docs/Research/DIM_Profile_V2/README.md Docs/Research/DIM_Profile_V2/Deliverables/README.md
+          git diff --cached --check
+          git commit -m 'research(dim-v2): complete ISA-03D Relationship and Visible; verified ISA-03E handoff'
+          git push origin HEAD:research/dim-profile-v2
+          echo "checkpoint=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  verify-published:
+    name: Read-only verification of exact published ISA-03D commit
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.checkpoint }}
+          persist-credentials: false
+      - name: Fetch unchanged original input checkpoint
+        run: git fetch --no-tags --depth=1 origin e1f2ea2209165e7eae64c14eda6cc66af94a34aa
+      - name: Verify committed source outcomes, workbook and preservation
+        run: python3 scripts/publish_isa03d_checkpoint.py --verify
+      - name: Record verified handoff
+        run: |
+          echo "Verified ISA-03D checkpoint: ${{ needs.publish.outputs.checkpoint }}"
+          echo 'ISA-03D COMPLETE. Next owner proceed: ISA-03E only. No ISA-03E review executed.'
