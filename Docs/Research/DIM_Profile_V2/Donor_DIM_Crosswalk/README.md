@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-02 COMPLETE · correction progress 2/12 · next owner “proceed”: ISA-03 ONLY.** Identity omissions corrected; 49 assigned properties reviewed, 47 supported and two record-local questions. 43 additional source-supported candidate rows and two question rows are visible; other donors and original equipment facts are preserved.
+**CURRENT — ISA-03A COMPLETE and integrated. Next owner “proceed”: ISA-03B ONLY.** ISA-01/02 remain complete; the parent ISA-03 work package continues through small named batches, not one large prompt.
 
-[Current workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx) · [Readable review](ISA_Correction_Review_ISA02_07NOV2026.md) · [Source evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md) · [Publication](ISA02_Publication_Record_07NOV2026.json).
+[Current workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx) · [Full comparison](ISA_Correction_Review_ISA03A_07NOV2026.md) · [Exact four decisions](ISA03A_Status_Name_State_Evidence_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Publication verification](ISA03A_Publication_Record_07NOV2026.json).
 
-ISA-01 census and ISA-02 review remain completed. The next source block is the 42 remaining properties, including Zones and Zoom. Older 0/12, 1/12, ISA-02-next and Step16-next text below is historical; current plan and PITON control.
+Four saved decisions are integrated; 53 primary entries reviewed and 80 information/review rows. All older donor/case values are preserved. This banner and the active progress/PITON supersede older next-task instructions below.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 
@@ -61,6 +61,6 @@ The historical 22-row sample is **a template**, not approval of its conceptual m
 
 **Current: 15/40 iterations complete; 58 primary donor records remain (37 original-standard-checked OGC/W3C, 6 IEEE public-technical-only, 15 OPC/SAPIENT prior-only) plus 11 ISA 2023 original-source-checked proposed mappings STAGED SEPARATELY. All DIM meanings remain proposed, and an ISA column requires Step16 owner acceptance.** The owner separately authorized these **15 steps**, not all 40. The 40 steps must be started **separately** with an owner “proceed,” and a useful visible master-table review is required at checkpoint **08** before expansion. The final result may legitimately retain source/standards gaps instead of fabricating a complete 182-source mapping.
 
-**NEXT owner “proceed”: ISA-03 ONLY — remaining 42 properties, under the current correction plan.**
+**NEXT owner “proceed”: ISA-03B ONLY — the six entries in the current plan/progress.**
 
 **Prior program distinction:** The original DIM/Profile research's [43-step plan](../PLAN_DIM_Profile_V2_Whole_System_Recovery_to_Delivery_v0.1_31OCT2026.md) and [PITON v3.3](../PITON_DIM_Profile_V2_Continuity_v3.3_03NOV2026.md) remain historical/complete with full external interop Gate E/F HOLD. This is a new source-comparison deliverable, not retroactive old Step 44.

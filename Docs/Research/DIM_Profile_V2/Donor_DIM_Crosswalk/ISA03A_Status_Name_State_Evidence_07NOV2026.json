@@ -5,111 +5,235 @@
   "parentWorkPackage": "ISA-03",
   "baselineCommit": "778368295c90eae9538550f699733568453a389e",
   "sourceReviewStatus": "COMPLETE",
-  "reviewedPrimarySourceIds": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"],
-  "primaryOutcomes": {"assigned": 4, "reviewed": 4, "supported": 4, "newSourceQuestions": 0},
+  "reviewedPrimarySourceIds": [
+    "ISA-DMS-078",
+    "ISA-DMS-079",
+    "ISA-DMS-081",
+    "ISA-DMS-082"
+  ],
+  "primaryOutcomes": {
+    "assigned": 4,
+    "reviewed": 4,
+    "supported": 4,
+    "newSourceQuestions": 0
+  },
   "scope": "Maximum Status Interval, Minimum Status Interval, Name and Operating State only. No ISA-03B or other property review.",
   "sourceDocuments": [
-    {"id":"ISA-DMS-6.0r12","title":"ISA Data Model Specification","edition":"Release 6.0, document revision 12","date":"2023-10-31","fileId":"file_00000000ca1c81f48a3ccd49273425f8","primaryLocator":"section 3.1, printed page 14 / PDF page 29","inspection":"Original indexed text read. A page-image request failed because the backing raw-byte path was unavailable; no visual PDF inspection is claimed."},
-    {"id":"ISA-ICD-6.0r5","title":"ISA Interface Control Document","edition":"Document 6.0 revision 5","date":"2023-10-31","fileId":"file_000000008de0820e8e33af2cb096bb12","supportLocator":"section 6.5, printed pages 21–22 / PDF pages 29–30","inspection":"Original indexed text read for Status reporting behavior and interval purposes."}
+    {
+      "id": "ISA-DMS-6.0r12",
+      "title": "ISA Data Model Specification",
+      "edition": "Release 6.0, document revision 12",
+      "date": "2023-10-31",
+      "fileId": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primaryLocator": "section 3.1, printed page 14 / PDF page 29",
+      "inspection": "Original indexed text read. A page-image request failed because the backing raw-byte path was unavailable; no visual PDF inspection is claimed."
+    },
+    {
+      "id": "ISA-ICD-6.0r5",
+      "title": "ISA Interface Control Document",
+      "edition": "Document 6.0 revision 5",
+      "date": "2023-10-31",
+      "fileId": "file_000000008de0820e8e33af2cb096bb12",
+      "supportLocator": "section 6.5, printed pages 21–22 / PDF pages 29–30",
+      "inspection": "Original indexed text read for Status reporting behavior and interval purposes."
+    }
   ],
   "supportingDefinitions": [
-    {"name":"Secs","source":"ISA-DMS-6.0r12","locator":"section 4.2, printed page 55 / PDF page 70","meaning":"Floating-point seconds between two instants; interval representation has millisecond resolution.","reviewUse":"Supports both interval properties; not a sample period or a result timestamp.","laterCataloguePassCompleted":false},
-    {"name":"String","source":"ISA-DMS-6.0r12","locator":"section 4.1, printed page 50 / PDF page 65","meaning":"ISA treats the string as a whole text value; the source describes its encoding as UTF-8 encoded ASCII text.","reviewUse":"Supports the Name value and optional General State subcode/details. No new character-set rule is inferred.","laterCataloguePassCompleted":false},
-    {"name":"General State","source":"ISA-DMS-6.0r12","locator":"section 8 composite types, printed pages 93–94 / PDF pages 108–109","fields":[{"name":"code","type":"General Code","required":true,"cardinality":"1"},{"name":"subcode","type":"String","required":false,"cardinality":"0–1","meaning":"Component-specific machine-readable state information."},{"name":"details","type":"String","required":false,"cardinality":"0–1","meaning":"Component-specific user-friendly state information."}],"reviewUse":"Supports Operating State, not an operating-mode enumeration or ISA connection lifecycle.","laterCataloguePassCompleted":false},
-    {"name":"General Code","source":"ISA-DMS-6.0r12","locator":"section 8 enumerated types, printed page 79 / PDF page 94","sealed":true,"members":[{"name":"FAILURE","meaning":"Problem halts operation."},{"name":"FAULT","meaning":"Problems permit limited operation."},{"name":"OK","meaning":"Acceptable behavior."},{"name":"UNINITIALIZED","meaning":"Non-error pre-operational state."},{"name":"WARNING","meaning":"Potential current or future problems while operation may continue."}],"reviewUse":"All five native members were inspected for the Operating State interpretation; this is supporting inspection, not completion of the future reporting-type batch.","laterCataloguePassCompleted":false}
+    {
+      "name": "Secs",
+      "source": "ISA-DMS-6.0r12",
+      "locator": "section 4.2, printed page 55 / PDF page 70",
+      "meaning": "Floating-point seconds between two instants; interval representation has millisecond resolution.",
+      "reviewUse": "Supports both interval properties; not a sample period or a result timestamp.",
+      "laterCataloguePassCompleted": false
+    },
+    {
+      "name": "String",
+      "source": "ISA-DMS-6.0r12",
+      "locator": "section 4.1, printed page 50 / PDF page 65",
+      "meaning": "ISA treats the string as a whole text value; the source describes its encoding as UTF-8 encoded ASCII text.",
+      "reviewUse": "Supports the Name value and optional General State subcode/details. No new character-set rule is inferred.",
+      "laterCataloguePassCompleted": false
+    },
+    {
+      "name": "General State",
+      "source": "ISA-DMS-6.0r12",
+      "locator": "section 8 composite types, printed pages 93–94 / PDF pages 108–109",
+      "fields": [
+        {
+          "name": "code",
+          "type": "General Code",
+          "required": true,
+          "cardinality": "1"
+        },
+        {
+          "name": "subcode",
+          "type": "String",
+          "required": false,
+          "cardinality": "0–1",
+          "meaning": "Component-specific machine-readable state information."
+        },
+        {
+          "name": "details",
+          "type": "String",
+          "required": false,
+          "cardinality": "0–1",
+          "meaning": "Component-specific user-friendly state information."
+        }
+      ],
+      "reviewUse": "Supports Operating State, not an operating-mode enumeration or ISA connection lifecycle.",
+      "laterCataloguePassCompleted": false
+    },
+    {
+      "name": "General Code",
+      "source": "ISA-DMS-6.0r12",
+      "locator": "section 8 enumerated types, printed page 79 / PDF page 94",
+      "sealed": true,
+      "members": [
+        {
+          "name": "FAILURE",
+          "meaning": "Problem halts operation."
+        },
+        {
+          "name": "FAULT",
+          "meaning": "Problems permit limited operation."
+        },
+        {
+          "name": "OK",
+          "meaning": "Acceptable behavior."
+        },
+        {
+          "name": "UNINITIALIZED",
+          "meaning": "Non-error pre-operational state."
+        },
+        {
+          "name": "WARNING",
+          "meaning": "Potential current or future problems while operation may continue."
+        }
+      ],
+      "reviewUse": "All five native members were inspected for the Operating State interpretation; this is supporting inspection, not completion of the future reporting-type batch.",
+      "laterCataloguePassCompleted": false
+    }
   ],
   "decisions": [
     {
-      "id":"ISA03A-078",
-      "sourceEntryId":"ISA-DMS-078",
-      "sourceTerm":"Maximum Status Interval",
-      "sourceKind":"property",
-      "sourceStanding":"CORE",
-      "sourceLocator":"ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; ISA ICD 6.0r5 section 6.5, printed pp.21–22 / PDF pp.29–30",
-      "nativeType":"Secs",
-      "nativeStructure":"Single Value",
-      "nativeMeaning":"Upper bound on the elapsed time between consecutive component Status transmissions. The ICD associates this bound with Status heartbeat reporting.",
-      "disposition":"SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
-      "candidateId":"ISA-C-078",
-      "candidateLabel":"Maximum interval between component Status reports",
-      "proposedRelation":"DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
-      "relatedExistingReviewTopics":["CASE-H03", "CASE-H05", "CASE-H08"],
-      "boundary":"This reporting bound is not a measurement sampling period, an observed result's availability time, a network-delivery guarantee, or proof that a real component is alive. A property definition supplies no installed numeric value.",
-      "ownerModelDecision":"CANDIDATE_FOR_OWNER_REVIEW",
-      "integrationState":"PENDING_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER_UPDATE"
+      "id": "ISA03A-078",
+      "sourceEntryId": "ISA-DMS-078",
+      "sourceTerm": "Maximum Status Interval",
+      "sourceKind": "property",
+      "sourceStanding": "CORE",
+      "sourceLocator": "ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; ISA ICD 6.0r5 section 6.5, printed pp.21–22 / PDF pp.29–30",
+      "nativeType": "Secs",
+      "nativeStructure": "Single Value",
+      "nativeMeaning": "Upper bound on the elapsed time between consecutive component Status transmissions. The ICD associates this bound with Status heartbeat reporting.",
+      "disposition": "SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
+      "candidateId": "ISA-C-078",
+      "candidateLabel": "Maximum interval between component Status reports",
+      "proposedRelation": "DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
+      "relatedExistingReviewTopics": [
+        "CASE-H03",
+        "CASE-H05",
+        "CASE-H08"
+      ],
+      "boundary": "This reporting bound is not a measurement sampling period, an observed result's availability time, a network-delivery guarantee, or proof that a real component is alive. A property definition supplies no installed numeric value.",
+      "ownerModelDecision": "CANDIDATE_FOR_OWNER_REVIEW",
+      "integrationState": "INTEGRATED_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER"
     },
     {
-      "id":"ISA03A-079",
-      "sourceEntryId":"ISA-DMS-079",
-      "sourceTerm":"Minimum Status Interval",
-      "sourceKind":"property",
-      "sourceStanding":"CORE",
-      "sourceLocator":"ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; ISA ICD 6.0r5 section 6.5, printed pp.21–22 / PDF pp.29–30",
-      "nativeType":"Secs",
-      "nativeStructure":"Single Value",
-      "nativeMeaning":"Lower bound on the elapsed time between component Status transmissions. State changes during this interval are cached and sent when transmission is next allowed; the ICD explains that this prevents excessive Status-message frequency.",
-      "disposition":"SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
-      "candidateId":"ISA-C-079",
-      "candidateLabel":"Minimum interval between component Status reports",
-      "proposedRelation":"DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
-      "relatedExistingReviewTopics":["CASE-H03", "CASE-H05", "CASE-H08"],
-      "boundary":"Do not equate this with a sensor sampling period, a periodic observation schedule, or a promised log of every intervening transition. No configured or default numeric interval is inferred.",
-      "ownerModelDecision":"CANDIDATE_FOR_OWNER_REVIEW",
-      "integrationState":"PENDING_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER_UPDATE"
+      "id": "ISA03A-079",
+      "sourceEntryId": "ISA-DMS-079",
+      "sourceTerm": "Minimum Status Interval",
+      "sourceKind": "property",
+      "sourceStanding": "CORE",
+      "sourceLocator": "ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; ISA ICD 6.0r5 section 6.5, printed pp.21–22 / PDF pp.29–30",
+      "nativeType": "Secs",
+      "nativeStructure": "Single Value",
+      "nativeMeaning": "Lower bound on the elapsed time between component Status transmissions. State changes during this interval are cached and sent when transmission is next allowed; the ICD explains that this prevents excessive Status-message frequency.",
+      "disposition": "SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
+      "candidateId": "ISA-C-079",
+      "candidateLabel": "Minimum interval between component Status reports",
+      "proposedRelation": "DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
+      "relatedExistingReviewTopics": [
+        "CASE-H03",
+        "CASE-H05",
+        "CASE-H08"
+      ],
+      "boundary": "Do not equate this with a sensor sampling period, a periodic observation schedule, or a promised log of every intervening transition. No configured or default numeric interval is inferred.",
+      "ownerModelDecision": "CANDIDATE_FOR_OWNER_REVIEW",
+      "integrationState": "INTEGRATED_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER"
     },
     {
-      "id":"ISA03A-081",
-      "sourceEntryId":"ISA-DMS-081",
-      "sourceTerm":"Name",
-      "sourceKind":"property",
-      "sourceStanding":"CORE",
-      "sourceLocator":"ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; String section 4.1, printed p.50 / PDF p.65",
-      "nativeType":"String",
-      "nativeStructure":"Single Value",
-      "nativeMeaning":"Human-friendly component name that can be reassigned or changed.",
-      "disposition":"SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
-      "candidateId":"ISA-C-081",
-      "candidateLabel":"Changeable component display name",
-      "proposedRelation":"DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
-      "relatedExistingReviewTopics":["S06-R004"],
-      "boundary":"A changeable display name is not the persistent UCI, manufacturer name, product-model designation or serial number. Uniqueness, issuer authority and a particular assigning actor are not asserted by this definition.",
-      "ownerModelDecision":"CANDIDATE_FOR_OWNER_REVIEW",
-      "integrationState":"PENDING_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER_UPDATE"
+      "id": "ISA03A-081",
+      "sourceEntryId": "ISA-DMS-081",
+      "sourceTerm": "Name",
+      "sourceKind": "property",
+      "sourceStanding": "CORE",
+      "sourceLocator": "ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; String section 4.1, printed p.50 / PDF p.65",
+      "nativeType": "String",
+      "nativeStructure": "Single Value",
+      "nativeMeaning": "Human-friendly component name that can be reassigned or changed.",
+      "disposition": "SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
+      "candidateId": "ISA-C-081",
+      "candidateLabel": "Changeable component display name",
+      "proposedRelation": "DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
+      "relatedExistingReviewTopics": [
+        "S06-R004"
+      ],
+      "boundary": "A changeable display name is not the persistent UCI, manufacturer name, product-model designation or serial number. Uniqueness, issuer authority and a particular assigning actor are not asserted by this definition.",
+      "ownerModelDecision": "CANDIDATE_FOR_OWNER_REVIEW",
+      "integrationState": "INTEGRATED_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER"
     },
     {
-      "id":"ISA03A-082",
-      "sourceEntryId":"ISA-DMS-082",
-      "sourceTerm":"Operating State",
-      "sourceKind":"property",
-      "sourceStanding":"CORE",
-      "sourceLocator":"ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; General State pp.93–94 / PDF pp.108–109; General Code p.79 / PDF p.94",
-      "nativeType":"General State",
-      "nativeStructure":"Single Value",
-      "nativeMeaning":"Current state of the component itself, expressly distinguished from the component's ISA lifecycle state. General State carries one required code and optional component-specific subcode and human-readable details.",
-      "disposition":"SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
-      "candidateId":"ISA-C-082",
-      "candidateLabel":"Reported component operating condition",
-      "proposedRelation":"DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
-      "relatedExistingReviewTopics":["S06-R018", "CASE-H05"],
-      "boundary":"Operating condition is not automatically a selected operating mode, capability readiness, power state, ISA connection lifecycle, or verified physical truth. Keep the existing Camera Mode correspondence; do not replace it with this broader property. No live unit state is inferred.",
-      "ownerModelDecision":"CANDIDATE_FOR_OWNER_REVIEW",
-      "integrationState":"PENDING_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER_UPDATE"
+      "id": "ISA03A-082",
+      "sourceEntryId": "ISA-DMS-082",
+      "sourceTerm": "Operating State",
+      "sourceKind": "property",
+      "sourceStanding": "CORE",
+      "sourceLocator": "ISA DMS 6.0r12 section 3.1, printed p.14 / PDF p.29; General State pp.93–94 / PDF pp.108–109; General Code p.79 / PDF p.94",
+      "nativeType": "General State",
+      "nativeStructure": "Single Value",
+      "nativeMeaning": "Current state of the component itself, expressly distinguished from the component's ISA lifecycle state. General State carries one required code and optional component-specific subcode and human-readable details.",
+      "disposition": "SOURCE_SUPPORTED_CANDIDATE_INFORMATION_ROW",
+      "candidateId": "ISA-C-082",
+      "candidateLabel": "Reported component operating condition",
+      "proposedRelation": "DIRECT_TO_THIS_SPECIFIC_CANDIDATE",
+      "relatedExistingReviewTopics": [
+        "S06-R018",
+        "CASE-H05"
+      ],
+      "boundary": "Operating condition is not automatically a selected operating mode, capability readiness, power state, ISA connection lifecycle, or verified physical truth. Keep the existing Camera Mode correspondence; do not replace it with this broader property. No live unit state is inferred.",
+      "ownerModelDecision": "CANDIDATE_FOR_OWNER_REVIEW",
+      "integrationState": "INTEGRATED_CURRENT_WORKBOOK_AND_COVERAGE_REGISTER"
     }
   ],
   "preservation": {
-    "existingWorkbook":"ISA_Correction_Review_ISA02_07NOV2026.xlsx",
-    "existingSemanticEntriesInIntegratedRegister":49,
-    "additionalCompletedSourceReviewsInThisFile":4,
-    "sourceReviewsIncludingThisFile":53,
-    "existingNonISADonorAndCaseValuesChanged":0,
-    "existingIdentityOrCameraModeMappingsChanged":0,
-    "workbookChanged":false,
-    "ISA03BStarted":false
+    "existingWorkbook": "ISA_Correction_Review_ISA02_07NOV2026.xlsx",
+    "existingSemanticEntriesInIntegratedRegister": 49,
+    "additionalCompletedSourceReviewsInThisFile": 4,
+    "sourceReviewsIncludingThisFile": 53,
+    "existingNonISADonorAndCaseValuesChanged": 0,
+    "existingIdentityOrCameraModeMappingsChanged": 0,
+    "workbookChanged": false,
+    "ISA03BStarted": false
   },
   "publication": {
-    "scope":"This source evidence is committed directly to the research branch. The four-row review report is a separate readable delta, not a substitute for the current workbook.",
-    "remainingAction":"ISA-03A-PUBLISH: integrate these four exact decisions into the current review workbook, readable comparison and coverage register; verify the committed output. Do not repeat the four source reviews or start ISA-03B.",
-    "accessObservation":"The current workbook is known in GitHub but was not downloaded into this workspace: direct runtime download encountered DNS failure, and the download service could not resolve the public raw-file URL. GitHub read/write text actions remain available. This is not a finding that the workbook or source documents are missing.",
-    "repairBoundary":"No new workbook exporter or transfer infrastructure was designed in this source batch. Preserve this exact evidence and address only the workbook/integration action next."
+    "scope": "The original four source decisions, integrated review and supporting coverage are committed on research/dim-profile-v2.",
+    "remainingAction": "NONE_FOR_ISA03A; next ISA-03B only after owner's next proceed.",
+    "accessObservation": "The current workbook is known in GitHub but was not downloaded into this workspace: direct runtime download encountered DNS failure, and the download service could not resolve the public raw-file URL. GitHub read/write text actions remain available. This is not a finding that the workbook or source documents are missing.",
+    "repairBoundary": "No new workbook exporter or transfer infrastructure was designed in this source batch. Preserve this exact evidence and address only the workbook/integration action next."
+  },
+  "integration": {
+    "state": "COMPLETE",
+    "newSourceReview": false,
+    "workbook": "ISA_Correction_Review_ISA03A_07NOV2026.xlsx",
+    "view": "ISA_Correction_Review_ISA03A_07NOV2026.md",
+    "record": "ISA03A_Publication_Record_07NOV2026.json",
+    "candidateIds": [
+      "ISA-C-078",
+      "ISA-C-079",
+      "ISA-C-081",
+      "ISA-C-082"
+    ],
+    "next": "ISA-03B"
   }
 }

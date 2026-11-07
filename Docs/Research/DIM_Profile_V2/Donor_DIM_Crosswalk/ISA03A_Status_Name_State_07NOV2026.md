@@ -1,8 +1,8 @@
 # ISA-03A — Status intervals, Name and Operating State
 
-**7 November 2026 · Four of four assigned source reviews COMPLETE.** The evidence and this readable four-row delta are published in GitHub. **The current Excel workbook and main coverage register have not yet been updated.** The next action is **ISA-03A-PUBLISH only**, applying these saved decisions and verifying the integrated workbook/view. Do not repeat these four source reviews or begin ISA-03B.
+**7 November 2026 · ISA-03A COMPLETE: four of four source reviews and workbook integration are complete.** The [current workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx), [horizontal comparison](ISA_Correction_Review_ISA03A_07NOV2026.md) and coverage register now incorporate these exact decisions. Next owner “proceed”: **ISA-03B only**.
 
-[Exact four-entry evidence](ISA03A_Status_Name_State_Evidence_07NOV2026.json) · [Current progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Last integrated workbook — ISA-02](ISA_Correction_Review_ISA02_07NOV2026.xlsx).
+[Exact four-entry evidence](ISA03A_Status_Name_State_Evidence_07NOV2026.json) · [Current progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Current integrated workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx).
 
 ## Four source decisions
 
@@ -29,23 +29,26 @@ Original indexed source text was readable. A requested PDF page image could not 
 
 ## Coverage and unchanged work
 
-| Measure | Result |
+| Measure | Integrated result |
 | --- | ---: |
-| Primary entries assigned to ISA-03A | 4 |
-| Primary entries reviewed | 4 |
-| Source-supported outcomes | 4 |
-| New interpretation questions | 0 |
-| Additional proposed information rows | 4 |
-| Current integrated register, before applying this batch | 49 reviewed entries |
-| Completed source reviews including this saved batch | 53 entries |
-| New non-ISA donor or equipment changes | 0 |
+| Saved ISA-03A primary decisions integrated | 4 of 4 |
+| Additional candidate rows | 4 |
+| Total reviewed primary catalogue entries | 53 |
+| Source-supported primary outcomes | 51 |
+| Existing source-definition questions | 2 |
+| Unique supporting definitions recorded | 47 |
+| Total information/review rows | 80 |
+| Non-ISA donor/equipment values changed | 0 |
+| New source reviews during integration | 0 |
 
-The current integrated workbook remains the ISA-02 workbook. It has 76 information/review rows; these four candidates would make 80 after integration, provided the continuation confirms the IDs do not duplicate an existing candidate. The original 58 primary donor records, 73 equipment-evidence statements, identity corrections, Camera Mode comparison and the two previous record-local questions remain unchanged.
+The [current workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx) and [full horizontal view](ISA_Correction_Review_ISA03A_07NOV2026.md) contain all four candidates under the existing Identity and contacts, Operating and readiness states, and Communications groups. All previous rows, the original 58 primary donor records and 73 equipment-evidence statements remain unchanged. The Camera Mode correspondence remains exactly as before; Operating State has its own candidate row.
 
-## Exact next action — integration/publication only
+The prior ISA-02 workbook is retained as history. The four source decisions were not re-researched. Supporting type reads do not complete their later full catalogue review. The publication record provides exact output hashes and the verification-run URL.
 
-The current workbook is present in GitHub, but its binary did not reach the local workspace through the attempted download routes. Direct runtime access failed on DNS resolution; the separate download service did not resolve the public raw-file URL. This is a specific transfer/integration issue, not a finding that the workbook is missing, GitHub writing is unavailable, or ISA source review must restart.
+## Publication closeout and next exact action
 
-**ISA-03A-PUBLISH** must reuse the current workbook and established publication path, incorporate the four decisions into the current fourteen-column review and coverage register, update evidence/summary counts without double-counting supporting types, inspect the changed workbook areas, publish, and read back the actual commit. No new source-property review is authorized during that action. The result must keep the four source examples left, the foundational standards together, and proposed DIM rightmost.
+**Integration and publication COMPLETE.** The original transfer issue has been resolved through a read-only GitHub Actions artifact of the exact repository inputs. The updated workbook was edited with the existing artifact_tool workflow, the changed summary and row areas were visually checked, and the source ledger/CSV/Markdown were synchronized.
 
-Once integration passes, mark ISA-03A fully delivered and identify ISA-03B as next. Until then, report the precise states: **source review complete; evidence published; workbook/register integration pending**. These states do not reopen ISA-01, ISA-02 or the four source decisions recorded here. No new GitHub Actions or workbook-validation PASS is claimed for this text-only checkpoint.
+[Publication record](ISA03A_Publication_Record_07NOV2026.json) records the actual files and read-only verification. No historical workbook, original evidence ledger, non-ISA source fact, Profile rule, runtime or equipment value was changed.
+
+**Next owner “proceed”: ISA-03B only** — Owner, Parameter Version, Program of Record, Software Version, Specification Version and Support. No ISA-03B review was performed in this publication action.

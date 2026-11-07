@@ -1,16 +1,16 @@
-# Current PITON — ISA correction after the ISA-03A source review
+# Current PITON — ISA correction after ISA-03A integration
 
-**7 November 2026 · ISA-01 and ISA-02 COMPLETE. ISA-03A: four of four source reviews COMPLETE and committed. Current workbook/register integration is pending. Next owner “proceed”: ISA-03A-PUBLISH ONLY.**
+**7 November 2026 · ISA-01 and ISA-02 COMPLETE; child batch ISA-03A COMPLETE and integrated. Next owner “proceed”: ISA-03B ONLY.**
 
 ## Current authority and durable handoff
 
-Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is the authoritative project home. The completed ISA-01 census and ISA-02 results remain valid. Do not redo completed work because an old checkpoint or a separate publication action is pending.
+Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is the authoritative project home.
 
-**Read first:** [current progress and precise next action](ISA_Correction_Status_07NOV2026.json), [ISA-03A four-entry report](ISA03A_Status_Name_State_07NOV2026.md), and [exact saved source evidence](ISA03A_Status_Name_State_Evidence_07NOV2026.json). These four decisions are saved in GitHub, not only in a sandbox. Source evidence commit: `e1e0272ff6416484a095a1c6ea855e361e13afd4`; readable delta commit: `a5519ad371ad1d60e20e84c7c761dc9db9a4a0a7`.
+Read [current progress](ISA_Correction_Status_07NOV2026.json), [current workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx), [horizontal comparison](ISA_Correction_Review_ISA03A_07NOV2026.md), [four exact source decisions](ISA03A_Status_Name_State_Evidence_07NOV2026.json), [closeout](ISA03A_Status_Name_State_07NOV2026.md), [coverage register](ISA_Coverage_Register_07NOV2026.json), and [publication verification](ISA03A_Publication_Record_07NOV2026.json). The [revised execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) and [living lessons](LESSONS_Donor_Review_Process.md) govern the small-batch process.
 
-The last integrated artifacts are still the [ISA-02 workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx), [horizontal view](ISA_Correction_Review_ISA02_07NOV2026.md), [ISA-02 evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json), [coverage register](ISA_Coverage_Register_07NOV2026.json), and [validation](ISA02_Validation_07NOV2026.json). They were not overwritten during ISA-03A. The [revised execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md), [ISA-01 boundary amendment](ISA01_Plan_Amendment_07NOV2026.md) and [living lessons](LESSONS_Donor_Review_Process.md) remain in force.
+**ISA-03A source review and integration are complete.** Do not repeat either because an old checkpoint refers to a transfer failure. The ISA-02 workbook/evidence stay as immutable historical inputs; the active review is ISA-03A. Parent ISA-03 remains in progress, with 38 remaining properties assigned to ISA-03B–J. The twelve work-package labels are not a twelve-prompt estimate.
 
-**Execution precedence:** current progress and this PITON specify the publication/integration part of ISA-03A, not permission to repeat its source reading or begin ISA-03B. The owner's post-ISA-02 sizing instruction still overrides all older full-block instructions. ISA-01 through ISA-12 are work-package labels, not a twelve-prompt estimate.
+The integration added exactly four candidate rows, keeping all older rows and non-ISA/equipment values. The current workbook has twelve tabs and 80 information/review rows. Primary source coverage is 53 reviewed entries: 51 supported outcomes plus the same two Level/Link Loss questions. There are 49 additional candidate/question rows: 47 supported plus two questions. Forty-seven unique supporting type definitions are recorded; their later catalogue passes remain separate.
 
 ## New completed source work — exact four entries
 
@@ -29,15 +29,13 @@ Four supporting definitions were inspected/reused: **Secs** (DMS §4.2 p.55/PDF7
 
 A source-page image request failed because raw-byte backing was unavailable. Original indexed text was readable and inspected; do not claim a visual PDF inspection or source absence.
 
-## Next exact task: ISA-03A-PUBLISH — no further source-property review
+## Next exact task: ISA-03B — six named properties
 
-**Apply the four saved decisions to the actual current workbook, current readable review and coverage register, then verify the committed output.** Reuse the existing workbook and publication machinery. Confirm the four candidate IDs do not duplicate current candidate rows, preserve the fourteen-column case-first/standards-adjacent/DIM-right format, and carry the precise source meanings and extensions into the evidence sheet.
+Review only these six ISA-03B entries: Owner (ISA-DMS-084), Parameter Version (085), Program of Record (092), Software Version (108), Specification Version (109), and Support (110). Follow the bounded batch policy: preflight relevant types and existing evidence, preserve source core/extension standing, integrate supported outcomes and verify the GitHub publication, then stop before ISA-03C.
 
-Before integration the current register reports 49 reviewed primary entries. These four separately saved reviews make **53 completed source reviews in total**. When integrating, update the register once: 51 supported outcomes and the two existing record-local questions. Do not count the four again. The current 76 information/review rows would become 80 if all four candidates are added after duplicate-ID checking. This is an anticipated integration delta, not a claim that the current workbook already contains them.
+Reuse the working GitHub Actions artifact download when a repository workbook is not already mounted. Read-only workflow artifacts can carry the exact committed input files; verify the workbook hash before editing. This resolves the earlier missing-local-copy problem without repeating source review.
 
-The actual obstacle in this turn was transfer of the current workbook binary into the workspace. Direct runtime download failed on DNS resolution and the separate public raw-file download route did not resolve the file. GitHub text fetch/create/update actions worked and saved the evidence. **This is not evidence that the workbook is missing or that all GitHub binary access is impossible.** Do not attribute it to a model switch. Do not rebuild the workbook from an older ISA-01 snapshot, erase ISA-02 work, or repeat these four source reviews.
-
-No workbook export, formula/visual check, or GitHub Actions pass occurred for ISA-03A in this text-only checkpoint. Once integration and readback pass, mark ISA-03A delivered and name ISA-03B next. Until then, the current action is publication/integration only. This narrow pending action does not turn completed source work into a generic unfinished-project warning.
+ISA-03A's four saved properties and supporting Secs/String/General State/General Code evidence are already integrated. Operating condition remains distinct from a selected mode; the existing Camera Mode row is preserved. Do not fill new other-donor or equipment cells by inference.
 
 ## Workload limits retained
 
@@ -57,7 +55,7 @@ ISA-02 completed **49 property reviews**: **47 supported outcomes and two precis
 
 Camera Mode supplies a camera-specific current-mode correspondence. Forty-three supported candidate rows and two question rows expanded the original 31 review rows to 76. New non-ISA cells read Not assessed here and new equipment cells read Not linked here. The original 58 primary donor records, 73 case-evidence statements and earlier non-ISA values remain unchanged. Historical v0.9 and ISA-01 artifacts remain history.
 
-Forty-six supporting definitions were inspected in ISA-02; their future full catalogue passes were not marked complete. The last integrated technical checkpoint is [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60), with [publication record](ISA02_Publication_Record_07NOV2026.json) and [read-only verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/42392228728). Current four-entry text evidence is a supplement pending integration, not a replacement for that checkpoint.
+Forty-six supporting definitions were inspected in ISA-02; their future full catalogue passes were not marked complete. The last integrated technical checkpoint is [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60), with [publication record](ISA02_Publication_Record_07NOV2026.json) and [read-only verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/42392228728). The four-entry supplement is now integrated in the current ISA-03A workbook; [publication record](ISA03A_Publication_Record_07NOV2026.json) identifies the verified checkpoint.
 
 ## Source distinctions and specific questions retained
 
@@ -75,8 +73,8 @@ Original 31 October 2023 files: DMS 6.0r12 `file_00000000ca1c81f48a3ccd49273425f
 
 Manufacturer is printed p.13/PDF28, Model p.14/PDF29, Serial Number p.16/PDF31. ISA-02's UCI reconciliation used DMS §4.2 p.55/PDF70, ICD §6.1 p.19/PDF27 and Component Requirements §4.1.1 pp.7–9/PDF14–16. Universal/Unique is a document naming distinction, not two identifiers.
 
-Each delivery must be verified at its actual GitHub commit. Coverage and semantic checks differ from file/formula/hash checks. The ISA-02 twelve-tab workbook was visually inspected and corrected before its verified export; do not repeat its preparation solely because batch size changed. The four ISA-03A candidates still need their own integration and changed-area inspection.
+Each delivery must be verified at its actual GitHub commit. Coverage and semantic checks differ from file/formula/hash checks. The ISA-02 twelve-tab workbook was visually inspected and corrected before its verified export; do not repeat its preparation solely because batch size changed. The four ISA-03A candidates are integrated; summary and changed row areas were visually inspected, with exported values/formula caches verified.
 
 Maintain the living lessons record only when a new substantive observation warrants an entry. The current interruption is already covered by the publication and bounded-work rules; no additional research campaign is authorized. Preserve case precision: reference designs versus deployed units, two original NOAA means versus four API representations, and unknown historical result availability remain distinct.
 
-**Next “proceed” = ISA-03A-PUBLISH only. Preserve the completed four-entry source review; finish its current-workbook integration; do not start ISA-03B.**
+**Next “proceed” = ISA-03B only. ISA-03A source review, workbook integration and GitHub delivery are complete; no restart.**

@@ -1,10 +1,12 @@
 # ISA coverage correction — execution plan
 
-**7 November 2026 · Sizing revision after ISA-02 · ISA-01 and ISA-02 COMPLETE. Next owner “proceed”: ISA-03A ONLY — four named properties.**
+**Current integrated checkpoint:** four saved ISA-03A decisions are in the workbook and coverage register; 53 primary entries reviewed, 80 information/review rows. [Publication](ISA03A_Publication_Record_07NOV2026.json). ISA-03 parent remains in progress; only its first child batch is complete.
+
+**7 November 2026 · ISA-01, ISA-02 and child ISA-03A COMPLETE. Next owner “proceed”: ISA-03B ONLY — six named properties.**
 
 **The former twelve-prompt estimate is withdrawn.** ISA-01 through ISA-12 now identify the twelve existing work packages, not a promise that each package fits one prompt. Remaining packages execute through explicitly bounded child batches. No completed source work is reopened by this scheduling correction.
 
-[Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress and next batch](ISA_Correction_Status_07NOV2026.json) · [Current workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_ISA02_07NOV2026.md) · [Source inventory](ISA_DMS_Entry_Inventory_07NOV2026.csv) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
+[Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress and next batch](ISA_Correction_Status_07NOV2026.json) · [Current workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_ISA03A_07NOV2026.md) · [Source inventory](ISA_DMS_Entry_Inventory_07NOV2026.csv) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
 The [prior plan at the verified ISA-02 commit](https://github.com/OS4CSAPI/glaux-client/blob/34963db95c38c49c19683a80d97c146c7638fd60/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) preserves the original planning history. This revision changes execution sizing and progress reporting, not the source coverage or completion requirements.
 
@@ -33,8 +35,8 @@ The inventory assigns 42 unreviewed properties to parent ISA-03. The table below
 
 | Next batch | Named source entries | Inventory ID suffixes | Count |
 | --- | --- | --- | ---: |
-| **ISA-03A** | Maximum Status Interval; Minimum Status Interval; Name; Operating State | 078, 079, 081, 082 | **4** |
-| ISA-03B | Owner; Parameter Version; Program of Record; Software Version; Specification Version; Support | 084, 085, 092, 108, 109, 110 | 6 |
+| **ISA-03A — COMPLETE** | Maximum Status Interval; Minimum Status Interval; Name; Operating State | 078, 079, 081, 082 | **4** |
+| **ISA-03B — NEXT** | Owner; Parameter Version; Program of Record; Software Version; Specification Version; Support | 084, 085, 092, 108, 109, 110 | 6 |
 | ISA-03C | Orientation; Perceived Position; Position; Position Override | 083, 086, 088, 089 | 4 |
 | ISA-03D | Relationship; Visible | 099, 118 | 2 |
 | ISA-03E | Power; Power State; Reserve Capacity; Time to Empty | 090, 091, 100, 113 | 4 |
@@ -70,7 +72,7 @@ The next child batch of a later package is listed during the preceding normal cl
 
 ## 5. Source scope and preservation — unchanged
 
-Use `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, under this crosswalk directory. Current technical checkpoint: [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60). Current [ISA-02 workbook](ISA_Correction_Review_ISA02_07NOV2026.xlsx), [view](ISA_Correction_Review_ISA02_07NOV2026.md), [evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json) and [publication record](ISA02_Publication_Record_07NOV2026.json) remain unchanged by this planning revision.
+Use `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, under this crosswalk directory. Current technical checkpoint: [34963db](https://github.com/OS4CSAPI/glaux-client/commit/34963db95c38c49c19683a80d97c146c7638fd60). Current [ISA-02 workbook](ISA_Correction_Review_ISA03A_07NOV2026.xlsx), [view](ISA_Correction_Review_ISA03A_07NOV2026.md), [evidence](ISA02_Identity_and_Properties_Evidence_07NOV2026.json) and [publication record](ISA02_Publication_Record_07NOV2026.json) remain unchanged by this planning revision.
 
 Review both directions: all existing DIM information elements against ISA, and relevant ISA source concepts that require additional or split rows. The inventory contains 480 named DMS entries, not 480 mandatory model rows; their fields, parameters, enumerations, constraints and referenced definitions are included in their parent reviews. The 279 source blocks, 31 original row/topic targets and 25 earlier findings remain assigned. Keep relevant unique concepts visible rather than hiding them in a general holds list.
 
@@ -100,4 +102,4 @@ Say **“ISA-03A COMPLETE”** when that batch passes, without implying the whol
 
 This revision responds to the owner's instruction to resize work before proceeding. It changes scheduling and recovery documents only; no property, mapping, workbook or other donor was reviewed or modified here. ISA-01 and ISA-02 retain their completed status. The lessons record captures the observed workload-sizing failure without claiming to diagnose the platform error.
 
-**Next “proceed”: ISA-03A ONLY — Maximum Status Interval, Minimum Status Interval, Name and Operating State, followed by the normal verified GitHub delivery.**
+**Next “proceed”: ISA-03B ONLY — Maximum Status Interval, Minimum Status Interval, Name and Operating State, followed by the normal verified GitHub delivery.**

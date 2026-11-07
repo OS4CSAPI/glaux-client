@@ -2,11 +2,11 @@
 
 <!-- CURRENT_ISA_CORRECTION_07NOV2026 -->
 
-**CURRENT — ISA-02 COMPLETE · correction progress 2/12 · next owner “proceed”: ISA-03 ONLY.** Identity omissions corrected; 49 assigned properties reviewed, 47 supported and two record-local questions. 43 additional source-supported candidate rows and two question rows are visible; other donors and original equipment facts are preserved.
+**CURRENT — ISA-03A COMPLETE and integrated. Next owner “proceed”: ISA-03B ONLY.** ISA-01/02 remain complete; the parent ISA-03 work package continues through small named batches, not one large prompt.
 
-[Current workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA02_07NOV2026.xlsx) · [Readable review](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA02_07NOV2026.md) · [Source evidence](../Donor_DIM_Crosswalk/ISA02_Identity_and_Properties_Evidence_07NOV2026.json) · [PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [Lessons](../Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md) · [Publication](../Donor_DIM_Crosswalk/ISA02_Publication_Record_07NOV2026.json).
+[Current workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03A_07NOV2026.xlsx) · [Full comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03A_07NOV2026.md) · [Exact four decisions](../Donor_DIM_Crosswalk/ISA03A_Status_Name_State_Evidence_07NOV2026.json) · [PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress](../Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [Publication verification](../Donor_DIM_Crosswalk/ISA03A_Publication_Record_07NOV2026.json).
 
-ISA-01 census and ISA-02 review remain completed. The next source block is the 42 remaining properties, including Zones and Zoom. Older 0/12, 1/12, ISA-02-next and Step16-next text below is historical; current plan and PITON control.
+Four saved decisions are integrated; 53 primary entries reviewed and 80 information/review rows. All older donor/case values are preserved. This banner and the active progress/PITON supersede older next-task instructions below.
 
 <!-- END_CURRENT_ISA_CORRECTION_07NOV2026 -->
 

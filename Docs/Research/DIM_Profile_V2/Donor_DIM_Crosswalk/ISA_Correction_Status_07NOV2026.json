@@ -5,28 +5,34 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_WITH_POST_ISA02_SIZING_AMENDMENT",
-  "technicalIterationsCompleted": 2,
+  "technicalIterationsCompleted": 3,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 2,
-  "progressMeaning": "ISA-01 and ISA-02 remain complete. ISA-03A has four completed source reviews committed separately; workbook/register integration is the next specific action. The twelve labels are work packages, not a fixed prompt count.",
-  "currentIteration": "ISA-02",
+  "progressMeaning": "ISA-01 and ISA-02 work packages complete; ISA-03A child batch complete and integrated. ISA-03 parent remains in progress; no fixed total prompt count is asserted.",
+  "currentIteration": "ISA-03A",
   "currentIterationStatus": "COMPLETE",
   "currentBatch": "ISA-03A",
   "currentBatchSourceReviewStatus": "COMPLETE",
-  "currentBatchDeliveryStatus": "SOURCE_EVIDENCE_COMMITTED_WORKBOOK_INTEGRATION_PENDING",
-  "nextOnOwnerProceed": "ISA-03A-PUBLISH",
-  "nextAction": "Integrate the four saved ISA-03A source decisions into the current review workbook, readable view and coverage register, verify the actual GitHub publication, then stop. Do not repeat source review or start ISA-03B.",
-  "nextSourceIDs": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"],
-  "nextSourceIDsMeaning": "These are completed source decisions to integrate, not new research assignments.",
+  "currentBatchDeliveryStatus": "COMPLETE",
+  "nextOnOwnerProceed": "ISA-03B",
+  "nextAction": "Review only Owner, Parameter Version, Program of Record, Software Version, Specification Version and Support; publish and verify this named batch.",
+  "nextSourceIDs": [
+    "ISA-DMS-084",
+    "ISA-DMS-085",
+    "ISA-DMS-092",
+    "ISA-DMS-108",
+    "ISA-DMS-109",
+    "ISA-DMS-110"
+  ],
+  "nextSourceIDsMeaning": "The six named ISA-03B source-review assignments; ISA-03A is complete.",
   "repositoryPublication": {
-    "state": "CURRENT_WORKBOOK_ISA02_PUBLISHED_ISA03A_EVIDENCE_PUBLISHED_INTEGRATION_PENDING",
+    "state": "PUBLISHED_TO_GITHUB",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-02 integrated checkpoint COMPLETE; ISA-03A four-entry source review COMPLETE",
-    "next_pass": "ISA-03A-PUBLISH",
-    "publication_record": "ISA02_Publication_Record_07NOV2026.json",
-    "technical_checkpoint_commit": "34963db95c38c49c19683a80d97c146c7638fd60",
+    "technical_state": "ISA-03A COMPLETE",
+    "next_pass": "ISA-03B",
+    "publication_record": "ISA03A_Publication_Record_07NOV2026.json",
     "currentBatchEvidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
     "currentBatchReport": "ISA03A_Status_Name_State_07NOV2026.md",
     "sourceEvidenceCommit": "e1e0272ff6416484a095a1c6ea855e361e13afd4",
@@ -45,57 +51,93 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or established mappings. This coverage block describes the last integrated register; pendingIntegration describes the separately committed four-entry delta.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 49,
+    "semanticEntriesReviewedInCorrection": 53,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 47,
+    "sourceSupportedPrimaryEntries": 51,
     "specificSourceDefinitionQuestions": 2,
-    "supportingDefinitionsRead": 46,
+    "supportingDefinitionsRead": 47,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 45
-  },
-  "pendingIntegration": {
-    "batch": "ISA-03A",
-    "evidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
-    "assignedPrimaryEntries": 4,
-    "completedSourceReviews": 4,
-    "supportedOutcomes": 4,
-    "newQuestions": 0,
-    "candidateRowIDs": ["ISA-C-078", "ISA-C-079", "ISA-C-081", "ISA-C-082"],
-    "sourceReviewsIncludingThisSavedBatch": 53,
-    "candidateRowsWrittenIntoCurrentWorkbook": 0,
-    "supportingTypeDefinitionsInspectedOrReused": ["Secs", "String", "General State", "General Code"],
-    "supportingDefinitionsCountingRule": "Do not add four to the prior unique-type count without checking prior dependency IDs; do not complete their later catalogue passes.",
-    "existingNonISACaseOrIdentityCellsChanged": 0,
-    "sourceReviewMustNotBeRepeatedForPublication": true
+    "newCandidateRows": 49
   },
   "iterationRecordsMeaning": "Existing ISA labels retained as work-package records, not one-prompt workload promises.",
   "iterationRecords": [
-    {"id": "ISA-01", "state": "COMPLETE"},
-    {"id": "ISA-02", "state": "COMPLETE"},
-    {"id": "ISA-03", "state": "IN_PROGRESS_CHILD_BATCHES", "nextChildAction": "ISA-03A-PUBLISH"},
-    {"id": "ISA-04", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-05", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-06", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-07", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-08", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-09", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-10", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-11", "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"},
-    {"id": "ISA-12", "state": "NOT_STARTED_AUDIT_SLICES_BEFORE_FINAL_CLOSEOUT"}
+    {
+      "id": "ISA-01",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "ISA-02",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "ISA-03",
+      "state": "IN_PROGRESS_CHILD_ISA03A_COMPLETE",
+      "nextChildAction": "ISA-03A-PUBLISH",
+      "nextChild": "ISA-03B"
+    },
+    {
+      "id": "ISA-04",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-05",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-06",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-07",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-08",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-09",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-10",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-11",
+      "state": "NOT_STARTED_REQUIRES_SMALL_CHILD_BATCHES"
+    },
+    {
+      "id": "ISA-12",
+      "state": "NOT_STARTED_AUDIT_SLICES_BEFORE_FINAL_CLOSEOUT"
+    }
   ],
   "batchPolicy": {
-    "primarySimpleDefinitionsRange": [4, 6],
-    "primaryDenseDefinitionsRange": [1, 3],
+    "primarySimpleDefinitionsRange": [
+      4,
+      6
+    ],
+    "primaryDenseDefinitionsRange": [
+      1,
+      3
+    ],
     "newSupportingDefinitionsCeiling": 4,
     "newOrMateriallyChangedInformationRowsCeiling": 6,
     "purpose": "Conservative starting ceilings, not guarantees, completion quotas, or permission to omit content.",
-    "preflightIncludes": ["exact source IDs", "semantic dependency workload", "affected rows", "source access", "verification", "existing GitHub publication route"],
+    "preflightIncludes": [
+      "exact source IDs",
+      "semantic dependency workload",
+      "affected rows",
+      "source access",
+      "verification",
+      "existing GitHub publication route"
+    ],
     "denseNestedDefinitions": "Split into named field or enum groups when necessary; a large composite is not one trivial item.",
     "overflowAction": "Reduce before starting or preserve a supported named subset and explicitly assign its remainder; do not broaden a prompt to finish a whole parent package.",
     "publicationRepair": "One bounded repair attempt within a batch. If unresolved, stop further semantic work, save exact evidence through a working GitHub write path, and name the specific repair as the next sole task. No unbounded debug loop or false publication claim.",
@@ -103,42 +145,148 @@
     "nextBatchNaming": "Name the next exact subset in ordinary closeout; avoid a separate planning turn when the inventory already supports the split."
   },
   "propertyBatches": [
-    {"id": "ISA-03A", "state": "SOURCE_REVIEW_COMPLETE_EVIDENCE_COMMITTED_WORKBOOK_INTEGRATION_PENDING", "count": 4, "sourceIds": ["ISA-DMS-078", "ISA-DMS-079", "ISA-DMS-081", "ISA-DMS-082"]},
-    {"id": "ISA-03B", "state": "NOT_STARTED", "count": 6, "sourceIds": ["ISA-DMS-084", "ISA-DMS-085", "ISA-DMS-092", "ISA-DMS-108", "ISA-DMS-109", "ISA-DMS-110"]},
-    {"id": "ISA-03C", "state": "NOT_STARTED", "count": 4, "sourceIds": ["ISA-DMS-083", "ISA-DMS-086", "ISA-DMS-088", "ISA-DMS-089"]},
-    {"id": "ISA-03D", "state": "NOT_STARTED", "count": 2, "sourceIds": ["ISA-DMS-099", "ISA-DMS-118"]},
-    {"id": "ISA-03E", "state": "NOT_STARTED", "count": 4, "sourceIds": ["ISA-DMS-090", "ISA-DMS-091", "ISA-DMS-100", "ISA-DMS-113"]},
-    {"id": "ISA-03F", "state": "NOT_STARTED", "count": 6, "sourceIds": ["ISA-DMS-087", "ISA-DMS-093", "ISA-DMS-094", "ISA-DMS-095", "ISA-DMS-101", "ISA-DMS-121"]},
-    {"id": "ISA-03G", "state": "NOT_STARTED", "count": 3, "sourceIds": ["ISA-DMS-096", "ISA-DMS-104", "ISA-DMS-119"]},
-    {"id": "ISA-03H", "state": "NOT_STARTED", "count": 3, "sourceIds": ["ISA-DMS-116", "ISA-DMS-117", "ISA-DMS-120"]},
-    {"id": "ISA-03I", "state": "NOT_STARTED", "count": 5, "sourceIds": ["ISA-DMS-097", "ISA-DMS-098", "ISA-DMS-107", "ISA-DMS-114", "ISA-DMS-115"]},
-    {"id": "ISA-03J", "state": "NOT_STARTED", "count": 5, "sourceIds": ["ISA-DMS-102", "ISA-DMS-103", "ISA-DMS-106", "ISA-DMS-111", "ISA-DMS-112"]}
+    {
+      "id": "ISA-03A",
+      "state": "COMPLETE",
+      "count": 4,
+      "sourceIds": [
+        "ISA-DMS-078",
+        "ISA-DMS-079",
+        "ISA-DMS-081",
+        "ISA-DMS-082"
+      ],
+      "integration": "PUBLISHED_AND_VERIFIED"
+    },
+    {
+      "id": "ISA-03B",
+      "state": "NEXT",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-084",
+        "ISA-DMS-085",
+        "ISA-DMS-092",
+        "ISA-DMS-108",
+        "ISA-DMS-109",
+        "ISA-DMS-110"
+      ]
+    },
+    {
+      "id": "ISA-03C",
+      "state": "NOT_STARTED",
+      "count": 4,
+      "sourceIds": [
+        "ISA-DMS-083",
+        "ISA-DMS-086",
+        "ISA-DMS-088",
+        "ISA-DMS-089"
+      ]
+    },
+    {
+      "id": "ISA-03D",
+      "state": "NOT_STARTED",
+      "count": 2,
+      "sourceIds": [
+        "ISA-DMS-099",
+        "ISA-DMS-118"
+      ]
+    },
+    {
+      "id": "ISA-03E",
+      "state": "NOT_STARTED",
+      "count": 4,
+      "sourceIds": [
+        "ISA-DMS-090",
+        "ISA-DMS-091",
+        "ISA-DMS-100",
+        "ISA-DMS-113"
+      ]
+    },
+    {
+      "id": "ISA-03F",
+      "state": "NOT_STARTED",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-087",
+        "ISA-DMS-093",
+        "ISA-DMS-094",
+        "ISA-DMS-095",
+        "ISA-DMS-101",
+        "ISA-DMS-121"
+      ]
+    },
+    {
+      "id": "ISA-03G",
+      "state": "NOT_STARTED",
+      "count": 3,
+      "sourceIds": [
+        "ISA-DMS-096",
+        "ISA-DMS-104",
+        "ISA-DMS-119"
+      ]
+    },
+    {
+      "id": "ISA-03H",
+      "state": "NOT_STARTED",
+      "count": 3,
+      "sourceIds": [
+        "ISA-DMS-116",
+        "ISA-DMS-117",
+        "ISA-DMS-120"
+      ]
+    },
+    {
+      "id": "ISA-03I",
+      "state": "NOT_STARTED",
+      "count": 5,
+      "sourceIds": [
+        "ISA-DMS-097",
+        "ISA-DMS-098",
+        "ISA-DMS-107",
+        "ISA-DMS-114",
+        "ISA-DMS-115"
+      ]
+    },
+    {
+      "id": "ISA-03J",
+      "state": "NOT_STARTED",
+      "count": 5,
+      "sourceIds": [
+        "ISA-DMS-102",
+        "ISA-DMS-103",
+        "ISA-DMS-106",
+        "ISA-DMS-111",
+        "ISA-DMS-112"
+      ]
+    }
   ],
   "batchPartitionCheck": {
     "remainingPropertiesAtSizingCheckpoint": 42,
     "assignedExactlyOnce": 42,
     "duplicates": 0,
     "unassigned": 0,
-    "previouslyCompletedExcluded": ["ISA-DMS-080", "ISA-DMS-105"],
+    "previouslyCompletedExcluded": [
+      "ISA-DMS-080",
+      "ISA-DMS-105"
+    ],
     "method": "Child IDs partition the parent ISA-03 inventory; ISA-03A source review is now saved separately and must not be counted twice at integration."
   },
   "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
   "registerOwnerPassMeaning": "Inventory owner_pass retains the parent package. propertyBatches supplies prompt-sized assignments; pendingIntegration identifies reviewed evidence not yet merged into the current register.",
-  "currentReview": "ISA_Correction_Review_ISA02_07NOV2026.md",
-  "currentWorkbook": "ISA_Correction_Review_ISA02_07NOV2026.xlsx",
-  "currentEvidence": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+  "currentReview": "ISA_Correction_Review_ISA03A_07NOV2026.md",
+  "currentWorkbook": "ISA_Correction_Review_ISA03A_07NOV2026.xlsx",
+  "currentEvidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
   "currentBatchEvidence": "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
   "currentBatchReport": "ISA03A_Status_Name_State_07NOV2026.md",
   "publicationRule": "GitHub is authoritative. Verify actual committed evidence, workbook and current PITON; sandbox copies are supplementary. Saved source evidence does not constitute an updated workbook.",
   "completedTaskRule": "ISA-01 and ISA-02 stay complete. ISA-03A's four source reviews stay complete while their workbook/register integration is pending. Do not repeat semantic research to repair publication, or begin ISA-03B before closing this action.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
-    "state": "ISA03A_SOURCE_EVIDENCE_AND_HANDOFF_PUBLISHED",
-    "task": "Record four supported source outcomes and isolate workbook/register integration as the next sole action",
-    "counts_as_completed_integrated_batch": false,
-    "newSemanticReviews": 4,
-    "workbookChanged": false
-  }
+    "state": "ISA03A_INTEGRATION_COMPLETE",
+    "task": "Integrate four saved source decisions; no new semantic review",
+    "counts_as_new_source_review_iteration": false,
+    "workbookChanged": true
+  },
+  "completedChildBatches": 1
 }
