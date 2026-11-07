@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/recover-isa01-publication.yml
       - scripts/recover_isa01_publication.py
+      - scripts/finalize_isa01_publication.py
   workflow_dispatch:
 
 permissions:
@@ -30,7 +31,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: true
       - name: Validate saved file identities and apply publication-only changes
-        run: python3 scripts/recover_isa01_publication.py
+        run: python3 scripts/finalize_isa01_publication.py
       - name: Commit only authorized research documents and remove consumed transfer staging
         id: commit
         run: |
