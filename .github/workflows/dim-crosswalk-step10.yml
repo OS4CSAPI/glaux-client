@@ -1,0 +1,26 @@
+name: DIM V2 Step10 — verify SensorML 3.0 source-reviewed workbook
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.4_Step10_SensorML_06NOV2026.*"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step10_SensorML_3_Original_Clause_Audit_06NOV2026.json"
+      - "scripts/check_dim_crosswalk_step10.py"
+      - ".github/workflows/dim-crosswalk-step10.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate actual XLSX and source/mirror integrity
+        run: python scripts/check_dim_crosswalk_step10.py

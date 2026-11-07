@@ -1,0 +1,272 @@
+{
+  "format": "step10-sensorml-v3-original-clause-and-json-schema-review.v0.1",
+  "date": "2026-11-06",
+  "source": {
+    "document": "OGC 23-000",
+    "title": "SensorML Encoding Standard",
+    "version": "3.0",
+    "published": "2025-07-16",
+    "url": "https://docs.ogc.org/is/23-000/23-000.html",
+    "schemas": "https://schemas.opengis.net/sensorML/3.0/json/"
+  },
+  "standing": "ORIGINAL_SOURCE_TERM_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_REMAINS_PROPOSED",
+  "priorSensorMLCells": 8,
+  "sourceReviewedSensorMLCells": 10,
+  "addedSourceMappedExistingRows": 2,
+  "caseOnlyRowsAdopted": 0,
+  "reviewedRows": [
+    {
+      "rowKey": "S06-R002",
+      "proposedDim": "Product model designation",
+      "nativeTerm": "AbstractProcess.typeOf → general process/model",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.2.9.3 / Requirements 13–15; §9.1.5.1",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/AbstractProcess.json",
+      "originalStandardMeaning": "A specific process links to a resolvable general process description; the SensorML standard explicitly uses manufacturer model → individual equipment as an example.",
+      "nonEquivalenceBoundary": "A model designation is not automatically the general process URI, nor proof of an individually installed unit.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R004",
+      "proposedDim": "Persistent System identifier",
+      "nativeTerm": "DescribedObject.uniqueId",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.2.2 Requirement 8; §9.1.1 JSON description",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/DescribedObject.json",
+      "originalStandardMeaning": "One required uniqueId identifies the described process or object, which may be an individual or a reusable process description.",
+      "nonEquivalenceBoundary": "A SensorML process ID does not automatically establish a physical manufacturer's serial number or a CSAPI System resource ID.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R005",
+      "proposedDim": "Described sensing System / arrangement",
+      "nativeTerm": "PhysicalSystem (aggregate physical process)",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.6 Requirement 33; §9.5.2 Requirement 50",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/PhysicalSystem.json",
+      "originalStandardMeaning": "A PhysicalSystem models a physically situated aggregate process whose description includes components and their connections.",
+      "nonEquivalenceBoundary": "Not every referenced arrangement is a verified deployed, permanently assembled individual; the standard also represents reusable datasheets.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R007",
+      "proposedDim": "Physical constituent",
+      "nativeTerm": "PhysicalComponent + PhysicalSystem.components",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.5.2 Requirement 31; §8.6 Requirement 33; §9.5.2",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/PhysicalSystem.json",
+      "originalStandardMeaning": "PhysicalComponent covers a physical process not further divided in the description; PhysicalSystem can list physical or computational process components.",
+      "nonEquivalenceBoundary": "A SensorML process component is not automatically a separate manufactured module, a replaceable part or an installed constituent.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R008",
+      "proposedDim": "Connected external equipment",
+      "nativeTerm": "AggregateProcess.connections (Link source/destination)",
+      "relation": "RELATED",
+      "sourceClause": "§8.4.1 Requirement 24; §9.3.4",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/AggregateProcess.json",
+      "originalStandardMeaning": "Connections explicitly describe process information-flow source and destination links, including ports of nested sub-processes.",
+      "nonEquivalenceBoundary": "A process/data-flow connection does not prove a physical cable, an electrical bus or externally connected hardware.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R009",
+      "proposedDim": "Hosting platform / station context",
+      "nativeTerm": "Deployment.platform / location / deployedSystem",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.9.2–8.9.3 Tables 2–3; §9.6 Deployment Schema",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/Deployment.json",
+      "originalStandardMeaning": "Deployment descriptions identify location, platform, and referenced deployed systems, plus deployment-specific configuration.",
+      "nonEquivalenceBoundary": "A station or platform location is not automatically an individual probe survey; no exact historical service interval can be invented.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": true
+    },
+    {
+      "rowKey": "S06-R010",
+      "proposedDim": "Observing procedure / method",
+      "nativeTerm": "ProcessMethod (methodology)",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.3.2; Requirement 20 in §8.3",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/SimpleProcess.json",
+      "originalStandardMeaning": "ProcessMethod describes how input values and parameters are converted to outputs and may reference implementations.",
+      "nonEquivalenceBoundary": "An algorithmic process description is not an actual performed observation, a verified running program, or automatically an OMS observing Procedure.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R012",
+      "proposedDim": "Reported output field",
+      "nativeTerm": "AbstractProcess.outputs (SWE DataComponent)",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.2.9.1 Requirement 11; §9.1.5 / AbstractProcess.json",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/AbstractProcess.json",
+      "originalStandardMeaning": "Named process outputs may be ObservableProperty or SWE Common DataComponents including Quantity and data aggregates.",
+      "nonEquivalenceBoundary": "A process output declaration is not necessarily a transmitted native field, physical channel, SWE record value or CSAPI DataStream schema.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    },
+    {
+      "rowKey": "S06-R013",
+      "proposedDim": "Observed / observable property",
+      "nativeTerm": "ObservableProperty (physical stimulus/property)",
+      "relation": "DIRECT",
+      "sourceClause": "§8.2.1; §8.2.9.1; AbstractProcess.json $defs/IOComponentChoice",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/AbstractProcess.json",
+      "originalStandardMeaning": "SensorML models ObservableProperty as a physical observable stimulus/property that may appear as a detector input, actuator output or parameter.",
+      "nonEquivalenceBoundary": "ObservableProperty is not itself a measured Quantity or a performed Observation; SWE field types and numerical results remain distinct.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": true
+    },
+    {
+      "rowKey": "S06-R016",
+      "proposedDim": "Supported operating mode",
+      "nativeTerm": "AbstractProcess.modes / Mode.configuration",
+      "relation": "PARTIAL",
+      "sourceClause": "§8.8.1 Requirement 39; §8.8.2 Requirement 40; Mode.json / Settings.json",
+      "originalDocUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "officialSchemaUrl": "https://schemas.opengis.net/sensorML/3.0/json/Mode.json",
+      "originalStandardMeaning": "Configurable processes may advertise selectable modes with collections of settings. When a modes list is present, the normative model requires at least two.",
+      "nonEquivalenceBoundary": "A declared capability/mode list is not a source-observed active mode or actual applied settings from a fielded individual.",
+      "sourceVerification": "OGC_23_000_ORIGINAL_CLAUSE_AND_JSON_SCHEMA_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED",
+      "isAddedPreviouslyUnpopulated": false
+    }
+  ],
+  "heldNativeLeads": [
+    {
+      "id": "SML-H01",
+      "relatedRowOrHold": "S06-R001",
+      "term": "Manufacturer / contact responsible party",
+      "locator": "§8.2.6; DescribedObject.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "Contacts can include manufacturers, owners or maintenance staff but have distinct responsibility roles. A contact is not a guaranteed manufacturer-name field."
+    },
+    {
+      "id": "SML-H02",
+      "relatedRowOrHold": "S06-R003",
+      "term": "Serial number in instance-specific identification metadata",
+      "locator": "§8.2.9.3.1; §8.2.2",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "The standard's OEM instance example lists serial as possible additional information; no universal dedicated numeric hardware serial attribute was established by this review."
+    },
+    {
+      "id": "SML-H03",
+      "relatedRowOrHold": "CASE-H01",
+      "term": "DescribedObject.history / EventList",
+      "locator": "§8.2.8; Event.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "History events can describe calibration, maintenance and deployment; they do not by themselves prove exact equipment role intervals, exact swap time or hardware serial join."
+    },
+    {
+      "id": "SML-H04",
+      "relatedRowOrHold": "CASE-H02",
+      "term": "Deployment.location / platform / deployedSystems",
+      "locator": "§8.9 Tables 2–3; Deployment.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "Source supports deployment spatial/mounting context, not an individually surveyed probe point or an authenticated as-operated station graph."
+    },
+    {
+      "id": "SML-H05",
+      "relatedRowOrHold": "CASE-H04",
+      "term": "DescribedObject.characteristics / capabilities",
+      "locator": "§8.2.4–8.2.5; DescribedObject.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "Performance/energy design properties may be described but do not establish actual battery charge, health, or observed runtime."
+    },
+    {
+      "id": "SML-H06",
+      "relatedRowOrHold": "CASE-H03",
+      "term": "DataInterface + AggregateProcess connections",
+      "locator": "§8.2.9.1; §8.4.1; §9.3.4",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "A data/process interface and connected process flow are not automatically a LoRaWAN port, SDI-12 wire, physical bus or verified active reporting path."
+    },
+    {
+      "id": "SML-H07",
+      "relatedRowOrHold": "CASE-H06",
+      "term": "AbstractProcess.configuration / Settings.setValues, setModes",
+      "locator": "§8.2.9.3.2 Requirement 15; §8.8.2; Settings.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "Specific configured descriptions are source-representable, but a manufacturer's design setting is not evidence of the currently effective setting."
+    },
+    {
+      "id": "SML-H08",
+      "relatedRowOrHold": "CASE-H07",
+      "term": "ProcessMethod / process chain components",
+      "locator": "§8.3.2; §8.4.1",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "Process/transform lineage may be documented, but the source does not prove a Campbell program executed or an AirGradient correction method is validated."
+    },
+    {
+      "id": "SML-H09",
+      "relatedRowOrHold": "CASE-H08",
+      "term": "DerivedProperty.baseProperty / statistic / qualifier",
+      "locator": "§8.10.2 Table 4; DerivedProperty.json",
+      "sourceUrl": "https://docs.ogc.org/is/23-000/23-000.html",
+      "standing": "ORIGINAL_SOURCE_LEAD_HELD_UNAPPROVED",
+      "negativeBoundary": "A statistical/qualified property supports mean-temperature semantics; it does not assert original event time, derived contributor identity or performed observations."
+    }
+  ],
+  "preserved": {
+    "ownerCaseFirstColumnOrder": [
+      "Dragino",
+      "AirGradient",
+      "Campbell",
+      "Bennett",
+      "IEEE",
+      "OPC",
+      "SAPIENT",
+      "SOSA",
+      "OMS",
+      "SWE",
+      "SensorML",
+      "CSAPI",
+      "DIM"
+    ],
+    "priorCSAPIEvidence": 12,
+    "priorOtherUnreviewed": 31,
+    "caseEvidence": 73,
+    "originalProposedRows": 22,
+    "caseOnlyHolds": 9
+  },
+  "noClaims": [
+    "No manufacturer installation inferred from published reference arrangement",
+    "No SensorML 3.0 XML conformance claimed",
+    "No SensorML JSON instance schema conformance test of live equipment or CSAPI payload",
+    "No new DIM field/class adopted",
+    "No physical cable inferred from connections",
+    "No original NOAA resultTime or exact serial handoff instant invented"
+  ]
+}
