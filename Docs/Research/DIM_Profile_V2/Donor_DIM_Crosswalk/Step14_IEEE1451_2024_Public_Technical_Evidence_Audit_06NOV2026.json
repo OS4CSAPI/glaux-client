@@ -1,0 +1,294 @@
+{
+  "format": "step14-ieee1451-2024-public-scope-and-technical-evidence-v0.1",
+  "date": "2026-11-06",
+  "sources": {
+    "IEEEpublisher": {
+      "title": "IEEE 1451.0-2024",
+      "status": "Active standard",
+      "published": "2024-06-26",
+      "scopeURL": "https://standards.ieee.org/ieee/1451.0/11001/",
+      "normativeFullTextIndependentlyInspected": false
+    },
+    "NIST2024": {
+      "url": "https://www.nist.gov/news-events/news/2024/12/nist-and-university-researchers-present-online-tool-support-ieee-standards",
+      "role": "Independent NIST confirmation of 2024 Playground's TEDS, network and transducer service education/validation scope"
+    },
+    "IMLPlayground": {
+      "url": "https://iml.ubi.pt/playground/docs/ieee1451/intro/",
+      "role": "2024 technical worked forms for TEDS and service-message fields; not IEEE publisher-owned normative text"
+    },
+    "NISTHistorical": {
+      "url": "https://www.nist.gov/el/intelligent-systems-division-73500/transducer-electronic-data-sheet",
+      "role": "Earlier historical educational TEDS example; not a 2024 clause verification"
+    }
+  },
+  "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+  "reviewedExistingIEEECells": 5,
+  "addedIEEEcellsToExistingRow": 1,
+  "reviewedRows": [
+    {
+      "rowKey": "S06-R006",
+      "proposedDIM": "Network-visible participant",
+      "nativeTerm": "Network Capable Application Processor (NCAP)",
+      "relation": "RELATED",
+      "elementKind": "ARCHITECTURE_PROCESSOR_AND_SERVER_ROLE",
+      "publisherOrTechnicalLocator": "IEEE SA 1451.0-2024 published scope (NCAP/1451 server); IML Playground Network Services §10, Table 54 APP↔NCAP",
+      "primaryOrTechnicalURL": "https://standards.ieee.org/ieee/1451.0/11001/",
+      "supportingURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/network-services/",
+      "nativeMeaning": "NCAP is the network-facing IEEE 1451 processor/server that exposes network services to applications and communicates with TIMs.",
+      "nonEquivalenceBoundary": "Network-facing service function is not every network-visible physical device, a sensor probe, a gateway by label alone, or a guaranteed CSAPI System resource.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R007",
+      "proposedDIM": "Physical constituent",
+      "nativeTerm": "Transducer Interface Module (TIM)",
+      "relation": "PARTIAL",
+      "elementKind": "INTERFACE_MODULE_OR_DEVICE_ROLE",
+      "publisherOrTechnicalLocator": "IEEE SA 1451.0-2024 published scope (TIM); IML Playground Transducer Services §11, Tables 64–70",
+      "primaryOrTechnicalURL": "https://standards.ieee.org/ieee/1451.0/11001/",
+      "supportingURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/transducer-services/",
+      "nativeMeaning": "TIM supplies the transducer interface-side functions, addressed channels and services; may be implemented in multiple physical/electronic arrangements.",
+      "nonEquivalenceBoundary": "An architectural TIM role does not prove separately identifiable physical part, enclosure, installed component identity or containment relation.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R011",
+      "proposedDIM": "Addressed transducer channel",
+      "nativeTerm": "TransducerChannel",
+      "relation": "DIRECT",
+      "elementKind": "ADDRESSED_TRANSDUCER_INTERFACE_ROLE",
+      "publisherOrTechnicalLocator": "IML Playground transducer-channel TEDS §6.5 / Table 19; Transducer Services §11.1.3 (TIM and channel identifiers)",
+      "primaryOrTechnicalURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "supportingURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/transducer-services/",
+      "nativeMeaning": "An individually addressed IEEE 1451 transducer-interface channel with associated data/service behavior and channel-specific TEDS information.",
+      "nonEquivalenceBoundary": "Not necessarily one physical sensor or probe, LoRaWAN FPort, SDI-12 address, reported output field, SWE DataRecord item or CSAPI DataStream.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R016",
+      "proposedDIM": "Supported operating mode",
+      "nativeTerm": "SampMode (sampling capability)",
+      "relation": "PARTIAL",
+      "elementKind": "TEDS_FIELD",
+      "publisherOrTechnicalLocator": "IML Playground 1451.0-2024 TransducerChannel TEDS §6.5 / Table 19, Sampling.SampMode",
+      "primaryOrTechnicalURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "supportingURL": "https://standards.ieee.org/ieee/1451.0/11001/",
+      "nativeMeaning": "TransducerChannel TEDS Sampling.SampMode identifies available sampling-mode capability.",
+      "nonEquivalenceBoundary": "Capabilities are not evidence of the mode actually selected or executed, and are not universal operating-mode descriptions for the whole sensing System.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R017",
+      "proposedDIM": "Declared default mode",
+      "nativeTerm": "SDefault (sampling mode default)",
+      "relation": "PARTIAL",
+      "elementKind": "TEDS_FIELD",
+      "publisherOrTechnicalLocator": "IML Playground 1451.0-2024 TransducerChannel TEDS §6.5 / Table 19, Sampling.SDefault",
+      "primaryOrTechnicalURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "supportingURL": "https://standards.ieee.org/ieee/1451.0/11001/",
+      "nativeMeaning": "TransducerChannel TEDS Sampling.SDefault represents the declared default sampling mode.",
+      "nonEquivalenceBoundary": "A manufacturer/default TEDS value does not prove a fielded unit's actual current or historical mode, or a whole-System default.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R004",
+      "proposedDIM": "Persistent System identifier",
+      "nativeTerm": "MetaTEDS.UUID (TIM identifier)",
+      "relation": "RELATED",
+      "elementKind": "TEDS_FIELD",
+      "publisherOrTechnicalLocator": "IML Playground 1451.0-2024 Meta TEDS §6.4 / Table 13 (UUID); Network Services §10 (timId)",
+      "primaryOrTechnicalURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/meta-teds/",
+      "supportingURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/network-services/",
+      "nativeMeaning": "Public 1451 Playground Meta TEDS identifies a 128-bit UUID used to identify a TIM; network-service messages also distinguish timId and ncapId.",
+      "nonEquivalenceBoundary": "TIM UUID is not automatically a CSAPI System URI, persistent station ID, manufacturer serial number, or authenticated identity of a deployed individual; fielded existence and issuer authority unproven.",
+      "sourceVerification": "IEEE_1451_2024_PUBLISHER_SCOPE_NIST_IML_PUBLIC_TECHNICAL_CHECKED_NORMATIVE_TEXT_UNINSPECTED",
+      "sourceAdoption": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "nativeLeads": [
+    {
+      "id": "IEEE-H01",
+      "relatedRowOrHold": "S06-R011",
+      "nativeTerm": "Meta TEDS: MaxChan, CGroup, VGroup, Proxies",
+      "sourceLocator": "IEEE Playground §6.4/Table 13",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/meta-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Channel counts, control/vector groupings and proxy channels are declarations, not individual physical probes, physical wiring or installed count verification."
+    },
+    {
+      "id": "IEEE-H02",
+      "relatedRowOrHold": "S06-R012 / S06-R013",
+      "nativeTerm": "TransducerChannel TEDS: PhyUnits, UnitType, UnitsExt",
+      "sourceLocator": "IEEE Playground §6.5/Table 19",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Units and channel data model metadata do not alone identify the observed feature, original measurement result, CSAPI schema or object identity."
+    },
+    {
+      "id": "IEEE-H03",
+      "relatedRowOrHold": "CASE-H05 / CASE-H07",
+      "nativeTerm": "TransducerChannel TEDS: CalKey; optional Calibration TEDS",
+      "sourceLocator": "IEEE Playground §6.5/Table 19 and Optional TEDS calibration section",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Calibration method/coefficients or schedule are not automatically actual calibration event, certification, observed quality or field-history evidence."
+    },
+    {
+      "id": "IEEE-H04",
+      "relatedRowOrHold": "CASE-H05",
+      "nativeTerm": "LowLimit, HiLimit, OError, SelfTest, MRange",
+      "sourceLocator": "IEEE Playground §6.5/Table 19",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Design limits, worst-case uncertainty and self-test capability differ from current diagnostics, measured uncertainty and performed self-test result."
+    },
+    {
+      "id": "IEEE-H05",
+      "relatedRowOrHold": "CASE-H06 / CASE-H08",
+      "nativeTerm": "SPeriod, UpdateT, WarmUpT, RSetupT, TimeSrc, TSError",
+      "sourceLocator": "IEEE Playground §6.5/Table 19",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Declared sampling/timing parameters and timing-source metadata are not original phenomenonTime or resultTime of NOAA means or fielded applied settings."
+    },
+    {
+      "id": "IEEE-H06",
+      "relatedRowOrHold": "S06-R003",
+      "nativeTerm": "User’s Transducer Name TEDS: TCName",
+      "sourceLocator": "IEEE Playground §6.11 / User’s Transducer Name TEDS",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/users-transducer-name-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Readable/user-defined names do not equal individual factory serial numbers, uniquely verified equipment identity or deployed station identifiers."
+    },
+    {
+      "id": "IEEE-H07",
+      "relatedRowOrHold": "S06-R007 / S06-R011",
+      "nativeTerm": "TransducerChannel TEDS: ChanType; Sampling/Sample/DataSet",
+      "sourceLocator": "IEEE Playground §6.5/Table 19",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/transducer-channel-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Transducer channel type or data-model descriptors are not a guarantee of one physical sensor, one output field, or one actual sampled event."
+    },
+    {
+      "id": "IEEE-H08",
+      "relatedRowOrHold": "S06-R006",
+      "nativeTerm": "Network Services: discovery, transducer access, TEDS access, event notification",
+      "sourceLocator": "IEEE Playground §10/Tables 52–60",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/network-services/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "IEEE APP↔NCAP service message types are distinct from native CSAPI REST resources, interfaces or proof of a real registered network participant."
+    },
+    {
+      "id": "IEEE-H09",
+      "relatedRowOrHold": "S06-R019",
+      "nativeTerm": "TIM/Transducer Service Commands: Query/Read/Write/Update TEDS, Run self-test",
+      "sourceLocator": "IEEE Playground §11/Tables 69–71",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/transducer-services/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Documented command/service types are affordances; they do not prove an issued request, authenticated permission or actual hardware action."
+    },
+    {
+      "id": "IEEE-H10",
+      "relatedRowOrHold": "S06-R020 / CASE-H09",
+      "nativeTerm": "Transducer service reply: Success/Fail, ErrorCode and status condition",
+      "sourceLocator": "IEEE Playground §11.1.3/§11.2",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/messages/transducer-services/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Protocol reply or self-test status is not independent evidence that the requested physical effect occurred or was observed."
+    },
+    {
+      "id": "IEEE-H11",
+      "relatedRowOrHold": "CASE-H02",
+      "nativeTerm": "Optional Geographic Location TEDS",
+      "sourceLocator": "IEEE Playground Optional TEDS, geographic location section",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/optional-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Optional or manually entered installation location cannot establish surveyed per-probe coordinates, original location precision or time-dated deployment without source evidence."
+    },
+    {
+      "id": "IEEE-H12",
+      "relatedRowOrHold": "CASE-H04 / CASE-H09",
+      "nativeTerm": "Optional Security TEDS / Time Synchronization TEDS",
+      "sourceLocator": "IEEE Playground Optional TEDS, security/time sections",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/optional-teds/",
+      "sourceStanding": "PUBLIC_2024_TECHNICAL",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "Declaration of a supported security or time synchronization protocol does not establish the current authorization configuration, signed original issuer claims or absolute resultTime."
+    },
+    {
+      "id": "IEEE-H13",
+      "relatedRowOrHold": "CASE-H04",
+      "nativeTerm": "PHY TEDS: Radio / Battery / Encrypt / Authent",
+      "sourceLocator": "IEEE Playground PHY TEDS §5.3/Table 2 **IEEE 1451.5-2007**",
+      "technicalSourceURL": "https://iml.ubi.pt/playground/docs/ieee1451/teds/phy-teds/",
+      "sourceStanding": "SEPARATE_IEEE_1451_5_2007",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "THIS IS A DIFFERENT IEEE FAMILY STANDARD AND 2007 EDITION, NOT PROOF IEEE 1451.0-2024 REQUIRES THESE FIELDS; Battery indicates design/power type, not present charge level."
+    },
+    {
+      "id": "IEEE-H14",
+      "relatedRowOrHold": "S06-R001 / S06-R003",
+      "nativeTerm": "Historical NIST TEDS overview: manufacturer, serial, calibration descriptions",
+      "sourceLocator": "NIST historical TEDS educational overview (original 2009 STIM-era context)",
+      "technicalSourceURL": "https://www.nist.gov/el/intelligent-systems-division-73500/transducer-electronic-data-sheet",
+      "sourceStanding": "HISTORICAL_NIST_NOT_2024_CLAUSE",
+      "disposition": "PUBLIC_SOURCE_NATIVE_LEAD_HELD_NOT_DIM_ADOPTED",
+      "nonEquivalenceBoundary": "NIST historical description cannot verify a particular 1451.0-2024 normative field path, a modern TIM self-ID value, or a serial-numbered installed transducer."
+    }
+  ],
+  "prohibitedOverclaims": [
+    "No independent access to full licensed IEEE 1451.0-2024 normative requirements, clause SHALLs or test conditions.",
+    "IML Playground's §5.3 PHY TEDS cites IEEE 1451.5-2007, not IEEE 1451.0-2024.",
+    "Older NIST STIM-era TEDS overview cannot prove 2024 field requirements.",
+    "No installed NCAP, TIM, TransducerChannel, actual channel mode, real calibration, physical Command outcome, or real original IEEE observation verified."
+  ],
+  "preserved": {
+    "columnOrder": [
+      "Dragino",
+      "AirGradient",
+      "Campbell",
+      "Bennett",
+      "IEEE",
+      "OPC",
+      "SAPIENT",
+      "SOSA",
+      "OMS",
+      "SWE",
+      "SensorML",
+      "CSAPI",
+      "DIM"
+    ],
+    "originalDimRows": 22,
+    "caseOnlyHolds": 9,
+    "topicDividers": 6,
+    "caseStatements": 73,
+    "nonIEEEOriginalSourceClaims": 52,
+    "originalSourceCheckedOtherDonors": 37,
+    "priorOnlyOtherDonors": 15,
+    "totalDonorClaims": 58,
+    "unassessed182ArtifactsNotRecastAsReviewed": true
+  },
+  "sourceCounts": {
+    "other37OriginalChecked": 37,
+    "ieee6PublicTechnical": 6,
+    "remaining15PriorOnly": 15,
+    "total58": 58
+  }
+}
