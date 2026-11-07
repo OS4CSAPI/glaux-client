@@ -72,3 +72,7 @@ These source facts are relevant but do not justify inserting a new DIM row or cl
 **Not accomplished:** a full SensorML 3.0 profile, live JSON schema validation of actual devices, authenticated physical sensing or control, original-issuer provenance or production CSAPI interoperability. No DIM/UML, application Profile, Glaux client, server or Cloudflare change was made.
 
 **NEXT single owner 'proceed': Step11 — OGC SWE Common 3.0 original-source donor review only.**
+
+## Independent workbook verification — Step10 closeout
+
+The final committed [v0.4 editable XLSX](Master_Donor_Concept_to_DIM_Crosswalk_v0.4_Step10_SensorML_06NOV2026.xlsx) has Git blob `6249216685deb31ffd65328b0cda82d7e9e475dd`. The first validation caught two accidentally removed earlier CSAPI cells when inserting previously empty SensorML counterparts; those cells were restored **before** the final validation. [**GitHub Actions run 42328048803**](https://github.com/OS4CSAPI/glaux-client/actions/runs/42328048803) **PASSED** the actual nine-sheet Excel ZIP/XML, exact main-grid JSON/CSV parity, 10 SensorML + 12 CSAPI source statuses, 31 unchanged historical donor mappings, 73 original case records and preservation of the owner-approved 13-column geometry. This is a structural/source-identity consistency check, **not** an original-publisher conformance certificate or approval of DIM semantics.
