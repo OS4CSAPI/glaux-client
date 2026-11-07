@@ -1,0 +1,270 @@
+{
+  "format": "step09-csapi-original-publication-term-review-v0.1",
+  "date": "2026-11-06",
+  "standing": "SOURCE_CLAUSES_INSPECTED_TERM_MATCHES_PROPOSED_NOT_OGC_CONFORMANCE",
+  "acceptedWorkingLayout": "13 columns, case examples first, CSAPI adjacent to far-right proposed DIM",
+  "sourceEditions": [
+    {
+      "part": 1,
+      "document": "OGC 23-001",
+      "edition": "1.0.0",
+      "published": "2025-07-16",
+      "uri": "https://docs.ogc.org/is/23-001/23-001.html"
+    },
+    {
+      "part": 2,
+      "document": "OGC 23-002",
+      "edition": "1.0.0",
+      "published": "2025-07-16",
+      "uri": "https://docs.ogc.org/is/23-002/23-002.html"
+    }
+  ],
+  "reviewedExistingCells": [
+    {
+      "rowKey": "S06-R002",
+      "workingDIM": "Product model designation",
+      "term": "systemKind → Procedure (type/datasheet)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 1 §9.1 Note 1; §9.2 Table 5",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "System instances can link via systemKind to a Procedure describing the kind/model (e.g. datasheet); a link is not the model string itself.",
+      "nonEquivalenceCaution": "A model is reusable; a System remains an instance. Keep model ID separate from physical serial and API URL.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R004",
+      "workingDIM": "Persistent System identifier",
+      "term": "System.uniqueIdentifier (URI)",
+      "relation": "DIRECT",
+      "sourceClause": "Part 1 §9.2 Table 4; §9.3 Requirement 5",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "System uniqueIdentifier is a required persistent identifier independent of its canonical /systems/{id} URL.",
+      "nonEquivalenceCaution": "A persistent System ID is not necessarily the manufactured item's physical serial.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R005",
+      "workingDIM": "Described sensing System / arrangement",
+      "term": "System resource (instance)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 1 §9.1; §9.2 Tables 4–7",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "System is a feature representing an individual sensor, actuator, platform, process or other connected system as typed by systemType and optional assetType.",
+      "nonEquivalenceCaution": "A focal reference arrangement, a manufactured assembly, a physical constituent, and a whole deployed station need not share one System identity.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R007",
+      "workingDIM": "Physical constituent",
+      "term": "System.subsystems / parentSystem (composition or aggregation)",
+      "relation": "RELATED",
+      "sourceClause": "Part 1 §9.2 Table 5; §§10.2–10.3 Table 8; Requirement 9",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "System subsystems are regular System resources nested under parents; source explains composition versus aggregation and permits separately deployed interchangeable payloads.",
+      "nonEquivalenceCaution": "A linked System or nested resource does not, by itself, prove a physical constituent, manufactured chip, permanently installed part or inspected cable.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R009",
+      "workingDIM": "Hosting platform / station context",
+      "term": "Deployment.platform; System.systemType=Platform",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 1 §9.1 Notes 2–3; §11.2 Tables 10–11",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "A Deployment associates deployed Systems with an optional platform feature; platform can be a System or another Feature. System can carry a Platform semantic type.",
+      "nonEquivalenceCaution": "Deployment location, station/site context, and the actual individual probe position are distinct; platform need not be a System.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R010",
+      "workingDIM": "Observing procedure / method",
+      "term": "Procedure.procedureType=ObservingProcedure",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 1 §13.2 Tables 14–16; §9.2 Table 5",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "edition": "OGC 23-001, Part 1: Feature Resources, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "Procedure resources can describe an observing method or a reusable equipment type; implementing a Procedure is distinct from actually performing an Observation.",
+      "nonEquivalenceCaution": "The Procedure resource can be a method OR datasheet kind; do not collapse executed behavior or processing implementation into a type link.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R012",
+      "workingDIM": "Reported output field",
+      "term": "DataStream /schema → resultSchema",
+      "relation": "RELATED",
+      "sourceClause": "Part 2 §9.6 Requirement 11; §16.1.4 resultSchema; §16.1.5 Requirement 98",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "Per-DataStream observation schema and resultSchema encode result fields and types by observation format. These are information structures, not transducer hardware addresses.",
+      "nonEquivalenceCaution": "A named result field is not automatically a physical transducer channel or IEEE 1451 channel.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R013",
+      "workingDIM": "Observed / observable property",
+      "term": "DataStream.observedProperties (URI list)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 2 §9.2 Table 2; Part 1 §15.1–15.2 Table 19",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "DataStream observedProperties identifies the measured property semantics; Part 1 Property definitions also distinguish observed, controlled and asserted properties.",
+      "nonEquivalenceCaution": "A property URI is not a reported field name, raw output channel, physical sensor module or evidence of an actual measurement.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R014",
+      "workingDIM": "Observer / observing System",
+      "term": "DataStream.system (identified producer)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 2 §9.2 Table 5; §9.2 DataStream constraints",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "The DataStream system association identifies the producer for the stream; observations in that stream are produced by the same System.",
+      "nonEquivalenceCaution": "The stream-producing System may be a station/logger/process; the physically sensing contributor and original event issuer require independent evidence.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R015",
+      "workingDIM": "Performed Observation",
+      "term": "Observation (DataStream member)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 2 §9.7 Tables 6–7; §9.8 Requirement 12",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "An Observation resource is associated with a DataStream and includes phenomenonTime, resultTime and result; the structure supports multiple observed properties.",
+      "nonEquivalenceCaution": "A valid API Observation representation does not authenticate a manufacturer example or prove a new original measurement event.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R019",
+      "workingDIM": "Issued control request",
+      "term": "Command (ControlStream member)",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 2 §10.2; §10.7 Tables 11–12",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "A Command is associated with a ControlStream; parameters represent desired controlled values with issueTime/currentStatus on server-reported Commands.",
+      "nonEquivalenceCaution": "Published syntax, available command definitions, or manufacturer request flags are not evidence an actual Command was issued.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "rowKey": "S06-R020",
+      "workingDIM": "Command acknowledgement / reported outcome",
+      "term": "CommandStatus.reportTime / statusCode",
+      "relation": "PARTIAL",
+      "sourceClause": "Part 2 §10.11 Tables 13–15",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "edition": "OGC 23-002, Part 2: Dynamic Data, v1.0.0, published 2025-07-16",
+      "originalStandardMeaning": "CommandStatus carries dated progress reports and enumerated codes such as ACCEPTED, EXECUTING, COMPLETED and FAILED.",
+      "nonEquivalenceCaution": "ACCEPTED is not execution success; a reported COMPLETED status should not be treated as independently measured physical effect.",
+      "verification": "OGC_ORIGINAL_CLAUSE_TERM_CHECKED_DIM_RELATION_PROPOSED",
+      "adoption": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "nativeSourceFactsHeld": [
+    {
+      "id": "C09-H01-A",
+      "relatedCaseHold": "CASE-H01",
+      "sourcePart": "Part 1",
+      "nativeTerm": "Deployment.validTime + deployedSystems + platform",
+      "sourceClause": "§11.2 Tables 10–11",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "A time-bounded deployment can associate a System with a platform. It is a candidate carrier for installed/service roles, not evidence of a particular Bennett's Point probe join or exact swap minute."
+    },
+    {
+      "id": "C09-H01-B",
+      "relatedCaseHold": "CASE-H01",
+      "sourcePart": "Part 2",
+      "nativeTerm": "SystemEvent(type=PartReplacement), eventTime, system",
+      "sourceClause": "§12.1–12.2 Tables 19–21",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "Part replacement is an event category, but a generic event record does not by itself specify full old/new serial IDs or the exact time of the Bennett EE181 change."
+    },
+    {
+      "id": "C09-H02",
+      "relatedCaseHold": "CASE-H02",
+      "sourcePart": "Part 1",
+      "nativeTerm": "System.location / Deployment.location / Deployment.platform",
+      "sourceClause": "§9.2 Table 4; §11.2 Tables 10–11",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "Station point or deployment area does not become the individually surveyed position of every probe."
+    },
+    {
+      "id": "C09-H05",
+      "relatedCaseHold": "CASE-H05",
+      "sourcePart": "Part 2",
+      "nativeTerm": "DataStream.type=status / DataStream.system",
+      "sourceClause": "§9.2 Tables 3 and 5",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "Diagnostic/status datastreams are conceptually supported, but no actual Campbell Status event from an installed station has been obtained."
+    },
+    {
+      "id": "C09-H06",
+      "relatedCaseHold": "CASE-H06",
+      "sourcePart": "Part 2",
+      "nativeTerm": "SystemEvent(type=ConfigurationChange or SoftwareUpdate)",
+      "sourceClause": "§12.2 Table 20",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "A dated change event does not furnish full previous/next configuration values or prove present effective settings."
+    },
+    {
+      "id": "C09-H07",
+      "relatedCaseHold": "CASE-H07",
+      "sourcePart": "Part 1",
+      "nativeTerm": "Property.baseProperty / objectType / statistic",
+      "sourceClause": "§15.1–15.2 Table 19",
+      "originalSourceURL": "https://docs.ogc.org/is/23-001/23-001.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "Property definitions can distinguish an hourly mean from basic temperature, but do not prove the processing method executed or the source-to-result causal chain."
+    },
+    {
+      "id": "C09-H08",
+      "relatedCaseHold": "CASE-H08",
+      "sourcePart": "Part 2",
+      "nativeTerm": "Observation.phenomenonTime / resultTime / result",
+      "sourceClause": "§9.7 Tables 6–7",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "These temporal properties are required in CSAPI representation; historical source data may not furnish original resultTime, so do not invent it."
+    },
+    {
+      "id": "C09-H09",
+      "relatedCaseHold": "CASE-H09",
+      "sourcePart": "Part 2",
+      "nativeTerm": "ControlStream.live / async / controlledProperties; CommandStatus",
+      "sourceClause": "§10.2 Tables 8–10; §10.11 Tables 13–14",
+      "originalSourceURL": "https://docs.ogc.org/is/23-002/23-002.html",
+      "disposition": "NATIVE_TERM_IDENTIFIED_HOLD_ROW_UNAPPROVED",
+      "caution": "A declared live control channel and status vocabulary are not proof of authenticated command execution or observed physical effect."
+    }
+  ],
+  "specificallyNotClaimed": [
+    "No approved DIM row or CSAPI application profile change",
+    "No assertion a vendor's system implements CSAPI",
+    "No actual original Bennett resultTime inferred",
+    "No physical command issued, acknowledged or measured",
+    "No complete source-to-client interop/conformance",
+    "Other donor source-claim fields are unchanged"
+  ]
+}

@@ -1,0 +1,26 @@
+name: DIM V2 Step09 — verify source-reviewed CSAPI workbook
+on:
+  push:
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.3_Step09_CSAPI_06NOV2026.*"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Step09_CSAPI_Parts1_2_Clause_Audit_06NOV2026.json"
+      - "scripts/check_dim_crosswalk_step09.py"
+      - ".github/workflows/dim-crosswalk-step09.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check actual Excel ZIP/XML, owner layout and exact JSON/CSV/evidence parity
+        run: python scripts/check_dim_crosswalk_step09.py
