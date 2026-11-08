@@ -1,55 +1,21 @@
-# ISA coverage correction — accelerated execution plan
+# ISA correction — current execution plan
 
-**Current — 8 November 2026. Accelerated slot7 COMPLETE: all96 saved command outcomes integrated into [ISA_Correction_Review_Commands_08NOV2026.xlsx](ISA_Correction_Review_Commands_08NOV2026.xlsx). Properties91/91, observables39/39 and commands96/96 remain COMPLETE; six primary questions and the supporting wording note are retained. Four original work areas are closed; existing Step5/6 type/requirement reconciliation remains scheduled. Next: accelerated slot8 / original ISA-07, ISA-TYPES-BASE-MESSAGES, the54 base-type/identifier/envelope/message assignments. Current remaining forecast15 central deliveries, range13–17. The schedule tables below retain baseline assignments, not renewed work.**
+**Current:8 November2026. Accelerated deliveries1–7 COMPLETE; owner-requested working-master integration COMPLETE. Next:original ISA Step7 / accelerated delivery8,54 base-type/identifier/envelope/message assignments. Remaining ISA forecast15 deliveries (range13–17).**
 
-[Current progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Current workbook](ISA_Correction_Review_Commands_08NOV2026.xlsx).
+[Canonical master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [Readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Progress/exact queue](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Adoption and full recovery](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
 
-## 1. What changes, and what does not
+## Completion and scope
 
-The owner directed a faster pace. The six-entry stopping habit is removed. Batch by distinct semantic work and dependency novelty, not by a fixed number of catalogue names. Reuse verified same-edition definitions and record common parameter structures once, with a source-specific check and disposition for every command. Never infer a command's parameters from its name or from a neighboring command.
+ISA-01 census,ISA-02/03 properties andISA-04 observables are complete. All96 command definitions are reviewed and integrated; broaderISA-05/06 type/requirement obligations retain their existing assignments below. Four original work areas are closed.226 primary outcomes,220 supported,six local questions;253 comparison rows;167 supporting definitions.
 
-Every source pass still delivers verified GitHub evidence, coverage and the readable comparison. Keep a concise progress/PITON update; do not rewrite the execution plan, repeat all historical explanations, create a narrative report, rebuild a publisher or export Excel after each group. Reuse local verified inputs and the established access/publication route. Reconcile outputs programmatically, then inspect the specific changes and exceptions. The command workbook checkpoint and final workbook publication are planned separately.
+The owner-directed master integration changes delivery and adoption scheduling, not scientific scope. It consumes no slot8 source work, adds no research subdivision and does not reduce the15 remaining ISA deliveries. The previous source and workbook checkpoints stay complete.
 
-No completed research is restarted, no agreed source population is dropped, and no uninspected entry is disguised as a question or exclusion. This amendment changes scheduling only. All source decisions, four existing questions, other-donor cells, case facts and workbooks are unchanged.
+## Remaining existing schedule
 
-## 2. Accelerated command queue — original six review slots plus workbook checkpoint
+The rows below are the unchanged remaining assignments from the acceleration plan; they are not15 newly added tasks.
 
-**Current execution:** slots1–2 complete; slot3 next. The table retains the acceleration baseline assignments; current earned counts and remaining forecast are above and in the progress record.
-
-At the acceleration baseline,78 unreviewed command IDs were assigned exactly once below; group1 is now complete and60 remain. The 18 completed commands are excluded. These are workload assignments, not new semantic conclusions. Original ISA-05/06 ownership remains in the register; these execution groups cross the old alphabetical boundary where that improves reuse.
-
-| Remaining review prompt | Group | Command count | ISA-DMS numeric suffixes |
-| --- | --- | ---: | --- |
-| 1 — COMPLETE | Modes, timing and ordinary configuration | 18 | 177,185,187,188,189,191,195,196,197,198,200,201,202,203,204,220,241,243 |
-| 2 — COMPLETE | Level/power, property control and component lifecycle | 18 | 169,170,172,175,194,199,206,208,209,217,218,230,231,232,235,242,244,256 |
-| 3 — NEXT | Spatial control and acquisition | 12 | 163,221,222,224,225,229,233,234,246,247,252,253 |
-| 4 | Communication, media and service selection | 16 | 161,210,223,226,227,236,237,238,239,240,245,248,249,250,251,254 |
-| 5 | Readout, history and archive results | 7 | 207,211,212,213,214,215,216 |
-| 6 | Authorization, subscriptions, cancellation and locks | 7 | 162,173,174,176,219,228,255 |
-| 7 | Command-catalogue workbook integration and verification | 0 new reviews | Integrate the saved 96 command outcomes; no repeated research |
-
-**Partition check: 78 assignments, 78 unique IDs, zero omitted remaining commands, zero already-completed commands reassigned.** Projected earned command totals after successful source passes: 36,54,66,82,89,96. These totals advance only after review and verified publication.
-
-### Why this is different from the oversized ISA-02 batch
-
-Indexed definition spans for the six groups are respectively 185,191,169,279,155 and146 extracted source lines, excluding dependencies. The earlier six Adjust commands occupied188 indexed lines. Thus the next18 short commands do not triple that earlier primary-reading volume. This is one sizing indicator, not a guarantee: dependent structures, exceptions, table changes and publication still count. The longer query/authorization work deliberately has fewer primary entries. No normal source pass includes an Excel rebuild.
-
-Review each complete original definition, parameter/result table and cross-page continuation. Use existing evidence for known types; inspect only genuinely missing or conflicting aspects. Preserve explicit field names, cardinalities, defaults, source standing and request-versus-state distinctions. Empty Results sections do not establish absence of protocol responses. Sparse source wording stays attached to the affected field; it does not invalidate supported meanings elsewhere.
-
-### Completed scope — group1; next authorized scope is group2
-
-`ISA-COMMANDS-CONFIGURATION`: Change Active; Change Camera Mode; Change Enabled; Change Field of Regard; Change Field of View; Change Frame Rate; Change Maximum Status Interval; Change Minimum Status Interval; Change Name; Change Polarity; Change Pulse Interval; Change Quality; Change Radar Mode; Change Resolution; Change Scan Time; Menu Navigation; Set Observable Reporting; Set Property Reporting.
-
-The former `ISA-COMMANDS-SENSING-MODES` six-command assignment is absorbed here, not an additional future prompt. All18 are now reviewed and published; Menu Button was the one newly inspected supporting definition. Group2 is also complete. Next scope is the12 spatial-control commands assigned to group3 in the table and progress record. No physical commands are sent.
-
-## 3. Full remaining-work forecast, with the existing scope retained
-
-**Acceleration-baseline forecast:20–24 deliveries, centered on the22 slots below. Slot1 is now COMPLETE, leaving19–23 deliveries, centered on21. The remaining five command-source passes and one workbook checkpoint are INCLUDED, not additional.** This is a workload estimate, not a claim that later sources are already reviewed or that every slot has equal effort. It assumes evidence reuse, compact family-level analysis, existing publication machinery and no new application/model implementation. Two potential combinations or two dependency-driven splits explain the forecast range. Any change outside that range must name the additional work and its effect on the remaining count; it must not silently multiply substeps.
-
-| Remaining prompt slot | Existing scope to finish | Review/closure boundary |
+| Accelerated slot | Existing scope to finish | Review/closure boundary |
 | --- | --- | --- |
-| 1–6 | Original ISA-05/06: remaining command definitions | Exact78-ID partition above; record needed shared-type evidence as it is inspected |
-| 7 | Command workbook checkpoint | Integrate saved command outcomes once; preserve all prior work |
 | 8 | ISA-07: base types, identifiers, envelopes and messages | DMS4.1,4.2,5.1,6.1,6.2:54 entries; reconcile prior dependency evidence and inspect gaps |
 | 9 | ISA-08: capability declarations, constraints and structures | DMS7.1–7.3:25 entries; inspect source-specific constraints, not just common type labels |
 | 10 | ISA-06/09: reporting enumerations/unions and commanding enums | DMS8.1,8.2,9.1:28 entries; reuse previously inspected enums and command dependencies |
@@ -66,28 +32,22 @@ The former `ISA-COMMANDS-SENSING-MODES` six-command assignment is absorbed here,
 | 21 | ISA-11/12: model correspondence and source-first semantic audit | Reconcile all31 original row/case targets and25 earlier findings; check new contributions, aliases and the four local questions against saved source evidence; inspect specifically identified gaps |
 | 22 | ISA-12: final validation, workbook and closeout | Whole-inventory/source-block checks, final workbook/evidence/table parity, visual inspection, lessons consolidation and verified GitHub publication |
 
-The datatype assignments above cover all224 type entries exactly once:54+25+28+93+24. The already inspected124 supporting definitions are inputs to those reviews, not124 new research assignments. Some remaining type evidence will also be completed during commands and reused again. A type is fully reconciled when its relevant fields, constraints and application in this comparison are covered—not merely because its name appeared as a dependency.
+## Working-master publication and adoption
 
-The30 services/bins,96 commands,91 properties and39 observables plus224 types retain the original480-entry population. The279 source blocks overlap and include parent headings: they are coverage checks, not279 additional compulsory essays. When a parent and its child use the same inspected source passage, link the evidence rather than research it twice. Requirements tied to a command, declaration or message remain obligations even when reconciled in a later source-document slot. Closing a command count alone does not falsely close ISA-05/06 requirements.
+Reviewed donor information belongs in the canonical working master now. Publish master Markdown/CSV/JSON alongside evidence and coverage; update the canonical XLSX at substantial-section checkpoints. Show snapshot differences when present. Do not freeze the master while growing a separate ISA-only comparison.
 
-This forecast replaces the undefined remaining-prompt forecast and the old13-prompt constant-rate command extrapolation. It does not replace the original twelve scope labels or add22 scientific work packages. The scheduling amendment itself did not earn technical credit. Configuration slot1 is now technical iteration20; planned central total remains41.
+Master inclusion does not automatically adopt DIM content. The agreed broader crosswalk milestones are: readiness-based focused adoption at Step24, broader donor challenges, synthesis/diagrams/case testing in Steps35–39, and consolidated named-version approval at Step40. Bring owner-readable recommendations, not hundreds of individual approval chores. Accepted portions remain accepted unless a specific evidenced revision is needed. No extra prompts per readiness criterion.
 
-## 4. Original numbered roadmap and reporting
+Broader Step16 owner review remains after the ISA correction but is no longer a gate preventing the ISA column/candidates from appearing in the working master.
 
-ISA-01 census, ISA-02 first properties/identity, ISA-03 remaining properties and ISA-04 observables are COMPLETE. ISA-05 is in progress. ISA-06 retains remaining commands and commanding requirements; ISA-07 base/message work; ISA-08 capability/constraint work; ISA-09/10 reporting/filtering work; ISA-11 architecture/companions/reconciliation; ISA-12 audit and closeout. Work can share evidence across these owners without changing their definitions.
+## Execution rules
 
-Every closeout starts with **original step number, original steps complete, current catalogue reviewed/total and remaining, actual increment achieved, and remaining delivery forecast**. For the next source pass: “ISA correction — Step5/6 command work: spatial control and acquisition. Original steps complete4/12. Commands54/96,42 remaining. This pass assigns12; successful verified delivery would make66/96,30 remaining.” Report forecast separately from earned completion; table-row counts are not project percent complete.
+Use the exact assigned inventory IDs in progress. Reuse same-edition definitions and recorded native manifests; inspect actual missing constraints and conflicts. Do not infer source semantics from a label or blank cell. A dependency inspection is reused, not credited automatically as full-catalogue reconciliation.
 
-Keep normal chat closeouts focused: the result, genuinely important distinctions, numbered progress, GitHub links and next scope. Use a full per-entry table only when its differences warrant it. Shared signatures and source-specific exceptions are documented in the evidence; repeating the same caveats for every source label is not additional research.
+Keep all480 entries,279 source blocks,31 original targets and25 earlier findings accounted for. A source catalogue entry does not mandate a new DIM row or class. Recorded supported work stays complete; Q001–Q006 and the Observable State reporting note are local, not blanket invalidations. Meaningful questions go to already assigned reconciliation, not automatic extra prompts.
 
-## 5. Preservation and completion rules
+No per-group publisher,exporter,workflow,narrative report or XLSX rebuild. Use the established exact-artifact publication and separate verification path. Preserve earlier donor/case values, source identities,31 original rows and the case-left/foundations-together/DIM-rightmost layout.
 
-GitHub `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, this directory, remains authoritative. Current completed source evidence:166 primary outcomes,162 supported/four property questions;193 information/review rows;125 inspected supporting definitions. Current Excel remains the completed property/observable snapshot:130 primary outcomes,157 rows, SHA256 `68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6`. Do not reopen its completed publication task.
+Closeouts show original step number, accomplished increment, source coverage, remaining forecast, canonical-master links and the next single task. Do not silently multiply substeps or claim unread work as finished. No other-donor expansion,model adoption,Profile/UML,client/server/deployment or physical operation is authorized by a source-review prompt.
 
-Preserve58 primary non-ISA donor records,73 case statements, source IDs and original parent assignments, all31 original row targets and25 earlier findings. Preserve the four cases on the left, foundational standards together and proposed DIM on the right. No model adoption, other-donor review, Profile/UML change, application/server/deployment work or physical command is authorized. The broader donor-review Step16 owner review still follows this correction.
-
-Every assigned entry needs a source-backed disposition: existing correspondence, justified new/split information, supporting definition, documented alias, reasoned exclusion or a precise source question. Read original text and necessary dependencies; no inference from a blank cell or similar label. Several commands may support one shared information pattern while keeping their individual native semantics traceable. Do not mechanically create one DIM class/row per command, and do not retroactively collapse accepted display rows without the scheduled semantic reconciliation.
-
-A larger group is complete when all its named entries and required dependencies are reviewed and published—not when an item quota is met. If a concrete unexpected dependency exceeds the batch, identify it, publish the completed records and explicitly revise only the affected remainder and forecast. No unbounded debugging, fabricated equivalence or hidden unread work. Supported completed work remains complete; uncertainty stays with its particular record.
-
-This plan supersedes the six-command-only next instruction and earlier pace estimates. [Previous plan and execution history](https://github.com/OS4CSAPI/glaux-client/blob/7346952b872740a00cc6a4d659822a61b0238349/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) remain in Git history, not as competing live instructions.
+[Acceleration history and prior plan](https://github.com/OS4CSAPI/glaux-client/blob/da168cf68b6fb96c090daacf70d3c8efcf004b77/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) remains in Git history; its obsolete next-step banners are not current instructions.

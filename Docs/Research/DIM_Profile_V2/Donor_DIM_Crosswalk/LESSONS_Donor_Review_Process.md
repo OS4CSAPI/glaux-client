@@ -45,3 +45,12 @@ The final audit must still demonstrate full inventory coverage and source-fideli
 Add a lesson only for a new substantive observation, normally in the existing record. At final ISA closeout, consolidate demonstrated practices into the reusable donor-review method, adapting it to the next donor's actual source structure. Do not duplicate the whole lessons document in each PITON or treat a particular number of prompts as universal.
 
 The prior detailed chronology and now-obsolete routing labels remain in [the lessons file at completed ISA-03D](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md). Current task selection belongs to progress and the current PITON, not to an old lesson's next-step sentence.
+
+
+## 8 November 2026 — separate evidence inclusion from model adoption
+
+A working comparison must accumulate verified donor findings as they are reviewed. Holding them in a separate donor workbook until final model adoption can leave the master misleadingly empty. The owner authorized integrating completed ISA evidence into the canonical master now, with candidate/model standing retained separately.
+
+Use existing cross-donor checkpoints for substantive adoption: ready coherent portions at broader Step24, then consolidated version approval after Steps35–39 synthesis and case review, at Step40. Readiness means clear meaning,scope need,relevant alternatives and a concrete example—not four new per-field tasks, majority-donor voting or a compulsory one-source-row/one-model-class mapping. Once accepted, content is recorded as accepted for the version and revised only for an evidenced specific reason.
+
+One canonical master and one active routing record prevent a future recovery from following obsolete CURRENT/NEXT banners. Historical snapshots remain usable evidence, not new work assignments.

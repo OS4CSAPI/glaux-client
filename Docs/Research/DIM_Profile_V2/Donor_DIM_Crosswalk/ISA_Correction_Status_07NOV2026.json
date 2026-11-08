@@ -12,13 +12,13 @@
   "completedWorkPackages": 4,
   "completedChildBatches": 4,
   "progressMeaning": "All91 properties,39 observables and96 commands are source-reviewed and integrated in the current workbook. Saved source decisions and six primary questions are preserved.",
-  "currentIteration": "ISA-COMMANDS-PUBLISH",
+  "currentIteration": "MASTER-ISA-INTEGRATION",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-COMMANDS-PUBLISH",
-  "currentBatchSourceReviewStatus": "NO_NEW_SOURCE_REVIEW_PUBLICATION_ONLY",
-  "currentBatchDeliveryStatus": "COMPLETE_WORKBOOK_INTEGRATION_AND_GITHUB_VERIFICATION",
+  "currentBatch": "MASTER-ISA-INTEGRATION",
+  "currentBatchSourceReviewStatus": "NO_NEW_SOURCE_REVIEW",
+  "currentBatchDeliveryStatus": "COMPLETE",
   "nextOnOwnerProceed": "ISA-TYPES-BASE-MESSAGES",
-  "nextAction": "Accelerated delivery8 / original ISA-07: reconcile the54 entries in DMS4.1,4.2,5.1,6.1,6.2 (base types, identifiers, envelopes and messages), reusing the167 inspected supporting definitions and inspecting assigned gaps. Update evidence/coverage/comparison in GitHub. Do not repeat completed property, observable or command reviews.",
+  "nextAction": "Accelerated delivery8 / original ISA-07: reconcile the54 entries in DMS4.1,4.2,5.1,6.1,6.2 (base types, identifiers, envelopes and messages), reusing the167 inspected supporting definitions and inspecting assigned gaps. Update evidence/coverage/comparison in GitHub. Do not repeat completed property, observable or command reviews. Publish future readable comparison changes to the canonical working master; do not resume an isolated ISA overlay as the primary deliverable.",
   "nextSourceIDs": [
     "ISA-DMS-257",
     "ISA-DMS-258",
@@ -411,8 +411,8 @@
     }
   ],
   "deliveryPolicy": {
-    "sourcePass": "Commit evidence/coverage, cumulative readable GitHub comparison, progress and concise PITON change; reuse existing formats and prior verified type evidence.",
-    "workbook": "Publish at catalogue/substantial-section checkpoints; prominently identify the workbook snapshot and current source/readable-view checkpoint separately.",
+    "sourcePass": "Update the canonical master Markdown/CSV/JSON from verified source decisions, along with the existing evidence/coverage, progress and concise PITON. Do not hold new material outside the master until final DIM adoption.",
+    "workbook": "Update the canonical master XLSX at substantial-section checkpoints; keep its snapshot date/counts visible when the readable master advances. A historical ISA-only workbook is not the primary master.",
     "noPerPassInfrastructure": "No new batch-specific exporter, transfer mechanism, publication script or workflow merely because a source pass ended.",
     "reportsAndLessons": "Do not duplicate a separate narrative report, every project index or the entire lessons history after each small change. Add a lesson only for a new substantive finding.",
     "coverageRule": "One catalogue entry does not require one candidate DIM row. Preserve individual source traceability for grouped, supporting, excluded or specifically questioned outcomes.",
@@ -439,21 +439,21 @@
   "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
   "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
   "registerOwnerPassMeaning": "Original ISA-01 through ISA-12 owners remain. The active execution queue is commandSourceGroups, followed by the numbered remaining-delivery slots in the plan. Historical property schedules are not future work.",
-  "currentReview": "ISA_Correction_Review_07NOV2026.md",
-  "currentWorkbook": "ISA_Correction_Review_Commands_08NOV2026.xlsx",
+  "currentReview": "Master_Donor_Concept_to_DIM_Crosswalk.md",
+  "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
   "currentEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
   "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
-  "currentBatchReport": null,
+  "currentBatchReport": "Master_ISA_Integration_Record_08NOV2026.json",
   "workbookSnapshot": {
-    "checkpoint": "ISA-COMMANDS-PUBLISH",
-    "sha256": "3750d6a95127b71031e8d3166c7c4750beda0e4cc397a2ba953f19015f607440",
+    "checkpoint": "MASTER-ISA-INTEGRATION",
+    "sha256": "4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806",
     "informationRows": 253,
     "primaryReviewed": 226,
     "nextRefresh": "NEXT_SUBSTANTIAL_SECTION_OR_FINAL_CHECKPOINT",
     "currentlyMatchesReadableView": true,
-    "label": "Current integrated property/observable/command workbook:226 reviewed primary entries,253 information/review rows,167 supporting definitions and six primary questions."
+    "label": "Current working master: all253 information/review rows;226 ISA primary reviews;167 supporting definitions;26 sheets with prior donor/case audits and explicit adoption milestones."
   },
-  "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
+  "publicationRule": "GitHub is authoritative. Canonical working-master artifacts are Master_Donor_Concept_to_DIM_Crosswalk.xlsx/.md/.csv/.json. Source publication and DIM adoption are distinct decisions. Label any readable-master versus XLSX checkpoint difference explicitly.",
   "completedTaskRule": "Property,observable and command catalogue source reviews and consolidated workbook integration remain COMPLETE. Next is assigned type/message reconciliation; no recovery or repeated command research.",
   "lessonsDocument": "LESSONS_Donor_Review_Process.md",
   "documentationCheckpoint": {
@@ -942,7 +942,7 @@
     "plannedQueueCompleted": 7,
     "changesDoNotReopenCompletedResearch": true,
     "lastCompletedSlot": 7,
-    "changeExplanation": "Accelerated slot7 integrated all96 saved command outcomes without subdivision or new research. Remaining central15, range13–17; slot8 is next."
+    "changeExplanation": "Owner-requested master integration and adoption-policy documentation completed after accelerated slot7. No new source review or accelerated slot consumed; slot8 next. Remaining ISA forecast unchanged: central15, range13–17."
   },
   "commandPartitionValidation": {
     "remainingInventoryCount": 0,
@@ -964,5 +964,49 @@
     "task": "Integrate and verify all saved command evidence at one workbook checkpoint; no re-review.",
     "workbook": "ISA_Correction_Review_Commands_08NOV2026.xlsx",
     "publication_record": "ISA_Commands_Publication_Record_08NOV2026.json"
-  }
+  },
+  "currentMasterData": "Master_Donor_Concept_to_DIM_Crosswalk.json",
+  "currentMasterCSV": "Master_Donor_Concept_to_DIM_Crosswalk.csv",
+  "lastISACatalogueWorkbook": "ISA_Correction_Review_Commands_08NOV2026.xlsx",
+  "masterIntegration": {
+    "state": "COMPLETE",
+    "date": "2026-11-08",
+    "ownerAuthorized": true,
+    "newSourceReviews": 0,
+    "isAcceleratedResearchSlot": false,
+    "newDIMContentAdopted": false,
+    "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
+    "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
+    "previousISASnapshot": "ISA_Correction_Review_Commands_08NOV2026.xlsx",
+    "sourceMeaningChanges": 0,
+    "originalDonorMappingsPreserved": 58,
+    "caseStatementsPreserved": 73
+  },
+  "DIMAdoptionPolicy": {
+    "recorded": "2026-11-08",
+    "basis": "Owner authorized integration and the adoption-checkpoint approach in this conversation.",
+    "master_inclusion": "Record verified donor meanings, corrections and candidate additions now; this is not automatic DIM adoption.",
+    "focused_adoption_checkpoint": 24,
+    "focused_adoption_rule": "At broader cross-donor Step 24, bring ready coherent portions forward for explicit owner decisions. Readiness, not the step number alone, determines adoption.",
+    "readiness": [
+      "Clear meaning and described subject",
+      "Demonstrated need within the agreed scope",
+      "Relevant donor alternatives and conflicts compared",
+      "Concrete representation and source example"
+    ],
+    "core_architecture_rule": "Keep major architecture open to credible challenges from remaining donor reviews; do not give ISA priority merely because its review is deeper.",
+    "later_synthesis": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "consolidated_baseline_checkpoint": 40,
+    "after_adoption": "Accepted portions are recorded as accepted for the named DIM version. Later evidence prompts a specific revision, not wholesale reopening.",
+    "does_not_require": "Majority-donor agreement, exhaustive rereading of all 182 artifacts, one class per source row, or new per-field prompted checklists.",
+    "content_adopted_by_this_update": false
+  },
+  "workingMasterRecoveryPiton": "PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md"
 }
