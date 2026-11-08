@@ -2,17 +2,17 @@
 
 ## Current execution — 8 November 2026
 
-**Original ISA Step 11 / accelerated delivery 13 COMPLETE:** six services, 24 capability categories, 18 Introductory Guide blocks and 30 White Paper blocks reviewed. The DMS catalogue now has 480/480 outcomes: 474 supported and six retained questions. All 224 datatypes and 31 DQL Guide blocks remain complete. This completes the named catalogue pass; architecture, companion-document, requirements and semantic reconciliation continue in their existing slots.
+**Original ISA Step 11 / accelerated delivery 14 COMPLETE:** all 27 Software Design Document blocks, 35 figures and seven tables reviewed, including all nested message flows and appendices. All 480 DMS outcomes remain unchanged: 474 supported and six retained questions. DQL 31/31, Introductory Guide18/18 and White Paper30/30 remain complete.
 
-Canonical Markdown/CSV/JSON contain 320 information rows, preserving all 314 previous rows, 58 donor records and 73 case statements. Six comparison patterns distinguish service support, overlapping capability groups, must/should obligations, client/Controller roles, virtual network context and extension standing. Inclusion is not DIM adoption. Four original work areas remain closed; original ISA-11 remains in progress with architecture next.
+Canonical Markdown/CSV/JSON contain **325 information/review rows**: all 320 prior row identities plus five architecture patterns. Four original ISA cells now qualify composition, network participation, integration membership and communication-interface meanings. Detailed participation/service/network wording is also refined. All non-ISA/case cells, 58 donor records and 73 case statements are preserved. Original row-target closure remains 4/31; earlier-finding reconciliation remains 1/25. These source qualifications do not close the final correspondence audit or adopt DIM content.
 
-**Next “proceed”: original ISA Step 11 / accelerated delivery 14 — all 27 registered Software Design Document blocks. Remaining ISA forecast: nine deliveries, range seven–eleven.** The routing label `ISA-SOFTWARE-ARCHITECTURE` identifies this existing slot. Reuse completed catalogue and guide evidence, update the same master/evidence/coverage/PITON, and verify GitHub publication. Interface/encoding/security guidance remains delivery 15.
+**Next “proceed”: original ISA Steps 7/11 / accelerated delivery 15 — all 39 ICD, 11 Certificate Guide and 8 IPL3 Guide blocks, 58 total. Eight central ISA deliveries remain, range six–ten.** Routing label `ISA-INTERFACE-ENCODING-SECURITY` identifies this existing slot. Reuse completed catalogue, query and architecture evidence; update the same master/evidence/coverage/PITON and verify GitHub publication. Component Requirements begin in the already assigned delivery 16.
 
-Excel retains the verified 253-row/226-primary master-integration snapshot. The current text includes five completed datatype groups and the services/context pass, totaling 320 rows/480 catalogue outcomes, 67 rows beyond Excel. Source scope, workbook cadence and adoption policy remain unchanged.
+Excel retains the verified 253-row/226-primary master-integration snapshot. Current text has 325 rows/480 outcomes, 72 additional rows plus documented ISA wording qualifications. No source-pass workbook rebuild or new publication delivery was added. The central technical forecast remains 41 total: 33 completed plus 8 remaining; four original work areas remain closed.
 
-[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Service and context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Architecture/service/context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
-Record comparison findings now; readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and consolidated named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
+Readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and consolidated named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
 
 ## Historical checkpoint banners
 
