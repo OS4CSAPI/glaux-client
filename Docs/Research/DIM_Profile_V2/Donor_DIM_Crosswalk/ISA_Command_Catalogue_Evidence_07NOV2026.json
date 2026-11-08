@@ -17,7 +17,8 @@
     "ISA-COMMANDS-AUTO-CONTROLS",
     "ISA-COMMANDS-CONFIGURATION",
     "ISA-COMMANDS-CONTROL-LIFECYCLE",
-    "ISA-COMMANDS-SPATIAL-ACQUISITION"
+    "ISA-COMMANDS-SPATIAL-ACQUISITION",
+    "ISA-COMMANDS-COMMUNICATION-SERVICES"
   ],
   "primary_records": [
     {
@@ -3919,6 +3920,1161 @@
         "Armed",
         "Range"
       ]
+    },
+    {
+      "id": "ISA-CMD-161",
+      "entry_id": "ISA-DMS-161",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Add IP Address",
+      "element_kind": "command",
+      "native_type": "iface: String; address: IP Address",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 22,
+      "pdf_pages": [
+        37
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Add IP Address, printed p.22 / PDF p.37",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "993d482c46020df444217edc5f644f26a707c4b4875d3f2dd11270575dd5e6d0",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-161",
+      "proposed_label": "Requested IP-address assignment to a named interface",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Assigns an IP address to a supported network interface, with duplicate interface names disallowed. The referenced IP Addresses property permits plus-sign subinterface naming for multiple addresses on one interface.",
+      "mapping_boundary": "Preserve iface:String and address:IP Address (IPv4/IPv6 union); the plus-sign naming convention is source-permitted, not a new nested address list or a requirement to configure an operating-system virtual interface. No CIDR, mask, gateway or DHCP field is declared. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "IP Address",
+        "IPv4 Address",
+        "IPv6 Address",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-IP-ASSIGNMENT",
+      "parameters": [
+        {
+          "name": "iface",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Interface name to which the IP address is assigned.",
+          "default_as_source": null
+        },
+        {
+          "name": "address",
+          "type": "IP Address",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "IP address to add to the interface.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "not allowed",
+          "statement": "Duplicate interfaces are not allowed; source refers to IP Addresses for multiple addresses."
+        }
+      ],
+      "related_reported_properties": [
+        "IP Addresses"
+      ]
+    },
+    {
+      "id": "ISA-CMD-210",
+      "entry_id": "ISA-DMS-210",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Discover",
+      "element_kind": "command",
+      "native_type": "query: Data Query; include ucis: Boolean",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 36,
+      "pdf_pages": [
+        51
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Discover, printed p.36 / PDF p.51",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ba02ec70d5e2de1d6170f6f55548a90196f0088735b7c26cbceba510f8c84234",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-210",
+      "proposed_label": "Requested discovery of currently available component messages",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Queries currently available ISA messages about component capability declarations, states and/or property values. Requires a Data Query and an include ucis Boolean; returns matching messages and a matching-component list when requested.",
+      "mapping_boundary": "Discover is not a future subscription, historical query or unsolicited network scan. components is printed Required 0+ but its description conditions inclusion on include ucis; preserve both statements without inventing a serialized empty-versus-omitted rule. Data Query separates matching from selected message content; do not invent query option names, function implementations or assume every Message union alternative is selectable. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "Data Query",
+        "Message",
+        "Boolean",
+        "UCI",
+        "String",
+        "Administrative Select",
+        "Config Select",
+        "Event Select",
+        "Status Select",
+        "Match",
+        "Select",
+        "Comparator",
+        "Value",
+        "And Match",
+        "Boolean Function",
+        "Boolean Match",
+        "Boolean Wrapper",
+        "Not Match",
+        "Or Match",
+        "Function Parameter",
+        "Field Value Selector",
+        "List Value",
+        "Static Value",
+        "Value Function",
+        "Value Selector",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-DISCOVERY",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "Data Query",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Matching criteria and desired message contents.",
+          "default_as_source": null
+        },
+        {
+          "name": "include ucis",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether a list of matching component UCIs is requested.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "components",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Matching components; included if the desire was indicated by include ucis.",
+          "default_as_source": null
+        },
+        {
+          "name": "messages",
+          "type": "Message",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "ISA messages matching the query.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "conditional result",
+          "statement": "components list is included if desire was indicated; table marks Required 0+."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-223",
+      "entry_id": "ISA-DMS-223",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Ping",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 41,
+      "pdf_pages": [
+        56
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Ping, printed p.41 / PDF p.56",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8dea77149cc2b42abef528d05c41c76f123273fab338fe35d50e81b8be63a6ad",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-223",
+      "proposed_label": "Requested acknowledgement of ISA communication reachability",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Prompts acknowledgement of command receipt to help determine whether communication with the component is possible.",
+      "mapping_boundary": "This ISA command does not establish an ICMP echo exchange, a latency measurement, a complete health diagnosis, or permission to invoke other commands. No command-specific parameters or Results table is declared. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-COMMUNICATION-PROBE",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-226",
+      "entry_id": "ISA-DMS-226",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Recommend Video Stream",
+      "element_kind": "command",
+      "native_type": "original: URL",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 41,
+      "pdf_pages": [
+        56,
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Recommend Video Stream, printed p.41 / PDF pp.56–57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "0780b2312ea6810f6e6ea104576226a22bd019a1c1ec11b66444cb75718226f1",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-226",
+      "proposed_label": "Requested bandwidth-appropriate video access recommendation",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests an access resource recommendation for the video stream identified by original:URL, appropriate to the requesting component’s bandwidth. Content might be transcoded; recommended:Resource Descriptor is an optional result.",
+      "mapping_boundary": "An optional recommendation is not a guaranteed result, completed transfer or proof that transcoding occurred. The descriptor supplies resource type/access URL and optional metadata; do not substitute a raw image/video payload or assume the returned URL equals the original URL. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "URL",
+        "Resource Descriptor",
+        "Resource Type",
+        "String",
+        "Name Value Pair",
+        "Wildcard",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-VIDEO-RECOMMENDATION",
+      "parameters": [
+        {
+          "name": "original",
+          "type": "URL",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Original video stream of interest.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "recommended",
+          "type": "Resource Descriptor",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Description of a recommended access resource.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "Resources"
+      ]
+    },
+    {
+      "id": "ISA-CMD-227",
+      "entry_id": "ISA-DMS-227",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Remove IP Address",
+      "element_kind": "command",
+      "native_type": "iface: String",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Remove IP Address, printed p.42 / PDF p.57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "b5bfbf4c8bdbecd26f7402ac0e99ecee7fc1ad2c4c6a0dc7660f577cdad5c403",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-227",
+      "proposed_label": "Requested IP-address dissociation by interface name",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Dissociates the corresponding assigned IP address from a supported interface identified by iface.",
+      "mapping_boundary": "Unlike Add IP Address, this entry declares only iface:String, not an address argument. Do not infer deletion of the physical interface, all component addresses or a network connection. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-IP-ASSIGNMENT",
+      "parameters": [
+        {
+          "name": "iface",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Interface name from which the corresponding address is dissociated.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "IP Addresses"
+      ]
+    },
+    {
+      "id": "ISA-CMD-236",
+      "entry_id": "ISA-DMS-236",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Service Notify",
+      "element_kind": "command",
+      "native_type": "service: String; provider: UCI; hops: Count",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 43,
+      "pdf_pages": [
+        58,
+        59
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Service Notify, printed p.43 / PDF pp.58–59",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "6bb64029def777f29b2c1c5543182fe4b6477338328d536700e19c6cb936af91",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-236",
+      "proposed_label": "Reported service-provider notification and recipient choice result",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Notifies the recipient which component supplies the named service to the sender. service and provider are required; hops is optional. The optional chosen result identifies the component the recipient will use for that service.",
+      "mapping_boundary": "Keep sender’s provider and recipient’s chosen provider distinct. hops counts ISA components between sender and provider, not elapsed time or necessarily IP routers. No hop default is declared. Absence of chosen is not a fabricated provider or proof of rejection. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "UCI",
+        "Count",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-NOTIFICATION",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "ISA service name as defined by the source, without the word service.",
+          "default_as_source": null
+        },
+        {
+          "name": "provider",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Provider serving the component sending this command.",
+          "default_as_source": null
+        },
+        {
+          "name": "hops",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Number of ISA components in the route between sender and provider.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "chosen",
+          "type": "UCI",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Provider the recipient will use for the named service.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "must",
+          "statement": "service must name a source-defined service without the word service."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-237",
+      "entry_id": "ISA-DMS-237",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Service Provider For Component",
+      "element_kind": "command",
+      "native_type": "service: String; component: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 44,
+      "pdf_pages": [
+        59
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Service Provider For Component, printed p.44 / PDF p.59",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "e946f620cae14c76fc8f28144f84287758a813357430ce38a10a31eb1de30982",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-237",
+      "proposed_label": "Requested provider identity for a component and service",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the provider UCI for a specified ISA service and specified component. Both inputs and the provider result are required single values.",
+      "mapping_boundary": "The component input identifies the service consumer of interest; provider identifies its supplier. A provider query is neither a recommendation nor an authorization grant. Do not turn the single required result into an invented optional or plural result. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "UCI"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-LOOKUP",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "ISA service name as defined by the source, without the word service.",
+          "default_as_source": null
+        },
+        {
+          "name": "component",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component whose service-provider identity is desired.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "provider",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component providing the named service to the specified component.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "must",
+          "statement": "service must name a source-defined service without the word service."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-238",
+      "entry_id": "ISA-DMS-238",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Authorization Service",
+      "element_kind": "command",
+      "native_type": "service: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 44,
+      "pdf_pages": [
+        59
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Authorization Service, printed p.44 / PDF p.59",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "9c6ace3a07dde1d3c42b7d55b18af8f18d389871695b182468b723ad869c81b9",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-238",
+      "proposed_label": "Recommended authorization service provider",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Recommends a component for the recipient’s Authorization Service. Declaring support expresses a desire for this recommendation. An omitted service parameter explicitly means no acceptable provider is currently available.",
+      "mapping_boundary": "The optional service:UCI is a provider identifier, not the service-name String used by other commands. A recommendation does not establish forced selection, successful registration, availability of every service or permission to perform an operation. Omission has the stated meaning; do not replace it with an empty identifier or a guessed default. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "UCI"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-RECOMMENDATION",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "UCI",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Recommended Authorization Service provider; omission means none acceptable is currently available.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "specified omission semantics",
+          "statement": "No service parameter means no acceptable service provider is currently available."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-239",
+      "entry_id": "ISA-DMS-239",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Communication Service",
+      "element_kind": "command",
+      "native_type": "service: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 44,
+      "pdf_pages": [
+        59,
+        60
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Communication Service, printed p.44 / PDF pp.59–60",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "f4087556f41cf7f7bf1da1da6875648f2d4226576bddf7141466f1844b06cc57",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-239",
+      "proposed_label": "Recommended communication service provider",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Recommends a component for the recipient’s Communication Service. Declaring support expresses a desire for this recommendation. An omitted service parameter explicitly means no acceptable provider is currently available.",
+      "mapping_boundary": "The optional service:UCI is a provider identifier, not the service-name String used by other commands. A recommendation does not establish forced selection, successful registration, availability of every service or permission to perform an operation. Omission has the stated meaning; do not replace it with an empty identifier or a guessed default. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "UCI"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-RECOMMENDATION",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "UCI",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Recommended Communication Service provider; omission means none acceptable is currently available.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "specified omission semantics",
+          "statement": "No service parameter means no acceptable service provider is currently available."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-240",
+      "entry_id": "ISA-DMS-240",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Live Data Service",
+      "element_kind": "command",
+      "native_type": "service: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 45,
+      "pdf_pages": [
+        60
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Live Data Service, printed p.45 / PDF p.60",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "6802ce1445a9da76957858abdc080404516087036a88fff24be467f9a999a6e0",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-240",
+      "proposed_label": "Recommended live data service provider",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Recommends a component for the recipient’s Live Data Service. Declaring support expresses a desire for this recommendation. An omitted service parameter explicitly means no acceptable provider is currently available.",
+      "mapping_boundary": "The optional service:UCI is a provider identifier, not the service-name String used by other commands. A recommendation does not establish forced selection, successful registration, availability of every service or permission to perform an operation. Omission has the stated meaning; do not replace it with an empty identifier or a guessed default. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "UCI"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-RECOMMENDATION",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "UCI",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Recommended Live Data Service provider; omission means none acceptable is currently available.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "specified omission semantics",
+          "statement": "No service parameter means no acceptable service provider is currently available."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-245",
+      "entry_id": "ISA-DMS-245",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Sibling Service Providers",
+      "element_kind": "command",
+      "native_type": "service: String; provider: UCI; visited: UCI; ttl: Count",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 46,
+      "pdf_pages": [
+        61
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Sibling Service Providers, printed p.46 / PDF p.61",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1a39787a6799bff50b53e37cb55ae02e7f81eb25da4fd56b5bdd1dc62cedf260",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-245",
+      "proposed_label": "Requested sibling providers for an ISA service",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves provider UCIs that supply the specified service and are siblings of the supplied provider component. Includes an ordered visited list and optional ISA-component search-depth limit.",
+      "mapping_boundary": "visited is required but may be empty; siblings is also required and may be empty. ttl:Count limits ISA-component distance, not a duration or IP packet TTL. Do not invent a default depth, sibling ordering, physical attachment or additional provider-selection policy. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "UCI",
+        "Count",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SERVICE-LOOKUP",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "ISA service name as defined by the source, without the word service.",
+          "default_as_source": null
+        },
+        {
+          "name": "provider",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Provider whose sibling providers are sought.",
+          "default_as_source": null
+        },
+        {
+          "name": "visited",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Components already queried, ordered initial to most recent.",
+          "default_as_source": null
+        },
+        {
+          "name": "ttl",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Maximum ISA-component distance for gathering provider information.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "siblings",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Components determined to provide the specified service.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "must",
+          "statement": "service must name a source-defined service without the word service."
+        }
+      ],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-248",
+      "entry_id": "ISA-DMS-248",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Start Data Input",
+      "element_kind": "command",
+      "native_type": "name: String; source url: URL",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 47,
+      "pdf_pages": [
+        62
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Start Data Input, printed p.47 / PDF p.62",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "49ce405f64772469fcc6d41fe9f72c0522755c20da28844c347e12ceaa279762",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-248",
+      "proposed_label": "Requested start of named inbound data transfer",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Starts data transfer to the component from source url. name identifies the transfer. A SUCCESS response means transfer has started; ongoing/final transfer information is available through the corresponding Data Inputs entry.",
+      "mapping_boundary": "SUCCESS is not proof that all bytes have arrived. source url is inbound source, not a destination or System identifier. Do not invent a transfer format, transport, completion timestamp or bytes transferred; the associated Data Transfer representation describes a URL endpoint with optional state/rate/completion. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "URL",
+        "Response Code",
+        "Data Transfer",
+        "General State",
+        "General Code",
+        "Measured Mbpsec",
+        "Mbpsec",
+        "Percent"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-DATA-TRANSFER-START",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name to assign to this data transfer.",
+          "default_as_source": null
+        },
+        {
+          "name": "source url",
+          "type": "URL",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Location from which to retrieve data.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "SUCCESS meaning",
+          "statement": "SUCCESS indicates the transfer has started, not completed."
+        }
+      ],
+      "related_reported_properties": [
+        "Data Inputs"
+      ]
+    },
+    {
+      "id": "ISA-CMD-249",
+      "entry_id": "ISA-DMS-249",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Start Data Output",
+      "element_kind": "command",
+      "native_type": "name: String; url: URL; data name: String",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 47,
+      "pdf_pages": [
+        62,
+        63
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Start Data Output, printed p.47 / PDF pp.62–63",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8abc0e5217e91f9e83206277d5497410a3e81d04eee625f940ae625c95d6b33f",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-249",
+      "proposed_label": "Requested start of named outbound data transfer",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Starts data transfer from the component to url under a supplied transfer name. Optional data name identifies which item to transfer; source prose says an identifier is needed if multiple items could be transferred. SUCCESS means transfer started, with information in Data Outputs.",
+      "mapping_boundary": "Preserve optional0-1 cardinality and the conditional prose about multiple items. name identifies the transfer, whereas data name identifies the data. No wildcard, all-data default, transport, completed upload or new media URL is inferred. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String",
+        "URL",
+        "Response Code",
+        "Data Transfer",
+        "General State",
+        "General Code",
+        "Measured Mbpsec",
+        "Mbpsec",
+        "Percent"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-DATA-TRANSFER-START",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name to assign to this data transfer.",
+          "default_as_source": null
+        },
+        {
+          "name": "url",
+          "type": "URL",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Destination at which to place data.",
+          "default_as_source": null
+        },
+        {
+          "name": "data name",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Data-item designator; needed if multiple items could be transferred.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "conditional prose",
+          "statement": "Providing a data identifier would be needed if multiple items could be transferred."
+        },
+        {
+          "modal": "SUCCESS meaning",
+          "statement": "SUCCESS indicates the transfer has started, not completed."
+        }
+      ],
+      "related_reported_properties": [
+        "Data Outputs"
+      ]
+    },
+    {
+      "id": "ISA-CMD-250",
+      "entry_id": "ISA-DMS-250",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Stop Data Input",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 48,
+      "pdf_pages": [
+        63
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Stop Data Input, printed p.48 / PDF p.63",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "636f884033e126dda4053438bbd84b4e8a710fa976eaccf4a78569b0367f0f4f",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-250",
+      "proposed_label": "Requested stop of named inbound data transfer",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests stopping data transfer to the component, identified by required name:String.",
+      "mapping_boundary": "The name selects a transfer, not a property, filename, service or all traffic. No deletion of transferred content, transfer restart, successful stop or physical-device shutdown is inferred. No command-specific Results table is declared. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-DATA-TRANSFER-STOP",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the transfer to stop.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "Data Inputs"
+      ]
+    },
+    {
+      "id": "ISA-CMD-251",
+      "entry_id": "ISA-DMS-251",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Stop Data Output",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 48,
+      "pdf_pages": [
+        63
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Stop Data Output, printed p.48 / PDF p.63",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ba9b34b7c7c19bb84393cd2e4f175c62b412718ef10cc9b915fce07e37d8f00f",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-251",
+      "proposed_label": "Requested stop of named outbound data transfer",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests stopping data transfer from the component, identified by required name:String.",
+      "mapping_boundary": "The name selects a transfer, not a property, filename, service or all traffic. No deletion of transferred content, transfer restart, successful stop or physical-device shutdown is inferred. No command-specific Results table is declared. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-DATA-TRANSFER-STOP",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the transfer to stop.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following heading; generic Response/acknowledgement remains separate.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "Data Outputs"
+      ]
+    },
+    {
+      "id": "ISA-CMD-254",
+      "entry_id": "ISA-DMS-254",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Trace Route",
+      "element_kind": "command",
+      "native_type": "target: UCI; visited: UCI; ttl: Count",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 48,
+      "pdf_pages": [
+        63,
+        64
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Trace Route, printed p.48 / PDF pp.63–64",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ab12de454a97864a4c31206f70b0b60660b2399562a45f736d1c970321a98ade",
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-254",
+      "proposed_label": "Requested ordered ISA message-routing path",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Determines the component sequence through which a message would be routed to target. visited records the already traced path from initial to most recent; optional ttl bounds ISA-component distance. The required route result is a possibly empty list ordered requester to target.",
+      "mapping_boundary": "This is an ISA message-routing query, not proof of physical topology, an executed data transfer, or an IP traceroute probe. Required empty-capable lists are not optional scalar values. No unlimited-depth default, elapsed time or packet-hop algorithm is invented. This is a source-defined request/result contract, not a performed operation, verified endpoint, case capability or measured equipment value.",
+      "dependency_terms": [
+        "UCI",
+        "Count",
+        "Integer"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. General Request/Response, authorization and architecture reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-ISA-ROUTING",
+      "parameters": [
+        {
+          "name": "target",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Target component for the routing query.",
+          "default_as_source": null
+        },
+        {
+          "name": "visited",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Already traced components, ordered initial to most recent.",
+          "default_as_source": null
+        },
+        {
+          "name": "ttl",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Maximum ISA-component distance for the trace.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "route",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Component path ordered from requester to target.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
     }
   ],
   "supporting_definitions": [
@@ -4158,6 +5314,933 @@
       "native_form": "Float",
       "source_units": "degrees / second",
       "range_as_source": null
+    },
+    {
+      "entry_id": "ISA-DMS-266",
+      "native_term": "Boolean Wrapper",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Boolean Wrapper, printed p.51 / PDF 66",
+      "inspected_content_summary": "Boolean-form wrapper used where a Boolean participates in filtering logic; no range or unit specified. Source text at PDF66 was inspected.",
+      "source_span_sha256": "52938db38651cf1fa4b0724dbcba2f9a6ecf98ab133fd4184d148eddd760ba58",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_form": "Boolean"
+    },
+    {
+      "entry_id": "ISA-DMS-303",
+      "native_term": "Message",
+      "element_kind": "data element",
+      "section": "6.1",
+      "printed_page": 57,
+      "pdf_pages": [
+        72
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.1 Message, printed p.57 / PDF 72",
+      "inspected_content_summary": "Union of seven ISA message alternatives. This review establishes the returned result type, not completion of every message-envelope, authentication or encoding requirement.",
+      "source_span_sha256": "99f292cdec710e951247713e23d7c02aa93b926a63dbe7b1ae732a3fd9631812",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "Administrative",
+        "Config",
+        "Event",
+        "Registration",
+        "Request",
+        "Response",
+        "Status"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-456",
+      "native_term": "Response Code",
+      "element_kind": "data element",
+      "section": "9.1",
+      "printed_page": 117,
+      "pdf_pages": [
+        132
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-06",
+      "source_locator": "ISA DMS 6.0r12 §9.1 Response Code, printed p.117 / PDF 132",
+      "inspected_content_summary": "Sealed request-status/disposition enum. Generic SUCCESS denotes successful completion of the requested command; the Start Data commands explicitly define their completed request as starting a transfer, not completing the whole transfer.",
+      "source_span_sha256": "d7d44df1142cefd633fc3f5a734d08b03dce87062e298be1142c2676565cfe27",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "BUSY",
+        "COMMAND NOT AVAILABLE",
+        "FAILED",
+        "IN PROGRESS",
+        "INSUFFICIENT TIME",
+        "INVALID ARGS",
+        "INVALID COMMAND",
+        "PERMISSION DENIED",
+        "QUEUED",
+        "SUCCESS"
+      ],
+      "sealed": true,
+      "value_meanings": {
+        "BUSY": "Too busy to execute.",
+        "COMMAND NOT AVAILABLE": "Declared command currently not ready.",
+        "FAILED": "Could not successfully complete requested command.",
+        "IN PROGRESS": "Execution begun but unfinished.",
+        "INSUFFICIENT TIME": "No attempt because completion before requested stale time is not possible.",
+        "INVALID ARGS": "Request has invalid arguments.",
+        "INVALID COMMAND": "Request names an invalid command.",
+        "PERMISSION DENIED": "Request denied.",
+        "QUEUED": "Queued for subsequent execution.",
+        "SUCCESS": "Requested command successfully completed; honor command-specific definition of completion."
+      }
+    },
+    {
+      "entry_id": "ISA-DMS-457",
+      "native_term": "Comparator",
+      "element_kind": "data element",
+      "section": "10.1",
+      "printed_page": 118,
+      "pdf_pages": [
+        133
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.1 Comparator, printed p.118 / PDF 133",
+      "inspected_content_summary": "Sealed comparison enum: equality, inequality and ordered comparisons. No alternative comparator tokens or coercion rules invented.",
+      "source_span_sha256": "12dd6c79d4d08a082e74cbecf3fd313cb5e94a08495cff09fe1025d76b6f9aab",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "EQ",
+        "GT",
+        "GTE",
+        "LT",
+        "LTE",
+        "NEQ"
+      ],
+      "sealed": true
+    },
+    {
+      "entry_id": "ISA-DMS-459",
+      "native_term": "Match",
+      "element_kind": "data element",
+      "section": "10.2",
+      "printed_page": 118,
+      "pdf_pages": [
+        133
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.2 Match, printed p.118 / PDF 133",
+      "inspected_content_summary": "Union of Boolean-valued match structures. Each variant’s necessary fields and recursive Match/Value references were inspected; no unspecified function name or evaluation engine is supplied.",
+      "source_span_sha256": "9d3d316588018146ffb830fe3532f2d4318c46414f5469e6cb6995e371a1d033",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "And Match",
+        "Boolean Function",
+        "Boolean Match",
+        "Boolean Wrapper",
+        "Not Match",
+        "Or Match"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-460",
+      "native_term": "Select",
+      "element_kind": "data element",
+      "section": "10.2",
+      "printed_page": 118,
+      "pdf_pages": [
+        133,
+        134
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.2 Select, printed p.118 / PDF 133,134",
+      "inspected_content_summary": "Selection union for Administrative, Config, Event and Status content structures; inspected as selection-family context. Data Query actually exposes four separately named optional select-clause fields.",
+      "source_span_sha256": "3ccf11feeb052317e85b399d728d50ed02f5f6c62016905ce5627fdea175f8a4",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "Administrative Select",
+        "Config Select",
+        "Event Select",
+        "Status Select"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-461",
+      "native_term": "Value",
+      "element_kind": "data element",
+      "section": "10.2",
+      "printed_page": 119,
+      "pdf_pages": [
+        134
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.2 Value, printed p.119 / PDF 134",
+      "inspected_content_summary": "Value-producing union used by comparisons and function arguments. Keep recursive selectors/functions/lists distinct from static values and do not invent evaluation behavior beyond definitions.",
+      "source_span_sha256": "198ba1c88952d29cd8b06e775a70b28348bb39d819e70a9260e85f7f808488c6",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [],
+      "native_variants": [
+        "Field Value Selector",
+        "List Value",
+        "Static Value",
+        "Value Function",
+        "Value Selector"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-462",
+      "native_term": "Administrative Select",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 119,
+      "pdf_pages": [
+        134
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Administrative Select, printed p.119 / PDF 134",
+      "inspected_content_summary": "Optional priority/stale selectors each default false; required extras String list may be empty. Selects desired Administrative content, not matched messages by itself.",
+      "source_span_sha256": "e49ff7377570657ec296ee5db62db56212849ae21018c0205ad59f32784ed994",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "priority",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "stale",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "extras",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired extra fields.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-463",
+      "native_term": "And Match",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 119,
+      "pdf_pages": [
+        134
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 And Match, printed p.119 / PDF 134",
+      "inspected_content_summary": "Required nonempty inputs:Match list combined with logical AND. No empty-input truth default invented.",
+      "source_span_sha256": "5076f1614d02f9349d8b7620cf3676cd9fa2682f2d5a95e8f5ab818196c48114",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "inputs",
+          "type": "Match",
+          "required": true,
+          "cardinality": "1+",
+          "structure": "List",
+          "source_role": "Inputs evaluated with logical AND.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-464",
+      "native_term": "Boolean Function",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 119,
+      "pdf_pages": [
+        134,
+        135
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Boolean Function, printed p.119 / PDF 134,135",
+      "inspected_content_summary": "Required name:String and required zero-or-more arguments:Function Parameter. Source labels it a Boolean-returning match-function call; function implementations/options remain separately specified.",
+      "source_span_sha256": "9a5fe7598d86b409f10d623631d8712ac1872c66d8db869941461a4862b8db26",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of function to call.",
+          "default_as_source": null
+        },
+        {
+          "name": "arguments",
+          "type": "Function Parameter",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Arguments supplied to function.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-465",
+      "native_term": "Boolean Match",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 120,
+      "pdf_pages": [
+        135
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Boolean Match, printed p.120 / PDF 135",
+      "inspected_content_summary": "Required left:Value, comparator:Comparator and right:Value. Retain the source’s duplicated description on comparator as a wording note, while its type and position establish the comparison role.",
+      "source_span_sha256": "a7a889f81af86d7c7b3a4d45f4db12365c477029b01832a287d99323987a5cc6",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "left",
+          "type": "Value",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Left comparison value.",
+          "default_as_source": null
+        },
+        {
+          "name": "comparator",
+          "type": "Comparator",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Comparator; source description repeats left-side-value wording.",
+          "default_as_source": null
+        },
+        {
+          "name": "right",
+          "type": "Value",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Right comparison value.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-466",
+      "native_term": "Config Select",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 120,
+      "pdf_pages": [
+        135
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Config Select, printed p.120 / PDF 135",
+      "inspected_content_summary": "Optional priority, stale and ccd Booleans default false; required empty-capable String lists name desired property states, observable states, command states and extras.",
+      "source_span_sha256": "fa9354baf3880b946aef60194d7ed4f941381edd1ca24b9597c524f83ea4d497",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "priority",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "stale",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "ccd",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "property states",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired property states.",
+          "default_as_source": null
+        },
+        {
+          "name": "observable states",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired observable states.",
+          "default_as_source": null
+        },
+        {
+          "name": "command states",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired command states.",
+          "default_as_source": null
+        },
+        {
+          "name": "extras",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired extras.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-467",
+      "native_term": "Data Query",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 120,
+      "pdf_pages": [
+        135,
+        136
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Data Query, printed p.120 / PDF 135,136",
+      "inspected_content_summary": "Four optional message-specific select clauses; each must be populated to receive that category. match clause:Match is required. with clause and without clause are required zero-or-more String lists enabling/disabling subscription options. Discover uses this structure for currently available messages; no future subscription or invented option vocabulary is implied.",
+      "source_span_sha256": "fafcfd5e891f5557b5aac29416be09cd7007cdcfd6c75175496bd84f331f61ea",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "admin select clause",
+          "type": "Administrative Select",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desired Administrative contents; present to receive this category.",
+          "default_as_source": null
+        },
+        {
+          "name": "config select clause",
+          "type": "Config Select",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desired Config contents; present to receive this category.",
+          "default_as_source": null
+        },
+        {
+          "name": "event select clause",
+          "type": "Event Select",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desired Event contents; present to receive this category.",
+          "default_as_source": null
+        },
+        {
+          "name": "status select clause",
+          "type": "Status Select",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desired Status contents; present to receive this category.",
+          "default_as_source": null
+        },
+        {
+          "name": "match clause",
+          "type": "Match",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Selection criteria.",
+          "default_as_source": null
+        },
+        {
+          "name": "with clause",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Subscription options to enable.",
+          "default_as_source": null
+        },
+        {
+          "name": "without clause",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Subscription options to disable.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-468",
+      "native_term": "Event Select",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 121,
+      "pdf_pages": [
+        136
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Event Select, printed p.121 / PDF 136",
+      "inspected_content_summary": "Optional priority/stale selection flags default false. Required zero-or-more String lists identify observables, detector properties and extras to receive.",
+      "source_span_sha256": "0d23fd8729cf90c152a8f4b54b6150749de858f9f94bae785e0fe1c866053076",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "priority",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "stale",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "observables",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired observables.",
+          "default_as_source": null
+        },
+        {
+          "name": "detector properties",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired detector properties.",
+          "default_as_source": null
+        },
+        {
+          "name": "extras",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired extras.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-469",
+      "native_term": "Field Value Selector",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 121,
+      "pdf_pages": [
+        136,
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Field Value Selector, printed p.121 / PDF 136,137",
+      "inspected_content_summary": "Required field:String reduces context to items supporting a named field; optional predicate:Match rejects false contexts and optional recursive field selection descends further. No missing-field value or implicit predicate is invented.",
+      "source_span_sha256": "b67ed49aea219212be0cbcb350948778e922c455b463dacd8d924b8269334c88",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "field",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Field required in current context.",
+          "default_as_source": null
+        },
+        {
+          "name": "predicate",
+          "type": "Match",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Optional test; false removes current object from context.",
+          "default_as_source": null
+        },
+        {
+          "name": "field selection",
+          "type": "Field Value Selector",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Optional recursive descent once field/predicate conditions pass.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-470",
+      "native_term": "Function Parameter",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 122,
+      "pdf_pages": [
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Function Parameter, printed p.122 / PDF 137",
+      "inspected_content_summary": "Required name:String and value:Value; supplies a named function argument, not an arbitrary unnamed JSON fragment.",
+      "source_span_sha256": "9c119ae5d0c24f3c393355f61e26aa8c0464cf56c178d0183e6772e97b105d50",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Parameter name.",
+          "default_as_source": null
+        },
+        {
+          "name": "value",
+          "type": "Value",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Parameter value.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-471",
+      "native_term": "List Value",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 122,
+      "pdf_pages": [
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 List Value, printed p.122 / PDF 137",
+      "inspected_content_summary": "Required value:Value list with zero-or-more entries. Source’s generic battlefield-entity description is retained as background wording, not a new semantic restriction on every query.",
+      "source_span_sha256": "0d8bcd3dec1b13c9df63e186c55edfdd7d4a0d9ad7395200376eab637b85385b",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Value",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "List of values.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-472",
+      "native_term": "Not Match",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 122,
+      "pdf_pages": [
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Not Match, printed p.122 / PDF 137",
+      "inspected_content_summary": "Required single input:Match whose Boolean result is logically negated.",
+      "source_span_sha256": "7c369bb3c8cf5c84a8791a08eabb63d48858b400222507b51b4ed9be4cc4c6e3",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "input",
+          "type": "Match",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Result to negate.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-473",
+      "native_term": "Or Match",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 122,
+      "pdf_pages": [
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Or Match, printed p.122 / PDF 137",
+      "inspected_content_summary": "Required nonempty inputs:Match list combined with logical OR; no empty-input default invented.",
+      "source_span_sha256": "bfa82f5b100d42a2f634310449eebdbd764fb313e77cd50a6ce28e0dec9ae9e7",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "inputs",
+          "type": "Match",
+          "required": true,
+          "cardinality": "1+",
+          "structure": "List",
+          "source_role": "Inputs evaluated with logical OR.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-474",
+      "native_term": "Static Value",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 122,
+      "pdf_pages": [
+        137
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Static Value, printed p.122 / PDF 137",
+      "inspected_content_summary": "Required value:Wildcard, using a type defined in the Data Model. Source general description does not authorize arbitrary unknown runtime types.",
+      "source_span_sha256": "b84b9dc06ec6fab8ef20434252ad8e0a5e29adc4cb5f389864218eced632a619",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Wildcard",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Any other type in the Data Model.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-475",
+      "native_term": "Status Select",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 123,
+      "pdf_pages": [
+        138
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Status Select, printed p.123 / PDF 138",
+      "inspected_content_summary": "Optional priority/stale selectors default false; required properties:String list may be empty and selects named property content.",
+      "source_span_sha256": "6a32d3cd1e40be2c21fff34d70b517d438af24fcdb8b0848b2134e2e8cf5be7a",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "priority",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "stale",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Desire to receive the corresponding field.",
+          "default_as_source": false
+        },
+        {
+          "name": "properties",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Names of desired properties.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-479",
+      "native_term": "Value Function",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 124,
+      "pdf_pages": [
+        139
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Value Function, printed p.124 / PDF 139",
+      "inspected_content_summary": "Required name:String and empty-capable arguments:Function Parameter list; this variant returns a value, unlike Boolean Function. No function vocabulary or algorithm invented.",
+      "source_span_sha256": "416164f916b612ed22fc00d869d0e526715fa0f05ed0b91928bba1168554aa94",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Function name.",
+          "default_as_source": null
+        },
+        {
+          "name": "arguments",
+          "type": "Function Parameter",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Function argument list.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-480",
+      "native_term": "Value Selector",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 124,
+      "pdf_pages": [
+        139
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Value Selector, printed p.124 / PDF 139",
+      "inspected_content_summary": "Required context:Value with optional predicate:Match and optional field selection:Field Value Selector. Predicate false removes the current node; extraction proceeds when fields exist and supplied tests pass.",
+      "source_span_sha256": "37897e0a0130edc876c465a342ca227b60feab17ad6decd81f24b0756844f1e3",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "native_fields": [
+        {
+          "name": "context",
+          "type": "Value",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Current context value.",
+          "default_as_source": null
+        },
+        {
+          "name": "predicate",
+          "type": "Match",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Optional context-object filter.",
+          "default_as_source": null
+        },
+        {
+          "name": "field selection",
+          "type": "Field Value Selector",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Optional field extraction.",
+          "default_as_source": null
+        }
+      ]
     }
   ],
   "reused_supporting_definitions": [
@@ -4765,6 +6848,300 @@
       "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "source_locator": "ISA DMS 6.0r12 §4.2 UCI, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-297",
+      "native_term": "URL",
+      "source_locator": "ISA DMS 6.0r12 §4.2 URL, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114 / PDF p.129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-359",
+      "native_term": "IP Address",
+      "source_locator": "ISA DMS 6.0r12 §8.2 IP Address, printed p.84 / PDF p.99",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-391",
+      "native_term": "IPv4 Address",
+      "source_locator": "ISA DMS 6.0r12 §8.3 IPv4 Address, printed p.96 / PDF p.111",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-392",
+      "native_term": "IPv6 Address",
+      "source_locator": "ISA DMS 6.0r12 §8.3 IPv6 Address, printed p.96 / PDF p.111",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-439",
+      "native_term": "Resource Descriptor",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Descriptor, printed p.110 / PDF p.125",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-440",
+      "native_term": "Resource Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Type, printed p.111 / PDF p.126",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-377",
+      "native_term": "Count",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Count, printed p.91 / PDF p.106",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF p.120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-379",
+      "native_term": "Data Transfer",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Data Transfer, printed p.92 / PDF p.107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-384",
+      "native_term": "General State",
+      "source_locator": "ISA DMS 6.0r12 §8.3 General State, printed p.93 / PDF p.108",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-344",
+      "native_term": "General Code",
+      "source_locator": "ISA DMS 6.0r12 §8.1 General Code, printed p.79 / PDF p.94",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-410",
+      "native_term": "Measured Mbpsec",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Mbpsec, printed p.101 / PDF p.116",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-284",
+      "native_term": "Mbpsec",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Mbpsec, printed p.53 / PDF p.68",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF p.69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-363",
+      "native_term": "Associative Array",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Associative Array, printed p.85 / PDF p.100",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
     }
   ],
   "shared_parameter_schemas": {
@@ -5521,81 +7898,639 @@
       },
       "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
       "question_ids": []
+    },
+    "ISA-CMD-IP-ASSIGNMENT": {
+      "applies_to": [
+        "ISA-DMS-161",
+        "ISA-DMS-227"
+      ],
+      "native_signature_by_command": {
+        "Add IP Address": "iface: String; address: IP Address",
+        "Remove IP Address": "iface: String"
+      },
+      "parameter_manifest_by_command": {
+        "Add IP Address": [
+          {
+            "name": "iface",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Interface name to which the IP address is assigned.",
+            "default_as_source": null
+          },
+          {
+            "name": "address",
+            "type": "IP Address",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "IP address to add to the interface.",
+            "default_as_source": null
+          }
+        ],
+        "Remove IP Address": [
+          {
+            "name": "iface",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Interface name from which the corresponding address is dissociated.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Add IP Address": [],
+        "Remove IP Address": []
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-DISCOVERY": {
+      "applies_to": [
+        "ISA-DMS-210"
+      ],
+      "native_signature_by_command": {
+        "Discover": "query: Data Query; include ucis: Boolean"
+      },
+      "parameter_manifest_by_command": {
+        "Discover": [
+          {
+            "name": "query",
+            "type": "Data Query",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Matching criteria and desired message contents.",
+            "default_as_source": null
+          },
+          {
+            "name": "include ucis",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Whether a list of matching component UCIs is requested.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Discover": [
+          {
+            "name": "components",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Matching components; included if the desire was indicated by include ucis.",
+            "default_as_source": null
+          },
+          {
+            "name": "messages",
+            "type": "Message",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "ISA messages matching the query.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-COMMUNICATION-PROBE": {
+      "applies_to": [
+        "ISA-DMS-223"
+      ],
+      "native_signature_by_command": {
+        "Ping": "No command-specific parameters declared"
+      },
+      "parameter_manifest_by_command": {
+        "Ping": []
+      },
+      "result_manifest_by_command": {
+        "Ping": []
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-VIDEO-RECOMMENDATION": {
+      "applies_to": [
+        "ISA-DMS-226"
+      ],
+      "native_signature_by_command": {
+        "Recommend Video Stream": "original: URL"
+      },
+      "parameter_manifest_by_command": {
+        "Recommend Video Stream": [
+          {
+            "name": "original",
+            "type": "URL",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Original video stream of interest.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Recommend Video Stream": [
+          {
+            "name": "recommended",
+            "type": "Resource Descriptor",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Description of a recommended access resource.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-SERVICE-NOTIFICATION": {
+      "applies_to": [
+        "ISA-DMS-236"
+      ],
+      "native_signature_by_command": {
+        "Service Notify": "service: String; provider: UCI; hops: Count"
+      },
+      "parameter_manifest_by_command": {
+        "Service Notify": [
+          {
+            "name": "service",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "ISA service name as defined by the source, without the word service.",
+            "default_as_source": null
+          },
+          {
+            "name": "provider",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Provider serving the component sending this command.",
+            "default_as_source": null
+          },
+          {
+            "name": "hops",
+            "type": "Count",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Number of ISA components in the route between sender and provider.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Service Notify": [
+          {
+            "name": "chosen",
+            "type": "UCI",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Provider the recipient will use for the named service.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-SERVICE-LOOKUP": {
+      "applies_to": [
+        "ISA-DMS-237",
+        "ISA-DMS-245"
+      ],
+      "native_signature_by_command": {
+        "Service Provider For Component": "service: String; component: UCI",
+        "Sibling Service Providers": "service: String; provider: UCI; visited: UCI; ttl: Count"
+      },
+      "parameter_manifest_by_command": {
+        "Service Provider For Component": [
+          {
+            "name": "service",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "ISA service name as defined by the source, without the word service.",
+            "default_as_source": null
+          },
+          {
+            "name": "component",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component whose service-provider identity is desired.",
+            "default_as_source": null
+          }
+        ],
+        "Sibling Service Providers": [
+          {
+            "name": "service",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "ISA service name as defined by the source, without the word service.",
+            "default_as_source": null
+          },
+          {
+            "name": "provider",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Provider whose sibling providers are sought.",
+            "default_as_source": null
+          },
+          {
+            "name": "visited",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Components already queried, ordered initial to most recent.",
+            "default_as_source": null
+          },
+          {
+            "name": "ttl",
+            "type": "Count",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Maximum ISA-component distance for gathering provider information.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Service Provider For Component": [
+          {
+            "name": "provider",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component providing the named service to the specified component.",
+            "default_as_source": null
+          }
+        ],
+        "Sibling Service Providers": [
+          {
+            "name": "siblings",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Components determined to provide the specified service.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-SERVICE-RECOMMENDATION": {
+      "applies_to": [
+        "ISA-DMS-238",
+        "ISA-DMS-239",
+        "ISA-DMS-240"
+      ],
+      "native_signature_by_command": {
+        "Set Authorization Service": "service: UCI",
+        "Set Communication Service": "service: UCI",
+        "Set Live Data Service": "service: UCI"
+      },
+      "parameter_manifest_by_command": {
+        "Set Authorization Service": [
+          {
+            "name": "service",
+            "type": "UCI",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Recommended Authorization Service provider; omission means none acceptable is currently available.",
+            "default_as_source": null
+          }
+        ],
+        "Set Communication Service": [
+          {
+            "name": "service",
+            "type": "UCI",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Recommended Communication Service provider; omission means none acceptable is currently available.",
+            "default_as_source": null
+          }
+        ],
+        "Set Live Data Service": [
+          {
+            "name": "service",
+            "type": "UCI",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Recommended Live Data Service provider; omission means none acceptable is currently available.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Set Authorization Service": [],
+        "Set Communication Service": [],
+        "Set Live Data Service": []
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-DATA-TRANSFER-START": {
+      "applies_to": [
+        "ISA-DMS-248",
+        "ISA-DMS-249"
+      ],
+      "native_signature_by_command": {
+        "Start Data Input": "name: String; source url: URL",
+        "Start Data Output": "name: String; url: URL; data name: String"
+      },
+      "parameter_manifest_by_command": {
+        "Start Data Input": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name to assign to this data transfer.",
+            "default_as_source": null
+          },
+          {
+            "name": "source url",
+            "type": "URL",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Location from which to retrieve data.",
+            "default_as_source": null
+          }
+        ],
+        "Start Data Output": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name to assign to this data transfer.",
+            "default_as_source": null
+          },
+          {
+            "name": "url",
+            "type": "URL",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Destination at which to place data.",
+            "default_as_source": null
+          },
+          {
+            "name": "data name",
+            "type": "String",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Data-item designator; needed if multiple items could be transferred.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Start Data Input": [],
+        "Start Data Output": []
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-DATA-TRANSFER-STOP": {
+      "applies_to": [
+        "ISA-DMS-250",
+        "ISA-DMS-251"
+      ],
+      "native_signature_by_command": {
+        "Stop Data Input": "name: String",
+        "Stop Data Output": "name: String"
+      },
+      "parameter_manifest_by_command": {
+        "Stop Data Input": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name of the transfer to stop.",
+            "default_as_source": null
+          }
+        ],
+        "Stop Data Output": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name of the transfer to stop.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Stop Data Input": [],
+        "Stop Data Output": []
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-ISA-ROUTING": {
+      "applies_to": [
+        "ISA-DMS-254"
+      ],
+      "native_signature_by_command": {
+        "Trace Route": "target: UCI; visited: UCI; ttl: Count"
+      },
+      "parameter_manifest_by_command": {
+        "Trace Route": [
+          {
+            "name": "target",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Target component for the routing query.",
+            "default_as_source": null
+          },
+          {
+            "name": "visited",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Already traced components, ordered initial to most recent.",
+            "default_as_source": null
+          },
+          {
+            "name": "ttl",
+            "type": "Count",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Maximum ISA-component distance for the trace.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Trace Route": [
+          {
+            "name": "route",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Component path ordered from requester to target.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
+      "question_ids": []
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "DMS6.0r12 §3.3: all12 assigned spatial-control/acquisition entries, full parameters/results and following-heading boundaries.",
+    "primary_text": "DMS6.0r12 §3.3: all16 assigned communication/media/service entries, complete parameters/results and following-heading boundaries.",
     "primary_text_pages": [
-      38,
-      55,
+      37,
+      51,
       56,
       57,
       58,
+      59,
+      60,
       61,
       62,
-      63
+      63,
+      64
     ],
     "primary_pages_visually_inspected": [
-      38,
-      55,
+      37,
+      51,
       56,
       57,
       58,
+      59,
+      60,
       61,
       62,
-      63
+      63,
+      64
     ],
     "additional_text_pages": [
-      67
+      27,
+      66,
+      72,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
     ],
     "additional_pages_visually_inspected": [
-      100,
-      109,
-      110,
-      113,
-      126,
-      127
+      72,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
     ],
+    "page_image_limitations": "Page27 image request failed; original text and prior ISA-02 evidence used. Page133 image unavailable; original enum/union text inspected. No claim of visual inspection for those two pages.",
     "new_supporting_definitions": [
-      "Rotation Percent Rate",
-      "Rotation Rate",
-      "Measured Degpsec",
-      "Degpsec"
+      "Boolean Wrapper",
+      "Message",
+      "Response Code",
+      "Comparator",
+      "Match",
+      "Select",
+      "Value",
+      "Administrative Select",
+      "And Match",
+      "Boolean Function",
+      "Boolean Match",
+      "Config Select",
+      "Data Query",
+      "Event Select",
+      "Field Value Selector",
+      "Function Parameter",
+      "List Value",
+      "Not Match",
+      "Or Match",
+      "Static Value",
+      "Status Select",
+      "Value Function",
+      "Value Selector"
     ],
-    "new_supporting_count": 4,
-    "unique_supporting_total": 129,
+    "new_supporting_count": 23,
+    "unique_supporting_total": 152,
     "reused_types": [
-      "Area of Interest",
-      "Associative Array",
-      "Name Value Pair",
-      "AOI Reason",
-      "Geographic Shape",
-      "Geographic Arc",
-      "Geographic Ellipse",
-      "Ellipsoid",
-      "Geographic Polygon",
-      "Geographic Polyline",
-      "Geographic Position",
-      "Rotation",
-      "Measured Degrees",
-      "Degrees",
-      "Measured Meters",
-      "Meters",
-      "Percent",
-      "Secs",
-      "UTC",
-      "UCI",
       "String",
-      "Float",
-      "Wildcard"
+      "Boolean",
+      "Integer",
+      "UCI",
+      "URL",
+      "UTC",
+      "IP Address",
+      "IPv4 Address",
+      "IPv6 Address",
+      "Resource Descriptor",
+      "Resource Type",
+      "Count",
+      "Name Value Pair",
+      "Wildcard",
+      "Data Transfer",
+      "General State",
+      "General Code",
+      "Measured Mbpsec",
+      "Mbpsec",
+      "Percent",
+      "Associative Array"
     ],
     "cross_page_checks": [
-      "Scan Area57–58",
-      "Slew Percent61–62",
-      "Rotation126–127"
+      "Start Data Output62–63",
+      "Trace Route63–64",
+      "Select133–134",
+      "Boolean Function134–135",
+      "Data Query135–136",
+      "Field Value Selector136–137"
     ],
-    "source_limits": "No invoked commands, physical movement, sensor capability or new case data. Rotation Rate pitch/roll descriptions versus Rotation are recorded locally as ISA-Q006; existing Orientation Q003 is not resolved."
+    "source_limits": "No network/probe/media connection or physical command executed. Query function/option vocabularies and full message envelopes remain with their assigned catalogue/companion reviews; inspected dependency meanings are saved and reusable. No new command interpretation question."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -5867,6 +8802,118 @@
         "Rotation126–127"
       ],
       "source_limits": "No invoked commands, physical movement, sensor capability or new case data. Rotation Rate pitch/roll descriptions versus Rotation are recorded locally as ISA-Q006; existing Orientation Q003 is not resolved."
+    },
+    "ISA-COMMANDS-COMMUNICATION-SERVICES": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "DMS6.0r12 §3.3: all16 assigned communication/media/service entries, complete parameters/results and following-heading boundaries.",
+      "primary_text_pages": [
+        37,
+        51,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "primary_pages_visually_inspected": [
+        37,
+        51,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "additional_text_pages": [
+        27,
+        66,
+        72,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "additional_pages_visually_inspected": [
+        72,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "page_image_limitations": "Page27 image request failed; original text and prior ISA-02 evidence used. Page133 image unavailable; original enum/union text inspected. No claim of visual inspection for those two pages.",
+      "new_supporting_definitions": [
+        "Boolean Wrapper",
+        "Message",
+        "Response Code",
+        "Comparator",
+        "Match",
+        "Select",
+        "Value",
+        "Administrative Select",
+        "And Match",
+        "Boolean Function",
+        "Boolean Match",
+        "Config Select",
+        "Data Query",
+        "Event Select",
+        "Field Value Selector",
+        "Function Parameter",
+        "List Value",
+        "Not Match",
+        "Or Match",
+        "Static Value",
+        "Status Select",
+        "Value Function",
+        "Value Selector"
+      ],
+      "new_supporting_count": 23,
+      "unique_supporting_total": 152,
+      "reused_types": [
+        "String",
+        "Boolean",
+        "Integer",
+        "UCI",
+        "URL",
+        "UTC",
+        "IP Address",
+        "IPv4 Address",
+        "IPv6 Address",
+        "Resource Descriptor",
+        "Resource Type",
+        "Count",
+        "Name Value Pair",
+        "Wildcard",
+        "Data Transfer",
+        "General State",
+        "General Code",
+        "Measured Mbpsec",
+        "Mbpsec",
+        "Percent",
+        "Associative Array"
+      ],
+      "cross_page_checks": [
+        "Start Data Output62–63",
+        "Trace Route63–64",
+        "Select133–134",
+        "Boolean Function134–135",
+        "Data Query135–136",
+        "Field Value Selector136–137"
+      ],
+      "source_limits": "No network/probe/media connection or physical command executed. Query function/option vocabularies and full message envelopes remain with their assigned catalogue/companion reviews; inspected dependency meanings are saved and reusable. No new command interpretation question."
     }
   },
   "specific_questions": [
@@ -5896,9 +8943,9 @@
     }
   ],
   "case_checks": [
-    "All73 case facts and all prior non-ISA/equipment cells retained; no request, measured result, image, implemented ISA capability or motion invented.",
-    "Point Orientation retains attachment-dependent reference wording and existing Q003. Slew Velocity retains new Q006 axis correspondence; no field swaps or coordinate conversion.",
-    "Take Range result schema is distinct from expected usable Range; Take Picture does not declare a command-specific image result. Bennett original resultTime remains unknown."
+    "All73 equipment statements and all earlier non-ISA display values are preserved; no real device address, provider, routing path or transfer state is invented.",
+    "Provider recommendations differ from selection and authorization. Transfer-start SUCCESS differs from transfer completion. Optional result omission and required empty-capable lists retain their source meanings.",
+    "No external endpoint was contacted and no native ISA command was sent. Six earlier source questions and Bennett original resultTime remain unchanged."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -5928,6 +8975,11 @@
       "All73 case facts and all prior non-ISA/equipment cells retained; no request, measured result, image, implemented ISA capability or motion invented.",
       "Point Orientation retains attachment-dependent reference wording and existing Q003. Slew Velocity retains new Q006 axis correspondence; no field swaps or coordinate conversion.",
       "Take Range result schema is distinct from expected usable Range; Take Picture does not declare a command-specific image result. Bennett original resultTime remains unknown."
+    ],
+    "ISA-COMMANDS-COMMUNICATION-SERVICES": [
+      "All73 equipment statements and all earlier non-ISA display values are preserved; no real device address, provider, routing path or transfer state is invented.",
+      "Provider recommendations differ from selection and authorization. Transfer-start SUCCESS differs from transfer completion. Optional result omission and required empty-capable lists retain their source meanings.",
+      "No external endpoint was contacted and no native ISA command was sent. Six earlier source questions and Bennett original resultTime remain unchanged."
     ]
   },
   "mapping_note": "Requests retain per-command native semantics and shared parameter families. Existing fields/defaults are not copied into incomplete source tables. Individual candidate rows are for owner review, not compulsory independent model classes.",
@@ -5941,39 +8993,43 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
-  "next_action": "Review the16 communication, media and service-selection assignments in the existing accelerated queue; no replay or per-group workbook export.",
+  "next_source_pass": "ISA-COMMANDS-READOUT-HISTORY",
+  "next_action": "Review the seven already assigned readout/history/archive commands; reuse the saved Data Query and response dependencies; no per-group workbook export.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-163",
-      "ISA-DMS-221",
-      "ISA-DMS-222",
-      "ISA-DMS-224",
-      "ISA-DMS-225",
-      "ISA-DMS-229",
-      "ISA-DMS-233",
-      "ISA-DMS-234",
-      "ISA-DMS-246",
-      "ISA-DMS-247",
-      "ISA-DMS-252",
-      "ISA-DMS-253"
+      "ISA-DMS-161",
+      "ISA-DMS-210",
+      "ISA-DMS-223",
+      "ISA-DMS-226",
+      "ISA-DMS-227",
+      "ISA-DMS-236",
+      "ISA-DMS-237",
+      "ISA-DMS-238",
+      "ISA-DMS-239",
+      "ISA-DMS-240",
+      "ISA-DMS-245",
+      "ISA-DMS-248",
+      "ISA-DMS-249",
+      "ISA-DMS-250",
+      "ISA-DMS-251",
+      "ISA-DMS-254"
     ],
-    "reviewed_total": 196,
-    "supported_total": 190,
-    "specific_questions_retained": 5,
-    "specific_questions_added": 1,
+    "reviewed_total": 212,
+    "supported_total": 206,
+    "specific_questions_retained": 6,
+    "specific_questions_added": 0,
     "specific_questions_total": 6,
-    "command_entries_reviewed": 66,
+    "command_entries_reviewed": 82,
     "command_entries_total": 96,
-    "command_unreviewed": 30,
+    "command_unreviewed": 14,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 223,
-    "new_candidate_rows": 12,
+    "information_review_rows": 239,
+    "new_candidate_rows": 16,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 4,
-    "unique_supporting_definitions": 129,
+    "new_supporting_types": 23,
+    "unique_supporting_definitions": 152,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   }
