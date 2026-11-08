@@ -16,7 +16,8 @@
     "ISA-COMMANDS-IMAGE-SETTINGS",
     "ISA-COMMANDS-AUTO-CONTROLS",
     "ISA-COMMANDS-CONFIGURATION",
-    "ISA-COMMANDS-CONTROL-LIFECYCLE"
+    "ISA-COMMANDS-CONTROL-LIFECYCLE",
+    "ISA-COMMANDS-SPATIAL-ACQUISITION"
   ],
   "primary_records": [
     {
@@ -3211,6 +3212,713 @@
       "results": [],
       "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
       "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-163",
+      "entry_id": "ISA-DMS-163",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Add Zone",
+      "element_kind": "command",
+      "native_type": "zones: Area of Interest",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 23,
+      "pdf_pages": [
+        38
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Add Zone, printed p.23 / PDF p.38",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "c9f12c076bec32fbd357bbe185340355fa52ac7e881bdccbf2a00c4117489978",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-163",
+      "proposed_label": "Requested addition or replacement of named operating zones",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Adds one or more operating zones to the Zones property, replacing existing entries having the same name.",
+      "mapping_boundary": "The input is a required nonempty Associative Array of Area of Interest values, not one unlabelled polygon. Area of Interest uses required Geographic Shape and optional AOI Reason default UNKNOWN. Do not invent an internal name field, a new ordering rule, a scan request or observed hazard geometry. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Area of Interest",
+        "Associative Array",
+        "Name Value Pair",
+        "AOI Reason",
+        "Geographic Shape"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-ZONE-MANAGEMENT",
+      "parameters": [
+        {
+          "name": "zones",
+          "type": "Area of Interest",
+          "required": true,
+          "cardinality": "1+",
+          "structure": "Associative Array",
+          "source_role": "Operating areas to add; same-name existing zones are replaced.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked."
+    },
+    {
+      "id": "ISA-CMD-221",
+      "entry_id": "ISA-DMS-221",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Move",
+      "element_kind": "command",
+      "native_type": "destination: Geographic Position",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 40,
+      "pdf_pages": [
+        55
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Move, printed p.40 / PDF p.55",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "e6347340c5c53799072cdba925e0d6c114700a9b552d4769ca0b76c2b0ba9c6b",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-221",
+      "proposed_label": "Requested component relocation to a geographic destination",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests movement from the current position to the specified geographic destination; the source defines successful completion as arrival there.",
+      "mapping_boundary": "Component relocation is not pointing a sensor at a position. The command does not specify a route, speed, obstacle-avoidance rule or observed arrival. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Geographic Position"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-POSITION-TARGET",
+      "parameters": [
+        {
+          "name": "destination",
+          "type": "Geographic Position",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Destination to which the component is to move.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "completion_condition_as_source": "Successful completion when the component arrives at the specified position."
+    },
+    {
+      "id": "ISA-CMD-222",
+      "entry_id": "ISA-DMS-222",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Observe",
+      "element_kind": "command",
+      "native_type": "position: Geographic Position; end time: UTC",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 40,
+      "pdf_pages": [
+        55
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Observe, printed p.40 / PDF p.55",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "89c0b9d98a50d6ebe78d5d5e4a7e8ab3a933a84d4d309877cc98da877963244d",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-222",
+      "proposed_label": "Requested observation of a position and participating-component result",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests observation of a specified geographic position by the recipient and/or controlled components, with a requested end time and a declared list of participating component identifiers.",
+      "mapping_boundary": "Observation may begin late and may continue after the requested end time. The components result is a required list with zero-or-more entries and may change over time; it is not a fixed deployment inventory or proof of immediate acquisition. end time is an absolute UTC instant, not a duration. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Geographic Position",
+        "UCI",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-OBSERVE",
+      "parameters": [
+        {
+          "name": "position",
+          "type": "Geographic Position",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Position to observe.",
+          "default_as_source": null
+        },
+        {
+          "name": "end time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Time at which the observation should end; source explicitly allows continuation.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "components",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Identifiers of components used for observation; set may change over time.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "timing_as_source": {
+        "start": "May be delayed by availability or coordination.",
+        "end": "May continue after specified end time."
+      }
+    },
+    {
+      "id": "ISA-CMD-224",
+      "entry_id": "ISA-DMS-224",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Point Orientation",
+      "element_kind": "command",
+      "native_type": "orientation: Rotation",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 41,
+      "pdf_pages": [
+        56
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Point Orientation, printed p.41 / PDF p.56",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "db0106f7f56216c94048a925405dc3292c188d6ef9a89c3730bd141efe5347b4",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-224",
+      "proposed_label": "Requested pointing orientation with attachment-dependent reference",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests pointing using a Rotation. For an attached component the parameter is a rotational offset from its home position in its own frame; for an unattached component the source specifies absolute Earth-Centered Earth-Fixed orientation.",
+      "mapping_boundary": "Attachment changes the stated reference convention. Preserve required yaw/pitch/roll and their ordered rotation definition; do not apply a universal local or world interpretation, invent a frame conversion, equate home position with current position, or close the existing Orientation frame question. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Rotation"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-ORIENTATION-TARGET",
+      "parameters": [
+        {
+          "name": "orientation",
+          "type": "Rotation",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Attached: offset from home in own frame. Unattached: absolute Earth-Centered Earth-Fixed orientation, as stated in the source.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "related_existing_question_ids": [
+        "ISA-Q003"
+      ]
+    },
+    {
+      "id": "ISA-CMD-225",
+      "entry_id": "ISA-DMS-225",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Point Position",
+      "element_kind": "command",
+      "native_type": "position: Geographic Position",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 41,
+      "pdf_pages": [
+        56
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Point Position, printed p.41 / PDF p.56",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "65339b52b374b5f9562c367811da7b29907dbf08110d762fa94a653a3556178f",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-225",
+      "proposed_label": "Requested pointing toward an absolute geographic position",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests pointing toward a location supplied as an absolute Geographic Position.",
+      "mapping_boundary": "A pointing target is not a movement destination, the observer position, an angular orientation value or a detected target result. No geographic-to-gimbal transform is supplied by this entry. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Geographic Position"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-POSITION-TARGET",
+      "parameters": [
+        {
+          "name": "position",
+          "type": "Geographic Position",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Absolute position at which the component should point.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked."
+    },
+    {
+      "id": "ISA-CMD-229",
+      "entry_id": "ISA-DMS-229",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Remove Zone",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Remove Zone, printed p.42 / PDF p.57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "7361fbde349c14b3f79f405793d547f27058d4d88367e185f92bc6459ba5fe09",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-229",
+      "proposed_label": "Requested removal of a named operating zone",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Removes the named zone from the Zones property; the source says the name should match an existing entry.",
+      "mapping_boundary": "This is named-zone configuration removal, not clearing all zones, removing an arbitrary geometric region, deleting an observation or establishing that removal occurred. Do not extend name-based manipulation to anonymous areas. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "String",
+        "Area of Interest"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-ZONE-MANAGEMENT",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of zone to remove; should match an entry in Zones.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "should",
+          "statement": "Name should match an entry in the Zones property."
+        }
+      ]
+    },
+    {
+      "id": "ISA-CMD-233",
+      "entry_id": "ISA-DMS-233",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Scan Area",
+      "element_kind": "command",
+      "native_type": "area: Geographic Polygon; stop: UTC",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57,
+        58
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Scan Area, printed pp.42–43 / PDF pp.57–58",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "47880de156e69d3788977ba5b23ca0b9a792a3945e857125a472bf32f326c79a",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-233",
+      "proposed_label": "Requested geographic-area scan with absolute stop time",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests scanning a specified Geographic Polygon until the specified UTC stop time.",
+      "mapping_boundary": "A Geographic Polygon contains at least three ordered positions and closes last to first. It is not an arbitrary Geographic Shape or an unordered list, and stop is not a duration. No scan path, dwell time or repeated-cycle rule is declared. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Geographic Polygon",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-SCAN",
+      "parameters": [
+        {
+          "name": "area",
+          "type": "Geographic Polygon",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Area to scan.",
+          "default_as_source": null
+        },
+        {
+          "name": "stop",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Absolute time to stop the scan.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked."
+    },
+    {
+      "id": "ISA-CMD-234",
+      "entry_id": "ISA-DMS-234",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Scan Points",
+      "element_kind": "command",
+      "native_type": "points: Geographic Polyline; stop: UTC",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 43,
+      "pdf_pages": [
+        58
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Scan Points, printed p.43 / PDF p.58",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "72502f70fee7766ce5c6c4fb8cf65a475f3420a0057b724afb54f1e28affea0a",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-234",
+      "proposed_label": "Requested ordered-point scan with absolute stop time",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests scanning the geographic points in the specified order until the specified UTC stop time.",
+      "mapping_boundary": "The points parameter is one Geographic Polyline containing at least two ordered positions, not a polygon or a command-level untyped list. Do not add closure, looping, interpolation, navigation or a duration interpretation. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Geographic Polyline",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-SCAN",
+      "parameters": [
+        {
+          "name": "points",
+          "type": "Geographic Polyline",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Geographic points to scan in the supplied order.",
+          "default_as_source": null
+        },
+        {
+          "name": "stop",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Absolute time to stop the scan.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked."
+    },
+    {
+      "id": "ISA-CMD-246",
+      "entry_id": "ISA-DMS-246",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Slew Percent",
+      "element_kind": "command",
+      "native_type": "orientation: Rotation Percent Rate; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 46,
+      "pdf_pages": [
+        61,
+        62
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Slew Percent, printed pp.46–47 / PDF pp.61–62",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ab8100d830e12d5efcf8caf552aec7f843dcd6b3f0fa07da8d20c7a42d025bff",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-246",
+      "proposed_label": "Requested relative rotational rates for a bounded duration",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests rotation for a required duration using per-axis percentages of maximum rotation speed. The native orientation parameter is a Rotation Percent Rate, and the source specifies zero rates to stop slewing.",
+      "mapping_boundary": "Despite its name, orientation holds three rates, not target angles. Each pitch/roll/yaw rate is required. duration is required; do not import Adjust omitted-duration continuation or its 100% default. No maximum-speed value, hard Percent bounds or physical motion is inferred. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Rotation Percent Rate",
+        "Percent",
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-BOUNDED-SLEW",
+      "parameters": [
+        {
+          "name": "orientation",
+          "type": "Rotation Percent Rate",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Three per-axis rates expressed as percentages of maximum rotation speed.",
+          "default_as_source": null,
+          "zero_semantics": "The source describes setting the orientation rate parameter to zero to stop slewing."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Required command interval intended to avoid indefinite rotation if communications prevent a later stop request.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "stop_behavior_as_source": "Slew Percent with orientation rate values zero stops ongoing slewing."
+    },
+    {
+      "id": "ISA-CMD-247",
+      "entry_id": "ISA-DMS-247",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Slew Velocity",
+      "element_kind": "command",
+      "native_type": "rate: Rotation Rate; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 47,
+      "pdf_pages": [
+        62
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Slew Velocity, printed p.47 / PDF p.62",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a1942357bf8d41204268641eb2dde4087c6961b870d1f0cb0970b4d2f2d58b13",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_QUESTION_RECORDED",
+      "disposition": "QUESTION_RECORDED",
+      "target_row": "ISA-C-247",
+      "proposed_label": "Requested angular-velocity slewing — axis-description question",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "PARTIAL",
+      "original_meaning": "Requests rotation for a required duration using three Measured Degpsec fields in Rotation Rate. The source describes zero rates as a stop request. The type table assigns pitch to x and roll to y while Rotation assigns pitch to y-prime and roll to x-double-prime.",
+      "mapping_boundary": "Angular velocity is distinct from target orientation and percentage rate. Required parameters, units and stop behavior are supported. Preserve native axes as printed; do not swap pitch/roll, assume conventions agree, or invent a conversion. ISA-Q006 isolates this axis correspondence. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Rotation Rate",
+        "Measured Degpsec",
+        "Degpsec",
+        "Secs",
+        "Rotation"
+      ],
+      "question_id": "ISA-Q006",
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-BOUNDED-SLEW",
+      "parameters": [
+        {
+          "name": "rate",
+          "type": "Rotation Rate",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Required three-axis angular-rate structure; native axis descriptions retained under ISA-Q006.",
+          "default_as_source": null,
+          "zero_semantics": "The source describes setting the rate parameter to zero to stop slewing."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Required command interval intended to prevent indefinite rotation if communications prevent a later stop request.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "source_discrepancy": {
+        "Rotation": "pitch about y-prime; roll about x-double-prime; yaw about z",
+        "Rotation Rate": "pitch rate about x; roll rate about y; yaw rate about z",
+        "question_id": "ISA-Q006",
+        "correction_invented": false
+      },
+      "stop_behavior_as_source": "Slew Velocity with rate values zero stops ongoing slewing."
+    },
+    {
+      "id": "ISA-CMD-252",
+      "entry_id": "ISA-DMS-252",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Take Picture",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 48,
+      "pdf_pages": [
+        63
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Take Picture, printed p.48 / PDF p.63",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "443423df467c18c91ec7e5cccbfde101ed25dd0fcfd22f1595dab5f58e247a81",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-252",
+      "proposed_label": "Requested image generation from the current view",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests generation of an image of the component's current view.",
+      "mapping_boundary": "This entry declares neither command-specific parameters nor a Results table. Do not invent a raw-image result, resource URL, capture timestamp, file format or completion payload. This is not a claim that ISA cannot deliver images through other messages or resources. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-ACQUISITION",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This does not imply absence of protocol acknowledgements, status messages or media delivery through other mechanisms.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked."
+    },
+    {
+      "id": "ISA-CMD-253",
+      "entry_id": "ISA-DMS-253",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Take Range",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 48,
+      "pdf_pages": [
+        63
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Take Range, printed p.48 / PDF p.63",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a77a7c1e82aab37b874181d39bd8b87a91d728026e0dcbfb67f2a3afb10a04cf",
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-253",
+      "proposed_label": "Requested ranging with declared measured-distance result",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests determining distance to an object and declares one required range result of type Measured Meters. The source recommends availability only when Armed is true.",
+      "mapping_boundary": "A measured-distance result differs from the reported expected usable Range capability. Preserve the source should restriction, not an invented shall. Required value and optional one-standard-deviation error belong to Measured Meters; omitted error is not perfect accuracy. No object-selection field, sensing mechanism or actual ranging result is supplied here. This records a source-defined request/result contract, not invocation, successful execution, a measured case value or a source-case capability.",
+      "dependency_terms": [
+        "Measured Meters",
+        "Meters"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SPATIAL-ACQUISITION",
+      "parameters": [],
+      "results": [
+        {
+          "name": "range",
+          "type": "Measured Meters",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Distance to the object ranged.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original entry, all parameter/result tables and continuations inspected to the following heading; page images checked.",
+      "source_modal_constraints": [
+        {
+          "modal": "should",
+          "statement": "Command should be available only when the Armed property is true."
+        }
+      ],
+      "related_reported_properties": [
+        "Armed",
+        "Range"
+      ]
     }
   ],
   "supporting_definitions": [
@@ -3293,6 +4001,163 @@
       ],
       "sealed_as_source": false,
       "native_fields": []
+    },
+    {
+      "entry_id": "ISA-DMS-442",
+      "native_term": "Rotation Percent Rate",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 112,
+      "pdf_pages": [
+        127
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Rotation Percent Rate, printed p.112 / PDF p.127",
+      "inspected_content_summary": "Three required Percent fields: pitch rate, roll rate, yaw rate; each relative to maximum rotation speed. This is not a Rotation of target angles and supplies no omitted-axis default.",
+      "source_span_sha256": "1dabf1e19d52fb82b72529bc9f74e2f348bfcc55b9897cfeb01ec146642e60ed",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "native_fields": [
+        {
+          "name": "pitch rate",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Pitch rate as a percentage of maximum rotation rate.",
+          "default_as_source": null
+        },
+        {
+          "name": "roll rate",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Roll rate as a percentage of maximum rotation rate.",
+          "default_as_source": null
+        },
+        {
+          "name": "yaw rate",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Yaw rate as a percentage of maximum rotation rate.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-443",
+      "native_term": "Rotation Rate",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 112,
+      "pdf_pages": [
+        127
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Rotation Rate, printed p.112 / PDF p.127",
+      "inspected_content_summary": "Three required Measured Degpsec fields. Preserve source table descriptions: pitch rate about x in yz; roll rate about y in xz; yaw rate about z in xy. These pitch/roll axis labels differ from Rotation. ISA-Q006 retains the exact ambiguity without rewriting any field.",
+      "source_span_sha256": "1a709c6bf6c02d0393f31e9d482c9dd323480c0fb56d9cd43c81edf372e2c33d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "native_fields": [
+        {
+          "name": "pitch rate",
+          "type": "Measured Degpsec",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Angular velocity about the x-axis (yz plane), relative to reference frame, as printed.",
+          "default_as_source": null
+        },
+        {
+          "name": "roll rate",
+          "type": "Measured Degpsec",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Angular velocity about the y-axis (xz plane), relative to reference frame, as printed.",
+          "default_as_source": null
+        },
+        {
+          "name": "yaw rate",
+          "type": "Measured Degpsec",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Angular velocity about the z-axis (xy plane), relative to reference frame, as printed.",
+          "default_as_source": null
+        }
+      ],
+      "related_question_ids": [
+        "ISA-Q006"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-400",
+      "native_term": "Measured Degpsec",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 98,
+      "pdf_pages": [
+        113
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Degpsec, printed p.98 / PDF p.113",
+      "inspected_content_summary": "Required value:Degpsec plus optional error:Degpsec. A supplied error is plus/minus one standard deviation; absent error is not zero or perfect accuracy. The rate quantity does not resolve axis mapping.",
+      "source_span_sha256": "9a023628d7eaf85a688762e0f9aa96b0f1b5b2d2205805bac5cb8d5bc40346fd",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Degpsec",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Measured angular-speed magnitude in one angular dimension.",
+          "default_as_source": null
+        },
+        {
+          "name": "error",
+          "type": "Degpsec",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Potential inaccuracy expressed as plus/minus one standard deviation.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-273",
+      "native_term": "Degpsec",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 52,
+      "pdf_pages": [
+        67
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degpsec, printed p.52 / PDF p.67",
+      "inspected_content_summary": "Float angular-velocity magnitude in one angular dimension in degrees/second; reference frame is supplied by context. Source Range cell is blank; no unsupported range, sign convention or reference-frame identifier is added.",
+      "source_span_sha256": "c933e7984438cc03f4f75f15128cf859fddced16d3461e6932b2bbc6a26f29b2",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "native_fields": [],
+      "native_form": "Float",
+      "source_units": "degrees / second",
+      "range_as_source": null
     }
   ],
   "reused_supporting_definitions": [
@@ -3578,6 +4443,328 @@
       "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-362",
+      "native_term": "Area of Interest",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Area of Interest, printed p.85 / PDF p.100",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-363",
+      "native_term": "Associative Array",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Associative Array, printed p.85 / PDF p.100",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF p.120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-336",
+      "native_term": "AOI Reason",
+      "source_locator": "ISA DMS 6.0r12 §8.1 AOI Reason, printed p.75 / PDF p.90",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-358",
+      "native_term": "Geographic Shape",
+      "source_locator": "ISA DMS 6.0r12 §8.2 Geographic Shape, printed p.84 / PDF p.99",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-385",
+      "native_term": "Geographic Arc",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Arc, printed p.94 / PDF p.109",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-386",
+      "native_term": "Geographic Ellipse",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Ellipse, printed p.94 / PDF p.109",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-381",
+      "native_term": "Ellipsoid",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Ellipsoid, printed pp.92–93 / PDF pp.107–108",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-387",
+      "native_term": "Geographic Polygon",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polygon, printed pp.94–95 / PDF pp.109–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-388",
+      "native_term": "Geographic Polyline",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polyline, printed p.95 / PDF p.110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Position, printed p.95 / PDF p.110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-441",
+      "native_term": "Rotation",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Rotation, printed pp.111–112 / PDF pp.126–127",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-401",
+      "native_term": "Measured Degrees",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Degrees, printed pp.98–99 / PDF pp.113–114",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52 / PDF p.67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-411",
+      "native_term": "Measured Meters",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed pp.101–102 / PDF pp.116–117",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed pp.53–54 / PDF pp.68–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF p.69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114 / PDF p.129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "source_locator": "ISA DMS 6.0r12 §4.2 UCI, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Reuse existing exact-edition field/quantity evidence. Area of Interest, Associative Array, Geographic Polygon/Polyline/Position and Rotation original page images were rechecked for command-specific cardinality/frame distinctions; no duplicate supporting count."
     }
   ],
   "shared_parameter_schemas": {
@@ -4033,63 +5220,382 @@
       },
       "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
       "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
+    },
+    "ISA-CMD-SPATIAL-ACQUISITION": {
+      "applies_to": [
+        "ISA-DMS-252",
+        "ISA-DMS-253"
+      ],
+      "native_signature_by_command": {
+        "Take Picture": "No command-specific parameters declared",
+        "Take Range": "No command-specific parameters declared"
+      },
+      "parameter_manifest_by_command": {
+        "Take Picture": [],
+        "Take Range": []
+      },
+      "result_manifest_by_command": {
+        "Take Picture": [],
+        "Take Range": [
+          {
+            "name": "range",
+            "type": "Measured Meters",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Distance to the object ranged.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
+    },
+    "ISA-CMD-SPATIAL-BOUNDED-SLEW": {
+      "applies_to": [
+        "ISA-DMS-246",
+        "ISA-DMS-247"
+      ],
+      "native_signature_by_command": {
+        "Slew Percent": "orientation: Rotation Percent Rate; duration: Secs",
+        "Slew Velocity": "rate: Rotation Rate; duration: Secs"
+      },
+      "parameter_manifest_by_command": {
+        "Slew Percent": [
+          {
+            "name": "orientation",
+            "type": "Rotation Percent Rate",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Three per-axis rates expressed as percentages of maximum rotation speed.",
+            "default_as_source": null,
+            "zero_semantics": "The source describes setting the orientation rate parameter to zero to stop slewing."
+          },
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Required command interval intended to avoid indefinite rotation if communications prevent a later stop request.",
+            "default_as_source": null
+          }
+        ],
+        "Slew Velocity": [
+          {
+            "name": "rate",
+            "type": "Rotation Rate",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Required three-axis angular-rate structure; native axis descriptions retained under ISA-Q006.",
+            "default_as_source": null,
+            "zero_semantics": "The source describes setting the rate parameter to zero to stop slewing."
+          },
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Required command interval intended to prevent indefinite rotation if communications prevent a later stop request.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Slew Percent": [],
+        "Slew Velocity": []
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": [
+        "ISA-Q006"
+      ]
+    },
+    "ISA-CMD-SPATIAL-OBSERVE": {
+      "applies_to": [
+        "ISA-DMS-222"
+      ],
+      "native_signature_by_command": {
+        "Observe": "position: Geographic Position; end time: UTC"
+      },
+      "parameter_manifest_by_command": {
+        "Observe": [
+          {
+            "name": "position",
+            "type": "Geographic Position",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Position to observe.",
+            "default_as_source": null
+          },
+          {
+            "name": "end time",
+            "type": "UTC",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Time at which the observation should end; source explicitly allows continuation.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Observe": [
+          {
+            "name": "components",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Identifiers of components used for observation; set may change over time.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
+    },
+    "ISA-CMD-SPATIAL-ORIENTATION-TARGET": {
+      "applies_to": [
+        "ISA-DMS-224"
+      ],
+      "native_signature_by_command": {
+        "Point Orientation": "orientation: Rotation"
+      },
+      "parameter_manifest_by_command": {
+        "Point Orientation": [
+          {
+            "name": "orientation",
+            "type": "Rotation",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Attached: offset from home in own frame. Unattached: absolute Earth-Centered Earth-Fixed orientation, as stated in the source.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Point Orientation": []
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
+    },
+    "ISA-CMD-SPATIAL-POSITION-TARGET": {
+      "applies_to": [
+        "ISA-DMS-221",
+        "ISA-DMS-225"
+      ],
+      "native_signature_by_command": {
+        "Move": "destination: Geographic Position",
+        "Point Position": "position: Geographic Position"
+      },
+      "parameter_manifest_by_command": {
+        "Move": [
+          {
+            "name": "destination",
+            "type": "Geographic Position",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Destination to which the component is to move.",
+            "default_as_source": null
+          }
+        ],
+        "Point Position": [
+          {
+            "name": "position",
+            "type": "Geographic Position",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Absolute position at which the component should point.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Move": [],
+        "Point Position": []
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
+    },
+    "ISA-CMD-SPATIAL-SCAN": {
+      "applies_to": [
+        "ISA-DMS-233",
+        "ISA-DMS-234"
+      ],
+      "native_signature_by_command": {
+        "Scan Area": "area: Geographic Polygon; stop: UTC",
+        "Scan Points": "points: Geographic Polyline; stop: UTC"
+      },
+      "parameter_manifest_by_command": {
+        "Scan Area": [
+          {
+            "name": "area",
+            "type": "Geographic Polygon",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Area to scan.",
+            "default_as_source": null
+          },
+          {
+            "name": "stop",
+            "type": "UTC",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Absolute time to stop the scan.",
+            "default_as_source": null
+          }
+        ],
+        "Scan Points": [
+          {
+            "name": "points",
+            "type": "Geographic Polyline",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Geographic points to scan in the supplied order.",
+            "default_as_source": null
+          },
+          {
+            "name": "stop",
+            "type": "UTC",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Absolute time to stop the scan.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Scan Area": [],
+        "Scan Points": []
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
+    },
+    "ISA-CMD-SPATIAL-ZONE-MANAGEMENT": {
+      "applies_to": [
+        "ISA-DMS-163",
+        "ISA-DMS-229"
+      ],
+      "native_signature_by_command": {
+        "Add Zone": "zones: Area of Interest",
+        "Remove Zone": "name: String"
+      },
+      "parameter_manifest_by_command": {
+        "Add Zone": [
+          {
+            "name": "zones",
+            "type": "Area of Interest",
+            "required": true,
+            "cardinality": "1+",
+            "structure": "Associative Array",
+            "source_role": "Operating areas to add; same-name existing zones are replaced.",
+            "default_as_source": null
+          }
+        ],
+        "Remove Zone": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name of zone to remove; should match an entry in Zones.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Add Zone": [],
+        "Remove Zone": []
+      },
+      "purpose": "Shared analytical family; individual roles, parameter types/cardinalities, results, source restrictions and exceptions remain distinct. No automatic adoption of a separate DIM class per native command.",
+      "question_ids": []
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "Original DMS6.0r12 §3.3: complete18 control/lifecycle command entries and all parameter tables/continuations.",
+    "primary_text": "DMS6.0r12 §3.3: all12 assigned spatial-control/acquisition entries, full parameters/results and following-heading boundaries.",
     "primary_text_pages": [
-      41,
-      42,
-      43,
-      47,
-      48,
-      50,
-      51,
-      54,
+      38,
+      55,
+      56,
       57,
       58,
-      60,
       61,
-      64
+      62,
+      63
     ],
     "primary_pages_visually_inspected": [
-      41,
-      42,
-      43,
-      47,
-      48,
-      50,
-      51,
-      54,
+      38,
+      55,
+      56,
       57,
       58,
-      60,
       61,
-      64
+      62,
+      63
+    ],
+    "additional_text_pages": [
+      67
     ],
     "additional_pages_visually_inspected": [
-      120
+      100,
+      109,
+      110,
+      113,
+      126,
+      127
     ],
-    "new_supporting_definitions": [],
-    "new_supporting_count": 0,
-    "unique_supporting_total": 125,
+    "new_supporting_definitions": [
+      "Rotation Percent Rate",
+      "Rotation Rate",
+      "Measured Degpsec",
+      "Degpsec"
+    ],
+    "new_supporting_count": 4,
+    "unique_supporting_total": 129,
     "reused_types": [
-      "Linear Direction",
+      "Area of Interest",
+      "Associative Array",
+      "Name Value Pair",
+      "AOI Reason",
+      "Geographic Shape",
+      "Geographic Arc",
+      "Geographic Ellipse",
+      "Ellipsoid",
+      "Geographic Polygon",
+      "Geographic Polyline",
+      "Geographic Position",
+      "Rotation",
+      "Measured Degrees",
+      "Degrees",
+      "Measured Meters",
+      "Meters",
       "Percent",
       "Secs",
-      "Float",
+      "UTC",
+      "UCI",
       "String",
-      "Wildcard",
-      "Name Value Pair"
+      "Float",
+      "Wildcard"
     ],
     "cross_page_checks": [
-      "Adjust Power41–42",
-      "Designate50–51",
-      "Calibrate ends before Cancel44",
-      "Zeroize ends before Base Data Types65"
+      "Scan Area57–58",
+      "Slew Percent61–62",
+      "Rotation126–127"
     ],
-    "source_limits": "Data representation only; no implementation, invocation, target information or hardware actions. Prose/table rate discrepancy recorded as ISA-Q005. Existing Level question remains unchanged."
+    "source_limits": "No invoked commands, physical movement, sensor capability or new case data. Rotation Rate pitch/roll descriptions versus Rotation are recorded locally as ISA-Q006; existing Orientation Q003 is not resolved."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -4287,6 +5793,80 @@
         "Zeroize ends before Base Data Types65"
       ],
       "source_limits": "Data representation only; no implementation, invocation, target information or hardware actions. Prose/table rate discrepancy recorded as ISA-Q005. Existing Level question remains unchanged."
+    },
+    "ISA-COMMANDS-SPATIAL-ACQUISITION": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "DMS6.0r12 §3.3: all12 assigned spatial-control/acquisition entries, full parameters/results and following-heading boundaries.",
+      "primary_text_pages": [
+        38,
+        55,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63
+      ],
+      "primary_pages_visually_inspected": [
+        38,
+        55,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63
+      ],
+      "additional_text_pages": [
+        67
+      ],
+      "additional_pages_visually_inspected": [
+        100,
+        109,
+        110,
+        113,
+        126,
+        127
+      ],
+      "new_supporting_definitions": [
+        "Rotation Percent Rate",
+        "Rotation Rate",
+        "Measured Degpsec",
+        "Degpsec"
+      ],
+      "new_supporting_count": 4,
+      "unique_supporting_total": 129,
+      "reused_types": [
+        "Area of Interest",
+        "Associative Array",
+        "Name Value Pair",
+        "AOI Reason",
+        "Geographic Shape",
+        "Geographic Arc",
+        "Geographic Ellipse",
+        "Ellipsoid",
+        "Geographic Polygon",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Rotation",
+        "Measured Degrees",
+        "Degrees",
+        "Measured Meters",
+        "Meters",
+        "Percent",
+        "Secs",
+        "UTC",
+        "UCI",
+        "String",
+        "Float",
+        "Wildcard"
+      ],
+      "cross_page_checks": [
+        "Scan Area57–58",
+        "Slew Percent61–62",
+        "Rotation126–127"
+      ],
+      "source_limits": "No invoked commands, physical movement, sensor capability or new case data. Rotation Rate pitch/roll descriptions versus Rotation are recorded locally as ISA-Q006; existing Orientation Q003 is not resolved."
     }
   },
   "specific_questions": [
@@ -4301,11 +5881,24 @@
       "evidence": "ISA DMS 6.0r12 §3.3 Adjust Power, printed pp.26–27 / PDF pp.41–42; prose and complete table visually inspected.",
       "next_resolution": "During the already planned command/companion/requirement reconciliation, check original clarification or matching encoding declaration for the omitted rate. Absent such evidence, retain this exact discrepancy without repeating the source review or blocking other outcomes.",
       "state": "SOURCE_REVIEW_COMPLETE_SPECIFIC_INTERPRETATION_OPEN"
+    },
+    {
+      "id": "ISA-Q006",
+      "entry_id": "ISA-DMS-247",
+      "native_term": "Slew Velocity / Rotation Rate",
+      "candidate_row": "ISA-C-247",
+      "known": "Slew Velocity requires rate:Rotation Rate and duration:Secs. Rotation Rate requires pitch rate, roll rate and yaw rate as Measured Degpsec. Its table describes pitch about x and roll about y, whereas Rotation describes pitch about y-prime and roll about x-double-prime.",
+      "question": "Do Rotation Rate pitch/roll axis descriptions intentionally use a different convention from Rotation, or is the source table inconsistent? Which source-authorized axis correspondence applies when interpreting Slew Velocity?",
+      "decision": "Retain all native field names, angular-rate units, required duration and documented zero-rate stop behavior. Preserve both original axis descriptions without swapping fields, inventing a coordinate transform or treating the supported command role as absent. The specific axis correspondence remains local.",
+      "evidence": "ISA DMS 6.0r12 §3.3 Slew Velocity, printed p.47 / PDF p.62; §8.3 Rotation and Rotation Rate, printed pp.111–112 / PDF pp.126–127. Original text and complete page images inspected.",
+      "next_resolution": "Use the existing type/companion/semantic reconciliation slots to check original encodings or authoritative clarifications of the Rotation Rate axis descriptions. Record any intentional distinction; otherwise retain this exact question without reopening unrelated reviews or adding a new delivery slot.",
+      "state": "SOURCE_REVIEW_COMPLETE_SPECIFIC_INTERPRETATION_OPEN"
     }
   ],
   "case_checks": [
-    "All73 case facts and all prior non-ISA/equipment cells preserved; no native ISA control implementation or executed operation inferred.",
-    "Generic Level meaning remains ISA-Q001. No invented rate parameter/default, metrological calibration, destructive method or actual data-removal outcome."
+    "All73 case facts and all prior non-ISA/equipment cells retained; no request, measured result, image, implemented ISA capability or motion invented.",
+    "Point Orientation retains attachment-dependent reference wording and existing Q003. Slew Velocity retains new Q006 axis correspondence; no field swaps or coordinate conversion.",
+    "Take Range result schema is distinct from expected usable Range; Take Picture does not declare a command-specific image result. Bennett original resultTime remains unknown."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -4330,6 +5923,11 @@
     "ISA-COMMANDS-CONTROL-LIFECYCLE": [
       "All73 case facts and all prior non-ISA/equipment cells preserved; no native ISA control implementation or executed operation inferred.",
       "Generic Level meaning remains ISA-Q001. No invented rate parameter/default, metrological calibration, destructive method or actual data-removal outcome."
+    ],
+    "ISA-COMMANDS-SPATIAL-ACQUISITION": [
+      "All73 case facts and all prior non-ISA/equipment cells retained; no request, measured result, image, implemented ISA capability or motion invented.",
+      "Point Orientation retains attachment-dependent reference wording and existing Q003. Slew Velocity retains new Q006 axis correspondence; no field swaps or coordinate conversion.",
+      "Take Range result schema is distinct from expected usable Range; Take Picture does not declare a command-specific image result. Bennett original resultTime remains unknown."
     ]
   },
   "mapping_note": "Requests retain per-command native semantics and shared parameter families. Existing fields/defaults are not copied into incomplete source tables. Individual candidate rows are for owner review, not compulsory independent model classes.",
@@ -4343,45 +5941,39 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
-  "next_action": "Review the12 assigned spatial-control and acquisition definitions from the existing accelerated queue; no source replay or workbook release.",
+  "next_source_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
+  "next_action": "Review the16 communication, media and service-selection assignments in the existing accelerated queue; no replay or per-group workbook export.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-169",
-      "ISA-DMS-170",
-      "ISA-DMS-172",
-      "ISA-DMS-175",
-      "ISA-DMS-194",
-      "ISA-DMS-199",
-      "ISA-DMS-206",
-      "ISA-DMS-208",
-      "ISA-DMS-209",
-      "ISA-DMS-217",
-      "ISA-DMS-218",
-      "ISA-DMS-230",
-      "ISA-DMS-231",
-      "ISA-DMS-232",
-      "ISA-DMS-235",
-      "ISA-DMS-242",
-      "ISA-DMS-244",
-      "ISA-DMS-256"
+      "ISA-DMS-163",
+      "ISA-DMS-221",
+      "ISA-DMS-222",
+      "ISA-DMS-224",
+      "ISA-DMS-225",
+      "ISA-DMS-229",
+      "ISA-DMS-233",
+      "ISA-DMS-234",
+      "ISA-DMS-246",
+      "ISA-DMS-247",
+      "ISA-DMS-252",
+      "ISA-DMS-253"
     ],
-    "reviewed_total": 184,
-    "supported_total": 179,
-    "specific_questions_retained": 4,
+    "reviewed_total": 196,
+    "supported_total": 190,
+    "specific_questions_retained": 5,
     "specific_questions_added": 1,
-    "specific_questions_total": 5,
-    "command_entries_reviewed": 54,
+    "specific_questions_total": 6,
+    "command_entries_reviewed": 66,
     "command_entries_total": 96,
-    "command_unreviewed": 42,
+    "command_unreviewed": 30,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 211,
-    "new_candidate_rows": 18,
+    "information_review_rows": 223,
+    "new_candidate_rows": 12,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 0,
-    "unique_supporting_definitions": 125,
+    "new_supporting_types": 4,
+    "unique_supporting_definitions": 129,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   }

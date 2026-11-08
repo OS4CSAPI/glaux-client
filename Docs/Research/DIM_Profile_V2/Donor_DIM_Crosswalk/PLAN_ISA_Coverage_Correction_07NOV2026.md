@@ -1,6 +1,6 @@
 # ISA coverage correction — accelerated execution plan
 
-**CURRENT — 8 November 2026. Original Step 5 of 12; Steps 1–4 COMPLETE. Accelerated slots 1–2 COMPLETE. Commands 54/96 reviewed; 42 remain. Next: group 3, ISA-COMMANDS-SPATIAL-ACQUISITION (12 commands). Current remaining forecast: 20 deliveries centrally, range 18–22; four command-source passes and one workbook checkpoint included.**
+**CURRENT — 8 November 2026. Original Step 5 of 12; Steps 1–4 COMPLETE. Accelerated slots1–3 COMPLETE. Commands66/96 reviewed;30 remain. Next: group4, ISA-COMMANDS-COMMUNICATION-SERVICES (16 commands). Current remaining forecast:19 deliveries centrally, range17–21;three command-source passes and one workbook checkpoint included.**
 
 [Current progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
