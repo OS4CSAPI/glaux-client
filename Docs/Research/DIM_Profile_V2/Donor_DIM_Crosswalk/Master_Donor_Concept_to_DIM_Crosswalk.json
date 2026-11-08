@@ -6232,13 +6232,14 @@
         "",
         "Composition member exposure and source attribution"
       ],
-      "boundary": "Composition is an integration collection, not necessarily a physical assembly. A visible member is announced, has declared capabilities and periodic status; a non-ISA member made visible is a virtual ISA component. Opaque does not mean its capabilities are absent. This is network representation, not independently verified physical provenance or the DMS laser Visible property.",
+      "boundary": "Composition is an integration collection, not necessarily a physical assembly. A visible member is announced, has declared capabilities and periodic status; a non-ISA member made visible is a virtual ISA component. Opaque does not mean its capabilities are absent. This is network representation, not independently verified physical provenance or the DMS laser Visible property. CMPT §4.3.15 calls represented non-ISA-interface entities virtual ISA components and requires network announcements/configuration/status/observation handling on their behalf. This strengthens the network-representation interpretation, not physical part-of, independent certificate ownership or direct ISA connectivity.",
       "additional_ISA_interface_evidence": [
         "ICD-6.1",
         "ICD-8.0"
       ],
       "additional_ISA_requirement_evidence": [
-        "CMPT-4.1.1"
+        "CMPT-4.1.1",
+        "CMPT-4.3.15"
       ]
     },
     {
@@ -6277,7 +6278,7 @@
         "",
         "Connection-specific network participation lifecycle"
       ],
-      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation. CMPT distinguishes pre-operational integration, pre-participation discovery/time setup and participation behavior. Its client-side role is the connection initiator; startup connection need is conditional, and connection attempts are at least five seconds apart. M-0032/L-0083–0088 gate Request/Event/Administrative transmission and silently discard early arrivals until the connected peer’s initial Status is received. This initial-Status operational marker remains separately attributed from the SDD initial-Config transition. A permitted IPL data exchange is not automatic permission for every ISA message or proof of hardware readiness.",
+      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation. CMPT distinguishes pre-operational integration, pre-participation discovery/time setup and participation behavior. Its client-side role is the connection initiator; startup connection need is conditional, and connection attempts are at least five seconds apart. M-0032/L-0083–0088 gate Request/Event/Administrative transmission and silently discard early arrivals until the connected peer’s initial Status is received. This initial-Status operational marker remains separately attributed from the SDD initial-Config transition. A permitted IPL data exchange is not automatic permission for every ISA message or proof of hardware readiness. CMPT §4.3.7 adds explicit NON RESPONSIVE and REVIVED recovery exchanges: selected Status within500ms and complete Config within30s. §4.3.16 separately requires resource cleanup and deregistration before leaving; connection termination remains source-qualified because M-0073 says should terminate after Registration Removed while L-0168 says the connection may close and may remain open. Recovery, deregistration and socket closure are not physical asset lifecycle states.",
       "additional_ISA_interface_evidence": [
         "ICD-3.0",
         "ICD-3.1",
@@ -6304,7 +6305,9 @@
         "CMPT-4.2.2",
         "CMPT-4.3.2",
         "CMPT-4.3.4",
-        "CMPT-4.3.6"
+        "CMPT-4.3.6",
+        "CMPT-4.3.7",
+        "CMPT-4.3.16"
       ]
     },
     {
@@ -7890,7 +7893,7 @@
         "",
         "Source-qualified event identity and reference"
       ],
-      "boundary": "Not globally unique Event ID alone; do not equate event identity with message identity.",
+      "boundary": "Not globally unique Event ID alone; do not equate event identity with message identity. CMPT uses Event Reference to connect update and recall Events to a previously published Event. An Event without Event Reference is treated as original; a referenced Event without Recall is an update, and Recall identifies a recall. Preserve this lineage without equating reference with message identity or deleting the cited record.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-382"
       ],
@@ -7900,6 +7903,10 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.11",
+        "CMPT-4.3.12"
       ]
     },
     {
@@ -7933,7 +7940,7 @@
         "",
         "Event occurrence time"
       ],
-      "boundary": "Not Header transmission time, processing time or an inferred original resultTime.",
+      "boundary": "Not Header transmission time, processing time or an inferred original resultTime. CMPT requires publishing the Event within500ms of making the observation. That is a message-send latency bound; it does not redefine Event.time, which remains the occurrence time, or guarantee network receipt within500ms.",
       "additional_ISA_architecture_evidence": [
         "SDD-6.3.1",
         "SDD-6.3.3"
@@ -7942,7 +7949,8 @@
         "ICD-6.6"
       ],
       "additional_ISA_requirement_evidence": [
-        "CMPT-4.2.1"
+        "CMPT-4.2.1",
+        "CMPT-4.3.11"
       ]
     },
     {
@@ -8018,12 +8026,15 @@
         "",
         "Detector property context at event occurrence"
       ],
-      "boundary": "Not every device property, a new sensor, or a guaranteed complete event-time state snapshot.",
+      "boundary": "Not every device property, a new sensor, or a guaranteed complete event-time state snapshot. CMPT permits relevant detector-property values that changed since the last Status to accompany an Event and explicitly says this does not count as a Status update. Event context therefore cannot replace the separate Status state-reporting stream.",
       "additional_ISA_architecture_evidence": [
         "SDD-6.3.1"
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.11"
       ]
     },
     {
@@ -12438,7 +12449,7 @@
         "",
         "Component capability and readiness report"
       ],
-      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts. CMPT requires initial Config within 30 seconds of ADDED. L-0058 includes the CCD and all false capability-state values; L-0061 includes the entire CCD when declarations change; L-0062 includes all false state values when states change and explicitly describes an empty state list when all states become true. This is not an arbitrary sparse patch rule or a universal Boolean default. Updates retain the source’s all-connected-components versus connected-Controller wording. Configuration updates have a 30-second send limit. M-0031 separately requires property changes after configuration-set changes; L-0082 ties its full reporting-true Status to an update Config containing a CCD, and L-0170 gives that full Status a 30-second limit. These source levels do not establish a full-Status trigger for every state-only update.",
+      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts. CMPT requires initial Config within 30 seconds of ADDED. L-0058 includes the CCD and all false capability-state values; L-0061 includes the entire CCD when declarations change; L-0062 includes all false state values when states change and explicitly describes an empty state list when all states become true. This is not an arbitrary sparse patch rule or a universal Boolean default. Updates retain the source’s all-connected-components versus connected-Controller wording. Configuration updates have a 30-second send limit. M-0031 separately requires property changes after configuration-set changes; L-0082 ties its full reporting-true Status to an update Config containing a CCD, and L-0170 gives that full Status a 30-second limit. These source levels do not establish a full-Status trigger for every state-only update. On REVIVED, CMPT requires a complete configuration set and a Config send within30 seconds of the revival notification. This is recovery traffic, not evidence that configuration was accepted, deployed or physically realized.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-375",
         "ISA-TYPE-428",
@@ -12459,7 +12470,8 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.4",
-        "CMPT-1.2"
+        "CMPT-1.2",
+        "CMPT-4.3.7"
       ]
     },
     {
@@ -12493,7 +12505,7 @@
         "",
         "Component property-value report"
       ],
-      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged. CMPT initial Status includes every ready-and-reporting property and is due within 30 seconds of sending initial Config. Periodic Status includes all and only changed ready-and-reporting property values; a never-reported value is treated as changed. L-0093’s 500 ms response is conditional on a reporting-true property change after no periodic Status within the Minimum Status Interval, not a universal period. L-0082’s CCD-update Status instead says every reporting-true property; preserve that qualification difference. The saved Get Status command separately retrieves declared ready properties even when reporting is disabled. M-0037’s explanatory Note says these interval restrictions apply only to Status publication; the ICD separately reuses the named interval properties for command-response cadence.",
+      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged. CMPT initial Status includes every ready-and-reporting property and is due within 30 seconds of sending initial Config. Periodic Status includes all and only changed ready-and-reporting property values; a never-reported value is treated as changed. L-0093’s 500 ms response is conditional on a reporting-true property change after no periodic Status within the Minimum Status Interval, not a universal period. L-0082’s CCD-update Status instead says every reporting-true property; preserve that qualification difference. The saved Get Status command separately retrieves declared ready properties even when reporting is disabled. M-0037’s explanatory Note says these interval restrictions apply only to Status publication; the ICD separately reuses the named interval properties for command-response cadence. CMPT non-responsiveness recovery uses a500ms Status response. Higher-level text says full status, while L-0100 explicitly selects declared properties with ready=true and reporting=true; retain that source-level wording difference instead of silently broadening the message to every declared property.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.1",
         "SDD-6.3.1",
@@ -12513,7 +12525,8 @@
         "CMPT-4.3.4",
         "CMPT-4.3.6",
         "CMPT-1.2",
-        "CMPT-4.3.5"
+        "CMPT-4.3.5",
+        "CMPT-4.3.7"
       ]
     },
     {
@@ -12606,7 +12619,7 @@
         "",
         "Command request identity and response reference"
       ],
-      "boundary": "ICD6.7.1 explicitly requires Response.reference to equal the command Request ID and the Envelope To field to address the caller. The preserved DMS309 text says Identifier of the Request message without naming request id; retain that source-specific wording and the separate Request.identifier field. No invented identifier equality,conversion or executed exchange is claimed.",
+      "boundary": "ICD6.7.1 explicitly requires Response.reference to equal the command Request ID and the Envelope To field to address the caller. The preserved DMS309 text says Identifier of the Request message without naming request id; retain that source-specific wording and the separate Request.identifier field. No invented identifier equality,conversion or executed exchange is claimed. CMPT-L-0144 repeats the explicit Response.reference=Request ID rule. Request uniqueness is the source UCI + request ID + time combination. These requirements reinforce correlation without collapsing Request.identifier, request id and message identity.",
       "additional_ISA_architecture_evidence": [
         "SDD-6.3.1",
         "SDD-6.3.3"
@@ -12615,6 +12628,10 @@
         "ICD-6.7.1",
         "ICD-6.7.2",
         "ICD-6.7"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.13",
+        "CMPT-4.3.14"
       ]
     },
     {
@@ -12761,7 +12778,10 @@
         "",
         "Current command execution record"
       ],
-      "boundary": "Not a capability declaration, readiness flag, request submission or proof of final success."
+      "boundary": "Not a capability declaration, readiness flag, request submission or proof of final success. CMPT distinguishes validation error, FAILED decline, BUSY, QUEUED, IN PROGRESS, SUCCESS and execution failure. Near-real-time initial response is due within200ms; non-real-time and queued/long-running response cadence reuse the performing component's status-interval properties. Response state remains evidence of command processing, not proof of a measured physical effect.",
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.13"
+      ]
     },
     {
       "row_id": "ISA-Q-QUERY",
@@ -12824,10 +12844,13 @@
         "",
         "Requested message kinds and returned fields"
       ],
-      "boundary": "Named selection lists are Required 0+; optional priority/stale and Config ccd flags default false. Textual select status means all fields in the guide; do not equate omitted textual clauses with unpopulated object fields. The Position example also states a field-presence condition; do not generalize it to every selection.",
+      "boundary": "Named selection lists are Required 0+; optional priority/stale and Config ccd flags default false. Textual select status means all fields in the guide; do not equate omitted textual clauses with unpopulated object fields. The Position example also states a field-presence condition; do not generalize it to every selection. CMPT component discovery sends a Discover Request with the desired query to the targeted Live Data Service. When a Live Data Service recommendation was received, using it is should, not shall. This requirement does not change Data Query semantics or prove a discovery result.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.3",
         "SDD-6.3.3"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.9"
       ]
     },
     {
@@ -13103,13 +13126,16 @@
         "",
         "Subscription identity and query definition"
       ],
-      "boundary": "All five fields across the two structures are required single values. The identifier is not just a label or number. Keep subscription description distinct from Add/Remove Subscription requests and from evidence that delivery actually occurred.",
+      "boundary": "All five fields across the two structures are required single values. The identifier is not just a label or number. Keep subscription description distinct from Add/Remove Subscription requests and from evidence that delivery actually occurred. CMPT Add Subscription requests carry desired filters and a locally unique name; Remove Subscription cites the subscription ID and the Live Data Service instance where the subscription was created. Recommended Live Data Service use is should. Definition, command exchange and delivered subscription data remain distinct.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.3",
         "SDD-6.3.3"
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.8"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.10"
       ]
     },
     {
@@ -13297,7 +13323,7 @@
         "",
         "Service role and required command support"
       ],
-      "boundary": "Six DMS service definitions are not six mandatory Controller modules. SDD 4.2.1 requires each ISA 6.0 Controller to support all three core services, while support and activation are distinct; 5.0 separately describes typical hosting. Any component may provide optional services. Empty property/observable columns do not prohibit additional capabilities. Support, activation, provider selection, authorization, request, execution and achieved effects remain separate.",
+      "boundary": "Six DMS service definitions are not six mandatory Controller modules. SDD 4.2.1 requires each ISA 6.0 Controller to support all three core services, while support and activation are distinct; 5.0 separately describes typical hosting. Any component may provide optional services. Empty property/observable columns do not prohibit additional capabilities. Support, activation, provider selection, authorization, request, execution and achieved effects remain separate. CMPT service recommendations are conditional on needing a service. Set Live Data Service and Set Authorization Service support is likewise conditional; recommendation receipt does not prove activation, provider binding or successful service use.",
       "additional_ISA_architecture_evidence": [
         "SDD-4.2.1",
         "SDD-5.0",
@@ -13314,7 +13340,8 @@
         "ICD-5.0"
       ],
       "additional_ISA_requirement_evidence": [
-        "CMPT-1.2"
+        "CMPT-1.2",
+        "CMPT-4.3.8"
       ]
     },
     {
@@ -13506,9 +13533,12 @@
         "",
         "Composition interface task mediation role"
       ],
-      "boundary": "These are contextual responsibilities for a request, not mutually exclusive equipment classes, a permanent actor taxonomy, a specified algorithm or proof of completed execution. A CIC need not be a Controller.",
+      "boundary": "These are contextual responsibilities for a request, not mutually exclusive equipment classes, a permanent actor taxonomy, a specified algorithm or proof of completed execution. A CIC need not be a Controller. CMPT virtual-command behavior explicitly allows execution on behalf, translation to an equivalent non-ISA message, or forwarding an ISA Request, with queueing and response handling around those choices. The Note gives implementation forms, not a mandatory transport or permanent actor class.",
       "additional_ISA_interface_evidence": [
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.15"
       ]
     },
     {
@@ -13564,7 +13594,12 @@
         "",
         "Capability readiness and reporting selection"
       ],
-      "boundary": "CMPT-L-0072–0081 and their explanatory Notes distinguish command enablement from immediate availability, property maintenance/access on request from publication, and observable recording enablement from inclusion in Events. A ready command may still be busy. These states do not establish authorization, execution, an observed physical effect or a measured hardware-health condition. Config false-state-list rules are source-specific message semantics, not invented defaults for every required Boolean. Saved DMS Command/Property/Observable State definitions and their wording notes remain intact."
+      "boundary": "CMPT-L-0072–0081 and their explanatory Notes distinguish command enablement from immediate availability, property maintenance/access on request from publication, and observable recording enablement from inclusion in Events. A ready command may still be busy. These states do not establish authorization, execution, an observed physical effect or a measured hardware-health condition. Config false-state-list rules are source-specific message semantics, not invented defaults for every required Boolean. Saved DMS Command/Property/Observable State definitions and their wording notes remain intact. Observation publication includes only ready-and-reporting observables. Command requests are limited to declared commands whose ready state is true, yet a ready command can still be temporarily unavailable, queued or BUSY. Reporting/readiness/request eligibility and immediate execution remain separate.",
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.11",
+        "CMPT-4.3.13",
+        "CMPT-4.3.14"
+      ]
     },
     {
       "row_id": "S06-R021",
@@ -13899,7 +13934,7 @@
         "",
         "Administrative network and service notification"
       ],
-      "boundary": "Not a performed sensing observation; no extra Alarm ID field is introduced.",
+      "boundary": "Not a performed sensing observation; no extra Alarm ID field is introduced. CMPT announces virtual-component availability changes with DEVICE ADDED/DEVICE REMOVED and cites the virtual component as subject. The source leaves the determination of permanent unavailability to the interface between representative and virtual component.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-337"
       ],
@@ -13914,7 +13949,8 @@
         "ICD-8.0"
       ],
       "additional_ISA_requirement_evidence": [
-        "CMPT-4.3.5"
+        "CMPT-4.3.5",
+        "CMPT-4.3.15"
       ]
     },
     {
@@ -13960,7 +13996,7 @@
         "",
         "Message author or registration announcer"
       ],
-      "boundary": "Not automatically Header.from, the observed object, the hardware sensor or verified issuer identity.",
+      "boundary": "Not automatically Header.from, the observed object, the hardware sensor or verified issuer identity. For virtual components, CMPT requires the virtual component to be cited as message source in Config, Status, Event and Response messages sent on its behalf. Source attribution therefore need not identify the network participant that physically transmitted the message.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.2",
         "SDD-6.3.1",
@@ -13970,6 +14006,9 @@
         "ICD-6.2",
         "ICD-6.8",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.15"
       ]
     },
     {
@@ -20321,7 +20360,7 @@
     "sourceSupportedPrimary": 474,
     "specificQuestions": 6,
     "supportingDefinitions": 171,
-    "supportingWordingNotes": 127,
+    "supportingWordingNotes": 143,
     "meaning": "Supporting evidence and source-reviewed outcomes are not automatically adopted DIM elements.",
     "types": "ISA_Type_Catalogue_Evidence_08NOV2026.json",
     "primaryTypeReviews": 224,
@@ -20341,12 +20380,13 @@
     "ipl3GuideBlocksReviewed": 8,
     "interfaceAndEncoding": "ISA_Service_and_Context_Evidence_08NOV2026.json",
     "componentRequirements": "ISA_Service_and_Context_Evidence_08NOV2026.json",
-    "componentRequirementsOwnSpansReviewed": 21,
-    "componentRequirementsNativeDefinitionsReviewed": 144,
-    "componentRequirementsFullyReconciledBlocks": 19,
-    "componentRequirementsPendingParentBlocks": [
-      "CMPT-4.0",
-      "CMPT-4.3"
+    "componentRequirementsOwnSpansReviewed": 34,
+    "componentRequirementsNativeDefinitionsReviewed": 259,
+    "componentRequirementsFullyReconciledBlocks": 34,
+    "componentRequirementsPendingParentBlocks": [],
+    "componentRequirementsVerificationRows": 165,
+    "componentRequirementsVerificationTableMissing": [
+      "CMPT-L-0164"
     ]
   },
   "counts": {
@@ -20411,8 +20451,8 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Canonical Markdown/CSV/JSON include the completed catalogue and companion evidence plus the first Component Requirements delivery: 480 primary outcomes and329 rows,76 rows beyond the verified253-row/226-primary workbook. Current text also includes documented ISA refinements. Excel retains its labeled integration snapshot and the existing substantial/final refresh cadence.",
-    "textCheckpoint": "ISA-COMPONENT-REQUIREMENTS-FIRST",
+    "lag": "Canonical text has329 information/review rows and the complete Component Requirements review,76 rows beyond the verified253-row workbook snapshot; documented ISA refinements are retained without a workbook rebuild.",
+    "textCheckpoint": "ISA-COMPONENT-REQUIREMENTS-REMAINING",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }
