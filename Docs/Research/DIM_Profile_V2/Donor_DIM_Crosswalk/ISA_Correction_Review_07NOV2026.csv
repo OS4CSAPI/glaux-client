@@ -61,6 +61,9 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Event.time: UTC,,,,,,Event occurrence time
 ,,,,,,,Event.type: Event Type · required/default wording retained,,,,,,Event creation category
 ,,,,,,,Event.detector properties: Name Value Pair [0+],,,,,,Detector property context at event occurrence
+,,,,,,,≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions,,,,,,Reported value and associated uncertainty
+,,,,,,,"Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",,,,,,Video-frame detection details
+,,,,,,,Video Track [accepted] · BSO ID + optional geographic location,,,,,,Video-derived entity track reference
 "04 — CONFIGURATION & CONTROL — Differentiate supported/default capabilities, applied/reported configuration and actual command execution.",,,,,,,,,,,,,
 ,,,,,,,Capability Declaration.properties / commands / observables / types [0+],,,,,,Declared component capability catalogue
 ,,,,,,,"Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",,,,,,Declared property definition
@@ -186,6 +189,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Request.access control: Name Value Pair [0+],,,,,,Request access-control metadata
 ,,,,,,,Segment → Route | Waypoint · ordered nested route representation,,,,,,Route-segment alternatives
 ,,,,,,,Route Action · LOOP / PATROL / RETURN / STOP,,,,,,End-of-route action category
+,,,,,,,"Command Execution · name, request id, issuer, start time",,,,,,Current command execution record
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)
@@ -196,6 +200,12 @@ C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; c
 ,,,,,,,Header.time: UTC,,,,,,Exchange transmission time
 ,,,,,,,Administrative.about: UCI [1+]; code: Admin Code,,,,,,Administrative network and service notification
 ,,,,,,,Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified,,,,,,Message author or registration announcer
+,,,,,,,"Message Reference · originator, identifier, message type, time",,,,,,Source-message reference for provenance
+,,,,,,,Name Value Pair · name + Wildcard value,,,,,,Named value payload
+,,,,,,,Associative Array · values: Name Value Pair [0+],,,,,,Named-value associative collection
+,,,,,,,List · values: Wildcard [0+],,,,,,Declared-type value list
+,,,,,,,Custom Type · fields: Name Value Pair [0+],,,,,,Custom-structure field values
+,,,,,,,Tree · value + children; same node datatype,,,,,,Recursive same-type value hierarchy
 "06 — CASE TERMS AWAITING DIM DISPOSITION — Actual source fields and recorded reference examples not force-mapped into the 22 proposed DIM elements; every rightmost label is a review hold, not adopted.",,,,,,,,,,,,,
 ,,,EE181 service roles: 2024-04-16 change; as of 2024-12-31,,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — service history
 External probe cable 3 m (design),Wall/pole mounting supported (design),Level / orientation needed (guidance),"32.55934 N, −80.45456 W; 6.1 m station tower",,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — site / mounting
@@ -222,6 +232,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,SIDC · 15-character MIL-STD-2525C code,,,,,,Tactical symbol code
 ,,,,,,,Component Category · IMAGER / RADAR / UGS · no inferred capabilities,,,,,,Human-facing component category
 ,,,,,,,UGS Category · source category vocabulary,,,,,,Unattended ground sensor category
+,,,,,,,Component Identity [nominated] · identifier + contacts,,,,,,Nominated component/contact identity record
 ISA-02 — POSITION AND ORIENTATION — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Orientation,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Orientation relative to attached parent
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Position,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Position relative to attached parent
@@ -297,6 +308,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Wavelengths,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Laser wavelengths in use
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Zoom,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Current camera zoom relative to maximum zoom
 ,,,,,,,Video Enhancement · BILINEAR / NONE,,,,,,Video-enhancement algorithm category
+,,,,,,,"Detection Range · maximum, effective, minimum",,,,,,Detection and identification distance limits
 ISA-02 — DIAGNOSTICS — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Built In Test Result,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Latest built-in-test reported result
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Satellites,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Number of satellites in use

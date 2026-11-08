@@ -2,13 +2,14 @@
 
 ## Current execution — 8 November 2026
 
-**Accelerated delivery 10 COMPLETE: 28 reporting/commanding enumeration and union definitions reconciled.** Canonical master text/CSV/JSON:292 information rows,333/480 primary outcomes,107/224 types. All285 prior displayed rows,58 donor records,73 cases and six primary questions are preserved. Seven new candidate patterns; no DIM adoption. 20 prior inspections reused; two new Route/Waypoint dependencies remain assigned to the later composite review.
+**Accelerated delivery11 COMPLETE:93 reporting composites and309 native fields reconciled.** Canonical text/CSV/JSON:304 information rows,426/480 primary outcomes,200/224 types. All292 prior rows,58 donor records,73 case statements and six primary questions are preserved. Twelve new representation patterns;80 prior supporting inspections reused;13 first primary inspections. No DIM adoption.
 
-**Next “proceed”: original ISA Steps9/10 / accelerated delivery11 — `ISA-TYPES-REPORTING-COMPOSITES`,93 exact DMS8.3 assignments. Remaining ISA forecast12 deliveries, range10–14.** Four original work areas remain closed. The current Excel snapshot remains253 rows/226 primary outcomes; canonical text is three datatype checkpoints newer (39 added rows/107 type outcomes). Reuse the existing publisher and evidence; no new workflow or standalone source report.
+**Next “proceed”: original ISA Step10 / accelerated delivery12 — `ISA-TYPES-FILTERING`,24 exact datatype assignments plus31 DQL Guide blocks. Remaining ISA forecast11 deliveries, range9–13.** Four original work areas remain closed. Excel stays the253-row/226-primary master-integration snapshot; current text is four datatype checkpoints newer (51 additional rows/200 type outcomes). No new source scope, checklist or standalone report.
 
-[Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
-The adoption agreement remains: include verified comparison findings now; focused readiness-based decisions at broader Step24; synthesis/testing35–39 and named-version approval40. Earlier checkpoint counts below are retained history, not a second live queue.
+The adoption agreement remains: record comparison findings now; readiness-based adoption review at broader24; synthesis/testing35–39; consolidated named-version approval40. Older checkpoint text below is retained history, not a competing current queue.
+
 
 **CURRENT:8 November2026. ISA Step8 / accelerated delivery9 COMPLETE;285 readable master rows,305 primary reviews,79/224 types. Next:ISA-TYPES-REPORTING-ENUMS (28 entries),accelerated delivery10. Remaining ISA forecast13 (11–15). Canonical Excel remains the253-row master-integration snapshot; current text is two datatype checkpoints newer.**
 
