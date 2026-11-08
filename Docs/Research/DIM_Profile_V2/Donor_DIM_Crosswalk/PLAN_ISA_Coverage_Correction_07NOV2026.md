@@ -1,12 +1,12 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial, context, biological/chemical and radiological/hazard observable groups COMPLETE (33/39). Next: ISA-04-REMAINING — the final six observable definitions only.**
+**CURRENT — Property catalogue COMPLETE. Observable source catalogue COMPLETE (39/39). Next: ISA-OBSERVABLES-PUBLISH — consolidate and verify the workbook only.**
 
 [Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-All 91 properties remain complete. Current source work covers124 primary entries:120 supported/four existing questions,151 information/review rows. The five hazard/radiological entries retain one core Reading and four Accepted extensions, seventeen newly inspected dependencies and zero new questions. Existing source states and all equipment/non-ISA display values are preserved. Excel remains the91-property/118-row snapshot.
+All91 property and39 observable source entries are reviewed:130 primary outcomes,126 supported/four existing property questions,157 information/review rows and123 supporting definitions. The final source pass covered Backcast, Forecast, Processed Frame, Recall, Resolve and Solar Radiation:two core and four Accepted extensions, six supported roles, no new question. Existing source decisions and equipment/non-ISA values are preserved. Excel remains the91-property/118-row snapshot.
 
-**Next group: Backcast, Forecast, Processed Frame, Recall, Resolve and Solar Radiation** (ISA-DMS-132,143,152,156,157,158). All six remain unreviewed. Review their original meanings and necessary types, update the same GitHub records, then stop. The observable-catalogue workbook checkpoint follows separately. No property rereview, new donor, per-group Excel export or new publication infrastructure.
+**Next checkpoint only:** integrate the39 saved observable outcomes, their relevant dependencies and current comparison into the workbook using existing machinery. Verify every observable ID appears exactly once in the evidence, reconcile the workbook with the current register/table, inspect the changed areas, publish to GitHub and check the actual committed result. No new primary source review, repeated property/observable analysis, command review, new donor or exporter/workflow project is authorized by this checkpoint. Preserve all four record-local questions and earlier source evidence.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.

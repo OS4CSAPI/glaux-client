@@ -103,6 +103,24 @@
         "ISA-DMS-154",
         "ISA-DMS-155"
       ]
+    },
+    {
+      "id": "ISA-04-REMAINING",
+      "status": "COMPLETE",
+      "assigned": 6,
+      "reviewed": 6,
+      "supported": 6,
+      "new_questions": 0,
+      "core": 2,
+      "accepted_extensions": 4,
+      "primary_ids": [
+        "ISA-DMS-132",
+        "ISA-DMS-143",
+        "ISA-DMS-152",
+        "ISA-DMS-156",
+        "ISA-DMS-157",
+        "ISA-DMS-158"
+      ]
     }
   ],
   "primary_records": [
@@ -1571,6 +1589,284 @@
       "reviewed_on": "2026-11-07",
       "related_existing_dim_row": "S06-R012",
       "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
+    },
+    {
+      "id": "ISA-OBS-132",
+      "entry_id": "ISA-DMS-132",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Backcast",
+      "element_kind": "observable",
+      "native_type": "Posit",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Backcast, printed p.19 / PDF pp.34–34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "d1834a4dc939ef044d015fa6ebba4f064a1ab0a15d979791f78ec375123e9e4a",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-132",
+      "proposed_label": "Inferred past observation statements",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A list of time-qualified statements about the past inferred by calculation from observed information. Each Posit carries the time at which the information is asserted true, confidence, and typed observable data.",
+      "mapping_boundary": "A backcast is an inference about past conditions, not an archived original observation, a provenance record or proof that the inferred event occurred. Posit time is the asserted validity time, not automatically the calculation, publication or result-availability time. Required data names and types follow the relevant observable/capability definitions.",
+      "dependency_terms": [
+        "Posit",
+        "UTC",
+        "Secs",
+        "Percent",
+        "Float",
+        "Name Value Pair",
+        "String",
+        "Wildcard",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
+    },
+    {
+      "id": "ISA-OBS-143",
+      "entry_id": "ISA-DMS-143",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Forecast",
+      "element_kind": "observable",
+      "native_type": "Posit",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Forecast, printed p.20 / PDF pp.35–35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a847a79006f521578037b7b676809e2a3dd67d32db3709afe5bdd141cfa87ba2",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-143",
+      "proposed_label": "Forecast observation statements",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A list of calculated statements projecting future conditions from observed information, represented by Posit with required time, confidence and one-or-more named typed data fields.",
+      "mapping_boundary": "A forecast is not a performed observation, scheduled command or guaranteed outcome. Preserve the future asserted time separately from calculation/publication time; confidence applies to correctness of the structure, not a measurement error. The observable name/type constraints are not replaced by arbitrary untyped content.",
+      "dependency_terms": [
+        "Posit",
+        "UTC",
+        "Secs",
+        "Percent",
+        "Float",
+        "Name Value Pair",
+        "String",
+        "Wildcard",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
+    },
+    {
+      "id": "ISA-OBS-152",
+      "entry_id": "ISA-DMS-152",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Processed Frame",
+      "element_kind": "observable",
+      "native_type": "Processed Frame",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Processed Frame, printed p.21 / PDF pp.36–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "908ac974058c999cbb75fb8a370a614116917f5c12832ceecfbca06fc707d099",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-152",
+      "proposed_label": "Processed video-frame report",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A report about a processed video frame: original video publisher UCI, original capture timestamp, a possibly empty detection list, video source URL, image pixel dimensions and optional processing metadata. Detections retain pixel boxes, selection indication and optional confidence, label and track information.",
+      "mapping_boundary": "The structure is not the raw video bytes or proof of a detected object. Original capture time is not processing completion/resultTime. Pixel boxes are not geographic areas; optional track location is not guaranteed. The selection flag is not evidence of completed slewing. Video Detection confidence is Float 0..1, not the Percent used in Posit; open label examples remain open.",
+      "dependency_terms": [
+        "Processed Frame",
+        "Video Detection",
+        "Bounding Box",
+        "Video Track",
+        "UCI",
+        "UTC",
+        "Secs",
+        "URL",
+        "Integer",
+        "String",
+        "Float",
+        "Boolean",
+        "BSO ID",
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
+    },
+    {
+      "id": "ISA-OBS-156",
+      "entry_id": "ISA-DMS-156",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Recall",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Recall, printed p.21 / PDF pp.36–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1585f16a8b5cd46fa35cc60d697581558723da51e6ff55ce6d487c475d4b48ae",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-156",
+      "proposed_label": "Referenced-event recall reason",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A human-readable reason for recalling the Event identified by Event Reference. Presence of the Recall observable indicates the publisher wishes to recall that referenced Event.",
+      "mapping_boundary": "A recall indication is not an executed delete command or proof all recipients removed data. The reference identifies the earlier event, not the current message or a physical device. The general Event envelope makes its event-reference field optional; this review does not invent an unconditional envelope requirement or replace the creator/time/event-ID combination with a globally unique integer.",
+      "dependency_terms": [
+        "String",
+        "Event Reference",
+        "Event ID",
+        "UCI",
+        "UTC",
+        "Secs",
+        "Integer",
+        "Event",
+        "Event Type",
+        "Priority",
+        "Name Value Pair",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
+    },
+    {
+      "id": "ISA-OBS-157",
+      "entry_id": "ISA-DMS-157",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Resolve",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        37
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Resolve, printed p.21 / PDF pp.36–37",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "7946b9052975340a7725aea132d7afd164762aed4508709eff890505edae1234",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-157",
+      "proposed_label": "Referenced-event resolution reason",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A human-readable reason that the referenced event is being resolved.",
+      "mapping_boundary": "Resolution context is not automatically event recall, deletion, a command outcome or proof a real-world condition has been remedied. Preserve the referenced-event identity and explanatory String without inventing resolution-state enums, action authorization, execution semantics or timestamps.",
+      "dependency_terms": [
+        "String",
+        "Event Reference",
+        "Event ID",
+        "UCI",
+        "UTC",
+        "Secs",
+        "Integer",
+        "Event",
+        "Event Type",
+        "Priority",
+        "Name Value Pair",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
+    },
+    {
+      "id": "ISA-OBS-158",
+      "entry_id": "ISA-DMS-158",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Solar Radiation",
+      "element_kind": "observable",
+      "native_type": "Measured Wpm2",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 22,
+      "pdf_pages": [
+        37,
+        37
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Solar Radiation, printed p.22 / PDF pp.37–37",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ef9d4bcde0c00d7e6e9b9d5d9f8a0b71adf5ec35becba03bc1418db21a07c507",
+      "review_pass": "ISA-04-REMAINING",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-158",
+      "proposed_label": "Observed solar irradiance",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Measured solar radiation at the observation position, represented as irradiance by Measured Wpm2. If Position observable is absent, this definition explicitly uses the observing component position.",
+      "mapping_boundary": "Not accumulated radiant energy, photovoltaic electrical output, ionizing-radiation dose or internal equipment temperature. No spectral band, averaging interval or plane-of-measurement is supplied by this observable. Preserve required value and optional error with the stated plus/minus one-standard-deviation convention; absent error is not zero. Preserve the original Wpm2 unit-label wording rather than inventing a conversion.",
+      "dependency_terms": [
+        "Measured Wpm2",
+        "Wpm2",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: an event-reported field/composite supports the output-field concept; it is not itself a complete observing procedure, physical sensor, or independent verification of the described information."
     }
   ],
   "supporting_definitions": [
@@ -3474,6 +3770,519 @@
           "meaning": "Plus/minus one standard deviation per original definition."
         }
       ]
+    },
+    {
+      "entry_id": "ISA-DMS-430",
+      "native_term": "Posit",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 106,
+      "pdf_pages": [
+        121,
+        122
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Posit, printed p.106 / PDF pp.121–122",
+      "inspected_content_summary": "Accepted Custom Type for assumed past/future information. Required time marks when the information is expected true, confidence is Percent, and data is a nonempty typed Name Value Pair list constrained by the capability/observable names and types.",
+      "source_span_sha256": "16cda9ea8b0300597de4e03c29126491b106a4b0ef28515e8928849644656e98",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "confidence",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "data",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "1+",
+          "structure": "List"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-432",
+      "native_term": "Processed Frame",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 107,
+      "pdf_pages": [
+        122,
+        123
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Processed Frame, printed p.107 / PDF pp.122–123",
+      "inspected_content_summary": "Accepted Video Analytics Custom Type. UCI identifies the video publisher; timestamp is original capture time. The required detection list may be empty. Pixel dimensions are image dimensions; optional metadata describes processing, not verified provenance.",
+      "source_span_sha256": "bdf0f15396d82494fdbecc8c35dc30c843ef028e2bce0678234d51a324e6ae46",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "component uci",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "timestamp",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Time the original frame was captured."
+        },
+        {
+          "name": "detections",
+          "type": "Video Detection",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List"
+        },
+        {
+          "name": "video stream url",
+          "type": "URL",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "image height",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Vertical image pixel count."
+        },
+        {
+          "name": "image width",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Horizontal image pixel count."
+        },
+        {
+          "name": "metadata",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-450",
+      "native_term": "Video Detection",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 114,
+      "pdf_pages": [
+        129,
+        130
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Video Detection, printed p.114 / PDF pp.129–130",
+      "inspected_content_summary": "Accepted Video Analytics Custom Type. Bounding box and selection indication are required; confidence, label and track are optional. Confidence is a Float in 0..1. Selection for slewing does not establish an action was executed.",
+      "source_span_sha256": "e18f3f20c679b58f350b2e3dc6eddd479836363d421f6493965dafde97c679ce",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "bbox",
+          "type": "Bounding Box",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "confidence",
+          "type": "Float",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "range_as_printed": "0 .. 1"
+        },
+        {
+          "name": "is selected",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Whether selected to be slewed toward, not completed slewing."
+        },
+        {
+          "name": "label",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "suggested_values": [
+            "vehicle",
+            "pedestrian"
+          ],
+          "suggestions_are_closed_enum": false
+        },
+        {
+          "name": "track",
+          "type": "Video Track",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-368",
+      "native_term": "Bounding Box",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 87,
+      "pdf_pages": [
+        102,
+        103
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Bounding Box, printed p.87 / PDF pp.102–103",
+      "inspected_content_summary": "Accepted Video Analytics Custom Type for a rectangle in frame pixels, with required top-left x/y and pixel width/height. No geographic coordinates, normalized values, origin shift or axis conversion is asserted.",
+      "source_span_sha256": "79b00cb9cc5d6ed2f73d130cdc5ab97a8e79a5a4417495f59ba65dc8627ab4ee",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "x",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Horizontal pixel number of top-left corner."
+        },
+        {
+          "name": "y",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Vertical pixel number of top-left corner."
+        },
+        {
+          "name": "width",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Pixels."
+        },
+        {
+          "name": "height",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Pixels."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-451",
+      "native_term": "Video Track",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 115,
+      "pdf_pages": [
+        130,
+        130
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Video Track, printed p.115 / PDF pp.130–130",
+      "inspected_content_summary": "Accepted Video Analytics Custom Type linking a required BSO ID supplied by the analytics service with an optional geographic location. No guaranteed global track reconciliation, persistent identity or supplied location is inferred.",
+      "source_span_sha256": "f85dc1f471d3360b776f550a293e83be4eff874ae52cdd0c29af7be988d12b96",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "id",
+          "type": "BSO ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "location",
+          "type": "Geographic Position",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-382",
+      "native_term": "Event Reference",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 93,
+      "pdf_pages": [
+        108,
+        108
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Event Reference, printed p.93 / PDF pp.108–108",
+      "inspected_content_summary": "Reference to an existing event using required creator UCI, original Event ID and original time. Preserve that combination rather than treating the integer as globally unique.",
+      "source_span_sha256": "7ab9673669a43a3881c2ae5401f4b77b7939bbbb835dd146226886b06e213cb6",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "creator",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "id",
+          "type": "Event ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-275",
+      "native_term": "Event ID",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 52,
+      "pdf_pages": [
+        67,
+        67
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Event ID, printed p.52 / PDF pp.67–67",
+      "inspected_content_summary": "Integer [1,inf), unique only within the generating component and a reasonable timeframe. Source component ID, timestamp and event ID together identify a particular event; this is not the conversation-unique message identifier.",
+      "source_span_sha256": "559840a4b0e4db07db71fbb76a212d0147205240bcefdce5afc27f94e8920da2",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [],
+      "scalar": {
+        "form": "Integer",
+        "range": "[1,inf)"
+      }
+    },
+    {
+      "entry_id": "ISA-DMS-306",
+      "native_term": "Event",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 58,
+      "pdf_pages": [
+        73,
+        74
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Event, printed p.58 / PDF pp.73–74",
+      "inspected_content_summary": "Context inspection of the Event message used by Recall/Resolve: declared observables, original publisher, conversation identifier, event occurrence time, Event ID and optional Event Reference. Full catalogue mapping remains assigned to ISA-07. Required type has the source Other default; absence/default is not proof of a supplied value.",
+      "source_span_sha256": "caa8dcaa2c5b5547e0a0e49694c7a66a830509bcb3d302647ddad3942f4d3d8a",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Conversation-unique message identifier, not Event ID."
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_printed": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Time of event occurrence."
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "event ID",
+          "type": "Event ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "event reference",
+          "type": "Event Reference",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "type",
+          "type": "Event Type",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "default_as_printed": "Other"
+        },
+        {
+          "name": "observables",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List"
+        },
+        {
+          "name": "detector properties",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "meaning": "Detector properties at event occurrence when different from last status."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-293",
+      "native_term": "Priority",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 54,
+      "pdf_pages": [
+        69,
+        70
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Priority, printed p.54 / PDF pp.69–70",
+      "inspected_content_summary": "Integer [0,inf) indicating message priority: zero is of utmost importance, larger numbers lower priority. The source definition continues only its empty Units field onto the next page. No additional urgency or safety semantics inferred.",
+      "source_span_sha256": "c9cdd2156a0b95caa1ff615b51df53b7866a5ad9afe61ba457d79d2c6aa034c8",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [],
+      "scalar": {
+        "form": "Integer",
+        "range": "[0,inf)"
+      }
+    },
+    {
+      "entry_id": "ISA-DMS-424",
+      "native_term": "Measured Wpm2",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 105,
+      "pdf_pages": [
+        120,
+        120
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Wpm2, printed p.105 / PDF pp.120–120",
+      "inspected_content_summary": "Required Wpm2 value and optional Wpm2 error. Explicit error convention is plus/minus one standard deviation. Represents irradiance, not integrated energy or absorbed dose; absent error is not zero uncertainty.",
+      "source_span_sha256": "a5105f5073a4d615a9fca5931e8f3cdaa54247d07991b0d7ebba38c5bf2106f6",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Wpm2",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Wpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-300",
+      "native_term": "Wpm2",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 55,
+      "pdf_pages": [
+        70,
+        71
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Wpm2, printed p.55 / PDF pp.70–71",
+      "inspected_content_summary": "Float scalar whose description identifies irradiance. The source units cell literally says per meter^2. That incomplete label is preserved as source wording, not silently repaired or used to perform an unsupported unit conversion.",
+      "source_span_sha256": "6000c5116e5ce530476e2b431bea97c17a7393b52ee712af30f7080b8db0b50e",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-REMAINING",
+      "native_fields": [],
+      "scalar": {
+        "form": "Float",
+        "units_as_printed": "per meter^2",
+        "source_description": "Unit for describing irradiance"
+      }
     }
   ],
   "reused_supporting_definitions": [
@@ -4713,80 +5522,359 @@
       "review_pass": "ISA-04-RADIOLOGICAL",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114 / PDF pp.129–129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55 / PDF pp.70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF pp.69–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF pp.120–120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-378",
+      "native_term": "Custom Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Custom Type, printed p.92 / PDF pp.107–107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "source_locator": "ISA DMS 6.0r12 §4.2 UCI, printed p.55 / PDF pp.70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-297",
+      "native_term": "URL",
+      "source_locator": "ISA DMS 6.0r12 §4.2 URL, printed p.55 / PDF pp.70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-265",
+      "native_term": "BSO ID",
+      "source_locator": "ISA DMS 6.0r12 §4.2 BSO ID, printed p.51 / PDF pp.66–66",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Position, printed p.95 / PDF pp.110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52 / PDF pp.67–67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53 / PDF pp.68–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-343",
+      "native_term": "Event Type",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Event Type, printed p.79 / PDF pp.94–94",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-REMAINING",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition source definition reused; no later catalogue completion or new case value inferred."
     }
   ],
   "source_inspection": {
-    "primary_text": "Original DMS 6.0r12 §3.2 printed pp.20–21 / PDF35–36: all five assigned definitions and source extension markings.",
+    "primary_text": "Original ISA DMS 6.0r12 §3.2 printed pp.19–22 / PDF34–37: six final observable definitions and core/Accepted-extension marks.",
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
     "primary_text_pages": [
+      34,
       35,
-      36
+      36,
+      37
     ],
     "type_pages_visually_inspected": [
+      73,
+      74,
+      102,
       103,
-      112,
-      113,
-      114,
+      108,
       120,
       121,
+      122,
       123,
-      124,
-      125
+      130
     ],
     "additional_type_text_pages": [
-      66,
       67,
-      96,
-      97
+      69,
+      70,
+      129
     ],
     "new_supporting_definitions": [
-      "Nuclear Reading",
-      "Radiation Contour Line",
-      "Radiation Reading",
-      "Radiation Reading Level",
-      "Chemical Element",
-      "Radioactive Material Type Category Code",
-      "Radioactive Material Type Primary Radiation Code",
-      "Bq",
-      "Measured Bq",
-      "Bqpm2",
-      "Measured Bqpm2",
-      "Bqpm3",
-      "Measured Bqpm3",
-      "Gray",
-      "Measured Gray",
-      "Graypsec",
-      "Measured Graypsec"
+      "Posit",
+      "Processed Frame",
+      "Video Detection",
+      "Bounding Box",
+      "Video Track",
+      "Event Reference",
+      "Event ID",
+      "Event",
+      "Priority",
+      "Measured Wpm2",
+      "Wpm2"
     ],
-    "new_supporting_count": 17,
-    "unique_supporting_total": 112,
+    "new_supporting_count": 11,
+    "unique_supporting_total": 123,
     "reused_types": [
-      "Geographic Shape",
-      "Geographic Arc",
-      "Geographic Ellipse",
-      "Geographic Polygon",
-      "Geographic Polyline",
-      "Geographic Position",
-      "Ellipsoid",
-      "Measured Meters",
-      "Meters",
-      "Measured Degrees",
-      "Degrees",
-      "Float",
-      "Measured Secs",
+      "UTC",
       "Secs",
-      "Cloud Layer",
+      "Percent",
+      "Float",
+      "Name Value Pair",
       "String",
+      "Wildcard",
       "Custom Type",
-      "Measured Percent",
+      "UCI",
+      "URL",
       "Integer",
       "Boolean",
-      "Percent",
-      "Name Value Pair",
-      "Wildcard",
-      "Count"
+      "BSO ID",
+      "Geographic Position",
+      "Degrees",
+      "Meters",
+      "Event Type"
     ],
-    "source_limits": "Representation review only; no real hazard, source identity, exposure, clinical interpretation or operational consequence inferred. Source vocabulary prose is not protection or medical guidance. The Radiation Reading Level channel-description mismatch is retained without rewriting the original meaning."
+    "source_limits": "No inference converted to observed fact; no automatic event deletion, verified resolution, pixel-to-geographic transformation, slewing action, or observation resultTime invented. Wpm2 units-cell wording retained without a silent correction. Unrelated entries sharing a page are not marked reviewed."
   },
   "source_inspections_by_pass": [
     {
@@ -5070,6 +6158,70 @@
         "Count"
       ],
       "source_limits": "Representation review only; no real hazard, source identity, exposure, clinical interpretation or operational consequence inferred. Source vocabulary prose is not protection or medical guidance. The Radiation Reading Level channel-description mismatch is retained without rewriting the original meaning."
+    },
+    {
+      "review_pass": "ISA-04-REMAINING",
+      "primary_text": "Original ISA DMS 6.0r12 §3.2 printed pp.19–22 / PDF34–37: six final observable definitions and core/Accepted-extension marks.",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text_pages": [
+        34,
+        35,
+        36,
+        37
+      ],
+      "type_pages_visually_inspected": [
+        73,
+        74,
+        102,
+        103,
+        108,
+        120,
+        121,
+        122,
+        123,
+        130
+      ],
+      "additional_type_text_pages": [
+        67,
+        69,
+        70,
+        129
+      ],
+      "new_supporting_definitions": [
+        "Posit",
+        "Processed Frame",
+        "Video Detection",
+        "Bounding Box",
+        "Video Track",
+        "Event Reference",
+        "Event ID",
+        "Event",
+        "Priority",
+        "Measured Wpm2",
+        "Wpm2"
+      ],
+      "new_supporting_count": 11,
+      "unique_supporting_total": 123,
+      "reused_types": [
+        "UTC",
+        "Secs",
+        "Percent",
+        "Float",
+        "Name Value Pair",
+        "String",
+        "Wildcard",
+        "Custom Type",
+        "UCI",
+        "URL",
+        "Integer",
+        "Boolean",
+        "BSO ID",
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Event Type"
+      ],
+      "source_limits": "No inference converted to observed fact; no automatic event deletion, verified resolution, pixel-to-geographic transformation, slewing action, or observation resultTime invented. Wpm2 units-cell wording retained without a silent correction. Unrelated entries sharing a page are not marked reviewed."
     }
   ],
   "specific_questions": [],
@@ -5079,7 +6231,7 @@
     "Campbell ClimaVue environmental fields remain separate from logger Status.PanelTemp; no native ISA encoding or fielded installation inferred.",
     "Bennett original ATemp mean events concern ambient air, not ISA internal Temperature; exact original resultTime, producer attribution and probe position remain unchanged. No new equipment values were added."
   ],
-  "mapping_note": "Thirty-three observable entries reviewed. The five new roles distinguish event hazard geometry, optional nuclear-event descriptions, radiation contours, Accepted detailed levels and core radiation readings. Individual traceability is retained; candidate rows are not automatically adopted mandatory DIM fields. Original aggregate-row reconciliation remains separately assigned.",
+  "mapping_note": "All 39 native observable entries are reviewed with supported information roles. Final six preserve past/future inference, processed-frame reporting, recall/resolution context and solar irradiance as distinct concepts. Candidate rows are source-traceable contributions, not automatically mandatory adopted DIM fields; original aggregate-row reconciliation remains separately assigned.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -5090,30 +6242,32 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-04-REMAINING",
-  "next_action": "ISA-04-REMAINING",
+  "next_source_pass": null,
+  "next_action": "ISA-OBSERVABLES-PUBLISH",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-144",
-      "ISA-DMS-148",
-      "ISA-DMS-153",
-      "ISA-DMS-154",
-      "ISA-DMS-155"
+      "ISA-DMS-132",
+      "ISA-DMS-143",
+      "ISA-DMS-152",
+      "ISA-DMS-156",
+      "ISA-DMS-157",
+      "ISA-DMS-158"
     ],
-    "reviewed_total": 124,
-    "supported_total": 120,
+    "reviewed_total": 130,
+    "supported_total": 126,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "observable_entries_reviewed": 33,
+    "observable_entries_reviewed": 39,
     "observable_entries_total": 39,
+    "observable_unreviewed": 0,
     "property_outcomes_unchanged": 91,
-    "information_review_rows": 151,
-    "new_candidate_rows": 5,
+    "information_review_rows": 157,
+    "new_candidate_rows": 6,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 17,
-    "unique_supporting_definitions": 112,
+    "new_supporting_types": 11,
+    "unique_supporting_definitions": 123,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   },
@@ -5150,6 +6304,27 @@
         "Core activity, absorbed dose and dose rate remain distinct quantities. Source uncertainty, confidence and harmful defaults are not independently verified facts.",
         "Bennett retains two original NOAA means/four representations, unchanged QA tokens and unknown original resultTime. No new probe position or native ISA implementation is asserted."
       ]
+    },
+    {
+      "review_pass": "ISA-04-REMAINING",
+      "checks": [
+        "All four existing case examples and their values are unchanged. No forecast, backcast, video detection, recall, resolution or solar measurement is created for them.",
+        "Bennett historical measurements are not reclassified as Backcast merely because they are old. Original resultTime remains unknown; a Posit time or a frame capture timestamp does not supply it.",
+        "Solar irradiance is distinct from internal device temperature, ionizing-radiation dose and photovoltaic electrical output. Documentary device capabilities are not treated as installed native ISA reports."
+      ]
     }
-  ]
+  ],
+  "catalogue_reconciliation": {
+    "catalogue": "DMS6.0r12 §3.2 Observables",
+    "native_entries": 39,
+    "evidence_records": 39,
+    "supported_outcomes": 39,
+    "core": 19,
+    "accepted_extensions": 20,
+    "unreviewed": 0,
+    "duplicate_primary_ids": 0,
+    "sourceReviewState": "COMPLETE",
+    "workbookPublicationState": "NEXT",
+    "next_task": "ISA-OBSERVABLES-PUBLISH"
+  }
 }
