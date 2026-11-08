@@ -13,7 +13,8 @@
   ],
   "completed_passes": [
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
-    "ISA-COMMANDS-IMAGE-SETTINGS"
+    "ISA-COMMANDS-IMAGE-SETTINGS",
+    "ISA-COMMANDS-AUTO-CONTROLS"
   ],
   "primary_records": [
     {
@@ -885,6 +886,349 @@
         "meaning": "Change supplies the desired setting; Adjust supplies direction and optional relative rate/duration. Adjust defaults and zero-duration stopping behavior are not copied into Change.",
         "source_of_comparison": "Saved original-source-checked Adjust record; retained unchanged."
       }
+    },
+    {
+      "id": "ISA-CMD-178",
+      "entry_id": "ISA-DMS-178",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Brightness",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 29,
+      "pdf_pages": [
+        44
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Brightness, printed p.29 / PDF p.44",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1181fcffbf2f28ab5aece85a31a014f012f1472291bb24a47f64695b8a89f62b",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-178",
+      "proposed_label": "Requested automatic brightness enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto brightness. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Does not select a numerical brightness target, exposure strategy or adjustment algorithm. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-039",
+      "reported_property_evidence": "ISA02-039",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto brightness is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-179",
+      "entry_id": "ISA-DMS-179",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Contrast",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 29,
+      "pdf_pages": [
+        44
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Contrast, printed p.29 / PDF p.44",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "2613d858b3e17f71f997bc36b331c9c44ec8a228f871873eb21c8058450aca7b",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-179",
+      "proposed_label": "Requested automatic contrast enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto contrast. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Does not select a numerical contrast target, histogram strategy or adjustment algorithm. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-040",
+      "reported_property_evidence": "ISA02-040",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto contrast is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-180",
+      "entry_id": "ISA-DMS-180",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Focus",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 29,
+      "pdf_pages": [
+        44,
+        45
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Focus, printed pp.29–30 / PDF pp.44–45",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "eeaa728b9043e0939defaf9db080b926d93044cea4118265bfd24a6c84dbde88",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-180",
+      "proposed_label": "Requested automatic focus enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto focus. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Does not specify a focus distance, target setting, one-shot focus action or a guarantee that focus is achieved. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-041",
+      "reported_property_evidence": "ISA02-041",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto focus is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-181",
+      "entry_id": "ISA-DMS-181",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Gain",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 30,
+      "pdf_pages": [
+        45
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Gain, printed p.30 / PDF p.45",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "95b6eb4fb65f80dde6e003b875c66c649f98de6b269d2308ab28c9c6bd2e2b74",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-181",
+      "proposed_label": "Requested automatic gain enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto gain. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Does not specify gain in decibels, a percentage target, or the algorithm used for gain control. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-042",
+      "reported_property_evidence": "ISA02-042",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto gain is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-182",
+      "entry_id": "ISA-DMS-182",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Level",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 30,
+      "pdf_pages": [
+        45
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Level, printed p.30 / PDF p.45",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fcb8083b3681c1e7d46c1964f5b76bf6c8ac6a473fe744864f2be945f538aa69",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-182",
+      "proposed_label": "Requested auto-level enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto level. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Controls the source-named auto-level function. The saved Auto Level property describes automatic pixel-value adjustment; this does not resolve the separate generic Level property question ISA-Q001 or define its algorithm. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-043",
+      "reported_property_evidence": "ISA02-043",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto level is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-183",
+      "entry_id": "ISA-DMS-183",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Auto Scan",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 30,
+      "pdf_pages": [
+        45
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Auto Scan, printed p.30 / PDF p.45",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ad8b8729cddf2cb75a4b1ccc8380b456dccfb0d58e2ee7c6612ee59bc077bfcc",
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-183",
+      "proposed_label": "Requested automatic scanning enablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a request to enable or disable auto scan. The sole parameter enabled is one required Boolean: true enables this named automatic function and false disables it.",
+      "mapping_boundary": "Requested automatic-function enablement, not a reported state, general component enablement, numerical target or proof that a command was sent or executed. Does not specify a scan area, route, direction, period, speed or completed scan. These remain separate information roles. No omitted-value default, direction, rate, duration, execution timing or command-specific result field is supplied by this entry.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: a specific automatic-function enable/disable request and its Boolean input. Generic Request/Response envelopes, authorization, execution and outcome reconciliation retain separate assignments.",
+      "related_reported_property_entry": "ISA-DMS-044",
+      "reported_property_evidence": "ISA02-044",
+      "reported_property_link_basis": "Saved same-edition Auto property evidence is linked as reported-state context, not overwritten or equated with the request.",
+      "common_parameter_schema": "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether auto scan is to be enabled (true) or disabled (false).",
+          "default_as_source": null,
+          "default_review": "No default is supplied for this required parameter; omission is not treated as false.",
+          "type_boundary": "Original Boolean has two truth values, true and false. No null/unknown state or integer/string wire encoding is inferred."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
+      "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
     }
   ],
   "supporting_definitions": [
@@ -982,6 +1326,17 @@
       "review_pass": "ISA-COMMANDS-IMAGE-SETTINGS",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Exact-edition supporting evidence reused. Percent was also checked in original PDF69 for target semantics and absence of an invented universal 0–100 restriction."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked exact-edition Boolean definition reread as original text on PDF65; no new supporting definition counted. Required false differs from a missing parameter."
     }
   ],
   "shared_parameter_schemas": {
@@ -1059,36 +1414,60 @@
       ],
       "purpose": "Six separately traceable controlled targets share one target-setting pattern; not six compulsory independent DIM classes.",
       "command_specific_results": "No Results table is present in these six entries."
+    },
+    "ISA-CMD-AUTOMATIC-FUNCTION-ENABLEMENT-PARAMETERS": {
+      "applies_to": [
+        "ISA-DMS-178",
+        "ISA-DMS-179",
+        "ISA-DMS-180",
+        "ISA-DMS-181",
+        "ISA-DMS-182",
+        "ISA-DMS-183"
+      ],
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "true_meaning": "Enable the named automatic function.",
+          "false_meaning": "Disable the named automatic function.",
+          "default_as_source": null
+        }
+      ],
+      "meaning": "Each command requests enablement or disablement of its named automatic function. This shared parameter pattern does not collapse the six controlled functions into one capability or require six independent DIM classes.",
+      "not_in_this_signature": [
+        "target-setting percentage",
+        "direction",
+        "rate",
+        "duration"
+      ],
+      "command_specific_results": "No command-specific Results table occurs in these six entries before the next command heading.",
+      "distinctions": "Automatic-function enablement request is separate from a reported enabled property, an algorithm specification, a numerical target setting, command acknowledgement and actual execution."
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "Original DMS 6.0r12 §3.3 printed pp.30–32,34–35 / PDF45–47,49–50: six exact command definitions, complete parameter tables and following headings.",
+    "primary_text": "Original DMS 6.0r12 §3.3 printed pp.29–30 / PDF44–45: all six automatic-control command definitions, full parameter tables and subsequent headings.",
     "primary_text_pages": [
-      45,
-      46,
-      47,
-      49,
-      50
+      44,
+      45
     ],
     "primary_pages_visually_inspected": [
-      45,
-      46,
-      47,
-      49,
-      50
+      44,
+      45
     ],
     "additional_text_pages": [
-      69
+      65
     ],
     "new_supporting_definitions": [],
     "new_supporting_count": 0,
     "unique_supporting_total": 124,
     "reused_types": [
-      "Percent",
-      "Float"
+      "Boolean"
     ],
-    "source_limits": "No physical setting, execution success, device capability, omitted-parameter default or hard numeric input boundary inferred. No other commands reviewed."
+    "source_limits": "Only requested enablement and exact Boolean input are established. No algorithm, numerical setting, reported state, execution, omitted-input default or physical effect inferred; generic Level Q001 remains unchanged."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -1154,13 +1533,35 @@
         "Float"
       ],
       "source_limits": "No physical setting, execution success, device capability, omitted-parameter default or hard numeric input boundary inferred. No other commands reviewed."
+    },
+    "ISA-COMMANDS-AUTO-CONTROLS": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "Original DMS 6.0r12 §3.3 printed pp.29–30 / PDF44–45: all six automatic-control command definitions, full parameter tables and subsequent headings.",
+      "primary_text_pages": [
+        44,
+        45
+      ],
+      "primary_pages_visually_inspected": [
+        44,
+        45
+      ],
+      "additional_text_pages": [
+        65
+      ],
+      "new_supporting_definitions": [],
+      "new_supporting_count": 0,
+      "unique_supporting_total": 124,
+      "reused_types": [
+        "Boolean"
+      ],
+      "source_limits": "Only requested enablement and exact Boolean input are established. No algorithm, numerical setting, reported state, execution, omitted-input default or physical effect inferred; generic Level Q001 remains unchanged."
     }
   },
   "specific_questions": [],
   "case_checks": [
-    "No native ISA command capability or executed target-setting change is asserted for any equipment example.",
-    "All 73 prior case facts and all non-ISA grid values are preserved. No device maximum, target value, completion time or response is invented.",
-    "Requested setting, rate-based adjustment and reported property remain distinct; no historical observation or original resultTime is changed."
+    "No native ISA automatic-control capability, requested Boolean or executed control operation is asserted for any of the four documentary/historical equipment examples.",
+    "All 73 equipment facts and prior non-ISA grid values are retained; no algorithm, command response, measured state or original resultTime is invented.",
+    "The six already reviewed Auto property records remain unchanged. Automatic-function enablement, target-setting requests, rate-based adjustment and reported state remain separate."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -1172,9 +1573,14 @@
       "No native ISA command capability or executed target-setting change is asserted for any equipment example.",
       "All 73 prior case facts and all non-ISA grid values are preserved. No device maximum, target value, completion time or response is invented.",
       "Requested setting, rate-based adjustment and reported property remain distinct; no historical observation or original resultTime is changed."
+    ],
+    "ISA-COMMANDS-AUTO-CONTROLS": [
+      "No native ISA automatic-control capability, requested Boolean or executed control operation is asserted for any of the four documentary/historical equipment examples.",
+      "All 73 equipment facts and prior non-ISA grid values are retained; no algorithm, command response, measured state or original resultTime is invented.",
+      "The six already reviewed Auto property records remain unchanged. Automatic-function enablement, target-setting requests, rate-based adjustment and reported state remain separate."
     ]
   },
-  "mapping_note": "The command evidence preserves separate source request roles and shared parameter patterns. Same-name property links do not equate requested and reported values. General envelope/aggregate-row reconciliation and model adoption remain separate assigned tasks; no unsupported return contract is invented.",
+  "mapping_note": "Each native command retains individual traceability within a shared parameter pattern. Candidate request rows are not six mandatory independent DIM classes; generic Request/Response and owner-adoption decisions remain separate.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
     "checkpoint": "ISA-OBSERVABLES-PUBLISH",
@@ -1185,28 +1591,28 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-AUTO-CONTROLS",
-  "next_action": "Review the six assigned automatic-control Change commands from original definitions; update the same cumulative GitHub records.",
+  "next_source_pass": "ISA-COMMANDS-SENSING-MODES",
+  "next_action": "Review the six assigned sensing mode/output commands only: Change Camera Mode, Change Frame Rate, Change Polarity, Change Quality, Change Radar Mode, Change Resolution. Preserve exact enums/strings/units and request-versus-reported-state boundaries; no workbook release.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-184",
-      "ISA-DMS-186",
-      "ISA-DMS-190",
-      "ISA-DMS-192",
-      "ISA-DMS-193",
-      "ISA-DMS-205"
+      "ISA-DMS-178",
+      "ISA-DMS-179",
+      "ISA-DMS-180",
+      "ISA-DMS-181",
+      "ISA-DMS-182",
+      "ISA-DMS-183"
     ],
-    "reviewed_total": 142,
-    "supported_total": 138,
+    "reviewed_total": 148,
+    "supported_total": 144,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "command_entries_reviewed": 12,
+    "command_entries_reviewed": 18,
     "command_entries_total": 96,
-    "command_unreviewed": 84,
+    "command_unreviewed": 78,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 169,
+    "information_review_rows": 175,
     "new_candidate_rows": 6,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,

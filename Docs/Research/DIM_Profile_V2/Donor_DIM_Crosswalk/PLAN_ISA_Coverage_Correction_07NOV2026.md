@@ -1,14 +1,14 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Image-setting commands COMPLETE (12/96 command entries reviewed). Properties 91/91 and observables 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-AUTO-CONTROLS only.**
+**CURRENT — Automatic-control commands COMPLETE (18/96 command entries reviewed). Properties 91/91 and observables 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-SENSING-MODES only.**
 
 [Latest comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
-This completed pass examined Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom (184,186,190,192,193,205). Each requires one target-setting Percent parameter; actual names, cross-page continuations and distinction from saved Adjust behavior are recorded. No new supporting type or interpretation question was introduced. Current text:142 primary reviews,138 supported,four unchanged property questions,169 information/review rows,124 supporting definitions.
+This pass reviewed Change Auto Brightness, Change Auto Contrast, Change Auto Focus, Change Auto Gain, Change Auto Level and Change Auto Scan (178–183). Each requires one enabled:Boolean input; true enables and false disables the named function. Original parameter tables, the Focus page continuation, and absence of a supplied default or command-specific Results table are recorded. The shared pattern does not imply six compulsory separate model classes. Current text: 148 primary reviews, 144 supported, four unchanged property questions, 175 information/review rows and 124 supporting definitions.
 
-**Next single group:** Change Auto Brightness, Change Auto Contrast, Change Auto Focus, Change Auto Gain, Change Auto Level and Change Auto Scan (178–183). These are source assignments, not reviewed conclusions. Preserve the generic Level property question; shared wording is not a resolution. Update the same cumulative evidence, coverage and readable comparison, then verify GitHub delivery and stop.
+**Next single group:** Change Camera Mode, Change Frame Rate, Change Polarity, Change Quality, Change Radar Mode and Change Resolution (185,191,198,201,202,203). These remain unreviewed source assignments. Examine the exact native parameter names, enums/strings and units; distinguish requested mode/output characteristics from reported state. Update cumulative GitHub records, verify and stop.
 
-**Delivery:** the completed property/observable workbook remains the130-primary/157-row snapshot. Current GitHub command text is newer. No per-group workbook release, standalone report, new publisher or workflow. Completed source work and the repaired workbook checkpoint are not reopened.
+**Delivery:** the completed property/observable workbook remains the 130-primary/157-row snapshot; current command text is newer. No per-group workbook release, standalone report, new publisher or workflow. No completed source work or repaired workbook checkpoint is reopened.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
