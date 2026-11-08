@@ -14,187 +14,111 @@ env:
   VERIFY_ISA_TEXT: |
     import os,sys,json,hashlib,base64,lzma,subprocess,csv,re
     from pathlib import Path
-    sys.path.insert(0,'scripts')
-    from publish_isa03a_checkpoint import assemble
-    from publish_isa02_checkpoint import workbook
     D=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk')
     checksum,encoded=(D/'.isa_review_text_update.txt').read_text().strip().split('\n',1)
     encoded=''.join(encoded.split()).encode()
-    sha=lambda b:hashlib.sha256(b).hexdigest()
-    assert sha(encoded)==checksum,'Reviewed checkpoint checksum differs'
+    assert hashlib.sha256(encoded).hexdigest()==checksum
     p=json.loads(lzma.decompress(base64.b64decode(encoded,validate=True)))
-    publishing_workbook=p['checkpoint'] in {'ISA-PROPERTIES-PUBLISH','ISA-OBSERVABLES-PUBLISH','ISA-COMMANDS-PUBLISH'}
-    allowed={'text_delta','xlsx_export'} if publishing_workbook else {'text_delta'}
-    assert all(v['kind'] in allowed for v in p['files'].values()),'Unexpected artifact kind'
-    assert all(Path(n).suffix in ({'.md','.json','.csv','.xlsx'} if publishing_workbook else {'.md','.json','.csv'}) for n in p['files']),'Unexpected output suffix'
-    subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
-    old=lambda name:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/name)])
-    exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
-    if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:
-        assemble(p)
-    for n,v in p['files'].items():
-        b=Path(n).read_bytes()
-        assert sha(b)==v['sha256'] and len(b)==v['size'],n
-    for n,digest in p['preserved_files'].items():
-        assert sha(Path(n).read_bytes())==digest,'Historical snapshot changed: '+n
-    r=json.loads((D/'ISA_Coverage_Register_07NOV2026.json').read_text())
-    prior=json.loads(old('ISA_Coverage_Register_07NOV2026.json'))
-    s=json.loads((D/'ISA_Correction_Status_07NOV2026.json').read_text())
-    e=json.loads((D/s['currentEvidence']).read_text())
-    expected=p['validation_summary']
-    assert len(r['dms_entries'])==len(prior['dms_entries'])==expected['source_inventory_entries']
-    for key in ['sources','source_blocks','row_targets','legacy_records','baseline','census_method','reconciliation','legend']:
-        assert r[key]==prior[key],'Unrelated source records changed: '+key
-    assert len(r['review_grid'])-len(r['review_sections'])-2==expected['information_rows']
-    assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==expected['reviewed_total']
-    assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==expected['supported_total']
-    assert sum(bool(x.get('supporting_definition_checked_in')) for x in r['dms_entries'])==expected['unique_supporting_definitions']
-    assert sum(x['semantic_review_status']=='REVIEWED_QUESTION_RECORDED' for x in r['dms_entries'])==len(r['specific_questions'])==expected['questions_total']
-    assert s['nextOnOwnerProceed']==p['next_task']
-    view=(D/s['currentReview']).read_text()
-    assert '<table>' in view
-    with (D/s['currentReview'].replace('.md','.csv')).open(newline='') as handle:
-        assert list(csv.reader(handle))==r['review_grid']
-    if publishing_workbook:
-        for key in ['dms_entries','specific_questions','review_grid','review_sections','candidate_rows']:
-            assert r[key]==prior[key],'Saved scientific content changed: '+key
-        earlier_e=json.loads(old(s['currentEvidence']))
-        for key in ['primary_records','supporting_definitions','specific_questions','source_inspection','case_checks','source_inspections_by_pass']:
-            assert e[key]==earlier_e[key],'Saved evidence changed: '+key
+    if p['checkpoint']!='MASTER-ISA-INTEGRATION':
+        baseline='da168cf68b6fb96c090daacf70d3c8efcf004b77'
+        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',baseline],check=True)
+        prior_workflow=subprocess.check_output(['git','show',baseline+':.github/workflows/publish-isa03d-checkpoint.yml']).decode()
+        lines=prior_workflow.split('  VERIFY_ISA_TEXT: |\n',1)[1].split('\njobs:\n',1)[0].splitlines()
+        exec(compile('\n'.join(line[4:] for line in lines),'<existing ISA verifier>','exec'))
+    else:
+        sys.path.insert(0,'scripts')
+        from publish_isa03a_checkpoint import assemble
+        from publish_isa02_checkpoint import workbook
+        sha=lambda b:hashlib.sha256(b).hexdigest()
+        assert all(v['kind'] in {'text_delta','xlsx_export'} for v in p['files'].values()),'Unexpected artifact kind'
+        assert all(Path(n).suffix in {'.md','.json','.csv','.xlsx'} for n in p['files']),'Unexpected output suffix'
+        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
+        old=lambda name:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/name)])
+        exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
+        if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:
+            assemble(p)
+        for n,v in p['files'].items():
+            b=Path(n).read_bytes()
+            assert sha(b)==v['sha256'] and len(b)==v['size'],n
+        for n,digest in p['preserved_files'].items():
+            assert sha(Path(n).read_bytes())==digest,'Historical snapshot changed: '+n
+        r=json.loads((D/'ISA_Coverage_Register_07NOV2026.json').read_text())
+        prior=json.loads(old('ISA_Coverage_Register_07NOV2026.json'))
+        s=json.loads((D/'ISA_Correction_Status_07NOV2026.json').read_text())
+        e=json.loads((D/s['currentEvidence']).read_text())
+        expected=p['validation_summary']
+        assert len(r['dms_entries'])==expected['source_inventory_entries']==480
+        assert len(r['review_grid'])-len(r['review_sections'])-2==expected['information_rows']==253
+        assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==expected['reviewed_total']==226
+        assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==expected['supported_total']==220
+        assert sum(bool(x.get('supporting_definition_checked_in')) for x in r['dms_entries'])==expected['unique_supporting_definitions']==167
+        assert sum(x['semantic_review_status']=='REVIEWED_QUESTION_RECORDED' for x in r['dms_entries'])==len(r['specific_questions'])==expected['questions_total']==6
+        assert s['nextOnOwnerProceed']==p['next_task']
+        view=(D/s['currentReview']).read_text()
+        assert '<table>' in view
+        with (D/s['currentReview'].replace('.md','.csv')).open(newline='') as handle:
+            assert list(csv.reader(handle))==r['review_grid']
+        assert r==prior,'Scientific source register changed during integration'
+        assert e==json.loads(old(s['currentEvidence'])),'Command evidence changed during integration'
+        old_s=json.loads(old('ISA_Correction_Status_07NOV2026.json'))
+        assert s['nextOnOwnerProceed']==old_s['nextOnOwnerProceed']=='ISA-TYPES-BASE-MESSAGES'
+        assert s['nextSourceIDs']==old_s['nextSourceIDs'] and len(s['nextSourceIDs'])==54
+        assert s['remainingDeliveryForecast']['centralRemainingPrompts']==15
+        assert s['remainingDeliveryForecast']['plannedQueueCompleted']==7
+        assert s['masterIntegration']['newSourceReviews']==0
+        assert s['masterIntegration']['newDIMContentAdopted'] is False
+        master=json.loads((D/'Master_Donor_Concept_to_DIM_Crosswalk.json').read_text())
+        legacy=json.loads(old('Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.json'))
+        assert master['originalDonorEvidence']==legacy['originalDonorEvidence']
+        assert master['caseEvidence']==legacy['caseEvidence']
+        assert master['review_grid']==r['review_grid']
+        assert len(master['rows'])==len({x['row_id'] for x in master['rows']})==253
+        assert master['adoptionPolicy']['focused_adoption_checkpoint']==24
+        assert master['adoptionPolicy']['consolidated_baseline_checkpoint']==40
+        assert master['adoptionPolicy']['content_adopted_by_this_update'] is False
+        assert s['currentWorkbook']=='Master_Donor_Concept_to_DIM_Crosswalk.xlsx'
         b=(D/s['currentWorkbook']).read_bytes()
-        assert sha(b)==s['workbookSnapshot']['sha256']
+        assert sha(b)==s['workbookSnapshot']['sha256']==master['currentWorkbookSha256']
         current=workbook(b)
-        baseline=p.get('baseline_workbook','ISA_Correction_Review_ISA03D_07NOV2026.xlsx')
-        previous=workbook((D/baseline).read_bytes())
-        assert list(current)==list(previous) and len(current)==12
-        for sheet in ['Source Blocks','Earlier Findings','Sources','Legend','Questions']:
+        previous=workbook((D/p['baseline_workbook']).read_bytes())
+        legacy_book=workbook((D/p['legacy_master']).read_bytes())
+        assert len(current)==26 and 'Master Crosswalk' in current
+        eq=lambda a,b:(a[0] or '',a[1] or '')==(b[0] or '',b[1] or '')
+        for old_name,new_name in p['legacy_sheet_map'].items():
+            for address,value in legacy_book[old_name].items():
+                if value[0] is not None or value[1] is not None:
+                    assert eq(current[new_name].get(address,(None,None)),value),('Prior donor audit changed',old_name,address)
+        for sheet in ['DMS Inventory','Source Blocks','Row Coverage','Earlier Findings','Sources','Legend','Validation','ISA Evidence','Dependencies','Questions']:
             for address,value in previous[sheet].items():
-                if value[0] is not None and not (sheet=='Questions' and address in {'A1','A2'}):
-                    assert current[sheet].get(address)==value,('Preserved sheet',sheet,address)
-        for sheet in ['Row Coverage','ISA Evidence','Dependencies']:
-            for address,value in previous[sheet].items():
-                if address not in {'A1','A2'} and value[0] is not None:
-                    assert current[sheet].get(address)==value,('Earlier evidence',sheet,address)
+                if value[0] is not None or value[1] is not None:
+                    assert eq(current[sheet].get(address,(None,None)),value),('ISA evidence changed',sheet,address)
         for i,row in enumerate(r['review_grid'],6):
             for j,value in enumerate(row):
-                assert (current['ISA Review'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Workbook/table mismatch'
-        for i,q in enumerate(r['specific_questions'],5):
-            values=[q['id'],q['native_term'],q['known'],q['question'],q['decision'],q['evidence'],q['next_resolution'],q['state']]
-            for j,value in enumerate(values):
-                assert current['Questions'][chr(65+j)+str(i)][0]==value,'Question meaning changed'
+                assert (current['Master Crosswalk'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Master grid mismatch'
+        bylabel={x[-1]:x for x in r['review_grid'][2:] if x[-1]}
+        for oldrow in legacy['rows']:
+            if oldrow.get('type')!='section':
+                row=bylabel[oldrow['dim']]
+                assert row[:7]+row[8:]==oldrow['display'],'Earlier donor/case cells changed'
         assert not any(value[0] in {'#REF!','#DIV/0!','#VALUE!','#NAME?','#N/A','#NUM!','#SPILL!'} for cells in current.values() for value in cells.values())
+        for address,wanted in {'A6':226,'D6':216,'G6':6,'G12':220,'G13':167,'G14':0}.items():
+            assert float(current['Summary'][address][0])==wanted
         assert s['workbookSnapshot']['currentlyMatchesReadableView'] is True
-        if p['checkpoint']=='ISA-OBSERVABLES-PUBLISH':
-            props=[x for x in r['dms_entries'] if x['source_kind']=='property']
-            obs=[x for x in r['dms_entries'] if x['source_kind']=='observable']
-            assert len(props)==91 and len(obs)==39
-            assert all(x['semantic_review_status'].startswith('REVIEWED_') for x in props+obs)
-            assert len(e['primary_records'])==39 and {x['entry_id'] for x in e['primary_records']}=={x['id'] for x in obs}
-            assert s['observableCatalogue']['workbookPublicationState']=='COMPLETE'
-            assert s['propertyCatalogue']['state']=='COMPLETE'
-            assert s['currentWorkbook']=='ISA_Correction_Review_Observables_07NOV2026.xlsx'
-            assert s['nextOnOwnerProceed']=='ISA-COMMANDS-IMAGE-ADJUSTMENTS'
-            assert set(s['nextSourceIDs'])=={'ISA-DMS-164','ISA-DMS-165','ISA-DMS-166','ISA-DMS-167','ISA-DMS-168','ISA-DMS-171'}
-            assert all(x['semantic_review_status']=='NOT_REVIEWED_IN_CORRECTION' for x in r['dms_entries'] if x['source_kind']=='command')
-            for i,x in enumerate(e['primary_records'],97):
-                values=[x['id'],x['entry_id'],x['native_term'],x['native_type']+' / '+x['native_structure'],x['source_standing'],x['target_row'],x['proposed_label'],x['mapping_relation'],x['disposition'],x['original_meaning'],x['mapping_boundary'],x['source_locator'],'; '.join(x['dependency_terms']),x.get('question_id') or '']
-                for j,value in enumerate(values):
-                    assert (current['ISA Evidence'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Observable evidence mismatch'
-            evidence_ids=[current['ISA Evidence']['B'+str(i)][0] for i in range(5,136)]
-            assert len(evidence_ids)==len(set(evidence_ids))==131
-            assert {x['id'] for x in props+obs}.issubset(set(evidence_ids))
-            dependency_ids=[current['Dependencies']['A'+str(i)][0] for i in range(5,128)]
-            assert len(dependency_ids)==len(set(dependency_ids))==123
-            assert set(dependency_ids)=={x['id'] for x in r['dms_entries'] if x.get('supporting_definition_checked_in')}
-            for i,x in enumerate(e['supporting_definitions'],67):
-                assert current['Dependencies']['A'+str(i)][0]==x['entry_id']
-                assert current['Dependencies']['D'+str(i)][0]==x['source_locator']
-                assert current['Dependencies']['E'+str(i)][0]==x['inspected_content_summary']
-            for address,wanted in {'A6':130,'D6':122,'G6':4,'G12':126,'G13':123,'G14':0}.items():
-                assert float(current['Summary'][address][0])==wanted,('Summary',address)
-            assert current['Summary']['G10'][0]=='91 / 91' and current['Summary']['G11'][0]=='39 / 39'
-            for address,wanted in {'B18':91,'B19':0,'B22':39,'B24':0,'B25':123,'B27':1,'B28':39,'B29':0,'B31':1,'B32':157,'B33':0}.items():
-                assert float(current['Validation'][address][0])==wanted,('Validation',address)
-            assert current['Validation']['B20'][0]=='79 / 12' and current['Validation']['B30'][0]=='19 / 20'
-        if p['checkpoint']=='ISA-COMMANDS-PUBLISH':
-            commands=[x for x in r['dms_entries'] if x['source_kind']=='command']
-            assert len(commands)==len(e['primary_records'])==96
-            assert {x['id'] for x in commands}=={x['entry_id'] for x in e['primary_records']}
-            assert all(x['semantic_review_status'].startswith('REVIEWED_') for x in commands)
-            assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in commands)==94
-            assert e['source_wording_notes']==earlier_e['source_wording_notes']
-            assert s['commandCatalogue']['workbookPublicationState']=='COMPLETE'
-            assert s['propertyCatalogue']['state']==s['observableCatalogue']['state']=='COMPLETE'
-            assert s['currentWorkbook']=='ISA_Correction_Review_Commands_08NOV2026.xlsx'
-            assert s['nextOnOwnerProceed']=='ISA-TYPES-BASE-MESSAGES'
-            expected_next={x['id'] for x in r['dms_entries'] if x['section'] in {'4.1','4.2','5.1','6.1','6.2'}}
-            assert len(expected_next)==54 and set(s['nextSourceIDs'])==expected_next
-            for i,x in enumerate(e['primary_records'],136):
-                values=[x['id'],x['entry_id'],x['native_term'],x['native_type']+' / '+x['native_structure'],x['source_standing'],x['target_row'],x['proposed_label'],x['mapping_relation'],x['disposition'],x['original_meaning'],x['mapping_boundary'],x['source_locator'],'; '.join(x['dependency_terms']),x.get('question_id') or '']
-                for j,value in enumerate(values):
-                    assert (current['ISA Evidence'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Command evidence mismatch'
-            evidence_ids=[current['ISA Evidence']['B'+str(i)][0] for i in range(5,232)]
-            assert len(evidence_ids)==len(set(evidence_ids))==227
-            dependency_ids=[current['Dependencies']['A'+str(i)][0] for i in range(5,172)]
-            assert len(dependency_ids)==len(set(dependency_ids))==167
-            assert set(dependency_ids)=={x['id'] for x in r['dms_entries'] if x.get('supporting_definition_checked_in')}
-            for i,x in enumerate(e['supporting_definitions'],128):
-                assert current['Dependencies']['A'+str(i)][0]==x['entry_id']
-                assert current['Dependencies']['D'+str(i)][0]==x['source_locator']
-                assert current['Dependencies']['E'+str(i)][0]==x['inspected_content_summary']
-            assert current['Questions']['A14'][0]==e['source_wording_notes'][0]['id']
-            assert current['Questions']['C14'][0]==e['source_wording_notes'][0]['source_wording']
-            assert current['Questions']['D14'][0]==e['source_wording_notes'][0]['contrast']
-            for address,wanted in {'A6':226,'D6':216,'G6':6,'G12':220,'G13':167,'G14':0}.items():
-                assert float(current['Summary'][address][0])==wanted,('Summary',address)
-            for address,wanted in {'G10':'91 / 91','G11':'39 / 39','G15':'96 / 96'}.items():
-                assert current['Summary'][address][0]==wanted
-            for address,wanted in {'B18':91,'B19':0,'B24':0,'B25':167,'B26':6,'B28':39,'B29':0,'B32':253,'B34':96,'B35':0,'B36':94,'B37':2,'B38':96,'B39':1,'B40':1,'B41':0,'B42':227,'B43':0}.items():
-                assert float(current['Validation'][address][0])==wanted,('Validation',address)
-            questions={x['entry_id']:x['id'] for x in r['specific_questions']}
-            for i,x in enumerate(r['dms_entries'],5):
-                st=x['semantic_review_status']
-                wanted='Reviewed · source-supported' if st=='REVIEWED_SOURCE_SUPPORTED' else 'Reviewed · question '+questions[x['id']] if st=='REVIEWED_QUESTION_RECORDED' else 'Not reviewed in correction'
-                assert current['DMS Inventory']['I'+str(i)][0]==wanted
-                for col in 'ABCDEFGHJ':
-                    assert current['DMS Inventory'].get(col+str(i))==previous['DMS Inventory'].get(col+str(i))
-        report=json.loads((D/p.get('publication_record','ISA_Properties_Publication_Record_07NOV2026.json')).read_text())
-        assert report['new_semantic_source_reviews']==0
-        for name,digest in report['published_file_sha256'].items():
-            assert sha(Path(name).read_bytes())==digest,'Publication-record hash mismatch: '+name
-        for name in ['PITON_ISA_Coverage_Correction_07NOV2026.md','PLAN_ISA_Coverage_Correction_07NOV2026.md',s['currentReview']]:
+        record=json.loads((D/p['publication_record']).read_text())
+        assert record['new_semantic_source_reviews']==0 and record['DIM_content_adopted'] is False
+        for path,digest in record['published_file_sha256'].items():
+            assert sha(Path(path).read_bytes())==digest,'Master integration record hash mismatch'
+        for name in ['README.md','PITON_ISA_Coverage_Correction_07NOV2026.md','PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md','PLAN_ISA_Coverage_Correction_07NOV2026.md','PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md',s['currentReview']]:
             text=(D/name).read_text()
             assert s['currentWorkbook'] in text
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if '://' not in link and not link.startswith('#'):
-                    assert (D/link.split('#',1)[0]).is_file(),'Broken local link: '+link
-        print('PASS: exact consolidated workbook, saved primary evidence, dependency records, questions, formulas and grid agree.')
-        print('PASS: historical workbook, prior meanings and non-ISA values preserved; zero new source reviews.')
-    else:
-        records=[x for x in e['primary_records'] if x['review_pass']==p['checkpoint']]
-        target={x['entry_id'] for x in records}
-        assert len(records)==len(target)==expected['assigned']==expected['reviewed']
-        oldentries={x['id']:x for x in prior['dms_entries']}
-        changed={x['id'] for x in r['dms_entries'] if x['semantic_review_status']!=oldentries[x['id']]['semantic_review_status']}
-        assert changed==target,'Unexpected primary review scope'
-        priorq=prior['specific_questions'];currentq=r['specific_questions']
-        assert currentq[:len(priorq)]==priorq
-        addedq=currentq[len(priorq):]
-        assert {q['id'] for q in addedq}==set(expected.get('new_question_ids',[]))
-        assert len({q['id'] for q in currentq})==len(currentq)
-        assert all(q['entry_id'] in target for q in addedq)
-        assert {x['question_id'] for x in records if x.get('question_id')}=={q['id'] for q in addedq}
-        assert all(q in e.get('specific_questions',[]) for q in addedq)
-        labels={x['proposed_label'] for x in records}
-        assert len(labels)==len(records)
-        assert [row for row in r['review_grid'] if row[-1] not in labels]==prior['review_grid']
-        assert r['candidate_rows'][:len(prior['candidate_rows'])]==prior['candidate_rows']
-        assert s['workbookSnapshot']['currentlyMatchesReadableView'] is False
-        assert all(x['native_term'] in view for x in records) and 'snapshot' in view.lower() and 'newer' in view.lower()
-        print('PASS: reviewed source group, exact text outputs, prior records/questions and workbook snapshot preserved.')
-    if os.environ.get('APPLY_ISA_TEXT')=='1':
-        subprocess.run(['git','add','--',*p['files'].keys()],check=True)
-    print('CHECKPOINT:',p['checkpoint'],'NEXT:',p['next_task'])
+                    assert (D/link.split('#',1)[0]).is_file(),'Broken current link: '+link
+        print('PASS: master integrates all253 rows; all prior ISA, donor and case evidence preserved.')
+        print('PASS: adoption checkpoints24/40 recorded; zero content adoption or new research; slot8 remains next.')
+        if os.environ.get('APPLY_ISA_TEXT')=='1':
+            subprocess.run(['git','add','--',*p['files'].keys()],check=True)
+        print('CHECKPOINT:',p['checkpoint'],'NEXT:',p['next_task'])
 jobs:
   publish:
     name: Commit reviewed ISA checkpoint using existing assembler
