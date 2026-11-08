@@ -1,8 +1,11 @@
 # Working master — source cases, donor concepts and proposed DIM
 
+**Latest source checkpoint — 8 November 2026: ISA Step7 / accelerated delivery8 COMPLETE.** [Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md):270 rows and280 primary ISA dispositions. [Master XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remains the verified253-row integration snapshot. [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json) reconciles all54 assigned base/message entries. Next:25 capability/constraint definitions;14 central remaining ISA deliveries (range12–16). Existing adoption checkpoints24/40 are unchanged.
+
+
 **Current:8 November2026. Verified ISA work is integrated into the working master.**
 
-**[Open the editable master workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx)**  
+**[Open the editable master workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx)**
 [Read the full comparison on GitHub](Master_Donor_Concept_to_DIM_Crosswalk.md) · [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json).
 
 ## What is now in the master

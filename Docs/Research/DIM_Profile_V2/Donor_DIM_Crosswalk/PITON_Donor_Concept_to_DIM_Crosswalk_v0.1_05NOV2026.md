@@ -1,13 +1,10 @@
 # Current recovery PITON — working master and DIM adoption
 
-**8 November 2026 — OWNER-REQUESTED MASTER INTEGRATION COMPLETE.** The working master now contains the verified ISA corrections and candidate additions. Do not recreate the earlier master/ISA-overlay separation or repeat completed research.
+**8 November 2026 · ISA Step7 / accelerated delivery8 COMPLETE. Next “proceed”: ISA Step8 / accelerated delivery9, `ISA-TYPES-CAPABILITY`,25 assigned capability/constraint definitions.**
 
-Repository: `OS4CSAPI/glaux-client`; branch: `research/dim-profile-v2`; directory: `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk`. GitHub is authoritative. This stable filename is retained for existing links; its old 5 November filename is not its update date.
+Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk`. GitHub is authoritative. Stable filenames retain earlier dates for existing links; these are updated recovery instructions.
 
-## Open these current artifacts
-
-[Working master XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [Readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Integration record](Master_ISA_Integration_Record_08NOV2026.json).
-[ISA progress and exact queue](ISA_Correction_Status_07NOV2026.json) · [ISA execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [ISA-specific PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Broader crosswalk plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md).
+[Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Labeled XLSX snapshot](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress/exact queue](ISA_Correction_Status_07NOV2026.json) · [ISA plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
 ## What was agreed in the latest discussion
 
@@ -21,28 +18,28 @@ These are separate decisions:
 
 Keep major architecture open to credible donor challenges through the remaining reviews. Reconcile structure and diagrams and test source cases in broader Steps35–39, then seek approval of a coherent named DIM version at Step40. An accepted portion is recorded as accepted for that version, not indefinitely proposed. Later evidence revises the affected decision specifically; it does not reopen all completed work. Source uncertainty remains local.
 
-## Actual contents and preservation
+## Actual progress and current artifacts
 
-The primary Master Crosswalk contains253 information/review rows across14 columns: four equipment cases, four other-donor columns including ISA, the adjacent W3C/OGC foundation block, and proposed DIM rightmost. All31 original rows and their earlier non-ISA/equipment cells are unchanged;222 ISA-derived contributions are visible, comprising216 supported candidates and six questions. Not every review row is a separate DIM class.
+Master integration is COMPLETE and must not be repeated. The current canonical Markdown/CSV/JSON includes270 information/review rows: all253 integrated rows preserved plus17 coherent message/metadata patterns from this review. Four case columns remain left, foundational standards together, DIM rightmost. All58 prior donor records,73 case statements and original31-row values remain unchanged; source candidates are not adopted classes.
 
-All91 properties,39 observables and96 commands are reviewed and integrated:226 ISA primary outcomes,220 supported and six primary questions. The ISA Evidence sheet additionally retains the earlier UCI reconciliation (227 records).167 supporting definitions remain in Dependencies; they are not167 new DIM fields. The workbook preserves12 earlier donor/case/audit sheets and adds a stable253-row DIM Register and an Adoption Decisions sheet:26 sheets total.
+All91 properties,39 observables,96 commands and54 base/message types are source-reviewed:280 primary dispositions,274 supported and the same six primary questions. Of the54 types,45 reused earlier inspections and nine were first primary reviews. The new Admin Code dependency brings the supporting-use roster to168;177 unique types have been examined across primary/supporting evidence. These overlapping counts are not additive.
 
-All58 previous donor evidence records and73 case statements are retained. Historical v0.9 master and ISA command workbook remain unchanged; baseline-named sheets and ISA Initial Clause Audit are source history, not current routing. Current master SHA256: `4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806`.
-
-Q001 Level,Q002 Link Loss,Q003 Orientation frame,Q004 Signal Strength Ratio,Q005 Adjust Power rate,Q006 Rotation Rate axes and the supporting Observable State.reporting wording note remain unchanged. Bennett retains two NOAA means/four representations and unknown original resultTime.
+The canonical26-sheet XLSX is the preserved master-integration snapshot:253 rows/226 primary outcomes, SHA256 `4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806`. Current readable text is one source checkpoint newer (17 rows/54 dispositions). Prior donor audit sheets, DIM Register and Adoption Decisions remain in that workbook; refresh the canonical XLSX at substantial-section checkpoints rather than every source group. Historical ISA workbooks are not the current master.
 
 ## Numbered progress and exact next action
 
-The broader donor crosswalk is paused inside the ISA correction following its Step15 work; broader Step16 owner review remains due after the correction, but it no longer gates publication of an ISA column into the working master.
+ISA accelerated slots1–8 COMPLETE; technical iterations27; four original work areas closed. Original Step5/6 commanding requirements and Step7 interface guidance retain their already assigned later slots. **Remaining forecast14 deliveries centrally, range12–16.** No new scope, planning pass or subdivision was added.
 
-ISA accelerated deliveries1–7 are COMPLETE; four original ISA work areas are closed. The remaining ISA forecast is15 prompted deliveries, range13–17. This owner-directed integration is an administrative/publication checkpoint, not accelerated delivery8 and not new research credit. No extra scientific scope or subdivision was added.
+**Next “proceed”: `ISA-TYPES-CAPABILITY`,25 existing DMS7.1–7.3 assignments311–335.** Reuse the examined type manifests and inspect actual remaining fields/constraints. Stop after that assignment; no automatic advance. Do not redo completed property/observable/command research, the54 base/message definitions, workbook publications or master integration. Broader donor Step16 follows the ISA correction; master inclusion no longer waits for that owner checkpoint.
 
-**Next “proceed”: original ISA Step7 / accelerated delivery8, `ISA-TYPES-BASE-MESSAGES`, the54 exact assignments in the progress JSON.** Reuse167 inspected supporting definitions and inspect missing constraints. Do not redo properties, observables, commands, their workbook publication or this master integration. Do not advance to the next group automatically.
+## Source fidelity and preserved issues
+
+Original DMS6.0r12,31 October2023, Files ID `file_00000000ca1c81f48a3ccd49273425f8` — use the exact source ID in the ISA PITON/evidence if recovering access. Source text65–76 and necessary Admin Code continuation90–91 were inspected; images71–76 and108 were available. Scalar image retrieval limitations are explicit in the evidence; no missing-image claim invalidates readable original text.
+
+Q001 Level,Q002 Link Loss,Q003 Orientation frame,Q004 Signal Strength Ratio,Q005 Adjust Power rate andQ006 Rotation Rate axes remain unchanged. The source notes retain Observable State reporting wording, Wpm2's incomplete units label, Event.type required/default wording and Request/Response reference wording. They are local issues assigned to existing reconciliation, not reasons to reopen supported outcomes. Bennett retains two NOAA means/four representations and unknown original resultTime.
 
 ## How to continue and report
 
-Update the canonical working-master Markdown/CSV/JSON with source decisions; update the canonical XLSX at substantial-section checkpoints. When text advances ahead of Excel, state the exact checkpoint difference. Do not label an old standalone ISA workbook as the current master. Use the existing assembler and publication workflow; no new per-batch exporter, report or workflow.
+Update canonical master text/data, cumulative evidence, coverage and concise routing each source pass. Clearly label the Excel checkpoint difference. Each closeout shows original step number, earned increment, catalogue counts, remaining forecast, direct GitHub master link, verification and one next scope. Reuse the existing assembler/workflow; no new per-batch publisher, exporter or narrative report.
 
-Each closeout shows original step number, earned increment, catalogue counts, remaining forecast, direct GitHub master link, verification and the single next scope. A successful script verifies files and preservation, not automatic substantive adoption. Keep paragraphs short and explanations plain.
-
-No new overarching domain name, forced donor chassis, other-donor research, Profile/UML adoption, application/server/deployment changes or equipment operations are authorized by this integration. Historical details remain in [the preceding checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/da168cf68b6fb96c090daacf70d3c8efcf004b77/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md).
+Preserve480 source entries,279 blocks,31 original row/case targets,25 earlier findings and all completed source meanings. No forced overarching domain name or donor chassis, other-donor research, DIM/Profile/UML adoption, app/server/deployment or physical/network operation is authorized by this pass.

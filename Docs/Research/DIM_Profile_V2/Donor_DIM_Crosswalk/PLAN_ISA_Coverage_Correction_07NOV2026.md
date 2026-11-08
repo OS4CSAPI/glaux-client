@@ -1,6 +1,6 @@
 # ISA correction — current execution plan
 
-**Current:8 November2026. Accelerated deliveries1–7 COMPLETE; owner-requested working-master integration COMPLETE. Next:original ISA Step7 / accelerated delivery8,54 base-type/identifier/envelope/message assignments. Remaining ISA forecast15 deliveries (range13–17).**
+**Current — 8 November 2026: original ISA Step7 / accelerated delivery8 COMPLETE. All54 assigned base/message entries reconciled;45 prior inspections reused. Primary coverage280/480;types54/224. Canonical readable master270 rows;Excel remains253-row integration snapshot. Next: ISA-TYPES-CAPABILITY,original Step8/accelerated delivery9,the25 existing DMS7.1–7.3 entries. Remaining forecast14 centrally,range12–16. No new scope or split; prior current/next statements below belong to the preserved baseline schedule.**
 
 [Canonical master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [Readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Progress/exact queue](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Adoption and full recovery](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
 

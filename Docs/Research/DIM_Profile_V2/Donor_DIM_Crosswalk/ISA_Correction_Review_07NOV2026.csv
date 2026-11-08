@@ -57,6 +57,10 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Recall,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Referenced-event recall reason
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Resolve [Accepted],Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Referenced-event resolution reason
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Solar Radiation,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Observed solar irradiance
+,,,,,,,Event.event ID; Event.event reference → creator + id + time,,,,,,Source-qualified event identity and reference
+,,,,,,,Event.time: UTC,,,,,,Event occurrence time
+,,,,,,,Event.type: Event Type · required/default wording retained,,,,,,Event creation category
+,,,,,,,Event.detector properties: Name Value Pair [0+],,,,,,Detector property context at event occurrence
 "04 — CONFIGURATION & CONTROL — Differentiate supported/default capabilities, applied/reported configuration and actual command execution.",,,,,,,,,,,,,
 LoRaWAN Class A supported,Wi-Fi / LTE cellular options,,,≈ SampMode (sampling capability),,ModeDefinition.mode_name,≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08],,,≈ Category.codeSpace / constraint (allowed tokens),≈ AbstractProcess.modes / Mode.configuration,,Supported operating mode
 OTAA joining — documented default,Cellular — documented default network path,,,≈ SDefault (sampling mode default),,ModeDefinition.mode_type=DEFAULT,Not reviewed · ISA-08,,,,,,Declared default mode
@@ -160,9 +164,21 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Lock,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Requested time-bounded exclusive command access
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Remove Subscription,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Requested removal of an active message subscription
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Unlock,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Requested release of component control with approval result
+,,,,,,,Config.ccd [0-1]; property / observable / command states [0+],,,,,,Component capability and readiness report
+,,,,,,,Status.properties: Name Value Pair [0+],,,,,,Component property-value report
+,,,,,,,Registration.opcode; credentials [0+]; error description [0-1],,,,,,Registration message and credential data
+,,,,,,,Request.request id ≠ separate identifier; Response.reference → Request identifier,,,,,,Command request identity and response reference
+,,,,,,,Request.access control: Name Value Pair [0+],,,,,,Request access-control metadata
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)
+,,,,,,,Administrative / Config / Event / Registration / Request / Response / Status.identifier,,,,,,Conversation-scoped message identifier
+,,,,,,,Priority · 0 highest; message priority [0-1] default 80,,,,,,Message priority
+,,,,,,,Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1],,,,,,Message-data validity expiry
+,,,,,,,Envelope.header → Header.from: UCI; to: UCI [1+],,,,,,Exchange sender and intended recipients
+,,,,,,,Header.time: UTC,,,,,,Exchange transmission time
+,,,,,,,Administrative.about: UCI [1+]; code: Admin Code,,,,,,Administrative network and service notification
+,,,,,,,Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified,,,,,,Message author or registration announcer
 "06 — CASE TERMS AWAITING DIM DISPOSITION — Actual source fields and recorded reference examples not force-mapped into the 22 proposed DIM elements; every rightmost label is a review hold, not adopted.",,,,,,,,,,,,,
 ,,,EE181 service roles: 2024-04-16 change; as of 2024-12-31,,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — service history
 External probe cable 3 m (design),Wall/pole mounting supported (design),Level / orientation needed (guidance),"32.55934 N, −80.45456 W; 6.1 m station tower",,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — site / mounting
@@ -186,6 +202,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Software Version · accepted extension,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Version of software running on the component
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Specification Version,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported ISA specification version of the component
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Support · accepted extension,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Non-maintenance support contact information
+,,,,,,,SIDC · 15-character MIL-STD-2525C code,,,,,,Tactical symbol code
 ISA-02 — POSITION AND ORIENTATION — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Orientation,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Orientation relative to attached parent
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Position,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Position relative to attached parent
