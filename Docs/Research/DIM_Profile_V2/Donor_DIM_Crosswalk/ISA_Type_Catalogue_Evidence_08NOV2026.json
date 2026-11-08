@@ -2,7 +2,7 @@
   "schema": "isa-type-catalogue-evidence.v1",
   "date": "2026-11-08",
   "source_edition": "ISA DMS 6.0r12,31 October2023",
-  "checkpoint": "ISA-TYPES-CAPABILITY",
+  "checkpoint": "ISA-TYPES-REPORTING-ENUMS",
   "assigned_ids": [
     "ISA-DMS-257",
     "ISA-DMS-258",
@@ -82,7 +82,35 @@
     "ISA-DMS-332",
     "ISA-DMS-333",
     "ISA-DMS-334",
-    "ISA-DMS-335"
+    "ISA-DMS-335",
+    "ISA-DMS-336",
+    "ISA-DMS-337",
+    "ISA-DMS-338",
+    "ISA-DMS-339",
+    "ISA-DMS-340",
+    "ISA-DMS-341",
+    "ISA-DMS-342",
+    "ISA-DMS-343",
+    "ISA-DMS-344",
+    "ISA-DMS-345",
+    "ISA-DMS-346",
+    "ISA-DMS-347",
+    "ISA-DMS-348",
+    "ISA-DMS-349",
+    "ISA-DMS-350",
+    "ISA-DMS-351",
+    "ISA-DMS-352",
+    "ISA-DMS-353",
+    "ISA-DMS-354",
+    "ISA-DMS-355",
+    "ISA-DMS-356",
+    "ISA-DMS-357",
+    "ISA-DMS-358",
+    "ISA-DMS-359",
+    "ISA-DMS-360",
+    "ISA-DMS-361",
+    "ISA-DMS-455",
+    "ISA-DMS-456"
   ],
   "primary_records": [
     {
@@ -5323,6 +5351,1599 @@
       },
       "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
       "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-336",
+      "entry_id": "ISA-DMS-336",
+      "native_term": "AOI Reason",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, AOI Reason; printed p.75; PDF pp.90–90",
+      "pdf_pages": [
+        90
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "f863cf2aad3b2fb1a29e4b52f270fe6d27968aa08f11bd25a430e7694cc13395",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-120",
+        "ISA-C-163",
+        "ISA-C-143"
+      ],
+      "meaning": "Purpose or role of an area of interest, not the geographic geometry itself.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "AOI Reason (standard since 0.7)",
+        "variants": [
+          "CBRNE HAZARD",
+          "DEFENDED",
+          "DETECTION",
+          "EXCLUSION",
+          "INCLUSION",
+          "NO FLY ZONE",
+          "OTHER",
+          "SURVEILLANCE"
+        ],
+        "variant_meaning_paraphrases": {
+          "CBRNE HAZARD": "Chemical, biological, radiological, nuclear or explosive hazard area.",
+          "DEFENDED": "Area being defended.",
+          "DETECTION": "Area within which a detection occurred.",
+          "EXCLUSION": "Area excluded from an operation.",
+          "INCLUSION": "Area included in an operation.",
+          "NO FLY ZONE": "Area over which flight may risk interception, as described by the source.",
+          "OTHER": "Description without a relevant specific code.",
+          "SURVEILLANCE": "Area under surveillance."
+        },
+        "source_definition_text": "AOI Reason (standard since 0.7)\nDescription of what an AOI represents.\n\n   CBRNE HAZARD                    Chemical, biological, radiological, nuclear or explosive hazard.\n\n   DEFENDED                        Area being defended.\n\n   DETECTION                       Area within which a detection occurred.\n\n   EXCLUSION                       Area to be excluded from an operation.\n\n   INCLUSION                       Area to be included in an operation.\n\n   NO FLY ZONE                     Designated area over which aircraft may not fly without risk of interception, especially\n                                   during a conflict.\n\n   OTHER                           Any description for which there is not a relevant specific code.\n\n   SURVEILLANCE                    Area that is under surveillance.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "A category does not prove a hazard or event occurred; do not introduce an UNKNOWN code absent from this definition.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-AOI-DEFAULT-CODE"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-337",
+      "entry_id": "ISA-DMS-337",
+      "native_term": "Admin Code",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Admin Code; printed p.75; PDF pp.90–91",
+      "pdf_pages": [
+        90,
+        91
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "0ead60abfb005a24ce97741dbfa9012d9edcfec106daf6fc105862fefa241c2c",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-T-ADMIN"
+      ],
+      "meaning": "Network/service and component-communication notifications in an Administrative message.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Admin Code [sealed] (standard since 4.0)",
+        "variants": [
+          "ALARM",
+          "BANDWIDTH MANAGEMENT STARTED",
+          "BANDWIDTH MANAGEMENT STOPPED",
+          "DEVICE ADDED",
+          "DEVICE NON RESPONSIVE",
+          "DEVICE REMOVED",
+          "DEVICE REVIVED",
+          "OTHER",
+          "START FOLLOWING",
+          "STOP FOLLOWING",
+          "SUBSCRIPTION ADDED",
+          "SUBSCRIPTION REMOVED"
+        ],
+        "variant_meaning_paraphrases": {
+          "ALARM": "Network or service issue that will or might impact the recipient.",
+          "BANDWIDTH MANAGEMENT STARTED": "Controller began bandwidth management for recipient.",
+          "BANDWIDTH MANAGEMENT STOPPED": "Controller stopped bandwidth management for recipient.",
+          "DEVICE ADDED": "Named about component joined the network.",
+          "DEVICE NON RESPONSIVE": "Named component stopped communicating.",
+          "DEVICE REMOVED": "Named component left the network.",
+          "DEVICE REVIVED": "Named component resumed communicating.",
+          "OTHER": "No Documentation",
+          "START FOLLOWING": "Named component began matching a subscription consumed by recipient.",
+          "STOP FOLLOWING": "Named component stopped matching that subscription.",
+          "SUBSCRIPTION ADDED": "Subscription created for the recipient.",
+          "SUBSCRIPTION REMOVED": "Active subscription consumed by recipient deleted."
+        },
+        "source_definition_text": "Admin Code [sealed] (standard since 4.0)\nType of occurrence being notified via an Administrative message.\n\n   ALARM                           A network or service issue has arisen that will or might impact the component\n                                   receiving the Administrative message.\n\n   BANDWIDTH MANAGEMENT ISA Controller has started managing the bandwidth used for communication to the\n   STARTED              component receiving the Administrative message.\n\n   BANDWIDTH MANAGEMENT ISA Controller has stopped managing the bandwidth used for communication to the\n   STOPPED              component receiving the Administrative message.\n\n   DEVICE ADDED                    Component cited in this Administrative message (about field) has joined the ISA\n                                   network.\n\n   DEVICE NON RESPONSIVE           Component cited in this Administrative message (about field) has stopped\n                                   communicating.\n\n   DEVICE REMOVED                  Component cited in this Administrative message (about field) has left the ISA\n                                   network.\n\n   DEVICE REVIVED                  Component cited in this Administrative message (about field) has resumed\n                                   communicating.\n\n   OTHER                           No Documentation\n\n\n\n                                                          75\n<PARSED TEXT FOR PAGE: 91 / 148>\n    START FOLLOWING                  Component cited in this Administrative message (about field) has started matching a\n                                     subscription for which the message recipient is the consumer.\n\n    STOP FOLLOWING                   Component cited in this Administrative message (about field) has stopped matching a\n                                     subscription for which the message recipient is the consumer.\n    SUBSCRIPTION ADDED               A subscription has been created for the component receiving the Administrative\n                                     message.\n\n    SUBSCRIPTION REMOVED             A currently active subscription for which the component receiving the Administrative\n                                     message is the consumer has been deleted.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not observation Event Type or a physical-attachment code; OTHER has no documented meaning.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Type_Catalogue_Evidence_08NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-338",
+      "entry_id": "ISA-DMS-338",
+      "native_term": "Belnap Dunn",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Belnap Dunn; printed p.76; PDF pp.91–91",
+      "pdf_pages": [
+        91
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "86b83f9c9bd8e98964fdb0dadf011b4e0cdc07a79a73e29971f3e2ea9619eb73",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-LOGIC-STATE"
+      ],
+      "meaning": "Four-valued evaluation state distinguishing determined truth/falsity, contradiction and absence of evaluation.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Belnap Dunn [sealed] (standard since 5.0)",
+        "variants": [
+          "FALSE",
+          "PARADOX",
+          "TRUE",
+          "UNSPECIFIED"
+        ],
+        "variant_meaning_paraphrases": {
+          "FALSE": "Evaluation determined a false state.",
+          "PARADOX": "Evaluation produced a contradiction; source describes the state as unknown.",
+          "TRUE": "Evaluation determined a true state.",
+          "UNSPECIFIED": "No determination; evaluation did not take place."
+        },
+        "source_definition_text": "Belnap Dunn [sealed] (standard since 5.0)\nBorrowed from \"Belnap-Dunn 4-valued Logic\" this enumeration allows for four logical states: \"true\", \"false\", \"both true and\nfalse\"(contradictory/paradox), \"neither true nor false\" (unspecified).\n\n    FALSE                            An evaluation has determined a false state.\n\n    PARADOX                          An evaluation has resulted in a contradiction so the state is unknown.\n\n    TRUE                             An evaluation has determined a true state.\n\n    UNSPECIFIED                      An evaluation cannot be made to determine the state (evaluation didn't take place).\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "PARADOX and UNSPECIFIED are not FALSE; do not infer an unprovided truth table or apply the type to every Boolean field.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-339",
+      "entry_id": "ISA-DMS-339",
+      "native_term": "Biological Material",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Biological Material; printed p.76; PDF pp.91–92",
+      "pdf_pages": [
+        91,
+        92
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "ae482263b41b026f39586b7546e288ecd1a6286a555668e0f291fd3cb34d1bab",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-134",
+        "ISA-C-135",
+        "ISA-C-136"
+      ],
+      "meaning": "Source biological-material classification used inside biological reports.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Biological Material (standard since 0.7)",
+        "variants": [
+          "BACTERIA",
+          "BIOREGULATOR",
+          "CYTOTOXIN",
+          "NEUROTOXIN",
+          "PATHOGEN",
+          "PRION",
+          "RIC",
+          "SPORE",
+          "TOXIN",
+          "TOXMAT",
+          "UNKNOWN",
+          "UNSPECIFIED",
+          "VIRAL"
+        ],
+        "variant_meaning_paraphrases": {
+          "BACTERIA": "Bacterial material category.",
+          "BIOREGULATOR": "Bioregulator category.",
+          "CYTOTOXIN": "Cytotoxin category.",
+          "NEUROTOXIN": "Neurotoxin category.",
+          "PATHOGEN": "Pathogen category.",
+          "PRION": "Prion category.",
+          "RIC": "Source label for ricin.",
+          "SPORE": "Spore category.",
+          "TOXIN": "Toxin category.",
+          "TOXMAT": "Toxic materials.",
+          "UNKNOWN": "Identification attempted but inconclusive.",
+          "UNSPECIFIED": "No categorization attempt.",
+          "VIRAL": "Viral category."
+        },
+        "source_definition_text": "Biological Material (standard since 0.7)\nNature of a detected biological contaminant. The majority of these definitions come from the CBRNE data model.\n\n    BACTERIA                         Bacteria spores cause a serious disease in humans or animals. Infectious routes are\n                                     cutaneous (skin contact), pulmonary (inhalation), or oral.\n\n    BIOREGULATOR                     Chemical compounds that are essential for the normal psychological and\n                                     physiological functions. A wide variety of bioregulators are normally present in the\n                                     human body in extremely minute concentrations. These compounds can produce\n                                     a wide range of harmful effects if introduced into the body at higher than normal\n                                     concentrations or if they have been altered. Psychological effects could include\n                                     exaggerated fear and pain. In addition, bioregulators can cause severe physiological\n                                     effects such as rapid unconsciousness and, depending on such factors as dose and\n                                     route of administration, can also be lethal. Unlike pathogens, which take hours or\n                                     days to act, bioregulators could act in only minutes. The small peptides, having fewer\n                                     than 12 amino-acid groups, are most amenable to military application.\n\n    CYTOTOXIN                        These proteins enter the eukaryotic cells and catalytically inactivate protein synthesis\n                                     (the process in which biological cells generate new proteins). When these fusions\n                                     are genetically engineered with cell-binding ligands (binding molecule) they will\n                                     kill specifically targeted cells in their victims. These proteins are not common and\n                                     unlikely to be deployed due to their level of effectiveness. Known cytotoxic proteins\n                                     include; ricin and abrin.\n\n    NEUROTOXIN                       a toxin that acts directly on the tissues of the central nervous system, traveling along\n                                     the axis cylinders of the motor nerves to the brain. The toxin may be secreted in\n                                     the venom of certain snakes, or it may be present on the spines of a shell or in the\n                                     flesh of fish or shellfish; it may be produced by certain bacteria or by the cellular\n                                     disintegration of certain bacteria.\n\n\n                                                             76\n<PARSED TEXT FOR PAGE: 92 / 148>\n    PATHOGEN                         Pathogens are infectious diseases caused by microorganisms such as; bacteria,\n                                     protozoa and viruses. These microorganisms are not fully functioning organisms but\n                                     carry deadly genetic information. There is no real ‘up-to-date’ list of known pathogens\n                                     due to their mutative properties and new organisms that are produced due to genetic\n                                     tampering. Known pathogens likely to be used in a bio-terrorism attack include;\n                                     anthrax, tularemia, plague caused by Yersinia pestis, smallpox, Ebola, crop affective\n                                     pathogens, and other man-made or naturally occurring influenza strains.\n\n    PRION                            A small proteinaceous infectious disease-causing agent that is believed to be the\n                                     smallest infectious particle. A prion is neither bacterial nor fungal nor viral and\n                                     contains no genetic material.\n\n    RIC                              Ricin- highly toxic, naturally occurring lectin (a carbohydrate-binding protein.\n\n    SPORE                            A small, usually single-celled asexual or sexual reproductive body that is highly\n                                     resistant to desiccation and heat and is capable of growing into a new organism,\n                                     produced especially by certain bacteria, fungi, algae, and nonflowering plants.\n\n    TOXIN                            Toxins are produced by pathogens and also by snakes, spiders, sea creatures, and\n                                     plants. Toxins are faster acting and more stable than live pathogens. Most toxins are\n                                     easily produced through genetic engineering. Toxins produce casualties rapidly and\n                                     can be used against tactical and operational targets.\n\n    TOXMAT                           Toxic Materials\n\n    UNKNOWN                          An attempt to identify the Biological Material was inconclusive.\n\n    UNSPECIFIED                      No attempt was made to categorize the Biological Material.\n\n    VIRAL                            Caused by an infective agent that typically consists of a nucleic acid molecule in a\n                                     protein coat, is too small to be seen by light microscopy, and is able to multiply only\n                                     within the living cells of a host.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred.",
+        "interpretation_boundary": "Source category descriptions are recorded as donor semantics, not independently validated scientific, medical or safety guidance."
+      },
+      "must_not_imply": "Classification metadata is not confirmation of material identity, measured concentration, hazard assessment or independently verified biomedical guidance.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-340",
+      "entry_id": "ISA-DMS-340",
+      "native_term": "Camera Mode",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Camera Mode; printed p.77; PDF pp.92–92",
+      "pdf_pages": [
+        92
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "88f6ee2486928415caee30f1da76e0aabefb9d1811edf46c84f315a674972616",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "S06-R018",
+        "ISA-C-185"
+      ],
+      "meaning": "Camera spectral/imaging mode vocabulary, interpreted as supported or operating mode only in the containing context.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Camera Mode (standard since 0.7)",
+        "variants": [
+          "LWIR",
+          "MWIR",
+          "OTHER",
+          "SWIR",
+          "VISIBLE BW",
+          "VISIBLE COLOR"
+        ],
+        "variant_meaning_paraphrases": {
+          "LWIR": "Long-wavelength infrared.",
+          "MWIR": "Medium-wavelength infrared.",
+          "OTHER": "Type outside the listed categories.",
+          "SWIR": "Short-wave infrared.",
+          "VISIBLE BW": "Visible light, black and white.",
+          "VISIBLE COLOR": "Visible light, color."
+        },
+        "source_definition_text": "Camera Mode (standard since 0.7)\nWhether a camera is operating or can operate in thermal or visible modes and what frequency ranges the camera can\nview.\n\n    LWIR                             Long Wavelength Infrared\n\n    MWIR                             The Medium Wavelength Infrared\n\n    OTHER                            A type other than noted in this category\n\n    SWIR                             Short Wave Infrared\n    VISIBLE BW                       Visible light range- Black and White\n\n    VISIBLE COLOR                    Visible light range- color\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "No wavelength limits are provided here; a code does not establish that a device supports every mode or that a requested mode was attained.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-341",
+      "entry_id": "ISA-DMS-341",
+      "native_term": "Chemical Material Class",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Chemical Material Class; printed p.77; PDF pp.92–94",
+      "pdf_pages": [
+        92,
+        93,
+        94
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "a41b3bce0873a3c9a34a1c7110956a03a22260ab05829d2817e8543aaa7e7674",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-137",
+        "ISA-C-138",
+        "ISA-C-139"
+      ],
+      "meaning": "Source chemical-material classification used inside chemical reports.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Chemical Material Class (standard since 0.7)",
+        "variants": [
+          "ARSENICAL BLISTER AGENT",
+          "BLISTER AGENT",
+          "BLOOD AGENT",
+          "CHEMICAL AGENT TYPE",
+          "CHOKING AGENT",
+          "CYANOGEN AGENT",
+          "DELIRIANT AGENT",
+          "DEPRESSANT AGENT",
+          "G AGENT",
+          "INCAPACITATING AGENT",
+          "MILITARY CHEMICAL COMPOUND TYPE",
+          "MUSTARD AGENT",
+          "NERVE AGENT",
+          "PSYCHEDELIC AGENT",
+          "STIMULANT AGENT",
+          "TOXIC INDUSTRIAL CHEMICAL",
+          "UNKNOWN",
+          "UNSPECIFIED",
+          "URTICANT AGENT",
+          "V AGENT"
+        ],
+        "variant_meaning_paraphrases": {
+          "UNKNOWN": "Agent of unknown type.",
+          "UNSPECIFIED": "Agent of unspecified type."
+        },
+        "source_definition_text": "Chemical Material Class (standard since 0.7)\nSubstance that is not produced by a living organism and does not emit radiation but may kill, seriously injure, or\nincapacitate personnel through its physiological effects or cause the deterioration of material.\n\n    ARSENICAL BLISTER AGENT Arsenic based blister agent\n\n\n                                                             77\n<PARSED TEXT FOR PAGE: 93 / 148>\nBLISTER AGENT          Chemical compound that irritates and causes injury to the skin. These substances\n                       also attack the eyes, or any other tissue they contact.\n\nBLOOD AGENT            A toxic chemical agent that affects the body by being absorbed into the blood. Blood\n                       agents are fast-acting, potentially lethal poisons that typically manifest at room\n                       temperature as volatile colorless gases with a faint odor\n\nCHEMICAL AGENT TYPE    Any toxic chemical or its precursor that can cause death, injury, temporary\n                       incapacitation or sensory irritation through its chemical action.\n\nCHOKING AGENT          Substances are sometime referred to as pulmonary agent or lung irritants and cause\n                       injury to the lung-blood barrier resulting in Asphyxia.\n\nCYANOGEN AGENT         a pseudohalogen that has a colorless, toxic gas with a pungent odor. Cyanogen\n                       is very toxic, as it readily undergoes reduction to cyanide, which poisons the\n                       cytochrome c oxidase complex, thus interrupting the mitochondrial electron transfer\n                       chain\n\nDELIRIANT AGENT        A class of hallucinogen causing delirium, as opposed to the more lucid states\n                       produced by other hallucinogens (psychedelics and dissociatives).The term is\n                       generally used to refer to anticholinergic drugs.\n\nDEPRESSANT AGENT       A drug that lowers neurotransmission levels, which is to depress or reduce arousal or\n                       stimulation, in various areas of the brain.\n\nG AGENT                High volatility nerve agents that are typically used for a non-persistent to semi-\n                       persistent effect.\n\nINCAPACITATING AGENT   Substances that produce debilitating effects with limited probability of permanent\n                       injury or loss of life. The casualty effects typically last over 24 hours, and though\n                       medical evacuation and isolation is recommended, it is not required for complete\n                       recovery\n\nMILITARY CHEMICAL      Compound created by the military not usually occurring in nature for the purpose of\nCOMPOUND TYPE          producing casualty effects.\n\nMUSTARD AGENT          A cytotoxic and vesicant chemical warfare agent with the ability to form large blisters\n                       on the exposed skin and in the lungs.Pure sulfur mustards are colorless, viscous\n                       liquids at room temperature. When used in impure form, such as warfare agents, they\n                       are usually yellow-brown in color and have an odor resembling mustard plants, garlic,\n                       or horseradish, hence the name.\n\nNERVE AGENT            Substances that disrupt the chemical communications through the nervous system\n\nPSYCHEDELIC AGENT      Substances that produce casualty effects through mental disturbances such as\n                       delirium or hallucination.\nSTIMULANT AGENT        Psychoactive drugs that induce temporary improvements in either mental or physical\n                       functions or both.\n\nTOXIC INDUSTRIAL       Compound created by industry not usually occuring in nature that can be used to\nCHEMICAL               produce casualty effects\n\nUNKNOWN                Agent of an unknown type\n\nUNSPECIFIED            Agent of an unspecified type\n\nURTICANT AGENT         Substances that produce a painful welt on the skin. These are sometimes termed\n                       skin necrotizers and are known as the most painful substances produced.\n\n                                               78\n<PARSED TEXT FOR PAGE: 94 / 148>\n    V AGENT                          A class of organophosphate compounds (organophosphate esters of substituted\n                                     aminoethanethiols) used as nerve agents. All of the V-agents are persistent agents,\n                                     meaning that these agents do not degrade or wash away easily and can therefore\n                                     remain on clothes and other surfaces for long periods. In use, this allows the V-\n                                     agents to be used to blanket terrain to guide or curtail the movement of enemy\n                                     ground forces. The consistency of these agents is similar to oil; as a result, the\n                                     contact hazard for V-agents is primarily – but not exclusively – dermal\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred.",
+        "interpretation_boundary": "Source category descriptions are recorded as donor semantics, not independently validated scientific, medical or safety guidance."
+      },
+      "must_not_imply": "Retain the literal source categories; do not infer measured substance, concentration, safety conclusions, or a harmonized chemistry taxonomy.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-342",
+      "entry_id": "ISA-DMS-342",
+      "native_term": "Component Category",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Component Category; printed p.79; PDF pp.94–94",
+      "pdf_pages": [
+        94
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "e04854e1d9d0bce89d183aa569b2b24cbc162c909bd76673f6776404bf4a8b63",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-COMPONENT-CATEGORY"
+      ],
+      "meaning": "Human-facing overall component category; the source expressly disallows capability assumptions from the category.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Component Category (standard since 6.0)",
+        "variants": [
+          "IMAGER",
+          "RADAR",
+          "UGS"
+        ],
+        "variant_meaning_paraphrases": {
+          "IMAGER": "Imager category.",
+          "RADAR": "Radar category.",
+          "UGS": "Unattended ground sensor category."
+        },
+        "source_definition_text": "Component Category (standard since 6.0)\nOverall category for the component that is intended for human consumption. The component category should not be used\nto make assumptions about the capabilities of a component.\n\n    IMAGER                           Imager\n\n    RADAR                            Radar\n\n    UGS                              Unattended Ground Sensor\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not a capability declaration, hardware superclass or evidence of supported commands.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-343",
+      "entry_id": "ISA-DMS-343",
+      "native_term": "Event Type",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Event Type; printed p.79; PDF pp.94–94",
+      "pdf_pages": [
+        94
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "b6510f6b56d89aa5403e5d61d9e0aa1348b47c5fc94775d36a7374609d32333d",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-T-EVENT-REASON",
+        "ISA-C-142"
+      ],
+      "meaning": "Reason an Event was created, distinct from message priority, operating condition and administrative occurrence.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Event Type [sealed] (standard since 6.0)",
+        "variants": [
+          "ALARM",
+          "ALERT",
+          "DETECTION",
+          "MEASUREMENT",
+          "OTHER"
+        ],
+        "variant_meaning_paraphrases": {
+          "ALARM": "A property value matched additional importance criteria.",
+          "ALERT": "A measurement or detection matched additional importance criteria.",
+          "DETECTION": "Component identified the presence of something.",
+          "MEASUREMENT": "A measurement or observation was requested, including a periodic timer request.",
+          "OTHER": "Event reason not represented by another listed code."
+        },
+        "source_definition_text": "Event Type [sealed] (standard since 6.0)\nIn general terms, the reason this event was created.\n\n    ALARM                            The event was created because a property value matched additional criteria that\n                                     raised the information's level of importance.\n\n    ALERT                            The event was created because a measurement or detection matched additional\n                                     criteria that raised the information's level of importance.\n\n    DETECTION                        The event was created because the component identified the presence of something.\n\n    MEASUREMENT                      The event was created because a measurement or observation was requested. The\n                                     request can be made by someone or by a timer that makes regular measurements.\n\n    OTHER                            The event was created due to a reason not provided in the enumeration.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Do not equate ALARM with ALERT or import Admin Code meanings; Event required/default wording remains separately tracked.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-344",
+      "entry_id": "ISA-DMS-344",
+      "native_term": "General Code",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, General Code; printed p.79; PDF pp.94–94",
+      "pdf_pages": [
+        94
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "569342bad72e802ae82941389fbf7bdd58c3f524c7431f23b0706e4bd237e509",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-082",
+        "ISA-C-091",
+        "ISA-C-111",
+        "ISA-C-212",
+        "ISA-C-213"
+      ],
+      "meaning": "General condition of associated data: halted operation, limited operation, acceptable behavior, pre-operation or warning.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "General Code [sealed] (standard since 6.0)",
+        "variants": [
+          "FAILURE",
+          "FAULT",
+          "OK",
+          "UNINITIALIZED",
+          "WARNING"
+        ],
+        "variant_meaning_paraphrases": {
+          "FAILURE": "Problems cause a halt in operation.",
+          "FAULT": "Problems allow limited operation to continue.",
+          "OK": "Acceptable behavior.",
+          "UNINITIALIZED": "Non-error pre-operational state.",
+          "WARNING": "Potential current/future problems while operation may continue."
+        },
+        "source_definition_text": "General Code [sealed] (standard since 6.0)\nA general indication of the state of the associated data.\n\n    FAILURE                          Indication of problems that cause a halt in operation.\n\n    FAULT                            Indication of problems that allow limited operation may continue.\n\n    OK                               Indication of acceptable behavior.\n\n    UNINITIALIZED                    Indication of a non-error related pre-operational state.\n\n    WARNING                          Indication of potential current or future problems but operation may continue.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not command Response Code, authorization, categorical device capability or quantified health severity.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+          "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-345",
+      "entry_id": "ISA-DMS-345",
+      "native_term": "Himelo",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Himelo; printed p.79; PDF pp.94–95",
+      "pdf_pages": [
+        94,
+        95
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "0eb73afabdbb03bd4ebaff80db96002a52548f51883051b4f77b7cbb5acd5cf5",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-094",
+        "ISA-C-101",
+        "ISA-C-201",
+        "ISA-C-203"
+      ],
+      "meaning": "Five qualitative levels whose meaning depends on their use, including distinct Quality and Resolution properties.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Himelo (standard since 6.0)",
+        "variants": [
+          "HIGH",
+          "LOW",
+          "MEDIUM",
+          "VERY HIGH",
+          "VERY LOW"
+        ],
+        "variant_meaning_paraphrases": {
+          "HIGH": "Between middle and highest.",
+          "LOW": "Between middle and lowest.",
+          "MEDIUM": "Middle.",
+          "VERY HIGH": "Highest.",
+          "VERY LOW": "Lowest."
+        },
+        "source_definition_text": "Himelo (standard since 6.0)\nA general purpose enumeration for marking something as Very High, High, Medium, Low, or Very Low. Meaning is\nderived from usage in the message.\n\n    HIGH                             A value between the middle and highest values.\n                                                             79\n<PARSED TEXT FOR PAGE: 95 / 148>\n    LOW                              A value between the middle and lowest values.\n\n    MEDIUM                           The middle value.\n\n    VERY HIGH                        The highest value.\n    VERY LOW                         The lowest value.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "No numerical breakpoints, measured precision or universal ordering thresholds are supplied.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-346",
+      "entry_id": "ISA-DMS-346",
+      "native_term": "Linear Direction",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Linear Direction; printed p.80; PDF pp.95–95",
+      "pdf_pages": [
+        95
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "e71c1b5e55367debc5ef77d22e817aeb7ac5e2d561ab156a7a52bcee85842925",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-164",
+        "ISA-C-165",
+        "ISA-C-166",
+        "ISA-C-167",
+        "ISA-C-168",
+        "ISA-C-169",
+        "ISA-C-170",
+        "ISA-C-171"
+      ],
+      "meaning": "Direction of change with interpretation supplied by the consuming field or command.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Linear Direction [sealed] (standard since 0.7)",
+        "variants": [
+          "NEGATIVE",
+          "NONE",
+          "POSITIVE"
+        ],
+        "variant_meaning_paraphrases": {
+          "NEGATIVE": "Decreasing.",
+          "NONE": "Neither increasing nor decreasing.",
+          "POSITIVE": "Increasing."
+        },
+        "source_definition_text": "Linear Direction [sealed] (standard since 0.7)\nDirection of change. Context determines how the enumeration value is applied.\n\n    NEGATIVE                         Decreasing in nature (e.g., reducing focus, zooming out).\n\n    NONE                             Neither increasing nor decreasing.\n\n    POSITIVE                         Increasing in nature (e.g., enhancing focus, zooming in).\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Presence of NONE in the type does not override a command-specific list or establish universal stop behavior.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-347",
+      "entry_id": "ISA-DMS-347",
+      "native_term": "Link",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Link; printed p.80; PDF pp.95–95",
+      "pdf_pages": [
+        95
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "7f4a7d3afe511ac9bb3af6d2d676503205ca16e842b22685009f043cb468d467",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-099"
+      ],
+      "meaning": "Physical attachment state between components.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Link [sealed] (standard since 0.7.1)",
+        "variants": [
+          "ATTACHED",
+          "DETACHED"
+        ],
+        "variant_meaning_paraphrases": {
+          "ATTACHED": "Physically attached.",
+          "DETACHED": "Physically unattached."
+        },
+        "source_definition_text": "Link [sealed] (standard since 0.7.1)\nWhether components are physically attached to, or detached from, each other.\n\n    ATTACHED                         Being physically attached.\n\n    DETACHED                         Being physically unattached.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not logical membership, network reachability, API parentage or part-of composition inferred from connection alone.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-348",
+      "entry_id": "ISA-DMS-348",
+      "native_term": "Polarity",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Polarity; printed p.80; PDF pp.95–95",
+      "pdf_pages": [
+        95
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "584baedf5f7e57eaeb4ae09bbb2eca83ea64e3c3b795fa859867a69fa578f66a",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-087",
+        "ISA-C-198"
+      ],
+      "meaning": "Thermal-energy display palette.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Polarity (standard since 4.0)",
+        "variants": [
+          "BLACK HOT",
+          "WHITE HOT"
+        ],
+        "variant_meaning_paraphrases": {
+          "BLACK HOT": "Hottest represented as black, coldest as white.",
+          "WHITE HOT": "Hottest represented as white, coldest as black."
+        },
+        "source_definition_text": "Polarity (standard since 4.0)\nColor palette used to visualize thermal energy.\n\n    BLACK HOT                        The color black is used to represent the presence of thermal energy. The level of\n                                     thermal energy is represented as a scale from fully black for most hot to fully white for\n                                     most cold).\n\n    WHITE HOT                        The color white is used to represent the presence of thermal energy. The level of\n                                     thermal energy is represented as a scale from fully white for most hot to fully black for\n                                     most cold).\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not electrical polarity, radiation polarization or proof of a physical temperature calibration.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-349",
+      "entry_id": "ISA-DMS-349",
+      "native_term": "Power Source",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Power Source; printed p.80; PDF pp.95–96",
+      "pdf_pages": [
+        95,
+        96
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "95b89faf5a6ab24cda8dae82132d5c1bf0bd9fef228c5306c04af7dfb488ebe9",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-POWER-SOURCE"
+      ],
+      "meaning": "Source power-supply classification; physical origin labels and the native RELIABLE descriptor remain distinct in meaning.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Power Source (standard since 0.7)",
+        "variants": [
+          "BATTERY",
+          "GENERATOR",
+          "RELIABLE",
+          "SOLAR",
+          "UNKNOWN",
+          "UNSPECIFIED",
+          "WIND"
+        ],
+        "variant_meaning_paraphrases": {
+          "BATTERY": "Electrochemical source.",
+          "GENERATOR": "Mechanical-to-electrical source.",
+          "RELIABLE": "Source says consistently good in quality or performance; no source technology specified.",
+          "SOLAR": "Sun-derived energy.",
+          "UNKNOWN": "Identification attempted but inconclusive.",
+          "UNSPECIFIED": "No categorization attempt.",
+          "WIND": "Source describes natural movement of air; no generation mechanism specified."
+        },
+        "source_definition_text": "Power Source (standard since 0.7)\nType of power that a component is using.\n\n    BATTERY                          a container consisting of one or more cells, in which chemical energy is converted\n                                     into electricity and used as a source of power.\n\n    GENERATOR                        A machine for converting mechanical energy into electricity.\n\n    RELIABLE                         Consistently good in quality or performance\n\n    SOLAR                            Relating to or denoting energy derived from the sun's rays\n\n    UNKNOWN                          An attempt to identify the Power Source was inconclusive.\n\n    UNSPECIFIED                      No attempt was made to categorize the Power Source.\n\n    WIND                             The perceptible natural movement of the air, especially in the form of a current of air\n                                     blowing from a particular direction.\n                                                             80\n<PARSED TEXT FOR PAGE: 96 / 148>",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "RELIABLE is not defined as mains/grid power; a category is not charge, capacity, measured power or a list of supported sources.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-350",
+      "entry_id": "ISA-DMS-350",
+      "native_term": "Priority Level",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Priority Level; printed p.81; PDF pp.96–96",
+      "pdf_pages": [
+        96
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "9b2045fb77f4ed1031aab10ae60f879dfccc074a4259475125ed12a4fa1172a6",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "RESERVED_SUPPORTING_DEFINITION",
+      "target_rows": [],
+      "meaning": "Categorical Priority Level vocabulary explicitly reserved for future use in this edition.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Priority Level [sealed] (standard since 0.7)",
+        "variants": [
+          "CRITICAL",
+          "LOW",
+          "NBCR",
+          "NORMAL",
+          "URGENT"
+        ],
+        "variant_meaning_paraphrases": {
+          "CRITICAL": "Highest priority.",
+          "LOW": "Lowest priority.",
+          "NBCR": "NBC reconnaissance category as printed.",
+          "NORMAL": "Between low and urgent.",
+          "URGENT": "Between normal and critical."
+        },
+        "source_definition_text": "Priority Level [sealed] (standard since 0.7)\nReserved for future use.\n\n    CRITICAL                         Of the highest priority\n\n    LOW                              Of the lowest priority\n\n    NBCR                             NBC Recon. NBC recon units generally are employed to either confirm or deny\n                                     contaminated areas, or to confirm areas are clear of contamination.\n    NORMAL                           Priority level between low and urgent\n\n    URGENT                           Priority level between normal and critical\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred.",
+        "reserved_for_future_use": true
+      },
+      "must_not_imply": "Do not activate it as an operational field or replace the numeric message Priority datatype with these codes.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-351",
+      "entry_id": "ISA-DMS-351",
+      "native_term": "Radioactive Material Type Category Code",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Radioactive Material Type Category Code; printed p.81; PDF pp.96–96",
+      "pdf_pages": [
+        96
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "6cc355af5790b490c62051af7e2ac241cbb1a01ef110e34a9bb66b306136fd4c",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-153",
+        "ISA-C-154",
+        "ISA-C-155"
+      ],
+      "meaning": "Source radioactive-material classification, separate from the primary radiation emitted.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Radioactive Material Type Category Code (standard since 0.7)",
+        "variants": [
+          "FRESH REACTOR FUEL",
+          "MIXTURE",
+          "NUCLEAR POWER PLANT",
+          "NUCLEAR ROTA",
+          "NUCLEAR WEAPON FALLOUT",
+          "SPENT REACTOR FUEL",
+          "UNKNOWN",
+          "UNSPECIFIED"
+        ],
+        "variant_meaning_paraphrases": {
+          "FRESH REACTOR FUEL": "Fuel not irradiated in a reactor.",
+          "MIXTURE": "Mixture of irradiated and unirradiated fuel.",
+          "NUCLEAR POWER PLANT": "Source category naming a nuclear power plant.",
+          "NUCLEAR ROTA": "Nuclear material released other than by attack.",
+          "NUCLEAR WEAPON FALLOUT": "Nuclear material released in an attack, as the source category states.",
+          "SPENT REACTOR FUEL": "Fuel irradiated in a reactor.",
+          "UNKNOWN": "Class unknown.",
+          "UNSPECIFIED": "Not classified."
+        },
+        "source_definition_text": "Radioactive Material Type Category Code (standard since 0.7)\nGeneral class of the radioactive material type.\n\n    FRESH REACTOR FUEL               Nuclear fuel that has not been irradiated in a nuclear reactor.\n\n    MIXTURE                          Mixture of nuclear fuel that has been irradiated in a nuclear reactor and nuclear fuel\n                                     that has not been irradiated in a nuclear reactor.\n\n    NUCLEAR POWER PLANT              Thermal power station for which the heat source is a nuclear reactor.\n\n    NUCLEAR ROTA                     Nuclear material that was released in a way other than an attack.\n\n    NUCLEAR WEAPON                   Nuclear material that was released in an attack.\n    FALLOUT\n    SPENT REACTOR FUEL               Nuclear fuel that has been irradiated in a nuclear reactor.\n\n    UNKNOWN                          Nuclear material for which the class is unknown.\n\n    UNSPECIFIED                      Nuclear material that has not been classified.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred.",
+        "interpretation_boundary": "Source category descriptions are recorded as donor semantics, not independently validated scientific, medical or safety guidance."
+      },
+      "must_not_imply": "Category is not measured activity, dose, verified attribution or proof of an event.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-352",
+      "entry_id": "ISA-DMS-352",
+      "native_term": "Radioactive Material Type Primary Radiation Code",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Radioactive Material Type Primary Radiation Code; printed p.81; PDF pp.96–97",
+      "pdf_pages": [
+        96,
+        97
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "5155c58bbf03d17c4c8995d985ba282c5adf2a26f4562b2ebd568ab780e6edcf",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-153",
+        "ISA-C-154",
+        "ISA-C-155"
+      ],
+      "meaning": "Category identifying the most intense emitted radiation in the source reporting structure.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Radioactive Material Type Primary Radiation Code (standard since 0.7)",
+        "variants": [
+          "ALPHA",
+          "BETA",
+          "GAMMA",
+          "NEUTRON",
+          "UNKNOWN"
+        ],
+        "variant_meaning_paraphrases": {
+          "ALPHA": "Alpha radiation.",
+          "BETA": "Beta radiation.",
+          "GAMMA": "Gamma radiation.",
+          "NEUTRON": "Neutron radiation.",
+          "UNKNOWN": "Unknown radiation type."
+        },
+        "source_definition_text": "Radioactive Material Type Primary Radiation Code (standard since 0.7)\nSpecific value that represents the most intense radiation emitted by a RADIOACTIVE-MATERIAL-TYPE.\n\n    ALPHA                            Not able to penetrate skin. Can be harmful to humans if the materials are inhaled,\n                                     swallowed, or absorbed through open wounds. Travels a very short distance through\n                                     air and is not able to penetrate turnout gear, clothing, or a cover on a probe\n\n    BETA                             May travel meters in air and is moderately penetrating.Beta radiation can penetrate\n                                     human skin to the \"germinal layer,\" where new skin cells are produced. If beta-\n                                     emitting contaminants are allowed to remain on the skin for a prolonged period\n                                     of time, they may cause skin injury.Beta-emitting contaminants may be harmful if\n                                     deposited internally. Clothing and turnout gear provide some protection against most\n                                     beta radiation.\n\n\n\n\n                                                               81\n<PARSED TEXT FOR PAGE: 97 / 148>\n    GAMMA                             Able to travel many meters in air and many centimeters in human tissue.\n                                      It readily penetrates most materials and is sometimes called \"penetrating\n                                      radiation.\"Radioactive materials that emit gamma radiation and X-rays constitute\n                                      both an external and internal hazard to humans.Dense materials are needed for\n                                      shielding from gamma radiation. Clothing and turnout gear provide little shielding\n                                      from penetrating radiation but will prevent contamination of the skin by radioactive\n                                      materials.\n\n    NEUTRON                           Consists of a free neutron, usually emitted as a result of spontaneous or induced\n                                      nuclear fission. Able to travel hundreds or even thousands of meters in air, they are\n                                      however able to be effectively stopped if blocked by a hydrogen-rich material, such\n                                      as concrete or water. Not typically able to ionize an atom directly due to their lack of\n                                      a charge, neutrons most commonly are indirectly ionizing, in that they are absorbed\n                                      into a stable atom, thereby making it unstable and more likely to emit off ionizing\n                                      radiation of another type. Neutrons are the only type of radiation that is able to turn\n                                      other materials radioactive.\n\n    UNKNOWN                           Of an unknown radiation type\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred.",
+        "interpretation_boundary": "Source category descriptions are recorded as donor semantics, not independently validated scientific, medical or safety guidance."
+      },
+      "must_not_imply": "Not radioactive-material category, a numerical dose, complete spectrum or source of radiation-protection advice.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-353",
+      "entry_id": "ISA-DMS-353",
+      "native_term": "Registration Operation",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Registration Operation; printed p.82; PDF pp.97–97",
+      "pdf_pages": [
+        97
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "25a5f148deec6a10c3f930ce17f91da51c13db55e07d152b558315b1027ee382",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-T-REGISTRATION",
+        "ISA-C-173"
+      ],
+      "meaning": "Registration-related requests and notifications, with requester/controller roles preserved.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Registration Operation [sealed] (standard since 0.7.2)",
+        "variants": [
+          "ADDED",
+          "ERROR",
+          "NON RESPONSIVE",
+          "REMOVED",
+          "RENEW",
+          "REQUEST ADD",
+          "REQUEST REMOVE",
+          "REVIVED"
+        ],
+        "variant_meaning_paraphrases": {
+          "ADDED": "Successful joining notification.",
+          "ERROR": "Controller detected a registration error.",
+          "NON RESPONSIVE": "Controller considers component no longer communicating.",
+          "REMOVED": "Removal notification.",
+          "RENEW": "Request to re-register with sending controller.",
+          "REQUEST ADD": "Request permission from receiving controller to join.",
+          "REQUEST REMOVE": "Request removal by receiving controller.",
+          "REVIVED": "Controller considers communication resumed."
+        },
+        "source_definition_text": "Registration Operation [sealed] (standard since 0.7.2)\nType of registration-related request or notification that can be made.\n\n    ADDED                             Notifies the receiving component that the component has successfully joined the ISA\n                                      network.\n\n    ERROR                             Notifies the receiving component that the sending ISA Controller has detected an\n                                      error with the registration of the component.\n\n    NON RESPONSIVE                    Notifies the receiving component that the sending ISA Controller considers the\n                                      component to have stopped communicating.\n\n    REMOVED                           Notifies the receiving component that the component has been removed from the ISA\n                                      network.\n\n    RENEW                             Requests the receiving component to re-register with the sending ISA Controller.\n\n    REQUEST ADD                       Requests the receiving ISA Controller to allow the sending component to join the ISA\n                                      network.\n\n    REQUEST REMOVE                    Requests the receiving ISA Controller to remove the sending component from the\n                                      ISA network.\n\n    REVIVED                           Notifies the receiving component that the sending ISA Controller considers the\n                                      component to have resumed communicating.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "REQUEST ADD is not successful registration; ERROR and NON RESPONSIVE do not prove equipment failure.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-354",
+      "entry_id": "ISA-DMS-354",
+      "native_term": "Route Action",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Route Action; printed p.82; PDF pp.97–98",
+      "pdf_pages": [
+        97,
+        98
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "18b4c41524c86d991cc4ccd9d74f155d076d66010026c3cdb3a2886b81cbb9d9",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-ROUTE-ACTION"
+      ],
+      "meaning": "Action category associated with completion of the last route segment.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Route Action (standard since 0.9)",
+        "variants": [
+          "LOOP",
+          "PATROL",
+          "RETURN",
+          "STOP"
+        ],
+        "variant_meaning_paraphrases": {
+          "LOOP": "Route returns to its point of origin in the source description.",
+          "PATROL": "Preassigned route for situational awareness.",
+          "RETURN": "Path from last stop to origin.",
+          "STOP": "Point with no linear movement in the source description."
+        },
+        "source_definition_text": "Route Action (standard since 0.9)\nDifferent types of actions to be taken at the completion of a route.\n\n    LOOP                              The path a vehicle takes thru a route and back to its point of origin\n\n    PATROL                            A preassigned route to achieve situational awareness (SA)\n\n    RETURN                            The path a vehicle takes from its last stop back to its origin\n\n    STOP                              Points along a route where the vehicle has no linear movement\n\n                                                              82\n<PARSED TEXT FOR PAGE: 98 / 148>",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "No route-generation, retrace, resumption, repetition count or executed movement is implied by the code.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-355",
+      "entry_id": "ISA-DMS-355",
+      "native_term": "UGS Category",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, UGS Category; printed p.83; PDF pp.98–98",
+      "pdf_pages": [
+        98
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "d29e822e44ad29e7c61d358ab9db3f85b395dcd1caf073e4502cb0876fdf9df2",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-UGS-CATEGORY"
+      ],
+      "meaning": "Source category for unattended ground sensor type.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "UGS Category (standard since 0.7)",
+        "variants": [
+          "ACOUSTIC",
+          "DIRECTIONAL",
+          "MAGNETIC",
+          "PIR",
+          "SEISMIC",
+          "SWITCH AND MOTION",
+          "TRIPWIRE",
+          "UNKNOWN",
+          "UNSPECIFIED"
+        ],
+        "variant_meaning_paraphrases": {
+          "ACOUSTIC": "Sound-triggered.",
+          "DIRECTIONAL": "Detection in one direction.",
+          "MAGNETIC": "Ferrous-material sensing category.",
+          "PIR": "Passive-infrared triggered.",
+          "SEISMIC": "Earth/crust vibration sensing category.",
+          "SWITCH AND MOTION": "Mechanical trigger and/or motion.",
+          "TRIPWIRE": "Mechanical trigger.",
+          "UNKNOWN": "Categorization attempted but inconclusive.",
+          "UNSPECIFIED": "No categorization attempt."
+        },
+        "source_definition_text": "UGS Category (standard since 0.7)\nGeneral category of the type of UGS.\n\n    ACOUSTIC                         Sensors that are triggered by sound\n\n    DIRECTIONAL                      Sensors that detect in only one direction\n\n    MAGNETIC                         Sensors that detect ferrous materials such as vehicles\n    PIR                              Sensors that are Passive Infrared triggered\n\n    SEISMIC                          Sensors that are triggered by earthquakes or other vibrations (e.g., from explosions)\n                                     of the earth and its crust.\n\n    SWITCH AND MOTION                Sensors that are activated by a mechanical trigger and/or motion\n\n    TRIPWIRE                         Sensors that are triggered by a mechanical means\n\n    UNKNOWN                          An attempt to identify the UGS Source was inconclusive.\n\n    UNSPECIFIED                      No attempt was made to categorize the UGS Source.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "The list mixes sensing modality/direction/trigger descriptions; it is not a formal inheritance tree or proof of an individual unit capability.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-356",
+      "entry_id": "ISA-DMS-356",
+      "native_term": "Video Enhancement",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Video Enhancement; printed p.83; PDF pp.98–98",
+      "pdf_pages": [
+        98
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "6c32e6a2302368b1f283daccc31d8ca31e9a3d9bf0a571304eb8691186ca8f9b",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-VIDEO-ENHANCEMENT"
+      ],
+      "meaning": "Category of algorithm that can be applied to a video stream in real time.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Video Enhancement (standard since 0.7)",
+        "variants": [
+          "BILINEAR",
+          "NONE"
+        ],
+        "variant_meaning_paraphrases": {
+          "BILINEAR": "Source describes linear interpolation successively in two dimensions.",
+          "NONE": "No algorithm."
+        },
+        "source_definition_text": "Video Enhancement (standard since 0.7)\nAlgorithm that can be applied to a video stream in real time.\n\n    BILINEAR                         An extension of linear interpolation for interpolating functions of two variables (e.g., x\n                                     and y) on a rectilinear 2D grid. The key idea is to perform linear interpolation first in\n                                     one direction, and then again in the other direction.\n\n    NONE                             having no algorithm\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not proof processing was applied, an output-resolution setting, or a fixed interpolation implementation.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-357",
+      "entry_id": "ISA-DMS-357",
+      "native_term": "Wind Category",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.1, Wind Category; printed p.83; PDF pp.98–99",
+      "pdf_pages": [
+        98,
+        99
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "f6e519c62b1523b4347bb59759d5d01b59cbdb321fb49225e58627ed336ba6a3",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-130"
+      ],
+      "meaning": "Meteorological wind category based on velocity and variability, distinct from a numerical wind measurement.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Wind Category (standard since 0.7)",
+        "variants": [
+          "CONSTANT",
+          "EXTREME TURBULENCE",
+          "GUST",
+          "LIGHT TURBULENCE",
+          "MODERATE TURBULENCE",
+          "SEVERE TURBULENCE",
+          "SQUALL",
+          "UNKNOWN",
+          "UNSPECIFIED",
+          "VARIABLE"
+        ],
+        "variant_meaning_paraphrases": {
+          "CONSTANT": "Continual/fixed/invariable.",
+          "EXTREME TURBULENCE": "Source describes extreme aircraft disturbance and possible structural damage.",
+          "GUST": "Brief strong rush of wind.",
+          "LIGHT TURBULENCE": "Source light-disturbance category.",
+          "MODERATE TURBULENCE": "Source greater-than-light category.",
+          "SEVERE TURBULENCE": "Large abrupt altitude/attitude and airspeed changes; final source sentence is incomplete.",
+          "SQUALL": "Sudden violent gust or localized storm.",
+          "UNKNOWN": "Identification attempted but inconclusive.",
+          "UNSPECIFIED": "No categorization attempt.",
+          "VARIABLE": "In a 2-minute evaluation, speed at most 6 knots; also direction varies at least 60 degrees when average speed exceeds 6 knots."
+        },
+        "source_definition_text": "Wind Category (standard since 0.7)\nCategorizes the wind, based on its velocity and variability, into meteorological terms.\n\n    CONSTANT                         Continual, Fixed and invariable\n\n    EXTREME TURBULENCE               turbulence in which an aircraft may be violently tossed about and is practically\n                                     impossible to control. It may cause structural damage.\n\n    GUST                             a brief, strong rush of wind\n\n    LIGHT TURBULENCE                 Turbulence that momentarily causes slight, erratic changes in altitude and/or attitude\n                                     (pitch, roll, yaw). May cause slight, rapid and somewhat rhythmic bumpiness without\n                                     appreciable changes in altitude\n\n    MODERATE TURBULENCE              Similar to Light Turbulence but of greater intensity. It may cause rapid bumps or jolts\n                                     without appreciable changes in aircraft altitude or attitude.\n\n    SEVERE TURBULENCE                Turbulence that causes large, abrupt changes in altitude and/or attitude. It usually\n                                     causes large variations in indicated airspeed. Aircraft may be\n\n    SQUALL                           a sudden violent gust of wind or a localized storm, especially one bringing rain, snow,\n                                     or sleet.\n\n    UNKNOWN                          An attempt to identify the Wind Category was inconclusive.\n                                                                83\n<PARSED TEXT FOR PAGE: 99 / 148>\n    UNSPECIFIED                     No attempt was made to categorize the Wind Category.\n\n    VARIABLE                        The wind direction may be considered variable if, during the 2-minute evaluation\n                                    period, the wind speed is 6 knots or less. Also, the wind direction shall be considered\n                                    variable if, during the 2-minute evaluation period, it varies by 60 degrees or more\n                                    when the average wind speed is greater than 6 knots.\n\n\n\n8.2 Reporting Union Data Types\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "The VARIABLE evaluation period is not a universal sensor reporting interval; the incomplete severe-turbulence prose is not silently completed.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-WIND-DESCRIPTION"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-358",
+      "entry_id": "ISA-DMS-358",
+      "native_term": "Geographic Shape",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.2, Geographic Shape; printed p.84; PDF pp.99–99",
+      "pdf_pages": [
+        99
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "66a05ee4e51a0daf93e187d5623568b35c6549b4dcee0479c9404dedc91827a7",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-122",
+        "ISA-C-143",
+        "ISA-C-117",
+        "ISA-C-120"
+      ],
+      "meaning": "Union of the four explicitly listed geographic-shape alternatives.",
+      "native_manifest": {
+        "kind": "union",
+        "sealed_as_printed": false,
+        "standing_header": "Geographic Shape (standard since 0.7)",
+        "variants": [
+          "Geographic Arc",
+          "Geographic Ellipse",
+          "Geographic Polygon",
+          "Geographic Polyline"
+        ],
+        "variant_meaning_paraphrases": {
+          "Geographic Arc": "Circle portion defined by position/radius and angular span/centerline; source centerline is north-oriented.",
+          "Geographic Ellipse": "Ellipse associated with a geographic centerpoint.",
+          "Geographic Polygon": "Ordered positions with closing link from last to first.",
+          "Geographic Polyline": "Ordered positions forming a multi-segment line without implied closing link."
+        },
+        "source_definition_text": "Geographic Shape (standard since 0.7)\nAnything from a point on a map to a full shape.\n\n    Geographic Arc                  A part of the circumerence of a circle. The arc is defined by specifying a portion of\n                                    a circle around a geographic point. The circle is a given distance (radius) around a\n                                    geographic point (position). The portion of the circumference that comprises the arc\n                                    is described by the size of the arc as an angle (arc angle) and the center position of\n                                    that arc as an angle (centerline). The centerline is north oriented, so the 0 degree\n                                    points northL.\n\n    Geographic Ellipse              Associates an ellipse with a geographic position as the centerpoint.\n\n    Geographic Polygon              Defining an area as a closed polygon requires specifying a sequence of geographic\n                                    positions. The area is defined by traversing the positions in the order that they appear\n                                    in the sequence and connecting the last element of the list with the first element of\n                                    the list.\n\n    Geographic Polyline             Defining a multi-segment line requires specifying a sequence of geographic positions.\n                                    The line is defined by traversing the positions in the order that they appear in the\n                                    sequence.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Do not add Geographic Position as a fifth variant from the broad introductory prose, force polygons, or assert native GeoJSON equivalence.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-359",
+      "entry_id": "ISA-DMS-359",
+      "native_term": "IP Address",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.2, IP Address; printed p.84; PDF pp.99–99",
+      "pdf_pages": [
+        99
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "78f712953182fcd2265f93adf4b97fec0db907b1718335e1e6db1ef3618f9c5c",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-067",
+        "ISA-C-161"
+      ],
+      "meaning": "Network address choice between the source IPv4 and IPv6 structures.",
+      "native_manifest": {
+        "kind": "union",
+        "sealed_as_printed": false,
+        "standing_header": "IP Address (standard since 6.0)",
+        "variants": [
+          "IPv4 Address",
+          "IPv6 Address"
+        ],
+        "variant_meaning_paraphrases": {
+          "IPv4 Address": "Four one-byte groups.",
+          "IPv6 Address": "Eight 16-bit groups."
+        },
+        "source_definition_text": "IP Address (standard since 6.0)\nAn IP address for networked communication\n\n    IPv4 Address                    An IPv4 based address for network communication. The address is broken up into 4\n                                    groups of 1 byte each.\n\n    IPv6 Address                    An IPv6 based address for network communication. The address is broken up into\n                                    eight groups of 16 bits each.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not a component identity or interface record; no address/mask/gateway fields are invented by the union.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-360",
+      "entry_id": "ISA-DMS-360",
+      "native_term": "Resource",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.2, Resource; printed p.84; PDF pp.99–100",
+      "pdf_pages": [
+        99,
+        100
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "f856786314616803a78a19a4ab2860cd2681c72d1cb035ca13f23bf78bb4c136",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-207"
+      ],
+      "meaning": "Resource supplied as opaque binary data or a description of how to access it.",
+      "native_manifest": {
+        "kind": "union",
+        "sealed_as_printed": false,
+        "standing_header": "Resource (standard since 5.0)",
+        "variants": [
+          "Blob",
+          "Resource Descriptor"
+        ],
+        "variant_meaning_paraphrases": {
+          "Blob": "Binary payload plus resource type.",
+          "Resource Descriptor": "Classification, description and access information."
+        },
+        "source_definition_text": "Resource (standard since 5.0)\nUsed to provide unspecified resource data which is either a blob or a resource descriptor\n\n    Blob                            Generic object for passing opaque data. This is expressed as a payload consisting of\n                                    an arbitrary length sequence of bytes and a Resource Type describing the contents\n                                    of that field.\n\n    Resource Descriptor             Information that classifies, describes, and specifies how to access a resource (e.g.,\n                                    imagery, raw sensor data, a native interface).\n\n\n\n                                                            84\n<PARSED TEXT FOR PAGE: 100 / 148>",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not URL-only, not necessarily embedded media, and not a physical-equipment inventory.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-361",
+      "entry_id": "ISA-DMS-361",
+      "native_term": "Segment",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "8.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 8.2, Segment; printed p.85; PDF pp.100–100",
+      "pdf_pages": [
+        100
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "f4e7257dbb95cbc4e9acca4baec8a05a2a8d56088ed60c7d640dd5a9b94d9087",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-E-ROUTE-SEGMENT"
+      ],
+      "meaning": "Route segment can be a route container or a waypoint; nesting and sequence semantics are preserved.",
+      "native_manifest": {
+        "kind": "union",
+        "sealed_as_printed": false,
+        "standing_header": "Segment (standard since 0.9)",
+        "variants": [
+          "Route",
+          "Waypoint"
+        ],
+        "variant_meaning_paraphrases": {
+          "Route": "Ordered segment list plus optional end action.",
+          "Waypoint": "Geographic destination with optional speeds and pause information."
+        },
+        "source_definition_text": "Segment (standard since 0.9)\nSegment of a route.\n\n    Route                           Container for a list of segments to traverse and an action to take when the last\n                                    segment is reached.\n\n    Waypoint                        Point to which to travel.\n\n\n\n8.3 Reporting Composite Data Types\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not a network routing hop, polygon edge or proof that physical travel occurred; no precedence between simultaneous speed fields is invented.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-455",
+      "entry_id": "ISA-DMS-455",
+      "native_term": "Menu Button",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "9.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 9.1, Menu Button; printed p.117; PDF pp.132–132",
+      "pdf_pages": [
+        132
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "ab55eb7c52580a4de9bb0669ef4c9851d2fd882029df739ac5c5f0ccbe472308",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "ISA-C-220"
+      ],
+      "meaning": "On-screen menu navigation button vocabulary.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": false,
+        "standing_header": "Menu Button (standard since 6.0)",
+        "variants": [
+          "BACK",
+          "DOWN",
+          "LEFT",
+          "RIGHT",
+          "SELECT",
+          "UP"
+        ],
+        "variant_meaning_paraphrases": {
+          "BACK": "Navigate back.",
+          "DOWN": "Navigate down.",
+          "LEFT": "Navigate left.",
+          "RIGHT": "Navigate right.",
+          "SELECT": "Select/enter current option.",
+          "UP": "Navigate up."
+        },
+        "source_definition_text": "Menu Button (standard since 6.0)\nMenu buttons for controlling devices that have on-screen menu systems.\n\n    BACK                               Navigate back.\n\n    DOWN                               Navigate down.\n\n    LEFT                               Navigate left.\n\n    RIGHT                              Navigate right.\n\n    SELECT                             Select/Enter on the current option.\n\n    UP                                 Navigate up.\n\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "Not evidence of a physical button, a motor direction or successful menu selection.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-456",
+      "entry_id": "ISA-DMS-456",
+      "native_term": "Response Code",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "9.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 9.1, Response Code; printed p.117; PDF pp.132–133",
+      "pdf_pages": [
+        132,
+        133
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "d7d44df1142cefd633fc3f5a734d08b03dce87062e298be1142c2676565cfe27",
+      "source_span_hash_basis": "Original indexed source span matched exactly to immutable census SHA256; source text checked in this pass.",
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "EXISTING_ROW_SUPPORT",
+      "target_rows": [
+        "S06-R020"
+      ],
+      "meaning": "Current status or final disposition of a command request; individual outcomes remain distinct.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed_as_printed": true,
+        "standing_header": "Response Code [sealed] (standard since 0.7.1)",
+        "variants": [
+          "BUSY",
+          "COMMAND NOT AVAILABLE",
+          "FAILED",
+          "IN PROGRESS",
+          "INSUFFICIENT TIME",
+          "INVALID ARGS",
+          "INVALID COMMAND",
+          "PERMISSION DENIED",
+          "QUEUED",
+          "SUCCESS"
+        ],
+        "variant_meaning_paraphrases": {
+          "BUSY": "Too busy to execute.",
+          "COMMAND NOT AVAILABLE": "Declared command currently not ready.",
+          "FAILED": "Could not successfully complete requested command.",
+          "IN PROGRESS": "Execution begun but unfinished.",
+          "INSUFFICIENT TIME": "No attempt because completion before requested stale time is not possible.",
+          "INVALID ARGS": "Request has invalid arguments.",
+          "INVALID COMMAND": "Request names an invalid command.",
+          "PERMISSION DENIED": "Request denied.",
+          "QUEUED": "Queued for subsequent execution.",
+          "SUCCESS": "Requested command successfully completed; honor command-specific definition of completion."
+        },
+        "source_definition_text": "Response Code [sealed] (standard since 0.7.1)\nIndication of the current status or final disposition of a request.\n\n    BUSY                               Component is too busy to execute the requested command.\n\n    COMMAND NOT AVAILABLE Requested command was declared by component but is not available to be executed\n                          (i.e., ready state is \"false\").\n\n    FAILED                             Component failed to successfully complete the execution of the requested command.\n\n    IN PROGRESS                        Component has begun executing the requested command but has not yet finished\n                                       executing the command.\n\n    INSUFFICIENT TIME                  The component did not attempt to execute the command because completion of\n                                       execution by the stale time (specified in the Request message) is not possible.\n\n    INVALID ARGS                       Request message contained invalid arguments.\n\n    INVALID COMMAND                    Requested command is not a valid command.\n\n    PERMISSION DENIED                  Request has been denied.\n\n    QUEUED                             Requested command is queued for subsequent execution.\n\n    SUCCESS                            Component has successfully completed the execution of the requested command.\n\n\n\n\n                                                               117\n<PARSED TEXT FOR PAGE: 133 / 148>\n10.0 Filtering Data Types\n\n\n10.1 Filtering Enumerated Data Types\n",
+        "vocabulary_policy": "Retain literal source labels and explicit sealed marking; no aliases, extra codes or encoding tokens inferred."
+      },
+      "must_not_imply": "A successful request is interpreted by its command contract; Start Data success means transfer started, not transferred to completion. Do not infer retry or cancellation policy.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
     }
   ],
   "supporting_definitions": [
@@ -5410,6 +7031,112 @@
       "later_catalogue_pass_completed": false,
       "inspection": "Complete original text PDF133; no new page-image claim.",
       "must_not_imply": "No namespace, schema-registry policy, UUID requirement, or concrete custom-type name invented."
+    },
+    {
+      "entry_id": "ISA-DMS-444",
+      "native_term": "Route",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 112,
+      "pdf_pages": [
+        127,
+        128
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS6.0r12 §8.3 Route, printed p.112, PDF 127–128",
+      "source_span_sha256": "09b0d47ab0f0e4b8f995d57b6012983ef9c6a77109a8e39c220da053a001184e",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "inspected_content_summary": "Ordered empty-capable segments; route nesting through Segment; zero linger and STOP are explicit omission defaults.",
+      "native_fields": [
+        {
+          "name": "linger",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Pause before continuing along containing route.",
+          "default_as_printed": 0
+        },
+        {
+          "name": "segments",
+          "type": "Segment",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "meaning": "Route segments traversed in list order."
+        },
+        {
+          "name": "action",
+          "type": "Route Action",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Action at end of route.",
+          "default_as_printed": "STOP"
+        }
+      ],
+      "must_not_imply": "Do not infer nonempty routes, an implicit movement command, or path generation.",
+      "source_definition_text": "Route (standard since 0.9)\nContainer for a list of segments to traverse and an action to take when the last segment is reached.\n   Field               Data Type           Required/ #   Structure            Description\n                                           Optional\n    linger              Measured Secs      Optional  0-1 Single Value          How long to pause at the current position\n                                                                               before continuing along the containing\n                                                                               route . If not provided, the default value\n                                                                               is 0 .\n    segments            Segment             Required    0+     List            Segments of the route, to be traversed\n                                                                               according to their order in the list.\n    action              Route Action        Optional    0-1    Single Value    Action to take when the end of the route\n                                                                               is reached . If not provided, the default\n                                                                               value is STOP .\n\n\n\n\n                                                              112\n<PARSED TEXT FOR PAGE: 128 / 148>"
+    },
+    {
+      "entry_id": "ISA-DMS-453",
+      "native_term": "Waypoint",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 115,
+      "pdf_pages": [
+        130,
+        131
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS6.0r12 §8.3 Waypoint, printed p.115, PDF 130–131",
+      "source_span_sha256": "d10e4e92ddb9eb0d0ec60fba2a6e26d90b0497657c914e825d81a416b89af107",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-TYPES-REPORTING-ENUMS",
+      "inspected_content_summary": "Required destination and optional relative/absolute speed and linger; the two speed forms have separate printed defaults.",
+      "native_fields": [
+        {
+          "name": "relative speed",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Percentage of maximum speed for destination travel.",
+          "default_as_printed": 100
+        },
+        {
+          "name": "absolute speed",
+          "type": "Measured Mpsec",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Absolute travel speed.",
+          "default_as_printed": "maximum speed"
+        },
+        {
+          "name": "destination",
+          "type": "Geographic Position",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Destination of route segment."
+        },
+        {
+          "name": "linger",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Pause before continuing along containing route."
+        }
+      ],
+      "must_not_imply": "No precedence or mutual-exclusion rule for speed fields is supplied; no zero default for Waypoint.linger is invented.",
+      "source_definition_text": "Waypoint (standard since 0.9)\nPoint to which to travel.\n   Field                Data Type          Required/ #   Structure          Description\n                                           Optional\n    relative speed          Percent        Optional  0-1 Single Value       Speed at which to travel to the\n                                                                            destination, given as a percentage of\n                                                                            the device's maximum speed . If not\n                                                                            provided, the default value is 100 .\n\n\n                                                            115\n<PARSED TEXT FOR PAGE: 131 / 148>\n   Field               Data Type      Required/ #   Structure                 Description\n                                      Optional\n    absolute speed     Measured Mpsec Optional  0-1 Single Value              Absolute speed at which to travel to the\n                                                                              destination . If not provided, the default\n                                                                              value is maximum speed .\n    destination        Geographic          Required     1      Single Value   Destination of this route segment.\n                       Position\n    linger             Measured Secs       Optional     0-1    Single Value   How long to pause at the current position\n                                                                              before continuing along the containing\n                                                                              route.\n\n"
     }
   ],
   "reused_supporting_definitions": [
@@ -5582,6 +7309,135 @@
       ],
       "review_pass": "ISA-TYPES-CAPABILITY",
       "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-362",
+      "native_term": "Area of Interest",
+      "evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-385",
+      "native_term": "Geographic Arc",
+      "evidence_files": [
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-386",
+      "native_term": "Geographic Ellipse",
+      "evidence_files": [
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-387",
+      "native_term": "Geographic Polygon",
+      "evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-388",
+      "native_term": "Geographic Polyline",
+      "evidence_files": [
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-391",
+      "native_term": "IPv4 Address",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-392",
+      "native_term": "IPv6 Address",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-367",
+      "native_term": "Blob",
+      "evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-439",
+      "native_term": "Resource Descriptor",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-440",
+      "native_term": "Resource Type",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-412",
+      "native_term": "Measured Mpsec",
+      "evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-421",
+      "native_term": "Measured Secs",
+      "evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "full_assignment_advanced": false,
+      "reason": "Same-edition field manifest reused for current enum/union semantics; full composite assignment retained."
     }
   ],
   "source_wording_notes": [
@@ -5633,55 +7489,79 @@
       "handling": "Preserve every literal code and its printed explanation. Use the actual separately reviewed type definition for meaning; do not invent aliases, change scale, or infer wire tokens.",
       "scheduled_resolution": "Existing cross-type/interface/semantic reconciliation; no extra prompt.",
       "additional_prompt_created": false
+    },
+    {
+      "id": "ISA-SOURCE-NOTE-AOI-DEFAULT-CODE",
+      "entry_ids": [
+        "ISA-DMS-336",
+        "ISA-DMS-362"
+      ],
+      "source_locator": "DMS6.0r12 §8.1 AOI Reason PDF90 / printed75; §8.3 Area of Interest PDF100 / printed85",
+      "known": "AOI Reason lists eight codes without UNKNOWN, while Area of Interest.type declares UNKNOWN as its omission default.",
+      "handling": "Retain both the literal enum and the printed default. Do not add an UNKNOWN code or replace the default with OTHER.",
+      "scheduled_resolution": "Existing reporting-composite and interface/semantic reconciliation; no additional prompt.",
+      "additional_prompt_created": false
+    },
+    {
+      "id": "ISA-SOURCE-NOTE-WIND-DESCRIPTION",
+      "entry_id": "ISA-DMS-357",
+      "source_locator": "DMS6.0r12 §8.1 Wind Category PDF98–99 / printed83–84",
+      "known": "SEVERE TURBULENCE ends with the incomplete words Aircraft may be; the following page continues with UNSPECIFIED and VARIABLE.",
+      "handling": "Preserve the complete available source text and category. Do not supply the missing sentence or infer additional thresholds.",
+      "scheduled_resolution": "Existing companion/semantic reconciliation; no additional prompt.",
+      "additional_prompt_created": false
     }
   ],
   "source_inspection": {
     "complete_original_text_pages": [
-      77,
-      78,
-      79,
-      80,
-      81,
-      82,
-      83,
-      84,
-      85,
-      86,
-      87,
-      88,
-      89,
-      133
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      132,
+      127,
+      130,
+      131
     ],
     "page_images_inspected": [
-      85,
-      86,
-      87,
-      88,
-      89
+      100,
+      126,
+      127,
+      130,
+      131
     ],
-    "page_images_unavailable": [
-      77,
-      84
-    ],
+    "image_retrieval_limits": "Requested90–99 and132 images were unavailable in this pass; only returned page images are claimed.",
     "cross_page_definitions": [
-      "Type Name77–84",
-      "Absolute Threshold84–85",
-      "Field Declaration86–87"
+      "Admin Code90–91",
+      "Biological Material91–92",
+      "Chemical Material Class92–94",
+      "Himelo94–95",
+      "Radioactive Material Type Primary Radiation Code96–97",
+      "Wind Category98–99",
+      "Waypoint130–131"
     ],
-    "native_inventory_span_hashes_checked": 25,
-    "standing": "All25 are core; only the3 capability enumerations are explicitly sealed.",
-    "scope": "All25 assigned native definitions and exact fields/variants; Type Name membership does not recursively count every referenced type as reviewed."
+    "native_inventory_span_hashes_checked": 28,
+    "supporting_inventory_span_hashes_checked": 2,
+    "source_hash_match_policy": "Each complete local indexed source span matched the existing census SHA256 and was reconciled against the original Files text.",
+    "standing": "All28 core;24 enumerations and4 unions. Nine enums explicitly sealed; Priority Level explicitly reserved for future use."
   },
   "reuse_summary": {
-    "assigned": 25,
-    "prior_support_reconciled": 3,
-    "first_primary_inspections": 22,
-    "new_external_dependencies": 1,
-    "previous_supporting_roster": 168,
-    "cumulative_supporting_roster": 169,
-    "unique_type_definitions_examined": 200,
-    "primary_types_reconciled": 79,
-    "supporting_only_types_not_yet_fully_reconciled": 121
+    "assigned": 28,
+    "prior_support_reconciled": 20,
+    "first_primary_inspections": 8,
+    "new_external_dependencies": 2,
+    "previous_supporting_roster": 169,
+    "cumulative_supporting_roster": 171,
+    "unique_type_definitions_examined": 210,
+    "primary_types_reconciled": 107,
+    "supporting_only_types_not_yet_fully_reconciled": 103
   },
   "comparison_policy": "15 declaration/constraint patterns added;25 type definitions remain individually traceable. No new automatic DIM adoption.",
   "primary_questions_added": 0,
@@ -5693,21 +7573,23 @@
     "ISA-Q005",
     "ISA-Q006"
   ],
-  "next_task": "ISA-TYPES-REPORTING-ENUMS",
+  "next_task": "ISA-TYPES-REPORTING-COMPOSITES",
   "validation": {
-    "exact79_unique_ids": true,
-    "current25_complete": true,
+    "exact107_unique_ids": true,
+    "current28_complete": true,
     "omissions": 0,
     "duplicates": 0,
-    "new_candidate_rows": 15,
+    "new_candidate_rows": 7,
     "prior_rows_changed": 0,
     "other_donor_or_case_cells_changed": 0,
     "workbook_rebuilt": false,
-    "type_name_literal_codes": 201
+    "literal_variant_count": 172,
+    "sealed_enumerations": 9
   },
   "completed_passes": [
     "ISA-TYPES-BASE-MESSAGES",
-    "ISA-TYPES-CAPABILITY"
+    "ISA-TYPES-CAPABILITY",
+    "ISA-TYPES-REPORTING-ENUMS"
   ],
   "source_inspections_by_pass": {
     "ISA-TYPES-BASE-MESSAGES": {
@@ -5789,41 +7671,86 @@
       "native_inventory_span_hashes_checked": 25,
       "standing": "All25 are core; only the3 capability enumerations are explicitly sealed.",
       "scope": "All25 assigned native definitions and exact fields/variants; Type Name membership does not recursively count every referenced type as reviewed."
+    },
+    "ISA-TYPES-REPORTING-ENUMS": {
+      "complete_original_text_pages": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        132,
+        127,
+        130,
+        131
+      ],
+      "page_images_inspected": [
+        100,
+        126,
+        127,
+        130,
+        131
+      ],
+      "image_retrieval_limits": "Requested90–99 and132 images were unavailable in this pass; only returned page images are claimed.",
+      "cross_page_definitions": [
+        "Admin Code90–91",
+        "Biological Material91–92",
+        "Chemical Material Class92–94",
+        "Himelo94–95",
+        "Radioactive Material Type Primary Radiation Code96–97",
+        "Wind Category98–99",
+        "Waypoint130–131"
+      ],
+      "native_inventory_span_hashes_checked": 28,
+      "supporting_inventory_span_hashes_checked": 2,
+      "source_hash_match_policy": "Each complete local indexed source span matched the existing census SHA256 and was reconciled against the original Files text.",
+      "standing": "All28 core;24 enumerations and4 unions. Nine enums explicitly sealed; Priority Level explicitly reserved for future use."
     }
   },
   "current_batch": {
-    "id": "ISA-TYPES-CAPABILITY",
+    "id": "ISA-TYPES-REPORTING-ENUMS",
     "assigned_ids": [
-      "ISA-DMS-311",
-      "ISA-DMS-312",
-      "ISA-DMS-313",
-      "ISA-DMS-314",
-      "ISA-DMS-315",
-      "ISA-DMS-316",
-      "ISA-DMS-317",
-      "ISA-DMS-318",
-      "ISA-DMS-319",
-      "ISA-DMS-320",
-      "ISA-DMS-321",
-      "ISA-DMS-322",
-      "ISA-DMS-323",
-      "ISA-DMS-324",
-      "ISA-DMS-325",
-      "ISA-DMS-326",
-      "ISA-DMS-327",
-      "ISA-DMS-328",
-      "ISA-DMS-329",
-      "ISA-DMS-330",
-      "ISA-DMS-331",
-      "ISA-DMS-332",
-      "ISA-DMS-333",
-      "ISA-DMS-334",
-      "ISA-DMS-335"
+      "ISA-DMS-336",
+      "ISA-DMS-337",
+      "ISA-DMS-338",
+      "ISA-DMS-339",
+      "ISA-DMS-340",
+      "ISA-DMS-341",
+      "ISA-DMS-342",
+      "ISA-DMS-343",
+      "ISA-DMS-344",
+      "ISA-DMS-345",
+      "ISA-DMS-346",
+      "ISA-DMS-347",
+      "ISA-DMS-348",
+      "ISA-DMS-349",
+      "ISA-DMS-350",
+      "ISA-DMS-351",
+      "ISA-DMS-352",
+      "ISA-DMS-353",
+      "ISA-DMS-354",
+      "ISA-DMS-355",
+      "ISA-DMS-356",
+      "ISA-DMS-357",
+      "ISA-DMS-358",
+      "ISA-DMS-359",
+      "ISA-DMS-360",
+      "ISA-DMS-361",
+      "ISA-DMS-455",
+      "ISA-DMS-456"
     ],
-    "records": 25,
-    "pattern_rows": 15,
-    "prior_dependencies_reused": 3,
-    "new_primary_inspections": 22,
-    "type_name_literal_codes": 201
+    "records": 28,
+    "pattern_rows": 7,
+    "existing_row_support_records": 20,
+    "reserved_supporting_records": 1,
+    "prior_dependencies_reused": 20,
+    "new_primary_inspections": 8,
+    "variant_count": 172
   }
 }

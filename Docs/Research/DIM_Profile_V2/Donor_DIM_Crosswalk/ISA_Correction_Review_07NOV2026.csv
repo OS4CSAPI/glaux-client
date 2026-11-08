@@ -184,6 +184,8 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Registration.opcode; credentials [0+]; error description [0-1],,,,,,Registration message and credential data
 ,,,,,,,Request.request id ≠ separate identifier; Response.reference → Request identifier,,,,,,Command request identity and response reference
 ,,,,,,,Request.access control: Name Value Pair [0+],,,,,,Request access-control metadata
+,,,,,,,Segment → Route | Waypoint · ordered nested route representation,,,,,,Route-segment alternatives
+,,,,,,,Route Action · LOOP / PATROL / RETURN / STOP,,,,,,End-of-route action category
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)
@@ -218,6 +220,8 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Specification Version,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported ISA specification version of the component
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Support · accepted extension,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Non-maintenance support contact information
 ,,,,,,,SIDC · 15-character MIL-STD-2525C code,,,,,,Tactical symbol code
+,,,,,,,Component Category · IMAGER / RADAR / UGS · no inferred capabilities,,,,,,Human-facing component category
+,,,,,,,UGS Category · source category vocabulary,,,,,,Unattended ground sensor category
 ISA-02 — POSITION AND ORIENTATION — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Orientation,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Orientation relative to attached parent
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Attached Position,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Position relative to attached parent
@@ -238,6 +242,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Charged,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported charged flag
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Enabled,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Permission-to-become-active flag
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Operating State,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported component operating condition
+,,,,,,,Belnap Dunn · FALSE / PARADOX / TRUE / UNSPECIFIED,,,,,,Four-valued evaluation state
 ISA-02 — ELECTRICAL POWER — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,AC Current Load,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Consumed AC current
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,AC Current Source,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Produced AC current
@@ -251,6 +256,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Power State,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported condition of power to the component
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Reserve Capacity,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Reported energy reserve relative to maximum capacity
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Time to Empty,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Estimated time to empty under expected usage
+,,,,,,,Power Source · native supply categories; RELIABLE retains source wording,,,,,,Power-source classification
 ISA-02 — COMMUNICATIONS — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Data Inputs,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Current incoming data transfers
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Data Outputs,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Current outgoing data transfers
@@ -290,6 +296,7 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Scan Time,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Duration of one complete scan-area coverage
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Wavelengths,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Laser wavelengths in use
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Zoom,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Current camera zoom relative to maximum zoom
+,,,,,,,Video Enhancement · BILINEAR / NONE,,,,,,Video-enhancement algorithm category
 ISA-02 — DIAGNOSTICS — Source-derived candidate information; other donors not assessed here.,,,,,,,,,,,,,
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Built In Test Result,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Latest built-in-test reported result
 Not linked here,Not linked here,Not linked here,Not linked here,Not assessed here,Not assessed here,Not assessed here,Satellites,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Not assessed here,Number of satellites in use

@@ -1,5 +1,15 @@
 # Working master — source cases, donor concepts and proposed DIM
 
+## Current execution — 8 November 2026
+
+**Accelerated delivery 10 COMPLETE: 28 reporting/commanding enumeration and union definitions reconciled.** Canonical master text/CSV/JSON:292 information rows,333/480 primary outcomes,107/224 types. All285 prior displayed rows,58 donor records,73 cases and six primary questions are preserved. Seven new candidate patterns; no DIM adoption. 20 prior inspections reused; two new Route/Waypoint dependencies remain assigned to the later composite review.
+
+**Next “proceed”: original ISA Steps9/10 / accelerated delivery11 — `ISA-TYPES-REPORTING-COMPOSITES`,93 exact DMS8.3 assignments. Remaining ISA forecast12 deliveries, range10–14.** Four original work areas remain closed. The current Excel snapshot remains253 rows/226 primary outcomes; canonical text is three datatype checkpoints newer (39 added rows/107 type outcomes). Reuse the existing publisher and evidence; no new workflow or standalone source report.
+
+[Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+
+The adoption agreement remains: include verified comparison findings now; focused readiness-based decisions at broader Step24; synthesis/testing35–39 and named-version approval40. Earlier checkpoint counts below are retained history, not a second live queue.
+
 **CURRENT —8 November2026: ISA Step8 / accelerated delivery9 COMPLETE.25 capability definitions reconciled; types79/224, primary coverage305/480, canonical readable master285 rows. Next accelerated delivery10:28 reporting enumeration/union and commanding-enum entries. Remaining ISA forecast13, range11–15. Excel remains253 rows; text is two type checkpoints newer.**
 
 [Current master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json).
