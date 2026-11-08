@@ -16575,25 +16575,25 @@
     "all_blocks_assigned": true
   },
   "publication": {
-    "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
+    "state": "CURRENT_WORKBOOK_EVIDENCE_AND_READABLE_VIEW_SYNCHRONIZED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "research_state": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS COMPLETE; command-definition catalogue COMPLETE",
-    "next_pass": "ISA-COMMANDS-PUBLISH",
-    "publication_record": "ISA_Observables_Publication_Record_07NOV2026.json",
+    "research_state": "Command catalogue source review and workbook integration COMPLETE",
+    "next_pass": "ISA-TYPES-BASE-MESSAGES",
+    "publication_record": "ISA_Commands_Publication_Record_08NOV2026.json",
     "current_readable_view": "ISA_Correction_Review_07NOV2026.md",
     "current_evidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
     "workbook_snapshot": {
-      "file": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
-      "checkpoint": "ISA-OBSERVABLES-PUBLISH",
-      "sha256": "68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6",
-      "information_rows": 157,
-      "primary_reviewed": 130,
-      "source_supported": 126,
-      "questions": 4,
-      "currently_matches_readable_view": false
+      "file": "ISA_Correction_Review_Commands_08NOV2026.xlsx",
+      "checkpoint": "ISA-COMMANDS-PUBLISH",
+      "sha256": "3750d6a95127b71031e8d3166c7c4750beda0e4cc397a2ba953f19015f607440",
+      "information_rows": 253,
+      "primary_reviewed": 226,
+      "source_supported": 220,
+      "questions": 6,
+      "currently_matches_readable_view": true
     },
-    "publication_record_meaning": "The publication record verifies the preserved completed property/observable workbook; the newer command text is verified separately."
+    "publication_record_meaning": "Verifies the integrated 91-property/39-observable/96-command workbook and exact agreement with saved evidence and comparison."
   },
   "row_targets": [
     {
@@ -24417,9 +24417,9 @@
     }
   ],
   "progress": {
-    "completed_correction_iterations": 25,
+    "completed_correction_iterations": 26,
     "planned": 41,
-    "next": "ISA-COMMANDS-PUBLISH",
+    "next": "ISA-TYPES-BASE-MESSAGES",
     "primary_entries_reviewed": 226,
     "primary_entries_total": 480,
     "supporting_definitions_read": 167,
@@ -24434,7 +24434,7 @@
     "completed_work_packages": 4,
     "completed_child_batches": 4,
     "completed_catalogue_source_passes": 18,
-    "completed_catalogue_workbook_checkpoints": 2,
+    "completed_catalogue_workbook_checkpoints": 3,
     "observable_entries_reviewed": 39,
     "observable_entries_total": 39,
     "command_entries_reviewed": 96,
@@ -24784,6 +24784,14 @@
       "source_questions_added": 0,
       "evidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
       "workbook_checkpoint": "ISA-OBSERVABLES-PUBLISH_SNAPSHOT_UNCHANGED"
+    },
+    {
+      "batch": "ISA-COMMANDS-PUBLISH",
+      "state": "COMPLETE_WORKBOOK_INTEGRATION",
+      "new_source_reviews": 0,
+      "saved_command_outcomes_integrated": 96,
+      "information_rows": 253,
+      "workbook": "ISA_Correction_Review_Commands_08NOV2026.xlsx"
     }
   ]
 }
