@@ -5,7 +5,7 @@ Dragino S31-LB,AirGradient Open Air Max,Campbell CR1000X + ClimaVue 50,Bennett's
 S31-LB,O-M-1PPSTON-CE,CR1000X; ClimaVue 50 (1st gen),EE181; CR1000X; TX321,,Model,ConfigurationData.model,Model,,,,≈ AbstractProcess.typeOf → general process/model,≈ systemKind → Procedure (type/datasheet),Product model designation
 ,,,EE181 serials 222016000109CE; 21281600077814,,SerialNumber,≈ ConfigurationData.serial_number,≈ Serial Number · physical-component context,,,,,,Individual hardware serial number
 ,,,acebpmet (station source identifier),≈ MetaTEDS.UUID (TIM identifier),,,≈ UCI · unique component identifier,,,,≈ DescribedObject.uniqueId,System.uniqueIdentifier (URI),Persistent System identifier
-,,,,,,,Certificate Common Name ↔ ISA component UCI; trusted signing CA / PKI; certificate usage and deploying authority,,,,,,Certificate identity and trust context
+,,,,,,,Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source,,,,,,Certificate identity and trust context
 "02 — SYSTEM, EQUIPMENT & RELATIONSHIPS — Describe the whole, physical constituents, separate connections, reporting participant and hosting context.",,,,,,,,,,,,,
 S31-LB node + external SHT31 (reference),Open Air Max gas-equipped assembly (reference),CR1000X + 1st-gen ClimaVue 50 (reference pairing),acebpmet meteorological station,,≈ Device,,≈ ISA composition: integration collection exposed through one CIC; physical unity not established,≈ ssn:System,,,≈ PhysicalSystem (aggregate physical process),≈ System resource (instance),Described sensing System / arrangement
 LoRaWAN end node (design),ESP32-C6; Wi-Fi / LTE options (design),CR1000X logger (separate MQTT Status example),"GOES TX321 transmitter, serial 2335",≈ Network Capable Application Processor (NCAP),,≈ Node (registered network role),"≈ ISA component / Controller; client-side role for every ISA component, server-side role also for Controllers",,,,,,Network-visible participant
@@ -207,9 +207,10 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,components_near_uci(); components_in_area(); in_area(),,,,,,Spatial component and message selection
 ,,,,,,,Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists,,,,,,Service role and required command support
 ,,,,,,,22 ordinary DMS capability categories → Properties / Observables / Commands; overlapping membership,,,,,,Capability group membership
-,,,,,,,Required: all components must support; Recommended: all components should support,,,,,,Required and recommended capability support
+,,,,,,,DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations,,,,,,Required and recommended capability support
 ,,,,,,,Visible + tasking enabled = transparent; visible + tasking not enabled = translucent; only visible members can be targeted externally,,,,,,Externally visible member taskability
 ,,,,,,,CIC per-request role: performer executes; broker actively tasks members; relay forwards via ISA or native member interface,,,,,,Composition interface task mediation role
+,,,,,,,Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication,,,,,,Capability readiness and reporting selection
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)
@@ -229,6 +230,7 @@ C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; c
 ,,,,,,,Custom → Nominated → Accepted; incorporation into a later major standard release,,,,,,Extension standing and standardization context
 ,,,,,,,IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format,,,,,,Negotiated message encoding and model version
 ,,,,,,,"IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",,,,,,Supplied list value versus no update
+,,,,,,,CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch,,,,,,Component time basis and synchronization
 "06 — CASE TERMS AWAITING DIM DISPOSITION — Actual source fields and recorded reference examples not force-mapped into the 22 proposed DIM elements; every rightmost label is a review hold, not adopted.",,,,,,,,,,,,,
 ,,,EE181 service roles: 2024-04-16 change; as of 2024-12-31,,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — service history
 External probe cable 3 m (design),Wall/pole mounting supported (design),Level / orientation needed (guidance),"32.55934 N, −80.45456 W; 6.1 m station tower",,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — site / mounting

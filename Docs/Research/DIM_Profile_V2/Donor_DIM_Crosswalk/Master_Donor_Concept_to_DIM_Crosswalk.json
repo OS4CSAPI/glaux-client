@@ -219,7 +219,7 @@
       "",
       "",
       "",
-      "Certificate Common Name ↔ ISA component UCI; trusted signing CA / PKI; certificate usage and deploying authority",
+      "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
       "",
       "",
       "",
@@ -3435,7 +3435,7 @@
       "",
       "",
       "",
-      "Required: all components must support; Recommended: all components should support",
+      "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
       "",
       "",
       "",
@@ -3474,6 +3474,22 @@
       "",
       "",
       "Composition interface task mediation role"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Capability readiness and reporting selection"
     ],
     [
       "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",
@@ -3778,6 +3794,22 @@
       "",
       "",
       "Supplied list value versus no update"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Component time basis and synchronization"
     ],
     [
       "06 — CASE TERMS AWAITING DIM DISPOSITION — Actual source fields and recorded reference examples not force-mapped into the 22 proposed DIM elements; every rightmost label is a review hold, not adopted.",
@@ -5609,17 +5641,17 @@
     8,
     19,
     71,
-    211,
-    230,
-    240,
-    257,
-    271,
-    278,
-    292,
-    304,
-    333,
-    337,
-    340
+    212,
+    232,
+    242,
+    259,
+    273,
+    280,
+    294,
+    306,
+    335,
+    339,
+    342
   ],
   "rows": [
     {
@@ -5755,6 +5787,11 @@
         "ICD-3.3",
         "ICD-6.1",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.1",
+        "CMPT-4.1.2",
+        "CMPT-4.3.3"
       ]
     },
     {
@@ -5801,7 +5838,7 @@
         "",
         "",
         "",
-        "Certificate Common Name ↔ ISA component UCI; trusted signing CA / PKI; certificate usage and deploying authority",
+        "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
         "",
         "",
         "",
@@ -5809,7 +5846,12 @@
         "",
         "Certificate identity and trust context"
       ],
-      "boundary": "ICD6.0r5 requires a valid certificate under the network PKI and checks the Controller certificate Common Name against its UCI. The Certificate Guide distinguishes SDK,local testing,exercise and deployment certificates; deployment follows the deploying authority policy. This establishes source requirements,not installed credentials,verified trust,physical identity,permission for a task or current security certification. Virtual-component UCI suffixes do not imply a separate certificate for every virtual member."
+      "boundary": "ICD6.0r5 requires a valid certificate under the network PKI and checks the Controller certificate Common Name against its UCI. The Certificate Guide distinguishes SDK,local testing,exercise and deployment certificates; deployment follows the deploying authority policy. This establishes source requirements,not installed credentials,verified trust,physical identity,permission for a task or current security certification. Virtual-component UCI suffixes do not imply a separate certificate for every virtual member. CMPT §4.1.2 separately requires date validity and nonrevocation. Its high/mid and low-level signer clauses respectively say ISA-approved and acceptable to the deploying organization. M-0004/L-0011 say ECDSA, while L-0013 is titled ECDSA Algorithm but says ECDH; L-0012 literally says the certificate is at least 384 bits long. These statements remain attributed without a repaired algorithm, inferred key-size field or current cryptographic recommendation.",
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.2",
+        "CMPT-4.1",
+        "CMPT-4.3.1"
+      ]
     },
     {
       "row_id": "S06-R005",
@@ -6080,6 +6122,13 @@
         "ICD-5.0",
         "ICD-5.1",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-1.1",
+        "CMPT-1.2",
+        "CMPT-4.0",
+        "CMPT-4.2.2",
+        "CMPT-4.3.1"
       ]
     },
     {
@@ -6140,6 +6189,11 @@
         "ICD-3.2",
         "ICD-5.0",
         "ICD-5.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-1.2",
+        "CMPT-4.2.2",
+        "CMPT-4.3.1"
       ]
     },
     {
@@ -6182,6 +6236,9 @@
       "additional_ISA_interface_evidence": [
         "ICD-6.1",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.1"
       ]
     },
     {
@@ -6220,7 +6277,7 @@
         "",
         "Connection-specific network participation lifecycle"
       ],
-      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation.",
+      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation. CMPT distinguishes pre-operational integration, pre-participation discovery/time setup and participation behavior. Its client-side role is the connection initiator; startup connection need is conditional, and connection attempts are at least five seconds apart. M-0032/L-0083–0088 gate Request/Event/Administrative transmission and silently discard early arrivals until the connected peer’s initial Status is received. This initial-Status operational marker remains separately attributed from the SDD initial-Config transition. A permitted IPL data exchange is not automatic permission for every ISA message or proof of hardware readiness.",
       "additional_ISA_interface_evidence": [
         "ICD-3.0",
         "ICD-3.1",
@@ -6233,6 +6290,21 @@
         "ICD-6.3",
         "ICD-6.5",
         "ICD-6.8"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.0",
+        "CMPT-4.1",
+        "CMPT-4.2",
+        "CMPT-4.3",
+        "CMPT-4.3.1",
+        "CMPT-4.3.3",
+        "CMPT-4.3.5",
+        "CMPT-1.1",
+        "CMPT-4.2.1",
+        "CMPT-4.2.2",
+        "CMPT-4.3.2",
+        "CMPT-4.3.4",
+        "CMPT-4.3.6"
       ]
     },
     {
@@ -7868,6 +7940,9 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.2.1"
       ]
     },
     {
@@ -8149,7 +8224,7 @@
         "",
         "Declared component capability catalogue"
       ],
-      "boundary": "Not current values, readiness, execution, or mandatory support for every catalogue item.",
+      "boundary": "Not current values, readiness, execution, or mandatory support for every catalogue item. CMPT-M-0022–0025 declares all executable commands, reportable properties/observables and custom types that might be used. L-0058/0061 and L-0064/0066/0068/0070 require complete declarations in an included CCD; L-0071 permits only one instance of each declaration. Complete CCD content remains distinct from changed-value Status and false-state-list content. The custom-type Note says composed of existing types; it does not supply a new schema or prove built-in-only composition.",
       "additional_ISA_context_evidence": [
         "INTRO-6.1.2",
         "ISA-CAP-025",
@@ -8167,6 +8242,10 @@
         "ICD-6.4",
         "ICD-7.2",
         "IPL3-2.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4",
+        "CMPT-1.2"
       ]
     },
     {
@@ -8207,6 +8286,9 @@
       "additional_ISA_interface_evidence": [
         "ICD-7.3",
         "IPL3-2.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -8240,12 +8322,15 @@
         "",
         "Declared observable definition"
       ],
-      "boundary": "The source says reported observables should be declared; do not strengthen should into shall.",
+      "boundary": "The source says reported observables should be declared; do not strengthen should into shall. CMPT-M-0024/L-0068 separately uses shall for declaring all reportable/supported observables in the initial/included CCD. The DMS definition’s should wording remains preserved in its evidence; each modality is attributed to its source instead of silently substituting one for the other. Declared support still does not imply every Event contains the observable.",
       "additional_ISA_architecture_evidence": [
         "SDD-6.3.3"
       ],
       "additional_ISA_interface_evidence": [
         "IPL3-2.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -8288,6 +8373,9 @@
       ],
       "additional_ISA_interface_evidence": [
         "IPL3-2.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -8392,6 +8480,9 @@
         "ICD-6.4",
         "ICD-7.2",
         "IPL3-2.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -8588,6 +8679,9 @@
       "boundary": "Not caller authorization, ready/reporting state, or proof of modification; retain the native WRITE ONLY wording.",
       "additional_ISA_interface_evidence": [
         "ICD-7.3"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3"
       ]
     },
     {
@@ -8623,7 +8717,10 @@
         "",
         "Absolute-value publication threshold"
       ],
-      "boundary": "Not a validity limit, quality assessment, detected threat, or proof that a trigger fired."
+      "boundary": "Not a validity limit, quality assessment, detected threat, or proof that a trigger fired.",
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.6"
+      ]
     },
     {
       "row_id": "ISA-K-REL-THRESHOLD",
@@ -8660,7 +8757,10 @@
         "",
         "Relative-change publication threshold and reference basis"
       ],
-      "boundary": "Not an absolute limit or physical lifetime history; current reading and last reported value are not interchangeable."
+      "boundary": "Not an absolute limit or physical lifetime history; current reading and last reported value are not interchangeable.",
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.6"
+      ]
     },
     {
       "row_id": "ISA-K-THRESHOLDS",
@@ -8700,6 +8800,9 @@
       "boundary": "Not command execution, validation failure, or an invented Boolean combination/trigger algorithm.",
       "additional_ISA_interface_evidence": [
         "ICD-6.5"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.6"
       ]
     },
     {
@@ -8831,6 +8934,9 @@
         "ICD-6.7.1",
         "ICD-6.7.2",
         "IPL3-5.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.5"
       ]
     },
     {
@@ -9719,6 +9825,10 @@
       "additional_ISA_interface_evidence": [
         "ICD-6.5",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.6"
       ]
     },
     {
@@ -9756,6 +9866,10 @@
       "additional_ISA_interface_evidence": [
         "ICD-6.5",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.6"
       ]
     },
     {
@@ -10067,6 +10181,10 @@
       "additional_ISA_interface_evidence": [
         "ICD-6.4",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -10107,6 +10225,10 @@
         "ICD-6.4",
         "ICD-7.1",
         "ICD-7.3"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -10645,6 +10767,9 @@
       "additional_ISA_type_evidence": [],
       "additional_ISA_interface_evidence": [
         "ICD-7.3"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3"
       ]
     },
     {
@@ -11214,6 +11339,9 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-5.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.2.2"
       ]
     },
     {
@@ -11797,6 +11925,10 @@
       "additional_ISA_interface_evidence": [
         "ICD-6.4",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.4"
       ]
     },
     {
@@ -11905,6 +12037,9 @@
       "additional_ISA_type_evidence": [],
       "additional_ISA_interface_evidence": [
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3"
       ]
     },
     {
@@ -11944,6 +12079,10 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.6"
       ]
     },
     {
@@ -12273,7 +12412,7 @@
       "label": "Component capability and readiness report",
       "display_row": 194,
       "status": "Source-supported candidate",
-      "definition": "A component description containing optional capability declarations and current usable-state lists.",
+      "definition": "A component message carrying optional capability declarations and separate ready/reporting state lists, with source-specified initial and update content rules.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
       "source_entry_ids": [
         "ISA-DMS-305"
@@ -12299,7 +12438,7 @@
         "",
         "Component capability and readiness report"
       ],
-      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts.",
+      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts. CMPT requires initial Config within 30 seconds of ADDED. L-0058 includes the CCD and all false capability-state values; L-0061 includes the entire CCD when declarations change; L-0062 includes all false state values when states change and explicitly describes an empty state list when all states become true. This is not an arbitrary sparse patch rule or a universal Boolean default. Updates retain the source’s all-connected-components versus connected-Controller wording. Configuration updates have a 30-second send limit. M-0031 separately requires property changes after configuration-set changes; L-0082 ties its full reporting-true Status to an update Config containing a CCD, and L-0170 gives that full Status a 30-second limit. These source levels do not establish a full-Status trigger for every state-only update.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-375",
         "ISA-TYPE-428",
@@ -12317,6 +12456,10 @@
         "IPL3-2.0",
         "ICD-6.2",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4",
+        "CMPT-1.2"
       ]
     },
     {
@@ -12350,7 +12493,7 @@
         "",
         "Component property-value report"
       ],
-      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged.",
+      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged. CMPT initial Status includes every ready-and-reporting property and is due within 30 seconds of sending initial Config. Periodic Status includes all and only changed ready-and-reporting property values; a never-reported value is treated as changed. L-0093’s 500 ms response is conditional on a reporting-true property change after no periodic Status within the Minimum Status Interval, not a universal period. L-0082’s CCD-update Status instead says every reporting-true property; preserve that qualification difference. The saved Get Status command separately retrieves declared ready properties even when reporting is disabled. M-0037’s explanatory Note says these interval restrictions apply only to Status publication; the ICD separately reuses the named interval properties for command-response cadence.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.1",
         "SDD-6.3.1",
@@ -12365,6 +12508,12 @@
         "ICD-6.2",
         "ICD-6.4",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.4",
+        "CMPT-4.3.6",
+        "CMPT-1.2",
+        "CMPT-4.3.5"
       ]
     },
     {
@@ -12398,7 +12547,7 @@
         "",
         "Registration message and credential data"
       ],
-      "boundary": "Registration.credentials is application-message data; it is distinct from the TLS certificate required by the ICD connection rules and the Certificate Guide trust/usage context. The saved DMS fields specify no automatic registration success or particular credential scheme. Possessing a certificate does not by itself establish a permitted command,successful registration or verified deployment security.",
+      "boundary": "Registration.credentials is application-message data; it is distinct from the TLS certificate required by the ICD connection rules and the Certificate Guide trust/usage context. The saved DMS fields specify no automatic registration success or particular credential scheme. Possessing a certificate does not by itself establish a permitted command,successful registration or verified deployment security. CMPT-M-0018/L-0054 sends REQUEST ADD after successful format negotiation/Handshake Complete. M-0019 places the 30-second submission limit after successful negotiation; L-0055 says after establishing a connection. The connected-state Note and both anchors remain literal, without an invented reconciliation or a 30-second guarantee of successful admission.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-353"
       ],
@@ -12416,6 +12565,12 @@
         "ICD-6.3",
         "CERT-2.0",
         "ICD-6.2"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.3",
+        "CMPT-4.1.2",
+        "CMPT-4.3.4",
+        "CMPT-4.3.5"
       ]
     },
     {
@@ -13157,6 +13312,9 @@
       "additional_ISA_interface_evidence": [
         "ICD-1.2",
         "ICD-5.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-1.2"
       ]
     },
     {
@@ -13261,7 +13419,7 @@
         "",
         "",
         "",
-        "Required: all components must support; Recommended: all components should support",
+        "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
         "",
         "",
         "",
@@ -13269,9 +13427,14 @@
         "",
         "Required and recommended capability support"
       ],
-      "boundary": "Required lists two interval properties and seven commands; Recommended lists Identity, Operating State, Clear Property and Set Property. This is a source obligation, not a test result or a claim that any case component conforms. Retain must versus should.",
+      "boundary": "Required lists two interval properties and seven commands; Recommended lists Identity, Operating State, Clear Property and Set Property. This is a source obligation, not a test result or a claim that any case component conforms. Retain must versus should. The DMS baseline remains two required properties and seven required commands. CMPT §4.1.3 separately recommends Identity and Operating State, makes Set Observable Reporting conditional on publishing observables, and requires Set Property for settable properties. Its READ WRITE note does not erase the DMS WRITE ONLY value. Conditional shall and should retain their stated scope; no case-component conformance is inferred.",
       "additional_ISA_interface_evidence": [
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-3.0",
+        "CMPT-4.1"
       ]
     },
     {
@@ -13349,9 +13512,64 @@
       ]
     },
     {
+      "row_id": "ISA-K-CAPABILITY-STATE",
+      "label": "Capability readiness and reporting selection",
+      "display_row": 217,
+      "status": "Source-supported candidate",
+      "definition": "A declared capability has a ready state, and a reporting capability has a separate reporting selection. The meaning of readiness depends on whether the capability is a command, property or observable.",
+      "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "source_entry_ids": [
+        "ISA-DMS-375",
+        "ISA-DMS-428",
+        "ISA-DMS-433"
+      ],
+      "source_block_ids": [
+        "CMPT-4.3.4",
+        "CMPT-4.3.6"
+      ],
+      "source_requirement_ids": [
+        "CMPT-L-0072",
+        "CMPT-L-0073",
+        "CMPT-L-0074",
+        "CMPT-L-0075",
+        "CMPT-L-0076",
+        "CMPT-L-0077",
+        "CMPT-L-0078",
+        "CMPT-L-0079",
+        "CMPT-L-0080",
+        "CMPT-L-0081"
+      ],
+      "evidence_records": [
+        "CMPT-4.3.4",
+        "CMPT-4.3.6",
+        "ISA-TYPE-375",
+        "ISA-TYPE-428",
+        "ISA-TYPE-433"
+      ],
+      "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "display": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Capability readiness and reporting selection"
+      ],
+      "boundary": "CMPT-L-0072–0081 and their explanatory Notes distinguish command enablement from immediate availability, property maintenance/access on request from publication, and observable recording enablement from inclusion in Events. A ready command may still be busy. These states do not establish authorization, execution, an observed physical effect or a measured hardware-health condition. Config false-state-list rules are source-specific message semantics, not invented defaults for every required Boolean. Saved DMS Command/Property/Observable State definitions and their wording notes remain intact."
+    },
+    {
       "row_id": "S06-R021",
       "label": "Source-qualified assertion (proposed DIM)",
-      "display_row": 218,
+      "display_row": 219,
       "status": "Existing DIM proposal",
       "definition": "Our proposed source/issuer/edition/locator/evidence standing is NOT a native obligatory field in these seven donors.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -13380,7 +13598,7 @@
     {
       "row_id": "S06-R022",
       "label": "Original event and derived digital representation (proposed DIM)",
-      "display_row": 219,
+      "display_row": 220,
       "status": "Existing DIM proposal",
       "definition": "Bennett two original events/four digital experimental copies need explicit provenance; no false equivalence asserted here.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -13418,7 +13636,7 @@
     {
       "row_id": "ISA-T-MESSAGE-ID",
       "label": "Conversation-scoped message identifier",
-      "display_row": 220,
+      "display_row": 221,
       "status": "Source-supported candidate",
       "definition": "A conversation-unique identifier belonging to the individual message.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13466,7 +13684,7 @@
     {
       "row_id": "ISA-T-PRIORITY",
       "label": "Message priority",
-      "display_row": 221,
+      "display_row": 222,
       "status": "Source-supported candidate",
       "definition": "Relative importance of an exchanged message.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13513,7 +13731,7 @@
     {
       "row_id": "ISA-T-VALIDITY",
       "label": "Message-data validity expiry",
-      "display_row": 222,
+      "display_row": 223,
       "status": "Source-supported candidate",
       "definition": "The instant after which the contained data should be treated as invalid.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13565,7 +13783,7 @@
     {
       "row_id": "ISA-T-ROUTING",
       "label": "Exchange sender and intended recipients",
-      "display_row": 223,
+      "display_row": 224,
       "status": "Source-supported candidate",
       "definition": "The sender and one or more intended recipients of an exchange.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13606,12 +13824,15 @@
         "ICD-6.7.1",
         "ICD-6.7.2",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.2"
       ]
     },
     {
       "row_id": "ISA-T-SENT-TIME",
       "label": "Exchange transmission time",
-      "display_row": 224,
+      "display_row": 225,
       "status": "Source-supported candidate",
       "definition": "The time the exchange was sent.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13642,12 +13863,15 @@
       "boundary": "Not event occurrence, original measurement production, reception time or Bennett resultTime.",
       "additional_ISA_interface_evidence": [
         "ICD-6.2"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.2.1"
       ]
     },
     {
       "row_id": "ISA-T-ADMIN",
       "label": "Administrative network and service notification",
-      "display_row": 225,
+      "display_row": 226,
       "status": "Source-supported candidate",
       "definition": "A notification code identifying an occurrence affecting the named components.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13688,12 +13912,15 @@
         "ICD-6.2",
         "ICD-6.8",
         "ICD-8.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.5"
       ]
     },
     {
       "row_id": "ISA-T-AUTHOR",
       "label": "Message author or registration announcer",
-      "display_row": 226,
+      "display_row": 227,
       "status": "Source-supported candidate",
       "definition": "The source role declared by each message: usually original author, with the specified Registration and Response exceptions.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13748,7 +13975,7 @@
     {
       "row_id": "ISA-R-MESSAGE-REFERENCE",
       "label": "Source-message reference for provenance",
-      "display_row": 227,
+      "display_row": 228,
       "status": "Source-supported candidate",
       "definition": "Reference to an existing message for pedigree, preserving the original author, conversation-scoped identifier, type and time.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13781,7 +14008,7 @@
     {
       "row_id": "ISA-R-NAMED-VALUE",
       "label": "Named value payload",
-      "display_row": 228,
+      "display_row": 229,
       "status": "Source-supported candidate",
       "definition": "A named value whose actual type must be defined in the data model and interpreted through its containing context.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13819,7 +14046,7 @@
     {
       "row_id": "ISA-R-ASSOCIATIVE",
       "label": "Named-value associative collection",
-      "display_row": 229,
+      "display_row": 230,
       "status": "Source-supported candidate",
       "definition": "An empty-capable collection of named values, with value types supplied by the associated declaration.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13852,7 +14079,7 @@
     {
       "row_id": "ISA-R-LIST",
       "label": "Declared-type value list",
-      "display_row": 230,
+      "display_row": 231,
       "status": "Source-supported candidate",
       "definition": "An empty-capable list of values whose type is defined by the associated Property, Parameter or Observable Declaration.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13888,7 +14115,7 @@
     {
       "row_id": "ISA-R-CUSTOM",
       "label": "Custom-structure field values",
-      "display_row": 231,
+      "display_row": 232,
       "status": "Source-supported candidate",
       "definition": "Instance fields used to send a custom type over the wire.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13921,7 +14148,7 @@
     {
       "row_id": "ISA-R-TREE",
       "label": "Recursive same-type value hierarchy",
-      "display_row": 232,
+      "display_row": 233,
       "status": "Source-supported candidate",
       "definition": "A recursive information hierarchy with a named value at each node and an empty-capable child list; all nodes have the same datatype.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13954,7 +14181,7 @@
     {
       "row_id": "ISA-A-EXTENSION-STANDING",
       "label": "Extension standing and standardization context",
-      "display_row": 233,
+      "display_row": 234,
       "status": "Source-supported candidate",
       "definition": "An extension has a documented review/acceptance standing separate from publication in the model document and incorporation into the baseline standard.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -13995,7 +14222,7 @@
     {
       "row_id": "ISA-A-CONNECTION-PRESENTATION",
       "label": "Negotiated message encoding and model version",
-      "display_row": 234,
+      "display_row": 235,
       "status": "Source-supported candidate",
       "definition": "The connection negotiates a supported presentation/schema byte pair,while the IPL protocol version remains a separate value; schema form and encoded representation do not replace the underlying information meaning.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14030,7 +14257,7 @@
         "",
         "Negotiated message encoding and model version"
       ],
-      "boundary": "ICD6.0r5 supports IPL protocol version1 and lists Protocol Buffers/XML long and short forms plus0x05/0x01 Custom Java API encoding. Unsupported/deprecated format pairs and inconsistent printed examples retain their source standing. IPL3 transforms standard capabilities into dedicated declarations/fields/request types while custom content retains generic structures. Neither IPL Format3 nor its schema byte is protocol version3. No actual negotiation,schema-file validation or current security result is asserted.",
+      "boundary": "ICD6.0r5 supports IPL protocol version1 and lists Protocol Buffers/XML long and short forms plus0x05/0x01 Custom Java API encoding. Unsupported/deprecated format pairs and inconsistent printed examples retain their source standing. IPL3 transforms standard capabilities into dedicated declarations/fields/request types while custom content retains generic structures. Neither IPL Format3 nor its schema byte is protocol version3. No actual negotiation,schema-file validation or current security result is asserted. CMPT-L-0042/0043 requires all supported ICD formats in preference order; it adds no Controller selection rule. L-0048 requires the smallest suitable application-data wrapper, while the ICD describes best fit with should. L-0046/0051/0052 require the stated early-data, invalid-type and decode-failure errors. The Sensor CE Format 3 sentence is an explanatory Note, not a universal format mandate. Negotiation completion permits IPL data exchange subject to the later ISA participation restrictions.",
       "additional_ISA_interface_evidence": [
         "ICD-4.0",
         "ICD-4.1",
@@ -14053,12 +14280,18 @@
         "ICD-4.3",
         "CERT-2.0",
         "IPL3-6.0"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.3.1",
+        "CMPT-4.3.2",
+        "CMPT-1.1",
+        "CMPT-2.0"
       ]
     },
     {
       "row_id": "ISA-R-LIST-PRESENCE",
       "label": "Supplied list value versus no update",
-      "display_row": 235,
+      "display_row": 236,
       "status": "Source-supported candidate",
       "definition": "The presence of a supplied collection value is distinct from the collection contents,so an explicit empty value can be distinguished from an omitted update.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14094,9 +14327,49 @@
       "boundary": "IPL3 says absent and empty lists otherwise encode alike and adds presence Booleans to Status/Event for list-based properties and observables. True indicates the associated value is supplied even when empty. The guide does not specify defaults for false or omitted flags,wire tags or an authorization decision; it does not prescribe this mechanism for every DMS list or erase list bounds/history."
     },
     {
+      "row_id": "ISA-A-TIME-BASIS",
+      "label": "Component time basis and synchronization",
+      "display_row": 237,
+      "status": "Source-supported candidate",
+      "definition": "A component has a time reference, synchronization approach and epoch underlying the times it communicates, separately from the meaning of an Event occurrence time or an exchange transmission time.",
+      "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "source_entry_ids": [],
+      "source_block_ids": [
+        "CMPT-4.2.1"
+      ],
+      "source_requirement_ids": [
+        "CMPT-H-0004",
+        "CMPT-M-0010",
+        "CMPT-L-0031",
+        "CMPT-L-0032"
+      ],
+      "evidence_records": [
+        "CMPT-4.2.1"
+      ],
+      "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "display": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Component time basis and synchronization"
+      ],
+      "boundary": "CMPT-H-0004 requires UTC synchronization and L-0032 states the UNIX epoch. M-0010 uses shall for NTP synchronization, with a Note allowing GPS; L-0031 uses should and calls NTP a design goal. Preserve those levels and the source definition that Notes are explanatory. The requirements supply no numerical synchronization accuracy, selected deployed clock source, measured clock quality or new DMS clock-status fields. Epoch does not determine timestamp units or collapse occurrence and transmission times; saved UTC/time type definitions retain their own rules."
+    },
+    {
       "row_id": "CASE-H01",
       "label": "REVIEW HOLD — service history",
-      "display_row": 237,
+      "display_row": 239,
       "status": "Existing case evidence / review hold",
       "definition": "A station can persist while the same serial returns to a role; no current sample DIM row explicitly carries dated installation/service.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14125,7 +14398,7 @@
     {
       "row_id": "CASE-H02",
       "label": "REVIEW HOLD — site / mounting",
-      "display_row": 238,
+      "display_row": 240,
       "status": "Existing case evidence / review hold",
       "definition": "Station point, mounting and individual equipment location must stay distinct; do not imply realized configuration from installation guidance.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14154,7 +14427,7 @@
     {
       "row_id": "CASE-H03",
       "label": "REVIEW HOLD — reporting path",
-      "display_row": 239,
+      "display_row": 241,
       "status": "Existing case evidence / review hold",
       "definition": "Interface, port, address, cadence and message/stream are different meanings not all captured in the original 22 rows.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14183,7 +14456,7 @@
     {
       "row_id": "CASE-H04",
       "label": "REVIEW HOLD — power / state",
-      "display_row": 240,
+      "display_row": 242,
       "status": "Existing case evidence / review hold",
       "definition": "Do not mix power hardware design, electrical state values, available control and inferred health; no actual installed battery evidence here.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14212,7 +14485,7 @@
     {
       "row_id": "CASE-H05",
       "label": "REVIEW HOLD — diagnostics",
-      "display_row": 241,
+      "display_row": 243,
       "status": "Existing case evidence / review hold",
       "definition": "Diagnostics/condition reporting should not be forced into environmental Observation or 'operating mode'.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14241,7 +14514,7 @@
     {
       "row_id": "CASE-H06",
       "label": "REVIEW HOLD — applied setting",
-      "display_row": 242,
+      "display_row": 244,
       "status": "Existing case evidence / review hold",
       "definition": "Default, example, applied setting and effective history should not collapse into a single mode row.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14270,7 +14543,7 @@
     {
       "row_id": "CASE-H07",
       "label": "REVIEW HOLD — processing",
-      "display_row": 243,
+      "display_row": 245,
       "status": "Existing case evidence / review hold",
       "definition": "Processing, reporting and derived interpretation must preserve original source value and referent.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14299,7 +14572,7 @@
     {
       "row_id": "CASE-H08",
       "label": "REVIEW HOLD — time / QA",
-      "display_row": 244,
+      "display_row": 246,
       "status": "Existing case evidence / review hold",
       "definition": "Source stamp, derived period, resultTime, lexical QA token and parameter/record flags are distinct.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14328,7 +14601,7 @@
     {
       "row_id": "CASE-H09",
       "label": "REVIEW HOLD — control execution",
-      "display_row": 245,
+      "display_row": 247,
       "status": "Existing case evidence / review hold",
       "definition": "No case provides a source-attested issued/acknowledged/completed control sequence; do not fill existing issued-command rows.",
       "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
@@ -14357,7 +14630,7 @@
     {
       "row_id": "ISA-C-048",
       "label": "Component configuration version",
-      "display_row": 247,
+      "display_row": 249,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14390,7 +14663,7 @@
     {
       "row_id": "ISA-C-066",
       "label": "Component hardware version",
-      "display_row": 248,
+      "display_row": 250,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14423,7 +14696,7 @@
     {
       "row_id": "ISA-C-068",
       "label": "Tactical identity classification",
-      "display_row": 249,
+      "display_row": 251,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14453,12 +14726,15 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-445"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3"
       ]
     },
     {
       "row_id": "ISA-C-075",
       "label": "Maintenance point of contact",
-      "display_row": 250,
+      "display_row": 252,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14493,7 +14769,7 @@
     {
       "row_id": "ISA-C-077",
       "label": "Manufacturer point of contact",
-      "display_row": 251,
+      "display_row": 253,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14528,7 +14804,7 @@
     {
       "row_id": "ISA-C-081",
       "label": "Changeable component display name",
-      "display_row": 252,
+      "display_row": 254,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14561,7 +14837,7 @@
     {
       "row_id": "ISA-C-084",
       "label": "Component owner contact information",
-      "display_row": 253,
+      "display_row": 255,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14596,7 +14872,7 @@
     {
       "row_id": "ISA-C-085",
       "label": "Version of component configuration parameters not exposed through ISA",
-      "display_row": 254,
+      "display_row": 256,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14629,7 +14905,7 @@
     {
       "row_id": "ISA-C-092",
       "label": "Component program-of-record contact information",
-      "display_row": 255,
+      "display_row": 257,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14664,7 +14940,7 @@
     {
       "row_id": "ISA-C-108",
       "label": "Version of software running on the component",
-      "display_row": 256,
+      "display_row": 258,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14697,7 +14973,7 @@
     {
       "row_id": "ISA-C-109",
       "label": "Reported ISA specification version of the component",
-      "display_row": 257,
+      "display_row": 259,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14733,7 +15009,7 @@
     {
       "row_id": "ISA-C-110",
       "label": "Non-maintenance support contact information",
-      "display_row": 258,
+      "display_row": 260,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14768,7 +15044,7 @@
     {
       "row_id": "ISA-T-SYMBOL",
       "label": "Tactical symbol code",
-      "display_row": 259,
+      "display_row": 261,
       "status": "Source-supported candidate",
       "definition": "A code used to identify the symbol to display or transmit.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14801,7 +15077,7 @@
     {
       "row_id": "ISA-E-COMPONENT-CATEGORY",
       "label": "Human-facing component category",
-      "display_row": 260,
+      "display_row": 262,
       "status": "Source-supported candidate",
       "definition": "Human-readable overall component category, explicitly separate from declared capabilities.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14834,7 +15110,7 @@
     {
       "row_id": "ISA-E-UGS-CATEGORY",
       "label": "Unattended ground sensor category",
-      "display_row": 261,
+      "display_row": 263,
       "status": "Source-supported candidate",
       "definition": "Native unattended-ground-sensor categorization, preserving modality, directional and trigger descriptions.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14867,7 +15143,7 @@
     {
       "row_id": "ISA-R-COMPONENT-CONTACT",
       "label": "Nominated component/contact identity record",
-      "display_row": 262,
+      "display_row": 264,
       "status": "Nominated-source candidate",
       "definition": "Nominated custom-type structure combining a component identifier with a point-of-contact list.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14900,7 +15176,7 @@
     {
       "row_id": "ISA-C-037",
       "label": "Orientation relative to attached parent",
-      "display_row": 264,
+      "display_row": 266,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14935,7 +15211,7 @@
     {
       "row_id": "ISA-C-038",
       "label": "Position relative to attached parent",
-      "display_row": 265,
+      "display_row": 267,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -14970,7 +15246,7 @@
     {
       "row_id": "ISA-C-065",
       "label": "Pointing-vector ground intersection",
-      "display_row": 266,
+      "display_row": 268,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15003,7 +15279,7 @@
     {
       "row_id": "ISA-C-073",
       "label": "Orientation offset in own frame",
-      "display_row": 267,
+      "display_row": 269,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15038,7 +15314,7 @@
     {
       "row_id": "ISA-C-074",
       "label": "Position offset in own frame",
-      "display_row": 268,
+      "display_row": 270,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15073,7 +15349,7 @@
     {
       "row_id": "ISA-C-083",
       "label": "Reported world orientation — reference-frame question",
-      "display_row": 269,
+      "display_row": 271,
       "status": "Local source question",
       "definition": "",
       "source_review_status": "REVIEWED_QUESTION_RECORDED",
@@ -15108,7 +15384,7 @@
     {
       "row_id": "ISA-C-086",
       "label": "Hardware-reported position while position is overridden",
-      "display_row": 270,
+      "display_row": 272,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15141,7 +15417,7 @@
     {
       "row_id": "ISA-C-088",
       "label": "Reported current geographic position of the component",
-      "display_row": 271,
+      "display_row": 273,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15176,7 +15452,7 @@
     {
       "row_id": "ISA-C-089",
       "label": "Position value used to override hardware-perceived position",
-      "display_row": 272,
+      "display_row": 274,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15209,7 +15485,7 @@
     {
       "row_id": "ISA-C-099",
       "label": "Reported physical parent/child attachment relationships",
-      "display_row": 273,
+      "display_row": 275,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15246,7 +15522,7 @@
     {
       "row_id": "ISA-C-116",
       "label": "Reported absolute component velocity",
-      "display_row": 274,
+      "display_row": 276,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15281,7 +15557,7 @@
     {
       "row_id": "ISA-C-117",
       "label": "Reported geographic area currently in view",
-      "display_row": 275,
+      "display_row": 277,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15317,7 +15593,7 @@
     {
       "row_id": "ISA-C-120",
       "label": "Ordered component inclusion and exclusion zones",
-      "display_row": 276,
+      "display_row": 278,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15354,7 +15630,7 @@
     {
       "row_id": "ISA-C-035",
       "label": "Reported activity flag",
-      "display_row": 278,
+      "display_row": 280,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15389,7 +15665,7 @@
     {
       "row_id": "ISA-C-036",
       "label": "Reported arming state",
-      "display_row": 279,
+      "display_row": 281,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15424,7 +15700,7 @@
     {
       "row_id": "ISA-C-049",
       "label": "Reported charged flag",
-      "display_row": 280,
+      "display_row": 282,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15457,7 +15733,7 @@
     {
       "row_id": "ISA-C-058",
       "label": "Permission-to-become-active flag",
-      "display_row": 281,
+      "display_row": 283,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15492,7 +15768,7 @@
     {
       "row_id": "ISA-C-082",
       "label": "Reported component operating condition",
-      "display_row": 282,
+      "display_row": 284,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15523,12 +15799,15 @@
       "additional_ISA_type_evidence": [
         "ISA-TYPE-344",
         "ISA-TYPE-384"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3"
       ]
     },
     {
       "row_id": "ISA-E-LOGIC-STATE",
       "label": "Four-valued evaluation state",
-      "display_row": 283,
+      "display_row": 285,
       "status": "Source-supported candidate",
       "definition": "Evaluation result distinguishing false, contradiction, true and no evaluation.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15561,7 +15840,7 @@
     {
       "row_id": "ISA-C-031",
       "label": "Consumed AC current",
-      "display_row": 285,
+      "display_row": 287,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15596,7 +15875,7 @@
     {
       "row_id": "ISA-C-032",
       "label": "Produced AC current",
-      "display_row": 286,
+      "display_row": 288,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15631,7 +15910,7 @@
     {
       "row_id": "ISA-C-033",
       "label": "Load-side AC voltage",
-      "display_row": 287,
+      "display_row": 289,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15666,7 +15945,7 @@
     {
       "row_id": "ISA-C-034",
       "label": "Source-side AC voltage",
-      "display_row": 288,
+      "display_row": 290,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15701,7 +15980,7 @@
     {
       "row_id": "ISA-C-052",
       "label": "Consumed DC current",
-      "display_row": 289,
+      "display_row": 291,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15736,7 +16015,7 @@
     {
       "row_id": "ISA-C-053",
       "label": "Produced DC current",
-      "display_row": 290,
+      "display_row": 292,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15771,7 +16050,7 @@
     {
       "row_id": "ISA-C-054",
       "label": "Load-side DC voltage",
-      "display_row": 291,
+      "display_row": 293,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15806,7 +16085,7 @@
     {
       "row_id": "ISA-C-055",
       "label": "Source-side DC voltage",
-      "display_row": 292,
+      "display_row": 294,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15841,7 +16120,7 @@
     {
       "row_id": "ISA-C-090",
       "label": "Variable-power level as a percentage of the available maximum",
-      "display_row": 293,
+      "display_row": 295,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15876,7 +16155,7 @@
     {
       "row_id": "ISA-C-091",
       "label": "Reported condition of power to the component",
-      "display_row": 294,
+      "display_row": 296,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15911,7 +16190,7 @@
     {
       "row_id": "ISA-C-100",
       "label": "Reported energy reserve relative to maximum capacity",
-      "display_row": 295,
+      "display_row": 297,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15946,7 +16225,7 @@
     {
       "row_id": "ISA-C-113",
       "label": "Estimated time to empty under expected usage",
-      "display_row": 296,
+      "display_row": 298,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -15979,7 +16258,7 @@
     {
       "row_id": "ISA-E-POWER-SOURCE",
       "label": "Power-source classification",
-      "display_row": 297,
+      "display_row": 299,
       "status": "Source-supported candidate",
       "definition": "Category of power used by a component, preserving the source vocabulary without inferring a technology for RELIABLE.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16012,7 +16291,7 @@
     {
       "row_id": "ISA-C-056",
       "label": "Current incoming data transfers",
-      "display_row": 299,
+      "display_row": 301,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16047,7 +16326,7 @@
     {
       "row_id": "ISA-C-057",
       "label": "Current outgoing data transfers",
-      "display_row": 300,
+      "display_row": 302,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16082,7 +16361,7 @@
     {
       "row_id": "ISA-C-067",
       "label": "Network-interface IP addresses",
-      "display_row": 301,
+      "display_row": 303,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16119,7 +16398,7 @@
     {
       "row_id": "ISA-C-072",
       "label": "Network-interface up/down state",
-      "display_row": 302,
+      "display_row": 304,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16152,7 +16431,7 @@
     {
       "row_id": "ISA-C-078",
       "label": "Maximum interval between component Status reports",
-      "display_row": 303,
+      "display_row": 305,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16188,12 +16467,16 @@
         "ICD-6.5",
         "ICD-6.7.1",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.6"
       ]
     },
     {
       "row_id": "ISA-C-079",
       "label": "Minimum interval between component Status reports",
-      "display_row": 304,
+      "display_row": 306,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16229,12 +16512,16 @@
         "ICD-6.5",
         "ICD-6.7.1",
         "ICD-7.1"
+      ],
+      "additional_ISA_requirement_evidence": [
+        "CMPT-4.1.3",
+        "CMPT-4.3.6"
       ]
     },
     {
       "row_id": "ISA-C-097",
       "label": "Reported component receive data rate",
-      "display_row": 305,
+      "display_row": 307,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16269,7 +16556,7 @@
     {
       "row_id": "ISA-C-098",
       "label": "Reported received signal power",
-      "display_row": 306,
+      "display_row": 308,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16304,7 +16591,7 @@
     {
       "row_id": "ISA-C-102",
       "label": "Component-generated media resource access descriptions",
-      "display_row": 307,
+      "display_row": 309,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16341,7 +16628,7 @@
     {
       "row_id": "ISA-C-114",
       "label": "Reported component transmit data rate",
-      "display_row": 308,
+      "display_row": 310,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16376,7 +16663,7 @@
     {
       "row_id": "ISA-C-115",
       "label": "Reported produced signal power",
-      "display_row": 309,
+      "display_row": 311,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16411,7 +16698,7 @@
     {
       "row_id": "ISA-C-039",
       "label": "Automatic brightness enabled",
-      "display_row": 311,
+      "display_row": 313,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16444,7 +16731,7 @@
     {
       "row_id": "ISA-C-040",
       "label": "Automatic contrast enabled",
-      "display_row": 312,
+      "display_row": 314,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16477,7 +16764,7 @@
     {
       "row_id": "ISA-C-041",
       "label": "Automatic focus enabled",
-      "display_row": 313,
+      "display_row": 315,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16510,7 +16797,7 @@
     {
       "row_id": "ISA-C-042",
       "label": "Automatic gain enabled",
-      "display_row": 314,
+      "display_row": 316,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16543,7 +16830,7 @@
     {
       "row_id": "ISA-C-043",
       "label": "Automatic pixel-level adjustment enabled",
-      "display_row": 315,
+      "display_row": 317,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16576,7 +16863,7 @@
     {
       "row_id": "ISA-C-044",
       "label": "Automatic scanning enabled",
-      "display_row": 316,
+      "display_row": 318,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16609,7 +16896,7 @@
     {
       "row_id": "ISA-C-045",
       "label": "Current brightness level",
-      "display_row": 317,
+      "display_row": 319,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16642,7 +16929,7 @@
     {
       "row_id": "ISA-C-050",
       "label": "Current contrast percentage",
-      "display_row": 318,
+      "display_row": 320,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16675,7 +16962,7 @@
     {
       "row_id": "ISA-C-059",
       "label": "Minimum eye-safe distance",
-      "display_row": 319,
+      "display_row": 321,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16708,7 +16995,7 @@
     {
       "row_id": "ISA-C-060",
       "label": "Current scan-wide angular coverage",
-      "display_row": 320,
+      "display_row": 322,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16743,7 +17030,7 @@
     {
       "row_id": "ISA-C-061",
       "label": "Current instantaneous angular coverage",
-      "display_row": 321,
+      "display_row": 323,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16778,7 +17065,7 @@
     {
       "row_id": "ISA-C-062",
       "label": "Current focus level",
-      "display_row": 322,
+      "display_row": 324,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16811,7 +17098,7 @@
     {
       "row_id": "ISA-C-063",
       "label": "Video frame rate",
-      "display_row": 323,
+      "display_row": 325,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16846,7 +17133,7 @@
     {
       "row_id": "ISA-C-064",
       "label": "Emission frequencies in use",
-      "display_row": 324,
+      "display_row": 326,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16881,7 +17168,7 @@
     {
       "row_id": "ISA-C-069",
       "label": "Current iris opening percentage",
-      "display_row": 325,
+      "display_row": 327,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16914,7 +17201,7 @@
     {
       "row_id": "ISA-C-118",
       "label": "Laser visible-spectrum indication",
-      "display_row": 326,
+      "display_row": 328,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16947,7 +17234,7 @@
     {
       "row_id": "ISA-C-106",
       "label": "Reported laser-use count",
-      "display_row": 327,
+      "display_row": 329,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -16980,7 +17267,7 @@
     {
       "row_id": "ISA-C-087",
       "label": "Thermal-image display polarity",
-      "display_row": 328,
+      "display_row": 330,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17015,7 +17302,7 @@
     {
       "row_id": "ISA-C-093",
       "label": "Laser inter-pulse time interval",
-      "display_row": 329,
+      "display_row": 331,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17050,7 +17337,7 @@
     {
       "row_id": "ISA-C-094",
       "label": "Qualitative component-output quality",
-      "display_row": 330,
+      "display_row": 332,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17085,7 +17372,7 @@
     {
       "row_id": "ISA-C-095",
       "label": "Reported current radar mode",
-      "display_row": 331,
+      "display_row": 333,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17118,7 +17405,7 @@
     {
       "row_id": "ISA-C-096",
       "label": "Expected usable component range",
-      "display_row": 332,
+      "display_row": 334,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17151,7 +17438,7 @@
     {
       "row_id": "ISA-C-101",
       "label": "Qualitative component-output resolution",
-      "display_row": 333,
+      "display_row": 335,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17186,7 +17473,7 @@
     {
       "row_id": "ISA-C-104",
       "label": "Duration of one complete scan-area coverage",
-      "display_row": 334,
+      "display_row": 336,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17221,7 +17508,7 @@
     {
       "row_id": "ISA-C-119",
       "label": "Laser wavelengths in use",
-      "display_row": 335,
+      "display_row": 337,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17257,7 +17544,7 @@
     {
       "row_id": "ISA-C-121",
       "label": "Current camera zoom relative to maximum zoom",
-      "display_row": 336,
+      "display_row": 338,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17292,7 +17579,7 @@
     {
       "row_id": "ISA-E-VIDEO-ENHANCEMENT",
       "label": "Video-enhancement algorithm category",
-      "display_row": 337,
+      "display_row": 339,
       "status": "Source-supported candidate",
       "definition": "Algorithm category that can apply to a real-time video stream.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17325,7 +17612,7 @@
     {
       "row_id": "ISA-R-DETECTION-RANGE",
       "label": "Detection and identification distance limits",
-      "display_row": 338,
+      "display_row": 340,
       "status": "Source-supported candidate",
       "definition": "Sensor detection-distance limits, distinguishing the maximum detection distance from the effective identification distance.",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17358,7 +17645,7 @@
     {
       "row_id": "ISA-C-046",
       "label": "Latest built-in-test reported result",
-      "display_row": 340,
+      "display_row": 342,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17391,7 +17678,7 @@
     {
       "row_id": "ISA-C-103",
       "label": "Number of satellites in use",
-      "display_row": 341,
+      "display_row": 343,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17424,7 +17711,7 @@
     {
       "row_id": "ISA-C-112",
       "label": "Reported internal device temperature",
-      "display_row": 342,
+      "display_row": 344,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17459,7 +17746,7 @@
     {
       "row_id": "ISA-C-051",
       "label": "Cryptographic-key-filled flag",
-      "display_row": 344,
+      "display_row": 346,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17492,7 +17779,7 @@
     {
       "row_id": "ISA-C-111",
       "label": "Reported device tamper condition",
-      "display_row": 345,
+      "display_row": 347,
       "status": "Source-supported candidate contribution",
       "definition": "",
       "source_review_status": "REVIEWED_SOURCE_SUPPORTED",
@@ -17527,7 +17814,7 @@
     {
       "row_id": "ISA-C-070",
       "label": "Level value — meaning question",
-      "display_row": 347,
+      "display_row": 349,
       "status": "Local source question",
       "definition": "",
       "source_review_status": "REVIEWED_QUESTION_RECORDED",
@@ -17560,7 +17847,7 @@
     {
       "row_id": "ISA-C-071",
       "label": "Link Loss value — reference question",
-      "display_row": 348,
+      "display_row": 350,
       "status": "Local source question",
       "definition": "",
       "source_review_status": "REVIEWED_QUESTION_RECORDED",
@@ -17593,7 +17880,7 @@
     {
       "row_id": "ISA-C-107",
       "label": "Signal Strength Ratio — reference quantity question",
-      "display_row": 349,
+      "display_row": 351,
       "status": "Local source question",
       "definition": "",
       "source_review_status": "REVIEWED_QUESTION_RECORDED",
@@ -20034,7 +20321,7 @@
     "sourceSupportedPrimary": 474,
     "specificQuestions": 6,
     "supportingDefinitions": 171,
-    "supportingWordingNotes": 101,
+    "supportingWordingNotes": 127,
     "meaning": "Supporting evidence and source-reviewed outcomes are not automatically adopted DIM elements.",
     "types": "ISA_Type_Catalogue_Evidence_08NOV2026.json",
     "primaryTypeReviews": 224,
@@ -20052,16 +20339,24 @@
     "interfaceBlocksReviewed": 39,
     "certificateGuideBlocksReviewed": 11,
     "ipl3GuideBlocksReviewed": 8,
-    "interfaceAndEncoding": "ISA_Service_and_Context_Evidence_08NOV2026.json"
+    "interfaceAndEncoding": "ISA_Service_and_Context_Evidence_08NOV2026.json",
+    "componentRequirements": "ISA_Service_and_Context_Evidence_08NOV2026.json",
+    "componentRequirementsOwnSpansReviewed": 21,
+    "componentRequirementsNativeDefinitionsReviewed": 144,
+    "componentRequirementsFullyReconciledBlocks": 19,
+    "componentRequirementsPendingParentBlocks": [
+      "CMPT-4.0",
+      "CMPT-4.3"
+    ]
   },
   "counts": {
     "columns": 14,
     "caseColumns": 4,
     "donorColumns": 9,
-    "informationRows": 327,
+    "informationRows": 329,
     "originalRows": 31,
-    "ISADerivedContributions": 296,
-    "supportedISACandidates": 290,
+    "ISADerivedContributions": 298,
+    "supportedISACandidates": 292,
     "ISASourceQuestions": 6,
     "originalDonorMappings": 58,
     "caseEvidenceRecords": 73
@@ -20108,7 +20403,7 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "Canonical master Markdown/CSV/JSON follows source decisions; Excel refreshed at substantial-section checkpoints. Never stage all new material outside the master until final approval.",
-  "currentEvidenceCheckpoint": "ISA-INTERFACE-ENCODING-SECURITY",
+  "currentEvidenceCheckpoint": "ISA-COMPONENT-REQUIREMENTS-FIRST",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "MASTER-ISA-INTEGRATION",
@@ -20116,9 +20411,9 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Canonical Markdown/CSV/JSON include five datatype groups,services/context,software architecture and interface/encoding/certificate guidance:480 primary outcomes and327 rows,74 rows beyond the verified253-row/226-primary workbook. Current text also includes the documented ISA mapping and candidate refinements. Excel retains its labeled integration snapshot;no rebuild in this source pass.",
-    "textCheckpoint": "ISA-INTERFACE-ENCODING-SECURITY",
-    "textInformationRows": 327,
+    "lag": "Canonical Markdown/CSV/JSON include the completed catalogue and companion evidence plus the first Component Requirements delivery: 480 primary outcomes and329 rows,76 rows beyond the verified253-row/226-primary workbook. Current text also includes documented ISA refinements. Excel retains its labeled integration snapshot and the existing substantial/final refresh cadence.",
+    "textCheckpoint": "ISA-COMPONENT-REQUIREMENTS-FIRST",
+    "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }
 }

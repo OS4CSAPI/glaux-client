@@ -2,15 +2,15 @@
 
 ## Current execution — 8 November 2026
 
-**Original ISA Steps 7/11 / accelerated delivery 15 COMPLETE:** all 39 ICD, 11 Certificate Usage Guide and 8 IPL3 Guide blocks reviewed/reconciled, including69 pages, 32 tables and five figures. ICD 6.1 reuses its completed ISA-02 identifier review; 57 blocks gain their first completion. All 480 DMS outcomes remain 474 supported and six questions; DQL 31, INTRO 18, WHITE 30 andSDD27 remain complete.
+**Original ISA Step 11 and cross-cutting requirements / accelerated delivery 16 COMPLETE:** first 21 Component Requirements own spans through §4.3.6, including all 144 native requirement definitions and their 144 reciprocal parent/child links. Pages 1–49 and the assigned portion of page 50, front matter and three tables are inspected. The identifier section reuses ISA-02; §§4.0 and 4.3 retain pending descendants, and the remaining 13 registered blocks remain delivery 17.
 
-The current master has **327 information/review rows**, retaining all 325 prior identities and adding certificate identity/trust context plus supplied-list presence. Six existing candidates are qualified, with two changed ISA display cells; all non-ISA/case cells, 58 donor records and 73 case statements remain unchanged. Original row closure remains 4/31 and earlier-finding reconciliation1/25. Inclusion is comparison evidence, not owner adoption.
+The current master contains **329 information/review rows**, preserving all 327 prior identities and adding capability readiness/reporting selection plus component time basis/synchronization. Nine existing candidates are qualified, with two existing ISA display cells changed. All 480 DMS outcomes remain 474 supported and six questions; prior companion evidence, donor/case data and original row dispositions remain intact. Original closure remains 4/31 rows and 1/25 earlier findings.
 
-**Next “proceed”: Original ISA Step 11 and cross-cutting requirements / accelerated delivery 16 — Component Requirements introduction through 4.3.6 (21 registered blocks), including relevant parent prose and links. Seven central ISA deliveries remain, range five–nine.** The routing label `ISA-COMPONENT-REQUIREMENTS-FIRST` identifies this existing slot. Reuse completed catalogue, guide, architecture and interface evidence, update the same master/evidence/coverage/PITON, and verify GitHub publication. Later Component Requirements clauses and appendices remain delivery 17.
+**Next “proceed”: accelerated delivery 17 — Component Requirements §4.3.7 onward and appendices, 13 registered blocks; reconcile pending parents and all 34 document blocks. Reuse the 144 completed requirement definitions in the verification crosswalk.** Routing label `ISA-COMPONENT-REQUIREMENTS-REMAINING` identifies this existing slot. Update the same master/evidence/coverage/PITON and verify GitHub publication. Controller Requirements remain delivery 18 onward.
 
-Technical iterations are 34; the central forecast remains 41 total and four original work areas remain closed. Excel retains its verified 253-row/226-primary snapshot; current text has 327 rows/480 outcomes, 74 additional rows plus recorded wording refinements. No extra workbook or publication delivery was added.
+Technical iterations are 35; the central forecast remains 41 total, with six deliveries remaining, range four–eight. Four original work areas remain closed. The workbook remains its verified 253-row/226-primary snapshot; current text has 329 rows/480 outcomes, 76 additional rows plus recorded refinements. The existing substantial/final refresh cadence remains in place.
 
-[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Cumulative interface/context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Cumulative requirements/companion evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
 Readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
 
@@ -51,7 +51,7 @@ The rows below are the unchanged remaining assignments from the acceleration pla
 | 18 | Controller requirements, first area | Controller Requirements1–5, including communication-service subsections |
 | 19 | Controller requirements, remaining area and verification crosswalk | Controller Requirements6 onward and appendices; close all28 registered controller blocks |
 | 20 | ISA-11: remaining companion/context and section reconciliation | All23 Data Model Topics blocks; bounded follow-up of historical PAPER2015 access question; reconcile all279 registered source blocks and inspect any unaccounted contextual prose |
-| 21 | ISA-11/12: model correspondence and source-first semantic audit | Reconcile all31 original row/case targets and25 earlier findings; check new contributions, aliases and the four local questions against saved source evidence; inspect specifically identified gaps |
+| 21 | ISA-11/12: model correspondence and source-first semantic audit | Reconcile all31 original row/case targets and25 earlier findings; check new contributions, aliases and the six existing local questions against saved source evidence; inspect specifically identified gaps |
 | 22 | ISA-12: final validation, workbook and closeout | Whole-inventory/source-block checks, final workbook/evidence/table parity, visual inspection, lessons consolidation and verified GitHub publication |
 
 ## Working-master publication and adoption
