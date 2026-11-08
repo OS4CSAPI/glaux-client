@@ -2,6 +2,18 @@
 
 **8 November 2026 · ISA-COMMANDS-AUTO-CONTROLS COMPLETE. Next owner “proceed”: ISA-COMMANDS-SENSING-MODES only — the six sensing mode/output commands below.**
 
+## Owner-visible numbered progress — required
+
+**ISA correction: original Step 5 of 12 is in progress. Steps 1–4 are COMPLETE; eight original steps remain to close, including current Step 5.** These twelve labels are work areas, not twelve prompts. The owner explicitly objected to losing the step numbers and the view of remaining work. Do not respond with only a named source group or increasing table-row counts.
+
+The [execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md#numbered-progress--restored-8-november-2026) now restores the full twelve-step roadmap. Steps 5–6 own the command catalogue and commanding types/requirements; 7–10 cover base/message/capability/reporting/filtering work; 11 covers architecture, companions and reconciliation; 12 covers final audit and closeout. Reuse the 124 already inspected supporting definitions without falsely completing later whole work areas. The broader donor-review Step 16 remains after this correction.
+
+Current commands: **18/96 reviewed, 78 remaining, across three completed six-entry source passes**. At an unchanged six-command-per-prompt rate, 78/6 gives **13 further command-source prompts alone**, before publication and additional type/requirement work. This is a conditional pace calculation, not a promised total or a newly authorized thirteen-batch schedule. The saved plan's total remaining technical-prompt forecast is not yet defined (`plannedTechnicalIterations: null`); do not hide this by saying only “eight steps remain,” invent a total, or describe the comparison's 175 rows as completed steps.
+
+Every technical closeout must identify the original step number, named source group, original steps completed, current catalogue reviewed/total and remaining, the increment achieved in that pass, workbook snapshot status and the basis of any prompt forecast. **Next starting heading: “ISA correction — Step 5 of 12: Sensing modes and output settings.” Starting counts: 4 original steps complete; commands18/96,78 remaining. The assigned six, once actually reviewed and published, would make24/96,72 remaining.** Earned counts only; a reporting repair is not a technical iteration.
+
+This reporting-only update changes no research scope, records, mappings, workbook, completed status or next assignment. Do not repeat completed work or start a new planning campaign merely to restore the numbers.
+
 Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is authoritative.
 [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [Plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Completed workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx) · [Workbook publication record](ISA_Observables_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
