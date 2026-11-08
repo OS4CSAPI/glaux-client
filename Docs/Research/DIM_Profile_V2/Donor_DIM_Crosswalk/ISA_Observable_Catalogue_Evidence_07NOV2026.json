@@ -68,6 +68,24 @@
         "ISA-DMS-147",
         "ISA-DMS-160"
       ]
+    },
+    {
+      "id": "ISA-04-BIO-CHEM",
+      "status": "COMPLETE",
+      "assigned": 6,
+      "reviewed": 6,
+      "supported": 6,
+      "new_questions": 0,
+      "core": 2,
+      "accepted_extensions": 4,
+      "primary_ids": [
+        "ISA-DMS-134",
+        "ISA-DMS-135",
+        "ISA-DMS-136",
+        "ISA-DMS-137",
+        "ISA-DMS-138",
+        "ISA-DMS-139"
+      ]
     }
   ],
   "primary_records": [
@@ -957,6 +975,308 @@
       "reviewed_on": "2026-11-07",
       "related_existing_dim_row": "S06-R012",
       "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-134",
+      "entry_id": "ISA-DMS-134",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Biological Contour Map",
+      "element_kind": "observable",
+      "native_type": "Biological Contour Line",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Biological Contour Map, printed p.19 / PDF pp.34–34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "39ca65694b427c6539928deab2e1be4d7425070d427f37779083a5dd8a76feec",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-134",
+      "proposed_label": "Reported biological contour-level map",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A biological-event contour represented by a list of Biological Contour Line structures. Each line links ordered geographic points to a Biological Reading Level; optional altitude and exceed probability describe that contour.",
+      "mapping_boundary": "Not a concentration raster, closed hazard polygon, detection mechanism or verified exposure model. Preserve nested reading confidence separately from exceed probability; Accepted composites in the biological path require Custom Types. No operational values or risk thresholds inferred.",
+      "dependency_terms": [
+        "Biological Contour Line",
+        "Biological Reading Level",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Measured Meters",
+        "Measured Percent",
+        "Meters",
+        "Degrees",
+        "Percent",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model."
+    },
+    {
+      "id": "ISA-OBS-135",
+      "entry_id": "ISA-DMS-135",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Biological Level",
+      "element_kind": "observable",
+      "native_type": "Biological Reading Level",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Biological Level, printed p.19 / PDF pp.34–34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "86ffb3dafc181902dbffecd00407c653a00136ede5df446656b624cab8f3c1c0",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-135",
+      "proposed_label": "Detailed reported biological analysis levels",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Details of a biological event as a list of Biological Reading Level descriptions. Each level requires confidence and a zero-or-more arbitrary-scale level list; the source also provides optional material identity, channel, harmful flag, integration duration, confirmation, particle concentration, sample id and integrated particle concentration.",
+      "mapping_boundary": "Source says Biological Reading should also be supplied for backwards compatibility; this is not an equivalence or a new mandatory SHALL. Required/optional fields differ: core harmful is required, extension harmful optional; bottle id Count is not sample id String. Open confirmation/detection strings and reported confidence do not certify a detection.",
+      "dependency_terms": [
+        "Biological Reading Level",
+        "Biological Reading",
+        "Biological Material",
+        "Measured Ppm3",
+        "Ppm3",
+        "Measured Psecpm3",
+        "Name Value Pair",
+        "Count",
+        "Measured Secs",
+        "Secs",
+        "Boolean",
+        "String",
+        "Float",
+        "Percent",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model.",
+      "compatibility_note": "The original observable explicitly recommends also providing its corresponding core Reading for backwards compatibility; source wording should is not upgraded to shall."
+    },
+    {
+      "id": "ISA-OBS-136",
+      "entry_id": "ISA-DMS-136",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Biological Reading",
+      "element_kind": "observable",
+      "native_type": "Biological Reading",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Biological Reading, printed p.19 / PDF pp.34–34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ced2e2a928e565d94b2cc6c001384bc9fbc2b3199ff4fb695e92680831c3f2f6",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-136",
+      "proposed_label": "Reported biological sample-analysis reading",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A core record of biological analysis of a sample. Required harmful Boolean; optional material class, report channel, particle density, bottle id and integration duration retain their source types and defaults.",
+      "mapping_boundary": "Not the richer Biological Level extension, a guaranteed detected organism or a forced concentration value. Missing density is not zero; material UNKNOWN is not confirmed identity; harmful is a reported field, not independent safety evidence. Source-level defaults do not establish installed measurements.",
+      "dependency_terms": [
+        "Biological Reading",
+        "Biological Material",
+        "Count",
+        "Integer",
+        "Measured Ppm3",
+        "Ppm3",
+        "Measured Secs",
+        "Secs",
+        "Boolean",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model."
+    },
+    {
+      "id": "ISA-OBS-137",
+      "entry_id": "ISA-DMS-137",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Chemical Contour Map",
+      "element_kind": "observable",
+      "native_type": "Chemical Contour Line",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Chemical Contour Map, printed p.19 / PDF pp.34–34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "84933872bab6889e2ce8ce6f4450f6b27c656f86431a19176a72ef455e9c8e71",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-137",
+      "proposed_label": "Reported chemical contour-level map",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A chemical-event contour represented by a list of Chemical Contour Line structures. Required geographic polyline and Chemical Reading Level, optional contour altitude above sea level and exceed probability.",
+      "mapping_boundary": "Not an automatically closed area, a computed dispersion plume or independently validated hazard boundary. Reading confidence, measurement error and exceed probability are different fields. Keep Custom Type standing and contour list structure; no fielded detection or source-case value inferred.",
+      "dependency_terms": [
+        "Chemical Contour Line",
+        "Chemical Reading Level",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Measured Meters",
+        "Measured Percent",
+        "Meters",
+        "Degrees",
+        "Percent",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model."
+    },
+    {
+      "id": "ISA-OBS-138",
+      "entry_id": "ISA-DMS-138",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Chemical Level",
+      "element_kind": "observable",
+      "native_type": "Chemical Reading Level",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Chemical Level, printed p.19 / PDF pp.34–35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "af143425f6f43e5552f763bcd1fa5d47dc2c2e520b9d40cf9c80183b4fa342a2",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-138",
+      "proposed_label": "Detailed reported chemical analysis levels",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Detailed chemical-event information as a list of Chemical Reading Level structures. Required confidence and zero-or-more arbitrary-scale level readings coexist with optional material/CAS identity, measured concentration, integration quantities, deposition, mass fraction, channel, confirmation and descriptive strings.",
+      "mapping_boundary": "Source says Chemical Reading should also be supplied for backwards compatibility. Do not equate Level with the core Reading, percent confidence with measurement error, or arbitrary-scale Float values with physical units. Core fixed scale fields do not automatically map into extension level names. Harmful default true is not an independently established detection.",
+      "dependency_terms": [
+        "Chemical Reading Level",
+        "Chemical Reading",
+        "Chemical Material Class",
+        "Measured Kgpm3",
+        "Kgpm3",
+        "Measured Kgsecpm3",
+        "Kgsecpm3",
+        "Measured Kgpm2",
+        "Kgpm2",
+        "Measured Ppm",
+        "Ppm",
+        "Measured Secs",
+        "Secs",
+        "Name Value Pair",
+        "Wildcard",
+        "Count",
+        "Integer",
+        "Boolean",
+        "String",
+        "Float",
+        "Percent",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model.",
+      "compatibility_note": "The original observable explicitly recommends also providing its corresponding core Reading for backwards compatibility; source wording should is not upgraded to shall."
+    },
+    {
+      "id": "ISA-OBS-139",
+      "entry_id": "ISA-DMS-139",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Chemical Reading",
+      "element_kind": "observable",
+      "native_type": "Chemical Reading",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Chemical Reading, printed p.20 / PDF pp.35–35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8c5cae993073ffd3262a43c96eb85fc341f8fa2ce570f62ec235b2b6319d6da7",
+      "review_pass": "ISA-04-BIO-CHEM",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-139",
+      "proposed_label": "Reported chemical sample-analysis reading",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Core chemical sample-analysis record with optional material class/name/CAS number, harmful flag, concentration, integration duration, integrated concentration, deposition, mass fraction and instrument-specific scale values.",
+      "mapping_boundary": "All fields in this core composite are optional; material class defaults UNKNOWN and harmful defaults true. Presence of the schema proves neither an identified substance nor a measured quantity. Mass per volume, mass fraction, deposition and time-integrated concentration are dimensionally different and are not converted without evidence.",
+      "dependency_terms": [
+        "Chemical Reading",
+        "Chemical Material Class",
+        "Measured Kgpm3",
+        "Kgpm3",
+        "Measured Kgsecpm3",
+        "Kgsecpm3",
+        "Measured Kgpm2",
+        "Kgpm2",
+        "Measured Ppm",
+        "Ppm",
+        "Measured Secs",
+        "Secs",
+        "Count",
+        "Integer",
+        "Boolean",
+        "String",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model."
     }
   ],
   "supporting_definitions": [
@@ -1225,6 +1545,919 @@
       "source_span_sha256": "b6510f6b56d89aa5403e5d61d9e0aa1348b47c5fc94775d36a7374609d32333d",
       "later_catalogue_pass_completed": false,
       "review_pass": "ISA-04-CONTEXT"
+    },
+    {
+      "entry_id": "ISA-DMS-364",
+      "native_term": "Biological Contour Line",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 85,
+      "pdf_pages": [
+        100,
+        101
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Biological Contour Line, printed p.85, PDF 100–101",
+      "inspected_content_summary": "Accepted CBRN composite using Custom Types. Required line Geographic Polyline and level Biological Reading Level; optional above-sea-level altitude and exceed probability. Exceed probability differs from confidence in the nested reading.",
+      "source_span_sha256": "c1c4578736a0700d016e99a7a23681915d1c0dfb5d874c04e0dc463321dd3881",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "line",
+          "type": "Geographic Polyline",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning_boundary": "Ordered geographic contour line; not an automatically closed polygon."
+        },
+        {
+          "name": "level",
+          "type": "Biological Reading Level",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "altitude",
+          "type": "Measured Meters",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Contour altitude above sea level."
+        },
+        {
+          "name": "exceed probability",
+          "type": "Measured Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Probability the actual value exceeds the contour level; not the reading confidence."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-365",
+      "native_term": "Biological Reading",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 86,
+      "pdf_pages": [
+        101,
+        101
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Biological Reading, printed p.86, PDF 101–101",
+      "inspected_content_summary": "Core composite. Required harmful Boolean; optional material class defaults UNKNOWN; channel, density, bottle id and duration default None. Particle density, bottle identification and integration duration remain distinct.",
+      "source_span_sha256": "6f61dfc8a7d46d162f5eab284db5b91f04404212e7e831dced954e85fb475390",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "material class",
+          "type": "Biological Material",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "UNKNOWN"
+        },
+        {
+          "name": "channel",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None"
+        },
+        {
+          "name": "density",
+          "type": "Measured Ppm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None",
+          "meaning_boundary": "Particle density in the sample; not mass concentration or mass-fraction ppm."
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning_boundary": "Reported potential for harm, not independent verification."
+        },
+        {
+          "name": "bottle id",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None"
+        },
+        {
+          "name": "duration",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None",
+          "meaning_boundary": "Channel integration time, not event or result timestamp."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-366",
+      "native_term": "Biological Reading Level",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 86,
+      "pdf_pages": [
+        101,
+        102
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Biological Reading Level, printed p.86, PDF 101–102",
+      "inspected_content_summary": "Accepted CBRN composite using Custom Types, defined across two pages. Required confidence and a required zero-or-more level list; harmful is optional. Includes optional sample id String and concentration-time particle quantity. Not structurally identical to core Biological Reading.",
+      "source_span_sha256": "601b7c9d3c4ce32b6c1165842dbbc82e7363b8b87f32146134ac670b7d37f288",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "material class",
+          "type": "Biological Material",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "UNKNOWN"
+        },
+        {
+          "name": "material name",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "channel",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None"
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "duration",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "None"
+        },
+        {
+          "name": "confidence",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning_boundary": "Confidence in information in this structure, distinct from measurement error and confirmation category."
+        },
+        {
+          "name": "confirmation level",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Suggested values only; not a sealed enum or certification."
+        },
+        {
+          "name": "concentration",
+          "type": "Measured Ppm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "sample id",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Not a lossless renaming of core bottle id: String versus Count and different referent."
+        },
+        {
+          "name": "level",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "meaning_boundary": "Zero-or-more arbitrary scale readings; each name identifies a sensor-specific reading type and its value is Float. Not forced into physical units."
+        },
+        {
+          "name": "persistency",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Suggested open strings; preserve source token NON_PERSISTENT, not silently normalized."
+        },
+        {
+          "name": "detection type",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Suggested open strings, not a complete collection procedure."
+        },
+        {
+          "name": "concentration time",
+          "type": "Measured Psecpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Particle-seconds per cubic metre, not particle density or integrated mass concentration."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-369",
+      "native_term": "Chemical Contour Line",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 88,
+      "pdf_pages": [
+        103,
+        103
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Chemical Contour Line, printed p.88, PDF 103–103",
+      "inspected_content_summary": "Accepted CBRN composite using Custom Types. Required geographic polyline and Chemical Reading Level, optional contour altitude above sea level and exceed probability. No automatic polygon closure or plume-generation algorithm.",
+      "source_span_sha256": "f071e3d3af2ff744c2c7722357e7c21b799f5455091f5fe5f3775a5905bcbe27",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "line",
+          "type": "Geographic Polyline",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning_boundary": "Ordered geographic contour line; not an automatically closed polygon."
+        },
+        {
+          "name": "level",
+          "type": "Chemical Reading Level",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "altitude",
+          "type": "Measured Meters",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Contour altitude above sea level."
+        },
+        {
+          "name": "exceed probability",
+          "type": "Measured Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Probability the actual value exceeds the contour level; not the reading confidence."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-371",
+      "native_term": "Chemical Reading",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 88,
+      "pdf_pages": [
+        103,
+        104
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Chemical Reading, printed p.88, PDF 103–104",
+      "inspected_content_summary": "Core composite defined across two pages. All fields optional; material class defaults UNKNOWN and harmful defaults true. Retains density, duration, integrated concentration, deposition, mass fraction and source-specific instrument scales; schema does not prove a detection.",
+      "source_span_sha256": "029d151d01cd961b1cf5698caac5ab7021c37c07645789d3395a5d3d3c622f1d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "material class",
+          "type": "Chemical Material Class",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "UNKNOWN"
+        },
+        {
+          "name": "material name",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "service number",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Chemical Abstracts Service number role, not equipment serial number."
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": true,
+          "meaning_boundary": "Declared default, not proof of an actual harmful detection."
+        },
+        {
+          "name": "density",
+          "type": "Measured Kgpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "duration",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "concentration time",
+          "type": "Measured Kgsecpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "deposition",
+          "type": "Measured Kgpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "mass fraction",
+          "type": "Measured Ppm",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "g-bar reading",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Source-declared instrument-specific scale [0,8]; no inferred conversion to concentration."
+        },
+        {
+          "name": "h-bar reading",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Source-declared instrument-specific scale [0,8]; no inferred conversion to concentration."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-372",
+      "native_term": "Chemical Reading Level",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 89,
+      "pdf_pages": [
+        104,
+        105
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Chemical Reading Level, printed p.89, PDF 104–105",
+      "inspected_content_summary": "Accepted CBRN composite using Custom Types, defined across two pages. Required confidence and required zero-or-more level list; retains optional material identity, measured quantity fields, confirmation, channel and descriptors. Not a lossless alias for core Chemical Reading.",
+      "source_span_sha256": "d44351c5246beeaa85e4b636a30634fcf9a9b5854d17b6ef6710151ae8990473",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "material class",
+          "type": "Chemical Material Class",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": "UNKNOWN"
+        },
+        {
+          "name": "material name",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "service number",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Chemical Abstracts Service number, not component identity."
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": true
+        },
+        {
+          "name": "duration",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "concentration time",
+          "type": "Measured Kgsecpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "deposition",
+          "type": "Measured Kgpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "mass fraction",
+          "type": "Measured Ppm",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "confidence",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "confirmation level",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Open suggested values, not a sealed enum or verified result."
+        },
+        {
+          "name": "concentration",
+          "type": "Measured Kgpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "level",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "meaning_boundary": "Zero-or-more sensor-specific readings: name specifies reading type, value is Float; arbitrary scales need not correspond to physical units."
+        },
+        {
+          "name": "channel",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "persistency",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning_boundary": "Suggested open strings; source uses NON-PERSISTENT here, distinct spelling from biological source."
+        },
+        {
+          "name": "detection type",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-339",
+      "native_term": "Biological Material",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 76,
+      "pdf_pages": [
+        91,
+        92
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Biological Material, printed p.76, PDF 91–92",
+      "inspected_content_summary": "Core non-sealed source category enumeration. Full listed entries and UNKNOWN versus UNSPECIFIED meanings inspected. Used only as classification metadata; source descriptive narratives are not operational instructions or verified agent identification.",
+      "source_span_sha256": "ae482263b41b026f39586b7546e288ecd1a6286a555668e0f291fd3cb34d1bab",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "listed_values": [
+        "BACTERIA",
+        "BIOREGULATOR",
+        "CYTOTOXIN",
+        "NEUROTOXIN",
+        "PATHOGEN",
+        "PRION",
+        "RIC",
+        "SPORE",
+        "TOXIN",
+        "TOXMAT",
+        "UNKNOWN",
+        "UNSPECIFIED",
+        "VIRAL"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-341",
+      "native_term": "Chemical Material Class",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 77,
+      "pdf_pages": [
+        92,
+        94
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Chemical Material Class, printed p.77, PDF 92–94",
+      "inspected_content_summary": "Core non-sealed category enumeration read through its cross-page final entry. UNKNOWN and UNSPECIFIED retained; class metadata is not a substance identity, measured amount or independently established hazard.",
+      "source_span_sha256": "a41b3bce0873a3c9a34a1c7110956a03a22260ab05829d2817e8543aaa7e7674",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "listed_values": [
+        "ARSENICAL BLISTER AGENT",
+        "BLISTER AGENT",
+        "BLOOD AGENT",
+        "CHEMICAL AGENT TYPE",
+        "CHOKING AGENT",
+        "CYANOGEN AGENT",
+        "DELIRIANT AGENT",
+        "DEPRESSANT AGENT",
+        "G AGENT",
+        "INCAPACITATING AGENT",
+        "MILITARY CHEMICAL COMPOUND TYPE",
+        "MUSTARD AGENT",
+        "NERVE AGENT",
+        "PSYCHEDELIC AGENT",
+        "STIMULANT AGENT",
+        "TOXIC INDUSTRIAL CHEMICAL",
+        "UNKNOWN",
+        "UNSPECIFIED",
+        "URTICANT AGENT",
+        "V AGENT"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-281",
+      "native_term": "Kgpm2",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 53,
+      "pdf_pages": [
+        68,
+        68
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Kgpm2, printed p.53, PDF 68–68",
+      "inspected_content_summary": "Core Float scalar, mass per area in kg/m^2; not mass concentration or particle count. No explicit numeric range supplied in this entry.",
+      "source_span_sha256": "110949a0a83b4c290b4b5cb86a51c9f8d9416ef97bde8b23410cf73c784059bd",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM"
+    },
+    {
+      "entry_id": "ISA-DMS-282",
+      "native_term": "Kgpm3",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 53,
+      "pdf_pages": [
+        68,
+        68
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Kgpm3, printed p.53, PDF 68–68",
+      "inspected_content_summary": "Core Float scalar, instantaneous mass concentration in kg/m^3; not mass fraction or cumulative exposure. No explicit numeric range supplied in this entry.",
+      "source_span_sha256": "78ff3e2fdab212bf65c71d90534b25cb5440b74acce6423b62f9b3bc5d166308",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM"
+    },
+    {
+      "entry_id": "ISA-DMS-283",
+      "native_term": "Kgsecpm3",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 53,
+      "pdf_pages": [
+        68,
+        68
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Kgsecpm3, printed p.53, PDF 68–68",
+      "inspected_content_summary": "Core Float scalar, product of mass concentration and integration time in kg*s/m^3; not concentration divided by time.",
+      "source_span_sha256": "dea85523a6e20768e6baa8e4c64e869ef5cf640c3aafe96c2521af879df54308",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM"
+    },
+    {
+      "entry_id": "ISA-DMS-290",
+      "native_term": "Ppm",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 54,
+      "pdf_pages": [
+        69,
+        69
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Ppm, printed p.54, PDF 69–69",
+      "inspected_content_summary": "Core Float scalar, source-defined mass fraction in parts per million; source range [0,inf). Preserve the source weight/water wording and do not assume volume fraction.",
+      "source_span_sha256": "31c571a327453b76b4bc5163d0eb65b34c90775567541a6af6e1ef64c3b7fbec",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM"
+    },
+    {
+      "entry_id": "ISA-DMS-292",
+      "native_term": "Ppm3",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 54,
+      "pdf_pages": [
+        69,
+        69
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Ppm3, printed p.54, PDF 69–69",
+      "inspected_content_summary": "Core Float scalar, particle concentration per cubic metre; source range [0,inf). Despite the similar spelling, not parts per million.",
+      "source_span_sha256": "06c14576980d1a3fdb3aebd9df959b593adb5b280d7bb910608400457abc3b16",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM"
+    },
+    {
+      "entry_id": "ISA-DMS-407",
+      "native_term": "Measured Kgpm2",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 100,
+      "pdf_pages": [
+        115,
+        115
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Kgpm2, printed p.100, PDF 115–115",
+      "inspected_content_summary": "Core measured mass-per-area structure. Required value Kgpm2, optional same-unit error; explicit error convention plus/minus one standard deviation. Absent error is not zero.",
+      "source_span_sha256": "27e49630a27cf1a93f619d1e8b74269d74f1d199a50cfe95567c4c9ec51bb398",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Kgpm2",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Kgpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-408",
+      "native_term": "Measured Kgpm3",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 100,
+      "pdf_pages": [
+        115,
+        116
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Kgpm3, printed p.100, PDF 115–116",
+      "inspected_content_summary": "Core measured mass-per-volume structure spanning two pages. Required value Kgpm3, optional same-unit error with explicit plus/minus one-standard-deviation convention.",
+      "source_span_sha256": "858a9c21bef6f2d1c354f45eb7fc249d066b7d6ab7e4f124e28f961ccf8bb4ba",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Kgpm3",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Kgpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-409",
+      "native_term": "Measured Kgsecpm3",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 101,
+      "pdf_pages": [
+        116,
+        116
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Kgsecpm3, printed p.101, PDF 116–116",
+      "inspected_content_summary": "Core integrated mass-concentration/time structure. Required value Kgsecpm3 and optional same-unit error with explicit plus/minus one-standard-deviation convention.",
+      "source_span_sha256": "56af674f6cae634cea94087f98bb99842e0edd7c13875eae0bb53852edbbaefc",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Kgsecpm3",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Kgsecpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-417",
+      "native_term": "Measured Ppm",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 103,
+      "pdf_pages": [
+        118,
+        118
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Ppm, printed p.103, PDF 118–118",
+      "inspected_content_summary": "Core mass-fraction measurement. Required Ppm value, optional Ppm error with explicit plus/minus one-standard-deviation convention; not particle density.",
+      "source_span_sha256": "881cd5b227f97a28257ce0c5570d7db37e8bc9f3ffbaae91745e2078e3c5eb5c",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Ppm",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Ppm",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-419",
+      "native_term": "Measured Ppm3",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 103,
+      "pdf_pages": [
+        118,
+        119
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Ppm3, printed p.103, PDF 118–119",
+      "inspected_content_summary": "Core particle-concentration measurement whose heading and fields cross a page boundary. Required Ppm3 value and optional Ppm3 error with explicit plus/minus one-standard-deviation convention.",
+      "source_span_sha256": "377ddb2973e168ec8c1e5adb903e60f551e5f5bcd4b17916cc8bc3f720b94e2f",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Ppm3",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Ppm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-420",
+      "native_term": "Measured Psecpm3",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 104,
+      "pdf_pages": [
+        119,
+        119
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Psecpm3, printed p.104, PDF 119–119",
+      "inspected_content_summary": "Accepted CBRN Custom Type. Required Float value expressed in particle-seconds per cubic metre and optional Float error. This definition does NOT specify a one-standard-deviation convention; do not borrow one from neighbouring measured types.",
+      "source_span_sha256": "fc9ab89b1fa0aa4ac91f4264dcdc9ca9b5893c3bec3084df2cccb7b29f03f63d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-BIO-CHEM",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Float",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Float",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
     }
   ],
   "reused_supporting_definitions": [
@@ -1767,48 +3000,367 @@
       "review_pass": "ISA-04-CONTEXT",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-388",
+      "native_term": "Geographic Polyline",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polyline, printed p.95, PDF 110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Position, printed p.95, PDF 110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52, PDF 67–67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53, PDF 68–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-411",
+      "native_term": "Measured Meters",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed p.101, PDF 116–117",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-416",
+      "native_term": "Measured Percent",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Percent, printed p.103, PDF 118–118",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54, PDF 69–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105, PDF 120–120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-378",
+      "native_term": "Custom Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Custom Type, printed p.92, PDF 107–107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-377",
+      "native_term": "Count",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Count, printed p.91, PDF 106–107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-421",
+      "native_term": "Measured Secs",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Secs, printed p.104, PDF 119–119",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55, PDF 70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-BIO-CHEM",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
     }
   ],
   "source_inspection": {
-    "primary_text": "Original DMS6.0r12 §3.2 printed pp.19–20,22 / PDF34–35,37: seven complete definitions and source standing read; neighbouring catalogue entries not advanced.",
+    "primary_text": "Original DMS 6.0r12 §3.2 printed pp.19–20 / PDF34–35: six complete observable definitions, including Chemical Level continuation and explicit Reading compatibility recommendations.",
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
     "primary_text_pages": [
       34,
-      35,
-      37
+      35
     ],
     "type_pages_visually_inspected": [
-      125,
-      126,
-      128
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      115,
+      116,
+      118,
+      119
     ],
     "additional_type_text_pages": [
-      65,
-      66,
-      70,
+      68,
+      69,
+      91,
+      92,
+      93,
       94
     ],
     "new_supporting_definitions": [
-      "BSO ID",
-      "Event Type"
+      "Biological Contour Line",
+      "Biological Reading",
+      "Biological Reading Level",
+      "Chemical Contour Line",
+      "Chemical Reading",
+      "Chemical Reading Level",
+      "Biological Material",
+      "Chemical Material Class",
+      "Kgpm2",
+      "Kgpm3",
+      "Kgsecpm3",
+      "Ppm",
+      "Ppm3",
+      "Measured Kgpm2",
+      "Measured Kgpm3",
+      "Measured Kgsecpm3",
+      "Measured Ppm",
+      "Measured Ppm3",
+      "Measured Psecpm3"
     ],
-    "new_supporting_count": 2,
-    "unique_supporting_total": 76,
+    "new_supporting_count": 19,
+    "unique_supporting_total": 95,
     "reused_types": [
-      "String",
-      "Standard Identity",
-      "SIDC",
+      "Geographic Polyline",
+      "Geographic Position",
+      "Degrees",
+      "Meters",
+      "Measured Meters",
+      "Measured Percent",
       "Percent",
       "Float",
-      "Resource Descriptor",
-      "Resource Type",
-      "URL",
-      "UTC",
-      "Secs",
+      "Boolean",
+      "String",
       "Name Value Pair",
-      "Wildcard"
+      "Wildcard",
+      "Custom Type",
+      "Count",
+      "Integer",
+      "Measured Secs",
+      "Secs"
     ],
-    "source_limits": "No issuer/authentication guarantee, complete procedure, cryptographic verification, observation-time equivalence or installed-case value inferred. Required/default source wording is retained without claiming a default was measured or transmitted."
+    "source_limits": "Schema/semantic review only. Required fields, cardinalities, units, defaults and extension standing preserved; no agent identification, operational detection, instrument calibration or actual case value inferred. Biological and chemical source vocabulary descriptions are not treated as medical or operational advice."
   },
   "source_inspections_by_pass": [
     {
@@ -1946,6 +3498,78 @@
         "Wildcard"
       ],
       "source_limits": "No issuer/authentication guarantee, complete procedure, cryptographic verification, observation-time equivalence or installed-case value inferred. Required/default source wording is retained without claiming a default was measured or transmitted."
+    },
+    {
+      "review_pass": "ISA-04-BIO-CHEM",
+      "primary_text": "Original DMS 6.0r12 §3.2 printed pp.19–20 / PDF34–35: six complete observable definitions, including Chemical Level continuation and explicit Reading compatibility recommendations.",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text_pages": [
+        34,
+        35
+      ],
+      "type_pages_visually_inspected": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        115,
+        116,
+        118,
+        119
+      ],
+      "additional_type_text_pages": [
+        68,
+        69,
+        91,
+        92,
+        93,
+        94
+      ],
+      "new_supporting_definitions": [
+        "Biological Contour Line",
+        "Biological Reading",
+        "Biological Reading Level",
+        "Chemical Contour Line",
+        "Chemical Reading",
+        "Chemical Reading Level",
+        "Biological Material",
+        "Chemical Material Class",
+        "Kgpm2",
+        "Kgpm3",
+        "Kgsecpm3",
+        "Ppm",
+        "Ppm3",
+        "Measured Kgpm2",
+        "Measured Kgpm3",
+        "Measured Kgsecpm3",
+        "Measured Ppm",
+        "Measured Ppm3",
+        "Measured Psecpm3"
+      ],
+      "new_supporting_count": 19,
+      "unique_supporting_total": 95,
+      "reused_types": [
+        "Geographic Polyline",
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Measured Meters",
+        "Measured Percent",
+        "Percent",
+        "Float",
+        "Boolean",
+        "String",
+        "Name Value Pair",
+        "Wildcard",
+        "Custom Type",
+        "Count",
+        "Integer",
+        "Measured Secs",
+        "Secs"
+      ],
+      "source_limits": "Schema/semantic review only. Required fields, cardinalities, units, defaults and extension standing preserved; no agent identification, operational detection, instrument calibration or actual case value inferred. Biological and chemical source vocabulary descriptions are not treated as medical or operational advice."
     }
   ],
   "specific_questions": [],
@@ -1955,7 +3579,7 @@
     "Campbell ClimaVue environmental fields remain separate from logger Status.PanelTemp; no native ISA encoding or fielded installation inferred.",
     "Bennett original ATemp mean events concern ambient air, not ISA internal Temperature; exact original resultTime, producer attribution and probe position remain unchanged. No new equipment values were added."
   ],
-  "mapping_note": "Twenty-two reviewed observables now support explicit atmospheric, spatial and event-context information roles. BSO entity identifier, tactical Identity, free-text context, event-associated Media and verifier attribution remain distinct. These are traceable candidate information rows, not automatic adopted DIM requirements; aggregate-row reconciliation remains assigned.",
+  "mapping_note": "Twenty-eight observable entries now support atmospheric, spatial, event-context and biological/chemical information roles. The six new roles retain contour versus core Reading versus Accepted Level distinctions and their individual source traceability. They remain candidate model information, not six automatically adopted mandatory DIM fields; original aggregate-row reconciliation stays assigned.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -1966,32 +3590,31 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-04-BIO-CHEM",
-  "next_action": "ISA-04-BIO-CHEM",
+  "next_source_pass": "ISA-04-RADIOLOGICAL",
+  "next_action": "ISA-04-RADIOLOGICAL",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-131",
-      "ISA-DMS-140",
-      "ISA-DMS-142",
-      "ISA-DMS-145",
-      "ISA-DMS-146",
-      "ISA-DMS-147",
-      "ISA-DMS-160"
+      "ISA-DMS-134",
+      "ISA-DMS-135",
+      "ISA-DMS-136",
+      "ISA-DMS-137",
+      "ISA-DMS-138",
+      "ISA-DMS-139"
     ],
-    "reviewed_total": 113,
-    "supported_total": 109,
+    "reviewed_total": 119,
+    "supported_total": 115,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "observable_entries_reviewed": 22,
+    "observable_entries_reviewed": 28,
     "observable_entries_total": 39,
     "property_outcomes_unchanged": 91,
-    "information_review_rows": 140,
-    "new_candidate_rows": 7,
+    "information_review_rows": 146,
+    "new_candidate_rows": 6,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 2,
-    "unique_supporting_definitions": 76,
+    "new_supporting_types": 19,
+    "unique_supporting_definitions": 95,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   },
@@ -2010,6 +3633,15 @@
         "The four source cases retain all existing values and evidence status; none is assigned an invented BSO ID, tactical classification, verifier, event-generation method or live media URL.",
         "Bennett serials/station ID and source QA tokens do not establish a BSO ID or authenticated Verified By attribution. Two original NOAA means/four digital representations and unknown original resultTime remain unchanged.",
         "Component Identity and Resources property meanings stay distinct from observed-entity Identity and event-associated Media; no other donor correspondence was added."
+      ]
+    },
+    {
+      "review_pass": "ISA-04-BIO-CHEM",
+      "checks": [
+        "All four documentary/historical equipment cases retain their original values. None is assigned an invented biological or chemical detection, hazard classification or measured concentration.",
+        "AirGradient particle-output reference fields are not equated with identified biological agents or ISA biological Ppm3 measurements; numeric-unit similarity alone does not establish the same observation.",
+        "Bennett two original NOAA means/four representations, source QA tokens, unknown original resultTime and unsupported probe placement remain untouched.",
+        "Contour lists are not converted to closed hazard polygons; source confidence, exceed probability, optional errors and harm defaults are not promoted to independently verified facts."
       ]
     }
   ]

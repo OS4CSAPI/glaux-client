@@ -1,18 +1,18 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial and event-context observable groups COMPLETE (22/39). Next: ISA-04-BIO-CHEM — six biological/chemical observables only.**
+**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial, event-context and biological/chemical observable groups COMPLETE (28/39). Next: ISA-04-RADIOLOGICAL — five named hazard/radiological observables only.**
 
-[Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Property publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+[Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-All91 property outcomes remain complete. The observable source reviews now cover22 entries: **113 primary entries reviewed /109 supported /four unchanged questions**. Current text has **140 information/review rows**; Excel remains the91-property/118-row snapshot. Event context added seven supported outcomes (five core,two Accepted extensions) and two supporting definitions, tracked separately from later full-type reviews.
+All91 property outcomes remain complete. Current research covers119 primary entries:115 supported/four unchanged questions, and146 information/review rows. Excel remains the91-property/118-row snapshot. The six biological/chemical outcomes preserve two core Reading observables versus four Accepted Contour/Level extensions, with no new question. Nineteen supporting definitions were inspected without advancing their full catalogue assignments.
 
-**Next group: Biological Contour Map, Biological Level, Biological Reading, Chemical Contour Map, Chemical Level, Chemical Reading** (ISA-DMS-134–139). Read exact original definitions and their necessary types, record defensible outcomes and update the same GitHub evidence/table/coverage. Stop after those six. Remaining17 observable entries stay inventory-assigned. No property rereview, other donor, automatic model adoption, per-group Excel release or new publication infrastructure.
+**Next group: Hazard Areas, Nuclear Level, Radiation Contour Map, Radiation Level and Radiation Reading** (ISA-DMS-144,148,153,154,155). Read original definitions/types; publish the same evidence, coverage and comparison; stop after those five. Eleven observables remain assigned. No property rereview, other donor, model adoption, per-group workbook release or new publication infrastructure.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
 
 
-**Current integrated checkpoint:** Property catalogue COMPLETE. Both the workbook and readable comparison contain118 information/review rows and all91 reviewed property outcomes. No further property-source pass is due.
+**Historical integrated property checkpoint:** The property workbook contains all91 property outcomes and118 information/review rows. The current readable comparison includes newer observable work as stated above. No property-source pass is due.
 
 
 **Historical property checkpoint:** the workbook contains all91 property outcomes. The current observable-source queue is stated above and in progress; this retained section records the completed property schedule.
