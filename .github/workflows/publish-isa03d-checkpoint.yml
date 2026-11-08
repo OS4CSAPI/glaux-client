@@ -322,6 +322,243 @@ env:
         print('PASS: all 314 prior rows, six questions, 58 donor records, 73 case statements, ten evidence/workbook files, 450 prior catalogue entries and all other source blocks preserved; JSON/CSV/HTML parity.')
         print('PASS: delivery 13 complete; nine central deliveries remain, range 7–11; 27 SDD source blocks next, with no repeated catalogue entries or premature architecture closure.')
         if os.environ.get('APPLY_ISA_TEXT')=='1':subprocess.run(['git','add','--',*p['files']],check=True)
+    elif p['checkpoint']=='ISA-SOFTWARE-ARCHITECTURE':
+        sys.path.insert(0,'scripts')
+        from publish_isa03a_checkpoint import assemble
+        import csv,io,re
+        from collections import Counter
+        from html.parser import HTMLParser
+        evidence_name='ISA_Service_and_Context_Evidence_08NOV2026.json'
+        assert p['base_commit']=='7c75918247c86e7e08db7dc0c947482221b61f5f'
+        allowed={'ISA_Correction_Status_07NOV2026.json','README.md','ISA_Correction_Review_07NOV2026.csv','Master_Donor_Concept_to_DIM_Crosswalk.csv','PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md',evidence_name,'ISA_Coverage_Register_07NOV2026.json','Master_Donor_Concept_to_DIM_Crosswalk.json','PITON_ISA_Coverage_Correction_07NOV2026.md','ISA_Correction_Review_07NOV2026.md','Master_Donor_Concept_to_DIM_Crosswalk.md','PLAN_ISA_Coverage_Correction_07NOV2026.md'}
+        assert set(p['files'])=={str(D/n) for n in allowed}
+        assert all(v['kind']=='text_delta' for v in p['files'].values())
+        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
+        original=lambda n:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/n)])
+        old=lambda n:json.loads(original(n))
+        exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
+        if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:assemble(p)
+        for n,v in p['files'].items():
+            b=Path(n).read_bytes();assert sha(b)==v['sha256'] and len(b)==v['size'],n
+        preserved={'ISA02_Identity_and_Properties_Evidence_07NOV2026.json','ISA03A_Status_Name_State_Evidence_07NOV2026.json','ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json','ISA03C_Position_Orientation_Evidence_07NOV2026.json','ISA03D_Relationship_Visible_Evidence_07NOV2026.json','ISA_Property_Catalogue_Evidence_07NOV2026.json','ISA_Observable_Catalogue_Evidence_07NOV2026.json','ISA_Command_Catalogue_Evidence_07NOV2026.json','ISA_Type_Catalogue_Evidence_08NOV2026.json','Master_Donor_Concept_to_DIM_Crosswalk.xlsx'}
+        assert set(p['preserved_files'])=={str(D/n) for n in preserved}
+        for n in preserved:assert sha((D/n).read_bytes())==sha(original(n))==p['preserved_files'][str(D/n)],n
+        load=lambda n:json.loads((D/n).read_text())
+        r=load('ISA_Coverage_Register_07NOV2026.json');m=load('Master_Donor_Concept_to_DIM_Crosswalk.json');s=load('ISA_Correction_Status_07NOV2026.json');e=load(evidence_name)
+        a=old('ISA_Coverage_Register_07NOV2026.json');am=old('Master_Donor_Concept_to_DIM_Crosswalk.json');ast=old('ISA_Correction_Status_07NOV2026.json');ae=old(evidence_name)
+        assert r['evidence_file']==r['publication']['current_evidence']==s['currentEvidence']==evidence_name
+        assert p['assigned_ids']==e['current_batch']['assigned_ids']==[]
+        assert e['checkpoint']==e['current_batch']['id']==p['checkpoint'] and e['source_input_commit']==p['base_commit']
+        assert r['dms_entries']==a['dms_entries'] and len(r['dms_entries'])==len({x['id'] for x in r['dms_entries']})==480
+        assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==480
+        assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==474
+        assert e['primary_records']==ae['primary_records'] and len(e['primary_records'])==30
+        assert e['assigned_ids']==ae['assigned_ids']==[f'ISA-DMS-{i:03}' for i in range(1,31)]
+        assert set(e['companion_sources'])=={'INTRO','WHITE','SDD'}
+        for k,count in [('INTRO',18),('WHITE',30)]:
+            assert e['companion_sources'][k]==ae['companion_sources'][k] and len(e['companion_sources'][k]['records'])==count,k
+        assert e['review_pass']==e['checkpoint']
+        assert e['initial_catalogue_review_context']=={k:ae[k] for k in ['review_pass','scope']}
+        assert e['scope'] and e['scope']!=ae['scope']
+        changed_evidence={'checkpoint','review_pass','scope','next_task','source_input_commit','comparison_policy','current_batch','validation','source_wording_notes','companion_sources','completed_batch_history'}
+        for k,v in ae.items():
+            if k not in changed_evidence:assert e[k]==v,k
+        history=ae.get('completed_batch_history',[])
+        assert e['completed_batch_history'][:-1]==history
+        assert e['completed_batch_history'][-1]=={k:ae[k] for k in ['checkpoint','source_input_commit','current_batch','validation','comparison_policy']}
+        for k in ['sources','census_method','reconciliation','legacy_records','specific_questions','baseline','legend']:assert r[k]==a[k],k
+        assert len(r['legacy_records'])==25 and len(r['specific_questions'])==6
+        assert r['supporting_source_notes'][:len(a['supporting_source_notes'])]==a['supporting_source_notes']
+        assert e['source_wording_notes'][:len(ae['source_wording_notes'])]==ae['source_wording_notes']
+        assert len({x['id'] for x in r['supporting_source_notes']})==len(r['supporting_source_notes'])
+        oldblocks={x['id']:x for x in a['source_blocks']};blocks={x['id']:x for x in r['source_blocks']}
+        assert len(blocks)==len(r['source_blocks'])==len(oldblocks)==279 and list(blocks)==list(oldblocks)
+        assigned=[x['id'] for x in a['source_blocks'] if x['source']=='SDD']
+        assert len(assigned)==27 and p['assigned_source_blocks']==e['current_batch']['assigned_source_blocks']==assigned
+        assert {key for key in blocks if blocks[key]!=oldblocks[key]}==set(assigned)
+        for key in assigned:
+            for k,v in oldblocks[key].items():
+                if k not in {'review_status','review_note'}:assert blocks[key][k]==v,(key,k)
+            assert blocks[key]['review_status']=='REVIEWED_SOURCE_SUPPORTED'
+            assert blocks[key]['evidence_file']==evidence_name and blocks[key]['evidence_record']==key
+        expected_spans={
+            'SDD-1.0':[16332, 16349, '464977c0eef1107ef61169c3f5ae3b9f67763e8f88d7ef3a0fe2a22d5ab09086'],
+            'SDD-1.1':[16349, 17785, '9299f563b491a6d25cc1dd2005fcd3bf83af731112e32e4ae969e52af7573d5c'],
+            'SDD-1.2':[17785, 21026, 'f3559b2438df22eebf932c8045b916fd1d57daf68b6814b77260a1ee32f68ac0'],
+            'SDD-1.3':[21026, 22371, '981794b3ce21fe8982a8c96dfe3e4edcddcaa816b1c0ac0b32648c702bb7578d'],
+            'SDD-2.0':[22371, 22644, '4a5f14e9519cd166654e5a4cb921f0b68a32b9ef0a6de6ab3ce8d6fd0c9a56ec'],
+            'SDD-3.0':[22644, 26190, '7b8ec80ebbe96ddf8ef95225ece85b8964bfcc4389fc28b3ea0c9602ab8766bf'],
+            'SDD-4.0':[26190, 26327, '6b30c094d7f6ea57624a398130f07a0c9b00dc4e76b59bcb7d44ffc60092539b'],
+            'SDD-4.1':[26327, 28489, 'fbede20ca6e43b9520289972d010ae50f41e5dc0ed4e6b92be44d5cf4aeb2c27'],
+            'SDD-4.2':[28489, 28519, 'b045a0a9db568fced773a9a19e20652ff6823eec9e571b9733752c7540241319'],
+            'SDD-4.2.1':[28519, 31196, '9c7028ec6fd82f42703c56a17392832ad77310822c5b042299c4c9dd8c2c9fee'],
+            'SDD-4.2.2':[31196, 34641, '5218e8f1808e75bd2f5fe5db7a1a7b7a17c040b814498bc48b56d93de37dfadb'],
+            'SDD-4.3':[34641, 37366, '54114d566fdb1c0262f6b71edb3bb3ae89d3f419b26bf376d48630e49de8e214'],
+            'SDD-5.0':[37366, 38636, '4fa2a6e3b5477519fe825763b8d651e5233e41f8a86441c4db08d0a4fab100a4'],
+            'SDD-5.1.1':[38636, 41665, '28ebfd3227ffb2abd08927f4b98b16354fca7d3c142407f009fc09c46d9f1ac6'],
+            'SDD-5.1.2':[41665, 42322, 'af2034eae07fb16a669e4cce66b534972ef82a13e8dee53da259a2c6ba975e61'],
+            'SDD-5.1.3':[42322, 45288, 'ac7b91ea28381f5ae370fcb67819c2b87c38f125abfd71618e77abb568d8e633'],
+            'SDD-5.2':[45288, 45940, '2e90b71f142437b7214e800d1a5bf292b6993f11583a793cd5031fb024b63c8c'],
+            'SDD-6.0':[45940, 45959, '98b8c4bcd97131d45c14d6dc075c76ddeab86e667d1bab771fee925f55b626a0'],
+            'SDD-6.1':[45959, 47558, '007b147ff79321c9b8a711dd82f57ec04e147d3067295c51b8adceb2d4d92bc4'],
+            'SDD-6.2':[47558, 49585, '427ade169c00fb8ae7d29fd4c80df43b1978f586ec88bcecf4e2c19dfc06b555'],
+            'SDD-6.3':[49585, 49997, '95ffdc82ac5e40994cb10da5bcf9cf8c1dd35c93fc994dbe8db59a6bffc21c2d'],
+            'SDD-6.3.1':[49997, 62898, 'b6dd383c669c64a3b58fda1d496f590946a507198b067b6d8dd990493f827c11'],
+            'SDD-6.3.2':[62898, 67974, 'a97e2448697ef22b80ec4806833dfcd239adb168bc6557c2af7c21b18c148e8d'],
+            'SDD-6.3.3':[67974, 83563, '9b06200c402cfbb5186e310e48b303860bed3011bd5470b81b50c1c2e3d67281'],
+            'SDD-7.0':[83563, 84003, '602bbc0e06de772b00c1d88ac1efec9c832be2f6ca53897d3e3f90b53c48b979'],
+            'SDD-AppendixA':[84003, 91477, 'e72de5a681b2398b4f189ca5b66b10f9073859750bffa66099c892a482a0777f'],
+            'SDD-AppendixB':[91477, 92840, 'd8728058816e1bc02c583326f8da911d00f1eb1f38766c5418f045bbc66bf925'],
+        }
+        guide=e['companion_sources']['SDD'];records=guide['records']
+        assert guide['source_pdf_sha256']=='7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e'
+        assert guide['source_pdf_page_count']==71 and guide['source_pdf_bytes']==2534229
+        assert guide['assigned_ids']==assigned and [x['id'] for x in records]==assigned
+        assert len(records)==len({x['id'] for x in records})==len(expected_spans)==27
+        assert set(assigned)==set(expected_spans)
+        for x in records:
+            before=oldblocks[x['id']];start,end,digest=expected_spans[x['id']]
+            assert x['section']==before['section'] and x['title']==before['title']
+            assert sha(x['source_span_text'].encode())==x['source_span_sha256']==digest,x['id']
+            assert (x['source_span_char_start'],x['source_span_char_end'])==(start,end) and len(x['source_span_text'])==end-start
+            assert x['source_pdf_sha256']==guide['source_pdf_sha256']
+            assert x['review_status']=='REVIEWED_SOURCE_SUPPORTED' and x['owner_adoption']=='NO_DIM_CONTENT_ADOPTION'
+            assert x['parent_reconciliation']['complete'] is True
+            assert x['parent_reconciliation']['registered_child_blocks']==x['registered_child_blocks']
+            assert set(x['registered_child_blocks'])<=set(assigned)
+        assert all(left['source_span_char_end']==right['source_span_char_start'] for left,right in zip(records,records[1:]))
+        inspection=guide['source_inspection']
+        assert inspection['all_text_pdf_pages_reviewed']==inspection['all_visual_pdf_pages_reviewed']==list(range(1,72))
+        assert inspection['figures_reviewed']==list(range(1,36)) and inspection['tables_reviewed']==list(range(1,8))
+        assert len(inspection['partition_inspections'])==3 and not inspection['runtime_or_conformance_tested']
+        figures=guide['figures'];tables=guide['table_manifests']
+        figure_blocks={n:'SDD-6.3.3' for n in range(7,35)}
+        figure_blocks.update({1:'SDD-4.2.1',2:'SDD-4.2.2',3:'SDD-5.0',4:'SDD-6.3.1',5:'SDD-6.3.2',6:'SDD-6.3.2',35:'SDD-7.0'})
+        assert [x['number'] for x in figures]==list(range(1,36))
+        assert all(x['visual_reviewed'] and x.get('source_block_id',x.get('registered_block'))==figure_blocks[x['number']] for x in figures)
+        assert [x['number'] for x in tables]==list(range(1,8)) and all(x['visual_reviewed'] for x in tables)
+        assert guide['reconciliation']['primary_DMS_reviews_added']==0 and guide['reconciliation']['final_original_row_audit_closed'] is False
+        assert m['review_grid']==r['review_grid'] and m['review_sections']==r['review_sections']
+        grid=r['review_grid'];assert len(grid)-len(r['review_sections'])-2==325 and all(len(row)==14 for row in grid)
+        oldrows={x['row_id']:x for x in am['rows']};rows={x['row_id']:x for x in m['rows']}
+        additions={'ISA-A-MEMBER-EXPOSURE','ISA-A-MEMBER-TASKABILITY','ISA-A-CIC-MEDIATION','ISA-A-PARTICIPATION-LIFECYCLE','ISA-A-CONNECTION-PRESENTATION'}
+        assert len(rows)==len(m['rows'])==325 and len(oldrows)==320 and set(rows)-set(oldrows)==additions and set(oldrows)<=set(rows)
+        qualified={f'S06-R{i:03}' for i in range(5,9)}
+        refined={'ISA-A-PARTICIPATION','ISA-A-NETWORK-CONTEXT','ISA-A-SERVICE-ROLE'}
+        permitted={key:{'display','source_review_status'} for key in qualified}
+        permitted.update({'ISA-A-PARTICIPATION':{'display','definition','boundary'},'ISA-A-NETWORK-CONTEXT':{'definition','boundary'},'ISA-A-SERVICE-ROLE':{'boundary'}})
+        revisions={x['row_id']:x for x in e['master_revisions']}
+        assert len(revisions)==len(e['master_revisions'])==7 and set(revisions)==set(permitted)
+        displayed_changes=set()
+        for key,before in oldrows.items():
+            after=rows[key];fields=permitted.get(key,set())
+            assert set(after)<=set(before)|{'display_row','additional_ISA_architecture_evidence'},key
+            for k,v in before.items():
+                if k not in fields|{'display_row','additional_ISA_architecture_evidence'}:assert after[k]==v,(key,k)
+            refs=before.get('additional_ISA_architecture_evidence',[]);newrefs=after.get('additional_ISA_architecture_evidence',[])
+            assert newrefs[:len(refs)]==refs and set(newrefs[len(refs):])<=set(assigned),(key,'architecture references')
+            if before['display']!=after['display']:
+                displayed_changes.add(key)
+                assert len(after['display'])==14 and all(after['display'][i]==before['display'][i] for i in range(14) if i!=7),key
+            if key in revisions:
+                rev=revisions[key]
+                assert set(rev['before'])==set(rev['after'])==fields,key
+                assert rev['before']=={k:before[k] for k in fields} and rev['after']=={k:after[k] for k in fields},key
+                assert all(before[k]!=after[k] for k in fields),key
+                assert rev['source_blocks'] and set(rev['source_blocks'])<=set(assigned)
+                assert rev['owner_adoption']=='NO_DIM_CONTENT_ADOPTION' and rev['final_original_correspondence_audit_closed'] is False
+        assert displayed_changes==qualified|{'ISA-A-PARTICIPATION'}
+        qualification='SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE'
+        assert all(rows[key]['source_review_status']==qualification for key in qualified)
+        oldtargets={x['row_key']:x for x in a['row_targets']};targets={x['row_key']:x for x in r['row_targets']}
+        assert len(targets)==len(r['row_targets'])==len(oldtargets)==31 and list(targets)==list(oldtargets)
+        assert {key for key in targets if targets[key]!=oldtargets[key]}==qualified
+        for key in qualified:
+            before=oldtargets[key];after=targets[key]
+            assert set(after)==set(before)|{'architecture_qualification'} and after['status']==qualification
+            assert all(after[k]==v for k,v in before.items() if k!='status'),key
+            q=after['architecture_qualification']
+            assert q['checkpoint']==p['checkpoint'] and q['evidence_file']==evidence_name
+            assert q['source_blocks']==revisions[key]['source_blocks'] and q['meaning']==revisions[key]['reason']
+            assert q['final_correspondence_audit_closed'] is False
+        oldcandidates={x['row_key']:x for x in a['candidate_rows']};candidates={x['row_key']:x for x in r['candidate_rows']}
+        assert len(oldcandidates)==289 and len(candidates)==len(r['candidate_rows'])==294
+        assert set(candidates)-set(oldcandidates)==additions and list(candidates)[:289]==list(oldcandidates)
+        candidate_revisions={x['row_key']:x for x in e['candidate_revisions']}
+        assert len(candidate_revisions)==len(e['candidate_revisions'])==3 and set(candidate_revisions)==refined
+        for key,before in oldcandidates.items():
+            after=candidates[key]
+            if key not in refined:assert after==before,key
+            else:
+                rev=candidate_revisions[key];assert rev['before']==before and rev['after']==after,key
+                assert set(after)==set(before) and all(after[k]==v for k,v in before.items() if k not in {'boundary','source_blocks','evidence_records'}),key
+                assert after['boundary']==rows[key]['boundary']
+                for field in ['source_blocks','evidence_records']:
+                    assert after[field][:len(before[field])]==before[field] and set(after[field][len(before[field]):])<=set(assigned),(key,field)
+        assert sum(x['review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['candidate_rows'])==288
+        for key in additions:
+            assert rows[key]['source_review_status']=='REVIEWED_SOURCE_SUPPORTED' and rows[key]['dim_adoption']=='NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE'
+            assert candidates[key]['owner_decision']=='FOR_OWNER_REVIEW' and candidates[key]['question'] is None
+        oldgrid=[row[:] for row in a['review_grid']]
+        for key in displayed_changes:oldgrid[oldrows[key]['display_row']-6]=rows[key]['display']
+        it=iter(grid);assert all(any(v==row for v in it) for row in oldgrid)
+        assert all(row['display']==grid[row['display_row']-6] for row in m['rows'])
+        assert all(key in rows for x in records for key in x['target_rows'])
+        for k in ['columns','originalDonorEvidence','caseEvidence','priorHolds','adoptionPolicy','historicalEvidenceSheetNames']:assert m[k]==am[k],k
+        assert len(m['originalDonorEvidence'])==58 and len(m['caseEvidence'])==73
+        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv']:
+            b=(D/n).read_bytes();assert b'\r\n' not in b and list(csv.reader(io.StringIO(b.decode())))==grid,n
+        class Table(HTMLParser):
+            def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=[];self.cell=None
+            def handle_starttag(self,tag,attrs):
+                if tag=='tr':self.row=[]
+                if tag=='td':self.cell=''
+            def handle_data(self,data):
+                if self.cell is not None:self.cell+=data
+            def handle_endtag(self,tag):
+                if tag=='td':self.row.append(self.cell);self.cell=None
+                if tag=='tr' and self.row:self.rows.append(self.row)
+        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md']:
+            parser=Table();parser.feed((D/n).read_text());assert parser.rows==[row for i,row in enumerate(grid) if i>1 and i not in r['review_sections']],n
+        assert s['currentBatch']==s['currentIteration']==p['checkpoint'] and s['currentBatchDeliveryStatus']=='COMPLETE'
+        assert s['technicalIterationsCompleted']==33 and s['plannedTechnicalIterations']==41 and s['completedWorkPackages']==4
+        assert s['completedCatalogueSourcePasses']==ast['completedCatalogueSourcePasses']==23
+        forecast=s['remainingDeliveryForecast']
+        assert (forecast['centralRemainingPrompts'],forecast['lowRemainingPrompts'],forecast['highRemainingPrompts'])==(8,6,10)
+        assert forecast['lastCompletedSlot']==forecast['plannedQueueCompleted']==14
+        nextblocks=[x['id'] for x in a['source_blocks'] if x['source'] in {'ICD','CERT','IPL3'}]
+        assert len(nextblocks)==58 and Counter(oldblocks[key]['source'] for key in nextblocks)=={'ICD':39,'CERT':11,'IPL3':8}
+        assert s['nextSourceBlocks']==nextblocks and s['nextSourceIDs']==[]
+        assert s['nextOnOwnerProceed']==e['next_task']=='ISA-INTERFACE-ENCODING-SECURITY'
+        for k in ['propertyCatalogue','observableCatalogue','commandCatalogue','typeCatalogue']:assert s[k]==ast[k],k
+        assert s['coverage']['semanticEntriesReviewedInCorrection']==480 and s['coverage']['sourceSupportedPrimaryEntries']==474
+        assert s['coverage']['supportingDefinitionsRead']==ast['coverage']['supportingDefinitionsRead']==171
+        assert s['coverage']['originalRowTargetsReviewed']==ast['coverage']['originalRowTargetsReviewed']==4
+        assert s['coverage']['priorRecordsReconciled']==ast['coverage']['priorRecordsReconciled']==1
+        assert s['servicesAndContext']['architectureReconciliationComplete'] is True
+        architecture=s['softwareArchitecture']
+        assert architecture['state']=='COMPLETE_SOURCE_REVIEW' and architecture['sourceBlocksReviewed']==architecture['sourceBlocksTotal']==27
+        assert architecture['figuresReviewed']==35 and architecture['tablesReviewed']==7 and architecture['sourcePagesInspected']==71
+        assert architecture['newPrimaryDMSReviews']==0 and architecture['newComparisonPatterns']==5 and architecture['originalISACellsQualified']==4
+        assert architecture['finalOriginalRowAuditClosed'] is False and architecture['runtimeOrConformanceTested'] is False
+        assert m['counts']['informationRows']==325 and m['counts']['ISADerivedContributions']==294
+        assert m['counts']['supportedISACandidates']==288 and m['counts']['ISASourceQuestions']==6
+        assert m['ISAEvidence']['currentPrimaryReviews']==480 and m['ISAEvidence']['sourceSupportedPrimary']==474
+        assert m['ISAEvidence']['primaryTypeReviews']==224 and m['ISAEvidence']['softwareArchitecture']==evidence_name
+        assert s['workbookSnapshot']['informationRows']==253 and s['workbookSnapshot']['primaryReviewed']==226
+        assert s['workbookSnapshot']['sha256']==a['publication']['workbook_snapshot']['sha256']
+        assert not s['workbookSnapshot']['currentlyMatchesReadableView']
+        assert s['workbookSnapshot']['textInformationRows']==m['workbookSnapshot']['textInformationRows']==325
+        assert s['workbookSnapshot']['textInformationRows']-s['workbookSnapshot']['informationRows']==72
+        assert s['workbookSnapshot']['label']==m['workbookSnapshot']['lag']==r['publication']['workbook_snapshot']['lag']
+        assert 'Four original ISA cells' in s['workbookSnapshot']['label']
+        for n in ['PITON_ISA_Coverage_Correction_07NOV2026.md','Master_Donor_Concept_to_DIM_Crosswalk.md']:
+            for link in re.findall(r'\]\(([^)]+)\)',(D/n).read_text()):
+                if '://' not in link and not link.startswith('#'):assert (D/link.split('#')[0]).is_file(),link
+        print('PASS: 27 SDD blocks, original PDF and exact span hashes, 71 pages, 35 figures and seven tables; all 480 catalogue outcomes and prior service/INTRO/WHITE evidence preserved.')
+        print('PASS: 325 master rows and 294 candidates; all 320 prior row identities, bounded ISA-only revisions, 58 donor records, 73 case statements, 252 other source blocks and ten evidence/workbook files; JSON/CSV/HTML parity.')
+        print('PASS: delivery 14 complete; eight central deliveries remain, range 6–10; 58 ICD/CERT/IPL3 blocks next. Four original ISA qualifications retain the final correspondence audit assignment; workbook remains its labeled 253-row snapshot.')
+        if os.environ.get('APPLY_ISA_TEXT')=='1':subprocess.run(['git','add','--',*p['files']],check=True)
     else:
         baseline='2e7395c8f82e7c46e81a6978f27c8d29a21adb62'
         subprocess.run(['git','fetch','--no-tags','--depth=1','origin',baseline],check=True)
