@@ -2,17 +2,17 @@
 
 ## Current execution — 8 November 2026
 
-**Original ISA Step 11 / accelerated delivery 14 COMPLETE:** all 27 Software Design Document blocks, 35 figures and seven tables reviewed, including all nested message flows and appendices. All 480 DMS outcomes remain unchanged: 474 supported and six retained questions. DQL 31/31, Introductory Guide18/18 and White Paper30/30 remain complete.
+**Original ISA Steps 7/11 / accelerated delivery 15 COMPLETE:** all 39 ICD, 11 Certificate Usage Guide and 8 IPL3 Guide blocks reviewed/reconciled, including69 pages, 32 tables and five figures. ICD 6.1 reuses its completed ISA-02 identifier review; 57 blocks gain their first completion. All 480 DMS outcomes remain 474 supported and six questions; DQL 31, INTRO 18, WHITE 30 andSDD27 remain complete.
 
-Canonical Markdown/CSV/JSON contain **325 information/review rows**: all 320 prior row identities plus five architecture patterns. Four original ISA cells now qualify composition, network participation, integration membership and communication-interface meanings. Detailed participation/service/network wording is also refined. All non-ISA/case cells, 58 donor records and 73 case statements are preserved. Original row-target closure remains 4/31; earlier-finding reconciliation remains 1/25. These source qualifications do not close the final correspondence audit or adopt DIM content.
+The current master has **327 information/review rows**, retaining all 325 prior identities and adding certificate identity/trust context plus supplied-list presence. Six existing candidates are qualified, with two changed ISA display cells; all non-ISA/case cells, 58 donor records and 73 case statements remain unchanged. Original row closure remains 4/31 and earlier-finding reconciliation1/25. Inclusion is comparison evidence, not owner adoption.
 
-**Next “proceed”: original ISA Steps 7/11 / accelerated delivery 15 — all 39 ICD, 11 Certificate Guide and 8 IPL3 Guide blocks, 58 total. Eight central ISA deliveries remain, range six–ten.** Routing label `ISA-INTERFACE-ENCODING-SECURITY` identifies this existing slot. Reuse completed catalogue, query and architecture evidence; update the same master/evidence/coverage/PITON and verify GitHub publication. Component Requirements begin in the already assigned delivery 16.
+**Next “proceed”: Original ISA Step 11 and cross-cutting requirements / accelerated delivery 16 — Component Requirements introduction through 4.3.6 (21 registered blocks), including relevant parent prose and links. Seven central ISA deliveries remain, range five–nine.** The routing label `ISA-COMPONENT-REQUIREMENTS-FIRST` identifies this existing slot. Reuse completed catalogue, guide, architecture and interface evidence, update the same master/evidence/coverage/PITON, and verify GitHub publication. Later Component Requirements clauses and appendices remain delivery 17.
 
-Excel retains the verified 253-row/226-primary master-integration snapshot. Current text has 325 rows/480 outcomes, 72 additional rows plus documented ISA wording qualifications. No source-pass workbook rebuild or new publication delivery was added. The central technical forecast remains 41 total: 33 completed plus 8 remaining; four original work areas remain closed.
+Technical iterations are 34; the central forecast remains 41 total and four original work areas remain closed. Excel retains its verified 253-row/226-primary snapshot; current text has 327 rows/480 outcomes, 74 additional rows plus recorded wording refinements. No extra workbook or publication delivery was added.
 
-[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Architecture/service/context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Cumulative interface/context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
-Readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and consolidated named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
+Readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
 
 ## Historical checkpoint banners
 
