@@ -881,6 +881,495 @@ env:
         print('PASS: 327 master rows, 296 candidates, two new patterns and six bounded refinements; all 325 prior row identities, ten evidence/workbook files, 480 DMS outcomes and service/INTRO/WHITE/SDD evidence preserved; JSON/CSV/HTML parity.')
         print('PASS: delivery 15 complete; seven central deliveries remain, range 5–9; first 21 Component Requirements blocks next. Original-row and legacy closures unchanged; workbook remains the labeled 253-row/226-primary snapshot, 74 rows behind current text.')
         if os.environ.get('APPLY_ISA_TEXT')=='1':subprocess.run(['git','add','--',*p['files']],check=True)
+    elif p['checkpoint']=='ISA-COMPONENT-REQUIREMENTS-FIRST':
+        sys.path.insert(0,'scripts')
+        from publish_isa03a_checkpoint import assemble
+        import csv,io,re
+        from collections import Counter
+        from html.parser import HTMLParser
+        evidence_name='ISA_Service_and_Context_Evidence_08NOV2026.json'
+        assert p['base_commit']=='3e2310a6b7047081742e10f1197fc1ed47e6f271'
+        allowed={'ISA_Correction_Status_07NOV2026.json','README.md','ISA_Correction_Review_07NOV2026.csv','Master_Donor_Concept_to_DIM_Crosswalk.csv','PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md',evidence_name,'ISA_Coverage_Register_07NOV2026.json','Master_Donor_Concept_to_DIM_Crosswalk.json','PITON_ISA_Coverage_Correction_07NOV2026.md','ISA_Correction_Review_07NOV2026.md','Master_Donor_Concept_to_DIM_Crosswalk.md','PLAN_ISA_Coverage_Correction_07NOV2026.md'}
+        assert set(p['files'])=={str(D/n) for n in allowed}
+        assert all(v['kind']=='text_delta' for v in p['files'].values())
+        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
+        original=lambda n:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/n)])
+        old=lambda n:json.loads(original(n))
+        exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
+        if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:assemble(p)
+        for n,v in p['files'].items():
+            b=Path(n).read_bytes();assert sha(b)==v['sha256'] and len(b)==v['size'],n
+        preserved={'ISA02_Identity_and_Properties_Evidence_07NOV2026.json','ISA03A_Status_Name_State_Evidence_07NOV2026.json','ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json','ISA03C_Position_Orientation_Evidence_07NOV2026.json','ISA03D_Relationship_Visible_Evidence_07NOV2026.json','ISA_Property_Catalogue_Evidence_07NOV2026.json','ISA_Observable_Catalogue_Evidence_07NOV2026.json','ISA_Command_Catalogue_Evidence_07NOV2026.json','ISA_Type_Catalogue_Evidence_08NOV2026.json','Master_Donor_Concept_to_DIM_Crosswalk.xlsx'}
+        assert set(p['preserved_files'])=={str(D/n) for n in preserved}
+        for n in preserved:assert sha((D/n).read_bytes())==sha(original(n))==p['preserved_files'][str(D/n)],n
+        load=lambda n:json.loads((D/n).read_text())
+        r=load('ISA_Coverage_Register_07NOV2026.json');m=load('Master_Donor_Concept_to_DIM_Crosswalk.json');s=load('ISA_Correction_Status_07NOV2026.json');e=load(evidence_name)
+        a=old('ISA_Coverage_Register_07NOV2026.json');am=old('Master_Donor_Concept_to_DIM_Crosswalk.json');ast=old('ISA_Correction_Status_07NOV2026.json');ae=old(evidence_name)
+        assert r['evidence_file']==r['publication']['current_evidence']==s['currentEvidence']==evidence_name
+        assert p['assigned_ids']==e['current_batch']['assigned_ids']==[]
+        assert e['checkpoint']==e['review_pass']==e['current_batch']['id']==p['checkpoint'] and e['source_input_commit']==p['base_commit']
+        assert r['dms_entries']==a['dms_entries'] and len(r['dms_entries'])==len({x['id'] for x in r['dms_entries']})==480
+        assert sum(x['semantic_review_status'].startswith('REVIEWED_') for x in r['dms_entries'])==480
+        assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['dms_entries'])==474
+        assert e['primary_records']==ae['primary_records'] and len(e['primary_records'])==30
+        assert e['assigned_ids']==ae['assigned_ids']==[f'ISA-DMS-{i:03}' for i in range(1,31)]
+        expected_spans={
+            'CMPT-1.0':[11594, 11612, '5b12995c603d36bf102a7ad82f67964c54c074040ee0614f03fc51374d583f33'],
+            'CMPT-1.1':[11612, 12716, 'a95b118034eb759fd734f3686c7333f2239ba5160b7eac71d6a81eafc7f24c3e'],
+            'CMPT-1.2':[12716, 15085, '096989f554d6454a46e0bd7a38dd28cdffa56aedcef78fbc8c6e3793252317c3'],
+            'CMPT-1.3':[15085, 15989, 'a3a0ae8bdc2ad58f602d23da8232a95de179b9e839ae4c5d780b39477d3c4dbf'],
+            'CMPT-2.0':[15989, 16172, 'b42a5c7e08dbbfb193fa373516527d3b4401fe41af4cea4a47335b56d87af36f'],
+            'CMPT-3.0':[16172, 19076, '96faa1fabb2ff57b51bfbef136d98451fe4aa0181b1252a809c2330f5e8fba4e'],
+            'CMPT-4.0':[19076, 19890, '7df320596cdbcfa566a85aeba4b7dc79429c4f8927a5b5533d2dd3dae7194914'],
+            'CMPT-4.1':[19890, 20069, 'cfdc4c1d70e6e325542403e4b0b3ebf619d82ca0097d375dea1e592935717ef1'],
+            'CMPT-4.1.1':[20069, 22997, 'a3cda2c177b3dcef4f5ceeb90ac8c4d0acec02f42277f7b1bd9d513e048e9619'],
+            'CMPT-4.1.2':[22997, 27094, '1d4c11023ea5b1ac8c61601a6091d4e180fd8146c2fcdb2b94a4e24cd652223b'],
+            'CMPT-4.1.3':[27094, 32968, '84d48d02cd6389f3078b423ecf6b0a742ba86131ebee840aa0e0bf7cbf92c92f'],
+            'CMPT-4.2':[32968, 33165, 'f24922000fd77ad3456a9cfa22307bd19e8ff3a493bfd48e9d665004bdd286c6'],
+            'CMPT-4.2.1':[33165, 34359, 'df2057210647fd8e817778eabfb9f8eaa2d4224feb89f763aa810672d3c8d9f5'],
+            'CMPT-4.2.2':[34359, 36141, '2e15d09c03c319c9714ae6f41f02677ff0bcf6d50343f7e5fcaae9a52dffbf39'],
+            'CMPT-4.3':[36141, 36310, 'a96728980918bb11eeee1108dc825bf3e95c4b480263a11eb888f5a4257ca84c'],
+            'CMPT-4.3.1':[36310, 38910, 'beac974374bc35f41131b0660dfd609efede68c5d8eb5ada5af4426050dfdf4b'],
+            'CMPT-4.3.2':[38910, 44423, '02bc1473c3b3b62eccf6012db4b1d6097a6677663c50d1fafce01ccd3282c548'],
+            'CMPT-4.3.3':[44423, 46303, 'e0cf15df52f9b45378b2d94a7a2faa8c47ff6bb46edb0b8b611838391d3c9adc'],
+            'CMPT-4.3.4':[46303, 65569, '20333e56383231ee3e6901b680c5737eb2e310710fc472801af107451ca991bd'],
+            'CMPT-4.3.5':[65569, 68857, '2c7eb011557fa67407008f2719f4d005c6baec6773e7778b58e17a3cabb2c7b6'],
+            'CMPT-4.3.6':[68857, 76357, 'de1590647102324544d736d284f113cf878f65e29f57c98537b1d909fe0a9858'],
+        }
+        expected_requirements={
+            'CMPT-H-0001':['CMPT-4.1.1', 20091, 20235, '659e9c8bda20adcdf002360706b8caa4b945ed9b5a2c25eebfbd42789f42c862'],
+            'CMPT-M-0001':['CMPT-4.1.1', 20235, 20908, '195b4b12b45a8dd56a86e4138b603bfd478d83157aa9b38249f6a08c300ef1fc'],
+            'CMPT-L-0001':['CMPT-4.1.1', 20908, 21030, '671cc503018e4d6ffb90809709ebfad42652908f2f4467e43989ed12c53a8d90'],
+            'CMPT-L-0002':['CMPT-4.1.1', 21030, 21267, 'b3a25f6d60163b61eb84eaf011aea6ad3efd39bb15c303a0e6b8c70b57b8cd68'],
+            'CMPT-L-0003':['CMPT-4.1.1', 21267, 21552, '6cf94c647994c8b55654b39dad8fc2f5ce9ea04f38d863e765aeb0ec8f95127d'],
+            'CMPT-L-0004':['CMPT-4.1.1', 21552, 21797, '5f5990409d9ac9ddaa8f6211f9db38f29ad9f9b990ee1ac7ec79330e0c20e44d'],
+            'CMPT-L-0005':['CMPT-4.1.1', 21797, 21943, '6e82478a313389fa0dfcee1cded87f2d75303a708e33ed090ff4bbb37c33d7d5'],
+            'CMPT-L-0006':['CMPT-4.1.1', 21943, 22117, 'fb138072ed826aecd86e904d41a7041f0e871bb2a57e545ab39ee836fe9a85d3'],
+            'CMPT-L-0007':['CMPT-4.1.1', 22117, 22461, 'fbaa20bd56c196aa1e911b4ca9362f33c360949ec5958e0c16b11ef181d5a1a0'],
+            'CMPT-L-0008':['CMPT-4.1.1', 22461, 22997, 'ebe2a9c2a5251baa4ea68e0579003ed7f77fc628e43d9460fd0e0c7483c5ed5f'],
+            'CMPT-H-0002':['CMPT-4.1.2', 23022, 23496, 'fa1d57009937a75fa960a0be0ef6732276b2e3df4e7025e5238651ef65bcd4be'],
+            'CMPT-M-0002':['CMPT-4.1.2', 23496, 23792, 'fe31ee327059cf0bd562b76e9867ef961db2253ae4f073ee7634906b257a0992'],
+            'CMPT-M-0003':['CMPT-4.1.2', 23792, 24075, 'e8e85d0d41b76a0fa7929a74f6eebe929b21e73fe104a192d259e1af1faa553a'],
+            'CMPT-M-0004':['CMPT-4.1.2', 24075, 24540, '70623c7ed8a6e2593a34a1bbaed6964edda366e83ef0d552ad45dfa6b5d63444'],
+            'CMPT-M-0005':['CMPT-4.1.2', 24540, 24863, 'f85563f31ee69f6c0234cd6ad9119622c060c5fd46a368e37919d3d00eaecbf2'],
+            'CMPT-M-0006':['CMPT-4.1.2', 24863, 25143, 'c73ceb7aecf66adab3967299a8dd24bc0662669752ec39e01377845d795414b0'],
+            'CMPT-L-0009':['CMPT-4.1.2', 25143, 25358, 'e8b89646338a5dfb92c760b3999c2fc6e9f148a6ad6e283dcf548120a1423741'],
+            'CMPT-L-0010':['CMPT-4.1.2', 25358, 25842, '6b84c11f920c80ba57a38c00c60fe0dfe5f0d4db36f89880c875ffb02ffef829'],
+            'CMPT-L-0011':['CMPT-4.1.2', 25842, 26020, 'f5b351b151a9775adb93586bc817921011f26225606ab795170dfbd94f554349'],
+            'CMPT-L-0012':['CMPT-4.1.2', 26020, 26183, '116f5125e5dba8cec518f554fd511d43259c7e995aa731deedc974559a6dcfba'],
+            'CMPT-L-0013':['CMPT-4.1.2', 26183, 26391, 'c8cf72d31402aae1485c16135504d7d5c54dc7e74db66ec90ad533f45376cfa9'],
+            'CMPT-L-0014':['CMPT-4.1.2', 26391, 26581, 'fb6c426d7d24b1233ae5015b65e74d34e8447be6ab41788bd90d8ba50c3c9329'],
+            'CMPT-L-0015':['CMPT-4.1.2', 26581, 26764, 'd592a1bdab33ffa56857291a48472f442f44b13d4aa600447ea723e02be3fdce'],
+            'CMPT-L-0016':['CMPT-4.1.2', 26764, 27094, '4d9890fd91245226fb533850b6eeb2984dd694ff96e2ef59f3555b0ccd031767'],
+            'CMPT-H-0003':['CMPT-4.1.3', 27128, 27605, '02f240f809b617e437aeafe6d0a484101f448177f8522b28e20fd84438901b9d'],
+            'CMPT-M-0007':['CMPT-4.1.3', 27605, 28154, '8867b112b621da7cf7dff2e7965c613d2146de3e29af309c6341c525aa19eb9a'],
+            'CMPT-M-0008':['CMPT-4.1.3', 28154, 29061, 'c126f0d9ebb919c2ea089dbde08569b5470731eadf9968e21229ea65931e36be'],
+            'CMPT-M-0009':['CMPT-4.1.3', 29061, 29600, '81e52688b25b6f5eedb59cb78f8f82dcbcdc0f89c8409d0d6a031f5d303e5021'],
+            'CMPT-L-0017':['CMPT-4.1.3', 29600, 29775, 'db8ff9d8d05d7de06228428f97b4431b68afea4235407905976de90cf138dde5'],
+            'CMPT-L-0018':['CMPT-4.1.3', 29775, 29976, 'fa7477934d143b6e0072cf58dd56dff3d4f381428377ffac3d9f43c1ab8daf85'],
+            'CMPT-L-0019':['CMPT-4.1.3', 29976, 30288, '6b8fa5c8c1e199cee9369ebc0caa8f1678720ab0d1d3f8e973135f95082366dd'],
+            'CMPT-L-0020':['CMPT-4.1.3', 30288, 30476, 'ac17a78f5d4f162f12145f71018679042ecea2a5eca372c7bb4276b37bf316b8'],
+            'CMPT-L-0021':['CMPT-4.1.3', 30476, 30686, '5769f67108ff1cfeeab989f0477f957d4ab6c591aef38e0ebb1648e77ebc7c7a'],
+            'CMPT-L-0022':['CMPT-4.1.3', 30686, 30896, 'ed374c2ff9fb597f19be78351eec2cf5be8017ad273cbb16b0ade4f2948bd5ea'],
+            'CMPT-L-0023':['CMPT-4.1.3', 30896, 31066, 'b04d9e1db6f4e9e6bef3cc83d35f335ce2f8a71b35dfa588395aee4b9e39773c'],
+            'CMPT-L-0024':['CMPT-4.1.3', 31066, 31240, '96308848ab3a2b9c0d5b27b93abc19d97b7f99af40abae00a43aa7317eabbd51'],
+            'CMPT-L-0025':['CMPT-4.1.3', 31240, 31495, '49b07dcab77758341c096011d96689f6fbb3fcb178bdfa4eb42d35ce68e163a8'],
+            'CMPT-L-0026':['CMPT-4.1.3', 31495, 31737, 'e734dd649ab10218317b2bfcad76b3806a23d8294e4e73d4b7edf26321fcb779'],
+            'CMPT-L-0027':['CMPT-4.1.3', 31737, 32116, 'ae199b8389b8d90e4d57f58026e50be4cf69fa26a823a552bfad303fb839ae21'],
+            'CMPT-L-0028':['CMPT-4.1.3', 32116, 32311, '29f623325ecc9b60c1310b107448519acf7a1a45ccec5bd6f0d663660913b759'],
+            'CMPT-L-0029':['CMPT-4.1.3', 32311, 32580, '8a070a2eda168c24071d731bc0c19c8580e2d7f462654398db2f95e7d037933d'],
+            'CMPT-L-0030':['CMPT-4.1.3', 32580, 32968, '0c253a3bfd47b35e89073ba0604bad17af9ef5dd9839d76f0c9dea145e561108'],
+            'CMPT-H-0004':['CMPT-4.2.1', 33196, 33400, '16a706d6829108458e7c988aeefaa695565fc27b3a05e973bc2e6301b1bf4e47'],
+            'CMPT-M-0010':['CMPT-4.2.1', 33400, 33772, 'd8e094e1c68ff0b12775f784a33fa213b2b8a0dbeb4de40dabafadfa75354164'],
+            'CMPT-L-0031':['CMPT-4.2.1', 33772, 34052, '9aea6cf1cc8960ca93612ca6a40489cdcf09ee94e3c475e668fa3e018b85d974'],
+            'CMPT-L-0032':['CMPT-4.2.1', 34052, 34359, 'd1ae51e2c43b29c5bbc87879e4d8cc5abee2e0bde6a411e0570c8a0c4f1f97a2'],
+            'CMPT-H-0005':['CMPT-4.2.2', 34395, 34631, '1d2a6905fc3bc788fcd7fa4c1bfaed34477cb7d7dab16b200fa84d77e19b1524'],
+            'CMPT-M-0011':['CMPT-4.2.2', 34631, 35047, '09cbdec7d59103d22c39ae72ea781af7b8ee4aebe281c44e5f93fac0e89e38b3'],
+            'CMPT-M-0012':['CMPT-4.2.2', 35047, 35344, '71dfc35b7962c0abf8c055b3679ff33cc6111e0497bbad348314cb35773470b6'],
+            'CMPT-L-0033':['CMPT-4.2.2', 35344, 35830, '90d110f0d0304f32c5fbcea1bd459862164ae0d3a261cbd852b24b0888d5110d'],
+            'CMPT-L-0034':['CMPT-4.2.2', 35830, 36141, '7e2751bbdfc356c3c8341b5883c01747be31910a18a66354e2221f0ae219c548'],
+            'CMPT-H-0006':['CMPT-4.3.1', 36333, 36532, '3ca52a3c6b5ea8297a410d4a7d1ec3f6f677e6756ab372af3f681e388c412294'],
+            'CMPT-M-0013':['CMPT-4.3.1', 36561, 37309, '4668a54659db0a99b6286b6034b03fe5ec9067cab73cd0930aa474bd2047da4f'],
+            'CMPT-L-0035':['CMPT-4.3.1', 37309, 37512, '7dd5e21ad92a9ceb182b829f702520e917d73108f18f1320a64f5da4a75a3e72'],
+            'CMPT-L-0036':['CMPT-4.3.1', 37512, 37989, 'a3bea9c9898601d8e8eacc1015cf4c52414c1999f4ea289f87e3fd2f042c2fef'],
+            'CMPT-L-0037':['CMPT-4.3.1', 37989, 38205, 'de9babc43d584fe7997c64c7d675db18943282772a4df8a75de6db6eeb7e0c1a'],
+            'CMPT-M-0014':['CMPT-4.3.1', 38230, 38598, 'd231eed12d2056e11725f702878b570adf752b06f266ce858fa8947e29bf29da'],
+            'CMPT-L-0038':['CMPT-4.3.1', 38598, 38910, '9a717f15f8baf9482087a4dcf87b95bcf22a09c1faeec077a6258e75f3f2f1d1'],
+            'CMPT-H-0007':['CMPT-4.3.2', 38942, 39182, '76195c005e63f7119aa1e2c96dd9ef15f8234c91f27a2a887052ce0132e2fda5'],
+            'CMPT-M-0015':['CMPT-4.3.2', 39211, 40026, '451ba87c46f407ae887a13732ec303239eb69d58835db862e6ead24b20d8706c'],
+            'CMPT-L-0041':['CMPT-4.3.2', 40026, 40261, '905b8bc216e452f88d715163d9976f0e0ab7811935bf629c98e314082c8c9ef2'],
+            'CMPT-L-0042':['CMPT-4.3.2', 40261, 40557, '01627f87493bb5794eb9fd3020a23e6bbf0b6a429217fca14d89d94e31990024'],
+            'CMPT-L-0043':['CMPT-4.3.2', 40557, 40834, 'a826292532f66dd1e6e8b213681fc6aee54f4a2d7b655f62d4ea7e22f7f3db29'],
+            'CMPT-L-0169':['CMPT-4.3.2', 40834, 41055, '464a4d46429867c5c6829f3289c6dbce6115ea854536cb7cac58b12ee2f815a5'],
+            'CMPT-L-0045':['CMPT-4.3.2', 41055, 41388, 'f46a500ccff0788211f163bf562f2ef39ddc9c93f2acc30844da0f3b50129013'],
+            'CMPT-L-0046':['CMPT-4.3.2', 41388, 41700, 'f909cc68caf881348fdc69437b26d87f76a99d71c34874f49afdfbdecde34756'],
+            'CMPT-M-0017':['CMPT-4.3.2', 41725, 42288, '04f3131c97d5501f4b5123ceb0a6e393d53bbaa32427d4b7f6573dd8850b49c9'],
+            'CMPT-L-0047':['CMPT-4.3.2', 42288, 42521, '9c0d833820738e11a500e3617fed36f88fd46bfd02e45aedcb6746a3813453c9'],
+            'CMPT-L-0048':['CMPT-4.3.2', 42521, 42877, '39b485ec0d413df026131bd6ba2036c6cb8adc01f1accb920518486a2c1c2038'],
+            'CMPT-L-0049':['CMPT-4.3.2', 42877, 43141, 'd082c604446cb719dc310c4a9127c85d5396635827be36789789b08a286e9488'],
+            'CMPT-L-0050':['CMPT-4.3.2', 43141, 43368, 'fbc5784a922f8b13d699ae0bd5dcab8b67440f051b5b9634e3f5f4471edfe4c5'],
+            'CMPT-L-0051':['CMPT-4.3.2', 43368, 43656, '7de8a1bef549073f63c1908daca167fe73f96fb340e8d5191fccfce4a8dd89fb'],
+            'CMPT-L-0052':['CMPT-4.3.2', 43656, 44068, 'ebd79f54629987e4b7b5a77ec40edc992dff3d761f6b42f4be5db586aa3d2622'],
+            'CMPT-L-0053':['CMPT-4.3.2', 44068, 44423, '4d19fc3864b5d83a512d2b138b5d851be4b38b131264e04cc8c808b8bebe2cdf'],
+            'CMPT-H-0008':['CMPT-4.3.3', 44593, 44832, '8c16dafe3c484f6097632175c9a10f28da00d3ccfe1baf24814ea145b378ad09'],
+            'CMPT-M-0018':['CMPT-4.3.3', 44832, 45251, 'ea87e8fb484acc539c9acdec9cd027a1bc90ccb2c6e7886ef50eb032a4583fe7'],
+            'CMPT-M-0019':['CMPT-4.3.3', 45251, 45596, 'df46148db5d64edeb485ad686a54bf672b31173ea1d3f618d56f841a283478ed'],
+            'CMPT-L-0054':['CMPT-4.3.3', 45596, 46001, '7df675c367485792ce5f889d2533a548c4e2b64b263598da454e6cecf1ee41ad'],
+            'CMPT-L-0055':['CMPT-4.3.3', 46001, 46303, '1b846aa9510fe588669fc582e282f34051c39c8444b93ffcddf571060d5019ff'],
+            'CMPT-H-0009':['CMPT-4.3.4', 46326, 47414, '973ff75e4844518772d9cae29b40c50dfba26347911f2fa2374e75967e432200'],
+            'CMPT-M-0020':['CMPT-4.3.4', 47443, 47962, '7de49b03c47d80c3368cdd7fc01be1ce9d151fe28a51fa46f529d5e18201edaa'],
+            'CMPT-M-0021':['CMPT-4.3.4', 47962, 48329, '2c4fa6e0fb50196266355fb9d10102c3fb5145d6047691ded11978fe413a4d85'],
+            'CMPT-L-0056':['CMPT-4.3.4', 48329, 48591, 'ac7464275867c9f9ed7e416f7c7f4f51a2f413db97dac7efb8ee93dcc596ec30'],
+            'CMPT-L-0057':['CMPT-4.3.4', 48591, 48906, '832613392467ecff0ea7b0d06304653cceda3d79f15490bdaa88056725212274'],
+            'CMPT-M-0022':['CMPT-4.3.4', 48931, 49544, '510846f46f517523fab923daab01d8f80e4aae60d3cd79bddcda64aa31a23c58'],
+            'CMPT-M-0023':['CMPT-4.3.4', 49544, 50145, '25df778b87c1222dabad86774752e11e4ef94052b893c429de42c8cf20bc24ee'],
+            'CMPT-M-0024':['CMPT-4.3.4', 50145, 50860, '00d09ba7b876767ee2bf77ebce7f6dd42720918132fc7f5976b08311b9dc4003'],
+            'CMPT-M-0025':['CMPT-4.3.4', 50860, 51489, 'ee5e3af70536df551e99d6f258491d9d335510d4a7863b29a4176e6a065f0264'],
+            'CMPT-M-0026':['CMPT-4.3.4', 51489, 52131, 'e689636a3189397c4ecdc1206ef7aabefa509784990bb9912462e6cba040e8a0'],
+            'CMPT-M-0027':['CMPT-4.3.4', 52131, 52817, 'd4c2c9238c7389f1ab3e3cddec989f0c6ebac1bb154526926258344bd8a8c65d'],
+            'CMPT-M-0028':['CMPT-4.3.4', 52817, 53179, '7e4ef73cb13a3f84aa332aae5d716e419fb4e503ce9b0bdd44253141e76f05ca'],
+            'CMPT-M-0029':['CMPT-4.3.4', 53179, 53525, 'da7ddee5abbc0b0a5a1390a430bba565a2e3d070a7216c587c536cebd4ad024c'],
+            'CMPT-M-0030':['CMPT-4.3.4', 53525, 54219, '007e501d72923d90f1a21876974bd9455d08475b83d28c50977c26ce1ef0eeb7'],
+            'CMPT-M-0031':['CMPT-4.3.4', 54219, 54604, '33b1835f1836bbdd773e85534a9145e6814583bed57c9a5931f724aea63a1d6b'],
+            'CMPT-L-0058':['CMPT-4.3.4', 54604, 55446, '8764007247b4f3cbd451d6870ee24a70b0bc56045aefd25803a891bbf5d5f70e'],
+            'CMPT-L-0059':['CMPT-4.3.4', 55446, 55939, '56bef3165f28e52caffca4ac74e53aa7048b020db9afcc84946496e36bbcb013'],
+            'CMPT-L-0060':['CMPT-4.3.4', 55939, 56208, '4948643c1b50caf2438b38670cf6c5b5f9877fa01cb88feab8a18efbd73844f9'],
+            'CMPT-L-0061':['CMPT-4.3.4', 56208, 56533, '2dad066e9017159131ec45c4e3a902acb412a5f0aa73eb56a7f829fc09859f19'],
+            'CMPT-L-0062':['CMPT-4.3.4', 56533, 57110, '65178bbb478139a0937108c4b62e05187b55a8c384ec12f7e49999626ac4777e'],
+            'CMPT-L-0064':['CMPT-4.3.4', 57110, 57461, '4e1a2c360dcbb11a44cff8298372f272f06b3fd89b81e213a352b437384e6ea1'],
+            'CMPT-L-0065':['CMPT-4.3.4', 57461, 57868, 'e5204f472db6f01b9a1a0576fb6f61a171cb8b338dc3226536f457fa13ffee1a'],
+            'CMPT-L-0066':['CMPT-4.3.4', 57868, 58223, '052770c4ff2ba90735cd6975fcec4c0560a5f633dc59eb58cb7ecd5f7ab06af0'],
+            'CMPT-L-0067':['CMPT-4.3.4', 58223, 58521, 'be636172faffc9665f1d2551f7d45a3062482526f32a6fb0754e916fd2159645'],
+            'CMPT-L-0068':['CMPT-4.3.4', 58521, 58879, '557bce6c7f98e0f3984b03cbf68a0935e34e9d9a665144da2a4e853848fc414e'],
+            'CMPT-L-0069':['CMPT-4.3.4', 58879, 59285, 'eb0fc1a8d0eaf1de781e0a9e2a6a17e790e8508a6b932dd03ed13b27739f82a8'],
+            'CMPT-L-0070':['CMPT-4.3.4', 59285, 59647, 'd3f7c03629d42d135db0c5cf927b916d2a055b88745716ea4a8f75c36b7ef1d8'],
+            'CMPT-L-0071':['CMPT-4.3.4', 59647, 60147, '80fdc6c4caa852eba9058b9351bc71f9a8168ff2b77f6bd91f39152402f074cc'],
+            'CMPT-L-0072':['CMPT-4.3.4', 60147, 60633, '7d17675bb510d4ebaafe11215d401674eb43a0372402a36ae6acd3b4a8c1e3d9'],
+            'CMPT-L-0073':['CMPT-4.3.4', 60633, 61104, '5dd31c9ebb97ca54ee5663891f5aee9dcf6bd6154bbacc740f03b74f5cb62943'],
+            'CMPT-L-0074':['CMPT-4.3.4', 61104, 61698, 'cd18ec14e7891f2c549130a393f35fc576b3f45d9882f28100e9652c7e5f08cf'],
+            'CMPT-L-0075':['CMPT-4.3.4', 61698, 62073, 'f9abd6370a17a39884d29252b3f3b9fe333dd892ab59689f5ea21f8f9472302e'],
+            'CMPT-L-0076':['CMPT-4.3.4', 62073, 62500, '50bc51cbcd4c80f108fa46da9fd22e255f24ef40e66a65258664a3847fed17d4'],
+            'CMPT-L-0077':['CMPT-4.3.4', 62500, 62914, '3904c82f4dc5b87723055ad310a9f3d482528eaf63d78c4ccb6adcd0914ed4d9'],
+            'CMPT-L-0078':['CMPT-4.3.4', 62914, 63468, '7640e8c8294fcde382534a0b0221ccc2242fa643c3ea86bf40dbb20964826324'],
+            'CMPT-L-0079':['CMPT-4.3.4', 63468, 63890, '95905322e315ecdde00682f9f0a39cf789e5de17d59a5f8ec2f773d704978fa5'],
+            'CMPT-L-0080':['CMPT-4.3.4', 63890, 64336, 'e48e04589939f726c53fbcd071886a0b644c7cea1a3c28bf3d787e84f07a5718'],
+            'CMPT-L-0081':['CMPT-4.3.4', 64336, 64922, 'b92a83af9694a94ecda67e9af35a07643f22f993e349abcc805d6490608814bc'],
+            'CMPT-L-0082':['CMPT-4.3.4', 64922, 65294, '13b077c884a147e2e7b44d9a5a9ac3f2f091e7d1c931fac94b8f4fcd3e649346'],
+            'CMPT-L-0170':['CMPT-4.3.4', 65294, 65569, '7dc22dc67c22b2f098f62412c08715ee042e4fb097a26beeb12390b625c65366'],
+            'CMPT-H-0010':['CMPT-4.3.5', 65608, 65828, '85e6f20027daa63af4839bfdeebdc7ab5ad939e5db7e2a11c39e19b98b7f1e58'],
+            'CMPT-M-0032':['CMPT-4.3.5', 65828, 66808, '1d454f2a9b4faf819054f1e72a22133fafd980c4b7555b5ab0a50a59730f7b78'],
+            'CMPT-L-0083':['CMPT-4.3.5', 66808, 67106, 'ded7ad674e705c8f0e31e049ce912e7072b4cd6253ff02c34b1653e8169a03b1'],
+            'CMPT-L-0084':['CMPT-4.3.5', 67106, 67401, 'c3e62f099b8d64c6840221fd6ee17645686a52d02489d48ed4808fb57316ce0c'],
+            'CMPT-L-0085':['CMPT-4.3.5', 67401, 67714, '004810250c33e6be679032f80264361f4dab7ee4ee1ed732c4e65486d0b12b52'],
+            'CMPT-L-0086':['CMPT-4.3.5', 67714, 68057, 'e0435f086c92053464a37cd591d8b80ef7b8504d7c3b29b353d6187a19714837'],
+            'CMPT-L-0087':['CMPT-4.3.5', 68057, 68498, 'f1c2a80fc35837b41860fd94b453dae6ef8f847302435f263b5529d44856e1df'],
+            'CMPT-L-0088':['CMPT-4.3.5', 68498, 68857, 'e8bbe3d2168e4f4b2568c4592ba555d0508e1c69813b744026b253683b431c5e'],
+            'CMPT-H-0011':['CMPT-4.3.6', 68886, 69250, 'e7be2e502b4a248ba2a2717b5ca6b3e9b49d6bf8441c5c1d1ac7fe38f8cd9b1c'],
+            'CMPT-M-0033':['CMPT-4.3.6', 69279, 69754, '716c3ba5fce130fd9cca9bafa74b75ae7594f798f9a4cdf3e196b0a45efaf995'],
+            'CMPT-M-0034':['CMPT-4.3.6', 69754, 70214, '437057ac9eae3bda9e00a9f13be87352355430e3f704f3485318693ba289955d'],
+            'CMPT-L-0089':['CMPT-4.3.6', 70214, 70458, 'd36b60d713fe97608629fb3d1db32013ed9eada6aba192aff65dc0642d8e0927'],
+            'CMPT-L-0090':['CMPT-4.3.6', 70458, 70742, '9a439c5ce5320982a4f3b52ce7162c8bb014538650a2cd9ecf6bae43c264cd90'],
+            'CMPT-L-0091':['CMPT-4.3.6', 70742, 71034, '3c24b8d1817331d5c29b3df62b27f48b6d319e744d15326313161fee29050224'],
+            'CMPT-M-0035':['CMPT-4.3.6', 71059, 71541, '3329737a23c82c784bfa247d4dad305f3e6b45920fbdc927625e2ca0ca1b0306'],
+            'CMPT-M-0036':['CMPT-4.3.6', 71541, 72480, '6cac205b343eee41f941a495c858ac0dd5aad3f3921f2e43e23af7b4fddc1ae2'],
+            'CMPT-M-0037':['CMPT-4.3.6', 72480, 73263, '20dcbf3745bf1839450bfff08136f797de12e49504ef1aea7610cd74190ada0d'],
+            'CMPT-L-0092':['CMPT-4.3.6', 73263, 73643, 'c7790e93f0f31c5431aa670f960de23dc2d5d23536af907982adb4dfbf37e183'],
+            'CMPT-L-0093':['CMPT-4.3.6', 73643, 74249, '98d47cf026cbaac699e6deff00cc84c8179d14d095250428a5c81c7134546243'],
+            'CMPT-L-0094':['CMPT-4.3.6', 74249, 74608, '47ceea6594edd6ed61f83cef34c1357390715b7c022f89e8f42de84250ea0267'],
+            'CMPT-L-0095':['CMPT-4.3.6', 74608, 74969, '5d5dd08e9b45cd5eba78dfe0588a42c17978158737617a2b91befccaca4ee364'],
+            'CMPT-L-0096':['CMPT-4.3.6', 74969, 75374, 'ba606a221f8f35e57d2d1f001227ec10b79ba83c0f907b9251213ea0e3ac1cc2'],
+            'CMPT-L-0097':['CMPT-4.3.6', 75374, 75669, '85cf9c6ab2cee948f0cbe656f5f6313b0c3bbf147d0b08f22ff68d49f0e6038d'],
+            'CMPT-L-0098':['CMPT-4.3.6', 75669, 76013, 'ce17a1c7f9513c579c8c40b356e369569c5186ef0ca4411035dd420aee525ebb'],
+            'CMPT-L-0099':['CMPT-4.3.6', 76013, 76357, '4e7d287162a85a334e90dbe983c9947aa09db267742b7efbb5281a594cc69b6b'],
+        }
+        assert set(e['companion_sources'])==set(ae['companion_sources'])|{'CMPT'}
+        for key,count in [('INTRO',18),('WHITE',30),('SDD',27),('ICD',39),('CERT',11),('IPL3',8)]:
+            assert e['companion_sources'][key]==ae['companion_sources'][key] and len(e['companion_sources'][key]['records'])==count,key
+        changed_evidence={'checkpoint','review_pass','scope','next_task','source_input_commit','comparison_policy','current_batch','validation','source_wording_notes','companion_sources','completed_batch_history','master_revisions','candidate_revisions'}
+        assert set(ae)<=set(e)<=set(ae)|changed_evidence
+        for k,v in ae.items():
+            if k not in changed_evidence:assert e[k]==v,k
+        history=ae.get('completed_batch_history',[])
+        assert e['completed_batch_history'][:-1]==history
+        assert e['completed_batch_history'][-1]=={k:ae[k] for k in ['checkpoint','source_input_commit','current_batch','validation','comparison_policy','master_revisions','candidate_revisions']}
+        for k in ['sources','census_method','reconciliation','row_targets','legacy_records','specific_questions','baseline','legend']:assert r[k]==a[k],k
+        assert len(r['row_targets'])==31 and len(r['legacy_records'])==25 and len(r['specific_questions'])==6
+        oldblocks={x['id']:x for x in a['source_blocks']};blocks={x['id']:x for x in r['source_blocks']}
+        assert len(blocks)==len(r['source_blocks'])==len(oldblocks)==279 and list(blocks)==list(oldblocks)
+        allcmpt=[x['id'] for x in a['source_blocks'] if x['source']=='CMPT']
+        assigned=list(expected_spans);pending={'CMPT-4.0','CMPT-4.3'}
+        assert len(allcmpt)==34 and allcmpt[:21]==assigned and len(assigned)==21
+        assert p['assigned_source_blocks']==e['current_batch']['assigned_source_blocks']==ast['nextSourceBlocks']==assigned
+        assert {key for key in blocks if blocks[key]!=oldblocks[key]}==set(assigned)
+        assert len(set(blocks)-set(assigned))==258
+        assert [key for key in assigned if oldblocks[key]['review_status'].startswith('REVIEWED_')]==['CMPT-4.1.1']
+        for key in assigned:
+            before=oldblocks[key];after=blocks[key]
+            allowed_fields={'review_status','reviewed_in_batch','evidence_file','evidence_record','review_boundary','own_span_review_complete','pending_descendant_blocks'}
+            if key=='CMPT-4.1.1':allowed_fields.add('previous_review_status')
+            assert set(before)<=set(after)<=set(before)|allowed_fields,key
+            for k,v in before.items():
+                if k!='review_status':assert after[k]==v,(key,k)
+            expected_status='REVIEWED_OWN_SPAN_CHILD_RECONCILIATION_PENDING' if key in pending else 'REVIEWED_SOURCE_SUPPORTED'
+            assert after['review_status']==expected_status and after['reviewed_in_batch']==p['checkpoint'],key
+            assert after['evidence_file']==evidence_name and after['evidence_record']==key
+            assert after['own_span_review_complete'] is True
+        assert blocks['CMPT-4.1.1']['owner_pass']=='ISA-02' and blocks['CMPT-4.1.1']['previous_review_status']=='REVIEWED_IN_ISA02'
+        assert blocks['CMPT-4.1.1']['review_note']==oldblocks['CMPT-4.1.1']['review_note']
+        guide=e['companion_sources']['CMPT'];records=guide['records'];meta=next(x for x in a['sources'] if x['id']=='CMPT')
+        assert guide['source_pdf_sha256']=='aaf0ea80e62111767deb4bae667bc878d75af86b008f4c4f2b6dc604b148d087'
+        assert guide['source_pdf_bytes']==1238754 and guide['source_pdf_page_count']==meta['page_count']==112
+        assert guide['source_filename']==meta['filename'] and guide['source_file_id']==meta['file_id']
+        assert guide['source_revision']==meta['release']+'r'+str(meta['revision']) and guide['source_document_date']==meta['date']
+        assert guide['assigned_ids']==[x['id'] for x in records]==assigned and len({x['id'] for x in records})==21
+        for x in records:
+            before=oldblocks[x['id']];start,end,digest=expected_spans[x['id']]
+            assert x['section']==before['section'] and x['title']==before['title']
+            assert sha(x['source_span_text'].encode())==x['source_span_sha256']==digest,x['id']
+            assert (x['source_span_char_start'],x['source_span_char_end'])==(start,end) and len(x['source_span_text'])==end-start
+            assert x.get('source_pdf_sha256',guide['source_pdf_sha256'])==guide['source_pdf_sha256'] and x['owner_adoption']=='NO_DIM_CONTENT_ADOPTION'
+            expected_status='REVIEWED_OWN_SPAN_CHILD_RECONCILIATION_PENDING' if x['id'] in pending else 'REVIEWED_SOURCE_SUPPORTED'
+            assert x['review_status']==expected_status,x['id']
+            children=x['registered_child_blocks'];unfinished=[key for key in children if key not in assigned]
+            reconciliation=x['parent_reconciliation']
+            assert reconciliation['registered_child_blocks']==children
+            assert reconciliation['own_span_complete'] is True and x['source_own_span_reviewed'] is True
+            assert reconciliation['pending_descendants']==blocks[x['id']]['pending_descendant_blocks']==unfinished
+            assert reconciliation['complete']==(not unfinished)
+            assert reconciliation['pending_descendants_delivery']==(17 if unfinished else None)
+            assert reconciliation['assigned_descendants_reviewed']==[key for key in children if key in assigned]
+            assert bool(unfinished)==(x['id'] in pending)
+            assert x['new_source_block_completion_credit']==(x['id']!='CMPT-4.1.1' and not unfinished)
+        assert all(left['source_span_char_end']==right['source_span_char_start'] for left,right in zip(records,records[1:]))
+        assert records[-1]['source_span_char_end']==76357 and records[-1]['id']=='CMPT-4.3.6'
+        inspection=guide['source_inspection']
+        assert inspection['full_pdf_pages_reviewed']==list(range(1,50))
+        assert inspection['partial_pdf_pages_reviewed']==[{'pdf_page':50,'end_before_section':'4.3.7','assigned_span_end':76357}]
+        assert inspection['text_and_visual_page_parts_reviewed'] is True
+        assert inspection['figures_reviewed']==[] and inspection['tables_reviewed']==[1,2,3]
+        assert inspection['partition_inspections'] and not inspection['external_references_followed']
+        assert not inspection['protocol_or_certificate_operations_executed'] and not inspection['runtime_or_conformance_tested']
+        assert guide['figures']==[] and [x['number'] for x in guide['table_manifests']]==[1,2,3]
+        assert all(x['visual_reviewed'] for x in guide['table_manifests']) and guide['front_matter_review']
+        requirements=[x for rec in records for x in rec['native_requirements']];reqby={x['id']:x for x in requirements}
+        assert len(requirements)==len(reqby)==len(expected_requirements)==144 and list(reqby)==list(expected_requirements)
+        assert Counter(x['id'].split('-')[1] for x in requirements)=={'H':11,'M':36,'L':97}
+        recordby={x['id']:x for x in records};modals=Counter();parent_edges=[];child_edges=[]
+        for x in requirements:
+            sid,start,end,digest=expected_requirements[x['id']]
+            assert x['source_block_id']==sid and x['source_char_start']==start and x['source_char_end']==end
+            native=x['source_requirement_text'];assert sha(native.encode())==x['source_requirement_sha256']==digest
+            section=recordby[sid];relative=start-section['source_span_char_start']
+            assert section['source_span_text'][relative:relative+end-start]==native and len(native)==end-start
+            header=re.search(r'(?m)(?:^|(?<=\f))[ \t]{0,3}\[(CMPT-[HML]-\d{4})\][ \t]+([^\n]+)',native)
+            assert header and header.group(1)==x['id'] and header.group(2).strip()==x['title_as_printed']
+            tail=native[header.end():];labels=list(re.finditer(r'(?m)(?:^|(?<=\f))[ \t]*(Parent|Child) Requirements:',tail))
+            refs={'Parent':[],'Child':[]}
+            for i,label in enumerate(labels):
+                chunk=tail[label.end():labels[i+1].start() if i+1<len(labels) else len(tail)]
+                refs[label.group(1)].extend(re.findall(r'\[(CMPT-[HML]-\d{4})\]',chunk))
+            assert refs['Parent']==x['parent_requirement_ids'] and refs['Child']==x['child_requirement_ids'],x['id']
+            body=tail[:labels[0].start()] if labels else tail
+            specification=re.split(r'(?m)(?:^|(?<=\f))[ \t]*Notes?:',body,1)[0]
+            modality=re.findall(r'\b(shall|should|may)\b',specification,re.I)
+            assert len(modality)==1,(x['id'],modality)
+            modals[modality[0].lower()]+=1
+            assert x['normative_modality_normalized']==modality[0].lower(),x['id']
+            assert x['new_primary_DMS_review_credit'] is False
+            assert all(key in reqby for key in refs['Parent']+refs['Child'])
+            parent_edges.extend((key,x['id']) for key in refs['Parent'])
+            child_edges.extend((x['id'],key) for key in refs['Child'])
+        assert modals=={'shall':138,'should':5,'may':1},modals
+        assert len(parent_edges)==len(child_edges)==144 and Counter(parent_edges)==Counter(child_edges)
+        assert len(set(parent_edges))==144
+        for rec in records:
+            expected=[x['id'] for x in requirements if x['source_block_id']==rec['id']]
+            assert rec['native_requirement_ids']==expected and rec['native_requirement_count']==len(expected)
+            assert [x['id'] for x in rec['native_requirements']]==expected
+            assert all(x==reqby[x['id']] for x in rec['native_requirements'])
+        assert sum(x['source_block_id']=='CMPT-4.1.1' for x in requirements)==10
+        indexkeys=['id','title_as_printed','source_block_id','source_char_start','source_char_end','source_requirement_sha256','parent_requirement_ids','child_requirement_ids','normative_modality_normalized']
+        assert guide['native_requirement_index']==[{key:x[key] for key in indexkeys} for x in requirements]
+        hierarchy=guide['requirement_hierarchy']
+        assert hierarchy['definition_count']==144 and hierarchy['level_counts']=={'H':11,'M':36,'L':97}
+        assert hierarchy['normative_modality_counts']==dict(modals)
+        assert hierarchy['parent_edges']==[list(edge) for edge in parent_edges]
+        assert hierarchy['parent_edge_count']==hierarchy['child_edge_count']==144
+        assert hierarchy['all_assigned_edges_reciprocal'] is True and hierarchy['all_linked_requirement_ids_present'] is True
+        assert hierarchy['repeated_parent_heading_ids']==['CMPT-L-0064','CMPT-L-0066','CMPT-L-0068','CMPT-L-0070']
+        assert hierarchy['notes_are_specification_text'] is False and hierarchy['relationship_mentions_count_as_definitions'] is False
+        for key in hierarchy['repeated_parent_heading_ids']:
+            assert len(re.findall(r'(?m)(?:^|(?<=\f))[ \t]*Parent Requirements:',reqby[key]['source_requirement_text']))==2
+        assert guide['document_review_state']=='PARTIAL_DOCUMENT_REVIEW_ASSIGNED_FIRST_DELIVERY_COMPLETE'
+        assert guide['registered_source_blocks_total']==34 and guide['reviewed_own_span_ids']==assigned
+        assert guide['remaining_registered_ids']==allcmpt[21:] and guide['pending_parent_ids']==['CMPT-4.0','CMPT-4.3']
+        assert guide['reconciliation']=={'new_primary_DMS_reviews':0,'previously_reviewed_blocks_reconciled':['CMPT-4.1.1'],
+            'new_own_span_reviews':20,'fully_reconciled_reviewed_blocks':19,'new_fully_reconciled_blocks':18,
+            'pending_parent_blocks':['CMPT-4.0','CMPT-4.3'],'reused_native_identifier_requirements':10,
+            'prior_DMS_and_companion_records_modified':False,'final_original_row_audit_closed':False}
+        assert guide['validation']=={'assigned_unique_source_spans':21,'native_unique_definitions':144,'all_source_hashes_match':True,
+            'all_requirement_hashes_match':True,'omissions':0,'duplicates':0,'whole_document_complete':False}
+        assert recordby['CMPT-4.1.1']['reuse_previous_review']=={'checkpoint':'ISA-02','evidence_file':'ISA02_Identity_and_Properties_Evidence_07NOV2026.json',
+            'evidence_record':'ISA02-UCI','previous_review_status':'REVIEWED_IN_ISA02','native_requirement_definitions_reconciled':10,'new_primary_credit':False}
+        assert r['supporting_source_notes'][:len(a['supporting_source_notes'])]==a['supporting_source_notes']
+        assert e['source_wording_notes'][:len(ae['source_wording_notes'])]==ae['source_wording_notes']
+        newnotes=r['supporting_source_notes'][len(a['supporting_source_notes']):]
+        assert newnotes==e['source_wording_notes'][len(ae['source_wording_notes']):]==guide['source_wording_notes']
+        assert len({x['id'] for x in r['supporting_source_notes']})==len(r['supporting_source_notes'])
+        assert len({x['id'] for x in newnotes})==len(newnotes)==26
+        assert len(r['supporting_source_notes'])==127 and len(e['source_wording_notes'])==101
+        expected_note_ids={f'CMPT-F-N{i:03}' for i in range(1,11)}|{f'CMPT-CONN-N{i:03}' for i in range(1,5)}|{f'CMPT-CFG-N{i:03}' for i in range(1,13)}
+        assert {x['id'] for x in newnotes}==expected_note_ids
+        assert all(x['new_primary_question'] is False and x['additional_delivery_created'] is False for x in newnotes)
+        assert s['supportingWordingNotes']==m['ISAEvidence']['supportingWordingNotes']==len(r['supporting_source_notes'])
+        batch=e['current_batch']
+        assert batch['accelerated_delivery']==16 and batch['assigned_ids']==[] and batch['assigned_source_blocks']==assigned
+        assert batch['pattern_rows']==batch['prior_displayed_ISA_cells_changed']==2 and batch['existing_candidate_patterns_refined']==9
+        assert batch['new_primary_DMS_reviews']==0
+        assert batch['previously_reviewed_source_blocks_reconciled']==['CMPT-4.1.1']
+        assert batch['component_requirement_own_spans_reviewed']==21 and batch['native_requirement_definitions']==144
+        assert batch['native_requirement_levels']==hierarchy['level_counts'] and batch['native_requirement_modalities']==dict(modals)
+        assert batch['requirement_hierarchy_edges']==144
+        assert (batch['full_source_pages'],batch['partial_source_page'],batch['partial_source_page_end_before'])==(49,50,'4.3.7')
+        assert (batch['figures'],batch['tables'],batch['new_own_span_reviews'],batch['fully_reconciled_source_blocks'],batch['new_fully_reconciled_source_blocks'])==(0,3,20,19,18)
+        assert batch['pending_parent_blocks']==['CMPT-4.0','CMPT-4.3']
+        validation=e['validation']
+        for key in ['all21_assigned_own_spans_reviewed','all21_source_span_hashes_match','all144_native_requirement_hashes_match',
+            'all144_requirement_edges_reciprocal','all_assigned_page_parts_and_three_tables_reviewed','all480_catalogue_outcomes_preserved',
+            'all30_service_category_records_preserved','all_six_prior_companion_objects_preserved','all258_other_source_blocks_preserved','all327_prior_row_ids_retained']:assert validation[key] is True,key
+        assert validation['new_candidate_rows']==validation['prior_displayed_ISA_cells_changed']==2
+        assert validation['existing_candidate_patterns_refined']==9 and validation['source_wording_notes_added']==26
+        for key in ['other_donor_or_case_cells_changed','original_row_audit_closures_added','new_primary_definition_questions']:assert validation[key]==0,key
+        for key in ['workbook_rebuilt','whole_component_requirements_document_complete','later_children_or_appendices_marked_reviewed',
+            'protocol_or_certificate_operations_executed','runtime_or_conformance_tested']:assert validation[key] is False,key
+        assert r['integration_batches'][:-1]==a['integration_batches']
+        assert r['integration_batches'][-1]=={'batch':p['checkpoint'],'state':'COMPLETE','ids':[],'source_blocks':assigned,
+            'new_semantic_reviews':0,'own_source_spans_reviewed':21,'native_requirement_definitions':144,
+            'new_own_span_reviews':20,'fully_reconciled_source_blocks':19,'new_fully_reconciled_source_blocks':18,
+            'previously_reviewed_source_blocks_reconciled':['CMPT-4.1.1'],'pending_parent_blocks':['CMPT-4.0','CMPT-4.3'],
+            'figures_reviewed':0,'tables_reviewed':3,'new_candidate_rows':2,'existing_candidate_patterns_refined':9,
+            'prior_displayed_ISA_cells_changed':2,'workbook_refreshed':False,'master_text_updated':True}
+        assert m['review_grid']==r['review_grid'] and m['review_sections']==r['review_sections']
+        grid=r['review_grid'];assert len(grid)-len(r['review_sections'])-2==329 and all(len(row)==14 for row in grid)
+        oldrows={x['row_id']:x for x in am['rows']};rows={x['row_id']:x for x in m['rows']}
+        additions={'ISA-K-CAPABILITY-STATE','ISA-A-TIME-BASIS'}
+        assert len(rows)==len(m['rows'])==329 and len(oldrows)==327 and set(rows)-set(oldrows)==additions and set(oldrows)<=set(rows)
+        permitted={'ISA-A-CERTIFICATE-TRUST':{'display','boundary'},'ISA-A-BASELINE-CAPABILITIES':{'display','boundary'},'ISA-T-CONFIG':{'definition','boundary'},'ISA-A-PARTICIPATION-LIFECYCLE':{'boundary'},'ISA-A-CONNECTION-PRESENTATION':{'boundary'},'ISA-T-REGISTRATION':{'boundary'},'ISA-T-STATUS':{'boundary'},'ISA-K-CAPABILITIES':{'boundary'},'ISA-K-OBSERVABLE-DECL':{'boundary'}}
+        revisions={x['row_id']:x for x in e['master_revisions']}
+        assert len(revisions)==len(e['master_revisions'])==9 and set(revisions)==set(permitted)
+        displayed_changes=set()
+        for key,before in oldrows.items():
+            after=rows[key];fields=permitted.get(key,set())
+            assert set(before)<=set(after)<=set(before)|{'display_row','additional_ISA_requirement_evidence'},key
+            for k,v in before.items():
+                if k not in fields|{'display_row','additional_ISA_requirement_evidence'}:assert after[k]==v,(key,k)
+            refs=before.get('additional_ISA_requirement_evidence',[]);newrefs=after.get('additional_ISA_requirement_evidence',[])
+            assert newrefs[:len(refs)]==refs and set(newrefs[len(refs):])<=set(assigned),(key,'requirement references')
+            assert len(newrefs)==len(set(newrefs)),key
+            if before['display']!=after['display']:
+                displayed_changes.add(key)
+                assert len(after['display'])==14 and all(after['display'][i]==before['display'][i] for i in range(14) if i!=7),key
+            if key in revisions:
+                rev=revisions[key]
+                assert set(rev['before'])==set(rev['after'])==fields,key
+                assert rev['before']=={k:before[k] for k in fields} and rev['after']=={k:after[k] for k in fields},key
+                assert all(before[k]!=after[k] for k in fields),key
+                assert rev['source_blocks'] and set(rev['source_blocks'])<=set(assigned)
+                assert rev['native_requirement_ids'] and set(rev['native_requirement_ids'])<=set(reqby)
+                assert rev['owner_adoption']=='NO_DIM_CONTENT_ADOPTION' and rev['final_original_correspondence_audit_closed'] is False
+        assert displayed_changes=={'ISA-A-CERTIFICATE-TRUST','ISA-A-BASELINE-CAPABILITIES'}
+        oldcandidates={x['row_key']:x for x in a['candidate_rows']};candidates={x['row_key']:x for x in r['candidate_rows']}
+        assert len(oldcandidates)==296 and len(candidates)==len(r['candidate_rows'])==298
+        assert set(candidates)-set(oldcandidates)==additions and list(candidates)[:296]==list(oldcandidates)
+        candidate_revisions={x['row_key']:x for x in e['candidate_revisions']}
+        assert len(candidate_revisions)==len(e['candidate_revisions'])==9 and set(candidate_revisions)==set(permitted)
+        for key,before in oldcandidates.items():
+            after=candidates[key]
+            if key not in permitted:assert after==before,key
+            else:
+                rev=candidate_revisions[key];assert rev['before']==before and rev['after']==after,key
+                assert set(before)<=set(after)<=set(before)|{'boundary','source_blocks','evidence_records'},key
+                assert all(after[k]==v for k,v in before.items() if k not in {'boundary','source_blocks','evidence_records'}),key
+                assert after['boundary']==rows[key]['boundary']
+                for field in ['source_blocks','evidence_records']:
+                    previous=before.get(field,[]);current=after[field]
+                    assert current[:len(previous)]==previous and set(current[len(previous):])<=set(assigned),(key,field)
+        assert sum(x['review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in r['candidate_rows'])==292
+        for key in additions:
+            row=rows[key];candidate=candidates[key]
+            assert row['source_review_status']=='REVIEWED_SOURCE_SUPPORTED' and row['dim_adoption']=='NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE'
+            assert candidate['owner_decision']=='FOR_OWNER_REVIEW' and candidate['question'] is None
+            assert row['source_entry_ids']==(['ISA-DMS-375','ISA-DMS-428','ISA-DMS-433'] if key=='ISA-K-CAPABILITY-STATE' else [])
+            assert row['source_block_ids'] and set(row['source_block_ids'])<=set(assigned)
+            assert all(row['display'][i]=='' for i in range(14) if i not in {7,13})
+        oldgrid=[row[:] for row in a['review_grid']]
+        for key in displayed_changes:oldgrid[oldrows[key]['display_row']-6]=rows[key]['display']
+        it=iter(grid);assert all(any(v==row for v in it) for row in oldgrid)
+        assert all(row['display']==grid[row['display_row']-6] for row in m['rows'])
+        assert all(key in rows for x in records for key in x['target_rows'])
+        for k in ['columns','originalDonorEvidence','caseEvidence','priorHolds','adoptionPolicy','historicalEvidenceSheetNames','ownerDecision','currentWorkbook','currentWorkbookSha256']:assert m[k]==am[k],k
+        assert len(m['originalDonorEvidence'])==58 and len(m['caseEvidence'])==73
+        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv']:
+            b=(D/n).read_bytes();assert b'\r\n' not in b and list(csv.reader(io.StringIO(b.decode())))==grid,n
+        class Table(HTMLParser):
+            def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=[];self.cell=None
+            def handle_starttag(self,tag,attrs):
+                if tag=='tr':self.row=[]
+                if tag=='td':self.cell=''
+            def handle_data(self,data):
+                if self.cell is not None:self.cell+=data
+            def handle_endtag(self,tag):
+                if tag=='td':self.row.append(self.cell);self.cell=None
+                if tag=='tr' and self.row:self.rows.append(self.row)
+        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md']:
+            parser=Table();parser.feed((D/n).read_text());assert parser.rows==[row for i,row in enumerate(grid) if i>1 and i not in r['review_sections']],n
+        assert s['currentBatch']==s['currentIteration']==p['checkpoint'] and s['currentBatchDeliveryStatus']=='COMPLETE'
+        assert s['technicalIterationsCompleted']==35 and s['plannedTechnicalIterations']==41 and s['completedWorkPackages']==4
+        assert s['completedCatalogueSourcePasses']==ast['completedCatalogueSourcePasses']==23
+        forecast=s['remainingDeliveryForecast']
+        assert (forecast['centralRemainingPrompts'],forecast['lowRemainingPrompts'],forecast['highRemainingPrompts'])==(6,4,8)
+        assert forecast['lastCompletedSlot']==forecast['plannedQueueCompleted']==16
+        nextblocks=['CMPT-4.3.7','CMPT-4.3.8','CMPT-4.3.9','CMPT-4.3.10','CMPT-4.3.11','CMPT-4.3.12','CMPT-4.3.13','CMPT-4.3.14','CMPT-4.3.15','CMPT-4.3.16','CMPT-5.0','CMPT-AppendixA','CMPT-AppendixB']
+        assert allcmpt[21:]==nextblocks and s['nextSourceBlocks']==nextblocks and s['nextSourceIDs']==[]
+        assert s['nextOnOwnerProceed']==e['next_task']=='ISA-COMPONENT-REQUIREMENTS-REMAINING'
+        assert all(blocks[key]==oldblocks[key] for key in nextblocks)
+        assert s['componentRequirements']=={'state':'PARTIAL_SOURCE_REVIEW_FIRST_DELIVERY_COMPLETE','totalRegisteredBlocks':34,
+            'ownSpansReviewed':21,'fullyReconciledBlocks':19,'pendingParentBlocks':['CMPT-4.0','CMPT-4.3'],
+            'remainingRegisteredBlocks':13,'remainingRegisteredIDs':nextblocks,'nativeDefinitionsReviewed':144,
+            'nativeDefinitionLevels':{'H':11,'M':36,'L':97},'nativeDefinitionModalities':{'shall':138,'should':5,'may':1},
+            'requirementHierarchyEdges':144,'tablesReviewed':3,'figuresReviewed':0,
+            'fullSourcePagesInspected':49,'partialSourcePage':50,'partialPageEndBefore':'4.3.7',
+            'newPrimaryDMSReviews':0,'newOwnSpanReviews':20,'newFullyReconciledBlocks':18,
+            'previouslyReviewedSourceBlocksReconciled':['CMPT-4.1.1'],'firstDelivery':16,'remainingDelivery':17,
+            'evidence':evidence_name,'newComparisonPatterns':2,'existingCandidatePatternsRefined':9,'finalOriginalRowAuditClosed':False}
+        for k in ['propertyCatalogue','observableCatalogue','commandCatalogue','typeCatalogue','queryGuide','softwareArchitecture','interfaceAndEncoding']:assert s[k]==ast[k],k
+        assert s['coverage']['semanticEntriesReviewedInCorrection']==480 and s['coverage']['sourceSupportedPrimaryEntries']==474
+        assert s['coverage']['supportingDefinitionsRead']==ast['coverage']['supportingDefinitionsRead']==171
+        assert s['coverage']['originalRowTargetsReviewed']==ast['coverage']['originalRowTargetsReviewed']==4
+        assert s['coverage']['priorRecordsReconciled']==ast['coverage']['priorRecordsReconciled']==1
+        assert s['coverage']['newCandidateRows']==298 and s['coverage']['informationReviewRows']==329
+        assert m['counts']['informationRows']==329 and m['counts']['ISADerivedContributions']==298
+        assert m['counts']['supportedISACandidates']==292 and m['counts']['ISASourceQuestions']==6
+        assert m['ISAEvidence']['currentPrimaryReviews']==480 and m['ISAEvidence']['sourceSupportedPrimary']==474 and m['ISAEvidence']['primaryTypeReviews']==224
+        for key,value in {'componentRequirementsOwnSpansReviewed':21,'componentRequirementsNativeDefinitionsReviewed':144,'componentRequirementsFullyReconciledBlocks':19}.items():
+            assert m['ISAEvidence'][key]==s['coverage'][key]==value,key
+        assert m['ISAEvidence']['componentRequirements']==evidence_name and m['ISAEvidence']['componentRequirementsPendingParentBlocks']==['CMPT-4.0','CMPT-4.3']
+        for key,value in am['ISAEvidence'].items():
+            if key!='supportingWordingNotes':assert m['ISAEvidence'][key]==value,key
+        assert s['workbookSnapshot']['informationRows']==253 and s['workbookSnapshot']['primaryReviewed']==226
+        assert s['workbookSnapshot']['sha256']==a['publication']['workbook_snapshot']['sha256']
+        assert not s['workbookSnapshot']['currentlyMatchesReadableView']
+        assert s['workbookSnapshot']['textInformationRows']==m['workbookSnapshot']['textInformationRows']==329
+        assert s['workbookSnapshot']['textInformationRows']-s['workbookSnapshot']['informationRows']==76
+        assert s['workbookSnapshot']['label']==m['workbookSnapshot']['lag']==r['publication']['workbook_snapshot']['lag']
+        assert s['workbookSnapshot']['textCheckpoint']==m['workbookSnapshot']['textCheckpoint']==p['checkpoint']
+        for n in ['PITON_ISA_Coverage_Correction_07NOV2026.md','Master_Donor_Concept_to_DIM_Crosswalk.md']:
+            for link in re.findall(r'\]\(([^)]+)\)',(D/n).read_text()):
+                if '://' not in link and not link.startswith('#'):assert (D/link.split('#')[0]).is_file(),link
+        print('PASS:21 exact CMPT own spans,144 native requirement definitions and144 reciprocal hierarchy edges;49 full pages plus the bounded page50 portion,three tables,no figures;prior UCI credit retained and two parent subtrees remain open.')
+        print('PASS:329 master rows,298 candidates,two additions and nine bounded refinements;all327 prior rows,two ISA-only display changes,480 DMS outcomes,all six prior companions,258 other blocks,ten evidence/workbook files and original donor/case data preserved;JSON/CSV/HTML parity.')
+        print('PASS:delivery16 complete;35 technical iterations,six central deliveries remain,range4–8;13 remaining Component Requirements blocks next,without duplicate catalogue credit or premature parent closure;workbook remains its253-row/226-primary snapshot,76 rows behind text.')
+        if os.environ.get('APPLY_ISA_TEXT')=='1':subprocess.run(['git','add','--',*p['files']],check=True)
     else:
         baseline='2e7395c8f82e7c46e81a6978f27c8d29a21adb62'
         subprocess.run(['git','fetch','--no-tags','--depth=1','origin',baseline],check=True)
