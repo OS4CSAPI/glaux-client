@@ -50,7 +50,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git diff --cached --check
+          # README uses a deliberate two-space Markdown hard line break.
+          # Keep ordinary whitespace checks for every other published file.
+          git diff --cached --check -- . ':!Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md'
+          git -c core.whitespace=-blank-at-eol diff --cached --check -- Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
+          python3 -c "from pathlib import Path; p=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md'); assert all(not line[len(line.rstrip()):] or (line.endswith('  ') and len(line)-len(line.rstrip())==2 and bool(line.rstrip())) for line in p.read_text().splitlines()), 'Unexpected README whitespace'"
           if ! git diff --cached --quiet; then
             git commit -m 'research(dim-v2): publish verified current ISA checkpoint and recovery routing'
             git push origin HEAD:research/dim-profile-v2
