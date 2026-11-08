@@ -16,7 +16,7 @@ jobs:
       - name: Record input identities
         run: |
           git rev-parse HEAD > ISA_INPUT_COMMIT.txt
-          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Commands_08NOV2026.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
+          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
       - uses: actions/upload-artifact@v4
         with:
           name: isa-review-text-inputs
@@ -27,9 +27,8 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.json
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.md
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.csv
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Commands_08NOV2026.xlsx
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk*.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.*
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_ISA_Integration_Record_08NOV2026.json
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN*.md
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON*.md
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
@@ -38,4 +37,4 @@ jobs:
             scripts/publish_isa02_checkpoint.py
             .github/workflows/publish-isa03d-checkpoint.yml
           if-no-files-found: error
-# Owner-authorized working-master integration and adoption-checkpoint documentation; no new source review.
+# Original ISA-07 / accelerated delivery8: base types, identifiers and messages; canonical master and completed research preserved.
