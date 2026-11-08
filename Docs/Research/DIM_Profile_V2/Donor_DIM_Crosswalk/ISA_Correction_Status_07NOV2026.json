@@ -1,42 +1,42 @@
 {
   "schema": "isa-coverage-correction-status.v3-catalogue-publication",
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 17,
+  "technicalIterationsCompleted": 18,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 4,
   "completedChildBatches": 4,
-  "progressMeaning": "All 91 properties and 39 observables remain reviewed and integrated. First six command definitions are reviewed and persisted; current text is newer than the unchanged consolidated workbook.",
-  "currentIteration": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+  "progressMeaning": "All91 properties and39 observables remain complete and integrated. Twelve command entries are reviewed; the six target-setting Change definitions are the current completed pass. Next is the six automatic-control commands.",
+  "currentIteration": "ISA-COMMANDS-IMAGE-SETTINGS",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+  "currentBatch": "ISA-COMMANDS-IMAGE-SETTINGS",
   "currentBatchSourceReviewStatus": "COMPLETE",
   "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
-  "nextOnOwnerProceed": "ISA-COMMANDS-IMAGE-SETTINGS",
-  "nextAction": "Review Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom only. Inspect complete source definitions/parameters/results; compare with saved rate-based Adjust semantics. Update cumulative GitHub evidence, coverage and table without another workbook export.",
+  "nextOnOwnerProceed": "ISA-COMMANDS-AUTO-CONTROLS",
+  "nextAction": "Review Change Auto Brightness, Change Auto Contrast, Change Auto Focus, Change Auto Gain, Change Auto Level and Change Auto Scan only. Read actual parameter semantics and preserve the generic Level question. Update the same cumulative GitHub records; no workbook refresh or physical commands.",
   "nextSourceIDs": [
-    "ISA-DMS-184",
-    "ISA-DMS-186",
-    "ISA-DMS-190",
-    "ISA-DMS-192",
-    "ISA-DMS-193",
-    "ISA-DMS-205"
+    "ISA-DMS-178",
+    "ISA-DMS-179",
+    "ISA-DMS-180",
+    "ISA-DMS-181",
+    "ISA-DMS-182",
+    "ISA-DMS-183"
   ],
-  "nextSourceIDsMeaning": "Next six inventory assignments only; no Change-command source review was performed in this pass.",
+  "nextSourceIDsMeaning": "Six unreviewed inventory assignments, not pre-established semantic outcomes.",
   "repositoryPublication": {
     "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-COMMANDS-IMAGE-ADJUSTMENTS COMPLETE",
-    "next_pass": "ISA-COMMANDS-IMAGE-SETTINGS",
+    "technical_state": "ISA-COMMANDS-IMAGE-SETTINGS COMPLETE",
+    "next_pass": "ISA-COMMANDS-AUTO-CONTROLS",
     "publication_record": "ISA_Observables_Publication_Record_07NOV2026.json",
     "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
     "currentBatchReport": null,
-    "base_input_commit": "0659a533ec6e5fa1f1b89001230139f73c003816",
+    "base_input_commit": "a4e49b2fe626e3d6c38c7ce1766a1b23ceeb5d1a",
     "lastIntegratedCheckpoint": "7cf47c489dec32464c95c97a795468726592e7b2",
     "current_view": "ISA_Correction_Review_07NOV2026.md",
     "publication_record_scope": "Verifies the unchanged completed 91-property/39-observable workbook; subsequent command evidence/table changes are verified separately."
@@ -53,20 +53,20 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 136,
+    "semanticEntriesReviewedInCorrection": 142,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 132,
+    "sourceSupportedPrimaryEntries": 138,
     "specificSourceDefinitionQuestions": 4,
     "supportingDefinitionsRead": 124,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 132,
-    "informationReviewRows": 163
+    "newCandidateRows": 138,
+    "informationReviewRows": 169
   },
   "propertyCatalogue": {
     "total": 91,
@@ -319,8 +319,8 @@
     {
       "id": "ISA-05",
       "state": "IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION",
-      "sourceReviewedCommands": 6,
-      "nextSourceGroup": "ISA-COMMANDS-IMAGE-SETTINGS"
+      "sourceReviewedCommands": 12,
+      "nextSourceGroup": "ISA-COMMANDS-AUTO-CONTROLS"
     },
     {
       "id": "ISA-06",
@@ -399,7 +399,7 @@
     "task": "Six biological/chemical observable schema reviews, cumulative GitHub evidence/table and exact next-group routing",
     "counts_as_new_technical_iteration": true
   },
-  "completedCatalogueSourcePasses": 10,
+  "completedCatalogueSourcePasses": 11,
   "remainingPropertyCount": 0,
   "nextObservableSourceGroup": null,
   "publicationCheckpointsCompletedAfterRegrouping": 2,
@@ -517,14 +517,15 @@
   ],
   "commandCatalogue": {
     "total": 96,
-    "reviewed": 6,
-    "remaining": 90,
-    "sourceSupportedOutcomes": 6,
+    "reviewed": 12,
+    "remaining": 84,
+    "sourceSupportedOutcomes": 12,
     "preciseInterpretationQuestions": 0,
     "sourceReviewState": "IN_PROGRESS",
     "workbookPublicationState": "AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT",
     "completed_source_groups": [
-      "ISA-COMMANDS-IMAGE-ADJUSTMENTS"
+      "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "ISA-COMMANDS-IMAGE-SETTINGS"
     ]
   },
   "commandSourceGroups": [
@@ -551,7 +552,7 @@
     },
     {
       "id": "ISA-COMMANDS-IMAGE-SETTINGS",
-      "state": "NEXT",
+      "state": "COMPLETE",
       "count": 6,
       "sourceIds": [
         "ISA-DMS-184",
@@ -568,6 +569,27 @@
         "Change Gain",
         "Change Iris Size",
         "Change Zoom"
+      ]
+    },
+    {
+      "id": "ISA-COMMANDS-AUTO-CONTROLS",
+      "state": "NEXT",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-178",
+        "ISA-DMS-179",
+        "ISA-DMS-180",
+        "ISA-DMS-181",
+        "ISA-DMS-182",
+        "ISA-DMS-183"
+      ],
+      "nativeNames": [
+        "Change Auto Brightness",
+        "Change Auto Contrast",
+        "Change Auto Focus",
+        "Change Auto Gain",
+        "Change Auto Level",
+        "Change Auto Scan"
       ]
     }
   ]

@@ -1,14 +1,14 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Image-adjustment commands COMPLETE (6/96). Property catalogue 91/91 and observable catalogue 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-IMAGE-SETTINGS only.**
+**CURRENT — Image-setting commands COMPLETE (12/96 command entries reviewed). Properties 91/91 and observables 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-AUTO-CONTROLS only.**
 
-[Latest readable comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Property/observable workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
+[Latest comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
-The completed pass reviewed Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size and Adjust Zoom (164–168,171). Their required direction, optional rate/default100% and duration/stop distinctions are recorded with exact original references. Six candidate request roles share one parameter schema. Current text totals: 136 primary reviews,132 supported,four unchanged questions,163 information/review rows,124 supporting definitions. No prior source decision, equipment fact or non-ISA value changed.
+This completed pass examined Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom (184,186,190,192,193,205). Each requires one target-setting Percent parameter; actual names, cross-page continuations and distinction from saved Adjust behavior are recorded. No new supporting type or interpretation question was introduced. Current text:142 primary reviews,138 supported,four unchanged property questions,169 information/review rows,124 supporting definitions.
 
-**Next single group:** Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom (184,186,190,192,193,205). Compare their actual definitions with the saved rate-based Adjust operations; do not infer equivalence or execution. These six remain unreviewed assignments. Persist the same cumulative records, then stop.
+**Next single group:** Change Auto Brightness, Change Auto Contrast, Change Auto Focus, Change Auto Gain, Change Auto Level and Change Auto Scan (178–183). These are source assignments, not reviewed conclusions. Preserve the generic Level property question; shared wording is not a resolution. Update the same cumulative evidence, coverage and readable comparison, then verify GitHub delivery and stop.
 
-**Delivery:** the completed property/observable workbook remains a 130-primary/157-row snapshot; current GitHub text is newer. Reuse the existing publication path and refresh Excel at catalogue/substantial-section checkpoints. No new per-group report, workflow or exporter. The earlier failed workbook run was repaired and completed; do not reopen it.
+**Delivery:** the completed property/observable workbook remains the130-primary/157-row snapshot. Current GitHub command text is newer. No per-group workbook release, standalone report, new publisher or workflow. Completed source work and the repaired workbook checkpoint are not reopened.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
