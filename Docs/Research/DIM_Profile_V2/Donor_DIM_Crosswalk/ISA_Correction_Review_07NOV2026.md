@@ -1,14 +1,14 @@
 # ISA correction — current cumulative comparison
 
-**7 November 2026 · Final six observables COMPLETE. All 39 observable entries now have source-supported review outcomes: 19 core and 20 Accepted extensions; no unreviewed observable remains.** Properties remain complete at **91/91**. Current totals: **130 reviewed / 126 supported / four unchanged property questions**, with **157 information/review rows** (original 31 + 122 supported candidate rows + four question rows).
+**7 November 2026 · Property and observable catalogues COMPLETE, including consolidated workbook publication.** All **91 properties and 39 observables** retain their saved outcomes: **130 reviewed / 126 supported / four record-local property questions**. The comparison contains **157 information/review rows**: original 31 + 122 supported candidate rows + four question rows.
 
-**Excel snapshot:** [Completed property workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) remains unchanged at 91 reviewed properties and 118 information/review rows. **This GitHub comparison and its observable evidence are newer.** The next sole task is the consolidated observable-catalogue workbook checkpoint.
+**Current Excel:** [Consolidated property and observable workbook](ISA_Correction_Review_Observables_07NOV2026.xlsx) agrees with this readable table, its CSV and the coverage/evidence records. The earlier property workbook is retained as history, not the current comparison.
 
-[Observable evidence](ISA_Observable_Catalogue_Evidence_07NOV2026.json) · [Completed property evidence](ISA_Property_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Current CSV](ISA_Correction_Review_07NOV2026.csv) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+[Observable evidence](ISA_Observable_Catalogue_Evidence_07NOV2026.json) · [Property evidence](ISA_Property_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [CSV](ISA_Correction_Review_07NOV2026.csv) · [Publication record](ISA_Observables_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-Backcast and Forecast remain time-qualified inferences, not original measurements. Processed Frame retains original capture time and pixel-based detections, not a raw-image payload or executed slewing action. Recall and Resolve preserve their separate referenced-event reasons, not proven deletion or remediation. Solar Radiation is reported irradiance with its explicit position fallback; source unit wording remains in evidence. No existing case value or other-donor correspondence changed.
+This checkpoint integrates the 39 saved observable outcomes and 61 additional supporting definitions into the existing twelve-sheet workbook. All 123 unique supporting definitions, four existing questions and earlier scientific meanings are preserved. No source research or command review was repeated or started.
 
-**Next: ISA-OBSERVABLES-PUBLISH only.** Reconcile and integrate the saved 39 observable outcomes into the workbook, inspect and publish it once, and verify agreement with the committed records. No source review is repeated and no commands are started by that checkpoint.
+**Next: ISA-COMMANDS-IMAGE-ADJUSTMENTS only** — Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size, Adjust Zoom. These six inventory-assigned commands remain unreviewed. Continue the existing source-group delivery cadence; no new per-group exporter or workbook release.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="4">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>

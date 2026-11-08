@@ -1,12 +1,14 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Observable source catalogue COMPLETE (39/39). Next: ISA-OBSERVABLES-PUBLISH — consolidate and verify the workbook only.**
+**CURRENT — Property catalogue 91/91 and observable catalogue 39/39 COMPLETE, including the consolidated workbook. Next: ISA-COMMANDS-IMAGE-ADJUSTMENTS only.**
 
-[Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+[Current workbook](ISA_Correction_Review_Observables_07NOV2026.xlsx) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Publication record](ISA_Observables_Publication_Record_07NOV2026.json).
 
-All91 property and39 observable source entries are reviewed:130 primary outcomes,126 supported/four existing property questions,157 information/review rows and123 supporting definitions. The final source pass covered Backcast, Forecast, Processed Frame, Recall, Resolve and Solar Radiation:two core and four Accepted extensions, six supported roles, no new question. Existing source decisions and equipment/non-ISA values are preserved. Excel remains the91-property/118-row snapshot.
+The completed checkpoint integrated all 39 saved observable outcomes without repeating source research. The workbook, evidence and readable table agree: 130 reviewed entries, 126 supported outcomes, four unchanged local property questions, 157 information/review rows and 123 supporting definitions. Prior case facts and non-ISA values remain unchanged.
 
-**Next checkpoint only:** integrate the39 saved observable outcomes, their relevant dependencies and current comparison into the workbook using existing machinery. Verify every observable ID appears exactly once in the evidence, reconcile the workbook with the current register/table, inspect the changed areas, publish to GitHub and check the actual committed result. No new primary source review, repeated property/observable analysis, command review, new donor or exporter/workflow project is authorized by this checkpoint. Preserve all four record-local questions and earlier source evidence.
+**Next single source group:** Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size, Adjust Zoom (ISA-DMS-164, ISA-DMS-165, ISA-DMS-166, ISA-DMS-167, ISA-DMS-168, ISA-DMS-171). Read their complete original definitions and required dependencies; distinguish a command declaration from its invocation and resulting state. These are inventory assignments, not reviewed conclusions. Persist the same cumulative evidence, coverage and readable GitHub comparison. Stop after this group; do not review the full command catalogue in one prompt.
+
+**Delivery cadence remains:** direct GitHub persistence for each coherent source group; workbook refresh at catalogue or substantial-section checkpoints. Reuse existing publishing machinery. The interrupted observable-workbook checkpoint is closed; do not reopen or repeat completed research on the basis of its earlier chat error. Historical descriptions below do not override this current routing.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
