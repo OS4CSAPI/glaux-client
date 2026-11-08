@@ -1,618 +1,104 @@
 {
-  "schema": "isa-coverage-correction-status.v3-catalogue-publication",
-  "date": "2026-11-08",
-  "scope": "ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
-  "repository": "OS4CSAPI/glaux-client",
-  "branch": "research/dim-profile-v2",
-  "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 19,
-  "plannedTechnicalIterations": null,
-  "plannedWorkPackages": 12,
-  "completedWorkPackages": 4,
-  "completedChildBatches": 4,
-  "progressMeaning": "All 91 properties and 39 observables remain complete and integrated. Eighteen command definitions have completed source-review outcomes; automatic controls are now published in the cumulative text. The workbook remains the named property/observable snapshot.",
-  "currentIteration": "ISA-COMMANDS-AUTO-CONTROLS",
-  "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-COMMANDS-AUTO-CONTROLS",
-  "currentBatchSourceReviewStatus": "COMPLETE",
-  "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
-  "nextOnOwnerProceed": "ISA-COMMANDS-SENSING-MODES",
-  "nextAction": "Review the six assigned sensing mode/output commands only: Change Camera Mode, Change Frame Rate, Change Polarity, Change Quality, Change Radar Mode, Change Resolution. Preserve exact enums/strings/units and request-versus-reported-state boundaries; no workbook release.",
-  "nextSourceIDs": [
-    "ISA-DMS-185",
-    "ISA-DMS-191",
-    "ISA-DMS-198",
-    "ISA-DMS-201",
-    "ISA-DMS-202",
-    "ISA-DMS-203"
+  "schema":"isa-coverage-correction-status.v3-catalogue-publication",
+  "date":"2026-11-08",
+  "scope":"ISA_ONLY_SOURCE_COVERAGE_CORRECTION",
+  "repository":"OS4CSAPI/glaux-client",
+  "branch":"research/dim-profile-v2",
+  "planningCheckpoint":"COMPLETE_ACCELERATED_REMAINING_QUEUE_08NOV2026",
+  "technicalIterationsCompleted":19,
+  "plannedTechnicalIterations":41,
+  "plannedTechnicalIterationsMeaning":"Central forecast: 19 completed technical iterations plus22 remaining delivery slots. This is a forecast, not completion credit or the number of original ISA work packages.",
+  "plannedWorkPackages":12,
+  "completedWorkPackages":4,
+  "completedChildBatches":4,
+  "progressMeaning":"All 91 properties and 39 observables remain complete and integrated. Eighteen command definitions have completed source-review outcomes; automatic controls are now published in the cumulative text. The workbook remains the named property/observable snapshot.",
+  "currentIteration":"ISA-COMMANDS-AUTO-CONTROLS",
+  "currentIterationStatus":"COMPLETE",
+  "currentBatch":"ISA-COMMANDS-AUTO-CONTROLS",
+  "currentBatchSourceReviewStatus":"COMPLETE",
+  "currentBatchDeliveryStatus":"COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
+  "nextOnOwnerProceed":"ISA-COMMANDS-CONFIGURATION",
+  "nextAction":"Review all18 configuration commands assigned in commandSourceGroups[3], preserving individual original-source checks while reusing shared types. Commit cumulative evidence, coverage, comparison and concise routing; verify GitHub publication. No workbook export or physical commands.",
+  "nextSourceIDs":["ISA-DMS-177","ISA-DMS-185","ISA-DMS-187","ISA-DMS-188","ISA-DMS-189","ISA-DMS-191","ISA-DMS-195","ISA-DMS-196","ISA-DMS-197","ISA-DMS-198","ISA-DMS-200","ISA-DMS-201","ISA-DMS-202","ISA-DMS-203","ISA-DMS-204","ISA-DMS-220","ISA-DMS-241","ISA-DMS-243"],
+  "nextSourceIDsMeaning":"Eighteen unreviewed inventory assignments. The prior six sensing-mode commands are included, not an additional next pass.",
+  "repositoryPublication":{"state":"CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED","repository":"OS4CSAPI/glaux-client","branch":"research/dim-profile-v2","technical_state":"ISA-COMMANDS-AUTO-CONTROLS COMPLETE","next_pass":"ISA-COMMANDS-CONFIGURATION","publication_record":"ISA_Observables_Publication_Record_07NOV2026.json","currentBatchEvidence":"ISA_Command_Catalogue_Evidence_07NOV2026.json","currentBatchReport":null,"base_input_commit":"9de02f222be0a41125ce7bdde60525bc43692e80","lastIntegratedCheckpoint":"7cf47c489dec32464c95c97a795468726592e7b2","current_view":"ISA_Correction_Review_07NOV2026.md","publication_record_scope":"Verifies the unchanged completed 91-property/39-observable workbook; subsequent command evidence/table changes are verified separately."},
+  "baseline":{"csv_file":"Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv","csv_blob_verified":"fc271b757bcd094866f428bf7c3dc67bee7cc8eb","legacy_stage_blob":"1f857915c2227e6dc0b071f7db1ded4d3fc09fb4","unchanged_primary_donor_records":58,"unchanged_case_statements":73,"new_or_revised_semantic_mappings":0},
+  "coverage":{"sourceNamedEntryDenominator":480,"definition":"Named DMS catalogue entries, not nested fields or required DIM rows.","inventoryLocated":480,"semanticEntriesReviewedInCorrection":148,"sourceBlocksAssigned":279,"existingRowAndCaseTargets":31,"priorMappingAndHoldTargets":25,"unassignedTargets":0,"sourceSupportedPrimaryEntries":144,"specificSourceDefinitionQuestions":4,"supportingDefinitionsRead":124,"originalRowTargetsReviewed":4,"originalRowTargetsTotal":31,"priorRecordsReconciled":1,"priorRecordsTotal":25,"newCandidateRows":144,"informationReviewRows":175},
+  "propertyCatalogue":{"total":91,"reviewed":91,"remaining":0,"sourcePassesRemainingInWorkingSchedule":0,"workbookCheckpointsRemainingInWorkingSchedule":0,"assignmentBasis":"Current 91-entry property catalogue reconciled to the actual reviewed entries; original 26-item regrouping partition retained separately.","partitionCheck":{"remainingAssignedExactlyOnce":0,"duplicates":0,"omissions":0,"originalRegroupingAssignedExactlyOnce":26},"sourceReviewState":"COMPLETE","sourceSupportedOutcomes":87,"preciseInterpretationQuestions":4,"state":"COMPLETE","workbookPublicationState":"COMPLETE"},
+  "remainingPropertyPasses":[
+    {"id":"ISA-PROPERTIES-POWER-CONDITION","title":"Power and component condition","state":"COMPLETE","count":8,"sourceIds":["ISA-DMS-090","ISA-DMS-091","ISA-DMS-100","ISA-DMS-103","ISA-DMS-106","ISA-DMS-111","ISA-DMS-112","ISA-DMS-113"],"nativeNames":["Power","Power State","Reserve Capacity","Satellites","Shots","Tamper State","Temperature","Time to Empty"]},
+    {"id":"ISA-PROPERTIES-SENSING","title":"Sensing settings and measurement characteristics","state":"COMPLETE","count":9,"sourceIds":["ISA-DMS-087","ISA-DMS-093","ISA-DMS-094","ISA-DMS-095","ISA-DMS-096","ISA-DMS-101","ISA-DMS-104","ISA-DMS-119","ISA-DMS-121"],"nativeNames":["Polarity","Pulse Interval","Quality","Radar Mode","Range","Resolution","Scan Time","Wavelengths","Zoom"]},
+    {"id":"ISA-PROPERTIES-MOTION-DATA","title":"Motion, viewed area, resources and data links","state":"COMPLETE","count":9,"sourceIds":["ISA-DMS-097","ISA-DMS-098","ISA-DMS-102","ISA-DMS-107","ISA-DMS-114","ISA-DMS-115","ISA-DMS-116","ISA-DMS-117","ISA-DMS-120"],"nativeNames":["Receive Data Rate","Receive Power","Resources","Signal Strength Ratio","Transmit Data Rate","Transmit Power","Velocity","View Area","Zones"]},
+    {"id":"ISA-PROPERTIES-PUBLISH","title":"Property-catalogue workbook publication and verification","state":"COMPLETE","count":0,"sourceIds":[],"task":"Reconcile all91 property outcomes and dependencies, export/inspect/publish the cumulative workbook once using existing machinery, and verify committed source/view/workbook parity. Do not repeat source reviews."}
   ],
-  "nextSourceIDsMeaning": "Six unreviewed inventory assignments, not pre-established semantic outcomes.",
-  "repositoryPublication": {
-    "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
-    "repository": "OS4CSAPI/glaux-client",
-    "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-COMMANDS-AUTO-CONTROLS COMPLETE",
-    "next_pass": "ISA-COMMANDS-SENSING-MODES",
-    "publication_record": "ISA_Observables_Publication_Record_07NOV2026.json",
-    "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
-    "currentBatchReport": null,
-    "base_input_commit": "9de02f222be0a41125ce7bdde60525bc43692e80",
-    "lastIntegratedCheckpoint": "7cf47c489dec32464c95c97a795468726592e7b2",
-    "current_view": "ISA_Correction_Review_07NOV2026.md",
-    "publication_record_scope": "Verifies the unchanged completed 91-property/39-observable workbook; subsequent command evidence/table changes are verified separately."
-  },
-  "baseline": {
-    "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
-    "csv_blob_verified": "fc271b757bcd094866f428bf7c3dc67bee7cc8eb",
-    "legacy_stage_blob": "1f857915c2227e6dc0b071f7db1ded4d3fc09fb4",
-    "unchanged_primary_donor_records": 58,
-    "unchanged_case_statements": 73,
-    "new_or_revised_semantic_mappings": 0
-  },
-  "coverage": {
-    "sourceNamedEntryDenominator": 480,
-    "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
-    "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 148,
-    "sourceBlocksAssigned": 279,
-    "existingRowAndCaseTargets": 31,
-    "priorMappingAndHoldTargets": 25,
-    "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 144,
-    "specificSourceDefinitionQuestions": 4,
-    "supportingDefinitionsRead": 124,
-    "originalRowTargetsReviewed": 4,
-    "originalRowTargetsTotal": 31,
-    "priorRecordsReconciled": 1,
-    "priorRecordsTotal": 25,
-    "newCandidateRows": 144,
-    "informationReviewRows": 175
-  },
-  "propertyCatalogue": {
-    "total": 91,
-    "reviewed": 91,
-    "remaining": 0,
-    "sourcePassesRemainingInWorkingSchedule": 0,
-    "workbookCheckpointsRemainingInWorkingSchedule": 0,
-    "assignmentBasis": "Current 91-entry property catalogue reconciled to the actual reviewed entries; original 26-item regrouping partition retained separately.",
-    "partitionCheck": {
-      "remainingAssignedExactlyOnce": 0,
-      "duplicates": 0,
-      "omissions": 0,
-      "originalRegroupingAssignedExactlyOnce": 26
-    },
-    "sourceReviewState": "COMPLETE",
-    "sourceSupportedOutcomes": 87,
-    "preciseInterpretationQuestions": 4,
-    "state": "COMPLETE",
-    "workbookPublicationState": "COMPLETE"
-  },
-  "remainingPropertyPasses": [
-    {
-      "id": "ISA-PROPERTIES-POWER-CONDITION",
-      "title": "Power and component condition",
-      "state": "COMPLETE",
-      "count": 8,
-      "sourceIds": [
-        "ISA-DMS-090",
-        "ISA-DMS-091",
-        "ISA-DMS-100",
-        "ISA-DMS-103",
-        "ISA-DMS-106",
-        "ISA-DMS-111",
-        "ISA-DMS-112",
-        "ISA-DMS-113"
-      ],
-      "nativeNames": [
-        "Power",
-        "Power State",
-        "Reserve Capacity",
-        "Satellites",
-        "Shots",
-        "Tamper State",
-        "Temperature",
-        "Time to Empty"
-      ]
-    },
-    {
-      "id": "ISA-PROPERTIES-SENSING",
-      "title": "Sensing settings and measurement characteristics",
-      "state": "COMPLETE",
-      "count": 9,
-      "sourceIds": [
-        "ISA-DMS-087",
-        "ISA-DMS-093",
-        "ISA-DMS-094",
-        "ISA-DMS-095",
-        "ISA-DMS-096",
-        "ISA-DMS-101",
-        "ISA-DMS-104",
-        "ISA-DMS-119",
-        "ISA-DMS-121"
-      ],
-      "nativeNames": [
-        "Polarity",
-        "Pulse Interval",
-        "Quality",
-        "Radar Mode",
-        "Range",
-        "Resolution",
-        "Scan Time",
-        "Wavelengths",
-        "Zoom"
-      ]
-    },
-    {
-      "id": "ISA-PROPERTIES-MOTION-DATA",
-      "title": "Motion, viewed area, resources and data links",
-      "state": "COMPLETE",
-      "count": 9,
-      "sourceIds": [
-        "ISA-DMS-097",
-        "ISA-DMS-098",
-        "ISA-DMS-102",
-        "ISA-DMS-107",
-        "ISA-DMS-114",
-        "ISA-DMS-115",
-        "ISA-DMS-116",
-        "ISA-DMS-117",
-        "ISA-DMS-120"
-      ],
-      "nativeNames": [
-        "Receive Data Rate",
-        "Receive Power",
-        "Resources",
-        "Signal Strength Ratio",
-        "Transmit Data Rate",
-        "Transmit Power",
-        "Velocity",
-        "View Area",
-        "Zones"
-      ]
-    },
-    {
-      "id": "ISA-PROPERTIES-PUBLISH",
-      "title": "Property-catalogue workbook publication and verification",
-      "state": "COMPLETE",
-      "count": 0,
-      "sourceIds": [],
-      "task": "Reconcile all91 property outcomes and dependencies, export/inspect/publish the cumulative workbook once using existing machinery, and verify committed source/view/workbook parity. Do not repeat source reviews."
-    }
+  "propertyBatches":[
+    {"id":"ISA-03A","state":"COMPLETE","count":4,"sourceIds":["ISA-DMS-078","ISA-DMS-079","ISA-DMS-081","ISA-DMS-082"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03B","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-084","ISA-DMS-085","ISA-DMS-092","ISA-DMS-108","ISA-DMS-109","ISA-DMS-110"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03C","state":"COMPLETE","count":4,"sourceIds":["ISA-DMS-083","ISA-DMS-086","ISA-DMS-088","ISA-DMS-089"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03D","state":"COMPLETE","count":2,"sourceIds":["ISA-DMS-099","ISA-DMS-118"],"integration":"PUBLISHED_AND_VERIFIED"},
+    {"id":"ISA-03E","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-090","ISA-DMS-091","ISA-DMS-100","ISA-DMS-113"]},
+    {"id":"ISA-03F","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-087","ISA-DMS-093","ISA-DMS-094","ISA-DMS-095","ISA-DMS-101","ISA-DMS-121"]},
+    {"id":"ISA-03G","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-096","ISA-DMS-104","ISA-DMS-119"]},
+    {"id":"ISA-03H","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-116","ISA-DMS-117","ISA-DMS-120"]},
+    {"id":"ISA-03I","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-097","ISA-DMS-098","ISA-DMS-107","ISA-DMS-114","ISA-DMS-115"]},
+    {"id":"ISA-03J","state":"UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE","sourceIds":["ISA-DMS-102","ISA-DMS-103","ISA-DMS-106","ISA-DMS-111","ISA-DMS-112"]}
   ],
-  "propertyBatches": [
-    {
-      "id": "ISA-03A",
-      "state": "COMPLETE",
-      "count": 4,
-      "sourceIds": [
-        "ISA-DMS-078",
-        "ISA-DMS-079",
-        "ISA-DMS-081",
-        "ISA-DMS-082"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03B",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-084",
-        "ISA-DMS-085",
-        "ISA-DMS-092",
-        "ISA-DMS-108",
-        "ISA-DMS-109",
-        "ISA-DMS-110"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03C",
-      "state": "COMPLETE",
-      "count": 4,
-      "sourceIds": [
-        "ISA-DMS-083",
-        "ISA-DMS-086",
-        "ISA-DMS-088",
-        "ISA-DMS-089"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03D",
-      "state": "COMPLETE",
-      "count": 2,
-      "sourceIds": [
-        "ISA-DMS-099",
-        "ISA-DMS-118"
-      ],
-      "integration": "PUBLISHED_AND_VERIFIED"
-    },
-    {
-      "id": "ISA-03E",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-090",
-        "ISA-DMS-091",
-        "ISA-DMS-100",
-        "ISA-DMS-113"
-      ]
-    },
-    {
-      "id": "ISA-03F",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-087",
-        "ISA-DMS-093",
-        "ISA-DMS-094",
-        "ISA-DMS-095",
-        "ISA-DMS-101",
-        "ISA-DMS-121"
-      ]
-    },
-    {
-      "id": "ISA-03G",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-096",
-        "ISA-DMS-104",
-        "ISA-DMS-119"
-      ]
-    },
-    {
-      "id": "ISA-03H",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-116",
-        "ISA-DMS-117",
-        "ISA-DMS-120"
-      ]
-    },
-    {
-      "id": "ISA-03I",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-097",
-        "ISA-DMS-098",
-        "ISA-DMS-107",
-        "ISA-DMS-114",
-        "ISA-DMS-115"
-      ]
-    },
-    {
-      "id": "ISA-03J",
-      "state": "UNSTARTED_ASSIGNMENTS_REGROUPED_NOT_EXECUTION_QUEUE",
-      "sourceIds": [
-        "ISA-DMS-102",
-        "ISA-DMS-103",
-        "ISA-DMS-106",
-        "ISA-DMS-111",
-        "ISA-DMS-112"
-      ]
-    }
+  "iterationRecords":[
+    {"id":"ISA-01","state":"COMPLETE"},
+    {"id":"ISA-02","state":"COMPLETE"},
+    {"id":"ISA-03","state":"COMPLETE","nextChild":null,"sourceReviewedProperties":42},
+    {"id":"ISA-04","state":"COMPLETE","nextSourceGroup":null,"reviewedObservables":39,"totalObservables":39,"nextCheckpoint":null,"sourceReviewedObservables":39,"workbookPublicationState":"COMPLETE"},
+    {"id":"ISA-05","state":"IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION","sourceReviewedCommands":18,"nextSourceGroup":"ISA-COMMANDS-CONFIGURATION"},
+    {"id":"ISA-06","state":"NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"},
+    {"id":"ISA-07","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-08","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-09","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-10","state":"NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"},
+    {"id":"ISA-11","state":"NOT_STARTED_RECONCILIATION"},
+    {"id":"ISA-12","state":"NOT_STARTED_FINAL_SOURCE_FIRST_AUDIT"}
   ],
-  "iterationRecords": [
-    {
-      "id": "ISA-01",
-      "state": "COMPLETE"
-    },
-    {
-      "id": "ISA-02",
-      "state": "COMPLETE"
-    },
-    {
-      "id": "ISA-03",
-      "state": "COMPLETE",
-      "nextChild": null,
-      "sourceReviewedProperties": 42
-    },
-    {
-      "id": "ISA-04",
-      "state": "COMPLETE",
-      "nextSourceGroup": null,
-      "reviewedObservables": 39,
-      "totalObservables": 39,
-      "nextCheckpoint": null,
-      "sourceReviewedObservables": 39,
-      "workbookPublicationState": "COMPLETE"
-    },
-    {
-      "id": "ISA-05",
-      "state": "IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION",
-      "sourceReviewedCommands": 18,
-      "nextSourceGroup": "ISA-COMMANDS-SENSING-MODES"
-    },
-    {
-      "id": "ISA-06",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"
-    },
-    {
-      "id": "ISA-07",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"
-    },
-    {
-      "id": "ISA-08",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"
-    },
-    {
-      "id": "ISA-09",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"
-    },
-    {
-      "id": "ISA-10",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_SECTION_PUBLICATION"
-    },
-    {
-      "id": "ISA-11",
-      "state": "NOT_STARTED_RECONCILIATION"
-    },
-    {
-      "id": "ISA-12",
-      "state": "NOT_STARTED_FINAL_SOURCE_FIRST_AUDIT"
-    }
+  "deliveryPolicy":{"sourcePass":"Commit evidence/coverage, cumulative readable GitHub comparison, progress and concise PITON change; reuse existing formats and prior verified type evidence.","workbook":"Publish at catalogue/substantial-section checkpoints; prominently identify the workbook snapshot and current source/readable-view checkpoint separately.","noPerPassInfrastructure":"No new batch-specific exporter, transfer mechanism, publication script or workflow merely because a source pass ended.","reportsAndLessons":"Do not duplicate a separate narrative report, every project index or the entire lessons history after each small change. Add a lesson only for a new substantive finding.","coverageRule":"One catalogue entry does not require one candidate DIM row. Preserve individual source traceability for grouped, supporting, excluded or specifically questioned outcomes.","unexpectedDependency":"Identify the exact new work before changing the queue. Do not invent completeness, hide unread entries, or launch a new process redesign.","sourcePublicationFailure":"Use the existing supported GitHub path, preserve earned work, identify any particular failure honestly; no unbounded repairs or sandbox-only authoritative handoff.","batching":"Group by semantic complexity, shared types and verified evidence reuse; no fixed six-entry ceiling. Every native definition is still checked. Exact command partition is18+18+12+16+7+7.","closeout":"Show original step number, earned catalogue counts, increment achieved, remaining delivery forecast, workbook snapshot and GitHub verification. Explain shared patterns and exceptions without repeating per-entry boilerplate.","forecastChange":"Revise a forecast only against named additional or removed work. Do not silently multiply child batches or protect an estimate by skipping required inspection."},
+  "batchPartitionCheck":{"originalRemainingAtSizingCheckpoint":42,"reviewedThroughISA03D":16,"nowRemaining":0,"assignedExactlyOnce":0,"duplicates":0,"unassigned":0,"previouslyCompletedExcluded":["ISA-DMS-080","ISA-DMS-105"],"reviewedAfterISA03D":26},
+  "activeRecoveryPiton":"PITON_ISA_Coverage_Correction_07NOV2026.md",
+  "activeExecutionPlan":"PLAN_ISA_Coverage_Correction_07NOV2026.md",
+  "currentRegister":"ISA_Coverage_Register_07NOV2026.json",
+  "registerOwnerPassMeaning":"Original ISA-01 through ISA-12 owners remain. The active execution queue is commandSourceGroups, followed by the numbered remaining-delivery slots in the plan. Historical property schedules are not future work.",
+  "currentReview":"ISA_Correction_Review_07NOV2026.md",
+  "currentWorkbook":"ISA_Correction_Review_Observables_07NOV2026.xlsx",
+  "currentEvidence":"ISA_Command_Catalogue_Evidence_07NOV2026.json",
+  "currentBatchEvidence":"ISA_Command_Catalogue_Evidence_07NOV2026.json",
+  "currentBatchReport":null,
+  "workbookSnapshot":{"checkpoint":"ISA-OBSERVABLES-PUBLISH","sha256":"68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6","informationRows":157,"primaryReviewed":130,"nextRefresh":"NEXT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT","currentlyMatchesReadableView":false,"label":"Completed property/observable workbook snapshot: 130 reviewed primary entries and 157 information/review rows. Current GitHub command evidence and readable comparison are newer."},
+  "publicationRule":"GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
+  "completedTaskRule":"ISA property catalogue source review, workbook integration and GitHub delivery remain COMPLETE. Atmospheric observable pass source review and GitHub text publication are COMPLETE. Four existing interpretation questions stay local. Excel snapshot cadence is planned; no completed work is repeated.",
+  "lessonsDocument":"LESSONS_Donor_Review_Process.md",
+  "documentationCheckpoint":{"state":"COMPLETE","task":"Owner-requested acceleration: exact78-command queue, full-scope22-slot delivery forecast and synchronized routing; no source decisions changed.","counts_as_new_technical_iteration":false},
+  "completedCatalogueSourcePasses":12,
+  "remainingPropertyCount":0,
+  "nextObservableSourceGroup":null,
+  "publicationCheckpointsCompletedAfterRegrouping":2,
+  "observableCatalogue":{"total":39,"reviewed":39,"sourceSupportedOutcomes":39,"preciseInterpretationQuestions":0,"remaining":0,"completed_source_groups":["ISA-04-ATMOSPHERIC","ISA-04-SPATIAL","ISA-04-CONTEXT","ISA-04-BIO-CHEM","ISA-04-RADIOLOGICAL","ISA-04-REMAINING"],"state":"COMPLETE","workbookPublicationState":"COMPLETE","sourceReviewState":"COMPLETE","core":19,"accepted_extensions":20,"sourcePassesRemainingInWorkingSchedule":0,"workbookCheckpointsRemainingInWorkingSchedule":0},
+  "observableSourceGroups":[
+    {"id":"ISA-04-ATMOSPHERIC","state":"COMPLETE","count":8,"sourceIds":["ISA-DMS-123","ISA-DMS-124","ISA-DMS-125","ISA-DMS-126","ISA-DMS-127","ISA-DMS-128","ISA-DMS-129","ISA-DMS-130"]},
+    {"id":"ISA-04-SPATIAL","state":"COMPLETE","count":7,"sourceIds":["ISA-DMS-122","ISA-DMS-133","ISA-DMS-141","ISA-DMS-149","ISA-DMS-150","ISA-DMS-151","ISA-DMS-159"]},
+    {"id":"ISA-04-CONTEXT","state":"COMPLETE","count":7,"sourceIds":["ISA-DMS-131","ISA-DMS-140","ISA-DMS-142","ISA-DMS-145","ISA-DMS-146","ISA-DMS-147","ISA-DMS-160"]},
+    {"id":"ISA-04-BIO-CHEM","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-134","ISA-DMS-135","ISA-DMS-136","ISA-DMS-137","ISA-DMS-138","ISA-DMS-139"]},
+    {"id":"ISA-04-RADIOLOGICAL","state":"COMPLETE","count":5,"sourceIds":["ISA-DMS-144","ISA-DMS-148","ISA-DMS-153","ISA-DMS-154","ISA-DMS-155"]},
+    {"id":"ISA-04-REMAINING","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-132","ISA-DMS-143","ISA-DMS-152","ISA-DMS-156","ISA-DMS-157","ISA-DMS-158"]},
+    {"id":"ISA-OBSERVABLES-PUBLISH","state":"COMPLETE","count":0,"sourceIds":[],"task":"Consolidated workbook integration and verification of all39 saved observable outcomes; no new source review."}
   ],
-  "deliveryPolicy": {
-    "sourcePass": "Commit evidence/coverage, cumulative readable GitHub comparison, progress and concise PITON change; reuse existing formats and prior verified type evidence.",
-    "workbook": "Publish at catalogue/substantial-section checkpoints; prominently identify the workbook snapshot and current source/readable-view checkpoint separately.",
-    "noPerPassInfrastructure": "No new batch-specific exporter, transfer mechanism, publication script or workflow merely because a source pass ended.",
-    "reportsAndLessons": "Do not duplicate a separate narrative report, every project index or the entire lessons history after each small change. Add a lesson only for a new substantive finding.",
-    "coverageRule": "One catalogue entry does not require one candidate DIM row. Preserve individual source traceability for grouped, supporting, excluded or specifically questioned outcomes.",
-    "unexpectedDependency": "Identify the exact new work before changing the queue. Do not invent completeness, hide unread entries, or launch a new process redesign.",
-    "sourcePublicationFailure": "Use the existing supported GitHub path, preserve earned work, identify any particular failure honestly; no unbounded repairs or sandbox-only authoritative handoff."
-  },
-  "batchPartitionCheck": {
-    "originalRemainingAtSizingCheckpoint": 42,
-    "reviewedThroughISA03D": 16,
-    "nowRemaining": 0,
-    "assignedExactlyOnce": 0,
-    "duplicates": 0,
-    "unassigned": 0,
-    "previouslyCompletedExcluded": [
-      "ISA-DMS-080",
-      "ISA-DMS-105"
-    ],
-    "reviewedAfterISA03D": 26
-  },
-  "activeRecoveryPiton": "PITON_ISA_Coverage_Correction_07NOV2026.md",
-  "activeExecutionPlan": "PLAN_ISA_Coverage_Correction_07NOV2026.md",
-  "currentRegister": "ISA_Coverage_Register_07NOV2026.json",
-  "registerOwnerPassMeaning": "Parent owner labels remain. remainingPropertyPasses is the active queue; propertyBatches preserves historical assignments only.",
-  "currentReview": "ISA_Correction_Review_07NOV2026.md",
-  "currentWorkbook": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
-  "currentEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
-  "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
-  "currentBatchReport": null,
-  "workbookSnapshot": {
-    "checkpoint": "ISA-OBSERVABLES-PUBLISH",
-    "sha256": "68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6",
-    "informationRows": 157,
-    "primaryReviewed": 130,
-    "nextRefresh": "NEXT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT",
-    "currentlyMatchesReadableView": false,
-    "label": "Completed property/observable workbook snapshot: 130 reviewed primary entries and 157 information/review rows. Current GitHub command evidence and readable comparison are newer."
-  },
-  "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
-  "completedTaskRule": "ISA property catalogue source review, workbook integration and GitHub delivery remain COMPLETE. Atmospheric observable pass source review and GitHub text publication are COMPLETE. Four existing interpretation questions stay local. Excel snapshot cadence is planned; no completed work is repeated.",
-  "lessonsDocument": "LESSONS_Donor_Review_Process.md",
-  "documentationCheckpoint": {
-    "state": "COMPLETE",
-    "task": "Six automatic-control command reviews; cumulative GitHub evidence/table and exact next-group routing.",
-    "counts_as_new_technical_iteration": true
-  },
-  "completedCatalogueSourcePasses": 12,
-  "remainingPropertyCount": 0,
-  "nextObservableSourceGroup": null,
-  "publicationCheckpointsCompletedAfterRegrouping": 2,
-  "observableCatalogue": {
-    "total": 39,
-    "reviewed": 39,
-    "sourceSupportedOutcomes": 39,
-    "preciseInterpretationQuestions": 0,
-    "remaining": 0,
-    "completed_source_groups": [
-      "ISA-04-ATMOSPHERIC",
-      "ISA-04-SPATIAL",
-      "ISA-04-CONTEXT",
-      "ISA-04-BIO-CHEM",
-      "ISA-04-RADIOLOGICAL",
-      "ISA-04-REMAINING"
-    ],
-    "state": "COMPLETE",
-    "workbookPublicationState": "COMPLETE",
-    "sourceReviewState": "COMPLETE",
-    "core": 19,
-    "accepted_extensions": 20,
-    "sourcePassesRemainingInWorkingSchedule": 0,
-    "workbookCheckpointsRemainingInWorkingSchedule": 0
-  },
-  "observableSourceGroups": [
-    {
-      "id": "ISA-04-ATMOSPHERIC",
-      "state": "COMPLETE",
-      "count": 8,
-      "sourceIds": [
-        "ISA-DMS-123",
-        "ISA-DMS-124",
-        "ISA-DMS-125",
-        "ISA-DMS-126",
-        "ISA-DMS-127",
-        "ISA-DMS-128",
-        "ISA-DMS-129",
-        "ISA-DMS-130"
-      ]
-    },
-    {
-      "id": "ISA-04-SPATIAL",
-      "state": "COMPLETE",
-      "count": 7,
-      "sourceIds": [
-        "ISA-DMS-122",
-        "ISA-DMS-133",
-        "ISA-DMS-141",
-        "ISA-DMS-149",
-        "ISA-DMS-150",
-        "ISA-DMS-151",
-        "ISA-DMS-159"
-      ]
-    },
-    {
-      "id": "ISA-04-CONTEXT",
-      "state": "COMPLETE",
-      "count": 7,
-      "sourceIds": [
-        "ISA-DMS-131",
-        "ISA-DMS-140",
-        "ISA-DMS-142",
-        "ISA-DMS-145",
-        "ISA-DMS-146",
-        "ISA-DMS-147",
-        "ISA-DMS-160"
-      ]
-    },
-    {
-      "id": "ISA-04-BIO-CHEM",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-134",
-        "ISA-DMS-135",
-        "ISA-DMS-136",
-        "ISA-DMS-137",
-        "ISA-DMS-138",
-        "ISA-DMS-139"
-      ]
-    },
-    {
-      "id": "ISA-04-RADIOLOGICAL",
-      "state": "COMPLETE",
-      "count": 5,
-      "sourceIds": [
-        "ISA-DMS-144",
-        "ISA-DMS-148",
-        "ISA-DMS-153",
-        "ISA-DMS-154",
-        "ISA-DMS-155"
-      ]
-    },
-    {
-      "id": "ISA-04-REMAINING",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-132",
-        "ISA-DMS-143",
-        "ISA-DMS-152",
-        "ISA-DMS-156",
-        "ISA-DMS-157",
-        "ISA-DMS-158"
-      ]
-    },
-    {
-      "id": "ISA-OBSERVABLES-PUBLISH",
-      "state": "COMPLETE",
-      "count": 0,
-      "sourceIds": [],
-      "task": "Consolidated workbook integration and verification of all39 saved observable outcomes; no new source review."
-    }
+  "commandCatalogue":{"total":96,"reviewed":18,"remaining":78,"sourceSupportedOutcomes":18,"preciseInterpretationQuestions":0,"sourceReviewState":"IN_PROGRESS","workbookPublicationState":"AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT","completed_source_groups":["ISA-COMMANDS-IMAGE-ADJUSTMENTS","ISA-COMMANDS-IMAGE-SETTINGS","ISA-COMMANDS-AUTO-CONTROLS"],"plannedRemainingSourcePasses":6,"plannedRemainingWorkbookCheckpoints":1},
+  "commandSourceGroups":[
+    {"id":"ISA-COMMANDS-IMAGE-ADJUSTMENTS","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-164","ISA-DMS-165","ISA-DMS-166","ISA-DMS-167","ISA-DMS-168","ISA-DMS-171"],"nativeNames":["Adjust Brightness","Adjust Contrast","Adjust Focus","Adjust Gain","Adjust Iris Size","Adjust Zoom"]},
+    {"id":"ISA-COMMANDS-IMAGE-SETTINGS","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-184","ISA-DMS-186","ISA-DMS-190","ISA-DMS-192","ISA-DMS-193","ISA-DMS-205"],"nativeNames":["Change Brightness","Change Contrast","Change Focus","Change Gain","Change Iris Size","Change Zoom"]},
+    {"id":"ISA-COMMANDS-AUTO-CONTROLS","state":"COMPLETE","count":6,"sourceIds":["ISA-DMS-178","ISA-DMS-179","ISA-DMS-180","ISA-DMS-181","ISA-DMS-182","ISA-DMS-183"],"nativeNames":["Change Auto Brightness","Change Auto Contrast","Change Auto Focus","Change Auto Gain","Change Auto Level","Change Auto Scan"]},
+    {"sequence":1,"id":"ISA-COMMANDS-CONFIGURATION","title":"Modes, timing and ordinary configuration","state":"NEXT","count":18,"sourceIds":["ISA-DMS-177","ISA-DMS-185","ISA-DMS-187","ISA-DMS-188","ISA-DMS-189","ISA-DMS-191","ISA-DMS-195","ISA-DMS-196","ISA-DMS-197","ISA-DMS-198","ISA-DMS-200","ISA-DMS-201","ISA-DMS-202","ISA-DMS-203","ISA-DMS-204","ISA-DMS-220","ISA-DMS-241","ISA-DMS-243"],"nativeNames":["Change Active","Change Camera Mode","Change Enabled","Change Field of Regard","Change Field of View","Change Frame Rate","Change Maximum Status Interval","Change Minimum Status Interval","Change Name","Change Polarity","Change Pulse Interval","Change Quality","Change Radar Mode","Change Resolution","Change Scan Time","Menu Navigation","Set Observable Reporting","Set Property Reporting"],"indexedBodyLines":185},
+    {"sequence":2,"id":"ISA-COMMANDS-CONTROL-LIFECYCLE","title":"Level/power, property control and component lifecycle","state":"PLANNED","count":18,"sourceIds":["ISA-DMS-169","ISA-DMS-170","ISA-DMS-172","ISA-DMS-175","ISA-DMS-194","ISA-DMS-199","ISA-DMS-206","ISA-DMS-208","ISA-DMS-209","ISA-DMS-217","ISA-DMS-218","ISA-DMS-230","ISA-DMS-231","ISA-DMS-232","ISA-DMS-235","ISA-DMS-242","ISA-DMS-244","ISA-DMS-256"],"nativeNames":["Adjust Level","Adjust Power","Arm","Calibrate","Change Level","Change Power","Clear Property","Designate","Disarm","Illuminate","Initiate NUC","Render Useless","Reset","Sanitize","Self Test","Set Property","Shutdown","Zeroize"],"indexedBodyLines":191},
+    {"sequence":3,"id":"ISA-COMMANDS-SPATIAL-ACQUISITION","title":"Spatial control and acquisition","state":"PLANNED","count":12,"sourceIds":["ISA-DMS-163","ISA-DMS-221","ISA-DMS-222","ISA-DMS-224","ISA-DMS-225","ISA-DMS-229","ISA-DMS-233","ISA-DMS-234","ISA-DMS-246","ISA-DMS-247","ISA-DMS-252","ISA-DMS-253"],"nativeNames":["Add Zone","Move","Observe","Point Orientation","Point Position","Remove Zone","Scan Area","Scan Points","Slew Percent","Slew Velocity","Take Picture","Take Range"],"indexedBodyLines":169},
+    {"sequence":4,"id":"ISA-COMMANDS-COMMUNICATION-SERVICES","title":"Communication, media and service selection","state":"PLANNED","count":16,"sourceIds":["ISA-DMS-161","ISA-DMS-210","ISA-DMS-223","ISA-DMS-226","ISA-DMS-227","ISA-DMS-236","ISA-DMS-237","ISA-DMS-238","ISA-DMS-239","ISA-DMS-240","ISA-DMS-245","ISA-DMS-248","ISA-DMS-249","ISA-DMS-250","ISA-DMS-251","ISA-DMS-254"],"nativeNames":["Add IP Address","Discover","Ping","Recommend Video Stream","Remove IP Address","Service Notify","Service Provider For Component","Set Authorization Service","Set Communication Service","Set Live Data Service","Sibling Service Providers","Start Data Input","Start Data Output","Stop Data Input","Stop Data Output","Trace Route"],"indexedBodyLines":279},
+    {"sequence":5,"id":"ISA-COMMANDS-READOUT-HISTORY","title":"Readout, history and archive results","state":"PLANNED","count":7,"sourceIds":["ISA-DMS-207","ISA-DMS-211","ISA-DMS-212","ISA-DMS-213","ISA-DMS-214","ISA-DMS-215","ISA-DMS-216"],"nativeNames":["Create Zip Archive","Get Config","Get Last Operation State","Get Operation State History","Get Property","Get Status","History"],"indexedBodyLines":155},
+    {"sequence":6,"id":"ISA-COMMANDS-AUTH-SUBSCRIPTIONS","title":"Authorization, subscriptions, cancellation and locks","state":"PLANNED","count":7,"sourceIds":["ISA-DMS-162","ISA-DMS-173","ISA-DMS-174","ISA-DMS-176","ISA-DMS-219","ISA-DMS-228","ISA-DMS-255"],"nativeNames":["Add Subscription","Authorize Registration","Authorize Request","Cancel","Lock","Remove Subscription","Unlock"],"indexedBodyLines":146}
   ],
-  "commandCatalogue": {
-    "total": 96,
-    "reviewed": 18,
-    "remaining": 78,
-    "sourceSupportedOutcomes": 18,
-    "preciseInterpretationQuestions": 0,
-    "sourceReviewState": "IN_PROGRESS",
-    "workbookPublicationState": "AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT",
-    "completed_source_groups": [
-      "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
-      "ISA-COMMANDS-IMAGE-SETTINGS",
-      "ISA-COMMANDS-AUTO-CONTROLS"
-    ]
-  },
-  "commandSourceGroups": [
-    {
-      "id": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-164",
-        "ISA-DMS-165",
-        "ISA-DMS-166",
-        "ISA-DMS-167",
-        "ISA-DMS-168",
-        "ISA-DMS-171"
-      ],
-      "nativeNames": [
-        "Adjust Brightness",
-        "Adjust Contrast",
-        "Adjust Focus",
-        "Adjust Gain",
-        "Adjust Iris Size",
-        "Adjust Zoom"
-      ]
-    },
-    {
-      "id": "ISA-COMMANDS-IMAGE-SETTINGS",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-184",
-        "ISA-DMS-186",
-        "ISA-DMS-190",
-        "ISA-DMS-192",
-        "ISA-DMS-193",
-        "ISA-DMS-205"
-      ],
-      "nativeNames": [
-        "Change Brightness",
-        "Change Contrast",
-        "Change Focus",
-        "Change Gain",
-        "Change Iris Size",
-        "Change Zoom"
-      ]
-    },
-    {
-      "id": "ISA-COMMANDS-AUTO-CONTROLS",
-      "state": "COMPLETE",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-178",
-        "ISA-DMS-179",
-        "ISA-DMS-180",
-        "ISA-DMS-181",
-        "ISA-DMS-182",
-        "ISA-DMS-183"
-      ],
-      "nativeNames": [
-        "Change Auto Brightness",
-        "Change Auto Contrast",
-        "Change Auto Focus",
-        "Change Auto Gain",
-        "Change Auto Level",
-        "Change Auto Scan"
-      ]
-    },
-    {
-      "id": "ISA-COMMANDS-SENSING-MODES",
-      "state": "NEXT",
-      "count": 6,
-      "sourceIds": [
-        "ISA-DMS-185",
-        "ISA-DMS-191",
-        "ISA-DMS-198",
-        "ISA-DMS-201",
-        "ISA-DMS-202",
-        "ISA-DMS-203"
-      ],
-      "nativeNames": [
-        "Change Camera Mode",
-        "Change Frame Rate",
-        "Change Polarity",
-        "Change Quality",
-        "Change Radar Mode",
-        "Change Resolution"
-      ]
-    }
-  ]
+  "remainingDeliveryForecast":{"asOf":"2026-11-08","completedTechnicalIterationsAtBaseline":19,"centralRemainingPrompts":22,"lowRemainingPrompts":20,"highRemainingPrompts":24,"includesRemainingCommandPasses":6,"includesCommandWorkbookCheckpoint":1,"scope":"ENTIRE_REMAINING_ISA_CORRECTION_NOT_JUST_COMMANDS","basis":"Six exact command partitions plus one command workbook checkpoint, five datatype/query reuse-and-gap reviews, eight architecture/companion/requirements reviews, one semantic reconciliation/audit and one final publication slot. Full assignment table is in the execution plan.","assumptions":["Reuse124 inspected supporting definitions and subsequent command dependencies rather than starting type work from zero.","Reuse established publication machinery; no per-group workbook rebuild or new publisher.","Keep all480 entries,279 source blocks,31 row/case targets and25 earlier findings in scope.","20–24 allows two slot combinations or two justified splits around the22-slot center. Report any change with named work; never claim unreviewed work is finished."],"plannedQueueCompleted":0,"changesDoNotReopenCompletedResearch":true},
+  "commandPartitionValidation":{"remainingInventoryCount":78,"assignedCount":78,"uniqueAssignedCount":78,"duplicates":0,"omissions":0,"previouslyCompletedReassigned":0,"groupCounts":[18,18,12,16,7,7],"validationScope":"Assignment and workload sizing only; no new semantic review or source outcome."}
 }
