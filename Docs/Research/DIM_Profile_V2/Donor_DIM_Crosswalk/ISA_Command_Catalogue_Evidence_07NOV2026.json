@@ -18,7 +18,8 @@
     "ISA-COMMANDS-CONFIGURATION",
     "ISA-COMMANDS-CONTROL-LIFECYCLE",
     "ISA-COMMANDS-SPATIAL-ACQUISITION",
-    "ISA-COMMANDS-COMMUNICATION-SERVICES"
+    "ISA-COMMANDS-COMMUNICATION-SERVICES",
+    "ISA-COMMANDS-READOUT-HISTORY"
   ],
   "primary_records": [
     {
@@ -5075,6 +5076,535 @@
       "source_boundary_checked": "Complete original entry and all parameter/result tables inspected through the next heading; primary page images and cross-page continuations checked.",
       "source_modal_constraints": [],
       "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-207",
+      "entry_id": "ISA-DMS-207",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Create Zip Archive",
+      "element_kind": "command",
+      "native_type": "result key: Integer",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 35,
+      "pdf_pages": [
+        50
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Create Zip Archive, printed p.35 / PDF 50",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "8657e6bc5452411da0f43885db0d5ef5061842100fa95b37fd91830e89da62de",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-207",
+      "proposed_label": "Requested ZIP archive of a prior history result set",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Creates a ZIP archive of the ISA messages selected by a previous History request and provides that archive to the requester.",
+      "mapping_boundary": "The input identifies a prior query-result set, not a filesystem path, a fresh query or an individual event. Resource permits inline Blob data or a Resource Descriptor. Archive expiry and history-result expiry are separate: an expired archive needs a new archive request, and expired underlying results require a new History request first. No archive URL, compression ratio, storage path, successful retrieval or permanent availability is inferred. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "Integer",
+        "Resource",
+        "Blob",
+        "Bytestream",
+        "Resource Descriptor",
+        "Resource Type",
+        "Count",
+        "Name Value Pair",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-HISTORY-ARCHIVE",
+      "parameters": [
+        {
+          "name": "result key",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Identifier of the message-result set returned by an earlier History request.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "archive",
+          "type": "Resource",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "ZIP archive data or a resource pointer to the ZIP archive.",
+          "default_as_source": null
+        },
+        {
+          "name": "bytesize",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Size of the ZIP archive in bytes.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which this archive is no longer accessible.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-211",
+      "entry_id": "ISA-DMS-211",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Get Config",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 36,
+      "pdf_pages": [
+        51
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Get Config, printed p.36 / PDF 51",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "30c440e412db94fd9acffd368ef4f44f3def5feeb779462f77e57871ded51f8a",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-211",
+      "proposed_label": "Requested current component configuration message",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the current ISA configuration of the receiving component as one required Config result.",
+      "mapping_boundary": "Config describes capabilities and usable states; it is not a replacement for a Status property-value snapshot or an instruction to change settings. The optional capability declaration and empty-capable state lists retain their own cardinalities. A command-specific Parameters table is not supplied; this does not remove generic Request fields. No historical configuration, software configuration file, complete inventory of an actual case or automatic model adoption is asserted. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "Config",
+        "UCI",
+        "Integer",
+        "Priority",
+        "UTC",
+        "Capability Declaration",
+        "Property State",
+        "Observable State",
+        "Command State",
+        "Name Value Pair"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CURRENT-READOUT",
+      "parameters": [],
+      "results": [
+        {
+          "name": "config",
+          "type": "Config",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Current ISA configuration of the receiving component.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-212",
+      "entry_id": "ISA-DMS-212",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Get Last Operation State",
+      "element_kind": "command",
+      "native_type": "code: General Code",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 37,
+      "pdf_pages": [
+        52
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Get Last Operation State, printed p.37 / PDF 52",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "bcb356a518a21229790d47d699c4bb1410b290870fd1d9151453950101c6b6d4",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-212",
+      "proposed_label": "Requested latest occurrence of an operating-state code",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the occurrence time and full Operating State value for the last occurrence of a specified General Code.",
+      "mapping_boundary": "The code selects a component operating condition, not its ISA connection/lifecycle state or a command Response Code. The time and state results are each optional as printed; neither omission is assigned an invented no-match, success, zero-time or paired-return rule. Preserve General State subcode/details rather than returning only the code. No assertion of current state, event observation time, retention period or actual occurrence is made. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "General Code",
+        "General State",
+        "UTC",
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-OPERATING-STATE-HISTORY",
+      "parameters": [
+        {
+          "name": "code",
+          "type": "General Code",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Operating State.code whose latest occurrence and full state value are requested.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time of the latest occurrence of the requested code.",
+          "default_as_source": null
+        },
+        {
+          "name": "state",
+          "type": "General State",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Full Operating State value when the requested code most recently occurred.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "Operating State"
+      ]
+    },
+    {
+      "id": "ISA-CMD-213",
+      "entry_id": "ISA-DMS-213",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Get Operation State History",
+      "element_kind": "command",
+      "native_type": "after: UTC",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 37,
+      "pdf_pages": [
+        52
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Get Operation State History, printed p.37 / PDF 52",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "4f6b0301bc444b2d94d5ec9d89b9c674f91c32c6a65b6c8a568d5fd9ab6e7d2e",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-213",
+      "proposed_label": "Requested time-keyed operating-state history",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the set of Operating State property values since a specified time, returned as a required associative array that may be empty.",
+      "mapping_boundary": "No default start time is supplied for omitted after; do not promise lifetime history or fabricate a timestamp. Time keys and full state values remain distinct from a chronological list, latest-match lookup, generic archived-message query or proof of continuous sampling. No timestamp-key wire encoding, ordering guarantee, sampling cadence or history-retention guarantee is introduced. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "UTC",
+        "General State",
+        "General Code",
+        "Associative Array",
+        "Name Value Pair",
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-OPERATING-STATE-HISTORY",
+      "parameters": [
+        {
+          "name": "after",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which Operating State values are desired, through the present.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "history",
+          "type": "General State",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "Associative Array",
+          "source_role": "Associative array whose name is the time and whose value is the Operating State at that time.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": [
+        "Operating State"
+      ]
+    },
+    {
+      "id": "ISA-CMD-214",
+      "entry_id": "ISA-DMS-214",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Get Property",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 37,
+      "pdf_pages": [
+        52,
+        53
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Get Property, printed p.37 / PDF 52,53",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "42ec52c26dc082f1d39f8a2cc742f7ac8a4dc79573c1cb94d71d861df33c178b",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-214",
+      "proposed_label": "Requested value of one named property",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the value of one named property and returns it as one required Name Value Pair.",
+      "mapping_boundary": "The native result is named property, not value; its Name Value Pair contains required name and typed value. Wildcard is a type defined in the Data Model, not permission to invent arbitrary untyped values. Retrieval is not a property update, capability declaration or a claim that a particular case supplies the value. The previously reviewed reporting controls explicitly distinguish retrieval from periodic publication; do not add undocumented not-ready or not-found behavior. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "String",
+        "Name Value Pair",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CURRENT-READOUT",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the property to retrieve.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "property",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Returned property name and typed value.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-215",
+      "entry_id": "ISA-DMS-215",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Get Status",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 38,
+      "pdf_pages": [
+        53
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Get Status, printed p.38 / PDF 53",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "bcba9d009f234660e358d10250cff2dc7cd90c85bb98e27be9f636c7f74c018c",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-215",
+      "proposed_label": "Requested current values of declared ready properties",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Retrieves the receiving component’s current status: a required Status result containing current values of all declared properties whose ready state is true.",
+      "mapping_boundary": "The selection is declared-and-ready, not all possible ISA properties or only currently published reporting-enabled properties. Ready and reporting remain separate; the source explicitly permits retrieval when property reporting is disabled. The Status message preserves its source, identifier, time, optional priority/stale and empty-capable property list. No source-case values, complete undeclared inventory or observation resultTime is invented. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "Status",
+        "Property State",
+        "UCI",
+        "Integer",
+        "Priority",
+        "UTC",
+        "Name Value Pair"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CURRENT-READOUT",
+      "parameters": [],
+      "results": [
+        {
+          "name": "status",
+          "type": "Status",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Current values of every declared property whose ready state is true, in one Status message.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-216",
+      "entry_id": "ISA-DMS-216",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "History",
+      "element_kind": "command",
+      "native_type": "query: Data Query; before: UTC; after: UTC",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 38,
+      "pdf_pages": [
+        53,
+        54
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 History, printed p.38 / PDF 53,54",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ae371fcec544c9badf7e6254a779d1503b750b830261a41be1c9f9d1a7df8af6",
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-216",
+      "proposed_label": "Requested archived-message query with reusable result identifier",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Queries ISA messages published in the past and returns a result-set identifier, a count whose completeness depends on response status, and optional result expiry for subsequent archiving or retrieval.",
+      "mapping_boundary": "The declared results cite the result set; they do not contain a messages payload. Publication-time bounds are not automatically phenomenonTime, occurrence time or original resultTime. No omitted-bound defaults, boundary inclusivity, result-key global persistence or archive availability is invented. IN PROGRESS matches are provisional; SUCCESS supplies the total. A request repeated after expiry may return different results. Query selection and matching reuse the inspected Data Query contract; future subscription semantics are not imported. This is source-defined request/result information, not an executed query, archive creation, equipment measurement or asserted case capability.",
+      "dependency_terms": [
+        "Data Query",
+        "Integer",
+        "UTC",
+        "Response",
+        "Response Code",
+        "Name Value Pair",
+        "Message"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-HISTORY-ARCHIVE",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "Data Query",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Desired previously published ISA messages and their returned content.",
+          "default_as_source": null
+        },
+        {
+          "name": "before",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Latest publication time of messages of interest.",
+          "default_as_source": null
+        },
+        {
+          "name": "after",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Earliest publication time of messages of interest.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "result key",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Unique identifier of this request’s result set.",
+          "default_as_source": null
+        },
+        {
+          "name": "matches",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Total matching messages in SUCCESS, or matches so far in IN PROGRESS.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which the saved query results will no longer be accessible.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
     }
   ],
   "supporting_definitions": [
@@ -6241,6 +6771,596 @@
           "default_as_source": null
         }
       ]
+    },
+    {
+      "entry_id": "ISA-DMS-305",
+      "native_term": "Config",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 58,
+      "pdf_pages": [
+        73
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Config, printed p.58 / PDF 73",
+      "inspected_content_summary": "Current component-description message, distinct from a Status property-value message. Its optional ccd and required empty-capable state/extras lists are retained; their presence does not prove any case capability.",
+      "source_span_sha256": "3b9733562eb3899aa0437de7d4fd638fb131bfb99a5c40c508494eab8df31814",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Original author of this message.",
+          "default_as_source": null
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Conversation-unique message identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Message priority; zero is highest.",
+          "default_as_source": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Message timestamp with millisecond resolution.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which the data in the message should be regarded as invalid.",
+          "default_as_source": null
+        },
+        {
+          "name": "ccd",
+          "type": "Capability Declaration",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Supported property, command and observable declarations.",
+          "default_as_source": null
+        },
+        {
+          "name": "property states",
+          "type": "Property State",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Current usable states of properties.",
+          "default_as_source": null
+        },
+        {
+          "name": "observable states",
+          "type": "Observable State",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Current usable states of observables.",
+          "default_as_source": null
+        },
+        {
+          "name": "command states",
+          "type": "Command State",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Current usable states of commands.",
+          "default_as_source": null
+        },
+        {
+          "name": "extras",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Additional data that may be attached.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-309",
+      "native_term": "Response",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 60,
+      "pdf_pages": [
+        75
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Response, printed p.60 / PDF 75",
+      "inspected_content_summary": "Message reports ongoing status or final disposition and command results. Required reference links the Request message; required type selects Response Code; values is an empty-capable Name Value Pair list. Distinguish envelope stale/time from nested query-result/archive expiry and occurrence times.",
+      "source_span_sha256": "6fd1e4535bede3b315696cc9ab5df485ea87064376b87d2065d10dd8d9a8a3cd",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component responding to the request.",
+          "default_as_source": null
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Conversation-unique message identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Message priority; zero is highest.",
+          "default_as_source": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Message timestamp with millisecond resolution.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which the data in the message should be regarded as invalid.",
+          "default_as_source": null
+        },
+        {
+          "name": "reference",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Identifier of the corresponding Request message.",
+          "default_as_source": null
+        },
+        {
+          "name": "type",
+          "type": "Response Code",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Current status or final disposition of the request.",
+          "default_as_source": null
+        },
+        {
+          "name": "values",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Return values when applicable.",
+          "default_as_source": null
+        },
+        {
+          "name": "error",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Human-readable explanation for an error response.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-310",
+      "native_term": "Status",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 60,
+      "pdf_pages": [
+        75,
+        76
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Status, printed p.60 / PDF 75,76",
+      "inspected_content_summary": "Component status message with source/identifier/time, optional priority default80 and stale, and required empty-capable properties list. The Get Status command supplies the all-declared-and-ready selection rule; this container alone is not a guarantee of populated or reporting-enabled properties.",
+      "source_span_sha256": "0ae347455b4c78a6eecbce313359140b10b0154a06c1222551eecc3dac299ba4",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Original author of this message.",
+          "default_as_source": null
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Conversation-unique message identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Message priority; zero is highest.",
+          "default_as_source": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Message timestamp with millisecond resolution.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which the data in the message should be regarded as invalid.",
+          "default_as_source": null
+        },
+        {
+          "name": "properties",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Property names and typed values.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-321",
+      "native_term": "Capability Declaration",
+      "element_kind": "data element",
+      "section": "7.3",
+      "printed_page": 70,
+      "pdf_pages": [
+        85
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-08",
+      "source_locator": "ISA DMS 6.0r12 §7.3 Capability Declaration, printed p.70 / PDF 85",
+      "inspected_content_summary": "Container of supported property, command, observable and custom-type declaration lists, all required but empty-capable. This pass inspects the container fields for Config; nested declaration constraints keep their separate ISA-08 review assignment.",
+      "source_span_sha256": "bc01ec550f097dfd0f00cad963e629ad708ae8d6721a3f89f9736168d107d32c",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "properties",
+          "type": "Property Declaration",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Supported property declarations.",
+          "default_as_source": null
+        },
+        {
+          "name": "commands",
+          "type": "Command Declaration",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Supported command declarations.",
+          "default_as_source": null
+        },
+        {
+          "name": "observables",
+          "type": "Observable Declaration",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Supported observable declarations.",
+          "default_as_source": null
+        },
+        {
+          "name": "types",
+          "type": "Custom Type Declaration",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Supported custom data-type declarations.",
+          "default_as_source": null
+        }
+      ],
+      "inspection_scope": "Complete container manifest; no false completion credit for nested declaration types or their range/structure constraints."
+    },
+    {
+      "entry_id": "ISA-DMS-360",
+      "native_term": "Resource",
+      "element_kind": "data element",
+      "section": "8.2",
+      "printed_page": 84,
+      "pdf_pages": [
+        99
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.2 Resource, printed p.84 / PDF 99",
+      "inspected_content_summary": "Union of Blob (opaque payload plus type) or Resource Descriptor (classification, description and access). Archive result is not necessarily a URL or an embedded payload. The union text is complete; requested PDF99 page image was unavailable.",
+      "source_span_sha256": "f856786314616803a78a19a4ab2860cd2681c72d1cb035ca13f23bf78bb4c136",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [],
+      "native_variants": [
+        "Blob",
+        "Resource Descriptor"
+      ],
+      "page_image_inspected": false
+    },
+    {
+      "entry_id": "ISA-DMS-367",
+      "native_term": "Blob",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 87,
+      "pdf_pages": [
+        102
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Blob, printed p.87 / PDF 102",
+      "inspected_content_summary": "Opaque binary payload with required Resource Type and Count length, plus required empty-capable metadata list. Length is the actual payload byte length, explicitly not uncompressed length; no compression ratio or payload is invented.",
+      "source_span_sha256": "994c84d952cf8a5124835fa1a4e694ac17f77acea58626985f82a877ffea7ba4",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "payload",
+          "type": "Bytestream",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Opaque binary bytes.",
+          "default_as_source": null
+        },
+        {
+          "name": "resource type",
+          "type": "Resource Type",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Content type and associated processing directives.",
+          "default_as_source": null
+        },
+        {
+          "name": "length",
+          "type": "Count",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Actual payload byte length, not the uncompressed data length.",
+          "default_as_source": null
+        },
+        {
+          "name": "metadata",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Any metadata associated with the payload.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-375",
+      "native_term": "Command State",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 91,
+      "pdf_pages": [
+        106
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Command State, printed p.91 / PDF 106",
+      "inspected_content_summary": "Required command name and ready Boolean; ready true indicates it is possible to execute the command. This is usable-state information, not command execution, authorization or an execution result.",
+      "source_span_sha256": "17a62de938ce03787b868f4cb87d02e5d38b2c4026bdc89905a4ea522d7b92ff",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the command described.",
+          "default_as_source": null
+        },
+        {
+          "name": "ready",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True when it is possible to execute this command.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-428",
+      "native_term": "Observable State",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 106,
+      "pdf_pages": [
+        121
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Observable State, printed p.106 / PDF 121",
+      "inspected_content_summary": "Required observable name, ready and reporting Booleans. Ready means the component is ready to provide the observable. Preserve the printed reporting-field reference to status messages, but flag its contrast with the explicit Event inclusion contract of Set Observable Reporting for scheduled type reconciliation.",
+      "source_span_sha256": "37a7aa6e27856dc1d9db139dfc7cd6cb4dc9a4d226196395afce0af358583779",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the observable described.",
+          "default_as_source": null
+        },
+        {
+          "name": "ready",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True when the component is ready to provide this observable.",
+          "default_as_source": null
+        },
+        {
+          "name": "reporting",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Printed source: true when reporting this observable in status messages; see source wording note.",
+          "default_as_source": null
+        }
+      ],
+      "source_wording_notes": [
+        {
+          "id": "ISA-SOURCE-NOTE-OBSERVABLE-REPORTING",
+          "source": "DMS6.0r12 §8.3 Observable State, printed106/PDF121, reporting field",
+          "source_wording": "The reporting-field description refers to observables in status messages.",
+          "contrast": "DMS §3.3 Set Observable Reporting (printed45/PDF60) explicitly controls Event-message inclusion; Config contains observable state records, while Status contains property values.",
+          "handling": "Keep the original field wording and this discrepancy visible. Do not silently change the source or infer that Get Config returns observable measurement values.",
+          "scheduled_owner": "ISA-08 capability/state reconciliation and existing semantic audit",
+          "affects_primary_command_role": false,
+          "additional_prompt_created": false
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-433",
+      "native_term": "Property State",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 108,
+      "pdf_pages": [
+        123
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Property State, printed p.108 / PDF 123",
+      "inspected_content_summary": "Required property name, ready and reporting Booleans. Ready means able to provide the property; reporting refers to inclusion in status messages. The introduction uses observable terminology, while the field definitions explicitly identify properties; retain that wording note without merging the roles.",
+      "source_span_sha256": "cba93089eb535cc5a15388d9b72262c82eecd9dba6ac09151367ee2fdca9fb3b",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the property described.",
+          "default_as_source": null
+        },
+        {
+          "name": "ready",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True when the component is ready to provide this property.",
+          "default_as_source": null
+        },
+        {
+          "name": "reporting",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True when reporting this property in status messages.",
+          "default_as_source": null
+        }
+      ],
+      "source_wording_notes": [
+        "The introductory prose uses observable/observables; native name, ready and reporting field descriptions explicitly refer to the property. No correction of the source text or merged role is inferred."
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-258",
+      "native_term": "Bytestream",
+      "element_kind": "data element",
+      "section": "4.1",
+      "printed_page": 50,
+      "pdf_pages": [
+        65
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Bytestream, printed p.50 / PDF 65",
+      "inspected_content_summary": "Base atomic type: sequence of bytes used to transmit binary data; used by Blob.payload. No text encoding, schema, content format or semantic constraints beyond the source definition are invented.",
+      "source_span_sha256": "8878f6ca1871e4e963e4fbd7629da8191938baf6fc8b94ea657070bb7b2fbd8f",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "native_fields": [],
+      "native_form": "Sequence of bytes"
     }
   ],
   "reused_supporting_definitions": [
@@ -7142,6 +8262,231 @@
       "review_pass": "ISA-COMMANDS-COMMUNICATION-SERVICES",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Reuse exact-edition saved definitions and field/quantity manifests. IP Addresses property text rechecked for permitted multiple-address naming. No source count is duplicated or full catalogue completion inferred."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "source_locator": "ISA DMS 6.0r12 §4.2 UCI, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114 / PDF p.129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-293",
+      "native_term": "Priority",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Priority, printed p.54 / PDF p.69",
+      "previous_evidence_files": [
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-344",
+      "native_term": "General Code",
+      "source_locator": "ISA DMS 6.0r12 §8.1 General Code, printed p.79 / PDF p.94",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-384",
+      "native_term": "General State",
+      "source_locator": "ISA DMS 6.0r12 §8.3 General State, printed p.93 / PDF p.108",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF p.120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-363",
+      "native_term": "Associative Array",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Associative Array, printed p.85 / PDF p.100",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-377",
+      "native_term": "Count",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Count, printed p.91 / PDF p.106",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-439",
+      "native_term": "Resource Descriptor",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Descriptor, printed p.110 / PDF p.125",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-440",
+      "native_term": "Resource Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Type, printed p.111 / PDF p.126",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-467",
+      "native_term": "Data Query",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Data Query, printed p.120 / PDF p.135",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-456",
+      "native_term": "Response Code",
+      "source_locator": "ISA DMS 6.0r12 §9.1 Response Code, printed p.117 / PDF p.132",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-303",
+      "native_term": "Message",
+      "source_locator": "ISA DMS 6.0r12 §6.1 Message, printed p.57 / PDF p.72",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
     }
   ],
   "shared_parameter_schemas": {
@@ -8418,119 +9763,339 @@
       },
       "purpose": "Shared analytical family with individually checked native fields, roles, cardinalities and exceptions; not compulsory independent DIM classes.",
       "question_ids": []
+    },
+    "ISA-CMD-HISTORY-ARCHIVE": {
+      "applies_to": [
+        "ISA-DMS-207",
+        "ISA-DMS-216"
+      ],
+      "native_signature_by_command": {
+        "Create Zip Archive": "result key: Integer",
+        "History": "query: Data Query; before: UTC; after: UTC"
+      },
+      "parameter_manifest_by_command": {
+        "Create Zip Archive": [
+          {
+            "name": "result key",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Identifier of the message-result set returned by an earlier History request.",
+            "default_as_source": null
+          }
+        ],
+        "History": [
+          {
+            "name": "query",
+            "type": "Data Query",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Desired previously published ISA messages and their returned content.",
+            "default_as_source": null
+          },
+          {
+            "name": "before",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Latest publication time of messages of interest.",
+            "default_as_source": null
+          },
+          {
+            "name": "after",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Earliest publication time of messages of interest.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Create Zip Archive": [
+          {
+            "name": "archive",
+            "type": "Resource",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "ZIP archive data or a resource pointer to the ZIP archive.",
+            "default_as_source": null
+          },
+          {
+            "name": "bytesize",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Size of the ZIP archive in bytes.",
+            "default_as_source": null
+          },
+          {
+            "name": "stale",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Time after which this archive is no longer accessible.",
+            "default_as_source": null
+          }
+        ],
+        "History": [
+          {
+            "name": "result key",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Unique identifier of this request’s result set.",
+            "default_as_source": null
+          },
+          {
+            "name": "matches",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Total matching messages in SUCCESS, or matches so far in IN PROGRESS.",
+            "default_as_source": null
+          },
+          {
+            "name": "stale",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Time after which the saved query results will no longer be accessible.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Group related retrieval purposes while preserving each independently checked contract, native field name, cardinality and exception. Not compulsory separate DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-CURRENT-READOUT": {
+      "applies_to": [
+        "ISA-DMS-211",
+        "ISA-DMS-214",
+        "ISA-DMS-215"
+      ],
+      "native_signature_by_command": {
+        "Get Config": "No command-specific parameters declared",
+        "Get Property": "name: String",
+        "Get Status": "No command-specific parameters declared"
+      },
+      "parameter_manifest_by_command": {
+        "Get Config": [],
+        "Get Property": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name of the property to retrieve.",
+            "default_as_source": null
+          }
+        ],
+        "Get Status": []
+      },
+      "result_manifest_by_command": {
+        "Get Config": [
+          {
+            "name": "config",
+            "type": "Config",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Current ISA configuration of the receiving component.",
+            "default_as_source": null
+          }
+        ],
+        "Get Property": [
+          {
+            "name": "property",
+            "type": "Name Value Pair",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Returned property name and typed value.",
+            "default_as_source": null
+          }
+        ],
+        "Get Status": [
+          {
+            "name": "status",
+            "type": "Status",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Current values of every declared property whose ready state is true, in one Status message.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Group related retrieval purposes while preserving each independently checked contract, native field name, cardinality and exception. Not compulsory separate DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-OPERATING-STATE-HISTORY": {
+      "applies_to": [
+        "ISA-DMS-212",
+        "ISA-DMS-213"
+      ],
+      "native_signature_by_command": {
+        "Get Last Operation State": "code: General Code",
+        "Get Operation State History": "after: UTC"
+      },
+      "parameter_manifest_by_command": {
+        "Get Last Operation State": [
+          {
+            "name": "code",
+            "type": "General Code",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Operating State.code whose latest occurrence and full state value are requested.",
+            "default_as_source": null
+          }
+        ],
+        "Get Operation State History": [
+          {
+            "name": "after",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Time after which Operating State values are desired, through the present.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Get Last Operation State": [
+          {
+            "name": "time",
+            "type": "UTC",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Time of the latest occurrence of the requested code.",
+            "default_as_source": null
+          },
+          {
+            "name": "state",
+            "type": "General State",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Full Operating State value when the requested code most recently occurred.",
+            "default_as_source": null
+          }
+        ],
+        "Get Operation State History": [
+          {
+            "name": "history",
+            "type": "General State",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "Associative Array",
+            "source_role": "Associative array whose name is the time and whose value is the Operating State at that time.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Group related retrieval purposes while preserving each independently checked contract, native field name, cardinality and exception. Not compulsory separate DIM classes.",
+      "question_ids": []
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "DMS6.0r12 §3.3: all16 assigned communication/media/service entries, complete parameters/results and following-heading boundaries.",
+    "primary_text": "DMS6.0r12 §3.3: all seven assigned readout/history/archive definitions with full native input/result tables and next-heading boundaries.",
     "primary_text_pages": [
-      37,
+      50,
       51,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63,
-      64
+      52,
+      53,
+      54
     ],
     "primary_pages_visually_inspected": [
-      37,
+      50,
       51,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63,
-      64
+      52,
+      53,
+      54
     ],
     "additional_text_pages": [
-      27,
-      66,
-      72,
-      132,
-      133,
-      134,
-      135,
-      136,
-      137,
-      138,
-      139
+      65,
+      73,
+      75,
+      76,
+      77,
+      85,
+      86,
+      99,
+      100,
+      102,
+      106,
+      121,
+      123
     ],
     "additional_pages_visually_inspected": [
-      72,
-      134,
-      135,
-      136,
-      137,
-      138,
-      139
+      73,
+      75,
+      76,
+      85,
+      86,
+      100,
+      102,
+      106,
+      121,
+      123
     ],
-    "page_image_limitations": "Page27 image request failed; original text and prior ISA-02 evidence used. Page133 image unavailable; original enum/union text inspected. No claim of visual inspection for those two pages.",
+    "page_image_limitations": "Resource union on PDF99 was fully read as original text; its requested image was unavailable. No new visual-inspection claim for99 or the text-only Bytestream/section-boundary checks.",
     "new_supporting_definitions": [
-      "Boolean Wrapper",
-      "Message",
-      "Response Code",
-      "Comparator",
-      "Match",
-      "Select",
-      "Value",
-      "Administrative Select",
-      "And Match",
-      "Boolean Function",
-      "Boolean Match",
-      "Config Select",
-      "Data Query",
-      "Event Select",
-      "Field Value Selector",
-      "Function Parameter",
-      "List Value",
-      "Not Match",
-      "Or Match",
-      "Static Value",
-      "Status Select",
-      "Value Function",
-      "Value Selector"
+      "Config",
+      "Response",
+      "Status",
+      "Capability Declaration",
+      "Resource",
+      "Blob",
+      "Command State",
+      "Observable State",
+      "Property State",
+      "Bytestream"
     ],
-    "new_supporting_count": 23,
-    "unique_supporting_total": 152,
+    "new_supporting_count": 10,
+    "unique_supporting_total": 162,
     "reused_types": [
-      "String",
       "Boolean",
       "Integer",
+      "String",
+      "Wildcard",
       "UCI",
-      "URL",
       "UTC",
-      "IP Address",
-      "IPv4 Address",
-      "IPv6 Address",
+      "Priority",
+      "General Code",
+      "General State",
+      "Name Value Pair",
+      "Associative Array",
+      "Count",
       "Resource Descriptor",
       "Resource Type",
-      "Count",
-      "Name Value Pair",
-      "Wildcard",
-      "Data Transfer",
-      "General State",
-      "General Code",
-      "Measured Mbpsec",
-      "Mbpsec",
-      "Percent",
-      "Associative Array"
+      "Data Query",
+      "Response Code",
+      "Message"
     ],
     "cross_page_checks": [
-      "Start Data Output62–63",
-      "Trace Route63–64",
-      "Select133–134",
-      "Boolean Function134–135",
-      "Data Query135–136",
-      "Field Value Selector136–137"
+      "Get Property52–53",
+      "History53–54",
+      "Status75–76 with next section77"
     ],
-    "source_limits": "No network/probe/media connection or physical command executed. Query function/option vocabularies and full message envelopes remain with their assigned catalogue/companion reviews; inspected dependency meanings are saved and reusable. No new command interpretation question."
+    "source_limits": "Config capability-container fields and state containers are inspected for result interpretation; nested declaration/range constraints remain with scheduled full-type/requirements reconciliation. Observable State reporting wording discrepancy is retained in its supporting record. No primary question is created or prior question changed; no command executed."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -8914,6 +10479,91 @@
         "Field Value Selector136–137"
       ],
       "source_limits": "No network/probe/media connection or physical command executed. Query function/option vocabularies and full message envelopes remain with their assigned catalogue/companion reviews; inspected dependency meanings are saved and reusable. No new command interpretation question."
+    },
+    "ISA-COMMANDS-READOUT-HISTORY": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "DMS6.0r12 §3.3: all seven assigned readout/history/archive definitions with full native input/result tables and next-heading boundaries.",
+      "primary_text_pages": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "primary_pages_visually_inspected": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "additional_text_pages": [
+        65,
+        73,
+        75,
+        76,
+        77,
+        85,
+        86,
+        99,
+        100,
+        102,
+        106,
+        121,
+        123
+      ],
+      "additional_pages_visually_inspected": [
+        73,
+        75,
+        76,
+        85,
+        86,
+        100,
+        102,
+        106,
+        121,
+        123
+      ],
+      "page_image_limitations": "Resource union on PDF99 was fully read as original text; its requested image was unavailable. No new visual-inspection claim for99 or the text-only Bytestream/section-boundary checks.",
+      "new_supporting_definitions": [
+        "Config",
+        "Response",
+        "Status",
+        "Capability Declaration",
+        "Resource",
+        "Blob",
+        "Command State",
+        "Observable State",
+        "Property State",
+        "Bytestream"
+      ],
+      "new_supporting_count": 10,
+      "unique_supporting_total": 162,
+      "reused_types": [
+        "Boolean",
+        "Integer",
+        "String",
+        "Wildcard",
+        "UCI",
+        "UTC",
+        "Priority",
+        "General Code",
+        "General State",
+        "Name Value Pair",
+        "Associative Array",
+        "Count",
+        "Resource Descriptor",
+        "Resource Type",
+        "Data Query",
+        "Response Code",
+        "Message"
+      ],
+      "cross_page_checks": [
+        "Get Property52–53",
+        "History53–54",
+        "Status75–76 with next section77"
+      ],
+      "source_limits": "Config capability-container fields and state containers are inspected for result interpretation; nested declaration/range constraints remain with scheduled full-type/requirements reconciliation. Observable State reporting wording discrepancy is retained in its supporting record. No primary question is created or prior question changed; no command executed."
     }
   },
   "specific_questions": [
@@ -8943,9 +10593,10 @@
     }
   ],
   "case_checks": [
-    "All73 equipment statements and all earlier non-ISA display values are preserved; no real device address, provider, routing path or transfer state is invented.",
-    "Provider recommendations differ from selection and authorization. Transfer-start SUCCESS differs from transfer completion. Optional result omission and required empty-capable lists retain their source meanings.",
-    "No external endpoint was contacted and no native ISA command was sent. Six earlier source questions and Bennett original resultTime remain unchanged."
+    "All73 existing case statements and all earlier equipment/non-ISA cells preserved. No actual query, archive, returned history, current state, resource availability or device support is claimed.",
+    "History bounds refer to message publication; archive expiry, query-result expiry, message validity and latest operating-state occurrence remain distinct. Bennett original resultTime stays unknown.",
+    "Ready is distinct from reporting. Optional results/bounds have no invented omission defaults; no storage-retention, ordering, complete-history or error guarantee is added.",
+    "Six existing primary questions remain unchanged. Observable State reporting wording is saved as a scoped supporting-source discrepancy for the already planned type review, not a new work item or blanket caveat."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -8980,6 +10631,12 @@
       "All73 equipment statements and all earlier non-ISA display values are preserved; no real device address, provider, routing path or transfer state is invented.",
       "Provider recommendations differ from selection and authorization. Transfer-start SUCCESS differs from transfer completion. Optional result omission and required empty-capable lists retain their source meanings.",
       "No external endpoint was contacted and no native ISA command was sent. Six earlier source questions and Bennett original resultTime remain unchanged."
+    ],
+    "ISA-COMMANDS-READOUT-HISTORY": [
+      "All73 existing case statements and all earlier equipment/non-ISA cells preserved. No actual query, archive, returned history, current state, resource availability or device support is claimed.",
+      "History bounds refer to message publication; archive expiry, query-result expiry, message validity and latest operating-state occurrence remain distinct. Bennett original resultTime stays unknown.",
+      "Ready is distinct from reporting. Optional results/bounds have no invented omission defaults; no storage-retention, ordering, complete-history or error guarantee is added.",
+      "Six existing primary questions remain unchanged. Observable State reporting wording is saved as a scoped supporting-source discrepancy for the already planned type review, not a new work item or blanket caveat."
     ]
   },
   "mapping_note": "Requests retain per-command native semantics and shared parameter families. Existing fields/defaults are not copied into incomplete source tables. Individual candidate rows are for owner review, not compulsory independent model classes.",
@@ -8993,44 +10650,47 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-READOUT-HISTORY",
-  "next_action": "Review the seven already assigned readout/history/archive commands; reuse the saved Data Query and response dependencies; no per-group workbook export.",
+  "next_source_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+  "next_action": "Review the final seven assigned authorization/subscription/cancellation/lock command definitions, reusing the saved query/Response evidence. No source-group workbook export.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-161",
-      "ISA-DMS-210",
-      "ISA-DMS-223",
-      "ISA-DMS-226",
-      "ISA-DMS-227",
-      "ISA-DMS-236",
-      "ISA-DMS-237",
-      "ISA-DMS-238",
-      "ISA-DMS-239",
-      "ISA-DMS-240",
-      "ISA-DMS-245",
-      "ISA-DMS-248",
-      "ISA-DMS-249",
-      "ISA-DMS-250",
-      "ISA-DMS-251",
-      "ISA-DMS-254"
+      "ISA-DMS-207",
+      "ISA-DMS-211",
+      "ISA-DMS-212",
+      "ISA-DMS-213",
+      "ISA-DMS-214",
+      "ISA-DMS-215",
+      "ISA-DMS-216"
     ],
-    "reviewed_total": 212,
-    "supported_total": 206,
+    "reviewed_total": 219,
+    "supported_total": 213,
     "specific_questions_retained": 6,
     "specific_questions_added": 0,
     "specific_questions_total": 6,
-    "command_entries_reviewed": 82,
+    "command_entries_reviewed": 89,
     "command_entries_total": 96,
-    "command_unreviewed": 14,
+    "command_unreviewed": 7,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 239,
-    "new_candidate_rows": 16,
+    "information_review_rows": 246,
+    "new_candidate_rows": 7,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 23,
-    "unique_supporting_definitions": 152,
+    "new_supporting_types": 10,
+    "unique_supporting_definitions": 162,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
-  }
+  },
+  "source_wording_notes": [
+    {
+      "id": "ISA-SOURCE-NOTE-OBSERVABLE-REPORTING",
+      "source": "DMS6.0r12 §8.3 Observable State, printed106/PDF121, reporting field",
+      "source_wording": "The reporting-field description refers to observables in status messages.",
+      "contrast": "DMS §3.3 Set Observable Reporting (printed45/PDF60) explicitly controls Event-message inclusion; Config contains observable state records, while Status contains property values.",
+      "handling": "Keep the original field wording and this discrepancy visible. Do not silently change the source or infer that Get Config returns observable measurement values.",
+      "scheduled_owner": "ISA-08 capability/state reconciliation and existing semantic audit",
+      "affects_primary_command_role": false,
+      "additional_prompt_created": false
+    }
+  ]
 }
