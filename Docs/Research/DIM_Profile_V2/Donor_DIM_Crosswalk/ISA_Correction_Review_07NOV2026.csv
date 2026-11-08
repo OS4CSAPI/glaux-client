@@ -190,6 +190,16 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Segment → Route | Waypoint · ordered nested route representation,,,,,,Route-segment alternatives
 ,,,,,,,Route Action · LOOP / PATROL / RETURN / STOP,,,,,,End-of-route action category
 ,,,,,,,"Command Execution · name, request id, issuer, start time",,,,,,Current command execution record
+,,,,,,,Data Query + Select → Administrative / Config / Event / Status Select,,,,,,Requested message kinds and returned fields
+,,,,,,,Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator,,,,,,Message-matching criteria
+,,,,,,,Value Selector.context / predicate / field selection; Field Value Selector.field / predicate / field selection,,,,,,Field navigation and contextual filtering
+,,,,,,,Boolean Function / Value Function.name + arguments; Function Parameter.name + value,,,,,,Query functions and arguments
+,,,,,,,Value → Field Value Selector / List Value / Static Value / Value Function / Value Selector,,,,,,Literal and list query values
+,,,,,,,"String Match: case-sensitive / exact-match / pattern; DQL regexp(pattern, subject)",,,,,,String matching rules
+,,,,,,,Subscription.query + id; Subscription ID.creator / consumer / name,,,,,,Subscription identity and query definition
+,,,,,,,Data Query.with clause / without clause; loopback; strictcomparisons / strictcomparison; without cache,,,,,,Subscription selection and initial-cache options
+,,,,,,,source(); component(); get_config(); get_status(); get_administrative(); get_event(),,,,,,Message-source and cached-component query context
+,,,,,,,components_near_uci(); components_in_area(); in_area(),,,,,,Spatial component and message selection
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)

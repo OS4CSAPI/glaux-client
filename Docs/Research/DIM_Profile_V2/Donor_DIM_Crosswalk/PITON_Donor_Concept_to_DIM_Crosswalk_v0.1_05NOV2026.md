@@ -2,14 +2,17 @@
 
 ## Current execution — 8 November 2026
 
-**Accelerated delivery11 COMPLETE:93 reporting composites and309 native fields reconciled.** Canonical text/CSV/JSON:304 information rows,426/480 primary outcomes,200/224 types. All292 prior rows,58 donor records,73 case statements and six primary questions are preserved. Twelve new representation patterns;80 prior supporting inspections reused;13 first primary inspections. No DIM adoption.
+**Accelerated delivery 12 COMPLETE: all 24 filtering/query definitions and all 31 assigned DQL Guide sections reviewed.** Canonical Markdown/CSV/JSON contain 314 information rows and 450/480 primary outcomes; all 224/224 datatypes are reconciled. The 24 core definitions include 53 fields, seven enumeration codes and fifteen union alternatives. Twenty-three earlier dependency inspections were reused; String Match received its first full inspection. All 304 previous rows, 58 donor records, 73 case statements and six primary questions are preserved. Ten related comparison patterns were added; no DIM content was adopted.
 
-**Next “proceed”: original ISA Step10 / accelerated delivery12 — `ISA-TYPES-FILTERING`,24 exact datatype assignments plus31 DQL Guide blocks. Remaining ISA forecast11 deliveries, range9–13.** Four original work areas remain closed. Excel stays the253-row/226-primary master-integration snapshot; current text is four datatype checkpoints newer (51 additional rows/200 type outcomes). No new source scope, checklist or standalone report.
+**Next “proceed”: original ISA Step 11 / accelerated delivery 13 — six services and 24 capability categories (DMS001–030), plus 18 Introductory Guide and 30 White Paper blocks. Remaining ISA forecast: ten deliveries, range eight–twelve.** The routing label `ISA-SERVICES-CAPABILITIES-INTRO` identifies this existing slot; it adds no work. Four original work areas remain closed while their cross-cutting obligations retain the saved later assignments. Software architecture is delivery 14 and is not part of the next increment.
 
-[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+Excel retains the verified 253-row/226-primary master-integration snapshot. The current text is five datatype checkpoints newer, with 224 type outcomes and 61 additional rows. Source-review scope, workbook cadence and adoption decisions are unchanged.
 
-The adoption agreement remains: record comparison findings now; readiness-based adoption review at broader24; synthesis/testing35–39; consolidated named-version approval40. Older checkpoint text below is retained history, not a competing current queue.
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type and query-guide evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
 
+The adoption agreement remains: record comparison findings now; readiness-based adoption review at broader Step 24; synthesis/testing at Steps 35–39; consolidated named-version approval at Step 40. Older checkpoint text below is retained history, not a competing current queue.
+
+## Historical checkpoint banners
 
 **CURRENT:8 November2026. ISA Step8 / accelerated delivery9 COMPLETE;285 readable master rows,305 primary reviews,79/224 types. Next:ISA-TYPES-REPORTING-ENUMS (28 entries),accelerated delivery10. Remaining ISA forecast13 (11–15). Canonical Excel remains the253-row master-integration snapshot; current text is two datatype checkpoints newer.**
 
