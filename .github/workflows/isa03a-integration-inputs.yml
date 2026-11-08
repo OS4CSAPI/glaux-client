@@ -16,7 +16,7 @@ jobs:
       - name: Record input identities
         run: |
           git rev-parse HEAD > ISA_INPUT_COMMIT.txt
-          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Properties_07NOV2026.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
+          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Observables_07NOV2026.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
       - uses: actions/upload-artifact@v4
         with:
           name: isa-review-text-inputs
@@ -33,4 +33,4 @@ jobs:
             scripts/publish_isa02_checkpoint.py
             .github/workflows/publish-isa03d-checkpoint.yml
           if-no-files-found: error
-# Current input export: consolidate all 39 saved observable outcomes into the workbook; no new source reviews.
+# Current input export: six image-adjustment commands; preserve the completed property/observable workbook.
