@@ -2,15 +2,17 @@
 
 ## Current execution — 8 November 2026
 
-**Accelerated delivery 12 COMPLETE: all 24 filtering/query definitions and all 31 assigned DQL Guide sections reviewed.** Canonical Markdown/CSV/JSON contain 314 information rows and 450/480 primary outcomes; all 224/224 datatypes are reconciled. The 24 core definitions include 53 fields, seven enumeration codes and fifteen union alternatives. Twenty-three earlier dependency inspections were reused; String Match received its first full inspection. All 304 previous rows, 58 donor records, 73 case statements and six primary questions are preserved. Ten related comparison patterns were added; no DIM content was adopted.
+**Original ISA Step 11 / accelerated delivery 13 COMPLETE:** six services, 24 capability categories, 18 Introductory Guide blocks and 30 White Paper blocks reviewed. The DMS catalogue now has 480/480 outcomes: 474 supported and six retained questions. All 224 datatypes and 31 DQL Guide blocks remain complete. This completes the named catalogue pass; architecture, companion-document, requirements and semantic reconciliation continue in their existing slots.
 
-**Next “proceed”: original ISA Step 11 / accelerated delivery 13 — six services and 24 capability categories (DMS001–030), plus 18 Introductory Guide and 30 White Paper blocks. Remaining ISA forecast: ten deliveries, range eight–twelve.** The routing label `ISA-SERVICES-CAPABILITIES-INTRO` identifies this existing slot; it adds no work. Four original work areas remain closed while their cross-cutting obligations retain the saved later assignments. Software architecture is delivery 14 and is not part of the next increment.
+Canonical Markdown/CSV/JSON contain 320 information rows, preserving all 314 previous rows, 58 donor records and 73 case statements. Six comparison patterns distinguish service support, overlapping capability groups, must/should obligations, client/Controller roles, virtual network context and extension standing. Inclusion is not DIM adoption. Four original work areas remain closed; original ISA-11 remains in progress with architecture next.
 
-Excel retains the verified 253-row/226-primary master-integration snapshot. The current text is five datatype checkpoints newer, with 224 type outcomes and 61 additional rows. Source-review scope, workbook cadence and adoption decisions are unchanged.
+**Next “proceed”: original ISA Step 11 / accelerated delivery 14 — all 27 registered Software Design Document blocks. Remaining ISA forecast: nine deliveries, range seven–eleven.** The routing label `ISA-SOFTWARE-ARCHITECTURE` identifies this existing slot. Reuse completed catalogue and guide evidence, update the same master/evidence/coverage/PITON, and verify GitHub publication. Interface/encoding/security guidance remains delivery 15.
 
-[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Type and query-guide evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+Excel retains the verified 253-row/226-primary master-integration snapshot. The current text includes five completed datatype groups and the services/context pass, totaling 320 rows/480 catalogue outcomes, 67 rows beyond Excel. Source scope, workbook cadence and adoption policy remain unchanged.
 
-The adoption agreement remains: record comparison findings now; readiness-based adoption review at broader Step 24; synthesis/testing at Steps 35–39; consolidated named-version approval at Step 40. Older checkpoint text below is retained history, not a competing current queue.
+[Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json) · [Current ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Service and context evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed type/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+
+Record comparison findings now; readiness-based adoption at broader Step 24, synthesis/testing at Steps 35–39 and consolidated named-version approval at Step 40 remain agreed. Older checkpoint text below is history, not the current execution queue.
 
 ## Historical checkpoint banners
 

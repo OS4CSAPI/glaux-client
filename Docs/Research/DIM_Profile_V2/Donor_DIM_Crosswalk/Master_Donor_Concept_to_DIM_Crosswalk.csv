@@ -12,6 +12,8 @@ LoRaWAN end node (design),ESP32-C6; Wi-Fi / LTE options (design),CR1000X logger 
 External SHT31; 3 m cable,,ClimaVue SDI-12 signal → logger C/U terminal,,,≈ ConnectsTo,,≈ CIC-to-member ISA/native interface [earlier mapping; review ISA-11],,,,≈ AggregateProcess.connections (Link source/destination),,Connected external equipment
 ,,,acebpmet station site (not a surveyed EE181 point),,,,Not reviewed · ISA-03,≈ sosa:Platform,≈ Host (grouping of Observers),,≈ Deployment.platform / location / deployedSystem,≈ Deployment.platform; System.systemType=Platform,Hosting platform / station context
 ,,CRBasic scan at 60 seconds (example),ATemp 15-min mean of 5-second samples,,,,Not reviewed · ISA-04,≈ sosa:Procedure,ObservingProcedure (reusable observing method),,≈ ProcessMethod (methodology),≈ Procedure.procedureType=ObservingProcedure,Observing procedure / method
+,,,,,,,ISA component: virtual node; Client / Controller roles; Controller software responsibilities,,,,,,Network participation role and responsibilities
+,,,,,,,ISA instance = one Controller + any number of Clients; interconnected instances and locations,,,,,,Network instance and connection context
 "03 — CHANNELS, OUTPUTS & OBSERVATIONS — Separate physical/transducer channels, output fields, observable properties, performer and performed event.",,,,,,,,,,,,,
 ,,,,TransducerChannel,,,Not reviewed · ISA-07,,,,,,Addressed transducer channel
 TempC_SHT31; Hum_SHT31,pm01; pm25; pm10,ClimaVue aR7! positions 1–14; logger Status.PanelTemp (separate source),ATemp; F_ATemp; F_Record (distinct original fields),,,,≈ Observable Declaration (CCD.observables) [earlier mapping; review ISA-08],,,≈ DataRecord.fields[]: name + typed DataComponent,≈ AbstractProcess.outputs (SWE DataComponent),≈ DataStream /schema → resultSchema,Reported output field
@@ -200,6 +202,9 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Data Query.with clause / without clause; loopback; strictcomparisons / strictcomparison; without cache,,,,,,Subscription selection and initial-cache options
 ,,,,,,,source(); component(); get_config(); get_status(); get_administrative(); get_event(),,,,,,Message-source and cached-component query context
 ,,,,,,,components_near_uci(); components_in_area(); in_area(),,,,,,Spatial component and message selection
+,,,,,,,Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists,,,,,,Service role and required command support
+,,,,,,,22 ordinary DMS capability categories → Properties / Observables / Commands; overlapping membership,,,,,,Capability group membership
+,,,,,,,Required: all components must support; Recommended: all components should support,,,,,,Required and recommended capability support
 "05 — SOURCE, EVIDENCE & REPRESENTATION — Deliberate unmatched proposal rows: unsupported equivalence is not concealed by a blank cell.",,,,,,,,,,,,,
 C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; cloud examples separately,D02 ClimaVue manual vs D07 logger Status example,NOAA CSV + operator metadata; contributor join derived,,,,Not reviewed · ISA-07,,,,,,Source-qualified assertion (proposed DIM)
 ,,,2 original NOAA means → 4 project API representations,,,,Not reviewed · ISA-07,,,,,,Original event and derived digital representation (proposed DIM)
@@ -216,6 +221,7 @@ C02 manual; C03 decoder (separate source contexts),A01 hardware; A02 firmware; c
 ,,,,,,,List · values: Wildcard [0+],,,,,,Declared-type value list
 ,,,,,,,Custom Type · fields: Name Value Pair [0+],,,,,,Custom-structure field values
 ,,,,,,,Tree · value + children; same node datatype,,,,,,Recursive same-type value hierarchy
+,,,,,,,Custom → Nominated → Accepted; incorporation into a later major standard release,,,,,,Extension standing and standardization context
 "06 — CASE TERMS AWAITING DIM DISPOSITION — Actual source fields and recorded reference examples not force-mapped into the 22 proposed DIM elements; every rightmost label is a review hold, not adopted.",,,,,,,,,,,,,
 ,,,EE181 service roles: 2024-04-16 change; as of 2024-12-31,,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — service history
 External probe cable 3 m (design),Wall/pole mounting supported (design),Level / orientation needed (guidance),"32.55934 N, −80.45456 W; 6.1 m station tower",,,,Not reviewed · ISA-03,,,,,,REVIEW HOLD — site / mounting
