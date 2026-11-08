@@ -19,7 +19,8 @@
     "ISA-COMMANDS-CONTROL-LIFECYCLE",
     "ISA-COMMANDS-SPATIAL-ACQUISITION",
     "ISA-COMMANDS-COMMUNICATION-SERVICES",
-    "ISA-COMMANDS-READOUT-HISTORY"
+    "ISA-COMMANDS-READOUT-HISTORY",
+    "ISA-COMMANDS-AUTH-SUBSCRIPTIONS"
   ],
   "primary_records": [
     {
@@ -5605,6 +5606,553 @@
       "source_boundary_checked": "Original definition and complete parameter/result tables read through the next heading; primary PDF page images inspected, including Get Property52–53 and History53–54.",
       "source_modal_constraints": [],
       "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-162",
+      "entry_id": "ISA-DMS-162",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Add Subscription",
+      "element_kind": "command",
+      "native_type": "query: Data Query; name: String; consumer: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 22,
+      "pdf_pages": [
+        37,
+        38
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Add Subscription, printed p.22 / PDF 37,38",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "325a814e19548bff1600f1fd292a1ab78e41c25cbb079a571eab999913d34ad0",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-162",
+      "proposed_label": "Requested creation or replacement of a future-message subscription",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Creates or updates a subscription for messages available in the future, using a query and optional name and consumer; returns an assigned Subscription ID.",
+      "mapping_boundary": "The same subscription name overwrites an existing subscription; multiple subscriptions with the same provider need distinct names. Omitted consumer means the requesting component. No omitted-name generation rule is supplied here. The returned Subscription ID is a creator/consumer/name structure, not an integer or just a label. Query matching and content selection reuse the checked Data Query definition; this is not a historical retrieval request or proof of delivery. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "Data Query",
+        "Subscription ID",
+        "Subscription",
+        "UCI",
+        "String",
+        "Response",
+        "Response Code"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SUBSCRIPTION-LIFECYCLE",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "Data Query",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Desired future messages and their returned contents.",
+          "default_as_source": null
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Subscription name; reuse overwrites the existing subscription, and separate subscriptions with the same provider need unique names.",
+          "default_as_source": null
+        },
+        {
+          "name": "consumer",
+          "type": "UCI",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Component to receive matching messages.",
+          "default_as_source": "requesting component"
+        }
+      ],
+      "results": [
+        {
+          "name": "subscription id",
+          "type": "Subscription ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Assigned unique identifier for the subscription.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-173",
+      "entry_id": "ISA-DMS-173",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Authorize Registration",
+      "element_kind": "command",
+      "native_type": "client: UCI; server: UCI; registration: Registration",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 28,
+      "pdf_pages": [
+        43
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Authorize Registration, printed p.28 / PDF 43",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "43720a55f529c6eedb19ec3f42fae3a17be2c2f59a7fd0e16c85c13d33a55ab1",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-173",
+      "proposed_label": "Registration permission decision for a component and server",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Determines whether a specified registering component is permitted to register with a specified server; returns an explicit authorized Boolean.",
+      "mapping_boundary": "client is the registering component and server is the receiving server. The complete Registration message is optional as an input here, not universally required. authorized=false is an explicit denial, not an absent result; authorization is not proof that registration completed. Do not infer a credential scheme, role hierarchy or actual permission from the definition. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "UCI",
+        "Registration",
+        "Registration Operation",
+        "Boolean",
+        "Request",
+        "Response",
+        "Response Code",
+        "Name Value Pair",
+        "Priority",
+        "Integer",
+        "String",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-AUTHORIZATION-DECISIONS",
+      "parameters": [
+        {
+          "name": "client",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component requesting registration.",
+          "default_as_source": null
+        },
+        {
+          "name": "server",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component receiving the registration request.",
+          "default_as_source": null
+        },
+        {
+          "name": "registration",
+          "type": "Registration",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Registration message containing the registration request.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "authorized",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True means registration is authorized; false means it is denied.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-174",
+      "entry_id": "ISA-DMS-174",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Authorize Request",
+      "element_kind": "command",
+      "native_type": "subject: UCI; request: Request",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 28,
+      "pdf_pages": [
+        43
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Authorize Request, printed p.28 / PDF 43",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "6d047d5860d774ccc5e5883a6f130800f495091a01bcd721cde9a77cd015d0fd",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-174",
+      "proposed_label": "Tasking permission decision for a target component and request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Determines whether the requesting component may task the specified component to perform the supplied Request; returns an explicit authorized Boolean.",
+      "mapping_boundary": "The native subject parameter is the component being tasked, not the requester or a human user. The Request retains its original source and command context, request id and access-control data. A permission decision is distinct from readiness, lock ownership, invocation and successful execution. No authorization policy, authentication mechanism or empty-credential behavior is invented. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "UCI",
+        "Request",
+        "Boolean",
+        "Response",
+        "Response Code",
+        "Name Value Pair",
+        "Integer",
+        "String",
+        "Priority",
+        "UTC"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-AUTHORIZATION-DECISIONS",
+      "parameters": [
+        {
+          "name": "subject",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component being tasked.",
+          "default_as_source": null
+        },
+        {
+          "name": "request",
+          "type": "Request",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Complete Request message to authorize.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "authorized",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True means the request is authorized; false means it is denied.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-176",
+      "entry_id": "ISA-DMS-176",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Cancel",
+      "element_kind": "command",
+      "native_type": "original source: UCI; original request id: Integer",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 29,
+      "pdf_pages": [
+        44
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Cancel, printed p.29 / PDF 44",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "53f456277e73aa4aca9f908b40a95729fe7eb5a96ad554e67781503b06e9dcab",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-176",
+      "proposed_label": "Requested cancellation of an executing or queued command",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests cancellation of a command already executing or queued, identifying the original Request by its source and request id; SUCCESS means canceled and FAILED means unable to cancel.",
+      "mapping_boundary": "original source comes from Request.source and original request id from Request.request id; the separate message identifier is not substituted. A cancellation request alone is not cancellation success. FAILED concerns the cancellation attempt, not necessarily the original command outcome. No rollback of prior physical effects, universal interruptibility or removal of unrelated requests is inferred. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "Request",
+        "UCI",
+        "Integer",
+        "Response",
+        "Response Code"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-REQUEST-CANCELLATION",
+      "parameters": [
+        {
+          "name": "original source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Value of the source field of the Request to cancel.",
+          "default_as_source": null
+        },
+        {
+          "name": "original request id",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Value of the request id field of the Request to cancel.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean generic protocol responses are absent.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-219",
+      "entry_id": "ISA-DMS-219",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Lock",
+      "element_kind": "command",
+      "native_type": "lock holders: UCI; to: UCI; commands: String; lock time: Integer",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 39,
+      "pdf_pages": [
+        54,
+        55
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Lock, printed p.39 / PDF 54,55",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "828db379cf83e940fef3a55f56dd1679e43e3c080e4158c893f0c8c8a572eae5",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-219",
+      "proposed_label": "Requested time-bounded exclusive command access",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Reserves exclusive use of a specified command set on a target component for the requesting component and optional additional lock holders, for a specified time; returns an approval Boolean.",
+      "mapping_boundary": "lock holders and commands are required lists permitting zero items, not optional scalar fields. The requester is automatically a lock holder. An empty commands list means all supported commands, not none. lock time is Integer seconds, not the Secs datatype; no omitted-value default, renewal behavior, negative/zero-time interpretation or permanent ownership is invented. locked=false means the lock was denied; this is not an equipment interlock or permission policy by itself. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "UCI",
+        "String",
+        "Integer",
+        "Boolean",
+        "Response",
+        "Response Code"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-EXCLUSIVE-CONTROL",
+      "parameters": [
+        {
+          "name": "lock holders",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Additional permitted tasking components; requester is automatically included.",
+          "default_as_source": null
+        },
+        {
+          "name": "to",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component for which exclusive command access is requested.",
+          "default_as_source": null
+        },
+        {
+          "name": "commands",
+          "type": "String",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Command names to reserve; an empty list means all commands supported by the target.",
+          "default_as_source": "all supported commands when the required list is empty"
+        },
+        {
+          "name": "lock time",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Length of time in seconds for which the lock is to be in effect.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "locked",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True means obtaining the lock was approved; false means denied.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-228",
+      "entry_id": "ISA-DMS-228",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Remove Subscription",
+      "element_kind": "command",
+      "native_type": "subscription id: Subscription ID",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Remove Subscription, printed p.42 / PDF 57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "72ded5777c4cf057ea5cf79b253fa2d59188117ae4950f967969b7975cbf2034",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-228",
+      "proposed_label": "Requested removal of an active message subscription",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Removes a currently active subscription identified by its required Subscription ID.",
+      "mapping_boundary": "The identifier retains required creator, consumer and name; it is not replaced with a bare name or number. Removal of the subscription is not recall or deletion of previously delivered messages. No permission rule, idempotency guarantee or behavior for an unknown identifier is specified in this entry. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "Subscription ID",
+        "Subscription",
+        "UCI",
+        "String",
+        "Response",
+        "Response Code"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-SUBSCRIPTION-LIFECYCLE",
+      "parameters": [
+        {
+          "name": "subscription id",
+          "type": "Subscription ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Identifier of the active subscription to remove.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean generic protocol responses are absent.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
+    },
+    {
+      "id": "ISA-CMD-255",
+      "entry_id": "ISA-DMS-255",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Unlock",
+      "element_kind": "command",
+      "native_type": "to: UCI",
+      "native_structure": "Command parameter and result set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 49,
+      "pdf_pages": [
+        64
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Unlock, printed p.49 / PDF 64",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "697922dd920c1d8d2e731c35d9d6075477e71dcd3ac109071df07e1cfa3a17c0",
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-255",
+      "proposed_label": "Requested release of component control with approval result",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests release of the right to control a specified component and returns whether releasing the lock was approved.",
+      "mapping_boundary": "to identifies the component; the definition does not add a lock identifier, command subset or holder-list parameter. unlocked=true means release approved and false means denied. An unlock request is not a guarantee of release, not a cancel operation and not a change to a physical lock or safety interlock. This records the source-defined request/result contract, not an executed operation, an actual grant of access or an asserted equipment-case capability. Generic message, security-policy and requirement reconciliation remains assigned separately.",
+      "dependency_terms": [
+        "UCI",
+        "Boolean",
+        "Response",
+        "Response Code"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request/result contract; aggregate command, message, authorization and requirement reconciliation remains separately assigned.",
+      "common_parameter_schema": "ISA-CMD-EXCLUSIVE-CONTROL",
+      "parameters": [
+        {
+          "name": "to",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Component for which control is being released.",
+          "default_as_source": null
+        }
+      ],
+      "results": [
+        {
+          "name": "unlocked",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "True means releasing the lock was approved; false means denied.",
+          "default_as_source": null
+        }
+      ],
+      "results_review": "Complete command-specific Results table inspected and retained.",
+      "source_boundary_checked": "Complete original definition, native parameter/result tables and following-heading boundary inspected in text and page images. Add Subscription37–38 and Lock54–55 continuations checked.",
+      "source_modal_constraints": [],
+      "related_reported_properties": []
     }
   ],
   "supporting_definitions": [
@@ -7361,6 +7909,348 @@
       "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
       "native_fields": [],
       "native_form": "Sequence of bytes"
+    },
+    {
+      "entry_id": "ISA-DMS-307",
+      "native_term": "Registration",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 59,
+      "pdf_pages": [
+        74
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Registration, printed p.59 / PDF 74",
+      "inspected_content_summary": "Container for registration/deregistration information. Source role depends on whether it is a request or announcement; opcode and credential/extras lists remain explicit. Optional error description is described for ERROR in Permissive mode; no policy or credential representation beyond the native Name Value Pair is invented.",
+      "source_span_sha256": "d09b19d6a1f91b0c9834823007edcc7b41f1a52ccf368fbcaab7be1b0c8f5ce7",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Sender for a Registration request; controller that accepted the request for an announcement.",
+          "default_as_source": null
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Conversation-unique message identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Message priority; zero is highest.",
+          "default_as_source": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Message timestamp with millisecond resolution.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which message data should be regarded as invalid.",
+          "default_as_source": null
+        },
+        {
+          "name": "opcode",
+          "type": "Registration Operation",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Registration-related operation.",
+          "default_as_source": null
+        },
+        {
+          "name": "error description",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Detailed explanation for ERROR opcode when the network is in Permissive mode.",
+          "default_as_source": null
+        },
+        {
+          "name": "credentials",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Credentials used during Registration.",
+          "default_as_source": null
+        },
+        {
+          "name": "extras",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Extra data that may be attached; native list is required and may be empty.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-308",
+      "native_term": "Request",
+      "element_kind": "data element",
+      "section": "6.2",
+      "printed_page": 59,
+      "pdf_pages": [
+        74,
+        75
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Request, printed p.59 / PDF 74,75",
+      "inspected_content_summary": "Used to invoke commands or query properties. Preserves source, message identifier, distinct request id, command, parameter list and access-control properties evaluated according to policy. The distinct native identifiers are not collapsed; this does not settle every generic Response-reference or lifecycle requirement.",
+      "source_span_sha256": "b387fa847857ab6487ea03c56f49723fb1a069c1702989da7c3a0282dc9dd412",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "native_fields": [
+        {
+          "name": "source",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Original author of the Request.",
+          "default_as_source": null
+        },
+        {
+          "name": "identifier",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Conversation-unique message identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "priority",
+          "type": "Priority",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Message priority; zero is highest.",
+          "default_as_source": 80
+        },
+        {
+          "name": "time",
+          "type": "UTC",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Message timestamp with millisecond resolution.",
+          "default_as_source": null
+        },
+        {
+          "name": "stale",
+          "type": "UTC",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Time after which message data should be regarded as invalid.",
+          "default_as_source": null
+        },
+        {
+          "name": "request id",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Unique identifier for the Request message; distinct native field from identifier.",
+          "default_as_source": null
+        },
+        {
+          "name": "command",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of command to invoke.",
+          "default_as_source": null
+        },
+        {
+          "name": "parameters",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Parameters expressed as name/value pairs.",
+          "default_as_source": null
+        },
+        {
+          "name": "access control",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "source_role": "Properties used to evaluate access control as dictated by policy.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-353",
+      "native_term": "Registration Operation",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 82,
+      "pdf_pages": [
+        97
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Registration Operation, printed p.82 / PDF 97",
+      "inspected_content_summary": "Sealed enumeration of registration requests and notifications. Permission decision, request, successful-join notification, removal and connectivity notifications remain distinct. Original text was read completely; the requested page image was unavailable.",
+      "source_span_sha256": "25a5f148deec6a10c3f930ce17f91da51c13db55e07d152b558315b1027ee382",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "native_fields": [],
+      "native_variants": [
+        {
+          "name": "ADDED",
+          "source_role": "Notifies successful joining of the ISA network."
+        },
+        {
+          "name": "ERROR",
+          "source_role": "Sending ISA Controller detected an error with component registration."
+        },
+        {
+          "name": "NON RESPONSIVE",
+          "source_role": "Sending controller considers the component to have stopped communicating."
+        },
+        {
+          "name": "REMOVED",
+          "source_role": "Notifies removal of the component from the ISA network."
+        },
+        {
+          "name": "RENEW",
+          "source_role": "Requests re-registration with the sending controller."
+        },
+        {
+          "name": "REQUEST ADD",
+          "source_role": "Requests permission from the receiving controller for the sender to join the network."
+        },
+        {
+          "name": "REQUEST REMOVE",
+          "source_role": "Requests removal of the sender from the ISA network."
+        },
+        {
+          "name": "REVIVED",
+          "source_role": "Sending controller considers the component to have resumed communicating."
+        }
+      ],
+      "sealed": true
+    },
+    {
+      "entry_id": "ISA-DMS-477",
+      "native_term": "Subscription",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 123,
+      "pdf_pages": [
+        138
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Subscription, printed p.123 / PDF 138",
+      "inspected_content_summary": "Subscription container pairs one required query with one required structured identifier. Reuses checked Data Query; does not supply additional retention, delivery or optional-name-generation rules.",
+      "source_span_sha256": "38c4ab9fbc2ed712ca6ac08feb3a4b652b8527646fb703b7ce2e479c7bf2c6a4",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "native_fields": [
+        {
+          "name": "query",
+          "type": "Data Query",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Subscription query.",
+          "default_as_source": null
+        },
+        {
+          "name": "id",
+          "type": "Subscription ID",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Subscription identifier.",
+          "default_as_source": null
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-478",
+      "native_term": "Subscription ID",
+      "element_kind": "data element",
+      "section": "10.3",
+      "printed_page": 123,
+      "pdf_pages": [
+        138
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Subscription ID, printed p.123 / PDF 138",
+      "inspected_content_summary": "Structured subscription identity with required creator, consumer and name. It is not an integer, UUID, URL or globally unique bare name. Optional name on Add Subscription does not specify how a returned name is generated.",
+      "source_span_sha256": "a16383cea3e8a0f0f3d6da73d15673ea4c9d3253079bd362d802f9f393602f08",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "native_fields": [
+        {
+          "name": "creator",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Subscription creator.",
+          "default_as_source": null
+        },
+        {
+          "name": "consumer",
+          "type": "UCI",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Subscription consumer.",
+          "default_as_source": null
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Subscription name.",
+          "default_as_source": null
+        }
+      ]
     }
   ],
   "reused_supporting_definitions": [
@@ -8487,6 +9377,135 @@
       "review_pass": "ISA-COMMANDS-READOUT-HISTORY",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Previously inspected exact-edition definition reused for the native readout/result contract. Query selection/matching, full General State, typed value/resource and response-code distinctions remain as saved; no new inspection count or completed catalogue credit."
+    },
+    {
+      "entry_id": "ISA-DMS-467",
+      "native_term": "Data Query",
+      "source_locator": "ISA DMS 6.0r12 §10.3 Data Query, printed p.120 / PDF 135,136",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF 65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF 65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50 / PDF 65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-296",
+      "native_term": "UCI",
+      "source_locator": "ISA DMS 6.0r12 §4.2 UCI, printed p.55 / PDF 70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114 / PDF 129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-293",
+      "native_term": "Priority",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Priority, printed p.54 / PDF 69,70",
+      "previous_evidence_files": [
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF 120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF 65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-309",
+      "native_term": "Response",
+      "source_locator": "ISA DMS 6.0r12 §6.2 Response, printed p.60 / PDF 75",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
+    },
+    {
+      "entry_id": "ISA-DMS-456",
+      "native_term": "Response Code",
+      "source_locator": "ISA DMS 6.0r12 §9.1 Response Code, printed p.117 / PDF 132,133",
+      "previous_evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Exact-edition saved definition and field/variant manifest reused; this pass adds no new count or primary type-catalogue completion for this dependency."
     }
   ],
   "shared_parameter_schemas": {
@@ -10010,92 +11029,349 @@
       },
       "purpose": "Group related retrieval purposes while preserving each independently checked contract, native field name, cardinality and exception. Not compulsory separate DIM classes.",
       "question_ids": []
+    },
+    "ISA-CMD-AUTHORIZATION-DECISIONS": {
+      "applies_to": [
+        "ISA-DMS-173",
+        "ISA-DMS-174"
+      ],
+      "native_signature_by_command": {
+        "Authorize Registration": "client: UCI; server: UCI; registration: Registration",
+        "Authorize Request": "subject: UCI; request: Request"
+      },
+      "parameter_manifest_by_command": {
+        "Authorize Registration": [
+          {
+            "name": "client",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component requesting registration.",
+            "default_as_source": null
+          },
+          {
+            "name": "server",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component receiving the registration request.",
+            "default_as_source": null
+          },
+          {
+            "name": "registration",
+            "type": "Registration",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Registration message containing the registration request.",
+            "default_as_source": null
+          }
+        ],
+        "Authorize Request": [
+          {
+            "name": "subject",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component being tasked.",
+            "default_as_source": null
+          },
+          {
+            "name": "request",
+            "type": "Request",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Complete Request message to authorize.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Authorize Registration": [
+          {
+            "name": "authorized",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "True means registration is authorized; false means it is denied.",
+            "default_as_source": null
+          }
+        ],
+        "Authorize Request": [
+          {
+            "name": "authorized",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "True means the request is authorized; false means it is denied.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Group related source-defined information while preserving per-command roles, required/optional fields, defaults and outcome semantics. Not compulsory separate DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-EXCLUSIVE-CONTROL": {
+      "applies_to": [
+        "ISA-DMS-219",
+        "ISA-DMS-255"
+      ],
+      "native_signature_by_command": {
+        "Lock": "lock holders: UCI; to: UCI; commands: String; lock time: Integer",
+        "Unlock": "to: UCI"
+      },
+      "parameter_manifest_by_command": {
+        "Lock": [
+          {
+            "name": "lock holders",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Additional permitted tasking components; requester is automatically included.",
+            "default_as_source": null
+          },
+          {
+            "name": "to",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component for which exclusive command access is requested.",
+            "default_as_source": null
+          },
+          {
+            "name": "commands",
+            "type": "String",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "source_role": "Command names to reserve; an empty list means all commands supported by the target.",
+            "default_as_source": "all supported commands when the required list is empty"
+          },
+          {
+            "name": "lock time",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Length of time in seconds for which the lock is to be in effect.",
+            "default_as_source": null
+          }
+        ],
+        "Unlock": [
+          {
+            "name": "to",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Component for which control is being released.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Lock": [
+          {
+            "name": "locked",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "True means obtaining the lock was approved; false means denied.",
+            "default_as_source": null
+          }
+        ],
+        "Unlock": [
+          {
+            "name": "unlocked",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "True means releasing the lock was approved; false means denied.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Group related source-defined information while preserving per-command roles, required/optional fields, defaults and outcome semantics. Not compulsory separate DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-REQUEST-CANCELLATION": {
+      "applies_to": [
+        "ISA-DMS-176"
+      ],
+      "native_signature_by_command": {
+        "Cancel": "original source: UCI; original request id: Integer"
+      },
+      "parameter_manifest_by_command": {
+        "Cancel": [
+          {
+            "name": "original source",
+            "type": "UCI",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Value of the source field of the Request to cancel.",
+            "default_as_source": null
+          },
+          {
+            "name": "original request id",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Value of the request id field of the Request to cancel.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Cancel": []
+      },
+      "purpose": "Group related source-defined information while preserving per-command roles, required/optional fields, defaults and outcome semantics. Not compulsory separate DIM classes.",
+      "question_ids": []
+    },
+    "ISA-CMD-SUBSCRIPTION-LIFECYCLE": {
+      "applies_to": [
+        "ISA-DMS-162",
+        "ISA-DMS-228"
+      ],
+      "native_signature_by_command": {
+        "Add Subscription": "query: Data Query; name: String; consumer: UCI",
+        "Remove Subscription": "subscription id: Subscription ID"
+      },
+      "parameter_manifest_by_command": {
+        "Add Subscription": [
+          {
+            "name": "query",
+            "type": "Data Query",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Desired future messages and their returned contents.",
+            "default_as_source": null
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Subscription name; reuse overwrites the existing subscription, and separate subscriptions with the same provider need unique names.",
+            "default_as_source": null
+          },
+          {
+            "name": "consumer",
+            "type": "UCI",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Component to receive matching messages.",
+            "default_as_source": "requesting component"
+          }
+        ],
+        "Remove Subscription": [
+          {
+            "name": "subscription id",
+            "type": "Subscription ID",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Identifier of the active subscription to remove.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "result_manifest_by_command": {
+        "Add Subscription": [
+          {
+            "name": "subscription id",
+            "type": "Subscription ID",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Assigned unique identifier for the subscription.",
+            "default_as_source": null
+          }
+        ],
+        "Remove Subscription": []
+      },
+      "purpose": "Group related source-defined information while preserving per-command roles, required/optional fields, defaults and outcome semantics. Not compulsory separate DIM classes.",
+      "question_ids": []
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "DMS6.0r12 §3.3: all seven assigned readout/history/archive definitions with full native input/result tables and next-heading boundaries.",
+    "primary_text": "DMS6.0r12 §3.3 final seven commands; complete original definitions, parameter/result tables and next-heading boundaries.",
     "primary_text_pages": [
-      50,
-      51,
-      52,
-      53,
-      54
+      37,
+      38,
+      43,
+      44,
+      54,
+      55,
+      57,
+      64
     ],
     "primary_pages_visually_inspected": [
-      50,
-      51,
-      52,
-      53,
-      54
+      37,
+      38,
+      43,
+      44,
+      54,
+      55,
+      57,
+      64
     ],
     "additional_text_pages": [
-      65,
-      73,
+      74,
       75,
-      76,
-      77,
-      85,
-      86,
-      99,
-      100,
-      102,
-      106,
-      121,
-      123
+      97,
+      138
     ],
     "additional_pages_visually_inspected": [
-      73,
+      74,
       75,
-      76,
-      85,
-      86,
-      100,
-      102,
-      106,
-      121,
-      123
+      138
     ],
-    "page_image_limitations": "Resource union on PDF99 was fully read as original text; its requested image was unavailable. No new visual-inspection claim for99 or the text-only Bytestream/section-boundary checks.",
+    "page_image_limitations": "Registration Operation PDF97 was fully read as original text after its image request failed. No visual-inspection claim for97. Subscription ID is complete on138; the following Value Function heading on139 is retained from previously inspected original text. New page139 retrieval was unavailable.",
     "new_supporting_definitions": [
-      "Config",
-      "Response",
-      "Status",
-      "Capability Declaration",
-      "Resource",
-      "Blob",
-      "Command State",
-      "Observable State",
-      "Property State",
-      "Bytestream"
+      "Registration",
+      "Request",
+      "Registration Operation",
+      "Subscription",
+      "Subscription ID"
     ],
-    "new_supporting_count": 10,
-    "unique_supporting_total": 162,
+    "new_supporting_count": 5,
+    "unique_supporting_total": 167,
     "reused_types": [
+      "Data Query",
       "Boolean",
-      "Integer",
       "String",
-      "Wildcard",
+      "Integer",
       "UCI",
       "UTC",
       "Priority",
-      "General Code",
-      "General State",
       "Name Value Pair",
-      "Associative Array",
-      "Count",
-      "Resource Descriptor",
-      "Resource Type",
-      "Data Query",
-      "Response Code",
-      "Message"
+      "Wildcard",
+      "Response",
+      "Response Code"
     ],
     "cross_page_checks": [
-      "Get Property52–53",
-      "History53–54",
-      "Status75–76 with next section77"
+      "Add Subscription37–38",
+      "Lock54–55",
+      "Request74–75",
+      "Subscription ID138 with next heading on139"
     ],
-    "source_limits": "Config capability-container fields and state containers are inspected for result interpretation; nested declaration/range constraints remain with scheduled full-type/requirements reconciliation. Observable State reporting wording discrepancy is retained in its supporting record. No primary question is created or prior question changed; no command executed."
+    "source_limits": "All seven command contracts are supported. Permission, registration completion, execution, cancellation and exclusive access remain distinct. Credential policies and broader protocol obligations retain their existing source-block assignments. No physical or network operation is performed."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -10564,6 +11840,71 @@
         "Status75–76 with next section77"
       ],
       "source_limits": "Config capability-container fields and state containers are inspected for result interpretation; nested declaration/range constraints remain with scheduled full-type/requirements reconciliation. Observable State reporting wording discrepancy is retained in its supporting record. No primary question is created or prior question changed; no command executed."
+    },
+    "ISA-COMMANDS-AUTH-SUBSCRIPTIONS": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "DMS6.0r12 §3.3 final seven commands; complete original definitions, parameter/result tables and next-heading boundaries.",
+      "primary_text_pages": [
+        37,
+        38,
+        43,
+        44,
+        54,
+        55,
+        57,
+        64
+      ],
+      "primary_pages_visually_inspected": [
+        37,
+        38,
+        43,
+        44,
+        54,
+        55,
+        57,
+        64
+      ],
+      "additional_text_pages": [
+        74,
+        75,
+        97,
+        138
+      ],
+      "additional_pages_visually_inspected": [
+        74,
+        75,
+        138
+      ],
+      "page_image_limitations": "Registration Operation PDF97 was fully read as original text after its image request failed. No visual-inspection claim for97. Subscription ID is complete on138; the following Value Function heading on139 is retained from previously inspected original text. New page139 retrieval was unavailable.",
+      "new_supporting_definitions": [
+        "Registration",
+        "Request",
+        "Registration Operation",
+        "Subscription",
+        "Subscription ID"
+      ],
+      "new_supporting_count": 5,
+      "unique_supporting_total": 167,
+      "reused_types": [
+        "Data Query",
+        "Boolean",
+        "String",
+        "Integer",
+        "UCI",
+        "UTC",
+        "Priority",
+        "Name Value Pair",
+        "Wildcard",
+        "Response",
+        "Response Code"
+      ],
+      "cross_page_checks": [
+        "Add Subscription37–38",
+        "Lock54–55",
+        "Request74–75",
+        "Subscription ID138 with next heading on139"
+      ],
+      "source_limits": "All seven command contracts are supported. Permission, registration completion, execution, cancellation and exclusive access remain distinct. Credential policies and broader protocol obligations retain their existing source-block assignments. No physical or network operation is performed."
     }
   },
   "specific_questions": [
@@ -10593,10 +11934,10 @@
     }
   ],
   "case_checks": [
-    "All73 existing case statements and all earlier equipment/non-ISA cells preserved. No actual query, archive, returned history, current state, resource availability or device support is claimed.",
-    "History bounds refer to message publication; archive expiry, query-result expiry, message validity and latest operating-state occurrence remain distinct. Bennett original resultTime stays unknown.",
-    "Ready is distinct from reporting. Optional results/bounds have no invented omission defaults; no storage-retention, ordering, complete-history or error guarantee is added.",
-    "Six existing primary questions remain unchanged. Observable State reporting wording is saved as a scoped supporting-source discrepancy for the already planned type review, not a new work item or blanket caveat."
+    "All73 existing case statements and all earlier equipment/non-ISA values preserved. No actual subscription, credential, authorization decision, lock or cancellation is asserted.",
+    "Creator, requester, consumer, target component and registration server remain distinct roles. No command capability or authenticated identity is invented for the four equipment cases.",
+    "No field/default is inferred from a neighboring command. Required empty-capable lists, requester default, all-commands empty-list meaning and explicit approval/denial results are preserved.",
+    "Q001–Q006 and the supporting Observable State reporting wording note remain unchanged. Bennett retains two original NOAA means/four representations and unknown original resultTime."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -10637,6 +11978,12 @@
       "History bounds refer to message publication; archive expiry, query-result expiry, message validity and latest operating-state occurrence remain distinct. Bennett original resultTime stays unknown.",
       "Ready is distinct from reporting. Optional results/bounds have no invented omission defaults; no storage-retention, ordering, complete-history or error guarantee is added.",
       "Six existing primary questions remain unchanged. Observable State reporting wording is saved as a scoped supporting-source discrepancy for the already planned type review, not a new work item or blanket caveat."
+    ],
+    "ISA-COMMANDS-AUTH-SUBSCRIPTIONS": [
+      "All73 existing case statements and all earlier equipment/non-ISA values preserved. No actual subscription, credential, authorization decision, lock or cancellation is asserted.",
+      "Creator, requester, consumer, target component and registration server remain distinct roles. No command capability or authenticated identity is invented for the four equipment cases.",
+      "No field/default is inferred from a neighboring command. Required empty-capable lists, requester default, all-commands empty-list meaning and explicit approval/denial results are preserved.",
+      "Q001–Q006 and the supporting Observable State reporting wording note remain unchanged. Bennett retains two original NOAA means/four representations and unknown original resultTime."
     ]
   },
   "mapping_note": "Requests retain per-command native semantics and shared parameter families. Existing fields/defaults are not copied into incomplete source tables. Individual candidate rows are for owner review, not compulsory independent model classes.",
@@ -10650,36 +11997,37 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-AUTH-SUBSCRIPTIONS",
-  "next_action": "Review the final seven assigned authorization/subscription/cancellation/lock command definitions, reusing the saved query/Response evidence. No source-group workbook export.",
+  "next_source_pass": null,
+  "next_action": "ISA-COMMANDS-PUBLISH: integrate all96 saved command outcomes into the workbook, inspect and verify parity, publish once. No repeated command research or new type review.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-207",
-      "ISA-DMS-211",
-      "ISA-DMS-212",
-      "ISA-DMS-213",
-      "ISA-DMS-214",
-      "ISA-DMS-215",
-      "ISA-DMS-216"
+      "ISA-DMS-162",
+      "ISA-DMS-173",
+      "ISA-DMS-174",
+      "ISA-DMS-176",
+      "ISA-DMS-219",
+      "ISA-DMS-228",
+      "ISA-DMS-255"
     ],
-    "reviewed_total": 219,
-    "supported_total": 213,
+    "reviewed_total": 226,
+    "supported_total": 220,
     "specific_questions_retained": 6,
     "specific_questions_added": 0,
     "specific_questions_total": 6,
-    "command_entries_reviewed": 89,
+    "command_entries_reviewed": 96,
     "command_entries_total": 96,
-    "command_unreviewed": 7,
+    "command_unreviewed": 0,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 246,
+    "information_review_rows": 253,
     "new_candidate_rows": 7,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 10,
-    "unique_supporting_definitions": 162,
+    "new_supporting_types": 5,
+    "unique_supporting_definitions": 167,
     "later_catalogue_review_states_unchanged": true,
-    "coverage_and_prior_preservation": "PASS"
+    "coverage_and_prior_preservation": "PASS",
+    "command_catalogue_reconciliation": "PASS_96_UNIQUE_OUTCOMES_ZERO_OMISSIONS_OR_DUPLICATES"
   },
   "source_wording_notes": [
     {
@@ -10692,5 +12040,30 @@
       "affects_primary_command_role": false,
       "additional_prompt_created": false
     }
-  ]
+  ],
+  "catalogue_reconciliation": {
+    "catalogue": "DMS6.0r12 §3.3 Commands",
+    "inventory_total": 96,
+    "reviewed_unique": 96,
+    "supported": 94,
+    "precise_primary_questions": 2,
+    "question_ids": [
+      "ISA-Q005",
+      "ISA-Q006"
+    ],
+    "omitted_ids": [],
+    "duplicate_ids": [],
+    "unreviewed_ids": [],
+    "inventory_ids_equal_evidence_ids": true,
+    "source_standing_counts": {
+      "CORE": 96
+    },
+    "owner_counts": {
+      "ISA-05": 48,
+      "ISA-06": 48
+    },
+    "source_review_state": "COMPLETE",
+    "workbook_publication_state": "NEXT_PLANNED_CHECKPOINT",
+    "broader_work_package_boundary": "Command-definition catalogue complete; original ISA-05/06 broader type/requirement reconciliation remains in the existing schedule. No new step or scope added."
+  }
 }
