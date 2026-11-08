@@ -1,6 +1,6 @@
 # ISA coverage correction — accelerated execution plan
 
-**8 November 2026. Original Step5 of12 remains in progress; Steps1–4 COMPLETE. Accelerated group1 COMPLETE:18 new command outcomes. Commands36/96;60 remaining. Next “proceed”: group2 — level/power, property control and component lifecycle,18 commands. Current forecast21 remaining deliveries (range19–23); the22-slot acceleration baseline below is retained.**
+**CURRENT — 8 November 2026. Original Step 5 of 12; Steps 1–4 COMPLETE. Accelerated slots 1–2 COMPLETE. Commands 54/96 reviewed; 42 remain. Next: group 3, ISA-COMMANDS-SPATIAL-ACQUISITION (12 commands). Current remaining forecast: 20 deliveries centrally, range 18–22; four command-source passes and one workbook checkpoint included.**
 
 [Current progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
@@ -12,15 +12,17 @@ Every source pass still delivers verified GitHub evidence, coverage and the read
 
 No completed research is restarted, no agreed source population is dropped, and no uninspected entry is disguised as a question or exclusion. This amendment changes scheduling only. All source decisions, four existing questions, other-donor cells, case facts and workbooks are unchanged.
 
-## 2. Exact remaining command queue — six review prompts, then one workbook checkpoint
+## 2. Accelerated command queue — original six review slots plus workbook checkpoint
+
+**Current execution:** slots1–2 complete; slot3 next. The table retains the acceleration baseline assignments; current earned counts and remaining forecast are above and in the progress record.
 
 At the acceleration baseline,78 unreviewed command IDs were assigned exactly once below; group1 is now complete and60 remain. The 18 completed commands are excluded. These are workload assignments, not new semantic conclusions. Original ISA-05/06 ownership remains in the register; these execution groups cross the old alphabetical boundary where that improves reuse.
 
 | Remaining review prompt | Group | Command count | ISA-DMS numeric suffixes |
 | --- | --- | ---: | --- |
 | 1 — COMPLETE | Modes, timing and ordinary configuration | 18 | 177,185,187,188,189,191,195,196,197,198,200,201,202,203,204,220,241,243 |
-| 2 | Level/power, property control and component lifecycle | 18 | 169,170,172,175,194,199,206,208,209,217,218,230,231,232,235,242,244,256 |
-| 3 | Spatial control and acquisition | 12 | 163,221,222,224,225,229,233,234,246,247,252,253 |
+| 2 — COMPLETE | Level/power, property control and component lifecycle | 18 | 169,170,172,175,194,199,206,208,209,217,218,230,231,232,235,242,244,256 |
+| 3 — NEXT | Spatial control and acquisition | 12 | 163,221,222,224,225,229,233,234,246,247,252,253 |
 | 4 | Communication, media and service selection | 16 | 161,210,223,226,227,236,237,238,239,240,245,248,249,250,251,254 |
 | 5 | Readout, history and archive results | 7 | 207,211,212,213,214,215,216 |
 | 6 | Authorization, subscriptions, cancellation and locks | 7 | 162,173,174,176,219,228,255 |
@@ -38,7 +40,7 @@ Review each complete original definition, parameter/result table and cross-page 
 
 `ISA-COMMANDS-CONFIGURATION`: Change Active; Change Camera Mode; Change Enabled; Change Field of Regard; Change Field of View; Change Frame Rate; Change Maximum Status Interval; Change Minimum Status Interval; Change Name; Change Polarity; Change Pulse Interval; Change Quality; Change Radar Mode; Change Resolution; Change Scan Time; Menu Navigation; Set Observable Reporting; Set Property Reporting.
 
-The former `ISA-COMMANDS-SENSING-MODES` six-command assignment is absorbed here, not an additional future prompt. All18 are now reviewed and published; Menu Button was the one newly inspected supporting definition. Next scope is the18 commands assigned to group2 in the table and progress record. No physical commands are sent.
+The former `ISA-COMMANDS-SENSING-MODES` six-command assignment is absorbed here, not an additional future prompt. All18 are now reviewed and published; Menu Button was the one newly inspected supporting definition. Group2 is also complete. Next scope is the12 spatial-control commands assigned to group3 in the table and progress record. No physical commands are sent.
 
 ## 3. Full remaining-work forecast, with the existing scope retained
 
@@ -74,7 +76,7 @@ This forecast replaces the undefined remaining-prompt forecast and the old13-pro
 
 ISA-01 census, ISA-02 first properties/identity, ISA-03 remaining properties and ISA-04 observables are COMPLETE. ISA-05 is in progress. ISA-06 retains remaining commands and commanding requirements; ISA-07 base/message work; ISA-08 capability/constraint work; ISA-09/10 reporting/filtering work; ISA-11 architecture/companions/reconciliation; ISA-12 audit and closeout. Work can share evidence across these owners without changing their definitions.
 
-Every closeout starts with **original step number, original steps complete, current catalogue reviewed/total and remaining, actual increment achieved, and remaining delivery forecast**. For the next source pass: “ISA correction — Step5/6 command work: level/power and component lifecycle. Original steps complete4/12. Commands36/96,60 remaining. This pass assigns18; successful verified delivery would make54/96,42 remaining.” Report forecast separately from earned completion; table-row counts are not project percent complete.
+Every closeout starts with **original step number, original steps complete, current catalogue reviewed/total and remaining, actual increment achieved, and remaining delivery forecast**. For the next source pass: “ISA correction — Step5/6 command work: spatial control and acquisition. Original steps complete4/12. Commands54/96,42 remaining. This pass assigns12; successful verified delivery would make66/96,30 remaining.” Report forecast separately from earned completion; table-row counts are not project percent complete.
 
 Keep normal chat closeouts focused: the result, genuinely important distinctions, numbered progress, GitHub links and next scope. Use a full per-entry table only when its differences warrant it. Shared signatures and source-specific exceptions are documented in the evidence; repeating the same caveats for every source label is not additional research.
 

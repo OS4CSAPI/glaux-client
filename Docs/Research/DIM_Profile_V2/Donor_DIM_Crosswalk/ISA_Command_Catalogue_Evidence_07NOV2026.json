@@ -15,7 +15,8 @@
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
     "ISA-COMMANDS-IMAGE-SETTINGS",
     "ISA-COMMANDS-AUTO-CONTROLS",
-    "ISA-COMMANDS-CONFIGURATION"
+    "ISA-COMMANDS-CONFIGURATION",
+    "ISA-COMMANDS-CONTROL-LIFECYCLE"
   ],
   "primary_records": [
     {
@@ -2299,6 +2300,917 @@
       "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
       "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
       "boolean_note": "Required false is not omission; no missing-input default supplied."
+    },
+    {
+      "id": "ISA-CMD-169",
+      "entry_id": "ISA-DMS-169",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Level",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 26,
+      "pdf_pages": [
+        41
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Level, printed p.26 / PDF p.41",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "84a4a011fee2cf9bc5aa42e57101c2dfc498f35c4bb3c3b01c3cc8f781731c58",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-169",
+      "proposed_label": "Requested native-level directional adjustment",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "PARTIAL",
+      "original_meaning": "Requests a directional change of the native Level setting at a relative rate, with optional duration.",
+      "mapping_boundary": "Retain the source-named Level rather than inventing brightness, battery reserve or another physical quantity. Existing ISA-Q001 remains unresolved; this narrower control contract is documented. Endpoints describe relative setting, not a physical-unit conversion. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-ADJUST-LEVEL",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Positive/negative adjustment toward the source's upper/lower relative-level endpoint; the physical referent of generic Level remains ISA-Q001.",
+          "default_as_source": null
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Percentage of maximum rate of change.",
+          "default_as_source": "100%"
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Requested adjustment interval.",
+          "default_as_source": null,
+          "omission_semantics": "Continue until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_existing_question_ids": [
+        "ISA-Q001"
+      ],
+      "question_followup": "Related commands now fully inspected; they establish relative-level control behavior but do not identify generic Level's precise referent. Preserve ISA-Q001."
+    },
+    {
+      "id": "ISA-CMD-170",
+      "entry_id": "ISA-DMS-170",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Power",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 26,
+      "pdf_pages": [
+        41,
+        42
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Power, printed p.26 / PDF pp.41–42",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "15204c5eba52a81044d9c7fd793ba68fc2f6d2df92bd52067b5502fc2db411fa",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_QUESTION_RECORDED",
+      "disposition": "QUESTION_RECORDED",
+      "target_row": "ISA-C-170",
+      "proposed_label": "Requested power adjustment — rate-input discrepancy",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "PARTIAL",
+      "original_meaning": "Requests directional power adjustment; the original parameter table declares required direction and optional duration. The introductory prose and direction description refer to a specified rate.",
+      "mapping_boundary": "The complete table contains no rate field. Do not copy the neighboring Adjust commands' rate parameter or 100% default. Supported direction and duration behavior remain visible; ISA-Q005 records the missing rate contract. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Secs"
+      ],
+      "question_id": "ISA-Q005",
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-ADJUST-POWER-EXCEPTION",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Positive increases and negative decreases relative power toward the source's 100%/0% endpoints.",
+          "default_as_source": null
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Requested power-adjustment interval.",
+          "default_as_source": null,
+          "omission_semantics": "Continue until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "source_discrepancy": {
+        "prose": "Specifies relative adjustment rate.",
+        "declared_parameter_names": [
+          "direction",
+          "duration"
+        ],
+        "absent_parameter": "rate",
+        "invented_default": false,
+        "question_id": "ISA-Q005"
+      }
+    },
+    {
+      "id": "ISA-CMD-172",
+      "entry_id": "ISA-DMS-172",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Arm",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 28,
+      "pdf_pages": [
+        43
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Arm, printed p.28 / PDF p.43",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "75aaee1e1fa193165e4403ac852867ee0def0cc5e270aa8764e4ea4477e6a9d0",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-172",
+      "proposed_label": "Requested preparation for pre-armed commands",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests preparation to execute a command that requires pre-arming.",
+      "mapping_boundary": "Preparation is not execution of the later command, an authorization decision, or proof of a reported Armed state. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_reported_property": {
+        "entry_id": "ISA-DMS-036",
+        "evidence_file": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "meaning": "Armed property remains reported-state evidence, not this command."
+      }
+    },
+    {
+      "id": "ISA-CMD-175",
+      "entry_id": "ISA-DMS-175",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Calibrate",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 28,
+      "pdf_pages": [
+        43,
+        44
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Calibrate, printed p.28 / PDF pp.43–44",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "5ce7b85a28d5f70f01ede1d6c0bfb6c783c7336579887a1d866a160a086248e4",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-175",
+      "proposed_label": "Requested component initialization routine",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Triggers the component's initialization routine or routines; the source says this is often required before the component becomes operational.",
+      "mapping_boundary": "The name Calibrate does not establish a metrological calibration, reference standard, accuracy certificate, or adjustment algorithm. Preserve the source's initialization meaning. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-194",
+      "entry_id": "ISA-DMS-194",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Level",
+      "element_kind": "command",
+      "native_type": "level: Percent",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 32,
+      "pdf_pages": [
+        47
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Level, printed p.32 / PDF p.47",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "4dd9e6180c87196398a4dcaa05beb33c7d19c2632fdc65aedfe79195a51e1458",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-194",
+      "proposed_label": "Requested native-level target setting",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "PARTIAL",
+      "original_meaning": "Requests a specific native Level setting as a percentage of its supported maximum.",
+      "mapping_boundary": "The required level:Percent input does not identify the underlying physical or image-processing quantity. Existing ISA-Q001 remains local; no Adjust rate, duration or stop behavior transfers to this target-setting request. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Percent"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-LEVEL-POWER-TARGET",
+      "parameters": [
+        {
+          "name": "level",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Level setting relative to the supported maximum level value.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_existing_question_ids": [
+        "ISA-Q001"
+      ],
+      "question_followup": "Related commands now fully inspected; they establish relative-level control behavior but do not identify generic Level's precise referent. Preserve ISA-Q001."
+    },
+    {
+      "id": "ISA-CMD-199",
+      "entry_id": "ISA-DMS-199",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Power",
+      "element_kind": "command",
+      "native_type": "level: Percent",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 33,
+      "pdf_pages": [
+        48
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Power, printed p.33 / PDF p.48",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "52302ffea0ba31750a85c8bd79e82104cc01554d6918afde8615b0c131970b17",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-199",
+      "proposed_label": "Requested relative-power target setting",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests a specific power level as a percentage of the supported maximum.",
+      "mapping_boundary": "Relative setting is not watts, energy reserve, a supply-power state, or proof of delivered signal power. Do not import Adjust Power's rate ambiguity into this separate explicit target input. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Percent"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-LEVEL-POWER-TARGET",
+      "parameters": [
+        {
+          "name": "level",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Power setting relative to the supported maximum power level.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-206",
+      "entry_id": "ISA-DMS-206",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Clear Property",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 35,
+      "pdf_pages": [
+        50
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Clear Property, printed p.35 / PDF p.50",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "70c9a76de0810436d4debe4646093b9478b12632991bea3ee51ca910050d5eb6",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-206",
+      "proposed_label": "Requested clearing of an externally set property",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests a named property's value be set to null. The command is enabled only for values previously set through Set Property; clearing makes that property's ready state false.",
+      "mapping_boundary": "This is neither deletion of the property declaration nor a reporting-disable request. Preserve both the prior-Set-Property restriction and the source-stated readiness consequence; do not infer a changed device value from the schema. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NAMED-PROPERTY-CLEAR",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the property to clear.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "source_precondition": "Value previously set by Set Property.",
+      "source_effect_on_property_state": "ready becomes false; value becomes null."
+    },
+    {
+      "id": "ISA-CMD-208",
+      "entry_id": "ISA-DMS-208",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Designate",
+      "element_kind": "command",
+      "native_type": "duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 35,
+      "pdf_pages": [
+        50,
+        51
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Designate, printed p.35 / PDF pp.50–51",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "90b5e69697f8b3a8b45b745758c8e36ddbd0e07ce756758e64be12ccf1b6e9d2",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-208",
+      "proposed_label": "Requested designation activity",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests the component's designation activity. The source recommends availability only when Armed is true and declares an optional duration with distinct omitted and zero meanings.",
+      "mapping_boundary": "Preserve should as a recommendation, not shall. The duration prose uses firing terminology without defining a mechanism, target-coordinate input or device implementation. No actual designation, firing, target or equipment capability is asserted. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-DURATION-ACTIVITY",
+      "parameters": [
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Duration of the source-described designation activity.",
+          "default_as_source": null,
+          "omission_semantics": "Continue the named activity until receiving a Designate request that contains a duration.",
+          "zero_semantics": "Immediately stop the named activity."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_reported_property": {
+        "entry_id": "ISA-DMS-036",
+        "evidence_file": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "meaning": "Armed property remains reported-state evidence, not this command."
+      },
+      "availability_as_source": {
+        "modality": "should",
+        "condition": "Armed property true"
+      }
+    },
+    {
+      "id": "ISA-CMD-209",
+      "entry_id": "ISA-DMS-209",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Disarm",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 36,
+      "pdf_pages": [
+        51
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Disarm, printed p.36 / PDF p.51",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fff2728fde54bb6173cced3eddc5818f9ecef8c3b45a6f0b104975ae1672c221",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-209",
+      "proposed_label": "Requested prevention of pre-armed commands",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Prevents the component from executing commands that require pre-arming.",
+      "mapping_boundary": "Not a global shutdown, generic cancellation of every executing command, authorization change, or proof that a physical system is safe. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_reported_property": {
+        "entry_id": "ISA-DMS-036",
+        "evidence_file": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "meaning": "Armed property remains reported-state evidence, not this command."
+      }
+    },
+    {
+      "id": "ISA-CMD-217",
+      "entry_id": "ISA-DMS-217",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Illuminate",
+      "element_kind": "command",
+      "native_type": "duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 39,
+      "pdf_pages": [
+        54
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Illuminate, printed p.39 / PDF p.54",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "38d298679f74dd2d6bb986f997303cb62b00f6517ed5ee4615b7528c3b74548f",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-217",
+      "proposed_label": "Requested illumination activity",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests illumination. The source recommends availability only when Armed is true and declares an optional duration with distinct omitted and zero meanings.",
+      "mapping_boundary": "No wavelength, intensity, illumination mechanism, target-coordinate input or achieved effect is specified. Preserve the source recommendation without promoting it to a mandatory rule. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-DURATION-ACTIVITY",
+      "parameters": [
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_role": "Requested illumination duration.",
+          "default_as_source": null,
+          "omission_semantics": "Continue the named activity until receiving a Illuminate request that contains a duration.",
+          "zero_semantics": "Immediately stop the named activity."
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "related_reported_property": {
+        "entry_id": "ISA-DMS-036",
+        "evidence_file": "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "meaning": "Armed property remains reported-state evidence, not this command."
+      },
+      "availability_as_source": {
+        "modality": "should",
+        "condition": "Armed property true"
+      }
+    },
+    {
+      "id": "ISA-CMD-218",
+      "entry_id": "ISA-DMS-218",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Initiate NUC",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 39,
+      "pdf_pages": [
+        54
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Initiate NUC, printed p.39 / PDF p.54",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "9cab87fbf539c0d43555c5bc55676230b9ce6e4a902f3317388c20429b73df75",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-218",
+      "proposed_label": "Requested non-uniformity correction process",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Initiates the Non-Uniformity Correction (NUC) process supported by the component; process details are component-specific.",
+      "mapping_boundary": "Not the source's Calibrate initialization request, a specified correction algorithm, a guaranteed quality improvement, or a recorded completion result. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-230",
+      "entry_id": "ISA-DMS-230",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Render Useless",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Render Useless, printed p.42 / PDF p.57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "195d49fed6622202588a6ea325fb565685475731b24d6ba408719709dc896028",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-230",
+      "proposed_label": "Requested permanent component disablement",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests actions that render the component permanently non-functioning.",
+      "mapping_boundary": "Permanent non-functioning is distinct from temporary disablement, shutdown, reset and data removal. The definition gives no technique, recovery method or authorization mechanism; no command is sent. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-231",
+      "entry_id": "ISA-DMS-231",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Reset",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Reset, printed p.42 / PDF p.57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a72c25982022a33cd114efd8b215fb16d9711bd687eee59251194bbe94c2928f",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-231",
+      "proposed_label": "Requested return to component-defined original state",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests return to an original state whose meaning is component-specific; a return to home pointing orientation is an example.",
+      "mapping_boundary": "Do not turn the example into a universal homing rule or equate original state with factory reset, restart, erased data or restored calibration. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-232",
+      "entry_id": "ISA-DMS-232",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Sanitize",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 42,
+      "pdf_pages": [
+        57
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Sanitize, printed p.42 / PDF p.57",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "070361bd1e3d589dbca925bee4dddc147859b6d8ef37d47c2764fbe3c8ec0713",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-232",
+      "proposed_label": "Requested removal of security-relevant application data",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests removal of unique application data that could be used for a security attack.",
+      "mapping_boundary": "Keep the source's scope distinct from Zeroize's all-accumulated-unique-data wording. No erasure algorithm, audit proof, cryptographic-key-only scope or successful sanitization is implied. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-235",
+      "entry_id": "ISA-DMS-235",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Self Test",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 43,
+      "pdf_pages": [
+        58
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Self Test, printed p.43 / PDF p.58",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "d495b86c15b67ae5ae14c7e9638a959198ec6b8d98931f40d4825c3c27479895",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-235",
+      "proposed_label": "Requested component diagnostic procedures",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Triggers the component's diagnostic procedure or procedures.",
+      "mapping_boundary": "Not a reported Built In Test Result, initialization, a defined test suite, pass/fail result or proof of successful diagnostics. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-242",
+      "entry_id": "ISA-DMS-242",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Property",
+      "element_kind": "command",
+      "native_type": "value: Name Value Pair",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 45,
+      "pdf_pages": [
+        60
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Property, printed p.45 / PDF p.60",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fcfd0d4536ba876a495bb6830ae74e1384b59c151d315aba3d652929bcab4e5b",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-242",
+      "proposed_label": "Requested externally supplied named-property value",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Sets a named property's value when the component is not capable of determining that value; the single required value parameter is a Name Value Pair.",
+      "mapping_boundary": "Retain the condition on the component's ability to determine the value. Name Value Pair carries a required name and typed Wildcard value; it is not an unconstrained String, arbitrary forced override or claimed measured value. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [
+        "Name Value Pair",
+        "String",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NAMED-PROPERTY-SET",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "New value for the named property, comprising required name:String and value:Wildcard.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images.",
+      "nested_value_fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name in the Name Value Pair.",
+          "default_as_source": null
+        },
+        {
+          "name": "value",
+          "type": "Wildcard",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Value of a type defined in the Data Model.",
+          "default_as_source": null
+        }
+      ],
+      "source_precondition": "Component is not capable of determining the property's value."
+    },
+    {
+      "id": "ISA-CMD-244",
+      "entry_id": "ISA-DMS-244",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Shutdown",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 46,
+      "pdf_pages": [
+        61
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Shutdown, printed p.46 / PDF p.61",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "f42a33097354d977df09664a72be18ed25fbfc2dbe10f57ecc572b4eae8225a6",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-244",
+      "proposed_label": "Requested component shutdown sequence",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Triggers the component's shutdown sequence.",
+      "mapping_boundary": "No specific shutdown order, supply disconnection, permanence, data erasure or measured off-state is declared. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
+    },
+    {
+      "id": "ISA-CMD-256",
+      "entry_id": "ISA-DMS-256",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Zeroize",
+      "element_kind": "command",
+      "native_type": "No command-specific parameters declared",
+      "native_structure": "Command with no declared parameter table",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 49,
+      "pdf_pages": [
+        64,
+        65
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Zeroize, printed p.49 / PDF pp.64–65",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "526e9b8aa5b61bf872bf7893d6ab194e97cd4ebcde556e36da2ebe4621a1b965",
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-256",
+      "proposed_label": "Requested removal of accumulated unique application data",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Requests removal of all accumulated unique application data.",
+      "mapping_boundary": "Do not reduce the source's wording to cryptographic-key erasure, infer a wiping method or equate data removal with permanent device disablement, reset or shutdown. This is a source-defined request, not evidence of invocation, successful execution or a source-case capability.",
+      "dependency_terms": [],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific request contract. Aggregate Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS",
+      "parameters": [],
+      "results": [],
+      "results_review": "No command-specific Results table in this complete entry. This is not a claim that protocol acknowledgements or execution status do not exist.",
+      "source_boundary_checked": "Complete original body inspected to the following heading, including all parameter continuations and original page images."
     }
   ],
   "supporting_definitions": [
@@ -2582,6 +3494,90 @@
       "review_pass": "ISA-COMMANDS-CONFIGURATION",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Previously inspected floating numeric type. No extra nonnegative bounds or coercions introduced absent the specific source definition."
+    },
+    {
+      "entry_id": "ISA-DMS-346",
+      "native_term": "Linear Direction",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Linear Direction, printed p.80 / PDF p.95",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF p.69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF p.120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Existing exact-edition supporting evidence reused for the specific command fields. Name Value Pair original schema on PDF120 was also visually rechecked; no new supporting type counted."
     }
   ],
   "shared_parameter_schemas": {
@@ -2796,61 +3792,304 @@
       "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
       "results_rule": "No command-specific Results table in these entries.",
       "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-LIFECYCLE-ADJUST-LEVEL": {
+      "applies_to": [
+        "ISA-DMS-169"
+      ],
+      "native_signature_by_command": {
+        "Adjust Level": "direction: Linear Direction; rate: Percent; duration: Secs"
+      },
+      "parameter_manifest_by_command": {
+        "Adjust Level": [
+          {
+            "name": "direction",
+            "type": "Linear Direction",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Positive/negative adjustment toward the source's upper/lower relative-level endpoint; the physical referent of generic Level remains ISA-Q001.",
+            "default_as_source": null
+          },
+          {
+            "name": "rate",
+            "type": "Percent",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Percentage of maximum rate of change.",
+            "default_as_source": "100%"
+          },
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Requested adjustment interval.",
+            "default_as_source": null,
+            "omission_semantics": "Continue until a limit is reached unless superseded by a subsequent command.",
+            "zero_semantics": "Immediately stop adjusting."
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
+    },
+    "ISA-CMD-LIFECYCLE-ADJUST-POWER-EXCEPTION": {
+      "applies_to": [
+        "ISA-DMS-170"
+      ],
+      "native_signature_by_command": {
+        "Adjust Power": "direction: Linear Direction; duration: Secs"
+      },
+      "parameter_manifest_by_command": {
+        "Adjust Power": [
+          {
+            "name": "direction",
+            "type": "Linear Direction",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Positive increases and negative decreases relative power toward the source's 100%/0% endpoints.",
+            "default_as_source": null
+          },
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Requested power-adjustment interval.",
+            "default_as_source": null,
+            "omission_semantics": "Continue until a limit is reached unless superseded by a subsequent command.",
+            "zero_semantics": "Immediately stop adjusting."
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern.",
+      "question_id": "ISA-Q005"
+    },
+    "ISA-CMD-LIFECYCLE-NO-DECLARED-PARAMETERS": {
+      "applies_to": [
+        "ISA-DMS-172",
+        "ISA-DMS-175",
+        "ISA-DMS-209",
+        "ISA-DMS-218",
+        "ISA-DMS-230",
+        "ISA-DMS-231",
+        "ISA-DMS-232",
+        "ISA-DMS-235",
+        "ISA-DMS-244",
+        "ISA-DMS-256"
+      ],
+      "native_signature_by_command": {
+        "Arm": "No command-specific parameters declared",
+        "Calibrate": "No command-specific parameters declared",
+        "Disarm": "No command-specific parameters declared",
+        "Initiate NUC": "No command-specific parameters declared",
+        "Render Useless": "No command-specific parameters declared",
+        "Reset": "No command-specific parameters declared",
+        "Sanitize": "No command-specific parameters declared",
+        "Self Test": "No command-specific parameters declared",
+        "Shutdown": "No command-specific parameters declared",
+        "Zeroize": "No command-specific parameters declared"
+      },
+      "parameter_manifest_by_command": {
+        "Arm": [],
+        "Calibrate": [],
+        "Disarm": [],
+        "Initiate NUC": [],
+        "Render Useless": [],
+        "Reset": [],
+        "Sanitize": [],
+        "Self Test": [],
+        "Shutdown": [],
+        "Zeroize": []
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern.",
+      "boundary": "No command-specific parameter table is declared; generic request-envelope fields are not thereby absent."
+    },
+    "ISA-CMD-LIFECYCLE-LEVEL-POWER-TARGET": {
+      "applies_to": [
+        "ISA-DMS-194",
+        "ISA-DMS-199"
+      ],
+      "native_signature_by_command": {
+        "Change Level": "level: Percent",
+        "Change Power": "level: Percent"
+      },
+      "parameter_manifest_by_command": {
+        "Change Level": [
+          {
+            "name": "level",
+            "type": "Percent",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Level setting relative to the supported maximum level value.",
+            "default_as_source": null
+          }
+        ],
+        "Change Power": [
+          {
+            "name": "level",
+            "type": "Percent",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Power setting relative to the supported maximum power level.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
+    },
+    "ISA-CMD-LIFECYCLE-NAMED-PROPERTY-CLEAR": {
+      "applies_to": [
+        "ISA-DMS-206"
+      ],
+      "native_signature_by_command": {
+        "Clear Property": "name: String"
+      },
+      "parameter_manifest_by_command": {
+        "Clear Property": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "Name of the property to clear.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
+    },
+    "ISA-CMD-LIFECYCLE-DURATION-ACTIVITY": {
+      "applies_to": [
+        "ISA-DMS-208",
+        "ISA-DMS-217"
+      ],
+      "native_signature_by_command": {
+        "Designate": "duration: Secs",
+        "Illuminate": "duration: Secs"
+      },
+      "parameter_manifest_by_command": {
+        "Designate": [
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Duration of the source-described designation activity.",
+            "default_as_source": null,
+            "omission_semantics": "Continue the named activity until receiving a Designate request that contains a duration.",
+            "zero_semantics": "Immediately stop the named activity."
+          }
+        ],
+        "Illuminate": [
+          {
+            "name": "duration",
+            "type": "Secs",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "source_role": "Requested illumination duration.",
+            "default_as_source": null,
+            "omission_semantics": "Continue the named activity until receiving a Illuminate request that contains a duration.",
+            "zero_semantics": "Immediately stop the named activity."
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
+    },
+    "ISA-CMD-LIFECYCLE-NAMED-PROPERTY-SET": {
+      "applies_to": [
+        "ISA-DMS-242"
+      ],
+      "native_signature_by_command": {
+        "Set Property": "value: Name Value Pair"
+      },
+      "parameter_manifest_by_command": {
+        "Set Property": [
+          {
+            "name": "value",
+            "type": "Name Value Pair",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "source_role": "New value for the named property, comprising required name:String and value:Wildcard.",
+            "default_as_source": null
+          }
+        ]
+      },
+      "purpose": "Reusable analytical contract with individually verified roles; not an inferred equivalence of operations.",
+      "command_specific_results": "No Results table in these entries; protocol acknowledgements remain a separate concern."
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "Original DMS 6.0r12 §3.3 printed29–34,40,45 / PDF44–49,55,60: all18 assigned commands and complete parameter tables.",
+    "primary_text": "Original DMS6.0r12 §3.3: complete18 control/lifecycle command entries and all parameter tables/continuations.",
     "primary_text_pages": [
-      44,
-      45,
-      46,
+      41,
+      42,
+      43,
       47,
       48,
-      49,
-      55,
-      60
+      50,
+      51,
+      54,
+      57,
+      58,
+      60,
+      61,
+      64
     ],
     "primary_pages_visually_inspected": [
-      44,
-      45,
-      46,
+      41,
+      42,
+      43,
       47,
       48,
-      49,
-      55,
-      60
-    ],
-    "additional_text_pages": [
-      132
+      50,
+      51,
+      54,
+      57,
+      58,
+      60,
+      61,
+      64
     ],
     "additional_pages_visually_inspected": [
-      108
+      120
     ],
-    "new_supporting_definitions": [
-      "Menu Button"
-    ],
-    "new_supporting_count": 1,
+    "new_supporting_definitions": [],
+    "new_supporting_count": 0,
     "unique_supporting_total": 125,
     "reused_types": [
-      "Boolean",
-      "String",
-      "Camera Mode",
-      "Field of View",
-      "Hertz",
+      "Linear Direction",
+      "Percent",
       "Secs",
-      "Polarity",
-      "Himelo",
-      "Measured Degrees",
-      "Degrees",
-      "Float"
+      "Float",
+      "String",
+      "Wildcard",
+      "Name Value Pair"
     ],
     "cross_page_checks": [
-      "Change Camera Mode45–46",
-      "Change Maximum Status Interval47–48",
-      "Change Pulse Interval48–49"
+      "Adjust Power41–42",
+      "Designate50–51",
+      "Calibrate ends before Cancel44",
+      "Zeroize ends before Base Data Types65"
     ],
-    "source_limits": "Only data-model configuration/request semantics reviewed. No request execution, device state or physical effect asserted; no unused adjacent command credited."
+    "source_limits": "Data representation only; no implementation, invocation, target information or hardware actions. Prose/table rate discrepancy recorded as ISA-Q005. Existing Level question remains unchanged."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -2992,12 +4231,81 @@
         "Change Pulse Interval48–49"
       ],
       "source_limits": "Only data-model configuration/request semantics reviewed. No request execution, device state or physical effect asserted; no unused adjacent command credited."
+    },
+    "ISA-COMMANDS-CONTROL-LIFECYCLE": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "Original DMS6.0r12 §3.3: complete18 control/lifecycle command entries and all parameter tables/continuations.",
+      "primary_text_pages": [
+        41,
+        42,
+        43,
+        47,
+        48,
+        50,
+        51,
+        54,
+        57,
+        58,
+        60,
+        61,
+        64
+      ],
+      "primary_pages_visually_inspected": [
+        41,
+        42,
+        43,
+        47,
+        48,
+        50,
+        51,
+        54,
+        57,
+        58,
+        60,
+        61,
+        64
+      ],
+      "additional_pages_visually_inspected": [
+        120
+      ],
+      "new_supporting_definitions": [],
+      "new_supporting_count": 0,
+      "unique_supporting_total": 125,
+      "reused_types": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float",
+        "String",
+        "Wildcard",
+        "Name Value Pair"
+      ],
+      "cross_page_checks": [
+        "Adjust Power41–42",
+        "Designate50–51",
+        "Calibrate ends before Cancel44",
+        "Zeroize ends before Base Data Types65"
+      ],
+      "source_limits": "Data representation only; no implementation, invocation, target information or hardware actions. Prose/table rate discrepancy recorded as ISA-Q005. Existing Level question remains unchanged."
     }
   },
-  "specific_questions": [],
+  "specific_questions": [
+    {
+      "id": "ISA-Q005",
+      "entry_id": "ISA-DMS-170",
+      "native_term": "Adjust Power",
+      "candidate_row": "ISA-C-170",
+      "known": "Original command prose describes a specified relative rate; the complete parameter table declares direction:Linear Direction (required) and duration:Secs (optional), but no rate input.",
+      "question": "How is the specified adjustment rate supplied or determined for Adjust Power when its original parameter table omits rate?",
+      "decision": "Preserve direction and documented duration behavior. Do not add rate:Percent, borrow a 100% default or imply the rate is established. The command's review is complete; this exact rate-contract discrepancy remains local.",
+      "evidence": "ISA DMS 6.0r12 §3.3 Adjust Power, printed pp.26–27 / PDF pp.41–42; prose and complete table visually inspected.",
+      "next_resolution": "During the already planned command/companion/requirement reconciliation, check original clarification or matching encoding declaration for the omitted rate. Absent such evidence, retain this exact discrepancy without repeating the source review or blocking other outcomes.",
+      "state": "SOURCE_REVIEW_COMPLETE_SPECIFIC_INTERPRETATION_OPEN"
+    }
+  ],
   "case_checks": [
-    "All73 case facts and prior non-ISA display values preserved; no native ISA command implementation or execution inferred for any of the four examples.",
-    "Required Boolean values and optional field-of-view height retain their native semantics; no case setting, measurement, identity or resultTime was invented."
+    "All73 case facts and all prior non-ISA/equipment cells preserved; no native ISA control implementation or executed operation inferred.",
+    "Generic Level meaning remains ISA-Q001. No invented rate parameter/default, metrological calibration, destructive method or actual data-removal outcome."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -3018,9 +4326,13 @@
     "ISA-COMMANDS-CONFIGURATION": [
       "All73 case facts and prior non-ISA display values preserved; no native ISA command implementation or execution inferred for any of the four examples.",
       "Required Boolean values and optional field-of-view height retain their native semantics; no case setting, measurement, identity or resultTime was invented."
+    ],
+    "ISA-COMMANDS-CONTROL-LIFECYCLE": [
+      "All73 case facts and all prior non-ISA/equipment cells preserved; no native ISA control implementation or executed operation inferred.",
+      "Generic Level meaning remains ISA-Q001. No invented rate parameter/default, metrological calibration, destructive method or actual data-removal outcome."
     ]
   },
-  "mapping_note": "Individually source-checked requests retain their distinct targets while seven reusable parameter families capture shared structure. Request, reported state, capability and execution remain separate. No owner model adoption is implied.",
+  "mapping_note": "Requests retain per-command native semantics and shared parameter families. Existing fields/defaults are not copied into incomplete source tables. Individual candidate rows are for owner review, not compulsory independent model classes.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
     "checkpoint": "ISA-OBSERVABLES-PUBLISH",
@@ -3031,44 +4343,44 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
-  "next_action": "Review the assigned18 level/power, property-control and component-lifecycle command definitions only; source analysis, not invocation. Use the fixed accelerated queue.",
+  "next_source_pass": "ISA-COMMANDS-SPATIAL-ACQUISITION",
+  "next_action": "Review the12 assigned spatial-control and acquisition definitions from the existing accelerated queue; no source replay or workbook release.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-177",
-      "ISA-DMS-185",
-      "ISA-DMS-187",
-      "ISA-DMS-188",
-      "ISA-DMS-189",
-      "ISA-DMS-191",
-      "ISA-DMS-195",
-      "ISA-DMS-196",
-      "ISA-DMS-197",
-      "ISA-DMS-198",
-      "ISA-DMS-200",
-      "ISA-DMS-201",
-      "ISA-DMS-202",
-      "ISA-DMS-203",
-      "ISA-DMS-204",
-      "ISA-DMS-220",
-      "ISA-DMS-241",
-      "ISA-DMS-243"
+      "ISA-DMS-169",
+      "ISA-DMS-170",
+      "ISA-DMS-172",
+      "ISA-DMS-175",
+      "ISA-DMS-194",
+      "ISA-DMS-199",
+      "ISA-DMS-206",
+      "ISA-DMS-208",
+      "ISA-DMS-209",
+      "ISA-DMS-217",
+      "ISA-DMS-218",
+      "ISA-DMS-230",
+      "ISA-DMS-231",
+      "ISA-DMS-232",
+      "ISA-DMS-235",
+      "ISA-DMS-242",
+      "ISA-DMS-244",
+      "ISA-DMS-256"
     ],
-    "reviewed_total": 166,
-    "supported_total": 162,
+    "reviewed_total": 184,
+    "supported_total": 179,
     "specific_questions_retained": 4,
-    "specific_questions_added": 0,
-    "specific_questions_total": 4,
-    "command_entries_reviewed": 36,
+    "specific_questions_added": 1,
+    "specific_questions_total": 5,
+    "command_entries_reviewed": 54,
     "command_entries_total": 96,
-    "command_unreviewed": 60,
+    "command_unreviewed": 42,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 193,
+    "information_review_rows": 211,
     "new_candidate_rows": 18,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 1,
+    "new_supporting_types": 0,
     "unique_supporting_definitions": 125,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
