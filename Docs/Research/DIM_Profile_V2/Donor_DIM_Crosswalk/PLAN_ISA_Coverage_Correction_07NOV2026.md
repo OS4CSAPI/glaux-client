@@ -2,6 +2,35 @@
 
 **CURRENT — Automatic-control commands COMPLETE (18/96 command entries reviewed). Properties 91/91 and observables 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-SENSING-MODES only.**
 
+## Numbered progress — restored 8 November 2026
+
+**ISA correction: original Step 5 of 12 is in progress. Steps 1–4 are complete; Steps 6–12 have not begun as their own full reviews. Eight original steps remain to close, including the current Step 5. These are the original scope labels, not eight remaining prompts.** This reporting repair neither adds research scope nor changes the authorized next source group.
+
+| Original step | Retained work | Current status |
+| --- | --- | --- |
+| ISA-01 | Source census and coverage baseline | COMPLETE |
+| ISA-02 | Identity and first property block | COMPLETE |
+| ISA-03 | Remaining properties and property workbook checkpoint | COMPLETE; property catalogue 91/91 |
+| ISA-04 | Observables and observable workbook checkpoint | COMPLETE; observable catalogue 39/39 |
+| ISA-05 | First command work area | IN PROGRESS; the command catalogue across ISA-05/06 is 18/96 reviewed, 78 remaining |
+| ISA-06 | Remaining commands and commanding types/requirements | NOT STARTED as its own work area; part of the same 96-command catalogue, not an additional 96 commands |
+| ISA-07 | Base types, identifiers, envelopes and messages | Full work-area reconciliation not started; reuse already inspected dependencies |
+| ISA-08 | Capability declarations, constraints, readiness and reporting | Full work-area reconciliation not started; reuse already inspected dependencies |
+| ISA-09 | Reporting types | Full work-area reconciliation not started; reuse already inspected dependencies |
+| ISA-10 | Remaining reporting types and filtering/query material | Full work-area reconciliation not started; reuse already inspected dependencies |
+| ISA-11 | Services, capability bins, architecture, requirements, companions and original-row/finding reconciliation | Remaining assigned source work and reconciliation |
+| ISA-12 | Source-first audit, reusable-practice consolidation and final closeout | Remaining final work |
+
+The original scopes are retained from [the earlier numbered plan](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md); its superseded miniature-batch rules are NOT reinstated. The current status record supplies completion states. The broader donor-review plan's Step 16 owner review remains after this ISA correction; the twelve ISA labels do not replace or advance that broader sequence.
+
+**Prompt-count visibility:** the three completed command source passes reviewed six entries each. At that unchanged item rate, the remaining 78 command entries imply **13 further command-source prompts** (78 / 6), before workbook publication and any additional commanding-type/requirement work. This is a conditional pace calculation, not a validated thirteen-pass partition, a guarantee, or a forecast for all remaining ISA work. A total remaining prompt count for the complete correction is **not yet defined in the saved plan** (`plannedTechnicalIterations: null`). Do not hide that absence behind “Step 5 of 12,” turn eight work areas into eight prompts, or invent a reassuring total.
+
+There are already 124 inspected supporting definitions. Later type work must reuse their evidence and perform its assigned reconciliation; neither claim it all starts from zero nor count dependency inspection as completion of every later work area. The 175 comparison rows are information/review rows, not 175 completed plan steps or a percentage of remaining effort.
+
+**Required closeout heading and progress line:** identify the original ISA step number and the plain-language source-group name; then state completed original steps, current catalogue reviewed/total and remaining, the change in that pass, workbook snapshot/checkpoint status, and the current basis for any remaining-prompt estimate. A source-group name alone is not adequate overall progress reporting. For the next pass the starting line is: **“ISA correction — Step 5 of 12: Sensing modes and output settings. Overall: 4 original steps complete. Commands: 18/96 reviewed; 78 remain. This pass assigns six commands; successful completion would make 24/96, with 72 remaining.”** Update earned counts only after the work and actual GitHub delivery are verified.
+
+This is a documentation-only reporting repair. No source review, mapping, evidence, workbook, catalogue assignment, completion count or next action changes. It does not count as another technical research iteration.
+
 [Latest comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
 This pass reviewed Change Auto Brightness, Change Auto Contrast, Change Auto Focus, Change Auto Gain, Change Auto Level and Change Auto Scan (178–183). Each requires one enabled:Boolean input; true enables and false disables the named function. Original parameter tables, the Focus page continuation, and absence of a supplied default or command-specific Results table are recorded. The shared pattern does not imply six compulsory separate model classes. Current text: 148 primary reviews, 144 supported, four unchanged property questions, 175 information/review rows and 124 supporting definitions.
