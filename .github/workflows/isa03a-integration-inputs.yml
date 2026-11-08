@@ -16,7 +16,7 @@ jobs:
       - name: Record input identities
         run: |
           git rev-parse HEAD > ISA_INPUT_COMMIT.txt
-          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Observables_07NOV2026.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
+          sha256sum Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Commands_08NOV2026.xlsx > ISA_WORKBOOK_SNAPSHOT_SHA256.txt
       - uses: actions/upload-artifact@v4
         with:
           name: isa-review-text-inputs
@@ -27,10 +27,15 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.json
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.md
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA*.csv
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_Commands_08NOV2026.xlsx
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk*.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN*.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON*.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/LESSONS_Donor_Review_Process.md
             scripts/publish_isa03a_checkpoint.py
             scripts/publish_isa02_checkpoint.py
             .github/workflows/publish-isa03d-checkpoint.yml
           if-no-files-found: error
-# Current input export: accelerated delivery 7, consolidate all96 saved command outcomes into the workbook; no new source review.
+# Owner-authorized working-master integration and adoption-checkpoint documentation; no new source review.
