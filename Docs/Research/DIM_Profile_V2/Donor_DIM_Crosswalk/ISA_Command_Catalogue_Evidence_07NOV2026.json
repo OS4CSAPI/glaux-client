@@ -14,7 +14,8 @@
   "completed_passes": [
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
     "ISA-COMMANDS-IMAGE-SETTINGS",
-    "ISA-COMMANDS-AUTO-CONTROLS"
+    "ISA-COMMANDS-AUTO-CONTROLS",
+    "ISA-COMMANDS-CONFIGURATION"
   ],
   "primary_records": [
     {
@@ -1229,6 +1230,1075 @@
       "results_review": "No command-specific Results table before the following command heading. This does not establish absence of protocol acknowledgement or execution status.",
       "source_boundary_checked": "Original PDF44–45 page images inspected, including Change Auto Focus heading on44 and complete parameter table on45. The following Change Brightness heading bounds Change Auto Scan. Neighbouring Cancel and Change Active are not credited in this review.",
       "comparison_with_reviewed_controls": "Prior Adjust records request directional adjustment at a relative speed; prior Change image-setting records request Percent targets. Neither signature is imported into this Boolean automatic-control request."
+    },
+    {
+      "id": "ISA-CMD-177",
+      "entry_id": "ISA-DMS-177",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Active",
+      "element_kind": "command",
+      "native_type": "active: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 29,
+      "pdf_pages": [
+        44
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Active, printed p.29 / PDF p.44",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "30fbce5ec2e3ffa6c2bab98eefc7919799e1161efdbbff415089149aee4b20cd",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-177",
+      "proposed_label": "Requested component active state",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the named component active/inactive state.",
+      "mapping_boundary": "Not general enabled state, a selected automatic function, command readiness or proof of current activity. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-COMPONENT-STATE",
+      "parameters": [
+        {
+          "name": "active",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether the component is to be active (true) or inactive (false).",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "boolean_note": "Required false is not omission; no missing-input default supplied.",
+      "related_reported_property_entry": "ISA-DMS-035",
+      "reported_property_evidence": "ISA02-035",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-185",
+      "entry_id": "ISA-DMS-185",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Camera Mode",
+      "element_kind": "command",
+      "native_type": "mode: Camera Mode",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 30,
+      "pdf_pages": [
+        45,
+        46
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Camera Mode, printed p.30 / PDF pp.45–46",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ce85350bfedcb83b3c48e31415e6a0e80e54c50304ff2a2f1eb82a40bcfdf7a8",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-185",
+      "proposed_label": "Requested camera operating mode",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request a camera mode using the native Camera Mode enumeration.",
+      "mapping_boundary": "Not a reported current mode or an assertion that every enumerated mode is supported by a particular camera. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Camera Mode"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MODE-OUTPUT",
+      "parameters": [
+        {
+          "name": "mode",
+          "type": "Camera Mode",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Camera mode to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "source_enum_values": [
+        "LWIR",
+        "MWIR",
+        "OTHER",
+        "SWIR",
+        "VISIBLE BW",
+        "VISIBLE COLOR"
+      ],
+      "enum_marked_sealed": false,
+      "related_reported_property_entry": "ISA-DMS-047",
+      "reported_property_evidence": "ISA02-047",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-187",
+      "entry_id": "ISA-DMS-187",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Enabled",
+      "element_kind": "command",
+      "native_type": "enabled: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 31,
+      "pdf_pages": [
+        46
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Enabled, printed p.31 / PDF p.46",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "437f8123454fb5860c56344a31f6df14156148be77bd4068b70cf70ee4dcb614",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-187",
+      "proposed_label": "Requested component enabled state",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the component enabled/disabled state.",
+      "mapping_boundary": "Not the separate Active state, a named automatic-function toggle or a readiness report. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-COMPONENT-STATE",
+      "parameters": [
+        {
+          "name": "enabled",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Whether the component is to be enabled (true) or disabled (false).",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "boolean_note": "Required false is not omission; no missing-input default supplied.",
+      "related_reported_property_entry": "ISA-DMS-058",
+      "reported_property_evidence": "ISA02-058",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-188",
+      "entry_id": "ISA-DMS-188",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Field of Regard",
+      "element_kind": "command",
+      "native_type": "regard: Field of View",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 31,
+      "pdf_pages": [
+        46
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Field of Regard, printed p.31 / PDF p.46",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "40b510d6f57a46ba8eeb13072b614254b946115c7a7bd34dcafec0cdd1394b7e",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-188",
+      "proposed_label": "Requested angular field of regard",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the component field of regard using the Field of View angular structure.",
+      "mapping_boundary": "Sharing the Field of View type does not equate field of regard with instantaneous field of view, a geographic footprint or a pointing orientation. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Field of View"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-ANGULAR-FIELD",
+      "parameters": [
+        {
+          "name": "regard",
+          "type": "Field of View",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Field of regard to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "nested_parameter_manifest": {
+        "type": "Field of View",
+        "fields": [
+          {
+            "name": "width",
+            "type": "Measured Degrees",
+            "required": true,
+            "cardinality": "1"
+          },
+          {
+            "name": "height",
+            "type": "Measured Degrees",
+            "required": false,
+            "cardinality": "0-1",
+            "omitted_meaning": "Unknown, not zero."
+          }
+        ],
+        "source_locator": "DMS 6.0r12 §8.3 Field of View, printed p.93 / PDF p.108",
+        "measurement_wrapper": "Required value and optional error in degrees; existing Measured Degrees evidence reused."
+      },
+      "related_reported_property_entry": "ISA-DMS-060",
+      "reported_property_evidence": "ISA02-060",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-189",
+      "entry_id": "ISA-DMS-189",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Field of View",
+      "element_kind": "command",
+      "native_type": "fov: Field of View",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 31,
+      "pdf_pages": [
+        46
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Field of View, printed p.31 / PDF p.46",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "d90d00a348151407f41c485ff5bd0db83aa0bef1fe8597afee81052020313e28",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-189",
+      "proposed_label": "Requested angular field of view",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the component field of view using the native angular structure.",
+      "mapping_boundary": "Not the distinct field of regard, an area polygon, orientation, focus setting or zoom percentage. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Field of View"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-ANGULAR-FIELD",
+      "parameters": [
+        {
+          "name": "fov",
+          "type": "Field of View",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Field of view to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "nested_parameter_manifest": {
+        "type": "Field of View",
+        "fields": [
+          {
+            "name": "width",
+            "type": "Measured Degrees",
+            "required": true,
+            "cardinality": "1"
+          },
+          {
+            "name": "height",
+            "type": "Measured Degrees",
+            "required": false,
+            "cardinality": "0-1",
+            "omitted_meaning": "Unknown, not zero."
+          }
+        ],
+        "source_locator": "DMS 6.0r12 §8.3 Field of View, printed p.93 / PDF p.108",
+        "measurement_wrapper": "Required value and optional error in degrees; existing Measured Degrees evidence reused."
+      },
+      "related_reported_property_entry": "ISA-DMS-061",
+      "reported_property_evidence": "ISA02-061",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-191",
+      "entry_id": "ISA-DMS-191",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Frame Rate",
+      "element_kind": "command",
+      "native_type": "rate: Hertz",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 32,
+      "pdf_pages": [
+        47
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Frame Rate, printed p.32 / PDF p.47",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "5616c9e71d8af707b3bf6797cb882ab6f7061e23ba20efcaf9c61e5eba9583bd",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-191",
+      "proposed_label": "Requested frame-production rate",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the frame rate used by the component.",
+      "mapping_boundary": "Frequency in Hertz, not a rate of changing a setting, data-transfer throughput or Status publication interval; no supported maximum or achieved rate inferred. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Hertz"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-TIMING",
+      "parameters": [
+        {
+          "name": "rate",
+          "type": "Hertz",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Frame rate to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "unit_constraint": "Hertz is a nonnegative Float frequency in Hz; scalar range does not establish device-supported values.",
+      "related_reported_property_entry": "ISA-DMS-063",
+      "reported_property_evidence": "ISA02-063",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-195",
+      "entry_id": "ISA-DMS-195",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Maximum Status Interval",
+      "element_kind": "command",
+      "native_type": "interval: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 32,
+      "pdf_pages": [
+        47,
+        48
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Maximum Status Interval, printed p.32 / PDF pp.47–48",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a6e092e36fa9177d02d1a813369a56c6ace09a3020847e4d4db5f58a41c2359c",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-195",
+      "proposed_label": "Requested maximum Status-publication interval",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the maximum elapsed interval between consecutive component Status publications.",
+      "mapping_boundary": "Not minimum interval, sampling cadence, an observation time or a publication timestamp; retain the maximum-bound role. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-TIMING",
+      "parameters": [
+        {
+          "name": "interval",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Maximum status interval to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "unit_constraint": "Secs is a floating-point interval in seconds with millisecond resolution; no unspecified default, minimum, maximum or zero-stop rule inferred.",
+      "related_reported_property_entry": "ISA-DMS-078",
+      "reported_property_evidence": "ISA03A-078",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-196",
+      "entry_id": "ISA-DMS-196",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Minimum Status Interval",
+      "element_kind": "command",
+      "native_type": "interval: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 33,
+      "pdf_pages": [
+        48
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Minimum Status Interval, printed p.33 / PDF p.48",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "42659d2782ceca353cb8f6a22ecdce4056017028e95c74ce445ee4ac9d73b8b0",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-196",
+      "proposed_label": "Requested minimum Status-publication interval",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the minimum elapsed interval between consecutive component Status publications.",
+      "mapping_boundary": "Not maximum interval or observation cadence; no undocumented min/max validation, buffering behavior or achieved schedule is added to this command. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-TIMING",
+      "parameters": [
+        {
+          "name": "interval",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Minimum status interval to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "unit_constraint": "Secs is a floating-point interval in seconds with millisecond resolution; no unspecified default, minimum, maximum or zero-stop rule inferred.",
+      "related_reported_property_entry": "ISA-DMS-079",
+      "reported_property_evidence": "ISA03A-079",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-197",
+      "entry_id": "ISA-DMS-197",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Name",
+      "element_kind": "command",
+      "native_type": "name: String",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 33,
+      "pdf_pages": [
+        48
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Name, printed p.33 / PDF p.48",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fb753ac444d67a5ffb3ee24822088222361465a2fd41c06ab36e78989a6e6dca",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-197",
+      "proposed_label": "Requested component display name",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request a new human-readable component name.",
+      "mapping_boundary": "Not a change to UCI, hardware serial number or manufacturer/model identity. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-NAME",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name to use for the component.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "related_reported_property_entry": "ISA-DMS-081",
+      "reported_property_evidence": "ISA03A-081",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-198",
+      "entry_id": "ISA-DMS-198",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Polarity",
+      "element_kind": "command",
+      "native_type": "polarity: Polarity",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 33,
+      "pdf_pages": [
+        48
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Polarity, printed p.33 / PDF p.48",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ac57559c918a6dd2f7a4b6edd78ef78c7be1cc962f530bcd7c4ce1cda285e5bf",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-198",
+      "proposed_label": "Requested thermal-image display polarity",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the image polarity palette represented by native Polarity values.",
+      "mapping_boundary": "Thermal display color ordering, not electrical polarity or polarization. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Polarity"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MODE-OUTPUT",
+      "parameters": [
+        {
+          "name": "polarity",
+          "type": "Polarity",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Image polarity setting to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "source_enum_values": [
+        "BLACK HOT",
+        "WHITE HOT"
+      ],
+      "enum_marked_sealed": false,
+      "related_reported_property_entry": "ISA-DMS-087",
+      "reported_property_evidence": "ISA-PROP-087",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-200",
+      "entry_id": "ISA-DMS-200",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Pulse Interval",
+      "element_kind": "command",
+      "native_type": "interval: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 33,
+      "pdf_pages": [
+        48,
+        49
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Pulse Interval, printed p.33 / PDF pp.48–49",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "41eb88a0119ae85e040055fa8132e99b1ced10bc1a911f6c56922f60803f99d2",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-200",
+      "proposed_label": "Requested pulse interval",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the pulse interval used by the component.",
+      "mapping_boundary": "A requested interval, distinct from pulse duration, frequency, scan duration and Status intervals; no laser wavelength or executed pulse is inferred. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-TIMING",
+      "parameters": [
+        {
+          "name": "interval",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Pulse interval to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "unit_constraint": "Secs is a floating-point interval in seconds with millisecond resolution; no unspecified default, minimum, maximum or zero-stop rule inferred.",
+      "related_reported_property_entry": "ISA-DMS-093",
+      "reported_property_evidence": "ISA-PROP-093",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-201",
+      "entry_id": "ISA-DMS-201",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Quality",
+      "element_kind": "command",
+      "native_type": "quality: Himelo",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 34,
+      "pdf_pages": [
+        49
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Quality, printed p.34 / PDF p.49",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1f66f3c3168813021f5f21ee6ee3a58a27521e12594ae26c0c3bc211b7daa4df",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-201",
+      "proposed_label": "Requested qualitative output quality",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request an output-quality level using the contextual Himelo scale.",
+      "mapping_boundary": "Not numerical accuracy, measurement confidence, bit rate or a guaranteed quality threshold. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Himelo"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MODE-OUTPUT",
+      "parameters": [
+        {
+          "name": "quality",
+          "type": "Himelo",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Output quality level to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "source_enum_values": [
+        "HIGH",
+        "LOW",
+        "MEDIUM",
+        "VERY HIGH",
+        "VERY LOW"
+      ],
+      "enum_marked_sealed": false,
+      "qualitative_scale_note": "Meaning derives from this output characteristic; no universal numeric thresholds are supplied.",
+      "related_reported_property_entry": "ISA-DMS-094",
+      "reported_property_evidence": "ISA-PROP-094",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-202",
+      "entry_id": "ISA-DMS-202",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Radar Mode",
+      "element_kind": "command",
+      "native_type": "mode: String",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 34,
+      "pdf_pages": [
+        49
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Radar Mode, printed p.34 / PDF p.49",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "0361cae7dbad7333142f671a4ae07677e6a00680f66431cb4748c8d8b30880c6",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-202",
+      "proposed_label": "Requested radar operating mode",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request a radar mode by its native String value.",
+      "mapping_boundary": "Not the Camera Mode enum, a sealed radar-mode vocabulary or a reported/applied mode. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MODE-OUTPUT",
+      "parameters": [
+        {
+          "name": "mode",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Radar mode to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "open_string_note": "The source uses String, not Camera Mode or a sealed radar-mode enumeration.",
+      "related_reported_property_entry": "ISA-DMS-095",
+      "reported_property_evidence": "ISA-PROP-095",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-203",
+      "entry_id": "ISA-DMS-203",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Resolution",
+      "element_kind": "command",
+      "native_type": "resolution: Himelo",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 34,
+      "pdf_pages": [
+        49
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Resolution, printed p.34 / PDF p.49",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "ef64b70aa4ebb84af2580a8870b0e1746efbab32a656bcdc653b426024856c4d",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-203",
+      "proposed_label": "Requested qualitative output resolution",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the relative level of detail of media produced by the component.",
+      "mapping_boundary": "Himelo is qualitative here, not a pixel count, ground-sampling distance or angular resolution in physical units. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Himelo"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MODE-OUTPUT",
+      "parameters": [
+        {
+          "name": "resolution",
+          "type": "Himelo",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Resolution level to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "source_enum_values": [
+        "HIGH",
+        "LOW",
+        "MEDIUM",
+        "VERY HIGH",
+        "VERY LOW"
+      ],
+      "enum_marked_sealed": false,
+      "qualitative_scale_note": "Meaning derives from this output characteristic; no universal numeric thresholds are supplied.",
+      "related_reported_property_entry": "ISA-DMS-101",
+      "reported_property_evidence": "ISA-PROP-101",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-204",
+      "entry_id": "ISA-DMS-204",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Change Scan Time",
+      "element_kind": "command",
+      "native_type": "seconds: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 34,
+      "pdf_pages": [
+        49
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Change Scan Time, printed p.34 / PDF p.49",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "78fdb395d233550a0937567ea6c3355ba6bb4492450233d08b6df6c9a0e054af",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-204",
+      "proposed_label": "Requested full-scan duration",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request the time required for the component to cover its scan area once.",
+      "mapping_boundary": "Not point dwell time, pulse interval, exposure duration or an event timestamp. Native parameter is seconds, not interval. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Secs"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-TIMING",
+      "parameters": [
+        {
+          "name": "seconds",
+          "type": "Secs",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Scan time to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "unit_constraint": "Secs is a floating-point interval in seconds with millisecond resolution; no unspecified default, minimum, maximum or zero-stop rule inferred.",
+      "related_reported_property_entry": "ISA-DMS-104",
+      "reported_property_evidence": "ISA-PROP-104",
+      "reported_property_link_basis": "Separate saved reported-property context; neither equated with the request nor modified."
+    },
+    {
+      "id": "ISA-CMD-220",
+      "entry_id": "ISA-DMS-220",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Menu Navigation",
+      "element_kind": "command",
+      "native_type": "button: Menu Button",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 40,
+      "pdf_pages": [
+        55
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Menu Navigation, printed p.40 / PDF p.55",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "e71d5379597a706cf59367ed0c87bb4ff19b708c4557b4c37f54306b3afaab95",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-220",
+      "proposed_label": "Requested on-screen menu navigation input",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request application of the specified button press to the component menu.",
+      "mapping_boundary": "On-screen menu navigation, not platform movement or a geographical direction. No menu tree, repeat count or successful selection is inferred. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "Menu Button"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-MENU",
+      "parameters": [
+        {
+          "name": "button",
+          "type": "Menu Button",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Button press to apply to the menu.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected."
+    },
+    {
+      "id": "ISA-CMD-241",
+      "entry_id": "ISA-DMS-241",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Observable Reporting",
+      "element_kind": "command",
+      "native_type": "name: String; reporting: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 45,
+      "pdf_pages": [
+        60
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Observable Reporting, printed p.45 / PDF p.60",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "0224b9ed8398caf2aa0866f48cb371c6dd5af3ce87bd02a2b8f833d258fdb107",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-241",
+      "proposed_label": "Requested named-observable Event reporting",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request reporting for the named observable: true includes it in relevant Event messages; false excludes it from Event messages.",
+      "mapping_boundary": "Controls Event inclusion, not Status property reporting, measurement readiness or proof of performed sensing. No undocumented retrieval rule is imported from Set Property Reporting. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "String",
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-REPORTING",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the observable for which reporting state is being set.",
+          "default_as_source": null
+        },
+        {
+          "name": "reporting",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Reporting state to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "boolean_note": "Required false is not omission; no missing-input default supplied."
+    },
+    {
+      "id": "ISA-CMD-243",
+      "entry_id": "ISA-DMS-243",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Set Property Reporting",
+      "element_kind": "command",
+      "native_type": "name: String; reporting: Boolean",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 45,
+      "pdf_pages": [
+        60,
+        61
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Set Property Reporting, printed p.45 / PDF pp.60–61",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "fe90f0bde3d426493d4e6e8965f6fc970839f181f9b6cfb049495a40d69fd957",
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-243",
+      "proposed_label": "Requested named-property Status reporting",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Request reporting for the named property: true allows inclusion in published Status messages; false excludes it from those messages while Get Property and Get Status retrieval remains available.",
+      "mapping_boundary": "Allowed inclusion is not a requirement that every Status contains the property. Disabling publication is not clearing its value or disabling retrieval, nor does it change observable Event reporting. This is a request definition, not evidence of invocation, success, applied state or a case device capability.",
+      "dependency_terms": [
+        "String",
+        "Boolean"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-08",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: specific configuration request with typed inputs. General Request/Response, authorization and outcome reconciliation remain separately assigned.",
+      "common_parameter_schema": "ISA-CMD-CONFIGURATION-REPORTING",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Name of the property for which reporting state is being set.",
+          "default_as_source": null
+        },
+        {
+          "name": "reporting",
+          "type": "Boolean",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Reporting state to use.",
+          "default_as_source": null
+        }
+      ],
+      "results": [],
+      "results_review": "No command-specific Results table before the following command heading. This does not mean no protocol acknowledgement or execution status.",
+      "source_boundary_checked": "Complete original definition and parameter table read, including following heading and any page continuation; page images inspected.",
+      "boolean_note": "Required false is not omission; no missing-input default supplied."
     }
   ],
   "supporting_definitions": [
@@ -1264,6 +2334,52 @@
           "meaning": "Increasing in nature."
         }
       ],
+      "native_fields": []
+    },
+    {
+      "entry_id": "ISA-DMS-455",
+      "native_term": "Menu Button",
+      "element_kind": "data element",
+      "section": "9.1",
+      "printed_page": 117,
+      "pdf_pages": [
+        132
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-06",
+      "source_locator": "ISA DMS 6.0r12 §9.1 Menu Button, printed p.117 / PDF p.132",
+      "inspected_content_summary": "On-screen menu input enum with BACK, DOWN, LEFT, RIGHT, SELECT and UP. SELECT means Select/Enter on the current option. The definition is not marked sealed; no geographic direction, menu hierarchy, repeated press or hardware motion is inferred.",
+      "source_span_sha256": "ab55eb7c52580a4de9bb0669ef4c9851d2fd882029df739ac5c5f0ccbe472308",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "enum_values": [
+        {
+          "name": "BACK",
+          "meaning": "Navigate back."
+        },
+        {
+          "name": "DOWN",
+          "meaning": "Navigate down."
+        },
+        {
+          "name": "LEFT",
+          "meaning": "Navigate left."
+        },
+        {
+          "name": "RIGHT",
+          "meaning": "Navigate right."
+        },
+        {
+          "name": "SELECT",
+          "meaning": "Select/Enter on the current option."
+        },
+        {
+          "name": "UP",
+          "meaning": "Navigate up."
+        }
+      ],
+      "sealed_as_source": false,
       "native_fields": []
     }
   ],
@@ -1337,6 +2453,135 @@
       "review_pass": "ISA-COMMANDS-AUTO-CONTROLS",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Previously checked exact-edition Boolean definition reread as original text on PDF65; no new supporting definition counted. Required false differs from a missing parameter."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "DMS 6.0r12 §4.1 Boolean; printed p.50; PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Boolean has true/false values; the Visible property supplies the laser-spectrum meaning. Original §4.1 text at printed p.50/PDF65 checked."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected native string type reused for resource/zone names and media-type descriptions; no invented contact or identifier values."
+    },
+    {
+      "entry_id": "ISA-DMS-340",
+      "native_term": "Camera Mode",
+      "source_locator": "DMS 6.0r12 §8.1 Camera Mode; printed p.77; PDF pp.92–92",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "LWIR, MWIR, OTHER, SWIR, VISIBLE BW and VISIBLE COLOR are the source enumeration values; distinguish the type from the property."
+    },
+    {
+      "entry_id": "ISA-DMS-383",
+      "native_term": "Field of View",
+      "source_locator": "DMS 6.0r12 §8.3 Field of View; printed p.93; PDF pp.108–108",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Required angular width and optional angular height (Measured Degrees). Omitted height means unknown; not zero."
+    },
+    {
+      "entry_id": "ISA-DMS-278",
+      "native_term": "Hertz",
+      "source_locator": "DMS 6.0r12 §4.2 Hertz; printed p.53; PDF pp.68–68",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Frequency unit; native simple type has a nonnegative range."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55, PDF 70–70",
+      "previous_evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked floating-point interval/time representation in seconds with source millisecond-resolution constraint; no timestamp epoch or observation availability is manufactured here."
+    },
+    {
+      "entry_id": "ISA-DMS-348",
+      "native_term": "Polarity",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Polarity, printed p.80, PDF 95–95",
+      "previous_evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Polarity describes thermal-energy display palettes BLACK HOT and WHITE HOT, with the source hot/cold color ordering. Not marked sealed. These are palette values, not electrical or polarization states."
+    },
+    {
+      "entry_id": "ISA-DMS-345",
+      "native_term": "Himelo",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Himelo, printed p.79, PDF 94–95",
+      "previous_evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Himelo is a contextual qualitative enumeration: HIGH, LOW, MEDIUM, VERY HIGH, VERY LOW. Its description derives meaning from usage; no numeric thresholds or universal metrics. Definition continues from printed p.79 to p.80. Not marked sealed."
+    },
+    {
+      "entry_id": "ISA-DMS-401",
+      "native_term": "Measured Degrees",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Degrees, printed p.98, PDF 113–114",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously checked required angular value and optional error in degrees; retain error qualifiers and do not substitute a quaternion or a guessed coordinate transform."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52, PDF 67–67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Floating point angle in degrees; actual axis/reference frame belongs to the surrounding type/property, not the scalar unit."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-CONFIGURATION",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected floating numeric type. No extra nonnegative bounds or coercions introduced absent the specific source definition."
     }
   ],
   "shared_parameter_schemas": {
@@ -1445,29 +2690,167 @@
       ],
       "command_specific_results": "No command-specific Results table occurs in these six entries before the next command heading.",
       "distinctions": "Automatic-function enablement request is separate from a reported enabled property, an algorithm specification, a numerical target setting, command acknowledgement and actual execution."
+    },
+    "ISA-CMD-CONFIGURATION-COMPONENT-STATE": {
+      "meaning": "One required Boolean for the specifically named component state; active and enabled retain their distinct native names and roles.",
+      "applies_to": [
+        "ISA-DMS-177",
+        "ISA-DMS-187"
+      ],
+      "native_signature_by_command": {
+        "Change Active": "active: Boolean",
+        "Change Enabled": "enabled: Boolean"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-MODE-OUTPUT": {
+      "meaning": "One required setting; native enum versus open String and qualitative versus categorical meanings remain per-command. No default or physical-unit conversion is invented.",
+      "applies_to": [
+        "ISA-DMS-185",
+        "ISA-DMS-198",
+        "ISA-DMS-201",
+        "ISA-DMS-202",
+        "ISA-DMS-203"
+      ],
+      "native_signature_by_command": {
+        "Change Camera Mode": "mode: Camera Mode",
+        "Change Polarity": "polarity: Polarity",
+        "Change Quality": "quality: Himelo",
+        "Change Radar Mode": "mode: String",
+        "Change Resolution": "resolution: Himelo"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-ANGULAR-FIELD": {
+      "meaning": "One required Field of View object; native regard and fov select different controlled concepts. Required width and optional height are Measured Degrees; omitted height is unknown, not zero.",
+      "applies_to": [
+        "ISA-DMS-188",
+        "ISA-DMS-189"
+      ],
+      "native_signature_by_command": {
+        "Change Field of Regard": "regard: Field of View",
+        "Change Field of View": "fov: Field of View"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-TIMING": {
+      "meaning": "One required temporal setting. Frame rate uses Hertz; the other commands use Secs intervals/durations with distinct purposes and source field names. No Adjust duration/default/stop behavior transfers here.",
+      "applies_to": [
+        "ISA-DMS-191",
+        "ISA-DMS-195",
+        "ISA-DMS-196",
+        "ISA-DMS-200",
+        "ISA-DMS-204"
+      ],
+      "native_signature_by_command": {
+        "Change Frame Rate": "rate: Hertz",
+        "Change Maximum Status Interval": "interval: Secs",
+        "Change Minimum Status Interval": "interval: Secs",
+        "Change Pulse Interval": "interval: Secs",
+        "Change Scan Time": "seconds: Secs"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-NAME": {
+      "meaning": "One required String for a human-readable component name, not persistent identity.",
+      "applies_to": [
+        "ISA-DMS-197"
+      ],
+      "native_signature_by_command": {
+        "Change Name": "name: String"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-MENU": {
+      "meaning": "One required Menu Button for on-screen menu input, not physical movement.",
+      "applies_to": [
+        "ISA-DMS-220"
+      ],
+      "native_signature_by_command": {
+        "Menu Navigation": "button: Menu Button"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
+    },
+    "ISA-CMD-CONFIGURATION-REPORTING": {
+      "meaning": "Required name:String and reporting:Boolean. Shared signature does not erase Event versus Status inclusion semantics or the property retrieval exception.",
+      "applies_to": [
+        "ISA-DMS-241",
+        "ISA-DMS-243"
+      ],
+      "native_signature_by_command": {
+        "Set Observable Reporting": "name: String; reporting: Boolean",
+        "Set Property Reporting": "name: String; reporting: Boolean"
+      },
+      "cardinality_rule": "Each command input is required, cardinality1, Single Value; no omitted-input default is supplied.",
+      "results_rule": "No command-specific Results table in these entries.",
+      "model_note": "Source-specific requested targets remain individually traceable; these rows do not mandate independent DIM classes."
     }
   },
   "source_inspection": {
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
-    "primary_text": "Original DMS 6.0r12 §3.3 printed pp.29–30 / PDF44–45: all six automatic-control command definitions, full parameter tables and subsequent headings.",
+    "primary_text": "Original DMS 6.0r12 §3.3 printed29–34,40,45 / PDF44–49,55,60: all18 assigned commands and complete parameter tables.",
     "primary_text_pages": [
       44,
-      45
+      45,
+      46,
+      47,
+      48,
+      49,
+      55,
+      60
     ],
     "primary_pages_visually_inspected": [
       44,
-      45
+      45,
+      46,
+      47,
+      48,
+      49,
+      55,
+      60
     ],
     "additional_text_pages": [
-      65
+      132
     ],
-    "new_supporting_definitions": [],
-    "new_supporting_count": 0,
-    "unique_supporting_total": 124,
+    "additional_pages_visually_inspected": [
+      108
+    ],
+    "new_supporting_definitions": [
+      "Menu Button"
+    ],
+    "new_supporting_count": 1,
+    "unique_supporting_total": 125,
     "reused_types": [
-      "Boolean"
+      "Boolean",
+      "String",
+      "Camera Mode",
+      "Field of View",
+      "Hertz",
+      "Secs",
+      "Polarity",
+      "Himelo",
+      "Measured Degrees",
+      "Degrees",
+      "Float"
     ],
-    "source_limits": "Only requested enablement and exact Boolean input are established. No algorithm, numerical setting, reported state, execution, omitted-input default or physical effect inferred; generic Level Q001 remains unchanged."
+    "cross_page_checks": [
+      "Change Camera Mode45–46",
+      "Change Maximum Status Interval47–48",
+      "Change Pulse Interval48–49"
+    ],
+    "source_limits": "Only data-model configuration/request semantics reviewed. No request execution, device state or physical effect asserted; no unused adjacent command credited."
   },
   "source_inspections_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
@@ -1555,13 +2938,66 @@
         "Boolean"
       ],
       "source_limits": "Only requested enablement and exact Boolean input are established. No algorithm, numerical setting, reported state, execution, omitted-input default or physical effect inferred; generic Level Q001 remains unchanged."
+    },
+    "ISA-COMMANDS-CONFIGURATION": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "Original DMS 6.0r12 §3.3 printed29–34,40,45 / PDF44–49,55,60: all18 assigned commands and complete parameter tables.",
+      "primary_text_pages": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        55,
+        60
+      ],
+      "primary_pages_visually_inspected": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        55,
+        60
+      ],
+      "additional_text_pages": [
+        132
+      ],
+      "additional_pages_visually_inspected": [
+        108
+      ],
+      "new_supporting_definitions": [
+        "Menu Button"
+      ],
+      "new_supporting_count": 1,
+      "unique_supporting_total": 125,
+      "reused_types": [
+        "Boolean",
+        "String",
+        "Camera Mode",
+        "Field of View",
+        "Hertz",
+        "Secs",
+        "Polarity",
+        "Himelo",
+        "Measured Degrees",
+        "Degrees",
+        "Float"
+      ],
+      "cross_page_checks": [
+        "Change Camera Mode45–46",
+        "Change Maximum Status Interval47–48",
+        "Change Pulse Interval48–49"
+      ],
+      "source_limits": "Only data-model configuration/request semantics reviewed. No request execution, device state or physical effect asserted; no unused adjacent command credited."
     }
   },
   "specific_questions": [],
   "case_checks": [
-    "No native ISA automatic-control capability, requested Boolean or executed control operation is asserted for any of the four documentary/historical equipment examples.",
-    "All 73 equipment facts and prior non-ISA grid values are retained; no algorithm, command response, measured state or original resultTime is invented.",
-    "The six already reviewed Auto property records remain unchanged. Automatic-function enablement, target-setting requests, rate-based adjustment and reported state remain separate."
+    "All73 case facts and prior non-ISA display values preserved; no native ISA command implementation or execution inferred for any of the four examples.",
+    "Required Boolean values and optional field-of-view height retain their native semantics; no case setting, measurement, identity or resultTime was invented."
   ],
   "case_checks_by_pass": {
     "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
@@ -1578,9 +3014,13 @@
       "No native ISA automatic-control capability, requested Boolean or executed control operation is asserted for any of the four documentary/historical equipment examples.",
       "All 73 equipment facts and prior non-ISA grid values are retained; no algorithm, command response, measured state or original resultTime is invented.",
       "The six already reviewed Auto property records remain unchanged. Automatic-function enablement, target-setting requests, rate-based adjustment and reported state remain separate."
+    ],
+    "ISA-COMMANDS-CONFIGURATION": [
+      "All73 case facts and prior non-ISA display values preserved; no native ISA command implementation or execution inferred for any of the four examples.",
+      "Required Boolean values and optional field-of-view height retain their native semantics; no case setting, measurement, identity or resultTime was invented."
     ]
   },
-  "mapping_note": "Each native command retains individual traceability within a shared parameter pattern. Candidate request rows are not six mandatory independent DIM classes; generic Request/Response and owner-adoption decisions remain separate.",
+  "mapping_note": "Individually source-checked requests retain their distinct targets while seven reusable parameter families capture shared structure. Request, reported state, capability and execution remain separate. No owner model adoption is implied.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
     "checkpoint": "ISA-OBSERVABLES-PUBLISH",
@@ -1591,33 +3031,45 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-COMMANDS-SENSING-MODES",
-  "next_action": "Review the six assigned sensing mode/output commands only: Change Camera Mode, Change Frame Rate, Change Polarity, Change Quality, Change Radar Mode, Change Resolution. Preserve exact enums/strings/units and request-versus-reported-state boundaries; no workbook release.",
+  "next_source_pass": "ISA-COMMANDS-CONTROL-LIFECYCLE",
+  "next_action": "Review the assigned18 level/power, property-control and component-lifecycle command definitions only; source analysis, not invocation. Use the fixed accelerated queue.",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-178",
-      "ISA-DMS-179",
-      "ISA-DMS-180",
-      "ISA-DMS-181",
-      "ISA-DMS-182",
-      "ISA-DMS-183"
+      "ISA-DMS-177",
+      "ISA-DMS-185",
+      "ISA-DMS-187",
+      "ISA-DMS-188",
+      "ISA-DMS-189",
+      "ISA-DMS-191",
+      "ISA-DMS-195",
+      "ISA-DMS-196",
+      "ISA-DMS-197",
+      "ISA-DMS-198",
+      "ISA-DMS-200",
+      "ISA-DMS-201",
+      "ISA-DMS-202",
+      "ISA-DMS-203",
+      "ISA-DMS-204",
+      "ISA-DMS-220",
+      "ISA-DMS-241",
+      "ISA-DMS-243"
     ],
-    "reviewed_total": 148,
-    "supported_total": 144,
+    "reviewed_total": 166,
+    "supported_total": 162,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "command_entries_reviewed": 18,
+    "command_entries_reviewed": 36,
     "command_entries_total": 96,
-    "command_unreviewed": 78,
+    "command_unreviewed": 60,
     "property_outcomes_unchanged": 91,
     "observable_outcomes_unchanged": 39,
-    "information_review_rows": 175,
-    "new_candidate_rows": 6,
+    "information_review_rows": 193,
+    "new_candidate_rows": 18,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 0,
-    "unique_supporting_definitions": 124,
+    "new_supporting_types": 1,
+    "unique_supporting_definitions": 125,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   }

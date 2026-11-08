@@ -1,65 +1,34 @@
-# Current PITON — accelerated ISA execution, completed work preserved
+# Current PITON — configuration commands complete; accelerated queue continues
 
-**8 November 2026. Original ISA correction Step 5 of 12 is in progress; Steps 1–4 COMPLETE. Commands18/96 reviewed,78 remaining. Next owner “proceed”: ISA-COMMANDS-CONFIGURATION — the18 named definitions below.**
+**8 November 2026 · Original ISA Step5 of12; four original steps COMPLETE. Accelerated delivery1 COMPLETE. Commands36/96 reviewed;60 remain. Next “proceed”: ISA-COMMANDS-CONTROL-LIFECYCLE,18 assigned definitions only.**
 
 Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. GitHub is authoritative.
-[Execution plan and finish-line forecast](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress and exact queue](ISA_Correction_Status_07NOV2026.json) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Completed workbook](ISA_Correction_Review_Observables_07NOV2026.xlsx) · [Workbook publication record](ISA_Observables_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
+[Plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Progress/exact queue](ISA_Correction_Status_07NOV2026.json) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx) · [Workbook publication](ISA_Observables_Publication_Record_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
-## 1. What the owner changed
+## Progress and earned completion
 
-The owner said, “We need to pick up the pace.” The plan now groups all78 remaining commands into six coherent review prompts of18,18,12,16,7,7 entries, followed by one command-workbook checkpoint. Every remaining ID is assigned exactly once. The former six-command sensing-mode assignment is absorbed in group1, not a separate prompt or an unfinished predecessor.
+All91 properties and39 observables and their consolidated12-sheet workbook remain COMPLETE. All18 previously reviewed commands remain unchanged; all18 configuration commands are now source-reviewed and published. **166 primary outcomes /162 supported /four unchanged property questions;193 information/review rows;125 unique supporting definitions.** Command entries now cross the retained ISA-05/06 ownership boundary; neither whole command/requirement work area is falsely closed.
 
-The full remaining ISA correction now has a working forecast of20–24 prompts, centered on22 named delivery slots in the plan. This INCLUDES the seven command-source/publication slots. The forecast uses the actual inventory, source-section scope and reuse of124 already inspected supporting definitions; it is not completion credit or a fixed quota that excuses unread material. Explain any forecast change by naming the extra or removed work, not by quietly proliferating substeps. Do not restart planning at the next “proceed.”
+**Remaining forecast:21 central prompted deliveries, working range19–23.** Accelerated slot1 completed without a split; five command-source passes plus one command-workbook checkpoint remain within that forecast. No new substep, renamed extra queue or planning turn is due. Keep original step numbers, catalogue progress, actual increment and this forecast visible in closeouts. Completed technical iterations20; original work areas complete4/12.
 
-Keep original step numbers visible. Every closeout states original step, original steps complete, actual catalogue reviewed/total and remaining, the increment achieved, remaining delivery forecast and workbook snapshot. Next starting line: **“ISA correction — Step5 of12: configuration commands. Four original steps complete. Commands18/96;78 remain. This pass assigns18; successful verified delivery would make36/96,60 remaining.”** Count only published, checked outcomes.
+## Source meanings and source access
 
-## 2. Completed research and preservation
+The18 commands retain exact required parameters: active/enabled Boolean states; enum versus String modes; angular regard/fov; rate:Hertz; interval/seconds:Secs with separate timing purposes; name:String; button:Menu Button; and name:String plus reporting:Boolean. No input default or command-specific Results table is supplied. Field of View requires width and permits unknown height; regard and fov remain separate controlled roles. Menu Button has BACK,DOWN,LEFT,RIGHT,SELECT,UP and is not marked sealed.
 
-All91 property and39 observable source reviews and their integrated twelve-sheet workbook remain COMPLETE. The six Adjust, six target-setting Change and six automatic-control commands remain COMPLETE. No source outcomes changed in this pace amendment. Current earned totals:148 primary reviews,144 supported outcomes,four local property questions;175 information/review rows;124 inspected supporting definitions. The scheduling amendment is not a new technical research iteration; completed technical iterations remain19.
+Set Observable Reporting controls inclusion in relevant Event messages. Set Property Reporting true permits published Status inclusion; false excludes publication but still permits Get Property/Get Status retrieval. Neither changes readiness or proves execution. Shared types/signatures are reused without copying one command's semantics into another. No new interpretation question arose.
 
-Current workbook is the completed property/observable snapshot:130 primary outcomes,157 rows,SHA256 `68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6`. Current GitHub command evidence/comparison is newer. Preserve all58 non-ISA primary records,73 case statements,480 source entries,279 source blocks,31 original row/case targets and25 earlier findings. Do not redo the repaired workbook checkpoint. All existing candidate rows and other-donor/equipment cells remain unchanged.
+Original DMS6.0r12 §3.3 text/page images44–49,55,60 inspected, including Camera Mode45–46, Maximum Status Interval47–48 and Pulse Interval48–49 continuations. Field of View page108 image rechecked; Menu Button132 read fully. One new supporting definition:Menu Button; same-edition scalar/enum/angular dependencies reused. Source ID `file_00000000ca1c81f48a3ccd49273425f8`. Original title/revision and per-entry locators remain in cumulative evidence. Failed raw export is not absent readable source text.
 
-## 3. Next authorized group —18 commands only
+## Next single source group — accelerated slot2
 
-`ISA-COMMANDS-CONFIGURATION`:
+**ISA-COMMANDS-CONTROL-LIFECYCLE:** Adjust Level; Adjust Power; Arm; Calibrate; Change Level; Change Power; Clear Property; Designate; Disarm; Illuminate; Initiate NUC; Render Useless; Reset; Sanitize; Self Test; Set Property; Shutdown; Zeroize.
 
-| ID suffix | Native command |
-| --- | --- |
-| 177 | Change Active |
-| 185 | Change Camera Mode |
-| 187 | Change Enabled |
-| 188 | Change Field of Regard |
-| 189 | Change Field of View |
-| 191 | Change Frame Rate |
-| 195 | Change Maximum Status Interval |
-| 196 | Change Minimum Status Interval |
-| 197 | Change Name |
-| 198 | Change Polarity |
-| 200 | Change Pulse Interval |
-| 201 | Change Quality |
-| 202 | Change Radar Mode |
-| 203 | Change Resolution |
-| 204 | Change Scan Time |
-| 220 | Menu Navigation |
-| 241 | Set Observable Reporting |
-| 243 | Set Property Reporting |
+Exact18 IDs remain in progress/plan. They are assignments, not reviewed meanings. Review complete source definitions and necessary dependencies; no physical command is invoked. Preserve source restrictions, results and local questions. Publish cumulative evidence, coverage, comparison and concise routing through the existing assembler/workflow; no new per-group exporter, workflow, report or Excel release. Do not advance to group3 automatically.
 
-These are unreviewed assignments. Inspect each full original definition and parameter/result table. Compare related patterns together; reuse exact-edition types and examine necessary missing Menu Button/reporting dependencies. Preserve differences in native field names, scalar versus list/structure, enums versus open strings, defaults, timing, required/optional values and requested versus reported states. Do not extrapolate a shared signature into unchecked commands.
+## Preservation and boundaries
 
-The18 definitions occupy185 indexed body lines before dependencies; the six previously completed Adjust definitions occupied188. This is a workload indicator, not a reliability guarantee. The scope includes needed dependency checks, evidence/table changes, publication and verification but excludes an Excel rebuild. Stop after the18; do not advance to group2 automatically.
+Workbook remains the completed130-primary/157-row property/observable snapshot; SHA256 `68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6`. Current text is newer, not failed publication. Preserve58 non-ISA donor records,73 case facts,480 source entries,279 source blocks,31 original row targets,25 earlier findings and all prior grid cells. Supporting inspection is reused, not credited as whole type-catalogue completion. Existing candidates are for owner review, not automatically adopted DIM classes.
 
-## 4. Lean delivery, unchanged source discipline
+Level Q001,Link Loss Q002,Orientation frame Q003 and Signal Strength Ratio Q004 remain local and unchanged. Bennett retains two NOAA means/four representations and unknown original resultTime. No donor expansion,model adoption,Profile/UML,application/server/deployment or actual equipment operation. Broader donor-review Step16 follows the ISA correction.
 
-Update cumulative command evidence, coverage, readable comparison and concise current progress/PITON fields; verify actual GitHub publication. Reuse the established access route, assembler and checks. No per-group standalone report, new exporter/workflow, workbook release, repeated history recital or automatic full-plan rewrite. Retain distinct source evidence per entry even when the interpretation is recorded as a shared pattern with exceptions. Do not require a separate DIM class or new table row merely for every native label; existing rows are not collapsed without the scheduled semantic reconciliation.
-
-Larger simple groups and smaller dense query/authorization groups replace the fixed six-entry stopping habit. A specific unexpected dependency is recorded and the affected remainder/forecast adjusted; it never becomes a fabricated no-match, skipped definition or blanket statement that earlier completed work is unfinished. Later type and requirement reviews reuse prior evidence and explicitly reconcile coverage, rather than either starting over or falsely claiming all supporting inspection already completed them.
-
-## 5. Source access and preserved semantic boundaries
-
-Primary source: ISA Data Model Specification6.0r12,31 October2023, Files ID `file_00000000ca1c81f48a3ccd49273425f8`. Recover by exact registered title/revision if necessary. Use original text and page images for tables and continuations. A failed raw export does not mean original source text is absent. All companion sources and original block/row/finding assignments remain in scope under the plan's22-slot schedule.
-
-Prior automatic controls require `enabled:Boolean`, true enabling and false disabling the named function, without an omitted-value default. Adjust direction/rate/duration differs from target-setting Change Percent values and automatic enabled requests. No request establishes actual execution or a case's implemented capability. Complete source meanings and locators remain in the cumulative evidence rather than being repeated here.
-
-Four questions remain local and unchanged: Level Q001,Link Loss Q002,Orientation frame Q003,Signal Strength Ratio Q004. Bennett retains two original NOAA means/four representations and unknown original resultTime. No other donor,owner model adoption,Profile/UML,client/server/deployment or physical-command work. Broader donor-review Step16 remains after the ISA correction.
-
-[Previous checkpoint and full reporting history](https://github.com/OS4CSAPI/glaux-client/blob/7346952b872740a00cc6a4d659822a61b0238349/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) preserves all preceding details. Its six-command next scope and undefined remaining-prompt forecast are superseded by this owner-authorized acceleration, not live instructions.
+[Acceleration baseline](https://github.com/OS4CSAPI/glaux-client/blob/0b602d182e776dcae92d09a11ca69c9c5474853e/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) retains history; its group1-next direction is superseded by this completed checkpoint.
