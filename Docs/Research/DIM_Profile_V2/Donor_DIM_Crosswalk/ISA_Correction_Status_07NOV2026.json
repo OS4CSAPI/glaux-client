@@ -5,37 +5,38 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 13,
+  "technicalIterationsCompleted": 14,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 3,
   "completedChildBatches": 4,
-  "progressMeaning": "All 91 properties and their workbook remain complete. Twenty-eight of 39 observables are now reviewed, including the six biological/chemical schemas. Next is the five radiological/hazard observables; no workbook refresh in this source pass.",
-  "currentIteration": "ISA-04-BIO-CHEM",
+  "progressMeaning": "All 91 properties and their workbook remain complete. Thirty-three of 39 observables have reviewed outcomes, including five radiological/hazard entries. Six remain for the next source pass; workbook consolidation follows the catalogue checkpoint.",
+  "currentIteration": "ISA-04-RADIOLOGICAL",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-04-BIO-CHEM",
+  "currentBatch": "ISA-04-RADIOLOGICAL",
   "currentBatchSourceReviewStatus": "COMPLETE",
   "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
-  "nextOnOwnerProceed": "ISA-04-RADIOLOGICAL",
-  "nextAction": "Review Hazard Areas, Nuclear Level, Radiation Contour Map, Radiation Level and Radiation Reading only. Preserve schema meaning, source standing and case limits; update existing cumulative GitHub evidence, coverage and readable table. No workbook export or other catalogue in that pass.",
+  "nextOnOwnerProceed": "ISA-04-REMAINING",
+  "nextAction": "Review the final six observables: Backcast, Forecast, Processed Frame, Recall, Resolve and Solar Radiation. Update existing GitHub evidence, coverage and comparison; do not refresh Excel or start commands in that source pass.",
   "nextSourceIDs": [
-    "ISA-DMS-144",
-    "ISA-DMS-148",
-    "ISA-DMS-153",
-    "ISA-DMS-154",
-    "ISA-DMS-155"
+    "ISA-DMS-132",
+    "ISA-DMS-143",
+    "ISA-DMS-152",
+    "ISA-DMS-156",
+    "ISA-DMS-157",
+    "ISA-DMS-158"
   ],
-  "nextSourceIDsMeaning": "Five inventory-assigned radiological/hazard observables, not reviewed during the biological/chemical pass.",
+  "nextSourceIDsMeaning": "The final six inventory-assigned observables remain unreviewed. Their names route the next source pass only.",
   "repositoryPublication": {
     "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-04-BIO-CHEM COMPLETE",
-    "next_pass": "ISA-04-RADIOLOGICAL",
+    "technical_state": "ISA-04-RADIOLOGICAL COMPLETE",
+    "next_pass": "ISA-04-REMAINING",
     "publication_record": "ISA_Properties_Publication_Record_07NOV2026.json",
     "currentBatchEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
     "currentBatchReport": null,
-    "base_input_commit": "b0fa54397543fce8eb5576f443230fada0316dfb",
+    "base_input_commit": "ab2992960f0d0763c093820d900df5303beb4430",
     "lastIntegratedCheckpoint": "6d59a671a2cd0944be4853a67c074cd52283f9a0",
     "current_view": "ISA_Correction_Review_07NOV2026.md",
     "publication_record_scope": "Property publication record verifies the preserved91-property Excel checkpoint; the newer observable text is verified separately."
@@ -52,20 +53,20 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 119,
+    "semanticEntriesReviewedInCorrection": 124,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 115,
+    "sourceSupportedPrimaryEntries": 120,
     "specificSourceDefinitionQuestions": 4,
-    "supportingDefinitionsRead": 95,
+    "supportingDefinitionsRead": 112,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 115,
-    "informationReviewRows": 146
+    "newCandidateRows": 120,
+    "informationReviewRows": 151
   },
   "propertyCatalogue": {
     "total": 91,
@@ -308,8 +309,8 @@
     {
       "id": "ISA-04",
       "state": "IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION",
-      "nextSourceGroup": "ISA-04-CONTEXT",
-      "reviewedObservables": 15,
+      "nextSourceGroup": "ISA-04-REMAINING",
+      "reviewedObservables": 33,
       "totalObservables": 39
     },
     {
@@ -384,7 +385,7 @@
     "primaryReviewed": 91,
     "currentlyMatchesReadableView": false,
     "nextRefresh": "Observable-catalogue/substantial-section workbook checkpoint",
-    "label": "Completed 91-property workbook snapshot: 118 information rows. Current GitHub text includes 28 reviewed observables: 119 reviewed source entries / 146 information rows."
+    "label": "Completed 91-property workbook snapshot: 118 information rows. Current GitHub text includes 33 reviewed observables: 124 reviewed source entries / 151 information rows."
   },
   "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
   "completedTaskRule": "ISA property catalogue source review, workbook integration and GitHub delivery remain COMPLETE. Atmospheric observable pass source review and GitHub text publication are COMPLETE. Four existing interpretation questions stay local. Excel snapshot cadence is planned; no completed work is repeated.",
@@ -394,39 +395,42 @@
     "task": "Six biological/chemical observable schema reviews, cumulative GitHub evidence/table and exact next-group routing",
     "counts_as_new_technical_iteration": true
   },
-  "completedCatalogueSourcePasses": 7,
+  "completedCatalogueSourcePasses": 8,
   "remainingPropertyCount": 0,
   "nextObservableSourceGroup": {
-    "id": "ISA-04-RADIOLOGICAL",
+    "id": "ISA-04-REMAINING",
     "state": "NEXT_NOT_STARTED",
     "sourceIds": [
-      "ISA-DMS-144",
-      "ISA-DMS-148",
-      "ISA-DMS-153",
-      "ISA-DMS-154",
-      "ISA-DMS-155"
+      "ISA-DMS-132",
+      "ISA-DMS-143",
+      "ISA-DMS-152",
+      "ISA-DMS-156",
+      "ISA-DMS-157",
+      "ISA-DMS-158"
     ],
     "nativeNames": [
-      "Hazard Areas",
-      "Nuclear Level",
-      "Radiation Contour Map",
-      "Radiation Level",
-      "Radiation Reading"
+      "Backcast",
+      "Forecast",
+      "Processed Frame",
+      "Recall",
+      "Resolve",
+      "Solar Radiation"
     ],
     "sourceReviewPerformedDuringThisCheckpoint": false
   },
   "publicationCheckpointsCompletedAfterRegrouping": 1,
   "observableCatalogue": {
     "total": 39,
-    "reviewed": 28,
-    "sourceSupportedOutcomes": 28,
+    "reviewed": 33,
+    "sourceSupportedOutcomes": 33,
     "preciseInterpretationQuestions": 0,
-    "remaining": 11,
+    "remaining": 6,
     "completed_source_groups": [
       "ISA-04-ATMOSPHERIC",
       "ISA-04-SPATIAL",
       "ISA-04-CONTEXT",
-      "ISA-04-BIO-CHEM"
+      "ISA-04-BIO-CHEM",
+      "ISA-04-RADIOLOGICAL"
     ],
     "state": "SOURCE_REVIEW_IN_PROGRESS",
     "workbookPublicationState": "SCHEDULED_AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT"
@@ -490,7 +494,7 @@
     },
     {
       "id": "ISA-04-RADIOLOGICAL",
-      "state": "NEXT_NOT_STARTED",
+      "state": "COMPLETE",
       "count": 5,
       "sourceIds": [
         "ISA-DMS-144",
@@ -498,6 +502,19 @@
         "ISA-DMS-153",
         "ISA-DMS-154",
         "ISA-DMS-155"
+      ]
+    },
+    {
+      "id": "ISA-04-REMAINING",
+      "state": "NEXT_NOT_STARTED",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-132",
+        "ISA-DMS-143",
+        "ISA-DMS-152",
+        "ISA-DMS-156",
+        "ISA-DMS-157",
+        "ISA-DMS-158"
       ]
     }
   ]

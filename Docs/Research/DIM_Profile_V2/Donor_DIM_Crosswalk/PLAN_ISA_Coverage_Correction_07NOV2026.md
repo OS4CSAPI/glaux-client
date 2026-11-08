@@ -1,12 +1,12 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial, event-context and biological/chemical observable groups COMPLETE (28/39). Next: ISA-04-RADIOLOGICAL — five named hazard/radiological observables only.**
+**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial, context, biological/chemical and radiological/hazard observable groups COMPLETE (33/39). Next: ISA-04-REMAINING — the final six observable definitions only.**
 
 [Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-All91 property outcomes remain complete. Current research covers119 primary entries:115 supported/four unchanged questions, and146 information/review rows. Excel remains the91-property/118-row snapshot. The six biological/chemical outcomes preserve two core Reading observables versus four Accepted Contour/Level extensions, with no new question. Nineteen supporting definitions were inspected without advancing their full catalogue assignments.
+All 91 properties remain complete. Current source work covers124 primary entries:120 supported/four existing questions,151 information/review rows. The five hazard/radiological entries retain one core Reading and four Accepted extensions, seventeen newly inspected dependencies and zero new questions. Existing source states and all equipment/non-ISA display values are preserved. Excel remains the91-property/118-row snapshot.
 
-**Next group: Hazard Areas, Nuclear Level, Radiation Contour Map, Radiation Level and Radiation Reading** (ISA-DMS-144,148,153,154,155). Read original definitions/types; publish the same evidence, coverage and comparison; stop after those five. Eleven observables remain assigned. No property rereview, other donor, model adoption, per-group workbook release or new publication infrastructure.
+**Next group: Backcast, Forecast, Processed Frame, Recall, Resolve and Solar Radiation** (ISA-DMS-132,143,152,156,157,158). All six remain unreviewed. Review their original meanings and necessary types, update the same GitHub records, then stop. The observable-catalogue workbook checkpoint follows separately. No property rereview, new donor, per-group Excel export or new publication infrastructure.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.

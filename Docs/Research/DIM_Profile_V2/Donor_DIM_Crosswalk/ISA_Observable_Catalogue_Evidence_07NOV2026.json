@@ -86,6 +86,23 @@
         "ISA-DMS-138",
         "ISA-DMS-139"
       ]
+    },
+    {
+      "id": "ISA-04-RADIOLOGICAL",
+      "status": "COMPLETE",
+      "assigned": 5,
+      "reviewed": 5,
+      "supported": 5,
+      "new_questions": 0,
+      "core": 1,
+      "accepted_extensions": 4,
+      "primary_ids": [
+        "ISA-DMS-144",
+        "ISA-DMS-148",
+        "ISA-DMS-153",
+        "ISA-DMS-154",
+        "ISA-DMS-155"
+      ]
     }
   ],
   "primary_records": [
@@ -1277,6 +1294,283 @@
       "reviewed_on": "2026-11-07",
       "related_existing_dim_row": "S06-R012",
       "related_existing_row_fit": "PARTIAL: a typed reported result structure supports the output-field concept; it is not a physical sensor, reusable algorithm or complete observation provenance model."
+    },
+    {
+      "id": "ISA-OBS-144",
+      "entry_id": "ISA-DMS-144",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Hazard Areas",
+      "element_kind": "observable",
+      "native_type": "Geographic Shape",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Hazard Areas, printed p.20 / PDF pp.35–35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1eb3f3edead94b016a1b337b59a1783d0dcf8af1704e87a695f579099d875649",
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-144",
+      "proposed_label": "Reported hazard areas associated with an event",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Geographic areas reported as hazardous based on other observations contained in the same event.",
+      "mapping_boundary": "This is a list of Geographic Shape values, not a concentration contour list, configured operating Zones, a computed hazard model, or proof of a real hazardous area. Preserve the source union alternatives; no automatic closed-polygon or point-only encoding.",
+      "dependency_terms": [
+        "Geographic Shape",
+        "Geographic Arc",
+        "Geographic Ellipse",
+        "Geographic Polygon",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Ellipsoid",
+        "Measured Meters",
+        "Meters",
+        "Measured Degrees",
+        "Degrees",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
+    },
+    {
+      "id": "ISA-OBS-148",
+      "entry_id": "ISA-DMS-148",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Nuclear Level",
+      "element_kind": "observable",
+      "native_type": "Nuclear Reading",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Nuclear Level, printed p.20 / PDF pp.35–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "96a0c4810fce45ac201d9191afd57c1cffb8dbda40796975d1af88a28b1d1842",
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-148",
+      "proposed_label": "Reported nuclear-event descriptive information",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Optional descriptive observations about a reported nuclear event: flash-to-bang interval and burst/stabilized cloud descriptions.",
+      "mapping_boundary": "Accepted Custom Type, not a scalar radiation level. All four fields are optional; their absence is not zero or a confirmed observation. No event yield, consequence calculation, event verification or source-case measurement is inferred.",
+      "dependency_terms": [
+        "Nuclear Reading",
+        "Measured Secs",
+        "Secs",
+        "Cloud Layer",
+        "String",
+        "Measured Meters",
+        "Meters",
+        "Measured Degrees",
+        "Degrees",
+        "Float",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
+    },
+    {
+      "id": "ISA-OBS-153",
+      "entry_id": "ISA-DMS-153",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Radiation Contour Map",
+      "element_kind": "observable",
+      "native_type": "Radiation Contour Line",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Radiation Contour Map, printed p.21 / PDF pp.36–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "42639a17607fa5b2281895acc0b07f4e14adb46335827f634cf1e78121637853",
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-153",
+      "proposed_label": "Reported radiation contour map",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "List of radiation contour records linking a geographic polyline to a Radiation Reading Level, with optional altitude and exceedance probability.",
+      "mapping_boundary": "A contour polyline is not automatically a closed hazard region or computed spread model. Exceedance probability, report confidence and measurement error are distinct. No implicit physical-unit conversion, safe threshold or actual detection is inferred.",
+      "dependency_terms": [
+        "Radiation Contour Line",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Degrees",
+        "Meters",
+        "Measured Meters",
+        "Measured Percent",
+        "Radiation Reading Level",
+        "Radioactive Material Type Primary Radiation Code",
+        "Radioactive Material Type Category Code",
+        "Chemical Element",
+        "Integer",
+        "Measured Bq",
+        "Bq",
+        "Measured Bqpm2",
+        "Bqpm2",
+        "Measured Bqpm3",
+        "Bqpm3",
+        "Measured Gray",
+        "Gray",
+        "Measured Graypsec",
+        "Graypsec",
+        "Boolean",
+        "Float",
+        "Percent",
+        "String",
+        "Name Value Pair",
+        "Wildcard",
+        "Count",
+        "Measured Secs",
+        "Secs",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
+    },
+    {
+      "id": "ISA-OBS-154",
+      "entry_id": "ISA-DMS-154",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Radiation Level",
+      "element_kind": "observable",
+      "native_type": "Radiation Reading Level",
+      "native_structure": "List",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Radiation Level, printed p.21 / PDF pp.36–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "b19bd1da3533626e0c6b57e73d6b1d9ca999870550d9cdc8842f613d6ed7bf2a",
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-154",
+      "proposed_label": "Reported detailed radiation analysis levels",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "List of detailed radiation report structures with required primary code and confidence, optional classified/quantified information, and a required zero-or-more list of sensor-specific levels.",
+      "mapping_boundary": "Do not alias this Accepted Custom Type to core Radiation Reading or invent the bio/chemical backward-compatibility recommendation here. Confidence is not certainty; arbitrary Float levels do not automatically have physical units. The optional channel field retains the source biological-detector wording mismatch without a fabricated correction.",
+      "dependency_terms": [
+        "Radiation Reading Level",
+        "Radioactive Material Type Primary Radiation Code",
+        "Radioactive Material Type Category Code",
+        "Chemical Element",
+        "Integer",
+        "Measured Bq",
+        "Bq",
+        "Measured Bqpm2",
+        "Bqpm2",
+        "Measured Bqpm3",
+        "Bqpm3",
+        "Measured Gray",
+        "Gray",
+        "Measured Graypsec",
+        "Graypsec",
+        "Boolean",
+        "Float",
+        "Percent",
+        "String",
+        "Name Value Pair",
+        "Wildcard",
+        "Count",
+        "Measured Secs",
+        "Secs",
+        "Custom Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
+    },
+    {
+      "id": "ISA-OBS-155",
+      "entry_id": "ISA-DMS-155",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Radiation Reading",
+      "element_kind": "observable",
+      "native_type": "Radiation Reading",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 21,
+      "pdf_pages": [
+        36,
+        36
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Radiation Reading, printed p.21 / PDF pp.36–36",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "f23960d43cfa2745845a996ef8aedb98a9db6f0b6c3a33ab2f00ee833623fa8c",
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-155",
+      "proposed_label": "Reported radiation reading",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Core radiation report with required most-intense radiation type and optional material category, isotope, activity, activity per area/volume, absorbed dose, dose rate and harmful flag.",
+      "mapping_boundary": "Do not collapse activity in Bq, activity concentration, absorbed dose in Gray and dose rate into one quantity. Optional harmful defaults true in the source, not a verified harm finding. A present schema does not establish measured numbers, source identification, exposure or safety.",
+      "dependency_terms": [
+        "Radiation Reading",
+        "Radioactive Material Type Primary Radiation Code",
+        "Radioactive Material Type Category Code",
+        "Chemical Element",
+        "Integer",
+        "Measured Bq",
+        "Bq",
+        "Measured Bqpm2",
+        "Bqpm2",
+        "Measured Bqpm3",
+        "Bqpm3",
+        "Measured Gray",
+        "Gray",
+        "Measured Graypsec",
+        "Graypsec",
+        "Boolean",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a reported field or composite result supports the output-field concept; it is not a physical sensor, complete observing procedure or independently verified real-world event."
     }
   ],
   "supporting_definitions": [
@@ -2458,6 +2752,728 @@
           "structure": "Single Value"
         }
       ]
+    },
+    {
+      "entry_id": "ISA-DMS-427",
+      "native_term": "Nuclear Reading",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 105,
+      "pdf_pages": [
+        120,
+        121
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Nuclear Reading, printed p.105 / PDF pp.120–121",
+      "inspected_content_summary": "Accepted CBRN Custom Type describing a reported nuclear event. All four fields are optional: flash-to-bang interval and three cloud descriptions. No yield, exposure calculation, confirmed event or actual measured value is inferred.",
+      "source_span_sha256": "9a5f5c1f4382c77c1a896c8ee42d9f088fc73a4791bad19530b95b4f6ae4c824",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "flash to bang",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "burst cloud",
+          "type": "Cloud Layer",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "stabilized cloud top",
+          "type": "Cloud Layer",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "stabilized cloud bottom",
+          "type": "Cloud Layer",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-434",
+      "native_term": "Radiation Contour Line",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 108,
+      "pdf_pages": [
+        123,
+        123
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Radiation Contour Line, printed p.108 / PDF pp.123–123",
+      "inspected_content_summary": "Accepted CBRN Custom Type. Required Geographic Polyline and Radiation Reading Level; optional altitude above sea level and exceedance probability. Exceedance probability is not the nested report confidence or the optional measurement error.",
+      "source_span_sha256": "71d81468812fc537a5371def7f5b3f15cbaec52ceb32981d1273abe8eb07e414",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "line",
+          "type": "Geographic Polyline",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "level",
+          "type": "Radiation Reading Level",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "altitude",
+          "type": "Measured Meters",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Above sea level."
+        },
+        {
+          "name": "exceed probability",
+          "type": "Measured Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Probability that actual value exceeds this contour level."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-435",
+      "native_term": "Radiation Reading",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 108,
+      "pdf_pages": [
+        123,
+        124
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Radiation Reading, printed p.108 / PDF pp.123–124",
+      "inspected_content_summary": "Core radiation report requires the primary radiation code. Optional category, isotope, activity, activity per area/volume, absorbed dose, dose rate and harmful flag have separate meanings. Harmful defaults true; that default proves no actual detection, clinical risk or measured harm.",
+      "source_span_sha256": "dffc1315d82fa122e9c94cc320b57de8e53d66be9602958b31cfe9f45169e0e3",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "primary code",
+          "type": "Radioactive Material Type Primary Radiation Code",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Most intense radiation type reported."
+        },
+        {
+          "name": "material category",
+          "type": "Radioactive Material Type Category Code",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "isotope",
+          "type": "Chemical Element",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "activity",
+          "type": "Measured Bq",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "deposition concentration",
+          "type": "Measured Bqpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "concentration",
+          "type": "Measured Bqpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "dose",
+          "type": "Measured Gray",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "dose rate",
+          "type": "Measured Graypsec",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": true,
+          "interpretation_limit": "Source default, not a verified harmfulness measurement."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-436",
+      "native_term": "Radiation Reading Level",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 109,
+      "pdf_pages": [
+        124,
+        125
+      ],
+      "source_standing": "ACCEPTED_EXTENSION",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Radiation Reading Level, printed p.109 / PDF pp.124–125",
+      "inspected_content_summary": "Accepted CBRN Custom Type retaining the core radiation quantities and adding required confidence, required zero-or-more sensor-specific level list, optional confirmation/sample text, channel and dose time. Read through PDF125; do not invent a compatibility requirement absent from the observable text. The channel prose references biological detectors and is preserved as a source wording mismatch.",
+      "source_span_sha256": "c9c3d6459e261171d62a8145d208bcc44d804883729b8544ac253da7bae5a6f2",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "primary code",
+          "type": "Radioactive Material Type Primary Radiation Code",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "meaning": "Most intense radiation type reported."
+        },
+        {
+          "name": "material category",
+          "type": "Radioactive Material Type Category Code",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "isotope",
+          "type": "Chemical Element",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "activity",
+          "type": "Measured Bq",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "deposition concentration",
+          "type": "Measured Bqpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "concentration",
+          "type": "Measured Bqpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "dose",
+          "type": "Measured Gray",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "dose rate",
+          "type": "Measured Graypsec",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "harmful",
+          "type": "Boolean",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_default": true,
+          "interpretation_limit": "Source default, not a verified harmfulness measurement."
+        },
+        {
+          "name": "confidence",
+          "type": "Percent",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "confirmation level",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "suggested_values": [
+            "ANOMALY",
+            "CONFIRMED",
+            "DEFINITIVE",
+            "EVIDENTIAL",
+            "INDICATIVE",
+            "PRESUMPTIVE",
+            "UNKNOWN"
+          ],
+          "closed_enum": false
+        },
+        {
+          "name": "sample type",
+          "type": "String",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "suggested_values": [
+            "AEROSOL",
+            "LIQUID",
+            "SOIL",
+            "SOLID",
+            "SWIPE",
+            "VAPOR",
+            "VEGETATION",
+            "WATER"
+          ],
+          "closed_enum": false
+        },
+        {
+          "name": "level",
+          "type": "Name Value Pair",
+          "required": true,
+          "cardinality": "0+",
+          "structure": "List",
+          "meaning": "Sensor-specific reading name and Float value; arbitrary scales do not imply physical units."
+        },
+        {
+          "name": "channel",
+          "type": "Count",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "source_description_note": "The original field prose refers to biological detectors capable of detecting multiple agents. Retain that wording mismatch; do not assert a radiation-specific channel meaning not provided here."
+        },
+        {
+          "name": "dose time",
+          "type": "Measured Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Time over which the radiation dose was measured."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-370",
+      "native_term": "Chemical Element",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 88,
+      "pdf_pages": [
+        103,
+        103
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Chemical Element, printed p.88 / PDF pp.103–103",
+      "inspected_content_summary": "Required Integer atomic number and mass number identify the reported isotope by proton and nucleon counts. This is an identification structure, not independently verified identification or material quantity.",
+      "source_span_sha256": "667352f178ddbc6be0da8dfb2fa733dfafad97bfb19c38f2cfb6446b251b82fc",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "atomic number",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "mass number",
+          "type": "Integer",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-351",
+      "native_term": "Radioactive Material Type Category Code",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 81,
+      "pdf_pages": [
+        96,
+        96
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Radioactive Material Type Category Code, printed p.81 / PDF pp.96–96",
+      "inspected_content_summary": "Source enumeration of material categories. UNKNOWN and UNSPECIFIED remain distinct; this enumeration is not marked sealed. Labels are data values, not proof of a particular source or event.",
+      "source_span_sha256": "6cc355af5790b490c62051af7e2ac241cbb1a01ef110e34a9bb66b306136fd4c",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "sealed": false,
+      "enum_values": [
+        "FRESH REACTOR FUEL",
+        "MIXTURE",
+        "NUCLEAR POWER PLANT",
+        "NUCLEAR ROTA",
+        "NUCLEAR WEAPON FALLOUT",
+        "SPENT REACTOR FUEL",
+        "UNKNOWN",
+        "UNSPECIFIED"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-352",
+      "native_term": "Radioactive Material Type Primary Radiation Code",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 81,
+      "pdf_pages": [
+        96,
+        97
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Radioactive Material Type Primary Radiation Code, printed p.81 / PDF pp.96–97",
+      "inspected_content_summary": "Source enumeration identifying the reported most intense radiation type. ALPHA, BETA, GAMMA, NEUTRON and UNKNOWN; not marked sealed. Retain codes without using the source explanatory prose as protection or medical guidance.",
+      "source_span_sha256": "5155c58bbf03d17c4c8995d985ba282c5adf2a26f4562b2ebd568ab780e6edcf",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "sealed": false,
+      "enum_values": [
+        "ALPHA",
+        "BETA",
+        "GAMMA",
+        "NEUTRON",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-267",
+      "native_term": "Bq",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66,
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Bq, printed p.51 / PDF pp.66–66",
+      "inspected_content_summary": "Float scalar, source range [0,inf), unit becquerel. Radioactivity/activity, not absorbed dose or mass.",
+      "source_span_sha256": "17160068ff5e8538c16e6a86a78118db9ef8e00339bc7b81ed5917d4cebca7d1",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_form": "Float",
+      "native_units": "becquerel",
+      "native_range": "[0,inf)"
+    },
+    {
+      "entry_id": "ISA-DMS-395",
+      "native_term": "Measured Bq",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 97,
+      "pdf_pages": [
+        112,
+        112
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Bq, printed p.97 / PDF pp.112–112",
+      "inspected_content_summary": "Required Bq value and optional Bq error. Error is expressed as plus/minus one standard deviation in this definition; absent error is not zero uncertainty. Radioactivity/activity, not absorbed dose or mass.",
+      "source_span_sha256": "e9db32d0e37647c1e82f3494b3aa34430c19602deba172d282e72c8cbf3c0ba7",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Bq",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Bq",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-268",
+      "native_term": "Bqpm2",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66,
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Bqpm2, printed p.51 / PDF pp.66–66",
+      "inspected_content_summary": "Float scalar, source range [0,inf), unit becquerel / m^2. Activity per area, not mass deposition or dose.",
+      "source_span_sha256": "01af80a123a757adf660d50973cc3ac23176c205add4bd6b88a12197443d92b9",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_form": "Float",
+      "native_units": "becquerel / m^2",
+      "native_range": "[0,inf)"
+    },
+    {
+      "entry_id": "ISA-DMS-396",
+      "native_term": "Measured Bqpm2",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 97,
+      "pdf_pages": [
+        112,
+        112
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Bqpm2, printed p.97 / PDF pp.112–112",
+      "inspected_content_summary": "Required Bqpm2 value and optional Bqpm2 error. Error is expressed as plus/minus one standard deviation in this definition; absent error is not zero uncertainty. Activity per area, not mass deposition or dose.",
+      "source_span_sha256": "bdd401f00743bd9a88e40c60fbabf9b4f8c31a0cc77aee67eee0804cd186a8eb",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Bqpm2",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Bqpm2",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-269",
+      "native_term": "Bqpm3",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66,
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Bqpm3, printed p.51 / PDF pp.66–66",
+      "inspected_content_summary": "Float scalar, source range [0,inf), unit becquerel / m^3. Activity per volume, not particle count or mass concentration.",
+      "source_span_sha256": "78d4bb2eacf9eee66b9b5b346a1d8af405b9d2a434a2fc4908abd7a0753fd491",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_form": "Float",
+      "native_units": "becquerel / m^3",
+      "native_range": "[0,inf)"
+    },
+    {
+      "entry_id": "ISA-DMS-397",
+      "native_term": "Measured Bqpm3",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 97,
+      "pdf_pages": [
+        112,
+        113
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Bqpm3, printed p.97 / PDF pp.112–113",
+      "inspected_content_summary": "Required Bqpm3 value and optional Bqpm3 error. Error is expressed as plus/minus one standard deviation in this definition; absent error is not zero uncertainty. Activity per volume, not particle count or mass concentration.",
+      "source_span_sha256": "f26ee60266a04059b99d35aec259f701b636655a3d9720d47926c2d61c354885",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Bqpm3",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Bqpm3",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-276",
+      "native_term": "Gray",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 52,
+      "pdf_pages": [
+        67,
+        67
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Gray, printed p.52 / PDF pp.67–67",
+      "inspected_content_summary": "Float scalar, source range [0,inf), unit gray. Absorbed dose, specific energy and kerma as named by the source; not effective dose in sieverts.",
+      "source_span_sha256": "09d4e9dfdbea7db964e161cc5aad0e805821726c3e36fafa1931f09fdceb34ef",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_form": "Float",
+      "native_units": "gray",
+      "native_range": "[0,inf)"
+    },
+    {
+      "entry_id": "ISA-DMS-402",
+      "native_term": "Measured Gray",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 99,
+      "pdf_pages": [
+        114,
+        114
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Gray, printed p.99 / PDF pp.114–114",
+      "inspected_content_summary": "Required Gray value and optional Gray error. Error is expressed as plus/minus one standard deviation in this definition; absent error is not zero uncertainty. Absorbed dose, specific energy and kerma as named by the source; not effective dose in sieverts.",
+      "source_span_sha256": "252c8ec8c0c2da6c0f8383e9ad0b677450d6021025ab4a9e060e4299bc8399c3",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Gray",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Gray",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
+    },
+    {
+      "entry_id": "ISA-DMS-277",
+      "native_term": "Graypsec",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 52,
+      "pdf_pages": [
+        67,
+        68
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Graypsec, printed p.52 / PDF pp.67–68",
+      "inspected_content_summary": "Float scalar, source range [0,inf), unit gray / sec. Absorbed-dose rate; distinct from integrated dose and activity.",
+      "source_span_sha256": "6e6851459b9b1616618eafbbfb4462371190057eb81c49749984262dab496f55",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_form": "Float",
+      "native_units": "gray / sec",
+      "native_range": "[0,inf)"
+    },
+    {
+      "entry_id": "ISA-DMS-403",
+      "native_term": "Measured Graypsec",
+      "element_kind": "data element",
+      "section": "8.3",
+      "printed_page": 99,
+      "pdf_pages": [
+        114,
+        114
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-10",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Graypsec, printed p.99 / PDF pp.114–114",
+      "inspected_content_summary": "Required Graypsec value and optional Graypsec error. Error is expressed as plus/minus one standard deviation in this definition; absent error is not zero uncertainty. Absorbed-dose rate; distinct from integrated dose and activity.",
+      "source_span_sha256": "dba4c884d54857979893a5c5bef776e82145704bff15fc3ea649e2e2cb830242",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "native_fields": [
+        {
+          "name": "value",
+          "type": "Graypsec",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value"
+        },
+        {
+          "name": "error",
+          "type": "Graypsec",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "meaning": "Plus/minus one standard deviation per original definition."
+        }
+      ]
     }
   ],
   "reused_supporting_definitions": [
@@ -3289,78 +4305,488 @@
       "review_pass": "ISA-04-BIO-CHEM",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Exact-edition definitions already inspected for previous source roles. Source position, units, optional errors, list semantics and Custom Type standing are reused without new case values or a new full-catalogue completion."
+    },
+    {
+      "entry_id": "ISA-DMS-358",
+      "native_term": "Geographic Shape",
+      "source_locator": "ISA DMS 6.0r12 §8.2 Geographic Shape, printed p.84 / PDF pp.99–99",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-385",
+      "native_term": "Geographic Arc",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Arc, printed p.94 / PDF pp.109–109",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-386",
+      "native_term": "Geographic Ellipse",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Ellipse, printed p.94 / PDF pp.109–109",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-387",
+      "native_term": "Geographic Polygon",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polygon, printed p.94 / PDF pp.109–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-388",
+      "native_term": "Geographic Polyline",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Polyline, printed p.95 / PDF pp.110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-389",
+      "native_term": "Geographic Position",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Geographic Position, printed p.95 / PDF pp.110–110",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-381",
+      "native_term": "Ellipsoid",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Ellipsoid, printed p.92 / PDF pp.107–108",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-411",
+      "native_term": "Measured Meters",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Meters, printed p.101 / PDF pp.116–117",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-285",
+      "native_term": "Meters",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Meters, printed p.53 / PDF pp.68–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-401",
+      "native_term": "Measured Degrees",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Degrees, printed p.98 / PDF pp.113–114",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-274",
+      "native_term": "Degrees",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Degrees, printed p.52 / PDF pp.67–67",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-421",
+      "native_term": "Measured Secs",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Secs, printed p.104 / PDF pp.119–119",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55 / PDF pp.70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-373",
+      "native_term": "Cloud Layer",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Cloud Layer, printed p.90 / PDF pp.105–106",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-378",
+      "native_term": "Custom Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Custom Type, printed p.92 / PDF pp.107–107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-416",
+      "native_term": "Measured Percent",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Measured Percent, printed p.103 / PDF pp.118–118",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Integer, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Boolean, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF pp.69–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105 / PDF pp.120–120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50 / PDF pp.65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
+    },
+    {
+      "entry_id": "ISA-DMS-377",
+      "native_term": "Count",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Count, printed p.91 / PDF pp.106–107",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Previously inspected exact-edition definition reused for its declared fields, units and optional/default rules; no new full-catalogue completion or case values."
     }
   ],
   "source_inspection": {
-    "primary_text": "Original DMS 6.0r12 §3.2 printed pp.19–20 / PDF34–35: six complete observable definitions, including Chemical Level continuation and explicit Reading compatibility recommendations.",
+    "primary_text": "Original DMS 6.0r12 §3.2 printed pp.20–21 / PDF35–36: all five assigned definitions and source extension markings.",
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
     "primary_text_pages": [
-      34,
-      35
+      35,
+      36
     ],
     "type_pages_visually_inspected": [
-      100,
-      101,
-      102,
       103,
-      104,
-      105,
-      115,
-      116,
-      118,
-      119
+      112,
+      113,
+      114,
+      120,
+      121,
+      123,
+      124,
+      125
     ],
     "additional_type_text_pages": [
-      68,
-      69,
-      91,
-      92,
-      93,
-      94
+      66,
+      67,
+      96,
+      97
     ],
     "new_supporting_definitions": [
-      "Biological Contour Line",
-      "Biological Reading",
-      "Biological Reading Level",
-      "Chemical Contour Line",
-      "Chemical Reading",
-      "Chemical Reading Level",
-      "Biological Material",
-      "Chemical Material Class",
-      "Kgpm2",
-      "Kgpm3",
-      "Kgsecpm3",
-      "Ppm",
-      "Ppm3",
-      "Measured Kgpm2",
-      "Measured Kgpm3",
-      "Measured Kgsecpm3",
-      "Measured Ppm",
-      "Measured Ppm3",
-      "Measured Psecpm3"
+      "Nuclear Reading",
+      "Radiation Contour Line",
+      "Radiation Reading",
+      "Radiation Reading Level",
+      "Chemical Element",
+      "Radioactive Material Type Category Code",
+      "Radioactive Material Type Primary Radiation Code",
+      "Bq",
+      "Measured Bq",
+      "Bqpm2",
+      "Measured Bqpm2",
+      "Bqpm3",
+      "Measured Bqpm3",
+      "Gray",
+      "Measured Gray",
+      "Graypsec",
+      "Measured Graypsec"
     ],
-    "new_supporting_count": 19,
-    "unique_supporting_total": 95,
+    "new_supporting_count": 17,
+    "unique_supporting_total": 112,
     "reused_types": [
+      "Geographic Shape",
+      "Geographic Arc",
+      "Geographic Ellipse",
+      "Geographic Polygon",
       "Geographic Polyline",
       "Geographic Position",
-      "Degrees",
-      "Meters",
+      "Ellipsoid",
       "Measured Meters",
-      "Measured Percent",
-      "Percent",
+      "Meters",
+      "Measured Degrees",
+      "Degrees",
       "Float",
-      "Boolean",
+      "Measured Secs",
+      "Secs",
+      "Cloud Layer",
       "String",
+      "Custom Type",
+      "Measured Percent",
+      "Integer",
+      "Boolean",
+      "Percent",
       "Name Value Pair",
       "Wildcard",
-      "Custom Type",
-      "Count",
-      "Integer",
-      "Measured Secs",
-      "Secs"
+      "Count"
     ],
-    "source_limits": "Schema/semantic review only. Required fields, cardinalities, units, defaults and extension standing preserved; no agent identification, operational detection, instrument calibration or actual case value inferred. Biological and chemical source vocabulary descriptions are not treated as medical or operational advice."
+    "source_limits": "Representation review only; no real hazard, source identity, exposure, clinical interpretation or operational consequence inferred. Source vocabulary prose is not protection or medical guidance. The Radiation Reading Level channel-description mismatch is retained without rewriting the original meaning."
   },
   "source_inspections_by_pass": [
     {
@@ -3570,6 +4996,80 @@
         "Secs"
       ],
       "source_limits": "Schema/semantic review only. Required fields, cardinalities, units, defaults and extension standing preserved; no agent identification, operational detection, instrument calibration or actual case value inferred. Biological and chemical source vocabulary descriptions are not treated as medical or operational advice."
+    },
+    {
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "primary_text": "Original DMS 6.0r12 §3.2 printed pp.20–21 / PDF35–36: all five assigned definitions and source extension markings.",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text_pages": [
+        35,
+        36
+      ],
+      "type_pages_visually_inspected": [
+        103,
+        112,
+        113,
+        114,
+        120,
+        121,
+        123,
+        124,
+        125
+      ],
+      "additional_type_text_pages": [
+        66,
+        67,
+        96,
+        97
+      ],
+      "new_supporting_definitions": [
+        "Nuclear Reading",
+        "Radiation Contour Line",
+        "Radiation Reading",
+        "Radiation Reading Level",
+        "Chemical Element",
+        "Radioactive Material Type Category Code",
+        "Radioactive Material Type Primary Radiation Code",
+        "Bq",
+        "Measured Bq",
+        "Bqpm2",
+        "Measured Bqpm2",
+        "Bqpm3",
+        "Measured Bqpm3",
+        "Gray",
+        "Measured Gray",
+        "Graypsec",
+        "Measured Graypsec"
+      ],
+      "new_supporting_count": 17,
+      "unique_supporting_total": 112,
+      "reused_types": [
+        "Geographic Shape",
+        "Geographic Arc",
+        "Geographic Ellipse",
+        "Geographic Polygon",
+        "Geographic Polyline",
+        "Geographic Position",
+        "Ellipsoid",
+        "Measured Meters",
+        "Meters",
+        "Measured Degrees",
+        "Degrees",
+        "Float",
+        "Measured Secs",
+        "Secs",
+        "Cloud Layer",
+        "String",
+        "Custom Type",
+        "Measured Percent",
+        "Integer",
+        "Boolean",
+        "Percent",
+        "Name Value Pair",
+        "Wildcard",
+        "Count"
+      ],
+      "source_limits": "Representation review only; no real hazard, source identity, exposure, clinical interpretation or operational consequence inferred. Source vocabulary prose is not protection or medical guidance. The Radiation Reading Level channel-description mismatch is retained without rewriting the original meaning."
     }
   ],
   "specific_questions": [],
@@ -3579,7 +5079,7 @@
     "Campbell ClimaVue environmental fields remain separate from logger Status.PanelTemp; no native ISA encoding or fielded installation inferred.",
     "Bennett original ATemp mean events concern ambient air, not ISA internal Temperature; exact original resultTime, producer attribution and probe position remain unchanged. No new equipment values were added."
   ],
-  "mapping_note": "Twenty-eight observable entries now support atmospheric, spatial, event-context and biological/chemical information roles. The six new roles retain contour versus core Reading versus Accepted Level distinctions and their individual source traceability. They remain candidate model information, not six automatically adopted mandatory DIM fields; original aggregate-row reconciliation stays assigned.",
+  "mapping_note": "Thirty-three observable entries reviewed. The five new roles distinguish event hazard geometry, optional nuclear-event descriptions, radiation contours, Accepted detailed levels and core radiation readings. Individual traceability is retained; candidate rows are not automatically adopted mandatory DIM fields. Original aggregate-row reconciliation remains separately assigned.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -3590,31 +5090,30 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-04-RADIOLOGICAL",
-  "next_action": "ISA-04-RADIOLOGICAL",
+  "next_source_pass": "ISA-04-REMAINING",
+  "next_action": "ISA-04-REMAINING",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-134",
-      "ISA-DMS-135",
-      "ISA-DMS-136",
-      "ISA-DMS-137",
-      "ISA-DMS-138",
-      "ISA-DMS-139"
+      "ISA-DMS-144",
+      "ISA-DMS-148",
+      "ISA-DMS-153",
+      "ISA-DMS-154",
+      "ISA-DMS-155"
     ],
-    "reviewed_total": 119,
-    "supported_total": 115,
+    "reviewed_total": 124,
+    "supported_total": 120,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "observable_entries_reviewed": 28,
+    "observable_entries_reviewed": 33,
     "observable_entries_total": 39,
     "property_outcomes_unchanged": 91,
-    "information_review_rows": 146,
-    "new_candidate_rows": 6,
+    "information_review_rows": 151,
+    "new_candidate_rows": 5,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 19,
-    "unique_supporting_definitions": 95,
+    "new_supporting_types": 17,
+    "unique_supporting_definitions": 112,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   },
@@ -3642,6 +5141,14 @@
         "AirGradient particle-output reference fields are not equated with identified biological agents or ISA biological Ppm3 measurements; numeric-unit similarity alone does not establish the same observation.",
         "Bennett two original NOAA means/four representations, source QA tokens, unknown original resultTime and unsupported probe placement remain untouched.",
         "Contour lists are not converted to closed hazard polygons; source confidence, exceed probability, optional errors and harm defaults are not promoted to independently verified facts."
+      ]
+    },
+    {
+      "review_pass": "ISA-04-RADIOLOGICAL",
+      "checks": [
+        "All four documentary/historical equipment cases retain their prior values. No radiation event, radionuclide, dose, hazard geometry or nuclear-event measurement is assigned to them.",
+        "Core activity, absorbed dose and dose rate remain distinct quantities. Source uncertainty, confidence and harmful defaults are not independently verified facts.",
+        "Bennett retains two original NOAA means/four representations, unchanged QA tokens and unknown original resultTime. No new probe position or native ISA implementation is asserted."
       ]
     }
   ]
