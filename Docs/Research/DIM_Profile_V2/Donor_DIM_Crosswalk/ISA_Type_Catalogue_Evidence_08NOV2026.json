@@ -2,7 +2,7 @@
   "schema": "isa-type-catalogue-evidence.v1",
   "date": "2026-11-08",
   "source_edition": "ISA DMS 6.0r12,31 October2023",
-  "checkpoint": "ISA-TYPES-BASE-MESSAGES",
+  "checkpoint": "ISA-TYPES-CAPABILITY",
   "assigned_ids": [
     "ISA-DMS-257",
     "ISA-DMS-258",
@@ -57,7 +57,32 @@
     "ISA-DMS-307",
     "ISA-DMS-308",
     "ISA-DMS-309",
-    "ISA-DMS-310"
+    "ISA-DMS-310",
+    "ISA-DMS-311",
+    "ISA-DMS-312",
+    "ISA-DMS-313",
+    "ISA-DMS-314",
+    "ISA-DMS-315",
+    "ISA-DMS-316",
+    "ISA-DMS-317",
+    "ISA-DMS-318",
+    "ISA-DMS-319",
+    "ISA-DMS-320",
+    "ISA-DMS-321",
+    "ISA-DMS-322",
+    "ISA-DMS-323",
+    "ISA-DMS-324",
+    "ISA-DMS-325",
+    "ISA-DMS-326",
+    "ISA-DMS-327",
+    "ISA-DMS-328",
+    "ISA-DMS-329",
+    "ISA-DMS-330",
+    "ISA-DMS-331",
+    "ISA-DMS-332",
+    "ISA-DMS-333",
+    "ISA-DMS-334",
+    "ISA-DMS-335"
   ],
   "primary_records": [
     {
@@ -2810,6 +2835,2494 @@
       },
       "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
       "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-311",
+      "entry_id": "ISA-DMS-311",
+      "native_term": "Mutability",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.1, Mutability; printed p.62; PDF pp.77–77",
+      "pdf_pages": [
+        77
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "40e6e125a744604935ae3a2fbd582115d9f222c4370bdbd147a8ff6a8726c6bc",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-MUTABILITY"
+      ],
+      "meaning": "Describes whether/how a property is modifiable, distinct from runtime state.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed": true,
+        "variants": [
+          "PERMANENT",
+          "READ ONLY",
+          "READ WRITE",
+          "WRITE ONLY"
+        ],
+        "variant_meanings": [
+          "State cannot be modified after creation.",
+          "Displayable; not modifiable or deletable.",
+          "Displayable and modifiable; not deletable.",
+          "Source wording: Permits writing to a file."
+        ]
+      },
+      "must_not_imply": "Not caller authorization, ready/reporting state, or proof of modification; retain the native WRITE ONLY wording.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-312",
+      "entry_id": "ISA-DMS-312",
+      "native_term": "Threshold Extent",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.1, Threshold Extent; printed p.62; PDF pp.77–77",
+      "pdf_pages": [
+        77
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "cc67d3ac60620b2870658b365c43d4d8a280adb96daaff19e7504618eb91195d",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-REL-THRESHOLD"
+      ],
+      "meaning": "Change-based comparison using last measured, last reported, or component-uptime values.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed": true,
+        "variants": [
+          "INSTANTANEOUS",
+          "LAST REPORTED",
+          "LIFETIME"
+        ],
+        "variant_meanings": [
+          "Compare with last measured value, whether or not published.",
+          "Compare with last published value.",
+          "Compare with any value during component uptime, not necessarily the physical asset lifetime."
+        ]
+      },
+      "must_not_imply": "Not an absolute limit or physical lifetime history; current reading and last reported value are not interchangeable.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-313",
+      "entry_id": "ISA-DMS-313",
+      "native_term": "Type Name",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.1, Type Name; printed p.62; PDF pp.77–84",
+      "pdf_pages": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "1de8832bae9254a2ea2f0a698e34c7a98462724faeebae9e11d1896468648699",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "DECLARED_TYPE_VOCABULARY_SUPPORTING_PATTERN",
+      "target_rows": [
+        "ISA-K-TYPE-CHOICE"
+      ],
+      "meaning": "Distinguishes native built-in datatype codes from previously defined custom types.",
+      "native_manifest": {
+        "kind": "enumeration",
+        "sealed": true,
+        "variants": [
+          "ABSOLUTE THRESHOLD",
+          "ADMIN CODE",
+          "ADMINISTRATIVE",
+          "ADMINISTRATIVE SELECT",
+          "ALARM ID",
+          "AMPS",
+          "AND MATCH",
+          "AOI REASON",
+          "AREA OF INTEREST",
+          "ASSOCIATIVE ARRAY STRUCTURE",
+          "BELNAP DUNN",
+          "BIOLOGICAL MATERIAL",
+          "BIOLOGICAL READING",
+          "BLOB",
+          "BOOLEAN",
+          "BOOLEAN FUNCTION",
+          "BOOLEAN MATCH",
+          "BOOLEAN WRAPPER",
+          "BOUNDED RANGE",
+          "BQ",
+          "BQPM2",
+          "BQPM3",
+          "BSO ID",
+          "BYTESTREAM",
+          "CAMERA MODE",
+          "CAPABILITY DECLARATION",
+          "CELSIUS",
+          "CHEMICAL ELEMENT",
+          "CHEMICAL MATERIAL CLASS",
+          "CHEMICAL READING",
+          "COMMAND DECLARATION",
+          "COMMAND EXECUTION",
+          "COMMAND STATE",
+          "COMPARATOR",
+          "COMPONENT CATEGORY",
+          "CONFIG",
+          "CONFIG SELECT",
+          "COUNT",
+          "CUSTOM TYPE",
+          "CUSTOM TYPE DECLARATION",
+          "CUSTOM TYPE NAME",
+          "DATA QUERY",
+          "DATA TRANSFER",
+          "DB",
+          "DBM",
+          "DEGPSEC",
+          "DEGREES",
+          "DETECTION RANGE",
+          "DISCRETE RANGE",
+          "ELLIPSOID",
+          "ENVELOPE",
+          "EVENT",
+          "EVENT ID",
+          "EVENT REFERENCE",
+          "EVENT SELECT",
+          "EVENT TYPE",
+          "FIELD DECLARATION",
+          "FIELD OF VIEW",
+          "FIELD VALUE SELECTOR",
+          "FLOAT",
+          "FUNCTION PARAMETER",
+          "GENERAL CODE",
+          "GENERAL STATE",
+          "GEOGRAPHIC ARC",
+          "GEOGRAPHIC ELLIPSE",
+          "GEOGRAPHIC POLYGON",
+          "GEOGRAPHIC POLYLINE",
+          "GEOGRAPHIC POSITION",
+          "GEOGRAPHIC SHAPE",
+          "GRAY",
+          "GRAYPSEC",
+          "HEADER",
+          "HERTZ",
+          "HIMELO",
+          "HUMIDITY",
+          "INTEGER",
+          "IP ADDRESS",
+          "IPV4 ADDRESS",
+          "IPV6 ADDRESS",
+          "JOULES",
+          "KG",
+          "KGPM2",
+          "KGPM3",
+          "KGSECPM3",
+          "LINEAR DIRECTION",
+          "LINK",
+          "LIST STRUCTURE",
+          "LIST VALUE",
+          "MATCH",
+          "MBPSEC",
+          "MEASURED AMPS",
+          "MEASURED BQ",
+          "MEASURED BQPM2",
+          "MEASURED BQPM3",
+          "MEASURED CELSIUS",
+          "MEASURED DBM",
+          "MEASURED DEGPSEC",
+          "MEASURED DEGREES",
+          "MEASURED GRAY",
+          "MEASURED GRAYPSEC",
+          "MEASURED HERTZ",
+          "MEASURED JOULES",
+          "MEASURED KG",
+          "MEASURED KGPM2",
+          "MEASURED KGPM3",
+          "MEASURED KGSECPM3",
+          "MEASURED MBPSEC",
+          "MEASURED METERS",
+          "MEASURED MPSEC",
+          "MEASURED NEWTONS",
+          "MEASURED PASCALS",
+          "MEASURED PERCENT",
+          "MEASURED PPM",
+          "MEASURED PPM2",
+          "MEASURED PPM3",
+          "MEASURED SECS",
+          "MEASURED VOLTS",
+          "MEASURED WATTS",
+          "MEASURED WPM2",
+          "MENU BUTTON",
+          "MESSAGE",
+          "MESSAGE REFERENCE",
+          "METERS",
+          "MPSEC",
+          "MUTABILITY",
+          "NAME VALUE PAIR",
+          "NEWTONS",
+          "NOT MATCH",
+          "OBSERVABLE DECLARATION",
+          "OBSERVABLE STATE",
+          "OR MATCH",
+          "PARAMETER DECLARATION",
+          "PASCALS",
+          "PERCENT",
+          "POLARITY",
+          "POWER SOURCE",
+          "PPM",
+          "PPM2",
+          "PPM3",
+          "PRIORITY",
+          "PRIORITY LEVEL",
+          "PROPERTY DECLARATION",
+          "PROPERTY STATE",
+          "RADIATION READING",
+          "RADIOACTIVE MATERIAL TYPE CATEGORY CODE",
+          "RADIOACTIVE MATERIAL TYPE PRIMARY RADIATION CODE",
+          "RANGE",
+          "RANGE DECLARATION",
+          "REGISTRATION",
+          "REGISTRATION OPERATION",
+          "RELATION LINK",
+          "RELATIONSHIP",
+          "RELATIVE THRESHOLD",
+          "REQUEST",
+          "RESOURCE",
+          "RESOURCE DESCRIPTOR",
+          "RESOURCE TYPE",
+          "RESPONSE",
+          "RESPONSE CODE",
+          "RESULT DECLARATION",
+          "ROTATION",
+          "ROTATION PERCENT RATE",
+          "ROTATION RATE",
+          "ROUTE",
+          "ROUTE ACTION",
+          "SECS",
+          "SEGMENT",
+          "SELECT",
+          "SIDC",
+          "SINGLE STRUCTURE",
+          "STANDARD IDENTITY",
+          "STATIC VALUE",
+          "STATUS",
+          "STATUS SELECT",
+          "STRING",
+          "STRING MATCH",
+          "STRUCTURE",
+          "SUBSCRIPTION",
+          "SUBSCRIPTION ID",
+          "THRESHOLD",
+          "THRESHOLD DECLARATION",
+          "THRESHOLD EXTENT",
+          "TRANSLATION",
+          "TREE STRUCTURE",
+          "TYPE",
+          "TYPE NAME",
+          "UCI",
+          "UGS CATEGORY",
+          "URL",
+          "UTC",
+          "VALUE",
+          "VALUE FUNCTION",
+          "VALUE SELECTOR",
+          "VELOCITY",
+          "VIDEO ENHANCEMENT",
+          "VOLTS",
+          "WATTS",
+          "WAYPOINT",
+          "WIND",
+          "WIND CATEGORY",
+          "WPM2"
+        ],
+        "variant_descriptions": [
+          {
+            "name": "ABSOLUTE THRESHOLD",
+            "description_as_printed": "The data is of type Absolute Threshold."
+          },
+          {
+            "name": "ADMIN CODE",
+            "description_as_printed": "The data is of type Admin Code."
+          },
+          {
+            "name": "ADMINISTRATIVE",
+            "description_as_printed": "The data type is of type Administrative."
+          },
+          {
+            "name": "ADMINISTRATIVE SELECT",
+            "description_as_printed": "The data is of type Administrative Select."
+          },
+          {
+            "name": "ALARM ID",
+            "description_as_printed": "The data is of type Alarm ID."
+          },
+          {
+            "name": "AMPS",
+            "description_as_printed": "The data is of type Amps."
+          },
+          {
+            "name": "AND MATCH",
+            "description_as_printed": "The data is of type And Match."
+          },
+          {
+            "name": "AOI REASON",
+            "description_as_printed": "The data is of type AOI Reason."
+          },
+          {
+            "name": "AREA OF INTEREST",
+            "description_as_printed": "The data is of type Area of Interest."
+          },
+          {
+            "name": "ASSOCIATIVE ARRAY STRUCTURE",
+            "description_as_printed": "The data is of type Associative Array."
+          },
+          {
+            "name": "BELNAP DUNN",
+            "description_as_printed": "The data is of type Belnap Dunn."
+          },
+          {
+            "name": "BIOLOGICAL MATERIAL",
+            "description_as_printed": "The data is of type Biological Material."
+          },
+          {
+            "name": "BIOLOGICAL READING",
+            "description_as_printed": "The data is of type Biological Reading."
+          },
+          {
+            "name": "BLOB",
+            "description_as_printed": "The data is of type Blob."
+          },
+          {
+            "name": "BOOLEAN",
+            "description_as_printed": "The data is of type Boolean."
+          },
+          {
+            "name": "BOOLEAN FUNCTION",
+            "description_as_printed": "The data is of type Boolean Function."
+          },
+          {
+            "name": "BOOLEAN MATCH",
+            "description_as_printed": "The data is of type Boolean Match."
+          },
+          {
+            "name": "BOOLEAN WRAPPER",
+            "description_as_printed": "The data is of type Boolean Wrapper."
+          },
+          {
+            "name": "BOUNDED RANGE",
+            "description_as_printed": "The data is of type Bounded Range."
+          },
+          {
+            "name": "BQ",
+            "description_as_printed": "The data is of type BQ."
+          },
+          {
+            "name": "BQPM2",
+            "description_as_printed": "The data is of type BQPM2."
+          },
+          {
+            "name": "BQPM3",
+            "description_as_printed": "The data is of type BQPM3."
+          },
+          {
+            "name": "BSO ID",
+            "description_as_printed": "The data is of type BSO ID."
+          },
+          {
+            "name": "BYTESTREAM",
+            "description_as_printed": "The data is of type Bytestream."
+          },
+          {
+            "name": "CAMERA MODE",
+            "description_as_printed": "The data is of type Camera Mode."
+          },
+          {
+            "name": "CAPABILITY DECLARATION",
+            "description_as_printed": "The data is of type Capability Declaration."
+          },
+          {
+            "name": "CELSIUS",
+            "description_as_printed": "The data is of type Celsius."
+          },
+          {
+            "name": "CHEMICAL ELEMENT",
+            "description_as_printed": "The data is of type Chemical Element."
+          },
+          {
+            "name": "CHEMICAL MATERIAL CLASS",
+            "description_as_printed": "The data is of type Chemical Material Class."
+          },
+          {
+            "name": "CHEMICAL READING",
+            "description_as_printed": "The data is of type Chemical Reading."
+          },
+          {
+            "name": "COMMAND DECLARATION",
+            "description_as_printed": "The data is of type Command Declaration."
+          },
+          {
+            "name": "COMMAND EXECUTION",
+            "description_as_printed": "The data is of type Command Execution."
+          },
+          {
+            "name": "COMMAND STATE",
+            "description_as_printed": "The data is of type Command State."
+          },
+          {
+            "name": "COMPARATOR",
+            "description_as_printed": "The data is of type Comparator."
+          },
+          {
+            "name": "COMPONENT CATEGORY",
+            "description_as_printed": "The data is of type Component Category."
+          },
+          {
+            "name": "CONFIG",
+            "description_as_printed": "The data is of type Config."
+          },
+          {
+            "name": "CONFIG SELECT",
+            "description_as_printed": "The data is of type Config Select."
+          },
+          {
+            "name": "COUNT",
+            "description_as_printed": "The data is of type Count."
+          },
+          {
+            "name": "CUSTOM TYPE",
+            "description_as_printed": "The data is of type Custom Type."
+          },
+          {
+            "name": "CUSTOM TYPE DECLARATION",
+            "description_as_printed": "The data is of type Custom Type Declaration."
+          },
+          {
+            "name": "CUSTOM TYPE NAME",
+            "description_as_printed": "The data is of type Custom Type Name."
+          },
+          {
+            "name": "DATA QUERY",
+            "description_as_printed": "The data is of type Data Query."
+          },
+          {
+            "name": "DATA TRANSFER",
+            "description_as_printed": "The data is of type Data Transfer."
+          },
+          {
+            "name": "DB",
+            "description_as_printed": "The data is of type DB."
+          },
+          {
+            "name": "DBM",
+            "description_as_printed": "The data is of type DBM."
+          },
+          {
+            "name": "DEGPSEC",
+            "description_as_printed": "The data is of type DEGPSEC."
+          },
+          {
+            "name": "DEGREES",
+            "description_as_printed": "The data is of type Degrees."
+          },
+          {
+            "name": "DETECTION RANGE",
+            "description_as_printed": "The data is of type Detection Range."
+          },
+          {
+            "name": "DISCRETE RANGE",
+            "description_as_printed": "The data is of type Discrete Range."
+          },
+          {
+            "name": "ELLIPSOID",
+            "description_as_printed": "The data is of type Ellipsoid."
+          },
+          {
+            "name": "ENVELOPE",
+            "description_as_printed": "The data is of type Envelope."
+          },
+          {
+            "name": "EVENT",
+            "description_as_printed": "The data is of type Event."
+          },
+          {
+            "name": "EVENT ID",
+            "description_as_printed": "The data is of type Event ID."
+          },
+          {
+            "name": "EVENT REFERENCE",
+            "description_as_printed": "The data is of type Event Reference."
+          },
+          {
+            "name": "EVENT SELECT",
+            "description_as_printed": "The data is of type Event Select.."
+          },
+          {
+            "name": "EVENT TYPE",
+            "description_as_printed": "The data is of type Event Type."
+          },
+          {
+            "name": "FIELD DECLARATION",
+            "description_as_printed": "The data is of type Field Declaration."
+          },
+          {
+            "name": "FIELD OF VIEW",
+            "description_as_printed": "The data is of type Field of View."
+          },
+          {
+            "name": "FIELD VALUE SELECTOR",
+            "description_as_printed": "The data is of type Field Value"
+          },
+          {
+            "name": "FLOAT",
+            "description_as_printed": "The data is of type Float."
+          },
+          {
+            "name": "FUNCTION PARAMETER",
+            "description_as_printed": "The data is of type Function Parameter."
+          },
+          {
+            "name": "GENERAL CODE",
+            "description_as_printed": "The data is of type General Code"
+          },
+          {
+            "name": "GENERAL STATE",
+            "description_as_printed": "The data is of type General State."
+          },
+          {
+            "name": "GEOGRAPHIC ARC",
+            "description_as_printed": "The data is of type Geographic Arc."
+          },
+          {
+            "name": "GEOGRAPHIC ELLIPSE",
+            "description_as_printed": "The data is of type Geographic Ellipse."
+          },
+          {
+            "name": "GEOGRAPHIC POLYGON",
+            "description_as_printed": "The data is of type Geographic Polygon."
+          },
+          {
+            "name": "GEOGRAPHIC POLYLINE",
+            "description_as_printed": "The data is of type Geographic Polyline."
+          },
+          {
+            "name": "GEOGRAPHIC POSITION",
+            "description_as_printed": "The data is of type Geographic Position."
+          },
+          {
+            "name": "GEOGRAPHIC SHAPE",
+            "description_as_printed": "The data is of type Geographic Shape."
+          },
+          {
+            "name": "GRAY",
+            "description_as_printed": "The data is of type Gray."
+          },
+          {
+            "name": "GRAYPSEC",
+            "description_as_printed": "The data is of type GRAYPSEC."
+          },
+          {
+            "name": "HEADER",
+            "description_as_printed": "The data is of type Header."
+          },
+          {
+            "name": "HERTZ",
+            "description_as_printed": "The data is of type Hertz."
+          },
+          {
+            "name": "HIMELO",
+            "description_as_printed": "The data is of type Himelo."
+          },
+          {
+            "name": "HUMIDITY",
+            "description_as_printed": "The data is of type Humidity."
+          },
+          {
+            "name": "INTEGER",
+            "description_as_printed": "The data is of type Integer."
+          },
+          {
+            "name": "IP ADDRESS",
+            "description_as_printed": "The data is of type IP Address."
+          },
+          {
+            "name": "IPV4 ADDRESS",
+            "description_as_printed": "The data is of type IPv4 Address."
+          },
+          {
+            "name": "IPV6 ADDRESS",
+            "description_as_printed": "The data is of type IPv6 Address."
+          },
+          {
+            "name": "JOULES",
+            "description_as_printed": "The data is of type Joules."
+          },
+          {
+            "name": "KG",
+            "description_as_printed": "The data is of type KG."
+          },
+          {
+            "name": "KGPM2",
+            "description_as_printed": "The data is of type KGPM2."
+          },
+          {
+            "name": "KGPM3",
+            "description_as_printed": "The data is of type KGPM3."
+          },
+          {
+            "name": "KGSECPM3",
+            "description_as_printed": "The data is of type KGSECPM3."
+          },
+          {
+            "name": "LINEAR DIRECTION",
+            "description_as_printed": "The data is of type Linear Direction."
+          },
+          {
+            "name": "LINK",
+            "description_as_printed": "The data is of type Link."
+          },
+          {
+            "name": "LIST STRUCTURE",
+            "description_as_printed": "The data is of type List."
+          },
+          {
+            "name": "LIST VALUE",
+            "description_as_printed": "The data is of type List Value."
+          },
+          {
+            "name": "MATCH",
+            "description_as_printed": "The data is of type Match."
+          },
+          {
+            "name": "MBPSEC",
+            "description_as_printed": "The data is of type MBPSEC."
+          },
+          {
+            "name": "MEASURED AMPS",
+            "description_as_printed": "The data is of type Measured Amps."
+          },
+          {
+            "name": "MEASURED BQ",
+            "description_as_printed": "The data is of type Measured BQ."
+          },
+          {
+            "name": "MEASURED BQPM2",
+            "description_as_printed": "The data is of type Measured BQPM2."
+          },
+          {
+            "name": "MEASURED BQPM3",
+            "description_as_printed": "The data is of type Measured BQPM3."
+          },
+          {
+            "name": "MEASURED CELSIUS",
+            "description_as_printed": "The data is of type Measured Celsius."
+          },
+          {
+            "name": "MEASURED DBM",
+            "description_as_printed": "The data is of type Measured DBM."
+          },
+          {
+            "name": "MEASURED DEGPSEC",
+            "description_as_printed": "The data is of type Measured DEGPSEC."
+          },
+          {
+            "name": "MEASURED DEGREES",
+            "description_as_printed": "The data is of type Measured Degrees."
+          },
+          {
+            "name": "MEASURED GRAY",
+            "description_as_printed": "The data is of type Measured Gray."
+          },
+          {
+            "name": "MEASURED GRAYPSEC",
+            "description_as_printed": "The data is of type Measured GRAYSPEC."
+          },
+          {
+            "name": "MEASURED HERTZ",
+            "description_as_printed": "The data is of type Measured Hertz."
+          },
+          {
+            "name": "MEASURED JOULES",
+            "description_as_printed": "The data is of type Measured Joules."
+          },
+          {
+            "name": "MEASURED KG",
+            "description_as_printed": "The data is of type Measured KG."
+          },
+          {
+            "name": "MEASURED KGPM2",
+            "description_as_printed": "The data is of type Measured KGPM2."
+          },
+          {
+            "name": "MEASURED KGPM3",
+            "description_as_printed": "The data is of type Measured KGPM3."
+          },
+          {
+            "name": "MEASURED KGSECPM3",
+            "description_as_printed": "The data is of type Measured KGSECPM3."
+          },
+          {
+            "name": "MEASURED MBPSEC",
+            "description_as_printed": "The data is of type Measured bits Per Second."
+          },
+          {
+            "name": "MEASURED METERS",
+            "description_as_printed": "The data is of type Measured Meters."
+          },
+          {
+            "name": "MEASURED MPSEC",
+            "description_as_printed": "The data is of type Measured MPSEC."
+          },
+          {
+            "name": "MEASURED NEWTONS",
+            "description_as_printed": "The data is of type Measured Newtons."
+          },
+          {
+            "name": "MEASURED PASCALS",
+            "description_as_printed": "The data is of type Measured Pascals."
+          },
+          {
+            "name": "MEASURED PERCENT",
+            "description_as_printed": "The data is of type Measured Percent."
+          },
+          {
+            "name": "MEASURED PPM",
+            "description_as_printed": "The data is of type Measured PPM."
+          },
+          {
+            "name": "MEASURED PPM2",
+            "description_as_printed": "The data is of type Measured PPM2."
+          },
+          {
+            "name": "MEASURED PPM3",
+            "description_as_printed": "The data is of type Measured PPM3."
+          },
+          {
+            "name": "MEASURED SECS",
+            "description_as_printed": "The data is of type Measured SECS."
+          },
+          {
+            "name": "MEASURED VOLTS",
+            "description_as_printed": "The data is of type Measured Volts."
+          },
+          {
+            "name": "MEASURED WATTS",
+            "description_as_printed": "The data is of type Measured Watts."
+          },
+          {
+            "name": "MEASURED WPM2",
+            "description_as_printed": "The data is of type Measured WPM2."
+          },
+          {
+            "name": "MENU BUTTON",
+            "description_as_printed": "The data is of type Menu Button."
+          },
+          {
+            "name": "MESSAGE",
+            "description_as_printed": "The data is of type Message."
+          },
+          {
+            "name": "MESSAGE REFERENCE",
+            "description_as_printed": "The data is of type Message Reference."
+          },
+          {
+            "name": "METERS",
+            "description_as_printed": "The data is of type Meters."
+          },
+          {
+            "name": "MPSEC",
+            "description_as_printed": "The data is of type MPSEC."
+          },
+          {
+            "name": "MUTABILITY",
+            "description_as_printed": "The data is of type Mutability."
+          },
+          {
+            "name": "NAME VALUE PAIR",
+            "description_as_printed": "The data is of type Name Value Pair."
+          },
+          {
+            "name": "NEWTONS",
+            "description_as_printed": "The data is of type Newtons."
+          },
+          {
+            "name": "NOT MATCH",
+            "description_as_printed": "The data is of type Not Match."
+          },
+          {
+            "name": "OBSERVABLE DECLARATION",
+            "description_as_printed": "The data is of type Observable Declaration."
+          },
+          {
+            "name": "OBSERVABLE STATE",
+            "description_as_printed": "The data is of type Observable State."
+          },
+          {
+            "name": "OR MATCH",
+            "description_as_printed": "The data is of type Or Match."
+          },
+          {
+            "name": "PARAMETER DECLARATION",
+            "description_as_printed": "The data is of type Parameter Declaration."
+          },
+          {
+            "name": "PASCALS",
+            "description_as_printed": "The data is of type Pascals."
+          },
+          {
+            "name": "PERCENT",
+            "description_as_printed": "The data is of type Percent."
+          },
+          {
+            "name": "POLARITY",
+            "description_as_printed": "The data is of type Polarity."
+          },
+          {
+            "name": "POWER SOURCE",
+            "description_as_printed": "The data is of type Power Source."
+          },
+          {
+            "name": "PPM",
+            "description_as_printed": "The data is of type PPM."
+          },
+          {
+            "name": "PPM2",
+            "description_as_printed": "The data is of type PPM2."
+          },
+          {
+            "name": "PPM3",
+            "description_as_printed": "The data is of type PPM3."
+          },
+          {
+            "name": "PRIORITY",
+            "description_as_printed": "The data is of type Priority."
+          },
+          {
+            "name": "PRIORITY LEVEL",
+            "description_as_printed": "The data is of type Priority Level."
+          },
+          {
+            "name": "PROPERTY DECLARATION",
+            "description_as_printed": "The data is of type Proper Declaration."
+          },
+          {
+            "name": "PROPERTY STATE",
+            "description_as_printed": "The data is of type Property State."
+          },
+          {
+            "name": "RADIATION READING",
+            "description_as_printed": "The data is of type Radiation Reading."
+          },
+          {
+            "name": "RADIOACTIVE MATERIAL TYPE CATEGORY CODE",
+            "description_as_printed": "The data is of type Radioactive Material Type Category Code."
+          },
+          {
+            "name": "RADIOACTIVE MATERIAL TYPE PRIMARY RADIATION CODE",
+            "description_as_printed": "The data is of type Radioactive Material Type Primary Radiation Code."
+          },
+          {
+            "name": "RANGE",
+            "description_as_printed": "The data is of type Range."
+          },
+          {
+            "name": "RANGE DECLARATION",
+            "description_as_printed": "The data is of type Range Declaration."
+          },
+          {
+            "name": "REGISTRATION",
+            "description_as_printed": "The data is of type Registration."
+          },
+          {
+            "name": "REGISTRATION OPERATION",
+            "description_as_printed": "The data is of type Registration Operation."
+          },
+          {
+            "name": "RELATION LINK",
+            "description_as_printed": "The data is of type Relation Link."
+          },
+          {
+            "name": "RELATIONSHIP",
+            "description_as_printed": "The data is of type Relationship."
+          },
+          {
+            "name": "RELATIVE THRESHOLD",
+            "description_as_printed": "The data is of type Relative Threshold."
+          },
+          {
+            "name": "REQUEST",
+            "description_as_printed": "The data is of type Request."
+          },
+          {
+            "name": "RESOURCE",
+            "description_as_printed": "The data is of type Resource."
+          },
+          {
+            "name": "RESOURCE DESCRIPTOR",
+            "description_as_printed": "The data is of type Resource Descriptor."
+          },
+          {
+            "name": "RESOURCE TYPE",
+            "description_as_printed": "The data is of type Resource Type."
+          },
+          {
+            "name": "RESPONSE",
+            "description_as_printed": "The data is of type Response."
+          },
+          {
+            "name": "RESPONSE CODE",
+            "description_as_printed": "The data is of type Response Code."
+          },
+          {
+            "name": "RESULT DECLARATION",
+            "description_as_printed": "The data is of type Result Declaration."
+          },
+          {
+            "name": "ROTATION",
+            "description_as_printed": "The data is of type Rotation."
+          },
+          {
+            "name": "ROTATION PERCENT RATE",
+            "description_as_printed": "The data is of type Rotation Percent Rate."
+          },
+          {
+            "name": "ROTATION RATE",
+            "description_as_printed": "The data is of type Rotation Rate."
+          },
+          {
+            "name": "ROUTE",
+            "description_as_printed": "The data is of type Route."
+          },
+          {
+            "name": "ROUTE ACTION",
+            "description_as_printed": "The data is of type Route Action."
+          },
+          {
+            "name": "SECS",
+            "description_as_printed": "The data is of type SECS."
+          },
+          {
+            "name": "SEGMENT",
+            "description_as_printed": "The data is of type Segment."
+          },
+          {
+            "name": "SELECT",
+            "description_as_printed": "The data is of type Select."
+          },
+          {
+            "name": "SIDC",
+            "description_as_printed": "The data is of type SIDC."
+          },
+          {
+            "name": "SINGLE STRUCTURE",
+            "description_as_printed": "The data is of type Single Structure."
+          },
+          {
+            "name": "STANDARD IDENTITY",
+            "description_as_printed": "The data is of type Standard Entity."
+          },
+          {
+            "name": "STATIC VALUE",
+            "description_as_printed": "The data is of type Static Value."
+          },
+          {
+            "name": "STATUS",
+            "description_as_printed": "The data is of type Status."
+          },
+          {
+            "name": "STATUS SELECT",
+            "description_as_printed": "The data is of type Status Select."
+          },
+          {
+            "name": "STRING",
+            "description_as_printed": "The data is of type String."
+          },
+          {
+            "name": "STRING MATCH",
+            "description_as_printed": "The data is of type String Match."
+          },
+          {
+            "name": "STRUCTURE",
+            "description_as_printed": "The data is of type Structure."
+          },
+          {
+            "name": "SUBSCRIPTION",
+            "description_as_printed": "The data is of type Subscription."
+          },
+          {
+            "name": "SUBSCRIPTION ID",
+            "description_as_printed": "The data is of type Subscription ID."
+          },
+          {
+            "name": "THRESHOLD",
+            "description_as_printed": "The data is of type Threshold."
+          },
+          {
+            "name": "THRESHOLD DECLARATION",
+            "description_as_printed": "The data is of type Threshold Declaration."
+          },
+          {
+            "name": "THRESHOLD EXTENT",
+            "description_as_printed": "The data is of type Threshold Extent."
+          },
+          {
+            "name": "TRANSLATION",
+            "description_as_printed": "The data is of type Translation."
+          },
+          {
+            "name": "TREE STRUCTURE",
+            "description_as_printed": "The data is of type Tree Structure."
+          },
+          {
+            "name": "TYPE",
+            "description_as_printed": "The data is of type Type."
+          },
+          {
+            "name": "TYPE NAME",
+            "description_as_printed": "The data is of type Type Name."
+          },
+          {
+            "name": "UCI",
+            "description_as_printed": "The data is of type UCI."
+          },
+          {
+            "name": "UGS CATEGORY",
+            "description_as_printed": "The data is of type UGS Category."
+          },
+          {
+            "name": "URL",
+            "description_as_printed": "The data is of type URL."
+          },
+          {
+            "name": "UTC",
+            "description_as_printed": "The data is of type UTC."
+          },
+          {
+            "name": "VALUE",
+            "description_as_printed": "The data is of type Value."
+          },
+          {
+            "name": "VALUE FUNCTION",
+            "description_as_printed": "The data is of type Value Function."
+          },
+          {
+            "name": "VALUE SELECTOR",
+            "description_as_printed": "The data is of type Value Selector."
+          },
+          {
+            "name": "VELOCITY",
+            "description_as_printed": "The data is of type Velocity."
+          },
+          {
+            "name": "VIDEO ENHANCEMENT",
+            "description_as_printed": "The data is of type Video Enhancement."
+          },
+          {
+            "name": "VOLTS",
+            "description_as_printed": "The data is of type Volts."
+          },
+          {
+            "name": "WATTS",
+            "description_as_printed": "The data is of type Watts."
+          },
+          {
+            "name": "WAYPOINT",
+            "description_as_printed": "The data is of type Waypoint."
+          },
+          {
+            "name": "WIND",
+            "description_as_printed": "The data is of type Wind."
+          },
+          {
+            "name": "WIND CATEGORY",
+            "description_as_printed": "The data is of type Wind Category."
+          },
+          {
+            "name": "WPM2",
+            "description_as_printed": "The data is of type WPM2."
+          }
+        ],
+        "scope": "Literal built-in Type Name vocabulary; listing is not proof of component support or permission to invent missing type definitions."
+      },
+      "must_not_imply": "Type Name membership alone does not establish implementation support; descriptive typos do not create aliases.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-TYPE-NAME-DESCRIPTIONS"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-314",
+      "entry_id": "ISA-DMS-314",
+      "native_term": "Range",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.2, Range; printed p.69; PDF pp.84–84",
+      "pdf_pages": [
+        84
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "c7f832279bcb3d2507206602cd3e96d1ed756a851eec1f726004a3146a8bbc9c",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-VALUE-RANGE"
+      ],
+      "meaning": "Value restrictions with explicit endpoint inclusion or individual-value inclusion/exclusion.",
+      "native_manifest": {
+        "kind": "union",
+        "variants": [
+          "Bounded Range",
+          "Discrete Range"
+        ]
+      },
+      "must_not_imply": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-315",
+      "entry_id": "ISA-DMS-315",
+      "native_term": "Structure",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.2, Structure; printed p.69; PDF pp.84–84",
+      "pdf_pages": [
+        84
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "78010a737e29ef7fa6b0b0a59b557d0ae2fa61217300e9c34928ad505279baa2",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-STRUCTURE"
+      ],
+      "meaning": "Single-value versus multi-value structure; list/array length and tree depth bounds stay separate.",
+      "native_manifest": {
+        "kind": "union",
+        "variants": [
+          "Associative Array Structure",
+          "List Structure",
+          "Single Structure",
+          "Tree Structure"
+        ]
+      },
+      "must_not_imply": "No absent maximum becomes zero; no-field Single Structure does not mean a null value; a data tree is not hardware composition.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-316",
+      "entry_id": "ISA-DMS-316",
+      "native_term": "Threshold",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.2, Threshold; printed p.69; PDF pp.84–84",
+      "pdf_pages": [
+        84
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "09329e87b2e3fc3612b5ba1c5a866eff5ac37011513755cde0b58b6483ec3e68",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-ABS-THRESHOLD",
+        "ISA-K-REL-THRESHOLD",
+        "ISA-K-THRESHOLDS"
+      ],
+      "meaning": "Explicit comparison value for a publication-trigger condition. Change-based comparison using last measured, last reported, or component-uptime values. Collection of absolute/relative conditions for Status publication regardless of status interval.",
+      "native_manifest": {
+        "kind": "union",
+        "variants": [
+          "Absolute Threshold",
+          "Relative Threshold"
+        ]
+      },
+      "must_not_imply": "Not a validity limit, quality assessment, detected threat, or proof that a trigger fired. Not an absolute limit or physical lifetime history; current reading and last reported value are not interchangeable. Not command execution, validation failure, or an invented Boolean combination/trigger algorithm.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-317",
+      "entry_id": "ISA-DMS-317",
+      "native_term": "Type",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.2",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.2, Type; printed p.69; PDF pp.84–84",
+      "pdf_pages": [
+        84
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "82bd446820f1db00c32182842fa193c193dfd1ebbadce1eb87ec75cc3855b622",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-TYPE-CHOICE"
+      ],
+      "meaning": "Distinguishes native built-in datatype codes from previously defined custom types.",
+      "native_manifest": {
+        "kind": "union",
+        "variants": [
+          "Custom Type Name",
+          "Type Name"
+        ]
+      },
+      "must_not_imply": "Type Name membership alone does not establish implementation support; descriptive typos do not create aliases.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-318",
+      "entry_id": "ISA-DMS-318",
+      "native_term": "Absolute Threshold",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Absolute Threshold; printed p.69; PDF pp.84–85",
+      "pdf_pages": [
+        84,
+        85
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "5bed65609811b4e7cbfd010530f267626e4b3103525fe0e8d24a69d08843518d",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-ABS-THRESHOLD"
+      ],
+      "meaning": "Explicit comparison value for a publication-trigger condition.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "id",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Identifier used to refer to this threshold."
+          },
+          {
+            "name": "comparator",
+            "type": "Comparator",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Comparison operation."
+          },
+          {
+            "name": "value",
+            "type": "Wildcard",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explicit threshold value."
+          }
+        ]
+      },
+      "must_not_imply": "Not a validity limit, quality assessment, detected threat, or proof that a trigger fired.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-319",
+      "entry_id": "ISA-DMS-319",
+      "native_term": "Associative Array Structure",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Associative Array Structure; printed p.70; PDF pp.85–85",
+      "pdf_pages": [
+        85
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "bdcdf5e223d3704410ec25db6e9f7a382c27b74e839a87d9aaae0bbae6dfbc32",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-STRUCTURE"
+      ],
+      "meaning": "Single-value versus multi-value structure; list/array length and tree depth bounds stay separate.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "min length",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Minimum array length."
+          },
+          {
+            "name": "max length",
+            "type": "Integer",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Maximum array length.",
+            "default_as_printed": "unbounded"
+          }
+        ],
+        "bound_policy": "Required minima have no default here; omitted optional maxima are unbounded; no implicit nonnegativity/finite size/zero minimum is fabricated."
+      },
+      "must_not_imply": "No absent maximum becomes zero; no-field Single Structure does not mean a null value; a data tree is not hardware composition.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-320",
+      "entry_id": "ISA-DMS-320",
+      "native_term": "Bounded Range",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Bounded Range; printed p.70; PDF pp.85–85",
+      "pdf_pages": [
+        85
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "07216a55d86eb6f2c97ef4e2727fe492dbf868c92383044ab9102d44fc80754c",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-VALUE-RANGE"
+      ],
+      "meaning": "Value restrictions with explicit endpoint inclusion or individual-value inclusion/exclusion.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "high inclusive",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Whether upper endpoint is included."
+          },
+          {
+            "name": "low inclusive",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Whether lower endpoint is included."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Source describes this as explanation of the parameter."
+          },
+          {
+            "name": "high",
+            "type": "Wildcard",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Upper boundary value."
+          },
+          {
+            "name": "low",
+            "type": "Wildcard",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Lower boundary value."
+          }
+        ]
+      },
+      "must_not_imply": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-321",
+      "entry_id": "ISA-DMS-321",
+      "native_term": "Capability Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Capability Declaration; printed p.70; PDF pp.85–86",
+      "pdf_pages": [
+        85,
+        86
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "bc01ec550f097dfd0f00cad963e629ad708ae8d6721a3f89f9736168d107d32c",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-CAPABILITIES"
+      ],
+      "meaning": "Supported property, command, observable and custom-type declarations.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "properties",
+            "type": "Property Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Supported property declarations."
+          },
+          {
+            "name": "commands",
+            "type": "Command Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Supported command declarations."
+          },
+          {
+            "name": "observables",
+            "type": "Observable Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Supported observable declarations."
+          },
+          {
+            "name": "types",
+            "type": "Custom Type Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Supported custom-type declarations."
+          }
+        ]
+      },
+      "must_not_imply": "Not current values, readiness, execution, or mandatory support for every catalogue item.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-322",
+      "entry_id": "ISA-DMS-322",
+      "native_term": "Command Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Command Declaration; printed p.71; PDF pp.86–86",
+      "pdf_pages": [
+        86
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "b00ab083959622d391b98ade39a3c2dda113d16648fa6e0255bb7f77bf4633a6",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-COMMAND-DECL"
+      ],
+      "meaning": "Supported command identity with parameter and result declarations.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "args",
+            "type": "Parameter Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Declared command parameters."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Explanation of invocation."
+          },
+          {
+            "name": "results",
+            "type": "Result Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Declared return values, not actual response values."
+          }
+        ]
+      },
+      "must_not_imply": "Not an issued request, completed operation, or proof of runtime availability.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-323",
+      "entry_id": "ISA-DMS-323",
+      "native_term": "Custom Type Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Custom Type Declaration; printed p.71; PDF pp.86–86",
+      "pdf_pages": [
+        86
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "51a33f5f4dafedf98e11ea579379865815886c5ffdbc1edc850b82a0b2579b1c",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-CUSTOM-TYPE"
+      ],
+      "meaning": "Named custom structure, purpose and field definitions.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "fields",
+            "type": "Field Declaration",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Custom-structure field declarations."
+          }
+        ]
+      },
+      "must_not_imply": "Not an untyped arbitrary payload, a registry policy, or an automatically approved domain-model class.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-324",
+      "entry_id": "ISA-DMS-324",
+      "native_term": "Discrete Range",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Discrete Range; printed p.71; PDF pp.86–86",
+      "pdf_pages": [
+        86
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "1740e63392b002e13a9027c8c174a0c7ceb64e480bd714b2314045d63b0e95da",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-VALUE-RANGE"
+      ],
+      "meaning": "Value restrictions with explicit endpoint inclusion or individual-value inclusion/exclusion.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "description",
+            "type": "String",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the value.",
+            "default_as_printed": "None"
+          },
+          {
+            "name": "inclusive",
+            "type": "Boolean",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "True supports this value; false explicitly excludes it.",
+            "default_as_printed": true
+          },
+          {
+            "name": "value",
+            "type": "Wildcard",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Individual constrained value."
+          }
+        ]
+      },
+      "must_not_imply": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-325",
+      "entry_id": "ISA-DMS-325",
+      "native_term": "Field Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Field Declaration; printed p.71; PDF pp.86–87",
+      "pdf_pages": [
+        86,
+        87
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "dda2e793215799ba5c69179313f92dd8cbaff50d927e6b62d4c28de983841e11",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-FIELD-DECL"
+      ],
+      "meaning": "Field meaning, typing, structure and omission metadata for a custom structure.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "type",
+            "type": "Type",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared built-in or previously defined custom data type."
+          },
+          {
+            "name": "structure",
+            "type": "Structure",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared single, list, associative-array or tree structure; distinct from the data type."
+          },
+          {
+            "name": "optional",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Whether the represented field, parameter or result may be omitted; this metadata field itself is required.",
+            "default_as_printed": "FALSE"
+          }
+        ]
+      },
+      "must_not_imply": "Preserve required optional:Boolean plus printed FALSE default without inventing wire omission rules.",
+      "reuse": {
+        "previously_inspected_as_dependency": true,
+        "evidence_files": [
+          "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+        ]
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-CAPABILITY-REQUIRED-DEFAULT"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-326",
+      "entry_id": "ISA-DMS-326",
+      "native_term": "List Structure",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, List Structure; printed p.72; PDF pp.87–87",
+      "pdf_pages": [
+        87
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "ac99001ec014c8ed70bb2d976bc10a53c008658624678dc1500e3a9706d113b6",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-STRUCTURE"
+      ],
+      "meaning": "Single-value versus multi-value structure; list/array length and tree depth bounds stay separate.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "min length",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Minimum list length."
+          },
+          {
+            "name": "max length",
+            "type": "Integer",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Maximum list length.",
+            "default_as_printed": "unbounded"
+          }
+        ],
+        "bound_policy": "Required minima have no default here; omitted optional maxima are unbounded; no implicit nonnegativity/finite size/zero minimum is fabricated."
+      },
+      "must_not_imply": "No absent maximum becomes zero; no-field Single Structure does not mean a null value; a data tree is not hardware composition.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-327",
+      "entry_id": "ISA-DMS-327",
+      "native_term": "Observable Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Observable Declaration; printed p.72; PDF pp.87–87",
+      "pdf_pages": [
+        87
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "83aa77ddffa2a4d8cbb31310228b4eeb58f14e5f491f41135d1a08508af22b99",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-OBSERVABLE-DECL"
+      ],
+      "meaning": "Observable contract; declared observables need not occur in every Event.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "type",
+            "type": "Type",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared built-in or previously defined custom data type."
+          },
+          {
+            "name": "structure",
+            "type": "Structure",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared single, list, associative-array or tree structure; distinct from the data type."
+          },
+          {
+            "name": "range",
+            "type": "Range Declaration",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Optional allowed/excluded values or bounded ranges for this declaration."
+          }
+        ],
+        "obligation_as_printed": "Declared observables ARE NOT required in every Event; every reported observable should be declared."
+      },
+      "must_not_imply": "The source says reported observables should be declared; do not strengthen should into shall.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-328",
+      "entry_id": "ISA-DMS-328",
+      "native_term": "Parameter Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Parameter Declaration; printed p.72; PDF pp.87–88",
+      "pdf_pages": [
+        87,
+        88
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "c259263ac855eaa067e24c4ac5c945c526aaa04c2df8ad48009cb90cc5298370",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-PARAMETER-DECL"
+      ],
+      "meaning": "Input parameter definition, including required optionality metadata and possible value restrictions.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "type",
+            "type": "Type",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared built-in or previously defined custom data type."
+          },
+          {
+            "name": "optional",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Whether the represented field, parameter or result may be omitted; this metadata field itself is required."
+          },
+          {
+            "name": "structure",
+            "type": "Structure",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared single, list, associative-array or tree structure; distinct from the data type."
+          },
+          {
+            "name": "range",
+            "type": "Range Declaration",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Optional allowed/excluded values or bounded ranges for this declaration.",
+            "default_as_printed": "None"
+          }
+        ]
+      },
+      "must_not_imply": "An optional argument is distinct from optionality of its declaration metadata.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-329",
+      "entry_id": "ISA-DMS-329",
+      "native_term": "Property Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Property Declaration; printed p.73; PDF pp.88–88",
+      "pdf_pages": [
+        88
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "8d491c5714edb6198d55677e800415be9cebadaddc39e067217ff113e127154e",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-PROPERTY-DECL",
+        "ISA-K-MUTABILITY",
+        "ISA-K-THRESHOLDS"
+      ],
+      "meaning": "Named property contract with typing, structure and optional validity/publication rules. Describes whether/how a property is modifiable, distinct from runtime state. Collection of absolute/relative conditions for Status publication regardless of status interval.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "type",
+            "type": "Type",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared built-in or previously defined custom data type."
+          },
+          {
+            "name": "mutability",
+            "type": "Mutability",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared modification category; not caller authorization or current readiness."
+          },
+          {
+            "name": "structure",
+            "type": "Structure",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared single, list, associative-array or tree structure; distinct from the data type."
+          },
+          {
+            "name": "range",
+            "type": "Range Declaration",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Optional allowed/excluded values or bounded ranges for this declaration."
+          },
+          {
+            "name": "threshold",
+            "type": "Threshold Declaration",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Absolute/relative conditions triggering Status publication regardless of interval."
+          }
+        ]
+      },
+      "must_not_imply": "Not a reported value, write permission for a particular caller, or current ready state. Not caller authorization, ready/reporting state, or proof of modification; retain the native WRITE ONLY wording. Not command execution, validation failure, or an invented Boolean combination/trigger algorithm.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-330",
+      "entry_id": "ISA-DMS-330",
+      "native_term": "Range Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Range Declaration; printed p.73; PDF pp.88–88",
+      "pdf_pages": [
+        88
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "0ffc2f4511a0f9a3e20bbd70b8cb516fe63387572f551d201df7c91b0c8a3361",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-VALUE-RANGE"
+      ],
+      "meaning": "Value restrictions with explicit endpoint inclusion or individual-value inclusion/exclusion.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "ranges",
+            "type": "Range",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Allowed and/or disallowed individual values and/or bounded ranges; retain source default alongside required empty-capable cardinality.",
+            "default_as_printed": "None"
+          }
+        ]
+      },
+      "must_not_imply": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-CAPABILITY-REQUIRED-DEFAULT"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-331",
+      "entry_id": "ISA-DMS-331",
+      "native_term": "Relative Threshold",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Relative Threshold; printed p.73; PDF pp.88–89",
+      "pdf_pages": [
+        88,
+        89
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "0065313f3fa8706202fdf4ddb4edeb0de9b3b7572874861679bb3d4f9cd90e9e",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-REL-THRESHOLD"
+      ],
+      "meaning": "Change-based comparison using last measured, last reported, or component-uptime values.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "id",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Identifier used to refer to this threshold."
+          },
+          {
+            "name": "comparator",
+            "type": "Comparator",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Comparison operation."
+          },
+          {
+            "name": "extent",
+            "type": "Threshold Extent",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Selects historical comparison basis."
+          },
+          {
+            "name": "delta",
+            "type": "Wildcard",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Difference/change in quantity or value."
+          }
+        ]
+      },
+      "must_not_imply": "Not an absolute limit or physical lifetime history; current reading and last reported value are not interchangeable.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-332",
+      "entry_id": "ISA-DMS-332",
+      "native_term": "Result Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Result Declaration; printed p.74; PDF pp.89–89",
+      "pdf_pages": [
+        89
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "7c3dcc35149300838208758fe631932cc037c34afe230427710a255aee9c9b85",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-RESULT-DECL"
+      ],
+      "meaning": "Expected Response value definition, including optionality and native range type.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Source-native name of the declared item."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Explanation of the declaration or field."
+          },
+          {
+            "name": "type",
+            "type": "Type",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared built-in or previously defined custom data type."
+          },
+          {
+            "name": "structure",
+            "type": "Structure",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Declared single, list, associative-array or tree structure; distinct from the data type."
+          },
+          {
+            "name": "optional",
+            "type": "Boolean",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Whether the represented field, parameter or result may be omitted; this metadata field itself is required."
+          },
+          {
+            "name": "range",
+            "type": "Range",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Expected return-value range. Native type is Range, not Range Declaration."
+          }
+        ],
+        "distinct_from_parameter_range": "range:Range, not range:Range Declaration."
+      },
+      "must_not_imply": "Do not silently replace Range with Range Declaration or claim a result has actually been produced.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-333",
+      "entry_id": "ISA-DMS-333",
+      "native_term": "Single Structure",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Single Structure; printed p.74; PDF pp.89–89",
+      "pdf_pages": [
+        89
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "06d588b83ba1c67d4dec135a303f638f6788f45c593567da27b3dd0af059a8ac",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-STRUCTURE"
+      ],
+      "meaning": "Single-value versus multi-value structure; list/array length and tree depth bounds stay separate.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [],
+        "source_text": "No Fields"
+      },
+      "must_not_imply": "No absent maximum becomes zero; no-field Single Structure does not mean a null value; a data tree is not hardware composition.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
+    },
+    {
+      "id": "ISA-TYPE-334",
+      "entry_id": "ISA-DMS-334",
+      "native_term": "Threshold Declaration",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Threshold Declaration; printed p.74; PDF pp.89–89",
+      "pdf_pages": [
+        89
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "89dd4ce3376713b2d513f21d17de6ec9e74de2523ec0572bf9e7af5f4857eb0d",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-THRESHOLDS"
+      ],
+      "meaning": "Collection of absolute/relative conditions for Status publication regardless of status interval.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "thresholds",
+            "type": "Threshold",
+            "required": true,
+            "cardinality": "0+",
+            "structure": "List",
+            "meaning": "Absolute and/or relative publication triggers; no implicit AND/OR combination rule invented.",
+            "default_as_printed": "None"
+          }
+        ]
+      },
+      "must_not_imply": "Not command execution, validation failure, or an invented Boolean combination/trigger algorithm.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": [
+        "ISA-SOURCE-NOTE-CAPABILITY-REQUIRED-DEFAULT"
+      ]
+    },
+    {
+      "id": "ISA-TYPE-335",
+      "entry_id": "ISA-DMS-335",
+      "native_term": "Tree Structure",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "source_standing": "CORE",
+      "element_kind": "data type",
+      "section": "7.3",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 7.3, Tree Structure; printed p.74; PDF pp.89–90",
+      "pdf_pages": [
+        89,
+        90
+      ],
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "inventory_source_span_sha256": "73ccf112c1265bacfc4120215a91e143b711317462dad990adb8280ee9d6c2db",
+      "source_span_hash_basis": "Original indexed source span verified against the immutable census hash.",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "GROUPED_CANDIDATE_CONTRIBUTION",
+      "target_rows": [
+        "ISA-K-STRUCTURE"
+      ],
+      "meaning": "Single-value versus multi-value structure; list/array length and tree depth bounds stay separate.",
+      "native_manifest": {
+        "kind": "composite",
+        "fields": [
+          {
+            "name": "min depth",
+            "type": "Integer",
+            "required": true,
+            "cardinality": "1",
+            "structure": "Single Value",
+            "meaning": "Minimum tree depth."
+          },
+          {
+            "name": "max depth",
+            "type": "Integer",
+            "required": false,
+            "cardinality": "0-1",
+            "structure": "Single Value",
+            "meaning": "Maximum tree depth.",
+            "default_as_printed": "unbounded"
+          }
+        ],
+        "bound_policy": "Required minima have no default here; omitted optional maxima are unbounded; no implicit nonnegativity/finite size/zero minimum is fabricated."
+      },
+      "must_not_imply": "No absent maximum becomes zero; no-field Single Structure does not mean a null value; a data tree is not hardware composition.",
+      "reuse": {
+        "previously_inspected_as_dependency": false,
+        "evidence_files": []
+      },
+      "owner_adoption": "NO_DIM_CONTENT_ADOPTION",
+      "source_wording_notes": []
     }
   ],
   "supporting_definitions": [
@@ -2877,6 +5390,26 @@
       "later_catalogue_pass_completed": false,
       "inspection": "Original text PDF90–91 including continuation and next heading; images unavailable; no visual claim.",
       "must_not_imply": "Administrative OTHER remains undocumented; these are network/service notification codes, not observation Event Type values."
+    },
+    {
+      "entry_id": "ISA-DMS-458",
+      "native_term": "Custom Type Name",
+      "section": "10.1",
+      "source_locator": "ISA Data Model Specification 6.0r12 (31 October 2023), section 10.1, Custom Type Name; printed p.118; PDF pp.133–133",
+      "source_span_sha256": "0c932ec41bbf626cbf85f3dc81607c4798f61b3f8bdf9285d7352007916a73ee",
+      "source_standing": "CORE",
+      "variants": [
+        {
+          "name": "USER DEFINED",
+          "meaning": "User-defined custom type, as printed."
+        }
+      ],
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "assigned_full_review_pass": "ISA-10",
+      "later_catalogue_pass_completed": false,
+      "inspection": "Complete original text PDF133; no new page-image claim.",
+      "must_not_imply": "No namespace, schema-registry policy, UUID requirement, or concrete custom-type name invented."
     }
   ],
   "reused_supporting_definitions": [
@@ -2971,6 +5504,84 @@
       ],
       "full_assignment_advanced": false,
       "reason": "Same-edition manifest reused for current field semantics; full remaining section review retains its original assignment."
+    },
+    {
+      "entry_id": "ISA-DMS-257",
+      "native_term": "Boolean",
+      "evidence_files": [
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-260",
+      "native_term": "Integer",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-457",
+      "native_term": "Comparator",
+      "evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-433",
+      "native_term": "Property State",
+      "evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-428",
+      "native_term": "Observable State",
+      "evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
+    },
+    {
+      "entry_id": "ISA-DMS-375",
+      "native_term": "Command State",
+      "evidence_files": [
+        "ISA_Command_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-TYPES-CAPABILITY",
+      "reason": "Use exact-edition definitions for declaration fields and the distinction between declaration and usable/reporting state; no new full assignment credited."
     }
   ],
   "source_wording_notes": [
@@ -3000,63 +5611,79 @@
       "scheduled_resolution": "Existing ICD and component/controller requirements review; do not re-review commands or add a prompt.",
       "source_locator": "DMS6.2 printed60/PDF75; DMS3.3 Cancel printed29/PDF44",
       "new_discovery": true
+    },
+    {
+      "id": "ISA-SOURCE-NOTE-CAPABILITY-REQUIRED-DEFAULT",
+      "entry_ids": [
+        "ISA-DMS-325",
+        "ISA-DMS-330",
+        "ISA-DMS-334"
+      ],
+      "source_locator": "DMS7.3 PDF87–89 / printed72–74",
+      "known": "Field Declaration.optional is Required1 with FALSE omission default; Range Declaration.ranges and Threshold Declaration.thresholds are Required0+ with None omission prose.",
+      "handling": "Keep native cardinalities and printed defaults together. Do not turn required metadata optional or decide encoding-level absence/null rules without the scheduled interface review.",
+      "scheduled_resolution": "Existing ICD/requirements/semantic reconciliation; no extra prompt.",
+      "additional_prompt_created": false
+    },
+    {
+      "id": "ISA-SOURCE-NOTE-TYPE-NAME-DESCRIPTIONS",
+      "entry_id": "ISA-DMS-313",
+      "source_locator": "DMS7.1 Type Name PDF77–84 / printed62–69",
+      "known": "Several printed explanations do not exactly name their code: FIELD VALUE SELECTOR says Field Value; LIST STRUCTURE says List; MEASURED GRAYPSEC says GRAYSPEC; MEASURED MBPSEC says bits Per Second; PROPERTY DECLARATION says Proper Declaration; STANDARD IDENTITY says Standard Entity.",
+      "handling": "Preserve every literal code and its printed explanation. Use the actual separately reviewed type definition for meaning; do not invent aliases, change scale, or infer wire tokens.",
+      "scheduled_resolution": "Existing cross-type/interface/semantic reconciliation; no extra prompt.",
+      "additional_prompt_created": false
     }
   ],
   "source_inspection": {
-    "complete_text_pages": [
-      65,
-      66,
-      67,
-      68,
-      69,
-      70,
-      71,
-      72,
-      73,
-      74,
-      75,
-      76,
-      90,
-      91,
-      108
+    "complete_original_text_pages": [
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      133
     ],
-    "newly_viewed_page_images": [
-      71,
-      72,
-      73,
-      74,
-      75,
-      76,
-      108
+    "page_images_inspected": [
+      85,
+      86,
+      87,
+      88,
+      89
     ],
-    "unavailable_images": [
-      65,
-      70,
-      90
+    "page_images_unavailable": [
+      77,
+      84
     ],
-    "other_scalar_image_basis": "Prior exact-edition dependency inspections plus complete original text for this assignment; no new scalar-page visual-inspection claim.",
-    "cross_page_continuations": [
-      "Priority69–70",
-      "Administrative72–73",
-      "Event73–74",
-      "Request74–75",
-      "Status75–76",
-      "Admin Code90–91"
+    "cross_page_definitions": [
+      "Type Name77–84",
+      "Absolute Threshold84–85",
+      "Field Declaration86–87"
     ],
-    "next_heading_boundary": "Status ends PDF76; following capability section77 already inspected in prior source turn."
+    "native_inventory_span_hashes_checked": 25,
+    "standing": "All25 are core; only the3 capability enumerations are explicitly sealed.",
+    "scope": "All25 assigned native definitions and exact fields/variants; Type Name membership does not recursively count every referenced type as reviewed."
   },
   "reuse_summary": {
-    "assigned": 54,
-    "prior_support_reconciled": 45,
-    "first_primary_inspections": 9,
+    "assigned": 25,
+    "prior_support_reconciled": 3,
+    "first_primary_inspections": 22,
     "new_external_dependencies": 1,
-    "previous_supporting_roster": 167,
-    "cumulative_supporting_roster": 168,
-    "unique_type_definitions_examined": 177,
-    "primary_types_reconciled": 54,
-    "supporting_only_types_not_yet_fully_reconciled": 123
+    "previous_supporting_roster": 168,
+    "cumulative_supporting_roster": 169,
+    "unique_type_definitions_examined": 200,
+    "primary_types_reconciled": 79,
+    "supporting_only_types_not_yet_fully_reconciled": 121
   },
-  "comparison_policy": "17 coherent information patterns are added; scalar/union/reserved definitions are retained as supporting or existing-row evidence, not forced into one DIM class per source type.",
+  "comparison_policy": "15 declaration/constraint patterns added;25 type definitions remain individually traceable. No new automatic DIM adoption.",
   "primary_questions_added": 0,
   "previous_primary_questions_preserved": [
     "ISA-Q001",
@@ -3066,14 +5693,137 @@
     "ISA-Q005",
     "ISA-Q006"
   ],
-  "next_task": "ISA-TYPES-CAPABILITY",
+  "next_task": "ISA-TYPES-REPORTING-ENUMS",
   "validation": {
-    "exact54_unique_ids": true,
+    "exact79_unique_ids": true,
+    "current25_complete": true,
     "omissions": 0,
     "duplicates": 0,
-    "new_candidate_rows": 17,
+    "new_candidate_rows": 15,
     "prior_rows_changed": 0,
     "other_donor_or_case_cells_changed": 0,
-    "workbook_rebuilt": false
+    "workbook_rebuilt": false,
+    "type_name_literal_codes": 201
+  },
+  "completed_passes": [
+    "ISA-TYPES-BASE-MESSAGES",
+    "ISA-TYPES-CAPABILITY"
+  ],
+  "source_inspections_by_pass": {
+    "ISA-TYPES-BASE-MESSAGES": {
+      "complete_text_pages": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        90,
+        91,
+        108
+      ],
+      "newly_viewed_page_images": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        108
+      ],
+      "unavailable_images": [
+        65,
+        70,
+        90
+      ],
+      "other_scalar_image_basis": "Prior exact-edition dependency inspections plus complete original text for this assignment; no new scalar-page visual-inspection claim.",
+      "cross_page_continuations": [
+        "Priority69–70",
+        "Administrative72–73",
+        "Event73–74",
+        "Request74–75",
+        "Status75–76",
+        "Admin Code90–91"
+      ],
+      "next_heading_boundary": "Status ends PDF76; following capability section77 already inspected in prior source turn."
+    },
+    "ISA-TYPES-CAPABILITY": {
+      "complete_original_text_pages": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        133
+      ],
+      "page_images_inspected": [
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "page_images_unavailable": [
+        77,
+        84
+      ],
+      "cross_page_definitions": [
+        "Type Name77–84",
+        "Absolute Threshold84–85",
+        "Field Declaration86–87"
+      ],
+      "native_inventory_span_hashes_checked": 25,
+      "standing": "All25 are core; only the3 capability enumerations are explicitly sealed.",
+      "scope": "All25 assigned native definitions and exact fields/variants; Type Name membership does not recursively count every referenced type as reviewed."
+    }
+  },
+  "current_batch": {
+    "id": "ISA-TYPES-CAPABILITY",
+    "assigned_ids": [
+      "ISA-DMS-311",
+      "ISA-DMS-312",
+      "ISA-DMS-313",
+      "ISA-DMS-314",
+      "ISA-DMS-315",
+      "ISA-DMS-316",
+      "ISA-DMS-317",
+      "ISA-DMS-318",
+      "ISA-DMS-319",
+      "ISA-DMS-320",
+      "ISA-DMS-321",
+      "ISA-DMS-322",
+      "ISA-DMS-323",
+      "ISA-DMS-324",
+      "ISA-DMS-325",
+      "ISA-DMS-326",
+      "ISA-DMS-327",
+      "ISA-DMS-328",
+      "ISA-DMS-329",
+      "ISA-DMS-330",
+      "ISA-DMS-331",
+      "ISA-DMS-332",
+      "ISA-DMS-333",
+      "ISA-DMS-334",
+      "ISA-DMS-335"
+    ],
+    "records": 25,
+    "pattern_rows": 15,
+    "prior_dependencies_reused": 3,
+    "new_primary_inspections": 22,
+    "type_name_literal_codes": 201
   }
 }

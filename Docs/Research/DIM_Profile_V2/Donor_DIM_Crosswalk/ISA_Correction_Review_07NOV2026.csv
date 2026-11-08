@@ -62,6 +62,21 @@ Not linked here,Not linked here,Not linked here,Not linked here,Not assessed her
 ,,,,,,,Event.type: Event Type · required/default wording retained,,,,,,Event creation category
 ,,,,,,,Event.detector properties: Name Value Pair [0+],,,,,,Detector property context at event occurrence
 "04 — CONFIGURATION & CONTROL — Differentiate supported/default capabilities, applied/reported configuration and actual command execution.",,,,,,,,,,,,,
+,,,,,,,Capability Declaration.properties / commands / observables / types [0+],,,,,,Declared component capability catalogue
+,,,,,,,"Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",,,,,,Declared property definition
+,,,,,,,"Observable Declaration: name, description, type, structure; range [0-1]",,,,,,Declared observable definition
+,,,,,,,Command Declaration.name / args [0+] / results [0+]; description [0-1],,,,,,Declared command interface
+,,,,,,,"Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",,,,,,Declared command parameter
+,,,,,,,"Result Declaration: name, description, type, structure, optional; range:Range [0-1]",,,,,,Declared command result
+,,,,,,,Custom Type Declaration.name / description / fields [0+],,,,,,Declared custom data structure
+,,,,,,,Field Declaration.name / description / type / structure / optional,,,,,,Declared field within a custom structure
+,,,,,,,Type → Type Name | Custom Type Name,,,,,,Declared built-in or custom value type
+,,,,,,,Structure → Single | List | Associative Array | Tree; min/max length or depth,,,,,,Declared value shape and collection bounds
+,,,,,,,Range Declaration.ranges [0+] → Bounded Range | Discrete Range,,,,,,Declared permitted or excluded values
+,,,,,,,Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY,,,,,,Declared property mutability
+,,,,,,,Absolute Threshold.id / comparator / value,,,,,,Absolute-value publication threshold
+,,,,,,,Relative Threshold.id / comparator / extent / delta,,,,,,Relative-change publication threshold and reference basis
+,,,,,,,Property Declaration.threshold → Threshold Declaration.thresholds [0+],,,,,,Declared property publication triggers
 LoRaWAN Class A supported,Wi-Fi / LTE cellular options,,,≈ SampMode (sampling capability),,ModeDefinition.mode_name,≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08],,,≈ Category.codeSpace / constraint (allowed tokens),≈ AbstractProcess.modes / Mode.configuration,,Supported operating mode
 OTAA joining — documented default,Cellular — documented default network path,,,≈ SDefault (sampling mode default),,ModeDefinition.mode_type=DEFAULT,Not reviewed · ISA-08,,,,,,Declared default mode
 ,,,,,,StatusReport.mode,"≈ Camera Mode · current, camera-specific

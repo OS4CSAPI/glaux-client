@@ -1,10 +1,10 @@
 # Current recovery PITON — working master and DIM adoption
 
-**8 November 2026 · ISA Step7 / accelerated delivery8 COMPLETE. Next “proceed”: ISA Step8 / accelerated delivery9, `ISA-TYPES-CAPABILITY`,25 assigned capability/constraint definitions.**
+**CURRENT:8 November2026. ISA Step8 / accelerated delivery9 COMPLETE;285 readable master rows,305 primary reviews,79/224 types. Next:ISA-TYPES-REPORTING-ENUMS (28 entries),accelerated delivery10. Remaining ISA forecast13 (11–15). Canonical Excel remains the253-row master-integration snapshot; current text is two datatype checkpoints newer.**
 
-Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk`. GitHub is authoritative. Stable filenames retain earlier dates for existing links; these are updated recovery instructions.
+[Current execution PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Progress](ISA_Correction_Status_07NOV2026.json). This banner supersedes older numeric routing below; adoption decisions remain unchanged.
 
-[Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Labeled XLSX snapshot](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [ISA PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Progress/exact queue](ISA_Correction_Status_07NOV2026.json) · [ISA plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json).
+## Retained master-integration and adoption record (historical counts)
 
 ## What was agreed in the latest discussion
 

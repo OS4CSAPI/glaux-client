@@ -1,5 +1,11 @@
 # Working master — source cases, donor concepts and proposed DIM
 
+**CURRENT —8 November2026: ISA Step8 / accelerated delivery9 COMPLETE.25 capability definitions reconciled; types79/224, primary coverage305/480, canonical readable master285 rows. Next accelerated delivery10:28 reporting enumeration/union and commanding-enum entries. Remaining ISA forecast13, range11–15. Excel remains253 rows; text is two type checkpoints newer.**
+
+[Current master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Exact progress](ISA_Correction_Status_07NOV2026.json).
+
+## Previous schedule and checkpoint record — current routing is above
+
 **Latest source checkpoint — 8 November 2026: ISA Step7 / accelerated delivery8 COMPLETE.** [Current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md):270 rows and280 primary ISA dispositions. [Master XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remains the verified253-row integration snapshot. [Type evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json) reconciles all54 assigned base/message entries. Next:25 capability/constraint definitions;14 central remaining ISA deliveries (range12–16). Existing adoption checkpoints24/40 are unchanged.
 
 
