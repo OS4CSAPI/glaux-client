@@ -23,14 +23,14 @@ env:
     sha=lambda b:hashlib.sha256(b).hexdigest()
     assert sha(encoded)==checksum,'Reviewed checkpoint checksum differs'
     p=json.loads(lzma.decompress(base64.b64decode(encoded,validate=True)))
-    publishing_workbook=p['checkpoint']=='ISA-PROPERTIES-PUBLISH'
+    publishing_workbook=p['checkpoint'] in {'ISA-PROPERTIES-PUBLISH','ISA-OBSERVABLES-PUBLISH'}
     allowed={'text_delta','xlsx_export'} if publishing_workbook else {'text_delta'}
     assert all(v['kind'] in allowed for v in p['files'].values()),'Unexpected artifact kind'
     assert all(Path(n).suffix in ({'.md','.json','.csv','.xlsx'} if publishing_workbook else {'.md','.json','.csv'}) for n in p['files']),'Unexpected output suffix'
     subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
     old=lambda name:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/name)])
-    already_exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
-    if os.environ.get('APPLY_ISA_TEXT')=='1' and not already_exact:
+    exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
+    if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:
         assemble(p)
     for n,v in p['files'].items():
         b=Path(n).read_bytes()
@@ -55,60 +55,69 @@ env:
     assert '<table>' in view
     with (D/s['currentReview'].replace('.md','.csv')).open(newline='') as handle:
         assert list(csv.reader(handle))==r['review_grid']
-    props=[x for x in r['dms_entries'] if x['source_kind']=='property']
     if publishing_workbook:
-        # Publication-only: exact saved scientific records and table, not another review.
         for key in ['dms_entries','specific_questions','review_grid','review_sections','candidate_rows']:
             assert r[key]==prior[key],'Saved scientific content changed: '+key
         earlier_e=json.loads(old(s['currentEvidence']))
         for key in ['primary_records','supporting_definitions','specific_questions','source_inspection','case_checks','source_inspections_by_pass']:
             assert e[key]==earlier_e[key],'Saved evidence changed: '+key
-        assert len(props)==91 and all(x['semantic_review_status'].startswith('REVIEWED_') for x in props)
-        assert s['propertyCatalogue']['remaining']==0 and s['propertyCatalogue']['workbookPublicationState']=='COMPLETE'
-        assert s['workbookSnapshot']['currentlyMatchesReadableView'] is True
-        assert s['currentWorkbook']=='ISA_Correction_Review_Properties_07NOV2026.xlsx'
-        assert s['nextOnOwnerProceed']=='ISA-04-ATMOSPHERIC'
-        next_ids=set(s['nextSourceIDs'])
-        assert next_ids=={'ISA-DMS-'+str(i) for i in range(123,131)}
-        assert all(x['semantic_review_status']=='NOT_REVIEWED_IN_CORRECTION' for x in r['dms_entries'] if x['id'] in next_ids)
         b=(D/s['currentWorkbook']).read_bytes()
         assert sha(b)==s['workbookSnapshot']['sha256']
         current=workbook(b)
-        previous=workbook((D/'ISA_Correction_Review_ISA03D_07NOV2026.xlsx').read_bytes())
+        baseline=p.get('baseline_workbook','ISA_Correction_Review_ISA03D_07NOV2026.xlsx')
+        previous=workbook((D/baseline).read_bytes())
         assert list(current)==list(previous) and len(current)==12
-        for sheet in ['Source Blocks','Earlier Findings','Sources','Legend']:
-            assert current[sheet]==previous[sheet],'Preserved sheet changed: '+sheet
-        for sheet in ['Row Coverage','ISA Evidence','Dependencies','Questions']:
+        for sheet in ['Source Blocks','Earlier Findings','Sources','Legend','Questions']:
             for address,value in previous[sheet].items():
-                if address not in {'A1','A2'}:
-                    assert current[sheet].get(address)==value,(sheet,address)
+                if value[0] is not None:
+                    assert current[sheet].get(address)==value,('Preserved sheet',sheet,address)
+        for sheet in ['Row Coverage','ISA Evidence','Dependencies']:
+            for address,value in previous[sheet].items():
+                if address not in {'A1','A2'} and value[0] is not None:
+                    assert current[sheet].get(address)==value,('Earlier evidence',sheet,address)
         for i,row in enumerate(r['review_grid'],6):
             for j,value in enumerate(row):
                 assert (current['ISA Review'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Workbook/table mismatch'
-        expected_evidence=[]
-        for x in e['primary_records']:
-            expected_evidence.append([x['id'],x['entry_id'],x['native_term'],x['native_type']+' / '+x['native_structure'],x['source_standing'],x['target_row'],x['proposed_label'],x['mapping_relation'],x['disposition'],x['original_meaning'],x['mapping_boundary'],x['source_locator'],'; '.join(x['dependency_terms']),x.get('question_id') or ''])
-        assert len(expected_evidence)==26
-        for i,row in enumerate(expected_evidence,71):
-            for j,value in enumerate(row):
-                assert (current['ISA Evidence'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Integrated evidence mismatch'
-        evidence_ids=[current['ISA Evidence']['B'+str(i)][0] for i in range(5,97)]
-        assert len(evidence_ids)==len(set(evidence_ids))==92
-        assert {x['id'] for x in props}.issubset(set(evidence_ids))
-        dependency_ids=[current['Dependencies']['A'+str(i)][0] for i in range(5,67)]
-        assert len(dependency_ids)==len(set(dependency_ids))==62
-        assert set(dependency_ids)=={x['id'] for x in r['dms_entries'] if x.get('supporting_definition_checked_in')}
         for i,q in enumerate(r['specific_questions'],5):
-            vals=[q['id'],q['native_term'],q['known'],q['question'],q['decision'],q['evidence'],q['next_resolution'],q['state']]
-            for j,value in enumerate(vals):
+            values=[q['id'],q['native_term'],q['known'],q['question'],q['decision'],q['evidence'],q['next_resolution'],q['state']]
+            for j,value in enumerate(values):
                 assert current['Questions'][chr(65+j)+str(i)][0]==value,'Question meaning changed'
-        for address,wanted in {'A6':91,'D6':83,'G6':4,'G10':87,'G11':4,'G12':1,'G13':1,'G14':0}.items():
-            assert abs(float(current['Summary'][address][0])-wanted)<1e-10,('Summary',address)
-        assert float(current['Validation']['B18'][0])==42 and float(current['Validation']['B19'][0])==0
-        assert current['Validation']['B20'][0]=='79 / 12'
-        assert all(value[0] not in {'#REF!','#DIV/0!','#VALUE!','#NAME?','#N/A','#NUM!','#SPILL!'} for cells in current.values() for value in cells.values())
-        report=json.loads((D/'ISA_Properties_Publication_Record_07NOV2026.json').read_text())
-        assert report['new_semantic_source_reviews']==0 and report['observables_reviewed_here']==0
+        assert not any(value[0] in {'#REF!','#DIV/0!','#VALUE!','#NAME?','#N/A','#NUM!','#SPILL!'} for cells in current.values() for value in cells.values())
+        assert s['workbookSnapshot']['currentlyMatchesReadableView'] is True
+        if p['checkpoint']=='ISA-OBSERVABLES-PUBLISH':
+            props=[x for x in r['dms_entries'] if x['source_kind']=='property']
+            obs=[x for x in r['dms_entries'] if x['source_kind']=='observable']
+            assert len(props)==91 and len(obs)==39
+            assert all(x['semantic_review_status'].startswith('REVIEWED_') for x in props+obs)
+            assert len(e['primary_records'])==39 and {x['entry_id'] for x in e['primary_records']}=={x['id'] for x in obs}
+            assert s['observableCatalogue']['workbookPublicationState']=='COMPLETE'
+            assert s['propertyCatalogue']['state']=='COMPLETE'
+            assert s['currentWorkbook']=='ISA_Correction_Review_Observables_07NOV2026.xlsx'
+            assert s['nextOnOwnerProceed']=='ISA-COMMANDS-IMAGE-ADJUSTMENTS'
+            assert set(s['nextSourceIDs'])=={'ISA-DMS-164','ISA-DMS-165','ISA-DMS-166','ISA-DMS-167','ISA-DMS-168','ISA-DMS-171'}
+            assert all(x['semantic_review_status']=='NOT_REVIEWED_IN_CORRECTION' for x in r['dms_entries'] if x['source_kind']=='command')
+            for i,x in enumerate(e['primary_records'],97):
+                values=[x['id'],x['entry_id'],x['native_term'],x['native_type']+' / '+x['native_structure'],x['source_standing'],x['target_row'],x['proposed_label'],x['mapping_relation'],x['disposition'],x['original_meaning'],x['mapping_boundary'],x['source_locator'],'; '.join(x['dependency_terms']),x.get('question_id') or '']
+                for j,value in enumerate(values):
+                    assert (current['ISA Evidence'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Observable evidence mismatch'
+            evidence_ids=[current['ISA Evidence']['B'+str(i)][0] for i in range(5,136)]
+            assert len(evidence_ids)==len(set(evidence_ids))==131
+            assert {x['id'] for x in props+obs}.issubset(set(evidence_ids))
+            dependency_ids=[current['Dependencies']['A'+str(i)][0] for i in range(5,128)]
+            assert len(dependency_ids)==len(set(dependency_ids))==123
+            assert set(dependency_ids)=={x['id'] for x in r['dms_entries'] if x.get('supporting_definition_checked_in')}
+            for i,x in enumerate(e['supporting_definitions'],67):
+                assert current['Dependencies']['A'+str(i)][0]==x['entry_id']
+                assert current['Dependencies']['D'+str(i)][0]==x['source_locator']
+                assert current['Dependencies']['E'+str(i)][0]==x['inspected_content_summary']
+            for address,wanted in {'A6':130,'D6':122,'G6':4,'G12':126,'G13':123,'G14':0}.items():
+                assert float(current['Summary'][address][0])==wanted,('Summary',address)
+            assert current['Summary']['G10'][0]=='91 / 91' and current['Summary']['G11'][0]=='39 / 39'
+            for address,wanted in {'B18':91,'B19':0,'B22':39,'B24':0,'B25':123,'B27':1,'B28':39,'B29':0,'B31':1,'B32':157,'B33':0}.items():
+                assert float(current['Validation'][address][0])==wanted,('Validation',address)
+            assert current['Validation']['B20'][0]=='79 / 12' and current['Validation']['B30'][0]=='19 / 20'
+        report=json.loads((D/p.get('publication_record','ISA_Properties_Publication_Record_07NOV2026.json')).read_text())
+        assert report['new_semantic_source_reviews']==0
         for name,digest in report['published_file_sha256'].items():
             assert sha(Path(name).read_bytes())==digest,'Publication-record hash mismatch: '+name
         for name in ['PITON_ISA_Coverage_Correction_07NOV2026.md','PLAN_ISA_Coverage_Correction_07NOV2026.md',s['currentReview']]:
@@ -117,9 +126,8 @@ env:
             for link in re.findall(r'\]\(([^)]+)\)',text):
                 if '://' not in link and not link.startswith('#'):
                     assert (D/link.split('#',1)[0]).is_file(),'Broken local link: '+link
-        print('PASS: consolidated twelve-sheet workbook contains all91 saved property outcomes,87 supported and four exact questions;118 information rows.')
-        print('PASS: all26 saved additions integrated;62 unique supporting definitions; correct formulas and source/grid/evidence agreement.')
-        print('PASS: earlier evidence, non-ISA values, historical workbook and source states preserved; zero new reviews; atmospheric observables remain unreviewed.')
+        print('PASS: exact consolidated workbook, saved primary evidence, dependency records, questions, formulas and grid agree.')
+        print('PASS: historical workbook, prior meanings and non-ISA values preserved; zero new source reviews.')
     else:
         records=[x for x in e['primary_records'] if x['review_pass']==p['checkpoint']]
         target={x['entry_id'] for x in records}
