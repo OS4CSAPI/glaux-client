@@ -12,124 +12,30 @@ concurrency:
   cancel-in-progress: false
 env:
   VERIFY_ISA_TEXT: |
-    import hashlib,subprocess,json,base64,lzma,os,sys,csv,re
-    from pathlib import Path
-    from html.parser import HTMLParser
-    D=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk')
-    marker=D/'.isa_review_text_update.txt'
-    checksum,body=marker.read_text().strip().split('\n',1)
-    if body.startswith('@parts '):
-        names=body.split()[1:]
-        assert names and all(Path(name).name==name for name in names)
-        encoded=''.join((D/'.isa03a_transfer'/name).read_text().strip() for name in names)
-        assert hashlib.sha256(encoded.encode()).hexdigest()==checksum,'Exact multipart transport checksum mismatch'
-        marker.write_text(checksum+'\n'+encoded+'\n')
-    else:
-        encoded=''.join(body.split())
-        assert hashlib.sha256(encoded.encode()).hexdigest()==checksum,'Checkpoint checksum mismatch'
-    p=json.loads(lzma.decompress(base64.b64decode(encoded,validate=True)))
-    if p['checkpoint']=='ISA-TYPES-CAPABILITY':
-        sys.path.insert(0,'scripts')
-        from publish_isa03a_checkpoint import assemble
-        sha=lambda b:hashlib.sha256(b).hexdigest()
-        allowed={'ISA_Type_Catalogue_Evidence_08NOV2026.json','ISA_Coverage_Register_07NOV2026.json','ISA_Correction_Status_07NOV2026.json','Master_Donor_Concept_to_DIM_Crosswalk.json','Master_Donor_Concept_to_DIM_Crosswalk.md','Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.md','ISA_Correction_Review_07NOV2026.csv','PITON_ISA_Coverage_Correction_07NOV2026.md','PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md','PLAN_ISA_Coverage_Correction_07NOV2026.md','README.md'}
-        assert set(p['files'])=={str(D/n) for n in allowed}
-        assert all(v['kind']=='text_delta' for v in p['files'].values())
-        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',p['base_commit']],check=True)
-        old=lambda n:subprocess.check_output(['git','show',p['base_commit']+':'+str(D/n)])
-        exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())
-        if os.environ.get('APPLY_ISA_TEXT')=='1' and not exact:assemble(p)
-        for n,v in p['files'].items():
-            b=Path(n).read_bytes();assert len(b)==v['size'] and sha(b)==v['sha256'],n
-        for n,h in p['preserved_files'].items():assert sha(Path(n).read_bytes())==h,n
-        load=lambda n:json.loads((D/n).read_text())
-        r=load('ISA_Coverage_Register_07NOV2026.json');m=load('Master_Donor_Concept_to_DIM_Crosswalk.json');s=load('ISA_Correction_Status_07NOV2026.json');t=load('ISA_Type_Catalogue_Evidence_08NOV2026.json')
-        a=json.loads(old('ISA_Coverage_Register_07NOV2026.json'));am=json.loads(old('Master_Donor_Concept_to_DIM_Crosswalk.json'));at=json.loads(old('ISA_Type_Catalogue_Evidence_08NOV2026.json'))
-        ids={f'ISA-DMS-{i:03}' for i in range(311,336)}
-        assert set(p['assigned_ids'])==ids==set(t['current_batch']['assigned_ids'])
-        assert len(t['primary_records'])==79 and len({x['entry_id'] for x in t['primary_records']})==79
-        assert t['primary_records'][:54]==at['primary_records']
-        new=t['primary_records'][54:];assert len(new)==25 and {x['entry_id'] for x in new}==ids
-        assert len(r['dms_entries'])==480 and len(r['source_blocks'])==279 and len(r['row_targets'])==31 and len(r['legacy_records'])==25
-        for k in ['sources','source_blocks','row_targets','legacy_records','specific_questions','baseline']:assert r[k]==a[k],k
-        prior={x['id']:x for x in a['dms_entries']};changed=set();primary_changed=set()
-        for e in r['dms_entries']:
-            before=prior[e['id']]
-            if e!=before:changed.add(e['id'])
-            if e['semantic_review_status']!=before['semantic_review_status']:primary_changed.add(e['id'])
-            for k in ['id','native_name','section','owner_pass','body_span_sha256']:assert e[k]==before[k],(e['id'],k)
-        assert primary_changed==ids and changed==ids|{'ISA-DMS-458'}
-        assert sum(e['semantic_review_status'].startswith('REVIEWED_') for e in r['dms_entries'])==305
-        assert sum(e['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for e in r['dms_entries'])==299
-        assert len(r['specific_questions'])==6 and len(r['supporting_source_notes'])==6 and r['supporting_source_notes'][:4]==a['supporting_source_notes']
-        assert r['candidate_rows'][:len(a['candidate_rows'])]==a['candidate_rows'] and len(r['candidate_rows'])==254
-        assert m['review_grid']==r['review_grid'] and m['review_sections']==r['review_sections']
-        grid=r['review_grid'];assert len(grid)-len(r['review_sections'])-2==285
-        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv']:
-            with (D/n).open(newline='',encoding='utf-8') as f:assert list(csv.reader(f))==grid,n
-        it=iter(grid);assert all(any(v==row for v in it) for row in a['review_grid'])
-        assert len(m['rows'])==285 and len({x['row_id'] for x in m['rows']})==285
-        oldrows={x['row_id']:x for x in am['rows']};newrows={x['row_id']:x for x in m['rows']};assert len(set(newrows)-set(oldrows))==15
-        for key,row in oldrows.items():
-            for k,v in row.items():
-                if k!='display_row':assert newrows[key][k]==v,(key,k)
-        for k in ['columns','originalDonorEvidence','caseEvidence','priorHolds','adoptionPolicy','historicalEvidenceSheetNames']:assert m[k]==am[k],k
-        assert len(m['originalDonorEvidence'])==58 and len(m['caseEvidence'])==73
-        records={x['native_term']:x for x in new};fields=lambda n:{x['name']:x for x in records[n]['native_manifest'].get('fields',[])}
-        assert sum(x['reuse']['previously_inspected_as_dependency'] for x in new)==3
-        assert len([x for x in new if x['native_manifest']['kind']=='enumeration'])==3
-        assert len([x for x in new if x['native_manifest']['kind']=='union'])==4
-        assert len([x for x in new if x['native_manifest']['kind']=='composite'])==18
-        assert records['Mutability']['native_manifest']['variants']==['PERMANENT','READ ONLY','READ WRITE','WRITE ONLY']
-        assert records['Threshold Extent']['native_manifest']['variants']==['INSTANTANEOUS','LAST REPORTED','LIFETIME']
-        codes=records['Type Name']['native_manifest']['variants'];assert len(codes)==len(set(codes))==201
-        assert codes[0]=='ABSOLUTE THRESHOLD' and codes[-1]=='WPM2' and 'RADIOACTIVE MATERIAL TYPE PRIMARY RADIATION CODE' in codes
-        assert records['Type']['native_manifest']['variants']==['Custom Type Name','Type Name']
-        assert records['Structure']['native_manifest']['variants']==['Associative Array Structure','List Structure','Single Structure','Tree Structure']
-        assert len(fields('Capability Declaration'))==4 and all(f['required'] and f['cardinality']=='0+' for f in fields('Capability Declaration').values())
-        assert fields('Command Declaration')['args']['type']=='Parameter Declaration' and fields('Command Declaration')['results']['type']=='Result Declaration'
-        assert fields('Field Declaration')['optional']['required'] and fields('Field Declaration')['optional']['default_as_printed']=='FALSE'
-        for n in ['Parameter Declaration','Property Declaration','Observable Declaration']:assert fields(n)['range']['type']=='Range Declaration' and not fields(n)['range']['required']
-        assert fields('Result Declaration')['range']['type']=='Range' and not fields('Result Declaration')['range']['required']
-        assert fields('Discrete Range')['inclusive']['default_as_printed'] is True
-        assert set(fields('Bounded Range'))=={'high inclusive','low inclusive','description','high','low'}
-        for n in ['List Structure','Associative Array Structure']:assert fields(n)['min length']['required'] and fields(n)['max length']['default_as_printed']=='unbounded'
-        assert fields('Tree Structure')['max depth']['default_as_printed']=='unbounded' and fields('Tree Structure')['min depth']['required']
-        assert fields('Single Structure')=={} and set(fields('Relative Threshold'))=={'id','comparator','extent','delta'}
-        assert fields('Threshold Declaration')['thresholds']['required'] and fields('Threshold Declaration')['thresholds']['cardinality']=='0+'
-        assert t['supporting_definitions'][:len(at['supporting_definitions'])]==at['supporting_definitions']
-        assert t['supporting_definitions'][-1]['entry_id']=='ISA-DMS-458' and t['supporting_definitions'][-1]['later_catalogue_pass_completed'] is False
-        assert s['technicalIterationsCompleted']==28 and s['remainingDeliveryForecast']['centralRemainingPrompts']==13
-        assert s['nextOnOwnerProceed']=='ISA-TYPES-REPORTING-ENUMS'
-        nextids=[e['id'] for e in r['dms_entries'] if e['section'] in ('8.1','8.2','9.1')];assert len(nextids)==28 and s['nextSourceIDs']==nextids
-        assert s['typeCatalogue']['reviewed']==79 and s['typeCatalogue']['remaining']==145
-        assert not s['workbookSnapshot']['currentlyMatchesReadableView'] and s['workbookSnapshot']['informationRows']==253
-        assert m['ISAEvidence']['currentPrimaryReviews']==305 and m['ISAEvidence']['primaryTypeReviews']==79
-        class Table(HTMLParser):
-            def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=[];self.cell=None
-            def handle_starttag(self,tag,attrs):
-                if tag=='tr':self.row=[]
-                if tag=='td':self.cell=''
-            def handle_data(self,data):
-                if self.cell is not None:self.cell+=data
-            def handle_endtag(self,tag):
-                if tag=='td':self.row.append(self.cell);self.cell=None
-                if tag=='tr' and self.row:self.rows.append(self.row)
-        for n in ['Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md']:
-            parser=Table();parser.feed((D/n).read_text());assert parser.rows==[row for i,row in enumerate(grid) if i>1 and i not in r['review_sections']],n
-        for n in ['PITON_ISA_Coverage_Correction_07NOV2026.md','Master_Donor_Concept_to_DIM_Crosswalk.md']:
-            for link in re.findall(r'\]\(([^)]+)\)',(D/n).read_text()):
-                if '://' not in link and not link.startswith('#'):assert (D/link.split('#')[0]).is_file(),link
-        if os.environ.get('APPLY_ISA_TEXT')=='1':subprocess.run(['git','add','--',*p['files']],check=True)
-        print('PASS: exact25 capability dispositions;3 prior inspections reused;22 first primary inspections;1 new supporting dependency.')
-        print('PASS:305 primary dispositions;285 canonical rows;all270 prior rows,6 questions,58 donor records,73 cases and workbook preserved.')
-        print('PASS: native fields/types/cardinalities/defaults;201 Type Name codes;canonical JSON/CSV/HTML parity;delivery9 complete;13 central deliveries remain.')
-    else:
-        baseline='5c7dec681456a2fa22a484c40ae8160dd5efb59e'
-        subprocess.run(['git','fetch','--no-tags','--depth=1','origin',baseline],check=True)
-        source=subprocess.check_output(['git','show',baseline+':.github/workflows/publish-isa03d-checkpoint.yml']).decode()
-        lines=source.split('  VERIFY_ISA_TEXT: |\n',1)[1].split('\njobs:\n',1)[0].splitlines()
-        exec(compile('\n'.join(line[4:] for line in lines),'<existing master/ISA verifier>','exec'))
+    import subprocess
+    baseline='fd9a83af27887ea32360e7889eb1dc7736393cc6'
+    subprocess.run(['git','fetch','--no-tags','--depth=1','origin',baseline],check=True)
+    source=subprocess.check_output(['git','show',baseline+':.github/workflows/publish-isa03d-checkpoint.yml']).decode()
+    lines=source.split('  VERIFY_ISA_TEXT: |\n',1)[1].split('\njobs:\n',1)[0].splitlines()
+    code='\n'.join(line[4:] for line in lines)
+    needle="    exact=all(Path(n).is_file() and sha(Path(n).read_bytes())==v['sha256'] for n,v in p['files'].items())"
+    fix="""    # Reconstruct reviewed CSV bytes from the signed payload, validate them first,
+        # then apply only Git's CRLF-to-LF text normalization before exact-byte checks.
+        for name,v in p['files'].items():
+            if Path(name).suffix=='.csv':
+                original=subprocess.check_output(['git','show',p['base_commit']+':'+v['base']])
+                assert sha(original)==v['base_sha256'],'CSV baseline mismatch'
+                authored=b''.join(original[o['copy'][0]:sum(o['copy'])] if 'copy' in o else o['text'].encode('utf-8') for o in v['ops'])
+                assert sha(authored)==v['sha256'] and len(authored)==v['size'],'Reviewed CSV payload mismatch'
+                normalized=authored.replace(b'\r\n',b'\n')
+                assert len(normalized)==73797 and sha(normalized)=='bdf8a21e5996c9ce39e3c9302aecb198cd0abfc0cf885765f89674bd323fecd7','Unexpected CSV normalization'
+                v.clear();v.update(kind='text_delta',text=normalized.decode('utf-8'),sha256=sha(normalized),size=len(normalized))
+    """
+    # Escape sequences in the inserted source must remain source text, not literal newlines.
+    fix=fix.replace("b'\r\n'", "b'\\r\\n'").replace("b'\n'", "b'\\n'")
+    assert code.count(needle)==1,'Unexpected existing verifier'
+    code=code.replace(needle,fix+'\n'+needle)
+    exec(compile(code,'<existing verifier with exact Git-normalized CSV bytes>','exec'))
 jobs:
   publish:
     name: Commit reviewed ISA checkpoint using existing assembler
