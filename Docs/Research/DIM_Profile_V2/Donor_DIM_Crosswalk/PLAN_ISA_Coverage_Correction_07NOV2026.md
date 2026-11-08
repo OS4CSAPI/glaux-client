@@ -1,14 +1,14 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue 91/91 and observable catalogue 39/39 COMPLETE, including the consolidated workbook. Next: ISA-COMMANDS-IMAGE-ADJUSTMENTS only.**
+**CURRENT — Image-adjustment commands COMPLETE (6/96). Property catalogue 91/91 and observable catalogue 39/39 remain COMPLETE, including their workbook. Next: ISA-COMMANDS-IMAGE-SETTINGS only.**
 
-[Current workbook](ISA_Correction_Review_Observables_07NOV2026.xlsx) · [Comparison](ISA_Correction_Review_07NOV2026.md) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Publication record](ISA_Observables_Publication_Record_07NOV2026.json).
+[Latest readable comparison](ISA_Correction_Review_07NOV2026.md) · [Command evidence](ISA_Command_Catalogue_Evidence_07NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Property/observable workbook snapshot](ISA_Correction_Review_Observables_07NOV2026.xlsx).
 
-The completed checkpoint integrated all 39 saved observable outcomes without repeating source research. The workbook, evidence and readable table agree: 130 reviewed entries, 126 supported outcomes, four unchanged local property questions, 157 information/review rows and 123 supporting definitions. Prior case facts and non-ISA values remain unchanged.
+The completed pass reviewed Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size and Adjust Zoom (164–168,171). Their required direction, optional rate/default100% and duration/stop distinctions are recorded with exact original references. Six candidate request roles share one parameter schema. Current text totals: 136 primary reviews,132 supported,four unchanged questions,163 information/review rows,124 supporting definitions. No prior source decision, equipment fact or non-ISA value changed.
 
-**Next single source group:** Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size, Adjust Zoom (ISA-DMS-164, ISA-DMS-165, ISA-DMS-166, ISA-DMS-167, ISA-DMS-168, ISA-DMS-171). Read their complete original definitions and required dependencies; distinguish a command declaration from its invocation and resulting state. These are inventory assignments, not reviewed conclusions. Persist the same cumulative evidence, coverage and readable GitHub comparison. Stop after this group; do not review the full command catalogue in one prompt.
+**Next single group:** Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom (184,186,190,192,193,205). Compare their actual definitions with the saved rate-based Adjust operations; do not infer equivalence or execution. These six remain unreviewed assignments. Persist the same cumulative records, then stop.
 
-**Delivery cadence remains:** direct GitHub persistence for each coherent source group; workbook refresh at catalogue or substantial-section checkpoints. Reuse existing publishing machinery. The interrupted observable-workbook checkpoint is closed; do not reopen or repeat completed research on the basis of its earlier chat error. Historical descriptions below do not override this current routing.
+**Delivery:** the completed property/observable workbook remains a 130-primary/157-row snapshot; current GitHub text is newer. Reuse the existing publication path and refresh Excel at catalogue/substantial-section checkpoints. No new per-group report, workflow or exporter. The earlier failed workbook run was repaired and completed; do not reopen it.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.

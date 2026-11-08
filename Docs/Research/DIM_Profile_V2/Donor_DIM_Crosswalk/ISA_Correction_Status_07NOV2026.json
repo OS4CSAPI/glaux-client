@@ -5,41 +5,41 @@
   "repository": "OS4CSAPI/glaux-client",
   "branch": "research/dim-profile-v2",
   "planningCheckpoint": "COMPLETE_REPEATED_MINIBATCH_RELEASE_REQUIREMENT_REMOVED",
-  "technicalIterationsCompleted": 16,
+  "technicalIterationsCompleted": 17,
   "plannedTechnicalIterations": null,
   "plannedWorkPackages": 12,
   "completedWorkPackages": 4,
   "completedChildBatches": 4,
-  "progressMeaning": "Property catalogue 91/91 and observable catalogue 39/39 are reviewed and integrated into the consolidated workbook. The interrupted publication checkpoint is now complete; no source review was repeated.",
-  "currentIteration": "ISA-OBSERVABLES-PUBLISH",
+  "progressMeaning": "All 91 properties and 39 observables remain reviewed and integrated. First six command definitions are reviewed and persisted; current text is newer than the unchanged consolidated workbook.",
+  "currentIteration": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
   "currentIterationStatus": "COMPLETE",
-  "currentBatch": "ISA-OBSERVABLES-PUBLISH",
-  "currentBatchSourceReviewStatus": "NO_NEW_SOURCE_RESEARCH_SAVED_OUTCOMES_PRESERVED",
-  "currentBatchDeliveryStatus": "COMPLETE_WORKBOOK_AND_GITHUB_RECORDS",
-  "nextOnOwnerProceed": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
-  "nextAction": "Review the six image-adjustment command definitions: Adjust Brightness, Adjust Contrast, Adjust Focus, Adjust Gain, Adjust Iris Size, Adjust Zoom. Update existing cumulative GitHub evidence and readable comparison; no per-group workbook release.",
+  "currentBatch": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+  "currentBatchSourceReviewStatus": "COMPLETE",
+  "currentBatchDeliveryStatus": "COMPLETE_GITHUB_EVIDENCE_AND_READABLE_VIEW",
+  "nextOnOwnerProceed": "ISA-COMMANDS-IMAGE-SETTINGS",
+  "nextAction": "Review Change Brightness, Change Contrast, Change Focus, Change Gain, Change Iris Size and Change Zoom only. Inspect complete source definitions/parameters/results; compare with saved rate-based Adjust semantics. Update cumulative GitHub evidence, coverage and table without another workbook export.",
   "nextSourceIDs": [
-    "ISA-DMS-164",
-    "ISA-DMS-165",
-    "ISA-DMS-166",
-    "ISA-DMS-167",
-    "ISA-DMS-168",
-    "ISA-DMS-171"
+    "ISA-DMS-184",
+    "ISA-DMS-186",
+    "ISA-DMS-190",
+    "ISA-DMS-192",
+    "ISA-DMS-193",
+    "ISA-DMS-205"
   ],
-  "nextSourceIDsMeaning": "Next assigned command-source group; none reviewed or executed by this publication checkpoint.",
+  "nextSourceIDsMeaning": "Next six inventory assignments only; no Change-command source review was performed in this pass.",
   "repositoryPublication": {
-    "state": "CURRENT_WORKBOOK_AND_EVIDENCE_SYNCHRONIZED",
+    "state": "CURRENT_EVIDENCE_AND_READABLE_VIEW_PUBLISHED_WORKBOOK_SNAPSHOT_UNCHANGED",
     "repository": "OS4CSAPI/glaux-client",
     "branch": "research/dim-profile-v2",
-    "technical_state": "ISA-OBSERVABLES-PUBLISH COMPLETE",
-    "next_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+    "technical_state": "ISA-COMMANDS-IMAGE-ADJUSTMENTS COMPLETE",
+    "next_pass": "ISA-COMMANDS-IMAGE-SETTINGS",
     "publication_record": "ISA_Observables_Publication_Record_07NOV2026.json",
-    "currentBatchEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+    "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
     "currentBatchReport": null,
-    "base_input_commit": "f2fa7bcec4895c50d7f38c8cedeec0e071f0f416",
-    "lastIntegratedCheckpoint": "6d59a671a2cd0944be4853a67c074cd52283f9a0",
+    "base_input_commit": "0659a533ec6e5fa1f1b89001230139f73c003816",
+    "lastIntegratedCheckpoint": "7cf47c489dec32464c95c97a795468726592e7b2",
     "current_view": "ISA_Correction_Review_07NOV2026.md",
-    "publication_record_scope": "Verifies consolidation of all saved properties and observables; no additional semantic source reviews."
+    "publication_record_scope": "Verifies the unchanged completed 91-property/39-observable workbook; subsequent command evidence/table changes are verified separately."
   },
   "baseline": {
     "csv_file": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.csv",
@@ -53,20 +53,20 @@
     "sourceNamedEntryDenominator": 480,
     "definition": "Named DMS catalogue entries, not nested fields or required DIM rows.",
     "inventoryLocated": 480,
-    "semanticEntriesReviewedInCorrection": 130,
+    "semanticEntriesReviewedInCorrection": 136,
     "sourceBlocksAssigned": 279,
     "existingRowAndCaseTargets": 31,
     "priorMappingAndHoldTargets": 25,
     "unassignedTargets": 0,
-    "sourceSupportedPrimaryEntries": 126,
+    "sourceSupportedPrimaryEntries": 132,
     "specificSourceDefinitionQuestions": 4,
-    "supportingDefinitionsRead": 123,
+    "supportingDefinitionsRead": 124,
     "originalRowTargetsReviewed": 4,
     "originalRowTargetsTotal": 31,
     "priorRecordsReconciled": 1,
     "priorRecordsTotal": 25,
-    "newCandidateRows": 126,
-    "informationReviewRows": 157
+    "newCandidateRows": 132,
+    "informationReviewRows": 163
   },
   "propertyCatalogue": {
     "total": 91,
@@ -312,13 +312,15 @@
       "nextSourceGroup": null,
       "reviewedObservables": 39,
       "totalObservables": 39,
-      "nextCheckpoint": "ISA-OBSERVABLES-PUBLISH",
+      "nextCheckpoint": null,
       "sourceReviewedObservables": 39,
       "workbookPublicationState": "COMPLETE"
     },
     {
       "id": "ISA-05",
-      "state": "NOT_STARTED_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION"
+      "state": "IN_PROGRESS_SOURCE_GROUPS_WITH_CATALOGUE_PUBLICATION",
+      "sourceReviewedCommands": 6,
+      "nextSourceGroup": "ISA-COMMANDS-IMAGE-SETTINGS"
     },
     {
       "id": "ISA-06",
@@ -377,8 +379,8 @@
   "registerOwnerPassMeaning": "Parent owner labels remain. remainingPropertyPasses is the active queue; propertyBatches preserves historical assignments only.",
   "currentReview": "ISA_Correction_Review_07NOV2026.md",
   "currentWorkbook": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
-  "currentEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
-  "currentBatchEvidence": "ISA_Observable_Catalogue_Evidence_07NOV2026.json",
+  "currentEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
+  "currentBatchEvidence": "ISA_Command_Catalogue_Evidence_07NOV2026.json",
   "currentBatchReport": null,
   "workbookSnapshot": {
     "checkpoint": "ISA-OBSERVABLES-PUBLISH",
@@ -386,8 +388,8 @@
     "informationRows": 157,
     "primaryReviewed": 130,
     "nextRefresh": "NEXT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT",
-    "currentlyMatchesReadableView": true,
-    "label": "Current consolidated workbook: 91 properties plus 39 observables; 157 information/review rows."
+    "currentlyMatchesReadableView": false,
+    "label": "Completed property/observable workbook snapshot: 130 reviewed primary entries and 157 information/review rows. Current GitHub command evidence and readable comparison are newer."
   },
   "publicationRule": "GitHub is authoritative for every source pass. Readable source decisions can advance ahead of a separately labeled workbook snapshot; never claim a workbook contains changes not yet exported.",
   "completedTaskRule": "ISA property catalogue source review, workbook integration and GitHub delivery remain COMPLETE. Atmospheric observable pass source review and GitHub text publication are COMPLETE. Four existing interpretation questions stay local. Excel snapshot cadence is planned; no completed work is repeated.",
@@ -397,7 +399,7 @@
     "task": "Six biological/chemical observable schema reviews, cumulative GitHub evidence/table and exact next-group routing",
     "counts_as_new_technical_iteration": true
   },
-  "completedCatalogueSourcePasses": 9,
+  "completedCatalogueSourcePasses": 10,
   "remainingPropertyCount": 0,
   "nextObservableSourceGroup": null,
   "publicationCheckpointsCompletedAfterRegrouping": 2,
@@ -507,10 +509,66 @@
     },
     {
       "id": "ISA-OBSERVABLES-PUBLISH",
-      "state": "NEXT",
+      "state": "COMPLETE",
       "count": 0,
       "sourceIds": [],
       "task": "Consolidated workbook integration and verification of all39 saved observable outcomes; no new source review."
+    }
+  ],
+  "commandCatalogue": {
+    "total": 96,
+    "reviewed": 6,
+    "remaining": 90,
+    "sourceSupportedOutcomes": 6,
+    "preciseInterpretationQuestions": 0,
+    "sourceReviewState": "IN_PROGRESS",
+    "workbookPublicationState": "AT_CATALOGUE_OR_SUBSTANTIAL_SECTION_CHECKPOINT",
+    "completed_source_groups": [
+      "ISA-COMMANDS-IMAGE-ADJUSTMENTS"
+    ]
+  },
+  "commandSourceGroups": [
+    {
+      "id": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "state": "COMPLETE",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-164",
+        "ISA-DMS-165",
+        "ISA-DMS-166",
+        "ISA-DMS-167",
+        "ISA-DMS-168",
+        "ISA-DMS-171"
+      ],
+      "nativeNames": [
+        "Adjust Brightness",
+        "Adjust Contrast",
+        "Adjust Focus",
+        "Adjust Gain",
+        "Adjust Iris Size",
+        "Adjust Zoom"
+      ]
+    },
+    {
+      "id": "ISA-COMMANDS-IMAGE-SETTINGS",
+      "state": "NEXT",
+      "count": 6,
+      "sourceIds": [
+        "ISA-DMS-184",
+        "ISA-DMS-186",
+        "ISA-DMS-190",
+        "ISA-DMS-192",
+        "ISA-DMS-193",
+        "ISA-DMS-205"
+      ],
+      "nativeNames": [
+        "Change Brightness",
+        "Change Contrast",
+        "Change Focus",
+        "Change Gain",
+        "Change Iris Size",
+        "Change Zoom"
+      ]
     }
   ]
 }

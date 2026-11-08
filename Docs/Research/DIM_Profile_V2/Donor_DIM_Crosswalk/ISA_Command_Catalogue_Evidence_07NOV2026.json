@@ -1,0 +1,756 @@
+{
+  "schema": "isa-command-catalogue-evidence.v1",
+  "date": "2026-11-07",
+  "source_edition": "ISA Data Model Specification 6.0r12, 31 October 2023",
+  "prior_evidence_files": [
+    "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+    "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+    "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+    "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+    "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+    "ISA_Property_Catalogue_Evidence_07NOV2026.json",
+    "ISA_Observable_Catalogue_Evidence_07NOV2026.json"
+  ],
+  "completed_passes": [
+    "ISA-COMMANDS-IMAGE-ADJUSTMENTS"
+  ],
+  "primary_records": [
+    {
+      "id": "ISA-CMD-164",
+      "entry_id": "ISA-DMS-164",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Brightness",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 23,
+      "pdf_pages": [
+        38,
+        38
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Brightness, printed pp.23–23 / PDF pp.38–38",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "84e46a1c6a07d68fdbbea846015837525d598c5e733ce5edbe7b59cff7a1adc1",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-164",
+      "proposed_label": "Rate-based brightness adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based brightness adjustment. POSITIVE means increase brightness; NEGATIVE means decrease brightness. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": "ISA-DMS-045",
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "increase brightness",
+        "NEGATIVE": "decrease brightness"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "Exact same-name entry in the completed property inventory; its saved interpretation is unchanged."
+    },
+    {
+      "id": "ISA-CMD-165",
+      "entry_id": "ISA-DMS-165",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Contrast",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 24,
+      "pdf_pages": [
+        39,
+        39
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Contrast, printed pp.24–24 / PDF pp.39–39",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "dd50a1876b5bc174bd19e70e79d103fbfe1e6d66b47447454f0b056df2f5c514",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-165",
+      "proposed_label": "Rate-based contrast adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based contrast adjustment. POSITIVE means increase contrast; NEGATIVE means decrease contrast. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": "ISA-DMS-050",
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "increase contrast",
+        "NEGATIVE": "decrease contrast"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "Exact same-name entry in the completed property inventory; its saved interpretation is unchanged."
+    },
+    {
+      "id": "ISA-CMD-166",
+      "entry_id": "ISA-DMS-166",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Focus",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 24,
+      "pdf_pages": [
+        39,
+        40
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Focus, printed pp.24–25 / PDF pp.39–40",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "da270100b194014d7c574621f4e1d17122defcb8a48b1e3d180f629dc5808fc9",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-166",
+      "proposed_label": "Rate-based focus adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based focus adjustment. POSITIVE means narrow focus; NEGATIVE means widen focus. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status. Preserve narrow/widen wording without translating it to near/far focus distance, focal length or field-of-view change.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": "ISA-DMS-062",
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "narrow focus",
+        "NEGATIVE": "widen focus"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "Exact same-name entry in the completed property inventory; its saved interpretation is unchanged."
+    },
+    {
+      "id": "ISA-CMD-167",
+      "entry_id": "ISA-DMS-167",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Gain",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 25,
+      "pdf_pages": [
+        40,
+        40
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Gain, printed pp.25–25 / PDF pp.40–40",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "17528c75edf94a464f9c36632f6bec5b57b6c5fd6fd0f724173cf928ad537a89",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-167",
+      "proposed_label": "Rate-based gain adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based gain adjustment. POSITIVE means increase gain; NEGATIVE means decrease gain. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status. No gain-in-decibels value or particular amplifier mechanism is supplied.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": null,
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "increase gain",
+        "NEGATIVE": "decrease gain"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "No same-named Gain property appears in the current 91-entry property inventory. No alternate gain-state mapping is asserted here; Auto Gain is a distinct source term."
+    },
+    {
+      "id": "ISA-CMD-168",
+      "entry_id": "ISA-DMS-168",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Iris Size",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 25,
+      "pdf_pages": [
+        40,
+        41
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Iris Size, printed pp.25–26 / PDF pp.40–41",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "55a3d2ab75eaf3ffe8f9ba695765cf1bc78b31851f5a0bafabce58075ca3d73f",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-168",
+      "proposed_label": "Rate-based iris size adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based iris size adjustment. POSITIVE means increase iris size; NEGATIVE means decrease iris size. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status. No f-number, aperture diameter or optical conversion is supplied.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": "ISA-DMS-069",
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "increase iris size",
+        "NEGATIVE": "decrease iris size"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "Exact same-name entry in the completed property inventory; its saved interpretation is unchanged."
+    },
+    {
+      "id": "ISA-CMD-171",
+      "entry_id": "ISA-DMS-171",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Adjust Zoom",
+      "element_kind": "command",
+      "native_type": "direction: Linear Direction; rate: Percent; duration: Secs",
+      "native_structure": "Command parameter set",
+      "source_standing": "CORE",
+      "section": "3.3",
+      "printed_page": 27,
+      "pdf_pages": [
+        42,
+        42
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.3 Adjust Zoom, printed pp.27–27 / PDF pp.42–42",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a1b9890b841b211e98c2005917a3d2e6218cbcc4de93274cc5c1a92e8a9f766f",
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-171",
+      "proposed_label": "Rate-based zoom adjustment request",
+      "navigation_group": "Configuration and control",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Declares a rate-based zoom adjustment. POSITIVE means zoom in; NEGATIVE means zoom out. The entry describes motion/change toward the named setting limits (100% and 0%) until stopped, limited by duration, or superseded. Optional rate defaults to 100% of the component maximum rate of change.",
+      "mapping_boundary": "A command specification/request role, not proof of invocation, acknowledgement, execution success or a changed measured property. Rate is a percent of maximum adjustment speed, not the target value or a physical-unit rate. A direction and duration-zero stop do not establish an executed stop. No command-specific Results table is declared in this entry; this does not mean the enclosing protocol has no response or status. No absolute magnification or optical-versus-digital zoom distinction is supplied.",
+      "dependency_terms": [
+        "Linear Direction",
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R019",
+      "related_existing_row_fit": "PARTIAL: supplies a particular control-request operation and parameter semantics. The general Request envelope and actual invocation/outcome remain separately assigned to ISA-06/ISA-07.",
+      "related_reported_property_entry": "ISA-DMS-121",
+      "common_parameter_schema": "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS",
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "direction_action": {
+        "POSITIVE": "zoom in",
+        "NEGATIVE": "zoom out"
+      },
+      "results": [],
+      "results_review": "No command-specific Results table occurs before the following command heading; no additional return value or result contract invented.",
+      "source_boundary_checked": "Complete entry read across page continuations; Adjust Level and Adjust Power on shared pages are not reviewed or counted in this pass.",
+      "reported_property_link_basis": "Exact same-name entry in the completed property inventory; its saved interpretation is unchanged."
+    }
+  ],
+  "supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-346",
+      "native_term": "Linear Direction",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 80,
+      "pdf_pages": [
+        95,
+        95
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Linear Direction [sealed], printed p.80 / PDF p.95",
+      "inspected_content_summary": "Sealed direction-of-change enum: NEGATIVE decreasing; NONE neither increasing nor decreasing; POSITIVE increasing. Context determines application. The six command definitions specify positive/negative actions; their documented stop uses duration zero. No additional NONE stop contract inferred.",
+      "source_span_sha256": "e71c1b5e55367debc5ef77d22e817aeb7ac5e2d561ab156a7a52bcee85842925",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "enum_values": [
+        {
+          "name": "NEGATIVE",
+          "meaning": "Decreasing in nature."
+        },
+        {
+          "name": "NONE",
+          "meaning": "Neither increasing nor decreasing."
+        },
+        {
+          "name": "POSITIVE",
+          "meaning": "Increasing in nature."
+        }
+      ],
+      "native_fields": []
+    }
+  ],
+  "reused_supporting_definitions": [
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54 / PDF p.69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Prior exact-edition scalar definition retained. Percent and Secs were additionally checked against their original text for rate/default and duration semantics."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55 / PDF p.70",
+      "previous_evidence_files": [
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Prior exact-edition scalar definition retained. Percent and Secs were additionally checked against their original text for rate/default and duration semantics."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50 / PDF p.65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-COMMANDS-IMAGE-ADJUSTMENTS",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Prior exact-edition scalar definition retained. Percent and Secs were additionally checked against their original text for rate/default and duration semantics."
+    }
+  ],
+  "shared_parameter_schemas": {
+    "ISA-CMD-IMAGE-ADJUSTMENT-PARAMETERS": {
+      "applies_to": [
+        "ISA-DMS-164",
+        "ISA-DMS-165",
+        "ISA-DMS-166",
+        "ISA-DMS-167",
+        "ISA-DMS-168",
+        "ISA-DMS-171"
+      ],
+      "parameters": [
+        {
+          "name": "direction",
+          "type": "Linear Direction",
+          "required": true,
+          "cardinality": "1",
+          "structure": "Single Value",
+          "source_role": "Direction of the adjustment; individual command prose gives positive and negative actions.",
+          "type_boundary": "The sealed shared type also contains NONE. These command definitions explain POSITIVE/NEGATIVE; do not silently substitute NONE for the explicitly documented duration-zero stop."
+        },
+        {
+          "name": "rate",
+          "type": "Percent",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "default_as_source": "100%",
+          "source_role": "Percentage of the component maximum rate of change for the named setting, not a target setting value.",
+          "type_boundary": "Generic Percent has an unbounded floating range and permits exceeding 100; no extra hard numeric validation range is invented for these command parameters."
+        },
+        {
+          "name": "duration",
+          "type": "Secs",
+          "required": false,
+          "cardinality": "0-1",
+          "structure": "Single Value",
+          "omission_semantics": "Execute until a limit is reached unless superseded by a subsequent command.",
+          "zero_semantics": "Immediately stop adjusting.",
+          "source_role": "Requested execution interval in floating-point seconds with source millisecond resolution; omission differs from explicit zero.",
+          "type_boundary": "Do not treat omission as zero or a zero duration as an invalid positive-only interval. No behavior for negative duration is asserted."
+        }
+      ],
+      "purpose": "Shared signature, separately traceable controlled targets. These candidate rows need not become six unrelated model classes.",
+      "command_specific_results": "No Results table in these six entries."
+    }
+  },
+  "source_inspection": {
+    "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+    "primary_text": "Original DMS 6.0r12 §3.3 printed pp.23–27 / PDF38–42, six exact command definitions and complete parameter tables. Following heading on PDF43 checked for the Adjust Zoom boundary.",
+    "primary_text_pages": [
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "primary_pages_visually_inspected": [
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "additional_text_pages": [
+      43,
+      69,
+      70,
+      95
+    ],
+    "new_supporting_definitions": [
+      "Linear Direction"
+    ],
+    "new_supporting_count": 1,
+    "unique_supporting_total": 124,
+    "reused_types": [
+      "Percent",
+      "Secs",
+      "Float"
+    ],
+    "source_limits": "No command invocation, equipment movement, absolute setting, successful response or undocumented parameter constraint inferred. Other commands sharing the pages remain unreviewed."
+  },
+  "source_inspections_by_pass": {
+    "ISA-COMMANDS-IMAGE-ADJUSTMENTS": {
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text": "Original DMS 6.0r12 §3.3 printed pp.23–27 / PDF38–42, six exact command definitions and complete parameter tables. Following heading on PDF43 checked for the Adjust Zoom boundary.",
+      "primary_text_pages": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "primary_pages_visually_inspected": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "additional_text_pages": [
+        43,
+        69,
+        70,
+        95
+      ],
+      "new_supporting_definitions": [
+        "Linear Direction"
+      ],
+      "new_supporting_count": 1,
+      "unique_supporting_total": 124,
+      "reused_types": [
+        "Percent",
+        "Secs",
+        "Float"
+      ],
+      "source_limits": "No command invocation, equipment movement, absolute setting, successful response or undocumented parameter constraint inferred. Other commands sharing the pages remain unreviewed."
+    }
+  },
+  "specific_questions": [],
+  "case_checks": [
+    "None of the four equipment examples is asserted to implement or execute these six native ISA commands.",
+    "All 73 existing case statements and all non-ISA table values are preserved; no setting, adjustment rate or duration is synthesized.",
+    "Command descriptions remain distinct from reported properties and owner adoption; Bennett historical means and unknown original resultTime remain unchanged."
+  ],
+  "case_checks_by_pass": {
+    "ISA-COMMANDS-IMAGE-ADJUSTMENTS": [
+      "None of the four equipment examples is asserted to implement or execute these six native ISA commands.",
+      "All 73 existing case statements and all non-ISA table values are preserved; no setting, adjustment rate or duration is synthesized.",
+      "Command descriptions remain distinct from reported properties and owner adoption; Bennett historical means and unknown original resultTime remain unchanged."
+    ]
+  },
+  "mapping_note": "Six source-supported rate-based control-request roles under Configuration & Control. These are proposals for owner review, not implemented commands or evidence that generic Request/Response reconciliation is finished. Common parameter structure is stored once as a shared schema with individual source locators and action meanings.",
+  "workbook_snapshot": {
+    "file": "ISA_Correction_Review_Observables_07NOV2026.xlsx",
+    "checkpoint": "ISA-OBSERVABLES-PUBLISH",
+    "sha256": "68deb7b41c2fcfbf3350f7260929c560cfb81963246acaa0d3f134f1281b27a6",
+    "information_rows": 157,
+    "primary_reviewed": 130,
+    "source_supported": 126,
+    "questions": 4,
+    "currently_matches_readable_view": false
+  },
+  "next_source_pass": "ISA-COMMANDS-IMAGE-SETTINGS",
+  "next_action": "Review the six named Change counterparts from the existing command inventory; do not repeat Adjust definitions.",
+  "validation": {
+    "changed_primary_ids": [
+      "ISA-DMS-164",
+      "ISA-DMS-165",
+      "ISA-DMS-166",
+      "ISA-DMS-167",
+      "ISA-DMS-168",
+      "ISA-DMS-171"
+    ],
+    "reviewed_total": 136,
+    "supported_total": 132,
+    "specific_questions_retained": 4,
+    "specific_questions_added": 0,
+    "specific_questions_total": 4,
+    "command_entries_reviewed": 6,
+    "command_entries_total": 96,
+    "command_unreviewed": 90,
+    "property_outcomes_unchanged": 91,
+    "observable_outcomes_unchanged": 39,
+    "information_review_rows": 163,
+    "new_candidate_rows": 6,
+    "non_ISA_and_equipment_value_changes": 0,
+    "new_workbook_exports": 0,
+    "new_supporting_types": 1,
+    "unique_supporting_definitions": 124,
+    "later_catalogue_review_states_unchanged": true,
+    "coverage_and_prior_preservation": "PASS"
+  }
+}
