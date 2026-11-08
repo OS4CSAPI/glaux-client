@@ -49,6 +49,25 @@
         "ISA-DMS-151",
         "ISA-DMS-159"
       ]
+    },
+    {
+      "id": "ISA-04-CONTEXT",
+      "status": "COMPLETE",
+      "assigned": 7,
+      "reviewed": 7,
+      "supported": 7,
+      "new_questions": 0,
+      "core": 5,
+      "accepted_extensions": 2,
+      "primary_ids": [
+        "ISA-DMS-131",
+        "ISA-DMS-140",
+        "ISA-DMS-142",
+        "ISA-DMS-145",
+        "ISA-DMS-146",
+        "ISA-DMS-147",
+        "ISA-DMS-160"
+      ]
     }
   ],
   "primary_records": [
@@ -665,6 +684,279 @@
       "reviewed_on": "2026-11-07",
       "related_existing_dim_row": "S06-R012",
       "related_existing_row_fit": "PARTIAL: a specific typed observation-content field supports the generic reported-output-field concept; it is not itself an observing act, physical component or channel."
+    },
+    {
+      "id": "ISA-OBS-131",
+      "entry_id": "ISA-DMS-131",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "BSO",
+      "element_kind": "observable",
+      "native_type": "BSO ID",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 19,
+      "pdf_pages": [
+        34,
+        34
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 BSO, printed p.19 / PDF p.34",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "a7900ddc86d5603e437373401b768301b965dc1a4565bc5bcde80dfd891076b6",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-131",
+      "proposed_label": "Observed-entity battle-space identifier",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "An assigned unique identifier for a confirmed or suspected battlefield entity. BSO ID is a String identifying a unique battle space object.",
+      "mapping_boundary": "Identifies the observed entity, not the observing component, its UCI, hardware serial number, the Event ID or the Standard Identity classification. No cross-authority global uniqueness mechanism, mandatory syntax, identity authentication or confirmed real-world existence is established by the cited definition.",
+      "dependency_terms": [
+        "BSO ID",
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-140",
+      "entry_id": "ISA-DMS-140",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Comment",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Comment, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1a4d8faa88227e5c9c1fb126f594082c622da1499245bb1271a7e90fc5d3726e",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-140",
+      "proposed_label": "Human-readable observation comment",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Human-readable commentary about the observation, represented as one String value.",
+      "mapping_boundary": "Not a structured measured result, machine decision code, component description, author identity, modification history or proof that the comment is correct. The source defines no mandatory comment vocabulary.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-142",
+      "entry_id": "ISA-DMS-142",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Event Type Other Reason",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Event Type Other Reason, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "749d68a3db0700b12c884c53ce234658e355d1ca04f1a6dbaadd05f857a81297",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-142",
+      "proposed_label": "Explanation for OTHER event type",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Human-readable reason why this Event used the OTHER Event Type. TEST is a suggested String value, not an exhaustive vocabulary. The separate sealed Event Type enum includes ALARM, ALERT, DETECTION, MEASUREMENT and OTHER.",
+      "mapping_boundary": "Retain its Accepted-extension status. An explanatory String does not add a new member to the sealed Event Type enum, establish a test was actually performed, or substitute for the event-generation method or a quality flag.",
+      "dependency_terms": [
+        "String",
+        "Event Type"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-145",
+      "entry_id": "ISA-DMS-145",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Identity",
+      "element_kind": "observable",
+      "native_type": "Standard Identity",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Identity, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "7b142b3478699dcb396c1c8de5f9519fd15ee49f8b92a4b328e62e5eb0753751",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-145",
+      "proposed_label": "Reported tactical identity of observed entity",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Standardized descriptive identity of the observed entity using Standard Identity: a required SIDC symbol and optional confidence percentage. The composite references MIL-STD-2525C, supplies default symbol SU*P------*****, and documents optional confidence default100 plus high/medium/low mappings of90/66/33 percent.",
+      "mapping_boundary": "This is symbolic/tactical classification, not the unique BSO ID, component UCI, serial number, login or cryptographic identity. Preserve required-field/default wording without claiming an omitted symbol was transmitted. Default confidence100 is not measured certainty; the source mapping is specific to Standard Identity, not a universal conversion for other confidence or quality fields. Do not replace the cited SIDC edition with another code system.",
+      "dependency_terms": [
+        "Standard Identity",
+        "SIDC",
+        "Percent",
+        "String",
+        "Float"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-146",
+      "entry_id": "ISA-DMS-146",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Media",
+      "element_kind": "observable",
+      "native_type": "Resource Descriptor",
+      "native_structure": "List",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Media, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "b1eff69bf30eb7059e3087080a0570d9c919af1e97686f15683b1178e2439818",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-146",
+      "proposed_label": "Media resources associated with observation",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "A list of descriptors for resources generated for, or otherwise relevant to, the observation; examples include video, audio, images, text and raw data. Each descriptor requires resource type and URL, permits title/created/lastmod, and retains a required zero-or-more metadata list. Resource Type requires primary and secondary strings and a zero-or-more parameters list.",
+      "mapping_boundary": "Not the component Resources catalogue, physical equipment inventory, inline payload, measurement schema or proof the URL is reachable or authenticated. Resource creation/modification times are not automatically observation phenomenonTime or resultTime. A resource may be relevant without being generated by the observing component. Preserve metadata/parameter typing and source subtype defaults; do not invent provenance, media contents or equipment links.",
+      "dependency_terms": [
+        "Resource Descriptor",
+        "Resource Type",
+        "URL",
+        "String",
+        "UTC",
+        "Secs",
+        "Float",
+        "Name Value Pair",
+        "Wildcard"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-147",
+      "entry_id": "ISA-DMS-147",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Method",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "ACCEPTED_EXTENSION",
+      "section": "3.2",
+      "printed_page": 20,
+      "pdf_pages": [
+        35,
+        35
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Method, printed p.20 / PDF p.35",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "1ae077ed5a60d7d79f243cf1ec48faad77f338fe0b5f773199f9ee2dd9d43d36",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-147",
+      "proposed_label": "Reported primary event-generation method",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "The primary method used to generate the event, expressed as a String. Source suggestions include MANUAL, ATR_V, ATR_T, MAGNETIC, ACOUSTIC, FUSION, RADAR and LIDAR.",
+      "mapping_boundary": "Retain Accepted-extension standing and an open String: the suggestions are not a sealed enum. A reported method label does not define an executable algorithm, reusable observing procedure, configured component capability, authenticated performer or complete processing/provenance chain.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
+    },
+    {
+      "id": "ISA-OBS-160",
+      "entry_id": "ISA-DMS-160",
+      "source_document": "DMS",
+      "source_revision": "6.0r12 / 31 October 2023",
+      "native_term": "Verified By",
+      "element_kind": "observable",
+      "native_type": "String",
+      "native_structure": "Single Value",
+      "source_standing": "CORE",
+      "section": "3.2",
+      "printed_page": 22,
+      "pdf_pages": [
+        37,
+        37
+      ],
+      "source_locator": "ISA DMS 6.0r12 §3.2 Verified By, printed p.22 / PDF p.37",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "source_span_sha256": "509bf8608a8e06e48a1802668f7f31dcea2aa99692ae4e99d4bfb20092ab9202",
+      "review_pass": "ISA-04-CONTEXT",
+      "review_status": "REVIEWED_SOURCE_SUPPORTED",
+      "disposition": "CANDIDATE_ROW",
+      "target_row": "ISA-C-160",
+      "proposed_label": "Attributed verifier of event contents",
+      "navigation_group": "Channels, outputs and observations",
+      "mapping_relation": "DIRECT",
+      "original_meaning": "Identity of the person who verified the accuracy of the contents of the containing Event message, represented as a String.",
+      "mapping_boundary": "Attribution is not a digital signature, certificate, role/permission, verification timestamp, described checking procedure, independent accuracy assessment or authenticated proof. Do not infer a machine UCI, quality-control code or completed external certification from a person-name field.",
+      "dependency_terms": [
+        "String"
+      ],
+      "question_id": null,
+      "model_decision": "FOR_OWNER_REVIEW",
+      "reviewed_on": "2026-11-07",
+      "related_existing_dim_row": "S06-R012",
+      "related_existing_row_fit": "PARTIAL: a specific source-defined event-content field supports the generic reported-output-field concept; it does not establish an observing act, physical channel or blanket provenance equivalence."
     }
   ],
   "supporting_definitions": [
@@ -895,6 +1187,44 @@
       "source_span_sha256": "09b4d9759346847a0efd8fe9f1a3328b7f38408b31b25fb2c625319dee1b5fae",
       "later_catalogue_pass_completed": false,
       "review_pass": "ISA-04-SPATIAL"
+    },
+    {
+      "entry_id": "ISA-DMS-265",
+      "native_term": "BSO ID",
+      "element_kind": "data element",
+      "section": "4.2",
+      "printed_page": 51,
+      "pdf_pages": [
+        66,
+        66
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-07",
+      "source_locator": "ISA DMS 6.0r12 §4.2 BSO ID, printed p.51, PDF 66–66",
+      "inspected_content_summary": "Scalar String identifying a unique battle space object, standard since6.0. The definition supplies no additional range, unit, syntax, issuer or global reconciliation rule.",
+      "source_span_sha256": "3e971bc869e789383ed2b6793450bb2899436df7bba1b326eae1a0c4d9aad66d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-CONTEXT"
+    },
+    {
+      "entry_id": "ISA-DMS-343",
+      "native_term": "Event Type",
+      "element_kind": "data element",
+      "section": "8.1",
+      "printed_page": 79,
+      "pdf_pages": [
+        94,
+        94
+      ],
+      "source_standing": "CORE",
+      "review_use": "SUPPORTING_DEFINITION_READ",
+      "assigned_full_review_pass": "ISA-09",
+      "source_locator": "ISA DMS 6.0r12 §8.1 Event Type, printed p.79, PDF 94–94",
+      "inspected_content_summary": "Sealed enumeration, standard since6.0: ALARM (property criteria), ALERT (measurement/detection criteria), DETECTION (identified presence), MEASUREMENT (requested observation, including timer request), OTHER (reason not otherwise provided). The separate Accepted OTHER-reason String does not extend this enum.",
+      "source_span_sha256": "b6510f6b56d89aa5403e5d61d9e0aa1348b47c5fc94775d36a7374609d32333d",
+      "later_catalogue_pass_completed": false,
+      "review_pass": "ISA-04-CONTEXT"
     }
   ],
   "reused_supporting_definitions": [
@@ -1245,53 +1575,240 @@
       "review_pass": "ISA-04-SPATIAL",
       "later_catalogue_pass_completed": false,
       "reuse_basis": "Same-edition source evidence; Geographic Shape, Geographic Position, Rotation, Velocity and polygon fields also inspected again at their original pages for this context."
+    },
+    {
+      "entry_id": "ISA-DMS-261",
+      "native_term": "String",
+      "source_locator": "ISA DMS 6.0r12 §4.1 String, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-445",
+      "native_term": "Standard Identity",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Standard Identity, printed p.113, PDF 128–128",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-294",
+      "native_term": "SIDC",
+      "source_locator": "ISA DMS 6.0r12 §4.2 SIDC, printed p.55, PDF 70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-289",
+      "native_term": "Percent",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Percent, printed p.54, PDF 69–69",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-259",
+      "native_term": "Float",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Float, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-439",
+      "native_term": "Resource Descriptor",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Descriptor, printed p.110, PDF 125–126",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-440",
+      "native_term": "Resource Type",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Resource Type, printed p.111, PDF 126–126",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-297",
+      "native_term": "URL",
+      "source_locator": "ISA DMS 6.0r12 §4.2 URL, printed p.55, PDF 70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-448",
+      "native_term": "UTC",
+      "source_locator": "ISA DMS 6.0r12 §8.3 UTC, printed p.114, PDF 129–129",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-295",
+      "native_term": "Secs",
+      "source_locator": "ISA DMS 6.0r12 §4.2 Secs, printed p.55, PDF 70–70",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-426",
+      "native_term": "Name Value Pair",
+      "source_locator": "ISA DMS 6.0r12 §8.3 Name Value Pair, printed p.105, PDF 120–120",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
+    },
+    {
+      "entry_id": "ISA-DMS-262",
+      "native_term": "Wildcard",
+      "source_locator": "ISA DMS 6.0r12 §4.1 Wildcard, printed p.50, PDF 65–65",
+      "previous_evidence_files": [
+        "ISA02_Identity_and_Properties_Evidence_07NOV2026.json",
+        "ISA03A_Status_Name_State_Evidence_07NOV2026.json",
+        "ISA03B_Ownership_Versions_Support_Evidence_07NOV2026.json",
+        "ISA03C_Position_Orientation_Evidence_07NOV2026.json",
+        "ISA03D_Relationship_Visible_Evidence_07NOV2026.json",
+        "ISA_Property_Catalogue_Evidence_07NOV2026.json"
+      ],
+      "review_pass": "ISA-04-CONTEXT",
+      "later_catalogue_pass_completed": false,
+      "reuse_basis": "Same-edition source evidence; Standard Identity and Resource Descriptor/Resource Type additionally inspected as original page images128,125–126. SIDC/String original text checked; no prior property interpretation changed."
     }
   ],
   "source_inspection": {
-    "primary_text": "Original DMS6.0r12 §3.2 printed pp.18–22 / PDF33–37: all seven complete source definitions and source standing inspected; other entries sharing these pages not advanced.",
+    "primary_text": "Original DMS6.0r12 §3.2 printed pp.19–20,22 / PDF34–35,37: seven complete definitions and source standing read; neighbouring catalogue entries not advanced.",
     "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
     "primary_text_pages": [
-      33,
       34,
       35,
-      36,
       37
     ],
     "type_pages_visually_inspected": [
-      107,
-      108,
-      109,
-      110,
+      125,
       126,
-      127,
-      129
+      128
     ],
     "additional_type_text_pages": [
-      99
+      65,
+      66,
+      70,
+      94
     ],
     "new_supporting_definitions": [
-      "Geographic Arc",
-      "Geographic Ellipse",
-      "Geographic Polyline",
-      "Ellipsoid"
+      "BSO ID",
+      "Event Type"
     ],
-    "new_supporting_count": 4,
-    "unique_supporting_total": 74,
+    "new_supporting_count": 2,
+    "unique_supporting_total": 76,
     "reused_types": [
-      "Geographic Shape",
-      "Geographic Polygon",
-      "Geographic Position",
-      "Measured Meters",
-      "Measured Degrees",
-      "Meters",
-      "Degrees",
+      "String",
+      "Standard Identity",
+      "SIDC",
+      "Percent",
       "Float",
-      "Rotation",
-      "Velocity",
-      "Measured Mpsec",
-      "Mpsec"
+      "Resource Descriptor",
+      "Resource Type",
+      "URL",
+      "UTC",
+      "Secs",
+      "Name Value Pair",
+      "Wildcard"
     ],
-    "source_limits": "No numeric reference-frame conversion, pure-point alternative for Geographic Shape, installed case position, forecast, or physical action inferred. Original optional/defaulted fields retain their distinction from supplied measurements."
+    "source_limits": "No issuer/authentication guarantee, complete procedure, cryptographic verification, observation-time equivalence or installed-case value inferred. Required/default source wording is retained without claiming a default was measured or transmitted."
   },
   "source_inspections_by_pass": [
     {
@@ -1387,6 +1904,48 @@
         "Mpsec"
       ],
       "source_limits": "No numeric reference-frame conversion, pure-point alternative for Geographic Shape, installed case position, forecast, or physical action inferred. Original optional/defaulted fields retain their distinction from supplied measurements."
+    },
+    {
+      "review_pass": "ISA-04-CONTEXT",
+      "primary_text": "Original DMS6.0r12 §3.2 printed pp.19–20,22 / PDF34–35,37: seven complete definitions and source standing read; neighbouring catalogue entries not advanced.",
+      "source_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+      "primary_text_pages": [
+        34,
+        35,
+        37
+      ],
+      "type_pages_visually_inspected": [
+        125,
+        126,
+        128
+      ],
+      "additional_type_text_pages": [
+        65,
+        66,
+        70,
+        94
+      ],
+      "new_supporting_definitions": [
+        "BSO ID",
+        "Event Type"
+      ],
+      "new_supporting_count": 2,
+      "unique_supporting_total": 76,
+      "reused_types": [
+        "String",
+        "Standard Identity",
+        "SIDC",
+        "Percent",
+        "Float",
+        "Resource Descriptor",
+        "Resource Type",
+        "URL",
+        "UTC",
+        "Secs",
+        "Name Value Pair",
+        "Wildcard"
+      ],
+      "source_limits": "No issuer/authentication guarantee, complete procedure, cryptographic verification, observation-time equivalence or installed-case value inferred. Required/default source wording is retained without claiming a default was measured or transmitted."
     }
   ],
   "specific_questions": [],
@@ -1396,7 +1955,7 @@
     "Campbell ClimaVue environmental fields remain separate from logger Status.PanelTemp; no native ISA encoding or fielded installation inferred.",
     "Bennett original ATemp mean events concern ambient air, not ISA internal Temperature; exact original resultTime, producer attribution and probe position remain unchanged. No new equipment values were added."
   ],
-  "mapping_note": "Fifteen reviewed observable definitions now support explicit environmental and spatial reported-information roles. Newly reviewed spatial concepts retain observed-entity/event versus observing-component scope. Native terms shared with properties are qualified by their source kind; candidate rows are not automatically adopted requirements. Existing aggregate-row reconciliation remains assigned.",
+  "mapping_note": "Twenty-two reviewed observables now support explicit atmospheric, spatial and event-context information roles. BSO entity identifier, tactical Identity, free-text context, event-associated Media and verifier attribution remain distinct. These are traceable candidate information rows, not automatic adopted DIM requirements; aggregate-row reconciliation remains assigned.",
   "workbook_snapshot": {
     "file": "ISA_Correction_Review_Properties_07NOV2026.xlsx",
     "checkpoint": "ISA-PROPERTIES-PUBLISH",
@@ -1407,32 +1966,32 @@
     "questions": 4,
     "currently_matches_readable_view": false
   },
-  "next_source_pass": "ISA-04-CONTEXT",
-  "next_action": "ISA-04-CONTEXT",
+  "next_source_pass": "ISA-04-BIO-CHEM",
+  "next_action": "ISA-04-BIO-CHEM",
   "validation": {
     "changed_primary_ids": [
-      "ISA-DMS-122",
-      "ISA-DMS-133",
-      "ISA-DMS-141",
-      "ISA-DMS-149",
-      "ISA-DMS-150",
-      "ISA-DMS-151",
-      "ISA-DMS-159"
+      "ISA-DMS-131",
+      "ISA-DMS-140",
+      "ISA-DMS-142",
+      "ISA-DMS-145",
+      "ISA-DMS-146",
+      "ISA-DMS-147",
+      "ISA-DMS-160"
     ],
-    "reviewed_total": 106,
-    "supported_total": 102,
+    "reviewed_total": 113,
+    "supported_total": 109,
     "specific_questions_retained": 4,
     "specific_questions_added": 0,
     "specific_questions_total": 4,
-    "observable_entries_reviewed": 15,
+    "observable_entries_reviewed": 22,
     "observable_entries_total": 39,
     "property_outcomes_unchanged": 91,
-    "information_review_rows": 133,
+    "information_review_rows": 140,
     "new_candidate_rows": 7,
     "non_ISA_and_equipment_value_changes": 0,
     "new_workbook_exports": 0,
-    "new_supporting_types": 4,
-    "unique_supporting_definitions": 74,
+    "new_supporting_types": 2,
+    "unique_supporting_definitions": 76,
     "later_catalogue_review_states_unchanged": true,
     "coverage_and_prior_preservation": "PASS"
   },
@@ -1443,6 +2002,14 @@
         "No original equipment or donor display value changed; geographic observables do not turn reference-design specifications into installed ISA outputs.",
         "Bennett station coordinates and probe serial identities do not establish observed-entity position, impact/origin location or exact sensor placement. Existing two source means/four representations and unknown original resultTime remain unchanged.",
         "Component Position/Velocity and Orientation properties stay distinct from observed-entity Position/Velocity and relative Bearing. View Area and Zones remain component-facing spatial roles, not replacements for Area."
+      ]
+    },
+    {
+      "review_pass": "ISA-04-CONTEXT",
+      "checks": [
+        "The four source cases retain all existing values and evidence status; none is assigned an invented BSO ID, tactical classification, verifier, event-generation method or live media URL.",
+        "Bennett serials/station ID and source QA tokens do not establish a BSO ID or authenticated Verified By attribution. Two original NOAA means/four digital representations and unknown original resultTime remain unchanged.",
+        "Component Identity and Resources property meanings stay distinct from observed-entity Identity and event-associated Media; no other donor correspondence was added."
       ]
     }
   ]

@@ -1,12 +1,12 @@
 # ISA coverage correction — current execution plan
 
-**CURRENT — Property catalogue COMPLETE. Atmospheric and spatial observable groups COMPLETE (15/39). Next: ISA-04-CONTEXT — seven event identity/context observables only.**
+**CURRENT — Property catalogue COMPLETE. Atmospheric, spatial and event-context observable groups COMPLETE (22/39). Next: ISA-04-BIO-CHEM — six biological/chemical observables only.**
 
 [Property workbook snapshot](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Property publication record](ISA_Properties_Publication_Record_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
-All 91 property outcomes remain complete. The eight atmospheric and seven spatial observables add 15 supported source outcomes: **106 primary entries reviewed / 102 supported / four unchanged questions**. The current text has **133 information/review rows**; the preserved Excel snapshot contains 91 properties and 118 rows. The spatial group comprised five core entries and two Accepted extensions; its four newly inspected supporting definitions remain separate from later full type-catalogue review.
+All91 property outcomes remain complete. The observable source reviews now cover22 entries: **113 primary entries reviewed /109 supported /four unchanged questions**. Current text has **140 information/review rows**; Excel remains the91-property/118-row snapshot. Event context added seven supported outcomes (five core,two Accepted extensions) and two supporting definitions, tracked separately from later full-type reviews.
 
-**Next group: BSO, Comment, Event Type Other Reason, Identity, Media, Method and Verified By** (ISA-DMS-131,140,142,145,146,147,160). Review exact definitions and necessary dependencies, preserve subject/extension standing, update the same GitHub evidence/table/coverage and stop. No property rereview, next-group semantic assumption, unrelated donor work, new publication infrastructure or per-group Excel release. The remaining 24 observable entries remain assigned in the inventory.
+**Next group: Biological Contour Map, Biological Level, Biological Reading, Chemical Contour Map, Chemical Level, Chemical Reading** (ISA-DMS-134–139). Read exact original definitions and their necessary types, record defensible outcomes and update the same GitHub evidence/table/coverage. Stop after those six. Remaining17 observable entries stay inventory-assigned. No property rereview, other donor, automatic model adoption, per-group Excel release or new publication infrastructure.
 
 ## Retained policy and completed property schedule
 The property-queue and snapshot descriptions below record the now-completed cadence. The current progress and paragraph above provide the sole next action.
@@ -15,7 +15,7 @@ The property-queue and snapshot descriptions below record the now-completed cade
 **Current integrated checkpoint:** Property catalogue COMPLETE. Both the workbook and readable comparison contain118 information/review rows and all91 reviewed property outcomes. No further property-source pass is due.
 
 
-**7 November 2026 · Property catalogue COMPLETE. Current workbook and table both contain all91 reviewed outcomes. Next: eight atmospheric observables.**
+**Historical property checkpoint:** the workbook contains all91 property outcomes. The current observable-source queue is stated above and in progress; this retained section records the completed property schedule.
 
 [Progress](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Published workbook](ISA_Correction_Review_Properties_07NOV2026.xlsx) · [Current readable comparison](ISA_Correction_Review_07NOV2026.md) · [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [Lessons](LESSONS_Donor_Review_Process.md).
 
@@ -23,13 +23,13 @@ The property-queue and snapshot descriptions below record the now-completed cade
 
 The owner rejected both the original oversized twelve-prompt estimate and the subsequent proliferation of tiny prompts with repeated release work. The correction must retain coverage while removing redundant delivery overhead. **Do not restart completed work, launch another planning campaign, or recreate a publisher/workflow for each group of definitions.**
 
-At the regrouping checkpoint there were **26 remaining properties**. Seventeen of those26 are now reviewed; **nine remain** in the final source pass. The working schedule for this bounded remainder is **three source-and-readable-table passes, then one consolidated workbook/verification checkpoint**. This is not a new estimate for all remaining ISA catalogues. Every source pass is committed to GitHub; it is not a sandbox-only draft or work held back until final publication.
+At the regrouping checkpoint there were **26 remaining properties**. All26 regrouped properties and their workbook checkpoint are complete. The working schedule for this bounded remainder is **three source-and-readable-table passes, then one consolidated workbook/verification checkpoint**. This is not a new estimate for all remaining ISA catalogues. Every source pass is committed to GitHub; it is not a sandbox-only draft or work held back until final publication.
 
 The old requirement to export/render/transfer the complete Excel workbook, create a batch-specific script/workflow, write a standalone report and update every index after every two to six definitions is withdrawn. GitHub persistence, original-source checking and coverage tracking remain mandatory. The earlier numeric limits addressed the wrong bottleneck and are not universal scientific rules.
 
 ## 2. Exact remaining-property queue
 
-The 26 scheduled IDs below (seventeen now complete, nine remaining) are the union of the formerly unstarted ISA-03E–J assignments. They are assigned exactly once. All source decisions through ISA-03D remain complete; Model and Serial Number remain credited to ISA-02.
+The 26 historical scheduled IDs below (all complete) are the union of the formerly unstarted ISA-03E–J assignments. They are assigned exactly once. All source decisions through ISA-03D remain complete; Model and Serial Number remain credited to ISA-02.
 
 | Review pass | Source-native entries | ISA-DMS ID suffixes | Count |
 | --- | --- | --- | ---: |
@@ -48,7 +48,7 @@ Update the **existing coverage/evidence data and cumulative GitHub-readable comp
 
 Do not create another standalone narrative report, another detailed lessons entry or another batch-specific workflow merely because a prompt ended. Reuse existing source/evidence conventions, the exact-file assembler and established verification functions. The current assembler already exists; this plan does not commission new export infrastructure.
 
-**Workbook cadence:** the current consolidated property workbook contains all91 reviewed outcomes and matches the readable table. Later coherent source groups may advance the text before the next catalogue/substantial-section workbook refresh. Label that difference accurately. Preserve historical snapshots and reuse saved evidence; a scheduled refresh is not a failure or a reason to repeat completed source review.
+**Workbook cadence:** the consolidated property workbook contains all91 property outcomes; current observable text is newer and explicitly labeled. Later coherent source groups may advance the text before the next catalogue/substantial-section workbook refresh. Label that difference accurately. Preserve historical snapshots and reuse saved evidence; a scheduled refresh is not a failure or a reason to repeat completed source review.
 
 GitHub remains the durable home throughout. A local attachment does not replace a commit. A failed publication is a specific repair action; no silent claim of published files, no repeated full-source review and no unbounded debugging loop.
 
@@ -76,4 +76,4 @@ A source pass is complete when its named assignments have supported dispositions
 
 This is the single active execution description. The superseded per-mini-batch rules and contradictory CURRENT/NEXT banners remain available in [the pre-revision plan](https://github.com/OS4CSAPI/glaux-client/blob/c34f7b1560a920a85c9061deec63c6dd6ab49e4b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md), not as competing live instructions.
 
-The execution-cadence amendment remains in force. All three grouped source passes are complete in the cumulative evidence/register/readable view. **The consolidated property workbook checkpoint is COMPLETE. Next: Atmospheric Cloud Coverage, Atmospheric Dew Point, Atmospheric Humidity, Atmospheric Precipitation, Atmospheric Pressure, Atmospheric Temperature, Atmospheric Visibility, Atmospheric Wind only.** The source passes keep direct GitHub persistence; subsequent workbook refreshes remain at catalogue/substantial-section checkpoints.
+The execution-cadence amendment remains in force. All three grouped source passes are complete in the cumulative evidence/register/readable view. **The property workbook checkpoint is COMPLETE. Follow the current observable-source group above, not a historical property checkpoint instruction.** The source passes keep direct GitHub persistence; subsequent workbook refreshes remain at catalogue/substantial-section checkpoints.
