@@ -23,7 +23,7 @@ env:
     sha=lambda b:hashlib.sha256(b).hexdigest()
     assert sha(encoded)==checksum,'Reviewed checkpoint checksum differs'
     p=json.loads(lzma.decompress(base64.b64decode(encoded,validate=True)))
-    publishing_workbook=p['checkpoint'] in {'ISA-PROPERTIES-PUBLISH','ISA-OBSERVABLES-PUBLISH'}
+    publishing_workbook=p['checkpoint'] in {'ISA-PROPERTIES-PUBLISH','ISA-OBSERVABLES-PUBLISH','ISA-COMMANDS-PUBLISH'}
     allowed={'text_delta','xlsx_export'} if publishing_workbook else {'text_delta'}
     assert all(v['kind'] in allowed for v in p['files'].values()),'Unexpected artifact kind'
     assert all(Path(n).suffix in ({'.md','.json','.csv','.xlsx'} if publishing_workbook else {'.md','.json','.csv'}) for n in p['files']),'Unexpected output suffix'
@@ -69,7 +69,7 @@ env:
         assert list(current)==list(previous) and len(current)==12
         for sheet in ['Source Blocks','Earlier Findings','Sources','Legend','Questions']:
             for address,value in previous[sheet].items():
-                if value[0] is not None:
+                if value[0] is not None and not (sheet=='Questions' and address in {'A1','A2'}):
                     assert current[sheet].get(address)==value,('Preserved sheet',sheet,address)
         for sheet in ['Row Coverage','ISA Evidence','Dependencies']:
             for address,value in previous[sheet].items():
@@ -116,6 +116,48 @@ env:
             for address,wanted in {'B18':91,'B19':0,'B22':39,'B24':0,'B25':123,'B27':1,'B28':39,'B29':0,'B31':1,'B32':157,'B33':0}.items():
                 assert float(current['Validation'][address][0])==wanted,('Validation',address)
             assert current['Validation']['B20'][0]=='79 / 12' and current['Validation']['B30'][0]=='19 / 20'
+        if p['checkpoint']=='ISA-COMMANDS-PUBLISH':
+            commands=[x for x in r['dms_entries'] if x['source_kind']=='command']
+            assert len(commands)==len(e['primary_records'])==96
+            assert {x['id'] for x in commands}=={x['entry_id'] for x in e['primary_records']}
+            assert all(x['semantic_review_status'].startswith('REVIEWED_') for x in commands)
+            assert sum(x['semantic_review_status']=='REVIEWED_SOURCE_SUPPORTED' for x in commands)==94
+            assert e['source_wording_notes']==earlier_e['source_wording_notes']
+            assert s['commandCatalogue']['workbookPublicationState']=='COMPLETE'
+            assert s['propertyCatalogue']['state']==s['observableCatalogue']['state']=='COMPLETE'
+            assert s['currentWorkbook']=='ISA_Correction_Review_Commands_08NOV2026.xlsx'
+            assert s['nextOnOwnerProceed']=='ISA-TYPES-BASE-MESSAGES'
+            expected_next={x['id'] for x in r['dms_entries'] if x['section'] in {'4.1','4.2','5.1','6.1','6.2'}}
+            assert len(expected_next)==54 and set(s['nextSourceIDs'])==expected_next
+            for i,x in enumerate(e['primary_records'],136):
+                values=[x['id'],x['entry_id'],x['native_term'],x['native_type']+' / '+x['native_structure'],x['source_standing'],x['target_row'],x['proposed_label'],x['mapping_relation'],x['disposition'],x['original_meaning'],x['mapping_boundary'],x['source_locator'],'; '.join(x['dependency_terms']),x.get('question_id') or '']
+                for j,value in enumerate(values):
+                    assert (current['ISA Evidence'].get(chr(65+j)+str(i),('',None))[0] or '')==str(value or ''),'Command evidence mismatch'
+            evidence_ids=[current['ISA Evidence']['B'+str(i)][0] for i in range(5,232)]
+            assert len(evidence_ids)==len(set(evidence_ids))==227
+            dependency_ids=[current['Dependencies']['A'+str(i)][0] for i in range(5,172)]
+            assert len(dependency_ids)==len(set(dependency_ids))==167
+            assert set(dependency_ids)=={x['id'] for x in r['dms_entries'] if x.get('supporting_definition_checked_in')}
+            for i,x in enumerate(e['supporting_definitions'],128):
+                assert current['Dependencies']['A'+str(i)][0]==x['entry_id']
+                assert current['Dependencies']['D'+str(i)][0]==x['source_locator']
+                assert current['Dependencies']['E'+str(i)][0]==x['inspected_content_summary']
+            assert current['Questions']['A14'][0]==e['source_wording_notes'][0]['id']
+            assert current['Questions']['C14'][0]==e['source_wording_notes'][0]['source_wording']
+            assert current['Questions']['D14'][0]==e['source_wording_notes'][0]['contrast']
+            for address,wanted in {'A6':226,'D6':216,'G6':6,'G12':220,'G13':167,'G14':0}.items():
+                assert float(current['Summary'][address][0])==wanted,('Summary',address)
+            for address,wanted in {'G10':'91 / 91','G11':'39 / 39','G15':'96 / 96'}.items():
+                assert current['Summary'][address][0]==wanted
+            for address,wanted in {'B18':91,'B19':0,'B24':0,'B25':167,'B26':6,'B28':39,'B29':0,'B32':253,'B34':96,'B35':0,'B36':94,'B37':2,'B38':96,'B39':1,'B40':1,'B41':0,'B42':227,'B43':0}.items():
+                assert float(current['Validation'][address][0])==wanted,('Validation',address)
+            questions={x['entry_id']:x['id'] for x in r['specific_questions']}
+            for i,x in enumerate(r['dms_entries'],5):
+                st=x['semantic_review_status']
+                wanted='Reviewed · source-supported' if st=='REVIEWED_SOURCE_SUPPORTED' else 'Reviewed · question '+questions[x['id']] if st=='REVIEWED_QUESTION_RECORDED' else 'Not reviewed in correction'
+                assert current['DMS Inventory']['I'+str(i)][0]==wanted
+                for col in 'ABCDEFGHJ':
+                    assert current['DMS Inventory'].get(col+str(i))==previous['DMS Inventory'].get(col+str(i))
         report=json.loads((D/p.get('publication_record','ISA_Properties_Publication_Record_07NOV2026.json')).read_text())
         assert report['new_semantic_source_reviews']==0
         for name,digest in report['published_file_sha256'].items():
