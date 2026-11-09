@@ -1,4 +1,16 @@
-# ISA correction — current execution plan
+# ISA correction — current execution plan (delivery18 complete)
+
+**8 November 2026 CURRENT:** Delivery18 `ISA-CONTROLLER-REQUIREMENTS-FIRST` is **COMPLETE as original indexed-text source review and GitHub-integrated source qualification**: Controller Requirements §§1–5.12,20 registered blocks and108 original requirements (13H/33M/62L;107 shall/0 should/1 may). Page images were unavailable. [Controller source review](ISA18_Controller_First_Source_Review_08NOV2026.md), [cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json), [coverage](ISA_Coverage_Register_07NOV2026.json), [canonical master](Master_Donor_Concept_to_DIM_Crosswalk.md), [exact status](ISA_Correction_Status_07NOV2026.json), [current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
+
+**Now 18/22 accelerated deliveries,37/41 central technical iterations. Four central deliveries remain:** 19 Controller §§6–8/Appendices A/B (8 registered blocks);20 residual topics/2015-access and whole-source reconciliation;21 exact original 31 row/case targets,25 earlier findings and six source questions;22 final checks and canonical Excel refresh/publication. The existing low/high range after this checkpoint is **3–6**; change only against specifically justified work.
+
+**Master status:**329 information/review rows,480 DMS reviews=474 supported+six local questions;15 existing candidate boundaries now cite Controller evidence without changing displayed mapping cells. CMPT34/34 and259 definitions remain preserved. Source wording notes in coverage register now **154**, with11 Controller local notes; no new primary question. The old workbook remains253 rows/226 primary reviews (76 rows behind text); no workbook rebuild or DIM adoption. Original correspondence closure4/31 and earlier-finding reconciliation1/25 remain deliberately deferred.
+
+**Next owner “Proceed” executes delivery19 only**: `ISA-CONTROLLER-REQUIREMENTS-REMAINING`, `CNTR-6.0`, `CNTR-7.0`, `CNTR-7.1`, `CNTR-7.2`, `CNTR-7.3`, `CNTR-8.0`, `CNTR-AppendixA`, `CNTR-AppendixB`. Follow the source definition hierarchy, identify any verification crosswalk gaps without inventing methods, keep source wording exact and update the existing artifacts. No other donor expansion, new publisher, source reread, new chassis, hardware operation or unapproved Profile implementation.
+
+## Historical execution and completed earlier delivery checkpoints — not next-step routing
+
+### ISA correction — current execution plan
 
 ## Current execution — 8 November 2026
 
