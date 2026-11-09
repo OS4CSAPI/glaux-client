@@ -58,6 +58,64 @@ def data_rows(xml_bytes: bytes, width: int) -> tuple[ET.Element, list[list[str]]
     return root, out
 
 
+
+def verify_sosa_d_master(doc: dict, mirror: list[list[str]], md: str) -> None:
+    """Current 15-column source-backed crosswalk verifier; retains historical checks."""
+    import hashlib
+    l = json.loads((BASE / "Step17_SOSA_D_Source_First_Integration_09NOV2026.json").read_text(encoding="utf-8"))
+    v = json.loads((BASE / "Step17_SOSA_D_Workbook_Validation_09NOV2026.json").read_text(encoding="utf-8"))
+    isa = json.loads((BASE / "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json").read_text(encoding="utf-8"))
+    twin = (BASE / "ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    grid = doc["review_grid"]
+    required(doc["schemaVersion"] == "0.11" and len(doc["rows"]) == 329, "SOSA-D current schema and 329 stable rows")
+    required(len(doc["columns"]) == 15 and doc["columns"][8]["key"] == "OpenGroupSOSA" and doc["columns"][9]["key"] == "SOSA", "separate Open Group vs W3C donor columns")
+    required(doc["columns"][-1]["key"] == "DIM" and [x["key"] for x in doc["columns"][:4]] == ["Dragino","AirGradient","Campbell","Bennett"], "DIM-right / four-source-case-left layout")
+    required(len(grid) == 346 and all(len(r) == 15 for r in grid) and mirror == grid, "CSV and structured 346x15 grid")
+    required(md.split("<table>",1)[1] == twin.split("<table>",1)[1] and md.count('colspan="15"') == 15, "current readable table and section dividers")
+    required(len(doc["originalDonorEvidence"]) == 58 and len(doc["caseEvidence"]) == 73, "historical 58 donor / 73 case records preserved")
+    required(len(l["all_57_qualified_source_decisions"]) == 57 and len(l["integration_row_ledger"]) == 38 and l["source_native_records"] == 76, "original C239 SOSA 57/38/76 evidence")
+    required(l["native_DSDM_IDL_OpenAPI_eight_files_uninspected"] and l["non_adoption"], "no unverified native companion or DIM adoption claim")
+    required(len(isa["six_precise_source_questions"]) == 6 and all(x["question_closed"] is False for x in isa["six_precise_source_questions"]), "six original ISA source holds unchanged")
+    required(doc["ISAEvidence"]["currentPrimaryReviews"] == 480 and doc["ISAEvidence"]["specificQuestions"] == 6, "preserve 480-source ISA census")
+
+    source_cells = {r["row_id"]: r["display_cell"] for r in l["integration_row_ledger"]}
+    for row in doc["rows"]:
+        required(row["display"][8] == source_cells.get(row["row_id"], "Not assessed here"), "source-grade The Open Group SOSA cell " + row["row_id"])
+    current = (BASE / (NAME + ".xlsx")).read_bytes()
+    digest = hashlib.sha256(current).hexdigest()
+    required(digest == doc["currentWorkbookSha256"] == doc["workbookSnapshot"]["sha256"] == v["workbook_sha256"], "current saved workbook binary SHA-256 and master metadata")
+    with zipfile.ZipFile(io.BytesIO(current)) as book:
+        required(book.testzip() is None, "current XLSX ZIP CRC")
+        for path in book.namelist():
+            if path.endswith((".xml", ".rels")):
+                ET.fromstring(book.read(path))
+            if path.startswith("xl/worksheets/") and path.endswith(".xml"):
+                bad = [cell.get("r") for cell in ET.fromstring(book.read(path)).iter(S + "c") if cell.get("t") == "e"]
+                required(not bad, "error-valued worksheet cell in " + path)
+        wb = ET.fromstring(book.read("xl/workbook.xml"))
+        sheet_nodes = wb.find(S + "sheets")
+        names = [node.get("name") for node in sheet_nodes]
+        required(names == v["workbook_sheets"] and len(names) == 26, "original 26 sheet names and order")
+        rels = {x.get("Id"): x.get("Target") for x in ET.fromstring(book.read("xl/_rels/workbook.xml.rels"))}
+        mapped = {}
+        for x in sheet_nodes:
+            target = rels[x.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
+            mapped[x.get("name")] = target.lstrip("/") if target.startswith("/") else "xl/" + target
+        for name, old_hash in v["exact_original_untouched_xml_sha256"].items():
+            required(hashlib.sha256(book.read(mapped[name])).hexdigest() == old_hash, "original historical worksheet SHA: " + name)
+        sheet, actual = data_rows(book.read(mapped["Master Crosswalk"]), 15)
+        required(actual == grid, "all 5190 saved XLSX cells equal source grid")
+        merges = [x.get("ref") for x in sheet.find(S + "mergeCells").findall(S + "mergeCell")]
+        expected = ["A1:D1","E1:I1","J1:N1"] + [f"A{i+1}:O{i+1}" for i in doc["review_sections"]]
+        required(merges == expected, "frozen source/other/foundational DIM groups and 15 section dividers")
+        pane = sheet.find(S + "sheetViews").find(S + "sheetView").find(S + "pane")
+        required(pane.get("xSplit") == "4" and pane.get("ySplit") == "2", "source cases and header frozen")
+    required(v["tests"]["all_XLSX_grid_cells_exact"] and not v["tests"]["DIM_new_content_adopted"], "scoped actual workbook parity only; zero model adoption")
+    print("PASS: current SOSA-D 329 rows / 15 columns / 26 original sheets, full XLSX-cell-to-source parity and exact SHA.")
+    print("PASS: 76 original C239 concepts, 57 staged correspondence decisions across 38 rows; no source-authenticated DSDM/API class claims.")
+    print("LIMIT: no native DSDM/IDL/OpenAPI file review, full C239 conformance, independent deployment, or new DIM adoption.")
+
+
 def verify_current_master(doc: dict, mirror: list[list[str]], md: str) -> None:
     """Read-only successor for the current source-backed, 26-sheet ISA22 master.
 
@@ -124,7 +182,10 @@ def main() -> None:
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
     if "review_grid" in doc and "columns" in doc:
-        verify_current_master(doc, mirror, md)
+        if len(doc["columns"]) == 15:
+            verify_sosa_d_master(doc, mirror, md)
+        else:
+            verify_current_master(doc, mirror, md)
         return
 
     expected = [([x["name"] for x in doc["donorColumns"]] + ["PROPOSED DIM ELEMENT"])]

@@ -1,4 +1,4 @@
-name: DIM V2 crosswalk — verify actual Step06 master files
+name: Verify current source-backed DIM donor crosswalk master
 on:
   push:
     branches:
@@ -23,5 +23,5 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Check actual six-sheet XLSX bytes and source mirrors
+      - name: Verify current 15-column canonical XLSX, source and historical evidence
         run: python scripts/check_dim_crosswalk_step06.py
