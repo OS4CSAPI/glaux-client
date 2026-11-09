@@ -1,5 +1,15 @@
 # DIM / CSAPI Profile V2 — start here
 
+## Current workstream — 9 November 2026, ISA Delivery20 complete
+
+**Data Model Topics6.0r2 original source review completed:23/23 registered sections,22/22 original PDF text pages and targeted visual page checks.** All279 ISA registered source records are accounted: **249 original-source-reviewed blocks,29 DMS heading records linked to the completed480 native-definition catalogue without falsely recrediting source reading, one2015 historical paper full-text access HOLD**. Public abstract/DOI checked only, no original2015 full paper review. [Delivery20 source report](Donor_DIM_Crosswalk/ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md) · [indexed source evidence](Donor_DIM_Crosswalk/ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json) · [source inventory](Donor_DIM_Crosswalk/ISA_Coverage_Register_07NOV2026.json).
+
+The [canonical master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) remains329 information/review rows/480 DMS outcomes (474 supported/six questions), with15 source-qualified candidate boundaries,zero displayed donor/ISA/case edits or DIM adoptions. Older XLSX is still253-row/226-primary and slated for Delivery22. **NEXT user “Proceed” executes Delivery21 ONLY:** source-first31 original row targets,25 earlier findings and six source questions. Technical completion39/41, two central deliveries21–22 remain. [Current ISA PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [plan](Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) · [status](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json).
+
+This is separate from the original 43-step conditionally closed research and the newer broader40-step donor crosswalk paused before owner Step16. No ISA chassis, adopted model, OGC release/conformance, original historical observation, user-approved deployment or real hardware command is created by source reconciliation.
+
+## Historical workstream checkpoints below — older NEXT routing superseded
+
 ## Current workstream — 8 November 2026, ISA Delivery19 complete
 
 **Original ISA Controller Requirements6.0r4 reviewed to source-complete status:**28/28 registered blocks,163 native requirements (17H/45M/101L;162 shall/0 should/1 may), Appendix A101/101 verification mappings and Appendix B18 acronyms. Original source indexed text reviewed across deliveries18–19; selected appendix table pages visually inspected. No ISA runtime test or full visual-page audit is claimed. The [Delivery19 original-source review](Donor_DIM_Crosswalk/ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) and [native-evidence/verification index](Donor_DIM_Crosswalk/ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) preserve exact source discrepancies.

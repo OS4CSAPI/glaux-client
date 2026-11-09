@@ -1,4 +1,19 @@
-# ISA correction — CURRENT execution plan after accelerated delivery19
+# ISA correction — CURRENT plan after accelerated Delivery20
+
+**9 November2026.** **Delivery20 completed and source-published:**23/23 original Data Model Topics6.0r2 sections reviewed,22 source-text pages with selected visual tables/figures,2015 SPIE bibliography/abstract checked without full text, all279 source register records reconciled at the exact scope documented. There are249 original-reviewed source blocks,29 DMS heading records accounted through480 previously reviewed source catalogue entries rather than credited as fresh independent prose reviews, and one genuine historical source access HOLD. The canonical master remains329 rows,480 DMS outcomes (474 supported/six questions),15 additional existing-candidate source qualifications,zero displayed cell edits/adoptions. Source notes **180**, Controller28/163 and Component34/259 preserved; workbook is older253/226 snapshot. [Original Topics review](ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md) · [structured evidence](ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json) · [source register](ISA_Coverage_Register_07NOV2026.json) · [current master](Master_Donor_Concept_to_DIM_Crosswalk.md).
+
+## Remaining execution queue — TWO authorized original prompt deliveries
+
+| Accelerated delivery | Exact existing task | Hard boundary |
+| --- | --- | --- |
+| **21 — NEXT** | **ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT:** original31 row/case correspondence targets,25 earlier source mapping/finding records and six specific DMS local questions; source-level candidate matches and holds | Original source-first semantic adjudication; do not automatically close a source question or assume 2023 source coverage equals model acceptance. Do not refresh XLSX until final substantial checkpoint |
+| **22** | **Final validation, workbook refresh and closeout:** complete current master source/evidence/coverage consistency, canonical XLSX refresh, table/CSV/JSON/XLSX and row/column parity, Excel visual review, lessons and GitHub verified closeout | No invented implementation, conformance, full 2015 paper reading, 182-donor audit, physical command or DIM/Profile adoption |
+
+**Central ISA forecast41 technical iterations,39 complete, two remaining (21–22), low/high range1–4.** No owner-approved scope extension. Every source delivery commits work to `research/dim-profile-v2`, verifies readback, preserves prior evidence/cases and ends at exactly one next owner-authorized step. Do not manufacture extra research substeps. The **broader40-step donor crosswalk owner checkpoint Step16** remains next only after ISA correction completion.
+
+## Historical ISA plan text below (Delivery19 and older; old NEXT banners superseded)
+
+### Historical ISA plan — CURRENT execution plan after accelerated delivery19
 
 **8 November 2026.** Source review of the original ISA Controller Requirements6.0r4 is **COMPLETE across accelerated deliveries18–19**:28/28 registered blocks,163 native definitions (17H/45M/101L;162 shall/0 should/1 may). The second delivery completed55 native definitions and Appendix A's101/101 recommended verification mappings (95 Test, six Inspection), Appendix B's18 acronyms. Original indexed text reviewed, targeted appendix images inspected; this is not executed conformance. [Full original-source review](ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) · [55 native/101 verification/18 acronym evidence](ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) · [Complete cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json).
 

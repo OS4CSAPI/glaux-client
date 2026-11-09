@@ -1,4 +1,28 @@
-# CURRENT ISA PITON — All Controller Requirements complete (8 November 2026)
+# CURRENT ISA PITON — Data Model Topics and all279 registered blocks reconciled (9 November 2026)
+
+**AUTHORITATIVE NEXT “PROCEED”: accelerated Delivery21 ONLY, `ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT`.** Delivery20 `ISA-REMAINING-COMPANION-AND-CONTEXT` is complete at original-source-text review and GitHub-integrated working-master standing. **Exactly TWO original planned ISA deliveries remain:21 substantive original-source correspondence audit and22 final workbook/validation closeout.** Central technical iterations **39/41**; no extra mini-step, publisher, research branch, or automatic advance.
+
+**Primary source:** original *ISA Data Model Topics*6.0r2,31 October2023, full22-page indexed PDF text, project file `file_000000006b5881f4988dfb57ac11965c`; selected PDF visual pages9,13,14,19,21. All23 registered sections have source-backed findings. Table2 distinguishes PERMANENT, READ WRITE/Set Property and READ ONLY/Change/Adjust; indirect physical effects are not confused with directly supplied values. Original Event time differs from update time; Event Reference differs from observed-entity BSO; Recall differs from Resolve. URL/type Resource Descriptors and recommended video NVPs do not establish native CSAPI resources, actual stream availability, source authenticity or device control. [Detailed source review](ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md) · [complete23-block evidence](ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json).
+
+## Exact 279-block evidence/coverage state
+
+**279 registered source blocks =249 full reviewed non-DMS source sections (226 previous +23 new Topics) +29 DMS chapter/heading account records reconciled through already complete native catalogue (not29 independent new parent prose readings) +one 2015 historical full-text access HOLD.** Public 2015 SPIE abstract and bibliography were checked for `SRC-ACCESS-01`; the full original six-page article was **not** read. It is historical context only, not controlling2023 definitions or a reason to fabricate missing normative requirements. Exactly zero source records missing or duplicated; canonical register JSON and CSV are aligned. [Coverage register](ISA_Coverage_Register_07NOV2026.json) · [279-row CSV mirror](ISA_Source_Block_Register_07NOV2026.csv).
+
+## Master and preservation
+
+**329 current master information/review rows,480/480 DMS outcomes=474 supported/six original source-definition questions,58 earlier donor evidence records,73 case statements.** Fifteen existing candidates gained bounded Topics source evidence, **without adding rows or changing any displayed table cells**. All previous Controller28/28 and163 definitions, Component34/34 and259 requirements, Query Guide31, SDD27, ICD39 and other completed source scopes retain earlier credit. The coverage register has**180** cumulative local source notes; the companion evidence-file note population has a separate narrower count. No DIM model content/adoption, Client/Profile/server operation, conformance claim, Cloudflare deployment or physical command occurred.
+
+The verified **canonical26-sheet XLSX is the unchanged old253-row/226-primary integration snapshot**, hash `4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806`. The canonical Markdown/CSV/JSON master has329 rows/480 outcomes, so Excel currently trails by76 rows and evidence refinements. **Delivery22** retains actual workbook refresh, parity/visual verification and final closeout; do not claim current XLSX parity now.
+
+## Precise next execution and stopping rule
+
+**Delivery21 / next “Proceed” ONLY:** audit the **31** original source→row/case correspondence targets (currently4/31 reconciled), **25** earlier mapping/finding records (currently1/25 reconciled), and **six** specific primary DMS source questions. Use original saved sources and update individual correspondence/hold dispositions; do not mark any as closed merely because source-section coverage is complete. Preserve no-adoption rule, user-accepted horizontal donor-as-columns and DIM-rightmost table, and case source truth.
+
+**Delivery22:** original agreed final check only — all source and master evidence, main workbook refresh with current data, XLSX visual/per-cell parity, lessons consolidation, GitHub publication/readback. Broader **40-step donor master crosswalk resumes at owner Step16 after bounded ISA correction**, not now. Earlier **43-step original experiment** remains conditionally closed, Gates E/F unresolved and G reviewed/full release denied. Donor source comparison and DIM adoption remain separate, with owner readiness checkpoint24 and named-version decision40. [Current master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [current plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [current status](ISA_Correction_Status_07NOV2026.json).
+
+## Historical ISA PITON text below (through Delivery19; next-step banners superseded)
+
+### Historical ISA PITON — All Controller Requirements complete (8 November 2026)
 
 **AUTHORITATIVE NEXT “PROCEED”: accelerated delivery20 ONLY, `ISA-REMAINING-COMPANION-AND-CONTEXT`.** The original *ISA Controller Requirements* 6.0r4 source review is now complete, **28/28 registered source blocks and 163 unique native definitions**. Delivery19 closed the final eight blocks (§§6–8, Appendices A/B), adding55 definitions (4 high/12 mid/39 low, all shall). Complete document census: **17 high/45 mid/101 low;162 shall,0 should,1 may**. Original source text from all74 pages was reviewed across deliveries18–19, with targeted appendix page images; **no claim of complete visual-page audit or runtime conformance**.
 
