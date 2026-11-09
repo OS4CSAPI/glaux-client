@@ -65,7 +65,7 @@ def read_source():
     require(m["ISAEvidence"]["currentPrimaryReviews"]==480 and m["ISAEvidence"]["sourceSupportedPrimary"]==474 and m["ISAEvidence"]["specificQuestions"]==6,"474/6 DMS")
     require(a["counts"]["qualified_native_correspondence"]==18 and a["counts"]["no_established_source_equivalence"]==4,"18/four correspondence")
     require(a["counts"]["case_holds_retained"]==9 and a["counts"]["design_findings_held"]==14,"nine/14 retained holds")
-    require(a["counts"]["ISA_cells_changed"]==29 and a["counts"]["dim_content_adopted"]==0,"29 ISA-only cells; zero adopted DIM")
+    require(m["ISAEvidence"]["sourceFirstCorrespondence"]["ISA_cells_changed"]==29 and a["counts"]["dim_content_adopted"]==0,"29 ISA-only cells; zero adopted DIM")
     require(s["nextOnOwnerProceed"]=="ISA-FINAL-VALIDATION-EXCEL-CLOSEOUT" and s["technicalIterationsCompleted"]==40,"Delivery22 starting authority")
     require(m["currentWorkbookSha256"]==OLD and sha((D/BOOK).read_bytes())==OLD,"old workbook exact original hash")
     native={r[0] for r in dms[1:]}
