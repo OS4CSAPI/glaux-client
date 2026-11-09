@@ -1,0 +1,63 @@
+name: ISA22 final canonical workbook closeout
+on:
+  push:
+    branches: [research/dim-profile-v2]
+    paths:
+      - .github/workflows/isa22-final-closeout.yml
+permissions:
+  contents: write
+concurrency:
+  group: isa22-final-workbook-closeout
+  cancel-in-progress: false
+jobs:
+  finalize:
+    name: Source inventory, 26-sheet workbook, and parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout authorized research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/dim-profile-v2
+          persist-credentials: true
+      - name: Python for one-time saved-XLSX verification
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install preview-only PNG renderer
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Reconcile original source inventory and update historical 26-sheet XLSX
+        run: python scripts/isa22_closeout.py
+      - name: Commit only the final canonical workbook, validation record and actual-cell preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA22_Validated_Workbook_Record_09NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA22_Workbook_Visual_09NOV2026.png
+          git diff --cached --exit-code && { echo 'No new final workbook was generated'; exit 1; } || true
+          git commit -m "research(dim-v2): verify ISA22 source inventory and publish canonical 26-sheet 329-row workbook"
+          git push origin HEAD:research/dim-profile-v2
+      - name: Read back committed workbook and source closeout record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin research/dim-profile-v2
+          git rev-parse HEAD
+          python - <<'PY'
+          import csv,hashlib,json,zipfile
+          from pathlib import Path
+          d=Path('Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk')
+          v=json.loads((d/'ISA22_Validated_Workbook_Record_09NOV2026.json').read_text())
+          x=(d/'Master_Donor_Concept_to_DIM_Crosswalk.xlsx').read_bytes()
+          assert hashlib.sha256(x).hexdigest()==v['workbook_sha256']
+          with zipfile.ZipFile(d/'Master_Donor_Concept_to_DIM_Crosswalk.xlsx') as z:
+              assert z.testzip() is None
+          assert v['checks']['all_grid_cells_exact_after_XLSX_export']
+          assert v['counts']['DMS_outcomes']==480 and v['counts']['source_blocks']==279
+          assert v['counts']['DIM_adopted']==0
+          print('PASS: committed workbook bytes and final source-ledger record verified.')
+          PY
