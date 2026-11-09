@@ -1,5 +1,16 @@
 # DIM / CSAPI Profile V2 — start here
 
+## Current source and crosswalk execution · 8 November 2026
+
+**ISA accelerated delivery18 COMPLETE.** The original Controller Requirements 6.0r4 §§1–5.12 were reviewed (20/28 registered blocks,108 native definitions), and current master evidence updated for15 existing proposed information elements without changing the 329-row display table. Original DMS catalogue remains480 reviewed/474 supported/six local questions. Four central ISA correction deliveries remain, with **delivery19 Controller §§6–8 and Appendices A/B (8 blocks) NEXT ONLY ON OWNER “PROCEED.”** The original source page images were unavailable; this was indexed-text review, not visual PDF or runtime conformance.
+
+**Read the current routing records rather than any historical CURRENT/NEXT banners below:** [current ISA PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md), [execution plan](Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md), [Delivery18 original-source evidence](Donor_DIM_Crosswalk/ISA18_Controller_First_Source_Review_08NOV2026.md), [canonical master comparison](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md), [coverage register](Donor_DIM_Crosswalk/ISA_Coverage_Register_07NOV2026.json), and [current exact status](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json). **Excel remains the earlier253-row snapshot; current structured/text master remains329 rows. No new DIM adoption or CSAPI Profile release is claimed.**
+
+The older **43-step research/experiment campaign remains conditionally closed**, with two proposed partially validated research manuscripts, open external interoperability gates E/F and gate G reviewed/full release not approved. The newer 40-step donor master comparison is a separate workstream, paused before its substantive Step16 owner checkpoint until this bounded ISA correction is finished.
+
+## Historical checkpoints (content preserved, superseded task routing)
+
+
 **CURRENT — ISA-03D COMPLETE. Next owner “proceed”: ISA-03E only.** [Workbook](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Full comparison](Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.md) · [Two-property source report](Donor_DIM_Crosswalk/ISA03D_Relationship_Visible_07NOV2026.md) · [Publication](Donor_DIM_Crosswalk/ISA03D_Publication_Record_07NOV2026.json) · [Current PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md).65 reviewed/62 supported/three existing questions;92 information/review rows. Physical attachment is distinct from logical component visibility; native Visible concerns a laser's visible spectrum. Earlier non-ISA/case values preserved. Older checkpoint instructions below are historical.
 
 
