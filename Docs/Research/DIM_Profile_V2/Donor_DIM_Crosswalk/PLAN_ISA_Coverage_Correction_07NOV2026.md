@@ -1,4 +1,22 @@
-# ISA correction — CURRENT plan after accelerated Delivery20
+# ISA coverage correction — CURRENT final closeout handoff after Delivery21
+
+**CURRENT — 9 November 2026 · accelerated ISA Delivery21 COMPLETE.** The final source-first semantic audit reviewed **all31 original row/case targets, all25 earlier source findings, and all six exact Data Model Specification source questions**. Of22 proposed DIM information rows, **18 have qualified ISA correspondence and four have none established** in the inspected original 2023 scope; **nine case topics and14 prior design findings remain held**. All six exact DMS source questions stay open after original-text/selected-table recheck, with no invented resolution or new mandatory standard requirement. [Delivery21 complete report](ISA21_Source_First_Correspondence_Review_09NOV2026.md) · [31/25/six evidence](ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json).
+
+The canonical current horizontal master remains **329 information/review rows,480 DMS outcomes (474 supported/six precise questions)**, with **29 displayed ISA-only cell edits**, original58 donor evidence records and73 case facts preserved, and zero DIM adoption. The old26-sheet XLSX remains the verified **253-row/226-primary** integration snapshot. **Next owner “Proceed” executes Delivery22 ONLY:** final complete source/inventory evidence validation, updated XLSX build and visual/parity check, lessons, GitHub closeout. **40/41 technical iterations,21/22 deliveries complete**; broader donor crosswalk owner Step16 follows the ISA closeout.
+
+[Current working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [current structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [status](ISA_Correction_Status_07NOV2026.json) · [coverage](ISA_Coverage_Register_07NOV2026.json) · [current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [current plan](PLAN_ISA_Coverage_Correction_07NOV2026.md).
+
+## Only remaining authorized delivery
+
+| Delivery | Scope | Stop and acceptance boundary |
+| --- | --- | --- |
+| **22 — NEXT AND FINAL ISA CORRECTION SLOT** | Reconcile all480 DMS reviewed outcomes;279 registered source blocks;31 original source-to-row/case targets;25 prior findings; six still-open local questions. Rebuild the canonical editable XLSX from the source-backed329-row/14-column working table and evidence, validate table/CSV/JSON/XLSX, visually inspect, preserve prior donor/case and completed review evidence, consolidate donor-review lessons, and verify GitHub publication/readback. | No invented source resolution, physical model/chassis adoption, mandatory new class, stale workbook “current” claim, full ISA runtime conformance or unrelated deployment. Stop and return to broader donor owner Step16 on owner direction. |
+
+**Central technical iterations40/41,one originally planned delivery remaining.** Complete source-to-mapping decisions can be negative, partial or explicitly held; none automatically adopts the proposed DIM. Prior ISA source PDFs and requirements were already inspected in their exact 2023 editions. No extra research/mini-delivery is created by remaining genuine source ambiguity.
+
+## Historical ISA correction plan below — previous NEXT instructions superseded
+
+### Prior ISA plan — ISA correction — CURRENT plan after accelerated Delivery20
 
 **9 November2026.** **Delivery20 completed and source-published:**23/23 original Data Model Topics6.0r2 sections reviewed,22 source-text pages with selected visual tables/figures,2015 SPIE bibliography/abstract checked without full text, all279 source register records reconciled at the exact scope documented. There are249 original-reviewed source blocks,29 DMS heading records accounted through480 previously reviewed source catalogue entries rather than credited as fresh independent prose reviews, and one genuine historical source access HOLD. The canonical master remains329 rows,480 DMS outcomes (474 supported/six questions),15 additional existing-candidate source qualifications,zero displayed cell edits/adoptions. Source notes **180**, Controller28/163 and Component34/259 preserved; workbook is older253/226 snapshot. [Original Topics review](ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md) · [structured evidence](ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json) · [source register](ISA_Coverage_Register_07NOV2026.json) · [current master](Master_Donor_Concept_to_DIM_Crosswalk.md).
 

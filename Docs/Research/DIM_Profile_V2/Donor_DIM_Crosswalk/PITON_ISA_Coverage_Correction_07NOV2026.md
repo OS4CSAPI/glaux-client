@@ -1,4 +1,20 @@
-# CURRENT ISA PITON — Data Model Topics and all279 registered blocks reconciled (9 November 2026)
+# CURRENT ISA PITON — Delivery21 source-first audit complete; Delivery22 closeout NEXT
+
+**CURRENT — 9 November 2026 · accelerated ISA Delivery21 COMPLETE.** The final source-first semantic audit reviewed **all31 original row/case targets, all25 earlier source findings, and all six exact Data Model Specification source questions**. Of22 proposed DIM information rows, **18 have qualified ISA correspondence and four have none established** in the inspected original 2023 scope; **nine case topics and14 prior design findings remain held**. All six exact DMS source questions stay open after original-text/selected-table recheck, with no invented resolution or new mandatory standard requirement. [Delivery21 complete report](ISA21_Source_First_Correspondence_Review_09NOV2026.md) · [31/25/six evidence](ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json).
+
+The canonical current horizontal master remains **329 information/review rows,480 DMS outcomes (474 supported/six precise questions)**, with **29 displayed ISA-only cell edits**, original58 donor evidence records and73 case facts preserved, and zero DIM adoption. The old26-sheet XLSX remains the verified **253-row/226-primary** integration snapshot. **Next owner “Proceed” executes Delivery22 ONLY:** final complete source/inventory evidence validation, updated XLSX build and visual/parity check, lessons, GitHub closeout. **40/41 technical iterations,21/22 deliveries complete**; broader donor crosswalk owner Step16 follows the ISA closeout.
+
+[Current working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [current structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [status](ISA_Correction_Status_07NOV2026.json) · [coverage](ISA_Coverage_Register_07NOV2026.json) · [current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [current plan](PLAN_ISA_Coverage_Correction_07NOV2026.md).
+
+## Delivery22 precise next task and non-inference requirements
+
+Delivery22 checks **current source input parity and owner-readable presentation**, not new model design or another donor study. Regenerate the canonical Excel workbook to reflect the 329-row/480-DMS-outcome source-backed master, verify its26 earlier or updated sheets, all14 columns and original source-case/donor/DIM placement, and visually inspect an actual rendered workbook view. Prove all original31 targets and25 finding source-qualification dispositions and six remaining exact questions survive the refresh, with source IDs and case-fact integrity intact. Commit source, readable comparison, workbook and lessons in GitHub, read back actual bytes and report precisely what was and was not validated.
+
+Historical full2023 ISA original source review is intact. The 2015 SPIE source still has only verified bibliographic/abstract context and is not a mandatory2023 definition. Source-first audit dispositions **are not approval of a mandatory ISA chassis, accepted DIM class, deployed Profile, certified client/server implementation or hardware control**. No other branch changes or unapproved new steps. After final closeout, broader40-step cross-donor owner Step16 awaits the user's next authorization.
+
+## Historical PITON below — earlier NEXT banners superseded
+
+### Prior PITON — CURRENT ISA PITON — Data Model Topics and all279 registered blocks reconciled (9 November 2026)
 
 **AUTHORITATIVE NEXT “PROCEED”: accelerated Delivery21 ONLY, `ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT`.** Delivery20 `ISA-REMAINING-COMPANION-AND-CONTEXT` is complete at original-source-text review and GitHub-integrated working-master standing. **Exactly TWO original planned ISA deliveries remain:21 substantive original-source correspondence audit and22 final workbook/validation closeout.** Central technical iterations **39/41**; no extra mini-step, publisher, research branch, or automatic advance.
 
