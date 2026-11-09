@@ -1,5 +1,15 @@
 # DIM / CSAPI Profile V2 — start here
 
+## Current workstream — 9 November 2026, ISA Delivery21 complete
+
+**Original ISA source-to-crosswalk audit:** 31/31 original row/case targets and25/25 earlier finding records examined against original 2023 ISA evidence; six source-definition questions rechecked and still precisely open. Of22 original proposed DIM rows,18 have qualified source correspondence and four have no established ISA match. Nine case evidence holds and14 source-design boundaries are deliberately retained. [Delivery21 report](Donor_DIM_Crosswalk/ISA21_Source_First_Correspondence_Review_09NOV2026.md) · [full31/25/six indexed evidence](Donor_DIM_Crosswalk/ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json).
+
+[Current master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) remains329 information/review rows and480 DMS dispositions (474 supported/six precise questions);29 ISA-only display cells clarified/blanked, with all other donor/case/DIM columns retained. The Excel remains the **older253-row/226-primary** integration snapshot, not a current full parity claim. **NEXT “Proceed” executes Delivery22 ONLY** — source and master validation, canonical workbook refresh and visual/source parity, lessons and GitHub verified closeout. Central technical iterations **40/41**, one originally authorized ISA delivery remaining. [Current ISA PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [plan](Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) · [status](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json).
+
+The earlier43-step DIM/Profile research effort remains conditionally closed, external release Gates E/F unresolved and G reviewed/not approved. The separate40-step donor crosswalk waits at owner Step16 until ISA correction closes. **Nothing here adopts a DIM chassis, OGC Profile, independent vendor interoperability, production deployment or physical control.**
+
+## Historical checkpoint banners below — superseded by current Delivery21
+
 ## Current workstream — 9 November 2026, ISA Delivery20 complete
 
 **Data Model Topics6.0r2 original source review completed:23/23 registered sections,22/22 original PDF text pages and targeted visual page checks.** All279 ISA registered source records are accounted: **249 original-source-reviewed blocks,29 DMS heading records linked to the completed480 native-definition catalogue without falsely recrediting source reading, one2015 historical paper full-text access HOLD**. Public abstract/DOI checked only, no original2015 full paper review. [Delivery20 source report](Donor_DIM_Crosswalk/ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md) · [indexed source evidence](Donor_DIM_Crosswalk/ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json) · [source inventory](Donor_DIM_Crosswalk/ISA_Coverage_Register_07NOV2026.json).
