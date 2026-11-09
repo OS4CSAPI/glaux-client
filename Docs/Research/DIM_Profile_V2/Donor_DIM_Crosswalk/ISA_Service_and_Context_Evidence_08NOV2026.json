@@ -10599,7 +10599,8 @@
     "new_DIM_adoption": 0,
     "runtime_or_conformance_tested": false,
     "source_image_limit_disclosed": true,
-    "publication_checks_required": true
+    "publication_checks_required": true,
+    "candidate_to_controller_block_links_source_scoped": true
   },
   "integration_notes": [
     "Aligned with root ISA-A-SERVICE-ROLE, ISA-A-CAPABILITY-GROUP, ISA-A-BASELINE-CAPABILITIES. Participation, Network Context and Extension Standing companion contributions are separate.",
@@ -63168,7 +63169,126 @@
       "reviewed_original_pdf_text_pages": "8–74",
       "original_pdf_page_count": 74,
       "visual_review_standing": "Selected Appendix A and B pages visually inspected; no claim of all74 visually examined",
-      "final_review": "ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md"
+      "final_review": "ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md",
+      "final_candidate_qualifications": [
+        {
+          "row_id": "ISA-A-MEMBER-EXPOSURE",
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "boundary": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
+        },
+        {
+          "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "boundary": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
+        },
+        {
+          "row_id": "ISA-T-EVENT-CONTEXT",
+          "source_blocks": [
+            "CNTR-7.3"
+          ],
+          "boundary": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+        },
+        {
+          "row_id": "ISA-T-CONFIG",
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "boundary": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
+        },
+        {
+          "row_id": "ISA-T-STATUS",
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "boundary": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+        },
+        {
+          "row_id": "ISA-T-REGISTRATION",
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "boundary": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+        },
+        {
+          "row_id": "ISA-T-ACCESS",
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "boundary": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
+        },
+        {
+          "row_id": "ISA-R-EXECUTION",
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "boundary": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
+        },
+        {
+          "row_id": "ISA-Q-QUERY",
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "boundary": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+        },
+        {
+          "row_id": "ISA-Q-MATCH",
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "boundary": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
+        },
+        {
+          "row_id": "ISA-Q-SUBSCRIPTION",
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "boundary": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
+        },
+        {
+          "row_id": "ISA-Q-OPTIONS",
+          "source_blocks": [
+            "CNTR-7.2"
+          ],
+          "boundary": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
+        },
+        {
+          "row_id": "ISA-Q-CONTEXT",
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "boundary": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
+        },
+        {
+          "row_id": "ISA-A-SERVICE-ROLE",
+          "source_blocks": [
+            "CNTR-6.0",
+            "CNTR-7.0",
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "boundary": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
+        },
+        {
+          "row_id": "ISA-T-ADMIN",
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "boundary": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
+        }
+      ]
     }
   },
   "source_wording_notes": [
@@ -69659,105 +69779,177 @@
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
     },
     {
       "row_id": "ISA-R-EXECUTION",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
     },
     {
       "row_id": "ISA-T-REGISTRATION",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
     },
     {
       "row_id": "ISA-A-SERVICE-ROLE",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-6.0",
+        "CNTR-7.0",
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
     },
     {
       "row_id": "ISA-T-CONFIG",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
     },
     {
       "row_id": "ISA-T-STATUS",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
     },
     {
       "row_id": "ISA-Q-QUERY",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1"
+      ],
+      "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
     },
     {
       "row_id": "ISA-Q-MATCH",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
     },
     {
       "row_id": "ISA-Q-SUBSCRIPTION",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
     },
     {
       "row_id": "ISA-Q-OPTIONS",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.2"
+      ],
+      "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
     },
     {
       "row_id": "ISA-Q-CONTEXT",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
     },
     {
       "row_id": "ISA-T-EVENT-CONTEXT",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.3"
+      ],
+      "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
     },
     {
       "row_id": "ISA-T-ADMIN",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
     },
     {
       "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
     },
     {
       "row_id": "ISA-A-MEMBER-EXPOSURE",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
       "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
       "no_display_cell_changed": true,
-      "no_model_adoption": true
+      "no_model_adoption": true,
+      "source_blocks": [
+        "CNTR-7.1"
+      ],
+      "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
     }
   ],
   "candidate_revisions": [
@@ -69765,91 +69957,163 @@
       "row_key": "ISA-T-ACCESS",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
     },
     {
       "row_key": "ISA-R-EXECUTION",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
     },
     {
       "row_key": "ISA-T-REGISTRATION",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-6.0"
+      ],
+      "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
     },
     {
       "row_key": "ISA-A-SERVICE-ROLE",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-6.0",
+        "CNTR-7.0",
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
     },
     {
       "row_key": "ISA-T-CONFIG",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
     },
     {
       "row_key": "ISA-T-STATUS",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
     },
     {
       "row_key": "ISA-Q-QUERY",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1"
+      ],
+      "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
     },
     {
       "row_key": "ISA-Q-MATCH",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
     },
     {
       "row_key": "ISA-Q-SUBSCRIPTION",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
     },
     {
       "row_key": "ISA-Q-OPTIONS",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.2"
+      ],
+      "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
     },
     {
       "row_key": "ISA-Q-CONTEXT",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
     },
     {
       "row_key": "ISA-T-EVENT-CONTEXT",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.3"
+      ],
+      "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
     },
     {
       "row_key": "ISA-T-ADMIN",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
     },
     {
       "row_key": "ISA-A-PARTICIPATION-LIFECYCLE",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
     },
     {
       "row_key": "ISA-A-MEMBER-EXPOSURE",
       "source": "Controller Requirements6.0r4 §§6–7",
       "new_model_row": false,
-      "semantic_boundary_refined": true
+      "semantic_boundary_refined": true,
+      "source_blocks": [
+        "CNTR-7.1"
+      ],
+      "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
     }
   ]
 }
