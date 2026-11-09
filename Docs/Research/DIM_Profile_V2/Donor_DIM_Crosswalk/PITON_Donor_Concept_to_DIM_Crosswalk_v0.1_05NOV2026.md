@@ -1,4 +1,14 @@
-# Current working master / DIM adoption PITON — recovery through ISA delivery18
+# CURRENT donor master PITON — ISA19 recovered and preserved
+
+**CURRENT — 8 November 2026 · ISA accelerated delivery19 COMPLETE.** Full original Controller Requirements6.0r4 review is now28/28 blocks and163 native requirements, with Appendix A101/101 low-level method mappings (95 Test, six Inspection) and Appendix B18 acronyms. Current master remains329 information/review rows with480 DMS outcomes (474 source-supported and six precise questions);15 existing candidate source qualifications were added with no displayed donor/case/ISA cell edits. Component Requirements34/34 and259 native definitions remain preserved. The canonical workbook is still the **older253-row/226-primary snapshot**, not a completed source-to-Excel refresh.
+
+**Next owner “Proceed” executes accelerated delivery20 ONLY:** all23 Data Model Topics blocks, the bounded PAPER2015 access question and reconciliation of the279-source-block register. Three central ISA deliveries20–22 remain (38/41 iterations). Broader40-step crosswalk Step16 owner review remains deferred until ISA correction closes; source inclusion does not itself adopt DIM content. [ISA current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [exact execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [Controller source review](ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) · [structured evidence](ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) · [working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [status](ISA_Correction_Status_07NOV2026.json).
+
+**Working-master adoption policy remains intact:** explicit coherent candidate adoption decisions occur at broader Step24 with donor-alternative comparisons; synthesis/case review Steps35–39 and named-version baseline Step40 remain separate. No ISA mandatory chassis, Profile/Glaux deployment, or 182-source full-audit claim.
+
+## Historical checkpoints (routing superseded)
+
+### Current working master / DIM adoption PITON — recovery through ISA delivery18
 
 **CURRENT — 8 November 2026, ISA accelerated delivery18 COMPLETE and committed.** Controller Requirements 6.0r4 §§1–5.12 were source-reviewed in 20 of 28 registered blocks, covering108 original definitions (13H/33M/62L;107 shall/0 should/1 may). Fifteen existing master candidates gained documented source-boundary qualifications; 329 rows and every displayed donor/ISA/case comparison cell are preserved. DMS catalogue remains480 reviewed/474 supported/six local questions. Component Requirements remain34/34 complete. Original target/finding audits remain4/31 and1/25. The canonical XLSX is the *older* 253-row/226-primary integration snapshot, not this newer source checkpoint.
 
