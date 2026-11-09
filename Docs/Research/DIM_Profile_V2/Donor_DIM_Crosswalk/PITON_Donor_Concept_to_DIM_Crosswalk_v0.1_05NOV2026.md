@@ -1,3 +1,19 @@
+# CURRENT — Step16 owner decision accepted (9 November 2026)
+
+<!-- STEP16_OWNER_ACCEPTANCE_09NOV2026 -->
+
+**Step16 owner review complete:** the owner accepts the verified [329-row master evidence baseline](Master_Donor_Concept_to_DIM_Crosswalk.md), while leaving its 298 ISA-only candidates and the overall presentation provisional pending further source-based donor comparisons. [Owner decision, limits and staged reconciliation approach](Step16_Owner_Master_Review_09NOV2026.md#owner-decision--accepted-9-november-2026). This accepts neither a final DIM architecture nor new CSAPI Profile content. Original ISA source questions and the nine case/fourteen design holds remain. **Next on a separate owner “Proceed”: original Step17, The Open Group SOSA; assess its specific source scope and decide with the owner whether a bounded donor-specific multi-pass plan is justified. Step17 has NOT started.**
+
+## Donor-by-donor source rigor and eventual reconciliation — controlling practice
+
+The 40-step cross-donor plan is a **sequence of source families and owner checkpoints**, not proof that each donor can be adequately audited in exactly one conversation. ISA's 22-delivery correction remedied previously missed source coverage; subsequent donors should receive **source-native coverage assessment on entry**, with exact original editions, document structure, term inventory/relevance, prior verified findings, unavailable-text holds and an honest workload size. Use an appropriately scoped donor-specific plan only if necessary; propose extra bounded deliveries to the owner rather than silently multiplying them or forcing a cursory source audit into one prompt. Initial donor review and repair of prior errors are different activities. The Open Group SOSA must not be confused with the already reviewed W3C SOSA/SSN.
+
+For every reviewed term, preserve a stable source ID and edition/clause locator, native kind and role, candidate DIM row or supporting-only disposition, **DIRECT/BROADER/NARROWER/PARTIAL/RELATED/CONFLICT/NO ESTABLISHED/UNREVIEWED** standing, a negative-equivalence caveat and case evidence where warranted. A single source may contribute multiple qualifiers to one candidate; several standards may express one semantic idea differently; not every source term deserves a final class or field. Preserve ISA-only terms without treating blank other-donor cells as absence. Update the one canonical source master as evidence is earned; explicit DIM content adoption remains separate.
+
+The existing plan already contains the reconciliation checkpoints: Step24 **focused owner adoption of sufficiently ready, meaningful portions**, Steps35–39 **concept clustering, alias/duplicate/split and overload decisions, supported donor ranking, diagrams, source-case challenge and quality verification**, and Step40 **coherent named-version approval**. Reconciliation must be evidence-first and track every merge/split/hold with stable lineage; it is not simple text matching, source-count voting or top-level class proliferation. Record tensions as each donor is studied and resolve them at the appropriate established checkpoint. No additional research campaign, future donor correction, workbook re-layout, or DIM decision is authorized by Step16 acceptance alone.
+
+## Previous current-state banners and historical execution plan (superseded where inconsistent)
+
 # CURRENT — Crosswalk Step16 owner review pending
 
 <!-- STEP16_OWNER_REVIEW_PENDING_09NOV2026 -->
