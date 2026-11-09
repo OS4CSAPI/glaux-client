@@ -1,8 +1,10 @@
-# CURRENT — Step17 SOSA-C complete with native evidence holds; SOSA-D next
+# CURRENT — The Open Group SOSA Step17 bounded completion; Step18 SAPIENT next
 
-<!-- CURRENT_SOSA_C_REVIEWED_WITH_NATIVE_HOLDS_09NOV2026 -->
+<!-- CURRENT_SOSA_D_SOURCE_WORKBOOK_VERIFIED_09NOV2026 -->
 
-**9 November 2026.** [C239 data-model/interface audit](Donor_DIM_Crosswalk/Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Review_09NOV2026.md) · [exact 23/17/eight and eight uninspected native references ledger](Donor_DIM_Crosswalk/Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Evidence_09NOV2026.json). Original text supports DIV-1/2/3, RTE configuration and selected interaction bindings; the external DSDM, IDL and six OpenAPI JSONs remain named **but unread**. The [canonical master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) is unchanged at 329 rows / 14 columns (58 prior donor records, 73 case facts). Original source-based candidate comparisons are staged, not adopted. **Next single “Proceed”: SOSA-D master/workbook integration with accurate source holds**, not SAPIENT or a new correction campaign. [Current plan](Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+**9 November 2026.** [SOSA-D final source/workbook closeout](Donor_DIM_Crosswalk/Step17_SOSA_D_Crosswalk_Integration_Closeout_09NOV2026.md) · [current 15-column master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) · [26-sheet XLSX](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). **76 C239 source records; 57 source-qualified/related/negative decisions; 38 working rows discussed; zero DIM adoption; eight exact original DSDM/IDL/API access holds.** Original 58 donor mappings and 73 case facts preserved; current source and workbook parity checks PASS. **Next only on new owner Proceed: original Step18 SAPIENT v2 evidence/coverage intake**, not TaskAck Step19 or a silently expanded correction campaign.
+
+## Historical checkpoints
 
 ## Older checkpoints — superseded where inconsistent
 

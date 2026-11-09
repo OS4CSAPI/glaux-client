@@ -1,3 +1,11 @@
+# CURRENT — Lessons through SOSA-D, 9 November 2026
+
+<!-- LESSONS_THROUGH_SOSA_D_09NOV2026 -->
+
+Source-first method now incorporates bounded The Open Group SOSA C239 review, explicit 8-file native source gaps and verified 15-column workbook. [Final source/workbook evidence](Step17_SOSA_D_Crosswalk_Integration_Closeout_09NOV2026.md). Do not automatically impose ISA's 22-delivery correction process on other donors; only next owner “Proceed” advances Step18 SAPIENT.
+
+## Historical lessons and earlier activity
+
 # Donor review — lessons and reusable practices
 
 **7 November 2026 · Updated after ISA-03D and the owner's rejection of repeated miniature releases.** This is an evidence-based lessons record, not a second execution plan. The [current progress](ISA_Correction_Status_07NOV2026.json), [plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) and [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) alone route the next action. Historical NEXT instructions were removed from this document to avoid competing recovery instructions.
@@ -68,3 +76,15 @@ These lessons are anchored in the actual Delivery21 source-first audit, Delivery
 | L16 — Visual review is not external conformance | The saved workbook was rendered to a PNG preview and inspected; original-source and ZIP/XML/cell-parity tests passed, but no native Excel application screenshot, ISA runtime or OGC ATS was executed. | Name the renderer and original evidence precisely, maintain explicit limitations and avoid treating successful project-specific validation as certified standards or independently interoperable producer/client behavior. |
 
 The next use of this method is the existing broader donor crosswalk Step16 substantive owner review, only when separately authorized. No automatic extra ISA step, 182-donor audit, or compulsory ISA chassis is implied.
+
+
+## Lessons L17–L20 — The Open Group SOSA source-first review and integration (9 November 2026)
+
+| ID | Original evidence | Practice for later donors |
+| --- | --- | --- |
+| **L17 — A named component is not necessarily physical equipment** | C239 distinguishes SOSA Sensor, physical Hardware Element, logical Module, Host Platform, runtime infrastructure and procurable implementation. | Keep native identity, implementation kind, physical membership, functional role and relation type separate, even when one source uses the same general word. |
+| **L18 — Normative file pointer is not native source audit** | Appendix B names separate DSDM/IDL and six OpenAPI files; §5.7's B.2 pointer differs from actual Appendix B.1. Actual files were not retrieved. | Record exact source/edition and access status, never fabricate native fields, cardinality or endpoints, and retain original conflicting source references visibly. |
+| **L19 — Source-grade matters more than a candidate count** | C239 includes defined management Rules but also explicitly preliminary task functions and reference-only power/reporting modules. | Do not elevate descriptions, future placeholders, or example modules into mandatory whole-system classes or applied equipment controls. |
+| **L20 — One canonical donor column plus detailed held evidence** | 76 native C239 records were reconciled into 57 related/partial/held decisions across only 38 existing master rows; all other donor/case facts survived 26-sheet workbook checks. | Integrate at substantial donor closeout, retain Not assessed here distinctly from no equivalence, verify actual workbook cell parity and leave DIM adoption to owner checkpoints. |
+
+The next application is Step18 SAPIENT v2 with a donor-specific source-census and edition check before attempting exhaustive claim. The original Step24 and Steps35–40 reconciliation/adoption reviews remain in force.
