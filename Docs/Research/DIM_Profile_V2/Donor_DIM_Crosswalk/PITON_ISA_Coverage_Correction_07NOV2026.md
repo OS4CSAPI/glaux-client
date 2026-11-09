@@ -1,4 +1,39 @@
-# Current ISA PITON — Controller Requirements first area complete (8 November 2026)
+# CURRENT ISA PITON — All Controller Requirements complete (8 November 2026)
+
+**AUTHORITATIVE NEXT “PROCEED”: accelerated delivery20 ONLY, `ISA-REMAINING-COMPANION-AND-CONTEXT`.** The original *ISA Controller Requirements* 6.0r4 source review is now complete, **28/28 registered source blocks and 163 unique native definitions**. Delivery19 closed the final eight blocks (§§6–8, Appendices A/B), adding55 definitions (4 high/12 mid/39 low, all shall). Complete document census: **17 high/45 mid/101 low;162 shall,0 should,1 may**. Original source text from all74 pages was reviewed across deliveries18–19, with targeted appendix page images; **no claim of complete visual-page audit or runtime conformance**.
+
+**Authoritative repository:** `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, source directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/`. [Current master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [Delivery19 original-source review](ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) · [Native evidence and verification](ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) · [Cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Exact status](ISA_Correction_Status_07NOV2026.json) · [ISA plan](PLAN_ISA_Coverage_Correction_07NOV2026.md).
+
+## Complete Controller requirement, verification and reconciliation state
+
+- **Appendix A:** all **101/101** low-level requirement IDs appear once in recommended verification Table4;95 Test and six Inspection (DPLY-L-0004, CMSV-L-0002, CMSV-L-0005, CMSV-L-0006, CMSV-L-0040, CMSV-L-0042); Analysis/Demonstration defined but not mapped; no test was executed.
+- **Appendix B:** 18 acronyms are reviewed, source context only. Native source uses CCD=Component Capability Description; keep older Description/Declaration wording differences visible.
+- **Authorization Service:** AZSV-L-0005 returns authorized=Yes and Response SUCCESS; L-0006 returns authorized=No with the same SUCCESS code. Determination success is not authorization granted or command execution. L-0007 leaves inability-to-determine response policy-dependent and documents possible allow-none/all circumstances, not a universal default.
+- **Live Data discovery and cache:** Config/Status maintenance in L-0001/0002 is conditional on sufficient computing resources, DEVICE REMOVED removes those maintained values, and successful Discover with zero matches is still SUCCESS. Do not equate cached state cleanup with physical device removal or historical Event deletion.
+- **Subscriptions:** creator/requester may differ from consumer. Source wording concerning maintaining creator subscriptions while registered and deleting subscriptions for removed consumers remains separately attributed. New subscribers receive matching maintained Config/Status; this does not establish a historical Events cache or override the previously reviewed DQL option wording.
+- **Dynamic matching and administrative messages:** Status changes and Event detector-property changes may alter match and cause START/STOP FOLLOWING. LDSV-H-0002's printed “Parent Requirements,” LDSV-L-0028's M-0010 parent, and LDSV-L-0029's printed Start/now-matched wording paired with STOP FOLLOWING are preserved as native source discrepancies without rewriting them.
+
+## Master, evidence and preservation standing
+
+The canonical working master remains **329 information/review rows** and **480 DMS catalogue outcomes (474 supported, six precise source-definition questions)**. Fifteen existing candidate boundary/evidence records were refined by delivery19, **without changing a displayed ISA/donor/case cell or adopting DIM content**. All58 earlier donor evidence records and73 source-case statements, previously reviewed Component Requirements34/34 blocks/259 definitions, Controller first-area108 definitions, and source-boundary evidence remain preserved. Current coverage notes total **170**; companion cumulative evidence uses a narrower note population and must not be conflated.
+
+Original31 correspondence targets remain **4/31** reconciled and25 earlier findings **1/25**. Their source-first audit, including six local questions, remains **delivery21**, not falsely closed by completing the Controller document. The canonical26-sheet XLSX remains the verified old **253-row/226-primary** snapshot, SHA256 `4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806`, while current Markdown/CSV/JSON contain329 rows and480 DMS outcomes. Substantial/final workbook refresh cadence remains unchanged; do not claim the XLSX incorporates current findings yet.
+
+No new domain/chassis hierarchy, source-to-DIM adoption, CSAPI Profile requirement, OGC conformance, server/client code, real command, signed source fact, Cloudflare deploy or other donor work was performed. Source review does not trump later cross-donor comparisons. The broader40-step donor comparison resumes at its owner checkpoint Step16 after ISA correction. The previous original43-step research plan remains conditionally closed with its E/F/G release qualifications.
+
+## Precise next execution and remaining plan
+
+**Delivery20 / next “Proceed” ONLY:** review the23 registered **Data Model Topics** sections and the single bounded **PAPER2015** access question; reconcile all279 registered ISA source blocks/documents and actual remaining source context using completed DMS, DQL, SDD, ICD, Component and Controller evidence. No unbounded access hunt or new child iterations. Preserve honest gaps.
+
+**Delivery21:** source-first semantic audit of31 original correspondence targets,25 earlier findings, six specific primary source questions, and existing candidate correspondence; revisit only precisely identified evidence gaps.
+
+**Delivery22:** final source/evidence/master validation and committed workbook refresh, scoped checks, lessons consolidation, verified GitHub closeout. **Central technical forecast41, completed38, exactly THREE remaining deliveries20–22** (current range2–5). Do not silently extend.
+
+**Original source PDFs:** ISA Controller Requirements6.0r4,31 October2023, file ID `file_00000000e00082109d88d0119f744880` (74 pages); ISA Component Requirements6.0r4,31 October2023, file ID `file_00000000ed048210a141e046f2e93a17` (112 pages). Other source IDs, editions and technical evidence are preserved in the cumulative register. GitHub publication and exact readback are mandatory after each source delivery, not a sandbox-only handoff. Prior whole-repository unrelated MPSS/presentation artifact-check issues do not justify claiming a complete full-suite CI pass.
+
+## Historical PITON content (task routing below is superseded)
+
+### Current ISA PITON — Controller Requirements first area complete (8 November 2026)
 
 **AUTHORITATIVE ROUTE: original ISA Step 11 / cross-cutting Controller requirements, accelerated delivery18 COMPLETE.** The source review covers original *ISA Controller Requirements* 6.0r4 (31 October2023), §§1.0–5.12, **20/28 registered source blocks**. There are **108 native requirements** (13 high-level/33 mid-level/62 low-level; **107 shall/0 should/1 may**). Source was available as indexed original PDF text on pages8–42 of74; source page-image inspection was unavailable and is not claimed. Full Controller review, including authorization, Live Data, verification and acronyms, is not closed yet.
 
