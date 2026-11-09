@@ -1,3 +1,11 @@
+# CURRENT — Step17 SOSA-C complete with native evidence holds; SOSA-D next
+
+<!-- CURRENT_SOSA_C_REVIEWED_WITH_NATIVE_HOLDS_09NOV2026 -->
+
+**9 November 2026.** [C239 data-model/interface audit](Donor_DIM_Crosswalk/Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Review_09NOV2026.md) · [exact 23/17/eight and eight uninspected native references ledger](Donor_DIM_Crosswalk/Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Evidence_09NOV2026.json). Original text supports DIV-1/2/3, RTE configuration and selected interaction bindings; the external DSDM, IDL and six OpenAPI JSONs remain named **but unread**. The [canonical master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) is unchanged at 329 rows / 14 columns (58 prior donor records, 73 case facts). Original source-based candidate comparisons are staged, not adopted. **Next single “Proceed”: SOSA-D master/workbook integration with accurate source holds**, not SAPIENT or a new correction campaign. [Current plan](Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+
+## Older checkpoints — superseded where inconsistent
+
 # CURRENT — Step17 SOSA-B source audit complete; SOSA-C next
 
 <!-- CURRENT_SOSA_B_COMPLETE_09NOV2026 -->

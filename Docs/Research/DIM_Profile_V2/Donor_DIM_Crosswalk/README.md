@@ -1,3 +1,13 @@
+# CURRENT — Step17 SOSA-C original data-model/interface review complete with native-source holds; SOSA-D next (9 November 2026)
+
+<!-- CURRENT_SOSA_C_REVIEWED_WITH_NATIVE_HOLDS_09NOV2026 -->
+
+**SOSA-C completed its bounded original C239 §5.7, §§14–15, and Appendix B source-first review, with exact native-file access holds. Step17 overall is NOT COMPLETE.** [Original-source SOSA-C review](Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Review_09NOV2026.md) · [structured 23 original concept statements / 17 bounded correspondences to 15 current rows / eight source questions / eight referenced native files](Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Evidence_09NOV2026.json). Original C239 Edition 1.1 (2023) defines DIV-1 conceptual, DIV-2 logical and DIV-3 physical **data** descriptions; separates data meaning from transport; describes FACE/Container/VM run-time profiles, conditional RTE configuration rules, interaction types and conditional transport bindings. Appendix B.1 names `SOSA_TechStd_v1_DSDM` and `SOSA_TechStd_v1_DSDM_IDL`; B.2–B.7 name six management OpenAPI files. **None of those eight referenced native files was retrieved or parsed.** The project Library PDF indexed text was inspectable but raw PDF bytes could not be materialized for possible embedded attachment extraction. The §5.7 B.2 citation vs actual Appendix B.1 data-model heading contradiction is preserved. SOSA S251 (2025 Snapshot3) was verified only as publication/adoption metadata, not substituted for C239 or misread as a final Edition2.0.
+
+**Current master is UNCHANGED:** 329 information/review rows, 14 columns, 58 earlier donor records and 73 case facts; no The Open Group SOSA column, uninspected DSDM classes, invented native API paths, adopted DIM model content or CSAPI Profile obligations. **Only next owner “Proceed” = SOSA-D**, integrating source-qualified SOSA-A/B/C findings into the existing single master and synchronized Excel/CSV/JSON/Markdown, explicitly retaining native evidence access holds. Step18 SAPIENT and all other donors remain untouched.
+
+## Older completed checkpoint history — prior SOSA-C NEXT instructions superseded
+
 # CURRENT — Step17 SOSA-B original management/services audit complete; SOSA-C next (9 November 2026)
 
 <!-- CURRENT_SOSA_B_COMPLETE_09NOV2026 -->

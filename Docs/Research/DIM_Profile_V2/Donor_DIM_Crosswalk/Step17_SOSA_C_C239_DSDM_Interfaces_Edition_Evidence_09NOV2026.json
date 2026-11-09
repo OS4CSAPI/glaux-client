@@ -1,0 +1,673 @@
+{
+  "schema": "sosa-c-v0.1",
+  "date": "2026-11-09",
+  "scope": "Step17 SOSA-C: C239 original §5.7, chapters14-15, appendixB; eight native files source-access/edition holds",
+  "repository": "OS4CSAPI/glaux-client",
+  "branch": "research/dim-profile-v2",
+  "source_pdf": {
+    "publisher": "The Open Group",
+    "doc": "C239",
+    "title": "Technical Standard for SOSA Reference Architecture, Edition1.1",
+    "published": "June2023",
+    "erratum": "September2023",
+    "project_library_name": "c239_5.pdf",
+    "project_library_id": "file_00000000af4081f58c4bac329f85c58f",
+    "pdf_pages": 403,
+    "reviewed_pdf_pages": [
+      61,
+      62,
+      63,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      390,
+      391
+    ],
+    "raw_pdf_embedded_files_available": false
+  },
+  "baseline": {
+    "source_master_blob": "60843bf874c899c497900b062cd8dec4e7e29c89",
+    "rows": 329,
+    "columns": 14,
+    "prior_donor_evidence": 58,
+    "case_evidence": 73
+  },
+  "source_native_concepts": [
+    {
+      "id": "SOSA-C239-C-01",
+      "topic": "DIV-1 conceptual data model",
+      "location": "§5.7.1, printed36/PDF62",
+      "original_meaning": "Nature and conceptual relationships of mission and management information; DIV-1 expressed using entity relationship diagrams",
+      "negative_equivalence": "The narrative does not enumerate or authenticate underlying SOSA DSDM entities/classes",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-02",
+      "topic": "DIV-2 logical data model",
+      "location": "§5.7.2, printed36/PDF62",
+      "original_meaning": "Refines DIV-1 entities and associations with measurements, units and coordinate systems",
+      "negative_equivalence": "Not concrete wire serialization, exact measurement value or model ontology of our DIM",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-03",
+      "topic": "DIV-3 physical data model",
+      "location": "§5.7.3 and §5.7, printed35–36/PDF61–62",
+      "original_meaning": "Intended physical data representation, precise structures, bounds and encodings",
+      "negative_equivalence": "Physical data model is not physical sensor equipment or extracted verified schema; native file not inspected",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-04",
+      "topic": "Mission data vs management data",
+      "location": "§5.7.1, printed36/PDF62",
+      "original_meaning": "DIV-1 separates mission/sensed-environment information from system-control/operational information",
+      "negative_equivalence": "Not a mandatory two-module DIM design, general CSAPI Profile structure or universal class taxonomy",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-05",
+      "topic": "Data definition independent of transport",
+      "location": "§5.7, printed35–36/PDF61–62",
+      "original_meaning": "A data item may be transported by different methods separately from its definition",
+      "negative_equivalence": "Not evidence that SOSA wire message equals OGC SWE, SensorML, OMS or ISA Event",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-06",
+      "topic": "Normative DSDM and IDL file pointers",
+      "location": "Appendix B.1, printed364/PDF390",
+      "original_meaning": "C239 explicitly references a separate SOSA_TechStd_v1_DSDM and SOSA_TechStd_v1_DSDM_IDL",
+      "negative_equivalence": "A file reference is not inspection of native entity definitions, attributes, cardinalities or IDL encoding",
+      "source_standing": "ORIGINAL_C239_FILE_REFERENCE_ONLY",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-07",
+      "topic": "Three SOSA RTE profiles",
+      "location": "§14.1 Table14.1-1, printed335–337/PDF361–363",
+      "original_meaning": "FACE OSS, Container and Virtual Machine are distinct RTE profiles with conditional Rules 14.1-1–4",
+      "negative_equivalence": "Software runtime host does not prove physical host platform or exact one-module/one-container correspondence",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-08",
+      "topic": "RTE configuration-file fields",
+      "location": "§14.2 Rules14.2-1–6, printed337–338/PDF363–364",
+      "original_meaning": "RTE-specific configuration requirements include ProfileType, ImageLoad, Resources and conditional FileSystem/StartOrder entries",
+      "negative_equivalence": "Not identical to ISA Config message, SensorML configuration, sensor control action or generic mandatory DIM fields",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-09",
+      "topic": "Software module to RTE containment is flexible",
+      "location": "§14.1, printed335–337/PDF361–363",
+      "original_meaning": "Multiple modules/profiles can coexist and a module may be implemented by multiple executables or containers",
+      "negative_equivalence": "One runtime does not imply one physical sensor or a fixed physical hardware relationship",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-10",
+      "topic": "Interactions are operations with parameters and roles",
+      "location": "§15.1, printed346/PDF372",
+      "original_meaning": "Interaction can be operation/function with DIV-2 input/output parameters between modular entities acting as provider and consumer",
+      "negative_equivalence": "Not a performed observation, authenticated command history or native CSAPI Command directly",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-11",
+      "topic": "Message Interconnect vs Wideband Low-Latency Interconnect",
+      "location": "§15.1–15.2, printed346–348/PDF372–374",
+      "original_meaning": "SOSA distinguishes general management/communication from high-volume/low-latency signal streams and control",
+      "negative_equivalence": "Transport path is not physical mounted equipment, one sensor channel or raw observation",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-12",
+      "topic": "Eight interaction classes and default transports",
+      "location": "§15.1 Table15.1-1, printed346–347/PDF372–373",
+      "original_meaning": "Analog Distribution, Digital Signal Stream, Digital Signal Context, Signal Layer Control, Discrete, Publish-Subscribe, Request-Response and Event Notification have different roles/default paths",
+      "negative_equivalence": "Not eight mandatory DIM classes or proof each implemented by any examined case",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-13",
+      "topic": "Digital Signal Stream vs Digital Signal Context",
+      "location": "§15.1 Table15.1-1; §15.6.3, printed347,355/PDF373,381",
+      "original_meaning": "Digital data payloads and associated contextual metadata are separable, possibly transported at different rates",
+      "negative_equivalence": "Context metadata is not original-source observation performer or data-provenance assertion",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-14",
+      "topic": "Publish-subscribe and topic identity",
+      "location": "§15.6.4, printed356/PDF382",
+      "original_meaning": "Publisher/subscriber interaction shares identified structured data via topics; source says exact general pub/sub implementation not yet fully determined",
+      "negative_equivalence": "Topic ID is not physical sensor identity, ISA subscription Query ID or CSAPI DataStream URI",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-15",
+      "topic": "Request-response interaction and endpoint roles",
+      "location": "§15.1 Table15.1-1; §15.6.2/15.6.4, printed347,354,356–357/PDF373,380–381,382–383",
+      "original_meaning": "Client/requestor and service/responder interaction for get/set operations; response direction/flow varies",
+      "negative_equivalence": "A request plus response does not independently prove hardware physical effects or completion",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-16",
+      "topic": "Event notification vs data record",
+      "location": "§15.1 Table15.1-1; §15.6.4, printed347,357/PDF373,383",
+      "original_meaning": "Event notifications are event-triggered subcase of pub/sub and may be acknowledgeable",
+      "negative_equivalence": "Cannot equate generic event notice to source-authenticated performed OMS Observation",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-17",
+      "topic": "QoS policies and contracts",
+      "location": "§15.3, printed348–351/PDF374–377",
+      "original_meaning": "Publisher/consumer offered/required QoS attributes, policies and compatibility",
+      "negative_equivalence": "QoS is transport interoperability property, not observed sensor phenomenon or DIM-class requirement",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-18",
+      "topic": "Interaction binding five-layer selection",
+      "location": "§15.4, printed351–352/PDF377–378; Table15.4-1",
+      "original_meaning": "Data Definition, Encoding, Encapsulation, Transport, Network are selected as one interaction binding",
+      "negative_equivalence": "Do not collapse model semantics and wire format, or infer one fixed implementation universally",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-19",
+      "topic": "Three Table15.4-1 example binding stacks",
+      "location": "§15.4 Table15.4-1 and Rules15.4-1–2, printed352/PDF378",
+      "original_meaning": "Conditional General Message Interconnect stacks: OMG DDS/RTPS v1.4+, Protobuf v3 + AMQP v1.0, or Protobuf v3 + ZMTP v3.0",
+      "negative_equivalence": "Rules apply under stated implementation conditions; they do not require these transport choices in CSAPI and do not supply actual DSDM entity schema",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-20",
+      "topic": "Portable software Transport API",
+      "location": "§15.2 Rule15.2-1, printed348/PDF374",
+      "original_meaning": "Conditional FACE 3.1 Transport Service/Distribution/Configuration/QoS capabilities for a SOSA software-module Transport API",
+      "negative_equivalence": "This source rule does not make FACE API a CSAPI client interface or physical interconnection",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-21",
+      "topic": "Conditional inter-module TLS/DTLS support",
+      "location": "§15.6.1 Rules15.6.1-1–2, printed353/PDF379",
+      "original_meaning": "If network protocol and security-required conditions apply, module interaction can require TLS/DTLS configurability",
+      "negative_equivalence": "Not proof that any source device is cryptographically authenticated or source evidence signed",
+      "source_standing": "ORIGINAL_C239_CLAUSE_INSPECTED",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-22",
+      "topic": "Six referenced management OpenAPI companion files",
+      "location": "Appendix B.2–B.7, printed364–365/PDF390–391",
+      "original_meaning": "C239 specifically identifies six separate System Manager, Generic Module, Security Services, Chassis Manager, PIC and PIC/SW RTE OpenAPI files",
+      "negative_equivalence": "Named but native JSON not read: cannot claim endpoints, properties, schemas or successful API conformance",
+      "source_standing": "ORIGINAL_C239_FILE_REFERENCE_ONLY",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-C-23",
+      "topic": "C239 §5.7 Appendix pointer discrepancy",
+      "location": "§5.7 printed35/PDF61 versus Appendix B.1/B.2 printed364/PDF390",
+      "original_meaning": "§5.7 sends reader to B.2 for data model, while Appendix B.1 is DSDM and B.2 is System Manager API",
+      "negative_equivalence": "Record original contradiction without silently fabricating original normative class or rewriting standard",
+      "source_standing": "ORIGINAL_C239_INTERNAL_CROSS_REFERENCE_DISCREPANCY",
+      "source": "The Open Group, Technical Standard for SOSA Reference Architecture Edition 1.1 (C239, June 2023, September erratum), original project Library c239_5.pdf file_00000000af4081f58c4bac329f85c58f"
+    }
+  ],
+  "referenced_companions": [
+    {
+      "artifact_id": 49,
+      "file": "SOSA_TechStd_v1_DSDM",
+      "source": "C239 §B.1",
+      "role": "DIV-1/2/3 native data model",
+      "relation_to_registry": "C239 names native DSDM not separately itemized as exact Edition1.1 record in 182-index",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "entities_reviewed": 0
+    },
+    {
+      "artifact_id": 50,
+      "file": "SOSA_TechStd_v1_DSDM_IDL",
+      "source": "C239 §B.1",
+      "role": "IDL representation of source DSDM",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "entities_reviewed": 0
+    },
+    {
+      "artifact_id": 51,
+      "file": "System Manager-SysMan-API.json",
+      "source": "C239 §B.2",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    },
+    {
+      "artifact_id": 52,
+      "file": "Module-SysMan-API.json",
+      "source": "C239 §B.3",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    },
+    {
+      "artifact_id": 53,
+      "file": "Security Services-SysMan-API.json",
+      "source": "C239 §B.4",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    },
+    {
+      "artifact_id": 54,
+      "file": "Chassis Manager-SysMan-API.json",
+      "source": "C239 §B.5",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    },
+    {
+      "artifact_id": 55,
+      "file": "PIC-SysMan-API.json",
+      "source": "C239 §B.6",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    },
+    {
+      "artifact_id": 56,
+      "file": "PIC with SW RTE-SysMan-API.json",
+      "source": "C239 §B.7",
+      "role": "In-band system management OpenAPI specification",
+      "standing": "ORIGINAL_C239_REFERENCE_VERIFIED_NATIVE_BYTES_NOT_ACCESSED",
+      "operation_count_checked": 0,
+      "schema_count_checked": 0
+    }
+  ],
+  "staged_correspondences": [
+    {
+      "id": "SOSA-C-M01",
+      "source_ids": [
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-04"
+      ],
+      "existing_master_row_ids": [
+        "S06-R012"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "SOSA DIV-1 mission/management conceptual scope may help categorize output and management fields",
+      "negative_equivalence_guard": "SOSA DIV-1 is a model layer, not output-field specification or native CSAPI result schema",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M02",
+      "source_ids": [
+        "SOSA-C239-C-02",
+        "SOSA-C239-C-03"
+      ],
+      "existing_master_row_ids": [
+        "ISA-R-MEASUREMENT"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Logical quantities and physical format concepts may inform typed measured data",
+      "negative_equivalence_guard": "Narrative alone cannot establish a native SOSA measurement type/units, actual value or cardinality",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M03",
+      "source_ids": [
+        "SOSA-C239-C-03",
+        "SOSA-C239-C-06"
+      ],
+      "existing_master_row_ids": [
+        "ISA-K-TYPE-CHOICE"
+      ],
+      "relation": "NO_ESTABLISHED_EXACT_MAPPING",
+      "source_first_justification": "Physical DSDM encoding pointer is related to datatype specification scope",
+      "negative_equivalence_guard": "Cannot infer DSDM type list from prose or equate to ISA CCD type declarations",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M04",
+      "source_ids": [
+        "SOSA-C239-C-07",
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "existing_master_row_ids": [
+        "ISA-T-CONFIG"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "SOSA RTE software profile/configuration has documented fields",
+      "negative_equivalence_guard": "It is not native ISA Config message, component capability declaration, runtime configuration of all sensors",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M05",
+      "source_ids": [
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "existing_master_row_ids": [
+        "S06-R007"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Multiple execution environments/implementations illustrate physical vs logical distinctions",
+      "negative_equivalence_guard": "No physical containment or one module per PIC, sensor or hardware component",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M06",
+      "source_ids": [
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "existing_master_row_ids": [
+        "S06-R019"
+      ],
+      "relation": "PARTIAL",
+      "source_first_justification": "Request-response interactions describe a request to act or get/set operation",
+      "negative_equivalence_guard": "Not evidence of a source-attested issued command/physical effect",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M07",
+      "source_ids": [
+        "SOSA-C239-C-15"
+      ],
+      "existing_master_row_ids": [
+        "S06-R020"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Response exists as an interaction type after request",
+      "negative_equivalence_guard": "Response does not independently substantiate completed task or physical effect",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M08",
+      "source_ids": [
+        "SOSA-C239-C-11",
+        "SOSA-C239-C-12"
+      ],
+      "existing_master_row_ids": [
+        "CASE-H03"
+      ],
+      "relation": "CASE_RELEVANT_NOT_VERIFIED",
+      "source_first_justification": "Interconnect roles/families help explain reporting paths and transport differences",
+      "negative_equivalence_guard": "Source case has no verified SOSA link or real stream implementation",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M09",
+      "source_ids": [
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-13"
+      ],
+      "existing_master_row_ids": [
+        "S06-R012"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Signal streams and context metadata are separable from data record output fields",
+      "negative_equivalence_guard": "No direct SWE DataRecord or CSAPI DataStream/resultSchema equivalence",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M10",
+      "source_ids": [
+        "SOSA-C239-C-14"
+      ],
+      "existing_master_row_ids": [
+        "ISA-Q-SUBSCRIPTION"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "SOSA topics identify pub/sub shared structures",
+      "negative_equivalence_guard": "No equivalent ISA Query object, source UCI or CSAPI Datastream identity",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M11",
+      "source_ids": [
+        "SOSA-C239-C-16"
+      ],
+      "existing_master_row_ids": [
+        "ISA-T-ADMIN"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Event notifications cover operational/management state changes",
+      "negative_equivalence_guard": "SOSA notification not ISA administrative event code nor original performed Observation",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M12",
+      "source_ids": [
+        "SOSA-C239-C-18",
+        "SOSA-C239-C-19"
+      ],
+      "existing_master_row_ids": [
+        "ISA-A-CONNECTION-PRESENTATION"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Native SOSA interaction binding specifies serialization/transport stacks under source conditions",
+      "negative_equivalence_guard": "ISA presentation negotiation and SOSA Table15.4 stacks not same protocol requirement",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M13",
+      "source_ids": [
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "existing_master_row_ids": [
+        "ISA-T-REQUEST-REFERENCE"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_justification": "Request/response roles exist in SOSA interactions",
+      "negative_equivalence_guard": "No native original request ID or ISA response correlation reference established by these pages",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M14",
+      "source_ids": [
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-14"
+      ],
+      "existing_master_row_ids": [
+        "S06-R014"
+      ],
+      "relation": "NO_ESTABLISHED_PHYSICAL_OBSERVER_MAPPING",
+      "source_first_justification": "SOSA interaction publisher/sender is digital role",
+      "negative_equivalence_guard": "Publishing data does not prove which physical sensor performed source observation",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M15",
+      "source_ids": [
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-05",
+        "SOSA-C239-C-22"
+      ],
+      "existing_master_row_ids": [
+        "S06-R021"
+      ],
+      "relation": "NO_ESTABLISHED_NATIVE_PROVENANCE_EQUIVALENCE",
+      "source_first_justification": "SOSA mission/management split and its data models are relevant background to provenance design",
+      "negative_equivalence_guard": "Cannot infer exact user-proposed source-qualified assertion field or issuer/evidence clause in DSDM",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M16",
+      "source_ids": [
+        "SOSA-C239-C-13",
+        "SOSA-C239-C-16"
+      ],
+      "existing_master_row_ids": [
+        "S06-R022"
+      ],
+      "relation": "NO_ESTABLISHED_NATIVE_COPY_LINEAGE",
+      "source_first_justification": "SOSA digital stream or event notification can produce data representations",
+      "negative_equivalence_guard": "Does not define original NOAA source observation vs experimental CSAPI copy provenance",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    },
+    {
+      "id": "SOSA-C-M17",
+      "source_ids": [
+        "SOSA-C239-C-17"
+      ],
+      "existing_master_row_ids": [
+        "CASE-H03"
+      ],
+      "relation": "CASE_RELEVANT_NOT_VERIFIED",
+      "source_first_justification": "QoS policies can qualify a reporting path",
+      "negative_equivalence_guard": "No actual source case has demonstrated SOSA QoS policy, delivery or latency",
+      "status": "STAGED_SOURCE_CORRESPONDENCE_FOR_SOSA_D_ONLY",
+      "dim_content_adopted": false
+    }
+  ],
+  "source_holds": [
+    {
+      "key": "SOSA-C-Q01",
+      "kind": "PRIMARY_NATIVE_MODEL_ACCESS",
+      "subject": "C239 Edition1.1 native SOSA_TechStd_v1_DSDM",
+      "needed": "Original exact bytes, edition, entity/attribute/association/cardinality inventory",
+      "impact": "DO NOT assert native DIV entity/field mapping"
+    },
+    {
+      "key": "SOSA-C-Q02",
+      "kind": "PRIMARY_NATIVE_IDL_ACCESS",
+      "subject": "SOSA_TechStd_v1_DSDM_IDL",
+      "needed": "Actual IDL file, authoritative relationship to C239 model and any version metadata",
+      "impact": "DO NOT assert wire representation or schema class parity"
+    },
+    {
+      "key": "SOSA-C-Q03",
+      "kind": "OPENAPI_NATIVE_ACCESS",
+      "subject": "Six C239 Appendix B.2–B.7 System Management OpenAPI JSON files",
+      "needed": "Original exact file bytes and source-attested paths, operations, request and response schemas",
+      "impact": "DO NOT invent endpoints or required parameters"
+    },
+    {
+      "key": "SOSA-C-Q04",
+      "kind": "ORIGINAL_C239_CROSS_REFERENCE",
+      "subject": "§5.7 refers to B.2 where actual B.1 hosts data model",
+      "needed": "Preserve exact original edition cross-reference; optional publisher clarification",
+      "impact": "Treat B.1 as actual heading without silently correcting source narrative"
+    },
+    {
+      "key": "SOSA-C-Q05",
+      "kind": "EDITION_STATUS",
+      "subject": "2025 S251 Edition2.0 Snapshot3 and 2022 S221 snapshot",
+      "needed": "Actual 2025 snapshot/bundle bytes and source version/revision before edition-specific mapping",
+      "impact": "Do not substitute 2022 S221 or label 2025 Snapshot3 as final 2.0"
+    },
+    {
+      "key": "SOSA-C-Q06",
+      "kind": "SOURCE_ACCESS_LIMIT",
+      "subject": "Project Library c239_5.pdf source bytes unavailable for programmatic attachment extraction",
+      "needed": "Authorized raw C239 PDF or publisher companion downloads",
+      "impact": "Could inspect original page text/images but could not examine embedded attachments or any native file hash"
+    },
+    {
+      "key": "SOSA-C-Q07",
+      "kind": "TRANSPORT_SCOPE_LIMIT",
+      "subject": "§15.4 bindings versus §15.6.4 general pub-sub implementation TBD wording",
+      "needed": "Keep exact conditional contexts and do not reconcile into universal conformance rules",
+      "impact": "No blanket interface mapping to CSAPI, SWE or ISA"
+    },
+    {
+      "key": "SOSA-C-Q08",
+      "kind": "API_AND_DATA_SCOPE",
+      "subject": "C239 descriptive architecture versus exact normative DSDM/OpenAPI",
+      "needed": "Native source review or explicitly bounded non-assessment in SOSA-D",
+      "impact": "Architecture concept matches remain related/partial; no exact type or API claims"
+    }
+  ],
+  "edition_boundary": {
+    "C212": "Edition1.0 (2021) predecessor; not used as C239 normative",
+    "C239": "Edition1.1 (2023) exact original prose read",
+    "S221": "Edition2.0 Snapshot1 (2022) public PDF found, not same as S251",
+    "S251": "Edition2.0 Snapshot3 (2025), publisher announced, DoD adoption metadata separate; full source not inspected",
+    "S251_standing": "METADATA_ONLY_NOT_NATIVE_SOURCE_REVIEW"
+  },
+  "verification": {
+    "source_concept_count": 23,
+    "referenced_native_file_count": 8,
+    "source_hold_count": 8,
+    "staged_mapping_count": 17,
+    "unique_existing_target_row_count": 15,
+    "existing_row_references_valid": true,
+    "source_references_valid": true,
+    "native_DSDM_entities_reviewed": 0,
+    "actual_OpenAPI_operations_verified": 0,
+    "master_cells_modified": 0,
+    "new_DIM_rows": 0,
+    "adopted_DIM_elements": 0,
+    "whole_403_page_review": false
+  },
+  "next_authorized": "SOSA-D only: integrate source-qualified A/B/C correspondences into single canonical crosswalk and workbook; native source gaps remain explicit, no invented normative definitions"
+}
