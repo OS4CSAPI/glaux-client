@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.10",
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
   "currentWorkbookSha256": "4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806",
@@ -7057,7 +7057,12 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.5"
+      ],
+      "topics_source_review_boundary": "BSO correlates successive Events about the same observed entity (track); Event Reference addresses a prior Event for correction. Co-occurrence is allowed when correcting/adding BSO. BSO does not identify an ISA component.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-140",
@@ -7198,7 +7203,13 @@
         "ISA-TYPE-367",
         "ISA-TYPE-439",
         "ISA-TYPE-440"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-3.2",
+        "TOPICS-3.3"
+      ],
+      "topics_source_review_boundary": "Event Media typically holds Resource Descriptors to related external media. A URL/Resource Type/metadata description is not a performed Observation, provenance authentication or guaranteed media delivery.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-147",
@@ -7825,7 +7836,13 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.3",
+        "TOPICS-2.6.2"
+      ],
+      "topics_source_review_boundary": "Recall reason pertains to a mistaken original Event; it asks recipients to disregard the Event, without establishing erasure, universal recipient compliance or the same meaning as Resolve.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-157",
@@ -7863,7 +7880,12 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.4"
+      ],
+      "topics_source_review_boundary": "Resolve indicates a formerly accurate Event no longer requires attention; it is distinct from Recall for erroneous Events, physical equipment cessation and archive deletion.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-158",
@@ -7947,7 +7969,14 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.11",
         "CMPT-4.3.12"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.1",
+        "TOPICS-2.2",
+        "TOPICS-2.5"
+      ],
+      "topics_source_review_boundary": "Event Reference targets the original Event fingerprint (normally Time, ID, Source), whereas BSO correlates multiple Events about an observed entity. An illustrative simplified ID column is not an exhaustive native identity schema.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-T-EVENT-TIME",
@@ -7991,7 +8020,13 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.2.1",
         "CMPT-4.3.11"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
+      ],
+      "topics_source_review_boundary": "An updated/augmented Event retains its original observation time; update's own time dates that update. Multiple updates to the same source event are ordered by time before combining, not converted into new original observation times.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-T-EVENT-REASON",
@@ -8080,7 +8115,13 @@
       "controller_final_source_blocks": [
         "CNTR-7.3"
       ],
-      "controller_final_review_boundary": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+      "controller_final_review_boundary": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance.",
+      "topics_source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
+      ],
+      "topics_source_review_boundary": "Event Update observables update the augmented event view selectively; unmentioned values persist in the combined interpretation, but Event detector-property context does not become a Status record.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-R-MEASUREMENT",
@@ -8247,7 +8288,12 @@
         "",
         "Video-derived entity track reference"
       ],
-      "boundary": "Not a temporal track history, component identifier or guaranteed geographic position for every detection."
+      "boundary": "Not a temporal track history, component identifier or guaranteed geographic position for every detection.",
+      "topics_source_blocks": [
+        "TOPICS-2.5"
+      ],
+      "topics_source_review_boundary": "Observed-entity track correlation should use BSO, not Event Reference for updates to the same Event; a video track identifier cannot be equated without native scope evidence.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-K-CAPABILITIES",
@@ -8345,7 +8391,13 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.4"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "topics_source_review_boundary": "Mutability labels describe how a reported property value can be changed, not the physical nature of a component, a guarantee of a supported actuation command or a universal authorization outcome.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-K-OBSERVABLE-DECL",
@@ -8387,7 +8439,13 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.4"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-2.1",
+        "TOPICS-2.2"
+      ],
+      "topics_source_review_boundary": "Event observables are observation-associated content; update-reference semantics and partial replacement differ from Config declarations and property Status values.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-K-COMMAND-DECL",
@@ -8738,7 +8796,13 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "topics_source_review_boundary": "PERMANENT operational-cycle expectation and recommended deregistration differ from READ WRITE supplied knowledge through Set Property and READ ONLY values altered via a separately supported Change/Adjust command. Supplying Position may indirectly cause Orientation motion while Position remains READ WRITE.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-K-ABS-THRESHOLD",
@@ -10826,7 +10890,13 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "topics_source_review_boundary": "Set Property supplies a READ WRITE property value as information about a component; the example distinguishes that assignment from later indirect physical slewing. It does not itself prove actuator effect.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-244",
@@ -12598,7 +12668,12 @@
         "CNTR-7.2",
         "CNTR-7.3"
       ],
-      "controller_final_review_boundary": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+      "controller_final_review_boundary": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health.",
+      "topics_source_blocks": [
+        "TOPICS-3.3"
+      ],
+      "topics_source_review_boundary": "The guide describes general Resource Descriptors typically published as Status Resources; descriptive location/typed link is not evidence of a current reachable URL or actual component physical state.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-T-REGISTRATION",
@@ -14216,7 +14291,13 @@
         "",
         "Source-message reference for provenance"
       ],
-      "boundary": "Not an Event Reference, proof of authentic authorship, a new observation or an automatic equality with Request.request id."
+      "boundary": "Not an Event Reference, proof of authentic authorship, a new observation or an automatic equality with Request.request id.",
+      "topics_source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.5"
+      ],
+      "topics_source_review_boundary": "Original Event reference and BSO observed-entity correlation have different targets and reuse rules. Neither proves cryptographic source authenticity or makes four digital copies four original Events.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-R-NAMED-VALUE",
@@ -16840,7 +16921,13 @@
         "ISA-TYPE-297",
         "ISA-TYPE-439",
         "ISA-TYPE-440"
-      ]
+      ],
+      "topics_source_blocks": [
+        "TOPICS-3.2",
+        "TOPICS-3.3"
+      ],
+      "topics_source_review_boundary": "Status Resources typically supplies Resource Descriptors to component-provided material; a descriptor has URL, primary/secondary Resource Type and optional metadata. Current reachability and original issuer authenticity are not established.",
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     },
     {
       "row_id": "ISA-C-114",
@@ -20620,6 +20707,24 @@
       "originalSourceScope": "Controller Requirements6.0r4,74 pages, all source blocks reviewed across deliveries18–19",
       "originalSourceVisualLimit": "Selected Appendix A/B pages visually checked; not a full-page visual audit",
       "actualConformanceTested": false
+    },
+    "topicsGuide": {
+      "source": "ISA Data Model Topics6.0r2",
+      "source_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "registered_sections_reviewed": 23,
+      "pdf_text_pages_reviewed": 22,
+      "prior_source_register_total": 279,
+      "section_reconciliation": {
+        "prior_companion_fully_reviewed": 226,
+        "topics_newly_reviewed": 23,
+        "DMS_headings_accounted": 29,
+        "PAPER2015_full_text_access_held": 1
+      },
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "master_candidates_qualified": 15,
+      "new_master_rows": 0,
+      "displayed_cells_changed": 0,
+      "new_DIM_adoption": 0
     }
   },
   "counts": {
@@ -20676,7 +20781,7 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "Canonical master Markdown/CSV/JSON follows source decisions; Excel refreshed at substantial-section checkpoints. Never stage all new material outside the master until final approval.",
-  "currentEvidenceCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
+  "currentEvidenceCheckpoint": "ISA-REMAINING-COMPANION-AND-CONTEXT",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "MASTER-ISA-INTEGRATION",
@@ -20684,8 +20789,8 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Canonical structured/text master retains329 information/review rows and480 reviewed DMS outcomes, with Controller Requirements fully reviewed and15 new source-boundary qualifications; Excel remains verified253-row/226-primary earlier snapshot.",
-    "textCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
+    "lag": "Deliberately old253-row/226-primary XLSX; current329-row/480-outcome structured/text master through Data Model Topics delivery20. Final refresh reserved for delivery22.",
+    "textCheckpoint": "ISA-REMAINING-COMPANION-AND-CONTEXT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }

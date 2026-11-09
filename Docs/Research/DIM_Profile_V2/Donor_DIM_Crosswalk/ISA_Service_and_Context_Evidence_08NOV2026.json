@@ -1,26 +1,27 @@
 {
   "schema": "isa-service-and-context-evidence.v1",
-  "review_pass": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
-  "date": "2026-11-08",
-  "scope": "Remaining Controller Requirements6.0–8.0 and AppendicesA/B;8 blocks,55 native shall requirements,101-row verification appendix,18 acronyms. All28 Controller source blocks now reviewed.",
+  "review_pass": "ISA-REMAINING-COMPANION-AND-CONTEXT",
+  "date": "2026-11-09",
+  "scope": "Original ISA Data Model Topics6.0r2; 23 registered blocks,22 original indexed-text PDF pages with selected visual figures;29 DMS headings reconciled to earlier 480 individual reviews;279 block states accounted;2015 historical full text held.",
   "suggested_repository_evidence_file": "ISA_Service_and_Context_Evidence_08NOV2026.json",
   "source_edition": {
-    "document": "ISA Controller Requirements",
-    "version": "6.0r4",
+    "document": "ISA Data Model Topics",
+    "version": "6.0r2",
     "date": "31 October 2023",
-    "source_file_id": "file_00000000e00082109d88d0119f744880"
+    "source_file_id": "file_000000006b5881f4988dfb57ac11965c"
   },
   "source_inspection": {
-    "method": "Original indexed Project PDF source text pages43–74 reviewed including all native requirements, notes, 101 verification rows and18 acronym definitions. Targeted page images examined for AppendixA/B examples; not a visual audit of all pages.",
-    "reviewed_pdf_text_pages": "43–74 of74",
+    "method": "Original indexed Project PDF text all22 pages, selected table/figure visual pages9,13,14,19,21; historical2015 abstract/bibliographic check; DMS section accounting uses existing earlier evidence rather than new source review.",
+    "reviewed_pdf_text_pages": "1–22 of22",
     "targeted_visual_pdf_pages": [
-      58,
-      68,
-      72,
-      74
+      9,
+      13,
+      14,
+      19,
+      21
     ],
-    "native_definitions_credited": 55,
-    "previous108_definitions_reused": true,
+    "source_pdf_hash_claimed": false,
+    "prior480_DMS_definitions_reused": true,
     "actual_conformance_tested": false
   },
   "assigned_ids": [
@@ -10586,21 +10587,23 @@
     }
   ],
   "validation": {
-    "all8_assigned_source_blocks_reviewed": true,
-    "all28_controller_source_blocks_complete": true,
-    "all163_native_controller_requirements_accounted": true,
-    "all101_low_level_verification_rows_present": true,
-    "verification_methods_match_original": true,
-    "all18_acronyms_source_context_only": true,
-    "prior259_component_requirements_preserved": true,
+    "all23_topics_original_source_sections_reviewed": true,
+    "source_pdf22_pages_text_reviewed": true,
+    "selected_source_diagrams_and_table_inspected": true,
+    "register_279_accounted": true,
+    "existing_226_companion_sections_preserved": true,
+    "dms_heading_29_no_false_source_review": true,
+    "historical_2015_abstract_only_explicit": true,
     "prior480_DMS_source_outcomes_preserved": true,
     "prior329_master_rows_and_donor_values_preserved": true,
+    "original31_correspondence_targets_deferred": true,
+    "prior25_findings_deferred": true,
+    "six_local_DMS_questions_preserved": true,
+    "existing_master_candidates_qualified": 15,
     "new_primary_DMS_questions": 0,
     "new_DIM_adoption": 0,
     "runtime_or_conformance_tested": false,
-    "source_image_limit_disclosed": true,
-    "publication_checks_required": true,
-    "candidate_to_controller_block_links_source_scoped": true
+    "canonical_XLSX_refreshed": false
   },
   "integration_notes": [
     "Aligned with root ISA-A-SERVICE-ROLE, ISA-A-CAPABILITY-GROUP, ISA-A-BASELINE-CAPABILITIES. Participation, Network Context and Extension Standing companion contributions are separate.",
@@ -10609,9 +10612,9 @@
     "All30 exact source texts are embedded, including final chapter3 context.",
     "No repository or workbook modification by this reviewer."
   ],
-  "checkpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
-  "next_task": "ISA-REMAINING-COMPANION-AND-CONTEXT",
-  "source_input_commit": "0f62fdfd99c5353cbe7543c525cc59c453f1d77a",
+  "checkpoint": "ISA-REMAINING-COMPANION-AND-CONTEXT",
+  "next_task": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
+  "source_input_commit": "5514895c003e0cb79d4b660c8b1b3434ed8c2374",
   "primary_records": [
     {
       "id": "ISA-SVC-001",
@@ -63289,6 +63292,419 @@
           "boundary": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
         }
       ]
+    },
+    "TOPICS": {
+      "schema": "isa-topics-2023-original-context.v1",
+      "document": "ISA Data Model Topics",
+      "edition": "6.0r2",
+      "date": "2023-10-31",
+      "source_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "pdf_pages": 22,
+      "reviewed_original_text_pages": 22,
+      "visual_pdf_pages": [
+        9,
+        13,
+        14,
+        19,
+        21
+      ],
+      "registered_blocks": [
+        {
+          "block_id": "TOPICS-1.0",
+          "section": "1.0",
+          "title": "Property Mutability",
+          "original_pdf_pages": "8–10",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Parent of §1.1–1.2; explains source mutability as ability to change the property value, not a separate physical device state.",
+          "must_not_imply": "No new property kind or deployment state from parent heading.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-1.1",
+          "section": "1.1",
+          "title": "Mutabilities Overview",
+          "original_pdf_pages": "8",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "PERMANENT is expected fixed for an operational cycle; READ WRITE value supplied through Set Property; READ ONLY changes through supported dedicated command; WRITE ONLY deprecated for future removal.",
+          "must_not_imply": "PERMANENT recommendation to deregister is source 'should', not an ISA universal SHALL; READ WRITE may indirectly trigger physical action without its supplied value changing.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-1.2",
+          "section": "1.2",
+          "title": "Read Write Versus Read Only",
+          "original_pdf_pages": "9–10",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Table 2 visually checked: only READ WRITE accepts Set Property; only READ ONLY accepts Change/Adjust; PERMANENT accepts neither by those mechanisms. Position then resulting Orientation slew example distinguishes direct assignment from indirect real motion.",
+          "must_not_imply": "A Set Property receipt is not proof of requested physical motion; READ ONLY does not imply the supported Change/Adjust command is available for every property.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.0",
+          "section": "2.0",
+          "title": "Event Updates",
+          "original_pdf_pages": "11–14",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Parent contains event update/correlation/recall/resolution rules; source-original Event remains a distributed immutable record.",
+          "must_not_imply": "Parent span overlaps children; no double-counted Event definitions or observed instances.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.1",
+          "section": "2.1",
+          "title": "Events Overview",
+          "original_pdf_pages": "11",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "An Event reports source-observed-world data; a distributed original Event cannot be overwritten across recipients; subsequent Event Update can augment or correct.",
+          "must_not_imply": "Source commentary does not establish an immutable database or guaranteed recipient behavior.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.2",
+          "section": "2.2",
+          "title": "Event Update Definition",
+          "original_pdf_pages": "11–12",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Event with optional Event Reference supplied is an Update. Supplied observables take precedence; unmentioned values remain; the original Event time remains the represented observation time while update time dates the update. Multiple updates are ordered by time before application.",
+          "must_not_imply": "The simplified ID/Ref table is explanatory; native fingerprint comprises source/time/ID, not a bare identifier or new original observation.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.3",
+          "section": "2.3",
+          "title": "Recalling Events",
+          "original_pdf_pages": "12",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Recall is intended for events generated in error or observations not correctable; string reason explains why consumers should disregard referenced Event.",
+          "must_not_imply": "A recall notice does not physically erase past messages or prove all consumers complied.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.4",
+          "section": "2.4",
+          "title": "Resolving Events",
+          "original_pdf_pages": "12",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Resolve marks a previously accurate Event as no longer requiring attention while using Event Update reference mechanism.",
+          "must_not_imply": "Resolved is not recalled/erroneous and not deletion, hardware health, or source-independent event disposition.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.5",
+          "section": "2.5",
+          "title": "Publishing Tracks",
+          "original_pdf_pages": "12–13",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Battle Space Object (BSO) correlates separate Events about the same observed entity, whereas Event Reference corrects a specific Event. Both can occur when correcting/adding BSO of previous Event.",
+          "must_not_imply": "BSO is not ISA component UCI, physical asset identity, or an Event correction by itself.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.6",
+          "section": "2.6",
+          "title": "Event Update Examples",
+          "original_pdf_pages": "14",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Parent for Figures 2–3, visually inspected on PDF p.14; demonstrates field-level augmenting and recall.",
+          "must_not_imply": "Illustrative diagrams are not executed observations or persistence tests.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.6.1",
+          "section": "2.6.1",
+          "title": "Augmented State After Applying Event Updates",
+          "original_pdf_pages": "14",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 2 retains original event time, combines changed Position, existing Velocity, new Identity and later Media along referenced updates.",
+          "must_not_imply": "The resultant augmented state is a consumer interpretation; does not rewrite the published original.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-2.6.2",
+          "section": "2.6.2",
+          "title": "Augmented State After a Recall Event",
+          "original_pdf_pages": "14",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 3 displays a Recall indication and carries original time through the augmented event sequence.",
+          "must_not_imply": "Diagram does not mandate deletion of all cached or archived original copies.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.0",
+          "section": "3.0",
+          "title": "Resource Descriptors",
+          "original_pdf_pages": "15–21",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Parent describes URL-addressed external material and typed representations, including illustrated media and custom service links.",
+          "must_not_imply": "One Resource Descriptor is neither a native CSAPI resource nor proof of current external availability.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.1",
+          "section": "3.1",
+          "title": "Sharing Information on ISA",
+          "original_pdf_pages": "15",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Live Data subscription transports native standardized data; non-ISA representations and heavyweight material can be made available on demand through Resource Descriptor.",
+          "must_not_imply": "External access URL does not automatically inherit ISA transport, authorization, source authenticity or guaranteed retrieval.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.2",
+          "section": "3.2",
+          "title": "Resource Descriptor Overview and Use Cases",
+          "original_pdf_pages": "15–16",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Resource Descriptor: URL, Resource Type primary/secondary analogous to IANA Media Type, optional title/created/modified/metadata. Example uses image/png; possibilities include native raw data, nonstandard command interface, vCard and KML.",
+          "must_not_imply": "Analogy is not a claim that every type is IANA-registered or safe/authorized; custom command interface is not evidence of an executed device command.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.3",
+          "section": "3.3",
+          "title": "Resource Descriptor Usage",
+          "original_pdf_pages": "16",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "General component resources typically in Status Resources property; observation-related in Event Media observable; may also appear inside custom properties/observables/commands.",
+          "must_not_imply": "Status/Media placement is typical not universal; URL/link should not be equated with an original Observation or performed media stream.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.3.1",
+          "section": "3.3.1",
+          "title": "Recommended Resource Type Parameters for Video",
+          "original_pdf_pages": "17–18",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Recommended typed NVPs: Bitrate (Mbpsec), Bitrate Control, Codecs (String list), Container, Compression Level, Frame Rate (Hertz), Width/Height (Integer pixels), Scan Type, Audio (Boolean). Compression Level omission/uncompressed caveat is described.",
+          "must_not_imply": "These are recommendations, not a guaranteed mandatory video metadata schema, reliable live codec detection, current instrument setting or conversion of other streaming APIs.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.4",
+          "section": "3.4",
+          "title": "Resource Descriptor Examples",
+          "original_pdf_pages": "19–21",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figures 4–7 and Java API expression are illustrative Resource Descriptor shapes, not verified live endpoints.",
+          "must_not_imply": "Do not promote sample localhost data, codec attributes or custom scheme to operational source facts.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.4.1",
+          "section": "3.4.1",
+          "title": "Image Download",
+          "original_pdf_pages": "19",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 4: localhost image URL, resource type image/png, empty metadata list.",
+          "must_not_imply": "Demonstrates a structural example, not a captured image, actual download or authenticated issuer.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.4.2",
+          "section": "3.4.2",
+          "title": "Video Stream",
+          "original_pdf_pages": "19–20",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 5 and Java API show a video/mp4 illustrative URL with bitrate 15, frame rate 30, h.264/aac, 1920x1080, PROGRESSIVE and audio=true, plus author metadata.",
+          "must_not_imply": "Example values and Java API construction are not an observed stream, implemented transport, runtime verification or installed setting.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.4.3",
+          "section": "3.4.3",
+          "title": "Text File with Parameters",
+          "original_pdf_pages": "21",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 6: illustrative text/xml URL, charset utf-8 and optional title.",
+          "must_not_imply": "A link sample is not proof that the file exists or that the consumer supports its parsing.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-3.4.4",
+          "section": "3.4.4",
+          "title": "Custom Service",
+          "original_pdf_pages": "21",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "Figure 7: illustrative myprotocol URL and my-service/XYZ resource type with parameter myparam.",
+          "must_not_imply": "Does not standardize a transport, security mechanism, controller command or real hardware action.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        },
+        {
+          "block_id": "TOPICS-4.0",
+          "section": "4.0",
+          "title": "Further Resources",
+          "original_pdf_pages": "22",
+          "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+          "meaning": "ISA Help Desk contact and QR code are source-help context, not data model or normative capabilities.",
+          "must_not_imply": "No DIM row or 2023 standard requirement adopted from contact/support information.",
+          "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+          "conformance_executed": false
+        }
+      ],
+      "source_boundary_notes": [
+        {
+          "id": "TOPICS-01-MUTABILITY",
+          "source": "TOPICS6.0r2",
+          "finding": "PERMANENT change expectation and 'should' deregister versus READ WRITE supplied values and READ ONLY dedicated commands; non-physical Set Property assignment can indirectly trigger physical motion.",
+          "handling": "Do not make every reported change a physical control action or treat the operational-cycle guidance as a SHALL.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-02-EVENT-IDENTITY",
+          "source": "TOPICS6.0r2",
+          "finding": "Table3 ID/Ref is an intentionally simplified representation; source specifies normal Event identity as Time/ID/Source.",
+          "handling": "Do not silently replace original Event Reference with bare Event ID or BSO.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-03-EVENT-TIME",
+          "source": "TOPICS6.0r2",
+          "finding": "Update time refers to update, while augmented observation keeps original Event time, even with later changed Position.",
+          "handling": "Never rewrite the original observation time as update time.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-04-RECALL-RESOLVE",
+          "source": "TOPICS6.0r2",
+          "finding": "Recall signals mistaken report; Resolve signals accurate earlier report no longer requiring attention.",
+          "handling": "Do not conflate correction, original event retraction, resolution, recipient compliance and physical erasure.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-05-TRACK-CORRELATION",
+          "source": "TOPICS6.0r2",
+          "finding": "BSO correlates separate Events about an observed entity; Event Reference corrects an Event; rare BSO+Reference used to correct/add BSO.",
+          "handling": "Not component UCI, track of sensor status or source-verification identity.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-06-RESOURCE-TYPE",
+          "source": "TOPICS6.0r2",
+          "finding": "Resource Type primary/secondary is analogous to IANA MIME, with custom type/scheme examples.",
+          "handling": "Do not assert every type is IANA-registered, endpoint reachable or inherently authenticated.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-07-VIDEO-PARAMETERS",
+          "source": "TOPICS6.0r2",
+          "finding": "Bitrate/Mbpsec, frame rate/Hertz, Codecs list/String, Audio/Boolean, pixel dimensions and compression-level omission notes are recommended NVP types.",
+          "handling": "Not mandatory universal codec/stream guarantee or observed running bandwidth.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-08-EXAMPLE-FIDELITY",
+          "source": "TOPICS6.0r2",
+          "finding": "Figures4–7 use localhost URLs or myprotocol and show structural examples; Figure5/Java example are consistent sample values.",
+          "handling": "Examples are not real executed media retrievals, commands, ISA certificate policy or CSAPI links.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        },
+        {
+          "id": "TOPICS-09-SOURCE-EDITION",
+          "source": "TOPICS6.0r2",
+          "finding": "Revision History Table1 says 6.0r2 updated Resource Descriptor parameter usage and Event Update example.",
+          "handling": "Do not back-project 6.0r2 examples into older revisions without original evidence.",
+          "new_primary_question": false,
+          "additional_delivery_created": false,
+          "delivery": 20
+        }
+      ],
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "source_report": "ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md",
+      "new_primary_DMS_outcomes": 0,
+      "original_correspondence_audit_closed": false
+    },
+    "PAPER2015": {
+      "status": "ABSTRACT_AND_BIBLIOGRAPHY_ONLY_FULL_TEXT_NOT_READ",
+      "question": "SRC-ACCESS-01",
+      "doi": "10.1117/12.2177842",
+      "historical_context_only": true,
+      "abstract_verified": true,
+      "full_original_text_verified": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     }
   },
   "source_wording_notes": [
@@ -65653,56 +66069,131 @@
       "source": "Appendix B Table 5",
       "source_meaning_and_boundary": "18 acronyms, including CCD=Component Capability Description, not new DIM fields.",
       "primary_DMS_question_created": false
+    },
+    {
+      "id": "TOPICS-01-MUTABILITY",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "PERMANENT change expectation and 'should' deregister versus READ WRITE supplied values and READ ONLY dedicated commands; non-physical Set Property assignment can indirectly trigger physical motion. Do not make every reported change a physical control action or treat the operational-cycle guidance as a SHALL.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-02-EVENT-IDENTITY",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Table3 ID/Ref is an intentionally simplified representation; source specifies normal Event identity as Time/ID/Source. Do not silently replace original Event Reference with bare Event ID or BSO.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-03-EVENT-TIME",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Update time refers to update, while augmented observation keeps original Event time, even with later changed Position. Never rewrite the original observation time as update time.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-04-RECALL-RESOLVE",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Recall signals mistaken report; Resolve signals accurate earlier report no longer requiring attention. Do not conflate correction, original event retraction, resolution, recipient compliance and physical erasure.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-05-TRACK-CORRELATION",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "BSO correlates separate Events about an observed entity; Event Reference corrects an Event; rare BSO+Reference used to correct/add BSO. Not component UCI, track of sensor status or source-verification identity.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-06-RESOURCE-TYPE",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Resource Type primary/secondary is analogous to IANA MIME, with custom type/scheme examples. Do not assert every type is IANA-registered, endpoint reachable or inherently authenticated.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-07-VIDEO-PARAMETERS",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Bitrate/Mbpsec, frame rate/Hertz, Codecs list/String, Audio/Boolean, pixel dimensions and compression-level omission notes are recommended NVP types. Not mandatory universal codec/stream guarantee or observed running bandwidth.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-08-EXAMPLE-FIDELITY",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Figures4–7 use localhost URLs or myprotocol and show structural examples; Figure5/Java example are consistent sample values. Examples are not real executed media retrievals, commands, ISA certificate policy or CSAPI links.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "TOPICS-09-SOURCE-EDITION",
+      "source": "TOPICS6.0r2",
+      "source_meaning_and_boundary": "Revision History Table1 says 6.0r2 updated Resource Descriptor parameter usage and Event Update example. Do not back-project 6.0r2 examples into older revisions without original evidence.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+    },
+    {
+      "id": "PAPER2015-ACCESS",
+      "source": "PAPER2015",
+      "source_meaning_and_boundary": "2015 Moulton et al. SPIE paper DOI and public abstract verifiable; full six-page paper not found in bounded search or identified in current library. Historical abstract context does not establish exact 2023 DMS/Controller requirements or close source-based semantic questions.",
+      "primary_DMS_question_created": false,
+      "additional_delivery_created": false,
+      "source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
     }
   ],
-  "comparison_policy": "Controller requirement roles and source mismatches are recorded as qualifications of15 existing master candidates. No one-row-per-SHALL, no new source class, no display churn, no adopted DIM or authorized runtime operation.",
+  "comparison_policy": "Data Model Topics original-source review refines15 existing candidate evidence boundaries; preserve all329 displayed comparison rows,480 DMS outcomes, non-ISA/case cells, six local questions, separate actual DIM adoption and old XLSX checkpoint.",
   "current_batch": {
-    "id": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
-    "accelerated_delivery": 19,
+    "id": "ISA-REMAINING-COMPANION-AND-CONTEXT",
+    "accelerated_delivery": 20,
     "assigned_source_blocks": [
-      "CNTR-6.0",
-      "CNTR-7.0",
-      "CNTR-7.1",
-      "CNTR-7.2",
-      "CNTR-7.3",
-      "CNTR-8.0",
-      "CNTR-AppendixA",
-      "CNTR-AppendixB"
+      "TOPICS-1.0",
+      "TOPICS-1.1",
+      "TOPICS-1.2",
+      "TOPICS-2.0",
+      "TOPICS-2.1",
+      "TOPICS-2.2",
+      "TOPICS-2.3",
+      "TOPICS-2.4",
+      "TOPICS-2.5",
+      "TOPICS-2.6",
+      "TOPICS-2.6.1",
+      "TOPICS-2.6.2",
+      "TOPICS-3.0",
+      "TOPICS-3.1",
+      "TOPICS-3.2",
+      "TOPICS-3.3",
+      "TOPICS-3.3.1",
+      "TOPICS-3.4",
+      "TOPICS-3.4.1",
+      "TOPICS-3.4.2",
+      "TOPICS-3.4.3",
+      "TOPICS-3.4.4",
+      "TOPICS-4.0"
     ],
-    "new_native_requirements": 55,
-    "levels": {
-      "H": 4,
-      "M": 12,
-      "L": 39
-    },
-    "modalities": {
-      "shall": 55,
-      "should": 0,
-      "may": 0
-    },
-    "whole_controller_requirements": {
-      "total": 163,
-      "H": 17,
-      "M": 45,
-      "L": 101,
-      "shall": 162,
-      "should": 0,
-      "may": 1
-    },
-    "verification_table": {
-      "low_level_unique": 101,
-      "Test": 95,
-      "Inspection": 6,
-      "missing": 0
-    },
-    "acronyms": 18,
-    "local_source_notes": 16,
+    "source_text_pages": 22,
+    "registered_sections_reviewed": 23,
+    "all279_registered_blocks_accounted": true,
+    "prior_full_blocks_reused": 226,
+    "dms_heading_blocks_accounted_not_independently_rereviewed": 29,
+    "paper2015_full_text": "ACCESS_HELD",
     "existing_master_candidates_refined": 15,
+    "source_boundary_notes_added": 10,
+    "new_native_DMS_definitions_credited": 0,
     "new_master_rows": 0,
     "displayed_cells_changed": 0,
     "new_DIM_adoptions": 0,
-    "source_review": "ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md",
-    "structured_source_evidence": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json"
+    "source_review": "ISA20_Data_Model_Topics_and_279_Block_Reconciliation_09NOV2026.md",
+    "structured_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
   },
   "completed_batch_history": [
     {
@@ -69767,6 +70258,418 @@
         }
       ],
       "source_input_commit": "b8e654b1fd79f325479271d8f081ecdc2f1b24cd"
+    },
+    {
+      "checkpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
+      "source_input_commit": "0f62fdfd99c5353cbe7543c525cc59c453f1d77a",
+      "current_batch": {
+        "id": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
+        "accelerated_delivery": 19,
+        "assigned_source_blocks": [
+          "CNTR-6.0",
+          "CNTR-7.0",
+          "CNTR-7.1",
+          "CNTR-7.2",
+          "CNTR-7.3",
+          "CNTR-8.0",
+          "CNTR-AppendixA",
+          "CNTR-AppendixB"
+        ],
+        "new_native_requirements": 55,
+        "levels": {
+          "H": 4,
+          "M": 12,
+          "L": 39
+        },
+        "modalities": {
+          "shall": 55,
+          "should": 0,
+          "may": 0
+        },
+        "whole_controller_requirements": {
+          "total": 163,
+          "H": 17,
+          "M": 45,
+          "L": 101,
+          "shall": 162,
+          "should": 0,
+          "may": 1
+        },
+        "verification_table": {
+          "low_level_unique": 101,
+          "Test": 95,
+          "Inspection": 6,
+          "missing": 0
+        },
+        "acronyms": 18,
+        "local_source_notes": 16,
+        "existing_master_candidates_refined": 15,
+        "new_master_rows": 0,
+        "displayed_cells_changed": 0,
+        "new_DIM_adoptions": 0,
+        "source_review": "ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md",
+        "structured_source_evidence": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json"
+      },
+      "master_revisions": [
+        {
+          "row_id": "ISA-T-ACCESS",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
+        },
+        {
+          "row_id": "ISA-R-EXECUTION",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
+        },
+        {
+          "row_id": "ISA-T-REGISTRATION",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+        },
+        {
+          "row_id": "ISA-A-SERVICE-ROLE",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-6.0",
+            "CNTR-7.0",
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
+        },
+        {
+          "row_id": "ISA-T-CONFIG",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
+        },
+        {
+          "row_id": "ISA-T-STATUS",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+        },
+        {
+          "row_id": "ISA-Q-QUERY",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+        },
+        {
+          "row_id": "ISA-Q-MATCH",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
+        },
+        {
+          "row_id": "ISA-Q-SUBSCRIPTION",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
+        },
+        {
+          "row_id": "ISA-Q-OPTIONS",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.2"
+          ],
+          "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
+        },
+        {
+          "row_id": "ISA-Q-CONTEXT",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
+        },
+        {
+          "row_id": "ISA-T-EVENT-CONTEXT",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.3"
+          ],
+          "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+        },
+        {
+          "row_id": "ISA-T-ADMIN",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
+        },
+        {
+          "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
+        },
+        {
+          "row_id": "ISA-A-MEMBER-EXPOSURE",
+          "change": "SOURCE_EVIDENCE_QUALIFICATION",
+          "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+          "no_display_cell_changed": true,
+          "no_model_adoption": true,
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
+        }
+      ],
+      "candidate_revisions": [
+        {
+          "row_key": "ISA-T-ACCESS",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
+        },
+        {
+          "row_key": "ISA-R-EXECUTION",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
+        },
+        {
+          "row_key": "ISA-T-REGISTRATION",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-6.0"
+          ],
+          "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+        },
+        {
+          "row_key": "ISA-A-SERVICE-ROLE",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-6.0",
+            "CNTR-7.0",
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
+        },
+        {
+          "row_key": "ISA-T-CONFIG",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
+        },
+        {
+          "row_key": "ISA-T-STATUS",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+        },
+        {
+          "row_key": "ISA-Q-QUERY",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+        },
+        {
+          "row_key": "ISA-Q-MATCH",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
+        },
+        {
+          "row_key": "ISA-Q-SUBSCRIPTION",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
+        },
+        {
+          "row_key": "ISA-Q-OPTIONS",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.2"
+          ],
+          "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
+        },
+        {
+          "row_key": "ISA-Q-CONTEXT",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
+        },
+        {
+          "row_key": "ISA-T-EVENT-CONTEXT",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.3"
+          ],
+          "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+        },
+        {
+          "row_key": "ISA-T-ADMIN",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.2",
+            "CNTR-7.3"
+          ],
+          "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
+        },
+        {
+          "row_key": "ISA-A-PARTICIPATION-LIFECYCLE",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1",
+            "CNTR-7.2"
+          ],
+          "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
+        },
+        {
+          "row_key": "ISA-A-MEMBER-EXPOSURE",
+          "source": "Controller Requirements6.0r4 §§6–7",
+          "new_model_row": false,
+          "semantic_boundary_refined": true,
+          "source_blocks": [
+            "CNTR-7.1"
+          ],
+          "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
+        }
+      ],
+      "validation": {
+        "all8_assigned_source_blocks_reviewed": true,
+        "all28_controller_source_blocks_complete": true,
+        "all163_native_controller_requirements_accounted": true,
+        "all101_low_level_verification_rows_present": true,
+        "verification_methods_match_original": true,
+        "all18_acronyms_source_context_only": true,
+        "prior259_component_requirements_preserved": true,
+        "prior480_DMS_source_outcomes_preserved": true,
+        "prior329_master_rows_and_donor_values_preserved": true,
+        "new_primary_DMS_questions": 0,
+        "new_DIM_adoption": 0,
+        "runtime_or_conformance_tested": false,
+        "source_image_limit_disclosed": true,
+        "publication_checks_required": true,
+        "candidate_to_controller_block_links_source_scoped": true
+      }
     }
   ],
   "initial_catalogue_review_context": {
@@ -69775,345 +70678,345 @@
   },
   "master_revisions": [
     {
-      "row_id": "ISA-T-ACCESS",
+      "row_id": "ISA-K-MUTABILITY",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
+      "source_qualification": "PERMANENT operational-cycle expectation and recommended deregistration differ from READ WRITE supplied knowledge through Set Property and READ ONLY values altered via a separately supported Change/Adjust command. Supplying Position may indirectly cause Orientation motion while Position remains READ WRITE."
     },
     {
-      "row_id": "ISA-R-EXECUTION",
+      "row_id": "ISA-K-PROPERTY-DECL",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
+      "source_qualification": "Mutability labels describe how a reported property value can be changed, not the physical nature of a component, a guarantee of a supported actuation command or a universal authorization outcome."
     },
     {
-      "row_id": "ISA-T-REGISTRATION",
+      "row_id": "ISA-C-242",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+      "source_qualification": "Set Property supplies a READ WRITE property value as information about a component; the example distinguishes that assignment from later indirect physical slewing. It does not itself prove actuator effect."
     },
     {
-      "row_id": "ISA-A-SERVICE-ROLE",
+      "row_id": "ISA-T-EVENT-ID",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-6.0",
-        "CNTR-7.0",
-        "CNTR-7.1",
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.1",
+        "TOPICS-2.2",
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
+      "source_qualification": "Event Reference targets the original Event fingerprint (normally Time, ID, Source), whereas BSO correlates multiple Events about an observed entity. An illustrative simplified ID column is not an exhaustive native identity schema."
     },
     {
-      "row_id": "ISA-T-CONFIG",
+      "row_id": "ISA-T-EVENT-TIME",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2"
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
       ],
-      "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
+      "source_qualification": "An updated/augmented Event retains its original observation time; update's own time dates that update. Multiple updates to the same source event are ordered by time before combining, not converted into new original observation times."
     },
     {
-      "row_id": "ISA-T-STATUS",
+      "row_id": "ISA-C-156",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.3",
+        "TOPICS-2.6.2"
       ],
-      "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+      "source_qualification": "Recall reason pertains to a mistaken original Event; it asks recipients to disregard the Event, without establishing erasure, universal recipient compliance or the same meaning as Resolve."
     },
     {
-      "row_id": "ISA-Q-QUERY",
+      "row_id": "ISA-C-157",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1"
+        "TOPICS-2.4"
       ],
-      "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+      "source_qualification": "Resolve indicates a formerly accurate Event no longer requires attention; it is distinct from Recall for erroneous Events, physical equipment cessation and archive deletion."
     },
     {
-      "row_id": "ISA-Q-MATCH",
+      "row_id": "ISA-C-131",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.3"
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
+      "source_qualification": "BSO correlates successive Events about the same observed entity (track); Event Reference addresses a prior Event for correction. Co-occurrence is allowed when correcting/adding BSO. BSO does not identify an ISA component."
     },
     {
-      "row_id": "ISA-Q-SUBSCRIPTION",
+      "row_id": "ISA-C-146",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-3.2",
+        "TOPICS-3.3"
       ],
-      "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
+      "source_qualification": "Event Media typically holds Resource Descriptors to related external media. A URL/Resource Type/metadata description is not a performed Observation, provenance authentication or guaranteed media delivery."
     },
     {
-      "row_id": "ISA-Q-OPTIONS",
+      "row_id": "ISA-C-102",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.2"
+        "TOPICS-3.2",
+        "TOPICS-3.3"
       ],
-      "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
+      "source_qualification": "Status Resources typically supplies Resource Descriptors to component-provided material; a descriptor has URL, primary/secondary Resource Type and optional metadata. Current reachability and original issuer authenticity are not established."
     },
     {
-      "row_id": "ISA-Q-CONTEXT",
+      "row_id": "ISA-R-VIDEO-TRACK",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.3"
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
+      "source_qualification": "Observed-entity track correlation should use BSO, not Event Reference for updates to the same Event; a video track identifier cannot be equated without native scope evidence."
     },
     {
       "row_id": "ISA-T-EVENT-CONTEXT",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.3"
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
       ],
-      "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+      "source_qualification": "Event Update observables update the augmented event view selectively; unmentioned values persist in the combined interpretation, but Event detector-property context does not become a Status record."
     },
     {
-      "row_id": "ISA-T-ADMIN",
+      "row_id": "ISA-R-MESSAGE-REFERENCE",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.2",
+        "TOPICS-2.5"
       ],
-      "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
+      "source_qualification": "Original Event reference and BSO observed-entity correlation have different targets and reuse rules. Neither proves cryptographic source authenticity or makes four digital copies four original Events."
     },
     {
-      "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
+      "row_id": "ISA-K-OBSERVABLE-DECL",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2"
+        "TOPICS-2.1",
+        "TOPICS-2.2"
       ],
-      "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
+      "source_qualification": "Event observables are observation-associated content; update-reference semantics and partial replacement differ from Config declarations and property Status values."
     },
     {
-      "row_id": "ISA-A-MEMBER-EXPOSURE",
+      "row_id": "ISA-T-STATUS",
       "change": "SOURCE_EVIDENCE_QUALIFICATION",
-      "source": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "source": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
       "no_display_cell_changed": true,
       "no_model_adoption": true,
       "source_blocks": [
-        "CNTR-7.1"
+        "TOPICS-3.3"
       ],
-      "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
+      "source_qualification": "The guide describes general Resource Descriptors typically published as Status Resources; descriptive location/typed link is not evidence of a current reachable URL or actual component physical state."
     }
   ],
   "candidate_revisions": [
     {
-      "row_key": "ISA-T-ACCESS",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-K-MUTABILITY",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
+      "source_qualification": "PERMANENT operational-cycle expectation and recommended deregistration differ from READ WRITE supplied knowledge through Set Property and READ ONLY values altered via a separately supported Change/Adjust command. Supplying Position may indirectly cause Orientation motion while Position remains READ WRITE."
     },
     {
-      "row_key": "ISA-R-EXECUTION",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-K-PROPERTY-DECL",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
+      "source_qualification": "Mutability labels describe how a reported property value can be changed, not the physical nature of a component, a guarantee of a supported actuation command or a universal authorization outcome."
     },
     {
-      "row_key": "ISA-T-REGISTRATION",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-242",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-6.0"
+        "TOPICS-1.1",
+        "TOPICS-1.2"
       ],
-      "source_qualification": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+      "source_qualification": "Set Property supplies a READ WRITE property value as information about a component; the example distinguishes that assignment from later indirect physical slewing. It does not itself prove actuator effect."
     },
     {
-      "row_key": "ISA-A-SERVICE-ROLE",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-T-EVENT-ID",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-6.0",
-        "CNTR-7.0",
-        "CNTR-7.1",
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.1",
+        "TOPICS-2.2",
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
+      "source_qualification": "Event Reference targets the original Event fingerprint (normally Time, ID, Source), whereas BSO correlates multiple Events about an observed entity. An illustrative simplified ID column is not an exhaustive native identity schema."
     },
     {
-      "row_key": "ISA-T-CONFIG",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-T-EVENT-TIME",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2"
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
       ],
-      "source_qualification": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
+      "source_qualification": "An updated/augmented Event retains its original observation time; update's own time dates that update. Multiple updates to the same source event are ordered by time before combining, not converted into new original observation times."
     },
     {
-      "row_key": "ISA-T-STATUS",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-156",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.3",
+        "TOPICS-2.6.2"
       ],
-      "source_qualification": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
+      "source_qualification": "Recall reason pertains to a mistaken original Event; it asks recipients to disregard the Event, without establishing erasure, universal recipient compliance or the same meaning as Resolve."
     },
     {
-      "row_key": "ISA-Q-QUERY",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-157",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1"
+        "TOPICS-2.4"
       ],
-      "source_qualification": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+      "source_qualification": "Resolve indicates a formerly accurate Event no longer requires attention; it is distinct from Recall for erroneous Events, physical equipment cessation and archive deletion."
     },
     {
-      "row_key": "ISA-Q-MATCH",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-131",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.3"
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
+      "source_qualification": "BSO correlates successive Events about the same observed entity (track); Event Reference addresses a prior Event for correction. Co-occurrence is allowed when correcting/adding BSO. BSO does not identify an ISA component."
     },
     {
-      "row_key": "ISA-Q-SUBSCRIPTION",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-146",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-3.2",
+        "TOPICS-3.3"
       ],
-      "source_qualification": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
+      "source_qualification": "Event Media typically holds Resource Descriptors to related external media. A URL/Resource Type/metadata description is not a performed Observation, provenance authentication or guaranteed media delivery."
     },
     {
-      "row_key": "ISA-Q-OPTIONS",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-C-102",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.2"
+        "TOPICS-3.2",
+        "TOPICS-3.3"
       ],
-      "source_qualification": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
+      "source_qualification": "Status Resources typically supplies Resource Descriptors to component-provided material; a descriptor has URL, primary/secondary Resource Type and optional metadata. Current reachability and original issuer authenticity are not established."
     },
     {
-      "row_key": "ISA-Q-CONTEXT",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-R-VIDEO-TRACK",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.3"
+        "TOPICS-2.5"
       ],
-      "source_qualification": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
+      "source_qualification": "Observed-entity track correlation should use BSO, not Event Reference for updates to the same Event; a video track identifier cannot be equated without native scope evidence."
     },
     {
       "row_key": "ISA-T-EVENT-CONTEXT",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.3"
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
       ],
-      "source_qualification": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
+      "source_qualification": "Event Update observables update the augmented event view selectively; unmentioned values persist in the combined interpretation, but Event detector-property context does not become a Status record."
     },
     {
-      "row_key": "ISA-T-ADMIN",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-R-MESSAGE-REFERENCE",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.2",
-        "CNTR-7.3"
+        "TOPICS-2.2",
+        "TOPICS-2.5"
       ],
-      "source_qualification": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
+      "source_qualification": "Original Event reference and BSO observed-entity correlation have different targets and reuse rules. Neither proves cryptographic source authenticity or makes four digital copies four original Events."
     },
     {
-      "row_key": "ISA-A-PARTICIPATION-LIFECYCLE",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-K-OBSERVABLE-DECL",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1",
-        "CNTR-7.2"
+        "TOPICS-2.1",
+        "TOPICS-2.2"
       ],
-      "source_qualification": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
+      "source_qualification": "Event observables are observation-associated content; update-reference semantics and partial replacement differ from Config declarations and property Status values."
     },
     {
-      "row_key": "ISA-A-MEMBER-EXPOSURE",
-      "source": "Controller Requirements6.0r4 §§6–7",
+      "row_key": "ISA-T-STATUS",
+      "source": "ISA Data Model Topics6.0r2",
       "new_model_row": false,
       "semantic_boundary_refined": true,
       "source_blocks": [
-        "CNTR-7.1"
+        "TOPICS-3.3"
       ],
-      "source_qualification": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
+      "source_qualification": "The guide describes general Resource Descriptors typically published as Status Resources; descriptive location/typed link is not evidence of a current reachable URL or actual component physical state."
     }
   ]
 }
