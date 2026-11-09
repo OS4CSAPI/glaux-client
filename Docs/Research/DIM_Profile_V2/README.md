@@ -1,5 +1,18 @@
 # DIM / CSAPI Profile V2 — start here
 
+## Current workstream — 8 November 2026, ISA Delivery19 complete
+
+**Original ISA Controller Requirements6.0r4 reviewed to source-complete status:**28/28 registered blocks,163 native requirements (17H/45M/101L;162 shall/0 should/1 may), Appendix A101/101 verification mappings and Appendix B18 acronyms. Original source indexed text reviewed across deliveries18–19; selected appendix table pages visually inspected. No ISA runtime test or full visual-page audit is claimed. The [Delivery19 original-source review](Donor_DIM_Crosswalk/ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) and [native-evidence/verification index](Donor_DIM_Crosswalk/ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) preserve exact source discrepancies.
+
+The canonical [master table](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) remains329 rows and480 DMS outcomes (474 supported/six specific source questions), with15 bounded existing-candidate source qualifications from Delivery19. **All original donor/case/ISA displayed table cells were preserved**; no DIM content was adopted. The Excel file remains the *older*253-row/226-primary integration snapshot until the scheduled final/substantial refresh.
+
+**NEXT USER “PROCEED” EXECUTES DELIVERY20 ONLY**, the23 Data Model Topics registered sections, bounded PAPER2015 access question and279-source-block document reconciliation. Central ISA correction forecast:38/41 technical iterations, three deliveries20–22 remaining. [Current ISA PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md) · [execution plan](Donor_DIM_Crosswalk/PLAN_ISA_Coverage_Correction_07NOV2026.md) · [exact progress](Donor_DIM_Crosswalk/ISA_Correction_Status_07NOV2026.json) · [coverage](Donor_DIM_Crosswalk/ISA_Coverage_Register_07NOV2026.json).
+
+**Important workstream boundary:** This ISA source correction is distinct from the earlier43-step research campaign (conditionally closed, E/F open and G full release not approved). The broader40-step cross-donor master plan is paused before substantive owner Step16 until ISA correction closes. This source review does not establish an adopted OGC Profile, ISA chassis or externally interoperable production deployment.
+
+## Historical checkpoints and earlier routing (superseded by the above)
+
+
 ## Current source and crosswalk execution · 8 November 2026
 
 **ISA accelerated delivery18 COMPLETE.** The original Controller Requirements 6.0r4 §§1–5.12 were reviewed (20/28 registered blocks,108 native definitions), and current master evidence updated for15 existing proposed information elements without changing the 329-row display table. Original DMS catalogue remains480 reviewed/474 supported/six local questions. Four central ISA correction deliveries remain, with **delivery19 Controller §§6–8 and Appendices A/B (8 blocks) NEXT ONLY ON OWNER “PROCEED.”** The original source page images were unavailable; this was indexed-text review, not visual PDF or runtime conformance.
