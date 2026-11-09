@@ -6227,7 +6227,8 @@
       "evidence_records": [
         "SDD-1.2",
         "SDD-4.2.2",
-        "SDD-6.3.3"
+        "SDD-6.3.3",
+        "CNTR-7.1"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -6259,7 +6260,11 @@
       "controller_source_blocks": [
         "CNTR-5.11"
       ],
-      "controller_source_review_boundary": "When an announcer deregisters or loses connection, still-announced members receive DEVICE REMOVED network notices; this does not prove they were physically disconnected or destroyed."
+      "controller_source_review_boundary": "When an announcer deregisters or loses connection, still-announced members receive DEVICE REMOVED network notices; this does not prove they were physically disconnected or destroyed.",
+      "controller_final_source_blocks": [
+        "CNTR-7.1"
+      ],
+      "controller_final_review_boundary": "DEVICE REMOVED leads Live Data to discard retained Config/Status information for the cited participant; that is a service-visible state change, not proof of physical composition change or equipment destruction."
     },
     {
       "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
@@ -6277,7 +6282,9 @@
       "evidence_records": [
         "SDD-5.1.1",
         "SDD-6.3.2",
-        "SDD-6.3.3"
+        "SDD-6.3.3",
+        "CNTR-7.1",
+        "CNTR-7.2"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -6336,7 +6343,12 @@
         "CNTR-5.11",
         "CNTR-5.12"
       ],
-      "controller_source_review_boundary": "Controller-specific initial Config/Status deadlines, NON RESPONSIVE/REVIVED, forced REMOVED and mandatory forced connection termination are distinct actor/trigger rules; do not erase differing mid-/low-level time anchors or Component Requirements should/may socket wording."
+      "controller_source_review_boundary": "Controller-specific initial Config/Status deadlines, NON RESPONSIVE/REVIVED, forced REMOVED and mandatory forced connection termination are distinct actor/trigger rules; do not erase differing mid-/low-level time anchors or Component Requirements should/may socket wording.",
+      "controller_final_source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "controller_final_review_boundary": "DEVICE REMOVED causes Live Data maintained Config/Status cleanup and subscription consumer cleanup; network/cache lifecycle is distinct from physical hardware removal or historical observation deletion."
     },
     {
       "row_id": "S06-R011",
@@ -8034,7 +8046,8 @@
         "ISA-DMS-306"
       ],
       "evidence_records": [
-        "ISA-TYPE-306"
+        "ISA-TYPE-306",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -8063,7 +8076,11 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.11"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "An Event's detector-property values can cause a subscription to start or stop matching without themselves constituting a Status update, actual physical part change or original observation-result provenance."
     },
     {
       "row_id": "ISA-R-MEASUREMENT",
@@ -12457,7 +12474,9 @@
         "ISA-DMS-305"
       ],
       "evidence_records": [
-        "ISA-TYPE-305"
+        "ISA-TYPE-305",
+        "CNTR-7.1",
+        "CNTR-7.2"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12504,7 +12523,12 @@
       "controller_source_blocks": [
         "CNTR-5.5"
       ],
-      "controller_source_review_boundary": "Controller initial Config mid-level received-first-Config and low-level outbound ADDED trigger wordings differ; updated Config carries only configuration-set changes, not Status property values."
+      "controller_source_review_boundary": "Controller initial Config mid-level received-first-Config and low-level outbound ADDED trigger wordings differ; updated Config carries only configuration-set changes, not Status property values.",
+      "controller_final_source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2"
+      ],
+      "controller_final_review_boundary": "Live Data caches new Config information only if sufficient computing resources exist, transmits maintained matching Config on subscription creation and removes maintained Config on DEVICE REMOVED. This is not original source-history erasure."
     },
     {
       "row_id": "ISA-T-STATUS",
@@ -12517,7 +12541,10 @@
         "ISA-DMS-310"
       ],
       "evidence_records": [
-        "ISA-TYPE-310"
+        "ISA-TYPE-310",
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12565,7 +12592,13 @@
         "CNTR-5.6",
         "CNTR-5.10"
       ],
-      "controller_source_review_boundary": "Initial Status mid-level and low-level triggers differ and have bounded timing; later Status carries changes only. Missed Status drives configurable network availability monitoring, not verified hardware failure."
+      "controller_source_review_boundary": "Initial Status mid-level and low-level triggers differ and have bounded timing; later Status carries changes only. Missed Status drives configurable network availability monitoring, not verified hardware failure.",
+      "controller_final_source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "Live Data maintains new Status information only if resources permit, delivers matching maintained Status to new subscribers, removes maintained Status on DEVICE REMOVED and uses property changes to update subscription matching. It is not direct proof of physical health."
     },
     {
       "row_id": "ISA-T-REGISTRATION",
@@ -12578,7 +12611,8 @@
         "ISA-DMS-307"
       ],
       "evidence_records": [
-        "ISA-TYPE-307"
+        "ISA-TYPE-307",
+        "CNTR-6.0"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12627,7 +12661,11 @@
         "CNTR-5.4",
         "CNTR-5.11"
       ],
-      "controller_source_review_boundary": "Controller responds with ERROR/ADDED after distinct authentication/authorization conditions within its 30-second limit, and REMOVED under separate deregistration rules; these are not physical equipment transitions."
+      "controller_source_review_boundary": "Controller responds with ERROR/ADDED after distinct authentication/authorization conditions within its 30-second limit, and REMOVED under separate deregistration rules; these are not physical equipment transitions.",
+      "controller_final_source_blocks": [
+        "CNTR-6.0"
+      ],
+      "controller_final_review_boundary": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
     },
     {
       "row_id": "ISA-T-REQUEST-REFERENCE",
@@ -12692,7 +12730,8 @@
         "ISA-DMS-308"
       ],
       "evidence_records": [
-        "ISA-TYPE-308"
+        "ISA-TYPE-308",
+        "CNTR-6.0"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12719,7 +12758,11 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-3.3"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-6.0"
+      ],
+      "controller_final_review_boundary": "AZSV-L-0005/0006 return Response SUCCESS for authorized Yes and authorized No. A successful authorization determination is not permission granted, command execution or actual enforced access. L-0007 leaves inability-to-determine policy-dependent."
     },
     {
       "row_id": "ISA-E-ROUTE-SEGMENT",
@@ -12805,7 +12848,8 @@
         "ISA-DMS-374"
       ],
       "evidence_records": [
-        "ISA-TYPE-374"
+        "ISA-TYPE-374",
+        "CNTR-6.0"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12832,7 +12876,11 @@
       "controller_source_blocks": [
         "CNTR-5.8"
       ],
-      "controller_source_review_boundary": "Controller authorization checking, PERMISSION DENIED Response and forwarding the authorized Request to the performer do not establish execution or independently confirmed physical effect."
+      "controller_source_review_boundary": "Controller authorization checking, PERMISSION DENIED Response and forwarding the authorized Request to the performer do not establish execution or independently confirmed physical effect.",
+      "controller_final_source_blocks": [
+        "CNTR-6.0"
+      ],
+      "controller_final_review_boundary": "Authorization granted/denied and the Authorization Service's SUCCESS response are separate from a performing component's command disposition or physical effect."
     },
     {
       "row_id": "ISA-Q-QUERY",
@@ -12875,7 +12923,8 @@
         "DQL-4.2",
         "DQL-4.2.1",
         "DQL-4.2.2",
-        "DQL-AppendixA"
+        "DQL-AppendixA",
+        "CNTR-7.1"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12902,7 +12951,11 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.9"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-7.1"
+      ],
+      "controller_final_review_boundary": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
     },
     {
       "row_id": "ISA-Q-MATCH",
@@ -12937,7 +12990,9 @@
         "DQL-3.2",
         "DQL-3.2.2",
         "DQL-3.2.3",
-        "DQL-AppendixA"
+        "DQL-AppendixA",
+        "CNTR-7.1",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -12964,7 +13019,12 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.8"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "Discovery and subscription filtering use source-defined maintained Config/Status and newly received Config/Status/Event/Administrative messages. Property changes may start or stop matching; no universal query syntax or inferred current measurement is added."
     },
     {
       "row_id": "ISA-Q-NAVIGATION",
@@ -13157,7 +13217,9 @@
         "ISA-TYPE-477",
         "ISA-TYPE-478",
         "DQL-1.0",
-        "DQL-3.0"
+        "DQL-3.0",
+        "CNTR-7.2",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -13193,7 +13255,12 @@
         "CNTR-5.10",
         "CNTR-5.11"
       ],
-      "controller_source_review_boundary": "Controller notification 'for distribution to subscribers' does not redefine subscription identity, prove receipt or assert permanent source-record deletion."
+      "controller_source_review_boundary": "Controller notification 'for distribution to subscribers' does not redefine subscription identity, prove receipt or assert permanent source-record deletion.",
+      "controller_final_source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "Creation includes consumer identity/filter and returns unique subscription ID; creator and consumer may differ. Maintenance while creator registered and cleanup on removed consumer are separately worded; matched messages go to consumer."
     },
     {
       "row_id": "ISA-Q-OPTIONS",
@@ -13214,7 +13281,8 @@
         "ISA-TYPE-467",
         "DQL-2.3",
         "DQL-2.4",
-        "DQL-3.0"
+        "DQL-3.0",
+        "CNTR-7.2"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -13238,7 +13306,11 @@
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.3",
         "SDD-6.3.3"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-7.2"
+      ],
+      "controller_final_review_boundary": "New subscriptions receive maintained matching Config and Status as specified by Controller Requirements; earlier DQL initial-cache options remain separately sourced. This is not an Event history cache or proof of universal initial cache behavior."
     },
     {
       "row_id": "ISA-Q-CONTEXT",
@@ -13264,7 +13336,9 @@
         "DQL-3.1.3",
         "DQL-3.1.4",
         "DQL-3.1.5",
-        "DQL-3.1.6"
+        "DQL-3.1.6",
+        "CNTR-7.1",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -13288,7 +13362,12 @@
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.3",
         "SDD-6.3.3"
-      ]
+      ],
+      "controller_final_source_blocks": [
+        "CNTR-7.1",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "Maintained Config/Status and newly received Event detector properties affect query/subscription context; detector properties in an Event do not become component Status reports."
     },
     {
       "row_id": "ISA-Q-SPATIAL",
@@ -13360,7 +13439,12 @@
         "ISA-SVC-005",
         "ISA-SVC-006",
         "INTRO-6.1.1",
-        "WHITE-4.3"
+        "WHITE-4.3",
+        "CNTR-6.0",
+        "CNTR-7.0",
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -13406,7 +13490,15 @@
         "CNTR-5.8",
         "CNTR-5.9"
       ],
-      "controller_source_review_boundary": "Three mandatory Controller core services differ from best-available service recommendation, authorized Request forwarding and Event forwarding; none establishes actual provider acceptance or execution."
+      "controller_source_review_boundary": "Three mandatory Controller core services differ from best-available service recommendation, authorized Request forwarding and Event forwarding; none establishes actual provider acceptance or execution.",
+      "controller_final_source_blocks": [
+        "CNTR-6.0",
+        "CNTR-7.0",
+        "CNTR-7.1",
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "Authorization determines permissions; Live Data maintains conditional Config/Status discovery state and routes subscribed messages. Required source service behaviors do not establish their deployed performance or hardware classes."
     },
     {
       "row_id": "ISA-A-CAPABILITY-GROUP",
@@ -13983,7 +14075,9 @@
         "ISA-DMS-304"
       ],
       "evidence_records": [
-        "ISA-TYPE-304"
+        "ISA-TYPE-304",
+        "CNTR-7.2",
+        "CNTR-7.3"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -14026,7 +14120,12 @@
         "CNTR-5.10",
         "CNTR-5.11"
       ],
-      "controller_source_review_boundary": "Controller generates DEVICE ADDED/NON RESPONSIVE/REVIVED/REMOVED Administrative messages for distribution, but generation does not prove delivery, equipment health, removal, or historical deletion."
+      "controller_source_review_boundary": "Controller generates DEVICE ADDED/NON RESPONSIVE/REVIVED/REMOVED Administrative messages for distribution, but generation does not prove delivery, equipment health, removal, or historical deletion.",
+      "controller_final_source_blocks": [
+        "CNTR-7.2",
+        "CNTR-7.3"
+      ],
+      "controller_final_review_boundary": "SUBSCRIPTION ADDED/REMOVED and START/STOP FOLLOWING are Administrative messages to consumers under conditions. LDSV-L-0029 explicitly has contradictory 'Start/now matched' wording with STOP FOLLOWING; retain literal source discrepancy."
     },
     {
       "row_id": "ISA-T-AUTHOR",
@@ -20439,7 +20538,7 @@
     "sourceSupportedPrimary": 474,
     "specificQuestions": 6,
     "supportingDefinitions": 171,
-    "supportingWordingNotes": 154,
+    "supportingWordingNotes": 170,
     "meaning": "Supporting evidence and source-reviewed outcomes are not automatically adopted DIM elements.",
     "types": "ISA_Type_Catalogue_Evidence_08NOV2026.json",
     "primaryTypeReviews": 224,
@@ -20468,10 +20567,10 @@
       "CMPT-L-0164"
     ],
     "controllerRequirements": {
-      "state": "FIRST_AREA_SOURCE_REVIEW_COMPLETE",
-      "reviewedBlocks": 20,
+      "state": "COMPLETE_SOURCE_REVIEW",
+      "reviewedBlocks": 28,
       "totalBlocks": 28,
-      "remainingBlocks": 8,
+      "remainingBlocks": 0,
       "requirementDefinitions": 108,
       "nativeLevels": {
         "H": 13,
@@ -20493,7 +20592,34 @@
       "sourceReviewScope": "§§1–5.12/PDF pages8–42; later §§6–8 and Appendices remain delivery19",
       "noRuntimeOrConformanceClaim": true,
       "cumulativeSourceNotes": 154,
-      "cumulativeCompanionEvidence": "ISA_Service_and_Context_Evidence_08NOV2026.json"
+      "cumulativeCompanionEvidence": "ISA_Service_and_Context_Evidence_08NOV2026.json",
+      "firstAreaDefinitions": 108,
+      "finalAreaDefinitions": 55,
+      "totalNativeDefinitions": 163,
+      "levels": {
+        "H": 17,
+        "M": 45,
+        "L": 101
+      },
+      "normativeModalities": {
+        "shall": 162,
+        "should": 0,
+        "may": 1
+      },
+      "verificationTableMappings": 101,
+      "verificationMethods": {
+        "Test": 95,
+        "Inspection": 6
+      },
+      "acronymsReviewed": 18,
+      "finalAreaEvidence": "ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json",
+      "finalAreaReview": "ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md",
+      "existingMasterCandidatesQualifiedInDelivery19": 15,
+      "newRowsInDelivery19": 0,
+      "displayedCellsModifiedInDelivery19": 0,
+      "originalSourceScope": "Controller Requirements6.0r4,74 pages, all source blocks reviewed across deliveries18–19",
+      "originalSourceVisualLimit": "Selected Appendix A/B pages visually checked; not a full-page visual audit",
+      "actualConformanceTested": false
     }
   },
   "counts": {
@@ -20550,7 +20676,7 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "Canonical master Markdown/CSV/JSON follows source decisions; Excel refreshed at substantial-section checkpoints. Never stage all new material outside the master until final approval.",
-  "currentEvidenceCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-FIRST",
+  "currentEvidenceCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "MASTER-ISA-INTEGRATION",
@@ -20558,8 +20684,8 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Canonical text/JSON retain329 rows/480 primary DMS outcomes; delivery18 adds15 existing-candidate source-review boundary qualifications, not new displayed mapping cells. Excel remains a verified253-row/226-primary earlier snapshot.",
-    "textCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-FIRST",
+    "lag": "Canonical structured/text master retains329 information/review rows and480 reviewed DMS outcomes, with Controller Requirements fully reviewed and15 new source-boundary qualifications; Excel remains verified253-row/226-primary earlier snapshot.",
+    "textCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-REMAINING",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }
