@@ -1,3 +1,13 @@
+# CURRENT — ISA correction final closeout verified (9 November 2026)
+
+<!-- ISA22_FINAL_CURRENT -->
+
+**AUTHORITATIVE STATUS — 9 November 2026: ISA accelerated Delivery22 COMPLETE (22/22), central technical iterations 41/41.** The actual [canonical 26-sheet workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) has been refreshed from the [329-row / 14-column master](Master_Donor_Concept_to_DIM_Crosswalk.md) and passed scoped original-source coverage, preserved-evidence and exact Excel/CSV/JSON/Markdown checks in [Actions run 42622515437](https://github.com/OS4CSAPI/glaux-client/actions/runs/42622515437). [Final detailed closeout](ISA22_Final_Validation_Closeout_09NOV2026.md) · [individual validation counts and checks](ISA22_Validated_Workbook_Record_09NOV2026.json) · [rendered workbook preview](ISA22_Workbook_Visual_09NOV2026.png) · [reusable donor lessons](LESSONS_Donor_Review_Process.md).
+
+**Preserve exact source decisions:** 480 Data Model Specification outcomes (474 supported and six precise questions still open), 279 registered source blocks (249 source-reviewed, 29 native catalogue headings accounted and one historical 2015 full-text HOLD), all 31 original correspondence targets, all 25 previous findings, 58 donor source records and 73 empirical case facts. Nine case and fourteen design holds remain; no mandatory ISA chassis, adopted DIM content, externally conformant OGC Profile, physical command or independent producer/consumer proof was created. **Next owner “Proceed” is the substantive owner Step16 in the separate 40-step cross-donor master plan, and no Step16 work has started.**
+
+## Historical checkpoints — earlier CURRENT/NEXT statements superseded
+
 # Working master — current donor concepts and proposed DIM
 
 **CURRENT — 9 November 2026 · accelerated ISA Delivery21 COMPLETE.** The final source-first semantic audit reviewed **all31 original row/case targets, all25 earlier source findings, and all six exact Data Model Specification source questions**. Of22 proposed DIM information rows, **18 have qualified ISA correspondence and four have none established** in the inspected original 2023 scope; **nine case topics and14 prior design findings remain held**. All six exact DMS source questions stay open after original-text/selected-table recheck, with no invented resolution or new mandatory standard requirement. [Delivery21 complete report](ISA21_Source_First_Correspondence_Review_09NOV2026.md) · [31/25/six evidence](ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json).

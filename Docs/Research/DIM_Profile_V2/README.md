@@ -1,3 +1,13 @@
+# CURRENT — ISA correction complete (9 November 2026)
+
+<!-- ISA22_FINAL_CURRENT -->
+
+**Final ISA Delivery22 verified and committed:** all 22 accelerated deliveries and 41 forecast technical iterations at their source-qualified scope. [Actual current 26-sheet canonical workbook](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [329-row/14-column source-backed comparison](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) · [final closeout](Donor_DIM_Crosswalk/ISA22_Final_Validation_Closeout_09NOV2026.md) · [exact validation record](Donor_DIM_Crosswalk/ISA22_Validated_Workbook_Record_09NOV2026.json) · [workbook visual preview](Donor_DIM_Crosswalk/ISA22_Workbook_Visual_09NOV2026.png) · [current ISA PITON](Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md).
+
+Original standing remains 480 DMS dispositions (474 supported, six unresolved source meanings), 279 source records, 31 original correspondence targets, 25 previous findings, 58 donor records and 73 case facts. No DIM model content, compulsory ISA chassis, native OGC Profile, independent source authentication or OGC runtime conformance is adopted by the source audit. **Next owner “Proceed” executes only Step16 of the separate 40-step donor crosswalk**, not a new ISA delivery. The older 43-step DIM/Profile publication and interoperability experiment remains conditionally closed (Gates E/F open, Gate G reviewed but full release denied).
+
+## Historical project checkpoints — older CURRENT and NEXT statements superseded
+
 # DIM / CSAPI Profile V2 — start here
 
 ## Current workstream — 9 November 2026, ISA Delivery21 complete

@@ -1,3 +1,11 @@
+# Current primary crosswalk pointer — ISA correction closed (9 November 2026)
+
+<!-- ISA22_FINAL_CURRENT -->
+
+The current authoritative comparison is the [329-row/14-column working master](../Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) and its [new verified 26-sheet editable workbook](../Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). [Delivery22 closeout](../Donor_DIM_Crosswalk/ISA22_Final_Validation_Closeout_09NOV2026.md) records the exact source, worksheet, parity and visual check limitations. Other artifacts below, including the earlier 7-sheet donor-to-model traceability workbook, remain useful historical deliverables but are not a competing current master. Broader 40-step donor crosswalk resumes at owner Step16 only on a new user Proceed.
+
+## Historical deliverables index
+
 # DIM V2 — reviewable donor mapping and UML-style model
 
 **CURRENT — ISA-03D COMPLETE. Next owner “proceed”: ISA-03E only.** [Workbook](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.xlsx) · [Full comparison](../Donor_DIM_Crosswalk/ISA_Correction_Review_ISA03D_07NOV2026.md) · [Two-property source report](../Donor_DIM_Crosswalk/ISA03D_Relationship_Visible_07NOV2026.md) · [Publication](../Donor_DIM_Crosswalk/ISA03D_Publication_Record_07NOV2026.json) · [Current PITON](../Donor_DIM_Crosswalk/PITON_ISA_Coverage_Correction_07NOV2026.md).65 reviewed/62 supported/three existing questions;92 information/review rows. Physical attachment is distinct from logical component visibility; native Visible concerns a laser's visible spectrum. Earlier non-ISA/case values preserved. Older checkpoint instructions below are historical.
