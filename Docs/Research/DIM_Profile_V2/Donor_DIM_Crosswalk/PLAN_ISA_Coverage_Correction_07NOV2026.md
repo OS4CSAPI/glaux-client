@@ -1,4 +1,28 @@
-# ISA correction — current execution plan (delivery18 complete)
+# ISA correction — CURRENT execution plan after accelerated delivery19
+
+**8 November 2026.** Source review of the original ISA Controller Requirements6.0r4 is **COMPLETE across accelerated deliveries18–19**:28/28 registered blocks,163 native definitions (17H/45M/101L;162 shall/0 should/1 may). The second delivery completed55 native definitions and Appendix A's101/101 recommended verification mappings (95 Test, six Inspection), Appendix B's18 acronyms. Original indexed text reviewed, targeted appendix images inspected; this is not executed conformance. [Full original-source review](ISA19_Controller_Requirements_Remaining_Review_08NOV2026.md) · [55 native/101 verification/18 acronym evidence](ISA19_Controller_Requirements_Indexed_Evidence_08NOV2026.json) · [Complete cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json).
+
+**Current working master:**329 information/review rows, all480 DMS outcome dispositions (474 source-supported/six precise interpretation questions), and15 existing-source-candidate qualifications from delivery19. **No new rows, displayed ISA/donor/case cell edits or DIM adoption.** All34 Component Requirements blocks/259 definitions remain preserved. Source-boundary note register **170**. Original target4/31 closure and earlier finding1/25 reconciliation remain intentionally reserved. Canonical Excel remains the **253-row/226-primary** earlier integration snapshot,76 rows behind text; final/substantial refresh schedule unchanged.
+
+## Remaining execution queue — THREE authorized prompt deliveries
+
+| Accelerated slot | Exact existing assignment | Stop/closure boundary |
+| --- | --- | --- |
+| **20 — NEXT** | **ISA-REMAINING-COMPANION-AND-CONTEXT**: all23 Data Model Topics registered source blocks, bounded source access question for PAPER2015, all279 registered-source-block/document reconciliation and remaining source context | Reuse prior reviewed DMS/requirements/interface evidence; source notes/holds local. Do not prematurely audit original crosswalk rows or rebuild Excel |
+| **21** | **Source-first semantic audit**: original31 row/case targets and25 earlier mapping/finding targets, saved source evidence and six precise ISA local questions | Reconcile actual source correspondence; preserve correct uncertainty; do not auto-adopt DIM concepts |
+| **22** | **Final validation and closeout**: source inventory, all source-block counts, text/CSV/JSON/XLSX parity, visual workbook inspection, lessons and verified GitHub publication | Update canonical Excel at substantial/final checkpoint; do not claim tests not run or model adoption not approved |
+
+Central forecast **41 technical iterations,38 completed,3 central remaining**; low/high range now2–5. No owner-approved extensions, new planning substeps, mini-publishers, new standards or hardware operations. Only a specific evidenced missing source/validation obligation can justify a documented schedule change.
+
+## Source, model, and delivery guardrails
+
+Controller's denial response uses SUCCESS with authorized=No; inability to determine depends on policy. Live Data cache retention is resource-conditional and DEVICE REMOVED removes maintained Config/Status, not original historical observations. Discovery zero matches is SUCCESS when matching succeeded. Subscription creator/consumer distinction and source mismatched matching-change headings/parent IDs are retained literally. Appendix Table4's methods are **recommended**, not actually executed. Do not transform any of these into a universal DIM chassis, one row per SHALL, positive runtime conformance claim or a seventh DMS question merely to extend the schedule.
+
+Every next step must inspect original source for its assigned scope, update existing cumulative master/evidence/register/PITON in GitHub, read back actual publication and report the one next authorized delivery. Working-master source contribution remains separate from **explicit DIM adoption**: owner checkpoint at broader Step24 for ready portions, synthesis/testing Steps35–39, named-version baseline consideration Step40. Broader crosswalk Step16 owner review is pending completion of the ISA correction.
+
+## Historical plan and earlier next-scope banners (superseded)
+
+### ISA correction — current execution plan (delivery18 complete)
 
 **8 November 2026 CURRENT:** Delivery18 `ISA-CONTROLLER-REQUIREMENTS-FIRST` is **COMPLETE as original indexed-text source review and GitHub-integrated source qualification**: Controller Requirements §§1–5.12,20 registered blocks and108 original requirements (13H/33M/62L;107 shall/0 should/1 may). Page images were unavailable. [Controller source review](ISA18_Controller_First_Source_Review_08NOV2026.md), [cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json), [coverage](ISA_Coverage_Register_07NOV2026.json), [canonical master](Master_Donor_Concept_to_DIM_Crosswalk.md), [exact status](ISA_Correction_Status_07NOV2026.json), [current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md).
 
