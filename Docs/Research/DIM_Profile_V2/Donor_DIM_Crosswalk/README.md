@@ -1,3 +1,13 @@
+# CURRENT — Step17 The Open Group SOSA source intake completed; conceptual audit pending
+
+<!-- STEP17_SOSA_SOURCE_INTAKE_09NOV2026 -->
+
+**9 November 2026 · Step17 IN PROGRESS, not complete.** [Source-first intake, actual 12-item editioned corpus, primary C239 clause evidence and proposed bounded assessment](Step17_SOSA_Source_Intake_and_Bounded_Assessment_09NOV2026.md). The project Library holds original **403-page** *SOSA Reference Architecture Edition 1.1*, document **C239**, `c239_5.pdf` (PDF `file_00000000af4081f58c4bac329f85c58f`); its cover/TOC, sensor/host physical context, taxonomy, module/infrastructure distinction, data-model structure, system management, glossary and normative Appendix B pointers were selectively read, **not full-source audited**. C239 points to a separate normative DSDM/IDL and six OpenAPI files: original companion file/edition access is still unverified. 2025 **S251 Edition 2.0 Snapshot 3** remains version-distinct from the 2023 C239 standard and the misleading publicly accessible **2022 S221 Snapshot**.
+
+**Owner-control proposal:** bounded SOSA-A architecture roles; SOSA-B services/management; SOSA-C data model and interface/edition qualification; SOSA-D source-backed crosswalk integration/verification, adapting only against evidenced complexity. No automatic replication of 22 ISA deliveries, no invisible split, no unverified equal meaning between W3C SOSA/SSN and The Open Group SOSA. **Next owner “Proceed”: SOSA-A only** (original C239 taxonomy, hardware, host and module role audit) under the proposed Step17 plan. **No new master rows or SOSA column/mappings yet, no Step17 completion, no DIM/Profile adoption; Step16 acceptance intact.**
+
+## Prior accepted Step16 and historical instructions (superseded if inconsistent)
+
 # CURRENT — ISA correction final closeout verified (9 November 2026)
 
 <!-- ISA22_FINAL_CURRENT -->
