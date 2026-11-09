@@ -1,0 +1,851 @@
+{
+  "schema": "sosa-b.original-source-v0.1",
+  "date": "2026-11-09",
+  "repository": "OS4CSAPI/glaux-client",
+  "branch": "research/dim-profile-v2",
+  "donor": "The Open Group Sensor Open Systems Architecture, not W3C SOSA/SSN",
+  "reference": {
+    "title": "Technical Standard for SOSA Reference Architecture, Edition 1.1",
+    "document": "C239",
+    "publication": "June 2023; September erratum",
+    "project_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "pdf_pages": 403,
+    "reviewed_selected_pages": "PDF 49–54, 58, 64–74, 75–79, 83–93, 101–105, 115–119, 125–139, 141–149, 164–168, 171–182, 191–207, 384–389; representative relevant pages in each targeted chapter, not all pages nor all requirements",
+    "source_grade": "ORIGINAL_C239_SELECTED_CLAUSE_TEXT_INSPECTED_NOT_WHOLE_DOCUMENT_COMPLETED",
+    "other_primary_files_checked": 0
+  },
+  "baseline": {
+    "master_json_blob_sha": "60843bf874c899c497900b062cd8dec4e7e29c89",
+    "rows": 329,
+    "columns": 14,
+    "prior_donor_evidence": 58,
+    "case_facts": 73
+  },
+  "counts": {
+    "source_native_records": 33,
+    "qualified_or_held_correspondence": 25,
+    "source_holds": 8,
+    "distinct_existing_target_rows": 24,
+    "master_cells_changed": 0,
+    "master_rows_added": 0,
+    "dim_elements_adopted": 0
+  },
+  "source_records": [
+    {
+      "id": "SOSA-C239-B-01",
+      "source_term": "System Manager (1.1)",
+      "original_locator": "§4.2 Table4.2-1, printed23/PDF49; §5.4 printed32/PDF58",
+      "original_meaning_paraphrase": "Controls housekeeping: discovery, configuration, hardware/software readiness, state/mode, health and security of whole sensor/components; explicitly excludes mission tasking",
+      "non_equivalence_limit": "Descriptive architecture; no actual installed system, conformance, or mission-command success",
+      "category": "SYSTEM_MANAGEMENT",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-02",
+      "source_term": "Task Manager (1.2)",
+      "original_locator": "§4.2 Table4.2-1, printed23/PDF49; §5.4 printed32/PDF58",
+      "original_meaning_paraphrase": "Coordinates mission requests and resources: task scheduling, processing request and mission operation",
+      "non_equivalence_limit": "Architecture-level Task Manager is not equivalent to fully finalized normative task API in 1.1",
+      "category": "MISSION_TASKING",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-03",
+      "source_term": "Sensor Capability",
+      "original_locator": "App. A dictionary, printed358/PDF384",
+      "original_meaning_paraphrase": "Tasks and assignments a sensor or module can perform given its current health and configuration",
+      "non_equivalence_limit": "Not all theoretically designed capabilities are currently ready, physically available or executed",
+      "category": "CAPABILITY",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-04",
+      "source_term": "Sensor Module Mode",
+      "original_locator": "App. A 'Mode', printed360/PDF386",
+      "original_meaning_paraphrase": "Finite discrete condition of expected sensor/module/hardware behavior",
+      "non_equivalence_limit": "Distinct from lifecycle State, health Status or a default operating mode",
+      "category": "MODE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-05",
+      "source_term": "Component/Sensor State",
+      "original_locator": "App. A 'State', printed362/PDF388; §6.5 printed102/PDF128",
+      "original_meaning_paraphrase": "Top-level lifecycle condition of sensor, plug-in card or module, determined and represented from system-management viewpoint",
+      "non_equivalence_limit": "State is not a modality mission assignment or independently observed hardware truth",
+      "category": "LIFECYCLE_STATE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-06",
+      "source_term": "Component/Sensor Status",
+      "original_locator": "App. A 'Status', printed363/PDF389; §6.2.2 printed45–47/PDF71–73",
+      "original_meaning_paraphrase": "Condition related to performance/health; relevant changes can be reported as management notifications",
+      "non_equivalence_limit": "Health/performance Status does not equal operational lifecycle state, mode, or measured effect",
+      "category": "STATUS",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-07",
+      "source_term": "Sensor Health/Diagnostics/Logging",
+      "original_locator": "§6.1.1 Table6.1.1-1 printed41–42/PDF67–68; App. A 'Health', printed359/PDF385",
+      "original_meaning_paraphrase": "Current and projected component/sensor condition, diagnostic/BIT results, fault and health logs have separate management roles",
+      "non_equivalence_limit": "No reported health measurement is established for any of four source cases by a C239 generic service description",
+      "category": "HEALTH_DIAGNOSTIC",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-08",
+      "source_term": "System Management Health/Operations/Configuration sub-functions",
+      "original_locator": "§6.1.1 printed40–42/PDF66–68",
+      "original_meaning_paraphrase": "Health monitors condition, Operations handles current state/mode, Configuration handles discovery and user settings; Security management has analogous groups",
+      "non_equivalence_limit": "Functional management grouping is not a hardwired inventory, model superclass or vendor-specific command list",
+      "category": "MANAGEMENT_FUNCTIONAL_DECOMPOSITION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-09",
+      "source_term": "Direct versus delegated indirect management",
+      "original_locator": "§6 printed38/PDF64; §6.1.2 printed43/PDF69",
+      "original_meaning_paraphrase": "A different component may expose management interfaces for a managed component; manager/agent path supports direct/indirect supervision",
+      "non_equivalence_limit": "Management agent or proxy is not necessarily the physical managed unit, original measurement performer or ISA CIC",
+      "category": "MANAGEMENT_REPRESENTATION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-10",
+      "source_term": "In-band versus out-of-band management",
+      "original_locator": "§6.1 printed39/PDF65; §6.3–6.4 heading/selected Rules printed93–102/PDF119–128",
+      "original_meaning_paraphrase": "In-band depends on the operational message network; out-of-band supports management independently of that network in hardware-specific contexts",
+      "non_equivalence_limit": "Existence of a management path does not prove all power states are reportable or physically reachable",
+      "category": "MANAGEMENT_PATH",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-11",
+      "source_term": "General Profile network management binding",
+      "original_locator": "§6.2.1 Rules6.2.1-1–3, printed44–45/PDF70–71",
+      "original_meaning_paraphrase": "Conditional original rules apply IP/REST/OpenAPI and syslog-based notifications to applicable in-band General Profile management interfaces",
+      "non_equivalence_limit": "Conditionally applicable implementation rules, not a CSAPI Profile obligation or evidence of live deployed transport",
+      "category": "NORMATIVE_INTERFACE_BOUNDARY",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-12",
+      "source_term": "Syslog Fault, Status, State, Mode and Configuration notifications",
+      "original_locator": "§6.2.2.1 Rules6.2.2.1-1–8, printed45–46/PDF71–72; §§6.2.2.2–6.2.2.6 printed46–47/PDF72–73",
+      "original_meaning_paraphrase": "Distinct categories of management change notifications; source rules specify encoding and event-trigger behavior in applicable interfaces",
+      "non_equivalence_limit": "Syslog message is notification of reported state, not a performed Observation or proof original publisher authenticity",
+      "category": "MANAGEMENT_NOTIFICATIONS",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-13",
+      "source_term": "System Manager agent/manager and client/server relationship",
+      "original_locator": "§6.1.2 Figure6.1.2-1 printed43/PDF69; Figure6.1.2-2 printed44/PDF70",
+      "original_meaning_paraphrase": "Manager initiates requests/acquires responses, agent represents sensor/component; manager may manage multiple agents",
+      "non_equivalence_limit": "Receiver/controller role is not automatically identity of a physical sensing element or independent device host",
+      "category": "MANAGER_AGENT",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-14",
+      "source_term": "SOSA sensor states S0–S5",
+      "original_locator": "§6.5.1 and Figure6.5.1-1 printed102–104/PDF128–130",
+      "original_meaning_paraphrase": "Off, Starting, Operational, Cleansing, Stopping, Faulted; state diagram from System Manager viewpoint",
+      "non_equivalence_limit": "Off S0 often unreported; Operational means manager-assessed configured/healthy, not guaranteed current real installed telemetry",
+      "category": "WHOLE_SENSOR_LIFECYCLE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-15",
+      "source_term": "SOSA PIC states P0–P6",
+      "original_locator": "§6.5.2 Figure6.5.2-1, printed104–107/PDF130–133",
+      "original_meaning_paraphrase": "PIC states broadly parallel sensor lifecycle plus P6 Lost Communication",
+      "non_equivalence_limit": "Loss of manager/agent communication is not by itself a physical failure; PIC status not whole sensor status",
+      "category": "PIC_LIFECYCLE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-16",
+      "source_term": "SOSA Module states M0–M6",
+      "original_locator": "§6.5.3 Figure6.5.3-1 printed107–109/PDF133–135",
+      "original_meaning_paraphrase": "Module-specific state model including M6 Lost Communication and manager-reported lifecycle",
+      "non_equivalence_limit": "Software module state is distinct from PIC power state or overall sensor state; original p135 M5 prose includes a PIC wording anomaly",
+      "category": "MODULE_LIFECYCLE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-17",
+      "source_term": "State transitions normative boundary",
+      "original_locator": "§6.5 introductory Note, printed102/PDF128",
+      "original_meaning_paraphrase": "State diagrams are defined and aligned with enumerations, but specific transition policy/normative language deferred to future edition",
+      "non_equivalence_limit": "Do not turn expected transitions and explanatory prose into new mandatory transition SHALLs",
+      "category": "NORMATIVE_BOUNDARY",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-18",
+      "source_term": "Task / Assignment / Task Health",
+      "original_locator": "§7.1.1 and Table7.1.1-1 printed115–119/PDF141–145; App. A 'Task' and 'Assignment', printed358,363/PDF384,389",
+      "original_meaning_paraphrase": "External task is mission request, internal assignment directs a module; preliminary operations include create/modify/delete, task/assignment status and health notifications",
+      "non_equivalence_limit": "Most table entries TBD or preliminary; request/acknowledgement does not prove completed mission, hardware action or source-true CommandStatus",
+      "category": "PRELIMINARY_TASKING",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-19",
+      "source_term": "Sensor Task Manager publication standing",
+      "original_locator": "§5.4 printed32/PDF58; §7.1.1 printed115/PDF141",
+      "original_meaning_paraphrase": "Module approach described but task management concept still being developed; source explicitly says not ready for publication in this edition",
+      "non_equivalence_limit": "Do not invent complete Task Manager normative API, conformance rules or universal task state encoding",
+      "category": "PUBLICATION_HOLD",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-20",
+      "source_term": "Transmission/Reception modules 2.3 and 2.4",
+      "original_locator": "§4.2 Table4.2-1 printed24/PDF50; §8.1–8.2 printed120–122/PDF146–148",
+      "original_meaning_paraphrase": "Signal conditioning, receive/excitation and energy–signal conversion are mission functions with task-specific input/output roles",
+      "non_equivalence_limit": "Functional modules are not a count of physical apertures or required physical transducers",
+      "category": "SENSING_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-21",
+      "source_term": "Detection/characterization functional definitions",
+      "original_locator": "§9.1–9.2 printed139–140/PDF165–166; §4.2 Table4.2-1 printed24/PDF50",
+      "original_meaning_paraphrase": "Detector/extractor and characterizer have reference-level functional descriptions, including output products",
+      "non_equivalence_limit": "§9.1 expressly says module not defined for Edition1.1; do not promote functions to mandatory runtime capabilities",
+      "category": "REFERENCE_ONLY_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-22",
+      "source_term": "External Data Ingestor",
+      "original_locator": "§4.2 Table4.2-1 printed25/PDF51; §10.1 printed147/PDF173",
+      "original_meaning_paraphrase": "Described function to ingest output of other SOSA and non-SOSA sources, adapt format, distribute to modules",
+      "non_equivalence_limit": "§10.1 not defined for this edition; neither source-owner authenticity nor actual external sensor connectivity established",
+      "category": "REFERENCE_ONLY_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-23",
+      "source_term": "Storage/Retrieval Manager",
+      "original_locator": "§4.2 Table4.2-1 printed25/PDF51; §10.5 Rules10.5-2–5 printed149–150/PDF175–176",
+      "original_meaning_paraphrase": "Persistent storage/retrieval of logs, notifications, metadata or data streams; selected NVMe/PXE rules are specified",
+      "non_equivalence_limit": "Storage is not original Observation, source-to-copy lineage, universal history ledger or proof persisted real measurements",
+      "category": "STORAGE_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-24",
+      "source_term": "Reporting Services module",
+      "original_locator": "§4.2 Table4.2-1 printed26/PDF52; §11.1 printed152/PDF178",
+      "original_meaning_paraphrase": "Formatting, packaging and distributing sensor-derived data/products or sensor logs; table provides reference functions",
+      "non_equivalence_limit": "§11.1 explicitly not defined for Edition1.1; no mandatory CSAPI DataStream or performed result semantics",
+      "category": "REFERENCE_ONLY_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-25",
+      "source_term": "Security Services and software integrity verification",
+      "original_locator": "§12.1.1 Rules12.1.1-1–2 printed153/PDF179; §4.2 Table4.2-1 printed26/PDF52",
+      "original_meaning_paraphrase": "Security module can verify accepted software-package digest; original conditional rules specify authentication/storage on request",
+      "non_equivalence_limit": "Digest verification of a package is not cryptographic original observational data provenance, all software trust or publisher proof",
+      "category": "SECURITY_SUPPORT",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-26",
+      "source_term": "Sensor security state model",
+      "original_locator": "§6.5.4 printed109–112/PDF135–138",
+      "original_meaning_paraphrase": "Sensor/PIC/module security posture may be Evaluating, Protected, Degraded, Compromised based on security policy",
+      "non_equivalence_limit": "Security posture is separate from sensor operational state, fault/status and actual mission capability",
+      "category": "SECURITY_STATE",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-27",
+      "source_term": "Calibration Service",
+      "original_locator": "§4.2 Table4.2-1 printed26/PDF52; §12.6 printed167/PDF193",
+      "original_meaning_paraphrase": "Reference role for injection/test signals to support system calibration activity",
+      "non_equivalence_limit": "§12.6 not defined in Edition1.1; source does not establish a metrologically traceable performed calibration for a case",
+      "category": "REFERENCE_ONLY_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-28",
+      "source_term": "Nav Data Service and Time/Frequency Service",
+      "original_locator": "§4.2 Table4.2-1 printed27/PDF53; §§12.7–12.8 printed167–168/PDF194",
+      "original_meaning_paraphrase": "Described navigation and time/frequency reference support with quality/source metadata, distribution, translation and notification",
+      "non_equivalence_limit": "Platform nav/time information is not surveyed probe location, actual observation timestamp, measurement procedure or verified present source",
+      "category": "NAV_TIME_SUPPORT",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-29",
+      "source_term": "Host Platform Interface (6.9)",
+      "original_locator": "§4.2 Table4.2-1 printed27/PDF53; §12.10 printed169–179/PDF195–205",
+      "original_meaning_paraphrase": "Bridge between sensor/host interactions and power/communications; can adapt external host format to SOSA internal interactions",
+      "non_equivalence_limit": "A host interface does not identify actual attached probe, physical site point or external REST/CSAPI server",
+      "category": "HOST_MEDIATION",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-30",
+      "source_term": "Power Module (6.10) reference description",
+      "original_locator": "§4.2 Table4.2-1 printed27/PDF53; §12.11 printed180–181/PDF206–207",
+      "original_meaning_paraphrase": "Reference functional power conversion, conditioning, storage, distribution, protection and possible control/status",
+      "non_equivalence_limit": "§12.11 states module NOT defined this edition; do not infer native installed battery, supply hardware/cardinality or mandatory management API",
+      "category": "REFERENCE_ONLY_POWER",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-31",
+      "source_term": "Power supply vs power-state and host power",
+      "original_locator": "§4.1.1.3 printed21–22/PDF47–48; §12.10.2 Table12.10.2-1 printed179/PDF205; §12.11 printed180/PDF206",
+      "original_meaning_paraphrase": "Host power flows into Host Platform Interface, potentially to functional Power module, with distinct physical supply versus status/control paths",
+      "non_equivalence_limit": "Power input, reserve, status reporting and successful action are separate claims; no actual example case electrical telemetry proven",
+      "category": "POWER_RELATIONSHIP",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-32",
+      "source_term": "Communications/Network Subsystem support",
+      "original_locator": "§4.2 Table4.2-1 printed26/PDF52; §12.5 printed166/PDF193",
+      "original_meaning_paraphrase": "Described network monitoring, connectivity, QoS, intrusion and configuration support",
+      "non_equivalence_limit": "Service description does not prove interface availability or concrete transfer in any of the four source cases",
+      "category": "NETWORK_SUPPORT",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    },
+    {
+      "id": "SOSA-C239-B-33",
+      "source_term": "Data products vs information products",
+      "original_locator": "App. A entries printed359/PDF385; §4.2 Table4.2-1 printed26/PDF52",
+      "original_meaning_paraphrase": "SOSA distinguishes minimally processed digital sensor data from processed/reduced information products",
+      "non_equivalence_limit": "Processing products are not automatically one performed source Observation or independent raw data claim",
+      "category": "OUTPUT_SEMANTICS",
+      "source_grade": "ORIGINAL_C239_SELECTED_SOURCE_TEXT_REVIEWED",
+      "original_document": "C239 Edition 1.1 2023",
+      "source_file_id": "file_00000000af4081f58c4bac329f85c58f"
+    }
+  ],
+  "source_qualified_correspondence": [
+    {
+      "id": "SOSA-B-M01",
+      "source_ids": [
+        "SOSA-C239-B-01",
+        "SOSA-C239-B-08"
+      ],
+      "target_row_ids": [
+        "ISA-A-SERVICE-ROLE"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "System Manager is a defined management module with subfunctions that can qualify generic role/service concepts",
+      "negative_equivalence_guard": "SOSA managing module is not ISA Controller service role or one-to-one physical component",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M02",
+      "source_ids": [
+        "SOSA-C239-B-02",
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target_row_ids": [
+        "S06-R019"
+      ],
+      "relation": "PARTIAL",
+      "correspondence_reason": "SOSA external mission task request and internal assignment resemble issued action request patterns",
+      "negative_equivalence_guard": "Task Manager interactions are preliminary; no proven user request or physical effect and no exact CSAPI Command mapping",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M03",
+      "source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target_row_ids": [
+        "S06-R020"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "SOSA task/assignment status and health reporting potentially qualify reported outcome concepts",
+      "negative_equivalence_guard": "Published status and return codes not independent completed command or mission success",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M04",
+      "source_ids": [
+        "SOSA-C239-B-03"
+      ],
+      "target_row_ids": [
+        "ISA-K-CAPABILITIES"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Native SOSA Capability depends upon as-configured health and tasks/assignments, unlike ISA CCD static declarations",
+      "negative_equivalence_guard": "No assertion of equal actual mode/capability list or vendor hardware execution",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M05",
+      "source_ids": [
+        "SOSA-C239-B-04"
+      ],
+      "target_row_ids": [
+        "S06-R016"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Finite SOSA Mode concept speaks to known behavior in a discrete mode",
+      "negative_equivalence_guard": "Do not equate mode to default or current source-reported mode without evidence",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M06",
+      "source_ids": [
+        "SOSA-C239-B-04",
+        "SOSA-C239-B-06"
+      ],
+      "target_row_ids": [
+        "S06-R018"
+      ],
+      "relation": "PARTIAL",
+      "correspondence_reason": "SOSA mode and status message categories can contribute source-specific mode reporting notions",
+      "negative_equivalence_guard": "Does not establish actual contemporaneous source-reported mode in one of four cases",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M07",
+      "source_ids": [
+        "SOSA-C239-B-05",
+        "SOSA-C239-B-14"
+      ],
+      "target_row_ids": [
+        "ISA-C-082"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Sensor lifecycle/state is explicit separately from condition and health",
+      "negative_equivalence_guard": "Do not equate SOSA state enum to ISA operating condition property",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M08",
+      "source_ids": [
+        "SOSA-C239-B-07"
+      ],
+      "target_row_ids": [
+        "ISA-C-046"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Health diagnostics include BIT execution/results and fault reporting",
+      "negative_equivalence_guard": "No exact native ISA BIT property or actual device diagnostic measurement",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M09",
+      "source_ids": [
+        "SOSA-C239-B-07",
+        "SOSA-C239-B-12"
+      ],
+      "target_row_ids": [
+        "ISA-T-STATUS"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "SOSA reports status/health events but ISO-coded property Status report is a distinct message form",
+      "negative_equivalence_guard": "Syslog notification is not an ISA Status property-value message",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M10",
+      "source_ids": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-13"
+      ],
+      "target_row_ids": [
+        "ISA-A-CIC-MEDIATION"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "SOSA manager/agent may represent/manage a different component, similar to mediated participation",
+      "negative_equivalence_guard": "No exact ISA CIC performer/broker/relay semantics, source exposure or virtual UCI mapping",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M11",
+      "source_ids": [
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-11"
+      ],
+      "target_row_ids": [
+        "ISA-A-PARTICIPATION"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "In-band management interface roles are networked conditional roles",
+      "negative_equivalence_guard": "SOSA client/server/agent role is not a unique ISA registered network participant",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M12",
+      "source_ids": [
+        "SOSA-C239-B-12"
+      ],
+      "target_row_ids": [
+        "ISA-T-ADMIN"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Distinct notifications about state/status/fault/mode/configuration supply management change evidence",
+      "negative_equivalence_guard": "Not equal to ISA Administrative event codes, original Observation or all messages actually delivered",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M13",
+      "source_ids": [
+        "SOSA-C239-B-14",
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16",
+        "SOSA-C239-B-17"
+      ],
+      "target_row_ids": [
+        "S06-R018"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Manager-represented lifecycle at whole sensor and module/PIC level qualifies possible state context",
+      "negative_equivalence_guard": "State is not source-reported operating mode or proof observed live condition",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M14",
+      "source_ids": [
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16"
+      ],
+      "target_row_ids": [
+        "CASE-H05"
+      ],
+      "relation": "CASE_HOLD_CORRESPONDENCE",
+      "correspondence_reason": "PIC/module Lost Communication provides bounded example of diagnostic/availability ambiguity",
+      "negative_equivalence_guard": "Loss of management path must not be treated as physical sensor health or measured actual failure",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M15",
+      "source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target_row_ids": [
+        "ISA-R-EXECUTION"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Task assignment statuses offer some reported processing/execution context",
+      "negative_equivalence_guard": "Not exact ISA current command execution record or verified hardware effect",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M16",
+      "source_ids": [
+        "SOSA-C239-B-20",
+        "SOSA-C239-B-21",
+        "SOSA-C239-B-22"
+      ],
+      "target_row_ids": [
+        "S06-R014"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "SOSA functional modules can process sensory data but are not necessarily the physical observer",
+      "negative_equivalence_guard": "Functional chain, data ingestor and physical sensing actor must remain separate",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M17",
+      "source_ids": [
+        "SOSA-C239-B-23",
+        "SOSA-C239-B-24",
+        "SOSA-C239-B-33"
+      ],
+      "target_row_ids": [
+        "S06-R012"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Data product formatting and storage distinguish output stream/report fields and their provenance",
+      "negative_equivalence_guard": "No exact CSAPI resultSchema, actual Observation or original-to-digital-copy chain",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M18",
+      "source_ids": [
+        "SOSA-C239-B-25",
+        "SOSA-C239-B-26"
+      ],
+      "target_row_ids": [
+        "ISA-C-111"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Security operational state/integrity and alerts may relate to tamper/health concepts",
+      "negative_equivalence_guard": "Software integrity result/security state does not prove physical tamper condition",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M19",
+      "source_ids": [
+        "SOSA-C239-B-27"
+      ],
+      "target_row_ids": [
+        "S06-R010"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Calibration module describes reference test signal injection separate from recurring observation procedures",
+      "negative_equivalence_guard": "No actual metrological calibration performed or reusable ObservingProcedure identity",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M20",
+      "source_ids": [
+        "SOSA-C239-B-28",
+        "SOSA-C239-B-29"
+      ],
+      "target_row_ids": [
+        "S06-R009"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Host platform interface/nav/time supply site/host-related operational context",
+      "negative_equivalence_guard": "Time/nav source is not surveyed position of individual instrument or installation history",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M21",
+      "source_ids": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "target_row_ids": [
+        "CASE-H04"
+      ],
+      "relation": "CASE_HOLD_CORRESPONDENCE",
+      "correspondence_reason": "Source describes host power flow and functional power conversion/protection distinctions relevant to original case power hold",
+      "negative_equivalence_guard": "Module reference only: no installed battery, exact voltage, state, control or actual power telemetry",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M22",
+      "source_ids": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "target_row_ids": [
+        "ISA-C-091"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Possible power status/reference module supports concept of component power condition",
+      "negative_equivalence_guard": "Does not establish actual ISA Power State property equivalence or real source-state measurement",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M23",
+      "source_ids": [
+        "SOSA-C239-B-32"
+      ],
+      "target_row_ids": [
+        "CASE-H03"
+      ],
+      "relation": "CASE_HOLD_CORRESPONDENCE",
+      "correspondence_reason": "Network monitoring and QoS roles are pertinent to connection/reporting-path distinctions",
+      "negative_equivalence_guard": "No real source-specific radio transmission, timing, CSAPI transfer or network health proof",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M24",
+      "source_ids": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-17"
+      ],
+      "target_row_ids": [
+        "ISA-K-CAPABILITY-STATE"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "correspondence_reason": "Managed capabilities and manager-reported state need separate readiness interpretation",
+      "negative_equivalence_guard": "A supported functionality is neither a source-attested current ready flag nor a reported actual state",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-B-M25",
+      "source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target_row_ids": [
+        "CASE-H09"
+      ],
+      "relation": "CASE_HOLD_CORRESPONDENCE",
+      "correspondence_reason": "Preliminary task model contrasts request/state/status/health and actual implementation",
+      "negative_equivalence_guard": "No source case has authenticated issued, acknowledged, completed, physically verified command sequence",
+      "review_disposition": "QUALIFIED_CANDIDATE_STAGED_FOR_SOSA_D_ONLY",
+      "dim_adoption": "NOT_APPROVED"
+    }
+  ],
+  "held_source_design_questions": [
+    {
+      "id": "SOSA-B-H01",
+      "topic": "Task Manager normative completeness",
+      "source_locator": "§5.4 / §7.1.1",
+      "source_bound": "Task management explicitly preliminary; multiple table values TBD and mission-specific schemas unfinished",
+      "required_non_inference": "SOSA-C DSDM/source comparison may clarify native enumeration availability; do not invent full standard task API",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H02",
+      "topic": "Power module edition definition",
+      "source_locator": "§12.11",
+      "source_bound": "Reference-only Power module, explicitly not defined in Edition 1.1",
+      "required_non_inference": "Keep power capability and hardware/power state as candidate evidence not normative 1.1 power service conformance",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H03",
+      "topic": "Reference-only mission-processing/reporting functions",
+      "source_locator": "§§9.1,10.1,11.1",
+      "source_bound": "Several listed modules have descriptive reference functions but are not defined in this edition",
+      "required_non_inference": "Do not promote Table4.2-1 descriptions into normative conformance or universal DIM classes",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H04",
+      "topic": "System/PIC/Module lifecycle state applicability",
+      "source_locator": "§6.5.1–6.5.3",
+      "source_bound": "S0 often unreportable; P6/M6 lost communication distinct from physical faults",
+      "required_non_inference": "No universal current-state assertion or exact ISA lifecycle mapping",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H05",
+      "topic": "Normative rule scope versus explanatory documentation",
+      "source_locator": "§§6.2,6.5",
+      "source_bound": "Specific rules exist for applicable General Profile protocols and notifications, while state-transition policies are not normative in 1.1",
+      "required_non_inference": "Retain Rule/Recommendation/Observation/descriptive distinctions by original ID",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H06",
+      "topic": "Source data model and API file access",
+      "source_locator": "§6.2.1, Appendix B; prior intake",
+      "source_bound": "Actual native C239-referenced DSDM/IDL and six OpenAPI companion files not inspected",
+      "required_non_inference": "SOSA-C must obtain and inspect or explicitly hold; no reverse-engineered full entity list",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H07",
+      "topic": "Power/health/status original four cases",
+      "source_locator": "§§6.1,12.11",
+      "source_bound": "Source C239 reference architecture does not authenticate installed configurations or telemetry of Dragino/AirGradient/Campbell/Bennett",
+      "required_non_inference": "Preserve case source standing and avoid new measurement/control claims",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H08",
+      "topic": "Section-level whole-source and hardware rules",
+      "source_locator": "§§6–12 and Appendix A",
+      "source_bound": "SOSA-B inspected selected relevant source clauses; not every table, hardware rule, endpoint or security requirement across chapters",
+      "required_non_inference": "Do not mark entire 403-page architecture or all 12-source donor lineage fully source-reviewed",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    }
+  ],
+  "validation": {
+    "all_source_ids_resolved": true,
+    "all_existing_row_ids_resolved": true,
+    "source_grades_explicit": true,
+    "original_rule_vs_description_distinguished": true,
+    "new_mandatory_dim_requirements": 0,
+    "staged_only_for_sosa_d": true,
+    "source_pages_not_exhaustively_covered": true
+  },
+  "next": "SOSA-C only: original DSDM/IDL and six OpenAPI companion files, Section 5.7, 14–15 and Appendix B source/edition boundary"
+}

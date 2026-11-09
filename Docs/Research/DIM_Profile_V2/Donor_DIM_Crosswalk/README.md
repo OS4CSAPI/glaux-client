@@ -1,3 +1,13 @@
+# CURRENT — Step17 SOSA-B original management/services audit complete; SOSA-C next (9 November 2026)
+
+<!-- CURRENT_SOSA_B_COMPLETE_09NOV2026 -->
+
+**Step17 remains IN PROGRESS. SOSA-B completed its bounded original C239 §4.2–4.3, §5.4, §§6–12 and glossary source-first review of management, tasking, status, health, state, reporting and power.** [Source-meaning review](Step17_SOSA_B_C239_Management_Operational_Review_09NOV2026.md) · [33 native concepts / 25 qualified or held comparisons across 24 existing master rows / eight precise source/design holds](Step17_SOSA_B_C239_Management_Operational_Evidence_09NOV2026.json). Edition: The Open Group SOSA Reference Architecture 1.1, C239 (2023), original `c239_5.pdf`, project Library ID `file_00000000af4081f58c4bac329f85c58f`. Source review distinguishes manager housekeeping from mission tasking; state from Mode/Health/Status; S0 unreported and PIC/Module communication loss from physical fault; **preliminary task interactions**, and **Power, Reporting and other modules explicitly reference-only/not defined in Edition1.1**. Selected original clauses were inspected, not every source page or native DSDM/OpenAPI file.
+
+**Next only on separate owner “Proceed”: SOSA-C** — source/edition-aware review of the actual C239-referenced DSDM/IDL and six SysMan OpenAPI companions, §5.7, §§14–15 and Appendix B; record inaccessible originals as holds. **SOSA-D follows separately for canonical master integration.** The existing master remains **329 rows, 14 columns, 58 other-donor records and 73 case facts** with zero SOSA-stage cell edits and zero DIM/Profile adoption. This is The Open Group SOSA, not W3C SOSA/SSN.
+
+## Previous checkpoint history — earlier SOSA-B NEXT instructions superseded
+
 # CURRENT — Step17 SOSA-A original architecture audit complete; SOSA-B next (9 November 2026)
 
 <!-- CURRENT_SOSA_A_COMPLETE_09NOV2026 -->

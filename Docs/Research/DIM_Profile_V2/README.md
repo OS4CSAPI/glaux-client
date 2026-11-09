@@ -1,3 +1,11 @@
+# CURRENT — Step17 SOSA-B source audit complete; SOSA-C next
+
+<!-- CURRENT_SOSA_B_COMPLETE_09NOV2026 -->
+
+**9 November 2026.** [Original SOSA-B C239 management/operational source review](Donor_DIM_Crosswalk/Step17_SOSA_B_C239_Management_Operational_Review_09NOV2026.md) and [33/25/eight evidence ledger](Donor_DIM_Crosswalk/Step17_SOSA_B_C239_Management_Operational_Evidence_09NOV2026.json) are committed. They maintain source-faithful distinctions among management, tasking, mode, sensor/PIC/module lifecycle, health, notification and power, including the explicitly preliminary or reference-only elements of Edition1.1. **SOSA-C** is the next single owner-authorized original-source and actual native DSDM/API companion review; SOSA-D later integrates the findings. The [canonical master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) is unchanged (329×14, 58 original donor / 73 case evidence), and Step17 is not yet closed. [Current plan](Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [recovery PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+
+## Prior checkpoints
+
 # CURRENT — Step17 The Open Group SOSA-A source audit complete; SOSA-B next
 
 <!-- CURRENT_SOSA_A_COMPLETE_09NOV2026 -->
