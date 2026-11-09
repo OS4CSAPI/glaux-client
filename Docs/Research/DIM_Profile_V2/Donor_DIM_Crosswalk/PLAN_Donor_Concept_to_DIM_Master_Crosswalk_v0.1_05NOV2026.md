@@ -1,3 +1,11 @@
+# CURRENT — Crosswalk Step16 owner review pending
+
+<!-- STEP16_OWNER_REVIEW_PENDING_09NOV2026 -->
+
+**CURRENT — Step16 owner checkpoint REVIEW PREPARED; acceptance pending (9 November 2026).** [Review the actual 329-row master and issue assessment](Step16_Owner_Master_Review_09NOV2026.md). The Step16 review found 298 ISA-only source-derived candidate rows (90.6% of 329), alongside 31 earlier cross-donor/case topics; the ISA source census and 26-sheet verified workbook remain unchanged. It recommends preserving all source evidence, acknowledging real row overload and differentiating prior original/public/prior-only evidence grades, with possible filtered owner view of the **same** master. No approved DIM class/chassis, no new donor mapping, no Step17 action, no owner acceptance yet. **Next: owner decides whether Step16's evidence/presentation baseline is acceptable; only after acceptance does a separate “Proceed” authorize Step17 (The Open Group SOSA).**
+
+## Previously verified ISA22 closeout and historical plan/PITON
+
 # CURRENT — ISA correction final closeout verified (9 November 2026)
 
 <!-- ISA22_FINAL_CURRENT -->
