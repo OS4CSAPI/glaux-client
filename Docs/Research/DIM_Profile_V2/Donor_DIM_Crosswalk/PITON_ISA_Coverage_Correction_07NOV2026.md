@@ -1,4 +1,28 @@
-# Current ISA PITON — Component Requirements complete
+# Current ISA PITON — Controller Requirements first area complete (8 November 2026)
+
+**AUTHORITATIVE ROUTE: original ISA Step 11 / cross-cutting Controller requirements, accelerated delivery18 COMPLETE.** The source review covers original *ISA Controller Requirements* 6.0r4 (31 October2023), §§1.0–5.12, **20/28 registered source blocks**. There are **108 native requirements** (13 high-level/33 mid-level/62 low-level; **107 shall/0 should/1 may**). Source was available as indexed original PDF text on pages8–42 of74; source page-image inspection was unavailable and is not claimed. Full Controller review, including authorization, Live Data, verification and acronyms, is not closed yet.
+
+**GitHub working branch:** `OS4CSAPI/glaux-client`, `research/dim-profile-v2`. Primary [current master](Master_Donor_Concept_to_DIM_Crosswalk.md) and [structured source](Master_Donor_Concept_to_DIM_Crosswalk.json), [Controller native source review and requirement census](ISA18_Controller_First_Source_Review_08NOV2026.md), [cumulative companion evidence](ISA_Service_and_Context_Evidence_08NOV2026.json), [coverage register](ISA_Coverage_Register_07NOV2026.json), [exact progress](ISA_Correction_Status_07NOV2026.json), and [execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) are the current recovery anchors. Historical CURRENT/NEXT instructions later in this PITON are not active.
+
+## What Delivery18 actually changed
+
+The same working master remains **329 information/review rows**, with **480 DMS source outcomes (474 supported, six precise source-definition questions)**. **Fifteen existing candidates** gained source-qualified Controller review boundaries in the structured JSON; **no new row, displayed ISA/donor/case cell, original target closure, earlier-finding reconciliation, or DIM adoption** was added. The original 31 correspondence target count remains **4/31** and 25 prior findings remain **1/25**. The completed Component Requirements audit remains **34/34 blocks, 259 definitions** and was not rerun.
+
+The 26-sheet canonical XLSX is still the **verified 253-row/226-primary integration snapshot**, SHA256 `4a660bc7f4640850fdc3215d3ea3686155ce8d1f0f05c07ca29b27b6078c3806`. It intentionally trails the current 329-row text/JSON/CSV by76 rows plus documented refinements. Do **not** rebuild it until the established substantial/final checkpoint. Working-master inclusion is not DIM adoption: the owner-directed readiness decisions remain broader Step24, synthesis Steps35–39 and named-version consideration Step40.
+
+Controller source findings include three required core services per Controller instance on one computing platform; Zeroconf service advertisement and secure TCP/SCTP/Mockets requirements **as literally phrased in Controller 6.0r4**; sorted offered IPL format choice; Controller-side Registration UCI/certificate match preceding distinct authorization; bounded but differently anchored initial Config/Status requirements; conditional recommendation of Live Data/Authorization provider instances; command authorization and forwarding without proof of execution; associated Live Data Service Event forwarding; network nonresponse/revival, cascading DEVICE announcements and controller forced-disconnection duties. They are source requirements, **not observed runtime conformance, physical hardware membership/health, deployed transport support, successful commands, authenticated issuer truth or DIM classes**. The source review records the local wording errors/variants, including CMSV-H-0011's mislabeled parent list, CMSV-L-0018's missing parent list, and Controller versus Component socket modalities, without fabricating new primary questions.
+
+**No full-repository CI success is claimed.** Prior repository-wide older MPSS/presentation-guide checker issues remain separate. This delivery uses explicit original-source review, GitHub committed-file readback, preservation and scoped-master checks; page images were unavailable.
+
+## Exact next “Proceed” and stopping rule
+
+**Next “Proceed”: accelerated delivery19 only, `ISA-CONTROLLER-REQUIREMENTS-REMAINING`.** Review the remaining **8 Controller registered blocks**: `CNTR-6.0`, `CNTR-7.0`, `CNTR-7.1`, `CNTR-7.2`, `CNTR-7.3`, `CNTR-8.0`, `CNTR-AppendixA`, `CNTR-AppendixB`. This is Controller Authorization/Live Data, remaining source context, verification table and acronym appendix. Reconcile with earlier completed DMS/ICD/CMPT without recrediting their original reviews.
+
+After Delivery18, technical iterations are **37 of central41**. **Four existing deliveries remain (19–22):** finish Controller, residual ISA topics/source reconciliation, final source-first 31 original targets/25 findings and six known local questions, and final validation/XLSX closeout. Do not create new steps or new research branches, expand to other donors, adopt DIM/Profile classes, deploy Cloudflare, operate equipment or skip ahead to Excel/final audit during the next source-review prompt.
+
+## Historical continuity through delivery17 — superseded routing below
+
+### Current ISA PITON — Component Requirements complete
 
 **8 November2026 · Original ISA Step11 and cross-cutting requirements / accelerated delivery17 COMPLETE. Next “proceed”: delivery18 — Controller Requirements §§1–5 including communication-service subsections,20 registered blocks.** GitHub is authoritative: repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`, directory `Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk`.
 
