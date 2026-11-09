@@ -1,0 +1,2945 @@
+{
+  "schema": "isa21-original-correspondence-source-first-audit.v1",
+  "date": "2026-11-09",
+  "delivery": 21,
+  "repository": "OS4CSAPI/glaux-client",
+  "branch": "research/dim-profile-v2",
+  "starting_commit": "3f9d9fb8b425b701c15fe45c8d93b37afec115cc",
+  "original_documents": {
+    "DMS": {
+      "name": "ISA Data Model Specification",
+      "edition": "6.0r12",
+      "date": "2023-10-31",
+      "file_id": "file_00000000ca1c81f48a3ccd49273425f8"
+    },
+    "SDD": {
+      "name": "ISA Software Design Document",
+      "edition": "6.0r5",
+      "date": "2023-10-31",
+      "file_id": "file_000000004c10824683c0a84b37f24a3b"
+    },
+    "ICD": {
+      "name": "ISA Interface Control Document",
+      "edition": "6.0r5",
+      "date": "2023-10-31",
+      "file_id": "file_000000008de0820e8e33af2cb096bb12"
+    },
+    "CMPT": {
+      "name": "ISA Component Requirements",
+      "edition": "6.0r4",
+      "date": "2023-10-31",
+      "file_id": "file_00000000ed048210a141e046f2e93a17"
+    },
+    "CNTR": {
+      "name": "ISA Controller Requirements",
+      "edition": "6.0r4",
+      "date": "2023-10-31",
+      "file_id": "file_00000000e00082109d88d0119f744880"
+    },
+    "TOPICS": {
+      "name": "ISA Data Model Topics",
+      "edition": "6.0r2",
+      "date": "2023-10-31",
+      "file_id": "file_000000006b5881f4988dfb57ac11965c"
+    }
+  },
+  "source_method": "Reopened targeted original 2023 source PDF text, selected source tables/figure images, and reused the prior same-edition indexed native catalogues, with source locators per record. Previously preserved four manufacturer/case evidence collections were not all independently refetched.",
+  "scope": {
+    "source_first_correspondence": true,
+    "source_fidelity_not_external_conformance": true,
+    "case_source_standing_preserved": true,
+    "donor_only_source_qualification_not_dim_adoption": true,
+    "canonical_XLSX_final_refresh_deferred_to": 22,
+    "broader_cross_donor_owner_checkpoint": 16
+  },
+  "counts": {
+    "source_target_total": 31,
+    "source_target_audited": 31,
+    "source_target_previously_reconciled": 4,
+    "source_target_newly_audited": 27,
+    "proposed_dim_rows_audited": 22,
+    "case_topics_audited": 9,
+    "qualified_native_correspondence": 18,
+    "no_established_source_equivalence": 4,
+    "case_holds_retained": 9,
+    "earlier_findings_audited": 25,
+    "previous_mapping_audits": 11,
+    "design_findings_held": 14,
+    "specific_original_questions_checked": 6,
+    "specific_original_questions_still_open": 6,
+    "dim_content_adopted": 0,
+    "original_ISA_runtime_conformance_tests": 0
+  },
+  "original_row_and_case_targets": [
+    {
+      "row_key": "S06-R001",
+      "outcome": "PARTIAL",
+      "native_source_term": "Manufacturer",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Manufacturer",
+          "pdf_page_locator": "28",
+          "source_meaning": "String component manufacturer, producer or vendor."
+        }
+      ],
+      "source_first_finding": "String component manufacturer, producer or vendor.",
+      "boundary_and_negative_check": "The producing organization is not necessarily the station operator.",
+      "proposed_isa_display": "≈ Manufacturer · manufacturer / producer / vendor",
+      "native_dms_entry_ids": [
+        "ISA-DMS-076"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Manufacturer name",
+      "previous_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "prior_relation": "PARTIAL",
+      "previously_completed": true,
+      "case_source_refs": [],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Manufacturer · manufacturer / producer / vendor",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R002",
+      "outcome": "DIRECT",
+      "native_source_term": "Model",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Model",
+          "pdf_page_locator": "29",
+          "source_meaning": "Manufacturer product-line model designation."
+        }
+      ],
+      "source_first_finding": "Manufacturer product-line model designation.",
+      "boundary_and_negative_check": "Product kind/model remains distinct from one physical serial-numbered unit.",
+      "proposed_isa_display": "Model",
+      "native_dms_entry_ids": [
+        "ISA-DMS-080"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Product model designation",
+      "previous_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "prior_relation": "DIRECT",
+      "previously_completed": true,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I01; C02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "S31B/LS alternatives excluded; not an installed unit"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I01; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "CE-S model suffix not assumed equivalent"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I01; D-I02; D02; D05",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "two separate product kinds; no installed pair authenticated"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "model names belong to distinct equipment, not one station model"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Model",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R003",
+      "outcome": "PARTIAL",
+      "native_source_term": "Serial Number",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Serial Number",
+          "pdf_page_locator": "31",
+          "source_meaning": "Component serial unique in manufacturer model line; source expects manufacturer/model/serial triplet globally unique."
+        }
+      ],
+      "source_first_finding": "Component serial unique in manufacturer model line; source expects manufacturer/model/serial triplet globally unique.",
+      "boundary_and_negative_check": "Cannot treat an ISA component software identifier or platform network ID as an actual serial-numbered physical probe.",
+      "proposed_isa_display": "≈ Serial Number · component context",
+      "native_dms_entry_ids": [
+        "ISA-DMS-105"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Individual hardware serial number",
+      "previous_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "prior_relation": "PARTIAL",
+      "previously_completed": true,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "two individuals used in three service periods, not three probes"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Serial Number · physical-component context",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R004",
+      "outcome": "PARTIAL",
+      "native_source_term": "Universal Component Identifier (UCI)",
+      "original_source_locators": [
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.1 UCI",
+          "pdf_page_locator": "27",
+          "source_meaning": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association."
+        },
+        {
+          "source": "CMPT",
+          "original_file_id": "file_00000000ed048210a141e046f2e93a17",
+          "original_edition": "6.0r4",
+          "section": "§4.1.1 CMPT-L-0001–0008",
+          "pdf_page_locator": "14–16",
+          "source_meaning": "Valid UCI and derived virtual UCI + suffix obligations."
+        }
+      ],
+      "source_first_finding": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association. Valid UCI and derived virtual UCI + suffix obligations.",
+      "boundary_and_negative_check": "Unique to an ISA component, not automatically a CSAPI System URI, real station ID or physical serial; retain certificate UCI and virtual suffix distinctions.",
+      "proposed_isa_display": "≈ UCI · ISA component/virtual-component identifier",
+      "native_dms_entry_ids": [
+        "ISA02-UCI"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Persistent System identifier",
+      "previous_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "prior_relation": "PARTIAL",
+      "previously_completed": true,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA filename / BOP station",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "not an EE181 serial or a project-created CSAPI resource ID"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ UCI · unique component identifier",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R005",
+      "outcome": "PARTIAL",
+      "native_source_term": "ISA composition via Composition Interface Component (CIC)",
+      "original_source_locators": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–20",
+          "source_meaning": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members."
+        }
+      ],
+      "source_first_finding": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members.",
+      "boundary_and_negative_check": "Does not define one physical assembly, mandatory DIM root or installed parts list.",
+      "proposed_isa_display": "≈ ISA composition via CIC · integration collection, not physical unity",
+      "native_dms_entry_ids": [
+        "SDD-4.2.2"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Described sensing System / arrangement",
+      "previous_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I01; C-I02; C02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "not a sourced installed individual"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I01; A-I05–I10; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "not an authenticated fielded assembly"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I01–I03; D02; D05",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "publisher examples not proof of actual joining"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §5 and §9; BNOAA",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "station persists across changing instrument service roles"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ ISA composition: integration collection exposed through one CIC; physical unity not established",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R006",
+      "outcome": "PARTIAL",
+      "native_source_term": "ISA component / ISA Controller",
+      "original_source_locators": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.1 ISA Components",
+          "pdf_page_locator": "17–18",
+          "source_meaning": "Interface-conformant network participation; Controller supports required core services and accepts connections."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.0 ISA Component",
+          "pdf_page_locator": "27–28",
+          "source_meaning": "UCI identity and seven message kinds."
+        }
+      ],
+      "source_first_finding": "Interface-conformant network participation; Controller supports required core services and accepts connections. UCI identity and seven message kinds.",
+      "boundary_and_negative_check": "A visible network participant or Controller is not by definition a distinct physical sensor, installed device or original observation performer.",
+      "proposed_isa_display": "≈ ISA component / Controller · network role, not equipment identity",
+      "native_dms_entry_ids": [
+        "SDD-4.2.1"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Network-visible participant",
+      "previous_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I12; C02 §§1.2 ; 2.1",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "gateway is external; connection not observed"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I05; A-I11; A-I12; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "not a demonstrated connected session"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I01; D-I16; D07",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+          "qualification": "separate publisher Status example is not the ClimaVue installed pair"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "transmitter reporting role differs from sensing probe"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ ISA component / Controller; client-side role for every ISA component, server-side role also for Controllers",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R007",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "composition member (visible or opaque)",
+      "original_source_locators": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–20",
+          "source_meaning": "Members may be compliant/noncompliant and visible/opaque through CIC."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship",
+          "pdf_page_locator": "31",
+          "source_meaning": "A separately source-defined physical attachment property exists."
+        }
+      ],
+      "source_first_finding": "Members may be compliant/noncompliant and visible/opaque through CIC. A separately source-defined physical attachment property exists.",
+      "boundary_and_negative_check": "Composition membership and visible network attribution are not physical part-of. ISA Relationship ATTACHED/DETACHED is distinct and neither establishes complete installed inventory.",
+      "proposed_isa_display": "≈ composition member · functional integration, not physical part-of",
+      "native_dms_entry_ids": [
+        "SDD-4.2.2",
+        "ISA-DMS-099"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Physical constituent",
+      "previous_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I06; A01 Plug-in modules",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "two physical modules, NOT three particulate-property channels"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "ISA composition member = integration membership; physical part-of not established",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R008",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "CIC-to-member ISA or native interface",
+      "original_source_locators": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–19",
+          "source_meaning": "Member communicates via ISA interface if compliant, or member-native interface if not."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship",
+          "pdf_page_locator": "31",
+          "source_meaning": "Physical relation is modeled separately from network interface."
+        }
+      ],
+      "source_first_finding": "Member communicates via ISA interface if compliant, or member-native interface if not. Physical relation is modeled separately from network interface.",
+      "boundary_and_negative_check": "ISA/native mediation does not demonstrate a cabled SDI-12 link, distinct external instrument, connector, mounting or spatial topology.",
+      "proposed_isa_display": "≈ CIC-to-member interface · communications, not proved cable",
+      "native_dms_entry_ids": [
+        "SDD-4.2.2"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Connected external equipment",
+      "previous_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I02; C02 §§1.2 ; 1.8",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "not proof of a fielded cabled unit or mandated part-of relation"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I06; D02 §7.1 Table 7-1",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "not inspected actual wiring or physical subsystem relation"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "CIC-to-member ISA/native interface = communication relationship; cable or physical arrangement not established",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R009",
+      "outcome": "NO_ESTABLISHED_MAPPING",
+      "native_source_term": "Controller deployment recommendation (related context only)",
+      "original_source_locators": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.3 Deployment Architecture",
+          "pdf_page_locator": "20–21",
+          "source_meaning": "Platform deployment of ISA Controllers is tactical placement guidance, not the observed physical station/probe relationship."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Position",
+          "pdf_page_locator": "30",
+          "source_meaning": "Component position property is distinct from host identity."
+        }
+      ],
+      "source_first_finding": "Platform deployment of ISA Controllers is tactical placement guidance, not the observed physical station/probe relationship. Component position property is distinct from host identity.",
+      "boundary_and_negative_check": "Source does not establish a native general-purpose current station/site-host relationship for any case; no blank=absence assertion.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Hosting platform / station context",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §5",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "individual probe position unknown; station geolocation only"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R010",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Method observable (accepted extension)",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.2 Method",
+          "pdf_page_locator": "35",
+          "source_meaning": "Suggested String for primary method used to generate an Event; includes MANUAL/ATR/FUSION etc."
+        }
+      ],
+      "source_first_finding": "Suggested String for primary method used to generate an Event; includes MANUAL/ATR/FUSION etc.",
+      "boundary_and_negative_check": "An event-generation tag is not a reusable observing procedure, identified method specification or proven physical sensing method.",
+      "proposed_isa_display": "≈ Method (Event-generation label; not a reusable observing procedure)",
+      "native_dms_entry_ids": [
+        "ISA-DMS-147"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Observing procedure / method",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Campbell",
+          "source_ids": "D-I09–I13; D03 Appendix B",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": null,
+          "qualification": "program is not known installed or running; the scan is not transducer internal sampling"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §§2–4; BNOAA",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "source method; mean-producing System and exact full processing chain not proved"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-04",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R011",
+      "outcome": "NO_ESTABLISHED_MAPPING",
+      "native_source_term": "No identified ISA transducer-address equivalent in assessed scope",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§§3.1–3.3 Capabilities",
+          "pdf_page_locator": "24–63",
+          "source_meaning": "Properties, observables and commands do not themselves establish IEEE-style addressed transducer channel semantics."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.4 Config CCD",
+          "pdf_page_locator": "28–29",
+          "source_meaning": "Capabilites and their readiness are declarations, not physical transducer addresses."
+        }
+      ],
+      "source_first_finding": "Properties, observables and commands do not themselves establish IEEE-style addressed transducer channel semantics. Capabilites and their readiness are declarations, not physical transducer addresses.",
+      "boundary_and_negative_check": "Do not reinterpret capability name, API output, network UCI, or case SDI-12 response index as a channel address.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Addressed transducer channel",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R012",
+      "outcome": "PARTIAL",
+      "native_source_term": "Observable Declaration / Config.ccd",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Observable Declaration",
+          "pdf_page_locator": "87",
+          "source_meaning": "Name/type/structure/range of reportable Event observables; not all declared observables required in each Event."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Config",
+          "pdf_page_locator": "73",
+          "source_meaning": "Configuration message contains capability declaration and readiness state."
+        }
+      ],
+      "source_first_finding": "Name/type/structure/range of reportable Event observables; not all declared observables required in each Event. Configuration message contains capability declaration and readiness state.",
+      "boundary_and_negative_check": "Declaring a field does not provide actual reported output values, transfer schema, physical channel count or native CSAPI resultSchema.",
+      "proposed_isa_display": "≈ Observable Declaration (CCD.observables) · declared field, not value",
+      "native_dms_entry_ids": [
+        "ISA-DMS-327",
+        "ISA-DMS-305"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Reported output field",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-F05; C-F06; C03",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://github.com/dragino/dragino-end-node-decoder/blob/635417693adb215b32ac367c8e8909d9d609a120/S31-LB%26S31B-LB/S31-LB_v1.3_TTN_decoder.txt",
+          "qualification": "native decoder/output names; no authenticated measurement"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-F04–F06; A02 device examples",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+          "qualification": "particulate fields, not hardware sockets PM1/PM2"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-R01–R14; D-S02; D02 Table 8-1; D07",
+          "standing": "DESIGN_AND_SEPARATE_EXAMPLE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "14 ClimaVue definitions ≠ 14 sensors or a joined logger observation"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA original header and rows",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "ATemp numeric mean, F_ATemp parameter QA token, F_Record separate empty record flag"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Observable Declaration (CCD.observables) [earlier mapping; review ISA-08]",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R013",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Event.observables / Observable Declaration",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§§3.2 and 6.2",
+          "pdf_page_locator": "34–36;73–74",
+          "source_meaning": "Original ISA Event carries observed-environment data and reportable observable names/types."
+        }
+      ],
+      "source_first_finding": "Original ISA Event carries observed-environment data and reportable observable names/types.",
+      "boundary_and_negative_check": "ISA native Event fields are not an exact OMS observedProperty semantic class/feature-of-interest predicate; distinguish source property from actual value.",
+      "proposed_isa_display": "≈ Event observables · reported variable, not OMS observedProperty",
+      "native_dms_entry_ids": [
+        "ISA-DMS-306",
+        "ISA-DMS-327"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Observed / observable property",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-F05–F06; C02; C03",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "two measured quantities from one documented probe"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-F04–F06; A02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+          "qualification": "three particulate size fractions, not physical socket count"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-R08; D-S02; D02; D07",
+          "standing": "DESIGN_AND_SEPARATE_EXAMPLE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "different subjects despite Celsius unit"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA original ATemp",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "15-minute mean, not logger panel temperature"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-04",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R014",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Event.source (authoring component UCI)",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event.source",
+          "pdf_page_locator": "73",
+          "source_meaning": "Source is original author of Event message."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.6 Event",
+          "pdf_page_locator": "30–31",
+          "source_meaning": "Event creator UCI/time/event ID identity and observation reporting."
+        }
+      ],
+      "source_first_finding": "Source is original author of Event message. Event creator UCI/time/event ID identity and observation reporting.",
+      "boundary_and_negative_check": "Message origin/publisher is not guaranteed physical sensing probe, performed-observation Observer, logger or a separate producer from network relay.",
+      "proposed_isa_display": "≈ Event.source · reporting UCI, not proven physical observer",
+      "native_dms_entry_ids": [
+        "ISA-DMS-306"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Observer / observing System",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I02; C-I03; C02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "no acquired event or installed hardware association"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I06; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "per-output producing unit unverified"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I01; D-I02; D02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "not proof of a running logger/sensor relationship"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9 + BNOAA; BPROJECT",
+          "standing": "DERIVED_ATRIBUTION",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "record has no probe serial; producer identity unresolved"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R015",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Event message",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "Event time, source, event ID and reportable observables."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.6 Providing Observed Information",
+          "pdf_page_locator": "30–31",
+          "source_meaning": "ISA observation message encompasses measurement/detection/alert/alarm."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§2.1 Event Updates",
+          "pdf_page_locator": "11",
+          "source_meaning": "Originally distributed Event is a reported record, not editable observation act."
+        }
+      ],
+      "source_first_finding": "Event time, source, event ID and reportable observables. ISA observation message encompasses measurement/detection/alert/alarm. Originally distributed Event is a reported record, not editable observation act.",
+      "boundary_and_negative_check": "A published Event is not automatically the underlying performed OMS Observation, true resultTime or observed installed instrument; project examples never become real measurements.",
+      "proposed_isa_display": "≈ Event message · reported event, not underlying observing act",
+      "native_dms_entry_ids": [
+        "ISA-DMS-306"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Performed Observation",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA ATemp 2024-04-15 / 2024-04-18",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "two original 15-min temperature means; not four new observations"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Event message (reported observables) [earlier mapping; review ISA-07]",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R016",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Capability Declaration (Config.ccd)",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Capability Declaration",
+          "pdf_page_locator": "85",
+          "source_meaning": "Declares supported properties/commands/observables/types."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.4 Config",
+          "pdf_page_locator": "28–29",
+          "source_meaning": "Capability readiness and reporting separate from declarations."
+        }
+      ],
+      "source_first_finding": "Declares supported properties/commands/observables/types. Capability readiness and reporting separate from declarations.",
+      "boundary_and_negative_check": "The generic capability set is not a list of allowed operating modes, an effective current mode, a device-specific state machine or executed action.",
+      "proposed_isa_display": "≈ Capability Declaration · support, not enumerated operating modes",
+      "native_dms_entry_ids": [
+        "ISA-DMS-323"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Supported operating mode",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I12; C02 §1.2",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "protocol capability, not active deployed radio status"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I11; A-I12; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "network modes, not a verified active choice"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08]",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R017",
+      "outcome": "NO_ESTABLISHED_MAPPING",
+      "native_source_term": "No generic default operating-mode declaration",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Property Declaration",
+          "pdf_page_locator": "88",
+          "source_meaning": "Name/type/mutability/structure/range/threshold; no generic default operating-mode field."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode / Radar Mode",
+          "pdf_page_locator": "25;30",
+          "source_meaning": "Current mode examples describe values, not manufacturer baseline defaults."
+        }
+      ],
+      "source_first_finding": "Name/type/mutability/structure/range/threshold; no generic default operating-mode field. Current mode examples describe values, not manufacturer baseline defaults.",
+      "boundary_and_negative_check": "Do not turn manual default, optional type default, current mode, or supported declaration into source-authenticated effective default.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Declared default mode",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I12; C02 §2.1",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "defaults do not establish observed joining"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-C02; A02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": null,
+          "qualification": "network path default, not current effective mode"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-08",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R018",
+      "outcome": "NARROWER",
+      "native_source_term": "Camera Mode and Status.properties",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode",
+          "pdf_page_locator": "25–26",
+          "source_meaning": "Current camera-specific mode where supported; Radar Mode also a specialized property."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Status.properties",
+          "pdf_page_locator": "75–76",
+          "source_meaning": "Periodically reported current property values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.5 Status",
+          "pdf_page_locator": "29–30",
+          "source_meaning": "Current property values and heartbeat intervals."
+        }
+      ],
+      "source_first_finding": "Current camera-specific mode where supported; Radar Mode also a specialized property. Periodically reported current property values. Current property values and heartbeat intervals.",
+      "boundary_and_negative_check": "Only specifically declared modes and their reported values can support source-specific current mode; no generic mode for all devices or proof of actual contemporaneous state.",
+      "proposed_isa_display": "≈ Camera Mode in Status.properties · camera-specific report",
+      "native_dms_entry_ids": [
+        "ISA-DMS-047",
+        "ISA-DMS-310"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Source-reported operating mode",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Camera Mode · current, camera-specific\nEarlier Status.properties retained in evidence; row review ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R019",
+      "outcome": "PARTIAL",
+      "native_source_term": "Request message",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Commanding",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+        }
+      ],
+      "source_first_finding": "Request holds command name, request id, args, source/time and access-control fields. Request invocation and authorization/forwarding separate from execution.",
+      "boundary_and_negative_check": "A type definition or capability declaration does not prove an actual issued Request, permission or performed/achieved hardware control.",
+      "proposed_isa_display": "≈ Request message · command invocation, not proven execution",
+      "native_dms_entry_ids": [
+        "ISA-DMS-308"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Issued control request",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Request message (command invocation) [earlier mapping; review ISA-06]",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R020",
+      "outcome": "PARTIAL",
+      "native_source_term": "Response message",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Response",
+          "pdf_page_locator": "75",
+          "source_meaning": "Status/final request disposition and return values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7.1 Table23",
+          "pdf_page_locator": "32–33",
+          "source_meaning": "QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition."
+        },
+        {
+          "source": "CNTR",
+          "original_file_id": "file_00000000e00082109d88d0119f744880",
+          "original_edition": "6.0r4",
+          "section": "§6 AZSV-L-0005–0007",
+          "pdf_page_locator": "44–45",
+          "source_meaning": "Authorization determination SUCCESS with authorized Yes or No is distinct from command success."
+        }
+      ],
+      "source_first_finding": "Status/final request disposition and return values. QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition. Authorization determination SUCCESS with authorized Yes or No is distinct from command success.",
+      "boundary_and_negative_check": "Response code is a reported execution state not independent evidence of physical effect; even authorization denial can carry SUCCESS in its separate service context.",
+      "proposed_isa_display": "≈ Response message · reported disposition, not measured effect",
+      "native_dms_entry_ids": [
+        "ISA-DMS-309",
+        "ISA-DMS-456"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Command acknowledgement / reported outcome",
+      "previous_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "≈ Response message (command disposition) [earlier mapping; review ISA-06]",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R021",
+      "outcome": "NO_ESTABLISHED_MAPPING",
+      "native_source_term": "No native universal original-publisher evidence-assertion contract",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Config/Event/Status",
+          "pdf_page_locator": "73–76",
+          "source_meaning": "Source and time describe network message origin, not independent source verification."
+        },
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 CIC/virtual member",
+          "pdf_page_locator": "18–19",
+          "source_meaning": "Network presentation and source attribution can be mediated by a CIC."
+        }
+      ],
+      "source_first_finding": "Source and time describe network message origin, not independent source verification. Network presentation and source attribution can be mediated by a CIC.",
+      "boundary_and_negative_check": "No original manufacturer/NOAA issuer verification, evidentiary grade, signed citation locator, original-versus-derived tag, or provenance acceptance for the proposed DIM.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Source-qualified assertion (proposed DIM)",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C02; C03",
+          "standing": "PROJECT_EVIDENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "source edition/meaning preserved, not a donor-native mandated assertion model"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A01; A02; A09",
+          "standing": "PROJECT_EVIDENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "different source revisions not proved installed together"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D02; D07",
+          "standing": "PROJECT_EVIDENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "source publications do not establish one joined live station"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA; BOP §9",
+          "standing": "PROJECT_EVIDENCE",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "original NOAA record does not contain EE181 serial"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "S06-R022",
+      "outcome": "RELATED_BUT_DIFFERENT",
+      "native_source_term": "Event Reference update relation",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event.event reference",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "References source-generated earlier Event."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§§2.1–2.6",
+          "pdf_page_locator": "11–14",
+          "source_meaning": "Event correction/recall preserves original message and may aggregate updates; BSO is track correlation."
+        }
+      ],
+      "source_first_finding": "References source-generated earlier Event. Event correction/recall preserves original message and may aggregate updates; BSO is track correlation.",
+      "boundary_and_negative_check": "A source Event Update is not a universal original historical event versus API copy/representation provenance relationship; Bennett two original records versus four digital copies remain distinct.",
+      "proposed_isa_display": "≈ Event Reference · update relation only, not original→copy",
+      "native_dms_entry_ids": [
+        "ISA-DMS-306",
+        "ISA-DMS-382"
+      ],
+      "case_hold_retained": false,
+      "reviewed_original_source": true,
+      "target_kind": "EXISTING_DIM_ROW",
+      "target_label": "Original event and derived digital representation (proposed DIM)",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA; BPROJECT; Step40 §6",
+          "standing": "ORIGINAL_PLUS_PROJECT_REPRESENTATION",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "four digital copies are two original performed events; original↔copy carrier project-authored"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H01",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Maintenance",
+          "pdf_page_locator": "28",
+          "source_meaning": "Maintenance accepted extension is POC list."
+        }
+      ],
+      "source_first_finding": "No dated installed-asset service history or probe replacement ledger; Bennett's three service statements and two serials retained.",
+      "boundary_and_negative_check": "No dated installed-asset service history or probe replacement ledger; Bennett's three service statements and two serials retained.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — service history",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "calendar-day statement, not exact switch minute or 2026 status"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H02",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship and Position",
+          "pdf_page_locator": "30–31",
+          "source_meaning": "Source contains physical attachment relations and a component Position but not actual platform-to-probe survey."
+        },
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.3 Deployment Architecture",
+          "pdf_page_locator": "20–21",
+          "source_meaning": "Tactical platform recommendation, not a dated site log."
+        }
+      ],
+      "source_first_finding": "Station coordinates, mounting guidance and individual probe points cannot be equated.",
+      "boundary_and_negative_check": "Station coordinates, mounting guidance and individual probe points cannot be equated.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — site / mounting",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I02; C02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "no surveyed site"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-I13; A01",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/pcb-openair-max-main/blob/89aacf5013fc0ffe4b988a2e3c5a227bce3c4983/README.md",
+          "qualification": "no installed location"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I15; D02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "no installation measurement"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §5; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "station/site coordinate and tower, not measured probe position"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H03",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Minimum/Maximum Status Intervals and Data Outputs",
+          "pdf_page_locator": "26–29",
+          "source_meaning": "Status timing and transfers are component information; no specific LoRaWAN/SDI-12/GOES path."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§§6.2,6.5",
+          "pdf_page_locator": "27–30",
+          "source_meaning": "Network messages and heartbeat cadence."
+        }
+      ],
+      "source_first_finding": "Four case source-specific ports, radio, scan and reporting mechanisms remain independent of ISA status cadence.",
+      "boundary_and_negative_check": "Four case source-specific ports, radio, scan and reporting mechanisms remain independent of ISA status cadence.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — reporting path",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-F01–F07; C-O03; C02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "FPort is protocol payload category, not transducer channel"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-C10–C12; A02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+          "qualification": "two documented paths, not one confirmed deployed reporting session"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-R01–R14; D-I16; D02; D07",
+          "standing": "DESIGN_AND_SEPARATE_EXAMPLE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "not synchronized result streams from installed pair"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §§2–4; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "source-documented reporting, not inferred event delivery time"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H04",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Power, Power State and Reserve Capacity",
+          "pdf_page_locator": "30–31",
+          "source_meaning": "Power percentage, component-state enum and energy reserve are different properties."
+        }
+      ],
+      "source_first_finding": "Manufacturer battery design, measured battery voltage, fuel/charge and installed condition are not interchangeable.",
+      "boundary_and_negative_check": "Manufacturer battery design, measured battery voltage, fuel/charge and installed condition are not interchangeable.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — power / state",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-I04–I06; C02 §§1.2–1.3",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31-lb/",
+          "qualification": "nameplate capacity/range, not remaining charge"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-P01–P07; A06",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://www.airgradient.com/documentation/kb/airgradient-open-air-max-power-battery-backup-and-solar",
+          "qualification": "three series cells do not establish pack Ah = 10,500"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-S03; D-S04; D07",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+          "qualification": "logger-only publisher example, not ClimaVue supply observation"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H05",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Built In Test Result",
+          "pdf_page_locator": "25",
+          "source_meaning": "Last built-in-test General State."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Status",
+          "pdf_page_locator": "75–76",
+          "source_meaning": "Component self-report properties."
+        }
+      ],
+      "source_first_finding": "A Campbell logger Status.PanelTemp and WatchdogErrors are diagnostic examples, not ClimaVue outdoor observation or general station health.",
+      "boundary_and_negative_check": "A Campbell logger Status.PanelTemp and WatchdogErrors are diagnostic examples, not ClimaVue outdoor observation or general station health.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — diagnostics",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-S02; C-S05; C03",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/dragino/dragino-end-node-decoder/blob/635417693adb215b32ac367c8e8909d9d609a120/S31-LB%26S31B-LB/S31-LB_v1.3_TTN_decoder.txt",
+          "qualification": "definition, not acquired status reply"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-API; A-L01–L13; A09/A07",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://forum.airgradient.com/t/max-api-working-example-with-o-and-no-data/7345",
+          "qualification": "cloud example may not be from installed unit or coordinated with hardware"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-S01; D-S02; D07",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+          "qualification": "logger-only example, not air temperature or verified station health"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "historical software state, not current 2026 condition"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H06",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§§1.1–1.2",
+          "pdf_page_locator": "8–10",
+          "source_meaning": "Set Property supplies READ WRITE value; source example can cause indirect movement."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode",
+          "pdf_page_locator": "25",
+          "source_meaning": "Current specialized mode property."
+        }
+      ],
+      "source_first_finding": "Manual default, supported setting, requested setting and historical effective value remain distinct absent source-attested applied state.",
+      "boundary_and_negative_check": "Manual default, supported setting, requested setting and historical effective value remain distinct absent source-attested applied state.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — applied setting",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-O03; C-C01; C02",
+          "standing": "DESIGN_AND_PUBLISHED_EXAMPLE",
+          "source_url": "https://dragino.com/products/temperature-humidity-sensor/item/264-s31-lb-ls.html",
+          "qualification": "neither is the active individual setting or executed command"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-C02; A02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": null,
+          "qualification": "firmware edition and active path not established"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-I08; D-I11; D02/D03",
+          "standing": "DESIGN_AND_PUBLISHED_EXAMPLE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "no actual queried address or executing program"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §9; B41R04",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "dated OS report, not present effective configuration"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-03",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H07",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§2.2 Event Update",
+          "pdf_page_locator": "11–12",
+          "source_meaning": "Event updates replace selected reported observables while retaining original Event time."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Data Inputs/Outputs and Quality",
+          "pdf_page_locator": "26–30",
+          "source_meaning": "Transfers and quality values, not general computation provenance."
+        }
+      ],
+      "source_first_finding": "Campbell derived examples, sensor corrections and Bennett averaged-mean lineage are not proven by ISA definitions.",
+      "boundary_and_negative_check": "Campbell derived examples, sensor corrections and Bennett averaged-mean lineage are not proven by ISA definitions.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — processing",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-E01–08; C03",
+          "standing": "PUBLISHED_EXAMPLE_PLUS_DERIVED",
+          "source_url": "https://github.com/dragino/dragino-end-node-decoder/blob/635417693adb215b32ac367c8e8909d9d609a120/S31-LB%26S31B-LB/S31-LB_v1.3_TTN_decoder.txt",
+          "qualification": "not actual history"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-API30–43; A09",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://forum.airgradient.com/t/max-api-working-example-with-o-and-no-data/7345",
+          "qualification": "algorithm/calibration is not established"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-C01–C03; D03",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": null,
+          "qualification": "program may not have run"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BOP §§2–4; BNOAA",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/YearlyFiles/ACE%20Basin/meteorological/metadata/acemet01-12.24m.pdf",
+          "qualification": "source method vs unknown full original processing/producer"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-10",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H08",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event.time and Event ID",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "Event time is occurrence time; immutable event ID uses source/time/ID."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§2.2 Event Update",
+          "pdf_page_locator": "11–12",
+          "source_meaning": "Original time survives update."
+        }
+      ],
+      "source_first_finding": "Bennett printed fixed EST, exact F_ATemp token including trailing space, F_Record blank and original resultTime UNKNOWN must remain distinct.",
+      "boundary_and_negative_check": "Bennett printed fixed EST, exact F_ATemp token including trailing space, F_Record blank and original resultTime UNKNOWN must remain distinct.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — time / QA",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-E01; C03",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://github.com/dragino/dragino-end-node-decoder/blob/635417693adb215b32ac367c8e8909d9d609a120/S31-LB%26S31B-LB/S31-LB_v1.3_TTN_decoder.txt",
+          "qualification": "decoder-derived time, not field occurrence"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-API16; A-API24; A09",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://forum.airgradient.com/t/max-api-working-example-with-o-and-no-data/7345",
+          "qualification": "timezone metadata does not overwrite Z timestamp"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-E03; D07",
+          "standing": "PUBLISHED_EXAMPLE",
+          "source_url": "https://help.campbellsci.com/datalogger-api/mqtt/status.html",
+          "qualification": "not a real joined installation event"
+        },
+        {
+          "case": "Bennett",
+          "source_ids": "BNOAA; BOP §§2–4",
+          "standing": "ACTUAL_HISTORICAL",
+          "source_url": "https://cdmo.baruch.sc.edu/waf/swmp_data_archives/acebpmet2024.csv",
+          "qualification": "original resultTime unknown; QA is parameter-level not station-health"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-07",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    },
+    {
+      "row_key": "CASE-H09",
+      "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+      "native_source_term": "No established case-specific ISA source-equivalent",
+      "original_source_locators": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request/Response",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request and Response are distinct objects."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Table23",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "QUEUED/IN PROGRESS/FINAL status meanings."
+        },
+        {
+          "source": "CNTR",
+          "original_file_id": "file_00000000e00082109d88d0119f744880",
+          "original_edition": "6.0r4",
+          "section": "§6 Authorization",
+          "pdf_page_locator": "43–45",
+          "source_meaning": "Authorization result distinct from execution."
+        }
+      ],
+      "source_first_finding": "No case supplies authenticated issued, authorized, acknowledged, completed and physically verified control chain.",
+      "boundary_and_negative_check": "No case supplies authenticated issued, authorized, acknowledged, completed and physically verified control chain.",
+      "proposed_isa_display": "",
+      "native_dms_entry_ids": [],
+      "case_hold_retained": true,
+      "reviewed_original_source": true,
+      "target_kind": "CASE_REVIEW_TOPIC",
+      "target_label": "REVIEW HOLD — control execution",
+      "previous_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "prior_relation": null,
+      "previously_completed": false,
+      "case_source_refs": [
+        {
+          "case": "Dragino",
+          "source_ids": "C-C01; C02",
+          "standing": "DESIGN_AND_PUBLISHED_EXAMPLE",
+          "source_url": "https://dragino.com/products/temperature-humidity-sensor/item/264-s31-lb-ls.html",
+          "qualification": "documentation is not a performed control"
+        },
+        {
+          "case": "AirGradient",
+          "source_ids": "A-C06–C08; A02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://github.com/Open-Air-Foundation/firmware-openair-max/blob/84e479a415d81151e7a81aea9a2f7449a15e98cc/README.md",
+          "qualification": "no measured calibration/test outcome"
+        },
+        {
+          "case": "Campbell",
+          "source_ids": "D-V04–V05; D02",
+          "standing": "DESIGN_REFERENCE",
+          "source_url": "https://s.campbellsci.com/documents/us/manuals/climavue50.pdf",
+          "qualification": "no observed act/ack/effect"
+        }
+      ],
+      "case_source_material_reopened": false,
+      "existing_ISA_display": "Not reviewed · ISA-06",
+      "dim_adoption": "NOT_DECIDED",
+      "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+    }
+  ],
+  "original_earlier_findings": [
+    {
+      "id": "ISA-M01",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R004",
+      "previous_relation": "PARTIAL",
+      "previous_state": "RECONCILED_ISA02",
+      "source_term": "UCI (Universal Component Identifier)",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "UCI identifies an ISA participant and qualified virtual ID; previously corrected 'network-scoped' uniqueness is not asserted.",
+      "verified_against_row_evidence": [
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.1 UCI",
+          "pdf_page_locator": "27",
+          "source_meaning": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association."
+        },
+        {
+          "source": "CMPT",
+          "original_file_id": "file_00000000ed048210a141e046f2e93a17",
+          "original_edition": "6.0r4",
+          "section": "§4.1.1 CMPT-L-0001–0008",
+          "pdf_page_locator": "14–16",
+          "source_meaning": "Valid UCI and derived virtual UCI + suffix obligations."
+        }
+      ],
+      "related_targets": [
+        "S06-R004"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M02",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R005",
+      "previous_relation": "PARTIAL",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "ISA composition (via CIC)",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "ISA composition is a CIC-mediated integration collection and not a compulsory physical System superclass.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–20",
+          "source_meaning": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members."
+        }
+      ],
+      "related_targets": [
+        "S06-R005"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M03",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R006",
+      "previous_relation": "PARTIAL",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "ISA component / ISA Controller",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "ISA component/Controller are network/service roles, not one-to-one physical individual identities.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.1 ISA Components",
+          "pdf_page_locator": "17–18",
+          "source_meaning": "Interface-conformant network participation; Controller supports required core services and accepts connections."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.0 ISA Component",
+          "pdf_page_locator": "27–28",
+          "source_meaning": "UCI identity and seven message kinds."
+        }
+      ],
+      "related_targets": [
+        "S06-R006"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M04",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R007",
+      "previous_relation": "RELATED",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "composition member (visible / opaque)",
+      "audited_relation_or_boundary": "RELATED_BUT_DIFFERENT",
+      "source_first_conclusion": "Composition member visibility controls ISA exposure; physical part-of is not entailed.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–20",
+          "source_meaning": "Members may be compliant/noncompliant and visible/opaque through CIC."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship",
+          "pdf_page_locator": "31",
+          "source_meaning": "A separately source-defined physical attachment property exists."
+        }
+      ],
+      "related_targets": [
+        "S06-R007"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M05",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R008",
+      "previous_relation": "RELATED",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "CIC-to-member ISA/native interface",
+      "audited_relation_or_boundary": "RELATED_BUT_DIFFERENT",
+      "source_first_conclusion": "CIC-to-member interface can be ISA or native but does not specify actual cable/connector or external installation.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–19",
+          "source_meaning": "Member communicates via ISA interface if compliant, or member-native interface if not."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship",
+          "pdf_page_locator": "31",
+          "source_meaning": "Physical relation is modeled separately from network interface."
+        }
+      ],
+      "related_targets": [
+        "S06-R008"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M06",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R012",
+      "previous_relation": "PARTIAL",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Observable Declaration (CCD.observables)",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "Observable Declaration is a named/typed Event-reporting field contract and not a performed value or stream schema.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Observable Declaration",
+          "pdf_page_locator": "87",
+          "source_meaning": "Name/type/structure/range of reportable Event observables; not all declared observables required in each Event."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Config",
+          "pdf_page_locator": "73",
+          "source_meaning": "Configuration message contains capability declaration and readiness state."
+        }
+      ],
+      "related_targets": [
+        "S06-R012"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M07",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R015",
+      "previous_relation": "RELATED",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Event message (reported observables)",
+      "audited_relation_or_boundary": "RELATED_BUT_DIFFERENT",
+      "source_first_conclusion": "An Event is the transmitted report, distinct from an original observing act and OMS resultTime.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "Event time, source, event ID and reportable observables."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.6 Providing Observed Information",
+          "pdf_page_locator": "30–31",
+          "source_meaning": "ISA observation message encompasses measurement/detection/alert/alarm."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§2.1 Event Updates",
+          "pdf_page_locator": "11",
+          "source_meaning": "Originally distributed Event is a reported record, not editable observation act."
+        }
+      ],
+      "related_targets": [
+        "S06-R015"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M08",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R016",
+      "previous_relation": "RELATED",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Capability Declaration (Config.ccd)",
+      "audited_relation_or_boundary": "RELATED_BUT_DIFFERENT",
+      "source_first_conclusion": "CCD declares generic capabilities, not the set/current choice of operating modes.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Capability Declaration",
+          "pdf_page_locator": "85",
+          "source_meaning": "Declares supported properties/commands/observables/types."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.4 Config",
+          "pdf_page_locator": "28–29",
+          "source_meaning": "Capability readiness and reporting separate from declarations."
+        }
+      ],
+      "related_targets": [
+        "S06-R016"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M09",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R018",
+      "previous_relation": "RELATED",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Status.properties (current component values)",
+      "audited_relation_or_boundary": "RELATED_BUT_DIFFERENT",
+      "source_first_conclusion": "Status carries current property values; only specialized Camera Mode supports a narrower mode meaning.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode",
+          "pdf_page_locator": "25–26",
+          "source_meaning": "Current camera-specific mode where supported; Radar Mode also a specialized property."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Status.properties",
+          "pdf_page_locator": "75–76",
+          "source_meaning": "Periodically reported current property values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.5 Status",
+          "pdf_page_locator": "29–30",
+          "source_meaning": "Current property values and heartbeat intervals."
+        }
+      ],
+      "related_targets": [
+        "S06-R018"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M10",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R019",
+      "previous_relation": "PARTIAL",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Request message (command invocation)",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "Request defines invocation with request id and parameters; no claim that a case actually issued or executed it.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Commanding",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+        }
+      ],
+      "related_targets": [
+        "S06-R019"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-M11",
+      "record_kind": "EARLIER_MAPPING",
+      "original_row_key": "S06-R020",
+      "previous_relation": "PARTIAL",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Response message (command disposition)",
+      "audited_relation_or_boundary": "PARTIAL",
+      "source_first_conclusion": "Response reports ongoing/final dispositions; SUCCESS does not independently verify hardware effect.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Response",
+          "pdf_page_locator": "75",
+          "source_meaning": "Status/final request disposition and return values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7.1 Table23",
+          "pdf_page_locator": "32–33",
+          "source_meaning": "QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition."
+        },
+        {
+          "source": "CNTR",
+          "original_file_id": "file_00000000e00082109d88d0119f744880",
+          "original_edition": "6.0r4",
+          "section": "§6 AZSV-L-0005–0007",
+          "pdf_page_locator": "44–45",
+          "source_meaning": "Authorization determination SUCCESS with authorized Yes or No is distinct from command success."
+        }
+      ],
+      "related_targets": [
+        "S06-R020"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "QUALIFIED_CANDIDATE_NOT_ADOPTED",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": false
+    },
+    {
+      "id": "ISA-H01",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R007",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Visible versus opaque composition member",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Visible versus opaque describes CIC presentation/source attribution, not whether physical equipment exists.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 ISA Compositions",
+          "pdf_page_locator": "18–20",
+          "source_meaning": "Members may be compliant/noncompliant and visible/opaque through CIC."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Relationship",
+          "pdf_page_locator": "31",
+          "source_meaning": "A separately source-defined physical attachment property exists."
+        }
+      ],
+      "related_targets": [
+        "S06-R007"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H02",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R004",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Virtual component / CIC-scoped UCI",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Virtual ISA member UCI embeds CIC UCI + suffix; not a new physically certified probe.",
+      "verified_against_row_evidence": [
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.1 UCI",
+          "pdf_page_locator": "27",
+          "source_meaning": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association."
+        },
+        {
+          "source": "CMPT",
+          "original_file_id": "file_00000000ed048210a141e046f2e93a17",
+          "original_edition": "6.0r4",
+          "section": "§4.1.1 CMPT-L-0001–0008",
+          "pdf_page_locator": "14–16",
+          "source_meaning": "Valid UCI and derived virtual UCI + suffix obligations."
+        }
+      ],
+      "related_targets": [
+        "S06-R004"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H03",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R019",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Transparent versus translucent member",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Visible/taskable transparent versus visible/untaskable translucent are distinct; Figure2 Member B tasks label tension preserved.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Commanding",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+        }
+      ],
+      "related_targets": [
+        "S06-R019"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H04",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R019",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "CIC performer / broker / relay",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "CIC may perform, broker or relay; receiver/forwarder need not be actual equipment performer.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Commanding",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+        }
+      ],
+      "related_targets": [
+        "S06-R019"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H05",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R016",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "CCD: properties / observables / commands / custom types",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "CCD separately declares properties, observables, commands and custom types; no generic operating-mode list.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Capability Declaration",
+          "pdf_page_locator": "85",
+          "source_meaning": "Declares supported properties/commands/observables/types."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.4 Config",
+          "pdf_page_locator": "28–29",
+          "source_meaning": "Capability readiness and reporting separate from declarations."
+        }
+      ],
+      "related_targets": [
+        "S06-R016"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H06",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R018",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Capability readiness versus reporting",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Config capability readiness and reporting differ from execution and physical state.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode",
+          "pdf_page_locator": "25–26",
+          "source_meaning": "Current camera-specific mode where supported; Radar Mode also a specialized property."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Status.properties",
+          "pdf_page_locator": "75–76",
+          "source_meaning": "Periodically reported current property values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.5 Status",
+          "pdf_page_locator": "29–30",
+          "source_meaning": "Current property values and heartbeat intervals."
+        }
+      ],
+      "related_targets": [
+        "S06-R018"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H07",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R017",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "PropertyDeclaration.mutability / range",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Property Declaration mutability/range does not establish default or active operating mode.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§7.3 Property Declaration",
+          "pdf_page_locator": "88",
+          "source_meaning": "Name/type/mutability/structure/range/threshold; no generic default operating-mode field."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Camera Mode / Radar Mode",
+          "pdf_page_locator": "25;30",
+          "source_meaning": "Current mode examples describe values, not manufacturer baseline defaults."
+        }
+      ],
+      "related_targets": [
+        "S06-R017"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H08",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "CASE-H05",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Minimum and Maximum Status Interval",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Min/Max Status Intervals govern network reporting/heartbeat and cannot establish sensor measurement interval or health.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Built In Test Result",
+          "pdf_page_locator": "25",
+          "source_meaning": "Last built-in-test General State."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Status",
+          "pdf_page_locator": "75–76",
+          "source_meaning": "Component self-report properties."
+        }
+      ],
+      "related_targets": [
+        "CASE-H05"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H09",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "CASE-H08",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Event.source + event time + eventID",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Event.source/time/eventID identifies a source-reported event, not actual Bennett QA/source history or original resultTime.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event.time and Event ID",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "Event time is occurrence time; immutable event ID uses source/time/ID."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§2.2 Event Update",
+          "pdf_page_locator": "11–12",
+          "source_meaning": "Original time survives update."
+        }
+      ],
+      "related_targets": [
+        "CASE-H08"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H10",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R022",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Event Reference corrections/updates",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Event Reference corrects/augments Event; it does not trace each API digital copy to its independent original historical observation.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Event.event reference",
+          "pdf_page_locator": "73–74",
+          "source_meaning": "References source-generated earlier Event."
+        },
+        {
+          "source": "TOPICS",
+          "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+          "original_edition": "6.0r2",
+          "section": "§§2.1–2.6",
+          "pdf_page_locator": "11–14",
+          "source_meaning": "Event correction/recall preserves original message and may aggregate updates; BSO is track correlation."
+        }
+      ],
+      "related_targets": [
+        "S06-R022"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H11",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R020",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Response queued/in progress/final codes",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "QUEUED and IN PROGRESS are nonfinal; SUCCESS reports final disposition but not independently measured effect.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Response",
+          "pdf_page_locator": "75",
+          "source_meaning": "Status/final request disposition and return values."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7.1 Table23",
+          "pdf_page_locator": "32–33",
+          "source_meaning": "QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition."
+        },
+        {
+          "source": "CNTR",
+          "original_file_id": "file_00000000e00082109d88d0119f744880",
+          "original_edition": "6.0r4",
+          "section": "§6 AZSV-L-0005–0007",
+          "pdf_page_locator": "44–45",
+          "source_meaning": "Authorization determination SUCCESS with authorized Yes or No is distinct from command success."
+        }
+      ],
+      "related_targets": [
+        "S06-R020"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H12",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "CASE-H09",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Authorization before forwarding requests",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Authorization precedes forwarding but determining authorization SUCCESS can mean authorized=No; command processing remains separate.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Request/Response",
+          "pdf_page_locator": "74–75",
+          "source_meaning": "Request and Response are distinct objects."
+        },
+        {
+          "source": "ICD",
+          "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+          "original_edition": "6.0r5",
+          "section": "§6.7 Table23",
+          "pdf_page_locator": "31–33",
+          "source_meaning": "QUEUED/IN PROGRESS/FINAL status meanings."
+        },
+        {
+          "source": "CNTR",
+          "original_file_id": "file_00000000e00082109d88d0119f744880",
+          "original_edition": "6.0r4",
+          "section": "§6 Authorization",
+          "pdf_page_locator": "43–45",
+          "source_meaning": "Authorization result distinct from execution."
+        }
+      ],
+      "related_targets": [
+        "CASE-H09"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H13",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R009",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Controller deployment/communications topology",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Controller deployment/network topology is distinct from geolocated hosting station, sensor surveyed coordinates and dated installation.",
+      "verified_against_row_evidence": [
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.3 Deployment Architecture",
+          "pdf_page_locator": "20–21",
+          "source_meaning": "Platform deployment of ISA Controllers is tactical placement guidance, not the observed physical station/probe relationship."
+        },
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§3.1 Position",
+          "pdf_page_locator": "30",
+          "source_meaning": "Component position property is distinct from host identity."
+        }
+      ],
+      "related_targets": [
+        "S06-R009"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    },
+    {
+      "id": "ISA-H14",
+      "record_kind": "EARLIER_SOURCE_FINDING",
+      "original_row_key": "S06-R021",
+      "previous_relation": "HELD_FOR_DESIGN_REVIEW",
+      "previous_state": "COVERAGE_RECONCILIATION_DUE",
+      "source_term": "Custom / Nominated / Accepted extensions",
+      "audited_relation_or_boundary": "BOUNDARY_HELD",
+      "source_first_conclusion": "Custom/Nominated/Accepted extension status is not automatic core ISA adoption or evidence of model acceptance.",
+      "verified_against_row_evidence": [
+        {
+          "source": "DMS",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "original_edition": "6.0r12",
+          "section": "§6.2 Config/Event/Status",
+          "pdf_page_locator": "73–76",
+          "source_meaning": "Source and time describe network message origin, not independent source verification."
+        },
+        {
+          "source": "SDD",
+          "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+          "original_edition": "6.0r5",
+          "section": "§4.2.2 CIC/virtual member",
+          "pdf_page_locator": "18–19",
+          "source_meaning": "Network presentation and source attribution can be mediated by a CIC."
+        }
+      ],
+      "related_targets": [
+        "S06-R021"
+      ],
+      "source_revisited_by_document_review": true,
+      "old_direct_source_staging_retained": "Step15_ISA6_Primary_Source_Staging_07NOV2026.json",
+      "source_conclusion_audited": true,
+      "dim_adoption_or_design_decision": "RETAINED_FOR_LATER_CROSS_DONOR_SYNTHESIS",
+      "audit_status": "SOURCE_FIRST_AUDIT_COMPLETE",
+      "separate_owner_decision_pending": true
+    }
+  ],
+  "six_precise_source_questions": [
+    {
+      "id": "ISA-Q001",
+      "entry_id": "ISA-DMS-070",
+      "native_term": "Level",
+      "previous_exact_question": "The property entry itself does not define the precise referent of Level. Is it a generic component setting or specifically an image-processing level in the intended use?",
+      "checked_original_passages": [
+        "DMS §3.1 Level p28",
+        "DMS §3.3 Adjust Level p41 / Change Level p47",
+        "DMS §3.1 Auto Level p25"
+      ],
+      "source_first_finding": "Level is Percent with missing property meaning; Auto Level pixel-specific but source does not explicitly narrow Level to one referent.",
+      "unresolved_gap": "exact Level property referent",
+      "required_non_inference": "No universal brightness/battery/intensity equivalence.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    },
+    {
+      "id": "ISA-Q002",
+      "entry_id": "ISA-DMS-071",
+      "native_term": "Link Loss",
+      "previous_exact_question": "Which link quantity/reference and sign convention does this property use?",
+      "checked_original_passages": [
+        "DMS §3.1 Link Loss p28",
+        "DMS §4.2 Db p67"
+      ],
+      "source_first_finding": "Link Loss has Db type without descriptor; Db is logarithmic ratio only.",
+      "unresolved_gap": "ratio quantities, reference and sign convention",
+      "required_non_inference": "Do not identify packet loss, dBm or physical disconnect.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    },
+    {
+      "id": "ISA-Q003",
+      "entry_id": "ISA-DMS-083",
+      "native_term": "Orientation",
+      "previous_exact_question": "Which precise reference frame and axis interpretation governs numeric Orientation values when reconciling the source's named frame with its stated axes?",
+      "checked_original_passages": [
+        "DMS §3.1 Orientation p29",
+        "DMS §8.3 Rotation p126",
+        "DMS §8.3 Geographic Position p110"
+      ],
+      "source_first_finding": "Orientation labels ECEF with true-north/right/gravity-down axes; Rotation is yaw z/pitch y-prime/roll x-double-prime.",
+      "unresolved_gap": "authoritative reference frame and axis transform",
+      "required_non_inference": "Do not impose an invented coordinate transformation or repair source terminology.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    },
+    {
+      "id": "ISA-Q004",
+      "entry_id": "ISA-DMS-107",
+      "native_term": "Signal Strength Ratio",
+      "previous_exact_question": "Which signal quantities/reference and sign convention does Signal Strength Ratio compare?",
+      "checked_original_passages": [
+        "DMS §3.1 Signal Strength Ratio p31",
+        "DMS §4.2 Db p67"
+      ],
+      "source_first_finding": "Signal Strength Ratio explicitly reads No Documentation; Db only defines a logarithmic ratio.",
+      "unresolved_gap": "which signal quantities and sign convention",
+      "required_non_inference": "Not automatically SNR, SINR, RSSI or Link Loss.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    },
+    {
+      "id": "ISA-Q005",
+      "entry_id": "ISA-DMS-170",
+      "native_term": "Adjust Power",
+      "previous_exact_question": "How is the specified adjustment rate supplied or determined for Adjust Power when its original parameter table omits rate?",
+      "checked_original_passages": [
+        "DMS §3.3 Adjust Power pp41–42",
+        "DMS §3.3 Adjust Level p41",
+        "DMS §3.3 Adjust Zoom p42"
+      ],
+      "source_first_finding": "Source prose says rate, but original Adjust Power complete table shows only direction and optional duration; nearby commands do have separate rate parameter. Visual PDF table checked.",
+      "unresolved_gap": "Adjust Power rate supply mechanism",
+      "required_non_inference": "Do not borrow nearby 100% default or add nonexistent rate argument.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    },
+    {
+      "id": "ISA-Q006",
+      "entry_id": "ISA-DMS-247",
+      "native_term": "Slew Velocity / Rotation Rate",
+      "previous_exact_question": "Do Rotation Rate pitch/roll axis descriptions intentionally use a different convention from Rotation, or is the source table inconsistent? Which source-authorized axis correspondence applies when interpreting Slew Velocity?",
+      "checked_original_passages": [
+        "DMS §3.3 Slew Velocity p62",
+        "DMS §8.3 Rotation p126",
+        "DMS §8.3 Rotation Rate p127"
+      ],
+      "source_first_finding": "Slew Velocity requires Rotation Rate and duration; Rotation Rate table describes pitch x/roll y while Rotation describes pitch y-prime/roll x-double-prime. Visual table checked.",
+      "unresolved_gap": "authoritative pitch/roll rate axis interpretation",
+      "required_non_inference": "Do not transpose native fields or invent frame transform.",
+      "status": "SOURCE_REVIEW_COMPLETE_PRECISE_INTERPRETATION_HOLD",
+      "question_closed": false,
+      "source_supported_remainder_preserved": true,
+      "additional_delivery_created": false
+    }
+  ],
+  "exceptions": {
+    "visual_source_not_all_pages": true,
+    "case_original_urls_not_newly_reverified": true,
+    "original_2015_SPIE_full_text_still_unavailable": true,
+    "original_2023_isa_source_coverage_completed_previous_delivery": true,
+    "whole_repo_ci_not_run": true,
+    "source_to_dim_adoption_not_auto_approved": true
+  }
+}
