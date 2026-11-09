@@ -1,0 +1,1704 @@
+{
+  "schema": "sosa-d.crosswalk-integrated-v0.1",
+  "date": "2026-11-09",
+  "branch": "research/dim-profile-v2",
+  "original_master_blob": "60843bf874c899c497900b062cd8dec4e7e29c89",
+  "master_new_columns": 15,
+  "original_information_rows": 329,
+  "original_case_facts": 73,
+  "original_prior_donor_evidence": 58,
+  "additional_the_open_group_sosa_column": "OpenGroupSOSA",
+  "w3c_sosa_ssn_column_retained": true,
+  "original_full_source_review_scope": "Selected original C239 Edition1.1 architectural clauses; not a full source/normative DSDM/API audit",
+  "source_files": {
+    "A": "Step17_SOSA_A_C239_Architecture_Roles_Evidence_09NOV2026.json",
+    "B": "Step17_SOSA_B_C239_Management_Operational_Evidence_09NOV2026.json",
+    "C": "Step17_SOSA_C_C239_DSDM_Interfaces_Edition_Evidence_09NOV2026.json"
+  },
+  "source_native_records": 76,
+  "source_correspondence_decisions": 57,
+  "crosswalk_rows_with_source_qualified_SOSA_discussion": 38,
+  "explicit_no_established_equivalences": 5,
+  "case_hold_decisions": 6,
+  "non_adoption": true,
+  "native_DSDM_IDL_OpenAPI_eight_files_uninspected": true,
+  "integration_row_ledger": [
+    {
+      "row_id": "S06-R005",
+      "display_cell": "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M01",
+        "SOSA-A-M02",
+        "SOSA-A-M06"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-01",
+        "SOSA-C239-A-18",
+        "SOSA-C239-A-16",
+        "SOSA-C239-A-04"
+      ],
+      "relations": [
+        "PARTIAL",
+        "BROADER",
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R007",
+      "display_cell": "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M03",
+        "SOSA-A-M04",
+        "SOSA-A-M08",
+        "SOSA-A-M09",
+        "SOSA-A-M10",
+        "SOSA-A-M13",
+        "SOSA-C-M05"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-02",
+        "SOSA-C239-A-10",
+        "SOSA-C239-A-11",
+        "SOSA-C239-A-06",
+        "SOSA-C239-A-20",
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-07",
+        "SOSA-C239-A-17",
+        "SOSA-C239-A-14",
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "relations": [
+        "NARROWER",
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R009",
+      "display_cell": "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M05",
+        "SOSA-A-M06",
+        "SOSA-A-M11",
+        "SOSA-A-M14",
+        "SOSA-B-M20"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-03",
+        "SOSA-C239-A-04",
+        "SOSA-C239-A-12",
+        "SOSA-C239-A-15",
+        "SOSA-C239-B-28",
+        "SOSA-C239-B-29"
+      ],
+      "relations": [
+        "NARROWER",
+        "RELATED_BUT_DIFFERENT",
+        "UNRESOLVED_CONTEXT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R008",
+      "display_cell": "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M07",
+        "SOSA-A-M08",
+        "SOSA-A-M12"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-05",
+        "SOSA-C239-A-06",
+        "SOSA-C239-A-20",
+        "SOSA-C239-A-13"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R006",
+      "display_cell": "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M12"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-13"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R002",
+      "display_cell": "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M13"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-14"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-A-MEMBER-EXPOSURE",
+      "display_cell": "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-A-M15"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-13"
+      ],
+      "relations": [
+        "NO_ESTABLISHED_MAPPING_IN_INSPECTED_SCOPE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-A-SERVICE-ROLE",
+      "display_cell": "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M01"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-01",
+        "SOSA-C239-B-08"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R019",
+      "display_cell": "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M02",
+        "SOSA-C-M06"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-02",
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19",
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "relations": [
+        "PARTIAL"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R020",
+      "display_cell": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M03",
+        "SOSA-C-M07"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19",
+        "SOSA-C239-C-15"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-K-CAPABILITIES",
+      "display_cell": "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M04"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-03"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R016",
+      "display_cell": "Related only · Sensor Module Mode · C239 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M05"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-04"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R018",
+      "display_cell": "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M06",
+        "SOSA-B-M13"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-04",
+        "SOSA-C239-B-06",
+        "SOSA-C239-B-14",
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16",
+        "SOSA-C239-B-17"
+      ],
+      "relations": [
+        "PARTIAL",
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-C-082",
+      "display_cell": "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M07"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-05",
+        "SOSA-C239-B-14"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-C-046",
+      "display_cell": "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M08"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-07"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-T-STATUS",
+      "display_cell": "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M09"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-07",
+        "SOSA-C239-B-12"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-A-CIC-MEDIATION",
+      "display_cell": "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M10"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-13"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-A-PARTICIPATION",
+      "display_cell": "Related only · In-band versus out-of-band management / General Profile network management binding · §6.1 printed39/PDF65 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M11"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-11"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-T-ADMIN",
+      "display_cell": "Related only · Syslog Fault, Status, State, Mode and Configuration notifications / Event notification vs… · §6.2.2.1 Rules6.2.2.1-1–8 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M12",
+        "SOSA-C-M11"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-12",
+        "SOSA-C239-C-16"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "CASE-H05",
+      "display_cell": "Related only · SOSA PIC states P0–P6 / SOSA Module states M0–M6 · §6.5.2 Figure6.5.2-1 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M14"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16"
+      ],
+      "relations": [
+        "CASE_HOLD_CORRESPONDENCE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-R-EXECUTION",
+      "display_cell": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M15"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R014",
+      "display_cell": "No established direct equivalence · Transmission/Reception modules 2.3 and 2.4 / Detection/characterization functional defini… · §4.2 Table4.2-1 printed24/PDF50 · RELATED BUT DIFFERENT/NO ESTABLISHED PHYSICAL OBSERVER MAPPING [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M16",
+        "SOSA-C-M14"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-20",
+        "SOSA-C239-B-21",
+        "SOSA-C239-B-22",
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-14"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT",
+        "NO_ESTABLISHED_PHYSICAL_OBSERVER_MAPPING"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R012",
+      "display_cell": "Related only · Storage/Retrieval Manager / Reporting Services module / Data products vs information prod… · §4.2 Table4.2-1 printed25/PDF51 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M17",
+        "SOSA-C-M01",
+        "SOSA-C-M09"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-23",
+        "SOSA-C239-B-24",
+        "SOSA-C239-B-33",
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-04",
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-13"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-C-111",
+      "display_cell": "Related only · Security Services and software integrity verification / Sensor security state model · §12.1.1 Rules12.1.1-1–2 printed153/PDF179 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M18"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-25",
+        "SOSA-C239-B-26"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R010",
+      "display_cell": "Related only · Calibration Service · §4.2 Table4.2-1 printed26/PDF52 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M19"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-27"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "CASE-H04",
+      "display_cell": "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M21"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "relations": [
+        "CASE_HOLD_CORRESPONDENCE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-C-091",
+      "display_cell": "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M22"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "CASE-H03",
+      "display_cell": "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M23",
+        "SOSA-C-M08",
+        "SOSA-C-M17"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-32",
+        "SOSA-C239-C-11",
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-17"
+      ],
+      "relations": [
+        "CASE_HOLD_CORRESPONDENCE",
+        "CASE_RELEVANT_NOT_VERIFIED"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-K-CAPABILITY-STATE",
+      "display_cell": "Related only · Direct versus delegated indirect management / In-band versus out-of-band management / Sta… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M24"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-17"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "CASE-H09",
+      "display_cell": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-B-M25"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "relations": [
+        "CASE_HOLD_CORRESPONDENCE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-R-MEASUREMENT",
+      "display_cell": "Related only · DIV-2 logical data model / DIV-3 physical data model · §5.7.2 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M02"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-02",
+        "SOSA-C239-C-03"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-K-TYPE-CHOICE",
+      "display_cell": "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M03"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-03",
+        "SOSA-C239-C-06"
+      ],
+      "relations": [
+        "NO_ESTABLISHED_EXACT_MAPPING"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-T-CONFIG",
+      "display_cell": "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M04"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-07",
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-Q-SUBSCRIPTION",
+      "display_cell": "Related only · Publish-subscribe and topic identity · §15.6.4 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M10"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-14"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-A-CONNECTION-PRESENTATION",
+      "display_cell": "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M12"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-18",
+        "SOSA-C239-C-19"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "ISA-T-REQUEST-REFERENCE",
+      "display_cell": "Related only · Interactions are operations with parameters and roles / Request-response interaction and … · §15.1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M13"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "relations": [
+        "RELATED_BUT_DIFFERENT"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R021",
+      "display_cell": "No established direct equivalence · DIV-1 conceptual data model / Data definition independent of transport / Six referenced m… · §5.7.1 · NO ESTABLISHED NATIVE PROVENANCE EQUIVALENCE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M15"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-05",
+        "SOSA-C239-C-22"
+      ],
+      "relations": [
+        "NO_ESTABLISHED_NATIVE_PROVENANCE_EQUIVALENCE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    },
+    {
+      "row_id": "S06-R022",
+      "display_cell": "No established direct equivalence · Digital Signal Stream vs Digital Signal Context / Event notification vs data record · §15.1 Table15.1-1 · NO ESTABLISHED NATIVE COPY LINEAGE [SOSA-D ledger]",
+      "evidence_record_ids": [
+        "SOSA-C-M16"
+      ],
+      "native_source_ids": [
+        "SOSA-C239-C-13",
+        "SOSA-C239-C-16"
+      ],
+      "relations": [
+        "NO_ESTABLISHED_NATIVE_COPY_LINEAGE"
+      ],
+      "source_edition": "C239 Edition 1.1",
+      "source_grade": "C239_ARCHITECTURE_CLAUSES_CHECKED__DO_NOT_CLAIM_NATIVE_DSDM_API",
+      "dim_adopted": false
+    }
+  ],
+  "source_holds": [
+    {
+      "id": "SOSA-A-H01",
+      "topic": "Logical functional Module as candidate DIM functionality/role",
+      "source_ids": [
+        "SOSA-C239-A-08"
+      ],
+      "state": "SOURCE_NATIVE_LEAD_NOT_YET_A_DIM_ROW",
+      "reason": "No existing cross-donor row unambiguously represents functional module role distinct from physical component; consider when later donors support coherent meaning."
+    },
+    {
+      "id": "SOSA-A-H02",
+      "topic": "Infrastructure split into hardware, run-time and interaction support",
+      "source_ids": [
+        "SOSA-C239-A-09"
+      ],
+      "state": "SOURCE_NATIVE_LEAD_NOT_YET_A_DIM_CLASS",
+      "reason": "Architecture grouping is useful but does not justify one universal three-part DIM superclass."
+    },
+    {
+      "id": "SOSA-A-H03",
+      "topic": "Sensor pod as integral package versus separate host",
+      "source_ids": [
+        "SOSA-C239-A-04"
+      ],
+      "state": "CROSS_DONOR_AND_CASE_FALSIFICATION_HOLD",
+      "reason": "Physical mounting/part-of semantics depend on arrangement; source case installation status must remain independent."
+    },
+    {
+      "id": "SOSA-A-H04",
+      "topic": "SOSA module implementation cardinality and procurement units",
+      "source_ids": [
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-14"
+      ],
+      "state": "SOURCE_NATIVE_NEGATIVE_EQUIVALENCE",
+      "reason": "No one-module-to-one-physical-element/procurable-unit cardinality; owner-relevant DIM physical versus functional distinction."
+    },
+    {
+      "id": "SOSA-A-H05",
+      "topic": "Source glossary Platform meanings",
+      "source_ids": [
+        "SOSA-C239-A-15"
+      ],
+      "state": "TERM_AMBIGUITY_HOLD",
+      "reason": "Context must disambiguate device/vehicle/software computing platform before mapping."
+    },
+    {
+      "id": "SOSA-A-H06",
+      "topic": "Native DSDM, management OpenAPI and future snapshots",
+      "source_ids": [],
+      "state": "RESERVED_FOR_SOSA_C",
+      "reason": "C239 narrative does not itself prove exact DSDM native classes or 2025 S251 edition claims; separate source review later."
+    },
+    {
+      "id": "SOSA-B-H01",
+      "topic": "Task Manager normative completeness",
+      "source_locator": "§5.4 / §7.1.1",
+      "source_bound": "Task management explicitly preliminary; multiple table values TBD and mission-specific schemas unfinished",
+      "required_non_inference": "SOSA-C DSDM/source comparison may clarify native enumeration availability; do not invent full standard task API",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H02",
+      "topic": "Power module edition definition",
+      "source_locator": "§12.11",
+      "source_bound": "Reference-only Power module, explicitly not defined in Edition 1.1",
+      "required_non_inference": "Keep power capability and hardware/power state as candidate evidence not normative 1.1 power service conformance",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H03",
+      "topic": "Reference-only mission-processing/reporting functions",
+      "source_locator": "§§9.1,10.1,11.1",
+      "source_bound": "Several listed modules have descriptive reference functions but are not defined in this edition",
+      "required_non_inference": "Do not promote Table4.2-1 descriptions into normative conformance or universal DIM classes",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H04",
+      "topic": "System/PIC/Module lifecycle state applicability",
+      "source_locator": "§6.5.1–6.5.3",
+      "source_bound": "S0 often unreportable; P6/M6 lost communication distinct from physical faults",
+      "required_non_inference": "No universal current-state assertion or exact ISA lifecycle mapping",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H05",
+      "topic": "Normative rule scope versus explanatory documentation",
+      "source_locator": "§§6.2,6.5",
+      "source_bound": "Specific rules exist for applicable General Profile protocols and notifications, while state-transition policies are not normative in 1.1",
+      "required_non_inference": "Retain Rule/Recommendation/Observation/descriptive distinctions by original ID",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H06",
+      "topic": "Source data model and API file access",
+      "source_locator": "§6.2.1, Appendix B; prior intake",
+      "source_bound": "Actual native C239-referenced DSDM/IDL and six OpenAPI companion files not inspected",
+      "required_non_inference": "SOSA-C must obtain and inspect or explicitly hold; no reverse-engineered full entity list",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H07",
+      "topic": "Power/health/status original four cases",
+      "source_locator": "§§6.1,12.11",
+      "source_bound": "Source C239 reference architecture does not authenticate installed configurations or telemetry of Dragino/AirGradient/Campbell/Bennett",
+      "required_non_inference": "Preserve case source standing and avoid new measurement/control claims",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "id": "SOSA-B-H08",
+      "topic": "Section-level whole-source and hardware rules",
+      "source_locator": "§§6–12 and Appendix A",
+      "source_bound": "SOSA-B inspected selected relevant source clauses; not every table, hardware rule, endpoint or security requirement across chapters",
+      "required_non_inference": "Do not mark entire 403-page architecture or all 12-source donor lineage fully source-reviewed",
+      "status": "RETAINED_BOUND_SOURCE_OR_DESIGN_HOLD"
+    },
+    {
+      "key": "SOSA-C-Q01",
+      "kind": "PRIMARY_NATIVE_MODEL_ACCESS",
+      "subject": "C239 Edition1.1 native SOSA_TechStd_v1_DSDM",
+      "needed": "Original exact bytes, edition, entity/attribute/association/cardinality inventory",
+      "impact": "DO NOT assert native DIV entity/field mapping"
+    },
+    {
+      "key": "SOSA-C-Q02",
+      "kind": "PRIMARY_NATIVE_IDL_ACCESS",
+      "subject": "SOSA_TechStd_v1_DSDM_IDL",
+      "needed": "Actual IDL file, authoritative relationship to C239 model and any version metadata",
+      "impact": "DO NOT assert wire representation or schema class parity"
+    },
+    {
+      "key": "SOSA-C-Q03",
+      "kind": "OPENAPI_NATIVE_ACCESS",
+      "subject": "Six C239 Appendix B.2–B.7 System Management OpenAPI JSON files",
+      "needed": "Original exact file bytes and source-attested paths, operations, request and response schemas",
+      "impact": "DO NOT invent endpoints or required parameters"
+    },
+    {
+      "key": "SOSA-C-Q04",
+      "kind": "ORIGINAL_C239_CROSS_REFERENCE",
+      "subject": "§5.7 refers to B.2 where actual B.1 hosts data model",
+      "needed": "Preserve exact original edition cross-reference; optional publisher clarification",
+      "impact": "Treat B.1 as actual heading without silently correcting source narrative"
+    },
+    {
+      "key": "SOSA-C-Q05",
+      "kind": "EDITION_STATUS",
+      "subject": "2025 S251 Edition2.0 Snapshot3 and 2022 S221 snapshot",
+      "needed": "Actual 2025 snapshot/bundle bytes and source version/revision before edition-specific mapping",
+      "impact": "Do not substitute 2022 S221 or label 2025 Snapshot3 as final 2.0"
+    },
+    {
+      "key": "SOSA-C-Q06",
+      "kind": "SOURCE_ACCESS_LIMIT",
+      "subject": "Project Library c239_5.pdf source bytes unavailable for programmatic attachment extraction",
+      "needed": "Authorized raw C239 PDF or publisher companion downloads",
+      "impact": "Could inspect original page text/images but could not examine embedded attachments or any native file hash"
+    },
+    {
+      "key": "SOSA-C-Q07",
+      "kind": "TRANSPORT_SCOPE_LIMIT",
+      "subject": "§15.4 bindings versus §15.6.4 general pub-sub implementation TBD wording",
+      "needed": "Keep exact conditional contexts and do not reconcile into universal conformance rules",
+      "impact": "No blanket interface mapping to CSAPI, SWE or ISA"
+    },
+    {
+      "key": "SOSA-C-Q08",
+      "kind": "API_AND_DATA_SCOPE",
+      "subject": "C239 descriptive architecture versus exact normative DSDM/OpenAPI",
+      "needed": "Native source review or explicitly bounded non-assessment in SOSA-D",
+      "impact": "Architecture concept matches remain related/partial; no exact type or API claims"
+    }
+  ],
+  "all_57_qualified_source_decisions": [
+    {
+      "id": "SOSA-A-M01",
+      "src": [
+        "SOSA-C239-A-01",
+        "SOSA-C239-A-18"
+      ],
+      "target": [
+        "S06-R005"
+      ],
+      "rel": "PARTIAL",
+      "why": "SOSA Sensor contributes a specific sensor-system boundary and modality to the proposed described sensing arrangement.",
+      "guard": "Does not prove generic CSAPI System identity, ownership of deployed sensors or a mandatory domain superclass.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M02",
+      "src": [
+        "SOSA-C239-A-16"
+      ],
+      "target": [
+        "S06-R005"
+      ],
+      "rel": "BROADER",
+      "why": "Source's generic System/SubSystem concept permits hierarchical systems without fixing one sensing domain root.",
+      "guard": "Generic SOSA System is not always an instantiated physical sensing apparatus.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M03",
+      "src": [
+        "SOSA-C239-A-02"
+      ],
+      "target": [
+        "S06-R007"
+      ],
+      "rel": "NARROWER",
+      "why": "A SOSA Hardware Element is physical and can be a sensor constituent, with source-defined configuration bounds.",
+      "guard": "Not every physical environmental probe or other equipment is a SOSA hardware element.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M04",
+      "src": [
+        "SOSA-C239-A-10",
+        "SOSA-C239-A-11"
+      ],
+      "target": [
+        "S06-R007"
+      ],
+      "rel": "NARROWER",
+      "why": "PIC, aperture, chassis/enclosure and power supply are documented SOSA hardware/infrastructure examples.",
+      "guard": "SOSA hardware architecture is not universal sensor hardware inventory or mandatory chassis hierarchy.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M05",
+      "src": [
+        "SOSA-C239-A-03"
+      ],
+      "target": [
+        "S06-R009"
+      ],
+      "rel": "NARROWER",
+      "why": "SOSA Host Platform contributes concrete physical support/mounting context for a SOSA Sensor.",
+      "guard": "Does not establish source-specific geolocation, site operator, sensor's own geometry or a software host.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M06",
+      "src": [
+        "SOSA-C239-A-04"
+      ],
+      "target": [
+        "S06-R005",
+        "S06-R009"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA Sensor Pod is an integral packaging and mounting case where sensor and pod boundaries overlap.",
+      "guard": "Cannot always treat pod as external hosting platform or as a physically separate sensor.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M07",
+      "src": [
+        "SOSA-C239-A-05"
+      ],
+      "target": [
+        "S06-R008"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA External Interface crosses sensor boundary and may connect to host/environment.",
+      "guard": "Not equivalent to a distinct externally cabled ClimaVue, SDI-12 connector, or all connected equipment.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M08",
+      "src": [
+        "SOSA-C239-A-06",
+        "SOSA-C239-A-20"
+      ],
+      "target": [
+        "S06-R007",
+        "S06-R008"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Internal interfaces and drawn physical relationships provide relation/context evidence.",
+      "guard": "Interface presence does not entail strict part-of, one function per card or installed topology.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M09",
+      "src": [
+        "SOSA-C239-A-08"
+      ],
+      "target": [
+        "S06-R007"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA Module is a separately defined functional architecture role that might be implemented on physical hardware.",
+      "guard": "It must NOT be read as physical constituent by label or produce phantom hardware/part-of edges.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M10",
+      "src": [
+        "SOSA-C239-A-07",
+        "SOSA-C239-A-17"
+      ],
+      "target": [
+        "S06-R007"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA Sensor Component and generic Element can include logical/software as well as physical realizations.",
+      "guard": "Cannot silently equate 'component' with physical module, installed probe or hardware individual.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M11",
+      "src": [
+        "SOSA-C239-A-12"
+      ],
+      "target": [
+        "S06-R009"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "RTE describes execution hosting of software, not a physical vehicle/structure.",
+      "guard": "Do not use unqualified platform/host terms to infer location or physical attachment.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M12",
+      "src": [
+        "SOSA-C239-A-13"
+      ],
+      "target": [
+        "S06-R008",
+        "S06-R006"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Interaction infrastructure carries logical information exchange between modules.",
+      "guard": "Transport/binding cannot prove a distinct network-visible node, physical cable or original measurement author.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M13",
+      "src": [
+        "SOSA-C239-A-14"
+      ],
+      "target": [
+        "S06-R002",
+        "S06-R007"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "A procurable unit may implement multiple modules/physical infrastructure elements.",
+      "guard": "Purchase unit or product type is not identical to one module, one model designation, one installed asset or one sensor.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M14",
+      "src": [
+        "SOSA-C239-A-15"
+      ],
+      "target": [
+        "S06-R009"
+      ],
+      "rel": "UNRESOLVED_CONTEXT",
+      "why": "Source's unqualified 'Platform' can describe sensor device, physical host or computing infrastructure.",
+      "guard": "Only qualified 'SOSA Host Platform' has defensible physical host interpretation.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-A-M15",
+      "src": [
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-13"
+      ],
+      "target": [
+        "ISA-A-MEMBER-EXPOSURE"
+      ],
+      "rel": "NO_ESTABLISHED_MAPPING_IN_INSPECTED_SCOPE",
+      "why": "SOSA function/interface decomposition is not ISA CIC visible/opaque member exposure.",
+      "guard": "Do not import ISA network member/virtual UCI semantics into SOSA without exact SOSA source evidence.",
+      "scope": "A"
+    },
+    {
+      "id": "SOSA-B-M01",
+      "src": [
+        "SOSA-C239-B-01",
+        "SOSA-C239-B-08"
+      ],
+      "target": [
+        "ISA-A-SERVICE-ROLE"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "System Manager is a defined management module with subfunctions that can qualify generic role/service concepts",
+      "guard": "SOSA managing module is not ISA Controller service role or one-to-one physical component",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M02",
+      "src": [
+        "SOSA-C239-B-02",
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target": [
+        "S06-R019"
+      ],
+      "rel": "PARTIAL",
+      "why": "SOSA external mission task request and internal assignment resemble issued action request patterns",
+      "guard": "Task Manager interactions are preliminary; no proven user request or physical effect and no exact CSAPI Command mapping",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M03",
+      "src": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target": [
+        "S06-R020"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA task/assignment status and health reporting potentially qualify reported outcome concepts",
+      "guard": "Published status and return codes not independent completed command or mission success",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M04",
+      "src": [
+        "SOSA-C239-B-03"
+      ],
+      "target": [
+        "ISA-K-CAPABILITIES"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Native SOSA Capability depends upon as-configured health and tasks/assignments, unlike ISA CCD static declarations",
+      "guard": "No assertion of equal actual mode/capability list or vendor hardware execution",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M05",
+      "src": [
+        "SOSA-C239-B-04"
+      ],
+      "target": [
+        "S06-R016"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Finite SOSA Mode concept speaks to known behavior in a discrete mode",
+      "guard": "Do not equate mode to default or current source-reported mode without evidence",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M06",
+      "src": [
+        "SOSA-C239-B-04",
+        "SOSA-C239-B-06"
+      ],
+      "target": [
+        "S06-R018"
+      ],
+      "rel": "PARTIAL",
+      "why": "SOSA mode and status message categories can contribute source-specific mode reporting notions",
+      "guard": "Does not establish actual contemporaneous source-reported mode in one of four cases",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M07",
+      "src": [
+        "SOSA-C239-B-05",
+        "SOSA-C239-B-14"
+      ],
+      "target": [
+        "ISA-C-082"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Sensor lifecycle/state is explicit separately from condition and health",
+      "guard": "Do not equate SOSA state enum to ISA operating condition property",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M08",
+      "src": [
+        "SOSA-C239-B-07"
+      ],
+      "target": [
+        "ISA-C-046"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Health diagnostics include BIT execution/results and fault reporting",
+      "guard": "No exact native ISA BIT property or actual device diagnostic measurement",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M09",
+      "src": [
+        "SOSA-C239-B-07",
+        "SOSA-C239-B-12"
+      ],
+      "target": [
+        "ISA-T-STATUS"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA reports status/health events but ISO-coded property Status report is a distinct message form",
+      "guard": "Syslog notification is not an ISA Status property-value message",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M10",
+      "src": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-13"
+      ],
+      "target": [
+        "ISA-A-CIC-MEDIATION"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA manager/agent may represent/manage a different component, similar to mediated participation",
+      "guard": "No exact ISA CIC performer/broker/relay semantics, source exposure or virtual UCI mapping",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M11",
+      "src": [
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-11"
+      ],
+      "target": [
+        "ISA-A-PARTICIPATION"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "In-band management interface roles are networked conditional roles",
+      "guard": "SOSA client/server/agent role is not a unique ISA registered network participant",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M12",
+      "src": [
+        "SOSA-C239-B-12"
+      ],
+      "target": [
+        "ISA-T-ADMIN"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Distinct notifications about state/status/fault/mode/configuration supply management change evidence",
+      "guard": "Not equal to ISA Administrative event codes, original Observation or all messages actually delivered",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M13",
+      "src": [
+        "SOSA-C239-B-14",
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16",
+        "SOSA-C239-B-17"
+      ],
+      "target": [
+        "S06-R018"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Manager-represented lifecycle at whole sensor and module/PIC level qualifies possible state context",
+      "guard": "State is not source-reported operating mode or proof observed live condition",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M14",
+      "src": [
+        "SOSA-C239-B-15",
+        "SOSA-C239-B-16"
+      ],
+      "target": [
+        "CASE-H05"
+      ],
+      "rel": "CASE_HOLD_CORRESPONDENCE",
+      "why": "PIC/module Lost Communication provides bounded example of diagnostic/availability ambiguity",
+      "guard": "Loss of management path must not be treated as physical sensor health or measured actual failure",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M15",
+      "src": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target": [
+        "ISA-R-EXECUTION"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Task assignment statuses offer some reported processing/execution context",
+      "guard": "Not exact ISA current command execution record or verified hardware effect",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M16",
+      "src": [
+        "SOSA-C239-B-20",
+        "SOSA-C239-B-21",
+        "SOSA-C239-B-22"
+      ],
+      "target": [
+        "S06-R014"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA functional modules can process sensory data but are not necessarily the physical observer",
+      "guard": "Functional chain, data ingestor and physical sensing actor must remain separate",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M17",
+      "src": [
+        "SOSA-C239-B-23",
+        "SOSA-C239-B-24",
+        "SOSA-C239-B-33"
+      ],
+      "target": [
+        "S06-R012"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Data product formatting and storage distinguish output stream/report fields and their provenance",
+      "guard": "No exact CSAPI resultSchema, actual Observation or original-to-digital-copy chain",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M18",
+      "src": [
+        "SOSA-C239-B-25",
+        "SOSA-C239-B-26"
+      ],
+      "target": [
+        "ISA-C-111"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Security operational state/integrity and alerts may relate to tamper/health concepts",
+      "guard": "Software integrity result/security state does not prove physical tamper condition",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M19",
+      "src": [
+        "SOSA-C239-B-27"
+      ],
+      "target": [
+        "S06-R010"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Calibration module describes reference test signal injection separate from recurring observation procedures",
+      "guard": "No actual metrological calibration performed or reusable ObservingProcedure identity",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M20",
+      "src": [
+        "SOSA-C239-B-28",
+        "SOSA-C239-B-29"
+      ],
+      "target": [
+        "S06-R009"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Host platform interface/nav/time supply site/host-related operational context",
+      "guard": "Time/nav source is not surveyed position of individual instrument or installation history",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M21",
+      "src": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "target": [
+        "CASE-H04"
+      ],
+      "rel": "CASE_HOLD_CORRESPONDENCE",
+      "why": "Source describes host power flow and functional power conversion/protection distinctions relevant to original case power hold",
+      "guard": "Module reference only: no installed battery, exact voltage, state, control or actual power telemetry",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M22",
+      "src": [
+        "SOSA-C239-B-30",
+        "SOSA-C239-B-31"
+      ],
+      "target": [
+        "ISA-C-091"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Possible power status/reference module supports concept of component power condition",
+      "guard": "Does not establish actual ISA Power State property equivalence or real source-state measurement",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M23",
+      "src": [
+        "SOSA-C239-B-32"
+      ],
+      "target": [
+        "CASE-H03"
+      ],
+      "rel": "CASE_HOLD_CORRESPONDENCE",
+      "why": "Network monitoring and QoS roles are pertinent to connection/reporting-path distinctions",
+      "guard": "No real source-specific radio transmission, timing, CSAPI transfer or network health proof",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M24",
+      "src": [
+        "SOSA-C239-B-09",
+        "SOSA-C239-B-10",
+        "SOSA-C239-B-17"
+      ],
+      "target": [
+        "ISA-K-CAPABILITY-STATE"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Managed capabilities and manager-reported state need separate readiness interpretation",
+      "guard": "A supported functionality is neither a source-attested current ready flag nor a reported actual state",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-B-M25",
+      "src": [
+        "SOSA-C239-B-18",
+        "SOSA-C239-B-19"
+      ],
+      "target": [
+        "CASE-H09"
+      ],
+      "rel": "CASE_HOLD_CORRESPONDENCE",
+      "why": "Preliminary task model contrasts request/state/status/health and actual implementation",
+      "guard": "No source case has authenticated issued, acknowledged, completed, physically verified command sequence",
+      "scope": "B"
+    },
+    {
+      "id": "SOSA-C-M01",
+      "src": [
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-04"
+      ],
+      "target": [
+        "S06-R012"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA DIV-1 mission/management conceptual scope may help categorize output and management fields",
+      "guard": "SOSA DIV-1 is a model layer, not output-field specification or native CSAPI result schema",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M02",
+      "src": [
+        "SOSA-C239-C-02",
+        "SOSA-C239-C-03"
+      ],
+      "target": [
+        "ISA-R-MEASUREMENT"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Logical quantities and physical format concepts may inform typed measured data",
+      "guard": "Narrative alone cannot establish a native SOSA measurement type/units, actual value or cardinality",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M03",
+      "src": [
+        "SOSA-C239-C-03",
+        "SOSA-C239-C-06"
+      ],
+      "target": [
+        "ISA-K-TYPE-CHOICE"
+      ],
+      "rel": "NO_ESTABLISHED_EXACT_MAPPING",
+      "why": "Physical DSDM encoding pointer is related to datatype specification scope",
+      "guard": "Cannot infer DSDM type list from prose or equate to ISA CCD type declarations",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M04",
+      "src": [
+        "SOSA-C239-C-07",
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "target": [
+        "ISA-T-CONFIG"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA RTE software profile/configuration has documented fields",
+      "guard": "It is not native ISA Config message, component capability declaration, runtime configuration of all sensors",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M05",
+      "src": [
+        "SOSA-C239-C-08",
+        "SOSA-C239-C-09"
+      ],
+      "target": [
+        "S06-R007"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Multiple execution environments/implementations illustrate physical vs logical distinctions",
+      "guard": "No physical containment or one module per PIC, sensor or hardware component",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M06",
+      "src": [
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "target": [
+        "S06-R019"
+      ],
+      "rel": "PARTIAL",
+      "why": "Request-response interactions describe a request to act or get/set operation",
+      "guard": "Not evidence of a source-attested issued command/physical effect",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M07",
+      "src": [
+        "SOSA-C239-C-15"
+      ],
+      "target": [
+        "S06-R020"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Response exists as an interaction type after request",
+      "guard": "Response does not independently substantiate completed task or physical effect",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M08",
+      "src": [
+        "SOSA-C239-C-11",
+        "SOSA-C239-C-12"
+      ],
+      "target": [
+        "CASE-H03"
+      ],
+      "rel": "CASE_RELEVANT_NOT_VERIFIED",
+      "why": "Interconnect roles/families help explain reporting paths and transport differences",
+      "guard": "Source case has no verified SOSA link or real stream implementation",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M09",
+      "src": [
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-13"
+      ],
+      "target": [
+        "S06-R012"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Signal streams and context metadata are separable from data record output fields",
+      "guard": "No direct SWE DataRecord or CSAPI DataStream/resultSchema equivalence",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M10",
+      "src": [
+        "SOSA-C239-C-14"
+      ],
+      "target": [
+        "ISA-Q-SUBSCRIPTION"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "SOSA topics identify pub/sub shared structures",
+      "guard": "No equivalent ISA Query object, source UCI or CSAPI Datastream identity",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M11",
+      "src": [
+        "SOSA-C239-C-16"
+      ],
+      "target": [
+        "ISA-T-ADMIN"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Event notifications cover operational/management state changes",
+      "guard": "SOSA notification not ISA administrative event code nor original performed Observation",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M12",
+      "src": [
+        "SOSA-C239-C-18",
+        "SOSA-C239-C-19"
+      ],
+      "target": [
+        "ISA-A-CONNECTION-PRESENTATION"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Native SOSA interaction binding specifies serialization/transport stacks under source conditions",
+      "guard": "ISA presentation negotiation and SOSA Table15.4 stacks not same protocol requirement",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M13",
+      "src": [
+        "SOSA-C239-C-10",
+        "SOSA-C239-C-15"
+      ],
+      "target": [
+        "ISA-T-REQUEST-REFERENCE"
+      ],
+      "rel": "RELATED_BUT_DIFFERENT",
+      "why": "Request/response roles exist in SOSA interactions",
+      "guard": "No native original request ID or ISA response correlation reference established by these pages",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M14",
+      "src": [
+        "SOSA-C239-C-12",
+        "SOSA-C239-C-14"
+      ],
+      "target": [
+        "S06-R014"
+      ],
+      "rel": "NO_ESTABLISHED_PHYSICAL_OBSERVER_MAPPING",
+      "why": "SOSA interaction publisher/sender is digital role",
+      "guard": "Publishing data does not prove which physical sensor performed source observation",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M15",
+      "src": [
+        "SOSA-C239-C-01",
+        "SOSA-C239-C-05",
+        "SOSA-C239-C-22"
+      ],
+      "target": [
+        "S06-R021"
+      ],
+      "rel": "NO_ESTABLISHED_NATIVE_PROVENANCE_EQUIVALENCE",
+      "why": "SOSA mission/management split and its data models are relevant background to provenance design",
+      "guard": "Cannot infer exact user-proposed source-qualified assertion field or issuer/evidence clause in DSDM",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M16",
+      "src": [
+        "SOSA-C239-C-13",
+        "SOSA-C239-C-16"
+      ],
+      "target": [
+        "S06-R022"
+      ],
+      "rel": "NO_ESTABLISHED_NATIVE_COPY_LINEAGE",
+      "why": "SOSA digital stream or event notification can produce data representations",
+      "guard": "Does not define original NOAA source observation vs experimental CSAPI copy provenance",
+      "scope": "C"
+    },
+    {
+      "id": "SOSA-C-M17",
+      "src": [
+        "SOSA-C239-C-17"
+      ],
+      "target": [
+        "CASE-H03"
+      ],
+      "rel": "CASE_RELEVANT_NOT_VERIFIED",
+      "why": "QoS policies can qualify a reporting path",
+      "guard": "No actual source case has demonstrated SOSA QoS policy, delivery or latency",
+      "scope": "C"
+    }
+  ],
+  "workbook_rebuild_status": "PENDING_FINAL_BINARY_PUBLICATION",
+  "next": "SOSA-D source and actual binary workbook closeout only; no Step18"
+}
