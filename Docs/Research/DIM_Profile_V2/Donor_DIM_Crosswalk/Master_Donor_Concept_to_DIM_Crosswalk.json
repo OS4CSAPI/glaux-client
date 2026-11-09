@@ -187,7 +187,7 @@
       "",
       "SerialNumber",
       "≈ ConfigurationData.serial_number",
-      "≈ Serial Number · physical-component context",
+      "≈ Serial Number · component context",
       "",
       "",
       "",
@@ -203,7 +203,7 @@
       "≈ MetaTEDS.UUID (TIM identifier)",
       "",
       "",
-      "≈ UCI · unique component identifier",
+      "≈ UCI · ISA component/virtual-component identifier",
       "",
       "",
       "",
@@ -251,7 +251,7 @@
       "",
       "≈ Device",
       "",
-      "≈ ISA composition: integration collection exposed through one CIC; physical unity not established",
+      "≈ ISA composition via CIC · integration collection, not physical unity",
       "≈ ssn:System",
       "",
       "",
@@ -267,7 +267,7 @@
       "≈ Network Capable Application Processor (NCAP)",
       "",
       "≈ Node (registered network role)",
-      "≈ ISA component / Controller; client-side role for every ISA component, server-side role also for Controllers",
+      "≈ ISA component / Controller · network role, not equipment identity",
       "",
       "",
       "",
@@ -283,7 +283,7 @@
       "≈ Transducer Interface Module (TIM)",
       "≈ ComponentType (can include software)",
       "",
-      "ISA composition member = integration membership; physical part-of not established",
+      "≈ composition member · functional integration, not physical part-of",
       "",
       "",
       "",
@@ -299,7 +299,7 @@
       "",
       "≈ ConnectsTo",
       "",
-      "CIC-to-member ISA/native interface = communication relationship; cable or physical arrangement not established",
+      "≈ CIC-to-member interface · communications, not proved cable",
       "",
       "",
       "",
@@ -315,7 +315,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "≈ sosa:Platform",
       "≈ Host (grouping of Observers)",
       "",
@@ -331,7 +331,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-04",
+      "≈ Method (Event-generation label; not a reusable observing procedure)",
       "≈ sosa:Procedure",
       "ObservingProcedure (reusable observing method)",
       "",
@@ -427,7 +427,7 @@
       "TransducerChannel",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "",
       "",
       "",
       "",
@@ -443,7 +443,7 @@
       "",
       "",
       "",
-      "≈ Observable Declaration (CCD.observables) [earlier mapping; review ISA-08]",
+      "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "",
       "",
       "≈ DataRecord.fields[]: name + typed DataComponent",
@@ -459,7 +459,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-04",
+      "≈ Event observables · reported variable, not OMS observedProperty",
       "sosa:ObservableProperty",
       "ObservableProperty (quality of feature-of-interest)",
       "≈ AbstractDataComponent.definition → controlled property URI",
@@ -475,7 +475,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "≈ Event.source · reporting UCI, not proven physical observer",
       "≈ sosa:Sensor",
       "≈ Observer (identifiable individual performing observing)",
       "",
@@ -491,7 +491,7 @@
       "",
       "",
       "",
-      "≈ Event message (reported observables) [earlier mapping; review ISA-07]",
+      "≈ Event message · reported event, not underlying observing act",
       "sosa:Observation",
       "Observation (act determining property value)",
       "",
@@ -1499,7 +1499,7 @@
       "≈ SampMode (sampling capability)",
       "",
       "ModeDefinition.mode_name",
-      "≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08]",
+      "≈ Capability Declaration · support, not enumerated operating modes",
       "",
       "",
       "≈ Category.codeSpace / constraint (allowed tokens)",
@@ -1515,7 +1515,7 @@
       "≈ SDefault (sampling mode default)",
       "",
       "ModeDefinition.mode_type=DEFAULT",
-      "Not reviewed · ISA-08",
+      "",
       "",
       "",
       "",
@@ -1531,7 +1531,7 @@
       "",
       "",
       "StatusReport.mode",
-      "≈ Camera Mode · current, camera-specific\nEarlier Status.properties retained in evidence; row review ISA-03",
+      "≈ Camera Mode in Status.properties · camera-specific report",
       "",
       "",
       "≈ Category.value (categorical status/mode value)",
@@ -1547,7 +1547,7 @@
       "",
       "",
       "≈ Task",
-      "≈ Request message (command invocation) [earlier mapping; review ISA-06]",
+      "≈ Request message · command invocation, not proven execution",
       "",
       "",
       "",
@@ -1563,7 +1563,7 @@
       "",
       "",
       "≈ TaskAck.task_status",
-      "≈ Response message (command disposition) [earlier mapping; review ISA-06]",
+      "≈ Response message · reported disposition, not measured effect",
       "",
       "",
       "",
@@ -3515,7 +3515,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "",
       "",
       "",
       "",
@@ -3531,7 +3531,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "≈ Event Reference · update relation only, not original→copy",
       "",
       "",
       "",
@@ -3835,7 +3835,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "",
       "",
       "",
@@ -3851,7 +3851,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "",
       "",
       "",
@@ -3867,7 +3867,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "",
       "",
       "",
       "",
@@ -3883,7 +3883,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "",
       "",
       "",
@@ -3899,7 +3899,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "",
       "",
       "",
@@ -3915,7 +3915,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-03",
+      "",
       "",
       "",
       "",
@@ -3931,7 +3931,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-10",
+      "",
       "",
       "",
       "",
@@ -3947,7 +3947,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-07",
+      "",
       "",
       "",
       "",
@@ -3963,7 +3963,7 @@
       "",
       "",
       "",
-      "Not reviewed · ISA-06",
+      "",
       "",
       "",
       "",
@@ -5660,10 +5660,11 @@
       "display_row": 9,
       "status": "Existing DIM proposal",
       "definition": "The producer's manufacturer name; not who operates the current station.",
-      "source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
       "evidence_records": [
-        "ISA02-076"
+        "ISA02-076",
+        "ISA21-S06-R001"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -5683,7 +5684,29 @@
         "",
         "Manufacturer name"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Manufacturer",
+            "pdf_page_locator": "28",
+            "source_meaning": "String component manufacturer, producer or vendor."
+          }
+        ],
+        "non_equivalence": "The producing organization is not necessarily the station operator.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-076"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R002",
@@ -5691,10 +5714,11 @@
       "display_row": 10,
       "status": "Existing DIM proposal",
       "definition": "A reusable model is not an individual physical device.",
-      "source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
       "evidence_records": [
-        "ISA02-080"
+        "ISA02-080",
+        "ISA21-S06-R002"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -5714,7 +5738,29 @@
         "≈ systemKind → Procedure (type/datasheet)",
         "Product model designation"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "DIRECT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Model",
+            "pdf_page_locator": "29",
+            "source_meaning": "Manufacturer product-line model designation."
+          }
+        ],
+        "non_equivalence": "Product kind/model remains distinct from one physical serial-numbered unit.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-080"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R003",
@@ -5722,10 +5768,11 @@
       "display_row": 11,
       "status": "Existing DIM proposal",
       "definition": "No API UID should be silently interpreted as a physical serial.",
-      "source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
       "evidence_records": [
-        "ISA02-105"
+        "ISA02-105",
+        "ISA21-S06-R003"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -5737,7 +5784,7 @@
         "",
         "SerialNumber",
         "≈ ConfigurationData.serial_number",
-        "≈ Serial Number · physical-component context",
+        "≈ Serial Number · component context",
         "",
         "",
         "",
@@ -5745,7 +5792,29 @@
         "",
         "Individual hardware serial number"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Serial Number",
+            "pdf_page_locator": "31",
+            "source_meaning": "Component serial unique in manufacturer model line; source expects manufacturer/model/serial triplet globally unique."
+          }
+        ],
+        "non_equivalence": "Cannot treat an ISA component software identifier or platform network ID as an actual serial-numbered physical probe.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-105"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R004",
@@ -5753,10 +5822,11 @@
       "display_row": 12,
       "status": "Existing DIM proposal",
       "definition": "Persistent identity of the described System—not a guaranteed equipment serial.",
-      "source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
       "evidence_records": [
-        "ISA02-UCI"
+        "ISA02-UCI",
+        "ISA21-S06-R004"
       ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
@@ -5768,7 +5838,7 @@
         "≈ MetaTEDS.UUID (TIM identifier)",
         "",
         "",
-        "≈ UCI · unique component identifier",
+        "≈ UCI · ISA component/virtual-component identifier",
         "",
         "",
         "",
@@ -5792,7 +5862,37 @@
         "CMPT-4.1.1",
         "CMPT-4.1.2",
         "CMPT-4.3.3"
-      ]
+      ],
+      "previous_source_review_status": "ISA02_SOURCE_REVIEW_COMPLETE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.1 UCI",
+            "pdf_page_locator": "27",
+            "source_meaning": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association."
+          },
+          {
+            "source": "CMPT",
+            "original_file_id": "file_00000000ed048210a141e046f2e93a17",
+            "original_edition": "6.0r4",
+            "section": "§4.1.1 CMPT-L-0001–0008",
+            "pdf_page_locator": "14–16",
+            "source_meaning": "Valid UCI and derived virtual UCI + suffix obligations."
+          }
+        ],
+        "non_equivalence": "Unique to an ISA component, not automatically a CSAPI System URI, real station ID or physical serial; retain certificate UCI and virtual suffix distinctions.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-296"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-A-CERTIFICATE-TRUST",
@@ -5864,9 +5964,11 @@
       "display_row": 15,
       "status": "Existing DIM proposal",
       "definition": "No single donor superclass has been adopted as the DIM root.",
-      "source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R005"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -5877,7 +5979,7 @@
         "",
         "≈ Device",
         "",
-        "≈ ISA composition: integration collection exposed through one CIC; physical unity not established",
+        "≈ ISA composition via CIC · integration collection, not physical unity",
         "≈ ssn:System",
         "",
         "",
@@ -5889,6 +5991,28 @@
       "additional_ISA_architecture_evidence": [
         "SDD-1.2",
         "SDD-4.2.2"
+      ],
+      "previous_source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–20",
+            "source_meaning": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members."
+          }
+        ],
+        "non_equivalence": "Does not define one physical assembly, mandatory DIM root or installed parts list.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": [
+        "SDD-4.2.2"
       ]
     },
     {
@@ -5897,9 +6021,11 @@
       "display_row": 16,
       "status": "Existing DIM proposal",
       "definition": "One visible network node cannot be assumed identical to one physical device.",
-      "source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R006"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -5910,7 +6036,7 @@
         "≈ Network Capable Application Processor (NCAP)",
         "",
         "≈ Node (registered network role)",
-        "≈ ISA component / Controller; client-side role for every ISA component, server-side role also for Controllers",
+        "≈ ISA component / Controller · network role, not equipment identity",
         "",
         "",
         "",
@@ -5933,6 +6059,36 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-1.2"
+      ],
+      "previous_source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.1 ISA Components",
+            "pdf_page_locator": "17–18",
+            "source_meaning": "Interface-conformant network participation; Controller supports required core services and accepts connections."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.0 ISA Component",
+            "pdf_page_locator": "27–28",
+            "source_meaning": "UCI identity and seven message kinds."
+          }
+        ],
+        "non_equivalence": "A visible network participant or Controller is not by definition a distinct physical sensor, installed device or original observation performer.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": [
+        "SDD-4.2.1"
       ]
     },
     {
@@ -5941,9 +6097,11 @@
       "display_row": 17,
       "status": "Existing DIM proposal",
       "definition": "Differentiate part-of from merely connected, hosted or digitally exposed.",
-      "source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R007"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -5954,7 +6112,7 @@
         "≈ Transducer Interface Module (TIM)",
         "≈ ComponentType (can include software)",
         "",
-        "ISA composition member = integration membership; physical part-of not established",
+        "≈ composition member · functional integration, not physical part-of",
         "",
         "",
         "",
@@ -5966,6 +6124,38 @@
       "additional_ISA_architecture_evidence": [
         "SDD-1.2",
         "SDD-4.2.2"
+      ],
+      "previous_source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–20",
+            "source_meaning": "Members may be compliant/noncompliant and visible/opaque through CIC."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Relationship",
+            "pdf_page_locator": "31",
+            "source_meaning": "A separately source-defined physical attachment property exists."
+          }
+        ],
+        "non_equivalence": "Composition membership and visible network attribution are not physical part-of. ISA Relationship ATTACHED/DETACHED is distinct and neither establishes complete installed inventory.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-099"
+      ],
+      "source_first_SDD_block_ids": [
+        "SDD-4.2.2"
       ]
     },
     {
@@ -5974,9 +6164,11 @@
       "display_row": 18,
       "status": "Existing DIM proposal",
       "definition": "A separately cabled ClimaVue is not necessarily a physical constituent of a CR1000X.",
-      "source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R008"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -5987,7 +6179,7 @@
         "",
         "≈ ConnectsTo",
         "",
-        "CIC-to-member ISA/native interface = communication relationship; cable or physical arrangement not established",
+        "≈ CIC-to-member interface · communications, not proved cable",
         "",
         "",
         "",
@@ -5999,6 +6191,36 @@
       "additional_ISA_architecture_evidence": [
         "SDD-1.2",
         "SDD-4.2.2"
+      ],
+      "previous_source_review_status": "SOURCE_QUALIFIED_FINAL_CORRESPONDENCE_RECONCILIATION_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–19",
+            "source_meaning": "Member communicates via ISA interface if compliant, or member-native interface if not."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Relationship",
+            "pdf_page_locator": "31",
+            "source_meaning": "Physical relation is modeled separately from network interface."
+          }
+        ],
+        "non_equivalence": "ISA/native mediation does not demonstrate a cabled SDI-12 link, distinct external instrument, connector, mounting or spatial topology.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": [
+        "SDD-4.2.2"
       ]
     },
     {
@@ -6007,9 +6229,11 @@
       "display_row": 19,
       "status": "Existing DIM proposal",
       "definition": "Station coordinates are not necessarily the individual probe coordinates.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R009"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6020,7 +6244,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "≈ sosa:Platform",
         "≈ Host (grouping of Observers)",
         "",
@@ -6033,7 +6257,35 @@
         "SDD-3.0",
         "SDD-4.1",
         "SDD-4.3"
-      ]
+      ],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "NO_ESTABLISHED_MAPPING",
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.3 Deployment Architecture",
+            "pdf_page_locator": "20–21",
+            "source_meaning": "Platform deployment of ISA Controllers is tactical placement guidance, not the observed physical station/probe relationship."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Position",
+            "pdf_page_locator": "30",
+            "source_meaning": "Component position property is distinct from host identity."
+          }
+        ],
+        "non_equivalence": "Source does not establish a native general-purpose current station/site-host relationship for any case; no blank=absence assertion.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R010",
@@ -6041,9 +6293,11 @@
       "display_row": 20,
       "status": "Existing DIM proposal",
       "definition": "Keep reusable procedure distinct from System, actual observation and result.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R010"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6054,7 +6308,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-04",
+        "≈ Method (Event-generation label; not a reusable observing procedure)",
         "≈ sosa:Procedure",
         "ObservingProcedure (reusable observing method)",
         "",
@@ -6062,7 +6316,29 @@
         "≈ Procedure.procedureType=ObservingProcedure",
         "Observing procedure / method"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.2 Method",
+            "pdf_page_locator": "35",
+            "source_meaning": "Suggested String for primary method used to generate an Event; includes MANUAL/ATR/FUSION etc."
+          }
+        ],
+        "non_equivalence": "An event-generation tag is not a reusable observing procedure, identified method specification or proven physical sensing method.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-147"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-A-PARTICIPATION",
@@ -6356,9 +6632,11 @@
       "display_row": 26,
       "status": "Existing DIM proposal",
       "definition": "No automatically equivalent CSAPI DataStream or SensorML output address.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R011"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6369,7 +6647,7 @@
         "TransducerChannel",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "",
         "",
         "",
         "",
@@ -6377,7 +6655,35 @@
         "",
         "Addressed transducer channel"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "NO_ESTABLISHED_MAPPING",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§§3.1–3.3 Capabilities",
+            "pdf_page_locator": "24–63",
+            "source_meaning": "Properties, observables and commands do not themselves establish IEEE-style addressed transducer channel semantics."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.4 Config CCD",
+            "pdf_page_locator": "28–29",
+            "source_meaning": "Capabilites and their readiness are declarations, not physical transducer addresses."
+          }
+        ],
+        "non_equivalence": "Do not reinterpret capability name, API output, network UCI, or case SDI-12 response index as a channel address.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R012",
@@ -6385,9 +6691,11 @@
       "display_row": 27,
       "status": "Existing DIM proposal",
       "definition": "A logger diagnostic field is not automatically a measurement.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R012"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6398,7 +6706,7 @@
         "",
         "",
         "",
-        "≈ Observable Declaration (CCD.observables) [earlier mapping; review ISA-08]",
+        "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "",
         "",
         "≈ DataRecord.fields[]: name + typed DataComponent",
@@ -6406,7 +6714,38 @@
         "≈ DataStream /schema → resultSchema",
         "Reported output field"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§7.3 Observable Declaration",
+            "pdf_page_locator": "87",
+            "source_meaning": "Name/type/structure/range of reportable Event observables; not all declared observables required in each Event."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Config",
+            "pdf_page_locator": "73",
+            "source_meaning": "Configuration message contains capability declaration and readiness state."
+          }
+        ],
+        "non_equivalence": "Declaring a field does not provide actual reported output values, transfer schema, physical channel count or native CSAPI resultSchema.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-327",
+        "ISA-DMS-305"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R013",
@@ -6414,9 +6753,11 @@
       "display_row": 28,
       "status": "Existing DIM proposal",
       "definition": "Temperature of the outdoor air is different from temperature of a logger panel.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R013"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6427,7 +6768,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-04",
+        "≈ Event observables · reported variable, not OMS observedProperty",
         "sosa:ObservableProperty",
         "ObservableProperty (quality of feature-of-interest)",
         "≈ AbstractDataComponent.definition → controlled property URI",
@@ -6435,7 +6776,30 @@
         "≈ DataStream.observedProperties (URI list)",
         "Observed / observable property"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§§3.2 and 6.2",
+            "pdf_page_locator": "34–36;73–74",
+            "source_meaning": "Original ISA Event carries observed-environment data and reportable observable names/types."
+          }
+        ],
+        "non_equivalence": "ISA native Event fields are not an exact OMS observedProperty semantic class/feature-of-interest predicate; distinguish source property from actual value.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-306",
+        "ISA-DMS-327"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R014",
@@ -6443,9 +6807,11 @@
       "display_row": 29,
       "status": "Existing DIM proposal",
       "definition": "Physical probe, logger and publishing server must not be silently conflated.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R014"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6456,7 +6822,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "≈ Event.source · reporting UCI, not proven physical observer",
         "≈ sosa:Sensor",
         "≈ Observer (identifiable individual performing observing)",
         "",
@@ -6464,7 +6830,37 @@
         "≈ DataStream.system (identified producer)",
         "Observer / observing System"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event.source",
+            "pdf_page_locator": "73",
+            "source_meaning": "Source is original author of Event message."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.6 Event",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "Event creator UCI/time/event ID identity and observation reporting."
+          }
+        ],
+        "non_equivalence": "Message origin/publisher is not guaranteed physical sensing probe, performed-observation Observer, logger or a separate producer from network relay.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-306"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R015",
@@ -6472,9 +6868,11 @@
       "display_row": 30,
       "status": "Existing DIM proposal",
       "definition": "Manufacturer example data does not establish a performed event.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R015"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -6485,7 +6883,7 @@
         "",
         "",
         "",
-        "≈ Event message (reported observables) [earlier mapping; review ISA-07]",
+        "≈ Event message · reported event, not underlying observing act",
         "sosa:Observation",
         "Observation (act determining property value)",
         "",
@@ -6493,7 +6891,45 @@
         "≈ Observation (DataStream member)",
         "Performed Observation"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event",
+            "pdf_page_locator": "73–74",
+            "source_meaning": "Event time, source, event ID and reportable observables."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.6 Providing Observed Information",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "ISA observation message encompasses measurement/detection/alert/alarm."
+          },
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§2.1 Event Updates",
+            "pdf_page_locator": "11",
+            "source_meaning": "Originally distributed Event is a reported record, not editable observation act."
+          }
+        ],
+        "non_equivalence": "A published Event is not automatically the underlying performed OMS Observation, true resultTime or observed installed instrument; project examples never become real measurements.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-306"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-C-123",
@@ -8931,9 +9367,11 @@
       "display_row": 93,
       "status": "Existing DIM proposal",
       "definition": "An option a device supports isn't necessarily the one in use.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R016"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -8944,7 +9382,7 @@
         "≈ SampMode (sampling capability)",
         "",
         "ModeDefinition.mode_name",
-        "≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08]",
+        "≈ Capability Declaration · support, not enumerated operating modes",
         "",
         "",
         "≈ Category.codeSpace / constraint (allowed tokens)",
@@ -8952,7 +9390,37 @@
         "",
         "Supported operating mode"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§7.3 Capability Declaration",
+            "pdf_page_locator": "85",
+            "source_meaning": "Declares supported properties/commands/observables/types."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.4 Config",
+            "pdf_page_locator": "28–29",
+            "source_meaning": "Capability readiness and reporting separate from declarations."
+          }
+        ],
+        "non_equivalence": "The generic capability set is not a list of allowed operating modes, an effective current mode, a device-specific state machine or executed action.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-321"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R017",
@@ -8960,9 +9428,11 @@
       "display_row": 94,
       "status": "Existing DIM proposal",
       "definition": "Don't promote a printed default to current effective state.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R017"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -8973,7 +9443,7 @@
         "≈ SDefault (sampling mode default)",
         "",
         "ModeDefinition.mode_type=DEFAULT",
-        "Not reviewed · ISA-08",
+        "",
         "",
         "",
         "",
@@ -8981,7 +9451,35 @@
         "",
         "Declared default mode"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "NO_ESTABLISHED_MAPPING",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§7.3 Property Declaration",
+            "pdf_page_locator": "88",
+            "source_meaning": "Name/type/mutability/structure/range/threshold; no generic default operating-mode field."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Camera Mode / Radar Mode",
+            "pdf_page_locator": "25;30",
+            "source_meaning": "Current mode examples describe values, not manufacturer baseline defaults."
+          }
+        ],
+        "non_equivalence": "Do not turn manual default, optional type default, current mode, or supported declaration into source-authenticated effective default.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R018",
@@ -8989,9 +9487,11 @@
       "display_row": 95,
       "status": "Existing DIM proposal",
       "definition": "Keep source report time and subject; don't infer live state.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R018"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -9002,7 +9502,7 @@
         "",
         "",
         "StatusReport.mode",
-        "≈ Camera Mode · current, camera-specific\nEarlier Status.properties retained in evidence; row review ISA-03",
+        "≈ Camera Mode in Status.properties · camera-specific report",
         "",
         "",
         "≈ Category.value (categorical status/mode value)",
@@ -9012,7 +9512,46 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-340"
-      ]
+      ],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "NARROWER",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Camera Mode",
+            "pdf_page_locator": "25–26",
+            "source_meaning": "Current camera-specific mode where supported; Radar Mode also a specialized property."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Status.properties",
+            "pdf_page_locator": "75–76",
+            "source_meaning": "Periodically reported current property values."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.5 Status",
+            "pdf_page_locator": "29–30",
+            "source_meaning": "Current property values and heartbeat intervals."
+          }
+        ],
+        "non_equivalence": "Only specifically declared modes and their reported values can support source-specific current mode; no generic mode for all devices or proof of actual contemporaneous state.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-047",
+        "ISA-DMS-310"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R019",
@@ -9020,9 +9559,11 @@
       "display_row": 96,
       "status": "Existing DIM proposal",
       "definition": "Supported command syntax ≠ an issued request.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R019"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -9033,7 +9574,7 @@
         "",
         "",
         "≈ Task",
-        "≈ Request message (command invocation) [earlier mapping; review ISA-06]",
+        "≈ Request message · command invocation, not proven execution",
         "",
         "",
         "",
@@ -9057,7 +9598,37 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.5"
-      ]
+      ],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Request",
+            "pdf_page_locator": "74–75",
+            "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.7 Commanding",
+            "pdf_page_locator": "31–33",
+            "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+          }
+        ],
+        "non_equivalence": "A type definition or capability declaration does not prove an actual issued Request, permission or performed/achieved hardware control.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-308"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R020",
@@ -9065,9 +9636,11 @@
       "display_row": 97,
       "status": "Existing DIM proposal",
       "definition": "ACCEPTED is not COMPLETED, and COMPLETED is not measured physical effect.",
-      "source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R020"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -9078,7 +9651,7 @@
         "",
         "",
         "≈ TaskAck.task_status",
-        "≈ Response message (command disposition) [earlier mapping; review ISA-06]",
+        "≈ Response message · reported disposition, not measured effect",
         "",
         "",
         "",
@@ -9098,7 +9671,46 @@
         "ICD-6.2",
         "ICD-6.7",
         "ICD-6.7.1"
-      ]
+      ],
+      "previous_source_review_status": "EARLIER_MAPPING_COVERAGE_RECHECK_DUE",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "PARTIAL",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Response",
+            "pdf_page_locator": "75",
+            "source_meaning": "Status/final request disposition and return values."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.7.1 Table23",
+            "pdf_page_locator": "32–33",
+            "source_meaning": "QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition."
+          },
+          {
+            "source": "CNTR",
+            "original_file_id": "file_00000000e00082109d88d0119f744880",
+            "original_edition": "6.0r4",
+            "section": "§6 AZSV-L-0005–0007",
+            "pdf_page_locator": "44–45",
+            "source_meaning": "Authorization determination SUCCESS with authorized Yes or No is distinct from command success."
+          }
+        ],
+        "non_equivalence": "Response code is a reported execution state not independent evidence of physical effect; even authorization denial can carry SUCCESS in its separate service context.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-309",
+        "ISA-DMS-456"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-C-164",
@@ -13843,9 +14455,11 @@
       "display_row": 219,
       "status": "Existing DIM proposal",
       "definition": "Our proposed source/issuer/edition/locator/evidence standing is NOT a native obligatory field in these seven donors.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R021"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -13856,7 +14470,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "",
         "",
         "",
         "",
@@ -13864,7 +14478,35 @@
         "",
         "Source-qualified assertion (proposed DIM)"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "NO_ESTABLISHED_MAPPING",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Config/Event/Status",
+            "pdf_page_locator": "73–76",
+            "source_meaning": "Source and time describe network message origin, not independent source verification."
+          },
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 CIC/virtual member",
+            "pdf_page_locator": "18–19",
+            "source_meaning": "Network presentation and source attribution can be mediated by a CIC."
+          }
+        ],
+        "non_equivalence": "No original manufacturer/NOAA issuer verification, evidentiary grade, signed citation locator, original-versus-derived tag, or provenance acceptance for the proposed DIM.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "S06-R022",
@@ -13872,9 +14514,11 @@
       "display_row": 220,
       "status": "Existing DIM proposal",
       "definition": "Bennett two original events/four digital experimental copies need explicit provenance; no false equivalence asserted here.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-S06-R022"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -13885,7 +14529,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "≈ Event Reference · update relation only, not original→copy",
         "",
         "",
         "",
@@ -13902,7 +14546,38 @@
       ],
       "additional_ISA_interface_evidence": [
         "ICD-6.6"
-      ]
+      ],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "RELATED_BUT_DIFFERENT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event.event reference",
+            "pdf_page_locator": "73–74",
+            "source_meaning": "References source-generated earlier Event."
+          },
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§§2.1–2.6",
+            "pdf_page_locator": "11–14",
+            "source_meaning": "Event correction/recall preserves original message and may aggregate updates; BSO is track correlation."
+          }
+        ],
+        "non_equivalence": "A source Event Update is not a universal original historical event versus API copy/representation provenance relationship; Bennett two original records versus four digital copies remain distinct.",
+        "case_hold_retained": false,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [
+        "ISA-DMS-306",
+        "ISA-DMS-382"
+      ],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-T-MESSAGE-ID",
@@ -14670,9 +15345,11 @@
       "display_row": 239,
       "status": "Existing case evidence / review hold",
       "definition": "A station can persist while the same serial returns to a role; no current sample DIM row explicitly carries dated installation/service.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H01"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14683,7 +15360,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "",
         "",
         "",
@@ -14691,7 +15368,27 @@
         "",
         "REVIEW HOLD — service history"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Maintenance",
+            "pdf_page_locator": "28",
+            "source_meaning": "Maintenance accepted extension is POC list."
+          }
+        ],
+        "non_equivalence": "No dated installed-asset service history or probe replacement ledger; Bennett's three service statements and two serials retained.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H02",
@@ -14699,9 +15396,11 @@
       "display_row": 240,
       "status": "Existing case evidence / review hold",
       "definition": "Station point, mounting and individual equipment location must stay distinct; do not imply realized configuration from installation guidance.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H02"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14712,7 +15411,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "",
         "",
         "",
@@ -14720,7 +15419,35 @@
         "",
         "REVIEW HOLD — site / mounting"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Relationship and Position",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "Source contains physical attachment relations and a component Position but not actual platform-to-probe survey."
+          },
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.3 Deployment Architecture",
+            "pdf_page_locator": "20–21",
+            "source_meaning": "Tactical platform recommendation, not a dated site log."
+          }
+        ],
+        "non_equivalence": "Station coordinates, mounting guidance and individual probe points cannot be equated.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H03",
@@ -14728,9 +15455,11 @@
       "display_row": 241,
       "status": "Existing case evidence / review hold",
       "definition": "Interface, port, address, cadence and message/stream are different meanings not all captured in the original 22 rows.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H03"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14741,7 +15470,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "",
         "",
         "",
         "",
@@ -14749,7 +15478,35 @@
         "",
         "REVIEW HOLD — reporting path"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Minimum/Maximum Status Intervals and Data Outputs",
+            "pdf_page_locator": "26–29",
+            "source_meaning": "Status timing and transfers are component information; no specific LoRaWAN/SDI-12/GOES path."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§§6.2,6.5",
+            "pdf_page_locator": "27–30",
+            "source_meaning": "Network messages and heartbeat cadence."
+          }
+        ],
+        "non_equivalence": "Four case source-specific ports, radio, scan and reporting mechanisms remain independent of ISA status cadence.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H04",
@@ -14757,9 +15514,11 @@
       "display_row": 242,
       "status": "Existing case evidence / review hold",
       "definition": "Do not mix power hardware design, electrical state values, available control and inferred health; no actual installed battery evidence here.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H04"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14770,7 +15529,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "",
         "",
         "",
@@ -14778,7 +15537,27 @@
         "",
         "REVIEW HOLD — power / state"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Power, Power State and Reserve Capacity",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "Power percentage, component-state enum and energy reserve are different properties."
+          }
+        ],
+        "non_equivalence": "Manufacturer battery design, measured battery voltage, fuel/charge and installed condition are not interchangeable.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H05",
@@ -14786,9 +15565,11 @@
       "display_row": 243,
       "status": "Existing case evidence / review hold",
       "definition": "Diagnostics/condition reporting should not be forced into environmental Observation or 'operating mode'.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H05"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14799,7 +15580,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "",
         "",
         "",
@@ -14807,7 +15588,35 @@
         "",
         "REVIEW HOLD — diagnostics"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Built In Test Result",
+            "pdf_page_locator": "25",
+            "source_meaning": "Last built-in-test General State."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Status",
+            "pdf_page_locator": "75–76",
+            "source_meaning": "Component self-report properties."
+          }
+        ],
+        "non_equivalence": "A Campbell logger Status.PanelTemp and WatchdogErrors are diagnostic examples, not ClimaVue outdoor observation or general station health.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H06",
@@ -14815,9 +15624,11 @@
       "display_row": 244,
       "status": "Existing case evidence / review hold",
       "definition": "Default, example, applied setting and effective history should not collapse into a single mode row.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H06"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14828,7 +15639,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-03",
+        "",
         "",
         "",
         "",
@@ -14836,7 +15647,35 @@
         "",
         "REVIEW HOLD — applied setting"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§§1.1–1.2",
+            "pdf_page_locator": "8–10",
+            "source_meaning": "Set Property supplies READ WRITE value; source example can cause indirect movement."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Camera Mode",
+            "pdf_page_locator": "25",
+            "source_meaning": "Current specialized mode property."
+          }
+        ],
+        "non_equivalence": "Manual default, supported setting, requested setting and historical effective value remain distinct absent source-attested applied state.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H07",
@@ -14844,9 +15683,11 @@
       "display_row": 245,
       "status": "Existing case evidence / review hold",
       "definition": "Processing, reporting and derived interpretation must preserve original source value and referent.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H07"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14857,7 +15698,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-10",
+        "",
         "",
         "",
         "",
@@ -14865,7 +15706,35 @@
         "",
         "REVIEW HOLD — processing"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§2.2 Event Update",
+            "pdf_page_locator": "11–12",
+            "source_meaning": "Event updates replace selected reported observables while retaining original Event time."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Data Inputs/Outputs and Quality",
+            "pdf_page_locator": "26–30",
+            "source_meaning": "Transfers and quality values, not general computation provenance."
+          }
+        ],
+        "non_equivalence": "Campbell derived examples, sensor corrections and Bennett averaged-mean lineage are not proven by ISA definitions.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H08",
@@ -14873,9 +15742,11 @@
       "display_row": 246,
       "status": "Existing case evidence / review hold",
       "definition": "Source stamp, derived period, resultTime, lexical QA token and parameter/record flags are distinct.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H08"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14886,7 +15757,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-07",
+        "",
         "",
         "",
         "",
@@ -14894,7 +15765,35 @@
         "",
         "REVIEW HOLD — time / QA"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event.time and Event ID",
+            "pdf_page_locator": "73–74",
+            "source_meaning": "Event time is occurrence time; immutable event ID uses source/time/ID."
+          },
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§2.2 Event Update",
+            "pdf_page_locator": "11–12",
+            "source_meaning": "Original time survives update."
+          }
+        ],
+        "non_equivalence": "Bennett printed fixed EST, exact F_ATemp token including trailing space, F_Record blank and original resultTime UNKNOWN must remain distinct.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "CASE-H09",
@@ -14902,9 +15801,11 @@
       "display_row": 247,
       "status": "Existing case evidence / review hold",
       "definition": "No case provides a source-attested issued/acknowledged/completed control sequence; do not fill existing issued-command rows.",
-      "source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
       "source_entry_ids": [],
-      "evidence_records": [],
+      "evidence_records": [
+        "ISA21-CASE-H09"
+      ],
       "master_inclusion": "INCLUDED_IN_WORKING_MASTER",
       "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
       "display": [
@@ -14915,7 +15816,7 @@
         "",
         "",
         "",
-        "Not reviewed · ISA-06",
+        "",
         "",
         "",
         "",
@@ -14923,7 +15824,43 @@
         "",
         "REVIEW HOLD — control execution"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "previous_source_review_status": "NOT_REVIEWED_IN_CORRECTION",
+      "source_first_correspondence": {
+        "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+        "outcome": "CASE_HOLD_SOURCES_DISTINCT",
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Request/Response",
+            "pdf_page_locator": "74–75",
+            "source_meaning": "Request and Response are distinct objects."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.7 Table23",
+            "pdf_page_locator": "31–33",
+            "source_meaning": "QUEUED/IN PROGRESS/FINAL status meanings."
+          },
+          {
+            "source": "CNTR",
+            "original_file_id": "file_00000000e00082109d88d0119f744880",
+            "original_edition": "6.0r4",
+            "section": "§6 Authorization",
+            "pdf_page_locator": "43–45",
+            "source_meaning": "Authorization result distinct from execution."
+          }
+        ],
+        "non_equivalence": "No case supplies authenticated issued, authorized, acknowledged, completed and physically verified control chain.",
+        "case_hold_retained": true,
+        "DIM_model_adoption": false
+      },
+      "source_first_native_DMS_ids": [],
+      "source_first_SDD_block_ids": []
     },
     {
       "row_id": "ISA-C-048",
@@ -20725,6 +21662,22 @@
       "new_master_rows": 0,
       "displayed_cells_changed": 0,
       "new_DIM_adoption": 0
+    },
+    "sourceFirstCorrespondence": {
+      "source": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json",
+      "targets31": 31,
+      "dim_rows_audited": 22,
+      "case_holds": 9,
+      "qualified": 18,
+      "no_established_equivalences": 4,
+      "prior_findings25": 25,
+      "prior_mapping_decisions": 11,
+      "prior_design_boundary_holds": 14,
+      "local_questions_rechecked": 6,
+      "local_questions_closed": 0,
+      "ISA_cells_changed": 29,
+      "non_ISA_cells_preserved": true,
+      "model_adoption": false
     }
   },
   "counts": {
@@ -20781,7 +21734,7 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "Canonical master Markdown/CSV/JSON follows source decisions; Excel refreshed at substantial-section checkpoints. Never stage all new material outside the master until final approval.",
-  "currentEvidenceCheckpoint": "ISA-REMAINING-COMPANION-AND-CONTEXT",
+  "currentEvidenceCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "MASTER-ISA-INTEGRATION",
@@ -20789,8 +21742,8 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Deliberately old253-row/226-primary XLSX; current329-row/480-outcome structured/text master through Data Model Topics delivery20. Final refresh reserved for delivery22.",
-    "textCheckpoint": "ISA-REMAINING-COMPANION-AND-CONTEXT",
+    "lag": "Canonical old253/226 workbook; actual329/480 textual/structured master now through source-first ISA21 audit; final refresh at Delivery22.",
+    "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }
