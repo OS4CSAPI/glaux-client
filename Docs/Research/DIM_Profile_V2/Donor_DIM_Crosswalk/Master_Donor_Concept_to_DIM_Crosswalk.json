@@ -5846,12 +5846,17 @@
         "",
         "Certificate identity and trust context"
       ],
-      "boundary": "ICD6.0r5 requires a valid certificate under the network PKI and checks the Controller certificate Common Name against its UCI. The Certificate Guide distinguishes SDK,local testing,exercise and deployment certificates; deployment follows the deploying authority policy. This establishes source requirements,not installed credentials,verified trust,physical identity,permission for a task or current security certification. Virtual-component UCI suffixes do not imply a separate certificate for every virtual member. CMPT §4.1.2 separately requires date validity and nonrevocation. Its high/mid and low-level signer clauses respectively say ISA-approved and acceptable to the deploying organization. M-0004/L-0011 say ECDSA, while L-0013 is titled ECDSA Algorithm but says ECDH; L-0012 literally says the certificate is at least 384 bits long. These statements remain attributed without a repaired algorithm, inferred key-size field or current cryptographic recommendation.",
+      "boundary": "ICD6.0r5 requires a valid certificate under the network PKI and checks the Controller certificate Common Name against its UCI. The Certificate Guide distinguishes SDK,local testing,exercise and deployment certificates; deployment follows the deploying authority policy. This establishes source requirements,not installed credentials,verified trust,physical identity,permission for a task or current security certification. Virtual-component UCI suffixes do not imply a separate certificate for every virtual member. CMPT §4.1.2 separately requires date validity and nonrevocation. Its high/mid and low-level signer clauses respectively say ISA-approved and acceptable to the deploying organization. M-0004/L-0011 say ECDSA, while L-0013 is titled ECDSA Algorithm but says ECDH; L-0012 literally says the certificate is at least 384 bits long. These statements remain attributed without a repaired algorithm, inferred key-size field or current cryptographic recommendation. Controller Requirements 6.0r4: Controller registration compares the REQUEST ADD originating UCI with the certificate UCI before authorization. Certificate matching does not prove physical identity, completed certificate trust validation or permission to join.",
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.2",
         "CMPT-4.1",
         "CMPT-4.3.1"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.2",
+        "CNTR-5.4"
+      ],
+      "controller_source_review_boundary": "Controller registration compares the REQUEST ADD originating UCI with the certificate UCI before authorization. Certificate matching does not prove physical identity, completed certificate trust validation or permission to join."
     },
     {
       "row_id": "S06-R005",
@@ -6097,7 +6102,7 @@
         "",
         "Network participation role and responsibilities"
       ],
-      "boundary": "The initiator is the client and the non-initiator is the server for that connection. Controller is a service responsibility and software role; it also has client-side responsibilities. These are not disjoint equipment classes, physical device counts or process counts. A visible network participant need not equal one physical device.",
+      "boundary": "The initiator is the client and the non-initiator is the server for that connection. Controller is a service responsibility and software role; it also has client-side responsibilities. These are not disjoint equipment classes, physical device counts or process counts. A visible network participant need not equal one physical device. Controller Requirements 6.0r4: Controller discovery and incoming/outgoing secure network roles include Zeroconf and TCP/SCTP/Mockets in this source revision; no tested live topology or physical participant count follows.",
       "additional_ISA_architecture_evidence": [
         "SDD-1.2",
         "SDD-4.2.1",
@@ -6129,7 +6134,12 @@
         "CMPT-4.0",
         "CMPT-4.2.2",
         "CMPT-4.3.1"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.1",
+        "CNTR-5.2"
+      ],
+      "controller_source_review_boundary": "Controller discovery and incoming/outgoing secure network roles include Zeroconf and TCP/SCTP/Mockets in this source revision; no tested live topology or physical participant count follows."
     },
     {
       "row_id": "ISA-A-NETWORK-CONTEXT",
@@ -6169,7 +6179,7 @@
         "",
         "Network instance and connection context"
       ],
-      "boundary": "The Introductory Guide local instance has one Controller and clients. SDD describes a broader network of interconnected components and Controllers over existing physical networks, with one or many Controllers in a deployment. Do not make a local instance a global one-Controller limit or infer physical containment, an actual deployment inventory, tested topology or mandatory full-mesh connectivity.",
+      "boundary": "The Introductory Guide local instance has one Controller and clients. SDD describes a broader network of interconnected components and Controllers over existing physical networks, with one or many Controllers in a deployment. Do not make a local instance a global one-Controller limit or infer physical containment, an actual deployment inventory, tested topology or mandatory full-mesh connectivity. Controller Requirements 6.0r4: One ISA Controller instance must expose all three core services on one computing-platform instance; neither its physical housing nor a global singleton Controller is established.",
       "additional_ISA_architecture_evidence": [
         "SDD-4.1",
         "SDD-4.2.1",
@@ -6194,7 +6204,12 @@
         "CMPT-1.2",
         "CMPT-4.2.2",
         "CMPT-4.3.1"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-1.2",
+        "CNTR-4.0"
+      ],
+      "controller_source_review_boundary": "One ISA Controller instance must expose all three core services on one computing-platform instance; neither its physical housing nor a global singleton Controller is established."
     },
     {
       "row_id": "ISA-A-MEMBER-EXPOSURE",
@@ -6232,7 +6247,7 @@
         "",
         "Composition member exposure and source attribution"
       ],
-      "boundary": "Composition is an integration collection, not necessarily a physical assembly. A visible member is announced, has declared capabilities and periodic status; a non-ISA member made visible is a virtual ISA component. Opaque does not mean its capabilities are absent. This is network representation, not independently verified physical provenance or the DMS laser Visible property. CMPT §4.3.15 calls represented non-ISA-interface entities virtual ISA components and requires network announcements/configuration/status/observation handling on their behalf. This strengthens the network-representation interpretation, not physical part-of, independent certificate ownership or direct ISA connectivity.",
+      "boundary": "Composition is an integration collection, not necessarily a physical assembly. A visible member is announced, has declared capabilities and periodic status; a non-ISA member made visible is a virtual ISA component. Opaque does not mean its capabilities are absent. This is network representation, not independently verified physical provenance or the DMS laser Visible property. CMPT §4.3.15 calls represented non-ISA-interface entities virtual ISA components and requires network announcements/configuration/status/observation handling on their behalf. This strengthens the network-representation interpretation, not physical part-of, independent certificate ownership or direct ISA connectivity. Controller Requirements 6.0r4: When an announcer deregisters or loses connection, still-announced members receive DEVICE REMOVED network notices; this does not prove they were physically disconnected or destroyed.",
       "additional_ISA_interface_evidence": [
         "ICD-6.1",
         "ICD-8.0"
@@ -6240,7 +6255,11 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.1",
         "CMPT-4.3.15"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.11"
+      ],
+      "controller_source_review_boundary": "When an announcer deregisters or loses connection, still-announced members receive DEVICE REMOVED network notices; this does not prove they were physically disconnected or destroyed."
     },
     {
       "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
@@ -6278,7 +6297,7 @@
         "",
         "Connection-specific network participation lifecycle"
       ],
-      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation. CMPT distinguishes pre-operational integration, pre-participation discovery/time setup and participation behavior. Its client-side role is the connection initiator; startup connection need is conditional, and connection attempts are at least five seconds apart. M-0032/L-0083–0088 gate Request/Event/Administrative transmission and silently discard early arrivals until the connected peer’s initial Status is received. This initial-Status operational marker remains separately attributed from the SDD initial-Config transition. A permitted IPL data exchange is not automatic permission for every ISA message or proof of hardware readiness. CMPT §4.3.7 adds explicit NON RESPONSIVE and REVIVED recovery exchanges: selected Status within500ms and complete Config within30s. §4.3.16 separately requires resource cleanup and deregistration before leaving; connection termination remains source-qualified because M-0073 says should terminate after Registration Removed while L-0168 says the connection may close and may remain open. Recovery, deregistration and socket closure are not physical asset lifecycle states.",
+      "boundary": "The six phases describe ISA participation, not physical asset life, equipment health or command execution. Periodic Status supports communication availability; missing Status does not prove physical failure. Registration renewal, nonresponsive/revived handling, deregistration and connection termination remain distinct; a connection may remain open. Figures illustrate typical and atypical paths, not an invented complete implementation. CMPT distinguishes pre-operational integration, pre-participation discovery/time setup and participation behavior. Its client-side role is the connection initiator; startup connection need is conditional, and connection attempts are at least five seconds apart. M-0032/L-0083–0088 gate Request/Event/Administrative transmission and silently discard early arrivals until the connected peer’s initial Status is received. This initial-Status operational marker remains separately attributed from the SDD initial-Config transition. A permitted IPL data exchange is not automatic permission for every ISA message or proof of hardware readiness. CMPT §4.3.7 adds explicit NON RESPONSIVE and REVIVED recovery exchanges: selected Status within500ms and complete Config within30s. §4.3.16 separately requires resource cleanup and deregistration before leaving; connection termination remains source-qualified because M-0073 says should terminate after Registration Removed while L-0168 says the connection may close and may remain open. Recovery, deregistration and socket closure are not physical asset lifecycle states. Controller Requirements 6.0r4: Controller-specific initial Config/Status deadlines, NON RESPONSIVE/REVIVED, forced REMOVED and mandatory forced connection termination are distinct actor/trigger rules; do not erase differing mid-/low-level time anchors or Component Requirements should/may socket wording.",
       "additional_ISA_interface_evidence": [
         "ICD-3.0",
         "ICD-3.1",
@@ -6308,7 +6327,16 @@
         "CMPT-4.3.6",
         "CMPT-4.3.7",
         "CMPT-4.3.16"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.4",
+        "CNTR-5.5",
+        "CNTR-5.6",
+        "CNTR-5.10",
+        "CNTR-5.11",
+        "CNTR-5.12"
+      ],
+      "controller_source_review_boundary": "Controller-specific initial Config/Status deadlines, NON RESPONSIVE/REVIVED, forced REMOVED and mandatory forced connection termination are distinct actor/trigger rules; do not erase differing mid-/low-level time anchors or Component Requirements should/may socket wording."
     },
     {
       "row_id": "S06-R011",
@@ -12449,7 +12477,7 @@
         "",
         "Component capability and readiness report"
       ],
-      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts. CMPT requires initial Config within 30 seconds of ADDED. L-0058 includes the CCD and all false capability-state values; L-0061 includes the entire CCD when declarations change; L-0062 includes all false state values when states change and explicitly describes an empty state list when all states become true. This is not an arbitrary sparse patch rule or a universal Boolean default. Updates retain the source’s all-connected-components versus connected-Controller wording. Configuration updates have a 30-second send limit. M-0031 separately requires property changes after configuration-set changes; L-0082 ties its full reporting-true Status to an update Config containing a CCD, and L-0170 gives that full Status a 30-second limit. These source levels do not establish a full-Status trigger for every state-only update. On REVIVED, CMPT requires a complete configuration set and a Config send within30 seconds of the revival notification. This is recovery traffic, not evidence that configuration was accepted, deployed or physically realized.",
+      "boundary": "Declarations and readiness/reporting states remain distinct from current Status values and performed work. ICD7.3 says a modifiable property is marked mutable in the CCD; clearing it makes it Not Ready,and not-ready properties must be Not Reporting and absent from Status. The DMS Clear Property precondition remains a value previously supplied through Set Property; its null-value consequence is retained. This does not establish deletion of historical data or physical absence. IPL3 declaration representations do not change the saved DMS declaration contracts. CMPT requires initial Config within 30 seconds of ADDED. L-0058 includes the CCD and all false capability-state values; L-0061 includes the entire CCD when declarations change; L-0062 includes all false state values when states change and explicitly describes an empty state list when all states become true. This is not an arbitrary sparse patch rule or a universal Boolean default. Updates retain the source’s all-connected-components versus connected-Controller wording. Configuration updates have a 30-second send limit. M-0031 separately requires property changes after configuration-set changes; L-0082 ties its full reporting-true Status to an update Config containing a CCD, and L-0170 gives that full Status a 30-second limit. These source levels do not establish a full-Status trigger for every state-only update. On REVIVED, CMPT requires a complete configuration set and a Config send within30 seconds of the revival notification. This is recovery traffic, not evidence that configuration was accepted, deployed or physically realized. Controller Requirements 6.0r4: Controller initial Config mid-level received-first-Config and low-level outbound ADDED trigger wordings differ; updated Config carries only configuration-set changes, not Status property values.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-375",
         "ISA-TYPE-428",
@@ -12472,7 +12500,11 @@
         "CMPT-4.3.4",
         "CMPT-1.2",
         "CMPT-4.3.7"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.5"
+      ],
+      "controller_source_review_boundary": "Controller initial Config mid-level received-first-Config and low-level outbound ADDED trigger wordings differ; updated Config carries only configuration-set changes, not Status property values."
     },
     {
       "row_id": "ISA-T-STATUS",
@@ -12505,7 +12537,7 @@
         "",
         "Component property-value report"
       ],
-      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged. CMPT initial Status includes every ready-and-reporting property and is due within 30 seconds of sending initial Config. Periodic Status includes all and only changed ready-and-reporting property values; a never-reported value is treated as changed. L-0093’s 500 ms response is conditional on a reporting-true property change after no periodic Status within the Minimum Status Interval, not a universal period. L-0082’s CCD-update Status instead says every reporting-true property; preserve that qualification difference. The saved Get Status command separately retrieves declared ready properties even when reporting is disabled. M-0037’s explanatory Note says these interval restrictions apply only to Status publication; the ICD separately reuses the named interval properties for command-response cadence. CMPT non-responsiveness recovery uses a500ms Status response. Higher-level text says full status, while L-0100 explicitly selects declared properties with ready=true and reporting=true; retain that source-level wording difference instead of silently broadening the message to every declared property.",
+      "boundary": "Distinct from a Get Status request, Config states and Event observables. ICD 6.5 gives general Status publication bounds through Minimum/Maximum Status Interval and contextual significant change. The saved DMS Threshold Declaration also specifies threshold publication regardless of status interval; retain both source statements without inventing precedence. IPL3 encodes standard properties as optional typed fields and custom properties through the named-value structure; list presence is separate from list contents. The DMS Status.properties list remains unchanged. CMPT initial Status includes every ready-and-reporting property and is due within 30 seconds of sending initial Config. Periodic Status includes all and only changed ready-and-reporting property values; a never-reported value is treated as changed. L-0093’s 500 ms response is conditional on a reporting-true property change after no periodic Status within the Minimum Status Interval, not a universal period. L-0082’s CCD-update Status instead says every reporting-true property; preserve that qualification difference. The saved Get Status command separately retrieves declared ready properties even when reporting is disabled. M-0037’s explanatory Note says these interval restrictions apply only to Status publication; the ICD separately reuses the named interval properties for command-response cadence. CMPT non-responsiveness recovery uses a500ms Status response. Higher-level text says full status, while L-0100 explicitly selects declared properties with ready=true and reporting=true; retain that source-level wording difference instead of silently broadening the message to every declared property. Controller Requirements 6.0r4: Initial Status mid-level and low-level triggers differ and have bounded timing; later Status carries changes only. Missed Status drives configurable network availability monitoring, not verified hardware failure.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.1",
         "SDD-6.3.1",
@@ -12527,7 +12559,13 @@
         "CMPT-1.2",
         "CMPT-4.3.5",
         "CMPT-4.3.7"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.5",
+        "CNTR-5.6",
+        "CNTR-5.10"
+      ],
+      "controller_source_review_boundary": "Initial Status mid-level and low-level triggers differ and have bounded timing; later Status carries changes only. Missed Status drives configurable network availability monitoring, not verified hardware failure."
     },
     {
       "row_id": "ISA-T-REGISTRATION",
@@ -12560,7 +12598,7 @@
         "",
         "Registration message and credential data"
       ],
-      "boundary": "Registration.credentials is application-message data; it is distinct from the TLS certificate required by the ICD connection rules and the Certificate Guide trust/usage context. The saved DMS fields specify no automatic registration success or particular credential scheme. Possessing a certificate does not by itself establish a permitted command,successful registration or verified deployment security. CMPT-M-0018/L-0054 sends REQUEST ADD after successful format negotiation/Handshake Complete. M-0019 places the 30-second submission limit after successful negotiation; L-0055 says after establishing a connection. The connected-state Note and both anchors remain literal, without an invented reconciliation or a 30-second guarantee of successful admission.",
+      "boundary": "Registration.credentials is application-message data; it is distinct from the TLS certificate required by the ICD connection rules and the Certificate Guide trust/usage context. The saved DMS fields specify no automatic registration success or particular credential scheme. Possessing a certificate does not by itself establish a permitted command,successful registration or verified deployment security. CMPT-M-0018/L-0054 sends REQUEST ADD after successful format negotiation/Handshake Complete. M-0019 places the 30-second submission limit after successful negotiation; L-0055 says after establishing a connection. The connected-state Note and both anchors remain literal, without an invented reconciliation or a 30-second guarantee of successful admission. Controller Requirements 6.0r4: Controller responds with ERROR/ADDED after distinct authentication/authorization conditions within its 30-second limit, and REMOVED under separate deregistration rules; these are not physical equipment transitions.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-353"
       ],
@@ -12584,7 +12622,12 @@
         "CMPT-4.1.2",
         "CMPT-4.3.4",
         "CMPT-4.3.5"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.4",
+        "CNTR-5.11"
+      ],
+      "controller_source_review_boundary": "Controller responds with ERROR/ADDED after distinct authentication/authorization conditions within its 30-second limit, and REMOVED under separate deregistration rules; these are not physical equipment transitions."
     },
     {
       "row_id": "ISA-T-REQUEST-REFERENCE",
@@ -12619,7 +12662,7 @@
         "",
         "Command request identity and response reference"
       ],
-      "boundary": "ICD6.7.1 explicitly requires Response.reference to equal the command Request ID and the Envelope To field to address the caller. The preserved DMS309 text says Identifier of the Request message without naming request id; retain that source-specific wording and the separate Request.identifier field. No invented identifier equality,conversion or executed exchange is claimed. CMPT-L-0144 repeats the explicit Response.reference=Request ID rule. Request uniqueness is the source UCI + request ID + time combination. These requirements reinforce correlation without collapsing Request.identifier, request id and message identity.",
+      "boundary": "ICD6.7.1 explicitly requires Response.reference to equal the command Request ID and the Envelope To field to address the caller. The preserved DMS309 text says Identifier of the Request message without naming request id; retain that source-specific wording and the separate Request.identifier field. No invented identifier equality,conversion or executed exchange is claimed. CMPT-L-0144 repeats the explicit Response.reference=Request ID rule. Request uniqueness is the source UCI + request ID + time combination. These requirements reinforce correlation without collapsing Request.identifier, request id and message identity. Controller Requirements 6.0r4: The Controller forwards the Request to the cited performer or generates a PERMISSION DENIED Response. Previous DMS/ICD Request and Response reference semantics remain separately attributed.",
       "additional_ISA_architecture_evidence": [
         "SDD-6.3.1",
         "SDD-6.3.3"
@@ -12632,7 +12675,11 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.13",
         "CMPT-4.3.14"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.8"
+      ],
+      "controller_source_review_boundary": "The Controller forwards the Request to the cited performer or generates a PERMISSION DENIED Response. Previous DMS/ICD Request and Response reference semantics remain separately attributed."
     },
     {
       "row_id": "ISA-T-ACCESS",
@@ -12778,10 +12825,14 @@
         "",
         "Current command execution record"
       ],
-      "boundary": "Not a capability declaration, readiness flag, request submission or proof of final success. CMPT distinguishes validation error, FAILED decline, BUSY, QUEUED, IN PROGRESS, SUCCESS and execution failure. Near-real-time initial response is due within200ms; non-real-time and queued/long-running response cadence reuse the performing component's status-interval properties. Response state remains evidence of command processing, not proof of a measured physical effect.",
+      "boundary": "Not a capability declaration, readiness flag, request submission or proof of final success. CMPT distinguishes validation error, FAILED decline, BUSY, QUEUED, IN PROGRESS, SUCCESS and execution failure. Near-real-time initial response is due within200ms; non-real-time and queued/long-running response cadence reuse the performing component's status-interval properties. Response state remains evidence of command processing, not proof of a measured physical effect. Controller Requirements 6.0r4: Controller authorization checking, PERMISSION DENIED Response and forwarding the authorized Request to the performer do not establish execution or independently confirmed physical effect.",
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.13"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.8"
+      ],
+      "controller_source_review_boundary": "Controller authorization checking, PERMISSION DENIED Response and forwarding the authorized Request to the performer do not establish execution or independently confirmed physical effect."
     },
     {
       "row_id": "ISA-Q-QUERY",
@@ -13126,7 +13177,7 @@
         "",
         "Subscription identity and query definition"
       ],
-      "boundary": "All five fields across the two structures are required single values. The identifier is not just a label or number. Keep subscription description distinct from Add/Remove Subscription requests and from evidence that delivery actually occurred. CMPT Add Subscription requests carry desired filters and a locally unique name; Remove Subscription cites the subscription ID and the Live Data Service instance where the subscription was created. Recommended Live Data Service use is should. Definition, command exchange and delivered subscription data remain distinct.",
+      "boundary": "All five fields across the two structures are required single values. The identifier is not just a label or number. Keep subscription description distinct from Add/Remove Subscription requests and from evidence that delivery actually occurred. CMPT Add Subscription requests carry desired filters and a locally unique name; Remove Subscription cites the subscription ID and the Live Data Service instance where the subscription was created. Recommended Live Data Service use is should. Definition, command exchange and delivered subscription data remain distinct. Controller Requirements 6.0r4: Controller notification 'for distribution to subscribers' does not redefine subscription identity, prove receipt or assert permanent source-record deletion.",
       "additional_ISA_architecture_evidence": [
         "SDD-5.1.3",
         "SDD-6.3.3"
@@ -13136,7 +13187,13 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.10"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.4",
+        "CNTR-5.10",
+        "CNTR-5.11"
+      ],
+      "controller_source_review_boundary": "Controller notification 'for distribution to subscribers' does not redefine subscription identity, prove receipt or assert permanent source-record deletion."
     },
     {
       "row_id": "ISA-Q-OPTIONS",
@@ -13323,7 +13380,7 @@
         "",
         "Service role and required command support"
       ],
-      "boundary": "Six DMS service definitions are not six mandatory Controller modules. SDD 4.2.1 requires each ISA 6.0 Controller to support all three core services, while support and activation are distinct; 5.0 separately describes typical hosting. Any component may provide optional services. Empty property/observable columns do not prohibit additional capabilities. Support, activation, provider selection, authorization, request, execution and achieved effects remain separate. CMPT service recommendations are conditional on needing a service. Set Live Data Service and Set Authorization Service support is likewise conditional; recommendation receipt does not prove activation, provider binding or successful service use.",
+      "boundary": "Six DMS service definitions are not six mandatory Controller modules. SDD 4.2.1 requires each ISA 6.0 Controller to support all three core services, while support and activation are distinct; 5.0 separately describes typical hosting. Any component may provide optional services. Empty property/observable columns do not prohibit additional capabilities. Support, activation, provider selection, authorization, request, execution and achieved effects remain separate. CMPT service recommendations are conditional on needing a service. Set Live Data Service and Set Authorization Service support is likewise conditional; recommendation receipt does not prove activation, provider binding or successful service use. Controller Requirements 6.0r4: Three mandatory Controller core services differ from best-available service recommendation, authorized Request forwarding and Event forwarding; none establishes actual provider acceptance or execution.",
       "additional_ISA_architecture_evidence": [
         "SDD-4.2.1",
         "SDD-5.0",
@@ -13342,7 +13399,14 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-1.2",
         "CMPT-4.3.8"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-4.0",
+        "CNTR-5.7",
+        "CNTR-5.8",
+        "CNTR-5.9"
+      ],
+      "controller_source_review_boundary": "Three mandatory Controller core services differ from best-available service recommendation, authorized Request forwarding and Event forwarding; none establishes actual provider acceptance or execution."
     },
     {
       "row_id": "ISA-A-CAPABILITY-GROUP",
@@ -13594,12 +13658,17 @@
         "",
         "Capability readiness and reporting selection"
       ],
-      "boundary": "CMPT-L-0072–0081 and their explanatory Notes distinguish command enablement from immediate availability, property maintenance/access on request from publication, and observable recording enablement from inclusion in Events. A ready command may still be busy. These states do not establish authorization, execution, an observed physical effect or a measured hardware-health condition. Config false-state-list rules are source-specific message semantics, not invented defaults for every required Boolean. Saved DMS Command/Property/Observable State definitions and their wording notes remain intact. Observation publication includes only ready-and-reporting observables. Command requests are limited to declared commands whose ready state is true, yet a ready command can still be temporarily unavailable, queued or BUSY. Reporting/readiness/request eligibility and immediate execution remain separate.",
+      "boundary": "CMPT-L-0072–0081 and their explanatory Notes distinguish command enablement from immediate availability, property maintenance/access on request from publication, and observable recording enablement from inclusion in Events. A ready command may still be busy. These states do not establish authorization, execution, an observed physical effect or a measured hardware-health condition. Config false-state-list rules are source-specific message semantics, not invented defaults for every required Boolean. Saved DMS Command/Property/Observable State definitions and their wording notes remain intact. Observation publication includes only ready-and-reporting observables. Command requests are limited to declared commands whose ready state is true, yet a ready command can still be temporarily unavailable, queued or BUSY. Reporting/readiness/request eligibility and immediate execution remain separate. Controller Requirements 6.0r4: Service recommendation depends on a received Config declaring the relevant Set ISA ... Service command. Capability declaration, current readiness, provider selection and successful service use remain distinct.",
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.11",
         "CMPT-4.3.13",
         "CMPT-4.3.14"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.5",
+        "CNTR-5.7"
+      ],
+      "controller_source_review_boundary": "Service recommendation depends on a received Config declaring the relevant Set ISA ... Service command. Capability declaration, current readiness, provider selection and successful service use remain distinct."
     },
     {
       "row_id": "S06-R021",
@@ -13934,7 +14003,7 @@
         "",
         "Administrative network and service notification"
       ],
-      "boundary": "Not a performed sensing observation; no extra Alarm ID field is introduced. CMPT announces virtual-component availability changes with DEVICE ADDED/DEVICE REMOVED and cites the virtual component as subject. The source leaves the determination of permanent unavailability to the interface between representative and virtual component.",
+      "boundary": "Not a performed sensing observation; no extra Alarm ID field is introduced. CMPT announces virtual-component availability changes with DEVICE ADDED/DEVICE REMOVED and cites the virtual component as subject. The source leaves the determination of permanent unavailability to the interface between representative and virtual component. Controller Requirements 6.0r4: Controller generates DEVICE ADDED/NON RESPONSIVE/REVIVED/REMOVED Administrative messages for distribution, but generation does not prove delivery, equipment health, removal, or historical deletion.",
       "additional_ISA_type_evidence": [
         "ISA-TYPE-337"
       ],
@@ -13951,7 +14020,13 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.5",
         "CMPT-4.3.15"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.4",
+        "CNTR-5.10",
+        "CNTR-5.11"
+      ],
+      "controller_source_review_boundary": "Controller generates DEVICE ADDED/NON RESPONSIVE/REVIVED/REMOVED Administrative messages for distribution, but generation does not prove delivery, equipment health, removal, or historical deletion."
     },
     {
       "row_id": "ISA-T-AUTHOR",
@@ -14296,7 +14371,7 @@
         "",
         "Negotiated message encoding and model version"
       ],
-      "boundary": "ICD6.0r5 supports IPL protocol version1 and lists Protocol Buffers/XML long and short forms plus0x05/0x01 Custom Java API encoding. Unsupported/deprecated format pairs and inconsistent printed examples retain their source standing. IPL3 transforms standard capabilities into dedicated declarations/fields/request types while custom content retains generic structures. Neither IPL Format3 nor its schema byte is protocol version3. No actual negotiation,schema-file validation or current security result is asserted. CMPT-L-0042/0043 requires all supported ICD formats in preference order; it adds no Controller selection rule. L-0048 requires the smallest suitable application-data wrapper, while the ICD describes best fit with should. L-0046/0051/0052 require the stated early-data, invalid-type and decode-failure errors. The Sensor CE Format 3 sentence is an explanatory Note, not a universal format mandate. Negotiation completion permits IPL data exchange subject to the later ISA participation restrictions.",
+      "boundary": "ICD6.0r5 supports IPL protocol version1 and lists Protocol Buffers/XML long and short forms plus0x05/0x01 Custom Java API encoding. Unsupported/deprecated format pairs and inconsistent printed examples retain their source standing. IPL3 transforms standard capabilities into dedicated declarations/fields/request types while custom content retains generic structures. Neither IPL Format3 nor its schema byte is protocol version3. No actual negotiation,schema-file validation or current security result is asserted. CMPT-L-0042/0043 requires all supported ICD formats in preference order; it adds no Controller selection rule. L-0048 requires the smallest suitable application-data wrapper, while the ICD describes best fit with should. L-0046/0051/0052 require the stated early-data, invalid-type and decode-failure errors. The Sensor CE Format 3 sentence is an explanatory Note, not a universal format mandate. Negotiation completion permits IPL data exchange subject to the later ISA participation restrictions. Controller Requirements 6.0r4: Controller selects a supported IPL format from the sorted offer and reports unsupported formats; the explicit may begin application exchange differs from a mandatory send. Preserve ICD edition boundaries.",
       "additional_ISA_interface_evidence": [
         "ICD-4.0",
         "ICD-4.1",
@@ -14325,7 +14400,11 @@
         "CMPT-4.3.2",
         "CMPT-1.1",
         "CMPT-2.0"
-      ]
+      ],
+      "controller_source_blocks": [
+        "CNTR-5.3"
+      ],
+      "controller_source_review_boundary": "Controller selects a supported IPL format from the sorted offer and reports unsupported formats; the explicit may begin application exchange differs from a mandatory send. Preserve ICD edition boundaries."
     },
     {
       "row_id": "ISA-R-LIST-PRESENCE",
@@ -20387,7 +20466,33 @@
     "componentRequirementsVerificationRows": 165,
     "componentRequirementsVerificationTableMissing": [
       "CMPT-L-0164"
-    ]
+    ],
+    "controllerRequirements": {
+      "state": "FIRST_AREA_SOURCE_REVIEW_COMPLETE",
+      "reviewedBlocks": 20,
+      "totalBlocks": 28,
+      "remainingBlocks": 8,
+      "requirementDefinitions": 108,
+      "nativeLevels": {
+        "H": 13,
+        "M": 33,
+        "L": 62
+      },
+      "modalities": {
+        "shall": 107,
+        "should": 0,
+        "may": 1
+      },
+      "qualifiedExistingRows": 15,
+      "newRows": 0,
+      "displayCellsChanged": 0,
+      "sourceEdition": "ISA Controller Requirements 6.0r4,31 October2023",
+      "sourceReview": "ISA18_Controller_First_Source_Review_08NOV2026.md",
+      "sourceDocumentFileId": "file_00000000e00082109d88d0119f744880",
+      "sourceImagesAvailable": false,
+      "sourceReviewScope": "§§1–5.12/PDF pages8–42; later §§6–8 and Appendices remain delivery19",
+      "noRuntimeOrConformanceClaim": true
+    }
   },
   "counts": {
     "columns": 14,
@@ -20443,7 +20548,7 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "Canonical master Markdown/CSV/JSON follows source decisions; Excel refreshed at substantial-section checkpoints. Never stage all new material outside the master until final approval.",
-  "currentEvidenceCheckpoint": "ISA-COMPONENT-REQUIREMENTS-FIRST",
+  "currentEvidenceCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-FIRST",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "MASTER-ISA-INTEGRATION",
@@ -20451,8 +20556,8 @@
     "information_rows": 253,
     "primary_reviewed": 226,
     "currently_matches_readable_view": false,
-    "lag": "Canonical text has329 information/review rows and the complete Component Requirements review,76 rows beyond the verified253-row workbook snapshot; documented ISA refinements are retained without a workbook rebuild.",
-    "textCheckpoint": "ISA-COMPONENT-REQUIREMENTS-REMAINING",
+    "lag": "Canonical text/JSON retain329 rows/480 primary DMS outcomes; delivery18 adds15 existing-candidate source-review boundary qualifications, not new displayed mapping cells. Excel remains a verified253-row/226-primary earlier snapshot.",
+    "textCheckpoint": "ISA-CONTROLLER-REQUIREMENTS-FIRST",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480
   }
