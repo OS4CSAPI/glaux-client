@@ -1,28 +1,16 @@
 # ISA correction mirror — canonical working master
 
-**8 November 2026 · Original ISA Step11 and cross-cutting requirements / accelerated delivery17 COMPLETE.** The remaining **13 Component Requirements blocks, §§4.3.7–4.3.16, §5.0 and Appendices A/B**, are reviewed. The two parent sections left open in delivery16 (§§4.0 and4.3) are reconciled; all **34 registered Component Requirements blocks** are now complete.
+**8 November 2026 · Accelerated ISA Delivery 18 — Controller Requirements first area reviewed and integrated.** The original ISA Controller Requirements 6.0r4 §§1.0–5.12 cover **20 of 28 registered blocks and108 native definitions (13 high-level,33 mid-level,62 low-level;107 shall/0 should/1 may)**. This inspection used original indexed PDF text on pages8–42; rendered source images were unavailable and no visual-page review is claimed. The remaining eight Controller source blocks (§§6–8, Appendices A/B) are reserved for Delivery19.
 
-**The current master remains329 information/review rows.** Delivery17 does not manufacture new model rows from behavioral/conformance requirements. Sixteen existing ISA candidates receive documented qualifications; no displayed ISA cell changes. All480 catalogue outcomes remain474 supported and six questions, and all non-ISA donor/case cells,58 donor records,73 case statements and original row-target dispositions remain preserved.
+**The canonical master still has329 information/review rows.** Fifteen existing ISA candidates gained source-backed boundary qualifications in the structured master; **no new rows or displayed ISA/donor/case cells changed**. The480 DMS primary outcomes remain474 supported/six questions; Component Requirements remain complete34/34; original correspondence4/31 and earlier findings1/25 await later scheduled reconciliation. **The Excel file is still the older verified253-row/226-primary snapshot** (76 fewer rows than the current master); do not describe it as updated.
 
-[Current structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [Current CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Cumulative requirements/companion evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [Completed datatype/query evidence](ISA_Type_Catalogue_Evidence_08NOV2026.json) · [Coverage](ISA_Coverage_Register_07NOV2026.json) · [Progress](ISA_Correction_Status_07NOV2026.json) · [PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Excel snapshot](Master_Donor_Concept_to_DIM_Crosswalk.xlsx).
+[Structured master](Master_Donor_Concept_to_DIM_Crosswalk.json) · [CSV mirror](Master_Donor_Concept_to_DIM_Crosswalk.csv) · [Original Controller source review](ISA18_Controller_First_Source_Review_08NOV2026.md) · [ISA current status](ISA_Correction_Status_07NOV2026.json) · [Current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [Execution plan](PLAN_ISA_Coverage_Correction_07NOV2026.md).
 
-## What the completed Component Requirements add
+## Main source findings
 
-**Recovery, participation and disconnect behavior stay separate from persistent system state.** NON RESPONSIVE recovery sends the source-selected Status within500ms; REVIVED sends a complete Config within30s. Deregistration, subscription/lock cleanup and connection closure remain distinct, including the source's should/may wording around socket termination.
+Controller §4.0 requires the three core services within one Controller instance, not one physical system for the whole network. §§5.1–5.3 name Zeroconf and secure TCP/SCTP/Mockets support in this edition and a sorted-offer IPL negotiation; retain those exact source boundaries alongside earlier ICD text. §5.4 checks the Registration UCI against certificate identity before separate authorization; §§5.5–5.6 contain differently anchored initial Config/Status requirements. §5.7's recommended provider is not a verified provider change; §5.8's authorized forwarded Request is not successful physical command execution. §§5.9–5.12 define Event forwarding, configurable missing-Status checks, DEVICE notifications, forced deregistration and Controller-side forced disconnect, not actual hardware failure or removal. The full source-level wording limitations are preserved in the linked review.
 
-**Observation publication, update and recall are explicit lineage semantics.** Event context can carry relevant changed property values without counting as a Status update. Event publication is due within500ms of observation, while Event.time remains occurrence time. Event Reference connects updates and recalls to prior Events; recall means cease using cited information, not erase source history.
-
-**Command readiness, immediate availability and response state remain distinct.** A declared ready command may still be BUSY or queued. QUEUED/IN PROGRESS responses have periodic cadence; SUCCESS/FAILED remain command-processing dispositions rather than proof of physical effect. Near-real-time initial response is due within200ms; non-real-time response uses the performing component's Minimum Status Interval.
-
-**Virtual components are network representations.** Another ISA component may announce, configure, report and command on behalf of a virtual ISA component and cite the virtual component as message source. The source gives execute-on-behalf, translate and forward as mediation forms. None establishes physical containment, direct ISA connectivity or a separate certificate.
-
-## Full Component Requirements coverage
-
-Across deliveries16–17 the document contains **259 native definitions:21H/72M/166L;242 shall/14 should/3 may**. Appendix A defines four verification-method categories and lists **165 mappings:145 Test and20 Inspection**. **CMPT-L-0164 is defined but absent from that table**, retained as a local source discrepancy with no invented method. Appendix B contains26 acronyms and contributes context only.
-
-The cumulative coverage-note register is now143. No new primary DMS question, donor/case mapping, owner adoption or runtime/conformance result is created. The Excel snapshot remains253 rows/226 primary outcomes; text/JSON/CSV remain329 rows/480 outcomes,76 rows ahead.
-
-**Next: delivery18 — Controller Requirements §§1–5 and communication-service subsections,20 registered blocks. Five central ISA deliveries remain, range three–seven.**
+**Next “proceed” executes Delivery19 only:** Controller §§6–8 and Appendices A/B. No cross-donor expansion, adoption, XLSX rebuild, Profile/UML or runtime change is authorized by this ISA source-review step.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="4">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>
