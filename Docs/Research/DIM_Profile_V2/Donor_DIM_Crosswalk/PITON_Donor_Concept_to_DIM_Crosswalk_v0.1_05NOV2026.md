@@ -1,3 +1,13 @@
+# CURRENT — Step17 SOSA-A original architecture audit complete; SOSA-B next (9 November 2026)
+
+<!-- CURRENT_SOSA_A_COMPLETE_09NOV2026 -->
+
+**Step17 remains IN PROGRESS. SOSA-A is COMPLETE as a bounded, original-C239 source-first audit.** The [original-source review](Step17_SOSA_A_C239_Architecture_Roles_Review_09NOV2026.md) and [20-concept/15-mapping/six-hold evidence ledger](Step17_SOSA_A_C239_Architecture_Roles_Evidence_09NOV2026.json) document the distinctions between the whole SOSA Sensor, physical Host Platform and Hardware Elements, logical SOSA Module, supporting Infrastructure, context-dependent Platform and non-prescriptive procurement units. Direct original source: The Open Group Edition 1.1 C239, `c239_5.pdf` (project Library file `file_00000000af4081f58c4bac329f85c58f`), selectively reviewed at §§2,4.1,5.1–5.3 and selected Appendix A—not all 403 pages. Fifteen source-qualified **potential** mappings touch seven existing master targets; six semantic/source leads remain held. **Zero canonical master cell/column/row changes, zero DIM/Profile adoption and zero new donor conformance claims**: actual integration remains SOSA-D. This is **The Open Group SOSA**, not the W3C SOSA/SSN column.
+
+**Only next owner “Proceed”: SOSA-B**, the bounded original C239 management/functions/services/state/tasking/power review (§§4.2–4.3,5.4,6–12 with pertinent glossary). SOSA-C original DSDM/IDL/API and edition review, then SOSA-D cumulative master integration remain separate; the previous initial-source-intake “SOSA-A NEXT” instructions below are historical. No unapproved subdivision, automatic new chassis or premature source-complete claim.
+
+## Historical checkpoint text — use the current header above for routing
+
 # CURRENT — Step17 The Open Group SOSA source intake completed; conceptual audit pending
 
 <!-- STEP17_SOSA_SOURCE_INTAKE_09NOV2026 -->

@@ -1,0 +1,57 @@
+# Step 17 / SOSA-A — original C239 architecture, physical versus logical role audit
+
+**9 November 2026 · SOSA-A COMPLETE at bounded original-source review scope; overall Step17 IN PROGRESS.** This is the first substantive follow-on to [the 12-artifact source intake](Step17_SOSA_Source_Intake_and_Bounded_Assessment_09NOV2026.md). The source is *Technical Standard for SOSA Reference Architecture, Edition 1.1* (The Open Group document **C239**, June 2023 with September erratum), original accessible `c239_5.pdf`, 403 PDF pages, project Library file `file_00000000af4081f58c4bac329f85c58f`. Exact original interpretations and **20 source-native records, 15 qualified correspondence decisions, six held leads** are preserved in the [structured original-clause evidence](Step17_SOSA_A_C239_Architecture_Roles_Evidence_09NOV2026.json). This pass has **zero new/changed canonical master cells or DIM adoptions**; the scoped source findings are staged for SOSA-D integration, after the remaining original donor sections are evaluated.
+
+## 1. Method, evidence and source grades
+
+Original C239 §§2.1.1–2.1.2, 4.1–4.1.1.4, 5.1–5.3 and selected Appendix A integrated-dictionary entries were inspected directly at printed pp. 8–9, 20–22, 29–32 and 358–363 (PDF pp. 34–35, 46–48, 55–58 and 384–389). **Figure 4.1-1** at actual PDF p.46 was visually inspected; the §4.1.1.4 pod-special-case and §5.1 taxonomy diagrams were examined through original source text/figure context, not credited as independent full-resolution visual checks. The first part of §5.4 is merely a transition into the **future SOSA-B management scope**, not counted as a completed substantive source review for that section. The original 403-page reference, the separately attached normative SOSA DSDM/IDL, and six OpenAPI companions have **not** been exhaustively audited in this pass.
+
+C239 §2.1.2 distinguishes numbered mandatory **Rules** from recommendations, optional permissions, observations and ordinary descriptive passages. Source vocabulary and diagrams below are treated as **original-source-checked definitions**, not converted into newly invented mandatory SOSA SHALL requirements or mandatory DIM classes. The preceding analysis of this donor is distinct from the **W3C Semantic Sensor Network SOSA/SSN ontology** already shown in the foundational crosswalk column. The 2025 Edition 2.0 Snapshot 3, earlier Edition 1.0 and any 2022 S221 snapshot are **not** silently substituted for C239.
+
+## 2. Source-native distinctions with consequences for the DIM
+
+| Native SOSA subject | Exact original C239 locator | What the original source actually establishes | What it must not imply |
+| --- | --- | --- | --- |
+| **SOSA sensor** | §4.1.1.1 p.21 / PDF47; Appendix A 'Sensor' p.362 / PDF388 | One SOSA sensor comprises hardware elements, may contain software and may support multiple modalities | Not one universal mandatory DIM superclass, one equipment model, or proof a referenced unit is installed |
+| **SOSA hardware element** | §4.1.1.2 p.21 / PDF47; Appendix A p.359 / PDF385 | Physical member of SOSA sensor (e.g. aperture/enclosure), possibly containing software or firmware | Not the same as every logical component/module or a demonstrated complete real parts list |
+| **SOSA host platform** | §4.1.1.3 pp.21–22 / PDF47–48 | A separate physical host (vehicle, structure, pod or combination) may support sensor power, cooling, navigation and connections | Not the individual probe's surveyed coordinates or its physical observer identity |
+| **SOSA sensor pod** | §4.1.1.4 p.22 / PDF48; Fig.4.1-2 p.21 / PDF47 | Pod can be integral to the delivered sensor while interacting with a separate host arrangement | Not automatically only an external host, universally installed element or separate sensor |
+| **External/internal interface** | §4.1 p.20 / PDF46; Fig.4.1-1 | Different interfaces cross the sensor boundary or remain inside it; physical and logical viewpoints differ | Not proof of external cabled auxiliary equipment, physical part-of or a CSAPI data stream |
+| **Sensor component taxonomy** | §5.1 p.29 / PDF55; Fig.5.1-1 | Umbrella for function-bearing **Modules** and their supporting **Infrastructure** | 'Component' is not automatically a physical equipment constituent |
+| **SOSA Module** | §§5.1–5.3 pp.29–32 / PDF55–58; App.A 'Module' p.360 / PDF386 | Distinct logical function/interfaces; realization can be software, a PIC, other hardware, container or VM | Neither one logical module per board nor one module per purchased unit nor proof of network-visible individual |
+| **SOSA Infrastructure** | §5.1 pp.29–30 / PDF55–56 | Hardware, run-time environment and interaction infrastructure are distinguishable execution supports | Not one universal chassis or physical station |
+| **PIC, aperture, chassis and power supply** | §§4.1.1.2,5.1 pp.21,29–30 / PDF47,55–56 | SOSA-specific hardware and interface examples | Not mandatory elements for every external sensing system (e.g. low-power environmental probes) |
+| **Runtime versus interaction infrastructure** | §5.1 p.30 / PDF56 | OS/container/hypervisor functions differ from APIs/interaction bindings | Neither equals a physical host platform, observation performer or mounting relationship |
+| **Procurable unit** | §5.3 pp.31–32 / PDF57–58 | Actual products may combine several modules and infrastructure elements; taxonomy does not dictate implementation/procurement pattern | Not equivalent to a unique physical unit, product model label or fixed cardinality |
+| **Platform (general dictionary)** | App.A p.361 / PDF387 | Ambiguous among device, physical host and computing infrastructure unless qualified | Do not automatically map generic 'Platform' to physical station or W3C `sosa:Platform` |
+| **System and Subsystem** | App.A p.363 / PDF389 | General capability-related group can be a system or subsystem depending on context | Does not dictate one hardwired physical containment tree or one mandatory sensing System root |
+
+The most consequential sourced distinction is **logical module versus physical element**. The original §5.3 expressly avoids prescribing a one-to-one implementation or procurement pattern, and it permits multiple logical modules within one implemented unit. Therefore a row called *Physical constituent* should not receive an **exact** mapping from SOSA Module merely because both describe part of a sensor. It may instead require a distinct functional-role information concept in later cross-donor analysis, but such a new DIM row is **not adopted by this pass**.
+
+## 3. Qualified original-source-to-current-row comparisons
+
+The [structured evidence ledger](Step17_SOSA_A_C239_Architecture_Roles_Evidence_09NOV2026.json) records 15 individually identified source correspondences touching **seven existing working-master row IDs**. Their relations are explicitly bounded: `PARTIAL`, `BROADER`, `NARROWER`, `RELATED_BUT_DIFFERENT`, `UNRESOLVED_CONTEXT`, and `NO_ESTABLISHED_MAPPING_IN_INSPECTED_SCOPE`. None is a formal OWL equivalence, authorized DIM content decision or completed SOSA conformance test.
+
+| Existing candidate topic | Source-backed assessment | Boundary to preserve |
+| --- | --- | --- |
+| **S06-R005 — described sensing System** | SOSA Sensor is **PARTIAL** correspondence; general SOSA System is **BROADER** | Whole sensing system is not every implementation pattern or universal root |
+| **S06-R007 — physical constituent** | SOSA Hardware Element/PIC/aperture/chassis are **NARROWER** physical examples; logical Module/generic Element are only **RELATED** | Function does not establish a distinct physical installed unit |
+| **S06-R009 — hosting platform/station** | SOSA Host Platform is **NARROWER** physical support; generic Platform and RTE remain ambiguous or related but different | Software host, station survey point and mounted sensor must remain distinguishable |
+| **S06-R008 — connected external equipment** | Sensor-boundary interface is **RELATED**, not necessarily an external connected instrument | Connection semantics do not prove cabling or physical membership |
+| **S06-R006 — network-visible participant** | Interaction infrastructure/Module have **no established direct participant identity** in the inspected source clauses | No automatic network UCI, registered node or CSAPI resource |
+| **S06-R002 — product model designation** | SOSA procurable grouping is **RELATED**, not a model designation or individual manufacturer serial | Do not equate an implementation unit to logical module cardinality |
+| **ISA-A-MEMBER-EXPOSURE — CIC member exposure** | C239 module/interaction decomposition yields **no established matching ISA CIC exposure semantics** in this bounded scope | Do not import ISA visible/opaque/virtual-component rules into The Open Group SOSA |
+
+**Six held leads** remain separately accountable: functional Module as a candidate functional role; Infrastructure's three-way support distinction; integral Sensor Pod versus physical host; no one-to-one Module/implementation pattern; context-dependent Platform; and actual DSDM/IDL/management OpenAPI and S251 review reserved for SOSA-C. These are leads and negative-mapping tests—not six newly invented DIM classes.
+
+## 4. Original four-case empirical safeguards
+
+**Dragino S31-LB** is a manufacturer reference showing a node and external SHT31 cable; its original source does not certify any SOSA element or prove a particular installed unit. **AirGradient Open Air Max** has two documented physical PMS5003 hardware modules at named sockets, while the particulate fields are reported properties rather than three physical sensors. Neither example establishes that SOSA's PIC, chassis, aperture or RTE roles are mandatory for the DIM.
+
+**Campbell CR1000X and first-generation ClimaVue 50** are separate reference product kinds with a source-possible SDI-12 link, not a proven joined SOSA sensor assembly. **Bennett's Point** is a real historical station with a station position, dated equipment role evidence and two original NOAA means; its physical host/station reference is not a surveyed point for each probe, and the four project API copies are not four original performed observations. No C239 module identification, physical part count or source-original observation time is inferred for any of the four cases.
+
+## 5. Completion and next scoped task
+
+**SOSA-A status: COMPLETE at assigned original C239 §§2,4.1,5.1–5.3/App.A role-comparison depth.** It produced **20 original-source native concept records, 15 qualified candidate mappings, six retained leads**, and no new/revised canonical master row/cell/column, DOM class, Profile rule or ISA source disposition. Current master remains **329 information rows, 14 columns, 58 historical other-donor mappings and 73 case facts**, untouched by source staging; master incorporation and workbook refresh remain explicitly reserved for SOSA-D after further original-source work.
+
+**Next owner “Proceed” executes SOSA-B only:** original C239 §4.2–4.3, §5.4, §§6–12 and the relevant Appendix A definitions for sensor management, modes, states/status, tasking, services, health, power and source attribution, at bounded source-to-row evidence scope. Preserve source descriptions whose modules are not yet defined in Edition 1.1 as **descriptive**, not a fabricated normative interface or full source-conformance proof. SOSA-C and SOSA-D remain later, separate iterations; no automatic advancement, new source-absent conclusion, or full 403-page audit is claimed.

@@ -1,0 +1,523 @@
+{
+  "schema": "sosa-a.source-first-architecture.v0.1",
+  "date": "2026-11-09",
+  "repository": "OS4CSAPI/glaux-client",
+  "branch": "research/dim-profile-v2",
+  "donor": "The Open Group Sensor Open Systems Architecture (SOSA), not W3C SOSA/SSN",
+  "source": {
+    "owner": "The Open Group",
+    "title": "Technical Standard for SOSA Reference Architecture",
+    "edition": "1.1",
+    "document_no": "C239",
+    "issued": "June 2023",
+    "erratum": "September 2023",
+    "original_pdf_name": "c239_5.pdf",
+    "original_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "pages": 403,
+    "source_scope": "§2.1.1–2.1.2, §4.1–4.1.1.4, §5.1–5.3 and selected Appendix A original definitions; only source text pages needed for these topics, not full 403-page audit",
+    "pdf_page_numbers": [
+      34,
+      35,
+      46,
+      47,
+      48,
+      55,
+      56,
+      57,
+      58,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389
+    ],
+    "source_status": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED",
+    "illustrations": "Figure 4.1-1 original image inspected; Figure 5.1-1 and Figure 4.1-2 source text/figure context read but no independent high-resolution visual check claimed"
+  },
+  "baseline": {
+    "master_rows": 329,
+    "master_columns": 14,
+    "case_facts": 73,
+    "prior_other_donor_evidence": 58,
+    "master_json_blob": "60843bf874c899c497900b062cd8dec4e7e29c89"
+  },
+  "counts": {
+    "native_source_records": 20,
+    "scoped_proposed_crosswalk_decisions": 15,
+    "source_leads_or_holds": 6,
+    "distinct_existing_targets": 7,
+    "committed_master_cell_edits": 0,
+    "committed_master_new_rows": 0,
+    "adopted_DIM_elements": 0,
+    "other_donor_reviews_in_scope": 0
+  },
+  "source_records": [
+    {
+      "id": "SOSA-C239-A-01",
+      "term": "SOSA Sensor",
+      "locator": "§4.1.1.1, printed p.21 / PDF p.47; App. A 'Sensor', printed p.362 / PDF p.388",
+      "original_meaning_paraphrase": "Bounded sensing system with one or more hardware elements, potentially containing software; described SOSA sensor modalities include communications, EO/IR, EW, radar and SIGINT.",
+      "non_equivalence_limit": "Not identical to every generic CSAPI System, SensorML PhysicalSystem or installed individual sensor; no mandatory DIM superclass.",
+      "role": "WHOLE_SENSOR",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-02",
+      "term": "SOSA Hardware Element",
+      "locator": "§4.1.1.2, printed p.21 / PDF p.47; App. A 'Hardware Element', printed p.359 / PDF p.385",
+      "original_meaning_paraphrase": "Physical element of the SOSA sensor, possibly distributed on or in its host and capable of containing software or firmware; aperture and enclosure examples.",
+      "non_equivalence_limit": "Physical SOSA hardware excludes purely logical modules; a reference design does not prove actual assembled inventory.",
+      "role": "PHYSICAL_ELEMENT",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-03",
+      "term": "SOSA Host Platform",
+      "locator": "§4.1.1.3, printed pp.21–22 / PDF pp.47–48",
+      "original_meaning_paraphrase": "Physical entity supporting/mounting a SOSA sensor; may be vehicle, structure, pod or combination and may provide power, cooling, navigation, time, signals and communications.",
+      "non_equivalence_limit": "Host platform is not necessarily one probe's surveyed point, observation performer, platform owner or software runtime.",
+      "role": "PHYSICAL_HOST",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-04",
+      "term": "SOSA Sensor Pod",
+      "locator": "§4.1.1.4, printed p.22 / PDF p.48; Figure 4.1-2, printed p.21 / PDF p.47; App. A 'Pod', printed p.361 / PDF p.387",
+      "original_meaning_paraphrase": "Pod delivered as integral part of a sensor and carrying elements from one or more SOSA sensors; separate figure illustrates a pod-on-platform special case.",
+      "non_equivalence_limit": "Not every pod is merely an external host; integral-to-sensor and physical hosting can overlap by configuration.",
+      "role": "PHYSICAL_ARRANGEMENT",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-05",
+      "term": "SOSA External Interface",
+      "locator": "§4.1, printed p.20 / PDF p.46; Figure 4.1-1",
+      "original_meaning_paraphrase": "Interface crossing SOSA sensor boundary, including the sensing aperture's environment-facing role and host-facing interfaces.",
+      "non_equivalence_limit": "Boundary crossing alone does not prove an external instrument, physical probe cable, CSAPI connection or data endpoint.",
+      "role": "BOUNDARY_INTERFACE",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-06",
+      "term": "SOSA Internal Interface",
+      "locator": "§4.1, printed p.20 / PDF p.46; Figure 4.1-1",
+      "original_meaning_paraphrase": "Physical/context interface contained within the SOSA sensor boundary; other SOSA views address logical message relationships.",
+      "non_equivalence_limit": "Internal interface is not synonymous with physically attached component, containment hierarchy or network-visible node.",
+      "role": "BOUNDARY_INTERFACE",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-07",
+      "term": "SOSA Sensor Component",
+      "locator": "§5.1, printed p.29 / PDF p.55; Figure 5.1-1",
+      "original_meaning_paraphrase": "Umbrella for logical modules implementing functions and infrastructure supporting their implementation, with possible hardware, firmware and software realizations.",
+      "non_equivalence_limit": "The word component is not sufficient to assert physical part-of, an equipment individual or a universal DIM class root.",
+      "role": "ARCHITECTURAL_UMBRELLA",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-08",
+      "term": "SOSA Module",
+      "locator": "§§5.1–5.3, printed pp.29–32 / PDF pp.55–58; App. A 'Module', printed p.360 / PDF p.386",
+      "original_meaning_paraphrase": "Logical architectural building block specifying functional behavior and interfaces, with implementation through hardware or software infrastructure; designed for independent replaceability.",
+      "non_equivalence_limit": "One logical module need not be one physical device, one purchased unit, one runtime process or an independent observer.",
+      "role": "LOGICAL_FUNCTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-09",
+      "term": "SOSA Infrastructure",
+      "locator": "§5.1, printed pp.29–30 / PDF pp.55–56; Figure 5.1-1",
+      "original_meaning_paraphrase": "Architecture support grouped as hardware elements, software runtime environments and interaction infrastructure.",
+      "non_equivalence_limit": "Three distinct support categories are not one physical chassis, not automatically a site, and not necessarily one procured element.",
+      "role": "EXECUTION_SUPPORT",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-10",
+      "term": "SOSA Plug-In Card (PIC)",
+      "locator": "§§4.1.1.2,5.1, printed pp.21,29–30 / PDF pp.47,55–56; App. A 'Plug-In Card', printed p.361 / PDF p.387",
+      "original_meaning_paraphrase": "Hardware card with a backplane interface; SOSA-specific PIC conforms to a defined SOSA slot profile.",
+      "non_equivalence_limit": "Card count is not count of sensors or functional modules; PIC profile does not apply to every environmental instrument.",
+      "role": "PHYSICAL_HARDWARE_SUBTYPE",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-11",
+      "term": "Aperture / enclosure / chassis / power supply",
+      "locator": "§§4.1.1.2,5.1, printed pp.21,29–30 / PDF pp.47,55–56; Figure 5.1-1",
+      "original_meaning_paraphrase": "Hardware element examples include electromagnetic aperture, chassis/enclosure and power-supply infrastructure.",
+      "non_equivalence_limit": "An enclosure or backplane is not the mandatory root of a sensing System, and the source makes no claim that all sensing equipment must use SOSA chassis.",
+      "role": "PHYSICAL_HARDWARE_SUBTYPES",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-12",
+      "term": "SOSA Run-Time Environment (RTE)",
+      "locator": "§5.1, printed p.30 / PDF p.56; Figure 5.1-1",
+      "original_meaning_paraphrase": "Execution support for SOSA software through operating-system processes, container engines or hypervisors.",
+      "non_equivalence_limit": "A software execution environment is not the vehicle/structure SOSA Host Platform or a physical constituent by itself.",
+      "role": "SOFTWARE_EXECUTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-13",
+      "term": "SOSA Interaction Infrastructure",
+      "locator": "§5.1, printed p.30 / PDF p.56; App. A 'Interaction' / 'Interface', printed p.360 / PDF p.386",
+      "original_meaning_paraphrase": "Supporting communication mechanisms with transport APIs and interaction bindings; modules exchange data/signals across defined interfaces.",
+      "non_equivalence_limit": "An interface or message transport is not physical attachment, a probe connector, completed observation or CSAPI data binding.",
+      "role": "INFORMATION_INTERACTION",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-14",
+      "term": "SOSA Procurable Unit",
+      "locator": "§5.3, printed pp.31–32 / PDF pp.57–58",
+      "original_meaning_paraphrase": "Implementation/procurement grouping that can combine any suitable number of logical modules and infrastructure elements while meeting interface boundary requirements.",
+      "non_equivalence_limit": "Taxonomy explicitly stops short of defining purchasing/implementation patterns; a procured product does not imply one module, component, sensor or product-model identifier.",
+      "role": "IMPLEMENTED_PRODUCT_GROUPING",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-15",
+      "term": "Context-specific Platform",
+      "locator": "App. A 'Platform', printed p.361 / PDF p.387",
+      "original_meaning_paraphrase": "Term changes meaning with context among device/sensing environment, physical vehicle/host and computing infrastructure; source requires qualifying context.",
+      "non_equivalence_limit": "Unqualified Platform is ambiguous; never infer it specifically means host vehicle, physical station or W3C sosa:Platform.",
+      "role": "POLYSEMOUS_TERM",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-16",
+      "term": "Generic System / Subsystem",
+      "locator": "App. A 'System' / 'Subsystem', printed p.363 / PDF p.389",
+      "original_meaning_paraphrase": "System is cooperating group of elements producing useful capability; one system can be a subsystem relative to another.",
+      "non_equivalence_limit": "Generic system nesting does not identify particular manufactured sensor instance or prove that all containment is physical.",
+      "role": "GENERAL_SYSTEM",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-17",
+      "term": "Generic Element",
+      "locator": "App. A 'Element', printed p.359 / PDF p.385",
+      "original_meaning_paraphrase": "Basic hardware, software or logical constituent of a system or subsystem.",
+      "non_equivalence_limit": "Generic element is broader than physical hardware, and not automatically a distinct equipment unit.",
+      "role": "GENERAL_ELEMENT",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-18",
+      "term": "SOSA Sensor modality classification",
+      "locator": "§§4.1.1.1,5.1, printed pp.21,29 / PDF pp.47,55",
+      "original_meaning_paraphrase": "Sensor may belong to communications, EO/IR, EW, radar or SIGINT categories or combinations; scope of this SOSA architecture.",
+      "non_equivalence_limit": "Modality category is not count of actual instruments, inferred observation properties or an imposed DIM classification hierarchy.",
+      "role": "SENSOR_CLASSIFICATION",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-19",
+      "term": "SOSA Rule / Recommendation / Permission / description standing",
+      "locator": "§2.1.1–2.1.2, printed pp.8–9 / PDF pp.34–35",
+      "original_meaning_paraphrase": "Rules are mandatory for conformance where explicitly designated; Recommendations, Permissions and descriptive text have different standing.",
+      "non_equivalence_limit": "Descriptive definitions/figures read here are not transformed into invented blanket SHALLs; no conformance testing is performed.",
+      "role": "SOURCE_NORMATIVITY",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    },
+    {
+      "id": "SOSA-C239-A-20",
+      "term": "Sensor physical mounting versus logical relations",
+      "locator": "§4.1 and Figures 4.1-1/4.1-2, printed pp.20–21 / PDF pp.46–47",
+      "original_meaning_paraphrase": "Physical views show sensor elements on host/pod and distinguish physical connections from cross-sensor logical relationships; rendered elements are exemplary and optional.",
+      "non_equivalence_limit": "Physical drawing edges are not proof of actual case deployment, assigned probe coordinates, every member physically integrated or digital interface identity.",
+      "role": "RELATIONSHIP_BASIS",
+      "source_grade": "ORIGINAL_C239_SELECTED_TEXT_INSPECTED"
+    }
+  ],
+  "scoped_correspondence": [
+    {
+      "id": "SOSA-A-M01",
+      "source_ids": [
+        "SOSA-C239-A-01",
+        "SOSA-C239-A-18"
+      ],
+      "target_row_ids": [
+        "S06-R005"
+      ],
+      "relation": "PARTIAL",
+      "source_first_correspondence": "SOSA Sensor contributes a specific sensor-system boundary and modality to the proposed described sensing arrangement.",
+      "non_equivalence_warning": "Does not prove generic CSAPI System identity, ownership of deployed sensors or a mandatory domain superclass.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M02",
+      "source_ids": [
+        "SOSA-C239-A-16"
+      ],
+      "target_row_ids": [
+        "S06-R005"
+      ],
+      "relation": "BROADER",
+      "source_first_correspondence": "Source's generic System/SubSystem concept permits hierarchical systems without fixing one sensing domain root.",
+      "non_equivalence_warning": "Generic SOSA System is not always an instantiated physical sensing apparatus.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M03",
+      "source_ids": [
+        "SOSA-C239-A-02"
+      ],
+      "target_row_ids": [
+        "S06-R007"
+      ],
+      "relation": "NARROWER",
+      "source_first_correspondence": "A SOSA Hardware Element is physical and can be a sensor constituent, with source-defined configuration bounds.",
+      "non_equivalence_warning": "Not every physical environmental probe or other equipment is a SOSA hardware element.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M04",
+      "source_ids": [
+        "SOSA-C239-A-10",
+        "SOSA-C239-A-11"
+      ],
+      "target_row_ids": [
+        "S06-R007"
+      ],
+      "relation": "NARROWER",
+      "source_first_correspondence": "PIC, aperture, chassis/enclosure and power supply are documented SOSA hardware/infrastructure examples.",
+      "non_equivalence_warning": "SOSA hardware architecture is not universal sensor hardware inventory or mandatory chassis hierarchy.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M05",
+      "source_ids": [
+        "SOSA-C239-A-03"
+      ],
+      "target_row_ids": [
+        "S06-R009"
+      ],
+      "relation": "NARROWER",
+      "source_first_correspondence": "SOSA Host Platform contributes concrete physical support/mounting context for a SOSA Sensor.",
+      "non_equivalence_warning": "Does not establish source-specific geolocation, site operator, sensor's own geometry or a software host.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M06",
+      "source_ids": [
+        "SOSA-C239-A-04"
+      ],
+      "target_row_ids": [
+        "S06-R005",
+        "S06-R009"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "SOSA Sensor Pod is an integral packaging and mounting case where sensor and pod boundaries overlap.",
+      "non_equivalence_warning": "Cannot always treat pod as external hosting platform or as a physically separate sensor.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M07",
+      "source_ids": [
+        "SOSA-C239-A-05"
+      ],
+      "target_row_ids": [
+        "S06-R008"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "SOSA External Interface crosses sensor boundary and may connect to host/environment.",
+      "non_equivalence_warning": "Not equivalent to a distinct externally cabled ClimaVue, SDI-12 connector, or all connected equipment.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M08",
+      "source_ids": [
+        "SOSA-C239-A-06",
+        "SOSA-C239-A-20"
+      ],
+      "target_row_ids": [
+        "S06-R007",
+        "S06-R008"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "Internal interfaces and drawn physical relationships provide relation/context evidence.",
+      "non_equivalence_warning": "Interface presence does not entail strict part-of, one function per card or installed topology.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M09",
+      "source_ids": [
+        "SOSA-C239-A-08"
+      ],
+      "target_row_ids": [
+        "S06-R007"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "SOSA Module is a separately defined functional architecture role that might be implemented on physical hardware.",
+      "non_equivalence_warning": "It must NOT be read as physical constituent by label or produce phantom hardware/part-of edges.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M10",
+      "source_ids": [
+        "SOSA-C239-A-07",
+        "SOSA-C239-A-17"
+      ],
+      "target_row_ids": [
+        "S06-R007"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "SOSA Sensor Component and generic Element can include logical/software as well as physical realizations.",
+      "non_equivalence_warning": "Cannot silently equate 'component' with physical module, installed probe or hardware individual.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M11",
+      "source_ids": [
+        "SOSA-C239-A-12"
+      ],
+      "target_row_ids": [
+        "S06-R009"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "RTE describes execution hosting of software, not a physical vehicle/structure.",
+      "non_equivalence_warning": "Do not use unqualified platform/host terms to infer location or physical attachment.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M12",
+      "source_ids": [
+        "SOSA-C239-A-13"
+      ],
+      "target_row_ids": [
+        "S06-R008",
+        "S06-R006"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "Interaction infrastructure carries logical information exchange between modules.",
+      "non_equivalence_warning": "Transport/binding cannot prove a distinct network-visible node, physical cable or original measurement author.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M13",
+      "source_ids": [
+        "SOSA-C239-A-14"
+      ],
+      "target_row_ids": [
+        "S06-R002",
+        "S06-R007"
+      ],
+      "relation": "RELATED_BUT_DIFFERENT",
+      "source_first_correspondence": "A procurable unit may implement multiple modules/physical infrastructure elements.",
+      "non_equivalence_warning": "Purchase unit or product type is not identical to one module, one model designation, one installed asset or one sensor.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M14",
+      "source_ids": [
+        "SOSA-C239-A-15"
+      ],
+      "target_row_ids": [
+        "S06-R009"
+      ],
+      "relation": "UNRESOLVED_CONTEXT",
+      "source_first_correspondence": "Source's unqualified 'Platform' can describe sensor device, physical host or computing infrastructure.",
+      "non_equivalence_warning": "Only qualified 'SOSA Host Platform' has defensible physical host interpretation.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    },
+    {
+      "id": "SOSA-A-M15",
+      "source_ids": [
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-13"
+      ],
+      "target_row_ids": [
+        "ISA-A-MEMBER-EXPOSURE"
+      ],
+      "relation": "NO_ESTABLISHED_MAPPING_IN_INSPECTED_SCOPE",
+      "source_first_correspondence": "SOSA function/interface decomposition is not ISA CIC visible/opaque member exposure.",
+      "non_equivalence_warning": "Do not import ISA network member/virtual UCI semantics into SOSA without exact SOSA source evidence.",
+      "decision": "STAGED_SOURCE_QUALIFIED_POTENTIAL_MASTER_CONTRIBUTION_SOSA_D_ONLY",
+      "adoption": "NOT_APPROVED"
+    }
+  ],
+  "held_source_leads": [
+    {
+      "id": "SOSA-A-H01",
+      "topic": "Logical functional Module as candidate DIM functionality/role",
+      "source_ids": [
+        "SOSA-C239-A-08"
+      ],
+      "state": "SOURCE_NATIVE_LEAD_NOT_YET_A_DIM_ROW",
+      "reason": "No existing cross-donor row unambiguously represents functional module role distinct from physical component; consider when later donors support coherent meaning."
+    },
+    {
+      "id": "SOSA-A-H02",
+      "topic": "Infrastructure split into hardware, run-time and interaction support",
+      "source_ids": [
+        "SOSA-C239-A-09"
+      ],
+      "state": "SOURCE_NATIVE_LEAD_NOT_YET_A_DIM_CLASS",
+      "reason": "Architecture grouping is useful but does not justify one universal three-part DIM superclass."
+    },
+    {
+      "id": "SOSA-A-H03",
+      "topic": "Sensor pod as integral package versus separate host",
+      "source_ids": [
+        "SOSA-C239-A-04"
+      ],
+      "state": "CROSS_DONOR_AND_CASE_FALSIFICATION_HOLD",
+      "reason": "Physical mounting/part-of semantics depend on arrangement; source case installation status must remain independent."
+    },
+    {
+      "id": "SOSA-A-H04",
+      "topic": "SOSA module implementation cardinality and procurement units",
+      "source_ids": [
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-14"
+      ],
+      "state": "SOURCE_NATIVE_NEGATIVE_EQUIVALENCE",
+      "reason": "No one-module-to-one-physical-element/procurable-unit cardinality; owner-relevant DIM physical versus functional distinction."
+    },
+    {
+      "id": "SOSA-A-H05",
+      "topic": "Source glossary Platform meanings",
+      "source_ids": [
+        "SOSA-C239-A-15"
+      ],
+      "state": "TERM_AMBIGUITY_HOLD",
+      "reason": "Context must disambiguate device/vehicle/software computing platform before mapping."
+    },
+    {
+      "id": "SOSA-A-H06",
+      "topic": "Native DSDM, management OpenAPI and future snapshots",
+      "source_ids": [],
+      "state": "RESERVED_FOR_SOSA_C",
+      "reason": "C239 narrative does not itself prove exact DSDM native classes or 2025 S251 edition claims; separate source review later."
+    }
+  ],
+  "review_limits": [
+    "Not a 403-page exhaustive C239 review",
+    "No native DSDM/IDL or OpenAPI companion file inspected or mapped",
+    "No physical deployment/operational cases tested",
+    "No full normative SOSA conformance testing",
+    "No implicit Open Group SOSA = W3C SOSA/SSN",
+    "No 2025 S251 snapshot semantic crosswalk",
+    "Master integration reserved for approved SOSA-D"
+  ],
+  "next_step": "SOSA-B original C239 functions, services, system management, status, task/power/operation source audit only"
+}

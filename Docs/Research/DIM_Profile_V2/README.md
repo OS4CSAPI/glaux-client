@@ -1,3 +1,11 @@
+# CURRENT — Step17 The Open Group SOSA-A source audit complete; SOSA-B next
+
+<!-- CURRENT_SOSA_A_COMPLETE_09NOV2026 -->
+
+**9 November 2026.** The [SOSA-A original C239 architecture audit](Donor_DIM_Crosswalk/Step17_SOSA_A_C239_Architecture_Roles_Review_09NOV2026.md) and [structured 20/15/six evidence](Donor_DIM_Crosswalk/Step17_SOSA_A_C239_Architecture_Roles_Evidence_09NOV2026.json) are now the current Step17 evidence. Exact semantics distinguish whole Sensor, physical Host Platform and Hardware Element, logical Module, execution Infrastructure and procurement implementation; the source neither mandates a universal DIM chassis nor proves hardware installed in the four original cases. This source stage produces **no canonical master edits** until SOSA-D and does not substitute The Open Group SOSA for W3C SOSA/SSN. [Current plan](Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) · [recovery PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). **Next separate “Proceed” executes SOSA-B only**; full Step17 remains open.
+
+## Historical checkpoints
+
 # CURRENT — Step17 The Open Group SOSA source intake completed; conceptual audit pending
 
 <!-- STEP17_SOSA_SOURCE_INTAKE_09NOV2026 -->
