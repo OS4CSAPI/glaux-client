@@ -1,0 +1,627 @@
+{
+  "schema": "isa20-topics-original-source-review.v1",
+  "date": "2026-11-09",
+  "delivery": 20,
+  "source": {
+    "document": "ISA Data Model Topics",
+    "edition": "6.0r2",
+    "original_date": "2023-10-31",
+    "file_id": "file_000000006b5881f4988dfb57ac11965c",
+    "pdf_pages": 22,
+    "original_pdf_page_span": "1–22",
+    "printed_pages": "front matter i–vii;1–15",
+    "revision_history": "Revision 6.0r2 updates Resource Descriptor parameter usage and Event Update example",
+    "full_pdf_sha256_claimed": false
+  },
+  "inspection": {
+    "original_text_pages_inspected": 22,
+    "selected_visual_pdf_pages": [
+      9,
+      13,
+      14,
+      19,
+      21
+    ],
+    "source_diagrams_and_tables_represented": [
+      "Table 1 revision history",
+      "Table 2 mutability matrix",
+      "Table 3 event update",
+      "Figures 1–3 track and update/recall",
+      "Figures 4–7 resource examples",
+      "Figure 8 source contact"
+    ],
+    "note": "Indexed original PDF text for all22 pages; selected visual tables and figures inspected. Does not claim byte/hash authentication, runtime conformance or complete independent visual page-by-page audit."
+  },
+  "blocks": [
+    {
+      "block_id": "TOPICS-1.0",
+      "section": "1.0",
+      "title": "Property Mutability",
+      "original_pdf_pages": "8–10",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Parent of §1.1–1.2; explains source mutability as ability to change the property value, not a separate physical device state.",
+      "must_not_imply": "No new property kind or deployment state from parent heading.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-1.1",
+      "section": "1.1",
+      "title": "Mutabilities Overview",
+      "original_pdf_pages": "8",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "PERMANENT is expected fixed for an operational cycle; READ WRITE value supplied through Set Property; READ ONLY changes through supported dedicated command; WRITE ONLY deprecated for future removal.",
+      "must_not_imply": "PERMANENT recommendation to deregister is source 'should', not an ISA universal SHALL; READ WRITE may indirectly trigger physical action without its supplied value changing.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-1.2",
+      "section": "1.2",
+      "title": "Read Write Versus Read Only",
+      "original_pdf_pages": "9–10",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Table 2 visually checked: only READ WRITE accepts Set Property; only READ ONLY accepts Change/Adjust; PERMANENT accepts neither by those mechanisms. Position then resulting Orientation slew example distinguishes direct assignment from indirect real motion.",
+      "must_not_imply": "A Set Property receipt is not proof of requested physical motion; READ ONLY does not imply the supported Change/Adjust command is available for every property.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.0",
+      "section": "2.0",
+      "title": "Event Updates",
+      "original_pdf_pages": "11–14",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Parent contains event update/correlation/recall/resolution rules; source-original Event remains a distributed immutable record.",
+      "must_not_imply": "Parent span overlaps children; no double-counted Event definitions or observed instances.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.1",
+      "section": "2.1",
+      "title": "Events Overview",
+      "original_pdf_pages": "11",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "An Event reports source-observed-world data; a distributed original Event cannot be overwritten across recipients; subsequent Event Update can augment or correct.",
+      "must_not_imply": "Source commentary does not establish an immutable database or guaranteed recipient behavior.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.2",
+      "section": "2.2",
+      "title": "Event Update Definition",
+      "original_pdf_pages": "11–12",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Event with optional Event Reference supplied is an Update. Supplied observables take precedence; unmentioned values remain; the original Event time remains the represented observation time while update time dates the update. Multiple updates are ordered by time before application.",
+      "must_not_imply": "The simplified ID/Ref table is explanatory; native fingerprint comprises source/time/ID, not a bare identifier or new original observation.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.3",
+      "section": "2.3",
+      "title": "Recalling Events",
+      "original_pdf_pages": "12",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Recall is intended for events generated in error or observations not correctable; string reason explains why consumers should disregard referenced Event.",
+      "must_not_imply": "A recall notice does not physically erase past messages or prove all consumers complied.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.4",
+      "section": "2.4",
+      "title": "Resolving Events",
+      "original_pdf_pages": "12",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Resolve marks a previously accurate Event as no longer requiring attention while using Event Update reference mechanism.",
+      "must_not_imply": "Resolved is not recalled/erroneous and not deletion, hardware health, or source-independent event disposition.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.5",
+      "section": "2.5",
+      "title": "Publishing Tracks",
+      "original_pdf_pages": "12–13",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Battle Space Object (BSO) correlates separate Events about the same observed entity, whereas Event Reference corrects a specific Event. Both can occur when correcting/adding BSO of previous Event.",
+      "must_not_imply": "BSO is not ISA component UCI, physical asset identity, or an Event correction by itself.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.6",
+      "section": "2.6",
+      "title": "Event Update Examples",
+      "original_pdf_pages": "14",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Parent for Figures 2–3, visually inspected on PDF p.14; demonstrates field-level augmenting and recall.",
+      "must_not_imply": "Illustrative diagrams are not executed observations or persistence tests.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.6.1",
+      "section": "2.6.1",
+      "title": "Augmented State After Applying Event Updates",
+      "original_pdf_pages": "14",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 2 retains original event time, combines changed Position, existing Velocity, new Identity and later Media along referenced updates.",
+      "must_not_imply": "The resultant augmented state is a consumer interpretation; does not rewrite the published original.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-2.6.2",
+      "section": "2.6.2",
+      "title": "Augmented State After a Recall Event",
+      "original_pdf_pages": "14",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 3 displays a Recall indication and carries original time through the augmented event sequence.",
+      "must_not_imply": "Diagram does not mandate deletion of all cached or archived original copies.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.0",
+      "section": "3.0",
+      "title": "Resource Descriptors",
+      "original_pdf_pages": "15–21",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Parent describes URL-addressed external material and typed representations, including illustrated media and custom service links.",
+      "must_not_imply": "One Resource Descriptor is neither a native CSAPI resource nor proof of current external availability.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.1",
+      "section": "3.1",
+      "title": "Sharing Information on ISA",
+      "original_pdf_pages": "15",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Live Data subscription transports native standardized data; non-ISA representations and heavyweight material can be made available on demand through Resource Descriptor.",
+      "must_not_imply": "External access URL does not automatically inherit ISA transport, authorization, source authenticity or guaranteed retrieval.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.2",
+      "section": "3.2",
+      "title": "Resource Descriptor Overview and Use Cases",
+      "original_pdf_pages": "15–16",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Resource Descriptor: URL, Resource Type primary/secondary analogous to IANA Media Type, optional title/created/modified/metadata. Example uses image/png; possibilities include native raw data, nonstandard command interface, vCard and KML.",
+      "must_not_imply": "Analogy is not a claim that every type is IANA-registered or safe/authorized; custom command interface is not evidence of an executed device command.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.3",
+      "section": "3.3",
+      "title": "Resource Descriptor Usage",
+      "original_pdf_pages": "16",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "General component resources typically in Status Resources property; observation-related in Event Media observable; may also appear inside custom properties/observables/commands.",
+      "must_not_imply": "Status/Media placement is typical not universal; URL/link should not be equated with an original Observation or performed media stream.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.3.1",
+      "section": "3.3.1",
+      "title": "Recommended Resource Type Parameters for Video",
+      "original_pdf_pages": "17–18",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Recommended typed NVPs: Bitrate (Mbpsec), Bitrate Control, Codecs (String list), Container, Compression Level, Frame Rate (Hertz), Width/Height (Integer pixels), Scan Type, Audio (Boolean). Compression Level omission/uncompressed caveat is described.",
+      "must_not_imply": "These are recommendations, not a guaranteed mandatory video metadata schema, reliable live codec detection, current instrument setting or conversion of other streaming APIs.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.4",
+      "section": "3.4",
+      "title": "Resource Descriptor Examples",
+      "original_pdf_pages": "19–21",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figures 4–7 and Java API expression are illustrative Resource Descriptor shapes, not verified live endpoints.",
+      "must_not_imply": "Do not promote sample localhost data, codec attributes or custom scheme to operational source facts.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.4.1",
+      "section": "3.4.1",
+      "title": "Image Download",
+      "original_pdf_pages": "19",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 4: localhost image URL, resource type image/png, empty metadata list.",
+      "must_not_imply": "Demonstrates a structural example, not a captured image, actual download or authenticated issuer.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.4.2",
+      "section": "3.4.2",
+      "title": "Video Stream",
+      "original_pdf_pages": "19–20",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 5 and Java API show a video/mp4 illustrative URL with bitrate 15, frame rate 30, h.264/aac, 1920x1080, PROGRESSIVE and audio=true, plus author metadata.",
+      "must_not_imply": "Example values and Java API construction are not an observed stream, implemented transport, runtime verification or installed setting.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.4.3",
+      "section": "3.4.3",
+      "title": "Text File with Parameters",
+      "original_pdf_pages": "21",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 6: illustrative text/xml URL, charset utf-8 and optional title.",
+      "must_not_imply": "A link sample is not proof that the file exists or that the consumer supports its parsing.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-3.4.4",
+      "section": "3.4.4",
+      "title": "Custom Service",
+      "original_pdf_pages": "21",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "Figure 7: illustrative myprotocol URL and my-service/XYZ resource type with parameter myparam.",
+      "must_not_imply": "Does not standardize a transport, security mechanism, controller command or real hardware action.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    },
+    {
+      "block_id": "TOPICS-4.0",
+      "section": "4.0",
+      "title": "Further Resources",
+      "original_pdf_pages": "22",
+      "source_document": "ISA Data Model Topics, release 6.0 revision 2, 31 October 2023",
+      "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+      "reading_status": "ORIGINAL_22_PAGE_TEXT_REVIEWED",
+      "meaning": "ISA Help Desk contact and QR code are source-help context, not data model or normative capabilities.",
+      "must_not_imply": "No DIM row or 2023 standard requirement adopted from contact/support information.",
+      "member_hierarchy": "SINGLE_REGISTERED_BLOCK_OVERLAPS_DOCUMENT_HEADING_WHEN_PARENT",
+      "conformance_executed": false
+    }
+  ],
+  "qualifications": [
+    {
+      "row_id": "ISA-K-MUTABILITY",
+      "source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "source_qualification": "PERMANENT operational-cycle expectation and recommended deregistration differ from READ WRITE supplied knowledge through Set Property and READ ONLY values altered via a separately supported Change/Adjust command. Supplying Position may indirectly cause Orientation motion while Position remains READ WRITE.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-K-PROPERTY-DECL",
+      "source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "source_qualification": "Mutability labels describe how a reported property value can be changed, not the physical nature of a component, a guarantee of a supported actuation command or a universal authorization outcome.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-242",
+      "source_blocks": [
+        "TOPICS-1.1",
+        "TOPICS-1.2"
+      ],
+      "source_qualification": "Set Property supplies a READ WRITE property value as information about a component; the example distinguishes that assignment from later indirect physical slewing. It does not itself prove actuator effect.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-T-EVENT-ID",
+      "source_blocks": [
+        "TOPICS-2.1",
+        "TOPICS-2.2",
+        "TOPICS-2.5"
+      ],
+      "source_qualification": "Event Reference targets the original Event fingerprint (normally Time, ID, Source), whereas BSO correlates multiple Events about an observed entity. An illustrative simplified ID column is not an exhaustive native identity schema.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-T-EVENT-TIME",
+      "source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
+      ],
+      "source_qualification": "An updated/augmented Event retains its original observation time; update's own time dates that update. Multiple updates to the same source event are ordered by time before combining, not converted into new original observation times.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-156",
+      "source_blocks": [
+        "TOPICS-2.3",
+        "TOPICS-2.6.2"
+      ],
+      "source_qualification": "Recall reason pertains to a mistaken original Event; it asks recipients to disregard the Event, without establishing erasure, universal recipient compliance or the same meaning as Resolve.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-157",
+      "source_blocks": [
+        "TOPICS-2.4"
+      ],
+      "source_qualification": "Resolve indicates a formerly accurate Event no longer requires attention; it is distinct from Recall for erroneous Events, physical equipment cessation and archive deletion.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-131",
+      "source_blocks": [
+        "TOPICS-2.5"
+      ],
+      "source_qualification": "BSO correlates successive Events about the same observed entity (track); Event Reference addresses a prior Event for correction. Co-occurrence is allowed when correcting/adding BSO. BSO does not identify an ISA component.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-146",
+      "source_blocks": [
+        "TOPICS-3.2",
+        "TOPICS-3.3"
+      ],
+      "source_qualification": "Event Media typically holds Resource Descriptors to related external media. A URL/Resource Type/metadata description is not a performed Observation, provenance authentication or guaranteed media delivery.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-C-102",
+      "source_blocks": [
+        "TOPICS-3.2",
+        "TOPICS-3.3"
+      ],
+      "source_qualification": "Status Resources typically supplies Resource Descriptors to component-provided material; a descriptor has URL, primary/secondary Resource Type and optional metadata. Current reachability and original issuer authenticity are not established.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-R-VIDEO-TRACK",
+      "source_blocks": [
+        "TOPICS-2.5"
+      ],
+      "source_qualification": "Observed-entity track correlation should use BSO, not Event Reference for updates to the same Event; a video track identifier cannot be equated without native scope evidence.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-T-EVENT-CONTEXT",
+      "source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.6.1"
+      ],
+      "source_qualification": "Event Update observables update the augmented event view selectively; unmentioned values persist in the combined interpretation, but Event detector-property context does not become a Status record.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-R-MESSAGE-REFERENCE",
+      "source_blocks": [
+        "TOPICS-2.2",
+        "TOPICS-2.5"
+      ],
+      "source_qualification": "Original Event reference and BSO observed-entity correlation have different targets and reuse rules. Neither proves cryptographic source authenticity or makes four digital copies four original Events.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-K-OBSERVABLE-DECL",
+      "source_blocks": [
+        "TOPICS-2.1",
+        "TOPICS-2.2"
+      ],
+      "source_qualification": "Event observables are observation-associated content; update-reference semantics and partial replacement differ from Config declarations and property Status values.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    },
+    {
+      "row_id": "ISA-T-STATUS",
+      "source_blocks": [
+        "TOPICS-3.3"
+      ],
+      "source_qualification": "The guide describes general Resource Descriptors typically published as Status Resources; descriptive location/typed link is not evidence of a current reachable URL or actual component physical state.",
+      "no_display_cell_changed": true,
+      "no_DIM_adoption": true
+    }
+  ],
+  "source_boundary_notes": [
+    {
+      "id": "TOPICS-01-MUTABILITY",
+      "source": "TOPICS6.0r2",
+      "finding": "PERMANENT change expectation and 'should' deregister versus READ WRITE supplied values and READ ONLY dedicated commands; non-physical Set Property assignment can indirectly trigger physical motion.",
+      "handling": "Do not make every reported change a physical control action or treat the operational-cycle guidance as a SHALL.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-02-EVENT-IDENTITY",
+      "source": "TOPICS6.0r2",
+      "finding": "Table3 ID/Ref is an intentionally simplified representation; source specifies normal Event identity as Time/ID/Source.",
+      "handling": "Do not silently replace original Event Reference with bare Event ID or BSO.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-03-EVENT-TIME",
+      "source": "TOPICS6.0r2",
+      "finding": "Update time refers to update, while augmented observation keeps original Event time, even with later changed Position.",
+      "handling": "Never rewrite the original observation time as update time.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-04-RECALL-RESOLVE",
+      "source": "TOPICS6.0r2",
+      "finding": "Recall signals mistaken report; Resolve signals accurate earlier report no longer requiring attention.",
+      "handling": "Do not conflate correction, original event retraction, resolution, recipient compliance and physical erasure.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-05-TRACK-CORRELATION",
+      "source": "TOPICS6.0r2",
+      "finding": "BSO correlates separate Events about an observed entity; Event Reference corrects an Event; rare BSO+Reference used to correct/add BSO.",
+      "handling": "Not component UCI, track of sensor status or source-verification identity.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-06-RESOURCE-TYPE",
+      "source": "TOPICS6.0r2",
+      "finding": "Resource Type primary/secondary is analogous to IANA MIME, with custom type/scheme examples.",
+      "handling": "Do not assert every type is IANA-registered, endpoint reachable or inherently authenticated.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-07-VIDEO-PARAMETERS",
+      "source": "TOPICS6.0r2",
+      "finding": "Bitrate/Mbpsec, frame rate/Hertz, Codecs list/String, Audio/Boolean, pixel dimensions and compression-level omission notes are recommended NVP types.",
+      "handling": "Not mandatory universal codec/stream guarantee or observed running bandwidth.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-08-EXAMPLE-FIDELITY",
+      "source": "TOPICS6.0r2",
+      "finding": "Figures4–7 use localhost URLs or myprotocol and show structural examples; Figure5/Java example are consistent sample values.",
+      "handling": "Examples are not real executed media retrievals, commands, ISA certificate policy or CSAPI links.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "TOPICS-09-SOURCE-EDITION",
+      "source": "TOPICS6.0r2",
+      "finding": "Revision History Table1 says 6.0r2 updated Resource Descriptor parameter usage and Event Update example.",
+      "handling": "Do not back-project 6.0r2 examples into older revisions without original evidence.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    },
+    {
+      "id": "PAPER2015-ACCESS",
+      "source": "PAPER2015",
+      "finding": "2015 Moulton et al. SPIE paper DOI and public abstract verifiable; full six-page paper not found in bounded search or identified in current library.",
+      "handling": "Historical abstract context does not establish exact 2023 DMS/Controller requirements or close source-based semantic questions.",
+      "new_primary_question": false,
+      "additional_delivery_created": false,
+      "delivery": 20
+    }
+  ],
+  "historical_access": {
+    "id": "SRC-ACCESS-01",
+    "source_id": "PAPER2015-CONTEXT",
+    "title": "Open architecture design and approach for the Integrated Sensor Architecture (ISA)",
+    "authors": [
+      "Moulton, Christine L.",
+      "Krzywicki, Alan T.",
+      "Hepp, Jared J.",
+      "Harrell, John",
+      "Kogut, Michael"
+    ],
+    "year": 2015,
+    "venue": "Proceedings of SPIE 9479, 94790C",
+    "doi": "10.1117/12.2177842",
+    "abstract_available": true,
+    "full_text_verified": false,
+    "bounded_sources": [
+      "https://scixplorer.org/abs/2015SPIE.9479E..0CM/abstract",
+      "https://www.researchgate.net/publication/300883836_Open_architecture_design_and_approach_for_the_Integrated_Sensor_Architecture_ISA"
+    ],
+    "status": "HISTORICAL_ABSTRACT_ONLY_FULL_TEXT_NOT_ACCESSED",
+    "does_not_block_2023_source": true
+  },
+  "expected_register": {
+    "total": 279,
+    "completed_existing_non_topics_blocks": 226,
+    "new_topics_blocks": 23,
+    "dms_heading_blocks_for_reconciliation": 29,
+    "paper2015_access_item": 1,
+    "unassigned": 0
+  },
+  "prior_preservation": {
+    "dms_primary_outcomes": 480,
+    "supported": 474,
+    "existing_questions": 6,
+    "prior_master_rows": 329,
+    "original_row_targets_reconciled": 4,
+    "original_row_targets_total": 31,
+    "earlier_findings_reconciled": 1,
+    "earlier_findings_total": 25,
+    "prior_donor_evidence": 58,
+    "prior_case_statements": 73,
+    "controller_requirements": 163,
+    "component_requirements": 259
+  },
+  "new_primary_DMS_outcomes": 0,
+  "new_DIM_adoptions": 0,
+  "runtime_conformance_executed": false,
+  "source_first_correspondence_audit_deferred_to": 21,
+  "workbook_refresh_deferred_to": 22
+}
