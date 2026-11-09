@@ -1,4 +1,16 @@
-# Working master — source cases, donor concepts and proposed DIM
+# Working master — source cases, donor standards and candidate DIM
+
+**CURRENT — 8 November 2026, ISA accelerated delivery18 COMPLETE and committed.** Controller Requirements 6.0r4 §§1–5.12 were source-reviewed in 20 of 28 registered blocks, covering108 original definitions (13H/33M/62L;107 shall/0 should/1 may). Fifteen existing master candidates gained documented source-boundary qualifications; 329 rows and every displayed donor/ISA/case comparison cell are preserved. DMS catalogue remains480 reviewed/474 supported/six local questions. Component Requirements remain34/34 complete. Original target/finding audits remain4/31 and1/25. The canonical XLSX is the *older* 253-row/226-primary integration snapshot, not this newer source checkpoint.
+
+**NEXT OWNER “PROCEED”: ISA accelerated delivery19 ONLY**, the remaining eight Controller blocks (§§6–8 and Appendices A/B). Central plan:37/41 technical iterations complete, four deliveries remaining (19–22). Source image inspection was unavailable this pass; no runtime, conformance, new DIM adoption, workbook regeneration or other-donor study is claimed.
+
+[ISA current PITON](PITON_ISA_Coverage_Correction_07NOV2026.md) · [ISA plan](PLAN_ISA_Coverage_Correction_07NOV2026.md) · [original source review](ISA18_Controller_First_Source_Review_08NOV2026.md) · [working master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [cumulative evidence](ISA_Service_and_Context_Evidence_08NOV2026.json) · [coverage](ISA_Coverage_Register_07NOV2026.json) · [exact progress](ISA_Correction_Status_07NOV2026.json).
+
+**Human-facing table:** four evidence cases on the left, established donor standards together, proposed DIM far-right. The master is still a candidate comparison, not an adopted ontology or deployed CSAPI Profile. The older XLSX remains labeled as an earlier snapshot.
+
+## Historical checkpoints below (not active next-task instructions)
+
+### Working master — source cases, donor concepts and proposed DIM
 
 ## Current execution — 8 November 2026
 
