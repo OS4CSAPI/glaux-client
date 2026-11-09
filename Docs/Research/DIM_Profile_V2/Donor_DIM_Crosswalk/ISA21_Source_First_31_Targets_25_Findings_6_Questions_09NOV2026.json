@@ -103,7 +103,8 @@
       "existing_ISA_display": "≈ Manufacturer · manufacturer / producer / vendor",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R002",
@@ -166,7 +167,8 @@
       "existing_ISA_display": "Model",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R003",
@@ -208,7 +210,8 @@
       "existing_ISA_display": "≈ Serial Number · physical-component context",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R004",
@@ -236,7 +239,7 @@
       "boundary_and_negative_check": "Unique to an ISA component, not automatically a CSAPI System URI, real station ID or physical serial; retain certificate UCI and virtual suffix distinctions.",
       "proposed_isa_display": "≈ UCI · ISA component/virtual-component identifier",
       "native_dms_entry_ids": [
-        "ISA02-UCI"
+        "ISA-DMS-296"
       ],
       "case_hold_retained": false,
       "reviewed_original_source": true,
@@ -258,7 +261,11 @@
       "existing_ISA_display": "≈ UCI · unique component identifier",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": [],
+      "additional_prior_evidence": [
+        "ISA02-UCI"
+      ]
     },
     {
       "row_key": "S06-R005",
@@ -277,9 +284,7 @@
       "source_first_finding": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members.",
       "boundary_and_negative_check": "Does not define one physical assembly, mandatory DIM root or installed parts list.",
       "proposed_isa_display": "≈ ISA composition via CIC · integration collection, not physical unity",
-      "native_dms_entry_ids": [
-        "SDD-4.2.2"
-      ],
+      "native_dms_entry_ids": [],
       "case_hold_retained": false,
       "reviewed_original_source": true,
       "target_kind": "EXISTING_DIM_ROW",
@@ -321,7 +326,10 @@
       "existing_ISA_display": "≈ ISA composition: integration collection exposed through one CIC; physical unity not established",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": [
+        "SDD-4.2.2"
+      ]
     },
     {
       "row_key": "S06-R006",
@@ -348,9 +356,7 @@
       "source_first_finding": "Interface-conformant network participation; Controller supports required core services and accepts connections. UCI identity and seven message kinds.",
       "boundary_and_negative_check": "A visible network participant or Controller is not by definition a distinct physical sensor, installed device or original observation performer.",
       "proposed_isa_display": "≈ ISA component / Controller · network role, not equipment identity",
-      "native_dms_entry_ids": [
-        "SDD-4.2.1"
-      ],
+      "native_dms_entry_ids": [],
       "case_hold_retained": false,
       "reviewed_original_source": true,
       "target_kind": "EXISTING_DIM_ROW",
@@ -392,7 +398,10 @@
       "existing_ISA_display": "≈ ISA component / Controller; client-side role for every ISA component, server-side role also for Controllers",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": [
+        "SDD-4.2.1"
+      ]
     },
     {
       "row_key": "S06-R007",
@@ -420,7 +429,6 @@
       "boundary_and_negative_check": "Composition membership and visible network attribution are not physical part-of. ISA Relationship ATTACHED/DETACHED is distinct and neither establishes complete installed inventory.",
       "proposed_isa_display": "≈ composition member · functional integration, not physical part-of",
       "native_dms_entry_ids": [
-        "SDD-4.2.2",
         "ISA-DMS-099"
       ],
       "case_hold_retained": false,
@@ -443,7 +451,10 @@
       "existing_ISA_display": "ISA composition member = integration membership; physical part-of not established",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": [
+        "SDD-4.2.2"
+      ]
     },
     {
       "row_key": "S06-R008",
@@ -470,9 +481,7 @@
       "source_first_finding": "Member communicates via ISA interface if compliant, or member-native interface if not. Physical relation is modeled separately from network interface.",
       "boundary_and_negative_check": "ISA/native mediation does not demonstrate a cabled SDI-12 link, distinct external instrument, connector, mounting or spatial topology.",
       "proposed_isa_display": "≈ CIC-to-member interface · communications, not proved cable",
-      "native_dms_entry_ids": [
-        "SDD-4.2.2"
-      ],
+      "native_dms_entry_ids": [],
       "case_hold_retained": false,
       "reviewed_original_source": true,
       "target_kind": "EXISTING_DIM_ROW",
@@ -500,7 +509,10 @@
       "existing_ISA_display": "CIC-to-member ISA/native interface = communication relationship; cable or physical arrangement not established",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": [
+        "SDD-4.2.2"
+      ]
     },
     {
       "row_key": "S06-R009",
@@ -548,7 +560,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R010",
@@ -597,7 +610,8 @@
       "existing_ISA_display": "Not reviewed · ISA-04",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R011",
@@ -637,7 +651,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R012",
@@ -709,7 +724,8 @@
       "existing_ISA_display": "≈ Observable Declaration (CCD.observables) [earlier mapping; review ISA-08]",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R013",
@@ -773,7 +789,8 @@
       "existing_ISA_display": "Not reviewed · ISA-04",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R014",
@@ -844,7 +861,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R015",
@@ -902,7 +920,8 @@
       "existing_ISA_display": "≈ Event message (reported observables) [earlier mapping; review ISA-07]",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R016",
@@ -930,7 +949,7 @@
       "boundary_and_negative_check": "The generic capability set is not a list of allowed operating modes, an effective current mode, a device-specific state machine or executed action.",
       "proposed_isa_display": "≈ Capability Declaration · support, not enumerated operating modes",
       "native_dms_entry_ids": [
-        "ISA-DMS-323"
+        "ISA-DMS-321"
       ],
       "case_hold_retained": false,
       "reviewed_original_source": true,
@@ -959,7 +978,8 @@
       "existing_ISA_display": "≈ Capability Declaration (Config.ccd) [earlier mapping; review ISA-08]",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R017",
@@ -1014,7 +1034,8 @@
       "existing_ISA_display": "Not reviewed · ISA-08",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R018",
@@ -1065,7 +1086,8 @@
       "existing_ISA_display": "≈ Camera Mode · current, camera-specific\nEarlier Status.properties retained in evidence; row review ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R019",
@@ -1107,7 +1129,8 @@
       "existing_ISA_display": "≈ Request message (command invocation) [earlier mapping; review ISA-06]",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R020",
@@ -1158,7 +1181,8 @@
       "existing_ISA_display": "≈ Response message (command disposition) [earlier mapping; review ISA-06]",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R021",
@@ -1227,7 +1251,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "S06-R022",
@@ -1278,7 +1303,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H01",
@@ -1318,7 +1344,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H02",
@@ -1387,7 +1414,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H03",
@@ -1456,7 +1484,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H04",
@@ -1510,7 +1539,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H05",
@@ -1579,7 +1609,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H06",
@@ -1648,7 +1679,8 @@
       "existing_ISA_display": "Not reviewed · ISA-03",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H07",
@@ -1717,7 +1749,8 @@
       "existing_ISA_display": "Not reviewed · ISA-10",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H08",
@@ -1786,7 +1819,8 @@
       "existing_ISA_display": "Not reviewed · ISA-07",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     },
     {
       "row_key": "CASE-H09",
@@ -1856,7 +1890,8 @@
       "existing_ISA_display": "Not reviewed · ISA-06",
       "dim_adoption": "NOT_DECIDED",
       "audit_status": "SOURCE_FIRST_SEMANTIC_AUDIT_COMPLETE",
-      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL"
+      "scope": "SOURCE_CORRESPONDENCE_ONLY_NOT_MODEL_APPROVAL",
+      "companion_source_block_ids": []
     }
   ],
   "original_earlier_findings": [
