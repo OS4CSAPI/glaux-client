@@ -544,7 +544,7 @@ def verify_sosa_g2_4a_master(doc: dict, mirror: list[list[str]], md: str) -> Non
     required(len(items)==95 and len(ids)==95 and len(g4["chapter1_5_toc_coverage"])==42 and len(g4["chapter7_11_pending"])==27,"original Chapter1–5 inventory and pending 7–11 exact")
     required(g4["item_counts"]["QUALITY_ATTRIBUTE"]==10 and g4["item_counts"]["ARCHITECTURE_PRINCIPLE"]==15 and g4["item_counts"]["MODULE_CATALOG"]==27,"10/15/27 native original concepts")
     required(g4["item_counts"]["previously_G1_UNREAD_1_5"]==27 and g4["item_counts"]["previously_G1_sampled_1_5"]==15,"bounded heading coverage from old G1")
-    required(g4["source"]["native_DSDM_IDL_OpenAPI_externally_referenced_files_read"] is False and not g4["model_adoption"],"native companion/DIModel still unadopted")
+    required(g4["source"]["native_DSDM_IDL_OpenAPI_externally_referenced_files_read"] is False and g4["dim_profile_adopted"] is False,"native companion/DIModel still unadopted")
     for count,key in ((12,"G2_1_source_correspondence"),(22,"G2_2_source_correspondence"),(28,"G2_3_source_correspondence")):
         required(sum(bool(row.get(key)) for row in rows)==count,"prior progressive SOSA evidence: "+key)
     changed=[x for x in rows if x.get("G2_4A_source_correspondence")]
