@@ -1,3 +1,9 @@
+# CURRENT — L23 Excel gate verified at G2-1; next SOSA-G2-2 only
+
+**CURRENT — G2-1 saved Excel and all comparison formats synchronized (9 November 2026).** The 329-information-row, 346×15 master preserves all source and case columns, with 12 source-qualified The Open Group SOSA cell changes. The SAME [26-sheet canonical XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now contains all 12 and passes [saved-cell validation](SOSA_G2_1_Workbook_Validation_09NOV2026.json) and [GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). Both CSV mirrors and both GitHub-readable comparisons match all 346×15 workbook cells. **Zero Excel lag.** Binding L23 demands the same verified XLSX refresh before another donor-source packet whenever meaningful master cells change; donor source completeness and DIM/Profile adoption remain separate. **Next owner Proceed: SOSA-G2-2 only; Step18 SAPIENT blocked.**
+
+## Prior plan checkpoints (historical where conflicting)
+
 # CURRENT — Binding L23 Excel gate and owner-approved G2-1 workbook checkpoint
 
 [Current SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) · [L23 reusable mandatory Excel rule](LESSONS_Donor_Review_Process.md) · [G2-1 original source findings](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md). The accepted 40-step donor plan remains in force, but after any bounded source-qualified donor packet with meaningful master cell updates, the **same canonical 26-sheet XLSX must be refreshed, saved, verified and GitHub committed before the next substantive donor/source packet**. No default deferred Excel refresh hidden behind "substantive checkpoint." Explicit owner-approved exceptions only. The current G2-1 12-cell lag is the approved synchronization activity; G2-2 blocked until verified. DIM adoption steps 24/35–40 and owner-controlled donor transitions unchanged.

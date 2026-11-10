@@ -1,3 +1,11 @@
+# SOSA-G2-1 saved Excel closeout addendum — source meanings unchanged
+
+**CURRENT — G2-1 saved Excel and all comparison formats synchronized (9 November 2026).** The 329-information-row, 346×15 master preserves all source and case columns, with 12 source-qualified The Open Group SOSA cell changes. The SAME [26-sheet canonical XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now contains all 12 and passes [saved-cell validation](SOSA_G2_1_Workbook_Validation_09NOV2026.json) and [GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). Both CSV mirrors and both GitHub-readable comparisons match all 346×15 workbook cells. **Zero Excel lag.** Binding L23 demands the same verified XLSX refresh before another donor-source packet whenever meaningful master cells change; donor source completeness and DIM/Profile adoption remain separate. **Next owner Proceed: SOSA-G2-2 only; Step18 SAPIENT blocked.**
+
+**Verification specifics:** [G2-1 saved workbook record](SOSA_G2_1_Workbook_Validation_09NOV2026.json) shows 12 changed column-I cells, all 346×15 current grid values equal, 26 retained worksheets and 22 untouched historical worksheet XML streams. The older G2-1 original-source narrative below describes the spreadsheet as lagged at the end of the **earlier source pass**; that snapshot was superseded by this separately authorized Excel synchronization. Eight original native companion files still unread; SOSA donor OPEN.
+
+## Earlier original source report (historical workbook snapshot)
+
 # SOSA-G2-1 — C239 §§6.2.3–6.2.5 original-inline-source review and master correspondence
 
 **Bounded result: G2-1 COMPLETE; full The Open Group SOSA donor review remains OPEN.** Original C239 Edition 1.1 (2023), `c239_5.pdf`, project Library ID `file_00000000af4081f58c4bac329f85c58f`, was read at PDF pp.73–90 (printed pp.47–64), continuing to the very end of §6.2.5.3. The referenced GENERAL PROFILE clauses (§6.2.1, PDF70–71) and native file names in Appendix B (PDF390–391) were checked for context, not claimed as complete source audits. Original C239 DSDM/IDL and six referenced OpenAPI files remain unread.
