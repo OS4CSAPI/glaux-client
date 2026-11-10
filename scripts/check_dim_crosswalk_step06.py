@@ -998,6 +998,126 @@ def verify_sosa_g2_6a_master(doc: dict, mirror: list[list[str]], md: str) -> Non
         ("all current 346x15 cells exact." if synced else "39-column-I cells older at identified G2-5 source checkpoint."))
     print("LIMIT: 42 C239 headings unread, one restricted; original ANSI/VITA and 8 DSDM/IDL/OpenAPI files, figure pixels unverified; no DIM/Profile adoption or physical device test.")
 
+def verify_sosa_g2_6b_master(doc: dict, mirror: list[list[str]], md: str) -> None:
+    """Independent current C239 G2-6B original source, both mirrors and SAME saved Excel readback."""
+    import hashlib
+    import html
+    grid=doc["review_grid"]; rows=doc["rows"]
+    required(doc["schemaVersion"]=="0.15" and len(rows)==329 and len(grid)==346
+             and len(doc["columns"])==15 and all(len(x)==15 for x in grid),
+             "G2-6B original 329 rows and 346x15 source grid")
+    required([x["key"] for x in doc["columns"][:4]]==["Dragino","AirGradient","Campbell","Bennett"]
+             and [x["key"] for x in doc["columns"]][8:10]==["OpenGroupSOSA","SOSA"]
+             and doc["columns"][-1]["key"]=="DIM", "original distinct donor/case/DIM order")
+    required(mirror==grid, "first CSV equals all source grid cells")
+    with (BASE/"ISA_Correction_Review_07NOV2026.csv").open(encoding="utf-8",newline="") as f:
+        required(list(csv.reader(f))==grid,"second CSV mirror equals all source grid cells")
+    second=(BASE/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    required(md.split("<table>",1)[1]==second.split("<table>",1)[1],"both readable tables identical")
+    body=md.split("<tbody>",1)[1].split("</tbody>",1)[0]
+    parsed=[]
+    for part in re.findall(r"<tr>.*?</tr>",body,re.S):
+        if 'colspan="15"' in part:
+            h=re.search(r'<th colspan="15">(.*?)</th>',part,re.S)
+            required(h is not None,"15-column topic")
+            parsed.append([html.unescape(h.group(1))]+[""]*14)
+        else:
+            vals=[html.unescape(x) for x in re.findall(r"<td>(.*?)</td>",part,re.S)]
+            required(len(vals)==15,"all 15 original columns readable")
+            parsed.append(vals)
+    sections=set(doc["review_sections"])
+    required(len(sections)==15 and parsed==grid[2:]
+             and [r for i,r in enumerate(grid) if i>1 and i not in sections]==[r["display"] for r in rows],
+             "all 15 topic dividers and original stable row/cell geometry")
+    required(len(doc["originalDonorEvidence"])==58 and len(doc["caseEvidence"])==73
+             and doc["ISAEvidence"]["currentPrimaryReviews"]==480 and doc["ISAEvidence"]["specificQuestions"]==6,
+             "earlier donor/case/ISA facts and six precise questions")
+    b=json.loads((BASE/"SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json").read_text(encoding="utf-8"))
+    ids={x["id"] for x in b["original_source_items"]}; counts=b["source_counts"]
+    required(len(ids)==81 and len(b["original_toc_heading_coverage"])==1 and len(b["additional_native_subclauses_read"])==7
+             and counts["original_native_records_excluding_analyst"]==73 and counts["ANALYTICAL_CONTEXT"]==8,
+             "81 item-level source/analyst records and original section hierarchy")
+    for k,n in (("RULE",7),("PERMISSION",2),("RECOMMENDATION",4),("OBSERVATION",9),
+                ("TABLE",6),("FIGURE",9),("SLOT_PROFILE_DASH_ROW",27),("ANSI_VITA_RULE_TABLE_POINTER",9)):
+        required(counts[k]==n, "source-native item kind count "+k)
+    required(any(x["identifier_repeated_in_original"] for x in b["original_source_items"] if x["native_kind"]=="RULE")
+             and counts["distinct_printed_rule_identifiers"]==6,
+             "duplicate Rule13.2.11.5-3 must retain two separate native occurrences")
+    cover=b["C239_cumulative_coverage"]
+    required((cover["registered_headings"],cover["at_least_source_sampled_or_inline_read"],
+              cover["substantively_unread"],cover["restricted"])==(192,150,41,1),
+             "accurate partial original corpus accounting")
+    required(b["DIM_Profile_adopted"] is False and b["real_device_or_conformance_test"] is False,
+             "no premature source-completeness/model/runtime claim")
+    for n,k in ((12,"G2_1_source_correspondence"),(22,"G2_2_source_correspondence"),
+      (28,"G2_3_source_correspondence"),(20,"G2_4A_source_correspondence"),
+      (29,"G2_4B_source_correspondence"),(43,"G2_5_source_correspondence"),
+      (39,"G2_6A_source_correspondence")):
+        required(sum(bool(r.get(k)) for r in rows)==n,"preserve original source packet "+k)
+    updated=[r for r in rows if r.get("G2_6B_source_correspondence")]
+    required(len(updated)==26 and {r["row_id"] for r in updated}==set(doc["workbookSnapshot"]["G2_6B_affected_row_ids"]),
+             "exact G2-6B 26 qualified existing source rows")
+    current_ids=set();prior=[list(x) for x in grid]
+    for row in updated:
+        e=row["G2_6B_source_correspondence"];val=row["display"][8]
+        required(all(x in ids for x in e["source_item_ids"]) and bool(e["source_item_ids"]),
+                 "original printed source IDs "+row["row_id"])
+        required(e["DIM_Profile_adopted"] is False
+                 and e["original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread"],
+                 "source/edition holdings and no adoption")
+        required("G2-6B:" in val and val!=e["previous_sosa_cell_value"],
+                 "one source-justified new contribution")
+        idx=[i for i,g in enumerate(grid) if g[8]==val and g[14]==row["label"]]
+        required(len(idx)==1,"unique stable row correspondence "+row["row_id"])
+        cell="I"+str(idx[0]+1);required(cell not in current_ids,"one changed cell only")
+        current_ids.add(cell);prior[idx[0]][8]=e["previous_sosa_cell_value"]
+        required(all(row["display"][n]==prior[idx[0]][n] for n in range(15) if n!=8),
+                 "other donor and source case cells untouched")
+    v=json.loads((BASE/"SOSA_G2_6B_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
+    required(set(v["changed_saved_cells"])==current_ids and len(current_ids)==26,
+             "published saved difference agrees with exactly 26 qualified SOSA source IDs")
+    required(doc["workbookSnapshot"]["checkpoint"]=="SOSA-G2-6B-CANONICAL-VERIFIED"
+             and doc["workbookSnapshot"]["currently_matches_readable_view"] is True
+             and doc["SOSAReviewCompletion"]["G2_6B_XLSX_lag"]==0
+             and doc["SOSAEvidence"]["G2_6B"]["Excel_lag_cells"]==0,
+             "mandatory same-workbook L23 exit complete")
+    required(all(v["checks"].values()),"publisher saved-cell, historical sheet and nonadoption checks")
+    book=(BASE/(NAME+".xlsx")).read_bytes()
+    h=hashlib.sha256(book).hexdigest()
+    required(h==doc["currentWorkbookSha256"]==doc["workbookSnapshot"]["sha256"]==v["workbook_sha256"],
+             "saved actual Excel bytes and metadata SHA equal")
+    with zipfile.ZipFile(io.BytesIO(book)) as z:
+        required(z.testzip() is None,"XLSX CRC")
+        for p in z.namelist():
+            if p.endswith((".xml",".rels")):ET.fromstring(z.read(p))
+            if p.startswith("xl/worksheets/") and p.endswith(".xml"):
+                required(not any(c.get("t")=="e" for c in ET.fromstring(z.read(p)).iter(S+"c")),
+                         "no Excel error type cells")
+        root=ET.fromstring(z.read("xl/workbook.xml"))
+        nodes=list(root.find(S+"sheets"));names=[x.get("name") for x in nodes]
+        required(names==v["workbook_sheets"] and len(names)==26,"all 26 worksheet names/order")
+        rels={x.get("Id"):x.get("Target") for x in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))}
+        locations={}
+        for x in nodes:
+            t=rels[x.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
+            locations[x.get("name")]=t.lstrip("/") if t.startswith("/") else "xl/"+t
+        for name,digest in v["exact_original_untouched_xml_sha256"].items():
+            required(hashlib.sha256(z.read(locations[name])).hexdigest()==digest,"unchanged historical "+name)
+        sheet,actual=data_rows(z.read(locations["Master Crosswalk"]),15)
+        required(actual==grid,"every one of the 5190 saved grid cells matches original source current")
+        merges=[x.get("ref") for x in sheet.find(S+"mergeCells").findall(S+"mergeCell")]
+        required(merges==["A1:D1","E1:I1","J1:N1"]+[f"A{i+1}:O{i+1}" for i in doc["review_sections"]],
+                 "all original full-width groups")
+        pane=sheet.find(S+"sheetViews").find(S+"sheetView").find(S+"pane")
+        required(pane.get("xSplit")=="4" and pane.get("ySplit")=="2","frozen case and two header rows")
+    required(doc["SOSAReviewCompletion"]["source_coverage_complete"] is False
+             and doc["SOSAReviewCompletion"]["step18_SAPIENT_blocked"] is True,
+             "entire donor OPEN, no transition")
+    print("PASS: G2-6B source 1 heading/7 child sections, 73 native records/8 contexts, 26 qualified SOSA cells.")
+    print("PASS: SAME original 26-sheet XLSX exact 346x15 current JSON/both CSV/both Markdown saved-cell parity; 22 historical sheets.")
+    print("LIMIT: 41 C239 headings unread/1 restricted; ANSI/VITA and 8 native DSDM/API files held; zero model adoption/command/conformance.")
+
+
 def main() -> None:
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
@@ -1005,7 +1125,9 @@ def main() -> None:
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
     if "review_grid" in doc and "columns" in doc:
-        if len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_6A"):
+        if len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_6B"):
+            verify_sosa_g2_6b_master(doc, mirror, md)
+        elif len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_6A"):
             verify_sosa_g2_6a_master(doc, mirror, md)
         elif len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_5"):
             verify_sosa_g2_5_master(doc, mirror, md)
