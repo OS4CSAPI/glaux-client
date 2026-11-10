@@ -1,3 +1,11 @@
+# Verified G2-3 saved Excel and owner-controlled closeout addendum (9 November 2026)
+
+**L23 mandatory workbook publication completed in this SAME G2-3 packet.** The prior **28-cell Excel lag** described later in this source report was the *prepublication intermediate* snapshot and is now **resolved**. The SAME [canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now contains all 28 source-qualified SOSA column-I changes, with every saved source grid value agreeing with current JSON, both CSVs and both readable Markdown comparisons: [verified actual-cell record](SOSA_G2_3_Workbook_Validation_09NOV2026.json) · [saved 28-cell preview](SOSA_G2_3_Workbook_Preview_09NOV2026.png) · [publisher successful](https://github.com/OS4CSAPI/glaux-client/actions/runs/42760255056). All 26 worksheet names/order and 22 historical sheets remain preserved; no other donor/case/DIM cell changes or DIM/Profile adoption. Workbook SHA-256 `8dab9447dd00ede955a1cdc36d48493d54726bf0d40c9b409b0da47801381750`. Original external normative ANSI/VITA/HOST/IPMI and SOSA companion sources remain unread, SOSA donor **OPEN**.
+
+**STOP:** Next separate owner Proceed SOSA-G2-4 only, not SAPIENT, new DIM classes or deployment.
+
+## Earlier bounded source review, whose prepublication Excel-lag statement is historical
+
 # SOSA-G2-3 — Original C239 §§6.3–6.5: out-of-band hardware and operational/security state audit
 
 **9 November 2026 · G2-3 original C239 INLINE source review complete; full The Open Group SOSA donor review OPEN.** Original `c239_5.pdf`, The Open Group 2023 *Technical Standard for SOSA Reference Architecture*, Edition1.1, Project Library ID `file_00000000af4081f58c4bac329f85c58f`. Inspected all C239 PDF pp119–140, original printed pp93–114, through the end of §6.5.4.4 before §7 begins. Source figures' visible parsed text/captions were reviewed; attempted original diagram page-image retrieval was not consistently available, so exact plotted arrow/geometry coverage is not falsely certified. ANSI/VITA46.11/65.0, HOST, IPMI, native C239 DSDM/IDL/OpenAPI external files were not read.
