@@ -1,3 +1,13 @@
+# CURRENT — SOSA-G2-1 INLINE ORIGINAL SOURCE AUDITED; donor OPEN; G2-2 next (9 November 2026)
+
+**Verified G2-1:** [bounded source/coverage and master integration](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [201-item original C239 inventory](SOSA_G2_1_Original_Item_Inventory_09NOV2026.json) · [canonical current JSON](Master_Donor_Concept_to_DIM_Crosswalk.json) · [current readable master](Master_Donor_Concept_to_DIM_Crosswalk.md) · [current SOSA correction plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). C239 Edition1.1 §§6.2.3–6.2.5 (PDF pp.73–90) were source-read through the final generic-module rules: **98 System Manager function rows, 57 interactions, 26 generic-module functions, 14 interactions and six explicit Rules**. Of the 195 table entries, **129 V1.0 / 66 Future**; this does not validate actual native API schemas or installed capabilities. Three C239 TOC heading families have inline-text review, but the referenced native DSDM/IDL/OpenAPI files still are not inspected; **comprehensive donor coverage is NOT closed**.
+
+**Current canonical comparison:** 329 information rows ×15 columns; exactly **12 existing The Open Group SOSA donor cells** now contain additional source-qualified comparisons. All previous 58 donor and 73 source-case facts, ISA findings, previous SOSA-D evidence and DIM non-adoption remain preserved. The **26-sheet canonical XLSX is an older, verified SOSA-D snapshot** (SHA256 `531451e4b43b0502e9e90b62972a7398be048ceb3987eb24ef4963e3f0fb1fba`); current JSON/CSV/Markdown differs in **12 SOSA cells**, not a current Excel parity claim. A native System Manager Rule/Appendix B.2–B.3 discrepancy is held as G2-1-Q01, along with unread OpenAPI files and unpublished interaction/function join.
+
+**NEXT SINGLE OWNER “Proceed”: SOSA-G2-2 only — original C239 §§6.2.6–6.2.9 Security Services, Chassis Manager, PIC and PIC-with-software-runtime in-band management.** Keep The Open Group SOSA active; **Step18 SAPIENT remains BLOCKED** pending source-based donor completion and owner decision. G2-1 is not DIM or Profile adoption, a universal chassis, a workbook closeout, native API testing or equipment execution. No automatic G2-3/G3/G4/G5.
+
+## Historical earlier checkpoints and superseded NEXT routing
+
 # CURRENT — SOSA-G1 SOURCE CENSUS COMPLETE; original-source coverage still OPEN (9 November 2026)
 
 <!-- SOSA_G1_CENSUS_COMPLETE_09NOV2026 -->

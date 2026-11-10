@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-1 SOURCE READ / MASTER PROGRESS; full SOSA OPEN (9 November 2026)
+
+[Active SOSA-specific plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) · [G2-1 verified original-source report](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [current canonical master](Master_Donor_Concept_to_DIM_Crosswalk.md). Original C239 §§6.2.3–6.2.5: 201 native table/Rule items source-read; exactly **12 existing source-qualified SOSA donor cells** changed in JSON, CSV, Markdown (329 source rows, 15 columns), none adopted as DIM content. Canonical 26-sheet XLSX remains **SOSA-D pre-G2-1**, behind by those 12 cells (declared, not falsely synchronized). The original Step17 SOSA-A/B/C/D bounded work and G1 census remain valid intermediate evidence; neither closed donor source coverage. **Next separate owner Proceed = G2-2 §§6.2.6–6.2.9 ONLY; Step18 SAPIENT BLOCKED** until source-completion gate and owner disposition. Step24/Steps35–39/Step40 retain model adoption authority.
+
+## Older plan/versioned routing below (historical where inconsistent)
+
 # CURRENT — SOSA-G1 SOURCE CENSUS COMPLETE; original-source coverage still OPEN (9 November 2026)
 
 <!-- SOSA_G1_CENSUS_COMPLETE_09NOV2026 -->

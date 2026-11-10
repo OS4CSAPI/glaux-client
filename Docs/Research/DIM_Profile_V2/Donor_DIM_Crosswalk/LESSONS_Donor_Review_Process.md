@@ -1,4 +1,4 @@
-# CURRENT — Lessons through SOSA-D, 9 November 2026
+# CURRENT — Lessons through SOSA-G2-1, 9 November 2026
 
 <!-- LESSONS_THROUGH_SOSA_D_09NOV2026 -->
 
@@ -95,3 +95,10 @@ The next application is Step18 SAPIENT v2 with a donor-specific source-census an
 The earlier four SOSA-A/B/C/D iterations established 76 selected original C239 source records, 57 qualified review decisions, and a verified 15-column workbook, but did not establish exhaustive original-source coverage. G1 then identified **12 registered lineage artifacts, one additional C239-native DSDM dependency, a separate restricted Appendix C overlay and 192 original C239 table-of-contents headings**: 65 with selected source passages inspected, 126 not substantively reviewed and one restricted. Each of the 76 prior source records was traceable to a known original contents heading, but **no section was certified fully audited**.
 
 **Reusable requirement:** Original-source artifact/section/Rule/element inventory and relevance screening must precede claims of donor completeness. Maintain separate *source sample read*, *full source coverage verified*, *native companion actually accessed*, *crosswalk-integrated*, *DIM adopted*, and *runtime conformance* states. Populate the current master progressively as qualified findings arise; retain explicit dated Excel refresh checkpoints. No AI-generated number of planned iterations can substitute for a documented source-evidence completion gate. [Actual G1 source audit baseline](SOSA_G1_Source_Coverage_Census_09NOV2026.md).
+
+## L22 — Original C239 item-level audit, source support, and progressive master controls (SOSA-G2-1)
+
+C239 §§6.2.3–6.2.5 contain 124 function entries, 71 interaction entries and six binding Rules across two separately scoped interfaces. A source table label **V1.0** or **Future** is not a runtime-observed capability or a profile-approved SHALL; explicit native Rules have their own implementation conditions, and original Appendix B companion schemas still require access. System Manager Rules 6.2.4.3-2/-4 point to B.3 even though the original Appendix B.2 names the System Manager OpenAPI file; keep that conflict local, not silently repaired.
+
+**Reusable practice:** enumerate actual source table entries/Rules and their original page locators, classify normative standing and interface/edition scope, distinguish source-printed input/output types from unread actual API schemas, then incrementally add only source-qualified comparisons to existing master rows. G2-1 updated 12 existing SOSA cells and preserved the other donor/case data while explicitly labeling the 26-sheet XLSX as 12 cells older. Do not equate cross-format integration, source audit, workbook synchronization or DIM/CSAPI Profile acceptance. [Evidence](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md).
+

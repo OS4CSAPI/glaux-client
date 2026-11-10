@@ -1,3 +1,13 @@
+# The Open Group SOSA — source coverage correction plan (current G2-1 checkpoint)
+
+**9 November 2026 · G2-1 C239 INLINE SOURCE REVIEW COMPLETE, FULL DONOR REVIEW OPEN.** [Source-first G2-1 report](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [201 native table/Rule items with original locators](SOSA_G2_1_Original_Item_Inventory_09NOV2026.json). Assigned original §§6.2.3–6.2.5 were fully read **at C239 PDF inline text/table depth**, including §6.2.5.3 continuing to PDF p.90; 98+57 System Manager functions/interactions, 26+14 generic-module functions/interactions and six explicit Rules audited. Of 195 source function/interaction entries, 129 V1.0 and 66 Future. The original source's System Manager Rules referring to B.3 conflict with original Appendix B.2's System Manager file label; the native OpenAPI files remain unread and the source's explicit function/interaction linkage is not included in printed tables.
+
+**Progressive master:** exactly 12 existing SOSA cells in the canonical 329×15 JSON, CSV and GitHub-readable comparison gained bounded source-qualified evidence; prior 58 donor records and 73 case facts survive. The **SAME 26-sheet Excel is still the verified SOSA-D snapshot** and is older than current text by **12 SOSA cells**; refresh/verify saved XLSX at the next substantive workbook checkpoint, without proliferating workbooks, and record this lag until then. Earlier SOSA-G1 TOC baseline is preserved (65 sampled/126 unread/one restricted); G2-1 adds original full-inline review for three heading families, of which two were previously substantively unread. No native companion completeness, DIM/Profile acceptance or conformance is claimed.
+
+**NEXT ONLY on a distinct owner “Proceed”: SOSA-G2-2 C239 §§6.2.6–6.2.9**, source-first Security Services, Chassis Manager, Plug-In Card and software Run-Time Environment interface/Rule/table inventory. No G2-3, SAPIENT Step18, workbook parity assertion or owner architecture decision automatically follows. Continue to G3/G4/G5 source completeness and donor closure gate as evidence justifies; no fixed prompt count.
+
+## Historical G1 plan/current-state snapshot — older NEXT instructions superseded
+
 # The Open Group SOSA donor — source-coverage correction plan, v0.1
 
 **Status: G1 SOURCE CENSUS COMPLETE; donor original-source coverage remains INCOMPLETE.** The four earlier SOSA-A/B/C/D increments provided a valid *selected C239 clause review, traceability ledger and preliminary crosswalk*. They **did not** complete a donor audit comparable in original-source coverage rigor to the ISA correction. The previous "Step17 complete / Step18 next" routing is superseded. Step18 (SAPIENT) is BLOCKED pending a genuine SOSA coverage completion gate and owner decision.

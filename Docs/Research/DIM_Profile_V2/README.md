@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-1 original source work complete at inline depth; SOSA donor remains OPEN
+
+**9 November 2026:** [SOSA-G2-1 source and comparison report](Donor_DIM_Crosswalk/SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [201 original C239 source-item/Rule ledger](Donor_DIM_Crosswalk/SOSA_G2_1_Original_Item_Inventory_09NOV2026.json) · [current canonical comparison](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) · [current recovery PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). SOSA-G2-1 fully read **C239 inline §§6.2.3–6.2.5** through printed p.64, not eight unavailable original native DSDM/IDL/OpenAPI file contents; documented 195 original table entries and six explicit Rules. **12 existing The Open Group SOSA cells** gained source-qualified correspondence without changing 329 rows, 15 columns, other donors/cases, or DIM adoption. The SAME 26-sheet XLSX remains a **verified pre-G2-1 SOSA-D snapshot, behind the JSON/CSV/Markdown by exactly 12 SOSA cells**. Full original-source donor completeness is not claimed. **Step18 SAPIENT BLOCKED; next separate owner Proceed: SOSA-G2-2 original §§6.2.6–6.2.9 ONLY.**
+
+## Historical earlier position and superseded CURRENT/NEXT notices
+
 # CURRENT — SOSA-G1 source census complete, SOSA donor still open; Step18 blocked
 
 <!-- SOSA_G1_CENSUS_COMPLETE_09NOV2026 -->

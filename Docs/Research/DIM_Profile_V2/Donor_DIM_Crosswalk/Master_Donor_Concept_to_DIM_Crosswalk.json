@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.11",
+  "schemaVersion": "0.12",
   "date": "2026-11-09",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
@@ -1389,7 +1389,7 @@
       "",
       "",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-      "Not assessed here",
+      "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1]",
       "",
       "",
       "",
@@ -1525,7 +1525,7 @@
       "",
       "",
       "Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY",
-      "Not assessed here",
+      "Related only · C239 configuration reads V1.0 but updateSensorConfig and generic updateConfig are Future; no ISA per-property mutability declaration [G2-1]",
       "",
       "",
       "",
@@ -1627,7 +1627,7 @@
       "",
       "StatusReport.mode",
       "≈ Camera Mode in Status.properties · camera-specific report",
-      "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode",
       "",
       "",
       "≈ Category.value (categorical status/mode value)",
@@ -1644,7 +1644,7 @@
       "",
       "≈ Task",
       "≈ Request message · command invocation, not proven execution",
-      "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger]",
+      "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result",
       "",
       "",
       "",
@@ -2511,7 +2511,7 @@
       "Not assessed here",
       "Not assessed here",
       "Sanitize",
-      "Not assessed here",
+      "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2528,7 +2528,7 @@
       "Not assessed here",
       "Not assessed here",
       "Self Test",
-      "Not assessed here",
+      "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2562,7 +2562,7 @@
       "Not assessed here",
       "Not assessed here",
       "Shutdown",
-      "Not assessed here",
+      "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -3089,7 +3089,7 @@
       "Not assessed here",
       "Not assessed here",
       "Get Config",
-      "Not assessed here",
+      "Related only · C239 getSensorConfig/getSystemManagerConfig/getModuleConfig V1.0 carry different response types; not ISA Config-message identity [G2-1]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -3327,7 +3327,7 @@
       "",
       "",
       "Status.properties: Name Value Pair [0+]",
-      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report",
       "",
       "",
       "",
@@ -3616,7 +3616,7 @@
       "",
       "",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
-      "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties",
       "",
       "",
       "",
@@ -3650,7 +3650,7 @@
       "",
       "",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-      "Not assessed here",
+      "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1]",
       "",
       "",
       "",
@@ -5826,7 +5826,7 @@
       "Not assessed here",
       "Not assessed here",
       "Built In Test Result",
-      "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorBITResults/getBITResults are V1.0; not necessarily the latest actual equipment diagnostic result",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -9597,7 +9597,7 @@
         "",
         "",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-        "Not assessed here",
+        "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1]",
         "",
         "",
         "",
@@ -9617,7 +9617,22 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.3.4"
-      ]
+      ],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-028",
+          "SOSA-C239-G2-1-GMI-009",
+          "SOSA-C239-G2-1-GMI-007"
+        ],
+        "non_equivalence": "Interface operation names do not establish ISA command schema or CSAPI command endpoints.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-K-PARAMETER-DECL",
@@ -9933,7 +9948,7 @@
         "",
         "",
         "Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY",
-        "Not assessed here",
+        "Related only · C239 configuration reads V1.0 but updateSensorConfig and generic updateConfig are Future; no ISA per-property mutability declaration [G2-1]",
         "",
         "",
         "",
@@ -9953,7 +9968,23 @@
         "TOPICS-1.2"
       ],
       "topics_source_review_boundary": "PERMANENT operational-cycle expectation and recommended deregistration differ from READ WRITE supplied knowledge through Set Property and READ ONLY values altered via a separately supported Change/Adjust command. Supplying Position may indirectly cause Orientation motion while Position remains READ WRITE.",
-      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-046",
+          "SOSA-C239-G2-1-SMI-048",
+          "SOSA-C239-G2-1-GMI-012",
+          "SOSA-C239-G2-1-GMI-013"
+        ],
+        "non_equivalence": "Future management update endpoints do not establish property-level ISA access semantics or mutable actual equipment.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-K-ABS-THRESHOLD",
@@ -10240,7 +10271,7 @@
         "",
         "StatusReport.mode",
         "≈ Camera Mode in Status.properties · camera-specific report",
-        "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode",
         "",
         "",
         "≈ Category.value (categorical status/mode value)",
@@ -10310,6 +10341,21 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "PARTIAL",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-031",
+          "SOSA-C239-G2-1-SMI-032",
+          "SOSA-C239-G2-1-GMI-008"
+        ],
+        "non_equivalence": "C239 interface return type is not evidence that an installed source system reports that mode.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
       }
     },
     {
@@ -10336,7 +10382,7 @@
         "",
         "≈ Task",
         "≈ Request message · command invocation, not proven execution",
-        "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger]",
+        "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result",
         "",
         "",
         "",
@@ -10409,6 +10455,20 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-033",
+          "SOSA-C239-G2-1-SMI-029"
+        ],
+        "non_equivalence": "Do not equate mission Task Manager, in-band management request and observed physical control.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
       }
     },
     {
@@ -12273,7 +12333,7 @@
         "Not assessed here",
         "Not assessed here",
         "Sanitize",
-        "Not assessed here",
+        "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12281,7 +12341,23 @@
         "Not assessed here",
         "Requested removal of security-relevant application data"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-036",
+          "SOSA-C239-G2-1-SMI-038",
+          "SOSA-C239-G2-1-GMI-010",
+          "SOSA-C239-G2-1-GMI-011"
+        ],
+        "non_equivalence": "Security operations and their payloads do not prove source-specific ISA application-data wipe or actual execution.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-235",
@@ -12307,7 +12383,7 @@
         "Not assessed here",
         "Not assessed here",
         "Self Test",
-        "Not assessed here",
+        "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12315,7 +12391,21 @@
         "Not assessed here",
         "Requested component diagnostic procedures"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-013",
+          "SOSA-C239-G2-1-SMI-014"
+        ],
+        "non_equivalence": "Request interface is not evidence of actual sensor BIT execution or ISA diagnostic procedure.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-242",
@@ -12387,7 +12477,7 @@
         "Not assessed here",
         "Not assessed here",
         "Shutdown",
-        "Not assessed here",
+        "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12395,7 +12485,21 @@
         "Not assessed here",
         "Requested component shutdown sequence"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-030",
+          "SOSA-C239-G2-1-GMI-007"
+        ],
+        "non_equivalence": "Request-response support does not prove successful physical shutdown or universal deployed availability.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-256",
@@ -13533,7 +13637,7 @@
         "Not assessed here",
         "Not assessed here",
         "Get Config",
-        "Not assessed here",
+        "Related only · C239 getSensorConfig/getSystemManagerConfig/getModuleConfig V1.0 carry different response types; not ISA Config-message identity [G2-1]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -13552,7 +13656,22 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3",
         "CMPT-4.3.4"
-      ]
+      ],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-046",
+          "SOSA-C239-G2-1-SMI-047",
+          "SOSA-C239-G2-1-GMI-012"
+        ],
+        "non_equivalence": "Sensor aggregate, System Manager and Generic Module configurations are distinct source contexts.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-212",
@@ -14155,7 +14274,7 @@
         "",
         "",
         "Status.properties: Name Value Pair [0+]",
-        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report",
         "",
         "",
         "",
@@ -14217,6 +14336,21 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-001",
+          "SOSA-C239-G2-1-GMI-005",
+          "SOSA-C239-G2-1-GMI-008"
+        ],
+        "non_equivalence": "Health, State and Mode are different SOSA native typed representations; no ISA Status message equivalence.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
       }
     },
     {
@@ -15140,7 +15274,7 @@
         "",
         "",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
-        "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties",
         "",
         "",
         "",
@@ -15197,6 +15331,24 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMR-01",
+          "SOSA-C239-G2-1-SMR-02",
+          "SOSA-C239-G2-1-SMR-03",
+          "SOSA-C239-G2-1-SMR-04",
+          "SOSA-C239-G2-1-GMR-01",
+          "SOSA-C239-G2-1-GMR-02"
+        ],
+        "non_equivalence": "C239 system management service roles are not automatically ISA Controller network roles or new DIM classes.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
       }
     },
     {
@@ -15303,7 +15455,7 @@
         "",
         "",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-        "Not assessed here",
+        "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1]",
         "",
         "",
         "",
@@ -15319,7 +15471,22 @@
         "CMPT-4.1.3",
         "CMPT-3.0",
         "CMPT-4.1"
-      ]
+      ],
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMF-001",
+          "SOSA-C239-G2-1-SMF-081",
+          "SOSA-C239-G2-1-GMF-021"
+        ],
+        "non_equivalence": "C239 support grades identify edition endpoints, not ISA core/extension requirements or actual equipment support.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-A-MEMBER-TASKABILITY",
@@ -20243,7 +20410,7 @@
         "Not assessed here",
         "Not assessed here",
         "Built In Test Result",
-        "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorBITResults/getBITResults are V1.0; not necessarily the latest actual equipment diagnostic result",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -20265,6 +20432,20 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_1_source_correspondence": {
+        "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+        "edition": "C239 Edition 1.1",
+        "source_sections": "6.2.3–6.2.5",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-1-SMI-015",
+          "SOSA-C239-G2-1-SMI-016"
+        ],
+        "non_equivalence": "No native latest-value temporal guarantee, device observation or ISA result-schema equivalence.",
+        "prior_SOSA_D_evidence_preserved": true,
+        "native_OpenAPI_bytes_inspected": false,
+        "DIM_adopted": false
       }
     },
     {
@@ -23069,7 +23250,9 @@
     "sosaStagedMappingDecisions": 57,
     "sosaMasterRowsWithSourceQualifiedDiscussion": 38,
     "sosaUninspectedReferencedNativeFiles": 8,
-    "sosaSourceAccessHolds": 8
+    "sosaSourceAccessHolds": 8,
+    "sosa_G2_1_inline_source_items": 201,
+    "sosa_G2_1_existing_rows_changed": 12
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -23112,20 +23295,34 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "C239 original source inventory G1 completed at TOC-only census depth (192 headings, zero full section audits certified). Progressive source-first updates to existing canonical master JSON, both CSVs and both GitHub-readable tables as G2 evidence warrants; refresh same 26-sheet XLSX at substantive checkpoints and clearly label any lag. Existing 329×15 source grid and XLSX remain synchronized because G1 changed metadata only. No model adoption.",
-  "currentEvidenceCheckpoint": "SOSA-G1-SOURCE_CENSUS_COMPLETE__MASTER_GRID_AND_WORKBOOK_UNCHANGED",
+  "publicationPolicy": "G2-1 fully reviewed C239 inline §§6.2.3–6.2.5 and 201 native table/Rule entries; updated 12 existing SOSA cells in canonical JSON/CSV/Markdown. The 26-sheet XLSX is unchanged at verified SOSA-D checkpoint and now lags those 12 source-qualified cells. Preserve the same workbook; refresh and verify saved cells at a later substantive checkpoint. Original native API/DSDM files remain unread; no model adoption.",
+  "currentEvidenceCheckpoint": "SOSA-G2-1-201-INLINE_SOURCE_ITEMS__12_MASTER_SOSA_CELLS__XLSX_SOSA_D_OLDER",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA-D-CANONICAL-VERIFIED",
+    "checkpoint": "SOSA-D-PRE-G2-1",
     "sha256": "531451e4b43b0502e9e90b62972a7398be048ceb3987eb24ef4963e3f0fb1fba",
     "information_rows": 329,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": true,
-    "lag": "NONE: 346x15 exact source/CSV/Markdown/XLSX parity; 26 original tabs preserved",
+    "currently_matches_readable_view": false,
+    "lag": "Exactly 12 The Open Group SOSA donor cells now differ: current JSON/CSV/Markdown contains G2-1 corrections; 26-sheet canonical XLSX is the older SOSA-D snapshot.",
     "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
-    "columns": 15
+    "columns": 15,
+    "G2_1_affected_row_ids": [
+      "ISA-A-SERVICE-ROLE",
+      "ISA-A-BASELINE-CAPABILITIES",
+      "ISA-K-COMMAND-DECL",
+      "S06-R018",
+      "S06-R019",
+      "ISA-T-STATUS",
+      "ISA-C-046",
+      "ISA-C-235",
+      "ISA-C-244",
+      "ISA-C-232",
+      "ISA-C-211",
+      "ISA-K-MUTABILITY"
+    ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -24005,11 +24202,43 @@
     ],
     "explicit_status": "C239_ARCHITECTURE_CLAUSES_SOURCE_CHECKED__DSDM_IDL_OPENAPI_NATIVE_FILES_NOT_READ",
     "accepted_DIM_classes": 0,
-    "original_registered_corpus_artifacts": 12
+    "original_registered_corpus_artifacts": 12,
+    "G2_1": {
+      "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+      "source_report": "SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md",
+      "source_inline_items": 201,
+      "functions": 124,
+      "interactions": 71,
+      "explicit_rules": 6,
+      "V1_0_function_interaction_entries": 129,
+      "Future_function_interaction_entries": 66,
+      "original_C239_TOC_headings": [
+        "6.2.3",
+        "6.2.4",
+        "6.2.5"
+      ],
+      "natively_companion_files_reviewed": false,
+      "master_changed_row_ids": [
+        "ISA-A-SERVICE-ROLE",
+        "ISA-A-BASELINE-CAPABILITIES",
+        "ISA-K-COMMAND-DECL",
+        "S06-R018",
+        "S06-R019",
+        "ISA-T-STATUS",
+        "ISA-C-046",
+        "ISA-C-235",
+        "ISA-C-244",
+        "ISA-C-232",
+        "ISA-C-211",
+        "ISA-K-MUTABILITY"
+      ],
+      "C239_source_discrepancy": "Rules 6.2.4.3-2/-4 reference B.3 despite Appendix B.2 being System Manager and B.3 Generic Module",
+      "DIM_adopted": false
+    }
   },
-  "nextOwnerAction": "SOSA-G2-1 only: original C239 §§6.2.3–6.2.5 in-band System Manager/Generic Module source-first requirements and concept review, with progressive master JSON/CSV/Markdown edits when warranted; Step18 SAPIENT remains BLOCKED",
+  "nextOwnerAction": "SOSA-G2-2 only on new owner Proceed: original C239 §§6.2.6–6.2.9 in-band Security Services, Chassis Manager, PIC and PIC with Software RTE; do not advance SAPIENT, and label existing XLSX's 12-row G2-1 lag.",
   "SOSAReviewCompletion": {
-    "status": "INCOMPLETE_FULL_DONOR_COVERAGE",
+    "status": "OPEN__G2_1_C239_INLINE_ORIGINAL_REVIEW_COMPLETE_WITH_UNREAD_NATIVE_FILES",
     "corrected_on": "2026-11-09",
     "current_deliverable": "SOURCE_QUALIFIED_INTERMEDIATE_C239_CROSSWALK",
     "verification": "15-column source grid and XLSX parity verified; native source completeness not proven",
@@ -24017,7 +24246,7 @@
     "original_native_DSDM_and_API_eight_files_inspected": false,
     "block_next_donor": "Step18 SAPIENT blocked until a separate owner SOSA source-coverage disposition",
     "current_plan": "PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md",
-    "next_on_owner_proceed": "SOSA-G2_1_C239_SECTIONS_6_2_3_TO_6_2_5_SOURCE_REVIEW",
+    "next_on_owner_proceed": "G2-2 source-first C239 §§6.2.6–6.2.9",
     "progressive_integration_rule": "JSON/CSV/Markdown updated as source findings are qualified; canonical XLSX refreshed at explicit substantive checkpoints and labeled stale if lagged",
     "DIM_adoption": false,
     "G1_status": "COMPLETE_SOURCE_CORPUS_AND_ORIGINAL_TOC_CENSUS_ONLY__NOT_FULL_DONOR_SOURCE_REVIEW",
@@ -24043,6 +24272,21 @@
     ],
     "source_coverage_complete": false,
     "native_DSDM_and_API_coverage_complete": false,
-    "step18_SAPIENT_blocked": true
+    "step18_SAPIENT_blocked": true,
+    "G2_1_inline_source_sections": [
+      "6.2.3",
+      "6.2.4",
+      "6.2.4.1",
+      "6.2.4.2",
+      "6.2.4.3",
+      "6.2.5",
+      "6.2.5.1",
+      "6.2.5.2",
+      "6.2.5.3"
+    ],
+    "G2_1_items_count": 201,
+    "G2_1_native_schema_unread": true,
+    "G2_1_master_rows_changed": 12,
+    "G2_1_excel_lag": 12
   }
 }

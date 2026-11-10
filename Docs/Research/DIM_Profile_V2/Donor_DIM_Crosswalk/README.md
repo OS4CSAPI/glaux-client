@@ -1,3 +1,11 @@
+# CURRENT — SOSA-G2-1 inline C239 source review complete; donor still OPEN
+
+**9 November 2026.** [G2-1 original-source 201-item report](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [native inventory](SOSA_G2_1_Original_Item_Inventory_09NOV2026.json) · [master JSON](Master_Donor_Concept_to_DIM_Crosswalk.json) · [current GitHub-readable 15-column comparison](Master_Donor_Concept_to_DIM_Crosswalk.md) · [owner recovery PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). C239 §§6.2.3–6.2.5 were fully inspected **at inline C239 text depth only**: 195 original function/interaction entries (129 V1.0, 66 Future) and six Rules, with source-locator IDs. Exactly **12 source-qualified SOSA donor cells** have been progressively updated in JSON/CSV/Markdown, leaving 329 information rows, 15 columns and all other case/donor/DIM contents untouched.
+
+**Excel is a lagged snapshot:** current [26-sheet canonical XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remains the verified SOSA-D checkpoint, before those **12 SOSA text updates**. Its earlier 346×15 saved-cell parity is NOT current parity. C239's eight native model/API companion files remain unread, and G2-1 identifies an original §6.2.4.3/Appendix B.2–B.3 conflict. **The Open Group SOSA remains OPEN; original Step18 SAPIENT BLOCKED. Next owner “Proceed” = SOSA-G2-2 C239 §§6.2.6–6.2.9 ONLY.**
+
+## Historical earlier snapshots, banners and original plan (superseded routing)
+
 # CURRENT — SOSA-G1 SOURCE CENSUS COMPLETE; original-source coverage still OPEN (9 November 2026)
 
 <!-- SOSA_G1_CENSUS_COMPLETE_09NOV2026 -->
