@@ -3,7 +3,7 @@
   "date": "2026-11-09",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "531451e4b43b0502e9e90b62972a7398be048ceb3987eb24ef4963e3f0fb1fba",
+  "currentWorkbookSha256": "6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 source-preserving working baseline accepted; SOSA-D adds source-qualified donor comparisons only; DIM content not adopted",
@@ -23295,16 +23295,16 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "G2-1 fully reviewed C239 inline §§6.2.3–6.2.5 and 201 native table/Rule entries; updated 12 existing SOSA cells in canonical JSON/CSV/Markdown. The 26-sheet XLSX is unchanged at verified SOSA-D checkpoint and now lags those 12 source-qualified cells. Preserve the same workbook; refresh and verify saved cells at a later substantive checkpoint. Original native API/DSDM files remain unread; no model adoption.",
-  "currentEvidenceCheckpoint": "SOSA-G2-1-201-INLINE_SOURCE_ITEMS__12_MASTER_SOSA_CELLS__XLSX_SOSA_D_OLDER",
+  "publicationPolicy": "Binding L23: every substantive source-qualified donor packet with meaningful master cell changes must refresh and verify the SAME canonical XLSX before the next research packet; any deferred checkpoint requires an owner-approved precise exception, explicit stale snapshot and stopping point. SOSA-G2-1 12 source-qualified cells fully synchronized. Source audit completeness, DIM/Profile adoption and runtime conformance remain separate.",
+  "currentEvidenceCheckpoint": "SOSA-G2-1-SAVED_26_SHEET_EXCEL_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA-D-PRE-G2-1",
-    "sha256": "531451e4b43b0502e9e90b62972a7398be048ceb3987eb24ef4963e3f0fb1fba",
+    "checkpoint": "SOSA-G2-1-CANONICAL-VERIFIED",
+    "sha256": "6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b",
     "information_rows": 329,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": false,
-    "lag": "Exactly 12 The Open Group SOSA donor cells now differ: current JSON/CSV/Markdown contains G2-1 corrections; 26-sheet canonical XLSX is the older SOSA-D snapshot.",
+    "currently_matches_readable_view": true,
+    "lag": "NONE — all 346×15 current JSON/CSV/Markdown/XLSX cells agree and 26 original sheets are preserved",
     "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -23322,7 +23322,9 @@
       "ISA-C-232",
       "ISA-C-211",
       "ISA-K-MUTABILITY"
-    ]
+    ],
+    "refreshed_cell_count": 12,
+    "validation_file": "SOSA_G2_1_Workbook_Validation_09NOV2026.json"
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -24233,10 +24235,13 @@
         "ISA-K-MUTABILITY"
       ],
       "C239_source_discrepancy": "Rules 6.2.4.3-2/-4 reference B.3 despite Appendix B.2 being System Manager and B.3 Generic Module",
-      "DIM_adopted": false
+      "DIM_adopted": false,
+      "excel_checkpoint": "SOSA-G2-1-CANONICAL-VERIFIED",
+      "excel_validation": "SOSA_G2_1_Workbook_Validation_09NOV2026.json",
+      "excel_12_source_cells_synced": true
     }
   },
-  "nextOwnerAction": "SOSA-G2-2 only on new owner Proceed: original C239 §§6.2.6–6.2.9 in-band Security Services, Chassis Manager, PIC and PIC with Software RTE; do not advance SAPIENT, and label existing XLSX's 12-row G2-1 lag.",
+  "nextOwnerAction": "SOSA-G2-2 only on new owner Proceed: source-first C239 §§6.2.6–6.2.9 Security Services, Chassis Manager, PIC and PIC with software RTE; Step18 SAPIENT blocked until SOSA owner closure.",
   "SOSAReviewCompletion": {
     "status": "OPEN__G2_1_C239_INLINE_ORIGINAL_REVIEW_COMPLETE_WITH_UNREAD_NATIVE_FILES",
     "corrected_on": "2026-11-09",
