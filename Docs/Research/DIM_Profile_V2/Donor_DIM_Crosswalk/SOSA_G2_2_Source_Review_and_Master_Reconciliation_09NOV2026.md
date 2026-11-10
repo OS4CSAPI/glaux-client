@@ -1,3 +1,9 @@
+# G2-2 final Excel checkpoint addendum — 9 November 2026
+
+**Saved workbook source parity is VERIFIED**, superseding the G2-2 prepublication lag described later in this report. The original-source findings (352 C239 entries/rule appearances) and the 22 existing-row qualified comparisons are unchanged; the SAME [26-sheet master Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now includes **all 22 column-I changes** and agrees cell-for-cell with JSON, both CSV mirrors and both readable comparisons across **346×15**. [Actual saved workbook checks](SOSA_G2_2_Workbook_Validation_09NOV2026.json) · [successful Actions run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42753787384) · [workbook publication commit](https://github.com/OS4CSAPI/glaux-client/commit/6cbfcf46f5991ebf93b00083f112fd250e4609de). The Excel lag is **zero**, 22 historical sheets remain byte preserved; source completeness, native API/DSDM access, adoption and external conformance remain unproven. **NEXT only on separate owner Proceed: SOSA-G2-3 C239 §§6.3–6.5. SAPIENT blocked.**
+
+## Original G2-2 source review and its historical prepublication Excel state
+
 # SOSA-G2-2 — Original C239 §§6.2.6–6.2.9: native source census and master reconciliation
 
 **Evidence status:** Bounded G2-2 ORIGINAL INLINE TEXT RESEARCH COMPLETE; wider The Open Group SOSA donor **STILL OPEN**. Original 2023 C239 Edition 1.1 (`c239_5.pdf`, Project Library ID `file_00000000af4081f58c4bac329f85c58f`) was examined across PDF pp90–118, original printed pp64–92, through the end of §6.2.9.3. This packet reviewed four specialized in-band management families (Security Services Module, Chassis Manager hardware element, SOSA Plug-In Card, Plug-In Card hosting Software Run-Time Environment), not the following §6.3 out-of-band requirements nor any separate native OpenAPI JSON files.

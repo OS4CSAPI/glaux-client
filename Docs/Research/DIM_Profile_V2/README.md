@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-2 and same 26-sheet Excel fully source synchronized (9 November 2026)
+
+[Original C239 G2-2 352-item audit](Donor_DIM_Crosswalk/SOSA_G2_2_Source_Review_and_Master_Reconciliation_09NOV2026.md) · [native source records](Donor_DIM_Crosswalk/SOSA_G2_2_Original_Item_Inventory_09NOV2026.json) · [current donor-to-DIM master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) · [same canonical 26-sheet Excel](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [saved actual-cell validation](Donor_DIM_Crosswalk/SOSA_G2_2_Workbook_Validation_09NOV2026.json). G2-2 original §§6.2.6–6.2.9 source inline tables/Rules reviewed; exactly **22 existing The Open Group SOSA cells** source qualified and **all current 346×15 JSON/CSV/Markdown/Excel cells in parity**. Same workbook preserves 26 sheets; 22 historical sheets unchanged. No DIM/Profile adoption or comprehensive SOSA donor closure. **L23 mandatory incremental Excel checkpoint PASSED; next owner Proceed SOSA-G2-3 §§6.3–6.5 only, Step18 SAPIENT blocked**.
+
+## Earlier status and historical checkpoints (superseded where inconsistent)
+
 # CURRENT — SOSA-G2-2 original C239 source packet; Excel exit gate pending
 
 [Source report](Donor_DIM_Crosswalk/SOSA_G2_2_Source_Review_and_Master_Reconciliation_09NOV2026.md) · [352-entry source ledger](Donor_DIM_Crosswalk/SOSA_G2_2_Original_Item_Inventory_09NOV2026.json) · [current master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md). C239 §§6.2.6–6.2.9 reviewed fully at native inline table and Rule depth, not native OpenAPI contents. 22 qualified source changes in the existing SOSA column; same 26-sheet workbook G2-1 snapshot lags 22 cells until this packet's mandatory L23 publisher passes. No DIM/Profile adoption or donor completion. Next after verified Excel and new owner Proceed: G2-3 §§6.3–6.5; SAPIENT blocked.

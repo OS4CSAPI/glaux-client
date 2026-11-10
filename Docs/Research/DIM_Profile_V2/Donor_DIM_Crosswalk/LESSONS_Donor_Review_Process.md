@@ -1,3 +1,13 @@
+# CURRENT — L24 source-rule fidelity and L23 Excel exit gate VERIFIED through SOSA-G2-2 (9 November 2026)
+
+**Reusable execution rule L23 was applied and verified:** A bounded donor-source packet that changes comparison cells is not complete until the SAME editable canonical Excel, JSON, two CSVs and two human-readable comparison tables have saved-cell parity. G2-2 updated 22 The Open Group SOSA cells, regenerated that exact 26-sheet XLSX, preserved 22 untouched historical sheet XML streams, and verified all 346×15 saved cells, with [GitHub Actions PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/42753787384). Metadata-only/zero-cell source passes do not force Excel regeneration; exceptions require exact owner-approved lag and a blocked transition. No artificial tiny source packet subdivision, duplicate workbooks or new publishing workflow.
+
+**Lesson L24:** C239 §6.2.8.3 prints the identifiers Rule 6.2.8.3-1 and -2 twice (descriptive applicability first, then normative SHALL); assign source-appearance IDs and distinct standing rather than deduplicating or inventing normative obligations. Four specialized role Rules refer to B.3 although Appendix B.4–B.7 identify different native interface files; preserve source discrepancies and unread native API holds, and do not merge Chassis Manager physical hardware, PIC direct/indirect representation and logical RTE. [352 original source occurrences](SOSA_G2_2_Original_Item_Inventory_09NOV2026.json).
+
+**Do not confuse** original-source coverage, comparative master inclusion, cross-format workbook parity, accepted DIM/Profile content or runtime conformance. The Open Group SOSA donor remains open. Next owner Proceed G2-3 only.
+
+## Earlier accumulated donor lessons (retained for evidence)
+
 # CURRENT — L24 native-rule provenance and mandatory L23 packet Excel gate (9 November 2026)
 
 **Lesson L24:** C239 §6.2.8.3 repeats source Rule 6.2.8.3-1 and -2 identifiers: two descriptive PIC scope paragraphs and two separate SHALL Rules. Treat every printed occurrence as a stable, distinguishable original source item, grade SHALL vs descriptive accurately, and do not silently repair native numbering. Four specialized in-band Rule sections cite B.3 even though Appendix B.4–B.7 name their role-specific OpenAPI files; keep exact source conflicts and unread-file holds, not inferred APIs. Chassis Manager hardware roles, PIC physical/indirect management, and software runtime identities must remain separate. [G2-2 evidence](SOSA_G2_2_Original_Item_Inventory_09NOV2026.json).

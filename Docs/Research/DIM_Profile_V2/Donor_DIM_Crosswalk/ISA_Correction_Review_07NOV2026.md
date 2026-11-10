@@ -1,6 +1,6 @@
-# Historical ISA correction comparison mirror — current SOSA-G2-2 source-qualified donor grid
+# Historical ISA review mirror — current SOSA-G2-2 source-backed donor comparison
 
-**G2-2 CURRENT TEXT, EXCEL PUBLICATION GATE PENDING.** The master remains 329 information/review rows, 346×15 presentation grid, with four source-case columns, ten donor columns and proposed DIM rightmost. [G2-2 native C239 source inventory](SOSA_G2_2_Original_Item_Inventory_09NOV2026.json) records 340 function/interaction entries plus 12 source-labeled Rules (10 SHALL and two source-descriptive labels), and [G2-2 source/mapping report](SOSA_G2_2_Source_Review_and_Master_Reconciliation_09NOV2026.md) qualifies **22 existing Open Group SOSA column I cells**, without changes in any other donor, case or DIM cells. Native OpenAPI/DSDM original files remain unread. **SAME 26-sheet Excel has an explicitly pending 22-cell G2-2 checkpoint**; do not claim binary parity until the publisher verifies it. No model/Profile adoption, equipment runtime or SAPIENT transition.
+**CURRENT** same complete donor comparison as [canonical working master](Master_Donor_Concept_to_DIM_Crosswalk.md), source JSON, both CSVs and the SAVED 26-sheet XLSX, **346×15 exact parity**. The owner-approved L23 Excel gate completed after **22 source-qualified SOSA column-I cell updates**, preserving every non-target donor/case/DIM cell. [Saved actual-cell verification](SOSA_G2_2_Workbook_Validation_09NOV2026.json). Earlier prepublication Excel-lag claims are historical, not current.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>
