@@ -175,6 +175,100 @@ def verify_current_master(doc: dict, mirror: list[list[str]], md: str) -> None:
     print("LIMIT: original-source interpretation, vendor authenticity, full ISA/OGC ATS and actual equipment conformance are separate from this scoped workbook verification.")
 
 
+def verify_sosa_g2_1_master(doc: dict, mirror: list[list[str]], md: str) -> None:
+    """G2-1 live text vs exactly verified preserved SOSA-D workbook checkpoint."""
+    import hashlib
+    import html
+    old_l = json.loads((BASE / "Step17_SOSA_D_Source_First_Integration_09NOV2026.json").read_text(encoding="utf-8"))
+    old_v = json.loads((BASE / "Step17_SOSA_D_Workbook_Validation_09NOV2026.json").read_text(encoding="utf-8"))
+    ledger = json.loads((BASE / "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json").read_text(encoding="utf-8"))
+    grid = doc["review_grid"]
+    required(doc["schemaVersion"] == "0.12" and len(doc["rows"]) == 329, "G2-1 schema, 329 unchanged source rows")
+    required(len(doc["columns"]) == 15 and doc["columns"][8]["key"] == "OpenGroupSOSA" and doc["columns"][9]["key"] == "SOSA" and doc["columns"][-1]["key"] == "DIM", "independent Open Group/W3C and rightmost DIM")
+    required([x["key"] for x in doc["columns"][:4]] == ["Dragino", "AirGradient", "Campbell", "Bennett"], "four case columns left")
+    required(len(grid) == 346 and all(len(row) == 15 for row in grid) and mirror == grid, "full current JSON/CSV grid")
+    required(len(doc["originalDonorEvidence"]) == 58 and len(doc["caseEvidence"]) == 73, "all original donor and case records present")
+    required(doc["ISAEvidence"]["currentPrimaryReviews"] == 480 and doc["ISAEvidence"]["specificQuestions"] == 6, "ISA evidence still present")
+    required(len(old_l["all_57_qualified_source_decisions"]) == 57 and len(old_l["integration_row_ledger"]) == 38, "previous SOSA-D source evidence")
+    required(len(ledger["items"]) == 201 and len({x["id"] for x in ledger["items"]}) == 201, "201 original native G2-1 item IDs")
+    required(sum(x["kind"] == "RULE" for x in ledger["items"]) == 6, "6 separate explicit C239 Rules")
+    required(sum(x["support"] == "V1.0" for x in ledger["items"] if x["kind"] != "RULE") == 129, "129 V1.0 printed function/interaction entries")
+    required(sum(x["support"] == "Future" for x in ledger["items"] if x["kind"] != "RULE") == 66, "66 Future printed function/interaction entries")
+
+    # Verify EVERY GitHub-readable body cell against the current 346x15 grid.
+    required("<tbody>" in md and "</tbody>" in md, "complete readable donor comparison")
+    table = md.split("<tbody>", 1)[1].split("</tbody>", 1)[0]
+    readable = []
+    for fragment in re.findall(r"<tr>.*?</tr>", table, re.S):
+        if 'colspan="15"' in fragment:
+            section = re.search(r'<th colspan="15">(.*?)</th>', fragment, re.S)
+            required(section is not None, "15-column topic divider")
+            readable.append([html.unescape(section.group(1))] + [""] * 14)
+        else:
+            cells = [html.unescape(x) for x in re.findall(r"<td>(.*?)</td>", fragment, re.S)]
+            required(len(cells) == 15, "complete 15-column readable source row")
+            readable.append(cells)
+    required(readable == grid[2:] and md.count('colspan="15"') == 15, "all current Markdown cells match JSON/CSV exactly")
+
+    # Reconstruct the exact old saved XLSX grid by reverting ONLY qualified G2-1 SOSA cells.
+    prior_source_cells = {x["row_id"]: x["display_cell"] for x in old_l["integration_row_ledger"]}
+    item_ids = {x["id"] for x in ledger["items"]}
+    prior_grid = [list(row) for row in grid]
+    changed = []
+    for row in doc["rows"]:
+        old_cell = prior_source_cells.get(row["row_id"], "Not assessed here")
+        new_cell = row["display"][8]
+        ev = row.get("G2_1_source_correspondence")
+        if ev:
+            required(ev["relation"] in ("RELATED", "PARTIAL") and ev["DIM_adopted"] is False, "only qualified donor correspondence")
+            required(bool(ev["source_item_ids"]) and all(x in item_ids for x in ev["source_item_ids"]), "native source IDs for "+row["row_id"])
+            required(new_cell != old_cell and (new_cell.startswith(old_cell + " · ") if old_cell != "Not assessed here" else new_cell.startswith("Related only · ")), "preserve old SOSA-D value and add bounded evidence")
+            matches = [i for i, r in enumerate(grid) if r[14] == row["label"] and r[8] == new_cell]
+            required(len(matches) == 1, "unique G2-1 grid row: "+row["row_id"])
+            prior_grid[matches[0]][8] = old_cell
+            changed.append(row["row_id"])
+        else:
+            required(new_cell == old_cell, "unchanged SOSA-D cell: "+row["row_id"])
+    required(len(changed) == 12 and set(changed) == set(doc["workbookSnapshot"]["G2_1_affected_row_ids"]), "exactly 12 new SOSA cells, unchanged other rows")
+    required(not doc["workbookSnapshot"]["currently_matches_readable_view"], "honestly declared older XLSX checkpoint")
+    required(doc["workbookSnapshot"]["checkpoint"] == "SOSA-D-PRE-G2-1", "dated snapshot checkpoint")
+
+    # Check actual old binary, all historical sheets and ALL source cells at saved snapshot.
+    workbook = (BASE / (NAME + ".xlsx")).read_bytes()
+    digest = hashlib.sha256(workbook).hexdigest()
+    required(digest == doc["currentWorkbookSha256"] == doc["workbookSnapshot"]["sha256"] == old_v["workbook_sha256"], "saved old XLSX hash and explicitly retained metadata")
+    with zipfile.ZipFile(io.BytesIO(workbook)) as archive:
+        required(archive.testzip() is None, "saved XLSX CRC")
+        for p in archive.namelist():
+            if p.endswith((".xml", ".rels")):
+                ET.fromstring(archive.read(p))
+            if p.startswith("xl/worksheets/") and p.endswith(".xml"):
+                errors = [c.get("r") for c in ET.fromstring(archive.read(p)).iter(S + "c") if c.get("t") == "e"]
+                required(not errors, "Excel error-valued cells in "+p)
+        root = ET.fromstring(archive.read("xl/workbook.xml"))
+        sheets = root.find(S + "sheets")
+        names = [s.get("name") for s in sheets]
+        required(names == old_v["workbook_sheets"] and len(names) == 26, "26 original sheets in order")
+        rels = {r.get("Id"):r.get("Target") for r in ET.fromstring(archive.read("xl/_rels/workbook.xml.rels"))}
+        sheet_paths = {}
+        for entry in sheets:
+            target = rels[entry.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
+            sheet_paths[entry.get("name")] = target.lstrip("/") if target.startswith("/") else "xl/" + target
+        for n, h in old_v["exact_original_untouched_xml_sha256"].items():
+            required(hashlib.sha256(archive.read(sheet_paths[n])).hexdigest() == h, "original source evidence sheet unchanged: "+n)
+        sheet, actual = data_rows(archive.read(sheet_paths["Master Crosswalk"]), 15)
+        required(actual == prior_grid, "every saved 346x15 cell is the EXACT reconstructed SOSA-D snapshot, 12 G2-1 changes solely in current source master")
+        merges = [x.get("ref") for x in sheet.find(S + "mergeCells").findall(S + "mergeCell")]
+        expected = ["A1:D1", "E1:I1", "J1:N1"] + [f"A{i+1}:O{i+1}" for i in doc["review_sections"]]
+        required(merges == expected, "15 topic merged dividers preserved")
+        pane = sheet.find(S + "sheetViews").find(S + "sheetView").find(S + "pane")
+        required(pane.get("xSplit") == "4" and pane.get("ySplit") == "2", "four source case columns and header frozen")
+    print("PASS: CURRENT G2-1 canonical JSON/CSV/Markdown exact 346x15 parity; 12 source-qualified SOSA-only updates, 201 native source items and 6 Rules.")
+    print("PASS: SAVED canonical 26-sheet SOSA-D XLSX old snapshot exact hash and all 346x15 source cells; exactly 12 newer text cells deliberately lag.")
+    print("LIMIT: current text-to-XLSX parity is NOT claimed. No original DSDM/IDL/OpenAPI review, complete donor coverage, runtime test or DIM adoption.")
+
+
+
 def main() -> None:
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
@@ -182,7 +276,9 @@ def main() -> None:
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
     if "review_grid" in doc and "columns" in doc:
-        if len(doc["columns"]) == 15:
+        if len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.12":
+            verify_sosa_g2_1_master(doc, mirror, md)
+        elif len(doc["columns"]) == 15:
             verify_sosa_d_master(doc, mirror, md)
         else:
             verify_current_master(doc, mirror, md)
