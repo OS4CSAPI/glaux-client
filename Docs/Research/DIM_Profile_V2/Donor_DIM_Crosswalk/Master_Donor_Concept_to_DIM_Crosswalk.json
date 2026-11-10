@@ -267,7 +267,7 @@
       "≈ Device",
       "",
       "≈ ISA composition via CIC · integration collection, not physical unity",
-      "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor",
+      "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor · G2-6B: 3U PIC profile is a conditional hardware implementation of a SOSA sensing architecture",
       "≈ ssn:System",
       "",
       "",
@@ -284,7 +284,7 @@
       "",
       "≈ Node (registered network role)",
       "≈ ISA component / Controller · network role, not equipment identity",
-      "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources",
+      "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources · G2-6B: Control/Data/Expansion planes are physical internal pipes in an implementation",
       "",
       "",
       "",
@@ -301,7 +301,7 @@
       "≈ ComponentType (can include software)",
       "",
       "≈ composition member · functional integration, not physical part-of",
-      "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents",
+      "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents · G2-6B: Payload/switch/radial clock/external-I/O PIC profiles describe distinct physical constituent possibilities",
       "",
       "",
       "",
@@ -318,7 +318,7 @@
       "≈ ConnectsTo",
       "",
       "≈ CIC-to-member interface · communications, not proved cable",
-      "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions",
+      "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions · G2-6B: Front fiber and External I/O PIC provide limited external connection design possibilities",
       "",
       "",
       "",
@@ -335,7 +335,7 @@
       "",
       "",
       "",
-      "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements",
+      "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements · G2-6B: Backplane/chassis slot and switch-context requirements constrain physical support arrangements",
       "≈ sosa:Platform",
       "≈ Host (grouping of Observers)",
       "",
@@ -386,7 +386,7 @@
       "",
       "",
       "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
-      "Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency network have distinct performance goals · G2-4B: §8.3 distinguishes SOSA Message Interconnect vs wideband low-latency digital contexts and alternative coax/fiber analog links · G2-5: Host/sensor network adaptation and reference Network Subsystem roles are distinct · G2-6A: Backplane lanes/connectors provide physical data/control transport",
+      "Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency network have distinct performance goals · G2-4B: §8.3 distinguishes SOSA Message Interconnect vs wideband low-latency digital contexts and alternative coax/fiber analog links · G2-5: Host/sensor network adaptation and reference Network Subsystem roles are distinct · G2-6A: Backplane lanes/connectors provide physical data/control transport · G2-6B: Hardware fabric pipe allocations and optional Ethernet fiber exits are profile-specific",
       "",
       "",
       "",
@@ -403,7 +403,7 @@
       "",
       "",
       "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
-      "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership · G2-6A: Physical management wiring and service UART do not define ISA member exposure",
+      "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership · G2-6A: Physical management wiring and service UART do not define ISA member exposure · G2-6B: XMC/backplane constraints describe electrical integration of card-specific I/O",
       "",
       "",
       "",
@@ -1338,7 +1338,7 @@
       "",
       "",
       "Capability Declaration.properties / commands / observables / types [0+]",
-      "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics",
+      "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics · G2-6B: Slot-profile family and dash options constrain eligible hardware design features",
       "",
       "",
       "",
@@ -1389,7 +1389,7 @@
       "",
       "",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-      "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART",
+      "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART · G2-6B: External I/O command topology and conditional SYS_CON driver reassignment concern hardware",
       "",
       "",
       "",
@@ -1423,7 +1423,7 @@
       "",
       "",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
-      "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces",
+      "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces · G2-6B: External I/O card can return architecture-level status/results in source design",
       "",
       "",
       "",
@@ -1474,7 +1474,7 @@
       "",
       "",
       "Type → Type Name | Custom Type Name",
-      "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming",
+      "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming · G2-6B: AMPS and slot identifiers encode physical connector allocations/protocols",
       "",
       "",
       "",
@@ -1508,7 +1508,7 @@
       "",
       "",
       "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
-      "Not assessed here",
+      "Related only · G2-6B: Named profile dash values restrict allowed physical connector variants",
       "",
       "",
       "",
@@ -1644,7 +1644,7 @@
       "",
       "≈ Task",
       "≈ Request message · command invocation, not proven execution",
-      "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations",
+      "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations · G2-6B: Design allows PICs to receive commands over Expansion/Control planes",
       "",
       "",
       "",
@@ -1661,7 +1661,7 @@
       "",
       "≈ TaskAck.task_status",
       "≈ Response message · reported disposition, not measured effect",
-      "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule",
+      "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule · G2-6B: External I/O design returns status/results over internal paths",
       "",
       "",
       "",
@@ -3310,7 +3310,7 @@
       "",
       "",
       "Config.ccd [0-1]; property / observable / command states [0+]",
-      "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration",
+      "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration · G2-6B: Supplier card build/dash options and intermateability define design-time alternatives",
       "",
       "",
       "",
@@ -3327,7 +3327,7 @@
       "",
       "",
       "Status.properties: Name Value Pair [0+]",
-      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions",
+      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions · G2-6B: External I/O reference architecture may pass status/results via control/expansion fabric",
       "",
       "",
       "",
@@ -3650,7 +3650,7 @@
       "",
       "",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-      "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing",
+      "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing · G2-6B: Binding conditional 3U profile Rule and specific should recommendation have different native status",
       "",
       "",
       "",
@@ -3684,7 +3684,7 @@
       "",
       "",
       "CIC per-request role: performer executes; broker actively tasks members; relay forwards via ISA or native member interface",
-      "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager · G2-6A: Backplane/chassis physical routing is not ISA composition task mediation",
+      "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager · G2-6A: Backplane/chassis physical routing is not ISA composition task mediation · G2-6B: External I/O card has conditional command/status routes with one/many other PICs",
       "",
       "",
       "",
@@ -3990,7 +3990,7 @@
       "",
       "",
       "Custom → Nominated → Accepted; incorporation into a later major standard release",
-      "Related only · G2-6A: XMC overlay mapping introduces scoped hardware profile alternatives",
+      "Related only · G2-6A: XMC overlay mapping introduces scoped hardware profile alternatives · G2-6B: Source table uses 2019-11, Ready and legacy markers on physical profile variants",
       "",
       "",
       "",
@@ -4007,7 +4007,7 @@
       "",
       "",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
-      "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping",
+      "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping · G2-6B: AMPS String fixes slot profile dash-loading and port protocols for a PIC design",
       "",
       "",
       "",
@@ -4041,7 +4041,7 @@
       "",
       "",
       "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
-      "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module · G2-6A: PSC SYNC_IN and SYNC_OUT electrical synchronization pins have defined roles",
+      "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module · G2-6A: PSC SYNC_IN and SYNC_OUT electrical synchronization pins have defined roles · G2-6B: Reference/AUX clocks and 1PPS are conditional hardware timing paths with external rule references",
       "",
       "",
       "",
@@ -4092,7 +4092,7 @@
       "",
       "",
       "",
-      "Related only · G2-4A: §4.1 optional hardware assemblies can mount in/on platform/pod or be integral Sensor Pod, but no installation in four cases established · G2-5: Host interface lists connector/cable/mount-point roles · G2-6A: Short-card pitch, chassis slot conditions and RTM prohibition constrain hardware layouts",
+      "Related only · G2-4A: §4.1 optional hardware assemblies can mount in/on platform/pod or be integral Sensor Pod, but no installation in four cases established · G2-5: Host interface lists connector/cable/mount-point roles · G2-6A: Short-card pitch, chassis slot conditions and RTM prohibition constrain hardware layouts · G2-6B: XMC slot/carrier possibilities are physical design and mounting context",
       "",
       "",
       "",
@@ -4109,7 +4109,7 @@
       "",
       "",
       "",
-      "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities · G2-5: Host network transfer and audit SYSLOG are different transport/logging roles",
+      "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities · G2-5: Host network transfer and audit SYSLOG are different transport/logging roles · G2-6B: Fabric and optional front fiber define possible backplane/outbound routes",
       "",
       "",
       "",
@@ -4194,7 +4194,7 @@
       "",
       "",
       "",
-      "Related only · G2-5: Audit UTC/uptime distinctions demonstrate need for source-qualified timestamp basis",
+      "Related only · G2-5: Audit UTC/uptime distinctions demonstrate need for source-qualified timestamp basis · G2-6B: Radial-clock and 1PPS rules describe possible timing hardware design",
       "",
       "",
       "",
@@ -4211,7 +4211,7 @@
       "",
       "",
       "",
-      "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace · G2-6A: Maintenance UART and PSC control pins are source-defined hardware interfaces",
+      "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace · G2-6A: Maintenance UART and PSC control pins are source-defined hardware interfaces · G2-6B: A conditional hardware SYS_CON role change and PIC command wiring are specified",
       "",
       "",
       "",
@@ -4466,7 +4466,7 @@
       "",
       "",
       "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-      "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind · G2-6A: PIC, PSC, XMC, backplane and energy storage are distinct physical hardware roles",
+      "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind · G2-6A: PIC, PSC, XMC, backplane and energy storage are distinct physical hardware roles · G2-6B: Payload/switch/radial-clock/external I/O are specialized hardware slot/card functions",
       "",
       "",
       "",
@@ -6483,7 +6483,7 @@
         "≈ Device",
         "",
         "≈ ISA composition via CIC · integration collection, not physical unity",
-        "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor",
+        "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor · G2-6B: 3U PIC profile is a conditional hardware implementation of a SOSA sensing architecture",
         "≈ ssn:System",
         "",
         "",
@@ -6569,6 +6569,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-001"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "3U PIC profile is a conditional hardware implementation of a SOSA sensing architecture",
+        "negative_equivalence_boundary": "Not the complete described sensing System or common DIM superclass",
+        "previous_sosa_cell_value": "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -6594,7 +6610,7 @@
         "",
         "≈ Node (registered network role)",
         "≈ ISA component / Controller · network role, not equipment identity",
-        "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources",
+        "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources · G2-6B: Control/Data/Expansion planes are physical internal pipes in an implementation",
         "",
         "",
         "",
@@ -6707,6 +6723,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-2",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-004"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Control/Data/Expansion planes are physical internal pipes in an implementation",
+        "negative_equivalence_boundary": "A pipe/switch is not an independently network-visible node or registered participant",
+        "previous_sosa_cell_value": "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -6738,7 +6770,7 @@
         "≈ ComponentType (can include software)",
         "",
         "≈ composition member · functional integration, not physical part-of",
-        "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents",
+        "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents · G2-6B: Payload/switch/radial clock/external-I/O PIC profiles describe distinct physical constituent possibilities",
         "",
         "",
         "",
@@ -6903,6 +6935,23 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.6-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.5-1"
+        ],
+        "relation": "PARTIAL",
+        "native_source_meaning": "Payload/switch/radial clock/external-I/O PIC profiles describe distinct physical constituent possibilities",
+        "negative_equivalence_boundary": "One role or AMPS string does not prove an installed constituent or one-to-one software module",
+        "previous_sosa_cell_value": "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -6930,7 +6979,7 @@
         "≈ ConnectsTo",
         "",
         "≈ CIC-to-member interface · communications, not proved cable",
-        "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions",
+        "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions · G2-6B: Front fiber and External I/O PIC provide limited external connection design possibilities",
         "",
         "",
         "",
@@ -7051,6 +7100,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-3",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.6-1"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Front fiber and External I/O PIC provide limited external connection design possibilities",
+        "negative_equivalence_boundary": "No source case external probe, actual cable, field deployment or current endpoint verified",
+        "previous_sosa_cell_value": "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -7080,7 +7145,7 @@
         "",
         "",
         "",
-        "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements",
+        "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements · G2-6B: Backplane/chassis slot and switch-context requirements constrain physical support arrangements",
         "≈ sosa:Platform",
         "≈ Host (grouping of Observers)",
         "",
@@ -7192,6 +7257,22 @@
         "previous_sosa_cell_value": "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.3-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.4-1-OCC1"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Backplane/chassis slot and switch-context requirements constrain physical support arrangements",
+        "negative_equivalence_boundary": "Not surveyed field station, observed mounting or universally present chassis",
+        "previous_sosa_cell_value": "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -7418,7 +7499,7 @@
         "",
         "",
         "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
-        "Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency network have distinct performance goals · G2-4B: §8.3 distinguishes SOSA Message Interconnect vs wideband low-latency digital contexts and alternative coax/fiber analog links · G2-5: Host/sensor network adaptation and reference Network Subsystem roles are distinct · G2-6A: Backplane lanes/connectors provide physical data/control transport",
+        "Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency network have distinct performance goals · G2-4B: §8.3 distinguishes SOSA Message Interconnect vs wideband low-latency digital contexts and alternative coax/fiber analog links · G2-5: Host/sensor network adaptation and reference Network Subsystem roles are distinct · G2-6A: Backplane lanes/connectors provide physical data/control transport · G2-6B: Hardware fabric pipe allocations and optional Ethernet fiber exits are profile-specific",
         "",
         "",
         "",
@@ -7517,6 +7598,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-2",
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-3"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Hardware fabric pipe allocations and optional Ethernet fiber exits are profile-specific",
+        "negative_equivalence_boundary": "No ISA network instance, IP address, registration, association or actual connection",
+        "previous_sosa_cell_value": "Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency network have distinct performance goals · G2-4B: §8.3 distinguishes SOSA Message Interconnect vs wideband low-latency digital contexts and alternative coax/fiber analog links · G2-5: Host/sensor network adaptation and reference Network Subsystem roles are distinct · G2-6A: Backplane lanes/connectors provide physical data/control transport",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -7550,7 +7647,7 @@
         "",
         "",
         "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
-        "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership · G2-6A: Physical management wiring and service UART do not define ISA member exposure",
+        "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership · G2-6A: Physical management wiring and service UART do not define ISA member exposure · G2-6B: XMC/backplane constraints describe electrical integration of card-specific I/O",
         "",
         "",
         "",
@@ -7647,6 +7744,22 @@
         "previous_sosa_cell_value": "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11.1-2",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-002"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "native_source_meaning": "XMC/backplane constraints describe electrical integration of card-specific I/O",
+        "negative_equivalence_boundary": "No ISA exposed/opaque network members, virtual identifier or component discovery",
+        "previous_sosa_cell_value": "No established direct equivalence · SOSA Module / SOSA Interaction Infrastructure · §§5.1–5.3 · NO ESTABLISHED MAPPING IN INSPECTED SCOPE [SOSA-D ledger] · G2-2: G2-2 negative boundary: indirectly managed PIC can be represented via a separate PIC's interface; not ISA CIC visible/opaque member exposure · G2-4A: §5.3 taxonomy explicitly stops short of procurable/implementation mappings; no ISA exposed-versus-opaque membership semantics · G2-5: Audit Collector/Relay minimum module roles do not specify transparent/opaque ISA composition membership · G2-6A: Physical management wiring and service UART do not define ISA member exposure",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -10097,7 +10210,7 @@
         "",
         "",
         "Capability Declaration.properties / commands / observables / types [0+]",
-        "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics",
+        "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics · G2-6B: Slot-profile family and dash options constrain eligible hardware design features",
         "",
         "",
         "",
@@ -10203,6 +10316,22 @@
         "previous_sosa_cell_value": "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-TABLE-13.2.11.2-1"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Slot-profile family and dash options constrain eligible hardware design features",
+        "negative_equivalence_boundary": "Not a live or declared ISA capability catalogue for a fielded component",
+        "previous_sosa_cell_value": "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -10329,7 +10458,7 @@
         "",
         "",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-        "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART",
+        "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART · G2-6B: External I/O command topology and conditional SYS_CON driver reassignment concern hardware",
         "",
         "",
         "",
@@ -10439,6 +10568,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-3-OCC2"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "External I/O command topology and conditional SYS_CON driver reassignment concern hardware",
+        "negative_equivalence_boundary": "Not a declared generic command signature, authorized CSAPI ControlStream or executed effect",
+        "previous_sosa_cell_value": "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -10529,7 +10674,7 @@
         "",
         "",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
-        "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces",
+        "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces · G2-6B: External I/O card can return architecture-level status/results in source design",
         "",
         "",
         "",
@@ -10580,6 +10725,22 @@
         "negative_equivalence_boundary": "Status response is not ISA declared result schema or verified physical effect",
         "previous_sosa_cell_value": "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role",
         "native_companions_unreviewed": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "External I/O card can return architecture-level status/results in source design",
+        "negative_equivalence_boundary": "Not typed ISA result declaration, acknowledgement authenticity or performed command effect",
+        "previous_sosa_cell_value": "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -10686,7 +10847,7 @@
         "",
         "",
         "Type → Type Name | Custom Type Name",
-        "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming",
+        "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming · G2-6B: AMPS and slot identifiers encode physical connector allocations/protocols",
         "",
         "",
         "",
@@ -10735,6 +10896,22 @@
         "unverified_native_companions": true,
         "source_grade_not_DIM_adoption": true,
         "DIM_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-001"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "native_source_meaning": "AMPS and slot identifiers encode physical connector allocations/protocols",
+        "negative_equivalence_boundary": "Not a general custom/built-in datatype declaration or JSON schema",
+        "previous_sosa_cell_value": "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -10809,7 +10986,7 @@
         "",
         "",
         "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
-        "Not assessed here",
+        "Related only · G2-6B: Named profile dash values restrict allowed physical connector variants",
         "",
         "",
         "",
@@ -10817,7 +10994,23 @@
         "",
         "Declared permitted or excluded values"
       ],
-      "boundary": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions."
+      "boundary": "Not sensing reach, operating thresholds, measurements, or invented precedence among overlapping restrictions.",
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-TABLE-13.2.11.2-1",
+          "SOSA-C239-G2-6B-DASH-13.2.11.2-1-14"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Named profile dash values restrict allowed physical connector variants",
+        "negative_equivalence_boundary": "Not observed measurement range, runtime setting value or ISA type constraints",
+        "previous_sosa_cell_value": "Not assessed here",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      }
     },
     {
       "row_id": "ISA-K-MUTABILITY",
@@ -11397,7 +11590,7 @@
         "",
         "≈ Task",
         "≈ Request message · command invocation, not proven execution",
-        "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations",
+        "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations · G2-6B: Design allows PICs to receive commands over Expansion/Control planes",
         "",
         "",
         "",
@@ -11545,6 +11738,22 @@
         "previous_sosa_cell_value": "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0",
         "native_companions_unreviewed": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Design allows PICs to receive commands over Expansion/Control planes",
+        "negative_equivalence_boundary": "Not a proven issued CSAPI command request or physical action",
+        "previous_sosa_cell_value": "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -11571,7 +11780,7 @@
         "",
         "≈ TaskAck.task_status",
         "≈ Response message · reported disposition, not measured effect",
-        "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule",
+        "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule · G2-6B: External I/O design returns status/results over internal paths",
         "",
         "",
         "",
@@ -11691,6 +11900,22 @@
         "negative_equivalence_boundary": "Response/receipt does not prove physical effect or ISA Request-reference equality",
         "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces",
         "native_companions_unreviewed": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "External I/O design returns status/results over internal paths",
+        "negative_equivalence_boundary": "Not independently verified command acknowledgement or outcome",
+        "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -15459,7 +15684,7 @@
         "",
         "",
         "Config.ccd [0-1]; property / observable / command states [0+]",
-        "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration",
+        "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration · G2-6B: Supplier card build/dash options and intermateability define design-time alternatives",
         "",
         "",
         "",
@@ -15577,6 +15802,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RECOMMENDATION-13.2.11.2-1",
+          "SOSA-C239-G2-6B-TABLE-13.2.11.4-1"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Supplier card build/dash options and intermateability define design-time alternatives",
+        "negative_equivalence_boundary": "Not an actual component Configuration report or applied installed setting",
+        "previous_sosa_cell_value": "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -15607,7 +15848,7 @@
         "",
         "",
         "Status.properties: Name Value Pair [0+]",
-        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions",
+        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions · G2-6B: External I/O reference architecture may pass status/results via control/expansion fabric",
         "",
         "",
         "",
@@ -15760,6 +16001,22 @@
         "previous_sosa_cell_value": "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "External I/O reference architecture may pass status/results via control/expansion fabric",
+        "negative_equivalence_boundary": "Not a reported ISA Status payload or live diagnostic outcome",
+        "previous_sosa_cell_value": "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -17120,7 +17377,7 @@
         "",
         "",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-        "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing",
+        "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing · G2-6B: Binding conditional 3U profile Rule and specific should recommendation have different native status",
         "",
         "",
         "",
@@ -17231,6 +17488,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-RECOMMENDATION-13.2.11.2-2"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Binding conditional 3U profile Rule and specific should recommendation have different native status",
+        "negative_equivalence_boundary": "Not ISA essential/optional capability support or generic Profile SHALL",
+        "previous_sosa_cell_value": "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -17297,7 +17570,7 @@
         "",
         "",
         "CIC per-request role: performer executes; broker actively tasks members; relay forwards via ISA or native member interface",
-        "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager · G2-6A: Backplane/chassis physical routing is not ISA composition task mediation",
+        "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager · G2-6A: Backplane/chassis physical routing is not ISA composition task mediation · G2-6B: External I/O card has conditional command/status routes with one/many other PICs",
         "",
         "",
         "",
@@ -17385,6 +17658,22 @@
         "previous_sosa_cell_value": "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.6-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "native_source_meaning": "External I/O card has conditional command/status routes with one/many other PICs",
+        "negative_equivalence_boundary": "Not ISA CIC request broker, participant UCI, forwarding policy or source attribution",
+        "previous_sosa_cell_value": "Related only · Direct versus delegated indirect management / System Manager agent/manager and client/ser… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 System Manager and Task Manager partition maintenance and mission tasking, but no ISA CIC mediation semantics · G2-4B: §7.1.1 says Task Manager intends to decompose incoming external Tasks into internal Module Assignments · G2-5: Host Platform Interface adapts UCI/VICTORY/STANAG4586 commands to internal System/Task Manager · G2-6A: Backplane/chassis physical routing is not ISA composition task mediation",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -18443,7 +18732,7 @@
         "",
         "",
         "Custom → Nominated → Accepted; incorporation into a later major standard release",
-        "Related only · G2-6A: XMC overlay mapping introduces scoped hardware profile alternatives",
+        "Related only · G2-6A: XMC overlay mapping introduces scoped hardware profile alternatives · G2-6B: Source table uses 2019-11, Ready and legacy markers on physical profile variants",
         "",
         "",
         "",
@@ -18469,6 +18758,22 @@
         "previous_sosa_cell_value": "Not assessed here",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-TABLE-13.2.11.5-2",
+          "SOSA-C239-G2-6B-DASH-13.2.11.5-2-1"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "native_source_meaning": "Source table uses 2019-11, Ready and legacy markers on physical profile variants",
+        "negative_equivalence_boundary": "Not ISA Accepted/Custom extension standing or lifecycle of deployed hardware",
+        "previous_sosa_cell_value": "Related only · G2-6A: XMC overlay mapping introduces scoped hardware profile alternatives",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -18504,7 +18809,7 @@
         "",
         "",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
-        "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping",
+        "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping · G2-6B: AMPS String fixes slot profile dash-loading and port protocols for a PIC design",
         "",
         "",
         "",
@@ -18621,6 +18926,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-001"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "AMPS String fixes slot profile dash-loading and port protocols for a PIC design",
+        "negative_equivalence_boundary": "Not negotiated message encoding, CSAPI representation format or native runtime handshake",
+        "previous_sosa_cell_value": "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -18693,7 +19014,7 @@
         "",
         "",
         "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
-        "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module · G2-6A: PSC SYNC_IN and SYNC_OUT electrical synchronization pins have defined roles",
+        "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module · G2-6A: PSC SYNC_IN and SYNC_OUT electrical synchronization pins have defined roles · G2-6B: Reference/AUX clocks and 1PPS are conditional hardware timing paths with external rule references",
         "",
         "",
         "",
@@ -18731,6 +19052,23 @@
         "previous_sosa_cell_value": "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-1",
+          "SOSA-C239-G2-6B-REFERENCE-13.2.11.5-7",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-005"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Reference/AUX clocks and 1PPS are conditional hardware timing paths with external rule references",
+        "negative_equivalence_boundary": "Not source-proven UTC event time, station synchronization or NOAA resultTime",
+        "previous_sosa_cell_value": "Related only · G2-5: C239 distinguishes UTC while available, uptime fallback, and only reference-level Time/Frequency module · G2-6A: PSC SYNC_IN and SYNC_OUT electrical synchronization pins have defined roles",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -18808,7 +19146,7 @@
         "",
         "",
         "",
-        "Related only · G2-4A: §4.1 optional hardware assemblies can mount in/on platform/pod or be integral Sensor Pod, but no installation in four cases established · G2-5: Host interface lists connector/cable/mount-point roles · G2-6A: Short-card pitch, chassis slot conditions and RTM prohibition constrain hardware layouts",
+        "Related only · G2-4A: §4.1 optional hardware assemblies can mount in/on platform/pod or be integral Sensor Pod, but no installation in four cases established · G2-5: Host interface lists connector/cable/mount-point roles · G2-6A: Short-card pitch, chassis slot conditions and RTM prohibition constrain hardware layouts · G2-6B: XMC slot/carrier possibilities are physical design and mounting context",
         "",
         "",
         "",
@@ -18889,6 +19227,22 @@
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.1-1",
+          "SOSA-C239-G2-6B-RULE-13.2.11.1-2"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "XMC slot/carrier possibilities are physical design and mounting context",
+        "negative_equivalence_boundary": "Not original-source evidence any of four vendor equipment cases used these slots or mountings",
+        "previous_sosa_cell_value": "Related only · G2-4A: §4.1 optional hardware assemblies can mount in/on platform/pod or be integral Sensor Pod, but no installation in four cases established · G2-5: Host interface lists connector/cable/mount-point roles · G2-6A: Short-card pitch, chassis slot conditions and RTM prohibition constrain hardware layouts",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -18916,7 +19270,7 @@
         "",
         "",
         "",
-        "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities · G2-5: Host network transfer and audit SYSLOG are different transport/logging roles",
+        "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities · G2-5: Host network transfer and audit SYSLOG are different transport/logging roles · G2-6B: Fabric and optional front fiber define possible backplane/outbound routes",
         "",
         "",
         "",
@@ -19015,6 +19369,22 @@
         "negative_equivalence_boundary": "Neither demonstrates actual cloud/reporting path for four source cases",
         "previous_sosa_cell_value": "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities",
         "native_companions_unreviewed": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-3",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.6-1"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Fabric and optional front fiber define possible backplane/outbound routes",
+        "negative_equivalence_boundary": "Not Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or observed packet path",
+        "previous_sosa_cell_value": "Related only · Communications/Network Subsystem support / Message Interconnect vs Wideband Low-Latency I… · §4.2 Table4.2-1 printed26/PDF52 · CASE RELEVANT NOT VERIFIED/CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4A: §4.3 service-flow diagram and §4.2 reporting roles show possible processing/report pathways, not documented four-case deployments · G2-4B: Reporting Services §11.1 contains reference-only data selection, formatting, packaging and dissemination activities · G2-5: Host network transfer and audit SYSLOG are different transport/logging roles",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -19379,7 +19749,7 @@
         "",
         "",
         "",
-        "Related only · G2-5: Audit UTC/uptime distinctions demonstrate need for source-qualified timestamp basis",
+        "Related only · G2-5: Audit UTC/uptime distinctions demonstrate need for source-qualified timestamp basis · G2-6B: Radial-clock and 1PPS rules describe possible timing hardware design",
         "",
         "",
         "",
@@ -19429,6 +19799,22 @@
         "previous_sosa_cell_value": "Not assessed here",
         "native_companions_unreviewed": true,
         "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-1",
+          "SOSA-C239-G2-6B-REFERENCE-13.2.11.5-7"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "Radial-clock and 1PPS rules describe possible timing hardware design",
+        "negative_equivalence_boundary": "Not evidence of Bennett source fixed EST, QA flag, original resultTime or per-event clock quality",
+        "previous_sosa_cell_value": "Related only · G2-5: Audit UTC/uptime distinctions demonstrate need for source-qualified timestamp basis",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -19454,7 +19840,7 @@
         "",
         "",
         "",
-        "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace · G2-6A: Maintenance UART and PSC control pins are source-defined hardware interfaces",
+        "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace · G2-6A: Maintenance UART and PSC control pins are source-defined hardware interfaces · G2-6B: A conditional hardware SYS_CON role change and PIC command wiring are specified",
         "",
         "",
         "",
@@ -19557,6 +19943,22 @@
         "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-3-OCC2",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006"
+        ],
+        "relation": "RELATED",
+        "native_source_meaning": "A conditional hardware SYS_CON role change and PIC command wiring are specified",
+        "negative_equivalence_boundary": "No authenticated request ACK effect or actual command/control experiment occurred",
+        "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-4B: Table tasking is preliminary and sendCommand is a V1.0 RF interface, not an operational command trace · G2-5: Authorization-before-execution and supported host request do not give a fielded command trace · G2-6A: Maintenance UART and PSC control pins are source-defined hardware interfaces",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -20071,7 +20473,7 @@
         "",
         "",
         "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-        "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind · G2-6A: PIC, PSC, XMC, backplane and energy storage are distinct physical hardware roles",
+        "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind · G2-6A: PIC, PSC, XMC, backplane and energy storage are distinct physical hardware roles · G2-6B: Payload/switch/radial-clock/external I/O are specialized hardware slot/card functions",
         "",
         "",
         "",
@@ -20139,6 +20541,23 @@
         "previous_sosa_cell_value": "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind",
         "native_VITA_and_DSDM_companions_unreviewed": true,
         "figure_pixel_geometry_unverified": true,
+        "DIM_Profile_adopted": false
+      },
+      "G2_6B_source_correspondence": {
+        "source_edition": "C239 Edition 1.1 (2023)",
+        "source_scope": "§13.2.11 and §§13.2.11.1–13.2.11.7, original PDF230–241 (before §13.2.12)",
+        "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+        "source_item_ids": [
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.5-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.6-1",
+          "SOSA-C239-G2-6B-OBSERVATION-13.2.11.2-2"
+        ],
+        "relation": "PARTIAL",
+        "native_source_meaning": "Payload/switch/radial-clock/external I/O are specialized hardware slot/card functions",
+        "negative_equivalence_boundary": "Not a universal human-facing component taxonomy or ISA enumeration",
+        "previous_sosa_cell_value": "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts · G2-5: Security Services logical roles, host interface and undefined Power module differ in kind · G2-6A: PIC, PSC, XMC, backplane and energy storage are distinct physical hardware roles",
+        "original_ANSI_VITA_and_DSDM_IDL_OpenAPI_companions_unread": true,
+        "full_figure_geometry_unverified": true,
         "DIM_Profile_adopted": false
       }
     },
@@ -26022,16 +26441,16 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "L23 applied G2-6A: 39 source-qualified SOSA column-I cells current in canonical JSON, 2 CSV, 2 readable tables and SAME saved 26-sheet Excel, all 346x15 saved cells verified; donor completeness and adoption distinct.",
-  "currentEvidenceCheckpoint": "SOSA-G2-6A_ORIGINAL_HARDWARE_SOURCE_AND_SAVED_26_SHEET_EXCEL_SOURCE_PARITY_VERIFIED__DONOR_OPEN",
+  "publicationPolicy": "L23 mandatory G2-6B: 26 SOSA source cells updated in canonical JSON; both CSV, both Markdown and SAME Excel required before closeout. No owner-approved lag exception.",
+  "currentEvidenceCheckpoint": "SOSA-G2-6B_ORIGINAL_3U_PICP_SOURCE_REVIEW_AND_MASTER_MIRRORS__SAME_EXCEL_EXIT_PENDING",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
     "checkpoint": "SOSA-G2-6A-CANONICAL-VERIFIED",
     "sha256": "1806756bd94d9b3aa873f721546f223d06146f814ce8db4470b4429b1fd3e572",
     "information_rows": 329,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": true,
-    "lag": "NONE: all 346x15 actual saved XLSX cells match current source JSON, BOTH CSV and BOTH Markdown tables",
+    "currently_matches_readable_view": false,
+    "lag": "G2-6B 26 qualified The Open Group SOSA column-I cells in JSON/2CSV/2Markdown pending SAME G2-6A Excel snapshot saved-cell refresh",
     "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -26250,7 +26669,36 @@
       "ISA-E-POWER-SOURCE",
       "ISA-T-ADMIN",
       "S06-R021"
-    ]
+    ],
+    "G2_6B_affected_row_ids": [
+      "S06-R005",
+      "S06-R006",
+      "S06-R007",
+      "S06-R008",
+      "S06-R009",
+      "ISA-A-NETWORK-CONTEXT",
+      "ISA-A-CONNECTION-PRESENTATION",
+      "ISA-A-CIC-MEDIATION",
+      "ISA-A-MEMBER-EXPOSURE",
+      "ISA-K-CAPABILITIES",
+      "ISA-A-BASELINE-CAPABILITIES",
+      "ISA-E-COMPONENT-CATEGORY",
+      "ISA-K-TYPE-CHOICE",
+      "ISA-K-VALUE-RANGE",
+      "ISA-T-CONFIG",
+      "ISA-T-STATUS",
+      "ISA-K-COMMAND-DECL",
+      "ISA-K-RESULT-DECL",
+      "ISA-A-TIME-BASIS",
+      "CASE-H02",
+      "CASE-H03",
+      "CASE-H08",
+      "CASE-H09",
+      "S06-R019",
+      "S06-R020",
+      "ISA-A-EXTENSION-STANDING"
+    ],
+    "G2_6B_expected_changed_source_cells": 26
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -27577,11 +28025,53 @@
       "excel_checkpoint": "SOSA-G2-6A-CANONICAL-VERIFIED",
       "excel_validation": "SOSA_G2_6A_Workbook_Validation_10NOV2026.json",
       "same_saved_workbook_39_cells_synced": true
+    },
+    "G2_6B": {
+      "source_ledger": "SOSA_G2_6B_Original_Source_Item_Coverage_10NOV2026.json",
+      "source_report": "SOSA_G2_6B_Original_Source_and_Master_Reconciliation_10NOV2026.md",
+      "source_edition": "C239 Edition 1.1 2023",
+      "original_TOC_headings_newly_read": 1,
+      "nested_inline_subsections": 7,
+      "source_native_records": 73,
+      "analytical_contexts": 8,
+      "original_rule_label_occurrences": 7,
+      "duplicate_rule_identifiers": 1,
+      "source_qualified_existing_master_rows": 26,
+      "affected_row_ids": [
+        "S06-R005",
+        "S06-R006",
+        "S06-R007",
+        "S06-R008",
+        "S06-R009",
+        "ISA-A-NETWORK-CONTEXT",
+        "ISA-A-CONNECTION-PRESENTATION",
+        "ISA-A-CIC-MEDIATION",
+        "ISA-A-MEMBER-EXPOSURE",
+        "ISA-K-CAPABILITIES",
+        "ISA-A-BASELINE-CAPABILITIES",
+        "ISA-E-COMPONENT-CATEGORY",
+        "ISA-K-TYPE-CHOICE",
+        "ISA-K-VALUE-RANGE",
+        "ISA-T-CONFIG",
+        "ISA-T-STATUS",
+        "ISA-K-COMMAND-DECL",
+        "ISA-K-RESULT-DECL",
+        "ISA-A-TIME-BASIS",
+        "CASE-H02",
+        "CASE-H03",
+        "CASE-H08",
+        "CASE-H09",
+        "S06-R019",
+        "S06-R020",
+        "ISA-A-EXTENSION-STANDING"
+      ],
+      "Excel_lag_cells": 26,
+      "model_adoption": false
     }
   },
-  "nextOwnerAction": "On separate owner Proceed: SOSA-G2-6B from C239 §13.2.11 only, source-first evidence-sized hardware PICP packet. SOSA remains OPEN and Step18 SAPIENT BLOCKED.",
+  "nextOwnerAction": "Complete mandatory L23 G2-6B same saved 26-sheet Excel verification and readback, then STOP; only separate owner Proceed may start G2-6C original §13.2.12.",
   "SOSAReviewCompletion": {
-    "status": "OPEN__G2_6A_VERIFIED__42_UNREAD_1_RESTRICTED_AND_NATIVE_COMPANIONS",
+    "status": "OPEN__G2_6B_ORIGINAL_3U_PICP_SOURCE_MAPPED__EXCEL_PUBLICATION_PENDING",
     "corrected_on": "2026-11-09",
     "current_deliverable": "SOURCE_QUALIFIED_INTERMEDIATE_C239_CROSSWALK",
     "verification": "15-column source grid and XLSX parity verified; native source completeness not proven",
@@ -27589,7 +28079,7 @@
     "original_native_DSDM_and_API_eight_files_inspected": false,
     "block_next_donor": "Step18 SAPIENT blocked until a separate owner SOSA source-coverage disposition",
     "current_plan": "PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md",
-    "next_on_owner_proceed": "SOSA-G2-6B original C239 §13.2.11 onward bounded hardware source only; no entire Chapter13 or next donor",
+    "next_on_owner_proceed": "Complete G2-6B SAME canonical Excel publication before any G2-6C source review",
     "progressive_integration_rule": "JSON/CSV/Markdown updated as source findings are qualified; canonical XLSX refreshed at explicit substantive checkpoints and labeled stale if lagged",
     "DIM_adoption": false,
     "G1_status": "COMPLETE_SOURCE_CORPUS_AND_ORIGINAL_TOC_CENSUS_ONLY__NOT_FULL_DONOR_SOURCE_REVIEW",
@@ -27700,6 +28190,14 @@
     "G2_6A_qualified_source_cells": 39,
     "G2_6A_XLSX_lag": 0,
     "G2_6A_C239_TOC_at_least_read": 149,
-    "G2_6A_C239_TOC_unread": 42
+    "G2_6A_C239_TOC_unread": 42,
+    "G2_6B_original_heading_newly_read": 1,
+    "G2_6B_nested_subsections_read": 7,
+    "G2_6B_native_source_records": 73,
+    "G2_6B_qualified_source_cells": 26,
+    "G2_6B_XLSX_lag": 26,
+    "G2_6B_C239_TOC_at_least_read": 150,
+    "G2_6B_C239_TOC_unread": 41,
+    "G2_6B_C239_TOC_restricted": 1
   }
 }
