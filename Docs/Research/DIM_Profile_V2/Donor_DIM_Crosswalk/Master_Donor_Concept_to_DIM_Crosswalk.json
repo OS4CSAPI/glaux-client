@@ -3,7 +3,7 @@
   "date": "2026-11-09",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b",
+  "currentWorkbookSha256": "35c36f7adfa47fed18b64a4cc2d4a7f3d40d24cf8ec683fdbbcdcdbd8ee5dfdb",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 source-preserving working baseline accepted; SOSA-D adds source-qualified donor comparisons only; DIM content not adopted",
@@ -23626,16 +23626,16 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "Binding L23: source-qualified donor research packet updating any comparison cells must finish with same canonical Excel saved-cell verification; G2-2 changes 22 existing SOSA column I cells with zero DIM model adoption.",
-  "currentEvidenceCheckpoint": "SOSA-G2-2-ORIGINAL_C239_INLINE_SOURCE_READ__MASTER_PLUS_EXCEL_CHECKPOINT_PENDING",
+  "publicationPolicy": "Binding L23: Each substantive donor-source packet with meaningful canonical comparison changes must finish with verified source JSON, BOTH CSVs, BOTH Markdown mirrors and SAME 26-sheet XLSX saved-cell parity before another research packet. G2-2 22 source-qualified cells now synchronized. Source coverage, DIM/Profile adoption and runtime conformance remain distinct.",
+  "currentEvidenceCheckpoint": "SOSA-G2-2-SAVED_26_SHEET_XLSX_AND_SOURCE_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA-G2-1-PRE-G2-2",
-    "sha256": "6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b",
+    "checkpoint": "SOSA-G2-2-CANONICAL-VERIFIED",
+    "sha256": "35c36f7adfa47fed18b64a4cc2d4a7f3d40d24cf8ec683fdbbcdcdbd8ee5dfdb",
     "information_rows": 329,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": false,
-    "lag": "Exactly 22 source-qualified The Open Group SOSA column I cells have been added in G2-2 JSON/CSV/Markdown; SAME 26-sheet XLSX remains at verified G2-1 snapshot until this packet's publication gate.",
+    "currently_matches_readable_view": true,
+    "lag": "NONE: exact current 346x15 source/2CSV/2Markdown/26-sheet XLSX parity",
     "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -23654,8 +23654,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 12,
-    "validation_file": "SOSA_G2_1_Workbook_Validation_09NOV2026.json",
+    "refreshed_cell_count": 22,
+    "validation_file": "SOSA_G2_2_Workbook_Validation_09NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -24648,10 +24648,12 @@
         "SOSA-G2-2-Q06"
       ],
       "no_DIM_Profile_adoption": true,
-      "excel_checkpoint": "PENDING_PACKET_EXIT_VERIFICATION"
+      "excel_checkpoint": "SOSA-G2-2-CANONICAL-VERIFIED",
+      "excel_validation": "SOSA_G2_2_Workbook_Validation_09NOV2026.json",
+      "excel_22_source_cells_synced": true
     }
   },
-  "nextOwnerAction": "G2-2 Excel synchronization required within this authorized packet; only after saved XLSX verification can next separate owner Proceed authorize SOSA-G2-3 §§6.3–6.5. Step18 SAPIENT remains BLOCKED.",
+  "nextOwnerAction": "SOSA-G2-3 only on next separate owner Proceed: original C239 §§6.3–6.5, out-of-band hardware management and component state; Step18 SAPIENT BLOCKED pending source-based donor completion.",
   "SOSAReviewCompletion": {
     "status": "OPEN__G2_2_C239_INLINE_TEXT_REVIEW_COMPLETE_WITH_UNREAD_NATIVE_INTERFACES",
     "corrected_on": "2026-11-09",
@@ -24661,7 +24663,7 @@
     "original_native_DSDM_and_API_eight_files_inspected": false,
     "block_next_donor": "Step18 SAPIENT blocked until a separate owner SOSA source-coverage disposition",
     "current_plan": "PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md",
-    "next_on_owner_proceed": "SOSA-G2-3: original C239 §§6.3–6.5 source-first review only after G2-2 Excel checkpoint",
+    "next_on_owner_proceed": "SOSA-G2-3 C239 §§6.3–6.5 original out-of-band management/component-state source-first review",
     "progressive_integration_rule": "JSON/CSV/Markdown updated as source findings are qualified; canonical XLSX refreshed at explicit substantive checkpoints and labeled stale if lagged",
     "DIM_adoption": false,
     "G1_status": "COMPLETE_SOURCE_CORPUS_AND_ORIGINAL_TOC_CENSUS_ONLY__NOT_FULL_DONOR_SOURCE_REVIEW",
@@ -24727,7 +24729,7 @@
       "SOSA-G2-2-Q06"
     ],
     "G2_2_master_rows_changed": 22,
-    "G2_2_excel_lag": 22,
+    "G2_2_excel_lag": 0,
     "G2_2_native_api_unread": true,
     "G2_2_C239_TOC_heading_sampled_or_better": 70,
     "G2_2_C239_TOC_headings_still_unread": 121,
