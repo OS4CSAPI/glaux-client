@@ -1,3 +1,11 @@
+# CURRENT — L24 native-rule provenance and mandatory L23 packet Excel gate (9 November 2026)
+
+**Lesson L24:** C239 §6.2.8.3 repeats source Rule 6.2.8.3-1 and -2 identifiers: two descriptive PIC scope paragraphs and two separate SHALL Rules. Treat every printed occurrence as a stable, distinguishable original source item, grade SHALL vs descriptive accurately, and do not silently repair native numbering. Four specialized in-band Rule sections cite B.3 even though Appendix B.4–B.7 name their role-specific OpenAPI files; keep exact source conflicts and unread-file holds, not inferred APIs. Chassis Manager hardware roles, PIC physical/indirect management, and software runtime identities must remain separate. [G2-2 evidence](SOSA_G2_2_Original_Item_Inventory_09NOV2026.json).
+
+**L23 owner-approved gate remains binding:** Each substantive donor packet with qualified comparison-cell changes must finish updating JSON, both CSVs, both Markdown comparisons and the SAME canonical 26-sheet XLSX with actual saved-cell verification before a further research packet. G2-2 changes 22 SOSA cells, triggering this exact mandatory Excel checkpoint now. Do not call workbook parity source completeness, DIM adoption or runtime conformance.
+
+## Earlier lessons and historical checkpoints
+
 # CURRENT — SOSA-G2-1 Excel synchronized; mandatory L23 practice active (9 November 2026)
 
 **Verified Excel checkpoint:** [SAME canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [saved workbook cell validation](SOSA_G2_1_Workbook_Validation_09NOV2026.json) · [actual-cell visual preview](SOSA_G2_1_Workbook_Preview_09NOV2026.png) · [successful GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). The **12 G2-1 SOSA donor-cell changes** are now in the saved XLSX. **All 346×15 cells** match the current master JSON, both CSV mirrors and both GitHub-readable comparisons; all **26 worksheet names/order and 22 historical sheets** survive. Current SHA256 `6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b`; **Excel lag NONE**. The Open Group SOSA source assessment remains OPEN with native DSDM/IDL/OpenAPI source holds; no DIM/Profile adoption.

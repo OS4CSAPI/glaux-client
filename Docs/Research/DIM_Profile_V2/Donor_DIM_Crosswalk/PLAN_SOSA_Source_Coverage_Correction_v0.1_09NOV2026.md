@@ -1,3 +1,11 @@
+# CURRENT — G2-2 complete at inline-original C239 source depth; mandatory L23 Excel gate pending
+
+[352 source items](SOSA_G2_2_Original_Item_Inventory_09NOV2026.json) · [source-meaning report](SOSA_G2_2_Source_Review_and_Master_Reconciliation_09NOV2026.md). Original C239 §§6.2.6–6.2.9, PDF90–118, fully read at native printed tables/Rule depth: 340 function/interaction entries and 12 source Rule-labeled occurrences. Specialized-source edition/API conflicts are explicit, including duplicated PIC Rule identifiers and incorrectly repeated B.3 pointers. The Open Group SOSA donor remains OPEN; eight referenced native model/interface originals remain unread.
+
+**Current canonical JSON/two CSVs/two Markdown mirrors**: 329×15, 22 source-qualified SOSA column-I edits. **Same 26-sheet XLSX is G2-1 older by exactly 22 cells** and must be refreshed, saved and verified under mandatory L23 *before G2-3*. Other donor/case/DIM cells untouched, no adoption. Next after successful source/Excel closeout and separate owner Proceed is G2-3 C239 §§6.3–6.5 ONLY; SAPIENT blocked.
+
+## Earlier plan checkpoints (superseded where inconsistent)
+
 # CURRENT — SOSA-G2-1 Excel synchronized; mandatory L23 practice active (9 November 2026)
 
 **Verified Excel checkpoint:** [SAME canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [saved workbook cell validation](SOSA_G2_1_Workbook_Validation_09NOV2026.json) · [actual-cell visual preview](SOSA_G2_1_Workbook_Preview_09NOV2026.png) · [successful GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). The **12 G2-1 SOSA donor-cell changes** are now in the saved XLSX. **All 346×15 cells** match the current master JSON, both CSV mirrors and both GitHub-readable comparisons; all **26 worksheet names/order and 22 historical sheets** survive. Current SHA256 `6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b`; **Excel lag NONE**. The Open Group SOSA source assessment remains OPEN with native DSDM/IDL/OpenAPI source holds; no DIM/Profile adoption.

@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-2 original C239 source packet; Excel exit gate pending
+
+[Source report](Donor_DIM_Crosswalk/SOSA_G2_2_Source_Review_and_Master_Reconciliation_09NOV2026.md) · [352-entry source ledger](Donor_DIM_Crosswalk/SOSA_G2_2_Original_Item_Inventory_09NOV2026.json) · [current master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md). C239 §§6.2.6–6.2.9 reviewed fully at native inline table and Rule depth, not native OpenAPI contents. 22 qualified source changes in the existing SOSA column; same 26-sheet workbook G2-1 snapshot lags 22 cells until this packet's mandatory L23 publisher passes. No DIM/Profile adoption or donor completion. Next after verified Excel and new owner Proceed: G2-3 §§6.3–6.5; SAPIENT blocked.
+
+## Earlier research status (superseded where inconsistent)
+
 # CURRENT — SOSA-G2-1 Excel synchronized; mandatory L23 practice active (9 November 2026)
 
 **Verified Excel checkpoint:** [SAME canonical 26-sheet XLSX](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [saved workbook cell validation](Donor_DIM_Crosswalk/SOSA_G2_1_Workbook_Validation_09NOV2026.json) · [actual-cell visual preview](Donor_DIM_Crosswalk/SOSA_G2_1_Workbook_Preview_09NOV2026.png) · [successful GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). The **12 G2-1 SOSA donor-cell changes** are now in the saved XLSX. **All 346×15 cells** match the current master JSON, both CSV mirrors and both GitHub-readable comparisons; all **26 worksheet names/order and 22 historical sheets** survive. Current SHA256 `6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b`; **Excel lag NONE**. The Open Group SOSA source assessment remains OPEN with native DSDM/IDL/OpenAPI source holds; no DIM/Profile adoption.
