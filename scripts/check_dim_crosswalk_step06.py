@@ -808,6 +808,8 @@ def verify_sosa_g2_5_master(doc: dict, mirror: list[list[str]], md: str) -> None
         prior[hit[0]][8]=ev["previous_sosa_cell_value"]
     synced=doc["workbookSnapshot"]["currently_matches_readable_view"] is True
     if synced:
+        required(doc["SOSAReviewCompletion"]["G2_5_XLSX_lag"]==0 and doc["SOSAEvidence"]["G2_5"]["excel_lagged_cells"]==0,
+                 "G2-5 source text and saved workbook record zero outstanding lag")
         v=json.loads((BASE/"SOSA_G2_5_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
         required(doc["workbookSnapshot"]["checkpoint"]=="SOSA-G2-5-CANONICAL-VERIFIED",
                  "G2-5 same canonical saved Excel named checkpoint")

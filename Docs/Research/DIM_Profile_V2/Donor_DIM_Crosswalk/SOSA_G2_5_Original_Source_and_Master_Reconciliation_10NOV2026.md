@@ -1,3 +1,9 @@
+# SOSA-G2-5 original-source and SAME saved Excel closeout verified (10 November 2026)
+
+**Semantic source findings below remain unchanged.** The old “43 cells behind” section below records the intermediate source-only publication checkpoint and is **SUPERSEDED**. The same [canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now contains all **43** qualified The Open Group SOSA Chapter12 column-I cells, verified by [full saved 346×15 cell report](SOSA_G2_5_Workbook_Validation_10NOV2026.json), [saved-cell preview](SOSA_G2_5_Workbook_Preview_10NOV2026.png) and [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/42831080638) at [commit 3556ef9](https://github.com/OS4CSAPI/glaux-client/commit/3556ef90bd755cffa8e935a11fd502719d34fb4f). **Excel lag ZERO**, workbook SHA256 `e793461d393bee743b8cf3464f2f6274244a0cbc4cb630a42b772f676615188a`; 26 sheets and 22 untouched historical XML sheets preserved. C239 still has 55 substantively unread headings, one restricted and unread native originals. No DIM/Profile adoption or hardware test. STOP after G2-5; next only separate owner Proceed: first bounded C239 Chapter13 packet.
+
+## Historical source report (intermediate Excel lag superseded)
+
 # SOSA-G2-5 — Original C239 Chapter12 Support System Operation source-first review and master reconciliation
 
 **10 November 2026 — Original source, one bounded owner-authorized packet; The Open Group SOSA remains OPEN.** *Technical Standard for SOSA Reference Architecture*, Edition1.1, document C239 (The Open Group, 2023), project original `c239_5.pdf` (`file_00000000af4081f58c4bac329f85c58f`). Direct original indexed PDF pp**179–207** (printed pp153–181) examined at narrative/table/Rule/Permission/Observation depth; Chapter13 begins p208 and was not reviewed in this packet.

@@ -1,6 +1,6 @@
-# Historic ISA readable comparison mirror — G2-5 Chapter12 source comparisons current; Excel exit pending
+# Historical ISA readable comparison mirror — G2-5 actual saved Excel parity VERIFIED
 
-The same current 346×15 canonical JSON source grid and both CSV files contain 43 qualified The Open Group SOSA Chapter12 I-column updates. Original 26-sheet Excel is the prior G2-4B snapshot until verified L23 checkpoint, with all original ISA, donor and case source meanings preserved.
+The same 346×15 current canonical table contains all 43 The Open Group SOSA Chapter12 source-qualified cells, consistent across canonical JSON, two CSVs, two GitHub-readable tables and the SAME 26-sheet saved XLSX; [current full-grid validation](SOSA_G2_5_Workbook_Validation_10NOV2026.json). Earlier ISA/other donor and empirical equipment case source cells remain unchanged; no model/Profile adoption.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>
