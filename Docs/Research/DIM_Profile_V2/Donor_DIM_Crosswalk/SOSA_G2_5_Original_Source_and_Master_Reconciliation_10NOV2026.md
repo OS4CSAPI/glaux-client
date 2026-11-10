@@ -1,0 +1,69 @@
+# SOSA-G2-5 — Original C239 Chapter12 Support System Operation source-first review and master reconciliation
+
+**10 November 2026 — Original source, one bounded owner-authorized packet; The Open Group SOSA remains OPEN.** *Technical Standard for SOSA Reference Architecture*, Edition1.1, document C239 (The Open Group, 2023), project original `c239_5.pdf` (`file_00000000af4081f58c4bac329f85c58f`). Direct original indexed PDF pp**179–207** (printed pp153–181) examined at narrative/table/Rule/Permission/Observation depth; Chapter13 begins p208 and was not reviewed in this packet.
+
+## Coverage, native items and source-grade
+
+[Source item/section ledger](SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json) accounts for **23 registered Chapter12 headings** (15 previously UNREAD, eight previously SOURCE_READ sampled), **six additional nested audit subsections** and **164 stable native source items**: 38 Rule-labeled SHALL, nine Permission/MAY, ten Observation, four audit definitions, two digest interactions, 13 key interactions, three zeroization interactions, 43 host interactions, 25 host I/O entities, seven reference-only modules, ten source-context comparisons. Original inline source coverage does **not** mean the external original native schemas, reference specifications, full figures or edition-companion collection were audited.
+
+| Original clause/area | Source evidence and normative standing | Negative-equivalence boundary |
+| --- | --- | --- |
+| §12.1.1 pp179–180 — Software Package Verification | Two SHALL Rules and two source Required blocking digest interactions | No verified software publisher/issuer identity from a stored digest alone |
+| §12.2.2 pp180–184 — Audit Subsystem | SYSLOG definitions; six SHALL Rules (three submission/time, two Collector/Relay, one auditable event), nine Permissions across §12.2.2, optional secure transport, UTC/uptime conditional behavior | Audit Collector/Relay are logical functions; event UTC if known and uptime otherwise, not necessarily an authenticated synchronized clock or a physical hardware device |
+| §12.2.3 pp184–186 — Key Management | Nine explicit SHALL Rules; three explanatory Observations; 13 table interaction names; key store, distribution, zeroization, certification conditions | Key loading differs from internal storage and provision. Rule12.2.3-4 refers to original **TBD** for key tag. Interaction asterisk marks JTNC RSS *source adoption*, **not optionality** |
+| §12.2.4–12.2.5 pp186–187 — Authentication/Authorization | One software digest authentication SHALL; three authorization SHALLs, grant/deny and check-before-privileged-execution, valid cached grant Observation | Source describes detailed authentication service as future; an access decision is not proof of authenticated source issuer or real actuator effect |
+| §12.2.6 pp187–188 — Zeroization | Three SHALL Rules; separate source zeroization interface rows and two Observations | Critical Security Parameter (CSP) zeroization differs from broader sanitization. Security Services scope does not guarantee all PICs/storage wiped or a real command execution |
+| §12.3 pp189–192 — Encryptor/Decryptor | Nine common SHALLs, five conditional Data-At-Rest Encryption SHALLs, four source Observations and three described DARE arrangements | No universal DARE device/cardinality, certification or installed crypto channels; DiTE forward-reference points to wrong actual subsection |
+| §§12.4–12.9 and §12.11 pp192–195,206–207 | Seven support modules expressly **not defined for Edition1.1**, with reference-only SvcV-4 tables | Reference Guard, Network, Calibration, Nav, Time/Frequency, Compressor and Power cannot be mandatory DIM equipment/fields or observed operational telemetry |
+| §12.10 pp195–206 — Host Platform Interface | 43 named accepted primarily Radar/EW/SIGINT interactions and host↔sensor service/power/network/physical I/O items | Host protocol adaptation is not the host device or an observed physical connection; printed figure references Table15.6.2-1 while actual interaction table is 12.10.2-1; UCI/VICTORY/STANAG4586 original companions unread |
+
+**Original Chapter12 native normative count:** **38 printed SHALL Rules, nine Permissions, ten Observations**; descriptive and explicitly reference-only source text is not upgraded to SHALL. The original C239 192-heading ledger now stands at **136 headings at least sampled/inline-reviewed, 55 substantively unread, one restricted**. This remains a bounded PARTIAL donor review, not comprehensive certification.
+
+## One canonical master source-qualified integration
+
+Exactly **43 existing The Open Group SOSA donor column-I information-row cells** have gained bounded source-qualified comparisons in the one 329-row/15-column canonical JSON and both CSV and both human-readable tables. There were **zero rows added/removed/reordered**, and other donor/ISA/case/proposed-DIM cells and prior source qualifications remain unchanged. Each `G2_5_source_correspondence` records its previous SOSA cell, original exact source item IDs, match type, source edition/locator, and negative-equivalence boundary. Neither correspondence nor L23 workbook parity constitutes adoption of model content.
+
+| Representative existing row | Relation / source item examples | Prevented false equivalence |
+| --- | --- | --- |
+| `ISA-A-CERTIFICATE-TRUST` — Certificate identity and trust context | RELATED; `SOSA-C239-G2-5-RULE-12.2.3-9`, `SOSA-C239-G2-5-RULE-12.3.1-9` | No source-authenticated certificate for any studied installed unit or attested external issuer |
+| `S06-R006` — Network-visible participant | RELATED; `SOSA-C239-G2-5-AUDIT_DEFINITION-002`, `SOSA-C239-G2-5-AUDIT_DEFINITION-003` | Logging roles need not be distinct physical equipment or independently CSAPI-addressed Systems |
+| `S06-R007` — Physical constituent | RELATED; `SOSA-C239-G2-5-REFERENCE_ONLY_MODULE-007`, `SOSA-C239-G2-5-HOST_IO_ENTITY-024` | Not evidence of installed hardware, separate component quantity, or universal physical chassis |
+| `S06-R008` — Connected external equipment | RELATED; `SOSA-C239-G2-5-HOST_IO_ENTITY-024`, `SOSA-C239-G2-5-HOST_IO_ENTITY-025` | No identified external hardware or observed physical cable for any case |
+| `S06-R009` — Hosting platform / station context | PARTIAL; `SOSA-C239-G2-5-HOST_INTERACTION-004`, `SOSA-C239-G2-5-HOST_INTERACTION-003` | Host adapter differs from physical host/station and proves no mounted installation |
+| `S06-R010` — Observing procedure / method | RELATED; `SOSA-C239-G2-5-HOST_INTERACTION-007`, `SOSA-C239-G2-5-REFERENCE_ONLY_MODULE-003` | No actual calibration procedure, verified result, or required observing method inferred |
+| `ISA-A-NETWORK-CONTEXT` — Network instance and connection context | RELATED; `SOSA-C239-G2-5-REFERENCE_ONLY_MODULE-002`, `SOSA-C239-G2-5-HOST_IO_ENTITY-018` | Not a measured network topology, connection session, or ISA network-instance ID |
+| `ISA-A-MEMBER-EXPOSURE` — Composition member exposure and source attribution | NO_ESTABLISHED; `SOSA-C239-G2-5-RULE-12.2.2.4-1`, `SOSA-C239-G2-5-RULE-12.2.2.4-2` | Logical routing is not ISA member visibility, taskability, or physical containment |
+| `ISA-T-EVENT-ID` — Source-qualified event identity and reference | RELATED; `SOSA-C239-G2-5-AUDIT_DEFINITION-004`, `SOSA-C239-G2-5-RULE-12.2.2.5-1` | Recommended event-type IDs are not ISA unique Event ID/reference or actual performed event |
+| `ISA-T-EVENT-TIME` — Event occurrence time | RELATED; `SOSA-C239-G2-5-RULE-12.2.2.3-2`, `SOSA-C239-G2-5-RULE-12.2.2.3-3` | Uptime alone cannot supply an absolute original eventTime, resultTime, or synchronized clock |
+| `ISA-T-EVENT-REASON` — Event creation category | RELATED; `SOSA-C239-G2-5-RULE-12.2.2.5-1`, `SOSA-C239-G2-5-PERMISSION-12.2.2.5-2` | SYSLOG audit event reasons do not rename ISA Event.type or source physical detection |
+| `ISA-K-CAPABILITIES` — Declared component capability catalogue | RELATED; `SOSA-C239-G2-5-RULE-12.1.1-1`, `SOSA-C239-G2-5-RULE-12.2.5-1` | Not an ISA CCD catalogue, actual capability state, or mandatory field for all sensors |
+| `ISA-K-COMMAND-DECL` — Declared command interface | RELATED; `SOSA-C239-G2-5-KEY_INTERACTION-003`, `SOSA-C239-G2-5-HOST_INTERACTION-034` | No generic ISA Command Declaration, actual action or across-modality support |
+| `ISA-K-PARAMETER-DECL` — Declared command parameter | RELATED; `SOSA-C239-G2-5-HOST_INTERACTION-032`, `SOSA-C239-G2-5-HOST_INTERACTION-025` | Not generalized ISA parameter types, bounds or native schemas from external unread files |
+| `ISA-K-RESULT-DECL` — Declared command result | RELATED; `SOSA-C239-G2-5-HOST_INTERACTION-009`, `SOSA-C239-G2-5-HOST_INTERACTION-010` | Status response is not ISA declared result schema or verified physical effect |
+| `ISA-K-MUTABILITY` — Declared property mutability | RELATED; `SOSA-C239-G2-5-RULE-12.2.5-2`, `SOSA-C239-G2-5-KEY_INTERACTION-008` | No universal property mutability or successful current configuration inferred |
+| `S06-R016` — Supported operating mode | RELATED; `SOSA-C239-G2-5-HOST_INTERACTION-034`, `SOSA-C239-G2-5-HOST_INTERACTION-011` | No universal supported modes for all sensors or current observed mode |
+
+The other 26 qualified comparisons are in their original canonical JSON row records, not in a second donor master.
+
+## Source holds and reusability
+
+- **SOSA-G2-5-H01 — SECURITY_COMPANION_ORIGINAL_NOT_REVIEWED:** Original RFC5424 SYSLOG, NIST SP800-57/SP800-53/FIPS140-2, JTNC RSS, DS-101/EKMS, KMI/OTNK, RSS API, NVMe/DARE detailed originals not audited. C239 clauses are read, not companion requirements/schemas certified. (§§12.1–12.3).
+- **SOSA-G2-5-H02 — SOURCE_INCOMPLETE_TBD_KEYTAG:** Required key-tag format refers to an explicit TBD; no tag syntax or cardinality invented. (Rule12.2.3-4 p184).
+- **SOSA-G2-5-H03 — SOURCE_COPY_CROSS_REFERENCE_DISCREPANCY:** Source describes future Data-in-Transit Encryption Rules as Section12.3.2, but that section actually defines DARE; preserve discrepancy, do not infer DiTE rules. (§12.3.1 p189).
+- **SOSA-G2-5-H04 — AUDIT_TIME_AND_TRUST_SEPARATION:** UTC vs uptime conditional audit event rule, optional secure channel and trust-grade caution; no authenticated global clock or source event time inferred from uptime. (§12.2.2.3 pp181–182).
+- **SOSA-G2-5-H05 — KEY_INTERACTION_STAR_NOT_OPTIONAL:** Printed star on Zeroize/GetKey/etc denotes adopted JTNC RSS origin, not optional interaction or established native schema. Preserve semantics and source origin. (Table12.2.3-1 pp185–186 / p188).
+- **SOSA-G2-5-H06 — ZEROIZATION_NOT_SANITIZATION:** CSP zeroization Security Services scoped; not full-media sanitization, all-PIC wiping or proven hardware operation. Source warns of storage/mission-dependent assurance. (§12.2.6 pp187–188).
+- **SOSA-G2-5-H07 — CERTIFICATION_ASSERTION_HOLD:** Normative classified cryptomaterial modules are required to be appropriately certified; this does not prove any named studied device, cert issuer or deployment has such certification. (Rules12.2.3-9/12.3.1-9 pp185,191).
+- **SOSA-G2-5-H08 — AUTHORIZE_AND_EXECUTE_SEPARATION:** Authorization service grant/deny and module's check before privileged act do not establish caller identity, actual grant, execution or effect. Cache only permitted while previous authorization valid. (§12.2.5 p187).
+- **SOSA-G2-5-H09 — HOST_ADAPTER_SCOPE_AND_SOURCE_REFERENCE:** Table has 43 accepted primarily RF host interaction names; UCI/VICTORY/STANAG4586/OMS original companions not audited. Figure12.10.2-1 cites Table15.6.2-1 instead of relevant 12.10.2-1. Host tasking vs SystemManager vs TaskManager roles distinct. (§12.10 pp195–206).
+- **SOSA-G2-5-H10 — REFERENCE_MODULES_NOT_DEFINED:** Seven modules explicitly not defined in Edition1.1. Functional SvcV tables are reference-only, including Power, Nav Data, Time & Frequency, Calibration and Network; no universal required hardware elements or effective telemetry. (§§12.4–12.9,12.11).
+- **SOSA-G2-5-H11 — POWER_HOST_BATTERY_BOUNDARY:** Host Power, Power, Power Assignment and Power Assignment Response are distinct I/O and role descriptions; do not fabricate source type, battery chemistry, present charge, health, or physical supply chain. (§§12.10.2 Table12.10.2-2,12.11 pp205–207).
+- **SOSA-G2-5-H12 — SOURCE_FIGURE_NATIVE_MODEL_SCOPE:** Indexed original PDF inline labels/table text inspected; original pixels/arrow geometries and external native DIV-2/3 schemas and all eight C239 DSDM/IDL/OpenAPI companions not fully reviewed. (Figures12.2.2.2-1,12.3.1-1,12.10.2-1; all Chapter12).
+
+Primary original-source selection and normative standing are not conformance tests. Neither a source Table/DIV-2 mention, past source screenshot, accepted Host Platform Interface interaction, or successful Excel checker establishes a conformant vendor module, CSAPI Profile rule, physical System class, actual Command, source issuer signature or correct cryptographic configuration.
+
+## Mandatory L23 same-Excel checkpoint
+
+**Intermediate publication only, not packet closeout until verified:** New JSON, BOTH CSV and BOTH Markdown comparisons contain 43 qualified SOSA-I source cell changes. The SAME editable 26-sheet XLSX remains the immediately prior verified G2-4B snapshot, SHA-256 `8f6d293e96fce1e722de9dc22a7198571c2bafc00fd61787d91837b91ffae0bd`, exactly **43 cells behind** until the existing source→workbook publisher refreshes and checks every 346×15 saved cell, preserved 22 historical worksheet XMLs and non-target donor/case/DIM source cells. No Chapter13 packet starts before this gate is verified.
+
+**Next on a separate owner Proceed after workbook closeout:** original C239 Chapter13 first bounded physical Hardware Element source packet, sized to original complexity—not a compulsory physical chassis, not SAPIENT, not an implementation or adoption decision.
