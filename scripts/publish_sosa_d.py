@@ -11,12 +11,12 @@ D=Path(__file__).resolve().parents[1]/"Docs/Research/DIM_Profile_V2/Donor_DIM_Cr
 BOOK="Master_Donor_Concept_to_DIM_Crosswalk.xlsx"
 MASTER="Master_Donor_Concept_to_DIM_Crosswalk.json"
 LEDGER="Step17_SOSA_D_Source_First_Integration_09NOV2026.json"
-REPORT="SOSA_G2_6D_Workbook_Validation_10NOV2026.json"
-PREVIEW="SOSA_G2_6D_Workbook_Preview_10NOV2026.png"
-OLD="1269d6f28527772ea00a7edf459264e97520adfd0ccd367483487c268d55bb7f"
+REPORT="SOSA_G2_7A_Workbook_Validation_10NOV2026.json"
+PREVIEW="SOSA_G2_7A_Workbook_Preview_10NOV2026.png"
+OLD="c450403385ec3e01e879df72235388a70bbf0ef9777156ed10fff3c34ebe8b72"
 q=old.q
 ET.register_namespace("",old.X);ET.register_namespace("r",old.REL)
-def need(x,message):assert x,"SOSA-G2-6D verification failed: "+message
+def need(x,message):assert x,"SOSA-G2-7A verification failed: "+message
 def load(n):return json.loads((D/n).read_text(encoding="utf-8"))
 def save(n,x):(D/n).write_text(json.dumps(x,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 def digest(b):return hashlib.sha256(b).hexdigest()
@@ -166,10 +166,45 @@ def check_source(m,l):
     need(not z["DIM_Profile_adopted"]
          and not z["actual_runtime_conformance_or_physical_device_operation_performed"],
          "no model/adoption/runtime false claim")
+    a=load("SOSA_G2_7A_Original_Source_Item_Coverage_10NOV2026.json")
+    cc=a["source_counts"]
+    need(len(a["original_toc_heading_coverage"])==3
+         and len(a["original_source_items"])==77
+         and len({x["id"] for x in a["original_source_items"]})==77
+         and cc["source_native_items_excluding_analytical_context"]==70
+         and cc["ANALYTICAL_CONTEXT"]==7,"G2-7A 3 original headings, 70 native items, 7 separate analyst contexts")
+    need(cc["DEFINITION"]==5 and cc["PROTOCOL_CODE"]==50 and cc["SOURCE_CONTEXT"]==11
+         and cc["TABLE"]==2 and cc["EXAMPLE_ROW"]==2
+         and cc["numbered_C239_rule_shalls"]==0 and cc["numbered_C239_recommendations"]==0,
+         "5 original definitions, 50 original protocol codes and source standing")
+    need(len(a["protocol_groups"])==7 and sum(v["source_row_count"] for v in a["protocol_groups"])==50,
+         "all seven distinct original source protocol code groups")
+    need((a["C239_cumulative_coverage"]["registered_headings"],
+          a["C239_cumulative_coverage"]["at_least_source_sampled_or_inline_read"],
+          a["C239_cumulative_coverage"]["substantively_unread"],
+          a["C239_cumulative_coverage"]["restricted"])==(192,155,36,1),
+         "original C239 155 source sampled/inline,36 unread,1 restricted headings")
+    nativeids={x["id"] for x in a["original_source_items"]}
+    current=[r for r in m["rows"] if r.get("G2_7A_source_correspondence")]
+    need(len(current)==20 and {r["row_id"] for r in current}==set(m["workbookSnapshot"]["G2_7A_affected_row_ids"]),
+         "exact 20 G2-7A source-qualified existing comparison row IDs")
+    for row in current:
+        e=row["G2_7A_source_correspondence"]
+        need(e["source_item_ids"] and all(v in nativeids for v in e["source_item_ids"]),
+             "exact native AMPS source IDs in "+row["row_id"])
+        need(e["DIM_Profile_adopted"] is False
+             and e["original_ANSI_VITA_and_C239_native_companions_unread"]
+             and e["full_AMPS_13_3_3_per_port_and_protocol_rules_unread"],
+             "unreviewed original native companions and no DIM/Profile adoption "+row["row_id"])
+        need("G2-7A:" in row["display"][8] and row["display"][8]!=e["previous_sosa_cell_value"],
+             "source-qualified incremental AMPS meaning "+row["row_id"])
+    need(not a["DIM_Profile_adopted"] and not a["runtime_or_independent_conformance_performed"]
+         and not a["source"]["normative_ANSI_VITA_65_0_and_65_1_originals_read"],
+         "no invented native VITA normativity or runtime/profiling")
     need(m["currentWorkbookSha256"]==OLD and m["workbookSnapshot"]["sha256"]==OLD
-         and not m["workbookSnapshot"]["currently_matches_readable_view"],"previous G2-6C saved 26-sheet source snapshot")
-    need(m["SOSAReviewCompletion"]["G2_6D_XLSX_lag"]==14,"explicit source-to-XLSX pending L23 exit")
-    print("PASS: G2-6D C239 Legacy source 20 native records, 6 analytical contexts and 14 qualified comparisons; prior original evidence preserved")
+         and not m["workbookSnapshot"]["currently_matches_readable_view"],"previous G2-6D saved 26-sheet source snapshot")
+    need(m["SOSAReviewCompletion"]["G2_7A_XLSX_lag"]==20,"explicit source-to-XLSX pending L23 exit")
+    print("PASS: G2-7A original AMPS source 5 definitions, 50 protocol code rows and 20 qualified comparisons; prior source evidence preserved")
 def matrix_to_xml(matrix,styles,main=False,sections=()):
     w=max(len(row) for row in matrix);need(w<=16,"sheet dimensions")
     root=ET.Element(q("worksheet"))
@@ -204,24 +239,24 @@ def matrix_to_xml(matrix,styles,main=False,sections=()):
 
 def summary(m):
     return [
-       ["SOSA-G2-6D original-source and Excel","C239 §13.2.13 Legacy PDF249–252 before §13.3 AMPS"],
-       ["Master grid","329 information rows, 346 presentation rows, 15 columns"],
-       ["Original source standing","One original C239 TOC heading, 3 nested original inline sections"],
-       ["Native numbered clauses","4 Rules/SHALL; 2 Recommendations/SHOULD, not universal device rules"],
-       ["Other source items","4 narrative process statements (2 conditional SHALL), 2 figure captions"],
-       ["Native profile details","7 subordinate module-profile choices and 1 narrow radial-clock -1 legacy dash"],
-       ["Item accounting","20 native source items and 6 analytical contexts, not new DIM fields"],
-       ["Legacy definition","Edition1.1 planned future PICP profile removal, NOT installed device failure, expiry or retirement"],
-       ["Certification timing","Actual removal date unverified; 18-month grace SHALL only after removal; submission bar after grace"],
-       ["Source identifiers","3U 2F2U Payload/6U 16U20F Switch and specific radial-clock -1; VITA originals unread"],
-       ["Original source discrepancy","Printed 6U Rules -2/-3 without -1; distinct MOD6-SWH-16F20U vs SLT6-SWH-16U20F"],
-       ["Source access limitations","Original ANSI/VITA and eight DSDM/IDL/OpenAPI files, two figure geometries unexamined"],
-       ["Qualified source master changes","14 existing SOSA column-I cells, zero non-target cell changes"],
-       ["Original corpus remaining","152 sampled/inline-read, 39 substantively unread, one restricted of 192 headings"],
-       ["Preserved records","58 original donor,73 source case, ISA480/six questions and all prior SOSA source evidence"],
-       ["No adoption/conformance","No DIM classes/cardinality, Profile SHALL, actual device operation or tested certification"],
-       ["Saved workbook parity","SAME 26-sheet Excel all 346x15 cells equal JSON/both CSV/both Markdown"],
-       ["Only next owner Proceed","SOSA-G2-7A original §13.3 AMPS source-sized first packet; donor remains OPEN"]
+       ["SOSA-G2-7A original-source AMPS and Excel","C239 §§13.3, 13.3.1–.2, PDF252–257 before §13.3.3"],
+       ["Master grid","329 original information rows, 346 display rows, 15 source/donor/DIM columns"],
+       ["Original C239 headings","3 original registered TOC headings source-read; not §13.3.3 onward"],
+       ["Native terms","5 original AMPS, AMPS String, ANS, Protocol Field and Modifier definitions"],
+       ["Original protocol dictionary","50 code entries in 7 source groups, including repeated N codes distinguished by group"],
+       ["Native source census","70 actual native records plus 7 project analytical contexts"],
+       ["Original numbered Rule standing","0 Rule/SHALL and 0 Recommendations in §§13.3.1–.2; unnumbered 'will use' is not a Profile SHALL"],
+       ["Example and portability","Old MOD3p and ANS MODA3 examples show hardware module profile identity, not installed equipment"],
+       ["Configuration vs negotiation syntax","Slash distinguishes configurable alternative; colon denotes auto-negotiated physical protocols"],
+       ["VITA and source scope","SOSA subset of allowed VITA codes; later §13.3.3 per-port combination tables not inspected"],
+       ["Original text questions","Copper P2U printed lane count vs PCIe x1; MOD3p/SLT3p appearance and grouped N"],
+       ["Native-file and visual holds","ANSI/VITA 65.0/65.1, C239 eight DSDM/IDL/OpenAPI, table image geometry unverified"],
+       ["Source-qualified existing donor cells","20 SOSA column-I cells only; all other donor/case/DIM untouched"],
+       ["Original C239 corpus remaining","155 source sampled/inline-read, 36 substantively unread, 1 restricted of 192 headings"],
+       ["Earlier evidence preserved","58 donor,73 source-case, ISA480/six questions and every earlier SOSA source packet"],
+       ["Model and runtime","Zero DIM/Profile model adoption, actual installed device verification or independent conformance"],
+       ["SAME canonical Excel verification","26 original worksheets and all 346x15 saved cells equal current source JSON/2CSV/2Markdown"],
+       ["Only next owner Proceed","SOSA-G2-7B original §13.3.3 AMPS string construct, evidence-sized packet"]
     ]
 
 def register(m):
@@ -229,13 +264,13 @@ def register(m):
     for r in m["rows"]:
         so=r.get("sosa_correspondence") or {}
         groups=[r.get(name) or {} for name in ("G2_1_source_correspondence","G2_2_source_correspondence","G2_3_source_correspondence",
-            "G2_4A_source_correspondence","G2_4B_source_correspondence","G2_5_source_correspondence","G2_6A_source_correspondence","G2_6B_source_correspondence","G2_6C_source_correspondence","G2_6D_source_correspondence")]
+            "G2_4A_source_correspondence","G2_4B_source_correspondence","G2_5_source_correspondence","G2_6A_source_correspondence","G2_6B_source_correspondence","G2_6C_source_correspondence","G2_6D_source_correspondence","G2_7A_source_correspondence")]
         ids=so.get("records",[])+[v for g in groups for v in g.get("source_item_ids",[])]
         relations=so.get("relations",[])+[g.get("relation",g.get("mapping_relation","")) for g in groups if g]
-        status=("G2-6D C239 Legacy original source reviewed; VITA figure and edition/removal date held; no DIM/Profile adoption" if groups[-1] else
-            "G2-6C 6U PIC original inline source reviewed; external native VITA and geometry held" if groups[-2] else
-            "G2-6B 3U PIC original inline source reviewed; external native geometry held" if groups[-3] else
-            "G2-6A and earlier bounded C239 original review, native companions held" if so or any(groups[:-3]) else "Not assessed here")
+        status=("G2-7A original C239 AMPS definitions/protocol dictionary reviewed; VITA and 13.3.3+ per-port rules unread" if groups[-1] else
+            "G2-6D C239 Legacy original review, future removal and VITA held" if groups[-2] else
+            "G2-6C 6U PIC original source reviewed, native ANSI/VITA held" if groups[-3] else
+            "Earlier source-qualified C239 original review, external companions held" if so or any(groups[:-3]) else "Not assessed here")
         out.append([r["row_id"],r.get("label",""),r.get("definition",""),r.get("status",""),r.get("source_review_status",""),
              r.get("master_inclusion",""),r.get("dim_adoption",""),"; ".join(r.get("source_entry_ids",[])),
              json.dumps(r.get("source_first_correspondence",{}),ensure_ascii=False)[:2000],
@@ -245,7 +280,7 @@ def register(m):
 def publish():
     m=load(MASTER);l=load(LEDGER);check_source(m,l)
     prev=(D/BOOK).read_bytes()
-    need(digest(prev)==OLD,"same verified prior G2-6C 26-sheet workbook bytes")
+    need(digest(prev)==OLD,"same verified prior G2-6D 26-sheet workbook bytes")
     with zipfile.ZipFile(io.BytesIO(prev)) as z:
         need(z.testzip() is None,"prior source workbook ZIP CRC")
         paths=old.sheetpaths(z);need(len(paths)==26,"all 26 original sheets")
@@ -280,66 +315,66 @@ def publish():
     need(sum(bool(re.fullmatch(r"A\d+",name)) for name in reg)==330,"same 329 stable source row ids in DIM Register")
     before=old.readcells(prev,"Master Crosswalk")
     delta=[a for a in set(before)|set(actual) if before.get(a,"")!=actual.get(a,"")]
-    need(len(delta)==14 and all(re.fullmatch(r"I\d+",a) for a in delta),
-         "exactly 14 source-qualified SOSA column-I cells changed; no other master edits")
+    need(len(delta)==20 and all(re.fullmatch(r"I\d+",a) for a in delta),
+         "exactly 20 source-qualified SOSA column-I cells changed; no other master edits")
     (D/BOOK).write_bytes(saved)
     sha=digest(saved)
     m["currentWorkbookSha256"]=sha
-    m["currentEvidenceCheckpoint"]="SOSA-G2-6D_ORIGINAL_LEGACY_PROFILE_SOURCE_AND_SAVED_26_SHEET_EXCEL_VERIFIED__DONOR_OPEN"
-    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-6D-CANONICAL-VERIFIED","sha256":sha,
+    m["currentEvidenceCheckpoint"]="SOSA-G2-7A_ORIGINAL_AMPS_DEFINITIONS_50_CODES_AND_SAVED_26_SHEET_EXCEL_VERIFIED__DONOR_OPEN"
+    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-7A-CANONICAL-VERIFIED","sha256":sha,
         "currently_matches_readable_view":True,
-        "lag":"NONE: all 346x15 actual saved Excel cells equal canonical JSON/both CSV/both Markdown",
-        "refreshed_cell_count":14,"validation_file":REPORT})
-    m["SOSAEvidence"]["G2_6D"].update({"excel_checkpoint":"SOSA-G2-6D-CANONICAL-VERIFIED",
-        "excel_validation":REPORT,"Excel_lag_cells":0,"same_saved_workbook_14_cells_synced":True})
-    m["SOSAReviewCompletion"]["G2_6D_XLSX_lag"]=0
-    m["SOSAReviewCompletion"]["status"]="OPEN__G2_6D_VERIFIED__39_UNREAD_1_RESTRICTED_AND_NATIVE_COMPANIONS"
-    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="SOSA-G2-7A original C239 §13.3 AMPS, bounded first source packet, only after separate owner Proceed"
-    m["nextOwnerAction"]="Only separate owner Proceed may start G2-7A original §13.3 AMPS source-sized first packet; SOSA OPEN, Step18 SAPIENT blocked."
-    m["publicationPolicy"]="L23 G2-6D applied: 14 source-qualified SOSA column-I cells in JSON, both CSV, both Markdown and SAME saved 26-sheet Excel; all 346x15 saved cells verified; source coverage/model adoption separate."
+        "lag":"NONE: all 346x15 actual saved Excel cells match canonical JSON/both CSV/both Markdown",
+        "refreshed_cell_count":20,"validation_file":REPORT})
+    m["SOSAEvidence"]["G2_7A"].update({"excel_checkpoint":"SOSA-G2-7A-CANONICAL-VERIFIED",
+        "excel_validation":REPORT,"Excel_lag_cells":0,"same_saved_workbook_20_cells_synced":True})
+    m["SOSAReviewCompletion"]["G2_7A_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["status"]="OPEN__G2_7A_VERIFIED__36_UNREAD_1_RESTRICTED_AND_NATIVE_COMPANIONS"
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="SOSA-G2-7B original C239 §13.3.3 AMPS string construct only, separate owner Proceed"
+    m["nextOwnerAction"]="Only separate owner Proceed starts G2-7B original §13.3.3 AMPS string construct, source-sized; SOSA OPEN, Step18 SAPIENT blocked."
+    m["publicationPolicy"]="L23 G2-7A: 20 original AMPS source-qualified SOSA cells current JSON/both CSV/both Markdown and SAME 26-sheet Excel; all 346x15 saved cells verified; original VITA/normative coverage separate."
     save(MASTER,m)
-    record={"date":"2026-11-10","step":"SOSA-G2-6D-EXCEL-CHECKPOINT",
+    record={"date":"2026-11-10","step":"SOSA-G2-7A-EXCEL-CHECKPOINT",
        "result":"EXACT_SAVED_26_SHEET_XLSX_AND_TWO_CSV_TWO_MD_PARITY_PASS",
        "workbook_sha256":sha,"base_workbook_sha256":OLD,"workbook_sheets":list(paths),
        "refreshed_sheets":list(tables),"exact_original_untouched_xml_sha256":retained,
        "information_rows":329,"grid_rows":346,"columns":15,"original_donor_evidence":58,
        "case_evidence":73,"ISA_primary_source_outcomes":480,"original_ISA_questions_open":6,
-       "G2_6D_original_toc_heading_newly_read":1,"G2_6D_inline_subclauses":3,
-       "G2_6D_native_source_records":20,"G2_6D_analytical_contexts":6,"G2_6D_exact_holds":14,
-       "G2_6D_source_numbered_rule_shalls":4,"G2_6D_source_numbered_recommendations":2,
-       "G2_6D_source_conditional_narrative_shalls":2,"G2_6D_source_profile_alternatives":7,
-       "G2_6D_qualified_existing_sosa_cells":14,"changed_saved_cells":sorted(delta),
-       "unread_original_C239_TOC_headings":39,"restricted_original_C239_TOC_headings":1,
+       "G2_7A_original_toc_headings_newly_reviewed":3,"G2_7A_original_native_records":70,
+       "G2_7A_native_definitions":5,"G2_7A_protocol_code_rows":50,
+       "G2_7A_analytical_contexts":7,"G2_7A_exact_holds":16,
+       "G2_7A_numbered_rule_shalls":0,"G2_7A_source_protocol_groups":7,
+       "G2_7A_qualified_existing_sosa_cells":20,"changed_saved_cells":sorted(delta),
+       "unread_original_C239_TOC_headings":36,"restricted_original_C239_TOC_headings":1,
        "native_DSDM_IDL_OpenAPI_unread":8,"original_ANSI_VITA_unread":True,
        "checks":{"all_XLSX_346x15_grid_cells_equal_JSON_both_CSVs_both_MD":True,
          "two_CSV_mirrors_equal":True,"two_GitHub_readable_comparisons_equal":True,
          "same_26_worksheet_names_order":True,"22_historical_worksheet_XML_bytes_preserved":True,
-         "only_14_original_SOSA_I_column_cells_changed":True,"valid_ZIP_CRC_and_XML":True,
+         "only_20_original_SOSA_I_column_cells_changed":True,"valid_ZIP_CRC_and_XML":True,
          "zero_XLSX_error_type_cells":True,"zero_DIM_Profile_adoption":True},
-       "limits":["Only original C239 §13.2.13 Legacy and children reviewed; §13.3 onward not audited",
-         "ANSI/VITA original slot/module profiles, eight DSDM/IDL/OpenAPI native file contents unread",
-         "Two figure captions/readable text inspected; precise original figure pixel geometry not verified",
-         "No actual later standards removal date or certification expiry established; 18-month rule conditional",
-         "No installed device/physical Command, DIM/Profile adoption or independent conformance",
-         "PNG preview is based on saved XLSX XML source-cell rendering, NOT an Excel application screenshot"],
-       "next":"Only separate owner Proceed starts G2-7A original §13.3 AMPS first bounded packet; SOSA OPEN, SAPIENT blocked"}
+       "limits":["Only C239 original §13.3 AMPS parent, §§13.3.1–.2 audited; §13.3.3+ not source reviewed",
+         "Original ANSI/VITA 65.0/65.1 and eight original C239 DSDM/IDL/OpenAPI contents unexamined",
+         "Original detailed high-resolution table/figure pixels not independently verified",
+         "No legal per-port protocol combination/conformant actual PICP proven without later tables",
+         "No fielded equipment, CSAPI message encoding, DIM/Profile adoption or independent runtime conformance",
+         "PNG preview renders saved XLSX XML source cells; NOT screenshot from Excel application"],
+       "next":"Only separate owner Proceed starts G2-7B §13.3.3 AMPS string construct bounded original packet; SOSA OPEN, SAPIENT blocked"}
     save(REPORT,record)
-    print("PASS: G2-6D SAME 26-sheet 346x15 saved-cell parity, 14 SOSA source cells, 22 preserved tabs; SHA256",sha)
+    print("PASS: G2-7A SAME 26-sheet 346x15 saved-cell parity, 20 AMPS source cells, 22 historical tabs; SHA256",sha)
     return sha
 
 def preview():
     from PIL import Image,ImageDraw,ImageFont
     m=load(MASTER);actual=old.readcells((D/BOOK).read_bytes(),"Master Crosswalk")
-    rows=[r for r in m["rows"] if r.get("G2_6D_source_correspondence")]
-    need(len(rows)==14,"14 original G2-6D comparisons in saved workbook")
+    rows=[r for r in m["rows"] if r.get("G2_7A_source_correspondence")]
+    need(len(rows)==20,"20 original G2-7A comparisons in saved workbook")
     try:
         font=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",11)
         bold=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",13)
     except OSError:font=bold=ImageFont.load_default()
-    width,height=1580,1520
+    width,height=1580,2150
     img=Image.new("RGB",(width,height),"white");pen=ImageDraw.Draw(img)
     pen.rectangle((0,0,width,65),fill="#173855")
-    pen.text((18,17),"SOSA-G2-6D: 14 saved Excel legacy PIC cells — original C239 §13.2.13",font=bold,fill="white")
+    pen.text((18,17),"SOSA-G2-7A: 20 saved Excel AMPS source cells — original C239 §§13.3.1–.2",font=bold,fill="white")
     for i,r in enumerate(rows):
         hit=[k+1 for k,g in enumerate(m["review_grid"]) if g[14]==r["label"] and g[8]==r["display"][8]]
         need(len(hit)==1,"unique current source row "+r["row_id"])
@@ -347,12 +382,12 @@ def preview():
         need(v==r["display"][8],"actual saved workbook cell "+a)
         y=72+i*98;pen.rectangle((10,y,width-12,y+91),fill="#F1F6FA" if i%2==0 else "white",outline="#CCD8E4")
         pen.text((20,y+7),r["row_id"]+" | "+a+" | "+r["label"],font=bold,fill="#173855")
-        snippet="G2-6D: "+v.split("G2-6D:",1)[1] if "G2-6D:" in v else v
+        snippet="G2-7A: "+v.split("G2-7A:",1)[1] if "G2-7A:" in v else v
         for j,line in enumerate(textwrap.wrap(snippet,width=165,break_long_words=False)[:3]):
             pen.text((20,y+33+j*17),line,font=font,fill="#203951")
     img.save(D/PREVIEW,optimize=True)
     need((D/PREVIEW).stat().st_size>10000,"valid saved XLSX source-cell preview")
-    print("PASS: 14 G2-6D saved SOSA source-cell preview rendered from Excel XML")
+    print("PASS: 20 G2-7A saved SOSA source-cell preview rendered from Excel XML")
 if __name__=="__main__":
     publish()
     preview()

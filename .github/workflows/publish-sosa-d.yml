@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Preserve 26 worksheets and synchronize G2-6D 14 source-qualified SOSA cells
+    name: Preserve 26 worksheets and synchronize G2-7A 20 source-qualified SOSA cells
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -39,13 +39,13 @@ jobs:
           git add \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_6D_Workbook_Validation_10NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_6D_Workbook_Preview_10NOV2026.png \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7A_Workbook_Validation_10NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7A_Workbook_Preview_10NOV2026.png \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7A_Original_Source_Item_Coverage_10NOV2026.json
           if git diff --cached --quiet; then
             echo "FAIL: no canonical workbook publication"; exit 1
           fi
-          git commit -m "research(dim-v2): synchronize 14 G2-6D SOSA source cells into same 26-sheet Excel"
+          git commit -m "research(dim-v2): synchronize 20 G2-7A SOSA source cells into same 26-sheet Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Read back committed bytes and source metadata
         shell: bash
@@ -57,10 +57,10 @@ jobs:
           from pathlib import Path
           d=Path("Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk")
           j=json.loads((d/"Master_Donor_Concept_to_DIM_Crosswalk.json").read_text(encoding="utf-8"))
-          v=json.loads((d/"SOSA_G2_6D_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
+          v=json.loads((d/"SOSA_G2_7A_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
           s=(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx").read_bytes()
           assert hashlib.sha256(s).hexdigest()==j["currentWorkbookSha256"]==v["workbook_sha256"]
-          assert j["workbookSnapshot"]["currently_matches_readable_view"] is True and j["workbookSnapshot"]["refreshed_cell_count"]==14
+          assert j["workbookSnapshot"]["currently_matches_readable_view"] is True and j["workbookSnapshot"]["refreshed_cell_count"]==20
           assert len(j["columns"])==15 and len(j["rows"])==329
           with zipfile.ZipFile(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx") as z:
               assert z.testzip() is None
