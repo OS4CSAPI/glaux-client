@@ -6,6 +6,8 @@
 
 **NEXT SINGLE OWNER “Proceed”: SOSA-G2-2 only — original C239 §§6.2.6–6.2.9 Security Services, Chassis Manager, PIC and PIC-with-software-runtime in-band management.** Keep The Open Group SOSA active; **Step18 SAPIENT remains BLOCKED** pending source-based donor completion and owner decision. G2-1 is not DIM or Profile adoption, a universal chassis, a workbook closeout, native API testing or equipment execution. No automatic G2-3/G3/G4/G5.
 
+**Cross-format clarification:** Both CSV mirrors (`Master_Donor_Concept_to_DIM_Crosswalk.csv` and `ISA_Correction_Review_07NOV2026.csv`) and both readable Markdown comparisons (`Master_Donor_Concept_to_DIM_Crosswalk.md` and `ISA_Correction_Review_07NOV2026.md`) now show the **same** 346×15 G2-1 table. The saved 26-sheet canonical XLSX remains the older verified SOSA-D snapshot and is 12 changed SOSA donor cells behind; no false full-parity claim.
+
 ## Historical earlier checkpoints and superseded NEXT routing
 
 # CURRENT — SOSA-G1 SOURCE CENSUS COMPLETE; original-source coverage still OPEN (9 November 2026)

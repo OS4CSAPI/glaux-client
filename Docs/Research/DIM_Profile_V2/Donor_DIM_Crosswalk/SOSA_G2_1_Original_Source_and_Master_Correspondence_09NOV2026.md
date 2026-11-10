@@ -49,6 +49,9 @@ Exactly **12 existing donor cells** in the *The Open Group SOSA* column were sou
 
 G2-1 has **not** changed the 329 existing DIM/review topics, 15-column arrangement, original 58 donor records, 73 four-case facts, prior ISA evidence or source holds. The new inventory records additional native source entries, not 201 master fields or 201 Profile requirements.
 
+
+**Dual mirrors:** The historical `ISA_Correction_Review_07NOV2026.csv` and `ISA_Correction_Review_07NOV2026.md` are kept in exact 346×15 comparison parity with the canonical CSV/Markdown. This is **text-format parity only**, while the existing 26-sheet Excel snapshot still lags by the documented twelve SOSA cells.
+
 ## Source coverage and Excel standing
 
 The original SOSA-G1 census recorded 192 C239 TOC headings: 65 with selected passages sampled, 126 without substantive review and one restricted Appendix C. This packet newly audits two previously UNREAD headings (§§6.2.3 and 6.2.4) and deepens the already sampled §6.2.5: heading-level at-least-sampled becomes **67**, remaining UNREAD **124**, inaccessible **one**. All nine in-body sections/subsections in scope have their entire *C239 inline* tables/Rules read, but no C239 section is certified native OpenAPI/DSDM dependent completeness. Historical G1 section statuses stay a dated baseline, not retroactively overwritten.

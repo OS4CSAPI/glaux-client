@@ -209,6 +209,12 @@ def verify_sosa_g2_1_master(doc: dict, mirror: list[list[str]], md: str) -> None
             required(len(cells) == 15, "complete 15-column readable source row")
             readable.append(cells)
     required(readable == grid[2:] and md.count('colspan="15"') == 15, "all current Markdown cells match JSON/CSV exactly")
+    # BOTH independently named CSV and GitHub-readable mirror files must stay current.
+    with (BASE / "ISA_Correction_Review_07NOV2026.csv").open(newline="", encoding="utf-8") as twin_csv:
+        required(list(csv.reader(twin_csv)) == mirror, "second CSV mirror matches canonical 346x15 grid")
+    twin_md = (BASE / "ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    required("<table>" in twin_md and twin_md.split("<table>", 1)[1] == md.split("<table>", 1)[1], "both GitHub-readable comparisons match exactly")
+
 
     # Reconstruct the exact old saved XLSX grid by reverting ONLY qualified G2-1 SOSA cells.
     prior_source_cells = {x["row_id"]: x["display_cell"] for x in old_l["integration_row_ledger"]}
