@@ -1,6 +1,6 @@
-# Current one 329×15 donor-to-DIM master — SOSA-G2-4B original source reviewed; saved Excel exit pending
+# Current one 329×15 donor-to-DIM master — G2-4B original source and saved Excel VERIFIED
 
-**CURRENT SOURCE-QUALIFIED VIEW:** 27 C239 Chapters 7–11 heading families, 234 actual native item records, eight scoped original SHALL Rules, and 29 newly qualified existing The Open Group SOSA column-I cells. Both CSV mirrors and both horizontal Markdown tables match canonical JSON, but the SAME 26-sheet XLSX is temporarily the prior G2-4A checkpoint and 29 cells behind until the mandatory L23 publisher verifies saved-cell parity. No extra research packet, DIM adoption, or SAPIENT transition is permitted before checkpoint completion.
+**CURRENT:** 29 original C239 Chapter7–11 source-qualified SOSA donor column-I cells, [234-item native evidence ledger](SOSA_G2_4B_Original_Source_Item_Coverage_10NOV2026.json), [exact saved 26-sheet Excel validation](SOSA_G2_4B_Workbook_Validation_10NOV2026.json). Canonical JSON, both CSV files, both readable comparison tables, and all 346×15 actually saved workbook cells agree; 22 historical sheet XMLs preserved. The source donor remains open: Chapter12+ and the eight native DSDM/IDL/OpenAPI originals unread; no DIM/Profile adoption.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>

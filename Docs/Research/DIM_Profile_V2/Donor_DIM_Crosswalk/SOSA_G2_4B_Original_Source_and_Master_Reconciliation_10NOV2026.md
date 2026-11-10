@@ -1,3 +1,9 @@
+# G2-4B source and saved Excel closeout verified (10 November 2026)
+
+**Source meanings below remain unchanged.** The earlier paragraph labeling the 26-sheet workbook 29 SOSA cells behind described the deliberately intermediate source-only publication state and is now superseded. The SAME [canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) contains all 29 source-qualified SOSA column-I updates; [actual full 346×15 saved-cell check](SOSA_G2_4B_Workbook_Validation_10NOV2026.json), [source-cell preview](SOSA_G2_4B_Workbook_Preview_10NOV2026.png) and [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/42823323598) establish zero saved-XLSX lag, preserve 22 historical sheets and leave all non-target cells intact. SHA256 `8f6d293e96fce1e722de9dc22a7198571c2bafc00fd61787d91837b91ffae0bd`. C239 has 70 headings substantively unread, one restricted and native MORA/DSDM companions not reviewed; no DIM/Profile adoption or source-complete donor review. **Next only on a separate owner Proceed: original Chapter12, G2-5.**
+
+## Earlier source report (prepublication workbook status superseded)
+
 # SOSA-G2-4B — Original C239 Chapters 7–11 source-first audit and donor-to-DIM reconciliation
 
 **10 November 2026. Bounded original-source packet; The Open Group SOSA remains ACTIVE and source-incomplete.** Original publisher: The Open Group SOSA Consortium, *Technical Standard for SOSA Reference Architecture*, Edition 1.1, C239 (2023), project original `c239_5.pdf` (`file_00000000af4081f58c4bac329f85c58f`). Direct original-source indexed PDF pages **141–178** (original printed pp115–152) were inspected at inline paragraph, function/interaction-table and Rule-label depth for all **27 registered Chapters 7–11 TOC headings**. Source figure-label geometry, referenced original MORA/VICTORY/ANSI-VITA files and eight separate DSDM/IDL/OpenAPI companions were not fully examined.

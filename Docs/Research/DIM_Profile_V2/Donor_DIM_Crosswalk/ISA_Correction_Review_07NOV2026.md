@@ -1,6 +1,6 @@
-# Historic ISA review mirror — live SOSA-G2-4B source grid; saved Excel exit pending
+# Historic ISA review mirror — current G2-4B saved workbook parity VERIFIED
 
-The same 346×15 source table is current in JSON and both CSVs; the existing 26-sheet Excel workbook has an explicitly named temporary lag of 29 SOSA column-I cells and must be refreshed and verified within this G2-4B packet. All historical ISA and case evidence remains preserved.
+The historic ISA mirror repeats the exact canonical 346×15 table including 29 new source-qualified The Open Group SOSA C239 Chapter7–11 comparisons; canonical JSON, both CSV and both readable tables match all 26-sheet saved Excel master cells. [Verified saved-XLSX result](SOSA_G2_4B_Workbook_Validation_10NOV2026.json). Earlier ISA and source-case meanings remain unchanged; The Open Group SOSA donor remains open and SAPIENT blocked.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>
