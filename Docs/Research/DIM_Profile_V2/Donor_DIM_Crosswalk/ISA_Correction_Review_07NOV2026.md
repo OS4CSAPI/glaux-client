@@ -1,6 +1,6 @@
-# Historic ISA comparison mirror — G2-6A source-current; Excel verification pending
+# Historic ISA review mirror — current SOSA-G2-6A source and saved Excel VERIFIED
 
-This readable table matches the same current G2-6A source grid with 39 SOSA column-I changes; existing workbook remains G2-5 by exactly these 39 cells until the required same-packet Excel checkpoint.
+All 39 original C239 §§13.1–13.2.10 source-qualified The Open Group SOSA column-I changes are integrated into [original source ledger](SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json), JSON, both CSV and both readable tables. The [SAME 26-sheet editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) has **zero Excel lag** with [full 346×15 saved-cell verification](SOSA_G2_6A_Workbook_Validation_10NOV2026.json); 22 historical sheets preserved. Original native hardware external companions and figure detail remain held, zero DIM/Profile adoption, donor still OPEN.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>

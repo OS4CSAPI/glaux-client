@@ -1,3 +1,9 @@
+# SOSA-G2-6A original source and SAME canonical saved Excel — VERIFIED (10 November 2026)
+
+The earlier source-to-master report below recorded a **temporary 39-cell Excel lag before publication**; that intermediate standing is now **SUPERSEDED**. The [SAME canonical 26-sheet master workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now contains all 39 qualified SOSA column-I cells, and [actual saved-cell validation](SOSA_G2_6A_Workbook_Validation_10NOV2026.json), [saved-cell preview](SOSA_G2_6A_Workbook_Preview_10NOV2026.png), and [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/42837113386) verify JSON/BOTH CSV/BOTH Markdown/**ALL 346×15 XLSX** parity, 22 untouched historical sheets and SHA256 `1806756bd94d9b3aa873f721546f223d06146f814ce8db4470b4429b1fd3e572`. **Excel lag ZERO.** Original ANSI/VITA, DSDM/IDL/OpenAPI and restricted Appendix C still unread; figure pixel geometry held, 42 C239 headings unread, one restricted; no DIM/Profile adoption, real equipment operation or donor transition. **Next only on separate owner Proceed: SOSA-G2-6B original §13.2.11 onward, bounded by original complexity.**
+
+## Original source-reconciliation report (intermediate Excel status superseded)
+
 # SOSA-G2-6A — Original C239 Hardware Element source audit and progressive donor-to-DIM integration
 
 **Date:** 10 November 2026. **Source:** The Open Group SOSA Consortium, *Technical Standard for SOSA Reference Architecture*, Edition 1.1, C239 (2023), original project file `c239_5.pdf` (Library `file_00000000af4081f58c4bac329f85c58f`). **Owner-bounded source scope:** §§13.1–13.2.10, original PDF208–229 (printed182–203), with **only** the final sentence/line of the §13.2.10 CoV requirement read on PDF230. The separately headed §13.2.11 starts on PDF230 but was **not** audited or included. No other donor, model design, client/server code, deployment, device control or new DIM/Profile adoption.

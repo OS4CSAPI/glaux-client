@@ -1,6 +1,6 @@
-# Current 329×15 donor-to-DIM master — G2-6A original hardware source integrated; Excel verification pending
+# Current 329×15 donor-to-DIM master — G2-6A hardware source and same saved Excel VERIFIED
 
-39 source-qualified The Open Group SOSA column-I comparisons have been integrated from C239 §§13.1–13.2.10. Both CSV mirrors and readable comparison grids now match JSON; SAME canonical 26-sheet Excel remains the previous verified G2-5 snapshot until mandatory L23 saved-cell publication. No new DIM class or Profile requirement.
+All 39 original C239 §§13.1–13.2.10 source-qualified The Open Group SOSA column-I changes are integrated into [original source ledger](SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json), JSON, both CSV and both readable tables. The [SAME 26-sheet editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) has **zero Excel lag** with [full 346×15 saved-cell verification](SOSA_G2_6A_Workbook_Validation_10NOV2026.json); 22 historical sheets preserved. Original native hardware external companions and figure detail remain held, zero DIM/Profile adoption, donor still OPEN.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>
