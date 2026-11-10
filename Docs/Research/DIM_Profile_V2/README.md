@@ -1,3 +1,11 @@
+# CURRENT — The Open Group SOSA full donor assessment REOPENED; Step18 blocked
+
+<!-- SOSA_SOURCE_COVERAGE_REOPENED_09NOV2026 -->
+
+**9 November 2026 source-coverage correction.** [Active donor-specific recovery and coverage plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) and [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) supersede earlier “SOSA complete / SAPIENT next.” The **existing crosswalk and XLSX are verified interim products** (329 rows, 15 columns, 26 Excel sheets, 57 C239 comparisons), not proof of comprehensive C239/12-artifact SOSA coverage. **Eight native DSDM/IDL/OpenAPI files are uninspected**. Corrected method: source-first census, progressive master updates and declared workbook checkpoints, no adopted DIM or automatic Step18. **Next owner “Proceed”: SOSA-G1 source completeness census only.**
+
+## Historical current-state statements (superseded where inconsistent)
+
 # CURRENT — The Open Group SOSA Step17 bounded completion; Step18 SAPIENT next
 
 <!-- CURRENT_SOSA_D_SOURCE_WORKBOOK_VERIFIED_09NOV2026 -->

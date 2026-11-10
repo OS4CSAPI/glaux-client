@@ -1,3 +1,13 @@
+# CURRENT — SOSA donor review REOPENED for source-coverage correction (9 November 2026)
+
+<!-- SOSA_SOURCE_COVERAGE_REOPENED_09NOV2026 -->
+
+**IMPORTANT OWNER CORRECTION:** The earlier four SOSA-A/B/C/D tasks are verified *intermediate work*, NOT a complete donor assessment comparable to the multi-stage ISA source census/correction. Original C239 Edition 1.1 selected clauses were examined and its **329-row/15-column source master and 26-sheet workbook ARE in exact cross-format parity**; **76 selected C239 source records, 57 bounded decisions and 38 reviewed rows do not demonstrate exhaustive source coverage**. Eight referenced native DSDM/IDL/OpenAPI files remain unread and relevant original C239 sections have not been completely enumerated and classified. Earlier “Step17 COMPLETE / Step18 NEXT” statements below are **superseded**. **Step18 SAPIENT is BLOCKED.**
+
+**Active donor-specific coverage/correction plan:** [PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). ISA-method continuity is binding: source-first evidence and **progressive updates to the existing JSON/CSV/Markdown master as each qualified group is assessed**; update the actual canonical Excel at documented substantive checkpoints and completion, never falsely claim an outdated XLSX matches the master; preserve all previous donor and case evidence; distinguish source coverage from workbook parity and from model adoption. No automatic fixed four-iteration closure. **Next separate “Proceed”: SOSA-G1 source/edition/section and companion-file coverage census only.** Do not begin Step18, call this SOSA complete, infer inaccessible native schema contents or adopt any new DIM class.
+
+## Previously completed source-qualified interim integration and historical NEXT statements
+
 # CURRENT — The Open Group SOSA Step17 integration complete; Step18 next (9 November 2026)
 
 <!-- CURRENT_SOSA_D_SOURCE_WORKBOOK_VERIFIED_09NOV2026 -->
