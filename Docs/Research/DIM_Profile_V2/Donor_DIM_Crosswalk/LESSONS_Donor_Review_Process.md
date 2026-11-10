@@ -1,3 +1,15 @@
+# CURRENT — SOSA-G2-1 Excel synchronized; mandatory L23 practice active (9 November 2026)
+
+**Verified Excel checkpoint:** [SAME canonical 26-sheet XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [saved workbook cell validation](SOSA_G2_1_Workbook_Validation_09NOV2026.json) · [actual-cell visual preview](SOSA_G2_1_Workbook_Preview_09NOV2026.png) · [successful GitHub publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). The **12 G2-1 SOSA donor-cell changes** are now in the saved XLSX. **All 346×15 cells** match the current master JSON, both CSV mirrors and both GitHub-readable comparisons; all **26 worksheet names/order and 22 historical sheets** survive. Current SHA256 `6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b`; **Excel lag NONE**. The Open Group SOSA source assessment remains OPEN with native DSDM/IDL/OpenAPI source holds; no DIM/Profile adoption.
+
+**Mandatory incremental Excel rule (L23, owner-approved):** Each bounded substantive donor-source packet that changes one or more meaningful canonical comparison cells must update JSON, both CSVs, both readable comparisons **and verify/publish the SAME canonical Excel workbook before beginning another research packet**. Metadata-only or no-cell-change work does not require a workbook rewrite; exceptions require explicit owner approval naming exact lag, older snapshot, checkpoint and blocking boundary. Reuse the existing publisher and verifier; do not proliferate release artifacts or defer silently.
+
+**NEXT single owner “Proceed”: SOSA-G2-2 only — original C239 §§6.2.6–6.2.9.** Step18 SAPIENT remains BLOCKED pending the SOSA completion gate. No G2-2 research was started by the workbook checkpoint.
+
+**L23 verified application:** The previous SOSA-G2-1 12-cell XLSX lag is closed by the [exact saved 26-sheet workbook checks](SOSA_G2_1_Workbook_Validation_09NOV2026.json), [publication run](https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336). This demonstrates actual enforcement on the same workbook, not merely a new written rule. Excel closeout is an exit gate for substantive donor packets with source-qualified master changes, not something assistants may defer unilaterally. Source completeness, adoption and conformance remain separate.
+
+## Historical before-synchronization status and prior NEXT banners (superseded)
+
 # CURRENT REUSABLE DONOR PRACTICE — L23 mandatory source-to-Excel synchronization gate (9 November 2026)
 
 **Owner decision, 9 November:** The earlier phrases "substantive checkpoint" and "at donor closeout" were too discretionary: after SOSA-G2-1, **12 source-qualified donor cells** were current in JSON/CSV/Markdown but absent from the canonical 26-sheet XLSX. This was an execution/method-control failure even though the older snapshot was correctly labeled. A previously described workbook-lag exception is not authorization to silently make it the default.
