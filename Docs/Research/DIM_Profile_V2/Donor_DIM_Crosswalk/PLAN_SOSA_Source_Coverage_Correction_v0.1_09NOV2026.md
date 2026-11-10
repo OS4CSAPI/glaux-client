@@ -1,6 +1,15 @@
 # The Open Group SOSA donor — source-coverage correction plan, v0.1
 
-**Status: IN PROGRESS — coverage not established.** The four earlier SOSA-A/B/C/D increments provided a valid *selected C239 clause review, traceability ledger and preliminary crosswalk*. They **did not** complete a donor audit comparable in original-source coverage rigor to the ISA correction. The previous "Step17 complete / Step18 next" routing is superseded. Step18 (SAPIENT) is BLOCKED pending a genuine SOSA coverage completion gate and owner decision.
+**Status: G1 SOURCE CENSUS COMPLETE; donor original-source coverage remains INCOMPLETE.** The four earlier SOSA-A/B/C/D increments provided a valid *selected C239 clause review, traceability ledger and preliminary crosswalk*. They **did not** complete a donor audit comparable in original-source coverage rigor to the ISA correction. The previous "Step17 complete / Step18 next" routing is superseded. Step18 (SAPIENT) is BLOCKED pending a genuine SOSA coverage completion gate and owner decision.
+
+
+## G1 verification checkpoint — completed 9 November 2026
+
+**[G1 census and findings](SOSA_G1_Source_Coverage_Census_09NOV2026.md)** · [all twelve registered source artifacts plus two additional C239 dependencies](SOSA_G1_Source_Artifact_Census_09NOV2026.json) · [192 original C239 contents headings, all 76 prior C239 source records to 60 heading IDs](SOSA_G1_C239_Section_Coverage_09NOV2026.json).
+
+G1 classified 65 previously source-sampled contents headings, 126 substantively unread headings, one Appendix C inaccessible native security-overlay reference and **zero source-complete section audits**. Source sampling does not establish coverage. Chapter13 has 40 contents headings and about153 printed pages of physical hardware, power, ports, electrical/mechanical and source-specific interfaces. Important follow-up gaps include original §§6.2.3–6.2.9, §6.3–6.4, whole Chapter13 requirements, 8 native DSDM/IDL/OpenAPI files, S251 actual text and edition-specific companion bundle. C239 Appendix C identifies restricted VDL security material, not already-read native appendix content. The **existing master grid and 26-sheet workbook remain equal**; G1 changed metadata/coverage documentation only.
+
+**Next: G2-1 only on a new owner “Proceed”: original §6.2.3–§6.2.5 in-band System Manager and generic module definition clauses, printed pp.47–63 (PDF pp.73–89)**. Assess exact Rule/Recommendation/Observation status, source-specific data/management semantics and appropriate existing DIM row correspondence; update canonical master JSON+CSV+Markdown progressively when justified. Book the next actual XLSX refresh at a substantive verified checkpoint and declare any lag. G2-2 and the other source families remain unstarted.
 
 ## Starting point — preserve before correcting
 
@@ -28,4 +37,4 @@ The objective is to cover and source-classify *all material relevant to a whole 
 | **SOSA-G4 — crosswalk reconciliation and workbook checkpoints** | Reconcile native terms against current 329-row master and all other reviewed donor columns, avoid artificial row explosion, maintain full source ledgers and preserve case reality. Verify live JSON/CSV/Markdown at each update and current XLSX at planned meaningful checkpoints. | Exact saved XLSX cell parity, original 26-sheet preservation, source IDs/resolution, legible presentation and no silent DIM adoption. |
 | **SOSA-G5 — evidence-based completion and owner review** | Independently check coverage ledger against source inventory, list source limitations, test prior source claims and summarize semantics, unique contributions and owner-adoption questions. | Only owner authorizes "comprehensive donor review complete" if justified, or explicitly accepts a *bounded partial review* with restrictions. **Only then** consider original Step18. |
 
-**Next new owner “Proceed”: SOSA-G1 only.** Do not start SOSA-G2, modify donor structure, claim full SOSA compliance or resume SAPIENT in the same iteration without authorization. This is a *plan for source-first coverage*, not a result of having already executed the gates.
+**G1 census completed. NEXT owner “Proceed” authorizes G2-1 only (§§6.2.3–6.2.5), NOT full G2/3/4/5, master adoption or Step18 SAPIENT.** The prior planning-only G1 NEXT statement is superseded.

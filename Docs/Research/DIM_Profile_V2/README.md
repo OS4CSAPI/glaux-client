@@ -1,8 +1,10 @@
-# CURRENT — The Open Group SOSA full donor assessment REOPENED; Step18 blocked
+# CURRENT — SOSA-G1 source census complete, SOSA donor still open; Step18 blocked
 
-<!-- SOSA_SOURCE_COVERAGE_REOPENED_09NOV2026 -->
+<!-- SOSA_G1_CENSUS_COMPLETE_09NOV2026 -->
 
-**9 November 2026 source-coverage correction.** [Active donor-specific recovery and coverage plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) and [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) supersede earlier “SOSA complete / SAPIENT next.” The **existing crosswalk and XLSX are verified interim products** (329 rows, 15 columns, 26 Excel sheets, 57 C239 comparisons), not proof of comprehensive C239/12-artifact SOSA coverage. **Eight native DSDM/IDL/OpenAPI files are uninspected**. Corrected method: source-first census, progressive master updates and declared workbook checkpoints, no adopted DIM or automatic Step18. **Next owner “Proceed”: SOSA-G1 source completeness census only.**
+**9 November 2026.** [SOSA-G1 source/coverage result](Donor_DIM_Crosswalk/SOSA_G1_Source_Coverage_Census_09NOV2026.md) · [12-artifact lineage and access register](Donor_DIM_Crosswalk/SOSA_G1_Source_Artifact_Census_09NOV2026.json) · [192 original C239 TOC headings with 76-record trace](Donor_DIM_Crosswalk/SOSA_G1_C239_Section_Coverage_09NOV2026.json) · [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). G1 proves source indexing only: **65 selected source-sampled headings, 126 still substantively unread, one restricted Appendix C hold; no whole-section source audit declared complete**. C239's eight separate DSDM/IDL/OpenAPI files are not yet read, nor is S251 source. The current [329×15 canonical master](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) and [26-sheet Excel](Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remain synchronized: G1 did not alter semantic rows or comparison cells. **Only next “Proceed”: SOSA-G2-1 original C239 §§6.2.3–6.2.5 source-first review.** Step18 SAPIENT blocked pending source-based donor gate.
+
+## Prior current-state history (superseded where inconsistent)
 
 ## Historical current-state statements (superseded where inconsistent)
 

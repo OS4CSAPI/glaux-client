@@ -88,3 +88,10 @@ The next use of this method is the existing broader donor crosswalk Step16 subst
 | **L20 — One canonical donor column plus detailed held evidence** | 76 native C239 records were reconciled into 57 related/partial/held decisions across only 38 existing master rows; all other donor/case facts survived 26-sheet workbook checks. | Integrate at substantial donor closeout, retain Not assessed here distinctly from no equivalence, verify actual workbook cell parity and leave DIM adoption to owner checkpoints. |
 
 The next application is Step18 SAPIENT v2 with a donor-specific source-census and edition check before attempting exhaustive claim. The original Step24 and Steps35–40 reconciliation/adoption reviews remain in force.
+
+
+## L21 — Complete source census before claiming a donor review is complete (SOSA-G1, 9 November 2026)
+
+The earlier four SOSA-A/B/C/D iterations established 76 selected original C239 source records, 57 qualified review decisions, and a verified 15-column workbook, but did not establish exhaustive original-source coverage. G1 then identified **12 registered lineage artifacts, one additional C239-native DSDM dependency, a separate restricted Appendix C overlay and 192 original C239 table-of-contents headings**: 65 with selected source passages inspected, 126 not substantively reviewed and one restricted. Each of the 76 prior source records was traceable to a known original contents heading, but **no section was certified fully audited**.
+
+**Reusable requirement:** Original-source artifact/section/Rule/element inventory and relevance screening must precede claims of donor completeness. Maintain separate *source sample read*, *full source coverage verified*, *native companion actually accessed*, *crosswalk-integrated*, *DIM adopted*, and *runtime conformance* states. Populate the current master progressively as qualified findings arise; retain explicit dated Excel refresh checkpoints. No AI-generated number of planned iterations can substitute for a documented source-evidence completion gate. [Actual G1 source audit baseline](SOSA_G1_Source_Coverage_Census_09NOV2026.md).

@@ -1,5 +1,7 @@
 # CURRENT — SOSA donor review REOPENED for source-coverage correction (9 November 2026)
 
+**CORRECTED AFTER SOSA-G1 SOURCE CENSUS (9 November 2026):** This report records a **verified intermediate** SOSA-D master/Excel integration, not a completed The Open Group SOSA donor audit. The newer [G1 source corpus and 192-heading contents census](SOSA_G1_Source_Coverage_Census_09NOV2026.md) establishes that 126 headings remain unreviewed at substantive section level, C239's eight normative referenced native files are unread, and Appendix C references a restricted overlay. Original Step18 SAPIENT is **BLOCKED**. **Next owner “Proceed”: SOSA-G2-1 only, §§6.2.3–6.2.5 original in-band System Manager and generic Module definitions.**
+
 <!-- SOSA_SOURCE_COVERAGE_REOPENED_09NOV2026 -->
 
 **IMPORTANT OWNER CORRECTION:** The earlier four SOSA-A/B/C/D tasks are verified *intermediate work*, NOT a complete donor assessment comparable to the multi-stage ISA source census/correction. Original C239 Edition 1.1 selected clauses were examined and its **329-row/15-column source master and 26-sheet workbook ARE in exact cross-format parity**; **76 selected C239 source records, 57 bounded decisions and 38 reviewed rows do not demonstrate exhaustive source coverage**. Eight referenced native DSDM/IDL/OpenAPI files remain unread and relevant original C239 sections have not been completely enumerated and classified. Earlier “Step17 COMPLETE / Step18 NEXT” statements below are **superseded**. **Step18 SAPIENT is BLOCKED.**
@@ -8,7 +10,7 @@
 
 ## Previously completed source-qualified interim integration and historical NEXT statements
 
-# Step 17 SOSA-D — bounded source-first integration and verification closeout
+# Step 17 SOSA-D — bounded source-first integration (verified intermediate; comprehensive donor coverage open)
 
 **9 November 2026 · COMPLETE at the authorized scope, with explicit native-source holds.** The Open Group SOSA C239 Edition 1.1 (June 2023, September erratum) now has a **distinct** donor column in the [source-backed horizontal master](Master_Donor_Concept_to_DIM_Crosswalk.md), [structured JSON](Master_Donor_Concept_to_DIM_Crosswalk.json), [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv), and [verified canonical Excel workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). W3C SOSA/SSN remains a separate column, and the five foundational sensing/observation columns stay together to its right. The proposed DIM is still rightmost.
 
