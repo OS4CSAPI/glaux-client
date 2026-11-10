@@ -1,3 +1,9 @@
+# CURRENT — Binding L23 Excel gate and owner-approved G2-1 workbook checkpoint
+
+[Current SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) · [L23 reusable mandatory Excel rule](LESSONS_Donor_Review_Process.md) · [G2-1 original source findings](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md). The accepted 40-step donor plan remains in force, but after any bounded source-qualified donor packet with meaningful master cell updates, the **same canonical 26-sheet XLSX must be refreshed, saved, verified and GitHub committed before the next substantive donor/source packet**. No default deferred Excel refresh hidden behind "substantive checkpoint." Explicit owner-approved exceptions only. The current G2-1 12-cell lag is the approved synchronization activity; G2-2 blocked until verified. DIM adoption steps 24/35–40 and owner-controlled donor transitions unchanged.
+
+## Historical broader crosswalk routing
+
 # CURRENT — SOSA-G2-1 SOURCE READ / MASTER PROGRESS; full SOSA OPEN (9 November 2026)
 
 [Active SOSA-specific plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) · [G2-1 verified original-source report](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [current canonical master](Master_Donor_Concept_to_DIM_Crosswalk.md). Original C239 §§6.2.3–6.2.5: 201 native table/Rule items source-read; exactly **12 existing source-qualified SOSA donor cells** changed in JSON, CSV, Markdown (329 source rows, 15 columns), none adopted as DIM content. Canonical 26-sheet XLSX remains **SOSA-D pre-G2-1**, behind by those 12 cells (declared, not falsely synchronized). The original Step17 SOSA-A/B/C/D bounded work and G1 census remain valid intermediate evidence; neither closed donor source coverage. **Next separate owner Proceed = G2-2 §§6.2.6–6.2.9 ONLY; Step18 SAPIENT BLOCKED** until source-completion gate and owner disposition. Step24/Steps35–39/Step40 retain model adoption authority.

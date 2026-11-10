@@ -236,13 +236,19 @@ def verify_sosa_g2_1_master(doc: dict, mirror: list[list[str]], md: str) -> None
         else:
             required(new_cell == old_cell, "unchanged SOSA-D cell: "+row["row_id"])
     required(len(changed) == 12 and set(changed) == set(doc["workbookSnapshot"]["G2_1_affected_row_ids"]), "exactly 12 new SOSA cells, unchanged other rows")
-    required(not doc["workbookSnapshot"]["currently_matches_readable_view"], "honestly declared older XLSX checkpoint")
-    required(doc["workbookSnapshot"]["checkpoint"] == "SOSA-D-PRE-G2-1", "dated snapshot checkpoint")
+    synced=bool(doc["workbookSnapshot"]["currently_matches_readable_view"])
+    if synced:
+        required(doc["workbookSnapshot"]["checkpoint"]=="SOSA-G2-1-CANONICAL-VERIFIED","G2-1 current snapshot")
+        validated=json.loads((BASE/"SOSA_G2_1_Workbook_Validation_09NOV2026.json").read_text(encoding="utf-8"))
+        required(validated["G2_1_source_qualified_updated_cells"]==12 and validated["tests"]["all_XLSX_grid_cells_exact"],"saved G2-1 workbook source/cell evidence")
+    else:
+        required(doc["workbookSnapshot"]["checkpoint"]=="SOSA-D-PRE-G2-1","declared unsynced old workbook")
+        validated=old_v
 
     # Check actual old binary, all historical sheets and ALL source cells at saved snapshot.
     workbook = (BASE / (NAME + ".xlsx")).read_bytes()
     digest = hashlib.sha256(workbook).hexdigest()
-    required(digest == doc["currentWorkbookSha256"] == doc["workbookSnapshot"]["sha256"] == old_v["workbook_sha256"], "saved old XLSX hash and explicitly retained metadata")
+    required(digest == doc["currentWorkbookSha256"] == doc["workbookSnapshot"]["sha256"] == validated["workbook_sha256"], "saved old XLSX hash and explicitly retained metadata")
     with zipfile.ZipFile(io.BytesIO(workbook)) as archive:
         required(archive.testzip() is None, "saved XLSX CRC")
         for p in archive.namelist():
@@ -254,24 +260,27 @@ def verify_sosa_g2_1_master(doc: dict, mirror: list[list[str]], md: str) -> None
         root = ET.fromstring(archive.read("xl/workbook.xml"))
         sheets = root.find(S + "sheets")
         names = [s.get("name") for s in sheets]
-        required(names == old_v["workbook_sheets"] and len(names) == 26, "26 original sheets in order")
+        required(names == validated["workbook_sheets"] and len(names) == 26, "26 original sheets in order")
         rels = {r.get("Id"):r.get("Target") for r in ET.fromstring(archive.read("xl/_rels/workbook.xml.rels"))}
         sheet_paths = {}
         for entry in sheets:
             target = rels[entry.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
             sheet_paths[entry.get("name")] = target.lstrip("/") if target.startswith("/") else "xl/" + target
-        for n, h in old_v["exact_original_untouched_xml_sha256"].items():
+        for n, h in validated["exact_original_untouched_xml_sha256"].items():
             required(hashlib.sha256(archive.read(sheet_paths[n])).hexdigest() == h, "original source evidence sheet unchanged: "+n)
         sheet, actual = data_rows(archive.read(sheet_paths["Master Crosswalk"]), 15)
-        required(actual == prior_grid, "every saved 346x15 cell is the EXACT reconstructed SOSA-D snapshot, 12 G2-1 changes solely in current source master")
+        required(actual == (grid if synced else prior_grid), "saved 346x15 XLSX matches its correctly declared checkpoint; current G2-1 if synced, prior SOSA-D if lagged")
         merges = [x.get("ref") for x in sheet.find(S + "mergeCells").findall(S + "mergeCell")]
         expected = ["A1:D1", "E1:I1", "J1:N1"] + [f"A{i+1}:O{i+1}" for i in doc["review_sections"]]
         required(merges == expected, "15 topic merged dividers preserved")
         pane = sheet.find(S + "sheetViews").find(S + "sheetView").find(S + "pane")
         required(pane.get("xSplit") == "4" and pane.get("ySplit") == "2", "four source case columns and header frozen")
     print("PASS: CURRENT G2-1 canonical JSON/CSV/Markdown exact 346x15 parity; 12 source-qualified SOSA-only updates, 201 native source items and 6 Rules.")
-    print("PASS: SAVED canonical 26-sheet SOSA-D XLSX old snapshot exact hash and all 346x15 source cells; exactly 12 newer text cells deliberately lag.")
-    print("LIMIT: current text-to-XLSX parity is NOT claimed. No original DSDM/IDL/OpenAPI review, complete donor coverage, runtime test or DIM adoption.")
+    if synced:
+        print("PASS: saved 26-sheet G2-1 XLSX all 346x15 cells match live source/CSV/Markdown, exactly twelve SOSA source edits relative to older snapshot.")
+    else:
+        print("PASS: old SOSA-D saved XLSX exact; exactly twelve current source-text cells deliberately lag.")
+    print("LIMIT: no original native DSDM/IDL/OpenAPI review, comprehensive donor completeness, runtime conformance or DIM adoption.")
 
 
 

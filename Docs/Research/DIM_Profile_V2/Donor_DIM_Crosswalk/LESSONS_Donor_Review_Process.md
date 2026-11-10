@@ -1,3 +1,17 @@
+# CURRENT REUSABLE DONOR PRACTICE — L23 mandatory source-to-Excel synchronization gate (9 November 2026)
+
+**Owner decision, 9 November:** The earlier phrases "substantive checkpoint" and "at donor closeout" were too discretionary: after SOSA-G2-1, **12 source-qualified donor cells** were current in JSON/CSV/Markdown but absent from the canonical 26-sheet XLSX. This was an execution/method-control failure even though the older snapshot was correctly labeled. A previously described workbook-lag exception is not authorization to silently make it the default.
+
+**L23 (controlling):** For *every bounded, substantive original-source review packet that changes one or more canonical comparison cells*, update the one JSON plus both CSV and both readable comparisons, and complete a verified refresh of the **SAME** canonical Excel workbook **before starting the next source packet**. A metadata-only census or genuinely zero-cell pass does not trigger a rebuild. A deferral needs explicit owner consent for the precise affected cells, named snapshot/version, planned next Excel checkpoint and pause/resumption boundary. No automatic bundling across several independently completed donor packets, and no artificial micro-packets to force wasteful releases.
+
+**Verification required:** Compare every actual saved workbook grid cell to the current source grid (not merely the changed-cell count), preserve all 26 sheet names/order, unchanged historical evidence sheets, non-target donor/case/DIM cells and previous decisions; confirm workbook bytes/hash, XML/ZIP integrity, real source/coverage and a GitHub commit/readback plus appropriate CI. Report separately **source coverage**, **master text parity**, **Excel parity**, **DIM/Profile adoption**, and **runtime conformance**. If a workbook refresh or CI fails, investigate and repair within the same bounded publication checkpoint; **do not advance donor work** and do not claim parity.
+
+**Why this does not reverse ISA lesson L11:** The source packets are chosen for meaningful original-source complexity, not fixed tiny entry counts. Only after a coherent packet actually changes the master is the Excel checkpoint mandatory; existing publishers, workbook and verification checks must be reused. This adds a clear stop condition to the accepted catalogue-level cadence, not a new script/report/Excel release after each trivial subclause or source spotcheck.
+
+[Actual G2-1 source and 12-cell difference](SOSA_G2_1_Original_Source_and_Master_Correspondence_09NOV2026.md) · [controlling SOSA execution plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md).
+
+## Earlier lessons and historical comments — preserved below
+
 # CURRENT — Lessons through SOSA-G2-1, 9 November 2026
 
 <!-- LESSONS_THROUGH_SOSA_D_09NOV2026 -->
