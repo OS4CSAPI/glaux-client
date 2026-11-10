@@ -11,12 +11,12 @@ D=Path(__file__).resolve().parents[1]/"Docs/Research/DIM_Profile_V2/Donor_DIM_Cr
 BOOK="Master_Donor_Concept_to_DIM_Crosswalk.xlsx"
 MASTER="Master_Donor_Concept_to_DIM_Crosswalk.json"
 LEDGER="Step17_SOSA_D_Source_First_Integration_09NOV2026.json"
-REPORT="SOSA_G2_2_Workbook_Validation_09NOV2026.json"
-PREVIEW="SOSA_G2_2_Workbook_Preview_09NOV2026.png"
-OLD="6a22fb1d76be9decd11a0023136d55750971020c8c23d60dc4dbb57ab332ec9b"
+REPORT="SOSA_G2_3_Workbook_Validation_09NOV2026.json"
+PREVIEW="SOSA_G2_3_Workbook_Preview_09NOV2026.png"
+OLD="35c36f7adfa47fed18b64a4cc2d4a7f3d40d24cf8ec683fdbbcdcdbd8ee5dfdb"
 q=old.q
 ET.register_namespace("",old.X);ET.register_namespace("r",old.REL)
-def need(x,message):assert x,"SOSA-G2-2 verification failed: "+message
+def need(x,message):assert x,"SOSA-G2-3 verification failed: "+message
 def load(n):return json.loads((D/n).read_text(encoding="utf-8"))
 def save(n,x):(D/n).write_text(json.dumps(x,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 def digest(b):return hashlib.sha256(b).hexdigest()
@@ -24,43 +24,39 @@ def source_csv(n):
     with (D/n).open(encoding="utf-8-sig",newline="") as f:return list(csv.reader(f))
 def addr(i,j):return old.coord(i,j)
 def check_source(m,l):
-    need(m["schemaVersion"] == "0.13" and len(m["rows"]) == 329, "current G2-2 schema and stable 329 source rows")
-    need(len(m["columns"]) == 15 and [v["key"] for v in m["columns"]][8:10] == ["OpenGroupSOSA","SOSA"]
-         and m["columns"][-1]["key"] == "DIM", "separate Open Group/W3C and rightmost proposed DIM")
-    need([v["key"] for v in m["columns"][:4]] == ["Dragino","AirGradient","Campbell","Bennett"], "four source cases left")
-    g=m["review_grid"]
-    need(len(g)==346 and all(len(row)==15 for row in g) and len(m["review_sections"])==15, "346x15 rows and dividers")
-    need([row for i,row in enumerate(g) if i>1 and i not in set(m["review_sections"])] == [row["display"] for row in m["rows"]], "JSON row-to-grid parity")
-    need(g == source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")
-              == source_csv("ISA_Correction_Review_07NOV2026.csv"), "BOTH CSV mirrors exact")
-    a=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
-    b=(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
-    need(a.split("<table>",1)[1] == b.split("<table>",1)[1] and a.count('colspan="15"')==15, "BOTH readable comparison tables")
-    need(len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73, "all original donor and four-case records")
-    need(m["ISAEvidence"]["currentPrimaryReviews"]==480 and m["ISAEvidence"]["specificQuestions"]==6, "ISA source evidence and holds")
-    need(len(l["all_57_qualified_source_decisions"])==57 and len(l["integration_row_ledger"])==38
-         and l["source_native_records"]==76, "original SOSA-D selected evidence preserved")
-    earlier=load("SOSA_G2_1_Original_Item_Inventory_09NOV2026.json")
-    need(len(earlier["items"])==201, "original G2-1 source records preserved")
-    inv=load("SOSA_G2_2_Original_Item_Inventory_09NOV2026.json")
-    items=inv["source_items"];rules=inv["original_rule_appearances"]
-    ids={x["id"] for x in items+rules}
-    need(len(items)==340 and len(rules)==12 and len(ids)==352, "all 352 original native C239 source records unique")
-    need(sum(x["support"]=="V1.0" for x in items)==208 and sum(x["support"]=="Future" for x in items)==132, "native support grades exact")
-    need(sum(x["normative_standing"]=="RULE_SHALL" for x in rules)==10
-         and sum(x["normative_standing"]=="RULE_LABELED_DESCRIPTIVE" for x in rules)==2, "original rule standing exact")
-    g1_rows=[x for x in m["rows"] if x.get("G2_1_source_correspondence")]
-    g2_rows=[x for x in m["rows"] if x.get("G2_2_source_correspondence")]
-    need(len(g1_rows)==12 and len(g2_rows)==22, "preserve 12 G2-1 and new 22 G2-2 source-qualified mappings")
-    for row in g2_rows:
-        ev=row["G2_2_source_correspondence"]
-        need(ev["source_item_ids"] and all(x in ids for x in ev["source_item_ids"]), "actual native ID and nonempty mapping "+row["row_id"])
-        need(ev["dim_adopted"] is False and ev["api_schema_bytes_read"] is False, "no invented model or native API source "+row["row_id"])
-        need("G2-2:" in row["display"][8], "source-qualified G2-2 cell "+row["row_id"])
-    need(set(m["workbookSnapshot"]["G2_2_affected_row_ids"]) == {x["row_id"] for x in g2_rows}, "exact 22 changed original row identifiers")
-    need(m["currentWorkbookSha256"]==OLD and not m["workbookSnapshot"]["currently_matches_readable_view"], "unchanged 26-sheet G2-1 original workbook prior to refresh")
-    need(l["native_DSDM_IDL_OpenAPI_eight_files_uninspected"] and l["non_adoption"], "native source and DIM adoption caveats preserved")
-    print("PASS: G2-2 352 native source items/Rules, 22 qualified SOSA cells, JSON/2CSV/2Markdown 346x15 parity and old evidence retained")
+    need(m["schemaVersion"]=="0.14" and len(m["rows"])==329,"current G2-3 schema and information rows")
+    need(len(m["columns"])==15 and [x["key"] for x in m["columns"]][8:10]==["OpenGroupSOSA","SOSA"] and m["columns"][-1]["key"]=="DIM","Open Group SOSA separate from W3C and DIM last")
+    need([x["key"] for x in m["columns"][:4]]==["Dragino","AirGradient","Campbell","Bennett"],"source case columns")
+    grid=m["review_grid"]
+    need(len(grid)==346 and all(len(x)==15 for x in grid) and len(m["review_sections"])==15,"exact 346x15 master grid and topic dividers")
+    need([r for i,r in enumerate(grid) if i>1 and i not in set(m["review_sections"])] == [r["display"] for r in m["rows"]],"current row/display parity")
+    need(grid==source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")==source_csv("ISA_Correction_Review_07NOV2026.csv"),"canonical and historical CSV mirrors")
+    main=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
+    mirror=(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    need(main.split("<table>",1)[1]==mirror.split("<table>",1)[1] and main.count('colspan="15"')==15,"both 15-column GitHub-readable comparison bodies")
+    need(len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73 and m["ISAEvidence"]["currentPrimaryReviews"]==480 and m["ISAEvidence"]["specificQuestions"]==6,"source donor/case/ISA evidence")
+    need(len(l["all_57_qualified_source_decisions"])==57 and len(l["integration_row_ledger"])==38,"previous SOSA-D integration evidence")
+    g1=load("SOSA_G2_1_Original_Item_Inventory_09NOV2026.json")
+    g2=load("SOSA_G2_2_Original_Item_Inventory_09NOV2026.json")
+    g3=load("SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json")
+    need(len(g1["items"])==201 and len(g2["source_items"])+len(g2["original_rule_appearances"])==352,"original earlier G2 research preserved")
+    need(len(g3["source_clauses"])==76 and len(g3["source_states"])==32 and len(g3["architectural_context"])==11 and g3["counts"]["source_items"]==119,"all source-graded G2-3 items and exact counts")
+    need(g3["counts"]["rule_shall"]==48 and g3["counts"]["rule_incomplete"]==1 and g3["counts"]["recommendations"]==8 and g3["counts"]["observations"]==11 and g3["counts"]["permissions"]==8,"source normativity grading")
+    ids={x["id"] for x in g3["source_clauses"]+g3["source_states"]+g3["architectural_context"]}
+    need(len(ids)==119,"unique stable original-source item IDs")
+    new_rows=[r for r in m["rows"] if r.get("G2_3_source_correspondence")]
+    need(len(new_rows)==28,"28 qualified new master cells, not 119 model fields")
+    need(sum(bool(r.get("G2_1_source_correspondence")) for r in m["rows"])==12 and sum(bool(r.get("G2_2_source_correspondence")) for r in m["rows"])==22,"G2-1/G2-2 evidence still retained")
+    for r in new_rows:
+        ev=r["G2_3_source_correspondence"]
+        need(ev["source_item_ids"] and all(x in ids for x in ev["source_item_ids"]),"verified original source references "+r["row_id"])
+        need(ev["DIM_adopted"] is False and ev["native_external_references_read"] is False,"correct donor-source and nonadoption grade "+r["row_id"])
+        need("G2-3:" in r["display"][8],"new source-qualified SOSA cell content "+r["row_id"])
+    need(set(m["workbookSnapshot"]["G2_3_affected_row_ids"])=={r["row_id"] for r in new_rows},"only 28 original affected row identifiers")
+    need(m["currentWorkbookSha256"]==OLD and m["workbookSnapshot"]["currently_matches_readable_view"] is False,"old saved G2-2 checkpoint accurately declared before refresh")
+    need(l["native_DSDM_IDL_OpenAPI_eight_files_uninspected"] and l["non_adoption"],"no native file or DIM adoption overclaims")
+    print("PASS: G2-3 source census 119 graded items, 28 donor cells, original 58+73+480 evidence, JSON/2CSV/2MD parity")
+
 def matrix_to_xml(matrix,styles,main=False,sections=()):
     w=max(len(row) for row in matrix);need(w<=16,"sheet dimensions")
     root=ET.Element(q("worksheet"))
@@ -92,19 +88,20 @@ def matrix_to_xml(matrix,styles,main=False,sections=()):
     return ET.tostring(root,encoding="utf-8",xml_declaration=True)
 def summary(m):
     return [
-        ["SOSA-G2-2 CANONICAL EXCEL CHECKPOINT","C239 inline source review; full donor still OPEN"],
-        ["Master","329 information rows / 346 presentation rows / 15 columns"],
-        ["Original G2-2 native source items","209 function entries, 131 interaction entries, 12 Rule-labeled paragraphs"],
-        ["Source normative standing","10 original shall Rules, two descriptive paragraphs labeled Rule"],
-        ["Source edition support","208 V1.0 and 132 Future source function/interaction entries"],
-        ["Source-qualified updated donor cells","22 existing The Open Group SOSA cells refreshed, no other column edits"],
-        ["Previous SOSA evidence","SOSA-D 76/57/38 plus G2-1 201 native items and 12 prior source-qualified rows"],
-        ["Native source holds","C239 DSDM, IDL and six OpenAPI JSONs unread; B.3 reference conflicts and repeated PIC Rule IDs"],
-        ["Source semantics","Chassis Manager hardware/low-level IPMI vs PIC direct/indirect management vs logical SW RTE"],
-        ["Preserved historical evidence","58 donor records, 73 case facts, 480 ISA DMS outcomes including six exact holds"],
-        ["DIM/Profile standing","No new DIM classes, cardinalities, Profile SHALL, runtime test or installed equipment command"],
-        ["XLSX and mirrors","Exact saved XLSX cell parity with JSON, both CSVs and both readable comparisons; 26 sheets"],
-        ["Next on owner Proceed","SOSA-G2-3: original C239 §§6.3–6.5; SAPIENT Step18 blocked"]
+       ["SOSA-G2-3 CANONICAL EXCEL CHECKPOINT","C239 §§6.3–6.5 original inline text reviewed; donor OPEN"],
+       ["Current table","329 information rows / 346 visual grid rows / 15 columns"],
+       ["Original G2-3 source items","119 items: 76 Rule/Recommendation/Observation/Permission, 32 state definitions, 11 contexts"],
+       ["Original rule standing","49 labeled Rules: 48 explicit SHALL, one source-labeled incomplete statement"],
+       ["Other source standing","8 Recommendations, 11 Observations, 8 Permissions"],
+       ["SOSA state definitions","20 sensor/PIC/module operational states; 12 separately scoped security states"],
+       ["New qualified SOSA comparisons","28 existing source-donor I-column cells; no other columns changed"],
+       ["Inherited donor evidence","SOSA-D 76 selected, G2-1 201, G2-2 352 items; native companions still unread"],
+       ["Hardware source distinctions","Auxiliary management power vs payload, IPMC/FRU vs software, out-of-band vs in-band"],
+       ["False equivalences held","P6/M6 Lost Communication not confirmed hardware fault; S0 typically not reported"],
+       ["Evidence retained","58 earlier donor records, 73 case facts, 480 ISA source outcomes and six exact holds"],
+       ["DIM/Profile adoption","None; no new class hierarchy, cardinality or runtime hardware test"],
+       ["Formats and binary","Exact source/CSV/Markdown and SAVED 26-sheet XLSX 346x15 parity"],
+       ["Next only on owner Proceed","SOSA-G2-4 native C239 §§1–5 and 7–11; SAPIENT blocked"]
     ]
 def register(m):
     out=[["Stable row ID","Proposed element","Definition","Status","Source grade","Inclusion","Adoption","Native ISA IDs","ISA source correspondence","SOSA C239 relation record IDs","SOSA relations","Native source status"]]
@@ -112,15 +109,16 @@ def register(m):
         so=r.get("sosa_correspondence") or {}
         g2=r.get("G2_1_source_correspondence") or {}
         g22=r.get("G2_2_source_correspondence") or {}
+        g23=r.get("G2_3_source_correspondence") or {}
         out.append([r["row_id"],r.get("label",""),r.get("definition",""),r.get("status",""),r.get("source_review_status",""),r.get("master_inclusion",""),r.get("dim_adoption",""),
            "; ".join(r.get("source_entry_ids",[])),json.dumps(r.get("source_first_correspondence",{}),ensure_ascii=False)[:2000],
-           "; ".join(so.get("records",[])+g2.get("source_item_ids",[])+g22.get("source_item_ids",[])),"; ".join(so.get("relations",[])+([g2["relation"]] if g2 else [])+([g22["mapping_relation"]] if g22 else [])),
-           "G2-2 C239 specialized source inline reviewed; native DSDM/API not read" if g22 else "G2-1 C239 inline original source reviewed; native DSDM/API not read" if g2 else "C239 selected source reviewed; native DSDM/API not read" if so else "Not assessed here"])
+           "; ".join(so.get("records",[])+g2.get("source_item_ids",[])+g22.get("source_item_ids",[])+g23.get("source_item_ids",[])),"; ".join(so.get("relations",[])+([g2["relation"]] if g2 else [])+([g22["mapping_relation"]] if g22 else [])+([g23["relation"]] if g23 else [])),
+           "G2-3 C239 hardware/state source inline reviewed; native VITA/HOST/IPMI/DSDM/API dependencies not read" if g23 else "G2-2 C239 specialized source inline reviewed; native DSDM/API not read" if g22 else "G2-1 C239 inline original source reviewed; native DSDM/API not read" if g2 else "C239 selected source reviewed; native DSDM/API not read" if so else "Not assessed here"])
     return out
 def publish():
     m=load(MASTER);l=load(LEDGER);check_source(m,l)
     prev=(D/BOOK).read_bytes()
-    need(digest(prev)==OLD,"exact verified 26-tab G2-1 workbook base hash; preserve same canonical workbook")
+    need(digest(prev)==OLD,"exact previously verified G2-2 26-tab workbook base hash; preserve same canonical workbook")
     with zipfile.ZipFile(io.BytesIO(prev)) as z:
         need(z.testzip() is None,"old ZIP CRC")
         paths=old.sheetpaths(z);need(len(paths)==26,"26 original named tabs")
@@ -157,75 +155,69 @@ def publish():
     oldcells=old.readcells(prev,"Master Crosswalk")
     newcells=old.readcells(new,"Master Crosswalk")
     delta=[a for a in set(oldcells)|set(newcells) if oldcells.get(a,"")!=newcells.get(a,"")]
-    need(len(delta)==22 and all(re.fullmatch(r"I\d+",a) for a in delta), "only 22 original The Open Group SOSA saved cells changed")
+    need(len(delta)==28 and all(re.fullmatch(r"I\d+",a) for a in delta),"exactly 28 original source-qualified SOSA I-column saved cells changed, zero other cells")
     m["currentWorkbookSha256"]=digest_new
-    m["currentEvidenceCheckpoint"]="SOSA-G2-2-SAVED_26_SHEET_XLSX_AND_SOURCE_PARITY_VERIFIED"
-    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-2-CANONICAL-VERIFIED","sha256":digest_new,
+    m["currentEvidenceCheckpoint"]="SOSA-G2-3-SAVED_26_SHEET_XLSX_AND_SOURCE_PARITY_VERIFIED"
+    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-3-CANONICAL-VERIFIED","sha256":digest_new,
         "information_rows":329,"columns":15,"currently_matches_readable_view":True,
-        "lag":"NONE: exact current 346x15 source/2CSV/2Markdown/26-sheet XLSX parity",
-        "refreshed_cell_count":22,"G2_2_affected_row_ids":m["workbookSnapshot"]["G2_2_affected_row_ids"],
+        "lag":"NONE: all 346x15 saved XLSX cells agree with canonical JSON, BOTH CSVs and BOTH readable comparisons",
+        "refreshed_cell_count":28,"G2_3_affected_row_ids":m["workbookSnapshot"]["G2_3_affected_row_ids"],
         "validation_file":REPORT})
-    m["SOSAEvidence"]["G2_2"].update({"excel_checkpoint":"SOSA-G2-2-CANONICAL-VERIFIED",
-        "excel_validation":REPORT,"excel_22_source_cells_synced":True})
-    m["SOSAReviewCompletion"]["G2_2_excel_lag"]=0
-    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="SOSA-G2-3 C239 §§6.3–6.5 original out-of-band management/component-state source-first review"
-    m["publicationPolicy"]="Binding L23: Each substantive donor-source packet with meaningful canonical comparison changes must finish with verified source JSON, BOTH CSVs, BOTH Markdown mirrors and SAME 26-sheet XLSX saved-cell parity before another research packet. G2-2 22 source-qualified cells now synchronized. Source coverage, DIM/Profile adoption and runtime conformance remain distinct."
-    m["nextOwnerAction"]="SOSA-G2-3 only on next separate owner Proceed: original C239 §§6.3–6.5, out-of-band hardware management and component state; Step18 SAPIENT BLOCKED pending source-based donor completion."
+    m["SOSAEvidence"]["G2_3"].update({"excel_checkpoint":"SOSA-G2-3-CANONICAL-VERIFIED","excel_validation":REPORT,"excel_28_source_cells_synced":True})
+    m["SOSAReviewCompletion"]["G2_3_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="SOSA-G2-4 C239 §§1–5 and §§7–11 original-source completeness screening only on separate owner Proceed"
+    m["publicationPolicy"]="Binding L23: Each substantive donor source review that changes comparison cells must update JSON, both CSVs and both Markdown tables, then synchronize and verify this SAME canonical 26-sheet XLSX before any next source packet. G2-3 28 new source-qualified I-column cells synchronized; no DIM/Profile adoption or external native source completeness."
+    m["nextOwnerAction"]="SOSA-G2-4 only on separate owner Proceed: original C239 §§1–5 and §§7–11 missing architecture, sensors/tasking/mission clauses, sized by original source complexity; SAPIENT blocked pending SOSA donor gate."
     save(MASTER,m)
-    # Keep historical SOSA-D and G2-1 research and workbook validation immutable.
-    report={"date":"2026-11-09","step":"SOSA-G2-2-EXCEL-CHECKPOINT","result":"EXACT_SAVED_26_SHEET_AND_FOUR_TEXT_FORMAT_PARITY_PASS",
-        "workbook_sha256":digest_new,"base_workbook_sha256":OLD,
-        "workbook_sheets":list(paths),"refreshed_sheets":list(tables),
-        "exact_original_untouched_xml_sha256":unchanged,
-        "source_rows":329,"grid_rows":346,"columns":15,
-        "original_donor_evidence":58,"case_evidence":73,
-        "G2_2_native_source_table_items":340,"G2_2_rule_labeled_paragraphs":12,
-        "G2_2_qualified_source_cell_count":22,"changed_saved_cells":sorted(delta),
-        "G2_2_source_V1_0_entries":208,"G2_2_source_Future_entries":132,
-        "G2_2_source_shall_rules":10,"G2_2_source_descriptive_rule_labels":2,
-        "native_DSDM_IDL_OpenAPI_unread":8,"ISA_original_questions_open":6,
-        "checks":{"actual_XLSX_all_346x15_equal_current_JSON_and_CSV":True,
-            "both_CSV_and_GitHub_readable_mirrors_exact":True,
-            "same_26_worksheet_names_order":True,"22_unmodified_historical_sheets_XML_byte_identical":True,
-            "only_22_original_SOSA_I_column_cells_changed":True,
-            "valid_XLSX_ZIP_CRC_XML":True,"zero_XLSX_error_cells":True,
-            "zero_DIM_Profile_adoption":True},
-        "limits":["No C239 original native OpenAPI/IDL/DSDM contents inspected",
-                  "No C239/SOSA comprehensive original-source completion claim",
-                  "No independent device runtime/interop or physical command","Actual saved-cell preview is not Microsoft Excel-native rendering"],
-        "next":"SOSA-G2-3 C239 §§6.3–6.5 only on separate owner Proceed"}
-    save(REPORT,report)
+    record={"date":"2026-11-09","step":"SOSA-G2-3-EXCEL-CHECKPOINT","result":"EXACT_SAVED_26_SHEET_AND_TWO_CSV_TWO_MD_PARITY_PASS",
+      "workbook_sha256":digest_new,"base_workbook_sha256":OLD,
+      "workbook_sheets":list(paths),"refreshed_sheets":list(tables),
+      "exact_original_untouched_xml_sha256":unchanged,
+      "source_rows":329,"grid_rows":346,"columns":15,"original_donor_evidence":58,"case_evidence":73,
+      "G2_3_native_source_items":119,"G2_3_original_rule_labels":49,"G2_3_clear_source_shalls":48,
+      "G2_3_original_rule_incomplete":1,"G2_3_source_state_labels":32,
+      "G2_3_qualified_source_cell_count":28,"changed_saved_cells":sorted(delta),
+      "unread_native_DSDM_IDL_OpenAPI_files":8,"unread_external_normative_hardware_standards":True,
+      "open_original_ISA_questions":6,
+      "checks":{"actual_XLSX_all_346x15_equal_current_JSON_CSV":True,
+          "two_CSV_and_two_Markdown_comparisons_equal":True,"same_26_worksheet_names_order":True,
+          "22_historical_worksheet_XML_bytes_preserved":True,"only_28_original_SOSA_I_column_cells_changed":True,
+          "ZIP_CRC_and_XML_valid":True,"zero_XLSX_error_type_cells":True,"zero_DIM_Profile_adoption":True},
+      "limits":["No ANSI/VITA/HOST/IPMI original normative companion audit","No C239 DSDM/IDL/OpenAPI original bytes inspected",
+        "No comprehensive The Open Group SOSA donor coverage or conformance","Saved-cell PNG preview not Microsoft Excel-native rendering"],
+      "next":"SOSA-G2-4 C239 §§1–5 and 7–11 only on separate owner Proceed"}
+    save(REPORT,record)
     print("PASS: canonical workbook all 5190 source cells equal, 26 tabs retained; new SHA256",digest_new)
     return digest_new
 def preview():
-    # Visualize the *actual saved canonical workbook cells* changed in this G2-2 packet.
     from PIL import Image,ImageDraw,ImageFont
-    m=load(MASTER); cells=old.readcells((D/BOOK).read_bytes(),"Master Crosswalk")
-    rows=[r for r in m["rows"] if r.get("G2_2_source_correspondence")]
-    need(len(rows)==22,"22 source-qualified rows visible in saved workbook")
+    m=load(MASTER)
+    cells=old.readcells((D/BOOK).read_bytes(),"Master Crosswalk")
+    rows=[r for r in m["rows"] if r.get("G2_3_source_correspondence")]
+    need(len(rows)==28,"28 G2-3 source-qualified saved workbook rows")
     try:
         f=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",11)
         fb=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",13)
     except OSError:f=fb=ImageFont.load_default()
-    width,height=1600,2250
+    width,height=1600,2840
     im=Image.new("RGB",(width,height),"white")
     p=ImageDraw.Draw(im)
-    p.rectangle((0,0,width,64),fill="#173855")
-    p.text((18,17),"SOSA-G2-2 | 22 verified source-qualified cells in saved 26-sheet canonical Excel",font=fb,fill="white")
+    p.rectangle((0,0,width,65),fill="#173855")
+    p.text((20,16),"SOSA-G2-3 | 28 source-qualified rows in the ACTUAL saved 26-sheet canonical Excel",font=fb,fill="white")
     for i,r in enumerate(rows):
-        found=[k+1 for k,g in enumerate(m["review_grid"]) if g[14]==r["label"] and g[8]==r["display"][8]]
-        need(len(found)==1,"unique saved original grid row "+r["row_id"])
-        addr1="I"+str(found[0]); value=cells.get(addr1,"")
-        need(value==r["display"][8],"preview cell actually matches saved XLSX "+addr1)
-        y=75+i*97
-        p.rectangle((12,y,width-12,y+90),fill="#F1F6FA" if i%2==0 else "white",outline="#CCD8E4")
-        p.text((20,y+7),r["row_id"]+" | "+addr1+" | "+r["label"],font=fb,fill="#173855")
-        display="G2-2: "+value.split("G2-2:",1)[1] if "G2-2:" in value else value
-        for z,line in enumerate(textwrap.wrap(display,width=176,break_long_words=False)[:3]):
-            p.text((20,y+31+z*17),line,font=f,fill="#203951")
+        hit=[k+1 for k,g in enumerate(m["review_grid"]) if g[14]==r["label"] and g[8]==r["display"][8]]
+        need(len(hit)==1,"unique saved crosswalk source row "+r["row_id"])
+        cell="I"+str(hit[0]);value=cells.get(cell,"")
+        need(value==r["display"][8],"original saved Excel cell matches source "+cell)
+        y=72+i*97
+        p.rectangle((10,y,width-12,y+90),fill="#F1F6FA" if i%2==0 else "white",outline="#CCD8E4")
+        p.text((20,y+8),r["row_id"]+" | "+cell+" | "+r["label"],font=fb,fill="#173855")
+        excerpt="G2-3: "+value.split("G2-3:",1)[1] if "G2-3:" in value else value
+        for z,line in enumerate(textwrap.wrap(excerpt,width=170,break_long_words=False)[:3]):
+            p.text((20,y+32+z*17),line,font=f,fill="#203951")
     im.save(D/PREVIEW,optimize=True)
-    need((D/PREVIEW).stat().st_size>15000,"real saved XLSX-cell visual PNG rendered")
-    print("PASS: G2-2 real saved XLSX 22-cell preview created (not native Excel UI rendering)")
+    need((D/PREVIEW).stat().st_size>15000,"actual saved XLSX cells preview rendered")
+    print("PASS: G2-3 saved XLSX preview from actual cells (not Excel-native screenshot)")
 
 if __name__=="__main__":
     publish()

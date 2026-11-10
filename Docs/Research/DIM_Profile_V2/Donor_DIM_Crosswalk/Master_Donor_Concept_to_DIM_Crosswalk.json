@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.13",
+  "schemaVersion": "0.14",
   "date": "2026-11-09",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
@@ -165,7 +165,7 @@
       "Manufacturer",
       "ConfigurationData.manufacturer",
       "≈ Manufacturer · manufacturer / producer / vendor",
-      "Not assessed here",
+      "Related only · G2-3: §6.3 FRU inventory references vendor identity; no observed manufacturer field for any case",
       "",
       "",
       "",
@@ -182,7 +182,7 @@
       "Model",
       "ConfigurationData.model",
       "Model",
-      "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 names FRU model number in hardware inventory; not a verified deployed product-model value",
       "",
       "",
       "",
@@ -199,7 +199,7 @@
       "SerialNumber",
       "≈ ConfigurationData.serial_number",
       "≈ Serial Number · component context",
-      "Not assessed here",
+      "Related only · G2-3: §6.3 FRU inventory includes serial number; no actual serialized installed equipment was observed",
       "",
       "",
       "",
@@ -233,7 +233,7 @@
       "",
       "",
       "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
-      "Not assessed here",
+      "Related only · G2-3: §6.5.4 Root of Trust hardware/software authentication may use certificates; PIC trust and software auth are separate",
       "",
       "",
       "",
@@ -301,7 +301,7 @@
       "≈ ComponentType (can include software)",
       "",
       "≈ composition member · functional integration, not physical part-of",
-      "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device",
+      "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime",
       "",
       "",
       "",
@@ -1389,7 +1389,7 @@
       "",
       "",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-      "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted",
+      "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables",
       "",
       "",
       "",
@@ -1627,7 +1627,7 @@
       "",
       "StatusReport.mode",
       "≈ Camera Mode in Status.properties · camera-specific report",
-      "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode · G2-2: V1.0 getMode returns ComponentMode for specialized roles, whereas application-state types remain distinct",
+      "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode · G2-2: V1.0 getMode returns ComponentMode for specialized roles, whereas application-state types remain distinct · G2-3: §6.5 source operational states distinct from Mode and security trust assessments",
       "",
       "",
       "≈ Category.value (categorical status/mode value)",
@@ -2341,7 +2341,7 @@
       "Not assessed here",
       "Not assessed here",
       "Calibrate",
-      "Not assessed here",
+      "Related only · G2-3: §6.5.4 secure start-up decomposes hardware initialization, authentication and sensor composition",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2511,7 +2511,7 @@
       "Not assessed here",
       "Not assessed here",
       "Sanitize",
-      "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1] · G2-2: Security/PIC specialized V1.0 zeroize and sanitize requests use distinct ZeroizeConfig/SanitizeConfig",
+      "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1] · G2-2: Security/PIC specialized V1.0 zeroize and sanitize requests use distinct ZeroizeConfig/SanitizeConfig · G2-3: §6.5 S3/P3/M3 descriptive cleansing and security Compromised may precede zeroization",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2528,7 +2528,7 @@
       "Not assessed here",
       "Not assessed here",
       "Self Test",
-      "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1] · G2-2: executeBIT V1.0 across specialized roles, but Security Services security-component BIT is Future",
+      "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1] · G2-2: executeBIT V1.0 across specialized roles, but Security Services security-component BIT is Future · G2-3: §6.3 out-of-band hardware may support diagnostics when application processor unavailable",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2562,7 +2562,7 @@
       "Not assessed here",
       "Not assessed here",
       "Shutdown",
-      "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1] · G2-2: shutdownSensorComponent is source V1.0 on Security, Chassis and PIC roles",
+      "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1] · G2-2: shutdownSensorComponent is source V1.0 on Security, Chassis and PIC roles · G2-3: §6.5 S4/P4/M4 Stopping are intended pre-Off states and don't imply shutdown execution",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -2834,7 +2834,7 @@
       "Not assessed here",
       "Not assessed here",
       "Ping",
-      "Not assessed here",
+      "Related only · G2-3: §6.5.2 P6 and §6.5.3 M6 describe unavailable manager/agent communications",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -3327,7 +3327,7 @@
       "",
       "",
       "Status.properties: Name Value Pair [0+]",
-      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future",
+      "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload",
       "",
       "",
       "",
@@ -3616,7 +3616,7 @@
       "",
       "",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
-      "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties · G2-2: Security Services is a module; Chassis Manager hardware and PIC/PIC-RTE interfaces have different GENERAL PROFILE rule subjects",
+      "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties · G2-2: Security Services is a module; Chassis Manager hardware and PIC/PIC-RTE interfaces have different GENERAL PROFILE rule subjects · G2-3: §6.3 System Manager, Chassis Manager and IPMC roles are SOSA-layered hardware services",
       "",
       "",
       "",
@@ -3650,7 +3650,7 @@
       "",
       "",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-      "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability",
+      "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role",
       "",
       "",
       "",
@@ -3701,7 +3701,7 @@
       "",
       "",
       "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
-      "Related only · Direct versus delegated indirect management / In-band versus out-of-band management / Sta… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: PICs may be unmanaged, directly managed or indirectly represented; source Rule labels duplicate and no device readiness is established",
+      "Related only · Direct versus delegated indirect management / In-band versus out-of-band management / Sta… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: PICs may be unmanaged, directly managed or indirectly represented; source Rule labels duplicate and no device readiness is established · G2-3: §6.5 System Manager-assessed PIC/module operational vs communications-lost state, not enabled capability",
       "",
       "",
       "",
@@ -4126,7 +4126,7 @@
       "",
       "",
       "",
-      "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-3: §6.3 payload vs auxiliary management power challenges naive Off/power interpretation of equipment cases",
       "",
       "",
       "",
@@ -4143,7 +4143,7 @@
       "",
       "",
       "",
-      "Related only · SOSA PIC states P0–P6 / SOSA Module states M0–M6 · §6.5.2 Figure6.5.2-1 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+      "Related only · SOSA PIC states P0–P6 / SOSA Module states M0–M6 · §6.5.2 Figure6.5.2-1 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-3: §6.5 P6/M6 Lost Communication is not known Faulted; S0 Off generally unreported",
       "",
       "",
       "",
@@ -4262,7 +4262,7 @@
       "Not assessed here",
       "Not assessed here",
       "Hardware Version · accepted extension",
-      "Not assessed here",
+      "Related only · G2-3: §6.3 FRU hardware revision identification is possible via management inventory",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4398,7 +4398,7 @@
       "Not assessed here",
       "Not assessed here",
       "Software Version · accepted extension",
-      "Not assessed here",
+      "Related only · G2-3: §6.5.4.2-8 PIC provides version information; §6.3 inventory mentions software/firmware revisions",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4466,7 +4466,7 @@
       "",
       "",
       "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-      "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles",
+      "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts",
       "",
       "",
       "",
@@ -4840,7 +4840,7 @@
       "Not assessed here",
       "Not assessed here",
       "Operating State",
-      "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.5 S/P/M states separate Off/Operational/Faulted from PIC/module Lost Communication",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4959,7 +4959,7 @@
       "Not assessed here",
       "Not assessed here",
       "DC Current Load",
-      "Not assessed here",
+      "Related only · G2-3: §6.4.2 Power Supply Card input-current analog sensors recommended, not source-observed DC consumption",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4976,7 +4976,7 @@
       "Not assessed here",
       "Not assessed here",
       "DC Current Source",
-      "Not assessed here",
+      "Related only · G2-3: §6.4.2 PSC output-current analog sensors recommended, not source-observed device production",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4993,7 +4993,7 @@
       "Not assessed here",
       "Not assessed here",
       "DC Voltage Load",
-      "Not assessed here",
+      "Related only · G2-3: §6.4.2 PSC output-voltage analog sensors recommended on rails",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5010,7 +5010,7 @@
       "Not assessed here",
       "Not assessed here",
       "DC Voltage Source",
-      "Not assessed here",
+      "Related only · G2-3: §6.4.2 PSC input-voltage sensor recommended",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5044,7 +5044,7 @@
       "Not assessed here",
       "Not assessed here",
       "Power State",
-      "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+      "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 IPMC management power/3.3V_AUX persists when PIC payload domain is unpowered",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5180,7 +5180,7 @@
       "Not assessed here",
       "Not assessed here",
       "Link State",
-      "Not assessed here",
+      "Related only · G2-3: §6.5.4.2-9/-10 directly managed PIC SHALL report MAC and IP port active/inactive",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -6029,7 +6029,7 @@
         "Manufacturer",
         "ConfigurationData.manufacturer",
         "≈ Manufacturer · manufacturer / producer / vendor",
-        "Not assessed here",
+        "Related only · G2-3: §6.3 FRU inventory references vendor identity; no observed manufacturer field for any case",
         "",
         "",
         "",
@@ -6059,7 +6059,20 @@
       "source_first_native_DMS_ids": [
         "ISA-DMS-076"
       ],
-      "source_first_SDD_block_ids": []
+      "source_first_SDD_block_ids": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY"
+        ],
+        "negative_equivalence_boundary": "Architecture inventory capability, not a validated manufacturer of each installed System",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "S06-R002",
@@ -6085,7 +6098,7 @@
         "Model",
         "ConfigurationData.model",
         "Model",
-        "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 names FRU model number in hardware inventory; not a verified deployed product-model value",
         "",
         "",
         "",
@@ -6129,6 +6142,19 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY"
+        ],
+        "negative_equivalence_boundary": "A subsystem FRU model does not equal an aggregate sensing System's model",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -6154,7 +6180,7 @@
         "SerialNumber",
         "≈ ConfigurationData.serial_number",
         "≈ Serial Number · component context",
-        "Not assessed here",
+        "Related only · G2-3: §6.3 FRU inventory includes serial number; no actual serialized installed equipment was observed",
         "",
         "",
         "",
@@ -6184,7 +6210,20 @@
       "source_first_native_DMS_ids": [
         "ISA-DMS-105"
       ],
-      "source_first_SDD_block_ids": []
+      "source_first_SDD_block_ids": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY"
+        ],
+        "negative_equivalence_boundary": "An architectural source inventory claim does not give serial number of any case hardware",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "S06-R004",
@@ -6310,7 +6349,7 @@
         "",
         "",
         "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
-        "Not assessed here",
+        "Related only · G2-3: §6.5.4 Root of Trust hardware/software authentication may use certificates; PIC trust and software auth are separate",
         "",
         "",
         "",
@@ -6328,7 +6367,22 @@
         "CNTR-5.2",
         "CNTR-5.4"
       ],
-      "controller_source_review_boundary": "Controller registration compares the REQUEST ADD originating UCI with the certificate UCI before authorization. Certificate matching does not prove physical identity, completed certificate trust validation or permission to join."
+      "controller_source_review_boundary": "Controller registration compares the REQUEST ADD originating UCI with the certificate UCI before authorization. Certificate matching does not prove physical identity, completed certificate trust validation or permission to join.",
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-ROOT-OF-TRUST",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_4",
+          "SOSA-C239-G2-3-RULE-6_5_4_3_14"
+        ],
+        "negative_equivalence_boundary": "No mandatory certificate Common Name, trust anchor schema or owner identity inferred",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "S06-R005",
@@ -6533,7 +6587,7 @@
         "≈ ComponentType (can include software)",
         "",
         "≈ composition member · functional integration, not physical part-of",
-        "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device",
+        "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime",
         "",
         "",
         "",
@@ -6623,6 +6677,20 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "PARTIAL",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS",
+          "SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT"
+        ],
+        "negative_equivalence_boundary": "Management hierarchy and function hosting cannot establish universal physical containment or DIM chassis",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -9626,7 +9694,7 @@
         "",
         "",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
-        "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted",
+        "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables",
         "",
         "",
         "",
@@ -9675,6 +9743,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_4",
+          "SOSA-C239-G2-3-RULE-6_4_5",
+          "SOSA-C239-G2-3-RULE-6_4_6"
+        ],
+        "negative_equivalence_boundary": "External command table bytes not audited; not ISA command catalogue nor generic CSAPI control",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -10343,7 +10426,7 @@
         "",
         "StatusReport.mode",
         "≈ Camera Mode in Status.properties · camera-specific report",
-        "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode · G2-2: V1.0 getMode returns ComponentMode for specialized roles, whereas application-state types remain distinct",
+        "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode · G2-2: V1.0 getMode returns ComponentMode for specialized roles, whereas application-state types remain distinct · G2-3: §6.5 source operational states distinct from Mode and security trust assessments",
         "",
         "",
         "≈ Category.value (categorical status/mode value)",
@@ -10443,6 +10526,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-SENSOR-S2",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-PICSECURITY-TRUSTED"
+        ],
+        "negative_equivalence_boundary": "A defined state machine is not a reported operating mode of an installed System",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -12121,7 +12219,7 @@
         "Not assessed here",
         "Not assessed here",
         "Calibrate",
-        "Not assessed here",
+        "Related only · G2-3: §6.5.4 secure start-up decomposes hardware initialization, authentication and sensor composition",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12129,7 +12227,22 @@
         "Not assessed here",
         "Requested component initialization routine"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_1",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_5"
+        ],
+        "negative_equivalence_boundary": "Architecture start-up sequence is not an ISA requested initialization command or proof of execution",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-194",
@@ -12464,7 +12577,7 @@
         "Not assessed here",
         "Not assessed here",
         "Sanitize",
-        "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1] · G2-2: Security/PIC specialized V1.0 zeroize and sanitize requests use distinct ZeroizeConfig/SanitizeConfig",
+        "Related only · C239 zeroize/sanitize management requests V1.0 with ZeroizeConfig/SanitizeConfig; no proven ISA secure data removal [G2-1] · G2-2: Security/PIC specialized V1.0 zeroize and sanitize requests use distinct ZeroizeConfig/SanitizeConfig · G2-3: §6.5 S3/P3/M3 descriptive cleansing and security Compromised may precede zeroization",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12503,6 +12616,22 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-SENSOR-S3",
+          "SOSA-C239-G2-3-STATE-PIC-P3",
+          "SOSA-C239-G2-3-STATE-MODULE-M3",
+          "SOSA-C239-G2-3-STATE-SYSTEMSECURITY-COMPROMISED"
+        ],
+        "negative_equivalence_boundary": "Transition narrative is not a completed wipe, and specific transition policies not normative in Edition1.1",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -12529,7 +12658,7 @@
         "Not assessed here",
         "Not assessed here",
         "Self Test",
-        "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1] · G2-2: executeBIT V1.0 across specialized roles, but Security Services security-component BIT is Future",
+        "Related only · C239 System Manager executeSensorBIT/executeBIT V1.0 request-response, not observed diagnostic operation [G2-1] · G2-2: executeBIT V1.0 across specialized roles, but Security Services security-component BIT is Future · G2-3: §6.3 out-of-band hardware may support diagnostics when application processor unavailable",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12566,6 +12695,20 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT",
+          "SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES"
+        ],
+        "negative_equivalence_boundary": "Diagnostic architecture is not evidence of a performed diagnostic or ISA command",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -12638,7 +12781,7 @@
         "Not assessed here",
         "Not assessed here",
         "Shutdown",
-        "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1] · G2-2: shutdownSensorComponent is source V1.0 on Security, Chassis and PIC roles",
+        "Related only · C239 shutdownSensorComponent V1.0 in System Manager and generic-module tables; not observed device shutdown [G2-1] · G2-2: shutdownSensorComponent is source V1.0 on Security, Chassis and PIC roles · G2-3: §6.5 S4/P4/M4 Stopping are intended pre-Off states and don't imply shutdown execution",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12675,6 +12818,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-SENSOR-S4",
+          "SOSA-C239-G2-3-STATE-PIC-P4",
+          "SOSA-C239-G2-3-STATE-MODULE-M4"
+        ],
+        "negative_equivalence_boundary": "Neither stated transition policy nor actual hardware completion is established",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -13255,7 +13413,7 @@
         "Not assessed here",
         "Not assessed here",
         "Ping",
-        "Not assessed here",
+        "Related only · G2-3: §6.5.2 P6 and §6.5.3 M6 describe unavailable manager/agent communications",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -13263,7 +13421,21 @@
         "Not assessed here",
         "Requested acknowledgement of ISA communication reachability"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-MODULE-M6"
+        ],
+        "negative_equivalence_boundary": "Management connectivity loss does not equal ISA communication acknowledgement or device failure",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-226",
@@ -14466,7 +14638,7 @@
         "",
         "",
         "Status.properties: Name Value Pair [0+]",
-        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future",
+        "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload",
         "",
         "",
         "",
@@ -14558,6 +14730,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-SYSTEMSECURITY-DEGRADED"
+        ],
+        "negative_equivalence_boundary": "No ISA Status message correspondence, source time stamp or device telemetry value",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -15509,7 +15696,7 @@
         "",
         "",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
-        "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties · G2-2: Security Services is a module; Chassis Manager hardware and PIC/PIC-RTE interfaces have different GENERAL PROFILE rule subjects",
+        "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties · G2-2: Security Services is a module; Chassis Manager hardware and PIC/PIC-RTE interfaces have different GENERAL PROFILE rule subjects · G2-3: §6.3 System Manager, Chassis Manager and IPMC roles are SOSA-layered hardware services",
         "",
         "",
         "",
@@ -15600,6 +15787,20 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS",
+          "SOSA-C239-G2-3-RULE-6_4_1_1"
+        ],
+        "negative_equivalence_boundary": "Not one universal Controller role, physical chassis or mandated DIM ownership chain",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -15706,7 +15907,7 @@
         "",
         "",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
-        "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability",
+        "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role",
         "",
         "",
         "",
@@ -15753,6 +15954,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_4",
+          "SOSA-C239-G2-3-RULE-6_4_6",
+          "SOSA-C239-G2-3-RULE-6_4_7"
+        ],
+        "negative_equivalence_boundary": "Tier-specific hardware requirements are not ISA required/recommended capability support across systems",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -15897,7 +16113,7 @@
         "",
         "",
         "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
-        "Related only · Direct versus delegated indirect management / In-band versus out-of-band management / Sta… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: PICs may be unmanaged, directly managed or indirectly represented; source Rule labels duplicate and no device readiness is established",
+        "Related only · Direct versus delegated indirect management / In-band versus out-of-band management / Sta… · §6 printed38/PDF64 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: PICs may be unmanaged, directly managed or indirectly represented; source Rule labels duplicate and no device readiness is established · G2-3: §6.5 System Manager-assessed PIC/module operational vs communications-lost state, not enabled capability",
         "",
         "",
         "",
@@ -15947,6 +16163,21 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-MODULE-M6",
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT"
+        ],
+        "negative_equivalence_boundary": "Management reachability is not actual equipment capability or arbitrary physical fault",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -17157,7 +17388,7 @@
         "",
         "",
         "",
-        "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+        "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-3: §6.3 payload vs auxiliary management power challenges naive Off/power interpretation of equipment cases",
         "",
         "",
         "",
@@ -17200,6 +17431,20 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+          "SOSA-C239-G2-3-STATE-PIC-P0"
+        ],
+        "negative_equivalence_boundary": "Case-specific power source, charge, voltage and active equipment state remain unverified",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -17225,7 +17470,7 @@
         "",
         "",
         "",
-        "Related only · SOSA PIC states P0–P6 / SOSA Module states M0–M6 · §6.5.2 Figure6.5.2-1 · CASE HOLD CORRESPONDENCE [SOSA-D ledger]",
+        "Related only · SOSA PIC states P0–P6 / SOSA Module states M0–M6 · §6.5.2 Figure6.5.2-1 · CASE HOLD CORRESPONDENCE [SOSA-D ledger] · G2-3: §6.5 P6/M6 Lost Communication is not known Faulted; S0 Off generally unreported",
         "",
         "",
         "",
@@ -17276,6 +17521,21 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-MODULE-M6",
+          "SOSA-C239-G2-3-STATE-SENSOR-S0"
+        ],
+        "negative_equivalence_boundary": "No case-specific diagnostic or fault assertion established",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -17600,7 +17860,7 @@
         "Not assessed here",
         "Not assessed here",
         "Hardware Version · accepted extension",
-        "Not assessed here",
+        "Related only · G2-3: §6.3 FRU hardware revision identification is possible via management inventory",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -17608,7 +17868,20 @@
         "Not assessed here",
         "Component hardware version"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY"
+        ],
+        "negative_equivalence_boundary": "Hardware revision inventory possibility is not an observed hardware version",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-068",
@@ -17885,7 +18158,7 @@
         "Not assessed here",
         "Not assessed here",
         "Software Version · accepted extension",
-        "Not assessed here",
+        "Related only · G2-3: §6.5.4.2-8 PIC provides version information; §6.3 inventory mentions software/firmware revisions",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -17893,7 +18166,21 @@
         "Not assessed here",
         "Version of software running on the component"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RULE-6_5_4_2_8",
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY"
+        ],
+        "negative_equivalence_boundary": "PIC version information need not equal version of executing ISA software",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-109",
@@ -18026,7 +18313,7 @@
         "",
         "",
         "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-        "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles",
+        "Related only · G2-2: distinct Security Services module, Chassis Manager hardware element, PIC and PIC-hosted software RTE source roles · G2-3: §6.3 physical FRU/PIC/PSC/IPMC vs Chassis Manager functional roles are different contexts",
         "",
         "",
         "",
@@ -18050,6 +18337,20 @@
         "original_SOSA_D_and_G2_1_qualifications_preserved": true,
         "api_schema_bytes_read": false,
         "dim_adopted": false
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS",
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS"
+        ],
+        "negative_equivalence_boundary": "SOSA hardware names are not the ISA human-facing component category enumeration",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -18754,7 +19055,7 @@
         "Not assessed here",
         "Not assessed here",
         "Operating State",
-        "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.5 S/P/M states separate Off/Operational/Faulted from PIC/module Lost Communication",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -18783,6 +19084,22 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "PARTIAL",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-STATE-SENSOR-S2",
+          "SOSA-C239-G2-3-STATE-PIC-P5",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-MODULE-M6"
+        ],
+        "negative_equivalence_boundary": "State is source System Manager perspective; P6/M6 communication loss not confirmed fault",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -18987,7 +19304,7 @@
         "Not assessed here",
         "Not assessed here",
         "DC Current Load",
-        "Not assessed here",
+        "Related only · G2-3: §6.4.2 Power Supply Card input-current analog sensors recommended, not source-observed DC consumption",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -18997,7 +19314,20 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-264"
-      ]
+      ],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_4"
+        ],
+        "negative_equivalence_boundary": "SHOULD instrument PSC input current; no actual quantity, direct ISA component consumption or measurement",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-053",
@@ -19023,7 +19353,7 @@
         "Not assessed here",
         "Not assessed here",
         "DC Current Source",
-        "Not assessed here",
+        "Related only · G2-3: §6.4.2 PSC output-current analog sensors recommended, not source-observed device production",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -19033,7 +19363,20 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-264"
-      ]
+      ],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_2"
+        ],
+        "negative_equivalence_boundary": "SHOULD instrument PSC output current; does not establish emitted device reading",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-054",
@@ -19059,7 +19402,7 @@
         "Not assessed here",
         "Not assessed here",
         "DC Voltage Load",
-        "Not assessed here",
+        "Related only · G2-3: §6.4.2 PSC output-voltage analog sensors recommended on rails",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -19069,7 +19412,21 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-298"
-      ]
+      ],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_1",
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_7"
+        ],
+        "negative_equivalence_boundary": "Output rail recommendation is not observed load-side DC voltage or adopted DIM field",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-055",
@@ -19095,7 +19452,7 @@
         "Not assessed here",
         "Not assessed here",
         "DC Voltage Source",
-        "Not assessed here",
+        "Related only · G2-3: §6.4.2 PSC input-voltage sensor recommended",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -19105,7 +19462,20 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-298"
-      ]
+      ],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_3"
+        ],
+        "negative_equivalence_boundary": "Input rail recommendation is not observed DC source-side reading",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-090",
@@ -19168,7 +19538,7 @@
         "Not assessed here",
         "Not assessed here",
         "Power State",
-        "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger]",
+        "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 IPMC management power/3.3V_AUX persists when PIC payload domain is unpowered",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -19193,6 +19563,20 @@
         ],
         "semantic_status": "SOURCE_QUALIFIED_NOT_DIM_ADOPTED",
         "native_DSDM_and_OpenAPI_unverified": true
+      },
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+          "SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT"
+        ],
+        "negative_equivalence_boundary": "Separate power domains are not an observed component power condition",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
       }
     },
     {
@@ -19433,7 +19817,7 @@
         "Not assessed here",
         "Not assessed here",
         "Link State",
-        "Not assessed here",
+        "Related only · G2-3: §6.5.4.2-9/-10 directly managed PIC SHALL report MAC and IP port active/inactive",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -19441,7 +19825,21 @@
         "Not assessed here",
         "Network-interface up/down state"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "G2_3_source_correspondence": {
+        "source_edition": "C239 Edition1.1 (2023)",
+        "source_sections": "§§6.3–6.5",
+        "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+        "relation": "RELATED",
+        "source_item_ids": [
+          "SOSA-C239-G2-3-RULE-6_5_4_2_9",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_10"
+        ],
+        "negative_equivalence_boundary": "Network port status of directly managed SOSA PIC is not general ISA interface status of any component",
+        "native_external_references_read": false,
+        "original_source_evidence_retained": true,
+        "DIM_adopted": false
+      }
     },
     {
       "row_id": "ISA-C-078",
@@ -23583,7 +23981,9 @@
     "sosa_G2_1_existing_rows_changed": 12,
     "SOSA_G2_2_native_C239_source_items": 352,
     "SOSA_G2_2_native_rule_labeled": 12,
-    "SOSA_G2_2_rows_source_qualified": 22
+    "SOSA_G2_2_rows_source_qualified": 22,
+    "sosa_G2_3_original_source_items": 119,
+    "sosa_G2_3_qualified_master_cell_edits": 28
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -23626,16 +24026,16 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "Binding L23: Each substantive donor-source packet with meaningful canonical comparison changes must finish with verified source JSON, BOTH CSVs, BOTH Markdown mirrors and SAME 26-sheet XLSX saved-cell parity before another research packet. G2-2 22 source-qualified cells now synchronized. Source coverage, DIM/Profile adoption and runtime conformance remain distinct.",
-  "currentEvidenceCheckpoint": "SOSA-G2-2-SAVED_26_SHEET_XLSX_AND_SOURCE_PARITY_VERIFIED",
+  "publicationPolicy": "Binding L23: each substantive original-source packet producing meaningful donor-to-DIM master cell updates must also publish verified SAME 26-sheet canonical XLSX before another source packet; exact owner-approved exception otherwise. G2-3 28 SOSA-only source cells awaiting same-packet XLSX publication; native external standards access remains unverified.",
+  "currentEvidenceCheckpoint": "SOSA-G2-3-ORIGINAL_C239_INLINE_SOURCE_28_QUALIFIED_MASTER_CELLS__XLSX_PACKET_EXIT_REQUIRED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA-G2-2-CANONICAL-VERIFIED",
+    "checkpoint": "SOSA-G2-2-PRE-G2-3",
     "sha256": "35c36f7adfa47fed18b64a4cc2d4a7f3d40d24cf8ec683fdbbcdcdbd8ee5dfdb",
     "information_rows": 329,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": true,
-    "lag": "NONE: exact current 346x15 source/2CSV/2Markdown/26-sheet XLSX parity",
+    "currently_matches_readable_view": false,
+    "lag": "28 new qualified The Open Group SOSA donor column I cells in JSON, both CSVs and both Markdown tables; SAME XLSX remains exact verified G2-2 source snapshot until mandatory L23 G2-3 Excel publication.",
     "textCheckpoint": "ISA-SOURCE-FIRST-CORRESPONDENCE-AUDIT",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -23682,6 +24082,36 @@
       "ISA-C-232",
       "ISA-C-211",
       "ISA-R-EXECUTION"
+    ],
+    "G2_3_affected_row_ids": [
+      "S06-R001",
+      "S06-R002",
+      "S06-R003",
+      "S06-R007",
+      "ISA-E-COMPONENT-CATEGORY",
+      "ISA-A-CERTIFICATE-TRUST",
+      "ISA-K-COMMAND-DECL",
+      "ISA-A-BASELINE-CAPABILITIES",
+      "ISA-K-CAPABILITY-STATE",
+      "ISA-C-082",
+      "ISA-C-091",
+      "CASE-H04",
+      "CASE-H05",
+      "ISA-C-052",
+      "ISA-C-053",
+      "ISA-C-054",
+      "ISA-C-055",
+      "ISA-C-072",
+      "ISA-C-108",
+      "ISA-C-066",
+      "ISA-C-175",
+      "ISA-C-223",
+      "ISA-C-232",
+      "ISA-C-235",
+      "ISA-C-244",
+      "ISA-T-STATUS",
+      "ISA-A-SERVICE-ROLE",
+      "S06-R018"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -24651,11 +25081,74 @@
       "excel_checkpoint": "SOSA-G2-2-CANONICAL-VERIFIED",
       "excel_validation": "SOSA_G2_2_Workbook_Validation_09NOV2026.json",
       "excel_22_source_cells_synced": true
+    },
+    "G2_3": {
+      "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+      "report": "SOSA_G2_3_Original_Source_Review_and_Master_Reconciliation_09NOV2026.md",
+      "source_pdf_pages": "119–140 original PDF; printed pp93–114",
+      "source_section_families": [
+        "6.3",
+        "6.4",
+        "6.5"
+      ],
+      "source_record_total": 119,
+      "source_rule_labels": 49,
+      "original_rule_shall": 48,
+      "original_rule_incomplete": 1,
+      "recommendations": 8,
+      "observations": 11,
+      "permissions": 8,
+      "state_labels": 32,
+      "changed_existing_rows": [
+        "S06-R001",
+        "S06-R002",
+        "S06-R003",
+        "S06-R007",
+        "ISA-E-COMPONENT-CATEGORY",
+        "ISA-A-CERTIFICATE-TRUST",
+        "ISA-K-COMMAND-DECL",
+        "ISA-A-BASELINE-CAPABILITIES",
+        "ISA-K-CAPABILITY-STATE",
+        "ISA-C-082",
+        "ISA-C-091",
+        "CASE-H04",
+        "CASE-H05",
+        "ISA-C-052",
+        "ISA-C-053",
+        "ISA-C-054",
+        "ISA-C-055",
+        "ISA-C-072",
+        "ISA-C-108",
+        "ISA-C-066",
+        "ISA-C-175",
+        "ISA-C-223",
+        "ISA-C-232",
+        "ISA-C-235",
+        "ISA-C-244",
+        "ISA-T-STATUS",
+        "ISA-A-SERVICE-ROLE",
+        "S06-R018"
+      ],
+      "provenance_holds": [
+        "SOSA-G2-3-H01",
+        "SOSA-G2-3-H02",
+        "SOSA-G2-3-H03",
+        "SOSA-G2-3-H04",
+        "SOSA-G2-3-H05",
+        "SOSA-G2-3-H06",
+        "SOSA-G2-3-H07",
+        "SOSA-G2-3-H08",
+        "SOSA-G2-3-H09",
+        "SOSA-G2-3-H10"
+      ],
+      "native_external_normative_sources_read": false,
+      "master_rows_not_final_dim_adoption": true,
+      "excel_status": "PENDING_MANDATORY_L23_PACKET_EXIT"
     }
   },
-  "nextOwnerAction": "SOSA-G2-3 only on next separate owner Proceed: original C239 §§6.3–6.5, out-of-band hardware management and component state; Step18 SAPIENT BLOCKED pending source-based donor completion.",
+  "nextOwnerAction": "SOSA-G2-3 mandatory L23 Excel synchronization before packet closeout; only after saved workbook PASS next separate owner Proceed may authorize SOSA-G2-4 C239 §§1–5 and 7–11. SAPIENT BLOCKED.",
   "SOSAReviewCompletion": {
-    "status": "OPEN__G2_2_C239_INLINE_TEXT_REVIEW_COMPLETE_WITH_UNREAD_NATIVE_INTERFACES",
+    "status": "OPEN__G2_3_ORIGINAL_C239_INLINE_TEXT_COVERAGE_COMPLETE__NATIVE_EXTERNAL_DEPENDENCIES_UNREAD",
     "corrected_on": "2026-11-09",
     "current_deliverable": "SOURCE_QUALIFIED_INTERMEDIATE_C239_CROSSWALK",
     "verification": "15-column source grid and XLSX parity verified; native source completeness not proven",
@@ -24663,7 +25156,7 @@
     "original_native_DSDM_and_API_eight_files_inspected": false,
     "block_next_donor": "Step18 SAPIENT blocked until a separate owner SOSA source-coverage disposition",
     "current_plan": "PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md",
-    "next_on_owner_proceed": "SOSA-G2-3 C239 §§6.3–6.5 original out-of-band management/component-state source-first review",
+    "next_on_owner_proceed": "G2-3 Excel verification first; then separate owner Proceed for SOSA-G2-4 C239 §§1–5 & 7–11 only",
     "progressive_integration_rule": "JSON/CSV/Markdown updated as source findings are qualified; canonical XLSX refreshed at explicit substantive checkpoints and labeled stale if lagged",
     "DIM_adoption": false,
     "G1_status": "COMPLETE_SOURCE_CORPUS_AND_ORIGINAL_TOC_CENSUS_ONLY__NOT_FULL_DONOR_SOURCE_REVIEW",
@@ -24733,6 +25226,14 @@
     "G2_2_native_api_unread": true,
     "G2_2_C239_TOC_heading_sampled_or_better": 70,
     "G2_2_C239_TOC_headings_still_unread": 121,
-    "G2_2_C239_TOC_inaccessible": 1
+    "G2_2_C239_TOC_inaccessible": 1,
+    "G2_3_scope": "C239 §§6.3–6.5 PDF119–140 original inline and figure text, no original external references",
+    "G2_3_original_inline_source_items": 119,
+    "G2_3_external_source_hold_count": 10,
+    "G2_3_master_cells": 28,
+    "G2_3_XLSX_lag": 28,
+    "G2_3_C239_TOC_at_least_sampled": 75,
+    "G2_3_C239_TOC_unread": 116,
+    "G2_3_C239_TOC_inaccessible": 1
   }
 }
