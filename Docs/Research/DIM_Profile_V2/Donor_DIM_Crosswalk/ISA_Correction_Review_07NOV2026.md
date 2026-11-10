@@ -1,6 +1,6 @@
-# Historical ISA donor comparison mirror — current G2-4A qualified source correspondence
+# Historic ISA review mirror — live G2-4A donor crosswalk with full saved Excel parity
 
-**CURRENT TEXT CHECKPOINT; SAME EXCEL MANDATORY GATE PENDING.** [95 original C239 source items and 42 section coverage records](SOSA_G2_4A_Original_Source_Item_Coverage_10NOV2026.json) · [source meaning and 20 qualified row decisions](SOSA_G2_4A_Original_Source_and_Master_Reconciliation_10NOV2026.md). The canonical master retains 329 information rows, 15 columns, original four cases, all donors, 15 topic dividers and proposed DIM far right. Exactly 20 **The Open Group SOSA** donor-column I cells now contain bounded G2-4A source meaning; no proposed DIM field, other donor/case cell, conformance rule or physical installation was changed. Both CSVs and both Markdown tables match current JSON; the SAME 26-sheet Excel is still its verified G2-3 saved snapshot and has a **20-cell pending source-qualified lag** until mandatory L23 saved workbook publication. Chapters7–11 remain explicitly not yet audited in G2-4; SAPIENT blocked.
+This comparison table duplicates the exact live canonical 346×15 source grid, both CSVs and the SAME verified 26-sheet Excel workbook, including exactly 20 source-qualified SOSA column-I additions; previous case/ISA/other-donor/DIM cells are unchanged. [Saved workbook validation](SOSA_G2_4A_Workbook_Validation_10NOV2026.json). G2-4B Chapters7–11 pending, SOSA donor OPEN.
 
 <table>
 <thead><tr><th colspan="4">SOURCE CASES</th><th colspan="5">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>

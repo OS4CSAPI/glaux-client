@@ -1,3 +1,9 @@
+# G2-4A saved Excel and source-first bounded closeout (10 November 2026)
+
+**G2-4A source semantics unchanged; Excel synchronization now VERIFIED.** The older “20 cells behind” statement further down in this research record described the intermediate prepublication checkpoint, now superseded. The SAME canonical 26-sheet workbook now contains all 20 G2-4A qualified SOSA column-I cells; [actual saved-cell verification](SOSA_G2_4A_Workbook_Validation_10NOV2026.json) and [GitHub check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/42815270533) confirm 346×15 JSON/2CSV/2Markdown/XLSX parity and 22 unchanged historical sheets. SHA-256 `fe63866c0ac561e9efcb903f72c5b108814afd3b4f3ee3bd1973dd6d1b5c4a0e`. Original Chapters7–11 and native companions remain unread in this packet. No class/field/cardinality/Profile adoption or runtime test. **Next separate owner Proceed: G2-4B original Chapters7–11 only.**
+
+## Earlier source report and superseded prepublication Excel status
+
 # SOSA-G2-4A — Original C239 Chapters 1–5 original-source and master review (10 November 2026)
 
 **Bounded G2-4 source packet, not completion of G2-4 or of the The Open Group SOSA donor.** Original publisher *The Open Group*, *Technical Standard for SOSA Reference Architecture*, Edition 1.1, C239 (2023), project Library `file_00000000af4081f58c4bac329f85c58f`, actual inline C239 PDF pp27–63 (printed1–37) reviewed. **All 42 originally registered TOC headings** across Chapters1–5 were read at original *inline text/table and figure-caption/label* depth: 27 previously UNREAD and 15 previously SOURCE_READ sampled. The source's RIG, certification policy, standalone DSDM/IDL/OpenAPI original files, detailed original figure pixels and external standards were not audited. Reading this prose is neither complete source corpus nor author-approved DIM/Profile adoption.
