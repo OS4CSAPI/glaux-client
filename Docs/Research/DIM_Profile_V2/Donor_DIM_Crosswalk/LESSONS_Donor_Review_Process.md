@@ -1,3 +1,11 @@
+# CURRENT — L29 original hardware Rule scope, CoV evidence and L23 same-workbook exit (G2-6A, 10 November 2026)
+
+**L29 source-native physical scope:** Original C239 §13.1–13.2.10 has **98 labeled Rules, eight Permissions, three Recommendations, 21 Observations**, ten original tables, five figures and source-required CoV documentation fields. SOSA 3U/6U PICs, chassis/backplane, Power Supply Cards, optional backup power interfaces, mechanical cooling and service-only Maintenance Console Port are different source referents—not one universal DIM class tree, live sensor configuration or command. Original form-factor and voltage limits are not field battery capacity/charge/consumption, and the vendor CoV requirement is **not** a CoV independently examined for a source case. [Original source census](SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json) · [qualified meanings](SOSA_G2_6A_Original_Source_and_Master_Reconciliation_10NOV2026.md).
+
+**L23 remains binding:** 39 source-qualified SOSA column-I cells are now in JSON, two CSV and two GitHub-readable tables. The same 26-sheet Excel remains the **verified G2-5** snapshot and exactly **39 cells behind**, so this packet is **not** closed until verified saved XLSX parity. Prior L23 practice cannot be waived without explicit owner-approved lag/scope. No extra source packet, model adoption, hardware command or donor transition.
+
+## Earlier lessons (historical where superseded)
+
 # CURRENT — L28 source-normality and L23 canonical Excel gate VERIFIED through G2-5 (10 November 2026)
 
 **L28 — Distinguish native source standing:** Chapter12 original C239 has 38 Rule-labeled SHALLs, nine Permissions, ten Observations, 43 named Host Platform Interface interactions and seven expressly not-defined/reference-only modules. Key-tag Rule12.2.3-4 includes native **TBD**; key-interaction asterisk means adopted-from-JTNC, not optional; UTC when available versus uptime fallback are conditional audit Rules; zeroization differs from sanitization and privileged authorization differs from actual effect. The SOURCE physical host/power interface is neither a deployed hardware cable nor an ISA physical chassis. [Exact original-source ledger](SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json) · [qualified comparisons](SOSA_G2_5_Original_Source_and_Master_Reconciliation_10NOV2026.md).
