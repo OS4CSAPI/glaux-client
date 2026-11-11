@@ -1,0 +1,361 @@
+{
+  "schema": "SOSA-C239-G2-7F-original-AMPS-Rules-and-source-standing-v0.1",
+  "date": "2026-11-10",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "work": "Technical Standard for SOSA Reference Architecture",
+    "edition": "1.1",
+    "year": 2023,
+    "document_id": "C239",
+    "project_library_filename": "c239_5.pdf",
+    "project_library_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_pages": "265–266",
+    "printed_pages": "239–240",
+    "source_read_grade": "DIRECT_INLINE_ORIGINAL_TEXT_AND_PRINTED_RULE_METHOD_CODES__PAGE_IMAGE_UNAVAILABLE",
+    "original_image_pixel_rendering_verified": false,
+    "original_ANSI_VITA_and_C239_native_companions_read": false
+  },
+  "bounded_authorization": "§13.3.7 SOSA AMPs Rules only; stop BEFORE §13.3.8",
+  "original_toc_heading_coverage": [
+    {
+      "section": "13.3.7",
+      "title": "SOSA AMPs Rules",
+      "previous_status": "UNREAD",
+      "current_status": "ORIGINAL_INLINE_SOURCE_FULL_CLAUSE_TEXT_READ__NO_PDF_PIXEL_VERIFICATION",
+      "original_pdf_pages": [
+        265,
+        266
+      ]
+    }
+  ],
+  "source_counts": {
+    "HEADING": 1,
+    "RULE": 4,
+    "OBSERVATION": 1,
+    "PERMISSION": 1,
+    "TABLE_REFERENCE": 3,
+    "ANALYTICAL_CONTEXT": 5,
+    "native_items_excluding_analyst": 10,
+    "analytical_contexts": 5,
+    "source_numbered_RULE": 4,
+    "source_RULE_shall": 3,
+    "source_RULE_must": 1,
+    "source_numbered_OBSERVATION": 1,
+    "source_numbered_PERMISSION": 1,
+    "source_RECOMMENDATION": 0,
+    "normative_rule_method_A_only": 2,
+    "normative_rule_method_A_and_D": 2,
+    "source_annex_table_references": 3,
+    "source_Observation_conditional_illustration_not_extra_Rule": true
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7F-HEADING-13_3_7",
+      "kind": "HEADING",
+      "locator": "§13.3.7 SOSA AMPs Rules",
+      "original_pdf_page": 265,
+      "printed_page": 239,
+      "source_meaning_paraphrase": "Section titled SOSA AMPs Rules contains four printed Rules, one Observation and one Permission; §13.3.8 begins PDF266.",
+      "source_standing": "HEADING_CONTEXT",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7F-RULE-13_3_7_1",
+      "kind": "RULE",
+      "locator": "Rule 13.3.7-1, PDF265",
+      "original_pdf_page": 265,
+      "printed_page": 239,
+      "source_meaning_paraphrase": "Where SOSA Plug-In Card (PIC) has Low Voltage Differential Signal (LVDS) on Expansion plane, lane allocation begins at lowest lane of highest-numbered Expansion-plane port; only applies when that LVDS condition exists.",
+      "source_standing": "NUMBERED_RULE_SHALL",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "printed_rule_id": "13.3.7.1",
+      "printed_modal_verb": "shall",
+      "conformance_methodology_printed_codes": [
+        "A"
+      ],
+      "conditional_scope_caveat": "Conditional LVDS placement; not every PIC uses LVDS and not every sensor has an Expansion plane.",
+      "source_rule_adopted_as_CSAPI_Profile_SHALL": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-RULE-13_3_7_2",
+      "kind": "RULE",
+      "locator": "Rule 13.3.7-2, PDF266",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "A SOSA PIC's AMPS String follows either 3U or 6U Payload Plug-In Card Profile (PICP) format Table13.3.4-1 or Table13.3.4-2, or Switch PICP format Table13.3.5-1, according to its physical profile.",
+      "source_standing": "NUMBERED_RULE_MUST",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "printed_rule_id": "13.3.7.2",
+      "printed_modal_verb": "must",
+      "conformance_methodology_printed_codes": [
+        "A"
+      ],
+      "conditional_scope_caveat": "Original Rule uses MUST rather than SHALL. Underlying matrices earlier source text reviewed, exact dense visual legal-port coordinates not verified; no full conformance claim.",
+      "source_rule_adopted_as_CSAPI_Profile_SHALL": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-RULE-13_3_7_3",
+      "kind": "RULE",
+      "locator": "Rule 13.3.7-3, PDF266",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Plug-in module implements every port and every lane for associated protocols that its own AMPS String specifies.",
+      "source_standing": "NUMBERED_RULE_SHALL",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "printed_rule_id": "13.3.7.3",
+      "printed_modal_verb": "shall",
+      "conformance_methodology_printed_codes": [
+        "A",
+        "D"
+      ],
+      "conditional_scope_caveat": "Binding on claimed AMPS design, not a mandate to have every possible SOSA port, protocol or complete vendor-verified installation.",
+      "source_rule_adopted_as_CSAPI_Profile_SHALL": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-RULE-13_3_7_4",
+      "kind": "RULE",
+      "locator": "Rule 13.3.7-4, PDF266",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "For plug-in modules whose ports can be configured for multiple protocols, implement lanes for every protocol specified by the AMPS String.",
+      "source_standing": "NUMBERED_RULE_SHALL",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "printed_rule_id": "13.3.7.4",
+      "printed_modal_verb": "shall",
+      "conformance_methodology_printed_codes": [
+        "A",
+        "D"
+      ],
+      "conditional_scope_caveat": "Conditional on configurable multi-protocol ports; Observation 13.3.7-1 illustrates lane repartition exception when expressly specified subset.",
+      "source_rule_adopted_as_CSAPI_Profile_SHALL": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-OBSERVATION-13_3_7_1",
+      "kind": "OBSERVATION",
+      "locator": "Observation 13.3.7-1, PDF266",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Illustrative 40GBASE-KR4/10GBASE-KR single Fat Pipe configurable protocol E84E7: when set to 10GBASE-KR, repartition into four UTPs each implementing 10GBASE-KR, unless AMPS explicitly indicates a subset of Fat Pipe lanes.",
+      "source_standing": "SOURCE_OBSERVATION_WITH_CONDITIONAL_ILLUSTRATIVE_MUST_NOT_NEW_RULE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "cites_rule": "Rule 13.3.7-4",
+      "example_protocol_field": "E84E7",
+      "example_from": "40GBASE-KR4",
+      "example_to": "10GBASE-KR",
+      "illustrated_UTP_count": 4,
+      "exception": "subset of lanes when explicitly specified in source AMPS"
+    },
+    {
+      "id": "SOSA-C239-G2-7F-PERMISSION-13_3_7_1",
+      "kind": "PERMISSION",
+      "locator": "Permission 13.3.7-1, PDF266",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Expansion-plane ANS fields EP1 and EP2 may be combined for PCI Express to enable larger pipe sizes.",
+      "source_standing": "NUMBERED_PERMISSION_MAY_NOT_REQUIREMENT",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "applies_to": "PCI Express expansion-plane EP1+EP2",
+      "conformance_methodology_printed_codes": [],
+      "not_mandatory": true
+    },
+    {
+      "id": "SOSA-C239-G2-7F-TABLE_REFERENCE-PAYLOAD_3U",
+      "kind": "TABLE_REFERENCE",
+      "locator": "Rule 13.3.7-2",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Table 13.3.4-1: Summary of 3U Payload PICPs referred to as format authority for the corresponding AMPS string; earlier text-level reviews and open dense matrix visual holds persist.",
+      "source_standing": "NORMATIVE_RULE_REFERENCE_TO_PRIOR_ORIGINAL_SOURCE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "original_table_visited_in_previous_packet": true,
+      "exact_legal_port_visual_cell_mapping_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-TABLE_REFERENCE-PAYLOAD_6U",
+      "kind": "TABLE_REFERENCE",
+      "locator": "Rule 13.3.7-2",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Table 13.3.4-2: Summary of 6U Payload PICPs referred to as format authority for the corresponding AMPS string; earlier text-level reviews and open dense matrix visual holds persist.",
+      "source_standing": "NORMATIVE_RULE_REFERENCE_TO_PRIOR_ORIGINAL_SOURCE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "original_table_visited_in_previous_packet": true,
+      "exact_legal_port_visual_cell_mapping_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-TABLE_REFERENCE-SWITCH_3U_6U",
+      "kind": "TABLE_REFERENCE",
+      "locator": "Rule 13.3.7-2",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Table 13.3.5-1: Summary of Switch PICPs referred to as format authority for the corresponding AMPS string; earlier text-level reviews and open dense matrix visual holds persist.",
+      "source_standing": "NORMATIVE_RULE_REFERENCE_TO_PRIOR_ORIGINAL_SOURCE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance.",
+      "original_table_visited_in_previous_packet": true,
+      "exact_legal_port_visual_cell_mapping_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7F-ANALYTICAL_CONTEXT-RULE_SCOPE_NOT_PROFILE_ADOPTION",
+      "kind": "ANALYTICAL_CONTEXT",
+      "locator": "Analyst-only source meaning classification for §13.3.7",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Rule wording belongs to The Open Group physical SOSA PIC conformance; no adopted CSAPI Profile requirement or mandatory generic DIM equipment taxonomy.",
+      "source_standing": "PROJECT_ANALYSIS_NOT_SOURCE_PROVISION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7F-ANALYTICAL_CONTEXT-RULE2_MODAL_DISCREPANCY",
+      "kind": "ANALYTICAL_CONTEXT",
+      "locator": "Analyst-only source meaning classification for §13.3.7",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Original labeled Rule13.3.7-2 contains 'must', unlike neighboring labeled Rules using 'shall'; retain native grammar.",
+      "source_standing": "PROJECT_ANALYSIS_NOT_SOURCE_PROVISION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7F-ANALYTICAL_CONTEXT-OBSERVATION_NOT_EXTRA_RULE",
+      "kind": "ANALYTICAL_CONTEXT",
+      "locator": "Analyst-only source meaning classification for §13.3.7",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Illustrative Observation has conditional 'must' and subset exception but is not a fifth source-numbered Rule.",
+      "source_standing": "PROJECT_ANALYSIS_NOT_SOURCE_PROVISION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7F-ANALYTICAL_CONTEXT-PERMISSION_VERSUS_REQUIREMENT",
+      "kind": "ANALYTICAL_CONTEXT",
+      "locator": "Analyst-only source meaning classification for §13.3.7",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Optional EP1/EP2 combination for PCI Express is source Permission; not all PICs required to combine expansion fields.",
+      "source_standing": "PROJECT_ANALYSIS_NOT_SOURCE_PROVISION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7F-ANALYTICAL_CONTEXT-SOURCE_AUDIT_VS_DEVICE_CONFORMANCE",
+      "kind": "ANALYTICAL_CONTEXT",
+      "locator": "Analyst-only source meaning classification for §13.3.7",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "source_meaning_paraphrase": "Original text and source fields directly reviewed but no PIC tested under A/D, and ANSI/VITA native schemas/physical matrix geometry remain unverified.",
+      "source_standing": "PROJECT_ANALYSIS_NOT_SOURCE_PROVISION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ__ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "scope_caveat": "Source applies to specified SOSA PIC/plug-in module AMPS physical ports and lanes; neither universal sensing system equipment nor native CSAPI data encoding, installed card inventory, current state, adopted DIM/Profile requirement or independent conformance."
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7F-H01",
+      "code": "RULE2_FORMAT_MATRIX_VISUAL_UNVERIFIED",
+      "reason": "Rule2 references Tables13.3.4-1/-2 and13.3.5-1; prior G2-7C/G2-7D source text inventory does not verify full high-res port/protocol cell geometry, so no full legal-combination audit."
+    },
+    {
+      "id": "SOSA-G2-7F-H02",
+      "code": "ANSI_VITA65_0_65_1_UNREAD",
+      "reason": "Complete original ANSI/VITA65.0/65.1 slot profile and Alternate Naming Structure definitions not inspected; source pointer alone is not audit."
+    },
+    {
+      "id": "SOSA-G2-7F-H03",
+      "code": "VITA66_67_CONNECTOR_ORIGINALS_UNREAD",
+      "reason": "Original referenced VITA optical and RF connector specifications remain unread; no independent intermateability conformance."
+    },
+    {
+      "id": "SOSA-G2-7F-H04",
+      "code": "EIGHT_C239_DSDM_IDL_OPENAPI_UNREAD",
+      "reason": "Original C239 DSDM/IDL/six OpenAPI native companion file content not inspected, no schema fields or software protocol behavior inferred."
+    },
+    {
+      "id": "SOSA-G2-7F-H05",
+      "code": "RULE_13_3_7_2_MUST_NOT_SHALL",
+      "reason": "Original prints numbered Rule with 'must' rather than 'shall'; preserve verb without editorial normative upgrade or downgrading."
+    },
+    {
+      "id": "SOSA-G2-7F-H06",
+      "code": "RULE_13_3_7_1_CONDITIONAL_LVDS",
+      "reason": "Where LVDS exists on expansion plane, prescribed lane position applies; do not infer every PIC necessarily uses LVDS."
+    },
+    {
+      "id": "SOSA-G2-7F-H07",
+      "code": "RULE3_SCOPE_CLAIMED_AMPS",
+      "reason": "All ports/lanes required by this Rule refer to those specified by a particular AMPS String, not all theoretically possible ports on all sensors."
+    },
+    {
+      "id": "SOSA-G2-7F-H08",
+      "code": "RULE4_SCOPE_MULTI_PROTOCOL",
+      "reason": "Requirement conditional on multi-protocol configurable ports, and the source Observation's explicit subset-lanes exception must not be silently erased."
+    },
+    {
+      "id": "SOSA-G2-7F-H09",
+      "code": "OBSERVATION_NOT_FIFTH_NUMBERED_RULE",
+      "reason": "Observation 13.3.7-1 example of 40/10G Ethernet repartitioning has 'must' narrative but is not a separately numbered Rule/SHALL."
+    },
+    {
+      "id": "SOSA-G2-7F-H10",
+      "code": "PERMISSION_MAY_NOT_SHALL",
+      "reason": "Permission 13.3.7-1 optionally combines EP1/EP2 for PCI Express only; not blanket mandatory arrangement."
+    },
+    {
+      "id": "SOSA-G2-7F-H11",
+      "code": "CONFORMANCE_METHOD_CODES_NO_TEST",
+      "reason": "Print original A for Rules1/2 and A,D for Rules3/4; this source review did not perform methodology A/D on actual hardware."
+    },
+    {
+      "id": "SOSA-G2-7F-H12",
+      "code": "ORIGINAL_PAGE_IMAGE_UNAVAILABLE",
+      "reason": "Original project Library original text directly read, but independent original PDF page-image retrieval failed; keep read grade inline text, no source pixel audit assertion."
+    },
+    {
+      "id": "SOSA-G2-7F-H13",
+      "code": "EARLIER_AMPS_HOLDS_REMAIN",
+      "reason": "All 19 G2-7C, 17 G2-7D and 16 G2-7E specific holds remain open; this packet does not close them."
+    },
+    {
+      "id": "SOSA-G2-7F-H14",
+      "code": "NO_AS_INSTALLED_EQUIPMENT_CASE_PROOF",
+      "reason": "Dragino, AirGradient, Campbell and Bennett case originals do not prove actual SOSA PICP cards, LVDS plane, or compliant lane/port arrays."
+    },
+    {
+      "id": "SOSA-G2-7F-H15",
+      "code": "S251_LATER_EDITION_NOT_AUDITED",
+      "reason": "2025 S251 edition/snapshot source and companions remain unexamined; no claim on current changed Rule text."
+    },
+    {
+      "id": "SOSA-G2-7F-H16",
+      "code": "NO_DIM_CSAPI_PROFILE_OR_CONFORMANCE",
+      "reason": "Original SOSA Rule cannot become adopted DIM chassis/class, cardinality, CSAPI Profile SHALL or independent producer/client conformance without separate decisions."
+    },
+    {
+      "id": "SOSA-G2-7F-H17",
+      "code": "STOP_BEFORE_13_3_8",
+      "reason": "Original §13.3.8 backplane analog/optical apertures beyond authorized scope; distinct source packet requires new Proceed."
+    }
+  ],
+  "C239_cumulative_coverage": {
+    "registered_headings": 192,
+    "at_least_source_sampled_or_inline_read": 160,
+    "substantively_unread": 31,
+    "restricted": 1,
+    "original_referenced_dense_matrix_full_visual_audit_complete": false,
+    "original_C239_natively_referenced_eight_companions_examined": false
+  },
+  "DIM_and_CSAPI_Profile_adopted": false,
+  "installed_device_or_independent_conformance_performed": false,
+  "next_only_after_new_owner_proceed": "G2-7G original C239 §13.3.8 Backplane Apertures for Analog and Optical Fiber, evidence-sized first original source packet, with 13.3.8 nested subclauses sized by original source complexity, stop at agreed boundary; SAPIENT blocked."
+}
