@@ -1578,8 +1578,8 @@ def publish_g2_7n():
         need(len(matched)==1 and qmap["label"] not in mapped,"existing unique crosswalk row")
         r=matched[0];prev=r["display"][8]
         need("G2-7N:" not in prev,"not already integrated")
-        new=prev+" · G2-7N: "+qmap["source_native_meaning"]+" ["+qmap["relation"]+
-            "; "+qmap["negative_equivalence_boundary"]+"]"
+        new=(prev+" · G2-7N: "+qmap["source_native_meaning"]+" ["+qmap["relation"]+
+            "; "+qmap["negative_equivalence_boundary"]+"]")
         need(len(new)<=32767,"Excel text cell maximum")
         r["display"][8]=new
         r["G2_7N_source_correspondence"]={
