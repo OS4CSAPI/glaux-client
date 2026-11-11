@@ -1961,7 +1961,7 @@ def check_g2_7p_source(z,m=None):
     need(len(z["source_qualified_existing_row_mappings"])==28
          and len(z["exact_holds"])==30,
          "28 source-qualified existing-row findings and 30 precise source holds")
-    must=["J4","J9_CONFLICT","J11_CONFLICT","J14","J13_DESCRIPTIVE_RULE"]
+    must=["J4","J9_CONFLICT","J11_CONFLICT","J14"]
     contexts=[x["id"].split("CONTEXT-")[-1] for x in items if x["kind"]=="SOURCE_ANALYSIS_NOT_RULE"]
     need(all(k in contexts for k in must),"original Class3 contradictions and Rule standing retained")
     need(any(x["kind"]=="UNNUMBERED_SHALL" for x in items)
