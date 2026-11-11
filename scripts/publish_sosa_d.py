@@ -586,7 +586,7 @@ def check_g2_7i_source(m):
               z["c239_coverage"]["unread"],z["c239_coverage"]["restricted"])==(192,173,18,1)
          and z["c239_coverage"]["full_13_5_review"] is False,
          "3 newly sampled/inline C239 headings and 18 original unread remain")
-    need(z["source"]["figures_pixel_verified"] is False
+    need(z["source"]["figure_pixels_verified"] is False
          and z["source"]["original_SAE_MIL_VITA_unread"] is True
          and z["source"]["C239_eight_native_files_unread"] is True
          and z["DIM_and_CSAPI_Profile_adopted"] is False
