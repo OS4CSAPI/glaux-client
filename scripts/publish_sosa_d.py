@@ -16,7 +16,7 @@ PREVIEW="SOSA_G2_7D_Workbook_Preview_10NOV2026.png"
 OLD="a8a9bfc2c6a6d95e530f060e3796e5e659af556a084e7716b6962d8b8c915506"
 q=old.q
 ET.register_namespace("",old.X);ET.register_namespace("r",old.REL)
-def need(x,message):assert x,"SOSA-G2-7D verification failed: +message
+def need(x,message):assert x,"SOSA-G2-7D verification failed: "+message
 def load(n):return json.loads((D/n).read_text(encoding="utf-8"))
 def save(n,x):(D/n).write_text(json.dumps(x,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 def digest(b):return hashlib.sha256(b).hexdigest()
