@@ -1,0 +1,2536 @@
+{
+  "schema": "SOSA-G2-7O-Class3-native-source-ledger-v0.1",
+  "date": "2026-11-11",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "document_id": "C239",
+    "edition": "Edition1.1 (2023)",
+    "original_file": "c239_5.pdf",
+    "source_library_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_pages": "317–329 inclusive",
+    "printed_pages": "291–303",
+    "original_source_access": "ORIGINAL_FULL_INLINE_TEXT_PARAGRAPHS_AND_THREE_TABLES_READ; FIGURES_CAPTION_ONLY",
+    "figure_pixels_verified": false,
+    "external_originals_examined": false,
+    "native_eight_companions_read": false,
+    "later_S251_source_read": false
+  },
+  "authorized_scope": "C239 §§13.5.3–13.5.3.3.11 Class3 first packet only; STOP before §13.5.3.4",
+  "counts": {
+    "numbered_SHALL_Rules": 47,
+    "numbered_Observations": 9,
+    "numbered_Permissions": 5,
+    "numbered_Recommendations": 0,
+    "native_nested_sections": 20,
+    "original_tables": 3,
+    "table_text_rows": 88,
+    "source_figure_captions": 2,
+    "source_descriptive_contexts": 15,
+    "unnumbered_source_shalls": 1,
+    "external_companion_pointers": 12,
+    "all_typed_source_records": 202,
+    "qualified_existing_master_rows": 24,
+    "precise_holds": 22,
+    "method_Inspection": 39,
+    "method_Analysis": 4,
+    "method_Test": 3,
+    "method_Analysis_Test": 1
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Class3 connector type, shell, mating and insert match original connector inventory"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Class3 assigned sensing equipment nominally requires listed connector types; mission qualifications recorded separately"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_3",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-3",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "A"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Document used and unused J2 positions when partially populated"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_4",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-4",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "At most one J1 DC power connector per external sensing element"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_5",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-5",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Auxiliary J6 permitted only in conjunction with J1"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_6",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-6",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "First listed MIL connector instance uses prescribed key/keyway orientation"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_7",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-7",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "First J7 instance follows ANSI VITA76 keying rules"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_8",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-8",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Additional J6 instances use permitted non-A non-N key positions"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_9",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-9",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Additional listed connector instances use non-N key positions; J10 name appears though missing in table"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_10",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-10",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Additional J7 instances use non-N ANSI VITA key positions"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_11",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-11",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "A"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Document all used SOSA connectors, distinguishing repeated types by keyed naming"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_12",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-12",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "A"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Document a brief distinct function for repeated instances"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_1_13",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.1-13",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "A"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Document complete pin and signal descriptions for used non-SOSA connectors"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2, original PDF p.319/403 (printed p.293)",
+      "native_source_meaning": "J1 19-11 DC input connector arrangement"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2, original PDF p.319/403 (printed p.293)",
+      "native_source_meaning": "J1 five physical 28V input pairs and safety contact match source pin table"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.1-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "For 28V input vendor selects MIL-STD704F or MIL-STD1275E source power standard"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.1-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J1 accepts power on any selected combinations of five +28V/return pairs"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1_3",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.1-3",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J1 per-pair inrush max 14A for up to two seconds"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1_4",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.1-4",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "A",
+        "T"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J1 per-pair nominal current max 10A after inrush"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_1_5",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.1-5",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J1 chassis isolation to power returns at least 1 megohm"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_2_2_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.2.2-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.2.2, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J1 safety ground contact-to-chassis resistance at most 0.1 ohm"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J2 19-35 signal connector arrangement"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_3",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3-3",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "J2 signal connector uses physical pin assignment in original Table13.5.3.3-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3-4",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "T"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3, original PDF p.326/403 (printed p.300)",
+      "native_source_meaning": "Isolated J2 +28V signal at least 18V interpreted logic one"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_5",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3-5",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "T"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3, original PDF p.326/403 (printed p.300)",
+      "native_source_meaning": "J2 voltage at most 1.5V interpreted logic zero"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_1_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.1-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.1, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "Power Enable circuit >=100 kOhm requires physical Power OFF"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_1_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.1-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.1, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "Power Enable resistance strictly <5 Ohms requires physical Power ON"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_1_3",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.1-3",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.1, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "J2 Power Enable signal maximum sourced current 100 mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_1_4",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.1-4",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.1, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "J2 Power Enable voltage maximum 30 VDC"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.2-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.2, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "J2 Gigabit Ethernet physical link required"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_2_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.2-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.2, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "1000BaseT IEEE802.3-2008 CAT6A or equivalent Rule names Class1and2 despite Class3 heading"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_3_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.3-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.3, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "TIA EIA422 serial port Rule names Class1and2 despite Class3 heading"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.4-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.4, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "J2 arming/cutout maximum physical current 100mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.4-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.4, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "J2 arming/cutout maximum physical voltage 30VDC"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4_1_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.4.1-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.4.1, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "MASTER_ARM Rule pins2 and95 conflict with source J2 table pins2 and5"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4_2_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.4.2-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.4.2, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "No Emit Zone Rule pins4,5,11,12 conflict with table pins11,12,13,52"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_4_3_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.4.3-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.4.3, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "Emissions Mode Rule pins89,90,97,98 conflict with table pins53,54,59,65"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_5_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.5-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.5, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "Physical emission annunciation signals indicate firing"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_5_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.5-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.5, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "Emission annunciation signals isolated 28VDC"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_5_3",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.5-3",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.5, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Emission annunciation max 30VDC and100mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_6_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.6-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.6, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Safety status signals isolated 28VDC"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_6_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.6-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.6, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Safety status signals max30VDC and100mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_7_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.7-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "T"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.7, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Disabling gimbal motors requires open movement-enable circuit"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_8_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.8-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.8, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Accept conditional platform 1PPS input rollover referenced ICD-GPS060B"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_9_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.9-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.9, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Provide hand controller physical power"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_9_2",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.9-2",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.9, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "When hand controller required supply max30VDC and500mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-RULE-13_5_3_3_11_1",
+      "kind": "RULE",
+      "printed_rule_id": "13.5.3.3.11-1",
+      "normative_standing": "SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023) §13.5.3.3.11, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "When USB2 Host required supply 5V plus/minus5percent max500mA"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-PERMISSION-13_5_3_1_1",
+      "kind": "PERMISSION",
+      "printed_item_id": "13.5.3.1-1",
+      "normative_standing": "MAY",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "J2 source mission may leave some physical pins unallocated"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-PERMISSION-13_5_3_1_2",
+      "kind": "PERMISSION",
+      "printed_item_id": "13.5.3.1-2",
+      "normative_standing": "MAY",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.1, original PDF p.317/403 (printed p.291)",
+      "native_source_meaning": "Multiple physically distinct connector instances allowed, except at most one J1 per external sensing element"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-PERMISSION-13_5_3_1_3",
+      "kind": "PERMISSION",
+      "printed_item_id": "13.5.3.1-3",
+      "normative_standing": "MAY",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Not every Class3 connector kind in the original table is needed for every mission"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-PERMISSION-13_5_3_1_4",
+      "kind": "PERMISSION",
+      "printed_item_id": "13.5.3.1-4",
+      "normative_standing": "MAY",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.1, original PDF p.318/403 (printed p.292)",
+      "native_source_meaning": "Non-SOSA-defined connector types permitted but outside stated SOSA connector conformance"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-PERMISSION-13_5_3_3_10_1",
+      "kind": "PERMISSION",
+      "printed_item_id": "13.5.3.3.10-1",
+      "normative_standing": "MAY",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3.10, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Class3 USB2 Host optionally offered, distinct from conditional 5V power"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_2_1_1",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.2.1-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "Platform may perform J1 inrush limiting"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_2_1_2",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.2.1-2",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "source_locator": "C239 Edition1.1 §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "When >10A needed up to five J1 power pairs may be paralleled; (I) printed but still Observation"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_2_1_3",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.2.1-3",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.2.1, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "Above 350W input higher-voltage design recommended in a source Observation"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_1-P321",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3, original PDF p.321/403 (printed p.295)",
+      "native_source_meaning": "Commercial J2 interface pin naming may differ to maintain electrical integrity"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_1-P326",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3, original PDF p.326/403 (printed p.300)",
+      "native_source_meaning": "J2 per-signal-return convention supports EMC/platform integration; duplicated observation number"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_3_1",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3.3-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3.3, original PDF p.327/403 (printed p.301)",
+      "native_source_meaning": "Individual serial return lines at supplier discretion considering EMC"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_4_2_1",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3.4.2-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3.4.2, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "No Emit Zone options may support up to four maps with source parity contact"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_4_3_1",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3.4.3-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3.4.3, original PDF p.328/403 (printed p.302)",
+      "native_source_meaning": "Emissions Mode options may support up to four modes with parity"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-OBSERVATION-13_5_3_3_6_1",
+      "kind": "OBSERVATION",
+      "printed_item_id": "13.5.3.3.6-1",
+      "normative_standing": "OBSERVATION_NOT_SHALL",
+      "conformance_methodology_printed": [],
+      "source_locator": "C239 Edition1.1 §13.5.3.3.6, original PDF p.329/403 (printed p.303)",
+      "native_source_meaning": "Safety-status electrical signals are sensor controlled"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3",
+      "title": "Class3 electrical interface family",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_1",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.1",
+      "title": "Connector inventory and identification",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_2",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.2",
+      "title": "J1 DC input",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_2_1",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.2.1",
+      "title": "J1 Power",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_2_2",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.2.2",
+      "title": "J1 Safety Ground",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3",
+      "title": "J2 Signal interface",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_1",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.1",
+      "title": "Power Enable",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_2",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.2",
+      "title": "Gigabit Ethernet",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_3",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.3",
+      "title": "Serial communications",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_4",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.4",
+      "title": "Arming and cutouts",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_4_1",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.4.1",
+      "title": "MASTER_ARM",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_4_2",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.4.2",
+      "title": "NEZ cutout",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_4_3",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.4.3",
+      "title": "Emission mode",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_5",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.5",
+      "title": "Emission annunciation",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_6",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.6",
+      "title": "Safety status",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_7",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.7",
+      "title": "Gimbal movement enable",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_8",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.8",
+      "title": "1 PPS time synchronization",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_9",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.9",
+      "title": "Hand controller power",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_10",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.10",
+      "title": "USB Data",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-SECTION-13_5_3_3_11",
+      "kind": "SOURCE_SECTION",
+      "section": "13.5.3.3.11",
+      "title": "USB Power",
+      "original_inline_text_reviewed": true,
+      "source_graphical_data_full_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-13_5_3_1_1",
+      "kind": "SOURCE_TABLE",
+      "printed_table_id": "13.5.3.1-1",
+      "meaning": "13 Class3 connector family rows",
+      "source_text_rows_recorded": 13,
+      "pdf_pages": "318–319",
+      "actual_figure_and_modality_pixel_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-13_5_3_2_1",
+      "kind": "SOURCE_TABLE",
+      "printed_table_id": "13.5.3.2-1",
+      "meaning": "J1 five 28VDC supply/return pairs and chassis ground",
+      "source_text_rows_recorded": 11,
+      "pdf_pages": "320",
+      "actual_figure_and_modality_pixel_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-13_5_3_3_1",
+      "kind": "SOURCE_TABLE",
+      "printed_table_id": "13.5.3.3-1",
+      "meaning": "J2 64 named signal contacts including 4 serial ports and source safety circuits",
+      "source_text_rows_recorded": 64,
+      "pdf_pages": "322–326",
+      "actual_figure_and_modality_pixel_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J1",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 1,
+      "connector": "J1",
+      "purpose": "DC power",
+      "keying": "N",
+      "insert": "19-11",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J2",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 2,
+      "connector": "J2",
+      "purpose": "Signal",
+      "keying": "N",
+      "insert": "19-35",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J3",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 3,
+      "connector": "J3",
+      "purpose": "Video copper",
+      "keying": "N",
+      "insert": "17-6",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J4",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 4,
+      "connector": "J4",
+      "purpose": "Fiber",
+      "keying": "N",
+      "insert": "13-4",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J5",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 5,
+      "connector": "J5",
+      "purpose": "GPS antenna",
+      "keying": "n/a",
+      "insert": "TNC",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J6",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 6,
+      "connector": "J6",
+      "purpose": "Aux DC",
+      "keying": "A",
+      "insert": "19-11",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J7",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 7,
+      "connector": "J7",
+      "purpose": "Highspeed",
+      "keying": "N",
+      "insert": "VITA76.0",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J8",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 8,
+      "connector": "J8",
+      "purpose": "High density RF",
+      "keying": "N",
+      "insert": "21-11",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J9",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 9,
+      "connector": "J9",
+      "purpose": "Low loss RF",
+      "keying": "N",
+      "insert": "21-75",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J11",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 10,
+      "connector": "J11",
+      "purpose": "High voltage DC",
+      "keying": "N",
+      "insert": "11-5",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J14",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 11,
+      "connector": "J14",
+      "purpose": "Optical 48 fiber",
+      "keying": "N",
+      "insert": "VITA87.0",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J15",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 12,
+      "connector": "J15",
+      "purpose": "Optical 24 fiber",
+      "keying": "N",
+      "insert": "VITA87.0",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-TABLE-FAMILY-J16",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.1-1",
+      "ordinal": 13,
+      "connector": "J16",
+      "purpose": "Backup supply",
+      "keying": "N",
+      "insert": "9-6",
+      "original_high_resolution_modality_marks_unverified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-D",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "D",
+      "signal_name": "DC1 28V10A"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-E",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "E",
+      "signal_name": "DC1 RTN"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-F",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "F",
+      "signal_name": "DC2 28V10A"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-L",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "L",
+      "signal_name": "DC2 RTN"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-C",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "C",
+      "signal_name": "DC3 28V10A"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-G",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "G",
+      "signal_name": "DC3 RTN"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-K",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "K",
+      "signal_name": "Safety chassis ground"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-A",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "A",
+      "signal_name": "DC4 28V10A"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-J",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "J",
+      "signal_name": "DC4 RTN"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-B",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "B",
+      "signal_name": "DC5 28V10A"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J1PIN-H",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.2-1",
+      "pin_label": "H",
+      "signal_name": "DC5 RTN"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-19",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "PWR",
+      "pin_label": "19",
+      "signal_name": "PWR_EN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-27",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "PWR",
+      "pin_label": "27",
+      "signal_name": "PWR_EN_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-22",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "22",
+      "signal_name": "DA+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-23",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "23",
+      "signal_name": "DA-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-31",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "31",
+      "signal_name": "DA Shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-32",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "32",
+      "signal_name": "DB+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-33",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "33",
+      "signal_name": "DB-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-24",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "24",
+      "signal_name": "DB Shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-48",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "48",
+      "signal_name": "DC+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-49",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "49",
+      "signal_name": "DC-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-40",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "40",
+      "signal_name": "DC Shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-41",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "41",
+      "signal_name": "DD+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-42",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "42",
+      "signal_name": "DD-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-50",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ETH",
+      "pin_label": "50",
+      "signal_name": "DD Shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-8",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL1",
+      "pin_label": "8",
+      "signal_name": "TX1+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-14",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL1",
+      "pin_label": "14",
+      "signal_name": "TX1-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-15",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL1",
+      "pin_label": "15",
+      "signal_name": "422_1_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-9",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL1",
+      "pin_label": "9",
+      "signal_name": "RX1+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-16",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL1",
+      "pin_label": "16",
+      "signal_name": "RX1-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-20",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL2",
+      "pin_label": "20",
+      "signal_name": "TX2+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-28",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL2",
+      "pin_label": "28",
+      "signal_name": "TX2-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-29",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL2",
+      "pin_label": "29",
+      "signal_name": "422_2_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-21",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL2",
+      "pin_label": "21",
+      "signal_name": "RX2+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-30",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL2",
+      "pin_label": "30",
+      "signal_name": "RX2-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-44",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL3",
+      "pin_label": "44",
+      "signal_name": "TX3+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-46",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL3",
+      "pin_label": "46",
+      "signal_name": "TX3-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-38",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL3",
+      "pin_label": "38",
+      "signal_name": "422_3_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-47",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL3",
+      "pin_label": "47",
+      "signal_name": "RX3+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-39",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL3",
+      "pin_label": "39",
+      "signal_name": "RX3-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-55",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL4",
+      "pin_label": "55",
+      "signal_name": "TX4+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-62",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL4",
+      "pin_label": "62",
+      "signal_name": "TX4-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-56",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL4",
+      "pin_label": "56",
+      "signal_name": "422_4_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-57",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL4",
+      "pin_label": "57",
+      "signal_name": "RX4+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-63",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SERIAL4",
+      "pin_label": "63",
+      "signal_name": "RX4-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-2",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ARM",
+      "pin_label": "2",
+      "signal_name": "MASTER_ARM",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-5",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ARM",
+      "pin_label": "5",
+      "signal_name": "MASTER_ARM_RET",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-11",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "NEZ",
+      "pin_label": "11",
+      "signal_name": "NEZ_BIT0",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-12",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "NEZ",
+      "pin_label": "12",
+      "signal_name": "NEZ_BIT1",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-13",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "NEZ",
+      "pin_label": "13",
+      "signal_name": "NEZ_PARITY",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-52",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "NEZ",
+      "pin_label": "52",
+      "signal_name": "NEZ_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-53",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "MODE",
+      "pin_label": "53",
+      "signal_name": "MODE_BIT0",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-54",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "MODE",
+      "pin_label": "54",
+      "signal_name": "MODE_BIT1",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-59",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "MODE",
+      "pin_label": "59",
+      "signal_name": "MODE_PARITY",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-65",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "MODE",
+      "pin_label": "65",
+      "signal_name": "MODE_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-51",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ANNUN",
+      "pin_label": "51",
+      "signal_name": "LF+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-58",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "ANNUN",
+      "pin_label": "58",
+      "signal_name": "LF-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-4",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "4",
+      "signal_name": "SS1+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-10",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "10",
+      "signal_name": "SS1-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-17",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "17",
+      "signal_name": "SS2+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-25",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "25",
+      "signal_name": "SS2-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-34",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "34",
+      "signal_name": "SS3+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-43",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "SAFETY",
+      "pin_label": "43",
+      "signal_name": "SS3-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-60",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "GIMBAL",
+      "pin_label": "60",
+      "signal_name": "ENBL_GIMB",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-61",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "GIMBAL",
+      "pin_label": "61",
+      "signal_name": "ENBL_GIMB_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-35",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "PPS",
+      "pin_label": "35",
+      "signal_name": "1 PPS",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-45",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "PPS",
+      "pin_label": "45",
+      "signal_name": "1 PPS RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-36",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "HC",
+      "pin_label": "36",
+      "signal_name": "HAND_CONT_PWR",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-37",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "HC",
+      "pin_label": "37",
+      "signal_name": "H_C_PWR_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-1",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_DATA",
+      "pin_label": "1",
+      "signal_name": "USB_DATA+",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-3",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_DATA",
+      "pin_label": "3",
+      "signal_name": "USB_DATA-",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-6",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_DATA",
+      "pin_label": "6",
+      "signal_name": "GND shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-7",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_POWER",
+      "pin_label": "7",
+      "signal_name": "USB_PWR_+5V",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-64",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_POWER",
+      "pin_label": "64",
+      "signal_name": "USB_PWR_RTN",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-J2PIN-66",
+      "kind": "TABLE_ROW",
+      "source_table": "13.5.3.3-1",
+      "group": "USB_POWER",
+      "pin_label": "66",
+      "signal_name": "GND shield",
+      "original_full_modality_checkboxes_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-FIGURE-13_5_3_2_1",
+      "kind": "FIGURE_CAPTION",
+      "native_figure_id": "13.5.3.2-1",
+      "meaning": "J1 DC physical pin arrangement",
+      "pdf_page": 320,
+      "original_figure_pixels_read": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-FIGURE-13_5_3_3_1",
+      "kind": "FIGURE_CAPTION",
+      "native_figure_id": "13.5.3.3-1",
+      "meaning": "J2 signal physical pin arrangement",
+      "pdf_page": 322,
+      "original_figure_pixels_read": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-J2_KEY",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Global Class3 J2 table N-key; detailed J2 table A-key",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-J10_MISSING",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Class3 connector Rules name J10 but global family table omits J10",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-REQUIRED_VS_PERMITTED",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Source connector-list SHALL and mission-dependent permission require applicability review",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-J1_POWER",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Five 28VDC/10A J1 pairs with 14A for two seconds inrush; source original standards not independently tested",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-J2_PINS",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "J2 table text enumerates 64 pin labels from 1–66 with 18 and 26 unlisted, not presumed reserved",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-CLASS_COPY",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Two Rules inside Class3 say Class1&2 J2 for Ethernet/serial",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-MASTER_ARM_CONFLICT",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Arming Rule pins2/95 conflict with J2 table pins2/5",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-NEZ_CONFLICT",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "NEZ Rule and unnumbered SHALL pins4/5/11/12 conflict with table pins11/12/13/52",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-MODE_CONFLICT",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Mode Rule pins89/90/97/98 conflict with J2 table pins53/54/59/65",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-OBS_DUP",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Distinct Observations on PDF321 and PDF326 both printed 13.5.3.3-1",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-POWER_THRESHOLD",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Power Enable OFF >=100kOhm and ON strictly <5Ohm; no states inferred between limits",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-PHYSICAL_SAFETY",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Arming/cutout/NEZ/gimbal are physical controls, not software Commands",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-1PPS",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "1PPS rule points to figure13.5.3.3-1 captioned J2 pin arrangement, not verified pulse waveform",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-HAND_CTRL",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "Two Class3 hand-controller Rules with differing unconditional vs conditional language",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-CONTEXT-USB",
+      "kind": "ORIGINAL_SOURCE_CONTEXT",
+      "meaning": "USB2 Host is optional; 5V power conditional when used",
+      "source_kind": "ANALYSIS_OF_ORIGINAL_PRINTED_TEXT_NOT_REQUIREMENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7O-NARRATIVE-SHALL-NEZ_4_5_11_12",
+      "kind": "UNNUMBERED_SHALL",
+      "source_locator": "C239 §13.5.3.3.4.2 original PDF p.328",
+      "meaning": "Narrative requires NEZ pins4/5/11/12; physically conflicts with detailed J2 table and duplicates numbered source rule",
+      "not_extra_numbered_rule": true
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-01",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "MIL-DTL38999M",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-02",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "ANSI/VITA76.0",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-03",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "VITA87.0",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-04",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "MIL-PRF39012",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-05",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "MIL-STD704F",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-06",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "MIL-STD1275E",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-07",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "MIL-STD1310",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-08",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "IEEE802.3-2008",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-09",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "SAE AS6070/6",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-10",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "TIA/EIA422",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-11",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "ICD-GPS060B",
+      "actual_external_source_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7O-REFERENCE-12",
+      "kind": "ORIGINAL_COMPANION_POINTER",
+      "name": "C239 original DSDM/IDL and 6 OpenAPI natives",
+      "actual_external_source_examined": false
+    }
+  ],
+  "original_J2_pin_groups": {
+    "PWR": [
+      [
+        "19",
+        "PWR_EN"
+      ],
+      [
+        "27",
+        "PWR_EN_RTN"
+      ]
+    ],
+    "ETH": [
+      [
+        "22",
+        "DA+"
+      ],
+      [
+        "23",
+        "DA-"
+      ],
+      [
+        "31",
+        "DA Shield"
+      ],
+      [
+        "32",
+        "DB+"
+      ],
+      [
+        "33",
+        "DB-"
+      ],
+      [
+        "24",
+        "DB Shield"
+      ],
+      [
+        "48",
+        "DC+"
+      ],
+      [
+        "49",
+        "DC-"
+      ],
+      [
+        "40",
+        "DC Shield"
+      ],
+      [
+        "41",
+        "DD+"
+      ],
+      [
+        "42",
+        "DD-"
+      ],
+      [
+        "50",
+        "DD Shield"
+      ]
+    ],
+    "SERIAL1": [
+      [
+        "8",
+        "TX1+"
+      ],
+      [
+        "14",
+        "TX1-"
+      ],
+      [
+        "15",
+        "422_1_RTN"
+      ],
+      [
+        "9",
+        "RX1+"
+      ],
+      [
+        "16",
+        "RX1-"
+      ]
+    ],
+    "SERIAL2": [
+      [
+        "20",
+        "TX2+"
+      ],
+      [
+        "28",
+        "TX2-"
+      ],
+      [
+        "29",
+        "422_2_RTN"
+      ],
+      [
+        "21",
+        "RX2+"
+      ],
+      [
+        "30",
+        "RX2-"
+      ]
+    ],
+    "SERIAL3": [
+      [
+        "44",
+        "TX3+"
+      ],
+      [
+        "46",
+        "TX3-"
+      ],
+      [
+        "38",
+        "422_3_RTN"
+      ],
+      [
+        "47",
+        "RX3+"
+      ],
+      [
+        "39",
+        "RX3-"
+      ]
+    ],
+    "SERIAL4": [
+      [
+        "55",
+        "TX4+"
+      ],
+      [
+        "62",
+        "TX4-"
+      ],
+      [
+        "56",
+        "422_4_RTN"
+      ],
+      [
+        "57",
+        "RX4+"
+      ],
+      [
+        "63",
+        "RX4-"
+      ]
+    ],
+    "ARM": [
+      [
+        "2",
+        "MASTER_ARM"
+      ],
+      [
+        "5",
+        "MASTER_ARM_RET"
+      ]
+    ],
+    "NEZ": [
+      [
+        "11",
+        "NEZ_BIT0"
+      ],
+      [
+        "12",
+        "NEZ_BIT1"
+      ],
+      [
+        "13",
+        "NEZ_PARITY"
+      ],
+      [
+        "52",
+        "NEZ_RTN"
+      ]
+    ],
+    "MODE": [
+      [
+        "53",
+        "MODE_BIT0"
+      ],
+      [
+        "54",
+        "MODE_BIT1"
+      ],
+      [
+        "59",
+        "MODE_PARITY"
+      ],
+      [
+        "65",
+        "MODE_RTN"
+      ]
+    ],
+    "ANNUN": [
+      [
+        "51",
+        "LF+"
+      ],
+      [
+        "58",
+        "LF-"
+      ]
+    ],
+    "SAFETY": [
+      [
+        "4",
+        "SS1+"
+      ],
+      [
+        "10",
+        "SS1-"
+      ],
+      [
+        "17",
+        "SS2+"
+      ],
+      [
+        "25",
+        "SS2-"
+      ],
+      [
+        "34",
+        "SS3+"
+      ],
+      [
+        "43",
+        "SS3-"
+      ]
+    ],
+    "GIMBAL": [
+      [
+        "60",
+        "ENBL_GIMB"
+      ],
+      [
+        "61",
+        "ENBL_GIMB_RTN"
+      ]
+    ],
+    "PPS": [
+      [
+        "35",
+        "1 PPS"
+      ],
+      [
+        "45",
+        "1 PPS RTN"
+      ]
+    ],
+    "HC": [
+      [
+        "36",
+        "HAND_CONT_PWR"
+      ],
+      [
+        "37",
+        "H_C_PWR_RTN"
+      ]
+    ],
+    "USB_DATA": [
+      [
+        "1",
+        "USB_DATA+"
+      ],
+      [
+        "3",
+        "USB_DATA-"
+      ],
+      [
+        "6",
+        "GND shield"
+      ]
+    ],
+    "USB_POWER": [
+      [
+        "7",
+        "USB_PWR_+5V"
+      ],
+      [
+        "64",
+        "USB_PWR_RTN"
+      ],
+      [
+        "66",
+        "GND shield"
+      ]
+    ]
+  },
+  "J2_unlisted_numbers": [
+    "18",
+    "26"
+  ],
+  "qualified_existing_row_mappings": [
+    {
+      "label": "Physical constituent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_11"
+      ],
+      "native_source_meaning": "Class3 original connector families and individual keyed instances are hardware interface configurations.",
+      "negative_equivalence_boundary": "Not separate installed Systems or a universal DIM chassis.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-visible participant",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1"
+      ],
+      "native_source_meaning": "J2 physical Ethernet link design is specified.",
+      "negative_equivalence_boundary": "No independently IP-addressable or remotely discoverable participant.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network instance and connection context",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_3_1"
+      ],
+      "native_source_meaning": "Ethernet and serial channel physical interface options are source-defined.",
+      "negative_equivalence_boundary": "No actual IP session, address allocation or network service.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Composition member exposure and source attribution",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_4",
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_11"
+      ],
+      "native_source_meaning": "J1 per external sensing element and repeated keyed connector descriptions constrain physical designs.",
+      "negative_equivalence_boundary": "No independently discoverable composition member.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared component capability catalogue",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_11",
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_13"
+      ],
+      "native_source_meaning": "Class3 conformance requires documentation of physical connectors, their variants and non-SOSA exceptions.",
+      "negative_equivalence_boundary": "Not a measured runtime capability or preapproved DIM schema.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command interface",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_1_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_7_1"
+      ],
+      "native_source_meaning": "Arming and gimbal inhibition are hardwired safety inputs.",
+      "negative_equivalence_boundary": "Not authenticated CSAPI software commands.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Supported operating mode",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_2_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_3_1"
+      ],
+      "native_source_meaning": "NEZ and emissions-mode selection pins address predefined hardware alternatives.",
+      "negative_equivalence_boundary": "No universal mode enumeration; source connector pin conflicts unresolved.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-reported operating mode",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_3_1"
+      ],
+      "native_source_meaning": "Emission mode source controls pin-level input.",
+      "negative_equivalence_boundary": "No reported current operating-mode output.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Issued control request",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_1_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_7_1"
+      ],
+      "native_source_meaning": "External power-enable/gimbal circuits have conditional electrical effects.",
+      "negative_equivalence_boundary": "No issued digital command or recorded execution request.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Command acknowledgement / reported outcome",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_5_1"
+      ],
+      "native_source_meaning": "Physical emission annunciation interface provides a source signal.",
+      "negative_equivalence_boundary": "No digitally acknowledged software command.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component capability and readiness report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_11",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1"
+      ],
+      "native_source_meaning": "Connector inventory and Ethernet design reflect declared hardware capability.",
+      "negative_equivalence_boundary": "No verified source device readiness or network service.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component property-value report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_6_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_6_2"
+      ],
+      "native_source_meaning": "Isolated electrical Safety Status signals are specified.",
+      "negative_equivalence_boundary": "No actual sampled Status resource value.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Required and recommended capability support",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_2",
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_13"
+      ],
+      "native_source_meaning": "Class3 connector conformance includes mission permissions and documented exceptions.",
+      "negative_equivalence_boundary": "Not universal Profile SHALL, unresolved required-list conflicts retained.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component time basis and synchronization",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_8_1"
+      ],
+      "native_source_meaning": "J2 conditionally accepts a platform rollover pulse.",
+      "negative_equivalence_boundary": "No actual synchronized UTC clock, resultTime or uncertainty.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported arming state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_1_1"
+      ],
+      "native_source_meaning": "Physical MASTER_ARM source contacts are described.",
+      "negative_equivalence_boundary": "No actually reported arming state or safe software control.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported physical parent/child attachment relationships",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_4",
+        "SOSA-C239-G2-7O-RULE-13_5_3_1_12"
+      ],
+      "native_source_meaning": "J1 per element and differently keyed connector descriptions are physical design relationships.",
+      "negative_equivalence_boundary": "No identified installed physical parent/child assets.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Power-source classification",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_1_1"
+      ],
+      "native_source_meaning": "Class3 J1 receives power under selected source standards.",
+      "negative_equivalence_boundary": "Not source energy generator or observed battery/mains type.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-side DC voltage",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_1_2",
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_1_4"
+      ],
+      "native_source_meaning": "Five designed 28VDC inputs support 10A nominal per pin pair.",
+      "negative_equivalence_boundary": "Not measured source-side voltage telemetry.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported condition of power to the component",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_1_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_1_2"
+      ],
+      "native_source_meaning": "External Power Enable threshold conditions are normative input design.",
+      "negative_equivalence_boundary": "No measured source-case current power state.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported output field",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_3"
+      ],
+      "native_source_meaning": "Source J2 table enumerates physical contacts and signal families.",
+      "negative_equivalence_boundary": "Not 64 digital output properties or 64 sensor devices.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — reporting path",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_3_1"
+      ],
+      "native_source_meaning": "Physical Ethernet/serial connections could carry traffic.",
+      "negative_equivalence_boundary": "No observed data flow or CSAPI DataStream.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — power / state",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_1_3",
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_1_4",
+        "SOSA-C239-G2-7O-RULE-13_5_3_2_2_1"
+      ],
+      "native_source_meaning": "J1 power inrush/nominal/grounding limits are hardware design criteria.",
+      "negative_equivalence_boundary": "No installed or independently verified electrical conformance.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — time / QA",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_8_1"
+      ],
+      "native_source_meaning": "Conditional physical 1PPS pulse may be accepted.",
+      "negative_equivalence_boundary": "No validated observation clock/source QA.",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — control execution",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_4_2_1",
+        "SOSA-C239-G2-7O-RULE-13_5_3_3_7_1"
+      ],
+      "native_source_meaning": "Physical NEZ selection and gimbal disable provisions do not map to CSAPI commands.",
+      "negative_equivalence_boundary": "No authorized execution, independent safety verification, or resolved pin assignments.",
+      "DIM_Profile_adopted": false
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7O-Q01",
+      "status": "HELD",
+      "description": "Class3 family connector table J2 N-key conflicts with detailed J2 table A-key."
+    },
+    {
+      "id": "SOSA-G2-7O-Q02",
+      "status": "HELD",
+      "description": "Rule13.5.3.1-2 names J10 in conformance list but original Class3 connector family table omits J10."
+    },
+    {
+      "id": "SOSA-G2-7O-Q03",
+      "status": "HELD",
+      "description": "Rule13.5.3.1-2 lists required connectors while Permission13.5.3.1-3 allows mission-dependent omissions."
+    },
+    {
+      "id": "SOSA-G2-7O-Q04",
+      "status": "HELD",
+      "description": "J1 original MIL-STD704F/1275E and MIL-STD1310 originals not audited; 10A nominal/14A inrush/1MΩ/0.1Ω not physically tested."
+    },
+    {
+      "id": "SOSA-G2-7O-Q05",
+      "status": "HELD",
+      "description": "J2 original 19-35 connector figure, exact dense modality checkmarks and contact pixel geometry not verified."
+    },
+    {
+      "id": "SOSA-G2-7O-Q06",
+      "status": "HELD",
+      "description": "J2 64 text-registered pin numbers leave 18 and 26 unmentioned; no assumption of reserved wiring."
+    },
+    {
+      "id": "SOSA-G2-7O-Q07",
+      "status": "HELD",
+      "description": "Class3 J2 Ethernet Rule13.5.3.3.2-2 explicitly says Class1&2 J2; applicability conflict."
+    },
+    {
+      "id": "SOSA-G2-7O-Q08",
+      "status": "HELD",
+      "description": "Class3 J2 serial Rule13.5.3.3.3-1 explicitly says Class1&2 J2; applicability conflict."
+    },
+    {
+      "id": "SOSA-G2-7O-Q09",
+      "status": "HELD",
+      "description": "MASTER_ARM Class3 Rule pins 2/95 conflict with table 2/5; no silent pin reassignment."
+    },
+    {
+      "id": "SOSA-G2-7O-Q10",
+      "status": "HELD",
+      "description": "NEZ Class3 Rule/un-numbered SHALL pins 4/5/11/12 conflict with table 11/12/13/52."
+    },
+    {
+      "id": "SOSA-G2-7O-Q11",
+      "status": "HELD",
+      "description": "Emissions-mode Rule pins 89/90/97/98 conflict with detailed J2 table 53/54/59/65."
+    },
+    {
+      "id": "SOSA-G2-7O-Q12",
+      "status": "HELD",
+      "description": "Two different Observations use source ID13.5.3.3-1 at PDF321 and PDF326; retain both separately."
+    },
+    {
+      "id": "SOSA-G2-7O-Q13",
+      "status": "HELD",
+      "description": "Class3 physical Power Enable ON threshold strictly less than 5 Ohms; Class1&2 threshold differs."
+    },
+    {
+      "id": "SOSA-G2-7O-Q14",
+      "status": "HELD",
+      "description": "Power Enable and isolated discrete logic thresholds not measured on actual sensor/case."
+    },
+    {
+      "id": "SOSA-G2-7O-Q15",
+      "status": "HELD",
+      "description": "1PPS Rule cites Figure13.5.3.3-1 captioned J2 pin arrangement, not a verified timing waveform."
+    },
+    {
+      "id": "SOSA-G2-7O-Q16",
+      "status": "HELD",
+      "description": "Original IEEE802.3-2008, AS6070/6, TIA/EIA422, ICD-GPS060B, MIL/ANSI/VITA originals unreviewed."
+    },
+    {
+      "id": "SOSA-G2-7O-Q17",
+      "status": "HELD",
+      "description": "Class3 safety/NEZ/gimbal arming are physical controls, not executable CSAPI software Commands."
+    },
+    {
+      "id": "SOSA-G2-7O-Q18",
+      "status": "HELD",
+      "description": "USB Host permission and 5V conditional power do not establish operating USB service."
+    },
+    {
+      "id": "SOSA-G2-7O-Q19",
+      "status": "HELD",
+      "description": "Hand-controller Rule unconditional power wording versus conditional maximum Rule needs contextual interpretation."
+    },
+    {
+      "id": "SOSA-G2-7O-Q20",
+      "status": "HELD",
+      "description": "Connector documentation not proof of installed serialized equipment or sensor subsystems."
+    },
+    {
+      "id": "SOSA-G2-7O-Q21",
+      "status": "HELD",
+      "description": "Eight original C239 DSDM/IDL/OpenAPI companion originals, later S251 and restricted Appendix C still held."
+    },
+    {
+      "id": "SOSA-G2-7O-Q22",
+      "status": "HELD",
+      "description": "No adopted DIM chassis/class/cardinality, CSAPI Profile SHALL or runtime/hardware conformance."
+    }
+  ],
+  "original_c239_registered_heading_status": {
+    "registered": 192,
+    "at_least_sampled_or_inline_read": 174,
+    "substantively_unread": 17,
+    "restricted": 1,
+    "new_original_registered_heading": "13.5.3",
+    "previous_counts": [
+      173,
+      18,
+      1
+    ],
+    "reason": "Original registered §13.5.3 previously UNREAD and now directly read; broader parent §13.5 remains PARTIAL; coverage is not complete clause/figure/companion audit."
+  },
+  "DIM_Profile_adopted": false,
+  "independent_conformance": false,
+  "next_on_owner_proceed": "SOSA-G2-7P original §§13.5.3.4–13.5.3.17.2 only, STOP before §13.5.4"
+}
