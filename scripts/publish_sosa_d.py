@@ -11,12 +11,12 @@ D=Path(__file__).resolve().parents[1]/"Docs/Research/DIM_Profile_V2/Donor_DIM_Cr
 BOOK="Master_Donor_Concept_to_DIM_Crosswalk.xlsx"
 MASTER="Master_Donor_Concept_to_DIM_Crosswalk.json"
 LEDGER="Step17_SOSA_D_Source_First_Integration_09NOV2026.json"
-REPORT="SOSA_G2_7I_Workbook_Validation_11NOV2026.json"
-PREVIEW="SOSA_G2_7I_Workbook_Preview_11NOV2026.png"
-OLD="890a1a672a0e79d4889a08c40a9f05e0a033cc1b229c525c5cb5066dff187be9"
+REPORT="SOSA_G2_7J_Workbook_Validation_11NOV2026.json"
+PREVIEW="SOSA_G2_7J_Workbook_Preview_11NOV2026.png"
+OLD="f4489c8bc6d109d13c7987a68226b6aab6744a26d7f895a00448d221cb2d4d8c"
 q=old.q
 ET.register_namespace("",old.X);ET.register_namespace("r",old.REL)
-def need(x,message):assert x,"SOSA-G2-7I verification failed: "+message
+def need(x,message):assert x,"SOSA-G2-7J verification failed: "+message
 def load(n):return json.loads((D/n).read_text(encoding="utf-8"))
 def save(n,x):(D/n).write_text(json.dumps(x,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 def digest(b):return hashlib.sha256(b).hexdigest()
@@ -604,10 +604,89 @@ def check_g2_7i_source(m):
              and r["display"][8].startswith(e["previous_sosa_cell_value"])
              and "G2-7I:" in r["display"][8],
              "stable source meaning and previous cell retained "+r["row_id"])
-    need(m["SOSAReviewCompletion"]["G2_7I_XLSX_lag"]==25
-         and m["workbookSnapshot"]["currently_matches_readable_view"] is False,
-         "25 new source-qualified cells before SAME-Excel L23 exit")
+    need(m["SOSAReviewCompletion"]["G2_7I_XLSX_lag"]==0,
+         "previous original G2-7I source and saved SAME-Excel checkpoint retained")
     print("PASS: original G2-7I C239 Rule inventory and 25 semantic mappings, figure/native companion holds retained")
+
+
+def check_g2_7j_source(m):
+    z=load("SOSA_G2_7J_Original_Source_Item_Coverage_11NOV2026.json")
+    sc=z["source_counts"];items=z["original_source_items"];ids={a["id"] for a in items}
+    need(len(items)==len(ids)==134
+         and sc["total_source_native_items"]==134
+         and [sc[k] for k in ("SECTION","RULE","OBSERVATION","FIGURE","TABLE","SOURCE_CONTEXT","SIGNAL_GROUP","PIN_LABEL")]==[2,8,4,1,1,7,26,85],
+         "original J2 134 source-native records at correct source/standing categories")
+    need(sc["numbered_rules"]==8 and sc["rules_inspection_I"]==6 and sc["rules_test_T"]==2
+         and sc["numbered_observations"]==4 and sc["numbered_permissions"]==0
+         and sc["source_signal_groups"]==26 and sc["individually_printed_pin_label_records"]==85
+         and sc["aggregated_unresolved_pin_rosters"]==2
+         and sc["source_printed_pin_designator_tokens"]==103
+         and len(z["source_holds"])==22,
+         "8 Rule, 4 Observation, 26 signal families, 85 individual and 2 held grouped pin rows,103 designators,22 holds")
+    rules=[a for a in items if a["kind"]=="RULE"]
+    need(len(rules)==8 and
+         [sum(a["conformance_method_printed"]==[x] for a in rules) for x in ("I","T")]==[6,2],
+         "source printed six Inspection and two Test Rules")
+    need({a["printed_rule_id"] for a in rules}=={
+           "13.5.2.3-1","13.5.2.3-2","13.5.2.3-3","13.5.2.3-4",
+           "13.5.2.3.1-1","13.5.2.3.1-2","13.5.2.3.1-3","13.5.2.3.1-4"},
+         "original exact eight printed J2 and Power Enable Rule identifiers")
+    rule_map={a["printed_rule_id"]:a for a in rules}
+    need("≥18.0" in rule_map["13.5.2.3-3"]["meaning"]
+         and "≤1.5" in rule_map["13.5.2.3-4"]["meaning"]
+         and "≥100" in rule_map["13.5.2.3.1-1"]["meaning"]
+         and "≤5" in rule_map["13.5.2.3.1-2"]["meaning"]
+         and "100 mA" in rule_map["13.5.2.3.1-3"]["meaning"]
+         and "30 VDC" in rule_map["13.5.2.3.1-4"]["meaning"],
+         "source original discrete logic and power-enable numeric threshold evidence")
+    observations=[a for a in items if a["kind"]=="OBSERVATION"]
+    need({a["printed_observation_id"] for a in observations}=={
+         "13.5.2.3-1","13.5.2.3-2","13.5.2.3-3","13.5.2.3-4"}
+         and all(a["normative_rule"] is False for a in observations),
+         "four original numbered Observations distinct from Rules and absent Permissions")
+    groups=z["source_signal_groups"];pinrows=z["printed_pin_label_evidence"]
+    need(len(groups)==26 and sum(g["pin_count"] for g in groups)==103
+         and len(pinrows)==87 and len([p for p in pinrows if p.get("aggregate")])==2,
+         "full 6-page J2 table group and pin textual census")
+    need({p["group"] for p in pinrows if p.get("aggregate")}=={"SENMAN","ARMING_ISOLATION"}
+         and all(p["source_id"] in ids for p in pinrows),
+         "ten manufacturer and eight reserved arming pin positions held in grouped source rows")
+    pins={p["pin"] for p in pinrows if not p.get("aggregate")}
+    need(len(pins)==85 and {"25-1","25-2","25-S","75-1","75-2","75-S"}<=pins,
+         "distinct J2 source printed pin designators incl native twinax subcontacts")
+    cov=z["c239_cumulative_registered_headings"]
+    need((cov["total"],cov["at_least_sampled_or_inline_reviewed"],
+           cov["substantively_unread"],cov["restricted"])==(192,173,18,1)
+         and cov["newly_registered_headings_reviewed"]==0
+         and cov["full_13_5_source_coverage"] is False,
+         "only nested J2 source reviewed; original 173/18/1 TOC count unchanged")
+    source=z["source"]
+    need(source["original_inline_text_examined"] is True
+         and source["source_table_text_examined_all_six_pages"] is True
+         and source["original_figure_pixels_verified"] is False
+         and source["original_table_graphic_alignment_verified"] is False
+         and source["eight_C239_model_API_companions_reviewed"] is False
+         and z["model_or_CSAPI_Profile_adopted"] is False
+         and z["independent_hardware_conformance"] is False,
+         "original J2 text evidence but native graphics/companions and physical conformance remain held")
+    mapped=[r for r in m["rows"] if r.get("G2_7J_source_correspondence")]
+    need(len(mapped)==25 and {r["row_id"] for r in mapped}
+          ==set(m["workbookSnapshot"]["G2_7J_affected_row_ids"]),
+         "exact 25 existing source-qualified canonical SOSA comparison rows")
+    for row in mapped:
+        ev=row["G2_7J_source_correspondence"]
+        need(ev["source_item_ids"] and all(v in ids for v in ev["source_item_ids"])
+             and ev["DIM_Profile_adopted"] is False
+             and ev["pinout_figure_and_dense_modality_matrix_unverified"] is True
+             and ev["external_native_companions_unread"] is True
+             and row["display"][8].startswith(ev["previous_sosa_cell_value"])
+             and "G2-7J:" in row["display"][8],
+             "stable original source IDs, previous donor comparison and model/visual holds "+row["row_id"])
+    lag=m["SOSAReviewCompletion"]["G2_7J_XLSX_lag"]
+    need(lag in (25,0)
+         and m["workbookSnapshot"]["currently_matches_readable_view"] is (lag==0),
+         "G2-7J current source/Excel L23 standing either 25 cells pending or zero after replay")
+    print("PASS: direct original C239 J2 134 source items/103 source pin designators, 8 Rules/4 Observations, 25 qualified master comparisons and precise holds")
 
 def matrix_to_xml(matrix,styles,main=False,sections=()):
     w=max(len(row) for row in matrix);need(w<=16,"sheet dimensions")
@@ -643,24 +722,28 @@ def matrix_to_xml(matrix,styles,main=False,sections=()):
 
 def summary(m):
     return [
-      ["SOSA-G2-7I source and SAME Excel checkpoint","C239 Ed1.1 §§13.5–13.5.2.2.2, PDF273–278; STOP BEFORE §13.5.2.3"],
-      ["Approved original master","329 information rows, 346 grid rows, 15 columns, 15 topic dividers"],
-      ["Source-read scope","Electrical Classes, Class1&2 connectors and J1 DC power/safety ground"],
-      ["Source native inventory","82 items, 23 numbered SHALL Rules, 4 Permissions, 3 Observations"],
-      ["Source rule methods","18 printed (I) Inspection, five printed (A) Analysis"],
-      ["Source table rows","16 J1–J16 physical connectors and eleven J1 power/ground pins"],
-      ["Electrical class scope","Class1&2, Class3 and Class5; SAE turret qualification narrower"],
-      ["Connector alternative","Class1&2 requires J2 OR J14 OR J15, not all three"],
-      ["J1 cardinality","At most one J1 per external sensing element; J6 dependent on J1"],
-      ["Power and safety design limits","+28VDC; ≤25A/2s inrush, ≤15A nominal each, up to five paired rails, chassis isolation ≥1MΩ, ground ≤0.1Ω"],
-      ["Source method/type caution","Observation13.5.2.2.1-2 includes (I) but remains Observation; Permission13.5.2-4 printed atypically"],
-      ["Original source holds","20 new, including unread SAE/MIL/VITA, graphic contact geometry, J2 onward, eight C239 native files and later S251"],
-      ["Source-qualified master comparisons","25 existing donor column-I cells only, zero case/ISA/W3C/OGC/DIM cell changes"],
-      ["C239 registered heading standing","173 at least sampled/inline-read,18 unread,one restricted; two parent headings PARTIAL"],
-      ["Source-case and previous donor evidence","58 donor facts,73 source-case facts,ISA480 source outcomes/six unresolved questions retained"],
-      ["Adoption and conformance","ZERO DIM class/chassis/cardinality,Profile SHALL or independent physical test"],
-      ["SAME original Excel","ALL 346x15 actual saved cells equal canonical JSON/BOTH CSV/BOTH Markdown"],
-      ["Next new owner Proceed only","G2-7J original §13.5.2.3 J2 Signal Connector; SOSA open, SAPIENT blocked"]
+       ["SOSA-G2-7J original J2 25-7 connector and Power Enable SAME Excel","Edition1.1 C239 PDF278–285, §§13.5.2.3–13.5.2.3.1; STOP BEFORE §13.5.2.3.2"],
+       ["Original master geometry","329 information rows,346 grid rows,15 source columns,15 topic dividers"],
+       ["Native original record inventory","134 ledger source items: 8 Rules,4 Observations,26 signal groups,85 individual pin rows,2 grouped signal rosters"],
+       ["Rules and printed method","Six Inspection(I), two Test(T), no Permissions or numbered Recommendations in scope"],
+       ["Original signal table","Table13.5.2.3-1 PDF279–284:103 printed pin/subcontact tokens across 26 groups, actual pixel/matrix geometry held"],
+       ["J2 connector","25-7 insert, N-keying, sensor socket side and host umbilical pin side"],
+       ["Discrete logic-high","Isolated +28VDC discrete ≥18.0V means logic1, Rule13.5.2.3-3 (T)"],
+       ["Discrete logic-low","Isolated +28VDC discrete ≤1.5V means logic0, Rule13.5.2.3-4 (T)"],
+       ["Power Enable platform switch","Sensor supplies voltage, platform open/closed circuit across PWR_EN and PWR_EN_RTN"],
+       ["Power OFF","J2 Power Enable resistance ≥100kΩ requires power OFF; source Rule (I)"],
+       ["Power ON","J2 Power Enable resistance ≤5Ω requires power ON; source Rule (I)"],
+       ["Power Enable electrical maximum","100mA sourced current and 30VDC driven voltage (I), not measured live device"],
+       ["Source type caveat","Four original Observations include commercial pin variation, source returns, safety-specific logic0 and AWG2419 detail"],
+       ["Source pair-label/caveat","SENMAN ten pins and eight reserved arming-isolation pins held as groups without invented individual mappings"],
+       ["Connector/figure holds","Original J2 figure pixels and six-page table modality matrix not visually verified; MIL/IEEE/TIA/USB original companions not read"],
+       ["Source holds","22 exact G2-7J holds, earlier G2-7I20 and previous donor/ISA evidence retained"],
+       ["Qualified master increment","25 existing Open Group SOSA column-I source cells only; no four-case, other donor, ISA or DIM edits"],
+       ["C239 registered-heading standing","173 of192 at least sampled/inline-read,18 unread,1 restricted; zero new registered headings this nested packet"],
+       ["Previous facts preserved","58 donor source records,73 empirical case facts, ISA480 primary outcomes/six open questions"],
+       ["Adoption/conformance","Zero adopted DIM classes/cardinality, CSAPI Profile SHALLs or independent tested hardware effects"],
+       ["SAME original editable 26-sheet Excel","All 346x15 actual saved cells identical across JSON/BOTH CSV/BOTH Markdown"],
+       ["NEXT only distinct owner Proceed","G2-7K original §13.5.2.3.2 Ethernet (Copper), SOSA OPEN and Step18 SAPIENT blocked"]
     ]
 
 def register(m):
@@ -668,19 +751,20 @@ def register(m):
     for r in m["rows"]:
         so=r.get("sosa_correspondence") or {}
         groups=[r.get(name) or {} for name in ("G2_1_source_correspondence","G2_2_source_correspondence","G2_3_source_correspondence",
-            "G2_4A_source_correspondence","G2_4B_source_correspondence","G2_5_source_correspondence","G2_6A_source_correspondence","G2_6B_source_correspondence","G2_6C_source_correspondence","G2_6D_source_correspondence","G2_7A_source_correspondence","G2_7B_source_correspondence","G2_7C_source_correspondence","G2_7D_source_correspondence","G2_7E_source_correspondence","G2_7F_source_correspondence","G2_7G_source_correspondence","G2_7H_source_correspondence","G2_7I_source_correspondence")]
+            "G2_4A_source_correspondence","G2_4B_source_correspondence","G2_5_source_correspondence","G2_6A_source_correspondence","G2_6B_source_correspondence","G2_6C_source_correspondence","G2_6D_source_correspondence","G2_7A_source_correspondence","G2_7B_source_correspondence","G2_7C_source_correspondence","G2_7D_source_correspondence","G2_7E_source_correspondence","G2_7F_source_correspondence","G2_7G_source_correspondence","G2_7H_source_correspondence","G2_7I_source_correspondence","G2_7J_source_correspondence")]
         ids=so.get("records",[])+[v for g in groups for v in g.get("source_item_ids",[])]
         relations=so.get("relations",[])+[g.get("relation",g.get("mapping_relation","")) for g in groups if g]
-        status=("G2-7I §13.5 original Class1&2/J1 electrical Rules and table text, figures/SAE/MIL/VITA held" if groups[-1] else
-            "G2-7H §13.4 original VNX textual/table review, numbered Rules absent and future/TBD + figure/native holds" if groups[-2] else
-            "G2-7G §13.3.8 original analog/coax Rule/Rec/Obs and figure text read, full pixel geometry held" if groups[-3] else
-            "G2-7F §13.3.7 original Rule/Observation/Permission text read" if groups[-4] else
-            "G2-7E §13.3.6 VITA66 optical source text and original native companion held" if groups[-5] else
-            "G2-7D §13.3.5 Switch AMPS dense matrix audit held" if groups[-6] else
-            "G2-7C §13.3.4 Payload AMPS dense matrix audit held" if groups[-7] else
-            "G2-7B AMPS grammar, original ANSI/VITA held" if groups[-8] else
-            "G2-7A AMPS protocol code definitions read" if groups[-9] else
-            "Earlier original C239 source-qualified review, native companions held" if so or any(groups[:-9]) else "Not assessed here")
+        status=("G2-7J §13.5.2.3 25-7 J2 pin/rule and physical Power Enable original text read, diagram/matrix held" if groups[-1] else
+            "G2-7I §13.5 original Class1&2/J1 electrical Rules and table text, figures/SAE/MIL/VITA held" if groups[-2] else
+            "G2-7H §13.4 original VNX textual/table review, numbered Rules absent and future/TBD + figure/native holds" if groups[-3] else
+            "G2-7G §13.3.8 original analog/coax Rule/Rec/Obs and figure text read, full pixel geometry held" if groups[-4] else
+            "G2-7F §13.3.7 original Rule/Observation/Permission text read" if groups[-5] else
+            "G2-7E §13.3.6 VITA66 optical source text and original native companion held" if groups[-6] else
+            "G2-7D §13.3.5 Switch AMPS dense matrix audit held" if groups[-7] else
+            "G2-7C §13.3.4 Payload AMPS dense matrix audit held" if groups[-8] else
+            "G2-7B AMPS grammar, original ANSI/VITA held" if groups[-9] else
+            "G2-7A AMPS protocol code definitions read" if groups[-10] else
+            "Earlier original C239 source-qualified review, native companions held" if so or any(groups[:-10]) else "Not assessed here")
         out.append([r["row_id"],r.get("label",""),r.get("definition",""),r.get("status",""),r.get("source_review_status",""),
              r.get("master_inclusion",""),r.get("dim_adoption",""),"; ".join(r.get("source_entry_ids",[])),
              json.dumps(r.get("source_first_correspondence",{}),ensure_ascii=False)[:2000],
@@ -688,15 +772,15 @@ def register(m):
     return out
 
 def publish():
-    m=load(MASTER);legacy=load(LEDGER);check_source(m,legacy);check_g2_7i_source(m)
+    m=load(MASTER);legacy=load(LEDGER);check_source(m,legacy);check_g2_7i_source(m);check_g2_7j_source(m)
     stored=(D/BOOK).read_bytes()
     if digest(stored)==OLD:prev=stored
     else:
         from subprocess import check_output
         need(digest(stored)==m["currentWorkbookSha256"] and m["workbookSnapshot"]["currently_matches_readable_view"],
              "current saved workbook hash/metadata before replay")
-        prev=check_output(["git","show","8158322ddcf33c78de83e9f55071aee1ec46066b:Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx"])
-    need(digest(prev)==OLD,"unchanged prior source-qualified G2-7H workbook before G2-7I publication")
+        prev=check_output(["git","show","c68150b538e8ed89022c05722147225c2f0c6b3d:Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx"])
+    need(digest(prev)==OLD,"unchanged prior source-qualified G2-7I workbook before G2-7J publication")
     with zipfile.ZipFile(io.BytesIO(prev)) as z:
         need(z.testzip() is None,"old saved ZIP CRC")
         paths=old.sheetpaths(z);need(len(paths)==26,"same original 26 sheets")
@@ -734,52 +818,58 @@ def publish():
     if digest(stored)!=OLD:need(digest(saved)==digest(stored),"byte-for-byte replay of already-published same workbook")
     (D/BOOK).write_bytes(saved);sha=digest(saved)
     m["currentWorkbookSha256"]=sha
-    m["currentEvidenceCheckpoint"]="SOSA-G2-7I_ORIGINAL_CLASS12_J1_SOURCE_AND_SAME_26_SHEET_EXCEL_VERIFIED__SOSA_OPEN"
-    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-7I-CANONICAL-VERIFIED","sha256":sha,
+    m["currentEvidenceCheckpoint"]="SOSA-G2-7J_ORIGINAL_J2_SIGNAL_AND_POWER_ENABLE_SOURCE_AND_SAME_26_SHEET_EXCEL_VERIFIED__SOSA_OPEN"
+    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-7J-CANONICAL-VERIFIED","sha256":sha,
           "currently_matches_readable_view":True,
           "lag":"NONE: all 346x15 saved Excel cells match JSON/BOTH CSV/BOTH MD",
           "refreshed_cell_count":25,"validation_file":REPORT})
-    m["SOSAEvidence"]["G2_7I"].update({"excel_checkpoint":"SOSA-G2-7I-CANONICAL-VERIFIED",
+    m["SOSAEvidence"]["G2_7J"].update({"excel_checkpoint":"SOSA-G2-7J-CANONICAL-VERIFIED",
           "excel_validation":REPORT,"Excel_lag_cells":0,"same_saved_workbook_25_cells_synced":True})
-    m["SOSAReviewCompletion"]["G2_7I_XLSX_lag"]=0
-    m["SOSAReviewCompletion"]["status"]="OPEN__G2_7I_SAME_SAVED_EXCEL_VERIFIED__18_UNREAD_1_RESTRICTED_EXTERNAL_SOURCE_HOLDS"
-    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="G2-7J original C239 §13.5.2.3 J2 signal connector, one source-sized packet only"
-    m["nextOwnerAction"]="Only distinct owner Proceed starts G2-7J original C239 §13.5.2.3; SOSA ACTIVE and SAPIENT blocked"
-    m["publicationPolicy"]="L23 G2-7I:25 source-qualified column-I cells in JSON/BOTH CSV/BOTH Markdown/SAME original 26-sheet Excel, all 346x15 cells saved-verified"
+    m["SOSAReviewCompletion"]["G2_7J_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["status"]="OPEN__G2_7J_SAME_SAVED_EXCEL_VERIFIED__18_UNREAD_1_RESTRICTED_J2_FIGURE_NATIVE_HOLDS"
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="Only distinct owner Proceed starts G2-7K original C239 §13.5.2.3.2 Ethernet (Copper), source-sized; SOSA OPEN"
+    m["nextOwnerAction"]="Only distinct owner Proceed starts G2-7K original C239 §13.5.2.3.2; SOSA ACTIVE and SAPIENT blocked"
+    m["publicationPolicy"]="L23 G2-7J:25 source-qualified J2 column-I cells in canonical JSON/BOTH CSV/BOTH readable Markdown/SAME original 26-sheet Excel, all 346x15 saved cells verified; source figure/matrix holds retained"
     save(MASTER,m)
-    record={"date":"2026-11-11","step":"SOSA-G2-7I-EXCEL-CHECKPOINT",
+    record={"date":"2026-11-11","step":"SOSA-G2-7J-EXCEL-CHECKPOINT",
          "result":"SAME_26_SHEET_SAVED_XLSX_AND_BOTH_CSV_AND_BOTH_MD_PARITY_PASS",
          "workbook_sha256":sha,"base_workbook_sha256":OLD,"workbook_sheets":list(paths),
          "refreshed_sheets":list(tables),"exact_original_untouched_xml_sha256":retained,
          "information_rows":329,"grid_rows":346,"columns":15,
          "original_donor_evidence":58,"case_evidence":73,"ISA_primary_source_outcomes":480,"original_ISA_questions_open":6,
-         "G2_7I_original_headings_newly_touched":3,"G2_7I_original_native_items":82,
-         "G2_7I_numbered_rules":23,"G2_7I_rule_method_I":18,"G2_7I_rule_method_A":5,
-         "G2_7I_permissions":4,"G2_7I_observations":3,"G2_7I_connector_rows":16,"G2_7I_J1_pin_rows":11,
-         "G2_7I_source_holds":20,"G2_7I_qualified_existing_sosa_cells":25,"changed_saved_cells":sorted(delta),
+         "G2_7J_new_registered_headings":0,"G2_7J_original_native_items":134,
+         "G2_7J_numbered_rules":8,"G2_7J_rule_method_I":6,"G2_7J_rule_method_T":2,
+         "G2_7J_observations":4,"G2_7J_permissions":0,"G2_7J_signal_groups":26,
+         "G2_7J_individual_pin_label_records":85,"G2_7J_aggregate_pin_rosters":2,
+         "G2_7J_printed_pin_designator_tokens":103,"G2_7J_source_holds":22,
+         "G2_7J_qualified_existing_sosa_cells":25,"changed_saved_cells":sorted(delta),
          "C239_at_least_sampled_or_inline_read":173,"C239_unread":18,"C239_restricted":1,
-         "original_figure_pixels_verified":False,"original_external_standards_or_C239_native_companions_examined":False,
-         "earlier_G2_7H_holds":17,"earlier_G2_7G_holds":19,
+         "original_figure_pixels_verified":False,"original_dense_signal_matrix_graphics_verified":False,
+         "original_external_standards_or_C239_native_companions_examined":False,
+         "earlier_G2_7I_holds":20,"earlier_G2_7H_holds":17,"earlier_G2_7G_holds":19,
          "checks":{"all_actual_XLSX_346x15_cells_equal_JSON_both_CSV_both_MD":True,
           "both_CSVs_equal":True,"both_readable_MDs_equal":True,
           "same_26_worksheet_names_order":True,"22_untouched_historical_XMLs_preserved":True,
-          "only_25_SOSA_I_cells_changed":True,"valid_ZIP_CRC_and_XML":True,"no_spreadsheet_error_cells":True,
-          "zero_DIM_Profile_adoption":True},
-         "limits":["§13.5 overall and §13.5.2 parent only PARTIAL, stop before J2 §13.5.2.3",
-          "External SAE/MIL/VITA original sources, images, native C239 DSDM/IDL/OpenAPI, later S251 and restricted AppendixC held",
-          "Observation with printed (I) is not a numbered Rule; Permission13.5.2-4 native numbering retained",
-          "No actual source-case installed physical interface or hardware runtime conformance tested",
-          "Preview generated from actual saved worksheet XML, not native Excel app screenshot"],
-         "next":"Only separate owner Proceed begins G2-7J original §13.5.2.3 J2, SOSA OPEN and SAPIENT blocked"}
+          "only_25_SOSA_I_cells_changed":True,"valid_ZIP_CRC_and_XML":True,
+          "no_spreadsheet_error_cells":True,"zero_DIM_Profile_adoption":True},
+         "limits":["Original J2 source §13.5.2.3 and Power Enable .3.1 only; STOP BEFORE §13.5.2.3.2 Ethernet",
+          "Original 103 printed pin/subcontact designators across 26 source groups are text-audited, not pixel-verified contact geometry or full matrix checkmarks",
+          "SENMAN ten pins and reserved eight arming-isolation pins remain grouped, no invented per-pin signal labels",
+          "Eight source Rules with two original Test and six Inspection methods; 4 separate Observations",
+          "Potential hardwired Power Enable ON/OFF conditions are not an actual CSAPI Command, acknowledgement or observed device transition",
+          "Original external MIL/IEEE/TIA/USB sources, eight C239 DSDM/IDL/OpenAPI, later S251 and restricted Appendix C unexamined",
+          "No real physical J2 installation or independent hardware/runtime conformance tested",
+          "Preview rendered from saved workbook worksheet XML, not native Excel screenshot"],
+         "next":"Only separate owner Proceed begins G2-7K original §13.5.2.3.2 Ethernet (Copper), SOSA OPEN and SAPIENT blocked"}
     save(REPORT,record)
-    print("PASS: 25 source-qualified G2-7I SOSA cells in SAME original saved 26-sheet Excel, SHA",sha)
+    print("PASS: 25 original J2 signal and hardwired Power Enable SOSA cells in SAME saved 26-sheet Excel, SHA",sha)
     return sha
 
 def preview():
     from PIL import Image,ImageDraw,ImageFont
     m=load(MASTER);actual=old.readcells((D/BOOK).read_bytes(),"Master Crosswalk")
-    rows=[r for r in m["rows"] if r.get("G2_7I_source_correspondence")]
-    need(len(rows)==25,"25 G2-7I source-qualified donor comparisons saved")
+    rows=[r for r in m["rows"] if r.get("G2_7J_source_correspondence")]
+    need(len(rows)==25,"25 G2-7J source-qualified donor comparisons saved")
     try:
         font=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",11)
         bold=ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",13)
@@ -787,7 +877,7 @@ def preview():
     width,height=1580,2630
     img=Image.new("RGB",(width,height),"white")
     pen=ImageDraw.Draw(img);pen.rectangle((0,0,width,65),fill="#173855")
-    pen.text((18,17),"SOSA-G2-7I: 25 saved electrical Class1&2 J1 source cells — C239 §13.5",font=bold,fill="white")
+    pen.text((18,17),"SOSA-G2-7J: 25 saved J2 25-7 signal / Power Enable source cells — C239 §13.5.2.3",font=bold,fill="white")
     for i,r in enumerate(rows):
         hit=[k+1 for k,g in enumerate(m["review_grid"]) if g[14]==r["label"] and g[8]==r["display"][8]]
         need(len(hit)==1,"unique original source row "+r["row_id"])
@@ -796,12 +886,12 @@ def preview():
         y=72+i*98
         pen.rectangle((10,y,width-12,y+91),fill="#F1F6FA" if i%2==0 else "white",outline="#CCD8E4")
         pen.text((20,y+7),r["row_id"]+" | "+address+" | "+r["label"],font=bold,fill="#173855")
-        snippet="G2-7I: "+value.split("G2-7I:",1)[1] if "G2-7I:" in value else value
+        snippet="G2-7J: "+value.split("G2-7J:",1)[1] if "G2-7J:" in value else value
         for j,line in enumerate(textwrap.wrap(snippet,width=165,break_long_words=False)[:3]):
             pen.text((20,y+33+j*17),line,font=font,fill="#203951")
     img.save(D/PREVIEW,optimize=True)
     need((D/PREVIEW).stat().st_size>10000,"saved source-cell preview generated")
-    print("PASS: 25 G2-7I SOSA original source-cell preview rendered from saved worksheet XML")
+    print("PASS: 25 G2-7J SOSA original source-cell preview rendered from saved worksheet XML")
 if __name__=="__main__":
     publish()
     preview()
