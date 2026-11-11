@@ -1,3 +1,9 @@
+# CURRENT — SOSA G3-N1 original edition/source-access census completed (11 November 2026)
+
+All twelve registered The Open Group SOSA lineage artifacts and eight original 2023 C239 normative native file pointers have been checked for edition and access, **without acquiring the eight original native file contents or the distinct 2025 S251 PDF/bundle**. [Full G3-N1 source/hold evidence](Donor_DIM_Crosswalk/SOSA_G3_N1_Source_Access_Ledger_11NOV2026.json) · [G3-N1 plain-English report](Donor_DIM_Crosswalk/SOSA_G3_N1_Original_Native_Artifact_Edition_and_Access_11NOV2026.md) · [governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [SOSA source plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). All master formats and original 26-sheet Excel are unchanged from verified G2-7T with zero lag; donor ACTIVE/OPEN, Step18 SAPIENT blocked. **One next owner Proceed: conditional G3-N2 C239 DSDM/IDL inspection/access holds ONLY.**
+
+---
+
 # CURRENT — SOSA-G2-7T Appendix A/B verified, G3-N1 next ONLY (11 November 2026)
 
 Original C239 77 glossary definitions and eight normative *unexamined* native file pointers now source-accounted; **50 warranted SOSA cells** current in SAME independently verified original 26-sheet Excel. [Controlling PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [active SOSA plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). SOSA ACTIVE/OPEN, SAPIENT blocked; **one next owner Proceed: G3-N1 edition/12-artifact original access and lineage investigation only, no original native clause audit.**
