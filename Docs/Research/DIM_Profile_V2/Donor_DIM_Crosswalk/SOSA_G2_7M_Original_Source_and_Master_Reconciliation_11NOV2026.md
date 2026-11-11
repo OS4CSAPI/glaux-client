@@ -1,3 +1,7 @@
+**FINAL G2-7M SAVED-EXCEL / INDEPENDENT VERIFICATION (11 November 2026):** 21 SOSA I-column source-qualified cells, every **346×15 actual saved Excel cell**, both CSV and both Markdown mirrors verified current. Same original **26 sheets**, 22 historical XML sheets unchanged; Excel lag **ZERO**, XLSX SHA256 `d4110ad4322e748bb602e0355923baa40ed824bfe33d56ad4892addeee7510db`. [Final workbook validation](SOSA_G2_7M_Workbook_Validation_11NOV2026.json) · [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43059385667) · [independent checker PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43059672811). Original source limitation and 19 holds remain; no DIM/Profile adoption. STOP before J10; next one distinct Proceed G2-7N §§13.5.2.13–13.5.2.19.2.
+
+---
+
 # SOSA-G2-7M — consolidated original C239 J7/J8/J9 and auxiliary RF source assessment
 
 **11 November 2026.** This one source-sized packet examines original The Open Group SOSA C239 Edition1.1 (2023), **§§13.5.2.8–13.5.2.12**, PDF pp.295–306 (printed269–280), **STOP before §13.5.2.13 J10**. The [complete stable source inventory](SOSA_G2_7M_Original_Source_Item_Coverage_11NOV2026.json) accounts for **27 individually numbered SHALL Rules (26 Inspection I, one Analysis A), two Observations, zero numbered Recommendations, zero numbered Permissions, six original table texts, 102 individual table rows, five figure captions, and one separate unnumbered source SHALL in a table preamble**. Table/figure/context/pointer records are separate from numbered requirements.
