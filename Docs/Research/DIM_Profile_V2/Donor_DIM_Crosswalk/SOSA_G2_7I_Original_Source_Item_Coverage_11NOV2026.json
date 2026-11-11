@@ -1,0 +1,1355 @@
+{
+  "schema": "SOSA-C239-G2-7I-original-source-item-ledger-v0.1",
+  "date": "2026-11-11",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "document": "C239",
+    "edition": "1.1",
+    "year": 2023,
+    "library_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_pages": "273-278",
+    "printed_pages": "247-252",
+    "original_inline_text_read": true,
+    "figure_pixels_verified": false,
+    "original_SAE_MIL_VITA_unread": true,
+    "C239_eight_native_files_unread": true,
+    "S251_original_unread": true
+  },
+  "scope": "§13.5 introductory, §13.5.1, §§13.5.2.1–13.5.2.2.2 inclusive, STOP BEFORE §13.5.2.3",
+  "source_counts": {
+    "HEADING": 3,
+    "NESTED_SECTION": 4,
+    "CONTEXT": 12,
+    "TABLE": 3,
+    "CLASS_ROW": 2,
+    "FIGURE": 1,
+    "RULE": 23,
+    "PERMISSION": 4,
+    "OBSERVATION": 3,
+    "CONNECTOR": 16,
+    "J1_PIN": 11,
+    "total": 82,
+    "rules_method_I": 18,
+    "rules_method_A": 5,
+    "analysis_contexts_separate": 5
+  },
+  "source_items": [
+    {
+      "id": "SOSA-C239-G2-7I-HEADING-13_5",
+      "kind": "HEADING",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "sensor-host physical interface",
+      "prior": "UNREAD",
+      "source_review": "PARTIAL"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-HEADING-13_5_1",
+      "kind": "HEADING",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "Electrical Classes",
+      "prior": "UNREAD",
+      "source_review": "INLINE_COMPLETE"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-HEADING-13_5_2",
+      "kind": "HEADING",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Class1&2 Sensor Interfaces",
+      "prior": "UNREAD",
+      "source_review": "PARTIAL"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-NESTED_SECTION-13_5_2_1",
+      "kind": "NESTED_SECTION",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "original text audited to bounded stop"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-NESTED_SECTION-13_5_2_2",
+      "kind": "NESTED_SECTION",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "original text audited to bounded stop"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-NESTED_SECTION-13_5_2_2_1",
+      "kind": "NESTED_SECTION",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "original text audited to bounded stop"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-NESTED_SECTION-13_5_2_2_2",
+      "kind": "NESTED_SECTION",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "original text audited to bounded stop"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-class",
+      "kind": "CONTEXT",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "Electrical classes define suites of physical sensor/host connectors: Class1&2,3,5."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-turret",
+      "kind": "CONTEXT",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "SAE AS6129A turreted package limitation; other SOSA packages broader."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-future",
+      "kind": "CONTEXT",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Additional class options future, not Edition1.1 requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-class12",
+      "kind": "CONTEXT",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Connector family defined by Table13.5.2.1-1."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-alternative",
+      "kind": "CONTEXT",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "J2 OR J14 OR J15 applies only to Class1&2."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-J1scope",
+      "kind": "CONTEXT",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "One J1 per external sensing element; added J6 only with J1."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-keying",
+      "kind": "CONTEXT",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "First/extra mechanical key positions and J# nomenclature."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-nondefined",
+      "kind": "CONTEXT",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Non-defined connectors must be reported but not SOSA-conformant as connectors."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-platform",
+      "kind": "CONTEXT",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "J1 +28VDC/returns are printed Platform source, not installed energy proof."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-limits",
+      "kind": "CONTEXT",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "J1 electrical limits conditional on power use."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-safety",
+      "kind": "CONTEXT",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "J1 ground resistance hardware Rule, not live health."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONTEXT-end",
+      "kind": "CONTEXT",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "STOP before J2 §13.5.2.3, Class3/5 and mechanical §13.5.5."
+    },
+    {
+      "id": "SOSA-C239-G2-7I-TABLE-13_5_1_1",
+      "kind": "TABLE",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "Electrical classes turret table",
+      "image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7I-TABLE-13_5_2_1_1",
+      "kind": "TABLE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "J1-J16 connector table",
+      "image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7I-TABLE-13_5_2_2_1",
+      "kind": "TABLE",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "J1 pin allocation table",
+      "image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CLASS_ROW-class12",
+      "kind": "CLASS_ROW",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "SOSA Class1&2 : SAE I or II"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CLASS_ROW-class3",
+      "kind": "CLASS_ROW",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "SOSA Class3 : SAE III"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-FIGURE-13_5_2_2_1",
+      "kind": "FIGURE",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "J1 pin arrangement",
+      "pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_1_1",
+      "kind": "RULE",
+      "pdf_page": 273,
+      "printed_page": 247,
+      "meaning": "Turreted physical-package SOSA sensors conform to SAE AS6129A turret classes.",
+      "printed_id": "13.5.1-1",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_1",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Class1&2 connectors meet Table13.5.2.1-1 characteristics.",
+      "printed_id": "13.5.2.1-1",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_2",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Class1&2 requires J2 OR J14 OR J15.",
+      "printed_id": "13.5.2.1-2",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_3",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Incomplete J2 pin assignment requires used/unused pin document.",
+      "printed_id": "13.5.2.1-3",
+      "printed_modal": "shall",
+      "printed_conformance_method": "A"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_4",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Max one J1 per external sensing element.",
+      "printed_id": "13.5.2.1-4",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_5",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Extra J6 only if J1 used.",
+      "printed_id": "13.5.2.1-5",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_6",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "First J1,J2,J3,J4,J8,J9,J10,J11,J14,J15 keying follows MIL-DTL38999M.",
+      "printed_id": "13.5.2.1-6",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_7",
+      "kind": "RULE",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "First J7 keying follows VITA76.0.",
+      "printed_id": "13.5.2.1-7",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_8",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Additional J6 keying excludes A,N.",
+      "printed_id": "13.5.2.1-8",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_9",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Additional J2,J3,J4,J8,J9,J10,J11,J14,J15 excludes N.",
+      "printed_id": "13.5.2.1-9",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_10",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Additional J7 rotation differs, except N.",
+      "printed_id": "13.5.2.1-10",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_11",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Claimant lists used connectors and differentiates same-J by key.",
+      "printed_id": "13.5.2.1-11",
+      "printed_modal": "shall",
+      "printed_conformance_method": "A"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_12",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Same-J multiple connectors need distinguishing descriptions.",
+      "printed_id": "13.5.2.1-12",
+      "printed_modal": "shall",
+      "printed_conformance_method": "A"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_1_13",
+      "kind": "RULE",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Non-defined connector pin/signal/wire/modality/arrangement documented.",
+      "printed_id": "13.5.2.1-13",
+      "printed_modal": "shall",
+      "printed_conformance_method": "A"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1",
+      "kind": "RULE",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J1 DC Power 21-11 insert.",
+      "printed_id": "13.5.2.2-1",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_2",
+      "kind": "RULE",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "When J1 used, follow tabled pin allocation.",
+      "printed_id": "13.5.2.2-2",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_1",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Where +28VDC used, select MIL-STD704F and/or1275E.",
+      "printed_id": "13.5.2.2.1-1",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_2",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "J1 accepts +28VDC in any tabulated combination.",
+      "printed_id": "13.5.2.2.1-2",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_3",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Inrush per pair ≤25A for ≤2 seconds.",
+      "printed_id": "13.5.2.2.1-3",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_4",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": ">15A nominal requires parallel J1 pairs up to five.",
+      "printed_id": "13.5.2.2.1-4",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_5",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "After inrush nominal ≤15A per pair.",
+      "printed_id": "13.5.2.2.1-5",
+      "printed_modal": "shall",
+      "printed_conformance_method": "A"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_1_6",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Chassis isolation to J1 returns ≥1MΩ.",
+      "printed_id": "13.5.2.2.1-6",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-RULE-13_5_2_2_2_1",
+      "kind": "RULE",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "J1 safety ground to chassis ≤0.1Ω per MIL-STD1310H.",
+      "printed_id": "13.5.2.2.2-1",
+      "printed_modal": "shall",
+      "printed_conformance_method": "I"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-PERMISSION-13_5_2_1_1",
+      "kind": "PERMISSION",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "J2 pins may be incompletely allocated.",
+      "not_mandatory": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-PERMISSION-13_5_2_1_2",
+      "kind": "PERMISSION",
+      "pdf_page": 274,
+      "printed_page": 248,
+      "meaning": "Multiple same-J allowed except J1 per external element.",
+      "not_mandatory": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-PERMISSION-13_5_2_1_3",
+      "kind": "PERMISSION",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Not all J connectors required by every mission.",
+      "not_mandatory": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-PERMISSION-13_5_2_4",
+      "kind": "PERMISSION",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "Printed atypical identifier, duplicate J2 incomplete allocation permission.",
+      "not_mandatory": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-OBSERVATION-13_5_2_2_1_1",
+      "kind": "OBSERVATION",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Platform may accomplish inrush limit.",
+      "printed_method": null,
+      "not_rule": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-OBSERVATION-13_5_2_2_1_2",
+      "kind": "OBSERVATION",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Up to five parallel J1 pairs above 15A; printed (I) in Observation.",
+      "printed_method": "I",
+      "not_rule": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-OBSERVATION-13_5_2_2_1_3",
+      "kind": "OBSERVATION",
+      "pdf_page": 278,
+      "printed_page": 252,
+      "meaning": "Above 500W higher input voltage recommended.",
+      "printed_method": null,
+      "not_rule": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J1",
+      "kind": "CONNECTOR",
+      "pdf_page": 275,
+      "printed_page": 249,
+      "meaning": "J1 DC Power, shell 21, keying N, insert 21-11.",
+      "role": "DC Power",
+      "shell": "21",
+      "keying": "N",
+      "insert": "21-11",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J2",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J2 Signal, shell 25, keying N, insert 25-7.",
+      "role": "Signal",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-7",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J3",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J3 Copper Video, shell 21, keying N, insert 21-11.",
+      "role": "Copper Video",
+      "shell": "21",
+      "keying": "N",
+      "insert": "21-11",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J4",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J4 Fiber, shell 19, keying N, insert 19-11.",
+      "role": "Fiber",
+      "shell": "19",
+      "keying": "N",
+      "insert": "19-11",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J5",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J5 GPS Antenna, shell TNC, keying —, insert —.",
+      "role": "GPS Antenna",
+      "shell": "TNC",
+      "keying": "—",
+      "insert": "—",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J6",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J6 Aux DC, shell 21, keying A, insert 21-11.",
+      "role": "Aux DC",
+      "shell": "21",
+      "keying": "A",
+      "insert": "21-11",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J7",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J7 High-speed Copper, shell 17, keying N, insert UNPRINTED.",
+      "role": "High-speed Copper",
+      "shell": "17",
+      "keying": "N",
+      "insert": "UNPRINTED",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J8",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J8 High Density RF, shell 25, keying N, insert 25-19.",
+      "role": "High Density RF",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-19",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J9",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J9 Low Loss RF, shell 25, keying N, insert 25-8.",
+      "role": "Low Loss RF",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-8",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J10",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J10 AC Power, shell 17, keying N, insert 17-6.",
+      "role": "AC Power",
+      "shell": "17",
+      "keying": "N",
+      "insert": "17-6",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J11",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J11 High Voltage DC, shell 15, keying N, insert 15-5.",
+      "role": "High Voltage DC",
+      "shell": "15",
+      "keying": "N",
+      "insert": "15-5",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J12",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J12 Key Fill non-GPS, shell N/A, keying N/A, insert N/A.",
+      "role": "Key Fill non-GPS",
+      "shell": "N/A",
+      "keying": "N/A",
+      "insert": "N/A",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J13",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J13 Key Fill GPS, shell N/A, keying N/A, insert N/A.",
+      "role": "Key Fill GPS",
+      "shell": "N/A",
+      "keying": "N/A",
+      "insert": "N/A",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J14",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J14 High Density Fiber, shell 15, keying N, insert N/A.",
+      "role": "High Density Fiber",
+      "shell": "15",
+      "keying": "N",
+      "insert": "N/A",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J15",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J15 High Density Fiber, shell 11, keying N, insert —.",
+      "role": "High Density Fiber",
+      "shell": "11",
+      "keying": "N",
+      "insert": "—",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-CONNECTOR-J16",
+      "kind": "CONNECTOR",
+      "pdf_page": 276,
+      "printed_page": 250,
+      "meaning": "J16 External Battery, shell 9, keying N, insert 9-6.",
+      "role": "External Battery",
+      "shell": "9",
+      "keying": "N",
+      "insert": "9-6",
+      "source_table": "13.5.2.1-1",
+      "original_pixel_alignment_held": true
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-D",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-1: pin D, 28VDC@15A, Platform source, SC-AWG12.",
+      "signal": "DC-1",
+      "type": "28VDC@15A",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-E",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-1 RTN: pin E, DC RTN, Platform source, SC-AWG12.",
+      "signal": "DC-1 RTN",
+      "type": "DC RTN",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-F",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-2: pin F, 28VDC@15A, Platform source, SC-AWG12.",
+      "signal": "DC-2",
+      "type": "28VDC@15A",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-L",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-2 RTN: pin L, DC RTN, Platform source, SC-AWG12.",
+      "signal": "DC-2 RTN",
+      "type": "DC RTN",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-C",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-3: pin C, 28VDC@15A, Platform source, SC-AWG12.",
+      "signal": "DC-3",
+      "type": "28VDC@15A",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-G",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-3 RTN: pin G, DC RTN, Platform source, SC-AWG12.",
+      "signal": "DC-3 RTN",
+      "type": "DC RTN",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-K",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "Chassis: pin K, Ground, Platform source, SC-AWG12.",
+      "signal": "Chassis",
+      "type": "Ground",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-A",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-4: pin A, 28VDC@15A, Platform source, SC-AWG12.",
+      "signal": "DC-4",
+      "type": "28VDC@15A",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-J",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-4 RTN: pin J, DC RTN, Platform source, SC-AWG12.",
+      "signal": "DC-4 RTN",
+      "type": "DC RTN",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-B",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-5: pin B, 28VDC@15A, Platform source, SC-AWG12.",
+      "signal": "DC-5",
+      "type": "28VDC@15A",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    },
+    {
+      "id": "SOSA-C239-G2-7I-J1_PIN-H",
+      "kind": "J1_PIN",
+      "pdf_page": 277,
+      "printed_page": 251,
+      "meaning": "DC-5 RTN: pin H, DC RTN, Platform source, SC-AWG12.",
+      "signal": "DC-5 RTN",
+      "type": "DC RTN",
+      "source": "Platform",
+      "wire": "SC-AWG12"
+    }
+  ],
+  "connector_rows": [
+    {
+      "connector": "J1",
+      "role": "DC Power",
+      "shell": "21",
+      "keying": "N",
+      "insert": "21-11"
+    },
+    {
+      "connector": "J2",
+      "role": "Signal",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-7"
+    },
+    {
+      "connector": "J3",
+      "role": "Copper Video",
+      "shell": "21",
+      "keying": "N",
+      "insert": "21-11"
+    },
+    {
+      "connector": "J4",
+      "role": "Fiber",
+      "shell": "19",
+      "keying": "N",
+      "insert": "19-11"
+    },
+    {
+      "connector": "J5",
+      "role": "GPS Antenna",
+      "shell": "TNC",
+      "keying": "—",
+      "insert": "—"
+    },
+    {
+      "connector": "J6",
+      "role": "Aux DC",
+      "shell": "21",
+      "keying": "A",
+      "insert": "21-11"
+    },
+    {
+      "connector": "J7",
+      "role": "High-speed Copper",
+      "shell": "17",
+      "keying": "N",
+      "insert": "UNPRINTED"
+    },
+    {
+      "connector": "J8",
+      "role": "High Density RF",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-19"
+    },
+    {
+      "connector": "J9",
+      "role": "Low Loss RF",
+      "shell": "25",
+      "keying": "N",
+      "insert": "25-8"
+    },
+    {
+      "connector": "J10",
+      "role": "AC Power",
+      "shell": "17",
+      "keying": "N",
+      "insert": "17-6"
+    },
+    {
+      "connector": "J11",
+      "role": "High Voltage DC",
+      "shell": "15",
+      "keying": "N",
+      "insert": "15-5"
+    },
+    {
+      "connector": "J12",
+      "role": "Key Fill non-GPS",
+      "shell": "N/A",
+      "keying": "N/A",
+      "insert": "N/A"
+    },
+    {
+      "connector": "J13",
+      "role": "Key Fill GPS",
+      "shell": "N/A",
+      "keying": "N/A",
+      "insert": "N/A"
+    },
+    {
+      "connector": "J14",
+      "role": "High Density Fiber",
+      "shell": "15",
+      "keying": "N",
+      "insert": "N/A"
+    },
+    {
+      "connector": "J15",
+      "role": "High Density Fiber",
+      "shell": "11",
+      "keying": "N",
+      "insert": "—"
+    },
+    {
+      "connector": "J16",
+      "role": "External Battery",
+      "shell": "9",
+      "keying": "N",
+      "insert": "9-6"
+    }
+  ],
+  "J1_pin_rows": [
+    {
+      "pin": "D",
+      "signal": "DC-1",
+      "type": "28VDC@15A"
+    },
+    {
+      "pin": "E",
+      "signal": "DC-1 RTN",
+      "type": "DC RTN"
+    },
+    {
+      "pin": "F",
+      "signal": "DC-2",
+      "type": "28VDC@15A"
+    },
+    {
+      "pin": "L",
+      "signal": "DC-2 RTN",
+      "type": "DC RTN"
+    },
+    {
+      "pin": "C",
+      "signal": "DC-3",
+      "type": "28VDC@15A"
+    },
+    {
+      "pin": "G",
+      "signal": "DC-3 RTN",
+      "type": "DC RTN"
+    },
+    {
+      "pin": "K",
+      "signal": "Chassis",
+      "type": "Ground"
+    },
+    {
+      "pin": "A",
+      "signal": "DC-4",
+      "type": "28VDC@15A"
+    },
+    {
+      "pin": "J",
+      "signal": "DC-4 RTN",
+      "type": "DC RTN"
+    },
+    {
+      "pin": "B",
+      "signal": "DC-5",
+      "type": "28VDC@15A"
+    },
+    {
+      "pin": "H",
+      "signal": "DC-5 RTN",
+      "type": "DC RTN"
+    }
+  ],
+  "mapping_candidates": [
+    {
+      "row_id": "S06-R005",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-class",
+        "SOSA-C239-G2-7I-RULE-13_5_1_1"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Physical electrical classes qualify sensor/host.",
+      "negative_equivalence": "Not universal DIM superclass."
+    },
+    {
+      "row_id": "S06-R007",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J1"
+      ],
+      "relation": "NARROWER",
+      "native_meaning": "J connector is specialized physical equipment interface.",
+      "negative_equivalence": "Not installed equipment."
+    },
+    {
+      "row_id": "S06-R008",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_13"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Documented sensor-host physical connection.",
+      "negative_equivalence": "Not observed external cable."
+    },
+    {
+      "row_id": "S06-R009",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-turret"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Turret sensor-host physical interface.",
+      "negative_equivalence": "Not mandatory Platform class."
+    },
+    {
+      "row_id": "S06-R021",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_11",
+        "SOSA-C239-G2-7I-OBSERVATION-13_5_2_2_1_2"
+      ],
+      "relation": "PARTIAL",
+      "native_meaning": "Source conformance documentation and Observations distinct.",
+      "negative_equivalence": "Not Profile SHALL."
+    },
+    {
+      "row_id": "ISA-E-COMPONENT-CATEGORY",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-class"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Electrical classes are source-specific types.",
+      "negative_equivalence": "Not DIM hierarchy."
+    },
+    {
+      "row_id": "ISA-A-CONNECTION-PRESENTATION",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-keying"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Keyed J# nomenclature describes physical mating.",
+      "negative_equivalence": "Not digital encoding."
+    },
+    {
+      "row_id": "ISA-A-NETWORK-CONTEXT",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J7"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "High-speed physical copper connector.",
+      "negative_equivalence": "Not network instance."
+    },
+    {
+      "row_id": "ISA-A-BASELINE-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_2"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Class1&2 connector alternatives.",
+      "negative_equivalence": "Not all three required."
+    },
+    {
+      "row_id": "ISA-A-EXTENSION-STANDING",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-future"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Future classes and nonstandard connectors distinguished.",
+      "negative_equivalence": "Not currently conformant."
+    },
+    {
+      "row_id": "ISA-A-TIME-BASIS",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J5"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "GPS antenna connector label.",
+      "negative_equivalence": "No time measurement."
+    },
+    {
+      "row_id": "ISA-E-POWER-SOURCE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J1",
+        "SOSA-C239-G2-7I-CONNECTOR-J16"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "DC and external-battery connector options.",
+      "negative_equivalence": "No actual energy source."
+    },
+    {
+      "row_id": "ISA-K-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-TABLE-13_5_2_1_1"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Physical connector catalogue.",
+      "negative_equivalence": "Not live ISA capability."
+    },
+    {
+      "row_id": "ISA-K-VALUE-RANGE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_2_1_3"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "J1 transient current design limit.",
+      "negative_equivalence": "Not universal allowed value."
+    },
+    {
+      "row_id": "ISA-K-FIELD-DECL",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_13"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Physical pin documentation required.",
+      "negative_equivalence": "Not ISA JSON field."
+    },
+    {
+      "row_id": "ISA-T-CONFIG",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_11"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Documented connector inventory.",
+      "negative_equivalence": "Not applied config."
+    },
+    {
+      "row_id": "ISA-T-STATUS",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_2_2_1"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "Grounding design threshold.",
+      "negative_equivalence": "Not measured status."
+    },
+    {
+      "row_id": "ISA-C-099",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-J1scope"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "J1 per external sensing element.",
+      "negative_equivalence": "Not reported part-of."
+    },
+    {
+      "row_id": "CASE-H02",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-turret"
+      ],
+      "relation": "RELATED",
+      "native_meaning": "Specialized turret mount context.",
+      "negative_equivalence": "No installed case turret."
+    },
+    {
+      "row_id": "CASE-H03",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J2"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "Potential signal path.",
+      "negative_equivalence": "No real reporting proof."
+    },
+    {
+      "row_id": "CASE-H06",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_11"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "Connector disclosure.",
+      "negative_equivalence": "Not applied setting."
+    },
+    {
+      "row_id": "CASE-H08",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONNECTOR-J5"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "GPS connector.",
+      "negative_equivalence": "No QA/time fact."
+    },
+    {
+      "row_id": "ISA-A-CIC-MEDIATION",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_1_11"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "Keyed J# disclosure.",
+      "negative_equivalence": "Not CIC mediation."
+    },
+    {
+      "row_id": "ISA-A-SERVICE-ROLE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-RULE-13_5_2_2_1_1"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "Power input requirement.",
+      "negative_equivalence": "Not ISA service."
+    },
+    {
+      "row_id": "ISA-A-MEMBER-EXPOSURE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7I-CONTEXT-J1scope"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_meaning": "External sensing element scope.",
+      "negative_equivalence": "Not member exposure."
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7I-Q01",
+      "status": "HELD",
+      "description": "External original SAE AS6129A source unread; turret class equivalence not independently verified."
+    },
+    {
+      "id": "SOSA-G2-7I-Q02",
+      "status": "HELD",
+      "description": "MIL-DTL38999M Figure6 keying original unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q03",
+      "status": "HELD",
+      "description": "ANSI/VITA76.0 original J7 Rules2.3-1/-2 unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q04",
+      "status": "HELD",
+      "description": "MIL-STD704F and MIL-STD1275E originals unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q05",
+      "status": "HELD",
+      "description": "MIL-STD1310H §3.20 ground requirement original unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q06",
+      "status": "HELD",
+      "description": "Original VITA87.0, MIL-DTL55116, MIL-PRF39012 connectors unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q07",
+      "status": "HELD",
+      "description": "J7 insert and J14 connector Type ambiguous/unprinted in original parsed table."
+    },
+    {
+      "id": "SOSA-G2-7I-Q08",
+      "status": "HELD",
+      "description": "Table13.5.2.1-1 dense gender/modality columns visually unverified."
+    },
+    {
+      "id": "SOSA-G2-7I-Q09",
+      "status": "HELD",
+      "description": "J1 Figure13.5.2.2-1 exact contact geometry visually unverified."
+    },
+    {
+      "id": "SOSA-G2-7I-Q10",
+      "status": "HELD",
+      "description": "J1 Table13.5.2.2-1 modality tick-cell alignment not pixel verified."
+    },
+    {
+      "id": "SOSA-G2-7I-Q11",
+      "status": "HELD",
+      "description": "Printed Permission13.5.2-4 atypical, do not renumber."
+    },
+    {
+      "id": "SOSA-G2-7I-Q12",
+      "status": "HELD",
+      "description": "Observation13.5.2.2.1-2 has printed (I), still Observation."
+    },
+    {
+      "id": "SOSA-G2-7I-Q13",
+      "status": "HELD",
+      "description": "SAE turreted scope not universal sensing System."
+    },
+    {
+      "id": "SOSA-G2-7I-Q14",
+      "status": "HELD",
+      "description": "J2 or J14 or J15 not all three required."
+    },
+    {
+      "id": "SOSA-G2-7I-Q15",
+      "status": "HELD",
+      "description": "J1 maximum one per external sensing element not entire system."
+    },
+    {
+      "id": "SOSA-G2-7I-Q16",
+      "status": "HELD",
+      "description": "Remaining original §13.5.2.3 onwards unread in this packet."
+    },
+    {
+      "id": "SOSA-G2-7I-Q17",
+      "status": "HELD",
+      "description": "Electrical class not owner-adopted DIM hierarchy."
+    },
+    {
+      "id": "SOSA-G2-7I-Q18",
+      "status": "HELD",
+      "description": "Eight C239 native companions, later S251, restricted AppendixC unread."
+    },
+    {
+      "id": "SOSA-G2-7I-Q19",
+      "status": "HELD",
+      "description": "No empirical case establishes installed J1 or Class1&2 interface."
+    },
+    {
+      "id": "SOSA-G2-7I-Q20",
+      "status": "HELD",
+      "description": "Current/isolation/safety numbers are requirements, not measured live status."
+    }
+  ],
+  "c239_coverage": {
+    "total": 192,
+    "at_least_sampled_or_inline": 173,
+    "unread": 18,
+    "restricted": 1,
+    "newly_touched": 3,
+    "full_13_5_review": false
+  },
+  "DIM_and_CSAPI_Profile_adopted": false,
+  "independent_hardware_conformance_performed": false,
+  "next_only_new_owner_proceed": "G2-7J starts original §13.5.2.3 J2 signal connector, source-sized; SOSA ACTIVE/OPEN and SAPIENT blocked"
+}
