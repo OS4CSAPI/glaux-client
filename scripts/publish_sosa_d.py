@@ -445,11 +445,11 @@ def publish():
         for j,value in enumerate(row,1):
             need(actual.get(addr(i,j),"")==old.val(value),"actual saved workbook grid cell "+addr(i,j))
     register_cells=old.readcells(saved,"DIM Register")
-    need(sum(bool(re.fullmatch(r"A\\d+",cell)) for cell in register_cells)==330,
+    need(sum(bool(re.fullmatch(r"A\d+",cell)) for cell in register_cells)==330,
          "329 original stable row ids in DIM Register")
     before=old.readcells(prev,"Master Crosswalk")
     changed=[a for a in set(before)|set(actual) if before.get(a,"")!=actual.get(a,"")]
-    need(len(changed)==17 and all(re.fullmatch(r"I\\d+",a) for a in changed),
+    need(len(changed)==17 and all(re.fullmatch(r"I\d+",a) for a in changed),
          "exact 17 source-qualified SOSA donor cells modified, no non-target cells")
     (D/BOOK).write_bytes(saved)
     sha=digest(saved)
