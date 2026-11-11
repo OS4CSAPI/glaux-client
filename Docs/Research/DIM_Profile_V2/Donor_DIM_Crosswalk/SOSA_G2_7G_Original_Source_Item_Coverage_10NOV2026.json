@@ -1,0 +1,657 @@
+{
+  "schema": "SOSA-C239-G2-7G-13_3_8-analog-optical-original-source-item-ledger-v0.1",
+  "date": "2026-11-10",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "standard": "Technical Standard for SOSA Reference Architecture",
+    "edition": "1.1",
+    "year": 2023,
+    "document_id": "C239",
+    "original_project_library": "c239_5.pdf",
+    "library_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_pages": "266–268 inclusive",
+    "printed_pages": "240–242",
+    "source_grade": "DIRECT_ORIGINAL_INLINE_TEXT_RULES_CAPTIONS_AND_FIGURE_TEXT_LABELS_READ__PAGE_IMAGES_UNAVAILABLE",
+    "original_page_images_verified": false,
+    "original_ANSI_VITA65_1_67_3_66_5_companions_read": false,
+    "original_C239_DSDM_IDL_OpenAPI_eight_companions_read": false
+  },
+  "authorized_scope": "Entire §13.3.8 parent and nested §§13.3.8.1–13.3.8.2, original PDF266–268, stop BEFORE §13.4 on PDF268; original inline/captions only, figures pixel-held",
+  "original_registered_heading_coverage": [
+    {
+      "id": "13.3.8",
+      "title": "Backplane Apertures for Analog and Optical Fiber",
+      "previous_status": "UNREAD",
+      "new_coverage_status": "ORIGINAL_INLINE_TEXT_AND_FIGURE_CAPTION_PIN_LABELS_READ__ALL_FIGURE_PIXEL_GEOMETRY_HELD",
+      "pdf_start": 266,
+      "pdf_end": 268
+    }
+  ],
+  "additional_nested_subsections_reviewed": [
+    {
+      "id": "13.3.8.1",
+      "title": "SMPM-10 Radial Clock Pin Out",
+      "pdf_pages": [
+        266,
+        267
+      ],
+      "source_grade": "ORIGINAL_INLINE_RULE_AND_FIGURE_TEXT_LABELS__PIXELS_UNAVAILABLE"
+    },
+    {
+      "id": "13.3.8.2",
+      "title": "SMPM-14 Pin Designation and Usage",
+      "pdf_pages": [
+        267,
+        268
+      ],
+      "source_grade": "ORIGINAL_INLINE_RULE_REC_OBS_AND_FIGURE_CAPTIONS__PIXELS_UNAVAILABLE"
+    }
+  ],
+  "source_counts": {
+    "SOURCE_CONTEXT": 13,
+    "RULE": 2,
+    "FIGURE": 3,
+    "PIN_ROW": 10,
+    "RECOMMENDATION": 1,
+    "OBSERVATION": 1,
+    "native_source_items": 30,
+    "analytical_contexts": 6,
+    "total_records": 36,
+    "numbered_rules": 2,
+    "numbered_recommendations": 1,
+    "numbered_observations": 1,
+    "figure_captions": 3,
+    "printed_SMPM10_pin_rows": 10,
+    "original_source_rule_T_method_count": 1,
+    "original_recommendation_T_method_count": 1,
+    "original_rule_no_method_printed": 1,
+    "original_SOURCE_RULE13_3_8_2_1_found": false
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-SOSA_APERTURE_STANDARDS",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8 opening",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Source distinguishes ANSI/VITA 67.3 coaxial aperture and VITA 66.5 optical fiber aperture interfaces used in VITA 65 Slot Profiles.",
+      "normative_standing": "SOURCE_DESCRIPTIVE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-PHYSICAL_VS_SIGNAL_ALLOCATION",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8 opening",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Preceding Slot Profiles define physical aperture interface; this subsection introduces recommended signal-use associations, e.g. tuner RF channels.",
+      "normative_standing": "SOURCE_SCOPED_DESCRIPTION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-INTEROPERABILITY_RECABLING_GOAL",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8 next paragraph",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Signal allocation aims to minimize replacement/re-cabling when slot capabilities change while permitting customization when required.",
+      "normative_standing": "SOURCE_RATIONALE_NOT_NUMBERED_RULE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-IO_CHANNEL_FOCUS",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8 next paragraph",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Recommendations focus on I/O channels while allowing other connections according to user need.",
+      "normative_standing": "SOURCE_RATIONALE_NOT_NUMBERED_RULE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-RADIAL_CLOCK_LIMIT",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.1",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Edition 1.1 explicit existing regulations here apply only to coax pin designations for 3U radial-clock slot profile SLT3x-TIM-2S1U22S1U2U1H-14.9.2-1.",
+      "normative_standing": "SOURCE_LIMITED_APPLICABILITY",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "printed_profile": "SLT3x-TIM-2S1U22S1U2U1H-14.9.2-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-FUTURE_ALL_SLOT_PROFILES",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.1 Note",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "A future edition is intended to define all SOSA slot profiles using ANSI/VITA 67.3 and VITA 66.5 interfaces, not specified as complete now.",
+      "normative_standing": "SOURCE_FUTURE_PLACEHOLDER_NOT_REQUIREMENT",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-ANALOG_RF_IF_SCOPE_SMPM10",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.1",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "Analog I/O means both Radio Frequency (RF) and Intermediate Frequency (IF) for this subsection.",
+      "normative_standing": "SOURCE_LOCAL_DEFINITION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-RULE-13_3_8_1_1",
+      "kind": "RULE",
+      "source_locator": "Rule 13.3.8.1-1",
+      "original_pdf_page": 266,
+      "printed_page": 240,
+      "original_source_meaning": "ANSI/VITA 67.3 SMPM-10 coax pin designations shall follow ANSI/VITA 65.1 Table 6.4.5.6.3-1 as portrayed in Figure 13.3.8.1-1.",
+      "normative_standing": "NUMBERED_RULE_SHALL",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "source_rule": "13.3.8.1-1",
+      "printed_modal_verb": "shall",
+      "conformance_method_printed": null,
+      "reference_standard": "ANSI/VITA 65.1",
+      "reference_table": "6.4.5.6.3-1",
+      "reference_figure": "13.3.8.1-1",
+      "scope": "specific 3U radial-clock SMPM-10 coax design; external original not audited"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-FIGURE-13_3_8_1_1",
+      "kind": "FIGURE",
+      "source_locator": "Figure 13.3.8.1-1",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Caption: ANSI/VITA 67.3 SMPM-10 Coaxial Pin Designations; extracted figure text contains ten A/B/C pin rows but original physical graphic pixels not verified.",
+      "normative_standing": "SOURCE_FIGURE_TEXT_ONLY",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "physical_graphic_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_A1",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "A1: printed direction OUT; signal EXT_REF_CLK_Out, referenced §5.14.1.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "A1",
+      "printed_direction": "OUT",
+      "printed_signal_name": "EXT_REF_CLK_Out",
+      "related_original_clause": "5.14.1",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_A2",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "A2: printed direction OUT; signal EXT_AUX_CLK_Out, referenced §5.14.2.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "A2",
+      "printed_direction": "OUT",
+      "printed_signal_name": "EXT_AUX_CLK_Out",
+      "related_original_clause": "5.14.2",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_A3",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "A3: printed direction X; signal RSVD.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "A3",
+      "printed_direction": "X",
+      "printed_signal_name": "RSVD",
+      "related_original_clause": null,
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B1",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "B1: printed direction IN; signal EXT_AUX_CLK_In, referenced §5.14.2.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "B1",
+      "printed_direction": "IN",
+      "printed_signal_name": "EXT_AUX_CLK_In",
+      "related_original_clause": "5.14.2",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B2",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "B2: printed direction IN; signal EXT_REF_CLK_In, referenced §5.14.1.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "B2",
+      "printed_direction": "IN",
+      "printed_signal_name": "EXT_REF_CLK_In",
+      "related_original_clause": "5.14.1",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B3",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "B3: printed direction X; signal RSVD.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "B3",
+      "printed_direction": "X",
+      "printed_signal_name": "RSVD",
+      "related_original_clause": null,
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B4",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "B4: printed direction X; signal RSVD.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "B4",
+      "printed_direction": "X",
+      "printed_signal_name": "RSVD",
+      "related_original_clause": null,
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C1",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "C1: printed direction X; signal RSVD.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "C1",
+      "printed_direction": "X",
+      "printed_signal_name": "RSVD",
+      "related_original_clause": null,
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C2",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "C2: printed direction IN; signal GPS_Ant2_In, referenced §5.14.3.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "C2",
+      "printed_direction": "IN",
+      "printed_signal_name": "GPS_Ant2_In",
+      "related_original_clause": "5.14.3",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C3",
+      "kind": "PIN_ROW",
+      "source_locator": "Figure 13.3.8.1-1, printed embedded pin-label text",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "C3: printed direction IN; signal GPS_Ant1_In, referenced §5.14.3.",
+      "normative_standing": "FIGURE_TEXT_ROW_NOT_INDEPENDENTLY_PIXEL_VERIFIED",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "connector_type": "SMPM-10",
+      "pin": "C3",
+      "printed_direction": "IN",
+      "printed_signal_name": "GPS_Ant1_In",
+      "related_original_clause": "5.14.3",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-SMPM14_REFERENCE_FIGURE_1",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2 prose",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Figure 13.3.8.2-1 said to provide SMPM-14 ANSI/VITA 67.3 aperture pin definitions from ANSI/VITA 65.1 Table 6.5.4.6.4-1.",
+      "normative_standing": "SOURCE_EXTERNAL_TABLE_REFERENCE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "printed_table_pointer": "6.5.4.6.4-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-FIGURE-13_3_8_2_1",
+      "kind": "FIGURE",
+      "source_locator": "Figure 13.3.8.2-1",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Caption says SMPM-14 coax pin designations per ANSI/VITA 65.1 Table 6.5.4.6.4-1; actual contact diagram pixels not accessible.",
+      "normative_standing": "SOURCE_FIGURE_CAPTION_ONLY",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-SMPM14_FRONT_BACKPLANE_PERSPECTIVE",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2 prose",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Figure 13.3.8.2-2 portrays SMPM-14 contact designations from front-of-backplane perspective.",
+      "normative_standing": "SOURCE_CONTEXT_NOT_DIRECT_PIN_MATRIX",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-RULE-13_3_8_2_2",
+      "kind": "RULE",
+      "source_locator": "Rule 13.3.8.2-2",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "A SOSA PIC with ANSI/VITA 67.3 SMPM-14 coax pin designation shall follow ANSI/VITA 65.1 Table 6.4.5.6.4-1 portrayed in Figure 13.3.8.2-2; printed Conformance Methodology (T).",
+      "normative_standing": "NUMBERED_RULE_SHALL",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "source_rule": "13.3.8.2-2",
+      "printed_modal_verb": "shall",
+      "conformance_method_printed": [
+        "T"
+      ],
+      "reference_standard": "ANSI/VITA 65.1",
+      "reference_table": "6.4.5.6.4-1",
+      "reference_figure": "13.3.8.2-2",
+      "source_scope": "conditional upon PIC with SMPM-14 coax pin designation"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-FIGURE-13_3_8_2_2",
+      "kind": "FIGURE",
+      "source_locator": "Figure 13.3.8.2-2",
+      "original_pdf_page": 268,
+      "printed_page": 242,
+      "original_source_meaning": "Caption: ANSI/VITA 67.3 SMPM-14 Coaxial Pin Designations; exact front-of-backplane contact layout not inspected at original pixel level.",
+      "normative_standing": "SOURCE_FIGURE_CAPTION_ONLY",
+      "access_grade": "ORIGINAL_EXTRACTED_FIGURE_CAPTION_AND_TEXT_LABELS_ONLY__PIXEL_GEOMETRY_UNVERIFIED",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "graphic_contact_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-RECOMMENDATION-13_3_8_2_1",
+      "kind": "RECOMMENDATION",
+      "source_locator": "Recommendation 13.3.8.2-1",
+      "original_pdf_page": 268,
+      "printed_page": 242,
+      "original_source_meaning": "A SOSA PIC using an ANSI/VITA 67.3 SMPM-14 coax pin designation should associate its internal channels as depicted in Figure 13.3.8.2-2; Conformance Methodology (T).",
+      "normative_standing": "NUMBERED_RECOMMENDATION_SHOULD",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "source_recommendation": "13.3.8.2-1",
+      "printed_modal_verb": "should",
+      "conformance_method_printed": [
+        "T"
+      ],
+      "figure": "13.3.8.2-2",
+      "not_mandatory_rule": true
+    },
+    {
+      "id": "SOSA-C239-G2-7G-OBSERVATION-13_3_8_2_1",
+      "kind": "OBSERVATION",
+      "source_locator": "Observation 13.3.8.2-1",
+      "original_pdf_page": 268,
+      "printed_page": 242,
+      "original_source_meaning": "For one analog signal use B1; when two, Channel 1 uses B1 and Channel 2 B4; figure defines eight analog I/O contacts for vendor-card interoperability and chassis I/O association.",
+      "normative_standing": "NUMBERED_OBSERVATION_NOT_RULE",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "source_observation": "13.3.8.2-1",
+      "single_channel": "B1",
+      "two_channels": {
+        "channel_1": "B1",
+        "channel_2": "B4"
+      },
+      "mentioned_analog_io_count": 8,
+      "geometry_and_other_six_contact_assignments_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-RF_PINOUT_AMPS_FIELD",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2 following Observation",
+      "original_pdf_page": 268,
+      "printed_page": 242,
+      "original_source_meaning": "AMPS RF pinout protocol field identifies which distinct physical pinout is used; not a general software message field.",
+      "normative_standing": "SOURCE_DESCRIPTION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-ANALOG_RF_IF_SCOPE_SMPM14",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2 final paragraph",
+      "original_pdf_page": 268,
+      "printed_page": 242,
+      "original_source_meaning": "Analog I/O in this SMPM-14 subsection likewise denotes both RF and IF signals.",
+      "normative_standing": "SOURCE_LOCAL_DEFINITION",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-TABLE_POINTER_INCONSISTENCY",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2 Figure13.3.8.2-1 caption versus Rule13.3.8.2-2",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Printed caption points to ANSI/VITA65.1 Table 6.5.4.6.4-1, but subsequent numbered Rule cites 6.4.5.6.4-1; leave source discrepancy unresolved.",
+      "normative_standing": "PUBLISHED_SOURCE_CONFLICT",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement.",
+      "caption_pointer": "6.5.4.6.4-1",
+      "numbered_rule_pointer": "6.4.5.6.4-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-SOURCE_CONTEXT-RULE_NUMBER_GAP",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.8.2",
+      "original_pdf_page": 267,
+      "printed_page": 241,
+      "original_source_meaning": "Original inline shows Rule13.3.8.2-2 but no source Rule13.3.8.2-1 in reviewed text; figure pixels unavailable and no phantom rule invented.",
+      "normative_standing": "OBSERVED_PRINTED_RULE_SEQUENCE_GAP",
+      "access_grade": "ORIGINAL_C239_INLINE_TEXT_DIRECT_READ",
+      "boundary": "Source-specific physical SOSA interface design and routing context; not asserted as installed equipment, universal sensing-system chassis, independent device test, observed radio signal, software/API field or adopted DIM/Profile requirement."
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-PHYSICAL_PIN_SIGNAL_VS_SYSTEM",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "SMPM-10 and SMPM-14 pinouts address specific physical PIC signal positions, not a universal DIM chassis, SensorML component or CSAPI resource.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-RULE_VS_REC_VS_OBS",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "One parent source clause includes two numbered Rules, one Recommendation and one Observation, each with different requirement standing and methods.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-FIGURE_GEOMETRY_HELD",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "Text labels and figure captions can be inventoried, but exact contact topology/orientation/all eight channel mappings need original pixels and native ANSI/VITA.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-CONFLICT_NOT_CORRECTION",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "Rule/figure external table-number tension remains as printed; no implicit editorial repair.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-CASE_NEGATIVE_EVIDENCE",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "None of four source cases establishes an actual SOSA analog/RF/IF chassis or installed SMPM-10/-14 connector.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    },
+    {
+      "id": "SOSA-C239-G2-7G-ANALYTICAL_CONTEXT-FUTURE_DISTINCT_FROM_RULE",
+      "kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project synthesis constrained to original C239 §13.3.8",
+      "original_pdf_page": 268,
+      "meaning": "Future promise for all SOSA slot profiles does not mean Edition1.1 already includes universal analog pinout definitions.",
+      "source_standing": "ANALYST_CONTEXT_NOT_NATIVE_NORMATIVE_RULE"
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7G-H01",
+      "code": "FIGURE_PIXELS_UNAVAILABLE",
+      "reason": "Original pinout figures 13.3.8.1-1,13.3.8.2-1 and13.3.8.2-2 cannot be independently pixel-inspected; full contact geometry and all SMPM14 channels cannot be certified."
+    },
+    {
+      "id": "SOSA-G2-7G-H02",
+      "code": "NATIVE_ANSI_VITA65_1_UNREAD",
+      "reason": "Original ANSI/VITA65.1 tables 6.4.5.6.3-1,6.4.5.6.4-1,6.5.4.6.4-1 not examined; C239 pointers are not native content audit."
+    },
+    {
+      "id": "SOSA-G2-7G-H03",
+      "code": "NATIVE_VITA67_3_UNREAD",
+      "reason": "Full original ANSI/VITA67.3 SMPM10/14 coax connector definitions unread, no independent mechanical intermateability assertion."
+    },
+    {
+      "id": "SOSA-G2-7G-H04",
+      "code": "NATIVE_VITA66_5_UNREAD",
+      "reason": "Full optical VITA66.5 native original unread; §13.3.8 names it but provides no exhaustive original optical-pin rules."
+    },
+    {
+      "id": "SOSA-G2-7G-H05",
+      "code": "NATIVE_EIGHT_C239_COMPANIONS_UNREAD",
+      "reason": "C239 DSDM, IDL and six OpenAPI native originals still unread; physical pin mapping is not an API schema."
+    },
+    {
+      "id": "SOSA-G2-7G-H06",
+      "code": "SMPM14_TABLE_POINTER_CONFLICT",
+      "reason": "Figure13.3.8.2-1 caption references ANSI/VITA 65.1 Table6.5.4.6.4-1, whereas Rule13.3.8.2-2 references 6.4.5.6.4-1; cannot adjudicate without native originals."
+    },
+    {
+      "id": "SOSA-G2-7G-H07",
+      "code": "SMPM14_RULE_NUMBER_GAP",
+      "reason": "Numbered Rule13.3.8.2-2 appears without Rule13.3.8.2-1 in directly available inline text; do not invent missing text."
+    },
+    {
+      "id": "SOSA-G2-7G-H08",
+      "code": "SMPM10_RULE_METHOD_NOT_PRINTED",
+      "reason": "Rule13.3.8.1-1 has no Conformance Methodology label printed adjacent in directly reviewed C239 text; do not assign T by analogy."
+    },
+    {
+      "id": "SOSA-G2-7G-H09",
+      "code": "SMPM14_RECOMMENDATION_SHOULD_NOT_SHALL",
+      "reason": "Recommendation13.3.8.2-1 prints should with T, not a universal SHALL."
+    },
+    {
+      "id": "SOSA-G2-7G-H10",
+      "code": "SMPM14_OBSERVATION_B1_B4_SCOPED",
+      "reason": "B1 and B4 channel mapping described only for one/two analog channels; remaining eight-channel diagram cannot be reconstructed from Observation."
+    },
+    {
+      "id": "SOSA-G2-7G-H11",
+      "code": "SMPM10_PIN_LABELS_NOT_PIXEL_GEOMETRY",
+      "reason": "Ten printed SMPM10 pin-label text entries read, but actual graphical contact orientation/geometry not verified."
+    },
+    {
+      "id": "SOSA-G2-7G-H12",
+      "code": "SMPM10_RADIAL_CLOCK_NARROW",
+      "reason": "§13.3.8.1 applies to 3U Radial Clock Profile, not all sensors or SOSA PIC types."
+    },
+    {
+      "id": "SOSA-G2-7G-H13",
+      "code": "FUTURE_VITA_PINOUTS_NOT_CURRENT",
+      "reason": "Edition1.1 notes further definition of all SOSA slot profiles as future; do not infer present universal requirements."
+    },
+    {
+      "id": "SOSA-G2-7G-H14",
+      "code": "RF_IF_NOT_SENSING_OBSERVATION",
+      "reason": "RF/IF analog signal path definitions are not observed sensor outputs, measured frequency, or live status without actual case evidence."
+    },
+    {
+      "id": "SOSA-G2-7G-H15",
+      "code": "HARDWARE_PINOUT_NOT_PROFILE_ADOPTION",
+      "reason": "Physical standards Rule/Recommendation/Observation not automatically adopted as DIM class/cardinality or CSAPI Profile SHALL."
+    },
+    {
+      "id": "SOSA-G2-7G-H16",
+      "code": "NO_INSTALLED_CASE_DEVICE_OR_CONFORMANCE",
+      "reason": "No Dragino/AirGradient/Campbell/Bennett source establishes installed SOSA PIC, SMPM coax, chassis I/O or independent hardware conformance."
+    },
+    {
+      "id": "SOSA-G2-7G-H17",
+      "code": "PREVIOUS_G2_7C_D_E_F_HOLDS_PERSIST",
+      "reason": "Earlier 19/17/16/17 exact packet-local holds remain, including unverified dense AMPS table matrices."
+    },
+    {
+      "id": "SOSA-G2-7G-H18",
+      "code": "LATER_S251_EDITION_UNREAD",
+      "reason": "SOSA Edition2.0 2025 Snapshot3 native source not assessed in this packet; Edition1.1 C239 findings not upgraded."
+    },
+    {
+      "id": "SOSA-G2-7G-H19",
+      "code": "STOP_BEFORE_13_4",
+      "reason": "§13.4 VNX PIC source excluded and cannot be advanced without another owner's Proceed."
+    }
+  ],
+  "C239_cumulative_coverage": {
+    "registered_headings": 192,
+    "at_least_source_sampled_or_inline_read": 161,
+    "substantively_unread": 30,
+    "restricted": 1,
+    "all_nested_subclauses_text_read": true,
+    "figure_pixel_geometry_complete": false,
+    "original_native_companions_complete": false
+  },
+  "DIM_CSAPI_Profile_adopted": false,
+  "runtime_or_independent_hardware_conformance_performed": false,
+  "next_only_after_distinct_owner_proceed": "SOSA-G2-7H starting original C239 §13.4 SOSA Plug-In Cards Using VNX, evidence-sized original-source packet, keeping source holds. Step18 SAPIENT blocked."
+}
