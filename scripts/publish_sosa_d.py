@@ -280,8 +280,8 @@ def check_source(m,l):
              "unverified dense matrix and source originals explicitly held for "+r["row_id"])
         need("G2-7C:" in r["display"][8] and r["display"][8]!=e["previous_sosa_cell_value"],
              "original-source-qualified incremental SOSA donor cell "+r["row_id"])
-    need(m["currentWorkbookSha256"]==OLD and m["workbookSnapshot"]["sha256"]==OLD
-         and not m["workbookSnapshot"]["currently_matches_readable_view"],"previous G2-7D saved 26-sheet source snapshot")
+    need(m["currentWorkbookSha256"]==digest((D/BOOK).read_bytes())
+         and m["workbookSnapshot"]["sha256"]==m["currentWorkbookSha256"],"actual saved current workbook hash retained")
     need(m["SOSAReviewCompletion"]["G2_7C_XLSX_lag"]==0,"earlier G2-7C saved Excel publication preserved")
     print("PASS: previous G2-7C native source and 22 source-qualified cells preserved (matrix visual hold)")
 
@@ -510,9 +510,8 @@ def check_source(m,l):
         need("G2-7G:" in r["display"][8]
              and r["display"][8].startswith(ev["previous_sosa_cell_value"]),
              "previous SOSA donor evidence value preserved before native §13.3.8 comparison "+r["row_id"])
-    need(m["SOSAReviewCompletion"]["G2_7G_XLSX_lag"]==0
-         and m["workbookSnapshot"]["currently_matches_readable_view"] is False,
-         "source grid exactly eighteen SOSA cells ahead of same prior saved workbook before L23 exit")
+    need(m["SOSAReviewCompletion"]["G2_7G_XLSX_lag"]==0,
+         "previous G2-7G source/workbook exit preserved")
     print("PASS: original §13.3.8 two Rules, one Recommendation/Observation, 3 figures, 10 text pin labels, 18 source-qualified cells and holds")
 
     # G2-7H original §13.4 VNX future/provisional source native row census
@@ -560,9 +559,9 @@ def check_source(m,l):
              and row["display"][8].startswith(ev["previous_sosa_cell_value"])
              and "G2-7H:" in row["display"][8],
              "source ID/provenance, previous SOSA value and no model adoption "+row["row_id"])
-    need(m["SOSAReviewCompletion"]["G2_7H_XLSX_lag"]==16
-         and m["workbookSnapshot"]["currently_matches_readable_view"] is False,
-         "binding L23: current 16 source cells not yet in older G2-7G original workbook")
+    need(m["SOSAReviewCompletion"]["G2_7H_XLSX_lag"] in (0,16)
+         and m["workbookSnapshot"]["currently_matches_readable_view"] is (m["SOSAReviewCompletion"]["G2_7H_XLSX_lag"]==0),
+         "current L23 source-lag or already-saved verified workbook state")
     print("PASS: G2-7H original §13.4: 57 records, 9 headings, 18 TBD, 2 Observations, 16 qualified cells; Excel checkpoint pending")
 
 def matrix_to_xml(matrix,styles,main=False,sections=()):
@@ -647,8 +646,15 @@ def register(m):
 
 def publish():
     m=load(MASTER);l=load(LEDGER);check_source(m,l)
-    prev=(D/BOOK).read_bytes()
-    need(digest(prev)==OLD,"SAME original preceding G2-7F 26-sheet workbook preserved as unchanged input")
+    stored=(D/BOOK).read_bytes()
+    if digest(stored)==OLD:
+        prev=stored
+    else:
+        from subprocess import check_output
+        need(digest(stored)==m["currentWorkbookSha256"] and m["workbookSnapshot"]["currently_matches_readable_view"],
+             "already published actual source checkpoint and hash")
+        prev=check_output(["git","show","115a77e7a4e37e6a174e56741211f3392e6a6e5a:Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx"])
+    need(digest(prev)==OLD,"proven earlier G2-7G SAME workbook base")
     with zipfile.ZipFile(io.BytesIO(prev)) as z:
         need(z.testzip() is None,"previous verified source workbook ZIP CRC")
         paths=old.sheetpaths(z);need(len(paths)==26,"original 26 worksheet names and order")
@@ -689,7 +695,8 @@ def publish():
     before=old.readcells(prev,"Master Crosswalk")
     delta=[a for a in set(before)|set(actual) if before.get(a,"")!=actual.get(a,"")]
     need(len(delta)==16 and all(re.fullmatch(r"I\d+",a) for a in delta),
-         "18 source-qualified original SOSA donor-column cells only; no case/other-donor/DIM changes")
+         "16 source-qualified original SOSA donor-column cells only; no case/other-donor/DIM changes")
+    if digest(stored)!=OLD:need(digest(saved)==digest(stored),"exact already-published 16-cell workbook re-creation")
     (D/BOOK).write_bytes(saved)
     sha=digest(saved)
     m["currentWorkbookSha256"]=sha
@@ -700,9 +707,9 @@ def publish():
         "refreshed_cell_count":16,"validation_file":REPORT})
     m["SOSAEvidence"]["G2_7H"].update({"excel_checkpoint":"SOSA-G2-7H-CANONICAL-VERIFIED",
         "excel_validation":REPORT,"Excel_lag_cells":0,"same_saved_workbook_16_cells_synced":True,
-        "original_pinout_figures_pixel_verified":False})
+        "original_VNX_figures_pixel_verified":False})
     m["SOSAReviewCompletion"]["G2_7H_XLSX_lag"]=0
-    m["SOSAReviewCompletion"]["status"]="OPEN__G2_7H_SAME_SAVED_EXCEL_VERIFIED__30_UNREAD_1_RESTRICTED_ORIGINAL_FIGURES_HELD"
+    m["SOSAReviewCompletion"]["status"]="OPEN__G2_7H_SAME_SAVED_EXCEL_VERIFIED__21_UNREAD_1_RESTRICTED_FIGURE_NATIVE_HOLDS"
     m["SOSAReviewCompletion"]["next_on_owner_proceed"]="G2-7I original C239 §13.5 physical sensor-to-host electrical and mechanical interface, source-sized; SOSA OPEN and all source holds preserved"
     m["nextOwnerAction"]="Only separate owner Proceed starts G2-7I beginning original C239 §13.5 electrical/mechanical sensor-to-host interface; SOSA OPEN and SAPIENT blocked."
     m["publicationPolicy"]="L23 G2-7H: 16 original source-graded VNX §13.4 future/TBD-related SOSA I cells synchronized JSON/BOTH CSV/BOTH readable Markdown and SAME 26-sheet original Excel; 346x15 saved cells verified; visual/native source holds persist."
