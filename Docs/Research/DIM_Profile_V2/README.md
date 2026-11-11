@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-7O verified; next G2-7P only (11 November 2026)
+
+Original C239 Class3 §§13.5.3–13.5.3.3.11 audited and 24 qualified SOSA cells integrated in the SAME verified 26-sheet Excel, with exact rule/table pin conflicts retained. [Controlling donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [SOSA execution plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). **SOSA OPEN; SAPIENT blocked. Next distinct owner Proceed: G2-7P §§13.5.3.4–13.5.3.17.2 only, STOP before §13.5.4.**
+
+---
+
 # CURRENT — SOSA-G2-7N verified (11 November 2026)
 
 Original C239 §§13.5.2.13–13.5.2.19.2 audited, **24 existing SOSA cells updated** in the same fully verified 26-sheet master Excel; precise holds retained. See [governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) and [SOSA plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Next owner Proceed: G2-7O Class3 §§13.5.3–13.5.3.3.11 only, SOSA OPEN and SAPIENT blocked.
