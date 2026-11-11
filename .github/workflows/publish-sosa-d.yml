@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Preserve 26 worksheets and synchronize G2-7K 10 source-qualified SOSA cells
+    name: Preserve 26 worksheets and synchronize consolidated G2-7L 24 source-qualified SOSA cells
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -33,8 +33,10 @@ jobs:
         run: python -m py_compile scripts/publish_sosa_d.py
       - name: Validate previous C239 source and old SAME workbook input
         run: python -c 'import sys;sys.path.insert(0,"scripts");import publish_sosa_d as p;m=p.load(p.MASTER);p.check_source(m,p.load(p.LEDGER))'
-      - name: Validate original G2-7K native source and 25 mapping cells
+      - name: Validate G2-7K previously verified source
         run: python -c 'import sys;sys.path.insert(0,"scripts");import publish_sosa_d as p;p.check_g2_7k_source(p.load(p.MASTER))'
+      - name: Check consolidated G2-7L original source ledger before workbook build
+        run: python -c 'import sys;sys.path.insert(0,"scripts");import publish_sosa_d as p;p.check_g2_7l_source(p.load("SOSA_G2_7L_Original_Source_Item_Coverage_11NOV2026.json"))'
       - name: Build SAME original canonical XLSX from qualified source
         run: python scripts/publish_sosa_d.py
       - name: Commit original workbook, source metadata and actual saved-cell validation
@@ -45,11 +47,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.csv \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7K_Workbook_Validation_11NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7K_Workbook_Preview_11NOV2026.png
-          if git diff --cached --quiet; then echo "FAIL: no verified original workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): synchronize 10 G2-7K original Gigabit Ethernet source cells in SAME 26-sheet Excel"
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7L_Workbook_Validation_11NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7L_Workbook_Preview_11NOV2026.png
+          if git diff --cached --quiet; then echo "FAIL: no verified consolidated G2-7L workbook publication"; exit 1; fi
+          git commit -m "research(dim-v2): synchronize 24 G2-7L original J2-J6 source cells in SAME 26-sheet Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Read back exact committed workbook bytes and source metadata
         shell: bash
@@ -61,13 +67,13 @@ jobs:
           from pathlib import Path
           d=Path("Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk")
           j=json.loads((d/"Master_Donor_Concept_to_DIM_Crosswalk.json").read_text(encoding="utf-8"))
-          v=json.loads((d/"SOSA_G2_7K_Workbook_Validation_11NOV2026.json").read_text(encoding="utf-8"))
+          v=json.loads((d/"SOSA_G2_7L_Workbook_Validation_11NOV2026.json").read_text(encoding="utf-8"))
           saved=(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx").read_bytes()
           assert hashlib.sha256(saved).hexdigest()==j["currentWorkbookSha256"]==v["workbook_sha256"]
           assert j["workbookSnapshot"]["currently_matches_readable_view"] is True
-          assert j["workbookSnapshot"]["refreshed_cell_count"]==10
+          assert j["workbookSnapshot"]["refreshed_cell_count"]==24
           assert len(j["columns"])==15 and len(j["rows"])==329
-          assert v["G2_7K_qualified_existing_sosa_cells"]==10 and all(v["checks"].values())
+          assert v["G2_7L_qualified_existing_sosa_cells"]==24 and all(v["checks"].values())
           with zipfile.ZipFile(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx") as z: assert z.testzip() is None
-          print("PASS: G2-7K original source, exact saved 26-sheet Excel, 10 SOSA cells and source holds")
+          print("PASS: G2-7L original source, exact saved 26-sheet Excel, 24 SOSA cells and source holds")
           PY
