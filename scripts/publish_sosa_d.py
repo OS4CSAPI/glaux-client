@@ -2783,5 +2783,220 @@ def publish_g2_7s():
     print("PASS G2-7S 5 SHALL,1 Observation,1 Permission,41 SOSA cells and all saved 346x15 Excel; SHA "+sha)
     return sha
 
+def check_g2_7t_source(z,m=None):
+    c=z["counts"];items=z["original_source_items"];ids={v["id"] for v in items}
+    need(len(ids)==len(items)==107==c["source_records"],
+         "107 unique C239 original Appendix A/B native source or pointer items")
+    for k,n in (("AV2_NATIVE_DEFINITION",77),("NORMATIVE_COMPANION_FILE_POINTER",8),
+                ("SOURCE_APPENDIX_SECTION",9),("SOURCE_SEMANTIC_CONTEXT",12),
+                ("RESTRICTED_APPENDIX_LOCATION_POINTER",1)):
+        need(sum(v["kind"]==k for v in items)==n,"original appendix native source item "+k)
+    need(c["glossary_definitions"]==77 and c["referenced_original_native_companion_files"]==8
+         and c["numbered_rule_SHALL"]==0 and c["qualified_existing_master_rows"]==50
+         and c["exact_holds"]==30,
+         "77 native definitions, eight normative original pointers, no new Rule, 50 qualified rows")
+    need(len({v["native_term"] for v in items if v["kind"]=="AV2_NATIVE_DEFINITION"})==77,
+         "all glossary terms individually source-located and unique")
+    files={v["filename_as_printed"] for v in items if v["kind"]=="NORMATIVE_COMPANION_FILE_POINTER"}
+    need(files=={"SOSA_TechStd_v1_DSDM","SOSA_TechStd_v1_DSDM_IDL",
+       "System Manager-SysMan-API.json","Module-SysMan-API.json",
+       "Security Services-SysMan-API.json","Chassis Manager-SysMan-API.json",
+       "PIC-SysMan-API.json","PIC with SW RTE-SysMan-API.json"},
+       "eight exact native C239 Appendix B filenames; contents NOT audited")
+    cov=z["C239_registered_heading_standing"]
+    need((cov["registered"],cov["at_least_sampled_or_inline_read"],
+          cov["unread"],cov["restricted"],cov["new_registered_heading_credit"])==(192,189,2,1,0),
+         "A/B previously source-read, no false coverage credit; C restricted")
+    source=z["source"]
+    need(source["original_eight_attached_native_companions_read"] is False
+         and source["original_S251_read"] is False
+         and source["restricted_AppendixC_read"] is False
+         and z["DIM_Profile_adopted"] is False
+         and z["independent_real_runtime_conformance"] is False,
+         "unexamined normative originals, edition, restricted C and adoption held")
+    need(all(x["source_item_ids"] and all(i in ids for i in x["source_item_ids"])
+             and x["DIM_Profile_adopted"] is False for x in z["source_qualified_existing_row_mappings"]),
+         "exact native glossary IDs and non-adoption for qualified findings")
+    if m is not None:
+        changed=[r for r in m["rows"] if r.get("G2_7T_source_correspondence")]
+        need(len(changed)==50 and {r["row_id"] for r in changed}
+             ==set(m["workbookSnapshot"]["G2_7T_affected_row_ids"]),
+             "50 distinct existing approved source rows, no novel fields")
+        for r in changed:
+            ev=r["G2_7T_source_correspondence"]
+            need(r["display"][8].startswith(ev["previous_sosa_cell_value"])
+                 and "G2-7T:" in r["display"][8]
+                 and all(x in ids for x in ev["source_item_ids"])
+                 and ev["DIM_Profile_adopted"] is False,
+                 "source-glossary qualified SOSA cell and earlier donor content preserved "+r["row_id"])
+
+
+def publish_g2_7t():
+    from html import escape,unescape
+    itemname="SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json"
+    reportname="SOSA_G2_7T_Workbook_Validation_11NOV2026.json"
+    base_sha="89d80712b59c1018eb3c59da1eaa2a518c9d83a6a5f317faf74c60bfd8194a9a"
+    m=load(MASTER); z=load(itemname); legacy=load(LEDGER)
+    check_source(m,legacy); check_g2_7s_source(load("SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json"),m)
+    check_g2_7t_source(z)
+    prior=(D/BOOK).read_bytes()
+    need(digest(prior)==base_sha==m["currentWorkbookSha256"]
+         and m["workbookSnapshot"]["checkpoint"]=="SOSA-G2-7S-CANONICAL-VERIFIED"
+         and m["workbookSnapshot"]["currently_matches_readable_view"],
+         "current G2-7M SAME Excel is expected original input")
+    mapped={}
+    for qmap in z["source_qualified_existing_row_mappings"]:
+        matched=[r for r in m["rows"] if r["label"]==qmap["label"]]
+        need(len(matched)==1 and qmap["label"] not in mapped,"existing unique crosswalk row")
+        r=matched[0];prev=r["display"][8]
+        need("G2-7T:" not in prev,"not already integrated")
+        new=(prev+" · G2-7T: "+qmap["native_source_meaning"]+" ["+qmap["relation"]+
+            "; "+qmap["negative_equivalence_boundary"]+"]")
+        need(len(new)<=32767,"Excel text cell maximum")
+        r["display"][8]=new
+        r["G2_7T_source_correspondence"]={
+           "source_item_ids":qmap["source_item_ids"],"relation":qmap["relation"],
+           "source_native_meaning":qmap["native_source_meaning"],
+           "negative_equivalence_boundary":qmap["negative_equivalence_boundary"],
+           "previous_sosa_cell_value":prev,"DIM_Profile_adopted":False,
+           "original_external_and_image_companions_held":True}
+        mapped[qmap["label"]]=new
+    need(len(mapped)==50,"exactly 50 original glossary source-qualified existing rows")
+    positions=[i for i in range(2,len(m["review_grid"])) if i not in set(m["review_sections"])]
+    need(len(positions)==len(m["rows"])==329,"original 329 source case/donor/proposed DIM rows")
+    for i,r in zip(positions,m["rows"]):
+        need(m["review_grid"][i][14]==r["label"],"original row placement untouched")
+        m["review_grid"][i][8]=r["display"][8]
+    m["workbookSnapshot"]["G2_7T_affected_row_ids"]=[
+        r["row_id"] for r in m["rows"] if r.get("G2_7T_source_correspondence")]
+    check_g2_7t_source(z,m)
+    for n in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
+        with (D/n).open("w",encoding="utf-8",newline="") as f:
+            csv.writer(f,lineterminator="\r\n").writerows(m["review_grid"])
+    for n in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        original=(D/n).read_text(encoding="utf-8")
+        def append_only(match):
+            tr=match.group(0);cells=list(re.finditer(r"<td>(.*?)</td>",tr,re.S))
+            if len(cells)!=15:return tr
+            name=unescape(cells[14].group(1))
+            if name not in mapped:return tr
+            target=cells[8]
+            return tr[:target.start(1)]+escape(mapped[name],quote=True)+tr[target.end(1):]
+        updated=re.sub(r"<tr>.*?</tr>",append_only,original,flags=re.S)
+        need(updated!=original and updated.count("G2-7T:")>=50,
+             "substantive new source mapping in readable comparison "+n)
+        (D/n).write_text(updated,encoding="utf-8")
+    check_source(m,legacy)
+    with zipfile.ZipFile(io.BytesIO(prior)) as oldwb:
+        need(oldwb.testzip() is None,"source workbook has good ZIP/CRC")
+        paths=old.sheetpaths(oldwb)
+        need(len(paths)==26,"same original 26 worksheet names")
+        styles,sty=old.newstyles(oldwb.read("xl/styles.xml"))
+        register_rows=register_g2_7l(m)
+        for k,r in enumerate(m["rows"],1):
+            for packet in ("G2_7M","G2_7N","G2_7O","G2_7P","G2_7Q","G2_7R","G2_7S","G2_7T"):
+                ev=r.get(packet+"_source_correspondence")
+                if not ev:continue
+                register_rows[k][9]+="; "+"; ".join(ev["source_item_ids"])
+                register_rows[k][10]+="; "+ev["relation"]
+                register_rows[k][11]=packet+" original source-qualified hardware: no actual installed power/security/optical service"
+        summary=[
+          ["SOSA G2-7T original Appendix A AV-2 and normative Appendix B","C239 Ed1.1 original PDF384–391; p392 only restricted Appendix C pointer; STOP before G3"],
+          ["Source items","77 native definitions, eight normative original-file pointers, nine appendix section records"],
+          ["Appendix A normative standing","Native glossary definitions NOT newly numbered SHALL Rules or adopted DIM classes"],
+          ["System/Subsystem and Sensor","System relational/context-dependent, Sensor device or System; no universal chassis"],
+          ["Platform three distinct meanings","Supported device, host vehicle or computing environment; contextual phrase required"],
+          ["Module and physical constituent","Module functional entity implementable with hardware/software; Element broader"],
+          ["Health/Status/State/Mode/Capability","Separate source meanings; Capability conditioned by Health and Configuration"],
+          ["Task and Assignment","Task request from outside sensor; Assignment internal to module"],
+          ["Sensor Data Products and Information Products","Raw/minimal and processed/reduced digital output distinct"],
+          ["Events and Logging","Detection, Audit Event, Notification, Heartbeat, Relay, Collector and Logging distinct"],
+          ["Normative Appendix B eight uninspected originals","Two DSDM/IDL and six separate in-band system management OpenAPI JSON files"],
+          ["Source corpus coverage","189 of 192 headings at least sampled/inline-reviewed, two unread, one restricted"],
+          ["Source-qualified master increment","50 existing SOSA column-I cells only, no adopted DIM/Profile model"],
+          ["Same original editable Excel","26 sheets, all 346x15 cells match canonical JSON/both CSV/both MD,22 historic tabs intact"],
+          ["Precise source holds","30 holds including eight original normative companion contents and restricted Appendix C"],
+          ["Only next distinct owner Proceed","G3-N1 twelve-artifact and C239/S251 lineage/access inventory; NO native file clause audit yet"]]
+        replacements={"Master Crosswalk":m["review_grid"],"DIM Register":register_rows,"Summary":summary,"Validation":summary}
+        edits={"xl/styles.xml":styles}
+        for name,matrix in replacements.items():
+            edits[paths[name]]=matrix_to_xml(matrix,sty,main=name=="Master Crosswalk",
+                sections=m["review_sections"] if name=="Master Crosswalk" else ())
+        preserved={name:digest(oldwb.read(path)) for name,path in paths.items() if name not in replacements}
+        out=io.BytesIO()
+        with zipfile.ZipFile(out,"w") as wb:
+            for info in oldwb.infolist():wb.writestr(info,edits.get(info.filename,oldwb.read(info.filename)))
+    saved=out.getvalue()
+    with zipfile.ZipFile(io.BytesIO(saved)) as book:
+        need(book.testzip() is None and list(old.sheetpaths(book))==list(paths),"same 26 sheets and ZIP valid")
+        for name,sha in preserved.items():
+            need(digest(book.read(paths[name]))==sha,"previous 22 historic sheets unmodified "+name)
+        for p in book.namelist():
+            if p.endswith((".xml",".rels")):ET.fromstring(book.read(p))
+            if p.startswith("xl/worksheets/") and p.endswith(".xml"):
+                need(not any(x.get("t")=="e" for x in ET.fromstring(book.read(p)).iter(q("c"))),
+                     "no Excel error cells")
+        master=ET.fromstring(book.read(paths["Master Crosswalk"]))
+        need([x.get("ref") for x in master.find(q("mergeCells")).findall(q("mergeCell"))]
+             ==["A1:D1","E1:I1","J1:N1"]+[f"A{i+1}:O{i+1}" for i in m["review_sections"]],
+             "original grouped source-case, OGC and DIM layout")
+    savedrows=old.readcells(saved,"Master Crosswalk")
+    for i,r in enumerate(m["review_grid"],1):
+        for j,val in enumerate(r,1):
+            need(savedrows.get(addr(i,j),"")==old.val(val),"saved original Excel cell "+addr(i,j))
+    previous=old.readcells(prior,"Master Crosswalk")
+    changed=sorted(k for k in set(previous)|set(savedrows)
+                   if previous.get(k,"")!=savedrows.get(k,""))
+    need(len(changed)==50 and all(re.fullmatch(r"I\d+",k) for k in changed),
+         "exactly 24 SOSA I-column source cells, no other-donor/case/DIM changes")
+    earlier=load("SOSA_G2_7S_Workbook_Validation_11NOV2026.json")
+    need(preserved==earlier["exact_original_untouched_xml_sha256"],
+         "historical original 22 worksheets unchanged since verified G2-7M")
+    (D/BOOK).write_bytes(saved);sha=digest(saved)
+    m["currentWorkbookSha256"]=sha
+    m["currentEvidenceCheckpoint"]="SOSA-G2-7T_APPENDIX_A_B_ORIGINAL_SOURCE_AND_SAME_26_SHEET_EXCEL_VERIFIED"
+    m["workbookSnapshot"].update({"checkpoint":"SOSA-G2-7T-CANONICAL-VERIFIED","sha256":sha,
+       "currently_matches_readable_view":True,
+       "lag":"NONE: 346x15 saved XLSX source values match one JSON/both CSV/both MD",
+       "refreshed_cell_count":50,"validation_file":reportname})
+    m["SOSAEvidence"]["G2_7T"]={"sourceLedger":itemname,
+       "sourceReview":"SOSA_G2_7T_Original_Source_and_Master_Reconciliation_11NOV2026.md",
+       "qualified_existing_row_matches":50,"original_rule_appearances":0,
+       "explicit_SHALL":0,"exact_holds":30,
+       "Excel_lag_cells":0,"excel_checkpoint":"SOSA-G2-7T-CANONICAL-VERIFIED",
+       "excel_validation":reportname,"DIM_Profile_adopted":False}
+    m["SOSAReviewCompletion"]["G2_7T_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["status"]="ACTIVE_OPEN__G2_7T_APPENDIX_A_B_SAVED_XLSX_VERIFIED__2_UNREAD_1_RESTRICTED"
+    nextstep="Only distinct owner Proceed starts G3-N1 source/edition lineage and original normative C239/S251 artifact access inventory; NO native clause audit yet"
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]=nextstep
+    m["nextOwnerAction"]=nextstep
+    m["publicationPolicy"]="L23 G2-7T:50 glossary-backed existing SOSA I cells, JSON/both CSV/MD and SAME original 26-sheet saved Excel, eight native companions remain unread"
+    save(MASTER,m)
+    record={"date":"2026-11-11","step":"SOSA-G2-7T-CONSOLIDATED-SAVED-EXCEL",
+      "result":"ORIGINAL_SOURCE_AND_SAME_26_SHEET_EXCEL_PARITY_PASS",
+      "workbook_sha256":sha,"previous_workbook_sha256":base_sha,
+      "workbook_sheets":list(paths),"refreshed_sheets":list(replacements),
+      "exact_original_untouched_xml_sha256":preserved,
+      "information_rows":329,"grid_rows":346,"columns":15,
+      "historical_donor_facts":58,"case_facts":73,"ISA_source_outcomes":480,"ISA_open_questions":6,
+      "source_typed_records":107,"source_rule_appearances":0,
+      "source_explicit_SHALL":0,"source_Recommendations":0,"source_Observations":0,"source_Permissions":0,
+      "source_tables":1,"glossary_rows":77,"normative_companion_pointers":8,"source_figure_captions":0,"source_holds":30,
+      "qualified_existing_sosa_cells":50,"changed_saved_cells":changed,
+      "C239_touched_headings":189,"C239_unread":2,"C239_restricted":1,
+      "checks":{"all_saved_346x15_cells_match":True,"both_CSVs_equal":True,
+         "both_markdown_tables_equal":True,"same_26_sheets":True,
+         "22_historical_sheets_preserved":True,"only_SOSA_I_cells_changed":True,
+         "saved_zip_xml_valid":True,"no_error_cells":True,"no_DIM_Profile_adoption":True},
+      "limits":["Original Appendix A AV-2 and Appendix B normative pointers only; no native G3 file audit",
+          "77 definition rows do not establish new Rules; eight original native referenced files unexamined",
+          "No adopted DIM class/chassis/cardinality/CSAPI Profile SHALL or device runtime conformance"],
+      "next":nextstep}
+    save(reportname,record)
+    z["publication_state"]="SOURCE_QUALIFIED_GLOSSARY_AND_SAME_SAVED_26_SHEET_EXCEL_VERIFIED__NATIVE_FILES_UNREAD"
+    save(itemname,z)
+    print("PASS G2-7T 77 glossary defs, eight native pointers unexamined, 50 SOSA cells and all 346x15 saved Excel; SHA "+sha)
+    return sha
+
 if __name__=="__main__":
-    publish_g2_7s()
+    publish_g2_7t()
