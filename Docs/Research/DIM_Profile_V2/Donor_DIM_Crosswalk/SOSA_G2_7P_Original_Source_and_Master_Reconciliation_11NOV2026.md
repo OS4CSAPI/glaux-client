@@ -22,14 +22,14 @@ These are **source-specific physical/electrical meanings**, not a universal DIM 
 | source recommendations | 4 |
 | source observations | 5 |
 | source permissions | 0 |
-| nested sections | 29 |
+| nested sections | 31 |
 | source tables | 14 |
 | table pin and frequency rows | 135 |
 | figure captions | 14 |
 | source contexts | 12 |
 | unread companion pointers | 10 |
 | unnumbered table shall | 1 |
-| typed source records | 298 |
+| typed source records | 300 |
 | qualified existing rows | 28 |
 | precise holds | 30 |
 
