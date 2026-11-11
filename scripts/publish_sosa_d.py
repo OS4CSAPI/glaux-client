@@ -727,10 +727,10 @@ def publish():
     for i,row in enumerate(m["review_grid"],1):
         for j,v in enumerate(row,1):need(actual.get(addr(i,j),"")==old.val(v),"actual saved 346x15 source cell "+addr(i,j))
     registerCells=old.readcells(saved,"DIM Register")
-    need(sum(bool(re.fullmatch(r"A\\d+",cell)) for cell in registerCells)==330,"DIM Register 329 stable row IDs retained")
+    need(sum(bool(re.fullmatch(r"A\d+",cell)) for cell in registerCells)==330,"DIM Register 329 stable row IDs retained")
     before=old.readcells(prev,"Master Crosswalk")
     delta=[a for a in set(before)|set(actual) if before.get(a,"")!=actual.get(a,"")]
-    need(len(delta)==25 and all(re.fullmatch(r"I\\d+",a) for a in delta),"25 exact SOSA-I changes only, no case/other-donor/ISA/DIM changes")
+    need(len(delta)==25 and all(re.fullmatch(r"I\d+",a) for a in delta),"25 exact SOSA-I changes only, no case/other-donor/ISA/DIM changes")
     if digest(stored)!=OLD:need(digest(saved)==digest(stored),"byte-for-byte replay of already-published same workbook")
     (D/BOOK).write_bytes(saved);sha=digest(saved)
     m["currentWorkbookSha256"]=sha
