@@ -1939,14 +1939,14 @@ def publish_g2_7o():
 
 def check_g2_7p_source(z,m=None):
     c=z["counts"];items=z["original_source_items"];ids={x["id"] for x in items}
-    need(len(items)==len(ids)==298 and c["typed_source_records"]==298,
-         "G2-7P 298 unique classified source/native evidence records")
+    need(len(items)==len(ids)==300 and c["typed_source_records"]==300,
+         "G2-7P 300 unique classified source/native evidence records")
     need(c["source_numbered_rules"]==74 and c["source_explicit_shall"]==73
          and c["source_Rule_labeled_descriptive"]==1
          and c["source_recommendations"]==4 and c["source_observations"]==5,
          "74 original Rule appearances (73 explicit SHALL/1 descriptive) and 4 SHOULD/5 observations")
     for kind,total in (("RULE",74),("RECOMMENDATION",4),("OBSERVATION",5),
-                       ("SOURCE_SECTION",29),("SOURCE_TABLE",14),
+                       ("SOURCE_SECTION",31),("SOURCE_TABLE",14),
                        ("SOURCE_TABLE_PIN_OR_BAND_ROW",135),
                        ("ORIGINAL_FIGURE_CAPTION",14),("UNNUMBERED_SHALL",1)):
         need(sum(i["kind"]==kind for i in items)==total,

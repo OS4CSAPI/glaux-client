@@ -1,3 +1,7 @@
+**G2-7P FINAL L23 EXIT VERIFIED (11 November 2026):** Source ledger now **300 items/31 original section headings** with unchanged 74 printed Rule appearances and 30 exact holds. Canonical JSON, both CSV, both GitHub-readable comparisons and **SAME existing 26-sheet Excel** are current for exactly **28 source-qualified SOSA I-column cells**, all **346×15 actually saved cells** and 22 untouched historical sheets. Workbook SHA256 `a8147816f7b2cd36466d3aca8103c395cf836cc25f4dd05224c27ade61217b53`, zero lag. [Publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43074775476) · [independent corrected-ledger and saved-Excel PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43075354991). STOP before §13.5.4; only new owner Proceed starts G2-7Q original §§13.5.4–13.5.5.6.1, stop before Chapter14.
+
+---
+
 # SOSA-G2-7P — consolidated original Class3 source review
 
 **11 November 2026. The Open Group SOSA C239 Edition1.1 (2023), original §§13.5.3.4–13.5.3.17.2, PDF329–351 (printed303–325). STOP before Class5 §13.5.4.** Original direct inline source text review: **74 numbered Rule appearances, 73 explicit SHALL and 1 Rule-labeled descriptive J13 item; 4 Recommendations, 5 Observations, 14 tables/135 source contact/frequency rows and 14 figure captions**. Stable clause IDs, original pages, typed evidence, 30 local holds and all 28 justified existing-row mappings are in [the source ledger](SOSA_G2_7P_Original_Source_Item_Coverage_11NOV2026.json). Figure geometry and cited original companion standards are not verified.
