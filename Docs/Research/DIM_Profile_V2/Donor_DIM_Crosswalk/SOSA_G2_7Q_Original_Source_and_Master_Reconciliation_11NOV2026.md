@@ -1,0 +1,9 @@
+# SOSA-G2-7Q — original C239 Class5 and aperture mechanical source audit
+
+Original C239 Edition1.1 (2023), §§13.5.4–13.5.5.6.1, PDF351–360; STOP before Chapter14. Original 36 numbered SHALL Rules, five SHOULD Recommendations, three Observations, 23 source headings, four source tables with 39 native row records, two unverified figure captions. Stable source locators and normative standing in the [source ledger](SOSA_G2_7Q_Original_Source_Item_Coverage_11NOV2026.json).
+
+Class5 can be a top-level SOSA sensor or a hardware sensing element. It specifies a 25-pin Micro-D J1, nominal 24V host input, autonomous post-power-cycle communication recovery, Ethernet with conditional Gigabit auto-negotiation, and physical LASER_ARM safety. User-defined GPI has fixed-purpose part-number and conditional software-configurable published functions/vendor UI requirements; a software API is an example, not a CSAPI Command. Source J1 Class5 table/figure captions incorrectly say Class3. GPS recommendation has a subordinate buffer-test SHALL, not a new numbered Rule.
+
+Mechanical apertures can be self-contained or distributed. Eight shape-largest-axis-CG-weight source bands can overlap. Four turret types reference unreviewed original SAE AS6169A I–IV mounting figures; c-2-5-15 gimbaled mounting original figure is image-only and not verified. Source text c-6-15-5 and SAE AS6169 without A differ from adjacent normative citations. No universal DIM chassis/classes adopted.
+
+Original C239 registered headings now 176 at least sampled/inline read of 192, 15 unread and one restricted. Original figures, all external normative documents and eight native model/API companions remain held. The current packet requires warranted mappings in SAME canonical master JSON, both CSV, both readable Markdown, same 26-sheet Excel, and actual saved-cell verification before claiming closeout. Next distinct owner Proceed G2-7R original Chapter14 only.
