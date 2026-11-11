@@ -1,0 +1,1572 @@
+{
+  "schema": "SOSA-G2-7S-original-Chapter15-InterModule-v0.1",
+  "date": "2026-11-11",
+  "source": {
+    "publisher": "The Open Group",
+    "edition": "C239 Edition1.1 (2023)",
+    "original_file": "file_00000000af4081f58c4bac329f85c58f",
+    "source_pdf_pages": "372–383 of403, Appendix A starts384",
+    "original_inline_rules_and_four_tables_read": true,
+    "source_symbol_graphics_pixels_verified": false,
+    "original_external_normative_files_examined": false,
+    "eight_native_C239_companion_files_examined": false,
+    "later_S251_examined": false
+  },
+  "authorized_scope": "Original Chapter15 §§15–15.7 only; stop before Appendix A.",
+  "counts": {
+    "numbered_RULE_SHALL": 5,
+    "numbered_OBSERVATION": 1,
+    "numbered_PERMISSION": 1,
+    "numbered_RECOMMENDATION": 0,
+    "native_sections": 12,
+    "native_tables": 4,
+    "interaction_type_rows": 8,
+    "qos_policy_rows": 12,
+    "binding_choices": 3,
+    "binding_stack_cells": 15,
+    "qos_attributes": 6,
+    "stack_definitions": 6,
+    "role_rows": 8,
+    "source_contexts": 20,
+    "companion_pointers": 12,
+    "source_records": 113,
+    "qualified_existing_row_mappings": 41,
+    "local_holds": 31,
+    "rule_methods": {
+      "T": 1,
+      "D": 2,
+      "unprinted": 2
+    }
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15",
+      "kind": "SOURCE_SECTION",
+      "section": "15",
+      "title": "Inter-Module Interactions",
+      "pdf_first_page": 372,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_1",
+      "kind": "SOURCE_SECTION",
+      "section": "15.1",
+      "title": "SOSA Message Interconnect interactions",
+      "pdf_first_page": 372,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_2",
+      "kind": "SOURCE_SECTION",
+      "section": "15.2",
+      "title": "Application Programming Interface",
+      "pdf_first_page": 374,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_3",
+      "kind": "SOURCE_SECTION",
+      "section": "15.3",
+      "title": "Quality of Service",
+      "pdf_first_page": 374,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_4",
+      "kind": "SOURCE_SECTION",
+      "section": "15.4",
+      "title": "Data Product and Task Management Interaction Implementation",
+      "pdf_first_page": 377,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_5",
+      "kind": "SOURCE_SECTION",
+      "section": "15.5",
+      "title": "Inter-Module Abstraction Overview",
+      "pdf_first_page": 378,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_6",
+      "kind": "SOURCE_SECTION",
+      "section": "15.6",
+      "title": "Module Interaction Types",
+      "pdf_first_page": 378,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_6_1",
+      "kind": "SOURCE_SECTION",
+      "section": "15.6.1",
+      "title": "Security for Inter-Module Interactions",
+      "pdf_first_page": 378,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_6_2",
+      "kind": "SOURCE_SECTION",
+      "section": "15.6.2",
+      "title": "Interaction Endpoints and Roles",
+      "pdf_first_page": 380,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_6_3",
+      "kind": "SOURCE_SECTION",
+      "section": "15.6.3",
+      "title": "Wideband Low-Latency Interconnect interactions",
+      "pdf_first_page": 381,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_6_4",
+      "kind": "SOURCE_SECTION",
+      "section": "15.6.4",
+      "title": "Message Interconnect interactions",
+      "pdf_first_page": 382,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-SECTION-15_7",
+      "kind": "SOURCE_SECTION",
+      "section": "15.7",
+      "title": "SvcV-3b Services-Services Matrix planned future",
+      "pdf_first_page": 383,
+      "original_inline_text_read": true,
+      "full_original_figure_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-RULE-15_2_1",
+      "kind": "RULE",
+      "native_id": "15.2-1",
+      "source_locator": "C239 Edition1.1 (2023) §15.2, PDF374/403 (printed348)",
+      "source_normative_standing": "SHALL",
+      "conformance_method": [
+        "T"
+      ],
+      "native_meaning": "FACE TSS Transport/Distribution/Configuration/QoS capabilities required when module software uses Transport API on SOSA Message Interconnect"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-RULE-15_4_1",
+      "kind": "RULE",
+      "native_id": "15.4-1",
+      "source_locator": "C239 Edition1.1 (2023) §15.4, PDF378/403 (printed352)",
+      "source_normative_standing": "SHALL",
+      "conformance_method": [],
+      "native_meaning": "Message Interconnect interaction infrastructure with standard API selects one of three Table15.4-1 stack bindings unless otherwise specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-RULE-15_4_2",
+      "kind": "RULE",
+      "native_id": "15.4-2",
+      "source_locator": "C239 Edition1.1 (2023) §15.4, PDF378/403 (printed352)",
+      "source_normative_standing": "SHALL",
+      "conformance_method": [],
+      "native_meaning": "Module without standard API interaction infrastructure itself implements one of three on-wire stack bindings unless otherwise specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-RULE-15_6_1_1",
+      "kind": "RULE",
+      "native_id": "15.6.1-1",
+      "source_locator": "C239 Edition1.1 (2023) §15.6.1, PDF379/403 (printed353)",
+      "source_normative_standing": "SHALL",
+      "conformance_method": [
+        "D"
+      ],
+      "native_meaning": "When TCP/IP intermodule data-in-transit security required, TLS1.2+ must be configurable enable or disable"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-RULE-15_6_1_2",
+      "kind": "RULE",
+      "native_id": "15.6.1-2",
+      "source_locator": "C239 Edition1.1 (2023) §15.6.1, PDF379/403 (printed353)",
+      "source_normative_standing": "SHALL",
+      "conformance_method": [
+        "D"
+      ],
+      "native_meaning": "When UDP/IP intermodule data-in-transit security required, DTLS1.2+ must be configurable enable or disable"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-OBSERVATION-15_2_2",
+      "kind": "OBSERVATION",
+      "native_id": "15.2-2",
+      "source_locator": "C239 Ed1.1 §15.2 PDF374",
+      "standing": "OBSERVATION",
+      "meaning": "FACE TSS config implementation future; original clause references Rule14.2-1 (an RTE configuration rule), not silently corrected."
+    },
+    {
+      "id": "SOSA-C239-G2-7S-PERMISSION-15_6_1_1",
+      "kind": "PERMISSION",
+      "native_id": "15.6.1-1",
+      "standing": "MAY",
+      "source_locator": "C239 Ed1.1 §15.6.1 PDF380",
+      "meaning": "Configure TLS/DTLS enable-disable via different software or firmware loads for same hardware."
+    },
+    {
+      "id": "SOSA-C239-G2-7S-TABLE-15_1_1",
+      "kind": "SOURCE_TABLE",
+      "printed_id": "15.1-1",
+      "meaning": "8 interaction types and interconnect defaults",
+      "original_text_row_or_cell_count": 8,
+      "source_pdf_first_page": 372,
+      "original_graphical_symbols_not_verified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-TABLE-15_3_1",
+      "kind": "SOURCE_TABLE",
+      "printed_id": "15.3-1",
+      "meaning": "12 QoS policy rows across six attributes",
+      "original_text_row_or_cell_count": 12,
+      "source_pdf_first_page": 376,
+      "original_graphical_symbols_not_verified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-TABLE-15_4_1",
+      "kind": "SOURCE_TABLE",
+      "printed_id": "15.4-1",
+      "meaning": "Three interaction bindings each five layer cells",
+      "original_text_row_or_cell_count": 15,
+      "source_pdf_first_page": 378,
+      "original_graphical_symbols_not_verified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-TABLE-15_6_2_1",
+      "kind": "SOURCE_TABLE",
+      "printed_id": "15.6.2-1",
+      "meaning": "Eight interaction endpoints/role rows",
+      "original_text_row_or_cell_count": 8,
+      "source_pdf_first_page": 380,
+      "original_graphical_symbols_not_verified": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Analog_Distribution",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Analog Distribution",
+      "meaning": "Analog signal distribution point to point or fanout",
+      "default_interconnect": "Analog medium",
+      "left_role": "Sender",
+      "right_role": "Receiver",
+      "flow": "with arrow",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Digital Signal Stream",
+      "meaning": "I/Q/video/high volume digital streams",
+      "default_interconnect": "Wideband Low-Latency",
+      "left_role": "Sender",
+      "right_role": "Receiver(s)",
+      "flow": "with arrow",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Context",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Digital Signal Context",
+      "meaning": "Metadata context of digital signal streams",
+      "default_interconnect": "Wideband Low-Latency",
+      "left_role": "Sender",
+      "right_role": "Receiver(s)",
+      "flow": "with arrow",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Signal_Layer_Control",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Signal Layer Control",
+      "meaning": "Low latency dynamic electronic control",
+      "default_interconnect": "Wideband Low-Latency",
+      "left_role": "Controller",
+      "right_role": "Subordinate(s)",
+      "flow": "control direction",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Discrete",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Discrete",
+      "meaning": "Network virtual discrete register subject to safety/latency",
+      "default_interconnect": "Wideband Low-Latency",
+      "left_role": "Writer(s)",
+      "right_role": "Reader(s)",
+      "flow": "bidirectional",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Publish-Subscribe",
+      "meaning": "Structured topic-based many-to-many messages",
+      "default_interconnect": "SOSA Message",
+      "left_role": "Publisher(s) or Service(s)",
+      "right_role": "Subscriber(s) or Client(s)",
+      "flow": "with arrow",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Request-Response",
+      "meaning": "Requestor/responder get or set intentional operations",
+      "default_interconnect": "SOSA Message",
+      "left_role": "Requestor or Client",
+      "right_role": "Responder or Server",
+      "flow": "set to responder, get to requestor",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+      "kind": "SOURCE_INTERACTION_TYPE",
+      "source_table": "15.1-1",
+      "name": "Event Notification",
+      "meaning": "Event-driven publication of fault/mode/state changes",
+      "default_interconnect": "SOSA Message",
+      "left_role": "Event Publisher",
+      "right_role": "Event Subscriber",
+      "flow": "with arrow",
+      "original_symbol_pixels_examined": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Reliability_BEST_EFFORT",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Reliability",
+      "policy": "BEST_EFFORT",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "default"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Reliability_RELIABLE",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Reliability",
+      "policy": "RELIABLE",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "optional"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Deadline_N_A",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Deadline",
+      "policy": "N/A",
+      "parameter": "duration",
+      "units": "microseconds",
+      "range": ">0",
+      "defaultStanding": "default infinite"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Durability_VOLATILE",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Durability",
+      "policy": "VOLATILE",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "default"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Durability_TRANSIENT_LOCAL",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Durability",
+      "policy": "TRANSIENT_LOCAL",
+      "parameter": "history_depth",
+      "units": "message",
+      "range": ">=1",
+      "defaultStanding": "optional"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Durability_TRANSIENT",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Durability",
+      "policy": "TRANSIENT",
+      "parameter": "history_depth",
+      "units": "message",
+      "range": ">=1",
+      "defaultStanding": "optional"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Durability_PERSISTENT",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Durability",
+      "policy": "PERSISTENT",
+      "parameter": "history_depth",
+      "units": "message",
+      "range": ">=1",
+      "defaultStanding": "optional"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Liveliness_AUTOMATIC",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Liveliness",
+      "policy": "AUTOMATIC",
+      "parameter": "lease_duration",
+      "units": "microseconds",
+      "range": ">0",
+      "defaultStanding": "default lease infinite"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Ownership_SHARED",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Ownership",
+      "policy": "SHARED",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "default"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Ownership_EXCLUSIVE",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Ownership",
+      "policy": "EXCLUSIVE",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "optional"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Ownership_SHARED_EXCLUSIVE",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Ownership",
+      "policy": "SHARED_EXCLUSIVE",
+      "parameter": "N/A",
+      "units": "N/A",
+      "range": "N/A",
+      "defaultStanding": "optional original prose incomplete"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS_POLICY-Priority_N_A",
+      "kind": "SOURCE_QOS_POLICY_ROW",
+      "source_table": "15.3-1",
+      "attribute": "Priority",
+      "policy": "N/A",
+      "parameter": "priority",
+      "units": "N/A",
+      "range": "[0,X]",
+      "defaultStanding": "default 0 X undefined"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING-OMG_DDS_RTPS_v1_4_",
+      "kind": "SOURCE_BINDING_OPTION",
+      "source_table": "15.4-1",
+      "name": "OMG DDS/RTPS v1.4+",
+      "definition": "OMG IDL & Xtypes",
+      "encoding": "RTPS/CDR",
+      "encapsulation": "N/A",
+      "transport": "UDP",
+      "network": "IPv4 or IPv6",
+      "conditional_source": "Rule15.4-1 infrastructure or Rule15.4-2 direct module when not otherwise specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING-Protobuf_v3___AMQP_v1_0",
+      "kind": "SOURCE_BINDING_OPTION",
+      "source_table": "15.4-1",
+      "name": "Protobuf v3 + AMQP v1.0",
+      "definition": "Protocol Buffers",
+      "encoding": "Protocol Buffers",
+      "encapsulation": "AMQP",
+      "transport": "TCP",
+      "network": "IPv4 or IPv6",
+      "conditional_source": "Rule15.4-1 infrastructure or Rule15.4-2 direct module when not otherwise specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING-Protobuf_v3___ZMTP_v3_0",
+      "kind": "SOURCE_BINDING_OPTION",
+      "source_table": "15.4-1",
+      "name": "Protobuf v3 + ZMTP v3.0",
+      "definition": "Protocol Buffers",
+      "encoding": "Protocol Buffers",
+      "encapsulation": "ZMTP",
+      "transport": "TCP",
+      "network": "IPv4 or IPv6",
+      "conditional_source": "Rule15.4-1 infrastructure or Rule15.4-2 direct module when not otherwise specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-OMG_DDS_RTPS_v1_4__Data_Definition",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "OMG DDS/RTPS v1.4+",
+      "layer": "Data Definition",
+      "value": "OMG IDL & Xtypes"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-OMG_DDS_RTPS_v1_4__Data_Encoding",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "OMG DDS/RTPS v1.4+",
+      "layer": "Data Encoding",
+      "value": "RTPS/CDR"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-OMG_DDS_RTPS_v1_4__Encapsulation",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "OMG DDS/RTPS v1.4+",
+      "layer": "Encapsulation",
+      "value": "N/A"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-OMG_DDS_RTPS_v1_4__Transport",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "OMG DDS/RTPS v1.4+",
+      "layer": "Transport",
+      "value": "UDP"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-OMG_DDS_RTPS_v1_4__Network",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "OMG DDS/RTPS v1.4+",
+      "layer": "Network",
+      "value": "IPv4 or IPv6"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___AMQP_v1_0_Data_Definition",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + AMQP v1.0",
+      "layer": "Data Definition",
+      "value": "Protocol Buffers"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___AMQP_v1_0_Data_Encoding",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + AMQP v1.0",
+      "layer": "Data Encoding",
+      "value": "Protocol Buffers"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___AMQP_v1_0_Encapsulation",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + AMQP v1.0",
+      "layer": "Encapsulation",
+      "value": "AMQP"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___AMQP_v1_0_Transport",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + AMQP v1.0",
+      "layer": "Transport",
+      "value": "TCP"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___AMQP_v1_0_Network",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + AMQP v1.0",
+      "layer": "Network",
+      "value": "IPv4 or IPv6"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___ZMTP_v3_0_Data_Definition",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + ZMTP v3.0",
+      "layer": "Data Definition",
+      "value": "Protocol Buffers"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___ZMTP_v3_0_Data_Encoding",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + ZMTP v3.0",
+      "layer": "Data Encoding",
+      "value": "Protocol Buffers"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___ZMTP_v3_0_Encapsulation",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + ZMTP v3.0",
+      "layer": "Encapsulation",
+      "value": "ZMTP"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___ZMTP_v3_0_Transport",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + ZMTP v3.0",
+      "layer": "Transport",
+      "value": "TCP"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-BINDING_CELL-Protobuf_v3___ZMTP_v3_0_Network",
+      "kind": "SOURCE_BINDING_STACK_CELL",
+      "source_table": "15.4-1",
+      "binding": "Protobuf v3 + ZMTP v3.0",
+      "layer": "Network",
+      "value": "IPv4 or IPv6"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Reliability",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Reliability",
+      "meaning": "BEST_EFFORT default or RELIABLE",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Deadline",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Deadline",
+      "meaning": "maximum update interval microseconds>0, default infinite",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Durability",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Durability",
+      "meaning": "VOLATILE default; TRANSIENT_LOCAL, TRANSIENT, PERSISTENT history depth; original prose typo PERSITENT",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Liveliness",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Liveliness",
+      "meaning": "AUTOMATIC lease duration microseconds>0, default infinite",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Ownership",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Ownership",
+      "meaning": "SHARED default, EXCLUSIVE, SHARED_EXCLUSIVE source description incomplete",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-QOS-Priority",
+      "kind": "SOURCE_QOS_ATTRIBUTE",
+      "name": "Priority",
+      "meaning": "Writer priority default0, source range [0,X] maximum unspecified",
+      "original_QoS_implementation_deferred": true
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Data_Definition",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Data Definition",
+      "meaning": "Language-neutral data structure",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Data_Encoding",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Data Encoding",
+      "meaning": "Data transformed to transmitted or stored form",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Encapsulation",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Encapsulation",
+      "meaning": "Higher layer data inside lower-layer frame",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Transport",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Transport",
+      "meaning": "Host to host reliability flow multiplexing",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Network",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Network",
+      "meaning": "Packet forwarding and routing",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-DEFINITION-Interaction_Binding",
+      "kind": "SOURCE_STACK_DEFINITION",
+      "term": "Interaction Binding",
+      "meaning": "Selection for five stack layers enabling module interoperability",
+      "source_section": "15.4"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Analog_Distribution",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Analog Distribution",
+      "interconnect": "Analog medium",
+      "left": "Sender",
+      "right": "Receiver",
+      "flow": "with arrow",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Digital_Signal_Stream",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Digital Signal Stream",
+      "interconnect": "Wideband Low-Latency",
+      "left": "Sender",
+      "right": "Receiver(s)",
+      "flow": "with arrow",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Digital_Signal_Context",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Digital Signal Context",
+      "interconnect": "Wideband Low-Latency",
+      "left": "Sender",
+      "right": "Receiver(s)",
+      "flow": "with arrow",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Signal_Layer_Control",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Signal Layer Control",
+      "interconnect": "Wideband Low-Latency",
+      "left": "Controller",
+      "right": "Subordinate(s)",
+      "flow": "control direction",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Discrete",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Discrete",
+      "interconnect": "Wideband Low-Latency",
+      "left": "Writer(s)",
+      "right": "Reader(s)",
+      "flow": "bidirectional",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Publish_Subscribe",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Publish-Subscribe",
+      "interconnect": "SOSA Message",
+      "left": "Publisher(s) or Service(s)",
+      "right": "Subscriber(s) or Client(s)",
+      "flow": "with arrow",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Request_Response",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Request-Response",
+      "interconnect": "SOSA Message",
+      "left": "Requestor or Client",
+      "right": "Responder or Server",
+      "flow": "set to responder, get to requestor",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-ROLE-Event_Notification",
+      "kind": "SOURCE_INTERACTION_ROLE",
+      "source_table": "15.6.2-1",
+      "name": "Event Notification",
+      "interconnect": "SOSA Message",
+      "left": "Event Publisher",
+      "right": "Event Subscriber",
+      "flow": "with arrow",
+      "source_symbol_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-1",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "QoS implementation future; common nomenclature not mandatory deployed QoS"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-2",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Sensor to sensor QoS outside scope"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-3",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Priority upper X undefined; source should not invent range"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-4",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Durability prose typo PERSITENT vs table PERSISTENT"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-5",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "SHARED_EXCLUSIVE original explanation incomplete"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-6",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Three on-wire binding stacks are alternatives, not generic CSAPI encoding"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-7",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Rule15.4-1 infrastructure vs Rule15.4-2 direct module responsibility"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-8",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Observation15.2-2 references Rule14.2-1 erroneously, not corrected silently"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-9",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Conditional FACE TSS Transport API usage not universal"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-10",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Network virtual discrete constrained by physical safety latency security"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-11",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Publish-subscribe implementation not fully defined"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-12",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Request-response REST/SOAP/SNMP illustrations, implementation not fully specified"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-13",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Event acknowledgements possible, not mandatory for all"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-14",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "TLS/DTLS >=1.2 enable-disable conditional when in-transit security required"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-15",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Confidentiality integrity authenticity discussion not a CSAPI certificate schema"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-16",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Alternative interconnect conformance remains TBD"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-17",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "SvcV-3b Services Matrix planned future, no matrix rows to fabricate"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-18",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Interaction endpoint roles differ by type; not static DIM module class"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-19",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "No measured QoS/throughput/source sample"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-CONTEXT-20",
+      "kind": "SOURCE_CONTEXT",
+      "meaning": "Interaction role symbol image cells not independently visually read"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-1",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "FACE3.1 TSS original"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-2",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "OMG DDS/RTPS1.4 IDL XTypes original"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-3",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "Protocol Buffers v3 original"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-4",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "AMQP v1.0 original"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-5",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "ZMTP v3.0 original"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-6",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "TCP UDP IPv4 IPv6 originals"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-7",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "TLS1.2 and DTLS1.2 originals"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-8",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "MORA VICTORY originals"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-9",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "ANSI/VITA49.2 RF context"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-10",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "SOSA DIV-2 data entities native"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-11",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "Eight C239 native companion DSDM IDL OpenAPI originals"
+    },
+    {
+      "id": "SOSA-C239-G2-7S-EXTERNAL-12",
+      "kind": "UNREAD_ORIGINAL_COMPANION_POINTER",
+      "name": "2025 S251 and restricted C239 AppendixC"
+    }
+  ],
+  "source_qualified_existing_row_mappings": [
+    {
+      "label": "Network participation role and responsibilities",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-ROLE-Request_Response",
+        "SOSA-C239-G2-7S-ROLE-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Endpoint roles depend on interaction type",
+      "negative_equivalence_boundary": "Not permanent whole-System service provider class",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network instance and connection context",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_4_1",
+        "SOSA-C239-G2-7S-BINDING-Protobuf_v3___AMQP_v1_0"
+      ],
+      "native_source_meaning": "Alternative on-wire binding stacks described",
+      "negative_equivalence_boundary": "No actual network connection or CSAPI encoding",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-visible participant",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-ROLE-Request_Response"
+      ],
+      "native_source_meaning": "Module and hardware element endpoints can act as interaction participants",
+      "negative_equivalence_boundary": "Not publicly discoverable CSAPI resource identity",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Composition member exposure and source attribution",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream",
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Multiple endpoints can exchange streams/messages",
+      "negative_equivalence_boundary": "No public component members or reported observations",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared component capability catalogue",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+      ],
+      "native_source_meaning": "Interaction types describe design capabilities",
+      "negative_equivalence_boundary": "No actual client-discoverable capability catalogue",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command interface",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+        "SOSA-C239-G2-7S-RULE-15_2_1"
+      ],
+      "native_source_meaning": "Management request-response and conditional FACE Transport API are native",
+      "negative_equivalence_boundary": "Not a CSAPI Command schema or endpoint",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command parameter",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+      ],
+      "native_source_meaning": "Operation parameters represent inputs/outputs",
+      "negative_equivalence_boundary": "No specific Command schema fields",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command result",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+      ],
+      "native_source_meaning": "Responder returns parameters after operation",
+      "negative_equivalence_boundary": "No actual command-result resource",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Issued control request",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+        "SOSA-C239-G2-7S-INTERACTION-Signal_Layer_Control"
+      ],
+      "native_source_meaning": "Management operations differ from low-latency signal control",
+      "negative_equivalence_boundary": "No issued client command or safe execution",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Command acknowledgement / reported outcome",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Responses exist and events can sometimes be acknowledged",
+      "negative_equivalence_boundary": "Not universal command acknowledgement",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported output field",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream",
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Structured data and signal samples may be transported",
+      "negative_equivalence_boundary": "Not established observed-property field",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-qualified event identity and reference",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Event Notification defines event-triggered interaction",
+      "negative_equivalence_boundary": "No unique event identifier",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Event occurrence time",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Notifications sent when event occurs",
+      "negative_equivalence_boundary": "No timestamp value or time source",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested named-observable Event reporting",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Event notifications include mode/fault changes",
+      "negative_equivalence_boundary": "No named event subscription command",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested named-property Status reporting",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Structured status data can follow publish-subscribe",
+      "negative_equivalence_boundary": "No required CSAPI Status service",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Message-matching criteria",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Topic identifies a structured message stream",
+      "negative_equivalence_boundary": "No generalized ISA message filter expression",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Subscription identity and query definition",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Publisher/subscriber roles and topics described",
+      "negative_equivalence_boundary": "No subscription ID or lifecycle API",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Current command execution record",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+      ],
+      "native_source_meaning": "Request-response can carry set operations",
+      "negative_equivalence_boundary": "No queued/executing command record",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Service role and required command support",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-ROLE-Request_Response"
+      ],
+      "native_source_meaning": "Requestor/responder role explicit for interaction",
+      "negative_equivalence_boundary": "No global CSAPI service registry or commands",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Message priority",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-QOS-Priority"
+      ],
+      "native_source_meaning": "QoS writer priority default0 [0,X] X unspecified",
+      "negative_equivalence_boundary": "Not ISA message priority",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Message-data validity expiry",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-QOS-Deadline"
+      ],
+      "native_source_meaning": "QoS deadline is expected update interval",
+      "negative_equivalence_boundary": "Not expiration of a payload",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Exchange transmission time",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-QOS-Deadline"
+      ],
+      "native_source_meaning": "Deadline is contract on update interval",
+      "negative_equivalence_boundary": "Not actual send timestamp",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Message author or registration announcer",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-ROLE-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Publisher role identifies message source",
+      "negative_equivalence_boundary": "No cryptographically verified author",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-message reference for provenance",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Context"
+      ],
+      "native_source_meaning": "Context metadata may accompany digital signals",
+      "negative_equivalence_boundary": "No stable message provenance reference",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Conversation-scoped message identifier",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+      ],
+      "native_source_meaning": "Intermodule operations have parameters",
+      "negative_equivalence_boundary": "No conversation correlation ID",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Negotiated message encoding and model version",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_4_1",
+        "SOSA-C239-G2-7S-RULE-15_4_2"
+      ],
+      "native_source_meaning": "OMG DDS RTPS or Protobuf AMQP ZMTP stacks",
+      "negative_equivalence_boundary": "Not an OGC JSON/SensorML encoding negotiation",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-interface IP addresses",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-BINDING-OMG_DDS_RTPS_v1_4_"
+      ],
+      "native_source_meaning": "IPv4/IPv6 source network binding choices",
+      "negative_equivalence_boundary": "No source-case assigned addresses",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-interface up/down state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Interaction implies some transport capability",
+      "negative_equivalence_boundary": "No observed live interface",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported component receive data rate",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+      ],
+      "native_source_meaning": "High volume data stream source type",
+      "negative_equivalence_boundary": "Not actual measured bandwidth",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported component transmit data rate",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+      ],
+      "native_source_meaning": "Signal stream can carry high data rate",
+      "negative_equivalence_boundary": "No current transmit throughput measurement",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component capability and readiness report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+        "SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe"
+      ],
+      "native_source_meaning": "Health data and fault events can be published",
+      "negative_equivalence_boundary": "No actual readiness report",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported component operating condition",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Fault warning state changes may generate notifications",
+      "negative_equivalence_boundary": "No measured current state",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — reporting path",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_4_1",
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+      ],
+      "native_source_meaning": "SOSA message and wideband transports are distinguished",
+      "negative_equivalence_boundary": "No observed CSAPI DataStream service",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — control execution",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Signal_Layer_Control",
+        "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+      ],
+      "native_source_meaning": "Two distinct control interaction types",
+      "negative_equivalence_boundary": "No authorized executed software/device control",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — processing",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+      ],
+      "native_source_meaning": "High-rate low-latency stream is native category",
+      "negative_equivalence_boundary": "No actual source processing telemetry",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — time / QA",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-QOS-Deadline",
+        "SOSA-C239-G2-7S-QOS-Liveliness"
+      ],
+      "native_source_meaning": "QoS durations and liveliness lease in microseconds",
+      "negative_equivalence_boundary": "Not UTC or quality assurance",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — service history",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-QOS-Durability",
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Late joining reader durability and event notices described",
+      "negative_equivalence_boundary": "Not ISA archive/history service",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component configuration version",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_6_1_1",
+        "SOSA-C239-G2-7S-PERMISSION-15_6_1_1"
+      ],
+      "native_source_meaning": "TLS configuration may differ by software load",
+      "negative_equivalence_boundary": "No current revision identifier",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Certificate identity and trust context",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_6_1_1",
+        "SOSA-C239-G2-7S-RULE-15_6_1_2"
+      ],
+      "native_source_meaning": "Conditional TLS/DTLS protection for intermodule traffic",
+      "negative_equivalence_boundary": "No certificate identity or universal TLS",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Request access-control metadata",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-RULE-15_6_1_1",
+        "SOSA-C239-G2-7S-PERMISSION-15_6_1_1"
+      ],
+      "native_source_meaning": "Source permits conditional transport security configuration",
+      "negative_equivalence_boundary": "No tasking permission policy",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Administrative network and service notification",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7S-INTERACTION-Event_Notification"
+      ],
+      "native_source_meaning": "Events can notify faults and modes",
+      "negative_equivalence_boundary": "No standardized admin notification schema",
+      "DIM_Profile_adopted": false
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7S-Q01",
+      "status": "HELD",
+      "description": "§15.7 Services-Services Matrix explicitly future, no table rows exist."
+    },
+    {
+      "id": "SOSA-G2-7S-Q02",
+      "status": "HELD",
+      "description": "Alternative nondefault interconnects have conformance TBD."
+    },
+    {
+      "id": "SOSA-G2-7S-Q03",
+      "status": "HELD",
+      "description": "Conditional FACE Transport API Rule does not apply to every module, original FACE3.1 unread."
+    },
+    {
+      "id": "SOSA-G2-7S-Q04",
+      "status": "HELD",
+      "description": "Observation15.2-2 cites Rule14.2-1 although it is an RTE file rule."
+    },
+    {
+      "id": "SOSA-G2-7S-Q05",
+      "status": "HELD",
+      "description": "QoS implementation postponed, source policy taxonomy not live behavior."
+    },
+    {
+      "id": "SOSA-G2-7S-Q06",
+      "status": "HELD",
+      "description": "Sensor-to-sensor QoS explicitly outside scope."
+    },
+    {
+      "id": "SOSA-G2-7S-Q07",
+      "status": "HELD",
+      "description": "QoS Priority upper X undefined."
+    },
+    {
+      "id": "SOSA-G2-7S-Q08",
+      "status": "HELD",
+      "description": "QoS Deadline and Liveliness intervals not message expiry or UTC."
+    },
+    {
+      "id": "SOSA-G2-7S-Q09",
+      "status": "HELD",
+      "description": "Durability source prose typo PERSITENT vs table PERSISTENT."
+    },
+    {
+      "id": "SOSA-G2-7S-Q10",
+      "status": "HELD",
+      "description": "SHARED_EXCLUSIVE ownership original description incomplete."
+    },
+    {
+      "id": "SOSA-G2-7S-Q11",
+      "status": "HELD",
+      "description": "Three protocol bindings are alternatives only under stated conditions."
+    },
+    {
+      "id": "SOSA-G2-7S-Q12",
+      "status": "HELD",
+      "description": "OMG DDS/RTPS Protobuf AMQP ZMTP native normative files unexamined."
+    },
+    {
+      "id": "SOSA-G2-7S-Q13",
+      "status": "HELD",
+      "description": "FACE3.1 TSS original standard text not independently audited."
+    },
+    {
+      "id": "SOSA-G2-7S-Q14",
+      "status": "HELD",
+      "description": "Rule15.4-1 infrastructure vs Rule15.4-2 module binding responsibility distinct."
+    },
+    {
+      "id": "SOSA-G2-7S-Q15",
+      "status": "HELD",
+      "description": "Interaction roles depend on type; not global model classes."
+    },
+    {
+      "id": "SOSA-G2-7S-Q16",
+      "status": "HELD",
+      "description": "Wideband signal/context/control/discrete differ from SOSA message transport."
+    },
+    {
+      "id": "SOSA-G2-7S-Q17",
+      "status": "HELD",
+      "description": "Network virtual discrete restricted by performance/safety, physical discrete may remain."
+    },
+    {
+      "id": "SOSA-G2-7S-Q18",
+      "status": "HELD",
+      "description": "VITA49.2 digital signal context original source unread."
+    },
+    {
+      "id": "SOSA-G2-7S-Q19",
+      "status": "HELD",
+      "description": "Publish-subscribe implementation not fully determined by C239."
+    },
+    {
+      "id": "SOSA-G2-7S-Q20",
+      "status": "HELD",
+      "description": "Request-response implementation not fully specified; REST/SOAP/SNMP examples not mandatory CSAPI."
+    },
+    {
+      "id": "SOSA-G2-7S-Q21",
+      "status": "HELD",
+      "description": "Event acknowledgement possible not universally required."
+    },
+    {
+      "id": "SOSA-G2-7S-Q22",
+      "status": "HELD",
+      "description": "Conditional TCP TLS1.2+ and UDP DTLS1.2+ enable-disable do not mandate universal always-on encryption."
+    },
+    {
+      "id": "SOSA-G2-7S-Q23",
+      "status": "HELD",
+      "description": "TLS DTLS native cryptographic standards and actual deployment not examined."
+    },
+    {
+      "id": "SOSA-G2-7S-Q24",
+      "status": "HELD",
+      "description": "Permission for alternate software/firmware load does not mandate live TLS setting."
+    },
+    {
+      "id": "SOSA-G2-7S-Q25",
+      "status": "HELD",
+      "description": "Confidentiality integrity authenticity descriptions do not yield CSAPI certificate/authorization schema."
+    },
+    {
+      "id": "SOSA-G2-7S-Q26",
+      "status": "HELD",
+      "description": "Endpoint-role diagram symbols not fully visually verified."
+    },
+    {
+      "id": "SOSA-G2-7S-Q27",
+      "status": "HELD",
+      "description": "No empirical source-case protocol QoS TLS or message delivery test."
+    },
+    {
+      "id": "SOSA-G2-7S-Q28",
+      "status": "HELD",
+      "description": "Eight original native C239 files, later S251, restricted Appendix C held."
+    },
+    {
+      "id": "SOSA-G2-7S-Q29",
+      "status": "HELD",
+      "description": "External FACE MORA VICTORY OMG and other protocols still unread."
+    },
+    {
+      "id": "SOSA-G2-7S-Q30",
+      "status": "HELD",
+      "description": "Future Services Matrix and unresolved source omissions prevent donor closure."
+    },
+    {
+      "id": "SOSA-G2-7S-Q31",
+      "status": "HELD",
+      "description": "No adopted DIM classes Profile SHALLs or independent system conformance."
+    }
+  ],
+  "C239_registered_headings": {
+    "registered": 192,
+    "at_least_sampled_or_inline_read": 189,
+    "unread": 2,
+    "restricted": 1,
+    "newly_source_read": [
+      "15",
+      "15.6",
+      "15.7"
+    ],
+    "chapter15_matrix_future_not_source_read": true,
+    "full_native_and_external_companion_audit": false
+  },
+  "DIM_Profile_adopted": false,
+  "independent_runtime_protocol_conformance": false,
+  "next_owner_proceed": "SOSA-G2-7T original C239 Appendix A/B PDF384–392, STOP before native companion G3"
+}
