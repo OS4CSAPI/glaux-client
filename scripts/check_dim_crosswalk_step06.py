@@ -1794,6 +1794,140 @@ def verify_sosa_g2_7c_master(doc: dict, mirror: list[list[str]], md: str) -> Non
     print("LIMIT: exact dense matrix pixel cell alignments remain unverified, 34 C239 headings unread, one restricted, VITA/8 native model/API files held; zero DIM or runtime adoption.")
 
 
+
+def verify_sosa_g2_7d_master(doc: dict, mirror: list[list[str]], md: str) -> None:
+    """Independent original C239 §13.3.5 source, mirror, and SAME saved canonical workbook checks."""
+    import hashlib
+    import html
+    grid=doc["review_grid"];rows=doc["rows"]
+    required(doc["schemaVersion"]=="0.15" and len(rows)==329 and len(grid)==346
+             and len(doc["columns"])==15 and all(len(x)==15 for x in grid),
+             "G2-7D original 329 rows and 346x15 canonical master")
+    required([x["key"] for x in doc["columns"][:4]]==["Dragino","AirGradient","Campbell","Bennett"]
+             and [x["key"] for x in doc["columns"]][8:10]==["OpenGroupSOSA","SOSA"]
+             and doc["columns"][-1]["key"]=="DIM",
+             "four original cases left, separate SOSA donors and proposed DIM far right")
+    required(mirror==grid,"canonical JSON and first CSV parity")
+    with (BASE/"ISA_Correction_Review_07NOV2026.csv").open(newline="",encoding="utf-8") as f:
+        required(list(csv.reader(f))==grid,"second historical CSV exact parity")
+    twin=(BASE/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    required("<table>" in md and md.split("<table>",1)[1]==twin.split("<table>",1)[1],
+             "BOTH GitHub-readable comparison tables identical")
+    body=md.split("<tbody>",1)[1].split("</tbody>",1)[0];readable=[]
+    for tr in re.findall(r"<tr>.*?</tr>",body,re.S):
+        if 'colspan="15"' in tr:
+            h=re.search(r'<th colspan="15">(.*?)</th>',tr,re.S)
+            required(h is not None,"section divider rendered")
+            readable.append([html.unescape(h.group(1))]+[""]*14)
+        else:
+            vals=[html.unescape(x) for x in re.findall(r"<td>(.*?)</td>",tr,re.S)]
+            required(len(vals)==15,"readable case/donor/DIM row complete")
+            readable.append(vals)
+    secs=set(doc["review_sections"])
+    required(len(secs)==15 and readable==grid[2:]
+             and [r for i,r in enumerate(grid) if i>1 and i not in secs]==[r["display"] for r in rows],
+             "all readable cells and fifteen topic groups agree with source grid")
+    required(len(doc["originalDonorEvidence"])==58 and len(doc["caseEvidence"])==73
+             and doc["ISAEvidence"]["currentPrimaryReviews"]==480
+             and doc["ISAEvidence"]["specificQuestions"]==6,
+             "prior donor, four-case and ISA480/six-question records preserved")
+    prior=json.loads((BASE/"SOSA_G2_7C_Original_Source_Item_Coverage_10NOV2026.json").read_text(encoding="utf-8"))
+    required(len(prior["exact_holds"])==19 and prior["source"]["source_table_high_resolution_geometry_verified"] is False,
+             "all nineteen earlier G2-7C original source visual holds remain")
+    required(sum(bool(r.get("G2_7C_source_correspondence")) for r in rows)==22
+             and doc["SOSAReviewCompletion"]["G2_7C_XLSX_lag"]==0,
+             "earlier twenty-two source-graded Payload AMPS cells retained")
+    ledger=json.loads((BASE/"SOSA_G2_7D_Original_Source_Item_Coverage_10NOV2026.json").read_text(encoding="utf-8"))
+    c=ledger["source_counts"];items=ledger["original_source_items"];ids={x["id"] for x in items}
+    required(len(items)==len(ids)==44 and c["source_native_item_records"]==38
+             and c["analytical_contexts"]==6 and len(ledger["exact_holds"])==17
+             and c["PROFILE_FAMILY"]==4 and c["MATRIX_DEPTH_ROW"]==16
+             and c["PROFILE_DASH_OPTION"]==5 and c["FULL_STRING_EXAMPLE"]==4
+             and c["numbered_rule_shalls"]==0,
+             "original Switch AMPS source census: 38 native+6 analytic, four families, sixteen rows, five dashes, four examples, seventeen holds")
+    examples=[x["exact_printed_amps_string"] for x in items if x["native_kind"]=="FULL_STRING_EXAMPLE"]
+    required(len(examples)==4 and sum(s.startswith("MODA3-") for s in examples)==3
+             and sum(s.startswith("MODA6-") for s in examples)==1
+             and sum("-j-" in s for s in examples)==2,
+             "preserve four original printed MODA3/MODA6 source example strings and j placeholders")
+    required((ledger["C239_cumulative_coverage"]["registered_headings"],
+              ledger["C239_cumulative_coverage"]["at_least_source_sampled_or_inline_read"],
+              ledger["C239_cumulative_coverage"]["substantively_unread"],
+              ledger["C239_cumulative_coverage"]["restricted"])==(192,158,33,1),
+             "one additional original C239 section source-read; thirty-three unread, one restricted")
+    required(ledger["source"]["full_matrix_visual_alignment_checked"] is False
+             and ledger["source"]["publisher_ANSI_VITA65_0_65_1_read"] is False
+             and ledger["source"]["original_C239_DSDM_IDL_OpenAPI_eight_read"] is False
+             and ledger["DIM_Profile_adopted"] is False
+             and ledger["independent_device_or_runtime_conformance"] is False,
+             "source-visual and original normative companion gaps preserved; zero DIM or conformance adoption")
+    qualified=[r for r in rows if r.get("G2_7D_source_correspondence")]
+    required(len(qualified)==17
+             and {r["row_id"] for r in qualified}==set(doc["workbookSnapshot"]["G2_7D_affected_row_ids"]),
+             "exact seventeen justified original row IDs")
+    changed=set()
+    for row in qualified:
+        ev=row["G2_7D_source_correspondence"]
+        required(ev["source_item_ids"] and all(a in ids for a in ev["source_item_ids"]),
+                 "G2-7D source item IDs in original inventory "+row["row_id"])
+        required(ev["DIM_Profile_adopted"] is False
+                 and ev["original_ANSI_VITA_and_C239_native_companions_unread"]
+                 and ev["dense_switch_matrix_exact_pixel_alignment_unverified"],
+                 "no invented hardware, Profile rule or exact matrix mapping "+row["row_id"])
+        value=row["display"][8]
+        required("G2-7D:" in value and value.startswith(ev["previous_sosa_cell_value"]),
+                 "current source-qualified cell retains exact previous donor text "+row["row_id"])
+        matches=[i for i,v in enumerate(grid) if v[8]==value and v[14]==row["label"]]
+        required(len(matches)==1,"one source row-to-grid position "+row["row_id"])
+        changed.add("I"+str(matches[0]+1))
+    v=json.loads((BASE/"SOSA_G2_7D_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
+    required(v["G2_7D_qualified_existing_sosa_cells"]==17
+             and len(changed)==17 and set(v["changed_saved_cells"])==changed
+             and all(v["checks"].values()) and v["G2_7D_visual_matrix_complete"] is False,
+             "exact seventeen saved SOSA source cells and partial original matrix audit")
+    required(doc["workbookSnapshot"]["checkpoint"]=="SOSA-G2-7D-CANONICAL-VERIFIED"
+             and doc["workbookSnapshot"]["currently_matches_readable_view"] is True
+             and doc["SOSAReviewCompletion"]["G2_7D_XLSX_lag"]==0
+             and doc["SOSAEvidence"]["G2_7D"]["Excel_lag_cells"]==0,
+             "mandatory L23 exact SAME original Excel exit and zero lag")
+    book=(BASE/(NAME+".xlsx")).read_bytes();sha=hashlib.sha256(book).hexdigest()
+    required(sha==doc["currentWorkbookSha256"]==doc["workbookSnapshot"]["sha256"]==v["workbook_sha256"],
+             "actual original saved XLSX byte checksum and project source metadata")
+    with zipfile.ZipFile(io.BytesIO(book)) as z:
+        required(z.testzip() is None,"original saved Excel ZIP CRC")
+        for path in z.namelist():
+            if path.endswith((".xml",".rels")):ET.fromstring(z.read(path))
+            if path.startswith("xl/worksheets/") and path.endswith(".xml"):
+                required(not any(cell.get("t")=="e" for cell in ET.fromstring(z.read(path)).iter(S+"c")),
+                         "no error-valued saved cell in "+path)
+        wb=ET.fromstring(z.read("xl/workbook.xml"));sheets=list(wb.find(S+"sheets"))
+        names=[x.get("name") for x in sheets]
+        required(len(names)==26 and names==v["workbook_sheets"],"original twenty-six sheets remain ordered")
+        rels={x.get("Id"):x.get("Target") for x in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))}
+        paths={}
+        for node in sheets:
+            a=rels[node.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
+            paths[node.get("name")]=a.lstrip("/") if a.startswith("/") else "xl/"+a
+        required(len(v["exact_original_untouched_xml_sha256"])==22,"twenty-two original historical sheets tracked")
+        for name,h in v["exact_original_untouched_xml_sha256"].items():
+            required(hashlib.sha256(z.read(paths[name])).hexdigest()==h,
+                     "unchanged historical original worksheet XML: "+name)
+        ws,saved=data_rows(z.read(paths["Master Crosswalk"]),15)
+        required(saved==grid,"all 346x15 saved worksheet cells equal source JSON and readable mirrors")
+        merges=[x.get("ref") for x in ws.find(S+"mergeCells").findall(S+"mergeCell")]
+        required(merges==["A1:D1","E1:I1","J1:N1"]+[f"A{i+1}:O{i+1}" for i in doc["review_sections"]],
+                 "original column groups and fifteen dividers intact")
+        pane=ws.find(S+"sheetViews").find(S+"sheetView").find(S+"pane")
+        required(pane.get("xSplit")=="4" and pane.get("ySplit")=="2",
+                 "source-case columns and headings frozen")
+    required(doc["SOSAReviewCompletion"]["source_coverage_complete"] is False
+             and doc["SOSAReviewCompletion"]["step18_SAPIENT_blocked"] is True,
+             "SOSA original-source audit remains open, SAPIENT blocked")
+    print("PASS: G2-7D original §13.3.5 38 native and 6 analytic entries, 17 qualified existing SOSA comparisons, 17 precise holds.")
+    print("PASS: SAME original 26-sheet 346x15 saved workbook, JSON, BOTH CSV and BOTH readable Markdown exact; 22 historical sheets unchanged.")
+    print("LIMIT: original ANSI/VITA and 8 C239 native companions unread, dense physical matrix pixel alignment unverified, 33 C239 headings unread and 1 restricted, no DIM/Profile or installed-device adoption.")
+
+
 def main() -> None:
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
@@ -1801,7 +1935,9 @@ def main() -> None:
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
     if "review_grid" in doc and "columns" in doc:
-        if len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_7C"):
+        if len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_7D"):
+            verify_sosa_g2_7d_master(doc, mirror, md)
+        elif len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_7C"):
             verify_sosa_g2_7c_master(doc, mirror, md)
         elif len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G2_7B"):
             verify_sosa_g2_7b_master(doc, mirror, md)
