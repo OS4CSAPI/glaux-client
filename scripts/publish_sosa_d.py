@@ -1202,5 +1202,113 @@ def preview_g2_7l(m,actual,filename):
     img.save(D/filename,optimize=True)
     need((D/filename).stat().st_size>12000,"rendered from saved worksheet XML evidence preview")
 
+
+# Reconcile a pre-existing G2-7L workbook publication whose old workflow
+# committed JSON/XLSX but failed to stage BOTH CSV and BOTH readable Markdown mirrors.
+# This is a bounded L23 publication repair, not a new native-source packet.
+def reconcile_existing_g2_7l_publication():
+    from html import escape,unescape
+    from subprocess import check_output
+    z=load("SOSA_G2_7L_Original_Source_Item_Coverage_11NOV2026.json")
+    m=load(MASTER);legacy=load(LEDGER)
+    check_g2_7l_source(z,m)
+    need(m["workbookSnapshot"]["checkpoint"]=="SOSA-G2-7L-CANONICAL-VERIFIED"
+         and m["workbookSnapshot"]["refreshed_cell_count"]==24
+         and m["workbookSnapshot"]["currently_matches_readable_view"]
+         and m["SOSAReviewCompletion"]["G2_7L_XLSX_lag"]==0,
+         "already generated SAME workbook source metadata G2-7L")
+    saved=(D/BOOK).read_bytes();sha=digest(saved)
+    need(sha==m["currentWorkbookSha256"]==m["workbookSnapshot"]["sha256"],
+         "current G2-7L saved workbook SHA equals published JSON metadata")
+    labels={row["label"]:row["display"][8] for row in m["rows"]
+            if row.get("G2_7L_source_correspondence")}
+    need(len(labels)==24,"24 distinct original source-qualified comparison labels")
+    for n in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
+        with (D/n).open("w",encoding="utf-8",newline="") as f:
+            csv.writer(f,lineterminator="\r\n").writerows(m["review_grid"])
+    for n in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        original=(D/n).read_text(encoding="utf-8")
+        def swap(match):
+            tr=match.group(0);cells=list(re.finditer(r"<td>(.*?)</td>",tr,re.S))
+            if len(cells)!=15:return tr
+            label=unescape(cells[14].group(1))
+            if label not in labels:return tr
+            c=cells[8]
+            return tr[:c.start(1)]+escape(labels[label],quote=True)+tr[c.end(1):]
+        repaired=re.sub(r"<tr>.*?</tr>",swap,original,flags=re.S)
+        need(repaired!=original and repaired.count("G2-7L:")>=24,
+             "four source comparison mirrors were genuinely older "+n)
+        (D/n).write_text(repaired,encoding="utf-8")
+    check_source(m,legacy);check_g2_7k_source(m);check_g2_7l_source(z,m)
+    base="0447f9935224d2ae1b8b2bfbfa9f9aeba9fa34b1461e440a3f17210e6b203a20"
+    orig=check_output(["git","show","b6f83669748ea2753a7907e81562ce0c316aeeb5:"+
+         "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/"+BOOK])
+    need(digest(orig)==base,"old original G2-7K workbook historical bytes present")
+    before=old.readcells(orig,"Master Crosswalk")
+    after=old.readcells(saved,"Master Crosswalk")
+    for i,row in enumerate(m["review_grid"],1):
+        for j,value in enumerate(row,1):
+            need(after.get(addr(i,j),"")==old.val(value),
+                 "repaired source and published saved 346x15 cell "+addr(i,j))
+    delta=sorted([key for key in set(before)|set(after)
+                  if before.get(key,"")!=after.get(key,"")])
+    need(len(delta)==24 and all(re.fullmatch(r"I\d+",key) for key in delta),
+         "exact 24 saved SOSA-only donor cells; case/ISA/other donors/DIM preserved")
+    with zipfile.ZipFile(io.BytesIO(saved)) as wb:
+        need(wb.testzip() is None,"saved original workbook ZIP CRC valid")
+        paths=old.sheetpaths(wb);need(len(paths)==26,"same 26 worksheet names and order")
+        unchanged={name:digest(wb.read(path)) for name,path in paths.items()
+                   if name not in ("Master Crosswalk","DIM Register","Summary","Validation")}
+        need(len(unchanged)==22,"all 22 original historical worksheets unchanged")
+        former=load("SOSA_G2_7K_Workbook_Validation_11NOV2026.json")
+        need(unchanged==former["exact_original_untouched_xml_sha256"],
+             "historical 22 sheets byte identical to independently verified G2-7K snapshot")
+        for path in wb.namelist():
+            if path.endswith((".xml",".rels")):ET.fromstring(wb.read(path))
+            if path.startswith("xl/worksheets/") and path.endswith(".xml"):
+                need(not any(x.get("t")=="e" for x in ET.fromstring(wb.read(path)).iter(q("c"))),
+                     "no spreadsheet error cells")
+        main=ET.fromstring(wb.read(paths["Master Crosswalk"]))
+        merges=[x.get("ref") for x in main.find(q("mergeCells")).findall(q("mergeCell"))]
+        need(merges==["A1:D1","E1:I1","J1:N1"]+
+             [f"A{i+1}:O{i+1}" for i in m["review_sections"]],
+             "approved grouped foundation layout and 15 topic dividers")
+        pane=main.find(q("sheetViews")).find(q("sheetView")).find(q("pane"))
+        need(pane.get("xSplit")=="4" and pane.get("ySplit")=="2",
+             "original four case columns and frozen headers")
+    report="SOSA_G2_7L_Workbook_Validation_11NOV2026.json"
+    record={"date":"2026-11-11","step":"SOSA-G2-7L-CONSOLIDATED-SAVED-EXCEL-PUBLICATION-RECOVERY",
+      "result":"ORIGINAL_SOURCE_AND_SAME_26_SHEET_SAVED_XLSX_AND_BOTH_CSV_MD_PARITY_PASS",
+      "workbook_sha256":sha,"base_workbook_sha256":base,"workbook_sheets":list(paths),
+      "refreshed_sheets":["Master Crosswalk","DIM Register","Summary","Validation"],
+      "exact_original_untouched_xml_sha256":unchanged,
+      "information_rows":329,"grid_rows":346,"columns":15,"original_donor_evidence":58,
+      "case_evidence":73,"ISA_primary_source_outcomes":480,"original_ISA_questions_open":6,
+      "G2_7L_source_native_items":148,"G2_7L_numbered_RULE_SHALL":48,
+      "G2_7L_observations":6,"G2_7L_recommendations":2,"G2_7L_permission":1,
+      "G2_7L_table_pin_rows":34,"G2_7L_figure_captions":4,"G2_7L_exact_holds":19,
+      "G2_7L_qualified_existing_sosa_cells":24,"changed_saved_cells":delta,
+      "C239_at_least_sampled_or_inline_read":173,"C239_unread":18,"C239_restricted":1,
+      "source_original_external_companions_examined":False,
+      "source_figure_pixels_verified":False,"original_C239_eight_companions_examined":False,
+      "checks":{"all_actual_XLSX_346x15_cells_equal_JSON_both_CSV_both_MD":True,
+        "both_CSVs_equal":True,"both_readable_MDs_equal":True,
+        "same_26_worksheet_names_order":True,"22_untouched_historical_XMLs_preserved":True,
+        "only_24_SOSA_I_cells_changed":True,"valid_ZIP_CRC_and_XML":True,
+        "no_spreadsheet_error_cells":True,"zero_DIM_Profile_adoption":True},
+      "limits":["Consolidated original C239 §§13.5.2.3.3–13.5.2.7.2 only, STOP before J7",
+        "Four original figure geometries and source external original standards held",
+        "No actual device control, video stream, power measurement or conformance",
+        "Historical workflow committed source JSON/XLSX before both CSV/MD; this pass repaired mirrors and reverified pre-existing saved workbook byte-exact",
+        "Preview derived from saved Excel XML, not native Excel application"],
+      "next":"Only distinct owner Proceed starts SOSA-G2-7M original §§13.5.2.8–13.5.2.12; SAPIENT blocked"}
+    save(report,record)
+    preview_g2_7l(m,after,"SOSA_G2_7L_Workbook_Preview_11NOV2026.png")
+    print("PASS: G2-7L repaired both CSV/both readable MD against existing original saved Excel; 346x15, 24 I cells, 22 historical sheets, SHA",sha)
+
 if __name__=="__main__":
-    publish_g2_7l()
+    m=load(MASTER)
+    if m.get("SOSAEvidence",{}).get("G2_7L") and m.get("workbookSnapshot",{}).get("checkpoint")=="SOSA-G2-7L-CANONICAL-VERIFIED":
+        reconcile_existing_g2_7l_publication()
+    else:
+        publish_g2_7l()
