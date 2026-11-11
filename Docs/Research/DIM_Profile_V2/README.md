@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-7N verified (11 November 2026)
+
+Original C239 §§13.5.2.13–13.5.2.19.2 audited, **24 existing SOSA cells updated** in the same fully verified 26-sheet master Excel; precise holds retained. See [governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) and [SOSA plan](Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Next owner Proceed: G2-7O Class3 §§13.5.3–13.5.3.3.11 only, SOSA OPEN and SAPIENT blocked.
+
+---
+
 # CURRENT — SOSA-G2-7M CONSOLIDATED SOURCE + SAME EXCEL VERIFIED (11 November 2026)
 
 **What was actually completed:** The Open Group SOSA *Technical Standard for SOSA Reference Architecture*, **C239 Edition1.1 (2023), original §§13.5.2.8–13.5.2.12**, PDF pp.295–306, stopped **BEFORE §13.5.2.13 J10**. [Original 173 typed source-item ledger](Donor_DIM_Crosswalk/SOSA_G2_7M_Original_Source_Item_Coverage_11NOV2026.json) · [21 source-qualified existing-row comparisons](Donor_DIM_Crosswalk/SOSA_G2_7M_Original_Source_and_Master_Reconciliation_11NOV2026.md) · [actual saved Excel validation](Donor_DIM_Crosswalk/SOSA_G2_7M_Workbook_Validation_11NOV2026.json). Source counted **27 original numbered SHALL Rules (26 Inspection, one Analysis), two Observations, six tables with 102 contact/performance rows, five figure captions, plus one separately marked unnumbered J7 table-preamble SHALL**; 19 exact local holds were retained. No inspected original high-resolution figure geometry, external IEEE/ANSI/VITA/MIL/API companions, actual device commands or live RF link conformance was claimed.
