@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Publish one consolidated G2-7N packet to SAME Excel workbook
+    name: Publish one consolidated G2-7O packet to SAME Excel workbook
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -42,9 +42,9 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7N_Workbook_Validation_11NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7O_Workbook_Validation_11NOV2026.json
           if git diff --cached --quiet; then echo "No new complete source-qualified workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): publish G2-7N 24 original J10-J16 donor cells in same saved Excel"
+          git commit -m "research(dim-v2): publish G2-7O 24 original Class3 J1-J2 donor cells in same saved Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Confirm actual remote commit contains published result
         run: |
