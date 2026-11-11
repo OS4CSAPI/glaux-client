@@ -1,3 +1,9 @@
+# CURRENT — SOSA-G2-7L CONSOLIDATED ORIGINAL SOURCE + SAME SAVED EXCEL INDEPENDENTLY VERIFIED (11 November 2026)
+
+**G2-7L FINAL L23 SAVED-WORKBOOK / INDEPENDENT VERIFICATION PASS (11 November 2026):** Exactly **24** native-source-qualified existing SOSA donor-column-I cells are current in canonical JSON, both CSV mirrors, both GitHub-readable comparisons and the **SAME existing 26-sheet editable Excel**, with all **346 × 15 actual saved grid values matching** and 22 historical worksheets byte-preserved. [Complete saved Excel/cross-format validation](SOSA_G2_7L_Workbook_Validation_11NOV2026.json) · [rendered saved-source preview](SOSA_G2_7L_Workbook_Preview_11NOV2026.png) · [publisher repair PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43057065456) · [independent saved-source verification PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43057355361). Workbook SHA256 `89a582868a90891a8046c1a3e2a7f86270ac827faa1793637b2967a6aa21cf3d`, **Excel lag ZERO**. The previously documented 19 source holds, original C239 173/18/1 source-coverage standing and zero model/CSAPI Profile/device conformance adoption remain unchanged; a separate owner's Proceed starts G2-7M §§13.5.2.8–13.5.2.12 only.
+
+---
+
 # SOSA-G2-7L — consolidated original C239 §13.5.2.3.3–§13.5.2.7.2 source-first review
 
 **11 November 2026 — Original The Open Group SOSA C239 Edition1.1 (2023), PDF pages 285–295 (printed 259–269).** All 23 nested source sections were reviewed at the original inline text, Rule, Observation, Recommendation, Permission, connector-table and figure-caption depth. Original high-resolution figure geometry and modality checkmarks were NOT verified; original external normative companions, eight native C239 DSDM/IDL/OpenAPI files and S251 remain unexamined. STOP before C239 §13.5.2.8 J7; the heading at the bottom of PDF295 does not authorize J7 source review.
