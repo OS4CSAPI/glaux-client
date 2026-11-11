@@ -1794,13 +1794,13 @@ def publish_g2_7o():
         need(len(matched)==1 and qmap["label"] not in mapped,"existing unique crosswalk row")
         r=matched[0];prev=r["display"][8]
         need("G2-7O:" not in prev,"not already integrated")
-        new=(prev+" · G2-7O: "+qmap["source_native_meaning"]+" ["+qmap["relation"]+
+        new=(prev+" · G2-7O: "+qmap["native_source_meaning"]+" ["+qmap["relation"]+
             "; "+qmap["negative_equivalence_boundary"]+"]")
         need(len(new)<=32767,"Excel text cell maximum")
         r["display"][8]=new
         r["G2_7O_source_correspondence"]={
            "source_item_ids":qmap["source_item_ids"],"relation":qmap["relation"],
-           "source_native_meaning":qmap["source_native_meaning"],
+           "source_native_meaning":qmap["native_source_meaning"],
            "negative_equivalence_boundary":qmap["negative_equivalence_boundary"],
            "previous_sosa_cell_value":prev,"DIM_Profile_adopted":False,
            "original_external_and_image_companions_held":True}
