@@ -30,7 +30,9 @@
       "T": 9,
       "D": 1,
       "I,A": 9
-    }
+    },
+    "qualified_existing_source_rows": 34,
+    "exact_holds": 27
   },
   "original_source_items": [
     {
@@ -1195,7 +1197,143 @@
     }
   ],
   "qualified_existing_row_mappings": [],
-  "exact_holds": [],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7Q-Q01",
+      "status": "HELD",
+      "description": "Class5 hardware element vs top level SOSA sensor, not universal DIM chassis"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q02",
+      "status": "HELD",
+      "description": "Only EOIR type currently explicitly specified"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q03",
+      "status": "HELD",
+      "description": "Class5 J1 figure/table captions call Class3"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q04",
+      "status": "HELD",
+      "description": "Original MIL-DTL83513 Micro-D companion not examined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q05",
+      "status": "HELD",
+      "description": "Nominal24V and per pair 2.5A one-second inrush not tested"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q06",
+      "status": "HELD",
+      "description": "MIL surge/noise power waveforms and tests not examined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q07",
+      "status": "HELD",
+      "description": "No actual power-cycle recovery demonstration"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q08",
+      "status": "HELD",
+      "description": "Auto-negotiated Ethernet not an observed CSAPI service"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q09",
+      "status": "HELD",
+      "description": "Vendor fixed part number vs software-defined GPI require distinct interpretation"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q10",
+      "status": "HELD",
+      "description": "Vendor GPI UI/API examples are not standard CSAPI Commands"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q11",
+      "status": "HELD",
+      "description": "LASER_ARM physical safety power gating not remotely exercised"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q12",
+      "status": "HELD",
+      "description": "GPS Recommendation embeds buffer SHALL for conformance test"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q13",
+      "status": "HELD",
+      "description": "Conditional SMA antenna not actual GNSS fix"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q14",
+      "status": "HELD",
+      "description": "Mechanical aperture can be self-contained or distributed"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q15",
+      "status": "HELD",
+      "description": "Mechanical class bands overlap owing to no upper axis bounds"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q16",
+      "status": "HELD",
+      "description": "Five shape codes not generic DIM hierarchy"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q17",
+      "status": "HELD",
+      "description": "SAE AS6169A original drawings and full clauses unexamined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q18",
+      "status": "HELD",
+      "description": "Access-hole vs no-hole turret mounting figures unexamined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q19",
+      "status": "HELD",
+      "description": "Gimbaled c-2-5-15 mounting figure pixels unexamined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q20",
+      "status": "HELD",
+      "description": "Source narrative c-6-15-5 vs Rule c-2-5-15 inconsistent"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q21",
+      "status": "HELD",
+      "description": "One SAE AS6169 citation omits A"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q22",
+      "status": "HELD",
+      "description": "Optional user pin PPS/trigger/laser examples not universal"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q23",
+      "status": "HELD",
+      "description": "No empirical devices tested for Class5 power/laser/recovery"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q24",
+      "status": "HELD",
+      "description": "External MIL/IEEE/SAE originals unexamined"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q25",
+      "status": "HELD",
+      "description": "Eight original C239 companion files and separate S251 unread; Appendix C restricted"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q26",
+      "status": "HELD",
+      "description": "Original figure/CAD source coverage remains bounded partial"
+    },
+    {
+      "id": "SOSA-G2-7Q-Q27",
+      "status": "HELD",
+      "description": "No DIM class/cardinality/Profile SHALL/device conformance adopted"
+    }
+  ],
   "original_C239_registered_heading_standing": {
     "registered": 192,
     "at_least_sampled_or_inline_read": 176,
@@ -1209,5 +1347,358 @@
   },
   "DIM_Profile_adopted": false,
   "independent_real_device_conformance": false,
-  "next": "G2-7R original Chapter14 §§14–14.5.3 only; stop before Chapter15"
+  "next": "G2-7R original Chapter14 §§14–14.5.3 only; stop before Chapter15",
+  "source_qualified_existing_row_mappings": [
+    {
+      "label": "Described sensing System / arrangement",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_1_1"
+      ],
+      "native_source_meaning": "Class5 device can represent top-level sensor or hardware element",
+      "negative_equivalence_boundary": "Not universal DIM chassis",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Physical constituent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_5_1_1"
+      ],
+      "native_source_meaning": "Micro-D connector and aperture mounting are source physical structures",
+      "negative_equivalence_boundary": "Not observed installed constituents",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Connected external equipment",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_2",
+        "SOSA-C239-G2-7Q-RULE-13_5_5_2_1_1"
+      ],
+      "native_source_meaning": "Host umbilical and turret mounting describe interfaces",
+      "negative_equivalence_boundary": "Not actual installed host asset",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-visible participant",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_6"
+      ],
+      "native_source_meaning": "Ethernet and power-cycle communication recovery specified",
+      "negative_equivalence_boundary": "Not an active IP/CSAPI service",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network instance and connection context",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_2",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_3"
+      ],
+      "native_source_meaning": "Conditional Gigabit and auto-negotiation describe physical link",
+      "negative_equivalence_boundary": "Not live network context",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Composition member exposure and source attribution",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_5_1_1"
+      ],
+      "native_source_meaning": "Aperture can be distributed across host platform",
+      "negative_equivalence_boundary": "No digital member resource",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared component capability catalogue",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Vendor GPI function list when software configurable",
+      "negative_equivalence_boundary": "Not generic CSAPI capability catalogue",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared property mutability",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_2",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Fixed part-number purpose differs from software-configurable pin",
+      "negative_equivalence_boundary": "Not universal writable property",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command interface",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Vendor UI and potential software API are source options",
+      "negative_equivalence_boundary": "Not standardized authenticated CSAPI Command",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command parameter",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Vendor function list for configurable pins",
+      "negative_equivalence_boundary": "No machine-readable Command schema",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Supported operating mode",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_4"
+      ],
+      "native_source_meaning": "LASER_ARM hardware gate controls hazardous power",
+      "negative_equivalence_boundary": "Not remotely selected software mode",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Issued control request",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3"
+      ],
+      "native_source_meaning": "Physical arming switch can disable emissions",
+      "negative_equivalence_boundary": "Not digital request",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Command acknowledgement / reported outcome",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_4"
+      ],
+      "native_source_meaning": "Hardwired arming determines power state",
+      "negative_equivalence_boundary": "No digital acknowledgement",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component capability and readiness report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_6"
+      ],
+      "native_source_meaning": "Source requires communication recovery after host power cycle",
+      "negative_equivalence_boundary": "Not observed readiness",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Required and recommended capability support",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_1_1"
+      ],
+      "native_source_meaning": "EOIR J1 requirement is conditional to Class5 source scope",
+      "negative_equivalence_boundary": "Not universal Profile SHALL",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Negotiated message encoding and model version",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_3"
+      ],
+      "native_source_meaning": "Ethernet link speed auto-negotiates",
+      "negative_equivalence_boundary": "Not model or message encoding version",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component time basis and synchronization",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_1"
+      ],
+      "native_source_meaning": "Optional user-defined pin may take PPS",
+      "negative_equivalence_boundary": "No measured clock accuracy",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported physical parent/child attachment relationships",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_5_1_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_5_6_1_1"
+      ],
+      "native_source_meaning": "Mechanical aperture mounting relates package and host",
+      "negative_equivalence_boundary": "No identified installed assets",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Orientation relative to attached parent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_5_1_1"
+      ],
+      "native_source_meaning": "Mount shape and CG constrain physical aperture",
+      "negative_equivalence_boundary": "Not measured orientation",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Position relative to attached parent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_5_1_1"
+      ],
+      "native_source_meaning": "Mounting axis and CG are physical spatial criteria",
+      "negative_equivalence_boundary": "Not observed position coordinates",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — site / mounting",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_5_2_1_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_5_6_1_1"
+      ],
+      "native_source_meaning": "Turret/gimbaled mounting requires SAE and source geometry",
+      "negative_equivalence_boundary": "Original figure geometry not verified",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — reporting path",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_1"
+      ],
+      "native_source_meaning": "Class5 supports physical Ethernet transport",
+      "negative_equivalence_boundary": "No published DataStream",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — power / state",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_1",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_6"
+      ],
+      "native_source_meaning": "24V input and post-cycle communication recovery required",
+      "negative_equivalence_boundary": "Not independently tested real device",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — control execution",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3",
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "LASER_ARM hardware and configurable pins are separate source functions",
+      "negative_equivalence_boundary": "No authorized CSAPI Command",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Power-source classification",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_1"
+      ],
+      "native_source_meaning": "Nominal24V host-provided power input",
+      "negative_equivalence_boundary": "Not generator or battery identity",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-side DC voltage",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_1"
+      ],
+      "native_source_meaning": "Class5 nominal24VDC host power",
+      "negative_equivalence_boundary": "Not measured voltage",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported condition of power to the component",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_6"
+      ],
+      "native_source_meaning": "Device should return communicating after power cycle per Rule",
+      "negative_equivalence_boundary": "Not actual current power status",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported arming state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3"
+      ],
+      "native_source_meaning": "Laser arming physical contacts defined",
+      "negative_equivalence_boundary": "Not reported current arming state",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Individual hardware serial number",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_2"
+      ],
+      "native_source_meaning": "Unique orderable part number for fixed user pin variant",
+      "negative_equivalence_boundary": "Not unique device serial number",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component configuration version",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Vendor publishes configurable GPI functions",
+      "negative_equivalence_boundary": "No configuration revision/version",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested current component configuration message",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3"
+      ],
+      "native_source_meaning": "Vendor UI can configure pin purpose",
+      "negative_equivalence_boundary": "Not standardized ISA or CSAPI message",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network-interface up/down state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_3"
+      ],
+      "native_source_meaning": "Speed auto-negotiation is link behavior",
+      "negative_equivalence_boundary": "No live up/down status",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — time / QA",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_1"
+      ],
+      "native_source_meaning": "PPS optional user-defined function",
+      "negative_equivalence_boundary": "No observed time or QA",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported energy reserve relative to maximum capacity",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_1"
+      ],
+      "native_source_meaning": "Platform input nominal24V",
+      "negative_equivalence_boundary": "No battery reserve",
+      "DIM_Profile_adopted": false
+    }
+  ]
 }
