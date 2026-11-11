@@ -1,0 +1,282 @@
+{
+  "schema": "SOSA-G2-7K-original-Ethernet-source-ledger-v0.1",
+  "date": "2026-11-11",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "document": "Technical Standard for SOSA Reference Architecture",
+    "document_id": "C239",
+    "edition": "1.1 (2023)",
+    "original_library_file": "c239_5.pdf",
+    "library_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_page": 285,
+    "printed_page": 259,
+    "source_access": "ORIGINAL_INLINE_TEXT_FULL_SUBSECTION_READ",
+    "source_figure_pixels_read": false,
+    "original_IEEE_802_3_2008_read": false,
+    "original_AS6070_6_read": false,
+    "original_C239_DSDM_IDL_OpenAPI_eight_read": false,
+    "later_S251_source_read": false
+  },
+  "authorized_scope": "§13.5.2.3.2 Ethernet (Copper) only; STOP BEFORE §13.5.2.3.3 Serial Communications",
+  "native_source_counts": {
+    "total_records": 7,
+    "native_numbered_SHALL_Rules": 2,
+    "inspection_I_rules": 2,
+    "source_contexts": 1,
+    "normative_companion_pointers": 2,
+    "prior_source_cross_references": 1,
+    "nested_heading": 1,
+    "numbered_recommendations": 0,
+    "numbered_permissions": 0,
+    "numbered_observations": 0
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7K-SECTION-13_5_2_3_2",
+      "kind": "NESTED_SECTION",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "Ethernet (Copper) within Class1&2 J2-Signal Connector; stop before separately headed §13.5.2.3.3 Serial Communications.",
+      "registered_C239_TOC_heading": false,
+      "source_text_review_status": "FULL_SECTION_INLINE_TEXT_READ"
+    },
+    {
+      "id": "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "J2 connector Ethernet signals must implement Gigabit Ethernet.",
+      "printed_rule_id": "13.5.2.3.2-1",
+      "modal_verb": "shall",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "scope": "J2 connector Ethernet signals",
+      "numeric_value_source": null
+    },
+    {
+      "id": "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "Gigabit Ethernet described as eight signal wires, four twisted pairs, 100 ohm connection.",
+      "standing": "DESCRIPTIVE_SOURCE_CONTEXT_NOT_NUMBERED_RULE",
+      "wire_count": 8,
+      "twisted_pair_count": 4,
+      "characteristic_impedance_ohms": 100,
+      "source_subclause": "13.5.2.3.2"
+    },
+    {
+      "id": "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "J2 Gigabit Ethernet must comply with the cited IEEE 802.3-2008 1000BaseT channel and use CAT 6A AS6070/6 cable or equivalent.",
+      "printed_rule_id": "13.5.2.3.2-2",
+      "modal_verb": "shall",
+      "conformance_methodology_printed": [
+        "I"
+      ],
+      "scope": "J2-Signal connector Gigabit Ethernet",
+      "reference_IEEE": "IEEE 802.3-2008",
+      "physical_medium": "1000BaseT",
+      "cable_specification": "CAT 6A AS6070/6 or equivalent"
+    },
+    {
+      "id": "SOSA-C239-G2-7K-REFERENCE-IEEE_802_3_2008",
+      "kind": "NORMATIVE_COMPANION_POINTER",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "IEEE 802.3-2008 is cited for the J2 1000BaseT channel; external IEEE original text was not examined.",
+      "reference_status": "C239_NATIVE_POINTER_READ__ORIGINAL_COMPANION_UNREAD",
+      "inferred_latest_edition": false
+    },
+    {
+      "id": "SOSA-C239-G2-7K-REFERENCE-AS6070_6",
+      "kind": "NORMATIVE_COMPANION_POINTER",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "CAT 6A AS6070/6 cable or equivalent is referenced; neither the original external document nor an equivalence assessment was examined.",
+      "reference_status": "C239_NATIVE_POINTER_READ__ORIGINAL_COMPANION_UNREAD",
+      "equivalence_criteria_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7K-REFERENCE-J2_TABLE_13_5_2_3_1",
+      "kind": "PREVIOUS_TABLE_CROSS_REFERENCE",
+      "source_locator": "The Open Group SOSA C239 Edition 1.1 (2023), original PDF p.285/403 (printed p.259), §13.5.2.3.2",
+      "meaning": "Earlier J2 Table13.5.2.3-1 gives physical copper Ethernet labels DA/DB/DC/DD in G2-7J; the section reviewed here does not revalidate its contact pixels or modality matrix.",
+      "prior_source_id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+      "prior_source_ledger": "SOSA_G2_7J_Original_Source_Item_Coverage_11NOV2026.json",
+      "original_table_graphical_geometry_verified": false
+    }
+  ],
+  "qualified_existing_row_mappings": [
+    {
+      "row_id": "S06-R006",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 Gigabit Ethernet names a source-specific physical communications interface, not an independently network-addressable participant.",
+      "negative_equivalence_boundary": "No IP address, service endpoint, registered node, or observed connectivity."
+    },
+    {
+      "row_id": "S06-R008",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-SECTION-13_5_2_3_2",
+        "SOSA-C239-G2-7K-REFERENCE-J2_TABLE_13_5_2_3_1",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "The J2-to-platform Ethernet channel is an optional conditional physical sensor/host interface.",
+      "negative_equivalence_boundary": "No installed cable, separate connected device, or tested external connection."
+    },
+    {
+      "row_id": "S06-R021",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Two current Edition1.1 numbered SHALL Rules have Inspection (I) methods and apply specifically to J2 Ethernet signals.",
+      "negative_equivalence_boundary": "Not adopted DIM or CSAPI Profile universal requirements."
+    },
+    {
+      "row_id": "ISA-A-NETWORK-CONTEXT",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "An eight-wire/four-pair 100-ohm Gigabit physical link can underlie network communications.",
+      "negative_equivalence_boundary": "Not an ISA Controller/Client network instance or service discovery."
+    },
+    {
+      "row_id": "ISA-A-CONNECTION-PRESENTATION",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "1000BaseT and CAT 6A describe physical channel/cable standards.",
+      "negative_equivalence_boundary": "Not digital message-encoding or data-model version negotiation."
+    },
+    {
+      "row_id": "ISA-A-BASELINE-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 Ethernet signals must implement Gigabit Ethernet and the cited physical channel and cabling conditions.",
+      "negative_equivalence_boundary": "Condition applies to J2 interface, not every whole sensing system or software service."
+    },
+    {
+      "row_id": "ISA-K-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "C239 declares a particular physical Ethernet interface implementation for J2 hardware.",
+      "negative_equivalence_boundary": "Not evidence of a live offered or activated capability."
+    },
+    {
+      "row_id": "ISA-K-VALUE-RANGE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "100 Ω is a source-descriptive physical link characteristic with four twisted pairs.",
+      "negative_equivalence_boundary": "Not a generic allowed-value schema for sensing data or a measured channel impedance."
+    },
+    {
+      "row_id": "ISA-T-CONFIG",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2",
+        "SOSA-C239-G2-7K-REFERENCE-J2_TABLE_13_5_2_3_1"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Original IEEE/cable compliance is a physical design claim and connector context.",
+      "negative_equivalence_boundary": "Not a measured installed configuration or live interface state."
+    },
+    {
+      "row_id": "CASE-H03",
+      "source_item_ids": [
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+        "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "A designed 1000BaseT J2 channel could carry traffic, but no source case uses it in the examined evidence.",
+      "negative_equivalence_boundary": "No established actual reporting route, observed Ethernet traffic, or online device."
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7K-Q01",
+      "status": "HELD",
+      "description": "Original IEEE 802.3-2008 normative clauses and requirements were not independently examined; C239 pointer is not an IEEE audit."
+    },
+    {
+      "id": "SOSA-G2-7K-Q02",
+      "status": "HELD",
+      "description": "Original AS6070/6 CAT 6A cable standard is unexamined; no vendor wiring claims inferred."
+    },
+    {
+      "id": "SOSA-G2-7K-Q03",
+      "status": "HELD",
+      "description": "C239 allows CAT 6A AS6070/6 or equivalent, but what establishes equivalent cable is not verified here."
+    },
+    {
+      "id": "SOSA-G2-7K-Q04",
+      "status": "HELD",
+      "description": "The descriptive 100 Ω, eight-wire/four-pair physical channel is not measured on any real sensor or platform."
+    },
+    {
+      "id": "SOSA-G2-7K-Q05",
+      "status": "HELD",
+      "description": "Previous six-page J2 pinout graphic and modality tick matrix remain pixel-unverified; 1000BaseT electrical pairs are not a verified pin-geometry drawing."
+    },
+    {
+      "id": "SOSA-G2-7K-Q06",
+      "status": "HELD",
+      "description": "An Ethernet physical channel does not establish address allocation, IP connectivity, discovered service, CSAPI resource or reporting path."
+    },
+    {
+      "id": "SOSA-G2-7K-Q07",
+      "status": "HELD",
+      "description": "Physical J2 Ethernet requirements are conditional on the particular hardware class/interface, not mandatory on all sensors described by the DIM."
+    },
+    {
+      "id": "SOSA-G2-7K-Q08",
+      "status": "HELD",
+      "description": "The cited 2008 IEEE edition is preserved literally; current revisions or supersession are not presumed or imported."
+    },
+    {
+      "id": "SOSA-G2-7K-Q09",
+      "status": "HELD",
+      "description": "No four empirical source equipment cases document this exact SOSA J2 connector or proven Gigabit Ethernet link."
+    },
+    {
+      "id": "SOSA-G2-7K-Q10",
+      "status": "HELD",
+      "description": "Original eight C239 DSDM/IDL/OpenAPI companion files, later S251 2025 and restricted Appendix C remain unexamined."
+    },
+    {
+      "id": "SOSA-G2-7K-Q11",
+      "status": "HELD",
+      "description": "No independent hardware, live traffic capture, conformance test or DIM/CSAPI Profile adoption occurred."
+    }
+  ],
+  "c239_registered_heading_standing": {
+    "total_registered_headings": 192,
+    "at_least_sampled_or_inline_read": 173,
+    "substantively_unread": 18,
+    "restricted": 1,
+    "new_registered_headings_earned": 0,
+    "reason": "§13.5.2.3.2 nested under previously counted parent §13.5.2; bounded source clause read but parent donor still PARTIAL"
+  },
+  "prior_source_reference": {
+    "ledger": "SOSA_G2_7J_Original_Source_Item_Coverage_11NOV2026.json",
+    "source_item_id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+    "relationship": "REFERENCED_PREVIOUSLY_READ_TABLE__NOT_NEW_IEEE_AUDIT"
+  },
+  "DIM_CSAPI_Profile_adopted": false,
+  "independent_runtime_or_hardware_conformance": false,
+  "next_on_distinct_owner_proceed": "SOSA-G2-7L original C239 §13.5.2.3.3 Serial Communications, source-sized; SOSA ACTIVE/OPEN, Step18 SAPIENT blocked"
+}
