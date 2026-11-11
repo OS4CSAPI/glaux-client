@@ -579,12 +579,12 @@ def check_g2_7i_source(m):
     need(any(a["id"].endswith("13_5_2_4") for a in p),
          "original atypical Permission13.5.2-4 retained without invented renumbering")
     obs=next(a for a in entries if a["id"].endswith("OBSERVATION-13_5_2_2_1_2"))
-    need(obs["printed_method"]=="I" and obs["not_rule"] is None if False else obs["printed_method"]=="I",
+    need(obs["printed_method"]=="I" and obs["not_rule"] is True,
          "Observation with (I) remains Observation")
-    need(len(z["toc"])==3 and len(z["subclauses_read"])==4
-         and (z["toc_coverage"]["total"],z["toc_coverage"]["at_least_sampled_or_inline"],
-              z["toc_coverage"]["unread"],z["toc_coverage"]["restricted"])==(192,173,18,1)
-         and z["toc_coverage"]["full_13_5_review"] is False,
+    need(c["HEADING"]==3 and c["NESTED_SECTION"]==4
+         and (z["c239_coverage"]["total"],z["c239_coverage"]["at_least_sampled_or_inline"],
+              z["c239_coverage"]["unread"],z["c239_coverage"]["restricted"])==(192,173,18,1)
+         and z["c239_coverage"]["full_13_5_review"] is False,
          "3 newly sampled/inline C239 headings and 18 original unread remain")
     need(z["source"]["figures_pixel_verified"] is False
          and z["source"]["original_SAE_MIL_VITA_unread"] is True
