@@ -21,7 +21,9 @@
     "context_records": 12,
     "restricted_pointer_records": 1,
     "numbered_rule_SHALL": 0,
-    "source_records": 107
+    "source_records": 107,
+    "qualified_existing_master_rows": 50,
+    "exact_holds": 30
   },
   "original_source_items": [
     {
@@ -1035,8 +1037,709 @@
       "meaning": "Appendix C original Security Attributes overlay requires restricted Air Force VLD original; source not inspected."
     }
   ],
-  "source_qualified_existing_row_mappings": [],
-  "exact_holds": [],
+  "source_qualified_existing_row_mappings": [
+    {
+      "label": "Described sensing System / arrangement",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-System",
+        "SOSA-C239-G2-7T-DEF-Subsystem",
+        "SOSA-C239-G2-7T-DEF-Sensor"
+      ],
+      "native_source_meaning": "Source System is elements forming useful capability and can be a Subsystem depending on context; Sensor may be device or System",
+      "negative_equivalence_boundary": "No universal chassis, one hierarchy or adopted DIM superclass",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Observer / observing System",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Sensor"
+      ],
+      "native_source_meaning": "Sensor estimates properties of another entity and produces quantitative data",
+      "negative_equivalence_boundary": "Not every installed source constituent is an observing system",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Physical constituent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Element",
+        "SOSA-C239-G2-7T-DEF-Hardware_Element",
+        "SOSA-C239-G2-7T-DEF-Software_Component"
+      ],
+      "native_source_meaning": "Element can be hardware/software/logical while Hardware Element is physical hardware incorporated in sensor",
+      "negative_equivalence_boundary": "No automatic individually identified System or mixing software with equipment",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Hosting platform / station context",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Platform",
+        "SOSA-C239-G2-7T-DEF-Pod"
+      ],
+      "native_source_meaning": "Platform can mean supported sensing device, vehicle host or computing infrastructure; Pod may carry components of multiple sensors",
+      "negative_equivalence_boundary": "Platform role must be qualified, no generic chassis",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Connected external equipment",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Platform",
+        "SOSA-C239-G2-7T-DEF-Interface"
+      ],
+      "native_source_meaning": "Platform can mean vehicle host or computing infrastructure; Interface defines interaction boundary",
+      "negative_equivalence_boundary": "No actual named/connected external hardware",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Composition member exposure and source attribution",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Module",
+        "SOSA-C239-G2-7T-DEF-Hardware_Element",
+        "SOSA-C239-G2-7T-DEF-Element"
+      ],
+      "native_source_meaning": "Module is functional architectural entity realizable in hardware and/or software elements",
+      "negative_equivalence_boundary": "Not automatically a discoverable child resource or observation attribution",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported physical parent/child attachment relationships",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-System",
+        "SOSA-C239-G2-7T-DEF-Pod"
+      ],
+      "native_source_meaning": "System may be nested and Pod may hold elements from several SOSA sensors",
+      "negative_equivalence_boundary": "No measured installation or fixed cardinality",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Persistent System identifier",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-System"
+      ],
+      "native_source_meaning": "Native System is defined by capability and contextual composition",
+      "negative_equivalence_boundary": "No persistent unique System ID established by native definition",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared component capability catalogue",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Capability",
+        "SOSA-C239-G2-7T-DEF-Configuration",
+        "SOSA-C239-G2-7T-DEF-Health"
+      ],
+      "native_source_meaning": "Capability represents tasks or assignments possible given current health/configuration",
+      "negative_equivalence_boundary": "Not a reported machine-readable capabilities catalogue",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component capability and readiness report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Capability",
+        "SOSA-C239-G2-7T-DEF-Health",
+        "SOSA-C239-G2-7T-DEF-Status"
+      ],
+      "native_source_meaning": "Capabilities depend on current condition, Health comprises status faults and warnings",
+      "negative_equivalence_boundary": "No actual status or readiness message",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Required and recommended capability support",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Conformance",
+        "SOSA-C239-G2-7T-DEF-Compliance",
+        "SOSA-C239-G2-7T-DEF-Verification"
+      ],
+      "native_source_meaning": "Conformance means complete adherence whereas Compliance means degree and verification checks adherence",
+      "negative_equivalence_boundary": "Glossary does not impose DIM Profile SHALLs or certify equipment",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Supported operating mode",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Mode"
+      ],
+      "native_source_meaning": "Mode is finite discrete condition with expected behavior for system module or equipment",
+      "negative_equivalence_boundary": "No identified set of modes on source-case equipment",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared default mode",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Mode"
+      ],
+      "native_source_meaning": "Source Mode definition says discrete finite behavior",
+      "negative_equivalence_boundary": "Does not define default mode",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-reported operating mode",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Mode",
+        "SOSA-C239-G2-7T-DEF-Status"
+      ],
+      "native_source_meaning": "Mode is behavioral condition separate from Status performance and health",
+      "negative_equivalence_boundary": "No reported current operating mode",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported component operating condition",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Health",
+        "SOSA-C239-G2-7T-DEF-Status",
+        "SOSA-C239-G2-7T-DEF-State"
+      ],
+      "native_source_meaning": "Health aggregates status/faults/warnings; Status is performance/health condition; State top-level lifecycle",
+      "negative_equivalence_boundary": "These distinct concepts must not be collapsed into one status field",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component property-value report",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Status",
+        "SOSA-C239-G2-7T-DEF-Configuration"
+      ],
+      "native_source_meaning": "Status is condition, Configuration is operational setup",
+      "negative_equivalence_boundary": "No specific observed property-value message",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Four-valued evaluation state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-State"
+      ],
+      "native_source_meaning": "State is top-level lifecycle condition",
+      "negative_equivalence_boundary": "No native four-value ISA state enumeration",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested latest occurrence of an operating-state code",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-State",
+        "SOSA-C239-G2-7T-DEF-Logging"
+      ],
+      "native_source_meaning": "Logging persistently captures lifecycle state",
+      "negative_equivalence_boundary": "No latest-occurrence query or time-keyed request",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested time-keyed operating-state history",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Logging",
+        "SOSA-C239-G2-7T-DEF-State"
+      ],
+      "native_source_meaning": "Logging stores modes and states for later retrieval",
+      "negative_equivalence_boundary": "No standardized history query or timestamp key",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Component configuration version",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Configuration"
+      ],
+      "native_source_meaning": "Configuration describes how sensor/module is set up",
+      "negative_equivalence_boundary": "No revision field or current version identified",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested current component configuration message",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Configuration"
+      ],
+      "native_source_meaning": "Glossary defines operational setup",
+      "negative_equivalence_boundary": "No network-accessible query/request API",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command interface",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Task",
+        "SOSA-C239-G2-7T-DEF-Assignment",
+        "SOSA-C239-G2-7T-DEF-Sensor_Management",
+        "SOSA-C239-G2-7T-DEF-Request_Response"
+      ],
+      "native_source_meaning": "Task comes from outside sensor; Assignment is internal; management and request-response support functions",
+      "negative_equivalence_boundary": "No approved CSAPI Command endpoint/schema",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Issued control request",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Task",
+        "SOSA-C239-G2-7T-DEF-Assignment"
+      ],
+      "native_source_meaning": "Origin distinguishes external Task from internal Assignment",
+      "negative_equivalence_boundary": "No actual issued request or tasking authorization",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Command acknowledgement / reported outcome",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Request_Response"
+      ],
+      "native_source_meaning": "Service acts on client request then responds",
+      "negative_equivalence_boundary": "No async acknowledgement or current execution evidence",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command parameter",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Request_Response"
+      ],
+      "native_source_meaning": "Source describes request-response interaction pattern",
+      "negative_equivalence_boundary": "No typed command parameters or source schema",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Declared command result",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Request_Response"
+      ],
+      "native_source_meaning": "Source describes response message after service acts",
+      "negative_equivalence_boundary": "No accepted common result schema",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Service role and required command support",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Sensor_Management",
+        "SOSA-C239-G2-7T-DEF-Module"
+      ],
+      "native_source_meaning": "Sensor Management functions implemented by System Manager and Task Manager modules/interfaces",
+      "negative_equivalence_boundary": "No universal common CSAPI command role or service set",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported output field",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Data_Products",
+        "SOSA-C239-G2-7T-DEF-Information_Products"
+      ],
+      "native_source_meaning": "Raw/minimal Data Products differ from processed/reduced Information Products",
+      "negative_equivalence_boundary": "Neither guarantees digital ObservedProperty or named output field",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Observed / observable property",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Sensor"
+      ],
+      "native_source_meaning": "Sensor estimates properties of external entities and generates quantitative data",
+      "negative_equivalence_boundary": "No exact OGC ObservedProperty identity or vocabulary",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Performed Observation",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Sensor",
+        "SOSA-C239-G2-7T-DEF-Detection"
+      ],
+      "native_source_meaning": "Sensor estimates properties and Detection is observation distinguished from background",
+      "negative_equivalence_boundary": "No current observed event or time-stamped result",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported value and associated uncertainty",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Sensor"
+      ],
+      "native_source_meaning": "Native Sensor produces quantitative data",
+      "negative_equivalence_boundary": "No uncertainty quantity/unit in this definition",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Original event and derived digital representation (proposed DIM)",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Detection",
+        "SOSA-C239-G2-7T-DEF-Data_Products",
+        "SOSA-C239-G2-7T-DEF-Information_Products"
+      ],
+      "native_source_meaning": "Detection and raw/processed outputs reflect different native phenomena and processing stages",
+      "negative_equivalence_boundary": "No owner approval to merge event with derived representation",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Source-qualified event identity and reference",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Audit_Event",
+        "SOSA-C239-G2-7T-DEF-Notification"
+      ],
+      "native_source_meaning": "Audit Event is module-produced loggable event while Notification reports occurrence",
+      "negative_equivalence_boundary": "No event ID URI or source reference",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Event occurrence time",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Notification"
+      ],
+      "native_source_meaning": "Native Notification reports event at occurrence",
+      "negative_equivalence_boundary": "No timestamp/clock basis in definition",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Event creation category",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Detection",
+        "SOSA-C239-G2-7T-DEF-Audit_Event"
+      ],
+      "native_source_meaning": "Detection and Audit Event are semantically different event types",
+      "negative_equivalence_boundary": "No accepted common category enumeration",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported primary event-generation method",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Detection"
+      ],
+      "native_source_meaning": "Detection is an observation differentiated from background",
+      "negative_equivalence_boundary": "No defined triggering algorithm/method",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — reporting path",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Notification",
+        "SOSA-C239-G2-7T-DEF-Audit_Event",
+        "SOSA-C239-G2-7T-DEF-Relay_Event",
+        "SOSA-C239-G2-7T-DEF-Collector_Module"
+      ],
+      "native_source_meaning": "Notifications report events; audit events can be filtered relayed collected for storage",
+      "negative_equivalence_boundary": "No live CSAPI DataStream/event endpoint",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — service history",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Logging",
+        "SOSA-C239-G2-7T-DEF-Collector_Module",
+        "SOSA-C239-G2-7T-DEF-Heartbeat"
+      ],
+      "native_source_meaning": "Logging is persistent, Collector receives audit events, Heartbeat periodically indicates operation",
+      "negative_equivalence_boundary": "No queryable archive schema or retention guarantee",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Message author or registration announcer",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Audit_Event"
+      ],
+      "native_source_meaning": "Audit Event is generated by module",
+      "negative_equivalence_boundary": "No identified authenticated author or registered message source",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Administrative network and service notification",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Notification",
+        "SOSA-C239-G2-7T-DEF-Heartbeat"
+      ],
+      "native_source_meaning": "Event notification and periodic heartbeat are distinct mechanisms",
+      "negative_equivalence_boundary": "No administrative network notification schema",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Network participation role and responsibilities",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Interaction",
+        "SOSA-C239-G2-7T-DEF-Interface",
+        "SOSA-C239-G2-7T-DEF-Module"
+      ],
+      "native_source_meaning": "Interaction exchanges signal/data/behavior at interfaces among module and hardware elements",
+      "negative_equivalence_boundary": "Not permanent whole-System service/provider role",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — time / QA",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Metadata",
+        "SOSA-C239-G2-7T-DEF-Heartbeat",
+        "SOSA-C239-G2-7T-DEF-Real_time"
+      ],
+      "native_source_meaning": "Metadata can include timing, Heartbeat periodic, Real-time means deadlines",
+      "negative_equivalence_boundary": "No UTC/clock synchronization or event-time accuracy",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Orientation relative to attached parent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Metadata"
+      ],
+      "native_source_meaning": "Metadata may include orientation context",
+      "negative_equivalence_boundary": "No observed parent-frame orientation",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Position relative to attached parent",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Metadata"
+      ],
+      "native_source_meaning": "Metadata may include position context",
+      "negative_equivalence_boundary": "No measured parent-frame coordinates",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Latest built-in-test reported result",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Health",
+        "SOSA-C239-G2-7T-DEF-Verification",
+        "SOSA-C239-G2-7T-DEF-Test"
+      ],
+      "native_source_meaning": "Health concerns faults/warnings; Test is controlled quantitative verification",
+      "negative_equivalence_boundary": "No built-in-test result or diagnostic report",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Requested component diagnostic procedures",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Health",
+        "SOSA-C239-G2-7T-DEF-Verification"
+      ],
+      "native_source_meaning": "Glossary describes health and evidence of conformance",
+      "negative_equivalence_boundary": "No diagnostic Command defined",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "Reported activity flag",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-State"
+      ],
+      "native_source_meaning": "Lifecycle State is a defined notion",
+      "negative_equivalence_boundary": "No current boolean active-state flag",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — processing",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Data_Products",
+        "SOSA-C239-G2-7T-DEF-Information_Products"
+      ],
+      "native_source_meaning": "Native raw/minimally processed output differs from reduced/processed output",
+      "negative_equivalence_boundary": "No actual processing utilization/status measurement",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — control execution",
+      "relation": "RELATED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-Task",
+        "SOSA-C239-G2-7T-DEF-Assignment",
+        "SOSA-C239-G2-7T-DEF-Request_Response"
+      ],
+      "native_source_meaning": "External task internal assignment and service request are source-distinct",
+      "negative_equivalence_boundary": "No authorized or witnessed CSAPI command execution",
+      "DIM_Profile_adopted": false
+    },
+    {
+      "label": "REVIEW HOLD — power / state",
+      "relation": "NO_ESTABLISHED",
+      "source_item_ids": [
+        "SOSA-C239-G2-7T-DEF-State",
+        "SOSA-C239-G2-7T-DEF-Status"
+      ],
+      "native_source_meaning": "State and Status describe lifecycle versus performance",
+      "negative_equivalence_boundary": "No current power state or electrical measurement",
+      "DIM_Profile_adopted": false
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7T-Q01",
+      "status": "HELD",
+      "description": "Appendix A native AV-2 terms are definitions, not newly numbered mandatory requirements."
+    },
+    {
+      "id": "SOSA-G2-7T-Q02",
+      "status": "HELD",
+      "description": "Appendix A printed glossary table ID 13.5.3.3.3-1 is unusual within Appendix A; preserve exact original citation."
+    },
+    {
+      "id": "SOSA-G2-7T-Q03",
+      "status": "HELD",
+      "description": "Platform has device/host vehicle/computing infrastructure senses, not one unqualified class."
+    },
+    {
+      "id": "SOSA-G2-7T-Q04",
+      "status": "HELD",
+      "description": "System and Subsystem depend on context; no universal immutable hierarchy."
+    },
+    {
+      "id": "SOSA-G2-7T-Q05",
+      "status": "HELD",
+      "description": "Sensor estimates properties and generates quantitative data; whole-System DIM scope broader."
+    },
+    {
+      "id": "SOSA-G2-7T-Q06",
+      "status": "HELD",
+      "description": "Module is functional architecture distinct from physical Hardware Element and software unit."
+    },
+    {
+      "id": "SOSA-G2-7T-Q07",
+      "status": "HELD",
+      "description": "Pod may hold components of multiple sensors; not generic single-sensor chassis."
+    },
+    {
+      "id": "SOSA-G2-7T-Q08",
+      "status": "HELD",
+      "description": "Health Status State Mode Capability and Configuration definitions remain distinct."
+    },
+    {
+      "id": "SOSA-G2-7T-Q09",
+      "status": "HELD",
+      "description": "External Task vs internal Assignment cannot be silently merged."
+    },
+    {
+      "id": "SOSA-G2-7T-Q10",
+      "status": "HELD",
+      "description": "Data Products raw/minimal and Information Products processed/reduced differ; not automatic OGC Observations."
+    },
+    {
+      "id": "SOSA-G2-7T-Q11",
+      "status": "HELD",
+      "description": "Detection Audit Event Notification Heartbeat Relay Event and Logging have distinct semantics."
+    },
+    {
+      "id": "SOSA-G2-7T-Q12",
+      "status": "HELD",
+      "description": "Conformance complete adherence versus Compliance degree, not evidence of actual product certification."
+    },
+    {
+      "id": "SOSA-G2-7T-Q13",
+      "status": "HELD",
+      "description": "Inspection Test Demonstration Analysis and Verification are different source methods."
+    },
+    {
+      "id": "SOSA-G2-7T-Q14",
+      "status": "HELD",
+      "description": "Glossary alone does not define current device telemetry or a network service."
+    },
+    {
+      "id": "SOSA-G2-7T-Q15",
+      "status": "HELD",
+      "description": "Appendix B Normative DSDM reference is only filename; original DIV1/DIV2/DIV3 contents unread."
+    },
+    {
+      "id": "SOSA-G2-7T-Q16",
+      "status": "HELD",
+      "description": "Appendix B DSDM IDL filename does not prove actual native schema was inspected."
+    },
+    {
+      "id": "SOSA-G2-7T-Q17",
+      "status": "HELD",
+      "description": "System Manager-SysMan-API.json original interface contents unexamined."
+    },
+    {
+      "id": "SOSA-G2-7T-Q18",
+      "status": "HELD",
+      "description": "Module-SysMan-API.json original interface contents unexamined."
+    },
+    {
+      "id": "SOSA-G2-7T-Q19",
+      "status": "HELD",
+      "description": "Security Services-SysMan-API.json original interface contents unexamined."
+    },
+    {
+      "id": "SOSA-G2-7T-Q20",
+      "status": "HELD",
+      "description": "Chassis Manager-SysMan-API.json original interface contents unexamined, no adopted DIM chassis."
+    },
+    {
+      "id": "SOSA-G2-7T-Q21",
+      "status": "HELD",
+      "description": "PIC-SysMan-API.json original interface contents unexamined."
+    },
+    {
+      "id": "SOSA-G2-7T-Q22",
+      "status": "HELD",
+      "description": "PIC with SW RTE-SysMan-API.json original interface contents unexamined."
+    },
+    {
+      "id": "SOSA-G2-7T-Q23",
+      "status": "HELD",
+      "description": "Appendix B references attached files but does not establish retrieval/access of their actual bytes."
+    },
+    {
+      "id": "SOSA-G2-7T-Q24",
+      "status": "HELD",
+      "description": "TechStd_v1 native filename within C239 Ed1.1 does not establish file revision or edition lineage."
+    },
+    {
+      "id": "SOSA-G2-7T-Q25",
+      "status": "HELD",
+      "description": "Appendix C restricted Air Force overlay original unavailable; only pointer read."
+    },
+    {
+      "id": "SOSA-G2-7T-Q26",
+      "status": "HELD",
+      "description": "AV-2 native meanings may be RELATED without adopting any mandatory DIM classes/cardinalities."
+    },
+    {
+      "id": "SOSA-G2-7T-Q27",
+      "status": "HELD",
+      "description": "No real four empirical source-case device conformance established by glossary."
+    },
+    {
+      "id": "SOSA-G2-7T-Q28",
+      "status": "HELD",
+      "description": "External SYSLOG RFC5424 original standard and implemented logs not inspected."
+    },
+    {
+      "id": "SOSA-G2-7T-Q29",
+      "status": "HELD",
+      "description": "Distinct later 2025 The Open Group SOSA S251 edition original unreviewed."
+    },
+    {
+      "id": "SOSA-G2-7T-Q30",
+      "status": "HELD",
+      "description": "No adopted common CSAPI Profile SHALL, chassis hierarchy, Command or runtime conformance."
+    }
+  ],
   "C239_registered_heading_standing": {
     "registered": 192,
     "at_least_sampled_or_inline_read": 189,
@@ -1047,6 +1750,6 @@
   },
   "DIM_Profile_adopted": false,
   "independent_real_runtime_conformance": false,
-  "publication_state": "ORIGINAL_SOURCE_INVENTORY_STAGED__EXACT_MAPS_AND_SAME_EXCEL_PENDING",
+  "publication_state": "SOURCE_QUALIFIED_COMPARISONS_COMMITTED__SAME_EXCEL_PUBLICATION_PENDING",
   "next_owner_proceed": "G3-N1 twelve-artifact/edition lineage and source-access investigation only."
 }
