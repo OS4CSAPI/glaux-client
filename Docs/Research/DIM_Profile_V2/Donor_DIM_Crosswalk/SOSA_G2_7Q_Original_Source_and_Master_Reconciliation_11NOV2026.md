@@ -1,3 +1,7 @@
+**G2-7Q verified SAME-Excel exit (11 November 2026):** Exactly **34 existing The Open Group SOSA column-I comparisons** source-qualified; one JSON, both CSV, both readable Markdown comparisons and **same original 26-sheet Excel** agree at all **346×15 saved grid cells**, preserving 22 historical sheets. Source evidence **141 typed original records** with 36 SHALL/5 SHOULD/3 Observations and 27 exact holds. XLSX SHA256 8483b2a0c741fbd290001396a283e39607b06da96cd4cc478d258e73395e1c58; **Excel lag ZERO**. [Publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43081021484) · [independent verifier PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43081260023). Original registered heading count 176 at least sampled/inline,15 unread,1 restricted; figure/normative originals remain partial. No DIM/Profile adoption or device conformance. **STOP before Chapter14; distinct owner Proceed starts G2-7R Chapter14 §§14–14.5.3 only.**
+
+---
+
 # SOSA-G2-7Q — original C239 Class5 and aperture mechanical source audit
 
 Original C239 Edition1.1 (2023), §§13.5.4–13.5.5.6.1, PDF351–360; STOP before Chapter14. Original 36 numbered SHALL Rules, five SHOULD Recommendations, three Observations, 23 source headings, four source tables with 39 native row records, two unverified figure captions. Stable source locators and normative standing in the [source ledger](SOSA_G2_7Q_Original_Source_Item_Coverage_11NOV2026.json).
