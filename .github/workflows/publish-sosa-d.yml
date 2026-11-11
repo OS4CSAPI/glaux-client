@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Preserve 26 worksheets and synchronize G2-7F 18 source-qualified SOSA cells
+    name: Preserve 26 worksheets and synchronize G2-7G 18 source-qualified SOSA cells
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -39,10 +39,10 @@ jobs:
           git add \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7F_Workbook_Validation_10NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7F_Workbook_Preview_10NOV2026.png
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7G_Workbook_Validation_10NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7G_Workbook_Preview_10NOV2026.png
           if git diff --cached --quiet; then echo "FAIL: no verified original workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): synchronize 18 G2-7F original Rule source cells in SAME 26-sheet Excel"
+          git commit -m "research(dim-v2): synchronize 18 G2-7G original Rule source cells in SAME 26-sheet Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Read back exact committed workbook bytes and source metadata
         shell: bash
@@ -54,13 +54,13 @@ jobs:
           from pathlib import Path
           d=Path("Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk")
           j=json.loads((d/"Master_Donor_Concept_to_DIM_Crosswalk.json").read_text(encoding="utf-8"))
-          v=json.loads((d/"SOSA_G2_7F_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
+          v=json.loads((d/"SOSA_G2_7G_Workbook_Validation_10NOV2026.json").read_text(encoding="utf-8"))
           saved=(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx").read_bytes()
           assert hashlib.sha256(saved).hexdigest()==j["currentWorkbookSha256"]==v["workbook_sha256"]
           assert j["workbookSnapshot"]["currently_matches_readable_view"] is True
           assert j["workbookSnapshot"]["refreshed_cell_count"]==18
           assert len(j["columns"])==15 and len(j["rows"])==329
-          assert v["G2_7F_qualified_existing_sosa_cells"]==18 and all(v["checks"].values())
+          assert v["G2_7G_qualified_existing_sosa_cells"]==18 and all(v["checks"].values())
           with zipfile.ZipFile(d/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx") as z: assert z.testzip() is None
-          print("PASS: G2-7F original source, exact saved 26-sheet Excel, 18 SOSA cells and source holds")
+          print("PASS: G2-7G original source, exact saved 26-sheet Excel, 18 SOSA cells and source holds")
           PY
