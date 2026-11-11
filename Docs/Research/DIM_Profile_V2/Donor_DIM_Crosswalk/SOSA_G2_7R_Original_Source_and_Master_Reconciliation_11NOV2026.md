@@ -1,3 +1,7 @@
+**G2-7R SAME-Excel final exit VERIFIED (11 November 2026):** 33 source-qualified SOSA column-I master cells; current canonical JSON, two CSV, two Markdown, original editable 26-sheet Excel with all 346×15 actually saved cells matching and 22 historical sheets preserved. SHA256 `0d92b99df979c524b61a89b11a7ea9cb1a3c2402ab4b59b1aa8f9a82ac24ef8a`, zero workbook lag; [publisher](https://github.com/OS4CSAPI/glaux-client/actions/runs/43104649463), [independent verifier](https://github.com/OS4CSAPI/glaux-client/actions/runs/43104863962). Original source inventory: 127 typed records and 26 precise holds, C239 registered headings 186 at least sampled/inline, five unread, one restricted. No DIM/Profile adoption, runtime certification or Chapter15 audit. **Next only G2-7S Chapter15 §§15–15.7 on separate owner Proceed.**
+
+---
+
 # SOSA G2-7R — Original C239 Chapter14 Run-Time Environment source review
 
 **Original The Open Group SOSA C239 Edition1.1 (2023), §§14–14.5.3, PDF361–371; STOP before Chapter15.** [Stable typed source inventory](SOSA_G2_7R_Original_Source_Item_Coverage_11NOV2026.json): 38 numbered SHALL Rules, 18 Observations, two Permissions, one Recommendation, 15 headings, two original tables/five rows, six figure captions, 14 original configuration field/subfield descriptions and 26 exact source holds. Printed verification methods: 11 Inspection(I), 18 Demonstration(D), 9 Rules without printed method. No original figure pixel geometry, external FACE/OCI/DMTF or eight C239 native model files examined.
