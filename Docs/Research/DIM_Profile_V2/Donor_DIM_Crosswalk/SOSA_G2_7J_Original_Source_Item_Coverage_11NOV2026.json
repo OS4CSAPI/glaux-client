@@ -1,0 +1,3188 @@
+{
+  "schema": "SOSA-C239-G2-7J-original-J2-source-item-ledger-v0.1",
+  "date": "2026-11-11",
+  "scope": "Original C239 §13.5.2.3 main and §13.5.2.3.1 Power Enable; PDF278–285; STOP BEFORE §13.5.2.3.2 Ethernet",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "edition": "1.1",
+    "year": 2023,
+    "doc": "C239",
+    "original_pdf": "c239_5.pdf",
+    "library_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "original_pdf_pages": "278–285",
+    "printed_pages": "252–259",
+    "original_inline_text_examined": true,
+    "source_table_text_examined_all_six_pages": true,
+    "original_figure_pixels_verified": false,
+    "original_table_graphic_alignment_verified": false,
+    "native_external_MIL_IEEE_USB_TIA_standards_reviewed": false,
+    "eight_C239_model_API_companions_reviewed": false,
+    "original_S251_2025_reviewed": false
+  },
+  "source_counts": {
+    "SECTION": 2,
+    "RULE": 8,
+    "OBSERVATION": 4,
+    "FIGURE": 1,
+    "TABLE": 1,
+    "SOURCE_CONTEXT": 7,
+    "SIGNAL_GROUP": 26,
+    "PIN_LABEL": 85,
+    "total_source_native_items": 134,
+    "numbered_rules": 8,
+    "rules_inspection_I": 6,
+    "rules_test_T": 2,
+    "numbered_observations": 4,
+    "numbered_permissions": 0,
+    "source_signal_groups": 26,
+    "individually_printed_pin_label_records": 85,
+    "aggregated_unresolved_pin_rosters": 2,
+    "source_printed_pin_designator_tokens": 103,
+    "analyst_contexts_separately": 5
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7J-SECTION-13_5_2_3",
+      "kind": "SECTION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 278/403 (printed 252)",
+      "meaning": "Class 1 & 2 J2-Signal Connector: 25-7 insert, source table, physical signal requirements",
+      "coverage": "ORIGINAL_INLINE_TEXT_ALL_FOUR_RULES_AND_TABLE_TEXT_READ__ORIGINAL_FIGURE_PIXELS_HELD"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SECTION-13_5_2_3_1",
+      "kind": "SECTION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Power Enable: platform-controlled open/closed electrical power-state command",
+      "coverage": "ORIGINAL_INLINE_TEXT_ALL_FOUR_RULES_READ"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_1",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 278/403 (printed 252)",
+      "meaning": "J2-Signal connector shall have 25-7 insert pattern as Figure13.5.2.3-1.",
+      "printed_rule_id": "13.5.2.3-1",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "Class1&2 J2 physical connector"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_2",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 278/403 (printed 252)",
+      "meaning": "When J2 used, sensor system shall assign connector pins as Table13.5.2.3-1.",
+      "printed_rule_id": "13.5.2.3-2",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "Conditional use of J2"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_3",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "When J2 receives isolated +28 VDC discrete amplitude ≥18.0 VDC, signal shall be interpreted as logic 1.",
+      "printed_rule_id": "13.5.2.3-3",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "T"
+      ],
+      "applicability": "Only specified isolated +28VDC discrete"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_4",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "When J2 receives isolated +28 VDC discrete amplitude ≤1.5 VDC, signal shall be interpreted as logic 0.",
+      "printed_rule_id": "13.5.2.3-4",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "T"
+      ],
+      "applicability": "Only specified isolated +28VDC discrete"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 285/403 (printed 259)",
+      "meaning": "If external Power Enable circuit resistance ≥100 kΩ, sensor shall enter power OFF.",
+      "printed_rule_id": "13.5.2.3.1-1",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "J2 PWR_EN circuit; threshold"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 285/403 (printed 259)",
+      "meaning": "If external Power Enable circuit resistance ≤5 Ω, sensor shall enter power ON.",
+      "printed_rule_id": "13.5.2.3.1-2",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "J2 PWR_EN circuit; threshold"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_1_3",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 285/403 (printed 259)",
+      "meaning": "J2 Power Enable signal shall source maximum 100 mA.",
+      "printed_rule_id": "13.5.2.3.1-3",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "J2 PWR_EN only"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-RULE-13_5_2_3_1_4",
+      "kind": "RULE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 285/403 (printed 259)",
+      "meaning": "J2 Power Enable signal shall drive maximum 30 VDC.",
+      "printed_rule_id": "13.5.2.3.1-4",
+      "printed_verb": "shall",
+      "conformance_method_printed": [
+        "I"
+      ],
+      "applicability": "J2 PWR_EN only"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_1",
+      "kind": "OBSERVATION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "Commercial protocols via J2 use source commercial pinout/nomenclature, with slight source-controlled changes to preserve integrity.",
+      "printed_observation_id": "13.5.2.3-1",
+      "normative_rule": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_2",
+      "kind": "OBSERVATION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Signal groups may use distinct returns for electromagnetic compatibility/interference and ease of platform integration.",
+      "printed_observation_id": "13.5.2.3-2",
+      "normative_rule": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_3",
+      "kind": "OBSERVATION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Some acquisition programs may allow higher voltage to count as logic zero after system safety analysis; not an overriding universal Rule.",
+      "printed_observation_id": "13.5.2.3-3",
+      "normative_rule": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_4",
+      "kind": "OBSERVATION",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Wire type 2419 means AWG24 silver-plated conductor with 19 strands; source description, not new independent property.",
+      "printed_observation_id": "13.5.2.3-4",
+      "normative_rule": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-FIGURE-13_5_2_3_1",
+      "kind": "FIGURE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "J2 Signal Connector Pin Arrangement",
+      "image_pixels_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-TABLE-13_5_2_3_1",
+      "kind": "TABLE",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "J2 Signal Connector Pin Allocation across PDF279–284",
+      "pages": "279–284",
+      "text_rows_accounted": true,
+      "full_table_visual_grid_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-femaleMale",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "J2 25-7 insert, N-Keying, Sensor MIL-DTL-38999/***J7SN with socket inserts; Platform Umbilical MIL-DTL-38999/26*J7PN with pin inserts.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-sourceColumns",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "Original use-by-modality header EO-IR, Radar/SAR, EW, SIGINT, Comms; exact sparse modality checkmark matrix not independently visually verified.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-logicGap",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Rules separately define logic1 at ≥18.0 V and logic0 at ≤1.5 V; between these thresholds no universal logic state is specified here.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-sourcePhysical",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Pin groups include power-enable, Ethernet, TIA422 serial, emission arming/cutout/mode, annunciation, safety, gimbal, PPS, hand control, purge, 1553B, USB, LVDS and reserved.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-physicalPower",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Power Enable switch/relay/SSR is controlled by platform or platform-side human; sensor sources voltage; open versus closed circuit drives on/off conditional response.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-signalRoles",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL-STD1553B, USB2, LVDS and copper Ethernet are physical interface allocation names; not actual network, CSAPI DataStream or independently observed equipment operation.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SOURCE_CONTEXT-emissionBoundary",
+      "kind": "SOURCE_CONTEXT",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Emission arming/cutout/mode-select and memory-purge are pin allocations; existence does not establish authorized command, tested effect or source-case energy emission.",
+      "standing": "ORIGINAL_INLINE_NARRATIVE_OR_TABLE_TEXT"
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-POWER_ENABLE",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "Power enable discrete",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "46",
+        "47"
+      ],
+      "printed_signal_roster": [
+        "PWR_EN",
+        "PWR_EN_RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-46",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "POWER_ENABLE signal PWR_EN on printed J2 pin designator 46.",
+      "printed_pin_designator": "46",
+      "signal_label_source_text_normalized": "PWR_EN",
+      "source_group": "POWER_ENABLE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-47",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "POWER_ENABLE signal PWR_EN_RTN on printed J2 pin designator 47.",
+      "printed_pin_designator": "47",
+      "signal_label_source_text_normalized": "PWR_EN_RTN",
+      "source_group": "POWER_ENABLE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "Ethernet 1000BaseT",
+      "source_direction_or_origin": "Platform/Sensor",
+      "printed_pin_designators": [
+        "28",
+        "35",
+        "36",
+        "44",
+        "53",
+        "62",
+        "45",
+        "54",
+        "63",
+        "70",
+        "71",
+        "78"
+      ],
+      "printed_signal_roster": [
+        "DA+",
+        "DA-",
+        "DA Shield",
+        "DB+",
+        "DB-",
+        "DB Shield",
+        "DC+",
+        "DC-",
+        "DC Shield",
+        "DD+",
+        "DD-",
+        "DD Shield"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 12,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-28",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DA+ on printed J2 pin designator 28.",
+      "printed_pin_designator": "28",
+      "signal_label_source_text_normalized": "DA+",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-35",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DA- on printed J2 pin designator 35.",
+      "printed_pin_designator": "35",
+      "signal_label_source_text_normalized": "DA-",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-36",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DA Shield on printed J2 pin designator 36.",
+      "printed_pin_designator": "36",
+      "signal_label_source_text_normalized": "DA Shield",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-44",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DB+ on printed J2 pin designator 44.",
+      "printed_pin_designator": "44",
+      "signal_label_source_text_normalized": "DB+",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-53",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DB- on printed J2 pin designator 53.",
+      "printed_pin_designator": "53",
+      "signal_label_source_text_normalized": "DB-",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-62",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DB Shield on printed J2 pin designator 62.",
+      "printed_pin_designator": "62",
+      "signal_label_source_text_normalized": "DB Shield",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-45",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 279/403 (printed 253)",
+      "meaning": "ETHERNET signal DC+ on printed J2 pin designator 45.",
+      "printed_pin_designator": "45",
+      "signal_label_source_text_normalized": "DC+",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-54",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "ETHERNET signal DC- on printed J2 pin designator 54.",
+      "printed_pin_designator": "54",
+      "signal_label_source_text_normalized": "DC-",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-63",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "ETHERNET signal DC Shield on printed J2 pin designator 63.",
+      "printed_pin_designator": "63",
+      "signal_label_source_text_normalized": "DC Shield",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-70",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "ETHERNET signal DD+ on printed J2 pin designator 70.",
+      "printed_pin_designator": "70",
+      "signal_label_source_text_normalized": "DD+",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-71",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "ETHERNET signal DD- on printed J2 pin designator 71.",
+      "printed_pin_designator": "71",
+      "signal_label_source_text_normalized": "DD-",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-78",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "ETHERNET signal DD Shield on printed J2 pin designator 78.",
+      "printed_pin_designator": "78",
+      "signal_label_source_text_normalized": "DD Shield",
+      "source_group": "ETHERNET",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL1",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "TIA422 serial communications 1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_pin_designators": [
+        "7",
+        "8",
+        "17",
+        "16",
+        "23"
+      ],
+      "printed_signal_roster": [
+        "TX1+",
+        "TX1-",
+        "422_1_RTN",
+        "RX1+",
+        "RX1-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 5,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-7",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL1 signal TX1+ on printed J2 pin designator 7.",
+      "printed_pin_designator": "7",
+      "signal_label_source_text_normalized": "TX1+",
+      "source_group": "SERIAL1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-8",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL1 signal TX1- on printed J2 pin designator 8.",
+      "printed_pin_designator": "8",
+      "signal_label_source_text_normalized": "TX1-",
+      "source_group": "SERIAL1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-17",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL1 signal 422_1_RTN on printed J2 pin designator 17.",
+      "printed_pin_designator": "17",
+      "signal_label_source_text_normalized": "422_1_RTN",
+      "source_group": "SERIAL1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-16",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL1 signal RX1+ on printed J2 pin designator 16.",
+      "printed_pin_designator": "16",
+      "signal_label_source_text_normalized": "RX1+",
+      "source_group": "SERIAL1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-23",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL1 signal RX1- on printed J2 pin designator 23.",
+      "printed_pin_designator": "23",
+      "signal_label_source_text_normalized": "RX1-",
+      "source_group": "SERIAL1",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL2",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "TIA422 serial communications 2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_pin_designators": [
+        "22",
+        "30",
+        "29",
+        "37",
+        "38"
+      ],
+      "printed_signal_roster": [
+        "TX2+",
+        "TX2-",
+        "422_2_RTN",
+        "RX2+",
+        "RX2-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 5,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-22",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL2 signal TX2+ on printed J2 pin designator 22.",
+      "printed_pin_designator": "22",
+      "signal_label_source_text_normalized": "TX2+",
+      "source_group": "SERIAL2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-30",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL2 signal TX2- on printed J2 pin designator 30.",
+      "printed_pin_designator": "30",
+      "signal_label_source_text_normalized": "TX2-",
+      "source_group": "SERIAL2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-29",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL2 signal 422_2_RTN on printed J2 pin designator 29.",
+      "printed_pin_designator": "29",
+      "signal_label_source_text_normalized": "422_2_RTN",
+      "source_group": "SERIAL2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-37",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL2 signal RX2+ on printed J2 pin designator 37.",
+      "printed_pin_designator": "37",
+      "signal_label_source_text_normalized": "RX2+",
+      "source_group": "SERIAL2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-38",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL2 signal RX2- on printed J2 pin designator 38.",
+      "printed_pin_designator": "38",
+      "signal_label_source_text_normalized": "RX2-",
+      "source_group": "SERIAL2",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL3",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "TIA422 serial communications 3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_pin_designators": [
+        "55",
+        "56",
+        "64",
+        "65",
+        "72"
+      ],
+      "printed_signal_roster": [
+        "TX3+",
+        "TX3-",
+        "422_3_RTN",
+        "RX3+",
+        "RX3-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 5,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-55",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL3 signal TX3+ on printed J2 pin designator 55.",
+      "printed_pin_designator": "55",
+      "signal_label_source_text_normalized": "TX3+",
+      "source_group": "SERIAL3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-56",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL3 signal TX3- on printed J2 pin designator 56.",
+      "printed_pin_designator": "56",
+      "signal_label_source_text_normalized": "TX3-",
+      "source_group": "SERIAL3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-64",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL3 signal 422_3_RTN on printed J2 pin designator 64.",
+      "printed_pin_designator": "64",
+      "signal_label_source_text_normalized": "422_3_RTN",
+      "source_group": "SERIAL3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-65",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 280/403 (printed 254)",
+      "meaning": "SERIAL3 signal RX3+ on printed J2 pin designator 65.",
+      "printed_pin_designator": "65",
+      "signal_label_source_text_normalized": "RX3+",
+      "source_group": "SERIAL3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-72",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL3 signal RX3- on printed J2 pin designator 72.",
+      "printed_pin_designator": "72",
+      "signal_label_source_text_normalized": "RX3-",
+      "source_group": "SERIAL3",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL4",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "TIA422 serial communications 4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_pin_designators": [
+        "73",
+        "79",
+        "80",
+        "85",
+        "86"
+      ],
+      "printed_signal_roster": [
+        "TX4+",
+        "TX4-",
+        "422_4_RTN",
+        "RX4+",
+        "RX4-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 5,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-73",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL4 signal TX4+ on printed J2 pin designator 73.",
+      "printed_pin_designator": "73",
+      "signal_label_source_text_normalized": "TX4+",
+      "source_group": "SERIAL4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-79",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL4 signal TX4- on printed J2 pin designator 79.",
+      "printed_pin_designator": "79",
+      "signal_label_source_text_normalized": "TX4-",
+      "source_group": "SERIAL4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-80",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL4 signal 422_4_RTN on printed J2 pin designator 80.",
+      "printed_pin_designator": "80",
+      "signal_label_source_text_normalized": "422_4_RTN",
+      "source_group": "SERIAL4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-85",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL4 signal RX4+ on printed J2 pin designator 85.",
+      "printed_pin_designator": "85",
+      "signal_label_source_text_normalized": "RX4+",
+      "source_group": "SERIAL4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-86",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "SERIAL4 signal RX4- on printed J2 pin designator 86.",
+      "printed_pin_designator": "86",
+      "signal_label_source_text_normalized": "RX4-",
+      "source_group": "SERIAL4",
+      "source_direction_or_origin": "TX Sensor, RX Platform, return unassigned in source text",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "Emissions arming",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "2",
+        "95"
+      ],
+      "printed_signal_roster": [
+        "MASTER_ARM",
+        "MASTER_ARM_RET"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-2",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "ARMING signal MASTER_ARM on printed J2 pin designator 2.",
+      "printed_pin_designator": "2",
+      "signal_label_source_text_normalized": "MASTER_ARM",
+      "source_group": "ARMING",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-95",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "ARMING signal MASTER_ARM_RET on printed J2 pin designator 95.",
+      "printed_pin_designator": "95",
+      "signal_label_source_text_normalized": "MASTER_ARM_RET",
+      "source_group": "ARMING",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-NEZ",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "NEZ cutout",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "4",
+        "5",
+        "11",
+        "12"
+      ],
+      "printed_signal_roster": [
+        "NEZ_SELECT_BIT 0",
+        "NEZ_SELECT_BIT 1",
+        "NEZ_SELECT_PARITY",
+        "NEZ_SELECT_RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 4,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-4",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "NEZ signal NEZ_SELECT_BIT 0 on printed J2 pin designator 4.",
+      "printed_pin_designator": "4",
+      "signal_label_source_text_normalized": "NEZ_SELECT_BIT 0",
+      "source_group": "NEZ",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-5",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "NEZ signal NEZ_SELECT_BIT 1 on printed J2 pin designator 5.",
+      "printed_pin_designator": "5",
+      "signal_label_source_text_normalized": "NEZ_SELECT_BIT 1",
+      "source_group": "NEZ",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-11",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "NEZ signal NEZ_SELECT_PARITY on printed J2 pin designator 11.",
+      "printed_pin_designator": "11",
+      "signal_label_source_text_normalized": "NEZ_SELECT_PARITY",
+      "source_group": "NEZ",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-12",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "NEZ signal NEZ_SELECT_RTN on printed J2 pin designator 12.",
+      "printed_pin_designator": "12",
+      "signal_label_source_text_normalized": "NEZ_SELECT_RTN",
+      "source_group": "NEZ",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "Emissions mode select",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "89",
+        "90",
+        "97",
+        "98"
+      ],
+      "printed_signal_roster": [
+        "MODE_SELECT_BIT 0",
+        "MODE_SELECT_BIT 1",
+        "MODE_SELECT_PARITY",
+        "MODE_SELECT_RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 4,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-89",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "MODE signal MODE_SELECT_BIT 0 on printed J2 pin designator 89.",
+      "printed_pin_designator": "89",
+      "signal_label_source_text_normalized": "MODE_SELECT_BIT 0",
+      "source_group": "MODE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-90",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "MODE signal MODE_SELECT_BIT 1 on printed J2 pin designator 90.",
+      "printed_pin_designator": "90",
+      "signal_label_source_text_normalized": "MODE_SELECT_BIT 1",
+      "source_group": "MODE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-97",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "MODE signal MODE_SELECT_PARITY on printed J2 pin designator 97.",
+      "printed_pin_designator": "97",
+      "signal_label_source_text_normalized": "MODE_SELECT_PARITY",
+      "source_group": "MODE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-98",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 281/403 (printed 255)",
+      "meaning": "MODE signal MODE_SELECT_RTN on printed J2 pin designator 98.",
+      "printed_pin_designator": "98",
+      "signal_label_source_text_normalized": "MODE_SELECT_RTN",
+      "source_group": "MODE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ANNUNCIATION",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Emission annunciation",
+      "source_direction_or_origin": "Sensor",
+      "printed_pin_designators": [
+        "20",
+        "21"
+      ],
+      "printed_signal_roster": [
+        "LF+",
+        "LF-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-20",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "ANNUNCIATION signal LF+ on printed J2 pin designator 20.",
+      "printed_pin_designator": "20",
+      "signal_label_source_text_normalized": "LF+",
+      "source_group": "ANNUNCIATION",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-21",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "ANNUNCIATION signal LF- on printed J2 pin designator 21.",
+      "printed_pin_designator": "21",
+      "signal_label_source_text_normalized": "LF-",
+      "source_group": "ANNUNCIATION",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SAFETY",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Safety status discretes",
+      "source_direction_or_origin": "Sensor",
+      "printed_pin_designators": [
+        "15",
+        "19",
+        "42",
+        "60",
+        "82",
+        "93"
+      ],
+      "printed_signal_roster": [
+        "SS1+",
+        "SS1-",
+        "SS2+",
+        "SS2-",
+        "SS3+",
+        "SS3-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 6,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-15",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS1+ on printed J2 pin designator 15.",
+      "printed_pin_designator": "15",
+      "signal_label_source_text_normalized": "SS1+",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-19",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS1- on printed J2 pin designator 19.",
+      "printed_pin_designator": "19",
+      "signal_label_source_text_normalized": "SS1-",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-42",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS2+ on printed J2 pin designator 42.",
+      "printed_pin_designator": "42",
+      "signal_label_source_text_normalized": "SS2+",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-60",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS2- on printed J2 pin designator 60.",
+      "printed_pin_designator": "60",
+      "signal_label_source_text_normalized": "SS2-",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-82",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS3+ on printed J2 pin designator 82.",
+      "printed_pin_designator": "82",
+      "signal_label_source_text_normalized": "SS3+",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-93",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "SAFETY signal SS3- on printed J2 pin designator 93.",
+      "printed_pin_designator": "93",
+      "signal_label_source_text_normalized": "SS3-",
+      "source_group": "SAFETY",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-GIMBAL",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Enable gimbal movement",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "51",
+        "52"
+      ],
+      "printed_signal_roster": [
+        "ENBL_GIMB",
+        "ENBL_GIMB_RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-51",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "GIMBAL signal ENBL_GIMB on printed J2 pin designator 51.",
+      "printed_pin_designator": "51",
+      "signal_label_source_text_normalized": "ENBL_GIMB",
+      "source_group": "GIMBAL",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-52",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "GIMBAL signal ENBL_GIMB_RTN on printed J2 pin designator 52.",
+      "printed_pin_designator": "52",
+      "signal_label_source_text_normalized": "ENBL_GIMB_RTN",
+      "source_group": "GIMBAL",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Time synchronization one pulse per second",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "48",
+        "49"
+      ],
+      "printed_signal_roster": [
+        "1 PPS",
+        "1 PPS RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-48",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "PPS signal 1 PPS on printed J2 pin designator 48.",
+      "printed_pin_designator": "48",
+      "signal_label_source_text_normalized": "1 PPS",
+      "source_group": "PPS",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-49",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "PPS signal 1 PPS RTN on printed J2 pin designator 49.",
+      "printed_pin_designator": "49",
+      "signal_label_source_text_normalized": "1 PPS RTN",
+      "source_group": "PPS",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-RESERVED",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Reserved pins",
+      "source_direction_or_origin": "NOT ASSIGNED",
+      "printed_pin_designators": [
+        "81",
+        "91"
+      ],
+      "printed_signal_roster": [
+        "RESERVED",
+        "RESERVED"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-81",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "RESERVED signal RESERVED on printed J2 pin designator 81.",
+      "printed_pin_designator": "81",
+      "signal_label_source_text_normalized": "RESERVED",
+      "source_group": "RESERVED",
+      "source_direction_or_origin": "NOT ASSIGNED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-91",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "RESERVED signal RESERVED on printed J2 pin designator 91.",
+      "printed_pin_designator": "91",
+      "signal_label_source_text_normalized": "RESERVED",
+      "source_group": "RESERVED",
+      "source_direction_or_origin": "NOT ASSIGNED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-HC_POWER",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Hand controller power",
+      "source_direction_or_origin": "Sensor",
+      "printed_pin_designators": [
+        "68",
+        "69"
+      ],
+      "printed_signal_roster": [
+        "HAND_CONT_PWR",
+        "H_C_PWR_RTN"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-68",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "HC_POWER signal HAND_CONT_PWR on printed J2 pin designator 68.",
+      "printed_pin_designator": "68",
+      "signal_label_source_text_normalized": "HAND_CONT_PWR",
+      "source_group": "HC_POWER",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-69",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "HC_POWER signal H_C_PWR_RTN on printed J2 pin designator 69.",
+      "printed_pin_designator": "69",
+      "signal_label_source_text_normalized": "H_C_PWR_RTN",
+      "source_group": "HC_POWER",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-PURGE",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "Memory purge",
+      "source_direction_or_origin": "Platform",
+      "printed_pin_designators": [
+        "76",
+        "77",
+        "61"
+      ],
+      "printed_signal_roster": [
+        "PURG_MEM",
+        "PURG_MEM_RTN",
+        "PURG_MEM_SHD"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 3,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-76",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "PURGE signal PURG_MEM on printed J2 pin designator 76.",
+      "printed_pin_designator": "76",
+      "signal_label_source_text_normalized": "PURG_MEM",
+      "source_group": "PURGE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-77",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 282/403 (printed 256)",
+      "meaning": "PURGE signal PURG_MEM_RTN on printed J2 pin designator 77.",
+      "printed_pin_designator": "77",
+      "signal_label_source_text_normalized": "PURG_MEM_RTN",
+      "source_group": "PURGE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-61",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "PURGE signal PURG_MEM_SHD on printed J2 pin designator 61.",
+      "printed_pin_designator": "61",
+      "signal_label_source_text_normalized": "PURG_MEM_SHD",
+      "source_group": "PURGE",
+      "source_direction_or_origin": "Platform",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-MIL1553",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL-STD-1553B Twinax",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "printed_pin_designators": [
+        "25-1",
+        "25-2",
+        "25-S",
+        "75-1",
+        "75-2",
+        "75-S"
+      ],
+      "printed_signal_roster": [
+        "TX/RX A+",
+        "TX/RX A-",
+        "A-Shield",
+        "TX/RX B+",
+        "TX/RX B-",
+        "B-Shield"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 6,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-25_1",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal TX/RX A+ on printed J2 pin designator 25-1.",
+      "printed_pin_designator": "25-1",
+      "signal_label_source_text_normalized": "TX/RX A+",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-25_2",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal TX/RX A- on printed J2 pin designator 25-2.",
+      "printed_pin_designator": "25-2",
+      "signal_label_source_text_normalized": "TX/RX A-",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-25_S",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal A-Shield on printed J2 pin designator 25-S.",
+      "printed_pin_designator": "25-S",
+      "signal_label_source_text_normalized": "A-Shield",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-75_1",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal TX/RX B+ on printed J2 pin designator 75-1.",
+      "printed_pin_designator": "75-1",
+      "signal_label_source_text_normalized": "TX/RX B+",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-75_2",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal TX/RX B- on printed J2 pin designator 75-2.",
+      "printed_pin_designator": "75-2",
+      "signal_label_source_text_normalized": "TX/RX B-",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-75_S",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "MIL1553 signal B-Shield on printed J2 pin designator 75-S.",
+      "printed_pin_designator": "75-S",
+      "signal_label_source_text_normalized": "B-Shield",
+      "source_group": "MIL1553",
+      "source_direction_or_origin": "Platform/Sensor/Backshell",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_DATA",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB2 Data",
+      "source_direction_or_origin": "Platform/Sensor",
+      "printed_pin_designators": [
+        "6",
+        "13",
+        "14"
+      ],
+      "printed_signal_roster": [
+        "USB_DATA+",
+        "USB_DATA-",
+        "GND"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 3,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-6",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_DATA signal USB_DATA+ on printed J2 pin designator 6.",
+      "printed_pin_designator": "6",
+      "signal_label_source_text_normalized": "USB_DATA+",
+      "source_group": "USB_DATA",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-13",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_DATA signal USB_DATA- on printed J2 pin designator 13.",
+      "printed_pin_designator": "13",
+      "signal_label_source_text_normalized": "USB_DATA-",
+      "source_group": "USB_DATA",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-14",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_DATA signal GND on printed J2 pin designator 14.",
+      "printed_pin_designator": "14",
+      "signal_label_source_text_normalized": "GND",
+      "source_group": "USB_DATA",
+      "source_direction_or_origin": "Platform/Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_PWR",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB2 Power",
+      "source_direction_or_origin": "Sensor",
+      "printed_pin_designators": [
+        "33",
+        "34",
+        "43"
+      ],
+      "printed_signal_roster": [
+        "USB_PWR_+5V",
+        "USB_PWR_RTN",
+        "GND"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 3,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-33",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_PWR signal USB_PWR_+5V on printed J2 pin designator 33.",
+      "printed_pin_designator": "33",
+      "signal_label_source_text_normalized": "USB_PWR_+5V",
+      "source_group": "USB_PWR",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-34",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_PWR signal USB_PWR_RTN on printed J2 pin designator 34.",
+      "printed_pin_designator": "34",
+      "signal_label_source_text_normalized": "USB_PWR_RTN",
+      "source_group": "USB_PWR",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-43",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "USB_PWR signal GND on printed J2 pin designator 43.",
+      "printed_pin_designator": "43",
+      "signal_label_source_text_normalized": "GND",
+      "source_group": "USB_PWR",
+      "source_direction_or_origin": "Sensor",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS1",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS1",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "printed_pin_designators": [
+        "26",
+        "27"
+      ],
+      "printed_signal_roster": [
+        "LVDS1+",
+        "LVDS1-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-26",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS1 signal LVDS1+ on printed J2 pin designator 26.",
+      "printed_pin_designator": "26",
+      "signal_label_source_text_normalized": "LVDS1+",
+      "source_group": "LVDS1",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-27",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS1 signal LVDS1- on printed J2 pin designator 27.",
+      "printed_pin_designator": "27",
+      "signal_label_source_text_normalized": "LVDS1-",
+      "source_group": "LVDS1",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS2",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS2",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "printed_pin_designators": [
+        "18",
+        "41"
+      ],
+      "printed_signal_roster": [
+        "LVDS2+",
+        "LVDS2-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-18",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS2 signal LVDS2+ on printed J2 pin designator 18.",
+      "printed_pin_designator": "18",
+      "signal_label_source_text_normalized": "LVDS2+",
+      "source_group": "LVDS2",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-41",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS2 signal LVDS2- on printed J2 pin designator 41.",
+      "printed_pin_designator": "41",
+      "signal_label_source_text_normalized": "LVDS2-",
+      "source_group": "LVDS2",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS3",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS3",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "printed_pin_designators": [
+        "50",
+        "59"
+      ],
+      "printed_signal_roster": [
+        "LVDS3+",
+        "LVDS3-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-50",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS3 signal LVDS3+ on printed J2 pin designator 50.",
+      "printed_pin_designator": "50",
+      "signal_label_source_text_normalized": "LVDS3+",
+      "source_group": "LVDS3",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-59",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS3 signal LVDS3- on printed J2 pin designator 59.",
+      "printed_pin_designator": "59",
+      "signal_label_source_text_normalized": "LVDS3-",
+      "source_group": "LVDS3",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS4",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS4",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "printed_pin_designators": [
+        "83",
+        "84"
+      ],
+      "printed_signal_roster": [
+        "LVDS4+",
+        "LVDS4-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-83",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS4 signal LVDS4+ on printed J2 pin designator 83.",
+      "printed_pin_designator": "83",
+      "signal_label_source_text_normalized": "LVDS4+",
+      "source_group": "LVDS4",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-84",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 283/403 (printed 257)",
+      "meaning": "LVDS4 signal LVDS4- on printed J2 pin designator 84.",
+      "printed_pin_designator": "84",
+      "signal_label_source_text_normalized": "LVDS4-",
+      "source_group": "LVDS4",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS5",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "LVDS5",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "printed_pin_designators": [
+        "92",
+        "99"
+      ],
+      "printed_signal_roster": [
+        "LVDS5+",
+        "LVDS5-"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 2,
+      "grouped_unresolved_pin_to_signal_pairing": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-92",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "LVDS5 signal LVDS5+ on printed J2 pin designator 92.",
+      "printed_pin_designator": "92",
+      "signal_label_source_text_normalized": "LVDS5+",
+      "source_group": "LVDS5",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-PIN_LABEL-99",
+      "kind": "PIN_LABEL",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "LVDS5 signal LVDS5- on printed J2 pin designator 99.",
+      "printed_pin_designator": "99",
+      "signal_label_source_text_normalized": "LVDS5-",
+      "source_group": "LVDS5",
+      "source_direction_or_origin": "DIRECTION NOT PRINTED",
+      "table_id": "13.5.2.3-1",
+      "original_table_image_geometry_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SENMAN",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Sensor manufacturer assigned pins",
+      "source_direction_or_origin": "Sensor",
+      "printed_pin_designators": [
+        "24",
+        "31",
+        "32",
+        "39",
+        "40",
+        "57",
+        "58",
+        "66",
+        "67",
+        "74"
+      ],
+      "printed_signal_roster": [
+        "SENMAN_1 to SENMAN_10"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 10,
+      "grouped_unresolved_pin_to_signal_pairing": true
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING_ISOLATION",
+      "kind": "SIGNAL_GROUP",
+      "source_locator": "The Open Group SOSA C239 Edition1.1 (2023), original PDF 284/403 (printed 258)",
+      "meaning": "Reserved for arming isolation",
+      "source_direction_or_origin": "NOT SPECIFIED",
+      "printed_pin_designators": [
+        "1",
+        "3",
+        "9",
+        "10",
+        "87",
+        "88",
+        "94",
+        "96"
+      ],
+      "printed_signal_roster": [
+        "For arming isolation"
+      ],
+      "source_table": "13.5.2.3-1",
+      "table_modalities_visual_unverified": true,
+      "pin_count": 8,
+      "grouped_unresolved_pin_to_signal_pairing": true
+    }
+  ],
+  "source_signal_groups": [
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-POWER_ENABLE",
+      "group_name": "POWER_ENABLE",
+      "description": "Power enable discrete",
+      "pin_count": 2,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "PWR_EN",
+        "PWR_EN_RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+      "group_name": "ETHERNET",
+      "description": "Ethernet 1000BaseT",
+      "pin_count": 12,
+      "source_direction": "Platform/Sensor",
+      "printed_signals": [
+        "DA+",
+        "DA-",
+        "DA Shield",
+        "DB+",
+        "DB-",
+        "DB Shield",
+        "DC+",
+        "DC-",
+        "DC Shield",
+        "DD+",
+        "DD-",
+        "DD Shield"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL1",
+      "group_name": "SERIAL1",
+      "description": "TIA422 serial communications 1",
+      "pin_count": 5,
+      "source_direction": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_signals": [
+        "TX1+",
+        "TX1-",
+        "422_1_RTN",
+        "RX1+",
+        "RX1-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL2",
+      "group_name": "SERIAL2",
+      "description": "TIA422 serial communications 2",
+      "pin_count": 5,
+      "source_direction": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_signals": [
+        "TX2+",
+        "TX2-",
+        "422_2_RTN",
+        "RX2+",
+        "RX2-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL3",
+      "group_name": "SERIAL3",
+      "description": "TIA422 serial communications 3",
+      "pin_count": 5,
+      "source_direction": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_signals": [
+        "TX3+",
+        "TX3-",
+        "422_3_RTN",
+        "RX3+",
+        "RX3-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL4",
+      "group_name": "SERIAL4",
+      "description": "TIA422 serial communications 4",
+      "pin_count": 5,
+      "source_direction": "TX Sensor, RX Platform, return unassigned in source text",
+      "printed_signals": [
+        "TX4+",
+        "TX4-",
+        "422_4_RTN",
+        "RX4+",
+        "RX4-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING",
+      "group_name": "ARMING",
+      "description": "Emissions arming",
+      "pin_count": 2,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "MASTER_ARM",
+        "MASTER_ARM_RET"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-NEZ",
+      "group_name": "NEZ",
+      "description": "NEZ cutout",
+      "pin_count": 4,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "NEZ_SELECT_BIT 0",
+        "NEZ_SELECT_BIT 1",
+        "NEZ_SELECT_PARITY",
+        "NEZ_SELECT_RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE",
+      "group_name": "MODE",
+      "description": "Emissions mode select",
+      "pin_count": 4,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "MODE_SELECT_BIT 0",
+        "MODE_SELECT_BIT 1",
+        "MODE_SELECT_PARITY",
+        "MODE_SELECT_RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ANNUNCIATION",
+      "group_name": "ANNUNCIATION",
+      "description": "Emission annunciation",
+      "pin_count": 2,
+      "source_direction": "Sensor",
+      "printed_signals": [
+        "LF+",
+        "LF-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SAFETY",
+      "group_name": "SAFETY",
+      "description": "Safety status discretes",
+      "pin_count": 6,
+      "source_direction": "Sensor",
+      "printed_signals": [
+        "SS1+",
+        "SS1-",
+        "SS2+",
+        "SS2-",
+        "SS3+",
+        "SS3-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-GIMBAL",
+      "group_name": "GIMBAL",
+      "description": "Enable gimbal movement",
+      "pin_count": 2,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "ENBL_GIMB",
+        "ENBL_GIMB_RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS",
+      "group_name": "PPS",
+      "description": "Time synchronization one pulse per second",
+      "pin_count": 2,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "1 PPS",
+        "1 PPS RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-RESERVED",
+      "group_name": "RESERVED",
+      "description": "Reserved pins",
+      "pin_count": 2,
+      "source_direction": "NOT ASSIGNED",
+      "printed_signals": [
+        "RESERVED",
+        "RESERVED"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-HC_POWER",
+      "group_name": "HC_POWER",
+      "description": "Hand controller power",
+      "pin_count": 2,
+      "source_direction": "Sensor",
+      "printed_signals": [
+        "HAND_CONT_PWR",
+        "H_C_PWR_RTN"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-PURGE",
+      "group_name": "PURGE",
+      "description": "Memory purge",
+      "pin_count": 3,
+      "source_direction": "Platform",
+      "printed_signals": [
+        "PURG_MEM",
+        "PURG_MEM_RTN",
+        "PURG_MEM_SHD"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-MIL1553",
+      "group_name": "MIL1553",
+      "description": "MIL-STD-1553B Twinax",
+      "pin_count": 6,
+      "source_direction": "Platform/Sensor/Backshell",
+      "printed_signals": [
+        "TX/RX A+",
+        "TX/RX A-",
+        "A-Shield",
+        "TX/RX B+",
+        "TX/RX B-",
+        "B-Shield"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_DATA",
+      "group_name": "USB_DATA",
+      "description": "USB2 Data",
+      "pin_count": 3,
+      "source_direction": "Platform/Sensor",
+      "printed_signals": [
+        "USB_DATA+",
+        "USB_DATA-",
+        "GND"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_PWR",
+      "group_name": "USB_PWR",
+      "description": "USB2 Power",
+      "pin_count": 3,
+      "source_direction": "Sensor",
+      "printed_signals": [
+        "USB_PWR_+5V",
+        "USB_PWR_RTN",
+        "GND"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS1",
+      "group_name": "LVDS1",
+      "description": "LVDS1",
+      "pin_count": 2,
+      "source_direction": "DIRECTION NOT PRINTED",
+      "printed_signals": [
+        "LVDS1+",
+        "LVDS1-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS2",
+      "group_name": "LVDS2",
+      "description": "LVDS2",
+      "pin_count": 2,
+      "source_direction": "DIRECTION NOT PRINTED",
+      "printed_signals": [
+        "LVDS2+",
+        "LVDS2-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS3",
+      "group_name": "LVDS3",
+      "description": "LVDS3",
+      "pin_count": 2,
+      "source_direction": "DIRECTION NOT PRINTED",
+      "printed_signals": [
+        "LVDS3+",
+        "LVDS3-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS4",
+      "group_name": "LVDS4",
+      "description": "LVDS4",
+      "pin_count": 2,
+      "source_direction": "DIRECTION NOT PRINTED",
+      "printed_signals": [
+        "LVDS4+",
+        "LVDS4-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-LVDS5",
+      "group_name": "LVDS5",
+      "description": "LVDS5",
+      "pin_count": 2,
+      "source_direction": "DIRECTION NOT PRINTED",
+      "printed_signals": [
+        "LVDS5+",
+        "LVDS5-"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SENMAN",
+      "group_name": "SENMAN",
+      "description": "Sensor manufacturer assigned pins",
+      "pin_count": 10,
+      "source_direction": "Sensor",
+      "printed_signals": [
+        "SENMAN_1 to SENMAN_10"
+      ]
+    },
+    {
+      "id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING_ISOLATION",
+      "group_name": "ARMING_ISOLATION",
+      "description": "Reserved for arming isolation",
+      "pin_count": 8,
+      "source_direction": "NOT SPECIFIED",
+      "printed_signals": [
+        "For arming isolation"
+      ]
+    }
+  ],
+  "printed_pin_label_evidence": [
+    {
+      "group": "POWER_ENABLE",
+      "pin": "46",
+      "signal": "PWR_EN",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-46"
+    },
+    {
+      "group": "POWER_ENABLE",
+      "pin": "47",
+      "signal": "PWR_EN_RTN",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-47"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "28",
+      "signal": "DA+",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-28"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "35",
+      "signal": "DA-",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-35"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "36",
+      "signal": "DA Shield",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-36"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "44",
+      "signal": "DB+",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-44"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "53",
+      "signal": "DB-",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-53"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "62",
+      "signal": "DB Shield",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-62"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "45",
+      "signal": "DC+",
+      "page": 279,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-45"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "54",
+      "signal": "DC-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-54"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "63",
+      "signal": "DC Shield",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-63"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "70",
+      "signal": "DD+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-70"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "71",
+      "signal": "DD-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-71"
+    },
+    {
+      "group": "ETHERNET",
+      "pin": "78",
+      "signal": "DD Shield",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-78"
+    },
+    {
+      "group": "SERIAL1",
+      "pin": "7",
+      "signal": "TX1+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-7"
+    },
+    {
+      "group": "SERIAL1",
+      "pin": "8",
+      "signal": "TX1-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-8"
+    },
+    {
+      "group": "SERIAL1",
+      "pin": "17",
+      "signal": "422_1_RTN",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-17"
+    },
+    {
+      "group": "SERIAL1",
+      "pin": "16",
+      "signal": "RX1+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-16"
+    },
+    {
+      "group": "SERIAL1",
+      "pin": "23",
+      "signal": "RX1-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-23"
+    },
+    {
+      "group": "SERIAL2",
+      "pin": "22",
+      "signal": "TX2+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-22"
+    },
+    {
+      "group": "SERIAL2",
+      "pin": "30",
+      "signal": "TX2-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-30"
+    },
+    {
+      "group": "SERIAL2",
+      "pin": "29",
+      "signal": "422_2_RTN",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-29"
+    },
+    {
+      "group": "SERIAL2",
+      "pin": "37",
+      "signal": "RX2+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-37"
+    },
+    {
+      "group": "SERIAL2",
+      "pin": "38",
+      "signal": "RX2-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-38"
+    },
+    {
+      "group": "SERIAL3",
+      "pin": "55",
+      "signal": "TX3+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-55"
+    },
+    {
+      "group": "SERIAL3",
+      "pin": "56",
+      "signal": "TX3-",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-56"
+    },
+    {
+      "group": "SERIAL3",
+      "pin": "64",
+      "signal": "422_3_RTN",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-64"
+    },
+    {
+      "group": "SERIAL3",
+      "pin": "65",
+      "signal": "RX3+",
+      "page": 280,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-65"
+    },
+    {
+      "group": "SERIAL3",
+      "pin": "72",
+      "signal": "RX3-",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-72"
+    },
+    {
+      "group": "SERIAL4",
+      "pin": "73",
+      "signal": "TX4+",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-73"
+    },
+    {
+      "group": "SERIAL4",
+      "pin": "79",
+      "signal": "TX4-",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-79"
+    },
+    {
+      "group": "SERIAL4",
+      "pin": "80",
+      "signal": "422_4_RTN",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-80"
+    },
+    {
+      "group": "SERIAL4",
+      "pin": "85",
+      "signal": "RX4+",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-85"
+    },
+    {
+      "group": "SERIAL4",
+      "pin": "86",
+      "signal": "RX4-",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-86"
+    },
+    {
+      "group": "ARMING",
+      "pin": "2",
+      "signal": "MASTER_ARM",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-2"
+    },
+    {
+      "group": "ARMING",
+      "pin": "95",
+      "signal": "MASTER_ARM_RET",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-95"
+    },
+    {
+      "group": "NEZ",
+      "pin": "4",
+      "signal": "NEZ_SELECT_BIT 0",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-4"
+    },
+    {
+      "group": "NEZ",
+      "pin": "5",
+      "signal": "NEZ_SELECT_BIT 1",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-5"
+    },
+    {
+      "group": "NEZ",
+      "pin": "11",
+      "signal": "NEZ_SELECT_PARITY",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-11"
+    },
+    {
+      "group": "NEZ",
+      "pin": "12",
+      "signal": "NEZ_SELECT_RTN",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-12"
+    },
+    {
+      "group": "MODE",
+      "pin": "89",
+      "signal": "MODE_SELECT_BIT 0",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-89"
+    },
+    {
+      "group": "MODE",
+      "pin": "90",
+      "signal": "MODE_SELECT_BIT 1",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-90"
+    },
+    {
+      "group": "MODE",
+      "pin": "97",
+      "signal": "MODE_SELECT_PARITY",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-97"
+    },
+    {
+      "group": "MODE",
+      "pin": "98",
+      "signal": "MODE_SELECT_RTN",
+      "page": 281,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-98"
+    },
+    {
+      "group": "ANNUNCIATION",
+      "pin": "20",
+      "signal": "LF+",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-20"
+    },
+    {
+      "group": "ANNUNCIATION",
+      "pin": "21",
+      "signal": "LF-",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-21"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "15",
+      "signal": "SS1+",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-15"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "19",
+      "signal": "SS1-",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-19"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "42",
+      "signal": "SS2+",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-42"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "60",
+      "signal": "SS2-",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-60"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "82",
+      "signal": "SS3+",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-82"
+    },
+    {
+      "group": "SAFETY",
+      "pin": "93",
+      "signal": "SS3-",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-93"
+    },
+    {
+      "group": "GIMBAL",
+      "pin": "51",
+      "signal": "ENBL_GIMB",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-51"
+    },
+    {
+      "group": "GIMBAL",
+      "pin": "52",
+      "signal": "ENBL_GIMB_RTN",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-52"
+    },
+    {
+      "group": "PPS",
+      "pin": "48",
+      "signal": "1 PPS",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-48"
+    },
+    {
+      "group": "PPS",
+      "pin": "49",
+      "signal": "1 PPS RTN",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-49"
+    },
+    {
+      "group": "RESERVED",
+      "pin": "81",
+      "signal": "RESERVED",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-81"
+    },
+    {
+      "group": "RESERVED",
+      "pin": "91",
+      "signal": "RESERVED",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-91"
+    },
+    {
+      "group": "HC_POWER",
+      "pin": "68",
+      "signal": "HAND_CONT_PWR",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-68"
+    },
+    {
+      "group": "HC_POWER",
+      "pin": "69",
+      "signal": "H_C_PWR_RTN",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-69"
+    },
+    {
+      "group": "PURGE",
+      "pin": "76",
+      "signal": "PURG_MEM",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-76"
+    },
+    {
+      "group": "PURGE",
+      "pin": "77",
+      "signal": "PURG_MEM_RTN",
+      "page": 282,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-77"
+    },
+    {
+      "group": "PURGE",
+      "pin": "61",
+      "signal": "PURG_MEM_SHD",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-61"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "25-1",
+      "signal": "TX/RX A+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-25_1"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "25-2",
+      "signal": "TX/RX A-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-25_2"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "25-S",
+      "signal": "A-Shield",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-25_S"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "75-1",
+      "signal": "TX/RX B+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-75_1"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "75-2",
+      "signal": "TX/RX B-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-75_2"
+    },
+    {
+      "group": "MIL1553",
+      "pin": "75-S",
+      "signal": "B-Shield",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-75_S"
+    },
+    {
+      "group": "USB_DATA",
+      "pin": "6",
+      "signal": "USB_DATA+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-6"
+    },
+    {
+      "group": "USB_DATA",
+      "pin": "13",
+      "signal": "USB_DATA-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-13"
+    },
+    {
+      "group": "USB_DATA",
+      "pin": "14",
+      "signal": "GND",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-14"
+    },
+    {
+      "group": "USB_PWR",
+      "pin": "33",
+      "signal": "USB_PWR_+5V",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-33"
+    },
+    {
+      "group": "USB_PWR",
+      "pin": "34",
+      "signal": "USB_PWR_RTN",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-34"
+    },
+    {
+      "group": "USB_PWR",
+      "pin": "43",
+      "signal": "GND",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-43"
+    },
+    {
+      "group": "LVDS1",
+      "pin": "26",
+      "signal": "LVDS1+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-26"
+    },
+    {
+      "group": "LVDS1",
+      "pin": "27",
+      "signal": "LVDS1-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-27"
+    },
+    {
+      "group": "LVDS2",
+      "pin": "18",
+      "signal": "LVDS2+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-18"
+    },
+    {
+      "group": "LVDS2",
+      "pin": "41",
+      "signal": "LVDS2-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-41"
+    },
+    {
+      "group": "LVDS3",
+      "pin": "50",
+      "signal": "LVDS3+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-50"
+    },
+    {
+      "group": "LVDS3",
+      "pin": "59",
+      "signal": "LVDS3-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-59"
+    },
+    {
+      "group": "LVDS4",
+      "pin": "83",
+      "signal": "LVDS4+",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-83"
+    },
+    {
+      "group": "LVDS4",
+      "pin": "84",
+      "signal": "LVDS4-",
+      "page": 283,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-84"
+    },
+    {
+      "group": "LVDS5",
+      "pin": "92",
+      "signal": "LVDS5+",
+      "page": 284,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-92"
+    },
+    {
+      "group": "LVDS5",
+      "pin": "99",
+      "signal": "LVDS5-",
+      "page": 284,
+      "source_id": "SOSA-C239-G2-7J-PIN_LABEL-99"
+    },
+    {
+      "group": "SENMAN",
+      "aggregate": true,
+      "pin_roster": [
+        "24",
+        "31",
+        "32",
+        "39",
+        "40",
+        "57",
+        "58",
+        "66",
+        "67",
+        "74"
+      ],
+      "printed_signal_label": "SENMAN_1 to SENMAN_10",
+      "not_individual_pin_signal_assignments": true,
+      "source_id": "SOSA-C239-G2-7J-SIGNAL_GROUP-SENMAN"
+    },
+    {
+      "group": "ARMING_ISOLATION",
+      "aggregate": true,
+      "pin_roster": [
+        "1",
+        "3",
+        "9",
+        "10",
+        "87",
+        "88",
+        "94",
+        "96"
+      ],
+      "printed_signal_label": "For arming isolation",
+      "not_individual_pin_signal_assignments": true,
+      "source_id": "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING_ISOLATION"
+    }
+  ],
+  "source_holds": [
+    {
+      "id": "SOSA-G2-7J-Q01",
+      "status": "HELD",
+      "description": "Original Figure13.5.2.3-1 contact-geometry/pixel view not available via Library page-image retrieval; 25-7/N-keying source text read only."
+    },
+    {
+      "id": "SOSA-G2-7J-Q02",
+      "status": "HELD",
+      "description": "Original six-page Table13.5.2.3-1 is text-audited by pin designator/signal groups, but dense modality-by-pin tick geometry cannot be independently pixel verified."
+    },
+    {
+      "id": "SOSA-G2-7J-Q03",
+      "status": "HELD",
+      "description": "Text extraction split certain labels across PDF lines (e.g., MASTER_ARM and SENMAN), normalized only where plain source text supports reconstruction; exact original graphic remains held."
+    },
+    {
+      "id": "SOSA-G2-7J-Q04",
+      "status": "HELD",
+      "description": "Ten SENMAN pins plus SENMAN_1–10 group appear in source but individual positional pairing cannot be independently confirmed from parsed text."
+    },
+    {
+      "id": "SOSA-G2-7J-Q05",
+      "status": "HELD",
+      "description": "Eight reserved-for-arming-isolation pin numbers are recorded as a group; do not invent independent signal names or assigned roles."
+    },
+    {
+      "id": "SOSA-G2-7J-Q06",
+      "status": "HELD",
+      "description": "MIL-STD1553B twinax source uses subcontact codes 25-1/25-2/25-S and 75-1/75-2/75-S, which are not interchangeable with ordinary numeric J2 pin IDs."
+    },
+    {
+      "id": "SOSA-G2-7J-Q07",
+      "status": "HELD",
+      "description": "Uninspected original MIL-DTL-38999 and connector Figure/insert designs prevent independent physical connector conformance claim."
+    },
+    {
+      "id": "SOSA-G2-7J-Q08",
+      "status": "HELD",
+      "description": "Original commercial IEEE Ethernet, MIL-STD1553B, USB and TIA422 companion standards not independently clause-audited by this packet."
+    },
+    {
+      "id": "SOSA-G2-7J-Q09",
+      "status": "HELD",
+      "description": "The 28VDC logic-one threshold ≥18V and logic-zero threshold ≤1.5V do not define a universal state for intermediate input voltages."
+    },
+    {
+      "id": "SOSA-G2-7J-Q10",
+      "status": "HELD",
+      "description": "Observation13.5.2.3-3 allows some program-specific higher voltage logic-zero handling for safety; this does not override current numbered Rules universally."
+    },
+    {
+      "id": "SOSA-G2-7J-Q11",
+      "status": "HELD",
+      "description": "Power Enable ≥100kΩ OFF and ≤5Ω ON leave intermediate circuit-resistance behavior unspecified in these numbered Rules."
+    },
+    {
+      "id": "SOSA-G2-7J-Q12",
+      "status": "HELD",
+      "description": "Platform/human-controlled open/closed circuit is a physical power-enable mechanism, not by itself a CSAPI Command, authorization, acknowledgement or independently witnessed effect."
+    },
+    {
+      "id": "SOSA-G2-7J-Q13",
+      "status": "HELD",
+      "description": "J2 Power Enable max source 100mA and max drive 30VDC are electrical interface limits, not observed device output/available source power."
+    },
+    {
+      "id": "SOSA-G2-7J-Q14",
+      "status": "HELD",
+      "description": "Table includes arming, cutout, mode-select, gimbal, memory purge and safety pins; none establishes real permissions, current applied armed state or live sensitive control effects."
+    },
+    {
+      "id": "SOSA-G2-7J-Q15",
+      "status": "HELD",
+      "description": "J2 1 PPS pins are source-printed timing wires, not demonstrated synchronized clock accuracy, event time or observed source-case QA."
+    },
+    {
+      "id": "SOSA-G2-7J-Q16",
+      "status": "HELD",
+      "description": "Safety status/annunciation pins are hardware signal design, not source-verified CSAPI Observation, status Datastream or sensor-health report."
+    },
+    {
+      "id": "SOSA-G2-7J-Q17",
+      "status": "HELD",
+      "description": "J2 commercial-protocol pin names may vary slightly for signal integrity per Observation, not unrestricted permission to invent arbitrary mappings."
+    },
+    {
+      "id": "SOSA-G2-7J-Q18",
+      "status": "HELD",
+      "description": "Original 2419 wire AWG24 silver-plated 19-strand definition is sourced to Observation13.5.2.3-4, not a universal wiring certification."
+    },
+    {
+      "id": "SOSA-G2-7J-Q19",
+      "status": "HELD",
+      "description": "All further §13.5.2.3.2 Ethernet, §13.5.2.3.3 serial and additional arming/cutout sections remain outside this packet; labels in table do not certify their source rules."
+    },
+    {
+      "id": "SOSA-G2-7J-Q20",
+      "status": "HELD",
+      "description": "Eight separate C239 DSDM/IDL/OpenAPI files, 2025 S251 Snapshot3 and restricted security overlay remain unreviewed."
+    },
+    {
+      "id": "SOSA-G2-7J-Q21",
+      "status": "HELD",
+      "description": "No real Dragino/AirGradient/Campbell/Bennett source case proves installed J2 connector, source-case command or power transition."
+    },
+    {
+      "id": "SOSA-G2-7J-Q22",
+      "status": "HELD",
+      "description": "Previous G2-7I and earlier SOSA source/figure holds remain unresolved; coverage of §13.5 parent remains partial."
+    }
+  ],
+  "mapping_candidates": [
+    {
+      "row_id": "S06-R006",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-MIL1553"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 includes physical Ethernet and 1553B transport, not a separately identifiable network participant.",
+      "negative_equivalence_boundary": "No live network address or endpoint."
+    },
+    {
+      "row_id": "S06-R007",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SECTION-13_5_2_3",
+        "SOSA-C239-G2-7J-TABLE-13_5_2_3_1"
+      ],
+      "relation": "NARROWER",
+      "native_source_meaning": "J2 25-7 physical signal connector and pins are specialized sensor hardware interfaces.",
+      "negative_equivalence_boundary": "Not required on every CSAPI System or observed installed equipment."
+    },
+    {
+      "row_id": "S06-R008",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_2",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-POWER_ENABLE"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 host umbilical and physical signal pins illustrate possible connected platform/equipment interfaces.",
+      "negative_equivalence_boundary": "Not installed external cable or source-case link."
+    },
+    {
+      "row_id": "S06-R009",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SOURCE_CONTEXT-femaleMale",
+        "SOSA-C239-G2-7J-SOURCE_CONTEXT-physicalPower"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Sensor and platform have distinct J2 socket/pin mating sides and platform-controlled power switch.",
+      "negative_equivalence_boundary": "Not an approved generic chassis/Platform root."
+    },
+    {
+      "row_id": "S06-R019",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Power-enable circuit can direct physical ON/OFF conditions by resistance threshold.",
+      "negative_equivalence_boundary": "Not issued CSAPI Command or verified software task request."
+    },
+    {
+      "row_id": "S06-R020",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "Source SHALL defines expected physical power state given circuit resistance.",
+      "negative_equivalence_boundary": "Does not document real acknowledgement or measured achieved state."
+    },
+    {
+      "row_id": "S06-R021",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_3",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_4",
+        "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_3"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Source separates binding logic threshold Rules from safety-dependent Observation.",
+      "negative_equivalence_boundary": "Not adopted profile norm or certified real behavior."
+    },
+    {
+      "row_id": "ISA-A-NETWORK-CONTEXT",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_DATA"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 Ethernet/USB/1553B wiring options identify physical carriers.",
+      "negative_equivalence_boundary": "Not ISA network membership, address or service discovery."
+    },
+    {
+      "row_id": "ISA-A-CONNECTION-PRESENTATION",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SOURCE_CONTEXT-femaleMale",
+        "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_1"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Commercial-protocol connector nomenclature may be adjusted to preserve physical signal integrity.",
+      "negative_equivalence_boundary": "Not negotiable digital message encoding."
+    },
+    {
+      "row_id": "ISA-A-BASELINE-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Conditional J2 25-7 insert/pin assignments constrain Class1&2 physical hardware.",
+      "negative_equivalence_boundary": "Not a universal sensor command or data-stream SHALL."
+    },
+    {
+      "row_id": "ISA-A-TIME-BASIS",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 design includes platform 1 PPS and return timing conductors.",
+      "negative_equivalence_boundary": "No actual synchronized timestamp or accuracy."
+    },
+    {
+      "row_id": "ISA-E-COMPONENT-CATEGORY",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SECTION-13_5_2_3",
+        "SOSA-C239-G2-7J-TABLE-13_5_2_3_1"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 25-7 signal connector belongs to a specialized Class1&2 physical interface.",
+      "negative_equivalence_boundary": "Not general DIM class structure."
+    },
+    {
+      "row_id": "ISA-E-POWER-SOURCE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-POWER_ENABLE",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-USB_PWR",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-HC_POWER"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 includes physical power-enable and USB/hand-controller electrical signals.",
+      "negative_equivalence_boundary": "Not the installed energy source, battery, telemetry or power supply."
+    },
+    {
+      "row_id": "ISA-K-CAPABILITIES",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-SERIAL1",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-SAFETY",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "The table names different physical communications, safety and emission-control signal groups.",
+      "negative_equivalence_boundary": "Not an independently supported runtime capability catalogue."
+    },
+    {
+      "row_id": "ISA-K-VALUE-RANGE",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_3",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_4",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Discrete-voltage and PWR_EN resistance thresholds scope narrow physical interface behavior.",
+      "negative_equivalence_boundary": "Not generic permitted-value range or reported measurement."
+    },
+    {
+      "row_id": "ISA-K-FIELD-DECL",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-TABLE-13_5_2_3_1"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 table declares pin/wire/signal/source/type for physical interface.",
+      "negative_equivalence_boundary": "Not ISA JSON field declarations or adopted Profile properties."
+    },
+    {
+      "row_id": "ISA-K-COMMAND-DECL",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SOURCE_CONTEXT-physicalPower",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "A platform-side hardwired enable/arming signal is a hardware control possibility.",
+      "negative_equivalence_boundary": "Not a software control API or authenticated executable Command."
+    },
+    {
+      "row_id": "ISA-T-CONFIG",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-NEZ",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-POWER_ENABLE"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "J2 defines possible physical selected emission modes and enable circuits.",
+      "negative_equivalence_boundary": "No actual mode selected or verified effective configuration."
+    },
+    {
+      "row_id": "ISA-T-STATUS",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-SAFETY",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ANNUNCIATION"
+      ],
+      "relation": "RELATED",
+      "native_source_meaning": "Safety and annunciation pins could convey hardware signals.",
+      "negative_equivalence_boundary": "Not an observed status record or live value."
+    },
+    {
+      "row_id": "CASE-H03",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-MIL1553"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "J2 transport pins do not establish an actual source-case reporting path.",
+      "negative_equivalence_boundary": "None of four cases shown to use J2."
+    },
+    {
+      "row_id": "CASE-H06",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "Physical mode-select and ON condition are source-defined interface behavior.",
+      "negative_equivalence_boundary": "No real applied setting in empirical cases."
+    },
+    {
+      "row_id": "CASE-H08",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_3"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "1 PPS and discrete thresholds are not measured source time or QA.",
+      "negative_equivalence_boundary": "No source-case event/clock/quality evidence."
+    },
+    {
+      "row_id": "CASE-H09",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+        "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "Electrical Power Enable conditional behavior is a hardwired requirement.",
+      "negative_equivalence_boundary": "No authenticated command/ack or witnessed device effect."
+    },
+    {
+      "row_id": "ISA-A-CIC-MEDIATION",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-GIMBAL",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-PURGE"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "Hardware gimbal/purge pins do not establish ISA composition task mediation.",
+      "negative_equivalence_boundary": "No CIC or virtual-member semantics."
+    },
+    {
+      "row_id": "ISA-T-ACCESS",
+      "source_item_ids": [
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-ARMING",
+        "SOSA-C239-G2-7J-SIGNAL_GROUP-PURGE"
+      ],
+      "relation": "NO_ESTABLISHED",
+      "native_source_meaning": "Physical arming and purge conductors are not security grant/deny service descriptions.",
+      "negative_equivalence_boundary": "No inferred authorization state or approval to operate."
+    }
+  ],
+  "c239_cumulative_registered_headings": {
+    "total": 192,
+    "at_least_sampled_or_inline_reviewed": 173,
+    "substantively_unread": 18,
+    "restricted": 1,
+    "newly_registered_headings_reviewed": 0,
+    "why_zero": "§13.5 and §13.5.2 parent registered headings already counted at G2-7I; §13.5.2.3 is a nested source subsection, not another C239 192-heading TOC entry",
+    "full_13_5_source_coverage": false
+  },
+  "model_or_CSAPI_Profile_adopted": false,
+  "independent_hardware_conformance": false,
+  "next_only_after_distinct_owner_proceed": "G2-7K starts original §13.5.2.3.2 Ethernet (Copper), source-sized; SOSA remains OPEN and Step18 SAPIENT blocked."
+}
