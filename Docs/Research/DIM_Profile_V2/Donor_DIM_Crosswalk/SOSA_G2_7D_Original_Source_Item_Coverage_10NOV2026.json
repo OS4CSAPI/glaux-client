@@ -1,0 +1,781 @@
+{
+  "schema": "SOSA-C239-G2-7D-switch-amps-original-source-ledger-v0.1",
+  "date": "2026-11-10",
+  "source": {
+    "publisher": "The Open Group SOSA Consortium",
+    "standard": "Technical Standard for SOSA Reference Architecture",
+    "edition": "1.1",
+    "document": "C239",
+    "year": 2023,
+    "original_project_library_pdf": "c239_5.pdf",
+    "original_project_library_file_id": "file_00000000af4081f58c4bac329f85c58f",
+    "section": "13.3.5",
+    "pdf_pages": "263–264 inclusive; stop BEFORE §13.3.6 on PDF264",
+    "printed_pages": "237–238",
+    "access": "Project Library original PDF indexed text read at prose, four original family rows, 16 illustrated depth/protocol rows, 5 named dash option labels and 4 full-string examples; high-resolution matrix-cell coordinates NOT verified",
+    "publisher_ANSI_VITA65_0_65_1_read": false,
+    "publisher_VITA66_original_read": false,
+    "original_C239_DSDM_IDL_OpenAPI_eight_read": false,
+    "full_matrix_visual_alignment_checked": false
+  },
+  "bounded_authorization": "SOSA-G2-7D only, C239 original §13.3.5 PDF263–264 stopping BEFORE §13.3.6",
+  "original_registered_heading_coverage": [
+    {
+      "id": "13.3.5",
+      "title": "SOSA 3U/6U Switch AMPS Format",
+      "original_pdf_pages": [
+        263,
+        264
+      ],
+      "previous_status": "UNREAD",
+      "current_grade": "ORIGINAL_PROSE_PROFILE_AND_TEXT_ROW_READ__EXACT_TABLE_MATRIX_PIXEL_COORDINATES_HELD"
+    }
+  ],
+  "source_counts": {
+    "SOURCE_CONTEXT": 7,
+    "TABLE": 2,
+    "PROFILE_FAMILY": 4,
+    "MATRIX_DEPTH_ROW": 16,
+    "PROFILE_DASH_OPTION": 5,
+    "FULL_STRING_EXAMPLE": 4,
+    "ANALYTICAL_CONTEXT": 6,
+    "source_native_item_records": 38,
+    "analytical_contexts": 6,
+    "total_source_and_analyst_records": 44,
+    "profile_families": 4,
+    "original_matrix_depth_rows": 16,
+    "explicit_dash_values": 5,
+    "full_original_switch_examples": 4,
+    "numbered_rule_shalls": 0
+  },
+  "original_source_items": [
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-SWITCH_TABLE_SCOPE",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, opening paragraph",
+      "original_pdf_page": 263,
+      "printed_page": 237,
+      "source_native_meaning": "Tables 13.3.5-1 and 13.3.5-2 present SOSA 3U/6U Switch Plug-In Card Profiles and example AMPS strings.",
+      "normative_standing": "SOURCE_EXAMPLE_OR_DESCRIPTIVE_NOT_NUMBERED_RULE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-COPPER_OPTICAL_DELIMITERS",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, first paragraph",
+      "original_pdf_page": 263,
+      "printed_page": 237,
+      "source_native_meaning": "Physical copper backplane fields use parentheses and backplane VITA 66 optical fields use square brackets.",
+      "normative_standing": "SOURCE_EXAMPLE_OR_DESCRIPTIVE_NOT_NUMBERED_RULE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-FRONT_PANEL_OPTICAL_SUFFIX",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, continuation",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "SOSA-only switch front-panel optical protocol fields are appended after backplane optical fields and enclosed in angle brackets, not payload RF/XMC fields.",
+      "normative_standing": "SOURCE_EXAMPLE_OR_DESCRIPTIVE_NOT_NUMBERED_RULE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-ANS_EXTERNAL_DEFINITION",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, continuation",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Original text defers ANS grammar to ANSI/VITA 65.1 and §13.3.3-1 diagram, with SOSA-only added suffix.",
+      "normative_standing": "SOURCE_EXAMPLE_OR_DESCRIPTIVE_NOT_NUMBERED_RULE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-EXAMPLES_ONLY_NOTE",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, note",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Protocol values in Tables 13.3.5-1 and 13.3.5-2 are expressly examples of format, not verified as-installed switch port configurations.",
+      "normative_standing": "SOURCE_NOTE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-WRONG_EXAMPLE_CROSS_REFERENCE",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, after Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Text introduces Switch Table 13.3.5-2 but says its examples are from Payload Table 13.3.4-3; the printed pointer is inconsistent with the adjacent switch table and is preserved.",
+      "normative_standing": "PRINTED_SOURCE_DISCREPANCY",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-SOURCE_CONTEXT-SWITCH_SECTION_PAYLOAD_WORDING",
+      "native_kind": "SOURCE_CONTEXT",
+      "source_locator": "§13.3.5, opening paragraph",
+      "original_pdf_page": 263,
+      "printed_page": 237,
+      "source_native_meaning": "Switch section text calls table entries Payload PICPs although family names are switches; keep printed mismatch instead of reclassifying all hardware as generic payloads.",
+      "normative_standing": "PRINTED_SOURCE_DISCREPANCY",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-TABLE-13_3_5_1",
+      "native_kind": "TABLE",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Four original switch families, their VITA physical-profile identifiers, 16 displayed depth/physical-protocol matrix rows and front-panel optic design fields.",
+      "normative_standing": "SOURCE_TABLE_EXACT_CELL_ALIGN_HELD",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-TABLE-13_3_5_2",
+      "native_kind": "TABLE",
+      "source_locator": "Table 13.3.5-2",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Four illustrated complete switch AMPS strings, distinct MODA3/MODA6 family identifiers, illustrated dash -j placeholders and differing physical suffix structure.",
+      "normative_standing": "SOURCE_EXAMPLE_TABLE",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_FAMILY-3U-DP_SWITCH",
+      "native_kind": "PROFILE_FAMILY",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Data Plane (DP) Switch; VITA slot 14.4.14, ANS 16.4.15-1. Source caption DP 6 FP/Ethernet and CP 7 UTP/Ethernet; design category rather than actual throughput.",
+      "normative_standing": "SOURCE_DESIGN_PROFILE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "form_factor": "3U",
+      "role": "Data Plane (DP) Switch",
+      "vita_slot_profile": "14.4.14",
+      "alternate_naming_structure": "16.4.15-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_FAMILY-3U-EP_SWITCH",
+      "native_kind": "PROFILE_FAMILY",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Expansion Plane (EP) Switch; VITA slot 14.4.15, ANS 16.4.16-1. Source caption EP 6 FP/PCIe and CP 8 UTP/Ethernet; separate from DP switch.",
+      "normative_standing": "SOURCE_DESIGN_PROFILE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "form_factor": "3U",
+      "role": "Expansion Plane (EP) Switch",
+      "vita_slot_profile": "14.4.15",
+      "alternate_naming_structure": "16.4.16-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_FAMILY-3U-DP_SWITCH_V66",
+      "native_kind": "PROFILE_FAMILY",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U DP Switch/V66; VITA slot 14.8.7, ANS 16.8.7-1. Source caption DP 4 FP/Ethernet and CP 7 UTP/Ethernet; includes VITA 66 optical and SOSA-only front-panel optical field.",
+      "normative_standing": "SOURCE_DESIGN_PROFILE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "form_factor": "3U",
+      "role": "DP Switch/V66",
+      "vita_slot_profile": "14.8.7",
+      "alternate_naming_structure": "16.8.7-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_FAMILY-6U-DP_SWITCH",
+      "native_kind": "PROFILE_FAMILY",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U DP Switch; VITA slot 10.8.1, ANS 12.8.1-1. Source caption DP 18 FP/Ethernet and CP 15 UTP/Ethernet; physically distinct 6U slot profile.",
+      "normative_standing": "SOURCE_DESIGN_PROFILE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "form_factor": "6U",
+      "role": "DP Switch",
+      "vita_slot_profile": "10.8.1",
+      "alternate_naming_structure": "12.8.1-1"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH-F2C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Data Plane (DP) Switch, original matrix line 1, dcp cell F2C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F2C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH-F4C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Data Plane (DP) Switch, original matrix line 2, dcp cell F4C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F4C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH-F8H",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Data Plane (DP) Switch, original matrix line 3, dcp cell F8H; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F8H",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH-S2E",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Data Plane (DP) Switch, original matrix line 4, dcp cell S2E; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "S2E",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-EP_SWITCH-F2C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Expansion Plane (EP) Switch, original matrix line 1, dcp cell F2C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-EP_SWITCH",
+      "depth_cooling_pitch_printed": "F2C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-EP_SWITCH-F4C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Expansion Plane (EP) Switch, original matrix line 2, dcp cell F4C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-EP_SWITCH",
+      "depth_cooling_pitch_printed": "F4C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-EP_SWITCH-F8H",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Expansion Plane (EP) Switch, original matrix line 3, dcp cell F8H; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-EP_SWITCH",
+      "depth_cooling_pitch_printed": "F8H",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-EP_SWITCH-S2E",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U Expansion Plane (EP) Switch, original matrix line 4, dcp cell S2E; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-EP_SWITCH",
+      "depth_cooling_pitch_printed": "S2E",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH_V66-F2C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U DP Switch/V66, original matrix line 1, dcp cell F2C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH_V66",
+      "depth_cooling_pitch_printed": "F2C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH_V66-F4C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U DP Switch/V66, original matrix line 2, dcp cell F4C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH_V66",
+      "depth_cooling_pitch_printed": "F4C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH_V66-F8H",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U DP Switch/V66, original matrix line 3, dcp cell F8H; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH_V66",
+      "depth_cooling_pitch_printed": "F8H",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-3U-DP_SWITCH_V66-S2E",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U DP Switch/V66, original matrix line 4, dcp cell S2E; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "3U-DP_SWITCH_V66",
+      "depth_cooling_pitch_printed": "S2E",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-6U-DP_SWITCH-F2C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U DP Switch, original matrix line 1, dcp cell F2C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "6U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F2C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-6U-DP_SWITCH-F4C",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U DP Switch, original matrix line 2, dcp cell F4C; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "6U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F4C",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-6U-DP_SWITCH-F8H",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U DP Switch, original matrix line 3, dcp cell F8H; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "6U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "F8H",
+      "X_not_applicable": false,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-MATRIX_DEPTH_ROW-6U-DP_SWITCH-X",
+      "native_kind": "MATRIX_DEPTH_ROW",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U DP Switch, original matrix line 4, dcp cell X; copper/optical design token rows were read in text, but exact legal-port column geometry not fully checked.",
+      "normative_standing": "SOURCE_MATRIX_ROW_PARTIAL",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "family_id": "6U-DP_SWITCH",
+      "depth_cooling_pitch_printed": "X",
+      "X_not_applicable": true,
+      "column_pixel_coordinates_verified": false
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_DASH_OPTION-3U-DP_SWITCH_V66-0",
+      "native_kind": "PROFILE_DASH_OPTION",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U-DP_SWITCH_V66 printed VITA slot-profile dash option -0-; not a live configuration.",
+      "normative_standing": "SOURCE_TABLE_OPTION",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "profile_family": "3U-DP_SWITCH_V66",
+      "dash_option": "0"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_DASH_OPTION-3U-DP_SWITCH_V66-4",
+      "native_kind": "PROFILE_DASH_OPTION",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U-DP_SWITCH_V66 printed VITA slot-profile dash option -4-; not a live configuration.",
+      "normative_standing": "SOURCE_TABLE_OPTION",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "profile_family": "3U-DP_SWITCH_V66",
+      "dash_option": "4"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_DASH_OPTION-3U-DP_SWITCH_V66-5",
+      "native_kind": "PROFILE_DASH_OPTION",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "3U-DP_SWITCH_V66 printed VITA slot-profile dash option -5-; not a live configuration.",
+      "normative_standing": "SOURCE_TABLE_OPTION",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "profile_family": "3U-DP_SWITCH_V66",
+      "dash_option": "5"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_DASH_OPTION-6U-DP_SWITCH-0",
+      "native_kind": "PROFILE_DASH_OPTION",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U-DP_SWITCH printed VITA slot-profile dash option -0-; not a live configuration.",
+      "normative_standing": "SOURCE_TABLE_OPTION",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "profile_family": "6U-DP_SWITCH",
+      "dash_option": "0"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-PROFILE_DASH_OPTION-6U-DP_SWITCH-3",
+      "native_kind": "PROFILE_DASH_OPTION",
+      "source_locator": "Table 13.3.5-1",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "6U-DP_SWITCH printed VITA slot-profile dash option -3-; not a live configuration.",
+      "normative_standing": "SOURCE_TABLE_OPTION",
+      "coverage_grade": "ORIGINAL_LABEL_AND_ROW_TEXT_READ__EXACT_PIXEL_MATRIX_GEOMETRY_UNVERIFIED",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "profile_family": "6U-DP_SWITCH",
+      "dash_option": "3"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-DP_SWITCH",
+      "native_kind": "FULL_STRING_EXAMPLE",
+      "source_locator": "Table 13.3.5-2",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Original complete illustrative 3U-DP_SWITCH switch AMPS string printed as MODA3-16.4.15-1-(5E8-4E7)(7E7)<3E19-N-E19-N>.",
+      "normative_standing": "ILLUSTRATIVE_SOURCE_EXAMPLE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "exact_printed_amps_string": "MODA3-16.4.15-1-(5E8-4E7)(7E7)<3E19-N-E19-N>"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-EP_SWITCH",
+      "native_kind": "FULL_STRING_EXAMPLE",
+      "source_locator": "Table 13.3.5-2",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Original complete illustrative 3U-EP_SWITCH switch AMPS string printed as MODA3-16.4.16-1-(6P3F)(8E7-E3).",
+      "normative_standing": "ILLUSTRATIVE_SOURCE_EXAMPLE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "exact_printed_amps_string": "MODA3-16.4.16-1-(6P3F)(8E7-E3)"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-DP_SWITCH_V66",
+      "native_kind": "FULL_STRING_EXAMPLE",
+      "source_locator": "Table 13.3.5-2",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Original complete illustrative 3U-DP_SWITCH_V66 switch AMPS string printed as MODA3-16.8.7-1-j-(3E8-4E7)(7E7)[E19]<3E19-N-E19-N>.",
+      "normative_standing": "ILLUSTRATIVE_SOURCE_EXAMPLE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "exact_printed_amps_string": "MODA3-16.8.7-1-j-(3E8-4E7)(7E7)[E19]<3E19-N-E19-N>"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-6U-DP_SWITCH",
+      "native_kind": "FULL_STRING_EXAMPLE",
+      "source_locator": "Table 13.3.5-2",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Original complete illustrative 6U-DP_SWITCH switch AMPS string printed as MODA6-10.8.1-j-(14E8-16E8-2E3)(15E7-E14)[E19].",
+      "normative_standing": "ILLUSTRATIVE_SOURCE_EXAMPLE",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance.",
+      "exact_printed_amps_string": "MODA6-10.8.1-j-(14E8-16E8-2E3)(15E7-E14)[E19]"
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-PHYSICAL_ROLE_SCOPE",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Switch-port topology and published hardware card naming are narrower than entire sensing-system identity.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-SWITCH_VS_PAYLOAD",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "DP, EP, DP/V66 and 6U DP switch profiles are distinct original design families, not synonyms.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-MATRIX_VISUAL",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Text of 16 rows is available but exact physical port column-to-token alignment not visually checked; no exhaustive legal-port map claim.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-PHYSICAL_VS_NETWORK",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "AMPS Ethernet/optical speed tokens are port-design examples, not actual IP endpoint, active link or reported observations.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-CROSS_REF_AND_EXAMPLE",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "Preserve inconsistent Table13.3.4-3 reference, Payload wording and illustrated -j markers as printed.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    },
+    {
+      "id": "SOSA-C239-G2-7D-ANALYTICAL_CONTEXT-HARDWARE_VS_PROFILE_ADOPTION",
+      "native_kind": "ANALYTICAL_CONTEXT",
+      "source_locator": "Project analysis anchored to original §13.3.5",
+      "original_pdf_page": 264,
+      "printed_page": 238,
+      "source_native_meaning": "No generic DIM class, CSAPI SHALL, hardware certification or actual vendor equipment inference.",
+      "normative_standing": "PROJECT_INFERENCE_NOT_SOURCE_REQUIREMENT",
+      "coverage_grade": "ORIGINAL_INLINE_TEXT_READ",
+      "non_equivalence": "Published physical switch-PICP design or illustrative AMPS syntax; NOT deployed device, software/API transport, observed sensor capability, adopted DIM/Profile requirement or independent conformance."
+    }
+  ],
+  "original_family_census": [
+    {
+      "code": "3U-DP_SWITCH",
+      "size": "3U",
+      "role": "Data Plane (DP) Switch",
+      "slot": "14.4.14",
+      "ans": "16.4.15-1",
+      "notes": "Source caption DP 6 FP/Ethernet and CP 7 UTP/Ethernet; design category rather than actual throughput."
+    },
+    {
+      "code": "3U-EP_SWITCH",
+      "size": "3U",
+      "role": "Expansion Plane (EP) Switch",
+      "slot": "14.4.15",
+      "ans": "16.4.16-1",
+      "notes": "Source caption EP 6 FP/PCIe and CP 8 UTP/Ethernet; separate from DP switch."
+    },
+    {
+      "code": "3U-DP_SWITCH_V66",
+      "size": "3U",
+      "role": "DP Switch/V66",
+      "slot": "14.8.7",
+      "ans": "16.8.7-1",
+      "notes": "Source caption DP 4 FP/Ethernet and CP 7 UTP/Ethernet; includes VITA 66 optical and SOSA-only front-panel optical field."
+    },
+    {
+      "code": "6U-DP_SWITCH",
+      "size": "6U",
+      "role": "DP Switch",
+      "slot": "10.8.1",
+      "ans": "12.8.1-1",
+      "notes": "Source caption DP 18 FP/Ethernet and CP 15 UTP/Ethernet; physically distinct 6U slot profile."
+    }
+  ],
+  "original_switch_amps_example_strings": [
+    {
+      "code": "3U-DP_SWITCH",
+      "printed": "MODA3-16.4.15-1-(5E8-4E7)(7E7)<3E19-N-E19-N>"
+    },
+    {
+      "code": "3U-EP_SWITCH",
+      "printed": "MODA3-16.4.16-1-(6P3F)(8E7-E3)"
+    },
+    {
+      "code": "3U-DP_SWITCH_V66",
+      "printed": "MODA3-16.8.7-1-j-(3E8-4E7)(7E7)[E19]<3E19-N-E19-N>"
+    },
+    {
+      "code": "6U-DP_SWITCH",
+      "printed": "MODA6-10.8.1-j-(14E8-16E8-2E3)(15E7-E14)[E19]"
+    }
+  ],
+  "exact_holds": [
+    {
+      "id": "SOSA-G2-7D-H01",
+      "code": "MATRIX_PIXEL_COORDINATES_UNVERIFIED",
+      "reason": "Exact legal-port/protocol mapping of dense switch matrix Table13.3.5-1 cannot be established from extracted text alone; page image retrieval unavailable."
+    },
+    {
+      "id": "SOSA-G2-7D-H02",
+      "code": "ANSI_VITA65_ORIGINAL_UNREAD",
+      "reason": "Full ANSI/VITA 65.0 and 65.1 source-native slot and ANS definitions uninspected."
+    },
+    {
+      "id": "SOSA-G2-7D-H03",
+      "code": "VITA66_ORIGINAL_UNREAD",
+      "reason": "Underlying VITA66 optical connector specifications uninspected; optical aperture geometry not independently certified."
+    },
+    {
+      "id": "SOSA-G2-7D-H04",
+      "code": "C239_EIGHT_COMPANIONS_UNREAD",
+      "reason": "Separate edition-specific DSDM, IDL and six OpenAPI originals remain unread and are not equivalent to AMPS physical-port grammar."
+    },
+    {
+      "id": "SOSA-G2-7D-H05",
+      "code": "SWITCH_EXAMPLES_REFERENCE_PAYLOAD_TABLE",
+      "reason": "§13.3.5 text explicitly points to Table13.3.4-3 while introducing Table13.3.5-2; unresolved original cross-reference mismatch."
+    },
+    {
+      "id": "SOSA-G2-7D-H06",
+      "code": "PAYLOAD_WORD_IN_SWITCH_HEADING",
+      "reason": "Switch §13.3.5 opening describes Payload PICP despite the switch-specific figures/table; printed terminology retained."
+    },
+    {
+      "id": "SOSA-G2-7D-H07",
+      "code": "SAMPLE_VALUES_NOT_NORMATIVE_REQUIREMENTS",
+      "reason": "Original note describes values as format examples; no invented required protocol support or device conformance."
+    },
+    {
+      "id": "SOSA-G2-7D-H08",
+      "code": "X_NOT_APPLICABLE_NOT_DASH",
+      "reason": "X matrix cells are source Not Applicable, not an affirmative dash choice or current hardware capability."
+    },
+    {
+      "id": "SOSA-G2-7D-H09",
+      "code": "DASH_J_PLACEHOLDER",
+      "reason": "Two complete example strings print -j- without selecting a specific deployed dash; do not turn -j into known -0/-3/-4/-5."
+    },
+    {
+      "id": "SOSA-G2-7D-H10",
+      "code": "DATA_VS_EXPANSION_PLANES",
+      "reason": "3U DP versus 3U EP physical switch functions and their named DP/EP/CP card roles must not be conflated."
+    },
+    {
+      "id": "SOSA-G2-7D-H11",
+      "code": "3U_6U_DIFFERENCE",
+      "reason": "3U MODA3 and 6U MODA6 source strings/slot design have different physical form factors; no common mandated chassis."
+    },
+    {
+      "id": "SOSA-G2-7D-H12",
+      "code": "NO_INSTALLED_DEVICE_EVIDENCE",
+      "reason": "No actual card, switch, port, active fiber, firmware, manufacturer product or conformance result inspected."
+    },
+    {
+      "id": "SOSA-G2-7D-H13",
+      "code": "NO_NETWORK_REPORTING_EQUIVALENCE",
+      "reason": "Data-plane and expansion-plane transport field definitions are not CSAPI DataStream or observation-report paths."
+    },
+    {
+      "id": "SOSA-G2-7D-H14",
+      "code": "NO_DIM_PROFILE_ADOPTION",
+      "reason": "No new DIM field/class/cardinality or CSAPI Profile requirement accepted through this donor comparison."
+    },
+    {
+      "id": "SOSA-G2-7D-H15",
+      "code": "STOP_BEFORE_13_3_6",
+      "reason": "§13.3.6 VITA66 connector subclause excluded, except source title used to mark stopping boundary."
+    },
+    {
+      "id": "SOSA-G2-7D-H16",
+      "code": "KEEP_G2_7C_HOLDS",
+      "reason": "All 19 §13.3.4 payload matrix/printed anomaly/companion holds remain open; no implicit resolution by switch review."
+    },
+    {
+      "id": "SOSA-G2-7D-H17",
+      "code": "S251_EDITION_NOT_READ",
+      "reason": "Later 2025 SOSA S251 Snapshot 3 has not been compared for changed switch PICPs or dash options."
+    }
+  ],
+  "C239_cumulative_coverage": {
+    "registered_headings": 192,
+    "at_least_source_sampled_or_inline_read": 158,
+    "substantively_unread": 33,
+    "restricted": 1,
+    "exact_visual_matrix_section_audit_complete": false,
+    "original_native_companion_files_complete": false
+  },
+  "DIM_Profile_adopted": false,
+  "independent_device_or_runtime_conformance": false,
+  "next_only_after_separate_owner_proceed": "SOSA-G2-7E original §13.3.6 Portion of the AMPS String for VITA66 Connectors only; retain G2-7C and G2-7D exact-matrix holds; SAPIENT blocked"
+}
