@@ -2172,14 +2172,14 @@ def check_g2_7q_source(z,m=None):
     need(len(z["source_qualified_existing_row_mappings"])==34
          and len(z["exact_holds"])==27,
          "34 source-qualified mappings and 27 explicit holds")
-    need(z["C239_registered_headings"]==
+    need(z["original_C239_registered_heading_standing"]==
          {"registered":192,"at_least_sampled_or_inline_read":176,"unread":15,
-          "restricted":1,"newly_source_read":["13.5.4","13.5.5"],
-          "comprehensively_source_complete":False},
+          "restricted":1,"newly_reviewed":["13.5.4","13.5.5"],
+          "full_clause_and_external_original_audit":False},
          "two newly source-read registered headings and still PARTIAL corpus")
-    need(z["source"]["figure_pixels_checked"] is False
-         and z["source"]["external_originals_read"] is False
-         and z["source"]["native_C239_companions_read"] is False
+    need(z["source"]["original_figure_pixels_read"] is False
+         and z["source"]["external_normative_originals_examined"] is False
+         and z["source"]["eight_native_C239_companions_read"] is False
          and z["DIM_Profile_adopted"] is False,
          "external/figure/native holds retained, no DIM adoption")
     need(all(x["source_item_ids"] and all(i in ids for i in x["source_item_ids"])
