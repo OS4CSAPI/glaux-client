@@ -1,0 +1,37 @@
+# SOSA-G2-7E — C239 §13.3.6 VITA 66 Connector AMPS source audit and donor-to-DIM comparison
+
+**Date / original:** 10 November 2026 · The Open Group SOSA Consortium, *Technical Standard for SOSA Reference Architecture*, Edition 1.1 (2023), C239, project Library original `c239_5.pdf`, **§13.3.6, PDF pp.264–265 / printed pp.238–239**, stopping **BEFORE §13.3.7**. [Original native source-item ledger](SOSA_G2_7E_Original_Source_Item_Coverage_10NOV2026.json) contains **21 genuine source-native records**, **six distinct analyst contexts**, and **16 precise holds**. This was an original-text/table-example review, **not** an independently verified high-resolution PDF page-image/optical connector geometry audit; VITA originals and C239-native schema/interface companions remain unread.
+
+## Original native meaning and distinctions
+
+Section 13.3.6 concerns optical physical connector packaging in an Alternate Module Profile Scheme (AMPS) name. A **Slot Profile dash option** identifies both the physical locations of connector modules within the slot aperture and an **Optical Profile for each MT** within those modules. A connector module can contain multiple MTs for optical fibers; the Optical Profile names an MT kind such as MM12 or MM24 and the optical fiber-to-pipe allocation. The original cites **ANSI/VITA 65.0 §6.5**, which was **not examined directly** here; no invented physical connector classes, fixed MT population, or vendor equipment type is justified.
+
+Square brackets **`[...]`** near the end of an AMPS string delimit VITA 66 optical protocol fields. The source describes **two conditional construction patterns**, not one universally required field layout. For a *single protocol field with no skipped MT pipes*, the same protocol applies to all relevant MTs in lowest-to-highest order (e.g., MTA1, MTA2, MTB1); the prose says **no pipes may be skipped** in that construction, while the highest numbered MT or MTs can be unused and individual fibers can remain unused when the referenced Optical Profile specifies them unused. The field's port count indicates the used physical ports. Where **protocols differ or portions of MTs are skipped**, the source instead describes **one protocol field per MT**, permitting a common ANS across slot-profile dash options with different numbers of MTs.
+
+The conditional single-field passage contains a narrative **“must”** about no skipped pipes, but **§13.3.6 contains zero numbered SOSA Rule/SHALL entries**. Preserve this scoped original standing and do not automatically promote it into a universal Domain Information Model (DIM) cardinality, Connected Systems API (CSAPI) Profile SHALL, runtime capability or installed device test. The original also prints **`VANSI/ITA 65.1`** where it references ANS; this edition-specific source typography is recorded as a discrepancy, not silently repaired into new normative text.
+
+## Complete original Table 13.3.6-1 example census
+
+The table assumes one connector module comprising **MTA1, MTB1 and MTC1**. Its three illustrative Optical Profiles are MTA1 `MTkk-MM12-1F-6.5.2.2` (12 fibers, eight used for one Fat Pipe and four unused), MTB1 `MTkk-MM24-3F-6.5.3.5` (24 fibers across three eight-fiber Fat Pipes), and MTC1 with the same MM24/3F example. These are not proven to be representative of all compatible VITA 66 designs.
+
+| Exact source protocol field | Source's illustrative optical allocation |
+| --- | --- |
+| `[E18]` | Seven 100GBASE-SR4 Fat Pipes, arranged one on MTA1 plus three each on MTB1 and MTC1 |
+| `[4E18]` | Four 100GBASE-SR4 Fat Pipes, arranged one on MTA1, three on MTB1, none on MTC1 |
+| `[N-3E18-3A6F]` | MTA1 unused, three 100GBASE-SR4 Fat Pipes on MTB1, and three Aurora Fat Pipes at **up to** 10 Gbaud on MTC1 |
+
+The examples illustrate protocol-field notation, counts and different/MTS-skipped configurations rather than an authenticated optical-port inventory. The source text was readable, but the original rendered table-cell coordinates were not independently inspected. Neither `100GBASE-SR4` nor `10 Gbaud` proves measured throughput, installed transceivers or equipment in any of the four empirical cases.
+
+## Canonical correspondence and preservation
+
+Qualify only the existing The Open Group SOSA **column I** with stable original source-item IDs and carefully graded **RELATED**, **PARTIAL** or **NO_ESTABLISHED** comparisons. The strongest legitimate relevance is to physical constituents/connectivity, design-time configuration, structured physical protocol value/port counts, specialized optical capability documentation and source-qualified manufacturer data; **no source establishes** a general-purpose CSAPI resource encoding, message field, actual network link, observed fiber utilization, actual case connection, universal hardware class or current applied device state. The Open Group SOSA column remains separate from W3C SOSA/SSN and does not compel a VITA66 implementation for every sensing system.
+
+Retain exactly **329 existing information rows, 15 columns, 15 topic divider rows, four empirical cases on the left, grouped OGC standards and proposed DIM far right**. Preserve **58 prior donor facts, 73 original case facts, 480 Integrated Sensor Architecture (ISA) outcomes and six local ISA source questions**. **All nineteen G2-7C Payload AMPS and seventeen G2-7D Switch AMPS holds remain open**, especially their dense physical port/legal-matrix precision and native ANSI/VITA access limitations. Do not convert `unreviewed` into `no equivalent`.
+
+## Coverage, mandatory Excel publication and STOP
+
+One previously unread registered C239 heading (§13.3.6) now has original inline-text/Table13.3.6-1 source review. The cumulative **192-heading** ledger becomes **159 at least sampled/inline-reviewed, 32 substantively unread and one restricted**. This ratio is **not** comprehensive clause/Rule or native companion coverage; exact external ANSI/VITA and eight C239 DSDM/IDL/OpenAPI original files and the later S251 edition remain held.
+
+For each source-qualified new column-I comparison, the **same canonical JSON, BOTH CSV mirrors, BOTH GitHub-readable Markdown mirrors and the SAME original 26-sheet editable Excel** must be updated and independently verified across all **346×15 actual saved cells** (binding donor lesson L23). No new workbook, unrelated device research, design adoption, UI, deployment or next donor is authorized.
+
+**STOP at the G2-7E saved-XLSX and independent GitHub check gate.** Only a *new separate owner* “Proceed” may start **SOSA-G2-7F, original C239 §13.3.7 SOSA AMPS Rules**, as its own source-sized packet. Step18 SAPIENT remains **BLOCKED** until the SOSA evidence-based closure gate and owner decision.
