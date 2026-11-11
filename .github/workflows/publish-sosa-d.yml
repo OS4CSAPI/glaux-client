@@ -29,6 +29,12 @@ jobs:
           python-version: '3.12'
       - name: Install image-preview dependency
         run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Compile existing workbook publisher
+        run: python -m py_compile scripts/publish_sosa_d.py
+      - name: Validate previous C239 source and old SAME workbook input
+        run: python -c 'import sys;sys.path.insert(0,"scripts");import publish_sosa_d as p;m=p.load(p.MASTER);p.check_source(m,p.load(p.LEDGER))'
+      - name: Validate original G2-7I native source and 25 mapping cells
+        run: python -c 'import sys;sys.path.insert(0,"scripts");import publish_sosa_d as p;p.check_g2_7i_source(p.load(p.MASTER))'
       - name: Build SAME original canonical XLSX from qualified source
         run: python scripts/publish_sosa_d.py
       - name: Commit original workbook, source metadata and actual saved-cell validation
