@@ -1,3 +1,11 @@
+# CURRENT — L52 interaction-type/QoS/binding semantics and lean source-to-Excel exit (11 November 2026)
+
+**L52:** The eight Chapter15 SOSA interaction types, their per-interaction endpoint roles, six QoS attributes and three protocol binding choices are **separate native concepts**, not one generalized Command/transport service or automatically adopted DIM fields. The five original Rules conditionally require FACE Transport Service capabilities, one of three named binding stacks under the stated implementation path, and configurable TLS/DTLS **only when data-in-transit security is required**. QoS implementation, certain request-response/pub-sub implementations, alternative-interconnect conformance and the §15.7 Services Matrix remain unspecified or future; do not fabricate normative text or treat unreviewed native companions as examined.
+
+**Lean verification:** One successful publisher and one independent read-only saved-XLSX/source checker; **41 SOSA-only master cells**, all **346×15 saved values**, JSON, two CSV and two Markdown views matched, with 22 original historical sheets intact. Omit made-up master rows when a candidate label does not exist, and verify original source IDs/types before publishing. [Publisher](https://github.com/OS4CSAPI/glaux-client/actions/runs/43106976494) · [independent checker](https://github.com/OS4CSAPI/glaux-client/actions/runs/43107171060). Exact companion/figure and future-matrix holds persist; source research and saved-file integrity are distinct.
+
+---
+
 # CURRENT — L51 RTE software-platform meaning and efficient verification (11 November 2026)
 
 **L51:** FACE OSS, Container and Virtual Machine are alternative SOSA module software execution profiles, not vendor-neutral hardware chassis or automatically public client objects. The original requires RTE configuration minimum fields and internal validation/load/mount/start actions, but does **not** mandate XML/JSON/YAML serialization, container orchestration, host-resource permissions or intra-module intercontainer/VM communication. Do not convert internal startup to an authenticated CSAPI Command or required DIM field; keep original OCI/FACE/DMTF edition and source-reference holds. Original source directly examined: Chapter14 §§14–14.5.3; 38 Rules,18 Observations,2 Permissions and1 Recommendation.
