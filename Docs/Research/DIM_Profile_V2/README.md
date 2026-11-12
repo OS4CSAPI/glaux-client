@@ -1,3 +1,11 @@
+# CURRENT — ISA/SOSA C3 provenance and equipment comparison complete; C4 next only (12 November 2026)
+
+**Research branch `research/dim-profile-v2`:** C3 completed only; 21 source-qualified The Open Group SOSA comparisons in original sections 05–06 revised (22,270 → 7,906 chars, four mixed-status corrections); seven plain C3 unreviewed placeholders remain. [Governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [C3 source/row and C4 plan](Donor_DIM_Crosswalk/PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md) · [fully browsable pre-C3 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c3-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/). Canonical JSON, both CSV and both Markdown are C3 synchronized; **same 26-sheet original Excel still the verified C2 snapshot with exact 21 SOSA I-cell lag**, SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`. C3 does not expand original SOSA source coverage: **PARTIAL—OWNER ACCEPTED**, all nine source-hold families; ISA six original source questions; zero new model/Profile adoption.
+
+**ONE next owner “Proceed”: C4 ONLY**, beginning with pre-C4 archive and ending at the original same-Excel readback/parity gate. Stop before donor grouping, SAPIENT Step18, new DIM/Profile decisions or Glaux deployment. Historic C2 and earlier text below is retained for provenance only.
+
+---
+
 # CURRENT — C2 source-qualified ISA/SOSA comparison and same Excel VERIFIED (12 November 2026)
 
 [Read governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [C1–C4 plan, C2 complete](Donor_DIM_Crosswalk/PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md). C1 revised 25 cells and C2 revised 39 SOSA cells, with both original source and negative evidence retained. The canonical JSON/both CSV/both Markdown and **same original editable 26-sheet Excel are now synchronized**: all 346×15 saved comparison cells checked, 22 historical sheets unchanged, workbook SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; [C2 validation](Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json) · [independent check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784).

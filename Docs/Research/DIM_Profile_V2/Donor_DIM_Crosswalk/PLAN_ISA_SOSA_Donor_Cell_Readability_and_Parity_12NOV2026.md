@@ -1,3 +1,47 @@
+# C3 COMPLETED — 21 source-qualified provenance and held-equipment SOSA cell comparisons; C4 next ONLY (12 November 2026)
+
+**C3 verified scope (12 November 2026):** source-qualified *presentation only*, NOT new original-source auditing: **21** individual The Open Group SOSA source-bearing/mixed cells in existing sections **05–06** (**28** information rows) edited; **four** mixed `Not assessed here` prefixes properly reclassified, the **seven** genuinely unassessed C3 cells left alone. The changed cell text is **22,270 → 7,906 characters (64% shorter)**. The comparison is now clearer about original-vs-digital-copy provenance, actual equipment vs design, reporting vs transport, clock/quality unknowns, and declared tasking vs performed control. Existing per-row G2/G3 packet references/individual source IDs, original source descriptions, edition/Rule caveats, original ISA entries and real-equipment facts are unchanged.
+
+**One master and exact Excel standing:** canonical JSON, **BOTH CSV mirrors** and **BOTH GitHub-readable Markdown comparisons** synchronized at all **346×15 grid locations**; exactly **21** distinct SOSA column-I entries changed at the C3 layer, with no other cell differences. The **SAME original editable 26-sheet Excel remains the prior independently verified C2 snapshot** (SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; 22 historical worksheets checked at C2). It is **exactly 21 source-text cells older** than current C3 JSON/CSV/Markdown; **no C3 Excel check or refresh is claimed**. All nine SOSA original-corpus holds and six ISA unanswered definitions remain; SOSA stays **PARTIAL—OWNER ACCEPTED** with no DIM/Connected Systems Profile adoption or runtime-device proof.
+
+**Direct preserved previous version:** [browse entire pre-C3 original crosswalk/archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c3-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) at immutable source commit [`2812b4c`](https://github.com/OS4CSAPI/glaux-client/commit/2812b4cbbded01eb210359d057edbccd1f0a20fa). The pre-C1 and pre-C2 archival branches still exist. This new archive is read-only and does NOT replace the single canonical master.
+
+**ONE NEXT OWNER ACTION:** a new separate **“Proceed” authorizes C4 ONLY**, the ISA-derived sections and final SAME-original-Excel refresh/independent saved-cell check, and **must begin with another directly browsable pre-C4 archive**. No automatic C4, native donor-grouping study, SAPIENT Step18, DIM/Profile model adoption, Glaux/client work or deployment. STOP.
+
+**Actual 21 changed row identities and current-grid cell positions:** the stored `rows[].display_row` metadata is historical and must **not** be used as a current Excel row offset; exact current `review_grid` content + stable `row_id` identify the current grid cells. All 21 old strings were located uniquely in the two original Markdown HTML tables; the canonical JSON and full grid produced both CSV mirrors exactly. All source packet G2/G3 original relationships/negative boundaries were retained, including all four mixed assessment cells, with no new original-source coverage or invented direct equivalence. The comparison cells themselves are not exhaustive packet audit logs.
+
+| Existing row ID | Current grid / Excel cell | Before chars | C3 chars |
+| --- | --- | ---: | ---: |
+| `S06-R021` | `I214` | 1942 | 538 |
+| `S06-R022` | `I215` | 436 | 386 |
+| `ISA-T-MESSAGE-ID` | `I216` | 114 | 153 |
+| `ISA-T-PRIORITY` | `I217` | 111 | 172 |
+| `ISA-T-VALIDITY` | `I218` | 185 | 212 |
+| `ISA-T-SENT-TIME` | `I220` | 110 | 130 |
+| `ISA-T-ADMIN` | `I221` | 723 | 376 |
+| `ISA-T-AUTHOR` | `I222` | 241 | 234 |
+| `ISA-R-MESSAGE-REFERENCE` | `I223` | 242 | 248 |
+| `ISA-A-EXTENSION-STANDING` | `I229` | 1253 | 511 |
+| `ISA-A-CONNECTION-PRESENTATION` | `I230` | 3107 | 547 |
+| `ISA-A-TIME-BASIS` | `I232` | 1691 | 474 |
+| `CASE-H01` | `I234` | 627 | 376 |
+| `CASE-H02` | `I235` | 1501 | 444 |
+| `CASE-H03` | `I236` | 2990 | 576 |
+| `CASE-H04` | `I237` | 1299 | 428 |
+| `CASE-H05` | `I238` | 373 | 321 |
+| `CASE-H06` | `I239` | 1024 | 426 |
+| `CASE-H07` | `I240` | 497 | 401 |
+| `CASE-H08` | `I241` | 1626 | 495 |
+| `CASE-H09` | `I242` | 2178 | 458 |
+
+**C3 unchanged plain placeholders (7):** `ISA-T-ROUTING`, `ISA-R-NAMED-VALUE`, `ISA-R-ASSOCIATIVE`, `ISA-R-LIST`, `ISA-R-CUSTOM`, `ISA-R-TREE` and `ISA-R-LIST-PRESENCE`. All other 211 plain unassessed SOSA master placeholders remain unaltered. No ISA summary required revision in C3. Four mixed labels corrected individually: `ISA-T-MESSAGE-ID`, `ISA-T-PRIORITY`, `ISA-T-SENT-TIME`, `ISA-T-AUTHOR`.
+
+**C3 exit verification:** full 346×15 canonical grid mechanically compared before/after (only those 21 I cells differ); all 329 row identities and 15 topics preserved; per-row packet source pointers were checked; ISA/other donor/case/DIM/source register and adoption evidence unchanged. Both same-content CSV and Markdown mirrors rebuilt/updated without changing other cell content. The pre-C3 archive is separately browseable and the C2 26-sheet Excel is intentionally NOT rebuilt at this C3 checkpoint. The old C2 workbook SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7` describes the exact 21-cell-lag saved snapshot, not current C3 parity.
+
+**C4 separate owner scope remains as originally approved:** ISA-derived sections, selective ISA flagged-summary review, cumulative 31 mixed-status check, sampled source-negative equivalences, and final *same original* Excel 346×15 saved-cell/22-historical-sheet verification; source complexity and owner checkpoint can halt C4 if an unresolved material contradiction arises. Pre-C4 archive first; do not begin automatically.
+
+---
+
 # Plan — ISA/SOSA donor-cell readability and comparable presentation (12 November 2026)
 
 ## Completed C2 — source presentation plus original Excel verification (12 November 2026)

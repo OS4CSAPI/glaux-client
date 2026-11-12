@@ -1,3 +1,17 @@
+# CURRENT — C3 comparison presentation verified; XLSX intentionally 21 cells behind (12 November 2026)
+
+**C3 verified scope (12 November 2026):** source-qualified *presentation only*, NOT new original-source auditing: **21** individual The Open Group SOSA source-bearing/mixed cells in existing sections **05–06** (**28** information rows) edited; **four** mixed `Not assessed here` prefixes properly reclassified, the **seven** genuinely unassessed C3 cells left alone. The changed cell text is **22,270 → 7,906 characters (64% shorter)**. The comparison is now clearer about original-vs-digital-copy provenance, actual equipment vs design, reporting vs transport, clock/quality unknowns, and declared tasking vs performed control. Existing per-row G2/G3 packet references/individual source IDs, original source descriptions, edition/Rule caveats, original ISA entries and real-equipment facts are unchanged.
+
+**One master and exact Excel standing:** canonical JSON, **BOTH CSV mirrors** and **BOTH GitHub-readable Markdown comparisons** synchronized at all **346×15 grid locations**; exactly **21** distinct SOSA column-I entries changed at the C3 layer, with no other cell differences. The **SAME original editable 26-sheet Excel remains the prior independently verified C2 snapshot** (SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; 22 historical worksheets checked at C2). It is **exactly 21 source-text cells older** than current C3 JSON/CSV/Markdown; **no C3 Excel check or refresh is claimed**. All nine SOSA original-corpus holds and six ISA unanswered definitions remain; SOSA stays **PARTIAL—OWNER ACCEPTED** with no DIM/Connected Systems Profile adoption or runtime-device proof.
+
+**Direct preserved previous version:** [browse entire pre-C3 original crosswalk/archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c3-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) at immutable source commit [`2812b4c`](https://github.com/OS4CSAPI/glaux-client/commit/2812b4cbbded01eb210359d057edbccd1f0a20fa). The pre-C1 and pre-C2 archival branches still exist. This new archive is read-only and does NOT replace the single canonical master.
+
+**ONE NEXT OWNER ACTION:** a new separate **“Proceed” authorizes C4 ONLY**, the ISA-derived sections and final SAME-original-Excel refresh/independent saved-cell check, and **must begin with another directly browsable pre-C4 archive**. No automatic C4, native donor-grouping study, SAPIENT Step18, DIM/Profile model adoption, Glaux/client work or deployment. STOP.
+
+[Current governing PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [C3 exit and C4 plan](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md). Historical C2 statuses below are superseded for present routing.
+
+---
+
 # CURRENT — C2 verified and original XLSX synchronized; C3 next ONLY (12 November 2026)
 
 **Accessible original versions (verified):** [Pre-C1 archived full master](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) and [pre-C2 archived master](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/); the new C2-verified current files remain at the canonical research branch. See [governing PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) for direct archive artifact links.
