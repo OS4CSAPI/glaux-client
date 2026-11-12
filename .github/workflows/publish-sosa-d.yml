@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Publish G3-N2 original v1 DSDM/IDL qualified source lineage to SAME Excel
+    name: Publish verified original 26-sheet SOSA crosswalk checkpoint
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Compile and publish once (source audit plus all saved-cell and preserved-sheet checks)
+      - name: Compile and publish once (full saved-cell and preserved-sheet checks)
         run: |
           python -m py_compile scripts/publish_sosa_d.py
           python scripts/publish_sosa_d.py
@@ -43,9 +43,9 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Workbook_Validation_11NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Source_Comparison_and_Holds_11NOV2026.json
-          if git diff --cached --quiet; then echo "No new complete source-qualified workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): publish G3-N2 30 edition-qualified SOSA native DSDM/IDL donor cells in SAME Excel"
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json
+          if git diff --cached --quiet; then echo "No new source-qualified canonical workbook publication"; exit 1; fi
+          git commit -m "research(dim-v2): C2 verify and publish source-faithful same 26-sheet Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Confirm actual remote commit contains published result
         run: |
