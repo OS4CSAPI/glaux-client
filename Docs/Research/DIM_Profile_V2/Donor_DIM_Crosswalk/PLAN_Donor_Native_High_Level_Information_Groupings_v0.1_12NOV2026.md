@@ -1,3 +1,11 @@
+# CURRENT — N1–N2 RESULTS OWNER-ACCEPTED; ORGANIZATIONAL COMPARISON CLOSED (12 November 2026)
+
+**Owner accepted the completed work** after reviewing the N2 plain-English explanation and recommendations. [The same N1–N2 source-qualified comparison document](Donor_Native_High_Level_Information_Groupings_Comparison.md) now includes a preserved **owner-accepted plain-English synthesis** of the work and recommendations, rather than creating a duplicate stand-alone memo or modifying the old evidence inventory. The two source-bounded N1/N2 steps are **complete and accepted**; this does **not** imply complete ISA/SOSA corpus audit, new DIM/Profile adoption or approval of SAPIENT execution.
+
+**Complete pre-acceptance archive:** [read original branch snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-n2-owner-accept-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at `7e66cc223257b251675c0be2b63ae15e1ad22603`, with all earlier versions still accessible. **Master unchanged:** one JSON, both CSV mirrors, both Markdown comparisons and original 26-sheet XLSX retain prior verified 346×15 cell parity and zero lag; six ISA original questions and nine SOSA C239 original-source holds preserved. **ONE NEXT: owner discussion and subsequent separate decision on preparing a SAPIENT v2 source-sized plan; STOP before donor execution.** Old N2-pending banners below are historical.
+
+---
+
 # CURRENT — N2 DONOR-NATIVE ORGANIZATIONAL COMPARISON COMPLETE; OWNER REVIEW NEXT (12 November 2026)
 
 **Owner-authorized N2 ONLY completed.** [One combined N1 inventory and N2 source-qualified purpose comparison](Donor_Native_High_Level_Information_Groupings_Comparison.md) now contains original **nine ISA and twelve The Open Group SOSA nonexclusive organizational axes**, compared through **13 analytic seams** (related/partial, complementary, no established direct match, source-detail unreviewed) and checked against the four already qualified equipment/source cases. No exact universal class equivalence, source-proven conflict, DIM/Profile adoption or executable transformation was inferred. The **N1 text is preserved below the appended N2 finding**, not replaced; earlier N2 pending banners are historical.

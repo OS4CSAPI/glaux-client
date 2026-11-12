@@ -1,3 +1,61 @@
+# OWNER-ACCEPTED N2 — What ISA and The Open Group SOSA have taught us (plain-English interpretation)
+
+**12 November 2026 · Owner accepted the N1–N2 organizational research.** This narrative records the interpretation and recommendations provided immediately after N2 in Profile Rewrite 27 and explicitly accepted by the owner in the subsequent conversation. It is a **source-qualified research synthesis and planning direction**, **not** a final Domain Information Model (DIM), a new named hierarchy, an Open Geospatial Consortium (OGC) API – Connected Systems (CSAPI) Profile requirement, a universal hardware chassis, a client implementation or an independent device-conformance result. The original N1 source inventory and N2 evidence comparison remain **unchanged below this section**.
+
+**Original version preserved before owner acceptance:** [browse the complete pre-acceptance GitHub research snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-n2-owner-accept-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at commit `7e66cc223257b251675c0be2b63ae15e1ad22603`. The owner accepted the N2 **findings and bounded completion**, not waiver of the six ISA definition questions or The Open Group SOSA's nine grouped source holds; neither acceptance nor this documentation authorizes new SAPIENT execution. The most recent approved saved-master checkpoint remains the separately verified C4 comparison/Excel source snapshot.
+
+## 1. There is no single source-proven correct organization of every sensing system
+
+The Integrated Sensor Architecture (ISA) and The Open Group Sensor Open Systems Architecture (SOSA) describe different aspects of sensing systems from different engineering perspectives. ISA emphasizes networked components, registration and communication, declared capabilities, information exchange and services. The Open Group SOSA describes physical system arrangements, logical modules, sensor-processing functions, implementation infrastructure, interfaces and management. Both perspectives may be relevant to the same equipment, without either being a comprehensive description of every vendor's system.
+
+A weather station illustrates the difference. Physically, it may have instruments, a data logger, communications equipment, mounting and power supply. Functionally, it can measure, record, process and report. Operationally, its components may have configuration, health, mode, power and communications information. These are **different legitimate descriptions of one arrangement**, not mutually exclusive donor categories or automatic DIM classes.
+
+**Accepted research lesson:** future DIM reconciliation should preserve distinct perspectives and their original meanings rather than copy one standard's table of contents or architectural taxonomy as an allegedly universal hierarchy. See [N2's 13 source-qualified seams below](#n23-purpose-by-purpose-source-comparison) and [the preceding ISA/SOSA plain-English synthesis](SYNTHESIS_ISA_SOSA_Lessons_for_Whole_System_DIM_and_CSAPI_Profile_12NOV2026.md).
+
+## 2. Common information does not imply common physical equipment
+
+ISA's 24 original capability bins organize declared possible functions and information, not 24 physical sensor types. The Open Group SOSA's functional modules also are not automatically separately purchasable or installed units; one physical product may implement several modules and different products may implement related roles. Their original purposes differ even when names appear familiar.
+
+In the Campbell reference arrangement, a ClimaVue 50 may report multiple environmental quantities through a CR1000X logger. That does not establish a separate physical sensing system for every quantity, nor does the logger's reporting role erase the connected instrument's identity. Similarly, a vendor's network-visible Node or component identity is not automatically a physical serial number or full installed equipment inventory. A common DIM must not impose a SOSA card/chassis design on ordinary cabled instruments, or pretend an ISA network participant is necessarily a discrete physical sensor.
+
+**Accepted research lesson:** equipment identity, a functional role, a communication participant and a digital representation can be related **without being identical**. Preserve installation-versus-design evidence and avoid inventing physical part-of relations from an interface or logical composition.
+
+## 3. Whole-system descriptions are more than observations
+
+Both source families substantively address concerns beyond the values being measured. ISA includes capabilities, configuration, status, services, events, commands, and participant/interaction information; SOSA separates system management from mission functions and addresses infrastructure, state, health, interfaces, operating modes and specialized power or software concerns. This supports **investigating** a whole-sensing-system information description rather than treating observations as the entire subject.
+
+That support does **not** establish universal minimum information fields, optionality, status enumerations, exact DIM classes or any new CSAPI Profile SHALL. Source-specific Rules, permitted options, draft/future concepts and descriptive examples remain at their original scopes. ISA's six exact definition holds and SOSA's authentic 2023 native companion/edition/source holds remain open.
+
+## 4. What this could mean for a common Glaux Details view
+
+A useful, consistent client experience should eventually be able to help a user answer meaningful questions: **what is this individual sensing system; what real equipment contributes to it; how are the elements related; what can the system do and what does it report; what do we know about its current condition; which interactions are actually supported; and what evidence supports these claims?** These are **candidate user questions, not adopted UI tabs or DIM class names**.
+
+A Campbell station could show connected meteorological equipment and a logger; a specialized modular SOSA system might show cards, functions and software run-time environments. The same client could present both coherently without claiming identical internal architecture, uniform data availability or verified device control. Unknown, inapplicable, source-example and derived information should remain distinguishable, and a command acknowledgement should not be presented as independent proof of physical effect.
+
+A later design must still be tested against real source-qualified equipment data, existing CSAPI/SensorML/SWE capabilities, actual producer semantics and the project's explicit owner-controlled adoption gates. This document authorizes no Glaux UI, CSAPI endpoint or deployment change.
+
+## 5. Two risks we should avoid
+
+**Endless donor analysis:** there is diminishing value in repeatedly reexamining the same ISA and SOSA terms now that their bounded original-source reviews, canonical comparison and native-grouping analysis have documented the important distinctions. Reopening one should be prompted by a specific new original source, contradiction or owner decision, not another artificial AI plan.
+
+**Premature universal taxonomy:** similarity between two standards is informative but does not prove that their categories are the right generic classes or required properties for every sensor. SAPIENT and later donors may add distinct subjects, capabilities, interface behaviors or relationship meanings that challenge the current conclusions. A missing established mapping is not proof of no equivalent anywhere in a donor lineage.
+
+## 6. Accepted recommendations for subsequent research
+
+1. **Accept and close N1–N2 at its approved research-comparison scope.** Its nine ISA and twelve SOSA overlapping native organizational axes, 13 purpose-based comparison seams and four evidence-case stress checks are sufficient for this particular question; no additional ISA/SOSA grouping sidequest is justified without new reasons.
+2. **Make SAPIENT v2 the next donor to plan for**, not an automatic next research execution. Examine its authoritative original edition, source family, schemas, roles, interactions and information organization on its own terms, especially identity, mode, status, tasking, acknowledgements, reporting and provenance. Reuse existing bounded SAPIENT source work but audit its actual original-source completeness before advancing.
+3. **Keep this one document as a living comparison reference** that can be extended with subsequent source-qualified donor groupings when the extension adds value. Do not create an independent N1/N2 mini-plan for every later donor or force every donor to answer the same arbitrary list of labels.
+4. **Do not adopt the final DIM hierarchy or new Profile obligations now.** Source findings are candidates. Coherent ready portions remain owner-gated at Step 24; cross-donor reconciliation, diagrams and case-testing at Steps 35–39; named-version adoption decision at Step 40. Donor counts, spreadsheet integrity or wording agreement do not replace those decisions.
+5. **Keep the end user's whole-system understanding central.** When evaluating later donor ideas, ask what real source fact they preserve, what meaning a common client could legitimately show, how their source evidence is graded, and what would be lost or falsely inferred by simplifying them. A device's capabilities, live condition, source record, network identity and physical parts must remain separately accountable when the evidence distinguishes them.
+
+## 7. Position reached and exact next boundary
+
+The research is better positioned **because it now has more defensible questions and boundaries, not because the final DIM or CSAPI Profile has already been discovered**. We understand more clearly why physical equipment, logical functions, network participants, observations, control outcomes, configuration, management and digital representations must not be collapsed by label similarity. Their eventual general representation, optionality, cardinalities, relationships and interoperable Profile bindings remain to be decided with the remaining source donors and evidence-based tests.
+
+**Owner decision recorded here:** N1–N2 research **ACCEPTED**. **No SAPIENT source review or separate SAPIENT-specific plan was executed or approved by this acceptance**; discussing the proposed SAPIENT method is the next authorized conversational activity, followed by an explicit separate owner decision before preparing/executing its donor plan. The preexisting [Step18/Step19 SAPIENT topic placeholders](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) and [earlier bounded SAPIENT source challenge](../Donor_Challenge/02_SAPIENT_Challenge.md) are inputs, not claims that a comprehensive donor audit has already been completed or that a two-packet timetable is sufficient.
+
+---
+
 # N2 COMPLETE — Source-qualified comparison of ISA and The Open Group SOSA native information groupings
 
 **12 November 2026 · Authorized N2 only · research interpretation, NOT adopted DIM/Profile design.** The original N1 inventory of **nine ISA** and **twelve The Open Group SOSA** nonexclusive organizational axes remains **intact below**, with original editions, locators and stable source IDs. N2 now compares their *organizing purposes*, not their table-of-contents labels or supposed concept counts. The [owner-approved N1–N2 plan](PLAN_Donor_Native_High_Level_Information_Groupings_v0.1_12NOV2026.md) is **complete at its two bounded study steps**; this does not mean the donor source corpora have been comprehensively audited or that a final architecture has been selected.
