@@ -1,0 +1,51 @@
+# The Open Group SOSA — G5-D owner disposition decision packet (11 November 2026)
+
+**Decision status: AWAITING EXPLICIT OWNER SELECTION.** This packet completes preparation for the single authorized G5-D owner decision; it **does not exercise the owner's choice, close the donor, begin SAPIENT, adopt a Domain Information Model (DIM) or impose an OGC API – Connected Systems (CSAPI) Profile requirement**. The user’s instruction “Proceed” authorized preparation of this decision, **not acceptance of the recommended disposition**.
+
+**Controlling research branch:** `research/dim-profile-v2` at G4-F baseline `3bd5847bcd0db37f74a8aea315950fa4adf9159d`. **Authoritative evidence:** [G4-F full corpus/master reconciliation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md), [G4-F 192-heading source/hold/master ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), [current SOSA execution plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md), [governing PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md), [G3-N2 verified same-workbook evidence](SOSA_G3_N2_Workbook_Validation_11NOV2026.json). Earlier packet source items remain individually identified in those records.
+
+## What the completed SOSA research actually provides
+
+The assessed source is **The Open Group Sensor Open Systems Architecture (SOSA) Technical Standard, C239 Edition 1.1 (2023)**, not **W3C SOSA/SSN**. The 192-heading Table-of-Contents ledger now records **191 headings with at least some original text or original reference-pointer contact**, following direct G4-F review of §6 and §6.2; **restricted Appendix C’s original content is unread**. This is a heading-contact count: it **does not establish 191 complete original Rule, Recommendation, Permission, Observation, table, figure and external-companion audits**. The original 403-page C239 PDF is readable and has been examined at bounded clause depth.
+
+The canonical crosswalk contains **776 source-packet correspondence instances across 117 distinct existing rows**, referencing **1,583 source-item IDs** resolved in **31 original packet ledgers**. Relations were reconciled as 491 RELATED, 48 PARTIAL, 234 NO_ESTABLISHED and 3 NARROWER; these are **not** 776 adopted fields, independently verified physical equipment behaviors, or 776 separately audited native clauses. Earlier Integrated Sensor Architecture (ISA) findings, four case columns, donor comparisons, status/provenance and owner holds are preserved. **Every normalized master packet-adoption flag remains false**.
+
+The original editable **26-sheet Excel workbook**, master JSON, **both CSV mirrors** and **both readable Markdown comparisons** are the **same saved files as the independently verified G3-N2 checkpoint**. Last checked workbook SHA256 `47c9df11ef64e112c8892e87c749930f08552c43a0e8e06508bb34ef8a04903c` and **all 346 × 15 saved comparison cells** matched then; **22 historical worksheets** were preserved. There are **zero new G4/G5 source-qualified mapping cells**, so no duplicate workbook publication or verifier was warranted. **Exact presentation/snapshot caveat:** canonical master/workbook Summary and Validation still display G3-N2 and older 189-heading text; the newer 191-heading source-accounting correction is in G4's source ledger and governing status. Neither source coverage nor donor adoption can be inferred from a workbook integrity check.
+
+## Material original-source limitations that cannot be waived by saying the review was comprehensive
+
+| Outstanding evidence family | Verified standing and implication |
+| --- | --- |
+| **All eight original C239 Appendix B native companions** | The original two Domain-Specific Data Model/Interface Definition Language (DSDM/IDL) names and six 2023 management OpenAPI filenames were confirmed, but their **C239 Edition 1.1 normative bytes and complete native definitions were not authenticated/audited**. The uploaded **2022 Edition 1.0 DSDM PDF** and **227 source IDL files** are useful earlier v1 evidence, **not established byte-identical to the C239 originals**. No original 2023 versions of the six API JSON files were obtained. |
+| **Restricted Appendix C** | Original specialty-security overlay remains unread; only its reference/pointer was examined. |
+| **External normative specifications** | Relevant ANSI/VITA, FACE, Modular Open RF Architecture, VICTORY, MIL/SAE and other referenced originals were not all fully examined. A native citation does not prove its referenced rules were audited. |
+| **Hardware figures and source discrepancies** | Some source pin/port matrices, rendered figure geometry and contradictory references remain explicitly held; no unsupported physical compatibility or connector claims are adopted. |
+| **2025 S251 Edition 2.0 Snapshot 3** | Original 592-page S251 and package are available, but only edition/selected Appendix B and native-file metadata were investigated. They are **not a complete 2025 donor audit and not verified C239 replacements**. A B.7 PIC-with-RTE filename differs between editions; S251’s own B.5 printed filename differs from its ZIP member. |
+| **2022 native v1 model depth** | **262** model section headings were inventoried and **227** IDL files structurally examined, but not all fields, cardinalities, diagram geometry and IDL compiler behavior were fully audited. |
+| **Unimplemented/future material** | Source future/undefined items (including §15.7 matrix), observations, permissions, recommendations and normative SHALL Rules retain their distinct original standings. |
+| **2021 C212 predecessor** | The full original predecessor standard remains unobtained, despite having the related 2022 model PDF. |
+| **Model adoption and conformance** | There is **no** owner-approved universal chassis, DIM class or cardinality, CSAPI Profile SHALL, deployed command endpoint or actual equipment conformance claim. |
+
+These are **nine grouped families of prior source holds**, not nine invented standards clauses. They remain traceable to the G4 source ledger and earlier stable-ID G1–G3 packet records.
+
+## Exactly two owner choices
+
+### Option A — ACCEPT BOUNDED PARTIAL SOSA DONOR DISPOSITION (RECOMMENDED)
+
+I accept the **bounded PARTIAL original-source standing** for this The Open Group SOSA donor iteration. Preserve all inspected C239 and separately edition-qualified 2022/2025 material, the current source-to-DIM comparisons, the G4 heading correction and **all nine grouped source-hold families**, without calling the donor comprehensive or declaring missing originals equivalent. No donor vote, no automatic DIM class/field/cardinality/CSAPI Profile rule and no assertion of native runtime conformance follows.
+
+**Consequence:** After the owner explicitly selects this option, a **separate authorized closeout/status publication** may record SOSA as **PARTIAL—OWNER ACCEPTED**, preserving the existing same workbook and the exact provenance/holds. The SOSA review may then cease to block *planning* the next donor, but **starting Step18 SAPIENT remains a separate owner-controlled action**, not implicit authorization from this choice. Reopen source-specific SOSA holds whenever authentic C239 natives, restricted-authorized sources, or later edition requirements become accessible; cross-donor design reconciliation remains deferred to Steps24/35–40.
+
+### Option B — KEEP SOSA ACTIVE/OPEN FOR ORIGINAL-SOURCE COMPLETION
+
+I do **not** accept bounded partial donor disposition. Keep the SOSA donor ACTIVE/OPEN and its next-donor block in force while attempting to acquire/inspect matching original **2023 C239 DSDM/IDL and six management API JSON files**, relevant original referenced specifications and restricted material only if legitimately available. If source access remains blocked, continue to report precise unavailable/unreviewed standing; do not substitute 2025 S251 material, invent sources, or claim work has reached a complete evidence gate merely because planned research packets have ended.
+
+**Consequence:** The same verified master and existing SOSA comparisons remain preserved, but **Step18 SAPIENT stays blocked** pending a later owner-authorized evidence-based closure or acceptance of a bounded partial result. Further research should be driven by actually obtainable original material and specific unresolved holds, not by another arbitrarily long series of artificial AI packets.
+
+## Explicit recommendation and binding stop
+
+**Recommend Option A**, not because SOSA original source coverage is complete, but because there is substantial defensible C239 text analysis and 2022 v1 donor-lineage evidence, while the unresolved native originals are genuinely material access holds. Accepting **bounded partial** is a transparent way to conserve effort while keeping those claims and differences open for later cross-donor reconciliation. Option B remains fully legitimate if completing the original native corpus is essential before considering another donor.
+
+**CURRENT OWNER CHOICE: NOT PROVIDED.** The only authorized final disposition in this G5-D preparation is **AWAIT_OWNER_SELECTION**, with The Open Group SOSA **ACTIVE/OPEN**, Step18 SAPIENT **BLOCKED**, canonical master **UNCHANGED**, and **no DIM/CSAPI Profile adoption**.
+
+**NEXT REQUIRED ACTION:** Owner explicitly replies **“Option A — accept bounded PARTIAL SOSA”** or **“Option B — keep SOSA active.”** Record the selected disposition in the existing PITON/plan/status and, where warranted, the same workbook checkpoint with an actual saved-file check. **STOP:** no automatic next donor, domain-name/chassis/class hierarchy, owner model gate, client Details view, or deployment work.
