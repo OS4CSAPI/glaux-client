@@ -1,3 +1,13 @@
+# CURRENT — N1 SOURCE-INVENTORY COMPLETE; N2 REQUIRES SEPARATE PROCEED (12 November 2026)
+
+**One owner-authorized step executed: N1 ONLY.** [N1 original ISA and The Open Group SOSA native grouping inventory](Donor_Native_High_Level_Information_Groupings_Comparison.md) documents **nine** nonexclusive original ISA organizing axes and **twelve** nonexclusive original C239 SOSA axes with original edition, direct targeted source locators, existing stable ledger IDs, Rule/definition/descriptive/held distinctions and original-source access limitations. These are source organization **inventory entries**, not adopted model classes or a cross-donor grouping comparison. **N2 NOT STARTED; SAPIENT Step18 NOT STARTED.**
+
+**Preservation and exact master standing:** pre-N1 full archival research snapshot [archive/dim-crosswalk-pre-native-grouping-n1-20261112](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-n1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk), fixed at `6cbf974833e44c3ae2e0b9184fe54fddfc9db683`. N1 found **zero new row-level donor correspondences**: canonical JSON, BOTH CSV, BOTH Markdown mirrors and SAME original editable 26-sheet Excel retain the previously independently verified **346×15 saved-cell parity and zero lag**, no new publisher/check required. Original ISA six definition holds and The Open Group SOSA **PARTIAL—OWNER ACCEPTED / nine grouped source holds** persist. Original C239 §5.7 and Appendix B.1/B.2 contain a **held internal reference discrepancy**; it is documented in N1 without inventing a correction or claiming 2023 native-file access. Earlier original-source/full-page coverage is not enlarged by these targeted indexed PDF excerpts.
+
+**Next only on a fresh owner “Proceed”: N2** — source-qualified ISA/SOSA grouping *comparison* and plain-English implications in the **same** N1 document, then STOP before SAPIENT or DIM/Profile/client changes. Older plan-approval/no-N1-execution banners below are historical.
+
+---
+
 # CURRENT OWNER DECISION — TWO-STEP NATIVE GROUPING PLAN APPROVED (12 November 2026)
 
 **Owner approval:** In Profile Rewrite 27 the owner replied **“Proceed”** to the pending request to approve or amend this proposed plan. This authorizes the **plan as written** (bounded N1 ISA / The Open Group SOSA native grouping inventory; separately gated N2 semantic comparison), **NOT N1 execution**. The previous step specified that approval and N1 execution require separate directions. No original-source reading, groupings inventory, comparisons, donor transition, master edits or model/Profile adoption occurred at this decision checkpoint.
