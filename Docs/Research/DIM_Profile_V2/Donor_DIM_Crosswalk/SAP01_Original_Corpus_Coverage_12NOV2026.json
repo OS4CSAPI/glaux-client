@@ -1,0 +1,1654 @@
+{
+  "schema": "SAP01_SOURCE_FIRST_CENSUS_V1",
+  "date": "2026-11-12",
+  "step": "SAP-01",
+  "status": "COMPLETE_CENSUS_ONLY__DONOR_ACTIVE",
+  "research_branch": "research/dim-profile-v2",
+  "base_head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf",
+  "owner_authorization": "explicit two Proceeds plus get started: revised SAPIENT plan approved and SAP01 authorized",
+  "primary_BSI": {
+    "title": "SAPIENT Network of autonomous sensors and effectors — Interface control document — Specification",
+    "issuer": "British Standards Institution",
+    "edition": "BSI Flex 335 v2.0:2024-03",
+    "pdf_pages": 116,
+    "source": "bsi-flex-335.pdf",
+    "file_id": "file_00000000d68881f587e18132d152a000",
+    "status": "ORIGINAL_TARGETED_PDF_TEXT_READ; FULL_CLAUSE_AUDIT_NOT_DONE; later file reread failed",
+    "numbered_TOC_entries": 58,
+    "informative_annexes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "numbered_main_tables": 97,
+    "informative_other_table": "Table C.1",
+    "headings": [
+      {
+        "id": "SAP-BSI-0",
+        "section": "0",
+        "name": "Introduction",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-0_1",
+        "section": "0.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-0_2",
+        "section": "0.2",
+        "name": "SAPIENT concept",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-0_3",
+        "section": "0.3",
+        "name": "Applications of SAPIENT",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-0_4",
+        "section": "0.4",
+        "name": "SAPIENT architecture",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-1",
+        "section": "1",
+        "name": "Scope",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-2",
+        "section": "2",
+        "name": "Normative references",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "NONE_REFERENCED"
+      },
+      {
+        "id": "SAP-BSI-3",
+        "section": "3",
+        "name": "Terms, definitions and abbreviated terms",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-3_1",
+        "section": "3.1",
+        "name": "Terms and definitions",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-3_2",
+        "section": "3.2",
+        "name": "Abbreviated terms",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4",
+        "section": "4",
+        "name": "Interface description",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_1",
+        "section": "4.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_2",
+        "section": "4.2",
+        "name": "Message framing/structure",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_3",
+        "section": "4.3",
+        "name": "Version-number string",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_4",
+        "section": "4.4",
+        "name": "Initialization",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_5",
+        "section": "4.5",
+        "name": "Normal operation",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_6",
+        "section": "4.6",
+        "name": "Node alerts during normal operations",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_7",
+        "section": "4.7",
+        "name": "Task messages",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_8",
+        "section": "4.8",
+        "name": "Node shutdown",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_9",
+        "section": "4.9",
+        "name": "Lost connection",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_10",
+        "section": "4.10",
+        "name": "Platforms",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-4_11",
+        "section": "4.11",
+        "name": "Hierarchical architecture",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5",
+        "section": "5",
+        "name": "Inner Message Types",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5_1",
+        "section": "5.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5_2",
+        "section": "5.2",
+        "name": "Location types",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5_3",
+        "section": "5.3",
+        "name": "Velocity",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5_4",
+        "section": "5.4",
+        "name": "Associated file",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-5_5",
+        "section": "5.5",
+        "name": "Associated detection",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6",
+        "section": "6",
+        "name": "Outer message types",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_1",
+        "section": "6.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_2",
+        "section": "6.2",
+        "name": "Registration",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_3",
+        "section": "6.3",
+        "name": "Status message",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_4",
+        "section": "6.4",
+        "name": "Detection message",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_5",
+        "section": "6.5",
+        "name": "Task message",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_6",
+        "section": "6.6",
+        "name": "Alert message",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-6_7",
+        "section": "6.7",
+        "name": "Error message",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-7",
+        "section": "7",
+        "name": "Taxonomy",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-7_1",
+        "section": "7.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-7_2",
+        "section": "7.2",
+        "name": "SAPIENT Core Object classification taxonomy",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-7_3",
+        "section": "7.3",
+        "name": "Taxonomy extensions",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-7_4",
+        "section": "7.4",
+        "name": "Object behaviour taxonomy",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "UNRESOLVED_PER_CLAUSE"
+      },
+      {
+        "id": "SAP-BSI-A_1",
+        "section": "A.1",
+        "name": "Clause 4",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-A_2",
+        "section": "A.2",
+        "name": "Clause 5",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-A_3",
+        "section": "A.3",
+        "name": "Clause 6",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-A_4",
+        "section": "A.4",
+        "name": "Clause 7",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-A_5",
+        "section": "A.5",
+        "name": "Changes to Annex B",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-A_6",
+        "section": "A.6",
+        "name": "Changes to protobuf files",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_1",
+        "section": "B.1",
+        "name": "General",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_2",
+        "section": "B.2",
+        "name": "Registration example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_3",
+        "section": "B.3",
+        "name": "Registration ack example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_4",
+        "section": "B.4",
+        "name": "Status report example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_5",
+        "section": "B.5",
+        "name": "Detection report example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_6",
+        "section": "B.6",
+        "name": "Task example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-B_7",
+        "section": "B.7",
+        "name": "Task ACK example",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-C_1",
+        "section": "C.1",
+        "name": "External interface guidance",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-C_2",
+        "section": "C.2",
+        "name": "Additional resources",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-C_3",
+        "section": "C.3",
+        "name": "Message handling application",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      },
+      {
+        "id": "SAP-BSI-C_4",
+        "section": "C.4",
+        "name": "Raw data interface",
+        "coverage": "TOC_ITEM_CONTACT_ONLY__NOT_FULL_CLAUSE_AUDIT",
+        "normative": "INFORMATIVE"
+      }
+    ],
+    "tables": [
+      {
+        "id": "SAP-BSI-T001",
+        "number": 1,
+        "group": "Envelope",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "7",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T002",
+        "number": 2,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T003",
+        "number": 3,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T004",
+        "number": 4,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T005",
+        "number": 5,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T006",
+        "number": 6,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T007",
+        "number": 7,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T008",
+        "number": 8,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T009",
+        "number": 9,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T010",
+        "number": 10,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T011",
+        "number": 11,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T012",
+        "number": 12,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T013",
+        "number": 13,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T014",
+        "number": 14,
+        "group": "Inner messages",
+        "planned_packet": "SAP-02",
+        "source_group_printed_pages": "15–23",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T015",
+        "number": 15,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T016",
+        "number": 16,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T017",
+        "number": 17,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T018",
+        "number": 18,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T019",
+        "number": 19,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T020",
+        "number": 20,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T021",
+        "number": 21,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T022",
+        "number": 22,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T023",
+        "number": 23,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T024",
+        "number": 24,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T025",
+        "number": 25,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T026",
+        "number": 26,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T027",
+        "number": 27,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T028",
+        "number": 28,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T029",
+        "number": 29,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T030",
+        "number": 30,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T031",
+        "number": 31,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T032",
+        "number": 32,
+        "group": "Registration core",
+        "planned_packet": "SAP-03A",
+        "source_group_printed_pages": "25–36",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T033",
+        "number": 33,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T034",
+        "number": 34,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T035",
+        "number": 35,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T036",
+        "number": 36,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T037",
+        "number": 37,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T038",
+        "number": 38,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T039",
+        "number": 39,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T040",
+        "number": 40,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T041",
+        "number": 41,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T042",
+        "number": 42,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T043",
+        "number": 43,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T044",
+        "number": 44,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T045",
+        "number": 45,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T046",
+        "number": 46,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T047",
+        "number": 47,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T048",
+        "number": 48,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T049",
+        "number": 49,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T050",
+        "number": 50,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T051",
+        "number": 51,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T052",
+        "number": 52,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T053",
+        "number": 53,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T054",
+        "number": 54,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T055",
+        "number": 55,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T056",
+        "number": 56,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T057",
+        "number": 57,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T058",
+        "number": 58,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T059",
+        "number": 59,
+        "group": "Registration nested definitions",
+        "planned_packet": "SAP-03B",
+        "source_group_printed_pages": "37–51",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T060",
+        "number": 60,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T061",
+        "number": 61,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T062",
+        "number": 62,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T063",
+        "number": 63,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T064",
+        "number": 64,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T065",
+        "number": 65,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T066",
+        "number": 66,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T067",
+        "number": 67,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T068",
+        "number": 68,
+        "group": "Status",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "52–57",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T069",
+        "number": 69,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T070",
+        "number": 70,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T071",
+        "number": 71,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T072",
+        "number": 72,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T073",
+        "number": 73,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T074",
+        "number": 74,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T075",
+        "number": 75,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T076",
+        "number": 76,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T077",
+        "number": 77,
+        "group": "Detection",
+        "planned_packet": "SAP-04",
+        "source_group_printed_pages": "58–64",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T078",
+        "number": 78,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T079",
+        "number": 79,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T080",
+        "number": 80,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T081",
+        "number": 81,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T082",
+        "number": 82,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T083",
+        "number": 83,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T084",
+        "number": 84,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T085",
+        "number": 85,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T086",
+        "number": 86,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T087",
+        "number": 87,
+        "group": "Task and TaskAck",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "65–72",
+        "prior_visual_sample": "EARLIER_SELECTED_VISUAL_SAMPLE",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T088",
+        "number": 88,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T089",
+        "number": 89,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T090",
+        "number": 90,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T091",
+        "number": 91,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T092",
+        "number": 92,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T093",
+        "number": 93,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T094",
+        "number": 94,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T095",
+        "number": 95,
+        "group": "Alert, AlertAck, Error",
+        "planned_packet": "SAP-05",
+        "source_group_printed_pages": "73–77",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T096",
+        "number": 96,
+        "group": "Taxonomy",
+        "planned_packet": "SAP-06",
+        "source_group_printed_pages": "80–83",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      },
+      {
+        "id": "SAP-BSI-T097",
+        "number": 97,
+        "group": "Taxonomy",
+        "planned_packet": "SAP-06",
+        "source_group_printed_pages": "80–83",
+        "prior_visual_sample": "NO_FULL_TABLE_REVIEW_ESTABLISHED",
+        "coverage": "SOURCE_TABLE_INDEXED_ONLY__FULL_TABLE_NOT_AUDITED"
+      }
+    ]
+  },
+  "original_proto": {
+    "repo": "dstl/SAPIENT-Proto-Files",
+    "version_ref": "244a741c13bcee628f84944aef91e4a66854bd7d",
+    "exact_v2_files": [
+      {
+        "id": "SAP-PROTO-01",
+        "file": "alert.proto",
+        "blob_sha": "defd328bf13b55396ed3e7bb453ce6fcc0810fa3",
+        "chars": 2736,
+        "message_declarations": 1,
+        "enum_declarations": 3,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/alert.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-02",
+        "file": "alert_ack.proto",
+        "blob_sha": "9d215955bf147c9a9021fb103e8c763c07ffa35a",
+        "chars": 1353,
+        "message_declarations": 1,
+        "enum_declarations": 1,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/alert_ack.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-03",
+        "file": "associated_detection.proto",
+        "blob_sha": "6374235c06715543532c5afdc2412a34700b3d1b",
+        "chars": 1244,
+        "message_declarations": 1,
+        "enum_declarations": 1,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/associated_detection.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-04",
+        "file": "associated_file.proto",
+        "blob_sha": "7615407f62e55e7fb53f149d91572a8a9e7c785b",
+        "chars": 696,
+        "message_declarations": 1,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/associated_file.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-05",
+        "file": "detection_report.proto",
+        "blob_sha": "5cb4a39d1fb697720793268397ca6b350610f9fe",
+        "chars": 6680,
+        "message_declarations": 8,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/detection_report.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-06",
+        "file": "error.proto",
+        "blob_sha": "c5b6b0badff135da09e07621b033cd5d7f3c9a92",
+        "chars": 991,
+        "message_declarations": 1,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/error.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-07",
+        "file": "follow.proto",
+        "blob_sha": "ccf5dd583999dec208102f12fd4540309ad9bd97",
+        "chars": 631,
+        "message_declarations": 1,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/follow.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-08",
+        "file": "location.proto",
+        "blob_sha": "115dc84e82ec23bd4454855ba7cdefced05ac9ea",
+        "chars": 2232,
+        "message_declarations": 2,
+        "enum_declarations": 2,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/location.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-09",
+        "file": "range_bearing.proto",
+        "blob_sha": "dfbf99891d118591890c3099b1beebbdfe92e060",
+        "chars": 3631,
+        "message_declarations": 3,
+        "enum_declarations": 2,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/range_bearing.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-10",
+        "file": "registration.proto",
+        "blob_sha": "2b7221a9304702893f8f11ab5ce5dedefd45b945",
+        "chars": 23603,
+        "message_declarations": 28,
+        "enum_declarations": 11,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/registration.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-11",
+        "file": "registration_ack.proto",
+        "blob_sha": "7b5c199c9c4760517dec175e2d5d216983545ccc",
+        "chars": 1059,
+        "message_declarations": 1,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/registration_ack.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-12",
+        "file": "sapient_message.proto",
+        "blob_sha": "7f7f3b003332e54b3fd54a24b1b5b7760b564f86",
+        "chars": 2273,
+        "message_declarations": 1,
+        "enum_declarations": 0,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/sapient_message.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-13",
+        "file": "status_report.proto",
+        "blob_sha": "81fbb19ba41d17af27cc2023092942d740d2252a",
+        "chars": 5961,
+        "message_declarations": 3,
+        "enum_declarations": 6,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/status_report.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-14",
+        "file": "task.proto",
+        "blob_sha": "b48579d56975c969813468eb2c2ad0946e0e1991",
+        "chars": 6475,
+        "message_declarations": 7,
+        "enum_declarations": 3,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/task.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-15",
+        "file": "task_ack.proto",
+        "blob_sha": "4277086ff654edb691417bc7dc478eb9201a2279",
+        "chars": 1556,
+        "message_declarations": 1,
+        "enum_declarations": 1,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/task_ack.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "EARLIER_SELECTED_SEMANTIC_EXCERPTS",
+        "full_field_audit": false
+      },
+      {
+        "id": "SAP-PROTO-16",
+        "file": "velocity.proto",
+        "blob_sha": "ab41970edbc31017eb78811bdf2b95eb1ba2dd0c",
+        "chars": 2068,
+        "message_declarations": 2,
+        "enum_declarations": 1,
+        "original_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/velocity.proto",
+        "source_grade": "ORIGINAL_PINNED_TEXT_RETRIEVED_STRUCTURAL_SCAN_ONLY",
+        "previous_grade": "NO_PRIOR_SEMANTIC_REVIEW_ESTABLISHED",
+        "full_field_audit": false
+      }
+    ],
+    "shared_imported_options": {
+      "id": "SAP-PROTO-SHARED-OPTIONS",
+      "file": "proto_options.proto",
+      "blob_sha": "1f7bbbe95b5eeaca46c155ba4d7aecea3bbb9b7b",
+      "source_grade": "ORIGINAL_PINNED_TEXT_STRUCTURAL_READ_NOT_COMPILED"
+    },
+    "file_count": 16,
+    "message_declaration_count": 62,
+    "enum_declaration_count": 31,
+    "counts_only_structure": true
+  },
+  "prior_evidence": {
+    "source": "../Donor_Challenge/02_SAPIENT_Challenge.md",
+    "selected_proto_files": [
+      "alert.proto",
+      "detection_report.proto",
+      "registration.proto",
+      "registration_ack.proto",
+      "sapient_message.proto",
+      "status_report.proto",
+      "task.proto",
+      "task_ack.proto"
+    ],
+    "selected_visual_tables": [
+      15,
+      24,
+      32,
+      63,
+      86,
+      87
+    ],
+    "source_issues": "SAP-ISSUE-01..06",
+    "no_full_source_audit_claimed": true
+  },
+  "holds": [
+    {
+      "id": "SAP-ISSUE-01",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "BSI Registration Table15 config_data field 9 versus pinned protobuf config_data field 10 and reporting_region field 9"
+    },
+    {
+      "id": "SAP-ISSUE-02",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "BSI content timestamp versus pinned protobuf send-time comment"
+    },
+    {
+      "id": "SAP-ISSUE-03",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "Protobuf optional/repeated is not BSI mandatory/discretionary/conditional"
+    },
+    {
+      "id": "SAP-ISSUE-04",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "Apex middleware routing/caching/replay is implementation-specific"
+    },
+    {
+      "id": "SAP-ISSUE-05",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "Test-harness limits and lack of executed conformance"
+    },
+    {
+      "id": "SAP-ISSUE-06",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "No source-declared SAPIENT-to-OGC CSAPI/OMS equivalence"
+    },
+    {
+      "id": "SAP01-ACCESS",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "Raw original PDF/hash unavailable; targeted indexed Library original re-read later failed"
+    },
+    {
+      "id": "SAP01-DETAIL",
+      "status": "OPEN_OR_BOUNDED",
+      "note": "Full BSI clauses/97 tables and all protobuf fields/enum constraints not newly audited in SAP01"
+    }
+  ],
+  "census": {
+    "TOC_contact": 58,
+    "main_table_index_contact": 97,
+    "proto_source_structurally_retrieved": 16,
+    "shared_proto_options_retrieved": 1,
+    "full_BSI_table_audits_in_SAP01": 0,
+    "full_semantic_proto_file_audits_in_SAP01": 0,
+    "new_source_qualified_master_mappings": 0
+  },
+  "forecast": {
+    "remaining_low": 6,
+    "remaining_most_likely": 7,
+    "remaining_high": 9,
+    "total_including_SAP01": {
+      "low": 7,
+      "likely": 8,
+      "high": 10
+    },
+    "basis": "One interface/inner message packet, two registration packets (45 of 97 source tables), status/detection, task/alert/error, taxonomy/annex, evidence/owner closeout; extra source complexity could require up to two further packets",
+    "steps": [
+      {
+        "id": "SAP-02",
+        "source": "BSI introduction/terms and §§4–5, Tables 1–14; envelope/location/range/bearing/velocity/associated-file protos + shared options",
+        "size": "medium"
+      },
+      {
+        "id": "SAP-03A",
+        "source": "BSI §6.2 Registration Tables 15–32: Node, capabilities, mode, configuration; registration proto",
+        "size": "high"
+      },
+      {
+        "id": "SAP-03B",
+        "source": "BSI §6.2 Registration Tables 33–59: detection/task/dependent definitions; registration proto",
+        "size": "high"
+      },
+      {
+        "id": "SAP-04",
+        "source": "BSI §§6.3–6.4 Status/Detection Tables 60–77; status/detection source protos",
+        "size": "medium-high"
+      },
+      {
+        "id": "SAP-05",
+        "source": "BSI §§6.5–6.7 Task/Alert/Error Tables 78–95; task/ack/alert/error/follow protos",
+        "size": "medium-high"
+      },
+      {
+        "id": "SAP-06",
+        "source": "BSI §7 Taxonomy and Annexes A–D, Tables 96–97 and informative Table C.1; version/source issues",
+        "size": "medium"
+      },
+      {
+        "id": "SAP-07",
+        "source": "Source/meaning coverage gate, existing master/26-sheet Excel parity, plain-English synthesis and owner disposition",
+        "size": "conditional medium"
+      }
+    ],
+    "owner_rebaseline": "any changed source-first method/scope; material growth +2 proceeds or >=25% owner choice",
+    "next_only": "SAP-02"
+  },
+  "canonical": {
+    "formats_changed": false,
+    "one_json_two_csv_two_md_same_editable_26_sheet_excel": true,
+    "saved_C4_parity": "346x15 PASS (prior check only)",
+    "excel_lag": 0,
+    "open_ISA_definition_questions": 6,
+    "open_Open_Group_SOSA_source_hold_families": 9
+  },
+  "archive": {
+    "branch": "archive/dim-crosswalk-pre-sapient-sap01-20261112",
+    "head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf"
+  }
+}

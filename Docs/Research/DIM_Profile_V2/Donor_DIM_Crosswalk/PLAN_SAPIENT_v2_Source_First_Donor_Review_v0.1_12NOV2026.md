@@ -1,3 +1,13 @@
+# CURRENT — PLAN APPROVED AND SAP-01 SOURCE CORPUS/FORECAST COMPLETE (12 November 2026)
+
+The owner explicitly said **"proceed and proceed ... get started"**, thereby approving the revised SAPIENT source-first plan and authorizing **SAP-01 only**. The new [SAP01 original source census and remaining-work forecast](SAP01_Corpus_Coverage_and_Forecast_12NOV2026.md) and [structured source-section/table/protocol coverage ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json) are the governing completed outputs. **Original BSI v2 116-page specification, 58 numbered contents entries, 97 main tables, four informative annexes, all 16 pinned Dstl protobuf originals and one shared options source have been inventoried, NOT exhaustively source-clause/field audited.** Prior eight selective proto readings and six exact `SAP-ISSUE-##` holds preserved.
+
+**Evidence-based forecast after SAP-01: LOW 6 / MOST LIKELY 7 / HIGH 9 remaining substantive Proceeds**, including owner donor disposition; 45 registration tables warrant two likely source-sized packets. Update the forecast and original coverage after every substantive Proceed and present material rebaseline for owner decision; never manufacture source completeness to honor a number. **No new master-cell mappings:** canonical JSON, BOTH CSVs, BOTH Markdown and SAME editable original 26-sheet XLSX unchanged from independently checked C4 **346×15 parity/zero lag**. ISA six and The Open Group SOSA nine source holds intact. [Browsable complete pre-SAP01 version](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sapient-sap01-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) at `7c5c37075c5da0c357d9654a7e2984d1a836b4bf`.
+
+**ONE NEXT OWNER "Proceed" = SAP-02 ONLY**, original BSI clauses 0–5 and pinned relevant schema source semantics; STOP before SAP-03A. Older draft/not-started banners below are superseded.
+
+---
+
 # CURRENT — SAPIENT SCOPE/PROCEED FORECASTING AMENDMENT PREPARED (12 November 2026)
 
 **Owner-requested corrective planning change, NOT execution or approval:** The owner clarified that the problem with the ISA/SOSA legs was not having to say "Proceed," but an uncontrolled sequence of Proceeds with no trustworthy finish-line estimate, no clear evidence-based remaining-work forecast and repeated plan expansion. The SAPIENT draft now requires a realistic provisional planning range, a **source-complexity forecast at SAP-01**, a rolling per-step forecast and explicit owner authorization for material scope growth. One "Proceed" still controls one bounded source-qualified step. **The full SAPIENT research plan remains DRAFT / NOT APPROVED; SAP-01 NOT STARTED.**
