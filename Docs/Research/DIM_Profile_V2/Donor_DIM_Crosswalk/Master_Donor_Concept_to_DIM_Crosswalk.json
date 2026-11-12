@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "706c53c31531dc890c12b966bad433e6497a603f17de8b735eead44c71e3d56d",
+  "currentWorkbookSha256": "fb18d864dcdd2383e648af081117b57f8924bdf29175dbbfdda921f16d7ded72",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -214,7 +214,7 @@
       "acebpmet (station source identifier)",
       "≈ MetaTEDS.UUID (TIM identifier)",
       "",
-      "",
+      "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
       "≈ UCI · ISA component/virtual-component identifier",
       "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
       "",
@@ -265,7 +265,7 @@
       "acebpmet meteorological station",
       "",
       "≈ Device",
-      "",
+      "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
       "≈ ISA composition via CIC · integration collection, not physical unity",
       "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
       "≈ ssn:System",
@@ -282,7 +282,7 @@
       "GOES TX321 transmitter, serial 2335",
       "≈ Network Capable Application Processor (NCAP)",
       "",
-      "≈ Node (registered network role)",
+      "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
       "≈ ISA component / Controller · network role, not equipment identity",
       "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
       "",
@@ -299,7 +299,7 @@
       "",
       "≈ Transducer Interface Module (TIM)",
       "≈ ComponentType (can include software)",
-      "",
+      "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
       "≈ composition member · functional integration, not physical part-of",
       "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
       "",
@@ -316,7 +316,7 @@
       "",
       "",
       "≈ ConnectsTo",
-      "",
+      "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
       "≈ CIC-to-member interface · communications, not proved cable",
       "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
       "",
@@ -333,7 +333,7 @@
       "acebpmet station site (not a surveyed EE181 point)",
       "",
       "",
-      "",
+      "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
       "",
       "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
       "≈ sosa:Platform",
@@ -503,7 +503,7 @@
       "EE181 contributors (derived role); aggregator / mean producer held",
       "",
       "",
-      "",
+      "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
       "≈ Event.source · reporting UCI, not proven physical observer",
       "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
       "≈ sosa:Sensor",
@@ -520,7 +520,7 @@
       "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
       "",
       "",
-      "",
+      "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
       "≈ Event message · reported event, not underlying observing act",
       "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
       "sosa:Observation",
@@ -690,7 +690,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED / NARROWER: §5.2 Tables7–10 azimuth is relative to Node north and north datum (true, magnetic, grid, platform), not equivalent to equipment orientation. Platform datum is unresolved. [SAP02-N09]",
       "Bearing [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -707,7 +707,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: §5.2 Table7 RangeBearing.range reports edge-node-to-object distance with selected coordinate units/datum, not an independently verified observer-to-entity measurement. [SAP02-N09]",
       "Distance [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -775,7 +775,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
       "Velocity [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -860,7 +860,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
       "Media [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -1200,7 +1200,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
       "Event.event ID; Event.event reference → creator + id + time",
       "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1217,7 +1217,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
       "Event.time: UTC",
       "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1268,7 +1268,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
       "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
       "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
       "",
@@ -1642,7 +1642,7 @@
       "",
       "",
       "",
-      "≈ Task",
+      "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
       "≈ Request message · command invocation, not proven execution",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
       "",
@@ -1659,7 +1659,7 @@
       "",
       "",
       "",
-      "≈ TaskAck.task_status",
+      "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
       "≈ Response message · reported disposition, not measured effect",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
       "",
@@ -6342,7 +6342,7 @@
         "acebpmet (station source identifier)",
         "≈ MetaTEDS.UUID (TIM identifier)",
         "",
-        "",
+        "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
         "≈ UCI · ISA component/virtual-component identifier",
         "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
         "",
@@ -6422,6 +6422,17 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Not assessed here · G2-7T: Native System is defined by capability and contextual composition [NO_ESTABLISHED; No persistent unique System ID established by native definition]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6565,7 +6576,7 @@
         "acebpmet meteorological station",
         "",
         "≈ Device",
-        "",
+        "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
         "≈ ISA composition via CIC · integration collection, not physical unity",
         "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
         "≈ ssn:System",
@@ -6800,6 +6811,17 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "≈ SOSA Sensor / SOSA Sensor modality classification / Generic System / Subsystem · §4.1.1.1 · PARTIAL/BROADER [SOSA-D ledger] · G2-4A: §4.1 SOSA Sensor is a physical-boundary sensing system assembled from one/more hardware elements, possibly multiple modalities · G2-6A: Chapter13 discusses physical PICs, backplanes and chassis within a SOSA sensor · G2-6B: 3U PIC profile is a conditional hardware implementation of a SOSA sensing architecture · G2-6C: 6U slot-profile alternatives qualify a specific physical SOSA hardware implementation · G2-6D: Legacy PICP concerns a narrower SOSA hardware profile's planned standards lifecycle · G2-7C: 3U/6U AMPS family profiles specialize hardware building blocks within a SOSA system · G2-7D: 3U/6U switch PICP families are possible specialized hardware constituents of a SOSA sensor, not its whole identity. · G2-7I: Physical electrical classes qualify sensor/host. [RELATED; Not universal DIM superclass.] · G2-7Q: Class5 device can represent top-level sensor or hardware element [RELATED; Not universal DIM chassis] · G2-7R: Procurable Unit may host several RTE software profiles [RELATED; Not a mandatory whole-system DIM class or fixed topology] · G2-7T: Source System is elements forming useful capability and can be a Subsystem depending on context; Sensor may be device or System [RELATED; No universal chassis, one hierarchy or adopted DIM superclass]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N01"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6823,7 +6845,7 @@
         "GOES TX321 transmitter, serial 2335",
         "≈ Network Capable Application Processor (NCAP)",
         "",
-        "≈ Node (registered network role)",
+        "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
         "≈ ISA component / Controller · network role, not equipment identity",
         "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
         "",
@@ -7188,6 +7210,18 @@
         "previous_sosa_cell_value": "Related only · SOSA Interaction Infrastructure · §5.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 logical SOSA module messages use interaction infrastructure independent of software/hardware implementation · G2-5: Security Services includes logical SYSLOG Collector and Relay roles, possibly off-sensor · G2-6A: Physical PSC management/address pins differ from independently visible API resources · G2-6B: Control/Data/Expansion planes are physical internal pipes in an implementation · G2-6C: 6U switch has physical Data/Control pipes and intended external Ethernet exits · G2-7A: Ethernet protocol code describes a physical PIC port design, not independent network-visible identity · G2-7B: AMPS Ethernet example strings specify potential physical-port negotiation · G2-7C: AMPS listed copper and optical port designs are physical hardware interface candidates · G2-7D: Switch PICP tables show physical data/control/Ethernet-capable port designs, not independently addressable network participants. · G2-7F: Source requirement to implement declared physical ports and lanes does not establish separately addressable network participants. · G2-7J: J2 includes physical Ethernet and 1553B transport, not a separately identifiable network participant. [RELATED; No live network address or endpoint.] · G2-7K: J2 Gigabit Ethernet names a source-specific physical communications interface, not an independently network-addressable participant. [RELATED; No IP address, service endpoint, registered node, or observed connectivity.] · G2-7L: J2 serial and J4 fiber physical communication paths. [RELATED; Not a network-addressable System, IP instance or reachable CSAPI service.] · G2-7M: J7 provides physical Ethernet and serial interfaces. [NO_ESTABLISHED; No separately identified or reachable network participant or actual IP endpoint.] · G2-7N: MT fiber channels can carry physical optical traffic. [NO_ESTABLISHED; No IP participant, network service identity or reachable CSAPI node.] · G2-7O: J2 physical Ethernet link design is specified. [NO_ESTABLISHED; No independently IP-addressable or remotely discoverable participant.] · G2-7P: J7 10GBaseT is a physical Ethernet design. [NO_ESTABLISHED; No online IP endpoint or CSAPI System identity established.] · G2-7Q: Ethernet and power-cycle communication recovery specified [RELATED; Not an active IP/CSAPI service] · G2-7R: Container and VM engines provide network access needed for module interactions [RELATED; Not discoverable CSAPI System or live IP participant]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N02",
+          "SAP02-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "PARTIAL",
+        "previous_sapient_cell_value": "≈ Node (registered network role)",
+        "source_qualified_display": "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -7217,7 +7251,7 @@
         "",
         "≈ Transducer Interface Module (TIM)",
         "≈ ComponentType (can include software)",
-        "",
+        "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
         "≈ composition member · functional integration, not physical part-of",
         "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
         "",
@@ -7716,6 +7750,18 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis Manager is a hardware element; PIC is physical, while software RTE is hosted runtime, not another proved installed device · G2-3: §6.3 managed FRU/IPMC and Chassis Manager hardware distinct from software module/runtime · G2-4A: §4.1 hardware element is physical, while §5.1 separates logical modules and infrastructure; not one unit per source term · G2-4B: §8.3.4 RF Emitter/Collector has aperture resources; RF Conditioner-Receiver-Exciter lacks that exclusive RF capability · G2-5: Host interface describes mounts/connectors and reference-only Power functions · G2-6A: 3U/6U physical PIC form factors and hardware connectors define specialized constituents · G2-6B: Payload/switch/radial clock/external-I/O PIC profiles describe distinct physical constituent possibilities · G2-6C: 6U PIC and optional XMC are narrower examples of physical constituents · G2-6D: 3U Legacy Payload and 6U Legacy Switch are conditional physical PIC constituent implementations · G2-7A: AMPS describes specific physical Plug-In Card Profile port/protocol design · G2-7B: AMPS identifies a specific physical 3U/6U module profile and supported cooling/pitch options · G2-7C: Physical 3U/6U payload cards and aperture/expansion variants are specialized possible constituents · G2-7D: 3U DP, EP and V66 switch PICPs and 6U DP Switch are specialized physical card/profile constituent kinds. · G2-7E: VITA 66 connector module, its MT positions and Optical Profiles are physical slot/aperture substructures. · G2-7F: Declared Plug-In Card AMPS ports and lanes are scoped physical constituent implementation requirements, not a physical system-wide compulsory architecture. · G2-7G: SMPM-10 3U radial-clock coax and SMPM-14 PIC aperture pin designs are specialized hardware-constituent interfaces. · G2-7H: Three VNX sizes are possible specialized physical PIC constituents. (NARROWER; Not mandatory DIM root or installed module.) · G2-7I: J connector is specialized physical equipment interface. [NARROWER; Not installed equipment.] · G2-7J: J2 25-7 physical signal connector and pins are specialized sensor hardware interfaces. [NARROWER; Not required on every CSAPI System or observed installed equipment.] · G2-7L: J3 video, J4 fiber and J6 power are distinct connector designs. [RELATED; No observed installed physical component or mandatory DIM chassis.] · G2-7M: J8/J9 are two distinct conditional RF connector arrangements. [RELATED; Neither establishes installed components, mandatory containment or a general DIM chassis.] · G2-7N: J14 four-MT and J15 one-MT are distinct physical connector designs. [RELATED; No installed sensing components or universal DIM chassis.] · G2-7O: Class3 original connector families and individual keyed instances are hardware interface configurations. [RELATED; Not separate installed Systems or a universal DIM chassis.] · G2-7P: Class3 J3/J4/J8 source physical connectors differ in form and contact roles. [RELATED; Not individual installed Systems or DIM universal chassis.] · G2-7Q: Micro-D connector and aperture mounting are source physical structures [RELATED; Not observed installed constituents] · G2-7T: Element can be hardware/software/logical while Hardware Element is physical hardware incorporated in sensor [RELATED; No automatic individually identified System or mixing software with equipment]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N06",
+          "SAP02-N07"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "NO_ESTABLISHED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -7741,7 +7787,7 @@
         "",
         "",
         "≈ ConnectsTo",
-        "",
+        "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
         "≈ CIC-to-member interface · communications, not proved cable",
         "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
         "",
@@ -8057,6 +8103,17 @@
         "previous_sosa_cell_value": "Related only · SOSA External Interface / SOSA Internal Interface / Sensor physical mounting versus logic… · §4.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 external interfaces cross SOSA sensor physical boundary to host or environment; internal interfaces remain within · G2-4B: §8.3.3 describes coax/fiber analog or digital RF inter-module connection, while MORA has separate static external/internal connection-map queries · G2-5: Host adapters describe cable/connector/mount interfaces in opposite directions · G2-6A: PIC signals traverse backplane subject to limited front-panel exceptions · G2-6B: Front fiber and External I/O PIC provide limited external connection design possibilities · G2-6C: External I/O PIC permits platform-specific physical connections · G2-7A: SOSA RF/XMC codes express optional physical signal interfaces · G2-7B: AMPS string diagram includes physical aperture RF and XMC interface fields · G2-7C: External-I/O PIC designs provide platform-facing possible interfaces · G2-7G: Coax reference/auxiliary clock and GPS antenna input pin labels illustrate potential external physical signal connections. · G2-7H: RF/optical connector/aperture options are physical signal interfaces. (RELATED; Not established external-device installation or cable.) · G2-7I: Documented sensor-host physical connection. [RELATED; Not observed external cable.] · G2-7J: J2 host umbilical and physical signal pins illustrate possible connected platform/equipment interfaces. [RELATED; Not installed external cable or source-case link.] · G2-7K: The J2-to-platform Ethernet channel is an optional conditional physical sensor/host interface. [RELATED; No installed cable, separate connected device, or tested external connection.] · G2-7Q: Host umbilical and turret mounting describe interfaces [RELATED; Not actual installed host asset]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N06"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -8084,7 +8141,7 @@
         "acebpmet station site (not a surveyed EE181 point)",
         "",
         "",
-        "",
+        "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
         "",
         "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
         "≈ sosa:Platform",
@@ -8413,6 +8470,18 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "≈ SOSA Host Platform / SOSA Sensor Pod / SOSA Run-Time Environment (RTE) · §4.1.1.3 · NARROWER/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.1 Host Platform vehicle/pod/structure is separate from an integral SOSA Sensor Pod and from §5.1 software RTE · G2-5: Host Platform Interface bridges external protocols and internal SOSA; offers host position/orientation/state interaction · G2-6A: Chassis slots and cooling/short-card geometry constrain mounting arrangements · G2-6B: Backplane/chassis slot and switch-context requirements constrain physical support arrangements · G2-6C: 6U backplane slots and XMC provide specialized physical host context · G2-7B: Physical dcp codes constrain possible mounting and chassis slot fit · G2-7C: P5:XMC, P5:Expansion and P5:VITA66/67 indicate different physical host/slot integration choices · G2-7D: Distinct 3U and 6U slot-profile identifiers are hardware backplane/hosting-fit constraints. · G2-7E: Slot-profile dash option locates an optical connector module inside a physical slot aperture. · G2-7F: Conditional LVDS starting lane on highest Expansion-plane port is a specialized PIC backplane design constraint. · G2-7G: SMPM-14 figure is explicitly viewed from front of backplane; PIC pinout supports source-specific possible chassis-I/O integration. · G2-7H: Physical mounting/orientation may be adjacent, not standard slot pitch. (RELATED; Not geolocation or actual station deployment.) · G2-7I: Turret sensor-host physical interface. [RELATED; Not mandatory Platform class.] · G2-7J: Sensor and platform have distinct J2 socket/pin mating sides and platform-controlled power switch. [RELATED; Not an approved generic chassis/Platform root.] · G2-7T: Platform can mean supported sensing device, vehicle host or computing infrastructure; Pod may carry components of multiple sensors [RELATED; Platform role must be qualified, no generic chassis]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N06",
+          "SAP02-N07"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -9899,7 +9968,7 @@
         "EE181 contributors (derived role); aggregator / mean producer held",
         "",
         "",
-        "",
+        "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
         "≈ Event.source · reporting UCI, not proven physical observer",
         "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
         "≈ sosa:Sensor",
@@ -9986,6 +10055,17 @@
         "previous_sosa_cell_value": "No established direct equivalence · Transmission/Reception modules 2.3 and 2.4 / Detection/characterization functional defini… · §4.2 Table4.2-1 printed24/PDF50 · RELATED BUT DIFFERENT/NO ESTABLISHED PHYSICAL OBSERVER MAPPING [SOSA-D ledger] · G2-4B: RF collect/emit and not-defined detector module are architecture functions, not a source-declared OMS Observer or unique producing CSAPI System",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10008,7 +10088,7 @@
         "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
         "",
         "",
-        "",
+        "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
         "≈ Event message · reported event, not underlying observing act",
         "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
         "sosa:Observation",
@@ -10068,6 +10148,18 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N02",
+          "SAP02-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10417,7 +10509,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED / NARROWER: §5.2 Tables7–10 azimuth is relative to Node north and north datum (true, magnetic, grid, platform), not equivalent to equipment orientation. Platform datum is unresolved. [SAP02-N09]",
         "Bearing [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10429,7 +10521,18 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-441"
-      ]
+      ],
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N09"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "NARROWER",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED / NARROWER: §5.2 Tables7–10 azimuth is relative to Node north and north datum (true, magnetic, grid, platform), not equivalent to equipment orientation. Platform datum is unresolved. [SAP02-N09]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-141",
@@ -10453,7 +10556,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: §5.2 Table7 RangeBearing.range reports edge-node-to-object distance with selected coordinate units/datum, not an independently verified observer-to-entity measurement. [SAP02-N09]",
         "Distance [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10465,7 +10568,18 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-285"
-      ]
+      ],
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N09"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "PARTIAL",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: §5.2 Table7 RangeBearing.range reports edge-node-to-object distance with selected coordinate units/datum, not an independently verified observer-to-entity measurement. [SAP02-N09]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-149",
@@ -10597,7 +10711,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
         "Velocity [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10609,7 +10723,18 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-449"
-      ]
+      ],
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N10"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "NARROWER",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-131",
@@ -10783,7 +10908,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
         "Media [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10804,7 +10929,18 @@
         "TOPICS-3.3"
       ],
       "topics_source_review_boundary": "Event Media typically holds Resource Descriptors to related external media. A URL/Resource Type/metadata description is not a performed Observation, provenance authentication or guaranteed media delivery.",
-      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N11"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "PARTIAL",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-147",
@@ -11571,7 +11707,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
         "Event.event ID; Event.event reference → creator + id + time",
         "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -11651,6 +11787,18 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-5: Audit event types should have identifiers and selected audit events are required · G2-7S: Event Notification defines event-triggered interaction [NO_ESTABLISHED; No unique event identifier] · G2-7T: Audit Event is module-produced loggable event while Notification reports occurrence [NO_ESTABLISHED; No event ID URI or source reference]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N03",
+          "SAP02-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -11675,7 +11823,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
         "Event.time: UTC",
         "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -11752,6 +11900,17 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-5: Audit event UTC is required when available, otherwise uptime; both permitted · G2-7S: Notifications sent when event occurs [NO_ESTABLISHED; No timestamp value or time source] · G2-7T: Native Notification reports event at occurrence [NO_ESTABLISHED; No timestamp/clock basis in definition]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -11966,7 +12125,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
         "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
         "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
         "",
@@ -12016,6 +12175,19 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · DIV-2 logical data model / DIV-3 physical data model · §5.7.2 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-7T: Native Sensor produces quantitative data [NO_ESTABLISHED; No uncertainty quantity/unit in this definition]",
         "DIM_Profile_adopted": false
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N08",
+          "SAP02-N09",
+          "SAP02-N10"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "NARROWER",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14758,7 +14930,7 @@
         "",
         "",
         "",
-        "≈ Task",
+        "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
         "≈ Request message · command invocation, not proven execution",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
         "",
@@ -15040,6 +15212,17 @@
         "previous_sosa_cell_value": "≈ Task Manager (1.2) / Task / Assignment / Task Health / Sensor Task Manager publication st… · §4.2 Table4.2-1 · PARTIAL [SOSA-D ledger] · G2-1: separate management requests updateSensorMode/shutdownSensor are V1.0; distinct from mission Task and from execution result · G2-2: PIC/PIC-RTE V1.0 load/start/stop/pause/resume/resetApplication use ApplicationStateRequest, distinct from mission tasking · G2-4A: §4.2 Task Manager handles external mission tasks; §5.4 system-management control separately maintains the sensor · G2-4B: External task request SetCreateTask differs from internal SetModuleAssignment; RF sendCommand is separately V1.0 · G2-5: RF host control requests and privileged-access verification are separate obligations · G2-6B: Design allows PICs to receive commands over Expansion/Control planes · G2-6C: Physical PIC command paths are described as optional design · G2-7J: Power-enable circuit can direct physical ON/OFF conditions by resistance threshold. [RELATED; Not issued CSAPI Command or verified software task request.] · G2-7L: External electrical closures can initiate local hardware actions. [RELATED; No digitally issued CSAPI control or observed act.] · G2-7M: Hardwired contact closure is a physical maintenance provision. [NO_ESTABLISHED; No executed CSAPI command transaction or request identity.] · G2-7O: External power-enable/gimbal circuits have conditional electrical effects. [RELATED; No issued digital command or recorded execution request.] · G2-7P: Hardwired write-enable closure controls nonvolatile writing. [NO_ESTABLISHED; Not an issued or witnessed digital request.] · G2-7Q: Physical arming switch can disable emissions [NO_ESTABLISHED; Not digital request] · G2-7S: Management operations differ from low-latency signal control [RELATED; No issued client command or safe execution]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N05"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "≈ Task",
+        "source_qualified_display": "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -15064,7 +15247,7 @@
         "",
         "",
         "",
-        "≈ TaskAck.task_status",
+        "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
         "≈ Response message · reported disposition, not measured effect",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
         "",
@@ -15329,6 +15512,17 @@
         "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing / Request-resp… · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: specialized in-band requests list LowLevelResult or ApplicationState output objects, not a generic acknowledgement · G2-4B: Task/assignment preliminary reqResErrorCode and RF MDM Type2 acknowledgment describe different receipt/disposition surfaces · G2-5: Host commands return CommandStatus; zeroization has a separate completed-status rule · G2-6B: External I/O design returns status/results over internal paths · G2-6C: Potential status/results return over Expansion/Control planes · G2-7J: Source SHALL defines expected physical power state given circuit resistance. [NO_ESTABLISHED; Does not document real acknowledgement or measured achieved state.] · G2-7L: Isolated annunciation and safety-status lines described. [NO_ESTABLISHED; No software command acknowledgement.] · G2-7M: Electrical write-enable closure prescribes hardware behavior. [NO_ESTABLISHED; No reported success, acknowledgement or observed memory write.] · G2-7O: Physical emission annunciation interface provides a source signal. [NO_ESTABLISHED; No digitally acknowledged software command.] · G2-7P: Original source specifies physical write-enable behavior. [NO_ESTABLISHED; No command acknowledgement or success report.] · G2-7Q: Hardwired arming determines power state [NO_ESTABLISHED; No digital acknowledgement] · G2-7R: Runtime verifies adequacy of processing resources [NO_ESTABLISHED; No published command result/acknowledgement] · G2-7S: Responses exist and events can sometimes be acknowledged [RELATED; Not universal command acknowledgement]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP02_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP02-N05"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03, Dstl v2 pinned commit 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "relation": "RELATED",
+        "previous_sapient_cell_value": "≈ TaskAck.task_status",
+        "source_qualified_display": "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -34452,7 +34646,8 @@
     "sosa_G2_7J_native_source_item_records": 134,
     "sosa_G2_7J_qualified_master_cells": 25,
     "sosa_G2_7K_source_native_items": 7,
-    "sosa_G2_7K_qualified_cells": 10
+    "sosa_G2_7K_qualified_cells": 10,
+    "SAP02_SAPIENT_qualified_comparison_cells": 17
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -34496,16 +34691,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "C4_ISA_SOSA_READABILITY_SAME_26_SHEET_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP02_BSI_0_5_SAPIENT_17_EXISTING_ROW_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "C4_ISA_SOSA_SOURCE_FAITHFUL_DISPLAY_EXCEL_VERIFIED",
-    "sha256": "706c53c31531dc890c12b966bad433e6497a603f17de8b735eead44c71e3d56d",
+    "checkpoint": "SAP02_SAME_ORIGINAL_26_SHEET_SAVED_XLSX_VERIFIED",
+    "sha256": "fb18d864dcdd2383e648af081117b57f8924bdf29175dbbfdda921f16d7ded72",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: saved SAME original XLSX full 346x15 parity with canonical JSON/both CSV/both Markdown",
-    "textCheckpoint": "C4_ISA_DERIVED_SOURCE_TEXT_20261112_PENDING_EXCEL",
+    "lag": "ZERO: same saved XLSX all 346x15 source grid equals JSON/both CSV/both readable comparisons",
+    "textCheckpoint": "SAP02_BSI_0_5_SOURCE_INTEGRATED",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
     "columns": 15,
@@ -34524,7 +34719,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 54,
-    "validation_file": "SOSA_C4_Workbook_Validation_12NOV2026.json",
+    "validation_file": "SAP02_Workbook_Validation_12NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -35593,7 +35788,49 @@
     "C4_publisher_run": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43285033509",
     "C4_publisher_record": "SOSA_C4_Workbook_Validation_12NOV2026.json",
     "C4_publisher_exact_readback_sha256": "706c53c31531dc890c12b966bad433e6497a603f17de8b735eead44c71e3d56d",
-    "C4_pre_archive_original_head": "a029ce9cb3f918f4f48fd9fc2c00ec0f45d88409"
+    "C4_pre_archive_original_head": "a029ce9cb3f918f4f48fd9fc2c00ec0f45d88409",
+    "SAP02_affected_row_ids": [
+      "S06-R004",
+      "S06-R005",
+      "S06-R006",
+      "S06-R007",
+      "S06-R008",
+      "S06-R009",
+      "S06-R014",
+      "S06-R015",
+      "ISA-T-EVENT-TIME",
+      "ISA-T-EVENT-ID",
+      "ISA-C-133",
+      "ISA-C-141",
+      "ISA-C-159",
+      "ISA-C-146",
+      "ISA-R-MEASUREMENT",
+      "S06-R019",
+      "S06-R020"
+    ],
+    "SAP02_changed_saved_cells": [
+      "G7",
+      "G10",
+      "G11",
+      "G12",
+      "G13",
+      "G14",
+      "G24",
+      "G25",
+      "G66",
+      "G65",
+      "G35",
+      "G36",
+      "G40",
+      "G45",
+      "G69",
+      "G91",
+      "G92"
+    ],
+    "SAP02_pre_workbook_sha256": "706c53c31531dc890c12b966bad433e6497a603f17de8b735eead44c71e3d56d",
+    "SAP02_new_workbook_sha256": "fb18d864dcdd2383e648af081117b57f8924bdf29175dbbfdda921f16d7ded72",
+    "SAP02_saved_Excel_parity": true,
+    "SAP02_Excel_lag": 0
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -37460,7 +37697,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "C4 complete: STOP. Only separate owner decision may authorize the deferred high-level native donor-grouping comparison; no automatic SAPIENT, DIM/Profile adoption or Glaux work.",
+  "nextOwnerAction": "SAP02 complete and same 26-sheet XLSX verified; only new distinct owner Proceed authorizes SAP03A original BSI Registration Tables 15–32, stop before SAP03B; SAPIENT ACTIVE.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -37699,5 +37936,178 @@
     "C3_exact_saved_XLSX_lag": 21,
     "C4_SOSA_cells_revised": 33,
     "C4_XLSX_lag": 0
+  },
+  "SAPIENTEvidence": {
+    "SAP02": {
+      "source": "SAP02_Original_Source_Review_12NOV2026.md",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "published_original": "BSI Flex 335 v2.0:2024-03",
+      "pinned_schema_commit": "244a741c13bcee628f84944aef91e4a66854bd7d",
+      "native_findings_count": 13,
+      "BSI_tables_content_reviewed": 14,
+      "proto_v2_files_packet_reviewed": 6,
+      "shared_options_file_reviewed": true,
+      "qualified_row_count": 17,
+      "rows": [
+        {
+          "row_id": "S06-R004",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N03"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R005",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N01"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R006",
+          "relation": "PARTIAL",
+          "source_item_ids": [
+            "SAP02-N02",
+            "SAP02-N03"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R007",
+          "relation": "NO_ESTABLISHED",
+          "source_item_ids": [
+            "SAP02-N06",
+            "SAP02-N07"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R008",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N06"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R009",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N06",
+            "SAP02-N07"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R014",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N03"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R015",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N02",
+            "SAP02-N12"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-T-EVENT-TIME",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N03"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-T-EVENT-ID",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N03",
+            "SAP02-N12"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-C-133",
+          "relation": "NARROWER",
+          "source_item_ids": [
+            "SAP02-N09"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-C-141",
+          "relation": "PARTIAL",
+          "source_item_ids": [
+            "SAP02-N09"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-C-159",
+          "relation": "NARROWER",
+          "source_item_ids": [
+            "SAP02-N10"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-C-146",
+          "relation": "PARTIAL",
+          "source_item_ids": [
+            "SAP02-N11"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "ISA-R-MEASUREMENT",
+          "relation": "NARROWER",
+          "source_item_ids": [
+            "SAP02-N08",
+            "SAP02-N09",
+            "SAP02-N10"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R019",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N05"
+          ],
+          "adopted": false
+        },
+        {
+          "row_id": "S06-R020",
+          "relation": "RELATED",
+          "source_item_ids": [
+            "SAP02-N05"
+          ],
+          "adopted": false
+        }
+      ],
+      "open_new_holds": [
+        "SAP02-H01",
+        "SAP02-H02",
+        "SAP02-H03",
+        "SAP02-H04",
+        "SAP02-H05"
+      ],
+      "source_complete": false,
+      "model_adopted": false,
+      "forecast_after": {
+        "low": 5,
+        "most_likely": 6,
+        "high": 8
+      },
+      "next": "SAP03A only on separate owner proceed"
+    }
   }
 }
