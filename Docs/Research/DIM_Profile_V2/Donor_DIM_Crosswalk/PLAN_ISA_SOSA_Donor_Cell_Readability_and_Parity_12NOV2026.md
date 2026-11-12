@@ -1,5 +1,20 @@
 # Plan — ISA/SOSA donor-cell readability and comparable presentation (12 November 2026)
 
+## Easy-access ORIGINAL pre-C1 master — archived separately, not overwritten
+
+**Permanent recovery point for the unshortened donor cells:** [Browse the original pre-C1 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) (archive branch `archive/dim-crosswalk-pre-c1-20261112`, created from original commit [`2f04bf4`](https://github.com/OS4CSAPI/glaux-client/commit/2f04bf49405f5bae941f3efddea3cba538be1051)). This is the entire repository at its **pre-C1 state**, including all original long SOSA text and the **same original editable Excel**. The archive branch is a **historical, read-only reference, not a second active canonical master**; **do not move its ref or edit it**. The original full commit SHA remains the fixed recovery reference even if a branch reference changes unexpectedly.
+
+| Directly accessible original | Archived file |
+| --- | --- |
+| Original canonical JSON | [Open archived JSON](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json) |
+| Original CSV | [Open archived CSV](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.csv) |
+| Original CSV mirror | [Open archived CSV](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv) |
+| Original readable Markdown | [Open archived MD](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) |
+| Original Markdown mirror | [Open archived MD](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md) |
+| Original editable 26-sheet Excel | [Open archived XLSX](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) |
+
+**Required practice before any further C2/C3/C4 comparison edits:** preserve a **separately named, browseable pre-change archive ref** to the actual branch HEAD; verify its master JSON, both CSV, both Markdown and same original XLSX Git blob IDs; place direct links in the existing PITON and README. This is **one lightweight Git ref per substantive checkpoint, not cloned active files, additional workbooks or duplicate research infrastructure**. Prior archive links remain accessible after later edits. Continue keeping one current canonical master, preserving all source records, and reporting exact Excel lag.
+
 **Status: C1 VERIFIED COMPLETE (12 November 2026); C2–C4 NOT STARTED.** Owner subsequently separately authorized C1; only C1 has been executed and verified. Exactly 25 SOSA presentation cells in canonical JSON/CSV/Markdown changed; the same Excel, original source evidence and source/model decisions have not changed. This is an editorial/traceability correction plan, **not new SOSA research, donor ranking, a model-adoption gate, or SAPIENT work**. Execution requires a **separate, subsequent explicit owner authorization for C1**, and one such authorization covers only one numbered step.
 
 ## C1 actual result — completed and verified 12 November 2026
