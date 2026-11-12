@@ -1,8 +1,9 @@
-# The Open Group SOSA — G5-D owner disposition decision packet (11 November 2026)
+# The Open Group SOSA — G5-D owner disposition decision packet (11 November 2026; Option A accepted 12 November 2026)
+**FINAL G5-D OWNER DECISION (12 November 2026): OPTION A EXPLICITLY ACCEPTED.** This packet was prepared on 11 November and then approved by the owner in Profile Rewrite 25. The donor disposition is **PARTIAL—OWNER ACCEPTED**, **not** comprehensive source completion; all nine grouped holds and every original edition/source distinction below carry forward. Only the **G5-D closeout/status publication** was authorized. The one canonical master and same 26-sheet Excel remain **unchanged** at G3-N2; no DIM/Profile adoption, donor ranking, live device/CSAPI conformance or SAPIENT Step18 execution was authorized. **NEXT owner review only:** draft [ISA/SOSA C1–C4 readability plan](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md); it is NOT yet approved for execution. A proposed compact donor-grouping comparison remains future/unapproved.
 
 **Decision context:** For the narrative explanation of what the corrected ISA and SOSA studies actually taught us, read [What ISA and SOSA Have Taught Us About a Whole-Sensing-System DIM and CSAPI Profile](SYNTHESIS_ISA_SOSA_Lessons_for_Whole_System_DIM_and_CSAPI_Profile_12NOV2026.md). This interpretation supports informed consideration of the options below; it **does not select an option**.
 
-**Decision status: AWAITING EXPLICIT OWNER SELECTION.** This packet completes preparation for the single authorized G5-D owner decision; it **does not exercise the owner's choice, close the donor, begin SAPIENT, adopt a Domain Information Model (DIM) or impose an OGC API – Connected Systems (CSAPI) Profile requirement**. The user’s instruction “Proceed” authorized preparation of this decision, **not acceptance of the recommended disposition**.
+**Decision status: OPTION A SELECTED BY OWNER (12 November 2026).** Preparation on 11 November was distinct from this later explicit acceptance. The G5-D documentation-only closeout records SOSA as **PARTIAL—OWNER ACCEPTED**, without donor completeness, DIM/Profile adoption or SAPIENT permission.
 
 **Controlling research branch:** `research/dim-profile-v2` at G4-F baseline `3bd5847bcd0db37f74a8aea315950fa4adf9159d`. **Authoritative evidence:** [G4-F full corpus/master reconciliation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md), [G4-F 192-heading source/hold/master ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), [current SOSA execution plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md), [governing PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md), [G3-N2 verified same-workbook evidence](SOSA_G3_N2_Workbook_Validation_11NOV2026.json). Earlier packet source items remain individually identified in those records.
 
@@ -30,7 +31,7 @@ The original editable **26-sheet Excel workbook**, master JSON, **both CSV mirro
 
 These are **nine grouped families of prior source holds**, not nine invented standards clauses. They remain traceable to the G4 source ledger and earlier stable-ID G1–G3 packet records.
 
-## Exactly two owner choices
+## Original two options as presented for owner decision — historical; Option A now selected
 
 ### Option A — ACCEPT BOUNDED PARTIAL SOSA DONOR DISPOSITION (RECOMMENDED)
 
@@ -48,6 +49,6 @@ I do **not** accept bounded partial donor disposition. Keep the SOSA donor ACTIV
 
 **Recommend Option A**, not because SOSA original source coverage is complete, but because there is substantial defensible C239 text analysis and 2022 v1 donor-lineage evidence, while the unresolved native originals are genuinely material access holds. Accepting **bounded partial** is a transparent way to conserve effort while keeping those claims and differences open for later cross-donor reconciliation. Option B remains fully legitimate if completing the original native corpus is essential before considering another donor.
 
-**CURRENT OWNER CHOICE: NOT PROVIDED.** The only authorized final disposition in this G5-D preparation is **AWAIT_OWNER_SELECTION**, with The Open Group SOSA **ACTIVE/OPEN**, Step18 SAPIENT **BLOCKED**, canonical master **UNCHANGED**, and **no DIM/CSAPI Profile adoption**.
+**CURRENT OWNER CHOICE: OPTION A — ACCEPT BOUNDED PARTIAL SOSA (12 November 2026).** The Open Group SOSA is now **PARTIAL—OWNER ACCEPTED**, with all original-source holds OPEN, Step18 SAPIENT **NOT AUTHORIZED**, canonical master **UNCHANGED**, and no DIM/CSAPI Profile adoption.
 
-**NEXT REQUIRED ACTION:** Owner explicitly replies **“Option A — accept bounded PARTIAL SOSA”** or **“Option B — keep SOSA active.”** Record the selected disposition in the existing PITON/plan/status and, where warranted, the same workbook checkpoint with an actual saved-file check. **STOP:** no automatic next donor, domain-name/chassis/class hierarchy, owner model gate, client Details view, or deployment work.
+**NEXT REQUIRED ACTION:** The recorded Option A choice is now reflected in the governing PITON, donor plan and research status. The owner may **review/approve or amend C1–C4**, but **no C1 execution is authorized here**. The workbook has no new mapping cells and needs no new binary publication or duplicate saved-cell check. **STOP:** no automatic SAPIENT, model/adoption gate, column rearrangement, client Details view or deployment work.
