@@ -1,3 +1,17 @@
+# CURRENT — C4 original-source-qualified 33-cell review, workbook publication PENDING (12 November 2026)
+
+**Owner-authorized C4 ONLY, source-text checkpoint prepared 12 November 2026; saved Excel publication pending.** The original 95 ISA-derived information rows contain 33 source-bearing/mixed The Open Group SOSA cells, each source-qualified and concisely reconciled (**16,137 → 8,459 characters**), including **15** misleading mixed `Not assessed here` assessment labels. The other **62** are genuinely unassessed and remain untouched. All **31** mixed prefixes over C1–C4 are now individually handled (4+8+4+15); all **211** plain unassessed SOSA master cells are preserved. A mechanical scan of **316 populated ISA donor cells** found no justified ISA text rewrite; six original definition questions remain open. All case, W3C, other donor, OGC, proposed DIM columns and original source packet evidence are unchanged; 2023 C239 native companion/figure/external/restricted holds and 2022 edition caveats remain.
+
+Canonical JSON, **both CSV**, **both Markdown comparisons** are source-text synchronized at C4; the **SAME original 26-sheet Excel is still the verified C2 binary**, SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`. **Exactly 54** column-I cells are currently older in Excel (**21 C3 + 33 C4**) until the existing original-workbook publisher runs and an independent saved-cell checker verifies all **346×15** values and 22 historic worksheets. **DO NOT CLAIM C4 COMPLETE OR ZERO EXCEL LAG YET.** Original The Open Group SOSA remains **PARTIAL—OWNER ACCEPTED**, nine source-hold families open; no model/Profile adoption or runtime conformance.
+
+**Pre-C4 archival state preserved before any C4 edits:** [browse fixed original archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c4-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/), at historical commit `a029ce9cb3f918f4f48fd9fc2c00ec0f45d88409`, including current C3 JSON/CSV/Markdown and original C2 XLSX; pre-C1/C2/C3 archives remain accessible. Archive branches are immutable reference points, not competing canonical masters.
+
+**C4 STOP boundary:** finish one final SAME-Excel publication and independent saved-cell verification in this owner-authorized C4 only. After verification, STOP for a separate explicit owner decision about the discussed compact original native donor-grouping comparison (not an approved next plan); do not begin that study, SAPIENT Step18, DIM/Profile modeling, client or deployment automatically.
+
+**Read-only handover:** current PITON, [approved C1–C4 plan](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md), [G5-D owner SOSA decision](SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md), [G4 source ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), [C2 Excel validation](SOSA_C2_Workbook_Validation_12NOV2026.json), both READMEs, source lessons and actual branch HEAD/blobs. Older CURRENT/NEXT headings below are historical and not operative.
+
+---
+
 # CURRENT VERIFIED C3 CLOSEOUT — C4 NEXT ONLY (12 November 2026)
 
 **Actual authorized step C3 completed, not C4.** Active research branch `research/dim-profile-v2`; before-C3 original/archived HEAD `2812b4cbbded01eb210359d057edbccd1f0a20fa`. Re-fetch live HEAD on each recovery; the final GitHub commit for these C3 status notes will be newer.

@@ -43,9 +43,10 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Workbook_Validation_11NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C4_Workbook_Validation_12NOV2026.json
           if git diff --cached --quiet; then echo "No new source-qualified canonical workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): C2 verify and publish source-faithful same 26-sheet Excel"
+          git commit -m "research(dim-v2): C4 final readability, saved same 26-sheet Excel and 54-cell parity"
           git push origin HEAD:research/dim-profile-v2
       - name: Confirm actual remote commit contains published result
         run: |

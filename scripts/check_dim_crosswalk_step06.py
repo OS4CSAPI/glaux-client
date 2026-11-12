@@ -4497,6 +4497,141 @@ def verify_c2_readability(doc: dict, mirror: list[list[str]], md: str) -> None:
     print("LIMIT: SOSA PARTIAL—OWNER ACCEPTED; nine original source hold families and later DIM/Profile decisions remain")
 
 
+
+def verify_c4_readability(doc: dict, mirror: list[list[str]], md: str) -> None:
+    """Independent C4 source/mirror and 26-sheet saved-workbook check.
+
+    Pending: exact 54-cell C2 workbook lag, no premature Excel PASS.
+    Published: actual saved 346x15 parity, all 22 original supporting sheets.
+    Neither condition is a comprehensive C239 native-standards audit.
+    """
+    import hashlib
+    import html
+    root=BASE
+    grid=doc["review_grid"]; snap=doc["workbookSnapshot"]
+    pending=doc["currentEvidenceCheckpoint"]=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION"
+    final=doc["currentEvidenceCheckpoint"]=="C4_ISA_SOSA_READABILITY_SAME_26_SHEET_XLSX_VERIFIED"
+    required(pending or final,"valid C4 pending/verified phase only")
+    required(doc["schemaVersion"]=="0.15" and len(doc["rows"])==329
+             and len(doc["columns"])==15 and len(grid)==346
+             and len(doc["review_sections"])==15 and all(len(r)==15 for r in grid),
+             "original 329 source items, 15 donor columns, 346x15 grid and 15 sections")
+    required([c["key"] for c in doc["columns"]][:4]==["Dragino","AirGradient","Campbell","Bennett"]
+             and [c["key"] for c in doc["columns"]][8:10]==["OpenGroupSOSA","SOSA"]
+             and doc["columns"][-1]["key"]=="DIM",
+             "four cases left, SOSA distinct from W3C, proposed DIM far right")
+    required(mirror==grid,"first CSV equals canonical JSON")
+    with (root/"ISA_Correction_Review_07NOV2026.csv").open(encoding="utf-8",newline="") as f:
+        required(list(csv.reader(f))==grid,"both CSV comparison mirrors exact")
+    md2=(root/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+    required(md.split("<table>",1)[1]==md2.split("<table>",1)[1],
+             "both Markdown comparison tables identical")
+    trs=re.findall(r"<tr[^>]*>[\s\S]*?</tr>",md)
+    required(len(trs)==346 and md.count('colspan="15"')==15,
+             "full GitHub-readable 346 rows / 15 topic dividers")
+    for i,tr in enumerate(trs):
+        td=re.findall(r"<td>(.*?)</td>",tr,re.S)
+        if len(td)==15:
+            required([html.unescape(s) for s in td]==grid[i],"exact readable source cell row "+str(i+1))
+    for i,r in enumerate(doc["rows"]):
+        required(r["dim_adoption"]=="NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+                 "no DIM adoption "+r["row_id"])
+        for k,e in r.items():
+            if k.startswith(("G2_","G3_")) and k.endswith("_source_correspondence"):
+                required(len(e.get("source_item_ids",[]))>0 and
+                         e.get("DIM_Profile_adopted",e.get("DIM_adopted",False)) is False,
+                         "native original source IDs and no adoption for "+r["row_id"]+"/"+k)
+    data=[r for i,r in enumerate(grid) if i>1 and i not in set(doc["review_sections"])]
+    required(data==[r["display"] for r in doc["rows"]],"stable row identity / source grid")
+    c1=snap["C1_affected_row_ids"];c2=snap["C2_affected_row_ids"]
+    c3=snap["C3_changed_row_ids"];c4=snap["C4_affected_row_ids"]
+    required([len(x) for x in (c1,c2,c3,c4)]==[25,39,21,33],
+             "actual C1–C4 118 source-assessed row summaries")
+    required(len(set(c1+c2+c3+c4))==118,
+             "each review packet covers a distinct existing row")
+    c3set=set(snap["C3_changed_cells"]);c4set=set(snap["C4_changed_excel_cells"])
+    expected=c3set|c4set
+    required(len(c3set)==21 and len(c4set)==33 and len(expected)==54
+             and all(re.fullmatch(r"I\d+",x) for x in expected),
+             "correct 54 pending or completed SOSA I cells, no changes elsewhere")
+    required(snap["C4_mixed_status_prefixes_reconciled"]==15
+             and snap["C4_31_mixed_status_prefixes_cumulative_reconciled"] is True
+             and snap["C4_316_populated_ISA_summaries_scanned"] is True,
+             "all 31 genuine mixed labels resolved; mechanical ISA scan")
+    required(sum(bool(r["display"][7]) for r in doc["rows"])==316
+             and len([g for g in grid if g[8]=="Not assessed here"])==211
+             and len(doc["originalDonorEvidence"])==58 and len(doc["caseEvidence"])==73
+             and doc["ISAEvidence"]["currentPrimaryReviews"]==480
+             and doc["ISAEvidence"]["specificQuestions"]==6,
+             "ISA and original case records, 211 unreviewed placeholders preserved")
+    source=json.loads((root/"SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json").read_text(encoding="utf-8"))
+    required(source["coverage"]["now_at_least_source_text_or_pointer_read"]==191
+             and len(source["unresolved_holds_grouped"])==9
+             and len(source["C239_eight_normatively_referenced_native_companion_sources"])==8
+             and doc["SOSAReviewCompletion"]["source_coverage_complete"] is False
+             and doc["SOSAReviewCompletion"]["step18_SAPIENT_blocked"] is True
+             and not doc["adoptionPolicy"]["content_adopted_by_this_update"],
+             "bounded partial SOSA 2023 native holds, no source completeness or model adoption")
+    prior=json.loads((root/"SOSA_C2_Workbook_Validation_12NOV2026.json").read_text(encoding="utf-8"))
+    blob=(root/(NAME+".xlsx")).read_bytes()
+    sha=hashlib.sha256(blob).hexdigest()
+    required(sha==doc["currentWorkbookSha256"]==snap["sha256"],
+             "actual same original workbook SHA matches current checkpoint")
+    with zipfile.ZipFile(io.BytesIO(blob)) as z:
+        required(z.testzip() is None,"XLSX ZIP CRC valid")
+        for name in z.namelist():
+            if name.endswith((".xml",".rels")):ET.fromstring(z.read(name))
+            if name.startswith("xl/worksheets/") and name.endswith(".xml"):
+                required(not any(x.get("t")=="e" for x in ET.fromstring(z.read(name)).iter(S+"c")),
+                         "zero Excel error-type cells "+name)
+        wb=ET.fromstring(z.read("xl/workbook.xml"))
+        sn=list(wb.find(S+"sheets"));names=[x.get("name") for x in sn]
+        required(len(names)==26 and names==prior["workbook_sheets"],
+                 "original 26 sheets and order unchanged")
+        rels={x.get("Id"):x.get("Target") for x in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))}
+        mapping={}
+        for x in sn:
+            target=rels[x.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")]
+            mapping[x.get("name")]=target.lstrip("/") if target.startswith("/") else "xl/"+target
+        historic=prior["original_22_historical_worksheet_xml_sha256"]
+        required(len(historic)==22,"exactly original 22 historical sheet hashes")
+        for name,value in historic.items():
+            required(hashlib.sha256(z.read(mapping[name])).hexdigest()==value,
+                     "original historical worksheet preserved "+name)
+        sheet,saved=data_rows(z.read(mapping["Master Crosswalk"]),15)
+        required(len(saved)==346 and all(len(x)==15 for x in saved),
+                 "actual saved complete 346x15 grid")
+        diffs={"I"+str(i+1) for i in range(346) if saved[i][8]!=grid[i][8]}
+        non_sosa_changes=[(i,k) for i in range(346) for k in range(15)
+                          if k!=8 and saved[i][k]!=grid[i][k]]
+        required(not non_sosa_changes,"no other donor/case/DIM cell difference")
+        merges=[x.get("ref") for x in sheet.find(S+"mergeCells").findall(S+"mergeCell")]
+        required(merges==["A1:D1","E1:I1","J1:N1"]+
+                 [f"A{i+1}:O{i+1}" for i in doc["review_sections"]],
+                 "full-span topic dividers remain fixed")
+    if pending:
+        required(sha==prior["workbook_sha256"] and diffs==expected
+                 and snap["C4_XLSX_lag"]==54 and not snap["currently_matches_readable_view"],
+                 "exact declared C2 saved workbook 54-cell lag (pending, NOT Excel parity)")
+        print("PASS PENDING C4: source JSON/CSV/Markdown agree; exact 54 SOSA cells remain older in C2 saved XLSX")
+        print("NOT YET COMPLETE: final original workbook publication + independent 5190-cell parity still required")
+    else:
+        report=json.loads((root/"SOSA_C4_Workbook_Validation_12NOV2026.json").read_text(encoding="utf-8"))
+        required(not diffs and saved==grid and snap["currently_matches_readable_view"]
+                 and snap["C3_XLSX_lag"]==0 and snap["C4_XLSX_lag"]==0,
+                 "all 5190 committed saved Excel cells exactly match current master, zero lag")
+        required(report["workbook_sha256"]==sha
+                 and report["prior_original_workbook_sha256"]==prior["workbook_sha256"]
+                 and set(report["C3_C4_changed_saved_cells"])==expected
+                 and len(report["C3_C4_changed_saved_cells"])==54
+                 and report["original_22_historical_worksheet_xml_sha256"]==historic
+                 and all(report["checks"].values()),
+                 "independent C4 publication/cell/preservation validation")
+        print("PASS FINAL C4: all saved 346x15 cells equal JSON/both CSV/both Markdown; same original 26-sheet workbook")
+        print("PASS: only 54 source-qualified SOSA changes C3+C4; 22 historical sheets preserved; 31 mixed labels resolved")
+    print("LIMIT: SOSA remains PARTIAL—OWNER ACCEPTED, nine source holds and six ISA questions open; no adopted DIM/Profile or hardware conformance")
+
+
 def main() -> None:
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
@@ -4504,7 +4639,9 @@ def main() -> None:
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
     if "review_grid" in doc and "columns" in doc:
-        if doc.get("currentEvidenceCheckpoint")=="C2_ISA_SOSA_CELL_READABILITY_SAME_26_SHEET_EXCEL_VERIFIED":
+        if doc.get("currentEvidenceCheckpoint") in ("C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION","C4_ISA_SOSA_READABILITY_SAME_26_SHEET_XLSX_VERIFIED"):
+            verify_c4_readability(doc, mirror, md)
+        elif doc.get("currentEvidenceCheckpoint")=="C2_ISA_SOSA_CELL_READABILITY_SAME_26_SHEET_EXCEL_VERIFIED":
             verify_c2_readability(doc, mirror, md)
         elif len(doc["columns"]) == 15 and doc.get("schemaVersion") == "0.15" and doc.get("SOSAEvidence", {}).get("G3_N2"):
             verify_sosa_g3_n2_master(doc, mirror, md)

@@ -3366,9 +3366,161 @@ def publish_c2_readability():
     print("C2 PASS: same original 26 sheets; 25 C1 + 39 C2 I-cells saved; all 346x15 cells exact; SHA "+sha)
     return sha
 
+
+def publish_c4_readability():
+    """Owner-authorized final C4 presentation checkpoint: SAME 26-sheet XLSX, not new SOSA source audit."""
+    from html import unescape
+    reportname="SOSA_C4_Workbook_Validation_12NOV2026.json"
+    m=load(MASTER); prior_record=load("SOSA_C2_Workbook_Validation_12NOV2026.json")
+    before_sha=prior_record["workbook_sha256"]
+    need(m["currentEvidenceCheckpoint"]=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION",
+         "only the new C4 text checkpoint is eligible")
+    grid=m["review_grid"]; snap=m["workbookSnapshot"]
+    need(m["schemaVersion"]=="0.15" and len(grid)==346 and all(len(r)==15 for r in grid)
+         and len(m["rows"])==329 and len(m["columns"])==15 and len(m["review_sections"])==15,
+         "unchanged original 329 information rows, 346x15 grid, 15 sections")
+    need(grid==source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")
+              ==source_csv("ISA_Correction_Review_07NOV2026.csv"),
+         "both canonical CSV mirrors must agree with source grid")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        html=(D/name).read_text(encoding="utf-8")
+        trs=re.findall(r"<tr[^>]*>[\s\S]*?</tr>",html)
+        need(len(trs)==346 and html.count('colspan="15"')==15,"346 readable rows/15 dividers "+name)
+        for i,tr in enumerate(trs):
+            td=re.findall(r"<td>(.*?)</td>",tr,re.S)
+            if len(td)==15:need([unescape(v) for v in td]==grid[i],"current Markdown exact at "+name+":"+str(i))
+    rowmap={r["row_id"]:r for r in m["rows"]}
+    need(len(rowmap)==329 and len({r["label"] for r in m["rows"]})==329,"unique source row identity")
+    c3=snap["C3_changed_row_ids"]; c4=snap["C4_affected_row_ids"]
+    cells3=set(snap["C3_changed_cells"]); cells4=set(snap["C4_changed_excel_cells"])
+    allowed=cells3|cells4
+    need(len(c3)==21 and len(c4)==33 and len(allowed)==54 and not cells3&cells4
+         and len(snap["C4_affected_row_ids"])==33 and snap["C4_mixed_status_prefixes_reconciled"]==15
+         and snap["C4_31_mixed_status_prefixes_cumulative_reconciled"] is True,
+         "C3 21 plus C4 33 unique SOSA cells, all 31 mixed assessments reconciled")
+    need(all(re.fullmatch(r"I\d+",v) for v in allowed),"SOSA column I edits only")
+    aligned=[row for i,row in enumerate(grid) if i>1 and i not in set(m["review_sections"])]
+    need(aligned==[r["display"] for r in m["rows"]],"all 329 source row identities and grid values align")
+    for r in m["rows"]:
+        need(r["dim_adoption"]=="NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE","no DIM adoption "+r["row_id"])
+        for key,value in r.items():
+            if key.startswith(("G2_","G3_")) and key.endswith("_source_correspondence"):
+                need(bool(value.get("source_item_ids")) and
+                     value.get("DIM_Profile_adopted",value.get("DIM_adopted",False)) is False,
+                     "retained original source IDs/non-adoption "+r["row_id"]+"/"+key)
+    need(sum(bool(r["display"][7]) for r in m["rows"])==316 and
+         not any(len(r["display"][7])>200 for r in m["rows"]) and
+         len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73 and
+         m["ISAEvidence"]["currentPrimaryReviews"]==480 and m["ISAEvidence"]["specificQuestions"]==6
+         and not m["adoptionPolicy"]["content_adopted_by_this_update"],
+         "ISA 316 source summaries, 480 original reviews/six questions, original donor and case evidence")
+    oldbytes=(D/BOOK).read_bytes()
+    need(digest(oldbytes)==before_sha==m["currentWorkbookSha256"]==snap["sha256"],
+         "SAME original C2 26-sheet workbook is baseline; exactly 54 cells not yet published")
+    with zipfile.ZipFile(io.BytesIO(oldbytes)) as z:
+        need(z.testzip() is None,"original C2 ZIP CRC")
+        paths=old.sheetpaths(z)
+        need(len(paths)==26 and list(paths)==prior_record["workbook_sheets"],"original 26 sheets and order")
+        historic=prior_record["original_22_historical_worksheet_xml_sha256"]
+        need(len(historic)==22 and all(digest(z.read(paths[n]))==v for n,v in historic.items()),
+             "original historical 22 worksheets checked before edit")
+        styles,st=old.newstyles(z.read("xl/styles.xml"))
+        summary=[
+          ["C4 final donor-cell readability — 12 November 2026","Original editable 26-sheet workbook retained, source-qualified comparison text only"],
+          ["Current full master","329 information rows, 15 columns, 15 topic dividers, 346x15 saved comparison values"],
+          ["Source cases","Four documentary/historical cases preserved; other donor/OGC foundation/DIM positions unchanged"],
+          ["C1 identity/systems/observations","25 SOSA cells; four mixed labels resolved"],
+          ["C2 configuration/control","39 SOSA cells; eight mixed labels resolved"],
+          ["C3 provenance and held equipment","21 SOSA cells; four mixed labels resolved"],
+          ["C4 ISA-derived comparisons","33 SOSA cells; 15 mixed labels resolved"],
+          ["Final C1–C4 summary","118 SOSA cells revised; 31 mixed prefixes reconciled; 211 plain unassessed placeholders retained"],
+          ["Integrated Sensor Architecture","316 populated ISA summaries mechanically scanned; no new changes; 480 DMS reviews/six original questions"],
+          ["SOSA original evidence standing","PARTIAL—OWNER ACCEPTED; 191/192 original headings text or pointer contacted, NOT full clause/companion audit"],
+          ["Native corpus holds","2023 eight native companions, Appendix C, external standards, source figures, distinct 2022/2025 editions"],
+          ["Original research preservation","Source IDs and relations retained in canonical row packets; original 22 historical worksheets untouched"],
+          ["Actual saved worksheet parity","All 346x15 saved values exactly checked; 54 changes C3+C4 confined to SOSA column I"],
+          ["DIM/CSAPI Profile adoption","ZERO new class/field/cardinality or Profile SHALL; no runtime equipment control conformance"],
+          ["Owner stop","C4 complete; later native donor-grouping study requires its OWN plan/owner action; SAPIENT not authorized"]
+        ]
+        replace={"xl/styles.xml":styles,
+                 paths["Master Crosswalk"]:matrix_to_xml(grid,st,main=True,sections=m["review_sections"]),
+                 paths["Summary"]:matrix_to_xml(summary,st),
+                 paths["Validation"]:matrix_to_xml(summary,st)}
+        output=io.BytesIO()
+        with zipfile.ZipFile(output,"w") as newz:
+            for info in z.infolist():newz.writestr(info,replace.get(info.filename,z.read(info.filename)))
+    newbytes=output.getvalue()
+    with zipfile.ZipFile(io.BytesIO(newbytes)) as z:
+        need(z.testzip() is None and list(old.sheetpaths(z))==list(paths),"valid original 26-sheet XLSX")
+        for n in z.namelist():
+            if n.endswith((".xml",".rels")):ET.fromstring(z.read(n))
+            if n.startswith("xl/worksheets/") and n.endswith(".xml"):
+                need(not any(c.get("t")=="e" for c in ET.fromstring(z.read(n)).iter(q("c"))),
+                     "no error cell in saved workbook")
+        for n,v in historic.items():need(digest(z.read(paths[n]))==v,"preserved historical sheet "+n)
+        need(digest(z.read(paths["DIM Register"]))==
+             digest(zipfile.ZipFile(io.BytesIO(oldbytes)).read(paths["DIM Register"])),
+             "DIM Register unchanged")
+    before=old.readcells(oldbytes,"Master Crosswalk"); current=old.readcells(newbytes,"Master Crosswalk")
+    for i,row in enumerate(grid,1):
+        for k,val in enumerate(row,1):
+            need(current.get(addr(i,k),"")==old.val(val),"saved XLSX vs source cell "+addr(i,k))
+    changed={c for c in set(before)|set(current) if before.get(c,"")!=current.get(c,"")}
+    need(changed==allowed and len(changed)==54,"ONLY 21 C3 + 33 C4 SOSA I-column saved edits")
+    (D/BOOK).write_bytes(newbytes)
+    sha=digest(newbytes)
+    m["currentWorkbookSha256"]=sha
+    m["currentEvidenceCheckpoint"]="C4_ISA_SOSA_READABILITY_SAME_26_SHEET_XLSX_VERIFIED"
+    m["nextOwnerAction"]="C4 complete: STOP. Only separate owner decision may authorize the deferred high-level native donor-grouping comparison; no automatic SAPIENT, DIM/Profile adoption or Glaux work."
+    m["publicationPolicy"]="C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption."
+    snap.update({"checkpoint":"C4_ISA_SOSA_SOURCE_FAITHFUL_DISPLAY_EXCEL_VERIFIED",
+                 "sha256":sha,"currently_matches_readable_view":True,
+                 "lag":"ZERO: saved SAME original XLSX full 346x15 parity with canonical JSON/both CSV/both Markdown",
+                 "refreshed_cell_count":54,"validation_file":reportname,
+                 "C3_XLSX_lag":0,"C4_XLSX_lag":0,
+                 "C4_final_saved_Excel_parity":True,
+                 "C4_final_mixed_prefixes_corrected":31})
+    m["SOSAReviewCompletion"]["status"]="BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED"
+    m["SOSAReviewCompletion"]["C4_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]="C4 complete; owner alone may approve separate native donor grouping study; no auto-SAPIENT or model/client."
+    save(MASTER,m)
+    validation={
+      "date":"2026-11-12","step":"C4_ISA_DERIVED_COMPARISON_FINAL_READABILITY",
+      "result":"SAME_ORIGINAL_26_SHEET_SAVED_XLSX_PARITY_PASS",
+      "pre_C4_archive_branch":"archive/dim-crosswalk-pre-c4-20261112",
+      "pre_C4_research_commit":"a029ce9cb3f918f4f48fd9fc2c00ec0f45d88409",
+      "prior_original_workbook_sha256":before_sha,"workbook_sha256":sha,
+      "workbook_sheets":list(paths),
+      "original_22_historical_worksheet_xml_sha256":historic,
+      "information_rows":329,"grid_rows":346,"grid_columns":15,"topic_dividers":15,
+      "SOSA_C1_revised_cells":25,"SOSA_C2_revised_cells":39,
+      "SOSA_C3_revised_cells":21,"SOSA_C4_revised_cells":33,
+      "C4_mixed_labels_corrected":15,"total_mixed_labels_corrected":31,
+      "original_plain_unassessed_cells_preserved":211,
+      "ISA_populated_summaries_scanned":316,"ISA_changed_summaries":0,
+      "C3_C4_changed_saved_cells":sorted(changed),
+      "C3_changed_row_ids":c3,"C4_changed_row_ids":c4,
+      "source_coverage_comprehensive":False,"source_C239_heading_contact":191,
+      "original_C239_eight_native_companions_unverified":True,
+      "SOSA_donor_disposition":"PARTIAL_OWNER_ACCEPTED",
+      "DIM_or_CSAPI_Profile_adopted":False,
+      "checks":{"saved_grid_all_346x15_exact":True,
+          "all_54_changes_only_SOSA_I":True,"both_CSVs_equal":True,
+          "both_Markdown_tables_equal":True,"same_26_sheet_workbook":True,
+          "22_original_historical_sheets_preserved":True,"DIM_Register_unchanged":True,
+          "workbook_ZIP_CRC_and_XML_valid":True,"no_error_cells":True,
+          "31_mixed_statuses_reconciled":True,"no_2023_native_edition_substitution":True},
+      "next":"STOP after C4; separate owner approval required before any native donor-grouping comparison"
+    }
+    save(reportname,validation)
+    print("C4 PASS: SAME 26-sheet original Excel; 54 C3+C4 SOSA I-cells; all 346x15 saved cells; SHA "+sha)
+    return sha
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
-    if checkpoint=="C2_SOSA_SOURCE_FAITHFUL_PRESENTATION_20261112_PENDING_EXCEL_PUBLISHER":
+    if checkpoint=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION":
+        publish_c4_readability()
+    elif checkpoint=="C2_SOSA_SOURCE_FAITHFUL_PRESENTATION_20261112_PENDING_EXCEL_PUBLISHER":
         publish_c2_readability()
     else:
         publish_g3_n2()
