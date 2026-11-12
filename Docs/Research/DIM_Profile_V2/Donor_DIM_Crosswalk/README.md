@@ -1,4 +1,12 @@
-# CURRENT — C1–C4 READABILITY PLAN APPROVED; C1 NOT STARTED; SOSA PARTIAL—OWNER ACCEPTED (12 November 2026)
+# CURRENT — C1 ISA/SOSA readability source-verified; C2 NEXT ONLY (12 November 2026)
+
+**C1 delivered and committed:** 25 SOSA cells in sections 01–03 revised using source-qualified meanings and negative-equivalence boundaries (27,191 → 7,755 characters), including four mixed status prefixes. The 41 exact unassessed placeholders and all ISA/other donor/case data remain. [Owner-approved plan and actual C1 exit](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md) · [governing PITON with exact recovery and holds](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+
+**Canonical JSON, both CSV, both Markdown are current at C1; SAME original 26-sheet XLSX remains at verified G3-N2 and lags exactly 25 SOSA I-column cells** until planned C2 saved-cell checkpoint. Original source contents/editions, all nine The Open Group SOSA holds and six ISA questions unchanged. SOSA is still **PARTIAL—OWNER ACCEPTED**; no Domain Information Model (DIM) adoption, OGC API – Connected Systems (CSAPI) Profile SHALLs or SAPIENT work. **Separate owner Proceed for C2 only; STOP.**
+
+---
+
+## Historical C1-not-started status (superseded)
 
 **Owner decision (12 November 2026): OPTION A ACCEPTED.** The Open Group Sensor Open Systems Architecture (SOSA), C239 Edition 1.1 (2023), has been dispositioned **PARTIAL—OWNER ACCEPTED**, **not comprehensively source-complete**. The completed G4-F research and the G5-D options remain in [the G4-F original-source/master reconciliation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md), [192-heading and original-source hold ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) and [G5-D owner decision packet](SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md). The owner has approved **this G5-D status/closeout publication only**, not the next donor, DIM classes, a chassis, cardinalities, CSAPI Profile SHALLs, source equivalences, live hardware commands or client/deployment work.
 

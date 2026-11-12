@@ -1,4 +1,10 @@
-# CURRENT — 12 November 2026 — ISA/SOSA readability plan approved, execution NOT STARTED; SOSA bounded PARTIAL accepted
+# CURRENT — C1 source-backed ISA/SOSA comparison edits COMPLETE; C2 only next (12 November 2026)
+
+[Current governing recovery PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [approved C1–C4 plan and C1 verified exit](Donor_DIM_Crosswalk/PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md). **C1 revised 25 SOSA cells across sections 01–03; four mixed status labels clarified, ISA/other donor/case evidence preserved.** JSON, both CSV and both Markdown current; original **same 26-sheet Excel intentionally 25 SOSA cells behind** until C2 refresh/check. SOSA **PARTIAL—OWNER ACCEPTED**, source holds unchanged, no model/ranking/client/SAPIENT work. **Only next separate owner Proceed: C2; STOP.**
+
+---
+
+## Historical pre-C1 status (superseded)
 
 **Current donor-to-DIM recovery:** [Governing PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) has the complete owner decision, source holds, canonical master/Excel parity, interrupted-chat recovery sequence and next owner-only boundary. [G5-D owner decision](Donor_DIM_Crosswalk/SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md) records **Option A — PARTIAL—OWNER ACCEPTED**. Original source review remains **bounded PARTIAL** (191/192 C239 headings contacted, not comprehensively clause-audited; eight original C239 native companions and other holds remain). **SAPIENT Step18 not authorized.** No new DIM/Profile classes, rules or client work.
 

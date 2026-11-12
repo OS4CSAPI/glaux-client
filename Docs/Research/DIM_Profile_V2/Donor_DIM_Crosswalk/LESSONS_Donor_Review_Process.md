@@ -1,3 +1,9 @@
+# L61 — comparison cells should show native relation, not reproduce a growing audit log (12 November 2026)
+
+The owner-authorized C1 step condensed 25 SOSA cells across source-case topic sections 01–03 (27,191 → 7,755 characters), retaining every original source-qualified per-row G2/G3 correspondence and native ledger evidence. Four mixed `Not assessed here` prefixes were reconciled to the actual previously examined relation; 41 fully unassessed placeholders and ISA were not rewritten without cause. Keep source-specific 2022 native data model separate from 2023 C239, preserve negative equivalence, and never infer runtime/CSAPI or DIM approval from presentation changes. **Cross-format parity and XLSX saved-cell parity are distinct:** JSON/both CSV/both Markdown now agree, but same Excel still G3-N2 and exactly **25** changed SOSA cells older, to be refreshed/independently checked at C2. [Plan + six before/after examples](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md).
+
+---
+
 # L60 — G5-D explicit owner Option A acceptance and resilient read-only handover (12 November 2026)
 
 **Binding lesson:** An owner-selected **bounded PARTIAL donor disposition** is a valid documented stop for a source-limited donor, not evidence of comprehensive original-source coverage. On 12 November the owner explicitly chose G5-D **Option A**, preserving all nine The Open Group SOSA source-hold families, G4 source ledger/191-heading contact standing, 2022-vs-2023-vs-2025 edition distinctions, original comparison records and same canonical workbook; **SAPIENT still requires its own authorization**. The historical G5-D packet had been prepared but did not itself decide anything. [Recorded G5-D decision](SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md) · [governing handover PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).

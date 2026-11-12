@@ -1,6 +1,29 @@
 # Plan — ISA/SOSA donor-cell readability and comparable presentation (12 November 2026)
 
-**Status: OWNER APPROVED (12 November 2026); C1–C4 NOT STARTED.** Approval of this plan is a documentation-only decision, not execution of C1. No donor cells, canonical master, workbook, source findings, owner dispositions, Domain Information Model (DIM), OGC API – Connected Systems (CSAPI) Profile, or client changed. This is an editorial/traceability correction plan, **not new SOSA research, donor ranking, a model-adoption gate, or SAPIENT work**. Execution requires a **separate, subsequent explicit owner authorization for C1**, and one such authorization covers only one numbered step.
+**Status: C1 VERIFIED COMPLETE (12 November 2026); C2–C4 NOT STARTED.** Owner subsequently separately authorized C1; only C1 has been executed and verified. Exactly 25 SOSA presentation cells in canonical JSON/CSV/Markdown changed; the same Excel, original source evidence and source/model decisions have not changed. This is an editorial/traceability correction plan, **not new SOSA research, donor ranking, a model-adoption gate, or SAPIENT work**. Execution requires a **separate, subsequent explicit owner authorization for C1**, and one such authorization covers only one numbered step.
+
+## C1 actual result — completed and verified 12 November 2026
+
+**Authorized boundary:** C1 only, original master sections 01–03 (66 information rows). **25** SOSA source-bearing or mixed-status cells received source-faithful presentation updates; **four** misleading mixed `Not assessed here` prefixes now state their recorded relation. The **41** exact unreviewed placeholders and all ISA source cells remain unchanged. Total changed SOSA characters: **27,191 → 7,755** (**71% reduction**). These are summary edits of previously researched evidence, not new source coverage or DIM/Profile field adoption.
+
+**Authoritative detailed evidence:** The entire previous wording is recoverable at [pre-C1 GitHub commit `2f04bf4`](https://github.com/OS4CSAPI/glaux-client/commit/2f04bf49405f5bae941f3efddea3cba538be1051), and the same [canonical JSON](Master_Donor_Concept_to_DIM_Crosswalk.json) retains its original individual G2/G3 source-correspondence fields, native source IDs, relationship grades and negative-equivalence caveats. The original C239 2023 companion files, restricted Appendix C, external sources and other nine source-hold families remain uncompleted. **SOSA remains PARTIAL—OWNER ACCEPTED.**
+
+**Cross-format verification and Excel:** one JSON, **BOTH CSV** and **BOTH Markdown** 346×15 comparison grids were checked in-memory before publication and committed together at [C1 source master commit `577a1d5`](https://github.com/OS4CSAPI/glaux-client/commit/577a1d59ddc542813d1052cf5af268cd1229f994). Original row IDs/order, 15 columns and topic dividers, four source cases, other donor columns, original source records/holds and all DIM non-adoption remain unchanged. **The SAME editable 26-sheet XLSX was intentionally NOT rebuilt in C1**: last actual saved-cell verification was G3-N2 (**346×15**, 22 preserved historical sheets), workbook SHA256 `47c9df11ef64e112c8892e87c749930f08552c43a0e8e06508bb34ef8a04903c`. Thus **Excel now lags by exactly 25 SOSA I-column text cells**; C2 is the authorized *planning* checkpoint for refreshing/checking that same workbook, not work already executed.
+
+**Six representative original-to-C1 cell comparisons** (excerpts for readability; see the canonical source evidence for full text):
+
+| Existing row and topic | Before, characters | After, characters | Before excerpt | After excerpt |
+| --- | ---: | ---: | --- | --- |
+| `S06-R001` — Manufacturer name | 697 | 341 | “Related only · G2-3: §6.3 FRU inventory references vendor identity; no observed manufacturer field for an…” | “RELATED: C239 §6.3 replaceable-unit (FRU) inventory, §8.3 MORA getManufacturer, and PIC Certificate of Vo…” |
+| `S06-R004` — Persistent System identifier | 536 | 264 | “Not assessed here · G2-7T: Native System is defined by capability and contextual composition [NO_ESTABLIS…” | “PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System…” |
+| `S06-R007` — Physical constituent | 3889 | 443 | “≈ SOSA Hardware Element / SOSA Plug-In Card (PIC) / Aperture / enclosure / chassis / power … · §4.1.1.2 ·…” | “NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialize…” |
+| `ISA-A-NETWORK-CONTEXT` — Network instance and connection context | 3283 | 356 | “Related only · G2-4A: §5.8 default general-purpose SOSA Message Interconnect and wideband low-latency net…” | “RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime set…” |
+| `S06-R013` — Observed / observable property | 171 | 204 | “Not assessed here · G2-7T: Sensor estimates properties of external entities and generates quantitative da…” | “RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies…” |
+| `ISA-T-EVENT-TIME` — Event occurrence time | 648 | 330 | “Related only · G2-5: Audit event UTC is required when available, otherwise uptime; both permitted · G2-7S…” | “RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event…” |
+
+**C1 closure and exact next stop:** C1 COMPLETE, **C2–C4 NOT STARTED**. One **new separate owner “Proceed”** is required to execute **C2 ONLY**: section 04, 39 SOSA source-bearing/mixed cells, and refresh/independent saved-cell verification of the **same** original Excel covering C1 + C2. Stop before C3, C4, donor native-grouping comparison, SAPIENT Step18, DIM/Profile decisions or Glaux work.
+
+---
 
 ## Purpose and exact problem
 
@@ -20,7 +43,7 @@ The accumulated SOSA G2/G3 packets often appended a separate, fully caveated not
 
 **Illustrative target, not a replacement decision:** A physical-constituent cell might read: “SOSA Hardware Element/PIC is a specialized physical constituent; logical Module and software RTE are not automatically installed devices [C239 §§4–5, G2-2/G2-7T; 2022 DSDM G3-N2 RELATED]. Does not establish independently exposed CSAPI Systems.” All detailed chassis, connector, profile, conditional-rule and edition findings remain in their original packet evidence, not erased. Actual wording is determined row-by-row from existing source records during an authorized step.
 
-## Execution plan — four bounded, source-evidence-aware steps, **none started**
+## Execution plan — four bounded, source-evidence-aware steps; **C1 complete; C2–C4 pending**
 
 Each step first reads existing packet/source records **only as needed** for affected rows; it does not re-audit C239 or expand donor scope. A step is complete only after changed rows and exact holds are recorded, canonical JSON and **both CSV/both Markdown mirrors** are synchronized, GitHub readback succeeds and Excel checkpoint/lag is precisely labeled. The same workbook is refreshed at substantive checkpoints below; do not run unchanged verification workflows repeatedly. If a category proves materially more complex than counted, stop at the agreed boundary and seek a **specific** owner-approved resize rather than forcing silent truncation.
 
@@ -46,4 +69,4 @@ Each step first reads existing packet/source records **only as needed** for affe
 
 The donor-to-DIM workbook becomes a usable *side-by-side semantic comparison*: ISA and SOSA have a **common, source-faithful cell style**, every shortened SOSA statement remains traceable to the full original record, all 31 mixed assessment prefixes are individually resolved or explicitly held, unsupported mappings are not invented, and the original workbook/source mirrors are intact. We report residual exceptions plainly. **No arbitrary character quota, forced exact equivalence, column contribution ranking or DIM/Profile adoption** is a success criterion.
 
-**NEXT: a new, separate owner “Proceed” authorizes C1 ONLY** (sections 01–03, 25 SOSA source-bearing/mixed cells). This approval did **not** start C1. Stop after C1, before C2, the proposed donor grouping comparison, SAPIENT or any DIM/Profile/client change.
+**NEXT: a new, separate owner “Proceed” authorizes C2 ONLY** (section 04, 39 source-bearing/mixed SOSA cells, followed by same original Excel refresh/check including C1). C1 is complete; C3/C4, grouping comparison, SAPIENT and DIM/Profile/client activities are not authorized.
