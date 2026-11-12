@@ -1,3 +1,11 @@
+# CURRENT — NATIVE DONOR GROUPING COMPARISON PLAN PREPARED ONLY (12 November 2026)
+
+**Owner review pending:** [New separate, compact plan](PLAN_Donor_Native_High_Level_Information_Groupings_v0.1_12NOV2026.md) proposes N1 original ISA / The Open Group SOSA high-level information-grouping inventory, then a separately authorized N2 comparison. **The plan alone was prepared; neither step has been executed or approved.** Earlier source-type groupings and candidate concept studies are inputs, not donor-native categories. [Complete pre-plan historical snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves original PITON, README, C4 master and same Excel at \`013df96\`; pre-C1/C2/C3/C4 archives remain accessible.
+
+**Canonical master unchanged since C4:** one JSON, BOTH CSV mirrors, BOTH Markdown comparisons and the SAME editable 26-sheet Excel retain **346×15 verified saved-cell parity, zero lag**. ISA's six original questions and The Open Group SOSA's owner-accepted PARTIAL/nine source holds remain. No new model/Profile adoption, original-source coverage, master row edits, SAPIENT Step18, client or deployment work. **ONE NEXT:** owner approve or amend plan; separate authorization required for N1.
+
+---
+
 # CURRENT — C4 completed; SAME original 26-sheet XLSX independently verified with zero lag (12 November 2026)
 
 **C4 COMPLETE, separately published and independently verified (12 November 2026).** Owner-authorized C4 reviewed **95 ISA-derived topic rows**, reconciled **33** The Open Group SOSA source-bearing/mixed comparison cells (**16,137 → 8,459 characters, about 48% shorter**) and individually corrected **15** mixed `Not assessed here` prefixes. Together C1–C4 corrected **118** source-bearing/mixed SOSA summaries and all **31** misleading mixed prefixes (4+8+4+15), retaining **211** genuinely unassessed placeholders without inventing equivalents. Mechanical review of **316** populated original Integrated Sensor Architecture (ISA) cells found no justified ISA rewriting; **six native ISA source-definition questions remain open**. Every prior case, donor and original G2/G3 native source ledger, its edition/normative standing and negative-equivalence holds remain intact.
