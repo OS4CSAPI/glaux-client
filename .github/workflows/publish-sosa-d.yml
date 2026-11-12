@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    name: Publish one consolidated G2-7T packet to SAME Excel workbook
+    name: Publish G3-N2 original v1 DSDM/IDL qualified source lineage to SAME Excel
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -42,10 +42,10 @@ jobs:
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
             Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7T_Workbook_Validation_11NOV2026.json \
-            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Workbook_Validation_11NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Source_Comparison_and_Holds_11NOV2026.json
           if git diff --cached --quiet; then echo "No new complete source-qualified workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): publish G2-7T 50 original AV-2 glossary donor cells in same saved Excel"
+          git commit -m "research(dim-v2): publish G3-N2 30 edition-qualified SOSA native DSDM/IDL donor cells in SAME Excel"
           git push origin HEAD:research/dim-profile-v2
       - name: Confirm actual remote commit contains published result
         run: |

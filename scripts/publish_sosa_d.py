@@ -2998,5 +2998,221 @@ def publish_g2_7t():
     print("PASS G2-7T 77 glossary defs, eight native pointers unexamined, 50 SOSA cells and all 346x15 saved Excel; SHA "+sha)
     return sha
 
+
+def publish_g3_n2():
+    """Source-qualified 2022 SOSA v1 DSDM/IDL lineage into SAME original 26-sheet master.
+
+    2023 C239 native byte/edition equivalence remains explicitly UNVERIFIED.
+    This is one G3-N2 publisher, not a general model adoption or OpenAPI audit.
+    """
+    from html import escape, unescape
+    itemname="SOSA_G3_N2_Source_Comparison_and_Holds_11NOV2026.json"
+    inventname="SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json"
+    idlname="SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json"
+    reportname="SOSA_G3_N2_Workbook_Validation_11NOV2026.json"
+    expected_before="46d12624bcdf23c017421ad84262c5bb4761bba4b47181f6ac874f38d60ec9f0"
+    m=load(MASTER); base=load(LEDGER); z=load(itemname)
+    inv=load(inventname); idl=load(idlname)
+    check_source(m,base)
+    need(m["currentWorkbookSha256"]==expected_before
+         and m["workbookSnapshot"]["checkpoint"]=="SOSA-G2-7T-CANONICAL-VERIFIED"
+         and m["workbookSnapshot"]["currently_matches_readable_view"],
+         "G2-7T same workbook verified original source checkpoint")
+    need(len(inv["items"])==262 and inv["count_by_group"]==
+         {"DIV1":117,"DIV2":58,"DIV3MSG":53,"DIV3SUPPORT":34},
+         "2022 original PDF 262 source headings independently inventoried")
+    need(len(idl["files"])==227 and idl["source_idl_file_count"]==227
+         and idl["internal_reference_check"]["unresolved_include_basename_count"]==0,
+         "227 original IDL files and native include target inventory")
+    need(z["source_edition_grade"].endswith("C239_ED1_1_IDENTICAL_NATIVE_BYTES_UNVERIFIED")
+         and not z["DIM_Profile_adopted"] and len(z["local_holds"])==15,
+         "2022 source-native with explicit 2023 edition holds")
+    mappings=z["qualified_existing_row_mappings"]
+    need(len(mappings)==30,"exactly 30 source-qualified 2022 v1 lineage comparisons")
+    valid={x["id"] for x in inv["items"]}|{x["id"] for x in idl["files"]}
+    seen=set();mapped={}
+    for item in mappings:
+        label=item["label"]
+        matches=[r for r in m["rows"] if r["label"]==label]
+        need(len(matches)==1 and label not in seen,
+             "one approved master row per source-qualified comparison "+label)
+        seen.add(label)
+        need(len(item["source_item_ids"])>0
+             and all(x in valid for x in item["source_item_ids"])
+             and not item["DIM_Profile_adopted"]
+             and item["C239_native_bytes_verified"] is False,
+             "original source IDs, edition boundary and adoption held "+label)
+        row=matches[0];previous=row["display"][8]
+        need("G3-N2(v1-2022):" not in previous,"packet already published "+label)
+        new=(previous+" · G3-N2(v1-2022): "+item["native_source_meaning"]
+             +" ["+item["relation"]+"; "+item["negative_equivalence_boundary"]+"]")
+        need(len(new)<32767,"Excel 32767-character cell boundary "+label)
+        row["display"][8]=new
+        row["G3_N2_source_correspondence"]={
+            "source_item_ids":item["source_item_ids"],
+            "relation":item["relation"],
+            "native_source_meaning":item["native_source_meaning"],
+            "negative_equivalence_boundary":item["negative_equivalence_boundary"],
+            "edition_grade":"2022 Edition 1.0/v1 lineage; C239 2023 byte identity NOT verified",
+            "C239_exact_native_bytes_verified":False,
+            "previous_sosa_cell_value":previous,
+            "DIM_Profile_adopted":False}
+        mapped[label]=new
+    need(len(mapped)==30 and len(seen)==30,"30 distinct existing donor cells")
+    positions=[i for i in range(2,len(m["review_grid"]))
+               if i not in set(m["review_sections"])]
+    need(len(positions)==len(m["rows"])==329,"all old master row positions preserved")
+    for pos,row in zip(positions,m["rows"]):
+        need(m["review_grid"][pos][14]==row["label"],
+             "original master candidate-label and location "+row["label"])
+        if row["label"] in mapped:
+            m["review_grid"][pos][8]=mapped[row["label"]]
+    m["workbookSnapshot"]["G3_N2_affected_row_ids"]=[
+        r["row_id"] for r in m["rows"] if r.get("G3_N2_source_correspondence")]
+    for filename in ("Master_Donor_Concept_to_DIM_Crosswalk.csv",
+                     "ISA_Correction_Review_07NOV2026.csv"):
+        with (D/filename).open("w",encoding="utf-8",newline="") as output:
+            csv.writer(output,lineterminator="\r\n").writerows(m["review_grid"])
+    for filename in ("Master_Donor_Concept_to_DIM_Crosswalk.md",
+                     "ISA_Correction_Review_07NOV2026.md"):
+        source=(D/filename).read_text(encoding="utf-8")
+        def amend(match):
+            tr=match.group(0)
+            cells=list(re.finditer(r"<td>(.*?)</td>",tr,re.S))
+            if len(cells)!=15:return tr
+            label=unescape(cells[14].group(1))
+            if label not in mapped:return tr
+            target=cells[8]
+            return tr[:target.start(1)]+escape(mapped[label],quote=True)+tr[target.end(1):]
+        changed_html=re.sub(r"<tr>.*?</tr>",amend,source,flags=re.S)
+        need(changed_html!=source and changed_html.count("G3-N2(v1-2022):")>=30,
+             "30 source-qualified readable comparison entries "+filename)
+        changed_html=re.sub(r"^# Current[^\n]*",
+           "# Current 329×15 donor-to-DIM master — G3-N2 source-qualified 2022 v1 SOSA DSDM/IDL lineage; C239 Ed1.1 native equivalence held (11 November 2026)",
+           changed_html,count=1)
+        (D/filename).write_text(changed_html,encoding="utf-8")
+    check_source(m,base)
+    earlier=load("SOSA_G2_7T_Workbook_Validation_11NOV2026.json")
+    before=(D/BOOK).read_bytes()
+    need(digest(before)==expected_before==earlier["workbook_sha256"],
+         "exact G2-7T previously verified original workbook bytes")
+    with zipfile.ZipFile(io.BytesIO(before)) as oldbook:
+        need(oldbook.testzip() is None,"old original workbook ZIP CRC")
+        paths=old.sheetpaths(oldbook)
+        need(len(paths)==26,"original 26 worksheets")
+        styles,sty=old.newstyles(oldbook.read("xl/styles.xml"))
+        register_rows=register_g2_7l(m)
+        for idx,row in enumerate(m["rows"],1):
+            for packet in ("G2_7M","G2_7N","G2_7O","G2_7P",
+                           "G2_7Q","G2_7R","G2_7S","G2_7T","G3_N2"):
+                ev=row.get(packet+"_source_correspondence")
+                if not ev:continue
+                register_rows[idx][9]+="; "+"; ".join(ev["source_item_ids"])
+                register_rows[idx][10]+="; "+ev["relation"]
+                if packet=="G3_N2":
+                    register_rows[idx][11]="2022 v1 source model comparison only; 2023 C239 edition original and DIM/Profile adoption HELD"
+        overview=[
+          ["SOSA G3-N2 DSDM + IDL 2022 v1 source lineage","Original 2022 Edition1.0 PDF+227 IDL; 2023 C239 original byte-equivalence UNVERIFIED"],
+          ["Actual PDF source inventory","117 DIV1 entities/associations,58 DIV2 measurements,53 DIV3 messages,34 shared types"],
+          ["Native IDL original sources","227 .idl files, all includes resolve; no compiler conformance"],
+          ["SELECTIVE source-native semantics","30 source-qualified comparisons in 57 referenced original source items"],
+          ["2022 Ed1.0 source native date","April2022 original PDF; C239 Ed1.1 June/Sept2023 reference same v1 basenames only"],
+          ["SOSA own model semantics","Sensor/Component, Host/Platform, Health/State/Mode, BIT, network, native message structures"],
+          ["No C239 native equivalence","Publisher binary/source manifest and six original management OpenAPI schemas unexamined"],
+          ["Coverage limits","262 heading names inventoried, not 262 complete detailed audits; 20 original figures not fully checked"],
+          ["Unresolved precise holds","15 native access/semantics/edition/figure/IDL compiler holds"],
+          ["Master/Excel increment","30 existing source-qualified SOSA column I cells, no new rows or donor/case/DIM changes"],
+          ["SAME original editable Excel","26 sheets, 346x15 saved exact parity; historical 22 sheets preserved"],
+          ["C239 heading standing","189/192 sampled or inline, two substantively unread, one restricted"],
+          ["No DIM/Profile adoption","No classes, chassis, fields, cardinalities, SHALL, software Command or device conformance"],
+          ["Next distinct owner Proceed","G3-N3 first three native management OpenAPI candidates; C239 originals must be edition-confirmed"]]
+        replacement={"Master Crosswalk":m["review_grid"],"DIM Register":register_rows,
+                     "Summary":overview,"Validation":overview}
+        newdata={"xl/styles.xml":styles}
+        for name,matrix in replacement.items():
+            newdata[paths[name]]=matrix_to_xml(matrix,sty,main=name=="Master Crosswalk",
+                sections=m["review_sections"] if name=="Master Crosswalk" else ())
+        preserved={name:digest(oldbook.read(path)) for name,path in paths.items()
+                   if name not in replacement}
+        output=io.BytesIO()
+        with zipfile.ZipFile(output,"w") as archive:
+            for info in oldbook.infolist():
+                archive.writestr(info,newdata.get(info.filename,oldbook.read(info.filename)))
+    saved=output.getvalue()
+    with zipfile.ZipFile(io.BytesIO(saved)) as book:
+        need(book.testzip() is None,"new saved ZIP CRC")
+        need(list(old.sheetpaths(book))==list(paths),"SAME original 26 worksheets in order")
+        for name,sha in preserved.items():
+            need(digest(book.read(paths[name]))==sha,"22 unchanged original worksheets "+name)
+        for p in book.namelist():
+            if p.endswith((".xml",".rels")):ET.fromstring(book.read(p))
+            if p.startswith("xl/worksheets/") and p.endswith(".xml"):
+                need(not any(x.get("t")=="e" for x in ET.fromstring(book.read(p)).iter(q("c"))),
+                     "no saved Excel error values")
+    savedrows=old.readcells(saved,"Master Crosswalk")
+    for i,line in enumerate(m["review_grid"],1):
+        for j,v in enumerate(line,1):
+            need(savedrows.get(addr(i,j),"")==old.val(v),"saved exact 346x15 grid value "+addr(i,j))
+    previous=old.readcells(before,"Master Crosswalk")
+    changed=sorted(k for k in set(savedrows)|set(previous)
+                   if savedrows.get(k,"")!=previous.get(k,""))
+    need(len(changed)==30 and all(re.fullmatch(r"I\d+",x) for x in changed),
+         "exactly 30 SOSA column I saved cells only")
+    need(preserved==earlier["exact_original_untouched_xml_sha256"],
+         "original untouched historical worksheets preserved across all packets")
+    (D/BOOK).write_bytes(saved)
+    sha=digest(saved)
+    m["currentWorkbookSha256"]=sha
+    m["currentEvidenceCheckpoint"]="SOSA-G3-N2_2022_ORIGINAL_V1_MODEL_LINEAGE_SAME_26_SHEET_EXCEL"
+    m["workbookSnapshot"].update({
+        "checkpoint":"SOSA-G3-N2-2022-V1-LINEAGE-CANONICAL-VERIFIED",
+        "sha256":sha,"currently_matches_readable_view":True,
+        "lag":"NONE: 346x15 saved XLSX source equals JSON/both CSV/both MD",
+        "refreshed_cell_count":30,"validation_file":reportname})
+    m["SOSAEvidence"]["G3_N2"]={
+        "sourceReview":"SOSA_G3_N2_Original_2022_DSDM_IDL_and_Master_Reconciliation_11NOV2026.md",
+        "sourceLedger":itemname,"original_DSDM_PDF_inventory":inventname,
+        "original_v1_IDL_inventory":idlname,
+        "source_qualified_existing_row_matches":30,
+        "2022_native_DSDM_section_headings":262,"native_IDL_files":227,
+        "C239_Ed1_1_native_bytes_equal":False,"precise_holds":15,
+        "Excel_lag_cells":0,"DIM_Profile_adopted":False}
+    m["SOSAReviewCompletion"]["G3_N2_XLSX_lag"]=0
+    m["SOSAReviewCompletion"]["status"]="ACTIVE_OPEN__G3_N2_2022_LINEAGE_PARTIAL__2023_NATIVE_EDITION_UNVERIFIED"
+    nextstep="Only a separate owner Proceed starts G3-N3 original C239 System Manager, Generic Module and Security Services management OpenAPI source check; if originals unavailable, precise PARTIAL holds, not S251 substitution"
+    m["SOSAReviewCompletion"]["next_on_owner_proceed"]=nextstep
+    m["nextOwnerAction"]=nextstep
+    m["publicationPolicy"]="L23 source-first G3-N2 30 original 2022 v1 lineage SOSA I cells; same saved 26-sheet Excel and both mirrors; 2023 C239 native edition identity held"
+    save(MASTER,m)
+    result={
+      "date":"2026-11-11","step":"SOSA-G3-N2-2022-V1-DATA-MODEL-IDL-LINEAGE",
+      "result":"ORIGINAL_SOURCE_BOUNDED_PARTIAL_AND_SAME_26_SHEET_EXCEL_PARITY_PASS",
+      "workbook_sha256":sha,"previous_workbook_sha256":expected_before,
+      "workbook_sheets":list(paths),"refreshed_sheets":list(replacement),
+      "exact_original_untouched_xml_sha256":preserved,
+      "original_source_edition":"2022 Edition1.0 DSDM PDF + native v1 IDL",
+      "C239_Ed1_1_native_byte_equivalence_verified":False,
+      "DSDM_heading_items_inventoried":262,"actual_IDL_files_inspected":227,
+      "IDL_include_targets_missing":0,"source_qualified_existing_sosa_cells":30,
+      "source_qualified_original_source_ids":len({x for item in mappings for x in item["source_item_ids"]}),
+      "source_holds":15,"grid_rows":346,"columns":15,
+      "information_rows":329,"original_historical_sheet_count":22,
+      "changed_saved_cells":changed,
+      "C239_registered_headings_sampled_or_inline":189,
+      "C239_unread":2,"C239_restricted":1,
+      "checks":{"all_saved_346x15_cells_match":True,"both_CSVs_equal":True,
+          "both_markdown_tables_equal":True,"same_26_sheets":True,
+          "22_historical_sheets_preserved":True,"only_SOSA_I_cells_changed":True,
+          "saved_zip_xml_valid":True,"no_error_cells":True,
+          "no_DIM_Profile_adoption":True},
+      "limits":["Original 2022 Edition 1.0 model lineage, NOT verified C239 2023 native byte equivalence",
+        "Inventoried native headings/IDL declarations are not exhaustive semantic clause audits",
+        "No adopted DIM class/chassis/cardinality or CSAPI Profile SHALL, no device runtime conformance"],
+      "next":nextstep
+    }
+    save(reportname,result)
+    print("PASS G3-N2 2022 v1 partial original source, 30 qualified SOSA cells, all saved 346x15 same original Excel; SHA "+sha)
+    return sha
+
 if __name__=="__main__":
-    publish_g2_7t()
+    publish_g3_n2()

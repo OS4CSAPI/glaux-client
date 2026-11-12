@@ -1,0 +1,537 @@
+{
+  "schema": "SOSA-G3-N2-v1-model-IDL-source-correspondence-v0.1",
+  "date": "2026-11-11",
+  "authorized_scope": "G3-N2 native DSDM/IDL only; STOP before management OpenAPI G3-N3",
+  "donor": "The Open Group SOSA (not W3C SOSA/SSN)",
+  "source_edition_grade": "2022_ED1_0_ORIGINAL_READABLE_AND_V1_IDL_ORIGINAL_ACCESSIBLE__C239_ED1_1_IDENTICAL_NATIVE_BYTES_UNVERIFIED",
+  "original_source_bases": {
+    "dsdm_pdf": "sosa_techstd_v1_dsdm(1).pdf",
+    "dsdm_sha256": "35fe3e9aeb3bc3316a43592782fc686254b6583565d0cc43f000d28374ef39f7",
+    "dsdm_PDF_pages": 152,
+    "idl_zip": "sosa_techstd_v1_dsdm_idl(1).zip",
+    "idl_sha256": "ef53831fc246a8af72d217c83d63d507972e237443254342927f7a0257ae85cc",
+    "C239_AppendixB_names_match": true,
+    "C239_edition_semantic_equivalence": false
+  },
+  "source_ledgers": [
+    "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+    "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json"
+  ],
+  "counts": {
+    "PDF_DIV1_section_heads": 117,
+    "PDF_DIV2_section_heads": 58,
+    "PDF_DIV3_message_groups": 53,
+    "PDF_DIV3_support_sections": 34,
+    "PDF_DIV1_figures": 20,
+    "original_IDL_files": 227,
+    "IDL_enum_declarations": 18,
+    "IDL_struct_declarations": 195,
+    "IDL_typedef_declarations": 239,
+    "missing_IDL_include_targets": 0,
+    "source_qualified_existing_master_row_mappings": 30,
+    "local_source_holds": 15
+  },
+  "qualified_existing_row_mappings": [
+    {
+      "label": "Manufacturer name",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Manufacturer has a native name, linked through ProductManufacturer to Product",
+      "negative_equivalence_boundary": "Defines modelled manufacturer, not a verified manufacturer of an installed sensor; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.67",
+        "SOSA-V1-DSDM-1.1.3.84"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Product model designation",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Product and ProductInstance distinguish a manufactured product from a component instance",
+      "negative_equivalence_boundary": "Product.name does not establish a distinct equipment model number or part number; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.82",
+        "SOSA-V1-DSDM-1.1.3.83"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Persistent System identifier",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Sensor includes elementID with a native unbounded-integer identifier type",
+      "negative_equivalence_boundary": "No globally persistent URI or across-installation identity guarantee follows from elementID; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.89",
+        "SOSA-V1-DSDM-1.2.52"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Described sensing System / arrangement",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Sensor and SensorComponent model a sensing entity and its constituent component associations",
+      "negative_equivalence_boundary": "2022 source-specific sensing construct is not an approved universal whole-System chassis; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.89",
+        "SOSA-V1-DSDM-1.1.3.92",
+        "SOSA-V1-DSDM-1.1.3.15"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Physical constituent",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Component and ModuleImplementation distinguish composed physical/software units and logical function realization",
+      "negative_equivalence_boundary": "Component_ can be physical or software; no one-to-one physical equipment implication; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.15",
+        "SOSA-V1-DSDM-1.1.3.68",
+        "SOSA-V1-DSDM-1.1.3.69"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Hosting platform / station context",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Platform and HostPlatform represent a physical host and a sensor-to-host association",
+      "negative_equivalence_boundary": "Design relation is not a witnessed installation or generic chassis superclass; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.54",
+        "SOSA-V1-DSDM-1.1.3.78"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Composition member exposure and source attribution",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: SensorComponent association and SensorComponent_Info identify a component within a Sensor",
+      "negative_equivalence_boundary": "IDL member identity is not proof of separate discoverable CSAPI child endpoints; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.92",
+        "SOSA-V1-DSDM-1.3.3.25",
+        "SOSA-V1-IDL:SensorComponent_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Reported physical parent/child attachment relationships",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: HostPlatform and SensorComponent are explicitly typed associations between sensor, host and components",
+      "negative_equivalence_boundary": "No proven physical attachment topology or runtime parent-frame relationship; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.54",
+        "SOSA-V1-DSDM-1.1.3.92"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Network instance and connection context",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Network, NetworkConnection, NetworkPort and NetworkInterface represent planned connectivity",
+      "negative_equivalence_boundary": "No live route, active network participant or observed link state; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.70",
+        "SOSA-V1-DSDM-1.1.3.71",
+        "SOSA-V1-DSDM-1.1.3.73",
+        "SOSA-V1-DSDM-1.1.3.74"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Network-interface IP addresses",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: NetworkInterface.ip typed IPv4AddressMeasurement is represented in NetworkInterface_Info optional address structure",
+      "negative_equivalence_boundary": "IPv4 design/IDL field is not actual assigned address or up/down telemetry; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.73",
+        "SOSA-V1-DSDM-1.2.26",
+        "SOSA-V1-IDL:NetworkInterface_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Component capability and readiness report",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Component health, operationalState and mode are distinct native component characteristics",
+      "negative_equivalence_boundary": "No universal readiness or current capability catalogue can be deduced from those fields; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.15",
+        "SOSA-V1-DSDM-1.1.3.89"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Reported component operating condition",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Sensor and Component_ carry separate healthStatus and operationalState; logical state enums differ",
+      "negative_equivalence_boundary": "Do not collapse health, operational lifecycle, configuration and mode; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.15",
+        "SOSA-V1-DSDM-1.1.3.89",
+        "SOSA-V1-DSDM-1.2.22",
+        "SOSA-V1-DSDM-1.2.23",
+        "SOSA-V1-IDL:GeneralOperationalStateEnum_Type.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Supported operating mode",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: ComponentModeEnum provides explicit TACTICAL and DEBUG member values",
+      "negative_equivalence_boundary": "Two native enumeration values are not universal supported modes or defaults; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.2.7",
+        "SOSA-V1-IDL:ComponentModeEnum_Type.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Source-reported operating mode",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: GetSensorMode has a response carrying SensorComponentMode_Info and SensorComponent_Info",
+      "negative_equivalence_boundary": "Source describes a message schema, not a sampled current mode from device; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.15",
+        "SOSA-V1-DSDM-1.3.2.34",
+        "SOSA-V1-IDL:GetSensorMode_Response.idl",
+        "SOSA-V1-IDL:SensorComponentMode_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Component configuration version",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Component_ includes a version attribute typed DescriptionMeasurement",
+      "negative_equivalence_boundary": "Generic Component.version is not explicitly configuration-parameter revision; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.15"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Requested current component configuration message",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: GetSensorConfig and GetSystemManagerConfig native queries use SensorConfig_Info and SystemManagerConfig_Info structures",
+      "negative_equivalence_boundary": "IDL messages are not verified public CSAPI request routes or current device responses; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.3.2.29",
+        "SOSA-V1-DSDM-1.3.2.37",
+        "SOSA-V1-IDL:GetSensorConfig_Response.idl",
+        "SOSA-V1-IDL:SystemManagerConfig_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Latest built-in-test reported result",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: SensorBITResult has time/result and BitResults_Info includes status, results and timestamp",
+      "negative_equivalence_boundary": "No latest-result ordering or actual run outcome is established; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.90",
+        "SOSA-V1-DSDM-1.2.4",
+        "SOSA-V1-DSDM-1.3.2.28",
+        "SOSA-V1-IDL:BitResults_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Declared command interface",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: SensorRestartCommand and UpdateSensorModeCommand model controller/action associations with request/response messages",
+      "negative_equivalence_boundary": "Native DSDM command message is not an authenticated/executable CSAPI Command; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.95",
+        "SOSA-V1-DSDM-1.1.3.117",
+        "SOSA-V1-DSDM-1.3.2.38",
+        "SOSA-V1-DSDM-1.3.2.49"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Declared command parameter",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: UpdateMode_Request includes ComponentMode_Info for a component mode change",
+      "negative_equivalence_boundary": "Specific native mode parameter does not define universal CSAPI parameter types; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.116",
+        "SOSA-V1-DSDM-1.3.2.47",
+        "SOSA-V1-IDL:UpdateMode_Request.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Declared command result",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: RestartSensor response is described with a Message_Info header-only response",
+      "negative_equivalence_boundary": "No general success/failure payload or CSAPI result contract follows; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.3.2.38",
+        "SOSA-V1-IDL:RestartSensor_Response_Msg.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Source-qualified event identity and reference",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: LogEntry has an elementID and classification of a logged entry",
+      "negative_equivalence_boundary": "LogEntry ID is not an observation-event URI or an event reference across systems; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.63"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Event occurrence time",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: LogEntry time is typed UTCTime_SecondsMeasurement measured from POSIX epoch",
+      "negative_equivalence_boundary": "Log time is not necessarily the time the real-world event occurred; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.63",
+        "SOSA-V1-DSDM-1.2.55"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Requested time-keyed operating-state history",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: LogEntry, LogData and GetLoggerData describe logging and retrieval structures",
+      "negative_equivalence_boundary": "No specific timestamp-keyed operating-state history API is established; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.60",
+        "SOSA-V1-DSDM-1.1.3.63",
+        "SOSA-V1-DSDM-1.3.2.19"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Orientation relative to attached parent",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: AntennaInstallation includes a relative orientation typed Relative3DAngularMeasurement",
+      "negative_equivalence_boundary": "Antenna mounting description is not a reported device-to-parent attitude; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.3",
+        "SOSA-V1-DSDM-1.2.41"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Position relative to attached parent",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: AntennaInstallation includes position typed VehicleFrontMidlineXYZPositionMeasurement",
+      "negative_equivalence_boundary": "Vehicle-frame mounting position is not measured live component offset; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.3",
+        "SOSA-V1-DSDM-1.2.56"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Reported current geographic position of the component",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Platform position uses WGS84PositionMeasurement with latitude/longitude/height",
+      "negative_equivalence_boundary": "Modelled platform location does not establish reported current component location; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.78",
+        "SOSA-V1-DSDM-1.2.58"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Power-source classification",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: PowerBus and PowerPort distinguish an electrical power source interface and component connection",
+      "negative_equivalence_boundary": "No battery/mains/solar classification or measured reserve follows; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.80",
+        "SOSA-V1-DSDM-1.1.3.81"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Declared custom data structure",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: Native DIV-3 Message Support defines SensorComponent_Info and related typed records",
+      "negative_equivalence_boundary": "IDL struct is a 2022 SOSA message type, not adopted CSAPI custom JSON schema; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.3.3.25",
+        "SOSA-V1-IDL:SensorComponent_Info.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Declared built-in or custom value type",
+      "relation": "RELATED",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: DIV-2 specifies source-native state enums and identifier/position measurements",
+      "negative_equivalence_boundary": "Native SOSA enums cannot be transferred as generic profile mandatory types; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.2.22",
+        "SOSA-V1-DSDM-1.2.23",
+        "SOSA-V1-DSDM-1.2.52",
+        "SOSA-V1-IDL:GeneralOperationalStateEnum_Type.idl"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    },
+    {
+      "label": "Reported value and associated uncertainty",
+      "relation": "PARTIAL",
+      "native_source_meaning": "2022 v1 SOSA DSDM lineage: SignalCharacterization and SignalDetection use confidence typed ConfidenceMeasurement",
+      "negative_equivalence_boundary": "Signal-specific confidence is not a universal observation uncertainty quantity; 2022 Edition 1.0 model lineage; exact C239 Edition 1.1 attached bytes unverified; no adopted DIM/Profile rule or observed device operation",
+      "source_item_ids": [
+        "SOSA-V1-DSDM-1.1.3.100",
+        "SOSA-V1-DSDM-1.1.3.101",
+        "SOSA-V1-DSDM-1.2.8"
+      ],
+      "DIM_Profile_adopted": false,
+      "C239_native_bytes_verified": false
+    }
+  ],
+  "local_holds": [
+    {
+      "code": "Q01",
+      "subject": "2022 v1 PDF refers to 2021 C212 Edition1.0, whereas C239 Edition1.1 Appendix B names the v1 DSDM; no C239-published attachment byte or version fingerprint",
+      "status": "EDITION_EQUIVALENCE_UNVERIFIED",
+      "id": "SOSA-G3-N2-Q01",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q02",
+      "subject": "2022 IDL ZIP exact printed v1 basename matches C239 B.1 but C239 publisher archive/manifest absent; no C239 byte-equivalence claim",
+      "status": "COMPANION_EQUIVALENCE_UNVERIFIED",
+      "id": "SOSA-G3-N2-Q02",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q03",
+      "subject": "117 native DIV1 entity/association sections identified but all 117 field/cardinality tables not semantically audited individually",
+      "status": "INVENTORIED_PARTIAL",
+      "id": "SOSA-G3-N2-Q03",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q04",
+      "subject": "58 DIV2 measurement sections identified but full units/enumeration bounds not independently certified for all 58",
+      "status": "INVENTORIED_PARTIAL",
+      "id": "SOSA-G3-N2-Q04",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q05",
+      "subject": "53 DIV3 message-content families and 34 support sections located; semantic line-by-line audit limited to source-cited examples",
+      "status": "INVENTORIED_PARTIAL",
+      "id": "SOSA-G3-N2-Q05",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q06",
+      "subject": "20 DIV1 diagrams PDF57–61 inventoried; complete visual geometry, association arrows and diagram/text discrepancies not certified",
+      "status": "FIGURE_PARTIAL",
+      "id": "SOSA-G3-N2-Q06",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q07",
+      "subject": "227 native IDL files decode and parse as type declarations with all include names present, but compiler and full field semantically checked each file not demonstrated",
+      "status": "STRUCTURE_INVENTORIED_PARTIAL",
+      "id": "SOSA-G3-N2-Q07",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q08",
+      "subject": "Native IDL message data structures reflect 2022 DSDM designs, not audited C239 management OpenAPI endpoints, HTTPS, authentication or executable CSAPI commands",
+      "status": "CROSS_PROTOCOL_NOT_EQUIVALENT",
+      "id": "SOSA-G3-N2-Q08",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q09",
+      "subject": "2025 S251 Snapshot3 new model/API files available in separate upload; no cross-edition semantic audit authorized within G3-N2",
+      "status": "EDITION_OUT_OF_SCOPE",
+      "id": "SOSA-G3-N2-Q09",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q10",
+      "subject": "2022 DSDM uses explicit source cardinality and optional-IDL sequences, not automatically DIM/Profile adoption; distinctions require later owner reconciliation",
+      "status": "NO_MODEL_ADOPTION",
+      "id": "SOSA-G3-N2-Q10",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q11",
+      "subject": "C239 registered headings still 189 at least sampled/inline, 2 substantively unread, 1 restricted; source-file inventory does not change C239 heading credit",
+      "status": "SOURCE_COVERAGE_NOT_FULL",
+      "id": "SOSA-G3-N2-Q11",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q12",
+      "subject": "Six original C239-specific management OpenAPI JSON files remain to assess under separately authorized G3-N3/G3-N4",
+      "status": "OPEN_NATIVE_APIS",
+      "id": "SOSA-G3-N2-Q12",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q13",
+      "subject": "Original DIV1 Sensor/component definitions may express typed associations but are neither witnessed physical installations nor a universal chassis",
+      "status": "SCOPE_RELATIONSHIP_LIMIT",
+      "id": "SOSA-G3-N2-Q13",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q14",
+      "subject": "Model message types and response/request patterns do not establish deployed schema or device conformance; no runtime evidence",
+      "status": "NO_RUNTIME_CONFORMANCE",
+      "id": "SOSA-G3-N2-Q14",
+      "disposition": "HELD"
+    },
+    {
+      "code": "Q15",
+      "subject": "Native IDL codegen/compilation not performed; resolving the 227 local include targets does not certify valid IDL toolchain behavior",
+      "status": "NO_COMPILER_CONFORMANCE",
+      "id": "SOSA-G3-N2-Q15",
+      "disposition": "HELD"
+    }
+  ],
+  "coverage_limits": [
+    "All source heading IDs/names/page locations inventoried, but enumerated does not mean clause-complete semantic audit",
+    "Individual IDs referenced by 30 mappings selectively examined in PDF, plus corresponding IDL structures; others remain source-structure inventoried",
+    "Exact C239 Ed1.1 native-file byte equality unverified, source meanings edition qualified"
+  ],
+  "source_C239_headings_unchanged": {
+    "registered": 192,
+    "at_least_read_or_sampled": 189,
+    "unread": 2,
+    "restricted": 1
+  },
+  "DIM_Profile_adopted": false,
+  "independent_real_device_conformance": false,
+  "next": "G3-N3 only on distinct owner Proceed; if 2023 OpenAPI originals remain unavailable, audit only verified original edition artifacts, mark PARTIAL; do not claim 2025 S251 equals C239"
+}
