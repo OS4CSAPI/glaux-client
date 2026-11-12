@@ -1,3 +1,15 @@
+# CURRENT — N2 DONOR-NATIVE ORGANIZATIONAL COMPARISON COMPLETE; OWNER REVIEW NEXT (12 November 2026)
+
+**Owner-authorized N2 ONLY completed.** [One combined N1 inventory and N2 source-qualified purpose comparison](Donor_Native_High_Level_Information_Groupings_Comparison.md) now contains original **nine ISA and twelve The Open Group SOSA nonexclusive organizational axes**, compared through **13 analytic seams** (related/partial, complementary, no established direct match, source-detail unreviewed) and checked against the four already qualified equipment/source cases. No exact universal class equivalence, source-proven conflict, DIM/Profile adoption or executable transformation was inferred. The **N1 text is preserved below the appended N2 finding**, not replaced; earlier N2 pending banners are historical.
+
+**Source and preservation:** source meaning, native source IDs, editions, standing (Rule/Recommendation/Permission/Observation/Future versus descriptions) and holds remain. Original The Open Group SOSA **PARTIAL—OWNER ACCEPTED** with nine groups of primary-source holds, including original 2023 native companions; ISA six exact DMS definition questions remain. Source C239 §5.7 versus Appendix B.1/B.2 discrepancy unchanged. [Full pre-N2 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-n2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at `41167be407bc76df6bd95d135b881f8984dad2ae`, with pre-N1/pre-plan and pre-C1/2/3/4 archives also accessible.
+
+**No new original-source-qualified row-level correspondence warranted; canonical master unchanged.** One JSON, TWO CSV mirrors, TWO Markdown comparisons and SAME 26-sheet editable Excel remain at latest independent C4 saved-grid **346×15 parity / zero lag**. This does NOT claim a new N2 workbook binary check, comprehensive original source coverage, or deployed device conformance. **Plan N1 + N2 COMPLETE at bounded interpretive scope. STOP.**
+
+**ONE NEXT OWNER ACTION: review and accept/amend N2 findings and separately choose whether to authorize SAPIENT donor planning/Step18.** No automatic SAPIENT, DIM/Profile classes, client work or deployment. Older N1 and plan-preparation headers below are historical.
+
+---
+
 # CURRENT — N1 SOURCE-INVENTORY COMPLETE; N2 REQUIRES SEPARATE PROCEED (12 November 2026)
 
 **One owner-authorized step executed: N1 ONLY.** [N1 original ISA and The Open Group SOSA native grouping inventory](Donor_Native_High_Level_Information_Groupings_Comparison.md) documents **nine** nonexclusive original ISA organizing axes and **twelve** nonexclusive original C239 SOSA axes with original edition, direct targeted source locators, existing stable ledger IDs, Rule/definition/descriptive/held distinctions and original-source access limitations. These are source organization **inventory entries**, not adopted model classes or a cross-donor grouping comparison. **N2 NOT STARTED; SAPIENT Step18 NOT STARTED.**
