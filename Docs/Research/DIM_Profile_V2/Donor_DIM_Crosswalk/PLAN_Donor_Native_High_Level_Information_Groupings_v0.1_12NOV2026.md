@@ -2,7 +2,7 @@
 
 **Prepared:** 12 November 2026, Profile Rewrite 27  
 **Status:** **PLAN PREPARED FOR OWNER REVIEW ONLY — NOT APPROVED OR EXECUTED.** This is a separate, compact candidate study following the completed C1–C4 source-faithful ISA/SOSA readability work, and before any separately authorized SAPIENT donor research. Preparation of this plan does not authorize Step N1, Step N2, SAPIENT Step18, model adoption, Profile requirements, client design, or deployment.  
-**Repository/branch:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), \`research/dim-profile-v2\`; source baseline \`013df960146b3d5e29ca93dde80024362426532c\`.  
+**Repository/branch:** [OS4CSAPI/glaux-client](https://github.com/OS4CSAPI/glaux-client), `research/dim-profile-v2`; source baseline `013df960146b3d5e29ca93dde80024362426532c`.  
 **Preserved complete pre-plan originals:** [Browse archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at the same baseline commit (the historical branch is not another canonical master).
 
 ## Why this small study is worth doing
@@ -46,7 +46,7 @@ Candidate model adoption remains at the existing owner checkpoints: Step24 for r
 
 ## Preservation, current status, and one next decision
 
-**Before preparing this plan,** the repository's complete pre-plan research state was preserved in [archive/dim-crosswalk-pre-native-grouping-plan-20261112](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at \`013df960146b3d5e29ca93dde80024362426532c\`. The **four prior pre-C1/pre-C2/pre-C3/pre-C4 archives remain accessible**. This planning-only change must update **only this separate plan and existing governing PITON/readme status**, not earlier historical plan text, the source registers or the canonical six master files.
+**Before preparing this plan,** the repository's complete pre-plan research state was preserved in [archive/dim-crosswalk-pre-native-grouping-plan-20261112](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) at `013df960146b3d5e29ca93dde80024362426532c`. The **four prior pre-C1/pre-C2/pre-C3/pre-C4 archives remain accessible**. This planning-only change must update **only this separate plan and existing governing PITON/readme status**, not earlier historical plan text, the source registers or the canonical six master files.
 
 **Master at preparation:** 329 information rows and 15 columns, a 346×15 comparison grid with 15 topic dividers, 26 original Excel sheets, two CSV and two Markdown mirrors, independently validated after C4 with **zero comparison-cell lag** (see [C4 saved-workbook evidence](SOSA_C4_Workbook_Validation_12NOV2026.json) and [independent GitHub check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43285479644)). **ISA six unresolved definitions and SOSA nine grouped source holds continue to apply.** No grouping analysis, original-source audit expansion, donor transition, row-level mapping changes, DIM/Profile adoption, UI work, code change, or device conformance has occurred in this plan-preparation step.
 
