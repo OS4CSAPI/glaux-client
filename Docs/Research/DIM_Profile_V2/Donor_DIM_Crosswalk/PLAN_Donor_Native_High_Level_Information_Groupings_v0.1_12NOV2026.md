@@ -1,3 +1,13 @@
+# CURRENT OWNER DECISION — TWO-STEP NATIVE GROUPING PLAN APPROVED (12 November 2026)
+
+**Owner approval:** In Profile Rewrite 27 the owner replied **“Proceed”** to the pending request to approve or amend this proposed plan. This authorizes the **plan as written** (bounded N1 ISA / The Open Group SOSA native grouping inventory; separately gated N2 semantic comparison), **NOT N1 execution**. The previous step specified that approval and N1 execution require separate directions. No original-source reading, groupings inventory, comparisons, donor transition, master edits or model/Profile adoption occurred at this decision checkpoint.
+
+**ONE NEXT OWNER STEP:** a **fresh, separate “Proceed” authorizes N1 only** under the approved plan, subject to confirming live research HEAD, original-source and edition evidence, preserved holds and canonical master/Excel standing. Stop before N2. SAPIENT Step18 remains separately unauthorized. The unchanged plan-preparation text below is historical where it says “proposed/not approved”; this newest decision controls.
+
+**Preservation:** [Pre-approval exact GitHub commit](https://github.com/OS4CSAPI/glaux-client/commit/8a45204ad3e2a87e085a8f7ca833f9b265f001cf); [full pre-plan archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). C4 canonical JSON, both CSV and both Markdown mirrors, and the SAME original editable 26-sheet Excel retain the independently checked 346×15 grid and zero lag. ISA six unresolved original questions and nine The Open Group SOSA source-hold groups remain open.
+
+---
+
 # PROPOSED — Donor-native high-level information-grouping comparison
 
 **Prepared:** 12 November 2026, Profile Rewrite 27  

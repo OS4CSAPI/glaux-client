@@ -1,3 +1,9 @@
+# CURRENT — DONOR-NATIVE GROUPING PLAN APPROVED, N1 AWAITS SEPARATE PROCEED (12 November 2026)
+
+The owner approved the [two-stage ISA / The Open Group SOSA donor-native grouping comparison plan](PLAN_Donor_Native_High_Level_Information_Groupings_v0.1_12NOV2026.md) in Profile Rewrite 27. This **approves a plan but does not execute N1 or N2**; SAPIENT and DIM/Profile/client design remain outside the decision. Existing canonical comparison files and the SAME 26-sheet Excel remain unchanged from C4, independently verified at all 346×15 saved cells with zero lag; six ISA original-source questions and nine SOSA hold groups carry forward. [Pre-approval version](https://github.com/OS4CSAPI/glaux-client/commit/8a45204ad3e2a87e085a8f7ca833f9b265f001cf) · [pre-plan full archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). **NEXT: one new explicit Proceed authorizes N1 only. STOP before N2.**
+
+---
+
 # CURRENT — NATIVE DONOR GROUPING COMPARISON PLAN PREPARED ONLY (12 November 2026)
 
 **Owner review pending:** [New separate, compact plan](PLAN_Donor_Native_High_Level_Information_Groupings_v0.1_12NOV2026.md) proposes N1 original ISA / The Open Group SOSA high-level information-grouping inventory, then a separately authorized N2 comparison. **The plan alone was prepared; neither step has been executed or approved.** Earlier source-type groupings and candidate concept studies are inputs, not donor-native categories. [Complete pre-plan historical snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-native-grouping-plan-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves original PITON, README, C4 master and same Excel at `013df96`; pre-C1/C2/C3/C4 archives remain accessible.
