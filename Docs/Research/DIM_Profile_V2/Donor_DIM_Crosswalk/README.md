@@ -1,3 +1,11 @@
+# CURRENT — SOSA G4-F 192-original-heading/master reconciliation complete; G5-D owner gate NEXT (11 November 2026)
+
+**Original C239 heading-accounting corrected:** **191/192 at least source-text or original-pointer contacted** (65 original G1 selected read + 124 newly source-credited G2 + direct inspection of original §6 PDF64 and §6.2 PDF70 in G4); **restricted Appendix C not read**. This is **NOT** 191 complete clause audits and does not include the eight separately referenced 2023 native original files. [Full stable-heading/source/hold ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) · [plain-English reconciliation and recommendation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md).
+
+**Canonical work current without needless republishing:** 776 SOSA packet correspondences across 117 rows and 1,583 original-source ID references independently reconciled with zero missing IDs and zero model adoptions; previous donor and case evidence preserved. One JSON, both CSV, both Markdown and SAME editable 26-sheet master Excel remain exactly the verified G3-N2 Git blobs; actual saved 346×15 data cells, 22 untouched historical sheets, SHA256 `47c9df11ef64e112c8892e87c749930f08552c43a0e8e06508bb34ef8a04903c`, zero lag. Snapshot summary still says G3-N2/189; G4 newer heading accounting is in the governing documentation/ledger only. **SOSA ACTIVE/OPEN, SAPIENT Step18 BLOCKED; no DIM/Profile adoption.** Only separate owner **Proceed** authorizes **G5-D owner bounded PARTIAL-or-continue disposition**, not donor transition.
+
+---
+
 # CURRENT — SOSA G3-N4 original C239 Chassis/PIC/RTE normative native API originals still HELD (11 November 2026)
 
 Original **C239 Edition1.1 (2023)** normative Appendix B.5–B.7 filenames verified (PDF390–391); **zero 2023 native JSON content retrieved or audited**. The separate 2025 **S251 Snapshot3** source contains three later management API JSON files, but uses a changed B.7 filename and has a **printed B.5-versus-ZIP member name difference**. This is source-edition evidence, not an established C239 equivalence. [G3-N4 source evidence and eight exact holds](SOSA_G3_N4_C239_Remaining_OpenAPI_Source_Access_11NOV2026.json) · [original source/access/edition review](SOSA_G3_N4_C239_Chassis_PIC_RTE_OpenAPI_Source_Review_11NOV2026.md).
