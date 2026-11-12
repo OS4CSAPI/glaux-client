@@ -1,5 +1,43 @@
 # Plan — ISA/SOSA donor-cell readability and comparable presentation (12 November 2026)
 
+## Completed C2 — source presentation plus original Excel verification (12 November 2026)
+
+C2 was authorized as one bounded owner “Proceed” and is **COMPLETE**. Original section 04 (140 information rows) yielded **39** source-bearing/mixed SOSA cells revised, including **eight** misleading mixed `Not assessed here` prefixes. The **101 plain unassessed placeholders** and all ISA, other donor, source case, row/section/divider and detailed original packet evidence remain unchanged.
+
+**Concise, source-qualified comparisons:** affected SOSA text declined from **38,800 to 10,612 characters** (approximately **73%**). Material relations, conditions, edition notes, normative standing, design versus live/runtime, capability versus executed control, and negative-equivalence boundaries remain in each concise summary and the corresponding native per-row source evidence. No new source auditing, C239 2023 native byte equivalence, SAPIENT, or DIM/Profile adoption occurred.
+
+| Representative C2 topic | Original chars | C2 chars | Kept critical distinction |
+| --- | ---: | ---: | --- |
+| Declared component capability catalogue | 3,338 | 346 | Architecture capability versus ISA declared services |
+| Declared command interface | 2,758 | 346 | V1.0/Future scope versus real executable command |
+| Issued control request | 1,962 | 323 | External Task/internal Assignment versus performed control |
+| Component capability and readiness report | 3,657 | 410 | Design/configuration versus current readiness |
+| Required/recommended capability support | 3,759 | 324 | Native Rules/Recommendations versus universal Profile SHALL |
+| Component property-value report | 2,020 | 272 | Health/Status/Mode versus ISA property-value message |
+
+**SAME Excel workbook refreshed and independently verified:** exactly **64** SOSA I-column saved cell changes compared with the G3-N2 binary (25 C1 plus 39 C2); **all 346 × 15 actual saved cells**, both CSV mirrors, both Markdown tables and 26 original worksheet names/order were checked. All 22 historical worksheet XMLs retain their G3-N2 SHA256 values; no error cells, no lost source evidence, and **Excel lag ZERO**. The new exact workbook SHA256 is `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`. [C2 validation report](SOSA_C2_Workbook_Validation_12NOV2026.json) · [original publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43272860091) · [independent readback PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784). The older Step06 checker was corrected to recognize concise cells while still independently testing source IDs, original file holds and saved workbook values; the later run passed.
+
+**Archived versions:** the full verbose [pre-C1 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) and the direct browsable [pre-C2 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) are distinct fixed research reference branches, not new canonical masters. The pre-C2 archive has the correct older Excel lag of 25 cells. New archive refs with direct file links are mandatory before C3/C4 edits.
+
+**STOP / ONE NEXT:** C1+C2 complete; C3/C4 still not executed. A new explicit owner “Proceed” authorizes **C3 only** (sections 05–06, 21 source-bearing/mixed cells), leaving C4, donor grouping, SAPIENT and DIM/Profile model work untouched.
+
+---
+
+## Pre-C2 preserved original snapshot (new C2 archival checkpoint)
+
+[Browse the original pre-C2 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) — `archive/dim-crosswalk-pre-c2-20261112` is fixed at source commit [`17f3538`](https://github.com/OS4CSAPI/glaux-client/commit/17f35384950616299ba1904ba097c6205fd22b25), BEFORE any C2 cell changes. Its 25 C1 updates remain present, with the previous G3-N2 Excel checkpoint intentionally 25 cells older.
+
+| Archived pre-C2 artifact | Direct source file |
+| --- | --- |
+| Original pre-C2 329-row JSON | [View Master_Donor_Concept_to_DIM_Crosswalk.json](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json) |
+| Original pre-C2 CSV | [View Master_Donor_Concept_to_DIM_Crosswalk.csv](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.csv) |
+| Original pre-C2 CSV mirror | [View ISA_Correction_Review_07NOV2026.csv](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv) |
+| Original pre-C2 Markdown | [View Master_Donor_Concept_to_DIM_Crosswalk.md](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) |
+| Original pre-C2 Markdown mirror | [View ISA_Correction_Review_07NOV2026.md](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md) |
+| Original pre-C2 26-sheet Excel | [View Master_Donor_Concept_to_DIM_Crosswalk.xlsx](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) |
+
+Continue using the [pre-C1 original archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) when the fully verbose ISA/SOSA original cells are needed. Both archive refs are unmodified research snapshots. For C3 and C4, make another browsable archive BEFORE making substantive edits, preserving the original data and workbook identity.
+
 ## Easy-access ORIGINAL pre-C1 master — archived separately, not overwritten
 
 **Permanent recovery point for the unshortened donor cells:** [Browse the original pre-C1 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) (archive branch `archive/dim-crosswalk-pre-c1-20261112`, created from original commit [`2f04bf4`](https://github.com/OS4CSAPI/glaux-client/commit/2f04bf49405f5bae941f3efddea3cba538be1051)). This is the entire repository at its **pre-C1 state**, including all original long SOSA text and the **same original editable Excel**. The archive branch is a **historical, read-only reference, not a second active canonical master**; **do not move its ref or edit it**. The original full commit SHA remains the fixed recovery reference even if a branch reference changes unexpectedly.
@@ -15,7 +53,7 @@
 
 **Required practice before any further C2/C3/C4 comparison edits:** preserve a **separately named, browseable pre-change archive ref** to the actual branch HEAD; verify its master JSON, both CSV, both Markdown and same original XLSX Git blob IDs; place direct links in the existing PITON and README. This is **one lightweight Git ref per substantive checkpoint, not cloned active files, additional workbooks or duplicate research infrastructure**. Prior archive links remain accessible after later edits. Continue keeping one current canonical master, preserving all source records, and reporting exact Excel lag.
 
-**Status: C1 VERIFIED COMPLETE (12 November 2026); C2–C4 NOT STARTED.** Owner subsequently separately authorized C1; only C1 has been executed and verified. Exactly 25 SOSA presentation cells in canonical JSON/CSV/Markdown changed; the same Excel, original source evidence and source/model decisions have not changed. This is an editorial/traceability correction plan, **not new SOSA research, donor ranking, a model-adoption gate, or SAPIENT work**. Execution requires a **separate, subsequent explicit owner authorization for C1**, and one such authorization covers only one numbered step.
+**Status: C1 + C2 VERIFIED COMPLETE (12 November 2026); C3 + C4 NOT STARTED.** Owner separately authorized C1 and C2 in individual bounded Proceedings; both have been executed and verified. C1 changed 25 and C2 changed 39 SOSA presentation cells in canonical JSON/CSV/Markdown; the SAME Excel now matches all 64 changed cells, while original evidence and model decisions remain unchanged. This is an editorial/traceability correction plan, **not new SOSA research, donor ranking, a model-adoption gate, or SAPIENT work**. Execution requires a **separate, subsequent explicit owner authorization for C1**, and one such authorization covers only one numbered step.
 
 ## C1 actual result — completed and verified 12 November 2026
 
@@ -58,7 +96,7 @@ The accumulated SOSA G2/G3 packets often appended a separate, fully caveated not
 
 **Illustrative target, not a replacement decision:** A physical-constituent cell might read: “SOSA Hardware Element/PIC is a specialized physical constituent; logical Module and software RTE are not automatically installed devices [C239 §§4–5, G2-2/G2-7T; 2022 DSDM G3-N2 RELATED]. Does not establish independently exposed CSAPI Systems.” All detailed chassis, connector, profile, conditional-rule and edition findings remain in their original packet evidence, not erased. Actual wording is determined row-by-row from existing source records during an authorized step.
 
-## Execution plan — four bounded, source-evidence-aware steps; **C1 complete; C2–C4 pending**
+## Execution plan — four bounded, source-evidence-aware steps; **C1+C2 complete; C3+C4 pending**
 
 Each step first reads existing packet/source records **only as needed** for affected rows; it does not re-audit C239 or expand donor scope. A step is complete only after changed rows and exact holds are recorded, canonical JSON and **both CSV/both Markdown mirrors** are synchronized, GitHub readback succeeds and Excel checkpoint/lag is precisely labeled. The same workbook is refreshed at substantive checkpoints below; do not run unchanged verification workflows repeatedly. If a category proves materially more complex than counted, stop at the agreed boundary and seek a **specific** owner-approved resize rather than forcing silent truncation.
 

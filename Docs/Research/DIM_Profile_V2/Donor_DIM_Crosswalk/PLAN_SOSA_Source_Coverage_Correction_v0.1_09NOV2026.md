@@ -1,4 +1,12 @@
-# CURRENT — G5-D OPTION A RECORDED: SOSA PARTIAL—OWNER ACCEPTED; NO AUTOMATIC NEXT DONOR (12 November 2026)
+# CURRENT — C2 presentation and original Excel saved parity verified; C3 NEXT ONLY (12 November 2026)
+
+The owner-approved SOSA original-source correction closed as **PARTIAL—OWNER ACCEPTED** at G5-D with all nine original-source hold families. Separate ISA/SOSA display work C1 (25 cells) and C2 (39 cells) is now verified, with one canonical JSON/both CSV/both Markdown/SAME 26-sheet Excel synchronized at all 346×15 cells; 22 historical sheets preserved. Saved workbook SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`. [C2 workbook validation](SOSA_C2_Workbook_Validation_12NOV2026.json) · [independent PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784).
+
+[Pre-C1 source archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) · [Pre-C2 source archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/). **ONE NEXT owner authorization: C3 only** under [approved readability plan](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md), after a new pre-C3 archive. No automatic C4, donor-grouping comparison, SAPIENT or DIM/Profile/Glaux work.
+
+---
+
+## Historical SOSA source-correction status (superseded for current routing)
 
 **Owner decision (12 November 2026): OPTION A ACCEPTED.** The Open Group Sensor Open Systems Architecture (SOSA), C239 Edition 1.1 (2023), has been dispositioned **PARTIAL—OWNER ACCEPTED**, **not comprehensively source-complete**. The completed G4-F research and the G5-D options remain in [the G4-F original-source/master reconciliation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md), [192-heading and original-source hold ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) and [G5-D owner decision packet](SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md). The owner has approved **this G5-D status/closeout publication only**, not the next donor, DIM classes, a chassis, cardinalities, CSAPI Profile SHALLs, source equivalences, live hardware commands or client/deployment work.
 

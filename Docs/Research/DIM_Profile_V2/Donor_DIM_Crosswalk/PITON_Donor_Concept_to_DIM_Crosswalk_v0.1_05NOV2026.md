@@ -1,4 +1,32 @@
-# LATEST GOVERNING RECOVERY — Profile Rewrite 25 — C1 COMPLETED; C2 AWAITS SEPARATE PROCEED (12 November 2026)
+# CURRENT VERIFIED C2 CLOSEOUT — C3 NEXT ONLY (12 November 2026)
+
+**Research branch:** `research/dim-profile-v2`, verified pre-status HEAD `06c28714865b7a7047d5f5f746ce8dda085154b0` (re-fetch actual branch HEAD on recovery). **C1 and C2 are COMPLETE, independently checked**: C1 reconciled 25 source-bearing SOSA cells in sections 01–03, C2 reconciled 39 in section 04, including four plus eight mixed `Not assessed here` labels. C2 affected-cell text went **38,800 → 10,612 characters (73% shorter)**; the change is source-preserving presentation, not new original-source coverage.
+
+**One canonical master and SAME original Excel are NOW SYNCHRONIZED:** canonical JSON, BOTH CSV, BOTH Markdown comparisons and the SAME **26-sheet** editable XLSX match at all **346×15 actual saved comparison cells**. All **64** changes from G3-N2 (25 C1 plus 39 C2) are in SOSA column I; 22 historical sheets and unchanged ISA/other donor/case values were independently verified. Current saved workbook SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; [C2 saved-cell record](SOSA_C2_Workbook_Validation_12NOV2026.json) · [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43272860091) · [independent checker PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784). **Excel comparison lag ZERO**; the older G3-N2 source-heading metadata (189) and newer G4 original heading-contact count (191/192) remain distinct source-coverage snapshots, not spreadsheet lag.
+
+**Source and owner standing:** The Open Group SOSA remains **PARTIAL—OWNER ACCEPTED**, NOT comprehensive. All nine grouped source holds (including eight original C239 2023 native companions, restricted Appendix C, external/figure/edition audits) and six ISA original questions remain intact in source ledgers, with original 2022 DSDM/IDL semantics NOT asserted byte-equivalent to C239 2023. **Zero owner adoption** of new DIM classes/fields/chassis/cardinalities or CSAPI Profile SHALLs; no actual source-device command conformance. The 776 packet contributions across 117 master rows and 1,583 referenced source IDs remain source-evidence, not donor votes.
+
+**TWO DIRECTLY BROWSABLE ORIGINAL ARCHIVES:** [pre-C1 fully verbose master](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) at commit `2f04bf4`; [pre-C2 master after C1, before C2](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) at immutable `17f35384950616299ba1904ba097c6205fd22b25`. The pre-C2 snapshot correctly has the **older G3-N2 Excel (25-cell lag)**; today's current live master and XLSX have zero lag. Both archives are separate reference branches and must NOT be mutated, renamed or used as competing current masters.
+
+**ONE NEXT OWNER ACTION:** a **new, separate “Proceed” authorizes C3 ONLY** (sections 05–06, 28 information rows with 21 source-bearing/mixed SOSA cells). Before editing C3, create and verify another named, browsable **pre-C3 archive** and place links in the existing PITON and README. C3 updates canonical JSON + both CSV/Markdown and labels the XLSX's temporary exact lag; C4 remains the planned final same-XLSX checkpoint. **STOP** before C3 without explicit authorization, C4, donor-native-grouping study, SAPIENT Step18, DIM/Profile reconciliation/adoption or Glaux UI/deployment.
+
+
+## Pre-C2 preserved original snapshot (new C2 archival checkpoint)
+
+[Browse the original pre-C2 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) — `archive/dim-crosswalk-pre-c2-20261112` is fixed at source commit [`17f3538`](https://github.com/OS4CSAPI/glaux-client/commit/17f35384950616299ba1904ba097c6205fd22b25), BEFORE any C2 cell changes. Its 25 C1 updates remain present, with the previous G3-N2 Excel checkpoint intentionally 25 cells older.
+
+| Archived pre-C2 artifact | Direct source file |
+| --- | --- |
+| Original pre-C2 329-row JSON | [View Master_Donor_Concept_to_DIM_Crosswalk.json](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json) |
+| Original pre-C2 CSV | [View Master_Donor_Concept_to_DIM_Crosswalk.csv](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.csv) |
+| Original pre-C2 CSV mirror | [View ISA_Correction_Review_07NOV2026.csv](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv) |
+| Original pre-C2 Markdown | [View Master_Donor_Concept_to_DIM_Crosswalk.md](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md) |
+| Original pre-C2 Markdown mirror | [View ISA_Correction_Review_07NOV2026.md](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md) |
+| Original pre-C2 26-sheet Excel | [View Master_Donor_Concept_to_DIM_Crosswalk.xlsx](https://github.com/OS4CSAPI/glaux-client/blob/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) |
+
+Continue using the [pre-C1 original archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) when the fully verbose ISA/SOSA original cells are needed. Both archive refs are unmodified research snapshots. For C3 and C4, make another browsable archive BEFORE making substantive edits, preserving the original data and workbook identity.
+
+## Historical C1-complete PITON checkpoint (superseded for current routing)
 
 ## Easy-access ORIGINAL pre-C1 master — archived separately, not overwritten
 

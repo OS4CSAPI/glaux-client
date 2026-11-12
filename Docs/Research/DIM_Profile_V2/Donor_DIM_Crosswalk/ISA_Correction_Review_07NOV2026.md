@@ -1,3 +1,11 @@
+# CURRENT — C2 source-qualified comparison and same 26-sheet Excel synchronized (12 November 2026)
+
+C1 (25) and C2 (39) original-source-qualified The Open Group SOSA presentation cells are now reconciled. Canonical JSON, BOTH CSV, BOTH Markdown and SAME original 26-sheet editable Excel agree at all 346×15 saved values, with 22 original historical sheets preserved and zero Excel lag. Saved SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; [C2 workbook validation](SOSA_C2_Workbook_Validation_12NOV2026.json) · [independent verification PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784). All detailed original source evidence, ISA/other donor/case values, edition caveats and DIM/Profile non-adoption remain intact. [Pre-C1 original archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) · [Pre-C2 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/).
+
+**ONE NEXT owner authorization = C3 only**; preserve and link a new pre-C3 original archive first. The following original G3-N2 and pending-workbook narration is historical and superseded for current routing, but retained for provenance.
+
+---
+
 # CURRENT — C2 source-qualified readability applied, Excel publisher checkpoint pending (12 November 2026)
 
 C1 (25) + C2 (39) source-bearing SOSA summaries are now reconciled from their original packet evidence, including **eight C2 mixed-status corrections**. Source, original-case, other-donor, ISA and model non-adoption records are unchanged. **This text/JSON/CSV comparison is 64 changed SOSA column-I cells ahead of last saved G3-N2 Excel until the same workbook publisher independently verifies the 26-sheet workbook.** [C2-approved plan](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md). C3 remains a separately owner-authorized step.

@@ -1,3 +1,13 @@
+# L62 — preserve browsable versions and independently verify source-faithful comparison cells (12 November 2026)
+
+The C2 owner step archived the complete current research crosswalk as [pre-C2 browseable snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) before substantive edits, retaining separately the [pre-C1 originals](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/). Future C3/C4 substantive changes require another fixed, named archive of the current canonical JSON, both CSV/Markdown and same Excel, linked from existing PITON/README. A named original archive is more accessible than relying on hidden commit history; it is a reference only, never another canonical master.
+
+C2 reconciled 39 source-bearing The Open Group SOSA configuration/control cells (38,800 → 10,612 characters) and eight mixed assessment prefixes, retaining exact original 2022/2023 provenance and native source/correspondence records. The existing canonical publisher refreshed the SAME original 26-sheet XLSX for exactly 64 source-only SOSA I-cell differences (25 C1 plus 39 C2), and a separately updated independent read-only checker verified all 346×15 saved values, both mirrors and 22 historical sheets. The old checker had wrongly demanded the prior verbose text remain inside current cells; independent verification now tests source records and negative-equivalence boundaries instead, without waiving source holds.
+
+**No new source coverage or DIM/Profile adoption.** SOSA remains PARTIAL—OWNER ACCEPTED and C3 alone requires a new separate owner Proceed.
+
+---
+
 # L61 — comparison cells should show native relation, not reproduce a growing audit log (12 November 2026)
 
 The owner-authorized C1 step condensed 25 SOSA cells across source-case topic sections 01–03 (27,191 → 7,755 characters), retaining every original source-qualified per-row G2/G3 correspondence and native ledger evidence. Four mixed `Not assessed here` prefixes were reconciled to the actual previously examined relation; 41 fully unassessed placeholders and ISA were not rewritten without cause. Keep source-specific 2022 native data model separate from 2023 C239, preserve negative equivalence, and never infer runtime/CSAPI or DIM approval from presentation changes. **Cross-format parity and XLSX saved-cell parity are distinct:** JSON/both CSV/both Markdown now agree, but same Excel still G3-N2 and exactly **25** changed SOSA cells older, to be refreshed/independently checked at C2. [Plan + six before/after examples](PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md).

@@ -1,4 +1,12 @@
-# CURRENT — C1 source-backed ISA/SOSA comparison edits COMPLETE; C2 only next (12 November 2026)
+# CURRENT — C2 source-qualified ISA/SOSA comparison and same Excel VERIFIED (12 November 2026)
+
+[Read governing donor PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [C1–C4 plan, C2 complete](Donor_DIM_Crosswalk/PLAN_ISA_SOSA_Donor_Cell_Readability_and_Parity_12NOV2026.md). C1 revised 25 cells and C2 revised 39 SOSA cells, with both original source and negative evidence retained. The canonical JSON/both CSV/both Markdown and **same original editable 26-sheet Excel are now synchronized**: all 346×15 saved comparison cells checked, 22 historical sheets unchanged, workbook SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`; [C2 validation](Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json) · [independent check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784).
+
+The [pre-C1 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) preserves the original verbose SOSA entries and [pre-C2 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) preserves the actual later C1 checkpoint. The Open Group SOSA remains **PARTIAL—OWNER ACCEPTED**, not comprehensively reviewed; no DIM/Profile adoption or SAPIENT authorized. **NEXT separately authorized owner Proceed = C3 ONLY**, and a new archived pre-C3 snapshot is mandatory before edits. C4, donor grouping, SAPIENT, DIM/Profile/client work remain blocked.
+
+---
+
+## Historical C1 status (superseded)
 
 ## Easy-access ORIGINAL pre-C1 master — archived separately, not overwritten
 

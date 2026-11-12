@@ -1,4 +1,12 @@
-# CURRENT — C1–C4 READABILITY PLAN APPROVED; C1 NOT STARTED; SOSA PARTIAL—OWNER ACCEPTED (12 November 2026)
+# CURRENT — C2 verified and original XLSX synchronized; C3 next ONLY (12 November 2026)
+
+**Accessible original versions (verified):** [Pre-C1 archived full master](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c1-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) and [pre-C2 archived master](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-c2-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/); the new C2-verified current files remain at the canonical research branch. See [governing PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) for direct archive artifact links.
+
+C1/C2 source-faithful SOSA comparison update: **25 + 39 = 64** edited SOSA I-column cells, 12 mixed prefixes correctly qualified from original sources; no ISA, donor, equipment case, row or source evidence loss. One JSON, both CSV, both Markdown and same original 26-sheet editable XLSX now match at all 346×15 saved cells; 22 historical worksheets preserved, SHA256 `c6982c994b36fe7a50a2e13e4ad2c2e6441206b18545dbdc58662e148d7c64b7`, **Excel lag ZERO**. [Verified workbook record](SOSA_C2_Workbook_Validation_12NOV2026.json) · [independent PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43273390784). The Open Group SOSA remains **PARTIAL—OWNER ACCEPTED** with all native-file, external, restricted and figure source holds. **NEXT separate owner Proceed = C3 only** after creating a new browsable pre-C3 archive; no C4, SAPIENT or model/client work.
+
+---
+
+## Historical status (superseded for routing)
 
 **Owner decision (12 November 2026): OPTION A ACCEPTED.** The Open Group Sensor Open Systems Architecture (SOSA), C239 Edition 1.1 (2023), has been dispositioned **PARTIAL—OWNER ACCEPTED**, **not comprehensively source-complete**. The completed G4-F research and the G5-D options remain in [the G4-F original-source/master reconciliation](SOSA_G4_F_Original_Corpus_and_Master_Reconciliation_11NOV2026.md), [192-heading and original-source hold ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) and [G5-D owner decision packet](SOSA_G5_D_Owner_Disposition_Decision_Packet_11NOV2026.md). The owner has approved **this G5-D status/closeout publication only**, not the next donor, DIM classes, a chassis, cardinalities, CSAPI Profile SHALLs, source equivalences, live hardware commands or client/deployment work.
 
