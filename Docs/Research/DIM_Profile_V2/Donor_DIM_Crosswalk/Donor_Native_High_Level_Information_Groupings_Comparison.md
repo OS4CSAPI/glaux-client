@@ -1,3 +1,11 @@
+# F2-5 — Source-qualified candidate-to-cell reconciliation prepared; saved color workbook pending (13 November 2026)
+
+The existing F2-1–F2-4 original-source evidence has been reconciled into **325 single-meaning donor-cell color decisions** and **67 explicit mixed/composite cells held WITHOUT a misleading fill**. Donor-column counts: ISA H 260 eligible / 38 held; SAPIENT G 50 eligible / 26 held; The Open Group SOSA I 15 eligible / 3 held. The canonical JSON records stable row IDs, original native source IDs, provisional status, the exact fill decision, and the reason no fill was applied where meanings differ. **Not assessed/NO_ESTABLISHED never mean native-only gray**, and no colors are applied to case, OGC or proposed-DIM cells.
+
+**SAVED EXCEL NOT YET PUBLISHED:** the 26-sheet living XLSX is still the SAP06 329-row snapshot; the current canonical JSON and two CSV/two Markdown comparisons have 337 rows. Eight added donor candidates await same-workbook insertion and actual saved-value and style verification. The protected original M00 must remain unchanged; no M01 or donor acceptance is authorized by this source-metadata checkpoint. F2-5 continues with the workbook publication and independent GitHub readback before it can be called complete.
+
+---
+
 # F2-4 COMPLETE — ISA 298-row symmetric specificity review (13 November 2026)
 
 **Owner-authorized F2-4 ONLY.** All **298 already-admitted ISA-origin candidate rows** were assessed under the same provisional **COMMON_CANDIDATE / SPECIALIZED_CANDIDATE / NATIVE_ONLY_EVIDENCE / UNRESOLVED_CANDIDATE** rubric used for The Open Group SOSA and SAPIENT, using original-source identifiers and previously audited native semantics. **66 common, 194 specialized, 32 native-only and 6 unresolved** is a distribution of *candidate-row classifications*, **not** evidence ISA has 298 distinct mandatory fields, nor a numerical comparison of the three donors' source richness. The [source/coverage ledger](ISA_Coverage_Register_07NOV2026.json) stores **298 individually identified classification records** (`F2_4_symmetric_candidate_review.records`), referenced by the corresponding original stable IDs in [canonical JSON](Master_Donor_Concept_to_DIM_Crosswalk.json); both preserve native standing, actual source record IDs, original source locators, prior review grade and proposed DIM nonadoption.
