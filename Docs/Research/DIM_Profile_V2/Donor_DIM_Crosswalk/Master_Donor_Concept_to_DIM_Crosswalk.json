@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
+  "currentWorkbookSha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -47810,17 +47810,17 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption. F2-2: three source-qualified specialized SOSA native rows in text comparison; same 26-sheet Excel SAP06 snapshot, three-row exact lag; no M00/color/adoption change. F2-3 109 source-item assessment, five new source-qualified specialized SAPIENT comparison candidates, text 337/354x15 vs unchanged SAP06 original XLSX 329/346x15; M00 immutable, no colors.",
-  "currentEvidenceCheckpoint": "F2_5_CLASSIFICATION_RECONCILED_PENDING_SAME_XLSX_SAVED_VERIFICATION",
+  "publicationPolicy": "F2-5 one canonical JSON/two CSV/two Markdown and SAME 26-sheet XLSX; 337 source-graded information rows, 354x15 values, 325 cell colors, 67 composite holds; 21 original history/source/case sheet XMLs byte preserved; no DIM/Profile adoption.",
+  "currentEvidenceCheckpoint": "F2_5_SAME_26_SHEET_COLOR_XLSX_SAVED_VALUES_AND_STYLES_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP06_BSI_TAXONOMY_ANNEX_A_D_97_TABLE_SOURCE_DEPTH_SAME_ORIGINAL_XLSX_VERIFIED",
-    "sha256": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
-    "information_rows": 329,
+    "checkpoint": "F2_5_SAME_26_SHEET_XLSX_VALUES_STYLES_VERIFIED",
+    "sha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c",
+    "information_rows": 337,
     "primary_reviewed": 480,
-    "currently_matches_readable_view": false,
-    "lag": "F2-5 metadata classification reconciliation complete; SAME original SAP06 saved XLSX still 329 rows/346x15 and eight source-qualified candidate rows behind current 337-row/354x15 text grid; no colors yet, awaiting qualified saved export.",
-    "textCheckpoint": "F2_3_SAPIENT_NATIVE_FIRST",
+    "currently_matches_readable_view": true,
+    "lag": "ZERO: 337 information rows / 354x15 saved grid, all eight F2-2/F2-3 donor candidates inserted; source-qualified 325 fills and explicit 67 composite holds",
+    "textCheckpoint": "F2_5_SOURCE_QUALIFIED_CANDIDATE_COLOR_PUBLICATION",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 15,
@@ -47839,7 +47839,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 26,
-    "validation_file": "SAP06_Workbook_Validation_13NOV2026.json",
+    "validation_file": "F2_5_Workbook_Validation_13NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -48971,7 +48971,11 @@
     "text_grid_rows": 354,
     "saved_xlsx_grid_rows": 346,
     "f2_3_shifted_prior_rows": 325,
-    "original_SAP06_shifted_prior_rows": 322
+    "original_SAP06_shifted_prior_rows": 322,
+    "color_cell_count": 325,
+    "mixed_source_cells_uncolored": 67,
+    "manual_M00_preserved": true,
+    "manual_M01_not_created": true
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -50919,7 +50923,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "F2-5 in progress: SAME 26-sheet living Excel must be rebuilt and saved styles/cells verified. STOP before any M01, SAPIENT SAP07 A/B decision, next donor, DIM/Profile or Glaux.",
+  "nextOwnerAction": "STOP after F2-5 for owner review. M00 remains preserved; separately owner-approved M01 manual snapshot may follow. SAPIENT SAP07 A/B still pending. No new donor, DIM/Profile adoption, Glaux code or deployment.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -51692,7 +51696,7 @@
   },
   "F2_5_color_reconciliation": {
     "date": "2026-11-13",
-    "status": "F2_5_CLASSIFICATION_RECONCILED__SAVED_XLSX_PUBLICATION_PENDING",
+    "status": "F2_5_SAVED_XLSX_GRID_COLOR_AND_LEGEND_VERIFIED__OWNER_REVIEW_STOP",
     "source_boundary": "Prior ISA/SOSA/SAPIENT original source grades and F2-1–F2-4 reconciliation only; NOT a new exhaustive source-corpus/field audit.",
     "method": "Color only donor cells with one source-qualified meaning and internally consistent candidate status. Mixed multi-native items remain explicitly held with no fill; UNASSESSED/NO_ESTABLISHED remain uncolored; no row-wide class fill or negative match inference.",
     "legend": {
@@ -55467,6 +55471,7 @@
     },
     "model_and_Profile_adopted": false,
     "original_M00_immutable": true,
-    "M01_created": false
+    "M01_created": false,
+    "workbook_sha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c"
   }
 }
