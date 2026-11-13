@@ -1,8 +1,11 @@
-name: Temporary SAP05 one-time canonical workbook publication
+name: Publish source-qualified SOSA canonical Excel checkpoint
 on:
   push:
-    branches: [research/dim-profile-v2]
-    paths: [.github/workflows/publish-sosa-d.yml]
+    branches:
+      - research/dim-profile-v2
+    paths:
+      - .github/workflows/publish-sosa-d.yml
+      - scripts/publish_sosa_d.py
 permissions:
   contents: write
 concurrency:
@@ -10,235 +13,42 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    name: Publish verified original 26-sheet SOSA crosswalk checkpoint
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
           ref: research/dim-profile-v2
-          fetch-depth: 2
+          fetch-depth: 0
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Integrate source-qualified SAP05 into canonical master and original Excel
-        shell: bash
+      - name: Compile and publish once (full saved-cell and preserved-sheet checks)
         run: |
-          set -euo pipefail
-          python - <<'PY'
-          import csv, hashlib, html, io, json, re, subprocess, zipfile, sys
-          from pathlib import Path
-          from xml.etree import ElementTree as ET
-          sys.path.insert(0,"scripts")
-          import isa22_closeout as old
-          D=Path("Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk")
-          ROOT=D.parent
-          BOOK=D/"Master_Donor_Concept_to_DIM_Crosswalk.xlsx"
-          MASTER=D/"Master_Donor_Concept_to_DIM_Crosswalk.json"
-          LEDGER=D/"SAP01_Original_Corpus_Coverage_12NOV2026.json"
-          REPORT=D/"SAP05_Original_Source_Review_12NOV2026.md"
-          VALID=D/"SAP05_Workbook_Validation_12NOV2026.json"
-          PREVIOUS_HASH="bd05dd0eba7068142f92cb3c3fe3b920f74aaba8b566a64322c09c165d9b88e3"
-          ARCHIVE_SHA="33876c1a5802c742b452b1831dd8c6a76d9345a8"
-          def need(ok,message):
-              if not ok: raise AssertionError("SAP05: "+message)
-          def digest(b): return hashlib.sha256(b).hexdigest()
-          def save(path,obj): path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-          def prefix(path,header): path.write_text(header+path.read_text(encoding="utf-8"),encoding="utf-8")
-          m=json.loads(MASTER.read_text(encoding="utf-8"))
-          l=json.loads(LEDGER.read_text(encoding="utf-8"))
-          packet=l["SAP05"]
-          mapped=packet["mappings"]
-          need(packet["status"].endswith("PUBLICATION_PENDING") and packet["original_table_count"]==18 and len(packet["original_table_ids"])==18,"bounded original audit staged")
-          need(len(packet["relevant_original_source_findings"])==22 and len(packet["exact_new_holds"])==8 and len(mapped)==42,"staged 19 source findings and 40 qualified comparisons")
-          need(len({x["row_id"] for x in mapped})==42,"unique stable row IDs")
-          need(m["currentEvidenceCheckpoint"]=="SAP04_BSI_STATUS_DETECTION_TABLES60_TO77_40_CELLS_SAME_26_SHEET_XLSX_VERIFIED","correct SAP03A source baseline")
-          need(len(m["rows"])==329 and len(m["review_grid"])==346 and len(m["columns"])==15 and len(m["review_sections"])==15,"unchanged source master shape")
-          need(m["columns"][6]["key"]=="SAPIENT" and m["columns"][-1]["key"]=="DIM","donor G and DIM rightmost")
-          need(len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73 and m["ISAEvidence"]["currentPrimaryReviews"]==480 and m["ISAEvidence"]["specificQuestions"]==6,"prior donor and case evidence")
-          grid_before=[r[:] for r in m["review_grid"]]
-          by_id={r["row_id"]:r for r in m["rows"]}
-          need(len(by_id)==329,"unique original row identifiers")
-          updates={}
-          for entry in mapped:
-              row=by_id[entry["row_id"]]
-              matching=[i for i,x in enumerate(grid_before) if x==row["display"]]
-              need(len(matching)==1,"stable current display row "+entry["row_id"])
-              i=matching[0]
-              new=entry["display"]
-              need(new!=row["display"][6] and len(new)<=32767,"new qualified SAPIENT text "+entry["row_id"])
-              addr="G"+str(i+1)
-              need(addr not in updates,"unique G address "+addr)
-              updates[addr]=new
-              row["display"][6]=new
-              m["review_grid"][i][6]=new
-              row["SAP05_source_first_correspondence"]={
-                "source_item_ids":entry["source_item_ids"],
-                "original_source_table_ids":list(dict.fromkeys(t for fid in entry["source_item_ids"] for t in next(x["source_table_ids"] for x in packet["relevant_original_source_findings"] if x["id"]==fid))),
-                "edition":"BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
-                "source_grade":"ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
-                "relation":entry["relation"],
-                "native_meaning":entry["native_meaning"],
-                "previous_sapient_cell_value":grid_before[i][6],
-                "source_qualified_display":new,
-                "negative_equivalence":"SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
-                "DIM_Profile_adopted":False,"not_runtime_conformance":True}
-          need(len(updates)==42,"42 source-qualified G cells")
-          for i in range(346):
-              for j in range(15):
-                  if j!=6 or ("G"+str(i+1)) not in updates:
-                      need(m["review_grid"][i][j]==grid_before[i][j],"no unapproved grid-cell change")
-          need([r for i,r in enumerate(m["review_grid"]) if i>1 and i not in set(m["review_sections"])]==[r["display"] for r in m["rows"]],"329 row objects and 15 topic dividers aligned")
-          
-          # Both exact CSV mirrors (same canonical 346x15 grid)
-          f=io.StringIO(newline="")
-          w=csv.writer(f,lineterminator="\n")
-          w.writerows(m["review_grid"])
-          csvdata=f.getvalue()
-          for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
-              (D/name).write_text(csvdata,encoding="utf-8")
-          need(list(csv.reader(io.StringIO(csvdata)))==m["review_grid"],"canonical vs CSV mirrors")
-          
-          # Edit exactly the 40 source-bearing G cells in existing readable HTML comparison tables.
-          source=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
-          begin=source.index("<tbody>")+len("<tbody>")
-          end=source.index("</tbody>",begin)
-          body=source[begin:end]
-          all_rows=list(re.finditer(r"<tr>.*?</tr>",body,re.S))
-          need(len(all_rows)==344,"15 dividers and 329 original rows in the readable table")
-          parts=[];pos=0;index=2;edited=0
-          for match in all_rows:
-              parts.append(body[pos:match.start()])
-              tr=match.group()
-              if '<th colspan="15">' in tr:
-                  need(index in m["review_sections"],"section divider unchanged")
-              else:
-                  cells=list(re.finditer(r"<td>(.*?)</td>",tr,re.S))
-                  need(len(cells)==15,"original 15-cell HTML row")
-                  need(html.unescape(cells[14].group(1))==grid_before[index][14],"unchanged DIM rightmost row alignment")
-                  addr="G"+str(index+1)
-                  if addr in updates:
-                      c=cells[6]
-                      need(html.unescape(c.group(1))==grid_before[index][6],"original readable SAPIENT cell")
-                      tr=tr[:c.start()]+"<td>"+html.escape(updates[addr],quote=True)+"</td>"+tr[c.end():]
-                      edited+=1
-              parts.append(tr);pos=match.end();index+=1
-          parts.append(body[pos:])
-          need(index==346 and edited==42,"all 42 exact readable cells updated")
-          table=source[:begin]+"".join(parts)+source[end:]
-          mdhead=("# CURRENT — SAP-05 original SAPIENT Task, Alert and Error Tables78–95 and SAME Excel verified (12 November 2026)\n\n"
-          "**18 original BSI tables** reviewed for SAP05 (cumulative 95/97 at original table depth); 22 source findings and eight exact new holds. **42 source-qualified existing SAPIENT column-G comparisons** are reflected in one canonical JSON, BOTH CSV mirrors, BOTH Markdown comparison views and SAME original 26-sheet editable Excel, with 346×15 saved-cell parity and zero lag. "
-          "[Original source report](SAP05_Original_Source_Review_12NOV2026.md) · [same workbook verification](SAP05_Workbook_Validation_12NOV2026.json) · [pre-SAP05 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap05-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
-          "No DIM classes, Profile constraints, hardware conformance or Glaux client changes were adopted; SAPIENT remains source-incomplete with original holds. Remaining forecast **low1 / most likely2 / high4** substantive Proceeds. **Next one owner Proceed: SAP06 §7 and Annexes only, STOP before SAP07.**\n\n---\n\n")
-          for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
-              (D/name).write_text(mdhead+table,encoding="utf-8")
-          need((D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text()==(D/"ISA_Correction_Review_07NOV2026.md").read_text(),"Markdown exact mirrors")
-          
-          # Modify only original Master Crosswalk sheet XML of SAME saved 26-sheet workbook.
-          before=BOOK.read_bytes()
-          need(digest(before)==PREVIOUS_HASH and m["currentWorkbookSha256"]==PREVIOUS_HASH,"prior verified workbook identity")
-          with zipfile.ZipFile(io.BytesIO(before)) as z:
-              need(z.testzip() is None,"original ZIP CRC")
-              sheets=old.sheetpaths(z)
-              need(len(sheets)==26 and sheets["Master Crosswalk"]=="xl/worksheets/sheet2.xml","original 26 sheets and Master Crosswalk sheet")
-              sheetpath=sheets["Master Crosswalk"]
-              root=ET.fromstring(z.read(sheetpath))
-              data=root.find(old.q("sheetData"))
-              need(data is not None,"Master Crosswalk sheetData")
-              existing_rows={r.get("r"):r for r in data if r.tag==old.q("row")}
-              for addr,value in updates.items():
-                  number=addr[1:]
-                  target=existing_rows[number]
-                  cells=[c for c in target if c.tag==old.q("c")]
-                  cell=next((c for c in cells if c.get("r")==addr),None)
-                  if cell is not None:
-                      for child in list(cell):cell.remove(child)
-                      cell.set("t","inlineStr")
-                  else:
-                      neighbour=next((c for c in cells if c.get("r") in ("F"+number,"H"+number)),None)
-                      attrs={"r":addr,"t":"inlineStr"}
-                      if neighbour is not None and neighbour.get("s") is not None:attrs["s"]=neighbour.get("s")
-                      cell=ET.Element(old.q("c"),attrs)
-                      others=list(target)
-                      where=next((i for i,c in enumerate(others) if c.tag==old.q("c") and re.match(r"[A-Z]+",c.get("r","")).group()>"G"),len(others))
-                      target.insert(where,cell)
-                  text=ET.SubElement(ET.SubElement(cell,old.q("is")),old.q("t"))
-                  text.set("{http://www.w3.org/XML/1998/namespace}space","preserve");text.text=value
-              replacement=ET.tostring(root,encoding="utf-8",xml_declaration=True)
-              untouched={info.filename:(digest(z.read(info.filename)),info.CRC) for info in z.infolist() if info.filename!=sheetpath}
-              out=io.BytesIO()
-              with zipfile.ZipFile(out,"w") as znew:
-                  for info in z.infolist(): znew.writestr(info,replacement if info.filename==sheetpath else z.read(info.filename))
-          saved=out.getvalue()
-          with zipfile.ZipFile(io.BytesIO(saved)) as z:
-              need(z.testzip() is None and old.sheetpaths(z)==sheets and len(z.namelist())==43,"saved CRC and original sheet inventory")
-              need(len(untouched)==42,"other original 42 ZIP members")
-              for name,(v,crc) in untouched.items():
-                  need(digest(z.read(name))==v and z.getinfo(name).CRC==crc,"unchanged ZIP member bytes/CRC: "+name)
-              for name in z.namelist():
-                  if name.endswith((".xml",".rels")):ET.fromstring(z.read(name))
-              for name,sp in sheets.items():
-                  sheetroot=ET.fromstring(z.read(sp))
-                  need(not any(c.get("t")=="e" for c in sheetroot.iter(old.q("c"))),"Excel error cell in "+name)
-          oldcells=old.readcells(before,"Master Crosswalk")
-          newcells=old.readcells(saved,"Master Crosswalk")
-          for i in range(346):
-              for j in range(15):
-                  cell=old.coord(i+1,j+1)
-                  need(oldcells.get(cell,"")==old.val(grid_before[i][j]),"original saved 5190-cell baseline "+cell)
-                  need(newcells.get(cell,"")==old.val(m["review_grid"][i][j]),"new saved 5190-cell parity "+cell)
-          diff={c for c in set(oldcells)|set(newcells) if oldcells.get(c,"")!=newcells.get(c,"")}
-          need(diff==set(updates),"exactly 42 saved SAPIENT G changes")
-          BOOK.write_bytes(saved)
-          new_sha=digest(saved)
-          need(new_sha!=PREVIOUS_HASH,"new binary was saved")
-          
-          m["currentWorkbookSha256"]=new_sha
-          m["currentEvidenceCheckpoint"]="SAP05_BSI_TASK_ALERT_ERROR_TABLES78_TO95_42_CELLS_SAME_26_SHEET_XLSX_VERIFIED"
-          m["nextOwnerAction"]="SAP05 complete: BSI Task/Alert/Error Tables78–95 original source reviewed, 42 source-qualified SAPIENT G cells, SAME 26-sheet Excel 346x15 verified; separate owner Proceed for SAP06 Taxonomy/Annexes only. STOP before SAP07."
-          m["SAPIENTEvidence"]["SAP05"]={"status":"ORIGINAL_SOURCE_AUDITED_SAME_XLSX_PARITY_VERIFIED","source_ledger":LEDGER.name,"source_report":REPORT.name,"validation":VALID.name,"original_BSI_tables_read":18,"cumulative_BSI_tables_read":95,"source_findings":22,"new_exact_holds":8,"source_qualified_master_cells":42,"changed_cell_addresses":sorted(diff,key=lambda x:int(x[1:])),"saved_346x15_parity":True,"excel_lag":0,"forecast_remaining":{"low":1,"most_likely":2,"high":4},"next":"SAP06 only after new owner Proceed; no model/Profile adoption","DIM_Profile_adopted":False}
-          m["workbookSnapshot"].update({"checkpoint":"SAP05_BSI_TASK_ALERT_ERROR_TABLES78_95_SAME_ORIGINAL_XLSX_VERIFIED","sha256":new_sha,"currently_matches_readable_view":True,"lag":"ZERO: saved original 26-sheet workbook parity with one JSON and both CSV and Markdown mirrors","refreshed_cell_count":42,"validation_file":VALID.name})
-          save(MASTER,m)
-          packet.update({"status":"ORIGINAL_TASK_ALERT_ERROR_SOURCE_AND_CANONICAL_JSON_CSV_MARKDOWN_SAME_XLSX_VERIFIED","saved_workbook_sha256":new_sha,"saved_workbook_validation_file":VALID.name,"changed_cells":sorted(diff,key=lambda x:int(x[1:])),"excel_lag":0,"previous_archive_sha":ARCHIVE_SHA,"source_complete":False,"next":"SAP06 original §7/Tables96–97/Annexes only on separate owner Proceed; STOP before SAP07"})
-          save(LEDGER,l)
-          validation={"date":"2026-11-12","step":"SAP05_BSI_TASK_ALERT_ERROR_TABLES78_95","result":"SAVED_SAME_ORIGINAL_26_SHEET_XLSX_CELL_PARITY_PASS","source_packet_commit":"be74a19db9779e4b9b5b4827723dd1ce99939fac","pre_SAP05_archive":"archive/dim-crosswalk-pre-sap05-20261112","pre_SAP05_HEAD":ARCHIVE_SHA,"prior_workbook_sha256":PREVIOUS_HASH,"workbook_sha256":new_sha,"original_sheets":26,"current_sheets":26,"grid_rows":346,"grid_columns":15,"validated_saved_cells":5190,"only_changed_sheet":"Master Crosswalk xl/worksheets/sheet2.xml","other_ZIP_members_unchanged":42,"exact_changed_G_cells":sorted(diff,key=lambda x:int(x[1:])),"original_numbered_tables_read_this_step":18,"cumulative_original_numbered_tables_read":95,"original_numbered_tables_in_BSI":97,"source_findings":22,"source_holds_added":8,"original_proto_compilation":False,"source_complete":False,"ISA_six_original_questions_held":True,"SOSA_nine_owner_accepted_partial_holds_held":True,"prior_SAPIENT_issues_held":True,"DIM_CSAPI_Profile_adopted":False,"checks":{"all_5190_master_XLSX_saved_cell_values_equal_JSON":True,"exact_42_G_changes_only":True,"four_case_and_OGC_and_DIM_columns_unchanged":True,"both_CSV_mirrors_exact":True,"both_Markdown_views_exact":True,"all_26_original_sheets":True,"other_42_ZIP_members_unmodified":True,"ZIP_CRC_and_XML_valid":True,"no_excel_error_values":True},"next":"SAP06 only on owner Proceed, STOP before SAP07"}
-          save(VALID,validation)
-          
-          header=("# CURRENT — SAP05 ORIGINAL TASK/ALERT/ERROR SOURCE AND SAME 26-SHEET EXCEL VERIFIED (12 November 2026)\n\n"
-          "**SAP05 COMPLETE at bounded original-source scope:** BSI Flex 335 v2 §§6.5–6.7 Tables78–95, six pinned relevant original protobuf sources, 22 original-source findings and eight new exact holds. **42 existing SAPIENT column-G source-qualified comparisons** published in canonical JSON, BOTH CSV, BOTH Markdown and SAME original editable 26-sheet Excel; all 346×15 saved values verified, only G cells changed, other 25 worksheet XML parts and all 42 other ZIP members preserved, Excel lag ZERO. "
-          "[SAP05 original audit](SAP05_Original_Source_Review_12NOV2026.md) · [same cumulative source ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json) · [saved Excel verification](SAP05_Workbook_Validation_12NOV2026.json) · [preserved pre-SAP05 originals](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap05-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
-          "Original numbered BSI tables **95/97 substantively read**, NOT the entire donor corpus; ISA six original questions, The Open Group SOSA PARTIAL—OWNER ACCEPTED with nine grouped source holds, and all SAPIENT source issues remain. **Remaining LOW1 / LIKELY2 / HIGH4 substantive owner Proceeds**, subject to source evidence and owner change control. No DIM/Profile model, executable control, Glaux/client or deployment approved. "
-          "**ONE NEXT owner Proceed = SAP06 original BSI §7, Tables96–97 and informative Annexes A–D/Table C.1 ONLY. STOP before SAP07 donor disposition or any DIM/Profile adoption.**\n\n---\n\n")
-          for path in (D/"PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md",
-                       D/"PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md",
-                       D/"PLAN_SAPIENT_v2_Source_First_Donor_Review_v0.1_12NOV2026.md",D/"README.md"):
-              prefix(path,header)
-          prefix(ROOT/"README.md",header.replace("(SAP05_Original_Source_Review_12NOV2026.md)","(Donor_DIM_Crosswalk/SAP05_Original_Source_Review_12NOV2026.md)").replace("(SAP01_Original_Corpus_Coverage_12NOV2026.json)","(Donor_DIM_Crosswalk/SAP01_Original_Corpus_Coverage_12NOV2026.json)").replace("(SAP05_Workbook_Validation_12NOV2026.json)","(Donor_DIM_Crosswalk/SAP05_Workbook_Validation_12NOV2026.json)"))
-          prefix(REPORT,"**FINAL SAP05 CANONICAL/SAVED-EXCEL PUBLICATION PASS:** 42 source-qualified SAPIENT G-column comparisons in canonical JSON, BOTH CSV, BOTH Markdown and SAME original 26-sheet Excel. All 5190 saved grid values agree, with zero Excel lag and 42 other ZIP entries preserved. [Saved workbook validation](SAP05_Workbook_Validation_12NOV2026.json). Prepublication wording in the original report below is historical.\n\n")
-          prefix(D/"LESSONS_Donor_Review_Process.md",
-          "# L72 — reported Task completion does not independently verify physical equipment effects (12 November 2026)\n\n"
-          "SAPIENT original BSI Flex335 v2 Task/Alert/Error Tables78–95 and pinned Dstl companions separate declared command support, Task transmission, TaskAck accepted/rejected/completed/failed reporting, Alerts, AlertAck and protocol Error. Source conflicts include DEFAULT control in Table78 versus Table79/pinned reserved enum tag4, Reset reboot versus return to default state, plural versus singular FollowObject, threshold field typos and alert acknowledgement meaning. Source-native roles, original identities and precise holds must remain; do not conflate message acceptance with independently evidenced physical actuation or a universal CSAPI Command. Progress requires actually inspected original tables and exact source-qualified master cells, not spreadsheet integrity or AI plan counts. Preserve prior ISA/SOSA and case findings, update SAME original 26-sheet Excel with saved-cell verification, and stop for the next owner authorization after SAP05. [Original SAP05 research](SAP05_Original_Source_Review_12NOV2026.md) · [verified same Excel](SAP05_Workbook_Validation_12NOV2026.json).\n\n---\n")
-          print("SAP05 original source + SAME XLSX publication PASS: 42 G-column updates, 5190 saved cell values, SHA256",new_sha)
-          # Stage only researched content: GitHub Actions lacks workflow-file mutation permission.
-          # Restore the original workflow separately through the authorized GitHub connector.
-          files=[str(MASTER),str(BOOK),str(LEDGER),str(REPORT),str(VALID),
-           str(D/"Master_Donor_Concept_to_DIM_Crosswalk.csv"),str(D/"ISA_Correction_Review_07NOV2026.csv"),
-           str(D/"Master_Donor_Concept_to_DIM_Crosswalk.md"),str(D/"ISA_Correction_Review_07NOV2026.md"),
-           str(D/"PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md"),
-           str(D/"PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md"),
-           str(D/"PLAN_SAPIENT_v2_Source_First_Donor_Review_v0.1_12NOV2026.md"),
-           str(D/"README.md"),str(ROOT/"README.md"),str(D/"LESSONS_Donor_Review_Process.md")]
-          subprocess.run(["git","add",*files],check=True)
-          
-          PY
-      - name: Commit source and saved canonical workbook without workflow mutation
+          python -m py_compile scripts/publish_sosa_d.py
+          python scripts/publish_sosa_d.py
+      - name: Commit ALL canonical formats as one coherent publication
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff --cached --quiet && { echo 'No SAP05 publication'; exit 1; } || true
-          git commit -m "research(dim-v2): SAP05 18 original tables, 42 existing G cells, same XLSX parity [skip ci]"
+          git add \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.csv \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.md \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.csv \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/ISA_Correction_Review_07NOV2026.md \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G3_N2_Workbook_Validation_11NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C2_Workbook_Validation_12NOV2026.json \
+            Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_C4_Workbook_Validation_12NOV2026.json
+          if git diff --cached --quiet; then echo "No new source-qualified canonical workbook publication"; exit 1; fi
+          git commit -m "research(dim-v2): C4 final readability, saved same 26-sheet Excel and 54-cell parity"
           git push origin HEAD:research/dim-profile-v2
+      - name: Confirm actual remote commit contains published result
+        run: |
           git fetch origin research/dim-profile-v2
           test "$(git rev-parse HEAD)" = "$(git rev-parse origin/research/dim-profile-v2)"
