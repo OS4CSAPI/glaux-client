@@ -127,12 +127,12 @@ jobs:
           need(index==346 and edited==40,"all 40 exact readable cells updated")
           table=source[:begin]+"".join(parts)+source[end:]
           mdhead=("# CURRENT — SAP-04 BSI Status/Detection Tables60–77 source and SAME Excel verified (12 November 2026)\n\n"
-"**18 original BSI Status and Detection tables** reviewed in SAP04 (cumulative 77/97 table-depth); 19 stable findings, four additional exact holds and **40 source-qualified existing SAPIENT column G comparisons**. "
-"All 346×15 saved comparison values agree across canonical JSON, both CSV, both GitHub-readable Markdown and SAME original 26-sheet editable Excel; Excel lag ZERO and 42 other ZIP members preserved. "
-"[Original source review](SAP04_Original_Source_Review_12NOV2026.md) · [saved workbook readback](SAP04_Workbook_Validation_12NOV2026.json) · "
-"[pre-SAP04 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap04-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
-"SAPIENT remains ACTIVE/SOURCE-INCOMPLETE; prior ISA six, SOSA nine, and all earlier SAPIENT holds plus four SAP04 holds retained; no DIM/Profile/client adoption. "
-"Forecast after SAP04 **low2 / most likely3 / high5** substantive Proceeds remaining. **ONE NEXT owner Proceed: SAP05 Task/Alert/Error Tables78–95, STOP before SAP06.**\n\n---\n\n")
+          "**18 original BSI Status and Detection tables** reviewed in SAP04 (cumulative 77/97 table-depth); 19 stable findings, four additional exact holds and **40 source-qualified existing SAPIENT column G comparisons**. "
+          "All 346×15 saved comparison values agree across canonical JSON, both CSV, both GitHub-readable Markdown and SAME original 26-sheet editable Excel; Excel lag ZERO and 42 other ZIP members preserved. "
+          "[Original source review](SAP04_Original_Source_Review_12NOV2026.md) · [saved workbook readback](SAP04_Workbook_Validation_12NOV2026.json) · "
+          "[pre-SAP04 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap04-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
+          "SAPIENT remains ACTIVE/SOURCE-INCOMPLETE; prior ISA six, SOSA nine, and all earlier SAPIENT holds plus four SAP04 holds retained; no DIM/Profile/client adoption. "
+          "Forecast after SAP04 **low2 / most likely3 / high5** substantive Proceeds remaining. **ONE NEXT owner Proceed: SAP05 Task/Alert/Error Tables78–95, STOP before SAP06.**\n\n---\n\n")
           for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
               (D/name).write_text(mdhead+table,encoding="utf-8")
           need((D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text()==(D/"ISA_Correction_Review_07NOV2026.md").read_text(),"Markdown exact mirrors")
@@ -208,12 +208,12 @@ jobs:
           save(VALID,validation)
           
           header=("# CURRENT — SAP-04 BSI STATUS/DETECTION TABLES60–77 AND SAME EXCEL VERIFIED (12 November 2026)\n\n"
-"**SAP-04 COMPLETED at original-source depth:** BSI Flex 335 v2.0 §§6.3–6.4 and Tables60–77 (18 substantive original numbered tables; cumulative 77/97), relevant pinned StatusReport and DetectionReport source fields/enums, 19 native findings and four source-qualified holds. "
-"**40 existing SAPIENT column-G comparisons** saved in canonical JSON, both CSV, both readable Markdown and SAME original 26-sheet Excel. All 346×15=5190 saved comparison values match; only G cells changed, other 25 worksheets and all 42 other ZIP members preserved, Excel lag ZERO. "
-"[SAP04 research](SAP04_Original_Source_Review_12NOV2026.md) · [cumulative source ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json) · [actual saved-workbook proof](SAP04_Workbook_Validation_12NOV2026.json) · "
-"[preserved original pre-SAP04 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap04-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
-"ISA's six source questions, The Open Group SOSA PARTIAL—OWNER ACCEPTED/nine original-source holds, earlier SAPIENT holds and four new SAP04 holds remain. SAPIENT ACTIVE/SOURCE-INCOMPLETE. "
-"Remaining **low2 / most likely3 / high5 substantive owner Proceeds**. No DIM/Profile content adoption, no physical source conformance, no Glaux/client/deployment. **ONE NEXT separate owner Proceed = SAP05 Task/Alert/Error BSI Tables78–95 ONLY. STOP before SAP06.**\n\n---\n\n")
+          "**SAP-04 COMPLETED at original-source depth:** BSI Flex 335 v2.0 §§6.3–6.4 and Tables60–77 (18 substantive original numbered tables; cumulative 77/97), relevant pinned StatusReport and DetectionReport source fields/enums, 19 native findings and four source-qualified holds. "
+          "**40 existing SAPIENT column-G comparisons** saved in canonical JSON, both CSV, both readable Markdown and SAME original 26-sheet Excel. All 346×15=5190 saved comparison values match; only G cells changed, other 25 worksheets and all 42 other ZIP members preserved, Excel lag ZERO. "
+          "[SAP04 research](SAP04_Original_Source_Review_12NOV2026.md) · [cumulative source ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json) · [actual saved-workbook proof](SAP04_Workbook_Validation_12NOV2026.json) · "
+          "[preserved original pre-SAP04 snapshot](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap04-20261112/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). "
+          "ISA's six source questions, The Open Group SOSA PARTIAL—OWNER ACCEPTED/nine original-source holds, earlier SAPIENT holds and four new SAP04 holds remain. SAPIENT ACTIVE/SOURCE-INCOMPLETE. "
+          "Remaining **low2 / most likely3 / high5 substantive owner Proceeds**. No DIM/Profile content adoption, no physical source conformance, no Glaux/client/deployment. **ONE NEXT separate owner Proceed = SAP05 Task/Alert/Error BSI Tables78–95 ONLY. STOP before SAP06.**\n\n---\n\n")
           for path in (D/"PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md",
                        D/"PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md",
                        D/"PLAN_SAPIENT_v2_Source_First_Donor_Review_v0.1_12NOV2026.md",D/"README.md"):
