@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "27605ea25feb52b9566782ba09c69ed7237c614f0cac3d2210bf1a85be166752",
+  "currentWorkbookSha256": "bd05dd0eba7068142f92cb3c3fe3b920f74aaba8b566a64322c09c165d9b88e3",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -469,7 +469,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
+      "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
@@ -486,7 +486,7 @@
       "station ambient air temperature (ATemp)",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
       "≈ Event observables · reported variable, not OMS observedProperty",
       "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
       "sosa:ObservableProperty",
@@ -503,7 +503,7 @@
       "EE181 contributors (derived role); aggregator / mean producer held",
       "",
       "",
-      "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
+      "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
       "≈ Event.source · reporting UCI, not proven physical observer",
       "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
       "≈ sosa:Sensor",
@@ -520,7 +520,7 @@
       "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
       "",
       "",
-      "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
+      "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
       "≈ Event message · reported event, not underlying observing act",
       "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
       "sosa:Observation",
@@ -758,7 +758,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: DetectionReport.location_oneof reports detected-object Location or RangeBearing; no independent source proof that a field is the object's actual position at a separately established observation time. [SAP04-N09,SAP04-N10]",
       "Position [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -775,7 +775,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
+      "RELATED: SAPIENT DetectionReport optional ENUVelocity reports an object's velocity, not sensor-platform velocity, and is not proof of source-measured quantity or independent event timing. [SAP04-N09,SAP04-N10]",
       "Velocity [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -792,7 +792,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: SAPIENT object_id ULID and optional detected-object id are not an established ISA Battle Space Object identity namespace. [SAP04-N09]",
       "BSO [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -843,7 +843,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: SAPIENT detected-object classification/behaviour and optional physical object id do not establish ISA tactical identification (friend/foe) or authoritative identity. [SAP04-N13]",
       "Identity [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -860,7 +860,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
+      "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
       "Media [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -1115,7 +1115,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: SAPIENT PredictedLocation describes possible future object position and optionally predicted_timestamp; it is not a performed ISA/OMS forecast Observation with verified result. [SAP04-N11]",
       "Forecast [Accepted]",
       "Not assessed here",
       "Not assessed here",
@@ -1200,7 +1200,7 @@
       "",
       "",
       "",
-      "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
+      "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
       "Event.event ID; Event.event reference → creator + id + time",
       "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1217,7 +1217,7 @@
       "",
       "",
       "",
-      "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
+      "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
       "Event.time: UTC",
       "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1251,7 +1251,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
       "Event.detector properties: Name Value Pair [0+]",
       "Not assessed here",
       "",
@@ -1268,7 +1268,7 @@
       "",
       "",
       "",
-      "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
+      "PARTIAL: SAPIENT TrackObjectInfo.value/error and detection_confidence express source-reported values/confidence; not a general measured-value uncertainty model or verified confidence calibration. [SAP04-N10,SAP04-N12]",
       "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
       "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
       "",
@@ -1285,7 +1285,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
       "Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",
       "Not assessed here",
       "",
@@ -1302,7 +1302,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
+      "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
       "Video Track [accepted] · BSO ID + optional geographic location",
       "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
       "",
@@ -1625,7 +1625,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
+      "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
       "≈ Camera Mode in Status.properties · camera-specific report",
       "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
       "",
@@ -3325,7 +3325,7 @@
       "",
       "",
       "",
-      "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
+      "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
       "Status.properties: Name Value Pair [0+]",
       "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
       "",
@@ -3750,7 +3750,7 @@
       "2 original NOAA means → 4 project API representations",
       "",
       "",
-      "",
+      "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
       "≈ Event Reference · update relation only, not original→copy",
       "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
       "",
@@ -3835,7 +3835,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
       "Header.time: UTC",
       "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
       "",
@@ -3886,7 +3886,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
       "Message Reference · originator, identifier, message type, time",
       "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
       "",
@@ -3903,7 +3903,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
       "Name Value Pair · name + Wildcard value",
       "Not assessed here",
       "",
@@ -4651,7 +4651,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
+      "RELATED: StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract. [SAP04-N06]",
       "Position",
       "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
       "Not assessed here",
@@ -4719,7 +4719,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
+      "RELATED: StatusReport.field_of_view can report current geographic view geometry; a NEW message without a FOV means lost view, distinct from wider coverage and obscuration. [SAP04-N06]",
       "View Area",
       "Not assessed here",
       "Not assessed here",
@@ -4736,7 +4736,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
+      "RELATED: StatusReport.coverage/obscuration are reported geographic areas, not necessarily the currently applied ordered ISA include/exclude Zones task configuration. [SAP04-N06]",
       "Zones",
       "Not assessed here",
       "Not assessed here",
@@ -4770,7 +4770,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
       "Active",
       "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
       "Not assessed here",
@@ -4838,7 +4838,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
       "Operating State",
       "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
       "Not assessed here",
@@ -5025,7 +5025,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI Power.level is remaining battery percentage, not a commanded or reported fraction of the equipment's maximum output power. [SAP04-N05]",
       "Power",
       "Not assessed here",
       "Not assessed here",
@@ -5042,7 +5042,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value. [SAP04-N05]",
       "Power State",
       "RELATED/NO_ESTABLISHED: C239 auxiliary management and payload power can differ; §13 PSC FAIL*/enable and class-specific inrush, isolation, backup and power-cycle rules describe hardware or potential status signaling. None verifies installed present power, voltage, fault, recovery or general ISA reported-power condition. [SOSA-D/G2-3/G2-6A/G2-7L/G2-7N–7Q]",
       "Not assessed here",
@@ -5059,7 +5059,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability. [SAP04-N05]",
       "Reserve Capacity",
       "NO_ESTABLISHED: C239 §13 energy-storage and J16 backup/hold-up inputs are not measured state-of-charge percentage or usable reserve relative to maximum capacity. [G2-6A/G2-7N/G2-7P/G2-7Q]",
       "Not assessed here",
@@ -5076,7 +5076,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Remaining battery percentage in SAPIENT does not define ISA Time to Empty or a validated rate/usage forecast. [SAP04-N05]",
       "Time to Empty",
       "NO_ESTABLISHED: C239 energy storage and backup/real-time-clock retention circuits provide no battery capacity, discharge model, actual load profile or estimated time-to-empty. [G2-6A/G2-7N/G2-7P]",
       "Not assessed here",
@@ -5093,7 +5093,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence. [SAP04-N05]",
       "Power Source · native supply categories; RELIABLE retains source wording",
       "RELATED/PARTIAL: C239 host/Power Module interfaces, §13 PSC input rails, utility, AC, DC, backup and hold-up power types distinguish source-specific feed roles and class requirements. They do not identify an installed solar, battery, mains or generator power source, measured reserves or live condition. 2022 v1 DSDM PowerBus/PowerPort are electrical interfaces, not universal energy-source classes; 2023 native equivalence held. [G2-5/G2-6A/G2-7H–7J/G2-7L/G2-7N–7Q/G3-N2]",
       "",
@@ -5178,7 +5178,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Missed status intervals or a GOODBYE Node condition do not establish ISA network-interface link up/down state. [SAP04-N01,SAP04-N03]",
       "Link State",
       "RELATED/NO_ESTABLISHED: C239 §6.5.4.2-9/-10 requires a directly managed PIC to report specified MAC/IP port active/inactive state, but §13 speed auto-negotiation, §14 network access and §15 transport availability are not observed link state of the four case systems. No ISA-wide universal network status inferred. [G2-3/G2-7Q/G2-7R/G2-7S]",
       "Not assessed here",
@@ -5246,7 +5246,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Detected RF Signal.amplitude describes a signal associated with object detection, not sensor equipment's received power or link receive power. [SAP04-N15]",
       "Receive Power",
       "NO_ESTABLISHED: C239 VSWR is radio-frequency impedance mismatch, not measured received signal power or ISA dBm received-power value. [G2-7M/G2-7P]",
       "Not assessed here",
@@ -5263,7 +5263,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
       "Resources",
       "Not assessed here",
       "Not assessed here",
@@ -5297,7 +5297,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Detected-object Signal.amplitude and frequencies are not an ISA node's reported Transmit Power. [SAP04-N15]",
       "Transmit Power",
       "Not assessed here",
       "Not assessed here",
@@ -5484,7 +5484,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: SAPIENT geographic coverage may include areas not currently visible; it is not an exact scalar angular ISA Field of Regard value. [SAP04-N06]",
       "Field of Regard",
       "Not assessed here",
       "Not assessed here",
@@ -5501,7 +5501,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: SAPIENT field_of_view geometry may imply current area, but its native polygon/cone is not automatically ISA's angular instantaneous Field of View parameter. [SAP04-N06]",
       "Field of View",
       "Not assessed here",
       "Not assessed here",
@@ -5824,7 +5824,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: SAPIENT WARN/ERROR/StatusType conditions are not verified latest ISA Built In Test results or a completed BIT procedure. [SAP04-N07]",
       "Built In Test Result",
       "RELATED/PARTIAL (2022 v1 DSDM): C239 V1.0 getSensorBITResults/getBITResults operations differ by manager/security/PIC role. The 2022 v1 SensorBITResult and BitResults_Info describe time/result/status but do not establish the latest completed BIT or a performed case test; 2023 C239 native byte equivalence held. Appendix A Health/Test are different concepts. [SOSA-D/G2-1/G2-2/G2-7T/G3-N2]",
       "Not assessed here",
@@ -5977,7 +5977,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: SAPIENT Signal.amplitude (typically dB) is not ISA Signal Strength Ratio or resolution of ISA-Q004 reference-quantity uncertainty. [SAP04-N15]",
       "Signal Strength Ratio · Db · Question ISA-Q004",
       "NO_ESTABLISHED: C239 VSWR in source-specific RF frequency/contact contexts is not ISA Signal Strength Ratio; original ISA-Q004 reference quantity/definition remains open. [G2-7M/G2-7P]",
       "Not assessed here",
@@ -9810,7 +9810,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
+        "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
@@ -10043,6 +10043,26 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N01",
+          "SAP04-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062",
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema.",
+        "previous_sapient_cell_value": "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
+        "source_qualified_display": "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10065,7 +10085,7 @@
         "station ambient air temperature (ATemp)",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
         "≈ Event observables · reported variable, not OMS observedProperty",
         "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
         "sosa:ObservableProperty",
@@ -10109,6 +10129,27 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N10",
+          "SAP04-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T072",
+          "SAP-BSI-T073",
+          "SAP-BSI-T074"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10133,7 +10174,7 @@
         "EE181 contributors (derived role); aggregator / mean producer held",
         "",
         "",
-        "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
+        "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
         "≈ Event.source · reporting UCI, not proven physical observer",
         "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
         "≈ sosa:Sensor",
@@ -10231,6 +10272,25 @@
         "source_qualified_display": "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09",
+          "SAP04-N19"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T077"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument.",
+        "previous_sapient_cell_value": "RELATED, NOT EXACT: BSI Table1/pinned sapient_message.proto node_id identify message sender, not necessarily physical sensing instrument or OGC Observer. [SAP02-N03]",
+        "source_qualified_display": "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10253,7 +10313,7 @@
         "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
         "",
         "",
-        "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
+        "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
         "≈ Event message · reported event, not underlying observing act",
         "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
         "sosa:Observation",
@@ -10323,6 +10383,24 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09",
+          "SAP04-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance.",
+        "previous_sapient_cell_value": "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
+        "source_qualified_display": "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -10840,7 +10918,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: DetectionReport.location_oneof reports detected-object Location or RangeBearing; no independent source proof that a field is the object's actual position at a separately established observation time. [SAP04-N09,SAP04-N10]",
         "Position [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10852,7 +10930,25 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-389"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09",
+          "SAP04-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "DetectionReport.location_oneof reports detected-object Location or RangeBearing; no independent source proof that a field is the object's actual position at a separately established observation time.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: DetectionReport.location_oneof reports detected-object Location or RangeBearing; no independent source proof that a field is the object's actual position at a separately established observation time. [SAP04-N09,SAP04-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-159",
@@ -10876,7 +10972,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
+        "RELATED: SAPIENT DetectionReport optional ENUVelocity reports an object's velocity, not sensor-platform velocity, and is not proof of source-measured quantity or independent event timing. [SAP04-N09,SAP04-N10]",
         "Velocity [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10897,6 +10993,24 @@
         "relation": "NARROWER",
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09",
+          "SAP04-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT DetectionReport optional ENUVelocity reports an object's velocity, not sensor-platform velocity, and is not proof of source-measured quantity or independent event timing.",
+        "previous_sapient_cell_value": "RELATED / NARROWER: §5.3 Table11 ENUVelocity reports east/north/up rates and optional errors, not proof of actual performed sensing or an applied frame conversion. [SAP02-N10]",
+        "source_qualified_display": "RELATED: SAPIENT DetectionReport optional ENUVelocity reports an object's velocity, not sensor-platform velocity, and is not proof of source-measured quantity or independent event timing. [SAP04-N09,SAP04-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -10923,7 +11037,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: SAPIENT object_id ULID and optional detected-object id are not an established ISA Battle Space Object identity namespace. [SAP04-N09]",
         "BSO [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -10943,7 +11057,24 @@
         "TOPICS-2.5"
       ],
       "topics_source_review_boundary": "BSO correlates successive Events about the same observed entity (track); Event Reference addresses a prior Event for correction. Co-occurrence is allowed when correcting/adding BSO. BSO does not identify an ISA component.",
-      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT object_id ULID and optional detected-object id are not an established ISA Battle Space Object identity namespace.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT object_id ULID and optional detected-object id are not an established ISA Battle Space Object identity namespace. [SAP04-N09]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-140",
@@ -11037,7 +11168,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: SAPIENT detected-object classification/behaviour and optional physical object id do not establish ISA tactical identification (friend/foe) or authoritative identity. [SAP04-N13]",
         "Identity [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -11049,7 +11180,27 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-445"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T072",
+          "SAP-BSI-T073",
+          "SAP-BSI-T074"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT detected-object classification/behaviour and optional physical object id do not establish ISA tactical identification (friend/foe) or authoritative identity.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: SAPIENT detected-object classification/behaviour and optional physical object id do not establish ISA tactical identification (friend/foe) or authoritative identity. [SAP04-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-146",
@@ -11073,7 +11224,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
+        "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
         "Media [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -11103,6 +11254,24 @@
         "relation": "PARTIAL",
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T075"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance.",
+        "previous_sapient_cell_value": "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
+        "source_qualified_display": "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -11668,7 +11837,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: SAPIENT PredictedLocation describes possible future object position and optionally predicted_timestamp; it is not a performed ISA/OMS forecast Observation with verified result. [SAP04-N11]",
         "Forecast [Accepted]",
         "Not assessed here",
         "Not assessed here",
@@ -11682,7 +11851,25 @@
         "ISA-TYPE-336",
         "ISA-TYPE-358",
         "ISA-TYPE-430"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T070"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT PredictedLocation describes possible future object position and optionally predicted_timestamp; it is not a performed ISA/OMS forecast Observation with verified result.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: SAPIENT PredictedLocation describes possible future object position and optionally predicted_timestamp; it is not a performed ISA/OMS forecast Observation with verified result. [SAP04-N11]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-152",
@@ -11872,7 +12059,7 @@
         "",
         "",
         "",
-        "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
+        "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
         "Event.event ID; Event.event reference → creator + id + time",
         "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -11964,6 +12151,23 @@
         "source_qualified_display": "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier.",
+        "previous_sapient_cell_value": "RELATED / NOT EXACT: SapientMessage.node_id identifies sender; §5.5 AssociatedDetection.object_id identifies reported object/detection, not immutable original event ID. [SAP02-N03,N12]",
+        "source_qualified_display": "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -11988,7 +12192,7 @@
         "",
         "",
         "",
-        "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
+        "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
         "Event.time: UTC",
         "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -12074,6 +12278,27 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N09",
+          "SAP04-N17"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T060",
+          "SAP-BSI-T070",
+          "SAP-BSI-T077"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime.",
+        "previous_sapient_cell_value": "RELATED / HELD: BSI Table1 NOTE3 defines content time, while pinned sapient_message.proto says send time; neither automatically establishes OMS phenomenonTime/resultTime. [SAP02-N03; SAP-ISSUE-02]",
+        "source_qualified_display": "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -12170,7 +12395,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
         "Event.detector properties: Name Value Pair [0+]",
         "Not assessed here",
         "",
@@ -12199,7 +12424,25 @@
         "TOPICS-2.6.1"
       ],
       "topics_source_review_boundary": "Event Update observables update the augmented event view selectively; unmentioned values persist in the combined interpretation, but Event detector-property context does not become a Status record.",
-      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T071"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-R-MEASUREMENT",
@@ -12290,7 +12533,7 @@
         "",
         "",
         "",
-        "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
+        "PARTIAL: SAPIENT TrackObjectInfo.value/error and detection_confidence express source-reported values/confidence; not a general measured-value uncertainty model or verified confidence calibration. [SAP04-N10,SAP04-N12]",
         "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
         "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
         "",
@@ -12374,6 +12617,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N10",
+          "SAP04-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T071"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT TrackObjectInfo.value/error and detection_confidence express source-reported values/confidence; not a general measured-value uncertainty model or verified confidence calibration.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
+        "source_qualified_display": "PARTIAL: SAPIENT TrackObjectInfo.value/error and detection_confidence express source-reported values/confidence; not a general measured-value uncertainty model or verified confidence calibration. [SAP04-N10,SAP04-N12]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12400,7 +12662,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
         "Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",
         "Not assessed here",
         "",
@@ -12410,7 +12672,29 @@
         "",
         "Video-frame detection details"
       ],
-      "boundary": "Pixel coordinates are not geographic coordinates. Selection for slewing is not executed motion; suggested labels are not a closed enumeration."
+      "boundary": "Pixel coordinates are not geographic coordinates. Selection for slewing is not executed motion; suggested labels are not a closed enumeration.",
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N13",
+          "SAP04-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T072",
+          "SAP-BSI-T073",
+          "SAP-BSI-T074",
+          "SAP-BSI-T075"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-R-VIDEO-TRACK",
@@ -12434,7 +12718,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
+        "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
         "Video Track [accepted] · BSO ID + optional geographic location",
         "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
         "",
@@ -12482,6 +12766,28 @@
         "native_meaning": "BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip.",
         "previous_sapient_cell_value": "",
         "source_qualified_display": "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N12",
+          "SAP04-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T071",
+          "SAP-BSI-T072",
+          "SAP-BSI-T073",
+          "SAP-BSI-T074"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
+        "source_qualified_display": "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
@@ -15142,7 +15448,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
+        "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
         "≈ Camera Mode in Status.properties · camera-specific report",
         "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
         "",
@@ -15351,6 +15657,24 @@
         "previous_sapient_cell_value": "StatusReport.mode",
         "source_qualified_display": "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N04"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
+        "source_qualified_display": "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -20620,7 +20944,7 @@
         "",
         "",
         "",
-        "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
+        "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
         "Status.properties: Name Value Pair [0+]",
         "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
         "",
@@ -20943,6 +21267,30 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N01",
+          "SAP04-N02",
+          "SAP04-N07"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062",
+          "SAP-BSI-T061",
+          "SAP-BSI-T066",
+          "SAP-BSI-T067",
+          "SAP-BSI-T068"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
+        "source_qualified_display": "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -23794,7 +24142,7 @@
         "2 original NOAA means → 4 project API representations",
         "",
         "",
-        "",
+        "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
         "≈ Event Reference · update relation only, not original→copy",
         "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
         "",
@@ -23886,6 +24234,25 @@
         "previous_sosa_cell_value": "No established direct equivalence · Digital Signal Stream vs Digital Signal Context / Event notification vs data record · §15.1 Table15.1-1 · NO ESTABLISHED NATIVE COPY LINEAGE [SOSA-D ledger] · G2-5: Off-sensor forwarding can copy/transport audit event messages",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N16",
+          "SAP04-N19"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T077"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -24157,7 +24524,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
         "Header.time: UTC",
         "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
         "",
@@ -24184,6 +24551,25 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N17"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T070",
+          "SAP-BSI-T077"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -24438,7 +24824,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
         "Message Reference · originator, identifier, message type, time",
         "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
         "",
@@ -24479,6 +24865,25 @@
         "previous_sosa_cell_value": "Related only · G2-5: Audit event forwarding has Relay/Collector destination but no demonstrated ISA provenance-reference contract",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N16",
+          "SAP04-N19"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T077"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -24503,7 +24908,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
         "Name Value Pair · name + Wildcard value",
         "Not assessed here",
         "",
@@ -24518,7 +24923,29 @@
         "IPL3-3.0",
         "IPL3-4.0",
         "IPL3-5.0"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N07",
+          "SAP04-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T066",
+          "SAP-BSI-T067",
+          "SAP-BSI-T068",
+          "SAP-BSI-T069",
+          "SAP-BSI-T071"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-R-ASSOCIATIVE",
@@ -29159,7 +29586,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
+        "RELATED: StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract. [SAP04-N06]",
         "Position",
         "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
         "Not assessed here",
@@ -29196,6 +29623,23 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
+        "source_qualified_display": "RELATED: StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract. [SAP04-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -29526,7 +29970,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
+        "RELATED: StatusReport.field_of_view can report current geographic view geometry; a NEW message without a FOV means lost view, distinct from wider coverage and obscuration. [SAP04-N06]",
         "View Area",
         "Not assessed here",
         "Not assessed here",
@@ -29557,6 +30001,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.field_of_view can report current geographic view geometry; a NEW message without a FOV means lost view, distinct from wider coverage and obscuration.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
+        "source_qualified_display": "RELATED: StatusReport.field_of_view can report current geographic view geometry; a NEW message without a FOV means lost view, distinct from wider coverage and obscuration. [SAP04-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -29581,7 +30042,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
+        "RELATED: StatusReport.coverage/obscuration are reported geographic areas, not necessarily the currently applied ordered ISA include/exclude Zones task configuration. [SAP04-N06]",
         "Zones",
         "Not assessed here",
         "Not assessed here",
@@ -29613,6 +30074,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.coverage/obscuration are reported geographic areas, not necessarily the currently applied ordered ISA include/exclude Zones task configuration.",
+        "previous_sapient_cell_value": "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
+        "source_qualified_display": "RELATED: StatusReport.coverage/obscuration are reported geographic areas, not necessarily the currently applied ordered ISA include/exclude Zones task configuration. [SAP04-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -29637,7 +30115,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
         "Active",
         "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
         "Not assessed here",
@@ -29660,6 +30138,25 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N03"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T061",
+          "SAP-BSI-T068"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -29841,7 +30338,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
         "Operating State",
         "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
         "Not assessed here",
@@ -29940,6 +30437,28 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · Component/Sensor State / SOSA sensor states S0–S5 · §6.5 printed102/PDF128 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.5 S/P/M states separate Off/Operational/Faulted from PIC/module Lost Communication · G2-7R: RTE resource sufficiency is verified internally [NO_ESTABLISHED; Not current reported device condition] · G2-7S: Fault warning state changes may generate notifications [RELATED; No measured current state] · G2-7T: Health aggregates status/faults/warnings; Status is performance/health condition; State top-level lifecycle [RELATED; These distinct concepts must not be collapsed into one status field]",
         "DIM_Profile_adopted": false
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N03",
+          "SAP04-N07"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T061",
+          "SAP-BSI-T068",
+          "SAP-BSI-T066",
+          "SAP-BSI-T067"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30525,7 +31044,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI Power.level is remaining battery percentage, not a commanded or reported fraction of the equipment's maximum output power. [SAP04-N05]",
         "Power",
         "Not assessed here",
         "Not assessed here",
@@ -30537,7 +31056,26 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-289"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Power.level is remaining battery percentage, not a commanded or reported fraction of the equipment's maximum output power.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Power.level is remaining battery percentage, not a commanded or reported fraction of the equipment's maximum output power. [SAP04-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-091",
@@ -30562,7 +31100,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value. [SAP04-N05]",
         "Power State",
         "RELATED/NO_ESTABLISHED: C239 auxiliary management and payload power can differ; §13 PSC FAIL*/enable and class-specific inrush, isolation, backup and power-cycle rules describe hardware or potential status signaling. None verifies installed present power, voltage, fault, recovery or general ISA reported-power condition. [SOSA-D/G2-3/G2-6A/G2-7L/G2-7N–7Q]",
         "Not assessed here",
@@ -30679,6 +31217,25 @@
         "previous_sosa_cell_value": "Related only · Power Module (6.10) reference description / Power supply vs power-state and host power · §4.2 Table4.2-1 printed27/PDF53 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 IPMC management power/3.3V_AUX persists when PIC payload domain is unpowered · G2-6A: PSC FAIL* and rail enable truth table describe electrical condition signals · G2-7L: J6 insulation and safety-ground resistance constraints. [NO_ESTABLISHED; Not observed electrical condition.] · G2-7N: J11 inrush and J16 hold-up provisions constrain design. [NO_ESTABLISHED; Not current device power condition or measured electrical fault.] · G2-7O: External Power Enable threshold conditions are normative input design. [NO_ESTABLISHED; No measured source-case current power state.] · G2-7P: J6 isolation and J11 inrush are physical design criteria. [NO_ESTABLISHED; No observed device power state.]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value. [SAP04-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30703,7 +31260,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability. [SAP04-N05]",
         "Reserve Capacity",
         "NO_ESTABLISHED: C239 §13 energy-storage and J16 backup/hold-up inputs are not measured state-of-charge percentage or usable reserve relative to maximum capacity. [G2-6A/G2-7N/G2-7P/G2-7Q]",
         "Not assessed here",
@@ -30764,6 +31321,25 @@
         "previous_sosa_cell_value": "No established direct equivalence · G2-6A: Battery backup and energy storage interfaces are not remaining reserve measures · G2-7N: J16 battery-named backup is a platform-supplied input. [NO_ESTABLISHED; No measured state-of-charge or energy reserve.] · G2-7P: J16 is battery-designated low-current hold-up input. [NO_ESTABLISHED; No state-of-charge or energy reserve.]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability. [SAP04-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30788,7 +31364,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Remaining battery percentage in SAPIENT does not define ISA Time to Empty or a validated rate/usage forecast. [SAP04-N05]",
         "Time to Empty",
         "NO_ESTABLISHED: C239 energy storage and backup/real-time-clock retention circuits provide no battery capacity, discharge model, actual load profile or estimated time-to-empty. [G2-6A/G2-7N/G2-7P]",
         "Not assessed here",
@@ -30836,6 +31412,25 @@
         "previous_sosa_cell_value": "No established direct equivalence · G2-6A: Energy storage intermediate-voltage outputs do not define discharge forecasts · G2-7N: Source describes retention power over a cycle. [NO_ESTABLISHED; No known capacity, discharge model or runtime forecast.]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Remaining battery percentage in SAPIENT does not define ISA Time to Empty or a validated rate/usage forecast.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Remaining battery percentage in SAPIENT does not define ISA Time to Empty or a validated rate/usage forecast. [SAP04-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30860,7 +31455,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence. [SAP04-N05]",
         "Power Source · native supply categories; RELIABLE retains source wording",
         "RELATED/PARTIAL: C239 host/Power Module interfaces, §13 PSC input rails, utility, AC, DC, backup and hold-up power types distinguish source-specific feed roles and class requirements. They do not identify an installed solar, battery, mains or generator power source, measured reserves or live condition. 2022 v1 DSDM PowerBus/PowerPort are electrical interfaces, not universal energy-source classes; 2023 native equivalence held. [G2-5/G2-6A/G2-7H–7J/G2-7L/G2-7N–7Q/G3-N2]",
         "",
@@ -31026,6 +31621,25 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-5: Host Power appears as interface input; Power module is reference-only in C239 Edition1.1 · G2-6A: Input rail names do not classify the current energy source · G2-7H: VNX utility power and PSC/ESC body are TBD. (NO_ESTABLISHED; No measured installed energy source.) · G2-7I: DC and external-battery connector options. [RELATED; No actual energy source.] · G2-7J: J2 includes physical power-enable and USB/hand-controller electrical signals. [RELATED; Not the installed energy source, battery, telemetry or power supply.] · G2-7L: J6 accepts extra 28VDC platform supply. [RELATED; Not installed solar/battery/mains source or telemetry.] · G2-7N: The source distinguishes platform AC, 270VDC and two backup DC feeds. [RELATED; Not actual source generator or field battery identity.] · G2-7O: Class3 J1 receives power under selected source standards. [RELATED; Not source energy generator or observed battery/mains type.] · G2-7P: Platform feeds 28VDC/270VDC/hold-up inputs of different roles. [RELATED; Not observed battery or source generator.] · G2-7Q: Nominal24V host-provided power input [RELATED; Not generator or battery identity]",
         "DIM_Profile_adopted": false
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence. [SAP04-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -31196,7 +31810,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Missed status intervals or a GOODBYE Node condition do not establish ISA network-interface link up/down state. [SAP04-N01,SAP04-N03]",
         "Link State",
         "RELATED/NO_ESTABLISHED: C239 §6.5.4.2-9/-10 requires a directly managed PIC to report specified MAC/IP port active/inactive state, but §13 speed auto-negotiation, §14 network access and §15 transport availability are not observed link state of the four case systems. No ISA-wide universal network status inferred. [G2-3/G2-7Q/G2-7R/G2-7S]",
         "Not assessed here",
@@ -31253,6 +31867,27 @@
         "previous_sosa_cell_value": "Related only · G2-3: §6.5.4.2-9/-10 directly managed PIC SHALL report MAC and IP port active/inactive · G2-7Q: Speed auto-negotiation is link behavior [NO_ESTABLISHED; No live up/down status] · G2-7R: Necessary network access for container required [NO_ESTABLISHED; Not an observed network link state]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N01",
+          "SAP04-N03"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062",
+          "SAP-BSI-T061",
+          "SAP-BSI-T068"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Missed status intervals or a GOODBYE Node condition do not establish ISA network-interface link up/down state.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Missed status intervals or a GOODBYE Node condition do not establish ISA network-interface link up/down state. [SAP04-N01,SAP04-N03]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -31467,7 +32102,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Detected RF Signal.amplitude describes a signal associated with object detection, not sensor equipment's received power or link receive power. [SAP04-N15]",
         "Receive Power",
         "NO_ESTABLISHED: C239 VSWR is radio-frequency impedance mismatch, not measured received signal power or ISA dBm received-power value. [G2-7M/G2-7P]",
         "Not assessed here",
@@ -31504,6 +32139,24 @@
         "previous_sosa_cell_value": "Not assessed here · G2-7M: VSWR maxima constrain impedance mismatch by frequency. [NO_ESTABLISHED; Not received radio-frequency signal power in dBm.]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T076"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Detected RF Signal.amplitude describes a signal associated with object detection, not sensor equipment's received power or link receive power.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Detected RF Signal.amplitude describes a signal associated with object detection, not sensor equipment's received power or link receive power. [SAP04-N15]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -31528,7 +32181,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
         "Resources",
         "Not assessed here",
         "Not assessed here",
@@ -31548,7 +32201,25 @@
         "TOPICS-3.3"
       ],
       "topics_source_review_boundary": "Status Resources typically supplies Resource Descriptors to component-provided material; a descriptor has URL, primary/secondary Resource Type and optional metadata. Current reachability and original issuer authenticity are not established.",
-      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json"
+      "topics_source_evidence": "ISA20_Data_Model_Topics_Original_Source_Evidence_09NOV2026.json",
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T075"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-114",
@@ -31642,7 +32313,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Detected-object Signal.amplitude and frequencies are not an ISA node's reported Transmit Power. [SAP04-N15]",
         "Transmit Power",
         "Not assessed here",
         "Not assessed here",
@@ -31654,7 +32325,25 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-272"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T076"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Detected-object Signal.amplitude and frequencies are not an ISA node's reported Transmit Power.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Detected-object Signal.amplitude and frequencies are not an ISA node's reported Transmit Power. [SAP04-N15]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-039",
@@ -31984,7 +32673,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: SAPIENT geographic coverage may include areas not currently visible; it is not an exact scalar angular ISA Field of Regard value. [SAP04-N06]",
         "Field of Regard",
         "Not assessed here",
         "Not assessed here",
@@ -31996,7 +32685,24 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-383"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT geographic coverage may include areas not currently visible; it is not an exact scalar angular ISA Field of Regard value.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: SAPIENT geographic coverage may include areas not currently visible; it is not an exact scalar angular ISA Field of Regard value. [SAP04-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-061",
@@ -32020,7 +32726,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: SAPIENT field_of_view geometry may imply current area, but its native polygon/cone is not automatically ISA's angular instantaneous Field of View parameter. [SAP04-N06]",
         "Field of View",
         "Not assessed here",
         "Not assessed here",
@@ -32032,7 +32738,24 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-383"
-      ]
+      ],
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT field_of_view geometry may imply current area, but its native polygon/cone is not automatically ISA's angular instantaneous Field of View parameter.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: SAPIENT field_of_view geometry may imply current area, but its native polygon/cone is not automatically ISA's angular instantaneous Field of View parameter. [SAP04-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-062",
@@ -32675,7 +33398,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: SAPIENT WARN/ERROR/StatusType conditions are not verified latest ISA Built In Test results or a completed BIT procedure. [SAP04-N07]",
         "Built In Test Result",
         "RELATED/PARTIAL (2022 v1 DSDM): C239 V1.0 getSensorBITResults/getBITResults operations differ by manager/security/PIC role. The 2022 v1 SensorBITResult and BitResults_Info describe time/result/status but do not establish the latest completed BIT or a performed case test; 2023 C239 native byte equivalence held. Appendix A Health/Test are different concepts. [SOSA-D/G2-1/G2-2/G2-7T/G3-N2]",
         "Not assessed here",
@@ -32756,6 +33479,25 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · Sensor Health/Diagnostics/Logging · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorBITResults/getBITResults are V1.0; not necessarily the latest actual equipment diagnostic result · G2-2: specialized V1.0 getBITResults appears for Security Services, Chassis and PIC interfaces · G2-7T: Health concerns faults/warnings; Test is controlled quantitative verification [NO_ESTABLISHED; No built-in-test result or diagnostic report]",
         "DIM_Profile_adopted": false
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N07"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T066",
+          "SAP-BSI-T067",
+          "SAP-BSI-T068"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT WARN/ERROR/StatusType conditions are not verified latest ISA Built In Test results or a completed BIT procedure.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT WARN/ERROR/StatusType conditions are not verified latest ISA Built In Test results or a completed BIT procedure. [SAP04-N07]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -33017,7 +33759,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: SAPIENT Signal.amplitude (typically dB) is not ISA Signal Strength Ratio or resolution of ISA-Q004 reference-quantity uncertainty. [SAP04-N15]",
         "Signal Strength Ratio · Db · Question ISA-Q004",
         "NO_ESTABLISHED: C239 VSWR in source-specific RF frequency/contact contexts is not ISA Signal Strength Ratio; original ISA-Q004 reference quantity/definition remains open. [G2-7M/G2-7P]",
         "Not assessed here",
@@ -33052,6 +33794,24 @@
         "previous_sosa_cell_value": "Not assessed here · G2-7M: Voltage standing wave ratio is specifically defined for mated RF contacts. [NO_ESTABLISHED; Not established as ISA signal-strength ratio concept ISA-Q004.]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP04_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP04-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T076"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_STATUS_DETECTION_TABLES60_77_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT Signal.amplitude (typically dB) is not ISA Signal Strength Ratio or resolution of ISA-Q004 reference-quantity uncertainty.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT Signal.amplitude (typically dB) is not ISA Signal Strength Ratio or resolution of ISA-Q004 reference-quantity uncertainty. [SAP04-N15]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     }
   ],
@@ -35658,11 +36418,11 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "SAP03B_BSI_REGISTRATION_TABLES33_TO59_28_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP04_BSI_STATUS_DETECTION_TABLES60_TO77_40_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP03B_BSI_TABLES33_59_SAME_ORIGINAL_XLSX_VERIFIED",
-    "sha256": "27605ea25feb52b9566782ba09c69ed7237c614f0cac3d2210bf1a85be166752",
+    "checkpoint": "SAP04_BSI_STATUS_DETECTION_TABLES60_77_SAME_ORIGINAL_XLSX_VERIFIED",
+    "sha256": "bd05dd0eba7068142f92cb3c3fe3b920f74aaba8b566a64322c09c165d9b88e3",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
@@ -35685,8 +36445,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 28,
-    "validation_file": "SAP03B_Workbook_Validation_12NOV2026.json",
+    "refreshed_cell_count": 40,
+    "validation_file": "SAP04_Workbook_Validation_12NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -38664,7 +39424,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SAP03B complete, 27 original BSI Registration tables, 28 source-qualified SAPIENT G cells, and same 26-sheet Excel verified; new owner Proceed only SAP04 Status/Detection Tables60–77, STOP before SAP05.",
+  "nextOwnerAction": "SAP04 complete: 18 original BSI Status/Detection tables, 40 source-qualified SAPIENT G cells, SAME original 26-sheet Excel 346x15 verified; separate owner Proceed only SAP05 Task/Alert/Error Tables78–95; STOP before SAP06.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -39174,6 +39934,68 @@
         "high": 6
       },
       "next": "SAP04 separate owner Proceed only; no model/Profile adoption",
+      "DIM_Profile_adopted": false
+    },
+    "SAP04": {
+      "status": "ORIGINAL_SOURCE_AUDITED_SAME_XLSX_PARITY_VERIFIED",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "source_report": "SAP04_Original_Source_Review_12NOV2026.md",
+      "validation": "SAP04_Workbook_Validation_12NOV2026.json",
+      "original_BSI_tables_read": 18,
+      "cumulative_BSI_tables_read": 77,
+      "source_findings": 19,
+      "new_exact_holds": 4,
+      "source_qualified_master_cells": 40,
+      "changed_cell_addresses": [
+        "G22",
+        "G23",
+        "G24",
+        "G25",
+        "G39",
+        "G40",
+        "G41",
+        "G44",
+        "G45",
+        "G60",
+        "G65",
+        "G66",
+        "G68",
+        "G69",
+        "G70",
+        "G71",
+        "G90",
+        "G190",
+        "G215",
+        "G220",
+        "G223",
+        "G224",
+        "G268",
+        "G272",
+        "G273",
+        "G275",
+        "G279",
+        "G290",
+        "G291",
+        "G292",
+        "G293",
+        "G294",
+        "G299",
+        "G303",
+        "G304",
+        "G306",
+        "G317",
+        "G318",
+        "G337",
+        "G346"
+      ],
+      "saved_346x15_parity": true,
+      "excel_lag": 0,
+      "forecast_remaining": {
+        "low": 2,
+        "most_likely": 3,
+        "high": 5
+      },
+      "next": "SAP05 separate owner Proceed only; no model/Profile adoption",
       "DIM_Profile_adopted": false
     }
   }
