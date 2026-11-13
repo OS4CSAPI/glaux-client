@@ -225,11 +225,9 @@ jobs:
           "SAP04's BSI original Status/Detection Tables60–77 and pinned v2 StatusReport/DetectionReport sources show operational heartbeat, newness, mode, power, location, view, coverage and obscuration are distinct source meanings. Report ULID, detected-object ULID, sender Node UUID, optional task reference, predicted target location and fused/derived references must not be collapsed into one generic physical sensor or event identity. DerivedDetection timestamps and identity comments differ between original BSI and pinned native code; BSI status-mode mandatory/conditional text and PredictedLocation annotation scope also remain held, not silently resolved. Source 18 tables and 40 existing-row mappings demonstrate bounded coverage, not complete donor validation or adopted DIM/Profile. Keep source ID, native Rule/Note standing and negative equivalence, and verify SAVED original 26-sheet Excel values against canonical JSON and both CSV/Markdown mirrors at publication. [SAP04 source review](SAP04_Original_Source_Review_12NOV2026.md) · [SAME Excel check](SAP04_Workbook_Validation_12NOV2026.json).\n\n---\n")
           print("SAP04 canonical publication PASS; 40 SAPIENT G changes and 5190 saved cells; XLSX",new_sha)
           
-          # Restore existing reusable workflow, leaving no new workflow infrastructure.
-          wf=Path(".github/workflows/publish-sosa-d.yml")
-          original=subprocess.check_output(["git","show","HEAD^:.github/workflows/publish-sosa-d.yml"])
-          wf.write_bytes(original)
-          files=[str(wf),str(MASTER),str(BOOK),str(LEDGER),str(REPORT),str(VALID),
+          # Stage only researched content: GitHub Actions lacks workflow-file mutation permission.
+          # Restore the original workflow separately through the authorized GitHub connector.
+          files=[str(MASTER),str(BOOK),str(LEDGER),str(REPORT),str(VALID),
            str(D/"Master_Donor_Concept_to_DIM_Crosswalk.csv"),str(D/"ISA_Correction_Review_07NOV2026.csv"),
            str(D/"Master_Donor_Concept_to_DIM_Crosswalk.md"),str(D/"ISA_Correction_Review_07NOV2026.md"),
            str(D/"PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md"),
@@ -239,7 +237,7 @@ jobs:
           subprocess.run(["git","add",*files],check=True)
           
           PY
-      - name: Commit saved canonical outputs and restore prior workflow
+      - name: Commit source and saved canonical workbook without workflow mutation
         shell: bash
         run: |
           set -euo pipefail
