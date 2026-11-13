@@ -1,3 +1,71 @@
+# F2-2 COMPLETE — Independent SOSA native-source opportunity assessment (13 November 2026)
+
+**Authoritative original:** The Open Group Sensor Open Systems Architecture (SOSA), Technical Standard C239 Edition 1.1 (2023), NOT the World Wide Web Consortium (W3C) SOSA/SSN ontology. This step revisited original 403-page C239 PDF §6/PDF64, §6.3–6.4/PDF119–123, §§14.1–14.2/PDF363–364 and Appendix A/PDF384–389, and reconciled 35 stable IDs against previously source-reviewed G2/G4 ledgers. Only these 35 independent native candidate opportunities were addressed here; DO NOT claim a whole 191/192-heading audit, full source-native file coverage, figure verification or equipment runtime conformance.
+
+## Plain-English result
+
+The current master was built largely around Integrated Sensor Architecture (ISA) information needs. Three ideas from the original SOSA architecture were compressed within broader ISA-shaped rows: (1) a direct or delegated hardware-management path that may remain available when payload processing fails; (2) separate management-power and payload-power domains; and (3) the configuration and requirements of a hosted software run-time environment (RTE). These warrant **separate provisional specialized comparison opportunities**, not approved Domain Information Model (DIM) classes, universal fields, required chassis, standard-wide Profile SHALL statements or evidence that any source-case device implements them.
+
+## Three justified additional source-qualified comparison rows
+
+| New row ID | Scope and source | Closest prior meaning / why not exact | Native standing | Decision |
+| --- | --- | --- | --- | --- |
+| SOSA-F2-MGMT-PATH | C239 §§6, 6.3 PDF64,119–122; source IDs SOSA-C239-TOC-6 and G2-3 OOB/MANAGEMENT/INTERFACE contexts | S06-R006 and ISA-A-PARTICIPATION capture network roles, not whether independent hardware management can survive payload failure | Architecture descriptions, not a universal SHALL | Specialized optional candidate; NOT adopted |
+| SOSA-F2-RTE-CONFIG | C239 §§14.1–14.2 PDF363–364; G2-7R Rules 14.1-4, 14.2-2–6 | ISA-T-CONFIG / ISA-C-108 mention configuration or software version, not conditional host profile, image, RAM/CPU/network allocation and start order | Applicable SOSA source SHALL Rules; no cross-standard SHALL | Specialized optional candidate; NOT adopted |
+| SOSA-F2-POWER-DOMAINS | C239 §6.3 PDF121–122; G2-3 POWER-DOMAINS / OOB source IDs | ISA-E-POWER-SOURCE / ISA-C-091 concern source kind and power status, not separate physical management/payload supply topology | Architecture description, not a generic power requirement | Specialized optional candidate; NOT adopted |
+
+## Source-item coverage ledger (35 actual native IDs, not 35 model fields)
+
+These are individually qualified C239 native-source items. An **existing** relation is not absence; **compressed** is not automatically a new row; native-only hardware/format source definitions remain in original ledgers; **unassessed** is not a negative equivalence; and any one new row may aggregate multiple native source IDs rather than inventing a DIM field per Rule. Candidate statuses are provisional and currently have **no Excel cell fills**.
+
+| Stable original native source ID | Locator and standing | Comparison decision | Provisional classification | Critical caveat |
+| --- | --- | --- | --- | --- |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-001 | §4.1 PDF47 definition | S06-R005 already represented | COMMON_CANDIDATE | Sensor whole; no PIC-as-universal-root |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002 | §4.1 PDF47 descriptive | S06-R007 already represented | SPECIALIZED_CANDIDATE | Physical hardware is not logical Module |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003 | §4.1 PDF47 descriptive | S06-R009 already represented | SPECIALIZED_CANDIDATE | Host Platform may be a vehicle, not installed site |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-004 | §4.1 PDF48 descriptive | S06-R005/R009 already represented | SPECIALIZED_CANDIDATE | Integral pod is not every external host |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-005 | §4.1 PDF46 descriptive | S06-R008 compressed | SPECIALIZED_CANDIDATE | External interface boundary not evidence of installed cable |
+| SOSA-C239-G2-4A-PHYSICAL_CONTEXT-006 | §4.1 PDF46 descriptive | S06-R007 compressed | SPECIALIZED_CANDIDATE | Internal interface not externally visible unit |
+| SOSA-C239-G2-4A-MODULE_CATALOG-001 | §4.2 PDF49 logical role | ISA-A-SERVICE-ROLE already represented | SPECIALIZED_CANDIDATE | System Manager not necessarily physical unit |
+| SOSA-C239-G2-4A-MODULE_CATALOG-002 | §4.2 PDF49 logical role | S06-R019 already represented | SPECIALIZED_CANDIDATE | Task Manager scheduling not hardware-management implementation |
+| SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT | §6.3 PDF119–122 architecture | Distinct SOSA-F2-MGMT-PATH and POWER-DOMAINS | SPECIALIZED_CANDIDATE | Payload-off management depends on infrastructure and power |
+| SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS | §6.3 PDF120 architecture | Distinct SOSA-F2-MGMT-PATH | SPECIALIZED_CANDIDATE | No universal sensor chassis or hierarchy |
+| SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT | §6.3 PDF120 architecture | Distinct SOSA-F2-MGMT-PATH | SPECIALIZED_CANDIDATE | Manager may be hosted rather than standalone equipment |
+| SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES | §6.3 PDF119 architecture | Distinct SOSA-F2-MGMT-PATH | SPECIALIZED_CANDIDATE | CMI/SMI logical service not IPMB/IPMC physical bus |
+| SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY | §6.3 PDF121 architecture | S06-R001–003 already represented | COMMON_CANDIDATE | FRU vendor/serial not verified installed sensor identity |
+| SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS | §6.3 PDF121 architecture | Distinct SOSA-F2-POWER-DOMAINS | SPECIALIZED_CANDIDATE | Domain split is design, not reported power state |
+| SOSA-C239-G2-3-RULE-6_4_1 | §6.4 PDF122 scoped SHALL Rule | Native-only | NATIVE_ONLY_EVIDENCE | VITA46.11 IPMB hardware obligation, external original unread |
+| SOSA-C239-G2-3-RULE-6_4_1_1 | §6.4.1 PDF123 scoped SHALL Rule | Native-only | NATIVE_ONLY_EVIDENCE | Chassis containing SOSA PIC requires scoped manager, not generic DIM SHALL |
+| SOSA-C239-G2-3-CONTEXT-NVMRO-DESCRIPTION | §6.4.2 PDF124 architecture | Native-only | NATIVE_ONLY_EVIDENCE | Write protection not generic data wipe or safe actuation |
+| SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT | §6.5 PDF128 definition | S06-R018 / ISA-T-STATUS represented | COMMON_CANDIDATE | Manager report is not direct measured physical state |
+| SOSA-C239-G2-3-CONTEXT-STATE-POLICY-NONNORMATIVITY | §6.5 PDF128 explicit edition limit | Existing R018 held | UNRESOLVED_CANDIDATE | No generally normative transition policy follows |
+| SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP | §6.5.4 PDF135 architecture | ISA-A-CERTIFICATE-TRUST compressed | SPECIALIZED_CANDIDATE | Secure-boot design not observed trust/certification |
+| SOSA-C239-G2-7R-RULE-14_1_4 | §14.1 PDF363 conditional SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | Required RTE when procurable unit includes it; not universal |
+| SOSA-C239-G2-7R-RULE-14_2_2 | §14.2 PDF363 SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | Native ProfileType only in RTE config |
+| SOSA-C239-G2-7R-RULE-14_2_3 | §14.2 PDF363 SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | ImageLoad intended software is not observed process |
+| SOSA-C239-G2-7R-RULE-14_2_4 | §14.2 PDF363 SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | Cores, memory, ports are requested resources not telemetry |
+| SOSA-C239-G2-7R-RULE-14_2_5 | §14.2 PDF364 conditional SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | FileSystem required when used, not for every RTE |
+| SOSA-C239-G2-7R-RULE-14_2_6 | §14.2 PDF364 conditional SHALL | Distinct SOSA-F2-RTE-CONFIG | SPECIALIZED_CANDIDATE | StartOrder applies to multiple executables |
+| SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream | §15.1 original interaction type | S06-R012 related already | SPECIALIZED_CANDIDATE | Native interaction not confirmed CSAPI DataStream or media resource |
+| SOSA-C239-G2-7S-INTERACTION-Publish_Subscribe | §15.1 original interaction type | ISA-Q-SUBSCRIPTION related already | SPECIALIZED_CANDIDATE | Transport role does not establish ISA subscription semantics |
+| SOSA-C239-G2-7S-INTERACTION-Request_Response | §15.1 original interaction type | S06-R019/R020 represented | COMMON_CANDIDATE | Reply does not independently prove equipment effect |
+| SOSA-C239-G2-7T-DEF-Module | Appendix A PDF386 definition | S06-R007/ISA-A-SERVICE-ROLE represented | SPECIALIZED_CANDIDATE | Module functional role may be implemented by hardware or software |
+| SOSA-C239-G2-7T-DEF-Platform | Appendix A PDF387 contextual definition | S06-R009 unresolved scope | UNRESOLVED_CANDIDATE | Sensor device, vehicle or computing environment require context |
+| SOSA-C239-G2-7T-DEF-Task | Appendix A PDF389 definition | S06-R019 represented | COMMON_CANDIDATE | External Task is different from internal Assignment |
+| SOSA-C239-G2-7T-COMPANION-B_5_Chassis_Manager_SysMan_API_json | Appendix B.5 PDF390 normative pointer | Held original source unavailable | UNASSESSED | No actual 2023 C239 native management API bytes authenticated |
+| SOSA-C239-G2-7T-APPENDIX_C_LOCATION-VLD | Appendix C PDF392 restricted pointer | Held original source unavailable | UNASSESSED | Restricted original meaning cannot be inferred |
+| SOSA-C239-G2-6A-RULE-13.2.1-1 | §13.2.1 PDF209 hardware SHALL | Native-only | NATIVE_ONLY_EVIDENCE | Source-specific hardware/card implementation, not DIM field |
+
+## Source boundaries, parity and stop
+
+Original C239 2023 main PDF source contact remains 191/192 headings at varying depth, not a complete normative clause/table/figure audit. The eight C239 Appendix B native companion originals (two model/IDL and six management OpenAPI) are still NOT authenticated/audited as exact Edition1.1 2023 bytes; the inspected 2022 model/IDL and 2025 S251 remain different editions. Restricted Appendix C and external standards including VITA originals remain held. The Open Group SOSA disposition is **PARTIAL—OWNER ACCEPTED**, with all nine original source-hold families open; six original ISA questions and the SAPIENT SAP07 A/B owner decision remain open.
+
+The single canonical source JSON now contains 332 information/review rows (329 original values preserved under stable IDs plus three new SOSA candidate rows). The **two CSV and two GitHub-readable Markdown mirrors** contain the same **349×15** grid. The **SAME original 26-sheet editable Excel** remains at its SAP06 saved **329 information rows/346×15** grid; precisely three new candidate rows are missing from Excel, and 316 previously existing text row positions have shifted as a consequence of those insertions. No XLSX bytes, fills, worksheet structures or immutable manual M00 pre-color copy were changed; this is a documented **three-row workbook lag**, not a new binary parity pass. Later workbook publication must validate saved values, styles, preserved 26 sheets and source provenance.
+
+One next separately authorized owner **Proceed** = **F2-3 SAPIENT v2 independent native-first candidate opportunity**, only. F2-4 ISA, F2-5 Excel coloring/M01, new donors, DIM/Profile adoption, client UI and deployment remain stopped pending further owner direction.
+
+---
+
 # F2-1 COMPLETE — Original-source native-concept opportunity inventory and symmetrical classification trial (13 November 2026)
 
 **Owner-authorized one-step F2-1 ONLY.** This section is a **source-inventory and classification-method trial**, not the independent source-concept resolution of SOSA F2-2, SAPIENT F2-3 or 298 ISA rows in F2-4. Prior owner-accepted N1–N2 and F1 text appears **unmodified below**. [Fixed full pre-F2-1 research archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-f2-1-20261113/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) preserves the previous version.
