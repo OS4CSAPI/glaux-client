@@ -1,8 +1,8 @@
 {
   "schema": "SAP01_SOURCE_FIRST_CENSUS_V1",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "step": "SAP-01",
-  "status": "COMPLETE_CENSUS_ONLY__DONOR_ACTIVE",
+  "status": "SAP07_EVIDENCE_GATE_PREPARED_AWAIT_OWNER_SELECTION__DONOR_ACTIVE",
   "research_branch": "research/dim-profile-v2",
   "base_head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf",
   "owner_authorization": "explicit two Proceeds plus get started: revised SAPIENT plan approved and SAP01 authorized",
@@ -2416,9 +2416,9 @@
     "new_source_qualified_master_mappings": 0
   },
   "forecast": {
-    "remaining_low": 1,
-    "remaining_most_likely": 1,
-    "remaining_high": 3,
+    "remaining_low": 0,
+    "remaining_most_likely": 0,
+    "remaining_high": 0,
     "total_including_SAP01": {
       "low": 7,
       "likely": 8,
@@ -2463,13 +2463,13 @@
       }
     ],
     "owner_rebaseline": "any changed source-first method/scope; material growth +2 proceeds or >=25% owner choice",
-    "next_only": "SAP07",
+    "next_only": "OWNER_SELECT_SAPIENT_OPTION_A_OR_B",
     "previous_SAP01_remaining": {
       "low": 6,
       "likely": 7,
       "high": 9
     },
-    "current_step": "SAP06",
+    "current_step": "SAP07",
     "previous_SAP02_remaining": {
       "low": 5,
       "most_likely": 6,
@@ -2494,7 +2494,13 @@
       "low": 1,
       "most_likely": 2,
       "high": 4
-    }
+    },
+    "previous_SAP06_remaining": {
+      "low": 1,
+      "most_likely": 1,
+      "high": 3
+    },
+    "SAP07_completion": "Core source/disposition packet finished; zero remaining core research proceeds if owner selects bounded PARTIAL, otherwise explicitly rebaseline requested additional source work."
   },
   "canonical": {
     "formats_changed": false,
@@ -2508,7 +2514,7 @@
     "branch": "archive/dim-crosswalk-pre-sapient-sap01-20261112",
     "head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf"
   },
-  "current_step": "SAP06",
+  "current_step": "SAP07",
   "SAP02": {
     "source_original": "BSI Flex 335 v2.0:2024-03",
     "source_pdf_pages": "9–35",
@@ -6621,5 +6627,65 @@
     ],
     "excel_lag": 0,
     "previous_archive_sha": "3ec4c12b4f821c0835e65213ee2fab8353fabd56"
+  },
+  "SAP07": {
+    "date": "2026-11-13",
+    "status": "EVIDENCE_AND_DISPOSITION_PACKET_COMPLETE__AWAIT_OWNER_SELECTION__DONOR_ACTIVE",
+    "original_BSI": "BSI Flex 335 v2.0:2024-03",
+    "original_BSI_pdf_pages": 116,
+    "original_numbered_main_tables": 97,
+    "original_tables_content_reviewed_at_bounded_depth": 97,
+    "packet_table_counts": {
+      "SAP02": 14,
+      "SAP03A": 18,
+      "SAP03B": 27,
+      "SAP04": 18,
+      "SAP05": 18,
+      "SAP06": 2
+    },
+    "heading_records": 58,
+    "heading_records_with_packet_annotations": 57,
+    "heading_parent_without_annotation": "SAP-BSI-6; its subsection tables were inspected",
+    "pinned_native_commit": "244a741c13bcee628f84944aef91e4a66854bd7d",
+    "proto_files_structurally_retrieved": 16,
+    "proto_complete_field_enum_constraint_audit": false,
+    "proto_compilation_executed": false,
+    "informative_annexes_reviewed": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "mapping_events": 181,
+    "distinct_existing_master_row_ids_in_mapping_events": 110,
+    "mapping_relations": {
+      "RELATED": 93,
+      "PARTIAL": 27,
+      "NO_ESTABLISHED": 58,
+      "NARROWER": 3
+    },
+    "source_id_reference_uses": 271,
+    "distinct_source_ids": 82,
+    "unresolved_mapping_source_ids": [],
+    "original_hold_limitations": 39,
+    "source_specific_holds": 37,
+    "early_access_census_holds": 2,
+    "holds_overlap": true,
+    "proposed_option": "A_BOUNDED_PARTIAL_RECOMMENDED__NOT_OWNER_SELECTED",
+    "owner_selection": "AWAIT_OWNER_EXPLICIT_A_OR_B",
+    "source_corpus_comprehensive": false,
+    "original_BSI_PDF_library_text_available": true,
+    "original_pdf_byte_hash_unverified": true,
+    "runtime_conformance_established": false,
+    "model_profile_adopted": false,
+    "same_canonical_master_and_excel_unchanged": true,
+    "canonical_grid_saved_SAP06": "346x15 / 5190 matching values",
+    "saved_Excel_verification": "SAP06_Workbook_Validation_13NOV2026.json",
+    "excel_lag_cells": 0,
+    "report": "SAP07_SAPIENT_v2_Source_Coverage_and_Owner_Disposition_13NOV2026.md",
+    "archive_pre_SAP07": "archive/dim-crosswalk-pre-sap07-20261113",
+    "archive_pre_SAP07_commit": "887d0f825899466b3c1d4e4b316641e5e65e4733",
+    "owner_reporting_rule": "Always link latest committed editable master XLSX in final response whenever master Excel is updated.",
+    "next_only": "Owner selects Option A or B; STOP"
   }
 }
