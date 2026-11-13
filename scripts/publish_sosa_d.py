@@ -3516,9 +3516,313 @@ def publish_c4_readability():
     print("C4 PASS: SAME 26-sheet original Excel; 54 C3+C4 SOSA I-cells; all 346x15 saved cells; SHA "+sha)
     return sha
 
+
+# F2-5 — One controlled extension of the existing 26-sheet source-first publisher.
+# Authoritative source classifications are committed in canonical JSON and original
+# donor source ledgers before this function runs. This routine changes presentation
+# and saved workbook references ONLY: no new native equivalence or DIM/Profile adoption.
+def publish_f2_5():
+    from html import unescape
+    reportname="F2_5_Workbook_Validation_13NOV2026.json"
+    m=load(MASTER)
+    f=m.get("F2_5_color_reconciliation") or {}
+    need(m["currentEvidenceCheckpoint"]=="F2_5_CLASSIFICATION_RECONCILED_PENDING_SAME_XLSX_SAVED_VERIFICATION",
+         "F2-5 executable only on the eligible source-graded checkpoint")
+    rows=m["rows"]; grid=m["review_grid"]; sections=set(m["review_sections"])
+    need(len(rows)==337 and len(grid)==354 and len(m["columns"])==15
+         and len(sections)==15 and all(len(g)==15 for g in grid),"337 source rows / 354x15 grid")
+    aligned=[r for i,r in enumerate(grid) if i>1 and i not in sections]
+    need(aligned==[r["display"] for r in rows] and len({r["row_id"] for r in rows})==337,
+         "stable original row/display identity")
+    need(grid==source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")
+              ==source_csv("ISA_Correction_Review_07NOV2026.csv"),
+         "both current CSV mirrors exact")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        html=(D/name).read_text(encoding="utf-8")
+        trs=re.findall(r"<tr[^>]*>[\s\S]*?</tr>",html)
+        need(len(trs)==354 and html.count('colspan="15"')==15,"both readable tables exact 354/15 "+name)
+        for i,tr in enumerate(trs):
+            td=re.findall(r"<td>(.*?)</td>",tr,re.S)
+            if len(td)==15:
+                need([unescape(v) for v in td]==grid[i],
+                     "GitHub-readable cell parity "+name+" row "+str(i+1))
+    need(all(r.get("dim_adoption")=="NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE" for r in rows)
+         and len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73
+         and m["ISAEvidence"]["specificQuestions"]==6
+         and not m["adoptionPolicy"]["content_adopted_by_this_update"],
+         "nonadoption, original donor/case evidence and six ISA questions")
+    palette=f.get("legend") or {}
+    expected_palette={"COMMON_CANDIDATE":"#D9EAF8",
+                      "SPECIALIZED_CANDIDATE":"#F9E6B8",
+                      "NATIVE_ONLY_EVIDENCE":"#E5E7EB",
+                      "UNRESOLVED_CANDIDATE":"#E9DEFA"}
+    need(palette==expected_palette,"owner-approved four exact fill colors")
+    decisions=f["color_assignments"]; held=f["composite_holds"]
+    need(len(decisions)==325 and len(held)==67 and f["counts"]["missing_source_qualified_rows"]==8
+         and len({(r["row_id"],r["column"]) for r in decisions+held})==392,
+         "exact cell-level/source-level reconciliation and no duplicate assignments")
+    current_positions={}
+    data_i=0
+    for i,g in enumerate(grid):
+        if i>1 and i not in sections:
+            record=rows[data_i]
+            need(record["display"]==g,"source row/grid order at "+str(i))
+            current_positions[record["row_id"]]=i+1
+            data_i+=1
+    oldbytes=(D/BOOK).read_bytes()
+    m00=(D/"Manual_Workbook_Versions/M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx").read_bytes()
+    oldsha="724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70"
+    need(digest(oldbytes)==oldsha==digest(m00)==m["currentWorkbookSha256"],
+         "protected M00 and same original prior SAP06 book exact-byte identity")
+    columns={"G":7,"H":8,"I":9}
+    with zipfile.ZipFile(io.BytesIO(oldbytes)) as z:
+        need(z.testzip() is None,"original book ZIP CRC")
+        paths=old.sheetpaths(z)
+        need(len(paths)==26 and "Master Crosswalk" in paths and "DIM Register" in paths
+             and "Legend" in paths and "Summary" in paths and "Validation" in paths,
+             "original exact 26-sheet live master and existing legend/register")
+        oldgridcells=old.readcells(oldbytes,"Master Crosswalk")
+        prior=[[oldgridcells.get(addr(i,j),"") for j in range(1,16)] for i in range(1,347)]
+        seen=0
+        for g in grid:
+            if seen<len(prior) and g==prior[seen]:seen+=1
+        need(seen==346,"all 346 previous SAP06 display rows preserved as ordered subsequence")
+        original_xml={n:digest(z.read(p)) for n,p in paths.items()}
+        base_styles,st=old.newstyles(z.read("xl/styles.xml"))
+        root=ET.fromstring(base_styles)
+        fills=root.find(q("fills"));xfs=root.find(q("cellXfs"))
+        need(fills is not None and xfs is not None,"original legacy stylesheet preserved")
+        style_ids={}
+        for status,hexcolor in palette.items():
+            fid=len(fills)
+            fil=ET.SubElement(fills,q("fill"))
+            pf=ET.SubElement(fil,q("patternFill"),{"patternType":"solid"})
+            ET.SubElement(pf,q("fgColor"),{"rgb":"FF"+hexcolor[1:].upper()})
+            ET.SubElement(pf,q("bgColor"),{"indexed":"64"})
+            clone=ET.fromstring(ET.tostring(xfs[st["data"]]))
+            clone.set("fillId",str(fid))
+            clone.set("applyFill","1")
+            sid=len(xfs)
+            xfs.append(clone)
+            style_ids[status]=sid
+        fills.set("count",str(len(fills)));xfs.set("count",str(len(xfs)))
+        new_styles=ET.tostring(root,encoding="utf-8",xml_declaration=True)
+        master_xml=ET.fromstring(matrix_to_xml(grid,st,main=True,sections=m["review_sections"]))
+        cm={c.get("r"):c for c in master_xml.iter(q("c"))}
+        assigned={}
+        for a in decisions:
+            col=a["column"];rid=a["row_id"];status=a["status"]
+            need(col in columns and status in style_ids,"allowed donor and status only")
+            excelref=addr(current_positions[rid],columns[col])
+            cell=cm.get(excelref)
+            need(cell is not None and cell.get("t")=="inlineStr" and
+                 bool(rows[data_i-1]) and cell.get("s") in (str(st["data"]),str(st["alt"])),
+                 "source-qualified populated candidate cell before color: "+excelref)
+            need(excelref not in assigned,"no duplicate Excel cell style")
+            assigned[excelref]=status
+            cell.set("s",str(style_ids[status]))
+        for held_entry in held:
+            col=held_entry["column"];rid=held_entry["row_id"]
+            need(col in columns and rid in current_positions,"held row identity")
+            excelref=addr(current_positions[rid],columns[col])
+            need(excelref not in assigned,"mixed/held cell must remain uncolored")
+        reg=register(m)
+        need(len(reg)==338 and len(reg[0])==12,"existing 337-row DIM Register preserved/extended")
+        reg[0]+=["SAPIENT G candidate / color decision","ISA H candidate / color decision",
+                 "SOSA I candidate / color decision","F2-5 original native IDs and exact mixed hold"]
+        for i,r in enumerate(rows,1):
+            notes=r.get("F2_5_cell_classification",{})
+            def fld(k):
+                v=notes.get(k) or {}
+                if not v:return "UNASSESSED — no graded cell classification in F2-5"
+                return v["provisional_status"]+"; "+v["cell_decision"]
+            original_ids=" | ".join(k+": "+",".join((notes.get(k) or {}).get("original_source_ids",[]))
+                                    for k in ("G","H","I") if notes.get(k))
+            reg[i]+=[fld("G"),fld("H"),fld("I"),original_ids[:32000]]
+        legend_summary=[
+          ["F2-5 CLASSIFICATION LEGEND — 13 NOV 2026","Status for original source-qualified candidate meaning; NOT adopted DIM/Profile rule"],
+          ["COMMON_CANDIDATE","#D9EAF8","Light blue — useful potential shared information, not mandatory"],
+          ["SPECIALIZED_CANDIDATE","#F9E6B8","Light amber — optional equipment/architecture/protocol specialization"],
+          ["NATIVE_ONLY_EVIDENCE","#E5E7EB","Light gray — retained native original interface/encoding evidence"],
+          ["UNRESOLVED_CANDIDATE","#E9DEFA","Light purple — named original-source meaning question/hold"],
+          ["MIXED / COMPOSITE HOLD","NO FILL","Different native meanings in one donor cell; exact source IDs and hold in DIM Register"],
+          ["UNASSESSED / NO_ESTABLISHED","NO FILL","Not a negative equivalent, not irrelevant, not native-only"],
+          ["F2-5 counts",str(len(decisions))+" colored; "+str(len(held))+" composite holds",
+           "ISA 260 colored/38 held; SAPIENT 50/26; SOSA 15/3"],
+          ["Current comparison","337 information rows, 354x15 saved comparison grid",
+           "3 SOSA + 5 SAPIENT additional candidate rows integrated in SAME existing workbook"],
+          ["Evidence/case boundary","Four original cases and original source editions preserved",
+           "Not audited whole-source conformance; no physical actuation/Glaux runtime checks"],
+          ["Owner-controlled M01","NOT CREATED","M00 preserved byte-identically; manual M01 only on owner decision"]
+        ]
+        legend_root=ET.fromstring(z.read(paths["Legend"]))
+        sd=legend_root.find(q("sheetData"))
+        need(sd is not None,"original legend must have existing sheetData")
+        old_legend_cells={c.get("r"):old.val("".join(c.itertext())) for c in sd.iter(q("c"))}
+        maxr=max([int(r.get("r")) for r in sd.findall(q("row"))] or [0])
+        first=maxr+3
+        for offset,items in enumerate(legend_summary):
+            rn=first+offset
+            rr=ET.SubElement(sd,q("row"),{"r":str(rn),"ht":"42","customHeight":"1"})
+            for j,value in enumerate(items,1):
+                if not value:continue
+                status=items[0] if offset in (1,2,3,4) else None
+                style=style_ids.get(status,st["header"] if offset in (0,7) else st["data"])
+                c=ET.SubElement(rr,q("c"),{"r":addr(rn,j),"s":str(style),"t":"inlineStr"})
+                t=ET.SubElement(ET.SubElement(c,q("is")),q("t"))
+                t.set(q("space","http://www.w3.org/XML/1998/namespace"),"preserve");t.text=str(value)
+        dimension=legend_root.find(q("dimension"))
+        if dimension is not None:dimension.set("ref","A1:P"+str(first+len(legend_summary)-1))
+        summary=[
+          ["F2-5 source-qualified candidate-cell coloring | 13 November 2026",
+           "SAME original 26-sheet editable master; M00 frozen; M01 awaits owner"],
+          ["Canonical source-comparison","337 data rows, 15 columns, 15 original topic dividers; 354x15 actual saved cells"],
+          ["Eight added information candidates","Three original-source SOSA architecture and five SAPIENT interface reporting/roles"],
+          ["ISA F2-4 candidate grading","298 row opportunities; 260 single-meaning cells colored, 38 composite native-source cells held"],
+          ["SAPIENT F2-3 candidate grading","109 original finding records; 50 selected source-qualified G-cells colored, 26 mixed held"],
+          ["The Open Group SOSA F2-2 candidate grading","35 native findings; 15 supported I-cells colored, 3 mixed held"],
+          ["Actual colored cells",str(len(decisions))+" exact donor cells; no case/OGC/DIM cells colored"],
+          ["Original single-meaning fills","Light blue / amber / gray / purple; see existing Legend worksheet"],
+          ["Mixed/unassessed source handling","No misleading fill; 67 composite holds have exact native IDs in canonical JSON and DIM Register"],
+          ["Original non-classification source text","All previous 346 displayed grid rows survive in order, plus eight justified source-specific candidate rows"],
+          ["M00 protection","Original named M00 and pre-F2-5 GitHub archive preserved; no M01"],
+          ["ISA held definitions","Six exact original-source interpretation questions carried"],
+          ["The Open Group SOSA disposition","Bounded PARTIAL—OWNER ACCEPTED, nine source-hold families retained"],
+          ["SAPIENT disposition","39 overlapping original holds retained; owner SAP07 Option A/B UNDECIDED"],
+          ["DIM and CSAPI Profile","No adopted classes, mandatory fields/cardinalities or Profile SHALLs"],
+          ["Runtime","No new original device, command, client, server or conformance tests"],
+          ["Current owner stop","F2-5 workbook/checkpoint complete, ask owner to review; no automatic further work"]
+        ]
+        replace={"xl/styles.xml":new_styles,
+                 paths["Master Crosswalk"]:ET.tostring(master_xml,encoding="utf-8",xml_declaration=True),
+                 paths["DIM Register"]:matrix_to_xml(reg,st),
+                 paths["Summary"]:matrix_to_xml(summary,st),
+                 paths["Validation"]:matrix_to_xml(summary,st),
+                 paths["Legend"]:ET.tostring(legend_root,encoding="utf-8",xml_declaration=True)}
+        preserved={name:sha for name,sha in original_xml.items() if paths[name] not in replace}
+        need(len(preserved)==21,"21 historical source/case/decision sheets must remain byte-unchanged")
+        output=io.BytesIO()
+        with zipfile.ZipFile(output,"w") as out:
+            for info in z.infolist():out.writestr(info,replace.get(info.filename,z.read(info.filename)))
+    newbytes=output.getvalue()
+    with zipfile.ZipFile(io.BytesIO(newbytes)) as z:
+        need(z.testzip() is None and list(old.sheetpaths(z))==list(paths),"reopened 26-sheet ZIP identity and CRC")
+        for name,p in paths.items():
+            if name in preserved:need(digest(z.read(p))==preserved[name],"preserved old source/case sheet "+name)
+        for p in z.namelist():
+            if p.endswith((".xml",".rels")):ET.fromstring(z.read(p))
+        actual_styles=ET.fromstring(z.read("xl/styles.xml"))
+        actual_fills=actual_styles.find(q("fills"))
+        actual_xfs=actual_styles.find(q("cellXfs"))
+        actual_master=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        cells={c.get("r"):c for c in actual_master.iter(q("c"))}
+        actual_colored={}
+        for ref,status in assigned.items():
+            cv=cells[ref]
+            sid=int(cv.get("s"))
+            need(sid==style_ids[status] and
+                 int(actual_xfs[sid].get("fillId"))<len(actual_fills),
+                 "saved style index/Excel cell "+ref)
+            fill=actual_fills[int(actual_xfs[sid].get("fillId"))]
+            hexrgb=fill.find(".//"+q("fgColor")).get("rgb")
+            need(hexrgb=="FF"+palette[status][1:].upper(),"saved exact RGB at "+ref)
+            actual_colored[ref]=status
+        need(len(actual_colored)==325,"exact 325 saved, individually justified cell colors")
+        for held_entry in held:
+            ref=addr(current_positions[held_entry["row_id"]],columns[held_entry["column"]])
+            c=cells.get(ref)
+            need(c is None or int(c.get("s","0")) not in style_ids.values(),
+                 "mixed source held without a misleading fill "+ref)
+        for c in actual_master.iter(q("c")):
+            need(c.get("t")!="e","no spreadsheet error cell")
+        legend_after=ET.fromstring(z.read(paths["Legend"]))
+        after_legend={c.get("r"):old.val("".join(c.itertext())) for c in legend_after.iter(q("c"))}
+        need(all(ref in after_legend for ref in old_legend_cells),
+             "existing legend cells and addresses preserved before appended F2-5 key")
+        for ref,val in old_legend_cells.items():
+            need(after_legend[ref]==val,"original legend cell content unchanged "+ref)
+    saved=old.readcells(newbytes,"Master Crosswalk")
+    for i,row in enumerate(grid,1):
+        for j,v in enumerate(row,1):
+            need(saved.get(addr(i,j),"")==old.val(v),"saved grid/JSON/CSV/Markdown parity "+addr(i,j))
+    regcells=old.readcells(newbytes,"DIM Register")
+    need(sum(bool(re.fullmatch("A[0-9]+",c)) for c in regcells)==338,
+         "337 register rows plus header actually saved")
+    need(newbytes!=oldbytes and digest(m00)==oldsha,"changed ONLY living XLSX, protected M00 unchanged")
+    (D/BOOK).write_bytes(newbytes)
+    newsha=digest(newbytes)
+    m["currentWorkbookSha256"]=newsha
+    m["currentEvidenceCheckpoint"]="F2_5_SAME_26_SHEET_COLOR_XLSX_SAVED_VALUES_AND_STYLES_VERIFIED"
+    m["nextOwnerAction"]="STOP after F2-5 for owner review. M00 remains preserved; separately owner-approved M01 manual snapshot may follow. SAPIENT SAP07 A/B still pending. No new donor, DIM/Profile adoption, Glaux code or deployment."
+    m["publicationPolicy"]="F2-5 one canonical JSON/two CSV/two Markdown and SAME 26-sheet XLSX; 337 source-graded information rows, 354x15 values, 325 cell colors, 67 composite holds; 21 original history/source/case sheet XMLs byte preserved; no DIM/Profile adoption."
+    m["workbookSnapshot"].update({
+      "checkpoint":"F2_5_SAME_26_SHEET_XLSX_VALUES_STYLES_VERIFIED",
+      "sha256":newsha,
+      "information_rows":337,
+      "columns":15,
+      "currently_matches_readable_view":True,
+      "lag":"ZERO: 337 information rows / 354x15 saved grid, all eight F2-2/F2-3 donor candidates inserted; source-qualified 325 fills and explicit 67 composite holds",
+      "textCheckpoint":"F2_5_SOURCE_QUALIFIED_CANDIDATE_COLOR_PUBLICATION",
+      "textInformationRows":337,
+      "validation_file":reportname,
+      "color_cell_count":325,
+      "mixed_source_cells_uncolored":67,
+      "manual_M00_preserved":True,
+      "manual_M01_not_created":True
+    })
+    f["status"]="F2_5_SAVED_XLSX_GRID_COLOR_AND_LEGEND_VERIFIED__OWNER_REVIEW_STOP"
+    f["workbook_sha256"]=newsha
+    f["M01_created"]=False
+    save(MASTER,m)
+    validation={
+      "date":"2026-11-13","step":"F2-5",
+      "result":"SAME_ORIGINAL_26_SHEET_SAVED_GRID_AND_STYLE_PARITY_PASS",
+      "pre_F2_5_research_head":"d5840210f71f71dfd013f9e224dc2d3fb5757c40",
+      "preserved_archive_branch":"archive/dim-crosswalk-pre-f2-5-20261113",
+      "prior_original_book_sha256":oldsha,"protected_M00_sha256":digest(m00),
+      "new_living_XLSX_sha256":newsha,
+      "workbook_sheets_in_original_order":list(paths),
+      "source_case_history_sheets_byte_identical":preserved,
+      "original_legend_cells_preserved":len(old_legend_cells),
+      "new_classification_legend_entries":len(legend_summary),
+      "information_rows":337,"grid_rows":354,"grid_columns":15,
+      "validated_saved_grid_cells":354*15,
+      "new_rows_vs_original":8,"exact_sourced_colored_cells":len(assigned),
+      "colored_by_status":f["counts"]["by_candidate_status"],
+      "colored_and_held_by_donor":f["counts"]["by_donor_column"],
+      "composite_native_meanings_held_uncolored":len(held),
+      "old_grid_rows_subsequence_preserved":346,
+      "new_337_row_DIM_Register_saved":True,
+      "four_original_cases_and_58_donor_73_case_records_preserved":True,
+      "ISA_six_questions_held":True,"SOSA_nine_source_hold_families_retained":True,
+      "SAPIENT_39_overlapping_holds_owner_A_B_pending":True,
+      "manual_M01_created":False,"DIM_CSAPI_Profile_adopted":False,
+      "checks":{"both_CSV_mirrors_equal_JSON":True,"both_Markdown_views_equal_JSON":True,
+                "saved_5310_grid_cell_values_exact":True,"saved_325_color_cells_exact_RGB":True,
+                "all_67_mixed_native_cells_without_fill":True,"no_unassessed_or_negative_as_native_gray":True,
+                "all_26_original_sheet_names_and_order":True,
+                "21_historical_sheet_xml_byte_preserved":True,
+                "original_Legend_values_preserved_and_key_appended":True,
+                "M00_exact_original_binary_preserved":True,
+                "zip_crc_all_xml_and_reopened_cells_pass":True,
+                "source_review_completeness_NOT_claimed":True,
+                "new_runtime_conformance_NOT_performed":True},
+      "next":"STOP for owner review/possible separately owner-approved M01; no automatic next donor or DIM/Profile/UI"
+    }
+    save(reportname,validation)
+    need(digest((D/BOOK).read_bytes())==newsha and digest(m00)==oldsha,
+         "final original M00 and saved living XLSX readback")
+    print("F2-5 PASS: SAME 26-sheet workbook / 337 rows / 354x15 = 5310 saved cells")
+    print("F2-5 PASS: 325 exact RGB donor-cell fills; 67 mixed native meaning cells held uncolored")
+    print("F2-5 PASS: 21 original source/case/history sheets unchanged, old Legend values preserved")
+    print("F2-5 PASS: protected M00 unchanged, M01 owner-pending, no DIM/Profile/Glaux adoption")
+    return newsha
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
-    if checkpoint=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION":
+    if checkpoint=="F2_5_CLASSIFICATION_RECONCILED_PENDING_SAME_XLSX_SAVED_VERIFICATION":
+        publish_f2_5()
+    elif checkpoint=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION":
         publish_c4_readability()
     elif checkpoint=="C2_SOSA_SOURCE_FAITHFUL_PRESENTATION_20261112_PENDING_EXCEL_PUBLISHER":
         publish_c2_readability()
