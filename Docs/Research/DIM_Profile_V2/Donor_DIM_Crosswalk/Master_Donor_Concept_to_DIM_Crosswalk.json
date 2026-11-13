@@ -48975,7 +48975,8 @@
     "color_cell_count": 325,
     "mixed_source_cells_uncolored": 67,
     "manual_M00_preserved": true,
-    "manual_M01_not_created": true
+    "manual_M01_not_created": false,
+    "manual_M01_frozen": true
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -50923,7 +50924,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "STOP after F2-5 for owner review. M00 remains preserved; separately owner-approved M01 manual snapshot may follow. SAPIENT SAP07 A/B still pending. No new donor, DIM/Profile adoption, Glaux code or deployment.",
+  "nextOwnerAction": "M01 and SAPIENT Option A owner decisions implemented. Next distinct donor original master Step20 Asset Administration Shell v3.2 requires source-first specific corpus/plan owner approval; STOP before AAS source research, DIM/Profile model or Glaux.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -51692,6 +51693,18 @@
       "no_runtime_compilation": true,
       "no_OGC_implementation_mapping_adopted": true,
       "Excel_lag_eight_new_rows": true
+    },
+    "SAP07_owner_disposition": {
+      "date": "2026-11-13",
+      "option": "A",
+      "standing": "BOUNDED_PARTIAL_OWNER_ACCEPTED",
+      "source": "SAP07_SAPIENT_v2_Source_Coverage_and_Owner_Disposition_13NOV2026.md",
+      "original_holds_39_preserved": true,
+      "all_BSI_original_clauses_complete": false,
+      "native_Protobuf_full_field_enum_audit_or_compilation": false,
+      "device_runtime_conformance": false,
+      "DIM_Profile_adopted": false,
+      "next_donor_started": false
     }
   },
   "F2_5_color_reconciliation": {
@@ -55471,7 +55484,34 @@
     },
     "model_and_Profile_adopted": false,
     "original_M00_immutable": true,
-    "M01_created": false,
-    "workbook_sha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c"
+    "M01_created": true,
+    "workbook_sha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c",
+    "M01_owner_approved": true
+  },
+  "manualWorkbookMilestones": {
+    "M00": {
+      "id": "M00",
+      "name": "M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx",
+      "date": "2026-11-13",
+      "sha256": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
+      "git_blob_sha": "c6bbd7548f8ce39cca21d54486a5cf7bf9779b73",
+      "standing": "IMMUTABLE_OWNER_PROTECTED_PRE_COLOR"
+    },
+    "M01": {
+      "id": "M01",
+      "name": "M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx",
+      "date": "2026-11-13",
+      "sha256": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c",
+      "git_blob_sha": "32b168f38b12eb3865dc48f467390f88b23f1204",
+      "standing": "IMMUTABLE_OWNER_APPROVED_POST_F2_5_SOURCE_CLASSIFICATION",
+      "information_rows": 337,
+      "grid_rows": 354,
+      "grid_columns": 15,
+      "source_qualified_color_cells": 325,
+      "mixed_composite_held_uncolored": 67,
+      "original_workbook_sheets": 26,
+      "source_validation": "F2_5_Workbook_Validation_13NOV2026.json",
+      "does_not_adopt_model_or_Profile": true
+    }
   }
 }
