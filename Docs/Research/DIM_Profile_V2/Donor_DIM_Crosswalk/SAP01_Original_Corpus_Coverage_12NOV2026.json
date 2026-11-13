@@ -6687,5 +6687,2534 @@
     "archive_pre_SAP07_commit": "887d0f825899466b3c1d4e4b316641e5e65e4733",
     "owner_reporting_rule": "Always link latest committed editable master XLSX in final response whenever master Excel is updated.",
     "next_only": "Owner selects Option A or B; STOP"
+  },
+  "F2_3_native_candidate_opportunity": {
+    "date": "2026-11-13",
+    "status": "F2_3_NATIVE_FIRST_CANDIDATE_OPPORTUNITY_SOURCE_PACKET_REVIEW_COMPLETE",
+    "governing_source": "British Standards Institution BSI Flex 335 v2.0:2024-03 original 116-page publisher PDF; 16 Dstl pinned v2 Protobuf originals and shared options",
+    "pinned_proto_commit": "244a741c13bcee628f84944aef91e4a66854bd7d",
+    "original_BSI_pdf_available_and_selected_text_reread": true,
+    "original_BSI_pages_directly_revisited": "selected PDF10–13,23–25,39–41,49–50,54–56,70–77,83–89,92–95,107–109; complete original corpus not claimed",
+    "original_pinned_proto_revisited": [
+      "registration.proto",
+      "detection_report.proto",
+      "associated_detection.proto",
+      "task_ack.proto",
+      "alert.proto",
+      "alert_ack.proto"
+    ],
+    "previous_packet_source_findings_total": 109,
+    "source_records": [
+      {
+        "native_finding_id": "SAP02-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "SAPIENT network comprises autonomous sensing/effector edge Nodes, fusion Nodes, optional message handling; no general equipment schema.",
+        "original_locator": "BSI §§0.2–0.4,1 original PDF9–13",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "DESCRIPTION",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R005"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-FUSION-ROLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP02-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Node is an architecture module; sensor/fusion/effector, Task and status terms differ; BSI M/D/C requiredness differs from proto field syntax.",
+        "original_locator": "BSI §3.1.1–17 PDF15–16",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "DEFINITIONS",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R006",
+          "S06-R015"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Sender node_id UUID and optional destination_id; oneof message and 4-byte little-endian frame. BSI content timestamp conflicts with pinned proto send timestamp comment.",
+        "original_locator": "BSI §§4.1–4.3 Table1 PDF18–20; sapient_message.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R004",
+          "S06-R006",
+          "S06-R014",
+          "ISA-T-EVENT-TIME",
+          "ISA-T-EVENT-ID"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP02-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Initialization registration/ack/status; task override; GOODBYE reported shutdown, reconnection obligations. Not physical equipment lifetime.",
+        "original_locator": "BSI §§4.4–4.5,4.8–4.9 PDF20–22",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_ILLUSTRATIVE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Task and alert requests distinct from acknowledgment/accept-reject; receipt does not independently prove actuation.",
+        "original_locator": "BSI §§4.6–4.7 PDF21",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R019",
+          "S06-R020"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Mobile/pointable platform Node declares operationally dependent Nodes; source example does not prove physical part-of.",
+        "original_locator": "BSI §4.10 and Figures3–4 PDF22–23",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "DESCRIPTION_AND_PLATFORM_SHALL__FIGURE_PIXELS_READ",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R007",
+          "S06-R008",
+          "S06-R009"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP02-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Child fusion Node can register to parent as edge participant with aggregated capabilities; network/fusion hierarchy not equipment assembly.",
+        "original_locator": "BSI §4.11 and Figure5 PDF24–25",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_HIERARCHICAL_SHALL__FIGURE_PIXELS_READ",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R007",
+          "S06-R009"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-FUSION-ROLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP02-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Location/LocationList coordinates and datum, optional errors; absent altitude is ambiguous, not zero.",
+        "original_locator": "BSI §§5.1–5.2.2.4 Tables2–6 PDF26–29; location.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-MEASUREMENT"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "RangeBearing and RangeBearingCone depend on north datum and coordinate units. Omitted elevation differs by message; platform datum undefined in v2.",
+        "original_locator": "BSI §§5.2.2.5–5.2.5 Tables7–10 PDF30–32; range_bearing.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_FUTURE_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-133",
+          "ISA-C-141",
+          "ISA-R-MEASUREMENT"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP02-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "ENU east/north/up velocity and optional error fields; numeric data type not performed event proof.",
+        "original_locator": "BSI §5.3 Table11 PDF33–34; velocity.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL__FIGURE6_CAPTION_ONLY",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-159",
+          "ISA-R-MEASUREMENT"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AssociatedFile MIME-style type and URL are links to associated resources, not verified retrieval or original provenance.",
+        "original_locator": "BSI §5.4 Table12 PDF34; associated_file.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-146"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP02-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AssociatedDetection links timestamps, sender/object IDs and relations, including fused detection contributors; not physical part-of.",
+        "original_locator": "BSI §5.5 Tables13–14 PDF35; associated_detection.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_COMMENTARY",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R015",
+          "ISA-T-EVENT-ID"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-DETECTION-LINEAGE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP02-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Standard version file option and custom validation annotations distinct from runtime conformance or formal version negotiation.",
+        "original_locator": "BSI §4.3 PDF20; proto_options.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "VERSION_PROVISION_AND_NATIVE_SOURCE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_CORRESPONDING_NATIVE_PROTO_FIELDS_READ_AT_PACKET_DEPTH",
+        "previous_source_packet": "SAP02",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP03A-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Registration declares Node type, ICD version, name, capabilities, status report definition, supported modes and configuration; declarations are not measured state.",
+        "original_locator": "BSI §6.1–6.2.1, PDF36–37, Table15",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R009",
+          "ISA-K-CAPABILITIES",
+          "ISA-T-CONFIG",
+          "ISA-T-REGISTRATION",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION",
+          "ISA-C-109"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Registration precedes other messages; RegistrationAck acceptance and rejection/error distinguished, reconnect/retry 30 seconds if no response; no ISA permission model implied.",
+        "original_locator": "BSI §6.2.2, PDF38, Table16; registration_ack.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-A-PARTICIPATION",
+          "ISA-A-PARTICIPATION-LIFECYCLE",
+          "ISA-T-REGISTRATION"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Sender Node UUIDv4 reused in messages and destination identity distinct; declared location coordinate system consistency is an interface contract.",
+        "original_locator": "BSI §§6.2.3–6.2.4, PDF38; sapient_message.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R004",
+          "S06-R006",
+          "ISA-T-REGISTRATION"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "NodeDefinition NodeType list spans sensor modalities, human, effectors, mobile/pointable platform and fusion; not manufacturer product type or physical assembly.",
+        "original_locator": "BSI §§6.2.5.1–.2, PDF39–40, Tables17–18; registration.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R006",
+          "ISA-A-PARTICIPATION",
+          "ISA-A-CAPABILITY-GROUP"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-FUSION-ROLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03A-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Capability category/type with optional value/units describes declared Node function/parameters and uses source-prescribed SI units, not actual observed performance.",
+        "original_locator": "BSI §6.2.5.3, PDF40, Table19; registration.proto Capability",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-CAPABILITIES",
+          "ISA-A-CAPABILITY-GROUP",
+          "ISA-A-BASELINE-CAPABILITIES"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Registered heartbeat interval, status output contract and time unit declared; three missed intervals allow a potential loss inference, not confirmed failure or unique ISA min/max intervals.",
+        "original_locator": "BSI §§6.2.5.4–.5, PDF41–42, Tables20–22; registration.proto StatusDefinition/Duration/TimeUnits",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "ISA-T-STATUS",
+          "ISA-C-078",
+          "ISA-C-079"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Coordinate-system/datum declaration supports field-specific types but prohibits mixing UTM and latitude/longitude for one node; actual current position not provided.",
+        "original_locator": "BSI §6.2.5.6, PDF42, Table23; registration.proto LocationType",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-088"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Declared future report fields categories SENSOR/POWER/MODE/STATUS, allowed units/values and on-change flag, not a live status sample; a paused task is not physically stationary.",
+        "original_locator": "BSI §§6.2.5.7–.9, PDF43–44, Tables24–26; registration.proto StatusReport/StatusReportCategory",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "S06-R018",
+          "ISA-T-STATUS"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Mode name/type, settle time, latency, scan/tracking, temporary duration, detection/task contract; exactly one default. Declared definition is not selected mode or executed task.",
+        "original_locator": "BSI §6.2.5.10, PDF45, Table27; registration.proto ModeDefinition",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-CAPABILITIES",
+          "S06-R016",
+          "S06-R017",
+          "S06-R018"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Permanent/temporary/default, fixed/scanning/steerable and none/tracklet/track/re-ID are different type axes; node POINTABLE differs from mode STEERABLE.",
+        "original_locator": "BSI §§6.2.5.11–.13, PDF46–47, Tables28–30; registration.proto ModeType/ScanType/TrackingType",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R016",
+          "S06-R017"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP03A-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "PermissionToChange=Required is a registered mode parameter for Nodes requiring source-specified permission, not a verified current authorization grant.",
+        "original_locator": "BSI §6.2.5.14, PDF47–48, Table31; registration.proto ModeParameter",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP03A-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Manufacturer/model mandatory in ConfigurationData; serial/hardware/software version conditional; software serial may denote license; recursive sub_components describe configuration, not proven installed physical containment.",
+        "original_locator": "BSI §6.2.5.15, PDF48, Table32; registration.proto ConfigurationData",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_COMMENTARY",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R001",
+          "S06-R002",
+          "S06-R003",
+          "S06-R007",
+          "ISA-T-CONFIG",
+          "ISA-C-048",
+          "ISA-C-066",
+          "ISA-C-108",
+          "ISA-C-099"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03A-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI config_data field 9 versus pinned registration.proto reporting_region 9 and config_data 10; confirms earlier SAP-ISSUE-01, no silent wire-schema choice.",
+        "original_locator": "BSI Table15 PDF37 versus pinned registration.proto lines28–38",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "CROSS_SOURCE_CONFLICT",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03A-N14",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI Duration.value protobuf serial2 versus pinned Duration.value serial3 with reserved2; direct version-specific encoding discrepancy.",
+        "original_locator": "BSI Table21 PDF41 versus pinned registration.proto Duration fields",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "CROSS_SOURCE_CONFLICT",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03A-N15",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI description implies retry-communication delay; pinned source comment defines max latency from detection made to message sent; keep scope unresolved.",
+        "original_locator": "BSI Table27 PDF45 versus pinned registration.proto ModeDefinition.maximum_latency",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "CROSS_SOURCE_CONFLICT",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03A-N16",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI UNSPECIFIED=0 description implies no data association but NONE=1 explicitly lacks association; code defines UNSPECIFIED as not defined, not proof of same state.",
+        "original_locator": "BSI Table30 PDF47 versus pinned registration.proto TrackingType enum",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "DESCRIPTION_MISMATCH",
+        "access_grade": "PRIOR_PACKET_SOURCE_QUALIFIED_AT_BOUNDED_DEPTH",
+        "previous_source_packet": "SAP03A",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03B-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Detection registration declares schema, location error and outputs, not performed observations",
+        "original_locator": "Original BSI SAP-BSI-T033, SAP-BSI-T034, SAP-BSI-T035; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "ISA-R-MEASUREMENT",
+          "ISA-K-CAPABILITIES",
+          "S06-R016",
+          "ISA-R-DETECTION-RANGE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP03B-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Declared report categories DETECTION/TRACK/OBJECT/SIGNAL and named object/track fields are not actual observations",
+        "original_locator": "Original BSI SAP-BSI-T036, SAP-BSI-T037; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T036",
+          "SAP-BSI-T037"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "ISA-R-VIDEO-TRACK"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Class confidence definition states whether most-likely or multiple class confidences can be supplied; not validated classification accuracy",
+        "original_locator": "Original BSI SAP-BSI-T038, SAP-BSI-T039; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T038",
+          "SAP-BSI-T039"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-VIDEO-TRACK",
+          "ISA-C-068"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-PERFORMANCE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03B-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "PerformanceValue has type, units, typical value and variation; not a direct measured sample or guaranteed detection range",
+        "original_locator": "Original BSI SAP-BSI-T040; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T040"
+        ],
+        "source_kind_and_normative_standing": "CONDITIONAL_SHALL_IF_AVAILABLE",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-MEASUREMENT",
+          "ISA-R-DETECTION-RANGE"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-PERFORMANCE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03B-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Class/subclass hierarchy and level describe detectable target classifications, not physical sensors or equipment parts",
+        "original_locator": "Original BSI SAP-BSI-T041, SAP-BSI-T042; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T041",
+          "SAP-BSI-T042"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-STRUCTURE",
+          "ISA-K-TYPE-CHOICE",
+          "ISA-C-068"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03B-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Taxonomy dock classes with scoped namespaces and extensible subclasses; source of object-class extension, not mandatory DIM class hierarchy",
+        "original_locator": "Original BSI SAP-BSI-T043, SAP-BSI-T044; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T043",
+          "SAP-BSI-T044"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_COMMENTARY",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-TYPE-CHOICE"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03B-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Behaviour type/units define detectable target behaviour taxonomy, not an operated device state",
+        "original_locator": "Original BSI SAP-BSI-T045; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T045"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP03B-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Velocity type declares East/North/Up format, datum and SpeedUnits, not actual physical platform velocity or a performed reading",
+        "original_locator": "Original BSI SAP-BSI-T046, SAP-BSI-T047, SAP-BSI-T048; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T046",
+          "SAP-BSI-T047",
+          "SAP-BSI-T048"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-116"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "TaskDefinition declares concurrent task count, region definition and command repertoire, not a transmitted Task or completed effect",
+        "original_locator": "Original BSI SAP-BSI-T049; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T049"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-CAPABILITIES",
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-RESULT-DECL",
+          "S06-R016",
+          "S06-R019",
+          "ISA-C-174"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP03B-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "RegionType advertises area of interest, ignore, boundary, mobile go/no-go with accepted coordinate systems; not a currently applied exclusion-zone state",
+        "original_locator": "Original BSI SAP-BSI-T050, SAP-BSI-T051; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-C-233",
+          "ISA-C-120",
+          "ISA-C-117",
+          "ISA-C-163"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP03B-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Class/subclass/behaviour filters and ALL/GT/LT/EQ operators declare acceptable filtering patterns, not processed sensor results",
+        "original_locator": "Original BSI SAP-BSI-T052, SAP-BSI-T053, SAP-BSI-T054, SAP-BSI-T055, SAP-BSI-T056; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T052",
+          "SAP-BSI-T053",
+          "SAP-BSI-T054",
+          "SAP-BSI-T055",
+          "SAP-BSI-T056"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-STRUCTURE",
+          "ISA-C-174"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Command declarations have units, completion time and type; legacy name field is removed/reserved in source",
+        "original_locator": "Original BSI SAP-BSI-T057; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T057"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Supported commands are scoped differently for sensor and effector Nodes; REQUEST, thresholds, MODE_CHANGE, LOOK_AT, MOVE_TO, PATROL and FOLLOW not executed by registration",
+        "original_locator": "Original BSI SAP-BSI-T058; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T058"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTES",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-CAPABILITIES",
+          "ISA-K-COMMAND-DECL",
+          "S06-R019",
+          "ISA-C-172",
+          "ISA-C-209",
+          "ISA-C-231",
+          "ISA-C-221",
+          "ISA-C-233",
+          "ISA-C-252"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N14",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "LOOK_AT location vs MOVE_TO/PATROL route and FOLLOW detected-object ULID are different tasking semantics; single-target follow limit is source-local",
+        "original_locator": "Original BSI SAP-BSI-T058, SAP-BSI-T059; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_FUTURE_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-221",
+          "ISA-C-224",
+          "ISA-C-225",
+          "ISA-C-234"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP03B-N15",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The six RegionType enum values match in pinned registration.proto and task.proto; CommandType enum codes must not be confused with Task.Command oneof wire tags",
+        "original_locator": "Original BSI SAP-BSI-T051, SAP-BSI-T058; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T051",
+          "SAP-BSI-T058"
+        ],
+        "source_kind_and_normative_standing": "NATIVE_SCHEMA_AND_SCOPED_RULE",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP03B-N16",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI Table43 discretionary Dock_class_namespace with omitted default 'sapient_core' versus pinned registration.proto field is_mandatory=true; mismatch held",
+        "original_locator": "Original BSI SAP-BSI-T043; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T043"
+        ],
+        "source_kind_and_normative_standing": "CROSS_ARTIFACT_REQUIREDNESS_CONFLICT",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03B-N17",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI mandatory concurrent_tasks and subclass filter level versus pinned registration.proto optional fields without is_mandatory annotations; semantics held",
+        "original_locator": "Original BSI SAP-BSI-T049, SAP-BSI-T055; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T049",
+          "SAP-BSI-T055"
+        ],
+        "source_kind_and_normative_standing": "CROSS_ARTIFACT_REQUIREDNESS_DISCREPANCY",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03B-N18",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI Table33 labels DetectionPerformance type but pinned registration.proto uses repeated PerformanceValue; exact type naming mismatch held",
+        "original_locator": "Original BSI SAP-BSI-T033; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T033"
+        ],
+        "source_kind_and_normative_standing": "CROSS_ARTIFACT_TYPE_NAME_DIFFERENCE",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP03B-N19",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Table58 'Protobuf Field Serial' 7–9 aligns CommandType enum, not the Task.Command oneof MOVE_TO/PATROL/FOLLOW tags9/10/11; Table59 follow_object_id ULID requirement lacks proto is_ulid annotation",
+        "original_locator": "Original BSI SAP-BSI-T058, SAP-BSI-T059; source packet SAP03B",
+        "original_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "source_kind_and_normative_standing": "NATIVE_ENCODING_SCOPE_AND_VALIDATION_HOLD",
+        "access_grade": "ORIGINAL_BSI_TABLE_AND_RELEVANT_PINNED_NATIVE_SEMANTIC",
+        "previous_source_packet": "SAP03B",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP04-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Initial status follows RegistrationAck; regular heartbeat with Node UUID and timestamp; three missing registered intervals require fusion-side connection close. 1–60s suggestion is NOTE, not a mandatory universal rate.",
+        "original_locator": "§6.3.1/§6.3.2.1 original PDF63–64",
+        "original_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "ISA-T-STATUS",
+          "ISA-C-072"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "StatusReport.report_id is a ULID and distinct from outer sender node_id UUID; System condition and Info NEW/UNCHANGED have separate meanings; an UNCHANGED report contains no new information.",
+        "original_locator": "§§6.3.2.1–.3 PDF64–65",
+        "original_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T061",
+          "SAP-BSI-T062"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-STATUS"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "System OK/WARNING/ERROR/GOODBYE denotes source-reported Node state; detailed StatusType/Level denote scoped conditions. These are not verified physical condition or an ISA Operating State equivalence.",
+        "original_locator": "§§6.3.2.2, .10–.12 PDF65–69",
+        "original_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T061",
+          "SAP-BSI-T068"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-082",
+          "ISA-C-072",
+          "ISA-C-035"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Reported mode should match Registration; switching can take settle_time. Table60 labels mode M but §6.3.2.4 says it SHALL be included where multiple modes/states are provided.",
+        "original_locator": "§6.3.2.4 PDF65",
+        "original_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T062"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R018"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP04-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Power.level is optional remaining battery percentage 0–100; PowerSource enum identifies node's current supply type, and PowerStatus reports OK/FAULT. No sampled voltage/capacity/runtime or all installed sources.",
+        "original_locator": "§6.3.2.5 PDF66–67; status_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T063",
+          "SAP-BSI-T064",
+          "SAP-BSI-T065"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-E-POWER-SOURCE",
+          "ISA-C-091",
+          "ISA-C-100",
+          "ISA-C-113",
+          "ISA-C-090"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "node_location, field_of_view, coverage, obscuration have different geographic meanings. NEW without field_of_view means lost view; coverage may exceed instantaneous FOV and obscuration describes blind areas.",
+        "original_locator": "§§6.3.2.6–.9 PDF67",
+        "original_table_ids": [
+          "SAP-BSI-T060"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-088",
+          "ISA-C-117",
+          "ISA-C-060",
+          "ISA-C-061",
+          "ISA-C-120"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Status level/value/type and enumerated environmental/platform conditions are scoped reports; paused/stopped task ≠ physical immobility; deprecated StatusLevel enum1 is not current.",
+        "original_locator": "§§6.3.2.10–.12 PDF68–69; status_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T066",
+          "SAP-BSI-T067",
+          "SAP-BSI-T068"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-STATUS",
+          "ISA-C-082",
+          "ISA-C-046",
+          "ISA-R-NAMED-VALUE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "One-off status messages SHALL NOT be used; earlier one-off status for alerts is replaced by Alert message, not a stream of StatusReport events.",
+        "original_locator": "§6.3.3 PDF69",
+        "original_table_ids": [
+          "SAP-BSI-T068"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_HISTORICAL_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-ALERT-LIFECYCLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP04-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "DetectionReport.report_id ULID identifies the report, object_id ULID identifies detected object (may be unique per detection if no tracking), task_id is task reference; outer node UUID identifies sender, not necessarily physical observer.",
+        "original_locator": "§§6.4.1–6.4.2.3 PDF69–71; detection_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "S06-R014",
+          "S06-R015",
+          "ISA-C-151",
+          "ISA-C-159",
+          "ISA-T-EVENT-ID",
+          "ISA-T-EVENT-TIME",
+          "ISA-C-131"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP04-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Detection location oneof provides Location/RangeBearing; optional detection_confidence 0–1 describes node's reported existence confidence, not accuracy proof or OGC Observation conversion.",
+        "original_locator": "§§6.4.1–6.4.2.6 PDF69–72; detection_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T069"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R013",
+          "S06-R015",
+          "ISA-C-151",
+          "ISA-C-159",
+          "ISA-R-MEASUREMENT"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP04-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "PredictedLocation is a future object position in Location/RangeBearing with optional predicted_timestamp; it is not a performed Observation or reliable future event.",
+        "original_locator": "§6.4.2.8 PDF72; detection_report.proto PredictedLocation",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T070"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-143"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "TrackObjectInfo type/value/optional error records named metadata about reported track or object, not proof of continuous video track or general ISA Event detector properties.",
+        "original_locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T071"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-MEASUREMENT",
+          "ISA-R-VIDEO-TRACK",
+          "ISA-R-NAMED-VALUE",
+          "ISA-T-EVENT-CONTEXT"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Object classification and nested subclass type use namespace:value with sapient_core default; optional confidence and behaviour report source assertions, not authenticated tactical identity or a physical equipment taxonomy.",
+        "original_locator": "§§6.4.2.12–.14 PDF73–74; detection_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T072",
+          "SAP-BSI-T073",
+          "SAP-BSI-T074"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R013",
+          "ISA-R-VIDEO-TRACK",
+          "ISA-R-VIDEO-DETECTION",
+          "ISA-C-145"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP04-N14",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AssociatedFile type/URL references media; URL is not proof that retrieval succeeded or the media came from identified physical observing equipment.",
+        "original_locator": "§6.4.2.15 PDF75; associated_file.proto",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T075"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-VIDEO-DETECTION",
+          "ISA-C-146",
+          "ISA-C-102"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP04-N15",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Signal amplitude, start/centre/stop frequency and pulse duration concern detected signal attributes with typically used units, not actual network receive level, transmit power or a universal signal strength ratio.",
+        "original_locator": "§6.4.2.16 PDF75; detection_report.proto Signal",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T076"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-098",
+          "ISA-C-115",
+          "ISA-C-107"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field."
+      },
+      {
+        "native_finding_id": "SAP04-N16",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "DerivedDetection references fused results from original reports using timestamp, source node and object identity; linked AssociatedDetection gives reverse connections, not proof original measurement or full transformation lineage.",
+        "original_locator": "§6.4.2.19 PDF76; detection_report.proto DerivedDetection",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T077"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-MESSAGE-REFERENCE",
+          "S06-R022"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-DETECTION-LINEAGE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP04-N17",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Current mode M versus conditional mode text; PredictedLocation nested required oneof versus no is_mandatory annotation; DerivedDetection.timestamp M content time versus optional/send-time code comment are distinct source issues.",
+        "original_locator": "§6.3.2.4 + Tables60/70/77 and pinned status_report.proto/detection_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T060",
+          "SAP-BSI-T070",
+          "SAP-BSI-T077"
+        ],
+        "source_kind_and_normative_standing": "SOURCE_CONFLICT_OR_VALIDATION_CEILING",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-EVENT-TIME",
+          "ISA-T-SENT-TIME"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP04-N18",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI DerivedDetection.node_id is identity of fusion Node that sourced detection; pinned code comment calls it Node where associated detection originated. Neither is verified physical-sensor identity.",
+        "original_locator": "§6.4.2.19/Table77, detection_report.proto",
+        "original_table_ids": [
+          "SAP-BSI-T077"
+        ],
+        "source_kind_and_normative_standing": "SOURCE_CONFLICT",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance. DerivedDetection.node_id description differs between published BSI table and pinned source comment."
+      },
+      {
+        "native_finding_id": "SAP04-N19",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Detected-object report linking permits fused data lineage with contributor IDs but does not automatically identify the original observing physical instrument, exact phenomenon time or an OMS provenance chain.",
+        "original_locator": "§6.4.1/Table69/Table77, associated_detection.proto",
+        "original_table_ids": [
+          "SAP-BSI-T069",
+          "SAP-BSI-T077"
+        ],
+        "source_kind_and_normative_standing": "SOURCE_OBSERVATION_AND_LIMIT",
+        "access_grade": "ORIGINAL_BSI_TEXT_AND_PINNED_NATIVE_RELEVANT_DETAIL_READ",
+        "previous_source_packet": "SAP04",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R014",
+          "ISA-R-MESSAGE-REFERENCE",
+          "S06-R022"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-DETECTION-LINEAGE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP05-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Fusion Node tasks a lower Node through message handling; one region or command must be specified subject to default-task conditions; Task ID, start/end and Control are distinct from execution.",
+        "original_locator": "BSI §§6.5.1–6.5.3 PDF76–77; Task proto",
+        "original_table_ids": [
+          "SAP-BSI-T078"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R019",
+          "ISA-T-REQUEST-REFERENCE",
+          "ISA-T-EVENT-ID",
+          "ISA-T-EVENT-TIME",
+          "ISA-A-CIC-MEDIATION"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "START/STOP/PAUSE manage a Task lifecycle and prior-task restoration; Task.ID is stated required while a NOTE describes blank ID as default. DEFAULT control is listed in Table78 but absent in current Table79/proto.",
+        "original_locator": "BSI §§6.5.3–6.5.4 PDF77–78; task.proto Task.Control",
+        "original_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T079"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-176"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Task.Region names a tasking region with ID/type/area and optional class/behaviour filters; not necessarily a presently installed or executed equipment Zone.",
+        "original_locator": "BSI §6.5.5.1 PDF78; task.proto Task.Region",
+        "original_table_ids": [
+          "SAP-BSI-T080"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_COMMENTARY",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-PARAMETER-DECL",
+          "ISA-C-163",
+          "ISA-C-229",
+          "ISA-C-233"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Class/SubClass/Behaviour filters and DiscreteThreshold priority are task criteria that may be supported by an edge Node; not source observations or general ISA range schemas.",
+        "original_locator": "BSI §§6.5.5.2–.5 PDF79–80; task.proto filters",
+        "original_table_ids": [
+          "SAP-BSI-T081",
+          "SAP-BSI-T082",
+          "SAP-BSI-T083",
+          "SAP-BSI-T084"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-VALUE-RANGE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Only one command oneof choice appears per Task.Command; potential REQUEST, sensitivity/report-rate thresholds, mode change, LOOK_AT, MOVE_TO, PATROL, FOLLOW have distinct native meanings.",
+        "original_locator": "BSI §6.5.6.1 PDF80–81; task.proto Task.Command",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R019",
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-A-MEMBER-TASKABILITY",
+          "ISA-C-172"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "REQUEST registration/status/reset/stop/start affects SAPIENT Node task/reporting; STOP detection messages still allows regular status and is not evidence equipment was powered off. Reset scope conflicts with earlier BSI Table58 reboot wording.",
+        "original_locator": "BSI §6.5.6.2 PDF81; task.proto Task.Command",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-231",
+          "ISA-C-252",
+          "ISA-C-177",
+          "ISA-C-241",
+          "ISA-C-243",
+          "ISA-T-STATUS"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Detection threshold, detection report rate and classification threshold request different sensor adjustments; two passages mislabel their field as classification_threshold, held against distinct pinned oneof names.",
+        "original_locator": "BSI §§6.5.6.3–.5 PDF81–82; task.proto DiscreteThreshold",
+        "original_table_ids": [
+          "SAP-BSI-T083",
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_COMMENTARY",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-195",
+          "ISA-C-196"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "MODE_CHANGE chooses a registered mode (ignored for one-mode Node); LOOK_AT temporarily suspends tasking then resumes, with a DetectionReport only if an object is detected. TaskAck completion alone does not authenticate physical pointing.",
+        "original_locator": "BSI §§6.5.6.6–.7 PDF82; task.proto Task.Command",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-224",
+          "ISA-C-225",
+          "ISA-C-185",
+          "ISA-C-202"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "MOVE_TO waypoints and autonomous routing, PATROL loops/routes and FOLLOW targets are distinct mobile-platform instructions, which can supersede each other; no proof a real platform moved.",
+        "original_locator": "BSI §§6.5.6.8–.10 PDF82–83; task.proto/follow.proto",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-221",
+          "ISA-C-233",
+          "ISA-C-234"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI current §6.5.6.10 says FOLLOW accepts a list of object ULIDs, while earlier Table59 and pinned FollowObject carry a single follow_object_id. Do not infer multi-target wire support.",
+        "original_locator": "BSI §6.5.6.10 PDF83 and Table59 PDF63; follow.proto",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "CROSS_ARTIFACT_CONFLICT",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-A-MEMBER-TASKABILITY",
+          "ISA-A-SERVICE-ROLE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "A Node may send one or more TaskAck messages over a task lifetime; ACCEPTED, REJECTED, COMPLETED, FAILED are reported statuses, not independent evidence of completed physical effect.",
+        "original_locator": "BSI §§6.5.7–6.5.9 PDF83–84; task_ack.proto",
+        "original_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R020",
+          "ISA-R-EXECUTION",
+          "ISA-K-RESULT-DECL",
+          "ISA-E-LOGIC-STATE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "TaskAck.task_id correlates with Task ID, repeated reason describes rejection/failure, associated file may link output; malformed Task gets Error instead of TaskAck.",
+        "original_locator": "BSI §6.5.9 PDF84; task_ack.proto",
+        "original_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R020",
+          "ISA-T-REQUEST-REFERENCE",
+          "ISA-K-RESULT-DECL",
+          "ISA-R-MESSAGE-REFERENCE",
+          "ISA-C-252",
+          "ISA-C-102"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "COMMON_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Node Alert may be intended for GUI or fusion Node; trigger conditions are explicitly system-specific; Alert ULID, optional type/status/location/priority/rank/confidence/media are reported claims.",
+        "original_locator": "BSI §§6.6.1–6.6.2 PDF85–86; alert.proto",
+        "original_table_ids": [
+          "SAP-BSI-T088"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-EVENT-REASON",
+          "ISA-T-EVENT-ID",
+          "ISA-C-082",
+          "ISA-T-STATUS",
+          "S06-R021",
+          "S06-R022"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-ALERT-LIFECYCLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP05-N14",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AlertType severity/intended mode change, AlertStatus lifecycle and discrete Priority are separate enums; MODE_CHANGE may request autonomy permission and is not the Node's selected mode or actual physical action.",
+        "original_locator": "BSI §§6.6.3–.10 PDF86–87; alert.proto",
+        "original_table_ids": [
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-ACCESS",
+          "ISA-T-EVENT-REASON",
+          "ISA-K-VALUE-RANGE",
+          "ISA-C-174",
+          "ISA-C-082"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-ALERT-LIFECYCLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP05-N15",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Alert-associated media has MIME-like type and URL; link is not verified retrieval, original observing instrument or authenticated event provenance.",
+        "original_locator": "BSI §6.6.11 PDF88; associated_file.proto",
+        "original_table_ids": [
+          "SAP-BSI-T092"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-102",
+          "ISA-C-146",
+          "S06-R022"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP05-N16",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AlertAck uses same alert_id, reasons and ACCEPTED/REJECTED/CANCELLED; rejection can advise a retry interval; acknowledging Alert is not authority for arbitrary device command or proof of action.",
+        "original_locator": "BSI §6.6.13 PDF88–89; alert_ack.proto",
+        "original_table_ids": [
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-T-ACCESS",
+          "ISA-R-MESSAGE-REFERENCE",
+          "ISA-C-174"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-ALERT-LIFECYCLE"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP05-N17",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Message handling responds to invalid incoming protocol messages with Error.packet bytes plus repeated error strings; this is messaging validation, not an equipment fault diagnostic.",
+        "original_locator": "BSI §6.7 PDF89; error.proto",
+        "original_table_ids": [
+          "SAP-BSI-T095"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_SHALL",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP05-N18",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Task Table78 lists DEFAULT control among accepted controls, but Table79 does not and pinned Task.Control reserves enum tag 4; a mandatory DEFAULT wire value cannot be inferred.",
+        "original_locator": "BSI Task Table78/Table79 and task.proto",
+        "original_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T079"
+        ],
+        "source_kind_and_normative_standing": "CROSS_SOURCE_DISCREPANCY",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N19",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "BSI §6.5.6.2 REQUEST reset returns the Node to default state, whereas earlier Table58 says REQUEST Reset reboots the Node; the two meanings are not silently identical.",
+        "original_locator": "BSI §6.5.6.2 and earlier Table58; task.proto",
+        "original_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "INTRA_BSI_CONFLICT",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-C-231"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N20",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "AlertAck reason is described in BSI Table93 as for rejected task and Table94 ACCEPTED as an alert active awaiting response; native AlertAck relates to alert receipt/status. Retain exact wording conflict.",
+        "original_locator": "BSI AlertAck Table93/Table94 and alert_ack.proto",
+        "original_table_ids": [
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "source_kind_and_normative_standing": "CROSS_SOURCE_DISCREPANCY",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N21",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Detection_threshold and detection_report_rate passages name classification_threshold as field type; pinned proto and BSI Table85 distinguish actual fields.",
+        "original_locator": "BSI §§6.5.6.3–.4 and task.proto",
+        "original_table_ids": [
+          "SAP-BSI-T083",
+          "SAP-BSI-T085"
+        ],
+        "source_kind_and_normative_standing": "INTRA_BSI_FIELD_WORDING_CONFLICT",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP05-N22",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "TaskAck.reason repeats at tag5 after reserved3; AlertAck.reason repeats at tag4 and alert_ack_status tag5 after reserved2–3. These are field-serial facts, not BSI-to-CSAPI equivalence.",
+        "original_locator": "BSI TaskAck/AlertAck field tables and pinned source tags",
+        "original_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087",
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "source_kind_and_normative_standing": "SCOPED_ENCODING_RECONCILIATION",
+        "access_grade": "ORIGINAL_BSI_TABLE_CLAUSE_AND_PINNED_NATIVE_REVIEW",
+        "previous_source_packet": "SAP05",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N01",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The source declares a lowest-capability-supported classification and sapient_core namespace for detected objects; it is not a DIM system/equipment class taxonomy.",
+        "original_locator": "BSI Flex 335 v2.0 §7.1–7.2, PDF p90",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "RULE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R015",
+          "ISA-K-CAPABILITIES"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP06-N02",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Nine top-level detected-object classes include Other, Human, Animal, Fixed object, EM transmitter, Equipment, Land vehicle, Sea vessel and Air vehicle; Equipment/Passive sensor/Camera is a possible detected target, not an installed sensing component.",
+        "original_locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "RULE_AND_TABLE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R007",
+          "S06-R013",
+          "ISA-C-068",
+          "ISA-K-STRUCTURE",
+          "ISA-R-TREE"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP06-N03",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Other is reserved for an object believed outside core taxonomy, not uncertainty among known classes; v1 Unknown is deprecated, and class probabilities across plausible classes are to sum to one.",
+        "original_locator": "BSI §7.2, PDF90",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "RULE_AND_NOTE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R021",
+          "ISA-C-068"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP06-N04",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "New detected-object classes dock into prior core classes via namespaced extension declarations; satellite, motorized bicycle and tanker ship are examples, not mandatory imports of those external vocabularies.",
+        "original_locator": "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "RULE_COMMENTARY_EXAMPLE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-TYPE-CHOICE",
+          "ISA-K-STRUCTURE",
+          "ISA-R-TREE",
+          "ISA-K-CAPABILITIES"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP06-N05",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Ten behaviour entries, including Active and Passive, describe detected OBJECT actions independently of object class; they are not equipment activity flags or SensorML operating states.",
+        "original_locator": "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "RULE_AND_COMMENTARY",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R013",
+          "S06-R015",
+          "S06-R021",
+          "ISA-C-035",
+          "ISA-C-082"
+        ],
+        "new_candidate_row_ids": [
+          "SAPIENT-F2-TARGET-CLAIMS"
+        ],
+        "disposition": "JUSTIFIED_DISTINCT_CANDIDATE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "New information need is a source-specific optional candidate, not new mandatory DIM/Profile schema or verified installed behavior."
+      },
+      {
+        "native_finding_id": "SAP06-N06",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The 2024 v2 change list records platform/hierarchy roles, extensions, configuration, power/status and repeated reasons; it is historical edition guidance, not a separate normative wire schema.",
+        "original_locator": "Informative Annex A §§A.1–A.6, PDF96–98",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_CHANGELOG",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N07",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Annex A lists reporting_region among newly added v2 registration fields; it corroborates the earlier Table15 tag9 versus pinned reporting_region=9/config_data=10 conflict but does not resolve it.",
+        "original_locator": "Informative Annex A §A.6.3 PDF97 against BSI Table15 PDF37 and pinned registration.proto",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_CROSS_ARTIFACT_CORROBORATION",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP06-N08",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Annex A lists mode and DerivedDetection timestamp as mandatory changes; it does not silently settle previous conditional-mode or optional/send-time native conflicts.",
+        "original_locator": "Informative Annex A §A.3 PDF96 against §§6.3/6.4 and pinned protos",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_CROSS_ARTIFACT_CORROBORATION",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP06-N09",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The v2 change notes list repeated reason fields, changed command/type enums, alert_ack_status rename and newly introduced follow.proto; this is relevant edition lineage but not executed interoperability.",
+        "original_locator": "Informative Annex A §A.6 PDF97–98; pinned task_ack/alert_ack/error/follow protos",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_VERSION_EVIDENCE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N10",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The published message examples use JSON-like display for readability, but §B.1 explicitly says operational transport is binary Protocol Buffers; illustrative samples are not a wire-conformance suite.",
+        "original_locator": "Informative Annex B §B.1 PDF99 and examples B.2–B.7 PDF99–106",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_EXAMPLE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N11",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Illustrative Registration Command has legacy name despite removal from actual Command schema; TaskAck example omits mandatory task_status; alert_id is UUID-shaped although alert IDs are required ULIDs.",
+        "original_locator": "Informative Annex B Figures B.1/B.6/B.7, PDF102/105/106; BSI Tables57/86/88",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_CROSS_SOURCE_EXAMPLE_INCONSISTENCY",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      },
+      {
+        "native_finding_id": "SAP06-N12",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "External system connection is presented as integration guidance with examples at a gov.uk page, not an explicit source-native CSAPI/OMS/physical cable ontology binding.",
+        "original_locator": "Informative Annex C §C.1 PDF107",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_GUIDANCE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R008"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP06-N13",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Original matching .proto files and an optional test harness are recommended for interoperability; merely seeing source tools does not establish a compiled implementation or SAPIENT-to-CSAPI compliance.",
+        "original_locator": "Informative Annex C §C.2 PDF107; exact Dstl v2 protobuf original sources",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_COMPANION_ADVICE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N14",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Optional message-handling application registers separately, may route/cache/validate or rewrite destinations and is not automatically physical sensing equipment. The annex says it registers without modes/detections despite mandatory registration vocabulary elsewhere.",
+        "original_locator": "Informative Annex C §C.3.1–.2 PDF107–108",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_WITH_SCOPED_SHALL_AND_NOTES",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R005",
+          "S06-R006",
+          "S06-R014",
+          "ISA-A-PARTICIPATION",
+          "ISA-A-PARTICIPATION-LIFECYCLE",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-R-MESSAGE-REFERENCE",
+          "ISA-Q-QUERY"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "MEANING_COMPRESSED_IN_EXISTING_ROWS",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Useful native nuance already related to an existing row but not automatic justification of a separate field. Informative middleware is optional and does not have a separately certified installed-device identity; Table15 registration mode-scope conflict held."
+      },
+      {
+        "native_finding_id": "SAP06-N15",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Source file response can supply a URL, but the document expressly does not standardize file storage location; locally agreed file services and access arrangements are needed.",
+        "original_locator": "Informative Annex C §C.4.1 PDF108",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_GUIDANCE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R012",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-C-146",
+          "ISA-C-102"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE",
+        "provisional_classification": "SPECIALIZED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Meaning represented only at the source's bounded scope, not an exact ISA/OGC/physical equipment equivalence."
+      },
+      {
+        "native_finding_id": "SAP06-N16",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Video streaming is explicitly outside BSI Flex335's supported specification; the annex describes illustrative Ethernet compressed streams, HDMI/HD-SDI and optional adapters without native required video APIs.",
+        "original_locator": "Informative Annex C §C.4.2–.2.2 PDF108–109",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_EXCLUDED_FROM_SPECIFICATION",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R008",
+          "S06-R012",
+          "ISA-R-VIDEO-DETECTION",
+          "ISA-R-VIDEO-TRACK"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N17",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "The 2×2 standard/high-definition MJPEG/H.26x bitrate figures are guidance for satisfactory quality, not guaranteed equipment throughput, mandatory Profile rates or observed stream metadata.",
+        "original_locator": "Informative Annex C Table C.1 PDF109",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_BITRATE_EXAMPLE",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-R-VIDEO-DETECTION"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N18",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "DTIC Thesaurus, NATO C3, restricted AINTP-03, OWL and SKOS are suggested external vocabulary/technology references; the listed publications were not audited as mandatory SAPIENT ontology imports.",
+        "original_locator": "Informative Annex D PDF110",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "INFORMATIVE_EXTERNAL_POINTERS",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "ISA-K-TYPE-CHOICE"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N19",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "97/97 main numbered BSI tables have bounded original content contact across prior source packets and SAP06; complete original referenced companions, all narrative SHALLs/graphics and runtime interoperability have not been proved.",
+        "original_locator": "Original BSI full 116-page PDF, §7 and Annexes A–D PDF90–110; Library & public official PDF",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "SOURCE_COVERAGE_OBSERVATION",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [
+          "S06-R005"
+        ],
+        "new_candidate_row_ids": [],
+        "disposition": "NATIVE_ONLY_OR_COVERAGE_EVIDENCE",
+        "provisional_classification": "NATIVE_ONLY_EVIDENCE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Implementation, illustrative, edition or evidence detail; preserve native source, no standalone whole-system field."
+      },
+      {
+        "native_finding_id": "SAP06-N20",
+        "original_publisher_edition": "BSI Flex 335 v2.0:2024-03; pinned Dstl v2 .proto at 244a741c13bcee628f84944aef91e4a66854bd7d as relevant",
+        "native_meaning": "Annex A labels historical v1 as Flex355 although this original is BSI Flex335 v2.0; informative C.3.1 middleware mode-free registration requires scope reconciliation with Table15 mandatory mode_definition list.",
+        "original_locator": "Annex A heading PDF96 vs BSI cover PDF0–1; Annex C §C.3.1 PDF107",
+        "original_table_ids": [],
+        "source_kind_and_normative_standing": "EDITED_SOURCE_ISSUES",
+        "access_grade": "ORIGINAL_BSI_PUBLISHED_TEXT_WITH_VISUAL_SAMPLE_AND_PINNED_PROTO_COMPARISON_WHERE_RELEVANT",
+        "previous_source_packet": "SAP06",
+        "existing_master_row_ids_from_source_packet": [],
+        "new_candidate_row_ids": [],
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE",
+        "provisional_classification": "UNRESOLVED_CANDIDATE",
+        "source_case_equivalence": "NOT_ESTABLISHED_BY_SAPIENT_SOURCE",
+        "model_profile_adopted": false,
+        "assessment_qualification": "Preserve original source/editorial/proto ambiguity and exact prior hold; do not repair original wire tags or infer conformance."
+      }
+    ],
+    "per_packet_counts": [
+      {
+        "packet": "SAP02",
+        "source_findings": 13,
+        "previous_mapping_events": 17
+      },
+      {
+        "packet": "SAP03A",
+        "source_findings": 16,
+        "previous_mapping_events": 28
+      },
+      {
+        "packet": "SAP03B",
+        "source_findings": 19,
+        "previous_mapping_events": 28
+      },
+      {
+        "packet": "SAP04",
+        "source_findings": 19,
+        "previous_mapping_events": 40
+      },
+      {
+        "packet": "SAP05",
+        "source_findings": 22,
+        "previous_mapping_events": 42
+      },
+      {
+        "packet": "SAP06",
+        "source_findings": 20,
+        "previous_mapping_events": 26
+      }
+    ],
+    "classification_counts": {
+      "JUSTIFIED_DISTINCT_CANDIDATE": 22,
+      "ALREADY_REPRESENTED_AT_BOUNDED_SCOPE": 41,
+      "UNRESOLVED_SOURCE_CONFLICT_OR_SCOPE": 25,
+      "MEANING_COMPRESSED_IN_EXISTING_ROWS": 9,
+      "NATIVE_ONLY_OR_COVERAGE_EVIDENCE": 12
+    },
+    "provisional_new_candidate_row_source_ids": {
+      "SAPIENT-F2-FUSION-ROLE": [
+        "SAP02-N01",
+        "SAP02-N07",
+        "SAP03A-N04"
+      ],
+      "SAPIENT-F2-PERFORMANCE": [
+        "SAP03B-N03",
+        "SAP03B-N04"
+      ],
+      "SAPIENT-F2-TARGET-CLAIMS": [
+        "SAP03B-N05",
+        "SAP03B-N06",
+        "SAP03B-N07",
+        "SAP04-N10",
+        "SAP04-N13",
+        "SAP06-N01",
+        "SAP06-N02",
+        "SAP06-N03",
+        "SAP06-N04",
+        "SAP06-N05"
+      ],
+      "SAPIENT-F2-DETECTION-LINEAGE": [
+        "SAP02-N12",
+        "SAP04-N16",
+        "SAP04-N19"
+      ],
+      "SAPIENT-F2-ALERT-LIFECYCLE": [
+        "SAP04-N08",
+        "SAP05-N13",
+        "SAP05-N14",
+        "SAP05-N16"
+      ]
+    },
+    "previous_SAPIENT_existing_row_source_mappings_count": 181,
+    "previous_distinct_mapping_source_ids": 82,
+    "previous_distinct_source_findings_without_prior_row_mapping": 27,
+    "all_109_packet_native_ids_individually_opportunity_assessed": true,
+    "full_97_table_independent_rule_audit_claimed": false,
+    "proto_complete_field_enum_constraint_audit_claimed": false,
+    "proto_compiler_or_device_runtime_executed": false,
+    "fielded_equipment_identity_and_OGC_exact_mapping_not_established": true,
+    "existing_SAP07_owner_status": "ACTIVE; OPTION A/B PENDING",
+    "original_holds_39_overlapping_not_closed": true,
+    "other_donors": "ISA six source questions and The Open Group SOSA nine PARTIAL families retained",
+    "master_publication": "F2-3 planned JSON/2 CSV/2 Markdown; keep unchanged older SAP06 XLSX exact-lag disclosure; M00 immutable until owner milestone",
+    "model_profile_adopted": false
   }
 }
