@@ -1,8 +1,17 @@
-# F2-5 — Source-qualified candidate-to-cell reconciliation prepared; saved color workbook pending (13 November 2026)
+# F2-5 COMPLETE — original-source-qualified individual-cell Excel colors verified (13 November 2026)
 
-The existing F2-1–F2-4 original-source evidence has been reconciled into **325 single-meaning donor-cell color decisions** and **67 explicit mixed/composite cells held WITHOUT a misleading fill**. Donor-column counts: ISA H 260 eligible / 38 held; SAPIENT G 50 eligible / 26 held; The Open Group SOSA I 15 eligible / 3 held. The canonical JSON records stable row IDs, original native source IDs, provisional status, the exact fill decision, and the reason no fill was applied where meanings differ. **Not assessed/NO_ESTABLISHED never mean native-only gray**, and no colors are applied to case, OGC or proposed-DIM cells.
+The original 26-sheet editable Excel now includes all **337 information/review rows / 354×15 grid**, including three qualified SOSA and five SAPIENT source-specific candidate additions. Actual saved readback verified **5,310 comparison values** against canonical JSON, BOTH CSV and BOTH Markdown comparisons, plus the **325 exact individual-cell RGB fills** and the appended Legend; all 21 unrelated original source/case/history worksheet XML parts remained byte-identical. [F2-5 saved workbook verification](F2_5_Workbook_Validation_13NOV2026.json) · [successful GitHub action](https://github.com/OS4CSAPI/glaux-client/actions/runs/43516364230) · [editable canonical Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx).
 
-**SAVED EXCEL NOT YET PUBLISHED:** the 26-sheet living XLSX is still the SAP06 329-row snapshot; the current canonical JSON and two CSV/two Markdown comparisons have 337 rows. Eight added donor candidates await same-workbook insertion and actual saved-value and style verification. The protected original M00 must remain unchanged; no M01 or donor acceptance is authorized by this source-metadata checkpoint. F2-5 continues with the workbook publication and independent GitHub readback before it can be called complete.
+| Source-grade donor column | Individually colored | Mixed/composite original native meanings held UNCOLORED |
+| --- | ---: | ---: |
+| Integrated Sensor Architecture (ISA) H | 260 | 38 |
+| SAPIENT v2 G | 50 | 26 |
+| The Open Group SOSA C239 I | 15 | 3 |
+| **All** | **325** | **67** |
+
+**Colors mean source-qualified candidacy, NOT model adoption:** 81 COMMON light blue #D9EAF8; 214 SPECIALIZED light amber #F9E6B8; 20 NATIVE_ONLY_EVIDENCE light gray #E5E7EB; 10 UNRESOLVED light purple #E9DEFA. All cells carry stable original source IDs, qualified meaning and a reason for fill or a mixed-source hold in the canonical JSON and saved DIM Register; blank/unassessed and NO_ESTABLISHED remain uncolored without being confused with the 67 held composite meanings. These figures do NOT establish original donor field richness, fully audited coverage, native device conformance or required DIM classes/CSAPI Profile SHALLs.
+
+**Original and manual checkpoint preservation:** every old displayed comparison row survives in order; all 26 original tabs remain, with 21 unaffected historical/source/case sheet XMLs byte-preserved. All 24 old Legend cell values survive the appended key, and all eight new optional candidate rows are present in the saved workbook. Manual [M00 original](Manual_Workbook_Versions/M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx) remains SHA-256 724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70; the colored workbook is SHA-256 bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c. ISA six source-definition questions, SOSA nine owner-accepted bounded-PARTIAL source holds and SAPIENT 39 overlapping source limitations with owner SAP07 A/B pending all remain intact. **M01 is not created; ONE NEXT owner review and accept/defer manual M01. STOP** before any further donor, DIM/Profile model adoption, runtime or deployment.
 
 ---
 
