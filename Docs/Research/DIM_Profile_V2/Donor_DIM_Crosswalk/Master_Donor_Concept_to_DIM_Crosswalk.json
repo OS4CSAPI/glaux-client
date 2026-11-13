@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "fb18d864dcdd2383e648af081117b57f8924bdf29175dbbfdda921f16d7ded72",
+  "currentWorkbookSha256": "c9ea898663c29f63c4c427c596e338206c0dfd905b003cb268988f22e92392fe",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -163,7 +163,7 @@
       "",
       "",
       "Manufacturer",
-      "ConfigurationData.manufacturer",
+      "RELATED: BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments. [SAP03A-N12]",
       "≈ Manufacturer · manufacturer / producer / vendor",
       "RELATED: C239 §6.3 replaceable-unit (FRU) inventory, §8.3 MORA getManufacturer, and PIC Certificate of Volatility identify vendor in specific contexts, not a verified fielded-unit manufacturer. The 2022 v1 DSDM models Manufacturer–Product links [G3-N2]; original C239 2023 native byte equivalence remains unverified. [G2-3/G2-4B/G2-6A/G3-N2]",
       "",
@@ -180,7 +180,7 @@
       "EE181; CR1000X; TX321",
       "",
       "Model",
-      "ConfigurationData.model",
+      "RELATED: BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent. [SAP03A-N12]",
       "Model",
       "RELATED/PARTIAL: C239 §5.3 Procurable Unit, §6.3 FRU model, RF getModel/getEquipmentId, and PIC documentation use different product/part/instance scopes. None proves a model of an installed whole System. The 2022 DSDM distinguishes Product and ProductInstance but Product.name need not be a model number; C239 native equivalence unverified. [SOSA-D/G2-3/G2-4B/G2-6A/G3-N2]",
       "",
@@ -197,7 +197,7 @@
       "EE181 serials 222016000109CE; 21281600077814",
       "",
       "SerialNumber",
-      "≈ ConfigurationData.serial_number",
+      "PARTIAL: BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial. [SAP03A-N12]",
       "≈ Serial Number · component context",
       "RELATED: C239 §6.3 FRU inventory includes serial number but proves no installed case-equipment serial. NO_ESTABLISHED: an orderable fixed-pin-variant part number is not an individual serial number. [G2-3; G2-7Q §13.5.4.2.6.2]",
       "",
@@ -214,7 +214,7 @@
       "acebpmet (station source identifier)",
       "≈ MetaTEDS.UUID (TIM identifier)",
       "",
-      "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
+      "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
       "≈ UCI · ISA component/virtual-component identifier",
       "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
       "",
@@ -282,7 +282,7 @@
       "GOES TX321 transmitter, serial 2335",
       "≈ Network Capable Application Processor (NCAP)",
       "",
-      "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
+      "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
       "≈ ISA component / Controller · network role, not equipment identity",
       "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
       "",
@@ -299,7 +299,7 @@
       "",
       "≈ Transducer Interface Module (TIM)",
       "≈ ComponentType (can include software)",
-      "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
+      "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
       "≈ composition member · functional integration, not physical part-of",
       "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
       "",
@@ -333,7 +333,7 @@
       "acebpmet station site (not a surveyed EE181 point)",
       "",
       "",
-      "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
+      "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
       "",
       "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
       "≈ sosa:Platform",
@@ -367,7 +367,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
       "All ISA components support the client-side connection role; Controllers also support the server-side role",
       "RELATED: C239 §6.1 in-/out-of-band management and §§14–15 runtime/inter-module interactions define scoped endpoint roles (request/response, publish/subscribe). They do not establish enduring ISA service-provider/client identity, membership authority, or CSAPI resource identity. [SOSA-D/G2-7R/G2-7S/G2-7T]",
       "",
@@ -418,7 +418,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
       "Connection → Registration → Configuration → Operational → Deregistration → Disconnection; message-triggered transitions and renewal",
       "NO_ESTABLISHED: C239 §12 security-audit startup/shutdown, service lifetime requests and §14 container lifetime concern different lifecycles from ISA connection → registration → configuration → operation/deregistration. [G2-5/G2-7R]",
       "",
@@ -469,7 +469,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "",
+      "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
@@ -1336,7 +1336,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
       "Capability Declaration.properties / commands / observables / types [0+]",
       "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
       "",
@@ -1591,7 +1591,7 @@
       "",
       "≈ SampMode (sampling capability)",
       "",
-      "ModeDefinition.mode_name",
+      "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
       "≈ Capability Declaration · support, not enumerated operating modes",
       "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
       "",
@@ -1608,7 +1608,7 @@
       "",
       "≈ SDefault (sampling mode default)",
       "",
-      "ModeDefinition.mode_type=DEFAULT",
+      "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
       "",
       "NO_ESTABLISHED: C239 glossary Mode is a finite discrete behavior state; this definition does not designate an equipment-default operating mode or an actually applied setting. [G2-7T]",
       "",
@@ -1625,7 +1625,7 @@
       "",
       "",
       "",
-      "StatusReport.mode",
+      "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
       "≈ Camera Mode in Status.properties · camera-specific report",
       "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
       "",
@@ -3308,7 +3308,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: SAPIENT Registration contains declared Node capability/mode/status-report contracts and ConfigurationData manufacturer/model/versions; not the ISA Config message or validated installed hardware state. [SAP03A-N01,SAP03A-N12]",
       "Config.ccd [0-1]; property / observable / command states [0+]",
       "RELATED/PARTIAL: C239 §§5–7, 14 distinguish design capability, runtime setup, current mode/state, health and management operations; specialized hardware profile options are not live readiness flags. 2022 v1 DSDM Component.health/operationalState/mode are native separate characteristics, not ISA Config.ccd or universally selected reporting; C239 native equivalence unverified. [SOSA-D/G2-4A/B/G2-7R/S/T/G3-N2]",
       "",
@@ -3325,7 +3325,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
       "Status.properties: Name Value Pair [0+]",
       "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
       "",
@@ -3342,7 +3342,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: BSI §§6.2.1–.4/Tables15–16 establish Registration and acceptance/rejection/timeout with source Node UUID; no exact ISA registration credential or permission structure established. [SAP03A-N01,SAP03A-N02,SAP03A-N03]",
       "Registration.opcode; credentials [0+]; error description [0-1]",
       "Not assessed here",
       "",
@@ -3631,7 +3631,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Tables17–19 declare NodeType list and Capability category/type/value/units; these classifications are not ISA's 22 DMS capability-group memberships. [SAP03A-N04,SAP03A-N05]",
       "22 ordinary DMS capability categories → Properties / Observables / Commands; overlapping membership",
       "RELATED but NO_ESTABLISHED ISA capability membership: C239 §5.2 module decomposition criteria and §13 hardware-protocol code groups classify functional/physical designs, not an ISA named group of declared properties/observables/commands. [G2-4A/G2-7A]",
       "",
@@ -3648,7 +3648,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
       "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
       "",
@@ -4005,7 +4005,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
       "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
       "",
@@ -4243,7 +4243,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
       "Capability Version",
       "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
       "Not assessed here",
@@ -4260,7 +4260,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit. [SAP03A-N12]",
       "Hardware Version · accepted extension",
       "RELATED: C239 §6.3 replaceable-unit inventory can identify hardware revision; this does not verify the hardware revision of an installed physical component. [G2-3]",
       "Not assessed here",
@@ -4396,7 +4396,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device. [SAP03A-N12]",
       "Software Version · accepted extension",
       "RELATED/NO_ESTABLISHED: C239 §6.3 inventory and §6.5.4.2-8 PIC management expose version information; §14 ImageLoad loadable software does not independently prove which version is currently running. [G2-3/G2-7R]",
       "Not assessed here",
@@ -4413,7 +4413,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI Table15 icd_version identifies the SAPIENT ICD interface version, not the ISA specification version requested in this ISA row. [SAP03A-N01]",
       "Specification Version",
       "Not assessed here",
       "Not assessed here",
@@ -4651,7 +4651,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
       "Position",
       "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
       "Not assessed here",
@@ -4685,7 +4685,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
       "Relationship",
       "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
       "Not assessed here",
@@ -5195,7 +5195,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
       "Maximum Status Interval",
       "Not assessed here",
       "Not assessed here",
@@ -5212,7 +5212,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
       "Minimum Status Interval",
       "Not assessed here",
       "Not assessed here",
@@ -6027,7 +6027,7 @@
         "",
         "",
         "Manufacturer",
-        "ConfigurationData.manufacturer",
+        "RELATED: BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments. [SAP03A-N12]",
         "≈ Manufacturer · manufacturer / producer / vendor",
         "RELATED: C239 §6.3 replaceable-unit (FRU) inventory, §8.3 MORA getManufacturer, and PIC Certificate of Volatility identify vendor in specific contexts, not a verified fielded-unit manufacturer. The 2022 v1 DSDM models Manufacturer–Product links [G3-N2]; original C239 2023 native byte equivalence remains unverified. [G2-3/G2-4B/G2-6A/G3-N2]",
         "",
@@ -6114,6 +6114,20 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-3: §6.3 FRU inventory references vendor identity; no observed manufacturer field for any case · G2-4B: Table 8.3.5-1 defines V1.0 MORA getManufacturer for an RF module, not verified manufacturer data for any individual case or an ISA/CSAPI manufacturer attribute · G2-6A: Certificate of Volatility identifies the PIC vendor",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments.",
+        "previous_sapient_cell_value": "ConfigurationData.manufacturer",
+        "source_qualified_display": "RELATED: BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6138,7 +6152,7 @@
         "EE181; CR1000X; TX321",
         "",
         "Model",
-        "ConfigurationData.model",
+        "RELATED: BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent. [SAP03A-N12]",
         "Model",
         "RELATED/PARTIAL: C239 §5.3 Procurable Unit, §6.3 FRU model, RF getModel/getEquipmentId, and PIC documentation use different product/part/instance scopes. None proves a model of an installed whole System. The 2022 DSDM distinguishes Product and ProductInstance but Product.name need not be a model number; C239 native equivalence unverified. [SOSA-D/G2-3/G2-4B/G2-6A/G3-N2]",
         "",
@@ -6240,6 +6254,20 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · SOSA Procurable Unit · §5.3 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-3: §6.3 names FRU model number in hardware inventory; not a verified deployed product-model value · G2-4B: MORA getModel/getEquipmentId are V1.0 RF-device responses; a model designation differs from a serialized installed device · G2-6A: Certificate of Volatility specifies covered product/family/part number",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent.",
+        "previous_sapient_cell_value": "ConfigurationData.model",
+        "source_qualified_display": "RELATED: BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6263,7 +6291,7 @@
         "EE181 serials 222016000109CE; 21281600077814",
         "",
         "SerialNumber",
-        "≈ ConfigurationData.serial_number",
+        "PARTIAL: BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial. [SAP03A-N12]",
         "≈ Serial Number · component context",
         "RELATED: C239 §6.3 FRU inventory includes serial number but proves no installed case-equipment serial. NO_ESTABLISHED: an orderable fixed-pin-variant part number is not an individual serial number. [G2-3; G2-7Q §13.5.4.2.6.2]",
         "",
@@ -6319,6 +6347,20 @@
         "previous_sosa_cell_value": "Related only · G2-3: §6.3 FRU inventory includes serial number; no actual serialized installed equipment was observed",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial.",
+        "previous_sapient_cell_value": "≈ ConfigurationData.serial_number",
+        "source_qualified_display": "PARTIAL: BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6342,7 +6384,7 @@
         "acebpmet (station source identifier)",
         "≈ MetaTEDS.UUID (TIM identifier)",
         "",
-        "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
+        "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
         "≈ UCI · ISA component/virtual-component identifier",
         "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
         "",
@@ -6431,6 +6473,20 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03]",
+        "previous_sapient_cell_value": "RELATED / NO_ESTABLISHED: SAPIENT §4.1/Table1 SapientMessage.node_id is sender Node UUID, not proven persistent physical equipment identity or a CSAPI System URI. [SAP02-N03]",
+        "source_qualified_display": "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -6845,7 +6901,7 @@
         "GOES TX321 transmitter, serial 2335",
         "≈ Network Capable Application Processor (NCAP)",
         "",
-        "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
+        "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
         "≈ ISA component / Controller · network role, not equipment identity",
         "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
         "",
@@ -7222,6 +7278,21 @@
         "source_qualified_display": "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N03",
+          "SAP03A-N04"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node.",
+        "previous_sapient_cell_value": "PARTIAL: SAPIENT §3.1.10 Node is an architecture participant and §4.1/Table1 requires sender node_id UUID; fusion/platform/mediated Nodes do not equal physical instruments. [SAP02-N02,N03]",
+        "source_qualified_display": "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -7251,7 +7322,7 @@
         "",
         "≈ Transducer Interface Module (TIM)",
         "≈ ComponentType (can include software)",
-        "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
+        "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
         "≈ composition member · functional integration, not physical part-of",
         "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
         "",
@@ -7762,6 +7833,20 @@
         "source_qualified_display": "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12]",
+        "previous_sapient_cell_value": "NO_ESTABLISHED physical part-of: SAPIENT §4.10 dependent_nodes and §4.11 child fusion Nodes express movement/task/fusion dependencies, not authenticated installed constituents. [SAP02-N06,N07]",
+        "source_qualified_display": "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -8141,7 +8226,7 @@
         "acebpmet station site (not a surveyed EE181 point)",
         "",
         "",
-        "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
+        "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
         "",
         "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
         "≈ sosa:Platform",
@@ -8482,6 +8567,20 @@
         "source_qualified_display": "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01]",
+        "previous_sapient_cell_value": "RELATED / NARROWER: §4.10 mobile/pointable platform Node declares operationally dependent Node UUIDs; §4.11 fusion hierarchy is a communications role, not a general station-host assertion. [SAP02-N06,N07]",
+        "source_qualified_display": "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -8612,7 +8711,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
         "All ISA components support the client-side connection role; Controllers also support the server-side role",
         "RELATED: C239 §6.1 in-/out-of-band management and §§14–15 runtime/inter-module interactions define scoped endpoint roles (request/response, publish/subscribe). They do not establish enduring ISA service-provider/client identity, membership authority, or CSAPI resource identity. [SOSA-D/G2-7R/G2-7S/G2-7T]",
         "",
@@ -8711,6 +8810,21 @@
         "previous_sosa_cell_value": "Related only · In-band versus out-of-band management / General Profile network management binding · §6.1 printed39/PDF65 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-7R: Module software uses network interfaces for SOSA interactions [RELATED; Not online provider authority or tasking role] · G2-7S: Endpoint roles depend on interaction type [RELATED; Not permanent whole-System service provider class]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N02",
+          "SAP03A-N04"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -9518,7 +9632,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
         "Connection → Registration → Configuration → Operational → Deregistration → Disconnection; message-triggered transitions and renewal",
         "NO_ESTABLISHED: C239 §12 security-audit startup/shutdown, service lifetime requests and §14 container lifetime concern different lifecycles from ISA connection → registration → configuration → operation/deregistration. [G2-5/G2-7R]",
         "",
@@ -9597,6 +9711,20 @@
         "previous_sosa_cell_value": "Related only · G2-5: Audit subsystem startup/shutdown and service lifecycle requests are separate from ISA connection participation",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N02"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -9682,7 +9810,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "",
+        "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
@@ -9878,6 +10006,21 @@
         "previous_sosa_cell_value": "Related only · Storage/Retrieval Manager / Reporting Services module / Data products vs information prod… · §4.2 Table4.2-1 printed25/PDF51 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 Reporting Services formats/packages disseminated signals, images, target reports and metadata, not individual observation fields · G2-4B: Digital Receive Data is marked Future; Reporting Services formats/packages data in an expressly reference-only §11.1 table · G2-7A: AMPS Protocol Field means a hardware port protocol allocation · G2-7B: Source Protocol Field is a physical-port grammar term · G2-7M: J8/J9 Ch1–Ch19 or Ch1–Ch8 are physical pin/channel designations. [NO_ESTABLISHED; Not 27 digital observation fields or physical sensor instances.] · G2-7N: 24 physical fiber positions are organized as RX/TX contacts. [NO_ESTABLISHED; Not 24 digital outputs, observations or individually identified physical sensors.] · G2-7O: Source J2 table enumerates physical contacts and signal families. [NO_ESTABLISHED; Not 64 digital output properties or 64 sensor devices.] · G2-7P: J3 video and J8 RF contacts are physical channels. [NO_ESTABLISHED; Not reported observation fields or individual sensors.] · G2-7S: Structured data and signal samples may be transported [RELATED; Not established observed-property field]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12303,7 +12446,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
         "Capability Declaration.properties / commands / observables / types [0+]",
         "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
         "",
@@ -12754,6 +12897,22 @@
         "previous_sosa_cell_value": "Related only · Sensor Capability · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §4.2 SOSA catalog lists 24 named and 3 Reserved module entries, not all instantiated; §1.6 leaves other modules unspecified · G2-4B: Preliminary GetModuleCapabilities differs from V1.0 MORA getDeviceDescription and getSignalPorts; RF resource/service introspection is not an ISA declared catalogue · G2-5: Security Services has specific SHALL obligations, unlike support modules explicitly undefined · G2-6A: Cooling and CoV define physical design/documentation characteristics · G2-6B: Slot-profile family and dash options constrain eligible hardware design features · G2-6C: 6U payload/switch/RF-optical designs specify conditional hardware features · G2-6D: Source lists allowed 3U/6U hardware module-profile alternatives for scoped legacy cards · G2-7A: AMPS strings enumerate qualified possible hardware port protocol capabilities for a specified PICP · G2-7B: Source samples illustrate possible card protocol and cooling capabilities · G2-7C: Full AMPS examples enumerate possible physical port protocol/cooling/RF/XMC capabilities · G2-7D: Four switch PICP designs illustrate potential physical data/control/expansion and optical port capabilities. · G2-7E: Optical Profile and example protocol fields enumerate possible physical Fat Pipe/port allocations for specified MT designs. · G2-7F: AMPS String specifies physical per-port/plane protocol lane implementations, including conditional multiprotocol designs. · G2-7G: Source-defined radial-clock, coax RF/IF and GPS antenna pin labels describe specialized possible PIC hardware interfaces. · G2-7I: Physical connector catalogue. [RELATED; Not live ISA capability.] · G2-7J: The table names different physical communications, safety and emission-control signal groups. [RELATED; Not an independently supported runtime capability catalogue.] · G2-7K: C239 declares a particular physical Ethernet interface implementation for J2 hardware. [RELATED; Not evidence of a live offered or activated capability.] · G2-7L: Optional USB Host and conditional video/fiber capabilities. [RELATED; Not a runtime-advertised live capability.] · G2-7M: J7 declares specific hardware transport/protocol design support. [RELATED; No verified runtime-advertised service or connected source-case hardware.] · G2-7N: J10 AC, J11 HVDC and J16 hold-up power are source-specific design capabilities. [RELATED; Not an active capability observed on empirical cases.] · G2-7O: Class3 conformance requires documentation of physical connectors, their variants and non-SOSA exceptions. [RELATED; Not a measured runtime capability or preapproved DIM schema.] · G2-7P: Class3 video, OM2 fiber and USB are specified hardware interface capabilities. [RELATED; Not an actively offered source-case service.] · G2-7Q: Vendor GPI function list when software configurable [RELATED; Not generic CSAPI capability catalogue] · G2-7R: RTE ProfileType and Resources describe runtime capabilities [RELATED; Not an observed runtime-advertised CSAPI catalog] · G2-7S: Interaction types describe design capabilities [RELATED; No actual client-discoverable capability catalogue]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01",
+          "SAP03A-N05",
+          "SAP03A-N09"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14471,7 +14630,7 @@
         "",
         "≈ SampMode (sampling capability)",
         "",
-        "ModeDefinition.mode_name",
+        "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
         "≈ Capability Declaration · support, not enumerated operating modes",
         "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
         "",
@@ -14615,6 +14774,21 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · Sensor Module Mode · C239 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4B: MORA sendCommand enumerates OPERATE/STANDBY and other device actions; getDeviceStatus reports a device status · G2-5: Host table includes radar mode and separate service lifecycle requests · G2-7L: Hardwired mode and predefined NEZ map selectors. [RELATED; Not an adopted universal mode list.] · G2-7O: NEZ and emissions-mode selection pins address predefined hardware alternatives. [RELATED; No universal mode enumeration; source connector pin conflicts unresolved.] · G2-7Q: LASER_ARM hardware gate controls hazardous power [RELATED; Not remotely selected software mode] · G2-7T: Mode is finite discrete condition with expected behavior for system module or equipment [RELATED; No identified set of modes on source-case equipment]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active.",
+        "previous_sapient_cell_value": "ModeDefinition.mode_name",
+        "source_qualified_display": "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14637,7 +14811,7 @@
         "",
         "≈ SDefault (sampling mode default)",
         "",
-        "ModeDefinition.mode_type=DEFAULT",
+        "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
         "",
         "NO_ESTABLISHED: C239 glossary Mode is a finite discrete behavior state; this definition does not designate an equipment-default operating mode or an actually applied setting. [G2-7T]",
         "",
@@ -14686,6 +14860,21 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode.",
+        "previous_sapient_cell_value": "ModeDefinition.mode_type=DEFAULT",
+        "source_qualified_display": "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14710,7 +14899,7 @@
         "",
         "",
         "",
-        "StatusReport.mode",
+        "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
         "≈ Camera Mode in Status.properties · camera-specific report",
         "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
         "",
@@ -14906,6 +15095,21 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "≈ Sensor Module Mode / Component/Sensor Status / SOSA sensor states S0–S5 · C239 · PARTIAL/RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorMode/getMode return ComponentMode (V1.0); interface definition is not observed device mode · G2-2: V1.0 getMode returns ComponentMode for specialized roles, whereas application-state types remain distinct · G2-3: §6.5 source operational states distinct from Mode and security trust assessments · G2-4B: V1.0 RF getDeviceStatus and SYSLOG Status Message support reported RF device/health status distinctions · G2-5: Source host interface can request subsystem status and platform orientation · G2-7L: Emission mode selector pins are defined. [NO_ESTABLISHED; No real reported operating mode value.] · G2-7O: Emission mode source controls pin-level input. [NO_ESTABLISHED; No reported current operating-mode output.] · G2-7T: Mode is behavioral condition separate from Status performance and health [RELATED; No reported current operating mode]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N08",
+          "SAP03A-N09"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself.",
+        "previous_sapient_cell_value": "StatusReport.mode",
+        "source_qualified_display": "NO_ESTABLISHED: SAP-03A Registration defines possible mode and future StatusReport categories; the current selected mode is a later status value, not established by registration itself. [SAP03A-N08,SAP03A-N09]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -19421,7 +19625,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: SAPIENT Registration contains declared Node capability/mode/status-report contracts and ConfigurationData manufacturer/model/versions; not the ISA Config message or validated installed hardware state. [SAP03A-N01,SAP03A-N12]",
         "Config.ccd [0-1]; property / observable / command states [0+]",
         "RELATED/PARTIAL: C239 §§5–7, 14 distinguish design capability, runtime setup, current mode/state, health and management operations; specialized hardware profile options are not live readiness flags. 2022 v1 DSDM Component.health/operationalState/mode are native separate characteristics, not ISA Config.ccd or universally selected reporting; C239 native equivalence unverified. [SOSA-D/G2-4A/B/G2-7R/S/T/G3-N2]",
         "",
@@ -19909,6 +20113,21 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · Three SOSA RTE profiles / RTE configuration-file fields / Software module to RTE containm… · §14.1 Table14.1-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.7 DIV-1 describes mission vs system-management information; source data models absent so no ISA current config/capability message equivalent · G2-4B: V1.0 MORA getCurrentMoraConfiguration/setCurrentMoraConfiguration differs from preliminary Task Health publishing configuration · G2-5: Key configuration, authorization policy and host config are separately scoped interactions · G2-6A: Overlay profile and memory CoV are design/documentation configuration · G2-6B: Supplier card build/dash options and intermateability define design-time alternatives · G2-6C: Supplier build/XMC and slot-dash choices are design-time alternatives · G2-6D: Legacy card module-profile alternatives determine design-time profile selection · G2-7A: ANS example and protocol fields express design-time module/port configuration · G2-7B: ANS dash, optional slot dash and dcp are design-time hardware choices · G2-7C: Tables provide physical profile protocol options for design/selection with unverified exact matrix alignments · G2-7D: Printed switch AMPS names and depth/cooling variants describe design-time card profiles. · G2-7E: The table's MTA1/MTB1/MTC1 and bracketed strings are design-time illustrated optical configurations. · G2-7F: AMPS statements constrain planned card-level port/lane implementation and configurable protocol options. · G2-7G: Source pinouts and analog channel recommendations describe designed or prescribed hardware arrangement. · G2-7H: Connector configurations are design-option tables. (RELATED; Not observed applied module configuration.) · G2-7I: Documented connector inventory. [RELATED; Not applied config.] · G2-7J: J2 defines possible physical selected emission modes and enable circuits. [RELATED; No actual mode selected or verified effective configuration.] · G2-7K: Original IEEE/cable compliance is a physical design claim and connector context. [RELATED; Not a measured installed configuration or live interface state.] · G2-7L: Physical video and optical signaling standards. [RELATED; No ready/online state or observed equipment result.] · G2-7M: Interface designs constrain potentially supported physical signals. [RELATED; Not current operational readiness or present-device capability report.] · G2-7N: J16 battery-designated low-current hold-up is a hardware provision. [NO_ESTABLISHED; No source-reported readiness or actual device condition.] · G2-7O: Connector inventory and Ethernet design reflect declared hardware capability. [RELATED; No verified source device readiness or network service.] · G2-7P: Optical/Ethernet design standards may describe hardware support. [RELATED; No observed operational readiness.] · G2-7Q: Source requires communication recovery after host power cycle [RELATED; Not observed readiness] · G2-7R: Configured resources and internal adequacy checks [RELATED; Not measured or publicly reported readiness] · G2-7S: Health data and fault events can be published [RELATED; No actual readiness report] · G2-7T: Capabilities depend on current condition, Health comprises status faults and warnings [RELATED; No actual status or readiness message]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01",
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT Registration contains declared Node capability/mode/status-report contracts and ConfigurationData manufacturer/model/versions; not the ISA Config message or validated installed hardware state.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: SAPIENT Registration contains declared Node capability/mode/status-report contracts and ConfigurationData manufacturer/model/versions; not the ISA Config message or validated installed hardware state. [SAP03A-N01,SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -19937,7 +20156,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
         "Status.properties: Name Value Pair [0+]",
         "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
         "",
@@ -20247,6 +20466,21 @@
         "previous_sosa_cell_value": "Related only · Sensor Health/Diagnostics/Logging / Syslog Fault, Status, State, Mode and Configuration n… · §6.1.1 Table6.1.1-1 printed41–42/PDF67–68 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: getSensorHealth/getState/getMode are typed V1.0 reads; not an ISA Status message or generic property report · G2-2: ComponentHealth retrieval is V1.0 while special-role SecurityStatus retrieval is Future · G2-3: §6.5 System Manager provides distinct State, Health, and security posture rather than one ISA Status payload · G2-4B: Table8.3.5-1 has SYSLOG Fault/Status publications and getActiveFaults, while Chapter7 has separate task health · G2-5: Source exposes zeroization completion status, active faults, and subsystem status via different interactions · G2-6A: PSC FAIL* pin and output rail truth table describe electrical conditions · G2-6B: External I/O reference architecture may pass status/results via control/expansion fabric · G2-6C: 6U external I/O may forward status and results via physical planes · G2-6D: Source Legacy label is standards publication state, not live status telemetry · G2-7I: Grounding design threshold. [NO_ESTABLISHED; Not measured status.] · G2-7J: Safety and annunciation pins could convey hardware signals. [RELATED; Not an observed status record or live value.] · G2-7L: Safety and annunciation physical signals. [RELATED; Not a sampled digital property or CSAPI Status record.] · G2-7M: VSWR maximum-by-band is a design/test criterion. [NO_ESTABLISHED; Not a transmitted or observed instantaneous RF property value.] · G2-7O: Isolated electrical Safety Status signals are specified. [RELATED; No actual sampled Status resource value.] · G2-7P: Original VSWR limits apply to RF connector performance. [NO_ESTABLISHED; Not measured or published Status.] · G2-7R: Core/memory/ports are descriptive config values [NO_ESTABLISHED; Not measured property-value Status]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables20,24–26 define heartbeat interval and expected status field categories, values and on-change rules. Registration declarations are not actual latest StatusReport values. [SAP03A-N06,SAP03A-N08]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -20272,7 +20506,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: BSI §§6.2.1–.4/Tables15–16 establish Registration and acceptance/rejection/timeout with source Node UUID; no exact ISA registration credential or permission structure established. [SAP03A-N01,SAP03A-N02,SAP03A-N03]",
         "Registration.opcode; credentials [0+]; error description [0-1]",
         "Not assessed here",
         "",
@@ -20315,7 +20549,23 @@
       "controller_final_source_blocks": [
         "CNTR-6.0"
       ],
-      "controller_final_review_boundary": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation."
+      "controller_final_review_boundary": "Authorization Service can evaluate Registration REQUEST ADD contents; this is separate from Controller-side certificate identity comparison, subsequent ADDED/ERROR registration and physical asset participation.",
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01",
+          "SAP03A-N02",
+          "SAP03A-N03"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI §§6.2.1–.4/Tables15–16 establish Registration and acceptance/rejection/timeout with source Node UUID; no exact ISA registration credential or permission structure established.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "PARTIAL: BSI §§6.2.1–.4/Tables15–16 establish Registration and acceptance/rejection/timeout with source Node UUID; no exact ISA registration credential or permission structure established. [SAP03A-N01,SAP03A-N02,SAP03A-N03]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-T-REQUEST-REFERENCE",
@@ -21711,7 +21961,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Tables17–19 declare NodeType list and Capability category/type/value/units; these classifications are not ISA's 22 DMS capability-group memberships. [SAP03A-N04,SAP03A-N05]",
         "22 ordinary DMS capability categories → Properties / Observables / Commands; overlapping membership",
         "RELATED but NO_ESTABLISHED ISA capability membership: C239 §5.2 module decomposition criteria and §13 hardware-protocol code groups classify functional/physical designs, not an ISA named group of declared properties/observables/commands. [G2-4A/G2-7A]",
         "",
@@ -21752,6 +22002,21 @@
         "original_ANSI_VITA_and_C239_native_companions_unread": true,
         "full_AMPS_13_3_3_per_port_and_protocol_rules_unread": true,
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N04",
+          "SAP03A-N05"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables17–19 declare NodeType list and Capability category/type/value/units; these classifications are not ISA's 22 DMS capability-group memberships.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables17–19 declare NodeType list and Capability category/type/value/units; these classifications are not ISA's 22 DMS capability-group memberships. [SAP03A-N04,SAP03A-N05]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -21779,7 +22044,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
         "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
         "",
@@ -22241,6 +22506,21 @@
         "previous_sosa_cell_value": "Related only · C239 §6.2.3 distinguishes V1.0 from Future System Manager/generic-module support; not ISA required/recommended capability catalogue [G2-1] · G2-2: 208 V1.0 and 132 Future table entries across specialized interfaces; direct/indirect PIC rules qualify applicability · G2-3: §6.4 VITA Tier-2/3 and optional firmware firewall requirements depend on hardware role · G2-4B: 12 future CRE functions differ from V1.0 RF interface functions; §8.3.6 and §10.5 contain scoped shall Rules, some conditional · G2-5: Scoped software authentication and conditional DARE SHALLs differ from reference-only Power · G2-6A: PIC form-factor SHALL, cooling-cover SHOULD and mezzanine MAY have distinct standing · G2-6B: Binding conditional 3U profile Rule and specific should recommendation have different native status · G2-6C: C239 conditional 6U SHALL and optional no-XMC SHOULD are distinct · G2-6D: Conditional legacy-card SHALLs for module profiles differ from SHOULD recommendations not to select profiles for new systems · G2-7A: AMPS transition/descriptive will-language and C239 protocol-code downselection have scoped source standing · G2-7B: Native example port behavior differs from edition-supported four physical dcp options · G2-7C: Source says matrices identify legal hardware port protocol choices subject to original ANSI/VITA specification · G2-7D: Original switch section says listed protocol values illustrate AMPS format and carries no numbered SHALL Rule. · G2-7E: §13.3.6 explains conditional AMPS optical field constructions, including one scoped narrative must and zero numbered Rules. · G2-7F: SOSA PIC-specific Rules3/4 require implementing lanes for protocols declared by its own AMPS design; Rule2 binds profile format. · G2-7G: Two original conditional pinout SHALL Rules, a separate SHOULD Recommendation and one Observation differ from future-only slot-profile notes. · G2-7H: No current numbered VNX capability requirements in §13.4. (NO_ESTABLISHED; Unexamined external/later editions not absent by proof.) · G2-7I: Class1&2 connector alternatives. [RELATED; Not all three required.] · G2-7J: Conditional J2 25-7 insert/pin assignments constrain Class1&2 physical hardware. [RELATED; Not a universal sensor command or data-stream SHALL.] · G2-7K: J2 Ethernet signals must implement Gigabit Ethernet and the cited physical channel and cabling conditions. [RELATED; Condition applies to J2 interface, not every whole sensing system or software service.] · G2-7L: J6 per-pair current SHALLs distinct from J1-before-J6 SHOULD guidance. [RELATED; Not mandatory Profile capability for all sensing systems.] · G2-7M: J8/J9/auxiliary RF connector rules have scoped conditions, not universal application. [RELATED; No compulsory interfaces for all sensing Systems or adopted CSAPI Profile SHALL.] · G2-7N: J10 protective, J11 wire and J14 fiber-count guidance are SHOULD Recommendations. [RELATED; Not universal mandatory Profile SHALL or required connector.] · G2-7O: Class3 connector conformance includes mission permissions and documented exceptions. [RELATED; Not universal Profile SHALL, unresolved required-list conflicts retained.] · G2-7P: J6 mandatory per-pair current differs from recommended J1-before-J6 priority. [RELATED; No universal Profile SHALL on every sensing system.] · G2-7Q: EOIR J1 requirement is conditional to Class5 source scope [RELATED; Not universal Profile SHALL] · G2-7R: Alternative RTE profiles required if RTE present; human-readable format recommended [RELATED; Not universal software Profile SHALL for all sensors]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01",
+          "SAP03A-N05"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -24189,7 +24469,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
         "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
         "",
@@ -24641,6 +24921,20 @@
         "previous_sosa_cell_value": "Related only · Interaction binding five-layer selection / Three Table15.4-1 example binding stacks · §15.4 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4A: §5.8 interactions realized on network bindings independent of hardware/firmware/software implementation · G2-4B: MORA description distinguishes SOAP/XML request-response, SYSLOG UDP multicast and MDM UDP binary RF command/context/data · G2-5: Host adapter transforms inward SOSA/outward protocol messages · G2-6A: VITA connectors and XMC overlays specify physical pin mapping · G2-6B: AMPS String fixes slot profile dash-loading and port protocols for a PIC design · G2-6C: 6U VITA profile names select hardware connector and pipe protocols · G2-6D: Original legacy module profile names and physical port allocations are design identifiers, with 6U slot/module name difference unresolved · G2-7A: AMPS String and ANS serialize hardware module-profile ports and protocol modifiers · G2-7B: AMPS name grammar, slot dash and protocol delimiters describe card physical design · G2-7C: AMPS parentheses, brackets and RF/XMC angle fields serialize port/interface hardware design · G2-7D: MODA3/MODA6 switch AMPS grammar serializes physical slot/protocol design; angle fields identify front-panel optical source suffixes. · G2-7E: Brackets and per-MT or single-field alternatives encode hardware optical port naming, not digital message representation. · G2-7F: Rule13.3.7-2 requires hardware AMPS name format for Payload or Switch profiles by source tables. · G2-7G: AMPS RF pinout protocol field distinguishes physical coaxial aperture pinout alternatives. · G2-7H: Physical connector pin counts/design options are not digital message encoding. (RELATED; No proved negotiated interface.) · G2-7I: Keyed J# nomenclature describes physical mating. [RELATED; Not digital encoding.] · G2-7J: Commercial-protocol connector nomenclature may be adjusted to preserve physical signal integrity. [RELATED; Not negotiable digital message encoding.] · G2-7K: 1000BaseT and CAT 6A describe physical channel/cable standards. [RELATED; Not digital message-encoding or data-model version negotiation.] · G2-7L: Video channels cite SMPTE signal standards. [NO_ESTABLISHED; Not CSAPI model/schema negotiation.] · G2-7M: Physical USB/DisplayPort protocol specifications carry edition references. [NO_ESTABLISHED; No negotiated model schema, OGC content-type or software version contract.] · G2-7N: J12 differential TIA485-A and J13 single-ended TIA232 are native physical interfaces. [NO_ESTABLISHED; No machine-readable data model or digital schema negotiation.] · G2-7P: J7 physical USB/DisplayPort protocols have standards editions. [NO_ESTABLISHED; No negotiated software schema or message version.] · G2-7Q: Ethernet link speed auto-negotiates [NO_ESTABLISHED; Not model or message encoding version] · G2-7R: OCI runtime and DMTF OVF software packaging versions specified; RTE config format not standardized [RELATED; Not OGC representation/encoding negotiation]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -27101,7 +27395,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
         "Capability Version",
         "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
         "Not assessed here",
@@ -27169,6 +27463,20 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Not assessed here · G2-7Q: Vendor publishes configurable GPI functions [NO_ESTABLISHED; No configuration revision/version] · G2-7R: Config minimum fields prescribed but no revision/version field [NO_ESTABLISHED; Not current deployed configuration revision] · G2-7S: TLS configuration may differ by software load [NO_ESTABLISHED; No current revision identifier] · G2-7T: Configuration describes how sensor/module is set up [NO_ESTABLISHED; No revision field or current version identified]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -27193,7 +27501,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit. [SAP03A-N12]",
         "Hardware Version · accepted extension",
         "RELATED: C239 §6.3 replaceable-unit inventory can identify hardware revision; this does not verify the hardware revision of an installed physical component. [G2-3]",
         "Not assessed here",
@@ -27216,6 +27524,20 @@
         "native_external_references_read": false,
         "original_source_evidence_retained": true,
         "DIM_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -27491,7 +27813,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device. [SAP03A-N12]",
         "Software Version · accepted extension",
         "RELATED/NO_ESTABLISHED: C239 §6.3 inventory and §6.5.4.2-8 PIC management expose version information; §14 ImageLoad loadable software does not independently prove which version is currently running. [G2-3/G2-7R]",
         "Not assessed here",
@@ -27526,6 +27848,20 @@
         "previous_sosa_cell_value": "Related only · G2-3: §6.5.4.2-8 PIC provides version information; §6.3 inventory mentions software/firmware revisions",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -27550,7 +27886,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI Table15 icd_version identifies the SAPIENT ICD interface version, not the ISA specification version requested in this ISA row. [SAP03A-N01]",
         "Specification Version",
         "Not assessed here",
         "Not assessed here",
@@ -27563,7 +27899,21 @@
       "additional_ISA_type_evidence": [],
       "additional_ISA_context_evidence": [
         "WHITE-6.2"
-      ]
+      ],
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N01"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Table15 icd_version identifies the SAPIENT ICD interface version, not the ISA specification version requested in this ISA row.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Table15 icd_version identifies the SAPIENT ICD interface version, not the ISA specification version requested in this ISA row. [SAP03A-N01]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-110",
@@ -28324,7 +28674,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
         "Position",
         "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
         "Not assessed here",
@@ -28349,6 +28699,20 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N07"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI §6.2.5.6/Table23 declares coordinate system, datum and possible UTM zone; it does not provide an actual current equipment position. [SAP03A-N07]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -28407,7 +28771,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
         "Relationship",
         "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
         "Not assessed here",
@@ -28584,6 +28948,20 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-4A: §4.1 shows physical SOSA elements mounted on host/pod with optional interconnects, not reported ISA parent/child link records · G2-6A: Physical PIC interconnection is defined via backplane and slot profiles · G2-7G: Source Observation says payload coax pinouts may be associated with chassis I/O for hardware interchangeability. · G2-7I: J1 per external sensing element. [RELATED; Not reported part-of.] · G2-7L: Physical mating and pin assignment requirements. [RELATED; No verified installed parent/child relationship.] · G2-7M: RF connections can physically interconnect sensor elements. [RELATED; No established installed attachment of named individual assets.] · G2-7N: J14 and J15 specify possible physical mating arrangements. [RELATED; No named installed parent/child devices or actual mechanical attachment.] · G2-7O: J1 per element and differently keyed connector descriptions are physical design relationships. [RELATED; No identified installed physical parent/child assets.] · G2-7P: J14 and J15 have different physical MT arrangements. [RELATED; No installed parent/child identity inferred.] · G2-7Q: Mechanical aperture mounting relates package and host [RELATED; No identified installed assets] · G2-7T: System may be nested and Pod may hold elements from several SOSA sensors [RELATED; No measured installation or fixed cardinality]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N12"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30359,7 +30737,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
         "Maximum Status Interval",
         "Not assessed here",
         "Not assessed here",
@@ -30381,7 +30759,21 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3",
         "CMPT-4.3.6"
-      ]
+      ],
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N06"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-079",
@@ -30405,7 +30797,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
         "Minimum Status Interval",
         "Not assessed here",
         "Not assessed here",
@@ -30427,7 +30819,21 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3",
         "CMPT-4.3.6"
-      ]
+      ],
+      "SAP03A_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03A-N06"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_6_2_TABLES15_TO32_AND_RELEVANT_NATIVE_FIELDS_READ; REMAINING_PROTO_UNREVIEWED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
+        "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-097",
@@ -34691,15 +35097,15 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "SAP02_BSI_0_5_SAPIENT_17_EXISTING_ROW_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP03A_BSI_REGISTRATION_TABLES15_TO32_28_CELLS_SAME_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP02_SAME_ORIGINAL_26_SHEET_SAVED_XLSX_VERIFIED",
-    "sha256": "fb18d864dcdd2383e648af081117b57f8924bdf29175dbbfdda921f16d7ded72",
+    "checkpoint": "SAP03A_BSI_TABLES15_32_SAME_ORIGINAL_XLSX_VERIFIED",
+    "sha256": "c9ea898663c29f63c4c427c596e338206c0dfd905b003cb268988f22e92392fe",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: same saved XLSX all 346x15 source grid equals JSON/both CSV/both readable comparisons",
+    "lag": "ZERO: saved original 26-sheet workbook agrees with canonical JSON, both CSV and both Markdown",
     "textCheckpoint": "SAP02_BSI_0_5_SOURCE_INTEGRATED",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -34718,8 +35124,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 54,
-    "validation_file": "SAP02_Workbook_Validation_12NOV2026.json",
+    "refreshed_cell_count": 28,
+    "validation_file": "SAP03A_Workbook_Validation_12NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -37697,7 +38103,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SAP02 complete and same 26-sheet XLSX verified; only new distinct owner Proceed authorizes SAP03A original BSI Registration Tables 15–32, stop before SAP03B; SAPIENT ACTIVE.",
+  "nextOwnerAction": "SAP03A complete, 18 original Registration tables, 28 source-qualified SAPIENT G cells and SAME 26-sheet Excel verified; separate owner Proceed only for SAP03B Tables33–59; stop before SAP04.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -38108,6 +38514,56 @@
         "high": 8
       },
       "next": "SAP03A only on separate owner proceed"
+    },
+    "SAP03A": {
+      "status": "SOURCE_AUDITED_CANONICAL_MASTER_SAME_EDITABLE_EXCEL_VERIFIED",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "audit": "SAP03A_Original_Source_Review_12NOV2026.md",
+      "validation": "SAP03A_Workbook_Validation_12NOV2026.json",
+      "source_tables_read": 18,
+      "cumulative_main_tables_read": 32,
+      "source_findings": 16,
+      "exact_new_holds": 3,
+      "source_qualified_cell_count": 28,
+      "changed_original_cells": [
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G11",
+        "G12",
+        "G14",
+        "G16",
+        "G19",
+        "G22",
+        "G73",
+        "G88",
+        "G89",
+        "G90",
+        "G189",
+        "G190",
+        "G191",
+        "G208",
+        "G209",
+        "G230",
+        "G244",
+        "G245",
+        "G253",
+        "G254",
+        "G268",
+        "G270",
+        "G300",
+        "G301"
+      ],
+      "saved_grid_346x15": true,
+      "Excel_lag": 0,
+      "forecast_remaining": {
+        "low": 4,
+        "most_likely": 5,
+        "high": 7
+      },
+      "next": "SAP03B only, owner controlled; source incomplete",
+      "DIM_Profile_adopted": false
     }
   }
 }
