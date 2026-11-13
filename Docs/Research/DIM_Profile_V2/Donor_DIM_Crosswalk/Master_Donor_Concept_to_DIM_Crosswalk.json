@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "bd05dd0eba7068142f92cb3c3fe3b920f74aaba8b566a64322c09c165d9b88e3",
+  "currentWorkbookSha256": "490eab4ac6cc3d43bf755a004b6f584614b0ad57b16fba8ff130f773238d5334",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -860,7 +860,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
+      "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
       "Media [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -1200,7 +1200,7 @@
       "",
       "",
       "",
-      "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
+      "RELATED: Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument. [SAP05-N01,SAP05-N13]",
       "Event.event ID; Event.event reference → creator + id + time",
       "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1217,7 +1217,7 @@
       "",
       "",
       "",
-      "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
+      "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
       "Event.time: UTC",
       "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
       "",
@@ -1234,7 +1234,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
       "Event.type: Event Type · required/default wording retained",
       "RELATED: C239 §12 distinguishes required security/lifecycle/zeroization/policy audit events from permitted BIST/maintenance/key events; glossary Detection and Audit Event remain different categories. This is not a universal ISA Event.type enumeration or proof of physical detection. [G2-5/G2-7T]",
       "",
@@ -1387,7 +1387,7 @@
       "",
       "",
       "",
-      "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
+      "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
       "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
       "",
@@ -1404,7 +1404,7 @@
       "",
       "",
       "",
-      "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
+      "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
       "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
       "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
       "",
@@ -1421,7 +1421,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
+      "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
       "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
       "",
@@ -1506,7 +1506,7 @@
       "",
       "",
       "",
-      "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
+      "RELATED: DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations. [SAP05-N04,SAP05-N14]",
       "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
       "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
       "",
@@ -1642,7 +1642,7 @@
       "",
       "",
       "",
-      "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
+      "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
       "≈ Request message · command invocation, not proven execution",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
       "",
@@ -1659,7 +1659,7 @@
       "",
       "",
       "",
-      "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
+      "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "≈ Response message · reported disposition, not measured effect",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
       "",
@@ -1982,7 +1982,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: REQUEST Start/Stop changes sensor DetectionReport emission while StatusReport continues; not an ISA component Active boolean or physical power/on state. [SAP05-N06]",
       "Change Active [core command]",
       "RELATED/NO_ESTABLISHED: C239 §6 PIC ApplicationState and start/stop/pause/resume apply to an application lifecycle; §14 runtime load/start concerns internal executables, not an externally requested universal component active-state control or observed outcome. [G2-2/G2-7R]",
       "Not assessed here",
@@ -1999,7 +1999,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: SAPIENT MODE_CHANGE selects a registered Node mode when multiple exist; not an exact ISA camera-specific Change Camera Mode command nor proof selected hardware state. [SAP05-N08]",
       "Change Camera Mode [core command]",
       "Not assessed here",
       "Not assessed here",
@@ -2084,7 +2084,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Task.Command detection_report_rate adjusts detection output reporting, not ISA Maximum Status Interval; source heartbeat contract remains different. [SAP05-N07]",
       "Change Maximum Status Interval [core command]",
       "Not assessed here",
       "Not assessed here",
@@ -2101,7 +2101,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Task.Command detection_report_rate is not ISA Minimum Status Interval or an exact status-report schedule control. [SAP05-N07]",
       "Change Minimum Status Interval [core command]",
       "Not assessed here",
       "Not assessed here",
@@ -2186,7 +2186,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: SAPIENT MODE_CHANGE can apply to radar-like Nodes but is generic across Node modes, not an exact ISA Change Radar Mode request or real device proof. [SAP05-N08]",
       "Change Radar Mode [core command]",
       "Not assessed here",
       "Not assessed here",
@@ -2254,7 +2254,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: SAPIENT REQUEST Start/Stop can affect detection-message emission, but is not a named-observable selective ISA Event reporting command. [SAP05-N06]",
       "Set Observable Reporting [core command]",
       "RELATED: C239 §15 Event Notification can report mode/fault changes, but defines no ISA named-observable Event reporting selection or subscription Command. [G2-7S]",
       "Not assessed here",
@@ -2271,7 +2271,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: REQUEST Status asks for full current StatusReport, not ISA Set Property Reporting selection of named properties. [SAP05-N06]",
       "Set Property Reporting [core command]",
       "RELATED: C239 §15 publish/subscribe can carry structured status, not an ISA named-property Status-reporting selection Command or required CSAPI property-report service. [G2-7S]",
       "Not assessed here",
@@ -2322,7 +2322,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
+      "RELATED: SAPIENT REQUEST Arm for effector applies under native mode/control conditions; does not prove any ISA pre-arm permission or physical arm state. [SAP05-N05]",
       "Arm",
       "Not assessed here",
       "Not assessed here",
@@ -2492,7 +2492,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
+      "PARTIAL: BSI §6.5.6.2 REQUEST reset returns Node to default state, but Table58 says reboot. This internal source conflict blocks exact ISA Reset mapping or hardware behavior assurance. [SAP05-N06,SAP05-N19]",
       "Reset",
       "Not assessed here",
       "Not assessed here",
@@ -2594,7 +2594,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
+      "PARTIAL: Task.Region may define scoped interest/exclusion region lists, not confirmed persisted ISA Add Zone command or physical current-zone state. [SAP05-N03]",
       "Add Zone",
       "Not assessed here",
       "Not assessed here",
@@ -2611,7 +2611,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
+      "PARTIAL: Task.Command.move_to requests mobile Node travel via waypoint list and autonomous route planning; not ISA Move's identical semantics or verification of actual relocation. [SAP05-N09]",
       "Move",
       "Not assessed here",
       "Not assessed here",
@@ -2645,7 +2645,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
+      "NO_ESTABLISHED: SAPIENT LOOK_AT targets Location/RangeBearing with temporary task suspension; not an exact ISA angular Point Orientation request with attachment-relative reference. [SAP05-N08]",
       "Point Orientation",
       "Not assessed here",
       "Not assessed here",
@@ -2662,7 +2662,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
+      "RELATED: SAPIENT LOOK_AT tasks attention to a geographic target and optional detection response; not proof of accepted ISA Point Position or completed pointing. [SAP05-N08]",
       "Point Position",
       "Not assessed here",
       "Not assessed here",
@@ -2679,7 +2679,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI §6.5.5 allows removal of default-task regions by retransmitting remaining regions, related but not equivalent to ISA Remove Zone identifier-targeted command. [SAP05-N03]",
       "Remove Zone",
       "Not assessed here",
       "Not assessed here",
@@ -2696,7 +2696,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
+      "PARTIAL: SAPIENT region tasks constrain where detections are sought or ignored; not ISA Scan Area with specified absolute stop time or proven acquisition. [SAP05-N03,SAP05-N09]",
       "Scan Area",
       "Not assessed here",
       "Not assessed here",
@@ -2713,7 +2713,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
+      "NO_ESTABLISHED: SAPIENT PATROL instructs mobile route traversal until retasked, not ISA Scan Points' location-ordered observation scanning with absolute stop time. [SAP05-N09]",
       "Scan Points",
       "Not assessed here",
       "Not assessed here",
@@ -2764,7 +2764,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
+      "RELATED: REQUEST Take snapshot is supported task vocabulary; TaskAck.associated_file may link an output, not proof that a real image was acquired or accessible. [SAP05-N06,SAP05-N12]",
       "Take Picture",
       "Not assessed here",
       "Not assessed here",
@@ -3223,7 +3223,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
+      "PARTIAL: SAPIENT autonomous MODE_CHANGE alert and AlertAck acceptance/rejection can ask mode permission, not generic ISA Authorize Request decision across arbitrary commands. [SAP05-N14,SAP05-N16]",
       "Authorize Request",
       "Not assessed here",
       "Not assessed here",
@@ -3240,7 +3240,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: Task.Control STOP removes/reverts a task definition and PAUSE retains it; not generic cancellation of ISA executing or queued commands. [SAP05-N02]",
       "Cancel",
       "Not assessed here",
       "Not assessed here",
@@ -3325,7 +3325,7 @@
       "",
       "",
       "",
-      "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
+      "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
       "Status.properties: Name Value Pair [0+]",
       "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
       "",
@@ -3359,7 +3359,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: Task.task_id ULID correlates TaskAck and optional DetectionReport.task_id, but is not the ISA Request-ID/Response.reference protocol or an equipment identifier. [SAP05-N01,SAP05-N12]",
       "Request.request id and identifier remain separate; ICD6.7.1 sets Response.reference to Request ID; DMS wording retained",
       "RELATED but NO_ESTABLISHED ISA Request-ID correlation: C239 §§12/15 request–response interactions and CommandStatus identify operational roles, not ISA Request.request identifier or Response.reference matching semantics. [SOSA-D/G2-4B/G2-5]",
       "",
@@ -3376,7 +3376,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
       "Request.access control: Name Value Pair [0+]",
       "RELATED/NO_ESTABLISHED: C239 §§5–6, 12 cover role-specific security, privilege, authentication, key management and conditional transport protection, but do not define ISA per-request access-control name/value metadata or prove an authenticated CSAPI requester. [G2-2/G2-4A/G2-5/G2-7S]",
       "",
@@ -3427,7 +3427,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
       "Command Execution · name, request id, issuer, start time",
       "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
       "",
@@ -3614,7 +3614,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
       "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
       "",
@@ -3665,7 +3665,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: SAPIENT Node task support and TaskACK responses do not encode ISA externally visible member transparent/translucent taskability flags. [SAP05-N05,SAP05-N10]",
       "Visible + tasking enabled = transparent; visible + tasking not enabled = translucent; only visible members can be targeted externally",
       "Not assessed here",
       "",
@@ -3682,7 +3682,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: Fusion Node routes task requests through message-handling application to lower Nodes; not necessarily an ISA composition-interface performer/broker/relay role or installed hardware boundary. [SAP05-N01]",
       "CIC per-request role: performer executes; broker actively tasks members; relay forwards via ISA or native member interface",
       "RELATED but NO_ESTABLISHED ISA CIC mediation: C239 direct/delegated System Manager, tasking and host/sensor interfaces describe source-specific management and physical signaling, not ISA perform/broker/relay task mediation, public virtual-member policies or verified command routing. [SOSA-D/G2-2/G2-4A/G2-7I/J/T]",
       "",
@@ -3733,7 +3733,7 @@
       "NOAA CSV + operator metadata; contributor join derived",
       "",
       "",
-      "",
+      "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
       "",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
       "",
@@ -3750,7 +3750,7 @@
       "2 original NOAA means → 4 project API representations",
       "",
       "",
-      "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
+      "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
       "≈ Event Reference · update relation only, not original→copy",
       "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
       "",
@@ -3886,7 +3886,7 @@
       "",
       "",
       "",
-      "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
+      "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
       "Message Reference · originator, identifier, message type, time",
       "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
       "",
@@ -4838,7 +4838,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
+      "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
       "Operating State",
       "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
       "Not assessed here",
@@ -4855,7 +4855,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: TaskAck ACCEPTED/REJECTED/COMPLETED/FAILED is a reported task lifecycle enum, not ISA Belnap-Dunn TRUE/FALSE/PARADOX/UNSPECIFIED evaluation logic. [SAP05-N11]",
       "Belnap Dunn · FALSE / PARADOX / TRUE / UNSPECIFIED",
       "NO_ESTABLISHED: C239 defines lifecycle State, but no native equivalent to ISA's four-valued evaluation-state vocabulary is established. [G2-7T]",
       "",
@@ -5263,7 +5263,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
+      "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
       "Resources",
       "Not assessed here",
       "Not assessed here",
@@ -11224,7 +11224,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
+        "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
         "Media [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -11272,6 +11272,23 @@
         "previous_sapient_cell_value": "PARTIAL: §5.4 Table12 AssociatedFile.type/url describe a linked media resource; source does not establish actual URL availability, physical production or provenance. [SAP02-N11]",
         "source_qualified_display": "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T092"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence.",
+        "previous_sapient_cell_value": "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
+        "source_qualified_display": "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -12059,7 +12076,7 @@
         "",
         "",
         "",
-        "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
+        "RELATED: Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument. [SAP05-N01,SAP05-N13]",
         "Event.event ID; Event.event reference → creator + id + time",
         "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -12168,6 +12185,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N01",
+          "SAP05-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T088"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument.",
+        "previous_sapient_cell_value": "RELATED: DetectionReport.report_id ULID names message report, object_id ULID names detected target and task_id may link task; none is automatically ISA Event ID or equipment identifier. [SAP04-N09]",
+        "source_qualified_display": "RELATED: Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument. [SAP05-N01,SAP05-N13]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12192,7 +12228,7 @@
         "",
         "",
         "",
-        "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
+        "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
         "Event.time: UTC",
         "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
         "",
@@ -12301,6 +12337,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N01"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held.",
+        "previous_sapient_cell_value": "RELATED: BSI outer message timestamp/content time remains different from predicted_timestamp, DerivedDetection.timestamp and pinned sent-time comments; no automatic OMS phenomenonTime. [SAP04-N09,SAP04-N17]",
+        "source_qualified_display": "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12325,7 +12378,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
         "Event.type: Event Type · required/default wording retained",
         "RELATED: C239 §12 distinguishes required security/lifecycle/zeroization/policy audit events from permitted BIST/maintenance/key events; glossary Detection and Audit Event remain different categories. This is not a universal ISA Event.type enumeration or proof of physical detection. [G2-5/G2-7T]",
         "",
@@ -12370,6 +12423,27 @@
         "previous_sosa_cell_value": "Related only · G2-5: Compulsory audit lifecycle/zeroization/policy events differ from permitted BIST/maintenance/key events",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N13",
+          "SAP05-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T088",
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13441,7 +13515,7 @@
         "",
         "",
         "",
-        "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
+        "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
         "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
         "",
@@ -13775,6 +13849,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
+        "source_qualified_display": "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13799,7 +13890,7 @@
         "",
         "",
         "",
-        "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
+        "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
         "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
         "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
         "",
@@ -13923,6 +14014,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N03",
+          "SAP05-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T080",
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
+        "source_qualified_display": "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13947,7 +14057,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
+        "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
         "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
         "",
@@ -14085,6 +14195,25 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N11",
+          "SAP05-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
+        "source_qualified_display": "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -14610,7 +14739,7 @@
         "",
         "",
         "",
-        "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
+        "RELATED: DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations. [SAP05-N04,SAP05-N14]",
         "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
         "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
         "",
@@ -14892,6 +15021,30 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N04",
+          "SAP05-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T081",
+          "SAP-BSI-T082",
+          "SAP-BSI-T083",
+          "SAP-BSI-T084",
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations.",
+        "previous_sapient_cell_value": "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
+        "source_qualified_display": "RELATED: DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations. [SAP05-N04,SAP05-N14]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -15701,7 +15854,7 @@
         "",
         "",
         "",
-        "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
+        "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
         "≈ Request message · command invocation, not proven execution",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
         "",
@@ -16013,6 +16166,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N01",
+          "SAP05-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence.",
+        "previous_sapient_cell_value": "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
+        "source_qualified_display": "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -16037,7 +16209,7 @@
         "",
         "",
         "",
-        "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
+        "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "≈ Response message · reported disposition, not measured effect",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
         "",
@@ -16311,6 +16483,25 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "≈ TaskAck.task_status",
         "source_qualified_display": "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N11",
+          "SAP05-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema.",
+        "previous_sapient_cell_value": "RELATED / NARROWER: §4.7 TaskAck and §4.6 AlertAck report acceptance/rejection dispositions, not independently observed hardware outcomes. [SAP02-N05]",
+        "source_qualified_display": "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -16961,7 +17152,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: REQUEST Start/Stop changes sensor DetectionReport emission while StatusReport continues; not an ISA component Active boolean or physical power/on state. [SAP05-N06]",
         "Change Active [core command]",
         "RELATED/NO_ESTABLISHED: C239 §6 PIC ApplicationState and start/stop/pause/resume apply to an application lifecycle; §14 runtime load/start concerns internal executables, not an externally requested universal component active-state control or observed outcome. [G2-2/G2-7R]",
         "Not assessed here",
@@ -16998,6 +17189,23 @@
         "previous_sosa_cell_value": "Related only · G2-2: V1.0 PIC application lifecycle includes start/stop/pause/resume and ApplicationState returns",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "REQUEST Start/Stop changes sensor DetectionReport emission while StatusReport continues; not an ISA component Active boolean or physical power/on state.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: REQUEST Start/Stop changes sensor DetectionReport emission while StatusReport continues; not an ISA component Active boolean or physical power/on state. [SAP05-N06]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -17022,7 +17230,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: SAPIENT MODE_CHANGE selects a registered Node mode when multiple exist; not an exact ISA camera-specific Change Camera Mode command nor proof selected hardware state. [SAP05-N08]",
         "Change Camera Mode [core command]",
         "Not assessed here",
         "Not assessed here",
@@ -17034,7 +17242,24 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-340"
-      ]
+      ],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N08"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT MODE_CHANGE selects a registered Node mode when multiple exist; not an exact ISA camera-specific Change Camera Mode command nor proof selected hardware state.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: SAPIENT MODE_CHANGE selects a registered Node mode when multiple exist; not an exact ISA camera-specific Change Camera Mode command nor proof selected hardware state. [SAP05-N08]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-187",
@@ -17198,7 +17423,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Task.Command detection_report_rate adjusts detection output reporting, not ISA Maximum Status Interval; source heartbeat contract remains different. [SAP05-N07]",
         "Change Maximum Status Interval [core command]",
         "Not assessed here",
         "Not assessed here",
@@ -17216,7 +17441,25 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3",
         "CMPT-4.3.6"
-      ]
+      ],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N07"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T083",
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Task.Command detection_report_rate adjusts detection output reporting, not ISA Maximum Status Interval; source heartbeat contract remains different.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Task.Command detection_report_rate adjusts detection output reporting, not ISA Maximum Status Interval; source heartbeat contract remains different. [SAP05-N07]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-196",
@@ -17240,7 +17483,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Task.Command detection_report_rate is not ISA Minimum Status Interval or an exact status-report schedule control. [SAP05-N07]",
         "Change Minimum Status Interval [core command]",
         "Not assessed here",
         "Not assessed here",
@@ -17258,7 +17501,25 @@
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3",
         "CMPT-4.3.6"
-      ]
+      ],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N07"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T083",
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Task.Command detection_report_rate is not ISA Minimum Status Interval or an exact status-report schedule control.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Task.Command detection_report_rate is not ISA Minimum Status Interval or an exact status-report schedule control. [SAP05-N07]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-197",
@@ -17422,7 +17683,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: SAPIENT MODE_CHANGE can apply to radar-like Nodes but is generic across Node modes, not an exact ISA Change Radar Mode request or real device proof. [SAP05-N08]",
         "Change Radar Mode [core command]",
         "Not assessed here",
         "Not assessed here",
@@ -17432,7 +17693,24 @@
         "Not assessed here",
         "Requested radar operating mode"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N08"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT MODE_CHANGE can apply to radar-like Nodes but is generic across Node modes, not an exact ISA Change Radar Mode request or real device proof.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: SAPIENT MODE_CHANGE can apply to radar-like Nodes but is generic across Node modes, not an exact ISA Change Radar Mode request or real device proof. [SAP05-N08]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-203",
@@ -17562,7 +17840,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: SAPIENT REQUEST Start/Stop can affect detection-message emission, but is not a named-observable selective ISA Event reporting command. [SAP05-N06]",
         "Set Observable Reporting [core command]",
         "RELATED: C239 §15 Event Notification can report mode/fault changes, but defines no ISA named-observable Event reporting selection or subscription Command. [G2-7S]",
         "Not assessed here",
@@ -17593,6 +17871,23 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT REQUEST Start/Stop can affect detection-message emission, but is not a named-observable selective ISA Event reporting command.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: SAPIENT REQUEST Start/Stop can affect detection-message emission, but is not a named-observable selective ISA Event reporting command. [SAP05-N06]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -17617,7 +17912,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: REQUEST Status asks for full current StatusReport, not ISA Set Property Reporting selection of named properties. [SAP05-N06]",
         "Set Property Reporting [core command]",
         "RELATED: C239 §15 publish/subscribe can carry structured status, not an ISA named-property Status-reporting selection Command or required CSAPI property-report service. [G2-7S]",
         "Not assessed here",
@@ -17649,6 +17944,23 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "REQUEST Status asks for full current StatusReport, not ISA Set Property Reporting selection of named properties.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: REQUEST Status asks for full current StatusReport, not ISA Set Property Reporting selection of named properties. [SAP05-N06]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -17745,7 +18057,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
+        "RELATED: SAPIENT REQUEST Arm for effector applies under native mode/control conditions; does not prove any ISA pre-arm permission or physical arm state. [SAP05-N05]",
         "Arm",
         "Not assessed here",
         "Not assessed here",
@@ -17770,6 +18082,23 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT REQUEST Arm for effector applies under native mode/control conditions; does not prove any ISA pre-arm permission or physical arm state.",
+        "previous_sapient_cell_value": "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
+        "source_qualified_display": "RELATED: SAPIENT REQUEST Arm for effector applies under native mode/control conditions; does not prove any ISA pre-arm permission or physical arm state. [SAP05-N05]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -18137,7 +18466,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
+        "PARTIAL: BSI §6.5.6.2 REQUEST reset returns Node to default state, but Table58 says reboot. This internal source conflict blocks exact ISA Reset mapping or hardware behavior assurance. [SAP05-N06,SAP05-N19]",
         "Reset",
         "Not assessed here",
         "Not assessed here",
@@ -18162,6 +18491,24 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06",
+          "SAP05-N19"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI §6.5.6.2 REQUEST reset returns Node to default state, but Table58 says reboot. This internal source conflict blocks exact ISA Reset mapping or hardware behavior assurance.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
+        "source_qualified_display": "PARTIAL: BSI §6.5.6.2 REQUEST reset returns Node to default state, but Table58 says reboot. This internal source conflict blocks exact ISA Reset mapping or hardware behavior assurance. [SAP05-N06,SAP05-N19]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -18516,7 +18863,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
+        "PARTIAL: Task.Region may define scoped interest/exclusion region lists, not confirmed persisted ISA Add Zone command or physical current-zone state. [SAP05-N03]",
         "Add Zone",
         "Not assessed here",
         "Not assessed here",
@@ -18547,6 +18894,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N03"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T080"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "Task.Region may define scoped interest/exclusion region lists, not confirmed persisted ISA Add Zone command or physical current-zone state.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
+        "source_qualified_display": "PARTIAL: Task.Region may define scoped interest/exclusion region lists, not confirmed persisted ISA Add Zone command or physical current-zone state. [SAP05-N03]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -18571,7 +18935,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
+        "PARTIAL: Task.Command.move_to requests mobile Node travel via waypoint list and autonomous route planning; not ISA Move's identical semantics or verification of actual relocation. [SAP05-N09]",
         "Move",
         "Not assessed here",
         "Not assessed here",
@@ -18598,6 +18962,23 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "Task.Command.move_to requests mobile Node travel via waypoint list and autonomous route planning; not ISA Move's identical semantics or verification of actual relocation.",
+        "previous_sapient_cell_value": "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
+        "source_qualified_display": "PARTIAL: Task.Command.move_to requests mobile Node travel via waypoint list and autonomous route planning; not ISA Move's identical semantics or verification of actual relocation. [SAP05-N09]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -18661,7 +19042,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
+        "NO_ESTABLISHED: SAPIENT LOOK_AT targets Location/RangeBearing with temporary task suspension; not an exact ISA angular Point Orientation request with attachment-relative reference. [SAP05-N08]",
         "Point Orientation",
         "Not assessed here",
         "Not assessed here",
@@ -18691,6 +19072,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N08"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT LOOK_AT targets Location/RangeBearing with temporary task suspension; not an exact ISA angular Point Orientation request with attachment-relative reference.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT LOOK_AT targets Location/RangeBearing with temporary task suspension; not an exact ISA angular Point Orientation request with attachment-relative reference. [SAP05-N08]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -18715,7 +19113,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
+        "RELATED: SAPIENT LOOK_AT tasks attention to a geographic target and optional detection response; not proof of accepted ISA Point Position or completed pointing. [SAP05-N08]",
         "Point Position",
         "Not assessed here",
         "Not assessed here",
@@ -18743,6 +19141,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N08"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT LOOK_AT tasks attention to a geographic target and optional detection response; not proof of accepted ISA Point Position or completed pointing.",
+        "previous_sapient_cell_value": "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
+        "source_qualified_display": "RELATED: SAPIENT LOOK_AT tasks attention to a geographic target and optional detection response; not proof of accepted ISA Point Position or completed pointing. [SAP05-N08]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -18767,7 +19182,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI §6.5.5 allows removal of default-task regions by retransmitting remaining regions, related but not equivalent to ISA Remove Zone identifier-targeted command. [SAP05-N03]",
         "Remove Zone",
         "Not assessed here",
         "Not assessed here",
@@ -18777,7 +19192,24 @@
         "Not assessed here",
         "Requested removal of a named operating zone"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N03"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T080"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI §6.5.5 allows removal of default-task regions by retransmitting remaining regions, related but not equivalent to ISA Remove Zone identifier-targeted command.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI §6.5.5 allows removal of default-task regions by retransmitting remaining regions, related but not equivalent to ISA Remove Zone identifier-targeted command. [SAP05-N03]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-233",
@@ -18801,7 +19233,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
+        "PARTIAL: SAPIENT region tasks constrain where detections are sought or ignored; not ISA Scan Area with specified absolute stop time or proven acquisition. [SAP05-N03,SAP05-N09]",
         "Scan Area",
         "Not assessed here",
         "Not assessed here",
@@ -18833,6 +19265,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N03",
+          "SAP05-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T080",
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT region tasks constrain where detections are sought or ignored; not ISA Scan Area with specified absolute stop time or proven acquisition.",
+        "previous_sapient_cell_value": "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
+        "source_qualified_display": "PARTIAL: SAPIENT region tasks constrain where detections are sought or ignored; not ISA Scan Area with specified absolute stop time or proven acquisition. [SAP05-N03,SAP05-N09]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -18857,7 +19308,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
+        "NO_ESTABLISHED: SAPIENT PATROL instructs mobile route traversal until retasked, not ISA Scan Points' location-ordered observation scanning with absolute stop time. [SAP05-N09]",
         "Scan Points",
         "Not assessed here",
         "Not assessed here",
@@ -18885,6 +19336,23 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT PATROL instructs mobile route traversal until retasked, not ISA Scan Points' location-ordered observation scanning with absolute stop time.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT PATROL instructs mobile route traversal until retasked, not ISA Scan Points' location-ordered observation scanning with absolute stop time. [SAP05-N09]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -18984,7 +19452,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
+        "RELATED: REQUEST Take snapshot is supported task vocabulary; TaskAck.associated_file may link an output, not proof that a real image was acquired or accessible. [SAP05-N06,SAP05-N12]",
         "Take Picture",
         "Not assessed here",
         "Not assessed here",
@@ -19009,6 +19477,26 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06",
+          "SAP05-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085",
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "REQUEST Take snapshot is supported task vocabulary; TaskAck.associated_file may link an output, not proof that a real image was acquired or accessible.",
+        "previous_sapient_cell_value": "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
+        "source_qualified_display": "RELATED: REQUEST Take snapshot is supported task vocabulary; TaskAck.associated_file may link an output, not proof that a real image was acquired or accessible. [SAP05-N06,SAP05-N12]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -20194,7 +20682,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
+        "PARTIAL: SAPIENT autonomous MODE_CHANGE alert and AlertAck acceptance/rejection can ask mode permission, not generic ISA Authorize Request decision across arbitrary commands. [SAP05-N14,SAP05-N16]",
         "Authorize Request",
         "Not assessed here",
         "Not assessed here",
@@ -20240,6 +20728,28 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N14",
+          "SAP05-N16"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091",
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT autonomous MODE_CHANGE alert and AlertAck acceptance/rejection can ask mode permission, not generic ISA Authorize Request decision across arbitrary commands.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
+        "source_qualified_display": "PARTIAL: SAPIENT autonomous MODE_CHANGE alert and AlertAck acceptance/rejection can ask mode permission, not generic ISA Authorize Request decision across arbitrary commands. [SAP05-N14,SAP05-N16]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -20264,7 +20774,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: Task.Control STOP removes/reverts a task definition and PAUSE retains it; not generic cancellation of ISA executing or queued commands. [SAP05-N02]",
         "Cancel",
         "Not assessed here",
         "Not assessed here",
@@ -20274,7 +20784,25 @@
         "Not assessed here",
         "Requested cancellation of an executing or queued command"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N02"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T079"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "Task.Control STOP removes/reverts a task definition and PAUSE retains it; not generic cancellation of ISA executing or queued commands.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: Task.Control STOP removes/reverts a task definition and PAUSE retains it; not generic cancellation of ISA executing or queued commands. [SAP05-N02]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-219",
@@ -20944,7 +21472,7 @@
         "",
         "",
         "",
-        "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
+        "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
         "Status.properties: Name Value Pair [0+]",
         "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
         "",
@@ -21293,6 +21821,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N06",
+          "SAP05-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085",
+          "SAP-BSI-T088"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values.",
+        "previous_sapient_cell_value": "PARTIAL: BSI StatusReport heartbeat contains system/Info/current mode/conditions, not ISA Status.properties or guaranteed fresh readings of every sensor property. [SAP04-N01,SAP04-N02,SAP04-N07]",
+        "source_qualified_display": "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -21404,7 +21951,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: Task.task_id ULID correlates TaskAck and optional DetectionReport.task_id, but is not the ISA Request-ID/Response.reference protocol or an equipment identifier. [SAP05-N01,SAP05-N12]",
         "Request.request id and identifier remain separate; ICD6.7.1 sets Response.reference to Request ID; DMS wording retained",
         "RELATED but NO_ESTABLISHED ISA Request-ID correlation: C239 §§12/15 request–response interactions and CommandStatus identify operational roles, not ISA Request.request identifier or Response.reference matching semantics. [SOSA-D/G2-4B/G2-5]",
         "",
@@ -21475,6 +22022,26 @@
         "previous_sosa_cell_value": "Related only · Interactions are operations with parameters and roles / Request-response interaction and … · §15.1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-4B: Tables name request/response interactions and error results without the original ISA Request-ID correlation contract",
         "native_companions_unreviewed": true,
         "DIM_Profile_adopted": false
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N01",
+          "SAP05-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078",
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Task.task_id ULID correlates TaskAck and optional DetectionReport.task_id, but is not the ISA Request-ID/Response.reference protocol or an equipment identifier.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: Task.task_id ULID correlates TaskAck and optional DetectionReport.task_id, but is not the ISA Request-ID/Response.reference protocol or an equipment identifier. [SAP05-N01,SAP05-N12]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -21500,7 +22067,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
         "Request.access control: Name Value Pair [0+]",
         "RELATED/NO_ESTABLISHED: C239 §§5–6, 12 cover role-specific security, privilege, authentication, key management and conditional transport protection, but do not define ISA per-request access-control name/value metadata or prove an authenticated CSAPI requester. [G2-2/G2-4A/G2-5/G2-7S]",
         "",
@@ -21661,6 +22228,28 @@
         "previous_sosa_cell_value": "Related only · G2-2: Chassis low-level command gateway may be access restricted; source does not define ISA per-request access metadata · G2-4A: §5.6 Security Manager inside System Manager may authorize access to privileged service and publish-subscribe requests · G2-4B: Optional MORA getAuthenticationService/getPolicyEnforcementService provide service URI interfaces · G2-5: Security Services grants/denies privileged function access and modules check before execution; valid cached decisions possible · G2-6A: Maintenance port access varies across lab, depot and deployed hardware scenarios · G2-7J: Physical arming and purge conductors are not security grant/deny service descriptions. [NO_ESTABLISHED; No inferred authorization state or approval to operate.] · G2-7N: Key-fill connector supports physical key provisioning. [NO_ESTABLISHED; No authenticated online API access-control metadata.] · G2-7P: J12/J13 key-fill are role-dependent hardware security interfaces. [NO_ESTABLISHED; No software API credentials or grants.] · G2-7R: Container/VM source references other security practice but no permission schema [NO_ESTABLISHED; Not authenticated CSAPI API access-control metadata]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N14",
+          "SAP05-N16"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091",
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -21762,7 +22351,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
         "Command Execution · name, request id, issuer, start time",
         "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
         "",
@@ -21863,6 +22452,24 @@
         "previous_sosa_cell_value": "Related only · Task / Assignment / Task Health / Sensor Task Manager publication standing · §7.1.1 and Table7.1.1-1 printed115–119/PDF141–145 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-2: Chassis executeCommand lists LowLevelCommand and LowLevelResult; PIC application requests list ApplicationState · G2-4B: V1.0 sendCommand and preliminary SetTaskState define possible invocations but no source-verified execution record for any selected case · G2-5: Source rule requires permission check before privileged action; host table names an operation · G2-7R: Virtual machine startup order is a source requirement [NO_ESTABLISHED; No command state/activity record]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -22486,7 +23093,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
         "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
         "",
@@ -22706,6 +23313,23 @@
         "previous_sosa_cell_value": "Related only · System Manager (1.1) / System Management Health/Operations/Configuration sub-functions · §4.2 Table4.2-1 · RELATED BUT DIFFERENT [SOSA-D ledger] · G2-1: conditional System Manager Rules 6.2.4.3-1–4 and default generic-module Rules 6.2.5.3-1–2; not ISA Controller duties · G2-2: Security Services is a module; Chassis Manager hardware and PIC/PIC-RTE interfaces have different GENERAL PROFILE rule subjects · G2-3: §6.3 System Manager, Chassis Manager and IPMC roles are SOSA-layered hardware services · G2-4A: §4.2 and §5.4 separate System Manager housekeeping from Task Manager mission/tasking · G2-4B: Preliminary Task Manager, RF MORA Device/Resource/Port services and normative Storage/Retrieval Manager roles are distinct · G2-5: Audit Collector, Relay and authorization roles coexist with Host interface mediation · G2-6A: Power Supply Card management and maintenance UART have distinct specialized roles · G2-7I: Power input requirement. [NO_ESTABLISHED; Not ISA service.] · G2-7R: VM module software intercommunicates over SOSA interactions [NO_ESTABLISHED; Not CSAPI service role or required commands] · G2-7S: Requestor/responder role explicit for interaction [RELATED; No global CSAPI service registry or commands]",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -23358,7 +23982,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: SAPIENT Node task support and TaskACK responses do not encode ISA externally visible member transparent/translucent taskability flags. [SAP05-N05,SAP05-N10]",
         "Visible + tasking enabled = transparent; visible + tasking not enabled = translucent; only visible members can be targeted externally",
         "Not assessed here",
         "",
@@ -23371,7 +23995,25 @@
       "boundary": "Visibility, declared support, taskability, requester authorization, execution and successful effects are separate. Figure 2 labels incoming Member B tasks although B is translucent; only C has a forwarded task arrow. Preserve that tension without inventing task forwarding to or execution by B.",
       "additional_ISA_interface_evidence": [
         "ICD-8.0"
-      ]
+      ],
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N05",
+          "SAP05-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T085"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT Node task support and TaskACK responses do not encode ISA externally visible member transparent/translucent taskability flags.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT Node task support and TaskACK responses do not encode ISA externally visible member transparent/translucent taskability flags. [SAP05-N05,SAP05-N10]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-A-CIC-MEDIATION",
@@ -23397,7 +24039,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: Fusion Node routes task requests through message-handling application to lower Nodes; not necessarily an ISA composition-interface performer/broker/relay role or installed hardware boundary. [SAP05-N01]",
         "CIC per-request role: performer executes; broker actively tasks members; relay forwards via ISA or native member interface",
         "RELATED but NO_ESTABLISHED ISA CIC mediation: C239 direct/delegated System Manager, tasking and host/sensor interfaces describe source-specific management and physical signaling, not ISA perform/broker/relay task mediation, public virtual-member policies or verified command routing. [SOSA-D/G2-2/G2-4A/G2-7I/J/T]",
         "",
@@ -23553,6 +24195,23 @@
         "external_native_companions_unread": true,
         "DIM_Profile_adopted": false,
         "independent_hardware_conformance": false
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N01"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T078"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Fusion Node routes task requests through message-handling application to lower Nodes; not necessarily an ISA composition-interface performer/broker/relay role or installed hardware boundary.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: Fusion Node routes task requests through message-handling application to lower Nodes; not necessarily an ISA composition-interface performer/broker/relay role or installed hardware boundary. [SAP05-N01]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -23812,7 +24471,7 @@
         "NOAA CSV + operator metadata; contributor join derived",
         "",
         "",
-        "",
+        "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
         "",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
         "",
@@ -24119,6 +24778,23 @@
         "actual_1000BaseT_hardware_or_traffic_unverified": true,
         "DIM_Profile_adopted": false,
         "independent_conformance": false
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T088"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -24142,7 +24818,7 @@
         "2 original NOAA means → 4 project API representations",
         "",
         "",
-        "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
+        "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
         "≈ Event Reference · update relation only, not original→copy",
         "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
         "",
@@ -24251,6 +24927,25 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N13",
+          "SAP05-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T088",
+          "SAP-BSI-T092"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT fused derived detection links identify source/derived reported records; they are not a general proof of original physical observation versus its digital representation. [SAP04-N16,SAP04-N19]",
+        "source_qualified_display": "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -24824,7 +25519,7 @@
         "",
         "",
         "",
-        "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
+        "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
         "Message Reference · originator, identifier, message type, time",
         "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
         "",
@@ -24882,6 +25577,27 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N12",
+          "SAP05-N16"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087",
+          "SAP-BSI-T093",
+          "SAP-BSI-T094"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain.",
+        "previous_sapient_cell_value": "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
+        "source_qualified_display": "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -30338,7 +31054,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
+        "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
         "Operating State",
         "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
         "Not assessed here",
@@ -30459,6 +31175,27 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N13",
+          "SAP05-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T088",
+          "SAP-BSI-T089",
+          "SAP-BSI-T090",
+          "SAP-BSI-T091"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values.",
+        "previous_sapient_cell_value": "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
+        "source_qualified_display": "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -30483,7 +31220,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: TaskAck ACCEPTED/REJECTED/COMPLETED/FAILED is a reported task lifecycle enum, not ISA Belnap-Dunn TRUE/FALSE/PARADOX/UNSPECIFIED evaluation logic. [SAP05-N11]",
         "Belnap Dunn · FALSE / PARADOX / TRUE / UNSPECIFIED",
         "NO_ESTABLISHED: C239 defines lifecycle State, but no native equivalent to ISA's four-valued evaluation-state vocabulary is established. [G2-7T]",
         "",
@@ -30504,6 +31241,24 @@
         "previous_sosa_cell_value": "Not assessed here",
         "DIM_Profile_adopted": false,
         "original_external_and_image_companions_held": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "TaskAck ACCEPTED/REJECTED/COMPLETED/FAILED is a reported task lifecycle enum, not ISA Belnap-Dunn TRUE/FALSE/PARADOX/UNSPECIFIED evaluation logic.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: TaskAck ACCEPTED/REJECTED/COMPLETED/FAILED is a reported task lifecycle enum, not ISA Belnap-Dunn TRUE/FALSE/PARADOX/UNSPECIFIED evaluation logic. [SAP05-N11]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -32181,7 +32936,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
+        "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
         "Resources",
         "Not assessed here",
         "Not assessed here",
@@ -32217,6 +32972,26 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP05_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP05-N12",
+          "SAP05-N15"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T086",
+          "SAP-BSI-T087",
+          "SAP-BSI-T092"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TASK_ALERT_ERROR_TABLES78_95_AND_RELEVANT_PINNED_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue.",
+        "previous_sapient_cell_value": "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
+        "source_qualified_display": "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
+        "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -36418,11 +37193,11 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "SAP04_BSI_STATUS_DETECTION_TABLES60_TO77_40_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP05_BSI_TASK_ALERT_ERROR_TABLES78_TO95_42_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP04_BSI_STATUS_DETECTION_TABLES60_77_SAME_ORIGINAL_XLSX_VERIFIED",
-    "sha256": "bd05dd0eba7068142f92cb3c3fe3b920f74aaba8b566a64322c09c165d9b88e3",
+    "checkpoint": "SAP05_BSI_TASK_ALERT_ERROR_TABLES78_95_SAME_ORIGINAL_XLSX_VERIFIED",
+    "sha256": "490eab4ac6cc3d43bf755a004b6f584614b0ad57b16fba8ff130f773238d5334",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
@@ -36445,8 +37220,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 40,
-    "validation_file": "SAP04_Workbook_Validation_12NOV2026.json",
+    "refreshed_cell_count": 42,
+    "validation_file": "SAP05_Workbook_Validation_12NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -39424,7 +40199,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SAP04 complete: 18 original BSI Status/Detection tables, 40 source-qualified SAPIENT G cells, SAME original 26-sheet Excel 346x15 verified; separate owner Proceed only SAP05 Task/Alert/Error Tables78–95; STOP before SAP06.",
+  "nextOwnerAction": "SAP05 complete: BSI Task/Alert/Error Tables78–95 original source reviewed, 42 source-qualified SAPIENT G cells, SAME 26-sheet Excel 346x15 verified; separate owner Proceed for SAP06 Taxonomy/Annexes only. STOP before SAP07.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -39996,6 +40771,70 @@
         "high": 5
       },
       "next": "SAP05 separate owner Proceed only; no model/Profile adoption",
+      "DIM_Profile_adopted": false
+    },
+    "SAP05": {
+      "status": "ORIGINAL_SOURCE_AUDITED_SAME_XLSX_PARITY_VERIFIED",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "source_report": "SAP05_Original_Source_Review_12NOV2026.md",
+      "validation": "SAP05_Workbook_Validation_12NOV2026.json",
+      "original_BSI_tables_read": 18,
+      "cumulative_BSI_tables_read": 95,
+      "source_findings": 22,
+      "new_exact_holds": 8,
+      "source_qualified_master_cells": 42,
+      "changed_cell_addresses": [
+        "G45",
+        "G65",
+        "G66",
+        "G67",
+        "G76",
+        "G77",
+        "G78",
+        "G83",
+        "G91",
+        "G92",
+        "G111",
+        "G112",
+        "G117",
+        "G118",
+        "G123",
+        "G127",
+        "G128",
+        "G131",
+        "G141",
+        "G147",
+        "G148",
+        "G150",
+        "G151",
+        "G152",
+        "G153",
+        "G154",
+        "G157",
+        "G184",
+        "G185",
+        "G190",
+        "G192",
+        "G193",
+        "G196",
+        "G207",
+        "G210",
+        "G211",
+        "G214",
+        "G215",
+        "G223",
+        "G279",
+        "G280",
+        "G304"
+      ],
+      "saved_346x15_parity": true,
+      "excel_lag": 0,
+      "forecast_remaining": {
+        "low": 1,
+        "most_likely": 2,
+        "high": 4
+      },
+      "next": "SAP06 only after new owner Proceed; no model/Profile adoption",
       "DIM_Profile_adopted": false
     }
   }
