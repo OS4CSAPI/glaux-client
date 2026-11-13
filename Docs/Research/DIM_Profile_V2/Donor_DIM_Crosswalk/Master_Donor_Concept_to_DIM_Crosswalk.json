@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "490eab4ac6cc3d43bf755a004b6f584614b0ad57b16fba8ff130f773238d5334",
+  "currentWorkbookSha256": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -265,7 +265,7 @@
       "acebpmet meteorological station",
       "",
       "≈ Device",
-      "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
+      "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
       "≈ ISA composition via CIC · integration collection, not physical unity",
       "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
       "≈ ssn:System",
@@ -282,7 +282,7 @@
       "GOES TX321 transmitter, serial 2335",
       "≈ Network Capable Application Processor (NCAP)",
       "",
-      "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
+      "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
       "≈ ISA component / Controller · network role, not equipment identity",
       "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
       "",
@@ -299,7 +299,7 @@
       "",
       "≈ Transducer Interface Module (TIM)",
       "≈ ComponentType (can include software)",
-      "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
+      "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
       "≈ composition member · functional integration, not physical part-of",
       "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
       "",
@@ -316,7 +316,7 @@
       "",
       "",
       "≈ ConnectsTo",
-      "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
+      "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
       "≈ CIC-to-member interface · communications, not proved cable",
       "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
       "",
@@ -367,7 +367,7 @@
       "",
       "",
       "",
-      "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
+      "RELATED: Annex C.3 optional message handling may itself register and send heartbeat even without sensing modes; not the ISA component controller/client/server participation role contract. [SAP06-N14]",
       "All ISA components support the client-side connection role; Controllers also support the server-side role",
       "RELATED: C239 §6.1 in-/out-of-band management and §§14–15 runtime/inter-module interactions define scoped endpoint roles (request/response, publish/subscribe). They do not establish enduring ISA service-provider/client identity, membership authority, or CSAPI resource identity. [SOSA-D/G2-7R/G2-7S/G2-7T]",
       "",
@@ -418,7 +418,7 @@
       "",
       "",
       "",
-      "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
+      "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
       "Connection → Registration → Configuration → Operational → Deregistration → Disconnection; message-triggered transitions and renewal",
       "NO_ESTABLISHED: C239 §12 security-audit startup/shutdown, service lifetime requests and §14 container lifetime concern different lifecycles from ISA connection → registration → configuration → operation/deregistration. [G2-5/G2-7R]",
       "",
@@ -469,7 +469,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
+      "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
@@ -486,7 +486,7 @@
       "station ambient air temperature (ATemp)",
       "",
       "",
-      "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
+      "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
       "≈ Event observables · reported variable, not OMS observedProperty",
       "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
       "sosa:ObservableProperty",
@@ -503,7 +503,7 @@
       "EE181 contributors (derived role); aggregator / mean producer held",
       "",
       "",
-      "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
+      "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
       "≈ Event.source · reporting UCI, not proven physical observer",
       "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
       "≈ sosa:Sensor",
@@ -520,7 +520,7 @@
       "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
       "",
       "",
-      "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
+      "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
       "≈ Event message · reported event, not underlying observing act",
       "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
       "sosa:Observation",
@@ -860,7 +860,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
+      "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
       "Media [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -1285,7 +1285,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
+      "NO_ESTABLISHED: Annex C's out-of-spec video streaming guidance and Table C.1 example bitrates do not define ISA video-frame bounding boxes or native event-structure requirements. [SAP06-N16,SAP06-N17]",
       "Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",
       "Not assessed here",
       "",
@@ -1302,7 +1302,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
+      "NO_ESTABLISHED: Optional compressed/raw video transport guidance is not a source-defined ISA video-track identity, track continuity or recorded observation provenance. [SAP06-N16]",
       "Video Track [accepted] · BSO ID + optional geographic location",
       "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
       "",
@@ -1336,7 +1336,7 @@
       "",
       "",
       "",
-      "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
+      "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
       "Capability Declaration.properties / commands / observables / types [0+]",
       "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
       "",
@@ -1472,7 +1472,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
+      "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
       "Type → Type Name | Custom Type Name",
       "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
       "",
@@ -1489,7 +1489,7 @@
       "",
       "",
       "",
-      "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
+      "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
       "Structure → Single | List | Associative Array | Tree; min/max length or depth",
       "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
       "",
@@ -3444,7 +3444,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: Annex C's optional middleware persistence/retrieval guidance does not specify ISA DataQuery/Select or a mandatory CSAPI historical query resource. [SAP06-N14]",
       "Data Query + Select → Administrative / Config / Event / Status Select",
       "Not assessed here",
       "",
@@ -3614,7 +3614,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
+      "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
       "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
       "",
@@ -3733,7 +3733,7 @@
       "NOAA CSV + operator metadata; contributor join derived",
       "",
       "",
-      "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
+      "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
       "",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
       "",
@@ -3886,7 +3886,7 @@
       "",
       "",
       "",
-      "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
+      "RELATED: Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity. [SAP06-N14]",
       "Message Reference · originator, identifier, message type, time",
       "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
       "",
@@ -3971,7 +3971,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
       "Tree · value + children; same node datatype",
       "Not assessed here",
       "",
@@ -4005,7 +4005,7 @@
       "",
       "",
       "",
-      "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
+      "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
       "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
       "",
@@ -4277,7 +4277,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
+      "NO_ESTABLISHED: Table96 classes Human/Vehicle/Equipment and classification probabilities describe detected object categories, not ISA tactical identity or physical device type. [SAP06-N02,SAP06-N03]",
       "Identity",
       "Not assessed here",
       "Not assessed here",
@@ -4770,7 +4770,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
+      "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE are classifications of a DETECTED OBJECT's behaviour, not a current ISA component Active boolean. [SAP06-N05]",
       "Active",
       "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
       "Not assessed here",
@@ -4838,7 +4838,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
+      "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
       "Operating State",
       "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
       "Not assessed here",
@@ -5263,7 +5263,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
+      "PARTIAL: SAPIENT can refer to media through URLs, but Annex C.4.1 does not standardize physical storage or a generic ISA component-owned resource directory; access is unverified. [SAP06-N15]",
       "Resources",
       "Not assessed here",
       "Not assessed here",
@@ -6632,7 +6632,7 @@
         "acebpmet meteorological station",
         "",
         "≈ Device",
-        "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
+        "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
         "≈ ISA composition via CIC · integration collection, not physical unity",
         "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
         "≈ ssn:System",
@@ -6878,6 +6878,25 @@
         "source_qualified_display": "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14",
+          "SAP06-N19"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108",
+          "Original BSI full 116-page PDF, §7 and Annexes A–D PDF90–110; Library & public official PDF"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT §§0.2–0.4 describes a sensing/effector edge-node and fusion-node system-of-systems, not one individually bounded physical sensing assembly. [SAP02-N01]",
+        "source_qualified_display": "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -6901,7 +6920,7 @@
         "GOES TX321 transmitter, serial 2335",
         "≈ Network Capable Application Processor (NCAP)",
         "",
-        "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
+        "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
         "≈ ISA component / Controller · network role, not equipment identity",
         "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
         "",
@@ -7293,6 +7312,23 @@
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware.",
+        "previous_sapient_cell_value": "PARTIAL: BSI §§6.2.4–.5.2/Tables17–18 distinguish unique sender Node UUID and declared NodeType (sensor/human/platform/fusion/effector); neither guarantees one physically installed sensor per Node. [SAP03A-N03,SAP03A-N04]",
+        "source_qualified_display": "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -7322,7 +7358,7 @@
         "",
         "≈ Transducer Interface Module (TIM)",
         "≈ ComponentType (can include software)",
-        "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
+        "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
         "≈ composition member · functional integration, not physical part-of",
         "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
         "",
@@ -7847,6 +7883,23 @@
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N02"
+        ],
+        "original_source_locators": [
+          "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI §6.2.5.15/Table32 sub_components recursively describes reported configuration, not authenticated physical containment or independent System identities; operational dependent_nodes is different. [SAP02-N06, SAP03A-N12] [SAP03A-N12]",
+        "source_qualified_display": "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -7872,7 +7925,7 @@
         "",
         "",
         "≈ ConnectsTo",
-        "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
+        "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
         "≈ CIC-to-member interface · communications, not proved cable",
         "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
         "",
@@ -8197,6 +8250,25 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N12",
+          "SAP06-N16"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.1 PDF107",
+          "Informative Annex C §C.4.2–.2.2 PDF108–109"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device.",
+        "previous_sapient_cell_value": "RELATED / NO_ESTABLISHED: §4.10 platform-dependent Node interfaces do not prove an external instrument, cable or connector. [SAP02-N06]",
+        "source_qualified_display": "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -8711,7 +8783,7 @@
         "",
         "",
         "",
-        "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
+        "RELATED: Annex C.3 optional message handling may itself register and send heartbeat even without sensing modes; not the ISA component controller/client/server participation role contract. [SAP06-N14]",
         "All ISA components support the client-side connection role; Controllers also support the server-side role",
         "RELATED: C239 §6.1 in-/out-of-band management and §§14–15 runtime/inter-module interactions define scoped endpoint roles (request/response, publish/subscribe). They do not establish enduring ISA service-provider/client identity, membership authority, or CSAPI resource identity. [SOSA-D/G2-7R/G2-7S/G2-7T]",
         "",
@@ -8823,6 +8895,23 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Annex C.3 optional message handling may itself register and send heartbeat even without sensing modes; not the ISA component controller/client/server participation role contract.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT §6.2.2 registers a Node with the message-handling side; Tables17–18 separate sensory, fusion and platform roles. Not the exact ISA client/server component role contract. [SAP03A-N02,SAP03A-N04]",
+        "source_qualified_display": "RELATED: Annex C.3 optional message handling may itself register and send heartbeat even without sensing modes; not the ISA component controller/client/server participation role contract. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -9632,7 +9721,7 @@
         "",
         "",
         "",
-        "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
+        "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
         "Connection → Registration → Configuration → Operational → Deregistration → Disconnection; message-triggered transitions and renewal",
         "NO_ESTABLISHED: C239 §12 security-audit startup/shutdown, service lifetime requests and §14 container lifetime concern different lifecycles from ISA connection → registration → configuration → operation/deregistration. [G2-5/G2-7R]",
         "",
@@ -9725,6 +9814,23 @@
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle.",
+        "previous_sapient_cell_value": "RELATED: BSI §6.2.2 requires Registration before other messages and waits for RegistrationAck/Error; reconnect, rejection and 30-second retry are protocol-scoped, not ISA's identical full lifecycle. [SAP03A-N02]",
+        "source_qualified_display": "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -9810,7 +9916,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
+        "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
@@ -10063,6 +10169,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N15",
+          "SAP06-N16"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.4.1 PDF108",
+          "Informative Annex C §C.4.2–.2.2 PDF108–109"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables60/69 are actual StatusReport and DetectionReport fields; they are distinct from earlier Registration declarations, and neither is a generic OGC measured-field schema. [SAP04-N01,SAP04-N09]",
+        "source_qualified_display": "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10085,7 +10210,7 @@
         "station ambient air temperature (ATemp)",
         "",
         "",
-        "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
+        "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
         "≈ Event observables · reported variable, not OMS observedProperty",
         "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
         "sosa:ObservableProperty",
@@ -10150,6 +10275,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N02",
+          "SAP06-N05"
+        ],
+        "original_source_locators": [
+          "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+          "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: DetectionReport location/confidence/classification and behaviour fields report source content, not a source-declared exact OGC ObservedProperty identifier. [SAP04-N10,SAP04-N13]",
+        "source_qualified_display": "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10174,7 +10318,7 @@
         "EE181 contributors (derived role); aggregator / mean producer held",
         "",
         "",
-        "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
+        "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
         "≈ Event.source · reporting UCI, not proven physical observer",
         "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
         "≈ sosa:Sensor",
@@ -10291,6 +10435,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT outer Node UUID identifies reporting participant and DetectionReport.object_id identifies reported target; fused/forwarded reports do not authenticate the physical observing instrument. [SAP04-N09,SAP04-N19]",
+        "source_qualified_display": "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -10313,7 +10474,7 @@
         "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
         "",
         "",
-        "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
+        "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
         "≈ Event message · reported event, not underlying observing act",
         "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
         "sosa:Observation",
@@ -10401,6 +10562,25 @@
         "previous_sapient_cell_value": "RELATED / NO_ESTABLISHED: SAPIENT §3.1.4 detection and §5.5 AssociatedDetection concern transmitted reports and fused links, not authenticated performed OGC Observation. [SAP02-N02,N12]",
         "source_qualified_display": "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N01",
+          "SAP06-N05"
+        ],
+        "original_source_locators": [
+          "BSI Flex 335 v2.0 §7.1–7.2, PDF p90",
+          "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement.",
+        "previous_sapient_cell_value": "RELATED: BSI §6.4 DetectionReport provides a reported detected-object record, not an independently verified performed OGC Observation or unambiguous original sensor provenance. [SAP04-N09,SAP04-N10]",
+        "source_qualified_display": "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -11224,7 +11404,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
+        "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
         "Media [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -11289,6 +11469,23 @@
         "previous_sapient_cell_value": "RELATED: DetectionReport.AssociatedFile type/URL links to media, but does not independently establish URL accessibility, production device or archival provenance. [SAP04-N14]",
         "source_qualified_display": "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N15"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.4.1 PDF108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity.",
+        "previous_sapient_cell_value": "RELATED: Alert's AssociatedFile.type/url links media in an alert context, not necessarily an OGC Observation image or physical instrument evidence. [SAP05-N15]",
+        "source_qualified_display": "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -12736,7 +12933,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
+        "NO_ESTABLISHED: Annex C's out-of-spec video streaming guidance and Table C.1 example bitrates do not define ISA video-frame bounding boxes or native event-structure requirements. [SAP06-N16,SAP06-N17]",
         "Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",
         "Not assessed here",
         "",
@@ -12768,6 +12965,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N16",
+          "SAP06-N17"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.4.2–.2.2 PDF108–109",
+          "Informative Annex C Table C.1 PDF109"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Annex C's out-of-spec video streaming guidance and Table C.1 example bitrates do not define ISA video-frame bounding boxes or native event-structure requirements.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: SAPIENT classification plus associated media URL do not establish ISA video-frame bounding-box/pixel detection details. [SAP04-N13,SAP04-N14]",
+        "source_qualified_display": "NO_ESTABLISHED: Annex C's out-of-spec video streaming guidance and Table C.1 example bitrates do not define ISA video-frame bounding boxes or native event-structure requirements. [SAP06-N16,SAP06-N17]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12792,7 +13008,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
+        "NO_ESTABLISHED: Optional compressed/raw video transport guidance is not a source-defined ISA video-track identity, track continuity or recorded observation provenance. [SAP06-N16]",
         "Video Track [accepted] · BSO ID + optional geographic location",
         "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
         "",
@@ -12865,6 +13081,23 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N16"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.4.2–.2.2 PDF108–109"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Optional compressed/raw video transport guidance is not a source-defined ISA video-track identity, track continuity or recorded observation provenance.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: TrackObjectInfo and object track/classification information are sensor-type neutral; no source-defined ISA video-frame or footage-based track identity. [SAP04-N12,SAP04-N13]",
+        "source_qualified_display": "NO_ESTABLISHED: Optional compressed/raw video transport guidance is not a source-defined ISA video-track identity, track continuity or recorded observation provenance. [SAP06-N16]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12890,7 +13123,7 @@
         "",
         "",
         "",
-        "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
+        "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
         "Capability Declaration.properties / commands / observables / types [0+]",
         "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
         "",
@@ -13378,6 +13611,25 @@
         "previous_sapient_cell_value": "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
         "source_qualified_display": "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N01",
+          "SAP06-N04"
+        ],
+        "original_source_locators": [
+          "BSI Flex 335 v2.0 §7.1–7.2, PDF p90",
+          "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue.",
+        "previous_sapient_cell_value": "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
+        "source_qualified_display": "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -14446,7 +14698,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
+        "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
         "Type → Type Name | Custom Type Name",
         "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
         "",
@@ -14581,6 +14833,25 @@
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N04",
+          "SAP06-N18"
+        ],
+        "original_source_locators": [
+          "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass",
+          "Informative Annex D PDF110"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
+        "source_qualified_display": "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14613,7 +14884,7 @@
         "",
         "",
         "",
-        "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
+        "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
         "Structure → Single | List | Associative Array | Tree; min/max length or depth",
         "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
         "",
@@ -14707,6 +14978,25 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "original_source_locators": [
+          "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+          "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure.",
+        "previous_sapient_cell_value": "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
+        "source_qualified_display": "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -22525,7 +22815,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: Annex C's optional middleware persistence/retrieval guidance does not specify ISA DataQuery/Select or a mandatory CSAPI historical query resource. [SAP06-N14]",
         "Data Query + Select → Administrative / Config / Event / Status Select",
         "Not assessed here",
         "",
@@ -22546,7 +22836,24 @@
       "controller_final_source_blocks": [
         "CNTR-7.1"
       ],
-      "controller_final_review_boundary": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery."
+      "controller_final_review_boundary": "Authorized valid Discover Request matches maintained Config/Status and reports SUCCESS even with zero matches; inability to perform matching is FAILED. Retrieval of stored Config/Status is distinct from performed sensing and real-time delivery.",
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Annex C's optional middleware persistence/retrieval guidance does not specify ISA DataQuery/Select or a mandatory CSAPI historical query resource.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: Annex C's optional middleware persistence/retrieval guidance does not specify ISA DataQuery/Select or a mandatory CSAPI historical query resource. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-Q-MATCH",
@@ -23093,7 +23400,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
+        "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
         "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
         "",
@@ -23328,6 +23635,25 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14",
+          "SAP06-N15"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108",
+          "Informative Annex C §C.4.1 PDF108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: Fusion-to-Node task protocol cannot be equated with ISA Authorization/Live Data/Historical service-role required command contracts. [SAP05-N10]",
+        "source_qualified_display": "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -24471,7 +24797,7 @@
         "NOAA CSV + operator metadata; contributor join derived",
         "",
         "",
-        "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
+        "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
         "",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
         "",
@@ -24793,6 +25119,25 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N03",
+          "SAP06-N05"
+        ],
+        "original_source_locators": [
+          "BSI §7.2, PDF90",
+          "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT Alert reports a Node's claim about a system-specific alert condition, not a source-graded or independently verified DIM Assertion. [SAP05-N13]",
+        "source_qualified_display": "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -25519,7 +25864,7 @@
         "",
         "",
         "",
-        "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
+        "RELATED: Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity. [SAP06-N14]",
         "Message Reference · originator, identifier, message type, time",
         "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
         "",
@@ -25598,6 +25943,23 @@
         "previous_sapient_cell_value": "RELATED: AssociatedDetection/DerivedDetection refer to linked reports by node/object/timestamp, not a complete authenticated ISA source-message provenance or chain of custody. [SAP04-N16,SAP04-N19]",
         "source_qualified_display": "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.3.1–.2 PDF107–108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity.",
+        "previous_sapient_cell_value": "RELATED: TaskAck.task_id and AlertAck.alert_id correlate responses to source requests/alerts, not the exact ISA Reference datatype or authenticated original event chain. [SAP05-N12,SAP05-N16]",
+        "source_qualified_display": "RELATED: Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity. [SAP06-N14]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -25790,7 +26152,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
         "Tree · value + children; same node datatype",
         "Not assessed here",
         "",
@@ -25800,7 +26162,26 @@
         "",
         "Recursive same-type value hierarchy"
       ],
-      "boundary": "Not physical composition, containment or a platform hierarchy. Required children with None omission prose is retained for encoding reconciliation."
+      "boundary": "Not physical composition, containment or a platform hierarchy. Required children with None omission prose is retained for encoding reconciliation.",
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "original_source_locators": [
+          "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+          "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-A-EXTENSION-STANDING",
@@ -26076,7 +26457,7 @@
         "",
         "",
         "",
-        "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
+        "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
         "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
         "",
@@ -26540,6 +26921,23 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N10"
+        ],
+        "original_source_locators": [
+          "Informative Annex B §B.1 PDF99 and examples B.2–B.7 PDF99–106"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format.",
+        "previous_sapient_cell_value": "RELATED: BSI §6.2.1/Table15 requires an icd_version declaration such as BSI Flex 335 v2.0; it is not negotiated ISA presentation/schema byte-pair equivalence. [SAP03A-N01]",
+        "source_qualified_display": "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -29169,7 +29567,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
+        "NO_ESTABLISHED: Table96 classes Human/Vehicle/Equipment and classification probabilities describe detected object categories, not ISA tactical identity or physical device type. [SAP06-N02,SAP06-N03]",
         "Identity",
         "Not assessed here",
         "Not assessed here",
@@ -29203,6 +29601,25 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N02",
+          "SAP06-N03"
+        ],
+        "original_source_locators": [
+          "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+          "BSI §7.2, PDF90"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table96 classes Human/Vehicle/Equipment and classification probabilities describe detected object categories, not ISA tactical identity or physical device type.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
+        "source_qualified_display": "NO_ESTABLISHED: Table96 classes Human/Vehicle/Equipment and classification probabilities describe detected object categories, not ISA tactical identity or physical device type. [SAP06-N02,SAP06-N03]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -30831,7 +31248,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
+        "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE are classifications of a DETECTED OBJECT's behaviour, not a current ISA component Active boolean. [SAP06-N05]",
         "Active",
         "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
         "Not assessed here",
@@ -30871,6 +31288,23 @@
         "previous_sapient_cell_value": "Not assessed here",
         "source_qualified_display": "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
         "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N05"
+        ],
+        "original_source_locators": [
+          "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table97 ACTIVE/PASSIVE are classifications of a DETECTED OBJECT's behaviour, not a current ISA component Active boolean.",
+        "previous_sapient_cell_value": "NO_ESTABLISHED: SAPIENT System=OK/WARNING/ERROR and task reporting do not declare ISA Active boolean with identical semantics. [SAP04-N03]",
+        "source_qualified_display": "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE are classifications of a DETECTED OBJECT's behaviour, not a current ISA component Active boolean. [SAP06-N05]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -31054,7 +31488,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
+        "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
         "Operating State",
         "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
         "Not assessed here",
@@ -31194,6 +31628,23 @@
         "previous_sapient_cell_value": "RELATED: StatusReport.System OK/WARNING/ERROR/GOODBYE and StatusType/Level are scoped Node condition, not ISA Operating State coding or independent physical diagnosis. [SAP04-N03,SAP04-N07]",
         "source_qualified_display": "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N05"
+        ],
+        "original_source_locators": [
+          "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate.",
+        "previous_sapient_cell_value": "RELATED: SAPIENT AlertType ERROR/FATAL/WARNING describes system-specific alerts but is distinct from reported StatusReport.System and ISA Operating State values. [SAP05-N13,SAP05-N14]",
+        "source_qualified_display": "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -32936,7 +33387,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
+        "PARTIAL: SAPIENT can refer to media through URLs, but Annex C.4.1 does not standardize physical storage or a generic ISA component-owned resource directory; access is unverified. [SAP06-N15]",
         "Resources",
         "Not assessed here",
         "Not assessed here",
@@ -32992,6 +33443,23 @@
         "previous_sapient_cell_value": "PARTIAL: AssociatedFile type/url is a detection-linked resource reference; not a generic directory of media produced by the physical component, nor evidence of accessibility. [SAP04-N14]",
         "source_qualified_display": "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP06_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP06-N15"
+        ],
+        "original_source_locators": [
+          "Informative Annex C §C.4.1 PDF108"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TAXONOMY_TABLES96_97_ANNEXES_A_D_AND_RELEVANT_NATIVE_PROTOS_READ_NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT can refer to media through URLs, but Annex C.4.1 does not standardize physical storage or a generic ISA component-owned resource directory; access is unverified.",
+        "previous_sapient_cell_value": "RELATED: Alert AssociatedFile and TaskAck optional associated file provide links to associated media; not verified resource retrieval or generic installed component resource catalogue. [SAP05-N12,SAP05-N15]",
+        "source_qualified_display": "PARTIAL: SAPIENT can refer to media through URLs, but Annex C.4.1 does not standardize physical storage or a generic ISA component-owned resource directory; access is unverified. [SAP06-N15]",
+        "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -37193,11 +37661,11 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "SAP05_BSI_TASK_ALERT_ERROR_TABLES78_TO95_42_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP06_BSI_TAXONOMY_ANNEXES_MAIN_TABLES97_97_26_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP05_BSI_TASK_ALERT_ERROR_TABLES78_95_SAME_ORIGINAL_XLSX_VERIFIED",
-    "sha256": "490eab4ac6cc3d43bf755a004b6f584614b0ad57b16fba8ff130f773238d5334",
+    "checkpoint": "SAP06_BSI_TAXONOMY_ANNEX_A_D_97_TABLE_SOURCE_DEPTH_SAME_ORIGINAL_XLSX_VERIFIED",
+    "sha256": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
@@ -37220,8 +37688,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 42,
-    "validation_file": "SAP05_Workbook_Validation_12NOV2026.json",
+    "refreshed_cell_count": 26,
+    "validation_file": "SAP06_Workbook_Validation_13NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -40199,7 +40667,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SAP05 complete: BSI Task/Alert/Error Tables78–95 original source reviewed, 42 source-qualified SAPIENT G cells, SAME 26-sheet Excel 346x15 verified; separate owner Proceed for SAP06 Taxonomy/Annexes only. STOP before SAP07.",
+  "nextOwnerAction": "SAP06 completed original BSI §7/Tables96–97 and informative Annexes A–D; 26 SAPIENT G comparisons and SAME 26-sheet Excel verified. ONE NEXT separate owner Proceed authorizes SAP07 original-source coverage/hold gate and owner donor disposition packet ONLY. STOP before donor transition or DIM/Profile/client adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -40835,6 +41303,57 @@
         "high": 4
       },
       "next": "SAP06 only after new owner Proceed; no model/Profile adoption",
+      "DIM_Profile_adopted": false
+    },
+    "SAP06": {
+      "status": "ORIGINAL_TAXONOMY_ANNEXES_REVIEWED_SAME_XLSX_PARITY_VERIFIED__DONOR_ACTIVE",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "source_report": "SAP06_Original_Source_Review_13NOV2026.md",
+      "validation": "SAP06_Workbook_Validation_13NOV2026.json",
+      "original_BSI_main_tables_audited_this_step": 2,
+      "cumulative_BSI_main_tables_at_bounded_content_depth": 97,
+      "annex_section_groups_read": 6,
+      "source_findings": 20,
+      "new_exact_holds": 6,
+      "source_qualified_master_cells": 26,
+      "changed_cell_addresses": [
+        "G10",
+        "G11",
+        "G12",
+        "G13",
+        "G16",
+        "G19",
+        "G22",
+        "G23",
+        "G24",
+        "G25",
+        "G45",
+        "G70",
+        "G71",
+        "G73",
+        "G81",
+        "G82",
+        "G197",
+        "G207",
+        "G214",
+        "G223",
+        "G228",
+        "G230",
+        "G246",
+        "G275",
+        "G279",
+        "G304"
+      ],
+      "saved_346x15_parity": true,
+      "excel_lag": 0,
+      "source_complete": false,
+      "owner_disposition_pending": true,
+      "forecast_remaining": {
+        "low": 1,
+        "most_likely": 1,
+        "high": 3
+      },
+      "next": "SAP07 source coverage gate and owner decision packet only, on separate Proceed",
       "DIM_Profile_adopted": false
     }
   }
