@@ -1,3 +1,13 @@
+# CURRENT — AAS RESEARCH PLAN APPROVED; AAS01 CORPUS CENSUS NEXT (13 November 2026)
+
+**Owner decision:** the owner replied "Procews" at the pending Step20 AAS owner-approval gate in Profile Rewrite 33; interpreted as **approval of the [AAS donor-specific source-first plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md)**, not simultaneous authorization to perform the separate AAS01 source review. Original publisher Release 26-01 Part1/Part2 v3.2.0, aligned Part3a 3.1.1/3b 3.0/Security 3.1.0/AASX 3.2.0, nine API service families and 34 native SSP YAML files were identified in the already completed AAS00 **metadata-level planning only**, not content-audited. Prior low/likely/high AAS estimate **8/11/16** future substantive Proceeds must be revisited after original-source census; native clauses/operations and all model claims remain unreviewed.
+
+**Saved master unchanged:** one JSON, both CSV, both Markdown comparison mirrors, same 26-sheet original editable [canonical XLSX](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), **337 information rows, 354×15 grid/5,310 comparison values, 325 provisional colored source-qualified donor cells, 67 mixed held**, last checked in [F2-5 validation](F2_5_Workbook_Validation_13NOV2026.json); M00 and owner-approved M01 snapshots are protected. No new AAS column or original-source finding, mapping, DIM/Profile adoption, Glaux modification or deployment. ISA's six questions, The Open Group SOSA's nine source-hold families and SAPIENT's 39 overlapping limits persist.
+
+**ONE NEXT OWNER "Proceed" → AAS01 original Part1/Part2 corpus-source coverage census ONLY**, with original edition/section/schema/API profile IDs and grades, companion relevance and forecast, followed by a STOP before semantic mappings/AAS02. This is owner-approved *planning*, not AAS source-completeness. Older approval-pending banners below are historical.
+
+---
+
 # CURRENT — AAS Step20 ORIGINAL-PUBLISHER SOURCE PLAN READY FOR OWNER DECISION (13 November 2026)
 
 **AAS00 PLANNING-ONLY COMPLETE.** [Open the proposed AAS v3.2 donor-specific research plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): official IDTA Release 26-01 has **Part1/Part2 v3.2.0**, **Part3a 3.1.1, Part3b 3.0, Security 3.1.0, AASX 3.2.0**; six original publisher source release tags/pins and nine API families/34 SSP YAML were identified at publisher-metadata/file-name level, **not original-field/Rule audit**. Reuse ISA/SOSA/SAPIENT source-first rigor and native-field coverage grades without forcing a fixed tiny work packet count; preliminary AAS source-size forecast **LOW8 / LIKELY11 / HIGH16 future substantive Proceeds**, to be recalibrated in approved AAS01.
