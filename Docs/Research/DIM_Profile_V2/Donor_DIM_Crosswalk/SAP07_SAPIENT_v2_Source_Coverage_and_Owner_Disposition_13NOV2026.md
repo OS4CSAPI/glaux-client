@@ -1,3 +1,11 @@
+# CURRENT OWNER DECISION — SAPIENT v2 SAP07 OPTION A ACCEPTED, BOUNDED PARTIAL (13 NOVEMBER 2026)
+
+The owner explicitly accepted **Option A** following the completed F2-5 source-classification and verified Excel checkpoint. **SAPIENT is PARTIAL—OWNER ACCEPTED**, not comprehensively source-audited: 97 of 97 BSI Flex 335 v2 main numbered tables have bounded original-content review, 16 original pinned Dstl v2 Protocol Buffer sources were structurally retrieved and scoped-reviewed, but not every original independent narrative SHALL/figure/field/enum/constraint was exhaustively audited or compiled/tested. All **39 overlapping original issue and coverage entries (37 source-specific plus two initial access/detail)** remain unresolved at their original exact standing. The separate ISA six questions and The Open Group SOSA nine bounded PARTIAL source-hold families continue. This decision authorizes neither DIM fields, Profile SHALLs, hardware control, next donor, nor Glaux deployment. The prior A/B unselected discussion below is **historical** and superseded by this acceptance.
+
+**Next owner action:** discuss/approve donor-specific source plan for the original broader Step20 Asset Administration Shell v3.2. No automatic transition or source work. [Approved M01 color-classification snapshot](Manual_Workbook_Versions/M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx) remains separate from the one living master and immutable M00. STOP.
+
+---
+
 # SAP-07 — SAPIENT v2 source-coverage and owner-disposition packet
 
 **13 November 2026.** **SAP-07 evidence/owner packet COMPLETE; owner decision AWAITED; SAPIENT remains ACTIVE.** This is the approved source-first closure audit and recommendation, not source-completeness certification, adoption of a Domain Information Model (DIM) class or a Connected Systems (CSAPI) Profile rule, or authorization for another donor. [Preserved pre-SAP-07 complete version](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sap07-20261113/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) is fixed at `887d0f825899466b3c1d4e4b316641e5e65e4733`.

@@ -2,7 +2,7 @@
   "schema": "SAP01_SOURCE_FIRST_CENSUS_V1",
   "date": "2026-11-13",
   "step": "SAP-01",
-  "status": "SAP07_EVIDENCE_GATE_PREPARED_AWAIT_OWNER_SELECTION__DONOR_ACTIVE",
+  "status": "SAP07_BOUNDED_PARTIAL_OWNER_ACCEPTED__ORIGINAL_HOLDS_CARRIED",
   "research_branch": "research/dim-profile-v2",
   "base_head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf",
   "owner_authorization": "explicit two Proceeds plus get started: revised SAPIENT plan approved and SAP01 authorized",
@@ -2463,7 +2463,7 @@
       }
     ],
     "owner_rebaseline": "any changed source-first method/scope; material growth +2 proceeds or >=25% owner choice",
-    "next_only": "OWNER_SELECT_SAPIENT_OPTION_A_OR_B",
+    "next_only": "SAPIENT bounded PARTIAL donor gate accepted, 39 overlapping evidence holds remain, no additional packets automatically",
     "previous_SAP01_remaining": {
       "low": 6,
       "likely": 7,
@@ -2514,7 +2514,7 @@
     "branch": "archive/dim-crosswalk-pre-sapient-sap01-20261112",
     "head": "7c5c37075c5da0c357d9654a7e2984d1a836b4bf"
   },
-  "current_step": "SAP07",
+  "current_step": "SAP07_OWNER_BOUNDED_PARTIAL_CLOSED",
   "SAP02": {
     "source_original": "BSI Flex 335 v2.0:2024-03",
     "source_pdf_pages": "9–35",
@@ -6630,7 +6630,7 @@
   },
   "SAP07": {
     "date": "2026-11-13",
-    "status": "EVIDENCE_AND_DISPOSITION_PACKET_COMPLETE__AWAIT_OWNER_SELECTION__DONOR_ACTIVE",
+    "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED__NOT_COMPREHENSIVE",
     "original_BSI": "BSI Flex 335 v2.0:2024-03",
     "original_BSI_pdf_pages": 116,
     "original_numbered_main_tables": 97,
@@ -6671,8 +6671,8 @@
     "source_specific_holds": 37,
     "early_access_census_holds": 2,
     "holds_overlap": true,
-    "proposed_option": "A_BOUNDED_PARTIAL_RECOMMENDED__NOT_OWNER_SELECTED",
-    "owner_selection": "AWAIT_OWNER_EXPLICIT_A_OR_B",
+    "proposed_option": "OPTION_A_ACCEPTED_BY_OWNER_20261113",
+    "owner_selection": "OPTION_A_EXPLICIT_OWNER_ACCEPTANCE_20261113",
     "source_corpus_comprehensive": false,
     "original_BSI_PDF_library_text_available": true,
     "original_pdf_byte_hash_unverified": true,
@@ -6686,7 +6686,19 @@
     "archive_pre_SAP07": "archive/dim-crosswalk-pre-sap07-20261113",
     "archive_pre_SAP07_commit": "887d0f825899466b3c1d4e4b316641e5e65e4733",
     "owner_reporting_rule": "Always link latest committed editable master XLSX in final response whenever master Excel is updated.",
-    "next_only": "Owner selects Option A or B; STOP"
+    "next_only": "Owner accepted bounded partial: next separate owner direction on original master Step20 AAS source scope, no automatic donor research",
+    "owner_disposition": {
+      "date": "2026-11-13",
+      "selected_option": "A",
+      "donor_status": "PARTIAL_OWNER_ACCEPTED",
+      "source_packet": "SAP07_SAPIENT_v2_Source_Coverage_and_Owner_Disposition_13NOV2026.md",
+      "limitations_retained": 39,
+      "all_original_source_items_comprehensively_audited": false,
+      "all_native_protos_field_enum_constraints_verified": false,
+      "compilation_or_runtime_conformance": false,
+      "CSAPI_Profile_or_DIM_approved": false,
+      "new_donor_authorized": false
+    }
   },
   "F2_3_native_candidate_opportunity": {
     "date": "2026-11-13",
