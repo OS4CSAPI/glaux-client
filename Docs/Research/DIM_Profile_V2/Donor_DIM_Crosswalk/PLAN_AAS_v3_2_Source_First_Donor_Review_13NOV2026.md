@@ -1,3 +1,11 @@
+# CURRENT OWNER DECISION — AAS STEP20 SOURCE-FIRST PLAN APPROVED (13 NOVEMBER 2026)
+
+**Owner approved the prepared AAS00 donor-specific plan** by the next "Proceed" after the plan-review checkpoint in Profile Rewrite 33 (the owner's "Procews" is treated as that proceed). This selects the source-first research method, original Industrial Digital Twin Association (IDTA) Release 26-01 scoped edition family, conditional template/companion depth, preliminary LOW8 / LIKELY11 / HIGH16 estimate and explicit original-source coverage gate **as a research plan, not as original content findings**. Preserve the exact Part1/Part2 3.2.0, Part3a 3.1.1, Part3b 3.0, Security 3.1.0 and AASX 3.2.0 release distinctions. No AAS native source meaning, section, schema field, interface operation or tests have been audited since the AAS00 publisher-metadata census, and no model, Profile or workbook changes are adopted.
+
+**AAS01 is the ONE NEXT RESEARCH STEP, NOT EXECUTED BY THIS APPROVAL.** On a separate owner "Proceed" conduct **AAS01 original Part1/Part2 publisher corpus/source-file/section/operation coverage census**, with source IDs, grades, companion relevance and evidence-based revised forecast, then STOP before AAS02 or master/donor-cell integration. Any source-sized scope adjustment, publisher edition substitution, AAS donor-column layout change or model adoption requires its own owner checkpoint. The draft wording of the preserved plan below records its state *before* this approval and is historical wherever it says owner approval pending.
+
+---
+
 # PLAN — Asset Administration Shell (AAS) v3.2 original-source-first donor review
 
 **13 November 2026 · DRAFT FOR OWNER REVIEW · research/dim-profile-v2 · broader master Step20.**
