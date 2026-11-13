@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "c9ea898663c29f63c4c427c596e338206c0dfd905b003cb268988f22e92392fe",
+  "currentWorkbookSha256": "27605ea25feb52b9566782ba09c69ed7237c614f0cac3d2210bf1a85be166752",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -469,7 +469,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
+      "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
@@ -1268,7 +1268,7 @@
       "",
       "",
       "",
-      "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
+      "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
       "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
       "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
       "",
@@ -1302,7 +1302,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
       "Video Track [accepted] · BSO ID + optional geographic location",
       "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
       "",
@@ -1336,7 +1336,7 @@
       "",
       "",
       "",
-      "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
+      "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
       "Capability Declaration.properties / commands / observables / types [0+]",
       "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
       "",
@@ -1387,7 +1387,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
       "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
       "",
@@ -1404,7 +1404,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
       "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
       "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
       "",
@@ -1421,7 +1421,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
       "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
       "",
@@ -1472,7 +1472,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
       "Type → Type Name | Custom Type Name",
       "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
       "",
@@ -1489,7 +1489,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
       "Structure → Single | List | Associative Array | Tree; min/max length or depth",
       "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
       "",
@@ -1506,7 +1506,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
       "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
       "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
       "",
@@ -1591,7 +1591,7 @@
       "",
       "≈ SampMode (sampling capability)",
       "",
-      "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
+      "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
       "≈ Capability Declaration · support, not enumerated operating modes",
       "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
       "",
@@ -1642,7 +1642,7 @@
       "",
       "",
       "",
-      "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
+      "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
       "≈ Request message · command invocation, not proven execution",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
       "",
@@ -2322,7 +2322,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
       "Arm",
       "Not assessed here",
       "Not assessed here",
@@ -2424,7 +2424,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Table58 lists REQUEST Arm for effectors but does not define an equivalent ISA Disarm operation in reviewed Registration command repertoire. [SAP03B-N13]",
       "Disarm",
       "Not assessed here",
       "Not assessed here",
@@ -2492,7 +2492,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
       "Reset",
       "Not assessed here",
       "Not assessed here",
@@ -2594,7 +2594,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
       "Add Zone",
       "Not assessed here",
       "Not assessed here",
@@ -2611,7 +2611,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
       "Move",
       "Not assessed here",
       "Not assessed here",
@@ -2645,7 +2645,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
       "Point Orientation",
       "Not assessed here",
       "Not assessed here",
@@ -2662,7 +2662,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
       "Point Position",
       "Not assessed here",
       "Not assessed here",
@@ -2696,7 +2696,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
       "Scan Area",
       "Not assessed here",
       "Not assessed here",
@@ -2713,7 +2713,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
       "Scan Points",
       "Not assessed here",
       "Not assessed here",
@@ -2764,7 +2764,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
       "Take Picture",
       "Not assessed here",
       "Not assessed here",
@@ -3223,7 +3223,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
       "Authorize Request",
       "Not assessed here",
       "Not assessed here",
@@ -4277,7 +4277,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
       "Identity",
       "Not assessed here",
       "Not assessed here",
@@ -4702,7 +4702,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI Tables46–48 VelocityType declares the coordinate format for a detected object's velocity; no verified absolute platform/component velocity is supplied in Registration. [SAP03B-N08]",
       "Velocity",
       "Not assessed here",
       "Not assessed here",
@@ -4719,7 +4719,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
       "View Area",
       "Not assessed here",
       "Not assessed here",
@@ -4736,7 +4736,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "Not assessed here",
+      "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
       "Zones",
       "Not assessed here",
       "Not assessed here",
@@ -5790,7 +5790,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: BSI registration may advertise performance measures and geometric error, but Tables33–40 do not establish ISA's particular minimum/effective/maximum detection-distance fields. [SAP03B-N01,SAP03B-N04]",
       "Detection Range · maximum, effective, minimum",
       "Not assessed here",
       "",
@@ -9810,7 +9810,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
+        "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
@@ -10019,6 +10019,28 @@
         "previous_sapient_cell_value": "",
         "source_qualified_display": "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N01",
+          "SAP03B-N02"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035",
+          "SAP-BSI-T036",
+          "SAP-BSI-T037"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables20,24–25 describe the status fields, categories, units and on_change behavior to be reported later; this is a declaration, not a measured output or actual value. [SAP03A-N06,SAP03A-N08]",
+        "source_qualified_display": "RELATED: BSI Registration Tables33–37 define future DetectionReport categories/fields and permitted units/track/object details; these are declared outputs, not values actually reported. Earlier SAP03A status declaration remains distinct. [SAP03B-N01,SAP03B-N02]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -12268,7 +12290,7 @@
         "",
         "",
         "",
-        "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
+        "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
         "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
         "RELATED/PARTIAL: C239 §5.7 DIV-2/3 models and Sensor quantitative data do not establish generic result uncertainty with units. The 2022 v1 DSDM SignalCharacterization/SignalDetection confidence is signal-specific, not universal measurement uncertainty; C239 native equivalence unverified. [SOSA-D/G2-7T/G3-N2]",
         "",
@@ -12331,6 +12353,27 @@
         "source_qualified_display": "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N01",
+          "SAP03B-N04"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035",
+          "SAP-BSI-T040"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics.",
+        "previous_sapient_cell_value": "RELATED / NARROWER: §§5.2–5.3 Tables3,7–8,11 include positional/velocity error fields; these are not a generic uncertainty definition for every measured quantity. [SAP02-N08,N09,N10]",
+        "source_qualified_display": "RELATED: BSI Tables34/40 specify potential geometric error and typical performance values, not the uncertainty of a specific performed measurement or ISA Measured-value semantics. [SAP03B-N01,SAP03B-N04]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12391,7 +12434,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
         "Video Track [accepted] · BSO ID + optional geographic location",
         "RELATED but not observed: C239 §9.4 reference-only Tracker describes Current and Predicted Track State, not verified installed tracks, video-derived observations, or identified source-case track resources. [G2-4B]",
         "",
@@ -12421,6 +12464,27 @@
         "original_rules_checked": true,
         "unverified_native_companions": true,
         "DIM_adopted": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N02",
+          "SAP03B-N03"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T036",
+          "SAP-BSI-T037",
+          "SAP-BSI-T038",
+          "SAP-BSI-T039"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Tables36–39 allow track/object field and class-confidence declarations across sensor types; they do not establish an ISA video-specific Track resource or a recorded clip. [SAP03B-N02,SAP03B-N03]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -12446,7 +12510,7 @@
         "",
         "",
         "",
-        "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
+        "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
         "Capability Declaration.properties / commands / observables / types [0+]",
         "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
         "",
@@ -12913,6 +12977,29 @@
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N01",
+          "SAP03B-N09",
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035",
+          "SAP-BSI-T049",
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome.",
+        "previous_sapient_cell_value": "PARTIAL: SAPIENT Registration declares NodeType, Capability(category/type/value/units), modes, report definitions and accepted-task forms; differs from ISA's CCD property/observable/command catalogue. [SAP03A-N01,SAP03A-N05,SAP03A-N09]",
+        "source_qualified_display": "PARTIAL: SAPIENT Registration declares detection formats/class/behaviour support and accepted task/command forms by mode; not an exact ISA property/observable/command declaration structure or a performed outcome. [SAP03B-N01,SAP03B-N09,SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13048,7 +13135,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
         "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
         "",
@@ -13361,6 +13448,27 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · C239 V1.0 in-band management operations include restartSensorComponent, updateMode, shutdownSensorComponent; not an ISA command catalogue [G2-1] · G2-2: Chassis Manager V1.0 executeCommand carries LowLevelCommand over IPMI-oriented out-of-band gateway; access may be restricted · G2-3: §6.4 mandates tiered IPMC/IPMI command responses via externally referenced tables · G2-4B: §7.1.1 preliminary SetCreateTask and RF V1.0 sendCommand define different task/control interaction surfaces · G2-5: Zeroization, radar mode and host configuration are distinct source operation signatures · G2-6A: Maintenance Console Port is low-level nonoperational UART · G2-6B: External I/O command topology and conditional SYS_CON driver reassignment concern hardware · G2-6C: 6U external-I/O architecture permits receipt of internal PIC commands · G2-7F: A hardware requirement to implement all declared AMPS ports/lanes is not a declaration of software command operations. · G2-7J: A platform-side hardwired enable/arming signal is a hardware control possibility. [RELATED; Not a software control API or authenticated executable Command.] · G2-7L: Hardwired emission arming, No Emit Zone and purge switches. [RELATED; Not software Command schema or authorized API.] · G2-7M: Physical maintenance switch enables nonvolatile writing. [RELATED; Not a software Command endpoint, authorization scheme or request schema.] · G2-7N: Physical DS101 key-fill signal interfaces differ by GPS role. [NO_ESTABLISHED; No authenticated CSAPI software Command or safe network execution API.] · G2-7O: Arming and gimbal inhibition are hardwired safety inputs. [RELATED; Not authenticated CSAPI software commands.] · G2-7P: Physical J7 Write Enable circuit is a maintenance hardware interface. [RELATED; Not an authenticated software Command API.] · G2-7Q: Vendor UI and potential software API are source options [RELATED; Not standardized authenticated CSAPI Command] · G2-7R: RTE internally loads and orders software execution [NO_ESTABLISHED; Not authenticated CSAPI Command interface] · G2-7S: Management request-response and conditional FACE Transport API are native [RELATED; Not a CSAPI Command schema or endpoint] · G2-7T: Task comes from outside sensor; Assignment is internal; management and request-response support functions [RELATED; No approved CSAPI Command endpoint/schema]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N09",
+          "SAP03B-N12",
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T049",
+          "SAP-BSI-T057",
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables49/57–58 TaskDefinition/Command declares accepted task forms, units, completion time and type; not ISA Command Declaration args/results or authorized execution. [SAP03B-N09,SAP03B-N12,SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13385,7 +13493,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
         "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
         "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
         "",
@@ -13483,6 +13591,32 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-4B: Preliminary SetModuleAssignment uses ModuleAssignmentType; V1 reserveSignalPort takes port/transport configuration · G2-5: Host commands have typed DIV-2 request parameters, key zeroization uses keyID · G2-7Q: Vendor function list for configurable pins [NO_ESTABLISHED; No machine-readable Command schema] · G2-7R: ImageLoad identifies software to load [NO_ESTABLISHED; Not issued command parameter schema] · G2-7S: Operation parameters represent inputs/outputs [RELATED; No specific Command schema fields] · G2-7T: Source describes request-response interaction pattern [NO_ESTABLISHED; No typed command parameters or source schema]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10",
+          "SAP03B-N11",
+          "SAP03B-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051",
+          "SAP-BSI-T052",
+          "SAP-BSI-T053",
+          "SAP-BSI-T054",
+          "SAP-BSI-T055",
+          "SAP-BSI-T056",
+          "SAP-BSI-T057"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI Tables50–57 constrain region, filter parameter and command units/values for potential tasking; not ISA's generic command-parameter optionality/type contract. [SAP03B-N10,SAP03B-N11,SAP03B-N12]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13507,7 +13641,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
         "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
         "",
@@ -13628,6 +13762,25 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "Related only · G2-2: Chassis Manager executeCommand lists LowLevelResult response type; dedicated IPMI bridge, not generic ISA result contract · G2-4B: Preliminary task request uses reqResErrorCode; RF command returns NO_ERROR or fault codes; storage has distinct NVMe response role · G2-5: Host CommandStatus and completed zeroization status represent different result surfaces · G2-6B: External I/O card can return architecture-level status/results in source design · G2-6C: Inter-PIC external-I/O design allows return status/results · G2-7S: Responder returns parameters after operation [RELATED; No actual command-result resource] · G2-7T: Source describes response message after service acts [RELATED; No accepted common result schema]",
         "DIM_Profile_adopted": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N09",
+          "SAP03B-N12"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T049",
+          "SAP-BSI-T057"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Registration Tables49/57 specify accepted TaskDefinition input and command types, not a source-defined ISA command result schema or proof of physical result. [SAP03B-N09,SAP03B-N12]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -13858,7 +14011,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
         "Type → Type Name | Custom Type Name",
         "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
         "",
@@ -13972,6 +14125,27 @@
         "C239_exact_native_bytes_verified": false,
         "previous_sosa_cell_value": "No established direct equivalence · DIV-3 physical data model / Normative DSDM and IDL file pointers · §5.7.3 and §5.7 · NO ESTABLISHED EXACT MAPPING [SOSA-D ledger] · G2-4A: §5.7 divides DIV-1, DIV-2, DIV-3 but actual normative DSDM/IDL/schema unread; §5.7 B.2 pointer disagrees with Appendix B.1 naming · G2-6B: AMPS and slot identifiers encode physical connector allocations/protocols · G2-7A: AMPS code specifies a physical port protocol family and pipe/lane choice · G2-7B: AMPS Lkm and L identify physical link protocol family and specifics",
         "DIM_Profile_adopted": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N05",
+          "SAP03B-N06"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T041",
+          "SAP-BSI-T042",
+          "SAP-BSI-T043",
+          "SAP-BSI-T044"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: BSI object classification type and taxonomy extension namespaces identify detected object classes, not ISA built-in/custom datatype declarations or a DIM equipment class. [SAP03B-N05,SAP03B-N06]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14004,7 +14178,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
         "Structure → Single | List | Associative Array | Tree; min/max length or depth",
         "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
         "",
@@ -14076,6 +14250,30 @@
         "original_dense_matrix_pixels_unverified": true,
         "DIM_Profile_adopted": false,
         "independent_conformance_performed": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N05",
+          "SAP03B-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T041",
+          "SAP-BSI-T042",
+          "SAP-BSI-T052",
+          "SAP-BSI-T053",
+          "SAP-BSI-T054",
+          "SAP-BSI-T055",
+          "SAP-BSI-T056"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI recursive SubClass/SubClassFilterDefinition and repeated list fields are source-specific detection taxonomy/filter structure, not a universal ISA List/Tree value schema. [SAP03B-N05,SAP03B-N11]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14106,7 +14304,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
         "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
         "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
         "",
@@ -14366,6 +14564,30 @@
         "actual_1000BaseT_hardware_or_traffic_unverified": true,
         "DIM_Profile_adopted": false,
         "independent_conformance": false
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10",
+          "SAP03B-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051",
+          "SAP-BSI-T052",
+          "SAP-BSI-T053",
+          "SAP-BSI-T054",
+          "SAP-BSI-T055",
+          "SAP-BSI-T056"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "RELATED: BSI RegionType and FilterParameter operator enumerations describe allowable task/filter values, not ISA generic inclusive/exclusive typed bounded-range declarations. [SAP03B-N10,SAP03B-N11]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
       }
     },
     {
@@ -14630,7 +14852,7 @@
         "",
         "≈ SampMode (sampling capability)",
         "",
-        "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
+        "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
         "≈ Capability Declaration · support, not enumerated operating modes",
         "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
         "",
@@ -14787,6 +15009,27 @@
         "previous_sapient_cell_value": "ModeDefinition.mode_name",
         "source_qualified_display": "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
         "negative_equivalence": "Registration declaration is not physical installation, live status, task execution, ISA/OGC equivalence or DIM adoption",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N01",
+          "SAP03B-N09"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035",
+          "SAP-BSI-T049"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved.",
+        "previous_sapient_cell_value": "RELATED: BSI Tables27–30 define supported mode name/type, settle time, scan/tracking behavior and permitted task definition; registration is not proof the mode is active. [SAP03A-N09,SAP03A-N10]",
+        "source_qualified_display": "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -15134,7 +15377,7 @@
         "",
         "",
         "",
-        "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
+        "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
         "≈ Request message · command invocation, not proven execution",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
         "",
@@ -15425,6 +15668,25 @@
         "relation": "RELATED",
         "previous_sapient_cell_value": "≈ Task",
         "source_qualified_display": "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      },
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N09",
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T049",
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved.",
+        "previous_sapient_cell_value": "RELATED / NARROWER: §4.7 Task is a fusion-node instruction transmitted to an edge Node, not proof of physical execution; detailed Task data model remains for SAP-05. [SAP02-N05]",
+        "source_qualified_display": "RELATED: BSI Registration describes Task/Command types a Node can accept, including sensor vs effector differences; separate Task message sends a request. Capability declaration is NOT an issued command or physical effect. Earlier SAP02 task distinction preserved. [SAP03B-N09,SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
       }
@@ -17159,7 +17421,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
         "Arm",
         "Not assessed here",
         "Not assessed here",
@@ -17169,7 +17431,24 @@
         "Not assessed here",
         "Requested preparation for pre-armed commands"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table58 REQUEST Arm applies to effectors and differs from ISA's generic pre-arming request; it is supported task vocabulary, not proof of device armed state. [SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-175",
@@ -17381,7 +17660,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Table58 lists REQUEST Arm for effectors but does not define an equivalent ISA Disarm operation in reviewed Registration command repertoire. [SAP03B-N13]",
         "Disarm",
         "Not assessed here",
         "Not assessed here",
@@ -17391,7 +17670,24 @@
         "Not assessed here",
         "Requested prevention of pre-armed commands"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table58 lists REQUEST Arm for effectors but does not define an equivalent ISA Disarm operation in reviewed Registration command repertoire.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Table58 lists REQUEST Arm for effectors but does not define an equivalent ISA Disarm operation in reviewed Registration command repertoire. [SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-217",
@@ -17517,7 +17813,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
         "Reset",
         "Not assessed here",
         "Not assessed here",
@@ -17527,7 +17823,24 @@
         "Not assessed here",
         "Requested return to component-defined original state"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Table58 REQUEST Reset means request a Node reboot, not necessarily ISA Reset's return to its original component-defined state; shared label is not semantic equivalence. [SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-232",
@@ -17879,7 +18192,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
         "Add Zone",
         "Not assessed here",
         "Not assessed here",
@@ -17892,7 +18205,25 @@
       "additional_ISA_type_evidence": [
         "ISA-TYPE-336",
         "ISA-TYPE-362"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI region task types describe accepted area constraints, not an issued ISA Add Zone operation changing the current zone list. [SAP03B-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-221",
@@ -17916,7 +18247,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
         "Move",
         "Not assessed here",
         "Not assessed here",
@@ -17926,7 +18257,26 @@
         "Not assessed here",
         "Requested component relocation to a geographic destination"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N13",
+          "SAP03B-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table58 MOVE_TO tasks mobile Nodes to a location/waypoints; this is a supported task type, not a sent or completed ISA Move command. [SAP03B-N13,SAP03B-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-222",
@@ -17987,7 +18337,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
         "Point Orientation",
         "Not assessed here",
         "Not assessed here",
@@ -17999,7 +18349,25 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-274"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI LOOK_AT commands target location/range-bearing geometry, not ISA Point Orientation's requested angular orientation/reference relationship. [SAP03B-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-225",
@@ -18023,7 +18391,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
         "Point Position",
         "Not assessed here",
         "Not assessed here",
@@ -18033,7 +18401,25 @@
         "Not assessed here",
         "Requested pointing toward an absolute geographic position"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table58 LOOK_AT allows pointing a steerable Node/platform toward a location; source is task support, not an issued ISA Point Position or proven physical pointing. [SAP03B-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-229",
@@ -18091,7 +18477,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
         "Scan Area",
         "Not assessed here",
         "Not assessed here",
@@ -18103,7 +18489,27 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-387"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10",
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051",
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "PARTIAL",
+        "native_meaning": "BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "PARTIAL: BSI RegionDefinition declares permissible spatial region tasking, but not ISA Scan Area's specific absolute stop-time/execution results. [SAP03B-N10,SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-234",
@@ -18127,7 +18533,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
         "Scan Points",
         "Not assessed here",
         "Not assessed here",
@@ -18139,7 +18545,25 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-388"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N14"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058",
+          "SAP-BSI-T059"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI PATROL is a mobile-platform waypoint traversal, not ISA Scan Points' observation scan with absolute stop time; neither command execution is established. [SAP03B-N14]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-246",
@@ -18236,7 +18660,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
         "Take Picture",
         "Not assessed here",
         "Not assessed here",
@@ -18246,7 +18670,24 @@
         "Not assessed here",
         "Requested image generation from the current view"
       ],
-      "additional_ISA_type_evidence": []
+      "additional_ISA_type_evidence": [],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N13"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T058"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table58 REQUEST Take snapshot advertises sensor Node task support, with a potential URL in TaskAck; not performed ISA Take Picture or verified image. [SAP03B-N13]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-253",
@@ -19429,7 +19870,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
         "Authorize Request",
         "Not assessed here",
         "Not assessed here",
@@ -19452,7 +19893,30 @@
         "ICD-5.0",
         "ICD-6.7.1",
         "ICD-8.0"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N09",
+          "SAP03B-N11"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T049",
+          "SAP-BSI-T052",
+          "SAP-BSI-T053",
+          "SAP-BSI-T054",
+          "SAP-BSI-T055",
+          "SAP-BSI-T056"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: Registration of supported task/region/filter types is not an authorization decision for an actual ISA request, credential or permission grant. [SAP03B-N09,SAP03B-N11]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-176",
@@ -27562,7 +28026,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
         "Identity",
         "Not assessed here",
         "Not assessed here",
@@ -27577,7 +28041,28 @@
       ],
       "additional_ISA_requirement_evidence": [
         "CMPT-4.1.3"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N03",
+          "SAP03B-N05"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T038",
+          "SAP-BSI-T039",
+          "SAP-BSI-T041",
+          "SAP-BSI-T042"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI object classification taxonomy describes detectable categories and confidence; it is not ISA tactical identity classification of an observed entity. [SAP03B-N03,SAP03B-N05]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-075",
@@ -28986,7 +29471,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI Tables46–48 VelocityType declares the coordinate format for a detected object's velocity; no verified absolute platform/component velocity is supplied in Registration. [SAP03B-N08]",
         "Velocity",
         "Not assessed here",
         "Not assessed here",
@@ -28998,7 +29483,26 @@
       ],
       "additional_ISA_type_evidence": [
         "ISA-TYPE-449"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N08"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T046",
+          "SAP-BSI-T047",
+          "SAP-BSI-T048"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI Tables46–48 VelocityType declares the coordinate format for a detected object's velocity; no verified absolute platform/component velocity is supplied in Registration.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI Tables46–48 VelocityType declares the coordinate format for a detected object's velocity; no verified absolute platform/component velocity is supplied in Registration. [SAP03B-N08]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-117",
@@ -29022,7 +29526,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
         "View Area",
         "Not assessed here",
         "Not assessed here",
@@ -29035,7 +29539,25 @@
       "additional_ISA_type_evidence": [
         "ISA-TYPE-358",
         "ISA-TYPE-385"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "NO_ESTABLISHED: BSI task RegionDefinition specifies areas acceptable for potential tasking, not the current measured geographic field of view of a component. [SAP03B-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-120",
@@ -29059,7 +29581,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "Not assessed here",
+        "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
         "Zones",
         "Not assessed here",
         "Not assessed here",
@@ -29073,7 +29595,25 @@
         "ISA-TYPE-336",
         "ISA-TYPE-358",
         "ISA-TYPE-362"
-      ]
+      ],
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N10"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T050",
+          "SAP-BSI-T051"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "RELATED",
+        "native_meaning": "BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration.",
+        "previous_sapient_cell_value": "Not assessed here",
+        "source_qualified_display": "RELATED: BSI Table51 task RegionType advertises AREA_OF_INTEREST/IGNORE/BOUNDARY/GO/NO_GO, not an actual current ordered ISA Zones configuration. [SAP03B-N10]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-035",
@@ -32079,7 +32619,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: BSI registration may advertise performance measures and geometric error, but Tables33–40 do not establish ISA's particular minimum/effective/maximum detection-distance fields. [SAP03B-N01,SAP03B-N04]",
         "Detection Range · maximum, effective, minimum",
         "Not assessed here",
         "",
@@ -32089,7 +32629,28 @@
         "",
         "Detection and identification distance limits"
       ],
-      "boundary": "Not an observed target distance or the simpler Range property. Omitted effective defaults to maximum and minimum to 0.0 only in this native structure."
+      "boundary": "Not an observed target distance or the simpler Range property. Omitted effective defaults to maximum and minimum to 0.0 only in this native structure.",
+      "SAP03B_source_first_correspondence": {
+        "source_item_ids": [
+          "SAP03B-N01",
+          "SAP03B-N04"
+        ],
+        "original_source_table_ids": [
+          "SAP-BSI-T033",
+          "SAP-BSI-T034",
+          "SAP-BSI-T035",
+          "SAP-BSI-T040"
+        ],
+        "edition": "BSI Flex 335 v2.0:2024-03 / pinned Dstl v2 244a741c13bcee628f84944aef91e4a66854bd7d",
+        "source_grade": "ORIGINAL_BSI_TABLES33_TO59_AND_RELEVANT_NATIVE_PROTO_FIELDS_ENUMS_READ__NOT_COMPILED",
+        "relation": "NO_ESTABLISHED",
+        "native_meaning": "BSI registration may advertise performance measures and geometric error, but Tables33–40 do not establish ISA's particular minimum/effective/maximum detection-distance fields.",
+        "previous_sapient_cell_value": "",
+        "source_qualified_display": "NO_ESTABLISHED: BSI registration may advertise performance measures and geometric error, but Tables33–40 do not establish ISA's particular minimum/effective/maximum detection-distance fields. [SAP03B-N01,SAP03B-N04]",
+        "negative_equivalence": "Registration capabilities not actual detection, accepted/issued task, commanded hardware, physical equipment type or adopted DIM/Profile content",
+        "DIM_Profile_adopted": false,
+        "not_runtime_conformance": true
+      }
     },
     {
       "row_id": "ISA-C-046",
@@ -35097,15 +35658,15 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "C1–C4: 118 SOSA source-qualified summary edits and 31 mixed-prefix corrections, SAME 26-sheet Excel verified, nine source holds and six ISA questions retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "SAP03A_BSI_REGISTRATION_TABLES15_TO32_28_CELLS_SAME_XLSX_VERIFIED",
+  "currentEvidenceCheckpoint": "SAP03B_BSI_REGISTRATION_TABLES33_TO59_28_CELLS_SAME_26_SHEET_XLSX_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SAP03A_BSI_TABLES15_32_SAME_ORIGINAL_XLSX_VERIFIED",
-    "sha256": "c9ea898663c29f63c4c427c596e338206c0dfd905b003cb268988f22e92392fe",
+    "checkpoint": "SAP03B_BSI_TABLES33_59_SAME_ORIGINAL_XLSX_VERIFIED",
+    "sha256": "27605ea25feb52b9566782ba09c69ed7237c614f0cac3d2210bf1a85be166752",
     "information_rows": 329,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: saved original 26-sheet workbook agrees with canonical JSON, both CSV and both Markdown",
+    "lag": "ZERO: saved original 26-sheet workbook parity with one JSON and both CSV and Markdown mirrors",
     "textCheckpoint": "SAP02_BSI_0_5_SOURCE_INTEGRATED",
     "textInformationRows": 329,
     "textPrimaryReviewed": 480,
@@ -35125,7 +35686,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 28,
-    "validation_file": "SAP03A_Workbook_Validation_12NOV2026.json",
+    "validation_file": "SAP03B_Workbook_Validation_12NOV2026.json",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -38103,7 +38664,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SAP03A complete, 18 original Registration tables, 28 source-qualified SAPIENT G cells and SAME 26-sheet Excel verified; separate owner Proceed only for SAP03B Tables33–59; stop before SAP04.",
+  "nextOwnerAction": "SAP03B complete, 27 original BSI Registration tables, 28 source-qualified SAPIENT G cells, and same 26-sheet Excel verified; new owner Proceed only SAP04 Status/Detection Tables60–77, STOP before SAP05.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -38563,6 +39124,56 @@
         "high": 7
       },
       "next": "SAP03B only, owner controlled; source incomplete",
+      "DIM_Profile_adopted": false
+    },
+    "SAP03B": {
+      "status": "ORIGINAL_SOURCE_AUDITED_AND_SAME_XLSX_PARITY_VERIFIED",
+      "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json",
+      "source_report": "SAP03B_Original_Source_Review_12NOV2026.md",
+      "validation": "SAP03B_Workbook_Validation_12NOV2026.json",
+      "original_BSI_tables_read": 27,
+      "cumulative_BSI_tables_read": 59,
+      "source_findings": 19,
+      "new_exact_holds": 5,
+      "source_qualified_master_cells": 28,
+      "changed_cell_addresses": [
+        "G22",
+        "G69",
+        "G71",
+        "G73",
+        "G76",
+        "G77",
+        "G78",
+        "G81",
+        "G82",
+        "G83",
+        "G88",
+        "G91",
+        "G131",
+        "G137",
+        "G141",
+        "G147",
+        "G148",
+        "G150",
+        "G151",
+        "G153",
+        "G154",
+        "G157",
+        "G184",
+        "G246",
+        "G271",
+        "G272",
+        "G273",
+        "G335"
+      ],
+      "saved_346x15_parity": true,
+      "excel_lag": 0,
+      "forecast_remaining": {
+        "low": 3,
+        "most_likely": 4,
+        "high": 6
+      },
+      "next": "SAP04 separate owner Proceed only; no model/Profile adoption",
       "DIM_Profile_adopted": false
     }
   }
