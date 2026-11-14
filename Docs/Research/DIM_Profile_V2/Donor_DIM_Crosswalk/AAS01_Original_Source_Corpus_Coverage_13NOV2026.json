@@ -33294,7 +33294,39 @@
       },
       "research_limit": "Source item/file coverage is selected-scope; no runtime, complete specification or DIM/Profile adoption.",
       "publication_readback": {
-        "status": "LOCAL_VERIFIED__REMOTE_PUBLICATION_PENDING"
+        "status": "PASS_PUBLISHED_REMOTE_TREE_AND_WORKFLOW_READBACK",
+        "date": "2026-11-14",
+        "branch": "research/dim-profile-v2",
+        "published_commit": "5424aaa8424e164ace827a1bee9d26d6fa68beaa",
+        "published_tree": "62632f2f9a62da711eac951108c157587d347c5f",
+        "recovered_local_commit": "acf1638db4260c6be65f0e3702b59cd29bdabbde",
+        "recovered_tree_equals_published_tree": true,
+        "workbook_blob": "70fe8984889ca879cc4617583a63ef5be81aa6a9",
+        "workbook_sha256": "93d0ee59f152a81b7f145507a67cadb60ec094a813698ca361174d27e862074d",
+        "publisher_run": 43623679818,
+        "publisher_job": 132534710955,
+        "publisher_conclusion": "success",
+        "independent_check_run": 43623679814,
+        "independent_check_job": 132534710957,
+        "independent_check_conclusion": "success",
+        "owner_authorization": "Profile Rewrite 37 Proceed: finish interrupted AAS09 publication, verify GitHub readback/checks, update existing completion records; stop before AAS10.",
+        "scope": "Publication of already reviewed and saved AAS09 only; no original-source expansion, workbook regeneration, donor transition or DIM/Profile adoption.",
+        "transport_note": "Direct Git push lacked workspace credentials; connected GitHub service published identical verified file blobs and tree under a new commit. Local branch aligned to that published commit after exact tree equality and clean-worktree checks.",
+        "artifact_register_check": {
+          "command": "python scripts/verify-artifacts.py",
+          "exit_code": 1,
+          "status": "SEVEN_PREVIOUSLY_DOCUMENTED_NON_AAS09_REGISTER_LINK_ISSUES_REMAIN",
+          "issues": [
+            "Artifact missing from readable register: Docs/Design/Details_View/MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.5.docx",
+            "Artifact missing from readable register: Docs/Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.5_17OCT2026.docx",
+            "Broken local link in Docs/ARTIFACT_REGISTER.md: Design/Details_View/MERLIN_Semantic_Presentation_and_Interaction_Guide_v0.6.docx",
+            "Broken local link in Docs/ARTIFACT_REGISTER.md: Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.6_17OCT2026.docx",
+            "Broken local link in Docs/Plans/CONTINUITY.md: ../Design/MPSS/MERLIN_Profile_Standards_Pedigree_and_Design_Rationale_Primer_v0.6_17OCT2026.docx",
+            "Broken local link in Docs/Research/DIM_Profile_V2/README.md: SAP06_Original_Source_Review_13NOV2026.md",
+            "Broken local link in Docs/Research/DIM_Profile_V2/README.md: SAP06_Workbook_Validation_13NOV2026.json"
+          ],
+          "disposition": "Preserved as open, separately from passing AAS09 publication and workbook checks; no unrelated repair in this bounded step."
+        }
       }
     },
     "continuity_correction": "Current master nextOwnerAction, AASEvidence report and workbook validation_file were stale at AAS04/AAS05 despite newer saved checkpoints. Current fields now point to AAS09/AAS10; old source counts/pins and verification records are retained and explicitly scoped. Existing publisher/checker updated to prevent this recurrence.",

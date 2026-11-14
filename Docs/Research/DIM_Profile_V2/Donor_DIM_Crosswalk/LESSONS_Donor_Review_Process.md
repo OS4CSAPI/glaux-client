@@ -8,6 +8,8 @@ Current recovery metadata needs the same checkpoint as the actual saved master. 
 
 **ONE NEXT: AAS10 coverage-gate assessment on a separate owner Proceed; no automatic donor closeout or transition.**
 
+Publication evidence: [Published AAS09 commit 5424aaa842](https://github.com/OS4CSAPI/glaux-client/commit/5424aaa8424e164ace827a1bee9d26d6fa68beaa), [existing publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43623679818), and [independent saved-master check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43623679814) were read back. The published tree `62632f2f9a62da711eac951108c157587d347c5f` exactly matches recovered local commit `acf1638db4260c6be65f0e3702b59cd29bdabbde`, including workbook blob `70fe8984889ca879cc4617583a63ef5be81aa6a9`. The interrupted local checkpoint was recovered and published without repeating source research or starting AAS10.
+
 ---
 
 # L95 — Keep definition, quantity, policy and package evidence separate (AAS08, 14 November 2026)
