@@ -1,3 +1,13 @@
+# L98 — Check the actual owner view before donor closeout (14 November 2026)
+
+The owner found AAS blank/status/color inconsistencies that AAS10 did not identify. All 337 saved row states were audited: AAS 63 notes/274 blanks/0 colors, versus established explicit Not assessed here and classified-cell practices in other donors. Initial uncolored composite evidence may remain held, but a permanent blanket uncolored rule is not a substitute for the same source-level candidate classification used for earlier donors. Resolve old blank conventions and later explicit statuses visibly; blank must never imply source absence.
+
+Current Summary/Legend statements and comparison conclusions must be reconciled, not just appended. A source ID cited in one cell does not prove that all of its relevant meanings reached the master: AAS07 OperationHandle was cited elsewhere while the request-correlation row G198 was blank. The checker preserved all bytes/values and colors yet allowed stale AAS04/AAS05 routing and forbade new AAS classifications. Preservation, row-status clarity, source integration, classification, original-source coverage and owner adoption are separate checks.
+
+The prior AAS10 closeout recommendation is withdrawn pending correction documented in the [existing assessment](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md). Keep the source research and frozen versions; repair the actual owner view and integrate supported omissions before renewing the gate. No new source campaign or arbitrary cell/row quota follows.
+
+---
+
 # L97 — Reconcile evidence before asking for donor disposition (AAS10, 14 November 2026)
 
 A closure gate must account separately for inspected source, current cell citations, native information not mapped, conflicts, established boundaries and actual unreviewed material. A source finding without a direct cell citation is not automatically a lost field; preserve its native meaning and disposition. Reconcile stale unread holds against later evidence without erasing their history, and never add overlapping file/page/profile/constraint counts into a completeness percentage. [AAS10](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) provides the bounded owner decision.

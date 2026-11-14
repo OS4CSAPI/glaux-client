@@ -1,3 +1,68 @@
+# CURRENT — AAS workbook defects confirmed; closeout recommendation withdrawn (14 November 2026)
+
+The owner's workbook review exposed confirmed integration and presentation defects. **AAS remains active; do not ask for closeout acceptance or start another donor until correction.** The existing [AAS10 assessment](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) and [cumulative ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json) now carry the owner usability audit. The previous bounded-PARTIAL acceptance recommendation and ready-for-acceptance forecast are superseded.
+
+**Verified defects:** 274 unlabeled AAS blanks (including nine case-review holds); zero AAS candidate classifications; stale Summary AAS04/AAS05 routing and 44-cell count; a Part1-only column title; four cells retaining earlier unreviewed wording before later reviewed findings; and a missing qualified comparison at **Master Crosswalk!G198** despite already-reviewed AAS OperationHandle evidence. Existing 325 older donor colors were preserved but the same classification process was not applied to AAS. Counting a finding as cited somewhere did not establish complete integration; the old checker passes these defects because it checks preservation/parity and requires AAS colors to remain unassigned.
+
+**Audit boundary:** all 337 row states/fills, current workbook guidance and source-reference resolution inspected, plus the cited original OperationHandle source; not every semantic judgment independently reaudited. The workbook, comparison grid, both CSVs, all source findings and M00/M01 are unchanged. Format parity is intact, but owner-facing integration is incomplete. Earlier claims that all workbook summary guidance was current at AAS09 are corrected here.
+
+**ONE NEXT: correct the existing AAS master from already available evidence, then renew the owner gate.** Give rows explicit evidence-qualified statuses, reconcile source-based common/specialized/native-only/unresolved classifications and mixed holds, review missed comparisons/native candidate opportunities, and replace stale current conclusions/summary labels. Preserve a directly retrievable pre-correction workbook and frozen M00/M01; no automatic M02, blanket fills, fabricated absences, model adoption or new source campaign. Historical banners below do not authorize bypassing this correction.
+
+## Owner-requested saved-workbook audit
+
+Audited publication: `609117effc1a20b33d5866e742b6ed70942977a4`. No workbook edits were made during this diagnostic audit. The earlier assessment remains below as history; its recommendation to accept the column now is withdrawn.
+
+| Donor | Cells with comparison/findings notes | Explicit “Not assessed here” | Blank | Classification colors |
+| --- | ---: | ---: | ---: | ---: |
+| AAS | 63 | 0 | 274 | 0 |
+| SAPIENT | 115 | 171 | 51 | 50 |
+| ISA | 316 | 8 | 13 | 260 |
+| The Open Group SOSA | 121 | 216 | 0 | 15 |
+
+Each donor has 337 information/review rows, including nine case-review hold rows. These are display/integration counts, not native field totals, successful mappings or donor-richness rankings. AAS's 274 blanks include nine case-hold rows; SAPIENT and ISA also retain unexplained blanks, so consistency correction must distinguish those row purposes rather than assuming every blank means absence.
+
+**AAS10-U01 — 274 AAS blanks have no visible row-level explanation.** All 337 information/review rows inspected in saved Master Crosswalk; 63 AAS notes, zero Not assessed here markers, 274 blanks. Nine blanks correspond to case-review hold rows; 265 are other information rows.
+
+Cause: AAS02 inserted empty strings for rows without an initial comparison; later publisher updated only selected existing rows. Original Step05 permitted blank=no verified correspondence; later F2 UNASSESSED and other donor Not assessed here conventions were not reconciled.
+
+Correction: Apply visible, evidence-qualified row status. Do not infer absence, native-only or completed review from a blank; distinguish case holds and unassessed content.
+
+**AAS10-U02 — No AAS cell received the established candidate classification.** 0 AAS classification fills; existing ISA/SAPIENT/SOSA fills are 260/50/15. F2-5 source_records and per-source classification references cover those three donors, not AAS.
+
+Cause: Initial eight AAS cells were deliberately uncolored pending source-level classification. That deferral was carried through AAS09; verify_aas_saved explicitly rejects classification fills on changed AAS cells. Preserving old colors did not complete AAS classification.
+
+Correction: Perform the same native common/specialized/native-only/unresolved assessment for AAS contributions. Keep mixed meanings visibly held; never paint all 63 cells one inferred color.
+
+**AAS10-U03 — Current workbook summary and scope header are stale.** Summary!A1 names AAS04; B17 says next=AAS05; B19 says 44 AAS cells; B23 says AAS05 remains unexecuted. Master Crosswalk!G2 describes only Part1 Metamodel although the column contains Part2/companion/template findings. Legend!B28 still states 44 AAS cells.
+
+Cause: Later packets appended summary/legend rows without replacing current top-level statements. AAS10 described workbook sheets as an AAS09 snapshot without checking that their CURRENT guidance was already stale.
+
+Correction: One accurate current summary and column scope; clearly label historical entries, preserve evidence history outside current conclusions.
+
+**AAS10-U04 — Four comparison cells retain obsolete unreviewed wording before later findings.** Master Crosswalk!G80 (command declaration), G95 (issued request), G96 (outcome), G238 (list/update presence) retain earlier Part2 unreviewed/deferred wording followed by AAS07 findings. G6 nameplate templates unreviewed is a real retained gap and must not be erased.
+
+Cause: Publisher appends before+newline+step clarification; it does not reconcile the current conclusion.
+
+Correction: Replace the research diary display with a source-supported current conclusion, preserving original incremental text in the existing ledger/history. Retain genuine unresolved limits.
+
+**AAS10-U05 — An already-reviewed source supports a missing qualified comparison in a blank cell.** Master Crosswalk!G198 is blank for ISA-T-REQUEST-REFERENCE, Command request identity and response reference. AAS07-N011 already includes OperationHandle; pinned Part2 interfaces-payload.adoc lines907–919 define mandatory handleId for tracking asynchronous invocation. interfaces.adoc lines579–630 use that handle for invocation/status/result. SAPIENT and SOSA have qualified non-exact comparisons in the same row.
+
+Cause: A source ID cited somewhere was counted as represented, without proving all relevant native meanings/row correspondences had been considered. The source is already cited in other current cells; the 257-cited/53-uncited accounting does not detect this missing link.
+
+Correction: Record a scoped RELATED/partial correspondence after comparing the native identifier roles. Do not assert equality with ISA Request ID/Response.reference or physical operation proof. Reconcile other reviewed source meanings against current rows and distinct candidate opportunities; no forced row count.
+
+**AAS10-U06 — The closeout assessment did not test owner-visible completeness or native candidate classification.** Existing saved-master check still passes with U01–U05 present. It verifies 5664 saved grid values, preservation, cited-ID existence and retained color behavior. All 274 distinct finding/constraint references parsed from the 63 AAS cells resolve, but reference existence is not semantic completeness.
+
+Cause: Format agreement and source-accountability counts were treated as sufficient to recommend limited acceptance before presentation/classification/integration was finished.
+
+Correction: Keep bounded original-source coverage separate from completed integration. Require readable current statuses, accounted native candidates, current summary and source-qualified comparisons before a renewed owner disposition.
+
+The missing comparison is supported by [the exact pinned original OperationHandle definition](https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L907-L919), read again locally and through GitHub. Its purpose is tracking asynchronous invocation, not automatic identity with another protocol’s request identifier. No additional source corpus, mandatory field or model decision is authorized by identifying this omission.
+
+The current Excel is valid as a preserved working research artifact, but **not a finished, consistently classified donor assessment**. Citation existence and preserved bytes do not establish semantic correctness of every comparison. The repair should use retained original evidence first; no blanket redo of AAS research or invented target number of new cells/rows is justified.
+
+---
+
 # AAS10 — Source coverage and owner disposition, 14 November 2026
 
 The Asset Administration Shell (AAS) review supports a **bounded PARTIAL donor comparison**, not comprehensive source coverage. I recommend accepting that limited result for the current common Details-view research, retaining the source questions and unmapped native information below. This is a recommendation: the donor remains **active pending the owner's decision**. No new donor, model, Profile requirement, client feature or deployment is authorized by this assessment.

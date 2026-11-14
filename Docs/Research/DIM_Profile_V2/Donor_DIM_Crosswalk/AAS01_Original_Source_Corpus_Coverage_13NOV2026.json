@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS10_GATE_ASSESSED__AAS_ACTIVE_PENDING_OWNER_DISPOSITION",
+  "status": "AAS_ACTIVE__WORKBOOK_INTEGRATION_CORRECTION_REQUIRED",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "OWNER DECISION ONLY: accept the scoped AAS comparison as bounded PARTIAL with AAS10 limits, or request the named further source work. AAS remains active pending that decision; no automatic donor transition, DIM/Profile adoption, client change or deployment.",
+  "one_next": "CORRECTION REQUIRED BEFORE OWNER CLOSEOUT: use existing original evidence to reconcile AAS row statuses, native candidate classifications, missed comparisons and current workbook summaries; preserve a directly retrievable pre-correction workbook and existing M00/M01. No new donor, blanket coloring, fabricated negative matches, DIM/Profile adoption or source-corpus expansion. Owner closeout remains on hold.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10139,9 +10139,10 @@
     "same_workbook": true,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "OWNER DECISION ONLY: accept the scoped AAS comparison as bounded PARTIAL with AAS10 limits, or request the named further source work. AAS remains active pending that decision; no automatic donor transition, DIM/Profile adoption, client change or deployment.",
-    "gate_checkpoint": "AAS10",
-    "comparison_lag": 0
+    "next": "CORRECTION REQUIRED BEFORE OWNER CLOSEOUT: use existing original evidence to reconcile AAS row statuses, native candidate classifications, missed comparisons and current workbook summaries; preserve a directly retrievable pre-correction workbook and existing M00/M01. No new donor, blanket coloring, fabricated negative matches, DIM/Profile adoption or source-corpus expansion. Owner closeout remains on hold.",
+    "gate_checkpoint": "AAS10_OWNER_USABILITY_AUDIT",
+    "comparison_lag": 0,
+    "presentation_and_integration": "DEFECTS_CONFIRMED__NOT_READY_FOR_CLOSEOUT"
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -33338,16 +33339,16 @@
     }
   },
   "AAS10": {
-    "status": "ASSESSMENT_COMPLETE__OWNER_DISPOSITION_PENDING",
+    "status": "CORRECTION_REQUIRED__OWNER_CLOSEOUT_ON_HOLD",
     "date": "2026-11-14",
     "branch": "research/dim-profile-v2",
     "preflight_head": "75835e826645ce6ae3d3c0c73fe6071c6e7ed355",
     "report": "AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md",
     "owner_authorization": "One Proceed for AAS10 coverage/crosswalk assessment only; no donor closeout decision delegated.",
     "source_grade": "BOUNDED_PARTIAL__NOT_COMPREHENSIVE",
-    "recommendation": "Accept the existing scoped donor comparison as bounded PARTIAL, with all listed limits and native-only candidates retained; no new research prerequisite for that limited acceptance. Owner may choose named further source work instead.",
+    "recommendation": "Prior bounded-PARTIAL closeout recommendation withdrawn after confirmed workbook integration/presentation defects. Retain source research; correct the existing master before renewed owner disposition.",
     "owner_decision": "PENDING",
-    "one_next": "OWNER DECISION ONLY: accept the scoped AAS comparison as bounded PARTIAL with AAS10 limits, or request the named further source work. AAS remains active pending that decision; no automatic donor transition, DIM/Profile adoption, client change or deployment.",
+    "one_next": "CORRECTION REQUIRED BEFORE OWNER CLOSEOUT: use existing original evidence to reconcile AAS row statuses, native candidate classifications, missed comparisons and current workbook summaries; preserve a directly retrievable pre-correction workbook and existing M00/M01. No new donor, blanket coloring, fabricated negative matches, DIM/Profile adoption or source-corpus expansion. Owner closeout remains on hold.",
     "count_rule": "310 retained finding records are neither 310 independent fields nor requirements. Direct citation counts are not semantic-equivalence or coverage percentages. Different inventories overlap.",
     "finding_accountability": {
       "increments": [
@@ -42103,22 +42104,8 @@
       "M02": "NOT_CREATED"
     },
     "forecast": {
-      "recommended_bounded_partial_path": {
-        "low": 0,
-        "likely": 0,
-        "high": 0,
-        "unit": "additional source-research steps before owner disposition",
-        "owner_decision_still_required": true
-      },
-      "optional_core_source_completion": {
-        "low": 2,
-        "likely": 3,
-        "high": 5,
-        "unit": "substantive bounded source-review steps plus a refreshed gate; estimate, not guarantee",
-        "scope": "Remaining Part1 common/referencing/datatypes and directly relevant concepts/usage/semantic-ID grammar; then only selected implementation questions requiring Part2 operation parameters/query/serialization/access-right mapping. Original file sizes and unresolved cross-references may require refinement.",
-        "requires_owner_scope_selection": true
-      },
-      "comprehensive_all_sources": "No defensible finite promise without a new scoped original-corpus plan, including external originals, patches/examples and implementation/conformance goals."
+      "status": "PRIOR_READY_FOR_ACCEPTANCE_FORECAST_SUPERSEDED",
+      "reason": "Existing-source integration/classification/presentation correction is required. This is distinct from optional expansion of original-source coverage. No new research-step quota authorized."
     },
     "DIM_Profile_adopted": false,
     "saved_verification": {
@@ -42167,6 +42154,120 @@
         "readback": "Fetched published commit/tree and original files; report fetched through GitHub; ledger/report/workbook bytes match verified local content.",
         "owner_disposition": "PENDING",
         "note": "This publication receipt is committed subsequently; it does not claim a self-referential future commit/check."
+      }
+    },
+    "owner_usability_audit": {
+      "date": "2026-11-14",
+      "trigger": "Owner inspected the actual assessment and workbook and challenged blank meanings, missing colors, sparse comparisons and validity.",
+      "audited_head": "609117effc1a20b33d5866e742b6ed70942977a4",
+      "workbook_sha256": "93d0ee59f152a81b7f145507a67cadb60ec094a813698ca361174d27e862074d",
+      "status": "CONFIRMED_PRESENTATION_AND_INTEGRATION_DEFECTS__CLOSEOUT_RECOMMENDATION_WITHDRAWN",
+      "scope": "Read-only saved-workbook audit of all 337 row states and classification fills; current Summary/Legend/column header and incremental wording; source-reference resolution; targeted original-source mapping check. Not an independent semantic reaudit of every source finding.",
+      "donor_counts": [
+        {
+          "donor": "AAS",
+          "comparison_notes": 63,
+          "explicit_not_assessed": 0,
+          "blank": 274,
+          "classified_colors": 0
+        },
+        {
+          "donor": "SAPIENT",
+          "comparison_notes": 115,
+          "explicit_not_assessed": 171,
+          "blank": 51,
+          "classified_colors": 50
+        },
+        {
+          "donor": "ISA",
+          "comparison_notes": 316,
+          "explicit_not_assessed": 8,
+          "blank": 13,
+          "classified_colors": 260
+        },
+        {
+          "donor": "The Open Group SOSA",
+          "comparison_notes": 121,
+          "explicit_not_assessed": 216,
+          "blank": 0,
+          "classified_colors": 15
+        }
+      ],
+      "count_limit": "Counts include nine case-review hold rows and comparison/limitation notes. They are not donor field-richness or source-completeness rankings.",
+      "findings": [
+        {
+          "id": "AAS10-U01",
+          "issue": "274 AAS blanks have no visible row-level explanation.",
+          "evidence": "All 337 information/review rows inspected in saved Master Crosswalk; 63 AAS notes, zero Not assessed here markers, 274 blanks. Nine blanks correspond to case-review hold rows; 265 are other information rows.",
+          "cause": "AAS02 inserted empty strings for rows without an initial comparison; later publisher updated only selected existing rows. Original Step05 permitted blank=no verified correspondence; later F2 UNASSESSED and other donor Not assessed here conventions were not reconciled.",
+          "required_correction": "Apply visible, evidence-qualified row status. Do not infer absence, native-only or completed review from a blank; distinguish case holds and unassessed content."
+        },
+        {
+          "id": "AAS10-U02",
+          "issue": "No AAS cell received the established candidate classification.",
+          "evidence": "0 AAS classification fills; existing ISA/SAPIENT/SOSA fills are 260/50/15. F2-5 source_records and per-source classification references cover those three donors, not AAS.",
+          "cause": "Initial eight AAS cells were deliberately uncolored pending source-level classification. That deferral was carried through AAS09; verify_aas_saved explicitly rejects classification fills on changed AAS cells. Preserving old colors did not complete AAS classification.",
+          "required_correction": "Perform the same native common/specialized/native-only/unresolved assessment for AAS contributions. Keep mixed meanings visibly held; never paint all 63 cells one inferred color."
+        },
+        {
+          "id": "AAS10-U03",
+          "issue": "Current workbook summary and scope header are stale.",
+          "evidence": "Summary!A1 names AAS04; B17 says next=AAS05; B19 says 44 AAS cells; B23 says AAS05 remains unexecuted. Master Crosswalk!G2 describes only Part1 Metamodel although the column contains Part2/companion/template findings. Legend!B28 still states 44 AAS cells.",
+          "cause": "Later packets appended summary/legend rows without replacing current top-level statements. AAS10 described workbook sheets as an AAS09 snapshot without checking that their CURRENT guidance was already stale.",
+          "required_correction": "One accurate current summary and column scope; clearly label historical entries, preserve evidence history outside current conclusions."
+        },
+        {
+          "id": "AAS10-U04",
+          "issue": "Four comparison cells retain obsolete unreviewed wording before later findings.",
+          "evidence": "Master Crosswalk!G80 (command declaration), G95 (issued request), G96 (outcome), G238 (list/update presence) retain earlier Part2 unreviewed/deferred wording followed by AAS07 findings. G6 nameplate templates unreviewed is a real retained gap and must not be erased.",
+          "cause": "Publisher appends before+newline+step clarification; it does not reconcile the current conclusion.",
+          "required_correction": "Replace the research diary display with a source-supported current conclusion, preserving original incremental text in the existing ledger/history. Retain genuine unresolved limits."
+        },
+        {
+          "id": "AAS10-U05",
+          "issue": "An already-reviewed source supports a missing qualified comparison in a blank cell.",
+          "evidence": "Master Crosswalk!G198 is blank for ISA-T-REQUEST-REFERENCE, Command request identity and response reference. AAS07-N011 already includes OperationHandle; pinned Part2 interfaces-payload.adoc lines907–919 define mandatory handleId for tracking asynchronous invocation. interfaces.adoc lines579–630 use that handle for invocation/status/result. SAPIENT and SOSA have qualified non-exact comparisons in the same row.",
+          "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L907-L919",
+          "source_blob": "61c0a3146d0aa395c13ed80a0ee76ad6e5f064ef",
+          "cause": "A source ID cited somewhere was counted as represented, without proving all relevant native meanings/row correspondences had been considered. The source is already cited in other current cells; the 257-cited/53-uncited accounting does not detect this missing link.",
+          "required_correction": "Record a scoped RELATED/partial correspondence after comparing the native identifier roles. Do not assert equality with ISA Request ID/Response.reference or physical operation proof. Reconcile other reviewed source meanings against current rows and distinct candidate opportunities; no forced row count."
+        },
+        {
+          "id": "AAS10-U06",
+          "issue": "The closeout assessment did not test owner-visible completeness or native candidate classification.",
+          "evidence": "Existing saved-master check still passes with U01–U05 present. It verifies 5664 saved grid values, preservation, cited-ID existence and retained color behavior. All 274 distinct finding/constraint references parsed from the 63 AAS cells resolve, but reference existence is not semantic completeness.",
+          "cause": "Format agreement and source-accountability counts were treated as sufficient to recommend limited acceptance before presentation/classification/integration was finished.",
+          "required_correction": "Keep bounded original-source coverage separate from completed integration. Require readable current statuses, accounted native candidates, current summary and source-qualified comparisons before a renewed owner disposition."
+        }
+      ],
+      "what_passed": "5664 saved values/mirrors, original 26 sheets, existing 325 classification fills, 21 historical sheets and M00/M01 remain intact; all parsed 274 finding/constraint references resolve.",
+      "what_did_not_pass": "AAS owner-facing integration/classification/readability and current status; known missed comparison.",
+      "workbook_changed": false,
+      "comparison_cells_changed": 0,
+      "DIM_Profile_adopted": false,
+      "next": "CORRECTION REQUIRED BEFORE OWNER CLOSEOUT: use existing original evidence to reconcile AAS row statuses, native candidate classifications, missed comparisons and current workbook summaries; preserve a directly retrievable pre-correction workbook and existing M00/M01. No new donor, blanket coloring, fabricated negative matches, DIM/Profile adoption or source-corpus expansion. Owner closeout remains on hold."
+    },
+    "superseded_pre_usability_audit": {
+      "status": "ASSESSMENT_COMPLETE__OWNER_DISPOSITION_PENDING",
+      "recommendation": "Accept the existing scoped donor comparison as bounded PARTIAL, with all listed limits and native-only candidates retained; no new research prerequisite for that limited acceptance. Owner may choose named further source work instead.",
+      "one_next": "OWNER DECISION ONLY: accept the scoped AAS comparison as bounded PARTIAL with AAS10 limits, or request the named further source work. AAS remains active pending that decision; no automatic donor transition, DIM/Profile adoption, client change or deployment.",
+      "forecast": {
+        "recommended_bounded_partial_path": {
+          "low": 0,
+          "likely": 0,
+          "high": 0,
+          "unit": "additional source-research steps before owner disposition",
+          "owner_decision_still_required": true
+        },
+        "optional_core_source_completion": {
+          "low": 2,
+          "likely": 3,
+          "high": 5,
+          "unit": "substantive bounded source-review steps plus a refreshed gate; estimate, not guarantee",
+          "scope": "Remaining Part1 common/referencing/datatypes and directly relevant concepts/usage/semantic-ID grammar; then only selected implementation questions requiring Part2 operation parameters/query/serialization/access-right mapping. Original file sizes and unresolved cross-references may require refinement.",
+          "requires_owner_scope_selection": true
+        },
+        "comprehensive_all_sources": "No defensible finite promise without a new scoped original-corpus plan, including external originals, patches/examples and implementation/conformance goals."
       }
     }
   }
