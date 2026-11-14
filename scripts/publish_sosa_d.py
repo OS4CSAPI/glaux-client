@@ -4184,19 +4184,19 @@ def publish_aas02_g():
 
 
 
-def publish_aas05():
-    """AAS05: use the existing verified 26-sheet publisher; no new workbook, color decision, or model adoption."""
+def publish_aas_qualified(step_code,previous_step):
+    """Publish a single owner-authorized AAS original-source increment in the SAME original verified 26-sheet workbook."""
     from html import escape
     from html.parser import HTMLParser
     from subprocess import check_output
     fn="AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
-    led=load(fn);step=led["AAS05"];m=load(MASTER)
+    led=load(fn);step=led[step_code];m=load(MASTER)
     def check(ok,why):
-        if not ok:raise AssertionError("AAS05: "+why)
-    check(step["status"]=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING","source-stage gate")
-    check(m["currentEvidenceCheckpoint"]=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED","AAS04 baseline only")
-    check(step["preflight_head"]=="02232bb6eed411ccb159692112a65394b8553db3","pinned AAS04 commit")
-    check(len(step["original_items"])==23 and len(step["comparison_updates"])==13 and len(step["source_to_master_changes"])==0,"source/target counts")
+        if not ok:raise AssertionError(step_code+": "+why)
+    check(step["status"] in ("SCHEMA_SOURCE_READ__PUBLISHER_PENDING","SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING"),"source-stage gate")
+    check(m["currentEvidenceCheckpoint"]==previous_step+"_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED","prior original canonical step baseline only")
+    check(len(step["preflight_head"])==40 and all(x in "0123456789abcdef" for x in step["preflight_head"]),"pinned preflight branch HEAD")
+    check(len(step["original_items"])==step["counts"]["native_findings"] and len(step["comparison_updates"])==step["counts"]["master_cells_changed"] and len(step["source_to_master_changes"])==0,"source/target counts")
     check(len(m["rows"])==337 and len(m["review_grid"])==354 and len(m["columns"])==16 and len(m["review_sections"])==15,"current canonical dimensions")
     check([x["key"] for x in m["columns"][:7]]==["Dragino","AirGradient","Campbell","Bennett","IEEE","OPC","AAS32"]
           and m["columns"][-1]["key"]=="DIM","approved case/donor/OGC/DIM placement")
@@ -4217,16 +4217,16 @@ def publish_aas05():
         name=c["row_id"]
         check(name in indexes and c["source_ids"] and set(c["source_ids"])<=ids,"source IDs for "+name)
         k,ri=indexes[name];row=m["rows"][ri];before=row["display"][6]
-        check(before and before==m["review_grid"][k][6] and "AAS05:" not in before,"existing AAS evidence "+name)
-        after=before+"\nAAS05: "+c["relation"]+" — "+c["clarification"]+" ["+", ".join(c["source_ids"])+"]"
+        check(before==m["review_grid"][k][6] and (step_code+":") not in before,"existing AAS evidence or unassessed source cell "+name)
+        after=(before+"\n" if before else "")+step_code+": "+c["relation"]+" — "+c["clarification"]+" ["+", ".join(c["source_ids"])+"]"
         check(len(after)<32767,"Excel length "+name)
         row["display"][6]=m["review_grid"][k][6]=after
-        row["AAS05_source_correspondence"]={"source_ids":c["source_ids"],"relation":c["relation"],
-           "source_standing":"PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS","DIM_Profile_adopted":False,
+        row[step_code+"_source_correspondence"]={"source_ids":c["source_ids"],"relation":c["relation"],
+           "source_standing":"PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW","DIM_Profile_adopted":False,
            "not_source_completeness_or_runtime":True}
         changes.append({"row_id":name,"cell":"G"+str(k+1),"relation":c["relation"],
                         "source_ids":c["source_ids"],"before":before,"after":after})
-    check(len(changes)==13 and len({x["cell"] for x in changes})==13,"13 existing G cells")
+    check(len(changes)==step["counts"]["master_cells_changed"] and len({x["cell"] for x in changes})==len(changes) and sum(not x["before"] for x in changes)==step["counts"]["new_AAS_cells"],"source-qualified existing G cell changes and newly assessed cells")
     by_cell={x["cell"]:x for x in changes}
     for i,(before,after) in enumerate(zip(original,m["review_grid"]),1):
         for j,(v0,v1) in enumerate(zip(before,after)):
@@ -4241,13 +4241,11 @@ def publish_aas05():
     oldmd=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
     check(oldmd==(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
           and oldmd.count("<table>")==1 and "<tbody>" in oldmd,"historical readable mirrors")
-    intro=("# CURRENT — AAS05 original pinned schema comparison and original Excel verified (14 November 2026)\n\n"
-       "23 overlapping selected blocks in six pinned JSON/XML/RDF/SHACL/OpenAPI files; 13 pre-existing AAS G research cells clarified, no new row. "
-       "Same original 337-row, 354×16, 26-sheet workbook and JSON/both CSV/both Markdown sources saved and verified; "
-       "original M00/M01, 325 source colors, 67 mixed holds, original cases and donor cells preserved. "
-       "[Original AAS05 source review](AAS05_Original_Schema_Corroboration_14NOV2026.md) · "
-       "[Cumulative source ledger and saved validation](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json). "
-       "AAS ACTIVE/incomplete, no DIM/Profile adoption. ONE NEXT owner Proceed = AAS06 only; STOP.\n\n---\n\n")
+    intro=("# CURRENT — "+step_code+" original-source comparison and same 26-sheet workbook VERIFIED (14 November 2026)\n\n"+
+       step.get("publication_intro",step_code+" selected original source research.")+" "+
+       "SAME original 337-row, 354×16, 26-sheet workbook; both CSV and Markdown mirrors; M00/M01 and source colors preserved. "+
+       "[Original source report]("+step["report"]+") · [Cumulative source ledger and saved verification]("+fn+"). "+
+       "AAS remains ACTIVE/incomplete, no DIM/Profile adoption. ONE NEXT separate owner Proceed = "+("AAS07" if step_code=="AAS06" else "AAS06")+" only; STOP.\n\n---\n\n")
     body=[]
     for i in range(2,len(m["review_grid"])):
         row=m["review_grid"][i]
@@ -4300,7 +4298,14 @@ def publish_aas05():
         cells={c.get("r"):c for c in master.iter(q("c"))}
         for c in changes:
             addr=c["cell"];cell=cells.get(addr)
-            check(cell is not None and readcell(cell)==c["before"],"actual prior saved cell "+addr)
+            rr=rows[int(addr[1:])-1]
+            if cell is None:
+                check(c["before"]=="","new source comparison begins empty "+addr)
+                cell=ET.Element(q("c"),{"r":addr,"s":"0"})
+                elements=rr.findall(q("c"))
+                insert_at=next((j for j,x in enumerate(elements) if x.get("r","").startswith(tuple("HIJKLMNOP"))),len(elements))
+                rr.insert(insert_at,cell)
+            check(readcell(cell)==c["before"],"actual prior saved cell "+addr)
             setcell(cell,c["after"])
             rr=rows[int(addr[1:])-1]
             height=min(252,max(float(rr.get("ht","30")),90+len(c["after"])//8))
@@ -4314,17 +4319,17 @@ def publish_aas05():
             if oldcell is None:
                 oldcell=ET.SubElement(rr,q("c"),{"r":addr,"s":"0"})
             oldtext=readcell(oldcell)
-            setcell(oldcell,oldtext+"\nAAS05: "+", ".join(c["source_ids"])+"; pinned selected schemas, no DIM/Profile adoption.")
+            setcell(oldcell,oldtext+"\n"+step_code+": "+", ".join(c["source_ids"])+"; pinned original evidence, no DIM/Profile adoption.")
             rr.set("ht",str(min(252,max(float(rr.get("ht","30")),95+len(readcell(oldcell))//10))))
             rr.set("customHeight","1")
-        note="AAS05 bounded original schemas — no DIM/Profile adoption"
-        context="23 overlapping selected schema blocks in six pinned files; 13 existing AAS comparisons; source holds retained, no runtime/service claim."
+        note=step_code+" bounded original-source research — no DIM/Profile adoption"
+        context=step.get("publication_note",step_code+" exact original evidence; bounded donor cells and holds; no runtime/service conformance.")
         replaced={
           paths["Master Crosswalk"]:ET.tostring(master,encoding="utf-8",xml_declaration=True),
           paths["DIM Register"]:ET.tostring(register,encoding="utf-8",xml_declaration=True),
           paths["Summary"]:append_note(z,paths["Summary"],note,context),
           paths["Validation"]:append_note(z,paths["Validation"],note,"All 5,664 master values, 26 sheets, 21 historical sheet XML parts, original colors/styles and M00/M01 independently checked."),
-          paths["Legend"]:append_note(z,paths["Legend"],note,"Original 325 graded donor cells remain colored; AAS05 13 qualified uncolored G cells; 67 prior mixed holds still uncolored.")
+          paths["Legend"]:append_note(z,paths["Legend"],note,"Original 325 graded donor cells remain colored; "+step_code+" source-qualified uncolored G cells; 67 prior mixed holds still uncolored.")
         }
         check(len(replaced)==5 and len([x for x in paths.values() if x not in replaced])==21,"five refreshed tabs and 21 preserved")
         out=io.BytesIO()
@@ -4353,24 +4358,24 @@ def publish_aas05():
     (D/BOOK).write_bytes(saved)
     check(digest((D/BOOK).read_bytes())==sha,"saved original living workbook readback")
     m["currentWorkbookSha256"]=sha
-    m["currentEvidenceCheckpoint"]="AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"
-    m["workbookSnapshot"].update({"checkpoint":"AAS05_SAVED_PARITY","sha256":sha,"information_rows":337,
+    m["currentEvidenceCheckpoint"]=step_code+"_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"
+    m["workbookSnapshot"].update({"checkpoint":step_code+"_SAVED_PARITY","sha256":sha,"information_rows":337,
        "currently_matches_readable_view":True,"lag":"ZERO: 354x16 JSON/both CSV/both Markdown/saved workbook",
-       "textCheckpoint":"AAS05_SELECTED_ORIGINAL_SCHEMA_CROSS_FORMAT","AAS05_affected_row_ids":[c["row_id"] for c in changes]})
-    m["AAS05_affected_row_ids"]=[c["row_id"] for c in changes]
+       "textCheckpoint":step_code+"_SELECTED_ORIGINAL_SOURCE_CROSSWALK",step_code+"_affected_row_ids":[c["row_id"] for c in changes]})
+    m[step_code+"_affected_row_ids"]=[c["row_id"] for c in changes]
     step["source_to_master_changes"]=changes
-    step["status"]="COMPLETE_AT_SELECTED_PINNED_SCHEMA_SCOPE__DONOR_ACTIVE_INCOMPLETE"
-    led["status"]="AAS05_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE"
+    step["status"]="COMPLETE_AT_SELECTED_PINNED_ORIGINAL_SOURCE_SCOPE__DONOR_ACTIVE_INCOMPLETE"
+    led["status"]=step_code+"_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE"
     led["one_next"]=step["next"]
-    led["master_state_current"]={"checkpoint":"AAS05","rows":337,"grid":"354x16","AAS_column":"G","same_workbook":True,
-                                 "manual_M00_M01":"UNCHANGED","M02":"NOT_CREATED","next":"AAS06 on separate owner Proceed only"}
+    led["master_state_current"]={"checkpoint":step_code,"rows":337,"grid":"354x16","AAS_column":"G","same_workbook":True,
+                                 "manual_M00_M01":"UNCHANGED","M02":"NOT_CREATED","next":step["next"]}
     m00=D/"Manual_Workbook_Versions/M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx"
     m01=D/"Manual_Workbook_Versions/M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx"
     step["saved_verification"]={
        "status":"PASS_LOCAL_REOPENED_SAVED_FILE","preflight_head":step["preflight_head"],
        "previous_xlsx_sha256":digest(prev),"xlsx_sha256":sha,"saved_cells":5664,
        "sheet_names":list(paths),"changed_AAS_cells":[c["cell"] for c in changes],
-       "new_AAS_cells":0,"total_AAS_cells":44,
+       "new_AAS_cells":step["counts"]["new_AAS_cells"],"total_AAS_cells":step["counts"]["total_AAS_cells"],
        "historical_21_sheet_sha256":{name:hashcode for name,hashcode in historical_hashes.items() if paths[name] not in replaced},
        "styles_xml_sha256":digest(orig_style),
        "manual_version_sha256":{m00.name:digest(m00.read_bytes()),m01.name:digest(m01.read_bytes())},
@@ -4386,9 +4391,17 @@ def publish_aas05():
        "research_limit":"Source item/file coverage is selected-scope; no runtime, complete specification or DIM/Profile adoption."
     }
     save(MASTER,m);save(fn,led)
-    verify_aas_saved("AAS05")
-    print("AAS05 PASS: thirteen existing AAS G clarifications, 23 pinned selected schema blocks, 5,664 saved worksheet values and both CSV/Markdown mirrors.")
-    print("AAS05 PASS: same original 26-sheet workbook, historical 21 sheets, M00/M01, all source colors/holds and four cases preserved. STOP before AAS06.")
+    verify_aas_saved(step_code)
+    print(step_code+" PASS: "+str(len(changes))+" qualified G cells, "+str(step["counts"]["new_AAS_cells"])+" newly assessed; 5,664 reopened saved values and both CSV/Markdown mirrors.")
+    print(step_code+" PASS: same original 26-sheet workbook, 21 historical sheets, original colors and M00/M01 preserved; STOP.")
+
+
+
+def publish_aas05():
+    return publish_aas_qualified("AAS05","AAS04")
+
+def publish_aas06():
+    return publish_aas_qualified("AAS06","AAS05")
 
 def verify_aas_saved(step="AAS03"):
     """Read-only verification of the already authored AAS workbook checkpoint.
@@ -4478,9 +4491,11 @@ def verify_aas_saved(step="AAS03"):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS05",{}).get("status")=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING":
+    if checkpoint=="AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS06",{}).get("status")=="SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING":
+        publish_aas06()
+    elif checkpoint=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS05",{}).get("status")=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING":
         publish_aas05()
-    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
+    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
         verify_aas_saved(checkpoint.split("_")[0])
     elif checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
         print("AAS02 G already published; no workbook mutation")
