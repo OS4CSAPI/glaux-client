@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "f5183c9bdca0475b8adbd6c2ab685ac33a39b4f49010f3af9704a977a825f5f6",
+  "currentWorkbookSha256": "192e8b3049cd9e035be0a796e8d0d43fbeb6d846cad7ef3732bb7252c3563de5",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -428,7 +428,7 @@
       "",
       "",
       "",
-      "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]",
+      "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]\nAAS07: RELATED — Submodel descriptors provide IDs and service endpoints, not physical connection or sensor network presence. [AAS07-N019, AAS07-N020, AAS07-N023]",
       "",
       "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
       "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
@@ -536,7 +536,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]",
+      "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]\nAAS07: RELATED — ValueOnly Submodel retrieval is a digital data property, not evidence of an actual observation emitted by equipment. [AAS07-N002, AAS07-N005, AAS07-N041]",
       "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
@@ -1544,7 +1544,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]",
+      "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]\nAAS07: PARTIAL — Model-declared Operation can be invoked synchronously/asynchronously but is not a proven ISA equipment command catalogue. [AAS07-N001, AAS07-N006, AAS07-N007, AAS07-N041]",
       "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
       "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
@@ -1562,7 +1562,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]",
+      "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]\nAAS07: PARTIAL — OperationRequest input/inoutput and ValueOnly encodings differ; async timeout may be required yet server may disregard requested timing. [AAS07-N007, AAS07-N009, AAS07-N053]",
       "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
       "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
       "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
@@ -1580,7 +1580,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]",
+      "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]\nAAS07: PARTIAL — OperationResult and native executionState characterize API business operation, not verified ISA device outcome. [AAS07-N010, AAS07-N011, AAS07-N041]",
       "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
       "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
@@ -1652,7 +1652,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]",
+      "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]\nAAS07: PARTIAL — Template-only Submodel repository profiles explicitly exclude kind Instance, so templates do not establish installed equipment structure. [AAS07-N024, AAS07-N037, AAS07-N038]",
       "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
       "Structure → Single | List | Associative Array | Tree; min/max length or depth",
       "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
@@ -1814,7 +1814,7 @@
       "",
       "",
       "",
-      "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]",
+      "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]\nAAS07: RELATED — POST /invoke and /invoke-async define interfaces, not evidence the device actually received an issued command. [AAS07-N006, AAS07-N007, AAS07-N041, AAS07-N042]",
       "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
       "≈ Request message · command invocation, not proven execution",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
@@ -1832,7 +1832,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]",
+      "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]\nAAS07: RELATED — HTTP 202 Accepted may be followed by failure; HTTP 200 with executionState Failed is not a successful physical command effect. [AAS07-N008, AAS07-N011, AAS07-N012]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "≈ Response message · reported disposition, not measured effect",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -3344,7 +3344,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "",
+      "AAS07: NO_ESTABLISHED — AASX packages may be stored without parsing and are not ISA ZIP archives of original historical result records. [AAS07-N014, AAS07-N015, AAS07-N049, AAS07-N050]",
       "Not assessed here",
       "Create Zip Archive",
       "Not assessed here",
@@ -3632,7 +3632,7 @@
       "",
       "",
       "",
-      "",
+      "AAS07: NO_ESTABLISHED — Asynchronous server operation status is not a sensing component property-value Status message or physical condition. [AAS07-N008, AAS07-N010, AAS07-N012, AAS07-N051]",
       "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
       "Status.properties: Name Value Pair [0+]",
       "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
@@ -3740,7 +3740,7 @@
       "",
       "",
       "",
-      "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]",
+      "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]\nAAS07: RELATED — Initiated/Running/Completed/Canceled/Failed/Timeout and OperationHandle are API lifecycle, not a source-authenticated hardware execution record. [AAS07-N010, AAS07-N011, AAS07-N012]",
       "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
       "Command Execution · name, request id, issuer, start time",
       "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
@@ -3776,7 +3776,7 @@
       "",
       "",
       "",
-      "",
+      "AAS07: RELATED — AAS record queries select Submodels, descriptors or ConceptDescriptions, not ISA message-matching subscriptions. [AAS07-N022, AAS07-N029, AAS07-N047]",
       "",
       "Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator",
       "RELATED but NO_ESTABLISHED expression equivalence: C239 §15 publish/subscribe Topic identifies a message stream, not an ISA nested Boolean/And/Or/comparator message-matching criterion. [G2-7S]",
@@ -3938,7 +3938,7 @@
       "",
       "",
       "",
-      "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]",
+      "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]\nAAS07: RELATED — Submodel Registry/Repository/Service, ConceptDescription Repository and AASX profile subsets are API roles, not ISA mandatory equipment command roles. [AAS07-N019, AAS07-N033, AAS07-N034, AAS07-N035, AAS07-N036, AAS07-N037, AAS07-N040]",
       "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
       "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
@@ -3974,7 +3974,7 @@
       "",
       "",
       "",
-      "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]",
+      "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]\nAAS07: RELATED — Submodel Value profile includes synchronous POST invocation while Read does not; advertised API support does not prove equipment readiness. [AAS07-N033, AAS07-N041]",
       "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
       "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
@@ -4064,7 +4064,7 @@
       "NOAA CSV + operator metadata; contributor join derived",
       "",
       "",
-      "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]",
+      "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]",
       "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
       "",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -4262,7 +4262,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]",
+      "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]\nAAS07: PARTIAL — ValueOnly model-element read/write envelope differs from ISA named-value message representation. [AAS07-N005, AAS07-N033, AAS07-N041]",
       "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
       "Name Value Pair · name + Wildcard value",
       "Not assessed here",
@@ -4298,7 +4298,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]",
+      "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]\nAAS07: PARTIAL — Native Submodel list, template and ValueOnly paths do not establish ISA list-order or RDF conversion equivalence. [AAS07-N001, AAS07-N037, AAS07-N043]",
       "",
       "List · values: Wildcard [0+]",
       "Not assessed here",
@@ -4316,7 +4316,7 @@
       "",
       "",
       "",
-      "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]",
+      "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]\nAAS07: PARTIAL — Template repository can represent designed fields without establishing an instantiated sensing System or actual values. [AAS07-N037, AAS07-N038, AAS07-N043]",
       "",
       "Custom Type · fields: Name Value Pair [0+]",
       "Not assessed here",
@@ -4352,7 +4352,7 @@
       "",
       "",
       "",
-      "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]",
+      "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
       "",
       "Custom → Nominated → Accepted; incorporation into a later major standard release",
       "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
@@ -4370,7 +4370,7 @@
       "",
       "",
       "",
-      "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]",
+      "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]\nAAS07: RELATED — Normal/Metadata/ValueOnly and nested idShortPath API representations differ by Submodel profile, not a universal CSAPI transport envelope. [AAS07-N005, AAS07-N033, AAS07-N037, AAS07-N041]",
       "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
       "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
@@ -4388,7 +4388,7 @@
       "",
       "",
       "",
-      "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]",
+      "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]\nAAS07: CONFLICT — Submodel PATCH/ValueOnly do not resolve earlier normal-JSON supplied-empty versus omitted update distinction. [AAS07-N003, AAS07-N004, AAS07-N005]",
       "",
       "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
       "Not assessed here",
@@ -4622,7 +4622,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]",
+      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]\nAAS07: RELATED — Submodel history-as-of-date is not AdministrativeInformation.version or sensor firmware and RecentChanges is experimental. [AAS07-N025, AAS07-N026, AAS07-N044]",
       "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
       "Capability Version",
       "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -10148,7 +10148,7 @@
         "",
         "",
         "",
-        "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]",
+        "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]\nAAS07: RELATED — Submodel descriptors provide IDs and service endpoints, not physical connection or sensor network presence. [AAS07-N019, AAS07-N020, AAS07-N023]",
         "",
         "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
         "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
@@ -10628,6 +10628,17 @@
           "AAS06-N004",
           "AAS06-N018",
           "AAS06-N031"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N019",
+          "AAS07-N020",
+          "AAS07-N023"
         ],
         "relation": "RELATED",
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
@@ -11329,7 +11340,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]",
+        "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]\nAAS07: RELATED — ValueOnly Submodel retrieval is a digital data property, not evidence of an actual observation emitted by equipment. [AAS07-N002, AAS07-N005, AAS07-N041]",
         "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
@@ -11650,6 +11661,17 @@
         "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N002",
+          "AAS07-N005",
+          "AAS07-N041"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -17060,7 +17082,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]",
+        "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]\nAAS07: PARTIAL — Model-declared Operation can be invoked synchronously/asynchronously but is not a proven ISA equipment command catalogue. [AAS07-N001, AAS07-N006, AAS07-N007, AAS07-N041]",
         "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
         "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
@@ -17476,6 +17498,18 @@
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N001",
+          "AAS07-N006",
+          "AAS07-N007",
+          "AAS07-N041"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -17500,7 +17534,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]",
+        "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]\nAAS07: PARTIAL — OperationRequest input/inoutput and ValueOnly encodings differ; async timeout may be required yet server may disregard requested timing. [AAS07-N007, AAS07-N009, AAS07-N053]",
         "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
         "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
         "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
@@ -17710,6 +17744,17 @@
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N007",
+          "AAS07-N009",
+          "AAS07-N053"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -17734,7 +17779,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]",
+        "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]\nAAS07: PARTIAL — OperationResult and native executionState characterize API business operation, not verified ISA device outcome. [AAS07-N010, AAS07-N011, AAS07-N041]",
         "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
         "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
@@ -17955,6 +18000,17 @@
         ],
         "relation": "PARTIAL",
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N010",
+          "AAS07-N011",
+          "AAS07-N041"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
       }
@@ -18503,7 +18559,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]",
+        "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]\nAAS07: PARTIAL — Template-only Submodel repository profiles explicitly exclude kind Instance, so templates do not establish installed equipment structure. [AAS07-N024, AAS07-N037, AAS07-N038]",
         "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
         "Structure → Single | List | Associative Array | Tree; min/max length or depth",
         "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
@@ -18695,6 +18751,17 @@
         ],
         "relation": "PARTIAL",
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N024",
+          "AAS07-N037",
+          "AAS07-N038"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
       }
@@ -20092,7 +20159,7 @@
         "",
         "",
         "",
-        "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]",
+        "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]\nAAS07: RELATED — POST /invoke and /invoke-async define interfaces, not evidence the device actually received an issued command. [AAS07-N006, AAS07-N007, AAS07-N041, AAS07-N042]",
         "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
         "≈ Request message · command invocation, not proven execution",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
@@ -20467,6 +20534,18 @@
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "adopted": false,
         "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N006",
+          "AAS07-N007",
+          "AAS07-N041",
+          "AAS07-N042"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -20491,7 +20570,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]",
+        "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]\nAAS07: RELATED — HTTP 202 Accepted may be followed by failure; HTTP 200 with executionState Failed is not a successful physical command effect. [AAS07-N008, AAS07-N011, AAS07-N012]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "≈ Response message · reported disposition, not measured effect",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -20833,6 +20912,17 @@
           "AAS06-N028"
         ],
         "relation": "NO_ESTABLISHED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N008",
+          "AAS07-N011",
+          "AAS07-N012"
+        ],
+        "relation": "RELATED",
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
@@ -26870,7 +26960,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "",
+        "AAS07: NO_ESTABLISHED — AASX packages may be stored without parsing and are not ISA ZIP archives of original historical result records. [AAS07-N014, AAS07-N015, AAS07-N049, AAS07-N050]",
         "Not assessed here",
         "Create Zip Archive",
         "Not assessed here",
@@ -26913,6 +27003,18 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N014",
+          "AAS07-N015",
+          "AAS07-N049",
+          "AAS07-N050"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -28674,7 +28776,7 @@
         "",
         "",
         "",
-        "",
+        "AAS07: NO_ESTABLISHED — Asynchronous server operation status is not a sensing component property-value Status message or physical condition. [AAS07-N008, AAS07-N010, AAS07-N012, AAS07-N051]",
         "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
         "Status.properties: Name Value Pair [0+]",
         "RELATED but different: C239 §6 Health, Status, State, Mode, diagnostics and SYSLOG plus §14 runtime settings distinguish conditions, setup and reported events; no universal ISA Status.properties name/value-message equivalence or measured case data. [SOSA-D/G2-1/2/G2-7R/T]",
@@ -29098,6 +29200,18 @@
           "rationale": "Explicit F2-2 original native item/row mapping shares one candidate status; restricted originals remain held.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N008",
+          "AAS07-N010",
+          "AAS07-N012",
+          "AAS07-N051"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -29779,7 +29893,7 @@
         "",
         "",
         "",
-        "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]",
+        "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]\nAAS07: RELATED — Initiated/Running/Completed/Canceled/Failed/Timeout and OperationHandle are API lifecycle, not a source-authenticated hardware execution record. [AAS07-N010, AAS07-N011, AAS07-N012]",
         "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
         "Command Execution · name, request id, issuer, start time",
         "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
@@ -29948,6 +30062,17 @@
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "adopted": false,
         "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N010",
+          "AAS07-N011",
+          "AAS07-N012"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -30143,7 +30268,7 @@
         "",
         "",
         "",
-        "",
+        "AAS07: RELATED — AAS record queries select Submodels, descriptors or ConceptDescriptions, not ISA message-matching subscriptions. [AAS07-N022, AAS07-N029, AAS07-N047]",
         "",
         "Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator",
         "RELATED but NO_ESTABLISHED expression equivalence: C239 §15 publish/subscribe Topic identifies a message stream, not an ISA nested Boolean/And/Or/comparator message-matching criterion. [G2-7S]",
@@ -30222,6 +30347,17 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N022",
+          "AAS07-N029",
+          "AAS07-N047"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -30970,7 +31106,7 @@
         "",
         "",
         "",
-        "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]",
+        "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]\nAAS07: RELATED — Submodel Registry/Repository/Service, ConceptDescription Repository and AASX profile subsets are API roles, not ISA mandatory equipment command roles. [AAS07-N019, AAS07-N033, AAS07-N034, AAS07-N035, AAS07-N036, AAS07-N037, AAS07-N040]",
         "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
         "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
@@ -31293,6 +31429,21 @@
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N019",
+          "AAS07-N033",
+          "AAS07-N034",
+          "AAS07-N035",
+          "AAS07-N036",
+          "AAS07-N037",
+          "AAS07-N040"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -31524,7 +31675,7 @@
         "",
         "",
         "",
-        "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]",
+        "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]\nAAS07: RELATED — Submodel Value profile includes synchronous POST invocation while Read does not; advertised API support does not prove equipment readiness. [AAS07-N033, AAS07-N041]",
         "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
         "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
@@ -32049,6 +32200,16 @@
           "AAS06-N007",
           "AAS06-N020",
           "AAS06-N023"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N033",
+          "AAS07-N041"
         ],
         "relation": "RELATED",
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
@@ -32678,7 +32839,7 @@
         "NOAA CSV + operator metadata; contributor join derived",
         "",
         "",
-        "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]",
+        "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]",
         "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
         "",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -33055,6 +33216,16 @@
         "source_ids": [
           "AAS06-N016",
           "AAS06-N038"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N030",
+          "AAS07-N048"
         ],
         "relation": "RELATED",
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
@@ -34284,7 +34455,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]",
+        "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]\nAAS07: PARTIAL — ValueOnly model-element read/write envelope differs from ISA named-value message representation. [AAS07-N005, AAS07-N033, AAS07-N041]",
         "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
         "Name Value Pair · name + Wildcard value",
         "Not assessed here",
@@ -34378,6 +34549,17 @@
         "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N005",
+          "AAS07-N033",
+          "AAS07-N041"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -34477,7 +34659,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]",
+        "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]\nAAS07: PARTIAL — Native Submodel list, template and ValueOnly paths do not establish ISA list-order or RDF conversion equivalence. [AAS07-N001, AAS07-N037, AAS07-N043]",
         "",
         "List · values: Wildcard [0+]",
         "Not assessed here",
@@ -34547,6 +34729,17 @@
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N001",
+          "AAS07-N037",
+          "AAS07-N043"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -34571,7 +34764,7 @@
         "",
         "",
         "",
-        "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]",
+        "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]\nAAS07: PARTIAL — Template repository can represent designed fields without establishing an instantiated sensing System or actual values. [AAS07-N037, AAS07-N038, AAS07-N043]",
         "",
         "Custom Type · fields: Name Value Pair [0+]",
         "Not assessed here",
@@ -34622,6 +34815,17 @@
         "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N037",
+          "AAS07-N038",
+          "AAS07-N043"
+        ],
+        "relation": "PARTIAL",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -34745,7 +34949,7 @@
         "",
         "",
         "",
-        "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]",
+        "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
         "",
         "Custom → Nominated → Accepted; incorporation into a later major standard release",
         "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
@@ -35013,6 +35217,18 @@
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N031",
+          "AAS07-N040",
+          "AAS07-N046",
+          "AAS07-N048"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -35045,7 +35261,7 @@
         "",
         "",
         "",
-        "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]",
+        "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]\nAAS07: RELATED — Normal/Metadata/ValueOnly and nested idShortPath API representations differ by Submodel profile, not a universal CSAPI transport envelope. [AAS07-N005, AAS07-N033, AAS07-N037, AAS07-N041]",
         "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
         "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
@@ -35585,6 +35801,18 @@
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N005",
+          "AAS07-N033",
+          "AAS07-N037",
+          "AAS07-N041"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -35614,7 +35842,7 @@
         "",
         "",
         "",
-        "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]",
+        "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]\nAAS07: CONFLICT — Submodel PATCH/ValueOnly do not resolve earlier normal-JSON supplied-empty versus omitted update distinction. [AAS07-N003, AAS07-N004, AAS07-N005]",
         "",
         "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
         "Not assessed here",
@@ -35677,6 +35905,17 @@
         ],
         "relation": "CONFLICT",
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N003",
+          "AAS07-N004",
+          "AAS07-N005"
+        ],
+        "relation": "CONFLICT",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
       }
@@ -38160,7 +38399,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]",
+        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]\nAAS07: RELATED — Submodel history-as-of-date is not AdministrativeInformation.version or sensor firmware and RecentChanges is experimental. [AAS07-N025, AAS07-N026, AAS07-N044]",
         "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
         "Capability Version",
         "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -38319,6 +38558,17 @@
           "AAS06-N012",
           "AAS06-N014",
           "AAS06-N035"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS07_source_correspondence": {
+        "source_ids": [
+          "AAS07-N025",
+          "AAS07-N026",
+          "AAS07-N044"
         ],
         "relation": "RELATED",
         "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
@@ -49621,16 +49871,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS03 bounded original Part1 research; progressive column G integration in the same 26-sheet workbook. All other case/donor/DIM values and original classified fills retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS06_SAVED_PARITY",
-    "sha256": "f5183c9bdca0475b8adbd6c2ab685ac33a39b4f49010f3af9704a977a825f5f6",
+    "checkpoint": "AAS07_SAVED_PARITY",
+    "sha256": "192e8b3049cd9e035be0a796e8d0d43fbeb6d846cad7ef3732bb7252c3563de5",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
     "lag": "ZERO: 354x16 JSON/both CSV/both Markdown/saved workbook",
-    "textCheckpoint": "AAS06_SELECTED_ORIGINAL_SOURCE_CROSSWALK",
+    "textCheckpoint": "AAS07_SELECTED_ORIGINAL_SOURCE_CROSSWALK",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -50846,6 +51096,30 @@
       "ISA-C-048",
       "ISA-T-ACCESS",
       "S06-R020"
+    ],
+    "AAS07_affected_row_ids": [
+      "ISA-A-SERVICE-ROLE",
+      "ISA-A-BASELINE-CAPABILITIES",
+      "ISA-A-NETWORK-CONTEXT",
+      "ISA-A-CONNECTION-PRESENTATION",
+      "ISA-K-COMMAND-DECL",
+      "ISA-K-PARAMETER-DECL",
+      "ISA-K-RESULT-DECL",
+      "S06-R019",
+      "S06-R020",
+      "ISA-R-EXECUTION",
+      "ISA-K-STRUCTURE",
+      "ISA-R-LIST-PRESENCE",
+      "ISA-R-CUSTOM",
+      "ISA-C-048",
+      "ISA-A-EXTENSION-STANDING",
+      "S06-R021",
+      "S06-R012",
+      "ISA-R-NAMED-VALUE",
+      "ISA-R-LIST",
+      "ISA-Q-MATCH",
+      "ISA-T-STATUS",
+      "ISA-C-207"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -57479,5 +57753,29 @@
     "ISA-C-048",
     "ISA-T-ACCESS",
     "S06-R020"
+  ],
+  "AAS07_affected_row_ids": [
+    "ISA-A-SERVICE-ROLE",
+    "ISA-A-BASELINE-CAPABILITIES",
+    "ISA-A-NETWORK-CONTEXT",
+    "ISA-A-CONNECTION-PRESENTATION",
+    "ISA-K-COMMAND-DECL",
+    "ISA-K-PARAMETER-DECL",
+    "ISA-K-RESULT-DECL",
+    "S06-R019",
+    "S06-R020",
+    "ISA-R-EXECUTION",
+    "ISA-K-STRUCTURE",
+    "ISA-R-LIST-PRESENCE",
+    "ISA-R-CUSTOM",
+    "ISA-C-048",
+    "ISA-A-EXTENSION-STANDING",
+    "S06-R021",
+    "S06-R012",
+    "ISA-R-NAMED-VALUE",
+    "ISA-R-LIST",
+    "ISA-Q-MATCH",
+    "ISA-T-STATUS",
+    "ISA-C-207"
   ]
 }

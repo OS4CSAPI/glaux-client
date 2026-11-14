@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS06_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE",
+  "status": "AAS07_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5033,7 +5033,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "AAS07 only on a separate new owner Proceed: pinned Part2 Submodel Registry/Repository/Service, Concept Description Repository and AASX File Server source semantics at selected original operation/profile depths; stop before AAS08 or donor/model/client work.",
+  "one_next": "AAS08 only on a separate owner Proceed: original aligned released IDTA Part 3a IEC 61360 v3.1.1, Part 3b units v3.0, Part 4 Security v3.1.0 and Part 5 AASX v3.2.0, scoped source-first; stop before AAS09 or model/client/deployment work.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10117,14 +10117,14 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS06",
+    "checkpoint": "AAS07",
     "rows": 337,
     "grid": "354x16",
     "AAS_column": "G",
     "same_workbook": true,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "AAS07 only on a separate new owner Proceed: pinned Part2 Submodel Registry/Repository/Service, Concept Description Repository and AASX File Server source semantics at selected original operation/profile depths; stop before AAS08 or donor/model/client work."
+    "next": "AAS08 only on a separate owner Proceed: original aligned released IDTA Part 3a IEC 61360 v3.1.1, Part 3b units v3.0, Part 4 Security v3.1.0 and Part 5 AASX v3.2.0, scoped source-first; stop before AAS09 or model/client/deployment work."
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -14803,7 +14803,7 @@
     }
   },
   "AAS07": {
-    "status": "PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING",
+    "status": "COMPLETE_AT_SELECTED_PINNED_ORIGINAL_SOURCE_SCOPE__DONOR_ACTIVE_INCOMPLETE",
     "date": "2026-11-14",
     "branch": "research/dim-profile-v2",
     "preflight_head": "dde085ecffa47c6dbd833b77ca3983d81036b2e6",
@@ -16331,7 +16331,280 @@
         "DIM_Profile_adopted": false
       }
     ],
-    "source_to_master_changes": [],
+    "source_to_master_changes": [
+      {
+        "row_id": "ISA-A-SERVICE-ROLE",
+        "cell": "G213",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N019",
+          "AAS07-N033",
+          "AAS07-N034",
+          "AAS07-N035",
+          "AAS07-N036",
+          "AAS07-N037",
+          "AAS07-N040"
+        ],
+        "before": "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]",
+        "after": "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]\nAAS07: RELATED — Submodel Registry/Repository/Service, ConceptDescription Repository and AASX profile subsets are API roles, not ISA mandatory equipment command roles. [AAS07-N019, AAS07-N033, AAS07-N034, AAS07-N035, AAS07-N036, AAS07-N037, AAS07-N040]"
+      },
+      {
+        "row_id": "ISA-A-BASELINE-CAPABILITIES",
+        "cell": "G215",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N033",
+          "AAS07-N041"
+        ],
+        "before": "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]",
+        "after": "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]\nAAS07: RELATED — Submodel Value profile includes synchronous POST invocation while Read does not; advertised API support does not prove equipment readiness. [AAS07-N033, AAS07-N041]"
+      },
+      {
+        "row_id": "ISA-A-NETWORK-CONTEXT",
+        "cell": "G18",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N019",
+          "AAS07-N020",
+          "AAS07-N023"
+        ],
+        "before": "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]",
+        "after": "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]\nAAS07: RELATED — Submodel descriptors provide IDs and service endpoints, not physical connection or sensor network presence. [AAS07-N019, AAS07-N020, AAS07-N023]"
+      },
+      {
+        "row_id": "ISA-A-CONNECTION-PRESENTATION",
+        "cell": "G237",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N005",
+          "AAS07-N033",
+          "AAS07-N037",
+          "AAS07-N041"
+        ],
+        "before": "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]",
+        "after": "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]\nAAS07: RELATED — Normal/Metadata/ValueOnly and nested idShortPath API representations differ by Submodel profile, not a universal CSAPI transport envelope. [AAS07-N005, AAS07-N033, AAS07-N037, AAS07-N041]"
+      },
+      {
+        "row_id": "ISA-K-COMMAND-DECL",
+        "cell": "G80",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N001",
+          "AAS07-N006",
+          "AAS07-N007",
+          "AAS07-N041"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]",
+        "after": "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]\nAAS07: PARTIAL — Model-declared Operation can be invoked synchronously/asynchronously but is not a proven ISA equipment command catalogue. [AAS07-N001, AAS07-N006, AAS07-N007, AAS07-N041]"
+      },
+      {
+        "row_id": "ISA-K-PARAMETER-DECL",
+        "cell": "G81",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N007",
+          "AAS07-N009",
+          "AAS07-N053"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]",
+        "after": "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]\nAAS07: PARTIAL — OperationRequest input/inoutput and ValueOnly encodings differ; async timeout may be required yet server may disregard requested timing. [AAS07-N007, AAS07-N009, AAS07-N053]"
+      },
+      {
+        "row_id": "ISA-K-RESULT-DECL",
+        "cell": "G82",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N010",
+          "AAS07-N011",
+          "AAS07-N041"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]",
+        "after": "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]\nAAS07: PARTIAL — OperationResult and native executionState characterize API business operation, not verified ISA device outcome. [AAS07-N010, AAS07-N011, AAS07-N041]"
+      },
+      {
+        "row_id": "S06-R019",
+        "cell": "G95",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N006",
+          "AAS07-N007",
+          "AAS07-N041",
+          "AAS07-N042"
+        ],
+        "before": "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]",
+        "after": "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]\nAAS07: RELATED — POST /invoke and /invoke-async define interfaces, not evidence the device actually received an issued command. [AAS07-N006, AAS07-N007, AAS07-N041, AAS07-N042]"
+      },
+      {
+        "row_id": "S06-R020",
+        "cell": "G96",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N008",
+          "AAS07-N011",
+          "AAS07-N012"
+        ],
+        "before": "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]",
+        "after": "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]\nAAS07: RELATED — HTTP 202 Accepted may be followed by failure; HTTP 200 with executionState Failed is not a successful physical command effect. [AAS07-N008, AAS07-N011, AAS07-N012]"
+      },
+      {
+        "row_id": "ISA-R-EXECUTION",
+        "cell": "G202",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N010",
+          "AAS07-N011",
+          "AAS07-N012"
+        ],
+        "before": "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]",
+        "after": "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]\nAAS07: RELATED — Initiated/Running/Completed/Canceled/Failed/Timeout and OperationHandle are API lifecycle, not a source-authenticated hardware execution record. [AAS07-N010, AAS07-N011, AAS07-N012]"
+      },
+      {
+        "row_id": "ISA-K-STRUCTURE",
+        "cell": "G86",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N024",
+          "AAS07-N037",
+          "AAS07-N038"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]",
+        "after": "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]\nAAS07: PARTIAL — Template-only Submodel repository profiles explicitly exclude kind Instance, so templates do not establish installed equipment structure. [AAS07-N024, AAS07-N037, AAS07-N038]"
+      },
+      {
+        "row_id": "ISA-R-LIST-PRESENCE",
+        "cell": "G238",
+        "relation": "CONFLICT",
+        "source_ids": [
+          "AAS07-N003",
+          "AAS07-N004",
+          "AAS07-N005"
+        ],
+        "before": "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]",
+        "after": "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]\nAAS07: CONFLICT — Submodel PATCH/ValueOnly do not resolve earlier normal-JSON supplied-empty versus omitted update distinction. [AAS07-N003, AAS07-N004, AAS07-N005]"
+      },
+      {
+        "row_id": "ISA-R-CUSTOM",
+        "cell": "G234",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N037",
+          "AAS07-N038",
+          "AAS07-N043"
+        ],
+        "before": "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]",
+        "after": "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]\nAAS07: PARTIAL — Template repository can represent designed fields without establishing an instantiated sensing System or actual values. [AAS07-N037, AAS07-N038, AAS07-N043]"
+      },
+      {
+        "row_id": "ISA-C-048",
+        "cell": "G251",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N025",
+          "AAS07-N026",
+          "AAS07-N044"
+        ],
+        "before": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]",
+        "after": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]\nAAS07: RELATED — Submodel history-as-of-date is not AdministrativeInformation.version or sensor firmware and RecentChanges is experimental. [AAS07-N025, AAS07-N026, AAS07-N044]"
+      },
+      {
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "cell": "G236",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N031",
+          "AAS07-N040",
+          "AAS07-N046",
+          "AAS07-N048"
+        ],
+        "before": "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]",
+        "after": "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]"
+      },
+      {
+        "row_id": "S06-R021",
+        "cell": "G220",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N030",
+          "AAS07-N048"
+        ],
+        "before": "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]",
+        "after": "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]"
+      },
+      {
+        "row_id": "S06-R012",
+        "cell": "G24",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N002",
+          "AAS07-N005",
+          "AAS07-N041"
+        ],
+        "before": "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]",
+        "after": "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]\nAAS07: RELATED — ValueOnly Submodel retrieval is a digital data property, not evidence of an actual observation emitted by equipment. [AAS07-N002, AAS07-N005, AAS07-N041]"
+      },
+      {
+        "row_id": "ISA-R-NAMED-VALUE",
+        "cell": "G231",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N005",
+          "AAS07-N033",
+          "AAS07-N041"
+        ],
+        "before": "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]",
+        "after": "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]\nAAS07: PARTIAL — ValueOnly model-element read/write envelope differs from ISA named-value message representation. [AAS07-N005, AAS07-N033, AAS07-N041]"
+      },
+      {
+        "row_id": "ISA-R-LIST",
+        "cell": "G233",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS07-N001",
+          "AAS07-N037",
+          "AAS07-N043"
+        ],
+        "before": "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]",
+        "after": "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]\nAAS07: PARTIAL — Native Submodel list, template and ValueOnly paths do not establish ISA list-order or RDF conversion equivalence. [AAS07-N001, AAS07-N037, AAS07-N043]"
+      },
+      {
+        "row_id": "ISA-Q-MATCH",
+        "cell": "G204",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS07-N022",
+          "AAS07-N029",
+          "AAS07-N047"
+        ],
+        "before": "",
+        "after": "AAS07: RELATED — AAS record queries select Submodels, descriptors or ConceptDescriptions, not ISA message-matching subscriptions. [AAS07-N022, AAS07-N029, AAS07-N047]"
+      },
+      {
+        "row_id": "ISA-T-STATUS",
+        "cell": "G196",
+        "relation": "NO_ESTABLISHED",
+        "source_ids": [
+          "AAS07-N008",
+          "AAS07-N010",
+          "AAS07-N012",
+          "AAS07-N051"
+        ],
+        "before": "",
+        "after": "AAS07: NO_ESTABLISHED — Asynchronous server operation status is not a sensing component property-value Status message or physical condition. [AAS07-N008, AAS07-N010, AAS07-N012, AAS07-N051]"
+      },
+      {
+        "row_id": "ISA-C-207",
+        "cell": "G180",
+        "relation": "NO_ESTABLISHED",
+        "source_ids": [
+          "AAS07-N014",
+          "AAS07-N015",
+          "AAS07-N049",
+          "AAS07-N050"
+        ],
+        "before": "",
+        "after": "AAS07: NO_ESTABLISHED — AASX packages may be stored without parsing and are not ISA ZIP archives of original historical result records. [AAS07-N014, AAS07-N015, AAS07-N049, AAS07-N050]"
+      }
+    ],
     "open_holds": [
       {
         "id": "AAS07-H01",
@@ -16438,6 +16711,115 @@
       ],
       "not_a_fixed_quota": true
     },
-    "saved_verification": null
+    "saved_verification": {
+      "status": "PASS_LOCAL_REOPENED_SAVED_FILE",
+      "preflight_head": "dde085ecffa47c6dbd833b77ca3983d81036b2e6",
+      "previous_xlsx_sha256": "f5183c9bdca0475b8adbd6c2ab685ac33a39b4f49010f3af9704a977a825f5f6",
+      "xlsx_sha256": "192e8b3049cd9e035be0a796e8d0d43fbeb6d846cad7ef3732bb7252c3563de5",
+      "saved_cells": 5664,
+      "sheet_names": [
+        "Summary",
+        "Master Crosswalk",
+        "DMS Inventory",
+        "Source Blocks",
+        "Row Coverage",
+        "Earlier Findings",
+        "Sources",
+        "Legend",
+        "Validation",
+        "ISA Evidence",
+        "Dependencies",
+        "Questions",
+        "Case Evidence",
+        "Donor Evidence",
+        "Baseline DIM Definitions",
+        "Prior Sources & Editions",
+        "Baseline Holds & Decisions",
+        "CSAPI Clause Audit",
+        "SensorML Clause Audit",
+        "SWE Common Clause Audit",
+        "OMS Clause Audit",
+        "W3C SOSA SSN Audit",
+        "IEEE 1451 Audit",
+        "ISA Initial Clause Audit",
+        "DIM Register",
+        "Adoption Decisions"
+      ],
+      "changed_AAS_cells": [
+        "G213",
+        "G215",
+        "G18",
+        "G237",
+        "G80",
+        "G81",
+        "G82",
+        "G95",
+        "G96",
+        "G202",
+        "G86",
+        "G238",
+        "G234",
+        "G251",
+        "G236",
+        "G220",
+        "G24",
+        "G231",
+        "G233",
+        "G204",
+        "G196",
+        "G180"
+      ],
+      "new_AAS_cells": 3,
+      "total_AAS_cells": 54,
+      "historical_21_sheet_sha256": {
+        "DMS Inventory": "8ac28ce27afc1c8b481b898e9a657b8763b51ae071ef387270d36187c66f5d4e",
+        "Source Blocks": "7ff8c6bb023e392485b9e778e505f13f1ac6ef6f8a3e7d6b2b6eab5422a33750",
+        "Row Coverage": "f565488776addda122baccb2d6f42ff0cc866e808612670cf316990b406e7c50",
+        "Earlier Findings": "2724dd2aaba93e896d9c9ad31cf2ba6cd092c91b7c7d8a2b9147104a5d9a3d00",
+        "Sources": "5b59124c1a3bb38d74dc348e291710dc99c16149675c411a72e879b7e9bb8d1e",
+        "ISA Evidence": "2d581044ab0e490142412c4e745e80a591d31740194d4246b1cd7518a7159f80",
+        "Dependencies": "093338dee5a611b92cece115aea061ccfffd1e6e34310662f7c35ab6ec268e90",
+        "Questions": "0e52cc97eefcb71a739d50deb3a57b45ba79161fde8d0e8068ca2839578484e5",
+        "Case Evidence": "8cc148922fe547974613e88a00ad51c5233bf776276144b3b549dc808cf0e595",
+        "Donor Evidence": "2f93da624b987356de1aabf6ab9d9d0947365d4d8b289438bf3e8d8f720b9757",
+        "Baseline DIM Definitions": "0f9b1c715b9b4eed33bf0868dd1409b92c32a27483edd1e803a6f76d9a434553",
+        "Prior Sources & Editions": "35d2c9b46a54d31e26c43f79af914696e03298fb5d3f1cd58e2a2d1715e37353",
+        "Baseline Holds & Decisions": "08ab57b7d4451136880d7cf11216ed94ee9f2c3d070862fec15bcd3c73f45704",
+        "CSAPI Clause Audit": "d6671d195ddde345d59ad1a7496ed4585ea5cfd0111cf10f2b3c22a170cbca4d",
+        "SensorML Clause Audit": "bcd4b4f56ff66483634cfe050ce2f0377b569cd9cf9ea52b6d8e95508fab689a",
+        "SWE Common Clause Audit": "8525986fe0cd7736618fc263098728a778eb67aa399e0ebaa32eca09f4e0dbba",
+        "OMS Clause Audit": "d1bfa548aa5ee1828a89f2099bbdbb763724b63e2e8dee5035c538ebc284b878",
+        "W3C SOSA SSN Audit": "6afe0475d197ee37b33beb97a4784c6a43f87a942fcd479431a008f754e65f41",
+        "IEEE 1451 Audit": "8d2e79557fda29f36b693bba80f1e02cd47a129f840b8066919674999bd85374",
+        "ISA Initial Clause Audit": "4c15169efe94c69827c0262b09a0ef4eb96c12c149f0f5656bf894a049817618",
+        "Adoption Decisions": "77dba695a7abd4b8fcab0c517e1f6a7ce77da4ff0c72d0d721d0de6f9b07a462"
+      },
+      "styles_xml_sha256": "db73aa2f25a4004c88bdc3dda92664401929a22240be712381399526bf4e70ed",
+      "manual_version_sha256": {
+        "M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
+        "M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c"
+      },
+      "checks": {
+        "saved_grid_equals_JSON": true,
+        "both_CSV_equal_JSON": true,
+        "both_Markdown_equal_JSON": true,
+        "all_other_donor_case_DIM_values_unchanged": true,
+        "row_ids_order_and_topic_dividers_preserved": true,
+        "all_original_cell_styles_preserved": true,
+        "325_classification_colors_and_67_mixed_holds_retained": true,
+        "AAS_cells_without_classification_fill": true,
+        "all_26_sheets_in_order": true,
+        "21_unaffected_sheet_XML_byte_identical": true,
+        "all_unedited_package_entries_byte_identical": true,
+        "M00_M01_unchanged_no_M02": true,
+        "all_changed_summary_legend_register_values_reopened": true,
+        "ZIP_CRC_and_XML_parse": true
+      },
+      "visual_review": {
+        "status": "REOPENED_XML_AND_ROW_HEIGHT_INSPECTED_NOT_PIXEL_RENDERED",
+        "note": "No separate rendered screenshot or visual claim; affected rows expanded with original styles retained."
+      },
+      "research_limit": "Source item/file coverage is selected-scope; no runtime, complete specification or DIM/Profile adoption."
+    }
   }
 }
