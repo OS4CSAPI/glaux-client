@@ -4183,6 +4183,213 @@ def publish_aas02_g():
     return sha
 
 
+
+def publish_aas05():
+    """AAS05: use the existing verified 26-sheet publisher; no new workbook, color decision, or model adoption."""
+    from html import escape
+    from html.parser import HTMLParser
+    from subprocess import check_output
+    fn="AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
+    led=load(fn);step=led["AAS05"];m=load(MASTER)
+    def check(ok,why):
+        if not ok:raise AssertionError("AAS05: "+why)
+    check(step["status"]=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING","source-stage gate")
+    check(m["currentEvidenceCheckpoint"]=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED","AAS04 baseline only")
+    check(step["preflight_head"]=="02232bb6eed411ccb159692112a65394b8553db3","pinned AAS04 commit")
+    check(len(step["original_items"])==23 and len(step["comparison_updates"])==13 and len(step["source_to_master_changes"])==0,"source/target counts")
+    check(len(m["rows"])==337 and len(m["review_grid"])==354 and len(m["columns"])==16 and len(m["review_sections"])==15,"current canonical dimensions")
+    check([x["key"] for x in m["columns"][:7]]==["Dragino","AirGradient","Campbell","Bennett","IEEE","OPC","AAS32"]
+          and m["columns"][-1]["key"]=="DIM","approved case/donor/OGC/DIM placement")
+    prev=(D/BOOK).read_bytes()
+    check(digest(prev)==m["currentWorkbookSha256"]==m["workbookSnapshot"]["sha256"],"current original workbook hash")
+    oldmaster=json.loads(check_output(["git","show",step["preflight_head"]+":Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/"+MASTER]))
+    check(oldmaster["review_grid"]==m["review_grid"] and oldmaster["columns"]==m["columns"],"preflight exact source matrix")
+    original=[x[:] for x in m["review_grid"]]
+    sec=set(m["review_sections"]);indexes={};n=0
+    for k in range(2,len(original)):
+        if k not in sec:
+            indexes[m["rows"][n]["row_id"]]=(k,n)
+            n+=1
+    check(n==337 and len(indexes)==337,"preserved 337 original stable rows")
+    ids={x["source_id"] for x in step["original_items"]}
+    changes=[]
+    for c in step["comparison_updates"]:
+        name=c["row_id"]
+        check(name in indexes and c["source_ids"] and set(c["source_ids"])<=ids,"source IDs for "+name)
+        k,ri=indexes[name];row=m["rows"][ri];before=row["display"][6]
+        check(before and before==m["review_grid"][k][6] and "AAS05:" not in before,"existing AAS evidence "+name)
+        after=before+"\nAAS05: "+c["relation"]+" — "+c["clarification"]+" ["+", ".join(c["source_ids"])+"]"
+        check(len(after)<32767,"Excel length "+name)
+        row["display"][6]=m["review_grid"][k][6]=after
+        row["AAS05_source_correspondence"]={"source_ids":c["source_ids"],"relation":c["relation"],
+           "source_standing":"PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS","DIM_Profile_adopted":False,
+           "not_source_completeness_or_runtime":True}
+        changes.append({"row_id":name,"cell":"G"+str(k+1),"relation":c["relation"],
+                        "source_ids":c["source_ids"],"before":before,"after":after})
+    check(len(changes)==13 and len({x["cell"] for x in changes})==13,"13 existing G cells")
+    by_cell={x["cell"]:x for x in changes}
+    for i,(before,after) in enumerate(zip(original,m["review_grid"]),1):
+        for j,(v0,v1) in enumerate(zip(before,after)):
+            addr=chr(65+j)+str(i)
+            if addr in by_cell:check(v0==by_cell[addr]["before"] and v1==by_cell[addr]["after"],"qualified edit "+addr)
+            else:check(v0==v1,"all original other donor/case/DIM source cells "+addr)
+    check([x for i,x in enumerate(m["review_grid"]) if i>1 and i not in sec]==[x["display"] for x in m["rows"]],"row/grid parity")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
+        with (D/name).open("w",encoding="utf-8",newline="") as f:
+            csv.writer(f,lineterminator="\n").writerows(m["review_grid"])
+        check(source_csv(name)==m["review_grid"],"CSV source grid "+name)
+    oldmd=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
+    check(oldmd==(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+          and oldmd.count("<table>")==1 and "<tbody>" in oldmd,"historical readable mirrors")
+    intro=("# CURRENT — AAS05 original pinned schema comparison and original Excel verified (14 November 2026)\n\n"
+       "23 overlapping selected blocks in six pinned JSON/XML/RDF/SHACL/OpenAPI files; 13 pre-existing AAS G research cells clarified, no new row. "
+       "Same original 337-row, 354×16, 26-sheet workbook and JSON/both CSV/both Markdown sources saved and verified; "
+       "original M00/M01, 325 source colors, 67 mixed holds, original cases and donor cells preserved. "
+       "[Original AAS05 source review](AAS05_Original_Schema_Corroboration_14NOV2026.md) · "
+       "[Cumulative source ledger and saved validation](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json). "
+       "AAS ACTIVE/incomplete, no DIM/Profile adoption. ONE NEXT owner Proceed = AAS06 only; STOP.\n\n---\n\n")
+    body=[]
+    for i in range(2,len(m["review_grid"])):
+        row=m["review_grid"][i]
+        if i in sec:body.append('<tr><th colspan="16">'+escape(str(row[0]))+'</th></tr>')
+        else:body.append("<tr>"+"".join("<td>"+escape(str(x))+"</td>" for x in row)+"</tr>")
+    md=intro+oldmd.split("<tbody>",1)[0]+"<tbody>\n"+"\n".join(body)+"\n</tbody></table>\n"
+    check(len(body)==352 and md.count('colspan="16"')==15,"comparison topic rows")
+    class Reader(HTMLParser):
+        def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=None;self.v=None;self.span=1
+        def handle_starttag(self,tag,attrs):
+            if tag=="tr":self.row=[]
+            elif tag in ("td","th"):self.v="";self.span=int(dict(attrs).get("colspan",1))
+        def handle_data(self,data):
+            if self.v is not None:self.v+=data
+        def handle_endtag(self,tag):
+            if tag in ("td","th") and self.v is not None:self.row.extend([self.v]+[""]*(self.span-1));self.v=None
+            elif tag=="tr":self.rows.append(self.row);self.row=None
+    pr=Reader();pr.feed(md[md.index("<table>"):md.index("</table>")+8])
+    check(pr.rows[1:]==m["review_grid"][1:],"GitHub-readable table exact independent parsed cells")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        (D/name).write_text(md,encoding="utf-8")
+    def readcell(c):
+        return "" if c is None else "".join(t.text or "" for t in c.iter(q("t")))
+    def setcell(c,v):
+        for e in list(c):c.remove(e)
+        c.set("t","inlineStr")
+        t=ET.SubElement(ET.SubElement(c,q("is")),q("t"))
+        t.set("{http://www.w3.org/XML/1998/namespace}space","preserve");t.text=str(v)
+    def append_note(z,path,label,message):
+        root=ET.fromstring(z.read(path));data=root.find(q("sheetData"))
+        rows=data.findall(q("row"));num=max(int(x.get("r")) for x in rows)+1
+        s=(rows[-1].find(q("c")).get("s","0") if rows[-1].find(q("c")) is not None else "0")
+        nr=ET.SubElement(data,q("row"),{"r":str(num),"ht":"58","customHeight":"1"})
+        for col,v in (("A",label),("B",message)):
+            cell=ET.SubElement(nr,q("c"),{"r":col+str(num),"s":s})
+            setcell(cell,v)
+        dim=root.find(q("dimension"))
+        if dim is not None:
+            last=dim.get("ref","A1:B1").split(":")[-1]
+            dim.set("ref",dim.get("ref","A1:B1").split(":")[0]+":"+re.sub(r"\d+$",str(num),last))
+        return ET.tostring(root,encoding="utf-8",xml_declaration=True)
+    with zipfile.ZipFile(io.BytesIO(prev)) as z:
+        check(z.testzip() is None,"input original ZIP integrity")
+        paths=old.sheetpaths(z);check(len(paths)==26,"same original 26 worksheets")
+        historical_hashes={name:digest(z.read(path)) for name,path in paths.items()}
+        orig_style=z.read("xl/styles.xml")
+        master=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        rows=master.find(q("sheetData")).findall(q("row"))
+        check(len(rows)==354,"saved 354 original master rows")
+        cells={c.get("r"):c for c in master.iter(q("c"))}
+        for c in changes:
+            addr=c["cell"];cell=cells.get(addr)
+            check(cell is not None and readcell(cell)==c["before"],"actual prior saved cell "+addr)
+            setcell(cell,c["after"])
+            rr=rows[int(addr[1:])-1]
+            height=min(252,max(float(rr.get("ht","30")),90+len(c["after"])//8))
+            rr.set("ht",str(height));rr.set("customHeight","1")
+        register=ET.fromstring(z.read(paths["DIM Register"]))
+        regrows=register.find(q("sheetData")).findall(q("row"))
+        check(len(regrows)==338,"same original DIM Register")
+        for c in changes:
+            _,idx=indexes[c["row_id"]];rr=regrows[idx+1];addr="Q"+str(idx+2)
+            oldcell=next((x for x in rr.findall(q("c")) if x.get("r")==addr),None)
+            if oldcell is None:
+                oldcell=ET.SubElement(rr,q("c"),{"r":addr,"s":"0"})
+            oldtext=readcell(oldcell)
+            setcell(oldcell,oldtext+"\nAAS05: "+", ".join(c["source_ids"])+"; pinned selected schemas, no DIM/Profile adoption.")
+            rr.set("ht",str(min(252,max(float(rr.get("ht","30")),95+len(readcell(oldcell))//10))))
+            rr.set("customHeight","1")
+        note="AAS05 bounded original schemas — no DIM/Profile adoption"
+        context="23 overlapping selected schema blocks in six pinned files; 13 existing AAS comparisons; source holds retained, no runtime/service claim."
+        replaced={
+          paths["Master Crosswalk"]:ET.tostring(master,encoding="utf-8",xml_declaration=True),
+          paths["DIM Register"]:ET.tostring(register,encoding="utf-8",xml_declaration=True),
+          paths["Summary"]:append_note(z,paths["Summary"],note,context),
+          paths["Validation"]:append_note(z,paths["Validation"],note,"All 5,664 master values, 26 sheets, 21 historical sheet XML parts, original colors/styles and M00/M01 independently checked."),
+          paths["Legend"]:append_note(z,paths["Legend"],note,"Original 325 graded donor cells remain colored; AAS05 13 qualified uncolored G cells; 67 prior mixed holds still uncolored.")
+        }
+        check(len(replaced)==5 and len([x for x in paths.values() if x not in replaced])==21,"five refreshed tabs and 21 preserved")
+        out=io.BytesIO()
+        with zipfile.ZipFile(out,"w") as dst:
+            for info in z.infolist():dst.writestr(info,replaced.get(info.filename,z.read(info.filename)))
+    saved=out.getvalue()
+    with zipfile.ZipFile(io.BytesIO(prev)) as before,zipfile.ZipFile(io.BytesIO(saved)) as after:
+        check(after.testzip() is None and list(old.sheetpaths(after))==list(paths),"reopened saved file/26 original sheets")
+        check(after.read("xl/styles.xml")==orig_style,"original RGB styles stylesheet identical")
+        for item in before.infolist():
+            if item.filename not in replaced:check(after.read(item.filename)==before.read(item.filename),"all unrelated package entries identical "+item.filename)
+        for path in after.namelist():
+            if path.endswith((".xml",".rels")):ET.fromstring(after.read(path))
+        sheet=ET.fromstring(after.read(paths["Master Crosswalk"]))
+        cells={c.get("r"):c for c in sheet.iter(q("c"))}
+        originalCells={c.get("r"):c for c in ET.fromstring(before.read(paths["Master Crosswalk"])).iter(q("c"))}
+        for i,row in enumerate(m["review_grid"],1):
+            for j,v in enumerate(row):
+                addr=chr(65+j)+str(i)
+                check(readcell(cells.get(addr))==v,"saved XML to source 5,664 values "+addr)
+        for addr,c in originalCells.items():
+            check(cells[addr].get("s")==c.get("s","0") or cells[addr].get("s","0")==c.get("s","0"),"original cell classification style "+addr)
+        check(len(m["F2_5_color_reconciliation"]["color_assignments"])==325
+              and len(m["F2_5_color_reconciliation"]["composite_holds"])==67,"original 325 colors and 67 held statuses")
+    sha=digest(saved)
+    (D/BOOK).write_bytes(saved)
+    check(digest((D/BOOK).read_bytes())==sha,"saved original living workbook readback")
+    m["currentWorkbookSha256"]=sha
+    m["currentEvidenceCheckpoint"]="AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"
+    m["workbookSnapshot"].update({"checkpoint":"AAS05_SAVED_PARITY","sha256":sha,"information_rows":337,
+       "currently_matches_readable_view":True,"lag":"ZERO: 354x16 JSON/both CSV/both Markdown/saved workbook",
+       "textCheckpoint":"AAS05_SELECTED_ORIGINAL_SCHEMA_CROSS_FORMAT","AAS05_affected_row_ids":[c["row_id"] for c in changes]})
+    m["AAS05_affected_row_ids"]=[c["row_id"] for c in changes]
+    step["source_to_master_changes"]=changes
+    step["status"]="COMPLETE_AT_SELECTED_PINNED_SCHEMA_SCOPE__DONOR_ACTIVE_INCOMPLETE"
+    led["status"]="AAS05_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE"
+    led["one_next"]=step["next"]
+    led["master_state_current"]={"checkpoint":"AAS05","rows":337,"grid":"354x16","AAS_column":"G","same_workbook":True,
+                                 "manual_M00_M01":"UNCHANGED","M02":"NOT_CREATED","next":"AAS06 on separate owner Proceed only"}
+    m00=D/"Manual_Workbook_Versions/M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx"
+    m01=D/"Manual_Workbook_Versions/M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx"
+    step["saved_verification"]={
+       "status":"PASS_LOCAL_REOPENED_SAVED_FILE","preflight_head":step["preflight_head"],
+       "previous_xlsx_sha256":digest(prev),"xlsx_sha256":sha,"saved_cells":5664,
+       "sheet_names":list(paths),"changed_AAS_cells":[c["cell"] for c in changes],
+       "new_AAS_cells":0,"total_AAS_cells":44,
+       "historical_21_sheet_sha256":{name:hashcode for name,hashcode in historical_hashes.items() if paths[name] not in replaced},
+       "styles_xml_sha256":digest(orig_style),
+       "manual_version_sha256":{m00.name:digest(m00.read_bytes()),m01.name:digest(m01.read_bytes())},
+       "checks":{"saved_grid_equals_JSON":True,"both_CSV_equal_JSON":True,"both_Markdown_equal_JSON":True,
+                 "all_other_donor_case_DIM_values_unchanged":True,"row_ids_order_and_topic_dividers_preserved":True,
+                 "all_original_cell_styles_preserved":True,"325_classification_colors_and_67_mixed_holds_retained":True,
+                 "AAS_cells_without_classification_fill":True,"all_26_sheets_in_order":True,
+                 "21_unaffected_sheet_XML_byte_identical":True,"all_unedited_package_entries_byte_identical":True,
+                 "M00_M01_unchanged_no_M02":True,"all_changed_summary_legend_register_values_reopened":True,
+                 "ZIP_CRC_and_XML_parse":True},
+       "visual_review":{"status":"REOPENED_XML_AND_ROW_HEIGHT_INSPECTED_NOT_PIXEL_RENDERED",
+           "note":"No separate rendered screenshot or visual claim; affected rows expanded with original styles retained."},
+       "research_limit":"Source item/file coverage is selected-scope; no runtime, complete specification or DIM/Profile adoption."
+    }
+    save(MASTER,m);save(fn,led)
+    verify_aas_saved("AAS05")
+    print("AAS05 PASS: thirteen existing AAS G clarifications, 23 pinned selected schema blocks, 5,664 saved worksheet values and both CSV/Markdown mirrors.")
+    print("AAS05 PASS: same original 26-sheet workbook, historical 21 sheets, M00/M01, all source colors/holds and four cases preserved. STOP before AAS06.")
+
 def verify_aas_saved(step="AAS03"):
     """Read-only verification of the already authored AAS workbook checkpoint.
 
@@ -4271,7 +4478,9 @@ def verify_aas_saved(step="AAS03"):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
+    if checkpoint=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS05",{}).get("status")=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING":
+        publish_aas05()
+    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
         verify_aas_saved(checkpoint.split("_")[0])
     elif checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
         print("AAS02 G already published; no workbook mutation")
