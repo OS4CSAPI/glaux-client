@@ -4193,7 +4193,7 @@ def publish_aas_qualified(step_code,previous_step):
     led=load(fn);step=led[step_code];m=load(MASTER)
     def check(ok,why):
         if not ok:raise AssertionError(step_code+": "+why)
-    check(step["status"] in ("SCHEMA_SOURCE_READ__PUBLISHER_PENDING","SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_COMPANION_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING"),"source-stage gate")
+    check(step["status"] in ("SCHEMA_SOURCE_READ__PUBLISHER_PENDING","SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_COMPANION_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_TEMPLATE_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING"),"source-stage gate")
     check(m["currentEvidenceCheckpoint"]==previous_step+"_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED","prior original canonical step baseline only")
     check(len(step["preflight_head"])==40 and all(x in "0123456789abcdef" for x in step["preflight_head"]),"pinned preflight branch HEAD")
     check(len(step["original_items"])==step["counts"]["native_findings"] and len(step["comparison_updates"])==step["counts"]["master_cells_changed"] and len(step["source_to_master_changes"])==0,"source/target counts")
@@ -4381,6 +4381,14 @@ def publish_aas_qualified(step_code,previous_step):
        "currently_matches_readable_view":True,"lag":"ZERO: 354x16 JSON/both CSV/both Markdown/saved workbook",
        "textCheckpoint":step_code+"_SELECTED_ORIGINAL_SOURCE_CROSSWALK",step_code+"_affected_row_ids":[c["row_id"] for c in changes]})
     m[step_code+"_affected_row_ids"]=[c["row_id"] for c in changes]
+    m["nextOwnerAction"]=step["next"]
+    m["publicationPolicy"]=step["publication_note"]+" Same original workbook; no DIM/Profile adoption."
+    m.setdefault("AASEvidence",{}).update({"report":step["report"],step_code+"_counts":step["counts"],
+       "current_source_pins":step.get("source_pins",[]),
+       "source_pin_scope":"Historical Part1 pin; current increment pins are listed separately in current_source_pins.",
+       "donor_status":"ACTIVE_INCOMPLETE","DIM_Profile_adopted":False})
+    m["workbookSnapshot"].update({"validation_file":fn+"#/"+step_code+"/saved_verification",
+       "refreshed_cell_count":len(changes)})
     step["source_to_master_changes"]=changes
     step["status"]="COMPLETE_AT_SELECTED_PINNED_ORIGINAL_SOURCE_SCOPE__DONOR_ACTIVE_INCOMPLETE"
     led["status"]=step_code+"_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE"
@@ -4429,6 +4437,9 @@ def publish_aas07():
 def publish_aas08():
     return publish_aas_qualified("AAS08","AAS07")
 
+def publish_aas09():
+    return publish_aas_qualified("AAS09","AAS08")
+
 def verify_aas_saved(step="AAS03"):
     """Read-only verification of the already authored AAS workbook checkpoint.
 
@@ -4442,6 +4453,10 @@ def verify_aas_saved(step="AAS03"):
     a=ledger[step]; proof=a["saved_verification"]; counts=a["counts"]
     def need(ok,why):
         if not ok:raise AssertionError(step+" saved checkpoint: "+why)
+    if step=="AAS09":
+        need(m["nextOwnerAction"]==a["next"] and m["AASEvidence"]["report"]==a["report"]
+             and m["workbookSnapshot"]["validation_file"].endswith("#/AAS09/saved_verification"),
+             "current recovery metadata agrees with saved checkpoint")
     prefix="Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/"
     baseline=json.loads(check_output(["git","show",a["preflight_head"]+":"+prefix+MASTER]))
     oldbytes=check_output(["git","show",a["preflight_head"]+":"+prefix+BOOK])
@@ -4521,7 +4536,9 @@ def verify_aas_saved(step="AAS03"):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS08",{}).get("status")=="PINNED_COMPANION_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING":
+    if checkpoint=="AAS08_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS09",{}).get("status")=="PINNED_TEMPLATE_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING":
+        publish_aas09()
+    elif checkpoint=="AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS08",{}).get("status")=="PINNED_COMPANION_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING":
         publish_aas08()
     elif checkpoint=="AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS07",{}).get("status")=="PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING":
         publish_aas07()
@@ -4529,7 +4546,7 @@ if __name__=="__main__":
         publish_aas06()
     elif checkpoint=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS05",{}).get("status")=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING":
         publish_aas05()
-    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS08_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
+    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS08_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS09_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
         verify_aas_saved(checkpoint.split("_")[0])
     elif checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
         print("AAS02 G already published; no workbook mutation")

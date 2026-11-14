@@ -1,3 +1,15 @@
+# L96 — Preserve template meaning, edition and evidence limits (AAS09, 14 November 2026)
+
+Industrial application templates are not additional universal chassis votes. Asset hierarchy may describe design/type/lifecycle structures; aspect relationships and capability composition do not automatically mean installed physical composition. Technical-data presentation groups do not supply semantic equivalence or property completeness, and required/offered capability roles do not establish live readiness or issued commands. Keep the original case distinctions and owner adoption gates.
+
+Inspect native files when the PDF names them as definitive, and record exactly which fields were inspected. Here 129 template element occurrences were compared across selected JSON/AASX fields; that does not mean every translation, package payload, constraint or patch artifact was read. Preserve publisher PDF variants, contradictory prose/cardinalities, synthetic identifiers and unavailable named examples at their actual standing. [AAS09 findings](AAS09_Industrial_Submodel_Templates_14NOV2026.md) and the existing ledger retain those limits.
+
+Current recovery metadata needs the same checkpoint as the actual saved master. AAS09 found current next/report/validation pointers still naming AAS04/AAS05; those fields now match the saved evidence, and the existing publisher/checker maintains that linkage. Historical counts and pins remain explicitly historical. Checks prove saved consistency, never original-source completeness.
+
+**ONE NEXT: AAS10 coverage-gate assessment on a separate owner Proceed; no automatic donor closeout or transition.**
+
+---
+
 # L95 — Keep definition, quantity, policy and package evidence separate (AAS08, 14 November 2026)
 
 Original IDTA Part 3a v3.1.1 describes property/value semantics, while Part 3b v3.0 adds unit and quantity definitions with dictionary/version context. A semantic datatype is not automatically its encoded datatype; matching units do not establish matching quantities, and dictionary-derived units are not measured values. Part 4 v3.1 describes policy, authenticated attributes, visibility and accountability, while explicitly leaving secure asset binding unresolved. Part 5 v3.2 organizes serialized files and supplementary resources; its logical/physical package model must not become equipment composition or event provenance by analogy.
