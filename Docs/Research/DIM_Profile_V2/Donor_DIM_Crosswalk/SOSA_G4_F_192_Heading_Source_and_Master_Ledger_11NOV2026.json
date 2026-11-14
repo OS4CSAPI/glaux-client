@@ -8054,5 +8054,2268 @@
       },
       "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained."
     }
+  },
+  "F3_04C_classification_review": {
+    "date": "2026-11-14",
+    "status": "SOURCE_DECISIONS_PUBLISHED__STOP_AT_CURRENT_STAGE",
+    "authorized_step": "F3-04C only: 21 topic05–07 evidence/message/case comparisons and relevant prior-decision calibration",
+    "baseline_commit": "82417e8663c54e706e93987ae06f2a04827dd612",
+    "archive_branch": "archive/dim-crosswalk-pre-f3-04c-20261114",
+    "original_source_access": [
+      {
+        "original_filename": "c239_5(1).pdf",
+        "publisher": "The Open Group",
+        "edition": "C239 Edition1.1 June2023 September erratum",
+        "sha256": "8c5adc9c28a686ece8ac50ce6c6738de7aa6c7785803adc4bb3457693a3e74ed",
+        "access": "OWNER_PROJECT_ORIGINAL_RETRIEVED_AND_HASH_MATCHED",
+        "standing": "Original source; 2022 companions not established as exact C239 2023 attached bytes."
+      },
+      {
+        "original_filename": "sosa_techstd_v1_dsdm(1).pdf",
+        "publisher": "The Open Group",
+        "edition": "DSDM Edition1.0 April2022",
+        "sha256": "35fe3e9aeb3bc3316a43592782fc686254b6583565d0cc43f000d28374ef39f7",
+        "access": "OWNER_PROJECT_ORIGINAL_RETRIEVED_AND_HASH_MATCHED",
+        "standing": "Original source; 2022 companions not established as exact C239 2023 attached bytes."
+      },
+      {
+        "original_filename": "sosa_techstd_v1_dsdm_idl(1).zip",
+        "publisher": "The Open Group",
+        "edition": "v1 2022 IDL lineage",
+        "sha256": "ef53831fc246a8af72d217c83d63d507972e237443254342927f7a0257ae85cc",
+        "access": "OWNER_PROJECT_ORIGINAL_RETRIEVED_AND_HASH_MATCHED",
+        "standing": "Original source; 2022 companions not established as exact C239 2023 attached bytes."
+      }
+    ],
+    "coverage": {
+      "method": "Targeted rereading of actual source passages and seven native declaration files; stable IDs and exact page locators retained. Original case observations were not re-collected or re-audited; existing case-evidence holds were carried forward and only SOSA comparison meanings were dispositioned.",
+      "C239_text_pages_read": [
+        46,
+        47,
+        48,
+        71,
+        72,
+        83,
+        84,
+        121,
+        122,
+        128,
+        129,
+        131,
+        132,
+        133,
+        141,
+        142,
+        143,
+        144,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        187,
+        229,
+        230,
+        249,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        382,
+        383,
+        385,
+        386
+      ],
+      "DSDM_text_pages_read": [
+        13,
+        15,
+        16,
+        33,
+        34,
+        35,
+        36,
+        81,
+        82,
+        138,
+        139,
+        141,
+        142,
+        144,
+        149
+      ],
+      "page_read_scope": "Selected original paragraphs/tables and contextual content, not exhaustive every-clause or every-figure coverage. PDF133 only the P6 continuation and module-management introduction; PDF230 only CoV continuation supports a decision. PDF185 security-key material was contextual, not cached-authorization evidence; the latter was read at PDF187.",
+      "C239_selected_table_pixel_review": "PDF376 Priority prose and Table15.3-1: writer subject, default0, unspecified X, deadline units and history-depth row alignment checked. Not an audit of all QoS implementation or architecture figures.",
+      "IDL_files_fully_read": [
+        "Message_Info.idl",
+        "UniqueIdentifier_Type.idl",
+        "LogEvent_Info.idl",
+        "SensorComponent_Info.idl",
+        "ComponentStatus_Info.idl",
+        "Fault_Info.idl",
+        "UTCTimeSeconds_Type.idl"
+      ],
+      "IDL_context_only_files": [
+        "SensorComponent_Info.idl",
+        "ComponentStatus_Info.idl",
+        "Fault_Info.idl"
+      ],
+      "decision_support_C239_pages": [
+        46,
+        47,
+        48,
+        71,
+        72,
+        83,
+        84,
+        121,
+        122,
+        128,
+        131,
+        132,
+        133,
+        141,
+        142,
+        144,
+        180,
+        181,
+        182,
+        183,
+        184,
+        187,
+        229,
+        230,
+        249,
+        374,
+        375,
+        376,
+        377,
+        378,
+        380,
+        383,
+        385,
+        386
+      ],
+      "decision_support_DSDM_pages": [
+        13,
+        15,
+        16,
+        33,
+        34,
+        82,
+        138,
+        139,
+        144
+      ],
+      "unique_existing_source_ids": 53,
+      "new_clause_audit_count": 0,
+      "not_reviewed": "Exact 2023 native attachments; full referenced RFC/DDS/FACE/VITA/transport/security standards; IDL compilation; unlisted originals and complete figure/pin matrices; new case observations and runtime conformance. A failed guessed UTC_Time_Type filename was not evidence of absence; the actual UTCTimeSeconds_Type member was read."
+    },
+    "initial_21_status_counts": {
+      "SPECIALIZED_CANDIDATE": 3,
+      "MIXED_OR_HELD": 14,
+      "COMMON_CANDIDATE": 4
+    },
+    "calibration_change_status_counts": {},
+    "records": [
+      {
+        "decision_id": "F3-04C-S06-R021",
+        "row_id": "S06-R021",
+        "cell": "J220",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Source-qualified assertion (proposed DIM)",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "NARROWER/PARTIAL",
+        "before": "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
+        "after": "[SPECIALIZED CANDIDATE] NARROWER/PARTIAL: C239 requires vendor documentation identifying the vendor and covered products and declaring memory characteristics and protection. This supports optional vendor-attributed source assertions. It does not define a generic assertion object with issuer/edition/locator/evidence-grade fields, authenticate the claims or establish installed-case facts. [F3-04C-S06-R021]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-6A-COV_FIELD-001",
+          "SOSA-C239-G2-6A-COV_FIELD-002",
+          "SOSA-C239-G2-6A-COV_FIELD-009"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-C239-G2-5-RULE-12.2.2.5-1",
+          "SOSA-C239-G2-6A-COV_FIELD-001",
+          "SOSA-C239-G2-6A-COV_FIELD-009",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-certification-after-grace",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-post-removal-18-month-grace",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-removal-date-determined-by-consortium",
+          "SOSA-C239-G2-7A-SOURCE_CONTEXT-SOSA_PROTOCOL_DOWNSELECTION",
+          "SOSA-C239-G2-7A-TABLE-13.3.2-2",
+          "SOSA-C239-G2-7B-ANALYTICAL_CONTEXT-SOURCE_COMBOS_NOT_CARTESIAN",
+          "SOSA-C239-G2-7B-TABLE-13.3.3-6",
+          "SOSA-C239-G2-7C-SOURCE_CONTEXT-EXAMPLE_LIMIT_AND_LEGACY_LEGEND",
+          "SOSA-C239-G2-7C-TABLE-13.3.4-3",
+          "SOSA-C239-G2-7D-SOURCE_CONTEXT-WRONG_EXAMPLE_CROSS_REFERENCE",
+          "SOSA-C239-G2-7D-TABLE-13_3_5_2",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-ANS_REUSE_ACROSS_DASH",
+          "SOSA-C239-G2-7E-TABLE-13_3_6_1",
+          "SOSA-C239-G2-7F-OBSERVATION-13_3_7_1",
+          "SOSA-C239-G2-7F-PERMISSION-13_3_7_1",
+          "SOSA-C239-G2-7F-RULE-13_3_7_1",
+          "SOSA-C239-G2-7F-RULE-13_3_7_2",
+          "SOSA-C239-G2-7F-RULE-13_3_7_3",
+          "SOSA-C239-G2-7F-RULE-13_3_7_4",
+          "SOSA-C239-G2-7G-RECOMMENDATION-13_3_8_2_1",
+          "SOSA-C239-G2-7G-RULE-13_3_8_1_1",
+          "SOSA-C239-G2-7G-RULE-13_3_8_2_2",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-TABLE_POINTER_INCONSISTENCY",
+          "SOSA-C239-G2-7H-CONTEXT-future",
+          "SOSA-C239-G2-7H-CONTEXT-normativity",
+          "SOSA-C239-G2-7I-OBSERVATION-13_5_2_2_1_2",
+          "SOSA-C239-G2-7I-RULE-13_5_2_1_11",
+          "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_3",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_3",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_4",
+          "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+          "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-6A-COV_FIELD-002"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-6A-COV_FIELD-001",
+            "source_ledger": "SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "Rule 13.2.10-2; PDF229",
+            "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION"
+          },
+          {
+            "id": "SOSA-C239-G2-6A-COV_FIELD-002",
+            "source_ledger": "SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "Rule 13.2.10-2; PDF229",
+            "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION"
+          },
+          {
+            "id": "SOSA-C239-G2-6A-COV_FIELD-009",
+            "source_ledger": "SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "Rule 13.2.10-2; PDF229",
+            "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION"
+          }
+        ],
+        "additional_exact_passage_locators": [
+          "C239 §13.2.10 Rules1–2 and Observations1–3, PDF229; volatile-memory statement continues at PDF230."
+        ],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            229,
+            230
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 requires vendor documentation identifying the vendor and covered products and declaring memory characteristics and protection. This supports optional vendor-attributed source assertions. It does not define a generic assertion object with issuer/edition/locator/evidence-grade fields, authenticate the claims or establish installed-case facts.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-S06-R022",
+        "row_id": "S06-R022",
+        "cell": "J221",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Original event and derived digital representation (proposed DIM)",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
+        "after": "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products",
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-1",
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Detection",
+          "SOSA-C239-G2-7T-DEF-Information_Products"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Data_Products",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p385/403 printed p359",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Information_Products",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p385/403 printed p359",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.6, Permission 12.2.2.6-1; PDF184",
+            "standing": "PERMISSION_MAY"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            183,
+            184,
+            385
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-MESSAGE-ID",
+        "row_id": "ISA-T-MESSAGE-ID",
+        "cell": "J223",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Conversation-scoped message identifier",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "before": "NO_ESTABLISHED: C239 §15 intermodule operation parameters do not establish an ISA conversation-scoped message identifier or correlation contract. [G2-7S]",
+        "after": "[COMMON CANDIDATE] PARTIAL: The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-MESSAGE-ID]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:UniqueIdentifier_Type.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-7S-INTERACTION-Request_Response"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:UniqueIdentifier_Type.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.1",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.1, Message Headers, PDF138",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.62",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.62, LogDataLogEntry, PDF33",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-IDL:Message_Info.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/Message_Info.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          },
+          {
+            "id": "SOSA-V1-IDL:UniqueIdentifier_Type.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/UniqueIdentifier_Type.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          },
+          {
+            "id": "SOSA-V1-IDL:LogEvent_Info.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/LogEvent_Info.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [],
+          "DSDM_2022_PDF_pages": [
+            33,
+            34,
+            138,
+            139,
+            144
+          ],
+          "IDL_2022_files": [
+            "Message_Info.idl",
+            "UniqueIdentifier_Type.idl",
+            "LogEvent_Info.idl"
+          ],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-PRIORITY",
+        "row_id": "ISA-T-PRIORITY",
+        "cell": "J224",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Message priority",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "before": "RELATED, not equivalent: C239 §15 QoS writer priority uses source default 0 and [0,X] with X unspecified; this is transport-writer policy, not ISA message priority. [G2-7S]",
+        "after": "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Priority",
+          "SOSA-V1-DSDM-1.1.3.63",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-7S-QOS-Priority"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-V1-DSDM-1.1.3.63",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7S-QOS-Priority",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.3 Priority, prose PDF374–376 and Table15.3-1 PDF376–377",
+            "standing": "SOURCE_QOS_NOMENCLATURE__IMPLEMENTATION_DEFERRED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.63",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.63, LogEntry, PDF34",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            374,
+            376,
+            377
+          ],
+          "DSDM_2022_PDF_pages": [
+            34,
+            144
+          ],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-VALIDITY",
+        "row_id": "ISA-T-VALIDITY",
+        "cell": "J225",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Message-data validity expiry",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "before": "RELATED/NO_ESTABLISHED: C239 §12 cached authorization is policy-validity, while §15 QoS deadline specifies expected update interval—not message-data expiry or a generic ISA payload-validity contract. [G2-5/G2-7S]",
+        "after": "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Deadline is an expected update interval, and cached authorization is usable while an access decision remains valid. Neither defines an instant after which message payload data becomes invalid. Keep data-expiry equivalence held; no retention, deletion or observation-time rule is inferred. [F3-04C-ISA-T-VALIDITY]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Deadline",
+          "SOSA-C239-G2-5-OBSERVATION-12.2.5-1",
+          "SOSA-C239-G2-5-RULE-12.2.5-1"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-OBSERVATION-12.2.5-1",
+          "SOSA-C239-G2-5-RULE-12.2.5-1",
+          "SOSA-C239-G2-7S-QOS-Deadline"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7S-QOS-Deadline",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.3 Deadline, prose PDF374–376 and Table15.3-1 PDF376–377",
+            "standing": "SOURCE_QOS_NOMENCLATURE__IMPLEMENTATION_DEFERRED"
+          },
+          {
+            "id": "SOSA-C239-G2-5-OBSERVATION-12.2.5-1",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 Observation 12.2.5-1; PDF187",
+            "standing": "OBSERVATION_SOURCE"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.5-1",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.5, Rule 12.2.5-1; PDF187",
+            "standing": "RULE_SHALL"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            187,
+            374,
+            375
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 QoS Deadline is an expected update interval, and cached authorization is usable while an access decision remains valid. Neither defines an instant after which message payload data becomes invalid. Keep data-expiry equivalence held; no retention, deletion or observation-time rule is inferred.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-SENT-TIME",
+        "row_id": "ISA-T-SENT-TIME",
+        "cell": "J227",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Exchange transmission time",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
+        "after": "[HELD] RELATED/NO_ESTABLISHED: C239 defines an update deadline and UTC/uptime for audit events; the 2022 LogEvent timestamp comes from LogEntry.time, while Message_Info contains id and optional status. These reviewed fields do not establish the instant a message was transmitted. Preserve the log timestamp and clock basis; hold send-time equivalence. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-SENT-TIME]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Deadline",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-7S-QOS-Deadline"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7S-QOS-Deadline",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.3 Deadline, prose PDF374–376 and Table15.3-1 PDF376–377",
+            "standing": "SOURCE_QOS_NOMENCLATURE__IMPLEMENTATION_DEFERRED"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-2; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-3; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.1",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.1, Message Headers, PDF138",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-IDL:Message_Info.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/Message_Info.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          },
+          {
+            "id": "SOSA-V1-IDL:LogEvent_Info.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/LogEvent_Info.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            182,
+            375
+          ],
+          "DSDM_2022_PDF_pages": [
+            138,
+            139,
+            144
+          ],
+          "IDL_2022_files": [
+            "Message_Info.idl",
+            "LogEvent_Info.idl"
+          ],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 defines an update deadline and UTC/uptime for audit events; the 2022 LogEvent timestamp comes from LogEntry.time, while Message_Info contains id and optional status. These reviewed fields do not establish the instant a message was transmitted. Preserve the log timestamp and clock basis; hold send-time equivalence.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-ADMIN",
+        "row_id": "ISA-T-ADMIN",
+        "cell": "J228",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Administrative network and service notification",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "before": "RELATED only: C239 §6.2.2.1 Fault/Status/State/Mode/Configuration and notifyModeCallback notices, §12 audit changes, §15 event/heartbeat, and PSC reset/UART describe distinct event, logging or hardware service roles. They do not establish an ISA administrative network/service message schema, deployed subscription or proven remote effect. [SOSA-D/G2-2/G2-5/G2-6A/G2-7S/G2-7T]",
+        "after": "[COMMON CANDIDATE] PARTIAL: C239 management interfaces publish fault, status, state, mode and configuration change notifications with component software-instance attribution. This supports qualified administrative-condition notification information. It does not establish ISA device-added/removed codes, a sensing observation, installed subscriptions or verified delivery and physical effect. [F3-04C-ISA-T-ADMIN]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-TOC-6.2.2",
+          "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+          "SOSA-C239-G2-7T-DEF-Notification"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-2-CMI-014",
+          "SOSA-C239-G2-2-SSI-013",
+          "SOSA-C239-G2-5-RULE-12.2.2.5-1",
+          "SOSA-C239-G2-5-RULE-12.2.6-3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.5-8",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+          "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+          "SOSA-C239-G2-7T-DEF-Heartbeat",
+          "SOSA-C239-G2-7T-DEF-Notification"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-TOC-6.2.2"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-TOC-6.2.2",
+            "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json",
+            "locator": "C239 §6.2.2 In-Band System Management Syslog Event Notifications; original heading PDF71; directly reread passages/pages specified for this decision",
+            "standing": "EXISTING_SECTION_ID_WITH_TARGETED_ORIGINAL_PASSAGE_REVIEW__NOT_COMPLETE_CLAUSE_AUDIT"
+          },
+          {
+            "id": "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.6.4 interaction definition, PDF382–383",
+            "standing": "DESCRIPTIVE_INTERACTION_PATTERN__IMPLEMENTATION_LIMITS_RETAINED"
+          },
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Notification",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p386/403 printed p360",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          }
+        ],
+        "additional_exact_passage_locators": [
+          "C239 §6.2.2.1 Rules1–12, PDF71–72: event categories, destinations and APP-NAME attribution; §15.6.4 event-notification prose PDF383."
+        ],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            71,
+            72,
+            383,
+            386
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 management interfaces publish fault, status, state, mode and configuration change notifications with component software-instance attribution. This supports qualified administrative-condition notification information. It does not establish ISA device-added/removed codes, a sensing observation, installed subscriptions or verified delivery and physical effect.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-T-AUTHOR",
+        "row_id": "ISA-T-AUTHOR",
+        "cell": "J229",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Message author or registration announcer",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "before": "RELATED/NO_ESTABLISHED: C239 §15 publisher is a transport source and an Appendix A Audit Event may be module-generated; neither establishes a cryptographically authenticated original author or ISA registration announcer. [G2-7S/G2-7T]",
+        "after": "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 management notifications name the component software instance in APP-NAME. The 2022 ComponentLogEntry relation associates log entries with the component that produced them, and LogEvent_Info carries its identifier/type. This supports qualified source attribution. A relay or network sender is not automatically that producer; authentication and ISA registration exceptions remain unestablished. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-AUTHOR]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-TOC-6.2.2",
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-7S-ROLE-Publish_Subscribe",
+          "SOSA-C239-G2-7T-DEF-Audit_Event"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-TOC-6.2.2",
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-TOC-6.2.2",
+            "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json",
+            "locator": "C239 §6.2.2 In-Band System Management Syslog Event Notifications; original heading PDF71; directly reread passages/pages specified for this decision",
+            "standing": "EXISTING_SECTION_ID_WITH_TARGETED_ORIGINAL_PASSAGE_REVIEW__NOT_COMPLETE_CLAUSE_AUDIT"
+          },
+          {
+            "id": "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 Table12.2.2.1-1; PDF180",
+            "standing": "ORIGINAL_DEFINITION"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.20",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.20, ComponentLogEntry, PDF15",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-IDL:LogEvent_Info.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/LogEvent_Info.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          }
+        ],
+        "additional_exact_passage_locators": [
+          "C239 Rule6.2.2.1-11, PDF72, software-instance APP-NAME; §12.2.2.1–3 producer/relay/trust distinctions, PDF180–182."
+        ],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            71,
+            72,
+            180,
+            181,
+            182
+          ],
+          "DSDM_2022_PDF_pages": [
+            15,
+            16,
+            144
+          ],
+          "IDL_2022_files": [
+            "LogEvent_Info.idl"
+          ],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 management notifications name the component software instance in APP-NAME. The 2022 ComponentLogEntry relation associates log entries with the component that produced them, and LogEvent_Info carries its identifier/type. This supports qualified source attribution. A relay or network sender is not automatically that producer; authentication and ISA registration exceptions remain unestablished.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-R-MESSAGE-REFERENCE",
+        "row_id": "ISA-R-MESSAGE-REFERENCE",
+        "cell": "J230",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Source-message reference for provenance",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
+        "after": "[HELD] RELATED/NO_ESTABLISHED: C239 permits forwarding audit events, and the 2022 model links log entries to producing components and loggable data. Those relations do not declare a reference to an earlier source message retaining author, message identity, type and time. Hold this provenance-reference mapping; message IDs and source attribution remain useful in their separate rows. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-R-MESSAGE-REFERENCE]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+          "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Context"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.6, Permission 12.2.2.6-1; PDF184",
+            "standing": "PERMISSION_MAY"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.20",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.20, ComponentLogEntry, PDF15",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.62",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.62, LogDataLogEntry, PDF33",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.1",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.1, Message Headers, PDF138",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            180,
+            181,
+            183,
+            184
+          ],
+          "DSDM_2022_PDF_pages": [
+            15,
+            16,
+            33,
+            34,
+            138,
+            139,
+            144
+          ],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 permits forwarding audit events, and the 2022 model links log entries to producing components and loggable data. Those relations do not declare a reference to an earlier source message retaining author, message identity, type and time. Hold this provenance-reference mapping; message IDs and source attribution remain useful in their separate rows.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-A-EXTENSION-STANDING",
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "cell": "J236",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Extension standing and standardization context",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED/PARTIAL",
+        "before": "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
+        "after": "[SPECIALIZED CANDIDATE] RELATED/PARTIAL: C239 Legacy marks a hardware profile intended for removal in a future edition; removal date is determined by the Consortium, followed by an 18-month certification-submission grace period. This supports optional source-standard lifecycle standing. It is not ISA Custom/Nominated/Accepted progression, a verified present-day removal date or vendor equipment retirement. [F3-04C-ISA-A-EXTENSION-STANDING]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-removal-date-determined-by-consortium",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-post-removal-18-month-grace",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-certification-after-grace",
+          "SOSA-C239-G2-7T-DEF-Legacy"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-6A-RULE-13.2.9-1",
+          "SOSA-C239-G2-6A-RULE-13.2.9-2",
+          "SOSA-C239-G2-6B-DASH-13.2.11.5-2-1",
+          "SOSA-C239-G2-6B-TABLE-13.2.11.5-2",
+          "SOSA-C239-G2-6C-DASH-13.2.12.1-1-1",
+          "SOSA-C239-G2-6C-DASH-13.2.12.1-1-3",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-removal-date-determined-by-consortium",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-XMC_TYPE_B_OVERLAY_SOSA_ONLY-XB3",
+          "SOSA-C239-G2-7A-SOURCE_CONTEXT-SOSA_ADDITIONAL_EXTENSION_FIELDS",
+          "SOSA-C239-G2-7B-DCP_SUPPORTED-F2C",
+          "SOSA-C239-G2-7B-DCP_SUPPORTED-S2E",
+          "SOSA-C239-G2-7B-SOURCE_CONTEXT-AMPS_AND_ANS_NATIVE_DETAIL",
+          "SOSA-C239-G2-7C-DASH_OPTION-3U-PAYLOAD_FULL_P-1",
+          "SOSA-C239-G2-7C-DASH_OPTION-6U-PAYLOAD_P5_XMC-1",
+          "SOSA-C239-G2-7D-SOURCE_CONTEXT-ANS_EXTERNAL_DEFINITION",
+          "SOSA-C239-G2-7D-SOURCE_CONTEXT-FRONT_PANEL_OPTICAL_SUFFIX",
+          "SOSA-C239-G2-7F-PERMISSION-13_3_7_1",
+          "SOSA-C239-G2-7G-RULE-13_3_8_1_1",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-FUTURE_ALL_SLOT_PROFILES",
+          "SOSA-C239-G2-7H-CONTEXT-future",
+          "SOSA-C239-G2-7H-OBSERVATION-future",
+          "SOSA-C239-G2-7I-CONTEXT-future"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-post-removal-18-month-grace",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-certification-after-grace",
+          "SOSA-C239-G2-7T-DEF-Legacy"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+            "source_ledger": "SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§13.2.13; PDF249",
+            "standing": "SOURCE_DEFINITION_AND_PROCESS_DESCRIPTION"
+          },
+          {
+            "id": "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-removal-date-determined-by-consortium",
+            "source_ledger": "SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§13.2.13; PDF249",
+            "standing": "SOURCE_FUTURE_PROCESS_DESCRIPTION_NOT_A_DATED_CERTIFICATION_EVENT"
+          },
+          {
+            "id": "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-post-removal-18-month-grace",
+            "source_ledger": "SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§13.2.13; PDF249",
+            "standing": "SOURCE_NARRATIVE_CONDITIONAL_SHALL_NOT_NUMBERED_RULE"
+          },
+          {
+            "id": "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-certification-after-grace",
+            "source_ledger": "SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§13.2.13; PDF249",
+            "standing": "SOURCE_NARRATIVE_CONDITIONAL_SHALL_NOT_NUMBERED_RULE"
+          },
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Legacy",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p386/403 printed p360",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            249,
+            386
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 Legacy marks a hardware profile intended for removal in a future edition; removal date is determined by the Consortium, followed by an 18-month certification-submission grace period. This supports optional source-standard lifecycle standing. It is not ISA Custom/Nominated/Accepted progression, a verified present-day removal date or vendor equipment retirement.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-A-CONNECTION-PRESENTATION",
+        "row_id": "ISA-A-CONNECTION-PRESENTATION",
+        "cell": "J237",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Negotiated message encoding and model version",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "before": "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7S-RULE-15_4_2"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-001",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-002",
+          "SOSA-C239-G2-4B-RF_INTERACTION-074",
+          "SOSA-C239-G2-4B-RF_INTERACTION-075",
+          "SOSA-C239-G2-4B-RF_INTERACTION-076",
+          "SOSA-C239-G2-5-HOST_INTERACTION-010",
+          "SOSA-C239-G2-5-HOST_IO_ENTITY-018",
+          "SOSA-C239-G2-6A-RULE-13.2.4.4-1",
+          "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-001",
+          "SOSA-C239-G2-6B-RULE-13.2.11-1",
+          "SOSA-C239-G2-6C-RULE-13.2.12-1",
+          "SOSA-C239-G2-6C-RULE_OPTION-13.2.12-1-3",
+          "SOSA-C239-G2-6D-ANALYTICAL_CONTEXT-005",
+          "SOSA-C239-G2-6D-RULE-13.2.13.1-2",
+          "SOSA-C239-G2-6D-RULE-13.2.13.2-3",
+          "SOSA-C239-G2-7A-DEFINITION-AMPS_STRING",
+          "SOSA-C239-G2-7A-DEFINITION-ANS",
+          "SOSA-C239-G2-7A-SOURCE_CONTEXT-CONFIGURABLE_VS_AUTONEGOTIATE_SEPARATORS",
+          "SOSA-C239-G2-7B-FIGURE-13.3.3-1",
+          "SOSA-C239-G2-7B-PARAMETER-cLkm",
+          "SOSA-C239-G2-7B-PARAMETER-j",
+          "SOSA-C239-G2-7C-SOURCE_CONTEXT-COPPER_PARENTHESES",
+          "SOSA-C239-G2-7C-SOURCE_CONTEXT-OPTICAL_BRACKETS",
+          "SOSA-C239-G2-7C-SOURCE_CONTEXT-SOSA_RF_XMC_ANGLE_FIELDS",
+          "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-DP_SWITCH_V66",
+          "SOSA-C239-G2-7D-SOURCE_CONTEXT-FRONT_PANEL_OPTICAL_SUFFIX",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-BACKPLANE_OPTICAL_BRACKETS",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-PER_MT_FIELDS_WHEN_DIFFERENT_OR_SKIPPED",
+          "SOSA-C239-G2-7F-RULE-13_3_7_2",
+          "SOSA-C239-G2-7F-TABLE_REFERENCE-PAYLOAD_3U",
+          "SOSA-C239-G2-7F-TABLE_REFERENCE-SWITCH_3U_6U",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-RF_PINOUT_AMPS_FIELD",
+          "SOSA-C239-G2-7H-TABLE-19",
+          "SOSA-C239-G2-7H-TABLE-32",
+          "SOSA-C239-G2-7H-TABLE-39",
+          "SOSA-C239-G2-7I-CONTEXT-keying",
+          "SOSA-C239-G2-7J-OBSERVATION-13_5_2_3_1",
+          "SOSA-C239-G2-7J-SOURCE_CONTEXT-femaleMale",
+          "SOSA-C239-G2-7K-CONTEXT-FOUR_PAIRS_100_OHM",
+          "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2",
+          "SOSA-C239-G2-7L-RULE-13_5_2_4_3",
+          "SOSA-C239-G2-7L-RULE-13_5_2_5_4",
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_2_1",
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_3_1",
+          "SOSA-C239-G2-7N-RULE-13_5_2_15_4",
+          "SOSA-C239-G2-7N-RULE-13_5_2_16_4",
+          "SOSA-C239-G2-7P-RULE-13_5_3_8_2_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_8_3_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_3",
+          "SOSA-C239-G2-7R-OBSERVATION-14_2_1",
+          "SOSA-C239-G2-7R-RULE-14_4_1_1",
+          "SOSA-C239-G2-7R-RULE-14_5_1_1",
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7S-RULE-15_4_2"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7S-RULE-15_4_1",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023) §15.4, PDF378/403 (printed352)",
+            "standing": "RULE"
+          },
+          {
+            "id": "SOSA-C239-G2-7S-RULE-15_4_2",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023) §15.4, PDF378/403 (printed352)",
+            "standing": "RULE"
+          }
+        ],
+        "additional_exact_passage_locators": [
+          "C239 §15.4 definitions PDF377–378 and Table15.4-1, PDF378: definition/encoding/encapsulation/transport/network layers and binding version labels."
+        ],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            377,
+            378
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-ISA-A-TIME-BASIS",
+        "row_id": "ISA-A-TIME-BASIS",
+        "cell": "J239",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "Component time basis and synchronization",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "before": "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
+        "after": "[COMMON CANDIDATE] PARTIAL: C239 audit rules require UTC when available and uptime otherwise, and permit both. The 2022 DSDM defines a POSIX-epoch seconds time type. These support qualified time-reference information without identifying which instant an unrelated timestamp means, a deployed synchronization method, achieved clock accuracy or verified observation quality. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-A-TIME-BASIS]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-IDL:UTCTimeSeconds_Type.idl"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-REFERENCE_ONLY_MODULE-005",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-1",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-2",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-005",
+          "SOSA-C239-G2-6B-REFERENCE-13.2.11.5-7",
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-1",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-DIFFERENTIAL-G5",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-XMC_TYPE_B_OVERLAY_SOSA_ONLY-XB3",
+          "SOSA-C239-G2-7B-ANALYTICAL_CONTEXT-GRAMMAR_NOT_CSAPI_SCHEMA",
+          "SOSA-C239-G2-7B-PARAMETER-y",
+          "SOSA-C239-G2-7C-FULL_STRING_EXAMPLE-3U-RADIAL_CLOCK",
+          "SOSA-C239-G2-7C-PROFILE_FAMILY-3U-RADIAL_CLOCK",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_A1",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B2",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C3",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-RADIAL_CLOCK_LIMIT",
+          "SOSA-C239-G2-7H-TBD-13_4_2",
+          "SOSA-C239-G2-7H-TBD-13_4_7_6",
+          "SOSA-C239-G2-7I-CONNECTOR-J5",
+          "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS",
+          "SOSA-C239-G2-7L-RULE-13_5_2_3_9_1",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_8_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_17_1_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_4_1_3",
+          "SOSA-C239-G2-7R-OBSERVATION-14_5_1_2"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-IDL:UTCTimeSeconds_Type.idl"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-2; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-3; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-PERMISSION-12.2.2.3-3",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Permission 12.2.2.3-3; PDF182",
+            "standing": "PERMISSION_MAY"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.2.55",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.2.55, UTCTime_SecondsMeasurement, PDF82",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-IDL:UTCTimeSeconds_Type.idl",
+            "source_ledger": "SOSA_G3_N2_v1_IDL_File_Inventory_11NOV2026.json",
+            "locator": "2022 v1 IDL ZIP member SOSA_TechStd_v1_DSDM_IDL/UTCTimeSeconds_Type.idl",
+            "standing": "ORIGINAL_2022_NATIVE_DECLARATION__NOT_COMPILED_NOT_2023_BYTE_EQUIVALENCE"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            182
+          ],
+          "DSDM_2022_PDF_pages": [
+            82
+          ],
+          "IDL_2022_files": [
+            "UTCTimeSeconds_Type.idl"
+          ],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 audit rules require UTC when available and uptime otherwise, and permit both. The 2022 DSDM defines a POSIX-epoch seconds time type. These support qualified time-reference information without identifying which instant an unrelated timestamp means, a deployed synchronization method, achieved clock accuracy or verified observation quality.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H01",
+        "row_id": "CASE-H01",
+        "cell": "J241",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — service history",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "NO_ESTABLISHED real service history: C239 Legacy card/profile markers and RTE integration are design/standards context, not repair or replacement records. §15 event durability, audit collection and heartbeat are related transport/status features but establish no case maintenance chronology, queryable historical archive or retention guarantee. [G2-6D/G2-7C/G2-7R/G2-7S/G2-7T]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 permits audit records for maintenance operations and defines storage/delivery policies for published data. These are useful logging concepts, but they do not provide dated installation, repair or replacement records for any of the four cases. Keep the service-history case hold; Legacy profile status is not equipment service history. [F3-04C-CASE-H01]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.5-2",
+          "SOSA-C239-G2-7S-QOS-Durability",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-6D-ANALYTICAL_CONTEXT-001",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+          "SOSA-C239-G2-7C-ANALYTICAL_CONTEXT-LEGACY_ASTERISK_SCOPE",
+          "SOSA-C239-G2-7C-DASH_OPTION-3U-RADIAL_CLOCK-1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_4_1_5",
+          "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+          "SOSA-C239-G2-7S-QOS-Durability",
+          "SOSA-C239-G2-7T-DEF-Collector_Module",
+          "SOSA-C239-G2-7T-DEF-Heartbeat",
+          "SOSA-C239-G2-7T-DEF-Logging"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.5-2"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-5-PERMISSION-12.2.2.5-2",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.5, Permission 12.2.2.5-2; PDF183",
+            "standing": "PERMISSION_MAY"
+          },
+          {
+            "id": "SOSA-C239-G2-7S-QOS-Durability",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.3 Durability, prose PDF374–376 and Table15.3-1 PDF376–377",
+            "standing": "SOURCE_QOS_NOMENCLATURE__IMPLEMENTATION_DEFERRED"
+          },
+          {
+            "id": "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+            "source_ledger": "SOSA_G2_6D_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§13.2.13; PDF249",
+            "standing": "SOURCE_DEFINITION_AND_PROCESS_DESCRIPTION"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            183,
+            249,
+            374,
+            375
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 permits audit records for maintenance operations and defines storage/delivery policies for published data. These are useful logging concepts, but they do not provide dated installation, repair or replacement records for any of the four cases. Keep the service-history case hold; Legacy profile status is not equipment service history.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H02",
+        "row_id": "CASE-H02",
+        "cell": "J242",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — site / mounting",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED design only: C239 host/sensor-pod mounting, PIC/chassis/XMC/VITA slots, connector pitch/cooling, fiber/RF/optical apertures and optional turret/gimbal mechanics describe physical fit or attachment possibilities; selected original figure geometry remains held. None establishes an installed mount, cable location, specific station site or surveyed equipment position in the four cases. [G2-4A/G2-5/G2-6A–6D/G2-7B–7I/G2-7Q; source ledger]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 physical context distinguishes sensor hardware, its host and optional mounting relationships. That design description does not locate the individual equipment in our cases or establish a surveyed station, installation or mount. Keep the case hold; preserve the separate qualified physical-context candidates already recorded. [F3-04C-CASE-H02]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-004"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-004",
+          "SOSA-C239-G2-5-HOST_IO_ENTITY-024",
+          "SOSA-C239-G2-5-HOST_IO_ENTITY-025",
+          "SOSA-C239-G2-6A-RULE-13.2.4.2-9",
+          "SOSA-C239-G2-6A-RULE-13.2.4.6-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.1-1",
+          "SOSA-C239-G2-6B-RULE-13.2.11.1-2",
+          "SOSA-C239-G2-6C-FIGURE-13.2.12.1-2",
+          "SOSA-C239-G2-6C-RULE-13.2.12.1-1",
+          "SOSA-C239-G2-6D-FIGURE-Figure-13.2.13.1-1",
+          "SOSA-C239-G2-6D-FIGURE-Figure-13.2.13.2-1",
+          "SOSA-C239-G2-7B-DCP_SUPPORTED-F2C",
+          "SOSA-C239-G2-7B-DCP_SUPPORTED-S2E",
+          "SOSA-C239-G2-7C-PROFILE_FAMILY-6U-PAYLOAD_P5_V66",
+          "SOSA-C239-G2-7C-PROFILE_FAMILY-6U-PAYLOAD_P5_XMC",
+          "SOSA-C239-G2-7D-PROFILE_FAMILY-3U-DP_SWITCH_V66",
+          "SOSA-C239-G2-7D-PROFILE_FAMILY-6U-DP_SWITCH",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-DASH_LOCATION",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-DASH_OPTICAL_PROFILE",
+          "SOSA-C239-G2-7F-PERMISSION-13_3_7_1",
+          "SOSA-C239-G2-7F-RULE-13_3_7_1",
+          "SOSA-C239-G2-7G-FIGURE-13_3_8_2_2",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-SMPM14_FRONT_BACKPLANE_PERSPECTIVE",
+          "SOSA-C239-G2-7H-CONTEXT-developing",
+          "SOSA-C239-G2-7H-OBSERVATION-size",
+          "SOSA-C239-G2-7I-CONTEXT-turret",
+          "SOSA-C239-G2-7Q-RULE-13_5_5_2_1_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_5_6_1_1"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002",
+            "source_ledger": "SOSA_G2_4A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§4.1 SV-1; Figure4.1-1/2 and §4.1.1; PDF47",
+            "standing": "ORIGINAL_SOURCE_DEFINITION_OR_DESCRIPTIVE_CONTEXT"
+          },
+          {
+            "id": "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+            "source_ledger": "SOSA_G2_4A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§4.1 SV-1; Figure4.1-1/2 and §4.1.1; PDF47",
+            "standing": "ORIGINAL_SOURCE_DEFINITION_OR_DESCRIPTIVE_CONTEXT"
+          },
+          {
+            "id": "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-004",
+            "source_ledger": "SOSA_G2_4A_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "§4.1 SV-1; Figure4.1-1/2 and §4.1.1; PDF48",
+            "standing": "ORIGINAL_SOURCE_DEFINITION_OR_DESCRIPTIVE_CONTEXT"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            46,
+            47,
+            48
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 physical context distinguishes sensor hardware, its host and optional mounting relationships. That design description does not locate the individual equipment in our cases or establish a surveyed station, installation or mount. Keep the case hold; preserve the separate qualified physical-context candidates already recorded.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H03",
+        "row_id": "CASE-H03",
+        "cell": "J243",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — reporting path",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED architecture/NO_ESTABLISHED actual path: C239 §§4–5/11 describe possible reporting/processing roles, §12 audit SYSLOG and §15 event/stream interactions; §§13–14 Ethernet, RF, fiber, video, serial/optical connectors, AMPS profiles and RTE links are design-level transport options. None verifies actual Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or AirGradient reporting, live packets, or a CSAPI DataStream endpoint; a physical signal lane is not a proven source→reporter→client route. [SOSA-D/G2-4A/G2-4B/G2-5/G2-7K/G2-7R/G2-7S/G2-7T; full per-row packet evidence]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes producer, relay and collector roles and defines alternative message-interaction bindings. These describe possible reporting paths, not the actual Dragino, Campbell, Bennett or AirGradient route, cadence or endpoint. Keep the case hold; interface, address, transport and message stream remain different meanings. [F3-04C-CASE-H03]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-1",
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7S-ROLE-Publish_Subscribe"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-4A-MODULE_CATALOG-017",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-005",
+          "SOSA-C239-G2-4B-REFERENCE_FUNCTION-033",
+          "SOSA-C239-G2-4B-REFERENCE_MODULE-009",
+          "SOSA-C239-G2-5-HOST_IO_ENTITY-019",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-1",
+          "SOSA-C239-G2-6B-FIGURE-13.2.11.6-1",
+          "SOSA-C239-G2-6B-PERMISSION-13.2.11.4-3",
+          "SOSA-C239-G2-6C-ANALYTICAL_CONTEXT-003",
+          "SOSA-C239-G2-6C-FIGURE-13.2.12.2-1",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-COPPER_HIGH_SPEED_SERIAL-E2",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-OPTICAL_HIGH_SPEED_SERIAL-E11",
+          "SOSA-C239-G2-7B-EXAMPLE-T2-02",
+          "SOSA-C239-G2-7B-EXAMPLE-T2-05",
+          "SOSA-C239-G2-7C-FULL_STRING_EXAMPLE-3U-PAYLOAD_HALF_P",
+          "SOSA-C239-G2-7C-FULL_STRING_EXAMPLE-6U-PAYLOAD_P5_EP",
+          "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-DP_SWITCH_V66",
+          "SOSA-C239-G2-7D-PROFILE_FAMILY-3U-DP_SWITCH",
+          "SOSA-C239-G2-7E-PROTOCOL_FIELD_EXAMPLE-E18",
+          "SOSA-C239-G2-7E-PROTOCOL_FIELD_EXAMPLE-N_3E18_3A6F",
+          "SOSA-C239-G2-7F-RULE-13_3_7_3",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C2",
+          "SOSA-C239-G2-7G-SOURCE_CONTEXT-ANALOG_RF_IF_SCOPE_SMPM14",
+          "SOSA-C239-G2-7I-CONNECTOR-J2",
+          "SOSA-C239-G2-7J-SIGNAL_GROUP-ETHERNET",
+          "SOSA-C239-G2-7J-SIGNAL_GROUP-MIL1553",
+          "SOSA-C239-G2-7K-RULE-13_5_2_3_2_1",
+          "SOSA-C239-G2-7K-RULE-13_5_2_3_2_2",
+          "SOSA-C239-G2-7L-RULE-13_5_2_4_3",
+          "SOSA-C239-G2-7L-RULE-13_5_2_5_4",
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_2",
+          "SOSA-C239-G2-7M-RULE-13_5_2_9_3",
+          "SOSA-C239-G2-7N-RULE-13_5_2_17_1_2",
+          "SOSA-C239-G2-7N-RULE-13_5_2_18_2",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_2_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_3_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_4_3",
+          "SOSA-C239-G2-7P-RULE-13_5_3_5_3",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_4_1",
+          "SOSA-C239-G2-7R-RULE-14_4_2_2",
+          "SOSA-C239-G2-7R-RULE-14_5_2_2",
+          "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream",
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7T-DEF-Audit_Event",
+          "SOSA-C239-G2-7T-DEF-Collector_Module",
+          "SOSA-C239-G2-7T-DEF-Notification",
+          "SOSA-C239-G2-7T-DEF-Relay_Event"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-C239-G2-7S-ROLE-Publish_Subscribe"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 Table12.2.2.1-1; PDF180",
+            "standing": "ORIGINAL_DEFINITION"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-1",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-1; PDF181",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-7S-RULE-15_4_1",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023) §15.4, PDF378/403 (printed352)",
+            "standing": "RULE"
+          },
+          {
+            "id": "SOSA-C239-G2-7S-ROLE-Publish_Subscribe",
+            "source_ledger": "SOSA_G2_7S_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 §15.6.2 Table15.6.2-1 and endpoint-role prose, PDF380–381",
+            "standing": "DESCRIPTIVE_INTERACTION_ROLE_NOT_OBSERVED_PATH"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            180,
+            181,
+            377,
+            378,
+            380
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 distinguishes producer, relay and collector roles and defines alternative message-interaction bindings. These describe possible reporting paths, not the actual Dragino, Campbell, Bennett or AirGradient route, cadence or endpoint. Keep the case hold; interface, address, transport and message stream remain different meanings.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H04",
+        "row_id": "CASE-H04",
+        "cell": "J244",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — power / state",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED design, not observed power: C239 §6.3 auxiliary versus payload power, host/Power Module functions, and §13 PSC/card rails, enable logic, inrush, hold-up, ground and class-specific electrical limits concern possible equipment. State/Status describe lifecycle/performance rather than current charge, voltage, measured power or actual electrical conformance of any case device. [SOSA-D/G2-3/G2-5/G2-6A/G2-7L/G2-7N–7Q/G2-7T]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 separates management power from payload power and describes component state from the System Manager viewpoint. Neither design/state description supplies measured voltage, charge, battery condition or actual power configuration for a case device. Keep the case hold and distinguish available control from electrical state and inferred health. [F3-04C-CASE-H04]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT",
+          "SOSA-C239-G2-3-STATE-PIC-P0"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+          "SOSA-C239-G2-3-STATE-PIC-P0",
+          "SOSA-C239-G2-5-HOST_IO_ENTITY-022",
+          "SOSA-C239-G2-5-REFERENCE_ONLY_MODULE-007",
+          "SOSA-C239-G2-6A-RULE-13.2.3.1-5",
+          "SOSA-C239-G2-6A-TABLE-13.2.6.5-1",
+          "SOSA-C239-G2-7L-RULE-13_5_2_7_1_3",
+          "SOSA-C239-G2-7L-RULE-13_5_2_7_1_5",
+          "SOSA-C239-G2-7L-RULE-13_5_2_7_2_1",
+          "SOSA-C239-G2-7N-RULE-13_5_2_14_1_2",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_2_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_2_1_3",
+          "SOSA-C239-G2-7O-RULE-13_5_3_2_1_4",
+          "SOSA-C239-G2-7O-RULE-13_5_3_2_2_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_12_1_2",
+          "SOSA-C239-G2-7P-RULE-13_5_3_17_2_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_7_1_2",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_1_6",
+          "SOSA-C239-G2-7T-DEF-State",
+          "SOSA-C239-G2-7T-DEF-Status"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+            "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+            "locator": "C239 §6.3 ; PDF121",
+            "standing": "SOURCE_ARCHITECTURE_DESCRIPTION"
+          },
+          {
+            "id": "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT",
+            "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+            "locator": "C239 §6.5 ; PDF128",
+            "standing": "SOURCE_DEFINITION"
+          },
+          {
+            "id": "SOSA-C239-G2-3-STATE-PIC-P0",
+            "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+            "locator": "C239 §6.5.2 ; PDF131",
+            "standing": "SOURCE_DEFINED_OPERATIONAL_STATE__TRANSITION_POLICIES_NOT_NORMATIVELY_DEFINED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            121,
+            122,
+            128,
+            131
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 separates management power from payload power and describes component state from the System Manager viewpoint. Neither design/state description supplies measured voltage, charge, battery condition or actual power configuration for a case device. Keep the case hold and distinguish available control from electrical state and inferred health.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H05",
+        "row_id": "CASE-H05",
+        "cell": "J245",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — diagnostics",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED design, NO_ESTABLISHED case diagnostic: C239 §6.5 P6/M6 Lost Communication is not itself Faulted, and S0 Off may be unreported. PSC FAIL*/ENABLE*/INHIBIT* signaling and dormant-port examples do not establish an observed fault, verified health or real diagnostic event for the four cases. [SOSA-D/G2-3/G2-6A/G2-7B]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 provides built-in diagnostic requests/results and explicitly distinguishes Lost Communication from a known fault. These support diagnostic information but do not establish a diagnostic event or verified health for any case device. Keep the case hold; do not convert communication loss into equipment failure or environmental measurement. [F3-04C-CASE-H05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-013",
+          "SOSA-C239-G2-1-SMI-015",
+          "SOSA-C239-G2-3-STATE-PIC-P6"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-3-STATE-MODULE-M6",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-SENSOR-S0",
+          "SOSA-C239-G2-6A-RULE-13.2.6.5-9",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-4",
+          "SOSA-C239-G2-7B-ANALYTICAL_CONTEXT-DORMANT_NOT_ACTUAL_HEALTH",
+          "SOSA-C239-G2-7B-EXAMPLE-T2-06"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-1-SMI-013",
+          "SOSA-C239-G2-1-SMI-015"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-1-SMI-013",
+            "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+            "locator": "C239 §6.2.4.2 Table 6.2.4.2-1; PDF83",
+            "standing": "Edition labels as V1.0; exact native OpenAPI definition unread"
+          },
+          {
+            "id": "SOSA-C239-G2-1-SMI-015",
+            "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+            "locator": "C239 §6.2.4.2 Table 6.2.4.2-1; PDF83",
+            "standing": "Edition labels as V1.0; exact native OpenAPI definition unread"
+          },
+          {
+            "id": "SOSA-C239-G2-3-STATE-PIC-P6",
+            "source_ledger": "SOSA_G2_3_Original_Source_Item_Census_09NOV2026.json",
+            "locator": "C239 §6.5.2 ; PDF132",
+            "standing": "SOURCE_DEFINED_OPERATIONAL_STATE__TRANSITION_POLICIES_NOT_NORMATIVELY_DEFINED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            83,
+            132,
+            133
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 provides built-in diagnostic requests/results and explicitly distinguishes Lost Communication from a known fault. These support diagnostic information but do not establish a diagnostic event or verified health for any case device. Keep the case hold; do not convert communication loss into equipment failure or environmental measurement.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H06",
+        "row_id": "CASE-H06",
+        "cell": "J246",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — applied setting",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "NO_ESTABLISHED applied setting: C239 AMPS slot/dash, dcp, optical/RF protocol variants and conditional Rules/Recommendations describe hardware profile options, not case equipment configuration readback. Original sample discrepancies, source future/TBD options and hardwired enable/write circuits remain distinct from a selected runtime user setting. No case applied configuration verified. [G2-7B–7J; detailed source evidence]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 getMode and updateMode distinguish retrieval from requested change; the 2022 Component model declares mode separately from other characteristics. These contracts do not supply an applied case setting, effective time or setting history. Keep default, allowed value, request and actual readback separate and retain the case hold. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H06]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-032",
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-V1-DSDM-1.1.3.15"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-7B-DCP_SUPPORTED-F8H",
+          "SOSA-C239-G2-7B-PARAMETER-j",
+          "SOSA-C239-G2-7C-ANALYTICAL_CONTEXT-PRINTED_MODA3P_6U",
+          "SOSA-C239-G2-7C-FULL_STRING_EXAMPLE-6U-EXTERNAL_IO",
+          "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-3U-DP_SWITCH_V66",
+          "SOSA-C239-G2-7D-FULL_STRING_EXAMPLE-6U-DP_SWITCH",
+          "SOSA-C239-G2-7E-PROTOCOL_FIELD_EXAMPLE-4E18",
+          "SOSA-C239-G2-7E-SOURCE_CONTEXT-ANS_REUSE_ACROSS_DASH",
+          "SOSA-C239-G2-7F-OBSERVATION-13_3_7_1",
+          "SOSA-C239-G2-7F-RULE-13_3_7_4",
+          "SOSA-C239-G2-7G-OBSERVATION-13_3_8_2_1",
+          "SOSA-C239-G2-7G-RECOMMENDATION-13_3_8_2_1",
+          "SOSA-C239-G2-7H-TABLE-19",
+          "SOSA-C239-G2-7H-TABLE-32",
+          "SOSA-C239-G2-7H-TABLE-39",
+          "SOSA-C239-G2-7I-RULE-13_5_2_1_11",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2",
+          "SOSA-C239-G2-7J-SIGNAL_GROUP-MODE"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-1-SMI-032",
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-V1-DSDM-1.1.3.15"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-1-SMI-032",
+            "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+            "locator": "C239 §6.2.4.2 Table 6.2.4.2-1; PDF84",
+            "standing": "Edition labels as V1.0; exact native OpenAPI definition unread"
+          },
+          {
+            "id": "SOSA-C239-G2-1-SMI-034",
+            "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+            "locator": "C239 §6.2.4.2 Table 6.2.4.2-1; PDF84",
+            "standing": "Edition labels as V1.0; exact native OpenAPI definition unread"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.1.3.15",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.1.3.15, Component_, PDF13",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            84
+          ],
+          "DSDM_2022_PDF_pages": [
+            13
+          ],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 getMode and updateMode distinguish retrieval from requested change; the 2022 Component model declares mode separately from other characteristics. These contracts do not supply an applied case setting, effective time or setting history. Keep default, allowed value, request and actual readback separate and retain the case hold.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H07",
+        "row_id": "CASE-H07",
+        "cell": "J247",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — processing",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED design/NO_ESTABLISHED measured processing: C239 6U single-board-computer/FPGA examples and §14 RTE CPU/RAM/port provisioning describe potential compute architecture; §15 wideband streams and Appendix A raw versus processed products distinguish delivery stages. None proves performed case processing, CPU utilization, transformation lineage or observed runtime status. [G2-6C/G2-7R/G2-7S/G2-7T]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes raw/minimally processed Data Products from processed/reduced Information Products. These definitions do not record the transformation that produced a particular case value or establish its lineage and preserved referent. Keep the case hold; processing-stage descriptions are not proof of performed case processing. [F3-04C-CASE-H07]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-6C-ANALYTICAL_CONTEXT-002",
+          "SOSA-C239-G2-6C-OBSERVATION-13.2.12.1-1",
+          "SOSA-C239-G2-7R-RULE-14_2_4",
+          "SOSA-C239-G2-7R-RULE-14_4_3_4",
+          "SOSA-C239-G2-7R-RULE-14_5_3_4",
+          "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream",
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Data_Products",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p385/403 printed p359",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-7T-DEF-Information_Products",
+            "source_ledger": "SOSA_G2_7T_Original_Source_Item_Coverage_11NOV2026.json",
+            "locator": "C239 Edition1.1 (2023), original Appendix A AV-2, PDF p385/403 printed p359",
+            "standing": "NATIVE_DEFINITION_NOT_SHALL"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            385
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 distinguishes raw/minimally processed Data Products from processed/reduced Information Products. These definitions do not record the transformation that produced a particular case value or establish its lineage and preserved referent. Keep the case hold; processing-stage descriptions are not proof of performed case processing.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H08",
+        "row_id": "CASE-H08",
+        "cell": "J248",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — time / QA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED timing context, NO_ESTABLISHED observation time/QA: C239 §12 UTC/uptime audit fallback, reference clocks, GPS/1PPS/RTC hold-up, §14 scheduling and §15 QoS deadlines/liveliness are distinct provisions. None authenticates Bennett's fixed-EST source record, original resultTime or QA flag, achieved clock accuracy, per-event UTC or original observation quality. Original record, derived conversion and unknown time stay separate. [G2-5/G2-6B/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; per-row evidence]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 audit UTC/uptime and the 2022 log timestamp describe particular time contexts. They do not authenticate Bennett source stamps, derived periods, resultTime, lexical quality tokens or parameter/record flags. Keep the case hold; clock representation, event meaning and observation-quality evidence remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H08]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-C239-G2-6B-REFERENCE-13.2.11.5-7",
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-1",
+          "SOSA-C239-G2-7A-ANALYTICAL_CONTEXT-DESIGN_VS_ACTUAL_CONNECTIVITY",
+          "SOSA-C239-G2-7A-PROTOCOL_CODE-DIFFERENTIAL-G5",
+          "SOSA-C239-G2-7B-ANALYTICAL_CONTEXT-GRAMMAR_NOT_CSAPI_SCHEMA",
+          "SOSA-C239-G2-7B-PARAMETER-y",
+          "SOSA-C239-G2-7C-ANALYTICAL_CONTEXT-FULL_EXAMPLE_NOT_INSTALLED",
+          "SOSA-C239-G2-7C-PROFILE_FAMILY-3U-RADIAL_CLOCK",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_A1",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_B2",
+          "SOSA-C239-G2-7G-PIN_ROW-SMPM10_C3",
+          "SOSA-C239-G2-7H-TBD-13_4_2",
+          "SOSA-C239-G2-7H-TBD-13_4_7_6",
+          "SOSA-C239-G2-7I-CONNECTOR-J5",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_3",
+          "SOSA-C239-G2-7J-SIGNAL_GROUP-PPS",
+          "SOSA-C239-G2-7L-RULE-13_5_2_3_9_1",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_8_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_4_1_3",
+          "SOSA-C239-G2-7S-QOS-Deadline",
+          "SOSA-C239-G2-7S-QOS-Liveliness",
+          "SOSA-C239-G2-7T-DEF-Heartbeat",
+          "SOSA-C239-G2-7T-DEF-Metadata",
+          "SOSA-C239-G2-7T-DEF-Real_time"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-2; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.2.3, Rule 12.2.2.3-3; PDF182",
+            "standing": "RULE_SHALL"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.2.55",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.2.55, UTCTime_SecondsMeasurement, PDF82",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          },
+          {
+            "id": "SOSA-V1-DSDM-1.3.3.14",
+            "source_ledger": "SOSA_G3_N2_2022_DSDM_Section_Coverage_11NOV2026.json",
+            "locator": "2022 Edition1.0 DSDM §1.3.3.14, Log Event, PDF144",
+            "standing": "ORIGINAL_2022_ED1_0_MODEL_CONTENT_NOT_C239_2023_VERIFIED"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            182
+          ],
+          "DSDM_2022_PDF_pages": [
+            82,
+            144
+          ],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 audit UTC/uptime and the 2022 log timestamp describe particular time contexts. They do not authenticate Bennett source stamps, derived periods, resultTime, lexical quality tokens or parameter/record flags. Keep the case hold; clock representation, event meaning and observation-quality evidence remain distinct.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-04C-CASE-H09",
+        "row_id": "CASE-H09",
+        "cell": "J249",
+        "donor_key": "OpenGroupSOSA",
+        "review_set": "21_UNGRADED",
+        "information_need": "REVIEW HOLD — control execution",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "before": "RELATED tasks versus NO_ESTABLISHED executed command: C239 §7 Task/Assignment, §8 RF sendCommand (V1.0/future-qualified), §12 authorization and §15 control interactions differ from physical PSC enable/UART, NEZ, WR_EN, LASER_ARM, gimbal disable and RTE startup logic. None proves a safe authorized CSAPI Command, an authenticated request→acknowledgement→outcome→physical-effect chain or actual control in any case. [SOSA-D/G2-4B/G2-5/G2-6A/G2-7J–7Q/G2-7R–7T]",
+        "after": "[HELD] RELATED/CASE_UNVERIFIED: C239 management requests and preliminary task/assignment interfaces describe possible controls, and its authorization rule conditions privileged execution. They do not establish a source-attested request, acknowledgement, completion and physical-effect sequence for any case. Keep this case hold; the separate control-request candidate remains valid as interface information. [F3-04C-CASE-H09]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-010",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-025",
+          "SOSA-C239-G2-5-RULE-12.2.5-3"
+        ],
+        "inherited_source_ids": [
+          "SOSA-C239-G2-4B-RF_INTERACTION-012",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-010",
+          "SOSA-C239-G2-5-HOST_INTERACTION-035",
+          "SOSA-C239-G2-5-RULE-12.2.5-3",
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+          "SOSA-C239-G2-6B-ANALYTICAL_CONTEXT-006",
+          "SOSA-C239-G2-6B-RULE-13.2.11.5-3-OCC2",
+          "SOSA-C239-G2-6C-ANALYTICAL_CONTEXT-004",
+          "SOSA-C239-G2-6C-FIGURE-13.2.12.3-1",
+          "SOSA-C239-G2-7F-RULE-13_3_7_3",
+          "SOSA-C239-G2-7F-RULE-13_3_7_4",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_1_1",
+          "SOSA-C239-G2-7J-RULE-13_5_2_3_1_2",
+          "SOSA-C239-G2-7L-RULE-13_5_2_3_12_2",
+          "SOSA-C239-G2-7L-RULE-13_5_2_3_4_2_1",
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_6_2",
+          "SOSA-C239-G2-7N-RULE-13_5_2_15_5",
+          "SOSA-C239-G2-7N-RULE-13_5_2_16_5",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_4_2_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_7_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_8_6_2",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_6_3",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3",
+          "SOSA-C239-G2-7R-RULE-14_3_3_6",
+          "SOSA-C239-G2-7R-RULE-14_5_3_6",
+          "SOSA-C239-G2-7S-INTERACTION-Request_Response",
+          "SOSA-C239-G2-7S-INTERACTION-Signal_Layer_Control",
+          "SOSA-C239-G2-7T-DEF-Assignment",
+          "SOSA-C239-G2-7T-DEF-Request_Response",
+          "SOSA-C239-G2-7T-DEF-Task"
+        ],
+        "additional_existing_source_ids": [
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-025"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SOSA-C239-G2-1-SMI-034",
+            "source_ledger": "SOSA_G2_1_Original_Item_Inventory_09NOV2026.json",
+            "locator": "C239 §6.2.4.2 Table 6.2.4.2-1; PDF84",
+            "standing": "Edition labels as V1.0; exact native OpenAPI definition unread"
+          },
+          {
+            "id": "SOSA-C239-G2-4B-TASK_INTERACTION-010",
+            "source_ledger": "SOSA_G2_4B_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "Table 7.1.1-1 pp141–145; PDF142",
+            "standing": "PRELIMINARY_NOT_ESTABLISHED_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-4B-TASK_INTERACTION-025",
+            "source_ledger": "SOSA_G2_4B_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "Table 7.1.1-1 pp141–145; PDF144",
+            "standing": "PRELIMINARY_NOT_ESTABLISHED_SHALL"
+          },
+          {
+            "id": "SOSA-C239-G2-5-RULE-12.2.5-3",
+            "source_ledger": "SOSA_G2_5_Original_Source_Item_Coverage_10NOV2026.json",
+            "locator": "C239 §12.2.5, Rule 12.2.5-3; PDF187",
+            "standing": "RULE_SHALL"
+          }
+        ],
+        "additional_exact_passage_locators": [],
+        "reopened_original_evidence": {
+          "C239_2023_PDF_pages": [
+            84,
+            141,
+            142,
+            144,
+            187
+          ],
+          "DSDM_2022_PDF_pages": [],
+          "IDL_2022_files": [],
+          "grade": "TARGETED_ORIGINAL_PASSAGE_AND_SELECTED_NATIVE_DECLARATION_REVIEW__NOT_WHOLE_CORPUS"
+        },
+        "rationale": "C239 management requests and preliminary task/assignment interfaces describe possible controls, and its authorization rule conditions privileged execution. They do not establish a source-attested request, acknowledgement, completion and physical-effect sequence for any case. Keep this case hold; the separate control-request candidate remains valid as interface information.",
+        "native_preservation": "All prior correspondence records, native findings, edition distinctions and nine source-hold families retained. A held comparison does not mean the native concept is absent.",
+        "peer_criterion": "Grade useful information independently of exact ISA/OGC correspondence, unrelated holds and proof of live implementation. Different subjects and unsupported relations stay held; candidate colors are not adoption or conformance.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    ],
+    "prior_calibration_retained": [
+      {
+        "row_id": "ISA-T-EVENT-ID",
+        "cell": "J68",
+        "retained_status": "MIXED_OR_HELD",
+        "supporting_existing_source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.5-1",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.1.3.63"
+        ],
+        "reason": "Audit/message-type IDs, log-record IDs and individual message IDs remain distinct from an underlying occurrence identity; earlier hold retained.",
+        "display_and_metadata_changed": false
+      },
+      {
+        "row_id": "ISA-T-EVENT-TIME",
+        "cell": "J69",
+        "retained_status": "MIXED_OR_HELD",
+        "supporting_existing_source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.1.3.63",
+          "SOSA-V1-DSDM-1.2.55"
+        ],
+        "reason": "Clock basis and LogEntry time do not identify the instant of an underlying occurrence; earlier hold retained.",
+        "display_and_metadata_changed": false
+      },
+      {
+        "row_id": "ISA-T-REQUEST-REFERENCE",
+        "cell": "J198",
+        "retained_status": "COMMON_CANDIDATE",
+        "supporting_existing_source_ids": [
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-IDL:Message_Info.idl"
+        ],
+        "reason": "Header identity continues to support a qualified candidate while response-to-request correlation remains unestablished; no new correlation rule.",
+        "display_and_metadata_changed": false
+      },
+      {
+        "row_id": "S06-R019",
+        "cell": "J95",
+        "retained_status": "COMMON_CANDIDATE",
+        "supporting_existing_source_ids": [
+          "SOSA-C239-G2-1-SMI-034"
+        ],
+        "reason": "The management request contract remains a candidate independently of the unverified real-case execution chain; earlier common classification retained.",
+        "display_and_metadata_changed": false
+      }
+    ],
+    "calibration_scope": "Four related earlier identity/time/control decisions checked and retained; no calibration changes and no claim that every earlier SOSA decision was re-audited.",
+    "source_standing": "C239 Rules, Permissions, Observations, descriptive definitions, conditional binding requirements, deferred QoS implementation and preliminary task interfaces remain distinct. 2022 DSDM/IDL are separate lineage, not authenticated exact 2023 attachments. Case holds remain unverified, not evidence that SOSA lacks useful related concepts.",
+    "census_after": {
+      "source_bearing": 616,
+      "colored": 446,
+      "held": 137,
+      "ungraded": 33,
+      "SAPIENT": {
+        "source_bearing": 115,
+        "colored": 65,
+        "held": 50,
+        "ungraded": 0
+      },
+      "ISA": {
+        "source_bearing": 316,
+        "colored": 271,
+        "held": 45,
+        "ungraded": 0
+      },
+      "Open_Group_SOSA": {
+        "source_bearing": 121,
+        "colored": 56,
+        "held": 32,
+        "ungraded": 33
+      },
+      "AAS": {
+        "source_bearing": 64,
+        "colored": 54,
+        "held": 10,
+        "ungraded": 0
+      },
+      "other_explicit_unassessed_or_case_statuses": 732
+    },
+    "next": "F3-04D ONLY on a separate Proceed: classify the 33 remaining Open Group SOSA equipment comparisons from J251 onward, with relevant prior-decision calibration. Stop before AAS classification/research, new rows or model adoption; AAS native-first O1 waits for the F3 owner gate.",
+    "next_packet_boundary": {
+      "step": "F3-04D",
+      "records": [
+        {
+          "cell": "J251",
+          "row_id": "ISA-C-048",
+          "information_need": "Component configuration version"
+        },
+        {
+          "cell": "J252",
+          "row_id": "ISA-C-066",
+          "information_need": "Component hardware version"
+        },
+        {
+          "cell": "J260",
+          "row_id": "ISA-C-108",
+          "information_need": "Version of software running on the component"
+        },
+        {
+          "cell": "J264",
+          "row_id": "ISA-E-COMPONENT-CATEGORY",
+          "information_need": "Human-facing component category"
+        },
+        {
+          "cell": "J268",
+          "row_id": "ISA-C-037",
+          "information_need": "Orientation relative to attached parent"
+        },
+        {
+          "cell": "J269",
+          "row_id": "ISA-C-038",
+          "information_need": "Position relative to attached parent"
+        },
+        {
+          "cell": "J275",
+          "row_id": "ISA-C-088",
+          "information_need": "Reported current geographic position of the component"
+        },
+        {
+          "cell": "J277",
+          "row_id": "ISA-C-099",
+          "information_need": "Reported physical parent/child attachment relationships"
+        },
+        {
+          "cell": "J282",
+          "row_id": "ISA-C-035",
+          "information_need": "Reported activity flag"
+        },
+        {
+          "cell": "J283",
+          "row_id": "ISA-C-036",
+          "information_need": "Reported arming state"
+        },
+        {
+          "cell": "J284",
+          "row_id": "ISA-C-049",
+          "information_need": "Reported charged flag"
+        },
+        {
+          "cell": "J286",
+          "row_id": "ISA-C-082",
+          "information_need": "Reported component operating condition"
+        },
+        {
+          "cell": "J287",
+          "row_id": "ISA-E-LOGIC-STATE",
+          "information_need": "Four-valued evaluation state"
+        },
+        {
+          "cell": "J289",
+          "row_id": "ISA-C-031",
+          "information_need": "Consumed AC current"
+        },
+        {
+          "cell": "J291",
+          "row_id": "ISA-C-033",
+          "information_need": "Load-side AC voltage"
+        },
+        {
+          "cell": "J292",
+          "row_id": "ISA-C-034",
+          "information_need": "Source-side AC voltage"
+        },
+        {
+          "cell": "J293",
+          "row_id": "ISA-C-052",
+          "information_need": "Consumed DC current"
+        },
+        {
+          "cell": "J294",
+          "row_id": "ISA-C-053",
+          "information_need": "Produced DC current"
+        },
+        {
+          "cell": "J295",
+          "row_id": "ISA-C-054",
+          "information_need": "Load-side DC voltage"
+        },
+        {
+          "cell": "J296",
+          "row_id": "ISA-C-055",
+          "information_need": "Source-side DC voltage"
+        },
+        {
+          "cell": "J298",
+          "row_id": "ISA-C-091",
+          "information_need": "Reported condition of power to the component"
+        },
+        {
+          "cell": "J299",
+          "row_id": "ISA-C-100",
+          "information_need": "Reported energy reserve relative to maximum capacity"
+        },
+        {
+          "cell": "J300",
+          "row_id": "ISA-C-113",
+          "information_need": "Estimated time to empty under expected usage"
+        },
+        {
+          "cell": "J301",
+          "row_id": "ISA-E-POWER-SOURCE",
+          "information_need": "Power-source classification"
+        },
+        {
+          "cell": "J306",
+          "row_id": "ISA-C-067",
+          "information_need": "Network-interface IP addresses"
+        },
+        {
+          "cell": "J307",
+          "row_id": "ISA-C-072",
+          "information_need": "Network-interface up/down state"
+        },
+        {
+          "cell": "J310",
+          "row_id": "ISA-C-097",
+          "information_need": "Reported component receive data rate"
+        },
+        {
+          "cell": "J311",
+          "row_id": "ISA-C-098",
+          "information_need": "Reported received signal power"
+        },
+        {
+          "cell": "J313",
+          "row_id": "ISA-C-114",
+          "information_need": "Reported component transmit data rate"
+        },
+        {
+          "cell": "J345",
+          "row_id": "ISA-C-046",
+          "information_need": "Latest built-in-test reported result"
+        },
+        {
+          "cell": "J350",
+          "row_id": "ISA-C-111",
+          "information_need": "Reported device tamper condition"
+        },
+        {
+          "cell": "J353",
+          "row_id": "ISA-C-071",
+          "information_need": "Link Loss value — reference question"
+        },
+        {
+          "cell": "J354",
+          "row_id": "ISA-C-107",
+          "information_need": "Signal Strength Ratio — reference quantity question"
+        }
+      ],
+      "ungraded_count": 33,
+      "remaining_outside_next_packet": 0,
+      "source_families": "Existing equipment version, category, spatial/attachment, activity/arming/condition, power, network, diagnostics/tamper and two reference-question comparisons. Reopen pertinent original C239 hardware/management and 2022 DSDM/IDL evidence; distinguish hardware design requirements from source-defined telemetry and case observations.",
+      "stop": "Stop after these 33 existing comparisons and justified calibration; no AAS classification or native-first research, new rows, model adoption, UI or deployment."
+    },
+    "publication": {
+      "workbook_sha256": "3b5a117ac338aea3d059f4ec1e43acbbbebd18bb195d74f72c2d7c5fd7d7495a",
+      "previous_workbook_sha256": "9b02cdeb5970f7ceb398abd5b6072abf595431e8a6e36cc74a65aa431a5525c3",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "Summary",
+        "Validation",
+        "Legend",
+        "DIM Register"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values_checked": 5664,
+      "source_cells_changed": 21,
+      "colored_decisions": 7,
+      "explicit_no_fill_decisions": 14,
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_open": "UNVERIFIED",
+      "visual_render_review": {
+        "status": "PASS_SELECTED_SAVED_XLSX_VIEWS",
+        "method": "ArtifactTool import and render of the saved workbook only; no re-export.",
+        "ranges": [
+          "Summary!A17:B23",
+          "Master Crosswalk!J223:J225",
+          "Master Crosswalk!J229:J230",
+          "Master Crosswalk!J236:J237",
+          "Master Crosswalk!J241:J242",
+          "Legend!A28:B28",
+          "DIM Register!O217:O218"
+        ],
+        "result": "Rendered values and candidate/held fills are legible; no clipping observed in the selected views. Actual clean Microsoft Excel reopening remains UNVERIFIED."
+      },
+      "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained."
+    }
   }
 }

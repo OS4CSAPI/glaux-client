@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "9b02cdeb5970f7ceb398abd5b6072abf595431e8a6e36cc74a65aa431a5525c3",
+  "currentWorkbookSha256": "3b5a117ac338aea3d059f4ec1e43acbbbebd18bb195d74f72c2d7c5fd7d7495a",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -4067,7 +4067,7 @@
       "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]\nAAS08: PARTIAL — Part3a sourceOfDefinition and Part3b dictionary/version metadata support definition provenance, while Part4 audits/signatures support accountability under stated trust. Neither establishes the proposed complete source/issuer/edition/evidence record or truth of a physical claim. [AAS08-N002, AAS08-N026, AAS08-N031, AAS08-N041]\nAAS09: PARTIAL — Manufacturer TextStatement and its invalid-from ValidDate provide assertion/validity context. They do not supply a complete evidence record or establish the truth of an installed-equipment assertion; template source/edition conflicts remain explicit. [AAS09-N020, AAS09-N021, AAS09-N035]",
       "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
       "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
-      "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
+      "[SPECIALIZED CANDIDATE] NARROWER/PARTIAL: C239 requires vendor documentation identifying the vendor and covered products and declaring memory characteristics and protection. This supports optional vendor-attributed source assertions. It does not define a generic assertion object with issuer/edition/locator/evidence-grade fields, authenticate the claims or establish installed-case facts. [F3-04C-S06-R021]",
       "",
       "",
       "",
@@ -4085,7 +4085,7 @@
       "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]\nAAS08: RELATED — AASX can carry several serializations of the same data and filtered partner exports. Package creator/revision belong to the package; they do not identify the original observation or prove lineage of Bennett experimental copies. [AAS08-N047, AAS08-N049, AAS08-N051]",
       "[HELD] NO_ESTABLISHED: DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate. [SAP04-N16, SAP04-N19, SAP05-N13, SAP05-N15]",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
-      "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022]",
       "",
       "",
       "",
@@ -4121,7 +4121,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative / Config / Event / Registration / Request / Response / Status.identifier",
-      "NO_ESTABLISHED: C239 §15 intermodule operation parameters do not establish an ISA conversation-scoped message identifier or correlation contract. [G2-7S]",
+      "[COMMON CANDIDATE] PARTIAL: The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-MESSAGE-ID]",
       "",
       "",
       "",
@@ -4139,7 +4139,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Priority · 0 highest; message priority [0-1] default 80",
-      "RELATED, not equivalent: C239 §15 QoS writer priority uses source default 0 and [0,X] with X unspecified; this is transport-writer policy, not ISA message priority. [G2-7S]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY]",
       "",
       "",
       "",
@@ -4157,7 +4157,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1]",
-      "RELATED/NO_ESTABLISHED: C239 §12 cached authorization is policy-validity, while §15 QoS deadline specifies expected update interval—not message-data expiry or a generic ISA payload-validity contract. [G2-5/G2-7S]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Deadline is an expected update interval, and cached authorization is usable while an access decision remains valid. Neither defines an instant after which message payload data becomes invalid. Keep data-expiry equivalence held; no retention, deletion or observation-time rule is inferred. [F3-04C-ISA-T-VALIDITY]",
       "",
       "",
       "",
@@ -4193,7 +4193,7 @@
       "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Experimental BasicEventElement.lastUpdate is the last sent event time for output, but last received time for input. It is not a per-exchange Header.time; trigger time is separate. [AAS04-N005, AAS04-N009, AAS04-N013]",
       "[UNRESOLVED] CONFLICT: Pinned SapientMessage.timestamp comments say message send time, but BSI Table 1 explicitly defines content time rather than transmission time. A distinct unambiguous sent-time field is not established. [SAP04-N17, SAP02-N03]",
       "Header.time: UTC",
-      "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 defines an update deadline and UTC/uptime for audit events; the 2022 LogEvent timestamp comes from LogEntry.time, while Message_Info contains id and optional status. These reviewed fields do not establish the instant a message was transmitted. Preserve the log timestamp and clock basis; hold send-time equivalence. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-SENT-TIME]",
       "",
       "",
       "",
@@ -4211,7 +4211,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative.about: UCI [1+]; code: Admin Code",
-      "RELATED only: C239 §6.2.2.1 Fault/Status/State/Mode/Configuration and notifyModeCallback notices, §12 audit changes, §15 event/heartbeat, and PSC reset/UART describe distinct event, logging or hardware service roles. They do not establish an ISA administrative network/service message schema, deployed subscription or proven remote effect. [SOSA-D/G2-2/G2-5/G2-6A/G2-7S/G2-7T]",
+      "[COMMON CANDIDATE] PARTIAL: C239 management interfaces publish fault, status, state, mode and configuration change notifications with component software-instance attribution. This supports qualified administrative-condition notification information. It does not establish ISA device-added/removed codes, a sensing observation, installed subscriptions or verified delivery and physical effect. [F3-04C-ISA-T-ADMIN]",
       "",
       "",
       "",
@@ -4229,7 +4229,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified",
-      "RELATED/NO_ESTABLISHED: C239 §15 publisher is a transport source and an Appendix A Audit Event may be module-generated; neither establishes a cryptographically authenticated original author or ISA registration announcer. [G2-7S/G2-7T]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 management notifications name the component software instance in APP-NAME. The 2022 ComponentLogEntry relation associates log entries with the component that produced them, and LogEvent_Info carries its identifier/type. This supports qualified source attribution. A relay or network sender is not automatically that producer; authentication and ISA registration exceptions remain unestablished. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-AUTHOR]",
       "",
       "",
       "",
@@ -4247,7 +4247,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity. [SAP06-N14]",
       "Message Reference · originator, identifier, message type, time",
-      "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 permits forwarding audit events, and the 2022 model links log entries to producing components and loggable data. Those relations do not declare a reference to an earlier source message retaining author, message identity, type and time. Hold this provenance-reference mapping; message IDs and source attribution remain useful in their separate rows. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-R-MESSAGE-REFERENCE]",
       "",
       "",
       "",
@@ -4355,7 +4355,7 @@
       "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Custom → Nominated → Accepted; incorporation into a later major standard release",
-      "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
+      "[SPECIALIZED CANDIDATE] RELATED/PARTIAL: C239 Legacy marks a hardware profile intended for removal in a future edition; removal date is determined by the Consortium, followed by an 18-month certification-submission grace period. This supports optional source-standard lifecycle standing. It is not ISA Custom/Nominated/Accepted progression, a verified present-day removal date or vendor equipment retirement. [F3-04C-ISA-A-EXTENSION-STANDING]",
       "",
       "",
       "",
@@ -4373,7 +4373,7 @@
       "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]\nAAS07: RELATED — Normal/Metadata/ValueOnly and nested idShortPath API representations differ by Submodel profile, not a universal CSAPI transport envelope. [AAS07-N005, AAS07-N033, AAS07-N037, AAS07-N041]\nAAS08: RELATED — AASX MIME type application/aas+zip and parallel XML/JSON serializations identify package/representation choices, not negotiated ISA presentation/schema pairs. Companion editions stay 3a3.1.1/3b3.0/Part4 3.1/Part5 3.2; source naming/date conflicts remain explicit. [AAS08-N048, AAS08-N051, AAS08-N025, AAS08-N055]",
       "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
-      "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
+      "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION]",
       "",
       "",
       "",
@@ -4409,7 +4409,7 @@
       "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]\nAAS05: RELATED — Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization. [AAS05-S005, AAS05-S006, AAS05-S013, AAS05-S016]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
-      "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
+      "[COMMON CANDIDATE] PARTIAL: C239 audit rules require UTC when available and uptime otherwise, and permit both. The 2022 DSDM defines a POSIX-epoch seconds time type. These support qualified time-reference information without identifying which instant an unrelated timestamp means, a deployed synchronization method, achieved clock accuracy or verified observation quality. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-A-TIME-BASIS]",
       "",
       "",
       "",
@@ -4445,7 +4445,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "NO_ESTABLISHED real service history: C239 Legacy card/profile markers and RTE integration are design/standards context, not repair or replacement records. §15 event durability, audit collection and heartbeat are related transport/status features but establish no case maintenance chronology, queryable historical archive or retention guarantee. [G2-6D/G2-7C/G2-7R/G2-7S/G2-7T]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 permits audit records for maintenance operations and defines storage/delivery policies for published data. These are useful logging concepts, but they do not provide dated installation, repair or replacement records for any of the four cases. Keep the service-history case hold; Legacy profile status is not equipment service history. [F3-04C-CASE-H01]",
       "",
       "",
       "",
@@ -4463,7 +4463,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED design only: C239 host/sensor-pod mounting, PIC/chassis/XMC/VITA slots, connector pitch/cooling, fiber/RF/optical apertures and optional turret/gimbal mechanics describe physical fit or attachment possibilities; selected original figure geometry remains held. None establishes an installed mount, cable location, specific station site or surveyed equipment position in the four cases. [G2-4A/G2-5/G2-6A–6D/G2-7B–7I/G2-7Q; source ledger]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 physical context distinguishes sensor hardware, its host and optional mounting relationships. That design description does not locate the individual equipment in our cases or establish a surveyed station, installation or mount. Keep the case hold; preserve the separate qualified physical-context candidates already recorded. [F3-04C-CASE-H02]",
       "",
       "",
       "",
@@ -4481,7 +4481,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED architecture/NO_ESTABLISHED actual path: C239 §§4–5/11 describe possible reporting/processing roles, §12 audit SYSLOG and §15 event/stream interactions; §§13–14 Ethernet, RF, fiber, video, serial/optical connectors, AMPS profiles and RTE links are design-level transport options. None verifies actual Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or AirGradient reporting, live packets, or a CSAPI DataStream endpoint; a physical signal lane is not a proven source→reporter→client route. [SOSA-D/G2-4A/G2-4B/G2-5/G2-7K/G2-7R/G2-7S/G2-7T; full per-row packet evidence]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes producer, relay and collector roles and defines alternative message-interaction bindings. These describe possible reporting paths, not the actual Dragino, Campbell, Bennett or AirGradient route, cadence or endpoint. Keep the case hold; interface, address, transport and message stream remain different meanings. [F3-04C-CASE-H03]",
       "",
       "",
       "",
@@ -4499,7 +4499,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED design, not observed power: C239 §6.3 auxiliary versus payload power, host/Power Module functions, and §13 PSC/card rails, enable logic, inrush, hold-up, ground and class-specific electrical limits concern possible equipment. State/Status describe lifecycle/performance rather than current charge, voltage, measured power or actual electrical conformance of any case device. [SOSA-D/G2-3/G2-5/G2-6A/G2-7L/G2-7N–7Q/G2-7T]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 separates management power from payload power and describes component state from the System Manager viewpoint. Neither design/state description supplies measured voltage, charge, battery condition or actual power configuration for a case device. Keep the case hold and distinguish available control from electrical state and inferred health. [F3-04C-CASE-H04]",
       "",
       "",
       "",
@@ -4517,7 +4517,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED design, NO_ESTABLISHED case diagnostic: C239 §6.5 P6/M6 Lost Communication is not itself Faulted, and S0 Off may be unreported. PSC FAIL*/ENABLE*/INHIBIT* signaling and dormant-port examples do not establish an observed fault, verified health or real diagnostic event for the four cases. [SOSA-D/G2-3/G2-6A/G2-7B]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 provides built-in diagnostic requests/results and explicitly distinguishes Lost Communication from a known fault. These support diagnostic information but do not establish a diagnostic event or verified health for any case device. Keep the case hold; do not convert communication loss into equipment failure or environmental measurement. [F3-04C-CASE-H05]",
       "",
       "",
       "",
@@ -4535,7 +4535,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "NO_ESTABLISHED applied setting: C239 AMPS slot/dash, dcp, optical/RF protocol variants and conditional Rules/Recommendations describe hardware profile options, not case equipment configuration readback. Original sample discrepancies, source future/TBD options and hardwired enable/write circuits remain distinct from a selected runtime user setting. No case applied configuration verified. [G2-7B–7J; detailed source evidence]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 getMode and updateMode distinguish retrieval from requested change; the 2022 Component model declares mode separately from other characteristics. These contracts do not supply an applied case setting, effective time or setting history. Keep default, allowed value, request and actual readback separate and retain the case hold. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H06]",
       "",
       "",
       "",
@@ -4553,7 +4553,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED design/NO_ESTABLISHED measured processing: C239 6U single-board-computer/FPGA examples and §14 RTE CPU/RAM/port provisioning describe potential compute architecture; §15 wideband streams and Appendix A raw versus processed products distinguish delivery stages. None proves performed case processing, CPU utilization, transformation lineage or observed runtime status. [G2-6C/G2-7R/G2-7S/G2-7T]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes raw/minimally processed Data Products from processed/reduced Information Products. These definitions do not record the transformation that produced a particular case value or establish its lineage and preserved referent. Keep the case hold; processing-stage descriptions are not proof of performed case processing. [F3-04C-CASE-H07]",
       "",
       "",
       "",
@@ -4571,7 +4571,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED timing context, NO_ESTABLISHED observation time/QA: C239 §12 UTC/uptime audit fallback, reference clocks, GPS/1PPS/RTC hold-up, §14 scheduling and §15 QoS deadlines/liveliness are distinct provisions. None authenticates Bennett's fixed-EST source record, original resultTime or QA flag, achieved clock accuracy, per-event UTC or original observation quality. Original record, derived conversion and unknown time stay separate. [G2-5/G2-6B/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; per-row evidence]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 audit UTC/uptime and the 2022 log timestamp describe particular time contexts. They do not authenticate Bennett source stamps, derived periods, resultTime, lexical quality tokens or parameter/record flags. Keep the case hold; clock representation, event meaning and observation-quality evidence remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H08]",
       "",
       "",
       "",
@@ -4589,7 +4589,7 @@
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
       "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
       "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-      "RELATED tasks versus NO_ESTABLISHED executed command: C239 §7 Task/Assignment, §8 RF sendCommand (V1.0/future-qualified), §12 authorization and §15 control interactions differ from physical PSC enable/UART, NEZ, WR_EN, LASER_ARM, gimbal disable and RTE startup logic. None proves a safe authorized CSAPI Command, an authenticated request→acknowledgement→outcome→physical-effect chain or actual control in any case. [SOSA-D/G2-4B/G2-5/G2-6A/G2-7J–7Q/G2-7R–7T]",
+      "[HELD] RELATED/CASE_UNVERIFIED: C239 management requests and preliminary task/assignment interfaces describe possible controls, and its authorization rule conditions privileged execution. They do not establish a source-attested request, acknowledgement, completion and physical-effect sequence for any case. Keep this case hold; the separate control-request candidate remains valid as interface information. [F3-04C-CASE-H09]",
       "",
       "",
       "",
@@ -37167,7 +37167,7 @@
         "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]\nAAS08: PARTIAL — Part3a sourceOfDefinition and Part3b dictionary/version metadata support definition provenance, while Part4 audits/signatures support accountability under stated trust. Neither establishes the proposed complete source/issuer/edition/evidence record or truth of a physical claim. [AAS08-N002, AAS08-N026, AAS08-N031, AAS08-N041]\nAAS09: PARTIAL — Manufacturer TextStatement and its invalid-from ValidDate provide assertion/validity context. They do not supply a complete evidence record or establish the truth of an installed-equipment assertion; template source/edition conflicts remain explicit. [AAS09-N020, AAS09-N021, AAS09-N035]",
         "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
         "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
-        "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
+        "[SPECIALIZED CANDIDATE] NARROWER/PARTIAL: C239 requires vendor documentation identifying the vendor and covered products and declaring memory characteristics and protection. This supports optional vendor-attributed source assertions. It does not define a generic assertion object with issuer/edition/locator/evidence-grade fields, authenticate the claims or establish installed-case facts. [F3-04C-S06-R021]",
         "",
         "",
         "",
@@ -37608,6 +37608,18 @@
           "display_cell": "I220",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-S06-R021",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-6A-COV_FIELD-001",
+          "SOSA-C239-G2-6A-COV_FIELD-002",
+          "SOSA-C239-G2-6A-COV_FIELD-009"
+        ],
+        "rationale": "C239 requires vendor documentation identifying the vendor and covered products and declaring memory characteristics and protection. This supports optional vendor-attributed source assertions. It does not define a generic assertion object with issuer/edition/locator/evidence-grade fields, authenticate the claims or establish installed-case facts."
       }
     },
     {
@@ -37634,7 +37646,7 @@
         "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]\nAAS08: RELATED — AASX can carry several serializations of the same data and filtered partner exports. Package creator/revision belong to the package; they do not identify the original observation or prove lineage of Bennett experimental copies. [AAS08-N047, AAS08-N049, AAS08-N051]",
         "[HELD] NO_ESTABLISHED: DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate. [SAP04-N16, SAP04-N19, SAP05-N13, SAP05-N15]",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
-        "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022]",
         "",
         "",
         "",
@@ -37854,6 +37866,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-S06-R022",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products",
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1"
+        ],
+        "rationale": "C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction."
       }
     },
     {
@@ -37974,7 +37998,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative / Config / Event / Registration / Request / Response / Status.identifier",
-        "NO_ESTABLISHED: C239 §15 intermodule operation parameters do not establish an ISA conversation-scoped message identifier or correlation contract. [G2-7S]",
+        "[COMMON CANDIDATE] PARTIAL: The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-MESSAGE-ID]",
         "",
         "",
         "",
@@ -38048,6 +38072,21 @@
           "display_cell": "H223",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-MESSAGE-ID",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:UniqueIdentifier_Type.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "rationale": "The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct."
       }
     },
     {
@@ -38089,7 +38128,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Priority · 0 highest; message priority [0-1] default 80",
-        "RELATED, not equivalent: C239 §15 QoS writer priority uses source default 0 and [0,X] with X unspecified; this is transport-writer policy, not ISA message priority. [G2-7S]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY]",
         "",
         "",
         "",
@@ -38162,6 +38201,18 @@
           "display_cell": "H224",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-PRIORITY",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Priority",
+          "SOSA-V1-DSDM-1.1.3.63",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "rationale": "C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information."
       }
     },
     {
@@ -38201,7 +38252,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1]",
-        "RELATED/NO_ESTABLISHED: C239 §12 cached authorization is policy-validity, while §15 QoS deadline specifies expected update interval—not message-data expiry or a generic ISA payload-validity contract. [G2-5/G2-7S]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Deadline is an expected update interval, and cached authorization is usable while an access decision remains valid. Neither defines an instant after which message payload data becomes invalid. Keep data-expiry equivalence held; no retention, deletion or observation-time rule is inferred. [F3-04C-ISA-T-VALIDITY]",
         "",
         "",
         "",
@@ -38293,6 +38344,18 @@
           "display_cell": "H225",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-VALIDITY",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Deadline",
+          "SOSA-C239-G2-5-OBSERVATION-12.2.5-1",
+          "SOSA-C239-G2-5-RULE-12.2.5-1"
+        ],
+        "rationale": "C239 QoS Deadline is an expected update interval, and cached authorization is usable while an access decision remains valid. Neither defines an instant after which message payload data becomes invalid. Keep data-expiry equivalence held; no retention, deletion or observation-time rule is inferred."
       }
     },
     {
@@ -38413,7 +38476,7 @@
         "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Experimental BasicEventElement.lastUpdate is the last sent event time for output, but last received time for input. It is not a per-exchange Header.time; trigger time is separate. [AAS04-N005, AAS04-N009, AAS04-N013]",
         "[UNRESOLVED] CONFLICT: Pinned SapientMessage.timestamp comments say message send time, but BSI Table 1 explicitly defines content time rather than transmission time. A distinct unambiguous sent-time field is not established. [SAP04-N17, SAP02-N03]",
         "Header.time: UTC",
-        "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 defines an update deadline and UTC/uptime for audit events; the 2022 LogEvent timestamp comes from LogEntry.time, while Message_Info contains id and optional status. These reviewed fields do not establish the instant a message was transmitted. Preserve the log timestamp and clock basis; hold send-time equivalence. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-SENT-TIME]",
         "",
         "",
         "",
@@ -38533,6 +38596,22 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-SENT-TIME",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-QOS-Deadline",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:Message_Info.idl",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "rationale": "C239 defines an update deadline and UTC/uptime for audit events; the 2022 LogEvent timestamp comes from LogEntry.time, while Message_Info contains id and optional status. These reviewed fields do not establish the instant a message was transmitted. Preserve the log timestamp and clock basis; hold send-time equivalence."
       }
     },
     {
@@ -38564,7 +38643,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative.about: UCI [1+]; code: Admin Code",
-        "RELATED only: C239 §6.2.2.1 Fault/Status/State/Mode/Configuration and notifyModeCallback notices, §12 audit changes, §15 event/heartbeat, and PSC reset/UART describe distinct event, logging or hardware service roles. They do not establish an ISA administrative network/service message schema, deployed subscription or proven remote effect. [SOSA-D/G2-2/G2-5/G2-6A/G2-7S/G2-7T]",
+        "[COMMON CANDIDATE] PARTIAL: C239 management interfaces publish fault, status, state, mode and configuration change notifications with component software-instance attribution. This supports qualified administrative-condition notification information. It does not establish ISA device-added/removed codes, a sensing observation, installed subscriptions or verified delivery and physical effect. [F3-04C-ISA-T-ADMIN]",
         "",
         "",
         "",
@@ -38723,6 +38802,18 @@
           "display_cell": "H228",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-ADMIN",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-TOC-6.2.2",
+          "SOSA-C239-G2-7S-INTERACTION-Event_Notification",
+          "SOSA-C239-G2-7T-DEF-Notification"
+        ],
+        "rationale": "C239 management interfaces publish fault, status, state, mode and configuration change notifications with component software-instance attribution. This supports qualified administrative-condition notification information. It does not establish ISA device-added/removed codes, a sensing observation, installed subscriptions or verified delivery and physical effect."
       }
     },
     {
@@ -38762,7 +38853,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified",
-        "RELATED/NO_ESTABLISHED: C239 §15 publisher is a transport source and an Appendix A Audit Event may be module-generated; neither establishes a cryptographically authenticated original author or ISA registration announcer. [G2-7S/G2-7T]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 management notifications name the component software instance in APP-NAME. The 2022 ComponentLogEntry relation associates log entries with the component that produced them, and LogEvent_Info carries its identifier/type. This supports qualified source attribution. A relay or network sender is not automatically that producer; authentication and ISA registration exceptions remain unestablished. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-AUTHOR]",
         "",
         "",
         "",
@@ -38857,6 +38948,20 @@
           "display_cell": "H229",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-T-AUTHOR",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-TOC-6.2.2",
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.3.3.14",
+          "SOSA-V1-IDL:LogEvent_Info.idl"
+        ],
+        "rationale": "C239 management notifications name the component software instance in APP-NAME. The 2022 ComponentLogEntry relation associates log entries with the component that produced them, and LogEvent_Info carries its identifier/type. This supports qualified source attribution. A relay or network sender is not automatically that producer; authentication and ISA registration exceptions remain unestablished."
       }
     },
     {
@@ -38884,7 +38989,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: Optional middleware data persistence/routing and possible destination rewrites may mediate messages, but do not establish an authenticated ISA source-message reference or original sensor identity. [SAP06-N14]",
         "Message Reference · originator, identifier, message type, time",
-        "NO_ESTABLISHED: C239 §12 audit relay/collector destination and §15 Digital Signal Context metadata support transport/context, but not a stable ISA original-message reference, deduplication identity, verified issuer or provenance chain. [G2-5/G2-7S]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 permits forwarding audit events, and the 2022 model links log entries to producing components and loggable data. Those relations do not declare a reference to an earlier source message retaining author, message identity, type and time. Hold this provenance-reference mapping; message IDs and source attribution remain useful in their separate rows. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-R-MESSAGE-REFERENCE]",
         "",
         "",
         "",
@@ -39028,6 +39133,20 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-R-MESSAGE-REFERENCE",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.6-1",
+          "SOSA-V1-DSDM-1.1.3.20",
+          "SOSA-V1-DSDM-1.1.3.62",
+          "SOSA-V1-DSDM-1.3.3.1",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "rationale": "C239 permits forwarding audit events, and the 2022 model links log entries to producing components and loggable data. Those relations do not declare a reference to an earlier source message retaining author, message identity, type and time. Hold this provenance-reference mapping; message IDs and source attribution remain useful in their separate rows."
       }
     },
     {
@@ -39714,7 +39833,7 @@
         "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Custom → Nominated → Accepted; incorporation into a later major standard release",
-        "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
+        "[SPECIALIZED CANDIDATE] RELATED/PARTIAL: C239 Legacy marks a hardware profile intended for removal in a future edition; removal date is determined by the Consortium, followed by an 18-month certification-submission grace period. This supports optional source-standard lifecycle standing. It is not ISA Custom/Nominated/Accepted progression, a verified present-day removal date or vendor equipment retirement. [F3-04C-ISA-A-EXTENSION-STANDING]",
         "",
         "",
         "",
@@ -40016,6 +40135,20 @@
           "display_cell": "H236",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-A-EXTENSION-STANDING",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-removal-date-determined-by-consortium",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-post-removal-18-month-grace",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-certification-after-grace",
+          "SOSA-C239-G2-7T-DEF-Legacy"
+        ],
+        "rationale": "C239 Legacy marks a hardware profile intended for removal in a future edition; removal date is determined by the Consortium, followed by an 18-month certification-submission grace period. This supports optional source-standard lifecycle standing. It is not ISA Custom/Nominated/Accepted progression, a verified present-day removal date or vendor equipment retirement."
       }
     },
     {
@@ -40051,7 +40184,7 @@
         "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]\nAAS07: RELATED — Normal/Metadata/ValueOnly and nested idShortPath API representations differ by Submodel profile, not a universal CSAPI transport envelope. [AAS07-N005, AAS07-N033, AAS07-N037, AAS07-N041]\nAAS08: RELATED — AASX MIME type application/aas+zip and parallel XML/JSON serializations identify package/representation choices, not negotiated ISA presentation/schema pairs. Companion editions stay 3a3.1.1/3b3.0/Part4 3.1/Part5 3.2; source naming/date conflicts remain explicit. [AAS08-N048, AAS08-N051, AAS08-N025, AAS08-N055]",
         "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
-        "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
+        "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION]",
         "",
         "",
         "",
@@ -40632,6 +40765,17 @@
         ],
         "explanation": "Serialization profiles are native encodings, not common CSAPI framing.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-A-CONNECTION-PRESENTATION",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7S-RULE-15_4_2"
+        ],
+        "rationale": "C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established."
       }
     },
     {
@@ -40795,7 +40939,7 @@
         "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]\nAAS05: RELATED — Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization. [AAS05-S005, AAS05-S006, AAS05-S013, AAS05-S016]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
-        "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
+        "[COMMON CANDIDATE] PARTIAL: C239 audit rules require UTC when available and uptime otherwise, and permit both. The 2022 DSDM defines a POSIX-epoch seconds time type. These support qualified time-reference information without identifying which instant an unrelated timestamp means, a deployed synchronization method, achieved clock accuracy or verified observation quality. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-A-TIME-BASIS]",
         "",
         "",
         "",
@@ -41110,6 +41254,20 @@
           "display_cell": "H239",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-ISA-A-TIME-BASIS",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-IDL:UTCTimeSeconds_Type.idl"
+        ],
+        "rationale": "C239 audit rules require UTC when available and uptime otherwise, and permit both. The 2022 DSDM defines a POSIX-epoch seconds time type. These support qualified time-reference information without identifying which instant an unrelated timestamp means, a deployed synchronization method, achieved clock accuracy or verified observation quality."
       }
     },
     {
@@ -41135,7 +41293,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "NO_ESTABLISHED real service history: C239 Legacy card/profile markers and RTE integration are design/standards context, not repair or replacement records. §15 event durability, audit collection and heartbeat are related transport/status features but establish no case maintenance chronology, queryable historical archive or retention guarantee. [G2-6D/G2-7C/G2-7R/G2-7S/G2-7T]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 permits audit records for maintenance operations and defines storage/delivery policies for published data. These are useful logging concepts, but they do not provide dated installation, repair or replacement records for any of the four cases. Keep the service-history case hold; Legacy profile status is not equipment service history. [F3-04C-CASE-H01]",
         "",
         "",
         "",
@@ -41252,6 +41410,18 @@
           "display_cell": "I241",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H01",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-5-PERMISSION-12.2.2.5-2",
+          "SOSA-C239-G2-7S-QOS-Durability",
+          "SOSA-C239-G2-6D-PROCESS_STATEMENT-Legacy-PICP-term-definition"
+        ],
+        "rationale": "C239 permits audit records for maintenance operations and defines storage/delivery policies for published data. These are useful logging concepts, but they do not provide dated installation, repair or replacement records for any of the four cases. Keep the service-history case hold; Legacy profile status is not equipment service history."
       }
     },
     {
@@ -41277,7 +41447,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED design only: C239 host/sensor-pod mounting, PIC/chassis/XMC/VITA slots, connector pitch/cooling, fiber/RF/optical apertures and optional turret/gimbal mechanics describe physical fit or attachment possibilities; selected original figure geometry remains held. None establishes an installed mount, cable location, specific station site or surveyed equipment position in the four cases. [G2-4A/G2-5/G2-6A–6D/G2-7B–7I/G2-7Q; source ledger]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 physical context distinguishes sensor hardware, its host and optional mounting relationships. That design description does not locate the individual equipment in our cases or establish a surveyed station, installation or mount. Keep the case hold; preserve the separate qualified physical-context candidates already recorded. [F3-04C-CASE-H02]",
         "",
         "",
         "",
@@ -41582,6 +41752,18 @@
           "display_cell": "I242",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H02",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-004"
+        ],
+        "rationale": "C239 physical context distinguishes sensor hardware, its host and optional mounting relationships. That design description does not locate the individual equipment in our cases or establish a surveyed station, installation or mount. Keep the case hold; preserve the separate qualified physical-context candidates already recorded."
       }
     },
     {
@@ -41610,7 +41792,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED architecture/NO_ESTABLISHED actual path: C239 §§4–5/11 describe possible reporting/processing roles, §12 audit SYSLOG and §15 event/stream interactions; §§13–14 Ethernet, RF, fiber, video, serial/optical connectors, AMPS profiles and RTE links are design-level transport options. None verifies actual Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or AirGradient reporting, live packets, or a CSAPI DataStream endpoint; a physical signal lane is not a proven source→reporter→client route. [SOSA-D/G2-4A/G2-4B/G2-5/G2-7K/G2-7R/G2-7S/G2-7T; full per-row packet evidence]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes producer, relay and collector roles and defines alternative message-interaction bindings. These describe possible reporting paths, not the actual Dragino, Campbell, Bennett or AirGradient route, cadence or endpoint. Keep the case hold; interface, address, transport and message stream remain different meanings. [F3-04C-CASE-H03]",
         "",
         "",
         "",
@@ -42049,6 +42231,19 @@
           "display_cell": "I243",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H03",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-5-AUDIT_DEFINITION-004",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-1",
+          "SOSA-C239-G2-7S-RULE-15_4_1",
+          "SOSA-C239-G2-7S-ROLE-Publish_Subscribe"
+        ],
+        "rationale": "C239 distinguishes producer, relay and collector roles and defines alternative message-interaction bindings. These describe possible reporting paths, not the actual Dragino, Campbell, Bennett or AirGradient route, cadence or endpoint. Keep the case hold; interface, address, transport and message stream remain different meanings."
       }
     },
     {
@@ -42075,7 +42270,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED design, not observed power: C239 §6.3 auxiliary versus payload power, host/Power Module functions, and §13 PSC/card rails, enable logic, inrush, hold-up, ground and class-specific electrical limits concern possible equipment. State/Status describe lifecycle/performance rather than current charge, voltage, measured power or actual electrical conformance of any case device. [SOSA-D/G2-3/G2-5/G2-6A/G2-7L/G2-7N–7Q/G2-7T]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 separates management power from payload power and describes component state from the System Manager viewpoint. Neither design/state description supplies measured voltage, charge, battery condition or actual power configuration for a case device. Keep the case hold and distinguish available control from electrical state and inferred health. [F3-04C-CASE-H04]",
         "",
         "",
         "",
@@ -42260,6 +42455,18 @@
           "display_cell": "I244",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H04",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS",
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT",
+          "SOSA-C239-G2-3-STATE-PIC-P0"
+        ],
+        "rationale": "C239 separates management power from payload power and describes component state from the System Manager viewpoint. Neither design/state description supplies measured voltage, charge, battery condition or actual power configuration for a case device. Keep the case hold and distinguish available control from electrical state and inferred health."
       }
     },
     {
@@ -42286,7 +42493,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED design, NO_ESTABLISHED case diagnostic: C239 §6.5 P6/M6 Lost Communication is not itself Faulted, and S0 Off may be unreported. PSC FAIL*/ENABLE*/INHIBIT* signaling and dormant-port examples do not establish an observed fault, verified health or real diagnostic event for the four cases. [SOSA-D/G2-3/G2-6A/G2-7B]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 provides built-in diagnostic requests/results and explicitly distinguishes Lost Communication from a known fault. These support diagnostic information but do not establish a diagnostic event or verified health for any case device. Keep the case hold; do not convert communication loss into equipment failure or environmental measurement. [F3-04C-CASE-H05]",
         "",
         "",
         "",
@@ -42405,6 +42612,18 @@
           "display_cell": "I245",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H05",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-013",
+          "SOSA-C239-G2-1-SMI-015",
+          "SOSA-C239-G2-3-STATE-PIC-P6"
+        ],
+        "rationale": "C239 provides built-in diagnostic requests/results and explicitly distinguishes Lost Communication from a known fault. These support diagnostic information but do not establish a diagnostic event or verified health for any case device. Keep the case hold; do not convert communication loss into equipment failure or environmental measurement."
       }
     },
     {
@@ -42430,7 +42649,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "NO_ESTABLISHED applied setting: C239 AMPS slot/dash, dcp, optical/RF protocol variants and conditional Rules/Recommendations describe hardware profile options, not case equipment configuration readback. Original sample discrepancies, source future/TBD options and hardwired enable/write circuits remain distinct from a selected runtime user setting. No case applied configuration verified. [G2-7B–7J; detailed source evidence]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 getMode and updateMode distinguish retrieval from requested change; the 2022 Component model declares mode separately from other characteristics. These contracts do not supply an applied case setting, effective time or setting history. Keep default, allowed value, request and actual readback separate and retain the case hold. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H06]",
         "",
         "",
         "",
@@ -42649,6 +42868,18 @@
           "display_cell": "I246",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H06",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-032",
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-V1-DSDM-1.1.3.15"
+        ],
+        "rationale": "C239 getMode and updateMode distinguish retrieval from requested change; the 2022 Component model declares mode separately from other characteristics. These contracts do not supply an applied case setting, effective time or setting history. Keep default, allowed value, request and actual readback separate and retain the case hold."
       }
     },
     {
@@ -42674,7 +42905,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED design/NO_ESTABLISHED measured processing: C239 6U single-board-computer/FPGA examples and §14 RTE CPU/RAM/port provisioning describe potential compute architecture; §15 wideband streams and Appendix A raw versus processed products distinguish delivery stages. None proves performed case processing, CPU utilization, transformation lineage or observed runtime status. [G2-6C/G2-7R/G2-7S/G2-7T]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 distinguishes raw/minimally processed Data Products from processed/reduced Information Products. These definitions do not record the transformation that produced a particular case value or establish its lineage and preserved referent. Keep the case hold; processing-stage descriptions are not proof of performed case processing. [F3-04C-CASE-H07]",
         "",
         "",
         "",
@@ -42783,6 +43014,17 @@
           "display_cell": "I247",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H07",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products"
+        ],
+        "rationale": "C239 distinguishes raw/minimally processed Data Products from processed/reduced Information Products. These definitions do not record the transformation that produced a particular case value or establish its lineage and preserved referent. Keep the case hold; processing-stage descriptions are not proof of performed case processing."
       }
     },
     {
@@ -42808,7 +43050,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED timing context, NO_ESTABLISHED observation time/QA: C239 §12 UTC/uptime audit fallback, reference clocks, GPS/1PPS/RTC hold-up, §14 scheduling and §15 QoS deadlines/liveliness are distinct provisions. None authenticates Bennett's fixed-EST source record, original resultTime or QA flag, achieved clock accuracy, per-event UTC or original observation quality. Original record, derived conversion and unknown time stay separate. [G2-5/G2-6B/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; per-row evidence]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 audit UTC/uptime and the 2022 log timestamp describe particular time contexts. They do not authenticate Bennett source stamps, derived periods, resultTime, lexical quality tokens or parameter/record flags. Keep the case hold; clock representation, event meaning and observation-quality evidence remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-CASE-H08]",
         "",
         "",
         "",
@@ -43094,6 +43336,19 @@
           "display_cell": "I248",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H08",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-5-RULE-12.2.2.3-2",
+          "SOSA-C239-G2-5-RULE-12.2.2.3-3",
+          "SOSA-V1-DSDM-1.2.55",
+          "SOSA-V1-DSDM-1.3.3.14"
+        ],
+        "rationale": "C239 audit UTC/uptime and the 2022 log timestamp describe particular time contexts. They do not authenticate Bennett source stamps, derived periods, resultTime, lexical quality tokens or parameter/record flags. Keep the case hold; clock representation, event meaning and observation-quality evidence remain distinct."
       }
     },
     {
@@ -43120,7 +43375,7 @@
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
         "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
         "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
-        "RELATED tasks versus NO_ESTABLISHED executed command: C239 §7 Task/Assignment, §8 RF sendCommand (V1.0/future-qualified), §12 authorization and §15 control interactions differ from physical PSC enable/UART, NEZ, WR_EN, LASER_ARM, gimbal disable and RTE startup logic. None proves a safe authorized CSAPI Command, an authenticated request→acknowledgement→outcome→physical-effect chain or actual control in any case. [SOSA-D/G2-4B/G2-5/G2-6A/G2-7J–7Q/G2-7R–7T]",
+        "[HELD] RELATED/CASE_UNVERIFIED: C239 management requests and preliminary task/assignment interfaces describe possible controls, and its authorization rule conditions privileged execution. They do not establish a source-attested request, acknowledgement, completion and physical-effect sequence for any case. Keep this case hold; the separate control-request candidate remains valid as interface information. [F3-04C-CASE-H09]",
         "",
         "",
         "",
@@ -43430,6 +43685,19 @@
           "display_cell": "I249",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04C_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04C-CASE-H09",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/CASE_UNVERIFIED",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-034",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-010",
+          "SOSA-C239-G2-4B-TASK_INTERACTION-025",
+          "SOSA-C239-G2-5-RULE-12.2.5-3"
+        ],
+        "rationale": "C239 management requests and preliminary task/assignment interfaces describe possible controls, and its authorization rule conditions privileged execution. They do not establish a source-attested request, acknowledgement, completion and physical-effect sequence for any case. Keep this case hold; the separate control-request candidate remains valid as interface information."
       }
     },
     {
@@ -56101,16 +56369,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "F3_04B_CLASSIFICATION_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "F3_04C_CLASSIFICATION_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "F3_04B_CLASSIFICATION_SAVED_VERIFIED",
-    "sha256": "9b02cdeb5970f7ceb398abd5b6072abf595431e8a6e36cc74a65aa431a5525c3",
+    "checkpoint": "F3_04C_CLASSIFICATION_SAVED_VERIFIED",
+    "sha256": "3b5a117ac338aea3d059f4ec1e43acbbbebd18bb195d74f72c2d7c5fd7d7495a",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
     "lag": "ZERO: JSON, both CSVs, both readable comparisons and same 26-sheet XLSX",
-    "textCheckpoint": "F3_04B_CLASSIFICATION_ONLY",
+    "textCheckpoint": "F3_04C_CLASSIFICATION_ONLY",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -56128,8 +56396,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 34,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04B_classification_review/publication",
+    "refreshed_cell_count": 21,
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04C_classification_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -57453,6 +57721,29 @@
       "ISA-A-CIC-MEDIATION",
       "ISA-K-CAPABILITY-STATE",
       "S06-R019"
+    ],
+    "F3_04C_affected_row_ids": [
+      "S06-R021",
+      "S06-R022",
+      "ISA-T-MESSAGE-ID",
+      "ISA-T-PRIORITY",
+      "ISA-T-VALIDITY",
+      "ISA-T-SENT-TIME",
+      "ISA-T-ADMIN",
+      "ISA-T-AUTHOR",
+      "ISA-R-MESSAGE-REFERENCE",
+      "ISA-A-EXTENSION-STANDING",
+      "ISA-A-CONNECTION-PRESENTATION",
+      "ISA-A-TIME-BASIS",
+      "CASE-H01",
+      "CASE-H02",
+      "CASE-H03",
+      "CASE-H04",
+      "CASE-H05",
+      "CASE-H06",
+      "CASE-H07",
+      "CASE-H08",
+      "CASE-H09"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -59401,7 +59692,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "F3-04C ONLY on a separate Proceed: classify the 21 existing Open Group SOSA comparisons in topic groups 05–07 (evidence, message/exchange context and case holds), with relevant prior-decision calibration. Stop before the 33 later equipment comparisons and before AAS O1; AAS native-first work waits for the F3 owner gate.",
+  "nextOwnerAction": "F3-04D ONLY on a separate Proceed: classify the 33 remaining Open Group SOSA equipment comparisons from J251 onward, with relevant prior-decision calibration. Stop before AAS classification/research, new rows or model adoption; AAS native-first O1 waits for the F3 owner gate.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -65789,5 +66080,190 @@
       "other_explicit_unassessed_or_case_statuses": 732
     },
     "next": "F3-04C ONLY on a separate Proceed: classify the 21 existing Open Group SOSA comparisons in topic groups 05–07 (evidence, message/exchange context and case holds), with relevant prior-decision calibration. Stop before the 33 later equipment comparisons and before AAS O1; AAS native-first work waits for the F3 owner gate."
+  },
+  "F3_04C_classification": {
+    "date": "2026-11-14",
+    "evidence": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04C_classification_review",
+    "records": [
+      {
+        "row_id": "S06-R021",
+        "cell": "J220",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "S06-R022",
+        "cell": "J221",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-T-MESSAGE-ID",
+        "cell": "J223",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-T-PRIORITY",
+        "cell": "J224",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-T-VALIDITY",
+        "cell": "J225",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-T-SENT-TIME",
+        "cell": "J227",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-T-ADMIN",
+        "cell": "J228",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-T-AUTHOR",
+        "cell": "J229",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-R-MESSAGE-REFERENCE",
+        "cell": "J230",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "cell": "J236",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "ISA-A-CONNECTION-PRESENTATION",
+        "cell": "J237",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "ISA-A-TIME-BASIS",
+        "cell": "J239",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "CASE-H01",
+        "cell": "J241",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H02",
+        "cell": "J242",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H03",
+        "cell": "J243",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H04",
+        "cell": "J244",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H05",
+        "cell": "J245",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H06",
+        "cell": "J246",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H07",
+        "cell": "J247",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H08",
+        "cell": "J248",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "CASE-H09",
+        "cell": "J249",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      }
+    ],
+    "census_after": {
+      "source_bearing": 616,
+      "colored": 446,
+      "held": 137,
+      "ungraded": 33,
+      "SAPIENT": {
+        "source_bearing": 115,
+        "colored": 65,
+        "held": 50,
+        "ungraded": 0
+      },
+      "ISA": {
+        "source_bearing": 316,
+        "colored": 271,
+        "held": 45,
+        "ungraded": 0
+      },
+      "Open_Group_SOSA": {
+        "source_bearing": 121,
+        "colored": 56,
+        "held": 32,
+        "ungraded": 33
+      },
+      "AAS": {
+        "source_bearing": 64,
+        "colored": 54,
+        "held": 10,
+        "ungraded": 0
+      },
+      "other_explicit_unassessed_or_case_statuses": 732
+    },
+    "next": "F3-04D ONLY on a separate Proceed: classify the 33 remaining Open Group SOSA equipment comparisons from J251 onward, with relevant prior-decision calibration. Stop before AAS classification/research, new rows or model adoption; AAS native-first O1 waits for the F3 owner gate."
   }
 }

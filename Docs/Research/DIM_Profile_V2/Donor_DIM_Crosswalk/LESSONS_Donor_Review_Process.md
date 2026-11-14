@@ -1,3 +1,11 @@
+# L108 — Separate message metadata, writer policy and real-case evidence (14 November 2026)
+
+F3-04C recovered qualified message identity and source-attribution information from original headers, component/log relations and management notification rules. Authentication was not required merely to recognize declared source attribution; nevertheless the source producer, transmitting endpoint and audit relay remain different roles. Individual message ID, message-type ID, occurrence ID and request/response correlation must retain distinct meanings. Clock basis does not determine whether a timestamp represents an event, a log entry or transmission, and writer priority or an update deadline cannot be silently repurposed as message priority or data expiry.
+
+Source-native declarations and architecture may help explain a case gap without closing it. The nine case comparisons therefore retain explicit holds: source descriptions do not supply installation history, actual mounting, observed reporting paths, measured power, diagnostic results, applied settings, transformation lineage, observation-quality evidence or a witnessed control sequence. Preserve the useful candidate meanings in their own rows and do not count an explicit held disposition as new case evidence. The existing source ledger records 21 decisions, four retained calibrations and the remaining 33 equipment boundary; no whole-source or runtime closure follows.
+
+---
+
 # L107 — Recover native contract information without changing its subject or standing (14 November 2026)
 
 F3-04B found that earlier comparisons could emphasize hardware “fields,” exact ISA type equivalence or absence of live execution while overlooking original SOSA typed message declarations. Named digital members, enumerations, nested structures, bounded sequences and request/result contracts support qualified information candidates in their own right. Retain hardware correspondence as separate evidence, distinguish the 2022 native model from C239 2023 attachments, and do not infer compilation or implementation from source text.
