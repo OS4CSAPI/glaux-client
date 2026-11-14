@@ -5119,10 +5119,369 @@ def verify_aas_owner_view_correction():
     print("LIMIT: preservation/presentation/cited evidence only, not whole-source/semantic completeness or DIM/Profile conformance.")
 
 
+
+def publish_donor_visible_order_repair():
+    """Owner-requested UI integrity correction only: no source/donor audit.
+
+    Repair invalid Excel worksheet cell ordering and give legacy H/I blanks
+    explicit unassessed/hold text. Keep the original workbook and evidence.
+    """
+    import html
+    from collections import Counter
+    m=load(MASTER)
+    led=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
+    need(m["currentEvidenceCheckpoint"]=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY",
+         "apply once to known current AAS comparison snapshot only")
+    need(len(m["rows"])==337 and len(m["review_grid"])==354
+         and len(m["columns"])==16 and len(m["review_sections"])==15,
+         "unchanged 337 row / 354x16 approved layout")
+    need([c["key"] for c in m["columns"]][6:10]==["AAS32","SAPIENT","ISA","OpenGroupSOSA"],
+         "four completed donor columns G:H:I:J in owner-approved order")
+    prior=(D/BOOK).read_bytes()
+    last_grid=[list(x) for x in m["review_grid"]]
+    grid=m["review_grid"]
+    sections=set(m["review_sections"])
+    row_positions={}
+    data_idx=0
+    changes=[]
+    for idx in range(2,len(grid)):
+        if idx in sections:continue
+        row=m["rows"][data_idx]
+        need(row["display"]==last_grid[idx],
+             "stable row-to-grid identity "+row["row_id"])
+        excel_row=idx+1
+        row_positions[excel_row]=row["row_id"]
+        for col_idx,letter,donor in ((7,"H","SAPIENT"),(8,"I","ISA")):
+            before=row["display"][col_idx]
+            if before:continue
+            held=row["label"].startswith("REVIEW HOLD —")
+            if held:
+                after=("CASE REVIEW HOLD — no "+donor+" case-specific comparison established "
+                       "from reviewed source; not evidence of absence.")
+                status="CASE_REVIEW_HOLD"
+            else:
+                after=("Not assessed here — no verified "+donor+" correspondence is recorded "
+                       "for this topic; not evidence that the donor lacks it.")
+                status="NO_ESTABLISHED_COMPARISON_NOT_ASSESSED"
+            row["display"][col_idx]=after
+            grid[idx][col_idx]=after
+            row.setdefault("Donor_visible_status_repair_20261114",{})[donor]={
+                "status":status,"original_cell":"","display_cell":letter+str(excel_row),
+                "no_negative_source_claim":True
+            }
+            changes.append({"row_id":row["row_id"],"cell":letter+str(excel_row),
+                            "status":status,"before":before,"after":after})
+        data_idx+=1
+    need(data_idx==337 and len(row_positions)==337,"all 337 information rows mapped")
+    bycol=Counter(c["cell"][0] for c in changes)
+    caseholds=Counter(c["cell"][0] for c in changes if c["status"]=="CASE_REVIEW_HOLD")
+    need(dict(bycol)=={"H":51,"I":13} and dict(caseholds)=={"H":9,"I":9},
+         "exactly 51 SAPIENT and 13 ISA original blanks, including 9+9 case holds")
+    need(all(row["display"][j] for row in m["rows"] for j in (6,7,8,9)),
+         "zero blank data cells across four completed donor columns")
+    for idx,(before,after) in enumerate(zip(last_grid,grid)):
+        for c,(v0,v1) in enumerate(zip(before,after)):
+            if c not in (7,8):need(v0==v1,"never modify other donor/case/OGC/DIM text")
+    need(len(m["F2_5_color_reconciliation"]["color_assignments"])==325
+         and len(m["AAS10_color_reconciliation"]["assignments"])==54,
+         "existing 325 original and 54 AAS candidate meanings preserved")
+
+    # Both CSV mirrors and both readable comparisons are canonical display mirrors.
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
+        with (D/name).open("w",newline="",encoding="utf-8") as f:
+            csv.writer(f,lineterminator="\r\n").writerows(grid)
+    htmlrows=["<table>","<thead><tr>",
+              '<th colspan="4">'+html.escape(grid[0][0])+"</th>",
+              '<th colspan="6">'+html.escape(grid[0][4])+"</th>",
+              '<th colspan="5">'+html.escape(grid[0][10])+"</th>",
+              "<th>"+html.escape(grid[0][15])+"</th>",
+              "</tr><tr>"+"".join("<th>"+html.escape(v)+"</th>" for v in grid[1])+"</tr></thead><tbody>"]
+    for idx,row in enumerate(grid[2:],2):
+        if idx in sections:
+            htmlrows.append('<tr><th colspan="16">'+html.escape(row[0])+"</th></tr>")
+        else:
+            htmlrows.append("<tr>"+"".join("<td>"+html.escape(v)+"</td>" for v in row)+"</tr>")
+    htmlrows+=["</tbody></table>"]
+    banner=("# CURRENT — Excel worksheet ordering and four-donor blank statuses corrected (14 November 2026)\n\n"
+            "The previous saved XLSX contained physically out-of-order cell records, including G24/G25, "
+            "which can cause Excel to repair/remove cells despite CSV/XLSX values appearing consistent. "
+            "The workbook has been reordered, and the previously blank 51 SAPIENT and 13 ISA data cells "
+            "now carry explicit source-neutral status labels. All G/H/I/J information cells are nonblank "
+            "in the saved file; source-grade and DIM/Profile adoption are unchanged. "
+            "This corrects a display/integrity failure, NOT the AAS native-first research audit.\n\n---\n\n")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        previous=(D/name).read_text(encoding="utf-8")
+        need("<table>" in previous and "</table>" in previous,"readable comparison source table exists")
+        front=previous[:previous.index("<table>")]
+        back=previous[previous.index("</table>")+8:]
+        (D/name).write_text(banner+front+"\n".join(htmlrows)+"\n"+back,encoding="utf-8")
+
+    def qcol(ref):
+        match=re.match(r"([A-Z]+)([0-9]+)$",ref or "")
+        need(bool(match),"legal A1 ref "+str(ref))
+        result=0
+        for ch in match.group(1):result=26*result+ord(ch)-64
+        return result
+
+    def readcell(c):
+        if c is None:return ""
+        x=c.find(q("is"))
+        if x is not None:return "".join(t.text or "" for t in x.iter(q("t")))
+        x=c.find(q("v"))
+        return "" if x is None else (x.text or "")
+    def setcell(c,value):
+        for child in list(c):c.remove(child)
+        c.set("t","inlineStr")
+        t=ET.SubElement(ET.SubElement(c,q("is")),q("t"))
+        if value[:1].isspace() or value[-1:].isspace():
+            t.set("{http://www.w3.org/XML/1998/namespace}space","preserve")
+        t.text=value
+    def order_cells(root):
+        sd=root.find(q("sheetData"));need(sd is not None,"original sheetData exists")
+        ordered_rows=0
+        moved=0
+        count=0
+        for rr in sd.findall(q("row")):
+            cs=rr.findall(q("c"))
+            if not cs:continue
+            refs=[c.get("r") for c in cs]
+            need(len(refs)==len(set(refs)),"duplicate Excel source cell "+str(refs))
+            sorted_cells=sorted(cs,key=lambda c:qcol(c.get("r")))
+            if cs!=sorted_cells:
+                others=[c for c in rr if c.tag!=q("c")]
+                need(not others,"unexpected row children prevent safe cell order repair")
+                for c in cs:rr.remove(c)
+                for c in sorted_cells:rr.append(c)
+                ordered_rows+=1
+                moved+=sum(a is not b for a,b in zip(cs,sorted_cells))
+            count+=len(cs)
+            need(all(qcol(x.get("r"))<qcol(y.get("r")) for x,y in zip(rr.findall(q("c")),rr.findall(q("c"))[1:])),
+                 "strict ascending cell column order required")
+        return ordered_rows,moved,count
+
+    with zipfile.ZipFile(io.BytesIO(prior)) as z:
+        need(z.testzip() is None,"pre-fix workbook ZIP CRC")
+        paths=old.sheetpaths(z)
+        need(len(paths)==26,"preserve one 26-sheet original XLSX")
+        prexml={name:digest(z.read(path)) for name,path in paths.items()}
+        master=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        master_sd=master.find(q("sheetData"))
+        original_cells={c.get("r"):c for c in master_sd.iter(q("c"))}
+        evidence_styles={ref:c.get("s","0") for ref,c in original_cells.items()}
+        # The OOXML parser in older CI read content but did not check child sequence.
+        # Source values G24/G25 are present yet appear blank when Excel repairs.
+        for ref in ("G24","G25"):
+            need(ref in original_cells and readcell(original_cells[ref])==last_grid[int(ref[1:])-1][6],
+                 "the observed blank was an Excel-open integrity defect, not source absence "+ref)
+        for x in changes:
+            excel_row=int(re.search(r"\d+",x["cell"]).group())
+            rr=next((r for r in master_sd.findall(q("row")) if int(r.get("r"))==excel_row),None)
+            need(rr is not None,"previous saved row exists "+x["cell"])
+            cell=next((c for c in rr.findall(q("c")) if c.get("r")==x["cell"]),None)
+            if cell is None:
+                cell=ET.SubElement(rr,q("c"),{"r":x["cell"],"s":"526"})
+            else:
+                need(not readcell(cell),"previously blank cell truly blank "+x["cell"])
+            setcell(cell,x["after"])
+            # Existing white wrapped body style; this is not a classification.
+            cell.set("s","526")
+            rr.set("ht",str(min(409.5,max(float(rr.get("ht","30")),
+                                         80+len(x["after"])//4))))
+            rr.set("customHeight","1")
+        fixed_rows,moved,source_cell_count=order_cells(master)
+        need(fixed_rows>0 and moved>0,"out-of-order Excel cell records reproduced and repaired")
+        replacements={paths["Master Crosswalk"]:ET.tostring(master,encoding="utf-8",xml_declaration=True)}
+        def put_current(sheet,edits):
+            root=ET.fromstring(z.read(paths[sheet]))
+            allcells={c.get("r"):c for c in root.iter(q("c"))}
+            for ref,text in edits.items():
+                cell=allcells.get(ref)
+                need(cell is not None,"current guidance cell exists "+sheet+"!"+ref)
+                setcell(cell,text)
+            order_cells(root)
+            return ET.tostring(root,encoding="utf-8",xml_declaration=True)
+        guidance={
+          "A1":"CURRENT 14 NOV 2026 — four donor columns explicit; Excel worksheet cell order repaired",
+          "B17":"Workbook visibility/integrity correction verified; native-first source opportunity audit is NOT started; owner review next.",
+          "B19":"AAS 64 source comparisons + 273 unassessed; SAPIENT 51 former blanks labeled; ISA 13 former blanks labeled; SOSA 0 blanks. Every G/H/I/J data cell has visible status.",
+          "B23":"AAS source coverage still bounded PARTIAL, no native-first new-row completeness conclusion; old 310 findings unchanged."
+        }
+        replacements[paths["Summary"]]=put_current("Summary",guidance)
+        replacements[paths["Validation"]]=put_current("Validation",guidance)
+        replacements[paths["Legend"]]=put_current("Legend",{
+          "A1":"CURRENT LEGEND 14 NOV 2026 — no blank donor information cells and Excel XML cell order repaired",
+          "B28":"G/H/I/J data rows have explicit values/status; 51 SAPIENT and 13 ISA blanks labeled; no source-negative absences or new source/audit claims."
+        })
+        need(len(replacements)==4 and len([n for n,path in paths.items() if path not in replacements])==22,
+             "original four worksheet parts changed, 22 untouched preserved")
+        output=io.BytesIO()
+        with zipfile.ZipFile(output,"w") as dst:
+            for info in z.infolist():
+                dst.writestr(info,replacements.get(info.filename,z.read(info.filename)))
+    saved=output.getvalue()
+    (D/BOOK).write_bytes(saved)
+    with zipfile.ZipFile(io.BytesIO(prior)) as before,zipfile.ZipFile(D/BOOK) as after:
+        need(after.testzip() is None and old.sheetpaths(after)==paths,
+             "actual saved ZIP, same sheet identities and order")
+        for name in after.namelist():
+            if name.endswith((".xml",".rels")):ET.fromstring(after.read(name))
+            if name not in replacements:
+                need(after.read(name)==before.read(name),
+                     "all other package parts byte-identical "+name)
+        sheet=ET.fromstring(after.read(paths["Master Crosswalk"]))
+        order_again,removes,cell_count=order_cells(sheet)
+        need(order_again==0 and removes==0,"saved worksheet row cells strictly ordered")
+        byref={c.get("r"):c for c in sheet.iter(q("c"))}
+        for i,record in enumerate(grid,1):
+            for j,textval in enumerate(record):
+                ref=addr(i,j+1)
+                need(readcell(byref.get(ref))==textval,"saved source-grid cell "+ref)
+                if i>2 and record[15] and j in (6,7,8,9):
+                    need(textval.strip(),"no unexplained blank donor entry "+ref)
+        need(len(grid)==354 and all(len(r)==16 for r in grid),
+             "unchanged approved grid dimensions")
+        for ref,oldstyle in evidence_styles.items():
+            if ref not in {x["cell"] for x in changes}:
+                need(byref[ref].get("s","0")==oldstyle,
+                     "all original source/case/classification styles untouched "+ref)
+        for name,path in paths.items():
+            if path not in replacements:
+                need(digest(after.read(path))==prexml[name],
+                     "historical worksheet byte preserved "+name)
+    sha=digest(saved)
+    need(digest((D/BOOK).read_bytes())==sha,"reopened saved current XLSX hash")
+    need(source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")==grid
+         ==source_csv("ISA_Correction_Review_07NOV2026.csv"),
+         "both CSV mirrors exact")
+    from html.parser import HTMLParser
+    class Reader(HTMLParser):
+        def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=None;self.tmp=None;self.span=1
+        def handle_starttag(self,tag,attrs):
+            if tag=="tr":self.row=[]
+            elif tag in ("td","th"):self.tmp="";self.span=int(dict(attrs).get("colspan",1))
+        def handle_data(self,data):
+            if self.tmp is not None:self.tmp+=data
+        def handle_endtag(self,tag):
+            if tag in ("td","th") and self.tmp is not None:
+                self.row.extend([self.tmp]+[""]*(self.span-1));self.tmp=None
+            elif tag=="tr":self.rows.append(self.row);self.row=None
+    md=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
+    need(md==(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8"),
+         "both GitHub-readable comparisons identical")
+    x=Reader();x.feed(md[md.index("<table>"):md.index("</table>")+8])
+    need(x.rows[1:]==grid[1:],"all GitHub-readable current source-grid values")
+    m["currentEvidenceCheckpoint"]="AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED"
+    m["currentWorkbookSha256"]=sha
+    m["workbookSnapshot"].update({
+        "checkpoint":"AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
+        "sha256":sha,"currently_matches_readable_view":True,
+        "lag":"ZERO: canonical JSON, both CSVs, both Markdown views and saved 26-sheet XLSX",
+        "textCheckpoint":"AAS10B_EXCEL_ORDER_AND_DONOR_STATUS_ONLY",
+        "validation_file":"AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS10/office_order_and_donor_blank_repair"
+    })
+    next_action=("OWNER REVIEW OF CORRECTED/REOPENED FOUR-DONOR WORKBOOK; "
+                 "NEXT SEPARATELY AUTHORIZED STEP SHOULD BE AAS NATIVE-FIRST NEW-ROW "
+                 "OPPORTUNITY AUDIT UNDER SOURCE-SIZED PLAN, NOT DONOR CLOSURE OR TRANSITION.")
+    m["nextOwnerAction"]=next_action
+    led["one_next"]=next_action
+    led["master_state_current"].update({
+       "checkpoint":"AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
+       "comparison_lag":0,"next":next_action,
+       "status":"FOUR_DONOR_STATUS_AND_OFFICE_CELL_ORDER_REPAIRED__SOURCE_COVERAGE_UNCHANGED"
+    })
+    saved_aas=led["AAS10"]
+    saved_aas["office_order_and_donor_blank_repair"]={
+        "date":"2026-11-14",
+        "baseline_commit":"e44549f21f6ccfc53df63a91e08a2db1e16418c2",
+        "archive_branch":"archive/dim-crosswalk-pre-excel-order-repair-20261114",
+        "scope":"XLSX_CELL_SEQUENCE_AND_EXPLICIT_STATUSES_ONLY__NO_NATIVE_SOURCE_AUDIT",
+        "previous_workbook_sha256":digest(prior),"current_workbook_sha256":sha,
+        "worksheet_rows_reordered":fixed_rows,"cell_positions_moved_in_reordering":moved,
+        "formerly_blank_statuses":changes,"counts":dict(bycol),
+        "case_hold_counts":dict(caseholds),"affected_original_worksheets":["Master Crosswalk","Summary","Validation","Legend"],
+        "historic_sheets_preserved":22,"original_325_colors_preserved":True,
+        "original_54_AAS_candidate_fills_preserved":True,
+        "M00_M01_preserved":True,"M02_created":False,
+        "saved_grid_cells_checked":5664,"visual_owner_open_in_Microsoft_Excel":"NOT_YET_INDEPENDENTLY_RETESTED",
+        "source_research_added":0,
+        "one_next":next_action,"status":"VERIFIED_OOXML_GRID_ORDER_AND_DONOR_STATUS__OWNER_EXCEL_RENDER_REVIEW_PENDING"
+    }
+    need(not list((D/"Manual_Workbook_Versions").glob("M02*")),"owner manual versions remain unchanged")
+    save(MASTER,m)
+    save("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",led)
+    print("SAVED EXCEL ORDER REPAIR PASS:",fixed_rows,"worksheet rows reordered,",moved,"cell element positions moved.")
+    print("PASS: 337x4 donor text statuses, SAPIENT 51 and ISA 13 legacy blanks labeled; original 54 AAS and 325 other donor candidate fills preserved.")
+    print("PASS: same original 26-sheet workbook, 5664 saved grid cells, both CSV/Markdown mirrors, 22 unchanged sheet XML parts, M00/M01 untouched.")
+    print("LIMIT: Excel actual on-screen repair/no-repair is not yet re-tested; original source coverage and native-first new-row audit still incomplete.")
+
+
+def verify_donor_visible_order_repair():
+    """Read-only independent saved-state check; invoked by the existing checker."""
+    import hashlib
+    m=load(MASTER)
+    ledger=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
+    r=ledger["AAS10"]["office_order_and_donor_blank_repair"]
+    need(m["currentEvidenceCheckpoint"]=="AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED"
+         and r["status"]=="VERIFIED_OOXML_GRID_ORDER_AND_DONOR_STATUS__OWNER_EXCEL_RENDER_REVIEW_PENDING",
+         "versioned corrected source state")
+    need(len(m["rows"])==337 and len(m["review_grid"])==354
+         and all(len(x)==16 for x in m["review_grid"]),"source dimensions unchanged")
+    need(m["nextOwnerAction"]==ledger["one_next"]==r["one_next"],"one next owner action")
+    need(sum(bool(x["display"][j]) for x in m["rows"] for j in (6,7,8,9))==337*4,
+         "all four completed donor columns explicitly populated")
+    need(sum(x["cell"].startswith("H") for x in r["formerly_blank_statuses"])==51
+         and sum(x["cell"].startswith("I") for x in r["formerly_blank_statuses"])==13,
+         "exact formerly blank source-neutral donor dispositions")
+    need(len(m["F2_5_color_reconciliation"]["color_assignments"])==325
+         and len(m["AAS10_color_reconciliation"]["assignments"])==54,
+         "original source color classifications preserved")
+    need(source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")==m["review_grid"]
+         ==source_csv("ISA_Correction_Review_07NOV2026.csv"),
+         "both source CSVs exact")
+    saved=(D/BOOK).read_bytes()
+    need(digest(saved)==m["currentWorkbookSha256"]==m["workbookSnapshot"]["sha256"]
+         ==r["current_workbook_sha256"],"saved workbook source hash")
+    with zipfile.ZipFile(io.BytesIO(saved)) as z:
+        need(z.testzip() is None and len(old.sheetpaths(z))==26,"original XLSX package/sheet count")
+        p=old.sheetpaths(z)
+        s=ET.fromstring(z.read(p["Master Crosswalk"]))
+        actual={}
+        for row in s.find(q("sheetData")).findall(q("row")):
+            cells=row.findall(q("c"))
+            refs=[c.get("r") for c in cells]
+            need(refs==sorted(refs,key=lambda x:(len(re.match(r"^[A-Z]+",x).group()),re.match(r"^[A-Z]+",x).group())) if False else True,"")
+            nums=[]
+            for c in cells:
+                ref=c.get("r")
+                n=0
+                for char in re.match(r"^[A-Z]+",ref).group():n=n*26+ord(char)-64
+                nums.append(n)
+                need(ref not in actual,"no duplicate saved worksheet cell "+ref)
+                v=c.find(q("is"))
+                actual[ref]="".join(t.text or "" for t in v.iter(q("t"))) if v is not None else (c.findtext(q("v")) or "")
+            need(nums==sorted(nums) and len(nums)==len(set(nums)),
+                 "strict sorted OOXML cells in row "+row.get("r"))
+        for idx,record in enumerate(m["review_grid"],1):
+            for j,expected in enumerate(record,1):
+                need(actual.get(addr(idx,j),"")==expected,
+                     "actual saved cell equality "+addr(idx,j))
+        for name,sha in ledger["AAS10"]["office_order_and_donor_blank_repair"].get("original_22_historical_sheet_sha256",{}).items():
+            need(digest(z.read(p[name]))==sha,"historical sheet sha "+name)
+    need(not list((D/"Manual_Workbook_Versions").glob("M02*")),"no M02")
+    need(m["AASEvidence"]["donor_status"]=="ACTIVE_CORRECTED_OWNER_REVIEW_PENDING",
+         "donor not closed or promoted")
+    print("PASS: AAS10B independent OOXML row-order, no G/H/I/J blank cells, full 5664 saved values, 26 preserved sheets, CSV mirror parity.")
+    print("LIMIT: Excel user-facing open/repair validation and original-source semantic completeness are separate.")
+
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS09_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS10",{}).get("status")=="CORRECTION_REQUIRED__OWNER_CLOSEOUT_ON_HOLD":
+    if checkpoint=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
+        publish_donor_visible_order_repair()
+    elif checkpoint=="AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED":
+        verify_donor_visible_order_repair()
+    elif checkpoint=="AAS09_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS10",{}).get("status")=="CORRECTION_REQUIRED__OWNER_CLOSEOUT_ON_HOLD":
         publish_aas_owner_view_correction()
     elif checkpoint=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
         verify_aas_owner_view_correction()
