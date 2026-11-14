@@ -1,3 +1,12 @@
+# L105 — Grade the comparison's actual meaning, not every unrelated issue in its evidence bundle (14 November 2026)
+
+F3-03 found that mixed source-item grades had propagated an unrelated timestamp dispute into the Node identifier comparison and specialized mode details into the general supported/default mode comparisons. Later taxonomy-only and video-only wording also obscured earlier source-qualified named output and Node-status information. Restore the supported meaning with its actual source subject and limits; keep requiredness conflicts separate when the field meaning itself is clear. A common information candidate does not require exact ISA/OGC equivalence or a verified installed case, but a target's properties must not become the detector's properties and target taxonomy must not become generic value structure.
+
+Record these as selective calibration corrections, with the previous text, original IDs and independent correspondence grade retained in the existing ledger. F3-03 resolved 39 ungraded cells and corrected 12 earlier dispositions; it did not re-audit every old classification or close the original source corpus. After a color removal, verify the saved neutral/banded fill and explicit hold wording, as well as both text mirrors, the visible register, guidance, untouched columns and preserved manual versions. A saved/rendered workbook still does not establish a clean desktop Microsoft Excel opening.
+
+
+---
+
 # L104 — Classify the qualified information need without erasing a different source subject (14 November 2026)
 
 F3-02 resolved the 18 omitted early ISA comparisons as nine common candidates, two specialized candidates and seven explicit holds. A common candidate can retain PARTIAL or RELATED correspondence; component manufacturer, observable meaning and reported command outcome do not become exact installed-equipment/OMS/physical-effect equivalences because their cells are blue. Conversely, a hold on the early reusable-procedure, physical-part or allowed-mode row must not erase the already qualified common Method-label, attachment-relation or capability-catalogue row.

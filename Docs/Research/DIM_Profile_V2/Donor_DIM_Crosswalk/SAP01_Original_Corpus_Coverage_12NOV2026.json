@@ -9228,5 +9228,3398 @@
     "other_donors": "ISA six source questions and The Open Group SOSA nine PARTIAL families retained",
     "master_publication": "F2-3 planned JSON/2 CSV/2 Markdown; keep unchanged older SAP06 XLSX exact-lag disclosure; M00 immutable until owner milestone",
     "model_profile_adopted": false
+  },
+  "F3_03_classification_review": {
+    "date": "2026-11-14",
+    "status": "SOURCE_DECISIONS_PUBLISHED__STOP_AT_CURRENT_STAGE",
+    "authorized_step": "F3-03 only; 39 ungraded cells plus selective prior-color/hold calibration",
+    "baseline_commit": "f636b00d494ce8d5e9beb9d50faa90219bebc2f6",
+    "archive_branch": "archive/dim-crosswalk-pre-f3-03-20261114",
+    "original_source_access": {
+      "BSI_original": "bsi-flex-335.pdf; BSI Flex 335 v2.0:2024-03; 116 PDF pages",
+      "library_file_id": "libfile_fde3_f-dce00f95a96481919d6918a466e3bfdf_e7c42626e8f881918ef5d4fbe598cb8b",
+      "PDF_page_ranges_text_read": [
+        [
+          15,
+          25
+        ],
+        [
+          35,
+          38
+        ],
+        [
+          41,
+          95
+        ],
+        [
+          107,
+          110
+        ]
+      ],
+      "original_proto_commit": "244a741c13bcee628f84944aef91e4a66854bd7d",
+      "original_proto_path": "bsi_flex_335_v2_0/",
+      "original_proto_blobs_text_read": {
+        "sapient_message.proto": "7f7f3b003332e54b3fd54a24b1b5b7760b564f86",
+        "registration.proto": "2b7221a9304702893f8f11ab5ce5dedefd45b945",
+        "status_report.proto": "81fbb19ba41d17af27cc2023092942d740d2252a",
+        "detection_report.proto": "5cb4a39d1fb697720793268397ca6b350610f9fe",
+        "task.proto": "b48579d56975c969813468eb2c2ad0946e0e1991",
+        "task_ack.proto": "4277086ff654edb691417bc7dc478eb9201a2279",
+        "alert.proto": "defd328bf13b55396ed3e7bb453ce6fcc0810fa3",
+        "alert_ack.proto": "9d215955bf147c9a9021fb103e8c763c07ffa35a",
+        "associated_detection.proto": "6374235c06715543532c5afdc2412a34700b3d1b",
+        "associated_file.proto": "7615407f62e55e7fb53f149d91572a8a9e7c785b",
+        "follow.proto": "ccf5dd583999dec208102f12fd4540309ad9bd97"
+      },
+      "limitations": "Selected disputed meanings and adjacent text only. Figure geometry not inspected in this pass; other PDF pages and other native files/imports not reaudited. No proto compilation, runtime conformance, whole-clause completeness or external vocabulary audit claimed. Prior 39 overlapping source/access holds remain; they are not these 39 comparison cells."
+    },
+    "coverage": {
+      "initial_exception_cells": 39,
+      "initial_exception_distinct_native_ids": 51,
+      "prior_classifications_changed": 12,
+      "changed_cells": 51,
+      "distinct_referenced_existing_native_ids": 62,
+      "source_item_grade": "IDs count references to pre-existing native findings, not independent norms or complete original-clause audits."
+    },
+    "initial_39_status_counts": {
+      "MIXED_OR_HELD": 30,
+      "COMMON_CANDIDATE": 4,
+      "UNRESOLVED_CANDIDATE": 2,
+      "SPECIALIZED_CANDIDATE": 3
+    },
+    "calibration_change_status_counts": {
+      "COMMON_CANDIDATE": 9,
+      "MIXED_OR_HELD": 2,
+      "SPECIALIZED_CANDIDATE": 1
+    },
+    "records": [
+      {
+        "decision_id": "F3-03-S06-R007",
+        "row_id": "S06-R007",
+        "cell": "H13",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Physical constituent",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
+        "after": "[HELD] NO_ESTABLISHED: Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings. [SAP02-N06, SAP02-N07, SAP03A-N12, SAP06-N02]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP02-N06",
+          "SAP02-N07",
+          "SAP03A-N12",
+          "SAP06-N02"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N06",
+          "SAP02-N07",
+          "SAP03A-N12",
+          "SAP06-N02"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N06",
+            "locator": "BSI §4.10 and Figures3–4 PDF22–23",
+            "standing": "DESCRIPTION_AND_PLATFORM_SHALL__FIGURE_PIXELS_READ"
+          },
+          {
+            "id": "SAP02-N07",
+            "locator": "BSI §4.11 and Figure5 PDF24–25",
+            "standing": "SCOPED_HIERARCHICAL_SHALL__FIGURE_PIXELS_READ"
+          },
+          {
+            "id": "SAP03A-N12",
+            "locator": "BSI §6.2.5.15, PDF48, Table32; registration.proto ConfigurationData",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP06-N02",
+            "locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+            "standing": "RULE_AND_TABLE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            22,
+            23,
+            24,
+            25,
+            48,
+            90,
+            91,
+            92,
+            93,
+            94
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R013",
+        "row_id": "S06-R013",
+        "cell": "H25",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Observed / observable property",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
+        "after": "[COMMON CANDIDATE] RELATED: Declared DetectionReport type/name and units plus reported object/track type-value metadata support qualified observable-information candidates. Target classes and behaviours alone are not observable-property identifiers or measured quantities. [SAP04-N10, SAP04-N13, SAP06-N02, SAP06-N05, SAP03B-N01, SAP03B-N02, SAP04-N12]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N10",
+          "SAP04-N13",
+          "SAP06-N02",
+          "SAP06-N05",
+          "SAP03B-N01",
+          "SAP03B-N02",
+          "SAP04-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N10",
+          "SAP04-N13",
+          "SAP06-N02",
+          "SAP06-N05"
+        ],
+        "additional_existing_source_ids": [
+          "SAP03B-N01",
+          "SAP03B-N02",
+          "SAP04-N12"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N10",
+            "locator": "§§6.4.1–6.4.2.6 PDF69–72; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N13",
+            "locator": "§§6.4.2.12–.14 PDF73–74; detection_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP06-N02",
+            "locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+            "standing": "RULE_AND_TABLE"
+          },
+          {
+            "id": "SAP06-N05",
+            "locator": "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour",
+            "standing": "RULE_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP03B-N01",
+            "locator": "Original BSI SAP-BSI-T033, SAP-BSI-T034, SAP-BSI-T035; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N02",
+            "locator": "Original BSI SAP-BSI-T036, SAP-BSI-T037; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N12",
+            "locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            49,
+            50,
+            51,
+            72,
+            73,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Declared DetectionReport type/name and units plus reported object/track type-value metadata support qualified observable-information candidates. Target classes and behaviours alone are not observable-property identifiers or measured quantities.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R015",
+        "row_id": "S06-R015",
+        "cell": "H27",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Performed Observation",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
+        "after": "[HELD] NO_ESTABLISHED: DetectionReport conveys detection/track claims; taxonomy and behaviour fields do not establish the observing-act, procedure and result relationships of an OGC Observation. Hold this mapping without treating useful reported target information as absent. [SAP02-N02, SAP02-N12, SAP04-N09, SAP04-N10, SAP06-N01, SAP06-N05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP02-N02",
+          "SAP02-N12",
+          "SAP04-N09",
+          "SAP04-N10",
+          "SAP06-N01",
+          "SAP06-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N02",
+          "SAP02-N12",
+          "SAP04-N09",
+          "SAP04-N10",
+          "SAP06-N01",
+          "SAP06-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N02",
+            "locator": "BSI §3.1.1–17 PDF15–16",
+            "standing": "DEFINITIONS"
+          },
+          {
+            "id": "SAP02-N12",
+            "locator": "BSI §5.5 Tables13–14 PDF35; associated_detection.proto",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP04-N09",
+            "locator": "§§6.4.1–6.4.2.3 PDF69–71; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N10",
+            "locator": "§§6.4.1–6.4.2.6 PDF69–72; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N01",
+            "locator": "BSI Flex 335 v2.0 §7.1–7.2, PDF p90",
+            "standing": "RULE"
+          },
+          {
+            "id": "SAP06-N05",
+            "locator": "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour",
+            "standing": "RULE_AND_COMMENTARY"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            15,
+            16,
+            19,
+            69,
+            70,
+            71,
+            72,
+            90,
+            95
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "DetectionReport conveys detection/track claims; taxonomy and behaviour fields do not establish the observing-act, procedure and result relationships of an OGC Observation. Hold this mapping without treating useful reported target information as absent.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-131",
+        "row_id": "ISA-C-131",
+        "cell": "H44",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Observed-entity battle-space identifier",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: SAPIENT object_id ULID and optional detected-object id are not an established ISA Battle Space Object identity namespace. [SAP04-N09]",
+        "after": "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N09"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N09"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N09",
+            "locator": "§§6.4.1–6.4.2.3 PDF69–71; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            47,
+            69,
+            70,
+            71
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-EVENT-TIME",
+        "row_id": "ISA-T-EVENT-TIME",
+        "cell": "H69",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Event occurrence time",
+        "candidate_status": "UNRESOLVED_CANDIDATE",
+        "fill": "#E9DEFA",
+        "relation": "CONFLICT",
+        "before": "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
+        "after": "[UNRESOLVED] CONFLICT: BSI Table 1 defines UTC content time, including when a detection was made; pinned SapientMessage.timestamp comments instead say message send time. The occurrence-time mapping remains unresolved; requested task start/end times do not resolve this conflict. [SAP02-N03, SAP04-N09, SAP04-N17, SAP05-N01]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP02-N03",
+          "SAP04-N09",
+          "SAP04-N17",
+          "SAP05-N01"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N03",
+          "SAP04-N09",
+          "SAP04-N17",
+          "SAP05-N01"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N03",
+            "locator": "BSI §§4.1–4.3 Table1 PDF18–20; sapient_message.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N09",
+            "locator": "§§6.4.1–6.4.2.3 PDF69–71; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N17",
+            "locator": "§6.3.2.4 + Tables60/70/77 and pinned status_report.proto/detection_report.proto",
+            "standing": "SOURCE_CONFLICT_OR_VALIDATION_CEILING"
+          },
+          {
+            "id": "SAP05-N01",
+            "locator": "BSI §§6.5.1–6.5.3 PDF76–77; Task proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            19,
+            69,
+            70,
+            76,
+            77
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "detection_report.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "BSI Table 1 defines UTC content time, including when a detection was made; pinned SapientMessage.timestamp comments instead say message send time. The occurrence-time mapping remains unresolved; requested task start/end times do not resolve this conflict.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-EVENT-REASON",
+        "row_id": "ISA-T-EVENT-REASON",
+        "cell": "H70",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Event creation category",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
+        "after": "[SPECIALIZED CANDIDATE] RELATED: AlertType supplies native severity/purpose, including a request to change mode, while alert triggers remain system-specific. It supports a qualified alert-category candidate, not the ISA Event creation-reason enumeration. [SAP05-N13, SAP05-N14]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N13",
+          "SAP05-N14"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N13",
+          "SAP05-N14"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N13",
+            "locator": "BSI §§6.6.1–6.6.2 PDF85–86; alert.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N14",
+            "locator": "BSI §§6.6.3–.10 PDF86–87; alert.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            85,
+            86,
+            87
+          ],
+          "pinned_v2_proto_files": [
+            "alert.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "AlertType supplies native severity/purpose, including a request to change mode, while alert triggers remain system-specific. It supports a qualified alert-category candidate, not the ISA Event creation-reason enumeration.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-R-VIDEO-DETECTION",
+        "row_id": "ISA-R-VIDEO-DETECTION",
+        "cell": "H73",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Video-frame detection details",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Annex C's out-of-spec video streaming guidance and Table C.1 example bitrates do not define ISA video-frame bounding boxes or native event-structure requirements. [SAP06-N16,SAP06-N17]",
+        "after": "[HELD] NO_ESTABLISHED: Image/media references, detected-target claims and informative video guidance do not establish a video-frame detection record with image-space bounds. Streaming video is outside this edition; retain the native target and media meanings separately. [SAP04-N13, SAP04-N14, SAP06-N16, SAP06-N17]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N13",
+          "SAP04-N14",
+          "SAP06-N16",
+          "SAP06-N17"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N13",
+          "SAP04-N14",
+          "SAP06-N16",
+          "SAP06-N17"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N13",
+            "locator": "§§6.4.2.12–.14 PDF73–74; detection_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N14",
+            "locator": "§6.4.2.15 PDF75; associated_file.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N16",
+            "locator": "Informative Annex C §C.4.2–.2.2 PDF108–109",
+            "standing": "INFORMATIVE_EXCLUDED_FROM_SPECIFICATION"
+          },
+          {
+            "id": "SAP06-N17",
+            "locator": "Informative Annex C Table C.1 PDF109",
+            "standing": "INFORMATIVE_BITRATE_EXAMPLE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            72,
+            73,
+            74,
+            75,
+            108,
+            109
+          ],
+          "pinned_v2_proto_files": [
+            "detection_report.proto",
+            "associated_file.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Image/media references, detected-target claims and informative video guidance do not establish a video-frame detection record with image-space bounds. Streaming video is outside this edition; retain the native target and media meanings separately.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-R-VIDEO-TRACK",
+        "row_id": "ISA-R-VIDEO-TRACK",
+        "cell": "H74",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Video-derived entity track reference",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Optional compressed/raw video transport guidance is not a source-defined ISA video-track identity, track continuity or recorded observation provenance. [SAP06-N16]",
+        "after": "[HELD] NO_ESTABLISHED: TrackingType and persistent object_id describe target tracking; associated files/video guidance do not define image-frame track records. Hold the video-specific mapping; tracking capability and detection lineage remain represented. [SAP03B-N02, SAP03B-N03, SAP04-N12, SAP04-N13, SAP06-N16]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N02",
+          "SAP03B-N03",
+          "SAP04-N12",
+          "SAP04-N13",
+          "SAP06-N16"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N02",
+          "SAP03B-N03",
+          "SAP04-N12",
+          "SAP04-N13",
+          "SAP06-N16"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N02",
+            "locator": "Original BSI SAP-BSI-T036, SAP-BSI-T037; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N03",
+            "locator": "Original BSI SAP-BSI-T038, SAP-BSI-T039; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N12",
+            "locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N13",
+            "locator": "§§6.4.2.12–.14 PDF73–74; detection_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP06-N16",
+            "locator": "Informative Annex C §C.4.2–.2.2 PDF108–109",
+            "standing": "INFORMATIVE_EXCLUDED_FROM_SPECIFICATION"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            47,
+            49,
+            50,
+            73,
+            74,
+            75,
+            108,
+            109
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto",
+            "associated_file.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "TrackingType and persistent object_id describe target tracking; associated files/video guidance do not define image-frame track records. Hold the video-specific mapping; tracking capability and detection lineage remain represented.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-K-TYPE-CHOICE",
+        "row_id": "ISA-K-TYPE-CHOICE",
+        "cell": "H85",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Declared built-in or custom value type",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
+        "after": "[HELD] NO_ESTABLISHED: Class/subclass and external target-vocabulary choices classify detected targets. They do not declare a generic allowable value datatype. Hold this row mapping; retain the separate target-claims candidate. [SAP03B-N05, SAP03B-N06, SAP06-N04, SAP06-N18]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N05",
+          "SAP03B-N06",
+          "SAP06-N04",
+          "SAP06-N18"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N05",
+          "SAP03B-N06",
+          "SAP06-N04",
+          "SAP06-N18"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N05",
+            "locator": "Original BSI SAP-BSI-T041, SAP-BSI-T042; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N06",
+            "locator": "Original BSI SAP-BSI-T043, SAP-BSI-T044; source packet SAP03B",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP06-N04",
+            "locator": "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass",
+            "standing": "RULE_COMMENTARY_EXAMPLE"
+          },
+          {
+            "id": "SAP06-N18",
+            "locator": "Informative Annex D PDF110",
+            "standing": "INFORMATIVE_EXTERNAL_POINTERS"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            52,
+            53,
+            54,
+            90,
+            94,
+            110
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Class/subclass and external target-vocabulary choices classify detected targets. They do not declare a generic allowable value datatype. Hold this row mapping; retain the separate target-claims candidate.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-177",
+        "row_id": "ISA-C-177",
+        "cell": "H116",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested component active state",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: REQUEST Start/Stop changes sensor DetectionReport emission while StatusReport continues; not an ISA component Active boolean or physical power/on state. [SAP05-N06]",
+        "after": "[HELD] NO_ESTABLISHED: START/STOP control detection and alert reporting while status reporting continues. They do not establish the ISA component Active flag or prove physical activation. Keep the reporting-control meaning with the task contract. [SAP05-N06]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N06"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N06"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N06",
+            "locator": "BSI §6.5.6.2 PDF81; task.proto Task.Command",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            61,
+            62,
+            79,
+            80
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "START/STOP control detection and alert reporting while status reporting continues. They do not establish the ISA component Active flag or prove physical activation. Keep the reporting-control meaning with the task contract.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-195",
+        "row_id": "ISA-C-195",
+        "cell": "H122",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested maximum Status-publication interval",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Task.Command detection_report_rate adjusts detection output reporting, not ISA Maximum Status Interval; source heartbeat contract remains different. [SAP05-N07]",
+        "after": "[HELD] NO_ESTABLISHED: detection_report_rate is a requested detection-reporting rate; status_interval is a registered heartbeat interval. Neither establishes the ISA maximum Status interval property or its update contract. [SAP05-N07, SAP03A-N06]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N07",
+          "SAP03A-N06"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N07"
+        ],
+        "additional_existing_source_ids": [
+          "SAP03A-N06"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N07",
+            "locator": "BSI §§6.5.6.3–.5 PDF81–82; task.proto DiscreteThreshold",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP03A-N06",
+            "locator": "BSI §§6.2.5.4–.5, PDF41–42, Tables20–22; registration.proto StatusDefinition/Duration/TimeUnits",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            41,
+            42,
+            63,
+            64,
+            65,
+            79,
+            80
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "status_report.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "detection_report_rate is a requested detection-reporting rate; status_interval is a registered heartbeat interval. Neither establishes the ISA maximum Status interval property or its update contract.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-196",
+        "row_id": "ISA-C-196",
+        "cell": "H123",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested minimum Status-publication interval",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Task.Command detection_report_rate is not ISA Minimum Status Interval or an exact status-report schedule control. [SAP05-N07]",
+        "after": "[HELD] NO_ESTABLISHED: detection_report_rate and registered status_interval do not establish a minimum Status-report interval. The typical heartbeat range is not a universal lower scheduling bound. [SAP05-N07, SAP03A-N06]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N07",
+          "SAP03A-N06"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N07"
+        ],
+        "additional_existing_source_ids": [
+          "SAP03A-N06"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N07",
+            "locator": "BSI §§6.5.6.3–.5 PDF81–82; task.proto DiscreteThreshold",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          },
+          {
+            "id": "SAP03A-N06",
+            "locator": "BSI §§6.2.5.4–.5, PDF41–42, Tables20–22; registration.proto StatusDefinition/Duration/TimeUnits",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            41,
+            42,
+            63,
+            64,
+            65,
+            79,
+            80
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "status_report.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "detection_report_rate and registered status_interval do not establish a minimum Status-report interval. The typical heartbeat range is not a universal lower scheduling bound.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-243",
+        "row_id": "ISA-C-243",
+        "cell": "H133",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested named-property Status reporting",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: REQUEST Status asks for full current StatusReport, not ISA Set Property Reporting selection of named properties. [SAP05-N06]",
+        "after": "[HELD] NO_ESTABLISHED: requestStatus requests a full status report; it does not select a named component property. Hold the property-selection mapping while retaining the status-query command meaning. [SAP05-N06]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N06"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N06"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N06",
+            "locator": "BSI §6.5.6.2 PDF81; task.proto Task.Command",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            79,
+            80
+          ],
+          "pinned_v2_proto_files": [
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "requestStatus requests a full status report; it does not select a named component property. Hold the property-selection mapping while retaining the status-query command meaning.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-209",
+        "row_id": "ISA-C-209",
+        "cell": "H142",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested prevention of pre-armed commands",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Table58 lists REQUEST Arm for effectors but does not define an equivalent ISA Disarm operation in reviewed Registration command repertoire. [SAP03B-N13]",
+        "after": "[HELD] NO_ESTABLISHED: The advertised ARM command does not establish the ISA Disarm command or a rule preventing all previously armed commands. Retain only the documented source-native command capability. [SAP03B-N13]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N13"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N13"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N13",
+            "locator": "Original BSI SAP-BSI-T058; source packet SAP03B",
+            "standing": "SCOPED_SHALL_AND_NOTES"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            61,
+            62
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "The advertised ARM command does not establish the ISA Disarm command or a rule preventing all previously armed commands. Retain only the documented source-native command capability.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-224",
+        "row_id": "ISA-C-224",
+        "cell": "H155",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested pointing orientation with attachment-dependent reference",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: SAPIENT LOOK_AT targets Location/RangeBearing with temporary task suspension; not an exact ISA angular Point Orientation request with attachment-relative reference. [SAP05-N08]",
+        "after": "[SPECIALIZED CANDIDATE] RELATED: LOOK_AT requests pointing toward a Location or RangeBearing target and can temporarily interrupt tasking. This supports optional pointing control, not the ISA angular command in an attachment frame. [SAP03B-N14, SAP05-N08]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N14",
+          "SAP05-N08"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N14",
+          "SAP05-N08"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N14",
+            "locator": "Original BSI SAP-BSI-T058, SAP-BSI-T059; source packet SAP03B",
+            "standing": "SCOPED_SHALL_AND_FUTURE_NOTE"
+          },
+          {
+            "id": "SAP05-N08",
+            "locator": "BSI §§6.5.6.6–.7 PDF82; task.proto Task.Command",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            61,
+            62,
+            81,
+            82
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "LOOK_AT requests pointing toward a Location or RangeBearing target and can temporarily interrupt tasking. This supports optional pointing control, not the ISA angular command in an attachment frame.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-234",
+        "row_id": "ISA-C-234",
+        "cell": "H159",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested ordered-point scan with absolute stop time",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: SAPIENT PATROL instructs mobile route traversal until retasked, not ISA Scan Points' location-ordered observation scanning with absolute stop time. [SAP05-N09]",
+        "after": "[HELD] NO_ESTABLISHED: PATROL waypoints describe mobile-platform route movement. They do not establish ordered sensor ScanPoints with the ISA stopTime semantics. Hold the scan-sequence mapping; retain the native patrol task. [SAP03B-N14, SAP05-N09]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N14",
+          "SAP05-N09"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N14",
+          "SAP05-N09"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N14",
+            "locator": "Original BSI SAP-BSI-T058, SAP-BSI-T059; source packet SAP03B",
+            "standing": "SCOPED_SHALL_AND_FUTURE_NOTE"
+          },
+          {
+            "id": "SAP05-N09",
+            "locator": "BSI §§6.5.6.8–.10 PDF82–83; task.proto/follow.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            61,
+            62,
+            81,
+            82,
+            83
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "PATROL waypoints describe mobile-platform route movement. They do not establish ordered sensor ScanPoints with the ISA stopTime semantics. Hold the scan-sequence mapping; retain the native patrol task.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-ACCESS",
+        "row_id": "ISA-T-ACCESS",
+        "cell": "H199",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Request access-control metadata",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
+        "after": "[HELD] NO_ESTABLISHED: MODE_CHANGE permission and AlertAck response govern autonomy/task decisions. They do not establish access credentials, token authorization or the ISA Access datatype. [SAP05-N14, SAP05-N16]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N14",
+          "SAP05-N16"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N14",
+          "SAP05-N16"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N14",
+            "locator": "BSI §§6.6.3–.10 PDF86–87; alert.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP05-N16",
+            "locator": "BSI §6.6.13 PDF88–89; alert_ack.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            86,
+            87,
+            88,
+            89
+          ],
+          "pinned_v2_proto_files": [
+            "alert.proto",
+            "alert_ack.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "MODE_CHANGE permission and AlertAck response govern autonomy/task decisions. They do not establish access credentials, token authorization or the ISA Access datatype.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-Q-QUERY",
+        "row_id": "ISA-Q-QUERY",
+        "cell": "H203",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Requested message kinds and returned fields",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Annex C's optional middleware persistence/retrieval guidance does not specify ISA DataQuery/Select or a mandatory CSAPI historical query resource. [SAP06-N14]",
+        "after": "[HELD] NO_ESTABLISHED: Informative middleware routing, storage and validation do not specify the ISA Select or query language. No query contract is inferred from message storage. [SAP06-N14]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP06-N14"
+        ],
+        "inherited_source_ids": [
+          "SAP06-N14"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP06-N14",
+            "locator": "Informative Annex C §C.3.1–.2 PDF107–108",
+            "standing": "INFORMATIVE_WITH_SCOPED_SHALL_AND_NOTES"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            107,
+            108
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Informative middleware routing, storage and validation do not specify the ISA Select or query language. No query contract is inferred from message storage.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-A-SERVICE-ROLE",
+        "row_id": "ISA-A-SERVICE-ROLE",
+        "cell": "H213",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Service role and required command support",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
+        "after": "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N10",
+          "SAP06-N14",
+          "SAP06-N15"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N10",
+          "SAP06-N14",
+          "SAP06-N15"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N10",
+            "locator": "BSI §6.5.6.10 PDF83 and Table59 PDF63; follow.proto",
+            "standing": "CROSS_ARTIFACT_CONFLICT"
+          },
+          {
+            "id": "SAP06-N14",
+            "locator": "Informative Annex C §C.3.1–.2 PDF107–108",
+            "standing": "INFORMATIVE_WITH_SCOPED_SHALL_AND_NOTES"
+          },
+          {
+            "id": "SAP06-N15",
+            "locator": "Informative Annex C §C.4.1 PDF108",
+            "standing": "INFORMATIVE_GUIDANCE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            23,
+            24,
+            25,
+            84,
+            107,
+            108,
+            109
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "associated_file.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-A-MEMBER-TASKABILITY",
+        "row_id": "ISA-A-MEMBER-TASKABILITY",
+        "cell": "H216",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Externally visible member taskability",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: SAPIENT Node task support and TaskACK responses do not encode ISA externally visible member transparent/translucent taskability flags. [SAP05-N05,SAP05-N10]",
+        "after": "[HELD] NO_ESTABLISHED: Task routing and cancellation on dependent Nodes describe operational dependencies. They do not establish which physical members of a composition are independently taskable. [SAP05-N05, SAP05-N10]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N05",
+          "SAP05-N10"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N05",
+          "SAP05-N10"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N05",
+            "locator": "BSI §6.5.6.1 PDF80–81; task.proto Task.Command",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP05-N10",
+            "locator": "BSI §6.5.6.10 PDF83 and Table59 PDF63; follow.proto",
+            "standing": "CROSS_ARTIFACT_CONFLICT"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            23,
+            24,
+            25,
+            76,
+            77,
+            84
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Task routing and cancellation on dependent Nodes describe operational dependencies. They do not establish which physical members of a composition are independently taskable.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R022",
+        "row_id": "S06-R022",
+        "cell": "H221",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Original event and derived digital representation (proposed DIM)",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
+        "after": "[HELD] NO_ESTABLISHED: DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate. [SAP04-N16, SAP04-N19, SAP05-N13, SAP05-N15]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N16",
+          "SAP04-N19",
+          "SAP05-N13",
+          "SAP05-N15"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N16",
+          "SAP04-N19",
+          "SAP05-N13",
+          "SAP05-N15"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N16",
+            "locator": "§6.4.2.19 PDF76; detection_report.proto DerivedDetection",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N19",
+            "locator": "§6.4.1/Table69/Table77, associated_detection.proto",
+            "standing": "SOURCE_OBSERVATION_AND_LIMIT"
+          },
+          {
+            "id": "SAP05-N13",
+            "locator": "BSI §§6.6.1–6.6.2 PDF85–86; alert.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N15",
+            "locator": "BSI §6.6.11 PDF88; associated_file.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            35,
+            74,
+            75,
+            85,
+            88
+          ],
+          "pinned_v2_proto_files": [
+            "associated_detection.proto",
+            "detection_report.proto",
+            "alert.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-SENT-TIME",
+        "row_id": "ISA-T-SENT-TIME",
+        "cell": "H227",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Exchange transmission time",
+        "candidate_status": "UNRESOLVED_CANDIDATE",
+        "fill": "#E9DEFA",
+        "relation": "CONFLICT",
+        "before": "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
+        "after": "[UNRESOLVED] CONFLICT: Pinned SapientMessage.timestamp comments say message send time, but BSI Table 1 explicitly defines content time rather than transmission time. A distinct unambiguous sent-time field is not established. [SAP04-N17, SAP02-N03]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N17",
+          "SAP02-N03"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N17"
+        ],
+        "additional_existing_source_ids": [
+          "SAP02-N03"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N17",
+            "locator": "§6.3.2.4 + Tables60/70/77 and pinned status_report.proto/detection_report.proto",
+            "standing": "SOURCE_CONFLICT_OR_VALIDATION_CEILING"
+          },
+          {
+            "id": "SAP02-N03",
+            "locator": "BSI §§4.1–4.3 Table1 PDF18–20; sapient_message.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            19,
+            74,
+            75
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Pinned SapientMessage.timestamp comments say message send time, but BSI Table 1 explicitly defines content time rather than transmission time. A distinct unambiguous sent-time field is not established.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-R-TREE",
+        "row_id": "ISA-R-TREE",
+        "cell": "H235",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Recursive same-type value hierarchy",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
+        "after": "[HELD] NO_ESTABLISHED: Recursive SubClass fields and target-taxonomy docking describe classification hierarchy, not a generic ISA Tree value datatype. Retain the target-claims candidate; hold this datatype equivalence. [SAP06-N02, SAP06-N04]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "inherited_source_ids": [
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP06-N02",
+            "locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+            "standing": "RULE_AND_TABLE"
+          },
+          {
+            "id": "SAP06-N04",
+            "locator": "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass",
+            "standing": "RULE_COMMENTARY_EXAMPLE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            52,
+            53,
+            54,
+            90,
+            94
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Recursive SubClass fields and target-taxonomy docking describe classification hierarchy, not a generic ISA Tree value datatype. Retain the target-claims candidate; hold this datatype equivalence.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-048",
+        "row_id": "ISA-C-048",
+        "cell": "H251",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Component configuration version",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
+        "after": "[HELD] NO_ESTABLISHED: ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier. [SAP03A-N12]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03A-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N12"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N12",
+            "locator": "BSI §6.2.5.15, PDF48, Table32; registration.proto ConfigurationData",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            48
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-068",
+        "row_id": "ISA-C-068",
+        "cell": "H253",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Tactical identity classification",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Table96 classes Human/Vehicle/Equipment and classification probabilities describe detected object categories, not ISA tactical identity or physical device type. [SAP06-N02,SAP06-N03]",
+        "after": "[HELD] NO_ESTABLISHED: Target Class/SubClass and confidence describe object categories. They do not establish a tactical identity such as friend/hostile/neutral. Preserve target classification without inferring allegiance. [SAP03B-N03, SAP03B-N05, SAP06-N02, SAP06-N03]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N03",
+          "SAP03B-N05",
+          "SAP06-N02",
+          "SAP06-N03"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N03",
+          "SAP03B-N05",
+          "SAP06-N02",
+          "SAP06-N03"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N03",
+            "locator": "Original BSI SAP-BSI-T038, SAP-BSI-T039; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N05",
+            "locator": "Original BSI SAP-BSI-T041, SAP-BSI-T042; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N02",
+            "locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+            "standing": "RULE_AND_TABLE"
+          },
+          {
+            "id": "SAP06-N03",
+            "locator": "BSI §7.2, PDF90",
+            "standing": "RULE_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            49,
+            50,
+            52,
+            53,
+            54,
+            90,
+            91,
+            92,
+            93,
+            94
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Target Class/SubClass and confidence describe object categories. They do not establish a tactical identity such as friend/hostile/neutral. Preserve target classification without inferring allegiance.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-109",
+        "row_id": "ISA-C-109",
+        "cell": "H261",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported ISA specification version of the component",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: BSI Table15 icd_version identifies the SAPIENT ICD interface version, not the ISA specification version requested in this ISA row. [SAP03A-N01]",
+        "after": "[COMMON CANDIDATE] RELATED: Registration.icd_version declares the implemented BSI Flex 335 interface version. This supports the common need to identify an implemented standard/version, not a claim of ISA implementation or proven conformance. [SAP03A-N01]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03A-N01"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N01"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N01",
+            "locator": "BSI §6.1–6.2.1, PDF36–37, Table15",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            36,
+            37
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Registration.icd_version declares the implemented BSI Flex 335 interface version. This supports the common need to identify an implemented standard/version, not a claim of ISA implementation or proven conformance.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-099",
+        "row_id": "ISA-C-099",
+        "cell": "H277",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported physical parent/child attachment relationships",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
+        "after": "[HELD] NO_ESTABLISHED: Recursive ConfigurationData lists component configuration details but does not define physical parent/child attachment, attachment frames or an installed equipment graph. [SAP03A-N12]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03A-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N12"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N12",
+            "locator": "BSI §6.2.5.15, PDF48, Table32; registration.proto ConfigurationData",
+            "standing": "SCOPED_SHALL_AND_COMMENTARY"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            48
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Recursive ConfigurationData lists component configuration details but does not define physical parent/child attachment, attachment frames or an installed equipment graph.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-116",
+        "row_id": "ISA-C-116",
+        "cell": "H278",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported absolute component velocity",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: BSI Tables46–48 VelocityType declares the coordinate format for a detected object's velocity; no verified absolute platform/component velocity is supplied in Registration. [SAP03B-N08]",
+        "after": "[HELD] NO_ESTABLISHED: VelocityType declares detected-object velocity format. It does not report the absolute velocity of the observing component or platform. Hold that subject mismatch. [SAP03B-N08]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N08"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N08"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N08",
+            "locator": "Original BSI SAP-BSI-T046, SAP-BSI-T047, SAP-BSI-T048; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            56
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "VelocityType declares detected-object velocity format. It does not report the absolute velocity of the observing component or platform. Hold that subject mismatch.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-035",
+        "row_id": "ISA-C-035",
+        "cell": "H282",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported activity flag",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE are classifications of a DETECTED OBJECT's behaviour, not a current ISA component Active boolean. [SAP06-N05]",
+        "after": "[HELD] NO_ESTABLISHED: SensorStatus NOT_DETECTING and target ACTIVE/PASSIVE behaviour have different subjects and meanings. Neither establishes the ISA component Active boolean; reporting stopped is not necessarily physical inactivity. [SAP04-N03, SAP06-N05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N03",
+          "SAP06-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N03",
+          "SAP06-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N03",
+            "locator": "§§6.3.2.2, .10–.12 PDF65–69",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N05",
+            "locator": "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour",
+            "standing": "RULE_AND_COMMENTARY"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            44,
+            65,
+            66,
+            95
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "status_report.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "SensorStatus NOT_DETECTING and target ACTIVE/PASSIVE behaviour have different subjects and meanings. Neither establishes the ISA component Active boolean; reporting stopped is not necessarily physical inactivity.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-082",
+        "row_id": "ISA-C-082",
+        "cell": "H286",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported component operating condition",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
+        "after": "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N03",
+          "SAP04-N07",
+          "SAP05-N13",
+          "SAP05-N14",
+          "SAP06-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N03",
+          "SAP04-N07",
+          "SAP05-N13",
+          "SAP05-N14",
+          "SAP06-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N03",
+            "locator": "§§6.3.2.2, .10–.12 PDF65–69",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N07",
+            "locator": "§§6.3.2.10–.12 PDF68–69; status_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N13",
+            "locator": "BSI §§6.6.1–6.6.2 PDF85–86; alert.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N14",
+            "locator": "BSI §§6.6.3–.10 PDF86–87; alert.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N05",
+            "locator": "BSI §7.4 Table97, PDF95; detection_report.proto Behaviour",
+            "standing": "RULE_AND_COMMENTARY"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            43,
+            44,
+            63,
+            64,
+            65,
+            67,
+            68,
+            69,
+            85,
+            86,
+            87,
+            95
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto",
+            "alert.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-E-LOGIC-STATE",
+        "row_id": "ISA-E-LOGIC-STATE",
+        "cell": "H287",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Four-valued evaluation state",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: TaskAck ACCEPTED/REJECTED/COMPLETED/FAILED is a reported task lifecycle enum, not ISA Belnap-Dunn TRUE/FALSE/PARADOX/UNSPECIFIED evaluation logic. [SAP05-N11]",
+        "after": "[HELD] NO_ESTABLISHED: TaskAck ACCEPTED, REJECTED, COMPLETED and FAILED are task lifecycle outcomes. Four outcomes do not establish the ISA four-state logical value algebra. [SAP05-N11]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP05-N11"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N11"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N11",
+            "locator": "BSI §§6.5.7–6.5.9 PDF83–84; task_ack.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            84,
+            85
+          ],
+          "pinned_v2_proto_files": [
+            "task_ack.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "TaskAck ACCEPTED, REJECTED, COMPLETED and FAILED are task lifecycle outcomes. Four outcomes do not establish the ISA four-state logical value algebra.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-090",
+        "row_id": "ISA-C-090",
+        "cell": "H297",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Variable-power level as a percentage of the available maximum",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: BSI Power.level is remaining battery percentage, not a commanded or reported fraction of the equipment's maximum output power. [SAP04-N05]",
+        "after": "[HELD] NO_ESTABLISHED: Battery level is remaining charge percentage, not commanded or reported variable output power. Retain battery/source health in its existing rows; hold the output-power mapping. [SAP04-N05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N05",
+            "locator": "§6.3.2.5 PDF66–67; status_report.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            66,
+            67
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Battery level is remaining charge percentage, not commanded or reported variable output power. Retain battery/source health in its existing rows; hold the output-power mapping.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-113",
+        "row_id": "ISA-C-113",
+        "cell": "H300",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Estimated time to empty under expected usage",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Remaining battery percentage in SAPIENT does not define ISA Time to Empty or a validated rate/usage forecast. [SAP04-N05]",
+        "after": "[HELD] NO_ESTABLISHED: Battery level and power condition do not supply predicted runtime or time-to-empty. No duration is inferred from charge percentage. [SAP04-N05]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N05",
+            "locator": "§6.3.2.5 PDF66–67; status_report.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            66,
+            67
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Battery level and power condition do not supply predicted runtime or time-to-empty. No duration is inferred from charge percentage.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-072",
+        "row_id": "ISA-C-072",
+        "cell": "H307",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Network-interface up/down state",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Missed status intervals or a GOODBYE Node condition do not establish ISA network-interface link up/down state. [SAP04-N01,SAP04-N03]",
+        "after": "[HELD] NO_ESTABLISHED: A missed heartbeat can reflect power loss, disablement or communication loss. System/sensor status does not establish an individual network interface up/down state. [SAP04-N01, SAP04-N03]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N01",
+          "SAP04-N03"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N01",
+          "SAP04-N03"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N01",
+            "locator": "§6.3.1/§6.3.2.1 original PDF63–64",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N03",
+            "locator": "§§6.3.2.2, .10–.12 PDF65–69",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            41,
+            63,
+            64,
+            65,
+            66
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "status_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "A missed heartbeat can reflect power loss, disablement or communication loss. System/sensor status does not establish an individual network interface up/down state.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-098",
+        "row_id": "ISA-C-098",
+        "cell": "H311",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported received signal power",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Detected RF Signal.amplitude describes a signal associated with object detection, not sensor equipment's received power or link receive power. [SAP04-N15]",
+        "after": "[HELD] NO_ESTABLISHED: Signal.amplitude reports detected radio-frequency signal amplitude, typically in dB. It does not define this component network interface received power or an equivalent power quantity. [SAP04-N15]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N15"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N15"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N15",
+            "locator": "§6.4.2.16 PDF75; detection_report.proto Signal",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            74
+          ],
+          "pinned_v2_proto_files": [
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Signal.amplitude reports detected radio-frequency signal amplitude, typically in dB. It does not define this component network interface received power or an equivalent power quantity.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-115",
+        "row_id": "ISA-C-115",
+        "cell": "H314",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Reported produced signal power",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: Detected-object Signal.amplitude and frequencies are not an ISA node's reported Transmit Power. [SAP04-N15]",
+        "after": "[HELD] NO_ESTABLISHED: Detected Signal.amplitude does not report produced/transmitted power of the observing component. Hold the different subject and quantity. [SAP04-N15]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N15"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N15"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N15",
+            "locator": "§6.4.2.16 PDF75; detection_report.proto Signal",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            74
+          ],
+          "pinned_v2_proto_files": [
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Detected Signal.amplitude does not report produced/transmitted power of the observing component. Hold the different subject and quantity.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-R-DETECTION-RANGE",
+        "row_id": "ISA-R-DETECTION-RANGE",
+        "cell": "H343",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Detection and identification distance limits",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: BSI registration may advertise performance measures and geometric error, but Tables33–40 do not establish ISA's particular minimum/effective/maximum detection-distance fields. [SAP03B-N01,SAP03B-N04]",
+        "after": "[HELD] NO_ESTABLISHED: Generic PerformanceValue type, units, typical value and variation do not define the ISA minimum/effective/maximum detection-distance structure. Retain declared performance as a native optional candidate. [SAP03B-N01, SAP03B-N04]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP03B-N01",
+          "SAP03B-N04"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N01",
+          "SAP03B-N04"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N01",
+            "locator": "Original BSI SAP-BSI-T033, SAP-BSI-T034, SAP-BSI-T035; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N04",
+            "locator": "Original BSI SAP-BSI-T040; source packet SAP03B",
+            "standing": "CONDITIONAL_SHALL_IF_AVAILABLE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Generic PerformanceValue type, units, typical value and variation do not define the ISA minimum/effective/maximum detection-distance structure. Retain declared performance as a native optional candidate.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-046",
+        "row_id": "ISA-C-046",
+        "cell": "H345",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Latest built-in-test reported result",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: SAPIENT WARN/ERROR/StatusType conditions are not verified latest ISA Built In Test results or a completed BIT procedure. [SAP04-N07]",
+        "after": "[HELD] NO_ESTABLISHED: Status fault/condition text does not establish the latest built-in-test result or a particular test execution. Hold this result mapping without discarding operational health reporting. [SAP04-N07]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N07"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N07"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N07",
+            "locator": "§§6.3.2.10–.12 PDF68–69; status_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            67,
+            68,
+            69
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Status fault/condition text does not establish the latest built-in-test result or a particular test execution. Hold this result mapping without discarding operational health reporting.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-C-107",
+        "row_id": "ISA-C-107",
+        "cell": "H354",
+        "donor_key": "SAPIENT",
+        "review_set": "39_UNGRADED",
+        "information_need": "Signal Strength Ratio — reference quantity question",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "NO_ESTABLISHED: SAPIENT Signal.amplitude (typically dB) is not ISA Signal Strength Ratio or resolution of ISA-Q004 reference-quantity uncertainty. [SAP04-N15]",
+        "after": "[HELD] NO_ESTABLISHED: Detected Signal.amplitude does not resolve ISA-Q004 or establish its Signal Strength Ratio quantity. Preserve the ISA original-source question and the distinct native signal claim. [SAP04-N15]",
+        "previous_classification": "UNGRADED",
+        "source_ids": [
+          "SAP04-N15"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N15"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N15",
+            "locator": "§6.4.2.16 PDF75; detection_report.proto Signal",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            74
+          ],
+          "pinned_v2_proto_files": [
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Detected Signal.amplitude does not resolve ISA-Q004 or establish its Signal Strength Ratio quantity. Preserve the ISA original-source question and the distinct native signal claim.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R004",
+        "row_id": "S06-R004",
+        "cell": "H7",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Persistent System identifier",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
+        "after": "[COMMON CANDIDATE] RELATED: BSI §6.2.4 uses the same Node UUID across subsequent messages. This supports qualified persistent source identity; the timestamp conflict does not invalidate UUID meaning. Physical equipment identity and lifetime persistence are not established. [SAP02-N03, SAP03A-N03]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP02-N03",
+            "SAP03A-N03"
+          ],
+          "native_meaning": "Persistent System identifier",
+          "provisional_status": "UNRESOLVED_CANDIDATE|COMMON_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP02-N03",
+          "SAP03A-N03"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N03",
+          "SAP03A-N03"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N03",
+            "locator": "BSI §§4.1–4.3 Table1 PDF18–20; sapient_message.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03A-N03",
+            "locator": "BSI §§6.2.3–6.2.4, PDF38; sapient_message.proto",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            19,
+            37,
+            38
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "BSI §6.2.4 uses the same Node UUID across subsequent messages. This supports qualified persistent source identity; the timestamp conflict does not invalidate UUID meaning. Physical equipment identity and lifetime persistence are not established.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R006",
+        "row_id": "S06-R006",
+        "cell": "H11",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Network-visible participant",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
+        "after": "[COMMON CANDIDATE] RELATED: A SAPIENT Node is an identified architecture participant; optional middleware can also register as a Node. Useful network-participant identity does not require a one-to-one correspondence with physical sensing hardware. [SAP02-N02, SAP02-N03, SAP03A-N03, SAP03A-N04, SAP06-N14]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP02-N02",
+            "SAP02-N03",
+            "SAP03A-N03",
+            "SAP03A-N04",
+            "SAP06-N14"
+          ],
+          "native_meaning": "Network-visible participant",
+          "provisional_status": "COMMON_CANDIDATE|UNRESOLVED_CANDIDATE|SPECIALIZED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP02-N02",
+          "SAP02-N03",
+          "SAP03A-N03",
+          "SAP03A-N04",
+          "SAP06-N14"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N02",
+          "SAP02-N03",
+          "SAP03A-N03",
+          "SAP03A-N04",
+          "SAP06-N14"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N02",
+            "locator": "BSI §3.1.1–17 PDF15–16",
+            "standing": "DEFINITIONS"
+          },
+          {
+            "id": "SAP02-N03",
+            "locator": "BSI §§4.1–4.3 Table1 PDF18–20; sapient_message.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03A-N03",
+            "locator": "BSI §§6.2.3–6.2.4, PDF38; sapient_message.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03A-N04",
+            "locator": "BSI §§6.2.5.1–.2, PDF39–40, Tables17–18; registration.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP06-N14",
+            "locator": "Informative Annex C §C.3.1–.2 PDF107–108",
+            "standing": "INFORMATIVE_WITH_SCOPED_SHALL_AND_NOTES"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            15,
+            16,
+            19,
+            23,
+            24,
+            25,
+            107,
+            108
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "A SAPIENT Node is an identified architecture participant; optional middleware can also register as a Node. Useful network-participant identity does not require a one-to-one correspondence with physical sensing hardware.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R012",
+        "row_id": "S06-R012",
+        "cell": "H24",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Reported output field",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
+        "after": "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03A-N06",
+            "SAP03A-N08",
+            "SAP03B-N01",
+            "SAP03B-N02",
+            "SAP04-N01",
+            "SAP04-N09",
+            "SAP06-N15",
+            "SAP06-N16"
+          ],
+          "native_meaning": "Reported output field",
+          "provisional_status": "COMMON_CANDIDATE|SPECIALIZED_CANDIDATE|NATIVE_ONLY_EVIDENCE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08",
+          "SAP03B-N01",
+          "SAP03B-N02",
+          "SAP04-N01",
+          "SAP04-N09",
+          "SAP06-N15",
+          "SAP06-N16",
+          "SAP04-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08",
+          "SAP03B-N01",
+          "SAP03B-N02",
+          "SAP04-N01",
+          "SAP04-N09",
+          "SAP06-N15",
+          "SAP06-N16"
+        ],
+        "additional_existing_source_ids": [
+          "SAP03B-N01",
+          "SAP03B-N02",
+          "SAP04-N12"
+        ],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N06",
+            "locator": "BSI §§6.2.5.4–.5, PDF41–42, Tables20–22; registration.proto StatusDefinition/Duration/TimeUnits",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03A-N08",
+            "locator": "BSI §§6.2.5.7–.9, PDF43–44, Tables24–26; registration.proto StatusReport/StatusReportCategory",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03B-N01",
+            "locator": "Original BSI SAP-BSI-T033, SAP-BSI-T034, SAP-BSI-T035; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N02",
+            "locator": "Original BSI SAP-BSI-T036, SAP-BSI-T037; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N01",
+            "locator": "§6.3.1/§6.3.2.1 original PDF63–64",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N09",
+            "locator": "§§6.4.1–6.4.2.3 PDF69–71; detection_report.proto",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N15",
+            "locator": "Informative Annex C §C.4.1 PDF108",
+            "standing": "INFORMATIVE_GUIDANCE"
+          },
+          {
+            "id": "SAP06-N16",
+            "locator": "Informative Annex C §C.4.2–.2.2 PDF108–109",
+            "standing": "INFORMATIVE_EXCLUDED_FROM_SPECIFICATION"
+          },
+          {
+            "id": "SAP04-N12",
+            "locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            49,
+            50,
+            51,
+            72,
+            73,
+            108,
+            109
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto",
+            "associated_file.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R016",
+        "row_id": "S06-R016",
+        "cell": "H92",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Supported operating mode",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
+        "after": "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03A-N09",
+            "SAP03A-N10",
+            "SAP03B-N01",
+            "SAP03B-N09"
+          ],
+          "native_meaning": "Supported operating mode",
+          "provisional_status": "COMMON_CANDIDATE|SPECIALIZED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10",
+          "SAP03B-N01",
+          "SAP03B-N09"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10",
+          "SAP03B-N01",
+          "SAP03B-N09"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N09",
+            "locator": "BSI §6.2.5.10, PDF45, Table27; registration.proto ModeDefinition",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03A-N10",
+            "locator": "BSI §§6.2.5.11–.13, PDF46–47, Tables28–30; registration.proto ModeType/ScanType/TrackingType",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03B-N01",
+            "locator": "Original BSI SAP-BSI-T033, SAP-BSI-T034, SAP-BSI-T035; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N09",
+            "locator": "Original BSI SAP-BSI-T049; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            36,
+            37,
+            45,
+            46,
+            47,
+            49,
+            57,
+            58
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R017",
+        "row_id": "S06-R017",
+        "cell": "H93",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Declared default mode",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
+        "after": "[COMMON CANDIDATE] RELATED: ModeDefinition and ModeType distinguish one declared DEFAULT mode from supported alternatives and current reported mode. Source-specific mode types do not prevent a qualified common default-mode candidate. [SAP03A-N09, SAP03A-N10]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03A-N09",
+            "SAP03A-N10"
+          ],
+          "native_meaning": "Declared default mode",
+          "provisional_status": "COMMON_CANDIDATE|SPECIALIZED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N09",
+          "SAP03A-N10"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N09",
+            "locator": "BSI §6.2.5.10, PDF45, Table27; registration.proto ModeDefinition",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03A-N10",
+            "locator": "BSI §§6.2.5.11–.13, PDF46–47, Tables28–30; registration.proto ModeType/ScanType/TrackingType",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            45,
+            46,
+            47
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "ModeDefinition and ModeType distinguish one declared DEFAULT mode from supported alternatives and current reported mode. Source-specific mode types do not prevent a qualified common default-mode candidate.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R018",
+        "row_id": "S06-R018",
+        "cell": "H94",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Source-reported operating mode",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
+        "after": "[COMMON CANDIDATE] RELATED: StatusReport.mode reports the selected Node mode. Its meaning is usable as qualified current-mode information; Table 60 mandatory versus §6.3.2.4 conditional wording remains an unresolved requiredness constraint, not an adopted Profile rule. [SAP03A-N08, SAP03A-N09, SAP04-N04]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03A-N08",
+            "SAP03A-N09",
+            "SAP04-N04"
+          ],
+          "native_meaning": "Source-reported operating mode",
+          "provisional_status": "COMMON_CANDIDATE|UNRESOLVED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03A-N08",
+          "SAP03A-N09",
+          "SAP04-N04"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N08",
+          "SAP03A-N09",
+          "SAP04-N04"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N08",
+            "locator": "BSI §§6.2.5.7–.9, PDF43–44, Tables24–26; registration.proto StatusReport/StatusReportCategory",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03A-N09",
+            "locator": "BSI §6.2.5.10, PDF45, Table27; registration.proto ModeDefinition",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N04",
+            "locator": "§6.3.2.4 PDF65",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            63,
+            64,
+            65,
+            66
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "StatusReport.mode reports the selected Node mode. Its meaning is usable as qualified current-mode information; Table 60 mandatory versus §6.3.2.4 conditional wording remains an unresolved requiredness constraint, not an adopted Profile rule.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-S06-R019",
+        "row_id": "S06-R019",
+        "cell": "H95",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Issued control request",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
+        "after": "[COMMON CANDIDATE] RELATED: Task carries an identified control request to a Node. Native command/region specializations do not erase the general request information; acceptance, execution and physical effect remain distinct. [SAP02-N05, SAP03B-N09, SAP03B-N13, SAP05-N01, SAP05-N05]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP02-N05",
+            "SAP03B-N09",
+            "SAP03B-N13",
+            "SAP05-N01",
+            "SAP05-N05"
+          ],
+          "native_meaning": "Issued control request",
+          "provisional_status": "COMMON_CANDIDATE|SPECIALIZED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP02-N05",
+          "SAP03B-N09",
+          "SAP03B-N13",
+          "SAP05-N01",
+          "SAP05-N05"
+        ],
+        "inherited_source_ids": [
+          "SAP02-N05",
+          "SAP03B-N09",
+          "SAP03B-N13",
+          "SAP05-N01",
+          "SAP05-N05"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP02-N05",
+            "locator": "BSI §§4.6–4.7 PDF21",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N09",
+            "locator": "Original BSI SAP-BSI-T049; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N13",
+            "locator": "Original BSI SAP-BSI-T058; source packet SAP03B",
+            "standing": "SCOPED_SHALL_AND_NOTES"
+          },
+          {
+            "id": "SAP05-N01",
+            "locator": "BSI §§6.5.1–6.5.3 PDF76–77; Task proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N05",
+            "locator": "BSI §6.5.6.1 PDF80–81; task.proto Task.Command",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            15,
+            16,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84
+          ],
+          "pinned_v2_proto_files": [
+            "task.proto",
+            "task_ack.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Task carries an identified control request to a Node. Native command/region specializations do not erase the general request information; acceptance, execution and physical effect remain distinct.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-STATUS",
+        "row_id": "ISA-T-STATUS",
+        "cell": "H196",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Component property-value report",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED",
+        "before": "RELATED: SAPIENT REQUEST Stop can suppress DetectionReport but not status heartbeat; Alert is a separate message from regular StatusReport/ISA Status property values. [SAP05-N06,SAP05-N13]",
+        "after": "[COMMON CANDIDATE] RELATED: StatusReport carries Node system/sensor/power/mode and named status values. This supports a qualified component-condition report. Separate Alert and STOP-reporting rules do not erase these fields or establish exact ISA Status equivalence. [SAP03A-N06, SAP03A-N08, SAP04-N01, SAP04-N02, SAP04-N07, SAP05-N06, SAP05-N13]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03A-N06",
+            "SAP03A-N08",
+            "SAP04-N01",
+            "SAP04-N02",
+            "SAP04-N07",
+            "SAP05-N06",
+            "SAP05-N13"
+          ],
+          "native_meaning": "Component property-value report",
+          "provisional_status": "COMMON_CANDIDATE|SPECIALIZED_CANDIDATE|UNRESOLVED_CANDIDATE",
+          "cell_decision": "MIXED_OR_COMPOSITE_SOURCE_ITEMS_HELD_UNCOLORED",
+          "requested_fill": null,
+          "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08",
+          "SAP04-N01",
+          "SAP04-N02",
+          "SAP04-N07",
+          "SAP05-N06",
+          "SAP05-N13"
+        ],
+        "inherited_source_ids": [
+          "SAP03A-N06",
+          "SAP03A-N08",
+          "SAP04-N01",
+          "SAP04-N02",
+          "SAP04-N07",
+          "SAP05-N06",
+          "SAP05-N13"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03A-N06",
+            "locator": "BSI §§6.2.5.4–.5, PDF41–42, Tables20–22; registration.proto StatusDefinition/Duration/TimeUnits",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP03A-N08",
+            "locator": "BSI §§6.2.5.7–.9, PDF43–44, Tables24–26; registration.proto StatusReport/StatusReportCategory",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N01",
+            "locator": "§6.3.1/§6.3.2.1 original PDF63–64",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N02",
+            "locator": "§§6.3.2.1–.3 PDF64–65",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP04-N07",
+            "locator": "§§6.3.2.10–.12 PDF68–69; status_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP05-N06",
+            "locator": "BSI §6.5.6.2 PDF81; task.proto Task.Command",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP05-N13",
+            "locator": "BSI §§6.6.1–6.6.2 PDF85–86; alert.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            41,
+            43,
+            44,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            79,
+            80,
+            85
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "status_report.proto",
+            "task.proto",
+            "alert.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "StatusReport carries Node system/sensor/power/mode and named status values. This supports a qualified component-condition report. Separate Alert and STOP-reporting rules do not erase these fields or establish exact ISA Status equivalence.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-R-NAMED-VALUE",
+        "row_id": "ISA-R-NAMED-VALUE",
+        "cell": "H231",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Named value payload",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "before": "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
+        "after": "[COMMON CANDIDATE] PARTIAL: StatusType/status_value and TrackObjectInfo.type/value provide native named-value records for different subjects. They support common named-value information while remaining distinct from the exact ISA typed Name Value Pair datatype. [SAP04-N07, SAP04-N12]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP04-N07",
+            "SAP04-N12"
+          ],
+          "native_meaning": "Named value payload",
+          "provisional_status": "SPECIALIZED_CANDIDATE",
+          "cell_decision": "COLOR_SUPPORTED_SINGLE_MEANING",
+          "requested_fill": "#F9E6B8",
+          "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP04-N07",
+          "SAP04-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N07",
+          "SAP04-N12"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N07",
+            "locator": "§§6.3.2.10–.12 PDF68–69; status_report.proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          },
+          {
+            "id": "SAP04-N12",
+            "locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            67,
+            68,
+            69,
+            73
+          ],
+          "pinned_v2_proto_files": [
+            "status_report.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "StatusType/status_value and TrackObjectInfo.type/value provide native named-value records for different subjects. They support common named-value information while remaining distinct from the exact ISA typed Name Value Pair datatype.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-T-EVENT-CONTEXT",
+        "row_id": "ISA-T-EVENT-CONTEXT",
+        "cell": "H71",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Detector property context at event occurrence",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
+        "after": "[HELD] NO_ESTABLISHED: TrackObjectInfo/object_info describe the detected target or track. They do not provide the detector component properties sampled at event occurrence. Remove the misleading specialized fill; retain target metadata in its appropriate comparisons. [SAP04-N12]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP04-N12"
+          ],
+          "native_meaning": "Detector property context at event occurrence",
+          "provisional_status": "SPECIALIZED_CANDIDATE",
+          "cell_decision": "COLOR_SUPPORTED_SINGLE_MEANING",
+          "requested_fill": "#F9E6B8",
+          "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP04-N12"
+        ],
+        "inherited_source_ids": [
+          "SAP04-N12"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP04-N12",
+            "locator": "§6.4.2.9 PDF73; detection_report.proto TrackObjectInfo",
+            "standing": "SCOPED_SHALL"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            72,
+            73
+          ],
+          "pinned_v2_proto_files": [
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "TrackObjectInfo/object_info describe the detected target or track. They do not provide the detector component properties sampled at event occurrence. Remove the misleading specialized fill; retain target metadata in its appropriate comparisons.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-K-STRUCTURE",
+        "row_id": "ISA-K-STRUCTURE",
+        "cell": "H86",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Declared value shape and collection bounds",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "NO_ESTABLISHED",
+        "before": "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
+        "after": "[HELD] NO_ESTABLISHED: Class/subclass hierarchies and filtering patterns do not establish generic value shape and collection bounds. Remove the misleading specialized fill; preserve native taxonomy/filter definitions and their separate candidates. [SAP03B-N05, SAP03B-N11, SAP06-N02, SAP06-N04]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP03B-N05",
+            "SAP03B-N11",
+            "SAP06-N02",
+            "SAP06-N04"
+          ],
+          "native_meaning": "Declared value shape and collection bounds",
+          "provisional_status": "SPECIALIZED_CANDIDATE",
+          "cell_decision": "COLOR_SUPPORTED_SINGLE_MEANING",
+          "requested_fill": "#F9E6B8",
+          "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP03B-N05",
+          "SAP03B-N11",
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "inherited_source_ids": [
+          "SAP03B-N05",
+          "SAP03B-N11",
+          "SAP06-N02",
+          "SAP06-N04"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP03B-N05",
+            "locator": "Original BSI SAP-BSI-T041, SAP-BSI-T042; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP03B-N11",
+            "locator": "Original BSI SAP-BSI-T052, SAP-BSI-T053, SAP-BSI-T054, SAP-BSI-T055, SAP-BSI-T056; source packet SAP03B",
+            "standing": "SCOPED_SHALL"
+          },
+          {
+            "id": "SAP06-N02",
+            "locator": "BSI §7.2 Table96, PDF pp92–94; original figure7 PDF91",
+            "standing": "RULE_AND_TABLE"
+          },
+          {
+            "id": "SAP06-N04",
+            "locator": "BSI §7.3 + Figure7, PDF90–91; registration.proto TaxonomyDockDefinition/ExtensionSubclass",
+            "standing": "RULE_COMMENTARY_EXAMPLE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            52,
+            53,
+            54,
+            58,
+            59,
+            60,
+            90,
+            94
+          ],
+          "pinned_v2_proto_files": [
+            "registration.proto",
+            "detection_report.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Class/subclass hierarchies and filtering patterns do not establish generic value shape and collection bounds. Remove the misleading specialized fill; preserve native taxonomy/filter definitions and their separate candidates.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-03-ISA-A-CIC-MEDIATION",
+        "row_id": "ISA-A-CIC-MEDIATION",
+        "cell": "H217",
+        "donor_key": "SAPIENT",
+        "review_set": "PRIOR_CLASSIFICATION_CALIBRATION",
+        "information_need": "Composition interface task mediation role",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED",
+        "before": "RELATED: Fusion Node routes task requests through message-handling application to lower Nodes; not necessarily an ISA composition-interface performer/broker/relay role or installed hardware boundary. [SAP05-N01]",
+        "after": "[SPECIALIZED CANDIDATE] RELATED: Fusion Node task routing through message-handling infrastructure is an architecture-specific mediation candidate. It does not establish a universal composition-interface role or an installed hardware boundary. [SAP05-N01]",
+        "previous_classification": {
+          "source_edition": "BSI Flex 335 v2.0:2024-03 / Dstl pinned v2 Protobuf 244a741c13bcee628f84944aef91e4a66854bd7d",
+          "original_source_ids": [
+            "SAP05-N01"
+          ],
+          "native_meaning": "Composition interface task mediation role",
+          "provisional_status": "COMMON_CANDIDATE",
+          "cell_decision": "COLOR_SUPPORTED_SINGLE_MEANING",
+          "requested_fill": "#D9EAF8",
+          "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
+          "no_adopted_DIM_or_CSAPI_Profile": true
+        },
+        "source_ids": [
+          "SAP05-N01"
+        ],
+        "inherited_source_ids": [
+          "SAP05-N01"
+        ],
+        "additional_existing_source_ids": [],
+        "original_source_locators": [
+          {
+            "id": "SAP05-N01",
+            "locator": "BSI §§6.5.1–6.5.3 PDF76–77; Task proto",
+            "standing": "SCOPED_SHALL_AND_NOTE"
+          }
+        ],
+        "reopened_original_evidence": {
+          "BSI_Flex_335_v2_0_2024_03_PDF_pages": [
+            23,
+            24,
+            25,
+            76,
+            77,
+            107,
+            108
+          ],
+          "pinned_v2_proto_files": [
+            "sapient_message.proto",
+            "registration.proto",
+            "task.proto"
+          ],
+          "grade": "TARGETED_TEXT_AND_NATIVE_FIELD_REVIEW__NOT_EXHAUSTIVE_CLAUSE_AUDIT"
+        },
+        "rationale": "Fusion Node task routing through message-handling infrastructure is an architecture-specific mediation candidate. It does not establish a universal composition-interface role or an installed hardware boundary.",
+        "native_preservation": "Original native findings and all historical correspondence records retained; target claims, performance, fusion role, alert lifecycle and detection-lineage candidates remain separately represented.",
+        "peer_criterion": "Grade useful information at its source subject; do not require exact ISA/OGC equivalence or observed installed equipment. A different subject or unsupported relationship remains held. Requiredness and runtime validity are separate.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    ],
+    "calibration_retained_examples": [
+      "S06-R001",
+      "S06-R002",
+      "S06-R003",
+      "S06-R020",
+      "SAPIENT-F2-FUSION-ROLE",
+      "SAPIENT-F2-TARGET-CLAIMS",
+      "SAPIENT-F2-PERFORMANCE",
+      "SAPIENT-F2-DETECTION-LINEAGE",
+      "SAPIENT-F2-ALERT-LIFECYCLE",
+      "ISA-C-091",
+      "ISA-C-100",
+      "ISA-E-POWERSOURCE",
+      "ISA-C-225",
+      "ISA-T-CONFIG",
+      "ISA-T-REGISTRATION"
+    ],
+    "calibration_scope": "Compared the 39 with the existing 50 colored and 26 held census and selected corresponding native meanings. Twelve warranted corrections; remaining decisions preserved, not declared comprehensively reaudited.",
+    "source_standing": "SAP07 bounded PARTIAL remains owner accepted; all original source findings, coverage and holds retained byte-for-value below this added review.",
+    "census_after": {
+      "source_bearing": 616,
+      "colored": 405,
+      "held": 108,
+      "ungraded": 103,
+      "SAPIENT": {
+        "source_bearing": 115,
+        "colored": 65,
+        "held": 50,
+        "ungraded": 0
+      },
+      "ISA": {
+        "source_bearing": 316,
+        "colored": 271,
+        "held": 45,
+        "ungraded": 0
+      },
+      "Open_Group_SOSA": {
+        "source_bearing": 121,
+        "colored": 15,
+        "held": 3,
+        "ungraded": 103
+      },
+      "AAS": {
+        "source_bearing": 64,
+        "colored": 54,
+        "held": 10,
+        "ungraded": 0
+      },
+      "other_explicit_unassessed_or_case_statuses": 732
+    },
+    "next": "F3-04A ONLY on a separate Proceed: Open Group SOSA classification for the 16 registered exceptions in topic groups 01–03 (identity, participation and reported information), with relevant prior-decision calibration. Stop before later SOSA packets; AAS O1 waits for the F3 owner gate.",
+    "publication": {
+      "workbook_sha256": "dae51da2f3342b6cb0fb06fb95972b4d64d77f898e61bed6e6b3f48ba55584cc",
+      "previous_workbook_sha256": "ee187b2f793ef5dc97c6075bde546947b83ab1ec3294b4280dd2d2f4b4e0c4d0",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "Summary",
+        "Validation",
+        "Legend",
+        "DIM Register"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values_checked": 5664,
+      "source_cells_changed": 51,
+      "colored_decisions": 19,
+      "explicit_no_fill_decisions": 32,
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_open": "UNVERIFIED",
+      "visual_render_review": {
+        "status": "REPRESENTATIVE_SAVED_VIEWS_INSPECTED",
+        "ranges": [
+          "Master Crosswalk H24:H27",
+          "Master Crosswalk H26",
+          "Master Crosswalk H69:H71",
+          "Master Crosswalk H86",
+          "Master Crosswalk H92:H96",
+          "Master Crosswalk H286",
+          "Summary A17:B23",
+          "Legend A28:B28",
+          "DIM Register M2:M5"
+        ],
+        "scope": "Saved-file render inspection only; actual desktop Microsoft Excel clean-open remains unverified."
+      },
+      "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained.",
+      "classification_fill_changes": {
+        "new_colors": 17,
+        "colors_removed": 2,
+        "existing_colors_changed": 2,
+        "net_colored_increase": 15
+      },
+      "verification_commands": [
+        "python -m py_compile scripts/publish_sosa_d.py scripts/check_dim_crosswalk_step06.py",
+        "python scripts/check_dim_crosswalk_step06.py",
+        "git diff --check"
+      ],
+      "broader_artifact_check": {
+        "result": "8_PREEXISTING_ERRORS_UNCHANGED",
+        "details": [
+          "2 historical v0.5 artifacts missing readable-register entries",
+          "3 historical v0.6 document links broken",
+          "3 historical research README relative links broken"
+        ],
+        "scope": "No new error from this step; source/workbook checks pass separately."
+      }
+    },
+    "next_packet_boundary": {
+      "step": "F3-04A",
+      "reason": "The approved SOSA stage is source-sized over 2–4 packets. Topic groups 01–03 collect identity, participation, observation/report/representation questions; later control, management and physical interface groups are excluded from this first packet. Reopen original native families and keep edition and physical/logical distinctions.",
+      "registry_cells": [
+        {
+          "cell": "J7",
+          "row_id": "S06-R004"
+        },
+        {
+          "cell": "J11",
+          "row_id": "S06-R006"
+        },
+        {
+          "cell": "J16",
+          "row_id": "S06-R010"
+        },
+        {
+          "cell": "J17",
+          "row_id": "ISA-A-PARTICIPATION"
+        },
+        {
+          "cell": "J18",
+          "row_id": "ISA-A-NETWORK-CONTEXT"
+        },
+        {
+          "cell": "J20",
+          "row_id": "ISA-A-MEMBER-EXPOSURE"
+        },
+        {
+          "cell": "J21",
+          "row_id": "ISA-A-PARTICIPATION-LIFECYCLE"
+        },
+        {
+          "cell": "J25",
+          "row_id": "S06-R013"
+        },
+        {
+          "cell": "J26",
+          "row_id": "S06-R014"
+        },
+        {
+          "cell": "J27",
+          "row_id": "S06-R015"
+        },
+        {
+          "cell": "J49",
+          "row_id": "ISA-C-147"
+        },
+        {
+          "cell": "J68",
+          "row_id": "ISA-T-EVENT-ID"
+        },
+        {
+          "cell": "J69",
+          "row_id": "ISA-T-EVENT-TIME"
+        },
+        {
+          "cell": "J70",
+          "row_id": "ISA-T-EVENT-REASON"
+        },
+        {
+          "cell": "J72",
+          "row_id": "ISA-R-MEASUREMENT"
+        },
+        {
+          "cell": "J74",
+          "row_id": "ISA-R-VIDEO-TRACK"
+        }
+      ],
+      "remaining_87_SOSA_exceptions": "Not authorized by the next single Proceed; later bounded packet decisions remain visible.",
+      "source_access_rule": "An inaccessible original means a named hold, not invented equivalence or silent source-corpus expansion."
+    }
   }
 }

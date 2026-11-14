@@ -5478,12 +5478,12 @@ F3_ISA_EVIDENCE = "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV20
 F3_ISA_BASE = "00ada697e070adb6eeafeda49819599ee8d3c5c2"
 
 
-def f3_baseline(name):
-    """Read the archived pre-F3-02 bytes, not a reconstructed workbook."""
+def f3_baseline(name, base=F3_ISA_BASE):
+    """Read exact archived bytes for a source-classification checkpoint."""
     import subprocess
     root = Path(__file__).resolve().parents[1]
     return subprocess.check_output(
-        ["git", "show", F3_ISA_BASE + ":" + str((D / name).relative_to(root))], cwd=root)
+        ["git", "show", base + ":" + str((D / name).relative_to(root))], cwd=root)
 
 
 def f3_cell_text(cell):
@@ -5502,17 +5502,34 @@ def f3_put(cell, value):
     ET.SubElement(ET.SubElement(cell, q("is")), q("t")).text = value
 
 
-def publish_f3_02():
-    """Publish the 18 source-decided ISA cells through the existing workbook."""
+def f3_config(stage):
+    if stage == "F3_02":
+        return {"base": F3_ISA_BASE, "evidence": F3_ISA_EVIDENCE, "donor": "ISA", "column": 8,
+                "register": "N", "count": 18,
+                "counts": {"COMMON_CANDIDATE": 9, "SPECIALIZED_CANDIDATE": 2, "MIXED_OR_HELD": 7}}
+    need(stage == "F3_03", "known source-classification stage")
+    return {"base": "f636b00d494ce8d5e9beb9d50faa90219bebc2f6",
+            "evidence": "SAP01_Original_Corpus_Coverage_12NOV2026.json", "donor": "SAPIENT", "column": 7,
+            "register": "M", "count": 51,
+            "counts": {"COMMON_CANDIDATE": 13, "SPECIALIZED_CANDIDATE": 4,
+                       "UNRESOLVED_CANDIDATE": 2, "MIXED_OR_HELD": 32}}
+
+
+def publish_f3(stage="F3_02"):
+    """Publish scoped source decisions through the existing workbook without rebuilding it."""
     import html
+    cfg = f3_config(stage)
+    key = stage + "_classification_review"
+    rowkey = stage + "_" + cfg["donor"] + "_classification"
+    label = stage.replace("_", "-")
     m = load(MASTER)
-    evidence = load(F3_ISA_EVIDENCE)
-    review = evidence["F3_02_classification_review"]
+    evidence = load(cfg["evidence"])
+    review = evidence[key]
     records = review["records"]
-    need(m["currentEvidenceCheckpoint"] == "F3_02_SOURCE_CLASSIFIED_PENDING_SAME_XLSX",
-         "F3-02 source decisions precede publication")
+    need(m["currentEvidenceCheckpoint"] == stage + "_SOURCE_CLASSIFIED_PENDING_SAME_XLSX",
+         label + " source decisions precede publication")
     prior = (D / BOOK).read_bytes()
-    need(prior == f3_baseline(BOOK), "publish against the preserved exact pre-F3-02 workbook")
+    need(prior == f3_baseline(BOOK, cfg["base"]), "publish against the preserved exact pre-change workbook")
     grid = m["review_grid"]
     for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv", "ISA_Correction_Review_07NOV2026.csv"):
         with (D / name).open("w", newline="", encoding="utf-8") as f:
@@ -5525,15 +5542,17 @@ def publish_f3_02():
         table.append('<tr><th colspan="16">' + html.escape(row[0]) + "</th></tr>" if idx in m["review_sections"]
                      else "<tr>" + "".join("<td>" + html.escape(v) + "</td>" for v in row) + "</tr>")
     table += ["</tbody></table>"]
-    banner = ("# CURRENT — F3-02 ISA classification checkpoint (14 November 2026)\n\n"
-              "The 18 early ISA comparisons now have source-backed dispositions: nine common candidates, "
-              "two specialized candidates and seven explicit holds. All 337 rows and all other donor/case cells "
-              "are preserved. Classification is not model adoption or evidence of equipment operation. "
-              "Next: F3-03 only on a separate Proceed; AAS native-first research waits for the F3 owner gate. "
-              "The saved workbook matches these values; a clean Microsoft Excel reopen remains unverified.\n\n"
-              "Earlier checkpoint banners below are historical; this paragraph governs current routing.\n\n---\n\n")
+    banner = (f"# CURRENT — {label} {cfg['donor']} classification checkpoint (14 November 2026)\n\n"
+              f"{len(records)} individually recorded source-comparison decisions are published in the existing evidence. "
+              "For F3-03, these are 39 previously ungraded cells (4 common, 3 specialized, 2 unresolved, 30 held) "
+              "plus 12 corrections to prior classifications. " if stage == "F3_03" else
+              "# CURRENT — F3-02 ISA classification checkpoint (14 November 2026)\n\n18 early ISA comparisons: 9 common, 2 specialized, 7 held. ")
+    banner += ("All 337 rows, other donor/case values and original source holds are preserved. "
+               "The same workbook matches these values; clean Microsoft Excel reopening remains unverified. "
+               "Classification is not model adoption or comprehensive source coverage. " + review["next"] +
+               "\n\nEarlier checkpoint banners below are historical.\n\n---\n\n")
     for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md", "ISA_Correction_Review_07NOV2026.md"):
-        before = f3_baseline(name).decode("utf-8")
+        before = f3_baseline(name, cfg["base"]).decode("utf-8")
         (D / name).write_text(banner + before[:before.index("<table>")] + "\n".join(table)
                              + before[before.index("</table>") + 8:], encoding="utf-8")
     with zipfile.ZipFile(io.BytesIO(prior)) as z:
@@ -5560,10 +5579,29 @@ def publish_f3_02():
                     if int(rr.get("r")) in heights:
                         rr.set("ht", str(max(float(rr.get("ht", "15")), heights[int(rr.get("r"))])))
                         rr.set("customHeight", "1")
+            if name == "Master Crosswalk":
+                import textwrap
+                for rr in root.find(q("sheetData")):
+                    ref = chr(65 + cfg["column"]) + rr.get("r")
+                    if ref in edits:
+                        lines = len(textwrap.wrap(edits[ref], width=40))
+                        rr.set("ht", str(min(409.5, max(float(rr.get("ht", "15")), lines * 12 + 12))))
+                        rr.set("customHeight", "1")
             replacements[paths[name]] = ET.tostring(root, encoding="utf-8", xml_declaration=True)
-        style_ids = {"COMMON_CANDIDATE": 528, "SPECIALIZED_CANDIDATE": 529}
-        edit_sheet("Master Crosswalk", {r["cell"]: r["after"] for r in records},
-                   {r["cell"]: style_ids[r["candidate_status"]] for r in records if r["fill"]})
+        style_ids = {"COMMON_CANDIDATE": 528, "SPECIALIZED_CANDIDATE": 529,
+                     "NATIVE_ONLY_EVIDENCE": 530, "UNRESOLVED_CANDIDATE": 531}
+        prior_cells = {c.get("r"): c for c in ET.fromstring(z.read(paths["Master Crosswalk"])).iter(q("c"))}
+        rowindex = {r["row_id"]: i for i, r in enumerate(m["rows"])}
+        current_styles = {}
+        for record in records:
+            if record["fill"]:
+                current_styles[record["cell"]] = style_ids[record["candidate_status"]]
+            else:
+                oldstyle = int(prior_cells[record["cell"]].get("s", "0"))
+                # Historical F2 banding is by zero-based data-row ordinal, not worksheet row.
+                current_styles[record["cell"]] = (526 + rowindex[record["row_id"]] % 2
+                                                   if oldstyle in style_ids.values() else oldstyle)
+        edit_sheet("Master Crosswalk", {r["cell"]: r["after"] for r in records}, current_styles)
         guidance = {
             "A1": "CURRENT 14 NOV 2026 — F3-02: 18 ISA early comparisons classified from original evidence",
             "B17": "F3-02 complete: 9 common, 2 specialized, 7 explicit held comparisons; no DIM/Profile adoption. Next separate Proceed: F3-03 SAPIENT only.",
@@ -5574,12 +5612,26 @@ def publish_f3_02():
             "A23": "Preserved source and owner holds",
             "B23": "Targeted passages in six ISA original editions reviewed; prior bounded coverage and six ISA questions retained. AAS native-first research waits for F3 owner gate. Clean Microsoft Excel reopen remains UNVERIFIED."
         }
+        if stage == "F3_03":
+            guidance = {
+                "A1": "CURRENT 14 NOV 2026 — F3-03 SAPIENT classification and calibration complete",
+                "B17": "39 ungraded: 4 common, 3 specialized, 2 unresolved, 30 held. Also 12 prior classifications corrected. Next separate Proceed: first bounded F3-04 SOSA packet.",
+                "A19": "Current four-donor classification standing",
+                "B19": "SAPIENT: 65 colored + 50 held + 0 ungraded. Four donors: 405 colored + 108 held + 103 ungraded = 616 source-bearing comparisons.",
+                "B21": "Targeted BSI Flex 335 v2 original text and 11 pinned Protobuf files rechecked. 51 comparison decisions reference 62 existing native finding IDs; this is not 62 new clause audits or a whole-corpus review.",
+                "B22": "Classification changes: 17 newly colored cells, 2 colors removed, 2 colors changed. All other donor/case values and original holds retained. Blue/amber candidates remain qualified; purple marks unresolved meaning.",
+                "A23": "Preserved source and owner holds",
+                "B23": "BSI content-time versus schema send-time remains unresolved. SAP07 bounded PARTIAL, its original source/access holds, ISA/SOSA holds and AAS findings retained. AAS native-first work waits for F3 owner gate. Clean Microsoft Excel reopen UNVERIFIED."
+            }
         edit_sheet("Summary", guidance)
         edit_sheet("Validation", guidance)
         edit_sheet("Legend", {
-            "A1": "CURRENT LEGEND — F3-02 adds 9 blue and 2 amber ISA cells; 7 explicit holds retain no classification fill",
-            "A28": "F3-02 classification checkpoint",
-            "B28": "Color grades potential information need, not mapping exactness. ISA early-row omissions repaired; 142 other source cells await F3 review. White/banded held cells state why; no donor-absence inference."
+            "A1": "CURRENT LEGEND — " + label + ": candidate colors and explicit held comparisons",
+            "A28": label + " classification checkpoint",
+            "B28": ("Color grades potential information, not exact mapping or model adoption. "
+                     "F3-03: SAPIENT fully dispositioned at comparison level; 103 SOSA comparisons still ungraded. "
+                     "Purple timestamp conflict and white/banded explicit holds retain their reasons."
+                     if stage == "F3_03" else "F3-02: 18 ISA comparisons dispositioned; 142 other comparisons still ungraded.")
         })
         register = old.readcells(prior, "DIM Register")
         regedits = {"M1": "SAPIENT H — candidate / color decision", "N1": "ISA I — candidate / color decision",
@@ -5587,9 +5639,9 @@ def publish_f3_02():
         rowindex = {r["row_id"]: i + 2 for i, r in enumerate(m["rows"])}
         for r in records:
             idx = rowindex[r["row_id"]]
-            regedits["N" + str(idx)] = r["candidate_status"] + " — F3-02: " + r["rationale"]
+            regedits[cfg["register"] + str(idx)] = r["candidate_status"] + " — " + label + ": " + r["rationale"]
             ref = "P" + str(idx)
-            regedits[ref] = register.get(ref, "") + " | F3-02 ISA: " + ", ".join(r["source_ids"]) + "; " + r["decision_id"]
+            regedits[ref] = register.get(ref, "") + " | " + label + " " + cfg["donor"] + ": " + ", ".join(r["source_ids"]) + "; " + r["decision_id"]
         edit_sheet("DIM Register", regedits)
         output = io.BytesIO()
         with zipfile.ZipFile(output, "w") as dst:
@@ -5598,63 +5650,67 @@ def publish_f3_02():
     saved = output.getvalue()
     (D / BOOK).write_bytes(saved)
     sha = digest(saved)
-    checkpoint = "F3_02_CLASSIFICATION_SAVED_VERIFIED"
+    checkpoint = stage + "_CLASSIFICATION_SAVED_VERIFIED"
     m["currentEvidenceCheckpoint"] = checkpoint
     m["currentWorkbookSha256"] = sha
     m["workbookSnapshot"].update({"checkpoint": checkpoint, "sha256": sha,
         "currently_matches_readable_view": True, "lag": "ZERO: JSON, both CSVs, both readable comparisons and same 26-sheet XLSX",
-        "textCheckpoint": "F3_02_ISA_18_CLASSIFICATION_ONLY", "validation_file": F3_ISA_EVIDENCE + "#/F3_02_classification_review/publication"})
-    review["status"] = "18_SOURCE_DECISIONS_PUBLISHED__STOP_BEFORE_F3_03"
+        "textCheckpoint": stage + "_CLASSIFICATION_ONLY", "validation_file": cfg["evidence"] + "#/" + key + "/publication"})
+    review["status"] = "SOURCE_DECISIONS_PUBLISHED__STOP_AT_CURRENT_STAGE"
     review["publication"] = {"workbook_sha256": sha, "previous_workbook_sha256": digest(prior),
         "affected_original_sheets": ["Master Crosswalk", "Summary", "Validation", "Legend", "DIM Register"],
         "unchanged_sheet_parts": 21, "grid_values_checked": 5664,
-        "source_cells_changed": 18, "new_classification_fills": 11, "explicit_no_fill_holds": 7,
+        "source_cells_changed": len(records), "colored_decisions": sum(bool(r["fill"]) for r in records),
+        "explicit_no_fill_decisions": sum(not r["fill"] for r in records),
         "M00_M01_preserved": True, "M02_created": False,
         "actual_Microsoft_Excel_clean_open": "UNVERIFIED", "visual_render_review": "PENDING",
         "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained."}
     aas = load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
     aas["master_state_current"].update({"checkpoint": checkpoint, "comparison_lag": 0})
     save(MASTER, m)
-    save(F3_ISA_EVIDENCE, evidence)
+    save(cfg["evidence"], evidence)
     save("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json", aas)
-    verify_f3_02()
+    verify_f3(stage)
 
 
-def verify_f3_02():
+def verify_f3(stage="F3_02"):
     """Check actual saved cells/fills and exact preservation against archived bytes."""
     from collections import Counter
     from html.parser import HTMLParser
+    cfg = f3_config(stage)
+    key = stage + "_classification_review"
+    rowkey = stage + "_" + cfg["donor"] + "_classification"
+    label = stage.replace("_", "-")
     m = load(MASTER)
-    e = load(F3_ISA_EVIDENCE)
-    review = e["F3_02_classification_review"]
+    e = load(cfg["evidence"])
+    review = e[key]
     records = review["records"]
-    base = json.loads(f3_baseline(MASTER))
-    original_e = json.loads(f3_baseline(F3_ISA_EVIDENCE))
-    need({k: v for k, v in e.items() if k != "F3_02_classification_review"} == original_e,
-         "all original ISA21 findings, native locators and six questions preserved")
-    need(m["currentEvidenceCheckpoint"] == "F3_02_CLASSIFICATION_SAVED_VERIFIED", "saved F3-02 checkpoint")
-    need(len(records) == 18 and Counter(r["candidate_status"] for r in records) ==
-         {"COMMON_CANDIDATE": 9, "SPECIALIZED_CANDIDATE": 2, "MIXED_OR_HELD": 7}, "all 18 source decisions")
+    base = json.loads(f3_baseline(MASTER, cfg["base"]))
+    original_e = json.loads(f3_baseline(cfg["evidence"], cfg["base"]))
+    need({k: v for k, v in e.items() if k != key} == original_e,
+         "all original source findings, native locators and holds preserved")
+    need(m["currentEvidenceCheckpoint"] == stage + "_CLASSIFICATION_SAVED_VERIFIED", "saved " + label + " checkpoint")
+    need(len(records) == cfg["count"] and Counter(r["candidate_status"] for r in records) == cfg["counts"], "all source decisions")
     need(m["columns"] == base["columns"] and m["review_sections"] == base["review_sections"], "approved layout preserved")
     changed = {r["cell"]: r for r in records}
-    need(len(changed) == 18 and len(m["rows"]) == 337 and len(m["review_grid"]) == 354, "stable identities and dimensions")
+    need(len(changed) == cfg["count"] and len(m["rows"]) == 337 and len(m["review_grid"]) == 354, "stable identities and dimensions")
     indexed = {r["row_id"]: r for r in m["rows"]}
     for record in records:
         row = indexed[record["row_id"]]
-        need(row["display"][8] == record["after"] and row["F3_02_ISA_classification"]["candidate_status"] ==
+        need(row["display"][cfg["column"]] == record["after"] and row[rowkey]["candidate_status"] ==
              record["candidate_status"] and record["source_ids"] and record["original_source_locators"],
              "source decision resolves to current stable row " + record["row_id"])
     for before, row in zip(base["rows"], m["rows"]):
         copied = dict(row)
-        copied.pop("F3_02_ISA_classification", None)
+        copied.pop(rowkey, None)
         copied["display"] = list(copied["display"])
-        copied["display"][8] = before["display"][8]
+        copied["display"][cfg["column"]] = before["display"][cfg["column"]]
         need(copied == before, "preserve all original row/case/donor/model evidence " + row["row_id"])
     for i, (before, after) in enumerate(zip(base["review_grid"], m["review_grid"]), 1):
         need(len(after) == 16, "all 16 columns")
         for j, (v0, v1) in enumerate(zip(before, after), 1):
             ref = addr(i, j)
-            need(v1 == (changed[ref]["after"] if ref in changed else v0), "only 18 authorized donor cells " + ref)
+            need(v1 == (changed[ref]["after"] if ref in changed else v0), "only authorized donor cells " + ref)
     for key in ("F2_5_color_reconciliation", "AAS10_color_reconciliation", "priorHolds", "caseEvidence", "adoptionPolicy"):
         need(m[key] == base[key], "preserve prior decisions " + key)
     need(source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv") == m["review_grid"] ==
@@ -5676,7 +5732,7 @@ def verify_f3_02():
     saved = (D / BOOK).read_bytes()
     need(digest(saved) == m["currentWorkbookSha256"] == m["workbookSnapshot"]["sha256"] ==
          review["publication"]["workbook_sha256"], "actual saved workbook hash")
-    with zipfile.ZipFile(io.BytesIO(saved)) as z, zipfile.ZipFile(io.BytesIO(f3_baseline(BOOK))) as prior:
+    with zipfile.ZipFile(io.BytesIO(saved)) as z, zipfile.ZipFile(io.BytesIO(f3_baseline(BOOK, cfg["base"]))) as prior:
         paths = old.sheetpaths(z)
         need(z.testzip() is None and len(paths) == 26 and paths == old.sheetpaths(prior), "same 26-sheet workbook")
         changed_parts = {paths[n] for n in review["publication"]["affected_original_sheets"]}
@@ -5686,10 +5742,10 @@ def verify_f3_02():
             if name.endswith((".xml", ".rels")): ET.fromstring(z.read(name))
         register = old.readcells(saved, "DIM Register")
         for i, row in enumerate(m["rows"], 2):
-            if "F3_02_ISA_classification" in row:
+            if rowkey in row:
                 need(register["A" + str(i)] == row["row_id"] and
-                     register["N" + str(i)].startswith(row["F3_02_ISA_classification"]["candidate_status"]) and
-                     "F3-02-" + row["row_id"] in register["P" + str(i)], "visible register classification " + row["row_id"])
+                     register[cfg["register"] + str(i)].startswith(row[rowkey]["candidate_status"]) and
+                     label + "-" + row["row_id"] in register["P" + str(i)], "visible register classification " + row["row_id"])
         for sheet in review["publication"]["affected_original_sheets"]:
             xml = ET.fromstring(z.read(paths[sheet]))
             for rr in xml.find(q("sheetData")):
@@ -5719,28 +5775,57 @@ def verify_f3_02():
                 ref = addr(i, j)
                 need(actual.get(ref, "") == expected, "saved cell value " + ref)
         for ref, cell in cells.items():
-            if ref not in changed or not changed[ref]["fill"]:
+            if ref not in changed:
                 need(cell.get("s") == priorcells[ref].get("s"), "preserved original style " + ref)
             else:
                 xf = xfs[int(cell.get("s", "0"))]
                 color = fills[int(xf.get("fillId", "0"))].find(".//" + q("fgColor")).get("rgb")
-                need(color[-6:] == changed[ref]["fill"][1:], "source-backed actual candidate fill " + ref)
+                if changed[ref]["fill"]:
+                    need(color[-6:] == changed[ref]["fill"][1:], "source-backed actual candidate fill " + ref)
+                else:
+                    need(color[-6:] in ("FFFFFF", "F2F7FB"), "explicit hold has no classification fill " + ref)
         need(sum(bool(r["display"][j]) for r in m["rows"] for j in (6, 7, 8, 9)) == 1348, "all donor statuses visible")
     for name in ("M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx",
                  "M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx"):
         rel = "Manual_Workbook_Versions/" + name
-        need((D / rel).read_bytes() == f3_baseline(rel), "frozen manual version " + name)
+        need((D / rel).read_bytes() == f3_baseline(rel, cfg["base"]), "frozen manual version " + name)
     need(not list((D / "Manual_Workbook_Versions").glob("M02*")), "no unapproved M02")
     need(m["nextOwnerAction"] == review["next"] == load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")["one_next"], "one next action")
-    print("PASS F3-02: 18 source-backed dispositions; 9 common, 2 specialized, 7 held; 5664 actual saved values and both CSV/Markdown mirrors.")
-    print("PASS: original 337 rows/26 sheets, 21 untouched worksheet parts, existing classifications, cases, source questions and M00/M01 preserved.")
-    print("LIMIT: targeted classification review only; clean Microsoft Excel reopen remains unverified; stop before F3-03.")
+    if stage == "F3_03":
+        initial = [r for r in records if r["review_set"] == "39_UNGRADED"]
+        calibration = [r for r in records if r["review_set"] == "PRIOR_CLASSIFICATION_CALIBRATION"]
+        need(len(initial) == 39 and len(calibration) == 12, "separate original exceptions from calibration")
+        need(Counter(r["candidate_status"] for r in initial) == review["initial_39_status_counts"], "initial 39 outcomes")
+        need(Counter(r["candidate_status"] for r in calibration) == review["calibration_change_status_counts"], "calibration outcomes")
+        need(m["F3_02_classification"] == base["F3_02_classification"], "ISA F3-02 decisions preserved")
+        observed = Counter()
+        for row in m["rows"]:
+            if rowkey in row:
+                observed["colored" if row[rowkey]["fill"] else "held"] += 1
+            elif "G" in row.get("F2_5_cell_classification", {}):
+                observed["colored" if row["F2_5_cell_classification"]["G"]["requested_fill"] else "held"] += 1
+        need(observed == {"colored": 65, "held": 50}, "115 current SAPIENT source decisions")
+    print(f"PASS {label}: {len(records)} source-backed dispositions; 5664 actual saved values and both CSV/Markdown mirrors.")
+    print("PASS: original 337 rows/26 sheets, 21 untouched worksheet parts, other donor/case evidence and M00/M01 preserved.")
+    print("LIMIT: targeted classification review only; clean Microsoft Excel reopen remains unverified; stop at current stage.")
+
+
+def publish_f3_02():
+    return publish_f3("F3_02")
+
+
+def verify_f3_02():
+    return verify_f3("F3_02")
 
 
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="F3_02_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+    if checkpoint=="F3_03_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+        publish_f3("F3_03")
+    elif checkpoint=="F3_03_CLASSIFICATION_SAVED_VERIFIED":
+        verify_f3("F3_03")
+    elif checkpoint=="F3_02_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
         publish_f3_02()
     elif checkpoint=="F3_02_CLASSIFICATION_SAVED_VERIFIED":
         verify_f3_02()
