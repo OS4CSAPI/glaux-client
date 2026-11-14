@@ -10041,7 +10041,6 @@
         "10": "204",
         "13": "192",
         "14": "204",
-        "277": "192",
         "24": "72",
         "25": "84",
         "48": "84",
@@ -10056,7 +10055,8 @@
         "233": "108",
         "234": "84",
         "235": "84",
-        "238": "96"
+        "238": "96",
+        "277": "192"
       },
       "checks": {
         "saved_grid_equals_JSON": true,
@@ -12357,5 +12357,645 @@
         "scope": "Same seven pre-existing register/path errors documented by AAS03 remain; no new AAS04 errors. Outside this bounded donor step."
       }
     }
+  },
+  "AAS05": {
+    "status": "SCHEMA_SOURCE_READ__PUBLISHER_PENDING",
+    "date": "2026-11-14",
+    "branch": "research/dim-profile-v2",
+    "preflight_head": "02232bb6eed411ccb159692112a65394b8553db3",
+    "owner_authorization": "Owner Proceed in Profile Rewrite 34 authorized AAS05; its in-progress work interrupted by chat length. Profile Rewrite 35 Proceed resumes only AAS05.",
+    "original_pins": {
+      "part1": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+      "part2": "f136ba1465e4c6b5b25444e0609d4de8f7429044"
+    },
+    "report": "AAS05_Original_Schema_Corroboration_14NOV2026.md",
+    "original_items": [
+      {
+        "source_id": "AAS05-S001",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_DEFINITION",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          131,
+          210
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L131-L210",
+        "native_meaning": "Digital shell requires assetInformation, AssetInformation requires assetKind; optional global/specific asset ID is not installed equipment identity.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S002",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1295,
+          1325
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1295-L1325",
+        "native_meaning": "Reference requires type and keys, not proof of physical linkage or resolvable OGC URI.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S003",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1506,
+          1566
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1506-L1566",
+        "native_meaning": "Collection/List value optional, minItems 1 when present; list typeValueListElement required and orderRelevant optional.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S004",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1082,
+          1127
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1082-L1127",
+        "native_meaning": "Operation variable arrays optional, minItems 1 when present; OperationVariable.value required; not execution/mandatory argument semantics.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S005",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT_EXPERIMENTAL",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          672,
+          710
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L672-L710",
+        "native_meaning": "EventPayload JSON requires timeStamp and source/observableReference; text uses timestamp.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S006",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          52,
+          124
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L52-L124",
+        "native_meaning": "Administrative version/revision digit strings 1–4 chars; UTC dates zero-offset patterns.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S007",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1215,
+          1249
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1215-L1249",
+        "native_meaning": "Full-model Range valueType and optional lexical string min/max.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S008",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          711,
+          754
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L711-L754",
+        "native_meaning": "Extension requires local name; semantics/typed values not automatic global interoperability.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S009",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          90,
+          133
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L90-L133",
+        "native_meaning": "XML shell requires assetInformation; optional digital/reference links not physical attachment evidence.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S010",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          705,
+          741
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L705-L741",
+        "native_meaning": "XML Operation optional variable wrappers require one-or-more child OperationVariable, with value required.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S011",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT_EXPERIMENTAL",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          436,
+          460
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L436-L460",
+        "native_meaning": "XML EventPayload requires timeStamp, not text timestamp.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S012",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          962,
+          994
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L962-L994",
+        "native_meaning": "XML optional list/collection wrappers nonempty when present; no empty update equivalence.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S013",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          32,
+          62
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L32-L62",
+        "native_meaning": "Administrative versions constrained as digit strings in XML, versus integer prose.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S014",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "ONTOLOGY_DECLARATION_EXPERIMENTAL",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/rdf/rdf-ontology.ttl",
+        "source_lines": [
+          1165,
+          1171
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/rdf-ontology.ttl#L1165-L1171",
+        "native_meaning": "OWL EventPayload/timeStamp data property string, contrary to native text spelling.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S015",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "ONTOLOGY_DECLARATION",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/rdf/rdf-ontology.ttl",
+        "source_lines": [
+          2092,
+          2128
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/rdf-ontology.ttl#L2092-L2128",
+        "native_meaning": "OWL says list ordered, but value ordinary object property; triple order/round trip not proven.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S016",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SHACL_SHAPE_EXPERIMENTAL",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/rdf/shacl-schema.ttl",
+        "source_lines": [
+          594,
+          656
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/shacl-schema.ttl#L594-L656",
+        "native_meaning": "SHACL EventPayload/timeStamp minCount1/maxCount1 with UTC pattern; not verified physical event.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S017",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART1_SCHEMA_BLOCK",
+        "source_standing": "SHACL_SHAPE",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "schemas/rdf/shacl-schema.ttl",
+        "source_lines": [
+          1377,
+          1414
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/shacl-schema.ttl#L1377-L1414",
+        "native_meaning": "SHACL list value minCount0 with class SubmodelElement; no order container in selected shape.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S018",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          448,
+          474
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L448-L474",
+        "native_meaning": "Part2-shared Part1 schema requires EventPayload.timeStamp, as do native serializations.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S019",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          698,
+          725
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L698-L725",
+        "native_meaning": "Part2-shared metamodel Operation/OperationVariable structure declares arguments, not effects.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S020",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          780,
+          795
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L780-L795",
+        "native_meaning": "Shared full-model Range has valueType and optional string min/max.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S021",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_VALUE_ONLY_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          1190,
+          1200
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L1190-L1200",
+        "native_meaning": "API RangeValue requires numeric min and max, unlike full-model lexical optional pair.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S022",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          934,
+          970
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L934-L970",
+        "native_meaning": "Operation request/result value-only structures are schema envelopes, not executed action contracts.",
+        "nonadoption": true
+      },
+      {
+        "source_id": "AAS05-S023",
+        "publisher": "Industrial Digital Twin Association",
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_kind": "PINNED_PART2_SHARED_SCHEMA_BLOCK",
+        "source_standing": "OPENAPI_SCHEMA",
+        "source_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          1410,
+          1452
+        ],
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L1410-L1452",
+        "native_meaning": "ListValue array versus CollectionValue ValueOnly; no equivalence with RDF or absent-vs-empty update.",
+        "nonadoption": true
+      }
+    ],
+    "original_constraint_items": [],
+    "source_attribute_inventory": [],
+    "comparison_updates": [
+      {
+        "row_id": "S06-R005",
+        "relation": "RELATED",
+        "clarification": "JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI.",
+        "source_ids": [
+          "AAS05-S001",
+          "AAS05-S009"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "S06-R007",
+        "relation": "PARTIAL/RELATED",
+        "clarification": "Reference keys and optional submodel/asset links do not corroborate actual physically attached constituents.",
+        "source_ids": [
+          "AAS05-S001",
+          "AAS05-S002",
+          "AAS05-S009"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-K-COMMAND-DECL",
+        "relation": "PARTIAL",
+        "clarification": "Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect.",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S019"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-K-PARAMETER-DECL",
+        "relation": "PARTIAL",
+        "clarification": "OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory.",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S019",
+          "AAS05-S022"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-K-RESULT-DECL",
+        "relation": "PARTIAL",
+        "clarification": "Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result.",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S022"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-K-STRUCTURE",
+        "relation": "PARTIAL",
+        "clarification": "Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order.",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S012",
+          "AAS05-S015",
+          "AAS05-S017"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-K-VALUE-RANGE",
+        "relation": "RELATED",
+        "clarification": "Full-model Range allows optional string-lexical min/max with valueType; API RangeValue requires both numeric endpoints. This is distinct representation scope, not a universal allowed-values rule.",
+        "source_ids": [
+          "AAS05-S007",
+          "AAS05-S020",
+          "AAS05-S021"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-R-LIST",
+        "relation": "PARTIAL",
+        "clarification": "List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion.",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S015",
+          "AAS05-S017",
+          "AAS05-S023"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-R-LIST-PRESENCE",
+        "relation": "CONFLICT",
+        "clarification": "Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold.",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S012",
+          "AAS05-S017",
+          "AAS05-S023"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-T-EVENT-TIME",
+        "relation": "RELATED",
+        "clarification": "Experimental EventPayload text spells timestamp; JSON/XML/OWL/SHACL/shared OpenAPI spell timeStamp. Original source inconsistency unresolved; neither proves observation time.",
+        "source_ids": [
+          "AAS05-S005",
+          "AAS05-S011",
+          "AAS05-S014",
+          "AAS05-S016",
+          "AAS05-S018"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-A-TIME-BASIS",
+        "relation": "RELATED",
+        "clarification": "Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization.",
+        "source_ids": [
+          "AAS05-S005",
+          "AAS05-S006",
+          "AAS05-S013",
+          "AAS05-S016"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-C-048",
+        "relation": "RELATED",
+        "clarification": "Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version.",
+        "source_ids": [
+          "AAS05-S006",
+          "AAS05-S013"
+        ],
+        "DIM_Profile_adopted": false
+      },
+      {
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "relation": "RELATED",
+        "clarification": "Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement.",
+        "source_ids": [
+          "AAS05-S008"
+        ],
+        "DIM_Profile_adopted": false
+      }
+    ],
+    "source_to_master_changes": [],
+    "open_holds": [
+      {
+        "id": "AAS05-H01",
+        "area": "Experimental event name and source truth",
+        "detail": "Native EventPayload.timestamp disagrees with timeStamp in pinned JSON, XML, RDF and shared OpenAPI; experimental standing and no verified occurrence persist.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H02",
+        "area": "Administrative representation",
+        "detail": "Version/revision prose integer versus schema digit string; DateTimeUtc original nonzero-offset example versus selected zero-offset patterns.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H03",
+        "area": "List semantics",
+        "detail": "Normal full-model empty/omitted handling, SHACL zero-value shape and RDF triple order have no verified lossless conversion or update equality.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H04",
+        "area": "Range variant meaning",
+        "detail": "Full-model optional lexical string min/max versus required numeric ValueOnly RangeValue; no inferred universal allowed-values rule.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H05",
+        "area": "Original corpus incompleteness",
+        "detail": "Only selected blocks of six original schema files reviewed; no entire schema set, aligned companions, 34 API SSP operation contracts or external specifications.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H06",
+        "area": "Runtime and adoption",
+        "detail": "No schema runtime validation, actual API service call, externally verified producer, real command or adopted DIM/Profile class/SHALL.",
+        "status": "OPEN"
+      },
+      {
+        "id": "AAS05-H07",
+        "area": "Historical source holds",
+        "detail": "ISA six questions, The Open Group SOSA nine source-hold families and SAPIENT 39 overlapping partial-source limitations remain preserved.",
+        "status": "OPEN"
+      }
+    ],
+    "saved_verification": null,
+    "file_coverage": [
+      {
+        "family": "Part1 JSON",
+        "file": "schemas/json/aas.json",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      },
+      {
+        "family": "Part1 XML",
+        "file": "schemas/xml/AAS.xsd",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      },
+      {
+        "family": "Part1 RDF/OWL",
+        "file": "schemas/rdf/rdf-ontology.ttl",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      },
+      {
+        "family": "Part1 SHACL",
+        "file": "schemas/rdf/shacl-schema.ttl",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      },
+      {
+        "family": "Part2 shared metamodel OpenAPI",
+        "file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      },
+      {
+        "family": "Part2 shared API OpenAPI",
+        "file": "Part2-API-Schemas/openapi.yaml",
+        "access": "SELECTED_BLOCKS_READ__WHOLE_FILE_NOT_EXHAUSTIVELY_AUDITED"
+      }
+    ],
+    "counts": {
+      "native_findings": 23,
+      "individual_constraint_records": 0,
+      "attribute_entries": 0,
+      "selected_schema_files": 6,
+      "master_cells_changed": 13,
+      "new_AAS_cells": 0,
+      "total_AAS_cells": 44
+    },
+    "four_case_check": "Existing Dragino/AirGradient reference designs, Campbell documentary pair, Bennett historical NOAA case retain original source/identity/time distinctions; no case cell edited.",
+    "forecast": {
+      "completed_research_increments": [
+        "AAS02",
+        "AAS03",
+        "AAS04",
+        "AAS05"
+      ],
+      "accepted_AAS01_remainder": [
+        10,
+        14,
+        21
+      ],
+      "arithmetic_remaining": [
+        6,
+        10,
+        17
+      ],
+      "not_fixed_packets": true
+    },
+    "next": "AAS06 only after separate owner Proceed; Part2 identity/registry/repository/discovery service operation review; stop before AAS07, DIM/Profile adoption or client/deployment."
   }
 }
