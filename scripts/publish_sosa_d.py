@@ -3818,9 +3818,379 @@ def publish_f2_5():
     print("F2-5 PASS: protected M00 unchanged, M01 owner-pending, no DIM/Profile/Glaux adoption")
     return newsha
 
+
+# AAS02-G: source-grounded owner-approved insertion within the SAME original 26-sheet
+# workbook. This extends the established publisher, not its historical workflows.
+def publish_aas02_g():
+    from collections import defaultdict
+    from html import escape, unescape
+    def verify(ok,why):
+        if not ok:raise AssertionError("AAS02-G saved-XLSX validation: "+why)
+    ledgername="AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
+    validationname="AAS02_G_Column_Workbook_Validation_13NOV2026.json"
+    m=load(MASTER);led=load(ledgername);a=led["AAS02"];approval=a["owner_layout_decision"]
+    verify(approval["status"]=="EXPLICIT_OWNER_APPROVAL_OF_AAS32_COLUMN_POSITION_ONLY__NOT_YET_EXECUTED",
+           "one owner-approved G position, not already executed")
+    grid=m["review_grid"];rs=m["rows"];dividers=set(m["review_sections"])
+    verify(len(grid)==354 and all(len(g)==15 for g in grid)
+           and len(rs)==337 and len(m["columns"])==15 and len(dividers)==15,
+           "original 337 information rows and 354x15 grid")
+    verify([c["key"] for c in m["columns"]][:7]==["Dragino","AirGradient","Campbell","Bennett","IEEE","OPC","SAPIENT"]
+           and m["columns"][-1]["key"]=="DIM","old column identities")
+    verify([g for i,g in enumerate(grid) if i>1 and i not in dividers]==[r["display"] for r in rs],
+           "all original data rows and case/donor text")
+    verify(grid==source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv")
+               ==source_csv("ISA_Correction_Review_07NOV2026.csv"),"preflight both CSV and JSON")
+    verify(len(m["originalDonorEvidence"])==58 and len(m["caseEvidence"])==73
+           and m["ISAEvidence"]["specificQuestions"]==6
+           and not m["adoptionPolicy"]["content_adopted_by_this_update"],"original source holds/cases/nonadoption")
+    verify(len(a["original_items"])==42 and len(a["open_holds"])==8 and len(led["holds"])==7,
+           "original AAS01/AAS02 source evidence")
+    prevhash="bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c"
+    original=(D/BOOK).read_bytes()
+    m00=(D/"Manual_Workbook_Versions/M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx").read_bytes()
+    m01=(D/"Manual_Workbook_Versions/M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx").read_bytes()
+    verify(digest(original)==digest(m01)==prevhash==m["currentWorkbookSha256"],"original M01 and living workbook byte-identical")
+    verify(digest(m00)=="724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70","M00 untouched")
+    colors=m["F2_5_color_reconciliation"]
+    verify(len(colors["color_assignments"])==325 and len(colors["composite_holds"])==67,"F2-5 source style/hold controls")
+    origcols=[c["key"] for c in m["columns"]];origgrid=[r[:] for r in grid]
+    positions={};id_to_row={}
+    k=0
+    for index,g in enumerate(grid):
+        if index>1 and index not in dividers:
+            row=rs[k];positions[row["row_id"]]=index+1;id_to_row[index+1]=row;k+=1
+    verify(k==337 and len(positions)==337,"stable source row locations")
+    grouped=defaultdict(list)
+    for item in a["original_items"]:
+        verify(item["source_id"].startswith("AAS02-N")
+               and item["source_lines"][0]>0 and item["source_lines"][1]>=item["source_lines"][0]
+               and "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e" in item["source_url"],
+               "original published native source locator "+item["source_id"])
+        for x in item["provisional_existing_master_correspondence"]:
+            n=int(x["current_grid_row"])
+            verify(n in id_to_row and grid[n-1][14]==x["current_dim_label"]
+                   and x["relation"] in ("RELATED","PARTIAL"),
+                   "original source-to-existing-row target "+item["source_id"]+" "+str(n))
+            grouped[n].append((item,x))
+    verify(len(grouped)==8 and sum(len(v) for v in grouped.values())==57,"eight supported cells, 57 source links")
+    summaries={
+      5:"AssetKind Type/Instance/Batch/Role is distinct from HasKind Template/Instance; optional assetType may identify another type asset. Neither proves a marketed manufacturer model or its installed unit.",
+      6:"SpecificAssetId name/value may carry a serial or proprietary identifier; globalAssetId is a distinct asset ID, and AASd-131 requires at least one asset ID. No fielded hardware serial is established by AAS alone.",
+      7:"Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices.",
+      10:"One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation.",
+      13:"Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents.",
+      14:"ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment.",
+      251:"AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time.",
+      277:"AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment."
+    }
+    verify(set(grouped)==set(summaries),"eight source-qualified AAS topics")
+    notes={};mapping={}
+    for n,links in sorted(grouped.items()):
+        ids=list(dict.fromkeys(item["source_id"] for item,x in links))
+        relations=sorted(set(x["relation"] for item,x in links))
+        meaning="/".join(relations)
+        notes[n]=(meaning+": IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): "+
+                 summaries[n]+" Original source IDs: "+", ".join(ids)+
+                 ". BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.")
+        verify(len(notes[n])<32767,"Excel cell length")
+        mapping[n]={"relation":meaning,"source_ids":ids,"source_link_count":len(links),
+          "original_source_standings":list(dict.fromkeys(item["source_standing"] for item,x in links)),
+          "source":"IDTA-01001 Part1 v3.2.0, pinned release 26-01",
+          "source_register":ledgername,"research_only":True,"DIM_CSAPI_Profile_adopted":False,
+          "original_master_row_id":id_to_row[n]["row_id"],"provisional_display":notes[n]}
+    m["columns"].insert(6,{"key":"AAS32","name":"AAS v3.2 — IDTA 01001 Part 1 Metamodel",
+       "group":"OTHER_DONOR_STANDARDS","kind":"BOUNDED_SOURCE_FIRST_DONOR",
+       "edition":"IDTA-01001 Part1 v3.2.0 (Release 26-01, July 2026)",
+       "source_pin":"admin-shell-io/aas-specs-metamodel@ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+       "source_ledger":ledgername,"DIM_CSAPI_Profile_adopted":False})
+    for index,row in enumerate(grid):
+        row.insert(6, m["columns"][6]["name"] if index==1 else notes.get(index+1,""))
+    for n,r in id_to_row.items():
+        r["display"].insert(6,notes.get(n,""))
+        if n in mapping:r["AAS02_IDTA01001_source_correspondence"]={**mapping[n],"column":"G"}
+    verify(len(m["columns"])==16 and len(m["review_sections"])==15
+           and all(len(x)==16 for x in grid) and all(len(x["display"])==16 for x in rs),
+           "16-column canonical schema")
+    verify([c["key"] for c in m["columns"] if c["key"]!="AAS32"]==origcols,
+           "old donor ordering unmodified")
+    for i,oldrow in enumerate(origgrid):
+        verify(grid[i][:6]==oldrow[:6] and grid[i][7:]==oldrow[6:],
+               "old source/case/OGC/DIM cells unchanged at "+str(i+1))
+    verify([g for i,g in enumerate(grid) if i>1 and i not in dividers]==[r["display"] for r in rs],
+           "337 exact source row displays")
+    # Emit BOTH CSV mirrors directly from the ONE canonical data matrix.
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv","ISA_Correction_Review_07NOV2026.csv"):
+        with (D/name).open("w",encoding="utf-8",newline="") as h:
+            csv.writer(h,lineterminator="\n").writerows(grid)
+        verify(source_csv(name)==grid,"new mirror "+name)
+    # Produce both readable HTML-in-Markdown views, preserving the original
+    # historical preamble and all other donor/case/OGC contents.
+    oldmarkdown=(D/"Master_Donor_Concept_to_DIM_Crosswalk.md").read_text(encoding="utf-8")
+    verify(oldmarkdown==(D/"ISA_Correction_Review_07NOV2026.md").read_text(encoding="utf-8")
+           and oldmarkdown.count("<table>")==1,"original two readable mirrors identical")
+    pre=oldmarkdown.split("<table>",1)[0]
+    intro=("# CURRENT — Source-qualified AAS02 donor column G integrated into SAME verified 26-sheet master (13 November 2026)\n\n"
+         "The newly approved G, after OPC UA Devices F, contains EIGHT original IDTA-01001 v3.2.0 RELATED/PARTIAL research cells; "
+         "42 original source items and 57 source-to-row links are evidence, not adopted DIM fields. "
+         "Original case and other donor/OGC values shifted without alteration; proposed DIM stays rightmost P. "
+         "Prior 325 source-qualified color fills and 67 composite held cells retain original status in shifted H/I/J. "
+         "Eight new AAS cells are intentionally UNCOLORED pending individual native-meaning classification; blank rows mean UNASSESSED, not NO_ESTABLISHED. "
+         "Original source evidence: [cumulative AAS register]("+ledgername+"). "
+         "Original manually protected M00/M01 unchanged, no class/Profile SHALL/physical device proof or Glaux change. "
+         "One next owner Proceed may authorize AAS03 source-first only. STOP.\n\n---\n\n")
+    header='<table>\n<thead><tr><th colspan="4">SOURCE CASES</th><th colspan="6">OTHER DONOR STANDARDS</th><th colspan="5">FOUNDATIONAL SENSING / OBSERVATION</th><th>PROPOSED DIM</th></tr>\n'
+    header+="<tr>"+"".join("<th>"+escape(c["name"])+"</th>" for c in m["columns"])+"</tr></thead><tbody>\n"
+    body=[]
+    for i in range(2,len(grid)):
+        if i in dividers:
+            body.append('<tr><th colspan="16">'+escape(str(grid[i][0]))+"</th></tr>")
+        else:
+            body.append("<tr>"+"".join("<td>"+escape(str(v))+"</td>" for v in grid[i])+"</tr>")
+    md=intro+pre+header+"\n".join(body)+"\n</tbody></table>\n"
+    inner=re.findall(r"<tr[^>]*>[\s\S]*?</tr>",md.split("<tbody>",1)[1].split("</tbody>",1)[0])
+    verify(len(inner)==352 and md.count('colspan="16"')==15,"readable table complete")
+    for i,tr in enumerate(inner,start=2):
+        if i in dividers:verify('colspan="16"' in tr,"divider width")
+        else:
+            td=re.findall(r"<td>(.*?)</td>",tr,re.S)
+            verify(len(td)==16 and [unescape(v) for v in td]==grid[i],
+                   "readable source matrix cell row "+str(i+1))
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md","ISA_Correction_Review_07NOV2026.md"):
+        (D/name).write_text(md,encoding="utf-8")
+    def colref(ref):
+        mm=re.fullmatch(r"([A-Z]+)([0-9]+)",ref)
+        verify(mm is not None,"Excel A1 ref "+str(ref))
+        c=0
+        for ch in mm.group(1):c=c*26+ord(ch)-64
+        return c,int(mm.group(2))
+    def move(ref):
+        c,n=colref(ref);return addr(n,c+1 if c>=7 else c)
+    def put(row,ref,value,style):
+        c=ET.SubElement(row,q("c"),{"r":ref,"t":"inlineStr","s":str(style)})
+        t=ET.SubElement(ET.SubElement(c,q("is")),q("t"))
+        t.set("{http://www.w3.org/XML/1998/namespace}space","preserve")
+        t.text=str(value)
+    def sortcells(row):
+        cells=row.findall(q("c"))
+        for c in cells:row.remove(c)
+        for c in sorted(cells,key=lambda x:colref(x.get("r"))[0]):row.append(c)
+    def add_summary(z,path):
+        root=ET.fromstring(z.read(path));data=root.find(q("sheetData"))
+        oldrows=data.findall(q("row"));top=max(int(r.get("r")) for r in oldrows)
+        style=(oldrows[-1].find(q("c")).get("s","0") if oldrows[-1].find(q("c")) is not None else "0")
+        statements=[
+         ("AAS02 source-first G column","Eight original IDTA v3.2.0 RELATED/PARTIAL source-qualified row cells. 337 old information rows, 354×16 exact saved values."),
+         ("Preserved prior comparison material","Every original case, donor, OGC and DIM value preserved after shifting old G–O one position; DIM rightmost P."),
+         ("Native evidence and grade","42 AAS02 native source IDs, 57 source-to-row relations; eight composite cells UNCOLORED; not a DIM/Profile adoption."),
+         ("Source classification","Original 325 exact RGB source-classified fills and 67 uncolored holds retained after shifting to H/I/J."),
+         ("Manual M00/M01 and next stop","M00/M01 frozen unchanged; AAS03 requires separate owner Proceed, no model or runtime effect.")
+        ]
+        for i,(a,b) in enumerate(statements,start=2):
+            n=top+i;rr=ET.SubElement(data,q("row"),{"r":str(n),"ht":"44","customHeight":"1"})
+            put(rr,"A"+str(n),a,style);put(rr,"B"+str(n),b,style)
+        dim=root.find(q("dimension"))
+        if dim is not None:dim.set("ref","A1:B"+str(top+len(statements)+1))
+        return ET.tostring(root,encoding="utf-8",xml_declaration=True)
+    with zipfile.ZipFile(io.BytesIO(original)) as z:
+        verify(z.testzip() is None,"original workbook ZIP CRC")
+        paths=old.sheetpaths(z)
+        verify(len(paths)==26 and set(("Master Crosswalk","DIM Register","Summary","Validation","Legend"))<=set(paths),
+               "original 26 workbook sheets")
+        orig_hashes={name:digest(z.read(path)) for name,path in paths.items()}
+        original_styles=z.read("xl/styles.xml")
+        master=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        before_cells={c.get("r"):c for c in master.iter(q("c"))}
+        def prior_style(ref):
+            return before_cells[ref].get("s","0") if ref in before_cells else "0"
+        data=master.find(q("sheetData"))
+        rows=data.findall(q("row"))
+        verify(len(rows)==354,"same original grid rows")
+        for n,row in enumerate(rows,start=1):
+            verify(int(row.get("r"))==n,"original Excel row sequence")
+            for cell in row.findall(q("c")):
+                cell.set("r",move(cell.get("r")))
+            if n==2:put(row,"G2",m["columns"][6]["name"],prior_style("F2"))
+            if n in notes:put(row,"G"+str(n),notes[n],prior_style("O"+str(n)))
+            sortcells(row)
+        cols=master.find(q("cols"))
+        verify(cols is not None and len(cols.findall(q("col")))==15,"old 15 source widths")
+        for cc in cols.findall(q("col")):
+            for key in ("min","max"):
+                x=int(cc.get(key))
+                if x>=7:cc.set(key,str(x+1))
+        cols.insert(6,ET.Element(q("col"),{"min":"7","max":"7","width":"45","customWidth":"1"}))
+        verify(len(cols.findall(q("col")))==16,"new 16 columns")
+        merges=master.find(q("mergeCells"))
+        verify(merges is not None,"source group/section merges")
+        merged=[]
+        for el in merges.findall(q("mergeCell")):
+            s=el.get("ref")
+            if s=="E1:I1":s="E1:J1"
+            elif s=="J1:N1":s="K1:O1"
+            elif re.fullmatch(r"A\d+:O\d+",s):s=s.replace(":O",":P")
+            el.set("ref",s);merged.append(s)
+        verify(len(merged)==18 and sum(":P" in s for s in merged)==15,
+               "15 original topic dividers expanded")
+        # Extend the original source evidence register without replacing any
+        # earlier cell or changing the 26 original sheet names.
+        reg=ET.fromstring(z.read(paths["DIM Register"]))
+        regdata=reg.find(q("sheetData"));regrows=regdata.findall(q("row"))
+        verify(len(regrows)==338,"original DIM Register 337 rows + header")
+        for idx,row in enumerate(regrows,start=1):
+            style=(row.find(q("c")).get("s","0") if row.find(q("c")) is not None else "0")
+            if idx==1:
+                put(row,"Q1","AAS02 Part1 source/relationship identifiers (research-only)",style)
+            else:
+                rr=rs[idx-2];gridloc=positions[rr["row_id"]]
+                if gridloc in mapping:
+                    mm=mapping[gridloc]
+                    put(row,"Q"+str(idx),"AAS02 "+mm["relation"]+": "+", ".join(mm["source_ids"])+
+                        "; verified original source and caveats: "+ledgername+"; NOT adopted DIM/Profile.",style)
+        regcols=reg.find(q("cols"))
+        if regcols is not None:
+            regcols.append(ET.Element(q("col"),{"min":"17","max":"17","width":"50","customWidth":"1"}))
+        dim=reg.find(q("dimension"))
+        if dim is not None:dim.set("ref","A1:Q338")
+        legend=ET.fromstring(z.read(paths["Legend"]))
+        ld=legend.find(q("sheetData"));last=max(int(r.get("r")) for r in ld.findall(q("row")))
+        for k,(label,value) in enumerate([
+          ("New AAS-32 G donor column","Eight source-graded RELATED/PARTIAL composite research cells, intentionally without a source classification fill."),
+          ("Shifted F2-5 classifications","Original G/H/I donor colored cells now H/I/J, still 325 exact RGB statuses; 67 mixed native cells still uncolored.")
+        ],start=2):
+            n=last+k;rr=ET.SubElement(ld,q("row"),{"r":str(n),"ht":"42","customHeight":"1"})
+            put(rr,"A"+str(n),label,prior_style("O5"))
+            put(rr,"B"+str(n),value,prior_style("O5"))
+        ldim=legend.find(q("dimension"))
+        if ldim is not None:ldim.set("ref","A1:Q"+str(last+3))
+        replacements={paths["Master Crosswalk"]:ET.tostring(master,encoding="utf-8",xml_declaration=True),
+           paths["DIM Register"]:ET.tostring(reg,encoding="utf-8",xml_declaration=True),
+           paths["Summary"]:add_summary(z,paths["Summary"]),
+           paths["Validation"]:add_summary(z,paths["Validation"]),
+           paths["Legend"]:ET.tostring(legend,encoding="utf-8",xml_declaration=True)}
+        original_other={name:sha for name,sha in orig_hashes.items() if paths[name] not in replacements}
+        verify(len(original_other)==21,"21 original historical/case/source sheets")
+        bout=io.BytesIO()
+        with zipfile.ZipFile(bout,"w") as dest:
+            for info in z.infolist():
+                dest.writestr(info,replacements.get(info.filename,z.read(info.filename)))
+    newbytes=bout.getvalue()
+    with zipfile.ZipFile(io.BytesIO(newbytes)) as z:
+        verify(z.testzip() is None and list(old.sheetpaths(z))==list(paths),"reopened original 26 sheets ZIP CRC")
+        verify(z.read("xl/styles.xml")==original_styles,"all original Excel style definitions byte-identical")
+        for name,sha in original_other.items():
+            verify(digest(z.read(paths[name]))==sha,"untouched historical sheet "+name)
+        for file in z.namelist():
+            if file.endswith((".xml",".rels")):ET.fromstring(z.read(file))
+        outmaster=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        after_cells={c.get("r"):c for c in outmaster.iter(q("c"))}
+        for ref,cell in before_cells.items():
+            expected=move(ref);outcell=after_cells.get(expected)
+            verify(outcell is not None and outcell.get("s","0")==cell.get("s","0")
+                   and "".join(outcell.itertext())=="".join(cell.itertext()),
+                   "all old cell values/styles shift exact "+ref+"→"+expected)
+        styles=ET.fromstring(original_styles)
+        fills=styles.find(q("fills"));xfs=styles.find(q("cellXfs"))
+        colored_styles=set()
+        for item in colors["color_assignments"]:
+            col={"G":7,"H":8,"I":9}[item["column"]]
+            ref=move(addr(positions[item["row_id"]],col))
+            cell=after_cells[ref];sid=int(cell.get("s","0"))
+            colored_styles.add(sid)
+            fill=fills[int(xfs[sid].get("fillId"))]
+            fg=fill.find(".//"+q("fgColor"))
+            verify(fg is not None and fg.get("rgb")=="FF"+colors["legend"][item["status"]][1:].upper(),
+                   "original exact RGB status "+ref)
+        verify(len(colors["color_assignments"])==325,"325 original color cells")
+        for item in colors["composite_holds"]:
+            ref=move(addr(positions[item["row_id"]],{"G":7,"H":8,"I":9}[item["column"]]))
+            c=after_cells.get(ref)
+            verify(c is None or int(c.get("s","0")) not in colored_styles,"old uncolored mixed-source hold "+ref)
+        for n in notes:
+            verify("G"+str(n) in after_cells and int(after_cells["G"+str(n)].get("s","0")) not in colored_styles,
+                   "new AAS source cell not falsely colored")
+    # Exhaustive saved-file/canonical comparison, including blanks.
+    actual=old.readcells(newbytes,"Master Crosswalk")
+    for i,row in enumerate(grid,start=1):
+        for cc,value in enumerate(row,start=1):
+            verify(actual.get(addr(i,cc),"")==old.val(value),
+                   "saved Excel / JSON / CSV / both Markdown cell "+addr(i,cc))
+    for name in ("DIM Register","Summary","Validation","Legend"):
+        oldv=old.readcells(original,name);newv=old.readcells(newbytes,name)
+        for ref,value in oldv.items():
+            verify(newv.get(ref,"")==value,"original "+name+" cell preserved "+ref)
+    verify(sum(1 for ref in old.readcells(newbytes,"DIM Register") if re.fullmatch(r"A[0-9]+",ref))==338,
+           "original 337 source rows in DIM Register")
+    verify(digest(m00)=="724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70"
+           and digest(m01)==prevhash,"owner-protected M00/M01 unchanged")
+    (D/BOOK).write_bytes(newbytes)
+    sha=digest(newbytes)
+    m["currentWorkbookSha256"]=sha
+    m["currentEvidenceCheckpoint"]="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"
+    m["counts"]["columns"]=16
+    m["counts"]["donorColumns"]=int(m["counts"]["donorColumns"])+1
+    m["publicationPolicy"]="AAS02 approved column G, eight bounded source-graded research cells; 354x16 exact same original 26-sheet Excel, 325 old colored styles, 67 held mixed cells, 21 untouched historical sheet XML; M00/M01 original protected. NO DIM/Profile adoption."
+    m["nextOwnerAction"]="AAS02 G integrated and saved/verified; STOP before AAS03. A fresh owner Proceed may authorize AAS03 source-first Part1 submodel semantics only."
+    m["workbookSnapshot"].update({"checkpoint":"AAS02_G_SAME_26_SHEET_SAVED_PARITY",
+      "sha256":sha,"columns":16,"information_rows":337,"currently_matches_readable_view":True,
+      "lag":"ZERO: all 354x16=5664 saved comparison cells and both mirrors equal canonical JSON",
+      "textCheckpoint":"AAS02_G_SOURCE_QUALIFIED_COMPARISON", "textInformationRows":337,
+      "validation_file":validationname,"new_AAS_column_G":"SOURCE_QUALIFIED_PUBLISHED",
+      "new_AAS_source_cells":8,"original_325_RGB_cells_preserved_shifted":True,
+      "original_67_mixed_cells_held_uncolored":True,"M00_M01_frozen_preserved":True})
+    m["AAS02_G_column_publication"]={
+      "status":"SAME_26_SHEET_XLSX_SOURCE_AND_5664_SAVED_VALUE_PARITY_PASS",
+      "date":"2026-11-13","column":"G","publisher":"IDTA-01001 v3.2.0, July 2026",
+      "source_ledger":ledgername,"original_native_items":42,"research_links":57,
+      "populated_cells":8,"source_row_ids":[id_to_row[n]["row_id"] for n in sorted(notes)],
+      "old_GHI_colored_cells_now_HIJ":True,
+      "old_colored_cells":325,"held_old_mixed_cells":67,
+      "new_AAS_cell_color_classifications":0,"new_saved_cell_count":5664,
+      "xlsx_sha256":sha,"all_26_sheets_preserved":True,
+      "original_historical_sheets_byte_same":21,"M00_M01_preserved":True,
+      "DIM_Profile_adopted":False,"runtime_conformance_tested":False}
+    approval["status"]="OWNER_APPROVED_AND_EXECUTED__AAS02_G_SAVED_PARITY_VERIFIED"
+    approval["actual_workbook_sha256"]=sha
+    a["donor_column_added"]=True;a["master_cells_changed"]=8
+    a["source_to_master_status"]="EIGHT_SOURCE_QUALIFIED_RELATED_OR_PARTIAL_AAS02_G_CELLS__NOT_DIM_ADOPTED"
+    a["next_owner_action"]="Only new separate Proceed begins AAS03 original Part1 Submodel and elements semantic audit; STOP before AAS04 or model adoption."
+    save(ledgername,led);save(MASTER,m)
+    save(validationname,{
+       "date":"2026-11-13","step":"AAS02_G_SOURCE_QUALIFIED_COLUMN_INTEGRATION",
+       "result":"ONE_JSON_TWO_CSV_TWO_MARKDOWN_SAME_26_SHEET_XLSX_PARITY_PASS",
+       "old_living_workbook_sha256":prevhash,"new_living_workbook_sha256":sha,
+       "old_grid":"354x15","new_grid":"354x16","verified_saved_cells":5664,
+       "original_337_information_row_ids_preserved":True,
+       "original_26_sheets":list(paths),
+       "21_byte_identical_original_historical_sheets":original_other,
+       "original_325_colored_donor_cells_exact_RGB":True,
+       "original_67_mixed_source_holds_uncolored":True,
+       "new_AAS_G_source_qualified_uncolored_cells":8,
+       "native_source_items":42,"source_to_existing_row_links":57,
+       "manual_M00_sha256":digest(m00),"manual_M01_sha256":digest(m01),
+       "checks":{"both_CSV_mirrors_equal_JSON":True,"both_readable_Markdown_views_equal_JSON":True,
+                 "saved_5664_grid_cells_exact":True,"all_prior_5310_cell_text_and_style_equal_at_shifted_addresses":True,
+                 "all_original_RGB_source_cell_fills_exact":True,"original_styles_XML_byte_unchanged":True,
+                 "21_historical_source_case_sheets_XML_byte_unchanged":True,
+                 "all_original_26_sheets_in_order":True,"ZIP_CRC_and_all_XML_parse":True,
+                 "DIM_Register_old_saved_values_preserved_and_AAS_evidence_added":True,
+                 "M00_and_M01_immutable_protected":True,"no_AAS03_semantic_research":True,
+                 "no_DIM_or_Profile_adoption":True,"no_runtime_conformance":True},
+       "next":"STOP; separate owner Proceed for AAS03 source review only."})
+    verify(digest((D/BOOK).read_bytes())==sha,"written original living workbook readback")
+    print("AAS02-G PASS: original 26-sheet XLSX, 354x16=5664 verified saved values, eight source-qualified G cells.")
+    print("AAS02-G PASS: all 325 original RGB colors and 67 mixed holds survive; 21 historical sheet XML byte-identical; frozen M00/M01 untouched.")
+    return sha
+
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
-    if checkpoint=="F2_5_CLASSIFICATION_RECONCILED_PENDING_SAME_XLSX_SAVED_VERIFICATION":
+    approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
+    if checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
+        print("AAS02 G already published; no workbook mutation")
+    elif approval=="EXPLICIT_OWNER_APPROVAL_OF_AAS32_COLUMN_POSITION_ONLY__NOT_YET_EXECUTED":
+        publish_aas02_g()
+    elif checkpoint=="F2_5_CLASSIFICATION_RECONCILED_PENDING_SAME_XLSX_SAVED_VERIFICATION":
         publish_f2_5()
     elif checkpoint=="C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION":
         publish_c4_readability()
