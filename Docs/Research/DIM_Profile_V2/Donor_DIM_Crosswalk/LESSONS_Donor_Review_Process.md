@@ -1,3 +1,9 @@
+# L91 — Preserve subject, time meaning and source contradictions (AAS04, 13 November 2026)
+
+Before matching state, capability, result or time labels, identify what the source actually describes: potential, an event mechanism, a declared argument/result, an information record or reported equipment. Event trigger time, last send/receive time and business record dates are distinct. Retain experimental/future standing and explicit text/datatype/schema/diagram disagreements with pinned locators; do not repair a source by inference or let a use-case example supply missing payload rules. Reuse existing attribute IDs and the existing verification routine when extending the next source-qualified checkpoint. [AAS04 source findings](AAS04_Original_Part1_Condition_Capability_Operations_Events_Time_13NOV2026.md) · [cumulative coverage](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json).
+
+---
+
 # L90 — Preserve representation differences during structural comparison (AAS03, 13 November 2026)
 
 Normal AAS JSON omits empty aggregations; the retained ISA source distinguishes a supplied empty collection from an omitted update. Preserve this as a representation-specific conflict and hold Part 2 update semantics separately. A serialized property name, model discriminator, nested value structure or generic relation does not establish equipment identity, physical composition or exact cross-donor equivalence. Record optional native cardinalities, experimental standing and unresolved include macros from the pinned edition; do not repair a missing source rule by inference. [AAS03 findings](AAS03_Original_Part1_Submodels_Elements_and_Structures_13NOV2026.md) · [original-source ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json).

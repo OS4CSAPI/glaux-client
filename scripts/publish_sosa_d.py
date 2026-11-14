@@ -4183,8 +4183,8 @@ def publish_aas02_g():
     return sha
 
 
-def verify_aas03_saved():
-    """Read-only verification of the already authored AAS03 workbook checkpoint.
+def verify_aas_saved(step="AAS03"):
+    """Read-only verification of the already authored AAS workbook checkpoint.
 
     Reuses this publisher's preservation gate; never rebuilds or advances research.
     The source ledger distinguishes original review from format verification.
@@ -4193,9 +4193,9 @@ def verify_aas03_saved():
     from html.parser import HTMLParser
     m=load(MASTER)
     ledger=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
-    a=ledger["AAS03"]; proof=a["saved_verification"]
+    a=ledger[step]; proof=a["saved_verification"]; counts=a["counts"]
     def need(ok,why):
-        if not ok:raise AssertionError("AAS03 saved checkpoint: "+why)
+        if not ok:raise AssertionError(step+" saved checkpoint: "+why)
     prefix="Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/"
     baseline=json.loads(check_output(["git","show",a["preflight_head"]+":"+prefix+MASTER]))
     oldbytes=check_output(["git","show",a["preflight_head"]+":"+prefix+BOOK])
@@ -4208,8 +4208,8 @@ def verify_aas03_saved():
     for key in ("caseEvidence","originalDonorEvidence","priorHolds","adoptionPolicy","F2_5_color_reconciliation","manualWorkbookMilestones"):
         need(m[key]==baseline[key],"preserved source/owner record "+key)
     changes={x["cell"]:x for x in a["source_to_master_changes"]}
-    need(len(changes)==19 and sum(not x["before"] for x in changes.values())==15,"qualified increment counts")
-    need(sum(bool(r["display"][6]) for r in m["rows"])==23,"populated AAS count")
+    need(len(changes)==counts["master_cells_changed"] and sum(not x["before"] for x in changes.values())==counts["new_AAS_cells"],"qualified increment counts")
+    need(sum(bool(r["display"][6]) for r in m["rows"])==counts["total_AAS_cells"],"populated AAS count")
     for i,(prior,current) in enumerate(zip(baseline["review_grid"],m["review_grid"]),1):
         for j,(v0,v1) in enumerate(zip(prior,current)):
             cell=chr(65+j)+str(i)
@@ -4261,18 +4261,18 @@ def verify_aas03_saved():
     for name,sha in proof["manual_version_sha256"].items():need(digest((D/"Manual_Workbook_Versions"/name).read_bytes())==sha,"manual version "+name)
     need(not list((D/"Manual_Workbook_Versions").glob("M02*")),"no automatic M02")
     ids={x["source_id"] for x in a["original_items"]+a["original_constraint_items"]}
-    need(len(a["original_items"])==33 and len(a["original_constraint_items"])==17 and len(a["source_attribute_inventory"])==46,"source inventory record counts, not source completeness")
+    need(len(a["original_items"])==counts["native_findings"] and len(a["original_constraint_items"])==counts["individual_constraint_records"] and len(a["source_attribute_inventory"])==counts["attribute_entries"],"source inventory record counts, not source completeness")
     for ch in changes.values():need(set(ch["source_ids"])<=ids,"resolvable source IDs "+ch["row_id"])
-    print("AAS03 PASS: 5,664 reopened cells; both CSV/Markdown mirrors; 19 qualified edits and 23 total AAS cells.")
-    print("AAS03 PASS: original 26 sheets, other donor/case/DIM values, styles, 21 historical sheets and M00/M01 preserved.")
-    print("AAS03 remains bounded research; AAS04, whole-donor coverage, model adoption and runtime conformance are not verified by this check.")
+    print(f"{step} PASS: 5,664 reopened cells; both CSV/Markdown mirrors; {counts['master_cells_changed']} qualified edits and {counts['total_AAS_cells']} total AAS cells.")
+    print(f"{step} PASS: original 26 sheets, other donor/case/DIM values, styles, 21 historical sheets and M00/M01 preserved.")
+    print(f"{step} remains bounded research; later research, whole-donor coverage, model adoption and runtime conformance are not verified by this check.")
 
 
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
-        verify_aas03_saved()
+    if checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
+        verify_aas_saved(checkpoint.split("_")[0])
     elif checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
         print("AAS02 G already published; no workbook mutation")
     elif approval=="EXPLICIT_OWNER_APPROVAL_OF_AAS32_COLUMN_POSITION_ONLY__NOT_YET_EXECUTED":

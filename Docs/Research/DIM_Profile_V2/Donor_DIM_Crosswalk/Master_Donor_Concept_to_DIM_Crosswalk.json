@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "0c0ffd68157bd6436e133f5718e1fca202c4d6a490c87b6518d76fce848e8ae7",
+  "currentWorkbookSha256": "56dd51839f541d2f2160c73292b5a8e2c1bae614aa8d337ca50b2198c36f3bb5",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -590,7 +590,7 @@
       "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: AAS v3.2 — An experimental AAS event message and its trigger timestamp do not prove a performed observation, physical phenomenon time or measured result. A domain-specific payload and source evidence are still required. [AAS04-N005, AAS04-N006, AAS04-N013, AAS04-N015]",
       "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
       "≈ Event message · reported event, not underlying observing act",
       "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
@@ -1328,7 +1328,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Experimental EventPayload identifies its source EventElement, scope and trigger time. These references do not supply a dedicated occurrence ID or the ISA creator/id/time event-reference contract. [AAS04-N005, AAS04-N012, AAS04-N013]",
       "RELATED: Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument. [SAP05-N01,SAP05-N13]",
       "Event.event ID; Event.event reference → creator + id + time",
       "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
@@ -1346,7 +1346,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Experimental EventPayload.timestamp is UTC event-trigger time. It must not automatically replace physical occurrence, observation phenomenon or result time. [AAS04-N005, AAS04-N013, AAS04-N024]",
       "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
       "Event.time: UTC",
       "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
@@ -1364,7 +1364,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Experimental event types use semantic meaning and specialized/custom payloads. The event use-case table is not an ISA Event Type enumeration. [AAS04-N005, AAS04-N015, AAS04-N016]",
       "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
       "Event.type: Event Type · required/default wording retained",
       "RELATED: C239 §12 distinguishes required security/lifecycle/zeroization/policy audit events from permitted BIST/maintenance/key events; glossary Detection and Audit Event remain different categories. This is not a universal ISA Event.type enumeration or proof of physical detection. [G2-5/G2-7T]",
@@ -1382,7 +1382,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Experimental EventPayload identifies a logical scope and can carry custom bytes. This is not a defined detector-property snapshot or delta from the last Status. [AAS04-N005, AAS04-N012, AAS04-N015, AAS04-N017]",
       "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
       "Event.detector properties: Name Value Pair [0+]",
       "Not assessed here",
@@ -1472,7 +1472,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Capability describes potential independently of implementation. Semantically linked skills may use operations or properties; this is not the ISA supported-property/command/observable/type catalogue or evidence of readiness. [AAS04-N001, AAS04-N002]",
       "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
       "Capability Declaration.properties / commands / observables / types [0+]",
       "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
@@ -1544,7 +1544,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]",
       "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
       "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
       "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
@@ -1562,7 +1562,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]",
       "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
       "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
       "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
@@ -1580,7 +1580,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]",
       "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
       "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
@@ -1814,7 +1814,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]",
       "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
       "≈ Request message · command invocation, not proven execution",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
@@ -1832,7 +1832,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "≈ Response message · reported disposition, not measured effect",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -3740,7 +3740,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]",
       "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
       "Command Execution · name, request id, issuer, start time",
       "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
@@ -4028,7 +4028,7 @@
       "",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: AAS v3.2 — Capability describes potential; BasicEventElement.state means event on/off. Neither establishes ISA command/property/observable readiness and separate reporting selection. Domain/API semantics remain open. [AAS04-N001, AAS04-N007]",
       "",
       "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
       "RELATED but not ISA readiness/reporting selection: C239 §6 direct/indirect management, Health/Status/Mode and §§13–15 conditional ports/interaction designs do not define ISA per-command ready flag, per-property value-maintained status or selected publication enablement. [SOSA-D/G2-2/G2-7C/F/T]",
@@ -4064,7 +4064,7 @@
       "NOAA CSV + operator metadata; contributor join derived",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]",
       "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
       "",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -4082,7 +4082,7 @@
       "2 original NOAA means → 4 project API representations",
       "",
       "",
-      "",
+      "NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]",
       "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
       "≈ Event Reference · update relation only, not original→copy",
       "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
@@ -4190,7 +4190,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Experimental BasicEventElement.lastUpdate is the last sent event time for output, but last received time for input. It is not a per-exchange Header.time; trigger time is separate. [AAS04-N005, AAS04-N009, AAS04-N013]",
       "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
       "Header.time: UTC",
       "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
@@ -4352,7 +4352,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]",
       "",
       "Custom → Nominated → Accepted; incorporation into a later major standard release",
       "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
@@ -4406,7 +4406,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]",
       "",
       "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
       "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
@@ -4622,7 +4622,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]",
       "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
       "Capability Version",
       "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -5252,7 +5252,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "",
+      "RELATED: AAS v3.2 — A semantically defined Property and qualifiers can carry a condition assertion. Experimental event state on/off is not equipment operating condition; no common health vocabulary or actual reading is established. [AAS04-N007, AAS04-N018, AAS04-N029]",
       "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
       "Operating State",
       "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -5648,7 +5648,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "",
+      "RELATED: AAS v3.2 — Experimental maxInterval describes output-event status-update spacing; it is inapplicable to input. It is not automatically the component Status heartbeat or a command to change it. [AAS04-N005, AAS04-N011]",
       "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
       "Maximum Status Interval",
       "Not assessed here",
@@ -5666,7 +5666,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "",
+      "RELATED: AAS v3.2 — Experimental minInterval constrains maximum input-handling or output-sending frequency. It is not automatically the minimum component Status interval or sensor sample period. [AAS04-N005, AAS04-N010]",
       "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
       "Minimum Status Interval",
       "Not assessed here",
@@ -11883,7 +11883,7 @@
         "15 Apr 2024: 29.1°C; 18 Apr 2024: 27.3°C (NOAA means)",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: AAS v3.2 — An experimental AAS event message and its trigger timestamp do not prove a performed observation, physical phenomenon time or measured result. A domain-specific payload and source evidence are still required. [AAS04-N005, AAS04-N006, AAS04-N013, AAS04-N015]",
         "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
         "≈ Event message · reported event, not underlying observing act",
         "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
@@ -11993,6 +11993,20 @@
         "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "NO_ESTABLISHED",
+        "meaning": "An experimental AAS event message and its trigger timestamp do not prove a performed observation, physical phenomenon time or measured result. A domain-specific payload and source evidence are still required.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N006",
+          "AAS04-N013",
+          "AAS04-N015"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -14905,7 +14919,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Experimental EventPayload identifies its source EventElement, scope and trigger time. These references do not supply a dedicated occurrence ID or the ISA creator/id/time event-reference contract. [AAS04-N005, AAS04-N012, AAS04-N013]",
         "RELATED: Task.task_id and Alert.alert_id are distinct ULID correlation/alert identities, neither universally equal to ISA Event.id, source object or physical instrument. [SAP05-N01,SAP05-N13]",
         "Event.event ID; Event.event reference → creator + id + time",
         "RELATED/NO_ESTABLISHED: C239 §12 audit event-type identifiers and §15 Event Notification concern logging/notification, not ISA Event URI or cross-System source reference. PARTIAL (2022 v1 DSDM): LogEntry.elementID names a log entry, not an observation-event identifier; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
@@ -15077,6 +15091,19 @@
           "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "PARTIAL",
+        "meaning": "Experimental EventPayload identifies its source EventElement, scope and trigger time. These references do not supply a dedicated occurrence ID or the ISA creator/id/time event-reference contract.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N012",
+          "AAS04-N013"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -15101,7 +15128,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Experimental EventPayload.timestamp is UTC event-trigger time. It must not automatically replace physical occurrence, observation phenomenon or result time. [AAS04-N005, AAS04-N013, AAS04-N024]",
         "NO_ESTABLISHED: Task.task_start_time/end_time are requested schedule bounds, not evidence of event occurrence or performed-command time; outer content/send-time discrepancy remains held. [SAP05-N01]",
         "Event.time: UTC",
         "RELATED: C239 §12 audit UTC is required when available; uptime is an allowed fallback, not absolute event/result time. Event Notification alone specifies no clock basis. PARTIAL (2022 v1 DSDM): LogEntry.time uses POSIX UTC seconds, not necessarily physical occurrence time; C239 native equivalence unverified. [G2-5/G2-7S/T/G3-N2]",
@@ -15253,6 +15280,19 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Experimental EventPayload.timestamp is UTC event-trigger time. It must not automatically replace physical occurrence, observation phenomenon or result time.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N013",
+          "AAS04-N024"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -15277,7 +15317,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Experimental event types use semantic meaning and specialized/custom payloads. The event use-case table is not an ISA Event Type enumeration. [AAS04-N005, AAS04-N015, AAS04-N016]",
         "NO_ESTABLISHED: AlertType is a SAPIENT severity/purpose enum with system-specific triggering; it is not an ISA Event reason vocabulary. [SAP05-N13,SAP05-N14]",
         "Event.type: Event Type · required/default wording retained",
         "RELATED: C239 §12 distinguishes required security/lifecycle/zeroization/policy audit events from permitted BIST/maintenance/key events; glossary Detection and Audit Event remain different categories. This is not a universal ISA Event.type enumeration or proof of physical detection. [G2-5/G2-7T]",
@@ -15369,6 +15409,19 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Experimental event types use semantic meaning and specialized/custom payloads. The event use-case table is not an ISA Event Type enumeration.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N015",
+          "AAS04-N016"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -15394,7 +15447,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Experimental EventPayload identifies a logical scope and can carry custom bytes. This is not a defined detector-property snapshot or delta from the last Status. [AAS04-N005, AAS04-N012, AAS04-N015, AAS04-N017]",
         "RELATED: Optional TrackObjectInfo/object_info carry reported track or object metadata, not automatically the detector's independently sampled properties at event occurrence. [SAP04-N12]",
         "Event.detector properties: Name Value Pair [0+]",
         "Not assessed here",
@@ -15479,6 +15532,20 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Experimental EventPayload identifies a logical scope and can carry custom bytes. This is not a defined detector-property snapshot or delta from the last Status.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N012",
+          "AAS04-N015",
+          "AAS04-N017"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -16053,7 +16120,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Capability describes potential independently of implementation. Semantically linked skills may use operations or properties; this is not the ISA supported-property/command/observable/type catalogue or evidence of readiness. [AAS04-N001, AAS04-N002]",
         "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
         "Capability Declaration.properties / commands / observables / types [0+]",
         "RELATED: C239 §4.2 module catalog and §§6–15 scoped management, hardware and service interfaces describe possible functions, with V1.0/Future and conditional Rule/Recommendation distinctions. They do not define an ISA capability declaration listing properties/observables/commands or prove available live services. [SOSA-D/G2-1/G2-4A/B/G2-7R/S/T]",
@@ -16607,6 +16674,18 @@
           "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Capability describes potential independently of implementation. Semantically linked skills may use operations or properties; this is not the ISA supported-property/command/observable/type catalogue or evidence of readiness.",
+        "source_ids": [
+          "AAS04-N001",
+          "AAS04-N002"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -16881,7 +16960,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]",
         "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
         "Command Declaration.name / args [0+] / results [0+]; description [0-1]",
         "RELATED/PARTIAL: C239 §6 V1.0 management operations, specialized PIC/security commands and §§7–8 Task/RF functions are scoped interfaces, some explicitly Future; they are not one ISA/CSAPI command catalog or executed controls. 2022 v1 DSDM native request/response types remain separate, not verified C239 2023 schemas. [G2-1/2/4B/5/G2-7S/T/G3-N2]",
@@ -17273,6 +17352,19 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "PARTIAL",
+        "meaning": "Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work.",
+        "source_ids": [
+          "AAS04-N003",
+          "AAS04-N004",
+          "AAS04-R-AASd-134"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -17297,7 +17389,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]",
         "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
         "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
         "RELATED/PARTIAL: C239 RF, host and security operations have specialized typed inputs (ports, assignments, keys); 2022 v1 DSDM mode-change messages have native parameters. These do not establish universal ISA/CSAPI parameter names, types, optionality or bounds; C239 native equivalence unverified. [G2-4B/5/G2-7R/G3-N2]",
@@ -17482,6 +17574,19 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "PARTIAL",
+        "meaning": "Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations.",
+        "source_ids": [
+          "AAS04-N004",
+          "AAS04-R-AASd-129",
+          "AAS04-R-AASd-138"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -17506,7 +17611,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]",
         "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
         "RELATED/PARTIAL: C239 chassis/RF/management operations define specific response or error types, not a uniform ISA declared-result contract or proven command success. The 2022 v1 DSDM response structures remain different source lineage, not authenticated C239 2023 API schemas. [G2-2/G2-4B/G2-5/G3-N2]",
@@ -17706,6 +17811,18 @@
           "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "PARTIAL",
+        "meaning": "Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response.",
+        "source_ids": [
+          "AAS04-N003",
+          "AAS04-N004"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -19818,7 +19935,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here. [AAS04-N003]",
         "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
         "≈ Request message · command invocation, not proven execution",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
@@ -20182,6 +20299,17 @@
           "rationale": "F2-2 native items have multiple statuses, or source incomplete; no safe whole-cell fill.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; request identity, authorization and execution remain unreviewed here.",
+        "source_ids": [
+          "AAS04-N003"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -20206,7 +20334,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "≈ Response message · reported disposition, not measured effect",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -20530,6 +20658,18 @@
           "rationale": "Explicit F2-2 original native item/row mapping shares one candidate status; restricted originals remain held.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "NO_ESTABLISHED",
+        "meaning": "The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed.",
+        "source_ids": [
+          "AAS04-N003",
+          "AAS04-N016"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -29462,7 +29602,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran. [AAS04-N005, AAS04-N016]",
         "PARTIAL: Repeated TaskAck status across Task lifetime can report COMPLETED/FAILED, not the independently timestamped ISA Command Execution record or witnessed hardware effect. [SAP05-N11]",
         "Command Execution · name, request id, issuer, start time",
         "RELATED/NO_ESTABLISHED: C239 §7 Task Health, chassis execution responses and §14 software startup concern different management/task states, not an ISA command-execution record with issuer, request identity, start time and measured result. No real queued/running/finished device action was witnessed. [SOSA-D/G2-2/G2-7R/S]",
@@ -29619,6 +29759,18 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "The experimental event use-case table mentions monitoring long-running operations. It does not define the ISA execution-record fields or prove that an operation ran.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N016"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -32065,7 +32217,7 @@
         "",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: AAS v3.2 — Capability describes potential; BasicEventElement.state means event on/off. Neither establishes ISA command/property/observable readiness and separate reporting selection. Domain/API semantics remain open. [AAS04-N001, AAS04-N007]",
         "",
         "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
         "RELATED but not ISA readiness/reporting selection: C239 §6 direct/indirect management, Health/Status/Mode and §§13–15 conditional ports/interaction designs do not define ISA per-command ready flag, per-property value-maintained status or selected publication enablement. [SOSA-D/G2-2/G2-7C/F/T]",
@@ -32288,6 +32440,18 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "NO_ESTABLISHED",
+        "meaning": "Capability describes potential; BasicEventElement.state means event on/off. Neither establishes ISA command/property/observable readiness and separate reporting selection. Domain/API semantics remain open.",
+        "source_ids": [
+          "AAS04-N001",
+          "AAS04-N007"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -32311,7 +32475,7 @@
         "NOAA CSV + operator metadata; contributor join derived",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]",
         "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
         "",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -32671,6 +32835,18 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record.",
+        "source_ids": [
+          "AAS04-N014",
+          "AAS04-N022"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -32694,7 +32870,7 @@
         "2 original NOAA means → 4 project API representations",
         "",
         "",
-        "",
+        "NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]",
         "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
         "≈ Event Reference · update relation only, not original→copy",
         "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
@@ -32825,6 +33001,20 @@
         "negative_equivalence": "SAPIENT task, alert and protocol error messages do not verify hardware execution, ISA/CSAPI Commands, physical equipment identity or DIM/Profile adoption",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "NO_ESTABLISHED",
+        "meaning": "Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N012",
+          "AAS04-N013",
+          "AAS04-N014"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -33314,7 +33504,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Experimental BasicEventElement.lastUpdate is the last sent event time for output, but last received time for input. It is not a per-exchange Header.time; trigger time is separate. [AAS04-N005, AAS04-N009, AAS04-N013]",
         "NO_ESTABLISHED: Pinned comments describe DerivedDetection.timestamp as sent time, whereas BSI Table77 calls it associated detection time and original outer wrapper content-time discrepancy remains held; no reliable ISA Header.time equivalence. [SAP04-N17]",
         "Header.time: UTC",
         "NO_ESTABLISHED: C239 §15 QoS deadline specifies an expected update interval, not an actual message transmission timestamp. [G2-7S]",
@@ -33386,6 +33576,19 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "PARTIAL",
+        "meaning": "Experimental BasicEventElement.lastUpdate is the last sent event time for output, but last received time for input. It is not a per-exchange Header.time; trigger time is separate.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N009",
+          "AAS04-N013"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -34317,7 +34520,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]",
         "",
         "Custom → Nominated → Accepted; incorporation into a later major standard release",
         "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
@@ -34562,6 +34765,20 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing.",
+        "source_ids": [
+          "AAS04-N025",
+          "AAS04-N026",
+          "AAS04-N027",
+          "AAS04-R-AASd-077"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -35235,7 +35452,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]",
         "",
         "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
         "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
@@ -35505,6 +35722,19 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern.",
+        "source_ids": [
+          "AAS04-N013",
+          "AAS04-N020",
+          "AAS04-N024"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -37660,7 +37890,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]",
         "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
         "Capability Version",
         "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -37789,6 +38019,20 @@
         "original_master_row_id": "ISA-C-048",
         "provisional_display": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue.",
+        "source_ids": [
+          "AAS04-N019",
+          "AAS04-N020",
+          "AAS04-N023",
+          "AAS04-R-AASd-005"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -40727,7 +40971,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "",
+        "RELATED: AAS v3.2 — A semantically defined Property and qualifiers can carry a condition assertion. Experimental event state on/off is not equipment operating condition; no common health vocabulary or actual reading is established. [AAS04-N007, AAS04-N018, AAS04-N029]",
         "NO_ESTABLISHED: Table97 ACTIVE/PASSIVE behaviour describes detected objects, not the component's operating condition or ISA Operating State codes; StatusReport is separate. [SAP06-N05]",
         "Operating State",
         "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -40912,6 +41156,19 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "A semantically defined Property and qualifiers can carry a condition assertion. Experimental event state on/off is not equipment operating condition; no common health vocabulary or actual reading is established.",
+        "source_ids": [
+          "AAS04-N007",
+          "AAS04-N018",
+          "AAS04-N029"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -42956,7 +43213,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "",
+        "RELATED: AAS v3.2 — Experimental maxInterval describes output-event status-update spacing; it is inapplicable to input. It is not automatically the component Status heartbeat or a command to change it. [AAS04-N005, AAS04-N011]",
         "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
         "Maximum Status Interval",
         "Not assessed here",
@@ -43030,6 +43287,18 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Experimental maxInterval describes output-event status-update spacing; it is inapplicable to input. It is not automatically the component Status heartbeat or a command to change it.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N011"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -43054,7 +43323,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "",
+        "RELATED: AAS v3.2 — Experimental minInterval constrains maximum input-handling or output-sending frequency. It is not automatically the minimum component Status interval or sensor sample period. [AAS04-N005, AAS04-N010]",
         "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
         "Minimum Status Interval",
         "Not assessed here",
@@ -43128,6 +43397,18 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS04_IDTA01001_source_correspondence": {
+        "relation": "RELATED",
+        "meaning": "Experimental minInterval constrains maximum input-handling or output-sending frequency. It is not automatically the minimum component Status interval or sensor sample period.",
+        "source_ids": [
+          "AAS04-N005",
+          "AAS04-N010"
+        ],
+        "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "adopted": false,
+        "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
       }
     },
     {
@@ -49049,16 +49330,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS03 bounded original Part1 research; progressive column G integration in the same 26-sheet workbook. All other case/donor/DIM values and original classified fills retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS03_SAVED_PARITY",
-    "sha256": "0c0ffd68157bd6436e133f5718e1fca202c4d6a490c87b6518d76fce848e8ae7",
+    "checkpoint": "AAS04_SAVED_PARITY",
+    "sha256": "56dd51839f541d2f2160c73292b5a8e2c1bae614aa8d337ca50b2198c36f3bb5",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
     "lag": "ZERO: canonical 354x16 grid and saved workbook match",
-    "textCheckpoint": "AAS03_SOURCE_COMPARISON",
+    "textCheckpoint": "AAS04_SOURCE_COMPARISON",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -49076,8 +49357,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 19,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS03/saved_verification",
+    "refreshed_cell_count": 22,
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS04/saved_verification",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -50220,7 +50501,31 @@
     "original_325_RGB_cells_preserved_shifted": true,
     "original_67_mixed_cells_held_uncolored": true,
     "M00_M01_frozen_preserved": true,
-    "previous_publisher_metadata_scope": "Unprefixed older publisher commit/action fields below describe historic pre-AAS03 runs. Current AAS03 verification is in the cumulative source ledger."
+    "previous_publisher_metadata_scope": "Unprefixed older publisher commit/action fields below describe historic pre-AAS03 runs. Current AAS03 verification is in the cumulative source ledger.",
+    "AAS04_affected_row_ids": [
+      "ISA-K-CAPABILITIES",
+      "ISA-K-COMMAND-DECL",
+      "ISA-K-PARAMETER-DECL",
+      "ISA-K-RESULT-DECL",
+      "S06-R019",
+      "S06-R020",
+      "ISA-R-EXECUTION",
+      "ISA-K-CAPABILITY-STATE",
+      "ISA-C-082",
+      "ISA-T-EVENT-ID",
+      "ISA-T-EVENT-TIME",
+      "ISA-T-EVENT-REASON",
+      "ISA-T-EVENT-CONTEXT",
+      "ISA-T-SENT-TIME",
+      "ISA-A-TIME-BASIS",
+      "ISA-C-048",
+      "ISA-A-EXTENSION-STANDING",
+      "ISA-C-078",
+      "ISA-C-079",
+      "S06-R022",
+      "S06-R015",
+      "S06-R021"
+    ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -52168,7 +52473,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "AAS04 only on a separate fresh Proceed: condition, capability, operation/event and version/time semantics under the existing plan; stop before AAS05.",
+  "nextOwnerAction": "AAS05 only on a separate fresh Proceed: original schema corroboration of reviewed constructs in pinned Part1 JSON/XML/RDF and selected Part2 shared schemas; record exact coverage and source mismatches, stop before AAS06.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -56791,7 +57096,7 @@
   },
   "AASEvidence": {
     "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
-    "report": "AAS03_Original_Part1_Submodels_Elements_and_Structures_13NOV2026.md",
+    "report": "AAS04_Original_Part1_Condition_Capability_Operations_Events_Time_13NOV2026.md",
     "AAS02_native_items": 42,
     "AAS03_counts": {
       "native_findings": 33,
@@ -56807,6 +57112,21 @@
     },
     "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
     "donor_status": "ACTIVE_INCOMPLETE",
-    "DIM_Profile_adopted": false
+    "DIM_Profile_adopted": false,
+    "AAS04_counts": {
+      "native_findings": 29,
+      "individual_constraint_records": 9,
+      "attribute_entries": 11,
+      "reused_AAS03_attribute_entries": 20,
+      "attribute_entries_reviewed": 31,
+      "complete_event_include_lines": 153,
+      "selected_json_definitions": 1,
+      "pinned_class_partials": 8,
+      "wrapper_sources": 2,
+      "original_JPEG_figures_inspected": 3,
+      "master_cells_changed": 22,
+      "new_AAS_cells": 21,
+      "total_AAS_cells": 44
+    }
   }
 }
