@@ -4638,6 +4638,11 @@ def main() -> None:
         mirror = list(csv.reader(f))
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
+    if doc.get("currentEvidenceCheckpoint") == "AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
+        from publish_sosa_d import verify_aas03_saved
+        verify_aas03_saved()
+        return
+
     if "review_grid" in doc and "columns" in doc:
         if doc.get("currentEvidenceCheckpoint") in ("C4_ISA_SOSA_SOURCE_FAITHFUL_TEXT_PENDING_SAME_EXCEL_PUBLICATION","C4_ISA_SOSA_READABILITY_SAME_26_SHEET_XLSX_VERIFIED"):
             verify_c4_readability(doc, mirror, md)

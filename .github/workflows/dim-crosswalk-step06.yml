@@ -6,6 +6,8 @@ on:
     paths:
       - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.*"
       - "scripts/check_dim_crosswalk_step06.py"
+      - "scripts/publish_sosa_d.py"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
       - ".github/workflows/dim-crosswalk-step06.yml"
   workflow_dispatch:
 permissions:
@@ -17,11 +19,12 @@ jobs:
       - name: Check out committed research artifacts
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: false
           submodules: false
       - name: Use Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verify current 15-column canonical XLSX, source and historical evidence
+      - name: Verify current canonical XLSX, source and historical evidence
         run: python scripts/check_dim_crosswalk_step06.py
