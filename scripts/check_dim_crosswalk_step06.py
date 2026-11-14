@@ -4638,6 +4638,11 @@ def main() -> None:
         mirror = list(csv.reader(f))
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
+    if doc.get("currentEvidenceCheckpoint")=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
+        from publish_sosa_d import verify_aas_owner_view_correction
+        verify_aas_owner_view_correction()
+        return
+
     if doc.get("currentEvidenceCheckpoint") in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS08_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS09_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
         from publish_sosa_d import verify_aas_saved
         verify_aas_saved(doc["currentEvidenceCheckpoint"].split("_")[0])
