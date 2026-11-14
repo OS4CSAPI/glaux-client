@@ -1,4 +1,12 @@
-# CURRENT — AAS workbook defects confirmed; closeout recommendation withdrawn (14 November 2026)
+# CURRENT — AAS owner-view correction saved and independently checked (14 November 2026)
+
+The same original editable 26-sheet crosswalk is now updated after the AAS10 defect audit: **64** source-bearing AAS comparisons (including G198), **54** source-qualified color decisions, **10** uncolored source holds, and **273** explicit unassessed/case-hold statuses over **337** rows. All **5,664** saved comparison cells match JSON, both CSV and both readable Markdown mirrors; current workbook Summary/Legend/DIM Register were corrected, the prior 325 donor colors and owner-frozen M00/M01 preserved, with no M02. [Saved workbook](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) · [pre-correction original archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-correction-20261114/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/) · [independent verifier PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43631742050).
+
+**AAS remains ACTIVE with bounded PARTIAL source coverage; previous AAS10 ready-for-acceptance recommendation is withdrawn pending owner review of the corrected owner-facing column.** No new original source coverage, adopted DIM/Profile requirements, donor transition or runtime/deployment decision. **ONE NEXT: owner reviews this corrected AAS column and decides its bounded disposition.** All older CURRENT/NEXT banners beneath this checkpoint are historical.
+
+---
+
+# HISTORICAL — AAS10 initial workbook defects and withdrawn closeout recommendation (14 November 2026)
 
 The owner's workbook review exposed confirmed integration and presentation defects. **AAS remains active; do not ask for closeout acceptance or start another donor until correction.** The existing [AAS10 assessment](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) and [cumulative ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json) now carry the owner usability audit. The previous bounded-PARTIAL acceptance recommendation and ready-for-acceptance forecast are superseded.
 
