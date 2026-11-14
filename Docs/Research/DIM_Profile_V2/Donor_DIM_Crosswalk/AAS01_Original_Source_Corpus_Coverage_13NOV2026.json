@@ -5887,6 +5887,449 @@
     "donor_column_added": false,
     "source_to_master_status": "PROVISIONAL_ONLY__NO_OWNER_APPROVED_AAS_COLUMN_YET",
     "scope_limits": "Not entire 48 Part1 files, figures, 8,112 generated fixtures, Part2 API or aligned companions; source originals quoted by stable IDs and exact line locators.",
-    "next_owner_action": "Review/approve location and preservation of one AAS-32 donor column and subsequent AAS02 source-qualified integration; stop before AAS03 or model adoption."
+    "next_owner_action": "Review/approve location and preservation of one AAS-32 donor column and subsequent AAS02 source-qualified integration; stop before AAS03 or model adoption.",
+    "schema_definition_samples": [
+      {
+        "source_id": "AAS02-S001",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/AssetAdministrationShell",
+        "native_source_name": "AssetAdministrationShell",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "assetInformation"
+        ],
+        "properties": [
+          "derivedFrom",
+          "assetInformation",
+          "submodels",
+          "modelType"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/Identifiable",
+          "#/definitions/HasDataSpecification"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S002",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/AssetInformation",
+        "native_source_name": "AssetInformation",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "assetKind"
+        ],
+        "properties": [
+          "assetKind",
+          "globalAssetId",
+          "specificAssetIds",
+          "assetType",
+          "defaultThumbnail"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S003",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/AssetKind",
+        "native_source_name": "AssetKind",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [],
+        "enumeration": [
+          "Batch",
+          "Instance",
+          "NotApplicable",
+          "Role",
+          "Type"
+        ],
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S004",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/SpecificAssetId",
+        "native_source_name": "SpecificAssetId",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "name",
+          "value"
+        ],
+        "properties": [
+          "name",
+          "value",
+          "externalSubjectId"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/HasSemantics"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S005",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Identifiable",
+        "native_source_name": "Identifiable",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "id"
+        ],
+        "properties": [
+          "administration",
+          "id"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/Referable"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S006",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Referable",
+        "native_source_name": "Referable",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "modelType"
+        ],
+        "properties": [
+          "category",
+          "idShort",
+          "displayName",
+          "description",
+          "modelType"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/HasExtensions"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S007",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/HasKind",
+        "native_source_name": "HasKind",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [
+          "kind"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S008",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/ModellingKind",
+        "native_source_name": "ModellingKind",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [],
+        "enumeration": [
+          "Instance",
+          "Template"
+        ],
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S009",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Reference",
+        "native_source_name": "Reference",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "type",
+          "keys"
+        ],
+        "properties": [
+          "type",
+          "referredSemanticId",
+          "keys"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S010",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/ReferenceTypes",
+        "native_source_name": "ReferenceTypes",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [],
+        "enumeration": [
+          "ExternalReference",
+          "ModelReference"
+        ],
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S011",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Key",
+        "native_source_name": "Key",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [
+          "type",
+          "value"
+        ],
+        "properties": [
+          "type",
+          "value"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S012",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/AdministrativeInformation",
+        "native_source_name": "AdministrativeInformation",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [
+          "version",
+          "revision",
+          "creator",
+          "createdAt",
+          "updatedAt",
+          "templateId"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/HasDataSpecification"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S013",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Submodel",
+        "native_source_name": "Submodel",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [
+          "submodelElements",
+          "modelType"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/Identifiable",
+          "#/definitions/HasKind",
+          "#/definitions/HasSemantics",
+          "#/definitions/Qualifiable",
+          "#/definitions/HasDataSpecification"
+        ],
+        "not_DIM_adopted": true
+      },
+      {
+        "source_id": "AAS02-S014",
+        "source_register_id": "AAS-C01-SCHEMA-001",
+        "source_file": "schemas/json/aas.json",
+        "source_blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "source_pointer": "#/definitions/Entity",
+        "native_source_name": "Entity",
+        "grade": "PINNED_JSON_SELECTED_DEFINITION_READ_ONLY__NOT_RUNTIME_SCHEMA_VALIDATION",
+        "required": [],
+        "properties": [
+          "statements",
+          "entityType",
+          "globalAssetId",
+          "specificAssetIds",
+          "modelType"
+        ],
+        "enumeration": null,
+        "inherited_definitions": [
+          "#/definitions/SubmodelElement"
+        ],
+        "not_DIM_adopted": true
+      }
+    ],
+    "special_native_schema_observations": [
+      {
+        "id": "AAS02-SCH-H01",
+        "source": "AssetInformation",
+        "observation": "JSON required list names assetKind, while AASd-131 cross-field identity condition is separate; a JSON required-array check is not full original AAS norm validation."
+      },
+      {
+        "id": "AAS02-SCH-H02",
+        "source": "Referable",
+        "observation": "JSON idShort property exists but is not unconditionally required; native AASd-117 creates conditional idShort obligation."
+      },
+      {
+        "id": "AAS02-SCH-H03",
+        "source": "AdministrativeInformation",
+        "observation": "JSON version/revision definitions are pattern-constrained strings, while original common prose describes numerical values; encoding interpretation remains distinct from business model semantics."
+      },
+      {
+        "id": "AAS02-SCH-H04",
+        "source": "AssetAdministrationShell",
+        "observation": "JSON requires assetInformation and inheritance chain requires Identifiable.id, while optional submodels array has minItems when present; this does not change original 0..* cardinality."
+      }
+    ],
+    "original_pinned_diagram_dependency": [
+      {
+        "id": "AAS02-DIAG-01",
+        "path": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/24-asset-administration-shell.puml",
+        "source_blob": "ec9c05036b2e3c303ca029e89a6281ed86bda08a",
+        "grade": "WRAPPER_SOURCE_TEXT_READ__REFERENCED_REMOTE_WORKING_BRANCH_NOT_PINNED"
+      },
+      {
+        "id": "AAS02-DIAG-02",
+        "path": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/25-asset-information.puml",
+        "source_blob": "b493ac601314d31012c130198e7084278b77fa44",
+        "grade": "WRAPPER_SOURCE_TEXT_READ__REFERENCED_REMOTE_WORKING_BRANCH_NOT_PINNED"
+      },
+      {
+        "id": "AAS02-DIAG-03",
+        "path": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/19-referable.puml",
+        "source_blob": "cb84a9582608d7807ed93f8dbd471dab3b662baf",
+        "grade": "WRAPPER_SOURCE_TEXT_READ__REFERENCED_REMOTE_WORKING_BRANCH_NOT_PINNED"
+      },
+      {
+        "id": "AAS02-DIAG-04",
+        "path": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/48-reference.puml",
+        "source_blob": "ea38575a71bc4197e44e83b05bafdef82be1d94b",
+        "grade": "WRAPPER_SOURCE_TEXT_READ__REFERENCED_REMOTE_WORKING_BRANCH_NOT_PINNED"
+      }
+    ],
+    "original_pinned_class_partial_note": "Corresponding classes/*.puml source files at exact original tag were selectively read; wrapper files include class partial paths from IDTA-01001-3-2_Working branch, not immutable release commit. No claim that published rendered UML pixels matched pinned class definitions.",
+    "open_holds": [
+      {
+        "id": "AAS02-H01",
+        "area": "owner layout",
+        "detail": "Current 15-column canonical master has no AAS donor column; owner must approve exact column insertion before any donor display-cell publication."
+      },
+      {
+        "id": "AAS02-H02",
+        "area": "asset/shell identity",
+        "detail": "Globally unique AAS/Identifiable.id, represented asset globalAssetId, specificAssetId, contextual idShort and actual equipment serial/CSAPI URI have different referents."
+      },
+      {
+        "id": "AAS02-H03",
+        "area": "physical composition",
+        "detail": "AAS derivedFrom, Submodel, RelationshipElement and Entity may express model relations but do not prove physical part-of, current installation, live connection or vendor-specific real hardware."
+      },
+      {
+        "id": "AAS02-H04",
+        "area": "normative/schema",
+        "detail": "AASd-131 and AASd-117 native constraints are not fully represented by selected JSON required arrays. No entire original schema validation/conformance claimed."
+      },
+      {
+        "id": "AAS02-H05",
+        "area": "versioned diagrams",
+        "detail": "Tagged source wrapper PlantUML includes remote working-branch class partials; published rendered figure equality not independently authenticated."
+      },
+      {
+        "id": "AAS02-H06",
+        "area": "serialization/version semantics",
+        "detail": "Part1 prose describes numeric version/revision while original JSON schema uses digit-pattern string; interpret as source-specific representation and flag exact type semantics for later review."
+      },
+      {
+        "id": "AAS02-H07",
+        "area": "semanticId wording",
+        "detail": "Overview says every SubmodelElement needs semantic definition while HasSemantics.semanticId cardinality is 0..1 and SubmodelElement text recommends it; no premature new generic required field."
+      },
+      {
+        "id": "AAS02-H08",
+        "area": "other original corpus",
+        "detail": "Other original native constraints/diagrams, Part2 interfaces, aligned Part3a/b/4/5 and original external IEC references not fully audited; prior AAS01 seven holds preserved."
+      }
+    ],
+    "four_source_case_stress_check": [
+      {
+        "id": "CASE-DRAGINO",
+        "status": "Reference design only",
+        "result": "S31-LB published kind and external cabled SHT31 design do not provide a fielded asset ID or authentic AAS instance."
+      },
+      {
+        "id": "CASE-AIRGRADIENT",
+        "status": "Reference design only",
+        "result": "O-M-1PPSTON-CE and two physical PMS5003 design positions are manufacturer design information; do not infer deployed AAS shell or actual installed inventory."
+      },
+      {
+        "id": "CASE-CAMPBELL",
+        "status": "Two independent product kinds",
+        "result": "CR1000X and ClimaVue 50 prospective pairing has no authenticated joined installation, AAS asset ID or connected shell."
+      },
+      {
+        "id": "CASE-BENNETT",
+        "status": "Real historical individually identified equipment",
+        "result": "EE181 serial numbers 222016000109CE and 21281600077814 and station source ID acebpmet are grounded but not original AAS globalAssetId/AssetAdministrationShell.id; no generated publisher AAS shell."
+      }
+    ],
+    "original_text_coverage_current": {
+      "full_text_pages": [
+        "AAS-C01-DOC-038",
+        "AAS-C01-DOC-037",
+        "AAS-C01-DOC-044"
+      ],
+      "full_original_macro_file": [
+        "AAS-C01-DOC-017"
+      ],
+      "selected_text_pages": [
+        "AAS-C01-DOC-048",
+        "AAS-C01-DOC-035",
+        "AAS-C01-DOC-045",
+        "AAS-C01-DOC-004",
+        "AAS-C01-DOC-046"
+      ],
+      "native_items": 42,
+      "selected_json_definitions": 14,
+      "figure_pixels_read": false,
+      "entire_Part1_corpus_complete": false,
+      "Part2_audited_now": false
+    },
+    "master_xlsx_checkpoint": {
+      "original_CSV_rows": 354,
+      "original_information_rows": 337,
+      "original_columns": 15,
+      "original_excel_sheets": 26,
+      "display_cell_mutations": 0,
+      "original_living_xlsx_sha": "32b168f38b12eb3865dc48f467390f88b23f1204",
+      "manual_M00_sha": "c6bbd7548f8ce39cca21d54486a5cf7bf9779b73",
+      "manual_M01_sha": "32b168f38b12eb3865dc48f467390f88b23f1204",
+      "last_verified_F2_5": "F2_5_Workbook_Validation_13NOV2026.json",
+      "adoption": false,
+      "need_owner_AAS_column_layout": true
+    }
   }
 }
