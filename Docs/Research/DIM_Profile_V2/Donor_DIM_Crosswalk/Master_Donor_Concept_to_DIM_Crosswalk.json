@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "942ba2f5757343484de35b44dc7ff9625ba237bd9fc0ca2ebf0369269bcc9f78",
+  "currentWorkbookSha256": "ee187b2f793ef5dc97c6075bde546947b83ab1ec3294b4280dd2d2f4b4e0c4d0",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -178,7 +178,7 @@
       "Manufacturer",
       "[COMMON CANDIDATE] AAS09: PARTIAL — IDTA02003 v2.0 provides manufacturer name for product technical descriptions; its use case also treats a supplier as manufacturer. This is not the current operator or proof of an instance identity. [AAS09-N014, AAS09-N015]",
       "RELATED: BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments. [SAP03A-N12]",
-      "≈ Manufacturer · manufacturer / producer / vendor",
+      "[COMMON CANDIDATE] PARTIAL: Manufacturer identifies a component manufacturer, producer or vendor. The potential need to name the producer is common even when the native subject is a component; neither operator nor installed-unit provenance is established. [ISA21:S06-R001; F3-02]",
       "RELATED: C239 §6.3 replaceable-unit (FRU) inventory, §8.3 MORA getManufacturer, and PIC Certificate of Volatility identify vendor in specific contexts, not a verified fielded-unit manufacturer. The 2022 v1 DSDM models Manufacturer–Product links [G3-N2]; original C239 2023 native byte equivalence remains unverified. [G2-3/G2-4B/G2-6A/G3-N2]",
       "",
       "",
@@ -196,7 +196,7 @@
       "Model",
       "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AssetKind Type/Instance/Batch/Role is distinct from HasKind Template/Instance; optional assetType may identify another type asset. Neither proves a marketed manufacturer model or its installed unit. Original source IDs: AAS02-N004, AAS02-N008, AAS02-N010, AAS02-N011, AAS02-N016, AAS02-N033, AAS02-N034, AAS02-N037, AAS02-N038, AAS02-N041. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS09: PARTIAL — TechnicalData distinguishes product designation text, manufacturer article number and order code. These help identify a product offering; none is automatically a reusable model identifier or individual serial. [AAS09-N015]",
       "RELATED: BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent. [SAP03A-N12]",
-      "Model",
+      "[COMMON CANDIDATE] DIRECT: Model identifies the component model within its manufacturer product line. Product model designation is a reusable information need; this is a product kind, not an individual unit. [ISA21:S06-R002; F3-02]",
       "RELATED/PARTIAL: C239 §5.3 Procurable Unit, §6.3 FRU model, RF getModel/getEquipmentId, and PIC documentation use different product/part/instance scopes. None proves a model of an installed whole System. The 2022 DSDM distinguishes Product and ProductInstance but Product.name need not be a model number; C239 native equivalence unverified. [SOSA-D/G2-3/G2-4B/G2-6A/G3-N2]",
       "",
       "",
@@ -214,7 +214,7 @@
       "SerialNumber",
       "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): SpecificAssetId name/value may carry a serial or proprietary identifier; globalAssetId is a distinct asset ID, and AASd-131 requires at least one asset ID. No fielded hardware serial is established by AAS alone. Original source IDs: AAS02-N003, AAS02-N009, AAS02-N012, AAS02-N013, AAS02-N014, AAS02-N034. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS09: NO_ESTABLISHED — The reviewed TechnicalData general-information fields identify manufacturer/product/order data, not an individual hardware serial. Base hierarchy placeholder globalAssetIds must not be used as serials; other nameplate templates remain unreviewed. [AAS09-N008, AAS09-N015]",
       "PARTIAL: BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial. [SAP03A-N12]",
-      "≈ Serial Number · component context",
+      "[COMMON CANDIDATE] PARTIAL: Serial Number identifies a component within its manufacturer/model; the combined manufacturer/model/serial is expected to be globally unique. A manufacturer-scoped serial is useful across equipment types, but the source does not verify a serial-numbered physical probe in any case. [ISA21:S06-R003; F3-02]",
       "RELATED: C239 §6.3 FRU inventory includes serial number but proves no installed case-equipment serial. NO_ESTABLISHED: an orderable fixed-pin-variant part number is not an individual serial number. [G2-3; G2-7Q §13.5.4.2.6.2]",
       "",
       "",
@@ -232,7 +232,7 @@
       "",
       "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS06: RELATED — AAS Asset-ID, AAS-ID and base64url HTTP path parameters are distinct from a persistent OGC CSAPI System identifier; discovery and lookup do not authenticate equipment. [AAS06-N002, AAS06-N018, AAS06-N026]\nAAS08: RELATED — Part4 says globalAssetId/specificAssetIds binding is unprotected and attackable. A shell identifier or authenticated API token alone does not verify the identity of the described physical System. [AAS08-N042, AAS08-N033]\nAAS09: RELATED — Engineering reference designations are aspect/context dependent; rules for distributed asset-ID derivation are outside IDTA02011-1. Template semantic IDs and example globalAssetIds do not establish persistent identity of actual equipment. [AAS09-N008, AAS09-N011, AAS09-N013]",
       "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
-      "≈ UCI · ISA component/virtual-component identifier",
+      "[COMMON CANDIDATE] PARTIAL: UCI is the string used persistently to refer to a specific ISA component; virtual components use qualified identifiers. Persistent component identity is a common need. Preserve ICD syntax/certificate association and CMPT virtual suffix rules as source constraints, not universal DIM rules. [ISA21:S06-R004; F3-02]",
       "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
       "",
       "",
@@ -286,7 +286,7 @@
       "≈ Device",
       "[COMMON CANDIDATE] RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]\nAAS06: RELATED — Repository returns a digital Asset Administration Shell and registry returns its descriptor; neither proves a real sensing arrangement or that the descriptor is more authoritative than the shell. [AAS06-N003, AAS06-N011, AAS06-N013]\nAAS09: RELATED — Hierarchy, technical-data and capability templates describe an asset at type or instance level and may represent designs or requirements. Their combined information does not select a universal sensing-System root class. [AAS09-N001, AAS09-N014, AAS09-N023, AAS09-N036]",
       "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
-      "≈ ISA composition via CIC · integration collection, not physical unity",
+      "[SPECIALIZED CANDIDATE] PARTIAL: A Composition Interface Component (CIC) exposes a composition of members through an ISA interface. The optional architecture-specific integration arrangement is useful specialized information; it does not establish one physical assembly or a universal root. [ISA21:S06-R005; F3-02]",
       "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
       "≈ ssn:System",
       "",
@@ -304,7 +304,7 @@
       "",
       "[SPECIALIZED CANDIDATE] AAS06: RELATED — A technology-specific AAS API service or endpoint is a network participant, but it is not automatically a network-visible physical sensor or participating hardware. [AAS06-N001, AAS06-N020, AAS06-N036]",
       "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
-      "≈ ISA component / Controller · network role, not equipment identity",
+      "[COMMON CANDIDATE] PARTIAL: An ISA component or Controller is an interface-conformant network participant or service role. Describing the participant role is a common need; neither a physical sensor nor the original observation performer follows from network visibility. [ISA21:S06-R006; F3-02]",
       "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
       "",
       "",
@@ -340,7 +340,7 @@
       "≈ ComponentType (can include software)",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]\nAAS05: PARTIAL/RELATED — Reference keys and optional submodel/asset links do not corroborate actual physically attached constituents. [AAS05-S001, AAS05-S002, AAS05-S009]\nAAS08: NO_ESTABLISHED — Part5 logical relationships/physical ZIP hierarchy organize files. Co-packaging shells, submodels and supplementary documents establishes no physical constituent relationship among equipment. Existing physical examples remain separate. [AAS08-N047, AAS08-N049, AAS08-N050]\nAAS09: PARTIAL — IDTA02011 supplies logical asset HasPart/IsPartOf hierarchy and distinguishes co/self-managed entities. Lifecycle/design context and BulkCount type quantities prevent automatic interpretation as individually installed physical constituents; capability composition is functional. [AAS09-N001, AAS09-N002, AAS09-N004, AAS09-N006, AAS09-N026]",
       "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
-      "≈ composition member · functional integration, not physical part-of",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
       "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
       "",
       "",
@@ -358,7 +358,7 @@
       "≈ ConnectsTo",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]\nAAS06: RELATED — Registry descriptor endpoints and Submodel paths are informational service links, not verified external equipment cables or attachment. [AAS06-N003, AAS06-N004]\nAAS09: NO_ESTABLISHED — Base hierarchy relations do not establish a cable/interface connection. More detailed physical connections and anchors are future extensions; Dragino external SHT31 and Campbell SDI-12 connections remain distinct from physical containment. [AAS09-N007]",
       "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
-      "≈ CIC-to-member interface · communications, not proved cable",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: A CIC may communicate with members through ISA or native interfaces. Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology. [ISA21:S06-R008; F3-02]",
       "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
       "",
       "",
@@ -394,7 +394,7 @@
       "",
       "[SPECIALIZED CANDIDATE] AAS09: RELATED — Capability descriptions can support process planning with required functions and temporal dependencies. Those abstract plans are distinct from a sensing procedure, actual observation or evidence that a sequence executed. [AAS09-N023, AAS09-N028, AAS09-N031]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
-      "≈ Method (Event-generation label; not a reusable observing procedure)",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Method is an accepted-extension observable naming the primary way an Event was generated. Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue. [ISA21:S06-R010; F3-02]",
       "RELATED BUT DIFFERENT: C239 §4.2 reference Calibration Service, host calibration-result interaction and §8.3 future RF calibration functions do not define or demonstrate an observing procedure performed for a particular result. [SOSA-D/G2-4B/G2-5]",
       "≈ sosa:Procedure",
       "ObservingProcedure (reusable observing method)",
@@ -538,7 +538,7 @@
       "",
       "[COMMON CANDIDATE] RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]\nAAS07: RELATED — ValueOnly Submodel retrieval is a digital data property, not evidence of an actual observation emitted by equipment. [AAS07-N002, AAS07-N005, AAS07-N041]",
       "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
-      "≈ Observable Declaration (CCD.observables) · declared field, not value",
+      "[COMMON CANDIDATE] PARTIAL: Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations. Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event. [ISA21:S06-R012; F3-02]",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
       "",
@@ -556,7 +556,7 @@
       "",
       "[COMMON CANDIDATE] RELATED: AAS v3.2 — semanticId/ConceptDescription can identify the meaning of a property. They do not supply an observation act, feature of interest or evidence that two dictionary concepts are equivalent. [AAS03-N019, AAS03-N020, AAS03-N028]\nAAS08: RELATED — Part3b explicitly separates quantity from unit: shared units do not establish shared quantity. Property semanticId and unitId identify different concepts. Existing air/panel temperature and particulate case meanings remain distinct; no sensor observable dictionary was independently audited. [AAS08-N020, AAS08-N021, AAS08-N026]",
       "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
-      "≈ Event observables · reported variable, not OMS observedProperty",
+      "[COMMON CANDIDATE] RELATED_BUT_DIFFERENT: Event.observables and Observable Declaration describe named observable values and their meanings. A named quantity/property being reported is a common need despite RELATED correspondence; retain meaning/value separation and no exact OMS observedProperty equivalence. [ISA21:S06-R013; F3-02]",
       "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
       "sosa:ObservableProperty",
       "ObservableProperty (quality of feature-of-interest)",
@@ -574,7 +574,7 @@
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
-      "≈ Event.source · reporting UCI, not proven physical observer",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event.source identifies the original message-authoring component by UCI. Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer. [ISA21:S06-R014; F3-02]",
       "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
       "≈ sosa:Sensor",
       "≈ Observer (identifiable individual performing observing)",
@@ -592,7 +592,7 @@
       "",
       "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — An experimental AAS event message and its trigger timestamp do not prove a performed observation, physical phenomenon time or measured result. A domain-specific payload and source evidence are still required. [AAS04-N005, AAS04-N006, AAS04-N013, AAS04-N015]",
       "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
-      "≈ Event message · reported event, not underlying observing act",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event is an immutable source message record, including observations, detections, alarms, alerts or fusion results; updates are separate records. Hold the performed-Observation comparison. A record about an occurrence does not establish the occurrence as an OMS Observation or an observed real installation. [ISA21:S06-R015; F3-02]",
       "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
       "sosa:Observation",
       "Observation (act determining property value)",
@@ -1762,7 +1762,7 @@
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
-      "≈ Capability Declaration · support, not enumerated operating modes",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Capability Declaration catalogues properties, commands, observables and types. Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning. [ISA21:S06-R016; F3-02]",
       "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
       "",
       "",
@@ -1798,7 +1798,7 @@
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
-      "≈ Camera Mode in Status.properties · camera-specific report",
+      "[SPECIALIZED CANDIDATE] NARROWER: Camera Mode reports the camera frequency range/mode; Status.properties can report its current value. This is a camera-specific, narrower current-mode meaning. The source convention for simultaneously operating modes is not adopted as a universal component or DIM rule. [ISA21:S06-R018; F3-02]",
       "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
       "",
       "",
@@ -1816,7 +1816,7 @@
       "",
       "[HELD — NO SINGLE CLASSIFICATION] RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; selected Part 2 invocation interfaces were subsequently reviewed in AAS07, but source-authenticated issuance, authorization and physical execution remain unverified. [AAS04-N003]\nAAS07: RELATED — POST /invoke and /invoke-async define interfaces, not evidence the device actually received an issued command. [AAS07-N006, AAS07-N007, AAS07-N041, AAS07-N042]\nAAS09: NO_ESTABLISHED — CapabilityRealizedBy points toward a skill but does not issue a control request. OperationConstraint evaluates a condition and cannot execute in a file-only exchange; no device command or execution was tested. [AAS09-N027, AAS09-N030, AAS09-N031]",
       "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
-      "≈ Request message · command invocation, not proven execution",
+      "[COMMON CANDIDATE] PARTIAL: Request carries a command invocation, request identity and parameters, with access-control and expiry context. Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action. [ISA21:S06-R019; F3-02]",
       "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
       "",
       "",
@@ -1834,7 +1834,7 @@
       "",
       "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. selected Part 2 status and response structures were subsequently reviewed in AAS07; neither acknowledgement of hardware control nor physical effect is established. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]\nAAS07: RELATED — HTTP 202 Accepted may be followed by failure; HTTP 200 with executionState Failed is not a successful physical command effect. [AAS07-N008, AAS07-N011, AAS07-N012]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
-      "≈ Response message · reported disposition, not measured effect",
+      "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
       "",
       "",
@@ -4084,7 +4084,7 @@
       "",
       "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]\nAAS08: RELATED — AASX can carry several serializations of the same data and filtered partner exports. Package creator/revision belong to the package; they do not identify the original observation or prove lineage of Bennett experimental copies. [AAS08-N047, AAS08-N049, AAS08-N051]",
       "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
-      "≈ Event Reference · update relation only, not original→copy",
+      "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
       "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
       "",
       "",
@@ -6529,7 +6529,7 @@
         "Manufacturer",
         "[COMMON CANDIDATE] AAS09: PARTIAL — IDTA02003 v2.0 provides manufacturer name for product technical descriptions; its use case also treats a supplier as manufacturer. This is not the current operator or proof of an instance identity. [AAS09-N014, AAS09-N015]",
         "RELATED: BSI §6.2.5.15/Table32 declares ConfigurationData.manufacturer for the SAPIENT Node/interface component; not independently verified manufacturer of all installed physical instruments. [SAP03A-N12]",
-        "≈ Manufacturer · manufacturer / producer / vendor",
+        "[COMMON CANDIDATE] PARTIAL: Manufacturer identifies a component manufacturer, producer or vendor. The potential need to name the producer is common even when the native subject is a component; neither operator nor installed-unit provenance is established. [ISA21:S06-R001; F3-02]",
         "RELATED: C239 §6.3 replaceable-unit (FRU) inventory, §8.3 MORA getManufacturer, and PIC Certificate of Volatility identify vendor in specific contexts, not a verified fielded-unit manufacturer. The 2022 v1 DSDM models Manufacturer–Product links [G3-N2]; original C239 2023 native byte equivalence remains unverified. [G2-3/G2-4B/G2-6A/G3-N2]",
         "",
         "",
@@ -6675,6 +6675,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R001",
+        "row_id": "S06-R001",
+        "cell": "I4",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Manufacturer identifies a component manufacturer, producer or vendor.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-076"
+        ],
+        "architecture_standing": null,
+        "rationale": "The potential need to name the producer is common even when the native subject is a component; neither operator nor installed-unit provenance is established.",
+        "peer_difference": "Like the existing AAS manufacturer candidate, this is qualified producer information; SAPIENT Node and SOSA product/FRU subjects remain different.",
+        "negative_equivalence_boundary": "The producing organization is not necessarily the station operator.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -6701,7 +6721,7 @@
         "Model",
         "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AssetKind Type/Instance/Batch/Role is distinct from HasKind Template/Instance; optional assetType may identify another type asset. Neither proves a marketed manufacturer model or its installed unit. Original source IDs: AAS02-N004, AAS02-N008, AAS02-N010, AAS02-N011, AAS02-N016, AAS02-N033, AAS02-N034, AAS02-N037, AAS02-N038, AAS02-N041. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS09: PARTIAL — TechnicalData distinguishes product designation text, manufacturer article number and order code. These help identify a product offering; none is automatically a reusable model identifier or individual serial. [AAS09-N015]",
         "RELATED: BSI §6.2.5.15/Table32 ConfigurationData.model names the Node product, not a guaranteed model identifier for the whole installation or every physical subcomponent. [SAP03A-N12]",
-        "Model",
+        "[COMMON CANDIDATE] DIRECT: Model identifies the component model within its manufacturer product line. Product model designation is a reusable information need; this is a product kind, not an individual unit. [ISA21:S06-R002; F3-02]",
         "RELATED/PARTIAL: C239 §5.3 Procurable Unit, §6.3 FRU model, RF getModel/getEquipmentId, and PIC documentation use different product/part/instance scopes. None proves a model of an installed whole System. The 2022 DSDM distinguishes Product and ProductInstance but Product.name need not be a model number; C239 native equivalence unverified. [SOSA-D/G2-3/G2-4B/G2-6A/G3-N2]",
         "",
         "",
@@ -6905,6 +6925,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R002",
+        "row_id": "S06-R002",
+        "cell": "I5",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Model identifies the component model within its manufacturer product line.",
+        "relation": "DIRECT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-080"
+        ],
+        "architecture_standing": null,
+        "rationale": "Product model designation is a reusable information need; this is a product kind, not an individual unit.",
+        "peer_difference": "Manufacturer-specific model naming can be common while AAS type/product and SAPIENT interface-component subjects retain their different bounds.",
+        "negative_equivalence_boundary": "Product kind/model remains distinct from one physical serial-numbered unit.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -6930,7 +6970,7 @@
         "SerialNumber",
         "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): SpecificAssetId name/value may carry a serial or proprietary identifier; globalAssetId is a distinct asset ID, and AASd-131 requires at least one asset ID. No fielded hardware serial is established by AAS alone. Original source IDs: AAS02-N003, AAS02-N009, AAS02-N012, AAS02-N013, AAS02-N014, AAS02-N034. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS09: NO_ESTABLISHED — The reviewed TechnicalData general-information fields identify manufacturer/product/order data, not an individual hardware serial. Base hierarchy placeholder globalAssetIds must not be used as serials; other nameplate templates remain unreviewed. [AAS09-N008, AAS09-N015]",
         "PARTIAL: BSI Table32 serial_number is conditional for hardware Nodes; pure-software Nodes may use product/license numbers. Not every Node serial is a physical equipment serial. [SAP03A-N12]",
-        "≈ Serial Number · component context",
+        "[COMMON CANDIDATE] PARTIAL: Serial Number identifies a component within its manufacturer/model; the combined manufacturer/model/serial is expected to be globally unique. A manufacturer-scoped serial is useful across equipment types, but the source does not verify a serial-numbered physical probe in any case. [ISA21:S06-R003; F3-02]",
         "RELATED: C239 §6.3 FRU inventory includes serial number but proves no installed case-equipment serial. NO_ESTABLISHED: an orderable fixed-pin-variant part number is not an individual serial number. [G2-3; G2-7Q §13.5.4.2.6.2]",
         "",
         "",
@@ -7078,6 +7118,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R003",
+        "row_id": "S06-R003",
+        "cell": "I6",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Serial Number identifies a component within its manufacturer/model; the combined manufacturer/model/serial is expected to be globally unique.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-105"
+        ],
+        "architecture_standing": null,
+        "rationale": "A manufacturer-scoped serial is useful across equipment types, but the source does not verify a serial-numbered physical probe in any case.",
+        "peer_difference": "The same common need does not make an AAS asset identifier, SAPIENT Node identifier or SOSA modelled serial interchangeable.",
+        "negative_equivalence_boundary": "Cannot treat an ISA component software identifier or platform network ID as an actual serial-numbered physical probe.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -7103,7 +7163,7 @@
         "",
         "[COMMON CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS06: RELATED — AAS Asset-ID, AAS-ID and base64url HTTP path parameters are distinct from a persistent OGC CSAPI System identifier; discovery and lookup do not authenticate equipment. [AAS06-N002, AAS06-N018, AAS06-N026]\nAAS08: RELATED — Part4 says globalAssetId/specificAssetIds binding is unprotected and attackable. A shell identifier or authenticated API token alone does not verify the identity of the described physical System. [AAS08-N042, AAS08-N033]\nAAS09: RELATED — Engineering reference designations are aspect/context dependent; rules for distributed asset-ID derivation are outside IDTA02011-1. Template semantic IDs and example globalAssetIds do not establish persistent identity of actual equipment. [AAS09-N008, AAS09-N011, AAS09-N013]",
         "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
-        "≈ UCI · ISA component/virtual-component identifier",
+        "[COMMON CANDIDATE] PARTIAL: UCI is the string used persistently to refer to a specific ISA component; virtual components use qualified identifiers. Persistent component identity is a common need. Preserve ICD syntax/certificate association and CMPT virtual suffix rules as source constraints, not universal DIM rules. [ISA21:S06-R004; F3-02]",
         "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
         "",
         "",
@@ -7344,6 +7404,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R004",
+        "row_id": "S06-R004",
+        "cell": "I7",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "UCI is the string used persistently to refer to a specific ISA component; virtual components use qualified identifiers.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-296"
+        ],
+        "architecture_standing": null,
+        "rationale": "Persistent component identity is a common need. Preserve ICD syntax/certificate association and CMPT virtual suffix rules as source constraints, not universal DIM rules.",
+        "peer_difference": "Like other donor identifiers, identity can be common without equating ISA component UCI to a physical unit, AAS asset ID or CSAPI System URI.",
+        "negative_equivalence_boundary": "Unique to an ISA component, not automatically a CSAPI System URI, real station ID or physical serial; retain certificate UCI and virtual suffix distinctions.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -7577,7 +7657,7 @@
         "≈ Device",
         "[COMMON CANDIDATE] RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]\nAAS06: RELATED — Repository returns a digital Asset Administration Shell and registry returns its descriptor; neither proves a real sensing arrangement or that the descriptor is more authoritative than the shell. [AAS06-N003, AAS06-N011, AAS06-N013]\nAAS09: RELATED — Hierarchy, technical-data and capability templates describe an asset at type or instance level and may represent designs or requirements. Their combined information does not select a universal sensing-System root class. [AAS09-N001, AAS09-N014, AAS09-N023, AAS09-N036]",
         "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
-        "≈ ISA composition via CIC · integration collection, not physical unity",
+        "[SPECIALIZED CANDIDATE] PARTIAL: A Composition Interface Component (CIC) exposes a composition of members through an ISA interface. The optional architecture-specific integration arrangement is useful specialized information; it does not establish one physical assembly or a universal root. [ISA21:S06-R005; F3-02]",
         "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
         "≈ ssn:System",
         "",
@@ -7976,6 +8056,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R005",
+        "row_id": "S06-R005",
+        "cell": "I10",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "A Composition Interface Component (CIC) exposes a composition of members through an ISA interface.",
+        "relation": "PARTIAL",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "source_ids": [
+          "SDD-4.2.2"
+        ],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "The optional architecture-specific integration arrangement is useful specialized information; it does not establish one physical assembly or a universal root.",
+        "peer_difference": "Other donors describe different aggregations, interfaces and physical architectures. Their existing mixed holds are not resolved by this single ISA architecture meaning.",
+        "negative_equivalence_boundary": "Does not define one physical assembly, mandatory DIM root or installed parts list.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -8001,7 +8101,7 @@
         "",
         "[SPECIALIZED CANDIDATE] AAS06: RELATED — A technology-specific AAS API service or endpoint is a network participant, but it is not automatically a network-visible physical sensor or participating hardware. [AAS06-N001, AAS06-N020, AAS06-N036]",
         "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
-        "≈ ISA component / Controller · network role, not equipment identity",
+        "[COMMON CANDIDATE] PARTIAL: An ISA component or Controller is an interface-conformant network participant or service role. Describing the participant role is a common need; neither a physical sensor nor the original observation performer follows from network visibility. [ISA21:S06-R006; F3-02]",
         "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
         "",
         "",
@@ -8449,6 +8549,26 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R006",
+        "row_id": "S06-R006",
+        "cell": "I11",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "An ISA component or Controller is an interface-conformant network participant or service role.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "SDD-4.2.1"
+        ],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Describing the participant role is a common need; neither a physical sensor nor the original observation performer follows from network visibility.",
+        "peer_difference": "AAS digital representation, SAPIENT Node and SOSA role must each retain their native subjects; blue is potential usefulness, not physical equivalence.",
+        "negative_equivalence_boundary": "A visible network participant or Controller is not by definition a distinct physical sensor, installed device or original observation performer.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -8561,7 +8681,7 @@
         "≈ ComponentType (can include software)",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]\nAAS05: PARTIAL/RELATED — Reference keys and optional submodel/asset links do not corroborate actual physically attached constituents. [AAS05-S001, AAS05-S002, AAS05-S009]\nAAS08: NO_ESTABLISHED — Part5 logical relationships/physical ZIP hierarchy organize files. Co-packaging shells, submodels and supplementary documents establishes no physical constituent relationship among equipment. Existing physical examples remain separate. [AAS08-N047, AAS08-N049, AAS08-N050]\nAAS09: PARTIAL — IDTA02011 supplies logical asset HasPart/IsPartOf hierarchy and distinguishes co/self-managed entities. Lifecycle/design context and BulkCount type quantities prevent automatic interpretation as individually installed physical constituents; capability composition is functional. [AAS09-N001, AAS09-N002, AAS09-N004, AAS09-N006, AAS09-N026]",
         "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
-        "≈ composition member · functional integration, not physical part-of",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
         "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
         "",
         "",
@@ -9217,6 +9337,28 @@
         ],
         "explanation": "Native Entity and bill-of-material structures do not prove installed constituents.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R007",
+        "row_id": "S06-R007",
+        "cell": "I13",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-099",
+          "SDD-4.2.2"
+        ],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue.",
+        "peer_difference": "SOSA physical module/FRU context can support a physical-detail candidate where ISA composition membership cannot. Do not transfer that color by row position.",
+        "negative_equivalence_boundary": "Composition membership and visible network attribution are not physical part-of. ISA Relationship ATTACHED/DETACHED is distinct and neither establishes complete installed inventory.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Physical constituent beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -9244,7 +9386,7 @@
         "≈ ConnectsTo",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]\nAAS06: RELATED — Registry descriptor endpoints and Submodel paths are informational service links, not verified external equipment cables or attachment. [AAS06-N003, AAS06-N004]\nAAS09: NO_ESTABLISHED — Base hierarchy relations do not establish a cable/interface connection. More detailed physical connections and anchors are future extensions; Dragino external SHT31 and Campbell SDI-12 connections remain distinct from physical containment. [AAS09-N007]",
         "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
-        "≈ CIC-to-member interface · communications, not proved cable",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: A CIC may communicate with members through ISA or native interfaces. Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology. [ISA21:S06-R008; F3-02]",
         "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
         "",
         "",
@@ -9694,6 +9836,27 @@
         ],
         "explanation": "Modeled links do not prove cables, connections or installations.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R008",
+        "row_id": "S06-R008",
+        "cell": "I14",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "A CIC may communicate with members through ISA or native interfaces.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "SDD-4.2.2"
+        ],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology.",
+        "peer_difference": "Digital/interface connectivity in another donor likewise cannot establish the case-specific cabled physical link; no new negative donor claim.",
+        "negative_equivalence_boundary": "ISA/native mediation does not demonstrate a cabled SDI-12 link, distinct external instrument, connector, mounting or spatial topology.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Connected external equipment beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -10160,7 +10323,7 @@
         "",
         "[SPECIALIZED CANDIDATE] AAS09: RELATED — Capability descriptions can support process planning with required functions and temporal dependencies. Those abstract plans are distinct from a sensing procedure, actual observation or evidence that a sequence executed. [AAS09-N023, AAS09-N028, AAS09-N031]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
-        "≈ Method (Event-generation label; not a reusable observing procedure)",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Method is an accepted-extension observable naming the primary way an Event was generated. Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue. [ISA21:S06-R010; F3-02]",
         "RELATED BUT DIFFERENT: C239 §4.2 reference Calibration Service, host calibration-result interaction and §8.3 future RF calibration functions do not define or demonstrate an observing procedure performed for a particular result. [SOSA-D/G2-4B/G2-5]",
         "≈ sosa:Procedure",
         "ObservingProcedure (reusable observing method)",
@@ -10264,6 +10427,27 @@
           "display_cell": "H16",
           "no_negative_source_claim": true
         }
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R010",
+        "row_id": "S06-R010",
+        "cell": "I16",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Method is an accepted-extension observable naming the primary way an Event was generated.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-147"
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue.",
+        "peer_difference": "Other donors may describe procedures or digital operations. The present source supports a method label, not equivalence to those richer subjects.",
+        "negative_equivalence_boundary": "An event-generation tag is not a reusable observing procedure, identified method specification or proven physical sensing method.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Observing procedure / method beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -11782,7 +11966,7 @@
         "",
         "[COMMON CANDIDATE] RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]\nAAS07: RELATED — ValueOnly Submodel retrieval is a digital data property, not evidence of an actual observation emitted by equipment. [AAS07-N002, AAS07-N005, AAS07-N041]",
         "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
-        "≈ Observable Declaration (CCD.observables) · declared field, not value",
+        "[COMMON CANDIDATE] PARTIAL: Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations. Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event. [ISA21:S06-R012; F3-02]",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
         "",
@@ -12126,6 +12310,27 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R012",
+        "row_id": "S06-R012",
+        "cell": "I24",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-327",
+          "ISA-DMS-305"
+        ],
+        "architecture_standing": null,
+        "rationale": "Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event.",
+        "peer_difference": "SAPIENT declared outputs and other donor result definitions may serve a common need while retaining their different types, schemas and reporting rules.",
+        "negative_equivalence_boundary": "Declaring a field does not provide actual reported output values, transfer schema, physical channel count or native CSAPI resultSchema.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -12150,7 +12355,7 @@
         "",
         "[COMMON CANDIDATE] RELATED: AAS v3.2 — semanticId/ConceptDescription can identify the meaning of a property. They do not supply an observation act, feature of interest or evidence that two dictionary concepts are equivalent. [AAS03-N019, AAS03-N020, AAS03-N028]\nAAS08: RELATED — Part3b explicitly separates quantity from unit: shared units do not establish shared quantity. Property semanticId and unitId identify different concepts. Existing air/panel temperature and particulate case meanings remain distinct; no sensor observable dictionary was independently audited. [AAS08-N020, AAS08-N021, AAS08-N026]",
         "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
-        "≈ Event observables · reported variable, not OMS observedProperty",
+        "[COMMON CANDIDATE] RELATED_BUT_DIFFERENT: Event.observables and Observable Declaration describe named observable values and their meanings. A named quantity/property being reported is a common need despite RELATED correspondence; retain meaning/value separation and no exact OMS observedProperty equivalence. [ISA21:S06-R013; F3-02]",
         "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
         "sosa:ObservableProperty",
         "ObservableProperty (quality of feature-of-interest)",
@@ -12273,6 +12478,27 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R013",
+        "row_id": "S06-R013",
+        "cell": "I25",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event.observables and Observable Declaration describe named observable values and their meanings.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-306",
+          "ISA-DMS-327"
+        ],
+        "architecture_standing": null,
+        "rationale": "A named quantity/property being reported is a common need despite RELATED correspondence; retain meaning/value separation and no exact OMS observedProperty equivalence.",
+        "peer_difference": "Common candidate status is compatible with different donor representations of observable names and quantities; no shared semantic class is adopted.",
+        "negative_equivalence_boundary": "ISA native Event fields are not an exact OMS observedProperty semantic class/feature-of-interest predicate; distinguish source property from actual value.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -12299,7 +12525,7 @@
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
-        "≈ Event.source · reporting UCI, not proven physical observer",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event.source identifies the original message-authoring component by UCI. Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer. [ISA21:S06-R014; F3-02]",
         "RELATED/NO_ESTABLISHED: A SOSA Sensor can sense, but C239 §4.2 collect/emit, detector, characterization and Tracker modules are functional roles, not individually identified physical observers or one-to-one CSAPI/OMS Systems. [SOSA-D/G2-4B/G2-7T]",
         "≈ sosa:Sensor",
         "≈ Observer (identifiable individual performing observing)",
@@ -12456,6 +12682,27 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R014",
+        "row_id": "S06-R014",
+        "cell": "I26",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event.source identifies the original message-authoring component by UCI.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer.",
+        "peer_difference": "Other donors distinguish a digital source or Node from the sensing performer too; an identity field alone cannot supply the missing role relation.",
+        "negative_equivalence_boundary": "Message origin/publisher is not guaranteed physical sensing probe, performed-observation Observer, logger or a separate producer from network relay.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Observer / observing System beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -12480,7 +12727,7 @@
         "",
         "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — An experimental AAS event message and its trigger timestamp do not prove a performed observation, physical phenomenon time or measured result. A domain-specific payload and source evidence are still required. [AAS04-N005, AAS04-N006, AAS04-N013, AAS04-N015]",
         "NO_ESTABLISHED: Classification/behaviour taxonomy and probabilities are report vocabulary, not source proof of a performed OGC Observation or a physically verified measurement. [SAP06-N01,SAP06-N05]",
-        "≈ Event message · reported event, not underlying observing act",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event is an immutable source message record, including observations, detections, alarms, alerts or fusion results; updates are separate records. Hold the performed-Observation comparison. A record about an occurrence does not establish the occurrence as an OMS Observation or an observed real installation. [ISA21:S06-R015; F3-02]",
         "RELATED: C239 glossary Sensor/Detection describes sensing and detection distinguished from background; neither proves a particular performed, time-stamped Observation or result. [G2-7T, Sensor/Detection definitions]",
         "sosa:Observation",
         "Observation (act determining property value)",
@@ -12614,6 +12861,27 @@
         ],
         "explanation": "An event definition cannot establish a performed Observation.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R015",
+        "row_id": "S06-R015",
+        "cell": "I27",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event is an immutable source message record, including observations, detections, alarms, alerts or fusion results; updates are separate records.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the performed-Observation comparison. A record about an occurrence does not establish the occurrence as an OMS Observation or an observed real installation.",
+        "peer_difference": "Donor message/event representations have different scopes. Event occurrence-time and creation-category candidates remain separately usable without adopting an Observation class.",
+        "negative_equivalence_boundary": "A published Event is not automatically the underlying performed OMS Observation, true resultTime or observed installed instrument; project examples never become real measurements.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Performed Observation beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -20830,7 +21098,7 @@
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: BSI mode-specific DetectionDefinition and TaskDefinition enumerate supported sensing, tracking/filter and command contracts. Registration does not establish selected/current mode or completed task; SAP03A mode meaning preserved. [SAP03B-N01,SAP03B-N09]",
-        "≈ Capability Declaration · support, not enumerated operating modes",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Capability Declaration catalogues properties, commands, observables and types. Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning. [ISA21:S06-R016; F3-02]",
         "RELATED/PARTIAL: C239 §6 sensor/component Mode and specialized RF operational modes distinguish possible/selected behaviors, but not a universal supported-mode list or published default. 2022 v1 DSDM specific mode enums are separate source lineage, not verified 2023 C239 equivalents. [SOSA-D/G2-4B/G2-7T/G3-N2]",
         "",
         "",
@@ -21033,6 +21301,27 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R016",
+        "row_id": "S06-R016",
+        "cell": "I92",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Capability Declaration catalogues properties, commands, observables and types.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-321"
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning.",
+        "peer_difference": "Capability and operation declarations in other donors also require an explicit mode-list meaning before they can answer this row.",
+        "negative_equivalence_boundary": "The generic capability set is not a list of allowed operating modes, an effective current mode, a device-specific state machine or executed action.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Supported operating mode beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -21176,7 +21465,7 @@
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: StatusReport.mode reports the Node's selected mode against its registered modes, unlike prior supported/default mode; Table60 mandatory versus conditional §6.3.2.4 held. [SAP04-N04]",
-        "≈ Camera Mode in Status.properties · camera-specific report",
+        "[SPECIALIZED CANDIDATE] NARROWER: Camera Mode reports the camera frequency range/mode; Status.properties can report its current value. This is a camera-specific, narrower current-mode meaning. The source convention for simultaneously operating modes is not adopted as a universal component or DIM rule. [ISA21:S06-R018; F3-02]",
         "RELATED/PARTIAL: C239 §6 V1.0 getSensorMode/getMode and operating State/Status are distinct source concepts; a declared response interface is not a sampled current equipment mode. 2022 v1 DSDM mode/Component_Info is an unverified 2023 native lineage, not a live status report. [SOSA-D/G2-1/G2-7T/G3-N2]",
         "",
         "",
@@ -21439,6 +21728,27 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R018",
+        "row_id": "S06-R018",
+        "cell": "I94",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Camera Mode reports the camera frequency range/mode; Status.properties can report its current value.",
+        "relation": "NARROWER",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "source_ids": [
+          "ISA-DMS-047",
+          "ISA-DMS-310"
+        ],
+        "architecture_standing": null,
+        "rationale": "This is a camera-specific, narrower current-mode meaning. The source convention for simultaneously operating modes is not adopted as a universal component or DIM rule.",
+        "peer_difference": "AAS or SAPIENT state/property mechanisms do not turn this camera-specific enumeration into a generic mode for all equipment.",
+        "negative_equivalence_boundary": "Only specifically declared modes and their reported values can support source-specific current mode; no generic mode for all devices or proof of actual contemporaneous state.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -21465,7 +21775,7 @@
         "",
         "[HELD — NO SINGLE CLASSIFICATION] RELATED: AAS v3.2 — Part 1 declares an Operation and points to Part 2 invocation. A declaration is not an issued request; selected Part 2 invocation interfaces were subsequently reviewed in AAS07, but source-authenticated issuance, authorization and physical execution remain unverified. [AAS04-N003]\nAAS07: RELATED — POST /invoke and /invoke-async define interfaces, not evidence the device actually received an issued command. [AAS07-N006, AAS07-N007, AAS07-N041, AAS07-N042]\nAAS09: NO_ESTABLISHED — CapabilityRealizedBy points toward a skill but does not issue a control request. OperationConstraint evaluates a condition and cannot execute in a file-only exchange; no device command or execution was tested. [AAS09-N027, AAS09-N030, AAS09-N031]",
         "RELATED: BSI §6.5 Task is a fusion-issued request with task ID, control and possible Region/Command oneof; a request is not execution or exact ISA/CSAPI Command equivalence. [SAP05-N01,SAP05-N05]",
-        "≈ Request message · command invocation, not proven execution",
+        "[COMMON CANDIDATE] PARTIAL: Request carries a command invocation, request identity and parameters, with access-control and expiry context. Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action. [ISA21:S06-R019; F3-02]",
         "PARTIAL/RELATED: C239 §7 external Task versus internal Assignment, §6 management requests and RF actions describe command/task interfaces with scoped availability; some Task functions are preliminary/Future. No real client-issued authorized CSAPI Command, execution or physical effect follows. [SOSA-D/G2-1/2/G2-4B/G2-7S/T]",
         "",
         "",
@@ -21877,6 +22187,26 @@
         ],
         "explanation": "API invocation is not a verified physically issued control request.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R019",
+        "row_id": "S06-R019",
+        "cell": "I95",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Request carries a command invocation, request identity and parameters, with access-control and expiry context.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-308"
+        ],
+        "architecture_standing": null,
+        "rationale": "Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action.",
+        "peer_difference": "AAS operation invocation and SAPIENT tasking may serve a common need while preserving separate request, authorization and execution semantics.",
+        "negative_equivalence_boundary": "A type definition or capability declaration does not prove an actual issued Request, permission or performed/achieved hardware control.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -21903,7 +22233,7 @@
         "",
         "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. selected Part 2 status and response structures were subsequently reviewed in AAS07; neither acknowledgement of hardware control nor physical effect is established. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]\nAAS07: RELATED — HTTP 202 Accepted may be followed by failure; HTTP 200 with executionState Failed is not a successful physical command effect. [AAS07-N008, AAS07-N011, AAS07-N012]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
-        "≈ Response message · reported disposition, not measured effect",
+        "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
         "",
         "",
@@ -22271,6 +22601,27 @@
         ],
         "explanation": "API status does not establish physical acknowledgement or effect.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R020",
+        "row_id": "S06-R020",
+        "cell": "I96",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Response reports ongoing or final request disposition and result values.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-309",
+          "ISA-DMS-456"
+        ],
+        "architecture_standing": null,
+        "rationale": "Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No.",
+        "peer_difference": "Other donor responses must retain their own result/status meaning; transport, authorization decision and achieved hardware effect are separate.",
+        "negative_equivalence_boundary": "Response code is a reported execution state not independent evidence of physical effect; even authorization denial can carry SUCCESS in its separate service context.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -35733,7 +36084,7 @@
         "",
         "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Experimental EventPayload.source identifies an EventElement and observableReference its scope. These do not establish physical-event-to-derived-copy lineage or authenticate the Bennett experimental copies. [AAS04-N005, AAS04-N012, AAS04-N013, AAS04-N014]\nAAS08: RELATED — AASX can carry several serializations of the same data and filtered partner exports. Package creator/revision belong to the package; they do not identify the original observation or prove lineage of Bennett experimental copies. [AAS08-N047, AAS08-N049, AAS08-N051]",
         "NO_ESTABLISHED: An Alert may reference a detection/media but is not evidence establishing the originating physical event and derived digital representation as identical. [SAP05-N13,SAP05-N15]",
-        "≈ Event Reference · update relation only, not original→copy",
+        "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
         "NO_ESTABLISHED original-event/copy-lineage equivalence: C239 §15.1 Digital Signal Stream/Context and event notices are distinct; §12 audit forwarding can relay a message without identifying original NOAA observations versus project-derived copies. Appendix A Detection, raw and processed outputs describe different phenomena/stages, not a validated event→copy chain. [SOSA-D/G2-5/G2-7T]",
         "",
         "",
@@ -35902,6 +36253,28 @@
         ],
         "explanation": "AAS event and AASX source links do not establish original event/copy lineage.",
         "candidate_only_not_adopted": true
+      },
+      "F3_02_ISA_classification": {
+        "decision_id": "F3-02-S06-R022",
+        "row_id": "S06-R022",
+        "cell": "I221",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event Reference links source events for update/correction/recall/resolve semantics.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306",
+          "ISA-DMS-382"
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations.",
+        "peer_difference": "AAS representation links and SOSA model lineage have different subjects; neither establishes this ISA event-update relation as universal provenance.",
+        "negative_equivalence_boundary": "A source Event Update is not a universal original historical event versus API copy/representation provenance relationship; Bennett two original records versus four digital copies remain distinct.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Original event and derived digital representation (proposed DIM) beyond the narrower ISA meaning recorded here?",
+        "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/records"
       }
     },
     {
@@ -53666,16 +54039,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "F3_02_CLASSIFICATION_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
-    "sha256": "942ba2f5757343484de35b44dc7ff9625ba237bd9fc0ca2ebf0369269bcc9f78",
+    "checkpoint": "F3_02_CLASSIFICATION_SAVED_VERIFIED",
+    "sha256": "ee187b2f793ef5dc97c6075bde546947b83ab1ec3294b4280dd2d2f4b4e0c4d0",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: canonical JSON, both CSVs, both Markdown views and saved 26-sheet XLSX",
-    "textCheckpoint": "AAS10B_EXCEL_ORDER_AND_DONOR_STATUS_ONLY",
+    "lag": "ZERO: JSON, both CSVs, both readable comparisons and same 26-sheet XLSX",
+    "textCheckpoint": "F3_02_ISA_18_CLASSIFICATION_ONLY",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -53694,7 +54067,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 20,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS10/office_order_and_donor_blank_repair",
+    "validation_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -56909,7 +57282,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "OWNER REVIEW OF CORRECTED/REOPENED FOUR-DONOR WORKBOOK; NEXT SEPARATELY AUTHORIZED STEP SHOULD BE AAS NATIVE-FIRST NEW-ROW OPPORTUNITY AUDIT UNDER SOURCE-SIZED PLAN, NOT DONOR CLOSURE OR TRANSITION.",
+  "nextOwnerAction": "F3-03 ONLY on a separate Proceed: SAPIENT 39 ungraded source cells and calibration; AAS O1 waits for F3 owner gate.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -62287,5 +62660,161 @@
     "unassessed_status_rows": 273,
     "source_new_links": 1,
     "DIM_Profile_adopted": false
+  },
+  "F3_02_classification": {
+    "evidence_file": "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json#/F3_02_classification_review",
+    "counts": {
+      "reviewed_exceptions": 18,
+      "COMMON_CANDIDATE": 9,
+      "SPECIALIZED_CANDIDATE": 2,
+      "MIXED_OR_HELD": 7,
+      "NATIVE_ONLY_EVIDENCE": 0,
+      "UNRESOLVED_CANDIDATE": 0,
+      "new_rows": 0,
+      "prior_classifications_changed": 0
+    },
+    "baseline_commit": "00ada697e070adb6eeafeda49819599ee8d3c5c2",
+    "archive_branch": "archive/dim-crosswalk-pre-f3-02-20261114",
+    "assignments": [
+      {
+        "row_id": "S06-R001",
+        "cell": "I4",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R002",
+        "cell": "I5",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R003",
+        "cell": "I6",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R004",
+        "cell": "I7",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R005",
+        "cell": "I10",
+        "donor_key": "ISA",
+        "status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "S06-R006",
+        "cell": "I11",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R007",
+        "cell": "I13",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R008",
+        "cell": "I14",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R010",
+        "cell": "I16",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R012",
+        "cell": "I24",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R013",
+        "cell": "I25",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R014",
+        "cell": "I26",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R015",
+        "cell": "I27",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R016",
+        "cell": "I92",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "S06-R018",
+        "cell": "I94",
+        "donor_key": "ISA",
+        "status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "S06-R019",
+        "cell": "I95",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R020",
+        "cell": "I96",
+        "donor_key": "ISA",
+        "status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "S06-R022",
+        "cell": "I221",
+        "donor_key": "ISA",
+        "status": "MIXED_OR_HELD",
+        "fill": null
+      }
+    ],
+    "census_after": {
+      "source_bearing": 616,
+      "colored": 390,
+      "held": 84,
+      "ungraded": 142,
+      "ISA": {
+        "source_bearing": 316,
+        "colored": 271,
+        "held": 45,
+        "ungraded": 0
+      }
+    },
+    "next": "F3-03 ONLY on a separate Proceed: SAPIENT 39 ungraded source cells and calibration; AAS O1 waits for F3 owner gate."
   }
 }

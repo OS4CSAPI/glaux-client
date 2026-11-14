@@ -1,3 +1,11 @@
+# L104 — Classify the qualified information need without erasing a different source subject (14 November 2026)
+
+F3-02 resolved the 18 omitted early ISA comparisons as nine common candidates, two specialized candidates and seven explicit holds. A common candidate can retain PARTIAL or RELATED correspondence; component manufacturer, observable meaning and reported command outcome do not become exact installed-equipment/OMS/physical-effect equivalences because their cells are blue. Conversely, a hold on the early reusable-procedure, physical-part or allowed-mode row must not erase the already qualified common Method-label, attachment-relation or capability-catalogue row.
+
+Use the existing native records to preserve that distinction, and record the reason in the visible comparison and DIM Register. Reopening a scoped passage does not restart the whole donor or close its source questions. At publication, inspect current Summary/Validation/Legend labels as well as the changed donor cells; matching grid values alone can leave outdated guidance visible. The Microsoft Excel clean-open hold remains separate from OOXML preservation and rendered-view inspection.
+
+---
+
 # L103 — A white source-bearing cell needs a reasoned disposition, but no-established equivalence does not erase donor-native information (14 November 2026)
 
 F3-01 source census found **616 source-bearing comparisons (379 colored, 77 explicitly held, 160 ungraded)** across AAS, SAPIENT, ISA and The Open Group SOSA. The **18 early ISA S06** source rows retained original source locators but were excluded from the prior `ISA-*` color review; first owner-approved correction stage F3-02 must source-grade these rather than blanket-paint them blue. The **39 SAPIENT** ungraded row comparisons all include `NO_ESTABLISHED` wording yet reference **51 actual native finding IDs** in the prior 109-item register, **18** of which have native source-item candidate standing; an item can be useful even when not equivalent to *this specific row*. The **103 SOSA** ungraded cells reuse **781 distinct IDs through 1,303 links**, not 781 separately examined norms, with 2022/2023/native companion access limits.

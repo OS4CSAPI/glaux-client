@@ -2976,5 +2976,1160 @@
     "original_2023_isa_source_coverage_completed_previous_delivery": true,
     "whole_repo_ci_not_run": true,
     "source_to_dim_adoption_not_auto_approved": true
+  },
+  "F3_02_classification_review": {
+    "date": "2026-11-14",
+    "step": "F3-02",
+    "status": "18_SOURCE_DECISIONS_PUBLISHED__STOP_BEFORE_F3_03",
+    "baseline_commit": "00ada697e070adb6eeafeda49819599ee8d3c5c2",
+    "archive_branch": "archive/dim-crosswalk-pre-f3-02-20261114",
+    "scope": "18 ISA early-row classification exceptions; targeted calibration only, not new full donor audit",
+    "source_access": [
+      {
+        "source": "DMS",
+        "name": "ISA Data Model Specification",
+        "edition": "6.0r12",
+        "date": "2023-10-31",
+        "file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+        "pdf_pages_read_for_this_scoped_review": [
+          25,
+          26,
+          28,
+          29,
+          30,
+          31,
+          35,
+          70,
+          73,
+          74,
+          75,
+          76,
+          85,
+          86,
+          87,
+          108,
+          132,
+          133
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      },
+      {
+        "source": "SDD",
+        "name": "ISA Software Design Document",
+        "edition": "6.0r5",
+        "date": "2023-10-31",
+        "file_id": "file_000000004c10824683c0a84b37f24a3b",
+        "pdf_pages_read_for_this_scoped_review": [
+          17,
+          18,
+          19,
+          20
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      },
+      {
+        "source": "ICD",
+        "name": "ISA Interface Control Document",
+        "edition": "6.0r5",
+        "date": "2023-10-31",
+        "file_id": "file_000000008de0820e8e33af2cb096bb12",
+        "pdf_pages_read_for_this_scoped_review": [
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      },
+      {
+        "source": "CMPT",
+        "name": "ISA Component Requirements",
+        "edition": "6.0r4",
+        "date": "2023-10-31",
+        "file_id": "file_00000000ed048210a141e046f2e93a17",
+        "pdf_pages_read_for_this_scoped_review": [
+          14,
+          15,
+          16
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      },
+      {
+        "source": "CNTR",
+        "name": "ISA Controller Requirements",
+        "edition": "6.0r4",
+        "date": "2023-10-31",
+        "file_id": "file_00000000e00082109d88d0119f744880",
+        "pdf_pages_read_for_this_scoped_review": [
+          44,
+          45
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      },
+      {
+        "source": "TOPICS",
+        "name": "ISA Data Model Topics",
+        "edition": "6.0r2",
+        "date": "2023-10-31",
+        "file_id": "file_000000006b5881f4988dfb57ac11965c",
+        "pdf_pages_read_for_this_scoped_review": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "coverage_status": "TARGETED_ORIGINAL_TEXT_READ",
+        "limitations": "Other pages not re-audited in F3-02; figure geometry not re-inspected; prior audit standing retained."
+      }
+    ],
+    "additional_precise_checks": [
+      "DMS UCI PDF70 persistence; ICD §6.1 PDF27 and CMPT-L-0001–0008 PDF14–16 identifier/certificate/virtual-component constraints.",
+      "ICD Event/Status/Request/Response PDF28–33, including Table23 ongoing/final response codes.",
+      "CNTR authorization AZSV-L-0005–0007 PDF44–45: SUCCESS reports authorization-service completion; authorized result can be Yes or No.",
+      "TOPICS Event/Event Update PDF11–14: immutable source records and separate update relations; no API-copy lineage inference."
+    ],
+    "records": [
+      {
+        "decision_id": "F3-02-S06-R001",
+        "row_id": "S06-R001",
+        "cell": "I4",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Manufacturer identifies a component manufacturer, producer or vendor.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-076"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Manufacturer",
+            "pdf_page_locator": "28",
+            "source_meaning": "String component manufacturer, producer or vendor."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-076",
+            "kind": "property",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "The potential need to name the producer is common even when the native subject is a component; neither operator nor installed-unit provenance is established.",
+        "peer_difference": "Like the existing AAS manufacturer candidate, this is qualified producer information; SAPIENT Node and SOSA product/FRU subjects remain different.",
+        "negative_equivalence_boundary": "The producing organization is not necessarily the station operator.",
+        "before": "≈ Manufacturer · manufacturer / producer / vendor",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: Manufacturer identifies a component manufacturer, producer or vendor. The potential need to name the producer is common even when the native subject is a component; neither operator nor installed-unit provenance is established. [ISA21:S06-R001; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R002",
+        "row_id": "S06-R002",
+        "cell": "I5",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Model identifies the component model within its manufacturer product line.",
+        "relation": "DIRECT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-080"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Model",
+            "pdf_page_locator": "29",
+            "source_meaning": "Manufacturer product-line model designation."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-080",
+            "kind": "property",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Product model designation is a reusable information need; this is a product kind, not an individual unit.",
+        "peer_difference": "Manufacturer-specific model naming can be common while AAS type/product and SAPIENT interface-component subjects retain their different bounds.",
+        "negative_equivalence_boundary": "Product kind/model remains distinct from one physical serial-numbered unit.",
+        "before": "Model",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] DIRECT: Model identifies the component model within its manufacturer product line. Product model designation is a reusable information need; this is a product kind, not an individual unit. [ISA21:S06-R002; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R003",
+        "row_id": "S06-R003",
+        "cell": "I6",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Serial Number identifies a component within its manufacturer/model; the combined manufacturer/model/serial is expected to be globally unique.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-105"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Serial Number",
+            "pdf_page_locator": "31",
+            "source_meaning": "Component serial unique in manufacturer model line; source expects manufacturer/model/serial triplet globally unique."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-105",
+            "kind": "property",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "A manufacturer-scoped serial is useful across equipment types, but the source does not verify a serial-numbered physical probe in any case.",
+        "peer_difference": "The same common need does not make an AAS asset identifier, SAPIENT Node identifier or SOSA modelled serial interchangeable.",
+        "negative_equivalence_boundary": "Cannot treat an ISA component software identifier or platform network ID as an actual serial-numbered physical probe.",
+        "before": "≈ Serial Number · component context",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: Serial Number identifies a component within its manufacturer/model; the combined manufacturer/model/serial is expected to be globally unique. A manufacturer-scoped serial is useful across equipment types, but the source does not verify a serial-numbered physical probe in any case. [ISA21:S06-R003; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R004",
+        "row_id": "S06-R004",
+        "cell": "I7",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "UCI is the string used persistently to refer to a specific ISA component; virtual components use qualified identifiers.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-296"
+        ],
+        "original_source_locators": [
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.1 UCI",
+            "pdf_page_locator": "27",
+            "source_meaning": "Unique component identifier with letters/digits/hyphens/plus rules and certificate CN association."
+          },
+          {
+            "source": "CMPT",
+            "original_file_id": "file_00000000ed048210a141e046f2e93a17",
+            "original_edition": "6.0r4",
+            "section": "§4.1.1 CMPT-L-0001–0008",
+            "pdf_page_locator": "14–16",
+            "source_meaning": "Valid UCI and derived virtual UCI + suffix obligations."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-296",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Persistent component identity is a common need. Preserve ICD syntax/certificate association and CMPT virtual suffix rules as source constraints, not universal DIM rules.",
+        "peer_difference": "Like other donor identifiers, identity can be common without equating ISA component UCI to a physical unit, AAS asset ID or CSAPI System URI.",
+        "negative_equivalence_boundary": "Unique to an ISA component, not automatically a CSAPI System URI, real station ID or physical serial; retain certificate UCI and virtual suffix distinctions.",
+        "before": "≈ UCI · ISA component/virtual-component identifier",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: UCI is the string used persistently to refer to a specific ISA component; virtual components use qualified identifiers. Persistent component identity is a common need. Preserve ICD syntax/certificate association and CMPT virtual suffix rules as source constraints, not universal DIM rules. [ISA21:S06-R004; F3-02]",
+        "additional_F3_original_source_locator": {
+          "source": "DMS",
+          "original_edition": "6.0r12",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "pdf_page_locator": "70",
+          "section": "§6.1 Universal Component Identifier",
+          "source_meaning": "Persistent reference to specific component",
+          "standing": "source type/field definition",
+          "depth": "TARGETED_ORIGINAL_TEXT_READ"
+        }
+      },
+      {
+        "decision_id": "F3-02-S06-R005",
+        "row_id": "S06-R005",
+        "cell": "I10",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "A Composition Interface Component (CIC) exposes a composition of members through an ISA interface.",
+        "relation": "PARTIAL",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "source_ids": [
+          "SDD-4.2.2"
+        ],
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–20",
+            "source_meaning": "Integration collection whose capabilities are presented through a CIC; may mix compliant and native-interface members."
+          }
+        ],
+        "source_kind_and_standing": [],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "The optional architecture-specific integration arrangement is useful specialized information; it does not establish one physical assembly or a universal root.",
+        "peer_difference": "Other donors describe different aggregations, interfaces and physical architectures. Their existing mixed holds are not resolved by this single ISA architecture meaning.",
+        "negative_equivalence_boundary": "Does not define one physical assembly, mandatory DIM root or installed parts list.",
+        "before": "≈ ISA composition via CIC · integration collection, not physical unity",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL: A Composition Interface Component (CIC) exposes a composition of members through an ISA interface. The optional architecture-specific integration arrangement is useful specialized information; it does not establish one physical assembly or a universal root. [ISA21:S06-R005; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R006",
+        "row_id": "S06-R006",
+        "cell": "I11",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "An ISA component or Controller is an interface-conformant network participant or service role.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "SDD-4.2.1"
+        ],
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.1 ISA Components",
+            "pdf_page_locator": "17–18",
+            "source_meaning": "Interface-conformant network participation; Controller supports required core services and accepts connections."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.0 ISA Component",
+            "pdf_page_locator": "27–28",
+            "source_meaning": "UCI identity and seven message kinds."
+          }
+        ],
+        "source_kind_and_standing": [],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Describing the participant role is a common need; neither a physical sensor nor the original observation performer follows from network visibility.",
+        "peer_difference": "AAS digital representation, SAPIENT Node and SOSA role must each retain their native subjects; blue is potential usefulness, not physical equivalence.",
+        "negative_equivalence_boundary": "A visible network participant or Controller is not by definition a distinct physical sensor, installed device or original observation performer.",
+        "before": "≈ ISA component / Controller · network role, not equipment identity",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: An ISA component or Controller is an interface-conformant network participant or service role. Describing the participant role is a common need; neither a physical sensor nor the original observation performer follows from network visibility. [ISA21:S06-R006; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R007",
+        "row_id": "S06-R007",
+        "cell": "I13",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-099",
+          "SDD-4.2.2"
+        ],
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–20",
+            "source_meaning": "Members may be compliant/noncompliant and visible/opaque through CIC."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Relationship",
+            "pdf_page_locator": "31",
+            "source_meaning": "A separately source-defined physical attachment property exists."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-099",
+            "kind": "property",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue.",
+        "peer_difference": "SOSA physical module/FRU context can support a physical-detail candidate where ISA composition membership cannot. Do not transfer that color by row position.",
+        "negative_equivalence_boundary": "Composition membership and visible network attribution are not physical part-of. ISA Relationship ATTACHED/DETACHED is distinct and neither establishes complete installed inventory.",
+        "before": "≈ composition member · functional integration, not physical part-of",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Physical constituent beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R008",
+        "row_id": "S06-R008",
+        "cell": "I14",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "A CIC may communicate with members through ISA or native interfaces.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "SDD-4.2.2"
+        ],
+        "original_source_locators": [
+          {
+            "source": "SDD",
+            "original_file_id": "file_000000004c10824683c0a84b37f24a3b",
+            "original_edition": "6.0r5",
+            "section": "§4.2.2 ISA Compositions",
+            "pdf_page_locator": "18–19",
+            "source_meaning": "Member communicates via ISA interface if compliant, or member-native interface if not."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Relationship",
+            "pdf_page_locator": "31",
+            "source_meaning": "Physical relation is modeled separately from network interface."
+          }
+        ],
+        "source_kind_and_standing": [],
+        "architecture_standing": "SDD architecture description / optional integration approach; no DIM requirement",
+        "rationale": "Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology.",
+        "peer_difference": "Digital/interface connectivity in another donor likewise cannot establish the case-specific cabled physical link; no new negative donor claim.",
+        "negative_equivalence_boundary": "ISA/native mediation does not demonstrate a cabled SDI-12 link, distinct external instrument, connector, mounting or spatial topology.",
+        "before": "≈ CIC-to-member interface · communications, not proved cable",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Connected external equipment beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: A CIC may communicate with members through ISA or native interfaces. Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology. [ISA21:S06-R008; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R010",
+        "row_id": "S06-R010",
+        "cell": "I16",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Method is an accepted-extension observable naming the primary way an Event was generated.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-147"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.2 Method",
+            "pdf_page_locator": "35",
+            "source_meaning": "Suggested String for primary method used to generate an Event; includes MANUAL/ATR/FUSION etc."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-147",
+            "kind": "observable",
+            "standing": "ACCEPTED_EXTENSION",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue.",
+        "peer_difference": "Other donors may describe procedures or digital operations. The present source supports a method label, not equivalence to those richer subjects.",
+        "negative_equivalence_boundary": "An event-generation tag is not a reusable observing procedure, identified method specification or proven physical sensing method.",
+        "before": "≈ Method (Event-generation label; not a reusable observing procedure)",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Observing procedure / method beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Method is an accepted-extension observable naming the primary way an Event was generated. Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue. [ISA21:S06-R010; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R012",
+        "row_id": "S06-R012",
+        "cell": "I24",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-327",
+          "ISA-DMS-305"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§7.3 Observable Declaration",
+            "pdf_page_locator": "87",
+            "source_meaning": "Name/type/structure/range of reportable Event observables; not all declared observables required in each Event."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Config",
+            "pdf_page_locator": "73",
+            "source_meaning": "Configuration message contains capability declaration and readiness state."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-327",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          },
+          {
+            "id": "ISA-DMS-305",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event.",
+        "peer_difference": "SAPIENT declared outputs and other donor result definitions may serve a common need while retaining their different types, schemas and reporting rules.",
+        "negative_equivalence_boundary": "Declaring a field does not provide actual reported output values, transfer schema, physical channel count or native CSAPI resultSchema.",
+        "before": "≈ Observable Declaration (CCD.observables) · declared field, not value",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations. Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event. [ISA21:S06-R012; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R013",
+        "row_id": "S06-R013",
+        "cell": "I25",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event.observables and Observable Declaration describe named observable values and their meanings.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-306",
+          "ISA-DMS-327"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§§3.2 and 6.2",
+            "pdf_page_locator": "34–36;73–74",
+            "source_meaning": "Original ISA Event carries observed-environment data and reportable observable names/types."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-306",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          },
+          {
+            "id": "ISA-DMS-327",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "A named quantity/property being reported is a common need despite RELATED correspondence; retain meaning/value separation and no exact OMS observedProperty equivalence.",
+        "peer_difference": "Common candidate status is compatible with different donor representations of observable names and quantities; no shared semantic class is adopted.",
+        "negative_equivalence_boundary": "ISA native Event fields are not an exact OMS observedProperty semantic class/feature-of-interest predicate; distinguish source property from actual value.",
+        "before": "≈ Event observables · reported variable, not OMS observedProperty",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] RELATED_BUT_DIFFERENT: Event.observables and Observable Declaration describe named observable values and their meanings. A named quantity/property being reported is a common need despite RELATED correspondence; retain meaning/value separation and no exact OMS observedProperty equivalence. [ISA21:S06-R013; F3-02]",
+        "additional_F3_original_source_locator": {
+          "source": "DMS",
+          "original_edition": "6.0r12",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "pdf_page_locator": "73–74;87",
+          "section": "§6.2 Event / §7.3 Observable Declaration",
+          "source_meaning": "Named observable values and declared meaning/type",
+          "standing": "source type/field definition",
+          "depth": "TARGETED_ORIGINAL_TEXT_READ"
+        }
+      },
+      {
+        "decision_id": "F3-02-S06-R014",
+        "row_id": "S06-R014",
+        "cell": "I26",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event.source identifies the original message-authoring component by UCI.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event.source",
+            "pdf_page_locator": "73",
+            "source_meaning": "Source is original author of Event message."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.6 Event",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "Event creator UCI/time/event ID identity and observation reporting."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-306",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer.",
+        "peer_difference": "Other donors distinguish a digital source or Node from the sensing performer too; an identity field alone cannot supply the missing role relation.",
+        "negative_equivalence_boundary": "Message origin/publisher is not guaranteed physical sensing probe, performed-observation Observer, logger or a separate producer from network relay.",
+        "before": "≈ Event.source · reporting UCI, not proven physical observer",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Observer / observing System beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event.source identifies the original message-authoring component by UCI. Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer. [ISA21:S06-R014; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R015",
+        "row_id": "S06-R015",
+        "cell": "I27",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event is an immutable source message record, including observations, detections, alarms, alerts or fusion results; updates are separate records.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event",
+            "pdf_page_locator": "73–74",
+            "source_meaning": "Event time, source, event ID and reportable observables."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.6 Providing Observed Information",
+            "pdf_page_locator": "30–31",
+            "source_meaning": "ISA observation message encompasses measurement/detection/alert/alarm."
+          },
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§2.1 Event Updates",
+            "pdf_page_locator": "11",
+            "source_meaning": "Originally distributed Event is a reported record, not editable observation act."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-306",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the performed-Observation comparison. A record about an occurrence does not establish the occurrence as an OMS Observation or an observed real installation.",
+        "peer_difference": "Donor message/event representations have different scopes. Event occurrence-time and creation-category candidates remain separately usable without adopting an Observation class.",
+        "negative_equivalence_boundary": "A published Event is not automatically the underlying performed OMS Observation, true resultTime or observed installed instrument; project examples never become real measurements.",
+        "before": "≈ Event message · reported event, not underlying observing act",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Performed Observation beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event is an immutable source message record, including observations, detections, alarms, alerts or fusion results; updates are separate records. Hold the performed-Observation comparison. A record about an occurrence does not establish the occurrence as an OMS Observation or an observed real installation. [ISA21:S06-R015; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R016",
+        "row_id": "S06-R016",
+        "cell": "I92",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Capability Declaration catalogues properties, commands, observables and types.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-321"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§7.3 Capability Declaration",
+            "pdf_page_locator": "85",
+            "source_meaning": "Declares supported properties/commands/observables/types."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.4 Config",
+            "pdf_page_locator": "28–29",
+            "source_meaning": "Capability readiness and reporting separate from declarations."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-321",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning.",
+        "peer_difference": "Capability and operation declarations in other donors also require an explicit mode-list meaning before they can answer this row.",
+        "negative_equivalence_boundary": "The generic capability set is not a list of allowed operating modes, an effective current mode, a device-specific state machine or executed action.",
+        "before": "≈ Capability Declaration · support, not enumerated operating modes",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Supported operating mode beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Capability Declaration catalogues properties, commands, observables and types. Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning. [ISA21:S06-R016; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R018",
+        "row_id": "S06-R018",
+        "cell": "I94",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Camera Mode reports the camera frequency range/mode; Status.properties can report its current value.",
+        "relation": "NARROWER",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "source_ids": [
+          "ISA-DMS-047",
+          "ISA-DMS-310"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§3.1 Camera Mode",
+            "pdf_page_locator": "25–26",
+            "source_meaning": "Current camera-specific mode where supported; Radar Mode also a specialized property."
+          },
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Status.properties",
+            "pdf_page_locator": "75–76",
+            "source_meaning": "Periodically reported current property values."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.5 Status",
+            "pdf_page_locator": "29–30",
+            "source_meaning": "Current property values and heartbeat intervals."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-047",
+            "kind": "property",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          },
+          {
+            "id": "ISA-DMS-310",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "This is a camera-specific, narrower current-mode meaning. The source convention for simultaneously operating modes is not adopted as a universal component or DIM rule.",
+        "peer_difference": "AAS or SAPIENT state/property mechanisms do not turn this camera-specific enumeration into a generic mode for all equipment.",
+        "negative_equivalence_boundary": "Only specifically declared modes and their reported values can support source-specific current mode; no generic mode for all devices or proof of actual contemporaneous state.",
+        "before": "≈ Camera Mode in Status.properties · camera-specific report",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[SPECIALIZED CANDIDATE] NARROWER: Camera Mode reports the camera frequency range/mode; Status.properties can report its current value. This is a camera-specific, narrower current-mode meaning. The source convention for simultaneously operating modes is not adopted as a universal component or DIM rule. [ISA21:S06-R018; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R019",
+        "row_id": "S06-R019",
+        "cell": "I95",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Request carries a command invocation, request identity and parameters, with access-control and expiry context.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-308"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Request",
+            "pdf_page_locator": "74–75",
+            "source_meaning": "Request holds command name, request id, args, source/time and access-control fields."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.7 Commanding",
+            "pdf_page_locator": "31–33",
+            "source_meaning": "Request invocation and authorization/forwarding separate from execution."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-308",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action.",
+        "peer_difference": "AAS operation invocation and SAPIENT tasking may serve a common need while preserving separate request, authorization and execution semantics.",
+        "negative_equivalence_boundary": "A type definition or capability declaration does not prove an actual issued Request, permission or performed/achieved hardware control.",
+        "before": "≈ Request message · command invocation, not proven execution",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: Request carries a command invocation, request identity and parameters, with access-control and expiry context. Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action. [ISA21:S06-R019; F3-02]"
+      },
+      {
+        "decision_id": "F3-02-S06-R020",
+        "row_id": "S06-R020",
+        "cell": "I96",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Response reports ongoing or final request disposition and result values.",
+        "relation": "PARTIAL",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "source_ids": [
+          "ISA-DMS-309",
+          "ISA-DMS-456"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Response",
+            "pdf_page_locator": "75",
+            "source_meaning": "Status/final request disposition and return values."
+          },
+          {
+            "source": "ICD",
+            "original_file_id": "file_000000008de0820e8e33af2cb096bb12",
+            "original_edition": "6.0r5",
+            "section": "§6.7.1 Table23",
+            "pdf_page_locator": "32–33",
+            "source_meaning": "QUEUED/IN PROGRESS are nonfinal; SUCCESS is a final source-reported disposition."
+          },
+          {
+            "source": "CNTR",
+            "original_file_id": "file_00000000e00082109d88d0119f744880",
+            "original_edition": "6.0r4",
+            "section": "§6 AZSV-L-0005–0007",
+            "pdf_page_locator": "44–45",
+            "source_meaning": "Authorization determination SUCCESS with authorized Yes or No is distinct from command success."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-309",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          },
+          {
+            "id": "ISA-DMS-456",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No.",
+        "peer_difference": "Other donor responses must retain their own result/status meaning; transport, authorization decision and achieved hardware effect are separate.",
+        "negative_equivalence_boundary": "Response code is a reported execution state not independent evidence of physical effect; even authorization denial can carry SUCCESS in its separate service context.",
+        "before": "≈ Response message · reported disposition, not measured effect",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "after": "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
+        "additional_F3_original_source_locator": {
+          "source": "DMS",
+          "original_edition": "6.0r12",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "pdf_page_locator": "132–133",
+          "section": "ResponseCode",
+          "source_meaning": "Ongoing/final response enumeration",
+          "standing": "source type/field definition",
+          "depth": "TARGETED_ORIGINAL_TEXT_READ"
+        }
+      },
+      {
+        "decision_id": "F3-02-S06-R022",
+        "row_id": "S06-R022",
+        "cell": "I221",
+        "donor_key": "ISA",
+        "native_subject_and_meaning": "Event Reference links source events for update/correction/recall/resolve semantics.",
+        "relation": "RELATED_BUT_DIFFERENT",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "source_ids": [
+          "ISA-DMS-306",
+          "ISA-DMS-382"
+        ],
+        "original_source_locators": [
+          {
+            "source": "DMS",
+            "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+            "original_edition": "6.0r12",
+            "section": "§6.2 Event.event reference",
+            "pdf_page_locator": "73–74",
+            "source_meaning": "References source-generated earlier Event."
+          },
+          {
+            "source": "TOPICS",
+            "original_file_id": "file_000000006b5881f4988dfb57ac11965c",
+            "original_edition": "6.0r2",
+            "section": "§§2.1–2.6",
+            "pdf_page_locator": "11–14",
+            "source_meaning": "Event correction/recall preserves original message and may aggregate updates; BSO is track correlation."
+          }
+        ],
+        "source_kind_and_standing": [
+          {
+            "id": "ISA-DMS-306",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          },
+          {
+            "id": "ISA-DMS-382",
+            "kind": "data element",
+            "standing": "CORE",
+            "review_depth": "TARGETED_ORIGINAL_ENTRY_TEXT_READ; retained full prior same-edition audit separately"
+          }
+        ],
+        "architecture_standing": null,
+        "rationale": "Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations.",
+        "peer_difference": "AAS representation links and SOSA model lineage have different subjects; neither establishes this ISA event-update relation as universal provenance.",
+        "negative_equivalence_boundary": "A source Event Update is not a universal original historical event versus API copy/representation provenance relationship; Bennett two original records versus four digital copies remain distinct.",
+        "before": "≈ Event Reference · update relation only, not original→copy",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "hold_question": "What original evidence establishes Original event and derived digital representation (proposed DIM) beyond the narrower ISA meaning recorded here?",
+        "after": "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
+        "additional_F3_original_source_locator": {
+          "source": "DMS",
+          "original_edition": "6.0r12",
+          "original_file_id": "file_00000000ca1c81f48a3ccd49273425f8",
+          "pdf_page_locator": "108",
+          "section": "Event Reference",
+          "source_meaning": "Structured reference to source Event",
+          "standing": "source type/field definition",
+          "depth": "TARGETED_ORIGINAL_TEXT_READ"
+        }
+      }
+    ],
+    "counts": {
+      "reviewed_exceptions": 18,
+      "COMMON_CANDIDATE": 9,
+      "SPECIALIZED_CANDIDATE": 2,
+      "MIXED_OR_HELD": 7,
+      "NATIVE_ONLY_EVIDENCE": 0,
+      "UNRESOLVED_CANDIDATE": 0,
+      "new_rows": 0,
+      "prior_classifications_changed": 0
+    },
+    "selective_older_calibration": [
+      {
+        "row_id": "ISA-C-099",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "Physical attachment relation is a common information need, distinct from S06-R007 composition-as-part-of hold.",
+        "source_ids": [
+          "ISA-DMS-099"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-C-147",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "A reported generation-method label remains common; S06-R010 does not establish an identified reusable procedure.",
+        "source_ids": [
+          "ISA-DMS-147"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-K-CAPABILITIES",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "Declared capability catalogue remains common; S06-R016 does not establish allowed operating modes.",
+        "source_ids": [
+          "ISA-DMS-321"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-K-OBSERVABLE-DECL",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "Declared observable definition supports common output metadata, consistent with S06-R012/R013.",
+        "source_ids": [
+          "ISA-DMS-327"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-T-EVENT-TIME",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "Event occurrence time remains common; S06-R015 record/act distinction does not invalidate the timestamp.",
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-T-EVENT-REASON",
+        "retained_status": "COMMON_CANDIDATE",
+        "reason": "Event creation category remains common and does not imply that every Event is an Observation.",
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-T-EVENT-CONTEXT",
+        "retained_status": "SPECIALIZED_CANDIDATE",
+        "reason": "Detector settings at event occurrence remain a scoped specialized context, not a universal observation result.",
+        "source_ids": [
+          "ISA-DMS-306"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-T-REQUEST-REFERENCE",
+        "retained_status": "MIXED_OR_HELD",
+        "reason": "Retain composite Request/Response reference hold; S06-R019/R020 grade each qualified invocation/outcome meaning, not a universal identifier.",
+        "source_ids": [
+          "ISA-DMS-308",
+          "ISA-DMS-309"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      },
+      {
+        "row_id": "ISA-T-AUTHOR",
+        "retained_status": "MIXED_OR_HELD",
+        "reason": "Retain multi-message author/registration-announcer hold; Event.source alone does not resolve every message role.",
+        "source_ids": [
+          "ISA-DMS-304",
+          "ISA-DMS-305",
+          "ISA-DMS-306",
+          "ISA-DMS-307",
+          "ISA-DMS-308",
+          "ISA-DMS-309",
+          "ISA-DMS-310"
+        ],
+        "scope": "Selected meaning check only; all constituent source contracts not newly re-audited."
+      }
+    ],
+    "six_source_questions_preserved": [
+      "ISA-Q001",
+      "ISA-Q002",
+      "ISA-Q003",
+      "ISA-Q004",
+      "ISA-Q005",
+      "ISA-Q006"
+    ],
+    "source_boundary": "Six original editions reopened in targeted passages. This is classification of 18 existing comparisons, not renewed comprehensive ISA source coverage or case evidence.",
+    "next": "F3-03 ONLY on a separate Proceed: SAPIENT 39 ungraded source cells and calibration; AAS O1 waits for F3 owner gate.",
+    "model_or_runtime_decisions": 0,
+    "publication": {
+      "workbook_sha256": "ee187b2f793ef5dc97c6075bde546947b83ab1ec3294b4280dd2d2f4b4e0c4d0",
+      "previous_workbook_sha256": "942ba2f5757343484de35b44dc7ff9625ba237bd9fc0ca2ebf0369269bcc9f78",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "Summary",
+        "Validation",
+        "Legend",
+        "DIM Register"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values_checked": 5664,
+      "source_cells_changed": 18,
+      "new_classification_fills": 11,
+      "explicit_no_fill_holds": 7,
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_open": "UNVERIFIED",
+      "visual_render_review": {
+        "status": "INSPECTED_BEFORE_AND_AFTER",
+        "renderer": "artifact-tool; not Microsoft Excel",
+        "ranges": [
+          "Master Crosswalk!I4:I7",
+          "Master Crosswalk!I13:I16",
+          "Master Crosswalk!I92:I96",
+          "Summary!A17:B23",
+          "Legend!A28:B28",
+          "DIM Register!N2:N5"
+        ],
+        "result": "Candidate fills and text readable; held cells explicit; stale current summary source/classification labels corrected and guidance row heights adjusted."
+      },
+      "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained.",
+      "local_checks": {
+        "crosswalk_verifier": "PASS",
+        "diff_whitespace": "PASS",
+        "repository_artifact_check": "8 PRE-EXISTING document-register/link errors; baseline links confirmed; no new link error introduced."
+      }
+    }
   }
 }

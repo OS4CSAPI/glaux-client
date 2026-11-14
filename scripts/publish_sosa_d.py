@@ -5474,10 +5474,277 @@ def verify_donor_visible_order_repair():
     print("LIMIT: Excel user-facing open/repair validation and original-source semantic completeness are separate.")
 
 
+F3_ISA_EVIDENCE = "ISA21_Source_First_31_Targets_25_Findings_6_Questions_09NOV2026.json"
+F3_ISA_BASE = "00ada697e070adb6eeafeda49819599ee8d3c5c2"
+
+
+def f3_baseline(name):
+    """Read the archived pre-F3-02 bytes, not a reconstructed workbook."""
+    import subprocess
+    root = Path(__file__).resolve().parents[1]
+    return subprocess.check_output(
+        ["git", "show", F3_ISA_BASE + ":" + str((D / name).relative_to(root))], cwd=root)
+
+
+def f3_cell_text(cell):
+    if cell is None:
+        return ""
+    inline = cell.find(q("is"))
+    if inline is not None:
+        return "".join(t.text or "" for t in inline.iter(q("t")))
+    return cell.findtext(q("v")) or ""
+
+
+def f3_put(cell, value):
+    for child in list(cell):
+        cell.remove(child)
+    cell.set("t", "inlineStr")
+    ET.SubElement(ET.SubElement(cell, q("is")), q("t")).text = value
+
+
+def publish_f3_02():
+    """Publish the 18 source-decided ISA cells through the existing workbook."""
+    import html
+    m = load(MASTER)
+    evidence = load(F3_ISA_EVIDENCE)
+    review = evidence["F3_02_classification_review"]
+    records = review["records"]
+    need(m["currentEvidenceCheckpoint"] == "F3_02_SOURCE_CLASSIFIED_PENDING_SAME_XLSX",
+         "F3-02 source decisions precede publication")
+    prior = (D / BOOK).read_bytes()
+    need(prior == f3_baseline(BOOK), "publish against the preserved exact pre-F3-02 workbook")
+    grid = m["review_grid"]
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.csv", "ISA_Correction_Review_07NOV2026.csv"):
+        with (D / name).open("w", newline="", encoding="utf-8") as f:
+            csv.writer(f, lineterminator="\n").writerows(grid)
+    table = ["<table><thead><tr>"]
+    for idx, span in ((0, 4), (4, 6), (10, 5), (15, 1)):
+        table.append(f'<th colspan="{span}">{html.escape(grid[0][idx])}</th>')
+    table += ["</tr><tr>" + "".join("<th>" + html.escape(v) + "</th>" for v in grid[1]) + "</tr></thead><tbody>"]
+    for idx, row in enumerate(grid[2:], 2):
+        table.append('<tr><th colspan="16">' + html.escape(row[0]) + "</th></tr>" if idx in m["review_sections"]
+                     else "<tr>" + "".join("<td>" + html.escape(v) + "</td>" for v in row) + "</tr>")
+    table += ["</tbody></table>"]
+    banner = ("# CURRENT — F3-02 ISA classification checkpoint (14 November 2026)\n\n"
+              "The 18 early ISA comparisons now have source-backed dispositions: nine common candidates, "
+              "two specialized candidates and seven explicit holds. All 337 rows and all other donor/case cells "
+              "are preserved. Classification is not model adoption or evidence of equipment operation. "
+              "Next: F3-03 only on a separate Proceed; AAS native-first research waits for the F3 owner gate. "
+              "The saved workbook matches these values; a clean Microsoft Excel reopen remains unverified.\n\n"
+              "Earlier checkpoint banners below are historical; this paragraph governs current routing.\n\n---\n\n")
+    for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md", "ISA_Correction_Review_07NOV2026.md"):
+        before = f3_baseline(name).decode("utf-8")
+        (D / name).write_text(banner + before[:before.index("<table>")] + "\n".join(table)
+                             + before[before.index("</table>") + 8:], encoding="utf-8")
+    with zipfile.ZipFile(io.BytesIO(prior)) as z:
+        paths = old.sheetpaths(z)
+        replacements = {}
+        def edit_sheet(name, edits, styles=None):
+            root = ET.fromstring(z.read(paths[name]))
+            cells = {c.get("r"): c for c in root.iter(q("c"))}
+            for ref, value in edits.items():
+                if ref not in cells:
+                    need(name == "DIM Register" and ref.startswith("P"), "only blank provenance cells may be materialized")
+                    number = ref[1:]
+                    rr = next(r for r in root.find(q("sheetData")) if r.get("r") == number)
+                    cell = ET.Element(q("c"), {"r": ref, "s": cells["N" + number].get("s", "0")})
+                    at = next((i for i, item in enumerate(rr) if item.get("r", "Z0").rstrip("0123456789") > "P"), len(rr))
+                    rr.insert(at, cell)
+                    cells[ref] = cell
+                f3_put(cells[ref], value)
+                if styles and ref in styles:
+                    cells[ref].set("s", str(styles[ref]))
+            if name in ("Summary", "Validation"):
+                heights = {1: 60, 17: 65, 19: 80, 21: 75, 22: 65, 23: 95}
+                for rr in root.find(q("sheetData")):
+                    if int(rr.get("r")) in heights:
+                        rr.set("ht", str(max(float(rr.get("ht", "15")), heights[int(rr.get("r"))])))
+                        rr.set("customHeight", "1")
+            replacements[paths[name]] = ET.tostring(root, encoding="utf-8", xml_declaration=True)
+        style_ids = {"COMMON_CANDIDATE": 528, "SPECIALIZED_CANDIDATE": 529}
+        edit_sheet("Master Crosswalk", {r["cell"]: r["after"] for r in records},
+                   {r["cell"]: style_ids[r["candidate_status"]] for r in records if r["fill"]})
+        guidance = {
+            "A1": "CURRENT 14 NOV 2026 — F3-02: 18 ISA early comparisons classified from original evidence",
+            "B17": "F3-02 complete: 9 common, 2 specialized, 7 explicit held comparisons; no DIM/Profile adoption. Next separate Proceed: F3-03 SAPIENT only.",
+            "B19": "ISA: 271 colored + 45 held + 0 ungraded source comparisons. Four donors: 390 colored + 84 held + 142 ungraded = 616 source-bearing cells. Other positions retain explicit statuses.",
+            "A19": "Current four-donor classification standing",
+            "B21": "F3-02 reopened targeted passages in DMS 6.0r12, SDD/ICD 6.0r5, CMPT/CNTR 6.0r4 and TOPICS 6.0r2; 18 ISA comparison dispositions and 9 selected older classifications checked. Not a whole-corpus re-audit.",
+            "B22": "Current: 390 candidate colors and 84 explicit source holds. Previous 325 donor colors and 54 AAS colors retained; F3-02 adds 11 ISA colors and 7 explicit no-fill holds. Candidate status is not model adoption.",
+            "A23": "Preserved source and owner holds",
+            "B23": "Targeted passages in six ISA original editions reviewed; prior bounded coverage and six ISA questions retained. AAS native-first research waits for F3 owner gate. Clean Microsoft Excel reopen remains UNVERIFIED."
+        }
+        edit_sheet("Summary", guidance)
+        edit_sheet("Validation", guidance)
+        edit_sheet("Legend", {
+            "A1": "CURRENT LEGEND — F3-02 adds 9 blue and 2 amber ISA cells; 7 explicit holds retain no classification fill",
+            "A28": "F3-02 classification checkpoint",
+            "B28": "Color grades potential information need, not mapping exactness. ISA early-row omissions repaired; 142 other source cells await F3 review. White/banded held cells state why; no donor-absence inference."
+        })
+        register = old.readcells(prior, "DIM Register")
+        regedits = {"M1": "SAPIENT H — candidate / color decision", "N1": "ISA I — candidate / color decision",
+                    "O1": "SOSA J — candidate / color decision"}
+        rowindex = {r["row_id"]: i + 2 for i, r in enumerate(m["rows"])}
+        for r in records:
+            idx = rowindex[r["row_id"]]
+            regedits["N" + str(idx)] = r["candidate_status"] + " — F3-02: " + r["rationale"]
+            ref = "P" + str(idx)
+            regedits[ref] = register.get(ref, "") + " | F3-02 ISA: " + ", ".join(r["source_ids"]) + "; " + r["decision_id"]
+        edit_sheet("DIM Register", regedits)
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, "w") as dst:
+            for info in z.infolist():
+                dst.writestr(info, replacements.get(info.filename, z.read(info.filename)))
+    saved = output.getvalue()
+    (D / BOOK).write_bytes(saved)
+    sha = digest(saved)
+    checkpoint = "F3_02_CLASSIFICATION_SAVED_VERIFIED"
+    m["currentEvidenceCheckpoint"] = checkpoint
+    m["currentWorkbookSha256"] = sha
+    m["workbookSnapshot"].update({"checkpoint": checkpoint, "sha256": sha,
+        "currently_matches_readable_view": True, "lag": "ZERO: JSON, both CSVs, both readable comparisons and same 26-sheet XLSX",
+        "textCheckpoint": "F3_02_ISA_18_CLASSIFICATION_ONLY", "validation_file": F3_ISA_EVIDENCE + "#/F3_02_classification_review/publication"})
+    review["status"] = "18_SOURCE_DECISIONS_PUBLISHED__STOP_BEFORE_F3_03"
+    review["publication"] = {"workbook_sha256": sha, "previous_workbook_sha256": digest(prior),
+        "affected_original_sheets": ["Master Crosswalk", "Summary", "Validation", "Legend", "DIM Register"],
+        "unchanged_sheet_parts": 21, "grid_values_checked": 5664,
+        "source_cells_changed": 18, "new_classification_fills": 11, "explicit_no_fill_holds": 7,
+        "M00_M01_preserved": True, "M02_created": False,
+        "actual_Microsoft_Excel_clean_open": "UNVERIFIED", "visual_render_review": "PENDING",
+        "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained."}
+    aas = load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
+    aas["master_state_current"].update({"checkpoint": checkpoint, "comparison_lag": 0})
+    save(MASTER, m)
+    save(F3_ISA_EVIDENCE, evidence)
+    save("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json", aas)
+    verify_f3_02()
+
+
+def verify_f3_02():
+    """Check actual saved cells/fills and exact preservation against archived bytes."""
+    from collections import Counter
+    from html.parser import HTMLParser
+    m = load(MASTER)
+    e = load(F3_ISA_EVIDENCE)
+    review = e["F3_02_classification_review"]
+    records = review["records"]
+    base = json.loads(f3_baseline(MASTER))
+    original_e = json.loads(f3_baseline(F3_ISA_EVIDENCE))
+    need({k: v for k, v in e.items() if k != "F3_02_classification_review"} == original_e,
+         "all original ISA21 findings, native locators and six questions preserved")
+    need(m["currentEvidenceCheckpoint"] == "F3_02_CLASSIFICATION_SAVED_VERIFIED", "saved F3-02 checkpoint")
+    need(len(records) == 18 and Counter(r["candidate_status"] for r in records) ==
+         {"COMMON_CANDIDATE": 9, "SPECIALIZED_CANDIDATE": 2, "MIXED_OR_HELD": 7}, "all 18 source decisions")
+    need(m["columns"] == base["columns"] and m["review_sections"] == base["review_sections"], "approved layout preserved")
+    changed = {r["cell"]: r for r in records}
+    need(len(changed) == 18 and len(m["rows"]) == 337 and len(m["review_grid"]) == 354, "stable identities and dimensions")
+    indexed = {r["row_id"]: r for r in m["rows"]}
+    for record in records:
+        row = indexed[record["row_id"]]
+        need(row["display"][8] == record["after"] and row["F3_02_ISA_classification"]["candidate_status"] ==
+             record["candidate_status"] and record["source_ids"] and record["original_source_locators"],
+             "source decision resolves to current stable row " + record["row_id"])
+    for before, row in zip(base["rows"], m["rows"]):
+        copied = dict(row)
+        copied.pop("F3_02_ISA_classification", None)
+        copied["display"] = list(copied["display"])
+        copied["display"][8] = before["display"][8]
+        need(copied == before, "preserve all original row/case/donor/model evidence " + row["row_id"])
+    for i, (before, after) in enumerate(zip(base["review_grid"], m["review_grid"]), 1):
+        need(len(after) == 16, "all 16 columns")
+        for j, (v0, v1) in enumerate(zip(before, after), 1):
+            ref = addr(i, j)
+            need(v1 == (changed[ref]["after"] if ref in changed else v0), "only 18 authorized donor cells " + ref)
+    for key in ("F2_5_color_reconciliation", "AAS10_color_reconciliation", "priorHolds", "caseEvidence", "adoptionPolicy"):
+        need(m[key] == base[key], "preserve prior decisions " + key)
+    need(source_csv("Master_Donor_Concept_to_DIM_Crosswalk.csv") == m["review_grid"] ==
+         source_csv("ISA_Correction_Review_07NOV2026.csv"), "both CSV mirrors")
+    class Table(HTMLParser):
+        def __init__(self): super().__init__(convert_charrefs=True); self.rows = []; self.cell = None
+        def handle_starttag(self, tag, attrs):
+            if tag == "tr": self.row = []
+            if tag in ("td", "th"): self.cell = ""; self.span = int(dict(attrs).get("colspan", 1))
+        def handle_data(self, data):
+            if self.cell is not None: self.cell += data
+        def handle_endtag(self, tag):
+            if tag in ("td", "th"): self.row += [self.cell] + [""] * (self.span - 1); self.cell = None
+            if tag == "tr": self.rows.append(self.row)
+    md = (D / "Master_Donor_Concept_to_DIM_Crosswalk.md").read_text()
+    need(md == (D / "ISA_Correction_Review_07NOV2026.md").read_text(), "both readable comparisons")
+    table = Table(); table.feed(md[md.index("<table>"):md.index("</table>") + 8])
+    need(table.rows == m["review_grid"], "every readable comparison value")
+    saved = (D / BOOK).read_bytes()
+    need(digest(saved) == m["currentWorkbookSha256"] == m["workbookSnapshot"]["sha256"] ==
+         review["publication"]["workbook_sha256"], "actual saved workbook hash")
+    with zipfile.ZipFile(io.BytesIO(saved)) as z, zipfile.ZipFile(io.BytesIO(f3_baseline(BOOK))) as prior:
+        paths = old.sheetpaths(z)
+        need(z.testzip() is None and len(paths) == 26 and paths == old.sheetpaths(prior), "same 26-sheet workbook")
+        changed_parts = {paths[n] for n in review["publication"]["affected_original_sheets"]}
+        need(set(z.namelist()) == set(prior.namelist()), "same workbook parts")
+        for name in z.namelist():
+            if name not in changed_parts: need(z.read(name) == prior.read(name), "unchanged package part " + name)
+            if name.endswith((".xml", ".rels")): ET.fromstring(z.read(name))
+        register = old.readcells(saved, "DIM Register")
+        for i, row in enumerate(m["rows"], 2):
+            if "F3_02_ISA_classification" in row:
+                need(register["A" + str(i)] == row["row_id"] and
+                     register["N" + str(i)].startswith(row["F3_02_ISA_classification"]["candidate_status"]) and
+                     "F3-02-" + row["row_id"] in register["P" + str(i)], "visible register classification " + row["row_id"])
+        for sheet in review["publication"]["affected_original_sheets"]:
+            xml = ET.fromstring(z.read(paths[sheet]))
+            for rr in xml.find(q("sheetData")):
+                nums = []
+                for cc in rr.findall(q("c")):
+                    n = 0
+                    for ch in re.match(r"[A-Z]+", cc.get("r")).group(): n = n * 26 + ord(ch) - 64
+                    nums.append(n)
+                    need(cc.get("t") != "e", "no error cells in changed sheet " + sheet)
+                need(nums == sorted(set(nums)), "ordered unique cells in changed sheet " + sheet)
+        actual = old.readcells(saved, "Master Crosswalk")
+        styles = ET.fromstring(z.read("xl/styles.xml"))
+        xfs, fills = list(styles.find(q("cellXfs"))), list(styles.find(q("fills")))
+        root = ET.fromstring(z.read(paths["Master Crosswalk"]))
+        cells = {c.get("r"): c for c in root.iter(q("c"))}
+        priorcells = {c.get("r"): c for c in ET.fromstring(prior.read(paths["Master Crosswalk"])).iter(q("c"))}
+        for row in root.find(q("sheetData")):
+            cols = []
+            for cell in row.findall(q("c")):
+                n = 0
+                for char in re.match(r"[A-Z]+", cell.get("r")).group(): n = n * 26 + ord(char) - 64
+                cols.append(n)
+                need(cell.get("t") != "e", "no Excel error cells")
+            need(cols == sorted(set(cols)), "ordered unique OOXML cells")
+        for i, values in enumerate(m["review_grid"], 1):
+            for j, expected in enumerate(values, 1):
+                ref = addr(i, j)
+                need(actual.get(ref, "") == expected, "saved cell value " + ref)
+        for ref, cell in cells.items():
+            if ref not in changed or not changed[ref]["fill"]:
+                need(cell.get("s") == priorcells[ref].get("s"), "preserved original style " + ref)
+            else:
+                xf = xfs[int(cell.get("s", "0"))]
+                color = fills[int(xf.get("fillId", "0"))].find(".//" + q("fgColor")).get("rgb")
+                need(color[-6:] == changed[ref]["fill"][1:], "source-backed actual candidate fill " + ref)
+        need(sum(bool(r["display"][j]) for r in m["rows"] for j in (6, 7, 8, 9)) == 1348, "all donor statuses visible")
+    for name in ("M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx",
+                 "M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx"):
+        rel = "Manual_Workbook_Versions/" + name
+        need((D / rel).read_bytes() == f3_baseline(rel), "frozen manual version " + name)
+    need(not list((D / "Manual_Workbook_Versions").glob("M02*")), "no unapproved M02")
+    need(m["nextOwnerAction"] == review["next"] == load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")["one_next"], "one next action")
+    print("PASS F3-02: 18 source-backed dispositions; 9 common, 2 specialized, 7 held; 5664 actual saved values and both CSV/Markdown mirrors.")
+    print("PASS: original 337 rows/26 sheets, 21 untouched worksheet parts, existing classifications, cases, source questions and M00/M01 preserved.")
+    print("LIMIT: targeted classification review only; clean Microsoft Excel reopen remains unverified; stop before F3-03.")
+
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
+    if checkpoint=="F3_02_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+        publish_f3_02()
+    elif checkpoint=="F3_02_CLASSIFICATION_SAVED_VERIFIED":
+        verify_f3_02()
+    elif checkpoint=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
         publish_donor_visible_order_repair()
     elif checkpoint=="AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED":
         verify_donor_visible_order_repair()

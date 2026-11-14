@@ -4730,6 +4730,11 @@ def main() -> None:
         mirror = list(csv.reader(f))
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
+    if doc.get("currentEvidenceCheckpoint")=="F3_02_CLASSIFICATION_SAVED_VERIFIED":
+        from publish_sosa_d import verify_f3_02
+        verify_f3_02()
+        return
+
     if doc.get("currentEvidenceCheckpoint")=="AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED":
         from publish_sosa_d import verify_donor_visible_order_repair
         verify_donor_visible_order_repair()
