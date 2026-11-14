@@ -1,3 +1,11 @@
+# L107 — Recover native contract information without changing its subject or standing (14 November 2026)
+
+F3-04B found that earlier comparisons could emphasize hardware “fields,” exact ISA type equivalence or absence of live execution while overlooking original SOSA typed message declarations. Named digital members, enumerations, nested structures, bounded sequences and request/result contracts support qualified information candidates in their own right. Retain hardware correspondence as separate evidence, distinguish the 2022 native model from C239 2023 attachments, and do not infer compilation or implementation from source text.
+
+Keep the subject test equally strict: current component health/mode/settings do not establish per-capability readiness or reporting selections; application lifecycle control is not a component active flag. An allowed enum is not a per-device supported-mode list or default, and a message identifier is not by itself a request/response correlation rule. Preserve current V1.0 versus Future and preliminary task contracts, conditional Rule obligations and exact external-reference holds. The existing SOSA ledger records 33 initial decisions and one prior control-request correction, with six relevant prior classifications retained; this is a classification pass, not a new whole-donor source closure.
+
+---
+
 # L106 — Separate physical context and report subjects before choosing candidate colors (14 November 2026)
 
 F3-04A reopened the original Open Group SOSA physical-context definitions and distinguished them from logical modules, cards and run-time profiles. The source's explicit sensing arrangement, physical constituent and physical host meanings support qualified common candidates even though optional implementation details and other senses of the same terms remain. Keep the evidence specific: descriptive physical context is not an installed inventory, a universal chassis, or approval of a DIM hierarchy.

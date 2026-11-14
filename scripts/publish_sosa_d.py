@@ -5503,6 +5503,11 @@ def f3_put(cell, value):
 
 
 def f3_config(stage):
+    if stage == "F3_04B":
+        return {"base": "5aaa9523ada6c0518666e303c67fb5f5d8da6471",
+                "evidence": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json",
+                "donor": "OpenGroupSOSA", "column": 9, "register": "O", "count": 34,
+                "counts": {"COMMON_CANDIDATE": 16, "SPECIALIZED_CANDIDATE": 7, "MIXED_OR_HELD": 11}}
     if stage == "F3_04A":
         return {"base": "cbc5139e4ab1298f0d9c46e9ee05435ebd33d85f",
                 "evidence": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json",
@@ -5561,6 +5566,15 @@ def publish_f3(stage="F3_02"):
                   "16 previously ungraded comparisons: 6 common, 3 specialized, 7 explicit holds. "
                   "Three prior physical-context classifications corrected to common candidates. "
                   "87 later SOSA comparisons remain ungraded. All 337 rows, other donor/case values, "
+                  "original source evidence and holds are preserved. The same workbook matches these values; "
+                  "clean Microsoft Excel reopening remains unverified. Classification is neither model adoption "
+                  "nor comprehensive source coverage. " + review["next"] +
+                  "\n\nEarlier checkpoint banners below are historical.\n\n---\n\n")
+    if stage == "F3_04B":
+        banner = ("# CURRENT — F3-04B Open Group SOSA classification checkpoint (14 November 2026)\n\n"
+                  "33 previously ungraded comparisons: 15 common, 7 specialized, 11 explicit holds. "
+                  "One prior control-request hold corrected to a common candidate; six relevant prior decisions retained. "
+                  "54 later SOSA comparisons remain ungraded. All 337 rows, other donor/case values, "
                   "original source evidence and holds are preserved. The same workbook matches these values; "
                   "clean Microsoft Excel reopening remains unverified. Classification is neither model adoption "
                   "nor comprehensive source coverage. " + review["next"] +
@@ -5648,12 +5662,26 @@ def publish_f3(stage="F3_02"):
                 "A23": "Preserved source and owner holds",
                 "B23": "Nine SOSA hold families, six ISA questions, SAPIENT source/timestamp holds and all AAS findings retained. 2022 and 2023 editions remain distinct; no DIM/Profile adoption. AAS O1 waits for F3 gate. Clean Microsoft Excel reopen UNVERIFIED."
             }
+        if stage == "F3_04B":
+            guidance = {
+                "A1": "CURRENT 14 NOV 2026 — F3-04B SOSA configuration/control classifications complete",
+                "B17": "33 ungraded: 15 common, 7 specialized, 11 held. One prior control-request hold corrected to common; six prior decisions retained. Next separate Proceed: F3-04C, 21 evidence/message/case comparisons only.",
+                "A19": "Current four-donor classification standing",
+                "B19": "Open Group SOSA: 49 colored + 18 held + 54 ungraded = 121. Four donors: 439 colored + 123 held + 54 ungraded = 616 source-bearing comparisons.",
+                "B21": "Targeted C239 2023 management/task/interaction text and selected support table, 2022 DSDM passages and 20 IDL files examined. 34 comparison changes; no whole-corpus, compilation or 2023-native-byte equivalence claim.",
+                "B22": "23 newly colored cells. Typed fields, command contracts and bounded collections remain useful without exact ISA equivalence. Current component condition is not per-capability readiness; preliminary task and Future interfaces stay qualified.",
+                "A23": "Preserved source and owner holds",
+                "B23": "Nine SOSA hold families, six ISA questions, SAPIENT source/timestamp holds and all AAS findings retained. 2022 and 2023 editions remain distinct; no DIM/Profile adoption. AAS O1 waits for F3 gate. Clean Microsoft Excel reopen UNVERIFIED."
+            }
         edit_sheet("Summary", guidance)
         edit_sheet("Validation", guidance)
         edit_sheet("Legend", {
             "A1": "CURRENT LEGEND — " + label + ": candidate colors and explicit held comparisons",
             "A28": label + " classification checkpoint",
             "B28": ("Color grades potential information, not exact mapping or model adoption. "
+                     "F3-04B: 33 SOSA exceptions dispositioned and one prior hold corrected; 54 comparisons remain ungraded. Blue/amber retain qualified information; explicit holds preserve unsupported relations."
+                     if stage == "F3_04B" else
+                     "Color grades potential information, not exact mapping or model adoption. "
                      "F3-03: SAPIENT fully dispositioned at comparison level; 103 SOSA comparisons still ungraded. "
                      "Purple timestamp conflict and white/banded explicit holds retain their reasons."
                      if stage == "F3_03" else
@@ -5847,6 +5875,28 @@ def verify_f3(stage="F3_02"):
             elif "I" in row.get("F2_5_cell_classification", {}):
                 observed["colored" if row["F2_5_cell_classification"]["I"]["requested_fill"] else "held"] += 1
         need(observed == {"colored": 26, "held": 8}, "34 classified SOSA comparisons; 87 remain ungraded")
+    if stage == "F3_04B":
+        initial = [r for r in records if r["review_set"] == "33_UNGRADED"]
+        calibration = [r for r in records if r["review_set"] == "PRIOR_CLASSIFICATION_CALIBRATION"]
+        need(len(initial) == 33 and len(calibration) == 1, "bounded second SOSA packet")
+        boundary = original_e["F3_04A_classification_review"]["next_packet_boundary"]["records"]
+        need({r["row_id"] for r in initial} == {r["row_id"] for r in boundary}, "exact previously authorized 33 rows")
+        need(Counter(r["candidate_status"] for r in initial) == review["initial_33_status_counts"], "33 original exception outcomes")
+        need(Counter(r["candidate_status"] for r in calibration) == review["calibration_change_status_counts"], "one prior classification correction")
+        need(calibration[0]["row_id"] == "S06-R019", "only relevant control-request calibration changed")
+        for key in ("F3_02_classification", "F3_03_classification", "F3_04A_classification"):
+            need(m[key] == base[key], "previous classification checkpoints preserved " + key)
+        observed = Counter()
+        for row in m["rows"]:
+            current = row.get(rowkey) or row.get("F3_04A_OpenGroupSOSA_classification")
+            if current:
+                observed["colored" if current["fill"] else "held"] += 1
+            elif "I" in row.get("F2_5_cell_classification", {}):
+                observed["colored" if row["F2_5_cell_classification"]["I"]["requested_fill"] else "held"] += 1
+        need(observed == {"colored": 49, "held": 18}, "67 classified SOSA comparisons; 54 remain ungraded")
+        need(len(review["prior_calibration_retained"]) == 6, "six prior decisions explicitly retained")
+        need(len(review["next_packet_boundary"]["records"]) == 21 and
+             len(review["next_packet_boundary"]["outside_records"]) == 33, "next bounded packet and later remainder")
     print(f"PASS {label}: {len(records)} source-backed dispositions; 5664 actual saved values and both CSV/Markdown mirrors.")
     print("PASS: original 337 rows/26 sheets, 21 untouched worksheet parts, other donor/case evidence and M00/M01 preserved.")
     print("LIMIT: targeted classification review only; clean Microsoft Excel reopen remains unverified; stop at current stage.")
@@ -5863,7 +5913,11 @@ def verify_f3_02():
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="F3_04A_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+    if checkpoint=="F3_04B_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+        publish_f3("F3_04B")
+    elif checkpoint=="F3_04B_CLASSIFICATION_SAVED_VERIFIED":
+        verify_f3("F3_04B")
+    elif checkpoint=="F3_04A_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
         publish_f3("F3_04A")
     elif checkpoint=="F3_04A_CLASSIFICATION_SAVED_VERIFIED":
         verify_f3("F3_04A")
