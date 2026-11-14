@@ -4193,7 +4193,7 @@ def publish_aas_qualified(step_code,previous_step):
     led=load(fn);step=led[step_code];m=load(MASTER)
     def check(ok,why):
         if not ok:raise AssertionError(step_code+": "+why)
-    check(step["status"] in ("SCHEMA_SOURCE_READ__PUBLISHER_PENDING","SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING"),"source-stage gate")
+    check(step["status"] in ("SCHEMA_SOURCE_READ__PUBLISHER_PENDING","SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING","PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING"),"source-stage gate")
     check(m["currentEvidenceCheckpoint"]==previous_step+"_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED","prior original canonical step baseline only")
     check(len(step["preflight_head"])==40 and all(x in "0123456789abcdef" for x in step["preflight_head"]),"pinned preflight branch HEAD")
     check(len(step["original_items"])==step["counts"]["native_findings"] and len(step["comparison_updates"])==step["counts"]["master_cells_changed"] and len(step["source_to_master_changes"])==0,"source/target counts")
@@ -4403,6 +4403,9 @@ def publish_aas05():
 def publish_aas06():
     return publish_aas_qualified("AAS06","AAS05")
 
+def publish_aas07():
+    return publish_aas_qualified("AAS07","AAS06")
+
 def verify_aas_saved(step="AAS03"):
     """Read-only verification of the already authored AAS workbook checkpoint.
 
@@ -4491,11 +4494,13 @@ def verify_aas_saved(step="AAS03"):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS06",{}).get("status")=="SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING":
+    if checkpoint=="AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS07",{}).get("status")=="PINNED_PART2_SELECTED_SOURCE_REVIEW_COMPLETE__SAVED_PUBLICATION_PENDING":
+        publish_aas07()
+    elif checkpoint=="AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS06",{}).get("status")=="SOURCE_FIRST_PART2_SELECTED_INTERFACES_COMPLETE__SAVED_PUBLICATION_PENDING":
         publish_aas06()
     elif checkpoint=="AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED" and load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS05",{}).get("status")=="SCHEMA_SOURCE_READ__PUBLISHER_PENDING":
         publish_aas05()
-    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
+    elif checkpoint in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
         verify_aas_saved(checkpoint.split("_")[0])
     elif checkpoint=="AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED":
         print("AAS02 G already published; no workbook mutation")
