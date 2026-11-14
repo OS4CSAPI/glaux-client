@@ -1,3 +1,9 @@
+# L90 — Preserve representation differences during structural comparison (AAS03, 13 November 2026)
+
+Normal AAS JSON omits empty aggregations; the retained ISA source distinguishes a supplied empty collection from an omitted update. Preserve this as a representation-specific conflict and hold Part 2 update semantics separately. A serialized property name, model discriminator, nested value structure or generic relation does not establish equipment identity, physical composition or exact cross-donor equivalence. Record optional native cardinalities, experimental standing and unresolved include macros from the pinned edition; do not repair a missing source rule by inference. [AAS03 findings](AAS03_Original_Part1_Submodels_Elements_and_Structures_13NOV2026.md) · [original-source ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json).
+
+---
+
 # L89 — AAS source-qualified column integration must verify 26 original workbook sheets and preserve all prior donor colors (13 November 2026)
 
 AAS02-G **published eight existing-row** `RELATED/PARTIAL` donor-to-DIM research comparisons from 42 original Part1 v3.2.0 source items/57 qualified source-to-row links. The correct donor-fairness unit is **distinct native meaning with scoped source caveats**, not generated fields, source event counts, linked rows or mandatory model classes; these eight composite AAS research cells remain deliberately **uncolored** pending per-item source-specific classification rather than incorrectly forced COMMON/SPECIALIZED/NATIVE-ONLY. The previous owner-approved AAS-32 G insertion shifts the prior donor source columns and preserves old relative order, four original cases, OGC foundation and rightmost proposed DIM without changing any existing cell content. [Cumulative original source evidence](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json) · [AAS02 native original research](AAS02_Original_Part1_Identity_Asset_Shell_Relationship_Review_13NOV2026.md).

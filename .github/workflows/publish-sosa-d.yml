@@ -48,8 +48,8 @@ jobs:
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/F2_5_Workbook_Validation_13NOV2026.json
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS02_G_Column_Workbook_Validation_13NOV2026.json
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS01_Original_Source_Corpus_Coverage_13NOV2026.json
-          if git diff --cached --quiet; then echo "No new source-qualified canonical workbook publication"; exit 1; fi
-          git commit -m "research(dim-v2): AAS02 G source-qualified original 26-sheet XLSX value/color preservation verified"
+          if git diff --cached --quiet; then echo "Committed canonical workbook checkpoint verified; no mutation needed"; exit 0; fi
+          git commit -m "research(dim-v2): verified source-qualified canonical workbook checkpoint"
           git push origin HEAD:research/dim-profile-v2
       - name: Confirm actual remote commit contains published result
         run: |

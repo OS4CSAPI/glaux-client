@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "6ddffebaa4dcf6950ce0bb675115f2e122638e6e34b58a2a3b7df4b4e35d87ab",
+  "currentWorkbookSha256": "0c0ffd68157bd6436e133f5718e1fca202c4d6a490c87b6518d76fce848e8ae7",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -284,7 +284,7 @@
       "acebpmet meteorological station",
       "",
       "≈ Device",
-      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]",
       "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
       "≈ ISA composition via CIC · integration collection, not physical unity",
       "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
@@ -338,7 +338,7 @@
       "",
       "≈ Transducer Interface Module (TIM)",
       "≈ ComponentType (can include software)",
-      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]",
       "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
       "≈ composition member · functional integration, not physical part-of",
       "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
@@ -356,7 +356,7 @@
       "",
       "",
       "≈ ConnectsTo",
-      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]",
       "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
       "≈ CIC-to-member interface · communications, not proved cable",
       "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
@@ -536,7 +536,7 @@
       "ATemp; F_ATemp; F_Record (distinct original fields)",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]",
       "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
       "≈ Observable Declaration (CCD.observables) · declared field, not value",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
@@ -554,7 +554,7 @@
       "station ambient air temperature (ATemp)",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — semanticId/ConceptDescription can identify the meaning of a property. They do not supply an observation act, feature of interest or evidence that two dictionary concepts are equivalent. [AAS03-N019, AAS03-N020, AAS03-N028]",
       "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
       "≈ Event observables · reported variable, not OMS observedProperty",
       "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
@@ -968,7 +968,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "",
+      "RELATED: AAS v3.2 — File provides a locator; Blob embeds content (base64 in normal JSON). These can carry media, but no association with a particular observation or acquisition is established by those classes alone. [AAS03-N008, AAS03-N009, AAS03-N026]",
       "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
       "Media [observable]",
       "Not assessed here",
@@ -1508,7 +1508,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — A template Property can express type, semantic meaning and qualifiers without a value. Mutability, publication policy and a full ISA property contract are not established by this structure. [AAS03-N002, AAS03-N005, AAS03-N019, AAS03-N020, AAS03-N023]",
       "",
       "Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",
       "RELATED: C239 §14 runtime-environment configuration identifies software images/resources; not an ISA-style declared named property, mutability, range, or an OGC ObservedProperty. [G2-7R]",
@@ -1598,7 +1598,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Submodel templates and nested collections/lists can describe structured information. A Submodel template and a data specification template serve different purposes; neither is automatically an ISA named custom-type declaration. [AAS03-N002, AAS03-N015, AAS03-N016, AAS03-N021]",
       "",
       "Custom Type Declaration.name / description / fields [0+]",
       "RELATED (2022 v1 DSDM/IDL): native DIV-3 Message Support, including SensorComponent_Info, defines typed SOSA messages, not ISA Custom Type declarations or adopted CSAPI JSON schemas. Original 2023 C239 native equivalence unverified. [G3-N2]",
@@ -1616,7 +1616,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Named collection members can carry value types, semantic identifiers and qualifiers. ISA field omission rules and optionality require separate alignment; list children use positional referencing. [AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023, AAS03-R-AASd-117, AAS03-R-AASd-128]",
       "",
       "Field Declaration.name / description / type / structure / optional",
       "NO_ESTABLISHED for ISA custom-structure fields: C239 §13 AMPS “Protocol Field,” modifiers, lanes, physical pin tables and port/profile descriptions refer to hardware naming and connector geometry, not general digital property/JSON field declarations. [G2-7A/B/C/E/F/I/J]",
@@ -1634,7 +1634,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — valueType identifies a primitive value type, while typeValueListElement identifies an element type. JSON modelType is a serialization discriminator. None alone establishes ISA custom-type-name semantics. [AAS03-N005, AAS03-N016, AAS03-N027, AAS03-N033]",
       "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
       "Type → Type Name | Custom Type Name",
       "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
@@ -1652,7 +1652,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]",
       "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
       "Structure → Single | List | Associative Array | Tree; min/max length or depth",
       "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
@@ -1670,7 +1670,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Experimental Range supplies typed min/max values. These do not establish permitted/excluded values, endpoint inclusion or an ISA Range Declaration. [AAS03-N007]",
       "RELATED: DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations. [SAP05-N04,SAP05-N14]",
       "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
       "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
@@ -4262,7 +4262,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]",
       "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
       "Name Value Pair · name + Wildcard value",
       "Not assessed here",
@@ -4280,7 +4280,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — Collection groups named values with unique idShort names. Normal JSON omits an empty aggregation rather than sending an empty array; ISA empty-capable associative payloads require an explicit translation decision. [AAS03-N015, AAS03-N025, AAS03-R-AASd-022]",
       "",
       "Associative Array · values: Name Value Pair [0+]",
       "Not assessed here",
@@ -4298,7 +4298,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]",
       "",
       "List · values: Wildcard [0+]",
       "Not assessed here",
@@ -4316,7 +4316,7 @@
       "",
       "",
       "",
-      "",
+      "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]",
       "",
       "Custom Type · fields: Name Value Pair [0+]",
       "Not assessed here",
@@ -4334,7 +4334,7 @@
       "",
       "",
       "",
-      "",
+      "RELATED: AAS v3.2 — Nested collections/lists support recursive information structures. They do not require ISA same-datatype nodes, a named value at each node or ISA child-list semantics. [AAS03-N015, AAS03-N016, AAS03-N017]",
       "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
       "Tree · value + children; same node datatype",
       "Not assessed here",
@@ -4388,7 +4388,7 @@
       "",
       "",
       "",
-      "",
+      "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]",
       "",
       "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
       "Not assessed here",
@@ -5090,7 +5090,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity and semantically qualified relationships can represent composition. Relationship annotations can qualify a link, but physical attachment, observed installation and applicable time require separate evidence. [AAS03-N011, AAS03-N012, AAS03-N013, AAS03-N014]",
       "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
       "Relationship",
       "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
@@ -7403,7 +7403,7 @@
         "acebpmet meteorological station",
         "",
         "≈ Device",
-        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]",
         "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
         "≈ ISA composition via CIC · integration collection, not physical unity",
         "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
@@ -7725,6 +7725,23 @@
         "original_master_row_id": "S06-R005",
         "provisional_display": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "S06-R005",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N001",
+          "AAS03-N002",
+          "AAS03-N003",
+          "AAS03-N015",
+          "AAS03-N016"
+        ],
+        "meaning": "Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -8279,7 +8296,7 @@
         "",
         "≈ Transducer Interface Module (TIM)",
         "≈ ComponentType (can include software)",
-        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]",
         "NO_ESTABLISHED: Table96 Equipment/Passive sensor/Camera classifies a possible detected target, NOT an installed constituent or a source-certified hardware part-of relationship. [SAP06-N02]",
         "≈ composition member · functional integration, not physical part-of",
         "NARROWER/RELATED: C239 §4 Hardware Element, physical PIC, aperture, chassis and connectors are specialized physical constituents; logical Module and software run-time environment (RTE) are different roles. The 2022 v1 DSDM Component/ModuleImplementation may be physical or software. No one-to-one card/module/installed-System mapping, part count or universal chassis follows; C239 native equivalence unverified. [SOSA-D/G2-2/G2-6A/G2-7T/G3-N2]",
@@ -8861,6 +8878,21 @@
         "original_master_row_id": "S06-R007",
         "provisional_display": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "S06-R007",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N013",
+          "AAS03-N014",
+          "AAS03-R-AASd-014"
+        ],
+        "meaning": "Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -8886,7 +8918,7 @@
         "",
         "",
         "≈ ConnectsTo",
-        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]",
         "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
         "≈ CIC-to-member interface · communications, not proved cable",
         "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
@@ -9284,6 +9316,22 @@
         "original_master_row_id": "S06-R008",
         "provisional_display": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "S06-R008",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N010",
+          "AAS03-N011",
+          "AAS03-N012",
+          "AAS03-N018"
+        ],
+        "meaning": "ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -11194,7 +11242,7 @@
         "ATemp; F_ATemp; F_Record (distinct original fields)",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic. [AAS03-N003, AAS03-N005, AAS03-N019]",
         "RELATED: BSI file references and out-of-scope video guidance do not establish that each vendor stream or linked file is a standardized CSAPI/SWE observed output field. [SAP06-N15,SAP06-N16]",
         "≈ Observable Declaration (CCD.observables) · declared field, not value",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
@@ -11500,6 +11548,21 @@
           "rationale": "Explicit F2-2 original native item/row mapping shares one candidate status; restricted originals remain held.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "S06-R012",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N003",
+          "AAS03-N005",
+          "AAS03-N019"
+        ],
+        "meaning": "A Property can describe a typed field and its semantics. It does not by itself say that the field is an emitted sensor output or logger diagnostic.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -11522,7 +11585,7 @@
         "station ambient air temperature (ATemp)",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — semanticId/ConceptDescription can identify the meaning of a property. They do not supply an observation act, feature of interest or evidence that two dictionary concepts are equivalent. [AAS03-N019, AAS03-N020, AAS03-N028]",
         "NO_ESTABLISHED: SAPIENT's detected-object class and behaviour labels describe targets/activities, not an exact OGC ObservableProperty URI or measured physical quantity. [SAP06-N02,SAP06-N05]",
         "≈ Event observables · reported variable, not OMS observedProperty",
         "RELATED: C239 glossary Sensor estimates external properties and produces quantitative data, but specifies no equivalent OGC ObservedProperty identifier or controlled vocabulary. [G2-7T, Sensor definition]",
@@ -11607,6 +11670,21 @@
         "negative_equivalence": "SAPIENT detected-object taxonomy and informative Annex integrations do not establish physical equipment taxonomy, observed vendor installation, standard video streaming or adopted DIM/Profile models",
         "DIM_Profile_adopted": false,
         "not_runtime_conformance": true
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "S06-R013",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N019",
+          "AAS03-N020",
+          "AAS03-N028"
+        ],
+        "meaning": "semanticId/ConceptDescription can identify the meaning of a property. They do not supply an observation act, feature of interest or evidence that two dictionary concepts are equivalent.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -13396,7 +13474,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "",
+        "RELATED: AAS v3.2 — File provides a locator; Blob embeds content (base64 in normal JSON). These can carry media, but no association with a particular observation or acquisition is established by those classes alone. [AAS03-N008, AAS03-N009, AAS03-N026]",
         "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
         "Media [observable]",
         "Not assessed here",
@@ -13521,6 +13599,21 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-C-146",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N008",
+          "AAS03-N009",
+          "AAS03-N026"
+        ],
+        "meaning": "File provides a locator; Blob embeds content (base64 in normal JSON). These can carry media, but no association with a particular observation or acquisition is established by those classes alone.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -16608,7 +16701,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — A template Property can express type, semantic meaning and qualifiers without a value. Mutability, publication policy and a full ISA property contract are not established by this structure. [AAS03-N002, AAS03-N005, AAS03-N019, AAS03-N020, AAS03-N023]",
         "",
         "Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",
         "RELATED: C239 §14 runtime-environment configuration identifies software images/resources; not an ISA-style declared named property, mutability, range, or an OGC ObservedProperty. [G2-7R]",
@@ -16672,6 +16765,23 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-PROPERTY-DECL",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N002",
+          "AAS03-N005",
+          "AAS03-N019",
+          "AAS03-N020",
+          "AAS03-N023"
+        ],
+        "meaning": "A template Property can express type, semantic meaning and qualifiers without a value. Mutability, publication policy and a full ISA property contract are not established by this structure.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -17620,7 +17730,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Submodel templates and nested collections/lists can describe structured information. A Submodel template and a data specification template serve different purposes; neither is automatically an ISA named custom-type declaration. [AAS03-N002, AAS03-N015, AAS03-N016, AAS03-N021]",
         "",
         "Custom Type Declaration.name / description / fields [0+]",
         "RELATED (2022 v1 DSDM/IDL): native DIV-3 Message Support, including SensorComponent_Info, defines typed SOSA messages, not ISA Custom Type declarations or adopted CSAPI JSON schemas. Original 2023 C239 native equivalence unverified. [G3-N2]",
@@ -17677,6 +17787,22 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-CUSTOM-TYPE",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N002",
+          "AAS03-N015",
+          "AAS03-N016",
+          "AAS03-N021"
+        ],
+        "meaning": "Submodel templates and nested collections/lists can describe structured information. A Submodel template and a data specification template serve different purposes; neither is automatically an ISA named custom-type declaration.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -17701,7 +17827,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Named collection members can carry value types, semantic identifiers and qualifiers. ISA field omission rules and optionality require separate alignment; list children use positional referencing. [AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023, AAS03-R-AASd-117, AAS03-R-AASd-128]",
         "",
         "Field Declaration.name / description / type / structure / optional",
         "NO_ESTABLISHED for ISA custom-structure fields: C239 §13 AMPS “Protocol Field,” modifiers, lanes, physical pin tables and port/profile descriptions refer to hardware naming and connector geometry, not general digital property/JSON field declarations. [G2-7A/B/C/E/F/I/J]",
@@ -17851,6 +17977,24 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-FIELD-DECL",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N003",
+          "AAS03-N005",
+          "AAS03-N015",
+          "AAS03-N023",
+          "AAS03-R-AASd-117",
+          "AAS03-R-AASd-128"
+        ],
+        "meaning": "Named collection members can carry value types, semantic identifiers and qualifiers. ISA field omission rules and optionality require separate alignment; list children use positional referencing.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -17878,7 +18022,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — valueType identifies a primitive value type, while typeValueListElement identifies an element type. JSON modelType is a serialization discriminator. None alone establishes ISA custom-type-name semantics. [AAS03-N005, AAS03-N016, AAS03-N027, AAS03-N033]",
         "NO_ESTABLISHED: Namespaced object taxonomy extensions and optional SKOS/OWL pointers are not ISA custom datatype declarations nor an approved DIM equipment class hierarchy. [SAP06-N04,SAP06-N18]",
         "Type → Type Name | Custom Type Name",
         "RELATED but NO_ESTABLISHED exact ISA type hierarchy: C239 §5.7 DIV-1/2/3 and native Appendix B point to SOSA message/data models; 2022 v1 DSDM defines typed measurements/enumerations, not approved universal ISA/CSAPI value types. 2023 native bytes remain unverified. [SOSA-D/G2-4A/G3-N2]",
@@ -18060,6 +18204,22 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-TYPE-CHOICE",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N005",
+          "AAS03-N016",
+          "AAS03-N027",
+          "AAS03-N033"
+        ],
+        "meaning": "valueType identifies a primitive value type, while typeValueListElement identifies an element type. JSON modelType is a serialization discriminator. None alone establishes ISA custom-type-name semantics.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -18092,7 +18252,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]",
         "RELATED: SAPIENT Table96 class/subclass hierarchy and source-specific dock extensions concern target-class inheritance, not generic ISA list/tree value structure. [SAP06-N02,SAP06-N04]",
         "Structure → Single | List | Associative Array | Tree; min/max length or depth",
         "NO_ESTABLISHED: C239 §13 AMPS/count/lane/MT/port syntax describes nested hardware interface geometry and groupings, not ISA Single/List/Associative Array/Tree values or general min/max collection bounds. [G2-7B/E/F]",
@@ -18256,6 +18416,24 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-STRUCTURE",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N015",
+          "AAS03-N016",
+          "AAS03-N017",
+          "AAS03-R-AASd-108",
+          "AAS03-R-AASd-109",
+          "AAS03-R-AASd-138"
+        ],
+        "meaning": "Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -18286,7 +18464,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Experimental Range supplies typed min/max values. These do not establish permitted/excluded values, endpoint inclusion or an ISA Range Declaration. [AAS03-N007]",
         "RELATED: DiscreteThreshold and Priority enums/0–1 alert ranking constrain native task/alert values, not ISA generic Bounded Range or typed permitted/excluded value declarations. [SAP05-N04,SAP05-N14]",
         "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
         "RELATED but NOT general ISA value-range declarations: C239 §13 selects allowed card/profile/dash/protocol, connector and electrical variants with conditionally scoped Rules, examples and physical quantities; a source 100 Ω channel design is not measured value/range metadata for arbitrary sensing properties. [G2-6B/C/D/G2-7A–K]",
@@ -18641,6 +18819,19 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-K-VALUE-RANGE",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N007"
+        ],
+        "meaning": "Experimental Range supplies typed min/max values. These do not establish permitted/excluded values, endpoint inclusion or an ISA Range Declaration.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -33677,7 +33868,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present. [AAS03-N004, AAS03-N005, AAS03-N006, AAS03-N026, AAS03-R-AASd-007, AAS03-R-AASd-012]",
         "PARTIAL: StatusType/status_value and TrackObjectInfo.type/value are source-native named text records, not an exact ISA typed Name Value Pair datatype. [SAP04-N07,SAP04-N12]",
         "Name Value Pair · name + Wildcard value",
         "Not assessed here",
@@ -33753,6 +33944,24 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-NAMED-VALUE",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N004",
+          "AAS03-N005",
+          "AAS03-N006",
+          "AAS03-N026",
+          "AAS03-R-AASd-007",
+          "AAS03-R-AASd-012"
+        ],
+        "meaning": "A named Property carries a typed value or coded value; multilingual values use a separate element type. Normal JSON Property.value is a string interpreted by valueType. A value need not be present.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -33777,7 +33986,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — Collection groups named values with unique idShort names. Normal JSON omits an empty aggregation rather than sending an empty array; ISA empty-capable associative payloads require an explicit translation decision. [AAS03-N015, AAS03-N025, AAS03-R-AASd-022]",
         "",
         "Associative Array · values: Name Value Pair [0+]",
         "Not assessed here",
@@ -33813,6 +34022,21 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-ASSOCIATIVE",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N015",
+          "AAS03-N025",
+          "AAS03-R-AASd-022"
+        ],
+        "meaning": "Collection groups named values with unique idShort names. Normal JSON omits an empty aggregation rather than sending an empty array; ISA empty-capable associative payloads require an explicit translation decision.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -33837,7 +34061,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]",
         "",
         "List · values: Wildcard [0+]",
         "Not assessed here",
@@ -33876,6 +34100,25 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-LIST",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N016",
+          "AAS03-N025",
+          "AAS03-R-AASd-107",
+          "AAS03-R-AASd-108",
+          "AAS03-R-AASd-109",
+          "AAS03-R-AASd-114",
+          "AAS03-R-AASd-115"
+        ],
+        "meaning": "List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -33900,7 +34143,7 @@
         "",
         "",
         "",
-        "",
+        "PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]",
         "",
         "Custom Type · fields: Name Value Pair [0+]",
         "Not assessed here",
@@ -33936,6 +34179,21 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-CUSTOM",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N002",
+          "AAS03-N015",
+          "AAS03-N025"
+        ],
+        "meaning": "A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -33960,7 +34218,7 @@
         "",
         "",
         "",
-        "",
+        "RELATED: AAS v3.2 — Nested collections/lists support recursive information structures. They do not require ISA same-datatype nodes, a named value at each node or ISA child-list semantics. [AAS03-N015, AAS03-N016, AAS03-N017]",
         "NO_ESTABLISHED: Three-level SAPIENT OBJECT class hierarchy is not an ISA recursively typed data-value Tree, nor a certified physical component composition. [SAP06-N02,SAP06-N04]",
         "Tree · value + children; same node datatype",
         "Not assessed here",
@@ -34015,6 +34273,21 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-TREE",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS03-N015",
+          "AAS03-N016",
+          "AAS03-N017"
+        ],
+        "meaning": "Nested collections/lists support recursive information structures. They do not require ISA same-datatype nodes, a named value at each node or ISA child-list semantics.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -34878,7 +35151,7 @@
         "",
         "",
         "",
-        "",
+        "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]",
         "",
         "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
         "Not assessed here",
@@ -34918,6 +35191,19 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-R-LIST-PRESENCE",
+        "relation": "CONFLICT",
+        "source_ids": [
+          "AAS03-N025"
+        ],
+        "meaning": "Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -39515,7 +39801,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity and semantically qualified relationships can represent composition. Relationship annotations can qualify a link, but physical attachment, observed installation and applicable time require separate evidence. [AAS03-N011, AAS03-N012, AAS03-N013, AAS03-N014]",
         "NO_ESTABLISHED: BSI Table32 recursive sub_components models self-described configuration and may include software licensing; does not establish actual physical parent/child attachment of fielded equipment. [SAP03A-N12]",
         "Relationship",
         "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
@@ -39753,6 +40039,22 @@
         "original_master_row_id": "ISA-C-099",
         "provisional_display": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS03_IDTA01001_source_correspondence": {
+        "row_id": "ISA-C-099",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS03-N011",
+          "AAS03-N012",
+          "AAS03-N013",
+          "AAS03-N014"
+        ],
+        "meaning": "Entity and semantically qualified relationships can represent composition. Relationship annotations can qualify a link, but physical attachment, observed installation and applicable time require separate evidence.",
+        "adopted": false,
+        "column": "G",
+        "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+        "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
       }
     },
     {
@@ -48699,7 +49001,11 @@
     "ISA_F2_4_common": 66,
     "ISA_F2_4_specialized": 194,
     "ISA_F2_4_native": 32,
-    "ISA_F2_4_unresolved": 6
+    "ISA_F2_4_unresolved": 6,
+    "AAS03_source_findings": 33,
+    "AAS03_individual_constraint_records": 17,
+    "AAS03_qualified_cell_changes": 19,
+    "AAS_populated_cells": 23
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -48742,17 +49048,17 @@
     "IEEE 1451 Audit": "IEEE 1451 Audit",
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
-  "publicationPolicy": "AAS02 approved column G, eight bounded source-graded research cells; 354x16 exact same original 26-sheet Excel, 325 old colored styles, 67 held mixed cells, 21 untouched historical sheet XML; M00/M01 original protected. NO DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "AAS02_G_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
+  "publicationPolicy": "AAS03 bounded original Part1 research; progressive column G integration in the same 26-sheet workbook. All other case/donor/DIM values and original classified fills retained; no DIM/Profile adoption.",
+  "currentEvidenceCheckpoint": "AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS02_G_SAME_26_SHEET_SAVED_PARITY",
-    "sha256": "6ddffebaa4dcf6950ce0bb675115f2e122638e6e34b58a2a3b7df4b4e35d87ab",
+    "checkpoint": "AAS03_SAVED_PARITY",
+    "sha256": "0c0ffd68157bd6436e133f5718e1fca202c4d6a490c87b6518d76fce848e8ae7",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: all 354x16=5664 saved comparison cells and both mirrors equal canonical JSON",
-    "textCheckpoint": "AAS02_G_SOURCE_QUALIFIED_COMPARISON",
+    "lag": "ZERO: canonical 354x16 grid and saved workbook match",
+    "textCheckpoint": "AAS03_SOURCE_COMPARISON",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -48770,8 +49076,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 26,
-    "validation_file": "AAS02_G_Column_Workbook_Validation_13NOV2026.json",
+    "refreshed_cell_count": 19,
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS03/saved_verification",
     "verifiedPublisherCommit": "81f4bb254e2643319d50d5f49fb87beb6b836c59",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/42750456336",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -49901,7 +50207,7 @@
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
     "text_grid_rows": 354,
-    "saved_xlsx_grid_rows": 346,
+    "saved_xlsx_grid_rows": 354,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
     "color_cell_count": 325,
@@ -49910,10 +50216,11 @@
     "manual_M01_not_created": false,
     "manual_M01_frozen": true,
     "new_AAS_column_G": "SOURCE_QUALIFIED_PUBLISHED",
-    "new_AAS_source_cells": 8,
+    "new_AAS_source_cells": 23,
     "original_325_RGB_cells_preserved_shifted": true,
     "original_67_mixed_cells_held_uncolored": true,
-    "M00_M01_frozen_preserved": true
+    "M00_M01_frozen_preserved": true,
+    "previous_publisher_metadata_scope": "Unprefixed older publisher commit/action fields below describe historic pre-AAS03 runs. Current AAS03 verification is in the cumulative source ledger."
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -51861,7 +52168,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "AAS02 G integrated and saved/verified; STOP before AAS03. A fresh owner Proceed may authorize AAS03 source-first Part1 submodel semantics only.",
+  "nextOwnerAction": "AAS04 only on a separate fresh Proceed: condition, capability, operation/event and version/time semantics under the existing plan; stop before AAS05.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -56481,5 +56788,25 @@
     "M00_M01_preserved": true,
     "DIM_Profile_adopted": false,
     "runtime_conformance_tested": false
+  },
+  "AASEvidence": {
+    "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+    "report": "AAS03_Original_Part1_Submodels_Elements_and_Structures_13NOV2026.md",
+    "AAS02_native_items": 42,
+    "AAS03_counts": {
+      "native_findings": 33,
+      "individual_constraint_records": 17,
+      "attribute_entries": 46,
+      "submodel_element_sections": 24,
+      "selected_json_definitions": 30,
+      "pinned_class_partials": 15,
+      "wrapper_sources": 3,
+      "master_cells_changed": 19,
+      "new_AAS_cells": 15,
+      "total_AAS_cells": 23
+    },
+    "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+    "donor_status": "ACTIVE_INCOMPLETE",
+    "DIM_Profile_adopted": false
   }
 }
