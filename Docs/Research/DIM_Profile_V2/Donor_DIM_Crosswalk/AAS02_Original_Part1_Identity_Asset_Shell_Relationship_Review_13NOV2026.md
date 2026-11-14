@@ -1,3 +1,13 @@
+# CURRENT OWNER DECISION — AAS-32 NEW DONOR COLUMN G APPROVED (13 November 2026)
+
+Following the completed AAS02 original-source review, the owner replied **"Proceed"** to the proposed layout gate, explicitly approving **one AAS-32 comparison column at G**, immediately **after OPC UA Devices F and before SAPIENT v2**, leaving all four source cases left, other donor/OGC columns in their original relative order, and proposed DIM last in **P** once inserted. **The approval does not execute the insertion or publish any AAS mapping cells.** The [one cumulative AAS01/AAS02 source ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json) records approved placement and expected old G–O → new H–P shift without adopting the 42 original native source findings as model classes/fields. Old row IDs, original Excel style values and exact 26 worksheets must be preserved in the next separately authorized source-qualified integration checkpoint.
+
+**Current original master remains unchanged 337 information rows /354×15 = 5,310 saved values**, 325 colored/67 mixed held cells, same one JSON, both CSV, both Markdown and original 26-sheet editable XLSX; living Excel is still identical to protected M01, original M00 untouched. No manual M02 is created or implicitly authorized. AAS source-grade, eight local holds and earlier AAS01/ISA/SOSA/SAPIENT source limitations survive. The owner-approved low10 / likely14 / high21 remaining research forecast is not a fixed number of mandatory iterations.
+
+**ONE NEXT fresh owner "Proceed" executes ONLY approved column-G insertion and AAS02 source-qualified evidence integration** across canonical JSON, both CSV and Markdown comparisons, and SAME editable verified Excel, with new 16-column saved value/style parity, no previously held data lost, exact row/case/OGC/DIM preservation and direct committed workbook link. **STOP before AAS03, DIM/Profile model adoption, Glaux client or deployment**. The historical owner-decision-pending routing at the end of the original AAS02 report below is superseded.
+
+---
+
 # AAS02 — Original Asset Administration Shell Part 1: asset identity, digital shell and relationships
 
 **13 November 2026 · One owner-authorized source-first research step COMPLETE · research/dim-profile-v2 · no model adoption.**
