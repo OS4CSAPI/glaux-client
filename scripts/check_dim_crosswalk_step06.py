@@ -4632,6 +4632,98 @@ def verify_c4_readability(doc: dict, mirror: list[list[str]], md: str) -> None:
     print("LIMIT: SOSA remains PARTIAL—OWNER ACCEPTED, nine source holds and six ISA questions open; no adopted DIM/Profile or hardware conformance")
 
 
+
+def diagnose_real_excel_donor_cells() -> None:
+    """Read-only deep OOXML worksheet integrity/visibility diagnostic.
+
+    This is NOT a Microsoft Excel open/repair test. It exposes differences between
+    canonical source values, explicit worksheet cells, their ordering, and styles.
+    """
+    import hashlib
+    import collections
+    source = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
+    grid = source["review_grid"]
+    from xml.etree import ElementTree as ET
+    book=(BASE/(NAME+".xlsx")).read_bytes()
+    with zipfile.ZipFile(io.BytesIO(book)) as z:
+        wb=ET.fromstring(z.read("xl/workbook.xml"))
+        rels={x.attrib["Id"]:x.attrib["Target"].lstrip("/") for x in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))}
+        paths={x.attrib["name"]:rels[x.attrib["{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"]] for x in wb.findall("s:sheets/s:sheet",{"s":S.strip("{}")})}
+        root=ET.fromstring(z.read(paths["Master Crosswalk"]))
+        sd=root.find(S+"sheetData")
+        style_root=ET.fromstring(z.read("xl/styles.xml"))
+        xfs=style_root.find(S+"cellXfs")
+        fills=style_root.find(S+"fills")
+        cells={}
+        percol=collections.Counter()
+        duplicates=[]
+        out_of_order=[]
+        prev_row=0
+        for rr in sd.findall(S+"row"):
+            row=int(rr.get("r"))
+            if row<=prev_row:out_of_order.append("row "+str(row))
+            prev_row=row
+            prev_col=0
+            for c in rr.findall(S+"c"):
+                ref=c.get("r")
+                mat=re.fullmatch(r"([A-Z]+)([0-9]+)",ref or "")
+                required(mat is not None and int(mat.group(2))==row,"invalid row-to-cell ref "+str(ref))
+                col=colnum(mat.group(1))+1
+                if col<=prev_col:out_of_order.append(ref)
+                prev_col=col
+                if ref in cells:duplicates.append(ref)
+                cells[ref]=c
+                style=int(c.get("s","0"))
+                required(0<=style<len(xfs),"style index out of range "+ref)
+                fill=int(xfs[style].get("fillId","0"))
+                required(0<=fill<len(fills),"fill index out of range "+ref)
+                percol[mat.group(1)]+=1
+        required(not duplicates and not out_of_order,
+                 "Excel-incompatible duplicate/out-of-order worksheet cells "+str((duplicates+out_of_order)[:12]))
+        data_rownums=[i+1 for i,row in enumerate(grid) if i>1 and row[-1]]
+        required(len(data_rownums)==337,"337 information rows in canonical grid")
+        counts={}
+        for col in "GHIJ":
+            csv_blanks=[]
+            xml_blanks=[]
+            mismatches=[]
+            for i in data_rownums:
+                ref=col+str(i);want=grid[i-1][colnum(col)]
+                cell=cells.get(ref)
+                if cell is None:got=""
+                elif cell.find(S+"is") is not None:
+                    got="".join(t.text or "" for t in cell.find(S+"is").iter(S+"t"))
+                else:
+                    v=cell.find(S+"v");got=(v.text if v is not None else "") or ""
+                if not want:csv_blanks.append(ref)
+                if not got:xml_blanks.append(ref)
+                if want!=got:mismatches.append((ref,want[:50],got[:50]))
+            counts[col]={"csv_blanks":len(csv_blanks),"saved_xml_blanks":len(xml_blanks),
+                         "mismatch_count":len(mismatches),"csv_blank_addresses":csv_blanks,
+                         "saved_xml_blank_addresses":xml_blanks}
+            required(not mismatches,"saved XLSX/CSV mismatches "+str(mismatches[:10]))
+        for ref in ("G23","G24","G25","G26"):
+            cell=cells.get(ref); style=cell.get("s","0") if cell is not None else "(missing)"
+            f="(missing)"
+            if cell is not None:
+                fill=fills[int(xfs[int(style)].get("fillId","0"))]
+                fg=fill.find(".//"+S+"fgColor")
+                f=fg.get("rgb") if fg is not None else "(no RGB)"
+            rowno=int(ref[1:]);value=grid[rowno-1][6]
+            print("OPEN-XML-ROW",ref,"style",style,"fill",f,"source_chars",len(value),
+                  "first_text",repr(value[:120]))
+        print("OPEN-XML-PUBLISHER-INSPECTION",{
+           "xlsx_sha256":hashlib.sha256(book).hexdigest(),
+           "original_sheet_count":len(paths),
+           "sheet_row_count":len(sd.findall(S+"row")),
+           "worksheet_cell_count":len(cells),
+           "out_of_order_or_duplicate_count":len(duplicates)+len(out_of_order),
+           "donor_counts":counts})
+        print("LIMIT: Excel screenshot shows G25 empty in Protected View - Repaired; "
+              "this XML-only validation CANNOT verify whether Microsoft Excel's repair "
+              "removed cells or explain which repairs its local copy performed.")
+
+
 def main() -> None:
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
@@ -4641,6 +4733,7 @@ def main() -> None:
     if doc.get("currentEvidenceCheckpoint")=="AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY":
         from publish_sosa_d import verify_aas_owner_view_correction
         verify_aas_owner_view_correction()
+        diagnose_real_excel_donor_cells()
         return
 
     if doc.get("currentEvidenceCheckpoint") in ("AAS03_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS04_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS07_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS08_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED", "AAS09_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED"):
