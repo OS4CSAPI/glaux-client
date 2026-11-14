@@ -10320,7 +10320,7 @@
   },
   "F3_04D_classification_review": {
     "date": "2026-11-14",
-    "status": "SOURCE_DECISIONS_SAVED__PUBLICATION_PENDING",
+    "status": "SOURCE_DECISIONS_PUBLISHED_REMOTE_VERIFIED__STOP_BEFORE_F3_05",
     "authorized_step": "F3-04D only: 33 remaining equipment comparisons and relevant earlier calibration",
     "baseline_commit": "6c81253431361343e8e0351cf54b648958db4425",
     "archive_branch": "archive/dim-crosswalk-pre-f3-04d-20261114",
@@ -13068,7 +13068,39 @@
         "result": "Rendered values and common/specialized/held fills are legible; no clipping observed in the seven selected views. Actual clean Microsoft Excel reopening remains UNVERIFIED."
       },
       "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained.",
-      "remote_status": "PENDING_F3_04D_PUBLICATION_AND_READBACK"
+      "remote_status": "PUBLISHED_READBACK_AND_BOTH_WORKFLOWS_VERIFIED",
+      "published_commit": "1ddc30370fe2586bd91db4262d7816196c7a2859",
+      "published_tree": "315eb32f9769e5a09db2a5065b16f1d97fb6519b",
+      "published_commit_url": "https://github.com/OS4CSAPI/glaux-client/commit/1ddc30370fe2586bd91db4262d7816196c7a2859",
+      "remote_readback": {
+        "status": "PASS",
+        "scope": "All 18 changed file blobs match the verified local checkpoint; fetched commit tree is identical; corrected ledger entries and actual saved workbook bytes read back.",
+        "workbook_blob": "42d7fe0b238f25b9de47028a7bbe7af49a0a79d0",
+        "corrected_locator_entries": 12
+      },
+      "github_checks": [
+        {
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "run_id": 43655660255,
+          "conclusion": "success",
+          "head_sha": "1ddc30370fe2586bd91db4262d7816196c7a2859",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43655660255"
+        },
+        {
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "run_id": 43655660257,
+          "conclusion": "success",
+          "head_sha": "1ddc30370fe2586bd91db4262d7816196c7a2859",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43655660257"
+        }
+      ],
+      "local_checks": {
+        "scoped_saved_workbook_and_source_preservation": "PASS",
+        "source_locator_corrections": "PASS: 12 entries / nine native source items",
+        "syntax_and_whitespace": "PASS",
+        "broad_artifact_verifier": "FAIL: same eight pre-existing register/link errors; no all-repository-green claim."
+      },
+      "publication_recovery_scope": "Completed interrupted F3-04D publication and corrected derived locator labels only. All 33 classifications and six canonical master/workbook/mirror files preserved from recovered local 8f1b1e4. No F3-05 execution."
     },
     "source_locator_correction": {
       "date": "2026-11-14",
