@@ -4454,7 +4454,7 @@ def verify_aas_saved(step="AAS03"):
     def need(ok,why):
         if not ok:raise AssertionError(step+" saved checkpoint: "+why)
     if step=="AAS09":
-        need(m["nextOwnerAction"]==a["next"] and m["AASEvidence"]["report"]==a["report"]
+        need(m["nextOwnerAction"]==ledger.get("one_next",a["next"]) and m["AASEvidence"]["report"]==a["report"]
              and m["workbookSnapshot"]["validation_file"].endswith("#/AAS09/saved_verification"),
              "current recovery metadata agrees with saved checkpoint")
     prefix="Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/"

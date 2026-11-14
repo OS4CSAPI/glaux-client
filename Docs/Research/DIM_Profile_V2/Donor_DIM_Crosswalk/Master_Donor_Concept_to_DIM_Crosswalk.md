@@ -1,3 +1,13 @@
+# CURRENT — AAS10 coverage gate assessed; owner disposition pending (14 November 2026)
+
+**Recommendation: accept the Asset Administration Shell (AAS) comparison as bounded PARTIAL for the scoped donor research. Owner decision is pending; AAS remains active.** The [AAS10 gate report](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) and [cumulative evidence](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json) reconcile 310 retained findings: 257 directly cited across 63 AAS cells and 53 explicitly accounted-for native details, candidates or limits. Coverage remains selected; 310 findings are not 310 fields or requirements, and no completeness percentage is claimed. All 76 historical hold entries have current dispositions, including advanced earlier unread claims and two resolved layout holds.
+
+**Same master and Excel, zero comparison changes.** All 337 information rows / 354×16 values remain the AAS09 snapshot; both CSV mirrors and the same 26-sheet XLSX are unchanged. Current JSON/readable routing carries the AAS10 gate; workbook evidence sheets remain explicitly AAS09, with zero comparison lag. M00/M01, colors, other donor/case/DIM cells and adoption holds are preserved; no M02. One AAS06 citation endpoint was corrected without changing meaning; three short original gate texts are recorded separately from the 310 retained findings.
+
+**ONE NEXT: owner decides bounded PARTIAL acceptance or named further work.** Recommended bounded acceptance requires 0/0/0 further source-research steps; the owner decision remains necessary. Optional focused core/contract completion is estimated at 2/3/5 substantive research steps plus a refreshed gate, not comprehensive certification. No automatic closure, donor transition, model/Profile adoption, client change or deployment. Earlier CURRENT/NEXT banners and arithmetic forecasts are historical where inconsistent; this gate supersedes them.
+
+---
+
 # CURRENT — AAS09 original-source comparison and same 26-sheet workbook VERIFIED (14 November 2026)
 
 AAS09 reviews the four already-rostered industrial templates at their distinct editions: 37 findings, six named constraints and 129 selected native element occurrences. 20 qualified AAS cells (5 new); exact PDF/native/patch/example limitations retained. SAME original 337-row, 354×16, 26-sheet workbook; both CSV and Markdown mirrors; M00/M01 and source colors preserved. [Original source report](AAS09_Industrial_Submodel_Templates_14NOV2026.md) · [Cumulative source ledger and saved verification](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json). AAS remains ACTIVE/incomplete, no DIM/Profile adoption. ONE NEXT separate owner Proceed = AAS10 only; STOP.

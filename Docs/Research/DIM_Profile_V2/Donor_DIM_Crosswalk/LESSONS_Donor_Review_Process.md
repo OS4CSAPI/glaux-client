@@ -1,3 +1,11 @@
+# L97 — Reconcile evidence before asking for donor disposition (AAS10, 14 November 2026)
+
+A closure gate must account separately for inspected source, current cell citations, native information not mapped, conflicts, established boundaries and actual unreviewed material. A source finding without a direct cell citation is not automatically a lost field; preserve its native meaning and disposition. Reconcile stale unread holds against later evidence without erasing their history, and never add overlapping file/page/profile/constraint counts into a completeness percentage. [AAS10](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) provides the bounded owner decision.
+
+A zero-cell coverage gate need not rebuild the workbook: keep its exact source snapshot and evidence sheets labeled, verify current comparison parity, and advance current routing metadata separately. The existing checker must compare the current next-action pointer with the current ledger, while retaining the actual AAS09 workbook report/validation pointers. Owner acceptance, source completeness, mapping, model adoption and runtime conformance remain distinct. **ONE NEXT: owner disposition; no automatic donor transition.**
+
+---
+
 # L96 — Preserve template meaning, edition and evidence limits (AAS09, 14 November 2026)
 
 Industrial application templates are not additional universal chassis votes. Asset hierarchy may describe design/type/lifecycle structures; aspect relationships and capability composition do not automatically mean installed physical composition. Technical-data presentation groups do not supply semantic equivalence or property completeness, and required/offered capability roles do not establish live readiness or issued commands. Keep the original case distinctions and owner adoption gates.
