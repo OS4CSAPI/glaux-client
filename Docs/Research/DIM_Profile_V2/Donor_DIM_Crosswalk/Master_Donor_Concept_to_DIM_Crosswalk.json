@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "7a18f23e2ea3c88d0409b5063d5cb3e13ce449328f3ccfa3fec62032945f3f75",
+  "currentWorkbookSha256": "f5183c9bdca0475b8adbd6c2ab685ac33a39b4f49010f3af9704a977a825f5f6",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -230,7 +230,7 @@
       "acebpmet (station source identifier)",
       "≈ MetaTEDS.UUID (TIM identifier)",
       "",
-      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS06: RELATED — AAS Asset-ID, AAS-ID and base64url HTTP path parameters are distinct from a persistent OGC CSAPI System identifier; discovery and lookup do not authenticate equipment. [AAS06-N002, AAS06-N018, AAS06-N026]",
       "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
       "≈ UCI · ISA component/virtual-component identifier",
       "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
@@ -284,7 +284,7 @@
       "acebpmet meteorological station",
       "",
       "≈ Device",
-      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]",
+      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]\nAAS06: RELATED — Repository returns a digital Asset Administration Shell and registry returns its descriptor; neither proves a real sensing arrangement or that the descriptor is more authoritative than the shell. [AAS06-N003, AAS06-N011, AAS06-N013]",
       "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
       "≈ ISA composition via CIC · integration collection, not physical unity",
       "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
@@ -302,7 +302,7 @@
       "GOES TX321 transmitter, serial 2335",
       "≈ Network Capable Application Processor (NCAP)",
       "",
-      "",
+      "AAS06: RELATED — A technology-specific AAS API service or endpoint is a network participant, but it is not automatically a network-visible physical sensor or participating hardware. [AAS06-N001, AAS06-N020, AAS06-N036]",
       "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
       "≈ ISA component / Controller · network role, not equipment identity",
       "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
@@ -356,7 +356,7 @@
       "",
       "",
       "≈ ConnectsTo",
-      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]",
+      "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]\nAAS06: RELATED — Registry descriptor endpoints and Submodel paths are informational service links, not verified external equipment cables or attachment. [AAS06-N003, AAS06-N004]",
       "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
       "≈ CIC-to-member interface · communications, not proved cable",
       "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
@@ -428,7 +428,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]",
       "",
       "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
       "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
@@ -464,7 +464,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — AAS and Submodel descriptors can expose separate endpoints but are not an observed source of installed component hierarchy or producer-origin equipment attribution. [AAS06-N003, AAS06-N031]",
       "",
       "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
       "NO_ESTABLISHED for ISA composition-interface (CIC) visible/opaque member policy, taskability or source attribution: C239 delegated PIC management, hardware containment and messaging do not imply exposed child Systems. RELATED/PARTIAL: SOSA functional Module and 2022 v1 DSDM SensorComponent/Info identify associations, not public endpoints or observations. [SOSA-D/G2-2/G2-4A/G2-7T/G3-N2]; C239 native equivalence unverified.",
@@ -1832,7 +1832,7 @@
       "",
       "",
       "",
-      "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]",
+      "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "≈ Response message · reported disposition, not measured effect",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -3686,7 +3686,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — Protocol securityAttributes, generic 401/403 failure codes and optional JWS representation are not ISA request-user authorization metadata or verified issuer authentication. [AAS06-N005, AAS06-N016, AAS06-N028]",
       "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
       "Request.access control: Name Value Pair [0+]",
       "RELATED/NO_ESTABLISHED: C239 §§5–6, 12 cover role-specific security, privilege, authentication, key management and conditional transport protection, but do not define ISA per-request access-control name/value metadata or prove an authenticated CSAPI requester. [G2-2/G2-4A/G2-5/G2-7S]",
@@ -3938,7 +3938,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]",
       "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
       "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
       "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
@@ -3974,7 +3974,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]",
       "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
       "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
       "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
@@ -4064,7 +4064,7 @@
       "NOAA CSV + operator metadata; contributor join derived",
       "",
       "",
-      "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]",
+      "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]",
       "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
       "",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -4370,7 +4370,7 @@
       "",
       "",
       "",
-      "",
+      "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]",
       "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
       "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
       "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
@@ -4622,7 +4622,7 @@
       "Not linked here",
       "Not assessed here",
       "Not assessed here",
-      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]",
+      "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]",
       "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
       "Capability Version",
       "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -7027,7 +7027,7 @@
         "acebpmet (station source identifier)",
         "≈ MetaTEDS.UUID (TIM identifier)",
         "",
-        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
+        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS06: RELATED — AAS Asset-ID, AAS-ID and base64url HTTP path parameters are distinct from a persistent OGC CSAPI System identifier; discovery and lookup do not authenticate equipment. [AAS06-N002, AAS06-N018, AAS06-N026]",
         "RELATED: BSI §6.2.4 identifies source Node by UUIDv4 in all messages; source identity is not authenticated durable equipment identity or a CSAPI System identifier. [SAP02-N03, SAP03A-N03] [SAP03A-N03]",
         "≈ UCI · ISA component/virtual-component identifier",
         "PARTIAL (2022 v1 DSDM): Sensor.elementID is a typed integer, not a guaranteed globally persistent System URI. The C239 System glossary definition establishes no persistent unique identifier. The 2023 native companion's byte equivalence is unverified. [G2-7T/G3-N2]",
@@ -7202,6 +7202,17 @@
         "original_master_row_id": "S06-R004",
         "provisional_display": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Globally unique AAS Identifiable.id differs from represented-asset globalAssetId/specific IDs and scoped idShort. Model/external references and URL-shaped identifiers are not necessarily CSAPI System URIs or fetchable devices. Original source IDs: AAS02-N002, AAS02-N006, AAS02-N008, AAS02-N009, AAS02-N013, AAS02-N015, AAS02-N018, AAS02-N019, AAS02-N020, AAS02-N021, AAS02-N024, AAS02-N025, AAS02-N026, AAS02-N027, AAS02-N028, AAS02-N029, AAS02-N034, AAS02-N035, AAS02-N039, AAS02-N040. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.",
         "column": "G"
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N002",
+          "AAS06-N018",
+          "AAS06-N026"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -7403,7 +7414,7 @@
         "acebpmet meteorological station",
         "",
         "≈ Device",
-        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]",
+        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]\nAAS06: RELATED — Repository returns a digital Asset Administration Shell and registry returns its descriptor; neither proves a real sensing arrangement or that the descriptor is more authoritative than the shell. [AAS06-N003, AAS06-N011, AAS06-N013]",
         "RELATED: BSI Annex C describes an optional separately registered middleware Node participating in a SAPIENT network; neither the middleware nor the detected-object taxonomy defines one physical whole sensing assembly. [SAP06-N14,SAP06-N19]",
         "≈ ISA composition via CIC · integration collection, not physical unity",
         "PARTIAL/RELATED: C239 §4.1 SOSA Sensor bounds physical sensing hardware and may contain several modalities; System/Subsystem roles depend on context. 3U/6U PIC, chassis and RTE are specialized implementations, not one common DIM root. The 2022 DSDM Sensor/SensorComponent association is separate lineage, not verified C239 native equivalence. [SOSA-D/G2-4A/G2-6A–6D/G2-7T/G3-N2]",
@@ -7752,6 +7763,17 @@
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N003",
+          "AAS06-N011",
+          "AAS06-N013"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -7775,7 +7797,7 @@
         "GOES TX321 transmitter, serial 2335",
         "≈ Network Capable Application Processor (NCAP)",
         "",
-        "",
+        "AAS06: RELATED — A technology-specific AAS API service or endpoint is a network participant, but it is not automatically a network-visible physical sensor or participating hardware. [AAS06-N001, AAS06-N020, AAS06-N036]",
         "RELATED: Annex C.3 message handling can be a Node that routes, stores or validates communications; a reported network participant does not necessarily correspond to individual sensing hardware. [SAP06-N14]",
         "≈ ISA component / Controller · network role, not equipment identity",
         "RELATED, with NO_ESTABLISHED identity equivalence: C239 §§5.8, 12–15 describe module interactions, logging roles, backplane planes, Ethernet/fiber and runtime network access. These are design interfaces or scoped endpoints, not necessarily independently discoverable IP/CSAPI Systems, real network participants, or observed live services. [SOSA-D/G2-4A/G2-5/G2-6A/G2-7A–7S]",
@@ -8203,6 +8225,17 @@
           "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N001",
+          "AAS06-N020",
+          "AAS06-N036"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -8939,7 +8972,7 @@
         "",
         "",
         "≈ ConnectsTo",
-        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]",
+        "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): ModelReference, ExternalReference and semantic RelationshipElement can express links, but do not prove actual cables, current network connectivity or equipment attachment. Original source IDs: AAS02-N024, AAS02-N025, AAS02-N030, AAS02-N036. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — ReferenceElement and semantically defined relationships can link objects; annotated relationships add supporting data. v3.2 first/second endpoints are optional. Neither structure proves a cable, attachment or reachable equipment. [AAS03-N010, AAS03-N011, AAS03-N012, AAS03-N018]\nAAS06: RELATED — Registry descriptor endpoints and Submodel paths are informational service links, not verified external equipment cables or attachment. [AAS06-N003, AAS06-N004]",
         "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
         "≈ CIC-to-member interface · communications, not proved cable",
         "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
@@ -9353,6 +9386,16 @@
         "ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "classification": "UNCOLORED_PENDING_INDIVIDUAL_CLASSIFICATION"
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N003",
+          "AAS06-N004"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -10105,7 +10148,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]",
         "",
         "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
         "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
@@ -10577,6 +10620,19 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N002",
+          "AAS06-N003",
+          "AAS06-N004",
+          "AAS06-N018",
+          "AAS06-N031"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -10689,7 +10745,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — AAS and Submodel descriptors can expose separate endpoints but are not an observed source of installed component hierarchy or producer-origin equipment attribution. [AAS06-N003, AAS06-N031]",
         "",
         "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
         "NO_ESTABLISHED for ISA composition-interface (CIC) visible/opaque member policy, taskability or source attribution: C239 delegated PIC management, hardware containment and messaging do not imply exposed child Systems. RELATED/PARTIAL: SOSA functional Module and 2022 v1 DSDM SensorComponent/Info identify associations, not public endpoints or observations. [SOSA-D/G2-2/G2-4A/G2-7T/G3-N2]; C239 native equivalence unverified.",
@@ -10993,6 +11049,16 @@
           "rationale": "Aggregate candidate meaning may span multiple native source constructs; source-by-source status cannot be safely inferred from the row label alone. Preserve provisional row classification but DO NOT COLOR pending item-level resolution.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N003",
+          "AAS06-N031"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -20425,7 +20491,7 @@
         "",
         "",
         "",
-        "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]",
+        "NO_ESTABLISHED: AAS v3.2 — The inspected Operation definition and experimental execution-event motivation do not establish acknowledgement, completion or physical effect. Part 2 response contracts remain unreviewed. [AAS04-N003, AAS04-N016]\nAAS06: NO_ESTABLISHED — Generic API HTTP 200/202/4xx statuses and Result objects can acknowledge software requests but do not establish sensing-device command completion, physical effect or ISA outcome. [AAS06-N028]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "≈ Response message · reported disposition, not measured effect",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -20761,6 +20827,15 @@
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "adopted": false,
         "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N028"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -29331,7 +29406,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — Protocol securityAttributes, generic 401/403 failure codes and optional JWS representation are not ISA request-user authorization metadata or verified issuer authentication. [AAS06-N005, AAS06-N016, AAS06-N028]",
         "NO_ESTABLISHED: Alert MODE_CHANGE permission/AlertAck response is a narrow source-specific request, not ISA generic Request.access_control credential metadata. [SAP05-N14,SAP05-N16]",
         "Request.access control: Name Value Pair [0+]",
         "RELATED/NO_ESTABLISHED: C239 §§5–6, 12 cover role-specific security, privilege, authentication, key management and conditional transport protection, but do not define ISA per-request access-control name/value metadata or prove an authenticated CSAPI requester. [G2-2/G2-4A/G2-5/G2-7S]",
@@ -29540,6 +29615,17 @@
           "rationale": "One existing qualified information meaning, linked to F2-4 original-source IDs and grade; source candidate only, not adopted DIM/Profile.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N005",
+          "AAS06-N016",
+          "AAS06-N028"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -30884,7 +30970,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — AAS Registry, Repository, standalone Service and Discovery expose distinct 3.2 service profiles; Full, Read, Query, History and Signature do not imply the same mandatory command support. [AAS06-N001, AAS06-N007, AAS06-N021, AAS06-N022, AAS06-N023, AAS06-N024]",
         "NO_ESTABLISHED: Optional middleware routing, persistence and file services are guidance outside ISA mandatory service-role command contracts; no exact ISA Authorization/Live Data/Historical Data equivalence. [SAP06-N14,SAP06-N15]",
         "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
         "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
@@ -31193,6 +31279,20 @@
           "rationale": "Explicit F2-2 original native item/row mapping shares one candidate status; restricted originals remain held.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N001",
+          "AAS06-N007",
+          "AAS06-N021",
+          "AAS06-N022",
+          "AAS06-N023",
+          "AAS06-N024"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -31424,7 +31524,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — /description profiles declare supported API-operation subsets; they are not an ISA equipment Config report or proof that commands are enabled and ready. [AAS06-N006, AAS06-N007, AAS06-N020, AAS06-N023]",
         "RELATED: BSI Tables15/19 M/D/C and SHALL apply to SAPIENT Registration fields; not the ISA Required/Recommended capability levels or a DIM Profile SHALL by itself. [SAP03A-N01,SAP03A-N05]",
         "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
         "RELATED/NO_ESTABLISHED common catalog: C239 §6/§13–15 use scoped SHALL Rules, SHOULD Recommendations, MAY Permissions, V1.0 versus Future functions and conditional hardware/profile obligations. These are not one ISA required/recommended capability list, mandatory DIM field or universal CSAPI SHALL. [G2-1/2/G2-6A–D/G2-7A–T]",
@@ -31942,6 +32042,18 @@
           "rationale": "All mapped native findings have the same provisional meaning grade; only the existing source-qualified SAPIENT cell receives a color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N006",
+          "AAS06-N007",
+          "AAS06-N020",
+          "AAS06-N023"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -32566,7 +32678,7 @@
         "NOAA CSV + operator metadata; contributor join derived",
         "",
         "",
-        "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]",
+        "RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]",
         "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
         "",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
@@ -32938,6 +33050,16 @@
         "source_pin": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
         "adopted": false,
         "classification": "UNASSIGNED_SOURCE_RESEARCH_ONLY"
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N016",
+          "AAS06-N038"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -34923,7 +35045,7 @@
         "",
         "",
         "",
-        "",
+        "AAS06: RELATED — AAS profile URI/version and HTTP serialization modifiers describe available API representation choices; versioned URL prefix and identity encoding are not guaranteed common CSAPI framing. [AAS06-N007, AAS06-N025, AAS06-N026, AAS06-N029]",
         "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
         "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
         "RELATED/NO_ESTABLISHED by scope: C239 §§5.8/11/15 distinguish service bindings (SOAP/XML, SYSLOG/UDP, RF MDM/UDP, DDS/RTPS, Protobuf/AMQP/ZMTP) and host adapters from §§13–14 physical AMPS/ANS/VITA port profiles or OCI/OVF runtime packaging. Hardware optical/RF/video/serial standards, 1000BaseT and Ethernet speed auto-negotiation are not ISA negotiated message encoding/model version, OGC JSON/SensorML representation/profile negotiation, deployed connection or a CSAPI DataStream. [SOSA-D/G2-4A/G2-4B/G2-7Q/G2-7R/G2-7S; full per-row source IDs]",
@@ -35451,6 +35573,18 @@
           "rationale": "Mapped BSI/Protobuf native findings carry distinct provisional meanings; status conflict held, not a source-free color.",
           "no_adopted_DIM_or_CSAPI_Profile": true
         }
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N007",
+          "AAS06-N025",
+          "AAS06-N026",
+          "AAS06-N029"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
       }
     },
     {
@@ -38026,7 +38160,7 @@
         "Not linked here",
         "Not assessed here",
         "Not assessed here",
-        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]",
+        "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]",
         "NO_ESTABLISHED: BSI Table32 reports hardware_version and software_version when applicable, not an established ISA component configuration-parameter version. [SAP03A-N12]",
         "Capability Version",
         "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
@@ -38177,6 +38311,17 @@
         ],
         "relation": "RELATED",
         "source_standing": "PINNED_SELECTED_ORIGINAL_SCHEMA_BLOCKS",
+        "DIM_Profile_adopted": false,
+        "not_source_completeness_or_runtime": true
+      },
+      "AAS06_source_correspondence": {
+        "source_ids": [
+          "AAS06-N012",
+          "AAS06-N014",
+          "AAS06-N035"
+        ],
+        "relation": "RELATED",
+        "source_standing": "PINNED_ORIGINAL_SOURCE_SPECIFIC_REVIEW",
         "DIM_Profile_adopted": false,
         "not_source_completeness_or_runtime": true
       }
@@ -49476,16 +49621,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS03 bounded original Part1 research; progressive column G integration in the same 26-sheet workbook. All other case/donor/DIM values and original classified fills retained; no DIM/Profile adoption.",
-  "currentEvidenceCheckpoint": "AAS05_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS06_SAME_26_SHEET_SAVED_XLSX_PARITY_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS05_SAVED_PARITY",
-    "sha256": "7a18f23e2ea3c88d0409b5063d5cb3e13ce449328f3ccfa3fec62032945f3f75",
+    "checkpoint": "AAS06_SAVED_PARITY",
+    "sha256": "f5183c9bdca0475b8adbd6c2ab685ac33a39b4f49010f3af9704a977a825f5f6",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
     "lag": "ZERO: 354x16 JSON/both CSV/both Markdown/saved workbook",
-    "textCheckpoint": "AAS05_SELECTED_ORIGINAL_SCHEMA_CROSS_FORMAT",
+    "textCheckpoint": "AAS06_SELECTED_ORIGINAL_SOURCE_CROSSWALK",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -50686,6 +50831,21 @@
       "ISA-A-TIME-BASIS",
       "ISA-C-048",
       "ISA-A-EXTENSION-STANDING"
+    ],
+    "AAS06_affected_row_ids": [
+      "S06-R004",
+      "S06-R005",
+      "S06-R006",
+      "S06-R008",
+      "ISA-A-SERVICE-ROLE",
+      "ISA-A-BASELINE-CAPABILITIES",
+      "ISA-A-NETWORK-CONTEXT",
+      "ISA-A-CONNECTION-PRESENTATION",
+      "ISA-A-MEMBER-EXPOSURE",
+      "S06-R021",
+      "ISA-C-048",
+      "ISA-T-ACCESS",
+      "S06-R020"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -57304,5 +57464,20 @@
     "ISA-A-TIME-BASIS",
     "ISA-C-048",
     "ISA-A-EXTENSION-STANDING"
+  ],
+  "AAS06_affected_row_ids": [
+    "S06-R004",
+    "S06-R005",
+    "S06-R006",
+    "S06-R008",
+    "ISA-A-SERVICE-ROLE",
+    "ISA-A-BASELINE-CAPABILITIES",
+    "ISA-A-NETWORK-CONTEXT",
+    "ISA-A-CONNECTION-PRESENTATION",
+    "ISA-A-MEMBER-EXPOSURE",
+    "S06-R021",
+    "ISA-C-048",
+    "ISA-T-ACCESS",
+    "S06-R020"
   ]
 }
