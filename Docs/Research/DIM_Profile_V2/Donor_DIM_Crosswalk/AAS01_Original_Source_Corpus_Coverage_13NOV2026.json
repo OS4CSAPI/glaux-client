@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS04_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE",
+  "status": "AAS05_BOUNDED_INCREMENT_COMPLETE__AAS_ACTIVE_INCOMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5033,7 +5033,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "AAS05 only on a separate fresh Proceed: original schema corroboration of reviewed constructs in pinned Part1 JSON/XML/RDF and selected Part2 shared schemas; record exact coverage and source mismatches, stop before AAS06.",
+  "one_next": "AAS06 only after separate owner Proceed; Part2 identity/registry/repository/discovery service operation review; stop before AAS07, DIM/Profile adoption or client/deployment.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10117,14 +10117,14 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS04",
+    "checkpoint": "AAS05",
     "rows": 337,
     "grid": "354x16",
     "AAS_column": "G",
     "same_workbook": true,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "AAS05 only on a separate fresh Proceed: original schema corroboration of reviewed constructs in pinned Part1 JSON/XML/RDF and selected Part2 shared schemas; record exact coverage and source mismatches, stop before AAS06."
+    "next": "AAS06 on separate owner Proceed only"
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -12359,7 +12359,7 @@
     }
   },
   "AAS05": {
-    "status": "SCHEMA_SOURCE_READ__PUBLISHER_PENDING",
+    "status": "COMPLETE_AT_SELECTED_PINNED_SCHEMA_SCOPE__DONOR_ACTIVE_INCOMPLETE",
     "date": "2026-11-14",
     "branch": "research/dim-profile-v2",
     "preflight_head": "02232bb6eed411ccb159692112a65394b8553db3",
@@ -12889,7 +12889,167 @@
         "DIM_Profile_adopted": false
       }
     ],
-    "source_to_master_changes": [],
+    "source_to_master_changes": [
+      {
+        "row_id": "S06-R005",
+        "cell": "G10",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S001",
+          "AAS05-S009"
+        ],
+        "before": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]",
+        "after": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): One AAS digitally represents one asset, which may be physical or software. Submodels describe aspects of the asset rather than observed physical parts of a sensing installation. Original source IDs: AAS02-N001, AAS02-N002, AAS02-N003, AAS02-N005, AAS02-N007, AAS02-N011, AAS02-N017. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: RELATED: AAS v3.2 — Submodels organize aspects of one represented asset; collections group named values and lists group typed elements. These information structures do not establish a physical sensing-system hierarchy. [AAS03-N001, AAS03-N002, AAS03-N003, AAS03-N015, AAS03-N016]\nAAS05: RELATED — JSON/XML require shell assetInformation; that digital record may represent a physical or software asset, not proof of an installed sensing System or CSAPI URI. [AAS05-S001, AAS05-S009]"
+      },
+      {
+        "row_id": "S06-R007",
+        "cell": "G13",
+        "relation": "PARTIAL/RELATED",
+        "source_ids": [
+          "AAS05-S001",
+          "AAS05-S002",
+          "AAS05-S009"
+        ],
+        "before": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]",
+        "after": "PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): Entity can represent parts of a composite asset or bill of materials; Submodels are informational. This alone is not a record of installed hardware constituents. Original source IDs: AAS02-N007, AAS02-N017, AAS02-N031, AAS02-N032. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity can describe composite-asset parts and their shell-management status; its statements are information. Native entityType is optional in v3.2. This still does not establish an observed installed constituent. [AAS03-N013, AAS03-N014, AAS03-R-AASd-014]\nAAS05: PARTIAL/RELATED — Reference keys and optional submodel/asset links do not corroborate actual physically attached constituents. [AAS05-S001, AAS05-S002, AAS05-S009]"
+      },
+      {
+        "row_id": "ISA-K-COMMAND-DECL",
+        "cell": "G80",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S019"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]",
+        "after": "PARTIAL: AAS v3.2 — Operation describes input, output and inoutput variables. It supports an interface comparison, while invocation, errors and execution contracts remain Part 2 work. [AAS04-N003, AAS04-N004, AAS04-R-AASd-134]\nAAS05: PARTIAL — Normal schema Operation variable containers are declarative optional arrays (nonempty when present), not evidence of an issued request or physical effect. [AAS05-S004, AAS05-S010, AAS05-S019]"
+      },
+      {
+        "row_id": "ISA-K-PARAMETER-DECL",
+        "cell": "G81",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S019",
+          "AAS05-S022"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]",
+        "after": "PARTIAL: AAS v3.2 — Input/inoutput OperationVariables describe arguments through SubmodelElements. Their required value wrapper is not required-argument semantics; default/optional cardinality fields are future examples, not implemented declarations. [AAS04-N004, AAS04-R-AASd-129, AAS04-R-AASd-138]\nAAS05: PARTIAL — OperationVariable.value is required, while value-only API argument envelopes are distinct; neither makes a specific argument mandatory. [AAS05-S004, AAS05-S010, AAS05-S019, AAS05-S022]"
+      },
+      {
+        "row_id": "ISA-K-RESULT-DECL",
+        "cell": "G82",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS05-S004",
+          "AAS05-S010",
+          "AAS05-S022"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]",
+        "after": "PARTIAL: AAS v3.2 — Output/inoutput OperationVariables describe result values. This does not establish ISA result optionality/range rules or a particular completed response. [AAS04-N003, AAS04-N004]\nAAS05: PARTIAL — Declared output/inoutput variables and API OperationResultValueOnly are structures, not completion, acknowledgment or physical result. [AAS05-S004, AAS05-S010, AAS05-S022]"
+      },
+      {
+        "row_id": "ISA-K-STRUCTURE",
+        "cell": "G86",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S012",
+          "AAS05-S015",
+          "AAS05-S017"
+        ],
+        "before": "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]",
+        "after": "PARTIAL: AAS v3.2 — Collection and List express named versus typed/repeated structures; list ordering and homogeneous child types are explicit. ISA minimum/maximum length and tree-depth bounds are not supplied by these generic AAS attributes. [AAS03-N015, AAS03-N016, AAS03-N017, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-138]\nAAS05: PARTIAL — Full-model list/collection arrays require at least one child if present, SHACL list values can be absent, and RDF triples do not guarantee element order. [AAS05-S003, AAS05-S012, AAS05-S015, AAS05-S017]"
+      },
+      {
+        "row_id": "ISA-K-VALUE-RANGE",
+        "cell": "G87",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S007",
+          "AAS05-S020",
+          "AAS05-S021"
+        ],
+        "before": "RELATED: AAS v3.2 — Experimental Range supplies typed min/max values. These do not establish permitted/excluded values, endpoint inclusion or an ISA Range Declaration. [AAS03-N007]",
+        "after": "RELATED: AAS v3.2 — Experimental Range supplies typed min/max values. These do not establish permitted/excluded values, endpoint inclusion or an ISA Range Declaration. [AAS03-N007]\nAAS05: RELATED — Full-model Range allows optional string-lexical min/max with valueType; API RangeValue requires both numeric endpoints. This is distinct representation scope, not a universal allowed-values rule. [AAS05-S007, AAS05-S020, AAS05-S021]"
+      },
+      {
+        "row_id": "ISA-R-LIST",
+        "cell": "G233",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S015",
+          "AAS05-S017",
+          "AAS05-S023"
+        ],
+        "before": "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]",
+        "after": "PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]"
+      },
+      {
+        "row_id": "ISA-R-LIST-PRESENCE",
+        "cell": "G238",
+        "relation": "CONFLICT",
+        "source_ids": [
+          "AAS05-S003",
+          "AAS05-S012",
+          "AAS05-S017",
+          "AAS05-S023"
+        ],
+        "before": "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]",
+        "after": "CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; Part 2 update behavior is unreviewed. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]"
+      },
+      {
+        "row_id": "ISA-T-EVENT-TIME",
+        "cell": "G69",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S005",
+          "AAS05-S011",
+          "AAS05-S014",
+          "AAS05-S016",
+          "AAS05-S018"
+        ],
+        "before": "RELATED: AAS v3.2 — Experimental EventPayload.timestamp is UTC event-trigger time. It must not automatically replace physical occurrence, observation phenomenon or result time. [AAS04-N005, AAS04-N013, AAS04-N024]",
+        "after": "RELATED: AAS v3.2 — Experimental EventPayload.timestamp is UTC event-trigger time. It must not automatically replace physical occurrence, observation phenomenon or result time. [AAS04-N005, AAS04-N013, AAS04-N024]\nAAS05: RELATED — Experimental EventPayload text spells timestamp; JSON/XML/OWL/SHACL/shared OpenAPI spell timeStamp. Original source inconsistency unresolved; neither proves observation time. [AAS05-S005, AAS05-S011, AAS05-S014, AAS05-S016, AAS05-S018]"
+      },
+      {
+        "row_id": "ISA-A-TIME-BASIS",
+        "cell": "G239",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S005",
+          "AAS05-S006",
+          "AAS05-S013",
+          "AAS05-S016"
+        ],
+        "before": "RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]",
+        "after": "RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]\nAAS05: RELATED — Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization. [AAS05-S005, AAS05-S006, AAS05-S013, AAS05-S016]"
+      },
+      {
+        "row_id": "ISA-C-048",
+        "cell": "G251",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S006",
+          "AAS05-S013"
+        ],
+        "before": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]",
+        "after": "RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]"
+      },
+      {
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "cell": "G236",
+        "relation": "RELATED",
+        "source_ids": [
+          "AAS05-S008"
+        ],
+        "before": "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]",
+        "after": "RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]"
+      }
+    ],
     "open_holds": [
       {
         "id": "AAS05-H01",
@@ -12934,7 +13094,107 @@
         "status": "OPEN"
       }
     ],
-    "saved_verification": null,
+    "saved_verification": {
+      "status": "PASS_LOCAL_REOPENED_SAVED_FILE",
+      "preflight_head": "02232bb6eed411ccb159692112a65394b8553db3",
+      "previous_xlsx_sha256": "56dd51839f541d2f2160c73292b5a8e2c1bae614aa8d337ca50b2198c36f3bb5",
+      "xlsx_sha256": "7a18f23e2ea3c88d0409b5063d5cb3e13ce449328f3ccfa3fec62032945f3f75",
+      "saved_cells": 5664,
+      "sheet_names": [
+        "Summary",
+        "Master Crosswalk",
+        "DMS Inventory",
+        "Source Blocks",
+        "Row Coverage",
+        "Earlier Findings",
+        "Sources",
+        "Legend",
+        "Validation",
+        "ISA Evidence",
+        "Dependencies",
+        "Questions",
+        "Case Evidence",
+        "Donor Evidence",
+        "Baseline DIM Definitions",
+        "Prior Sources & Editions",
+        "Baseline Holds & Decisions",
+        "CSAPI Clause Audit",
+        "SensorML Clause Audit",
+        "SWE Common Clause Audit",
+        "OMS Clause Audit",
+        "W3C SOSA SSN Audit",
+        "IEEE 1451 Audit",
+        "ISA Initial Clause Audit",
+        "DIM Register",
+        "Adoption Decisions"
+      ],
+      "changed_AAS_cells": [
+        "G10",
+        "G13",
+        "G80",
+        "G81",
+        "G82",
+        "G86",
+        "G87",
+        "G233",
+        "G238",
+        "G69",
+        "G239",
+        "G251",
+        "G236"
+      ],
+      "new_AAS_cells": 0,
+      "total_AAS_cells": 44,
+      "historical_21_sheet_sha256": {
+        "DMS Inventory": "8ac28ce27afc1c8b481b898e9a657b8763b51ae071ef387270d36187c66f5d4e",
+        "Source Blocks": "7ff8c6bb023e392485b9e778e505f13f1ac6ef6f8a3e7d6b2b6eab5422a33750",
+        "Row Coverage": "f565488776addda122baccb2d6f42ff0cc866e808612670cf316990b406e7c50",
+        "Earlier Findings": "2724dd2aaba93e896d9c9ad31cf2ba6cd092c91b7c7d8a2b9147104a5d9a3d00",
+        "Sources": "5b59124c1a3bb38d74dc348e291710dc99c16149675c411a72e879b7e9bb8d1e",
+        "ISA Evidence": "2d581044ab0e490142412c4e745e80a591d31740194d4246b1cd7518a7159f80",
+        "Dependencies": "093338dee5a611b92cece115aea061ccfffd1e6e34310662f7c35ab6ec268e90",
+        "Questions": "0e52cc97eefcb71a739d50deb3a57b45ba79161fde8d0e8068ca2839578484e5",
+        "Case Evidence": "8cc148922fe547974613e88a00ad51c5233bf776276144b3b549dc808cf0e595",
+        "Donor Evidence": "2f93da624b987356de1aabf6ab9d9d0947365d4d8b289438bf3e8d8f720b9757",
+        "Baseline DIM Definitions": "0f9b1c715b9b4eed33bf0868dd1409b92c32a27483edd1e803a6f76d9a434553",
+        "Prior Sources & Editions": "35d2c9b46a54d31e26c43f79af914696e03298fb5d3f1cd58e2a2d1715e37353",
+        "Baseline Holds & Decisions": "08ab57b7d4451136880d7cf11216ed94ee9f2c3d070862fec15bcd3c73f45704",
+        "CSAPI Clause Audit": "d6671d195ddde345d59ad1a7496ed4585ea5cfd0111cf10f2b3c22a170cbca4d",
+        "SensorML Clause Audit": "bcd4b4f56ff66483634cfe050ce2f0377b569cd9cf9ea52b6d8e95508fab689a",
+        "SWE Common Clause Audit": "8525986fe0cd7736618fc263098728a778eb67aa399e0ebaa32eca09f4e0dbba",
+        "OMS Clause Audit": "d1bfa548aa5ee1828a89f2099bbdbb763724b63e2e8dee5035c538ebc284b878",
+        "W3C SOSA SSN Audit": "6afe0475d197ee37b33beb97a4784c6a43f87a942fcd479431a008f754e65f41",
+        "IEEE 1451 Audit": "8d2e79557fda29f36b693bba80f1e02cd47a129f840b8066919674999bd85374",
+        "ISA Initial Clause Audit": "4c15169efe94c69827c0262b09a0ef4eb96c12c149f0f5656bf894a049817618",
+        "Adoption Decisions": "77dba695a7abd4b8fcab0c517e1f6a7ce77da4ff0c72d0d721d0de6f9b07a462"
+      },
+      "styles_xml_sha256": "db73aa2f25a4004c88bdc3dda92664401929a22240be712381399526bf4e70ed",
+      "manual_version_sha256": {
+        "M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx": "724a2488de876d1ad535650f2c60aa3cd8206f641596f681e4a82a4dfd970f70",
+        "M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx": "bde0ed76319d8c4e0ef6be192d6c0c3f6ad001a1650a7ff537a612d2d7fe4c4c"
+      },
+      "checks": {
+        "saved_grid_equals_JSON": true,
+        "both_CSV_equal_JSON": true,
+        "both_Markdown_equal_JSON": true,
+        "all_other_donor_case_DIM_values_unchanged": true,
+        "row_ids_order_and_topic_dividers_preserved": true,
+        "all_original_cell_styles_preserved": true,
+        "325_classification_colors_and_67_mixed_holds_retained": true,
+        "AAS_cells_without_classification_fill": true,
+        "all_26_sheets_in_order": true,
+        "21_unaffected_sheet_XML_byte_identical": true,
+        "all_unedited_package_entries_byte_identical": true,
+        "M00_M01_unchanged_no_M02": true,
+        "all_changed_summary_legend_register_values_reopened": true,
+        "ZIP_CRC_and_XML_parse": true
+      },
+      "visual_review": {
+        "status": "REOPENED_XML_AND_ROW_HEIGHT_INSPECTED_NOT_PIXEL_RENDERED",
+        "note": "No separate rendered screenshot or visual claim; affected rows expanded with original styles retained."
+      },
+      "research_limit": "Source item/file coverage is selected-scope; no runtime, complete specification or DIM/Profile adoption."
+    },
     "file_coverage": [
       {
         "family": "Part1 JSON",
