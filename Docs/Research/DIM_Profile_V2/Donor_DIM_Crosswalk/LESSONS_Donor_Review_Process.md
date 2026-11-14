@@ -1,3 +1,11 @@
+# L106 — Separate physical context and report subjects before choosing candidate colors (14 November 2026)
+
+F3-04A reopened the original Open Group SOSA physical-context definitions and distinguished them from logical modules, cards and run-time profiles. The source's explicit sensing arrangement, physical constituent and physical host meanings support qualified common candidates even though optional implementation details and other senses of the same terms remain. Keep the evidence specific: descriptive physical context is not an installed inventory, a universal chassis, or approval of a DIM hierarchy.
+
+Apply the same subject test to reports: a log-record identifier is not automatically an occurrence identifier, an event-type identifier is not an occurrence identity, and a clock encoding does not identify what instant is timestamped. Preserve useful source-native information while holding an unsupported relationship; a held mapping does not mean the native concept is absent. Keep 2022 model/declaration evidence separate from the 2023 architecture edition, record directly reread source IDs separately from inherited citations, and do not convert targeted classification into a new clause-audit count. F3-04A's 16 initial decisions and three prior corrections are recorded in the existing SOSA G4-F ledger; all other source holds remain.
+
+---
+
 # L105 — Grade the comparison's actual meaning, not every unrelated issue in its evidence bundle (14 November 2026)
 
 F3-03 found that mixed source-item grades had propagated an unrelated timestamp dispute into the Node identifier comparison and specialized mode details into the general supported/default mode comparisons. Later taxonomy-only and video-only wording also obscured earlier source-qualified named output and Node-status information. Restore the supported meaning with its actual source subject and limits; keep requiredness conflicts separate when the field meaning itself is clear. A common information candidate does not require exact ISA/OGC equivalence or a verified installed case, but a target's properties must not become the detector's properties and target taxonomy must not become generic value structure.
