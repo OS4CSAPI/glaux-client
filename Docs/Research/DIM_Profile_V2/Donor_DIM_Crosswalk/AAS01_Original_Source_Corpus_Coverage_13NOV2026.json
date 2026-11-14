@@ -42122,7 +42122,7 @@
     },
     "DIM_Profile_adopted": false,
     "saved_verification": {
-      "status": "LOCAL_PASS__PUBLICATION_PENDING",
+      "status": "PASS__PUBLISHED_RESEARCH_TREE_READ_BACK",
       "date": "2026-11-14",
       "existing_saved_master_check": "PASS: 5664 reopened cells, both CSV/Markdown mirrors, original 26 sheets/styles/colors, 21 historical sheets, M00/M01; actual source snapshot AAS09.",
       "gate_accountability_check": "PASS: unchanged grid/rows/columns; 310=257 cited+53 uncited disjoint IDs; 446 source-row links; 63 populated cells; 76 unique historical holds; all 80 census files accounted; 310 primary locators exist at pinned file identities.",
@@ -42151,7 +42151,23 @@
         "disposition": "Preserved as open, separately from passing AAS09 publication and workbook checks; no unrelated repair in this bounded step."
       },
       "artifact_register_check_rerun": "2026-11-14: same 7 pre-existing findings, no new finding",
-      "diff_check": "PASS"
+      "diff_check": "PASS",
+      "publication_readback": {
+        "branch": "research/dim-profile-v2",
+        "commit": "d799dd0acecca20ebf2ec1cc8529c18c7da66a83",
+        "tree": "53443a0b0d0979527cf596cef8d578984338a592",
+        "tree_equals_verified_local_index": true,
+        "published_report_blob": "f1542a13b985247c33422e5701e084778493e12d",
+        "workbook_blob": "70fe8984889ca879cc4617583a63ef5be81aa6a9",
+        "workbook_sha256": "93d0ee59f152a81b7f145507a67cadb60ec094a813698ca361174d27e862074d",
+        "publisher_run": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632274",
+        "publisher_conclusion": "success",
+        "independent_check_run": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632316",
+        "independent_check_conclusion": "success",
+        "readback": "Fetched published commit/tree and original files; report fetched through GitHub; ledger/report/workbook bytes match verified local content.",
+        "owner_disposition": "PENDING",
+        "note": "This publication receipt is committed subsequently; it does not claim a self-referential future commit/check."
+      }
     }
   }
 }

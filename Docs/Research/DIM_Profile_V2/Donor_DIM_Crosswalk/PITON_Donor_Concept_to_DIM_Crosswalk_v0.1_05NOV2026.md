@@ -6,6 +6,8 @@
 
 **ONE NEXT: owner decides bounded PARTIAL acceptance or named further work.** Recommended bounded acceptance requires 0/0/0 further source-research steps; the owner decision remains necessary. Optional focused core/contract completion is estimated at 2/3/5 substantive research steps plus a refreshed gate, not comprehensive certification. No automatic closure, donor transition, model/Profile adoption, client change or deployment. Earlier CURRENT/NEXT banners and arithmetic forecasts are historical where inconsistent; this gate supersedes them.
 
+**Publication verified:** [AAS10 research commit d799dd0ace](https://github.com/OS4CSAPI/glaux-client/commit/d799dd0acecca20ebf2ec1cc8529c18c7da66a83), [existing publisher check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632274) and [independent saved-master check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632316). Published tree `53443a0b0d0979527cf596cef8d578984338a592` matched the verified local tree; report, ledger and unchanged workbook were read back. Workbook SHA-256 remains `93d0ee59f152a81b7f145507a67cadb60ec094a813698ca361174d27e862074d`. The required document/register check reproduced the same seven pre-existing issues. Owner disposition remains pending.
+
 ---
 
 # CURRENT — AAS09 source review and same master published and verified (14 November 2026)

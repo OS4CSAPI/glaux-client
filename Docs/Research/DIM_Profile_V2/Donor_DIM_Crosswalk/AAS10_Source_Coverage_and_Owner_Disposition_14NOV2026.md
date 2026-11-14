@@ -136,3 +136,5 @@ This gate changes **zero comparison cells, zero rows and zero columns**. Canonic
 ## Verification and publication
 
 Local saved-master verification and GitHub publication readback are recorded in `AAS10.saved_verification` in the cumulative ledger. Source completeness is not inferred from these checks. The seven pre-existing document/register issues remain separate from AAS source coverage.
+
+**Publication verified:** [AAS10 research commit d799dd0ace](https://github.com/OS4CSAPI/glaux-client/commit/d799dd0acecca20ebf2ec1cc8529c18c7da66a83), [existing publisher check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632274) and [independent saved-master check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43625632316). Published tree `53443a0b0d0979527cf596cef8d578984338a592` matched the verified local tree; report, ledger and unchanged workbook were read back. Workbook SHA-256 remains `93d0ee59f152a81b7f145507a67cadb60ec094a813698ca361174d27e862074d`. The required document/register check reproduced the same seven pre-existing issues. Owner disposition remains pending.
