@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "5d036818b74c3c15fa09043c53754e46cc23877cdc1298f7ecb483df470699a4",
+  "currentWorkbookSha256": "942ba2f5757343484de35b44dc7ff9625ba237bd9fc0ca2ebf0369269bcc9f78",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -249,7 +249,7 @@
       "",
       "",
       "[UNRESOLVED CANDIDATE] AAS08: RELATED — Part4 token trust depends on issuer keys and dataspace policy; signatures support integrity under that trust. Proposed IEEE802.1AR asset binding is a possible approach, not a defined required certificate field or proof of this physical equipment’s identity. [AAS08-N033, AAS08-N041, AAS08-N042]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
       "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S]",
       "",
@@ -376,7 +376,7 @@
       "",
       "[SPECIALIZED CANDIDATE] AAS09: RELATED — LocationAspect can describe a planned or actual location, and LocatedAt targets a LocationAspectNode. This contextual representation supplies neither surveyed probe coordinates nor proof that a station hosts installed equipment. [AAS09-N009, AAS09-N012]",
       "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
-      "",
+      "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
       "≈ sosa:Platform",
       "≈ Host (grouping of Observers)",
@@ -393,7 +393,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] AAS09: RELATED — Capability descriptions can support process planning with required functions and temporal dependencies. Those abstract plans are distinct from a sensing procedure, actual observation or evidence that a sequence executed. [AAS09-N023, AAS09-N028, AAS09-N031]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "≈ Method (Event-generation label; not a reusable observing procedure)",
       "RELATED BUT DIFFERENT: C239 §4.2 reference Calibration Service, host calibration-result interaction and §8.3 future RF calibration functions do not define or demonstrate an observing procedure performed for a particular result. [SOSA-D/G2-4B/G2-5]",
       "≈ sosa:Procedure",
@@ -429,7 +429,7 @@
       "",
       "",
       "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]\nAAS07: RELATED — Submodel descriptors provide IDs and service endpoints, not physical connection or sensor network presence. [AAS07-N019, AAS07-N020, AAS07-N023]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
       "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
       "",
@@ -465,7 +465,7 @@
       "",
       "",
       "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS and Submodel descriptors can expose separate endpoints but are not an observed source of installed component hierarchy or producer-origin equipment attribution. [AAS06-N003, AAS06-N031]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
       "NO_ESTABLISHED for ISA composition-interface (CIC) visible/opaque member policy, taskability or source attribution: C239 delegated PIC management, hardware containment and messaging do not imply exposed child Systems. RELATED/PARTIAL: SOSA functional Module and 2022 v1 DSDM SensorComponent/Info identify associations, not public endpoints or observations. [SOSA-D/G2-2/G2-4A/G2-7T/G3-N2]; C239 native equivalence unverified.",
       "",
@@ -519,8 +519,8 @@
       "TransducerChannel",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
+      "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Not assessed here",
       "",
       "",
@@ -1509,7 +1509,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL: AAS v3.2 — A template Property can express type, semantic meaning and qualifiers without a value. Mutability, publication policy and a full ISA property contract are not established by this structure. [AAS03-N002, AAS03-N005, AAS03-N019, AAS03-N020, AAS03-N023]\nAAS08: PARTIAL — Part3a concept-definition metadata now inspected: names, source, semantic datatype, unit/unitId, definition and value-list rules; Part3b supplies a separate unit concept with quantity and dictionary/version context. These do not define ISA publication/mutability rules. Explicit concept units take precedence over dictionary defaults; conversion behavior remains unproved. [AAS08-N001, AAS08-N002, AAS08-N024, AAS08-N022, AAS08-N017]\nAAS09: PARTIAL — TechnicalData provides dictionary-qualified or manufacturer-specific technical properties in readable sections and application descriptions. Classification does not prove property-set completeness, and human grouping alone is not machine semantics. [AAS09-N016, AAS09-N017, AAS09-N018]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",
       "RELATED: C239 §14 runtime-environment configuration identifies software images/resources; not an ISA-style declared named property, mutability, range, or an OGC ObservedProperty. [G2-7R]",
       "",
@@ -1527,7 +1527,7 @@
       "",
       "",
       "[COMMON CANDIDATE] AAS08: RELATED — IEC61360 defines property meaning and units, not a complete declaration of sensor observables or an assurance that an Event occurs. Quantities must retain their subject and semantic identity. [AAS08-N001, AAS08-N020]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Observable Declaration: name, description, type, structure; range [0-1]",
       "Not assessed here",
       "",
@@ -1599,7 +1599,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Submodel templates and nested collections/lists can describe structured information. A Submodel template and a data specification template serve different purposes; neither is automatically an ISA named custom-type declaration. [AAS03-N002, AAS03-N015, AAS03-N016, AAS03-N021]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Custom Type Declaration.name / description / fields [0+]",
       "RELATED (2022 v1 DSDM/IDL): native DIV-3 Message Support, including SensorComponent_Info, defines typed SOSA messages, not ISA Custom Type declarations or adopted CSAPI JSON schemas. Original 2023 C239 native equivalence unverified. [G3-N2]",
       "",
@@ -1617,7 +1617,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Named collection members can carry value types, semantic identifiers and qualifiers. ISA field omission rules and optionality require separate alignment; list children use positional referencing. [AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023, AAS03-R-AASd-117, AAS03-R-AASd-128]\nAAS08: PARTIAL — Concept definitions can qualify field meaning with language names, definition/source and datatype. Optional class attributes are subject to English-definition and unit constraints; no ISA field-omission equivalence follows. [AAS08-N002, AAS08-N003, AAS08-N010, AAS08-N016, AAS08-N017]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Field Declaration.name / description / type / structure / optional",
       "NO_ESTABLISHED for ISA custom-structure fields: C239 §13 AMPS “Protocol Field,” modifiers, lanes, physical pin tables and port/profile descriptions refer to hardware naming and connector geometry, not general digital property/JSON field declarations. [G2-7A/B/C/E/F/I/J]",
       "",
@@ -1689,7 +1689,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY",
       "RELATED but NO_ESTABLISHED ISA per-property mutability: C239 §6 V1.0 get-config functions differ from Future update-config operations; physical pin/build options and §14 runtime config are design/setup choices, not standardized READ/WRITE declarations on each reported property. [G2-1/2/G2-7Q/R]",
       "",
@@ -1707,7 +1707,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Absolute Threshold.id / comparator / value",
       "Not assessed here",
       "",
@@ -1725,7 +1725,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Relative Threshold.id / comparator / extent / delta",
       "Not assessed here",
       "",
@@ -1743,7 +1743,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Property Declaration.threshold → Threshold Declaration.thresholds [0+]",
       "Not assessed here",
       "",
@@ -1780,7 +1780,7 @@
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
-      "",
+      "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "NO_ESTABLISHED: C239 glossary Mode is a finite discrete behavior state; this definition does not designate an equipment-default operating mode or an actually applied setting. [G2-7T]",
       "",
       "",
@@ -3705,7 +3705,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Segment → Route | Waypoint · ordered nested route representation",
       "Not assessed here",
       "",
@@ -3723,7 +3723,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Route Action · LOOP / PATROL / RETURN / STOP",
       "Not assessed here",
       "",
@@ -3777,7 +3777,7 @@
       "",
       "",
       "[NATIVE ONLY EVIDENCE] AAS07: RELATED — AAS record queries select Submodels, descriptors or ConceptDescriptions, not ISA message-matching subscriptions. [AAS07-N022, AAS07-N029, AAS07-N047]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator",
       "RELATED but NO_ESTABLISHED expression equivalence: C239 §15 publish/subscribe Topic identifies a message stream, not an ISA nested Boolean/And/Or/comparator message-matching criterion. [G2-7S]",
       "",
@@ -3795,7 +3795,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] AAS08: RELATED — Access-rule FILTER/FILTERLIST restrict returned fragments; element visibility also depends on visible parents. This is security selection of AAS data and descriptors, not the same message-query context or a physical hierarchy. [AAS08-N034, AAS08-N037, AAS08-N038]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Value Selector.context / predicate / field selection; Field Value Selector.field / predicate / field selection",
       "Not assessed here",
       "",
@@ -3813,7 +3813,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Boolean Function / Value Function.name + arguments; Function Parameter.name + value",
       "Not assessed here",
       "",
@@ -3831,7 +3831,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Value → Field Value Selector / List Value / Static Value / Value Function / Value Selector",
       "Not assessed here",
       "",
@@ -3849,7 +3849,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "String Match: case-sensitive / exact-match / pattern; DQL regexp(pattern, subject)",
       "Not assessed here",
       "",
@@ -3867,7 +3867,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Subscription.query + id; Subscription ID.creator / consumer / name",
       "RELATED: C239 §15 publish/subscribe uses publishers, subscribers and topics, not an ISA Subscription identity, query expression, creator/consumer identifiers or complete subscription lifecycle API. [SOSA-D/G2-7S]",
       "",
@@ -3885,7 +3885,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Data Query.with clause / without clause; loopback; strictcomparisons / strictcomparison; without cache",
       "Not assessed here",
       "",
@@ -3903,7 +3903,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "source(); component(); get_config(); get_status(); get_administrative(); get_event()",
       "Not assessed here",
       "",
@@ -3921,7 +3921,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "components_near_uci(); components_in_area(); in_area()",
       "Not assessed here",
       "",
@@ -4029,7 +4029,7 @@
       "",
       "",
       "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Capability describes potential; BasicEventElement.state means event on/off. Neither establishes ISA command/property/observable readiness and separate reporting selection. Domain/API semantics remain open. [AAS04-N001, AAS04-N007]\nAAS09: NO_ESTABLISHED — Required/Offered/NotAssigned qualify the role of a function description; constraints describe applicability. Neither is the ISA ready/report-selection state or an observed live readiness report. [AAS09-N023, AAS09-N027, AAS09-N028]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
       "RELATED but not ISA readiness/reporting selection: C239 §6 direct/indirect management, Health/Status/Mode and §§13–15 conditional ports/interaction designs do not define ISA per-command ready flag, per-property value-maintained status or selected publication enablement. [SOSA-D/G2-2/G2-7C/F/T]",
       "",
@@ -4066,7 +4066,7 @@
       "",
       "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]\nAAS08: PARTIAL — Part3a sourceOfDefinition and Part3b dictionary/version metadata support definition provenance, while Part4 audits/signatures support accountability under stated trust. Neither establishes the proposed complete source/issuer/edition/evidence record or truth of a physical claim. [AAS08-N002, AAS08-N026, AAS08-N031, AAS08-N041]\nAAS09: PARTIAL — Manufacturer TextStatement and its invalid-from ValidDate provide assertion/validity context. They do not supply a complete evidence record or establish the truth of an installed-equipment assertion; template source/edition conflicts remain explicit. [AAS09-N020, AAS09-N021, AAS09-N035]",
       "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
-      "",
+      "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
       "",
       "",
@@ -4119,7 +4119,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative / Config / Event / Registration / Request / Response / Status.identifier",
       "NO_ESTABLISHED: C239 §15 intermodule operation parameters do not establish an ISA conversation-scoped message identifier or correlation contract. [G2-7S]",
       "",
@@ -4137,7 +4137,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Priority · 0 highest; message priority [0-1] default 80",
       "RELATED, not equivalent: C239 §15 QoS writer priority uses source default 0 and [0,X] with X unspecified; this is transport-writer policy, not ISA message priority. [G2-7S]",
       "",
@@ -4155,7 +4155,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1]",
       "RELATED/NO_ESTABLISHED: C239 §12 cached authorization is policy-validity, while §15 QoS deadline specifies expected update interval—not message-data expiry or a generic ISA payload-validity contract. [G2-5/G2-7S]",
       "",
@@ -4173,7 +4173,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Envelope.header → Header.from: UCI; to: UCI [1+]",
       "Not assessed here",
       "",
@@ -4209,7 +4209,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative.about: UCI [1+]; code: Admin Code",
       "RELATED only: C239 §6.2.2.1 Fault/Status/State/Mode/Configuration and notifyModeCallback notices, §12 audit changes, §15 event/heartbeat, and PSC reset/UART describe distinct event, logging or hardware service roles. They do not establish an ISA administrative network/service message schema, deployed subscription or proven remote effect. [SOSA-D/G2-2/G2-5/G2-6A/G2-7S/G2-7T]",
       "",
@@ -4227,7 +4227,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified",
       "RELATED/NO_ESTABLISHED: C239 §15 publisher is a transport source and an Appendix A Audit Event may be module-generated; neither establishes a cryptographically authenticated original author or ISA registration announcer. [G2-7S/G2-7T]",
       "",
@@ -4281,7 +4281,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Collection groups named values with unique idShort names. Normal JSON omits an empty aggregation rather than sending an empty array; ISA empty-capable associative payloads require an explicit translation decision. [AAS03-N015, AAS03-N025, AAS03-R-AASd-022]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Associative Array · values: Name Value Pair [0+]",
       "Not assessed here",
       "",
@@ -4299,7 +4299,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]\nAAS07: PARTIAL — Native Submodel list, template and ValueOnly paths do not establish ISA list-order or RDF conversion equivalence. [AAS07-N001, AAS07-N037, AAS07-N043]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "List · values: Wildcard [0+]",
       "Not assessed here",
       "",
@@ -4317,7 +4317,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]\nAAS07: PARTIAL — Template repository can represent designed fields without establishing an instantiated sensing System or actual values. [AAS07-N037, AAS07-N038, AAS07-N043]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Custom Type · fields: Name Value Pair [0+]",
       "Not assessed here",
       "",
@@ -4353,7 +4353,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Custom → Nominated → Accepted; incorporation into a later major standard release",
       "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
       "",
@@ -4389,7 +4389,7 @@
       "",
       "",
       "[UNRESOLVED CANDIDATE] CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; selected Part 2 update and value-only representations were subsequently reviewed in AAS07; lossless supplied-empty versus omitted-update correspondence is still unestablished. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]\nAAS07: CONFLICT — Submodel PATCH/ValueOnly do not resolve earlier normal-JSON supplied-empty versus omitted update distinction. [AAS07-N003, AAS07-N004, AAS07-N005]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
       "Not assessed here",
       "",
@@ -4407,7 +4407,7 @@
       "",
       "",
       "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]\nAAS05: RELATED — Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization. [AAS05-S005, AAS05-S006, AAS05-S013, AAS05-S016]",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
       "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
       "",
@@ -4443,8 +4443,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "NO_ESTABLISHED real service history: C239 Legacy card/profile markers and RTE integration are design/standards context, not repair or replacement records. §15 event durability, audit collection and heartbeat are related transport/status features but establish no case maintenance chronology, queryable historical archive or retention guarantee. [G2-6D/G2-7C/G2-7R/G2-7S/G2-7T]",
       "",
       "",
@@ -4461,8 +4461,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED design only: C239 host/sensor-pod mounting, PIC/chassis/XMC/VITA slots, connector pitch/cooling, fiber/RF/optical apertures and optional turret/gimbal mechanics describe physical fit or attachment possibilities; selected original figure geometry remains held. None establishes an installed mount, cable location, specific station site or surveyed equipment position in the four cases. [G2-4A/G2-5/G2-6A–6D/G2-7B–7I/G2-7Q; source ledger]",
       "",
       "",
@@ -4479,8 +4479,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED architecture/NO_ESTABLISHED actual path: C239 §§4–5/11 describe possible reporting/processing roles, §12 audit SYSLOG and §15 event/stream interactions; §§13–14 Ethernet, RF, fiber, video, serial/optical connectors, AMPS profiles and RTE links are design-level transport options. None verifies actual Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or AirGradient reporting, live packets, or a CSAPI DataStream endpoint; a physical signal lane is not a proven source→reporter→client route. [SOSA-D/G2-4A/G2-4B/G2-5/G2-7K/G2-7R/G2-7S/G2-7T; full per-row packet evidence]",
       "",
       "",
@@ -4497,8 +4497,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED design, not observed power: C239 §6.3 auxiliary versus payload power, host/Power Module functions, and §13 PSC/card rails, enable logic, inrush, hold-up, ground and class-specific electrical limits concern possible equipment. State/Status describe lifecycle/performance rather than current charge, voltage, measured power or actual electrical conformance of any case device. [SOSA-D/G2-3/G2-5/G2-6A/G2-7L/G2-7N–7Q/G2-7T]",
       "",
       "",
@@ -4515,8 +4515,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED design, NO_ESTABLISHED case diagnostic: C239 §6.5 P6/M6 Lost Communication is not itself Faulted, and S0 Off may be unreported. PSC FAIL*/ENABLE*/INHIBIT* signaling and dormant-port examples do not establish an observed fault, verified health or real diagnostic event for the four cases. [SOSA-D/G2-3/G2-6A/G2-7B]",
       "",
       "",
@@ -4533,8 +4533,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "NO_ESTABLISHED applied setting: C239 AMPS slot/dash, dcp, optical/RF protocol variants and conditional Rules/Recommendations describe hardware profile options, not case equipment configuration readback. Original sample discrepancies, source future/TBD options and hardwired enable/write circuits remain distinct from a selected runtime user setting. No case applied configuration verified. [G2-7B–7J; detailed source evidence]",
       "",
       "",
@@ -4551,8 +4551,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED design/NO_ESTABLISHED measured processing: C239 6U single-board-computer/FPGA examples and §14 RTE CPU/RAM/port provisioning describe potential compute architecture; §15 wideband streams and Appendix A raw versus processed products distinguish delivery stages. None proves performed case processing, CPU utilization, transformation lineage or observed runtime status. [G2-6C/G2-7R/G2-7S/G2-7T]",
       "",
       "",
@@ -4569,8 +4569,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED timing context, NO_ESTABLISHED observation time/QA: C239 §12 UTC/uptime audit fallback, reference clocks, GPS/1PPS/RTC hold-up, §14 scheduling and §15 QoS deadlines/liveliness are distinct provisions. None authenticates Bennett's fixed-EST source record, original resultTime or QA flag, achieved clock accuracy, per-event UTC or original observation quality. Original record, derived conversion and unknown time stay separate. [G2-5/G2-6B/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; per-row evidence]",
       "",
       "",
@@ -4587,8 +4587,8 @@
       "",
       "",
       "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-      "",
-      "",
+      "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+      "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
       "RELATED tasks versus NO_ESTABLISHED executed command: C239 §7 Task/Assignment, §8 RF sendCommand (V1.0/future-qualified), §12 authorization and §15 control interactions differ from physical PSC enable/UART, NEZ, WR_EN, LASER_ARM, gimbal disable and RTE startup logic. None proves a safe authorized CSAPI Command, an authenticated request→acknowledgement→outcome→physical-effect chain or actual control in any case. [SOSA-D/G2-4B/G2-5/G2-6A/G2-7J–7Q/G2-7R–7T]",
       "",
       "",
@@ -4839,7 +4839,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "SIDC · 15-character MIL-STD-2525C code",
       "Not assessed here",
       "",
@@ -4857,7 +4857,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
       "RELATED/PARTIAL only: C239 distinguishes physical PIC, Power Supply Card, chassis, backplane, host, sensor pod and specialized payload/switch/clock/IO hardware from logical Security Services, software RTE and management functions. Size, slot, VITA/XMC/RF connector classes and Legacy design labels are source-specific, sometimes future/TBD—not a generic component category or adopted DIM hierarchy. No source-case installed physical role follows. [G2-2/G2-3/G2-5/G2-6A–6D/G2-7A–7J; source ledgers]",
       "",
@@ -4875,7 +4875,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "UGS Category · source category vocabulary",
       "Not assessed here",
       "",
@@ -4893,7 +4893,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Component Identity [nominated] · identifier + contacts",
       "Not assessed here",
       "",
@@ -6261,7 +6261,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "",
+      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Video Enhancement · BILINEAR / NONE",
       "Not assessed here",
       "",
@@ -7390,7 +7390,7 @@
         "",
         "",
         "[UNRESOLVED CANDIDATE] AAS08: RELATED — Part4 token trust depends on issuer keys and dataspace policy; signatures support integrity under that trust. Proposed IEEE802.1AR asset binding is a possible approach, not a defined required certificate field or proof of this physical equipment’s identity. [AAS08-N033, AAS08-N041, AAS08-N042]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
         "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S]",
         "",
@@ -7542,6 +7542,14 @@
         ],
         "explanation": "Token/certificate trust and physical asset binding are not demonstrated.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H8",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -9715,7 +9723,7 @@
         "",
         "[SPECIALIZED CANDIDATE] AAS09: RELATED — LocationAspect can describe a planned or actual location, and LocatedAt targets a LocationAspectNode. This contextual representation supplies neither surveyed probe coordinates nor proof that a station hosts installed equipment. [AAS09-N009, AAS09-N012]",
         "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
-        "",
+        "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "NARROWER/RELATED: C239 §4 Host Platform denotes physical host/vehicle context; integral Sensor Pod, slot/chassis geometry and software RTE are distinct. A platform may also be a computing host, not a surveyed station. The 2022 v1 DSDM Platform/HostPlatform association models design, not observed installation; C239 native equivalence unverified. [SOSA-D/G2-4A/G2-5/G2-7I/J/T/G3-N2]",
         "≈ sosa:Platform",
         "≈ Host (grouping of Observers)",
@@ -10119,6 +10127,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "ISA": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "I15",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -10143,7 +10159,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] AAS09: RELATED — Capability descriptions can support process planning with required functions and temporal dependencies. Those abstract plans are distinct from a sensing procedure, actual observation or evidence that a sequence executed. [AAS09-N023, AAS09-N028, AAS09-N031]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "≈ Method (Event-generation label; not a reusable observing procedure)",
         "RELATED BUT DIFFERENT: C239 §4.2 reference Calibration Service, host calibration-result interaction and §8.3 future RF calibration functions do not define or demonstrate an observing procedure performed for a particular result. [SOSA-D/G2-4B/G2-5]",
         "≈ sosa:Procedure",
@@ -10240,6 +10256,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H16",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -10488,7 +10512,7 @@
         "",
         "",
         "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS Discovery -> Registry descriptor -> endpoint lookup is a source-defined software location chain, not a verified live physical network connection. Shell endpoint may be omitted. [AAS06-N002, AAS06-N003, AAS06-N004, AAS06-N018, AAS06-N031]\nAAS07: RELATED — Submodel descriptors provide IDs and service endpoints, not physical connection or sensor network presence. [AAS07-N019, AAS07-N020, AAS07-N023]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
         "RELATED: C239 §5.8 interconnects, §§8/13 hardware RF/fiber/Ethernet/backplane planes, §§14–15 runtime settings and binding stacks describe planned transport, not an observed ISA network instance, IP route/session or reporting path. The 2022 v1 DSDM models Network/Connection/Port/Interface as design; C239 native identity unverified. [G2-4A/G2-7A–7S/G3-N2]",
         "",
@@ -10999,6 +11023,14 @@
         ],
         "explanation": "Discovery and descriptor endpoints are software/service infrastructure only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H18",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -11119,7 +11151,7 @@
         "",
         "",
         "[NATIVE ONLY EVIDENCE] AAS06: RELATED — AAS and Submodel descriptors can expose separate endpoints but are not an observed source of installed component hierarchy or producer-origin equipment attribution. [AAS06-N003, AAS06-N031]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
         "NO_ESTABLISHED for ISA composition-interface (CIC) visible/opaque member policy, taskability or source attribution: C239 delegated PIC management, hardware containment and messaging do not imply exposed child Systems. RELATED/PARTIAL: SOSA functional Module and 2022 v1 DSDM SensorComponent/Info identify associations, not public endpoints or observations. [SOSA-D/G2-2/G2-4A/G2-7T/G3-N2]; C239 native equivalence unverified.",
         "",
@@ -11442,6 +11474,14 @@
         ],
         "explanation": "Descriptor exposure cannot authenticate real reporting equipment.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H20",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -11656,8 +11696,8 @@
         "TransducerChannel",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
+        "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Not assessed here",
         "",
         "",
@@ -11701,6 +11741,20 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H23",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "I23",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -17762,7 +17816,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL: AAS v3.2 — A template Property can express type, semantic meaning and qualifiers without a value. Mutability, publication policy and a full ISA property contract are not established by this structure. [AAS03-N002, AAS03-N005, AAS03-N019, AAS03-N020, AAS03-N023]\nAAS08: PARTIAL — Part3a concept-definition metadata now inspected: names, source, semantic datatype, unit/unitId, definition and value-list rules; Part3b supplies a separate unit concept with quantity and dictionary/version context. These do not define ISA publication/mutability rules. Explicit concept units take precedence over dictionary defaults; conversion behavior remains unproved. [AAS08-N001, AAS08-N002, AAS08-N024, AAS08-N022, AAS08-N017]\nAAS09: PARTIAL — TechnicalData provides dictionary-qualified or manufacturer-specific technical properties in readable sections and application descriptions. Classification does not prove property-set completeness, and human grouping alone is not machine semantics. [AAS09-N016, AAS09-N017, AAS09-N018]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Property Declaration: name, description, type, mutability, structure; range / threshold [0-1]",
         "RELATED: C239 §14 runtime-environment configuration identifies software images/resources; not an ISA-style declared named property, mutability, range, or an OGC ObservedProperty. [G2-7R]",
         "",
@@ -17887,6 +17941,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H78",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -17912,7 +17974,7 @@
         "",
         "",
         "[COMMON CANDIDATE] AAS08: RELATED — IEC61360 defines property meaning and units, not a complete declaration of sensor observables or an assurance that an Event occurs. Quantities must retain their subject and semantic identity. [AAS08-N001, AAS08-N020]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Observable Declaration: name, description, type, structure; range [0-1]",
         "Not assessed here",
         "",
@@ -17982,6 +18044,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H79",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -19014,7 +19084,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Submodel templates and nested collections/lists can describe structured information. A Submodel template and a data specification template serve different purposes; neither is automatically an ISA named custom-type declaration. [AAS03-N002, AAS03-N015, AAS03-N016, AAS03-N021]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Custom Type Declaration.name / description / fields [0+]",
         "RELATED (2022 v1 DSDM/IDL): native DIV-3 Message Support, including SensorComponent_Info, defines typed SOSA messages, not ISA Custom Type declarations or adopted CSAPI JSON schemas. Original 2023 C239 native equivalence unverified. [G3-N2]",
         "",
@@ -19098,6 +19168,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H83",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -19123,7 +19201,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Named collection members can carry value types, semantic identifiers and qualifiers. ISA field omission rules and optionality require separate alignment; list children use positional referencing. [AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023, AAS03-R-AASd-117, AAS03-R-AASd-128]\nAAS08: PARTIAL — Concept definitions can qualify field meaning with language names, definition/source and datatype. Optional class attributes are subject to English-definition and unit constraints; no ISA field-omission equivalence follows. [AAS08-N002, AAS08-N003, AAS08-N010, AAS08-N016, AAS08-N017]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Field Declaration.name / description / type / structure / optional",
         "NO_ESTABLISHED for ISA custom-structure fields: C239 §13 AMPS “Protocol Field,” modifiers, lanes, physical pin tables and port/profile descriptions refer to hardware naming and connector geometry, not general digital property/JSON field declarations. [G2-7A/B/C/E/F/I/J]",
         "",
@@ -19322,6 +19400,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H84",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -20329,7 +20415,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY",
         "RELATED but NO_ESTABLISHED ISA per-property mutability: C239 §6 V1.0 get-config functions differ from Future update-config operations; physical pin/build options and §14 runtime config are design/setup choices, not standardized READ/WRITE declarations on each reported property. [G2-1/2/G2-7Q/R]",
         "",
@@ -20454,6 +20540,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H88",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -20481,7 +20575,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Absolute Threshold.id / comparator / value",
         "Not assessed here",
         "",
@@ -20528,6 +20622,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H89",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -20557,7 +20659,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Relative Threshold.id / comparator / extent / delta",
         "Not assessed here",
         "",
@@ -20606,6 +20708,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H90",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -20635,7 +20745,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Property Declaration.threshold → Threshold Declaration.thresholds [0+]",
         "Not assessed here",
         "",
@@ -20687,6 +20797,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H91",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -20939,7 +21057,7 @@
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: BSI §6.2.5.10/Table27 allows exactly one declared default mode; Table28 distinguishes DEFAULT from PERMANENT/TEMPORARY. Not the current selected mode. [SAP03A-N09,SAP03A-N10]",
-        "",
+        "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "NO_ESTABLISHED: C239 glossary Mode is a finite discrete behavior state; this definition does not designate an equipment-default operating mode or an actually applied setting. [G2-7T]",
         "",
         "",
@@ -21024,6 +21142,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "ISA": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "I93",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -31759,7 +31885,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Segment → Route | Waypoint · ordered nested route representation",
         "Not assessed here",
         "",
@@ -31805,6 +31931,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H200",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -31830,7 +31964,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Route Action · LOOP / PATROL / RETURN / STOP",
         "Not assessed here",
         "",
@@ -31875,6 +32009,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H201",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32297,7 +32439,7 @@
         "",
         "",
         "[NATIVE ONLY EVIDENCE] AAS07: RELATED — AAS record queries select Submodels, descriptors or ConceptDescriptions, not ISA message-matching subscriptions. [AAS07-N022, AAS07-N029, AAS07-N047]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator",
         "RELATED but NO_ESTABLISHED expression equivalence: C239 §15 publish/subscribe Topic identifies a message stream, not an ISA nested Boolean/And/Or/comparator message-matching criterion. [G2-7S]",
         "",
@@ -32397,6 +32539,14 @@
         ],
         "explanation": "AAS model/descriptors query is not ISA message-subscription matching.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H204",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32428,7 +32578,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] AAS08: RELATED — Access-rule FILTER/FILTERLIST restrict returned fragments; element visibility also depends on visible parents. This is security selection of AAS data and descriptors, not the same message-query context or a physical hierarchy. [AAS08-N034, AAS08-N037, AAS08-N038]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Value Selector.context / predicate / field selection; Field Value Selector.field / predicate / field selection",
         "Not assessed here",
         "",
@@ -32489,6 +32639,14 @@
         ],
         "explanation": "Visibility/access filtering is not a source hierarchy or physical event selector.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H205",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32532,7 +32690,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Boolean Function / Value Function.name + arguments; Function Parameter.name + value",
         "Not assessed here",
         "",
@@ -32590,6 +32748,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H206",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32627,7 +32793,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Value → Field Value Selector / List Value / Static Value / Value Function / Value Selector",
         "Not assessed here",
         "",
@@ -32679,6 +32845,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H207",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32708,7 +32882,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "String Match: case-sensitive / exact-match / pattern; DQL regexp(pattern, subject)",
         "Not assessed here",
         "",
@@ -32752,6 +32926,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H208",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32788,7 +32970,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Subscription.query + id; Subscription ID.creator / consumer / name",
         "RELATED: C239 §15 publish/subscribe uses publishers, subscribers and topics, not an ISA Subscription identity, query expression, creator/consumer identifiers or complete subscription lifecycle API. [SOSA-D/G2-7S]",
         "",
@@ -32894,6 +33076,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H209",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -32928,7 +33118,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Data Query.with clause / without clause; loopback; strictcomparisons / strictcomparison; without cache",
         "Not assessed here",
         "",
@@ -32984,6 +33174,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H210",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -33024,7 +33222,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "source(); component(); get_config(); get_status(); get_administrative(); get_event()",
         "Not assessed here",
         "",
@@ -33087,6 +33285,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H211",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -33119,7 +33325,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "components_near_uci(); components_in_area(); in_area()",
         "Not assessed here",
         "",
@@ -33170,6 +33376,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H212",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -34761,7 +34975,7 @@
         "",
         "",
         "[HELD — NO SINGLE CLASSIFICATION] NO_ESTABLISHED: AAS v3.2 — Capability describes potential; BasicEventElement.state means event on/off. Neither establishes ISA command/property/observable readiness and separate reporting selection. Domain/API semantics remain open. [AAS04-N001, AAS04-N007]\nAAS09: NO_ESTABLISHED — Required/Offered/NotAssigned qualify the role of a function description; constraints describe applicability. Neither is the ISA ready/report-selection state or an observed live readiness report. [AAS09-N023, AAS09-N027, AAS09-N028]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
         "RELATED but not ISA readiness/reporting selection: C239 §6 direct/indirect management, Health/Status/Mode and §§13–15 conditional ports/interaction designs do not define ISA per-command ready flag, per-property value-maintained status or selected publication enablement. [SOSA-D/G2-2/G2-7C/F/T]",
         "",
@@ -35019,6 +35233,14 @@
         ],
         "explanation": "Capability role is not the ready/reported state of actual equipment.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H218",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -35044,7 +35266,7 @@
         "",
         "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Administrative creator and experimental event subjectId identify record-maker or initiator roles. They are not authenticated evidence provenance or the proposed issuer/edition/locator/standing record. [AAS04-N014, AAS04-N022]\nAAS06: RELATED — Optional repository JWS retrieval concerns a digital-shell representation; it does not independently verify the source publisher, NOAA record, or an authenticated factual assertion. [AAS06-N016, AAS06-N038]\nAAS07: RELATED — Optional Submodel/ConceptDescription JWS retrieval does not independently authenticate manufacturer or NOAA original-source facts. [AAS07-N030, AAS07-N048]\nAAS08: PARTIAL — Part3a sourceOfDefinition and Part3b dictionary/version metadata support definition provenance, while Part4 audits/signatures support accountability under stated trust. Neither establishes the proposed complete source/issuer/edition/evidence record or truth of a physical claim. [AAS08-N002, AAS08-N026, AAS08-N031, AAS08-N041]\nAAS09: PARTIAL — Manufacturer TextStatement and its invalid-from ValidDate provide assertion/validity context. They do not supply a complete evidence record or establish the truth of an installed-equipment assertion; template source/edition conflicts remain explicit. [AAS09-N020, AAS09-N021, AAS09-N035]",
         "RELATED: SAPIENT classification probability and behaviour labels are reported source assertions; use of OTHER or Active/Passive does not independently verify detected identity, accuracy or original physical evidence. [SAP06-N03,SAP06-N05]",
-        "",
+        "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "NO_ESTABLISHED direct source-assertion equivalence: C239 §5.7.1 DIV-1 transport-independent data definitions, §12 audit forwarding, Certificate of Volatility disclosure, and editioned hardware/profile Rules and examples support qualified design/security descriptions—not authenticated manufacturer, NOAA or installed-case SOURCE_FACT claims. Rule, Recommendation, Permission, Observation and Future/TBD standing differ; no case issuer or 2023 native-file authentication is proven. [SOSA-D/G2-5/G2-6A/G2-6D/G2-7F/G2-7K; per-row G2 ledgers]",
         "",
         "",
@@ -35478,6 +35700,14 @@
         ],
         "explanation": "JWS/model creator claims are not verified publisher/source assertions.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "ISA": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "I220",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -35790,7 +36020,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative / Config / Event / Registration / Request / Response / Status.identifier",
         "NO_ESTABLISHED: C239 §15 intermodule operation parameters do not establish an ISA conversation-scoped message identifier or correlation contract. [G2-7S]",
         "",
@@ -35858,6 +36088,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H223",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -35897,7 +36135,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Priority · 0 highest; message priority [0-1] default 80",
         "RELATED, not equivalent: C239 §15 QoS writer priority uses source default 0 and [0,X] with X unspecified; this is transport-writer policy, not ISA message priority. [G2-7S]",
         "",
@@ -35964,6 +36202,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H224",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -36001,7 +36247,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1]",
         "RELATED/NO_ESTABLISHED: C239 §12 cached authorization is policy-validity, while §15 QoS deadline specifies expected update interval—not message-data expiry or a generic ISA payload-validity contract. [G2-5/G2-7S]",
         "",
@@ -36087,6 +36333,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H225",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -36114,7 +36368,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Envelope.header → Header.from: UCI; to: UCI [1+]",
         "Not assessed here",
         "",
@@ -36172,6 +36426,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H226",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -36321,7 +36583,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative.about: UCI [1+]; code: Admin Code",
         "RELATED only: C239 §6.2.2.1 Fault/Status/State/Mode/Configuration and notifyModeCallback notices, §12 audit changes, §15 event/heartbeat, and PSC reset/UART describe distinct event, logging or hardware service roles. They do not establish an ISA administrative network/service message schema, deployed subscription or proven remote effect. [SOSA-D/G2-2/G2-5/G2-6A/G2-7S/G2-7T]",
         "",
@@ -36474,6 +36736,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H228",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -36511,7 +36781,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified",
         "RELATED/NO_ESTABLISHED: C239 §15 publisher is a transport source and an Appendix A Audit Event may be module-generated; neither establishes a cryptographically authenticated original author or ISA registration announcer. [G2-7S/G2-7T]",
         "",
@@ -36600,6 +36870,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H229",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -36956,7 +37234,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — Collection groups named values with unique idShort names. Normal JSON omits an empty aggregation rather than sending an empty array; ISA empty-capable associative payloads require an explicit translation decision. [AAS03-N015, AAS03-N025, AAS03-R-AASd-022]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Associative Array · values: Name Value Pair [0+]",
         "Not assessed here",
         "",
@@ -37017,6 +37295,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H232",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -37042,7 +37328,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — List declares child element type and whether order matters; semantic/type consistency rules apply. Normal JSON omits an empty aggregation. This is not an automatic ISA list-payload equivalence. [AAS03-N016, AAS03-N025, AAS03-R-AASd-107, AAS03-R-AASd-108, AAS03-R-AASd-109, AAS03-R-AASd-114, AAS03-R-AASd-115]\nAAS05: PARTIAL — List.orderRelevant exists in the metamodel; generic RDF value object properties/SHACL triple shapes do not prove lossless ordered-list conversion. [AAS05-S003, AAS05-S015, AAS05-S017, AAS05-S023]\nAAS07: PARTIAL — Native Submodel list, template and ValueOnly paths do not establish ISA list-order or RDF conversion equivalence. [AAS07-N001, AAS07-N037, AAS07-N043]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "List · values: Wildcard [0+]",
         "Not assessed here",
         "",
@@ -37144,6 +37430,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H233",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -37169,7 +37463,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] PARTIAL: AAS v3.2 — A collection instance can carry named field values guided by a template. Its structure and normal-JSON omission rules do not automatically reproduce an ISA custom-type wire contract. [AAS03-N002, AAS03-N015, AAS03-N025]\nAAS07: PARTIAL — Template repository can represent designed fields without establishing an instantiated sensing System or actual values. [AAS07-N037, AAS07-N038, AAS07-N043]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Custom Type · fields: Name Value Pair [0+]",
         "Not assessed here",
         "",
@@ -37244,6 +37538,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H234",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -37379,7 +37681,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] RELATED: AAS v3.2 — Proprietary Extension and free submodels preserve vendor-specific information. Unique local extension names and typed values do not establish global interoperability or ISA nomination/acceptance standing. [AAS04-N025, AAS04-N026, AAS04-N027, AAS04-R-AASd-077]\nAAS05: RELATED — Typed named extensions in the original schema retain vendor specificity; syntactic admissibility does not establish globally shared meaning or adopted Profile requirement. [AAS05-S008]\nAAS07: RELATED — ConceptDescription semantic records/signatures do not imply accepted global vocabulary or verified external IEC meaning. [AAS07-N031, AAS07-N040, AAS07-N046, AAS07-N048]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Custom → Nominated → Accepted; incorporation into a later major standard release",
         "RELATED hardware-edition standing, NOT ISA extension acceptance: C239 VITA/XMC/AMPS design suffixes, protocol/dash/Legacy markers, specific current Rules and Permissions concern conditional hardware design. Legacy removal has no confirmed retirement date; future/TBD VNX/analog/optical items are not current Rules. Neither design examples nor permitted EP1/EP2 combination establishes an accepted Custom extension, actual installed configuration or vendor lifecycle. [G2-6A–6D/G2-7A–7I; per-row packet evidence]",
         "",
@@ -37675,6 +37977,14 @@
         ],
         "explanation": "Qualified native comparison; prospective information only.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H236",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -38321,7 +38631,7 @@
         "",
         "",
         "[UNRESOLVED CANDIDATE] CONFLICT: AAS v3.2 — Normal JSON explicitly equates empty aggregations with omitted attributes and forbids empty arrays. This conflicts with preserving ISA supplied-empty versus omitted-update distinction by direct normal-JSON substitution; selected Part 2 update and value-only representations were subsequently reviewed in AAS07; lossless supplied-empty versus omitted-update correspondence is still unestablished. [AAS03-N025]\nAAS05: CONFLICT — Normal JSON/XML omit empty array/wrappers but require nonempty supplied containers, while SHACL can represent zero values and API ValueOnly differs. Preserve supplied-empty versus omitted-update hold. [AAS05-S003, AAS05-S012, AAS05-S017, AAS05-S023]\nAAS07: CONFLICT — Submodel PATCH/ValueOnly do not resolve earlier normal-JSON supplied-empty versus omitted update distinction. [AAS07-N003, AAS07-N004, AAS07-N005]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
         "Not assessed here",
         "",
@@ -38412,6 +38722,14 @@
         ],
         "explanation": "Empty/omitted normal-JSON semantics conflict with direct ISA update substitution.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H238",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -38444,7 +38762,7 @@
         "",
         "",
         "[UNRESOLVED CANDIDATE] RELATED: AAS v3.2 — Native event and administrative dates use DateTimeUtc. This does not specify clock synchronization or the ISA epoch contract; the nonzero-offset example conflicts with the selected zero-offset schema pattern. [AAS04-N013, AAS04-N020, AAS04-N024]\nAAS05: RELATED — Selected UTC patterns use zero offset while the DateTimeUtc original example allows a nonzero offset; neither establishes device clock synchronization. [AAS05-S005, AAS05-S006, AAS05-S013, AAS05-S016]",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "CMPT §4.2.1: UTC synchronization; NTP/GPS source guidance; time reported from the UNIX epoch",
         "PARTIAL/RELATED: C239 §12 audit UTC when available versus uptime fallback, and PSC synchronization, reference/radial clocks, GPS/1PPS and RTC hold-up are different conditional source provisions. §14 scheduling and §15 QoS deadlines/liveliness are not absolute observation timestamps. No inspected material proves installed clock synchronization, measured accuracy, Bennett original resultTime or case observation QA. [G2-5/G2-6A/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; source ledger]",
         "",
@@ -38753,6 +39071,14 @@
         ],
         "explanation": "DateTimeUtc examples/schema disagree; device clock synchronization is not shown.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H239",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -38776,8 +39102,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "NO_ESTABLISHED real service history: C239 Legacy card/profile markers and RTE integration are design/standards context, not repair or replacement records. §15 event durability, audit collection and heartbeat are related transport/status features but establish no case maintenance chronology, queryable historical archive or retention guarantee. [G2-6D/G2-7C/G2-7R/G2-7S/G2-7T]",
         "",
         "",
@@ -38881,6 +39207,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H241",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I241",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -38904,8 +39244,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED design only: C239 host/sensor-pod mounting, PIC/chassis/XMC/VITA slots, connector pitch/cooling, fiber/RF/optical apertures and optional turret/gimbal mechanics describe physical fit or attachment possibilities; selected original figure geometry remains held. None establishes an installed mount, cable location, specific station site or surveyed equipment position in the four cases. [G2-4A/G2-5/G2-6A–6D/G2-7B–7I/G2-7Q; source ledger]",
         "",
         "",
@@ -39197,6 +39537,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H242",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I242",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -39223,8 +39577,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED architecture/NO_ESTABLISHED actual path: C239 §§4–5/11 describe possible reporting/processing roles, §12 audit SYSLOG and §15 event/stream interactions; §§13–14 Ethernet, RF, fiber, video, serial/optical connectors, AMPS profiles and RTE links are design-level transport options. None verifies actual Dragino LoRaWAN, Campbell SDI-12, Bennett GOES or AirGradient reporting, live packets, or a CSAPI DataStream endpoint; a physical signal lane is not a proven source→reporter→client route. [SOSA-D/G2-4A/G2-4B/G2-5/G2-7K/G2-7R/G2-7S/G2-7T; full per-row packet evidence]",
         "",
         "",
@@ -39650,6 +40004,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H243",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I243",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -39674,8 +40042,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED design, not observed power: C239 §6.3 auxiliary versus payload power, host/Power Module functions, and §13 PSC/card rails, enable logic, inrush, hold-up, ground and class-specific electrical limits concern possible equipment. State/Status describe lifecycle/performance rather than current charge, voltage, measured power or actual electrical conformance of any case device. [SOSA-D/G2-3/G2-5/G2-6A/G2-7L/G2-7N–7Q/G2-7T]",
         "",
         "",
@@ -39847,6 +40215,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H244",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I244",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -39871,8 +40253,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED design, NO_ESTABLISHED case diagnostic: C239 §6.5 P6/M6 Lost Communication is not itself Faulted, and S0 Off may be unreported. PSC FAIL*/ENABLE*/INHIBIT* signaling and dormant-port examples do not establish an observed fault, verified health or real diagnostic event for the four cases. [SOSA-D/G2-3/G2-6A/G2-7B]",
         "",
         "",
@@ -39978,6 +40360,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H245",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I245",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -40001,8 +40397,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "NO_ESTABLISHED applied setting: C239 AMPS slot/dash, dcp, optical/RF protocol variants and conditional Rules/Recommendations describe hardware profile options, not case equipment configuration readback. Original sample discrepancies, source future/TBD options and hardwired enable/write circuits remain distinct from a selected runtime user setting. No case applied configuration verified. [G2-7B–7J; detailed source evidence]",
         "",
         "",
@@ -40208,6 +40604,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H246",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I246",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -40231,8 +40641,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED design/NO_ESTABLISHED measured processing: C239 6U single-board-computer/FPGA examples and §14 RTE CPU/RAM/port provisioning describe potential compute architecture; §15 wideband streams and Appendix A raw versus processed products distinguish delivery stages. None proves performed case processing, CPU utilization, transformation lineage or observed runtime status. [G2-6C/G2-7R/G2-7S/G2-7T]",
         "",
         "",
@@ -40328,6 +40738,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H247",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I247",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -40351,8 +40775,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED timing context, NO_ESTABLISHED observation time/QA: C239 §12 UTC/uptime audit fallback, reference clocks, GPS/1PPS/RTC hold-up, §14 scheduling and §15 QoS deadlines/liveliness are distinct provisions. None authenticates Bennett's fixed-EST source record, original resultTime or QA flag, achieved clock accuracy, per-event UTC or original observation quality. Original record, derived conversion and unknown time stay separate. [G2-5/G2-6B/G2-7J/G2-7N/G2-7R/G2-7S/G2-7T; per-row evidence]",
         "",
         "",
@@ -40625,6 +41049,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H248",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I248",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -40649,8 +41087,8 @@
         "",
         "",
         "CASE REVIEW HOLD — no original AAS instance was established for this case; neither correspondence nor absence is asserted.",
-        "",
-        "",
+        "CASE REVIEW HOLD — no SAPIENT case-specific comparison established from reviewed source; not evidence of absence.",
+        "CASE REVIEW HOLD — no ISA case-specific comparison established from reviewed source; not evidence of absence.",
         "RELATED tasks versus NO_ESTABLISHED executed command: C239 §7 Task/Assignment, §8 RF sendCommand (V1.0/future-qualified), §12 authorization and §15 control interactions differ from physical PSC enable/UART, NEZ, WR_EN, LASER_ARM, gimbal disable and RTE startup logic. None proves a safe authorized CSAPI Command, an authenticated request→acknowledgement→outcome→physical-effect chain or actual control in any case. [SOSA-D/G2-4B/G2-5/G2-6A/G2-7J–7Q/G2-7R–7T]",
         "",
         "",
@@ -40947,6 +41385,20 @@
         "original_source_ids": [],
         "explanation": "Case-specific source evidence remains held; no AAS instance/absent concept inferred.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "H249",
+          "no_negative_source_claim": true
+        },
+        "ISA": {
+          "status": "CASE_REVIEW_HOLD",
+          "original_cell": "",
+          "display_cell": "I249",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -42104,7 +42556,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "SIDC · 15-character MIL-STD-2525C code",
         "Not assessed here",
         "",
@@ -42146,6 +42598,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H263",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -42171,7 +42631,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
         "RELATED/PARTIAL only: C239 distinguishes physical PIC, Power Supply Card, chassis, backplane, host, sensor pod and specialized payload/switch/clock/IO hardware from logical Security Services, software RTE and management functions. Size, slot, VITA/XMC/RF connector classes and Legacy design labels are source-specific, sometimes future/TBD—not a generic component category or adopted DIM hierarchy. No source-case installed physical role follows. [G2-2/G2-3/G2-5/G2-6A–6D/G2-7A–7J; source ledgers]",
         "",
@@ -42460,6 +42920,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H264",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -42485,7 +42953,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "UGS Category · source category vocabulary",
         "Not assessed here",
         "",
@@ -42527,6 +42995,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H265",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -42552,7 +43028,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Component Identity [nominated] · identifier + contacts",
         "Not assessed here",
         "",
@@ -42594,6 +43070,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H266",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -49366,7 +49850,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "",
+        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Video Enhancement · BILINEAR / NONE",
         "Not assessed here",
         "",
@@ -49408,6 +49892,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "Donor_visible_status_repair_20261114": {
+        "SAPIENT": {
+          "status": "NO_ESTABLISHED_COMPARISON_NOT_ASSESSED",
+          "original_cell": "",
+          "display_cell": "H342",
+          "no_negative_source_claim": true
+        }
       }
     },
     {
@@ -53174,16 +53666,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY",
+  "currentEvidenceCheckpoint": "AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS10_OWNER_VIEW_CORRECTION_SAVED_PARITY",
-    "sha256": "5d036818b74c3c15fa09043c53754e46cc23877cdc1298f7ecb483df470699a4",
+    "checkpoint": "AAS10B_OFFICE_ORDER_AND_FOUR_DONOR_STATUSES_SAVED_VERIFIED",
+    "sha256": "942ba2f5757343484de35b44dc7ff9625ba237bd9fc0ca2ebf0369269bcc9f78",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: current JSON, both CSV/Markdown mirrors and same saved XLSX",
-    "textCheckpoint": "AAS10_OWNER_VIEW_CORRECTION",
+    "lag": "ZERO: canonical JSON, both CSVs, both Markdown views and saved 26-sheet XLSX",
+    "textCheckpoint": "AAS10B_EXCEL_ORDER_AND_DONOR_STATUS_ONLY",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -53202,7 +53694,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 20,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS10/owner_usability_correction/saved_verification",
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS10/office_order_and_donor_blank_repair",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -56417,7 +56909,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "OWNER REVIEW OF THE CORRECTED AAS SOURCE-QUALIFIED COLUMN AND ITS BOUNDED-PARTIAL COVERAGE; NO AUTOMATIC DONOR ACCEPTANCE/TRANSITION OR NEW MODEL/PROFILE/RUNTIME WORK.",
+  "nextOwnerAction": "OWNER REVIEW OF CORRECTED/REOPENED FOUR-DONOR WORKBOOK; NEXT SEPARATELY AUTHORIZED STEP SHOULD BE AAS NATIVE-FIRST NEW-ROW OPPORTUNITY AUDIT UNDER SOURCE-SIZED PLAN, NOT DONOR CLOSURE OR TRANSITION.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
