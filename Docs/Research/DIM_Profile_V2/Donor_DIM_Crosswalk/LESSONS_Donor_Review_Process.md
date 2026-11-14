@@ -8,6 +8,8 @@ Verify presentation as well as saved values. The existing exporter preserved sty
 
 **ONE NEXT: AAS09 on a separate owner Proceed, then stop at that step's boundary.**
 
+Publication evidence: [Published commit f775d4d23c](https://github.com/OS4CSAPI/glaux-client/commit/f775d4d23cbe43e8083e123e727dc5b6940ec512), [existing publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43615797461), and [independent saved-master check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43615797215) were read back. The remote tree equals the verified local tree, including workbook blob `22e23e7c67d7ef4fdf1d421388f6a70dd963e5ff`.
+
 ---
 
 # L94 — Read-only discovery, template, invocation, and package storage are different native effects (AAS07, 14 November 2026)
