@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "3b5a117ac338aea3d059f4ec1e43acbbbebd18bb195d74f72c2d7c5fd7d7495a",
+  "currentWorkbookSha256": "1de5d2bd277bb76f9e58bdbdbc9194a19f6468e5f4b6ec40fb6d845608c075cb",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -4625,7 +4625,7 @@
       "[HELD — NO SINGLE CLASSIFICATION] RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]\nAAS07: RELATED — Submodel history-as-of-date is not AdministrativeInformation.version or sensor firmware and RecentChanges is experimental. [AAS07-N025, AAS07-N026, AAS07-N044]",
       "[HELD] NO_ESTABLISHED: ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier. [SAP03A-N12]",
       "Capability Version",
-      "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
+      "[HELD] RELATED/NO_ESTABLISHED: The 2022 Component_.version and HardwareInfo_Info.version identify component version information. C239 configuration files describe profiles, images and resources, but do not declare a revision of applied configuration parameters. Keep configuration-version equivalence held; hardware/software version information remains useful in its own rows. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-048]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4643,7 +4643,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit. [SAP03A-N12]",
       "Hardware Version · accepted extension",
-      "RELATED: C239 §6.3 replaceable-unit inventory can identify hardware revision; this does not verify the hardware revision of an installed physical component. [G2-3]",
+      "[COMMON CANDIDATE] PARTIAL: C239 hardware-element inventory includes revision identification, and the 2022 hardware-information structure carries component version. These support qualified hardware revision information without requiring a witnessed installed unit. Component_ may also denote software; do not collapse hardware, firmware and configuration revisions. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-066]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4787,7 +4787,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device. [SAP03A-N12]",
       "Software Version · accepted extension",
-      "RELATED/NO_ESTABLISHED: C239 §6.3 inventory and §6.5.4.2-8 PIC management expose version information; §14 ImageLoad loadable software does not independently prove which version is currently running. [G2-3/G2-7R]",
+      "[COMMON CANDIDATE] PARTIAL: C239 hardware inventory explicitly includes software/firmware revision information and requires a PIC to provide current version information. This supports qualified software-version reporting. ImageLoad identifies software to load, not proof of what is executing; the generic PIC version rule alone does not distinguish hardware from software. [F3-04D-ISA-C-108]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4859,7 +4859,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-      "RELATED/PARTIAL only: C239 distinguishes physical PIC, Power Supply Card, chassis, backplane, host, sensor pod and specialized payload/switch/clock/IO hardware from logical Security Services, software RTE and management functions. Size, slot, VITA/XMC/RF connector classes and Legacy design labels are source-specific, sometimes future/TBD—not a generic component category or adopted DIM hierarchy. No source-case installed physical role follows. [G2-2/G2-3/G2-5/G2-6A–6D/G2-7A–7J; source ledgers]",
+      "[COMMON CANDIDATE] PARTIAL: C239 physical context distinguishes apertures, enclosures, cards and hosts; the 2022 component kind and native type enumeration also identify software/management roles. These support qualified component-category information. Preserve physical category versus logical role and edition-specific values; no universal taxonomy or one DIM class per label is adopted. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-COMPONENT-CATEGORY]",
       "",
       "",
       "",
@@ -4931,7 +4931,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Attached Orientation",
-      "PARTIAL (2022 v1 DSDM): AntennaInstallation.relative orientation uses Relative3DAngularMeasurement; C239 mounting/centre-of-gravity and Appendix orientation context are RELATED design information, not measured current attitude relative to a parent. 2023 model equivalence and field placement unverified. [G2-7Q/G2-7T/G3-N2]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 AntennaInstallation relation explicitly connects an antenna to its platform and carries relative three-axis orientation. This supports qualified mounting-orientation information. It does not import ISA rotation order, precedence or a universal parent convention, and no actual orientation measurement was obtained. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-037]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -4949,7 +4949,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Attached Position",
-      "PARTIAL (2022 v1 DSDM): AntennaInstallation.position uses VehicleFrontMidlineXYZPositionMeasurement; C239 mechanical axes/metadata are related design contexts, not measured current component offset or field coordinates. 2023 native-model equivalence unverified. [G2-7Q/G2-7T/G3-N2]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 AntennaInstallation relation carries position in a vehicle-fixed reference frame with X/Y/Z axes in meters. This supports qualified relative-placement information. Retain that particular frame and antenna/platform subject; it is not an arbitrary parent offset, ISA translation/rotation order or surveyed case location. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-038]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5057,7 +5057,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract. [SAP04-N06]",
       "Position",
-      "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 physical Platform has WGS84 position with latitude, longitude and height. This supports qualified geographic-position information for the host. A sensor or probe does not automatically share that position, and the model field alone supplies neither a current sample nor its time or mounting offset. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-088]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5093,7 +5093,7 @@
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity and semantically qualified relationships can represent composition. Relationship annotations can qualify a link, but physical attachment, observed installation and applicable time require separate evidence. [AAS03-N011, AAS03-N012, AAS03-N013, AAS03-N014]\nAAS09: RELATED — Full/OneDown/OneUp describe differently distributed logical hierarchies. Their relations may model intended structure and cannot by themselves establish a reported physical attachment; SameAs links representations, not attachment. [AAS09-N003, AAS09-N004, AAS09-N005]",
       "[HELD] NO_ESTABLISHED: Recursive ConfigurationData lists component configuration details but does not define physical parent/child attachment, attachment frames or an installed equipment graph. [SAP03A-N12]",
       "Relationship",
-      "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 explicitly describes physical sensor-to-host mounting; the 2022 AntennaInstallation and HostPlatform relations identify installation/hosting subjects. These support qualified physical-attachment information. SensorComponent may also include software and is not automatically a physical attachment; no universal hierarchy, ISA link code or installed-case relationship is inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-099]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5183,7 +5183,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: SensorStatus NOT_DETECTING and target ACTIVE/PASSIVE behaviour have different subjects and meanings. Neither establishes the ISA component Active boolean; reporting stopped is not necessarily physical inactivity. [SAP04-N03, SAP06-N05]",
       "Active",
-      "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 lifecycle state and the 2022 operational-state enumeration describe starting, testing, operation and other conditions. They do not define the ISA Active boolean meaning that a device is currently performing its responsibilities. Keep this flag comparison held while retaining operating-condition information separately. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-035]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5201,7 +5201,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Armed",
-      "NO_ESTABLISHED: C239 Class1/3/5 physical MASTER_ARM and laser-arm contacts describe hardware interlocks/arming inputs, not a read-back current arming state, software authorization or safe executable Command. [G2-7L/G2-7O/G2-7Q]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 MASTER_ARM and LASER_ARM define physical circuits that enable or inhibit emission-device power. Emission annunciation reports firing, not current armed-state readback. Preserve these optional interlock/control provisions; they do not establish the requested arming-state report or software permission to execute a command. [F3-04D-ISA-C-036]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5219,7 +5219,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Charged",
-      "NO_ESTABLISHED: C239 §13 VBAT is a named electrical input rail and rating, not a sampled battery charged flag. [G2-6A]",
+      "[HELD] RELATED/NO_ESTABLISHED: VBAT and ALT_VBAT define backup input voltages and allowable current. A battery-named rail and a power-supply condition signal do not report whether a component is charged. Keep the charged flag held; no state of charge is derived from nominal voltage or a supported backup interface. [F3-04D-ISA-C-049]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5255,7 +5255,7 @@
       "[COMMON CANDIDATE] RELATED: AAS v3.2 — A semantically defined Property and qualifiers can carry a condition assertion. Experimental event state on/off is not equipment operating condition; no common health vocabulary or actual reading is established. [AAS04-N007, AAS04-N018, AAS04-N029]",
       "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
       "Operating State",
-      "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
+      "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5273,7 +5273,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: TaskAck ACCEPTED, REJECTED, COMPLETED and FAILED are task lifecycle outcomes. Four outcomes do not establish the ISA four-state logical value algebra. [SAP05-N11]",
       "Belnap Dunn · FALSE / PARADOX / TRUE / UNSPECIFIED",
-      "NO_ESTABLISHED: C239 defines lifecycle State, but no native equivalent to ISA's four-valued evaluation-state vocabulary is established. [G2-7T]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 lifecycle State and the 2022 operational/health enumerations have their own source meanings. They do not establish ISA four-valued evaluation logic. Keep this mapping held; similar state labels are not evidence of equivalent truth values or evaluation rules. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-LOGIC-STATE]",
       "",
       "",
       "",
@@ -5309,7 +5309,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "AC Current Load",
-      "RELATED design only: C239 §13 Power Supply Card alternating-current input pins and permitted ratings do not provide measured consumed AC current. [G2-6A]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-4 calls for analog reporting of power-supply input currents; its PSC input rules expressly allow AC input variants. This supports qualified consumed AC current information for an applicable supply. Retain the SHOULD standing and hardware scope; neither connector ratings nor an installed measurement is substituted for the report. [F3-04D-ISA-C-031]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5345,7 +5345,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "AC Voltage Load",
-      "NO_ESTABLISHED: C239 Class3 J10 alternating-current power connection is input design, not measured load-side AC voltage. [G2-7N]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-3 calls for analog reporting of a power-supply input voltage; PSC rules allow AC input. This supports qualified voltage consumed by an AC load. The J10 115/200 versus 120/208 rating discrepancy remains unresolved; those design ratings are not samples, and input voltage is not source output. [F3-04D-ISA-C-033]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5363,7 +5363,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "AC Voltage Source",
-      "RELATED, NOT measured: C239 Class3 J10 prints a 115/200 V RMS requirement while the associated table prints 120/208 VAC; the original discrepancy remains unresolved, and neither value is source-side telemetry. [G2-7N]",
+      "[HELD] RELATED_BUT_DIFFERENT: The reviewed J10 AC connection is a platform-supplied input, and PSC input-voltage reporting describes consumption. Reviewed final PSC outputs are DC. These passages do not establish reported AC voltage produced by a source; retain the J10 rating conflict without using input or nominal ratings as output telemetry. [F3-04D-ISA-C-034]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5381,7 +5381,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "DC Current Load",
-      "RELATED design only: C239 §6.4.2 recommends Power Supply Card input-current analog sensing and §13 VBAT gives class-specific current limits; neither establishes actual consumed DC current for an installed component. [G2-3/G2-6A]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-4 calls for analog input-current reporting, and PSC input rules allow DC variants. This supports qualified consumed DC current information. The earlier VBAT maximum-current references are design limits, not measured consumption; the reporting recommendation does not certify implementation or a case value. [F3-04D-ISA-C-052]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5399,7 +5399,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "DC Current Source",
-      "RELATED design only: C239 §6.4.2 recommends Power Supply Card output-current sensing and §13 defines rated 12V outputs; neither provides observed produced DC current. [G2-3/G2-6A]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-2 calls for analog reporting of each power-supply output current, and PSC final outputs include DC rails. This supports qualified produced DC current information. Preserve output-versus-input direction and SHOULD standing; nominal pin ratings are not reported readings. [F3-04D-ISA-C-053]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5417,7 +5417,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "DC Voltage Load",
-      "RELATED/NO_ESTABLISHED: C239 §6.4.2 recommends Power Supply Card rail output-voltage sensing, while §13 nominal 12V/3.3V_AUX rails and Class3 J11 input constraints describe equipment design—not current sampled load-side DC voltage. [G2-3/G2-6A/G2-7N]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-3 and DC PSC input rules support qualified voltage consumed by a DC load. Correct the earlier reliance on output-voltage sensing for this load-side row. Input and output measurements remain separate; no equality across wiring, nominal-rating substitution or observed case value is assumed. [F3-04D-ISA-C-054]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5435,7 +5435,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "DC Voltage Source",
-      "RELATED design only: C239 §6.4.2 recommended input-voltage sensing, VBAT/ALT_VBAT, Class1/3/5 nominal platform 28V, 270V, backup 3.3/3.9V and 24V feeds distinguish physical interfaces and conditions. None establishes measured current source-side DC voltage, battery state or universal device limit. [G2-3/G2-6A/G2-7L/G2-7N–7Q]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-1 calls for analog reporting of each output voltage, and final PSC outputs include DC rails. This supports qualified voltage provided by a DC source. Correct the earlier input-voltage emphasis; preserve output direction and SHOULD standing without converting design ratings into readings. [F3-04D-ISA-C-055]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5471,7 +5471,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value. [SAP04-N05]",
       "Power State",
-      "RELATED/NO_ESTABLISHED: C239 auxiliary management and payload power can differ; §13 PSC FAIL*/enable and class-specific inrush, isolation, backup and power-cycle rules describe hardware or potential status signaling. None verifies installed present power, voltage, fault, recovery or general ISA reported-power condition. [SOSA-D/G2-3/G2-6A/G2-7L/G2-7N–7Q]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 recommends power-supply status commands and requires FAIL* when an output voltage is out of specification. These support qualified supply-condition information. FAIL* is a physical condition signal, not a universal digital state code; enable/inhibit inputs and separate management/payload domains do not prove every component is powered. [F3-04D-ISA-C-091]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5489,7 +5489,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "PARTIAL: StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability. [SAP04-N05]",
       "Reserve Capacity",
-      "NO_ESTABLISHED: C239 §13 energy-storage and J16 backup/hold-up inputs are not measured state-of-charge percentage or usable reserve relative to maximum capacity. [G2-6A/G2-7N/G2-7P/G2-7Q]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 energy-storage modules accept/provide intermediate power, and J16 supplies low-current backup power for retention. These interfaces do not define usable energy reserve relative to maximum capacity. Keep this state-of-charge comparison held; no percentage or charged status is inferred from the battery label. [F3-04D-ISA-C-100]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5507,7 +5507,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: Battery level and power condition do not supply predicted runtime or time-to-empty. No duration is inferred from charge percentage. [SAP04-N05]",
       "Time to Empty",
-      "NO_ESTABLISHED: C239 energy storage and backup/real-time-clock retention circuits provide no battery capacity, discharge model, actual load profile or estimated time-to-empty. [G2-6A/G2-7N/G2-7P]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 backup inputs can retain memory and clocks across power cycles, but the reviewed provisions provide no remaining-capacity/load forecast or estimated time to empty. Keep this comparison held; a retention-power capability is not a duration estimate for an installed battery. [F3-04D-ISA-C-113]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5525,7 +5525,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "RELATED: BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence. [SAP04-N05]",
       "Power Source · native supply categories; RELIABLE retains source wording",
-      "RELATED/PARTIAL: C239 host/Power Module interfaces, §13 PSC input rails, utility, AC, DC, backup and hold-up power types distinguish source-specific feed roles and class requirements. They do not identify an installed solar, battery, mains or generator power source, measured reserves or live condition. 2022 v1 DSDM PowerBus/PowerPort are electrical interfaces, not universal energy-source classes; 2023 native equivalence held. [G2-5/G2-6A/G2-7H–7J/G2-7L/G2-7N–7Q/G3-N2]",
+      "[SPECIALIZED CANDIDATE] RELATED/PARTIAL: C239 distinguishes AC/DC supply inputs, final/intermediate outputs and backup feed roles; the 2022 PowerBus/PowerPort describe an electrical source interface and component connection. Retain these optional power-interface classifications as specialized candidates. They do not identify a generator, solar supply, installed battery technology or universal energy-source taxonomy. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-POWER-SOURCE]",
       "",
       "",
       "",
@@ -5615,7 +5615,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "IP Addresses",
-      "PARTIAL (2022 v1 DSDM): NetworkInterface.ip / optional NetworkInterface_Info address structure includes IPv4AddressMeasurement; C239 §14 port provisioning and §15 IPv4/IPv6 binding do not prove assigned current interface addresses or reachability. 2023 C239 native equivalence unverified. [G2-7R/G2-7S/G3-N2]",
+      "[COMMON CANDIDATE] PARTIAL: The 2022 NetworkInterface carries an IP address, and NetworkInterface_Info separates optional address and gateway content. This supports qualified interface-address information without reachability or current assignment proof. Preserve the source representation difference: the model describes IPv4 as an integer while IPv4Address_Type.idl is a string; no wire-type equivalence is adopted. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-067]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5633,7 +5633,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: A missed heartbeat can reflect power loss, disablement or communication loss. System/sensor status does not establish an individual network interface up/down state. [SAP04-N01, SAP04-N03]",
       "Link State",
-      "RELATED/NO_ESTABLISHED: C239 §6.5.4.2-9/-10 requires a directly managed PIC to report specified MAC/IP port active/inactive state, but §13 speed auto-negotiation, §14 network access and §15 transport availability are not observed link state of the four case systems. No ISA-wide universal network status inferred. [G2-3/G2-7Q/G2-7R/G2-7S]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Rules 6.5.4.2-9 and -10 require directly managed PICs to report active/inactive MAC-layer and IP-layer port status. This supports qualified interface-state reporting. Keep the layers and direct-management scope distinct; port status is not end-to-end reachability, a case observation or an ISA-wide universal status rule. [F3-04D-ISA-C-072]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5687,7 +5687,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Receive Data Rate",
-      "NO_ESTABLISHED: C239 Class3 10GBase-T physical port rating and §15 high-volume signal-stream definition are not observed current receive throughput for a component. [G2-7M/G2-7P/G2-7S]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 10GBase-T interface requirements and digital signal-stream definitions specify communication capabilities and data flow. They do not define a report of actual received throughput. Keep this comparison held; nominal link rate and stream volume are not measured component receive rate. [F3-04D-ISA-C-097]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5705,7 +5705,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: Signal.amplitude reports detected radio-frequency signal amplitude, typically in dB. It does not define this component network interface received power or an equivalent power quantity. [SAP04-N15]",
       "Receive Power",
-      "NO_ESTABLISHED: C239 VSWR is radio-frequency impedance mismatch, not measured received signal power or ISA dBm received-power value. [G2-7M/G2-7P]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 voltage standing-wave-ratio limits concern mated RF contacts, not received signal power. The 2022 model also defines a power-in-dBm measurement type, but the reviewed type alone does not identify a component received-power report. Preserve both native concepts and hold this specific reporting comparison. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-098]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5741,7 +5741,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Transmit Data Rate",
-      "NO_ESTABLISHED: C239 Class3 10GBase-T design rate and §15 high-rate signal stream do not establish sampled current transmitted bit rate or link utilization. [G2-7M/G2-7P/G2-7S]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 10GBase-T interface requirements and digital signal streams do not declare sampled transmit throughput or utilization. Keep the transmit-rate comparison held; a nominal signaling capability and a possible data path are not an actual transfer-rate report. [F3-04D-ISA-C-114]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -6317,7 +6317,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: Status fault/condition text does not establish the latest built-in-test result or a particular test execution. Hold this result mapping without discarding operational health reporting. [SAP04-N07]",
       "Built In Test Result",
-      "RELATED/PARTIAL (2022 v1 DSDM): C239 V1.0 getSensorBITResults/getBITResults operations differ by manager/security/PIC role. The 2022 v1 SensorBITResult and BitResults_Info describe time/result/status but do not establish the latest completed BIT or a performed case test; 2023 C239 native byte equivalence held. Appendix A Health/Test are different concepts. [SOSA-D/G2-1/G2-2/G2-7T/G3-N2]",
+      "[COMMON CANDIDATE] PARTIAL: C239 V1.0 diagnostic-result operations and the 2022 BIT result structures provide test outcome, description and timestamp associated with sensor components. These support qualified built-in-test result information. The reviewed declarations do not guarantee latest-result selection, completion ordering or a performed case test; Future configuration operations remain separate. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-046]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -6407,7 +6407,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Tamper State [Accepted extension]",
-      "RELATED only: C239 §12.1.1 Security Services and software-integrity requirements describe specialized security-state/protection functions, not a validated real device tamper-condition report or ISA tamper-status value. [SOSA-D, C239 §12.1.1]",
+      "[SPECIALIZED CANDIDATE] NARROWER/PARTIAL: C239 Security Services names Security Tamper Alert as an output. This supports an optional security-alert candidate beyond generic software-integrity wording. The reviewed table does not define a persistent physical-device tamper state, sensor implementation, alert payload or ISA status encoding; actual tampering remains unverified. [F3-04D-ISA-C-111]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -6461,7 +6461,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Link Loss · Db · Question ISA-Q002",
-      "NO_ESTABLISHED: C239 VSWR is an RF impedance mismatch ratio; it does not resolve original ISA-Q002 Link Loss meaning/reference, which remains an explicit source question. [G2-7M]",
+      "[HELD] RELATED/UNRESOLVED_REFERENCE: C239 voltage standing-wave ratio is a mated-contact RF performance criterion. It does not resolve the original ISA Link Loss definition/reference question ISA-Q002. Preserve the source question and hold this mapping; no path-loss or network-loss quantity is inferred. [F3-04D-ISA-C-071]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -6479,7 +6479,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "[HELD] NO_ESTABLISHED: Detected Signal.amplitude does not resolve ISA-Q004 or establish its Signal Strength Ratio quantity. Preserve the ISA original-source question and the distinct native signal claim. [SAP04-N15]",
       "Signal Strength Ratio · Db · Question ISA-Q004",
-      "NO_ESTABLISHED: C239 VSWR in source-specific RF frequency/contact contexts is not ISA Signal Strength Ratio; original ISA-Q004 reference quantity/definition remains open. [G2-7M/G2-7P]",
+      "[HELD] RELATED/UNRESOLVED_REFERENCE: C239 voltage standing-wave ratio is not an established equivalent of ISA Signal Strength Ratio. The original ISA-Q004 reference quantity/definition remains unresolved. Keep this comparison explicitly held rather than inventing a signal-to-noise or power-ratio definition. [F3-04D-ISA-C-107]",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -43725,7 +43725,7 @@
         "[HELD — NO SINGLE CLASSIFICATION] RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AdministrativeInformation version/revision, creator and createdAt/updatedAt describe business-relevant digital records, not actual sensor firmware, current field configuration or observation time. Original source IDs: AAS02-N022, AAS02-N023, AAS02-N042. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS04: RELATED: AAS v3.2 — Version/revision and creation/update dates mark business changes to the information element, not every live value change. Prose integer storage conflicts with datatype/schema digit strings; preserve that source issue. [AAS04-N019, AAS04-N020, AAS04-N023, AAS04-R-AASd-005]\nAAS05: RELATED — Published prose calls administrative version/revision integers; selected JSON/XML/shared metamodel schemas use 1–4 digit strings. This is not installed firmware version. [AAS05-S006, AAS05-S013]\nAAS06: RELATED — Repository record-at-date history explicitly differs from AdministrativeInformation.version and from a physical component's current configuration/firmware version. [AAS06-N012, AAS06-N014, AAS06-N035]\nAAS07: RELATED — Submodel history-as-of-date is not AdministrativeInformation.version or sensor firmware and RecentChanges is experimental. [AAS07-N025, AAS07-N026, AAS07-N044]",
         "[HELD] NO_ESTABLISHED: ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier. [SAP03A-N12]",
         "Capability Version",
-        "PARTIAL (2022 v1 DSDM only): Component_.version is typed DescriptionMeasurement, not expressly a version of applied configuration parameters. C239 §14 configuration fields, §15 TLS settings and configurable GPI describe design/settings, not a current configuration revision. 2023 C239 native model equivalence and installed revision unverified. [G2-7Q/G2-7R/G2-7S/G2-7T/G3-N2]",
+        "[HELD] RELATED/NO_ESTABLISHED: The 2022 Component_.version and HardwareInfo_Info.version identify component version information. C239 configuration files describe profiles, images and resources, but do not declare a revision of applied configuration parameters. Keep configuration-version equivalence held; hardware/software version information remains useful in its own rows. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-048]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -43944,6 +43944,21 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-048",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.1.3.15",
+          "SOSA-V1-DSDM-1.3.3.13",
+          "SOSA-V1-IDL:HardwareInfo_Info.idl",
+          "SOSA-C239-G2-7R-OBSERVATION-14_2_1",
+          "SOSA-C239-G2-7R-RULE-14_2_2",
+          "SOSA-C239-G2-7R-RULE-14_2_3"
+        ],
+        "rationale": "The 2022 Component_.version and HardwareInfo_Info.version identify component version information. C239 configuration files describe profiles, images and resources, but do not declare a revision of applied configuration parameters. Keep configuration-version equivalence held; hardware/software version information remains useful in its own rows."
       }
     },
     {
@@ -43971,7 +43986,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: BSI Table32 hardware_version is conditional for hardware-bearing Nodes; a declared version is not automatically the version of an ISA component or a verified physical unit. [SAP03A-N12]",
         "Hardware Version · accepted extension",
-        "RELATED: C239 §6.3 replaceable-unit inventory can identify hardware revision; this does not verify the hardware revision of an installed physical component. [G2-3]",
+        "[COMMON CANDIDATE] PARTIAL: C239 hardware-element inventory includes revision identification, and the 2022 hardware-information structure carries component version. These support qualified hardware revision information without requiring a witnessed installed unit. Component_ may also denote software; do not collapse hardware, firmware and configuration revisions. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-066]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -44050,6 +44065,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-066",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY",
+          "SOSA-V1-DSDM-1.3.3.13",
+          "SOSA-V1-IDL:HardwareInfo_Info.idl"
+        ],
+        "rationale": "C239 hardware-element inventory includes revision identification, and the 2022 hardware-information structure carries component version. These support qualified hardware revision information without requiring a witnessed installed unit. Component_ may also denote software; do not collapse hardware, firmware and configuration revisions."
       }
     },
     {
@@ -44640,7 +44667,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: BSI Table32 software_version is conditional for Nodes running software; not proved to identify the installed software on any real case device. [SAP03A-N12]",
         "Software Version · accepted extension",
-        "RELATED/NO_ESTABLISHED: C239 §6.3 inventory and §6.5.4.2-8 PIC management expose version information; §14 ImageLoad loadable software does not independently prove which version is currently running. [G2-3/G2-7R]",
+        "[COMMON CANDIDATE] PARTIAL: C239 hardware inventory explicitly includes software/firmware revision information and requires a PIC to provide current version information. This supports qualified software-version reporting. ImageLoad identifies software to load, not proof of what is executing; the generic PIC version rule alone does not distinguish hardware from software. [F3-04D-ISA-C-108]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -44731,6 +44758,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-108",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-FRU-IDENTITY",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_8",
+          "SOSA-C239-G2-7R-RULE-14_2_3"
+        ],
+        "rationale": "C239 hardware inventory explicitly includes software/firmware revision information and requires a PIC to provide current version information. This supports qualified software-version reporting. ImageLoad identifies software to load, not proof of what is executing; the generic PIC version rule alone does not distinguish hardware from software."
       }
     },
     {
@@ -45010,7 +45049,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
-        "RELATED/PARTIAL only: C239 distinguishes physical PIC, Power Supply Card, chassis, backplane, host, sensor pod and specialized payload/switch/clock/IO hardware from logical Security Services, software RTE and management functions. Size, slot, VITA/XMC/RF connector classes and Legacy design labels are source-specific, sometimes future/TBD—not a generic component category or adopted DIM hierarchy. No source-case installed physical role follows. [G2-2/G2-3/G2-5/G2-6A–6D/G2-7A–7J; source ledgers]",
+        "[COMMON CANDIDATE] PARTIAL: C239 physical context distinguishes apertures, enclosures, cards and hosts; the 2022 component kind and native type enumeration also identify software/management roles. These support qualified component-category information. Preserve physical category versus logical role and edition-specific values; no universal taxonomy or one DIM class per label is adopted. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-COMPONENT-CATEGORY]",
         "",
         "",
         "",
@@ -45305,6 +45344,21 @@
           "display_cell": "H264",
           "no_negative_source_claim": true
         }
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-E-COMPONENT-CATEGORY",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+          "SOSA-V1-DSDM-1.1.3.15",
+          "SOSA-V1-DSDM-1.2.47",
+          "SOSA-V1-IDL:SosaComponentTypeEnum_Type.idl",
+          "SOSA-V1-IDL:SensorComponent_Info.idl"
+        ],
+        "rationale": "C239 physical context distinguishes apertures, enclosures, cards and hosts; the 2022 component kind and native type enumeration also identify software/management roles. These support qualified component-category information. Preserve physical category versus logical role and edition-specific values; no universal taxonomy or one DIM class per label is adopted."
       }
     },
     {
@@ -45482,7 +45536,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Attached Orientation",
-        "PARTIAL (2022 v1 DSDM): AntennaInstallation.relative orientation uses Relative3DAngularMeasurement; C239 mounting/centre-of-gravity and Appendix orientation context are RELATED design information, not measured current attitude relative to a parent. 2023 model equivalence and field placement unverified. [G2-7Q/G2-7T/G3-N2]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 AntennaInstallation relation explicitly connects an antenna to its platform and carries relative three-axis orientation. This supports qualified mounting-orientation information. It does not import ISA rotation order, precedence or a universal parent convention, and no actual orientation measurement was obtained. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-037]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -45559,6 +45613,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-037",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.1.3.3",
+          "SOSA-V1-DSDM-1.2.41"
+        ],
+        "rationale": "The 2022 AntennaInstallation relation explicitly connects an antenna to its platform and carries relative three-axis orientation. This supports qualified mounting-orientation information. It does not import ISA rotation order, precedence or a universal parent convention, and no actual orientation measurement was obtained."
       }
     },
     {
@@ -45586,7 +45651,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Attached Position",
-        "PARTIAL (2022 v1 DSDM): AntennaInstallation.position uses VehicleFrontMidlineXYZPositionMeasurement; C239 mechanical axes/metadata are related design contexts, not measured current component offset or field coordinates. 2023 native-model equivalence unverified. [G2-7Q/G2-7T/G3-N2]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 AntennaInstallation relation carries position in a vehicle-fixed reference frame with X/Y/Z axes in meters. This supports qualified relative-placement information. Retain that particular frame and antenna/platform subject; it is not an arbitrary parent offset, ISA translation/rotation order or surveyed case location. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-038]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -45663,6 +45728,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-038",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.1.3.3",
+          "SOSA-V1-DSDM-1.2.56"
+        ],
+        "rationale": "The 2022 AntennaInstallation relation carries position in a vehicle-fixed reference frame with X/Y/Z axes in meters. This supports qualified relative-placement information. Retain that particular frame and antenna/platform subject; it is not an arbitrary parent offset, ISA translation/rotation order or surveyed case location."
       }
     },
     {
@@ -46031,7 +46107,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: StatusReport.node_location reports optional current Node position, possibly externally corrected; no proof of original physical instrument location, accuracy or its ISA Position contract. [SAP04-N06]",
         "Position",
-        "PARTIAL (2022 v1 DSDM): Platform WGS84PositionMeasurement includes latitude, longitude and height but is not proof of current reported geographic position of a specific component or probe. The 2023 C239 native bytes and actual installation are unverified. [G3-N2]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 physical Platform has WGS84 position with latitude, longitude and height. This supports qualified geographic-position information for the host. A sensor or probe does not automatically share that position, and the model field alone supplies neither a current sample nor its time or mounting offset. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-088]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -46130,6 +46206,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-088",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.1.3.78",
+          "SOSA-V1-DSDM-1.2.58"
+        ],
+        "rationale": "The 2022 physical Platform has WGS84 position with latitude, longitude and height. This supports qualified geographic-position information for the host. A sensor or probe does not automatically share that position, and the model field alone supplies neither a current sample nor its time or mounting offset."
       }
     },
     {
@@ -46224,7 +46311,7 @@
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: IDTA-01001 Part1 Metamodel 3.2.0 (July 2026): AAS derivedFrom refers to derivation between digital shells. Entity and RelationshipElement can model relationships, but cannot establish observed physical parent/child attachment. Original source IDs: AAS02-N006, AAS02-N030, AAS02-N031. BOUNDED PARTIAL research; not a mandatory DIM field/class, CSAPI Profile SHALL, AAS conformance or verified installed AAS record.\nAAS03: PARTIAL: AAS v3.2 — Entity and semantically qualified relationships can represent composition. Relationship annotations can qualify a link, but physical attachment, observed installation and applicable time require separate evidence. [AAS03-N011, AAS03-N012, AAS03-N013, AAS03-N014]\nAAS09: RELATED — Full/OneDown/OneUp describe differently distributed logical hierarchies. Their relations may model intended structure and cannot by themselves establish a reported physical attachment; SameAs links representations, not attachment. [AAS09-N003, AAS09-N004, AAS09-N005]",
         "[HELD] NO_ESTABLISHED: Recursive ConfigurationData lists component configuration details but does not define physical parent/child attachment, attachment frames or an installed equipment graph. [SAP03A-N12]",
         "Relationship",
-        "PARTIAL/RELATED: C239 §4 host/pod mounting, backplane/slot, electrical, RF and optical mating describe physical design, not a reported installed ISA parent–child relationship; System/Pod may be contextually nested without universal cardinality. The 2022 v1 DSDM HostPlatform/SensorComponent associations are model relations, not verified actual field attachments; C239 native equivalence held. [G2-4A/G2-6A/G2-7G/G2-7I/G2-7L–7Q/G2-7T/G3-N2]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 explicitly describes physical sensor-to-host mounting; the 2022 AntennaInstallation and HostPlatform relations identify installation/hosting subjects. These support qualified physical-attachment information. SensorComponent may also include software and is not automatically a physical attachment; no universal hierarchy, ISA link code or installed-case relationship is inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-099]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -46528,6 +46615,20 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-099",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-002",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-003",
+          "SOSA-V1-DSDM-1.1.3.3",
+          "SOSA-V1-DSDM-1.1.3.54",
+          "SOSA-V1-DSDM-1.1.3.92"
+        ],
+        "rationale": "C239 explicitly describes physical sensor-to-host mounting; the 2022 AntennaInstallation and HostPlatform relations identify installation/hosting subjects. These support qualified physical-attachment information. SensorComponent may also include software and is not automatically a physical attachment; no universal hierarchy, ISA link code or installed-case relationship is inferred."
       }
     },
     {
@@ -46904,7 +47005,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: SensorStatus NOT_DETECTING and target ACTIVE/PASSIVE behaviour have different subjects and meanings. Neither establishes the ISA component Active boolean; reporting stopped is not necessarily physical inactivity. [SAP04-N03, SAP06-N05]",
         "Active",
-        "NO_ESTABLISHED: C239 Appendix A State names a lifecycle condition; it does not define a currently reported ISA boolean active flag. [G2-7T]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 lifecycle state and the 2022 operational-state enumeration describe starting, testing, operation and other conditions. They do not define the ISA Active boolean meaning that a device is currently performing its responsibilities. Keep this flag comparison held while retaining operating-condition information separately. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-035]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47019,6 +47120,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-035",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-State",
+          "SOSA-V1-DSDM-1.2.23",
+          "SOSA-V1-IDL:GeneralOperationalStateEnum_Type.idl"
+        ],
+        "rationale": "C239 lifecycle state and the 2022 operational-state enumeration describe starting, testing, operation and other conditions. They do not define the ISA Active boolean meaning that a device is currently performing its responsibilities. Keep this flag comparison held while retaining operating-condition information separately."
       }
     },
     {
@@ -47046,7 +47159,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Armed",
-        "NO_ESTABLISHED: C239 Class1/3/5 physical MASTER_ARM and laser-arm contacts describe hardware interlocks/arming inputs, not a read-back current arming state, software authorization or safe executable Command. [G2-7L/G2-7O/G2-7Q]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 MASTER_ARM and LASER_ARM define physical circuits that enable or inhibit emission-device power. Emission annunciation reports firing, not current armed-state readback. Preserve these optional interlock/control provisions; they do not establish the requested arming-state report or software permission to execute a command. [F3-04D-ISA-C-036]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47122,6 +47235,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-036",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7L-RULE-13_5_2_3_4_1_1",
+          "SOSA-C239-G2-7O-RULE-13_5_3_3_4_1_1",
+          "SOSA-C239-G2-7Q-RULE-13_5_4_2_7_3"
+        ],
+        "rationale": "C239 MASTER_ARM and LASER_ARM define physical circuits that enable or inhibit emission-device power. Emission annunciation reports firing, not current armed-state readback. Preserve these optional interlock/control provisions; they do not establish the requested arming-state report or software permission to execute a command."
       }
     },
     {
@@ -47149,7 +47274,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Charged",
-        "NO_ESTABLISHED: C239 §13 VBAT is a named electrical input rail and rating, not a sampled battery charged flag. [G2-6A]",
+        "[HELD] RELATED/NO_ESTABLISHED: VBAT and ALT_VBAT define backup input voltages and allowable current. A battery-named rail and a power-supply condition signal do not report whether a component is charged. Keep the charged flag held; no state of charge is derived from nominal voltage or a supported backup interface. [F3-04D-ISA-C-049]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47205,6 +47330,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-049",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-6A-RULE-13.2.3.2-1",
+          "SOSA-C239-G2-6A-RULE-13.2.3.2-4"
+        ],
+        "rationale": "VBAT and ALT_VBAT define backup input voltages and allowable current. A battery-named rail and a power-supply condition signal do not report whether a component is charged. Keep the charged flag held; no state of charge is derived from nominal voltage or a supported backup interface."
       }
     },
     {
@@ -47302,7 +47438,7 @@
         "[COMMON CANDIDATE] RELATED: AAS v3.2 — A semantically defined Property and qualifiers can carry a condition assertion. Experimental event state on/off is not equipment operating condition; no common health vocabulary or actual reading is established. [AAS04-N007, AAS04-N018, AAS04-N029]",
         "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
         "Operating State",
-        "PARTIAL/RELATED: C239 §6.5 Sensor/PIC/Module lifecycle states (Off, Operational, Faulted, Lost Communication) differ from Health, Status, Mode and Configuration; lost link is not proof of equipment fault. §15 notifications and §14 RTE resource checks do not establish a case's current condition. The 2022 v1 DSDM separates healthStatus/operationalState; 2023 native equivalence and live values unverified. [SOSA-D/G2-3/G2-7R/G2-7S/G2-7T/G3-N2]",
+        "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47540,6 +47676,23 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-082",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-MANAGER-VIEWPOINT",
+          "SOSA-C239-G2-3-STATE-PIC-P5",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_7",
+          "SOSA-V1-DSDM-1.1.3.15",
+          "SOSA-V1-DSDM-1.2.22",
+          "SOSA-V1-DSDM-1.2.23",
+          "SOSA-V1-IDL:GeneralOperationalStateEnum_Type.idl"
+        ],
+        "rationale": "C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred."
       }
     },
     {
@@ -47567,7 +47720,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: TaskAck ACCEPTED, REJECTED, COMPLETED and FAILED are task lifecycle outcomes. Four outcomes do not establish the ISA four-state logical value algebra. [SAP05-N11]",
         "Belnap Dunn · FALSE / PARADOX / TRUE / UNSPECIFIED",
-        "NO_ESTABLISHED: C239 defines lifecycle State, but no native equivalent to ISA's four-valued evaluation-state vocabulary is established. [G2-7T]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 lifecycle State and the 2022 operational/health enumerations have their own source meanings. They do not establish ISA four-valued evaluation logic. Keep this mapping held; similar state labels are not evidence of equivalent truth values or evaluation rules. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-LOGIC-STATE]",
         "",
         "",
         "",
@@ -47660,6 +47813,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-E-LOGIC-STATE",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-State",
+          "SOSA-V1-DSDM-1.2.22",
+          "SOSA-V1-DSDM-1.2.23"
+        ],
+        "rationale": "C239 lifecycle State and the 2022 operational/health enumerations have their own source meanings. They do not establish ISA four-valued evaluation logic. Keep this mapping held; similar state labels are not evidence of equivalent truth values or evaluation rules."
       }
     },
     {
@@ -47687,7 +47852,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "AC Current Load",
-        "RELATED design only: C239 §13 Power Supply Card alternating-current input pins and permitted ratings do not provide measured consumed AC current. [G2-6A]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-4 calls for analog reporting of power-supply input currents; its PSC input rules expressly allow AC input variants. This supports qualified consumed AC current information for an applicable supply. Retain the SHOULD standing and hardware scope; neither connector ratings nor an installed measurement is substituted for the report. [F3-04D-ISA-C-031]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47745,6 +47910,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-031",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_4",
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-3"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-4 calls for analog reporting of power-supply input currents; its PSC input rules expressly allow AC input variants. This supports qualified consumed AC current information for an applicable supply. Retain the SHOULD standing and hardware scope; neither connector ratings nor an installed measurement is substituted for the report."
       }
     },
     {
@@ -47841,7 +48017,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "AC Voltage Load",
-        "NO_ESTABLISHED: C239 Class3 J10 alternating-current power connection is input design, not measured load-side AC voltage. [G2-7N]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-3 calls for analog reporting of a power-supply input voltage; PSC rules allow AC input. This supports qualified voltage consumed by an AC load. The J10 115/200 versus 120/208 rating discrepancy remains unresolved; those design ratings are not samples, and input voltage is not source output. [F3-04D-ISA-C-033]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47894,6 +48070,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-033",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-3",
+          "SOSA-C239-G2-7N-RULE-13_5_2_13_1_1-J10"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-3 calls for analog reporting of a power-supply input voltage; PSC rules allow AC input. This supports qualified voltage consumed by an AC load. The J10 115/200 versus 120/208 rating discrepancy remains unresolved; those design ratings are not samples, and input voltage is not source output."
       }
     },
     {
@@ -47921,7 +48109,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "AC Voltage Source",
-        "RELATED, NOT measured: C239 Class3 J10 prints a 115/200 V RMS requirement while the associated table prints 120/208 VAC; the original discrepancy remains unresolved, and neither value is source-side telemetry. [G2-7N]",
+        "[HELD] RELATED_BUT_DIFFERENT: The reviewed J10 AC connection is a platform-supplied input, and PSC input-voltage reporting describes consumption. Reviewed final PSC outputs are DC. These passages do not establish reported AC voltage produced by a source; retain the J10 rating conflict without using input or nominal ratings as output telemetry. [F3-04D-ISA-C-034]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -47974,6 +48162,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-034",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7N-RULE-13_5_2_13_1_1-J10",
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.2-1"
+        ],
+        "rationale": "The reviewed J10 AC connection is a platform-supplied input, and PSC input-voltage reporting describes consumption. Reviewed final PSC outputs are DC. These passages do not establish reported AC voltage produced by a source; retain the J10 rating conflict without using input or nominal ratings as output telemetry."
       }
     },
     {
@@ -48001,7 +48201,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "DC Current Load",
-        "RELATED design only: C239 §6.4.2 recommends Power Supply Card input-current analog sensing and §13 VBAT gives class-specific current limits; neither establishes actual consumed DC current for an installed component. [G2-3/G2-6A]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-4 calls for analog input-current reporting, and PSC input rules allow DC variants. This supports qualified consumed DC current information. The earlier VBAT maximum-current references are design limits, not measured consumption; the reporting recommendation does not certify implementation or a case value. [F3-04D-ISA-C-052]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48072,6 +48272,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-052",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_4",
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-1",
+          "SOSA-C239-G2-6A-RULE-13.2.3.2-2"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-4 calls for analog input-current reporting, and PSC input rules allow DC variants. This supports qualified consumed DC current information. The earlier VBAT maximum-current references are design limits, not measured consumption; the reporting recommendation does not certify implementation or a case value."
       }
     },
     {
@@ -48099,7 +48311,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "DC Current Source",
-        "RELATED design only: C239 §6.4.2 recommends Power Supply Card output-current sensing and §13 defines rated 12V outputs; neither provides observed produced DC current. [G2-3/G2-6A]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-2 calls for analog reporting of each power-supply output current, and PSC final outputs include DC rails. This supports qualified produced DC current information. Preserve output-versus-input direction and SHOULD standing; nominal pin ratings are not reported readings. [F3-04D-ISA-C-053]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48170,6 +48382,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-053",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_2",
+          "SOSA-C239-G2-6A-RULE-13.2.6.2-1",
+          "SOSA-C239-G2-6A-RULE-13.2.6.2-2"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-2 calls for analog reporting of each power-supply output current, and PSC final outputs include DC rails. This supports qualified produced DC current information. Preserve output-versus-input direction and SHOULD standing; nominal pin ratings are not reported readings."
       }
     },
     {
@@ -48197,7 +48421,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "DC Voltage Load",
-        "RELATED/NO_ESTABLISHED: C239 §6.4.2 recommends Power Supply Card rail output-voltage sensing, while §13 nominal 12V/3.3V_AUX rails and Class3 J11 input constraints describe equipment design—not current sampled load-side DC voltage. [G2-3/G2-6A/G2-7N]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-3 and DC PSC input rules support qualified voltage consumed by a DC load. Correct the earlier reliance on output-voltage sensing for this load-side row. Input and output measurements remain separate; no equality across wiring, nominal-rating substitution or observed case value is assumed. [F3-04D-ISA-C-054]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48280,6 +48504,17 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-054",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-1"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-3 and DC PSC input rules support qualified voltage consumed by a DC load. Correct the earlier reliance on output-voltage sensing for this load-side row. Input and output measurements remain separate; no equality across wiring, nominal-rating substitution or observed case value is assumed."
       }
     },
     {
@@ -48307,7 +48542,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "DC Voltage Source",
-        "RELATED design only: C239 §6.4.2 recommended input-voltage sensing, VBAT/ALT_VBAT, Class1/3/5 nominal platform 28V, 270V, backup 3.3/3.9V and 24V feeds distinguish physical interfaces and conditions. None establishes measured current source-side DC voltage, battery state or universal device limit. [G2-3/G2-6A/G2-7L/G2-7N–7Q]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Recommendation 6.4.2-1 calls for analog reporting of each output voltage, and final PSC outputs include DC rails. This supports qualified voltage provided by a DC source. Correct the earlier input-voltage emphasis; preserve output direction and SHOULD standing without converting design ratings into readings. [F3-04D-ISA-C-055]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48440,6 +48675,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-055",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_1",
+          "SOSA-C239-G2-6A-RULE-13.2.6.2-1",
+          "SOSA-C239-G2-6A-RULE-13.2.6.2-2"
+        ],
+        "rationale": "C239 Recommendation 6.4.2-1 calls for analog reporting of each output voltage, and final PSC outputs include DC rails. This supports qualified voltage provided by a DC source. Correct the earlier input-voltage emphasis; preserve output direction and SHOULD standing without converting design ratings into readings."
       }
     },
     {
@@ -48580,7 +48827,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: StatusReport.Power.status OK/FAULT describes the reported source condition, not a measured supply voltage/current or an ISA Power State value. [SAP04-N05]",
         "Power State",
-        "RELATED/NO_ESTABLISHED: C239 auxiliary management and payload power can differ; §13 PSC FAIL*/enable and class-specific inrush, isolation, backup and power-cycle rules describe hardware or potential status signaling. None verifies installed present power, voltage, fault, recovery or general ISA reported-power condition. [SOSA-D/G2-3/G2-6A/G2-7L/G2-7N–7Q]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 recommends power-supply status commands and requires FAIL* when an output voltage is out of specification. These support qualified supply-condition information. FAIL* is a physical condition signal, not a universal digital state code; enable/inhibit inputs and separate management/payload domains do not prove every component is powered. [F3-04D-ISA-C-091]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48758,6 +49005,19 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-091",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_2_5",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-4",
+          "SOSA-C239-G2-6A-TABLE-13.2.6.5-1",
+          "SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS"
+        ],
+        "rationale": "C239 recommends power-supply status commands and requires FAIL* when an output voltage is out of specification. These support qualified supply-condition information. FAIL* is a physical condition signal, not a universal digital state code; enable/inhibit inputs and separate management/payload domains do not prove every component is powered."
       }
     },
     {
@@ -48785,7 +49045,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "PARTIAL: StatusReport.Power.level reports remaining battery percentage 0–100 if available; not guaranteed measured energy reserve, capacity in Wh or cross-source comparability. [SAP04-N05]",
         "Reserve Capacity",
-        "NO_ESTABLISHED: C239 §13 energy-storage and J16 backup/hold-up inputs are not measured state-of-charge percentage or usable reserve relative to maximum capacity. [G2-6A/G2-7N/G2-7P/G2-7Q]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 energy-storage modules accept/provide intermediate power, and J16 supplies low-current backup power for retention. These interfaces do not define usable energy reserve relative to maximum capacity. Keep this state-of-charge comparison held; no percentage or charged status is inferred from the battery label. [F3-04D-ISA-C-100]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -48907,6 +49167,19 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-100",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-11",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-12",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_17_1_1"
+        ],
+        "rationale": "C239 energy-storage modules accept/provide intermediate power, and J16 supplies low-current backup power for retention. These interfaces do not define usable energy reserve relative to maximum capacity. Keep this state-of-charge comparison held; no percentage or charged status is inferred from the battery label."
       }
     },
     {
@@ -48934,7 +49207,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: Battery level and power condition do not supply predicted runtime or time-to-empty. No duration is inferred from charge percentage. [SAP04-N05]",
         "Time to Empty",
-        "NO_ESTABLISHED: C239 energy storage and backup/real-time-clock retention circuits provide no battery capacity, discharge model, actual load profile or estimated time-to-empty. [G2-6A/G2-7N/G2-7P]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 backup inputs can retain memory and clocks across power cycles, but the reviewed provisions provide no remaining-capacity/load forecast or estimated time to empty. Keep this comparison held; a retention-power capability is not a duration estimate for an installed battery. [F3-04D-ISA-C-113]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -49055,6 +49328,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-113",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-12",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_17_1_1"
+        ],
+        "rationale": "C239 backup inputs can retain memory and clocks across power cycles, but the reviewed provisions provide no remaining-capacity/load forecast or estimated time to empty. Keep this comparison held; a retention-power capability is not a duration estimate for an installed battery."
       }
     },
     {
@@ -49082,7 +49367,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "RELATED: BSI Table64 PowerSource enumerates currently reported MAINS, internal/external battery, generator, solar, wind or fuel cell; not physical inventory or ISA power-source equivalence. [SAP04-N05]",
         "Power Source · native supply categories; RELIABLE retains source wording",
-        "RELATED/PARTIAL: C239 host/Power Module interfaces, §13 PSC input rails, utility, AC, DC, backup and hold-up power types distinguish source-specific feed roles and class requirements. They do not identify an installed solar, battery, mains or generator power source, measured reserves or live condition. 2022 v1 DSDM PowerBus/PowerPort are electrical interfaces, not universal energy-source classes; 2023 native equivalence held. [G2-5/G2-6A/G2-7H–7J/G2-7L/G2-7N–7Q/G3-N2]",
+        "[SPECIALIZED CANDIDATE] RELATED/PARTIAL: C239 distinguishes AC/DC supply inputs, final/intermediate outputs and backup feed roles; the 2022 PowerBus/PowerPort describe an electrical source interface and component connection. Retain these optional power-interface classifications as specialized candidates. They do not identify a generator, solar supply, installed battery technology or universal energy-source taxonomy. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-E-POWER-SOURCE]",
         "",
         "",
         "",
@@ -49309,6 +49594,22 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-E-POWER-SOURCE",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "RELATED/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-1",
+          "SOSA-C239-G2-6A-RULE-13.2.6.1-3",
+          "SOSA-C239-G2-6A-RULE-13.2.6.6-11",
+          "SOSA-C239-G2-7N-RULE-13_5_2_19_1_1",
+          "SOSA-V1-DSDM-1.1.3.80",
+          "SOSA-V1-DSDM-1.1.3.81",
+          "SOSA-V1-IDL:PluginCardConfig_Info.idl"
+        ],
+        "rationale": "C239 distinguishes AC/DC supply inputs, final/intermediate outputs and backup feed roles; the 2022 PowerBus/PowerPort describe an electrical source interface and component connection. Retain these optional power-interface classifications as specialized candidates. They do not identify a generator, solar supply, installed battery technology or universal energy-source taxonomy."
       }
     },
     {
@@ -49550,7 +49851,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "IP Addresses",
-        "PARTIAL (2022 v1 DSDM): NetworkInterface.ip / optional NetworkInterface_Info address structure includes IPv4AddressMeasurement; C239 §14 port provisioning and §15 IPv4/IPv6 binding do not prove assigned current interface addresses or reachability. 2023 C239 native equivalence unverified. [G2-7R/G2-7S/G3-N2]",
+        "[COMMON CANDIDATE] PARTIAL: The 2022 NetworkInterface carries an IP address, and NetworkInterface_Info separates optional address and gateway content. This supports qualified interface-address information without reachability or current assignment proof. Preserve the source representation difference: the model describes IPv4 as an integer while IPv4Address_Type.idl is a string; no wire-type equivalence is adopted. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-067]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -49630,6 +49931,20 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-067",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-V1-DSDM-1.1.3.73",
+          "SOSA-V1-DSDM-1.2.26",
+          "SOSA-V1-DSDM-1.3.3.18",
+          "SOSA-V1-IDL:NetworkInterface_Info.idl",
+          "SOSA-V1-IDL:IPv4Address_Type.idl"
+        ],
+        "rationale": "The 2022 NetworkInterface carries an IP address, and NetworkInterface_Info separates optional address and gateway content. This supports qualified interface-address information without reachability or current assignment proof. Preserve the source representation difference: the model describes IPv4 as an integer while IPv4Address_Type.idl is a string; no wire-type equivalence is adopted."
       }
     },
     {
@@ -49657,7 +49972,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: A missed heartbeat can reflect power loss, disablement or communication loss. System/sensor status does not establish an individual network interface up/down state. [SAP04-N01, SAP04-N03]",
         "Link State",
-        "RELATED/NO_ESTABLISHED: C239 §6.5.4.2-9/-10 requires a directly managed PIC to report specified MAC/IP port active/inactive state, but §13 speed auto-negotiation, §14 network access and §15 transport availability are not observed link state of the four case systems. No ISA-wide universal network status inferred. [G2-3/G2-7Q/G2-7R/G2-7S]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Rules 6.5.4.2-9 and -10 require directly managed PICs to report active/inactive MAC-layer and IP-layer port status. This supports qualified interface-state reporting. Keep the layers and direct-management scope distinct; port status is not end-to-end reachability, a case observation or an ISA-wide universal status rule. [F3-04D-ISA-C-072]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -49791,6 +50106,17 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-072",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_5_4_2_9",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_10"
+        ],
+        "rationale": "C239 Rules 6.5.4.2-9 and -10 require directly managed PICs to report active/inactive MAC-layer and IP-layer port status. This supports qualified interface-state reporting. Keep the layers and direct-management scope distinct; port status is not end-to-end reachability, a case observation or an ISA-wide universal status rule."
       }
     },
     {
@@ -50058,7 +50384,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Receive Data Rate",
-        "NO_ESTABLISHED: C239 Class3 10GBase-T physical port rating and §15 high-volume signal-stream definition are not observed current receive throughput for a component. [G2-7M/G2-7P/G2-7S]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 10GBase-T interface requirements and digital signal-stream definitions specify communication capabilities and data flow. They do not define a report of actual received throughput. Keep this comparison held; nominal link rate and stream volume are not measured component receive rate. [F3-04D-ISA-C-097]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -50134,6 +50460,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-097",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_1_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_8_1_1",
+          "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+        ],
+        "rationale": "C239 10GBase-T interface requirements and digital signal-stream definitions specify communication capabilities and data flow. They do not define a report of actual received throughput. Keep this comparison held; nominal link rate and stream volume are not measured component receive rate."
       }
     },
     {
@@ -50161,7 +50499,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: Signal.amplitude reports detected radio-frequency signal amplitude, typically in dB. It does not define this component network interface received power or an equivalent power quantity. [SAP04-N15]",
         "Receive Power",
-        "NO_ESTABLISHED: C239 VSWR is radio-frequency impedance mismatch, not measured received signal power or ISA dBm received-power value. [G2-7M/G2-7P]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 voltage standing-wave-ratio limits concern mated RF contacts, not received signal power. The 2022 model also defines a power-in-dBm measurement type, but the reviewed type alone does not identify a component received-power report. Preserve both native concepts and hold this specific reporting comparison. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-098]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -50270,6 +50608,17 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-098",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/NO_ESTABLISHED",
+        "source_ids": [
+          "SOSA-C239-G2-7M-RULE-13_5_2_10_1",
+          "SOSA-V1-DSDM-1.2.38"
+        ],
+        "rationale": "C239 voltage standing-wave-ratio limits concern mated RF contacts, not received signal power. The 2022 model also defines a power-in-dBm measurement type, but the reviewed type alone does not identify a component received-power report. Preserve both native concepts and hold this specific reporting comparison."
       }
     },
     {
@@ -50444,7 +50793,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Transmit Data Rate",
-        "NO_ESTABLISHED: C239 Class3 10GBase-T design rate and §15 high-rate signal stream do not establish sampled current transmitted bit rate or link utilization. [G2-7M/G2-7P/G2-7S]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 10GBase-T interface requirements and digital signal streams do not declare sampled transmit throughput or utilization. Keep the transmit-rate comparison held; a nominal signaling capability and a possible data path are not an actual transfer-rate report. [F3-04D-ISA-C-114]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -50520,6 +50869,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-114",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED_BUT_DIFFERENT",
+        "source_ids": [
+          "SOSA-C239-G2-7M-RULE-13_5_2_8_1_1",
+          "SOSA-C239-G2-7P-RULE-13_5_3_8_1_1",
+          "SOSA-C239-G2-7S-INTERACTION-Digital_Signal_Stream"
+        ],
+        "rationale": "C239 10GBase-T interface requirements and digital signal streams do not declare sampled transmit throughput or utilization. Keep the transmit-rate comparison held; a nominal signaling capability and a possible data path are not an actual transfer-rate report."
       }
     },
     {
@@ -52671,7 +53032,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: Status fault/condition text does not establish the latest built-in-test result or a particular test execution. Hold this result mapping without discarding operational health reporting. [SAP04-N07]",
         "Built In Test Result",
-        "RELATED/PARTIAL (2022 v1 DSDM): C239 V1.0 getSensorBITResults/getBITResults operations differ by manager/security/PIC role. The 2022 v1 SensorBITResult and BitResults_Info describe time/result/status but do not establish the latest completed BIT or a performed case test; 2023 C239 native byte equivalence held. Appendix A Health/Test are different concepts. [SOSA-D/G2-1/G2-2/G2-7T/G3-N2]",
+        "[COMMON CANDIDATE] PARTIAL: C239 V1.0 diagnostic-result operations and the 2022 BIT result structures provide test outcome, description and timestamp associated with sensor components. These support qualified built-in-test result information. The reviewed declarations do not guarantee latest-result selection, completion ordering or a performed case test; Future configuration operations remain separate. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-046]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -52825,6 +53186,25 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-046",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "source_ids": [
+          "SOSA-C239-G2-1-SMI-015",
+          "SOSA-C239-G2-1-SMI-016",
+          "SOSA-V1-DSDM-1.1.3.90",
+          "SOSA-V1-DSDM-1.2.4",
+          "SOSA-V1-DSDM-1.3.2.28",
+          "SOSA-V1-DSDM-1.3.3.2",
+          "SOSA-V1-DSDM-1.3.3.20",
+          "SOSA-V1-IDL:BitResults_Info.idl",
+          "SOSA-V1-IDL:PairSensorComponentBITResults_Info.idl",
+          "SOSA-V1-IDL:GetSensorBITResults_Response_Msg.idl"
+        ],
+        "rationale": "C239 V1.0 diagnostic-result operations and the 2022 BIT result structures provide test outcome, description and timestamp associated with sensor components. These support qualified built-in-test result information. The reviewed declarations do not guarantee latest-result selection, completion ordering or a performed case test; Future configuration operations remain separate."
       }
     },
     {
@@ -53056,7 +53436,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Tamper State [Accepted extension]",
-        "RELATED only: C239 §12.1.1 Security Services and software-integrity requirements describe specialized security-state/protection functions, not a validated real device tamper-condition report or ISA tamper-status value. [SOSA-D, C239 §12.1.1]",
+        "[SPECIALIZED CANDIDATE] NARROWER/PARTIAL: C239 Security Services names Security Tamper Alert as an output. This supports an optional security-alert candidate beyond generic software-integrity wording. The reviewed table does not define a persistent physical-device tamper state, sensor implementation, alert payload or ISA status encoding; actual tampering remains unverified. [F3-04D-ISA-C-111]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -53113,6 +53493,16 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-111",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "NARROWER/PARTIAL",
+        "source_ids": [
+          "SOSA-C239-TOC-12.1.1"
+        ],
+        "rationale": "C239 Security Services names Security Tamper Alert as an output. This supports an optional security-alert candidate beyond generic software-integrity wording. The reviewed table does not define a persistent physical-device tamper state, sensor implementation, alert payload or ISA status encoding; actual tampering remains unverified."
       }
     },
     {
@@ -53207,7 +53597,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Link Loss · Db · Question ISA-Q002",
-        "NO_ESTABLISHED: C239 VSWR is an RF impedance mismatch ratio; it does not resolve original ISA-Q002 Link Loss meaning/reference, which remains an explicit source question. [G2-7M]",
+        "[HELD] RELATED/UNRESOLVED_REFERENCE: C239 voltage standing-wave ratio is a mated-contact RF performance criterion. It does not resolve the original ISA Link Loss definition/reference question ISA-Q002. Preserve the source question and hold this mapping; no path-loss or network-loss quantity is inferred. [F3-04D-ISA-C-071]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -53260,6 +53650,16 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-071",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/UNRESOLVED_REFERENCE",
+        "source_ids": [
+          "SOSA-C239-G2-7M-RULE-13_5_2_10_1"
+        ],
+        "rationale": "C239 voltage standing-wave ratio is a mated-contact RF performance criterion. It does not resolve the original ISA Link Loss definition/reference question ISA-Q002. Preserve the source question and hold this mapping; no path-loss or network-loss quantity is inferred."
       }
     },
     {
@@ -53287,7 +53687,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "[HELD] NO_ESTABLISHED: Detected Signal.amplitude does not resolve ISA-Q004 or establish its Signal Strength Ratio quantity. Preserve the ISA original-source question and the distinct native signal claim. [SAP04-N15]",
         "Signal Strength Ratio · Db · Question ISA-Q004",
-        "NO_ESTABLISHED: C239 VSWR in source-specific RF frequency/contact contexts is not ISA Signal Strength Ratio; original ISA-Q004 reference quantity/definition remains open. [G2-7M/G2-7P]",
+        "[HELD] RELATED/UNRESOLVED_REFERENCE: C239 voltage standing-wave ratio is not an established equivalent of ISA Signal Strength Ratio. The original ISA-Q004 reference quantity/definition remains unresolved. Keep this comparison explicitly held rather than inventing a signal-to-noise or power-ratio definition. [F3-04D-ISA-C-107]",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -53394,6 +53794,16 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "F3_04D_OpenGroupSOSA_classification": {
+        "decision_id": "F3-04D-ISA-C-107",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "relation": "RELATED/UNRESOLVED_REFERENCE",
+        "source_ids": [
+          "SOSA-C239-G2-7M-RULE-13_5_2_10_1"
+        ],
+        "rationale": "C239 voltage standing-wave ratio is not an established equivalent of ISA Signal Strength Ratio. The original ISA-Q004 reference quantity/definition remains unresolved. Keep this comparison explicitly held rather than inventing a signal-to-noise or power-ratio definition."
       }
     }
   ],
@@ -56369,16 +56779,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "F3_04C_CLASSIFICATION_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "F3_04D_CLASSIFICATION_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "F3_04C_CLASSIFICATION_SAVED_VERIFIED",
-    "sha256": "3b5a117ac338aea3d059f4ec1e43acbbbebd18bb195d74f72c2d7c5fd7d7495a",
+    "checkpoint": "F3_04D_CLASSIFICATION_SAVED_VERIFIED",
+    "sha256": "1de5d2bd277bb76f9e58bdbdbc9194a19f6468e5f4b6ec40fb6d845608c075cb",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
     "lag": "ZERO: JSON, both CSVs, both readable comparisons and same 26-sheet XLSX",
-    "textCheckpoint": "F3_04C_CLASSIFICATION_ONLY",
+    "textCheckpoint": "F3_04D_CLASSIFICATION_ONLY",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -56396,8 +56806,8 @@
       "ISA-C-211",
       "ISA-K-MUTABILITY"
     ],
-    "refreshed_cell_count": 21,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04C_classification_review/publication",
+    "refreshed_cell_count": 33,
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04D_classification_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -57744,6 +58154,41 @@
       "CASE-H07",
       "CASE-H08",
       "CASE-H09"
+    ],
+    "F3_04D_affected_row_ids": [
+      "ISA-C-048",
+      "ISA-C-066",
+      "ISA-C-108",
+      "ISA-E-COMPONENT-CATEGORY",
+      "ISA-C-037",
+      "ISA-C-038",
+      "ISA-C-088",
+      "ISA-C-099",
+      "ISA-C-035",
+      "ISA-C-036",
+      "ISA-C-049",
+      "ISA-C-082",
+      "ISA-E-LOGIC-STATE",
+      "ISA-C-031",
+      "ISA-C-033",
+      "ISA-C-034",
+      "ISA-C-052",
+      "ISA-C-053",
+      "ISA-C-054",
+      "ISA-C-055",
+      "ISA-C-091",
+      "ISA-C-100",
+      "ISA-C-113",
+      "ISA-E-POWER-SOURCE",
+      "ISA-C-067",
+      "ISA-C-072",
+      "ISA-C-097",
+      "ISA-C-098",
+      "ISA-C-114",
+      "ISA-C-046",
+      "ISA-C-111",
+      "ISA-C-071",
+      "ISA-C-107"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -59692,7 +60137,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "F3-04D ONLY on a separate Proceed: classify the 33 remaining Open Group SOSA equipment comparisons from J251 onward, with relevant prior-decision calibration. Stop before AAS classification/research, new rows or model adoption; AAS native-first O1 waits for the F3 owner gate.",
+  "nextOwnerAction": "F3-05 ONLY on a separate Proceed: review the 64 existing AAS source-bearing comparisons (54 provisional colors and ten holds) against their original AAS02–09 evidence under the same classification contract. Stop before F3-06, AAS native-first O1–O7, new rows or model adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -66265,5 +66710,274 @@
       "other_explicit_unassessed_or_case_statuses": 732
     },
     "next": "F3-04D ONLY on a separate Proceed: classify the 33 remaining Open Group SOSA equipment comparisons from J251 onward, with relevant prior-decision calibration. Stop before AAS classification/research, new rows or model adoption; AAS native-first O1 waits for the F3 owner gate."
+  },
+  "F3_04D_classification": {
+    "date": "2026-11-14",
+    "evidence": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/F3_04D_classification_review",
+    "records": [
+      {
+        "row_id": "ISA-C-048",
+        "cell": "J251",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-066",
+        "cell": "J252",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-108",
+        "cell": "J260",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-E-COMPONENT-CATEGORY",
+        "cell": "J264",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-037",
+        "cell": "J268",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-038",
+        "cell": "J269",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-088",
+        "cell": "J275",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-099",
+        "cell": "J277",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-035",
+        "cell": "J282",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-036",
+        "cell": "J283",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-049",
+        "cell": "J284",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-082",
+        "cell": "J286",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-E-LOGIC-STATE",
+        "cell": "J287",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-031",
+        "cell": "J289",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-033",
+        "cell": "J291",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-034",
+        "cell": "J292",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-052",
+        "cell": "J293",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-053",
+        "cell": "J294",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-054",
+        "cell": "J295",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-055",
+        "cell": "J296",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-091",
+        "cell": "J298",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-100",
+        "cell": "J299",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-113",
+        "cell": "J300",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-E-POWER-SOURCE",
+        "cell": "J301",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "ISA-C-067",
+        "cell": "J306",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-072",
+        "cell": "J307",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-097",
+        "cell": "J310",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-098",
+        "cell": "J311",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-114",
+        "cell": "J313",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-046",
+        "cell": "J345",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
+      },
+      {
+        "row_id": "ISA-C-111",
+        "cell": "J350",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
+      },
+      {
+        "row_id": "ISA-C-071",
+        "cell": "J353",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      },
+      {
+        "row_id": "ISA-C-107",
+        "cell": "J354",
+        "donor_key": "OpenGroupSOSA",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null
+      }
+    ],
+    "census_after": {
+      "source_bearing": 616,
+      "colored": 466,
+      "held": 150,
+      "ungraded": 0,
+      "SAPIENT": {
+        "source_bearing": 115,
+        "colored": 65,
+        "held": 50,
+        "ungraded": 0
+      },
+      "ISA": {
+        "source_bearing": 316,
+        "colored": 271,
+        "held": 45,
+        "ungraded": 0
+      },
+      "Open_Group_SOSA": {
+        "source_bearing": 121,
+        "colored": 76,
+        "held": 45,
+        "ungraded": 0
+      },
+      "AAS": {
+        "source_bearing": 64,
+        "colored": 54,
+        "held": 10,
+        "ungraded": 0
+      },
+      "other_explicit_unassessed_or_case_statuses": 732
+    },
+    "next": "F3-05 ONLY on a separate Proceed: review the 64 existing AAS source-bearing comparisons (54 provisional colors and ten holds) against their original AAS02–09 evidence under the same classification contract. Stop before F3-06, AAS native-first O1–O7, new rows or model adoption."
   }
 }

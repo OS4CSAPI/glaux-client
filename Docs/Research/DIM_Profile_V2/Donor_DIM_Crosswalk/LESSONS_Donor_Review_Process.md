@@ -1,3 +1,13 @@
+# L109 — Read reporting provisions and preserve input/output direction (14 November 2026)
+
+F3-04D found that earlier equipment comparisons could cite only connector ratings or emphasize the absence of observed case values while overlooking explicit reporting rules and recommendations. C239 recommends analog power-supply input/output measurements, requires scoped port and operational-state reporting, and describes revision inventory; native model declarations also carry mounting, network and diagnostic information. These support qualified candidates without a field deployment, while their subject, SHALL/SHOULD standing and 2022/2023 edition limits remain visible. A named Security Tamper Alert is useful optional information, but not automatically a persistent device tamper state or a defined payload.
+
+Reopen the comparator definition when direction is ambiguous: original ISA Load means consumed/used and Source means produced/provided. Pair SOSA input voltage with load voltage and output voltage with source voltage; do not reverse them because a power supply is itself called a source. An AC input, a nominal rail, arming circuit, backup battery interface, RF mismatch ratio or network signaling rate must not become an AC output measurement, charge percentage, arming report, time-to-empty estimate, received-power value or actual throughput. Distinct representations (such as the 2022 IPv4 integer model and string IDL) remain source questions even when the underlying information need is a common candidate.
+
+All 121 SOSA source-bearing comparisons now have classifications or explicit holds, but nine source-hold families remain. Classification closure, original-source completeness, observed case evidence, workbook parity and model adoption are separate claims; preserve all their gates. A title search miss did not establish that an original was unavailable: the existing exact ISA source reference successfully resolved the needed original pages.
+
+---
+
 # L108 — Separate message metadata, writer policy and real-case evidence (14 November 2026)
 
 F3-04C recovered qualified message identity and source-attribution information from original headers, component/log relations and management notification rules. Authentication was not required merely to recognize declared source attribution; nevertheless the source producer, transmitting endpoint and audit relay remain different roles. Individual message ID, message-type ID, occurrence ID and request/response correlation must retain distinct meanings. Clock basis does not determine whether a timestamp represents an event, a log entry or transmission, and writer priority or an update deadline cannot be silently repurposed as message priority or data expiry.
