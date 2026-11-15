@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O3_COMPLETE",
+  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O4_COMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
+  "one_next": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10132,17 +10132,17 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS_O3_SAVED_VERIFIED",
-    "rows": 350,
-    "grid": "369x16",
+    "checkpoint": "AAS_O4_SAVED_VERIFIED",
+    "rows": 352,
+    "grid": "372x16",
     "AAS_column": "G",
     "same_workbook": true,
     "comparison_lag": 0,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
-    "status": "O3_COMPLETE__O4_PENDING",
-    "workbook_metadata_lag": "ZERO: current O3 guidance refreshed; labeled historical checkpoints retained."
+    "next": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption.",
+    "status": "O4_COMPLETE__O5_PENDING",
+    "workbook_metadata_lag": "ZERO: current O4 guidance refreshed; labeled historical checkpoints retained."
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -66970,6 +66970,1366 @@
         }
       ],
       "delivery_recovery_scope": "Recovered original O3 findings/candidates/workbook without a new source audit. Compact protocol and indexes preserved; original checker dispatch integrated with recovery guard. Unchanged prior workbook rendering reused; native Microsoft Excel reopen remains pending."
+    }
+  },
+  "AAS_O4_native_review": {
+    "date": "2026-11-15",
+    "timezone": "UTC",
+    "status": "O4_COMPLETE__O5_PENDING_OWNER_PROCEED",
+    "preflight_head": "ffdf561e1c040108293df7dcb29ceeddb013ec93",
+    "archive_branch": "archive/dim-crosswalk-pre-aas-o4-20261115",
+    "scope": "One owner Proceed for O4: 38 AAS06 findings against pinned original passages; stop before O5.",
+    "records": [
+      {
+        "source_id": "AAS06-N001",
+        "original_record": "#/AAS06/original_items/0",
+        "original_record_sha256": "49a6917991693f74a6f6d967fd16d489b8dd91655b82fe66bf11bcf9db4f1fc1",
+        "native_meaning": "Service, Interface, API, implementation and running instances are separately defined; an API interface is not an operating device.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc#L15-L66",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc",
+        "source_lines": [
+          15,
+          66
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "S06-R006",
+          "ISA-A-SERVICE-ROLE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Keep specification, implementation and running-instance levels separate. Existing participant and service-role candidates suffice; no new device class.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N002",
+        "original_record": "#/AAS06/original_items/1",
+        "original_record_sha256": "ab8312c632f6c38b0e7ca6e97cea5bcd07e0a1a9ee4175f292bf17cf15cb7175",
+        "native_meaning": "Discovery maps Asset-ID to AAS-ID, Registry maps AAS-ID to descriptor endpoint, and Repository holds data; none is an installed sensing connection.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc#L230-L266",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc",
+        "source_lines": [
+          230,
+          266
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "DEFINITION_AND_EXAMPLE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N003",
+        "original_record": "#/AAS06/original_items/2",
+        "original_record_sha256": "da2af45eb079ed8979e74ae3bc04b503aaf1781886652b8ae9e2a4982488e755",
+        "native_meaning": "AAS descriptor ID is required; shell endpoints may be absent while Submodel descriptor endpoints are supplied. Actual AAS takes precedence over a stale descriptor.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L49-L75",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "source_lines": [
+          49,
+          75
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N004",
+        "original_record": "#/AAS06/original_items/3",
+        "original_record_sha256": "9f04c2c958c0e680b9f0d9bb36eea461af5622a63bc9bd44fc8b1b283f821009",
+        "native_meaning": "Endpoint describes an interface and protocol information; not an authenticated hardware link.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L96-L110",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "source_lines": [
+          96,
+          110
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-NETWORK-CONTEXT",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Endpoint.interface and protocolInformation describe offered API and connection metadata. href is required; optional protocol/version/subprotocol/body/encoding and declared security alternatives refine existing endpoint context. No negotiated connection, enforced security or physical cable is established. External DIN SPEC original remains unexamined; no extra candidate required.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N005",
+        "original_record": "#/AAS06/original_items/4",
+        "original_record_sha256": "4b570e5a8fc6ee1cd9fd01fff57e46121fe09feeec8a0155c82e14fe5d6014db",
+        "native_meaning": "ProtocolInformation href/protocol/version/securityAttributes includes external DIN SPEC 16593 dependency; endpoint declarations do not establish observed security/trust.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L179-L229",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "source_lines": [
+          179,
+          229
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "DEFINITION_EXTERNAL_DEPENDENCY",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-NETWORK-CONTEXT",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Endpoint.interface and protocolInformation describe offered API and connection metadata. href is required; optional protocol/version/subprotocol/body/encoding and declared security alternatives refine existing endpoint context. No negotiated connection, enforced security or physical cable is established. External DIN SPEC original remains unexamined; no extra candidate required.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N006",
+        "original_record": "#/AAS06/original_items/5",
+        "original_record_sha256": "2453d8bb7d3e05c731af7ad5015d54ce1faeeed7d64828d945fc4608768db6cf",
+        "native_meaning": "AssetLink has name/value; ServiceDescription profiles declare server feature support and are not sensing telemetry.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L281-L315",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "source_lines": [
+          281,
+          315
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_AND_EXISTING_SERVICE_MEANING",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "ISA-A-SERVICE-ROLE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "AssetLink carries a named asset identifier for lookup. ServiceDescription separately advertises profile support; proprietary additions do not oblige ordinary clients. Preserve these two subjects, not one device capability field.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N007",
+        "original_record": "#/AAS06/original_items/6",
+        "original_record_sha256": "8c49a9b8c9a1bb7b30435201fb8e516605052af8900e3fd136bc780e1bfd0a07",
+        "native_meaning": "Service Specification Profile URIs identify bounded sets; /description advertises profiles. Lower minor support is inferred per source rule, lower major not.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L62-L83",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "source_lines": [
+          62,
+          83
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Profile URI/version and API-operation/modifier subsets qualify existing declared-support rows. Self-description applies only at its path or child paths. Lower-minor support is a native rule, not observed conformance or cross-major compatibility. Profile table review does not audit every listed operation; Registry Query/Bulk label discrepancy remains. N023 additionally supports the separate record-history candidate.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N008",
+        "original_record": "#/AAS06/original_items/7",
+        "original_record_sha256": "d0190852029938700cf66692628512355e558ec0a4e068861dc80ad708863969",
+        "native_meaning": "Registry list descriptor filters use AND except createdFrom/updatedFrom grouped OR; key and keyIdentifier must appear together.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L901-L930",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          901,
+          930
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N009",
+        "original_record": "#/AAS06/original_items/8",
+        "original_record_sha256": "cdfa8b075fdd5fb52e1d8cff9c15776b2b80bfa5c983d162ce472fac5b0a10fe",
+        "native_meaning": "Registry lookup by shell ID returns descriptor; POST descriptor registers endpoint information, not live asset.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L934-L965",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          934,
+          965
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N010",
+        "original_record": "#/AAS06/original_items/9",
+        "original_record_sha256": "67f86fd7bcc99b1468def045c692f6cbbe84077a812207b0ad83a4abc3202fac",
+        "native_meaning": "Registry query accepts AAS Query Language and returns matching descriptors/IDs, not ISA message event queries.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1051-L1066",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1051,
+          1066
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NATIVE_QUERY_MECHANICS_ONLY",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "AAS Query Language selects descriptors/IDs; OpenAPI uses POST query/shell-descriptors. Retain native query mechanics and Query profile identity. No ISA message/event query equivalence, new equipment field or full query-language audit.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N011",
+        "original_record": "#/AAS06/original_items/10",
+        "original_record_sha256": "61ba845338448383b5c773d12c16b6b6efa0486268d52ea9984d00a7c3a4f8b3",
+        "native_meaning": "Repository GetAllAssetAdministrationShells lists digital shell records with filters/pagination, not live sensor observations.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1298-L1325",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1298,
+          1325
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N012",
+        "original_record": "#/AAS06/original_items/11",
+        "original_record_sha256": "57b7f79cea6dbbdd4408ac7aadc525b0643413bc1dbbed956d848864d2cdfb99",
+        "native_meaning": "GetAllAssetAdministrationShellsRecentChanges is Experimental and concerns changes to AAS records, not sensor event occurrence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1327-L1353",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1327,
+          1353
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "EXPERIMENTAL_OPERATION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_RECORD_HISTORY_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-HISTORY"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain record content valid at a requested date, optional date/latest behavior, and separation from AdministrativeInformation.version. Version-change granularity is undefined. Recent-change listing is experimental and not a complete event stream, equipment history or retention guarantee.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N013",
+        "original_record": "#/AAS06/original_items/12",
+        "original_record_sha256": "0f428854adb8390913cb4c1058c1a5a57d83c47baa7a820d0b2e266f293c6eaf",
+        "native_meaning": "Repository GetAssetAdministrationShellById retrieves a specific digital shell, distinct from registry descriptors and standalone AAS service.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1355-L1373",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1355,
+          1373
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N014",
+        "original_record": "#/AAS06/original_items/13",
+        "original_record_sha256": "2b670e077c5b608f3a50339f1530538d19c3751bf65a6070ee43d993839471fe",
+        "native_meaning": "History GetAssetAdministrationShellVersionByIdAndDate is expressly NOT AdministrativeInformation.version; change granularity is unspecified.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1420-L1444",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1420,
+          1444
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_RECORD_HISTORY_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-HISTORY"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain record content valid at a requested date, optional date/latest behavior, and separation from AdministrativeInformation.version. Version-change granularity is undefined. Recent-change listing is experimental and not a complete event stream, equipment history or retention guarantee.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N015",
+        "original_record": "#/AAS06/original_items/14",
+        "original_record_sha256": "9a89c883fe6b8bafa16a96291c30433cbed2967a9185ca96411ecc06620fa782",
+        "native_meaning": "Repository POST creates AAS record, PUT requires payload id match request id or returns bad request; not hardware control.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1446-L1496",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1446,
+          1496
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_RECORD_ID_AND_NATIVE_CRUD",
+        "row_ids": [
+          "AAS-O2-RECORD-ID"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Standalone service returns one digital shell. Repository POST/PUT acts on digital records; payload ID must match request ID for PUT. Native idShort creation is proprietary. No physical equipment creation or control action follows.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N016",
+        "original_record": "#/AAS06/original_items/15",
+        "original_record_sha256": "77002925085bc088cbab8eaa4c45a1a5963f24d072c9aa5c3b4ec21b1b07f55d",
+        "native_meaning": "Repository signed retrieval returns JavaScript Object Signing and Encryption (JOSE) Web Signature (JWS) string; actual issuer trust not established.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1533-L1548",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          1533,
+          1548
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_SIGNATURE_LIMIT",
+        "row_ids": [
+          "S06-R021"
+        ],
+        "relation": "RELATED/NO_ESTABLISHED",
+        "rationale": "Optional signed-shell operation returns a JWS string. It does not establish signer/key trust, enforcement, installed equipment facts or truth of record content. Existing qualified-assertion context suffices; no new trusted-state field.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N017",
+        "original_record": "#/AAS06/original_items/16",
+        "original_record_sha256": "2c95d4bbe862a4886944c39a101823f414fdea10c229c20980341ab9004d8025",
+        "native_meaning": "Legacy GetAllAssetAdministrationShellIdsByAssetLink is deprecated, not a mandatory read-profile operation.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2098-L2125",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          2098,
+          2125
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "DEPRECATED_OPERATION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Preserve asset-link association and all-links AND matching, reserved global-asset handling and legacy-operation deprecation. Do not count reserved global ID as another SpecificAssetId. The source uses globalAssetId and _globalAssetId_ inconsistently in prose/examples; no spelling normalization is inferred. Discovery pagination prose contradicts Limit/Cursor/PagedResult OpenAPI; leave unresolved.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N018",
+        "original_record": "#/AAS06/original_items/17",
+        "original_record_sha256": "6761e54862382109c3294047d255d93fcfb190c0865a548362ad162a0a03c05c",
+        "native_meaning": "Discovery SearchAllAssetAdministrationShellIdsByAssetLink uses ALL supplied AssetLinks for AND-match and returns AAS IDs.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2155-L2180",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          2155,
+          2180
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Preserve asset-link association and all-links AND matching, reserved global-asset handling and legacy-operation deprecation. Do not count reserved global ID as another SpecificAssetId. The source uses globalAssetId and _globalAssetId_ inconsistently in prose/examples; no spelling normalization is inferred. Discovery pagination prose contradicts Limit/Cursor/PagedResult OpenAPI; leave unresolved.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N019",
+        "original_record": "#/AAS06/original_items/18",
+        "original_record_sha256": "9814f6a38fbd88a84d3078f01d55e6db64ad7258f072b015ef9c473ae7d6c77b",
+        "native_meaning": "PostAllAssetLinksById updates discoverability mappings; reserved _globalAssetId_ handling is not an additional SpecificAssetId.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2183-L2213",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          2183,
+          2213
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Preserve asset-link association and all-links AND matching, reserved global-asset handling and legacy-operation deprecation. Do not count reserved global ID as another SpecificAssetId. The source uses globalAssetId and _globalAssetId_ inconsistently in prose/examples; no spelling normalization is inferred. Discovery pagination prose contradicts Limit/Cursor/PagedResult OpenAPI; leave unresolved.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N020",
+        "original_record": "#/AAS06/original_items/19",
+        "original_record_sha256": "da31419859f18f6fc5581fc1dc7e414bb99f39394b8300d6e5f69eec73fc0d15",
+        "native_meaning": "GetSelfDescription lists profiles only for the published path/children, not every service in a network.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2231-L2263",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "source_lines": [
+          2231,
+          2263
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_OPERATION_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Profile URI/version and API-operation/modifier subsets qualify existing declared-support rows. Self-description applies only at its path or child paths. Lower-minor support is a native rule, not observed conformance or cross-major compatibility. Profile table review does not audit every listed operation; Registry Query/Bulk label discrepancy remains. N023 additionally supports the separate record-history candidate.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N021",
+        "original_record": "#/AAS06/original_items/20",
+        "original_record_sha256": "58b9001835e9db6c163ff96602d3c5ff488982c449e15df4504c654e9e1a50fd",
+        "native_meaning": "Standalone AAS Service Full SSP001 and Read SSP002 have different read/mutate/submodel exposure.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L117-L227",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "source_lines": [
+          117,
+          227
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "PROFILE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Profile URI/version and API-operation/modifier subsets qualify existing declared-support rows. Self-description applies only at its path or child paths. Lower-minor support is a native rule, not observed conformance or cross-major compatibility. Profile table review does not audit every listed operation; Registry Query/Bulk label discrepancy remains. N023 additionally supports the separate record-history candidate.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N022",
+        "original_record": "#/AAS06/original_items/21",
+        "original_record_sha256": "06957444a4a0f1ac0e5c239a146cb87ffb69667be138f0894d1741b2bf3cbc9d",
+        "native_meaning": "Registry Full/Read/Bulk/Query/Minimal-Read SSP001–005 are distinct; SSP004 Query section Name incorrectly says Bulk.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L424-L566",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "source_lines": [
+          424,
+          566
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "PROFILE_DEFINITION_AND_EDITORIAL_ISSUE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Profile URI/version and API-operation/modifier subsets qualify existing declared-support rows. Self-description applies only at its path or child paths. Lower-minor support is a native rule, not observed conformance or cross-major compatibility. Profile table review does not audit every listed operation; Registry Query/Bulk label discrepancy remains. N023 additionally supports the separate record-history candidate.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N023",
+        "original_record": "#/AAS06/original_items/22",
+        "original_record_sha256": "c8016f8bbee54965c3a0b040a4453e08c489ec4c8e84b8a4a7cc2515d81c54b1",
+        "native_meaning": "Repository Full/Read/Query/Signature/Identifiable/History SSP001–006 are separate optional profiles.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L737-L998",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "source_lines": [
+          737,
+          998
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "PROFILE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_EXISTING_QUALIFIED_MEANING",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES",
+          "ISA-A-CONNECTION-PRESENTATION",
+          "AAS-O4-RECORD-HISTORY"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Profile URI/version and API-operation/modifier subsets qualify existing declared-support rows. Self-description applies only at its path or child paths. Lower-minor support is a native rule, not observed conformance or cross-major compatibility. Profile table review does not audit every listed operation; Registry Query/Bulk label discrepancy remains. N023 additionally supports the separate record-history candidate.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N024",
+        "original_record": "#/AAS06/original_items/23",
+        "original_record_sha256": "628f11ced8ef42c3db5f8888d7d081c741c6d97097c5a72c382541549f588ffb",
+        "native_meaning": "Discovery Read SSP002 profile prose says pagination unsupported, whereas pinned SSP002 OpenAPI advertises limit/cursor and paged result.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L677-L735",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "source_lines": [
+          677,
+          735
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "PROFILE_DEFINITION_SOURCE_CONFLICT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_PROFILE_CONFLICT",
+        "row_ids": [
+          "ISA-A-BASELINE-CAPABILITIES",
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "CONFLICT",
+        "rationale": "Discovery Read profile prose says pagination unsupported; original interface and OpenAPI expose pagination. Also preserve its Full-versus-Read name discrepancy. No universal unsupported/supported decision or extra information row follows.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N025",
+        "original_record": "#/AAS06/original_items/24",
+        "original_record_sha256": "e58c046122a3efa80b1367e8646e779f42e561fb5154c6135c34e4607c1bbc9f",
+        "native_meaning": "API URL version prefix is recommended example, not required; client shall not assume all servers share an api/v3 path.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc#L130-L169",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc",
+        "source_lines": [
+          130,
+          169
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_RECOMMENDATION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_ENCODING_MECHANICS",
+        "row_ids": [
+          "ISA-A-CONNECTION-PRESENTATION",
+          "AAS-O2-RECORD-ID",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "NATIVE_ONLY/PARTIAL",
+        "rationale": "URL version prefix is recommended and may be arbitrary; global IDs use base64url while contextual idShortPath uses URL encoding. Level/content/extent modifiers and forbidden combinations remain native representation rules. These do not negotiate an ISA presentation pair or establish lossless CSAPI conversion/empty-update equivalence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N026",
+        "original_record": "#/AAS06/original_items/25",
+        "original_record_sha256": "fd0d96942e9372fc1cb3bac10044d39e8521d568009f66d9a6aa0c92dcde5ea1",
+        "native_meaning": "HTTP AAS identifier path parameters use base64url encoding; idShortPath differs from global AAS ID and CSAPI System URI.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc#L174-L222",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc",
+        "source_lines": [
+          174,
+          222
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_EXAMPLE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_ENCODING_MECHANICS",
+        "row_ids": [
+          "ISA-A-CONNECTION-PRESENTATION",
+          "AAS-O2-RECORD-ID",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "NATIVE_ONLY/PARTIAL",
+        "rationale": "URL version prefix is recommended and may be arbitrary; global IDs use base64url while contextual idShortPath uses URL encoding. Level/content/extent modifiers and forbidden combinations remain native representation rules. These do not negotiate an ISA presentation pair or establish lossless CSAPI conversion/empty-update equivalence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N027",
+        "original_record": "#/AAS06/original_items/26",
+        "original_record_sha256": "f1dc647c77d79187b4491f1de4389d2a6578c9c1c08b1b711844baa3b1b3904b",
+        "native_meaning": "Pagination cursor is opaque, limit bounds result count, deterministic ordering required; not a sensor event stream.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc#L225-L275",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc",
+        "source_lines": [
+          225,
+          275
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_GUIDANCE",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NATIVE_PAGINATION_MECHANICS_ONLY",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "NATIVE_ONLY/NO_ESTABLISHED",
+        "rationale": "Cursor is opaque, limit bounds pages and deterministic ordering is required. Native result navigation is not equipment information, a stable event ID, a complete historical snapshot or a subscription stream; no separate DIM row.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N028",
+        "original_record": "#/AAS06/original_items/27",
+        "original_record_sha256": "7622d008d29dd61f2736768f158c5ed7529290ce20835cec5803ab58b24ec583",
+        "native_meaning": "Generic success/accepted/error and failure Result contracts do not represent completed device commands or authorization outcome for sensing equipment.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L717-L785",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "source_lines": [
+          717,
+          785
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_API_OUTCOME_LIMIT",
+        "row_ids": [
+          "S06-R020",
+          "ISA-T-REQUEST-REFERENCE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "StatusCode, Result and Message describe API outcome and diagnostics. Optional correlationId and timestamp qualify service messages; Accepted is reception, not physical command success. Existing acknowledgement/correlation topics suffice without claiming device execution.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N029",
+        "original_record": "#/AAS06/original_items/28",
+        "original_record_sha256": "a4098fbd0ecff4962ed9130b1ad637abc6e2592af0d5372bda29a8639c2ea7af",
+        "native_meaning": "Level/Content/Extent modifiers shape native serialization; invalid combinations cause bad requests, not ISA configuration semantics.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc#L323-L350",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc",
+        "source_lines": [
+          323,
+          350
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "RULE_AND_LIMIT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_ENCODING_MECHANICS",
+        "row_ids": [
+          "ISA-A-CONNECTION-PRESENTATION",
+          "AAS-O2-RECORD-ID",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "NATIVE_ONLY/PARTIAL",
+        "rationale": "URL version prefix is recommended and may be arbitrary; global IDs use base64url while contextual idShortPath uses URL encoding. Level/content/extent modifiers and forbidden combinations remain native representation rules. These do not negotiate an ISA presentation pair or establish lossless CSAPI conversion/empty-update equivalence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N030",
+        "original_record": "#/AAS06/original_items/29",
+        "original_record_sha256": "bf8a3ac72c16d0691d04b0f5c37f4005b1211912cab78d34e4027ef99661d9e4",
+        "native_meaning": "ID Link RFC 9264 LinkSet illustration mentions profiles/links without source-authentic API implementation or current verified profile roster.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/interactions.adoc#L139-L175",
+        "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/interactions.adoc",
+        "source_lines": [
+          139,
+          175
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "EXAMPLE_NOT_NORMATIVE_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "ILLUSTRATIVE_DISCOVERY_ONLY",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "EXAMPLE_ONLY/RELATED",
+        "rationale": "ID Link/LinkSet supplies an illustrative navigation approach. External RFC original and the illustrated profile/operation roster were not validated here; use as contextual evidence, not adopted bindings or normative support claims.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N031",
+        "original_record": "#/AAS06/original_items/30",
+        "original_record_sha256": "60bce639782d1d96d99f2ed63b990f53ad2f5afb6b23791536a767ee2d68f6b4",
+        "native_meaning": "Shared OpenAPI AAS descriptor requires id; optional endpoints have minItems1 only when present.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L176-L220",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          176,
+          220
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N032",
+        "original_record": "#/AAS06/original_items/31",
+        "original_record_sha256": "799053f17700ccc26a5a902d21b9cc16eb08edbab4c6839a37f7339594dddb58",
+        "native_meaning": "ServiceDescription text requires profiles and array minItems1, but selected OpenAPI schema does not mark profiles as required property.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L1233-L1255",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          1233,
+          1255
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "SCHEMA_VS_TEXT_INCONSISTENCY",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_SCHEMA_CONFLICT",
+        "row_ids": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-BASELINE-CAPABILITIES"
+        ],
+        "relation": "CONFLICT",
+        "rationale": "Narrative requires at least one profile, while the parsed complete ServiceDescription object has profiles/minItems but no required property. Preserve both source statements; do not silently choose schema or prose, invent client validation behavior or claim runtime support.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N033",
+        "original_record": "#/AAS06/original_items/32",
+        "original_record_sha256": "346a20aeb4a02c11122a63c553fc8ec7ead87e9a3bd517c0fb1ee28c516cf849",
+        "native_meaning": "Registry Minimal Read supports GET /shell-descriptors and GET /shell-descriptors/{aasIdentifier}; no physical sensor state.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml#L20-L84",
+        "source_file": "AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml",
+        "source_lines": [
+          20,
+          84
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP",
+          "AAS-O2-RECORD-ID",
+          "S06-R006"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Preserve the asset-ID to record-ID to descriptor/endpoint association as its own information need. Descriptor registration and record retrieval are not hardware discovery or liveness. Optional shell endpoints and authoritative AAS record remain explicit; native filters and CRUD mechanics stay source-specific.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N034",
+        "original_record": "#/AAS06/original_items/33",
+        "original_record_sha256": "066930643b8fff4ada2276b1ed5e6f5c5af8995a09f2f74f14cf0f98b187312a",
+        "native_meaning": "Registry Query SSP004 uses POST /query/shell-descriptors with Query JSON, not Bulk or a simple GET.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-004.yaml#L20-L55",
+        "source_file": "AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-004.yaml",
+        "source_lines": [
+          20,
+          55
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NATIVE_QUERY_MECHANICS_ONLY",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "AAS Query Language selects descriptors/IDs; OpenAPI uses POST query/shell-descriptors. Retain native query mechanics and Query profile identity. No ISA message/event query equivalence, new equipment field or full query-language audit.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N035",
+        "original_record": "#/AAS06/original_items/34",
+        "original_record_sha256": "31268474d8eb5f7c86cf8770fc9247dcac0bd9954b10fcc770d8598e63544aca",
+        "native_meaning": "Repository History SSP006 GET /shells/{aasIdentifier}/$history supports optional date and AAS payload.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml#L20-L51",
+        "source_file": "AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml",
+        "source_lines": [
+          20,
+          51
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_RECORD_HISTORY_CANDIDATE",
+        "row_ids": [
+          "AAS-O4-RECORD-HISTORY"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain record content valid at a requested date, optional date/latest behavior, and separation from AdministrativeInformation.version. Version-change granularity is undefined. Recent-change listing is experimental and not a complete event stream, equipment history or retention guarantee.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N036",
+        "original_record": "#/AAS06/original_items/35",
+        "original_record_sha256": "52b127be1a8ff7c926d67ecb9d4a2171ce8ededa6589120b4634ee86c7588419",
+        "native_meaning": "Standalone AAS Read SSP002 GET /aas returns one AAS, distinct from Repository /shells collection.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellServiceSpecification/V3.2_SSP-002.yaml#L20-L44",
+        "source_file": "AssetAdministrationShellServiceSpecification/V3.2_SSP-002.yaml",
+        "source_lines": [
+          20,
+          44
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_RECORD_ID_AND_NATIVE_CRUD",
+        "row_ids": [
+          "AAS-O2-RECORD-ID"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Standalone service returns one digital shell. Repository POST/PUT acts on digital records; payload ID must match request ID for PUT. Native idShort creation is proprietary. No physical equipment creation or control action follows.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N037",
+        "original_record": "#/AAS06/original_items/36",
+        "original_record_sha256": "26c0b0ea9dc1f252577aad9eb08868f29c1423fd02ba3460b687bb51d49d6d05",
+        "native_meaning": "Discovery Read SSP002 still uses POST /lookup/shellsByAssetLink with Limit/Cursor and PagedResult; source pagination discrepancy remains.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/DiscoveryServiceSpecification/V3.2_SSP-002.yaml#L20-L57",
+        "source_file": "DiscoveryServiceSpecification/V3.2_SSP-002.yaml",
+        "source_lines": [
+          20,
+          57
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT_AND_CONFLICT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+        "row_ids": [
+          "AAS-O4-RECORD-LOOKUP"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Preserve asset-link association and all-links AND matching, reserved global-asset handling and legacy-operation deprecation. Do not count reserved global ID as another SpecificAssetId. The source uses globalAssetId and _globalAssetId_ inconsistently in prose/examples; no spelling normalization is inferred. Discovery pagination prose contradicts Limit/Cursor/PagedResult OpenAPI; leave unresolved.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS06-N038",
+        "original_record": "#/AAS06/original_items/37",
+        "original_record_sha256": "7806d637ae594bd27da467980bce7aacf68edb0acc180bbd9e1b6276ec8eb2fb",
+        "native_meaning": "Optional Repository Signature SSP004 GET /shells/{aasIdentifier}/$signed returns JWS representation without publisher authentication proof.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-004.yaml#L20-L53",
+        "source_file": "AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-004.yaml",
+        "source_lines": [
+          20,
+          53
+        ],
+        "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+        "source_standing": "OPENAPI_OPERATION_CONTRACT",
+        "inherited_coverage": "SELECTED_ORIGINAL_SOURCE_BLOCK_READ__NOT_COMPLETE_FILE_AUDIT",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_READ__NOT_COMPLETE_FILE_AUDIT",
+        "original_caveat_preserved": "Exact located source semantics only; source classes and API contracts do not adopt DIM/Profile rules or prove hardware/runtime conformance.",
+        "disposition": "RETAIN_SIGNATURE_LIMIT",
+        "row_ids": [
+          "S06-R021"
+        ],
+        "relation": "RELATED/NO_ESTABLISHED",
+        "rationale": "Optional signed-shell operation returns a JWS string. It does not establish signer/key trust, enforcement, installed equipment facts or truth of record content. Existing qualified-assertion context suffices; no new trusted-state field.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      }
+    ],
+    "targeted_original_contacts": [
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "b5d4cd4ec20dc1263e4704e3030a171d9dd55b6c",
+        "selected_line_ranges": [
+          [
+            15,
+            66
+          ],
+          [
+            230,
+            266
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "61c0a3146d0aa395c13ed80a0ee76ad6e5f064ef",
+        "selected_line_ranges": [
+          [
+            49,
+            75
+          ],
+          [
+            96,
+            110
+          ],
+          [
+            179,
+            229
+          ],
+          [
+            281,
+            315
+          ],
+          [
+            717,
+            785
+          ],
+          [
+            76,
+            95
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "14bcb99b24570dc35eb0e185a1a809267c974aac",
+        "selected_line_ranges": [
+          [
+            62,
+            83
+          ],
+          [
+            117,
+            227
+          ],
+          [
+            424,
+            566
+          ],
+          [
+            737,
+            998
+          ],
+          [
+            677,
+            735
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "913570377f7383447434157acbd16c859d3962ad",
+        "selected_line_ranges": [
+          [
+            901,
+            930
+          ],
+          [
+            934,
+            965
+          ],
+          [
+            1051,
+            1066
+          ],
+          [
+            1298,
+            1325
+          ],
+          [
+            1327,
+            1353
+          ],
+          [
+            1355,
+            1373
+          ],
+          [
+            1420,
+            1444
+          ],
+          [
+            1446,
+            1496
+          ],
+          [
+            1533,
+            1548
+          ],
+          [
+            2098,
+            2125
+          ],
+          [
+            2155,
+            2180
+          ],
+          [
+            2183,
+            2213
+          ],
+          [
+            2231,
+            2263
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "5448c7f59e812c22468e85edab881726c26d00db",
+        "selected_line_ranges": [
+          [
+            130,
+            169
+          ],
+          [
+            174,
+            222
+          ],
+          [
+            225,
+            275
+          ],
+          [
+            323,
+            350
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/http-rest-api.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/interactions.adoc",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "efeaa7d2f15d3b84f868d505f06e319c09be8c63",
+        "selected_line_ranges": [
+          [
+            139,
+            175
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/interactions.adoc"
+      },
+      {
+        "path": "Part2-API-Schemas/openapi.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "ed79ef16b8e78f02dc0fa1f91db53e1aaf7d80ff",
+        "selected_line_ranges": [
+          [
+            176,
+            220
+          ],
+          [
+            1233,
+            1255
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml"
+      },
+      {
+        "path": "AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "e7f8cf0fd2b5c465696c4c042666af095dd0f1c6",
+        "selected_line_ranges": [
+          [
+            20,
+            84
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml"
+      },
+      {
+        "path": "AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-004.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "e8531a91f160d1581df94384ba76e85556b516f5",
+        "selected_line_ranges": [
+          [
+            20,
+            55
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-004.yaml"
+      },
+      {
+        "path": "AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "43874f1d9ddd3e7c4e1966f5ca777603bba7d004",
+        "selected_line_ranges": [
+          [
+            20,
+            51
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml"
+      },
+      {
+        "path": "AssetAdministrationShellServiceSpecification/V3.2_SSP-002.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "25459e8f827015cb71506463a84dabceb32f90c3",
+        "selected_line_ranges": [
+          [
+            20,
+            44
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellServiceSpecification/V3.2_SSP-002.yaml"
+      },
+      {
+        "path": "DiscoveryServiceSpecification/V3.2_SSP-002.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "faec0d718c0131f2d489a7d6a42f43412cdb6b9b",
+        "selected_line_ranges": [
+          [
+            20,
+            57
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/DiscoveryServiceSpecification/V3.2_SSP-002.yaml"
+      },
+      {
+        "path": "AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-004.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "5a610b6ba39f403e5db09e59ff264408bee65901",
+        "selected_line_ranges": [
+          [
+            20,
+            53
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-004.yaml"
+      }
+    ],
+    "supplemental_checks": [
+      {
+        "path": "Part2-API-Schemas/openapi.yaml",
+        "check": "Parsed full ServiceDescription object: description, example, properties, type; profiles is the only property and required is absent. This is a structural check, not a read of every profile example or whole schema.",
+        "source_blob": "ed79ef16b8e78f02dc0fa1f91db53e1aaf7d80ff"
+      },
+      {
+        "path": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+        "lines": [
+          76,
+          95
+        ],
+        "check": "Original SubmodelDescriptor definition read at pinned GitHub source: endpoints 1..*, distinguished from optional shell-descriptor endpoints."
+      }
+    ],
+    "new_candidate_row_ids": [
+      "AAS-O4-RECORD-LOOKUP",
+      "AAS-O4-RECORD-HISTORY"
+    ],
+    "existing_350_rows": "UNCHANGED in full; all 629 prior classifications and four-case evidence retained.",
+    "historical_53_in_O4": {
+      "AAS06-N008": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+      "AAS06-N009": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+      "AAS06-N010": "NATIVE_QUERY_MECHANICS_ONLY",
+      "AAS06-N015": "RETAIN_RECORD_ID_AND_NATIVE_CRUD",
+      "AAS06-N017": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+      "AAS06-N019": "NEW_LOOKUP_WITH_NATIVE_LIMITS",
+      "AAS06-N027": "NATIVE_PAGINATION_MECHANICS_ONLY",
+      "AAS06-N030": "ILLUSTRATIVE_DISCOVERY_ONLY",
+      "AAS06-N032": "RETAIN_SCHEMA_CONFLICT",
+      "AAS06-N033": "NEW_LOOKUP_ASSOCIATION_CANDIDATE",
+      "AAS06-N034": "NATIVE_QUERY_MECHANICS_ONLY",
+      "AAS06-N037": "NEW_LOOKUP_WITH_NATIVE_LIMITS"
+    },
+    "holds_retained": [
+      "All prior AAS06.open_holds and earlier/later source limits remain; O4 does not reverse later AAS07/08 actual source coverage.",
+      "Discovery pagination: narrative unsupported versus original parameters/PagedResult; ServiceDescription profiles narrative-required versus schema not required.",
+      "History change granularity unspecified; recent-change listing experimental; signature and endpoint-security declarations do not establish trust or enforcement.",
+      "Registry Query name says Bulk; Discovery Read name says Full. Asset-link text alternates globalAssetId and _globalAssetId_; exact native spelling remains unresolved.",
+      "External DIN SPEC/RFC originals and included figures not newly inspected. Profile tables and selected operation blocks do not exhaust 34 profiles/436 method incidences.",
+      "All prior ISA, Open Group SOSA, SAPIENT, AAS experiment/encoding and four-case holds remain."
+    ],
+    "case_review": "Scope check against preserved source-case records only. Dragino/AirGradient reference designs, Campbell/ClimaVue possible pairing and Bennett Point original-versus-copy distinctions unchanged; no new source-case audit.",
+    "forecast": "After O4 approximately 4–6 substantive steps remain: O5 1–2, O6 2–3, O7 1; actual source complexity governs.",
+    "one_next": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption.",
+    "publication": {
+      "workbook_sha256": "b19007675196e8ba6f399c643597e431b768303b8ecbf90a61ec02a2cf2983f4",
+      "previous_workbook_sha256": "2aa1791b4d91d12145e711cfe8f56011500a1638c2439aa0a553ac86052055d9",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "DIM Register",
+        "Summary",
+        "Validation",
+        "Legend"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values": 5952,
+      "new_candidate_cells": [
+        "G371",
+        "G372"
+      ],
+      "existing_values_and_fills": "UNCHANGED",
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_reopen": "PENDING",
+      "visual_review": {
+        "status": "PASS_CHANGED_VIEWS",
+        "engine": "Artifact Tool import/render of saved XLSX; no workbook rewrite",
+        "ranges": [
+          "Master Crosswalk!G370:J372",
+          "Master Crosswalk!P371:P372",
+          "DIM Register!P352:R353",
+          "Summary!A1:B1,A17:B28",
+          "Validation!A17:B28",
+          "Legend!A23:B28"
+        ],
+        "result": "New candidate text and fills readable; current totals explicit. Historical summary/validation counts labeled; legend obsolete current total corrected. Unchanged views reused.",
+        "native_Excel_reopen": false
+      },
+      "remote_publication": "PENDING",
+      "broad_artifact_check": {
+        "status": "FIVE_PREEXISTING_ERRORS",
+        "errors": "Two v0.5 register omissions and three obsolete v0.6 links; unchanged from pre-O4."
+      }
     }
   }
 }

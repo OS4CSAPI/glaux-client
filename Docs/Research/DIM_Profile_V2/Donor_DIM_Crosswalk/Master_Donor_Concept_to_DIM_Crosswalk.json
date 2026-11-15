@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "2aa1791b4d91d12145e711cfe8f56011500a1638c2439aa0a553ac86052055d9",
+  "currentWorkbookSha256": "b19007675196e8ba6f399c643597e431b768303b8ecbf90a61ec02a2cf2983f4",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -6756,6 +6756,60 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Value, concept and template qualification — NOT ADOPTED"
+    ],
+    [
+      "AAS O4 — discovery and digital-record history candidates (not adopted)",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity. [Sources: AAS06-N002, AAS06-N003, AAS06-N006, AAS06-N008, AAS06-N009, AAS06-N011, AAS06-N013, AAS06-N018, AAS06-N019, AAS06-N031, AAS06-N033, AAS06-N037; O4-RECORD-LOOKUP]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Digital-record discovery and service-location association — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS06-N023, AAS06-N035; O4-RECORD-HISTORY]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Digital-record state at a specified time — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -6775,7 +6829,8 @@
     347,
     350,
     354,
-    363
+    363,
+    369
   ],
   "rows": [
     {
@@ -57010,6 +57065,334 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false
       }
+    },
+    {
+      "row_id": "AAS-O4-RECORD-LOOKUP",
+      "label": "Candidate — Digital-record discovery and service-location association",
+      "display_row": 371,
+      "status": "AAS O4 provisional information-need candidate; NOT ADOPTED",
+      "definition": "Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity.",
+      "source_entry_ids": [
+        "AAS06-N002",
+        "AAS06-N003",
+        "AAS06-N006",
+        "AAS06-N008",
+        "AAS06-N009",
+        "AAS06-N011",
+        "AAS06-N013",
+        "AAS06-N018",
+        "AAS06-N019",
+        "AAS06-N031",
+        "AAS06-N033",
+        "AAS06-N037"
+      ],
+      "evidence_records": [
+        "AAS06-N002",
+        "AAS06-N003",
+        "AAS06-N006",
+        "AAS06-N008",
+        "AAS06-N009",
+        "AAS06-N011",
+        "AAS06-N013",
+        "AAS06-N018",
+        "AAS06-N019",
+        "AAS06-N031",
+        "AAS06-N033",
+        "AAS06-N037"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O4_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity. [Sources: AAS06-N002, AAS06-N003, AAS06-N006, AAS06-N008, AAS06-N009, AAS06-N011, AAS06-N013, AAS06-N018, AAS06-N019, AAS06-N031, AAS06-N033, AAS06-N037; O4-RECORD-LOOKUP]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Digital-record discovery and service-location association — NOT ADOPTED"
+      ],
+      "AAS_O4_source_correspondence": {
+        "donor": "IDTA-01002 Part 2 v3.2.0",
+        "source_ids": [
+          "AAS06-N002",
+          "AAS06-N003",
+          "AAS06-N006",
+          "AAS06-N008",
+          "AAS06-N009",
+          "AAS06-N011",
+          "AAS06-N013",
+          "AAS06-N018",
+          "AAS06-N019",
+          "AAS06-N031",
+          "AAS06-N033",
+          "AAS06-N037"
+        ],
+        "closest_prior_rows": [
+          "AAS-O2-RECORD-ID",
+          "S06-R006",
+          "ISA-A-NETWORK-CONTEXT"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "Record identity names a record, and participant/connection rows describe endpoints. Neither explicitly carries the association used to find the record from asset identifiers and locate its service. Keep one common lookup-association need; do not adopt AAS service partitions, lookup filters or transport paths as mandatory DIM fields.",
+        "native_meaning": "Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G371",
+        "original_source_locators": [
+          {
+            "source_id": "AAS06-N002",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc#L230-L266",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/general.adoc",
+            "source_lines": [
+              230,
+              266
+            ],
+            "source_standing": "DEFINITION_AND_EXAMPLE",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N003",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L49-L75",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "source_lines": [
+              49,
+              75
+            ],
+            "source_standing": "ATTRIBUTE_DEFINITION_AND_NOTE",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N006",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L281-L315",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "source_lines": [
+              281,
+              315
+            ],
+            "source_standing": "ATTRIBUTE_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N008",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L901-L930",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              901,
+              930
+            ],
+            "source_standing": "RULE_AND_OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N009",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L934-L965",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              934,
+              965
+            ],
+            "source_standing": "OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N011",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1298-L1325",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              1298,
+              1325
+            ],
+            "source_standing": "RULE_AND_OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N013",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1355-L1373",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              1355,
+              1373
+            ],
+            "source_standing": "OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N018",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2155-L2180",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              2155,
+              2180
+            ],
+            "source_standing": "RULE_AND_OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N019",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L2183-L2213",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              2183,
+              2213
+            ],
+            "source_standing": "RULE_AND_OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N031",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L176-L220",
+            "source_file": "Part2-API-Schemas/openapi.yaml",
+            "source_lines": [
+              176,
+              220
+            ],
+            "source_standing": "SCHEMA_CONSTRAINT",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N033",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml#L20-L84",
+            "source_file": "AssetAdministrationShellRegistryServiceSpecification/V3.2_SSP-005.yaml",
+            "source_lines": [
+              20,
+              84
+            ],
+            "source_standing": "OPENAPI_OPERATION_CONTRACT",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N037",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/DiscoveryServiceSpecification/V3.2_SSP-002.yaml#L20-L57",
+            "source_file": "DiscoveryServiceSpecification/V3.2_SSP-002.yaml",
+            "source_lines": [
+              20,
+              57
+            ],
+            "source_standing": "OPENAPI_OPERATION_CONTRACT_AND_CONFLICT",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "AAS-O4-RECORD-HISTORY",
+      "label": "Candidate — Digital-record state at a specified time",
+      "display_row": 372,
+      "status": "AAS O4 provisional information-need candidate; NOT ADOPTED",
+      "definition": "A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established.",
+      "source_entry_ids": [
+        "AAS06-N012",
+        "AAS06-N014",
+        "AAS06-N023",
+        "AAS06-N035"
+      ],
+      "evidence_records": [
+        "AAS06-N012",
+        "AAS06-N014",
+        "AAS06-N023",
+        "AAS06-N035"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O4_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS06-N023, AAS06-N035; O4-RECORD-HISTORY]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Digital-record state at a specified time — NOT ADOPTED"
+      ],
+      "AAS_O4_source_correspondence": {
+        "donor": "IDTA-01002 Part 2 v3.2.0",
+        "source_ids": [
+          "AAS06-N012",
+          "AAS06-N014",
+          "AAS06-N023",
+          "AAS06-N035"
+        ],
+        "closest_prior_rows": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-213",
+          "CASE-H01"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "A business revision label does not identify the record content valid at a requested time. Operating-state and equipment-service histories concern different subjects. Preserve one optional common temporal-record need, with source-specific History profile and experimental recent-change limitations; do not infer equipment history.",
+        "native_meaning": "A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G372",
+        "original_source_locators": [
+          {
+            "source_id": "AAS06-N012",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1327-L1353",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              1327,
+              1353
+            ],
+            "source_standing": "EXPERIMENTAL_OPERATION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N014",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L1420-L1444",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              1420,
+              1444
+            ],
+            "source_standing": "DEFINITION_AND_NOTE",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N023",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc#L737-L998",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/http-rest-api/service-specifications-and-profiles.adoc",
+            "source_lines": [
+              737,
+              998
+            ],
+            "source_standing": "PROFILE_DEFINITION",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          },
+          {
+            "source_id": "AAS06-N035",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml#L20-L51",
+            "source_file": "AssetAdministrationShellRepositoryServiceSpecification/V3.2_SSP-006.yaml",
+            "source_lines": [
+              20,
+              51
+            ],
+            "source_standing": "OPENAPI_OPERATION_CONTRACT",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
     }
   ],
   "originalDonorEvidence": [
@@ -59900,7 +60283,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 350,
+    "informationRows": 352,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -59942,8 +60325,9 @@
     "AAS03_qualified_cell_changes": 19,
     "AAS_populated_cells": 23,
     "AAS_O2_new_candidate_rows": 8,
-    "AAS_current_source_bearing_comparisons": 77,
-    "AAS_O3_new_candidate_rows": 5
+    "AAS_current_source_bearing_comparisons": 79,
+    "AAS_O3_new_candidate_rows": 5,
+    "AAS_O4_new_candidate_rows": 2
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -59987,16 +60371,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS_O3_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS_O4_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS_O3_SAVED_VERIFIED",
-    "sha256": "2aa1791b4d91d12145e711cfe8f56011500a1638c2439aa0a553ac86052055d9",
+    "checkpoint": "AAS_O4_SAVED_VERIFIED",
+    "sha256": "b19007675196e8ba6f399c643597e431b768303b8ecbf90a61ec02a2cf2983f4",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 369x16 grid and current O3 owner routing",
-    "textCheckpoint": "AAS_O3_NATIVE_CANDIDATES",
+    "lag": "ZERO: 372x16 grid and current O4 owner routing",
+    "textCheckpoint": "AAS_O4_NATIVE_CANDIDATES",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -60015,7 +60399,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O3_native_review/publication",
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O4_native_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -63345,7 +63729,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
+  "nextOwnerAction": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -88169,5 +88553,16 @@
     "source_findings_dispositioned": 52,
     "O2_followups": 6,
     "one_next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment."
+  },
+  "AAS_O4_native_review": {
+    "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O4_native_review",
+    "preflight_head": "ffdf561e1c040108293df7dcb29ceeddb013ec93",
+    "new_candidate_row_ids": [
+      "AAS-O4-RECORD-LOOKUP",
+      "AAS-O4-RECORD-HISTORY"
+    ],
+    "status": "O4_COMPLETE__O5_PENDING_OWNER_PROCEED",
+    "source_findings_dispositioned": 38,
+    "one_next": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption."
   }
 }

@@ -4760,6 +4760,10 @@ def main() -> None:
         mirror = list(csv.reader(f))
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")
 
+    if doc.get("currentEvidenceCheckpoint")=="AAS_O4_SAVED_VERIFIED":
+        from publish_sosa_d import verify_aas_o4
+        verify_aas_o4()
+        return
     if doc.get("currentEvidenceCheckpoint")=="AAS_O3_SAVED_VERIFIED":
         from publish_sosa_d import verify_aas_o3
         verify_aas_o3()

@@ -1,5 +1,27 @@
 # AAS06 — Original Part 2 Registry, Repository, AAS Service and Discovery review
 
+## O4 native-first reconciliation — 15 November 2026
+
+All 38 retained AAS06 findings were reconciled against selected passages in 13 pinned original source files, including the 12 findings historically uncited in master cells. Exact dispositions, source contact grades, original record hashes and unresolved questions are in `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O4_native_review`. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns publication status and the next authorized action.
+
+The review adds **two provisional common information needs** to the same master and workbook:
+
+| Candidate | Why it needs its own row | Boundary |
+|---|---|---|
+| Digital-record discovery and service-location association | A record identifier names the record; the new row preserves the association used to find it from asset identifiers and locate its service. Existing network-participant rows do not explicitly carry that association. | Descriptor endpoints may be optional; the AAS record governs disagreement. No equipment liveness, installation or physical connection is proved. Native lookup filters and API paths remain source-specific. |
+| Digital-record state at a specified time | Content valid at a requested time differs from an administrative business revision label, equipment operating-state history and maintenance history. | The source explicitly separates repository history from AdministrativeInformation.version. Change granularity is unspecified; recent-change listing is experimental. No complete retention or equipment history is inferred. |
+
+Existing rows already retain declared service roles, profile support, endpoint context and representation choices. Their source-qualified classifications remain intact. Native API lookup, pagination, CRUD, response and signature mechanisms receive explicit dispositions without manufacturing a separate field for every operation; self-description path scope and declaration-versus-conformance limits remain recorded.
+
+The review retains source contradictions: Discovery pagination prose versus OpenAPI, mandatory profiles in prose versus the missing schema required-list, Query/Bulk and Read/Full labels, and globalAssetId/_globalAssetId_ spelling. Selected profile tables and operation blocks do not constitute an exhaustive audit of 34 profiles or 436 method incidences. External DIN SPEC/RFC originals and figures were not newly inspected; later AAS07/08 source coverage is not reset to unread.
+
+Current result: 352 information rows; both additions are blue common candidates, with no model or Profile adoption. All 350 earlier rows and 629 earlier classifications, prior evidence and manual M00/M01 remain unchanged. The selected original findings support potential information needs; they do not prove physical execution or any of the four source cases. O5 requires a separate owner Proceed.
+
+## Historical AAS06 review
+
+The following original review and counts are retained as historical evidence; use the PITON for current totals and routing.
+
+
 14 November 2026 · Research branch `research/dim-profile-v2` · Preflight `67fedf2290c7b3c00dbbd225ca78fb4d79f96147` · Industrial Digital Twin Association (IDTA) original **Release 26-01, IDTA-01002 Part 2 v3.2.0**, pinned at [`f136ba1465e4c6b5b25444e0609d4de8f7429044`](https://github.com/admin-shell-io/aas-specs-api/tree/f136ba1465e4c6b5b25444e0609d4de8f7429044).
 
 **One owner-authorized AAS06 scope only.** The purpose is to understand original API-native service roles and selected operation, representation, lookup and profile contracts for a whole-sensing-system comparison. This is **not** an exhaustive 34-profile OpenAPI clause audit, actual AAS runtime implementation, original equipment source validation, implementation-independent Domain Information Model (DIM) decision or OGC API–Connected Systems (CSAPI) Profile requirement.
