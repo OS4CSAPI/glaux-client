@@ -1,6 +1,6 @@
-# CURRENT — AAS O2 source/workbook ready; publication verification pending (14 November 2026, America/New_York)
+# CURRENT — AAS O2 published and verified; O3 awaits Proceed (14 November 2026, America/New_York)
 
-**Publication recovery:** Profile Rewrite 43's O2 changes survived locally without an O2 commit. Profile Rewrite 44 is authorized to finish that same checkpoint from `1329bafed27858a967781b1f702eb48895dc443a`, preserving the recovered eight candidates and 75 dispositions. The current PITON must record the actual commit, remote readback and workflow results before O2 is declared delivered. This continuation does not begin O3 or claim a fresh original-source audit.
+**Publication verified:** Profile Rewrite 44 completed the interrupted O2 checkpoint at [`f6bbba43169860350ee192d7026253552f905538`](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538), preserving the recovered eight candidates, 75 dispositions and exact saved workbook. Remote readback matched all 14 changed blobs and the full workbook bytes; both existing workflows passed. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records the check URLs and exact limitations. O3 has not started; this continuation adds no fresh source-audit coverage.
 
 This checkpoint supersedes earlier CURRENT/NEXT banners below. F3 remains owner-accepted; O1 remains complete. The owner’s next Proceed authorized **O2 only**: reconsider the native Asset Administration Shell (AAS) identity, administration, references and structure against the existing Domain Information Model (DIM) comparison. Preflight branch was `research/dim-profile-v2` at `1329bafed27858a967781b1f702eb48895dc443a`.
 
@@ -35,7 +35,7 @@ Saved-file verification checks every grid value, new fills, unchanged original c
 
 AAS remains active **bounded PARTIAL**. Semantic-definition wording versus optional cardinality, version/revision prose versus serialization representation, supplementary-specification applicability, experimental behavior, unread companion material and mixed-edition limits remain explicit. No donor closure, DIM/Profile adoption, user-interface work or deployment occurred. The broader document checker retains eight pre-existing register/link errors; publication results are recorded in the current PITON.
 
-**CURRENT ACTION:** finish O2 publication and verification, then stop. After verified delivery, a separate owner Proceed authorizes **O3 only**: native declarations, events, time and encoding meanings, with source-qualified integration as warranted; stop before O4. The source-dependent estimate after O2 is **6–9 further substantive steps**, including final reconciliation: O3 1–2, O4 1, O5 1–2, O6 2–3, O7 1. This is a planning estimate, not a fixed research quota.
+**ONE NEXT:** a separate owner Proceed authorizes **O3 only**: native declarations, condition, events, time and encoding meanings from 29 AAS04 and 23 AAS05 findings plus explicit O2 follow-ups, with source-qualified integration as warranted; stop before O4. The source-dependent estimate after O2 is **6–9 further substantive steps**, including final reconciliation: O3 1–2, O4 1, O5 1–2, O6 2–3, O7 1. This is a planning estimate, not a fixed research quota.
 
 ---
 

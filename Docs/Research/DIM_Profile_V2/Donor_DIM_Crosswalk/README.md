@@ -1,8 +1,8 @@
-# CURRENT — F3 accepted; O1 published; O2 publication recovery (14 November 2026, America/New_York)
+# CURRENT — F3 accepted; AAS O2 published and verified (14 November 2026, America/New_York)
 
 F3 owner acceptance and O1 are committed at the `1329baf` checkpoint. The interrupted O2 source/workbook work has been recovered: 75 original finding dispositions, eight provisional information-need rows, 345 total information rows and 624 classifications. All earlier 337 rows and 616 classifications, both CSV/readable mirrors, 26 workbook sheets and M00/M01 remain preserved; actual Microsoft Excel clean reopen and original-source holds remain pending. The [AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md) explains the candidates and limits.
 
-**CURRENT ACTION:** complete O2 commit, GitHub readback and existing checks, then stop; actual publication evidence belongs in the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). O3 has not started and requires a separate Proceed after O2 delivery. AAS remains active bounded PARTIAL; no model adoption or donor transition. All earlier CURRENT/NEXT banners below are historical.
+**Publication verified:** [`f6bbba43169860350ee192d7026253552f905538`](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538), with all 14 changed blobs/full workbook bytes matched and both existing workflows successful; evidence is recorded in the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). **ONE NEXT: O3 only on a separate Proceed**, then stop before O4. AAS remains active bounded PARTIAL; no model adoption or donor transition. All earlier CURRENT/NEXT banners below are historical.
 
 ---
 

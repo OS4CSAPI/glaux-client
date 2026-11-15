@@ -1,8 +1,8 @@
-# CURRENT — F3 accepted; O1 published; O2 publication recovery (14 November 2026, America/New_York)
+# CURRENT — F3 accepted; AAS O2 published and verified (14 November 2026, America/New_York)
 
 The owner accepted F3 in Profile Rewrite 43, and O1 is published at the `1329baf` checkpoint. Profile Rewrite 44 recovered O2's uncommitted source decisions and same-workbook update: 75 findings dispositioned and eight provisional information-need candidates, with all 337 earlier rows and 616 classifications preserved. The [AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md) governs this bounded continuation; its candidates do not adopt DIM classes, fields or Profile obligations.
 
-**CURRENT ACTION:** finish O2 publication and verification, record actual GitHub evidence in the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md), then stop. O3 requires a separate Proceed after delivery and has not started. AAS remains active bounded PARTIAL; source holds, manual versions and the Microsoft Excel clean-reopen limitation remain. Earlier CURRENT/NEXT banners below are historical.
+**Publication verified:** [`f6bbba43169860350ee192d7026253552f905538`](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538), with all 14 changed blobs/full workbook bytes matched and both existing workflows successful; the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records the evidence. **ONE NEXT: O3 only on a separate owner Proceed**, then stop before O4; O3 has not started. AAS remains active bounded PARTIAL; source holds, manual versions and the Microsoft Excel clean-reopen limitation remain. Earlier CURRENT/NEXT banners below are historical.
 
 ---
 

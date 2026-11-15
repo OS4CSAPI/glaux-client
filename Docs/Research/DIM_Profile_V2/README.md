@@ -1,6 +1,6 @@
-# CURRENT — AAS O2 source/workbook ready; publication verification pending (14 November 2026, America/New_York)
+# CURRENT — AAS O2 published and verified; O3 awaits Proceed (14 November 2026, America/New_York)
 
-Profile Rewrite 44 recovered the uncommitted O2 source and workbook changes at research HEAD `1329bafed27858a967781b1f702eb48895dc443a`; the owner authorized finishing O2 only. Publication is pending the actual commit, GitHub readback and existing workflow checks recorded in the [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). Local source/workbook completion is distinct from delivery; O3 has not started.
+Profile Rewrite 44 recovered and published the interrupted O2 source/workbook changes at [`f6bbba43169860350ee192d7026253552f905538`](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538). All 14 changed file blobs and the complete workbook bytes matched GitHub readback, and both existing workflows passed; the [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records their URLs and limits. The recovered candidates and source dispositions were preserved. O3 has not started.
 
 F3 remains accepted and O1 complete. O2 records dispositions for 75 original AAS identity/administration/reference/structure findings: targeted pinned-original passages were reopened for 73; two earlier audit records were reused with explicit limits. Eight provisional information-need rows expose digital-record identity, administration, template provenance, supplementary specifications, information aspects, logical relationships, multilingual labels and supporting content. These are seven common and one specialized candidate, not adopted model fields or proof of complete donor coverage.
 
@@ -8,7 +8,7 @@ The [AAS plan](Donor_DIM_Crosswalk/PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV
 
 Saved-file checks passed; changed workbook views were rendered and inspected. All 26 sheets and M00/M01 remain, with 21 sheet parts unchanged. [Pre-O2 state](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-o2-20261115) is preserved at preflight `1329bafed27858a967781b1f702eb48895dc443a`. Actual Microsoft Excel clean reopen remains pending; eight pre-existing register/link errors and all source/edition holds remain.
 
-AAS remains active bounded PARTIAL. **CURRENT ACTION: finish O2 publication and verification, then stop.** After verified delivery, O3 requires a separate owner Proceed, covering declarations/events/time/encoding; stop before O4. Estimate 6–9 further substantive steps after O2, including final reconciliation, subject to original-source complexity. No new donor, model adoption, UI or deployment. Earlier CURRENT/NEXT banners below are historical.
+AAS remains active bounded PARTIAL. **ONE NEXT: O3 only on a separate owner Proceed**, covering declarations, condition, events, time and encoding; stop before O4. Estimate 6–9 further substantive steps after O2, including final reconciliation, subject to original-source complexity. No new donor, model adoption, UI or deployment. Earlier CURRENT/NEXT banners below are historical.
 
 ---
 
