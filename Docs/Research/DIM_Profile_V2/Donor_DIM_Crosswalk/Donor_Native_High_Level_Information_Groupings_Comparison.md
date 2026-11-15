@@ -1,57 +1,62 @@
-# SOSA architecture, roles and vocabulary — SO-2A result, 15 November 2026
+# SOSA System Manager and generic-module management — SO-2B result, 15 November 2026
 
-SO-2A addresses the 262 retained records assigned to architecture, roles and vocabulary in the approved SOSA opportunity review. The owner authorized this packet in Profile Rewrite 47 after the SO-1 scope and ten-packet estimate were presented. The purpose is to let the original source contribute distinct information needs before fitting it into the existing Domain Information Model (DIM) rows. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current delivery status and routing.
+SO-2B accounts for the 201 retained System Manager and generic-module management records in the approved opportunity-review inventory. The owner authorized this packet by Proceed after the published SO-2A result in Profile Rewrite 47. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns delivery status and next-step routing. The goal remains a useful whole-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile, with provisional source contributions kept distinct from adopted requirements.
 
-## What we learned and fixed
+## What we learned
 
-The existing comparison did hide useful distinctions. An interface that crosses a sensor boundary is not necessarily a separately connected piece of equipment: it can be an aperture interacting with the environment. An internal interface is likewise not the same thing as physical membership. One new boundary-qualified candidate now preserves both meanings that the earlier 35-item review marked compressed (The Open Group 2023, sec. 4.1, PDF46–48).
+SOSA distinguishes several questions that an operator would reasonably ask separately: What is the equipment's condition? How is that condition monitored? Which changes produce notifications? What has been recorded about its condition over time? Treating all of these as a generic status report or configuration object makes those distinctions difficult to see.
 
-SOSA also separates logical functions from their implementation in hardware, firmware, software and runtime infrastructure. A procurable unit can combine several functions and infrastructure elements; the taxonomy does not prescribe one module per card, device or product. Existing physical-part, capability, network-service and generic-relationship rows could carry pieces of this description, but did not explicitly preserve the function-to-implementation distinction. The new allocation candidate does so without adopting SOSA's module list as our class hierarchy (The Open Group 2023, secs. 4.2, 5.1–5.3, PDF48–58).
+The source also makes a useful separation between the configuration of a diagnostic test, the request to run it and the reported result. Existing rows already preserve the request and result, but not the settings that control the test. Similarly, a software version is only part of describing a package associated with a target component, and exclusive command access is different from reserving a hardware or computing resource.
 
-Several earlier held or partial comparisons also pointed to useful information beyond their original target rows. A security assessment is not an operating condition or a connection credential; a product's processing stage is not its original-event/copy lineage. A producer–consumer data-flow contract is different from individual-message priority, and a declared interaction stack is different from negotiating a presentation/schema byte pair. Those original mapping limits remain valid, while the distinct meanings now receive explicit candidates.
+The word “configuration” needs particular care. The ISA Config comparison concerns capability declarations and readiness, while these SOSA definitions describe user-modifiable settings and their reported values. A retrieval command, version number or generic named-value carrier does not by itself make that distinct information need explicit (The Open Group 2023, secs. 6.2.4.1–2, PDF79–85; secs. 6.2.5.1–2, PDF88–90).
 
-| New candidate | Why an existing row was insufficient | Classification / original locator |
+## What changed and why
+
+Nine candidate rows were added. All nine are common candidates at the stated information-need level; their blue color does not establish current implementation or remove source limits.
+
+| Added information need | Distinction preserved | Original C239 locator |
 |---|---|---|
-| Interface boundary, kind and governing context | Parts and connected equipment do not state whether a physical or logical interface crosses a named boundary. | Common; §4.1 PDF46–48; Appendix A PDF384,386–388 |
-| Logical functions and implementation allocation | A function can have different hardware/software realizations and procurement groupings. | Common; §§4.2,5.1–5.3 PDF48–58 |
-| Scoped conformance or qualification claim and verification basis | Credentials, product category and a generic assertion do not state the covered subject/interfaces, requirement and verification basis. | Common; §5.1/5.3/5.5 PDF55–60; Appendix A PDF384–385,389 |
-| Subject-qualified security assessment state | Security posture is parallel to operational state and differs from certificate trust or a key-filled/tamper flag. | Common; §6.5.4 PDF136–138 |
-| Reported data-product processing stage | Raw/minimal versus processed/reduced describes the product, independently of event identity and copy provenance. | Common; Appendix A PDF385 |
-| Declared license rights for technical data or software | Intellectual-property license rights differ from technical access control and public source availability. | Common, definition-level only; Appendix A PDF385,387 |
-| Producer–consumer data-flow service contract | Offered/expected policies span reliability, timing, durability, liveliness, ownership and writer priority. | Specialized C239 policy family; §15.3 PDF374–377 |
-| Declared interaction binding stack | Data definition, encoding, encapsulation, transport and network are separate selections. | Specialized C239 binding family; §15.4 PDF377–378 |
+| Reported health assessment and associated faults | Current/projected health and faults are separate from operational state, operating mode and security posture. | PDF74,76,82–83,87,89 |
+| Health and security monitoring settings | Settings of a monitoring function are separate from the condition it reports. | PDF74,80–83,85,87,89 |
+| Management notification settings | Configuration of notifications is separate from an alert occurrence, acknowledgment or specific threshold type. | PDF74–81,87–89 |
+| Diagnostic test configuration | Test settings are separate from the diagnostic request and result. **All supporting records are Future.** | PDF75,83 |
+| Health log records and managed history | Retained health history differs from current status, operating-state-only history and security/accountability auditing. | PDF75–76,83 |
+| Health logging configuration | Settings for recording health information differ from the records and the logger's own health. | PDF75–76,83 |
+| Firmware/software package and target component | Preserve package-to-target association and reported-running versus replacement-input roles. | PDF79,84–85 |
+| Resource inventory and reservation state | Reservation of hardware/module/runtime resources differs from exclusive command access. **All supporting records are Future.** | PDF79,85 |
+| Reported equipment and security configuration settings | A settings set differs from capability/readiness declarations, its revision and a request to retrieve or change it. | PDF79–82,85,88–90 |
 
-One retained summary also needed a specific correction. Record `SOSA-C239-B-26` grouped the system, card and module under the same four security states. Original PDF136–138 assigns Evaluating/Protected/Degraded/Compromised to the system, while cards have Trust Pending/Trusted/Untrusted and software has distinct authentication states. The original record remains intact; the new assessment records the correction explicitly and prevents those vocabularies from being merged.
+Seven existing SOSA comparisons now point to these distinctions without changing their prior classifications: operating condition, capability/readiness report, running-software version, diagnostic result, configuration retrieval, current operating mode and capability readiness/reporting selection. Existing diagnostic commands, shutdown requests, mode/state reports and qualified sanitize/zeroize comparisons were reused. No separate row was created for each operation name, sensor/component variant or collection wrapper.
 
-## Accountable results and workbook changes
+| Disposition of retained source records | Count |
+|---|---:|
+| Existing information needs adequate, with source qualifications | 76 |
+| Support the nine additions | 117 |
+| Source-specific implementation rules; no extra information row | 4 |
+| Held with an exact unresolved question | 4 |
+| **Total** | **201** |
 
-| Outcome for retained records | Count | Meaning |
-|---|---:|---|
-| Adequately represented | 67 | Existing separate information needs are sufficient with stated source context. |
-| Supporting an addition | 103 | Overlapping source records support eight candidates, not 103 new rows. |
-| Source-specific information with no new row | 75 | Architecture/business principles, reserved functions, model-method context and implementation rules remain documented with reasons. |
-| Held with a specific question | 17 | Deferred behavior, native-companion/reference questions and an insufficiently specified security-risk assessment remain explicit. |
-| **Total** | **262** | Every packet ID has one primary disposition and a traceable original pointer. |
+Every record has an original ID, pointer/hash, source standing and decision-group rationale in the [existing G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO2_source_opportunity_assessments/SO-2B`. Adequacy concerns the information need; it does not create an exact donor-cell equivalence where one remains unassessed or held.
 
-The master grows from **361 to 369 information rows**. Eight existing SOSA cells gain short clarifications or pointers to the distinct candidate; their previous classifications are preserved. The two compressed interface findings are resolved at this bounded opportunity-assessment level. Secure startup remains in SO-2D, and the detailed records in SO-2B–J are not discharged by this overview.
+## Source limits that matter
 
-The six common candidates are blue and the two specialized candidates use the existing amber. Every new donor/case position states its status explicitly; no equivalences with unreviewed donors or observed equipment are invented. The canonical JSON, both CSV mirrors, both readable comparisons and the same editable workbook are synchronized at **393 × 16 = 6,288 saved comparison values**, with **648 source classifications: 540 colored and 108 held**. The 17 held source records above are a different unit from those 108 held comparison cells.
+The source labels 129 records V1.0, 66 Future and six as rules. Section 6.2.3 explains that V1.0 means the edition defines an endpoint; Future means an endpoint is planned. Neither label proves that a particular device implements it, and the exact 2023 OpenAPI companion bytes remain unverified. Two new candidates are entirely Future-supported; several others mix current reads with planned updates or verification (The Open Group 2023, sec. 6.2.3, PDF73; tables in secs. 6.2.4–5, PDF74–90).
 
-A directly browsable [pre-SO-2A checkpoint](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2a-20261115/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves the earlier master and workbook. All prior source classifications, other donor/case values, original source records, 21 untouched worksheet parts and M00/M01 remain preserved. Saved-file checking caught stale legacy `display_row` locations before publication; the update now resolves the eight intended cells through stable row IDs and the actual comparison grid. This local correction changes no unrelated legacy metadata or research scope.
+Two held records preserve the existing discrepancy in System Manager rules that literally cite Appendix B.3 rather than the registered System Manager B.2 definition. The other two concern “Sensor Health Logging Parameter Settings”: the function descriptions and interaction table do not establish whether those settings configure recording behavior or monitoring of the logger's health. The source says its function-to-interaction mapping is omitted from the printed table, so that ambiguity is recorded rather than silently resolved (The Open Group 2023, PDF76,82–83,86). These four held records are not four added held spreadsheet cells.
 
-## Value, recommendation and limits
+## Value, delivery and next step
 
-The practical value is that a future Details view can distinguish what the equipment contains, what functions it provides, how those functions are realized, which interfaces cross its boundary and what evidence supports claims about its condition or conformance. The new rows make those questions visible for later consolidation instead of hiding them inside near-matching ISA rows. This is evidence of omissions or compression in the earlier opportunity assessment; it does not prove ISA-first ordering was the sole cause. Generic relationship/property carriers alone are not evidence that the distinct information need was already explicitly represented.
+The master now has **378 information rows**, up from 369. The same editable workbook, canonical JSON, both CSV mirrors and both readable comparisons are synchronized at **403 × 16 = 6,448 comparison values**. There are **657 source classifications: 549 colored and 108 held**. All prior classifications, other donor/case values, original evidence, the earlier SO-2A decisions, 21 unaffected worksheet parts and manual M00/M01 versions remain preserved; the [pre-SO-2B archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2b-20261115/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves the preceding workbook.
 
-Keep the eight rows as provisional candidates and continue with **SO-2B only**, covering 201 retained System Manager and generic-module management records. Eleven further bounded steps remain in the estimate: nine assessment packets, reconciliation and plain-English closeout. Reuse these source decisions and verification results rather than reassessing them without new evidence. Any necessary split or scope expansion must be explained before expanding the estimate.
+The practical gain is a clearer set of questions for a future equipment Details view: condition, monitoring, alerts, diagnostic settings/results, history, configured settings, software packages and reserved resources. This is further evidence that the earlier opportunity review did not make all retained SOSA meanings explicit. It does not establish that ISA-first ordering was the sole cause, make these candidates final schema elements, or close the original source holds.
 
-The nine original SOSA hold families and its accepted bounded-PARTIAL standing remain. No new edition or companion audit, actual equipment assessment, native Microsoft Excel clean reopening, DIM/Profile adoption or client implementation is claimed. AAS acceptance remains separately pending, and AAS/SAPIENT research is not restarted. The detailed groups, individual original pointers, reused F3 decisions, closest-row rationale, held questions and saved-file evidence are in [the existing G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO2_source_opportunity_assessments/SO-2A`.
+Continue with **SO-2C only**, the 352 retained security, chassis and plug-in-card management records. The estimate is **ten further bounded steps**: eight assessment packets, reconciliation and plain-English closeout. AAS acceptance remains separately pending, and no other donor review restarts. Native Microsoft Excel clean reopening remains unverified; the current PITON and ledger distinguish saved-file/visual verification from that limit and record actual publication evidence.
 
-## Reference and prior result
+## Reference and preceding result
 
-The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5.pdf`, 403 pages. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Locators above are original PDF page numbers; source figures were not independently re-audited as pixels in this packet.
+The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5.pdf`, 403 pages. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Locators use original PDF page numbers. PDF66–73 was read as management context; this packet's decisive tables/rules are PDF74–90. No independent figure-pixel, new edition or companion-file audit was performed.
 
-[Exact SO-1 inventory and estimate](https://github.com/OS4CSAPI/glaux-client/blob/9276e76a2a99ed6512cb98ad2247a28993048b93/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md#sosa-opportunity-inventory--so-1-result-15-november-2026). Earlier CURRENT/NEXT banners below remain historical and do not govern current routing.
+[Published SO-2A findings](https://github.com/OS4CSAPI/glaux-client/blob/f773e8969aaff739a9ba1938a86ba7a941b867f1/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md). Earlier CURRENT/NEXT banners below remain historical and do not govern routing.
 
 ---
 

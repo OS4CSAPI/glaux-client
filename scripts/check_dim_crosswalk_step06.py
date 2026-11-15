@@ -4855,7 +4855,7 @@ def verify_sosa_so1() -> None:
     print("LIMIT: record accountability is not semantic completeness, a new-row count or closure of original source holds.")
 
 
-def verify_sosa_opportunities(doc):
+def verify_sosa_opportunities(doc, packet="SO-2A"):
     """Check evidence accountability, controlled changes and the saved original workbook package."""
     import copy,hashlib,io,re,zipfile,subprocess
     from collections import Counter
@@ -4865,14 +4865,14 @@ def verify_sosa_opportunities(doc):
     from publish_sosa_d import f3_cell_text
     q=native.q
     ledger_name='SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json'
-    ledger=json.loads((BASE/ledger_name).read_text());o=ledger['SO2_source_opportunity_assessments']['SO-2A'];inv=ledger['SO1_existing_findings_opportunity_inventory']
+    ledger=json.loads((BASE/ledger_name).read_text());o=ledger['SO2_source_opportunity_assessments'][packet];counts=o['counts'];key=packet.replace('-','');inv=ledger['SO1_existing_findings_opportunity_inventory']
     def original(name):
         return subprocess.check_output(['git','show',o['baseline_commit']+':'+str(BASE/name)],cwd=Path(__file__).resolve().parents[1])
     prior=json.loads(original(NAME+'.json'));oldledger=json.loads(original(ledger_name))
-    expected=next(p['record_ids'] for p in inv['proposed_SO2_packets'] if p['packet']=='SO-2A')
-    ids=[r['source_id'] for r in o['records']];required(len(ids)==len(set(ids))==262 and set(ids)==set(expected),'SO2A exact frozen packet coverage')
+    expected=next(p['record_ids'] for p in inv['proposed_SO2_packets'] if p['packet']==packet)
+    ids=[r['source_id'] for r in o['records']];required(len(ids)==len(set(ids))==counts['retained_records'] and set(ids)==set(expected),'SO2A exact frozen packet coverage')
     groups={g['group_id']:g for g in o['groups']};membership=[sid for g in groups.values() for sid in g['source_ids']]
-    required(len(membership)==len(set(membership))==262 and set(membership)==set(ids),'SO2A group partition')
+    required(len(membership)==len(set(membership))==counts['retained_records'] and set(membership)==set(ids),'SO2A group partition')
     indexed={r['source_id']:r for r in inv['records']};allowed={'ADEQUATELY_REPRESENTED','ADDITION_WARRANTED','SOURCE_SPECIFIC_NO_NEW_ROW','HELD_EXACT_QUESTION'}
     targets={r['row_id'] for r in doc['rows']}
     for row in o['records']:
@@ -4885,15 +4885,18 @@ def verify_sosa_opportunities(doc):
     for key,value in oldledger.items():
         if key=='SO1_existing_findings_opportunity_inventory':
             current=copy.deepcopy(ledger[key]);current['publication']=value['publication'];required(current==value,'SO2A frozen SO1 inventory')
-        else:required(ledger[key]==value,'SO2A original ledger evidence '+key)
-    required(set(ledger)-set(oldledger)=={'SO2_source_opportunity_assessments'},'SO2A bounded ledger changes')
+        elif key=='SO2_source_opportunity_assessments':
+            required(all(ledger[key][p]==v for p,v in value.items()),'prior SO2 packets immutable')
+            required(set(ledger[key])-set(value)=={packet},'one bounded SO2 packet added')
+        else:required(ledger[key]==value,'SO2 original ledger evidence '+key)
+    required(set(ledger)-set(oldledger)==({'SO2_source_opportunity_assessments'} if 'SO2_source_opportunity_assessments' not in oldledger else set()),'bounded ledger changes')
     changes={x['row_id']:x for x in o['qualified_existing_rows']};new=doc['rows'][len(prior['rows']):]
-    required(len(new)==8 and len(changes)==8 and len(doc['rows'])==369,'SO2A authorized integration size')
+    required(len(new)==counts['new_rows'] and len(changes)==counts['qualified_existing_rows'] and len(doc['rows'])==counts['information_rows'],'SO2A authorized integration size')
     for oldrow,row in zip(prior['rows'],doc['rows']):
         restored=copy.deepcopy(row)
         if oldrow['row_id'] in changes:
             c=changes[oldrow['row_id']];required(c['before']==oldrow['display'][9] and c['after']==row['display'][9] and not c['classification_changed'],'SO2A declared text-only qualification')
-            restored.pop('SO2A_qualification');restored['display'][9]=oldrow['display'][9]
+            restored.pop(packet.replace('-','')+'_qualification');restored['display'][9]=oldrow['display'][9]
         required(restored==oldrow,'SO2A preserved prior row '+oldrow['row_id'])
     candidates={x['row_id']:x for x in o['new_candidates']}
     for row in new:
@@ -4901,8 +4904,8 @@ def verify_sosa_opportunities(doc):
         required(row['definition']==candidates[row['row_id']]['definition'],'SO2A candidate native meaning')
         required(all(str(v).strip() for v in row['display']),'SO2A explicit new comparison/case statuses')
         required(all('Not assessed' in row['display'][i] for i in range(4,15) if i!=9),'SO2A no invented donor equivalences')
-    required(Counter(r['SO2_source_correspondence']['candidate_status'] for r in new)=={'COMMON_CANDIDATE':6,'SPECIALIZED_CANDIDATE':2},'SO2A classification counts')
-    grid=doc['review_grid'];required(len(grid)==393 and all(len(r)==16 for r in grid),'SO2A grid shape')
+    required(Counter(r['SO2_source_correspondence']['candidate_status'] for r in new)==Counter({'COMMON_CANDIDATE':counts['common_new_rows'],'SPECIALIZED_CANDIDATE':counts['specialized_new_rows']}),'SO2A classification counts')
+    grid=doc['review_grid'];required(len(grid)==counts['grid_rows'] and all(len(r)==16 for r in grid),'SO2A grid shape')
     required([r for n,r in enumerate(grid) if n>1 and n not in doc['review_sections']]==[r['display'] for r in doc['rows']],'SO2A grid/row equality')
     expected_old=copy.deepcopy(prior['review_grid'])
     positions=[n for n in range(2,len(expected_old)) if n not in prior['review_sections']]
@@ -4944,7 +4947,7 @@ def verify_sosa_opportunities(doc):
             if name=='Master Crosswalk':
                 for i,row in enumerate(grid,1):
                     for j,v in enumerate(row,1):required(f3_cell_text(cells.get(native.coord(i,j)))==v,'SO2A all saved grid values')
-                required(root.find(q('dimension')).get('ref')=='A1:P393','SO2A extended saved range')
+                required(root.find(q('dimension')).get('ref')=='A1:P'+str(len(grid)),'SO2A extended saved range')
                 styles=ET.fromstring(z.read('xl/styles.xml'));xf=styles.find(q('cellXfs'));fills=styles.find(q('fills'))
                 for r in new:
                     c=r['SO2_source_correspondence'];rgb=fills[int(xf[int(cells[c['cell']].get('s'))].get('fillId'))].find('.//'+q('fgColor')).get('rgb')
@@ -4957,7 +4960,7 @@ def verify_sosa_opportunities(doc):
     for k,v in prior['counts'].items():
         if k!='informationRows':required(doc['counts'][k]==v,'SO2A historical count preservation')
     required(doc['nextOwnerAction']==o['one_next'],'SO2A stop boundary')
-    print('PASS SO-2A: 262 records accounted for; 8 candidates / 8 qualified cells; 6288 saved grid values, mirrors and fills; 21 untouched sheets, original evidence/classifications and M00/M01 preserved.')
+    print(f'PASS {packet}: {len(ids)} records accounted for; {len(new)} candidates / {len(changes)} qualified cells; {len(grid)*16} saved grid values, mirrors and fills; 21 untouched sheets, original evidence/classifications and M00/M01 preserved.')
     print('LIMIT: scoped opportunity review, not full source completeness, adoption, runtime conformance or native Excel clean reopening.')
 
 
@@ -4969,8 +4972,8 @@ def main() -> None:
     if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
-    if doc.get('currentEvidenceCheckpoint')=='SOSA_SO2A_SAVED_VERIFIED':
-        verify_sosa_opportunities(doc)
+    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED'):
+        verify_sosa_opportunities(doc,'SO-'+doc['currentEvidenceCheckpoint'].split('_')[1][2:])
         return
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
         mirror = list(csv.reader(f))
