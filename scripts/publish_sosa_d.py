@@ -6165,6 +6165,9 @@ def verify_f3_06():
         before=json.loads(f3_baseline(name,F3_PEER_BASE));after=load(name);after.pop('F3_06_peer_review')
         if name==F3_PEER_FILES[-1]:
             for k in ('one_next','master_state_current'):after[k]=before[k]
+            if 'AAS_O1_source_opportunities' in after:
+                after.pop('AAS_O1_source_opportunities');after.pop('F3_owner_acceptance')
+                after['status']=before['status']
             after['F3_05_classification_review']['publication']=before['F3_05_classification_review']['publication']
         need(after==before,'all prior native source records and holds '+name)
     need(source_csv('Master_Donor_Concept_to_DIM_Crosswalk.csv')==m['review_grid']==source_csv('ISA_Correction_Review_07NOV2026.csv'),'both CSV mirrors')
@@ -6220,7 +6223,47 @@ def verify_f3_06():
     need(m['nextOwnerAction']==review['next']==load(F3_PEER_FILES[-1])['one_next'],'one owner gate')
     print('PASS F3-06: 79 corrections; all 616 actual saved source fills; 5664 values and both CSV/Markdown mirrors.')
     print('PASS: 337 rows, 26 sheets, 21 unchanged worksheet parts, original evidence/holds/case cells and M00/M01 preserved.')
-    print('LIMIT: targeted source review only. Owner acceptance and actual Microsoft Excel clean reopen remain pending.')
+    if 'AAS_O1_source_opportunities' in m:
+        verify_aas_o1(m)
+        print('LIMIT: F3 accepted; AAS bounded PARTIAL. Excel clean reopen pending; workbook routing text historical.')
+    else:
+        print('LIMIT: targeted source review only. Owner acceptance and actual Microsoft Excel clean reopen remain pending.')
+
+
+def verify_aas_o1(m):
+    """Recompute source accountability while protecting the accepted grid and original evidence."""
+    import copy
+    from collections import Counter
+    a=load(F3_PEER_FILES[-1]);o=a['AAS_O1_source_opportunities']
+    prior=json.loads(f3_baseline(MASTER,'23c2dcd292b7e77118bcd23feb11fd9223bd61f1'))
+    restored=copy.deepcopy(m);restored.pop('AAS_O1_source_opportunities')
+    restored['nextOwnerAction']=prior['nextOwnerAction']
+    restored['F3_06_classification']=copy.deepcopy(m['F3_06_classification'])
+    for k in ('owner_acceptance','status','next'):restored['F3_06_classification'][k]=prior['F3_06_classification'][k]
+    restored['F3_06_classification'].pop('owner_acceptance_record')
+    need(restored==prior,'O1 changes only authorized master routing metadata')
+    originals={x['source_id']:x for n in range(2,10) for x in a['AAS%02d'%n]['original_items']}
+    rs=o['finding_records'];need(len(rs)==len(originals)==310 and {r['source_id'] for r in rs}==set(originals),'all 310 original IDs once')
+    unc={r['source_id']:r for r in a['AAS10']['finding_accountability']['uncited_dispositions']}
+    need(len(unc)==53,'historical 53 retained')
+    rx=re.compile(r'AAS0[2-9]-[NS]\d{3}')
+    for r in rs:
+        sid=r['source_id'];x=originals[sid]
+        need(digest(json.dumps(x,sort_keys=True,ensure_ascii=False).encode())==r['original_record_sha256'],'original source content '+sid)
+        retained=[row['row_id'] for row in m['rows'] if sid in rx.findall(json.dumps(row))]
+        current=[row['row_id'] for row in m['rows'] if sid in rx.findall(row['display'][6])]
+        decisions=[row['row_id'] for row in m['rows'] if sid in row.get('F3_06_AAS_classification',row.get('F3_05_AAS_classification',{})).get('source_ids',[])]
+        need(current==decisions==[v['row_id'] for v in r['current_cell_links']] and retained==r['retained_master_row_ids'],'recomputed row links '+sid)
+        need(r['disposition']==('current_decision_linked' if current else 'prior_evidence_only' if retained else 'historically_uncited'),'current disposition '+sid)
+        need(r['historical_53']==(sid in unc) and not r['DIM_Profile_adopted'] and not r['new_source_audit_claimed'],'scope '+sid)
+        if sid in unc:need(r['prior_uncited_disposition']==unc[sid],'preserved prior disposition '+sid)
+    need(Counter(r['disposition'] for r in rs)=={'current_decision_linked':99,'prior_evidence_only':158,'historically_uncited':53},'independent finding census')
+    final=[r for r in m[F3_PEER_KEY]['final_source_cell_dispositions'] if r['donor_key']=='AAS']
+    need(len(o['classification_records'])==len(final)==64,'64 AAS classification links')
+    for r,c in zip(o['classification_records'],final):
+        need((r['row_id'],r['cell'],r['current_status'],r['current_fill'])==(c['row_id'],c['cell'],c['candidate_status'],c['fill']),'accepted AAS classification '+r['row_id'])
+    need(a['one_next']==o['one_next']==m['nextOwnerAction'] and m[F3_PEER_KEY]['owner_acceptance']=='ACCEPTED_WITH_RECORDED_LIMITATIONS','accepted F3 and O2 stop boundary')
+    print('PASS AAS O1: all 310 findings reconciled: 99 current / 158 retained-row-only / 53 historical uncited; 64 classifications unchanged.')
 
 
 if __name__=="__main__":

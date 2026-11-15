@@ -1,3 +1,34 @@
+# CURRENT — F3 accepted; AAS O1 complete (15 November 2026 UTC)
+
+Owner acceptance and the comprehensive F3 explanation were published in commit `23c2dcd292b7e77118bcd23feb11fd9223bd61f1`. O1 has now accounted for all **310 retained Asset Administration Shell (AAS) findings** in the existing cumulative source ledger, with original-record pointers, locators, inherited standing/coverage, current and historical row links, and the next source-review stage. No finding was deleted or newly asserted, and no row, comparison value or color changed.
+
+**99 findings** are cited in current AAS cell explanations and decisions; **158** retain historical master-row evidence without a current cell citation; **53** remain source-ledger findings without a master-row citation. The historical 257 cited / 53 uncited census is therefore preserved and distinguished from today's shorter explanations. Neither citation presence nor absence establishes complete integration, a missing DIM field or lack of donor support.
+
+The original **54 colored / 10 held** AAS decisions are individually linked to the accepted F3 result of **52 colored / 12 held**. All 64 current decisions are retained. O1 routes each native finding for further review; it does not adjudicate new candidates or rerun F3.
+
+| Source increment | Findings | Current cell/decision | Prior evidence only | Historically uncited | Next review |
+|---|---:|---:|---:|---:|---|
+| AAS02 | 42 | 6 | 36 | 0 | O2 |
+| AAS03 | 33 | 20 | 7 | 6 | O2 |
+| AAS04 | 29 | 20 | 6 | 3 | O3 |
+| AAS05 | 23 | 2 | 21 | 0 | O3 |
+| AAS06 | 38 | 7 | 19 | 12 | O4 |
+| AAS07 | 53 | 12 | 30 | 11 | O5 |
+| AAS08 | 55 | 16 | 22 | 17 | O6 |
+| AAS09 | 37 | 16 | 17 | 4 | O6 |
+
+The review workload remains source-dependent: O2 covers identity/structure (75 findings), O3 declarations/events/encoding (52), O4 discovery/services (38), O5 operations/model/package services (53), and O6 companions/industrial templates (92). Across O4/O5, 34 profile files and 436 method incidences were structurally inventoried, not completely audited operation by operation. O6 retains mixed editions, unread companion material and sampled templates; the existing manifests and holds govern access and coverage.
+
+The working estimate is **7–11 further substantive steps**, including the final reconciliation gate: O2 1–2, O3 1–2, O4 1, O5 1–2, O6 2–3, O7 1. This carries forward the earlier 8–12 estimate with O1 completed; any split must follow actual source complexity. No automatic advancement is authorized.
+
+Workbook remains byte-identical F3-06: all 5664 comparison values and 616 fills current. Embedded F3 acceptance-pending and next-action text is historical; owner acceptance and O1 routing are current in GitHub JSON/plans. No O1 source inventory is embedded in XLSX.
+
+The existing source ledger records two targeted pinned-original navigation/definition checks; these do not constitute a fresh corpus audit. AAS remains active bounded PARTIAL. Actual Microsoft Excel clean reopen/no-repair remains pending; existing source-access and document-link holds remain.
+
+**ONE NEXT:** owner Proceed for **O2 only**, starting with original identity, administration, reference and structure meanings. Stop before O3. No new donor, model adoption, UI or deployment.
+
+---
+
 # CURRENT — F3 accepted; AAS O1 authorized (14 November 2026, America/New_York)
 
 In Profile Rewrite 43 the owner stated: “Ok consider F3 accepted, document tgis last response in the github appropriatwly, then priceed with what is next”. This accepts F3 as the correction of existing donor classifications, retaining the disclosed limitations, and authorizes the next bounded AAS **O1 source-opportunities baseline only**. Stop before O2. F3 execution was published at `49ee1d6b550e7e6d899a88ca64a3027ba13f17fa`; its verified publication record is at `eae7f38b1be9681355e3096d3c2f7f3565dfd958`.
