@@ -7549,6 +7549,15 @@ def sosa_opportunity_spec(packet='SO-2A'):
           'B23':o['one_next']+' Nine further bounded steps estimated. AAS acceptance is separate.',
           'B28':'6,496 comparison values, two new fills and the clarified logging definition checked; prior 657 classifications, 21 untouched sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
         sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2C; classification is not adoption','B23':'551 colored / 108 held comparisons. Two new common candidates (blue). Five existing comparisons clarified without changing their classifications; one definition broadened.','B24':'380 information rows; 406 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2C boundary','B28':'352 records: 307 represented, 26 supporting additions, four supporting clarification, five source-specific/no row, ten held. Records are not distinct concepts or rows. Next SO-2D only; AAS acceptance pending.'})
+    if packet=='SO-2D':
+        guidance.update({'A1':'CURRENT 15 NOV 2026 — SOSA SO-2D complete','B1':'384 information rows in the same 26-sheet master. F3 accepted; SOSA bounded PARTIAL retained; AAS acceptance pending. M00/M01 frozen.',
+          'B17':'SO-2D: all 217 management-path, state and hosted-runtime records accounted for; four candidates added and seven existing SOSA comparisons clarified. Security assessment now explicitly includes inter-module connections.',
+          'B19':'384 information rows; 663 source classifications: 555 colored and 108 held. Thirteen held SO-2D source records are a separate count and do not add held comparison cells.',
+          'B21':'Original C239 PDF122–140 and 361–371 text read; seven decisive pages visually checked. Original source grades and prior decisions retained; no new edition, native-companion or external-standard audit.',
+          'B22':'New: latched memory write protection, persistent hardware action flag, container-scoped slot identifier and secure-startup authentication dependencies. One common and three specialized candidates; no adopted requirements or observed device behavior.',
+          'B23':o['one_next']+' Eight further bounded steps estimated. AAS acceptance is separate.',
+          'B28':'6,576 comparison values, four new fills and the clarified security-state definition checked; prior 659 classifications, 21 untouched sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
+        sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2D; classification is not adoption','B23':'555 colored / 108 held comparisons. One common slot-identity candidate (blue); three specialized latch/startup candidates (amber). Seven prior comparisons clarified without classification changes.','B24':'384 information rows; 411 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2D boundary','B28':'217 records: 138 represented, 22 supporting additions, four supporting clarification, 40 source-specific/no row, 13 held. Records are not distinct concepts or rows. Next SO-2E only; AAS acceptance pending.'})
     for name in ('Summary','Validation','Legend'):
         sheets[name]['heights']={f'A{re.search(r"\d+",ref).group()}:B{re.search(r"\d+",ref).group()}':max(60,14*math.ceil(len(value)/95)+22) for ref,value in sheets[name]['cells'].items() if ref.startswith('B')}
     return {'packet':packet,'baseline_commit':o['baseline_commit'],'sheets':sheets}
@@ -7618,7 +7627,7 @@ def publish_sosa_opportunity(authored_path, packet='SO-2A'):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED","SOSA_SO2C_SAVED_VERIFIED"):
+    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED","SOSA_SO2C_SAVED_VERIFIED","SOSA_SO2D_SAVED_VERIFIED"):
         from check_dim_crosswalk_step06 import verify_sosa_opportunities
         packet='SO-'+checkpoint.split('_')[1][2:]
         verify_sosa_opportunities(load(MASTER),packet)

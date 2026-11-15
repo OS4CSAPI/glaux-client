@@ -4979,7 +4979,7 @@ def main() -> None:
     if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
-    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED'):
+    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED','SOSA_SO2D_SAVED_VERIFIED'):
         verify_sosa_opportunities(doc,'SO-'+doc['currentEvidenceCheckpoint'].split('_')[1][2:])
         return
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:

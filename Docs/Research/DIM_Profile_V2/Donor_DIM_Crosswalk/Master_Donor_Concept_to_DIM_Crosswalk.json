@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "42ec0c6e61e28a1b21b1a11636afe387af1a6264bc029379c094c8222a99d221",
+  "currentWorkbookSha256": "f4f8dd1a4d433fabd3b20571f658f13246d4c003e2111c1560250cd9d911cd63",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -251,7 +251,7 @@
       "[COMMON CANDIDATE] PARTIAL/RELATED: Part 4 defines issuer-key trust, signed access tokens and dataspace trust policy; public certificates are one permitted key source. This supports qualified trust-context information. Device certificate binding is only a possible approach, not a required equipment certificate or an authenticated physical identity. [Sources: AAS08-N033, AAS08-N041, AAS08-N042; F3-05-ISA-A-CERTIFICATE-TRUST]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: The ICD requires a valid certificate signed by a valid certification authority within the network PKI. This supports common identity/trust context while retaining native certificate-name, validity, revocation and algorithm qualifications from the prior corpus; no installed certificate is verified. [ICD-3.1.2, ICD-3.3, ICD-6.1, CERT-1.0, CERT-2.0, CERT-3.1, CERT-3.2, CERT-3.2.1, CERT-3.2.2, CERT-3.3, CERT-3.4; F3-06-ISA-ISA-A-CERTIFICATE-TRUST]",
-      "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S]",
+      "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S] SO-2D: root-of-trust may be hardware/software and cryptographic or design-based. The secure-startup authentication dependencies are preserved separately in SOSA-SO2D-SECURE-STARTUP; neither a certificate schema nor a successful authentication follows.",
       "",
       "",
       "",
@@ -449,7 +449,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control. SO-2D: PDF123–124 permits distributed/redundant Chassis Managers and independent managers for distinct enclaves; subsidiary FRU representation and redundant channels do not imply one endpoint per card or observed reachability.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -3617,7 +3617,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software. SO-2D: required cores/memory/ports are deployment needs, not utilization or reservations. Per-runtime files retain conditional filesystem/device/mount/type and start order; minimum content is specified, serialization is not. Nested-runtime orchestration, host permissions and shared time windows remain unspecified. No public command or executed startup is inferred.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5255,7 +5255,7 @@
       "[HELD] RELATED/NO_ESTABLISHED: A generic Property/Qualifier can carry many subjects, but the reviewed concepts do not define equipment operating condition. Event state means on/off, and the qualifier example concerns value quality. Remove this specific condition color; no absence of condition concepts elsewhere in AAS is claimed. [Sources: AAS04-N007, AAS04-N018, AAS04-N029; F3-05-ISA-C-082]",
       "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
       "Operating State",
-      "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082] SO-2B: operational state remains separate from current/projected health assessment; see SOSA-SO2B-HEALTH-ASSESSMENT.",
+      "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082] SO-2B: operational state remains separate from current/projected health assessment; see SOSA-SO2B-HEALTH-ASSESSMENT. SO-2D: preserve System Manager viewpoints and distinct sensor S0–S5, PIC P0–P6 and module M0–M6 vocabularies. Off may be unreported; P6/M6 communication loss retains the previous state and need not mean faulty equipment. Informative transition descriptions are not a normative transition policy; apparent source transition errors remain unrepaired.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -5543,7 +5543,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6.3 PDF121–122: management-controller auxiliary power domain separate from main application/payload power for limited-power operations; not measured battery, current, voltage or actual powered state. Original source IDs: SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT. Other donor equivalence and installed equipment NOT ASSESSED.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6.3 PDF121–122: management-controller auxiliary power domain separate from main application/payload power for limited-power operations; not measured battery, current, voltage or actual powered state. Original source IDs: SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT. Other donor equivalence and installed equipment NOT ASSESSED. SO-2D: Rule 6.4.2-21 prevents specified FRU controls from changing 3.3V_AUX. This command-design safeguard does not prove permanent power. Conditional payload activation for a persistent GDiscrete1 action is separately retained in SOSA-SO2D-PERSISTENT-ACTION-FLAG.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -7109,7 +7109,7 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A]",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A] SO-2D: extend the subject to an inter-module connection. Its Secured/Unsecured state concerns end-to-end protection under policy, distinct from either endpoint trust state. An Unsecured connection may be permitted by policy; this is not automatically a compromised component or an observed insecure link.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -7325,7 +7325,7 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Associate a firmware/software package with its target component and distinguish information identifying the package reported as running from a package submitted for replacement. C239 declares package-information retrieval and replacement as V1.0, and package verification as Future with authenticity verification assigned to Security Services. Package identity is not merely a version string or an exchange-package ID. No native package fields, authentic image, successful installation or observed running instance are established. [C239: §6.2.4.1 PDF79; §6.2.4.2 PDF84–85; SO-2B]",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Associate a firmware/software package with its target component and distinguish information identifying the package reported as running from a package submitted for replacement. C239 declares package-information retrieval and replacement as V1.0, and package verification as Future with authenticity verification assigned to Security Services. Package identity is not merely a version string or an exchange-package ID. No native package fields, authentic image, successful installation or observed running instance are established. [C239: §6.2.4.1 PDF79; §6.2.4.2 PDF84–85; SO-2B] SO-2D: OCI runtime bundles (1.0.2) and OVF virtual appliances (2.1.1) are source-specified distribution/runtime formats, distinct from FACE interface conformance, installed software versions and verified execution. No external format audit or successful load is claimed.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -7422,6 +7422,96 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Security-condition log and managed history — NOT ADOPTED"
+    ],
+    [
+      "SOSA SO-2D — hardware latches, slot identity and secure startup",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the latched write-disabled state of a hardware element and the vendor-declared nonvolatile memory covered by it. C239 NVMRO assertion latches write disable until management power (3.3V_AUX) is removed and exposes that flag to hosted modules. Deasserting NVMRO does not prove writing is enabled: another mechanism may inhibit writes. Some memory may remain writable as declared in the vendor Certificate of Volatility. This is a specialized protection-state design, not erasure, authorization policy or verified protection of every memory device. [C239: §6.4.2 PDF124–125; Rules 6.4.2-2–4, Permission 6.4.2-1, Observation 6.4.2-1; SO-2D]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Latched nonvolatile-memory write protection — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a hardware action flag, its associated configured action and its persistence/clear conditions. C239 GDiscrete1 sets a nonvolatile flag that survives resets and power cycles until the associated action is complete; hosted modules can inspect it and have a method to set or clear it. The configured response may be no action, an action using management power, or an action requiring payload activation and restart/resumption after interruption. The flag is not an identified queued command, task execution record, universal sanitization trigger or proof of completed physical work. [C239: §6.4.2 PDF127; Rules 6.4.2-12–15, Observations 6.4.2-5–7, Permission 6.4.2-4; SO-2D]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Persistent hardware action flag — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Identify a hardware component placement by a slot identifier in its containing hardware context. C239 requires a plug-in card to receive a unique slot number based on its VITA Geographic Address. This is a discrete installation-position identifier, not geographic coordinates, a parent-relative vector, the card serial number or a globally persistent system identifier. Exact native address encoding, external VITA rules and any observed installation remain unverified. [C239: §6.4.2 PDF127, Rule 6.4.2-16; SO-2D]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Container-scoped physical slot identifier — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the trust basis and authentication dependencies governing the specialized system start-up sequence: hardware authentication, authenticated runtime/software loading and composition. A Root of Trust may be hardware or software, with cryptographic or design-based trust. C239 requires remote runtime and sensor software authentication before execution; its prose makes trusted host hardware a prerequisite for module-software authentication. Conditional decryption is separate from authentication. These declared dependencies are not a certificate schema, a generic initialization command, a completed boot trace or proof of trustworthy execution; mechanisms and policy remain implementation-dependent. [C239: §6.5.4 PDF135–140; hardware authentication and remote-runtime/software authentication/decryption rules; SO-2D]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Secure-startup trust and authentication dependencies — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -7448,7 +7538,8 @@
     379,
     384,
     393,
-    403
+    403,
+    406
   ],
   "rows": [
     {
@@ -8500,7 +8591,7 @@
         "[COMMON CANDIDATE] PARTIAL/RELATED: Part 4 defines issuer-key trust, signed access tokens and dataspace trust policy; public certificates are one permitted key source. This supports qualified trust-context information. Device certificate binding is only a possible approach, not a required equipment certificate or an authenticated physical identity. [Sources: AAS08-N033, AAS08-N041, AAS08-N042; F3-05-ISA-A-CERTIFICATE-TRUST]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: The ICD requires a valid certificate signed by a valid certification authority within the network PKI. This supports common identity/trust context while retaining native certificate-name, validity, revocation and algorithm qualifications from the prior corpus; no installed certificate is verified. [ICD-3.1.2, ICD-3.3, ICD-6.1, CERT-1.0, CERT-2.0, CERT-3.1, CERT-3.2, CERT-3.2.1, CERT-3.2.2, CERT-3.3, CERT-3.4; F3-06-ISA-ISA-A-CERTIFICATE-TRUST]",
-        "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S]",
+        "RELATED: C239 §6.5.4 root-of-trust, §12 security/key/digest obligations, and conditional §15 inter-module TLS/DTLS concern trust and protection; §14 container permissions remain unspecified. No mandatory ISA certificate Common Name, issuer/trust-anchor schema, or actual installed certificate is established. [G2-3/G2-5/G2-7R/G2-7S] SO-2D: root-of-trust may be hardware/software and cryptographic or design-based. The secure-startup authentication dependencies are preserved separately in SOSA-SO2D-SECURE-STARTUP; neither a certificate schema nor a successful authentication follows.",
         "",
         "",
         "",
@@ -8690,6 +8781,21 @@
           "CERT-3.4"
         ],
         "rationale": "The ICD requires a valid certificate signed by a valid certification authority within the network PKI. This supports common identity/trust context while retaining native certificate-name, validity, revocation and algorithm qualifications from the prior corpus; no installed certificate is verified."
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: root-of-trust may be hardware/software and cryptographic or design-based. The secure-startup authentication dependencies are preserved separately in SOSA-SO2D-SECURE-STARTUP; neither a certificate schema nor a successful authentication follows.",
+        "candidate_row": "SOSA-SO2D-SECURE-STARTUP",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-ROOT-OF-TRUST",
+          "SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_1",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_2",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_5",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_6",
+          "SOSA-C239-G2-3-RULE-6_5_4_3_11",
+          "SOSA-C239-G2-3-RULE-6_5_4_3_12"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -12607,7 +12713,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control. SO-2D: PDF123–124 permits distributed/redundant Chassis Managers and independent managers for distinct enclaves; subsidiary FRU representation and redundant channels do not imply one endpoint per card or observed reachability.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12675,6 +12781,25 @@
           "SOSA-C239-G2-2-RULE-05",
           "SOSA-C239-G2-2-RULE-07",
           "SOSA-C239-G2-2-RULE-08"
+        ],
+        "classification_changed": false
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: PDF123–124 permits distributed/redundant Chassis Managers and independent managers for distinct enclaves; subsidiary FRU representation and redundant channels do not imply one endpoint per card or observed reachability.",
+        "candidate_row": "SOSA-F2-MGMT-PATH",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_3",
+          "SOSA-C239-G2-3-RULE-6_4_1_2",
+          "SOSA-C239-G2-3-RULE-6_4_1_3",
+          "SOSA-C239-G2-3-RULE-6_4_2_17",
+          "SOSA-C239-G2-3-RULE-6_4_2_18",
+          "SOSA-C239-G2-3-PERMISSION-6_4_1_1",
+          "SOSA-C239-G2-3-PERMISSION-6_4_1_2",
+          "SOSA-C239-G2-3-PERMISSION-6_4_1_3",
+          "SOSA-C239-G2-3-PERMISSION-6_4_1_4",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_3",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_4",
+          "SOSA-C239-G2-3-RECOMMENDATION-6_4_1"
         ],
         "classification_changed": false
       }
@@ -34233,7 +34358,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software. SO-2D: required cores/memory/ports are deployment needs, not utilization or reservations. Per-runtime files retain conditional filesystem/device/mount/type and start order; minimum content is specified, serialization is not. Nested-runtime orchestration, host permissions and shared time windows remain unspecified. No public command or executed startup is inferred.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -34299,6 +34424,78 @@
           "SOSA-C239-G2-2-RTEF-018",
           "SOSA-C239-G2-2-RTEF-020",
           "SOSA-C239-G2-2-RTEF-023"
+        ],
+        "classification_changed": false
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: required cores/memory/ports are deployment needs, not utilization or reservations. Per-runtime files retain conditional filesystem/device/mount/type and start order; minimum content is specified, serialization is not. Nested-runtime orchestration, host permissions and shared time windows remain unspecified. No public command or executed startup is inferred.",
+        "candidate_row": "SOSA-F2-RTE-CONFIG",
+        "source_ids": [
+          "SOSA-C239-G2-7R-CONTEXT-1",
+          "SOSA-C239-G2-7R-CONTEXT-2",
+          "SOSA-C239-G2-7R-CONTEXT-4",
+          "SOSA-C239-G2-7R-CONTEXT-5",
+          "SOSA-C239-G2-7R-CONTEXT-6",
+          "SOSA-C239-G2-7R-RULE-14_1_1",
+          "SOSA-C239-G2-7R-RULE-14_1_2",
+          "SOSA-C239-G2-7R-RULE-14_1_3",
+          "SOSA-C239-G2-7R-RULE-14_2_1",
+          "SOSA-C239-G2-7R-FIELD-Container",
+          "SOSA-C239-G2-7R-FIELD-FACE_OSS",
+          "SOSA-C239-G2-7R-FIELD-FileSystem",
+          "SOSA-C239-G2-7R-FIELD-ImageLoad",
+          "SOSA-C239-G2-7R-FIELD-ProfileType",
+          "SOSA-C239-G2-7R-FIELD-Resources",
+          "SOSA-C239-G2-7R-FIELD-StartOrder",
+          "SOSA-C239-G2-7R-FIELD-Virtual_Machine",
+          "SOSA-C239-G2-7R-FIELD-cores",
+          "SOSA-C239-G2-7R-FIELD-device",
+          "SOSA-C239-G2-7R-FIELD-file_system_type",
+          "SOSA-C239-G2-7R-FIELD-mount_point",
+          "SOSA-C239-G2-7R-FIELD-network_ports",
+          "SOSA-C239-G2-7R-FIELD-volatile_memory",
+          "SOSA-C239-G2-7R-TABLE-14_1_1",
+          "SOSA-C239-G2-7R-TABLE-14_5_1",
+          "SOSA-C239-G2-7R-TABLEROW-14_1_1_Container",
+          "SOSA-C239-G2-7R-TABLEROW-14_1_1_FACE_OSS",
+          "SOSA-C239-G2-7R-TABLEROW-14_1_1_Virtual_Machine",
+          "SOSA-C239-G2-7R-TABLEROW-14_5_1_Type_1",
+          "SOSA-C239-G2-7R-TABLEROW-14_5_1_Type_2",
+          "SOSA-C239-G2-7R-SECTION-14",
+          "SOSA-C239-G2-7R-SECTION-14_1",
+          "SOSA-C239-G2-7R-SECTION-14_2",
+          "SOSA-C239-G2-7R-SECTION-14_3",
+          "SOSA-C239-G2-7R-SECTION-14_3_1",
+          "SOSA-C239-G2-7R-SECTION-14_3_2",
+          "SOSA-C239-G2-7R-SECTION-14_3_3",
+          "SOSA-C239-G2-7R-SECTION-14_4",
+          "SOSA-C239-G2-7R-SECTION-14_4_1",
+          "SOSA-C239-G2-7R-SECTION-14_4_2",
+          "SOSA-C239-G2-7R-SECTION-14_4_3",
+          "SOSA-C239-G2-7R-SECTION-14_5",
+          "SOSA-C239-G2-7R-SECTION-14_5_1",
+          "SOSA-C239-G2-7R-SECTION-14_5_2",
+          "SOSA-C239-G2-7R-SECTION-14_5_3",
+          "SOSA-C239-G2-7R-OBSERVATION-14_2_1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_3_2_1",
+          "SOSA-C239-G2-7R-RULE-14_3_3_1",
+          "SOSA-C239-G2-7R-RULE-14_3_3_2",
+          "SOSA-C239-G2-7R-RULE-14_3_3_3",
+          "SOSA-C239-G2-7R-RULE-14_3_3_4",
+          "SOSA-C239-G2-7R-RULE-14_3_3_5",
+          "SOSA-C239-G2-7R-RULE-14_3_3_6",
+          "SOSA-C239-G2-7R-RULE-14_4_3_1",
+          "SOSA-C239-G2-7R-RULE-14_4_3_2",
+          "SOSA-C239-G2-7R-RULE-14_4_3_3",
+          "SOSA-C239-G2-7R-RULE-14_4_3_4",
+          "SOSA-C239-G2-7R-RULE-14_4_3_5",
+          "SOSA-C239-G2-7R-RULE-14_4_3_6",
+          "SOSA-C239-G2-7R-RULE-14_5_3_1",
+          "SOSA-C239-G2-7R-RULE-14_5_3_2",
+          "SOSA-C239-G2-7R-RULE-14_5_3_3",
+          "SOSA-C239-G2-7R-RULE-14_5_3_4",
+          "SOSA-C239-G2-7R-RULE-14_5_3_5",
+          "SOSA-C239-G2-7R-RULE-14_5_3_6"
         ],
         "classification_changed": false
       }
@@ -50087,7 +50284,7 @@
         "[HELD] RELATED/NO_ESTABLISHED: A generic Property/Qualifier can carry many subjects, but the reviewed concepts do not define equipment operating condition. Event state means on/off, and the qualifier example concerns value quality. Remove this specific condition color; no absence of condition concepts elsewhere in AAS is claimed. [Sources: AAS04-N007, AAS04-N018, AAS04-N029; F3-05-ISA-C-082]",
         "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
         "Operating State",
-        "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082] SO-2B: operational state remains separate from current/projected health assessment; see SOSA-SO2B-HEALTH-ASSESSMENT.",
+        "[COMMON CANDIDATE] PARTIAL: C239 provides sensor/component operating-state representations and requires managed PICs to report current operational state. The 2022 model separates operationalState from healthStatus. These support qualified operating-condition information; communication loss remains distinct from known failure, and future transition policies or actual case health are not inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04D-ISA-C-082] SO-2B: operational state remains separate from current/projected health assessment; see SOSA-SO2B-HEALTH-ASSESSMENT. SO-2D: preserve System Manager viewpoints and distinct sensor S0–S5, PIC P0–P6 and module M0–M6 vocabularies. Off may be unreported; P6/M6 communication loss retains the previous state and need not mean faulty equipment. Informative transition descriptions are not a normative transition policy; apparent source transition errors remain unrepaired.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -50358,6 +50555,34 @@
       "SO2B_qualification": {
         "rationale": "SO-2B: operational state remains separate from current/projected health assessment; see SOSA-SO2B-HEALTH-ASSESSMENT.",
         "candidate_row": "SOSA-SO2B-HEALTH-ASSESSMENT",
+        "classification_changed": false
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: preserve System Manager viewpoints and distinct sensor S0–S5, PIC P0–P6 and module M0–M6 vocabularies. Off may be unreported; P6/M6 communication loss retains the previous state and need not mean faulty equipment. Informative transition descriptions are not a normative transition policy; apparent source transition errors remain unrepaired.",
+        "candidate_row": "ISA-C-082",
+        "source_ids": [
+          "SOSA-C239-G2-3-STATE-SENSOR-S0",
+          "SOSA-C239-G2-3-STATE-SENSOR-S1",
+          "SOSA-C239-G2-3-STATE-SENSOR-S2",
+          "SOSA-C239-G2-3-STATE-SENSOR-S3",
+          "SOSA-C239-G2-3-STATE-SENSOR-S4",
+          "SOSA-C239-G2-3-STATE-SENSOR-S5",
+          "SOSA-C239-G2-3-STATE-PIC-P0",
+          "SOSA-C239-G2-3-STATE-PIC-P1",
+          "SOSA-C239-G2-3-STATE-PIC-P2",
+          "SOSA-C239-G2-3-STATE-PIC-P3",
+          "SOSA-C239-G2-3-STATE-PIC-P4",
+          "SOSA-C239-G2-3-STATE-PIC-P5",
+          "SOSA-C239-G2-3-STATE-PIC-P6",
+          "SOSA-C239-G2-3-STATE-MODULE-M0",
+          "SOSA-C239-G2-3-STATE-MODULE-M1",
+          "SOSA-C239-G2-3-STATE-MODULE-M2",
+          "SOSA-C239-G2-3-STATE-MODULE-M3",
+          "SOSA-C239-G2-3-STATE-MODULE-M4",
+          "SOSA-C239-G2-3-STATE-MODULE-M5",
+          "SOSA-C239-G2-3-STATE-MODULE-M6",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_7"
+        ],
         "classification_changed": false
       }
     },
@@ -52405,7 +52630,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6.3 PDF121–122: management-controller auxiliary power domain separate from main application/payload power for limited-power operations; not measured battery, current, voltage or actual powered state. Original source IDs: SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT. Other donor equivalence and installed equipment NOT ASSESSED.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6.3 PDF121–122: management-controller auxiliary power domain separate from main application/payload power for limited-power operations; not measured battery, current, voltage or actual powered state. Original source IDs: SOSA-C239-G2-3-CONTEXT-POWER-DOMAINS; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT. Other donor equivalence and installed equipment NOT ASSESSED. SO-2D: Rule 6.4.2-21 prevents specified FRU controls from changing 3.3V_AUX. This command-design safeguard does not prove permanent power. Conditional payload activation for a persistent GDiscrete1 action is separately retained in SOSA-SO2D-PERSISTENT-ACTION-FLAG.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -52452,6 +52677,14 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: Rule 6.4.2-21 prevents specified FRU controls from changing 3.3V_AUX. This command-design safeguard does not prove permanent power. Conditional payload activation for a persistent GDiscrete1 action is separately retained in SOSA-SO2D-PERSISTENT-ACTION-FLAG.",
+        "candidate_row": "SOSA-F2-POWER-DOMAINS",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_2_21"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -59445,7 +59678,7 @@
       "label": "Candidate — Subject-qualified security assessment state",
       "display_row": 389,
       "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
-      "definition": "Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary.",
+      "definition": "Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. The subject may also be an inter-module connection: its Secured/Unsecured state concerns end-to-end protection under the applicable policy, separately from endpoint trust. An Unsecured connection may be allowed by policy. Neither designation proves an observed link condition.",
       "source_entry_ids": [
         "SOSA-C239-B-26"
       ],
@@ -59465,7 +59698,7 @@
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A]",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A] SO-2D: extend the subject to an inter-module connection. Its Secured/Unsecured state concerns end-to-end protection under policy, distinct from either endpoint trust state. An Unsecured connection may be permitted by policy; this is not automatically a compromised component or an observed insecure link.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -59496,6 +59729,17 @@
         "cell": "J389",
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: extend the subject to an inter-module connection. Its Secured/Unsecured state concerns end-to-end protection under policy, distinct from either endpoint trust state. An Unsecured connection may be permitted by policy; this is not automatically a compromised component or an observed insecure link.",
+        "candidate_row": "SOSA-SO2A-SECURITY-POSTURE",
+        "source_ids": [
+          "SOSA-C239-G2-3-STATE-IMISECURITY-SECURED",
+          "SOSA-C239-G2-3-STATE-IMISECURITY-UNSECURED",
+          "SOSA-C239-G2-3-RULE-6_5_4_4_15",
+          "SOSA-C239-G2-3-RULE-6_5_4_4_16"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -60380,7 +60624,7 @@
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Associate a firmware/software package with its target component and distinguish information identifying the package reported as running from a package submitted for replacement. C239 declares package-information retrieval and replacement as V1.0, and package verification as Future with authenticity verification assigned to Security Services. Package identity is not merely a version string or an exchange-package ID. No native package fields, authentic image, successful installation or observed running instance are established. [C239: §6.2.4.1 PDF79; §6.2.4.2 PDF84–85; SO-2B]",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Associate a firmware/software package with its target component and distinguish information identifying the package reported as running from a package submitted for replacement. C239 declares package-information retrieval and replacement as V1.0, and package verification as Future with authenticity verification assigned to Security Services. Package identity is not merely a version string or an exchange-package ID. No native package fields, authentic image, successful installation or observed running instance are established. [C239: §6.2.4.1 PDF79; §6.2.4.2 PDF84–85; SO-2B] SO-2D: OCI runtime bundles (1.0.2) and OVF virtual appliances (2.1.1) are source-specified distribution/runtime formats, distinct from FACE interface conformance, installed software versions and verified execution. No external format audit or successful load is claimed.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -60417,6 +60661,24 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
+      },
+      "SO2D_qualification": {
+        "rationale": "SO-2D: OCI runtime bundles (1.0.2) and OVF virtual appliances (2.1.1) are source-specified distribution/runtime formats, distinct from FACE interface conformance, installed software versions and verified execution. No external format audit or successful load is claimed.",
+        "candidate_row": "SOSA-SO2B-FIRMWARE-PACKAGE",
+        "source_ids": [
+          "SOSA-C239-G2-7R-CONTEXT-8",
+          "SOSA-C239-G2-7R-CONTEXT-9",
+          "SOSA-C239-G2-7R-CONTEXT-13",
+          "SOSA-C239-G2-7R-RULE-14_3_1_1",
+          "SOSA-C239-G2-7R-RULE-14_3_2_1",
+          "SOSA-C239-G2-7R-RULE-14_4_1_1",
+          "SOSA-C239-G2-7R-RULE-14_4_2_1",
+          "SOSA-C239-G2-7R-RULE-14_5_1_1",
+          "SOSA-C239-G2-7R-RULE-14_5_2_1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_4_1_1",
+          "SOSA-C239-G2-7R-OBSERVATION-14_4_2_1"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -60815,6 +61077,300 @@
         "candidate_status": "COMMON_CANDIDATE",
         "fill": "#D9EAF8",
         "cell": "J406",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2D-WRITE-PROTECTION",
+      "label": "Candidate — Latched nonvolatile-memory write protection",
+      "display_row": 408,
+      "status": "SO-2D provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe the latched write-disabled state of a hardware element and the vendor-declared nonvolatile memory covered by it. C239 NVMRO assertion latches write disable until management power (3.3V_AUX) is removed and exposes that flag to hosted modules. Deasserting NVMRO does not prove writing is enabled: another mechanism may inhibit writes. Some memory may remain writable as declared in the vendor Certificate of Volatility. This is a specialized protection-state design, not erasure, authorization policy or verified protection of every memory device.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-3-RULE-6_4_2_2",
+        "SOSA-C239-G2-3-RULE-6_4_2_3",
+        "SOSA-C239-G2-3-RULE-6_4_2_4",
+        "SOSA-C239-G2-3-PERMISSION-6_4_2_1",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_1"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-3-RULE-6_4_2_2",
+        "SOSA-C239-G2-3-RULE-6_4_2_3",
+        "SOSA-C239-G2-3-RULE-6_4_2_4",
+        "SOSA-C239-G2-3-PERMISSION-6_4_2_1",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_1"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2D_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the latched write-disabled state of a hardware element and the vendor-declared nonvolatile memory covered by it. C239 NVMRO assertion latches write disable until management power (3.3V_AUX) is removed and exposes that flag to hosted modules. Deasserting NVMRO does not prove writing is enabled: another mechanism may inhibit writes. Some memory may remain writable as declared in the vendor Certificate of Volatility. This is a specialized protection-state design, not erasure, authorization policy or verified protection of every memory device. [C239: §6.4.2 PDF124–125; Rules 6.4.2-2–4, Permission 6.4.2-1, Observation 6.4.2-1; SO-2D]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Latched nonvolatile-memory write protection — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_2_2",
+          "SOSA-C239-G2-3-RULE-6_4_2_3",
+          "SOSA-C239-G2-3-RULE-6_4_2_4",
+          "SOSA-C239-G2-3-PERMISSION-6_4_2_1",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_2_1"
+        ],
+        "original_source_locators": [
+          "§6.4.2 PDF124–125; Rules 6.4.2-2–4, Permission 6.4.2-1, Observation 6.4.2-1"
+        ],
+        "native_meaning": "Describe the latched write-disabled state of a hardware element and the vendor-declared nonvolatile memory covered by it. C239 NVMRO assertion latches write disable until management power (3.3V_AUX) is removed and exposes that flag to hosted modules. Deasserting NVMRO does not prove writing is enabled: another mechanism may inhibit writes. Some memory may remain writable as declared in the vendor Certificate of Volatility. This is a specialized protection-state design, not erasure, authorization policy or verified protection of every memory device.",
+        "closest_prior_rows": [
+          "SOSA-SO2A-SECURITY-POSTURE",
+          "ISA-C-058",
+          "ISA-C-232",
+          "S06-R021",
+          "SOSA-SO2B-EQUIPMENT-SETTINGS"
+        ],
+        "reason_for_separate_candidate": "Current security assessment, permission to become active, sanitization and general settings do not identify whether nonvolatile writes are inhibited or how that state persists and what memory it covers. Preserve one scoped candidate, not one row per NVMRO signal rule.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "classification_rationale": "The candidate retains a hardware write-inhibit latch, its management-power reset boundary and vendor-dependent memory coverage; these are optional architecture-specific details rather than a universal writable flag.",
+        "fill": "#F9E6B8",
+        "cell": "J408",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2D-PERSISTENT-ACTION-FLAG",
+      "label": "Candidate — Persistent hardware action flag",
+      "display_row": 409,
+      "status": "SO-2D provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe a hardware action flag, its associated configured action and its persistence/clear conditions. C239 GDiscrete1 sets a nonvolatile flag that survives resets and power cycles until the associated action is complete; hosted modules can inspect it and have a method to set or clear it. The configured response may be no action, an action using management power, or an action requiring payload activation and restart/resumption after interruption. The flag is not an identified queued command, task execution record, universal sanitization trigger or proof of completed physical work.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-3-RULE-6_4_2_12",
+        "SOSA-C239-G2-3-RULE-6_4_2_13",
+        "SOSA-C239-G2-3-RULE-6_4_2_14",
+        "SOSA-C239-G2-3-RULE-6_4_2_15",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_5",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_6",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_7",
+        "SOSA-C239-G2-3-PERMISSION-6_4_2_4"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-3-RULE-6_4_2_12",
+        "SOSA-C239-G2-3-RULE-6_4_2_13",
+        "SOSA-C239-G2-3-RULE-6_4_2_14",
+        "SOSA-C239-G2-3-RULE-6_4_2_15",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_5",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_6",
+        "SOSA-C239-G2-3-OBSERVATION-6_4_2_7",
+        "SOSA-C239-G2-3-PERMISSION-6_4_2_4"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2D_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a hardware action flag, its associated configured action and its persistence/clear conditions. C239 GDiscrete1 sets a nonvolatile flag that survives resets and power cycles until the associated action is complete; hosted modules can inspect it and have a method to set or clear it. The configured response may be no action, an action using management power, or an action requiring payload activation and restart/resumption after interruption. The flag is not an identified queued command, task execution record, universal sanitization trigger or proof of completed physical work. [C239: §6.4.2 PDF127; Rules 6.4.2-12–15, Observations 6.4.2-5–7, Permission 6.4.2-4; SO-2D]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Persistent hardware action flag — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_2_12",
+          "SOSA-C239-G2-3-RULE-6_4_2_13",
+          "SOSA-C239-G2-3-RULE-6_4_2_14",
+          "SOSA-C239-G2-3-RULE-6_4_2_15",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_2_5",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_2_6",
+          "SOSA-C239-G2-3-OBSERVATION-6_4_2_7",
+          "SOSA-C239-G2-3-PERMISSION-6_4_2_4"
+        ],
+        "original_source_locators": [
+          "§6.4.2 PDF127; Rules 6.4.2-12–15, Observations 6.4.2-5–7, Permission 6.4.2-4"
+        ],
+        "native_meaning": "Describe a hardware action flag, its associated configured action and its persistence/clear conditions. C239 GDiscrete1 sets a nonvolatile flag that survives resets and power cycles until the associated action is complete; hosted modules can inspect it and have a method to set or clear it. The configured response may be no action, an action using management power, or an action requiring payload activation and restart/resumption after interruption. The flag is not an identified queued command, task execution record, universal sanitization trigger or proof of completed physical work.",
+        "closest_prior_rows": [
+          "S06-R019",
+          "S06-R020",
+          "ISA-R-EXECUTION",
+          "ISA-C-035",
+          "SOSA-F2-POWER-DOMAINS"
+        ],
+        "reason_for_separate_candidate": "An issued request or current execution record does not preserve an action-trigger latch across reset and power loss. A general activity flag does not express the associated action, persistence and conditional activation behavior. One specialized candidate retains these distinctions without inventing a command queue or action taxonomy.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "classification_rationale": "The source supports a persistent hardware-trigger latch with conditional autonomous payload activation; its particular power and restart behavior is specialized and is retained explicitly.",
+        "fill": "#F9E6B8",
+        "cell": "J409",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2D-SLOT-IDENTIFIER",
+      "label": "Candidate — Container-scoped physical slot identifier",
+      "display_row": 410,
+      "status": "SO-2D provisional information-need candidate; NOT ADOPTED",
+      "definition": "Identify a hardware component placement by a slot identifier in its containing hardware context. C239 requires a plug-in card to receive a unique slot number based on its VITA Geographic Address. This is a discrete installation-position identifier, not geographic coordinates, a parent-relative vector, the card serial number or a globally persistent system identifier. Exact native address encoding, external VITA rules and any observed installation remain unverified.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-3-RULE-6_4_2_16"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-3-RULE-6_4_2_16"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2D_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Identify a hardware component placement by a slot identifier in its containing hardware context. C239 requires a plug-in card to receive a unique slot number based on its VITA Geographic Address. This is a discrete installation-position identifier, not geographic coordinates, a parent-relative vector, the card serial number or a globally persistent system identifier. Exact native address encoding, external VITA rules and any observed installation remain unverified. [C239: §6.4.2 PDF127, Rule 6.4.2-16; SO-2D]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Container-scoped physical slot identifier — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-3-RULE-6_4_2_16"
+        ],
+        "original_source_locators": [
+          "§6.4.2 PDF127, Rule 6.4.2-16"
+        ],
+        "native_meaning": "Identify a hardware component placement by a slot identifier in its containing hardware context. C239 requires a plug-in card to receive a unique slot number based on its VITA Geographic Address. This is a discrete installation-position identifier, not geographic coordinates, a parent-relative vector, the card serial number or a globally persistent system identifier. Exact native address encoding, external VITA rules and any observed installation remain unverified.",
+        "closest_prior_rows": [
+          "S06-R004",
+          "S06-R007",
+          "ISA-C-038",
+          "ISA-C-099"
+        ],
+        "reason_for_separate_candidate": "Physical membership identifies a part relationship but not the identified position occupied within the containing hardware. Geometric offsets and global equipment identity do not preserve a discrete slot number; Geographic Address here must not be interpreted as geospatial position.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_rationale": "A physical position identifier scoped to its containing equipment is useful across unlike modular systems. The common candidate preserves the slot meaning without adopting VITA encoding or assuming all equipment has slots.",
+        "fill": "#D9EAF8",
+        "cell": "J410",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2D-SECURE-STARTUP",
+      "label": "Candidate — Secure-startup trust and authentication dependencies",
+      "display_row": 411,
+      "status": "SO-2D provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe the trust basis and authentication dependencies governing the specialized system start-up sequence: hardware authentication, authenticated runtime/software loading and composition. A Root of Trust may be hardware or software, with cryptographic or design-based trust. C239 requires remote runtime and sensor software authentication before execution; its prose makes trusted host hardware a prerequisite for module-software authentication. Conditional decryption is separate from authentication. These declared dependencies are not a certificate schema, a generic initialization command, a completed boot trace or proof of trustworthy execution; mechanisms and policy remain implementation-dependent.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-3-CONTEXT-ROOT-OF-TRUST",
+        "SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP",
+        "SOSA-C239-G2-3-RULE-6_5_4_1_1",
+        "SOSA-C239-G2-3-RULE-6_5_4_1_2",
+        "SOSA-C239-G2-3-RULE-6_5_4_2_5",
+        "SOSA-C239-G2-3-RULE-6_5_4_2_6",
+        "SOSA-C239-G2-3-RULE-6_5_4_3_11",
+        "SOSA-C239-G2-3-RULE-6_5_4_3_12"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-3-CONTEXT-ROOT-OF-TRUST",
+        "SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP",
+        "SOSA-C239-G2-3-RULE-6_5_4_1_1",
+        "SOSA-C239-G2-3-RULE-6_5_4_1_2",
+        "SOSA-C239-G2-3-RULE-6_5_4_2_5",
+        "SOSA-C239-G2-3-RULE-6_5_4_2_6",
+        "SOSA-C239-G2-3-RULE-6_5_4_3_11",
+        "SOSA-C239-G2-3-RULE-6_5_4_3_12"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2D_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the trust basis and authentication dependencies governing the specialized system start-up sequence: hardware authentication, authenticated runtime/software loading and composition. A Root of Trust may be hardware or software, with cryptographic or design-based trust. C239 requires remote runtime and sensor software authentication before execution; its prose makes trusted host hardware a prerequisite for module-software authentication. Conditional decryption is separate from authentication. These declared dependencies are not a certificate schema, a generic initialization command, a completed boot trace or proof of trustworthy execution; mechanisms and policy remain implementation-dependent. [C239: §6.5.4 PDF135–140; hardware authentication and remote-runtime/software authentication/decryption rules; SO-2D]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Secure-startup trust and authentication dependencies — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-3-CONTEXT-ROOT-OF-TRUST",
+          "SOSA-C239-G2-3-CONTEXT-SECURE-STARTUP",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_1",
+          "SOSA-C239-G2-3-RULE-6_5_4_1_2",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_5",
+          "SOSA-C239-G2-3-RULE-6_5_4_2_6",
+          "SOSA-C239-G2-3-RULE-6_5_4_3_11",
+          "SOSA-C239-G2-3-RULE-6_5_4_3_12"
+        ],
+        "original_source_locators": [
+          "§6.5.4 PDF135–140; hardware authentication and remote-runtime/software authentication/decryption rules"
+        ],
+        "native_meaning": "Describe the trust basis and authentication dependencies governing the specialized system start-up sequence: hardware authentication, authenticated runtime/software loading and composition. A Root of Trust may be hardware or software, with cryptographic or design-based trust. C239 requires remote runtime and sensor software authentication before execution; its prose makes trusted host hardware a prerequisite for module-software authentication. Conditional decryption is separate from authentication. These declared dependencies are not a certificate schema, a generic initialization command, a completed boot trace or proof of trustworthy execution; mechanisms and policy remain implementation-dependent.",
+        "closest_prior_rows": [
+          "ISA-A-CERTIFICATE-TRUST",
+          "SOSA-SO2A-SECURITY-POSTURE",
+          "ISA-C-175",
+          "SOSA-F2-RTE-CONFIG",
+          "AAS-O6-CAPABILITY-DEPENDENCY",
+          "AAS-O6-CAPABILITY-CONDITION"
+        ],
+        "reason_for_separate_candidate": "Certificate identity and current security posture do not describe the trust mechanism or prerequisites for starting hardware and software. Runtime deployment settings cover what to load, not the authentication-before-execution gate. AAS capability constraints concern capability/property relations, not these hardware/software security subjects; no cross-donor equivalence is inferred. Preserve the design dependency separately from requested initialization, whose ISA mapping remains held.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "classification_rationale": "The candidate preserves SOSA-specific roles and the hardware/runtime/software composition sequence and authentication gates. It is optional architectural security information rather than a universal startup procedure or adopted profile obligation.",
+        "fill": "#F9E6B8",
+        "cell": "J411",
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
@@ -63709,7 +64265,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 380,
+    "informationRows": 384,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -63802,17 +64358,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "SOSA_SO2C_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "SOSA_SO2D_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA_SO2C_SAVED_VERIFIED",
-    "sha256": "42ec0c6e61e28a1b21b1a11636afe387af1a6264bc029379c094c8222a99d221",
-    "information_rows": 380,
+    "checkpoint": "SOSA_SO2D_SAVED_VERIFIED",
+    "sha256": "f4f8dd1a4d433fabd3b20571f658f13246d4c003e2111c1560250cd9d911cd63",
+    "information_rows": 384,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 406x16 saved values and current SO-2C guidance",
-    "textCheckpoint": "SOSA_SO2C_OPPORTUNITIES",
-    "textInformationRows": 380,
+    "lag": "ZERO: 411x16 saved values and current SO-2D guidance",
+    "textCheckpoint": "SOSA_SO2D_OPPORTUNITIES",
+    "textInformationRows": 384,
     "textPrimaryReviewed": 480,
     "columns": 16,
     "G2_1_affected_row_ids": [
@@ -63830,7 +64386,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2C/publication",
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2D/publication",
     "verifiedPublisherCommit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43741024724",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -64959,11 +65515,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 406,
-    "saved_xlsx_grid_rows": 406,
+    "text_grid_rows": 411,
+    "saved_xlsx_grid_rows": 411,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 551,
+    "color_cell_count": 555,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -65093,9 +65649,9 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "SO-2C integrated; SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E. AAS acceptance pending separately. Historical counters retain recorded scopes.",
+    "gate_metadata_note": "SO-2D integrated; SO-2E only on a separate Proceed: task/RF/host interactions, transport and service exchanges, 496 retained records; stop before SO-2F. AAS acceptance pending separately. Historical counters retain recorded scopes.",
     "source_compared_rows": 88,
-    "explicit_unassessed_rows": 292,
+    "explicit_unassessed_rows": 296,
     "AAS_candidate_colors": 76,
     "AAS_uncolored_source_holds": 12,
     "F3_04A_affected_row_ids": [
@@ -67160,7 +67716,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E.",
+  "nextOwnerAction": "SO-2E only on a separate Proceed: task/RF/host interactions, transport and service exchanges, 496 retained records; stop before SO-2F.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -92150,5 +92706,77 @@
       "definition_scope_clarifications": 1
     },
     "one_next": "SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E."
+  },
+  "SOSA_SO2D_opportunity_review": {
+    "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_PENDING",
+    "ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2D",
+    "counts": {
+      "retained_records": 217,
+      "decision_groups": 30,
+      "outcomes": {
+        "ADDITION_WARRANTED": 22,
+        "CLARIFICATION_WARRANTED": 4,
+        "ADEQUATELY_REPRESENTED": 138,
+        "SOURCE_SPECIFIC_NO_NEW_ROW": 40,
+        "HELD_EXACT_QUESTION": 13
+      },
+      "new_rows": 4,
+      "common_new_rows": 1,
+      "specialized_new_rows": 3,
+      "unaccounted_records": 0,
+      "remaining_SO2_records": 2723,
+      "estimated_further_steps": 8,
+      "qualified_existing_rows": 7,
+      "information_rows": 384,
+      "grid_rows": 411,
+      "grid_values": 6576,
+      "source_classifications": 663,
+      "colored": 555,
+      "held": 108,
+      "source_kinds": {
+        "ORIGINAL_CONTEXT": 2,
+        "OBSERVATION": 29,
+        "PERMISSION": 10,
+        "RECOMMENDATION": 9,
+        "RULE": 79,
+        "SOURCE_STATE_DEFINITION": 32,
+        "SOURCE_CONTEXT_NOT_RULE": 14,
+        "SOURCE_CONFIGURATION_FIELD_OR_SUBFIELD": 14,
+        "FIGURE_CAPTION": 6,
+        "SOURCE_SECTION": 15,
+        "SOURCE_TABLE": 2,
+        "SOURCE_TABLE_ROW": 5
+      },
+      "original_standings": {
+        "SOURCE_ARCHITECTURE_DESCRIPTION": 2,
+        "DESCRIPTIVE_NOT_REQUIREMENT": 11,
+        "SOURCE_MAY": 8,
+        "SOURCE_SHOULD": 8,
+        "RULE_SHALL": 46,
+        "SOURCE_LABELED_RULE_GRAMMATICALLY_INCOMPLETE": 1,
+        "SOURCE_DESCRIPTIVE_SECURITY_STATE__RULES_ON_AUTH_TRANSITIONS_SEPARATE": 12,
+        "SOURCE_DEFINED_OPERATIONAL_STATE__TRANSITION_POLICIES_NOT_NORMATIVELY_DEFINED": 20,
+        "SOURCE_CONTEXT_NOT_RULE": 14,
+        "ProfileType enumerated": 3,
+        "If filesystem used": 1,
+        "Each software item": 1,
+        "Once": 1,
+        "At least once": 1,
+        "If multiple executables": 1,
+        "Resources nested": 3,
+        "FileSystem nested": 3,
+        "FIGURE_CAPTION": 6,
+        "OBSERVATION_NOT_RULE": 18,
+        "MAY": 2,
+        "SHOULD": 1,
+        "SHALL": 32,
+        "SOURCE_SECTION": 15,
+        "SOURCE_TABLE": 2,
+        "SOURCE_TABLE_ROW": 5
+      },
+      "future_only_candidates": 0,
+      "definition_scope_clarifications": 1
+    },
+    "one_next": "SO-2E only on a separate Proceed: task/RF/host interactions, transport and service exchanges, 496 retained records; stop before SO-2F."
   }
 }
