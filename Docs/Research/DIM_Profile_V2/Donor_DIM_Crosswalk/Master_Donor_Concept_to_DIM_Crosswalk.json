@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "41423e3525492ff9c10079a20de7c4118a64b0dc14a92780881b721b823b47aa",
+  "currentWorkbookSha256": "42ec0c6e61e28a1b21b1a11636afe387af1a6264bc029379c094c8222a99d221",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -341,7 +341,7 @@
       "[COMMON CANDIDATE] PARTIAL/RELATED: Entity and the hierarchy template explicitly describe composite equipment and its parts, including assembly use cases. This supports a common declared-part candidate without requiring live installation proof. Preserve type/instance/lifecycle context, co/self-managed distinctions and BulkCount type multiplicity. [Sources: AAS03-N013, AAS03-N014, AAS09-N001, AAS09-N004, AAS09-N006; F3-05-S06-R007]",
       "[HELD] NO_ESTABLISHED: Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings. [SAP02-N06, SAP02-N07, SAP03A-N12, SAP06-N02]",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
-      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY. SO-2C: Future component inventories describe contained procurable entities and Future FRU retrievals describe identified field-replaceable units. Retain physical subject/category and logical allocation separately; no installed inventory, replacement criteria or native FRU fields were verified.",
       "",
       "",
       "",
@@ -449,7 +449,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -3617,7 +3617,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -7217,7 +7217,7 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A reported assessment describes the current or projected condition and well-being of a sensor, component or management function, with its assessed subject and any associated fault collection. Health is kept separate from operational state, operating mode and security posture. C239 declares health and fault retrievals; their detailed 2023 object schemas, a universal health vocabulary and an actual equipment assessment are not established here. [C239: §6.2.4.1 PDF74,76; §6.2.4.2 PDF82–83; §6.2.5.1–2 PDF87,89; SO-2B]",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A reported assessment describes the current or projected condition and well-being of a sensor, component or management function, with its assessed subject and any associated fault collection. Health is kept separate from operational state, operating mode and security posture. C239 declares health and fault retrievals; their detailed 2023 object schemas, a universal health vocabulary and an actual equipment assessment are not established here. [C239: §6.2.4.1 PDF74,76; §6.2.4.2 PDF82–83; §6.2.5.1–2 PDF87,89; SO-2B] SO-2C: the assessed subject may be the security logger or a hosted application; application-health functions are Future, while the component/logger reads are V1.0. Keep application health separate from host state and from the security condition recorded in SOSA-SO2C-SECURITY-LOG.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -7307,13 +7307,13 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe configuration settings for the health logging function of a sensor. C239 separately declares LoggerConfiguration retrieval and update as V1.0. The logger configuration is distinct from the log records, the logger own health assessment and the parameters used to monitor that health. No retention, storage, filtering or export setting is assumed without its native definition. [C239: §6.2.4.1 PDF75–76; §6.2.4.2 PDF83; SO-2B]",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe configuration settings for the health logging function of a sensor. C239 separately declares LoggerConfiguration retrieval and update as V1.0. The logger configuration is distinct from the log records, the logger own health assessment and the parameters used to monitor that health. No retention, storage, filtering or export setting is assumed without its native definition. [C239: §6.2.4.1 PDF75–76; §6.2.4.2 PDF83; SO-2B] SO-2C: broaden the same recording-settings need to health or security logging, retaining the logger and recorded subject/purpose. PDF94/98 supports security-log configuration; the two ambiguous security-health-logging functions remain held. No exact native schema equivalence is asserted.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "OPTIONAL information-need candidate: Health logging configuration — NOT ADOPTED"
+      "OPTIONAL information-need candidate: Health and security logging configuration — NOT ADOPTED"
     ],
     [
       "Not linked here — no case evidence established.",
@@ -7368,6 +7368,60 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Reported equipment and security configuration settings — NOT ADOPTED"
+    ],
+    [
+      "SOSA SO-2C — security history and hosted application candidates",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe an application identified when infrastructure loads it, its association with a runtime environment or hardware host, and its reported lifecycle state or state change. Keep requests to load, unload, start, stop, pause, resume or reset separate from the reported state and from the software image, host operating state and execution of an individual command. C239 lists application state retrieval and lifecycle interactions as V1.0, but the exact ApplicationId scope, ApplicationState values, host-reference fields and native 2023 schemas remain unverified. The listed actions are requests, not an inferred state enumeration or evidence of a running application. [C239: §§6.2.8.1–2 PDF106,109–110; §§6.2.9.1–2 PDF113,117; SO-2C]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Hosted application identity, lifecycle state and host context — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe retained information about the past, current or projected security condition of a sensor, with the security purpose and reported subject explicit. C239 lists security-log provision, filtered LogEvent retrieval and deletion of selected portions as V1.0. This is distinct from the latest security assessment, general equipment-health history, and an accountability audit identifying who acted on which object. No universal log fields, event timestamps, actor identities, retention guarantee or successful deletion are established by the inline tables. [C239: §6.2.6.1 PDF94–95; §6.2.6.2 PDF98; SO-2C]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Security-condition log and managed history — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -7393,7 +7447,8 @@
     375,
     379,
     384,
-    393
+    393,
+    403
   ],
   "rows": [
     {
@@ -9774,7 +9829,7 @@
         "[COMMON CANDIDATE] PARTIAL/RELATED: Entity and the hierarchy template explicitly describe composite equipment and its parts, including assembly use cases. This supports a common declared-part candidate without requiring live installation proof. Preserve type/instance/lifecycle context, co/self-managed distinctions and BulkCount type multiplicity. [Sources: AAS03-N013, AAS03-N014, AAS09-N001, AAS09-N004, AAS09-N006; F3-05-S06-R007]",
         "[HELD] NO_ESTABLISHED: Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings. [SAP02-N06, SAP02-N07, SAP03A-N12, SAP06-N02]",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
-        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY. SO-2C: Future component inventories describe contained procurable entities and Future FRU retrievals describe identified field-replaceable units. Retain physical subject/category and logical allocation separately; no installed inventory, replacement criteria or native FRU fields were verified.",
         "",
         "",
         "",
@@ -10511,6 +10566,19 @@
         "rationale": "SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
         "classification_changed": false,
         "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
+      },
+      "SO2C_qualification": {
+        "rationale": "SO-2C: Future component inventories describe contained procurable entities and Future FRU retrievals describe identified field-replaceable units. Retain physical subject/category and logical allocation separately; no installed inventory, replacement criteria or native FRU fields were verified.",
+        "candidate_row": "S06-R007",
+        "source_ids": [
+          "SOSA-C239-G2-2-CMF-026",
+          "SOSA-C239-G2-2-CMF-027",
+          "SOSA-C239-G2-2-PICF-032",
+          "SOSA-C239-G2-2-PICF-033",
+          "SOSA-C239-G2-2-RTEF-032",
+          "SOSA-C239-G2-2-RTEF-033"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -12539,7 +12607,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability. SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12597,6 +12665,18 @@
         "rationale": "SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
         "classification_changed": false,
         "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
+      },
+      "SO2C_qualification": {
+        "rationale": "SO-2C: PDF104/111 permits management representation on another PIC and distinguishes direct/indirect/unmanaged cases. PDF100/103 defines a potentially restricted in-band IPMI command bridge to out-of-band management; neither feature proves a local endpoint or unrestricted CSAPI control.",
+        "candidate_row": "SOSA-F2-MGMT-PATH",
+        "source_ids": [
+          "SOSA-C239-G2-2-CMF-018",
+          "SOSA-C239-G2-2-CMI-012",
+          "SOSA-C239-G2-2-RULE-05",
+          "SOSA-C239-G2-2-RULE-07",
+          "SOSA-C239-G2-2-RULE-08"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -34153,7 +34233,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §§14.1–14.2 PDF363–364, conditional RTE profile (FACE OSS/Container/VM), software image loading, cores/memory/networking and when applicable filesystem/start order; source-defined specialized runtime SHALLs not generic DIM fields or observed execution. Original source IDs: SOSA-C239-G2-7R-RULE-14_1_4; SOSA-C239-G2-7R-RULE-14_2_2; SOSA-C239-G2-7R-RULE-14_2_3; SOSA-C239-G2-7R-RULE-14_2_4; SOSA-C239-G2-7R-RULE-14_2_5; SOSA-C239-G2-7R-RULE-14_2_6. Other donor equivalence and installed equipment NOT ASSESSED. SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -34208,6 +34288,19 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "SO2C_qualification": {
+        "rationale": "SO-2C: deployment configuration and software image are separate from the identified hosted application and its reported lifecycle state; see SOSA-SO2C-APPLICATION-LIFECYCLE. No load request proves running software.",
+        "candidate_row": "SOSA-SO2C-APPLICATION-LIFECYCLE",
+        "source_ids": [
+          "SOSA-C239-G2-2-PICF-018",
+          "SOSA-C239-G2-2-PICF-020",
+          "SOSA-C239-G2-2-PICF-023",
+          "SOSA-C239-G2-2-RTEF-018",
+          "SOSA-C239-G2-2-RTEF-020",
+          "SOSA-C239-G2-2-RTEF-023"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -59707,7 +59800,7 @@
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A reported assessment describes the current or projected condition and well-being of a sensor, component or management function, with its assessed subject and any associated fault collection. Health is kept separate from operational state, operating mode and security posture. C239 declares health and fault retrievals; their detailed 2023 object schemas, a universal health vocabulary and an actual equipment assessment are not established here. [C239: §6.2.4.1 PDF74,76; §6.2.4.2 PDF82–83; §6.2.5.1–2 PDF87,89; SO-2B]",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A reported assessment describes the current or projected condition and well-being of a sensor, component or management function, with its assessed subject and any associated fault collection. Health is kept separate from operational state, operating mode and security posture. C239 declares health and fault retrievals; their detailed 2023 object schemas, a universal health vocabulary and an actual equipment assessment are not established here. [C239: §6.2.4.1 PDF74,76; §6.2.4.2 PDF82–83; §6.2.5.1–2 PDF87,89; SO-2B] SO-2C: the assessed subject may be the security logger or a hosted application; application-health functions are Future, while the component/logger reads are V1.0. Keep application health separate from host state and from the security condition recorded in SOSA-SO2C-SECURITY-LOG.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -59749,6 +59842,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
+      },
+      "SO2C_qualification": {
+        "rationale": "SO-2C: the assessed subject may be the security logger or a hosted application; application-health functions are Future, while the component/logger reads are V1.0. Keep application health separate from host state and from the security condition recorded in SOSA-SO2C-SECURITY-LOG.",
+        "candidate_row": "SOSA-SO2B-HEALTH-ASSESSMENT",
+        "source_ids": [
+          "SOSA-C239-G2-2-PICF-019",
+          "SOSA-C239-G2-2-RTEF-019",
+          "SOSA-C239-G2-2-SSF-052",
+          "SOSA-C239-G2-2-SSI-030",
+          "SOSA-C239-G2-2-SSI-031"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -60163,10 +60268,10 @@
     },
     {
       "row_id": "SOSA-SO2B-LOGGING-SETTINGS",
-      "label": "Candidate — Health logging configuration",
+      "label": "Candidate — Health and security logging configuration",
       "display_row": 400,
       "status": "SO-2B provisional information-need candidate; NOT ADOPTED",
-      "definition": "Describe configuration settings for the health logging function of a sensor. C239 separately declares LoggerConfiguration retrieval and update as V1.0. The logger configuration is distinct from the log records, the logger own health assessment and the parameters used to monitor that health. No retention, storage, filtering or export setting is assumed without its native definition.",
+      "definition": "Describe configuration settings for an identified health or security logging function, preserving the recorded subject and purpose. C239 declares LoggerConfiguration retrieval/update for health logging (PDF75–76,83) and Security Services logging (PDF94,98) as V1.0. Configuration is distinct from the log records, the logger own health and parameters used to monitor that health. No common native schema, retention, storage, filtering or export field is assumed; ambiguous security-health-logging function meanings remain held.",
       "source_entry_ids": [
         "SOSA-C239-G2-1-SMF-022",
         "SOSA-C239-G2-1-SMF-023",
@@ -60192,13 +60297,13 @@
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe configuration settings for the health logging function of a sensor. C239 separately declares LoggerConfiguration retrieval and update as V1.0. The logger configuration is distinct from the log records, the logger own health assessment and the parameters used to monitor that health. No retention, storage, filtering or export setting is assumed without its native definition. [C239: §6.2.4.1 PDF75–76; §6.2.4.2 PDF83; SO-2B]",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe configuration settings for the health logging function of a sensor. C239 separately declares LoggerConfiguration retrieval and update as V1.0. The logger configuration is distinct from the log records, the logger own health assessment and the parameters used to monitor that health. No retention, storage, filtering or export setting is assumed without its native definition. [C239: §6.2.4.1 PDF75–76; §6.2.4.2 PDF83; SO-2B] SO-2C: broaden the same recording-settings need to health or security logging, retaining the logger and recorded subject/purpose. PDF94/98 supports security-log configuration; the two ambiguous security-health-logging functions remain held. No exact native schema equivalence is asserted.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "OPTIONAL information-need candidate: Health logging configuration — NOT ADOPTED"
+        "OPTIONAL information-need candidate: Health and security logging configuration — NOT ADOPTED"
       ],
       "SO2_source_correspondence": {
         "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
@@ -60227,6 +60332,17 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
+      },
+      "SO2C_qualification": {
+        "rationale": "SO-2C: broaden the same recording-settings need to health or security logging, retaining the logger and recorded subject/purpose. PDF94/98 supports security-log configuration; the two ambiguous security-health-logging functions remain held. No exact native schema equivalence is asserted.",
+        "candidate_row": "SOSA-SO2B-LOGGING-SETTINGS",
+        "source_ids": [
+          "SOSA-C239-G2-2-SSF-048",
+          "SOSA-C239-G2-2-SSF-049",
+          "SOSA-C239-G2-2-SSI-026",
+          "SOSA-C239-G2-2-SSI-027"
+        ],
+        "classification_changed": false
       }
     },
     {
@@ -60508,6 +60624,197 @@
         "candidate_status": "COMMON_CANDIDATE",
         "fill": "#D9EAF8",
         "cell": "J403",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2C-APPLICATION-LIFECYCLE",
+      "label": "Candidate — Hosted application identity, lifecycle state and host context",
+      "display_row": 405,
+      "status": "SO-2C provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe an application identified when infrastructure loads it, its association with a runtime environment or hardware host, and its reported lifecycle state or state change. Keep requests to load, unload, start, stop, pause, resume or reset separate from the reported state and from the software image, host operating state and execution of an individual command. C239 lists application state retrieval and lifecycle interactions as V1.0, but the exact ApplicationId scope, ApplicationState values, host-reference fields and native 2023 schemas remain unverified. The listed actions are requests, not an inferred state enumeration or evidence of a running application.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-2-PICF-018",
+        "SOSA-C239-G2-2-PICF-020",
+        "SOSA-C239-G2-2-PICF-023",
+        "SOSA-C239-G2-2-RTEF-018",
+        "SOSA-C239-G2-2-RTEF-020",
+        "SOSA-C239-G2-2-RTEF-023",
+        "SOSA-C239-G2-2-PICI-012",
+        "SOSA-C239-G2-2-PICI-013",
+        "SOSA-C239-G2-2-PICI-014",
+        "SOSA-C239-G2-2-PICI-015",
+        "SOSA-C239-G2-2-PICI-016",
+        "SOSA-C239-G2-2-PICI-017",
+        "SOSA-C239-G2-2-PICI-018",
+        "SOSA-C239-G2-2-PICI-019",
+        "SOSA-C239-G2-2-RTEI-012",
+        "SOSA-C239-G2-2-RTEI-013",
+        "SOSA-C239-G2-2-RTEI-014",
+        "SOSA-C239-G2-2-RTEI-015",
+        "SOSA-C239-G2-2-RTEI-016",
+        "SOSA-C239-G2-2-RTEI-017",
+        "SOSA-C239-G2-2-RTEI-018",
+        "SOSA-C239-G2-2-RTEI-019"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-2-PICF-018",
+        "SOSA-C239-G2-2-PICF-020",
+        "SOSA-C239-G2-2-PICF-023",
+        "SOSA-C239-G2-2-RTEF-018",
+        "SOSA-C239-G2-2-RTEF-020",
+        "SOSA-C239-G2-2-RTEF-023",
+        "SOSA-C239-G2-2-PICI-012",
+        "SOSA-C239-G2-2-PICI-013",
+        "SOSA-C239-G2-2-PICI-014",
+        "SOSA-C239-G2-2-PICI-015",
+        "SOSA-C239-G2-2-PICI-016",
+        "SOSA-C239-G2-2-PICI-017",
+        "SOSA-C239-G2-2-PICI-018",
+        "SOSA-C239-G2-2-PICI-019",
+        "SOSA-C239-G2-2-RTEI-012",
+        "SOSA-C239-G2-2-RTEI-013",
+        "SOSA-C239-G2-2-RTEI-014",
+        "SOSA-C239-G2-2-RTEI-015",
+        "SOSA-C239-G2-2-RTEI-016",
+        "SOSA-C239-G2-2-RTEI-017",
+        "SOSA-C239-G2-2-RTEI-018",
+        "SOSA-C239-G2-2-RTEI-019"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2C_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe an application identified when infrastructure loads it, its association with a runtime environment or hardware host, and its reported lifecycle state or state change. Keep requests to load, unload, start, stop, pause, resume or reset separate from the reported state and from the software image, host operating state and execution of an individual command. C239 lists application state retrieval and lifecycle interactions as V1.0, but the exact ApplicationId scope, ApplicationState values, host-reference fields and native 2023 schemas remain unverified. The listed actions are requests, not an inferred state enumeration or evidence of a running application. [C239: §§6.2.8.1–2 PDF106,109–110; §§6.2.9.1–2 PDF113,117; SO-2C]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Hosted application identity, lifecycle state and host context — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-2-PICF-018",
+          "SOSA-C239-G2-2-PICF-020",
+          "SOSA-C239-G2-2-PICF-023",
+          "SOSA-C239-G2-2-RTEF-018",
+          "SOSA-C239-G2-2-RTEF-020",
+          "SOSA-C239-G2-2-RTEF-023",
+          "SOSA-C239-G2-2-PICI-012",
+          "SOSA-C239-G2-2-PICI-013",
+          "SOSA-C239-G2-2-PICI-014",
+          "SOSA-C239-G2-2-PICI-015",
+          "SOSA-C239-G2-2-PICI-016",
+          "SOSA-C239-G2-2-PICI-017",
+          "SOSA-C239-G2-2-PICI-018",
+          "SOSA-C239-G2-2-PICI-019",
+          "SOSA-C239-G2-2-RTEI-012",
+          "SOSA-C239-G2-2-RTEI-013",
+          "SOSA-C239-G2-2-RTEI-014",
+          "SOSA-C239-G2-2-RTEI-015",
+          "SOSA-C239-G2-2-RTEI-016",
+          "SOSA-C239-G2-2-RTEI-017",
+          "SOSA-C239-G2-2-RTEI-018",
+          "SOSA-C239-G2-2-RTEI-019"
+        ],
+        "original_source_locators": [
+          "§§6.2.8.1–2 PDF106,109–110; §§6.2.9.1–2 PDF113,117"
+        ],
+        "native_meaning": "Describe an application identified when infrastructure loads it, its association with a runtime environment or hardware host, and its reported lifecycle state or state change. Keep requests to load, unload, start, stop, pause, resume or reset separate from the reported state and from the software image, host operating state and execution of an individual command. C239 lists application state retrieval and lifecycle interactions as V1.0, but the exact ApplicationId scope, ApplicationState values, host-reference fields and native 2023 schemas remain unverified. The listed actions are requests, not an inferred state enumeration or evidence of a running application.",
+        "closest_prior_rows": [
+          "ISA-C-082",
+          "SOSA-F2-RTE-CONFIG",
+          "ISA-C-108",
+          "ISA-R-EXECUTION",
+          "SOSA-SO2B-FIRMWARE-PACKAGE",
+          "SOSA-SO2A-FUNCTION-ALLOCATION"
+        ],
+        "reason_for_separate_candidate": "The source explicitly identifies the loaded application and reports its state on a runtime or hardware host. Host operating condition, software version/package, deployment configuration and one command execution do not explicitly preserve that application subject and lifecycle. One common application-lifecycle candidate covers the related requests/reports; it does not create a row per operation or claim a physical part relation.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J405",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "future_only": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2C-SECURITY-LOG",
+      "label": "Candidate — Security-condition log and managed history",
+      "display_row": 406,
+      "status": "SO-2C provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe retained information about the past, current or projected security condition of a sensor, with the security purpose and reported subject explicit. C239 lists security-log provision, filtered LogEvent retrieval and deletion of selected portions as V1.0. This is distinct from the latest security assessment, general equipment-health history, and an accountability audit identifying who acted on which object. No universal log fields, event timestamps, actor identities, retention guarantee or successful deletion are established by the inline tables.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-2-SSF-047",
+        "SOSA-C239-G2-2-SSF-056",
+        "SOSA-C239-G2-2-SSI-025",
+        "SOSA-C239-G2-2-SSI-032"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-2-SSF-047",
+        "SOSA-C239-G2-2-SSF-056",
+        "SOSA-C239-G2-2-SSI-025",
+        "SOSA-C239-G2-2-SSI-032"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2C_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe retained information about the past, current or projected security condition of a sensor, with the security purpose and reported subject explicit. C239 lists security-log provision, filtered LogEvent retrieval and deletion of selected portions as V1.0. This is distinct from the latest security assessment, general equipment-health history, and an accountability audit identifying who acted on which object. No universal log fields, event timestamps, actor identities, retention guarantee or successful deletion are established by the inline tables. [C239: §6.2.6.1 PDF94–95; §6.2.6.2 PDF98; SO-2C]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Security-condition log and managed history — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-2-SSF-047",
+          "SOSA-C239-G2-2-SSF-056",
+          "SOSA-C239-G2-2-SSI-025",
+          "SOSA-C239-G2-2-SSI-032"
+        ],
+        "original_source_locators": [
+          "§6.2.6.1 PDF94–95; §6.2.6.2 PDF98"
+        ],
+        "native_meaning": "Describe retained information about the past, current or projected security condition of a sensor, with the security purpose and reported subject explicit. C239 lists security-log provision, filtered LogEvent retrieval and deletion of selected portions as V1.0. This is distinct from the latest security assessment, general equipment-health history, and an accountability audit identifying who acted on which object. No universal log fields, event timestamps, actor identities, retention guarantee or successful deletion are established by the inline tables.",
+        "closest_prior_rows": [
+          "SOSA-SO2A-SECURITY-POSTURE",
+          "SOSA-SO2B-HEALTH-LOG",
+          "AAS-O6-AUDIT-RECORD",
+          "ISA-C-213",
+          "ISA-C-207"
+        ],
+        "reason_for_separate_candidate": "Current security posture does not retain security-condition history. The health-log candidate concerns health, while the AAS audit candidate specifies security/accountability actions with actor/object/time semantics not established by these SOSA tables. Preserve the independently described security-history purpose as a common candidate without equating the two native log schemas.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J406",
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
@@ -63402,7 +63709,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 378,
+    "informationRows": 380,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -63495,17 +63802,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "SOSA_SO2B_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "SOSA_SO2C_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA_SO2B_SAVED_VERIFIED",
-    "sha256": "41423e3525492ff9c10079a20de7c4118a64b0dc14a92780881b721b823b47aa",
-    "information_rows": 378,
+    "checkpoint": "SOSA_SO2C_SAVED_VERIFIED",
+    "sha256": "42ec0c6e61e28a1b21b1a11636afe387af1a6264bc029379c094c8222a99d221",
+    "information_rows": 380,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 403x16 saved values and current SO-2B guidance",
-    "textCheckpoint": "SOSA_SO2B_OPPORTUNITIES",
-    "textInformationRows": 378,
+    "lag": "ZERO: 406x16 saved values and current SO-2C guidance",
+    "textCheckpoint": "SOSA_SO2C_OPPORTUNITIES",
+    "textInformationRows": 380,
     "textPrimaryReviewed": 480,
     "columns": 16,
     "G2_1_affected_row_ids": [
@@ -63523,7 +63830,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2B/publication",
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2C/publication",
     "verifiedPublisherCommit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43741024724",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -64652,11 +64959,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 403,
-    "saved_xlsx_grid_rows": 403,
+    "text_grid_rows": 406,
+    "saved_xlsx_grid_rows": 406,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 549,
+    "color_cell_count": 551,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -64786,9 +65093,9 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "SO-2B integrated; SO-2C only on a separate Proceed: Security, chassis and plug-in-card management, 352 retained records; stop before SO-2D. AAS acceptance pending separately. Historical counters retain recorded scopes.",
+    "gate_metadata_note": "SO-2C integrated; SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E. AAS acceptance pending separately. Historical counters retain recorded scopes.",
     "source_compared_rows": 88,
-    "explicit_unassessed_rows": 290,
+    "explicit_unassessed_rows": 292,
     "AAS_candidate_colors": 76,
     "AAS_uncolored_source_holds": 12,
     "F3_04A_affected_row_ids": [
@@ -66853,7 +67160,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "SO-2C only on a separate Proceed: Security, chassis and plug-in-card management, 352 retained records; stop before SO-2D.",
+  "nextOwnerAction": "SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -91806,5 +92113,42 @@
       "future_only_candidates": 2
     },
     "one_next": "SO-2C only on a separate Proceed: Security, chassis and plug-in-card management, 352 retained records; stop before SO-2D."
+  },
+  "SOSA_SO2C_opportunity_review": {
+    "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_PENDING",
+    "ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2C",
+    "counts": {
+      "retained_records": 352,
+      "decision_groups": 31,
+      "outcomes": {
+        "ADDITION_WARRANTED": 26,
+        "CLARIFICATION_WARRANTED": 4,
+        "ADEQUATELY_REPRESENTED": 307,
+        "SOURCE_SPECIFIC_NO_NEW_ROW": 5,
+        "HELD_EXACT_QUESTION": 10
+      },
+      "new_rows": 2,
+      "common_new_rows": 2,
+      "specialized_new_rows": 0,
+      "unaccounted_records": 0,
+      "remaining_SO2_records": 2940,
+      "estimated_further_steps": 9,
+      "qualified_existing_rows": 5,
+      "information_rows": 380,
+      "grid_rows": 406,
+      "grid_values": 6496,
+      "source_classifications": 659,
+      "colored": 551,
+      "held": 108,
+      "support_labels": {
+        "V1.0": 208,
+        "Future": 132,
+        "RULE_SHALL": 10,
+        "RULE_LABELED_DESCRIPTIVE": 2
+      },
+      "future_only_candidates": 0,
+      "definition_scope_clarifications": 1
+    },
+    "one_next": "SO-2D only on a separate Proceed: management paths, states and hosted runtime, 217 retained records; includes secure startup; stop before SO-2E."
   }
 }

@@ -7501,7 +7501,12 @@ def sosa_opportunity_spec(packet='SO-2A'):
     m=load(MASTER);o=load('SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json')['SO2_source_opportunity_assessments'][packet]
     base=json.loads(f3_baseline(MASTER,o['baseline_commit']));new=m['rows'][len(base['rows']):];sheets={};counts=o['counts'];key=packet.replace('-','')
     cells={x['master_cell']:x['after'] for x in o['qualified_existing_rows']}
-    heights={re.sub('[A-Z]+','A',c)+':P'+re.search(r'\d+',c).group():min(409.5,max(300,14*math.ceil(len(v)/48)+20)) for c,v in cells.items()}
+    for change in o['qualified_existing_rows']:
+        n=int(re.search(r'\d+',change['master_cell']).group())
+        for column,edit in change.get('display_changes',{}).items():cells[addr(n,int(column)+1)]=edit['after']
+    heights={}
+    for c,v in cells.items():
+        area=re.sub('[A-Z]+','A',c)+':P'+re.search(r'\d+',c).group();heights[area]=max(heights.get(area,0),min(409.5,max(300,14*math.ceil(len(v)/48)+20)))
     appended=[]
     for n,row in enumerate(m['review_grid'][len(base['review_grid']):],len(base['review_grid'])+1):
         divider=n-1 in m['review_sections'];template=base['review_sections'][-1]+1 if divider else len(base['review_grid']);appended.append({'range':f'A{n}:P{n}','template':f'A{template}:P{template}','values':row,'height':34 if divider else 330})
@@ -7511,6 +7516,7 @@ def sosa_opportunity_spec(packet='SO-2A'):
     positions={r['row_id']:n+2 for n,r in enumerate(base['rows'])};rc={}
     for change in o['qualified_existing_rows']:
         n=positions[change['row_id']];ref='O'+str(n);rc[ref]=register.get(ref,'')+' | '+m['rows'][n-2][key+'_qualification']['rationale']
+        for field,edit in change.get('field_changes',{}).items():rc[{'label':'B','definition':'C'}[field]+str(n)]=edit['after']
     rr=[]
     for n,r in enumerate(new,len(base['rows'])+2):
         c=r['SO2_source_correspondence'];sid=', '.join(c['source_ids'])
@@ -7534,6 +7540,15 @@ def sosa_opportunity_spec(packet='SO-2A'):
           'B23':o['one_next']+' Ten further steps estimated. AAS acceptance is separate.',
           'B28':'6,448 comparison values and nine new fills checked; prior 648 classifications, 21 untouched sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
         sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2B; classification is not adoption','B23':'549 colored / 108 held comparisons. Nine new common candidates (blue). Color describes provisional information scope; two have Future-only source support. All prior classifications retained.','B24':'378 information rows; 403 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2B boundary','B28':'201 records: 76 represented, 117 supporting additions, four source-specific/no row, four held. Records are not distinct concepts or rows. Next SO-2C only; AAS acceptance pending.'})
+    if packet=='SO-2C':
+        guidance.update({'A1':'CURRENT 15 NOV 2026 — SOSA SO-2C complete','B1':'380 information rows in the same 26-sheet master. F3 accepted; SOSA bounded PARTIAL retained; AAS acceptance pending. M00/M01 frozen.',
+          'B17':'SO-2C: all 352 security/chassis/PIC/runtime-management records accounted for; two candidates added and five existing SOSA comparisons clarified. Logging configuration now explicitly covers health or security logging.',
+          'B19':'380 information rows; 659 source classifications: 551 colored and 108 held. Ten held SO-2C source records are a separate count and do not add held comparison cells.',
+          'B21':'Original C239 PDF90–118 text read; PDF95/106/111/115 visually checked for ambiguities, duplicate labels and blank definitions. Prior decisions and source grades retained; no new edition or native-companion audit.',
+          'B22':'New: hosted application identity/lifecycle/host context and security-condition history. Both are common candidates supported by V1.0 declarations, not implemented-device evidence. Security logging settings extend the existing logging candidate without a duplicate row.',
+          'B23':o['one_next']+' Nine further bounded steps estimated. AAS acceptance is separate.',
+          'B28':'6,496 comparison values, two new fills and the clarified logging definition checked; prior 657 classifications, 21 untouched sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
+        sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2C; classification is not adoption','B23':'551 colored / 108 held comparisons. Two new common candidates (blue). Five existing comparisons clarified without changing their classifications; one definition broadened.','B24':'380 information rows; 406 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2C boundary','B28':'352 records: 307 represented, 26 supporting additions, four supporting clarification, five source-specific/no row, ten held. Records are not distinct concepts or rows. Next SO-2D only; AAS acceptance pending.'})
     for name in ('Summary','Validation','Legend'):
         sheets[name]['heights']={f'A{re.search(r"\d+",ref).group()}:B{re.search(r"\d+",ref).group()}':max(60,14*math.ceil(len(value)/95)+22) for ref,value in sheets[name]['cells'].items() if ref.startswith('B')}
     return {'packet':packet,'baseline_commit':o['baseline_commit'],'sheets':sheets}
@@ -7603,7 +7618,7 @@ def publish_sosa_opportunity(authored_path, packet='SO-2A'):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED"):
+    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED","SOSA_SO2C_SAVED_VERIFIED"):
         from check_dim_crosswalk_step06 import verify_sosa_opportunities
         packet='SO-'+checkpoint.split('_')[1][2:]
         verify_sosa_opportunities(load(MASTER),packet)

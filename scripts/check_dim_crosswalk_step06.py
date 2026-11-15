@@ -4873,7 +4873,7 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
     ids=[r['source_id'] for r in o['records']];required(len(ids)==len(set(ids))==counts['retained_records'] and set(ids)==set(expected),'SO2A exact frozen packet coverage')
     groups={g['group_id']:g for g in o['groups']};membership=[sid for g in groups.values() for sid in g['source_ids']]
     required(len(membership)==len(set(membership))==counts['retained_records'] and set(membership)==set(ids),'SO2A group partition')
-    indexed={r['source_id']:r for r in inv['records']};allowed={'ADEQUATELY_REPRESENTED','ADDITION_WARRANTED','SOURCE_SPECIFIC_NO_NEW_ROW','HELD_EXACT_QUESTION'}
+    indexed={r['source_id']:r for r in inv['records']};allowed={'ADEQUATELY_REPRESENTED','ADDITION_WARRANTED','CLARIFICATION_WARRANTED','SOURCE_SPECIFIC_NO_NEW_ROW','HELD_EXACT_QUESTION'}
     targets={r['row_id'] for r in doc['rows']}
     for row in o['records']:
         gr=groups[row['decision_group']];required(row['source_id'] in gr['source_ids'] and row['outcome']==gr['outcome'] in allowed,'SO2A decision consistency')
@@ -4897,6 +4897,12 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
         if oldrow['row_id'] in changes:
             c=changes[oldrow['row_id']];required(c['before']==oldrow['display'][9] and c['after']==row['display'][9] and not c['classification_changed'],'SO2A declared text-only qualification')
             restored.pop(packet.replace('-','')+'_qualification');restored['display'][9]=oldrow['display'][9]
+            for field,edit in c.get('field_changes',{}).items():
+                required(field in ('label','definition') and edit['before']==oldrow[field] and edit['after']==row[field],'declared candidate-scope clarification')
+                restored[field]=oldrow[field]
+            for column,edit in c.get('display_changes',{}).items():
+                column=int(column);required(column==15 and edit['before']==oldrow['display'][column] and edit['after']==row['display'][column],'declared DIM label clarification')
+                restored['display'][column]=oldrow['display'][column]
         required(restored==oldrow,'SO2A preserved prior row '+oldrow['row_id'])
     candidates={x['row_id']:x for x in o['new_candidates']}
     for row in new:
@@ -4914,6 +4920,7 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
         if oldrow['row_id'] in changes:
             required(changes[oldrow['row_id']]['master_cell']=='J'+str(n+1),'SO2A actual grid position')
             expected_old[n][9]=changes[oldrow['row_id']]['after']
+            for column,edit in changes[oldrow['row_id']].get('display_changes',{}).items():expected_old[n][int(column)]=edit['after']
     required(grid[:len(expected_old)]==expected_old and doc['review_sections'][:-1]==prior['review_sections'],'SO2A layout and other donor/case preservation')
     for name in (NAME+'.csv','ISA_Correction_Review_07NOV2026.csv'):
         with (BASE/name).open(newline='') as f:required(list(csv.reader(f))==grid,'SO2A CSV mirror '+name)
@@ -4972,7 +4979,7 @@ def main() -> None:
     if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
-    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED'):
+    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED'):
         verify_sosa_opportunities(doc,'SO-'+doc['currentEvidenceCheckpoint'].split('_')[1][2:])
         return
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:

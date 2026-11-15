@@ -1,62 +1,55 @@
-# SOSA System Manager and generic-module management — SO-2B result, 15 November 2026
+# SOSA security, chassis and plug-in-card management — SO-2C result, 15 November 2026
 
-SO-2B accounts for the 201 retained System Manager and generic-module management records in the approved opportunity-review inventory. The owner authorized this packet by Proceed after the published SO-2A result in Profile Rewrite 47. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns delivery status and next-step routing. The goal remains a useful whole-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile, with provisional source contributions kept distinct from adopted requirements.
+SO-2C accounts for all 352 retained records assigned to security, chassis, plug-in-card and card-hosted runtime management. The owner authorized this packet by Proceed in Profile Rewrite 48 after the SO-2B delivery closeout. Original C239 pages 90–118 were read, with selected pages visually checked where wording, blank cells or repeated rule numbers mattered. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns publication status and the next authorized step.
 
 ## What we learned
 
-SOSA distinguishes several questions that an operator would reasonably ask separately: What is the equipment's condition? How is that condition monitored? Which changes produce notifications? What has been recorded about its condition over time? Treating all of these as a generic status report or configuration object makes those distinctions difficult to see.
+Most of this packet describes information needs already made explicit in the master, particularly by SO-2A and SO-2B. Health, monitoring settings, notification settings, diagnostics, reported configuration, firmware packages and resource reservations recur across different management roles. Those repeated roles do not each require another row. Reusing the existing meanings preserves the donor's contribution without inflating the model through repeated operation names.
 
-The source also makes a useful separation between the configuration of a diagnostic test, the request to run it and the reported result. Existing rows already preserve the request and result, but not the settings that control the test. Similarly, a software version is only part of describing a package associated with a target component, and exclusive command access is different from reserving a hardware or computing resource.
-
-The word “configuration” needs particular care. The ISA Config comparison concerns capability declarations and readiness, while these SOSA definitions describe user-modifiable settings and their reported values. A retrieval command, version number or generic named-value carrier does not by itself make that distinct information need explicit (The Open Group 2023, secs. 6.2.4.1–2, PDF79–85; secs. 6.2.5.1–2, PDF88–90).
+Two distinctions were still insufficiently explicit. First, the application loaded onto a card or runtime has its own identity and lifecycle state, separate from the host's operating condition, the software package and the execution of one command. Second, a history of the sensor's security condition differs from its latest security assessment, general health history and an accountability audit identifying who acted on which object. The source supports making these questions visible without supplying a complete application-state or log schema (The Open Group 2023, secs. 6.2.6.1–2, 6.2.8.1–2, 6.2.9.1–2).
 
 ## What changed and why
 
-Nine candidate rows were added. All nine are common candidates at the stated information-need level; their blue color does not establish current implementation or remove source limits.
+| Change | Reason and source limit |
+|---|---|
+| **Added: Hosted application identity, lifecycle state and host context** | Preserve the application identified when loaded, its host context and reported state. Load/start/stop and related operations are requested actions, not an inferred state enumeration. All 22 supporting records are V1.0 declarations; identity scope, native fields and actual execution remain unverified. PDF106,109–110,113,117. |
+| **Added: Security-condition log and managed history** | Preserve the security-history purpose separately from current posture, health history and the more specific AAS accountability-audit meaning. Four V1.0 records support provision/retrieval/deletion; no actor, timestamp, retention guarantee or successful deletion is inferred. PDF94–95,98. |
+| **Broadened: Health and security logging configuration** | Security-log settings have the same recording-function/settings relationship as the existing health-log configuration candidate. Its label and definition now preserve either purpose; a second settings row was unnecessary. Four V1.0 records support this clarification. Two ambiguous security-health-logging functions remain held. PDF94–95,98. |
 
-| Added information need | Distinction preserved | Original C239 locator |
-|---|---|---|
-| Reported health assessment and associated faults | Current/projected health and faults are separate from operational state, operating mode and security posture. | PDF74,76,82–83,87,89 |
-| Health and security monitoring settings | Settings of a monitoring function are separate from the condition it reports. | PDF74,80–83,85,87,89 |
-| Management notification settings | Configuration of notifications is separate from an alert occurrence, acknowledgment or specific threshold type. | PDF74–81,87–89 |
-| Diagnostic test configuration | Test settings are separate from the diagnostic request and result. **All supporting records are Future.** | PDF75,83 |
-| Health log records and managed history | Retained health history differs from current status, operating-state-only history and security/accountability auditing. | PDF75–76,83 |
-| Health logging configuration | Settings for recording health information differ from the records and the logger's own health. | PDF75–76,83 |
-| Firmware/software package and target component | Preserve package-to-target association and reported-running versus replacement-input roles. | PDF79,84–85 |
-| Resource inventory and reservation state | Reservation of hardware/module/runtime resources differs from exclusive command access. **All supporting records are Future.** | PDF79,85 |
-| Reported equipment and security configuration settings | A settings set differs from capability/readiness declarations, its revision and a request to retrieve or change it. | PDF79–82,85,88–90 |
+Five existing SOSA comparisons were clarified: physical constituents, management paths, runtime deployment configuration, health assessment and logging configuration. The management-path note preserves that a card can be represented by management functions on another card. It also retains the source's restricted low-level command bridge between in-band and out-of-band management. A management declaration does not prove that an endpoint exists on each physical card, that a card is reachable, or that control is authorized (The Open Group 2023, PDF100,103–104,111).
 
-Seven existing SOSA comparisons now point to these distinctions without changing their prior classifications: operating condition, capability/readiness report, running-software version, diagnostic result, configuration retrieval, current operating mode and capability readiness/reporting selection. Existing diagnostic commands, shutdown requests, mode/state reports and qualified sanitize/zeroize comparisons were reused. No separate row was created for each operation name, sensor/component variant or collection wrapper.
+## Accountable results
 
-| Disposition of retained source records | Count |
+| Outcome for retained records | Count |
 |---|---:|
-| Existing information needs adequate, with source qualifications | 76 |
-| Support the nine additions | 117 |
-| Source-specific implementation rules; no extra information row | 4 |
-| Held with an exact unresolved question | 4 |
-| **Total** | **201** |
+| Existing information needs adequate, with source qualifications | 307 |
+| Support the two new candidates | 26 |
+| Support broadening the existing logging candidate | 4 |
+| Source-specific rules or boundaries; no additional information row | 5 |
+| Held with an exact unresolved question | 10 |
+| **Total** | **352** |
 
-Every record has an original ID, pointer/hash, source standing and decision-group rationale in the [existing G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO2_source_opportunity_assessments/SO-2B`. Adequacy concerns the information need; it does not create an exact donor-cell equivalence where one remains unassessed or held.
+The existing G4 ledger, key `SO2_source_opportunity_assessments/SO-2C`, preserves each original ID, pointer, record hash, subject, source standing and decision rationale. There are 31 decision groups, not 31 added concepts. The original support labels are 208 V1.0, 132 Future, ten normative rule appearances and two descriptively labeled rule appearances. These counts describe the source records and their outcomes, not installed functions or independent concepts.
 
-## Source limits that matter
+## Source limits that remain
 
-The source labels 129 records V1.0, 66 Future and six as rules. Section 6.2.3 explains that V1.0 means the edition defines an endpoint; Future means an endpoint is planned. Neither label proves that a particular device implements it, and the exact 2023 OpenAPI companion bytes remain unverified. Two new candidates are entirely Future-supported; several others mix current reads with planned updates or verification (The Open Group 2023, sec. 6.2.3, PDF73; tables in secs. 6.2.4–5, PDF74–90).
+Ten records remain held for four precise reasons: four rules cite Appendix B.3 despite the specialized-file references elsewhere; two Future runtime-resource functions have blank definitions; two security-health-logging functions leave recording versus logger monitoring unclear; and two application-alert provision functions name the application but describe settings for the sensor. The paired application-alert update functions explicitly describe the application, so they are accounted for separately. Duplicate rule numbers were retained as separate source appearances. None of these ambiguities was silently repaired or used to infer a native schema (The Open Group 2023, PDF95–96,98,104,106,111,113,115,118).
 
-Two held records preserve the existing discrepancy in System Manager rules that literally cite Appendix B.3 rather than the registered System Manager B.2 definition. The other two concern “Sensor Health Logging Parameter Settings”: the function descriptions and interaction table do not establish whether those settings configure recording behavior or monitoring of the logger's health. The source says its function-to-interaction mapping is omitted from the printed table, so that ambiguity is recorded rather than silently resolved (The Open Group 2023, PDF76,82–83,86). These four held records are not four added held spreadsheet cells.
+The nine original SOSA hold families remain, including the unverified exact 2023 OpenAPI companions. Existing Future-only diagnostic-settings and resource-reservation candidates retain that standing. The two newly added candidates have V1.0 declaration support, which still does not prove implementation by any particular device. Native Microsoft Excel clean reopening, full source completeness, final Domain Information Model (DIM) or Profile adoption and runtime conformance are not established.
 
-## Value, delivery and next step
+## Value, workbook and next step
 
-The master now has **378 information rows**, up from 369. The same editable workbook, canonical JSON, both CSV mirrors and both readable comparisons are synchronized at **403 × 16 = 6,448 comparison values**. There are **657 source classifications: 549 colored and 108 held**. All prior classifications, other donor/case values, original evidence, the earlier SO-2A decisions, 21 unaffected worksheet parts and manual M00/M01 versions remain preserved; the [pre-SO-2B archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2b-20261115/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves the preceding workbook.
+The master now contains **380 information rows**, up from 378. The canonical JSON, both CSV mirrors, both readable comparisons and the same editable workbook agree on **406 × 16 = 6,496 comparison values**. Source classifications total **659: 551 colored and 108 held**, with all prior classifications preserved. The ten held source records above are a different unit from held spreadsheet comparisons.
 
-The practical gain is a clearer set of questions for a future equipment Details view: condition, monitoring, alerts, diagnostic settings/results, history, configured settings, software packages and reserved resources. This is further evidence that the earlier opportunity review did not make all retained SOSA meanings explicit. It does not establish that ISA-first ordering was the sole cause, make these candidates final schema elements, or close the original source holds.
+The practical gain is that a future equipment Details view can distinguish a software application's lifecycle from its host and can distinguish security history from equipment health and accountability auditing. The broadened logging row also demonstrates that source-first correction can improve an existing candidate without automatically adding another one. Preserve these as provisional candidates for later consolidation. The [pre-SO-2C archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2c-20261115/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk), 21 unaffected worksheet parts and manual M00/M01 versions preserve the earlier material.
 
-Continue with **SO-2C only**, the 352 retained security, chassis and plug-in-card management records. The estimate is **ten further bounded steps**: eight assessment packets, reconciliation and plain-English closeout. AAS acceptance remains separately pending, and no other donor review restarts. Native Microsoft Excel clean reopening remains unverified; the current PITON and ledger distinguish saved-file/visual verification from that limit and record actual publication evidence.
+The next separate Proceed authorizes **SO-2D only: 217 management-path, state and hosted-runtime records**, including secure startup. The remaining estimate is **nine bounded steps**: seven assessment packets, reconciliation and plain-English closeout. AAS acceptance remains separately pending. No other donor review, client implementation or deployment is authorized by this result.
 
 ## Reference and preceding result
 
-The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5.pdf`, 403 pages. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Locators use original PDF page numbers. PDF66–73 was read as management context; this packet's decisive tables/rules are PDF74–90. No independent figure-pixel, new edition or companion-file audit was performed.
+The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5(1).pdf`, 403 pages. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Locators above use original PDF page numbers. PDF95,106,111,115 received visual checks in addition to the PDF90–118 text review; no new edition, companion-file or external-protocol audit was performed.
 
-[Published SO-2A findings](https://github.com/OS4CSAPI/glaux-client/blob/f773e8969aaff739a9ba1938a86ba7a941b867f1/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md). Earlier CURRENT/NEXT banners below remain historical and do not govern routing.
+[Published SO-2B findings and delivery checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/61c3567bd15735b66c9e29e32423bec6a72ae5c1/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md). Earlier CURRENT/NEXT banners below remain historical and do not govern routing.
 
 ---
 
