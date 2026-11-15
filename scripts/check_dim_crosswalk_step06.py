@@ -4855,6 +4855,112 @@ def verify_sosa_so1() -> None:
     print("LIMIT: record accountability is not semantic completeness, a new-row count or closure of original source holds.")
 
 
+def verify_sosa_opportunities(doc):
+    """Check evidence accountability, controlled changes and the saved original workbook package."""
+    import copy,hashlib,io,re,zipfile,subprocess
+    from collections import Counter
+    from xml.etree import ElementTree as ET
+    from html.parser import HTMLParser
+    import isa22_closeout as native
+    from publish_sosa_d import f3_cell_text
+    q=native.q
+    ledger_name='SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json'
+    ledger=json.loads((BASE/ledger_name).read_text());o=ledger['SO2_source_opportunity_assessments']['SO-2A'];inv=ledger['SO1_existing_findings_opportunity_inventory']
+    def original(name):
+        return subprocess.check_output(['git','show',o['baseline_commit']+':'+str(BASE/name)],cwd=Path(__file__).resolve().parents[1])
+    prior=json.loads(original(NAME+'.json'));oldledger=json.loads(original(ledger_name))
+    expected=next(p['record_ids'] for p in inv['proposed_SO2_packets'] if p['packet']=='SO-2A')
+    ids=[r['source_id'] for r in o['records']];required(len(ids)==len(set(ids))==262 and set(ids)==set(expected),'SO2A exact frozen packet coverage')
+    groups={g['group_id']:g for g in o['groups']};membership=[sid for g in groups.values() for sid in g['source_ids']]
+    required(len(membership)==len(set(membership))==262 and set(membership)==set(ids),'SO2A group partition')
+    indexed={r['source_id']:r for r in inv['records']};allowed={'ADEQUATELY_REPRESENTED','ADDITION_WARRANTED','SOURCE_SPECIFIC_NO_NEW_ROW','HELD_EXACT_QUESTION'}
+    targets={r['row_id'] for r in doc['rows']}
+    for row in o['records']:
+        gr=groups[row['decision_group']];required(row['source_id'] in gr['source_ids'] and row['outcome']==gr['outcome'] in allowed,'SO2A decision consistency')
+        required(row['original_record']==indexed[row['source_id']]['original_records'][0],'SO2A original pointer/hash')
+        required(row['prior_F3_reuse']==indexed[row['source_id']].get('later_classification_decisions',[]),'SO2A prior F3 reuse')
+        required(gr['rationale'] and set(gr['closest_rows'])<=targets,'SO2A rationale and valid closest rows')
+        if gr['outcome']=='HELD_EXACT_QUESTION':required(gr['held_question'],'SO2A exact held question')
+    required(dict(Counter(r['outcome'] for r in o['records']))==o['counts']['outcomes'],'SO2A outcome counts')
+    for key,value in oldledger.items():
+        if key=='SO1_existing_findings_opportunity_inventory':
+            current=copy.deepcopy(ledger[key]);current['publication']=value['publication'];required(current==value,'SO2A frozen SO1 inventory')
+        else:required(ledger[key]==value,'SO2A original ledger evidence '+key)
+    required(set(ledger)-set(oldledger)=={'SO2_source_opportunity_assessments'},'SO2A bounded ledger changes')
+    changes={x['row_id']:x for x in o['qualified_existing_rows']};new=doc['rows'][len(prior['rows']):]
+    required(len(new)==8 and len(changes)==8 and len(doc['rows'])==369,'SO2A authorized integration size')
+    for oldrow,row in zip(prior['rows'],doc['rows']):
+        restored=copy.deepcopy(row)
+        if oldrow['row_id'] in changes:
+            c=changes[oldrow['row_id']];required(c['before']==oldrow['display'][9] and c['after']==row['display'][9] and not c['classification_changed'],'SO2A declared text-only qualification')
+            restored.pop('SO2A_qualification');restored['display'][9]=oldrow['display'][9]
+        required(restored==oldrow,'SO2A preserved prior row '+oldrow['row_id'])
+    candidates={x['row_id']:x for x in o['new_candidates']}
+    for row in new:
+        c=row['SO2_source_correspondence'];required(set(c['source_ids'])<=set(ids) and c['reason_for_separate_candidate'] and not c['DIM_Profile_adopted'],'SO2A candidate original evidence')
+        required(row['definition']==candidates[row['row_id']]['definition'],'SO2A candidate native meaning')
+        required(all(str(v).strip() for v in row['display']),'SO2A explicit new comparison/case statuses')
+        required(all('Not assessed' in row['display'][i] for i in range(4,15) if i!=9),'SO2A no invented donor equivalences')
+    required(Counter(r['SO2_source_correspondence']['candidate_status'] for r in new)=={'COMMON_CANDIDATE':6,'SPECIALIZED_CANDIDATE':2},'SO2A classification counts')
+    grid=doc['review_grid'];required(len(grid)==393 and all(len(r)==16 for r in grid),'SO2A grid shape')
+    required([r for n,r in enumerate(grid) if n>1 and n not in doc['review_sections']]==[r['display'] for r in doc['rows']],'SO2A grid/row equality')
+    expected_old=copy.deepcopy(prior['review_grid'])
+    positions=[n for n in range(2,len(expected_old)) if n not in prior['review_sections']]
+    for n,oldrow in zip(positions,prior['rows']):
+        required(prior['review_grid'][n]==oldrow['display'],'SO2A baseline stable-ID/grid alignment')
+        if oldrow['row_id'] in changes:
+            required(changes[oldrow['row_id']]['master_cell']=='J'+str(n+1),'SO2A actual grid position')
+            expected_old[n][9]=changes[oldrow['row_id']]['after']
+    required(grid[:len(expected_old)]==expected_old and doc['review_sections'][:-1]==prior['review_sections'],'SO2A layout and other donor/case preservation')
+    for name in (NAME+'.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (BASE/name).open(newline='') as f:required(list(csv.reader(f))==grid,'SO2A CSV mirror '+name)
+    class Table(HTMLParser):
+        def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.row=None;self.cell=None;self.span=1
+        def handle_starttag(self,t,a):
+            if t=='tr':self.row=[]
+            if t in ('td','th'):self.cell='';self.span=int(dict(a).get('colspan','1'))
+        def handle_data(self,s):
+            if self.cell is not None:self.cell+=s
+        def handle_endtag(self,t):
+            if t in ('td','th') and self.cell is not None:self.row.extend([self.cell]+['']*(self.span-1));self.cell=None
+            if t=='tr' and self.row is not None:self.rows.append(self.row);self.row=None
+    for name in (NAME+'.md','ISA_Correction_Review_07NOV2026.md'):
+        p=Table();p.feed((BASE/name).read_text());required(p.rows==grid,'SO2A readable mirror '+name)
+    saved=(BASE/(NAME+'.xlsx')).read_bytes();sha=hashlib.sha256(saved).hexdigest()
+    required(sha==doc['currentWorkbookSha256']==doc['workbookSnapshot']['sha256']==o['publication']['workbook_sha256'],'SO2A saved workbook hash')
+    with zipfile.ZipFile(io.BytesIO(original(NAME+'.xlsx'))) as oldz,zipfile.ZipFile(io.BytesIO(saved)) as z:
+        required(z.testzip() is None and z.namelist()==oldz.namelist(),'SO2A ZIP integrity and package parts')
+        paths=native.sheetpaths(z);required(paths==native.sheetpaths(oldz) and len(paths)==26,'SO2A original 26-sheet layout')
+        edits=o['workbook_edits'];affected={paths[name] for name in edits}
+        for name in z.namelist():
+            if name not in affected:required(z.read(name)==oldz.read(name),'SO2A untouched part '+name)
+        for name,ed in edits.items():
+            root=ET.fromstring(z.read(paths[name]));cells={c.get('r'):c for c in root.iter(q('c'))};oldcells={c.get('r'):c for c in ET.fromstring(oldz.read(paths[name])).iter(q('c'))}
+            for ref,v in ed.items():required(f3_cell_text(cells.get(ref))==v,'SO2A saved edit '+name+'!'+ref)
+            for ref,c in oldcells.items():
+                if ref not in ed:required(ET.tostring(c)==ET.tostring(cells[ref]),'SO2A preserved cell '+name+'!'+ref)
+                else:required(c.get('s','0')==cells[ref].get('s','0'),'SO2A existing style preserved '+name+'!'+ref)
+            required(not any(c.get('t')=='e' for c in cells.values()),'SO2A saved Excel errors')
+            if name=='Master Crosswalk':
+                for i,row in enumerate(grid,1):
+                    for j,v in enumerate(row,1):required(f3_cell_text(cells.get(native.coord(i,j)))==v,'SO2A all saved grid values')
+                required(root.find(q('dimension')).get('ref')=='A1:P393','SO2A extended saved range')
+                styles=ET.fromstring(z.read('xl/styles.xml'));xf=styles.find(q('cellXfs'));fills=styles.find(q('fills'))
+                for r in new:
+                    c=r['SO2_source_correspondence'];rgb=fills[int(xf[int(cells[c['cell']].get('s'))].get('fillId'))].find('.//'+q('fgColor')).get('rgb')
+                    required(rgb[-6:]==c['fill'][1:],'SO2A saved candidate fill')
+        required(len(paths)-len(edits)==21,'SO2A untouched sheet count')
+    for name,sha in inv['preservation']['manual_workbook_sha256'].items():required(hashlib.sha256((BASE/name).read_bytes()).hexdigest()==sha,'SO2A immutable manual version')
+    allowed_keys={'currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction','counts','rows','review_grid','review_sections'}
+    for k,v in prior.items():
+        if k not in allowed_keys:required(doc[k]==v,'SO2A other master evidence '+k)
+    for k,v in prior['counts'].items():
+        if k!='informationRows':required(doc['counts'][k]==v,'SO2A historical count preservation')
+    required(doc['nextOwnerAction']==o['one_next'],'SO2A stop boundary')
+    print('PASS SO-2A: 262 records accounted for; 8 candidates / 8 qualified cells; 6288 saved grid values, mirrors and fills; 21 untouched sheets, original evidence/classifications and M00/M01 preserved.')
+    print('LIMIT: scoped opportunity review, not full source completeness, adoption, runtime conformance or native Excel clean reopening.')
+
+
 def main() -> None:
     verify_recovery()
     if "--recovery-only" in sys.argv[1:]:
@@ -4863,6 +4969,9 @@ def main() -> None:
     if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
+    if doc.get('currentEvidenceCheckpoint')=='SOSA_SO2A_SAVED_VERIFIED':
+        verify_sosa_opportunities(doc)
+        return
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
         mirror = list(csv.reader(f))
     md = (BASE / (NAME + ".md")).read_text(encoding="utf-8")

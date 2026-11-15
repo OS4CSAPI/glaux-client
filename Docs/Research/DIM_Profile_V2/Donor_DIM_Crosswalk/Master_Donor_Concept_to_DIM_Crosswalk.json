@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "ffb46b0f663f0993cf39b188b03be8296ecb1b346b7512ca62e946900c1a7f15",
+  "currentWorkbookSha256": "13566efc1184b9d1d48a9c932da17a511908cb7e544a3c0ea2a6fe7eedfe4da6",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -341,7 +341,7 @@
       "[COMMON CANDIDATE] PARTIAL/RELATED: Entity and the hierarchy template explicitly describe composite equipment and its parts, including assembly use cases. This supports a common declared-part candidate without requiring live installation proof. Preserve type/instance/lifecycle context, co/self-managed distinctions and BulkCount type multiplicity. [Sources: AAS03-N013, AAS03-N014, AAS09-N001, AAS09-N004, AAS09-N006; F3-05-S06-R007]",
       "[HELD] NO_ESTABLISHED: Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings. [SAP02-N06, SAP02-N07, SAP03A-N12, SAP06-N02]",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
-      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007]",
+      "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
       "",
       "",
       "",
@@ -359,7 +359,7 @@
       "[HELD] RELATED/NO_ESTABLISHED: Logical references and hierarchy relations do not define an external equipment connection. The hierarchy source places detailed physical connections and anchor points in future work. Remove the candidate color for this specific cable/connection comparison; retain the native relationships as evidence. [Sources: AAS03-N010, AAS03-N011, AAS09-N007; F3-05-S06-R008]",
       "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: A CIC may communicate with members through ISA or native interfaces. Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology. [ISA21:S06-R008; F3-02]",
-      "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
+      "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T] SO-2A resolves the compressed boundary meaning in SOSA-SO2A-INTERFACE-BOUNDARY; the connected-equipment comparison remains qualified.",
       "",
       "",
       "",
@@ -449,7 +449,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Not assessed here",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED.",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -1817,7 +1817,7 @@
       "[COMMON CANDIDATE] PARTIAL/RELATED: Part 2 defines operation invocation requests and argument payloads. Promote to a common control-request interface candidate without requiring an observed device execution. An issued instance, authorization and physical effect remain unverified; a file-only capability description cannot execute a request. [Sources: AAS07-N006, AAS07-N007, AAS07-N009; F3-05-S06-R019]",
       "[COMMON CANDIDATE] RELATED: Task carries an identified control request to a Node. Native command/region specializations do not erase the general request information; acceptance, execution and physical effect remain distinct. [SAP02-N05, SAP03B-N09, SAP03B-N13, SAP05-N01, SAP05-N05]",
       "[COMMON CANDIDATE] PARTIAL: Request carries a command invocation, request identity and parameters, with access-control and expiry context. Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action. [ISA21:S06-R019; F3-02]",
-      "[COMMON CANDIDATE] PARTIAL: C239 V1.0 management requests and the 2022 typed UpdateMode request support describing a control request independently of exact ISA/CSAPI correspondence. Correct the earlier mixed hold to a qualified common candidate. Preliminary Task/Assignment interfaces remain separately qualified; no actual issued request, authorization or physical effect was verified. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R019]",
+      "[COMMON CANDIDATE] PARTIAL: C239 V1.0 management requests and the 2022 typed UpdateMode request support describing a control request independently of exact ISA/CSAPI correspondence. Correct the earlier mixed hold to a qualified common candidate. Preliminary Task/Assignment interfaces remain separately qualified; no actual issued request, authorization or physical effect was verified. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R019] SO-2A: preserve externally originated Task versus internally originated Assignment, with target and source context; the task-interface publication limits remain.",
       "",
       "",
       "",
@@ -3941,7 +3941,7 @@
       "[COMMON CANDIDATE] PARTIAL/RELATED: ServiceDescription advertises supported profiles; profiles govern operation/modifier/path subsets. Promote to a common qualified service-role/support candidate, preserving AAS-specific registry/repository/service roles and avoiding universal ISA command requirements or observed conformance. [Sources: AAS06-N006, AAS06-N007; F3-05-ISA-A-SERVICE-ROLE]",
       "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere. [ISA-DMS-001, ISA-DMS-002, ISA-DMS-003, ISA-DMS-004, ISA-DMS-005, ISA-DMS-006, INTRO-6.1.1, WHITE-4.3; F3-06-ISA-ISA-A-SERVICE-ROLE]",
-      "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
+      "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T] SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
       "",
       "",
       "",
@@ -4085,7 +4085,7 @@
       "[HELD] RELATED/NO_ESTABLISHED: An event-source reference and AASX export/filtering relationships do not establish physical-event-to-derived-copy lineage. Retain the hold; package provenance and representation relationships remain separate from original observation identity and the Bennett case evidence. [Sources: AAS04-N012, AAS08-N047; F3-05-S06-R022]",
       "[HELD] NO_ESTABLISHED: DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate. [SAP04-N16, SAP04-N19, SAP05-N13, SAP05-N15]",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
-      "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022]",
+      "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022] SO-2A retains the distinct processing-stage meaning in SOSA-SO2A-PRODUCT-PROCESSING; this original-event/copy-lineage hold remains.",
       "",
       "",
       "",
@@ -4139,7 +4139,7 @@
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Priority is explicitly message-level, with zero highest and a native default of 80. Common priority information is supported; SOSA writer-level scheduling priority remains a different subject. [ISA-DMS-293, ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-PRIORITY]",
-      "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY]",
+      "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY] SO-2A retains writer/consumer policy separately in SOSA-SO2A-FLOW-QOS; the per-message priority hold remains.",
       "",
       "",
       "",
@@ -4373,7 +4373,7 @@
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Profile identity/version and serialization modifiers provide qualified representation context. Promote from native-only to specialized metadata, retaining normal/metadata/value distinctions. These choices are not a negotiated ISA presentation/schema pair or a universal CSAPI binding. [Sources: AAS06-N007, AAS06-N025, AAS06-N029; F3-05-ISA-A-CONNECTION-PRESENTATION]",
       "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Connection establishment negotiates a presentation format. Retain a specialized encoding/version-context candidate and all previously recorded protocol/schema distinctions; this is neither model content nor a universal CSAPI binding. [SDD-5.1.1, SDD-6.2, SDD-6.3, SDD-6.3.3; F3-06-ISA-ISA-A-CONNECTION-PRESENTATION]",
-      "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION]",
+      "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION] SO-2A retains the complete declared stack in SOSA-SO2A-INTERACTION-BINDING; no negotiated presentation/schema equivalence is added.",
       "",
       "",
       "",
@@ -7026,6 +7026,168 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Capability dependencies and temporal applicability — NOT ADOPTED"
+    ],
+    [
+      "22 — SOSA architecture, roles and vocabulary candidates (SO-2A)",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An interface is described relative to a named system boundary: internal interfaces remain within it, while external interfaces cross it. Preserve physical versus logical context, the interacting subjects or environment, and any stated open, closed or standardized interface context. C239 external interfaces include the sensing aperture toward the environment as well as host connections. Boundary crossing does not establish separate equipment, an installed cable, a network endpoint or a universal sensor boundary. [C239: §4.1 PDF46; §4.1.1.1 PDF47; Appendix A PDF384,386–388; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Interface boundary, kind and governing context — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a logical function or role separately from the hardware, firmware, software and runtime infrastructure that implements or supports it. A procurable unit can combine several functions and infrastructure elements; a logical module need not equal one physical part, runtime or purchased unit. Retain the declared grouping and implementation relationship without imposing one-to-one cardinality. C239 module names are source vocabulary, not a mandatory class list or proof of installed functionality. [C239: §§4.2,5.1–5.3 PDF48–58; §5.4 PDF58; Appendix A Module PDF386; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Logical functions and implementation allocation — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Keep a conformance, certification or qualification claim tied to its subject, applicable standard or requirement, covered interfaces/aspects and stated verification basis. Distinguish a certificate from a method such as analysis, inspection, demonstration or test, and distinguish environmental qualification from airworthiness. A conformant component or interface does not establish whole-system conformance. No certificate, equipment test result or external certification-policy audit was obtained here. [C239: §5.1 PDF55–56; §5.3 PDF57–58; §§5.5–5.5.3 PDF58–60; Appendix A PDF384–385,389; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Scoped conformance or qualification claim and verification basis — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Subject-qualified security assessment state — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Preserve whether an output is described as raw or minimally processed Data Products or processed/reduced Information Products in its source context. This qualifies the product’s processing stage, separately from a detection method, observation identity and links between an original event and digital copies. C239 supplies a coarse distinction, not a universal processing-level scale, detailed algorithm lineage or verified processing history. [C239: Appendix A PDF385; Table4.2-1 PDF50–52; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Reported data-product processing stage — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Record a source-attributed declaration of license rights over technical data or computer software, preserving the subject material and whose rights are asserted when supplied. C239 defines Data Rights at this conceptual level; it does not supply a rights schema, machine-enforceable license vocabulary or an actual entitlement. License rights are distinct from access credentials, access-control decisions and mere public availability of source code. [C239: Appendix A Data Rights PDF385; Open Source PDF387; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared license rights for technical data or software — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: C239 describes a Quality of Service policy contract between what a producer offers and a consumer expects for a data flow. Its source-specific policy family includes reliability, deadline, durability/history depth, liveliness, ownership and writer priority. Preserve the producer/consumer roles, policy scope and native units/defaults separately from message priority, query options and invocation timeout. Implementation is deferred and sensor-to-sensor QoS is outside the described scope; no negotiated or achieved service level is verified. [C239: §15.3 PDF374–377; Appendix A PDF387; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Producer–consumer data-flow service contract — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: A C239 interaction binding separately selects data definition, encoding, encapsulation, transport and network choices for an interaction. Preserve the declared stack and applicable conditional rule, rather than interpreting it as an ISA presentation/schema handshake or as a verified live connection. The named DDS/RTPS and Protobuf-based alternatives remain C239 examples/conditional selections; exact native 2023 companion content and runtime interoperability remain unverified. [C239: §5.8 PDF62–63; §15.4 PDF377–378; SO-2A]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared interaction binding stack — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -7049,7 +7211,8 @@
     369,
     372,
     375,
-    379
+    379,
+    384
   ],
   "rows": [
     {
@@ -9430,7 +9593,7 @@
         "[COMMON CANDIDATE] PARTIAL/RELATED: Entity and the hierarchy template explicitly describe composite equipment and its parts, including assembly use cases. This supports a common declared-part candidate without requiring live installation proof. Preserve type/instance/lifecycle context, co/self-managed distinctions and BulkCount type multiplicity. [Sources: AAS03-N013, AAS03-N014, AAS09-N001, AAS09-N004, AAS09-N006; F3-05-S06-R007]",
         "[HELD] NO_ESTABLISHED: Configuration components, dependent Nodes and detected Equipment classes do not establish physical constituents of an installed sensing system. Hold that relationship; retain the native configuration, task-dependency and target meanings. [SAP02-N06, SAP02-N07, SAP03A-N12, SAP06-N02]",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Composition membership is not physical part-of; Relationship separately reports physical attachment/detachment. Hold this physical-constituent comparison: the two native relations do not establish an installed parts inventory. The separate ISA-C-099 physical-attachment candidate remains blue. [ISA21:S06-R007; F3-02]",
-        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007]",
+        "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 SV-1 defines Hardware Element as a physical constituent of its sensor, including apertures and enclosures. This supports qualified physical-part information. Source-specific cards and logical/software Module interpretations remain distinct; no mandatory chassis, part count or observed installation follows. [F3-04A-S06-R007] SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
         "",
         "",
         "",
@@ -10162,6 +10325,11 @@
           "AAS09-N006"
         ],
         "rationale": "Entity and the hierarchy template explicitly describe composite equipment and its parts, including assembly use cases. This supports a common declared-part candidate without requiring live installation proof. Preserve type/instance/lifecycle context, co/self-managed distinctions and BulkCount type multiplicity."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A: interface locality is separate from physical membership; see SOSA-SO2A-INTERFACE-BOUNDARY.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -10190,7 +10358,7 @@
         "[HELD] RELATED/NO_ESTABLISHED: Logical references and hierarchy relations do not define an external equipment connection. The hierarchy source places detailed physical connections and anchor points in future work. Remove the candidate color for this specific cable/connection comparison; retain the native relationships as evidence. [Sources: AAS03-N010, AAS03-N011, AAS09-N007; F3-05-S06-R008]",
         "RELATED: Annex C external system and video-adapter examples show possible integrations, not source-verified cables, plugs or fielded external equipment on any case device. [SAP06-N12,SAP06-N16]",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: A CIC may communicate with members through ISA or native interfaces. Hold this connected-external-equipment comparison: interface mediation alone establishes neither an external physical instrument nor cable, connector or mounting topology. [ISA21:S06-R008; F3-02]",
-        "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T]",
+        "RELATED but not equivalent: C239 §4 internal/external interfaces and §§8, 12–13 PIC/backplane, coax/fiber, host I/O and J2 links describe possible connections. Crossing a sensor boundary or naming connector pins does not establish separate attached equipment, installed cables, or any case-specific deployment. [SOSA-D/G2-4A/G2-5/G2-6A–6C/G2-7G–7K/G2-7Q/T] SO-2A resolves the compressed boundary meaning in SOSA-SO2A-INTERFACE-BOUNDARY; the connected-equipment comparison remains qualified.",
         "",
         "",
         "",
@@ -10672,6 +10840,11 @@
           "AAS09-N007"
         ],
         "rationale": "Logical references and hierarchy relations do not define an external equipment connection. The hierarchy source places detailed physical connections and anchor points in future work. Remove the candidate color for this specific cable/connection comparison; retain the native relationships as evidence."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A resolves the compressed boundary meaning in SOSA-SO2A-INTERFACE-BOUNDARY; the connected-equipment comparison remains qualified.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -12185,7 +12358,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Not assessed here",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED.",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT (The Open Group SOSA C239 2023): SOSA C239 §6 PDF64 and §6.3 PDF119–122: management of a component can be delegated; CMI/SMI/IPMC/IPMB out-of-band hardware pathways may survive payload processor failure. Design capability only, not a guaranteed installed endpoint or mandatory chassis. Original source IDs: SOSA-C239-TOC-6; SOSA-C239-G2-3-CONTEXT-OOB-LIGHTS-OUT; SOSA-C239-G2-3-CONTEXT-MANAGEMENT-TIERS; SOSA-C239-G2-3-CONTEXT-CHASSIS-MGR-PLACEMENT; SOSA-C239-G2-3-CONTEXT-HARDWARE-MANAGEMENT-INTERFACES. Other donor equivalence and installed equipment NOT ASSESSED. SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -12238,6 +12411,11 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A: C239 §6 PDF64 also distinguishes managed from unmanaged components and direct from delegated supervision; capability/representation is separate from observed reachability.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -23987,7 +24165,7 @@
         "[COMMON CANDIDATE] PARTIAL/RELATED: Part 2 defines operation invocation requests and argument payloads. Promote to a common control-request interface candidate without requiring an observed device execution. An issued instance, authorization and physical effect remain unverified; a file-only capability description cannot execute a request. [Sources: AAS07-N006, AAS07-N007, AAS07-N009; F3-05-S06-R019]",
         "[COMMON CANDIDATE] RELATED: Task carries an identified control request to a Node. Native command/region specializations do not erase the general request information; acceptance, execution and physical effect remain distinct. [SAP02-N05, SAP03B-N09, SAP03B-N13, SAP05-N01, SAP05-N05]",
         "[COMMON CANDIDATE] PARTIAL: Request carries a command invocation, request identity and parameters, with access-control and expiry context. Recording an issued control request is common; the message type or capability declaration alone does not prove an actual invocation, permission or hardware action. [ISA21:S06-R019; F3-02]",
-        "[COMMON CANDIDATE] PARTIAL: C239 V1.0 management requests and the 2022 typed UpdateMode request support describing a control request independently of exact ISA/CSAPI correspondence. Correct the earlier mixed hold to a qualified common candidate. Preliminary Task/Assignment interfaces remain separately qualified; no actual issued request, authorization or physical effect was verified. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R019]",
+        "[COMMON CANDIDATE] PARTIAL: C239 V1.0 management requests and the 2022 typed UpdateMode request support describing a control request independently of exact ISA/CSAPI correspondence. Correct the earlier mixed hold to a qualified common candidate. Preliminary Task/Assignment interfaces remain separately qualified; no actual issued request, authorization or physical effect was verified. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R019] SO-2A: preserve externally originated Task versus internally originated Assignment, with target and source context; the task-interface publication limits remain.",
         "",
         "",
         "",
@@ -24475,6 +24653,11 @@
           "AAS07-N009"
         ],
         "rationale": "Part 2 defines operation invocation requests and argument payloads. Promote to a common control-request interface candidate without requiring an observed device execution. An issued instance, authorization and physical effect remain unverified; a file-only capability description cannot execute a request."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A: preserve externally originated Task versus internally originated Assignment, with target and source context; the task-interface publication limits remain.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -36833,7 +37016,7 @@
         "[COMMON CANDIDATE] PARTIAL/RELATED: ServiceDescription advertises supported profiles; profiles govern operation/modifier/path subsets. Promote to a common qualified service-role/support candidate, preserving AAS-specific registry/repository/service roles and avoiding universal ISA command requirements or observed conformance. [Sources: AAS06-N006, AAS06-N007; F3-05-ISA-A-SERVICE-ROLE]",
         "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere. [ISA-DMS-001, ISA-DMS-002, ISA-DMS-003, ISA-DMS-004, ISA-DMS-005, ISA-DMS-006, INTRO-6.1.1, WHITE-4.3; F3-06-ISA-ISA-A-SERVICE-ROLE]",
-        "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T]",
+        "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T] SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
         "",
         "",
         "",
@@ -37245,6 +37428,11 @@
           "WHITE-4.3"
         ],
         "rationale": "The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -39416,7 +39604,7 @@
         "[HELD] RELATED/NO_ESTABLISHED: An event-source reference and AASX export/filtering relationships do not establish physical-event-to-derived-copy lineage. Retain the hold; package provenance and representation relationships remain separate from original observation identity and the Bennett case evidence. [Sources: AAS04-N012, AAS08-N047; F3-05-S06-R022]",
         "[HELD] NO_ESTABLISHED: DerivedDetection and AssociatedDetection describe contributors and linked reports. They do not identify an original physical event and each later digital copy of that same event. Retain the native detection-lineage candidate. [SAP04-N16, SAP04-N19, SAP05-N13, SAP05-N15]",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event Reference links source events for update/correction/recall/resolve semantics. Hold the original-event/digital-representation comparison: this update relation is not generic original-to-API-copy lineage or track correlation. Preserve Bennett two originals versus four representations. [ISA21:S06-R022; F3-02]",
-        "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022]",
+        "[HELD] RELATED/NO_ESTABLISHED: C239 distinguishes raw/minimally processed Data Products from processed Information Products and permits audit forwarding. These meanings do not identify one original physical event and each later digital representation of that event. Preserve the processing and relay concepts; hold the original-event/copy-lineage relationship and existing Bennett case distinction. [F3-04C-S06-R022] SO-2A retains the distinct processing-stage meaning in SOSA-SO2A-PRODUCT-PROCESSING; this original-event/copy-lineage hold remains.",
         "",
         "",
         "",
@@ -39659,6 +39847,11 @@
           "AAS08-N047"
         ],
         "rationale": "An event-source reference and AASX export/filtering relationships do not establish physical-event-to-derived-copy lineage. Retain the hold; package provenance and representation relationships remain separate from original observation identity and the Bennett case evidence."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A retains the distinct processing-stage meaning in SOSA-SO2A-PRODUCT-PROCESSING; this original-event/copy-lineage hold remains.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -39925,7 +40118,7 @@
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Priority is explicitly message-level, with zero highest and a native default of 80. Common priority information is supported; SOSA writer-level scheduling priority remains a different subject. [ISA-DMS-293, ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-PRIORITY]",
-        "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY]",
+        "[HELD] RELATED_BUT_DIFFERENT: C239 QoS Priority applies to the Data Writer, with default0 and range[0,X] whose maximum is unspecified; implementation is deferred. DSDM log severity characterizes a logged condition. Neither reviewed construct defines the relative importance of each exchanged message. Hold this mapping while retaining writer policy and severity as separate information. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-PRIORITY] SO-2A retains writer/consumer policy separately in SOSA-SO2A-FLOW-QOS; the per-message priority hold remains.",
         "",
         "",
         "",
@@ -40027,6 +40220,11 @@
           "ISA-DMS-310"
         ],
         "rationale": "Priority is explicitly message-level, with zero highest and a native default of 80. Common priority information is supported; SOSA writer-level scheduling priority remains a different subject."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A retains writer/consumer policy separately in SOSA-SO2A-FLOW-QOS; the per-message priority hold remains.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -42193,7 +42391,7 @@
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Profile identity/version and serialization modifiers provide qualified representation context. Promote from native-only to specialized metadata, retaining normal/metadata/value distinctions. These choices are not a negotiated ISA presentation/schema pair or a universal CSAPI binding. [Sources: AAS06-N007, AAS06-N025, AAS06-N029; F3-05-ISA-A-CONNECTION-PRESENTATION]",
         "RELATED: Annex B's JSON-like illustrative messages are readability examples and operational message encoding is binary Protocol Buffers, not negotiated ISA presentation/schema-version format. [SAP06-N10]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Connection establishment negotiates a presentation format. Retain a specialized encoding/version-context candidate and all previously recorded protocol/schema distinctions; this is neither model content nor a universal CSAPI binding. [SDD-5.1.1, SDD-6.2, SDD-6.3, SDD-6.3.3; F3-06-ISA-ISA-A-CONNECTION-PRESENTATION]",
-        "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION]",
+        "[SPECIALIZED CANDIDATE] PARTIAL/NO_ESTABLISHED: C239 separates data definition, encoding and transport, and lists editioned DDS/RTPS and Protobuf interaction bindings under conditional Rules. These support optional representation/binding metadata. Selection of a prescribed stack is not a negotiated ISA presentation/schema pair; no connection handshake, live encoding choice or native 2023 API equivalence is established. [F3-04C-ISA-A-CONNECTION-PRESENTATION] SO-2A retains the complete declared stack in SOSA-SO2A-INTERACTION-BINDING; no negotiated presentation/schema equivalence is added.",
         "",
         "",
         "",
@@ -42810,6 +43008,11 @@
           "SDD-6.3.3"
         ],
         "rationale": "Connection establishment negotiates a presentation format. Retain a specialized encoding/version-context candidate and all previously recorded protocol/schema distinctions; this is neither model content nor a universal CSAPI binding."
+      },
+      "SO2A_qualification": {
+        "rationale": "SO-2A retains the complete declared stack in SOSA-SO2A-INTERACTION-BINDING; no negotiated presentation/schema equivalence is added.",
+        "classification_changed": false,
+        "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
       }
     },
     {
@@ -58661,6 +58864,585 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false
       }
+    },
+    {
+      "row_id": "SOSA-SO2A-INTERFACE-BOUNDARY",
+      "label": "Candidate — Interface boundary, kind and governing context",
+      "display_row": 386,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "An interface is described relative to a named system boundary: internal interfaces remain within it, while external interfaces cross it. Preserve physical versus logical context, the interacting subjects or environment, and any stated open, closed or standardized interface context. C239 external interfaces include the sensing aperture toward the environment as well as host connections. Boundary crossing does not establish separate equipment, an installed cable, a network endpoint or a universal sensor boundary.",
+      "source_entry_ids": [
+        "SOSA-C239-A-05",
+        "SOSA-C239-A-06",
+        "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-005",
+        "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-006",
+        "SOSA-C239-G2-7T-DEF-Interface",
+        "SOSA-C239-G2-7T-DEF-Closed_Interface",
+        "SOSA-C239-G2-7T-DEF-Open_Interface",
+        "SOSA-C239-G2-7T-DEF-Standardized_Interfaces"
+      ],
+      "evidence_records": [
+        "SOSA-C239-A-05",
+        "SOSA-C239-A-06",
+        "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-005",
+        "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-006",
+        "SOSA-C239-G2-7T-DEF-Interface",
+        "SOSA-C239-G2-7T-DEF-Closed_Interface",
+        "SOSA-C239-G2-7T-DEF-Open_Interface",
+        "SOSA-C239-G2-7T-DEF-Standardized_Interfaces"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An interface is described relative to a named system boundary: internal interfaces remain within it, while external interfaces cross it. Preserve physical versus logical context, the interacting subjects or environment, and any stated open, closed or standardized interface context. C239 external interfaces include the sensing aperture toward the environment as well as host connections. Boundary crossing does not establish separate equipment, an installed cable, a network endpoint or a universal sensor boundary. [C239: §4.1 PDF46; §4.1.1.1 PDF47; Appendix A PDF384,386–388; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Interface boundary, kind and governing context — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-A-05",
+          "SOSA-C239-A-06",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-005",
+          "SOSA-C239-G2-4A-PHYSICAL_CONTEXT-006",
+          "SOSA-C239-G2-7T-DEF-Interface",
+          "SOSA-C239-G2-7T-DEF-Closed_Interface",
+          "SOSA-C239-G2-7T-DEF-Open_Interface",
+          "SOSA-C239-G2-7T-DEF-Standardized_Interfaces"
+        ],
+        "original_source_locators": [
+          "§4.1 PDF46; §4.1.1.1 PDF47",
+          "Appendix A PDF384,386–388"
+        ],
+        "native_meaning": "An interface is described relative to a named system boundary: internal interfaces remain within it, while external interfaces cross it. Preserve physical versus logical context, the interacting subjects or environment, and any stated open, closed or standardized interface context. C239 external interfaces include the sensing aperture toward the environment as well as host connections. Boundary crossing does not establish separate equipment, an installed cable, a network endpoint or a universal sensor boundary.",
+        "closest_prior_rows": [
+          "S06-R007",
+          "S06-R008",
+          "S06-R006",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "reason_for_separate_candidate": "Physical membership and connected equipment do not express interface locality relative to a specified boundary; an environment-facing aperture need not connect to a separate device. A generic relation is a possible carrier, but does not already state this information need. Common: boundary-qualified interfaces apply across equipment arrangements without adopting SOSA geometry or a universal chassis.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J386",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-FUNCTION-ALLOCATION",
+      "label": "Candidate — Logical functions and implementation allocation",
+      "display_row": 387,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe a logical function or role separately from the hardware, firmware, software and runtime infrastructure that implements or supports it. A procurable unit can combine several functions and infrastructure elements; a logical module need not equal one physical part, runtime or purchased unit. Retain the declared grouping and implementation relationship without imposing one-to-one cardinality. C239 module names are source vocabulary, not a mandatory class list or proof of installed functionality.",
+      "source_entry_ids": [
+        "SOSA-C239-A-07",
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-09",
+        "SOSA-C239-A-12",
+        "SOSA-C239-A-13",
+        "SOSA-C239-A-14",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-001",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-002",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-004",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-005",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-006",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-001",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-002",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-003",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-004",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-005"
+      ],
+      "evidence_records": [
+        "SOSA-C239-A-07",
+        "SOSA-C239-A-08",
+        "SOSA-C239-A-09",
+        "SOSA-C239-A-12",
+        "SOSA-C239-A-13",
+        "SOSA-C239-A-14",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-001",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-002",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-004",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-005",
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-006",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-001",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-002",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-003",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-004",
+        "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-005"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a logical function or role separately from the hardware, firmware, software and runtime infrastructure that implements or supports it. A procurable unit can combine several functions and infrastructure elements; a logical module need not equal one physical part, runtime or purchased unit. Retain the declared grouping and implementation relationship without imposing one-to-one cardinality. C239 module names are source vocabulary, not a mandatory class list or proof of installed functionality. [C239: §§4.2,5.1–5.3 PDF48–58; §5.4 PDF58; Appendix A Module PDF386; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Logical functions and implementation allocation — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-A-07",
+          "SOSA-C239-A-08",
+          "SOSA-C239-A-09",
+          "SOSA-C239-A-12",
+          "SOSA-C239-A-13",
+          "SOSA-C239-A-14",
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-001",
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-002",
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-004",
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-005",
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-006",
+          "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-001",
+          "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-002",
+          "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-003",
+          "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-004",
+          "SOSA-C239-G2-4A-IMPLEMENTATION_EXAMPLE-005"
+        ],
+        "original_source_locators": [
+          "§§4.2,5.1–5.3 PDF48–58; §5.4 PDF58; Appendix A Module PDF386"
+        ],
+        "native_meaning": "Describe a logical function or role separately from the hardware, firmware, software and runtime infrastructure that implements or supports it. A procurable unit can combine several functions and infrastructure elements; a logical module need not equal one physical part, runtime or purchased unit. Retain the declared grouping and implementation relationship without imposing one-to-one cardinality. C239 module names are source vocabulary, not a mandatory class list or proof of installed functionality.",
+        "closest_prior_rows": [
+          "ISA-A-SERVICE-ROLE",
+          "ISA-K-CAPABILITIES",
+          "S06-R007",
+          "SOSA-F2-RTE-CONFIG",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "reason_for_separate_candidate": "An ISA network service/required-command role, a capability catalogue, physical membership and runtime settings each describe only part of this distinction. Generic relations can carry allocation but do not explicitly identify the logical function, realizing infrastructure and procurement grouping. Common: preserve function-versus-realization across donors without adopting SOSA decomposition.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J387",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-CONFORMANCE-EVIDENCE",
+      "label": "Candidate — Scoped conformance or qualification claim and verification basis",
+      "display_row": 388,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "Keep a conformance, certification or qualification claim tied to its subject, applicable standard or requirement, covered interfaces/aspects and stated verification basis. Distinguish a certificate from a method such as analysis, inspection, demonstration or test, and distinguish environmental qualification from airworthiness. A conformant component or interface does not establish whole-system conformance. No certificate, equipment test result or external certification-policy audit was obtained here.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-007",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-008",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-010",
+        "SOSA-C239-G2-7T-DEF-Analysis",
+        "SOSA-C239-G2-7T-DEF-Compliance",
+        "SOSA-C239-G2-7T-DEF-Conformance",
+        "SOSA-C239-G2-7T-DEF-Demonstration",
+        "SOSA-C239-G2-7T-DEF-Inspection",
+        "SOSA-C239-G2-7T-DEF-Test",
+        "SOSA-C239-G2-7T-DEF-Verification"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-4A-TAXONOMY_TERM-007",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-008",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-010",
+        "SOSA-C239-G2-7T-DEF-Analysis",
+        "SOSA-C239-G2-7T-DEF-Compliance",
+        "SOSA-C239-G2-7T-DEF-Conformance",
+        "SOSA-C239-G2-7T-DEF-Demonstration",
+        "SOSA-C239-G2-7T-DEF-Inspection",
+        "SOSA-C239-G2-7T-DEF-Test",
+        "SOSA-C239-G2-7T-DEF-Verification"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Keep a conformance, certification or qualification claim tied to its subject, applicable standard or requirement, covered interfaces/aspects and stated verification basis. Distinguish a certificate from a method such as analysis, inspection, demonstration or test, and distinguish environmental qualification from airworthiness. A conformant component or interface does not establish whole-system conformance. No certificate, equipment test result or external certification-policy audit was obtained here. [C239: §5.1 PDF55–56; §5.3 PDF57–58; §§5.5–5.5.3 PDF58–60; Appendix A PDF384–385,389; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Scoped conformance or qualification claim and verification basis — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-4A-TAXONOMY_TERM-007",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-008",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-010",
+          "SOSA-C239-G2-7T-DEF-Analysis",
+          "SOSA-C239-G2-7T-DEF-Compliance",
+          "SOSA-C239-G2-7T-DEF-Conformance",
+          "SOSA-C239-G2-7T-DEF-Demonstration",
+          "SOSA-C239-G2-7T-DEF-Inspection",
+          "SOSA-C239-G2-7T-DEF-Test",
+          "SOSA-C239-G2-7T-DEF-Verification"
+        ],
+        "original_source_locators": [
+          "§5.1 PDF55–56; §5.3 PDF57–58; §§5.5–5.5.3 PDF58–60; Appendix A PDF384–385,389"
+        ],
+        "native_meaning": "Keep a conformance, certification or qualification claim tied to its subject, applicable standard or requirement, covered interfaces/aspects and stated verification basis. Distinguish a certificate from a method such as analysis, inspection, demonstration or test, and distinguish environmental qualification from airworthiness. A conformant component or interface does not establish whole-system conformance. No certificate, equipment test result or external certification-policy audit was obtained here.",
+        "closest_prior_rows": [
+          "S06-R021",
+          "ISA-A-EXTENSION-STANDING",
+          "ISA-C-046",
+          "AAS-O6-PRODUCT-CLASS"
+        ],
+        "reason_for_separate_candidate": "Generic assertions carry provenance but do not name the scope and verification basis of a conformity claim. Standard lifecycle standing, a product category and a built-in-test result answer different questions. Common: qualified compliance/verification information is transferable; SOSA certification rules and aviation qualification remain source-qualified, not universal DIM obligations.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J388",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-SECURITY-POSTURE",
+      "label": "Candidate — Subject-qualified security assessment state",
+      "display_row": 389,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary.",
+      "source_entry_ids": [
+        "SOSA-C239-B-26"
+      ],
+      "evidence_records": [
+        "SOSA-C239-B-26"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary. [C239: §6.5.4 PDF136–138; retained B-26 scope corrected against original prose; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Subject-qualified security assessment state — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-B-26"
+        ],
+        "original_source_locators": [
+          "§6.5.4 PDF136–138; retained B-26 scope corrected against original prose"
+        ],
+        "native_meaning": "Describe the assessed security posture of a specified system, card or software module from the reporting manager’s perspective, with its policy/assessment context. C239 system states Evaluating, Protected, Degraded and Compromised differ from PIC states Trust Pending, Trusted and Untrusted and the separately described software authentication states. Security state is parallel to operational state and can constrain operation; it is not a certificate, key-filled flag or proof that equipment is safe or authenticated. Preserve each native subject and state vocabulary.",
+        "closest_prior_rows": [
+          "ISA-A-CERTIFICATE-TRUST",
+          "ISA-C-082",
+          "S06-R018",
+          "ISA-C-051",
+          "ISA-C-111"
+        ],
+        "reason_for_separate_candidate": "Credential trust, operational condition, mode, key presence and tamper alerts do not represent a manager’s assessment of system/component security posture. Common: security assessment with subject and provenance is transferable; do not universalize the C239 enumerations or infer successful authentication.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J389",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-PRODUCT-PROCESSING",
+      "label": "Candidate — Reported data-product processing stage",
+      "display_row": 390,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "Preserve whether an output is described as raw or minimally processed Data Products or processed/reduced Information Products in its source context. This qualifies the product’s processing stage, separately from a detection method, observation identity and links between an original event and digital copies. C239 supplies a coarse distinction, not a universal processing-level scale, detailed algorithm lineage or verified processing history.",
+      "source_entry_ids": [
+        "SOSA-C239-B-33",
+        "SOSA-C239-G2-7T-DEF-Data_Products",
+        "SOSA-C239-G2-7T-DEF-Information_Products",
+        "SOSA-C239-G2-7T-CONTEXT-8"
+      ],
+      "evidence_records": [
+        "SOSA-C239-B-33",
+        "SOSA-C239-G2-7T-DEF-Data_Products",
+        "SOSA-C239-G2-7T-DEF-Information_Products",
+        "SOSA-C239-G2-7T-CONTEXT-8"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Preserve whether an output is described as raw or minimally processed Data Products or processed/reduced Information Products in its source context. This qualifies the product’s processing stage, separately from a detection method, observation identity and links between an original event and digital copies. C239 supplies a coarse distinction, not a universal processing-level scale, detailed algorithm lineage or verified processing history. [C239: Appendix A PDF385; Table4.2-1 PDF50–52; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Reported data-product processing stage — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-B-33",
+          "SOSA-C239-G2-7T-DEF-Data_Products",
+          "SOSA-C239-G2-7T-DEF-Information_Products",
+          "SOSA-C239-G2-7T-CONTEXT-8"
+        ],
+        "original_source_locators": [
+          "Appendix A PDF385; Table4.2-1 PDF50–52"
+        ],
+        "native_meaning": "Preserve whether an output is described as raw or minimally processed Data Products or processed/reduced Information Products in its source context. This qualifies the product’s processing stage, separately from a detection method, observation identity and links between an original event and digital copies. C239 supplies a coarse distinction, not a universal processing-level scale, detailed algorithm lineage or verified processing history.",
+        "closest_prior_rows": [
+          "S06-R012",
+          "ISA-C-147",
+          "S06-R022",
+          "ISA-R-MESSAGE-REFERENCE"
+        ],
+        "reason_for_separate_candidate": "An output field, event-generation method and original/copy lineage do not state the coarse processing stage of the delivered product. Common: product processing status is useful across sensing systems; preserve the donor vocabulary and uncertainty without inventing processing levels.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J390",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-DATA-RIGHTS",
+      "label": "Candidate — Declared license rights for technical data or software",
+      "display_row": 391,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "Record a source-attributed declaration of license rights over technical data or computer software, preserving the subject material and whose rights are asserted when supplied. C239 defines Data Rights at this conceptual level; it does not supply a rights schema, machine-enforceable license vocabulary or an actual entitlement. License rights are distinct from access credentials, access-control decisions and mere public availability of source code.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-7T-DEF-Data_Rights",
+        "SOSA-C239-G2-7T-DEF-Open_Source"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-7T-DEF-Data_Rights",
+        "SOSA-C239-G2-7T-DEF-Open_Source"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Record a source-attributed declaration of license rights over technical data or computer software, preserving the subject material and whose rights are asserted when supplied. C239 defines Data Rights at this conceptual level; it does not supply a rights schema, machine-enforceable license vocabulary or an actual entitlement. License rights are distinct from access credentials, access-control decisions and mere public availability of source code. [C239: Appendix A Data Rights PDF385; Open Source PDF387; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared license rights for technical data or software — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-7T-DEF-Data_Rights",
+          "SOSA-C239-G2-7T-DEF-Open_Source"
+        ],
+        "original_source_locators": [
+          "Appendix A Data Rights PDF385; Open Source PDF387"
+        ],
+        "native_meaning": "Record a source-attributed declaration of license rights over technical data or computer software, preserving the subject material and whose rights are asserted when supplied. C239 defines Data Rights at this conceptual level; it does not supply a rights schema, machine-enforceable license vocabulary or an actual entitlement. License rights are distinct from access credentials, access-control decisions and mere public availability of source code.",
+        "closest_prior_rows": [
+          "S06-R021",
+          "ISA-T-ACCESS",
+          "AAS-O6-ACCESS-RULE",
+          "AAS-O2-SUPPORTING-CONTENT"
+        ],
+        "reason_for_separate_candidate": "Access rules decide permitted system operations; intellectual-property license rights concern reuse of technical data/software. A generic assertion or file locator can carry the declaration but does not already identify this separate need. Common, definition-level candidate only: no legal conclusion or invented license fields.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "J391",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-FLOW-QOS",
+      "label": "Candidate — Producer–consumer data-flow service contract",
+      "display_row": 392,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "C239 describes a Quality of Service policy contract between what a producer offers and a consumer expects for a data flow. Its source-specific policy family includes reliability, deadline, durability/history depth, liveliness, ownership and writer priority. Preserve the producer/consumer roles, policy scope and native units/defaults separately from message priority, query options and invocation timeout. Implementation is deferred and sensor-to-sensor QoS is outside the described scope; no negotiated or achieved service level is verified.",
+      "source_entry_ids": [
+        "SOSA-C239-C-17",
+        "SOSA-C239-G2-7T-DEF-Quality_of_Service",
+        "SOSA-C239-G2-7T-DEF-Real_time"
+      ],
+      "evidence_records": [
+        "SOSA-C239-C-17",
+        "SOSA-C239-G2-7T-DEF-Quality_of_Service",
+        "SOSA-C239-G2-7T-DEF-Real_time"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: C239 describes a Quality of Service policy contract between what a producer offers and a consumer expects for a data flow. Its source-specific policy family includes reliability, deadline, durability/history depth, liveliness, ownership and writer priority. Preserve the producer/consumer roles, policy scope and native units/defaults separately from message priority, query options and invocation timeout. Implementation is deferred and sensor-to-sensor QoS is outside the described scope; no negotiated or achieved service level is verified. [C239: §15.3 PDF374–377; Appendix A PDF387; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Producer–consumer data-flow service contract — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-C-17",
+          "SOSA-C239-G2-7T-DEF-Quality_of_Service",
+          "SOSA-C239-G2-7T-DEF-Real_time"
+        ],
+        "original_source_locators": [
+          "§15.3 PDF374–377; Appendix A PDF387"
+        ],
+        "native_meaning": "C239 describes a Quality of Service policy contract between what a producer offers and a consumer expects for a data flow. Its source-specific policy family includes reliability, deadline, durability/history depth, liveliness, ownership and writer priority. Preserve the producer/consumer roles, policy scope and native units/defaults separately from message priority, query options and invocation timeout. Implementation is deferred and sensor-to-sensor QoS is outside the described scope; no negotiated or achieved service level is verified.",
+        "closest_prior_rows": [
+          "ISA-T-PRIORITY",
+          "ISA-Q-OPTIONS",
+          "AAS-O5-OPERATION-TIMEOUT",
+          "ISA-C-078",
+          "ISA-C-079"
+        ],
+        "reason_for_separate_candidate": "Per-message importance, cached-query inclusion, report intervals and an operation timeout do not collectively define offered/required data-flow policy compatibility. Specialized: retain the C239 producer/consumer policy family and limits as an optional extension; do not impose its units, defaults or ownership vocabulary on all equipment.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "cell": "J392",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "SOSA-SO2A-INTERACTION-BINDING",
+      "label": "Candidate — Declared interaction binding stack",
+      "display_row": 393,
+      "status": "SO-2A provisional information-need candidate; NOT ADOPTED",
+      "definition": "A C239 interaction binding separately selects data definition, encoding, encapsulation, transport and network choices for an interaction. Preserve the declared stack and applicable conditional rule, rather than interpreting it as an ISA presentation/schema handshake or as a verified live connection. The named DDS/RTPS and Protobuf-based alternatives remain C239 examples/conditional selections; exact native 2023 companion content and runtime interoperability remain unverified.",
+      "source_entry_ids": [
+        "SOSA-C239-C-18",
+        "SOSA-C239-C-19",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-001",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-002"
+      ],
+      "evidence_records": [
+        "SOSA-C239-C-18",
+        "SOSA-C239-C-19",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-001",
+        "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-002"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2A_RETAINED_SOURCE_AND_TARGETED_ORIGINAL_C239_TEXT_REVIEWED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: A C239 interaction binding separately selects data definition, encoding, encapsulation, transport and network choices for an interaction. Preserve the declared stack and applicable conditional rule, rather than interpreting it as an ISA presentation/schema handshake or as a verified live connection. The named DDS/RTPS and Protobuf-based alternatives remain C239 examples/conditional selections; exact native 2023 companion content and runtime interoperability remain unverified. [C239: §5.8 PDF62–63; §15.4 PDF377–378; SO-2A]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared interaction binding stack — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-C-18",
+          "SOSA-C239-C-19",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-001",
+          "SOSA-C239-G2-4A-OTHER_NATIVE_CONCEPT-002"
+        ],
+        "original_source_locators": [
+          "§5.8 PDF62–63; §15.4 PDF377–378"
+        ],
+        "native_meaning": "A C239 interaction binding separately selects data definition, encoding, encapsulation, transport and network choices for an interaction. Preserve the declared stack and applicable conditional rule, rather than interpreting it as an ISA presentation/schema handshake or as a verified live connection. The named DDS/RTPS and Protobuf-based alternatives remain C239 examples/conditional selections; exact native 2023 companion content and runtime interoperability remain unverified.",
+        "closest_prior_rows": [
+          "ISA-A-CONNECTION-PRESENTATION",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-K-CUSTOM-TYPE"
+        ],
+        "reason_for_separate_candidate": "Negotiated encoding/model version and network membership do not identify the five distinct choices and responsibility for realizing an interaction. Specialized: the source-defined binding stack is an optional configuration candidate, with no requirement that CSAPI adopt these transports.",
+        "relation": "RELATED_BUT_DISTINCT",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "cell": "J393",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
     }
   ],
   "originalDonorEvidence": [
@@ -61551,7 +62333,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 361,
+    "informationRows": 369,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -61598,7 +62380,9 @@
     "AAS_O4_new_candidate_rows": 2,
     "AAS_O5_new_candidate_rows": 2,
     "AAS_O6_1_new_candidate_rows": 3,
-    "AAS_O6_2_new_candidate_rows": 4
+    "AAS_O6_2_new_candidate_rows": 4,
+    "SOSA_SO2A_new_candidate_rows": 8,
+    "SOSA_SO2A_retained_records": 262
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -61642,17 +62426,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS_O7_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "SOSA_SO2A_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS_O7_SAVED_VERIFIED",
-    "sha256": "ffb46b0f663f0993cf39b188b03be8296ecb1b346b7512ca62e946900c1a7f15",
-    "information_rows": 361,
+    "checkpoint": "SOSA_SO2A_SAVED_VERIFIED",
+    "sha256": "13566efc1184b9d1d48a9c932da17a511908cb7e544a3c0ea2a6fe7eedfe4da6",
+    "information_rows": 369,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 384x16 grid unchanged; O7 owner-decision guidance current",
-    "textCheckpoint": "AAS_O7_RECONCILIATION_COMPLETE",
-    "textInformationRows": 361,
+    "lag": "ZERO: 393x16 saved values and current SO-2A guidance",
+    "textCheckpoint": "SOSA_SO2A_OPPORTUNITIES",
+    "textInformationRows": 369,
     "textPrimaryReviewed": 480,
     "columns": 16,
     "G2_1_affected_row_ids": [
@@ -61670,7 +62454,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O7_reconciliation/publication",
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A/publication",
     "verifiedPublisherCommit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43741024724",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -62799,11 +63583,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 384,
-    "saved_xlsx_grid_rows": 384,
+    "text_grid_rows": 393,
+    "saved_xlsx_grid_rows": 393,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 532,
+    "color_cell_count": 540,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -62933,9 +63717,9 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "O7 reconciliation complete; owner disposition pending. Current saved workbook guidance matches O7; all comparison data/classifications remain unchanged. AAS bounded PARTIAL with retained source holds. Step-specific historical counters remain historical; primary_reviewed/textPrimaryReviewed retain the 480 ISA source reviews.",
+    "gate_metadata_note": "SO-2A integrated; SO-2B only next. AAS acceptance pending separately. Historical counters retain recorded scopes.",
     "source_compared_rows": 88,
-    "explicit_unassessed_rows": 273,
+    "explicit_unassessed_rows": 281,
     "AAS_candidate_colors": 76,
     "AAS_uncolored_source_holds": 12,
     "F3_04A_affected_row_ids": [
@@ -65000,7 +65784,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "STOP for owner disposition: accept the completed AAS review as bounded PARTIAL with documented holds, or name a specific remaining source question to reopen. No automatic donor transition, model/Profile adoption or implementation.",
+  "nextOwnerAction": "SO-2B only on a separate Proceed: System Manager and generic-module management, 201 retained records; stop before SO-2C.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -89891,5 +90675,33 @@
     "new_candidates_total": 24,
     "owner_decision": "PENDING",
     "one_next": "STOP for owner disposition: accept the completed AAS review as bounded PARTIAL with documented holds, or name a specific remaining source question to reopen. No automatic donor transition, model/Profile adoption or implementation."
+  },
+  "SOSA_SO2A_opportunity_review": {
+    "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_PENDING",
+    "ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A",
+    "counts": {
+      "retained_records": 262,
+      "decision_groups": 63,
+      "outcomes": {
+        "ADEQUATELY_REPRESENTED": 67,
+        "ADDITION_WARRANTED": 103,
+        "SOURCE_SPECIFIC_NO_NEW_ROW": 75,
+        "HELD_EXACT_QUESTION": 17
+      },
+      "new_rows": 8,
+      "common_new_rows": 6,
+      "specialized_new_rows": 2,
+      "unaccounted_records": 0,
+      "remaining_SO2_records": 3493,
+      "estimated_further_steps": 11,
+      "qualified_existing_rows": 8,
+      "information_rows": 369,
+      "grid_rows": 393,
+      "grid_values": 6288,
+      "source_classifications": 648,
+      "colored": 540,
+      "held": 108
+    },
+    "one_next": "SO-2B only on a separate Proceed: System Manager and generic-module management, 201 retained records; stop before SO-2C."
   }
 }

@@ -1,59 +1,57 @@
-# SOSA opportunity inventory — SO-1 result, 15 November 2026
+# SOSA architecture, roles and vocabulary — SO-2A result, 15 November 2026
 
-The earlier review does not yet establish that all retained The Open Group Sensor Open Systems Architecture (SOSA) meanings had a fair chance to add or reshape a Domain Information Model (DIM) candidate. This inventory identifies the remaining opportunity question without reopening the whole standard or claiming new omissions. The owner authorized SO-1 after approving the [addendum](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md#sosa-existing-findings-opportunity-addendum). The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) governs the next action; earlier CURRENT/NEXT banners below are historical.
+SO-2A addresses the 262 retained records assigned to architecture, roles and vocabulary in the approved SOSA opportunity review. The owner authorized this packet in Profile Rewrite 47 after the SO-1 scope and ten-packet estimate were presented. The purpose is to let the original source contribute distinct information needs before fitting it into the existing Domain Information Model (DIM) rows. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current delivery status and routing.
 
-## What the inventory found
+## What we learned and fixed
 
-The frozen published baseline is `95523accf6d1687dd17dc781a0986ebcd5cb3aad`. Its 39 primary arrays contain **4,134 unique record IDs**, with no duplicated stable ID or unkeyed primary record. These are **not 4,134 distinct information needs**: the records mix definitions, rules, functions, interactions, connector pins, table context and limited source pointers. Different IDs can describe overlapping meanings, and an individual pin does not imply a DIM row.
+The existing comparison did hide useful distinctions. An interface that crosses a sensor boundary is not necessarily a separately connected piece of equipment: it can be an aperture interacting with the environment. An internal interface is likewise not the same thing as physical membership. One new boundary-qualified candidate now preserves both meanings that the earlier 35-item review marked compressed (The Open Group 2023, sec. 4.1, PDF46–48).
 
-| Recorded source contact | Records | What that count means |
+SOSA also separates logical functions from their implementation in hardware, firmware, software and runtime infrastructure. A procurable unit can combine several functions and infrastructure elements; the taxonomy does not prescribe one module per card, device or product. Existing physical-part, capability, network-service and generic-relationship rows could carry pieces of this description, but did not explicitly preserve the function-to-implementation distinction. The new allocation candidate does so without adopting SOSA's module list as our class hierarchy (The Open Group 2023, secs. 4.2, 5.1–5.3, PDF48–58).
+
+Several earlier held or partial comparisons also pointed to useful information beyond their original target rows. A security assessment is not an operating condition or a connection credential; a product's processing stage is not its original-event/copy lineage. A producer–consumer data-flow contract is different from individual-message priority, and a declared interaction stack is different from negotiating a presentation/schema byte pair. Those original mapping limits remain valid, while the distinct meanings now receive explicit candidates.
+
+| New candidate | Why an existing row was insufficient | Classification / original locator |
+|---|---|---|
+| Interface boundary, kind and governing context | Parts and connected equipment do not state whether a physical or logical interface crosses a named boundary. | Common; §4.1 PDF46–48; Appendix A PDF384,386–388 |
+| Logical functions and implementation allocation | A function can have different hardware/software realizations and procurement groupings. | Common; §§4.2,5.1–5.3 PDF48–58 |
+| Scoped conformance or qualification claim and verification basis | Credentials, product category and a generic assertion do not state the covered subject/interfaces, requirement and verification basis. | Common; §5.1/5.3/5.5 PDF55–60; Appendix A PDF384–385,389 |
+| Subject-qualified security assessment state | Security posture is parallel to operational state and differs from certificate trust or a key-filled/tamper flag. | Common; §6.5.4 PDF136–138 |
+| Reported data-product processing stage | Raw/minimal versus processed/reduced describes the product, independently of event identity and copy provenance. | Common; Appendix A PDF385 |
+| Declared license rights for technical data or software | Intellectual-property license rights differ from technical access control and public source availability. | Common, definition-level only; Appendix A PDF385,387 |
+| Producer–consumer data-flow service contract | Offered/expected policies span reliability, timing, durability, liveliness, ownership and writer priority. | Specialized C239 policy family; §15.3 PDF374–377 |
+| Declared interaction binding stack | Data definition, encoding, encapsulation, transport and network are separate selections. | Specialized C239 binding family; §15.4 PDF377–378 |
+
+One retained summary also needed a specific correction. Record `SOSA-C239-B-26` grouped the system, card and module under the same four security states. Original PDF136–138 assigns Evaluating/Protected/Degraded/Compromised to the system, while cards have Trust Pending/Trusted/Untrusted and software has distinct authentication states. The original record remains intact; the new assessment records the correction explicitly and prevents those vocabularies from being merged.
+
+## Accountable results and workbook changes
+
+| Outcome for retained records | Count | Meaning |
 |---|---:|---|
-| C239 Edition 1.1 | 3,645 | Retained records at their original, varying contact grades; includes source pointers and context. |
-| Separately qualified 2022 model | 262 | Heading/text and selected-field contact; no claim of a full model audit. |
-| Separately qualified 2022 IDL files | 227 | Structural file inventory, not 227 semantically reviewed models. |
+| Adequately represented | 67 | Existing separate information needs are sufficient with stated source context. |
+| Supporting an addition | 103 | Overlapping source records support eight candidates, not 103 new rows. |
+| Source-specific information with no new row | 75 | Architecture/business principles, reserved functions, model-method context and implementation rules remain documented with reasons. |
+| Held with a specific question | 17 | Deferred behavior, native-companion/reference questions and an insufficiently specified security-risk assessment remain explicit. |
+| **Total** | **262** | Every packet ID has one primary disposition and a traceable original pointer. |
 
-The earlier 35-item opportunity table supplies **32 reusable outcomes**. Three items were explicitly marked **compressed** and still need an opportunity decision: external interface boundaries, internal interface boundaries and secure startup. A later classification discussion linked to secure startup does not establish that its original compressed meaning was resolved. Retaining a prior held outcome preserves its question; it does not close a source gap.
+The master grows from **361 to 369 information rows**. Eight existing SOSA cells gain short clarifications or pointers to the distinct candidate; their previous classifications are preserved. The two compressed interface findings are resolved at this bounded opportunity-assessment level. Secure startup remains in SO-2D, and the detailed records in SO-2B–J are not discharged by this overview.
 
-Later F3 decisions link to **832** of the primary IDs. Their established correspondences, source limits and classification judgments will be reused. F3 answered how to grade particular existing comparisons; it did not establish whether each entire source record contained another distinct information need. Those links therefore reduce repeated work without automatically excluding the rest of a record from the opportunity question.
+The six common candidates are blue and the two specialized candidates use the existing amber. Every new donor/case position states its status explicitly; no equivalences with unreviewed donors or observed equipment are invented. The canonical JSON, both CSV mirrors, both readable comparisons and the same editable workbook are synchronized at **393 × 16 = 6,288 saved comparison values**, with **648 source classifications: 540 colored and 108 held**. The 17 held source records above are a different unit from those 108 held comparison cells.
 
-| Inventory outcome | Records |
-|---|---:|
-| Prior F2 opportunity outcome reused | 32 |
-| Source pointer/reference limitation retained | 120 |
-| Structural IDL-file context retained; no new field audit authorized | 227 |
-| Remaining opportunity assessment at recorded depth | **3,755** |
-| **Total** | **4,134** |
+A directly browsable [pre-SO-2A checkpoint](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2a-20261115/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves the earlier master and workbook. All prior source classifications, other donor/case values, original source records, 21 untouched worksheet parts and M00/M01 remain preserved. Saved-file checking caught stale legacy `display_row` locations before publication; the update now resolves the eight intended cells through stable row IDs and the actual comparison grid. This local correction changes no unrelated legacy metadata or research scope.
 
-The remaining set comprises **3,493 C239 records and 262 bounded 2022 model entries**. Nineteen supporting arrays contain 206 additional census, table, repetition and discrepancy entries; they remain linked context rather than inflated independent finding counts. Shorthand family IDs are linked to their primary records. Neither the 192-heading contact register nor repeated mapping events are added as new findings.
+## Value, recommendation and limits
 
-## Proposed assessment groups and estimate
+The practical value is that a future Details view can distinguish what the equipment contains, what functions it provides, how those functions are realized, which interfaces cross its boundary and what evidence supports claims about its condition or conformance. The new rows make those questions visible for later consolidation instead of hiding them inside near-matching ISA rows. This is evidence of omissions or compression in the earlier opportunity assessment; it does not prove ISA-first ordering was the sole cause. Generic relationship/property carriers alone are not evidence that the distinct information need was already explicitly represented.
 
-Each group asks the same practical question: **does the source describe something distinct that our current rows hide or omit?** Use prior decisions, make shared decisions for genuinely equivalent source families, and explain exceptions. Every retained ID remains traceable. The numbers below are bookkeeping records, not predicted additions or equal units of effort.
+Keep the eight rows as provisional candidates and continue with **SO-2B only**, covering 201 retained System Manager and generic-module management records. Eleven further bounded steps remain in the estimate: nine assessment packets, reconciliation and plain-English closeout. Reuse these source decisions and verification results rather than reassessing them without new evidence. Any necessary split or scope expansion must be explained before expanding the estimate.
 
-| Step | Source group | Remaining records |
-|---|---|---:|
-| SO-2A | Architecture, roles and vocabulary | 262 |
-| SO-2B | System Manager and generic-module management | 201 |
-| SO-2C | Security, chassis and plug-in-card management | 352 |
-| SO-2D | Management paths, states and hosted runtime | 217 |
-| SO-2E | Task/RF/host interactions, transport and service exchanges | 496 |
-| SO-2F | Hardware topology and profile families | 581 |
-| SO-2G | Apertures, VNX, power and signal groups | 348 |
-| SO-2H | Connector tables J2/J3/J4/J14 and related rules | 427 |
-| SO-2I | Remaining detailed connector/pin families | 609 |
-| SO-2J | 2022 model meanings at recorded review depth | 262 |
+The nine original SOSA hold families and its accepted bounded-PARTIAL standing remain. No new edition or companion audit, actual equipment assessment, native Microsoft Excel clean reopening, DIM/Profile adoption or client implementation is claimed. AAS acceptance remains separately pending, and AAS/SAPIENT research is not restarted. The detailed groups, individual original pointers, reused F3 decisions, closest-row rationale, held questions and saved-file evidence are in [the existing G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO2_source_opportunity_assessments/SO-2A`.
 
-**Estimate: ten assessment steps, then one reconciliation and one plain-English closeout—12 further bounded steps.** This estimate uses the actual source families rather than a target number of prompts or rows. Dense connector/profile tables can share a justified family decision; they do not require one new field or one separate narrative per pin. If source complexity genuinely requires splitting a group, explain the reason and revised estimate before expanding it; do not silently multiply the work.
+## Reference and prior result
 
-Within each authorized assessment group, integrate warranted changes into the same master and workbook before continuing. If a group establishes no need for an addition, document why and retain the existing rows. Reconciliation must reuse already-completed integration and checks. **The next proposed step is SO-2A only: architecture, roles and vocabulary, including the two compressed interface-boundary findings.** Secure startup belongs to SO-2D.
+The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5.pdf`, 403 pages. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Locators above are original PDF page numbers; source figures were not independently re-audited as pixels in this packet.
 
-## Value, limits and unchanged work
-
-This step replaces an unclear claim of “SOSA reviewed” with a traceable boundary between decisions we can reuse and the opportunity question still unanswered. It does not prove ISA-first bias caused a particular omission, and it has not yet corrected the remaining opportunity-assessment gap. That requires source-meaning decisions in the authorized groups, not merely counting or coloring records.
-
-No source clauses were newly researched, no candidate/classification decisions were made and no master rows were added. All six canonical master views and the same workbook are byte-preserved at 361 information rows, as are manual M00/M01 versions. The nine SOSA hold families and earlier bounded-PARTIAL acceptance remain; unreviewed companions, new editions and missing source material are outside this addendum. The inventory accounts for retained records, not findings earlier work may never have recorded.
-
-AAS and SAPIENT are not restarted. AAS closeout acceptance remains a separate pending owner decision. Detailed IDs, original pointers/hashes, prior-decision links, supporting arrays, exact packet membership and verification/publication evidence are in the existing [G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO1_existing_findings_opportunity_inventory`.
+[Exact SO-1 inventory and estimate](https://github.com/OS4CSAPI/glaux-client/blob/9276e76a2a99ed6512cb98ad2247a28993048b93/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md#sosa-opportunity-inventory--so-1-result-15-november-2026). Earlier CURRENT/NEXT banners below remain historical and do not govern current routing.
 
 ---
 
