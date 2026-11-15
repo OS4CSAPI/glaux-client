@@ -1,3 +1,64 @@
+# SOSA tasks, RF, host and service exchanges — SO-2E result, 15 November 2026
+
+SO-2E accounts for all 496 retained records in the authorized packet: task and radio-frequency (RF) interactions, host interfaces, security services and inter-module exchanges. The owner authorized this bounded step by Proceed in Profile Rewrite 49 after SO-2D delivery closeout. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns actual delivery status and next-step routing. These findings improve the whole-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile research; they do not adopt a schema or demonstrate device behavior.
+
+## What we learned
+
+A task has a life beyond the command message that starts it. It can be planned, identified, modified and assigned a priority; the Task Manager can decompose it into internal assignments for modules and allocate resources to those assignments. A message priority, a currently executing command and a static allocation of software functions to hardware do not preserve those relationships. The original task table remains preliminary, so this research retains its distinctions without treating it as a complete implemented task API (The Open Group 2023, sec. 7.1.1, PDF 141–145; table 12.10.2-1, PDF 200–201).
+
+Several sensor and security distinctions also deserved explicit treatment. A calibration outcome differs from a built-in diagnostic result; a distance-valued resolution differs from a qualitative resolution category. A frequency-band power ceiling is a limit rather than an exact power setting. Likewise, the identities of stored keys and the association among channels, configuration groups and keys say more than a simple “key loaded” flag (The Open Group 2023, table 12.2.3-1, PDF 185–186; table 12.10.2-1, PDF 197–202).
+
+Most transport material was already represented by the service-contract and interaction-binding candidates. Two remaining distinctions needed explicit rows: metadata associated with a signal stream can travel less frequently and on a different connection, while a shared virtual discrete represents a coherent value maintained across network participants. Neither is adequately explained by a generic reported value alone. The source does not establish actual timing, coherence, safe operation or exact payload schemas (The Open Group 2023, secs. 15.3–6, PDF 374–383).
+
+## What changed
+
+Nine provisional information rows were added. Blue identifies five common candidates; amber identifies four specialized candidates. Classification describes the information need and does not imply implementation, source completeness or adoption.
+
+| New information need | Distinction preserved | Classification | Original PDF locator |
+|---|---|---|---|
+| Identified task, lifecycle and task priority | Planned/active task identity differs from a request message and current command execution. | Common | 141–145, 200–201 |
+| Task-to-module assignment and allocated resources | Internal assignment instances differ from static function allocation and resource reservation. | Common | 144–145 |
+| Key inventory and acceptance status | Stored/accepted key identifiers and batch counts differ from a key-filled Boolean. | Specialized | 184–185, 191 |
+| Cryptographic channel/group/key associations | Preserve the distinct channel, group, configuration and key relationships. | Specialized | 185–186, 190–191 |
+| Calibration activity and latest reported result | Calibration state and outcome differ from diagnostic tests and correction commands. | Common | 197–198 |
+| Quantitative spatial resolution | A distance-valued resolution differs from a qualitative category, field of view or uncertainty. | Common | 200, 202 |
+| Frequency-band power ceiling and release | A maximum allowed power over a selected band differs from an exact or relative setpoint. | Specialized | 201 |
+| Stream-associated context | Metadata-to-stream association survives separate transport and update frequency. | Common | 373, 381 |
+| Shared virtual discrete state | Network-maintained writer/reader state differs from a local persistent hardware latch. | Specialized | 373, 382 |
+
+Ten existing SOSA comparisons were qualified. Nine retain their prior classification; the existing security/accountability audit row receives its first SOSA common classification, with donor differences explicit. C239 uses UTC when available and uptime otherwise, and distinguishes logical collectors/relays and mandatory versus optional event families. Those facts do not establish AAS actor/object payloads or time precision for SOSA, and do not justify creating a duplicate audit row (The Open Group 2023, sec. 12.2.2, PDF 180–184; rule 12.2.6-3, PDF 188).
+
+The resource-reservation definition also now distinguishes its evidence editions and scopes correctly. Its original seven SO-2B records remain Future, but the RF material defines V1.0 signal-port reservations and optional switch-group counterparts. The candidate therefore has non-Future support without rewriting those earlier records. Other clarifications preserve task/message/writer priority, calibration versus diagnostics, package-linked software digests, conditional binding/security rules and host-interface adaptation (The Open Group 2023, secs. 8.3.3–4, PDF 152–156; secs. 12.1.1, 12.2.4, PDF 179, 187).
+
+| Record disposition | Count |
+|---|---:|
+| Existing information needs adequate, with source qualifications | 289 |
+| Support nine additions | 60 |
+| Support existing-row clarification | 47 |
+| Source-specific context/constraints; no extra row | 78 |
+| Held with exact unresolved questions | 22 |
+| **Total** | **496** |
+
+The [existing G4 ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), key `SO2_source_opportunity_assessments/SO-2E`, records all original IDs, pointers/hashes, source standings, 56 decision groups, candidate rationales and workbook changes. Each original record hash matched the frozen inventory. A record fitting an information need does not silently create a donor-cell equivalence; the audit cell is the only explicitly added classification on a pre-existing row.
+
+## Limits and value
+
+Twenty-two source records remain held across twelve exact-question groups: key tags, configuration retrieval payloads, key loading/storage boundaries, an NVMe response-description conflict, host bearing output, cosite-blanking meaning, a host table-reference conflict, undefined writer-priority range, incomplete shared-exclusive ownership, a FACE reference conflict, future conformance/service-matrix content and unexamined role-symbol geometry. Preliminary task descriptions and their inconsistent AMTI/Tracker cross-reference remain qualified. Optional RF interaction/acknowledgment marks are not the same as cryptographic-table asterisks identifying adoption from JTNC RSS. No discrepancy was silently repaired, and no external companion specification was claimed read.
+
+The practical value is a more faithful future Details view: it can distinguish assigned work from messages, calibration from fault testing, a power restriction from a setting, and security metadata from a simple loaded flag. The additions show that some retained donor meanings were still being compressed into broad carriers or adjacent concepts. They do not establish that ISA-first ordering alone caused every omission, or justify a new row for every source operation or module label.
+
+The master now has **393 information rows** and **421×16 = 6,736 comparison values**, with **673 classified source comparisons: 565 colored and 108 held**. The canonical JSON, both CSV mirrors, both readable comparisons and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) are synchronized. All 663 prior classifications, original source records/grades, earlier packet decisions, the 26-sheet structure, 21 unaffected worksheet parts and manual M00/M01 are preserved. The [pre-SO-2E archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-so2e-15nov2026/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) preserves the preceding master/workbook.
+
+The next separate Proceed is **SO-2F only: 581 hardware-topology and profile-family records**. The remaining estimate is **seven bounded steps**: five packets, reconciliation and closeout, covering2,227 remaining assessment records. All original SOSA holds and bounded-PARTIAL standing remain; AAS acceptance is separate. Native Microsoft Excel clean reopening remains unverified; the PITON and ledger record saved-file, visual and publication evidence independently.
+
+## Reference and preceding result
+
+The Open Group. 2023. *Technical Standard for SOSA Reference Architecture*. Edition 1.1. C239. June, with September erratum. Original project copy `c239_5(1).pdf`, 403 pages; SHA-256 `8c5adc9c28a686ece8ac50ce6c6738de7aa6c7785803adc4bb3457693a3e74ed`. [Publisher record](https://publications.opengroup.org/standards/sosa/c239). Original PDF 141–207 and 372–383 text was read; PDF 144, 185, 186, 197, 200, 201, 376, 382 were visually inspected. No general figure-geometry, new-edition, native-companion or external-standard audit was performed.
+
+[Published SO-2D checkpoint](https://github.com/OS4CSAPI/glaux-client/tree/1ec9dcdabbe357f0b235a2baba2b5cde85ee49ab/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). The preserved preceding results below are historical; current routing belongs to the PITON.
+
+---
+
 # SOSA management paths, states and hosted runtime — SO-2D result, 15 November 2026
 
 The Open Group Sensor Open Systems Architecture (SOSA) SO-2D packet accounts for all **217 retained records** assigned to management paths, states and hosted runtime. The owner authorized this packet by Proceed in Profile Rewrite 48 after SO-2C publication. Original C239 PDF pages 122–140 and 361–371 were read, with seven decisive pages visually checked. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns publication status and the next authorized step.

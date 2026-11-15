@@ -4891,11 +4891,20 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
         else:required(ledger[key]==value,'SO2 original ledger evidence '+key)
     required(set(ledger)-set(oldledger)==({'SO2_source_opportunity_assessments'} if 'SO2_source_opportunity_assessments' not in oldledger else set()),'bounded ledger changes')
     changes={x['row_id']:x for x in o['qualified_existing_rows']};new=doc['rows'][len(prior['rows']):]
+    first={x['master_cell']:x['first_source_classification'] for x in changes.values() if x.get('first_source_classification')}
+    required(len(first)==counts.get('first_existing_row_classifications',0),'SO2 declared first comparison count')
+    required(counts['source_classifications']==o['preservation']['prior_source_classifications']+len(new)+len(first),'SO2 source-classification accounting')
+    required(counts['colored']==o['preservation']['prior_colored']+len(new)+len(first) and counts['held']==o['preservation']['prior_held'],'SO2 colored/held accounting')
     required(len(new)==counts['new_rows'] and len(changes)==counts['qualified_existing_rows'] and len(doc['rows'])==counts['information_rows'],'SO2A authorized integration size')
     for oldrow,row in zip(prior['rows'],doc['rows']):
         restored=copy.deepcopy(row)
         if oldrow['row_id'] in changes:
             c=changes[oldrow['row_id']];required(c['before']==oldrow['display'][9] and c['after']==row['display'][9] and not c['classification_changed'],'SO2A declared text-only qualification')
+            if c.get('first_source_classification'):
+                fc=c['first_source_classification']
+                required(oldrow['display'][9]=='Not assessed here — no verified correspondence; not evidence of absence.','first comparison was explicitly unassessed')
+                required(fc['candidate_status']=='COMMON_CANDIDATE' and fc['fill']=='#D9EAF8' and not fc['DIM_Profile_adopted'] and fc['rationale'] and set(fc['source_ids'])<=set(ids),'first comparison source-qualified common status')
+                required(row[packet.replace('-','')+'_qualification']['first_source_classification']==fc,'first comparison master/ledger metadata')
             restored.pop(packet.replace('-','')+'_qualification');restored['display'][9]=oldrow['display'][9]
             for field,edit in c.get('field_changes',{}).items():
                 required(field in ('label','definition') and edit['before']==oldrow[field] and edit['after']==row[field],'declared candidate-scope clarification')
@@ -4949,6 +4958,13 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
             for ref,v in ed.items():required(f3_cell_text(cells.get(ref))==v,'SO2A saved edit '+name+'!'+ref)
             for ref,c in oldcells.items():
                 if ref not in ed:required(ET.tostring(c)==ET.tostring(cells[ref]),'SO2A preserved cell '+name+'!'+ref)
+                elif name=='Master Crosswalk' and ref in first:
+                    # Only the declared previously-unassessed source cell may receive its first fill.
+                    styles=ET.fromstring(z.read('xl/styles.xml'));xf=styles.find(q('cellXfs'))
+                    oldxf=copy.deepcopy(xf[int(c.get('s','0'))]);newxf=copy.deepcopy(xf[int(cells[ref].get('s','0'))])
+                    oldxf.set('fillId',newxf.get('fillId'));oldxf.set('applyFill',newxf.get('applyFill','1'))
+                    newxf.set('applyFill',newxf.get('applyFill','1'))
+                    required(ET.tostring(oldxf)==ET.tostring(newxf),'first comparison preserves non-fill style')
                 else:required(c.get('s','0')==cells[ref].get('s','0'),'SO2A existing style preserved '+name+'!'+ref)
             required(not any(c.get('t')=='e' for c in cells.values()),'SO2A saved Excel errors')
             if name=='Master Crosswalk':
@@ -4959,6 +4975,9 @@ def verify_sosa_opportunities(doc, packet="SO-2A"):
                 for r in new:
                     c=r['SO2_source_correspondence'];rgb=fills[int(xf[int(cells[c['cell']].get('s'))].get('fillId'))].find('.//'+q('fgColor')).get('rgb')
                     required(rgb[-6:]==c['fill'][1:],'SO2A saved candidate fill')
+                for ref,fc in first.items():
+                    rgb=fills[int(xf[int(cells[ref].get('s'))].get('fillId'))].find('.//'+q('fgColor')).get('rgb')
+                    required(rgb[-6:]==fc['fill'][1:],'SO2 saved first comparison fill')
         required(len(paths)-len(edits)==21,'SO2A untouched sheet count')
     for name,sha in inv['preservation']['manual_workbook_sha256'].items():required(hashlib.sha256((BASE/name).read_bytes()).hexdigest()==sha,'SO2A immutable manual version')
     allowed_keys={'currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction','counts','rows','review_grid','review_sections'}
@@ -4979,7 +4998,7 @@ def main() -> None:
     if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
-    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED','SOSA_SO2D_SAVED_VERIFIED'):
+    if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED','SOSA_SO2D_SAVED_VERIFIED','SOSA_SO2E_SAVED_VERIFIED'):
         verify_sosa_opportunities(doc,'SO-'+doc['currentEvidenceCheckpoint'].split('_')[1][2:])
         return
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:

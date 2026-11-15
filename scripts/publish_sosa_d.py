@@ -7511,11 +7511,22 @@ def sosa_opportunity_spec(packet='SO-2A'):
     for n,row in enumerate(m['review_grid'][len(base['review_grid']):],len(base['review_grid'])+1):
         divider=n-1 in m['review_sections'];template=base['review_sections'][-1]+1 if divider else len(base['review_grid']);appended.append({'range':f'A{n}:P{n}','template':f'A{template}:P{template}','values':row,'height':34 if divider else 330})
     sheets['Master Crosswalk']={'cells':cells,'heights':heights,'new_rows':appended,'fills':{r['SO2_source_correspondence']['cell']:r['SO2_source_correspondence']['fill'] for r in new}}
+    for change in o['qualified_existing_rows']:
+        if change.get('first_source_classification'):
+            sheets['Master Crosswalk']['fills'][change['master_cell']]=change['first_source_classification']['fill']
     with zipfile.ZipFile(io.BytesIO(f3_baseline(BOOK,o['baseline_commit']))) as z:
         rt=ET.fromstring(z.read(old.sheetpaths(z)['DIM Register']));register={c.get('r'):f3_cell_text(c) for c in rt.iter(q('c'))}
     positions={r['row_id']:n+2 for n,r in enumerate(base['rows'])};rc={}
     for change in o['qualified_existing_rows']:
         n=positions[change['row_id']];ref='O'+str(n);rc[ref]=register.get(ref,'')+' | '+m['rows'][n-2][key+'_qualification']['rationale']
+        if change.get('first_source_classification'):
+            # A first comparison replaces the unassessed placeholder in every SOSA register field.
+            sid=', '.join(change['first_source_classification']['source_ids'])
+            rc[ref]=m['rows'][n-2][key+'_qualification']['rationale']
+            rc['J'+str(n)]=sid
+            rc['K'+str(n)]='PARTIAL / COMMON_CANDIDATE; '+change['first_source_classification']['rationale']
+            rc['L'+str(n)]='C239 Edition 1.1; §12.2.2 PDF180–184 and Rule 12.2.6-3 PDF188. Native companions/external SYSLOG original remain unaudited.'
+            rc['P'+str(n)]=sid+'; SO2_source_opportunity_assessments/'+packet+'; original pointers/hashes retained.'
         for field,edit in change.get('field_changes',{}).items():rc[{'label':'B','definition':'C'}[field]+str(n)]=edit['after']
     rr=[]
     for n,r in enumerate(new,len(base['rows'])+2):
@@ -7558,6 +7569,15 @@ def sosa_opportunity_spec(packet='SO-2A'):
           'B23':o['one_next']+' Eight further bounded steps estimated. AAS acceptance is separate.',
           'B28':'6,576 comparison values, four new fills and the clarified security-state definition checked; prior 659 classifications, 21 untouched sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
         sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2D; classification is not adoption','B23':'555 colored / 108 held comparisons. One common slot-identity candidate (blue); three specialized latch/startup candidates (amber). Seven prior comparisons clarified without classification changes.','B24':'384 information rows; 411 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2D boundary','B28':'217 records: 138 represented, 22 supporting additions, four supporting clarification, 40 source-specific/no row, 13 held. Records are not distinct concepts or rows. Next SO-2E only; AAS acceptance pending.'})
+    if packet=='SO-2E':
+        guidance.update({'A1':'CURRENT 15 NOV 2026 — SOSA SO-2E complete','B1':'393 information rows in the same 26-sheet master. F3 accepted; SOSA bounded PARTIAL retained; AAS acceptance pending. M00/M01 frozen.',
+          'B17':'SO-2E: all 496 task/RF/host/transport/service records accounted for; nine candidates added and ten existing SOSA comparisons qualified, including the first SOSA classification on the existing audit-record row.',
+          'B19':'393 information rows; 673 source classifications: 565 colored and 108 held. Twenty-two held source records are a separate count, not additional held comparison cells.',
+          'B21':'Original C239 PDF141–207 and 372–383 text read; eight decisive table/text pages visually inspected. Original source grades and prior decisions retained; no new edition, external-standard, full figure or native-companion audit.',
+          'B22':'New: identified tasks; module assignments/resources; key inventory; cryptographic associations; calibration state/result; quantitative spatial resolution; frequency-band power ceiling/release; stream context; virtual discrete state. Five common/four specialized candidates; no adopted requirements.',
+          'B23':o['one_next']+' Seven further bounded steps estimated. AAS acceptance remains separate.',
+          'B28':'6,736 comparison values, nine new candidate fills and one first audit comparison fill checked. All 663 prior classifications, 21 unaffected sheets and M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'})
+        sheets['Legend']['cells'].update({'A1':'CURRENT LEGEND — SOSA SO-2E; classification is not adoption','B23':'565 colored / 108 held comparisons. Nine new rows: five common (blue), four specialized (amber). Existing audit row receives its first SOSA common classification; all 663 prior classifications retained.','B24':'393 information rows; 421 × 16 comparison grid. Earlier step counts remain historical.','A28':'Current SO-2E boundary','B28':'496 records: 289 represented, 60 supporting additions, 47 supporting clarifications, 78 source-specific/no row, 22 held. Ten existing comparisons qualified; no record-to-row count equivalence. Next SO-2F only; AAS acceptance pending.'})
     for name in ('Summary','Validation','Legend'):
         sheets[name]['heights']={f'A{re.search(r"\d+",ref).group()}:B{re.search(r"\d+",ref).group()}':max(60,14*math.ceil(len(value)/95)+22) for ref,value in sheets[name]['cells'].items() if ref.startswith('B')}
     return {'packet':packet,'baseline_commit':o['baseline_commit'],'sheets':sheets}
@@ -7627,7 +7647,7 @@ def publish_sosa_opportunity(authored_path, packet='SO-2A'):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED","SOSA_SO2C_SAVED_VERIFIED","SOSA_SO2D_SAVED_VERIFIED"):
+    if checkpoint in ("SOSA_SO2A_SAVED_VERIFIED","SOSA_SO2B_SAVED_VERIFIED","SOSA_SO2C_SAVED_VERIFIED","SOSA_SO2D_SAVED_VERIFIED","SOSA_SO2E_SAVED_VERIFIED"):
         from check_dim_crosswalk_step06 import verify_sosa_opportunities
         packet='SO-'+checkpoint.split('_')[1][2:]
         verify_sosa_opportunities(load(MASTER),packet)
