@@ -1,5 +1,29 @@
 # AAS09 — Industrial submodel templates (14 November 2026)
 
+## O6-2 reconciliation — 15 November 2026
+
+All 37 retained AAS09 findings have explicit dispositions in `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O6_2_native_review`, including four historically uncited findings. The original findings, contact grades and ten holds remain unchanged. Three templates received targeted original text and selected native-field reads; four table pages were visually inspected. All twelve base PDF/JSON/AASX SHA-256 values match the prior source records; unchanged contact is reused at the same immutable pin, not presented as a fresh whole-corpus audit.
+
+| Result | Information preserved | Why it merits this treatment |
+|---|---|---|
+| Specialized candidate `AAS-O6-REFERENCE-DESIGNATION` | Engineering designation, code context and function/product/location/type/other aspect | A contextual engineering designation differs from global asset identity and physical installation. This practice applies to engineered system documentation; its codes are not universal identifiers. |
+| Common candidate `AAS-O6-PRODUCT-CLASS` | Assigned product class and classification-system context | Product name and property definitions do not identify the product's classification. Multiple classes do not establish a complete/coherent technical-property set or conformance. |
+| Common candidate `AAS-O6-CAPABILITY-CONDITION` | Conditions on one capability's properties, their targets and applicability phases | Value ranges and generic qualifiers do not express which capability/property a condition governs or when it must hold. This is a declaration, not readiness or verified execution. |
+| Common candidate `AAS-O6-CAPABILITY-DEPENDENCY` | Constrained/constraining capability roles and temporal applicability | Dependencies between capabilities have different subjects from conditions on one capability. Before/during/after requirements do not prove that any capability ran or prerequisite was fulfilled. |
+| Qualified `AAS-O2-LOGICAL-RELATION` | Functional composition versus generalization | Extend the existing semantic relationship row; functional sub-capabilities are not physical parts. Preserve the earlier generic endpoint/version and annotation qualifications. |
+
+The three blue candidates identify optional information potentially useful across equipment domains. Their native encodings do not, by themselves, make them specialized. The amber designation candidate concerns a particular engineering reference-designation practice. Neither color is adoption, universality, source completeness or runtime proof; no fields are added merely for every native attribute or enum value.
+
+Original evidence: IDTA 02011-1 v1.0, sections 2.2.3 and 2.4–2.5, PDF pages 6, 9–11 and 14–17, supports engineering aspects/designations; IDTA 02003 v2.0, PDF pages 5 and 11–13, supports product classification; IDTA 02020 v1.0, PDF pages 13, 15–16 and 26–35, distinguishes functional relations and property/transition constraints. Immutable source URLs, exact per-finding locators, newly read overlaps, selected native paths and visual contact are retained in the O6-2 record. These template editions retain their AAS 3.0/3.1 targets; they are not silently upgraded to metamodel 3.2.
+
+A provenance correction is explicit: historical `AAS09-F022.git_blob` was `6c5677ff11832f1d30ac9b3db61559110ab4ea0a`; the cached bytes and fresh GitHub readback at commit `5285185b1ef9425fe45068bcbda8faaf74f3eb89` identify `ce9540a38e1232ee3cdd38e7e2939304ea5ed786`. The recorded SHA-256 remains `09714e675af3e921bf333dccbd40017478047e336671521cea520bcdb8c0e30d`, and parsed JSON matches. The source content and research meaning did not change; the historical record is preserved with this correcting record, not silently rewritten.
+
+The same master/workbook now contains 361 information rows and 640 source-bearing comparisons (532 colored, 108 held). All 636 prior classifications remain; 356 earlier rows are unchanged in full and one relationship comparison/register entry is qualified. All new case/donor positions have explicit statuses. M00/M01 are frozen, no M02 was created, and all 21 untouched worksheet parts are preserved.
+
+All AAS09 holds remain: prefix/semantic-reference/IEC-edition conflicts, hierarchy/placeholder/future-topology limits, TechnicalData area/classification/label/list issues, capability roles/alternatives/cardinality/prose-rule limits, undeveloped generic Skill and MTP compatibility, unread external originals, thirteen unlocated example packages, mixed editions/publication variants, and bounded native-field coverage. Neither the synthetic samples nor dependency/condition declarations demonstrate any of the four project cases, physical installation, readiness or execution. See the current PITON and publication record for delivery status. O7 is a separate owner-authorized reconciliation and closeout proposal; AAS is not automatically closed or adopted.
+
+## Historical AAS09 review — 14 November 2026
+
 **Bounded original-source review; Asset Administration Shell (AAS) donor remains ACTIVE/incomplete.** Authorized step AAS09 only, on `research/dim-profile-v2`, preflight `124205c41647d97d31d56910a0c1c61b474fb8b8`. This increment examines the four application templates already in the 182-artifact roster, rather than adding the full Industrial Digital Twin Association (IDTA) catalog. No Domain Information Model (DIM) or OGC API – Connected Systems (CSAPI) Profile decisions are made.
 
 ## What this adds in plain English

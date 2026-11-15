@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O6_1_COMPLETE",
+  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O6_2_COMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
+  "one_next": "Await owner Proceed for O7 only: final AAS reconciliation and owner-facing closeout proposal, preserving source holds and adoption gates. Stop for owner disposition; no automatic donor transition or model adoption.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10132,17 +10132,17 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS_O6_1_SAVED_VERIFIED",
-    "rows": 357,
-    "grid": "379x16",
+    "checkpoint": "AAS_O6_2_SAVED_VERIFIED",
+    "rows": 361,
+    "grid": "384x16",
     "AAS_column": "G",
     "same_workbook": true,
     "comparison_lag": 0,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
-    "status": "O6_1_COMPLETE__O6_2_PENDING",
-    "workbook_metadata_lag": "ZERO: current O6_1 guidance refreshed; labeled historical checkpoints retained."
+    "next": "Await owner Proceed for O7 only: final AAS reconciliation and owner-facing closeout proposal, preserving source holds and adoption gates. Stop for owner disposition; no automatic donor transition or model adoption.",
+    "status": "O6_2_COMPLETE__O7_PENDING",
+    "workbook_metadata_lag": "ZERO: current O6_2 guidance refreshed; labeled historical checkpoints retained."
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -74519,6 +74519,2202 @@
         }
       ],
       "handoff": "Later metadata-only commit records observed publication/readback/checks. No research or workbook changes. O6-2 not started."
+    }
+  },
+  "AAS_O6_2_native_review": {
+    "date": "2026-11-15",
+    "timezone": "America/New_York",
+    "status": "O6_2_COMPLETE__O7_PENDING_OWNER_PROCEED",
+    "preflight_head": "dab42da47f58ff41f58182d2325ed8de136d81b5",
+    "archive_branch": "archive/dim-crosswalk-pre-aas-o6-2-20261115",
+    "scope": "Owner Proceed: O6-2 only, 37 AAS09 industrial-template findings; stop before O7.",
+    "records": [
+      {
+        "source_id": "AAS09-N001",
+        "original_record": "#/AAS09/original_items/0",
+        "original_record_sha256": "ee0b07d82215f9da8cbebf58219fa053b04e3bf38ca67948554394c9664b881a",
+        "native_meaning": "Generic industrial asset hierarchies can describe product types, individual assets, designs and lifecycle structures. They do not by themselves report an observed installation.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          6,
+          7,
+          13
+        ],
+        "source_locator": "§§1.2–1.5, 2.1",
+        "edition": "1.1",
+        "source_standing": "definition",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DECLARED_HIERARCHY",
+        "row_ids": [
+          "S06-R005",
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Type/instance/lifecycle views, distributed hierarchy, entry-node management and type quantities remain declared structure, not an observed installed inventory. Existing rows preserve those distinctions; no additional physical-assembly claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N002",
+        "original_record": "#/AAS09/original_items/1",
+        "original_record_sha256": "c7adc80f9fd187cb9d26a123e51d30b834406c0a92d51d69843d20b66d9822bd",
+        "native_meaning": "Self-managed entities represent assets with their own shell; co-managed entities represent assets without one. EntryNode represents the asset administered by the containing shell.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          8,
+          14,
+          15
+        ],
+        "source_locator": "§1.5.1.1; Tables 3–4",
+        "edition": "1.1",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DECLARED_HIERARCHY",
+        "row_ids": [
+          "S06-R005",
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Type/instance/lifecycle views, distributed hierarchy, entry-node management and type quantities remain declared structure, not an observed installed inventory. Existing rows preserve those distinctions; no additional physical-assembly claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N003",
+        "original_record": "#/AAS09/original_items/2",
+        "original_record_sha256": "dc8ae530a3487846b53462993a4466887a85ee51e77ce2ae72828141f8b1d558",
+        "native_meaning": "Full, OneDown and OneUp distribute hierarchy information differently. OneUp supplies a path toward parents and does not provide an efficiently reconstructable complete bill of material.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          8,
+          9,
+          10
+        ],
+        "source_locator": "§§1.5.1.3–1.5.1.4; Figure 1; Table 2",
+        "edition": "1.1",
+        "source_standing": "Permission / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DECLARED_HIERARCHY",
+        "row_ids": [
+          "S06-R005",
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Type/instance/lifecycle views, distributed hierarchy, entry-node management and type quantities remain declared structure, not an observed installed inventory. Existing rows preserve those distinctions; no additional physical-assembly claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N004",
+        "original_record": "#/AAS09/original_items/3",
+        "original_record_sha256": "ea0e77eabbceaff982297d191cdb0339929ccf6baac9749ab1b50735c1be93cd",
+        "native_meaning": "One archetype per submodel; HasPart or IsPartOf has EntryNode/Node endpoints in the same submodel. Full and OneDown may be combined across submodels; OneUp must not be mixed into that combination.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          11,
+          15,
+          16,
+          17,
+          18
+        ],
+        "source_locator": "§1.5.1.5; Tables 4–5",
+        "edition": "1.1",
+        "source_standing": "Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DECLARED_HIERARCHY",
+        "row_ids": [
+          "S06-R005",
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Type/instance/lifecycle views, distributed hierarchy, entry-node management and type quantities remain declared structure, not an observed installed inventory. Existing rows preserve those distinctions; no additional physical-assembly claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N005",
+        "original_record": "#/AAS09/original_items/4",
+        "original_record_sha256": "294f4312e563b730bc5ebd3f4113d7bc668e61ff70a25bbeecb161c02114e073",
+        "native_meaning": "SameAs connects representations of an asset, potentially across submodels. The Node table permits the second endpoint to be an Entity in another specification; narrower EntryNode/Node wording elsewhere remains a qualification.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          11,
+          15,
+          17
+        ],
+        "source_locator": "SameAs in design decisions and Tables 4–5",
+        "edition": "1.1",
+        "source_standing": "Rule / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_REPRESENTATION_LINK",
+        "row_ids": [
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "SameAs links representations in native hierarchy context. Reuse original contact and retain endpoint wording conflict; no identity merger or automatic cross-template equivalence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N006",
+        "original_record": "#/AAS09/original_items/5",
+        "original_record_sha256": "f59acba0482c8cdde48808e11a221d32152242b0bce29fcb487f0d1712a76c5d",
+        "native_meaning": "BulkCount is an optional unsignedLong for quantities of type assets, such as screw types. It is not a count of individually identified installed equipment.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          11,
+          18
+        ],
+        "source_locator": "BulkCount; Table 5",
+        "edition": "1.1",
+        "source_standing": "Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DECLARED_HIERARCHY",
+        "row_ids": [
+          "S06-R005",
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Type/instance/lifecycle views, distributed hierarchy, entry-node management and type quantities remain declared structure, not an observed installed inventory. Existing rows preserve those distinctions; no additional physical-assembly claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N007",
+        "original_record": "#/AAS09/original_items/6",
+        "original_record_sha256": "8cf553f12322e2d16e7ca994c55486722d0ddf2b8bfee8ce5156ba6b80d99729",
+        "native_meaning": "Detailed connection topology, sockets, plugs and connection anchors appear in future-extension discussion. They are not established requirements of the base hierarchy template.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          11,
+          12
+        ],
+        "source_locator": "§1.6 and §1.6.1",
+        "edition": "1.1",
+        "source_standing": "future",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_FUTURE_TOPOLOGY_HOLD",
+        "row_ids": [
+          "S06-R008"
+        ],
+        "relation": "NO_ESTABLISHED",
+        "rationale": "Connections, sockets, plugs and anchors are future work in this edition. Keep the external-connection comparison held; no new topology evidence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N008",
+        "original_record": "#/AAS09/original_items/7",
+        "original_record_sha256": "73977b28c79c7a00df5a21f504342a179f2e16cbd37cf89d193551c1eb28a5cb",
+        "native_meaning": "Base native files repeat a semantic EntryNode identifier as three globalAssetIds and include EMPTY relationship endpoints. Later patch notes identify corrections; placeholders are not real equipment identities or verified relations.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          14,
+          15,
+          17,
+          18
+        ],
+        "source_locator": "Base JSON/AASX selected fields; README patches 1.1.3/1.1.4",
+        "edition": "1.1",
+        "source_standing": "implementation detail / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_NATIVE_PLACEHOLDER_LIMIT",
+        "row_ids": [
+          "S06-R004",
+          "S06-R007"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Repeated asset IDs and empty endpoints are template placeholders. They do not identify project equipment or demonstrate valid installation; later patch notes are not substitute base-edition evidence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N009",
+        "original_record": "#/AAS09/original_items/8",
+        "original_record_sha256": "1b3baffd4f3f71a5c35d5dd0f473069b0ae9324306e1e8727bc09782bba90202",
+        "native_meaning": "Function, product, location, type and other aspects provide distinct views. One aspect is modeled per submodel characteristic; nodes must use the corresponding aspect semantic identity. A location may be planned or actual.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/IDTA%2002011-1_Submodel_BoM_Extension%20based%20on%20IEC%2081346.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "pdf_pages": [
+          6,
+          7,
+          9,
+          10
+        ],
+        "source_locator": "Scope; §2.2.1; Table 2",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+            "pages": [
+              6,
+              9,
+              10
+            ]
+          }
+        ],
+        "disposition": "NEW_ENGINEERING_DESIGNATION",
+        "row_ids": [
+          "AAS-O6-REFERENCE-DESIGNATION",
+          "S06-R004",
+          "S06-R009",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain contextual reference designations and separate aspect views. ReferenceDesignation links are non-hierarchical; planned/actual location is not proof of host installation. Prefix/semantic-ID/nesting/IEC-edition conflicts remain visible, not silently normalized.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N010",
+        "original_record": "#/AAS09/original_items/9",
+        "original_record_sha256": "ddb34a46ac697f95339f947a265d2035c2eef3673632e4dec80fdd8cbc1551ce",
+        "native_meaning": "ReferenceDesignation groups five optional aspect relationship kinds. These links are non-hierarchical; they connect an entity to its aspect representation rather than establishing physical component containment.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/IDTA%2002011-1_Submodel_BoM_Extension%20based%20on%20IEC%2081346.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "pdf_pages": [
+          10,
+          11
+        ],
+        "source_locator": "§2.2.3; Table 3",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+            "pages": [
+              10,
+              11
+            ]
+          }
+        ],
+        "disposition": "NEW_ENGINEERING_DESIGNATION",
+        "row_ids": [
+          "AAS-O6-REFERENCE-DESIGNATION",
+          "S06-R004",
+          "S06-R009",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain contextual reference designations and separate aspect views. ReferenceDesignation links are non-hierarchical; planned/actual location is not proof of host installation. Prefix/semantic-ID/nesting/IEC-edition conflicts remain visible, not silently normalized.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N011",
+        "original_record": "#/AAS09/original_items/10",
+        "original_record_sha256": "a80e71620baeda997a12efb5c08184ec7ca07afc041548c4bbad5c5e97cac1f9",
+        "native_meaning": "PrefixLevel, optional HierarchyPrefix, three letter-code levels and AspectNumber support contextual engineering designations. Rules for deriving an asset identifier across distributed structures are explicitly outside this template.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/IDTA%2002011-1_Submodel_BoM_Extension%20based%20on%20IEC%2081346.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "pdf_pages": [
+          8,
+          10,
+          14,
+          15
+        ],
+        "source_locator": "§1.3.2; §2.2.2; Tables 6–7",
+        "edition": "1.0",
+        "source_standing": "definition / Rule / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+            "pages": [
+              10,
+              14,
+              15
+            ]
+          }
+        ],
+        "disposition": "NEW_ENGINEERING_DESIGNATION",
+        "row_ids": [
+          "AAS-O6-REFERENCE-DESIGNATION",
+          "S06-R004",
+          "S06-R009",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain contextual reference designations and separate aspect views. ReferenceDesignation links are non-hierarchical; planned/actual location is not proof of host installation. Prefix/semantic-ID/nesting/IEC-edition conflicts remain visible, not silently normalized.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N012",
+        "original_record": "#/AAS09/original_items/11",
+        "original_record_sha256": "7c5178dcb0768838a2901f0733145f45633977b27b41f0479e404411f4483881",
+        "native_meaning": "FullFilledBy targets ProductAspectNode; LocatedAt targets LocationAspectNode; FullFills targets FunctionAspectNode. These are aspect relations, not direct sensing/command or coordinate contracts.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/IDTA%2002011-1_Submodel_BoM_Extension%20based%20on%20IEC%2081346.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "pdf_pages": [
+          16,
+          17
+        ],
+        "source_locator": "Tables 8–10; SM_IEC81346_001–003",
+        "edition": "1.0",
+        "source_standing": "Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+            "pages": [
+              16,
+              17
+            ]
+          }
+        ],
+        "disposition": "NEW_ENGINEERING_DESIGNATION",
+        "row_ids": [
+          "AAS-O6-REFERENCE-DESIGNATION",
+          "S06-R004",
+          "S06-R009",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain contextual reference designations and separate aspect views. ReferenceDesignation links are non-hierarchical; planned/actual location is not proof of host installation. Prefix/semantic-ID/nesting/IEC-edition conflicts remain visible, not silently normalized.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N013",
+        "original_record": "#/AAS09/original_items/12",
+        "original_record_sha256": "5e9cd6707ad8d2665bcd05cb5c1b9fc2fbee5935e2b2636b5f36e38221293da9",
+        "native_meaning": "Type prefix is % in scope but & in Table 2. Entry-node nesting/semantic-ID spellings differ, and native semantic references include spaces or a leading bracket. The native skeleton lists several aspect alternatives together; it is not a compliant instantiated single-aspect structure. Scope names IEC81346 Part1 2021, while bibliography [8] names IEC81346-1:2009; the intended IEC edition is unresolved.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/IDTA%2002011-1_Submodel_BoM_Extension%20based%20on%20IEC%2081346.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "pdf_pages": [
+          6,
+          9,
+          10,
+          12,
+          13,
+          14,
+          22
+        ],
+        "source_locator": "Scope, Table 2, Tables 4–6 and base native fields",
+        "edition": "1.0",
+        "source_standing": "Observation / unresolved",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+            "pages": [
+              6,
+              9,
+              10,
+              14
+            ]
+          }
+        ],
+        "disposition": "NEW_ENGINEERING_DESIGNATION",
+        "row_ids": [
+          "AAS-O6-REFERENCE-DESIGNATION",
+          "S06-R004",
+          "S06-R009",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain contextual reference designations and separate aspect views. ReferenceDesignation links are non-hierarchical; planned/actual location is not proof of host installation. Prefix/semantic-ID/nesting/IEC-edition conflicts remain visible, not silently normalized.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N014",
+        "original_record": "#/AAS09/original_items/13",
+        "original_record_sha256": "d57ae0c54c07af0d40d80a91220dcaf7ba8b269a63497d1ace378df0523a1fd1",
+        "native_meaning": "Technical data is selected for human comprehension for products, types or instances. It need not form a complete classification-system class; the use case also treats a supplier as functioning as manufacturer.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          3,
+          5
+        ],
+        "source_locator": "§§1.2–1.3; §2.1",
+        "edition": "2.0",
+        "source_standing": "definition",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+            "pages": [
+              5
+            ]
+          }
+        ],
+        "disposition": "RETAIN_PRODUCT_AND_SUPPLIER_METADATA",
+        "row_ids": [
+          "S06-R001",
+          "S06-R002",
+          "S06-R005"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Human-readable type/instance technical data and supplier-as-manufacturer terminology qualify existing product metadata. Article/order identifiers do not become hardware serial numbers or universal manufacturer identity.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N015",
+        "original_record": "#/AAS09/original_items/14",
+        "original_record_sha256": "fa88f47400bbe34e732985a50fa47b1663fe502e142c122d27f70bc8b70eac3a",
+        "native_meaning": "GeneralInformation contains manufacturer name, product designation, article number, order code and optional logo/images. Product designation is short product text; article/order identifiers are not individual hardware serial numbers.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "source_locator": "§§3.2–3.3; Tables 2–4",
+        "edition": "2.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+            "pages": [
+              11
+            ]
+          }
+        ],
+        "disposition": "RETAIN_PRODUCT_AND_SUPPLIER_METADATA",
+        "row_ids": [
+          "S06-R001",
+          "S06-R002",
+          "S06-R005"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Human-readable type/instance technical data and supplier-as-manufacturer terminology qualify existing product metadata. Article/order identifiers do not become hardware serial numbers or universal manufacturer identity.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N016",
+        "original_record": "#/AAS09/original_items/15",
+        "original_record_sha256": "e533d7352f07ba870907c76113fe86e8e210ce5d6973fff684af1f1df5b56f3f",
+        "native_meaning": "ProductClassifications records system/version/URL, class identity/code/name and an optional reference to a technical-property area. Classification alone does not establish a complete or coherent property set.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          5,
+          11,
+          12,
+          13
+        ],
+        "source_locator": "§§2.1, 3.4; Tables 5–6",
+        "edition": "2.0",
+        "source_standing": "definition / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+            "pages": [
+              5,
+              11,
+              12,
+              13
+            ]
+          }
+        ],
+        "disposition": "NEW_PRODUCT_CLASSIFICATION",
+        "row_ids": [
+          "AAS-O6-PRODUCT-CLASS"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Explicit product class and classification-system context deserve their own information need. Multiple systems/classes do not establish completeness, coherence or conformance of the associated technical-property set.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N017",
+        "original_record": "#/AAS09/original_items/16",
+        "original_record_sha256": "ab6d1f0b65484f850261388a522ccb784a5e27158ec933b3dfa64b6a2e5e23c2",
+        "native_meaning": "TechnicalPropertyAreas supports dictionary, manufacturer and consortium semantics plus arbitrary element shapes. Human-readable sections do not themselves create machine semantics; property semantic identity must be assessed separately.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          5,
+          13,
+          14,
+          15,
+          16
+        ],
+        "source_locator": "§3.5; Tables 7–8",
+        "edition": "2.0",
+        "source_standing": "definition / Permission",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+            "pages": [
+              5,
+              13
+            ]
+          }
+        ],
+        "disposition": "RETAIN_PROPERTY_AREA_SCOPE",
+        "row_ids": [
+          "ISA-K-PROPERTY-DECL",
+          "AAS-O2-ASPECT-GROUP",
+          "AAS-O2-DATA-SPEC"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Property areas can use dictionary, manufacturer or consortium semantics and varied element forms. Display sections and the TechnicalData naming/frame rule do not impose a new DIM class hierarchy or prove machine semantics.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N018",
+        "original_record": "#/AAS09/original_items/17",
+        "original_record_sha256": "600a6ac755a5f9ef7bcb561aedf199912990c9046a2097438f7b277d2a6d53c0",
+        "native_meaning": "SpecificDescriptions holds use-case content not completely defined through classification standards. Annex C directs such content away from ProductClassifications/TechnicalPropertyAreas and requires this frame when a submodel title uses Technical Data.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          19,
+          20,
+          21,
+          23
+        ],
+        "source_locator": "§3.8; Tables 11–12; Annex C",
+        "edition": "2.0",
+        "source_standing": "Rule / Permission",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_PROPERTY_AREA_SCOPE",
+        "row_ids": [
+          "ISA-K-PROPERTY-DECL",
+          "AAS-O2-ASPECT-GROUP",
+          "AAS-O2-DATA-SPEC"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Property areas can use dictionary, manufacturer or consortium semantics and varied element forms. Display sections and the TechnicalData naming/frame rule do not impose a new DIM class hierarchy or prove machine semantics.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N019",
+        "original_record": "#/AAS09/original_items/18",
+        "original_record_sha256": "70b1ead11fdbd30f728425769ac5b03b1257e3b56d112845564c46fda1b839dd",
+        "native_meaning": "DisplayName is prioritized, followed by concept-name fallbacks and finally idShort. The table repeats preferredName at its shorter-name tier; the subsequent recommendation mentions shortName. Preserve the ambiguity rather than inventing a definitive fallback algorithm.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          16,
+          17
+        ],
+        "source_locator": "§3.6; Table 9",
+        "edition": "2.0",
+        "source_standing": "Rule / Recommendation / unresolved",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_LABEL_FALLBACK_CONFLICT",
+        "row_ids": [
+          "AAS-O2-ELEMENT-LABEL"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Display-name fallback remains presentation metadata; the repeated ambiguous shortName tier is preserved, not resolved by invention.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N020",
+        "original_record": "#/AAS09/original_items/19",
+        "original_record_sha256": "1ed35ffd1458dd91d6f4fb79b561ec1aab60ffc894f2b326dcb46440ee545a3e",
+        "native_meaning": "TextStatement describes manufacturer assertions/application conditions. Despite its name, ValidDate is defined as the date on which the product/process/norm becomes invalid; it is not a measurement timestamp or unqualified valid-from date.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          17,
+          18
+        ],
+        "source_locator": "§3.7; Table 10; native ConceptDescription",
+        "edition": "2.0",
+        "source_standing": "definition",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_MANUFACTURER_ASSERTION",
+        "row_ids": [
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "TextStatement is a manufacturer assertion. ValidDate is invalid-from in this template, not valid-from, observation sample time or independent assurance.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N021",
+        "original_record": "#/AAS09/original_items/20",
+        "original_record_sha256": "5ee34e68b3be40e16a188e2175b8088bcbcc0f8229656b618f2636b408439ebc",
+        "native_meaning": "Base prose says four areas but lists five, ECLASS version references differ, and native files contain repeated ExampleValue qualifiers and list-cardinality issues recognized in later patch notes. Patch artifacts have not been exhaustively audited or substituted into the base review.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          3,
+          5,
+          7,
+          22,
+          23
+        ],
+        "source_locator": "Base PDF/native files and patch README 2.0.1–2.0.4",
+        "edition": "2.0",
+        "source_standing": "Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+            "pages": [
+              5
+            ]
+          }
+        ],
+        "disposition": "RETAIN_TEMPLATE_AND_SAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-PRODUCT-CLASS",
+          "ISA-K-PROPERTY-DECL"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Keep area-count, classification-version, qualifier/list and patch discrepancies. The synthetic manufacturer/product sample is not evidence for any of the four project cases.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N022",
+        "original_record": "#/AAS09/original_items/21",
+        "original_record_sha256": "b7e06dbec265217bfa602cdfc5c06894c7b42814b2b48ee3e7674858ac91a197",
+        "native_meaning": "The publisher sample uses Manufacturer AG, IPS001 and example identifiers, with several classifications and differing property representations. This is a synthetic demonstration, not device evidence for any of the four project cases.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Technical_Data/2/0/IDTA%2002003_Template_TechnicalData.pdf",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "pdf_pages": [
+          6
+        ],
+        "source_locator": "§2.2 and selected original Sample JSON values",
+        "edition": "2.0",
+        "source_standing": "example",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_TEMPLATE_AND_SAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-PRODUCT-CLASS",
+          "ISA-K-PROPERTY-DECL"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Keep area-count, classification-version, qualifier/list and patch discrepancies. The synthetic manufacturer/product sample is not evidence for any of the four project cases.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N023",
+        "original_record": "#/AAS09/original_items/22",
+        "original_record_sha256": "9d4e9226b1d8d7ec012ea2d221e863a417d454cf3675ded583fbed9f9ea258ea",
+        "native_meaning": "Capability describes an implementation-independent industrial function. Required, Offered and NotAssigned are roles, with NotAssigned default when absent; they do not assert live readiness, a command catalogue or demonstrated execution.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          7,
+          19,
+          20
+        ],
+        "source_locator": "§1.2; CapabilityRoleQualifier",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              19,
+              20
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CAPABILITY_AND_PROPERTY_DECLARATIONS",
+        "row_ids": [
+          "ISA-K-CAPABILITIES",
+          "ISA-A-CAPABILITY-GROUP",
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required/Offered/NotAssigned describe capability roles, not readiness. Native containers and property representations remain declarations, not physical decomposition, observed values or universal value-range coverage.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N024",
+        "original_record": "#/AAS09/original_items/23",
+        "original_record_sha256": "84df57261628e7fb7b9e90bc0a737d6c909824944988860f14761c32ba1bc028",
+        "native_meaning": "CapabilitySet groups capability containers for a use case; each container holds one capability plus optional comments, property sets and relationships. These containers are information organization, not physical equipment decomposition.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          13,
+          14,
+          17,
+          18,
+          19
+        ],
+        "source_locator": "§§1.6.2–1.6.3; §2.2",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              13,
+              19
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CAPABILITY_AND_PROPERTY_DECLARATIONS",
+        "row_ids": [
+          "ISA-K-CAPABILITIES",
+          "ISA-A-CAPABILITY-GROUP",
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required/Offered/NotAssigned describe capability roles, not readiness. Native containers and property representations remain declarations, not physical decomposition, observed values or universal value-range coverage.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N025",
+        "original_record": "#/AAS09/original_items/24",
+        "original_record_sha256": "143de6d44b28460900c661b7d4dd0044443d04103dd2a609686ebb9f8061d783",
+        "native_meaning": "A capability property selects one of Range, Property, MultiLanguageProperty or a recursively constrained list. External semantics and units require separate definition references. These alternatives do not establish measured values or a universal sensor field type.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "source_locator": "§2.2.1; CapabilityPropertyType",
+        "edition": "1.0",
+        "source_standing": "Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_CAPABILITY_AND_PROPERTY_DECLARATIONS",
+        "row_ids": [
+          "ISA-K-CAPABILITIES",
+          "ISA-A-CAPABILITY-GROUP",
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required/Offered/NotAssigned describe capability roles, not readiness. Native containers and property representations remain declarations, not physical decomposition, observed values or universal value-range coverage.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N026",
+        "original_record": "#/AAS09/original_items/25",
+        "original_record_sha256": "b9260a5f1fc4be45e569f55ea1262f7c437be464d58e892231d95b160d80c6ae",
+        "native_meaning": "CapabilityComposedOf relates a composite capability to at least two subordinate capabilities; CapabilityGeneralizedBy points toward a more general capability. Functional composition and generalization are separate from physical part-of.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          26,
+          27,
+          28
+        ],
+        "source_locator": "§2.2.2.1–2.2.2.2",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              26,
+              27,
+              28
+            ]
+          }
+        ],
+        "disposition": "QUALIFY_EXISTING_LOGICAL_RELATION",
+        "row_ids": [
+          "AAS-O2-LOGICAL-RELATION",
+          "ISA-K-CAPABILITIES"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Composition relates capabilities to subordinate capabilities; generalization points to a more general capability. Extend the existing semantic-relationship comparison and preserve template cardinality/version limits; no physical containment or implemented skills.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N027",
+        "original_record": "#/AAS09/original_items/26",
+        "original_record_sha256": "8a23472a0a5fc7935109283270334417286c7820173888107ebf437df6fe0e0e",
+        "native_meaning": "Property constraints apply to properties of a single capability, using pre/invariant/post combinations and links to constrained properties. Operation, OCL, basic and custom alternatives have different representations; custom semantics remain unspecified.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          13,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "source_locator": "§1.6.1; ConstraintSet and PropertyConstraintContainer",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              13,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          }
+        ],
+        "disposition": "NEW_CAPABILITY_PROPERTY_CONDITION",
+        "row_ids": [
+          "AAS-O6-CAPABILITY-CONDITION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Single-capability property conditions have targets, applicability phases and native representations, distinct from generic value ranges, qualifiers and live readiness. Custom semantics and execution remain unestablished.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N028",
+        "original_record": "#/AAS09/original_items/27",
+        "original_record_sha256": "2b60ebd78fc5bf75be1c5c9a5667db8b99f9038eacc0693dc6e0365a85b588fa",
+        "native_meaning": "Transition constraints relate the constrained capability to another capability with temporal pre/invariant/post combinations. They describe dependencies rather than an observed execution sequence or command result.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          13,
+          34,
+          35
+        ],
+        "source_locator": "TransitionConstraintContainer; TransitionConditionalType",
+        "edition": "1.0",
+        "source_standing": "definition / Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              13,
+              34,
+              35
+            ]
+          }
+        ],
+        "disposition": "NEW_CAPABILITY_DEPENDENCY",
+        "row_ids": [
+          "AAS-O6-CAPABILITY-DEPENDENCY"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Cross-capability temporal dependencies differ from conditions on one capability. Keep both directed roles and before/during/after applicability without asserting execution, order observation or a command scheduler.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N029",
+        "original_record": "#/AAS09/original_items/28",
+        "original_record_sha256": "a8be12eb45fbc0f07e09f7daf11e34823c9355b241e54d4535a887184602be08",
+        "native_meaning": "Three named constraints require consistent first-level list types, a nonempty choice of constraint-container kinds, and agreement between chosen constraint representation and ConstraintType. The specification says these restrictions are not explicitly modeled in the accompanying template.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          15,
+          24,
+          29,
+          31,
+          33
+        ],
+        "source_locator": "SM-CapabilityDescription-1–3",
+        "edition": "1.0",
+        "source_standing": "Rule",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              15,
+              29,
+              31,
+              33
+            ]
+          }
+        ],
+        "disposition": "RETAIN_NATIVE_CONSTRAINT_RULES",
+        "row_ids": [
+          "AAS-O6-CAPABILITY-CONDITION",
+          "AAS-O6-CAPABILITY-DEPENDENCY",
+          "ISA-K-PROPERTY-DECL"
+        ],
+        "relation": "NATIVE_ONLY/RULE",
+        "rationale": "Three prose constraints govern list typing, nonempty constraint sets and representation-type matching. They are not explicitly modeled/enforced in the native template; retain that gap without claiming validation.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N030",
+        "original_record": "#/AAS09/original_items/29",
+        "original_record_sha256": "c589bc0fac610a994a4907060c5ae63d16810dc1e619054de245caa9e423664d",
+        "native_meaning": "Internal and cross-submodel relations have different targets. CapabilityRealizedBy expects a skill; the specification says a generic Skill submodel is not yet defined and the prior MTP inclusion submodel is not fully compatible.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          15,
+          16,
+          26
+        ],
+        "source_locator": "§§1.8.1–1.8.4; CapabilityRealizedBy",
+        "edition": "1.0",
+        "source_standing": "definition / unresolved",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              15,
+              16,
+              26
+            ]
+          }
+        ],
+        "disposition": "RETAIN_SKILL_AND_EXECUTION_BOUNDARIES",
+        "row_ids": [
+          "S06-R019",
+          "ISA-K-CAPABILITIES",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "rationale": "Internal/cross-submodel relation scope is retained. Generic Skill is undeveloped and MTP not fully compatible; a Type I file cannot execute an OperationConstraint. API availability is not observed device effect.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N031",
+        "original_record": "#/AAS09/original_items/30",
+        "original_record_sha256": "1bfe3e826fab80a51efe160267c82adace998d16e8cc7f554ed31567b35f74a4",
+        "native_meaning": "Serialized Type I exchanges cannot execute an OperationConstraint; Type II enables API interaction. Type III autonomous cooperation is described as an architectural use context, not provided runtime behavior or a live equipment-control binding.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          11,
+          12
+        ],
+        "source_locator": "§1.5.1–1.5.3",
+        "edition": "1.0",
+        "source_standing": "Rule / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SKILL_AND_EXECUTION_BOUNDARIES",
+        "row_ids": [
+          "S06-R019",
+          "ISA-K-CAPABILITIES",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "rationale": "Internal/cross-submodel relation scope is retained. Generic Skill is undeveloped and MTP not fully compatible; a Type I file cannot execute an OperationConstraint. API availability is not observed device effect.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N032",
+        "original_record": "#/AAS09/original_items/31",
+        "original_record_sha256": "ba17d7abbb6d1c090219d428fda9925488c6e30bc9400e3d298a0bcb6a5f01b0",
+        "native_meaning": "Native Boolean role placeholders are strings like [1, 0], alternative property/constraint entries coexist, and GeneralizedBySet cardinality differs from the PDF. Later notes report reference corrections. These skeletons and qualifiers do not independently enforce the prose choice constraints.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          19,
+          20,
+          23,
+          26,
+          31,
+          33
+        ],
+        "source_locator": "Base template selected JSON/AASX fields against PDF; patch 1.0.2 README",
+        "edition": "1.0",
+        "source_standing": "Observation / unresolved",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              19,
+              20,
+              26,
+              31,
+              33
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CAPABILITY_NATIVE_CONFLICTS",
+        "row_ids": [
+          "AAS-O6-CAPABILITY-CONDITION",
+          "AAS-O6-CAPABILITY-DEPENDENCY",
+          "ISA-K-CAPABILITIES",
+          "AAS-O2-LOGICAL-RELATION"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Boolean placeholder strings, coexisting alternatives, GeneralizedBySet cardinality and reference/patch discrepancies remain unresolved. Do not treat the template skeleton as an instance or valid runnable configuration.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N033",
+        "original_record": "#/AAS09/original_items/32",
+        "original_record_sha256": "3f1a7b9027c7ae1004131790163d5c896af41c6e81e39b2c3605601079c964eb",
+        "native_meaning": "CSS models, ontologies, manufacturing standards and skill specifications are dependencies or recommended semantic sources. Their citation or reuse in examples is not an independent audit of those originals or approval of a project hierarchy.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          7,
+          8,
+          9,
+          16,
+          37,
+          38,
+          39,
+          42,
+          43
+        ],
+        "source_locator": "External references; Annex B; bibliography",
+        "edition": "1.0",
+        "source_standing": "Recommendation / Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+            "pages": [
+              16
+            ]
+          }
+        ],
+        "disposition": "RETAIN_EXTERNAL_SOURCE_HOLD",
+        "row_ids": [],
+        "relation": "UNREAD_EXTERNAL_REFERENCES",
+        "rationale": "CSS/ontologies, manufacturing/skills and other externally cited originals were not independently audited. Bibliographic presence does not establish additional DIM coverage.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N034",
+        "original_record": "#/AAS09/original_items/33",
+        "original_record_sha256": "b047a27c98812440d57f47af9ac1fbc51795183681859670937d44930630c6b8",
+        "native_meaning": "Thirteen named example AASX files are described in Annex C but were not located in the selected published repository tree or linked by the checked catalog entry. Their descriptions were read; their native packages remain unavailable to this review, not proven permanently inaccessible.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          40,
+          41
+        ],
+        "source_locator": "Annex C; pinned repository recursive tree and publisher catalog",
+        "edition": "1.0",
+        "source_standing": "example / unresolved",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_MISSING_EXAMPLE_HOLD",
+        "row_ids": [],
+        "relation": "UNLOCATED_NATIVE_EXAMPLES",
+        "rationale": "All 13 Annex C AASX examples remain unlocated in the pinned tree/catalog. Descriptions are retained; absence at that pin does not prove permanent unavailability or justify inventing instance results.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N035",
+        "original_record": "#/AAS09/original_items/34",
+        "original_record_sha256": "2340e20065e2acf2651f1719ecc2b005bccae02f1d9d8a22ffd1146be68d2e15",
+        "native_meaning": "The publisher and GitHub Capability PDFs have different hashes. Normalized extracted text differs only in the contents entries; substantive extracted text matches. Binary/figure identity and release-history equivalence are not asserted. The other three PDFs are byte-identical to publisher downloads.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Capability%20Description/1/0/IDTA%2002020_Submodel_Capability_Description.pdf",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "pdf_pages": [
+          1,
+          2,
+          3,
+          7,
+          44
+        ],
+        "source_locator": "Publisher download versus pinned GitHub PDF",
+        "edition": "1.0",
+        "source_standing": "Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_PUBLISHER_PDF_LIMIT",
+        "row_ids": [],
+        "relation": "PARTIAL/PUBLICATION_VARIANT",
+        "rationale": "Reuse original normalized-text comparison: CAP publisher/GitHub PDFs differ in bytes; substantive normalized text matched within the original check. Do not extend that result to figures or binary equivalence; three other PDFs matched.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N036",
+        "original_record": "#/AAS09/original_items/35",
+        "original_record_sha256": "7fffca44a581e8d4e2fe258f22af228f4b15712130b959af94d68efb81a3b996",
+        "native_meaning": "Hierarchy and extension target metamodel/API 3.0; Technical Data targets 3.0/upcoming 3.1; Capability targets metamodel/API/AASX 3.1. Their template versions are not AAS v3.2 versions and migration to v3.2 is untested.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          7
+        ],
+        "source_locator": "Edition declarations across all four source specifications",
+        "edition": "1.1",
+        "source_standing": "Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_DISTINCT_TEMPLATE_EDITIONS",
+        "row_ids": [],
+        "relation": "SOURCE_VERSION_BOUNDARY",
+        "rationale": "BOM/EXT target AAS 3.0, TechnicalData 3.0/upcoming 3.1 and Capability 3.1. Their template versions are not AAS metamodel 3.2; no migration conformance is inferred.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS09-N037",
+        "original_record": "#/AAS09/original_items/36",
+        "original_record_sha256": "bb94405ab98165004e0fa58d5d3dfa967c47118cbae6c86294bea788230f4fbe",
+        "native_meaning": "All four specifications point to native AASX definitions. Selected names/types, semantic keys, entity IDs and cardinality qualifiers were compared for all 129 native template element occurrences and matched the corresponding JSON fields. This limited parity does not establish package/schema conformance, correct semantics or complete native-file review.",
+        "source_url": "https://github.com/admin-shell-io/submodel-templates/blob/5285185b1ef9425fe45068bcbda8faaf74f3eb89/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "pdf_pages": [
+          19
+        ],
+        "source_locator": "Annex A across all four specifications; native JSON/AASX comparison",
+        "edition": "1.1",
+        "source_standing": "Observation",
+        "inherited_coverage": "FULLY READ — cited text/table or explicitly selected native fields",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SELECTED_NATIVE_COVERAGE",
+        "row_ids": [],
+        "relation": "BOUNDED_SOURCE_CONTACT",
+        "rationale": "The original 129 native occurrences covered selected JSON/AASX fields only. Preserve all unreviewed attribute, translation, payload and schema/semantic-validation limits. Fresh selected paths and visual table pages are separately identified, without upgrading the old grade.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      }
+    ],
+    "targeted_original_contacts": [
+      {
+        "key": "EXT",
+        "source_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "e36ea9cf7b4fff00e645ac6e5f28cb2779d7b328214863baf60b7d65f4518507",
+        "text_pages_read": [
+          6,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          17
+        ],
+        "table_pages_visually_inspected": [
+          14
+        ],
+        "native_json_file": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Template_BoM_ExtensionbasedonIEC81346.json",
+        "native_fields_read": [
+          {
+            "path": "$.submodels[0].submodelElements[0].statements[0].statements[1]",
+            "idShort": "PrefixLevel",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/PrefixLevel/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].statements[0].statements[2]",
+            "idShort": "HierarchyPrefix",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/HierarchyPrefix/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.conceptDescriptions[8]",
+            "idShort": "PrefixLevel",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[9]",
+            "idShort": "HierarchyPrefix",
+            "modelType": "ConceptDescription"
+          }
+        ],
+        "grade": "SELECTED_ORIGINAL_TEXT_TABLES_AND_NATIVE_FIELDS_READ_THIS_STEP; other figures/fields and external originals not audited"
+      },
+      {
+        "key": "TECH",
+        "source_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "55af8d13a484944d8debfb8be8772d618cb92e759fb07bc7d971f02c925e6af7",
+        "text_pages_read": [
+          5,
+          11,
+          12,
+          13
+        ],
+        "table_pages_visually_inspected": [
+          12
+        ],
+        "native_json_file": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.json",
+        "native_fields_read": [
+          {
+            "path": "$.submodels[0].submodelElements[1].value[0].value[0]",
+            "idShort": "ClassificationSystem",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABL424#001"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[1].value[0].value[1]",
+            "idShort": "ClassificationSystemVersion",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAR710#003"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[1].value[0].value[3]",
+            "idShort": "ProductClassId",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABG776#003"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[1].value[0].value[4]",
+            "idShort": "ProductClassCodedName",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABK128#002"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[1].value[0].value[6]",
+            "idShort": "ReferenceToTechnicalPropertyArea",
+            "modelType": "ReferenceElement",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABL358#002"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.conceptDescriptions[12]",
+            "idShort": "ClassificationSystem",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[13]",
+            "idShort": "ClassificationSystemVersion",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[15]",
+            "idShort": "ProductClassId",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[16]",
+            "idShort": "ProductClassCodedName",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[18]",
+            "idShort": "ReferenceToTechnicalPropertyArea",
+            "modelType": "ConceptDescription"
+          }
+        ],
+        "grade": "SELECTED_ORIGINAL_TEXT_TABLES_AND_NATIVE_FIELDS_READ_THIS_STEP; other figures/fields and external originals not audited"
+      },
+      {
+        "key": "CAP",
+        "source_file": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "0d306f79465639dd40c50ca6e79d75e3a676f2e69b282650a1363f1fc8e1cf5c",
+        "text_pages_read": [
+          13,
+          15,
+          16,
+          19,
+          20,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "table_pages_visually_inspected": [
+          31,
+          34
+        ],
+        "native_json_file": "published/Capability Description/1/0/IDTA 02020_Template_Capability_Description.json",
+        "native_fields_read": [
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[1].value[0].value[0]",
+            "idShort": "CapabilityComposedOf",
+            "modelType": "RelationshipElement",
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[2].value[0]",
+            "idShort": "CapabilityGeneralizedBy",
+            "modelType": "RelationshipElement",
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[3].value[0].value[5]",
+            "idShort": "PropertyConditionalType",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[3].value[0].value[6].value[0]",
+            "idShort": "ConstraintHasProperty",
+            "modelType": "RelationshipElement",
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityRelations"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "ConstraintSet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "PropertyConstraintContainer"
+                },
+                {
+                  "type": "Property",
+                  "value": "BasicConstraint"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "PropertySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "PropertyContainer"
+                },
+                {
+                  "type": "Property",
+                  "value": "PropertyProperty"
+                }
+              ]
+            },
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[3].value[1].value[0]",
+            "idShort": "TransitionConstrainedBy",
+            "modelType": "RelationshipElement",
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilitySet"
+                },
+                {
+                  "type": "SubmodelElementCollection",
+                  "value": "CapabilityContainer"
+                },
+                {
+                  "type": "Capability",
+                  "value": "Capability"
+                }
+              ]
+            },
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.submodels[0].submodelElements[0].value[0].value[3].value[3].value[1].value[1]",
+            "idShort": "TransitionConditionalType",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0"
+                }
+              ]
+            }
+          },
+          {
+            "path": "$.conceptDescriptions[0]",
+            "idShort": "TransitionConditionalType",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[1]",
+            "idShort": "PropertyConditionalType",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[20]",
+            "idShort": "CapabilityComposedOf",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[23]",
+            "idShort": "CapabilityGeneralizedBy",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[32]",
+            "idShort": "ConstraintHasProperty",
+            "modelType": "ConceptDescription"
+          },
+          {
+            "path": "$.conceptDescriptions[34]",
+            "idShort": "TransitionConstrainedBy",
+            "modelType": "ConceptDescription"
+          }
+        ],
+        "grade": "SELECTED_ORIGINAL_TEXT_TABLES_AND_NATIVE_FIELDS_READ_THIS_STEP; other figures/fields and external originals not audited"
+      }
+    ],
+    "unchanged_original_file_checks": [
+      {
+        "source_id": "AAS09-F020",
+        "path": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "3d47da0d743cfa5ff92c40162887d02c4a671087f6756f5cee680e2ba36966ed",
+        "recorded_git_blob": "0a268956eb0ddce497963be5ee4ee666b118ebe1",
+        "verified_git_blob": "0a268956eb0ddce497963be5ee4ee666b118ebe1",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F022",
+        "path": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Template_HSEBoM.json",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "09714e675af3e921bf333dccbd40017478047e336671521cea520bcdb8c0e30d",
+        "recorded_git_blob": "6c5677ff11832f1d30ac9b3db61559110ab4ea0a",
+        "verified_git_blob": "ce9540a38e1232ee3cdd38e7e2939304ea5ed786",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F021",
+        "path": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Template_HSEBoM.aasx",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "51eef8cd49a647160e2a1123f7f8d613b963197eab6c6588e01ebe5d5008e805",
+        "recorded_git_blob": "61b133b68bfbb70d4e7ab065bb0980e0078ffc5e",
+        "verified_git_blob": "61b133b68bfbb70d4e7ab065bb0980e0078ffc5e",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F037",
+        "path": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Submodel_BoM_Extension based on IEC 81346.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "e36ea9cf7b4fff00e645ac6e5f28cb2779d7b328214863baf60b7d65f4518507",
+        "recorded_git_blob": "eaf893a5baa3c346880a6ca08a1a4a5f43b3ac8e",
+        "verified_git_blob": "eaf893a5baa3c346880a6ca08a1a4a5f43b3ac8e",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F039",
+        "path": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Template_BoM_ExtensionbasedonIEC81346.json",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "86a3f6733518c2da401971fc1726d0e815d152ab0a819de236abded15762106e",
+        "recorded_git_blob": "baf79b7e45f0a4848d5d1ed8a418e4052dd19224",
+        "verified_git_blob": "baf79b7e45f0a4848d5d1ed8a418e4052dd19224",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F038",
+        "path": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/IDTA 02011-1_Template_BoM_ExtensionbasedonIEC81346.aasx",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "15593b2a595b9f622ad15b8a31c86d188f4c35ce50bfb5c42150d343f44375db",
+        "recorded_git_blob": "9d97afd3150ce1182a71ce8e5e9720a866352af4",
+        "verified_git_blob": "9d97afd3150ce1182a71ce8e5e9720a866352af4",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F073",
+        "path": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "55af8d13a484944d8debfb8be8772d618cb92e759fb07bc7d971f02c925e6af7",
+        "recorded_git_blob": "4c6f2d582eef0e13f91ef8b6e32a8a67218724e8",
+        "verified_git_blob": "4c6f2d582eef0e13f91ef8b6e32a8a67218724e8",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F072",
+        "path": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.json",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "3cfcf9cf4db82108995795dad095265d8d20cb80c837c576deb8ecca9e3386a6",
+        "recorded_git_blob": "55bb91b51cc28f269cabf68f3542f4a8084e959b",
+        "verified_git_blob": "55bb91b51cc28f269cabf68f3542f4a8084e959b",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F071",
+        "path": "published/Technical_Data/2/0/IDTA 02003_Template_TechnicalData.aasx",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "3a1c00b13737ba202c9d2b139e062c778adf13de0b12104952f245c8dc09b114",
+        "recorded_git_blob": "012688efd09e7f16f2d9b7b21687f9f25bf31baa",
+        "verified_git_blob": "012688efd09e7f16f2d9b7b21687f9f25bf31baa",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F103",
+        "path": "published/Capability Description/1/0/IDTA 02020_Submodel_Capability_Description.pdf",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "0d306f79465639dd40c50ca6e79d75e3a676f2e69b282650a1363f1fc8e1cf5c",
+        "recorded_git_blob": "8ad598233826afe72dd9605fb6cf8e435d248db8",
+        "verified_git_blob": "8ad598233826afe72dd9605fb6cf8e435d248db8",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F105",
+        "path": "published/Capability Description/1/0/IDTA 02020_Template_Capability_Description.json",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "c7de3a10da908159970f8e8541ca0c1e8e1f412ae04e1231c2e242e30da12339",
+        "recorded_git_blob": "0c4beed8bfb7346026fefa2a3744b6a8bbfcabda",
+        "verified_git_blob": "0c4beed8bfb7346026fefa2a3744b6a8bbfcabda",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      },
+      {
+        "source_id": "AAS09-F104",
+        "path": "published/Capability Description/1/0/IDTA 02020_Template_Capability_Description.aasx",
+        "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+        "sha256": "7f50a682831ac3d8c2bbe5f1383bf0a2ab8a31d21625b5f610b341b308822a3a",
+        "recorded_git_blob": "0cb139b14f6bdca83fed2d3ef5985cbcf4de0d6f",
+        "verified_git_blob": "0cb139b14f6bdca83fed2d3ef5985cbcf4de0d6f",
+        "grade": "PINNED_BYTES_CHECKED; no full reread implied"
+      }
+    ],
+    "source_metadata_correction": {
+      "source_id": "AAS09-F022",
+      "path": "published/Hierarchical Structures enabling Bills of Material/1/1/IDTA 02011-1-1_Template_HSEBoM.json",
+      "commit": "5285185b1ef9425fe45068bcbda8faaf74f3eb89",
+      "sha256": "09714e675af3e921bf333dccbd40017478047e336671521cea520bcdb8c0e30d",
+      "recorded_git_blob": "6c5677ff11832f1d30ac9b3db61559110ab4ea0a",
+      "verified_git_blob": "ce9540a38e1232ee3cdd38e7e2939304ea5ed786",
+      "grade": "PINNED_BYTES_CHECKED; no full reread implied",
+      "provider_readback_blob": "ce9540a38e1232ee3cdd38e7e2939304ea5ed786",
+      "provider_readback": "GitHub fetch_file at the exact immutable source commit; parsed JSON equals cached original.",
+      "resolution": "Earlier git_blob metadata is incorrect; SHA-256 and source content are unchanged. Historical record preserved, this explicit correction governs subsequent provenance checks. No research meaning changed."
+    },
+    "source_efficiency": "Reuse unchanged findings and original source grades at the same pins; targeted passages, four table pages and selected native fields support the new decisions. Hash verification is provenance, not reading. No whole-corpus/figure/external audit or runtime claim.",
+    "new_candidate_row_ids": [
+      "AAS-O6-REFERENCE-DESIGNATION",
+      "AAS-O6-PRODUCT-CLASS",
+      "AAS-O6-CAPABILITY-CONDITION",
+      "AAS-O6-CAPABILITY-DEPENDENCY"
+    ],
+    "qualified_existing_rows": [
+      {
+        "row_id": "AAS-O2-LOGICAL-RELATION",
+        "before": {
+          "row_id": "AAS-O2-LOGICAL-RELATION",
+          "label": "Candidate — Semantically defined relationship and its annotations",
+          "display_row": 361,
+          "status": "AAS O2 provisional information-need candidate; NOT ADOPTED",
+          "definition": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied.",
+          "source_entry_ids": [
+            "AAS02-N006",
+            "AAS02-N030",
+            "AAS03-N011",
+            "AAS03-N012"
+          ],
+          "evidence_records": [
+            "AAS02-N006",
+            "AAS02-N030",
+            "AAS03-N011",
+            "AAS03-N012"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O2_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. [Sources: AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012; O2-LOGICAL-RELATION]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Semantically defined relationship and its annotations — NOT ADOPTED"
+          ],
+          "AAS_O2_source_correspondence": {
+            "donor": "IDTA-01001 Part 1 v3.2.0",
+            "source_ids": [
+              "AAS02-N006",
+              "AAS02-N030",
+              "AAS03-N011",
+              "AAS03-N012"
+            ],
+            "closest_prior_rows": [
+              "S06-R008",
+              "ISA-C-099",
+              "S06-R022"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "The existing rows describe particular physical or observation relationships. They do not represent a general declared relationship with its own meaning and qualifying annotations.",
+            "native_meaning": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied.",
+            "candidate_status": "COMMON_CANDIDATE",
+            "fill": "#D9EAF8",
+            "cell": "G361",
+            "original_source_locators": [
+              {
+                "source_id": "AAS02-N006",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc#L20-L38",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc",
+                "source_lines": [
+                  20,
+                  38
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS02-N030",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L740-L769",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  740,
+                  769
+                ],
+                "source_standing": "RELATIONSHIP_CLASS",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N011",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L741-L771",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  741,
+                  771
+                ],
+                "source_standing": "DEFINITION_CARDINALITY_AND_RULE",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N012",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L32-L60",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  32,
+                  60
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          }
+        },
+        "after": {
+          "row_id": "AAS-O2-LOGICAL-RELATION",
+          "label": "Candidate — Semantically defined relationship and its annotations",
+          "display_row": 361,
+          "status": "AAS O2 provisional information-need candidate; NOT ADOPTED",
+          "definition": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version.",
+          "source_entry_ids": [
+            "AAS02-N006",
+            "AAS02-N030",
+            "AAS03-N011",
+            "AAS03-N012"
+          ],
+          "evidence_records": [
+            "AAS02-N006",
+            "AAS02-N030",
+            "AAS03-N011",
+            "AAS03-N012"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O2_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[COMMON CANDIDATE] PARTIAL/RELATED: RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version. [Sources: AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012, AAS09-N026; O6-2-AAS-O2-LOGICAL-RELATION]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Semantically defined relationship and its annotations — NOT ADOPTED"
+          ],
+          "AAS_O2_source_correspondence": {
+            "donor": "IDTA-01001 Part 1 v3.2.0",
+            "source_ids": [
+              "AAS02-N006",
+              "AAS02-N030",
+              "AAS03-N011",
+              "AAS03-N012"
+            ],
+            "closest_prior_rows": [
+              "S06-R008",
+              "ISA-C-099",
+              "S06-R022"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "The existing rows describe particular physical or observation relationships. They do not represent a general declared relationship with its own meaning and qualifying annotations.",
+            "native_meaning": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied.",
+            "candidate_status": "COMMON_CANDIDATE",
+            "fill": "#D9EAF8",
+            "cell": "G361",
+            "original_source_locators": [
+              {
+                "source_id": "AAS02-N006",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc#L20-L38",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc",
+                "source_lines": [
+                  20,
+                  38
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS02-N030",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L740-L769",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  740,
+                  769
+                ],
+                "source_standing": "RELATIONSHIP_CLASS",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N011",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L741-L771",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  741,
+                  771
+                ],
+                "source_standing": "DEFINITION_CARDINALITY_AND_RULE",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N012",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L32-L60",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  32,
+                  60
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          },
+          "AAS_O6_2_source_correspondence": {
+            "source_ids": [
+              "AAS09-N026"
+            ],
+            "relation": "PARTIAL/RELATED",
+            "candidate_status": "COMMON_CANDIDATE",
+            "classification_changed": false,
+            "reason": "Retain functional composition and generalization as distinct meanings in the existing relationship row; no duplicate physical-composition candidate.",
+            "DIM_Profile_adopted": false
+          }
+        },
+        "master_cell": "G361",
+        "source_ids": [
+          "AAS09-N026"
+        ],
+        "register_changes": {
+          "C344": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version.",
+          "P344": "O2 sources: AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012 | O6-2: AAS09-N026",
+          "Q344": "AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012; RELATED_BUT_DISTINCT; The existing rows describe particular physical or observation relationships. They do not represent a general declared relationship with its own meaning and qualifying annotations.\nO6-2: AAS09-N026; current qualification in R; earlier contact retained.",
+          "R344": "COMMON_CANDIDATE — O6-2: RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version."
+        },
+        "classification_changed": false
+      }
+    ],
+    "register_changes": {
+      "C344": "RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version.",
+      "P344": "O2 sources: AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012 | O6-2: AAS09-N026",
+      "Q344": "AAS02-N006, AAS02-N030, AAS03-N011, AAS03-N012; RELATED_BUT_DISTINCT; The existing rows describe particular physical or observation relationships. They do not represent a general declared relationship with its own meaning and qualifying annotations.\nO6-2: AAS09-N026; current qualification in R; earlier contact retained.",
+      "R344": "COMMON_CANDIDATE — O6-2: RelationshipElement records subject/object references and semantic meaning; annotations qualify the relationship when its meaning requires extra information. In v3.2 each endpoint is optional. Shell derivedFrom illustrates a separate native derivation relationship. No physical attachment, cable or observation-copy lineage is implied. The Capability Description template separately distinguishes functional composition (subordinate capabilities) from generalization (a more general capability). Those semantic links do not establish physical parts or working skill implementation; template-specific endpoint/cardinality rules retain their own version."
+    },
+    "existing_rows": "356 of 357 prior rows unchanged in full; one semantic-relationship comparison and definition qualified. All 636 prior classifications retained.",
+    "historical_53_in_O6_2": {
+      "AAS09-N010": "NEW_ENGINEERING_DESIGNATION",
+      "AAS09-N033": "RETAIN_EXTERNAL_SOURCE_HOLD",
+      "AAS09-N034": "RETAIN_MISSING_EXAMPLE_HOLD",
+      "AAS09-N037": "RETAIN_SELECTED_NATIVE_COVERAGE"
+    },
+    "holds_retained": [
+      "All AAS09-H01 through H10 and earlier AAS/donor/case holds retained unchanged.",
+      "Edition/patch/publication variants; hierarchy/representation/placeholder/future-topology limits; IEC prefix/reference/edition conflicts remain.",
+      "TechnicalData area/classification/label/list conflicts; synthetic sample not case evidence; product classification does not ensure coherent properties.",
+      "Capability roles/alternative/cardinality/prose-rule limits; generic Skill/MTP/external sources and 13 missing example packages remain unresolved.",
+      "Selected native-field coverage is not full schema/package validation. No demonstrated readiness, installation, execution or DIM/Profile adoption. Native Excel clean reopen unverified."
+    ],
+    "workbook_metadata_repair": "Extend existing used ranges and append the new merged topic divider only; prior O6-1 range/divider corrections retained.",
+    "case_review": "Scope check against preserved source-case records only. Dragino/AirGradient reference designs, Campbell/ClimaVue possible pairing and Bennett Point original-versus-copy distinctions unchanged; no new source-case audit.",
+    "forecast": "One planned substantive step remains: O7 final reconciliation and owner-facing closeout proposal; any new source work requires a stated reason and owner disposition.",
+    "one_next": "Await owner Proceed for O7 only: final AAS reconciliation and owner-facing closeout proposal, preserving source holds and adoption gates. Stop for owner disposition; no automatic donor transition or model adoption.",
+    "publication": {
+      "workbook_sha256": "98b0379cf6e407065a84df9b3b7537388f4df40fbfe07619ca0be98daf1f64a3",
+      "previous_workbook_sha256": "19576548df145091a9d15ebb2ac0d8252ed8de99e726c816756af4ca9f741631",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "DIM Register",
+        "Summary",
+        "Validation",
+        "Legend"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values": 6144,
+      "new_candidate_cells": [
+        "G381",
+        "G382",
+        "G383",
+        "G384"
+      ],
+      "existing_values_and_fills": "One AAS relationship cell and its register entry qualified; all prior fills/classifications and unrelated cells unchanged",
+      "range_divider_metadata_repair": "Extend existing used ranges and append the new merged topic divider only; prior O6-1 range/divider corrections retained.",
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_reopen": "PENDING",
+      "visual_review": {
+        "status": "PASS",
+        "method": "ArtifactTool import/render only; canonical XLSX not rewritten",
+        "views": [
+          "Master Crosswalk G381:G382",
+          "Master Crosswalk G383:G384",
+          "Master Crosswalk G361",
+          "Master Crosswalk A380:P380",
+          "DIM Register C359:C362",
+          "Summary A17:B23"
+        ],
+        "observed": "Text readable, no clipping in inspected ranges; three blue and one amber candidate; merged topic divider and current totals readable.",
+        "native_Excel_reopen": "UNVERIFIED"
+      },
+      "remote_publication": "PENDING",
+      "local_checks": "PASS: all 6144 saved grid values, four new fills, unchanged prior classifications, two CSV/two readable mirrors, 26 sheets/21 untouched worksheet parts, source-record dispositions and M00/M01; recovery guard passed."
     }
   }
 }
