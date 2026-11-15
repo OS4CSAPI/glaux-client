@@ -1,3 +1,44 @@
+# CURRENT — AAS O2 source/workbook ready; publication verification pending (14 November 2026, America/New_York)
+
+**Publication recovery:** Profile Rewrite 43's O2 changes survived locally without an O2 commit. Profile Rewrite 44 is authorized to finish that same checkpoint from `1329bafed27858a967781b1f702eb48895dc443a`, preserving the recovered eight candidates and 75 dispositions. The current PITON must record the actual commit, remote readback and workflow results before O2 is declared delivered. This continuation does not begin O3 or claim a fresh original-source audit.
+
+This checkpoint supersedes earlier CURRENT/NEXT banners below. F3 remains owner-accepted; O1 remains complete. The owner’s next Proceed authorized **O2 only**: reconsider the native Asset Administration Shell (AAS) identity, administration, references and structure against the existing Domain Information Model (DIM) comparison. Preflight branch was `research/dim-profile-v2` at `1329bafed27858a967781b1f702eb48895dc443a`.
+
+## What changed and why
+
+The earlier rows did not separately expose several useful kinds of information about the digital description itself. A digital record’s identifier is not the equipment identifier; its revision is not a firmware revision; an information grouping is not a physical component. Forcing those meanings into equipment rows would either hide useful AAS contributions or falsely equate different things. O2 therefore adds eight **provisional information-need candidates**, with explicit source support, nearest existing rows and reasons for keeping the distinction visible.
+
+| New candidate | Practical meaning | Standing |
+|---|---|---|
+| AAS-O2-RECORD-ID | Identify the digital record or local element separately from the represented asset. | Common candidate |
+| AAS-O2-RECORD-ADMIN | Record business revision, creator and creation/update context separately from equipment configuration. | Common candidate |
+| AAS-O2-TEMPLATE-PROVENANCE | Identify the template that guided creation, without claiming successful validation. | Common candidate |
+| AAS-O2-DATA-SPEC | Identify supplementary attribute specifications applied to an element. | Specialized candidate |
+| AAS-O2-ASPECT-GROUP | Describe an identified information aspect and its contained elements without implying physical assembly. | Common candidate |
+| AAS-O2-LOGICAL-RELATION | State a relationship’s meaning, endpoints and qualifying annotations without implying a cable or physical attachment. | Common candidate |
+| AAS-O2-ELEMENT-LABEL | Supply multilingual labels/descriptions for information elements separately from identifiers and values. | Common candidate |
+| AAS-O2-SUPPORTING-CONTENT | Refer to supporting files or carry embedded content without pretending all such content is an observation. | Common candidate |
+
+These are candidates for later reconciliation, not eight adopted classes, required fields or Profile rules. Some may later consolidate with broader concepts. Other donors and cases have explicit unassessed/unlinked statuses in the new rows; absence of a new correspondence is not evidence of absent support.
+
+## Evidence and coverage
+
+All **75 original AAS02/AAS03 findings** have individual dispositions in `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json`, under `AAS_O2_native_review`. Targeted original passages supporting **73** records were reopened at pinned Part 1 commit `ecd191273a28dd9c4e7bb75e923f0f0fe5da444e`; two original audit records (experimental event inventory and enumeration inventory) were reused with their limits. This is not a whole-file, whole-corpus, figure or runtime audit. Original records, stable IDs, caveats, edition distinctions and historical censuses remain intact.
+
+The eight additions resolve two of the six previously uncited AAS03 findings in this packet: supplementary data specifications and template-creation provenance. Operations, capabilities and events still require their scheduled behavior reviews; native grammar need not become a separate equipment field. The historical 53 uncited findings are not a target for 53 new rows.
+
+## Master and workbook standing
+
+The canonical JSON, both comma-separated-value mirrors, both GitHub-readable comparisons and the **same editable Excel workbook** now contain **345 information rows** and **5,808 grid values** (363 by 16). All original **337 rows and 616 classifications** remain unchanged; the additions produce **624 classifications: 516 colored, 108 held, zero ungraded**. AAS has 72 comparisons: 60 colored and 12 held. The new AAS cells are **G356:G363**, with seven common blue candidates and one specialized amber candidate.
+
+Saved-file verification checks every grid value, new fills, unchanged original cells and row order, both table mirrors, all 26 sheets, 21 unchanged sheet parts and preserved M00/M01 versions. The changed views were rendered and inspected for readability. A browsable [pre-O2 archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-o2-20261115) preserves the previous state; no M02 was created. Actual Microsoft Excel clean reopen/no-repair remains **PENDING**.
+
+AAS remains active **bounded PARTIAL**. Semantic-definition wording versus optional cardinality, version/revision prose versus serialization representation, supplementary-specification applicability, experimental behavior, unread companion material and mixed-edition limits remain explicit. No donor closure, DIM/Profile adoption, user-interface work or deployment occurred. The broader document checker retains eight pre-existing register/link errors; publication results are recorded in the current PITON.
+
+**CURRENT ACTION:** finish O2 publication and verification, then stop. After verified delivery, a separate owner Proceed authorizes **O3 only**: native declarations, events, time and encoding meanings, with source-qualified integration as warranted; stop before O4. The source-dependent estimate after O2 is **6–9 further substantive steps**, including final reconciliation: O3 1–2, O4 1, O5 1–2, O6 2–3, O7 1. This is a planning estimate, not a fixed research quota.
+
+---
+
 # CURRENT — F3 accepted; AAS O1 complete (15 November 2026 UTC)
 
 Owner acceptance and the comprehensive F3 explanation were published in commit `23c2dcd292b7e77118bcd23feb11fd9223bd61f1`. O1 has now accounted for all **310 retained Asset Administration Shell (AAS) findings** in the existing cumulative source ledger, with original-record pointers, locators, inherited standing/coverage, current and historical row links, and the next source-review stage. No finding was deleted or newly asserted, and no row, comparison value or color changed.

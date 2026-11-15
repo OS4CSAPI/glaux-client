@@ -1,3 +1,17 @@
+# CURRENT — AAS O2 source/workbook ready; publication verification pending (14 November 2026, America/New_York)
+
+Profile Rewrite 44 recovered the uncommitted O2 source and workbook changes at research HEAD `1329bafed27858a967781b1f702eb48895dc443a`; the owner authorized finishing O2 only. Publication is pending the actual commit, GitHub readback and existing workflow checks recorded in the [current PITON](Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). Local source/workbook completion is distinct from delivery; O3 has not started.
+
+F3 remains accepted and O1 complete. O2 records dispositions for 75 original AAS identity/administration/reference/structure findings: targeted pinned-original passages were reopened for 73; two earlier audit records were reused with explicit limits. Eight provisional information-need rows expose digital-record identity, administration, template provenance, supplementary specifications, information aspects, logical relationships, multilingual labels and supporting content. These are seven common and one specialized candidate, not adopted model fields or proof of complete donor coverage.
+
+The [AAS plan](Donor_DIM_Crosswalk/PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md) explains the value, source limits, eight candidates and remaining work. The existing AAS source ledger contains per-finding decisions and original source contacts under `AAS_O2_native_review`. All 337 earlier rows and 616 classifications remain unchanged; canonical JSON, both CSVs, both readable tables and the [same Excel workbook](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) agree on 345 information rows, 5808 grid values and 624 classifications (516 colored, 108 held). AAS has 60 colored/12 held; new cells G356:G363.
+
+Saved-file checks passed; changed workbook views were rendered and inspected. All 26 sheets and M00/M01 remain, with 21 sheet parts unchanged. [Pre-O2 state](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-o2-20261115) is preserved at preflight `1329bafed27858a967781b1f702eb48895dc443a`. Actual Microsoft Excel clean reopen remains pending; eight pre-existing register/link errors and all source/edition holds remain.
+
+AAS remains active bounded PARTIAL. **CURRENT ACTION: finish O2 publication and verification, then stop.** After verified delivery, O3 requires a separate owner Proceed, covering declarations/events/time/encoding; stop before O4. Estimate 6–9 further substantive steps after O2, including final reconciliation, subject to original-source complexity. No new donor, model adoption, UI or deployment. Earlier CURRENT/NEXT banners below are historical.
+
+---
+
 # CURRENT — F3 accepted; AAS O1 complete
 
 F3 acceptance and its plain-English explanation are committed. The existing AAS source ledger now accounts for all 310 findings (99 current citations, 158 retained historical row links, 53 source-ledger-only findings), preserving all 64 accepted AAS classifications. No workbook comparison values or colors changed; embedded owner-routing text remains historical. See `Donor_DIM_Crosswalk/PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md` for the completed O1 baseline, retained holds and source-sized forecast. **Next: await Proceed for O2 only.**

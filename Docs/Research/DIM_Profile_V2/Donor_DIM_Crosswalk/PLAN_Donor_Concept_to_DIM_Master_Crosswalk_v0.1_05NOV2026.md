@@ -1,4 +1,12 @@
-# CURRENT — F3-06 published; F3 owner acceptance next (15 November 2026)
+# CURRENT — F3 accepted; O1 published; O2 publication recovery (14 November 2026, America/New_York)
+
+The owner accepted F3 in Profile Rewrite 43, and O1 is published at the `1329baf` checkpoint. Profile Rewrite 44 recovered O2's uncommitted source decisions and same-workbook update: 75 findings dispositioned and eight provisional information-need candidates, with all 337 earlier rows and 616 classifications preserved. The [AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md) governs this bounded continuation; its candidates do not adopt DIM classes, fields or Profile obligations.
+
+**CURRENT ACTION:** finish O2 publication and verification, record actual GitHub evidence in the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md), then stop. O3 requires a separate Proceed after delivery and has not started. AAS remains active bounded PARTIAL; source holds, manual versions and the Microsoft Excel clean-reopen limitation remain. Earlier CURRENT/NEXT banners below are historical.
+
+---
+
+# HISTORICAL — F3-06 published; acceptance subsequently recorded
 
 F3-06 compared **162 rows with multiple source-bearing donors** and reconciled all **616 existing source-bearing comparisons**. It corrects **79 classifications: 64 Integrated Sensor Architecture (ISA), 14 SAPIENT and one Asset Administration Shell (AAS)**; The Open Group Sensor Open Systems Architecture (SOSA) decisions are retained. Forty-six holds gain qualified colors, two unsupported colors are removed, and 31 existing colors change. The result is **508 colored / 108 held / zero ungraded**, with 732 other explicit statuses; these counts measure classification standing, not complete original-source coverage.
 
