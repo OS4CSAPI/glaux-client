@@ -1,3 +1,7 @@
+> **Profile Rewrite routing:** For the DIM/CSAPI donor-research workstream, read
+> [the compact recovery protocol](../Research/DIM_Profile_V2/AGENTS.md) and its current PITON.
+> The older implementation history below is not required startup reading or current donor routing.
+
 # MERLIN DIM and MPSS continuity
 
 Updated 24 October 2026.

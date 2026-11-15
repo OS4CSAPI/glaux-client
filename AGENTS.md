@@ -1,3 +1,11 @@
+# Profile Rewrite recovery routing
+
+For DIM/CSAPI Profile Rewrite work, first read `Docs/Research/DIM_Profile_V2/AGENTS.md`
+and its named current PITON. That owner-approved protocol replaces whole-history
+startup rereads. Follow only relevant source/plan dependencies; do not recursively
+load older continuity files. The remaining instructions below govern other work
+and still apply where relevant. Current research routing comes from the compact PITON.
+
 # Development boundaries
 
 - Use existing CSAPI, SensorML, and SWE Common mechanisms before custom conventions.

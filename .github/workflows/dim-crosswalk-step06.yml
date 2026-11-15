@@ -9,6 +9,13 @@ on:
       - "scripts/publish_sosa_d.py"
       - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
       - ".github/workflows/dim-crosswalk-step06.yml"
+      - "AGENTS.md"
+      - "Docs/Research/DIM_Profile_V2/AGENTS.md"
+      - "Docs/Research/DIM_Profile_V2/README.md"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/README.md"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md"
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,5 +33,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verify current canonical XLSX, source and historical evidence
-        run: python scripts/check_dim_crosswalk_step06.py
+      - name: Verify recovery and affected master evidence
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] || [[ -z "$BEFORE_SHA" ]] || ! git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
+            python -B scripts/check_dim_crosswalk_step06.py
+          elif git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA" | grep -E '^(scripts/(check_dim_crosswalk_step06|publish_sosa_d)\.py|Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/(Master_Donor_Concept_to_DIM_Crosswalk\.|AAS01_Original_Source_Corpus_Coverage_13NOV2026\.json)|\.github/workflows/dim-crosswalk-step06\.yml)' > /dev/null; then
+            python -B scripts/check_dim_crosswalk_step06.py
+          else
+            python -B scripts/check_dim_crosswalk_step06.py --recovery-only
+          fi

@@ -4724,7 +4724,37 @@ def diagnose_real_excel_donor_cells() -> None:
               "removed cells or explain which repairs its local copy performed.")
 
 
+def verify_recovery() -> None:
+    """Keep current routing small without limiting original research evidence."""
+    research = BASE.parent
+    budgets = {
+        research / "AGENTS.md": (8000, "characters"),
+        BASE / "PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md": (1000, "words"),
+        BASE / "PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md": (1400, "words"),
+        BASE / "PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md": (1600, "words"),
+        research / "README.md": (300, "words"),
+        BASE / "README.md": (300, "words"),
+    }
+    for path, (limit, unit) in budgets.items():
+        text = path.read_text(encoding="utf-8")
+        size = len(text) if unit == "characters" else len(text.split())
+        required(size <= limit, f"Recovery bloat: {path}: {size}/{limit} {unit}; preserve history outside startup files, never drop live controls.")
+        required(len(re.findall(r"^# ", text, re.M)) == 1, f"Multiple status histories in {path}")
+        for link in re.findall(r"\]\(([^)]+)\)", text):
+            target = link.split("#", 1)[0]
+            if target and not re.match(r"[a-z]+:", target):
+                required((path.parent / target).exists(), f"Broken recovery link: {path}: {link}")
+        print(f"PASS recovery: {path.name}: {size}/{limit} {unit}")
+    piton = (BASE / "PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md").read_text(encoding="utf-8")
+    for heading in ("Verified checkpoint", "Interrupted work", "Active scope and evidence", "Master and workbook", "Holds and owner decisions", "Verification and publication", "Next action and stop", "History"):
+        required(f"## {heading}\n" in piton, f"Missing current PITON section: {heading}")
+    print("LIMIT: recovery structure and links checked; source coverage and factual status require evidence.")
+
+
 def main() -> None:
+    verify_recovery()
+    if "--recovery-only" in sys.argv[1:]:
+        return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:
         mirror = list(csv.reader(f))
