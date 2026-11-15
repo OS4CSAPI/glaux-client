@@ -1,3 +1,15 @@
+# Current O3 reconciliation of this historical source report
+
+**Result:** 29 AAS04 native meanings and 23 AAS05 selected schema findings were reconciled against pinned originals, plus six explicit O2 follow-ups. Five provisional information-need candidates were added: event declaration/state; event source and logical scope; event routing; event initiator; and value/concept/template qualification. Three are common candidates (blue) and two are specialized candidates (amber); experimental standing remains explicit and color does not mean stable, mandatory or adopted. The existing qualified capability, operation, time/interval, administrative and encoding comparisons were retained.
+
+The original source findings below are preserved. Current source-to-master dispositions are in `AAS_O3_native_review` of the [cumulative ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json); see the [current AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md) for saved-workbook/publication evidence. Earlier forward routing and claims that later service/template material was still unreviewed are historical; O3 retains later qualified AAS06–AAS09 evidence and does not restart it as unread.
+
+**Exact coverage and limits:** selected original Part 1 narrative/attribute/constraint passages, the full 153-line event include text, its event-payload UML source partial, and 23 selected schema blocks across six pinned Part 1/Part 2 files were re-read. These are 52 reconciled prior findings plus six follow-ups, not 58 newly discovered source items or a whole-corpus audit. The timestamp/timeStamp, integer/digit-string and UTC example/pattern discrepancies remain unresolved; normal/ValueOnly/RDF list and Range differences do not establish a lossless conversion or supplied-empty/no-update equivalence. Event and qualifier-kind experimental standing, external dictionaries/ontologies, companion/API/figure coverage limits and all earlier donor holds remain. No fresh case, runtime, physical-effect or model-adoption claim is made.
+
+**ONE NEXT:** a separate owner Proceed authorizes **O4 only**—original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5, donor transition, Domain Information Model (DIM)/Profile adoption, client work or deployment. AAS remains active **bounded PARTIAL**. The source-dependent estimate is **5–7 further substantive steps**, including final reconciliation: O4 1, O5 1–2, O6 2–3, O7 1.
+
+---
+
 # AAS05 — Original schema corroboration and source-to-master clarification
 
 14 November 2026 · research/dim-profile-v2 · Preflight `02232bb6eed411ccb159692112a65394b8553db3`

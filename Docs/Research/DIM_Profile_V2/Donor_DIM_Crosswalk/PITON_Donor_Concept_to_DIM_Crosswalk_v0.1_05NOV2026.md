@@ -1,20 +1,19 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026 (America/New_York), Profile Rewrite 45. Owner requested an efficient recovery repair. This document is the single current status; replace its sections in place. Read [the protocol](../AGENTS.md) first. The objective remains a whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile supporting a useful common Details view without erasing vendor/equipment differences.
+Updated 15 November 2026 (America/New_York), Profile Rewrite 45. Owner installed the replacement Project instructions and authorized completion of interrupted O3 delivery. This document is the single current status; replace its sections in place. Read [the protocol](../AGENTS.md) first. The objective remains a whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile supporting a useful common Details view without erasing vendor/equipment differences.
 
 ## Verified checkpoint
 
 Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query its live HEAD. The last published **research** checkpoint is `e7628af544dd216e3171624ac51af032864d3748` (O2 delivery/status); subsequent protocol-only commits do not advance research. O2 data commit: [f6bbba4](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538). F3 is owner-accepted; O1 and O2 are delivered. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
 
-The **recovery protocol repair**, authorized in Profile Rewrite 45, is published as recorded below. It does not authorize O4, donor transition, model adoption, client work or deployment. The replacement protocol supersedes the prior full-history/all-links startup reread requirement; original-source and owner controls remain.
+The current **Proceed authorizes O3 delivery only** from research-branch preflight `f3d93d6fec5c5d385bfc9b832f6905c31f126d37`. The compact recovery protocol remains binding. Stop after O3 publication/readback; O4, donor transition, model adoption, client work and deployment are not authorized.
 
 ## Interrupted work
 
-O3 survives as **local-only** commit `f9309f30f5daeaa55a1f6af9b829047ed60b6bfe`, parent `e7628af544dd216e3171624ac51af032864d3748`, in `/workspace/scratch/68383c030602/glaux-client`. This path is a recovery lead, not durable remote publication. Remote archiving of O3 was blocked by automatic approval review during the protocol repair; no remote O3 archive is asserted. Do not discard this checkout. If unavailable, report the missing commit; never infer O3 delivery from screenshots or status text.
-
+O3 was recovered from preserved local commit `f9309f30f5daeaa55a1f6af9b829047ed60b6bfe` (parent `e7628af544dd216e3171624ac51af032864d3748`) in `/workspace/scratch/68383c030602/glaux-client`. Its data, source notes and publisher were preserved exactly, while its checker dispatch was integrated into the current recovery guard. The current completion checkout is `/workspace/scratch/eb7ff8d5824b/glaux-o3`. Remote publication remains pending until verified below; local paths are recovery leads, not durable delivery.
 O3 records 52 existing findings plus six O2 follow-ups and five provisional candidates: event declaration/state, event source/scope, routing, initiator and qualified context. Three are common and two specialized. Selected original passages and schema blocks were revisited; this is not full-corpus coverage. Its local verification passed on 15 November: prior 345 rows/624 classifications unchanged, all 5,904 saved comparison values and mirrors matched, 26 sheets and M00/M01 preserved. GitHub publication/checks remain pending.
 
-**Do not blindly cherry-pick O3.** Its five routing documents restore historical bloat and prematurely offer O4. Review its data/evidence/publisher changes against the live branch; preserve this compact protocol, indexes, plans and recovery guard. Incorporate O3's checker dispatch without replacing the updated checker. Rewrite current status only after actual publication readback.
+The five obsolete O3 routing documents were not replayed. Compact protocol, indexes, plans and budget guard are retained. This is completion of prior source work, not a new source audit or renewed classification decision.
 
 ## Active scope and evidence
 
@@ -43,13 +42,13 @@ Retain six ISA questions, nine The Open Group SOSA hold families, 39 overlapping
 
 ## Verification and publication
 
-Protocol repair [feed486](https://github.com/OS4CSAPI/glaux-client/commit/feed4864359e3e57385730d521b0dedc38e27dde) was fetched back with the exact locally verified tree; its [existing verification workflow passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/43718589967). The guard rejected the old oversized PITON, duplicate status headings and a missing stop section. Canonical data, mirrors, source ledger and workbook are byte-identical to O2. This handoff update records delivery, not new research. The ChatGPT Project settings field still needs the owner's replacement bootstrap if it retains the older protocol; repository instructions are updated.
+Protocol repair [feed486](https://github.com/OS4CSAPI/glaux-client/commit/feed4864359e3e57385730d521b0dedc38e27dde) was fetched back with the exact locally verified tree; its [existing verification workflow passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/43718589967). The guard rejected the old oversized PITON, duplicate status headings and a missing stop section. That protocol-only checkpoint preserved O2 data. The owner has now supplied the replacement Project instructions, completing that setup step.
 
-O2 [publication check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698614) and [saved-master check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698581) were read back successful. These are integrity checks, not independent source audits. Local O3 saved-file verification passed; no O3 remote result is claimed. Protocol checks: `python -B scripts/check_dim_crosswalk_step06.py --recovery-only`; the normal command also runs saved-master verification. Verify actual live commit and changed blobs before claiming any new publication.
+O2 [publication check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698614) and [saved-master check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698581) were read back successful. These are integrity checks, not independent source audits. Recovered O3 saved-file and mirror/preservation verification passed again with the recovery guard intact; no O3 remote result is claimed yet. The unchanged workbook retains its prior visual review; no new rendering or native Excel reopening is claimed. Protocol checks: `python -B scripts/check_dim_crosswalk_step06.py --recovery-only`; the normal command also runs saved-master verification. Verify actual live commit and changed blobs before claiming any new publication.
 
 ## Next action and stop
 
-After this protocol repair, a separate **Proceed completes interrupted O3 delivery only**: recover the preserved changes, retain current protocol, verify affected files, publish/read back on the research branch, record actual checks, then STOP. O4 requires a subsequent Proceed. The O4–O7 research forecast remains 5–7 substantive steps, source-dependent, excluding the unfinished O3 delivery. No research is earned by this repair.
+**Current action: finish O3 publication and verification, then STOP.** After verified delivery, the next separate owner Proceed authorizes **O4 only**: original discovery/service meanings from 38 AAS06 findings; stop before O5. O4 has not started. The O4–O7 research forecast remains 5–7 substantive steps, source-dependent. No new research is earned by this delivery recovery.
 
 ## History
 

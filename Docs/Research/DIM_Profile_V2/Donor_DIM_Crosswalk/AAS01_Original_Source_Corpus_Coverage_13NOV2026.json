@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O2_COMPLETE",
+  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O3_COMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "Await owner Proceed for AAS O3 only: declarations, condition, events, time and encodings (AAS04/AAS05 plus explicit O2 follow-ups). Stop before O4; no model adoption or donor transition.",
+  "one_next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10132,17 +10132,17 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS_O2_SAVED_VERIFIED",
-    "rows": 345,
-    "grid": "363x16",
+    "checkpoint": "AAS_O3_SAVED_VERIFIED",
+    "rows": 350,
+    "grid": "369x16",
     "AAS_column": "G",
     "same_workbook": true,
     "comparison_lag": 0,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "Await owner Proceed for AAS O3 only: declarations, condition, events, time and encodings (AAS04/AAS05 plus explicit O2 follow-ups). Stop before O4; no model adoption or donor transition.",
-    "status": "O2_COMPLETE__O3_PENDING",
-    "workbook_metadata_lag": "ZERO: current O2 guidance refreshed; labeled historical checkpoints retained."
+    "next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
+    "status": "O3_COMPLETE__O4_PENDING",
+    "workbook_metadata_lag": "ZERO: current O3 guidance refreshed; labeled historical checkpoints retained."
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -64911,6 +64911,2048 @@
       "actual_Microsoft_Excel_clean_reopen": "PENDING",
       "visual_review": "PASS: saved XLSX imported and rendered; new AAS cells, candidate labels, DIM Register explanations, Summary and Legend inspected. Text readable; seven blue and one amber candidate. Artifact Tool rendering is not a Microsoft Excel clean reopen.",
       "remote_publication": "Consult the current O2 publication record in PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md for the actual commit, remote readback and workflow results. The source/workbook-complete status in this ledger does not itself establish remote publication; Profile Rewrite 43 stopped before an O2 commit."
+    }
+  },
+  "AAS_O3_native_review": {
+    "date": "2026-11-14",
+    "timezone": "America/New_York",
+    "status": "O3_COMPLETE__O4_PENDING_OWNER_PROCEED",
+    "preflight_head": "e7628af544dd216e3171624ac51af032864d3748",
+    "archive_branch": "archive/dim-crosswalk-pre-aas-o3-20261115",
+    "scope": "29 AAS04 native meanings and 23 AAS05 selected schema findings, plus six explicit AAS03/O2 follow-ups. This is a native-meaning reconciliation and targeted original reinspection, not 58 newly discovered source items or a complete corpus audit.",
+    "records": [
+      {
+        "disposition": "O2_ENCODING_FOLLOWUP_COMPLETE",
+        "row_ids": [
+          "ISA-R-LIST-PRESENCE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O2-DATA-SPEC"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "Normal JSON omission, lexical string/base64 values, allOf, serialization-only modelType and embedded data specifications remain native encoding evidence. No new equipment fields or empty-update equality; existing O2 data-spec candidate suffices.",
+        "source_id": "AAS03-N025",
+        "original_record": "#/AAS03/original_items/24",
+        "original_record_sha256": "2f97d9357b62c09ec99093b9155f427f72ffed3b8665dc8a50113d82f7f20585",
+        "native_meaning": "Normal JSON forbids empty aggregation arrays; an empty aggregation is represented by omitting the attribute. Singular metamodel association names generally become plural JSON keys.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc#L49-L73",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc",
+        "source_lines": [
+          49,
+          73
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "RULE",
+        "inherited_coverage": "AUDITED_NATIVE_MEANING",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "This representation does not preserve ISA supplied-empty versus omitted-update distinctions by itself; Part 2 update behavior remains unreviewed.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "O2_ENCODING_FOLLOWUP_COMPLETE",
+        "row_ids": [
+          "ISA-R-LIST-PRESENCE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O2-DATA-SPEC"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "Normal JSON omission, lexical string/base64 values, allOf, serialization-only modelType and embedded data specifications remain native encoding evidence. No new equipment fields or empty-update equality; existing O2 data-spec candidate suffices.",
+        "source_id": "AAS03-N026",
+        "original_record": "#/AAS03/original_items/25",
+        "original_record_sha256": "147ed353699a4da6af7e60450f4c546753916e90341b60311dde6c6670551df6",
+        "native_meaning": "Property.value and Range.min/max are JSON strings interpreted using valueType; BlobType uses base64. ValueOnly is a different representation; round trips may change lexical form.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc#L75-L114",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc",
+        "source_lines": [
+          75,
+          114
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "RULE_AND_OBSERVATION",
+        "inherited_coverage": "AUDITED_NATIVE_MEANING",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Native encoding is not a new DIM datatype; full ValueOnly/XML/RDF behavior is not audited here.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "O2_ENCODING_FOLLOWUP_COMPLETE",
+        "row_ids": [
+          "ISA-R-LIST-PRESENCE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O2-DATA-SPEC"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "Normal JSON omission, lexical string/base64 values, allOf, serialization-only modelType and embedded data specifications remain native encoding evidence. No new equipment fields or empty-update equality; existing O2 data-spec candidate suffices.",
+        "source_id": "AAS03-N027",
+        "original_record": "#/AAS03/original_items/26",
+        "original_record_sha256": "0832a94f5e8870446186934661c4ddf3201f364ab83269ab9d804fcaa4b5395a",
+        "native_meaning": "Normal JSON uses allOf for inherited constraints, modelType as a serialization discriminator, and embeddedDataSpecifications rather than the metamodel dataSpecification reference attribute.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc#L116-L162",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc",
+        "source_lines": [
+          116,
+          162
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "SERIALIZATION_RULE",
+        "inherited_coverage": "AUDITED_NATIVE_MEANING",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "modelType is expressly not a metamodel attribute. Serialization mechanics are retained as native evidence, not universal equipment fields.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "O2_DECLARATION_FOLLOWUP_COMPLETE__O5_BEHAVIOR_REMAINS",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Declarations and future default/cardinality note reconciled with AAS04 and selected schemas. AASd-134 and AASd-138 retain native structural scope. Existing later service evidence remains for O5 re-review.",
+        "source_id": "AAS03-N029",
+        "original_record": "#/AAS03/original_items/28",
+        "original_record_sha256": "aca2adc06bd1478194d4129144ee116a20c6fa7178fbd4d703abab6988bf2ac3",
+        "native_meaning": "Operation has three 0..* variable collections. OperationVariable wraps exactly one SubmodelElement; variable idShort values must be unique. Cardinality/default extensions are described as future possibilities.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L564-L635",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          564,
+          635
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION_CARDINALITY_AND_FUTURE",
+        "inherited_coverage": "STRUCTURE_AUDITED_BEHAVIOR_DEFERRED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Structure read here; invocation, outcomes, authorization and CSAPI Command comparison are deferred to AAS04/Part 2 review.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "O2_CAPABILITY_FOLLOWUP_COMPLETE",
+        "row_ids": [
+          "ISA-K-CAPABILITIES"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Implementation-independent potential and semantic skill links retain their existing qualified capability comparison; no readiness or achieved effect. O6 still reviews industrial-template specificity.",
+        "source_id": "AAS03-N030",
+        "original_record": "#/AAS03/original_items/29",
+        "original_record_sha256": "5babffedbd84c601f8d6efbffc5af5e367fcbac97f73eac3c034cacd8c5ce5a6",
+        "native_meaning": "Capability expresses implementation-independent potential to achieve an effect; the note discusses semantic links to skills.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L314-L347",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          314,
+          347
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION_AND_OBSERVATION",
+        "inherited_coverage": "STRUCTURE_AUDITED_BEHAVIOR_DEFERRED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Do not infer current readiness, implementation or achieved effect. Capability meaning/comparison is AAS04.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "O2_EVENT_FOLLOWUP_COMPLETE",
+        "row_ids": [
+          "AAS-O3-EVENT-DECLARATION",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-ROUTING",
+          "AAS-O3-EVENT-INITIATOR",
+          "ISA-T-EVENT-TIME",
+          "ISA-T-SENT-TIME",
+          "ISA-C-078",
+          "ISA-C-079"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Event declaration, source/scope, routing and initiator now visible; existing timing/interval comparisons retained. Experimental standing and EventPayload exclusion from AASX information-model exchange remain explicit; no event-as-observation inference.",
+        "source_id": "AAS03-N031",
+        "original_record": "#/AAS03/original_items/30",
+        "original_record_sha256": "c76225f66422d2e6ccea84a737c7220b55998a5cc38ef3f3cafe42d8e85f61b9",
+        "native_meaning": "BasicEventElement has observed/direction/state, optional messaging and interval fields; EventPayload has event-source/scope references and a trigger timestamp. EventPayload is outside AASX information-model exchange according to its note.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L61-L266",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          61,
+          266
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "EXPERIMENTAL_DEFINITION_AND_CARDINALITY",
+        "inherited_coverage": "STRUCTURE_AUDITED_BEHAVIOR_DEFERRED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Read as element inventory only here. Event lifecycle, lastUpdate versus trigger time and interface semantics are deferred to AAS04/Part 2; no observation-equivalence claim.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-K-CAPABILITIES",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "rationale": "Potential and semantic links to skills already have a qualified capability comparison; they supply neither readiness nor achieved effects. External capability/ontology guidance remains unread; selected industrial-template evidence is retained for O6, not re-audited here.",
+        "source_id": "AAS04-N001",
+        "original_record": "#/AAS04/original_items/0",
+        "original_record_sha256": "1b721389c735ac6ed9e253713a0f111697c0c8e7d9cec556961aed60c7ac5e69",
+        "native_meaning": "Capability is an implementation-independent description of an asset potential to achieve a physical or virtual effect; the class adds no own attributes beyond inherited SubmodelElement information.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L314-L342",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          314,
+          342
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "A capability declaration is not availability, execution, readiness or a measured achieved effect.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-K-CAPABILITIES",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "relation": "PARTIAL/NO_ESTABLISHED",
+        "rationale": "Potential and semantic links to skills already have a qualified capability comparison; they supply neither readiness nor achieved effects. External capability/ontology guidance remains unread; selected industrial-template evidence is retained for O6, not re-audited here.",
+        "source_id": "AAS04-N002",
+        "original_record": "#/AAS04/original_items/1",
+        "original_record_sha256": "e4ddfd8e94bed94a98e1f7e4ed413d350204e051a0c408c6064431c951f2acfd",
+        "native_meaning": "The note describes semantic relationship links from a capability to skills; typical implementations may use a property, operation, collection or whole submodel.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L323-L329",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          323,
+          329
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "NOTE_AND_REFERENCED_GUIDANCE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "The external 2020 capabilities paper and ontology contents remain unread; no one-to-one capability/command mapping is established.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_DECLARATIONS_BEHAVIOR_O5",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Three variable lists and required wrapper value describe arguments/results. Optional/mandatory argument and default-value additions are future examples. Existing later Part2 findings remain intact; O5 owns their native re-review, not this schema/declaration pass.",
+        "source_id": "AAS04-N003",
+        "original_record": "#/AAS04/original_items/2",
+        "original_record_sha256": "886bef75a312244fcd6cc2663bf066e3ffda7f1ee80622d742934c1f22cab00a",
+        "native_meaning": "Operation describes input, output and inoutput variable lists; Part 1 points to Part 2 synchronous/asynchronous invocation. Instance and template operation specifications are handled identically.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L564-L632",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          564,
+          632
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "This is a description of an interface; Part 2 execution, errors, acceptance/completion and cancellation contracts remain unreviewed.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_DECLARATIONS_BEHAVIOR_O5",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Three variable lists and required wrapper value describe arguments/results. Optional/mandatory argument and default-value additions are future examples. Existing later Part2 findings remain intact; O5 owns their native re-review, not this schema/declaration pass.",
+        "source_id": "AAS04-N004",
+        "original_record": "#/AAS04/original_items/3",
+        "original_record_sha256": "d714ba223deb20028cd3a61482734405183e66da1aebca38559e5841fd124bb5",
+        "native_meaning": "Each of the three variable lists is 0..*; each OperationVariable contains exactly one SubmodelElement value describing an argument/result. Default value and optional/mandatory cardinality on OperationVariable are mentioned as future extension examples.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L589-L632",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          589,
+          632
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_FUTURE_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "The wrapper value cardinality is not proof that an operation argument is mandatory; do not invent the future fields or ISA parameter equivalence.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NATIVE_STANDING_RETAINED",
+        "row_ids": [
+          "AAS-O3-EVENT-DECLARATION",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-ROUTING",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "NATIVE_ONLY",
+        "rationale": "All event candidates retain experimental standing and no ensured future backward compatibility. This is a source qualification, not another information field.",
+        "source_id": "AAS04-N005",
+        "original_record": "#/AAS04/original_items/4",
+        "original_record_sha256": "17f04c840aaafe514d84b8d3a31ca428f7bbd6d0c675ad73f82e3530e2aab555",
+        "native_meaning": "The event concept remains experimental and future backward compatibility is not ensured.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc#L13-L26",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc",
+        "source_lines": [
+          13,
+          26
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "EXPERIMENTAL_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Keep this standing on every event-derived mapping; it is not an adopted stable DIM event class.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-DECLARATION"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose the declared event mechanism, modeled observed target, direction and own on/off state. Preserve equipment-condition, readiness and observation holds.",
+        "source_id": "AAS04-N006",
+        "original_record": "#/AAS04/original_items/5",
+        "original_record_sha256": "9e8d00a2fb5bb01f8e120e15d4a2cdddfc37e301edeae7371cc2479b2951e2a9",
+        "native_meaning": "BasicEventElement.observed is a required reference to a modeled Referable such as a data element or Submodel; direction is required input or output.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L81-L90",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          81,
+          90
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "The observed target is an information-model object, not automatically a physical feature of interest or an OGC observation.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-DECLARATION"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose the declared event mechanism, modeled observed target, direction and own on/off state. Preserve equipment-condition, readiness and observation holds.",
+        "source_id": "AAS04-N007",
+        "original_record": "#/AAS04/original_items/6",
+        "original_record_sha256": "8983c0b15790d1ddd2d1aff1e482616f57990197e50d8e48dce3ff466f11cd7d",
+        "native_meaning": "BasicEventElement.state is required and uses StateOfEvent on/off literals.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L92-L98",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          92,
+          98
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_AND_ENUM_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "This is the state of the event, not a device health taxonomy, selected operating mode or command readiness.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-ROUTING"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Outer channel/topic and broker-description reference convey optional routing information not represented by sender/recipient or physical-connectivity rows. Proprietary broker content remains qualified.",
+        "source_id": "AAS04-N008",
+        "original_record": "#/AAS04/original_items/7",
+        "original_record_sha256": "e97bafa1c3ac1a9fc9488c45ca36931446c01afee6475f79def8326555a8729e",
+        "native_meaning": "Optional messageTopic and messageBroker identify outer communication routing and a referable containing proprietary broker details; the note suggests possible standardized submodels.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L100-L113",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          100,
+          113
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "This does not establish a configured transport, delivery guarantee, authorization or interoperability of the broker description.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-T-SENT-TIME"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "The current specialized cell already explicitly preserves direction-qualified last sent/received time rather than per-exchange transmission time; no duplicate timing row is needed. UTC representation hold remains.",
+        "source_id": "AAS04-N009",
+        "original_record": "#/AAS04/original_items/8",
+        "original_record_sha256": "d4a05bf6d871a0a43b63ada698111eaa999efae4072951053a54e915fbc4005a",
+        "native_meaning": "Optional lastUpdate is UTC time of the last event received for input direction or sent for output direction.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L115-L116",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          115,
+          116
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "This is a last-event timestamp, not a timestamp on every exchange, a measured phenomenon time or general record modification time.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-C-079"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Current specialized comparisons explicitly preserve event-handling/sending intervals, output-only maxInterval, and differences from component Status or sampling. No new interval row or interval-setting command is inferred; awkward source double-negative remains unresolved.",
+        "source_id": "AAS04-N010",
+        "original_record": "#/AAS04/original_items/9",
+        "original_record_sha256": "1f5cb385611e46e3af08b67cebcdc896d3a0c18eced720ab8780572a9cb06267",
+        "native_meaning": "Optional minInterval limits maximum event frequency; input concerns the handling capability of the software entity, output concerns sending frequency to outer infrastructure.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L118-L126",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          118,
+          126
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Not a sensor sampling interval or automatically ISA minimum Status interval; absence means no minimum interval is specified.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-C-078"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Current specialized comparisons explicitly preserve event-handling/sending intervals, output-only maxInterval, and differences from component Status or sampling. No new interval row or interval-setting command is inferred; awkward source double-negative remains unresolved.",
+        "source_id": "AAS04-N011",
+        "original_record": "#/AAS04/original_items/10",
+        "original_record_sha256": "437e58e0938613b795e3d83737eeef2ed7c69e57292e70f9b7588055f0a19234",
+        "native_meaning": "maxInterval is not applicable to input; for output it describes a maximum interval for sending an event-status update even without another trigger.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L128-L136",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          128,
+          136
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_RULE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Not an operation to change the interval and not a universal component heartbeat or sensor reporting contract; source sentence contains awkward double-negative wording.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-SOURCE-SCOPE"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose source event element and logical affected scope. Occurrence identity and detector snapshot remain held; generic logical relationships alone do not communicate these event roles.",
+        "source_id": "AAS04-N012",
+        "original_record": "#/AAS04/original_items/11",
+        "original_record_sha256": "8a592d5da788425583c90d609f369e3dad07f5be9d630578152c2052baa92556",
+        "native_meaning": "EventPayload requires source (event element) and observableReference (referable defining scope); semantic references for each are optional and external references are recommended.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L212-L240",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          212,
+          240
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_RECOMMENDATION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "No dedicated occurrence ID or original-event-to-copy lineage is supplied by these source/scope references.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_UNRESOLVED_ROWS",
+        "row_ids": [
+          "ISA-T-EVENT-TIME",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Required event-trigger time is retained; timestamp/timeStamp spelling and UTC example/pattern differences remain unresolved. Trigger time is not established physical phenomenon/result/send time.",
+        "source_id": "AAS04-N013",
+        "original_record": "#/AAS04/original_items/12",
+        "original_record_sha256": "553cd440ec13f93b2f1225c702148ed61ff91cc41c353e57376a442b913a31ac",
+        "native_meaning": "EventPayload.timestamp is required UTC time when the event was triggered.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L257-L258",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          257,
+          258
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Trigger time is not automatically physical phenomenon time, observation result time, or exchange send time; no leap/clock conformance is asserted.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Optional subjectId names the initiator, a distinct role from author/sender. No authentication, authorization or verified occurrence follows; the referenced external access-control publication is not audited.",
+        "source_id": "AAS04-N014",
+        "original_record": "#/AAS04/original_items/13",
+        "original_record_sha256": "c4f69f355e064c93009ba6a661a8b6707d118698e2500a0f0da67844fc6892cb",
+        "native_meaning": "Optional subjectId identifies who or what initiated creation; the note calls it an external reference and assumes a unique subject identifier.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L245-L265",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "source_lines": [
+          245,
+          265
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "A field naming an initiator is not proof of authentication, authorization, evidence provenance or identity correctness; NIST ABAC reference remains unread.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-T-EVENT-REASON",
+          "AAS-O3-EVENT-SOURCE-SCOPE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Semantic event categories/custom payloads already have a common qualified comparison. Arbitrary bytes do not define a detector snapshot, condition vocabulary or standardized alarm schema.",
+        "source_id": "AAS04-N015",
+        "original_record": "#/AAS04/original_items/14",
+        "original_record_sha256": "7b96bc8fd17f5b2de05d3c8dc9e68e6b679f4b59004b759474fc64b215041665",
+        "native_meaning": "Event types use semanticId and specialized payloads; custom types may use proprietary worldwide-unique semantic IDs and customized payloads within the general event-message format.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc#L87-L136",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc",
+        "source_lines": [
+          87,
+          136
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "INFORMATIVE_MOTIVATION_AND_PERMISSION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "The examples do not define a universal event-reason enumeration, detector snapshot, health vocabulary or complete transport protocol.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NATIVE_EXAMPLES_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-REASON",
+          "ISA-R-EXECUTION",
+          "S06-R020"
+        ],
+        "relation": "RELATED/NO_ESTABLISHED",
+        "rationale": "Informative firmware, condition, audit, cloud and execution examples motivate use. They do not independently define mandatory condition/history payloads or executed-operation semantics; prior image inspection remains inherited, not repeated.",
+        "source_id": "AAS04-N016",
+        "original_record": "#/AAS04/original_items/15",
+        "original_record_sha256": "1ff90fab1715faf0c4c36959793674473b8b28418b6b94315d289b929ea2186f",
+        "native_meaning": "Firmware notices, condition-monitoring incidents, change tracking and cloud value push motivate event use. The later table also lists execution monitoring, infrastructure and security events.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc#L29-L65",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc",
+        "source_lines": [
+          29,
+          65
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "INFORMATIVE_USE_CASES",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Motivating use cases and illustrations do not supply mandatory execution-state, alarm, condition or history payload schemas.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-EVENT-SOURCE-SCOPE"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose source event element and logical affected scope. Occurrence identity and detector snapshot remain held; generic logical relationships alone do not communicate these event roles.",
+        "source_id": "AAS04-N017",
+        "original_record": "#/AAS04/original_items/16",
+        "original_record_sha256": "4ed67dc44d11db30d85e4344cb2a5fe5dd95a9ce982dbc3d731775aa29d2b2cd",
+        "native_meaning": "The event scope can cover an AAS, a Submodel and its logical dependents, a collection/list/entity and dependents, or one atomic element.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc#L138-L152",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc",
+        "source_lines": [
+          138,
+          152
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "INFORMATIVE_SCOPE_TABLE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Logical scope is not physical equipment containment or a guarantee that all physical events are observed.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose qualifier context independently of equipment condition. Value/concept/template distinctions and experimental kind are retained; measured/substitute and life-cycle examples are not adopted enumerations. Native type/value/template constraints remain source-specific.",
+        "source_id": "AAS04-N018",
+        "original_record": "#/AAS04/original_items/17",
+        "original_record_sha256": "9b6b4f566dd910ec01b1673b1c335addfff9c21a4d31f7f48d24427a4b83eec5",
+        "native_meaning": "Qualifier type/value adds context to values or semantics; semanticId is recommended. Generic properties may represent actual/runtime values and qualifiers can indicate measured or substitute value quality.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L507-L567",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          507,
+          567
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION_AND_RECOMMENDATION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "A generic carrier is not a standardized equipment operating-condition vocabulary or an authenticated current reading.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_O2_CANDIDATE",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-048",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "O2 already exposes digital-record business version/creation/update administration. These are not transient data freshness, firmware versions or clock synchronization; preserve version/revision and date contradictions.",
+        "source_id": "AAS04-N019",
+        "original_record": "#/AAS04/original_items/18",
+        "original_record_sha256": "479c4448c0b7efe2ed85190538e7660cda7c5bcbe9de7898f5a0a99708b6a7fa",
+        "native_meaning": "AdministrativeInformation has optional version, revision, creator, createdAt and updatedAt; revision requires version through AASd-005.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L127-L155",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          127,
+          155
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Versions concern the identifiable information element, not automatically hardware, firmware or current sensor configuration.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_O2_CANDIDATE",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-048",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "O2 already exposes digital-record business version/creation/update administration. These are not transient data freshness, firmware versions or clock synchronization; preserve version/revision and date contradictions.",
+        "source_id": "AAS04-N020",
+        "original_record": "#/AAS04/original_items/19",
+        "original_record_sha256": "db70bb4b13391ecf633643c0dc48d67747a21407846b6d6f21a699cafc002f66",
+        "native_meaning": "createdAt remains tied to object identity; updatedAt tracks relevant modifications and cannot precede creation. The note treats version/revision/dates as business milestones and does not require updates for every transient data change.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L98-L123",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          98,
+          123
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "PROSE_RULE_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "These timestamps do not establish last acquisition, live freshness, connectivity or technical system modification time.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NATIVE_CONSTRAINT_RETAINED",
+        "row_ids": [
+          "AAS-O2-RECORD-ID",
+          "AAS-O2-RECORD-ADMIN",
+          "AAS-O2-TEMPLATE-PROVENANCE"
+        ],
+        "relation": "NATIVE_ONLY/RELATED",
+        "rationale": "Retain same-semanticId submodel distinction alternatives and their presence conditions, revision exception, distinct IDs and missing semanticId/templateId limitation. These are source-specific comparison rules, not a new asset identity field.",
+        "source_id": "AAS04-N021",
+        "original_record": "#/AAS04/original_items/20",
+        "original_record_sha256": "e759174ab4e72f771a124d012c1e356e25cc1d36e9ade46b13a22e529578a5c8",
+        "native_meaning": "Two Submodels with the same semanticId must be distinguished by the listed administrative/semantic alternatives; revision alone is ignored for the version alternative, and the stated presence conditions apply. Distinct Submodel IDs remain required.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L44-L96",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          44,
+          96
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "PROSE_SHALL_AND_NOTES",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Do not treat version, creator or dates as a universal asset identity rule; the no-semanticId/no-templateId note also limits formal comparison.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_O2_CANDIDATE",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "AAS-O2-TEMPLATE-PROVENANCE"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Creator and template-guided creation already have O2 candidates. templateId does not replace semanticId validation or authenticate a record; no duplicate provenance row.",
+        "source_id": "AAS04-N022",
+        "original_record": "#/AAS04/original_items/21",
+        "original_record_sha256": "6320514874479ef4644d8cd4f44384b5216643687c677ae626b8750cf3a86458",
+        "native_meaning": "creator identifies the subject responsible for making the information element; templateId identifies the template guiding its creation and is not the validation key, which uses semanticId.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L148-L182",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          148,
+          182
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION_AND_NOTES",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "A record creator/template identifier does not authenticate an assertion or identify an installed unit; preserve prior AAS02/AAS03 provenance distinctions.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-048"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Retain integer prose versus one-to-four-digit string datatype/schema discrepancy. Do not silently choose a wire type or equate record version with configuration version.",
+        "source_id": "AAS04-N023",
+        "original_record": "#/AAS04/original_items/22",
+        "original_record_sha256": "567e6bba0cd2c68b33d5135edc580719a1a3721d00ced024a885b3421fedd95f",
+        "native_meaning": "Administration prose calls version/revision numerical integer types, but the datatype tables define one-to-four-character digit strings and the selected JSON definition also uses strings.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L98-L105",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          98,
+          105
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "UNRESOLVED_SOURCE_CONFLICT",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Do not silently choose an integer wire encoding or claim the source inconsistency resolved.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT",
+        "row_ids": [
+          "ISA-A-TIME-BASIS",
+          "ISA-T-EVENT-TIME"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Nonzero-offset DateTimeUtc example conflicts with zero-offset schema patterns. No clock-conformance or conversion rule is inferred.",
+        "source_id": "AAS04-N024",
+        "original_record": "#/AAS04/original_items/23",
+        "original_record_sha256": "5cc2d84ae99920559246e8ccc6c46a59bda49328fb6b20ce5b151a55743c36a1",
+        "native_meaning": "DateTimeUtc is defined for UTC but includes an example with +01:00 as well as a Z example; the selected administration JSON patterns allow only zero-offset suffixes.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/datatypes.adoc#L108-L114",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/datatypes.adoc",
+        "source_lines": [
+          108,
+          114
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "UNRESOLVED_EXAMPLE_CONFLICT",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "The conflict is retained for AAS05 schema corroboration; no local timezone conversion or exhaustive regex validity is inferred.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-A-EXTENSION-STANDING"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Proprietary extension standing, unique owner-local names and typed content are already preserved. Generic proprietary/template permission is not a shared vocabulary or proof that all companions were examined; later AAS08/AAS09 evidence remains intact for O6.",
+        "source_id": "AAS04-N025",
+        "original_record": "#/AAS04/original_items/24",
+        "original_record_sha256": "5af99ec5ea0baa07b7a6cf52f3655db84e25903c386c697e77794fdb002aa4f4",
+        "native_meaning": "HasExtensions permits proprietary extensions; the source explicitly says these do not support global interoperability.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L225-L264",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          225,
+          264
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "DEFINITION_AND_NOTE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Availability of an extension mechanism is not acceptance into a common vocabulary or ISA Custom/Nominated/Accepted governance status.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-A-EXTENSION-STANDING"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Proprietary extension standing, unique owner-local names and typed content are already preserved. Generic proprietary/template permission is not a shared vocabulary or proof that all companions were examined; later AAS08/AAS09 evidence remains intact for O6.",
+        "source_id": "AAS04-N026",
+        "original_record": "#/AAS04/original_items/25",
+        "original_record_sha256": "dc8548bf12099a7d6daa3c5128e4230382f778af454eed58ed404d84d6834d85",
+        "native_meaning": "Extension has required name, optional valueType defaulting to xs:string, optional value and zero-or-more refersTo model references; it inherits semantics. AASd-077 requires unique names within the owner.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L268-L294",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          268,
+          294
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ATTRIBUTE_DEFINITION",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Names and typed values do not establish shared meaning, validation of vendor content or global name uniqueness.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "EXISTING_QUALIFIED_ROWS",
+        "row_ids": [
+          "ISA-A-EXTENSION-STANDING"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Proprietary extension standing, unique owner-local names and typed content are already preserved. Generic proprietary/template permission is not a shared vocabulary or proof that all companions were examined; later AAS08/AAS09 evidence remains intact for O6.",
+        "source_id": "AAS04-N027",
+        "original_record": "#/AAS04/original_items/26",
+        "original_record_sha256": "3f67ff0285067320e56d83e5f60189db37ba11177ce3a2bb5da0bb507e6acfea",
+        "native_meaning": "The annex permits standardized and proprietary information in the same infrastructure; public or non-public templates can guide instantiation with predefined semantics and source-defined cardinalities.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/annex/general.adoc#L707-L738",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/annex/general.adoc",
+        "source_lines": [
+          707,
+          738
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "INFORMATIVE_GUIDANCE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "No selected industrial template or external dictionary has been audited in AAS04; interpreting unknown manufacturer semantics remains conditional.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "UNRESOLVED_SOURCE_CONFLICT",
+        "row_ids": [
+          "ISA-T-EVENT-TIME"
+        ],
+        "relation": "CONFLICT",
+        "rationale": "Original UML partial spells timeStamp; native table spells timestamp. Selected schemas agree with UML, but disagreement is not resolved by majority vote.",
+        "source_id": "AAS04-N028",
+        "original_record": "#/AAS04/original_items/27",
+        "original_record_sha256": "6366dd6e618ecd9515b2a988bc7c8906cb28b03d0d6c02cd5f3d450cb08ab54a",
+        "native_meaning": "Pinned local UML partial spells timeStamp, while the native attribute table uses timestamp.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/partials/diagrams/classes/event-payload.puml#L1-L12",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/classes/event-payload.puml",
+        "source_lines": [
+          1,
+          12
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "UNRESOLVED_DIAGRAM_TEXT_DIFFERENCE",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "Retain the native attribute-table spelling; rendering and full cross-schema reconciliation remain AAS05 concerns.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "NEW_CANDIDATE",
+        "row_ids": [
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Expose qualifier context independently of equipment condition. Value/concept/template distinctions and experimental kind are retained; measured/substitute and life-cycle examples are not adopted enumerations. Native type/value/template constraints remain source-specific.",
+        "source_id": "AAS04-N029",
+        "original_record": "#/AAS04/original_items/28",
+        "original_record_sha256": "5fe856be1aa61c2c6d75659c5cb4ae1490dce673ba8feb44d1505b8fe222e9e1",
+        "native_meaning": "ValueQualifier may vary over time and is restricted to instances; ConceptQualifier is static semantic context; TemplateQualifier is static template context, with source constraints and the operation-variable exception.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc#L580-L609",
+        "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "source_lines": [
+          580,
+          609
+        ],
+        "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)",
+        "source_standing": "ENUM_DEFINITION_AND_EXAMPLES",
+        "inherited_coverage": "SELECTED_ORIGINAL_TEXT_FULLY_READ",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": "As-planned/as-maintained examples are semantic context, not actual maintenance state or proof of live data quality; external qualifier dictionaries remain unread.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "AAS-O2-RECORD-ID",
+          "S06-R005",
+          "S06-R007"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required assetInformation/assetKind are digital model constraints, not installed equipment evidence. O2 record identity and existing qualified physical comparisons suffice.",
+        "source_id": "AAS05-S001",
+        "original_record": "#/AAS05/original_items/0",
+        "original_record_sha256": "787f553f04c386fa7f8ed6ed2b016671a2c5a7524547e2aa1cb7a1adfddac911",
+        "native_meaning": "Digital shell requires assetInformation, AssetInformation requires assetKind; optional global/specific asset ID is not installed equipment identity.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L131-L210",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          131,
+          210
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_DEFINITION",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "AAS-O2-LOGICAL-RELATION",
+          "S06-R007"
+        ],
+        "relation": "RELATED",
+        "rationale": "Reference type/keys encode targets, not a physical link, resolvable URI or relationship predicate. Retain native reference grammar.",
+        "source_id": "AAS05-S002",
+        "original_record": "#/AAS05/original_items/1",
+        "original_record_sha256": "efb32d9fded345b91d0800c6cbdda996bfd8fb7606e068dae241b49947c7b590",
+        "native_meaning": "Reference requires type and keys, not proof of physical linkage or resolvable OGC URI.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1295-L1325",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1295,
+          1325
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-STRUCTURE",
+          "ISA-R-LIST",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Retain optional-but-nonempty normal containers, ValueOnly alternatives and RDF unordered triple/zero-value limitations. Source serialization is not a universal supplied-empty/no-update contract; later qualified API findings remain intact, not reset to unreviewed.",
+        "source_id": "AAS05-S003",
+        "original_record": "#/AAS05/original_items/2",
+        "original_record_sha256": "c6babc1b58f5fc8bdcac44c9e8890cd8dcd5355ba2aac3e2e7f2e3d9ed852431",
+        "native_meaning": "Collection/List value optional, minItems 1 when present; list typeValueListElement required and orderRelevant optional.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1506-L1566",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1506,
+          1566
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Schema declaration/envelope requirements do not prove mandatory invocation arguments or physical outcomes. Async timeout presence in the selected envelope stays native protocol evidence; behavioral review remains O5.",
+        "source_id": "AAS05-S004",
+        "original_record": "#/AAS05/original_items/3",
+        "original_record_sha256": "12838b78d21e671d09ddef734c61859c752e8038a684f305ae3d9d3845c6b66f",
+        "native_meaning": "Operation variable arrays optional, minItems 1 when present; OperationVariable.value required; not execution/mandatory argument semantics.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1082-L1127",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1082,
+          1127
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-TIME",
+          "ISA-A-TIME-BASIS",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Selected JSON/XML/OWL/SHACL/shared OpenAPI retain timeStamp against narrative timestamp; required source/scope and optional attribution corroborate the positive candidates. This neither resolves spelling/UTC holds nor verifies physical events.",
+        "source_id": "AAS05-S005",
+        "original_record": "#/AAS05/original_items/4",
+        "original_record_sha256": "85f4badb1207be4a6fbd03e49e242967e50d873bf34ea660f55288da873d1f0a",
+        "native_meaning": "EventPayload JSON requires timeStamp and source/observableReference; text uses timestamp.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L672-L710",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          672,
+          710
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT_EXPERIMENTAL",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-048",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Digit-string administration and zero-offset patterns corroborate existing representation holds, not equipment configuration or live freshness.",
+        "source_id": "AAS05-S006",
+        "original_record": "#/AAS05/original_items/5",
+        "original_record_sha256": "0c091b277102b6e242efc221955bbd2097cbbce5432009fede0e760d3255df4a",
+        "native_meaning": "Administrative version/revision digit strings 1–4 chars; UTC dates zero-offset patterns.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L52-L124",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          52,
+          124
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Full-model optional lexical-string bounds plus valueType differ from required numeric ValueOnly bounds. Preserve representation scope and experimental Range standing; no inferred inclusivity, allowed-values or lossless conversion.",
+        "source_id": "AAS05-S007",
+        "original_record": "#/AAS05/original_items/6",
+        "original_record_sha256": "cee1b89b26d662dbcfc578feef8dba3f9fdd427f15f3191f705a0e68bdc15e02",
+        "native_meaning": "Full-model Range valueType and optional lexical string min/max.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L1215-L1249",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          1215,
+          1249
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-A-EXTENSION-STANDING"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required local name and optional typed values do not establish shared vendor semantics. Existing extension-standing comparison already preserves this meaning.",
+        "source_id": "AAS05-S008",
+        "original_record": "#/AAS05/original_items/7",
+        "original_record_sha256": "4a7acf58d63704663dc3dc3ead52a301d62c416b2ea05bbbebd9284419dae19c",
+        "native_meaning": "Extension requires local name; semantics/typed values not automatic global interoperability.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json#L711-L754",
+        "source_file": "schemas/json/aas.json",
+        "source_lines": [
+          711,
+          754
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "AAS-O2-RECORD-ID",
+          "S06-R005",
+          "S06-R007"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Required assetInformation/assetKind are digital model constraints, not installed equipment evidence. O2 record identity and existing qualified physical comparisons suffice.",
+        "source_id": "AAS05-S009",
+        "original_record": "#/AAS05/original_items/8",
+        "original_record_sha256": "dfdc76067ee056ac6ba3799e2399b9c5114e92326a355b5038ddc1774b5fc747",
+        "native_meaning": "XML shell requires assetInformation; optional digital/reference links not physical attachment evidence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L90-L133",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          90,
+          133
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Schema declaration/envelope requirements do not prove mandatory invocation arguments or physical outcomes. Async timeout presence in the selected envelope stays native protocol evidence; behavioral review remains O5.",
+        "source_id": "AAS05-S010",
+        "original_record": "#/AAS05/original_items/9",
+        "original_record_sha256": "88e796878592871cc014c3ec72d5dfb66550b9589c3c00136eb204f238daef51",
+        "native_meaning": "XML Operation optional variable wrappers require one-or-more child OperationVariable, with value required.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L705-L741",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          705,
+          741
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-TIME",
+          "ISA-A-TIME-BASIS",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Selected JSON/XML/OWL/SHACL/shared OpenAPI retain timeStamp against narrative timestamp; required source/scope and optional attribution corroborate the positive candidates. This neither resolves spelling/UTC holds nor verifies physical events.",
+        "source_id": "AAS05-S011",
+        "original_record": "#/AAS05/original_items/10",
+        "original_record_sha256": "fcc82149e71593e52c81852c1dbd1a1c6edfc362416e6d6f4b3d391cda2a43df",
+        "native_meaning": "XML EventPayload requires timeStamp, not text timestamp.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L436-L460",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          436,
+          460
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT_EXPERIMENTAL",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-STRUCTURE",
+          "ISA-R-LIST",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Retain optional-but-nonempty normal containers, ValueOnly alternatives and RDF unordered triple/zero-value limitations. Source serialization is not a universal supplied-empty/no-update contract; later qualified API findings remain intact, not reset to unreviewed.",
+        "source_id": "AAS05-S012",
+        "original_record": "#/AAS05/original_items/11",
+        "original_record_sha256": "bae07d3decd50051b46d516f0d1afd3fed4efc15c63b53a7cf68acbb952a68d5",
+        "native_meaning": "XML optional list/collection wrappers nonempty when present; no empty update equivalence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L962-L994",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          962,
+          994
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "AAS-O2-RECORD-ADMIN",
+          "ISA-C-048",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Digit-string administration and zero-offset patterns corroborate existing representation holds, not equipment configuration or live freshness.",
+        "source_id": "AAS05-S013",
+        "original_record": "#/AAS05/original_items/12",
+        "original_record_sha256": "9eceabbd9dc16dac2bfb7f96e1fa303650003a746e79438a7505d70bf8e6db52",
+        "native_meaning": "Administrative versions constrained as digit strings in XML, versus integer prose.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd#L32-L62",
+        "source_file": "schemas/xml/AAS.xsd",
+        "source_lines": [
+          32,
+          62
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SCHEMA_CONSTRAINT",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-TIME"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "The OWL timeStamp property independently corroborates the spelling discrepancy only. It adds no occurrence identity or event attribution meaning; the unresolved comparison remains.",
+        "source_id": "AAS05-S014",
+        "original_record": "#/AAS05/original_items/13",
+        "original_record_sha256": "130fa146eb9f53074bec4617aca61cc0a71cef0d5fab98fbe16ff012f4809065",
+        "native_meaning": "OWL EventPayload/timeStamp data property string, contrary to native text spelling.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/rdf-ontology.ttl#L1165-L1171",
+        "source_file": "schemas/rdf/rdf-ontology.ttl",
+        "source_lines": [
+          1165,
+          1171
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "ONTOLOGY_DECLARATION_EXPERIMENTAL",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-STRUCTURE",
+          "ISA-R-LIST",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Retain optional-but-nonempty normal containers, ValueOnly alternatives and RDF unordered triple/zero-value limitations. Source serialization is not a universal supplied-empty/no-update contract; later qualified API findings remain intact, not reset to unreviewed.",
+        "source_id": "AAS05-S015",
+        "original_record": "#/AAS05/original_items/14",
+        "original_record_sha256": "f4a85117f3d4d3b6d8ebf33074e2f638c4d282dad8ebd5ddbddca5da6539d5d6",
+        "native_meaning": "OWL says list ordered, but value ordinary object property; triple order/round trip not proven.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/rdf-ontology.ttl#L2092-L2128",
+        "source_file": "schemas/rdf/rdf-ontology.ttl",
+        "source_lines": [
+          2092,
+          2128
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "ONTOLOGY_DECLARATION",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-TIME",
+          "ISA-A-TIME-BASIS",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Selected JSON/XML/OWL/SHACL/shared OpenAPI retain timeStamp against narrative timestamp; required source/scope and optional attribution corroborate the positive candidates. This neither resolves spelling/UTC holds nor verifies physical events.",
+        "source_id": "AAS05-S016",
+        "original_record": "#/AAS05/original_items/15",
+        "original_record_sha256": "e8db4cd00f57e76ded1638eb2a33c35c0afc1d49959b3adea4704b589671a0cc",
+        "native_meaning": "SHACL EventPayload/timeStamp minCount1/maxCount1 with UTC pattern; not verified physical event.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/shacl-schema.ttl#L594-L656",
+        "source_file": "schemas/rdf/shacl-schema.ttl",
+        "source_lines": [
+          594,
+          656
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SHACL_SHAPE_EXPERIMENTAL",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-STRUCTURE",
+          "ISA-R-LIST",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Retain optional-but-nonempty normal containers, ValueOnly alternatives and RDF unordered triple/zero-value limitations. Source serialization is not a universal supplied-empty/no-update contract; later qualified API findings remain intact, not reset to unreviewed.",
+        "source_id": "AAS05-S017",
+        "original_record": "#/AAS05/original_items/16",
+        "original_record_sha256": "d80e248792e275260a165071105f5a87954af8f7d960ce4bc00b5bf62867b6e2",
+        "native_meaning": "SHACL list value minCount0 with class SubmodelElement; no order container in selected shape.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/shacl-schema.ttl#L1377-L1414",
+        "source_file": "schemas/rdf/shacl-schema.ttl",
+        "source_lines": [
+          1377,
+          1414
+        ],
+        "edition": "IDTA-01001 Part1 v3.2.0 (Release 26-01)",
+        "source_standing": "SHACL_SHAPE",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-T-EVENT-TIME",
+          "ISA-A-TIME-BASIS",
+          "AAS-O3-EVENT-SOURCE-SCOPE",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "CONFLICT/RELATED",
+        "rationale": "Selected JSON/XML/OWL/SHACL/shared OpenAPI retain timeStamp against narrative timestamp; required source/scope and optional attribution corroborate the positive candidates. This neither resolves spelling/UTC holds nor verifies physical events.",
+        "source_id": "AAS05-S018",
+        "original_record": "#/AAS05/original_items/17",
+        "original_record_sha256": "59ed57d31957ff90aef211fa1d17bd05b1762d9472d92e2b7319ddc8a4e0048a",
+        "native_meaning": "Part2-shared Part1 schema requires EventPayload.timeStamp, as do native serializations.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L448-L474",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          448,
+          474
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Schema declaration/envelope requirements do not prove mandatory invocation arguments or physical outcomes. Async timeout presence in the selected envelope stays native protocol evidence; behavioral review remains O5.",
+        "source_id": "AAS05-S019",
+        "original_record": "#/AAS05/original_items/18",
+        "original_record_sha256": "a4589ffbe64330128155849af06e24c6294d916c33418aeba5af7d2a3efc6a55",
+        "native_meaning": "Part2-shared metamodel Operation/OperationVariable structure declares arguments, not effects.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L698-L725",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          698,
+          725
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Full-model optional lexical-string bounds plus valueType differ from required numeric ValueOnly bounds. Preserve representation scope and experimental Range standing; no inferred inclusivity, allowed-values or lossless conversion.",
+        "source_id": "AAS05-S020",
+        "original_record": "#/AAS05/original_items/19",
+        "original_record_sha256": "b0a7084411b5af22a8f0ff4c4067c4a97b9b44ed15a8ce6e146bd69a699489e1",
+        "native_meaning": "Shared full-model Range has valueType and optional string min/max.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml#L780-L795",
+        "source_file": "Part1-MetaModel-Schemas/openapi.yaml",
+        "source_lines": [
+          780,
+          795
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Full-model optional lexical-string bounds plus valueType differ from required numeric ValueOnly bounds. Preserve representation scope and experimental Range standing; no inferred inclusivity, allowed-values or lossless conversion.",
+        "source_id": "AAS05-S021",
+        "original_record": "#/AAS05/original_items/20",
+        "original_record_sha256": "c07c8906a30847c1672c112fa1f55705318cd22fd8ab2c1954a8c2acd47db78d",
+        "native_meaning": "API RangeValue requires numeric min and max, unlike full-model lexical optional pair.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L1190-L1200",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          1190,
+          1200
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_VALUE_ONLY_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-COMMAND-DECL",
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-RESULT-DECL"
+        ],
+        "relation": "PARTIAL",
+        "rationale": "Schema declaration/envelope requirements do not prove mandatory invocation arguments or physical outcomes. Async timeout presence in the selected envelope stays native protocol evidence; behavioral review remains O5.",
+        "source_id": "AAS05-S022",
+        "original_record": "#/AAS05/original_items/21",
+        "original_record_sha256": "f4155dc4f7bc8517a15a3504c9b51bfd5874fd05484de1f032a560004e5e841a",
+        "native_meaning": "Operation request/result value-only structures are schema envelopes, not executed action contracts.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L934-L970",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          934,
+          970
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "disposition": "SELECTED_SCHEMA_EVIDENCE_RETAINED",
+        "row_ids": [
+          "ISA-K-STRUCTURE",
+          "ISA-R-LIST",
+          "ISA-R-LIST-PRESENCE"
+        ],
+        "relation": "PARTIAL/CONFLICT",
+        "rationale": "Retain optional-but-nonempty normal containers, ValueOnly alternatives and RDF unordered triple/zero-value limitations. Source serialization is not a universal supplied-empty/no-update contract; later qualified API findings remain intact, not reset to unreviewed.",
+        "source_id": "AAS05-S023",
+        "original_record": "#/AAS05/original_items/22",
+        "original_record_sha256": "88b68dd046aeb6521e05d27060d06658f3e38feec81a66052855b9e79c676bd9",
+        "native_meaning": "ListValue array versus CollectionValue ValueOnly; no equivalence with RDF or absent-vs-empty update.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L1410-L1452",
+        "source_file": "Part2-API-Schemas/openapi.yaml",
+        "source_lines": [
+          1410,
+          1452
+        ],
+        "edition": "IDTA-01002 Part2 v3.2.0 (Release 26-01)",
+        "source_standing": "OPENAPI_SCHEMA",
+        "inherited_coverage": "SELECTED_BLOCK_FULLY_READ__ENTIRE_FILE_SAMPLED",
+        "source_contact_this_step": "SELECTED_ORIGINAL_PASSAGE_REOPENED__NOT_WHOLE_CORPUS",
+        "original_caveat_preserved": null,
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      }
+    ],
+    "targeted_original_contacts": [
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "48d1567cabbd179ac2e465b1c0f795015b73a7ac",
+        "selected_line_ranges": [
+          [
+            314,
+            342
+          ],
+          [
+            323,
+            329
+          ],
+          [
+            564,
+            632
+          ],
+          [
+            589,
+            632
+          ],
+          [
+            462,
+            481
+          ],
+          [
+            182,
+            207
+          ],
+          [
+            81,
+            90
+          ],
+          [
+            92,
+            98
+          ],
+          [
+            160,
+            180
+          ],
+          [
+            100,
+            113
+          ],
+          [
+            115,
+            116
+          ],
+          [
+            118,
+            126
+          ],
+          [
+            128,
+            136
+          ],
+          [
+            212,
+            240
+          ],
+          [
+            257,
+            258
+          ],
+          [
+            245,
+            265
+          ],
+          [
+            260,
+            262
+          ],
+          [
+            564,
+            635
+          ],
+          [
+            314,
+            347
+          ],
+          [
+            61,
+            266
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/terms-definitions-and-abbreviations.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "de2ed052188085b997c952204c0e7ff09b4aa1b0",
+        "selected_line_ranges": [
+          [
+            92,
+            109
+          ],
+          [
+            230,
+            275
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/terms-definitions-and-abbreviations.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "a8c9924f8c09d9126687cad3206ebf3ff693fe70",
+        "selected_line_ranges": [
+          [
+            13,
+            26
+          ],
+          [
+            67,
+            85
+          ],
+          [
+            78,
+            85
+          ],
+          [
+            138,
+            152
+          ],
+          [
+            87,
+            136
+          ],
+          [
+            29,
+            65
+          ],
+          [
+            95,
+            130
+          ],
+          [
+            1,
+            153
+          ]
+        ],
+        "grade": "ENTIRE_153_LINE_INCLUDE_TEXT_READ__REFERENCED_FIGURES_INHERITED_NOT_REOPENED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/events.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "b623af1945c35e7e498d213534341c69a787240b",
+        "selected_line_ranges": [
+          [
+            507,
+            567
+          ],
+          [
+            580,
+            609
+          ],
+          [
+            127,
+            155
+          ],
+          [
+            98,
+            123
+          ],
+          [
+            44,
+            96
+          ],
+          [
+            148,
+            182
+          ],
+          [
+            98,
+            105
+          ],
+          [
+            225,
+            264
+          ],
+          [
+            268,
+            294
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/common.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/datatypes.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "2b1b8819265afd0ec820c0b2fd9502fc9fde2f48",
+        "selected_line_ranges": [
+          [
+            255,
+            268
+          ],
+          [
+            282,
+            294
+          ],
+          [
+            108,
+            114
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/datatypes.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/annex/general.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "ff6a79033f6e6e22376819538ed8a61f07c0e6d1",
+        "selected_line_ranges": [
+          [
+            707,
+            738
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/annex/general.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/partials/diagrams/classes/event-payload.puml",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "d377d2b33d3912dd07e12e0c4f89bf973ddf53d4",
+        "selected_line_ranges": [
+          [
+            1,
+            12
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/partials/diagrams/classes/event-payload.puml"
+      },
+      {
+        "path": "schemas/json/aas.json",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "4aaed6e9e2f00a21e6e50390fc19335250b6f7c2",
+        "selected_line_ranges": [
+          [
+            131,
+            210
+          ],
+          [
+            1295,
+            1325
+          ],
+          [
+            1506,
+            1566
+          ],
+          [
+            1082,
+            1127
+          ],
+          [
+            672,
+            710
+          ],
+          [
+            52,
+            124
+          ],
+          [
+            1215,
+            1249
+          ],
+          [
+            711,
+            754
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/json/aas.json"
+      },
+      {
+        "path": "schemas/xml/AAS.xsd",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "dfe45066579bb947097aec0f079257a7ee7a01be",
+        "selected_line_ranges": [
+          [
+            90,
+            133
+          ],
+          [
+            962,
+            994
+          ],
+          [
+            705,
+            741
+          ],
+          [
+            436,
+            460
+          ],
+          [
+            32,
+            62
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/xml/AAS.xsd"
+      },
+      {
+        "path": "schemas/rdf/rdf-ontology.ttl",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "fb73d1f0450c31029a6828f39f5c475baa0fac70",
+        "selected_line_ranges": [
+          [
+            2092,
+            2128
+          ],
+          [
+            1165,
+            1171
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/rdf-ontology.ttl"
+      },
+      {
+        "path": "schemas/rdf/shacl-schema.ttl",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "ecde112f2b4acde6cc3a96e6e2ef64d45afd2f62",
+        "selected_line_ranges": [
+          [
+            1377,
+            1414
+          ],
+          [
+            594,
+            656
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/schemas/rdf/shacl-schema.ttl"
+      },
+      {
+        "path": "Part2-API-Schemas/openapi.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "ed79ef16b8e78f02dc0fa1f91db53e1aaf7d80ff",
+        "selected_line_ranges": [
+          [
+            1410,
+            1452
+          ],
+          [
+            934,
+            970
+          ],
+          [
+            1190,
+            1200
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml"
+      },
+      {
+        "path": "Part1-MetaModel-Schemas/openapi.yaml",
+        "commit": "f136ba1465e4c6b5b25444e0609d4de8f7429044",
+        "blob": "0550680381128369c629568b8a8abbec3561e6fb",
+        "selected_line_ranges": [
+          [
+            698,
+            725
+          ],
+          [
+            448,
+            474
+          ],
+          [
+            780,
+            795
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part1-MetaModel-Schemas/openapi.yaml"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "0f5df8d94b8773d9effa87995e9c3e7d7a80abb4",
+        "selected_line_ranges": [
+          [
+            49,
+            73
+          ],
+          [
+            75,
+            114
+          ],
+          [
+            116,
+            162
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/mappings/formats/json.adoc"
+      },
+      {
+        "path": "documentation/IDTA-01001/modules/ROOT/pages/includes/constraints.adoc",
+        "commit": "ecd191273a28dd9c4e7bb75e923f0f0fe5da444e",
+        "blob": "d2d199f66fa04009909035814bb1e353615185b9",
+        "selected_line_ranges": [
+          [
+            18,
+            18
+          ],
+          [
+            19,
+            19
+          ],
+          [
+            23,
+            23
+          ],
+          [
+            24,
+            24
+          ],
+          [
+            26,
+            26
+          ],
+          [
+            35,
+            35
+          ],
+          [
+            44,
+            44
+          ],
+          [
+            48,
+            48
+          ],
+          [
+            50,
+            50
+          ]
+        ],
+        "grade": "SELECTED_PASSAGES_READ__ENTIRE_FILE_SAMPLED",
+        "url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/includes/constraints.adoc"
+      }
+    ],
+    "new_candidate_row_ids": [
+      "AAS-O3-EVENT-DECLARATION",
+      "AAS-O3-EVENT-SOURCE-SCOPE",
+      "AAS-O3-EVENT-ROUTING",
+      "AAS-O3-EVENT-INITIATOR",
+      "AAS-O3-QUALIFIED-CONTEXT"
+    ],
+    "existing_345_rows": "UNCHANGED_INCLUDING_ALL_624_SOURCE_CLASSIFICATIONS",
+    "historical_53_in_O3": {
+      "AAS04-N008": "New event-routing candidate",
+      "AAS04-N021": "Retained source-specific submodel distinction rule linked to O2 candidates",
+      "AAS04-N028": "Retained timestamp/timeStamp conflict"
+    },
+    "holds_retained": [
+      "Events and Qualifier.kind remain experimental; no ensured backward compatibility for event model.",
+      "timestamp/timeStamp, integer/digit-string administration and UTC example/pattern conflicts remain unresolved.",
+      "Normal/ValueOnly/RDF list and Range differences do not establish lossless conversion or empty/no-update equivalence.",
+      "Nine native constraint locators re-read; no new DIM or Profile SHALLs. Native maxInterval double-negative retained.",
+      "All six schema files sampled; no complete schema/runtime validation or 34-profile API contract audit.",
+      "External capability/ontology/qualifier dictionaries and access-control references not inspected here. Prior figure/corpus/companion holds retained.",
+      "Four case ceilings unchanged; no actual device, installed unit, command, occurrence, transport or identity authentication verified.",
+      "ISA, The Open Group SOSA and SAPIENT source holds and owner model gates remain unchanged."
+    ],
+    "case_review": "Scope check against preserved source-case records only. Dragino/AirGradient reference designs, Campbell/ClimaVue possible pairing and Bennett Point original-versus-copy distinctions unchanged; no new source-case audit.",
+    "forecast": "O3 completes in one bounded step. Approximately 5–7 substantive steps remain: O4 1, O5 1–2, O6 2–3, O7 1. Source complexity governs; no automatic progression.",
+    "one_next": "Await owner Proceed for AAS O4 only: original discovery and service meanings from 38 AAS06 findings, preserving edition, access and coverage limits. Stop before O5; no donor transition, model adoption, UI or deployment.",
+    "publication": {
+      "workbook_sha256": "2aa1791b4d91d12145e711cfe8f56011500a1638c2439aa0a553ac86052055d9",
+      "previous_workbook_sha256": "2618bb8a0d93004e22ba2ac0dcb018de88e7912516ea960a9d676af7cedf27a2",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "DIM Register",
+        "Summary",
+        "Validation",
+        "Legend"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values": 5904,
+      "new_candidate_cells": [
+        "G365",
+        "G366",
+        "G367",
+        "G368",
+        "G369"
+      ],
+      "existing_values_and_fills": "UNCHANGED",
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_reopen": "PENDING",
+      "visual_review": "PASS: candidate cells/labels, DIM Register and Legend inspected; current Summary/Validation guidance inspected and historical count labels clarified. Actual Microsoft Excel clean reopen remains pending.",
+      "remote_publication": "PENDING",
+      "source_integrity": "15 pinned original file contacts verified by Git blob hashes; selected ranges read. Six schema files remain sampled."
     }
   }
 }
