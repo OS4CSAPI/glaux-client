@@ -5503,6 +5503,13 @@ def f3_put(cell, value):
 
 
 def f3_config(stage):
+    if stage == "F3_05":
+        return {"base": "ac19c6f31ab9aff7a270e96dbfa51781db729717",
+                "evidence": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+                "donor": "AAS", "column": 6, "register": "R", "count": 64,
+                "counts": {"COMMON_CANDIDATE": 37, "SPECIALIZED_CANDIDATE": 10,
+                           "NATIVE_ONLY_EVIDENCE": 2, "UNRESOLVED_CANDIDATE": 3,
+                           "MIXED_OR_HELD": 12}}
     if stage == "F3_04D":
         return {"base": "6c81253431361343e8e0351cf54b648958db4425",
                 "evidence": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json",
@@ -5605,6 +5612,15 @@ def publish_f3(stage="F3_02"):
                   "The same workbook matches these values; clean Microsoft Excel reopening remains unverified. "
                   "Classification is neither model adoption nor comprehensive source coverage. " + review["next"] +
                   "\n\nEarlier checkpoint banners below are historical.\n\n---\n\n")
+    if stage == "F3_05":
+        banner = ("# CURRENT — F3-05 Asset Administration Shell classification checkpoint (14 November 2026)\n\n"
+                  "64 existing comparisons: 37 common, 10 specialized, 2 native-only, 3 unresolved and 12 held. "
+                  "Four holds gained qualified candidate support; six unsupported comparison colors were removed. "
+                  "34 classifications changed and 30 were retained. AAS: 52 colored, 12 held, zero ungraded. "
+                  "All 337 rows, other donor/case evidence and original holds are preserved. "
+                  "The same workbook matches these values; clean Microsoft Excel reopening remains unverified. "
+                  "This targeted classification pass is not full source coverage or model adoption. " + review["next"] +
+                  "\n\nEarlier checkpoint banners below are historical.\n\n---\n\n")
     for name in ("Master_Donor_Concept_to_DIM_Crosswalk.md", "ISA_Correction_Review_07NOV2026.md"):
         before = f3_baseline(name, cfg["base"]).decode("utf-8")
         (D / name).write_text(banner + before[:before.index("<table>")] + "\n".join(table)
@@ -5654,7 +5670,7 @@ def publish_f3(stage="F3_02"):
                 oldstyle = int(prior_cells[record["cell"]].get("s", "0"))
                 # Historical F2 banding is by zero-based data-row ordinal, not worksheet row.
                 current_styles[record["cell"]] = (526 + rowindex[record["row_id"]] % 2
-                                                   if oldstyle in style_ids.values() else oldstyle)
+                                                   if stage == "F3_05" or oldstyle in style_ids.values() else oldstyle)
         edit_sheet("Master Crosswalk", {r["cell"]: r["after"] for r in records}, current_styles)
         guidance = {
             "A1": "CURRENT 14 NOV 2026 — F3-02: 18 ISA early comparisons classified from original evidence",
@@ -5721,12 +5737,26 @@ def publish_f3(stage="F3_02"):
                 "A23": "Preserved source and owner holds",
                 "B23": "Nine SOSA source-hold families, six ISA questions, SAPIENT source/timestamp holds and all AAS findings retained. All nine case gaps remain unverified. No DIM/Profile adoption; AAS O1 waits for F3 gate. Clean Microsoft Excel reopen UNVERIFIED."
             }
+        if stage == "F3_05":
+            guidance = {
+                "A1": "CURRENT 14 NOV 2026 — F3-05 Asset Administration Shell classifications complete",
+                "B17": "64 existing comparisons: 37 common, 10 specialized, 2 native-only, 3 unresolved, 12 held. Next separate Proceed: F3-06 peer challenge and owner gate only.",
+                "A19": "Current four-donor classification standing",
+                "B19": "AAS: 52 colored + 12 held + 0 ungraded = 64. Four donors: 464 colored + 152 held + 0 ungraded = 616 source-bearing comparisons; 732 other explicit statuses.",
+                "B21": "Targeted original Part 1/2, companion and four industrial-template evidence reviewed: 17 text/schema files and 16 PDF pages. All 64 prior comparisons reviewed; no new corpus or whole-source audit claim.",
+                "B22": "34 classifications changed; 30 retained. Four old holds gain colors; six colors removed. Operation interfaces and typed structures remain qualified; generic carriers do not establish specific health, occurrence or connection meanings.",
+                "A23": "Preserved source and owner holds",
+                "B23": "Original source findings, editions, conflicts and case holds preserved. AAS remains active bounded PARTIAL; O1–O7 waits for F3 owner acceptance. No new rows or model adoption. Clean Microsoft Excel reopen UNVERIFIED."
+            }
         edit_sheet("Summary", guidance)
         edit_sheet("Validation", guidance)
         edit_sheet("Legend", {
             "A1": "CURRENT LEGEND — " + label + ": candidate colors and explicit held comparisons",
             "A28": label + " classification checkpoint",
-            "B28": ("Color grades potential information, not exact mapping or model adoption. "
+            "B28": ("F3-05: 37 common, 10 specialized, 2 native-only, 3 unresolved and 12 held AAS comparisons. "
+                     "Colors grade qualified information, not exact mapping, observed implementation or adoption. Full source coverage remains bounded PARTIAL."
+                     if stage == "F3_05" else
+                     "Color grades potential information, not exact mapping or model adoption. "
                      "F3-04D: 33 SOSA equipment comparisons dispositioned; 20 new colors and 13 holds. All 121 source-bearing SOSA comparisons classified; original source completeness remains bounded PARTIAL."
                      if stage == "F3_04D" else
                      "Color grades potential information, not exact mapping or model adoption. "
@@ -5745,6 +5775,8 @@ def publish_f3(stage="F3_02"):
         register = old.readcells(prior, "DIM Register")
         regedits = {"M1": "SAPIENT H — candidate / color decision", "N1": "ISA I — candidate / color decision",
                     "O1": "SOSA J — candidate / color decision"}
+        if stage == "F3_05":
+            regedits["R1"] = "AAS G — current classification, source IDs and rationale"
         rowindex = {r["row_id"]: i + 2 for i, r in enumerate(m["rows"])}
         for r in records:
             idx = rowindex[r["row_id"]]
@@ -5774,7 +5806,7 @@ def publish_f3(stage="F3_02"):
         "M00_M01_preserved": True, "M02_created": False,
         "actual_Microsoft_Excel_clean_open": "UNVERIFIED", "visual_render_review": "PENDING",
         "source_completeness_claim": "Targeted classification pass only; original bounded coverage retained."}
-    aas = load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
+    aas = evidence if stage == "F3_05" else load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json")
     aas["master_state_current"].update({"checkpoint": checkpoint, "comparison_lag": 0})
     save(MASTER, m)
     save(cfg["evidence"], evidence)
@@ -5796,8 +5828,17 @@ def verify_f3(stage="F3_02"):
     records = review["records"]
     base = json.loads(f3_baseline(MASTER, cfg["base"]))
     original_e = json.loads(f3_baseline(cfg["evidence"], cfg["base"]))
-    need({k: v for k, v in e.items() if k != key} == original_e,
+    allowed_metadata = {"master_state_current", "one_next"} if stage == "F3_05" else set()
+    need({k: v for k, v in e.items() if k != key and k not in allowed_metadata} ==
+         {k: v for k, v in original_e.items() if k not in allowed_metadata},
          "all original source findings, native locators and holds preserved")
+    if stage == "F3_05":
+        before_state, after_state = original_e["master_state_current"], e["master_state_current"]
+        need({k: v for k, v in before_state.items() if k not in ("checkpoint", "comparison_lag", "next")} ==
+             {k: v for k, v in after_state.items() if k not in ("checkpoint", "comparison_lag", "next")},
+             "only current AAS handoff metadata updated")
+        need(after_state["checkpoint"] == m["currentEvidenceCheckpoint"] and after_state["comparison_lag"] == 0
+             and after_state["next"] == e["one_next"] == review["next"], "current AAS metadata is coherent")
     need(m["currentEvidenceCheckpoint"] == stage + "_CLASSIFICATION_SAVED_VERIFIED", "saved " + label + " checkpoint")
     need(len(records) == cfg["count"] and Counter(r["candidate_status"] for r in records) == cfg["counts"], "all source decisions")
     need(m["columns"] == base["columns"] and m["review_sections"] == base["review_sections"], "approved layout preserved")
@@ -5988,6 +6029,18 @@ def verify_f3(stage="F3_02"):
         need(len(review["prior_calibration_retained"]) == 6, "six relevant prior decisions retained")
         need(review["census_after"]["ungraded"] == 0, "zero remaining classification exceptions; not source completeness")
         need(review["next_packet_boundary"]["step"] == "F3-05" and review["next_packet_boundary"]["source_bearing_count"] == 64, "next AAS classification boundary")
+    if stage == "F3_05":
+        prior_decisions = base["AAS10_color_reconciliation"]
+        expected = {r["row_id"] for group in ("assignments", "held") for r in prior_decisions[group]}
+        need({r["row_id"] for r in records} == expected, "exact 54 provisional colors and ten holds reviewed")
+        need(all(r["review_set"] == "64_EXISTING_COMPARISONS" for r in records), "bounded AAS classification set")
+        for prior_key in ("F3_02_classification", "F3_03_classification", "F3_04A_classification",
+                          "F3_04B_classification", "F3_04C_classification", "F3_04D_classification"):
+            need(m[prior_key] == base[prior_key], "other donor classifications preserved " + prior_key)
+        need(sum(bool(r["fill"]) for r in records) == 52 and review["census_after"]["AAS"] ==
+             {"source_bearing": 64, "colored": 52, "held": 12, "ungraded": 0}, "current AAS census")
+        need(m["F3_05_classification"]["census_after"] == review["census_after"], "master and evidence census")
+        need(m["AASEvidence"] == base["AASEvidence"], "AAS source coverage and owner disposition unchanged")
     print(f"PASS {label}: {len(records)} source-backed dispositions; 5664 actual saved values and both CSV/Markdown mirrors.")
     print("PASS: original 337 rows/26 sheets, 21 untouched worksheet parts, other donor/case evidence and M00/M01 preserved.")
     print("LIMIT: targeted classification review only; clean Microsoft Excel reopen remains unverified; stop at current stage.")
@@ -6004,7 +6057,11 @@ def verify_f3_02():
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="F3_04D_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+    if checkpoint=="F3_05_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
+        publish_f3("F3_05")
+    elif checkpoint=="F3_05_CLASSIFICATION_SAVED_VERIFIED":
+        verify_f3("F3_05")
+    elif checkpoint=="F3_04D_SOURCE_CLASSIFIED_PENDING_SAME_XLSX":
         publish_f3("F3_04D")
     elif checkpoint=="F3_04D_CLASSIFICATION_SAVED_VERIFIED":
         verify_f3("F3_04D")

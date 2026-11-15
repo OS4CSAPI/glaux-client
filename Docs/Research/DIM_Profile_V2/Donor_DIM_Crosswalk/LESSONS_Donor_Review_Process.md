@@ -1,3 +1,13 @@
+# L110 — Separate qualified interface support from unsupported subjects (14 November 2026)
+
+F3-05 applied the same source-first classification contract to 64 existing AAS comparisons. Native Operation/Property/collection/list declarations and API requests/results can support common information needs without exact ISA identity or a live equipment demonstration. Conversely, generic File, Reference, Property and displayName carriers do not themselves supply an observation association, occurrence identifier, operating-condition vocabulary or changeable equipment name. Record the direct support separately from inherited source IDs and retain the full prior comparison in the existing evidence ledger when shortening the current cell.
+
+The hierarchy template explicitly supports composition of assembled equipment, but its detailed physical connections and anchors are future material. Keep defined behavior, examples, experimental structures and future work separate; preserve distinct subject, lifecycle, type/instance, direction and edition meanings. This pass changes candidate classifications, not source completeness, model adoption or donor acceptance; F3-06 remains the cross-donor peer challenge. The existing publisher also must remove old AAS candidate fills using AAS's actual style records, rather than assuming they share the earlier donors' style indexes.
+
+---
+
+---
+
 # L109 — Read reporting provisions and preserve input/output direction (14 November 2026)
 
 F3-04D found that earlier equipment comparisons could cite only connector ratings or emphasize the absence of observed case values while overlooking explicit reporting rules and recommendations. C239 recommends analog power-supply input/output measurements, requires scoped port and operational-state reporting, and describes revision inventory; native model declarations also carry mounting, network and diagnostic information. These support qualified candidates without a field deployment, while their subject, SHALL/SHOULD standing and 2022/2023 edition limits remain visible. A named Security Tamper Alert is useful optional information, but not automatically a persistent device tamper state or a defined payload.
