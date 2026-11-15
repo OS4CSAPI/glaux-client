@@ -37,7 +37,7 @@ Before substantive master changes preserve a browsable pre-change checkpoint. Af
 
 Completion means every finding in the frozen scope has an evidenced outcome, with no silent omissions or unrecorded residual work; any held outcome names the unresolved question. Explain inventory limitations instead of claiming complete coverage. A new-row count of zero is permissible when supported. This does not certify the full SOSA corpus, eliminate all donor-selection bias, rank donors, adopt DIM/Profile requirements or prove runtime behavior. Existing owner gates remain.
 
-**Current sequence:** SO-2A accounts for 262 retained records and integrates warranted candidates. Complete its publication, then stop. Next separate Proceed: SO-2B only, 201 records. The remaining estimate is 11 bounded steps. No AAS acceptance is implied.
+**Current sequence:** The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns delivered packets, the next authorized boundary and the remaining estimate. Follow its one-Proceed/one-packet stop; do not use preserved historical sequence banners. No AAS acceptance is implied.
 
 ---
 

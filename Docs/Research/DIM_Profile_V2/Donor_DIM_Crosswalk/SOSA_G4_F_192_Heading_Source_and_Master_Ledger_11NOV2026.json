@@ -28477,7 +28477,7 @@
       "timezone": "America/New_York",
       "packet": "SO-2B",
       "subject": "System Manager and generic-module management",
-      "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_PENDING",
+      "status": "PUBLISHED_READBACK_VERIFIED",
       "baseline_commit": "f773e8969aaff739a9ba1938a86ba7a941b867f1",
       "owner_authorization": "Profile Rewrite 47: owner Proceed after published SO-2A result and next SO-2B scope (201 records); one bounded packet only.",
       "archive": "archive/dim-crosswalk-pre-sosa-so2b-20261115",
@@ -32554,7 +32554,7 @@
       ],
       "one_next": "SO-2C only on a separate Proceed: Security, chassis and plug-in-card management, 352 retained records; stop before SO-2D.",
       "publication": {
-        "remote_publication": "PENDING",
+        "remote_publication": "VERIFIED",
         "visual_review": "PASS: changed master cells, nine register definitions, long register evidence, Summary and Legend rendered and inspected; no clipping observed.",
         "actual_Microsoft_Excel_clean_reopen": "UNVERIFIED",
         "workbook_sha256": "41423e3525492ff9c10079a20de7c4118a64b0dc14a92780881b721b823b47aa",
@@ -32568,7 +32568,30 @@
         "unchanged_sheet_parts": 21,
         "grid_values": 6448,
         "authoring": "Artifact Tool import/edit/recalculate/export; authored values transferred into original OOXML package preserving unrelated bytes/styles.",
-        "saved_file_checks": "PASS: exact 201-record partition/pointers, nine additions/seven qualifications, all 6448 grid values and mirror parity, original classifications, 26-sheet layout/21 unchanged parts, M00/M01 preservation; publisher verification passed without workbook mutation."
+        "saved_file_checks": "PASS: exact 201-record partition/pointers, nine additions/seven qualifications, all 6448 grid values and mirror parity, original classifications, 26-sheet layout/21 unchanged parts, M00/M01 preservation; publisher verification passed without workbook mutation.",
+        "research_commit": "bd6a13cd150d543c38876df064917f7fb754dce7",
+        "verified_at": "2026-11-15T16:04:39-05:00",
+        "readback": "All eleven files delivered in bd6a13cd150d543c38876df064917f7fb754dce7 match the clean local checkout and the blob SHAs returned by GitHub for that commit. The workbook SHA-256 matches its saved verification record. Live branch HEAD confirmed at that research commit before this status-only closeout.",
+        "workflows": [
+          {
+            "id": 43758595020,
+            "name": "Master verification",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43758595020"
+          },
+          {
+            "id": 43758595065,
+            "name": "Publication verification",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43758595065"
+          }
+        ],
+        "delivery_closeout": "Profile Rewrite 48 Proceed authorizes finishing SO-2B publication verification and status routing only; SO-2C has not started. Prior saved-file and visual evidence reused at unchanged workbook bytes.",
+        "closeout_checks": {
+          "recovery_protocol": "PASS: recovery-only checker and whitespace check.",
+          "controlled_changes": "PASS: JSON comparison proves only SO-2B status/publication metadata changed; workbook bytes unchanged.",
+          "broader_artifact_verification": "NOT COMPLETED in this partial local checkout: Docs/Design/MPSS is absent. The five previously recorded broader artifact-register/link errors are not re-evaluated or closed; no blanket repository success is claimed."
+        }
       },
       "preservation": {
         "prior_information_rows": 369,
