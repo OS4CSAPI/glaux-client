@@ -1,3 +1,79 @@
+# CURRENT — F3 accepted; AAS O1 authorized (14 November 2026, America/New_York)
+
+In Profile Rewrite 43 the owner stated: “Ok consider F3 accepted, document tgis last response in the github appropriatwly, then priceed with what is next”. This accepts F3 as the correction of existing donor classifications, retaining the disclosed limitations, and authorizes the next bounded AAS **O1 source-opportunities baseline only**. Stop before O2. F3 execution was published at `49ee1d6b550e7e6d899a88ca64a3027ba13f17fa`; its verified publication record is at `eae7f38b1be9681355e3096d3c2f7f3565dfd958`.
+
+The comprehensive plain-English explanation accepted by the owner is preserved in the [F3 plan](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md#f3-owner-explanation-and-accepted-results). F3 resolved 160 missing classification decisions and revised 129 prior categories; 327 retained their original category. These are distinct donor/row comparisons measured from `00ada697e070adb6eeafeda49819599ee8d3c5c2` to `eae7f38b1be9681355e3096d3c2f7f3565dfd958`, not summed edits or new information fields.
+
+The same workbook remains the verified F3-06 snapshot: 337 information rows, 26 sheets, 5,664 grid values, 508 colored / 108 held / zero ungraded source-bearing comparisons. Its comparison values and fills have zero lag; its embedded F3-06 owner-routing statements still say acceptance pending and are historical as of this owner decision. Actual Microsoft Excel clean reopen/no-repair remains PENDING, all original-source holds remain, and AAS donor coverage remains active bounded PARTIAL. F3 acceptance is not AAS closure, DIM/Profile adoption or source completeness.
+
+**ONE NEXT:** execute AAS O1 only under the existing approved AAS plan: reconcile the 310 recorded findings, the historical 53 uncited findings and the current 64 AAS comparisons, retaining the accepted F3 decisions. No new rows, further donor, model adoption, user-interface work or deployment is authorized by this checkpoint.
+
+---
+
+## F3 owner explanation and accepted results
+
+This section records the substance of the plain-English explanation given immediately before the owner's F3 acceptance in Profile Rewrite 43. It is an explanation of the completed correction, not a new method or an expanded research authorization.
+
+F3's main accomplishment was repairing the fairness and meaning of the donor comparison. The review found genuine omissions, inconsistent judgments and misleading comparisons, corrected them with recorded source reasons, and brought the same Excel workbook into agreement with the results. The owner's question about why ISA's model and serial-number cells were white while other donors' cells were blue exposed an actual defect in applying the classification method.
+
+### What was wrong
+
+The spreadsheet was intended to distinguish broadly useful information, information useful in particular circumstances and unresolved questions. Its colors did not consistently mean the same thing across donors. Some supported comparisons never received a classification; the information existed in the original sources and research, but earlier passes omitted the rows. ISA, SAPIENT and The Open Group SOSA all had omissions.
+
+Some decisions also applied an unfairly demanding criterion. A useful candidate could be held because it combined several source definitions, lacked an exact ISA equivalent or had not been demonstrated on equipment, while comparable declarations from another donor received a color. Conversely, a positive comparison could go too far by crediting a related concept with a particular meaning the source did not establish. A white cell could therefore reflect unfinished classification, a legitimate unresolved comparison or an overly cautious earlier judgment.
+
+### Results of the whole plan
+
+The 79 corrections reported in F3-06 were the final step's corrections, not the whole plan's result. A distinct-cell comparison of the recorded starting and final decisions produces the following results. Historical F2 column letters G/H/I refer to SAPIENT/ISA/OpenGroupSOSA before AAS column insertion; the reconciliation uses donor identity and stable row ID rather than mistaking those letters for current positions.
+
+| Donor | Missing classification decisions resolved | Prior categories changed | Original categories retained | Total source-bearing comparisons |
+| --- | ---: | ---: | ---: | ---: |
+| Integrated Sensor Architecture (ISA) | 18 | 64 | 234 | 316 |
+| SAPIENT | 39 | 26 | 50 | 115 |
+| The Open Group Sensor Open Systems Architecture (SOSA) | 103 | 4 | 14 | 121 |
+| Asset Administration Shell (AAS) | 0 | 35 | 29 | 64 |
+| **Total** | **160** | **129** | **327** | **616** |
+
+These are not 289 new fields or 289 false source statements. Some changes corrected errors; others replaced overly restrictive or generous interpretations with better-supported judgments. The initial 379 colored / 77 held / 160 ungraded comparisons became 508 colored / 108 held / zero ungraded. The 732 other positions across the four donor columns retain explicit unassessed or case-related statuses; they are not proven source absences.
+
+### What the colors now mean
+
+The consistent question is: does the source support a potentially useful information need, and with what qualifications? This is separate from exact cross-donor equivalence, mandatory support or actual device behavior. Two standards can both supply useful identifiers while defining different scopes and lifetimes; those differences must remain visible.
+
+| Appearance | Meaning |
+| --- | --- |
+| Blue | Potentially useful common information, with native qualifications retained. |
+| Amber | Potentially useful information for particular equipment, domains or architectures. |
+| Gray | Native technical evidence without an established need to adopt it as Domain Information Model (DIM) content. |
+| Purple | A potentially relevant candidate with a specifically identified unresolved question. |
+| No classification color, with explanatory text | A held comparison, unassessed position or case limitation; the text distinguishes them. |
+
+Blue does not mean every system must supply the information. White does not mean the donor lacks it. Candidate classification, correspondence strength, source standing, model adoption and actual conformance remain distinct.
+
+### Concrete improvements
+
+ISA's model and serial-number information received the classification omitted earlier. Useful declarations of commands, parameters, results, types and fields received comparable treatment across donors, while a declared interface remained distinct from an executed action. The equipment review corrected reversed emphasis involving input/load voltage and output/source voltage; consumed and supplied electricity remain different meanings.
+
+The two SAPIENT interval colors were removed because the regular status-report interval does not establish separate minimum and maximum reporting bounds. ISA's energy-reserve percentage and SAPIENT's narrower battery percentage can support qualified reserve information, while SOSA backup-power connections do not establish remaining charge. Useful contributions previously undervalued were recognized, and unsupported claims were withdrawn.
+
+AAS's operations, results, structured information and equipment-composition descriptions were reassessed substantively. Generic Properties, labels and file references were not credited with equipment operating condition, changeable equipment names or observation-media associations without supporting meaning. The review preserves native subjects, editions, physical versus logical relations, declaration versus occurrence, normative standing and remaining questions.
+
+### Practical value and delivery
+
+Every one of the 616 existing source-bearing comparisons now has a recorded disposition. The final comparison covered 162 rows with multiple assessed donors, recording why similar information can legitimately receive different treatment. This creates a better basis for later decisions about common information, specialized information and unresolved issues, and reduces the risk that early ISA row vocabulary unfairly determines the outcome. It does not promise that all useful source concepts have already been discovered.
+
+The same [editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), canonical master and both CSV/Markdown mirrors agree on 5,664 grid values and 616 classification fills. The 337 information rows, approved columns and 26 sheets were preserved. Protected M00/M01 versions and directly retrievable pre-change archives remain available. Earlier blank-status and worksheet-order repairs preceded F3; F3 preserved them and corrected the judgments expressed through the cells and colors.
+
+### Limits, acceptance and subsequent work
+
+Original passages and definitions were revisited where needed, earlier documented research was reused, and source questions remain explicit. F3 is not an exhaustive re-audit of every original source. File agreement cannot prove semantic completeness. A clean Microsoft Excel reopening remains unverified and eight previously recorded documentation/register-link errors remain separate issues.
+
+F3 does not answer whether AAS added no new rows because existing information already covered its useful contributions or because the research missed opportunities. The second approved plan examines that question through a source-first opportunity review. F3 added no new master information rows and adopted no DIM fields, class hierarchy or OGC API – Connected Systems (CSAPI) Profile requirements.
+
+The assessment given to the owner was that this was necessary, substantive corrective work that should not have been needed at this scale. Earlier checks established file agreement but did not establish consistent reasoning across donors. The recommendation was to accept F3 as correction of the existing donor classifications while retaining the disclosed limitations. The owner accepted that recommendation and authorized AAS O1 only; subsequent stages still require separate Proceeds.
+
+---
+
 # CURRENT — F3-06 published; F3 owner acceptance next (15 November 2026)
 
 **Scope and recovery:** F3-06 only, authorized by the owner's Proceed in Profile Rewrite 42, starting from research-branch HEAD `4fed5c76ecd6610054c731433c07fefab0779027`. The [pre-change archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-f3-06-20261114) preserves that exact checkpoint. This current section supersedes historical CURRENT/NEXT banners; the previous F3-05 data and evidence are retained. Recovery must read this section, the [F3 plan](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md), [canonical master](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.json) key `F3_06_classification`, the four existing donor ledgers' `F3_06_peer_review` records, and the preserved source/method limitations before acting.

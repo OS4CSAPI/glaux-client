@@ -1,3 +1,15 @@
+# CURRENT — F3 accepted; AAS O1 authorized (14 November 2026, America/New_York)
+
+In Profile Rewrite 43 the owner stated: “Ok consider F3 accepted, document tgis last response in the github appropriatwly, then priceed with what is next”. This accepts F3 as the correction of existing donor classifications, retaining the disclosed limitations, and authorizes the next bounded AAS **O1 source-opportunities baseline only**. Stop before O2. F3 execution was published at `49ee1d6b550e7e6d899a88ca64a3027ba13f17fa`; its verified publication record is at `eae7f38b1be9681355e3096d3c2f7f3565dfd958`.
+
+The comprehensive plain-English explanation accepted by the owner is preserved in the [F3 plan](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md#f3-owner-explanation-and-accepted-results). F3 resolved 160 missing classification decisions and revised 129 prior categories; 327 retained their original category. These are distinct donor/row comparisons measured from `00ada697e070adb6eeafeda49819599ee8d3c5c2` to `eae7f38b1be9681355e3096d3c2f7f3565dfd958`, not summed edits or new information fields.
+
+The same workbook remains the verified F3-06 snapshot: 337 information rows, 26 sheets, 5,664 grid values, 508 colored / 108 held / zero ungraded source-bearing comparisons. Its comparison values and fills have zero lag; its embedded F3-06 owner-routing statements still say acceptance pending and are historical as of this owner decision. Actual Microsoft Excel clean reopen/no-repair remains PENDING, all original-source holds remain, and AAS donor coverage remains active bounded PARTIAL. F3 acceptance is not AAS closure, DIM/Profile adoption or source completeness.
+
+**ONE NEXT:** execute AAS O1 only under the existing approved AAS plan: reconcile the 310 recorded findings, the historical 53 uncited findings and the current 64 AAS comparisons, retaining the accepted F3 decisions. No new rows, further donor, model adoption, user-interface work or deployment is authorized by this checkpoint.
+
+---
+
 # CURRENT — F3-06 published; F3 owner acceptance next (15 November 2026)
 
 F3-06 compared **162 rows with multiple source-bearing donors** and reconciled all **616 existing source-bearing comparisons**. It corrects **79 classifications: 64 Integrated Sensor Architecture (ISA), 14 SAPIENT and one Asset Administration Shell (AAS)**; The Open Group Sensor Open Systems Architecture (SOSA) decisions are retained. Forty-six holds gain qualified colors, two unsupported colors are removed, and 31 existing colors change. The result is **508 colored / 108 held / zero ungraded**, with 732 other explicit statuses; these counts measure classification standing, not complete original-source coverage.
