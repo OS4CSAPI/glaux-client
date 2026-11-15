@@ -8,7 +8,7 @@
   "branch": "research/dim-profile-v2",
   "preflight_head": "1a19f29ef4d76c84522a978678a03b74881a808d",
   "publisher": "Industrial Digital Twin Association (IDTA)",
-  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O5_COMPLETE",
+  "status": "AAS_ACTIVE_BOUNDED_PARTIAL__O6_1_COMPLETE",
   "source_rule": "Original publisher/source tag and file/heading/API method inventory do not count as complete normative source field/Rule/operation audit; source items retain standing UNREVIEWED until opened",
   "part1": {
     "version": "3.2.0",
@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption.",
+  "one_next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10132,17 +10132,17 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "AAS_O5_SAVED_VERIFIED",
-    "rows": 354,
-    "grid": "375x16",
+    "checkpoint": "AAS_O6_1_SAVED_VERIFIED",
+    "rows": 357,
+    "grid": "379x16",
     "AAS_column": "G",
     "same_workbook": true,
     "comparison_lag": 0,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption.",
-    "status": "O5_COMPLETE__O6_PENDING",
-    "workbook_metadata_lag": "ZERO: current O5 guidance refreshed; labeled historical checkpoints retained."
+    "next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
+    "status": "O6_1_COMPLETE__O6_2_PENDING",
+    "workbook_metadata_lag": "ZERO: current O6_1 guidance refreshed; labeled historical checkpoints retained."
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
   "AAS04": {
@@ -71827,6 +71827,2680 @@
         }
       ],
       "handoff": "Later metadata-only commit records observed research publication and checks; no research or workbook change. O6-1 not started."
+    }
+  },
+  "AAS_O6_1_native_review": {
+    "date": "2026-11-15",
+    "timezone": "America/New_York",
+    "status": "O6_1_COMPLETE__O6_2_PENDING_OWNER_PROCEED",
+    "preflight_head": "f2f3ee836b7402ba58647224a1ed428fb76a7ac1",
+    "archive_branch": "archive/dim-crosswalk-pre-aas-o6-1-20261115",
+    "scope": "Owner Proceed: O6-1 only, 55 AAS08 companion findings; stop before 37 AAS09 template findings in O6-2.",
+    "records": [
+      {
+        "source_id": "AAS08-N001",
+        "original_record": "#/AAS08/original_items/0",
+        "original_record_sha256": "2f76c3b6178a781c2b5401be0c220fd7dc6101acb682490e0513e05608c1cd3b",
+        "native_meaning": "IEC61360 is a data specification for concept definitions of properties, values and value lists; template identity is separate from ConceptDescription identity. The template uses major-version /3 while its attributes use /3/1; deprecated alternate template IRIs remain listed.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L15-L112",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          15,
+          112
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_CONCEPT_DEFINITION_ROLES",
+        "row_ids": [
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-FIELD-DECL",
+          "AAS-O2-DATA-SPEC",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Concept-definition names, source, datatype and coded values remain distinct from measured values. Existing property/field/data-spec/assertion rows preserve these roles; no one-row-per-native-attribute expansion.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N002",
+        "original_record": "#/AAS08/original_items/1",
+        "original_record_sha256": "26d21b21d1704e96f73c47ca9a23e42b2262541403285ab6a7ab0dfa7bed16e8",
+        "native_meaning": "preferredName is required; shortName, unit, unitId, sourceOfDefinition, symbol and dataType have optional class cardinality, subject to cross-constraints. unit and unitId must agree if both supplied. They describe concepts, not observed equipment.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L113-L211",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          113,
+          211
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+            "line_ranges": [
+              [
+                132,
+                175
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CONCEPT_DEFINITION_ROLES",
+        "row_ids": [
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-FIELD-DECL",
+          "AAS-O2-DATA-SPEC",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Concept-definition names, source, datatype and coded values remain distinct from measured values. Existing property/field/data-spec/assertion rows preserve these roles; no one-row-per-native-attribute expansion.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N003",
+        "original_record": "#/AAS08/original_items/2",
+        "original_record_sha256": "fe1b2e62a8bb64c35f13c02c960a9bf1e4ab1751b019cfb3303bc6b627a19722",
+        "native_meaning": "definition, valueFormat, valueList, value and levelType describe concept semantics; template value is a coded-value definition, not a measurement sample. ConceptDescription id/version and display/description are distinct from similar template fields.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L212-L312",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          212,
+          312
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_CONCEPT_DEFINITION_ROLES",
+        "row_ids": [
+          "ISA-K-PROPERTY-DECL",
+          "ISA-K-FIELD-DECL",
+          "AAS-O2-DATA-SPEC",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Concept-definition names, source, datatype and coded values remain distinct from measured values. Existing property/field/data-spec/assertion rows preserve these roles; no one-row-per-native-attribute expansion.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N004",
+        "original_record": "#/AAS08/original_items/3",
+        "original_record_sha256": "5b64d5646450580117a20ec8e0855a55acddb3ca79d73f9c97a2b786e8b6356a",
+        "native_meaning": "19 native datatype literals distinguish measure/count/currency, translatable text, identifiers, file addresses and binary content. These do not constitute a sensor observable catalogue.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L294-L594",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          294,
+          594
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SEMANTIC_TYPE_AND_ENCODING_LIMIT",
+        "row_ids": [
+          "ISA-K-TYPE-CHOICE",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Semantic IEC datatypes, native primitive limits and mapped XSD/element forms are not interchangeable. Existing type/encoding rows suffice; no automatic conversion or universal schema constraint.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N005",
+        "original_record": "#/AAS08/original_items/4",
+        "original_record_sha256": "3543b5018f35f5749e50b957422e535c24e39055c1553eb93a229a0ea8f5d604",
+        "native_meaning": "LevelType min/nom/typ/max are required Boolean availability flags, not numeric bound values. The note describes Property, Range or Collection mappings and discourages level types except ranges; it cannot resolve ISA Level or adopt a DIM representation.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L595-L665",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          595,
+          665
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION_AND_NONNORMATIVE_RECOMMENDATION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+            "line_ranges": [
+              [
+                595,
+                665
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N006",
+        "original_record": "#/AAS08/original_items/5",
+        "original_record_sha256": "16db4389abd41521c2c36c87c7ce437b0b79a34c75ac3ccf5d01522ead290cc4",
+        "native_meaning": "ValueList contains one or more valueReferencePair entries; pair value is required and valueId optional. If both supplied, the lexical value must agree with the referenced concept. No general include/exclude restriction algebra is supplied.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L666-L730",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          666,
+          730
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N007",
+        "original_record": "#/AAS08/original_items/6",
+        "original_record_sha256": "037d5bcb5fa35c1aa26d1b009aa00637023310baca30893dd99b033593a0bf28",
+        "native_meaning": "AAS maps IEC datatypes to XSD or element forms: rational values to strings; real measures to float or double; translatable strings to MultiLanguageProperty; FILE to File, BLOB/HTML to Blob. Native semantic type is not identical to encoded value type.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L731-L879",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          731,
+          879
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SEMANTIC_TYPE_AND_ENCODING_LIMIT",
+        "row_ids": [
+          "ISA-K-TYPE-CHOICE",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Semantic IEC datatypes, native primitive limits and mapped XSD/element forms are not interchangeable. Existing type/encoding rows suffice; no automatic conversion or universal schema constraint.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N008",
+        "original_record": "#/AAS08/original_items/7",
+        "original_record_sha256": "faf8654073f4f91b610568d325670831973b96808de0ebe1e4908ae5840c6f64",
+        "native_meaning": "ConceptDescription category is deprecated in Part1. The category tables are recommendations for legacy usage, not an adopted class hierarchy. Their preferredName footnote recommends English while constraint AASc-3a-002 requires English; retain the standing difference.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L880-L1008",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          880,
+          1008
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RECOMMENDATION_WITH_DEPRECATED_CONTEXT",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N009",
+        "original_record": "#/AAS08/original_items/8",
+        "original_record_sha256": "72b8edee1c2c268553822ca6b1830175f3f6e2a1d69af031fcccc859326a1ef2",
+        "native_meaning": "Template primitive limits differ: definition strings 1–1023, preferred names 1–255 (35 advised), short names 1–18, values 1–2048. XML/JSON/RDF serialization is delegated to Part1; no new whole-schema conformance claim.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc#L1056-L1238",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          1056,
+          1238
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SEMANTIC_TYPE_AND_ENCODING_LIMIT",
+        "row_ids": [
+          "ISA-K-TYPE-CHOICE",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Semantic IEC datatypes, native primitive limits and mapped XSD/element forms are not interchangeable. Existing type/encoding rows suffice; no automatic conversion or universal schema constraint.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N010",
+        "original_record": "#/AAS08/original_items/9",
+        "original_record_sha256": "94832691bba57906e8d95be40829b1e12618718c157f4a603916838378c8ec01",
+        "native_meaning": "preferredName shall include English.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L13-L13",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          13,
+          13
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                13,
+                13
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_LANGUAGE_CONSTRAINTS",
+        "row_ids": [
+          "AAS-O2-ELEMENT-LABEL",
+          "ISA-K-PROPERTY-DECL"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Native English preferredName/definition constraints have stated exceptions and standing conflicts. Existing multilingual metadata suffices; no mandatory DIM language policy.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N011",
+        "original_record": "#/AAS08/original_items/10",
+        "original_record_sha256": "efad72554ca6dc19adaede258c3fd2c3bcf26f4c855b18ee0ebd7f6029d6454a",
+        "native_meaning": "A referenced IEC61360 value ConceptDescription shall define value.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L15-L15",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          15,
+          15
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                15,
+                15
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N012",
+        "original_record": "#/AAS08/original_items/11",
+        "original_record_sha256": "ec2cf7c72653df8bd90cbca94059b012de0739e79bc42a3ca41f0e2c4730e7de",
+        "native_meaning": "Legacy PROPERTY/VALUE categories require the specified property/value datatype subset.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L17-L17",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          17,
+          17
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                17,
+                17
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N013",
+        "original_record": "#/AAS08/original_items/12",
+        "original_record_sha256": "ac58278eb3e3f1f9e0ecd3b7eb7d931037fdd3b7bc96045bf86f780328ef8c8b",
+        "native_meaning": "Legacy REFERENCE category restricts datatype to STRING, IRI or IRDI.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L19-L19",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          19,
+          19
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                19,
+                19
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N014",
+        "original_record": "#/AAS08/original_items/13",
+        "original_record_sha256": "b8a1aa86d02b6922cc4ee4aad8a81a2c2709f6477d74f5be0a0079eadb78e465",
+        "native_meaning": "Legacy DOCUMENT category restricts datatype to FILE, BLOB or HTML.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L21-L21",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          21,
+          21
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                21,
+                21
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N015",
+        "original_record": "#/AAS08/original_items/14",
+        "original_record_sha256": "d8c886157109b29f76a82b323a763ce7b36b2e6bae774363a5448fab24d211cd",
+        "native_meaning": "Legacy QUALIFIER_TYPE category requires datatype.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L23-L23",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          23,
+          23
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                23,
+                23
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N016",
+        "original_record": "#/AAS08/original_items/15",
+        "original_record_sha256": "e1e4b2d66035f1c32534721e11432db6ff33fdcfec569dee5b4afcf0aa8b6628",
+        "native_meaning": "definition is mandatory in English except for a concept that defines value.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L25-L25",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          25,
+          25
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                25,
+                25
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_LANGUAGE_CONSTRAINTS",
+        "row_ids": [
+          "AAS-O2-ELEMENT-LABEL",
+          "ISA-K-PROPERTY-DECL"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Native English preferredName/definition constraints have stated exceptions and standing conflicts. Existing multilingual metadata suffices; no mandatory DIM language policy.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N017",
+        "original_record": "#/AAS08/original_items/16",
+        "original_record_sha256": "c714127cb41e8f666d33cbf7e8467d541cb749932714fc520dc16b63d0170532",
+        "native_meaning": "Measure and currency datatypes require unit or unitId.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L27-L27",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          27,
+          27
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                27,
+                27
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_TEMPLATE_AND_UNIT_REQUIREMENTS",
+        "row_ids": [
+          "AAS-O2-DATA-SPEC",
+          "ISA-K-PROPERTY-DECL",
+          "AAS-O6-UNIT-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Native numeric/currency datatype unit requirement and applied-template reference are conditional source rules. Unit semantics receives its own candidate, while template application reuses the existing row; no universal metamodel adoption.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N018",
+        "original_record": "#/AAS08/original_items/17",
+        "original_record_sha256": "e8bf4c5928a9637438e93f1ee998c8705b9f4358177a55d09da1e893689f78e6",
+        "native_meaning": "value and valueList are mutually exclusive when nonempty; both may be empty as explained in the class note.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L29-L29",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          29,
+          29
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                29,
+                29
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+        "row_ids": [
+          "ISA-K-VALUE-RANGE",
+          "ISA-K-TYPE-CHOICE",
+          "AAS-O3-QUALIFIED-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "LevelType flags denote available numeric roles, not numeric bounds or ISA Level. ValueList/value references and value/valueList exclusion remain native definition rules. Deprecated category tables and datatype restrictions are not a new class hierarchy. Preserve recommendation/rule conflicts and IRI spelling.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N019",
+        "original_record": "#/AAS08/original_items/18",
+        "original_record_sha256": "b578bb8bb6e9570f8352adc5103350f8b5873c5e77f753aafe6e2804c2692a4b",
+        "native_meaning": "Use of the template requires the corresponding external template reference ending /3.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-iec61360/blob/974006674402e9def8b6d2693c23ffdc745a3de1/documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc#L31-L31",
+        "source_file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "source_lines": [
+          31,
+          31
+        ],
+        "edition": "IDTA 01003-a Part3a IEC61360 v3.1.1",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+            "line_ranges": [
+              [
+                31,
+                31
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_TEMPLATE_AND_UNIT_REQUIREMENTS",
+        "row_ids": [
+          "AAS-O2-DATA-SPEC",
+          "ISA-K-PROPERTY-DECL",
+          "AAS-O6-UNIT-CONTEXT"
+        ],
+        "relation": "PARTIAL/NATIVE_RULE",
+        "rationale": "Native numeric/currency datatype unit requirement and applied-template reference are conditional source rules. Unit semantics receives its own candidate, while template application reuses the existing row; no universal metamodel adoption.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N020",
+        "original_record": "#/AAS08/original_items/19",
+        "original_record_sha256": "0a8d2d0e94bd64aefb5114e5db63ccdbe3b0fa6679556423aaacc46bb6677fb7",
+        "native_meaning": "Part3b covers minimal interpretation metadata for an existing unit (use case 2). Part3a alone can name a unit; complete user-defined unit definitions (use case 3) are out of scope. Equal unit symbols/dimensions do not establish equal quantities; energy and torque illustrate the distinction.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc#L36-L68",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+        "source_lines": [
+          36,
+          68
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "DEFINITION_AND_FUTURE_BOUNDARY",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+            "line_ranges": [
+              [
+                36,
+                68
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N021",
+        "original_record": "#/AAS08/original_items/20",
+        "original_record_sha256": "852e26fc46d9af77e68222a9fd9f51c9bce838eb8d4ae4c1686fc83b900e8f44",
+        "native_meaning": "Part3a unitId references a ConceptDescription carrying the units template. Property semanticId identifies the property concept; unitId identifies the unit concept. The controller-height diagram is synthetic and uses DataSpecificationUnitOfMeasurement, unlike normative DataSpecificationUoM naming.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc#L157-L223",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+        "source_lines": [
+          157,
+          223
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "RULE_AND_EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N022",
+        "original_record": "#/AAS08/original_items/21",
+        "original_record_sha256": "823a5c9b2808482ada1b8dc4140a469f0accbab3f214d5e6c08da3683776a5a5",
+        "native_meaning": "When only semanticId is supplied, use the dictionary primary/default unit; without a dictionary default, supply a ConceptDescription defining unit/unitId. A supplied ConceptDescription unit takes precedence. Same property semantics with different units requires distinct ConceptDescription identities/isCaseOf and is discouraged due to complexity; no conversion algorithm is specified.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc#L224-L321",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+        "source_lines": [
+          224,
+          321
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "RULE_AND_RECOMMENDATION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+            "line_ranges": [
+              [
+                224,
+                276
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N023",
+        "original_record": "#/AAS08/original_items/22",
+        "original_record_sha256": "a0b61c3b440293e0abd0f2390b6a7460f2e834fe09562d2275a5e8ef491a5b71",
+        "native_meaning": "ConceptDescription id should use the global unit identifier when available; otherwise choose an id and record the classification-system identifier in specificUnitID. A short local unit code alone is not global concept identity.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc#L57-L62",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          57,
+          62
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "RECOMMENDATION_AND_CONDITIONAL_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+            "line_ranges": [
+              [
+                57,
+                62
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N024",
+        "original_record": "#/AAS08/original_items/23",
+        "original_record_sha256": "969edc9be9a7843f0dd5245fb23b0aaab800eb2d15e3f88eeb418108f22346c8",
+        "native_meaning": "Eight unit attributes: preferredName and symbol required; specificUnitID, definition, preferredNameQuantity, quantityId, classificationSystem and classificationSystemVersion optional. Quantity name/id must agree; select exactly one applicable quantity for the property purpose. Preserve quantityId versus quantityID spelling difference.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc#L63-L181",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          63,
+          181
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "DEFINITION_AND_CONDITIONAL_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+            "line_ranges": [
+              [
+                63,
+                181
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N025",
+        "original_record": "#/AAS08/original_items/24",
+        "original_record_sha256": "30ade8d5d0c5d2d3ff42d03e66f6c5df1e746c25c050bdb36e2447e9eaabc1cc",
+        "native_meaning": "Units strings/names use 1–256 characters; definitions/identifiers 1–2048. The source delegates serialization to Part1 and links datatype v3.1 despite index targeting v3.2; companion versions are not one uniform v3.2 document.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc#L182-L291",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+        "source_lines": [
+          182,
+          291
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_COMPANION_EDITION_AND_PRIMITIVE_LIMIT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Native string cardinalities and serialization delegation do not create extra information rows. Preserve mixed companion versions and the Part1 datatype link discrepancy.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N026",
+        "original_record": "#/AAS08/original_items/25",
+        "original_record_sha256": "b6cf771dd120c96e83cf212a1d16dc368ec9bdc3c365b39e0d5e5af7cc00fcf0",
+        "native_meaning": "The annex recommends one actually consulted dictionary and coherent version, not mixed attributes from unrelated dictionaries. Its ECLASS and IEC CDD mappings are publisher examples, not independent audits of those external dictionaries.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc#L12-L137",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+        "source_lines": [
+          12,
+          137
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "RECOMMENDATION_AND_EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+            "line_ranges": [
+              [
+                12,
+                55
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N027",
+        "original_record": "#/AAS08/original_items/26",
+        "original_record_sha256": "6fe537ad5dadccd45d63dfd76d6b39ffb29b8902690e54833ac3bf3d4921c4f8",
+        "native_meaning": "Negative examples reject mixed-source unit metadata and a non-global MMT concept identifier without classification-system context. Table symbol cardinality 0 conflicts with required symbol in the normative template; do not adopt the example as a rule.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc#L278-L300",
+        "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+        "source_lines": [
+          278,
+          300
+        ],
+        "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0",
+        "source_standing": "EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+            "line_ranges": [
+              [
+                278,
+                300
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_UNIT_CONTEXT",
+        "row_ids": [
+          "AAS-O6-UNIT-CONTEXT",
+          "S06-R013",
+          "S06-R021"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Retain a unit concept with applicable quantity, code and dictionary/version context, distinct from property meaning and measurement uncertainty. Explicit unit precedence and coherent-source recommendations remain qualified. Example inconsistencies are held; no complete custom-unit or conversion claim.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N028",
+        "original_record": "#/AAS08/original_items/27",
+        "original_record_sha256": "c1c501d4772abd2d157331dc53e3a2d41cde274788673c07ac44f3a0a816bde9",
+        "native_meaning": "Part4 describes exchangeable access rules and technology-neutral/specific security. It does not prescribe one identity-management solution; Type3 active agents are out of scope. AASX can carry a proposed Security Model, whose enforcement belongs to the recipient system.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/introduction.adoc#L13-L46",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/introduction.adoc",
+        "source_lines": [
+          13,
+          46
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_SCOPE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SECURITY_DOMAIN_SCOPE",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-A-CERTIFICATE-TRUST"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Rule exchange and policy roles concern information access across security domains; recipient policy remains responsible. Identity-provider choice, active-agent exclusion and dataspace agreements are scope limits, not equipment fields.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N029",
+        "original_record": "#/AAS08/original_items/28",
+        "original_record_sha256": "0aef4d54bfb1905f2ea4d491f0014af13c27f37b624e52ff75f75900bca620a7",
+        "native_meaning": "File import crosses security domains; a recipient establishes its own access rights. Repositories protect stored AAS content, registries protect descriptors. Policy administration, decision, enforcement and attribute-information functions are distinct; dataspace trust/claims policies are additional agreements.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/introduction.adoc#L135-L335",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/introduction.adoc",
+        "source_lines": [
+          135,
+          335
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "EXAMPLE_AND_DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SECURITY_DOMAIN_SCOPE",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-A-CERTIFICATE-TRUST"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Rule exchange and policy roles concern information access across security domains; recipient policy remains responsible. Identity-provider choice, active-agent exclusion and dataspace agreements are scope limits, not equipment fields.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N030",
+        "original_record": "#/AAS08/original_items/29",
+        "original_record_sha256": "2bf0e4484c2d85bc4e1c45fbfb66fbfb8385f381502b1d8d076568291c79b599",
+        "native_meaning": "Integrity, confidentiality and availability priorities are risk-dependent. Requirements protect data, structure, services and their asset relation; these are security obligations, not evidence that a particular implementation meets them.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/security-objectives.adoc#L1-L56",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/security-objectives.adoc",
+        "source_lines": [
+          1,
+          56
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "RULE_AND_RECOMMENDATION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SECURITY_OBLIGATIONS",
+        "row_ids": [],
+        "relation": "NATIVE_ONLY",
+        "rationale": "Risk-dependent integrity/confidentiality/availability obligations constrain implementations. They do not establish security-status values or certify a specific system; retain without manufacturing a field.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N031",
+        "original_record": "#/AAS08/original_items/30",
+        "original_record_sha256": "5243722e6dbb1345654cce612731d6a0f417ce96817fa3d8115a2db48c6e4f80",
+        "native_meaning": "Seven foundational areas address AAS structure/interfaces. Authentication and identifier policy are required for protected access; template-guided input validation is recommended. Audit events S1–S4 are required, A1–A3 conditionally required for accountability, timestamps at least seconds; machine-readable audit is required. Log-as-submodel and asset-root distribution are possibilities, not mandatory field definitions.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc#L1-L379",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc",
+        "source_lines": [
+          1,
+          379
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "RULE_RECOMMENDATION_PERMISSION_SEPARATELY_RETAINED",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc",
+            "line_ranges": [
+              [
+                124,
+                199
+              ],
+              [
+                330,
+                335
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_AUDIT_RECORD",
+        "row_ids": [
+          "AAS-O6-AUDIT-RECORD",
+          "ISA-T-EVENT-TIME",
+          "AAS-O3-EVENT-INITIATOR"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "The audit clause explicitly identifies security/accountability occurrences, application attribution, affected object, conditional outcome and event timestamp. Separate this security record from generic event carriers and authenticated physical facts. Dedicated-Submodel exposure is optional.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N032",
+        "original_record": "#/AAS08/original_items/31",
+        "original_record_sha256": "d5ff0ca71fa8994f61b419c8f81983fe9fa00f3add1f59b6591acb1ebf0b0662",
+        "native_meaning": "Attributes need trustworthy/authenticated sources; a valid true rule permits the designated action/object, otherwise default deny. Implementations may support subsets, choose internal representation, and should follow this model if exchanging rules. No uniform runtime conformance is inferred.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L14-L52",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          14,
+          52
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "RULE_AND_PERMISSION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                14,
+                43
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N033",
+        "original_record": "#/AAS08/original_items/32",
+        "original_record_sha256": "11f013d14041512cca3cc79f838aaf0168440375efdb0050667aa759240c82e8",
+        "native_meaning": "Signed JWT bearer tokens convey authenticated subject claims. Dataspace policy defines trusted tokens and attributes; standard iss/exp/aud/sub/client_id/iat/jti claims are identified. Lifetime/Proof-of-Possession choices are recommendations tied to use case. Claims and expiry are not hardware identity or observation validity.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L60-L98",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          60,
+          98
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "RULE_RECOMMENDATION_PERMISSION_SEPARATELY_RETAINED",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_REQUEST_CLAIMS_AND_TRUST",
+        "row_ids": [
+          "ISA-T-ACCESS",
+          "ISA-A-CERTIFICATE-TRUST"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Token claims/expiry and trust remain request-access metadata. They are not equipment identity or observation validity. Existing rows already preserve their subject and policy constraints.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N034",
+        "original_record": "#/AAS08/original_items/33",
+        "original_record_sha256": "b1e14c247ef4bd6eb1f9041c667b4b2667bd12f7a7c6d241c58580eacdd95d03",
+        "native_meaning": "An access rule combines ACL, protected objects and a Boolean formula, optionally fragment FILTER/FILTERLIST. Reusable attribute/object/ACL/formula definitions are supported. SubmodelElement visibility requires both element and parents visible; this is returned-data visibility, not physical composition.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L130-L238",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          130,
+          238
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                130,
+                238
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N035",
+        "original_record": "#/AAS08/original_items/34",
+        "original_record_sha256": "980d753d19247d1d0585d02c60f9bad35309b2d313efc6210b165447485045a8",
+        "native_meaning": "Rights CREATE/READ/UPDATE/DELETE/EXECUTE/VIEW/ALL depend on the target operation, not HTTP method alone. VIEW exposes existence without value; ALLOW grants when true and DISABLED is ignored. Normative per-operation mapping is delegated to Part2; no new all-operation audit.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L239-L369",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          239,
+          369
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                239,
+                292
+              ],
+              [
+                293,
+                369
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N036",
+        "original_record": "#/AAS08/original_items/35",
+        "original_record_sha256": "8d349a2c30816a56781d2c6d70b17149f249f9fc581ca9bed00d648145f923c3",
+        "native_meaning": "CLAIM, GLOBAL and REFERENCE attributes differ. LOCALNOW/UTCNOW/CLIENTNOW need trustworthy time and ANONYMOUS denotes no token. A REFERENCE may consult a different model context, such as machine state, but is still model data, not independent sensor truth.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L370-L452",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          370,
+          452
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                370,
+                413
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N037",
+        "original_record": "#/AAS08/original_items/36",
+        "original_record_sha256": "341a49d7aa7ea8eee51c972da15835f309383dcaaa9bb5d8f69d55aaf89518fa",
+        "native_meaning": "Protected objects include routes, Identifiable, Referable, Fragment and Descriptor. ROUTE matching uses path only, exact path or suffix wildcard prefix; six field prefixes distinguish shell/submodel/element/concept/descriptor contexts. No equipment attachment or task-routing identity follows.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L453-L556",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          453,
+          556
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_PROTECTED_OBJECT_AND_FILTER_SCOPE",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/NATIVE_ONLY",
+        "rationale": "Route/Identifiable/Referable/Fragment/Descriptor are policy target contexts. Native path prefixes, suffix wildcard and parent visibility do not establish physical hierarchy or task routing.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N038",
+        "original_record": "#/AAS08/original_items/37",
+        "original_record_sha256": "26ac358a8cf098f7dff4a55b24b27dee7c97d66792f2ce7c38f8040adbadb253",
+        "native_meaning": "Boolean conditions, typed comparisons, string operations, casts and match are defined; arithmetic is unsupported. Undefined attributes or evaluation errors make the formula false. Typed field conversion skips unconvertible values; all failed conversion yields false. These are access/query predicates, not observation processing algorithms.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L557-L594",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          557,
+          594
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "RULE_AND_DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                557,
+                594
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N039",
+        "original_record": "#/AAS08/original_items/38",
+        "original_record_sha256": "af98ee6d3fcad0951c970acd14b0524e2bfaac1ab53d300e724f9d8460d35c7a",
+        "native_meaning": "JSON syntax accompanies BNF, but lexical date/time patterns do not reject impossible calendar dates. Time without timezone must be interpreted UTC and serialized Z. Schema validation alone cannot demonstrate policy evaluation, calendar validity or access enforcement.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L595-L686",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          595,
+          686
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Reuse pinned schema/grammar/example contact without claiming a new audit. Preserve RIGHTS minItems mismatch, calendar-validation limit, UTC rule and undeclared machineState example ambiguity. Examples do not demonstrate enforcement; no new fields from syntax.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N040",
+        "original_record": "#/AAS08/original_items/39",
+        "original_record_sha256": "8785a64c91348fb13b03ec572778be227ab613627d409c00214bf8b9fc8994e9",
+        "native_meaning": "Rule serialization support is optional, JSON recommended, enforcement implementation-specific. A manufacturer can propose rules for the recipient to adapt; rules may be stored as FILE/BLOB payload. Transferring rules does not grant operational permissions.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L687-L732",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "source_lines": [
+          687,
+          732
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "PERMISSION_AND_RECOMMENDATION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "line_ranges": [
+              [
+                687,
+                721
+              ]
+            ]
+          }
+        ],
+        "disposition": "NEW_ACCESS_RULE_DEFINITION",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Protected object, applicable rights, trusted attributes and Boolean conditions form a reusable policy definition. Separate from request claims, decision results and returned-data filters. Preserve default deny, error-false, disabled rule and recipient/enforcement limits.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N041",
+        "original_record": "#/AAS08/original_items/40",
+        "original_record_sha256": "f0b6a871f37afade16eb269194fb256b9b400e862977ae6877563c8cd2adde35",
+        "native_meaning": "No native data-bound protection of arbitrary AAS elements is specified. Accountability combines access control, audits and transit protection; /$signed supplies a basic API mechanism. Signed payloads are possible, with syntax/semantics defined by the AAS Responsible; verified integrity is not verified truth of an equipment claim.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/accountability.adoc#L1-L19",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/accountability.adoc",
+        "source_lines": [
+          1,
+          19
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "DEFINITION_AND_PERMISSION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_ACCOUNTABILITY_AND_BINDING_LIMIT",
+        "row_ids": [
+          "S06-R021",
+          "ISA-A-CERTIFICATE-TRUST",
+          "S06-R004",
+          "AAS-O6-AUDIT-RECORD"
+        ],
+        "relation": "RELATED/NO_ESTABLISHED",
+        "rationale": "Signatures/audit help accountability under trust assumptions, not assertion truth. Identifier binding remains unprotected; possible IEEE device-identity approaches are not required certificates or proven secure asset binding.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N042",
+        "original_record": "#/AAS08/original_items/41",
+        "original_record_sha256": "1d5456307d0467b88edba6e0b68fdc771a6a347fe53f51c030af4333b2e6407e",
+        "native_meaning": "globalAssetId/specificAssetIds association is unprotected and may be attacked. IEEE802.1AR identities could support stronger identification, but this text does not define an adopted device-certificate field or complete secure-binding mechanism.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/asset_binding.adoc#L1-L7",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/pages/asset_binding.adoc",
+        "source_lines": [
+          1,
+          7
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "OBSERVATION_AND_POSSIBLE_FUTURE_APPROACH",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_ACCOUNTABILITY_AND_BINDING_LIMIT",
+        "row_ids": [
+          "S06-R021",
+          "ISA-A-CERTIFICATE-TRUST",
+          "S06-R004",
+          "AAS-O6-AUDIT-RECORD"
+        ],
+        "relation": "RELATED/NO_ESTABLISHED",
+        "rationale": "Signatures/audit help accountability under trust assumptions, not assertion truth. Identifier binding remains unprotected; possible IEEE device-identity approaches are not required certificates or proven secure asset binding.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N043",
+        "original_record": "#/AAS08/original_items/42",
+        "original_record_sha256": "870e22ef847425c350ec2988ee946e67b388b08ed240d865b14431a2e39039a6",
+        "native_meaning": "Original JSON contract requires rules, ACL-or-USEACL, objects-or-reference and formula-or-reference; additional properties are restricted. RIGHTS array lacks minItems although BNF requires at least one Right. No grammar/schema equivalence claimed.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/partials/json/access-rule-model.json#L1-L399",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/partials/json/access-rule-model.json",
+        "source_lines": [
+          1,
+          399
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "NATIVE_SCHEMA",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Reuse pinned schema/grammar/example contact without claiming a new audit. Preserve RIGHTS minItems mismatch, calendar-validation limit, UTC rule and undeclared machineState example ambiguity. Examples do not demonstrate enforcement; no new fields from syntax.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N044",
+        "original_record": "#/AAS08/original_items/43",
+        "original_record_sha256": "2303e4df71829bdb394d26216fe1c9869d9a74cce027dad2eb74a23aa4c6f309",
+        "native_meaning": "Original BNF defines reusable rule groups, attributes, objects, formulas, lexical types and field identifiers. It requires one or more rights; its lexical syntax and date checks do not establish behavioral enforcement.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/partials/bnf/access-rules.bnf#L1-L438",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/partials/bnf/access-rules.bnf",
+        "source_lines": [
+          1,
+          438
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "NATIVE_GRAMMAR",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Reuse pinned schema/grammar/example contact without claiming a new audit. Preserve RIGHTS minItems mismatch, calendar-validation limit, UTC rule and undeclared machineState example ambiguity. Examples do not demonstrate enforcement; no new fields from syntax.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N045",
+        "original_record": "#/AAS08/original_items/44",
+        "original_record_sha256": "d13007882b1618e5f5eae7c9062c63727cbc8c73adb3b5dcc872cd4b248bca79",
+        "native_meaning": "Publisher example grants READ/UPDATE on a named Submodel when a token email claim matches. It is illustrative rule data, not an observed authorization decision or an equipment command.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/partials/examples/allow-read-update-submodel.json#L1-L37",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/partials/examples/allow-read-update-submodel.json",
+        "source_lines": [
+          1,
+          37
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Reuse pinned schema/grammar/example contact without claiming a new audit. Preserve RIGHTS minItems mismatch, calendar-validation limit, UTC rule and undeclared machineState example ambiguity. Examples do not demonstrate enforcement; no new fields from syntax.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N046",
+        "original_record": "#/AAS08/original_items/45",
+        "original_record_sha256": "9b0b3f44ab38529a96ac8071d28d1c18a4e4dad11d6ac9366fd8e1e685a50a12",
+        "native_meaning": "Publisher example conditions maintenance-document visibility on referenced machineState. Its reusable ACL lists role but the formula also refers to machineState; undeclared-attribute false rule leaves declaration/evaluation semantics needing clarification, not evidence of working enforcement.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/partials/examples/reference-machine-state-filter.json#L1-L129",
+        "source_file": "documentation/IDTA-01004/modules/ROOT/partials/examples/reference-machine-state-filter.json",
+        "source_lines": [
+          1,
+          129
+        ],
+        "edition": "IDTA 01004 Part4 Security v3.1.0",
+        "source_standing": "EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+        "row_ids": [
+          "AAS-O6-ACCESS-RULE",
+          "ISA-A-TIME-BASIS"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Reuse pinned schema/grammar/example contact without claiming a new audit. Preserve RIGHTS minItems mismatch, calendar-validation limit, UTC rule and undeclared machineState example ambiguity. Examples do not demonstrate enforcement; no new fields from syntax.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N047",
+        "original_record": "#/AAS08/original_items/46",
+        "original_record_sha256": "e19c663ae777e2505f8fda2e0fccfa823d6b501937cff216e367b58fbd60ca78",
+        "native_meaning": "AASX is a file-exchange container between partners; export/import may filter information. Logical file relationships and physical ZIP directory structure describe a package, not physical assembly of sensors. The policy-not-submitted wording differs from Part4 optional rule payload exchange and needs interpretation by context.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/basic-concepts-and-leading-picture.adoc#L1-L93",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/basic-concepts-and-leading-picture.adoc",
+        "source_lines": [
+          1,
+          93
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "DEFINITION_AND_EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "QUALIFY_EXISTING_PACKAGE_AND_FILE_ROWS",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "ISA-C-207",
+          "S06-R022"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Reuse the existing package association and file-content candidates. Separate package metadata, serialized digital content and supplementary-file relationships from physical composition, original-event lineage and message-history ZIPs; retain sample/cardinality and policy-transfer conflicts.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N048",
+        "original_record": "#/AAS08/original_items/47",
+        "original_record_sha256": "d9f272fbbe6b57b2123e5fce4b913379d6c57fad42b3d626872cef908103eec3",
+        "native_meaning": "AASX serializes complete or partial AAS information with selected supplementary files. It uses .aasx and application/aas+zip, an aasx-origin entry, and Open Packaging Conventions reserved paths. File-server acceptance alone does not prove package validity.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L14-L73",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          14,
+          73
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "RULE_AND_DEFINITION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "QUALIFY_EXISTING_PACKAGE_AND_FILE_ROWS",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "ISA-C-207",
+          "S06-R022"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Reuse the existing package association and file-content candidates. Separate package metadata, serialized digital content and supplementary-file relationships from physical composition, original-event lineage and message-history ZIPs; retain sample/cardinality and policy-transfer conflicts.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N049",
+        "original_record": "#/AAS08/original_items/48",
+        "original_record_sha256": "dc361b9adb717847b685762f90ccaacffdc5175dfee9d01987e68c987a6fc958",
+        "native_meaning": "Thumbnail and core-properties describe the package. aasx-origin is required; aas-spec references serialized Identifiable content in one or more representations. Core title/creator/revision are not automatically equipment or AAS record metadata.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L74-L169",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          74,
+          169
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+            "line_ranges": [
+              [
+                74,
+                169
+              ]
+            ]
+          }
+        ],
+        "disposition": "QUALIFY_EXISTING_PACKAGE_AND_FILE_ROWS",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "ISA-C-207",
+          "S06-R022"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Reuse the existing package association and file-content candidates. Separate package metadata, serialized digital content and supplementary-file relationships from physical composition, original-event lineage and message-history ZIPs; retain sample/cardinality and policy-transfer conflicts.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N050",
+        "original_record": "#/AAS08/original_items/49",
+        "original_record_sha256": "e38b2e2dd7cb3a8c7fdbb08a8c6922daba8a204c57c88deb5eb816ccbce3d43f",
+        "native_meaning": "aas-suppl targets extra files referenced through relative File URIs; Blob values are not supplementary files. Source is the serialized AAS file, and multiple serializations need corresponding relationships. Table 0..1 cardinality versus plural text/changelog is held, not silently generalized.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L170-L209",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          170,
+          209
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "DEFINITION_AND_RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+            "line_ranges": [
+              [
+                170,
+                209
+              ]
+            ]
+          }
+        ],
+        "disposition": "QUALIFY_EXISTING_PACKAGE_AND_FILE_ROWS",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "ISA-C-207",
+          "S06-R022"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Reuse the existing package association and file-content candidates. Separate package metadata, serialized digital content and supplementary-file relationships from physical composition, original-event lineage and message-history ZIPs; retain sample/cardinality and policy-transfer conflicts.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N051",
+        "original_record": "#/AAS08/original_items/50",
+        "original_record_sha256": "156fe08e2ec29b69356bed89e571b4510e5bf3425f6be54fa1e782d311a13bea",
+        "native_meaning": "Relationships locate content regardless of filename; aasx/ and origin conventions use shall, data.<extension> uses should. Same data can be serialized XML/JSON side by side; this does not duplicate the real event or prove lossless equivalence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L210-L239",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          210,
+          239
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "RULE_RECOMMENDATION_AND_EXAMPLE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "QUALIFY_EXISTING_PACKAGE_AND_FILE_ROWS",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "ISA-C-207",
+          "S06-R022"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "rationale": "Reuse the existing package association and file-content candidates. Separate package metadata, serialized digital content and supplementary-file relationships from physical composition, original-event lineage and message-history ZIPs; retain sample/cardinality and policy-transfer conflicts.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N052",
+        "original_record": "#/AAS08/original_items/51",
+        "original_record_sha256": "6d827e680a081d4d51bb953b900aa5db359d8a4098fcacc71e4cf5acb4d802ac",
+        "native_meaning": "When signing to protect AAS data, relevant origin, structure, supplementary files and associated relationship parts shall be signed. Trust/verification is not furnished by archive presence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L244-L248",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          244,
+          248
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "RULE",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+            "line_ranges": [
+              [
+                244,
+                248
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CONDITIONAL_PACKAGE_PROTECTION",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "S06-R021"
+        ],
+        "relation": "NATIVE_ONLY/RULE",
+        "rationale": "Signing coverage and encryption order constrain protected packages when used. Part5 reports ZIP encryption restrictions; external specifications are not independently audited. No observed integrity/security status, encryption algorithm field or implementation claim is added.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N053",
+        "original_record": "#/AAS08/original_items/52",
+        "original_record_sha256": "4bed1f0c10b74198182e6cfcbe43420309790c1a34da5892c019c83987e17bb3",
+        "native_meaning": "ZIP encryption is prohibited as reported by Part5; external encryption or replacement encrypted content can be used with declared types. Packaging/relationship files remain unencrypted; sign after individual-content encryption, before whole-package encryption. This is Part5 guidance, not an independent ISO/cryptography audit.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc#L249-L267",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "source_lines": [
+          249,
+          267
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "RULE_AND_PERMISSION",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "TARGETED_PASSAGES_READ; balance reuses original bounded contact",
+        "newly_read_overlaps": [
+          {
+            "path": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+            "line_ranges": [
+              [
+                249,
+                267
+              ]
+            ]
+          }
+        ],
+        "disposition": "RETAIN_CONDITIONAL_PACKAGE_PROTECTION",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "S06-R021"
+        ],
+        "relation": "NATIVE_ONLY/RULE",
+        "rationale": "Signing coverage and encryption order constrain protected packages when used. Part5 reports ZIP encryption restrictions; external specifications are not independently audited. No observed integrity/security status, encryption algorithm field or implementation claim is added.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N054",
+        "original_record": "#/AAS08/original_items/53",
+        "original_record_sha256": "f233a3ae5e4b7dd9ee6f494107b1a5d575e37b4ca16aadf5bedffc27ac2c4524",
+        "native_meaning": "Pinned v3.2 changelog identifies new application/aas+zip MIME type and removal of legacy format mentions; v3.1 entries cover extension names and sample archive. Release notes repeat older changes, so pin normative content rather than infer changes from release prose.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/changelog.adoc#L1-L66",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/changelog.adoc",
+        "source_lines": [
+          1,
+          66
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "PUBLISHER_HISTORY",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_PUBLICATION_METADATA_CONFLICT",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Use immutable edition pins. Changelog/release/index contradictions remain historical evidence and holds, not equipment revisions or a newly inferred publication date.",
+        "historical_53": true,
+        "DIM_Profile_adopted": false
+      },
+      {
+        "source_id": "AAS08-N055",
+        "original_record": "#/AAS08/original_items/54",
+        "original_record_sha256": "f3bf1401a436d226ff9bda6fa9e10b3b9864128db7fd64a16dbb7c4928df4ddc",
+        "native_meaning": "Pinned v3.2 index prints July2027 and history says this version3.1. GitHub release v3.2.0 was published 2026-07-21 as Release26-01. Preserve contradictory date/history; no future publication date substituted for release evidence.",
+        "source_url": "https://github.com/admin-shell-io/aas-specs-aasx/blob/780856dbc29f5925f9186571a49cac81eb94d0db/documentation/IDTA-01005/modules/ROOT/pages/index.adoc#L1-L59",
+        "source_file": "documentation/IDTA-01005/modules/ROOT/pages/index.adoc",
+        "source_lines": [
+          1,
+          59
+        ],
+        "edition": "IDTA 01005 Part5 AASX Package v3.2.0",
+        "source_standing": "PUBLISHER_METADATA_CONFLICT",
+        "inherited_coverage": "ORIGINAL_IDENTIFIED_TEXT_OR_NATIVE_SYNTAX_READ__BOUNDED_CLAIM",
+        "source_contact_this_step": "REUSE_UNCHANGED_PINNED_ORIGINAL_CONTACT; not newly reread",
+        "newly_read_overlaps": [],
+        "disposition": "RETAIN_PUBLICATION_METADATA_CONFLICT",
+        "row_ids": [
+          "AAS-O5-PACKAGE-ASSOCIATION",
+          "ISA-A-CONNECTION-PRESENTATION"
+        ],
+        "relation": "NATIVE_ONLY/CONFLICT",
+        "rationale": "Use immutable edition pins. Changelog/release/index contradictions remain historical evidence and holds, not equipment revisions or a newly inferred publication date.",
+        "historical_53": false,
+        "DIM_Profile_adopted": false
+      }
+    ],
+    "targeted_original_contacts": [
+      {
+        "folder": "measurement-units",
+        "file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+        "ranges": [
+          [
+            57,
+            181
+          ]
+        ],
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "94fe4a770d33a4ad7cae8e53a2ce93b3bd8313bc",
+        "corpus": "AAS-C04",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "measurement-units",
+        "file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+        "ranges": [
+          [
+            36,
+            68
+          ],
+          [
+            224,
+            276
+          ]
+        ],
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "44ce3ecc85c37ef676d79b8ae17dbab13104be44",
+        "corpus": "AAS-C04",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "measurement-units",
+        "file": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+        "ranges": [
+          [
+            12,
+            55
+          ],
+          [
+            278,
+            300
+          ]
+        ],
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "ec33e33f61bc43ce41461d7a0b43463864dc0815",
+        "corpus": "AAS-C04",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "security",
+        "file": "documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc",
+        "ranges": [
+          [
+            124,
+            199
+          ],
+          [
+            330,
+            335
+          ]
+        ],
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "d5daf8239158b94760c5892fd0c35d4e558878d0",
+        "corpus": "AAS-C05",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "security",
+        "file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "ranges": [
+          [
+            14,
+            43
+          ],
+          [
+            130,
+            292
+          ],
+          [
+            370,
+            413
+          ],
+          [
+            687,
+            721
+          ],
+          [
+            293,
+            369
+          ],
+          [
+            557,
+            594
+          ]
+        ],
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "c3e9eb260450bde6bf83258b23b894aceae0c1af",
+        "corpus": "AAS-C05",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "aasx",
+        "file": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "ranges": [
+          [
+            74,
+            209
+          ],
+          [
+            244,
+            267
+          ]
+        ],
+        "commit": "780856dbc29f5925f9186571a49cac81eb94d0db",
+        "blob": "1130cd4baa2938e3f6422f42abf37f3b81713823",
+        "corpus": "AAS-C06",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "iec61360",
+        "file": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "ranges": [
+          [
+            132,
+            175
+          ],
+          [
+            595,
+            665
+          ]
+        ],
+        "commit": "974006674402e9def8b6d2693c23ffdc745a3de1",
+        "blob": "3fb5f0385c22f12a7280fe7e0374a77bddb9ed13",
+        "corpus": "AAS-C03",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      },
+      {
+        "folder": "iec61360",
+        "file": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "ranges": [
+          [
+            13,
+            31
+          ]
+        ],
+        "commit": "974006674402e9def8b6d2693c23ffdc745a3de1",
+        "blob": "26bb83b697688316778d17377bd9b744cdb77b21",
+        "corpus": "AAS-C03",
+        "grade": "SELECTED_ORIGINAL_PASSAGES_READ_THIS_STEP; figures/external includes not read"
+      }
+    ],
+    "unchanged_original_file_checks": [
+      {
+        "corpus": "AAS-C03",
+        "path": "documentation/IDTA-01003-a/modules/ROOT/pages/specification.adoc",
+        "commit": "974006674402e9def8b6d2693c23ffdc745a3de1",
+        "blob": "3fb5f0385c22f12a7280fe7e0374a77bddb9ed13",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C03",
+        "path": "documentation/IDTA-01003-a/modules/ROOT/pages/includes/constraints.adoc",
+        "commit": "974006674402e9def8b6d2693c23ffdc745a3de1",
+        "blob": "26bb83b697688316778d17377bd9b744cdb77b21",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C04",
+        "path": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "44ce3ecc85c37ef676d79b8ae17dbab13104be44",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C04",
+        "path": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "94fe4a770d33a4ad7cae8e53a2ce93b3bd8313bc",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C04",
+        "path": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+        "commit": "4a41ad069531549d4595bd7bb21b12673fd00ea4",
+        "blob": "ec33e33f61bc43ce41461d7a0b43463864dc0815",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/introduction.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "a60f1f1dd1d3d75083018be9cebbb686982dbebd",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/security-objectives.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "86a22256a9481071243593aa13a700ca70c5afaa",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "d5daf8239158b94760c5892fd0c35d4e558878d0",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "c3e9eb260450bde6bf83258b23b894aceae0c1af",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/accountability.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "006c783047a93ff4a0aaa192c7c874f3e46d99e3",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/pages/asset_binding.adoc",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "cfe5fa9462bb62c3e21379601cd6d9e20501d181",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/partials/json/access-rule-model.json",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "149ef53df78b4adbfa226f948c039f80fd6c1a3e",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/partials/bnf/access-rules.bnf",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "4103ccaaa1bcfc65e0218f4134925853ce8b9a6a",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/partials/examples/allow-read-update-submodel.json",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "05b8f7e46c95c624cb63e7f5c84d41520af03116",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C05",
+        "path": "documentation/IDTA-01004/modules/ROOT/partials/examples/reference-machine-state-filter.json",
+        "commit": "58bea413fba3ce573005e9d4abb4cfe518e3c632",
+        "blob": "ece14aa820eaac4547344716c3682e10052ce0ca",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C06",
+        "path": "documentation/IDTA-01005/modules/ROOT/pages/basic-concepts-and-leading-picture.adoc",
+        "commit": "780856dbc29f5925f9186571a49cac81eb94d0db",
+        "blob": "7067b7567d6df59a81fb9fad70a6fb095a3d6aef",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C06",
+        "path": "documentation/IDTA-01005/modules/ROOT/pages/aasx.adoc",
+        "commit": "780856dbc29f5925f9186571a49cac81eb94d0db",
+        "blob": "1130cd4baa2938e3f6422f42abf37f3b81713823",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C06",
+        "path": "documentation/IDTA-01005/modules/ROOT/pages/changelog.adoc",
+        "commit": "780856dbc29f5925f9186571a49cac81eb94d0db",
+        "blob": "66915cd263e33a2b90e8742eed1aaa602a03eaa5",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      },
+      {
+        "corpus": "AAS-C06",
+        "path": "documentation/IDTA-01005/modules/ROOT/pages/index.adoc",
+        "commit": "780856dbc29f5925f9186571a49cac81eb94d0db",
+        "blob": "476ec2ed3a8b512cf7bcf1e7f354bd28208c719e",
+        "grade": "PINNED_BYTES_MATCH_PRIOR_CONTACT; no full reread implied"
+      }
+    ],
+    "source_efficiency": "Reuse unchanged original AAS08 findings and source-file grades. Hash verification checks provenance, not reading. New decisions are supported by the explicitly reread passages; no whole companion/external corpus or runtime audit claimed.",
+    "new_candidate_row_ids": [
+      "AAS-O6-UNIT-CONTEXT",
+      "AAS-O6-ACCESS-RULE",
+      "AAS-O6-AUDIT-RECORD"
+    ],
+    "qualified_existing_rows": [
+      {
+        "row_id": "AAS-O2-SUPPORTING-CONTENT",
+        "before": {
+          "row_id": "AAS-O2-SUPPORTING-CONTENT",
+          "label": "Candidate — Supporting file locator or embedded file content",
+          "display_row": 363,
+          "status": "AAS O2 provisional information-need candidate; NOT ADOPTED",
+          "definition": "Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established.",
+          "source_entry_ids": [
+            "AAS02-N036",
+            "AAS03-N008",
+            "AAS03-N009"
+          ],
+          "evidence_records": [
+            "AAS02-N036",
+            "AAS03-N008",
+            "AAS03-N009"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O2_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established. [Sources: AAS02-N036, AAS03-N008, AAS03-N009; O2-SUPPORTING-CONTENT]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Supporting file locator or embedded file content — NOT ADOPTED"
+          ],
+          "AAS_O2_source_correspondence": {
+            "donor": "IDTA-01001 Part 1 v3.2.0",
+            "source_ids": [
+              "AAS02-N036",
+              "AAS03-N008",
+              "AAS03-N009"
+            ],
+            "closest_prior_rows": [
+              "ISA-C-146",
+              "ISA-C-102"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "Existing media rows are specifically observation-associated or component-generated. The native file/content mechanisms also support general descriptive material and must not be forced into those narrower subjects.",
+            "native_meaning": "Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established.",
+            "candidate_status": "COMMON_CANDIDATE",
+            "fill": "#D9EAF8",
+            "cell": "G363",
+            "original_source_locators": [
+              {
+                "source_id": "AAS02-N036",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc#L133-L162",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc",
+                "source_lines": [
+                  133,
+                  162
+                ],
+                "source_standing": "RESOURCE_CLASS",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N008",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L484-L526",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  484,
+                  526
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N009",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L267-L313",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  267,
+                  313
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          }
+        },
+        "after": {
+          "row_id": "AAS-O2-SUPPORTING-CONTENT",
+          "label": "Candidate — Supporting file locator or embedded file content",
+          "display_row": 363,
+          "status": "AAS O2 provisional information-need candidate; NOT ADOPTED",
+          "definition": "Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media.",
+          "source_entry_ids": [
+            "AAS02-N036",
+            "AAS03-N008",
+            "AAS03-N009"
+          ],
+          "evidence_records": [
+            "AAS02-N036",
+            "AAS03-N008",
+            "AAS03-N009"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O2_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[COMMON CANDIDATE] PARTIAL/RELATED: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media. [Sources: AAS02-N036, AAS03-N008, AAS03-N009, AAS08-N050; O6-1-AAS-O2-SUPPORTING-CONTENT]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Supporting file locator or embedded file content — NOT ADOPTED"
+          ],
+          "AAS_O2_source_correspondence": {
+            "donor": "IDTA-01001 Part 1 v3.2.0",
+            "source_ids": [
+              "AAS02-N036",
+              "AAS03-N008",
+              "AAS03-N009"
+            ],
+            "closest_prior_rows": [
+              "ISA-C-146",
+              "ISA-C-102"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "Existing media rows are specifically observation-associated or component-generated. The native file/content mechanisms also support general descriptive material and must not be forced into those narrower subjects.",
+            "native_meaning": "Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established.",
+            "candidate_status": "COMMON_CANDIDATE",
+            "fill": "#D9EAF8",
+            "cell": "G363",
+            "original_source_locators": [
+              {
+                "source_id": "AAS02-N036",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc#L133-L162",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/core.adoc",
+                "source_lines": [
+                  133,
+                  162
+                ],
+                "source_standing": "RESOURCE_CLASS",
+                "edition": "IDTA-01001 3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N008",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L484-L526",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  484,
+                  526
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              },
+              {
+                "source_id": "AAS03-N009",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-metamodel/blob/ecd191273a28dd9c4e7bb75e923f0f0fe5da444e/documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc#L267-L313",
+                "source_file": "documentation/IDTA-01001/modules/ROOT/pages/spec-metamodel/submodel-elements.adoc",
+                "source_lines": [
+                  267,
+                  313
+                ],
+                "source_standing": "DEFINITION_AND_CARDINALITY",
+                "edition": "IDTA-01001 Part 1 v3.2.0 (Release 26-01)"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          },
+          "AAS_O6_1_source_correspondence": {
+            "source_ids": [
+              "AAS08-N050"
+            ],
+            "relation": "PARTIAL/RELATED",
+            "candidate_status": "COMMON_CANDIDATE",
+            "classification_changed": false,
+            "reason": "Qualify existing package/file meaning from Part 5; no extra parallel package row or adoption.",
+            "DIM_Profile_adopted": false
+          }
+        },
+        "master_cell": "G363",
+        "source_ids": [
+          "AAS08-N050"
+        ],
+        "register_changes": {
+          "C346": "Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media.",
+          "P346": "O2 sources: AAS02-N036, AAS03-N008, AAS03-N009 | O6-1: AAS08-N050",
+          "Q346": "AAS02-N036, AAS03-N008, AAS03-N009; RELATED_BUT_DISTINCT; Existing media rows are specifically observation-associated or component-generated. The native file/content mechanisms also support general descriptive material and must not be forced into those narrower subjects.\nO6-1: AAS08-N050; current qualification in R; earlier contact notes retained.",
+          "R346": "COMMON_CANDIDATE — O6-1: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media."
+        },
+        "classification_changed": false
+      },
+      {
+        "row_id": "AAS-O5-PACKAGE-ASSOCIATION",
+        "before": {
+          "row_id": "AAS-O5-PACKAGE-ASSOCIATION",
+          "label": "Candidate — Exchange-package identity and associated digital records",
+          "display_row": 375,
+          "status": "AAS O5 provisional information-need candidate; NOT ADOPTED",
+          "definition": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+          "source_entry_ids": [
+            "AAS07-N013",
+            "AAS07-N014",
+            "AAS07-N015",
+            "AAS07-N016",
+            "AAS07-N049",
+            "AAS07-N050"
+          ],
+          "evidence_records": [
+            "AAS07-N013",
+            "AAS07-N014",
+            "AAS07-N015",
+            "AAS07-N016",
+            "AAS07-N049",
+            "AAS07-N050"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O5_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; O5-PACKAGE-ASSOCIATION]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Exchange-package identity and associated digital records — NOT ADOPTED"
+          ],
+          "AAS_O5_source_correspondence": {
+            "donor": "IDTA-01002 Part 2 v3.2.0",
+            "source_ids": [
+              "AAS07-N013",
+              "AAS07-N014",
+              "AAS07-N015",
+              "AAS07-N016",
+              "AAS07-N049",
+              "AAS07-N050"
+            ],
+            "closest_prior_rows": [
+              "AAS-O2-SUPPORTING-CONTENT",
+              "AAS-O2-RECORD-ID",
+              "ISA-C-207"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "A supporting file row does not identify a managed exchange package or its declared record associations. The existing history-ZIP row correctly retains only related native packaging evidence. Add an optional specialized package-context candidate without adopting AASX packaging or duplicating the four-case equipment identity.",
+            "native_meaning": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+            "candidate_status": "SPECIALIZED_CANDIDATE",
+            "fill": "#F9E6B8",
+            "cell": "G375",
+            "original_source_locators": [
+              {
+                "source_id": "AAS07-N013",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L684-L719",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  684,
+                  719
+                ],
+                "source_standing": "INTERFACE_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N014",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L721-L738",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  721,
+                  738
+                ],
+                "source_standing": "OPERATION_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N015",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L739-L765",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  739,
+                  765
+                ],
+                "source_standing": "NOTE_AND_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N016",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L767-L809",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  767,
+                  809
+                ],
+                "source_standing": "NOTE_AND_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N049",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-001.yaml#L57-L87",
+                "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-001.yaml",
+                "source_lines": [
+                  57,
+                  87
+                ],
+                "source_standing": "OPENAPI_CONTRACT",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N050",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-002.yaml#L20-L63",
+                "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-002.yaml",
+                "source_lines": [
+                  20,
+                  63
+                ],
+                "source_standing": "OPENAPI_CONTRACT",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          }
+        },
+        "after": {
+          "row_id": "AAS-O5-PACKAGE-ASSOCIATION",
+          "label": "Candidate — Exchange-package identity and associated digital records",
+          "display_row": 375,
+          "status": "AAS O5 provisional information-need candidate; NOT ADOPTED",
+          "definition": "A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified.",
+          "source_entry_ids": [
+            "AAS07-N013",
+            "AAS07-N014",
+            "AAS07-N015",
+            "AAS07-N016",
+            "AAS07-N049",
+            "AAS07-N050"
+          ],
+          "evidence_records": [
+            "AAS07-N013",
+            "AAS07-N014",
+            "AAS07-N015",
+            "AAS07-N016",
+            "AAS07-N049",
+            "AAS07-N050"
+          ],
+          "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+          "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+          "source_review_status": "AAS_O5_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+          "display": [
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not linked here — no case evidence established.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050, AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053; O6-1-AAS-O5-PACKAGE-ASSOCIATION]",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "Not assessed here — no verified correspondence; not evidence of absence.",
+            "OPTIONAL information-need candidate: Exchange-package identity and associated digital records — NOT ADOPTED"
+          ],
+          "AAS_O5_source_correspondence": {
+            "donor": "IDTA-01002 Part 2 v3.2.0",
+            "source_ids": [
+              "AAS07-N013",
+              "AAS07-N014",
+              "AAS07-N015",
+              "AAS07-N016",
+              "AAS07-N049",
+              "AAS07-N050"
+            ],
+            "closest_prior_rows": [
+              "AAS-O2-SUPPORTING-CONTENT",
+              "AAS-O2-RECORD-ID",
+              "ISA-C-207"
+            ],
+            "relation": "RELATED_BUT_DISTINCT",
+            "reason_for_separate_candidate": "A supporting file row does not identify a managed exchange package or its declared record associations. The existing history-ZIP row correctly retains only related native packaging evidence. Add an optional specialized package-context candidate without adopting AASX packaging or duplicating the four-case equipment identity.",
+            "native_meaning": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+            "candidate_status": "SPECIALIZED_CANDIDATE",
+            "fill": "#F9E6B8",
+            "cell": "G375",
+            "original_source_locators": [
+              {
+                "source_id": "AAS07-N013",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L684-L719",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  684,
+                  719
+                ],
+                "source_standing": "INTERFACE_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N014",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L721-L738",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  721,
+                  738
+                ],
+                "source_standing": "OPERATION_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N015",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L739-L765",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  739,
+                  765
+                ],
+                "source_standing": "NOTE_AND_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N016",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L767-L809",
+                "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+                "source_lines": [
+                  767,
+                  809
+                ],
+                "source_standing": "NOTE_AND_DEFINITION",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N049",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-001.yaml#L57-L87",
+                "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-001.yaml",
+                "source_lines": [
+                  57,
+                  87
+                ],
+                "source_standing": "OPENAPI_CONTRACT",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              },
+              {
+                "source_id": "AAS07-N050",
+                "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-002.yaml#L20-L63",
+                "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-002.yaml",
+                "source_lines": [
+                  20,
+                  63
+                ],
+                "source_standing": "OPENAPI_CONTRACT",
+                "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+              }
+            ],
+            "DIM_Profile_adopted": false,
+            "case_or_runtime_verified": false
+          },
+          "AAS_O6_1_source_correspondence": {
+            "source_ids": [
+              "AAS08-N048",
+              "AAS08-N049",
+              "AAS08-N051",
+              "AAS08-N052",
+              "AAS08-N053"
+            ],
+            "relation": "PARTIAL/RELATED",
+            "candidate_status": "SPECIALIZED_CANDIDATE",
+            "classification_changed": false,
+            "reason": "Qualify existing package/file meaning from Part 5; no extra parallel package row or adoption.",
+            "DIM_Profile_adopted": false
+          }
+        },
+        "master_cell": "G375",
+        "source_ids": [
+          "AAS08-N048",
+          "AAS08-N049",
+          "AAS08-N051",
+          "AAS08-N052",
+          "AAS08-N053"
+        ],
+        "register_changes": {
+          "C355": "A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified.",
+          "P355": "O5 sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050 | O6-1: AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053",
+          "Q355": "AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; RELATED_BUT_DISTINCT; A supporting file row does not identify a managed exchange package or its declared record associations. The existing history-ZIP row correctly retains only related native packaging evidence. Add an optional specialized package-context candidate without adopting AASX packaging or duplicating the four-case equipment identity.\nO6-1: AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053; current qualification in R; earlier contact notes retained.",
+          "R355": "SPECIALIZED_CANDIDATE — O6-1: A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified."
+        },
+        "classification_changed": false
+      }
+    ],
+    "register_changes": {
+      "C346": "Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media.",
+      "P346": "O2 sources: AAS02-N036, AAS03-N008, AAS03-N009 | O6-1: AAS08-N050",
+      "Q346": "AAS02-N036, AAS03-N008, AAS03-N009; RELATED_BUT_DISTINCT; Existing media rows are specifically observation-associated or component-generated. The native file/content mechanisms also support general descriptive material and must not be forced into those narrower subjects.\nO6-1: AAS08-N050; current qualification in R; earlier contact notes retained.",
+      "R346": "COMMON_CANDIDATE — O6-1: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media.",
+      "C355": "A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified.",
+      "P355": "O5 sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050 | O6-1: AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053",
+      "Q355": "AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; RELATED_BUT_DISTINCT; A supporting file row does not identify a managed exchange package or its declared record associations. The existing history-ZIP row correctly retains only related native packaging evidence. Add an optional specialized package-context candidate without adopting AASX packaging or duplicating the four-case equipment identity.\nO6-1: AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053; current qualification in R; earlier contact notes retained.",
+      "R355": "SPECIALIZED_CANDIDATE — O6-1: A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified."
+    },
+    "existing_rows": "352 of 354 prior rows unchanged in full; two AAS package/file comparisons and definitions qualified. All 633 prior classifications retained.",
+    "historical_53_in_O6_1": {
+      "AAS08-N011": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+      "AAS08-N012": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+      "AAS08-N013": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+      "AAS08-N014": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+      "AAS08-N015": "RETAIN_VALUE_AND_LEGACY_CONSTRAINTS",
+      "AAS08-N019": "RETAIN_TEMPLATE_AND_UNIT_REQUIREMENTS",
+      "AAS08-N023": "NEW_UNIT_CONTEXT",
+      "AAS08-N027": "NEW_UNIT_CONTEXT",
+      "AAS08-N028": "RETAIN_SECURITY_DOMAIN_SCOPE",
+      "AAS08-N029": "RETAIN_SECURITY_DOMAIN_SCOPE",
+      "AAS08-N030": "RETAIN_SECURITY_OBLIGATIONS",
+      "AAS08-N036": "NEW_ACCESS_RULE_DEFINITION",
+      "AAS08-N039": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+      "AAS08-N045": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+      "AAS08-N046": "RETAIN_SYNTAX_AND_EXAMPLE_HOLDS",
+      "AAS08-N053": "RETAIN_CONDITIONAL_PACKAGE_PROTECTION",
+      "AAS08-N054": "RETAIN_PUBLICATION_METADATA_CONFLICT"
+    },
+    "holds_retained": [
+      "All AAS08-H01 through H11 and prior AAS/donor/case holds retained unchanged.",
+      "Mixed companion editions; IEC legacy category/English/IRI/LevelType conflicts; unit quantityId/quantityID and normative/example symbol cardinality remain.",
+      "Security RIGHTS schema/BNF and machineState example ambiguities; calendar-validity and optional serialization/enforcement limits remain.",
+      "Package cardinality/namespace/sample/origin and release/index metadata conflicts; Part4/Part5 policy-transfer wording remain.",
+      "External dictionaries, security/packaging/crypto originals and unviewed figures are not newly audited. No native Excel clean reopen or runtime/physical proof."
+    ],
+    "workbook_metadata_repair": "Correct inherited Master Crosswalk/DIM Register used-range dimensions, remove duplicated A370:P370 merge, merge existing A373:P373 topic divider and new A376:P376. No prior cell values/fills changed beyond the two recorded qualifications.",
+    "case_review": "Scope check against preserved source-case records only. Dragino/AirGradient reference designs, Campbell/ClimaVue possible pairing and Bennett Point original-versus-copy distinctions unchanged; no new source-case audit.",
+    "forecast": "Approximately 2–3 substantive steps remain: O6-2 templates (one, or split only for actual source complexity) and O7 reconciliation.",
+    "one_next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
+    "publication": {
+      "workbook_sha256": "19576548df145091a9d15ebb2ac0d8252ed8de99e726c816756af4ca9f741631",
+      "previous_workbook_sha256": "16fe6e3050a4048c9953922a85712b68bb6aeff5ec185011e76ad712c7768043",
+      "affected_original_sheets": [
+        "Master Crosswalk",
+        "DIM Register",
+        "Summary",
+        "Validation",
+        "Legend"
+      ],
+      "unchanged_sheet_parts": 21,
+      "grid_values": 6064,
+      "new_candidate_cells": [
+        "G377",
+        "G378",
+        "G379"
+      ],
+      "existing_values_and_fills": "Two AAS cells and their register entries qualified; all prior fills/classifications and unrelated cells unchanged",
+      "range_divider_metadata_repair": "Correct inherited Master Crosswalk/DIM Register used-range dimensions, remove duplicated A370:P370 merge, merge existing A373:P373 topic divider and new A376:P376. No prior cell values/fills changed beyond the two recorded qualifications.",
+      "M00_M01_preserved": true,
+      "M02_created": false,
+      "actual_Microsoft_Excel_clean_reopen": "PENDING",
+      "visual_review": "PASS: ArtifactTool imported/rendered the saved workbook without rewriting; changed comparison, register, current-count/legend, DIM and repaired-divider views were visually inspected. The final package wording was rerendered in its master/register/definition cells. No clipped text observed; native Microsoft Excel reopening remains unverified.",
+      "remote_publication": "PENDING",
+      "visual_review_ranges": [
+        "Master Crosswalk!G363:J363",
+        "Master Crosswalk!G375:J379",
+        "Master Crosswalk!P377:P379",
+        "Master Crosswalk!A373:P373",
+        "Master Crosswalk!A376:P376",
+        "DIM Register!P346:R346",
+        "DIM Register!P355:R358",
+        "DIM Register!B356:C358",
+        "DIM Register!C355:C355",
+        "Summary!A1:B1",
+        "Summary!A17:B28",
+        "Validation!A17:B28",
+        "Legend!A23:B28"
+      ]
     }
   }
 }

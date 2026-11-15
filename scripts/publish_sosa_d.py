@@ -6947,10 +6947,217 @@ def verify_aas_o5():
     print('LIMIT: AAS bounded PARTIAL; source conflicts and Excel clean reopen hold retained. Next O6-1 only.')
 
 
+AAS_O6_1_BASE='f2f3ee836b7402ba58647224a1ed428fb76a7ac1'
+
+def publish_aas_o6_1():
+    """Extend the same saved package with source-qualified candidate rows; preserve original parts."""
+    import copy, html
+    m=load(MASTER);a=load(F3_PEER_FILES[-1]);o=a['AAS_O6_1_native_review'];grid=m['review_grid']
+    prior=(D/BOOK).read_bytes();need(prior==f3_baseline(BOOK,AAS_O6_1_BASE),'exact archived pre-O6_1 workbook')
+    need(m['currentEvidenceCheckpoint']=='AAS_O6_1_SOURCE_DECISIONS_PENDING_SAME_XLSX','O6_1 source checkpoint')
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/name).open('w',newline='',encoding='utf-8') as f:csv.writer(f,lineterminator='\n').writerows(grid)
+    table=['<table><thead><tr>']
+    for idx,span in ((0,4),(4,6),(10,5),(15,1)):table.append(f'<th colspan="{span}">{html.escape(grid[0][idx])}</th>')
+    table+=['</tr><tr>'+''.join('<th>'+html.escape(v)+'</th>' for v in grid[1])+'</tr></thead><tbody>']
+    for i,row in enumerate(grid[2:],2):table.append('<tr><th colspan="16">'+html.escape(row[0])+'</th></tr>' if i in m['review_sections'] else '<tr>'+''.join('<td>'+html.escape(v)+'</td>' for v in row)+'</tr>')
+    table+=['</tbody></table>']
+    banner='# CURRENT — F3 accepted; AAS O6-1 companion review complete (15 November 2026)\n\nAll 55 AAS08 findings reconciled, reusing unchanged original-source contact with targeted rereads for new decisions. Three common candidates added; two existing package/file comparisons qualified without reclassification. Current: 357 information rows; 636 source-bearing comparisons (528 colored / 108 held). All 633 prior classifications, unrelated cells and 26-sheet package preserved. Worksheet range/divider metadata corrected. Candidates are not adopted; AAS remains bounded PARTIAL and native Excel reopening pending. Next: separate Proceed for O6-2 industrial templates only.\n\n'
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md'):
+        (D/name).write_text(banner+'\n'.join(table)+'\n',encoding='utf-8')
+    with zipfile.ZipFile(io.BytesIO(prior)) as z:
+        paths=old.sheetpaths(z);replacements={}
+        def edited(name,changes):
+            rt=ET.fromstring(z.read(paths[name]));cells={c.get('r'):c for c in rt.iter(q('c'))}
+            for ref,value in changes.items():need(ref in cells,'existing guidance cell '+ref);f3_put(cells[ref],value)
+            for rr in rt.find(q('sheetData')):
+                vals=[v for k,v in changes.items() if re.search(r'\d+$',k).group()==rr.get('r')]
+                if vals:rr.set('ht',str(min(409.5,max(float(rr.get('ht',15)),max(len(textwrap.wrap(v,95))*12+18 for v in vals)))));rr.set('customHeight','1')
+            replacements[paths[name]]=ET.tostring(rt,encoding='utf-8',xml_declaration=True)
+        rt=ET.fromstring(z.read(paths['Master Crosswalk']));sd=rt.find(q('sheetData'));templates={int(r.get('r')):r for r in sd}
+        def make_row(template,number,values):
+            rr=copy.deepcopy(template);rr.set('r',str(number))
+            for c in list(rr):rr.remove(c)
+            styles={re.match('[A-Z]+',c.get('r')).group():c.get('s','0') for c in template}
+            for j,v in enumerate(values,1):
+                col=re.match('[A-Z]+',addr(number,j)).group();c=ET.SubElement(rr,q('c'),{'r':addr(number,j),'s':styles.get(col,'526')});f3_put(c,str(v))
+            return rr
+        for change in o['qualified_existing_rows']:
+            rr=templates[change['after']['display_row']]
+            cell=next(c for c in rr if c.get('r')==change['master_cell'])
+            f3_put(cell,change['after']['display'][6])
+        divider=make_row(templates[373],376,grid[375]);sd.append(divider)
+        merges=rt.find(q('mergeCells'));need(merges is not None,'existing topic merges')
+        seen=set()
+        for merge in list(merges):
+            if merge.get('ref') in seen:merges.remove(merge)
+            else:seen.add(merge.get('ref'))
+        for ref in ('A373:P373','A376:P376'):
+            if ref not in seen:ET.SubElement(merges,q('mergeCell'),{'ref':ref});seen.add(ref)
+        merges.set('count',str(len(merges)))
+        for n,row in enumerate(m['rows'][354:],377):
+            rr=make_row(templates[375],n,row['display']);rr.set('ht','240');rr.set('customHeight','1')
+            for c in rr:
+                col=re.match('[A-Z]+',c.get('r')).group()
+                if col in ('G','H','I','J'):c.set('s','526' if n%2==0 else '527')
+                if col=='G':c.set('s','528' if row['AAS_O6_1_source_correspondence']['candidate_status']=='COMMON_CANDIDATE' else '529')
+            sd.append(rr)
+        dim=rt.find(q('dimension'))
+        if dim is None:
+            dim=ET.Element(q('dimension'));rt.insert(1 if rt.find(q('sheetPr')) is not None else 0,dim)
+        dim.set('ref','A1:P379')
+        af=rt.find(q('autoFilter'))
+        if af is not None:af.set('ref','A2:P379')
+        replacements[paths['Master Crosswalk']]=ET.tostring(rt,encoding='utf-8',xml_declaration=True)
+        rt=ET.fromstring(z.read(paths['DIM Register']));sd=rt.find(q('sheetData'));template=list(sd)[-1]
+        register_cells={c.get('r'):c for c in rt.iter(q('c'))}
+        for ref,value in o['register_changes'].items():f3_put(register_cells[ref],value)
+        for n,row in enumerate(m['rows'][354:],356):
+            c=row['AAS_O6_1_source_correspondence'];ids=', '.join(c['source_ids'])
+            vals=[row['row_id'],row['label'],row['definition'],row['status'],row['source_review_status'],row['master_inclusion'],row['dim_adoption'],'','Not assessed here','','Not assessed here','AAS pinned Parts 3b/4 targeted text; individual source editions govern; no observed case','Not assessed here','Not assessed here','Not assessed here','O6_1 sources: '+ids,ids+'; '+c['relation']+'; '+c['reason_for_separate_candidate'],c['candidate_status']+' — '+c['native_meaning']]
+            rr=make_row(template,n,vals);rr.set('ht','240');rr.set('customHeight','1');sd.append(rr)
+        dim=rt.find(q('dimension'))
+        if dim is None:
+            dim=ET.Element(q('dimension'));rt.insert(1 if rt.find(q('sheetPr')) is not None else 0,dim)
+        dim.set('ref','A1:R358');af=rt.find(q('autoFilter'))
+        if af is not None:af.set('ref','A1:R358')
+        replacements[paths['DIM Register']]=ET.tostring(rt,encoding='utf-8',xml_declaration=True)
+        guidance={'A1': 'CURRENT 15 NOV 2026 — F3 accepted; AAS O6-1 complete', 'B1': 'Current: 357 information rows in the same 26-sheet master. AAS active bounded PARTIAL; M00/M01 frozen. Earlier labeled checkpoints are historical.', 'A17': 'Current completed scope', 'B17': 'O6-1: 55 AAS08 companion findings reconciled; three common candidates added and two package/file comparisons qualified. All 633 prior classifications unchanged.', 'B19': '357 information rows; 636 source comparisons: 528 colored, 108 held. AAS 72 colored / 12 held across 84 comparisons. Other donor positions retain explicit statuses.', 'B21': 'Prior pinned source contact reused; 19 original-file hashes matched. Selected passages in 8 original files reread for unit, policy, audit and package decisions. External and figure limits remain.', 'B22': 'New: unit definition and quantity context; access-rule definition and protected information; security/accountability audit record. Existing package/file rows clarified. No model adoption or demonstrated enforcement.', 'A23': 'Next step and remaining limits', 'B23': 'Await owner Proceed for O6-2: 37 AAS09 industrial-template findings. Stop before O7 reconciliation. AAS bounded PARTIAL; actual Microsoft Excel clean reopen pending.', 'A28': 'Current O6-1 saved-file verification', 'B28': 'O6-1: all 6,064 saved grid values, three new fills and two qualified AAS comparisons/register entries checked. Range/divider metadata corrected. All prior classifications, 21 untouched sheets and M00/M01 preserved.'}
+        edited('Summary',guidance);edited('Validation',guidance)
+        edited('Legend',{'A1': 'CURRENT LEGEND — F3 accepted; O6-1 candidates and qualifications', 'A23': 'Current classification totals', 'B23': 'Current: 528 colored / 108 held source comparisons. Earlier F2/F3/O2/O3/O4/O5 counts are historical.', 'B24': '357 information rows, 379 × 16 saved comparison grid', 'A28': 'AAS O6-1 additions and current boundary', 'B28': 'Three new common candidates (blue); two existing package/file comparisons qualified with their classifications retained. Color is not adoption, equivalence or source completeness. Next O6-2 industrial templates.'})
+        buf=io.BytesIO()
+        with zipfile.ZipFile(buf,'w') as dst:
+            for info in z.infolist():dst.writestr(info,replacements.get(info.filename,z.read(info.filename)))
+    saved=buf.getvalue();(D/BOOK).write_bytes(saved);sha=digest(saved)
+    m['currentEvidenceCheckpoint']='AAS_O6_1_SAVED_VERIFIED';m['currentWorkbookSha256']=sha;m['workbookSnapshot'].update(checkpoint=m['currentEvidenceCheckpoint'],sha256=sha,currently_matches_readable_view=True,lag='ZERO: 379x16 grid and current O6_1 owner routing',textCheckpoint='AAS_O6_1_NATIVE_CANDIDATES',validation_file=F3_PEER_FILES[-1]+'#/AAS_O6_1_native_review/publication')
+    m['AAS_O6_1_native_review']['status']='O6_1_COMPLETE__O6_2_PENDING_OWNER_PROCEED'
+    o['status']='O6_1_COMPLETE__O6_2_PENDING_OWNER_PROCEED';o['publication']={'workbook_sha256':sha,'previous_workbook_sha256':digest(prior),'affected_original_sheets':['Master Crosswalk','DIM Register','Summary','Validation','Legend'],'unchanged_sheet_parts':21,'grid_values':6064,'new_candidate_cells':['G'+str(i) for i in range(377,380)],'existing_values_and_fills':'Two AAS cells and their register entries qualified; all prior fills/classifications and unrelated cells unchanged','range_divider_metadata_repair':o['workbook_metadata_repair'],'M00_M01_preserved':True,'M02_created':False,'actual_Microsoft_Excel_clean_reopen':'PENDING','visual_review':'PENDING','remote_publication':'PENDING'}
+    a['status']='AAS_ACTIVE_BOUNDED_PARTIAL__O6_1_COMPLETE';a['master_state_current'].update(checkpoint=m['currentEvidenceCheckpoint'],comparison_lag=0,status='O6_1_COMPLETE__O6_2_PENDING',workbook_metadata_lag='ZERO: current O6_1 guidance refreshed; labeled historical checkpoints retained.')
+    save(MASTER,m);save(F3_PEER_FILES[-1],a);verify_aas_o6_1()
+
+
+def verify_aas_o6_1():
+    """Check the bounded native reconciliation and saved file against the archived O5 result."""
+    import copy
+    from collections import Counter
+    from html.parser import HTMLParser
+    m=load(MASTER);base=json.loads(f3_baseline(MASTER,AAS_O6_1_BASE));a=load(F3_PEER_FILES[-1]);ab=json.loads(f3_baseline(F3_PEER_FILES[-1],AAS_O6_1_BASE));o=a['AAS_O6_1_native_review']
+    need(m['currentEvidenceCheckpoint']=='AAS_O6_1_SAVED_VERIFIED','O6_1 checkpoint')
+    changes={x['row_id']:x for x in o['qualified_existing_rows']}
+    need(set(changes)=={'AAS-O2-SUPPORTING-CONTENT','AAS-O5-PACKAGE-ASSOCIATION'},'two authorized existing-row qualifications')
+    restored_rows=copy.deepcopy(m['rows'][:354]);restored_grid=copy.deepcopy(m['review_grid'][:375])
+    for idx,row in enumerate(restored_rows):
+        if row['row_id'] in changes:
+            change=changes[row['row_id']];need(row==change['after'] and base['rows'][idx]==change['before'],'exact recorded before/after')
+            oldrow=change['before'];need(row['display'][:6]+row['display'][7:]==oldrow['display'][:6]+oldrow['display'][7:],'only AAS display cell changes')
+            oldrow=change['before']
+            need(not change['classification_changed'] and row['display'][6].split(']')[0]==oldrow['display'][6].split(']')[0],'existing classification retained')
+            for key,value in oldrow.items():
+                if key not in ('display','definition','display_row'):need(row[key]==value,'preserved prior evidence '+key)
+            restored_rows[idx]=oldrow;restored_grid[row['display_row']-1]=oldrow['display']
+    need(restored_rows==base['rows'] and restored_grid==base['review_grid'],'all other existing rows/cells unchanged')
+    need(m['columns']==base['columns'] and m['review_sections']==base['review_sections']+[375],'approved layout plus appended topic')
+    need(len(m['rows'])==357 and len(m['review_grid'])==379 and all(len(r)==16 for r in m['review_grid']),'354 rows / 379x16 grid')
+    allowed={'rows','review_grid','review_sections','counts','currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction'}
+    for k,v in base.items():
+        if k not in allowed:need(m[k]==v,'preserved master evidence '+k)
+    for k,v in base['counts'].items():
+        if k not in ('informationRows','AAS_current_source_bearing_comparisons'):need(m['counts'][k]==v,'preserved historical count '+k)
+    need(m['counts']['informationRows']==357 and m['counts']['AAS_current_source_bearing_comparisons']==84,'current counts')
+    restored=copy.deepcopy(a);restored.pop('AAS_O6_1_native_review')
+    for k in ('status','one_next','master_state_current'):restored[k]=ab[k]
+    need(restored==ab,'all prior findings, holds and decisions unchanged')
+    native={x['source_id']:x for x in a['AAS08']['original_items']}
+    required=set(native);rs=o['records']
+    need(len(rs)==55 and {r['source_id'] for r in rs}==required,'55 unique AAS08 findings')
+    need(len(o['targeted_original_contacts'])==8,'8 sampled original source files')
+    expected_files={(r['original_corpus_source_id'],r['source_file']):(r['git_commit'],r['source_blob']) for r in native.values()}
+    need(len(expected_files)==len(o['unchanged_original_file_checks'])==19,'19 immutable original-file checks')
+    for f in o['unchanged_original_file_checks']:need(expected_files[(f['corpus'],f['path'])]==(f['commit'],f['blob']),'retained original pin')
+    for f in o['targeted_original_contacts']:need(expected_files[(f['corpus'],f['file'])]==(f['commit'],f['blob']) and f['ranges'],'targeted original locator')
+    need(len(o['historical_53_in_O6_1'])==17,'17 historically uncited findings dispositioned')
+    rowids={r['row_id'] for r in m['rows']};need(len(rowids)==357,'unique row IDs')
+    for r in rs:
+        need(digest(json.dumps(native[r['source_id']],sort_keys=True,ensure_ascii=False).encode())==r['original_record_sha256'],'original evidence hash '+r['source_id'])
+        need(set(r['row_ids'])<=rowids and r['rationale'] and r['relation'] and not r['DIM_Profile_adopted'],'qualified disposition '+r['source_id'])
+    new=m['rows'][354:];need([r['row_id'] for r in new]==o['new_candidate_row_ids'],'three stable candidate IDs')
+    need(Counter(r['AAS_O6_1_source_correspondence']['candidate_status'] for r in new)=={'COMMON_CANDIDATE':3},'candidate classifications')
+    for r in new:
+        c=r['AAS_O6_1_source_correspondence'];need(set(c['source_ids'])<=required and c['reason_for_separate_candidate'] and not c['DIM_Profile_adopted'],'candidate source evidence')
+        need(all(v.strip() for v in r['display']),'explicit new row states')
+        need(m['review_grid'][r['display_row']-1]==r['display'],'candidate display placement')
+    need(source_csv('Master_Donor_Concept_to_DIM_Crosswalk.csv')==m['review_grid']==source_csv('ISA_Correction_Review_07NOV2026.csv'),'both CSV mirrors')
+    md=(D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_text();need(md==(D/'ISA_Correction_Review_07NOV2026.md').read_text(),'both readable mirrors')
+    class Table(HTMLParser):
+        def __init__(self):super().__init__(convert_charrefs=True);self.rows=[];self.cell=None
+        def handle_starttag(self,t,attrs):
+            if t=='tr':self.row=[]
+            if t in ('td','th'):self.cell='';self.span=int(dict(attrs).get('colspan',1))
+        def handle_data(self,d):
+            if self.cell is not None:self.cell+=d
+        def handle_endtag(self,t):
+            if t in ('td','th'):self.row += [self.cell]+['']*(self.span-1);self.cell=None
+            if t=='tr':self.rows.append(self.row)
+    tab=Table();tab.feed(md[md.index('<table>'):md.index('</table>')+8]);need(tab.rows==m['review_grid'],'readable table values')
+    saved=(D/BOOK).read_bytes();prior=f3_baseline(BOOK,AAS_O6_1_BASE);need(digest(saved)==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==o['publication']['workbook_sha256'],'saved hash')
+    with zipfile.ZipFile(io.BytesIO(saved)) as z,zipfile.ZipFile(io.BytesIO(prior)) as bz:
+        paths=old.sheetpaths(z);need(paths==old.sheetpaths(bz) and len(paths)==26 and z.testzip() is None,'same 26-sheet valid package')
+        affected={paths[n] for n in o['publication']['affected_original_sheets']}
+        need(z.namelist()==bz.namelist(),'same package parts/order')
+        for name in z.namelist():
+            if name not in affected:need(z.read(name)==bz.read(name),'unchanged package part '+name)
+            if name.endswith(('.xml','.rels')):ET.fromstring(z.read(name))
+        for name,nrows in [('Master Crosswalk',375),('DIM Register',355)]:
+            rt=ET.fromstring(z.read(paths[name]));bt=ET.fromstring(bz.read(paths[name]));sd=rt.find(q('sheetData'));bs=bt.find(q('sheetData'))
+            planned={x['master_cell']:x['after']['display'][6] for x in o['qualified_existing_rows']} if name=='Master Crosswalk' else o['register_changes']
+            for rr in bs:
+                for c in rr:
+                    if c.get('r') in planned:f3_put(c,planned[c.get('r')])
+            need([ET.tostring(r) for r in list(sd)[:nrows]]==[ET.tostring(r) for r in bs],'only planned saved values change; original styles preserved '+name)
+        styles=ET.fromstring(z.read('xl/styles.xml'));xfs=list(styles.find(q('cellXfs')));fills=list(styles.find(q('fills')))
+        cells=old.readcells(saved,'Master Crosswalk')
+        for i,row in enumerate(m['review_grid'],1):
+            for j,v in enumerate(row,1):need(cells.get(addr(i,j),'')==v,'saved value '+addr(i,j))
+        rt=ET.fromstring(z.read(paths['Master Crosswalk']));lookup={c.get('r'):c for c in rt.iter(q('c'))}
+        for r in new:
+            d=r['AAS_O6_1_source_correspondence'];c=lookup[d['cell']];fg=fills[int(xfs[int(c.get('s'))].get('fillId'))].find('.//'+q('fgColor'));need(fg.get('rgb')[-6:]==d['fill'][1:],'new actual fill '+d['cell'])
+        for name in paths:
+            rt=ET.fromstring(z.read(paths[name]));rownums=[]
+            for rr in rt.find(q('sheetData')):
+                rownums.append(int(rr.get('r')));nums=[]
+                for c in rr.findall(q('c')):
+                    n=0
+                    for ch in re.match('[A-Z]+',c.get('r')).group():n=n*26+ord(ch)-64
+                    nums.append(n);need(c.get('t')!='e','no error cell '+name)
+                need(nums==sorted(set(nums)),'ordered unique cells '+name)
+            need(rownums==sorted(set(rownums)),'ordered unique rows '+name)
+        for name,last in [('Master Crosswalk','P379'),('DIM Register','R358')]:
+            rt=ET.fromstring(z.read(paths[name]));need(rt.find(q('dimension')).get('ref')=='A1:'+last,'current used range '+name)
+        rt=ET.fromstring(z.read(paths['Master Crosswalk']));merges=rt.find(q('mergeCells'));refs=[x.get('ref') for x in merges]
+        need(len(refs)==len(set(refs))==int(merges.get('count')),'unique topic merges')
+        oldrefs=[x.get('ref') for x in ET.fromstring(bz.read(paths['Master Crosswalk'])).find(q('mergeCells'))]
+        need(set(refs)==set(oldrefs)|{'A373:P373','A376:P376'},'only recorded divider corrections')
+        need(all('A'+str(i+1)+':P'+str(i+1) in refs for i in m['review_sections']),'all topic dividers merged')
+        need(all(cells.get('G'+str(r['display_row']))==r['display'][6] for r in new),'new candidates in saved used range')
+        reg=old.readcells(saved,'DIM Register')
+        for n,r in enumerate(new,356):need(reg['A'+str(n)]==r['row_id'] and reg['R'+str(n)].startswith(r['AAS_O6_1_source_correspondence']['candidate_status']),'saved candidate register')
+    for name in ('M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx','M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx'):
+        rel='Manual_Workbook_Versions/'+name;need((D/rel).read_bytes()==f3_baseline(rel,AAS_O6_1_BASE),'immutable '+name)
+    need(not list((D/'Manual_Workbook_Versions').glob('M02*')),'no unapproved M02')
+    need(a['one_next']==o['one_next']==m['nextOwnerAction']==m['AAS_O6_1_native_review']['one_next'],'one O6-2 stop boundary')
+    print('PASS AAS O6_1: 55 native findings; three common candidates; two qualified AAS comparisons; all 633 prior classifications preserved.')
+    print('PASS: all 6064 saved values, three new fills, both CSV/readable mirrors, 26 sheets, 21 untouched sheets and M00/M01.')
+    print('LIMIT: AAS bounded PARTIAL; source conflicts and Excel clean reopen hold retained. Next O6-2 only.')
+
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS_O5_SOURCE_DECISIONS_PENDING_SAME_XLSX":
+    if checkpoint=="AAS_O6_1_SOURCE_DECISIONS_PENDING_SAME_XLSX":
+        publish_aas_o6_1()
+    elif checkpoint=="AAS_O6_1_SAVED_VERIFIED":
+        verify_aas_o6_1()
+    elif checkpoint=="AAS_O5_SOURCE_DECISIONS_PENDING_SAME_XLSX":
         publish_aas_o5()
     elif checkpoint=="AAS_O5_SAVED_VERIFIED":
         verify_aas_o5()

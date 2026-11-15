@@ -1,5 +1,25 @@
 # AAS08 — Original companion specifications: semantics, units, security and AASX
 
+## O6-1 reconciliation — 15 November 2026
+
+All 55 retained AAS08 findings now have explicit dispositions in `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O6_1_native_review`, including 17 historically uncited findings. The original AAS08 records, source grades and 11 holds remain unchanged. Nineteen cached original-file hashes match their immutable source records; eight files received targeted passage rereads for the new decisions. The remaining contact is reused at the same pins, not claimed as a fresh whole-corpus audit.
+
+| Result | Information preserved | Why it merits this treatment |
+|---|---|---|
+| New common candidate `AAS-O6-UNIT-CONTEXT` | Unit definition, applicable quantity, unit code and dictionary/version context | Property meaning, unit meaning and reported uncertainty are distinct. Shared units do not establish equivalent quantities or automatic conversion. |
+| New common candidate `AAS-O6-ACCESS-RULE` | Protected information, applicable rights and attribute-based conditions | A reusable rule differs from a request credential, an authorization decision and a returned-data filter. Recipient policy and enforcement remain implementation-specific. |
+| New common candidate `AAS-O6-AUDIT-RECORD` | Security/accountability occurrence, application attribution, affected object and conditional outcome | Part 4 defines these audit obligations, with timestamps and machine-processable logs. Dedicated-Submodel exposure is optional; no actual audit trail was observed. |
+| Qualified `AAS-O2-SUPPORTING-CONTENT` | Package-relative supplementary-file relationship versus embedded Blob | Reuses the existing content row; preserves cardinality and publisher sample conflicts. |
+| Qualified `AAS-O5-PACKAGE-ASSOCIATION` | Package metadata and serialized-content relationships | Package creator/revision describe the package, not the equipment or shell. Multiple representations do not prove lossless equivalence. |
+
+The new needs draw on Part 3b v3.0.0 and Part 4 v3.1.0. Part 3a v3.1.1 constraints and Part 5 v3.2.0 packaging rules keep their own versions and standing. Selected exact passages are recorded under `targeted_original_contacts`; the per-finding `newly_read_overlaps` distinguish fresh contact from reused evidence. Full prior definitions, grammar/schema discrepancies, examples, native-only obligations and external-original/figure limits are retained. In particular, legacy categories, unit symbol/name conflicts, empty RIGHTS arrays, the machineState example, package relationship/sample discrepancies and publication-date contradictions remain unresolved.
+
+The same workbook now has 357 information rows and 636 source-bearing comparisons (528 colored, 108 held). All 633 previous classifications remain; 352 prior rows are unchanged in full and two package/file rows are qualified. Three new common candidates have explicit statuses in every donor/case position. M00/M01 remain frozen and no M02 was created. Used-range metadata and divider merges were repaired in the two affected data sheets; no additional data values were changed by that repair.
+
+See the current PITON and O6-1 publication record for delivery checks. O6-2's 37 industrial-template findings have not started. No model/Profile adoption, donor transition, runtime certification, external-specification audit or actual Microsoft Excel clean reopening is claimed.
+
+## Historical AAS08 review — 14 November 2026
+
 14 November 2026 · research/dim-profile-v2 · preflight `ff031b647f218e0782294f38ff6bbed691800bba` · owner-authorized AAS08 only.
 
 The Asset Administration Shell (AAS) companions add precision about what a concept means, which quantity and unit a value uses, how access policy is described, and how files are exchanged. These are different subjects: a concept definition is not a measurement, a rule is not an observed authorization decision, and a package is not an assembly of equipment. The Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile remain undecided; AAS stays active and source-incomplete.

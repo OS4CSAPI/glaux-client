@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "16fe6e3050a4048c9953922a85712b68bb6aeff5ec185011e76ad712c7768043",
+  "currentWorkbookSha256": "19576548df145091a9d15ebb2ac0d8252ed8de99e726c816756af4ca9f741631",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -6638,7 +6638,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established. [Sources: AAS02-N036, AAS03-N008, AAS03-N009; O2-SUPPORTING-CONTENT]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media. [Sources: AAS02-N036, AAS03-N008, AAS03-N009, AAS08-N050; O6-1-AAS-O2-SUPPORTING-CONTENT]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -6854,7 +6854,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; O5-PACKAGE-ASSOCIATION]",
+      "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050, AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053; O6-1-AAS-O5-PACKAGE-ASSOCIATION]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -6864,6 +6864,78 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Exchange-package identity and associated digital records — NOT ADOPTED"
+    ],
+    [
+      "AAS O6-1 — unit context, access rules and audit records (not adopted)",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A unit concept has a name and symbol, with optional unit code, definition, quantity name/identifier and dictionary/version context. Unit identity is distinct from property meaning; shared units do not make different quantities equivalent. An explicit concept unit takes precedence over a dictionary default. Keep the chosen quantity and coherent source context. The source supplies interpretation metadata, not complete custom-unit definitions or a verified conversion algorithm. [Sources: AAS08-N020, AAS08-N022, AAS08-N023, AAS08-N024, AAS08-N026, AAS08-N027; AAS-O6-UNIT-CONTEXT]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Unit definition and quantity context — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved. [Sources: AAS08-N032, AAS08-N034, AAS08-N035, AAS08-N036, AAS08-N038, AAS08-N040; AAS-O6-ACCESS-RULE]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Access-rule definition and protected information — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Part 4 requires audit records for unauthorized access and identity, account or access-rule configuration changes. When accountability is a concern, information create/update/delete records identify the affected object and reported completion. Audit events identify the acting user application and carry event time to at least seconds. Machine-processable logs are required; exposure as a dedicated Submodel is only an option. No actual audit log, physical action or mandatory DIM event schema is established. [Sources: AAS08-N031; AAS-O6-AUDIT-RECORD]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Security and accountability audit record — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -6885,7 +6957,8 @@
     354,
     363,
     369,
-    372
+    372,
+    375
   ],
   "rows": [
     {
@@ -56618,7 +56691,7 @@
       "label": "Candidate — Supporting file locator or embedded file content",
       "display_row": 363,
       "status": "AAS O2 provisional information-need candidate; NOT ADOPTED",
-      "definition": "Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established.",
+      "definition": "Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media.",
       "source_entry_ids": [
         "AAS02-N036",
         "AAS03-N008",
@@ -56639,7 +56712,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Resource/File identifies a file by absolute or relative path; Blob carries file content directly. Content type is optional. Retain locator versus bytes and package-relative context. Access, acquisition and association with an observation or component-generated media are not established. [Sources: AAS02-N036, AAS03-N008, AAS03-N009; O2-SUPPORTING-CONTENT]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media. [Sources: AAS02-N036, AAS03-N008, AAS03-N009, AAS08-N050; O6-1-AAS-O2-SUPPORTING-CONTENT]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -56704,6 +56777,16 @@
         ],
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false
+      },
+      "AAS_O6_1_source_correspondence": {
+        "source_ids": [
+          "AAS08-N050"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_changed": false,
+        "reason": "Qualify existing package/file meaning from Part 5; no extra parallel package row or adoption.",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -57603,7 +57686,7 @@
       "label": "Candidate — Exchange-package identity and associated digital records",
       "display_row": 375,
       "status": "AAS O5 provisional information-need candidate; NOT ADOPTED",
-      "definition": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+      "definition": "A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified.",
       "source_entry_ids": [
         "AAS07-N013",
         "AAS07-N014",
@@ -57630,7 +57713,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; O5-PACKAGE-ASSOCIATION]",
+        "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: A file-server package has its own packageId, filename/bytes and declared shell associations; storage may leave content unparsed. Part 5 adds package metadata and relationships to serialized records and supplementary files. Core creator/revision describe the package, not the equipment or shell. Several serializations can represent the same information. Association does not prove valid membership, import, lossless equivalence or applied configuration. Package-ID scope, relationship/sample conflicts and conditional protection rules remain qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050, AAS08-N048, AAS08-N049, AAS08-N051, AAS08-N052, AAS08-N053; O6-1-AAS-O5-PACKAGE-ASSOCIATION]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -57728,6 +57811,363 @@
             ],
             "source_standing": "OPENAPI_CONTRACT",
             "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      "AAS_O6_1_source_correspondence": {
+        "source_ids": [
+          "AAS08-N048",
+          "AAS08-N049",
+          "AAS08-N051",
+          "AAS08-N052",
+          "AAS08-N053"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "classification_changed": false,
+        "reason": "Qualify existing package/file meaning from Part 5; no extra parallel package row or adoption.",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "AAS-O6-UNIT-CONTEXT",
+      "label": "Candidate — Unit definition and quantity context",
+      "display_row": 377,
+      "status": "AAS O6-1 provisional information-need candidate; NOT ADOPTED",
+      "definition": "A unit concept has a name and symbol, with optional unit code, definition, quantity name/identifier and dictionary/version context. Unit identity is distinct from property meaning; shared units do not make different quantities equivalent. An explicit concept unit takes precedence over a dictionary default. Keep the chosen quantity and coherent source context. The source supplies interpretation metadata, not complete custom-unit definitions or a verified conversion algorithm.",
+      "source_entry_ids": [
+        "AAS08-N020",
+        "AAS08-N022",
+        "AAS08-N023",
+        "AAS08-N024",
+        "AAS08-N026",
+        "AAS08-N027"
+      ],
+      "evidence_records": [
+        "AAS08-N020",
+        "AAS08-N022",
+        "AAS08-N023",
+        "AAS08-N024",
+        "AAS08-N026",
+        "AAS08-N027"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O6_1_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A unit concept has a name and symbol, with optional unit code, definition, quantity name/identifier and dictionary/version context. Unit identity is distinct from property meaning; shared units do not make different quantities equivalent. An explicit concept unit takes precedence over a dictionary default. Keep the chosen quantity and coherent source context. The source supplies interpretation metadata, not complete custom-unit definitions or a verified conversion algorithm. [Sources: AAS08-N020, AAS08-N022, AAS08-N023, AAS08-N024, AAS08-N026, AAS08-N027; AAS-O6-UNIT-CONTEXT]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Unit definition and quantity context — NOT ADOPTED"
+      ],
+      "AAS_O6_1_source_correspondence": {
+        "donor": "IDTA Part 3b v3.0.0 / Part 4 v3.1.0; individual locators govern",
+        "source_ids": [
+          "AAS08-N020",
+          "AAS08-N022",
+          "AAS08-N023",
+          "AAS08-N024",
+          "AAS08-N026",
+          "AAS08-N027"
+        ],
+        "closest_prior_rows": [
+          "S06-R012",
+          "S06-R013",
+          "ISA-K-PROPERTY-DECL",
+          "ISA-R-MEASUREMENT",
+          "S06-R021"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "Existing property/observable rows identify what a value means; the measurement row remains held for uncertainty. Neither carries the separate unit concept and its applicable quantity/dictionary context. Retain one optional common candidate, without inventing separate mandatory fields for each native attribute.",
+        "native_meaning": "A unit concept has a name and symbol, with optional unit code, definition, quantity name/identifier and dictionary/version context. Unit identity is distinct from property meaning; shared units do not make different quantities equivalent. An explicit concept unit takes precedence over a dictionary default. Keep the chosen quantity and coherent source context. The source supplies interpretation metadata, not complete custom-unit definitions or a verified conversion algorithm.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G377",
+        "original_source_locators": [
+          {
+            "source_id": "AAS08-N020",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc#L36-L68",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+            "source_lines": [
+              36,
+              68
+            ],
+            "source_standing": "DEFINITION_AND_FUTURE_BOUNDARY",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          },
+          {
+            "source_id": "AAS08-N022",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc#L224-L321",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/introduction.adoc",
+            "source_lines": [
+              224,
+              321
+            ],
+            "source_standing": "RULE_AND_RECOMMENDATION",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          },
+          {
+            "source_id": "AAS08-N023",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc#L57-L62",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+            "source_lines": [
+              57,
+              62
+            ],
+            "source_standing": "RECOMMENDATION_AND_CONDITIONAL_RULE",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          },
+          {
+            "source_id": "AAS08-N024",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc#L63-L181",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/specification.adoc",
+            "source_lines": [
+              63,
+              181
+            ],
+            "source_standing": "DEFINITION_AND_CONDITIONAL_RULE",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          },
+          {
+            "source_id": "AAS08-N026",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc#L12-L137",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+            "source_lines": [
+              12,
+              137
+            ],
+            "source_standing": "RECOMMENDATION_AND_EXAMPLE",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          },
+          {
+            "source_id": "AAS08-N027",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-measurement-units/blob/4a41ad069531549d4595bd7bb21b12673fd00ea4/documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc#L278-L300",
+            "source_file": "documentation/IDTA-01003-b/modules/ROOT/pages/annex/examples.adoc",
+            "source_lines": [
+              278,
+              300
+            ],
+            "source_standing": "EXAMPLE",
+            "edition": "IDTA 01003-b Part3b Measurement Units v3.0.0"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "AAS-O6-ACCESS-RULE",
+      "label": "Candidate — Access-rule definition and protected information",
+      "display_row": 378,
+      "status": "AAS O6-1 provisional information-need candidate; NOT ADOPTED",
+      "definition": "An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved.",
+      "source_entry_ids": [
+        "AAS08-N032",
+        "AAS08-N034",
+        "AAS08-N035",
+        "AAS08-N036",
+        "AAS08-N038",
+        "AAS08-N040"
+      ],
+      "evidence_records": [
+        "AAS08-N032",
+        "AAS08-N034",
+        "AAS08-N035",
+        "AAS08-N036",
+        "AAS08-N038",
+        "AAS08-N040"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O6_1_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved. [Sources: AAS08-N032, AAS08-N034, AAS08-N035, AAS08-N036, AAS08-N038, AAS08-N040; AAS-O6-ACCESS-RULE]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Access-rule definition and protected information — NOT ADOPTED"
+      ],
+      "AAS_O6_1_source_correspondence": {
+        "donor": "IDTA Part 3b v3.0.0 / Part 4 v3.1.0; individual locators govern",
+        "source_ids": [
+          "AAS08-N032",
+          "AAS08-N034",
+          "AAS08-N035",
+          "AAS08-N036",
+          "AAS08-N038",
+          "AAS08-N040"
+        ],
+        "closest_prior_rows": [
+          "ISA-T-ACCESS",
+          "ISA-Q-NAVIGATION",
+          "ISA-C-173",
+          "ISA-C-174"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "Request-access metadata carries credentials/claims, permission-decision rows report decisions, and filtering describes selected output. None explicitly represents the reusable rule that relates protected objects, rights and conditions. Add a common optional policy-definition candidate without claiming adopted policy or working enforcement.",
+        "native_meaning": "An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G378",
+        "original_source_locators": [
+          {
+            "source_id": "AAS08-N032",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L14-L52",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              14,
+              52
+            ],
+            "source_standing": "RULE_AND_PERMISSION",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          },
+          {
+            "source_id": "AAS08-N034",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L130-L238",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              130,
+              238
+            ],
+            "source_standing": "DEFINITION_AND_RULE",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          },
+          {
+            "source_id": "AAS08-N035",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L239-L369",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              239,
+              369
+            ],
+            "source_standing": "DEFINITION_AND_RULE",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          },
+          {
+            "source_id": "AAS08-N036",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L370-L452",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              370,
+              452
+            ],
+            "source_standing": "DEFINITION_AND_RULE",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          },
+          {
+            "source_id": "AAS08-N038",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L557-L594",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              557,
+              594
+            ],
+            "source_standing": "RULE_AND_DEFINITION",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          },
+          {
+            "source_id": "AAS08-N040",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc#L687-L732",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/access-rule-model.adoc",
+            "source_lines": [
+              687,
+              732
+            ],
+            "source_standing": "PERMISSION_AND_RECOMMENDATION",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "AAS-O6-AUDIT-RECORD",
+      "label": "Candidate — Security and accountability audit record",
+      "display_row": 379,
+      "status": "AAS O6-1 provisional information-need candidate; NOT ADOPTED",
+      "definition": "Part 4 requires audit records for unauthorized access and identity, account or access-rule configuration changes. When accountability is a concern, information create/update/delete records identify the affected object and reported completion. Audit events identify the acting user application and carry event time to at least seconds. Machine-processable logs are required; exposure as a dedicated Submodel is only an option. No actual audit log, physical action or mandatory DIM event schema is established.",
+      "source_entry_ids": [
+        "AAS08-N031"
+      ],
+      "evidence_records": [
+        "AAS08-N031"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O6_1_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Part 4 requires audit records for unauthorized access and identity, account or access-rule configuration changes. When accountability is a concern, information create/update/delete records identify the affected object and reported completion. Audit events identify the acting user application and carry event time to at least seconds. Machine-processable logs are required; exposure as a dedicated Submodel is only an option. No actual audit log, physical action or mandatory DIM event schema is established. [Sources: AAS08-N031; AAS-O6-AUDIT-RECORD]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Security and accountability audit record — NOT ADOPTED"
+      ],
+      "AAS_O6_1_source_correspondence": {
+        "donor": "IDTA Part 3b v3.0.0 / Part 4 v3.1.0; individual locators govern",
+        "source_ids": [
+          "AAS08-N031"
+        ],
+        "closest_prior_rows": [
+          "ISA-T-EVENT-ID",
+          "ISA-T-EVENT-TIME",
+          "AAS-O3-EVENT-INITIATOR",
+          "S06-R021",
+          "S06-R020"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "Generic event identity/time/initiator and source-assertion rows provide related pieces, but do not capture the security/accountability occurrence, affected information and reported operation outcome together. Preserve one common audit-record information need; source-required and conditional event categories do not become universal DIM requirements.",
+        "native_meaning": "Part 4 requires audit records for unauthorized access and identity, account or access-rule configuration changes. When accountability is a concern, information create/update/delete records identify the affected object and reported completion. Audit events identify the acting user application and carry event time to at least seconds. Machine-processable logs are required; exposure as a dedicated Submodel is only an option. No actual audit log, physical action or mandatory DIM event schema is established.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G379",
+        "original_source_locators": [
+          {
+            "source_id": "AAS08-N031",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-security/blob/58bea413fba3ce573005e9d4abb4cfe518e3c632/documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc#L1-L379",
+            "source_file": "documentation/IDTA-01004/modules/ROOT/pages/requirements.adoc",
+            "source_lines": [
+              1,
+              379
+            ],
+            "source_standing": "RULE_RECOMMENDATION_PERMISSION_SEPARATELY_RETAINED",
+            "edition": "IDTA 01004 Part4 Security v3.1.0"
           }
         ],
         "DIM_Profile_adopted": false,
@@ -60623,7 +61063,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 354,
+    "informationRows": 357,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -60665,10 +61105,11 @@
     "AAS03_qualified_cell_changes": 19,
     "AAS_populated_cells": 23,
     "AAS_O2_new_candidate_rows": 8,
-    "AAS_current_source_bearing_comparisons": 81,
+    "AAS_current_source_bearing_comparisons": 84,
     "AAS_O3_new_candidate_rows": 5,
     "AAS_O4_new_candidate_rows": 2,
-    "AAS_O5_new_candidate_rows": 2
+    "AAS_O5_new_candidate_rows": 2,
+    "AAS_O6_1_new_candidate_rows": 3
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -60712,16 +61153,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS_O5_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS_O6_1_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS_O5_SAVED_VERIFIED",
-    "sha256": "16fe6e3050a4048c9953922a85712b68bb6aeff5ec185011e76ad712c7768043",
+    "checkpoint": "AAS_O6_1_SAVED_VERIFIED",
+    "sha256": "19576548df145091a9d15ebb2ac0d8252ed8de99e726c816756af4ca9f741631",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 375x16 grid and current O5 owner routing",
-    "textCheckpoint": "AAS_O5_NATIVE_CANDIDATES",
+    "lag": "ZERO: 379x16 grid and current O6_1 owner routing",
+    "textCheckpoint": "AAS_O6_1_NATIVE_CANDIDATES",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -60740,7 +61181,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O5_native_review/publication",
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O6_1_native_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -64070,7 +64511,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption.",
+  "nextOwnerAction": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -88921,5 +89362,21 @@
     "status": "O5_COMPLETE__O6_PENDING_OWNER_PROCEED",
     "source_findings_dispositioned": 53,
     "one_next": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption."
+  },
+  "AAS_O6_1_native_review": {
+    "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O6_1_native_review",
+    "preflight_head": "f2f3ee836b7402ba58647224a1ed428fb76a7ac1",
+    "new_candidate_row_ids": [
+      "AAS-O6-UNIT-CONTEXT",
+      "AAS-O6-ACCESS-RULE",
+      "AAS-O6-AUDIT-RECORD"
+    ],
+    "qualified_existing_row_ids": [
+      "AAS-O2-SUPPORTING-CONTENT",
+      "AAS-O5-PACKAGE-ASSOCIATION"
+    ],
+    "status": "O6_1_COMPLETE__O6_2_PENDING_OWNER_PROCEED",
+    "source_findings_dispositioned": 55,
+    "one_next": "Await owner Proceed for O6-2 only: reconcile the 37 AAS09 industrial-template findings against their pinned originals. Stop before O7 reconciliation; no donor transition or model adoption."
   }
 }
