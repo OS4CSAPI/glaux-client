@@ -74485,7 +74485,7 @@
       "M02_created": false,
       "actual_Microsoft_Excel_clean_reopen": "PENDING",
       "visual_review": "PASS: ArtifactTool imported/rendered the saved workbook without rewriting; changed comparison, register, current-count/legend, DIM and repaired-divider views were visually inspected. The final package wording was rerendered in its master/register/definition cells. No clipped text observed; native Microsoft Excel reopening remains unverified.",
-      "remote_publication": "PENDING",
+      "remote_publication": "PASS: published research tree fetched and all 11 changed files match the locally verified tree. All 6064 actual published workbook values and its SHA-256 match the published canonical master.",
       "visual_review_ranges": [
         "Master Crosswalk!G363:J363",
         "Master Crosswalk!G375:J379",
@@ -74500,7 +74500,25 @@
         "Summary!A17:B28",
         "Validation!A17:B28",
         "Legend!A23:B28"
-      ]
+      ],
+      "research_commit": "bdc26b274666173b54c26b60b3d8f75c5f5431ff",
+      "research_tree": "2008fe02a9db50749f2275ad3a41cd7fbe80e570",
+      "local_verified_commit": "b0345b38e8891d9d01d1bd4c9076803a9bd4254b",
+      "workflow_checks": [
+        {
+          "run_id": 43729300522,
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "observed_job_conclusion": "success",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43729300522"
+        },
+        {
+          "run_id": 43729300558,
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "observed_job_conclusion": "success",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43729300558"
+        }
+      ],
+      "handoff": "Later metadata-only commit records observed publication/readback/checks. No research or workbook changes. O6-2 not started."
     }
   }
 }

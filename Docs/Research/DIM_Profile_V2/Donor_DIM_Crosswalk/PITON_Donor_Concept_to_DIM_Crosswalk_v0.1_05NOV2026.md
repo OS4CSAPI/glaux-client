@@ -4,19 +4,19 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 45. This file owns c
 
 ## Verified checkpoint
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Pre-O6-1 published checkpoint: [f2f3ee836b7402ba58647224a1ed428fb76a7ac1](https://github.com/OS4CSAPI/glaux-client/commit/f2f3ee836b7402ba58647224a1ed428fb76a7ac1). F3 is owner-accepted; O1–O5 are delivered. Latest owner Proceed authorizes **O6-1 only**, stopping before O6-2. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
+Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Published O6-1 research checkpoint: [bdc26b274666173b54c26b60b3d8f75c5f5431ff](https://github.com/OS4CSAPI/glaux-client/commit/bdc26b274666173b54c26b60b3d8f75c5f5431ff), tree `2008fe02a9db50749f2275ad3a41cd7fbe80e570`. Later metadata-only publication records observed checks. F3 is owner-accepted; O1–O6-1 are delivered. Latest owner Proceed authorized **O6-1 only**, now complete; stop before O6-2. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
 
-O6-1 source decisions and saved workbook are complete locally. Saved-workbook visual review passed; publication/readback and applicable workflow checks are PENDING. Local completion is not delivery.
+O6-1 source decisions, canonical mirrors and saved workbook are published with zero comparison lag. Saved-file, visual, remote readback and both applicable workflow checks passed. O6-2 has not started.
 
 ## Interrupted work
 
-Pending O6-1 delivery is on local branch `codex/aas-o6-1`, based on `f2f3ee83`. Preserve the canonical master, AAS ledger, both CSV/readable mirrors, same workbook, AAS08 report, existing publisher/checker and PITON. Finish delivery before O6-2; do not repeat the completed companion review after interruption.
+No pending O6-1 research or workbook changes. Local `codex/aas-o6-1` commit `b0345b3` has the same verified research tree as the published checkpoint; it is not additional unpublished research. The subsequent handoff-only change records delivery. Do not repeat the completed companion review.
 
 All 55 findings have dispositions, including 17 historically uncited records. Three new common candidates cover unit/quantity context, access-rule definitions and audit records. Two existing package/file rows are qualified. All 633 prior classifications remain. Used-range metadata and divider merges were corrected without changing unrelated cells.
 
 ## Active scope and evidence
 
-[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O6-1 delivery, then O6-2 only on separate Proceed. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates. No AAS09 template research was advanced in this step.
+[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O6-2 only on separate Proceed, using original-source and same-workbook controls. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates. No AAS09 template research was advanced in this step.
 
 From `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json`, extract `AAS_O6_1_native_review.records`, `.targeted_original_contacts`, `.unchanged_original_file_checks`, `.qualified_existing_rows`, `.holds_retained` and `.publication`. Original AAS08 records and holds are unchanged. [Existing AAS08 report](AAS08_Original_Companions_Semantics_Units_Security_AASX_14NOV2026.md) explains the result. Master keys `AAS_O6_1_native_review`, `currentEvidenceCheckpoint`, `workbookSnapshot` and `nextOwnerAction` identify the same snapshot.
 
@@ -36,11 +36,11 @@ Preserve six ISA questions, nine The Open Group SOSA hold families, 39 overlappi
 
 ## Verification and publication
 
-Local saved-cell/fill, mirror, source-record, planned-change-only, range/divider and package preservation checks passed. Changed views and repaired dividers passed visual review using ArtifactTool import/render without rewriting. Publication checks remain pending. Existing checker retains recovery guard and O6-1 dispatch; no new workflow. Native Excel reopening is separate. Five pre-existing broad register/link errors were not retested or repaired in this step.
+Local saved-cell/fill, mirror, source-record, planned-change-only, range/divider and package preservation checks passed. Changed views and repaired dividers passed visual review using ArtifactTool import/render without rewriting. Published tree equality and all 6,064 remote saved values passed. GitHub workflow jobs in runs `43729300522` (master) and `43729300558` (same-workbook publication/readback) succeeded. Existing checker retains recovery guard and O6-1 dispatch; no new workflow. Native Excel reopening is separate. Five pre-existing broad register/link errors were not retested or repaired in this step.
 
 ## Next action and stop
 
-Finish O6-1 delivery, then **STOP**. Next separate owner Proceed: **O6-2 only**, reconciling the 37 AAS09 industrial-template findings. Stop before O7. No donor transition, model adoption, client work or deployment. Approximately 2–3 substantive steps remain through O7; split only for actual source complexity.
+O6-1 delivered; **STOP**. Next separate owner Proceed: **O6-2 only**, reconciling the 37 AAS09 industrial-template findings. Stop before O7. No donor transition, model adoption, client work or deployment. Approximately 2–3 substantive steps remain through O7; split only for actual source complexity.
 
 ## History
 
