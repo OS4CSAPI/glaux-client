@@ -7594,7 +7594,11 @@ def publish_sosa_opportunity(authored_path, packet='SO-2A'):
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS_O7_RECONCILIATION_PENDING_SAME_XLSX":
+    if checkpoint=="SOSA_SO2A_SAVED_VERIFIED":
+        from check_dim_crosswalk_step06 import verify_sosa_opportunities
+        verify_sosa_opportunities(load(MASTER))
+        print("SO-2A already published; saved workbook verified without mutation")
+    elif checkpoint=="AAS_O7_RECONCILIATION_PENDING_SAME_XLSX":
         publish_aas_o7()
     elif checkpoint=="AAS_O7_SAVED_VERIFIED":
         verify_aas_o7()
