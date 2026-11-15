@@ -6,7 +6,7 @@ Updated 15 November 2026 (America/New_York), Profile Rewrite 45. Owner requested
 
 Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query its live HEAD. The last published **research** checkpoint is `e7628af544dd216e3171624ac51af032864d3748` (O2 delivery/status); subsequent protocol-only commits do not advance research. O2 data commit: [f6bbba4](https://github.com/OS4CSAPI/glaux-client/commit/f6bbba43169860350ee192d7026253552f905538). F3 is owner-accepted; O1 and O2 are delivered. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
 
-Current scope is **recovery protocol repair only**, authorized in Profile Rewrite 45. It does not authorize O4, donor transition, model adoption, client work or deployment. The replacement protocol supersedes the prior full-history/all-links startup reread requirement; original-source and owner controls remain.
+The **recovery protocol repair**, authorized in Profile Rewrite 45, is published as recorded below. It does not authorize O4, donor transition, model adoption, client work or deployment. The replacement protocol supersedes the prior full-history/all-links startup reread requirement; original-source and owner controls remain.
 
 ## Interrupted work
 
@@ -42,6 +42,8 @@ Preserve AAS experimental-event/qualifier standing, timestamp/timeStamp, adminis
 Retain six ISA questions, nine The Open Group SOSA hold families, 39 overlapping SAPIENT limitations, four-case ceilings, prior evidence and all DIM/Profile adoption gates. F3 acceptance is recorded in the [F3 plan](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md#f3-owner-explanation-and-accepted-results). Step24, Steps35–39 and Step40 still require owner decisions. The broad artifact check now reports five pre-existing register/link errors; three obsolete README links left the active indexes with their history preserved. These errors do not prove source or workbook failure.
 
 ## Verification and publication
+
+Protocol repair [feed486](https://github.com/OS4CSAPI/glaux-client/commit/feed4864359e3e57385730d521b0dedc38e27dde) was fetched back with the exact locally verified tree; its [existing verification workflow passed](https://github.com/OS4CSAPI/glaux-client/actions/runs/43718589967). The guard rejected the old oversized PITON, duplicate status headings and a missing stop section. Canonical data, mirrors, source ledger and workbook are byte-identical to O2. This handoff update records delivery, not new research. The ChatGPT Project settings field still needs the owner's replacement bootstrap if it retains the older protocol; repository instructions are updated.
 
 O2 [publication check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698614) and [saved-master check](https://github.com/OS4CSAPI/glaux-client/actions/runs/43674698581) were read back successful. These are integrity checks, not independent source audits. Local O3 saved-file verification passed; no O3 remote result is claimed. Protocol checks: `python -B scripts/check_dim_crosswalk_step06.py --recovery-only`; the normal command also runs saved-master verification. Verify actual live commit and changed blobs before claiming any new publication.
 
