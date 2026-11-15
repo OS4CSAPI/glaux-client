@@ -22498,7 +22498,7 @@
       "timezone": "America/New_York",
       "packet": "SO-2A",
       "subject": "Architecture, roles and vocabulary",
-      "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_PENDING",
+      "status": "PUBLISHED_READBACK_VERIFIED",
       "baseline_commit": "9276e76a2a99ed6512cb98ad2247a28993048b93",
       "owner_authorization": "Profile Rewrite 47: owner Proceed following read-only recovery explicitly authorizes SO-2A only and review of the SO-1 ten-packet estimate. AAS acceptance is not implied.",
       "archive": "archive/dim-crosswalk-pre-sosa-so2a-20261115",
@@ -28055,7 +28055,7 @@
       ],
       "one_next": "SO-2B only on a separate Proceed: System Manager and generic-module management, 201 retained records; stop before SO-2C.",
       "publication": {
-        "remote_publication": "PENDING",
+        "remote_publication": "VERIFIED",
         "actual_Microsoft_Excel_clean_reopen": "UNVERIFIED",
         "workbook_sha256": "13566efc1184b9d1d48a9c932da17a511908cb7e544a3c0ea2a6fe7eedfe4da6",
         "affected_original_sheets": [
@@ -28069,7 +28069,25 @@
         "grid_values": 6288,
         "authoring": "Artifact Tool import/edit/recalculate/export; authored values transferred into original OOXML package preserving unrelated bytes/styles.",
         "visual_review": "PASS: Artifact Tool renders of all 8 new SOSA cells, 8 qualified existing cells, new DIM Register entries, Summary and Legend inspected; text readable without clipping and intended blue/amber/held fills preserved.",
-        "local_verification": "PASS: python -B scripts/check_dim_crosswalk_step06.py, all 262 records, 8 candidates/8 clarifications, 6288 grid values/mirrors/fills, 21 unchanged sheets, original evidence/classifications and M00/M01."
+        "local_verification": "PASS: python -B scripts/check_dim_crosswalk_step06.py, all 262 records, 8 candidates/8 clarifications, 6288 grid values/mirrors/fills, 21 unchanged sheets, original evidence/classifications and M00/M01.",
+        "research_commit": "fa2d9e57ea1f665b2015943dc99080323b960e9a",
+        "publication_helper_correction": "3c03201f76c2412d1490d8080f068b34075806c6",
+        "readback": "Fetched live research commit and compared all twelve delivered files byte-for-byte, including XLSX, against the verified local files.",
+        "workflows": [
+          {
+            "id": 43756645556,
+            "name": "Master verification",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43756645556"
+          },
+          {
+            "id": 43756645548,
+            "name": "Publication verification",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43756645548"
+          }
+        ],
+        "publication_helper_repair": "First helper workflow 43756528605 failed before publication because its dispatcher did not recognize SOSA_SO2A_SAVED_VERIFIED. Correction 3c03201 adds the verified checkpoint path without workbook mutation; both resulting workflows passed."
       },
       "counts": {
         "retained_records": 262,

@@ -4,11 +4,11 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 47. This file owns c
 
 ## Verified checkpoint
 
-SO-1 is published at `9276e76a2a99ed6512cb98ad2247a28993048b93`; workflow [43753498683](https://github.com/OS4CSAPI/glaux-client/actions/runs/43753498683) passed. Profile Rewrite 47 readback verified the commit, inventory and report; stale publication-pending wording is corrected in this step. The owner Proceed after recovery authorized **SO-2A only** and the presented scope. SO-2A is prepared locally; publication/readback is pending. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
+**SO-2A is published and read back:** research/master/workbook commit `fa2d9e57ea1f665b2015943dc99080323b960e9a`, publication-helper correction `3c03201f76c2412d1490d8080f068b34075806c6`. Both [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43756645556) and [publication verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43756645548) passed. Remote readback matched all twelve delivered files to the verified local bytes. The owner Proceed after recovery authorized SO-2A only. SO-1 remains published at `9276e76`; its stale pending flag is corrected. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
 
 ## Interrupted work
 
-Local `research/dim-profile-v2` is based on `9276e76`. SO-2A source decisions, master/mirrors/workbook, source ledger, readable report and existing publisher/checker changes are the current delivery. Finish saved-file/visual/publication verification before another research packet. No SO-2B work has started; do not repeat completed SO-1, SO-2A or AAS research.
+No interrupted research or workbook work remains. SO-2A source decisions, master/mirrors/workbook, source ledger, readable report and publisher/checker changes are delivered. The first publication-helper run failed because it did not recognize the new checkpoint; the correction selects verification without mutation and its remote run passed. No SO-2B work has started; do not repeat completed SO-1, SO-2A or AAS research.
 
 ## Active scope and evidence
 
@@ -32,11 +32,11 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-SO-2A verification covers all frozen packet IDs, original pointers/hashes, group/decision accountability, exact allowed changes, mirror parity, saved workbook values/fills, original parts/classifications and M00/M01. Current local saved-file/visual verification and remote publication must be confirmed in the ledger before claiming delivery. Preserve the five previously reported broader artifact-register/link errors; do not claim blanket repository success. Reuse unchanged source/visual evidence.
+SO-2A verification passed for all frozen packet IDs, original pointers/hashes, group/decision accountability, exact allowed changes, mirror parity, saved workbook values/fills, original parts/classifications and M00/M01. Changed-cell/register/guidance renders were inspected and remote publication verified; evidence is in the ledger publication object. Preserve the five previously reported broader artifact-register/link errors; do not claim blanket repository success. Reuse these checks unless changed evidence creates a reason to repeat them.
 
 ## Next action and stop
 
-Finish SO-2A delivery and then **STOP**. A separate Proceed authorizes **SO-2B only**, with progressive same-master/workbook integration if warranted; stop before SO-2C. AAS acceptance remains pending separately.
+**STOP for Proceed.** The next Proceed authorizes **SO-2B only**, with progressive same-master/workbook integration if warranted; stop before SO-2C. AAS acceptance remains pending separately.
 
 ## History
 
