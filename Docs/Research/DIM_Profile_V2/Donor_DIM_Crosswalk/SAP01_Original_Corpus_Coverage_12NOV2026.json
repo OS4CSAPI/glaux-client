@@ -12621,5 +12621,540 @@
       "remaining_87_SOSA_exceptions": "Not authorized by the next single Proceed; later bounded packet decisions remain visible.",
       "source_access_rule": "An inaccessible original means a named hold, not invented equivalence or silent source-corpus expansion."
     }
+  },
+  "F3_06_peer_review": {
+    "date": "2026-11-15",
+    "scope": "Existing comparisons only; original source coverage and holds unchanged",
+    "master_register": "Master_Donor_Concept_to_DIM_Crosswalk.json#/F3_06_classification",
+    "records": [
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-078",
+        "row_id": "ISA-C-078",
+        "cell": "H308",
+        "donor_key": "SAPIENT",
+        "information_need": "Maximum interval between component Status reports",
+        "previous_classification": "COMMON_CANDIDATE",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "before": "RELATED: BSI Tables20–21 advertise one status_interval heartbeat, with advisory three-interval missing-status inference; it is not ISA's maximum Status-publication interval. [SAP03A-N06]",
+        "after": "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078]",
+        "source_ids": [
+          "SAP03A-N06"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              41
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question.",
+        "relation": "RELATED/NO_ESTABLISHED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-079",
+        "row_id": "ISA-C-079",
+        "cell": "H309",
+        "donor_key": "SAPIENT",
+        "information_need": "Minimum interval between component Status reports",
+        "previous_classification": "COMMON_CANDIDATE",
+        "candidate_status": "MIXED_OR_HELD",
+        "fill": null,
+        "before": "RELATED: BSI Tables20–21 advertise one heartbeat status_interval, not a distinct ISA minimum Status-publication interval; Duration.value source serial is held. [SAP03A-N06]",
+        "after": "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079]",
+        "source_ids": [
+          "SAP03A-N06"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              41
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits.",
+        "relation": "RELATED/NO_ESTABLISHED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-151",
+        "row_id": "ISA-C-151",
+        "cell": "H42",
+        "donor_key": "SAPIENT",
+        "information_need": "Observed-entity position at observation",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "PARTIAL: DetectionReport.location_oneof reports detected-object Location or RangeBearing; no independent source proof that a field is the object's actual position at a separately established observation time. [SAP04-N09,SAP04-N10]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DetectionReport declares the reported detection location through Location or RangeBearing. This is common qualified position information; physical accuracy and exact event timing remain unverified, just as a declaration alone is insufficient for other donors. [SAP04-N09, SAP04-N10; F3-06-SAPIENT-ISA-C-151]",
+        "source_ids": [
+          "SAP04-N09",
+          "SAP04-N10"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              70,
+              72
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DetectionReport declares the reported detection location through Location or RangeBearing. This is common qualified position information; physical accuracy and exact event timing remain unverified, just as a declaration alone is insufficient for other donors.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-146",
+        "row_id": "ISA-C-146",
+        "cell": "H48",
+        "donor_key": "SAPIENT",
+        "information_need": "Media resources associated with observation",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: Annex C.4.1 says file responses may give a URL but file storage is locally agreed, so association does not prove an accessible observed-image resource or original device identity. [SAP06-N15]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DetectionReport.associated_file and AssociatedFile explicitly associate a detection with media URLs. This supports common media-association information even though storage is locally agreed and accessibility, provenance and a live device are unverified. [SAP02-N11, SAP04-N14, SAP05-N15, SAP06-N15; F3-06-SAPIENT-ISA-C-146]",
+        "source_ids": [
+          "SAP02-N11",
+          "SAP04-N14",
+          "SAP05-N15",
+          "SAP06-N15"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              71,
+              75,
+              108
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DetectionReport.associated_file and AssociatedFile explicitly associate a detection with media URLs. This supports common media-association information even though storage is locally agreed and accessibility, provenance and a live device are unverified.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-117",
+        "row_id": "ISA-C-117",
+        "cell": "H279",
+        "donor_key": "SAPIENT",
+        "information_need": "Reported geographic area currently in view",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: StatusReport.field_of_view can report current geographic view geometry; a NEW message without a FOV means lost view, distinct from wider coverage and obscuration. [SAP04-N06]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: StatusReport.field_of_view explicitly reports current view geometry; NEW without a field of view denotes lost view. This supports common current geographic-view information, with native cone/polygon and update semantics retained. [SAP03B-N10, SAP04-N06; F3-06-SAPIENT-ISA-C-117]",
+        "source_ids": [
+          "SAP03B-N10",
+          "SAP04-N06"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              67
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "StatusReport.field_of_view explicitly reports current view geometry; NEW without a field of view denotes lost view. This supports common current geographic-view information, with native cone/polygon and update semantics retained.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-K-COMMAND-DECL",
+        "row_id": "ISA-K-COMMAND-DECL",
+        "cell": "H80",
+        "donor_key": "SAPIENT",
+        "information_need": "Declared command interface",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "PARTIAL: Task.Command oneof supports one selected command/request per message; this is invocation structure, not ISA Command Declaration arguments/results catalogue. [SAP05-N05]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned Task.Command schema declares named alternatives and their payload types. This supports qualified command-interface information under the same criterion as AAS and SOSA, without asserting a discoverable per-device command catalogue or physical execution. [SAP03B-N09, SAP03B-N12, SAP03B-N13, SAP05-N05; F3-06-SAPIENT-ISA-K-COMMAND-DECL]",
+        "source_ids": [
+          "SAP03B-N09",
+          "SAP03B-N12",
+          "SAP03B-N13",
+          "SAP05-N05"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi_flex_335_v2_0/task.proto",
+            "edition": "BSI v2 Dstl schema",
+            "source_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/task.proto",
+            "sha256": "956076d43ac06f79df711fa0c5a695f1c10102389eb4c25726936f30df8161a2",
+            "standing": "Native schema declarations and comments; optional wire fields do not override BSI mandatory annotations",
+            "coverage": "FULL_SELECTED_SCHEMA_FILE_TEXT_READ"
+          }
+        ],
+        "rationale": "The pinned Task.Command schema declares named alternatives and their payload types. This supports qualified command-interface information under the same criterion as AAS and SOSA, without asserting a discoverable per-device command catalogue or physical execution.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-K-PARAMETER-DECL",
+        "row_id": "ISA-K-PARAMETER-DECL",
+        "cell": "H81",
+        "donor_key": "SAPIENT",
+        "information_need": "Declared command parameter",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: Task.Region filters and Command.command_parameter are native task inputs; neither establishes general ISA parameter types, optionality or formal schema transforms. [SAP05-N03,SAP05-N05]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL]",
+        "source_ids": [
+          "SAP03B-N10",
+          "SAP03B-N11",
+          "SAP03B-N12",
+          "SAP05-N03",
+          "SAP05-N05"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi_flex_335_v2_0/task.proto",
+            "edition": "BSI v2 Dstl schema",
+            "source_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/task.proto",
+            "sha256": "956076d43ac06f79df711fa0c5a695f1c10102389eb4c25726936f30df8161a2",
+            "standing": "Native schema declarations and comments; optional wire fields do not override BSI mandatory annotations",
+            "coverage": "FULL_SELECTED_SCHEMA_FILE_TEXT_READ"
+          }
+        ],
+        "rationale": "The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-K-RESULT-DECL",
+        "row_id": "ISA-K-RESULT-DECL",
+        "cell": "H82",
+        "donor_key": "SAPIENT",
+        "information_need": "Declared command result",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: TaskAck status, reasons and optional associated file describe reported response, not a generic typed ISA Command result declaration or true physical result. [SAP05-N11,SAP05-N12]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: TaskAck declares task identity, typed task status, repeated reasons and an optional AssociatedFile. This supports qualified response/result structure like the other donors' response schemas; it does not establish arbitrary named outputs or prove a physical result. [SAP03B-N09, SAP03B-N12, SAP05-N11, SAP05-N12; F3-06-SAPIENT-ISA-K-RESULT-DECL]",
+        "source_ids": [
+          "SAP03B-N09",
+          "SAP03B-N12",
+          "SAP05-N11",
+          "SAP05-N12"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              84
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "bsi_flex_335_v2_0/task_ack.proto",
+            "edition": "BSI v2 Dstl schema",
+            "source_url": "https://github.com/dstl/SAPIENT-Proto-Files/blob/244a741c13bcee628f84944aef91e4a66854bd7d/bsi_flex_335_v2_0/task_ack.proto",
+            "sha256": "78b94c1c75e227f50b5bf4afde729b8bc2666cac3f675b13cb9b6084d2c3e3b7",
+            "standing": "Native schema declarations and comments; optional wire fields do not override BSI mandatory annotations",
+            "coverage": "FULL_SELECTED_SCHEMA_FILE_TEXT_READ"
+          }
+        ],
+        "rationale": "TaskAck declares task identity, typed task status, repeated reasons and an optional AssociatedFile. This supports qualified response/result structure like the other donors' response schemas; it does not establish arbitrary named outputs or prove a physical result.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-A-PARTICIPATION",
+        "row_id": "ISA-A-PARTICIPATION",
+        "cell": "H17",
+        "donor_key": "SAPIENT",
+        "information_need": "Network participation role and responsibilities",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: Annex C.3 optional message handling may itself register and send heartbeat even without sensing modes; not the ISA component controller/client/server participation role contract. [SAP06-N14]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Registration, acknowledgement and source/destination identity define node participation, including optional middleware registering and sending status. These support common participant responsibilities without requiring ISA's client/server contract or identifying a physical sensor. [SAP03A-N02, SAP03A-N04, SAP06-N14; F3-06-SAPIENT-ISA-A-PARTICIPATION]",
+        "source_ids": [
+          "SAP03A-N02",
+          "SAP03A-N04",
+          "SAP06-N14"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              38,
+              107
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Registration, acknowledgement and source/destination identity define node participation, including optional middleware registering and sending status. These support common participant responsibilities without requiring ISA's client/server contract or identifying a physical sensor.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-R-MEASUREMENT",
+        "row_id": "ISA-R-MEASUREMENT",
+        "cell": "H72",
+        "donor_key": "SAPIENT",
+        "information_need": "Reported value and associated uncertainty",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "PARTIAL: SAPIENT TrackObjectInfo.value/error and detection_confidence express source-reported values/confidence; not a general measured-value uncertainty model or verified confidence calibration. [SAP04-N10,SAP04-N12]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: TrackObjectInfo explicitly pairs a reported value with an optional error. This supports a qualified common value-and-uncertainty candidate; detection/classification probabilities, coordinate errors and timestamp ambiguities remain distinct, with no common calibration convention inferred. [SAP02-N08, SAP02-N09, SAP02-N10, SAP03B-N01, SAP03B-N04, SAP04-N10, SAP04-N12; F3-06-SAPIENT-ISA-R-MEASUREMENT]",
+        "source_ids": [
+          "SAP02-N08",
+          "SAP02-N09",
+          "SAP02-N10",
+          "SAP03B-N01",
+          "SAP03B-N04",
+          "SAP04-N10",
+          "SAP04-N12"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              70,
+              73
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "TrackObjectInfo explicitly pairs a reported value with an optional error. This supports a qualified common value-and-uncertainty candidate; detection/classification probabilities, coordinate errors and timestamp ambiguities remain distinct, with no common calibration convention inferred.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-K-CAPABILITIES",
+        "row_id": "ISA-K-CAPABILITIES",
+        "cell": "H76",
+        "donor_key": "SAPIENT",
+        "information_need": "Declared component capability catalogue",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "RELATED: Node registration can declare supported target-class and extension vocabulary; taxonomy membership is not proof of installed equipment capability or an exact ISA CCD catalogue. [SAP06-N01,SAP06-N04]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Registration declares supported Node types and Capability category, type, optional value and units. These provide qualified common capability-description information beyond the previously cited taxonomy vocabulary, without implying ISA catalogue identity, readiness or installed-device verification. [SAP03A-N01, SAP03A-N05, SAP03A-N09, SAP03B-N01, SAP03B-N09, SAP03B-N13, SAP06-N01, SAP06-N04, SAP03A-N04, SAP03A-N05; F3-06-SAPIENT-ISA-K-CAPABILITIES]",
+        "source_ids": [
+          "SAP03A-N01",
+          "SAP03A-N05",
+          "SAP03A-N09",
+          "SAP03B-N01",
+          "SAP03B-N09",
+          "SAP03B-N13",
+          "SAP06-N01",
+          "SAP06-N04",
+          "SAP03A-N04",
+          "SAP03A-N05"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              39,
+              40
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Registration declares supported Node types and Capability category, type, optional value and units. These provide qualified common capability-description information beyond the previously cited taxonomy vocabulary, without implying ISA catalogue identity, readiness or installed-device verification.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-A-CAPABILITY-GROUP",
+        "row_id": "ISA-A-CAPABILITY-GROUP",
+        "cell": "H214",
+        "donor_key": "SAPIENT",
+        "information_need": "Capability group membership",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "RELATED: BSI Tables17–19 declare NodeType list and Capability category/type/value/units; these classifications are not ISA's 22 DMS capability-group memberships. [SAP03A-N04,SAP03A-N05]",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Node types and Capability.category explicitly organize declared capabilities. They support specialized native grouping information without matching ISA's 22 bins or adopting a shared hierarchy. [SAP03A-N04, SAP03A-N05; F3-06-SAPIENT-ISA-A-CAPABILITY-GROUP]",
+        "source_ids": [
+          "SAP03A-N04",
+          "SAP03A-N05"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              39,
+              40
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Node types and Capability.category explicitly organize declared capabilities. They support specialized native grouping information without matching ISA's 22 bins or adopting a shared hierarchy.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-252",
+        "row_id": "ISA-C-252",
+        "cell": "H162",
+        "donor_key": "SAPIENT",
+        "information_need": "Requested image generation from the current view",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "RELATED: REQUEST Take snapshot is supported task vocabulary; TaskAck.associated_file may link an output, not proof that a real image was acquired or accessible. [SAP05-N06,SAP05-N12]",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The native request vocabulary includes Take snapshot and describes returning a URL in acknowledgement. This supports an optional image-generation request candidate; neither successful capture nor accessible media is asserted. [SAP03B-N13, SAP05-N06, SAP05-N12; F3-06-SAPIENT-ISA-C-252]",
+        "source_ids": [
+          "SAP03B-N13",
+          "SAP05-N06",
+          "SAP05-N12"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              61,
+              83,
+              84
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The native request vocabulary includes Take snapshot and describes returning a URL in acknowledgement. This supports an optional image-generation request candidate; neither successful capture nor accessible media is asserted.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-SAPIENT-ISA-C-102",
+        "row_id": "ISA-C-102",
+        "cell": "H312",
+        "donor_key": "SAPIENT",
+        "information_need": "Component-generated media resource access descriptions",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "PARTIAL: SAPIENT can refer to media through URLs, but Annex C.4.1 does not standardize physical storage or a generic ISA component-owned resource directory; access is unverified. [SAP06-N15]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: AssociatedFile supplies a media type and URL, including snapshot response context. This supports qualified common media-access description without requiring a complete component resource directory, standardized storage location or verified accessibility. [SAP04-N14, SAP05-N12, SAP05-N15, SAP06-N15; F3-06-SAPIENT-ISA-C-102]",
+        "source_ids": [
+          "SAP04-N14",
+          "SAP05-N12",
+          "SAP05-N15",
+          "SAP06-N15"
+        ],
+        "original_source_locators": [
+          {
+            "file": "bsi-flex-335.pdf",
+            "edition": "BSI Flex 335 v2.0:2024-03",
+            "pdf_pages": [
+              61,
+              75,
+              108
+            ],
+            "sha256": "77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "AssociatedFile supplies a media type and URL, including snapshot response context. This supports qualified common media-access description without requiring a complete component resource directory, standardized storage location or verified accessibility.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/G",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    ],
+    "census_after": {
+      "source_bearing": 115,
+      "colored": 71,
+      "held": 44,
+      "ungraded": 0,
+      "statuses": {
+        "COMMON_CANDIDATE": 41,
+        "MIXED_OR_HELD": 44,
+        "SPECIALIZED_CANDIDATE": 24,
+        "UNRESOLVED_CANDIDATE": 6
+      }
+    },
+    "next": "Owner acceptance of F3 classification reconciliation only. Microsoft Excel clean reopen/no-repair remains PENDING. Do not begin AAS O1–O7, new rows, model adoption, UI or deployment without separate authorization."
   }
 }

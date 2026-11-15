@@ -4131,5 +4131,2473 @@
         "repository_artifact_check": "8 PRE-EXISTING document-register/link errors; baseline links confirmed; no new link error introduced."
       }
     }
+  },
+  "F3_06_peer_review": {
+    "date": "2026-11-15",
+    "scope": "Existing comparisons only; original source coverage and holds unchanged",
+    "master_register": "Master_Donor_Concept_to_DIM_Crosswalk.json#/F3_06_classification",
+    "records": [
+      {
+        "decision_id": "F3-06-ISA-ISA-K-CUSTOM-TYPE",
+        "row_id": "ISA-K-CUSTOM-TYPE",
+        "cell": "I83",
+        "donor_key": "ISA",
+        "information_need": "Declared custom data structure",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Custom Type Declaration.name / description / fields [0+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type Declaration supplies a name, purpose and field list. A declared data structure is useful common information even when its encoding is ISA-specific; this is not adoption of an ISA class. [ISA-DMS-323; F3-06-ISA-ISA-K-CUSTOM-TYPE]",
+        "source_ids": [
+          "ISA-DMS-323"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              86
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Custom Type Declaration supplies a name, purpose and field list. A declared data structure is useful common information even when its encoding is ISA-specific; this is not adoption of an ISA class.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-FIELD-DECL",
+        "row_id": "ISA-K-FIELD-DECL",
+        "cell": "I84",
+        "donor_key": "ISA",
+        "information_need": "Declared field within a custom structure",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Field Declaration.name / description / type / structure / optional",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Field Declaration identifies a field, its meaning, type, shape and optionality. These support the same qualified information need as AAS and SOSA field declarations; source cardinalities remain native. [ISA-DMS-325; F3-06-ISA-ISA-K-FIELD-DECL]",
+        "source_ids": [
+          "ISA-DMS-325"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              86,
+              87
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Field Declaration identifies a field, its meaning, type, shape and optionality. These support the same qualified information need as AAS and SOSA field declarations; source cardinalities remain native.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-TYPE-CHOICE",
+        "row_id": "ISA-K-TYPE-CHOICE",
+        "cell": "I85",
+        "donor_key": "ISA",
+        "information_need": "Declared built-in or custom value type",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Type → Type Name | Custom Type Name",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Type explicitly selects a built-in Type Name or previously defined Custom Type Name. Multiple native constructs do not prevent one common declared-value-type candidate. [ISA-DMS-313, ISA-DMS-317; F3-06-ISA-ISA-K-TYPE-CHOICE]",
+        "source_ids": [
+          "ISA-DMS-313",
+          "ISA-DMS-317"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              77,
+              84,
+              133
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Type explicitly selects a built-in Type Name or previously defined Custom Type Name. Multiple native constructs do not prevent one common declared-value-type candidate.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-STRUCTURE",
+        "row_id": "ISA-K-STRUCTURE",
+        "cell": "I86",
+        "donor_key": "ISA",
+        "information_need": "Declared value shape and collection bounds",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Structure → Single | List | Associative Array | Tree; min/max length or depth",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Single, list, associative-array and tree structures explicitly describe shape and bounds. Common shape information is supported without equating the four structures or importing their cardinalities. [ISA-DMS-315, ISA-DMS-319, ISA-DMS-326, ISA-DMS-333, ISA-DMS-335; F3-06-ISA-ISA-K-STRUCTURE]",
+        "source_ids": [
+          "ISA-DMS-315",
+          "ISA-DMS-319",
+          "ISA-DMS-326",
+          "ISA-DMS-333",
+          "ISA-DMS-335"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              84,
+              85,
+              87,
+              89
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Single, list, associative-array and tree structures explicitly describe shape and bounds. Common shape information is supported without equating the four structures or importing their cardinalities.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-VALUE-RANGE",
+        "row_id": "ISA-K-VALUE-RANGE",
+        "cell": "I87",
+        "donor_key": "ISA",
+        "information_need": "Declared permitted or excluded values",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Range Declaration.ranges [0+] → Bounded Range | Discrete Range",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Bounded and discrete ranges explicitly describe allowed or excluded values. They support a common validity-constraint candidate while retaining inclusivity and source defaults. [ISA-DMS-314, ISA-DMS-320, ISA-DMS-324, ISA-DMS-330; F3-06-ISA-ISA-K-VALUE-RANGE]",
+        "source_ids": [
+          "ISA-DMS-314",
+          "ISA-DMS-320",
+          "ISA-DMS-324",
+          "ISA-DMS-330"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              84,
+              85,
+              86,
+              88
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Bounded and discrete ranges explicitly describe allowed or excluded values. They support a common validity-constraint candidate while retaining inclusivity and source defaults.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-MUTABILITY",
+        "row_id": "ISA-K-MUTABILITY",
+        "cell": "I88",
+        "donor_key": "ISA",
+        "information_need": "Declared property mutability",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Property Declaration.mutability → PERMANENT | READ ONLY | READ WRITE | WRITE ONLY",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Property Declaration and Mutability expressly identify permanent, read-only, read-write and write-only properties. This is declared access behavior, not current authorization or evidence that a particular device accepts a write. [ISA-DMS-311, ISA-DMS-329; F3-06-ISA-ISA-K-MUTABILITY]",
+        "source_ids": [
+          "ISA-DMS-311",
+          "ISA-DMS-329"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              77,
+              88
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Property Declaration and Mutability expressly identify permanent, read-only, read-write and write-only properties. This is declared access behavior, not current authorization or evidence that a particular device accepts a write.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-ABS-THRESHOLD",
+        "row_id": "ISA-K-ABS-THRESHOLD",
+        "cell": "I89",
+        "donor_key": "ISA",
+        "information_need": "Absolute-value publication threshold",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Absolute Threshold.id / comparator / value",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: An absolute threshold names its comparator and value. The common candidate is a declared reporting trigger; no universal threshold, successful alarm or sensor sampling policy is inferred. [ISA-DMS-318, ISA-DMS-316; F3-06-ISA-ISA-K-ABS-THRESHOLD]",
+        "source_ids": [
+          "ISA-DMS-318",
+          "ISA-DMS-316"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              84,
+              85
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "An absolute threshold names its comparator and value. The common candidate is a declared reporting trigger; no universal threshold, successful alarm or sensor sampling policy is inferred.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-REL-THRESHOLD",
+        "row_id": "ISA-K-REL-THRESHOLD",
+        "cell": "I90",
+        "donor_key": "ISA",
+        "information_need": "Relative-change publication threshold and reference basis",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Relative Threshold.id / comparator / extent / delta",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Relative Threshold supplies comparator, reference extent and delta. Preserve instantaneous, last-reported and lifetime reference meanings; the common information need does not collapse them. [ISA-DMS-312, ISA-DMS-331, ISA-DMS-316; F3-06-ISA-ISA-K-REL-THRESHOLD]",
+        "source_ids": [
+          "ISA-DMS-312",
+          "ISA-DMS-331",
+          "ISA-DMS-316"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              77,
+              88
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Relative Threshold supplies comparator, reference extent and delta. Preserve instantaneous, last-reported and lifetime reference meanings; the common information need does not collapse them.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-THRESHOLDS",
+        "row_id": "ISA-K-THRESHOLDS",
+        "cell": "I91",
+        "donor_key": "ISA",
+        "information_need": "Declared property publication triggers",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Property Declaration.threshold → Threshold Declaration.thresholds [0+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Property declarations can specify publication triggers through a list of thresholds. This is common reporting-policy information, with optionality and native trigger semantics retained. [ISA-DMS-329, ISA-DMS-334, ISA-DMS-316; F3-06-ISA-ISA-K-THRESHOLDS]",
+        "source_ids": [
+          "ISA-DMS-329",
+          "ISA-DMS-334",
+          "ISA-DMS-316"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              88,
+              89
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Property declarations can specify publication triggers through a list of thresholds. This is common reporting-policy information, with optionality and native trigger semantics retained.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-NAMED-VALUE",
+        "row_id": "ISA-R-NAMED-VALUE",
+        "cell": "I231",
+        "donor_key": "ISA",
+        "information_need": "Named value payload",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Name Value Pair · name + Wildcard value",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Name Value Pair identifies a named value used for arguments and properties. Like the qualified AAS and SAPIENT comparisons, it supports named data without establishing the meaning of every value. [ISA-DMS-426; F3-06-ISA-ISA-R-NAMED-VALUE]",
+        "source_ids": [
+          "ISA-DMS-426"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              120
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Name Value Pair identifies a named value used for arguments and properties. Like the qualified AAS and SAPIENT comparisons, it supports named data without establishing the meaning of every value.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-ASSOCIATIVE",
+        "row_id": "ISA-R-ASSOCIATIVE",
+        "cell": "I232",
+        "donor_key": "ISA",
+        "information_need": "Named-value associative collection",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Associative Array · values: Name Value Pair [0+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Associative Array holds named, strongly typed values whose type is declared elsewhere. The useful collection information is common; exact serialization and empty-list behavior remain ISA-specific. [ISA-DMS-363; F3-06-ISA-ISA-R-ASSOCIATIVE]",
+        "source_ids": [
+          "ISA-DMS-363"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              100
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Associative Array holds named, strongly typed values whose type is declared elsewhere. The useful collection information is common; exact serialization and empty-list behavior remain ISA-specific.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-LIST",
+        "row_id": "ISA-R-LIST",
+        "cell": "I233",
+        "donor_key": "ISA",
+        "information_need": "Declared-type value list",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "List · values: Wildcard [0+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: List holds values of a type defined by the associated declaration. This supports a qualified common collection candidate without claiming cross-donor order, cardinality or update equivalence. [ISA-DMS-393; F3-06-ISA-ISA-R-LIST]",
+        "source_ids": [
+          "ISA-DMS-393"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              111
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "List holds values of a type defined by the associated declaration. This supports a qualified common collection candidate without claiming cross-donor order, cardinality or update equivalence.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-CUSTOM",
+        "row_id": "ISA-R-CUSTOM",
+        "cell": "I234",
+        "donor_key": "ISA",
+        "information_need": "Custom-structure field values",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Custom Type · fields: Name Value Pair [0+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type carries named structure fields. The common candidate is structured field values; ISA wire representation is retained separately and is not a required DIM encoding. [ISA-DMS-378; F3-06-ISA-ISA-R-CUSTOM]",
+        "source_ids": [
+          "ISA-DMS-378"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              107
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Custom Type carries named structure fields. The common candidate is structured field values; ISA wire representation is retained separately and is not a required DIM encoding.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-TREE",
+        "row_id": "ISA-R-TREE",
+        "cell": "I235",
+        "donor_key": "ISA",
+        "information_need": "Recursive same-type value hierarchy",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Tree · value + children; same node datatype",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Tree defines recursive children and requires one datatype across its nodes. Retain this optional specialized hierarchy candidate, not a physical equipment hierarchy or unrestricted heterogeneous graph. [ISA-DMS-447; F3-06-ISA-ISA-R-TREE]",
+        "source_ids": [
+          "ISA-DMS-447"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              129
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Tree defines recursive children and requires one datatype across its nodes. Retain this optional specialized hierarchy candidate, not a physical equipment hierarchy or unrestricted heterogeneous graph.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-EVENT-ID",
+        "row_id": "ISA-T-EVENT-ID",
+        "cell": "I68",
+        "donor_key": "ISA",
+        "information_need": "Source-qualified event identity and reference",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Event.event ID; Event.event reference → creator + id + time",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Event ID is component-scoped and time-limited; Event Reference supplies creator, id and time. This directly supports source-qualified event identity. Other donors' event-element, log-type or report identifiers remain distinct and do not gain occurrence identity by comparison. [ISA-DMS-275, ISA-DMS-306; F3-06-ISA-ISA-T-EVENT-ID]",
+        "source_ids": [
+          "ISA-DMS-275",
+          "ISA-DMS-306"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              67,
+              73,
+              74,
+              108
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Event ID is component-scoped and time-limited; Event Reference supplies creator, id and time. This directly supports source-qualified event identity. Other donors' event-element, log-type or report identifiers remain distinct and do not gain occurrence identity by comparison.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-MEASUREMENT",
+        "row_id": "ISA-R-MEASUREMENT",
+        "cell": "I72",
+        "donor_key": "ISA",
+        "information_need": "Reported value and associated uncertainty",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "≈ Measured… / Count / Humidity / UTC · value + optional error; per-type conventions",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Measured values and their optional errors support common value-and-uncertainty information. Count, humidity, timestamp and Measured types retain their different conventions; the one-standard-deviation rule is not generalized to every type or to probability-of-detection. [ISA-DMS-377, ISA-DMS-390, ISA-DMS-394, ISA-DMS-395, ISA-DMS-396, ISA-DMS-397, ISA-DMS-398, ISA-DMS-399, ISA-DMS-400, ISA-DMS-401, ISA-DMS-402, ISA-DMS-403, ISA-DMS-404, ISA-DMS-405, ISA-DMS-406, ISA-DMS-407, ISA-DMS-408, ISA-DMS-409, ISA-DMS-410, ISA-DMS-411, ISA-DMS-412, ISA-DMS-413, ISA-DMS-414, ISA-DMS-415, ISA-DMS-416, ISA-DMS-417, ISA-DMS-418, ISA-DMS-419, ISA-DMS-420, ISA-DMS-421, ISA-DMS-422, ISA-DMS-423, ISA-DMS-424, ISA-DMS-448; F3-06-ISA-ISA-R-MEASUREMENT]",
+        "source_ids": [
+          "ISA-DMS-377",
+          "ISA-DMS-390",
+          "ISA-DMS-394",
+          "ISA-DMS-395",
+          "ISA-DMS-396",
+          "ISA-DMS-397",
+          "ISA-DMS-398",
+          "ISA-DMS-399",
+          "ISA-DMS-400",
+          "ISA-DMS-401",
+          "ISA-DMS-402",
+          "ISA-DMS-403",
+          "ISA-DMS-404",
+          "ISA-DMS-405",
+          "ISA-DMS-406",
+          "ISA-DMS-407",
+          "ISA-DMS-408",
+          "ISA-DMS-409",
+          "ISA-DMS-410",
+          "ISA-DMS-411",
+          "ISA-DMS-412",
+          "ISA-DMS-413",
+          "ISA-DMS-414",
+          "ISA-DMS-415",
+          "ISA-DMS-416",
+          "ISA-DMS-417",
+          "ISA-DMS-418",
+          "ISA-DMS-419",
+          "ISA-DMS-420",
+          "ISA-DMS-421",
+          "ISA-DMS-422",
+          "ISA-DMS-423",
+          "ISA-DMS-424",
+          "ISA-DMS-448"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              106,
+              111,
+              112,
+              120,
+              129
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Measured values and their optional errors support common value-and-uncertainty information. Count, humidity, timestamp and Measured types retain their different conventions; the one-standard-deviation rule is not generalized to every type or to probability-of-detection.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-VIDEO-DETECTION",
+        "row_id": "ISA-R-VIDEO-DETECTION",
+        "cell": "I73",
+        "donor_key": "ISA",
+        "information_need": "Video-frame detection details",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Video Detection + Bounding Box [accepted] · pixels, confidence, selection, label, track",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Video Detection declares a bounding box, optional confidence and track, selection and label. This is useful optional video-frame information; accepted-extension standing and pixel/track distinctions remain, with no live detection claimed. [ISA-DMS-368, ISA-DMS-450; F3-06-ISA-ISA-R-VIDEO-DETECTION]",
+        "source_ids": [
+          "ISA-DMS-368",
+          "ISA-DMS-450"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              130
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Video Detection declares a bounding box, optional confidence and track, selection and label. This is useful optional video-frame information; accepted-extension standing and pixel/track distinctions remain, with no live detection claimed.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-REQUEST-REFERENCE",
+        "row_id": "ISA-T-REQUEST-REFERENCE",
+        "cell": "I198",
+        "donor_key": "ISA",
+        "information_need": "Command request identity and response reference",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Request.request id and identifier remain separate; ICD6.7.1 sets Response.reference to Request ID; DMS wording retained",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Request identity and Response.reference support a common request-response association. Retain the DMS identifier wording versus ICD Request ID wording as an unresolved exact binding; common usefulness does not resolve that discrepancy. [ISA-DMS-308, ISA-DMS-309; F3-06-ISA-ISA-T-REQUEST-REFERENCE]",
+        "source_ids": [
+          "ISA-DMS-308",
+          "ISA-DMS-309"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              74,
+              75
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Interface_Control_Document-6.0r5.pdf",
+            "edition": "ISA ICD 6.0r5",
+            "pdf_pages": [
+              32
+            ],
+            "sha256": "4288c3fc81cd66764f4cce1b6fba6b8a4206657810131fb0f0dee0edeb1922c6",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Request identity and Response.reference support a common request-response association. Retain the DMS identifier wording versus ICD Request ID wording as an unresolved exact binding; common usefulness does not resolve that discrepancy.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-MESSAGE-ID",
+        "row_id": "ISA-T-MESSAGE-ID",
+        "cell": "I223",
+        "donor_key": "ISA",
+        "information_need": "Conversation-scoped message identifier",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Administrative / Config / Event / Registration / Request / Response / Status.identifier",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Native message schemas declare a conversation-unique identifier. This supports message identification independently of event identity and does not create a globally persistent identifier. [ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-MESSAGE-ID]",
+        "source_ids": [
+          "ISA-DMS-304",
+          "ISA-DMS-305",
+          "ISA-DMS-306",
+          "ISA-DMS-307",
+          "ISA-DMS-308",
+          "ISA-DMS-309",
+          "ISA-DMS-310"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              72,
+              73,
+              74,
+              75,
+              76
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Native message schemas declare a conversation-unique identifier. This supports message identification independently of event identity and does not create a globally persistent identifier.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-PRIORITY",
+        "row_id": "ISA-T-PRIORITY",
+        "cell": "I224",
+        "donor_key": "ISA",
+        "information_need": "Message priority",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Priority · 0 highest; message priority [0-1] default 80",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Priority is explicitly message-level, with zero highest and a native default of 80. Common priority information is supported; SOSA writer-level scheduling priority remains a different subject. [ISA-DMS-293, ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-PRIORITY]",
+        "source_ids": [
+          "ISA-DMS-293",
+          "ISA-DMS-304",
+          "ISA-DMS-305",
+          "ISA-DMS-306",
+          "ISA-DMS-307",
+          "ISA-DMS-308",
+          "ISA-DMS-309",
+          "ISA-DMS-310"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              69,
+              72,
+              73,
+              74,
+              75,
+              76
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Priority is explicitly message-level, with zero highest and a native default of 80. Common priority information is supported; SOSA writer-level scheduling priority remains a different subject.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-VALIDITY",
+        "row_id": "ISA-T-VALIDITY",
+        "cell": "I225",
+        "donor_key": "ISA",
+        "information_need": "Message-data validity expiry",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Administrative / Config / Event / Registration / Request / Response / Status.stale [0-1]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The optional stale field identifies when message data should be regarded as invalid. This supports validity-expiry information; it is not a transport deadline, a freshness guarantee or a physical state transition. [ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-VALIDITY]",
+        "source_ids": [
+          "ISA-DMS-304",
+          "ISA-DMS-305",
+          "ISA-DMS-306",
+          "ISA-DMS-307",
+          "ISA-DMS-308",
+          "ISA-DMS-309",
+          "ISA-DMS-310"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              72,
+              74,
+              75,
+              76
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The optional stale field identifies when message data should be regarded as invalid. This supports validity-expiry information; it is not a transport deadline, a freshness guarantee or a physical state transition.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-ROUTING",
+        "row_id": "ISA-T-ROUTING",
+        "cell": "I226",
+        "donor_key": "ISA",
+        "information_need": "Exchange sender and intended recipients",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Envelope.header → Header.from: UCI; to: UCI [1+]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Envelope Header identifies the exchange sender and intended recipients. Common routing attribution is supported while remaining distinct from the original message author and the observation performer. [ISA-DMS-301, ISA-DMS-302; F3-06-ISA-ISA-T-ROUTING]",
+        "source_ids": [
+          "ISA-DMS-301",
+          "ISA-DMS-302"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              71
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Envelope Header identifies the exchange sender and intended recipients. Common routing attribution is supported while remaining distinct from the original message author and the observation performer.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-AUTHOR",
+        "row_id": "ISA-T-AUTHOR",
+        "cell": "I229",
+        "donor_key": "ISA",
+        "information_need": "Message author or registration announcer",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Administrative.source / Config.source / Event.source / Registration.source / Request.source / Response.source / Status.source · roles qualified",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Message source identifies an author or response source; Registration announcements identify the accepting Controller. These qualified source roles support common provenance without equating the source with a physical sensor. [ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-AUTHOR]",
+        "source_ids": [
+          "ISA-DMS-304",
+          "ISA-DMS-305",
+          "ISA-DMS-306",
+          "ISA-DMS-307",
+          "ISA-DMS-308",
+          "ISA-DMS-309",
+          "ISA-DMS-310"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              72,
+              73,
+              74,
+              75,
+              76
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Message source identifies an author or response source; Registration announcements identify the accepting Controller. These qualified source roles support common provenance without equating the source with a physical sensor.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-K-CAPABILITY-STATE",
+        "row_id": "ISA-K-CAPABILITY-STATE",
+        "cell": "I218",
+        "donor_key": "ISA",
+        "information_need": "Capability readiness and reporting selection",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Command ready = execution enabled; property ready = value maintained; observable ready = recording enabled; property/observable reporting selects publication",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Command, property and observable state records explicitly qualify readiness; property and observable state also expose reporting selection. Preserve these different meanings and the source wording issues; none is generic whole-device health. [ISA-DMS-375, ISA-DMS-428, ISA-DMS-433, CMPT-4.3.4, CMPT-4.3.6; F3-06-ISA-ISA-K-CAPABILITY-STATE]",
+        "source_ids": [
+          "ISA-DMS-375",
+          "ISA-DMS-428",
+          "ISA-DMS-433",
+          "CMPT-4.3.4",
+          "CMPT-4.3.6"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              106,
+              121,
+              123
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Component_Requirements-6.0r4.pdf",
+            "edition": "ISA Component Requirements 6.0r4",
+            "pdf_pages": [
+              34,
+              35
+            ],
+            "sha256": "aaf0ea80e62111767deb4bae667bc878d75af86b008f4c4f2b6dc604b148d087",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Command, property and observable state records explicitly qualify readiness; property and observable state also expose reporting selection. Preserve these different meanings and the source wording issues; none is generic whole-device health.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-CERTIFICATE-TRUST",
+        "row_id": "ISA-A-CERTIFICATE-TRUST",
+        "cell": "I8",
+        "donor_key": "ISA",
+        "information_need": "Certificate identity and trust context",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Certificate Common Name ↔ component UCI; trusted issuer/use context; date validity and nonrevocation; algorithm wording retained by source",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The ICD requires a valid certificate signed by a valid certification authority within the network PKI. This supports common identity/trust context while retaining native certificate-name, validity, revocation and algorithm qualifications from the prior corpus; no installed certificate is verified. [ICD-3.1.2, ICD-3.3, ICD-6.1, CERT-1.0, CERT-2.0, CERT-3.1, CERT-3.2, CERT-3.2.1, CERT-3.2.2, CERT-3.3, CERT-3.4; F3-06-ISA-ISA-A-CERTIFICATE-TRUST]",
+        "source_ids": [
+          "ICD-3.1.2",
+          "ICD-3.3",
+          "ICD-6.1",
+          "CERT-1.0",
+          "CERT-2.0",
+          "CERT-3.1",
+          "CERT-3.2",
+          "CERT-3.2.1",
+          "CERT-3.2.2",
+          "CERT-3.3",
+          "CERT-3.4"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Interface_Control_Document-6.0r5.pdf",
+            "edition": "ISA ICD 6.0r5",
+            "pdf_pages": [
+              11
+            ],
+            "sha256": "4288c3fc81cd66764f4cce1b6fba6b8a4206657810131fb0f0dee0edeb1922c6",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The ICD requires a valid certificate signed by a valid certification authority within the network PKI. This supports common identity/trust context while retaining native certificate-name, validity, revocation and algorithm qualifications from the prior corpus; no installed certificate is verified.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-PARTICIPATION",
+        "row_id": "ISA-A-PARTICIPATION",
+        "cell": "I17",
+        "donor_key": "ISA",
+        "information_need": "Network participation role and responsibilities",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "All ISA components support the client-side connection role; Controllers also support the server-side role",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Every ISA component supports the connection client role and Controllers also support the server role. These are common participant responsibilities, not an equipment taxonomy or proof of present connectivity. [INTRO-6.1, INTRO-6.1.1, INTRO-6.1.2, WHITE-4.2; F3-06-ISA-ISA-A-PARTICIPATION]",
+        "source_ids": [
+          "INTRO-6.1",
+          "INTRO-6.1.1",
+          "INTRO-6.1.2",
+          "WHITE-4.2"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              17,
+              18
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Every ISA component supports the connection client role and Controllers also support the server role. These are common participant responsibilities, not an equipment taxonomy or proof of present connectivity.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-NETWORK-CONTEXT",
+        "row_id": "ISA-A-NETWORK-CONTEXT",
+        "cell": "I18",
+        "donor_key": "ISA",
+        "information_need": "Network instance and connection context",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "ISA instance = one Controller + any number of Clients; interconnected instances and locations",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The SDD defines a virtual network of connected components through Controllers, including interconnected Controllers. This supports declared network context; the native one-Controller instance scope and physical-versus-virtual distinction remain. [INTRO-6.1, INTRO-6.2, INTRO-6.3, WHITE-4.2; F3-06-ISA-ISA-A-NETWORK-CONTEXT]",
+        "source_ids": [
+          "INTRO-6.1",
+          "INTRO-6.2",
+          "INTRO-6.3",
+          "WHITE-4.2"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              17,
+              18
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The SDD defines a virtual network of connected components through Controllers, including interconnected Controllers. This supports declared network context; the native one-Controller instance scope and physical-versus-virtual distinction remain.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-MEMBER-EXPOSURE",
+        "row_id": "ISA-A-MEMBER-EXPOSURE",
+        "cell": "I20",
+        "donor_key": "ISA",
+        "information_need": "Composition member exposure and source attribution",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "CIC exposes capabilities; visible member retains source attribution; any exposed opaque-member capabilities appear as CIC-provided; visible non-ISA member is virtual",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The CIC can expose a visible member with source attribution or make a member opaque and present its capabilities as CIC-provided. This is an optional mediation architecture, not physical part-of or a common requirement to hide members. [SDD-1.2, SDD-4.2.2, SDD-6.3.3; F3-06-ISA-ISA-A-MEMBER-EXPOSURE]",
+        "source_ids": [
+          "SDD-1.2",
+          "SDD-4.2.2",
+          "SDD-6.3.3"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              18,
+              19
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The CIC can expose a visible member with source attribution or make a member opaque and present its capabilities as CIC-provided. This is an optional mediation architecture, not physical part-of or a common requirement to hide members.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-PARTICIPATION-LIFECYCLE",
+        "row_id": "ISA-A-PARTICIPATION-LIFECYCLE",
+        "cell": "I21",
+        "donor_key": "ISA",
+        "information_need": "Connection-specific network participation lifecycle",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Connection → Registration → Configuration → Operational → Deregistration → Disconnection; message-triggered transitions and renewal",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The native connection, registration, configuration, operational, deregistration and disconnection phases describe participation in an ISA connection. Retain a specialized lifecycle candidate, separate from physical equipment operating state and other donors' task lifecycles. [SDD-5.1.1, SDD-6.3.2, SDD-6.3.3; F3-06-ISA-ISA-A-PARTICIPATION-LIFECYCLE]",
+        "source_ids": [
+          "SDD-5.1.1",
+          "SDD-6.3.2",
+          "SDD-6.3.3"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              34,
+              35,
+              37
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The native connection, registration, configuration, operational, deregistration and disconnection phases describe participation in an ISA connection. Retain a specialized lifecycle candidate, separate from physical equipment operating state and other donors' task lifecycles.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-SERVICE-ROLE",
+        "row_id": "ISA-A-SERVICE-ROLE",
+        "cell": "I213",
+        "donor_key": "ISA",
+        "information_need": "Service role and required command support",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Authorization / Communication / Historical Data / Live Data / Tasking / Video → required command lists",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere. [ISA-DMS-001, ISA-DMS-002, ISA-DMS-003, ISA-DMS-004, ISA-DMS-005, ISA-DMS-006, INTRO-6.1.1, WHITE-4.3; F3-06-ISA-ISA-A-SERVICE-ROLE]",
+        "source_ids": [
+          "ISA-DMS-001",
+          "ISA-DMS-002",
+          "ISA-DMS-003",
+          "ISA-DMS-004",
+          "ISA-DMS-005",
+          "ISA-DMS-006",
+          "INTRO-6.1.1",
+          "WHITE-4.3"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              16,
+              17
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-CAPABILITY-GROUP",
+        "row_id": "ISA-A-CAPABILITY-GROUP",
+        "cell": "I214",
+        "donor_key": "ISA",
+        "information_need": "Capability group membership",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "22 ordinary DMS capability categories → Properties / Observables / Commands; overlapping membership",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Capability bins group properties, observables and commands and can overlap. Retain specialized catalogue organization, including the separately qualified required/recommended bins, without adopting these bins as a DIM class hierarchy. [ISA-DMS-007, ISA-DMS-008, ISA-DMS-009, ISA-DMS-010, ISA-DMS-011, ISA-DMS-012, ISA-DMS-013, ISA-DMS-014, ISA-DMS-015, ISA-DMS-016, ISA-DMS-017, ISA-DMS-018, ISA-DMS-019, ISA-DMS-020, ISA-DMS-021, ISA-DMS-022, ISA-DMS-023, ISA-DMS-024, ISA-DMS-027, ISA-DMS-028, ISA-DMS-029, ISA-DMS-030; F3-06-ISA-ISA-A-CAPABILITY-GROUP]",
+        "source_ids": [
+          "ISA-DMS-007",
+          "ISA-DMS-008",
+          "ISA-DMS-009",
+          "ISA-DMS-010",
+          "ISA-DMS-011",
+          "ISA-DMS-012",
+          "ISA-DMS-013",
+          "ISA-DMS-014",
+          "ISA-DMS-015",
+          "ISA-DMS-016",
+          "ISA-DMS-017",
+          "ISA-DMS-018",
+          "ISA-DMS-019",
+          "ISA-DMS-020",
+          "ISA-DMS-021",
+          "ISA-DMS-022",
+          "ISA-DMS-023",
+          "ISA-DMS-024",
+          "ISA-DMS-027",
+          "ISA-DMS-028",
+          "ISA-DMS-029",
+          "ISA-DMS-030"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              18,
+              23
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Capability bins group properties, observables and commands and can overlap. Retain specialized catalogue organization, including the separately qualified required/recommended bins, without adopting these bins as a DIM class hierarchy.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-BASELINE-CAPABILITIES",
+        "row_id": "ISA-A-BASELINE-CAPABILITIES",
+        "cell": "I215",
+        "donor_key": "ISA",
+        "information_need": "Required and recommended capability support",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "DMS Required/Recommended lists retained; CMPT adds stated should recommendations and conditional shall obligations",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The sources distinguish required, recommended and conditionally supported capabilities. This supports common declaration-of-obligation information; individual native must/should/shall clauses and conditions are preserved, not promoted to Profile requirements. [ISA-DMS-025, ISA-DMS-026; F3-06-ISA-ISA-A-BASELINE-CAPABILITIES]",
+        "source_ids": [
+          "ISA-DMS-025",
+          "ISA-DMS-026"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              23
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Component_Requirements-6.0r4.pdf",
+            "edition": "ISA Component Requirements 6.0r4",
+            "pdf_pages": [
+              34,
+              35
+            ],
+            "sha256": "aaf0ea80e62111767deb4bae667bc878d75af86b008f4c4f2b6dc604b148d087",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The sources distinguish required, recommended and conditionally supported capabilities. This supports common declaration-of-obligation information; individual native must/should/shall clauses and conditions are preserved, not promoted to Profile requirements.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-EXTENSION-STANDING",
+        "row_id": "ISA-A-EXTENSION-STANDING",
+        "cell": "I236",
+        "donor_key": "ISA",
+        "information_need": "Extension standing and standardization context",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Custom → Nominated → Accepted; incorporation into a later major standard release",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The original markings distinguish Custom, Nominated and Accepted extensions and later standard incorporation. This supports common maturity/standing information while preserving each entry's actual standing and possible representation changes. [WHITE-6.2, WHITE-6.2.1, WHITE-6.2.2; F3-06-ISA-ISA-A-EXTENSION-STANDING]",
+        "source_ids": [
+          "WHITE-6.2",
+          "WHITE-6.2.1",
+          "WHITE-6.2.2"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              2
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The original markings distinguish Custom, Nominated and Accepted extensions and later standard incorporation. This supports common maturity/standing information while preserving each entry's actual standing and possible representation changes.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-A-CONNECTION-PRESENTATION",
+        "row_id": "ISA-A-CONNECTION-PRESENTATION",
+        "cell": "I237",
+        "donor_key": "ISA",
+        "information_need": "Negotiated message encoding and model version",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "IPL protocol v1; negotiated presentation/schema byte pair; long/short forms and separate Custom Java API format",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Connection establishment negotiates a presentation format. Retain a specialized encoding/version-context candidate and all previously recorded protocol/schema distinctions; this is neither model content nor a universal CSAPI binding. [SDD-5.1.1, SDD-6.2, SDD-6.3, SDD-6.3.3; F3-06-ISA-ISA-A-CONNECTION-PRESENTATION]",
+        "source_ids": [
+          "SDD-5.1.1",
+          "SDD-6.2",
+          "SDD-6.3",
+          "SDD-6.3.3"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              37
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Connection establishment negotiates a presentation format. Retain a specialized encoding/version-context candidate and all previously recorded protocol/schema distinctions; this is neither model content nor a universal CSAPI binding.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-109",
+        "row_id": "ISA-C-109",
+        "cell": "I261",
+        "donor_key": "ISA",
+        "information_need": "Reported ISA specification version of the component",
+        "previous_classification": "NATIVE_ONLY_EVIDENCE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Specification Version",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Specification Version identifies the ISA specification with which the component declares compliance. This is common version-context information like the SAPIENT version declaration, not independently verified conformance. [ISA-DMS-109; F3-06-ISA-ISA-C-109]",
+        "source_ids": [
+          "ISA-DMS-109"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              32
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Specification Version identifies the ISA specification with which the component declares compliance. This is common version-context information like the SAPIENT version declaration, not independently verified conformance.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-E-COMPONENT-CATEGORY",
+        "row_id": "ISA-E-COMPONENT-CATEGORY",
+        "cell": "I264",
+        "donor_key": "ISA",
+        "information_need": "Human-facing component category",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Component Category · IMAGER / RADAR / UGS · no inferred capabilities",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Component Category is expressly a human-facing category and must not be used to assume capabilities. This supports common descriptive category information while preserving the native values and that prohibition. [ISA-DMS-342; F3-06-ISA-ISA-E-COMPONENT-CATEGORY]",
+        "source_ids": [
+          "ISA-DMS-342"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              94
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Component Category is expressly a human-facing category and must not be used to assume capabilities. This supports common descriptive category information while preserving the native values and that prohibition.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-031",
+        "row_id": "ISA-C-031",
+        "cell": "I289",
+        "donor_key": "ISA",
+        "information_need": "Consumed AC current",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "AC Current Load",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: AC Current Load reports current consumed by the load. This is qualified common electrical-state information where applicable, retaining AC and input direction rather than design ratings or universal mandatory support. [ISA-DMS-031; F3-06-ISA-ISA-C-031]",
+        "source_ids": [
+          "ISA-DMS-031"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              24
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "AC Current Load reports current consumed by the load. This is qualified common electrical-state information where applicable, retaining AC and input direction rather than design ratings or universal mandatory support.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-032",
+        "row_id": "ISA-C-032",
+        "cell": "I290",
+        "donor_key": "ISA",
+        "information_need": "Produced AC current",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "AC Current Source",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: AC Current Source reports current produced by the source. The common information need retains AC and output direction; a peer's input-only evidence cannot satisfy this row. [ISA-DMS-032; F3-06-ISA-ISA-C-032]",
+        "source_ids": [
+          "ISA-DMS-032"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              24
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "AC Current Source reports current produced by the source. The common information need retains AC and output direction; a peer's input-only evidence cannot satisfy this row.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-033",
+        "row_id": "ISA-C-033",
+        "cell": "I291",
+        "donor_key": "ISA",
+        "information_need": "Load-side AC voltage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "AC Voltage Load",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: AC Voltage Load reports voltage used by a load. This is common qualified electrical information with input direction explicit; nominal connector ratings remain a different kind of evidence. [ISA-DMS-033; F3-06-ISA-ISA-C-033]",
+        "source_ids": [
+          "ISA-DMS-033"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              24
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "AC Voltage Load reports voltage used by a load. This is common qualified electrical information with input direction explicit; nominal connector ratings remain a different kind of evidence.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-034",
+        "row_id": "ISA-C-034",
+        "cell": "I292",
+        "donor_key": "ISA",
+        "information_need": "Source-side AC voltage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "AC Voltage Source",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: AC Voltage Source reports voltage provided by the source. Common usefulness does not erase AC/output meaning or require a peer donor with DC-only output evidence to match it. [ISA-DMS-034; F3-06-ISA-ISA-C-034]",
+        "source_ids": [
+          "ISA-DMS-034"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              24
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "AC Voltage Source reports voltage provided by the source. Common usefulness does not erase AC/output meaning or require a peer donor with DC-only output evidence to match it.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-052",
+        "row_id": "ISA-C-052",
+        "cell": "I293",
+        "donor_key": "ISA",
+        "information_need": "Consumed DC current",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "DC Current Load",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DC Current Load reports consumed DC current. This supports the same common input-current information need as qualified SOSA reporting recommendations, with normative standing and subject differences retained. [ISA-DMS-052; F3-06-ISA-ISA-C-052]",
+        "source_ids": [
+          "ISA-DMS-052"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              26
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DC Current Load reports consumed DC current. This supports the same common input-current information need as qualified SOSA reporting recommendations, with normative standing and subject differences retained.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-053",
+        "row_id": "ISA-C-053",
+        "cell": "I294",
+        "donor_key": "ISA",
+        "information_need": "Produced DC current",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "DC Current Source",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DC Current Source reports produced DC current. This supports qualified common output-current information, distinct from input consumption, maximum ratings and power-feed roles. [ISA-DMS-053; F3-06-ISA-ISA-C-053]",
+        "source_ids": [
+          "ISA-DMS-053"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              26
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DC Current Source reports produced DC current. This supports qualified common output-current information, distinct from input consumption, maximum ratings and power-feed roles.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-054",
+        "row_id": "ISA-C-054",
+        "cell": "I295",
+        "donor_key": "ISA",
+        "information_need": "Load-side DC voltage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "DC Voltage Load",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DC Voltage Load reports voltage used by a load. Retain common input-voltage information without equating it to output-voltage sensing or a design requirement. [ISA-DMS-054; F3-06-ISA-ISA-C-054]",
+        "source_ids": [
+          "ISA-DMS-054"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              26
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DC Voltage Load reports voltage used by a load. Retain common input-voltage information without equating it to output-voltage sensing or a design requirement.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-055",
+        "row_id": "ISA-C-055",
+        "cell": "I296",
+        "donor_key": "ISA",
+        "information_need": "Source-side DC voltage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "DC Voltage Source",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: DC Voltage Source reports voltage provided by a source. Retain common output-voltage information while preserving measured-value conventions and optional equipment applicability. [ISA-DMS-055; F3-06-ISA-ISA-C-055]",
+        "source_ids": [
+          "ISA-DMS-055"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              26
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DC Voltage Source reports voltage provided by a source. Retain common output-voltage information while preserving measured-value conventions and optional equipment applicability.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-100",
+        "row_id": "ISA-C-100",
+        "cell": "I299",
+        "donor_key": "ISA",
+        "information_need": "Reported energy reserve relative to maximum capacity",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Reserve Capacity",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Reserve Capacity reports energy reserve as a percentage of maximum and explicitly includes fuel tanks and batteries. It supports common reserve information; SAPIENT battery percentage is a narrower candidate, not proof of equal energy or runtime. [ISA-DMS-100; F3-06-ISA-ISA-C-100]",
+        "source_ids": [
+          "ISA-DMS-100"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              31
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Reserve Capacity reports energy reserve as a percentage of maximum and explicitly includes fuel tanks and batteries. It supports common reserve information; SAPIENT battery percentage is a narrower candidate, not proof of equal energy or runtime.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-060",
+        "row_id": "ISA-C-060",
+        "cell": "I325",
+        "donor_key": "ISA",
+        "information_need": "Current scan-wide angular coverage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Field of Regard",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Field of Regard reports total angular view over the scan time. Common coverage information is supported for equipment that has it; retain angular representation and its distinction from instantaneous field of view and geographic coverage. [ISA-DMS-060; F3-06-ISA-ISA-C-060]",
+        "source_ids": [
+          "ISA-DMS-060"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              27,
+              108
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Field of Regard reports total angular view over the scan time. Common coverage information is supported for equipment that has it; retain angular representation and its distinction from instantaneous field of view and geographic coverage.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-061",
+        "row_id": "ISA-C-061",
+        "cell": "I326",
+        "donor_key": "ISA",
+        "information_need": "Current instantaneous angular coverage",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Field of View",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Field of View reports instantaneous angular view. It supports common current-view information with optional equipment applicability; it is not automatically the same geometry as a SAPIENT polygon or cone. [ISA-DMS-061; F3-06-ISA-ISA-C-061]",
+        "source_ids": [
+          "ISA-DMS-061"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              27,
+              108
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Field of View reports instantaneous angular view. It supports common current-view information with optional equipment applicability; it is not automatically the same geometry as a SAPIENT polygon or cone.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-117",
+        "row_id": "ISA-C-117",
+        "cell": "I279",
+        "donor_key": "ISA",
+        "information_need": "Reported geographic area currently in view",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "View Area",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: View Area describes the geographic area currently in view. It supports common current-view information; preserve its difference from angular field of view and total scanning coverage. [ISA-DMS-117; F3-06-ISA-ISA-C-117]",
+        "source_ids": [
+          "ISA-DMS-117"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              32
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "View Area describes the geographic area currently in view. It supports common current-view information; preserve its difference from angular field of view and total scanning coverage.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-E-POWER-SOURCE",
+        "row_id": "ISA-E-POWER-SOURCE",
+        "cell": "I301",
+        "donor_key": "ISA",
+        "information_need": "Power-source classification",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Power Source · native supply categories; RELIABLE retains source wording",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Power Source explicitly categorizes the supply used by a component. This supports common source-category information like SAPIENT; retain the unusual RELIABLE wording and do not equate categories with SOSA feed/interface roles or an installed inventory. [ISA-DMS-349; F3-06-ISA-ISA-E-POWER-SOURCE]",
+        "source_ids": [
+          "ISA-DMS-349"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              95
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Power Source explicitly categorizes the supply used by a component. This supports common source-category information like SAPIENT; retain the unusual RELIABLE wording and do not equate categories with SOSA feed/interface roles or an installed inventory.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-235",
+        "row_id": "ISA-C-235",
+        "cell": "I148",
+        "donor_key": "ISA",
+        "information_need": "Requested component diagnostic procedures",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Self Test",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Self Test requests the component's diagnostic procedures. It supports the same qualified common diagnostic-request need as SOSA executeBIT, without defining a universal test suite or proving execution or success. [ISA-DMS-235; F3-06-ISA-ISA-C-235]",
+        "source_ids": [
+          "ISA-DMS-235"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              58
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Self Test requests the component's diagnostic procedures. It supports the same qualified common diagnostic-request need as SOSA executeBIT, without defining a universal test suite or proving execution or success.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-244",
+        "row_id": "ISA-C-244",
+        "cell": "I150",
+        "donor_key": "ISA",
+        "information_need": "Requested component shutdown sequence",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Shutdown",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Shutdown requests the component's own shutdown sequence. It supports common shutdown-control information like the SOSA requests; sequence, supply disconnection and actual off-state are not established. [ISA-DMS-244; F3-06-ISA-ISA-C-244]",
+        "source_ids": [
+          "ISA-DMS-244"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              61
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Shutdown requests the component's own shutdown sequence. It supports common shutdown-control information like the SOSA requests; sequence, supply disconnection and actual off-state are not established.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-C-143",
+        "row_id": "ISA-C-143",
+        "cell": "I63",
+        "donor_key": "ISA",
+        "information_need": "Forecast observation statements",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Forecast [Accepted]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Forecast carries calculated future statements with Posit time, confidence and declared data. This supports common qualified prediction information alongside SAPIENT predicted location; accepted-extension standing, subject and time semantics remain distinct from performed observations. [ISA-DMS-143; F3-06-ISA-ISA-C-143]",
+        "source_ids": [
+          "ISA-DMS-143"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              35,
+              122
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Forecast carries calculated future statements with Posit time, confidence and declared data. This supports common qualified prediction information alongside SAPIENT predicted location; accepted-extension standing, subject and time semantics remain distinct from performed observations.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-T-ADMIN",
+        "row_id": "ISA-T-ADMIN",
+        "cell": "I228",
+        "donor_key": "ISA",
+        "information_need": "Administrative network and service notification",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "Administrative.about: UCI [1+]; code: Admin Code",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Administrative messages identify affected components and native availability/subscription changes. This supports common notification information like SOSA administrative notifications while retaining different code lists, subjects and delivery behavior. [ISA-DMS-304; F3-06-ISA-ISA-T-ADMIN]",
+        "source_ids": [
+          "ISA-DMS-304"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              72,
+              90,
+              91
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Software_Design_Document-6.0r5.pdf",
+            "edition": "ISA SDD 6.0r5",
+            "pdf_pages": [
+              32
+            ],
+            "sha256": "7b04241fead2f6aaab5fd65cb2d1052ba0d978346f0732beabfc2af413642f8e",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Administrative messages identify affected components and native availability/subscription changes. This supports common notification information like SOSA administrative notifications while retaining different code lists, subjects and delivery behavior.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-R-LIST-PRESENCE",
+        "row_id": "ISA-R-LIST-PRESENCE",
+        "cell": "I238",
+        "donor_key": "ISA",
+        "information_need": "Supplied list value versus no update",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "IPL3 list-based property/observable: associated *_supplied Boolean; true marks the list as provided,including an empty list",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: The original IPL3 guide explicitly distinguishes no list update from an update to an empty list using a supplied flag. That presence/update distinction is common information; the native flag name and wire workaround are not adopted, and AAS's projection question remains unresolved. [IPL3-3.0, IPL3-4.0, IPL3-6.0; F3-06-ISA-ISA-R-LIST-PRESENCE]",
+        "source_ids": [
+          "IPL3-3.0",
+          "IPL3-4.0",
+          "IPL3-6.0"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_IPL3_Usage_Guide-6.0r4.pdf",
+            "edition": "ISA IPL3 Usage Guide 6.0r4",
+            "pdf_pages": [
+              13
+            ],
+            "sha256": "491bc6c67c04bcd169d274d449d73235c60964cb7eb52d4595488e263912cf4d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "The original IPL3 guide explicitly distinguishes no list update from an update to an empty list using a supplied flag. That presence/update distinction is common information; the native flag name and wire workaround are not adopted, and AAS's projection question remains unresolved.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-QUERY",
+        "row_id": "ISA-Q-QUERY",
+        "cell": "I203",
+        "donor_key": "ISA",
+        "information_need": "Requested message kinds and returned fields",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "Data Query + Select → Administrative / Config / Event / Status Select",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Select clauses and parser objects define ISA message/field selection syntax. Retain native query evidence; no portable DIM query field or CSAPI filter binding is established by this classification. [ISA-DMS-460, ISA-DMS-462, ISA-DMS-466, ISA-DMS-467, ISA-DMS-468, ISA-DMS-475, DQL-1.0, DQL-2.0, DQL-2.1, DQL-4.0, DQL-4.1, DQL-4.2, DQL-4.2.1, DQL-4.2.2, DQL-AppendixA; F3-06-ISA-ISA-Q-QUERY]",
+        "source_ids": [
+          "ISA-DMS-460",
+          "ISA-DMS-462",
+          "ISA-DMS-466",
+          "ISA-DMS-467",
+          "ISA-DMS-468",
+          "ISA-DMS-475",
+          "DQL-1.0",
+          "DQL-2.0",
+          "DQL-2.1",
+          "DQL-4.0",
+          "DQL-4.1",
+          "DQL-4.2",
+          "DQL-4.2.1",
+          "DQL-4.2.2",
+          "DQL-AppendixA"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              8,
+              9,
+              19
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Select clauses and parser objects define ISA message/field selection syntax. Retain native query evidence; no portable DIM query field or CSAPI filter binding is established by this classification.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-MATCH",
+        "row_id": "ISA-Q-MATCH",
+        "cell": "I204",
+        "donor_key": "ISA",
+        "information_need": "Message-matching criteria",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "Match → And / Or / Not / Boolean Match / Boolean Function / Boolean Wrapper; Comparator",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Boolean matches and predefined functions implement ISA message filtering. Retain native query evidence and the source's unusual exists wording; this pass neither repairs it nor adopts a universal matching language. [ISA-DMS-457, ISA-DMS-459, ISA-DMS-463, ISA-DMS-465, ISA-DMS-472, ISA-DMS-473, DQL-2.2, DQL-3.2, DQL-3.2.2, DQL-3.2.3, DQL-AppendixA; F3-06-ISA-ISA-Q-MATCH]",
+        "source_ids": [
+          "ISA-DMS-457",
+          "ISA-DMS-459",
+          "ISA-DMS-463",
+          "ISA-DMS-465",
+          "ISA-DMS-472",
+          "ISA-DMS-473",
+          "DQL-2.2",
+          "DQL-3.2",
+          "DQL-3.2.2",
+          "DQL-3.2.3",
+          "DQL-AppendixA"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              9,
+              10,
+              17
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Boolean matches and predefined functions implement ISA message filtering. Retain native query evidence and the source's unusual exists wording; this pass neither repairs it nor adopts a universal matching language.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-NAVIGATION",
+        "row_id": "ISA-Q-NAVIGATION",
+        "cell": "I205",
+        "donor_key": "ISA",
+        "information_need": "Field navigation and contextual filtering",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "Value Selector.context / predicate / field selection; Field Value Selector.field / predicate / field selection",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Value selectors navigate a native matching context and apply predicates/field selection. Retain native selector/grammar evidence; a common cross-donor field-path or query binding remains unestablished. [ISA-DMS-469, ISA-DMS-480, DQL-AppendixA; F3-06-ISA-ISA-Q-NAVIGATION]",
+        "source_ids": [
+          "ISA-DMS-469",
+          "ISA-DMS-480",
+          "DQL-AppendixA"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              136,
+              139
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              19
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Value selectors navigate a native matching context and apply predicates/field selection. Retain native selector/grammar evidence; a common cross-donor field-path or query binding remains unestablished.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-FUNCTION",
+        "row_id": "ISA-Q-FUNCTION",
+        "cell": "I206",
+        "donor_key": "ISA",
+        "information_need": "Query functions and arguments",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "Boolean Function / Value Function.name + arguments; Function Parameter.name + value",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Named value/Boolean functions and their arguments belong to the ISA query language and parser. Retain native function evidence; do not turn each function into a DIM information field or repair source wording. [ISA-DMS-464, ISA-DMS-470, ISA-DMS-479, DQL-3.0, DQL-3.1, DQL-3.1.9, DQL-3.1.10, DQL-3.2, DQL-AppendixA; F3-06-ISA-ISA-Q-FUNCTION]",
+        "source_ids": [
+          "ISA-DMS-464",
+          "ISA-DMS-470",
+          "ISA-DMS-479",
+          "DQL-3.0",
+          "DQL-3.1",
+          "DQL-3.1.9",
+          "DQL-3.1.10",
+          "DQL-3.2",
+          "DQL-AppendixA"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              19
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Named value/Boolean functions and their arguments belong to the ISA query language and parser. Retain native function evidence; do not turn each function into a DIM information field or repair source wording.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-VALUES",
+        "row_id": "ISA-Q-VALUES",
+        "cell": "I207",
+        "donor_key": "ISA",
+        "information_need": "Literal and list query values",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "Value → Field Value Selector / List Value / Static Value / Value Function / Value Selector",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Literal/list values and concatenation/uniqueness functions are query representation constructs. Retain native evidence without adopting a shared query-value grammar or equating its types with AAS values. [ISA-DMS-461, ISA-DMS-471, ISA-DMS-474, DQL-3.1.9, DQL-3.1.10, DQL-AppendixA; F3-06-ISA-ISA-Q-VALUES]",
+        "source_ids": [
+          "ISA-DMS-461",
+          "ISA-DMS-471",
+          "ISA-DMS-474",
+          "DQL-3.1.9",
+          "DQL-3.1.10",
+          "DQL-AppendixA"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              16,
+              19,
+              22
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Literal/list values and concatenation/uniqueness functions are query representation constructs. Retain native evidence without adopting a shared query-value grammar or equating its types with AAS values.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-STRING",
+        "row_id": "ISA-Q-STRING",
+        "cell": "I208",
+        "donor_key": "ISA",
+        "information_need": "String matching rules",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "String Match: case-sensitive / exact-match / pattern; DQL regexp(pattern, subject)",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: DMS String Match describes limited glob-like pattern tokens while the DQL guide describes regexp. Preserve that distinction as native evidence; do not assert identical pattern semantics or create a universal string rule. [ISA-DMS-476, DQL-3.2.1; F3-06-ISA-ISA-Q-STRING]",
+        "source_ids": [
+          "ISA-DMS-476",
+          "DQL-3.2.1"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              138
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              16,
+              17
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "DMS String Match describes limited glob-like pattern tokens while the DQL guide describes regexp. Preserve that distinction as native evidence; do not assert identical pattern semantics or create a universal string rule.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-SUBSCRIPTION",
+        "row_id": "ISA-Q-SUBSCRIPTION",
+        "cell": "I209",
+        "donor_key": "ISA",
+        "information_need": "Subscription identity and query definition",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Subscription.query + id; Subscription ID.creator / consumer / name",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Subscription supplies its query and a creator/consumer/name identity. This supports optional specialized subscription information, with ISA matching-context semantics retained and no universal subscription resource adopted. [ISA-DMS-477, ISA-DMS-478, DQL-1.0, DQL-3.0; F3-06-ISA-ISA-Q-SUBSCRIPTION]",
+        "source_ids": [
+          "ISA-DMS-477",
+          "ISA-DMS-478",
+          "DQL-1.0",
+          "DQL-3.0"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Model_Specification-6.0r12.pdf",
+            "edition": "ISA DMS 6.0r12, 31 October 2023",
+            "pdf_pages": [
+              138
+            ],
+            "sha256": "f89cfd5beaa294e66dd10db84f3a2f2c05db8b70472491eb5e177ac8059ac03d",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          },
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              8,
+              13
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Subscription supplies its query and a creator/consumer/name identity. This supports optional specialized subscription information, with ISA matching-context semantics retained and no universal subscription resource adopted.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-OPTIONS",
+        "row_id": "ISA-Q-OPTIONS",
+        "cell": "I210",
+        "donor_key": "ISA",
+        "information_need": "Subscription selection and initial-cache options",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "Data Query.with clause / without clause; loopback; strictcomparisons / strictcomparison; without cache",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Loopback, strict comparison and initial-cache options qualify native subscription selection. Retain specialized optional query-policy information, including the strictcomparison/strictcomparisons wording discrepancy. [ISA-DMS-467, DQL-2.3, DQL-2.4, DQL-3.0; F3-06-ISA-ISA-Q-OPTIONS]",
+        "source_ids": [
+          "ISA-DMS-467",
+          "DQL-2.3",
+          "DQL-2.4",
+          "DQL-3.0"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              11,
+              12,
+              13
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Loopback, strict comparison and initial-cache options qualify native subscription selection. Retain specialized optional query-policy information, including the strictcomparison/strictcomparisons wording discrepancy.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-CONTEXT",
+        "row_id": "ISA-Q-CONTEXT",
+        "cell": "I211",
+        "donor_key": "ISA",
+        "information_need": "Message-source and cached-component query context",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "NATIVE_ONLY_EVIDENCE",
+        "fill": "#E5E7EB",
+        "before": "source(); component(); get_config(); get_status(); get_administrative(); get_event()",
+        "after": "[NATIVE ONLY EVIDENCE] PARTIAL/RELATED: Source/component and cached-message functions define ISA matching context; Event messages have a distinct non-cached rule. Retain native processing evidence without generalizing cached-state semantics to other donors. [DQL-3.0, DQL-3.1.1, DQL-3.1.2, DQL-3.1.3, DQL-3.1.4, DQL-3.1.5, DQL-3.1.6; F3-06-ISA-ISA-Q-CONTEXT]",
+        "source_ids": [
+          "DQL-3.0",
+          "DQL-3.1.1",
+          "DQL-3.1.2",
+          "DQL-3.1.3",
+          "DQL-3.1.4",
+          "DQL-3.1.5",
+          "DQL-3.1.6"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              13,
+              14,
+              15
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Source/component and cached-message functions define ISA matching context; Event messages have a distinct non-cached rule. Retain native processing evidence without generalizing cached-state semantics to other donors.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      {
+        "decision_id": "F3-06-ISA-ISA-Q-SPATIAL",
+        "row_id": "ISA-Q-SPATIAL",
+        "cell": "I212",
+        "donor_key": "ISA",
+        "information_need": "Spatial component and message selection",
+        "previous_classification": "MIXED_OR_HELD",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "before": "components_near_uci(); components_in_area(); in_area()",
+        "after": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Native functions select components/messages by geographic area and position availability. Retain specialized spatial-selection information and each message-specific subject; no generic equipment-location field or OGC filter binding is adopted. [DQL-2.2, DQL-3.1.7, DQL-3.1.8, DQL-3.2.4; F3-06-ISA-ISA-Q-SPATIAL]",
+        "source_ids": [
+          "DQL-2.2",
+          "DQL-3.1.7",
+          "DQL-3.1.8",
+          "DQL-3.2.4"
+        ],
+        "original_source_locators": [
+          {
+            "file": "ISA_Data_Query_Language_Users_Guide-6.0r4.pdf",
+            "edition": "ISA Data Query Language Users Guide 6.0r4",
+            "pdf_pages": [
+              15,
+              16,
+              17,
+              18
+            ],
+            "sha256": "95929ea9414c909d888b62e472bf02ae9e89b3e460ec093780528ede441da0e9",
+            "standing": "Native definition/schema plus explicit requirements and qualified notes as identified in the decision; no requirement promoted to DIM/Profile",
+            "coverage": "TARGETED_ORIGINAL_PASSAGES_READ; not whole-page/whole-document audit"
+          }
+        ],
+        "rationale": "Native functions select components/messages by geographic area and position availability. Retain specialized spatial-selection information and each message-specific subject; no generic equipment-location field or OGC filter binding is adopted.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F2_5_cell_classification/H",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    ],
+    "census_after": {
+      "source_bearing": 316,
+      "colored": 309,
+      "held": 7,
+      "ungraded": 0,
+      "statuses": {
+        "COMMON_CANDIDATE": 110,
+        "SPECIALIZED_CANDIDATE": 174,
+        "MIXED_OR_HELD": 7,
+        "NATIVE_ONLY_EVIDENCE": 19,
+        "UNRESOLVED_CANDIDATE": 6
+      }
+    },
+    "next": "Owner acceptance of F3 classification reconciliation only. Microsoft Excel clean reopen/no-repair remains PENDING. Do not begin AAS O1–O7, new rows, model adoption, UI or deployment without separate authorization."
   }
 }

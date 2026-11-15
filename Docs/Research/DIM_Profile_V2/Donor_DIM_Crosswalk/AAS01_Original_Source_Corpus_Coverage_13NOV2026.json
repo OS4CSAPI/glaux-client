@@ -5048,7 +5048,7 @@
     "excel_lag": "ZERO_AT_PRIOR_SNAPSHOT__NO_AAS_MAPPING_NEW",
     "no_AAS_column": true
   },
-  "one_next": "F3-06 ONLY on a separate Proceed: cross-donor peer challenge, final same-workbook publication and owner acceptance gate. Stop before AAS native-first O1–O7, new rows, model adoption, UI or deployment.",
+  "one_next": "Owner acceptance of F3 classification reconciliation only. Microsoft Excel clean reopen/no-repair remains PENDING. Do not begin AAS O1–O7, new rows, model adoption, UI or deployment without separate authorization.",
   "owner_review": {
     "date": "2026-11-13",
     "decision": "ACCEPT_REVISED_SOURCE_SIZED_FORECAST_AND_AAS02_BOUNDED_SCOPE",
@@ -10132,7 +10132,7 @@
     }
   },
   "master_state_current": {
-    "checkpoint": "F3_05_CLASSIFICATION_SAVED_VERIFIED",
+    "checkpoint": "F3_06_CLASSIFICATION_SAVED_VERIFIED",
     "rows": 337,
     "grid": "354x16",
     "AAS_column": "G",
@@ -10140,7 +10140,7 @@
     "comparison_lag": 0,
     "manual_M00_M01": "UNCHANGED",
     "M02": "NOT_CREATED",
-    "next": "F3-06 ONLY on a separate Proceed: cross-donor peer challenge, final same-workbook publication and owner acceptance gate. Stop before AAS native-first O1–O7, new rows, model adoption, UI or deployment.",
+    "next": "Owner acceptance of F3 classification reconciliation only. Microsoft Excel clean reopen/no-repair remains PENDING. Do not begin AAS O1–O7, new rows, model adoption, UI or deployment without separate authorization.",
     "status": "F3_CLASSIFICATION_REMEDIATION__AAS_NATIVE_FIRST_WAITING_FOR_F3_OWNER_GATE"
   },
   "source_grade_counts_scope": "AAS01 census grades retained historically; incremental AAS02/AAS03/AAS04 exact coverage governs current standing. Overlapping text, definitions and rule rereads are not new unique source units.",
@@ -52041,8 +52041,88 @@
         "independent_master_checker": "PASS",
         "python_syntax": "PASS",
         "repository_artifact_checker": "SAME_EIGHT_PREEXISTING_REGISTER_OR_LINK_ERRORS; zero new errors observed",
-        "remote_publication": "PENDING"
+        "remote_publication": {
+          "commit": "4fed5c76ecd6610054c731433c07fefab0779027",
+          "publication_run": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43657493087",
+          "independent_check_run": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43657493090",
+          "conclusion": "SUCCESS",
+          "readback_verified_on": "2026-11-15",
+          "note": "Recorded in F3-06 after interrupted prior chat; successful publication is not source completeness."
+        }
       }
     }
+  },
+  "F3_06_peer_review": {
+    "date": "2026-11-15",
+    "scope": "Existing comparisons only; original source coverage and holds unchanged",
+    "master_register": "Master_Donor_Concept_to_DIM_Crosswalk.json#/F3_06_classification",
+    "records": [
+      {
+        "decision_id": "F3-06-AAS-S06-R006",
+        "row_id": "S06-R006",
+        "cell": "G11",
+        "donor_key": "AAS",
+        "information_need": "Network-visible participant",
+        "previous_classification": "SPECIALIZED_CANDIDATE",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "before": "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Descriptors identify API network resources and their offered interfaces. Retain a specialized service-participant candidate; the software endpoint is not automatically the described physical sensor or a demonstrated reachable device. [Sources: AAS06-N003, AAS06-N004; F3-05-S06-R006]",
+        "after": "[COMMON CANDIDATE] PARTIAL/RELATED: Descriptors and endpoints identify API network resources and offered interfaces. They support common network-participant description on the same basis as logical ISA and SOSA participants; preserve optional shell endpoints, asset-versus-shell identity and unverified reachability. [AAS06-N003, AAS06-N004; F3-06-AAS-S06-R006]",
+        "source_ids": [
+          "AAS06-N003",
+          "AAS06-N004"
+        ],
+        "original_source_locators": [
+          {
+            "id": "AAS06-N003",
+            "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+            "file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "lines": [
+              49,
+              75
+            ],
+            "pdf_pages": null,
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L49-L75",
+            "standing": "ATTRIBUTE_DEFINITION_AND_NOTE",
+            "coverage": "TARGETED_ORIGINAL_LINES_49_110_REREAD; pinned file retained"
+          },
+          {
+            "id": "AAS06-N004",
+            "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json",
+            "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)",
+            "file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "lines": [
+              96,
+              110
+            ],
+            "pdf_pages": null,
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L96-L110",
+            "standing": "ATTRIBUTE_DEFINITION",
+            "coverage": "TARGETED_ORIGINAL_LINES_49_110_REREAD; pinned file retained"
+          }
+        ],
+        "rationale": "Descriptors and endpoints identify API network resources and offered interfaces. They support common network-participant description on the same basis as logical ISA and SOSA participants; preserve optional shell endpoints, asset-versus-shell identity and unverified reachability.",
+        "relation": "PARTIAL/RELATED",
+        "original_record": "F3_05_AAS_classification",
+        "coverage": "Prior native records retained; selected supporting originals reopened. Other cited native records are reused, not claimed newly audited.",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    ],
+    "census_after": {
+      "source_bearing": 64,
+      "colored": 52,
+      "held": 12,
+      "ungraded": 0,
+      "statuses": {
+        "COMMON_CANDIDATE": 38,
+        "MIXED_OR_HELD": 12,
+        "SPECIALIZED_CANDIDATE": 9,
+        "UNRESOLVED_CANDIDATE": 3,
+        "NATIVE_ONLY_EVIDENCE": 2
+      }
+    },
+    "next": "Owner acceptance of F3 classification reconciliation only. Microsoft Excel clean reopen/no-repair remains PENDING. Do not begin AAS O1–O7, new rows, model adoption, UI or deployment without separate authorization."
   }
 }

@@ -1,3 +1,11 @@
+# L111 — Apply the same information criterion to inherited composite holds (15 November 2026)
+
+F3-06 found that earlier ISA classifications sometimes treated a composite source record, native encoding or absent live example as grounds to withhold an otherwise useful information candidate. Read each original definition and separate the qualified information from the source-specific representation; neither a composite nor a partial match automatically requires a hold. Apply the same criterion to other donors' typed commands, parameters, results, declarations, media associations and service participants. Preserve exact-equivalence questions even when the potential information need earns a common or specialized color.
+
+Conversely, do not let a neighboring concept supply the wrong information: SAPIENT's regular heartbeat and typical range do not define minimum and maximum reporting bounds, and SOSA backup-power interfaces do not report battery charge. Retain holds where the requested subject or relation is unestablished and retain native-only syntax where the reusable information has not been shown. Record every changed classification and the native scopes of retained peer differences in the same master and source ledgers. Saved workbook parity, original-source coverage, owner acceptance, model adoption and actual Microsoft Excel reopening remain separate claims; F3-06 stops at the owner acceptance gate.
+
+---
+
 # L110 — Separate qualified interface support from unsupported subjects (14 November 2026)
 
 F3-05 applied the same source-first classification contract to 64 existing AAS comparisons. Native Operation/Property/collection/list declarations and API requests/results can support common information needs without exact ISA identity or a live equipment demonstration. Conversely, generic File, Reference, Property and displayName carriers do not themselves supply an observation association, occurrence identifier, operating-condition vocabulary or changeable equipment name. Record the direct support separately from inherited source IDs and retain the full prior comparison in the existing evidence ledger when shortening the current cell.
