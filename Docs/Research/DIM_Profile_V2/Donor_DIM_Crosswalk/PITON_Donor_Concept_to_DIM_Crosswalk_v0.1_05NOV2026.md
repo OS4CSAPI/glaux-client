@@ -4,19 +4,19 @@ Updated 15 November 2026 UTC, Profile Rewrite 45. This file owns current status 
 
 ## Verified checkpoint
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Pre-O4 published checkpoint: [ffdf561e1c040108293df7dcb29ceeddb013ec93](https://github.com/OS4CSAPI/glaux-client/commit/ffdf561e1c040108293df7dcb29ceeddb013ec93). F3 is owner-accepted; O1–O3 were delivered. The latest owner Proceed authorized **O4 only**, stopping before O5. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
+Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Current published research checkpoint: [dce195137089d4762d3f4028f5741ebf26cfe88d](https://github.com/OS4CSAPI/glaux-client/commit/dce195137089d4762d3f4028f5741ebf26cfe88d). A subsequent publication-record commit changes only the ledger and this PITON. F3 is owner-accepted; O1–O4 are delivered. The latest owner Proceed authorized **O4 only**, stopping before O5. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
 
-O4 source decisions and saved workbook are complete locally. Remote publication/checks are PENDING; do not confuse the local result with delivery. The cumulative ledger publication record will identify the verified research commit and checks after publication.
+O4 is published and verified. The cumulative ledger records the actual commit, tree, saved workbook, readback and successful workflow results. No O5 work was performed or authorized by this Proceed.
 
 ## Interrupted work
 
-Pending O4 publication resides on local branch `codex/aas-o4`, based on `ffdf561e`. Preserve its changed master, ledger, both CSV/readable mirrors, same workbook, existing publisher/checker, AAS06 report, plan and this PITON. Finish missing delivery before any O5 work; do not repeat the source review merely because the chat changes.
+No O4 delivery work remains pending. The source review and workbook were published over preflight `ffdf561e`; all required evidence is in GitHub. Earlier local branch `codex/aas-o4` is not a separate unpublished research increment. Do not repeat O4 merely because the chat changes.
 
 O4 reconciles all 38 AAS06 findings, including 12 historically uncited records. Two common provisional candidates were added: digital-record discovery/service-location association, and digital-record state at a specified time. Existing endpoint, service-support and representation rows suffice for the other qualified meanings. No previous row or classification changed.
 
 ## Active scope and evidence
 
-[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O4 delivery controls, then O5 only on separate owner Proceed. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates.
+[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O5 and execution/coverage controls, only on separate owner Proceed. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates.
 
 Extract `AAS_O4_native_review.records`, `.targeted_original_contacts`, `.supplemental_checks`, `.holds_retained` and `.publication` from `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json`. Original AAS06 records are unchanged. [The existing AAS06 report](AAS06_Original_Part2_Registry_Repository_Service_Discovery_14NOV2026.md) explains the additions. Master keys `AAS_O4_native_review`, `currentEvidenceCheckpoint`, `workbookSnapshot` and `nextOwnerAction` identify this snapshot.
 
@@ -36,13 +36,13 @@ All earlier AAS event/qualifier, timestamp spelling, administrative integer/stri
 
 ## Verification and publication
 
-Local saved-value/fill, both-mirror, original-row/package and source-record preservation checks passed. Artifact Tool renders of all five changed sheets passed visual review; current totals and historical labels are explicit. Native Excel reopening remains separate. Publication/readback and applicable existing workflows are pending. The broad artifact check again reported the same five pre-existing register/link errors outside O4.
+Local saved-value/fill, both-mirror, original-row/package and source-record preservation checks passed. Artifact Tool renders of all five changed sheets passed visual review; current totals and historical labels are explicit. Native Excel reopening remains separate. All 12 changed file blobs/the exact tree matched GitHub readback; all 5,952 remote workbook values matched remote JSON. Both existing workflows passed on `dce1951`: [master/recovery verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43725118538) and [same-workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/43725118541). These check integrity, not independent source semantics. The broad artifact check again reported the same five pre-existing register/link errors outside O4.
 
-The existing checker retains the recovery guard and dispatches O4 saved-file verification. Do not add a new workflow or perform a full historical reread. Update this publication paragraph and the ledger with observed results only.
+The existing checker retains the recovery guard and dispatches O4 saved-file verification. Do not add a new workflow or perform a full historical reread. The ledger records observed publication results; no source or workbook changes accompany this handoff update.
 
 ## Next action and stop
 
-Finish O4 publication/readback and stop. **Next separate owner Proceed: O5 only**, reviewing 53 AAS07 model/operation/auxiliary API findings against originals. Preserve request, acceptance, operation status/result and physical-effect distinctions. Stop before O6; no donor transition, model adoption, client work or deployment. O5 has not started. Remaining O5–O7 forecast: 4–6 substantive steps, governed by actual source complexity.
+**STOP. Next separate owner Proceed: O5 only**, reviewing 53 AAS07 model/operation/auxiliary API findings against originals. Preserve request, acceptance, operation status/result and physical-effect distinctions. Stop before O6; no donor transition, model adoption, client work or deployment. O5 has not started. Remaining O5–O7 forecast: 4–6 substantive steps, governed by actual source complexity.
 
 ## History
 
