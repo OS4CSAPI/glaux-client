@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026, America/New_York, Profile Rewrite 50. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
+Updated 15 November 2026, America/New_York, SO-2F-1 partial checkpoint. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -8,7 +8,7 @@ SO-2E research and same-workbook delivery are published at `4f5420a4a8128370bde5
 
 ## Interrupted work
 
-No unpublished SO-2E research or workbook delivery remains. The preserved local research commit `b641627` and published `4f5420a` have identical trees and all eleven changed blobs match. The current status closeout records that evidence. No SO-2F research has started; reuse verified SO-1/SO-2A/B/C/D/E/AAS evidence rather than rereading histories.
+SO-2E fully published. SO-2F-1 has verified a frozen 581-ID/pointer manifest and assessed 58 native records, but **three proposed specialized rows still require canonical master/Excel integration**. No workbook content has been changed. Continue the same bounded step before SO-2F-2.
 
 ## Active scope and evidence
 
@@ -18,7 +18,7 @@ SO-2E outcomes: **289 adequately represented, 60 supporting additions, 47 suppor
 
 Original C239 PDF 141–207 and 372–383 text read; PDF 144/185/186/197/200/201/376/382 visually inspected. All 496 original hashes matched. Twenty-two held records across twelve groups preserve key tags/configuration returns/store boundary, storage-response wording, host bearing/cosite/locator, QoS range/ownership, FACE reference, future conformance/matrix and role-symbol geometry. Task tables remain preliminary with TBD descriptions and inconsistent AMTI/Tracker reference. Source grades are unchanged; no new edition, native-companion, external-standard or general figure audit.
 
-**Next SO-2F:** 581 hardware-topology/profile-family records from frozen SO-1 membership, now split into source-coherent ~75–100-record checkpoints per the plan amendment. The earlier seven-step remainder estimate is superseded; recompute after the verified manifest. Residual assessment inventory remains **2,227 records**.
+**SO-2F-1 source checkpoint:** [compact 581-ID manifest and 58-record original-source assessment](SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json). Nine source-coherent subpacket counts: **58/73/36/72/77/77/67/77/44**; all 581 IDs/pointers match eight retained originals. In PDF208–216 of original C239, 58 residual records yielded **46 candidate-supporting, four source-specific/no-row, four already represented, four held figures**. Three specialized candidate families: PIC power inputs, mechanical/mating profile, cooling/host fit. Figure pixels, ANSI/VITA companions and prior holds remain unverified. Earlier seven-step estimate superseded; remaining in SO-2F: 523 IDs. G4-ledger merge is deferred because a 4.7 MB write failed; source checkpoint exists separately without modifying originals.
 
 ## Master and workbook
 
@@ -40,7 +40,7 @@ Five pre-existing broader artifact-register/link errors remain unclosed. The bro
 
 ## Next action and stop
 
-SO-2E delivery and publication-status closeout are complete. Profile Rewrite 50 approved **execution sizing only**; no SO-2F research has started. **STOP for Proceed.** Next Proceed authorizes **SO-2F-1 only**: establish a manifest of all frozen 581 original IDs/source groups/pointers and assess the first ~75–100-record source-coherent subpacket if safely feasible. Preserve exact holds, publish/read back warranted same-master/workbook changes, then stop before SO-2F-2. Subsequent subpackets each require their own Proceed. No SO-2G, donor acceptance, or adoption by implication.
+SO-2F-1 source assessment saved, but **not closed**. **STOP for Proceed**. Next Proceed completes SO-2F-1 canonical integration only: three warranted specialized candidates in master, both CSV/readable mirrors and same 26-sheet workbook; saved-cell/fill parity, publication/readback and G4 routing if feasible. Stop before SO-2F-2. No adoption, donor transition or deployment.
 
 ## History
 
