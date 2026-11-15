@@ -4,19 +4,21 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 46. This file owns c
 
 ## Verified checkpoint
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Published O7 research checkpoint: [7a957a9589ebd49a9d47374aa3c3db1c54624df5](https://github.com/OS4CSAPI/glaux-client/commit/7a957a9589ebd49a9d47374aa3c3db1c54624df5), tree `e26fd8c9d2c45b21623f13e72dabe22fc16faa12`. Subsequent metadata-only publication records observed checks. F3 is owner-accepted; O1–O7 are delivered. Owner Proceed authorized **O7 reconciliation and closeout-proposal delivery only**, now complete. Asset Administration Shell (AAS) remains bounded PARTIAL; owner closeout is pending.
+Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Published O7 research checkpoint: [7a957a9589ebd49a9d47374aa3c3db1c54624df5](https://github.com/OS4CSAPI/glaux-client/commit/7a957a9589ebd49a9d47374aa3c3db1c54624df5), tree `e26fd8c9d2c45b21623f13e72dabe22fc16faa12`. [Published delivery record](https://github.com/OS4CSAPI/glaux-client/commit/95523accf6d1687dd17dc781a0986ebcd5cb3aad) records observed checks. F3 is owner-accepted; O1–O7 are delivered. Owner Proceed delivered O7. The latest Proceed authorizes **documentation of the proposed SOSA opportunity addendum only**; execution is not authorized. Asset Administration Shell (AAS) remains bounded PARTIAL; owner closeout is pending.
 
 O7 reconciliation, same-workbook guidance and corrected current snapshot metadata are published. Saved-file, visual, remote readback and both applicable workflow checks passed. No owner acceptance is recorded.
 
 ## Interrupted work
 
-No pending O7 delivery. Local `codex/aas-o7` commit `f9784ae` matches the published research tree; it includes preserved interrupted commit `ec0f8e0` plus snapshot-metadata correction. Later local/publication changes record delivery only. Both CSV mirrors, comparison data and classifications remain unchanged. Do not repeat O1–O7 research. The 480 ISA source-review count retains its meaning.
+No pending O7 delivery. The SOSA planning change is based on `95523acc` and contains only the addendum and this PITON. No SO-1 inventory, source assessment or master/workbook edit has started. Local `codex/aas-o7` commit `f9784ae` matches the published research tree; it includes preserved interrupted commit `ec0f8e0` plus snapshot-metadata correction. Later local/publication changes record delivery only. Both CSV mirrors, comparison data and classifications remain unchanged. Do not repeat O1–O7 research. The 480 ISA source-review count retains its meaning.
 
 All 310 retained findings and 53 historical citation gaps have dispositions. The 316 stage records include six revisits. Three stale O5 routing notes now point to completed O5 evidence. The sequence added 24 candidates (19 common, five specialized); O7 adds no rows or classification changes.
 
 ## Active scope and evidence
 
-[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O7 delivered; stop for owner disposition. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains model/adoption gates. No new donor is selected or authorized.
+[Proposed SOSA addendum](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md#sosa-existing-findings-opportunity-addendum): documentation only; stop for plan approval before SO-1 inventory. Read only this new opening addendum, not the preserved status history. Existing G4 ledger packet/source registers and the F2-2 35-item table locate the evidence; later adequate opportunity decisions must be credited. SO-1 determines the residual scope and estimate; no count or execution promise is invented.
+
+[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O7 delivered; owner acceptance is still pending and was not implied by the SOSA planning request. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains model/adoption gates. No new donor is selected or authorized.
 
 Extract only `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O7_reconciliation`: `.accountability`, `.candidate_reconciliation`, `.corpus_reconciliation`, `.hold_reconciliation`, `.owner_recommendation` and `.publication`. These point to unchanged source/stage records; use individual locators for concrete questions. [Owner closeout report](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) explains all 24 additions, no-row decisions and actual remaining scope. Master keys `AAS_O7_reconciliation`, `currentEvidenceCheckpoint`, `workbookSnapshot` and `nextOwnerAction` identify the same snapshot.
 
@@ -40,7 +42,7 @@ Local reconciliation, saved-grid, classification/style, mirror, unchanged-data/p
 
 ## Next action and stop
 
-O7 delivered; **STOP for owner disposition**. Recommend accepting the completed AAS review as bounded PARTIAL with all documented holds, or reopening one specifically named source question. This is not yet accepted. Zero routine research steps remain in O1–O7; no automatic next donor, adoption, client work or deployment.
+**STOP for owner review of the proposed SOSA addendum.** On approval, the one next bounded action is SO-1 inventory/workload only; no SO-2 assessment or workbook change yet. The latest owner message authorizes writing the plan, not executing it. AAS O1–O7 remain delivered with zero routine research steps and acceptance pending; recommending bounded PARTIAL is not acceptance. No automatic donor transition, adoption, client work or deployment.
 
 ## History
 

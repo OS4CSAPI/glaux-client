@@ -1,3 +1,50 @@
+# SOSA existing-findings opportunity addendum
+
+15 November 2026, America/New_York, Profile Rewrite 46. **PROPOSED — execution approval pending.** The owner authorized documenting this addendum after discussing unequal assurance against an ISA-shaped starting point; this authorization does not start the assessment. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current routing. Preserve the [exact pre-addendum plan](https://github.com/OS4CSAPI/glaux-client/blob/95523accf6d1687dd17dc781a0986ebcd5cb3aad/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md); its text remains verbatim below.
+
+## Purpose and evidence
+
+Determine whether already-reviewed The Open Group Sensor Open Systems Architecture (SOSA) information was overlooked or compressed because the master began largely with Integrated Sensor Architecture (ISA) rows. No donor is the assumed final structure. Compare the source's meaning and subject before asking where it fits in the current Domain Information Model (DIM) candidates.
+
+The [F2-2 assessment](Donor_Native_High_Level_Information_Groupings_Comparison.md#f2-2-complete--independent-sosa-native-source-opportunity-assessment-13-november-2026) explicitly assessed 35 native opportunities and added three specialized candidates: management paths, hosted runtime configuration and separate management/payload power domains. It did not claim an exhaustive opportunity assessment. Later [F3 classification work](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md) treated existing comparisons consistently; a color decision alone does not establish that all distinct source meanings were considered. Adequate later opportunity decisions must nevertheless be credited and reused.
+
+This is an assurance gap, not evidence that more rows necessarily exist. Asset Administration Shell (AAS) accounted for 310 retained findings and SAPIENT for 109; those totals are not equivalent units or targets for SOSA. Their reviews are not restarted. AAS owner acceptance remains pending, separately from approval of this proposal. SOSA's previously accepted bounded PARTIAL disposition remains in force.
+
+## Defined scope
+
+Freeze the inventory baseline at published commit `95523accf6d1687dd17dc781a0986ebcd5cb3aad`. Include all substantive SOSA findings already reviewed and retained there, including findings never mapped to a master row. Use original stable IDs, source editions and contact grades; distinguish actual findings from contents headings, file inventories, repeated mapping events and structural samples. An unavailable/unread source pointer is a hold, not a reviewed finding. Deduplicate repeated records without merging distinct meanings.
+
+Start with `SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json`: `per_source_packet_correspondences`, `coverage`, the original/native artifact registers, `unresolved_holds_grouped` and F3 review sections. Reconcile the original G1–G3 packet inventories these identify, the initial SOSA A/B/C/D findings, the F2-2 35-item table and later explicit decisions. Do not restrict the inventory to currently cited or colored cells. A packet correspondence index is a locator, not proof that it lists every reviewed finding.
+
+Reuse verified decisions. Reread original passages at their recorded editions when a meaning, omission or proposed change needs verification. Previously unreviewed clauses, new editions, new companion-file audits and attempts to close all nine source-hold families are outside this addendum. Record any necessary expansion as a named question and obtain separate owner direction. Distinguish C239 Edition 1.1 from separately qualified 2022/2025 evidence and W3C SOSA/SSN.
+
+## Bounded sequence
+
+| Step | Deliverable and required reasoning | Stop |
+|---|---|---|
+| **SO-1 — Inventory and workload** | Establish unique reviewed findings, original provenance, duplicates, the 35-item overlap and adequate later opportunity decisions. Identify the residual set or explicit inventory limitations. Add compact routing/accountability to the existing G4 ledger. Propose source-sized SO-2 packets and an estimate based on the actual residual set. No new mapping, row or classification decision. | Owner reviews the residual scope and packet estimate before SO-2. |
+| **SO-2 — Assess remaining meanings** | For every residual finding, compare its native subject, role and meaning to the current master. Record: adequately represented; addition/clarification warranted; source-specific information with a reason for no DIM row; or held with an exact question. Link original evidence and justify why the closest current row is sufficient or insufficient. Integrate substantive source-qualified changes progressively under the controls below. | One Proceed authorizes one named source-sized packet; stop at that packet's published result. |
+| **SO-3 — Reconcile integration** | Account for every in-scope finding, reuse completed checks and resolve any remaining integration/parity differences. Show retained/clarified/new proposals and why they are distinct; preserve explicit statuses in other donor columns without inventing equivalences. If SO-2 already completed an obligation, record that evidence rather than repeat it. | Before closeout recommendation. |
+| **SO-4 — Explain and close out** | Explain in plain English what was missed, what changed or added no row, the practical value and remaining limits. State whether the defined opportunity gap has been addressed and seek owner disposition. | No automatic donor transition, model adoption or implementation. |
+
+Four functional stages are not a four-prompt promise. SO-1 must establish workload before an execution estimate; any later split or expansion needs a concrete source-complexity reason. Do not manufacture extra packets or target a number of added rows.
+
+## Preservation, publication and completion
+
+Use the existing G4 ledger for detailed accountability, this plan for method and the existing PITON for status. Keep original records intact and maintain per-item source IDs, exact locators, native meaning, normative standing, contact grade, row links, decision rationale and holds. Classification and the decision to add a row are separate. Preserve all accepted F3 decisions unless new original evidence justifies a documented correction; apply the same criteria to ISA and other donors.
+
+Before substantive master changes preserve a browsable pre-change checkpoint. After each substantive SO-2 increment synchronize canonical JSON, both CSV/readable mirrors and the same editable workbook, then verify affected saved values/fills and preserved content before further research. Retain layout, stable IDs, other donor/case evidence and immutable M00/M01; no automatic M02. Read back publication and applicable checks. Reuse unchanged verification; native Excel reopening remains a distinct limitation.
+
+Completion means every finding in the frozen scope has an evidenced outcome, with no silent omissions or unrecorded residual work; any held outcome names the unresolved question. Explain inventory limitations instead of claiming complete coverage. A new-row count of zero is permissible when supported. This does not certify the full SOSA corpus, eliminate all donor-selection bias, rank donors, adopt DIM/Profile requirements or prove runtime behavior. Existing owner gates remain.
+
+**Next on owner approval: SO-1 only.** This planning delivery changes no master/workbook data and records no AAS acceptance.
+
+---
+
+## Preserved earlier plan and checkpoint history
+
+The following pre-addendum text is retained verbatim. Its historical CURRENT/NEXT banners do not govern this proposal; use the current PITON and the addendum above.
+
 # CURRENT — F3-04D complete; SOSA classification exceptions closed, AAS classification next (14 November 2026)
 
 F3-04D reviewed the final 33 SOSA equipment comparisons: **18 common, two specialized, 13 held**, with six earlier classifications retained. The [PITON](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md), [F3 plan](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md) and [existing source ledger](https://github.com/OS4CSAPI/glaux-client/blob/research/dim-profile-v2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) record original coverage, all decisions, corrected load/input versus source/output voltage meanings and exact limits. SOSA now has **76 colored / 45 held / zero ungraded** comparisons; the four-donor total is **466 / 150 / zero**. AAS's 54 provisional colors and ten holds still await independent F3-05 review.
