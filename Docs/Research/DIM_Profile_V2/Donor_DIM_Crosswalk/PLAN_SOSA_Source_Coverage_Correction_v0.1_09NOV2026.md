@@ -18,6 +18,12 @@ Start with `SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json`: `per
 
 Reuse verified decisions. Reread original passages at their recorded editions when a meaning, omission or proposed change needs verification. Previously unreviewed clauses, new editions, new companion-file audits and attempts to close all nine source-hold families are outside this addendum. Record any necessary expansion as a named question and obtain separate owner direction. Distinguish C239 Edition 1.1 from separately qualified 2022/2025 evidence and W3C SOSA/SSN.
 
+## SO-2F execution-size correction — owner approved, Profile Rewrite 50
+
+The frozen SO-1 inventory contains **581 SO-2F hardware-topology/profile-family records**. Instead of one oversized 581-record execution, partition SO-2F into **source-coherent, disjoint subpackets targeting about 75–100 records**; do not force an artificial cutoff across a meaningful native group. In SO-2F-1, establish a compact manifest of all 581 original IDs, source groups and pointers, with no duplicates or omissions, then assess the first auditable subpacket if feasible within the same bounded step. If manifest verification or a large indivisible group prevents that assessment, publish the exact blocker and stop rather than silently enlarging the step. Record final subpacket boundaries in the existing ledger and PITON, not a new document.
+
+**One Proceed authorizes only one identified SO-2F subpacket.** For each, inspect relevant original evidence, preserve exact source outcomes and holds, integrate warranted changes progressively into canonical master, both CSV/readable mirrors and the same workbook, verify saved files/fills and publish/read back before stopping. Extract only relevant keys and source sections locally; do not print or reload whole multi-megabyte ledgers into chat. Reuse unchanged checks. Reconcile all 581 IDs and saved-file parity before marking SO-2F complete. This is **execution granularity, not new research scope, donor acceptance, or model adoption**. The previous seven-step remainder estimate is superseded; recalculate after the manifest. No automatic SO-2G.
+
 ## Bounded sequence
 
 | Step | Deliverable and required reasoning | Stop |

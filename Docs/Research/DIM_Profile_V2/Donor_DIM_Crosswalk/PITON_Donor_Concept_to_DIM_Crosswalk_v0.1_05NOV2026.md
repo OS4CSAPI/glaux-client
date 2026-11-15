@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026, America/New_York, Profile Rewrite 49. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
+Updated 15 November 2026, America/New_York, Profile Rewrite 50. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -18,7 +18,7 @@ SO-2E outcomes: **289 adequately represented, 60 supporting additions, 47 suppor
 
 Original C239 PDF 141–207 and 372–383 text read; PDF 144/185/186/197/200/201/376/382 visually inspected. All 496 original hashes matched. Twenty-two held records across twelve groups preserve key tags/configuration returns/store boundary, storage-response wording, host bearing/cosite/locator, QoS range/ownership, FACE reference, future conformance/matrix and role-symbol geometry. Task tables remain preliminary with TBD descriptions and inconsistent AMTI/Tracker reference. Source grades are unchanged; no new edition, native-companion, external-standard or general figure audit.
 
-**Next SO-2F:** 581 hardware-topology/profile-family records, using frozen SO-1 membership and original pointers. Residual assessment inventory: **2,227 records**. Estimate **seven further bounded steps**: five packets, reconciliation, closeout; not a guaranteed prompt count.
+**Next SO-2F:** 581 hardware-topology/profile-family records from frozen SO-1 membership, now split into source-coherent ~75–100-record checkpoints per the plan amendment. The earlier seven-step remainder estimate is superseded; recompute after the verified manifest. Residual assessment inventory remains **2,227 records**.
 
 ## Master and workbook
 
@@ -40,7 +40,7 @@ Five pre-existing broader artifact-register/link errors remain unclosed. The bro
 
 ## Next action and stop
 
-SO-2E delivery and publication-status closeout are complete. **STOP for Proceed**. The next Proceed authorizes **SO-2F only: 581 retained records**, with progressive same-master/workbook integration if warranted; stop before SO-2G. AAS acceptance remains pending separately.
+SO-2E delivery and publication-status closeout are complete. Profile Rewrite 50 approved **execution sizing only**; no SO-2F research has started. **STOP for Proceed.** Next Proceed authorizes **SO-2F-1 only**: establish a manifest of all frozen 581 original IDs/source groups/pointers and assess the first ~75–100-record source-coherent subpacket if safely feasible. Preserve exact holds, publish/read back warranted same-master/workbook changes, then stop before SO-2F-2. Subsequent subpackets each require their own Proceed. No SO-2G, donor acceptance, or adoption by implication.
 
 ## History
 
